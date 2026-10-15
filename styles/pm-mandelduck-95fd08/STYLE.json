@@ -25,7 +25,9 @@
   "source_prompt_words": 28,
   "listed": true,
   "skill": "styles/pm-mandelduck-95fd08/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/characters.md"
+  ],
   "summary_ar": "مشهد ثلاثي الأبعاد قابل للمشي داخل قرية لوحة ليلة النجوم بلمسة فرشاة متحركة، حيث يبحث اللاعب عن قطط مختبئة بين البيوت وشجرة السرو.",
   "summary_en": "A walkable 3D scene inside the village of Starry Night rendered in moving brush strokes, where the player hunts for cats hidden among the houses and the cypress.",
   "keywords": [

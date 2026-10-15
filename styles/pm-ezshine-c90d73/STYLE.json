@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-ezshine-c90d73/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md"
+    "playbooks/product-ui.md",
+    "playbooks/characters.md"
   ]
 }

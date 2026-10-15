@@ -26,7 +26,7 @@ Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion ru
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.

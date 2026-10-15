@@ -6,10 +6,23 @@ Total: 288 styles · 243 PromptsMotion references · 45 KOSIF base styles · 44 
 
 ## Playbooks
 
+- [3D and 2.5D scenes — المشاهد ثلاثية وشبه ثلاثية الأبعاد](playbooks/3d.md)
+- [Ads and product launch films — الإعلانات وأفلام إطلاق المنتجات](playbooks/ads.md)
+- [Arabic type and RTL in motion — الخط العربي والاتجاه RTL في الحركة](playbooks/arabic-typography.md)
+- [Word-level audio sync pipeline — خط أنابيب المزامنة الصوتية على مستوى الكلمة](playbooks/audio-sync.md)
+- [Characters and rigs — الشخصيات والهياكل](playbooks/characters.md)
 - [Charts and data stories — الرسوم البيانية وقصص البيانات](playbooks/charts.md)
+- [Code-driven and generative motion — الحركة البرمجية والتوليدية](playbooks/code.md)
+- [Diagrams and flows — المخططات والتدفقات](playbooks/diagrams.md)
+- [Hand-drawn, whiteboard and plotter — الرسم اليدوي والسبورة والبلوتر](playbooks/hand-drawn.md)
+- [Kinetic typography — التايبوغرافي الحركي](playbooks/kinetic-type.md)
+- [Music and beat sync — الموسيقى والمزامنة الإيقاعية](playbooks/music.md)
+- [Particles and fields — الجسيمات والحقول](playbooks/particles.md)
 - [Phone and device films — أفلام الهاتف والأجهزة](playbooks/phone.md)
 - [Photos and parallax — الصور والبارالاكس](playbooks/photos.md)
 - [Product UI motion — حركة واجهات المنتج](playbooks/product-ui.md)
+- [Preview and render pipeline — خط أنابيب المعاينة والرندر](playbooks/render-pipeline.md)
+- [Shapes and morphing — الأشكال والتحوّل](playbooks/shapes.md)
 
 ## Product UI / واجهات المنتج (82)
 

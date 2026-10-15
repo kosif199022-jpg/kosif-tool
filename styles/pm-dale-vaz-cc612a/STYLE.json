@@ -31,6 +31,7 @@
   "playbooks": [
     "playbooks/phone.md",
     "playbooks/charts.md",
-    "playbooks/photos.md"
+    "playbooks/photos.md",
+    "playbooks/code.md"
   ]
 }

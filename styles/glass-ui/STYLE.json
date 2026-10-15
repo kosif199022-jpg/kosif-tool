@@ -24,6 +24,7 @@
   "listed": true,
   "skill": "styles/glass-ui/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md"
+    "playbooks/product-ui.md",
+    "playbooks/shapes.md"
   ]
 }

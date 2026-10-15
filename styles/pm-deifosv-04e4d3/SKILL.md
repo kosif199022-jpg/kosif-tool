@@ -28,6 +28,7 @@ Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion ru
 Categories: Product UI / واجهات المنتج, Phone / هاتف, Music / موسيقى.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

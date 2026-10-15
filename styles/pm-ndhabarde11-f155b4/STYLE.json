@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-ndhabarde11-f155b4/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

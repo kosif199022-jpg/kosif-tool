@@ -22,6 +22,13 @@ Observe this exact reference before implementing when browser or video tools per
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Music / موسيقى, Code / كود.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

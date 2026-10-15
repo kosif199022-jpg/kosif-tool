@@ -28,5 +28,7 @@
   "source_prompt_words": 70,
   "listed": true,
   "skill": "styles/pm-axtonliu-0b861d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/code.md"
+  ]
 }

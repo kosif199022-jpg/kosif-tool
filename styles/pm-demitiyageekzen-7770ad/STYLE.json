@@ -27,5 +27,7 @@
   "source_prompt_words": 43,
   "listed": true,
   "skill": "styles/pm-demitiyageekzen-7770ad/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/code.md"
+  ]
 }

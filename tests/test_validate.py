@@ -91,7 +91,7 @@ class FixtureValidateTest(unittest.TestCase):
         self.build()
         self.assert_fails("origin 'Somewhere'", "page must be an https URL", "video must be null or an https URL")
 
-    def test_aspect_label_mismatch_fails_and_offschema_label_warns(self):
+    def test_aspect_label_mismatch_fails_and_4_3_label_passes(self):
         self.records[0]["aspect_label"] = "9:16"  # pixels say 16:9
         self.build()
         self.assert_fails("aspect_label '9:16' does not match aspect 1920x1080")
@@ -99,7 +99,7 @@ class FixtureValidateTest(unittest.TestCase):
         self.records[0]["aspect_label"] = "4:3"  # same tolerance rule as the catalog generator
         self.build()
         out = self.assert_passes()
-        self.assertIn("outside the SCHEMA.md set", out)
+        self.assertNotIn("outside the SCHEMA.md set", out)
         self.records[0]["aspect_label"] = "other"
         self.build()
         self.assert_fails("aspect_label is 'other' but 1408x1080 is 4:3")

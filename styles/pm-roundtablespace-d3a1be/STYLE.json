@@ -28,6 +28,8 @@
   "listed": true,
   "skill": "styles/pm-roundtablespace-d3a1be/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md"
   ]
 }

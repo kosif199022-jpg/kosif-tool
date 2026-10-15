@@ -25,5 +25,7 @@
   "source_prompt_words": 60,
   "listed": true,
   "skill": "styles/pm-heyiammallik-e72d17/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/music.md"
+  ]
 }

@@ -29,7 +29,11 @@ Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion ru
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

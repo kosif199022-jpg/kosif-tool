@@ -30,6 +30,8 @@
   "skill": "styles/pm-ho-ba-f3f0e9/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md"
   ]
 }

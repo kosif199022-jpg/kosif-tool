@@ -29,6 +29,7 @@
   "skill": "styles/pm-gabrielbuzziv-4ff0c6/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

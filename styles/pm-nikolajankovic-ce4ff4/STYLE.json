@@ -26,5 +26,8 @@
   "source_prompt_words": 15,
   "listed": true,
   "skill": "styles/pm-nikolajankovic-ce4ff4/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md",
+    "playbooks/characters.md"
+  ]
 }

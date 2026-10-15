@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-sudeepsd-1a3485/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

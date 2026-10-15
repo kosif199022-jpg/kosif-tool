@@ -29,6 +29,9 @@
   "listed": true,
   "skill": "styles/pm-prasenx-8d9323/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ]
 }

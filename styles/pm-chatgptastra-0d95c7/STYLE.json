@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-chatgptastra-0d95c7/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

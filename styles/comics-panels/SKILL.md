@@ -15,7 +15,8 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Hand-drawn / رسم يدوي.
-- (no category playbook yet)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 
 Category tactics:
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.

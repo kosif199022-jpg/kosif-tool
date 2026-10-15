@@ -26,5 +26,8 @@
   "source_prompt_words": 20,
   "listed": true,
   "skill": "styles/pm-davidmarcus-a28a60/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/particles.md",
+    "playbooks/music.md"
+  ]
 }

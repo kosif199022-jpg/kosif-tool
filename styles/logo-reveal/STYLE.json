@@ -23,5 +23,8 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/logo-reveal/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/ads.md",
+    "playbooks/shapes.md"
+  ]
 }

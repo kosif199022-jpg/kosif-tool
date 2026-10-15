@@ -25,7 +25,9 @@
   "source_prompt_words": 12,
   "listed": true,
   "skill": "styles/pm-zheke-38deff/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/kinetic-type.md"
+  ],
   "summary_ar": "قطعة مربعة 12 ثانية من الطباعة الحركية الثنائية اللغة: جملة واحدة تتفكك وتتجمع وتغير وزنها على إيقاع ثابت دون أي عنصر غير الحروف.",
   "summary_en": "A 12s square kinetic-type piece: one bilingual sentence breaks apart, reflows and changes weight on a steady pulse, with nothing on screen but letters.",
   "keywords": [

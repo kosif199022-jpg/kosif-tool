@@ -25,5 +25,7 @@
   "source_prompt_words": 60,
   "listed": true,
   "skill": "styles/pm-rebutonepress-810f78/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/music.md"
+  ]
 }

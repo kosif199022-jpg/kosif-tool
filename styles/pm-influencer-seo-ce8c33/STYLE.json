@@ -27,7 +27,8 @@
   "listed": true,
   "skill": "styles/pm-influencer-seo-ce8c33/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شريط استعراضي كثيف في 15 ثانية بأسلوب السيرة الذاتية للمصمم، يمزج الطباعة الحركية برسوم السرعة وأصولًا مولَّدة عبر fal API.",
   "summary_en": "A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.",

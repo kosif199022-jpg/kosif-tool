@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-sab8a-364a5a/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/music.md"
   ]
 }

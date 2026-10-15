@@ -27,5 +27,7 @@
   "source_prompt_words": 67,
   "listed": true,
   "skill": "styles/pm-gorden-sun-041f56/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/music.md"
+  ]
 }

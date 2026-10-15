@@ -26,7 +26,7 @@ Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion ru
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات.
-- (no category playbook yet)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.

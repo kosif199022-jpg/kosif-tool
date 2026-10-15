@@ -29,6 +29,7 @@
   "skill": "styles/pm-topi-003-b0e12c/SKILL.md",
   "playbooks": [
     "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
     "playbooks/photos.md"
   ]
 }

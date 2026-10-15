@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-safarkhanshuvo-ffd52d/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

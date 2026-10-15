@@ -15,7 +15,8 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, 3D / ثلاثي الأبعاد.
-- (no category playbook yet)
+- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
 * Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.

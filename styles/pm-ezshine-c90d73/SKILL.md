@@ -20,6 +20,7 @@ Observe this exact reference before implementing when browser or video tools per
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Characters / شخصيات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

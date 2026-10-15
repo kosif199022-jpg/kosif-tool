@@ -39,6 +39,13 @@
   "skill": "styles/pm-ultimaxbt-bbebf5/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ]
 }

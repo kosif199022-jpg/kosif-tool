@@ -26,7 +26,10 @@
   "source_prompt_words": 31,
   "listed": true,
   "skill": "styles/pm-jake11moran-a269c4/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/code.md"
+  ],
   "summary_ar": "فيلم قصير مُلحَّن يحوّل سجل جلسة حقيقية بين مطوّر ووكيل برمجي إلى حكاية متحركة بشخصيتين وأحداث كود.",
   "summary_en": "A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.",
   "keywords": [

@@ -25,5 +25,7 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-0xnfrith-5be616/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md"
+  ]
 }

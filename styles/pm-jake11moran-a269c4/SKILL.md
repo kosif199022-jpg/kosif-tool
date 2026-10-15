@@ -26,7 +26,8 @@ Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion ru
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Code / كود.
-- (no category playbook yet)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.

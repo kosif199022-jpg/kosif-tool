@@ -26,7 +26,10 @@
   "source_prompt_words": 18,
   "listed": true,
   "skill": "styles/pm-kamstudiolabs-0b0824/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/music.md"
+  ],
   "summary_ar": "خمس وأربعون ثانية بلا حوار: حارس منارة يعيد إشعال المصباح في عاصفة، والصوت وحده يروي نصف القصة.",
   "summary_en": "Forty-five dialogue-free seconds: a lighthouse keeper relights a dead lamp in a storm, and the sound design carries half of the story.",
   "keywords": [

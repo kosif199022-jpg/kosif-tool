@@ -27,6 +27,7 @@ Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion ru
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

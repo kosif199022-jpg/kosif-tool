@@ -15,7 +15,8 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Shapes / أشكال, 3D / ثلاثي الأبعاد.
-- (no category playbook yet)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.

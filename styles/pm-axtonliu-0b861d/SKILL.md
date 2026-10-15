@@ -20,7 +20,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Code / كود.
-- (no category playbook yet)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.

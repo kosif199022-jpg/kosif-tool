@@ -15,6 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد, Product UI / واجهات المنتج.
+- [playbooks/3d.md](../../playbooks/3d.md)
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:

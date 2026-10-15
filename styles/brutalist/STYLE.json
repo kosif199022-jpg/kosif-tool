@@ -22,5 +22,7 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/brutalist/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md"
+  ]
 }

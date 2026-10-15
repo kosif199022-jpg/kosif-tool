@@ -29,6 +29,7 @@
   "skill": "styles/pm-agonaliu-466a8f/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

@@ -32,6 +32,10 @@
   "listed": true,
   "skill": "styles/pm-anthonyriera-9b1b2a/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md"
+    "playbooks/product-ui.md",
+    "playbooks/diagrams.md",
+    "playbooks/characters.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ]
 }

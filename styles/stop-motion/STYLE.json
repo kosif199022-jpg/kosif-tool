@@ -24,6 +24,7 @@
   "listed": true,
   "skill": "styles/stop-motion/SKILL.md",
   "playbooks": [
+    "playbooks/characters.md",
     "playbooks/photos.md"
   ]
 }

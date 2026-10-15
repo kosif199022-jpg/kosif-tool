@@ -22,5 +22,7 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/whiteboard/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/hand-drawn.md"
+  ]
 }

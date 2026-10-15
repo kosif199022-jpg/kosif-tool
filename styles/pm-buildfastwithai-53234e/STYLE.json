@@ -26,5 +26,8 @@
   "source_prompt_words": 13,
   "listed": true,
   "skill": "styles/pm-buildfastwithai-53234e/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/music.md"
+  ]
 }

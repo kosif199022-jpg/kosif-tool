@@ -25,6 +25,8 @@
   "listed": true,
   "skill": "styles/viral-mixed-media/SKILL.md",
   "playbooks": [
-    "playbooks/photos.md"
+    "playbooks/ads.md",
+    "playbooks/photos.md",
+    "playbooks/kinetic-type.md"
   ]
 }

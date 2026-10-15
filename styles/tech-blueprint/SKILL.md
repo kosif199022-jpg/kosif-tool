@@ -15,7 +15,8 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات, Hand-drawn / رسم يدوي.
-- (no category playbook yet)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.

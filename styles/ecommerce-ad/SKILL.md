@@ -15,6 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Product UI / واجهات المنتج.
+- [playbooks/ads.md](../../playbooks/ads.md)
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:

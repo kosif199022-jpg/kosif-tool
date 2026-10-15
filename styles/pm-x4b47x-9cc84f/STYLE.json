@@ -26,5 +26,8 @@
   "source_prompt_words": 30,
   "listed": true,
   "skill": "styles/pm-x4b47x-9cc84f/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

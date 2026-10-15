@@ -25,5 +25,7 @@
   "source_prompt_words": 12,
   "listed": true,
   "skill": "styles/pm-ercankeskinx-ec2568/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md"
+  ]
 }

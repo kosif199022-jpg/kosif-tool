@@ -23,5 +23,8 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/neon-tech/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/ads.md",
+    "playbooks/particles.md"
+  ]
 }

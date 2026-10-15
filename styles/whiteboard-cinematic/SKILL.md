@@ -15,7 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي.
-- (no category playbook yet)
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 
 Category tactics:
 * Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.

@@ -29,6 +29,7 @@
   "skill": "styles/pm-ajith-io-c52e09/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

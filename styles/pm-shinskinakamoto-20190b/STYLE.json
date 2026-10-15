@@ -28,6 +28,8 @@
   "listed": true,
   "skill": "styles/pm-shinskinakamoto-20190b/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md"
   ]
 }

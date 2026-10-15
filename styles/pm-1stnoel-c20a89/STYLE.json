@@ -28,6 +28,8 @@
   "listed": true,
   "skill": "styles/pm-1stnoel-c20a89/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md"
+    "playbooks/product-ui.md",
+    "playbooks/diagrams.md",
+    "playbooks/characters.md"
   ]
 }

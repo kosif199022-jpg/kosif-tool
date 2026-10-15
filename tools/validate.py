@@ -31,7 +31,7 @@ DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 
 ORIGINS = {"PromptsMotion", "KOSIF original style"}
 TYPES = {"Prompt", "Skill", "Style"}
-SCHEMA_ASPECT_LABELS = {"16:9", "9:16", "1:1", "4:5", "other"}
+SCHEMA_ASPECT_LABELS = {"16:9", "9:16", "1:1", "4:5", "4:3", "21:9", "other"}
 BRIEF_KEYS = [
     "id", "title_ar", "summary_ar", "summary_en", "concept_ar", "concept_en", "scenes_en", "scenes_ar",
     "motion_rules_en", "motion_rules_ar", "stack", "duration_s", "aspect", "difficulty", "keywords",

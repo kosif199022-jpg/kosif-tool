@@ -26,5 +26,8 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-amitsingha89-150378/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

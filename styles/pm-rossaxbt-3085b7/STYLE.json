@@ -36,6 +36,11 @@
   "skill": "styles/pm-rossaxbt-3085b7/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/photos.md"
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ]
 }

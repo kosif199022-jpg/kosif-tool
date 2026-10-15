@@ -29,6 +29,7 @@
   "skill": "styles/pm-jesscaroline7-1ff7cb/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

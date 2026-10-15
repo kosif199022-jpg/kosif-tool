@@ -29,5 +29,9 @@
   "source_prompt_words": 63,
   "listed": true,
   "skill": "styles/pm-alex-prompter-1ea044/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/code.md"
+  ]
 }

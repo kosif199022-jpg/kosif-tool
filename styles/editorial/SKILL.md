@@ -15,6 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك, Photos / صور.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:

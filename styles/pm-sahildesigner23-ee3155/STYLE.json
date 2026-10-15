@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-sahildesigner23-ee3155/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

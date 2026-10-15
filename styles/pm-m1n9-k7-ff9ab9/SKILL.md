@@ -20,6 +20,8 @@ Observe this exact reference before implementing when browser or video tools per
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات.
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

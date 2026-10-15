@@ -24,6 +24,7 @@
   "listed": true,
   "skill": "styles/product/SKILL.md",
   "playbooks": [
+    "playbooks/ads.md",
     "playbooks/product-ui.md"
   ]
 }

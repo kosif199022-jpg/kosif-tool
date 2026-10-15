@@ -19,7 +19,8 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Particles / جسيمات, Music / موسيقى.
-- (no category playbook yet)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
 * Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.

@@ -27,7 +27,8 @@
   "listed": true,
   "skill": "styles/pm-tolgayhickiran-e90799/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل 15 ثانية يعرض مبادئ التحريك كأمثلة حية، حيث تؤدي الكلمة والرسم البياني المبدأ الذي يسمّيانه.",
   "summary_en": "A 15-second résumé reel in which each animation principle is performed live by the very word and chart that name it.",

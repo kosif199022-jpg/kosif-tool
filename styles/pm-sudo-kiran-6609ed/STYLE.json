@@ -30,6 +30,8 @@
   "skill": "styles/pm-sudo-kiran-6609ed/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/music.md"
   ]
 }

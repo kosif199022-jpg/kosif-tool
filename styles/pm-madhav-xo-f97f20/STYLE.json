@@ -25,5 +25,7 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-madhav-xo-f97f20/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md"
+  ]
 }

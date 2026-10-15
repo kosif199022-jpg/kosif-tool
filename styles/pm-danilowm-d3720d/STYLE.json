@@ -27,7 +27,8 @@
   "listed": true,
   "skill": "styles/pm-danilowm-d3720d/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل 15 ثانية يستمد محتواه من ملفات المشروع نفسه: شجرة المجلدات تصبح رسمًا بيانيًا، وأسماء المكوّنات تصبح تايبوغرافي حركيًا.",
   "summary_en": "A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.",

@@ -20,7 +20,9 @@ Observe this exact reference before implementing when browser or video tools per
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Phone / هاتف, Characters / شخصيات, Photos / صور, Music / موسيقى.
 - [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
 * Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.

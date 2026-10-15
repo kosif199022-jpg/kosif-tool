@@ -24,6 +24,7 @@
   "listed": true,
   "skill": "styles/infographic/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md"
   ]
 }

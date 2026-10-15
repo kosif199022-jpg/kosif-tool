@@ -23,5 +23,8 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/retrowave/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/ads.md",
+    "playbooks/3d.md"
+  ]
 }

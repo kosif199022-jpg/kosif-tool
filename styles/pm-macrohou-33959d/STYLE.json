@@ -29,6 +29,7 @@
   "skill": "styles/pm-macrohou-33959d/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/music.md"
   ]
 }

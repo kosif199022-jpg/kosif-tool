@@ -25,5 +25,7 @@
   "source_prompt_words": 24,
   "listed": true,
   "skill": "styles/pm-allforbigfire-86ff3c/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md"
+  ]
 }

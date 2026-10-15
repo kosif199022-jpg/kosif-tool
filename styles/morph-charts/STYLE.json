@@ -24,6 +24,7 @@
   "listed": true,
   "skill": "styles/morph-charts/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/shapes.md"
   ]
 }

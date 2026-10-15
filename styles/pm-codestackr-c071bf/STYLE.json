@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-codestackr-c071bf/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

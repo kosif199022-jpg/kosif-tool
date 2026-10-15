@@ -16,6 +16,7 @@ Observe this exact reference before implementing when browser or video tools per
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Photos / صور, 3D / ثلاثي الأبعاد.
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.

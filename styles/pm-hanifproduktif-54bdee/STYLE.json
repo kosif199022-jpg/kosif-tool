@@ -25,5 +25,7 @@
   "source_prompt_words": 23,
   "listed": true,
   "skill": "styles/pm-hanifproduktif-54bdee/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md"
+  ]
 }

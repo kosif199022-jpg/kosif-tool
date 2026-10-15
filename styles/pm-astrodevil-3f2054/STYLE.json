@@ -29,6 +29,7 @@
   "skill": "styles/pm-astrodevil-3f2054/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

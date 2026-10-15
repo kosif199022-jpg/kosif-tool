@@ -25,5 +25,7 @@
   "source_prompt_words": 32,
   "listed": true,
   "skill": "styles/pm-chrisjdimarco-f068db/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/code.md"
+  ]
 }

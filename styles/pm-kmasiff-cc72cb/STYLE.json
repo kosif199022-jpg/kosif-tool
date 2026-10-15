@@ -29,6 +29,7 @@
   "skill": "styles/pm-kmasiff-cc72cb/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/characters.md"
   ]
 }

@@ -25,5 +25,7 @@
   "source_prompt_words": 19,
   "listed": true,
   "skill": "styles/pm-kamstudiolabs-447565/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/music.md"
+  ]
 }

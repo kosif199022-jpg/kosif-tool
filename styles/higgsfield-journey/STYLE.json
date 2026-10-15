@@ -24,6 +24,7 @@
   "listed": true,
   "skill": "styles/higgsfield-journey/SKILL.md",
   "playbooks": [
+    "playbooks/3d.md",
     "playbooks/photos.md"
   ]
 }

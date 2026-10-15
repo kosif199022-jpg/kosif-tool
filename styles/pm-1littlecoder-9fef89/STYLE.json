@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-1littlecoder-9fef89/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

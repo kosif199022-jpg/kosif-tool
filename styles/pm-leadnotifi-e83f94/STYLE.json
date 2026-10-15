@@ -29,6 +29,7 @@
   "skill": "styles/pm-leadnotifi-e83f94/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

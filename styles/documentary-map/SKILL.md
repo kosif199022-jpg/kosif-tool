@@ -15,6 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات, Photos / صور.
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:

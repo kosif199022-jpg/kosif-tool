@@ -30,7 +30,9 @@
   "listed": true,
   "skill": "styles/pm-sarut0bisasuke-cefa43/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيلم شرح من لقطة واحدة متصلة يبني كوكتيل الوايت روشن مكوّنًا بعد مكوّن مع إظهار الكمية ومستوى الامتلاء في الكأس خلال 30 ثانية.",
   "summary_en": "A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.",

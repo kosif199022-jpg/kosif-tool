@@ -15,7 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات.
-- (no category playbook yet)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.

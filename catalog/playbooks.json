@@ -1,11 +1,99 @@
 [
  {
+  "key": "3d",
+  "title_en": "3D and 2.5D scenes",
+  "title_ar": "المشاهد ثلاثية وشبه ثلاثية الأبعاد",
+  "path": "playbooks/3d.md",
+  "excerpt": "This playbook covers spatial motion: choosing between real 3D (Three.js) and layered 2.5D, isometric worlds, low-poly, camera paths and lenses, basic lighting and materials. Use it whenever a style's categories include `3d`.",
+  "words_en": 586
+ },
+ {
+  "key": "ads",
+  "title_en": "Ads and product launch films",
+  "title_ar": "الإعلانات وأفلام إطلاق المنتجات",
+  "path": "playbooks/ads.md",
+  "excerpt": "This playbook covers short commercial films: the one-second hook, feature beats, price and call-to-action cards, logo reveals, e-commerce product shots, platform pacing and brand consistency. Use it whenever a style's categories include `ad",
+  "words_en": 574
+ },
+ {
+  "key": "arabic-typography",
+  "title_en": "Arabic type and RTL in motion",
+  "title_ar": "الخط العربي والاتجاه RTL في الحركة",
+  "path": "playbooks/arabic-typography.md",
+  "excerpt": "This playbook is mandatory whenever a film contains Arabic text. It covers letter joining and why words are never split, fonts that work, baselines and diacritics, mixed Arabic/Latin/number direction, bidi isolation, line breaking, kashida,",
+  "words_en": 653
+ },
+ {
+  "key": "audio-sync",
+  "title_en": "Word-level audio sync pipeline",
+  "title_ar": "خط أنابيب المزامنة الصوتية على مستوى الكلمة",
+  "path": "playbooks/audio-sync.md",
+  "excerpt": "This playbook explains how a supplied voice-over becomes the master clock of a KOSIF film: transcription and alignment, the `words.json` format, tolerances, silence handling, music ducking, loudness delivery and verification. Read it whenev",
+  "words_en": 686
+ },
+ {
+  "key": "characters",
+  "title_en": "Characters and rigs",
+  "title_ar": "الشخصيات والهياكل",
+  "path": "playbooks/characters.md",
+  "excerpt": "This playbook covers character animation in KOSIF films: model sheets, simple 2D/SVG rigs, key poses, anticipation and follow-through, walk cycles, mouth shapes and expressions, from stickmen to clay-like and anime-inspired looks. All desig",
+  "words_en": 618
+ },
+ {
   "key": "charts",
   "title_en": "Charts and data stories",
   "title_ar": "الرسوم البيانية وقصص البيانات",
   "path": "playbooks/charts.md",
   "excerpt": "This playbook covers animated bars, lines, areas, pies, counters, bar-chart races and chart morphs in KOSIF films: how to move numbers without lying about them. It fixes the visual grammar, timing values and Arabic conventions Claude applie",
   "words_en": 2458
+ },
+ {
+  "key": "code",
+  "title_en": "Code-driven and generative motion",
+  "title_ar": "الحركة البرمجية والتوليدية",
+  "path": "playbooks/code.md",
+  "excerpt": "This playbook covers motion written as code: procedural and noise-based systems, code-typing and terminal scenes, generative layouts, deterministic seeds and performance. Use it whenever a style's categories include `code`; in practice ever",
+  "words_en": 632
+ },
+ {
+  "key": "diagrams",
+  "title_en": "Diagrams and flows",
+  "title_ar": "المخططات والتدفقات",
+  "path": "playbooks/diagrams.md",
+  "excerpt": "This playbook covers explainer diagrams: nodes and edges revealed in causal order, stroke draw-on, arrows, timelines, architecture and process flows, and camera moves between parts of a diagram. Use it whenever a style's categories include ",
+  "words_en": 702
+ },
+ {
+  "key": "hand-drawn",
+  "title_en": "Hand-drawn, whiteboard and plotter",
+  "title_ar": "الرسم اليدوي والسبورة والبلوتر",
+  "path": "playbooks/hand-drawn.md",
+  "excerpt": "This playbook covers drawn-looking films: stroke draw-on order, pen and hand overlays, whiteboard and chalkboard explainer rhythm, doodle imperfection, plotter aesthetics and paper textures. Use it whenever a style's categories include `han",
+  "words_en": 644
+ },
+ {
+  "key": "kinetic-type",
+  "title_en": "Kinetic typography",
+  "title_ar": "التايبوغرافي الحركي",
+  "path": "playbooks/kinetic-type.md",
+  "excerpt": "This playbook fixes how words move in KOSIF films: timing per word and per line, emphasis beats, masks and wipes, and readability on a phone. Use it whenever a style's categories include `kinetic-type`, and read `playbooks/arabic-typography",
+  "words_en": 803
+ },
+ {
+  "key": "music",
+  "title_en": "Music and beat sync",
+  "title_ar": "الموسيقى والمزامنة الإيقاعية",
+  "path": "playbooks/music.md",
+  "excerpt": "This playbook covers films driven by music: BPM grids, cutting and accenting on beats, audio-reactive motion, lyric and poem films, ducking music under narration, and loudness delivery. Use it whenever a style's categories include `music`. ",
+  "words_en": 643
+ },
+ {
+  "key": "particles",
+  "title_en": "Particles and fields",
+  "title_ar": "الجسيمات والحقول",
+  "path": "playbooks/particles.md",
+  "excerpt": "This playbook covers particle systems that mean something: seeded emitters, flow fields, attraction and repulsion, text to particles, and performance budgets, while avoiding the generic glowing-dust look. Use it whenever a style's categorie",
+  "words_en": 632
  },
  {
   "key": "phone",
@@ -30,5 +118,21 @@
   "path": "playbooks/product-ui.md",
   "excerpt": "This playbook covers films whose subject is an app or SaaS interface: feature launches, onboarding explainers, \"how it works\" clips and release notes in motion. It tells Claude how to rebuild screens as layered components, choreograph curso",
   "words_en": 2617
+ },
+ {
+  "key": "render-pipeline",
+  "title_en": "Preview and render pipeline",
+  "title_ar": "خط أنابيب المعاينة والرندر",
+  "path": "playbooks/render-pipeline.md",
+  "excerpt": "This playbook describes how a KOSIF film goes from code to a verified MP4: deterministic rendering, previews before the final render, choosing between Remotion and Playwright + ffmpeg, platform encoding specs and the delivery gate.",
+  "words_en": 650
+ },
+ {
+  "key": "shapes",
+  "title_en": "Shapes and morphing",
+  "title_ar": "الأشكال والتحوّل",
+  "path": "playbooks/shapes.md",
+  "excerpt": "This playbook covers geometric motion: a shape system, path morphs, squash and stretch, the \"one shape never cut\" sequence, boolean reveals and grid logic. Use it whenever a style's categories include `shapes`.",
+  "words_en": 599
  }
 ]

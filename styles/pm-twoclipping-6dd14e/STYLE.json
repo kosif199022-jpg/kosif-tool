@@ -38,6 +38,11 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/phone.md",
-    "playbooks/photos.md"
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ]
 }

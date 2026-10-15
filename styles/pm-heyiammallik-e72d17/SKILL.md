@@ -19,7 +19,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Music / موسيقى.
-- (no category playbook yet)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.

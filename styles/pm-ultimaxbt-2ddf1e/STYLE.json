@@ -42,6 +42,12 @@
     "playbooks/product-ui.md",
     "playbooks/phone.md",
     "playbooks/charts.md",
-    "playbooks/photos.md"
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ]
 }

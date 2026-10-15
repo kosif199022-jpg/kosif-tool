@@ -26,7 +26,7 @@ Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion ru
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Music / موسيقى.
-- (no category playbook yet)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.

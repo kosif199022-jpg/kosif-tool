@@ -19,7 +19,8 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.

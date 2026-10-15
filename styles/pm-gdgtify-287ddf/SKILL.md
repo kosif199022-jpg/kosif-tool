@@ -22,7 +22,13 @@ Observe this exact reference before implementing when browser or video tools per
 Categories: Phone / هاتف, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
 - [playbooks/phone.md](../../playbooks/phone.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.

@@ -15,7 +15,9 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Photos / صور, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/ads.md](../../playbooks/ads.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.

@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-fionntobin-97b7af/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

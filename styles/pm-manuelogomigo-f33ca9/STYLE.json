@@ -28,6 +28,8 @@
   "listed": true,
   "skill": "styles/pm-manuelogomigo-f33ca9/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md"
   ]
 }

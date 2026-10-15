@@ -28,6 +28,8 @@
   "listed": true,
   "skill": "styles/pm-jhylee95-e1152f/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md"
+    "playbooks/product-ui.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md"
   ]
 }

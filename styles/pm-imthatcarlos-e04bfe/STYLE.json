@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-imthatcarlos-e04bfe/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md"
+    "playbooks/product-ui.md",
+    "playbooks/diagrams.md"
   ]
 }

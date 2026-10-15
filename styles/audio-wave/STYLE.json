@@ -23,5 +23,8 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/audio-wave/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/music.md",
+    "playbooks/shapes.md"
+  ]
 }

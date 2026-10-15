@@ -22,6 +22,7 @@ Categories: Phone / هاتف, Charts / رسوم بيانية, Photos / صور, C
 - [playbooks/phone.md](../../playbooks/phone.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.

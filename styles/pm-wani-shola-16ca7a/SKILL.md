@@ -23,6 +23,10 @@ Categories: Product UI / واجهات المنتج, Phone / هاتف, Charts / �
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/phone.md](../../playbooks/phone.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

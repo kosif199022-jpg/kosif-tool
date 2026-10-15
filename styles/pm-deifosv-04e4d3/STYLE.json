@@ -29,7 +29,8 @@
   "skill": "styles/pm-deifosv-04e4d3/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/phone.md"
+    "playbooks/phone.md",
+    "playbooks/music.md"
   ],
   "summary_ar": "فيديو إطلاق عالي الطاقة للعبة تنس على الويب يعرض إحصاءات حية من الموقع واللعب على الحاسوب والهاتف وتبديل السمات على الإيقاع.",
   "summary_en": "A high-energy launch film for a web tennis game, pulling live stats from the site and showing desktop and mobile play plus theme switching, all cut to music.",

@@ -24,6 +24,7 @@
   "listed": true,
   "skill": "styles/editorial/SKILL.md",
   "playbooks": [
+    "playbooks/kinetic-type.md",
     "playbooks/photos.md"
   ]
 }

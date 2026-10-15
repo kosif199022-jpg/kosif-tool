@@ -27,7 +27,8 @@
   "listed": true,
   "skill": "styles/pm-monokern-ade5b6/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل مدته 20 ثانية يدور حول عين مركزية: حلقات تنبض، تكبير لا نهائي داخل البؤبؤ، تناظر كاليدوسكوبي، ونص يدور حولها ورسم شعاعي ينمو في القزحية.",
   "summary_en": "A 20-second reel built around one central eye: pulsing rings, an endless zoom into the pupil, kaleidoscope symmetry, text orbiting it and a radial chart growing inside the iris.",

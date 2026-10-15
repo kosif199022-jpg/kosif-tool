@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-souravbhar871-61f424/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

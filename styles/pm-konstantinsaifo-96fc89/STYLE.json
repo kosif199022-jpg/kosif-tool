@@ -25,5 +25,7 @@
   "source_prompt_words": 47,
   "listed": true,
   "skill": "styles/pm-konstantinsaifo-96fc89/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md"
+  ]
 }

@@ -22,5 +22,7 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/lowpoly-3d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/3d.md"
+  ]
 }

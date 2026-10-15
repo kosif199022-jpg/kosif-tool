@@ -25,5 +25,7 @@
   "source_prompt_words": 15,
   "listed": true,
   "skill": "styles/pm-kamstudiolabs-c9bb28/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md"
+  ]
 }

@@ -25,7 +25,9 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-tak3sh8-be5012/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/diagrams.md"
+  ],
   "summary_ar": "شرح بأسلوب السبورة البيضاء، تُرسم فيه الخطوط أمام المشاهد مع تعليق صوتي، لفكرة كسر تناظر النسخ في نموذج شيرينغتون-كيركباتريك للزجاج المغزلي.",
   "summary_en": "A narrated whiteboard explainer where strokes are drawn live, walking from a frustrated spin glass to Parisi's hierarchical overlap matrix.",
   "keywords": [

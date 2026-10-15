@@ -27,7 +27,8 @@
   "listed": true,
   "skill": "styles/pm-stephanlivera-df17a2/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل ذاتي مدته 15 ثانية يستعرض مهارات المصمم عبر نص حركي ورسوم بيانية حية وانتقالات متصلة بلا قطع.",
   "summary_en": "A 15-second self-portrait reel where the designer proves its craft through kinetic type, living charts and seamless morph transitions.",

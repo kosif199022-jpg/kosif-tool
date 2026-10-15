@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-charlesmendez-73b6e4/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md"
   ]
 }

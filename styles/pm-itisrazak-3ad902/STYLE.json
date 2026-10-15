@@ -27,7 +27,8 @@
   "listed": true,
   "skill": "styles/pm-itisrazak-3ad902/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل منتج مدته 40 ثانية يحوّل فكرة اختصار الكتب إلى لغة حركية: جدران نص تنضغط إلى عناوين، وبطاقات ملخّصات، ورسوم بيانية تعدّ الوقت الموفَّر.",
   "summary_en": "A 40-second product showreel where the idea of condensing books becomes motion: text walls compress into headlines, summary cards flip and charts count saved time.",

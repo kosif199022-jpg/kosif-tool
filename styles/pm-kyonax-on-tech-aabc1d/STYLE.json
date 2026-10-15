@@ -31,6 +31,9 @@
   "skill": "styles/pm-kyonax-on-tech-aabc1d/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/code.md"
   ]
 }

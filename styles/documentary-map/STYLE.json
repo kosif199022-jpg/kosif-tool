@@ -24,6 +24,7 @@
   "listed": true,
   "skill": "styles/documentary-map/SKILL.md",
   "playbooks": [
+    "playbooks/diagrams.md",
     "playbooks/photos.md"
   ]
 }

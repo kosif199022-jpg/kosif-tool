@@ -27,5 +27,7 @@
   "source_prompt_words": 22,
   "listed": true,
   "skill": "styles/pm-pluginplay-3d4006/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/code.md"
+  ]
 }

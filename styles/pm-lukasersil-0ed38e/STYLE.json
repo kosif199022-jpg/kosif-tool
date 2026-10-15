@@ -31,6 +31,9 @@
   "skill": "styles/pm-lukasersil-0ed38e/SKILL.md",
   "playbooks": [
     "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
     "playbooks/photos.md"
   ]
 }

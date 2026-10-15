@@ -16,7 +16,7 @@ Every style record has these fields. Optional fields may be `null` or absent in 
 | `video` | string\|null | External reference video URL (never rehosted). |
 | `poster` | string\|null | External poster image URL. |
 | `aspect` | `{w:int,h:int}`\|null | Reference video pixel aspect, e.g. `{"w":1920,"h":1080}`. |
-| `aspect_label` | string\|null | `16:9`, `9:16`, `1:1`, `4:5`, `other`. |
+| `aspect_label` | string\|null | `16:9`, `9:16`, `1:1`, `4:5`, `4:3`, `21:9`, `other`. |
 | `rank` | int\|null | Popularity rank on the source library (1 = most popular). |
 | `published` | string\|null | ISO date the reference was published on the source. |
 | `model` | string\|null | Model credited by the source for the reference (e.g. `Opus 5.5`). |

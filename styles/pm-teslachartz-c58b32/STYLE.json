@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-teslachartz-c58b32/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

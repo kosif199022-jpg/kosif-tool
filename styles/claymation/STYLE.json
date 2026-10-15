@@ -23,5 +23,8 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/claymation/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/3d.md"
+  ]
 }

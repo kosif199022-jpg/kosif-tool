@@ -28,6 +28,8 @@
   "listed": true,
   "skill": "styles/pm-ibrahimwasim240-809370/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/characters.md"
   ]
 }

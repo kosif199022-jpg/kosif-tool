@@ -25,5 +25,7 @@
   "source_prompt_words": 6,
   "listed": true,
   "skill": "styles/pm-henkvaness-0e06af/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md"
+  ]
 }

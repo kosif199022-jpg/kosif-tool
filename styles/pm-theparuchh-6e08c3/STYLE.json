@@ -35,6 +35,13 @@
   "listed": true,
   "skill": "styles/pm-theparuchh-6e08c3/SKILL.md",
   "playbooks": [
-    "playbooks/photos.md"
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ]
 }

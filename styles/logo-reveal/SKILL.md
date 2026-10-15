@@ -15,7 +15,8 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Shapes / أشكال.
-- (no category playbook yet)
+- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
 * Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.

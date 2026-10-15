@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-itsuki-dev-10942d/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

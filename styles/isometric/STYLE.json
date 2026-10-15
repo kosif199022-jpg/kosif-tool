@@ -23,5 +23,8 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/isometric/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/3d.md",
+    "playbooks/diagrams.md"
+  ]
 }

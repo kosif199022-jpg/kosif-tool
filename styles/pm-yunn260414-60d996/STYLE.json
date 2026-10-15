@@ -26,5 +26,8 @@
   "source_prompt_words": 53,
   "listed": true,
   "skill": "styles/pm-yunn260414-60d996/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md",
+    "playbooks/music.md"
+  ]
 }

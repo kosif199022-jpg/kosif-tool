@@ -29,6 +29,7 @@
   "skill": "styles/pm-amol909s-27533e/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

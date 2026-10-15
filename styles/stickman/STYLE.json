@@ -23,5 +23,8 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/stickman/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/hand-drawn.md"
+  ]
 }

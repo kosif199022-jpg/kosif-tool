@@ -23,5 +23,8 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/liquid-morph/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/shapes.md",
+    "playbooks/3d.md"
+  ]
 }

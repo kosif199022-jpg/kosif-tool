@@ -26,5 +26,8 @@
   "source_prompt_words": 27,
   "listed": true,
   "skill": "styles/pm-lemomo-ai-0d9cff/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md",
+    "playbooks/characters.md"
+  ]
 }

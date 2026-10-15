@@ -25,5 +25,7 @@
   "source_prompt_words": 24,
   "listed": true,
   "skill": "styles/pm-moguzbulbul-6311b6/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md"
+  ]
 }

@@ -25,5 +25,7 @@
   "source_prompt_words": 3,
   "listed": true,
   "skill": "styles/pm-sudo-kiran-49176d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md"
+  ]
 }

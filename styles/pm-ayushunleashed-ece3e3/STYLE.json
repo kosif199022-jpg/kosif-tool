@@ -27,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-ayushunleashed-ece3e3/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ]
 }

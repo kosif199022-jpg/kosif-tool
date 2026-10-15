@@ -31,7 +31,10 @@
   "skill": "styles/pm-abderrahmen-g-9e8ed0/SKILL.md",
   "playbooks": [
     "playbooks/charts.md",
-    "playbooks/photos.md"
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيلم مرح من مسحات دفتر رسم يدوية: الحيوانات تنفصل عن صفحاتها وتقفز، وكل حركة يرافقها صوت مُركَّب بـ Web Audio في الإطار نفسه.",
   "summary_en": "A playful film built from scanned hand-drawn pages: the animals peel off their sheets and hop, with every movement sounded by Web Audio on the same frame.",

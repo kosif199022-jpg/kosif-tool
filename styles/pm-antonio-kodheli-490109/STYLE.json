@@ -32,6 +32,8 @@
   "skill": "styles/pm-antonio-kodheli-490109/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/photos.md"
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/music.md"
   ]
 }

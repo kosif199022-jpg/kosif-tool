@@ -28,6 +28,8 @@ Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion ru
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Diagrams / مخططات, Code / كود.
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

@@ -29,6 +29,9 @@
   "listed": true,
   "skill": "styles/pm-blue-clarity-ef56d0/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md"
   ]
 }

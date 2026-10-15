@@ -27,5 +27,7 @@
   "source_prompt_words": 31,
   "listed": true,
   "skill": "styles/pm-linearuncle-5d2bae/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/diagrams.md"
+  ]
 }

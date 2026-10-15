@@ -29,6 +29,7 @@
   "skill": "styles/pm-sudo-kiran-b055de/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md"
   ]
 }

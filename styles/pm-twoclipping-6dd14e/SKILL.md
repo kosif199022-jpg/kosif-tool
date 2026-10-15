@@ -22,7 +22,12 @@ Observe this exact reference before implementing when browser or video tools per
 Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Photos / صور, Music / موسيقى, Code / كود.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

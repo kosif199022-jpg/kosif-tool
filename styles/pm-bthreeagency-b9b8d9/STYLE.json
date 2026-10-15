@@ -26,5 +26,8 @@
   "source_prompt_words": 73,
   "listed": true,
   "skill": "styles/pm-bthreeagency-b9b8d9/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md"
+  ]
 }

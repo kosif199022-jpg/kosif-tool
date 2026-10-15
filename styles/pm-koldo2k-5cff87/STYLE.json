@@ -30,6 +30,8 @@
   "skill": "styles/pm-koldo2k-5cff87/SKILL.md",
   "playbooks": [
     "playbooks/phone.md",
-    "playbooks/photos.md"
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md"
   ]
 }
