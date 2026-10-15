@@ -1,14 +1,30 @@
 {
   "id": "pm-aistocksavvy-3fb9f5",
   "name": "Stock analysis app promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts"
+    "product-ui",
+    "charts"
   ],
   "creator": "@AIStockSavvy",
   "creator_url": "https://x.com/AIStockSavvy/status/2103482258774483320",
   "page": "https://www.promptsmotion.com/aistocksavvy-3fb9f5",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/8d3daebf-4096-4639-84c1-1e4b9be51bc8/edb16c081f78ca0a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e67e37e4-6eea-47d3-b297-9318e119d10a/7181f14c9fa21965.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 204,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 43,
+  "listed": true,
+  "skill": "styles/pm-aistocksavvy-3fb9f5/SKILL.md",
+  "playbooks": []
 }

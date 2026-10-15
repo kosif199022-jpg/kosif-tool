@@ -1,14 +1,30 @@
 {
   "id": "pm-amitsingha89-150378",
   "name": "Handwoven textiles brand explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Diagrams",
-    "Kinetic type"
+    "diagrams",
+    "kinetic-type"
   ],
   "creator": "@AmitSingha89",
   "creator_url": "https://x.com/AmitSingha89/status/2103737604277780553",
   "page": "https://www.promptsmotion.com/amitsingha89-150378",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/64712773-cc9f-4e57-a4eb-3c2d1bffd47e/3d7117571aa83038.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9bf8235e-b16b-40d7-b540-43843b219ed0/c262c41e616dd5f1.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 174,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 11,
+  "listed": true,
+  "skill": "styles/pm-amitsingha89-150378/SKILL.md",
+  "playbooks": []
 }

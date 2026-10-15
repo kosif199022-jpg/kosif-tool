@@ -1,13 +1,29 @@
 {
   "id": "pm-mandelduck-95fd08",
   "name": "Starry Night cat-spotting game",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Characters"
+    "characters"
   ],
   "creator": "@MandelDuck",
   "creator_url": "https://x.com/MandelDuck/status/2103802923465768972",
   "page": "https://www.promptsmotion.com/mandelduck-95fd08",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/137ecda9-64cc-4001-8ef8-3af32ed1edc8/f9520d0c47cf7706.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/ee9dac02-d680-4d2c-bdf2-74d3bdd96779/c351885bbf348762.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 708
+  },
+  "aspect_label": "16:9",
+  "rank": 12,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 28,
+  "listed": true,
+  "skill": "styles/pm-mandelduck-95fd08/SKILL.md",
+  "playbooks": []
 }

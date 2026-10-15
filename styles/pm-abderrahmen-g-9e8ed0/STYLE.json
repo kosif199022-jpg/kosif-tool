@@ -1,17 +1,33 @@
 {
   "id": "pm-abderrahmen-g-9e8ed0",
   "name": "Sketchbook animals come alive",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "charts",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@abderrahmen_g",
   "creator_url": "https://x.com/abderrahmen_g/status/2103103836541899031",
   "page": "https://www.promptsmotion.com/abderrahmen-g-9e8ed0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/99c103d0-0c88-490e-93b1-0c0a87f00eae/7f44d45228981714.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0271efa7-fd44-4247-8997-a30a47f84088/87b0000037a1a847.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 50,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 74,
+  "listed": true,
+  "skill": "styles/pm-abderrahmen-g-9e8ed0/SKILL.md",
+  "playbooks": []
 }

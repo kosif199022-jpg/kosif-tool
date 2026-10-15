@@ -1,21 +1,67 @@
 {
   "id": "pm-ultimaxbt-bbebf5",
   "name": "Orange dot motion system",
+  "name_ar": "نظام حركي تقوده نقطة برتقالية واحدة",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Diagrams",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Music",
-    "Code"
+    "product-ui",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "music",
+    "code"
   ],
   "creator": "@ultimaxbt",
   "creator_url": "https://x.com/ultimaxbt/status/2107486052550062398",
   "page": "https://www.promptsmotion.com/ultimaxbt-bbebf5",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a0b42951-a2bb-4880-bea4-f5532ef4af4a/7b4ea842fbfa5203.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/b1563d6c-dbb9-4520-bf21-4bbd3ac29d45/8dedb028b7f93b33.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1078
+  },
+  "aspect_label": "16:9",
+  "rank": 7,
+  "published": "2026-10-06",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "Canvas",
+    "HTML"
+  ],
+  "source_prompt_words": 575,
+  "listed": true,
+  "skill": "styles/pm-ultimaxbt-bbebf5/SKILL.md",
+  "playbooks": [],
+  "summary_ar": "فيلم 2D مدته 15 ثانية تربط فيه نقطة برتقالية واحدة كل المشاهد: من مفتاح تبديل إلى حرف إلى رسم زنبركي إلى شكل إلى بطاقة ختامية.",
+  "summary_en": "A 15-second 2D film where one orange dot threads every scene: toggle, letter, spring graph, shape, halftone field and end card, looping back to the start.",
+  "keywords": [
+    "connected motion",
+    "spring graph",
+    "halftone grid",
+    "toggle click",
+    "shape morph",
+    "seamless loop",
+    "orbiting type",
+    "one accent",
+    "نقطة واحدة",
+    "حركة متصلة",
+    "رسم زنبركي",
+    "شبكة نقاط نصفية",
+    "حلقة سلسة",
+    "نص دائري"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "HTML Canvas",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-ultimaxbt-bbebf5/BRIEF.md"
 }

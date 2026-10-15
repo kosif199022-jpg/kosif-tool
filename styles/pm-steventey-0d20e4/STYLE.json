@@ -1,15 +1,56 @@
 {
   "id": "pm-steventey-0d20e4",
   "name": "Dub promo video",
+  "name_ar": "فيلم إطلاق منصة اختصار الروابط وتحليلاتها",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@steventey",
   "creator_url": "https://x.com/steventey/status/2103625902211088880",
   "page": "https://www.promptsmotion.com/steventey-0d20e4",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/35f4b03a-1c64-4e09-8972-368865bdcae1/e3665fe6dd106c79.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/8b247ef8-f34d-40c6-bfb9-50b3ae2c3525/b5f0a618e1cf9ac4.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 5,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "High",
+  "tech": [],
+  "source_prompt_words": 35,
+  "listed": true,
+  "skill": "styles/pm-steventey-0d20e4/SKILL.md",
+  "playbooks": [],
+  "summary_ar": "فيلم إطلاق SaaS مدته 15 ثانية يحول رابطاً طويلاً إلى رابط قصير ثم يفتح تحليلات النقرات كواجهة حية.",
+  "summary_en": "A 15-second SaaS launch film that squeezes a long URL into a short link, then unfolds its click analytics as a living product UI.",
+  "keywords": [
+    "link shortener",
+    "saas launch",
+    "analytics dashboard",
+    "url compression",
+    "qr code draw",
+    "world map dots",
+    "line chart draw-on",
+    "spring ui",
+    "اختصار الروابط",
+    "لوحة تحليلات",
+    "إطلاق منتج",
+    "واجهة منتج متحركة",
+    "عداد رقمي"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-steventey-0d20e4/BRIEF.md"
 }

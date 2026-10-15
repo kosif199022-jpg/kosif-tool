@@ -1,11 +1,27 @@
 {
   "id": "pm-kikelopezdesign-7cc9e8",
   "name": "Design portfolio video reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@kikelopezdesign",
   "creator_url": "https://x.com/kikelopezdesign/status/2103527289619173471",
   "page": "https://www.promptsmotion.com/kikelopezdesign-7cc9e8",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/8c62bd56-5714-419b-80d1-be19fbbc1a79/d9f564e6ecb51019.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/ea13cfd1-5d43-4bd5-b3fb-50df899b25d8/76d2631ef91d44b7.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 56,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 16,
+  "listed": true,
+  "skill": "styles/pm-kikelopezdesign-7cc9e8/SKILL.md",
+  "playbooks": []
 }

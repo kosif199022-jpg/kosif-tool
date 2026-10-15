@@ -1,14 +1,30 @@
 {
   "id": "pm-tequilafunks-97f6c9",
   "name": "Claude motion design reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@tequilafunks",
   "creator_url": "https://x.com/tequilafunks/status/2103528644828127728",
   "page": "https://www.promptsmotion.com/tequilafunks-97f6c9",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/bb8d9d1d-d3c5-4e4f-9d8d-cb317b6fecab/927e628a48af639c.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/5c4cbf07-b4d6-483a-b2a0-eccfd69d7649/75565b1963e03c9f.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 132,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-tequilafunks-97f6c9/SKILL.md",
+  "playbooks": []
 }

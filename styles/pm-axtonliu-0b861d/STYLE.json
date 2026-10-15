@@ -1,13 +1,32 @@
 {
   "id": "pm-axtonliu-0b861d",
   "name": "Pelican riding a bicycle",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Code"
+    "code"
   ],
   "creator": "@AxtonLiu",
   "creator_url": "https://x.com/AxtonLiu/status/2103119648271290566",
   "page": "https://www.promptsmotion.com/axtonliu-0b861d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/48042842-96aa-494d-8ec5-784ee66ce84f/53b151515008adb8.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9443ffab-32b0-4ca7-8fab-8deef1484081/8f8449c8deb12509.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 133,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "HTML",
+    "SVG"
+  ],
+  "source_prompt_words": 70,
+  "listed": true,
+  "skill": "styles/pm-axtonliu-0b861d/SKILL.md",
+  "playbooks": []
 }

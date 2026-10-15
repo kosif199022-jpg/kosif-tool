@@ -1,14 +1,30 @@
 {
   "id": "pm-sudiyasa-f48ac9",
   "name": "EyezOn 100 users thank-you",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@Sudiyasa_",
   "creator_url": "https://x.com/Sudiyasa_/status/2103638831669076027",
   "page": "https://www.promptsmotion.com/sudiyasa-f48ac9",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/24ac8049-bec8-471e-bade-ee4f86a99f7e/66a118febf079a99.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/3b8410d2-82cb-44b8-9171-32c4146a9e98/01037314faf2b734.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 221,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 36,
+  "listed": true,
+  "skill": "styles/pm-sudiyasa-f48ac9/SKILL.md",
+  "playbooks": []
 }

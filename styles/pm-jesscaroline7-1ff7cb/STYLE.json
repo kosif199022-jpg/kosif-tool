@@ -1,15 +1,31 @@
 {
   "id": "pm-jesscaroline7-1ff7cb",
   "name": "Ondefica app motion reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@jesscaroline7",
   "creator_url": "https://x.com/jesscaroline7/status/2104336637752955094",
   "page": "https://www.promptsmotion.com/jesscaroline7-1ff7cb",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/8c62301b-3296-44f3-ac5f-21025a750a34/4f92aa6a77036960.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0a371b8a-2752-4d53-87de-966ea4e40e20/59268a511ff8b38c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1920
+  },
+  "aspect_label": "9:16",
+  "rank": 211,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 25,
+  "listed": true,
+  "skill": "styles/pm-jesscaroline7-1ff7cb/SKILL.md",
+  "playbooks": []
 }

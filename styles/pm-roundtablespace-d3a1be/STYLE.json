@@ -1,15 +1,31 @@
 {
   "id": "pm-roundtablespace-d3a1be",
   "name": "Easing and morphing showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Shapes"
+    "charts",
+    "kinetic-type",
+    "shapes"
   ],
   "creator": "@RoundtableSpace",
   "creator_url": "https://x.com/RoundtableSpace/status/2104424611010232366",
   "page": "https://www.promptsmotion.com/roundtablespace-d3a1be",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/bf798e1b-1ef9-4f60-ae10-b30ab87c0231/5f07e9d4e3fe7f3c.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/dbaf80a0-2046-4494-81c9-c6518b3a5199/9ee21a6591f28000.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 77,
+  "published": "2026-09-28",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 18,
+  "listed": true,
+  "skill": "styles/pm-roundtablespace-d3a1be/SKILL.md",
+  "playbooks": []
 }

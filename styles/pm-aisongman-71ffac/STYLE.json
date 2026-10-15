@@ -1,11 +1,27 @@
 {
   "id": "pm-aisongman-71ffac",
   "name": "Pixel art card battle game",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@aisongman",
   "creator_url": "https://x.com/aisongman/status/2103763192971461057",
   "page": "https://www.promptsmotion.com/aisongman-71ffac",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/af9cfcdb-bbf3-45f5-9620-0f499d6482ea/d16e8ebc1f113006.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/57f23898-2bff-4229-9bbe-aa4c5e4fa3ce/9332c2617bfa9903.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 228,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 18,
+  "listed": true,
+  "skill": "styles/pm-aisongman-71ffac/SKILL.md",
+  "playbooks": []
 }

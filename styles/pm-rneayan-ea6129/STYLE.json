@@ -1,13 +1,29 @@
 {
   "id": "pm-rneayan-ea6129",
   "name": "Oscilloscope-style studio motion graphic",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@rneayan",
   "creator_url": "https://x.com/rneayan/status/2103401461837406275",
   "page": "https://www.promptsmotion.com/rneayan-ea6129",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/55450024-5d82-481e-a234-8458c1a9925f/9a51ef7a2a5755d4.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/f179f949-4afc-4beb-9b5d-c66d4b293ce0/54fef4f4bd0322a6.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 239,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 8,
+  "listed": true,
+  "skill": "styles/pm-rneayan-ea6129/SKILL.md",
+  "playbooks": []
 }

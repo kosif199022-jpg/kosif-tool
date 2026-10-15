@@ -1,22 +1,44 @@
 {
   "id": "pm-daniel-haida-8691d4",
   "name": "Taxtello bookkeeping app film",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Diagrams",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "product-ui",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@daniel_haida",
   "creator_url": "https://x.com/daniel_haida/status/2104139720829636937",
   "page": "https://www.promptsmotion.com/daniel-haida-8691d4",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/df78182e-9a17-452e-b8a6-325e4cea126c/2a7c361077060dc5.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/860a0836-30ac-4375-b217-68224dda3336/48d5d63ef929a3d8.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 209,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "D3",
+    "React",
+    "Remotion",
+    "SVG"
+  ],
+  "source_prompt_words": 2082,
+  "listed": true,
+  "skill": "styles/pm-daniel-haida-8691d4/SKILL.md",
+  "playbooks": []
 }

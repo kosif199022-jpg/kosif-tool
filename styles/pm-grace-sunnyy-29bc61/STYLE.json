@@ -1,13 +1,29 @@
 {
   "id": "pm-grace-sunnyy-29bc61",
   "name": "Keyframe motion design reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@Grace_sunnyy",
   "creator_url": "https://x.com/Grace_sunnyy/status/2106532575712022677",
   "page": "https://www.promptsmotion.com/grace-sunnyy-29bc61",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c75fde3f-12e3-4e30-ad3d-57ff6b7c0aed/003d84b9bf27aef5.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/de9ad38c-5c3e-4356-80a3-23e6fa7d14ac/1762d8fd72ae6191.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 51,
+  "published": "2026-10-03",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 59,
+  "listed": true,
+  "skill": "styles/pm-grace-sunnyy-29bc61/SKILL.md",
+  "playbooks": []
 }

@@ -1,14 +1,30 @@
 {
   "id": "pm-gizakdag-cf4ae6",
   "name": "Overthinking motion study",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@gizakdag",
   "creator_url": "https://x.com/gizakdag/status/2103566030916239768",
   "page": "https://www.promptsmotion.com/gizakdag-cf4ae6",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/004631b0-217d-4991-b692-9b693b4bca82/0947f41a5a842d5f.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7c934652-dbf1-4a21-a9a1-ab28bbc5ee6b/25d220986919abfc.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1920
+  },
+  "aspect_label": "9:16",
+  "rank": 194,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 30,
+  "listed": true,
+  "skill": "styles/pm-gizakdag-cf4ae6/SKILL.md",
+  "playbooks": []
 }

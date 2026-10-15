@@ -1,15 +1,31 @@
 {
   "id": "pm-lexnlin-6161a6",
   "name": "Cinetic skill launch film",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
   "category": [
-    "Product UI",
-    "Characters",
-    "Code"
+    "product-ui",
+    "characters",
+    "code"
   ],
   "creator": "@LexnLin",
   "creator_url": "https://x.com/LexnLin/status/2106891315371737480",
   "page": "https://www.promptsmotion.com/lexnlin-6161a6",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/6553af08-f681-4354-af9b-ec290497d129/bd20562776d3f55a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0782d30b-ede9-4b29-a4c3-9dc8c50cdb05/600223fbabd79fa2.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 187,
+  "published": "2026-10-04",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 27,
+  "listed": true,
+  "skill": "styles/pm-lexnlin-6161a6/SKILL.md",
+  "playbooks": []
 }

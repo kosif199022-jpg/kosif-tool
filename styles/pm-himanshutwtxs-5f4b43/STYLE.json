@@ -1,14 +1,30 @@
 {
   "id": "pm-himanshutwtxs-5f4b43",
   "name": "Motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@himanshutwtxs",
   "creator_url": "https://x.com/himanshutwtxs/status/2103495232637882858",
   "page": "https://www.promptsmotion.com/himanshutwtxs-5f4b43",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/d4399a4c-433b-460b-8f5d-0501ce557e14/5a967cf7fb124ae3.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/ffcc6a07-c30e-4f82-b83a-0177f99320e1/a7487fb524cc94c3.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 63,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-himanshutwtxs-5f4b43/SKILL.md",
+  "playbooks": []
 }

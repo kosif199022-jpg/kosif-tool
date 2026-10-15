@@ -1,14 +1,30 @@
 {
   "id": "pm-sudeepsd-1a3485",
   "name": "Flexprice motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@sudeepsd_",
   "creator_url": "https://x.com/sudeepsd_/status/2103776623548158453",
   "page": "https://www.promptsmotion.com/sudeepsd-1a3485",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/8bafc4aa-4a3e-489d-b47f-bab140d48395/53534d3b546fbb53.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/fbe48362-9836-4bb4-b537-1c01eb8739fc/f67019326e33e095.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 145,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 32,
+  "listed": true,
+  "skill": "styles/pm-sudeepsd-1a3485/SKILL.md",
+  "playbooks": []
 }

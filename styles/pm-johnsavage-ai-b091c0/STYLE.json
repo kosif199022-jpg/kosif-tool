@@ -1,15 +1,31 @@
 {
   "id": "pm-johnsavage-ai-b091c0",
   "name": "Code-only motion design reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Code"
+    "charts",
+    "kinetic-type",
+    "code"
   ],
   "creator": "@johnsavage_ai",
   "creator_url": "https://x.com/johnsavage_ai/status/2103600308010041677",
   "page": "https://www.promptsmotion.com/johnsavage-ai-b091c0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c37fe97c-2f55-4cc9-a9bf-9b904c4038d1/0d19454ecd0d67d8.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/c725b72a-4356-4570-9069-f4e98c8e60c9/2ec0020a6bbb859b.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 170,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 29,
+  "listed": true,
+  "skill": "styles/pm-johnsavage-ai-b091c0/SKILL.md",
+  "playbooks": []
 }

@@ -1,12 +1,27 @@
 {
   "id": "plotter",
   "name": "قلم البلوتر",
+  "name_ar": "قلم البلوتر",
+  "origin": "KOSIF original style",
+  "type": "Style",
   "category": [
-    "الرسم اليدوي"
+    "hand-drawn",
+    "shapes"
   ],
+  "creator": "KOSIF + attributed sources",
+  "creator_url": null,
   "page": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/plotter",
   "video": "https://github.com/motalim-ai/motion-starter-kit/blob/main/styles/plotter/reference.mp4",
   "poster": "https://github.com/motalim-ai/motion-starter-kit/blob/main/styles/plotter/preview.jpg",
-  "creator": "KOSIF + attributed sources",
-  "origin": "KOSIF original style"
+  "aspect": null,
+  "aspect_label": null,
+  "rank": null,
+  "published": null,
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": null,
+  "listed": true,
+  "skill": "styles/plotter/SKILL.md",
+  "playbooks": []
 }

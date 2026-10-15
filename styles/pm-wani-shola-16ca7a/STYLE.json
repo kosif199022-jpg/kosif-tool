@@ -1,19 +1,37 @@
 {
   "id": "pm-wani-shola-16ca7a",
   "name": "Developer portfolio site showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Phone",
-    "Charts",
-    "Kinetic type",
-    "Characters",
-    "Music",
-    "Code"
+    "product-ui",
+    "phone",
+    "charts",
+    "kinetic-type",
+    "characters",
+    "music",
+    "code"
   ],
   "creator": "@wani_shola",
   "creator_url": "https://x.com/wani_shola/status/2103769906638459278",
   "page": "https://www.promptsmotion.com/wani-shola-16ca7a",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/9b2bb665-4b76-4c0a-8b8d-e32e4af7c6ce/be3ccb5ae8a467c2.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/aeaf45b0-6d86-4454-aa09-9c7ebe0eba50/a2fe86a3ac1eca23.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 154,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "Remotion"
+  ],
+  "source_prompt_words": 173,
+  "listed": true,
+  "skill": "styles/pm-wani-shola-16ca7a/SKILL.md",
+  "playbooks": []
 }

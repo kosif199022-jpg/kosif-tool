@@ -1,15 +1,33 @@
 {
   "id": "pm-alex-prompter-1ea044",
   "name": "Animated business explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Diagrams",
-    "Kinetic type",
-    "Code"
+    "diagrams",
+    "kinetic-type",
+    "code"
   ],
   "creator": "@alex_prompter",
   "creator_url": "https://x.com/alex_prompter/status/2103499977632997524",
   "page": "https://www.promptsmotion.com/alex-prompter-1ea044",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a71d3075-830a-487e-81f2-85f81c66a82b/209b45b32dc0de89.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/76913350-dbb9-42b5-a0f9-9568acb41061/8febee370dfa6c1a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 66,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "HTML"
+  ],
+  "source_prompt_words": 63,
+  "listed": true,
+  "skill": "styles/pm-alex-prompter-1ea044/SKILL.md",
+  "playbooks": []
 }

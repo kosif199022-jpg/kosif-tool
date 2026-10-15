@@ -1,13 +1,29 @@
 {
   "id": "pm-listudio-820c7b",
   "name": "GenVizu product launch",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI"
+    "product-ui"
   ],
   "creator": "@listudio",
   "creator_url": "https://x.com/listudio/status/2104431418114023803",
   "page": "https://www.promptsmotion.com/listudio-820c7b",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/212f19fa-73bd-499a-b7ae-246e0faeaadc/c268b0b1bbcd45a1.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/b2c2f1c4-af53-410a-853f-9ca0b4fd0798/c2a8183547d281d0.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 52,
+  "published": "2026-09-28",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 19,
+  "listed": true,
+  "skill": "styles/pm-listudio-820c7b/SKILL.md",
+  "playbooks": []
 }

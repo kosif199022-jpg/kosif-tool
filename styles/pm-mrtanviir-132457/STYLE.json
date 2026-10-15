@@ -1,14 +1,30 @@
 {
   "id": "pm-mrtanviir-132457",
   "name": "Claude motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@mrtanviir",
   "creator_url": "https://x.com/mrtanviir/status/2103608767309132205",
   "page": "https://www.promptsmotion.com/mrtanviir-132457",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/71a7a873-cabb-43ea-949e-3f0354dc2088/66fe0e0e14dad1d9.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0d6505cd-db38-4176-926c-d6862ee5419f/62399dc3084e4521.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 33,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-mrtanviir-132457/SKILL.md",
+  "playbooks": []
 }

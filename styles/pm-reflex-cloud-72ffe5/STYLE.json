@@ -1,17 +1,33 @@
 {
   "id": "pm-reflex-cloud-72ffe5",
   "name": "Reflex brand motion reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Shapes",
-    "Photos",
-    "Music"
+    "charts",
+    "kinetic-type",
+    "shapes",
+    "photos",
+    "music"
   ],
   "creator": "@reflex_cloud",
   "creator_url": "https://x.com/reflex_cloud/status/2103552840027304046",
   "page": "https://www.promptsmotion.com/reflex-cloud-72ffe5",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/47a970ed-ad4a-4286-bd3b-d81825034ccb/e4c254addf4166ad.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/1133e8cd-b354-439f-b48d-ac7fd23b6d73/6f4f542818b6bf6c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 35,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 95,
+  "listed": true,
+  "skill": "styles/pm-reflex-cloud-72ffe5/SKILL.md",
+  "playbooks": []
 }

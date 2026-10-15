@@ -1,13 +1,29 @@
 {
   "id": "pm-visheshbaghell-3aba37",
   "name": "Tally product demo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI"
+    "product-ui"
   ],
   "creator": "@VisheshBaghell",
   "creator_url": "https://x.com/VisheshBaghell/status/2103772327146119508",
   "page": "https://www.promptsmotion.com/visheshbaghell-3aba37",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/ea1b1a2d-87ab-45e0-98a1-ad442b9ed8a4/d90234092af2e34a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/2d206d03-8f92-4b02-b1c0-b9e0d6752600/446e6549b371ce07.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 206,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 18,
+  "listed": true,
+  "skill": "styles/pm-visheshbaghell-3aba37/SKILL.md",
+  "playbooks": []
 }

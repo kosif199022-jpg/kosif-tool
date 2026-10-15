@@ -1,11 +1,27 @@
 {
   "id": "pm-slvdev-64c45a",
   "name": "Claude self-promo spot",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@slvDev",
   "creator_url": "https://x.com/slvDev/status/2103569170075975986",
   "page": "https://www.promptsmotion.com/slvdev-64c45a",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/ea2cec38-b231-441e-9eb1-0c54e6d7d0cf/b7adcab54c5f3849.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/d3eec041-4c83-4268-bdc8-e886c43b907d/97fcc8e46ec3cabc.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 162,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 5,
+  "listed": true,
+  "skill": "styles/pm-slvdev-64c45a/SKILL.md",
+  "playbooks": []
 }

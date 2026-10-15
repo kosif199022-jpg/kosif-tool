@@ -1,11 +1,27 @@
 {
   "id": "pm-hbcoop-de365c",
   "name": "Full Stop figure sequence",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@HBCoop_",
   "creator_url": "https://x.com/HBCoop_/status/2107139305324122491",
   "page": "https://www.promptsmotion.com/hbcoop-de365c",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/1457c28e-6c5e-4c84-b228-2b7b95bc61ac/3144fee272b6cd09.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/cad6ddfa-213e-4c83-a591-d6296fc10e3d/7652bb807f64c5ff.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 143,
+  "published": "2026-10-05",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 17,
+  "listed": true,
+  "skill": "styles/pm-hbcoop-de365c/SKILL.md",
+  "playbooks": []
 }

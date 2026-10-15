@@ -1,14 +1,30 @@
 {
   "id": "pm-codestackr-c071bf",
   "name": "Claude motion reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@codeSTACKr",
   "creator_url": "https://x.com/codeSTACKr/status/2103656229717328129",
   "page": "https://www.promptsmotion.com/codestackr-c071bf",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/23a1d65f-0075-4ccc-9776-b36d6c01285d/5be8db6ff228073e.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/305d02dc-c421-489d-8c90-9c78b2919233/7af473b2cea0f2fb.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 201,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-codestackr-c071bf/SKILL.md",
+  "playbooks": []
 }

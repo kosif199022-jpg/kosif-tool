@@ -1,15 +1,33 @@
 {
   "id": "pm-henkpoley-3d3407",
   "name": "Deliberately terrible motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Code"
+    "charts",
+    "kinetic-type",
+    "code"
   ],
   "creator": "@HenkPoley",
   "creator_url": "https://x.com/HenkPoley/status/2104220387613761980",
   "page": "https://www.promptsmotion.com/henkpoley-3d3407",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/9d93497d-6723-42ab-ae64-f9f07e539308/adcdf5ae21f5580c.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/4eaa99a6-95ba-4d0a-afe0-e125c06a967b/0f9fc337dffdbe7c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1152,
+    "h": 720
+  },
+  "aspect_label": "other",
+  "rank": 163,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "HTML"
+  ],
+  "source_prompt_words": 37,
+  "listed": true,
+  "skill": "styles/pm-henkpoley-3d3407/SKILL.md",
+  "playbooks": []
 }

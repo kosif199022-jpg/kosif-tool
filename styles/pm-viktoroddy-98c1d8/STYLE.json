@@ -1,13 +1,29 @@
 {
   "id": "pm-viktoroddy-98c1d8",
   "name": "MotionSites one million visitors",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI"
+    "product-ui"
   ],
   "creator": "@viktoroddy",
   "creator_url": "https://x.com/viktoroddy/status/2103802280617402509",
   "page": "https://www.promptsmotion.com/viktoroddy-98c1d8",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/e24720eb-bc19-4171-b119-97d807f1d978/dd2fb288b8ae9b8c.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/b50589c7-9540-431b-8b1a-6ec3ed8ba553/ab0b817e28ed32c5.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 131,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 18,
+  "listed": true,
+  "skill": "styles/pm-viktoroddy-98c1d8/SKILL.md",
+  "playbooks": []
 }

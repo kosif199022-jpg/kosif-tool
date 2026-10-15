@@ -1,13 +1,29 @@
 {
   "id": "pm-apoorvjain25-d24184",
   "name": "Photon journey from the Sun",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Photos"
+    "photos"
   ],
   "creator": "@apoorvjain25",
   "creator_url": "https://x.com/apoorvjain25/status/2104818940467945542",
   "page": "https://www.promptsmotion.com/apoorvjain25-d24184",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/9d5ffee9-7bab-4b66-b805-09bb9cd15aad/7c9a63dd3e5d12ea.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e0b8e1c1-70ff-4d87-bdb4-fc11f05c51cf/ba80050c9709debe.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 173,
+  "published": "2026-09-29",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 11,
+  "listed": true,
+  "skill": "styles/pm-apoorvjain25-d24184/SKILL.md",
+  "playbooks": []
 }

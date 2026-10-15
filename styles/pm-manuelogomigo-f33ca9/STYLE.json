@@ -1,15 +1,31 @@
 {
   "id": "pm-manuelogomigo-f33ca9",
   "name": "Flowdrive motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Diagrams",
-    "Kinetic type"
+    "charts",
+    "diagrams",
+    "kinetic-type"
   ],
   "creator": "@manuelogomigo",
   "creator_url": "https://x.com/manuelogomigo/status/2103614667038052364",
   "page": "https://www.promptsmotion.com/manuelogomigo-f33ca9",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/b9056d57-c521-41d7-afe6-c677704a043d/3f8ca9e20ff9a87e.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/af6c0395-7ba3-4737-abb0-6e822d02c4c0/0c8b945fa1b8a22a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 215,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-manuelogomigo-f33ca9/SKILL.md",
+  "playbooks": []
 }

@@ -1,13 +1,29 @@
 {
   "id": "pm-jazzen-chen-4542ae",
   "name": "AgentHud project motion video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@Jazzen_Chen",
   "creator_url": "https://x.com/Jazzen_Chen/status/2103751442393894989",
   "page": "https://www.promptsmotion.com/jazzen-chen-4542ae",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/00d7e9a1-23c3-4525-b909-e307fcdeaab2/163da1ff9ba29ac8.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/5543b7c5-633c-4e33-8d3c-d49fcbaa7f95/323d9781a9288b10.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 175,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 10,
+  "listed": true,
+  "skill": "styles/pm-jazzen-chen-4542ae/SKILL.md",
+  "playbooks": []
 }

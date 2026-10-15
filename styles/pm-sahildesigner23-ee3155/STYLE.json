@@ -1,14 +1,30 @@
 {
   "id": "pm-sahildesigner23-ee3155",
   "name": "3D motion design showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@sahildesigner23",
   "creator_url": "https://x.com/sahildesigner23/status/2103536115563307120",
   "page": "https://www.promptsmotion.com/sahildesigner23-ee3155",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/672167c7-8411-45f7-b49f-52072cbdc041/a5bf83804f681af0.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/6b7facd2-9a05-4056-bc40-6b17462bca60/782d605d9e20331a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 232,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-sahildesigner23-ee3155/SKILL.md",
+  "playbooks": []
 }

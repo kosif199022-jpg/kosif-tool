@@ -1,21 +1,41 @@
 {
   "id": "pm-demonugc-4c5753",
   "name": "Morphing UI states loop",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "product-ui",
+    "charts",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@demonugc",
   "creator_url": "https://x.com/demonugc/status/2103526713208525162",
   "page": "https://www.promptsmotion.com/demonugc-4c5753",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/068d412d-655f-46e3-9fbe-d8c7e8ddbc7d/e0917508396c7187.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e4a82ee1-710c-4c65-99a0-062d19f893b9/27f61cae9bcb3c94.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1440,
+    "h": 1440
+  },
+  "aspect_label": "1:1",
+  "rank": 25,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "Canvas",
+    "HTML"
+  ],
+  "source_prompt_words": 474,
+  "listed": true,
+  "skill": "styles/pm-demonugc-4c5753/SKILL.md",
+  "playbooks": []
 }

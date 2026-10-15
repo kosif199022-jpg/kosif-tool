@@ -1,14 +1,30 @@
 {
   "id": "pm-ismailfahmi-557268",
   "name": "Drone Emprit showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@ismailfahmi",
   "creator_url": "https://x.com/ismailfahmi/status/2103557833153466403",
   "page": "https://www.promptsmotion.com/ismailfahmi-557268",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f2156077-c59b-446c-bc14-2fad7672aeba/da961ce525c637b1.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/55d22f53-e4d3-445b-a069-84a6a0d40833/489767106eecc13d.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 192,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 27,
+  "listed": true,
+  "skill": "styles/pm-ismailfahmi-557268/SKILL.md",
+  "playbooks": []
 }

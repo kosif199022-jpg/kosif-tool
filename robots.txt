@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kosif199022-jpg.github.io/kosif-tool/sitemap.xml

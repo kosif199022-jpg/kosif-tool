@@ -1,15 +1,33 @@
 {
   "id": "pm-xelandre-363f00",
   "name": "SaaS product launch video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Music",
-    "Code"
+    "product-ui",
+    "music",
+    "code"
   ],
   "creator": "@xelandre__",
   "creator_url": "https://x.com/xelandre__/status/2103473030160687413",
   "page": "https://www.promptsmotion.com/xelandre-363f00",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/8466b558-7ad1-4d08-8bac-ce62217d4946/065fbe97e3881627.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9354ca00-5096-4307-a992-15b961c5bbd7/eda4e766176d7967.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 41,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "HTML"
+  ],
+  "source_prompt_words": 34,
+  "listed": true,
+  "skill": "styles/pm-xelandre-363f00/SKILL.md",
+  "playbooks": []
 }

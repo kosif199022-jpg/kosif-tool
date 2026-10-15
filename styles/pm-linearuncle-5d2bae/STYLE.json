@@ -1,13 +1,31 @@
 {
   "id": "pm-linearuncle-5d2bae",
   "name": "Derivative concept explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Diagrams"
+    "diagrams"
   ],
   "creator": "@LinearUncle",
   "creator_url": "https://x.com/LinearUncle/status/2103128559174971663",
   "page": "https://www.promptsmotion.com/linearuncle-5d2bae",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/9b3c3322-32a6-4ab8-9372-a8393c4e3d2b/7bff7a648fae9b92.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/84370cff-c4ff-4371-8eeb-f271110e3d6f/74de9410e6981d70.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 129,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "Manim"
+  ],
+  "source_prompt_words": 31,
+  "listed": true,
+  "skill": "styles/pm-linearuncle-5d2bae/SKILL.md",
+  "playbooks": []
 }

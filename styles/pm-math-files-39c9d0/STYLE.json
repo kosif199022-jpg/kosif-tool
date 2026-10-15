@@ -1,14 +1,30 @@
 {
   "id": "pm-math-files-39c9d0",
   "name": "Mathematics motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@Math_files",
   "creator_url": "https://x.com/Math_files/status/2104486181853610052",
   "page": "https://www.promptsmotion.com/math-files-39c9d0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/fb0e3f48-a4e0-4562-8dc9-868f2fc14ecc/8b14f8ba173460ba.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0b07be56-c40a-4829-8b67-60deb9e05b86/314ff14c7aaed8fa.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 197,
+  "published": "2026-09-28",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 32,
+  "listed": true,
+  "skill": "styles/pm-math-files-39c9d0/SKILL.md",
+  "playbooks": []
 }

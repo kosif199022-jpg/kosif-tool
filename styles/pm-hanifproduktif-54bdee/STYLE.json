@@ -1,13 +1,29 @@
 {
   "id": "pm-hanifproduktif-54bdee",
   "name": "Motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Kinetic type"
+    "kinetic-type"
   ],
   "creator": "@hanifproduktif",
   "creator_url": "https://x.com/hanifproduktif/status/2103404901451829311",
   "page": "https://www.promptsmotion.com/hanifproduktif-54bdee",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/3009bf67-1bca-485e-a4e5-9b91fffdfd3b/33f99830ea8a3800.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/ba463d51-20d5-4974-ab98-b42a9643d1aa/5a7d429876800414.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 15,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 23,
+  "listed": true,
+  "skill": "styles/pm-hanifproduktif-54bdee/SKILL.md",
+  "playbooks": []
 }

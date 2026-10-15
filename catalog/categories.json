@@ -1,0 +1,16 @@
+[
+  {"key": "product-ui",   "en": "Product UI",   "ar": "واجهات المنتج",      "legacy": ["Product UI", "واجهات"],    "playbook": "playbooks/product-ui.md"},
+  {"key": "phone",        "en": "Phone",        "ar": "هاتف",               "legacy": ["Phone"],                   "playbook": "playbooks/phone.md"},
+  {"key": "charts",       "en": "Charts",       "ar": "رسوم بيانية",        "legacy": ["Charts", "بيانات"],        "playbook": "playbooks/charts.md"},
+  {"key": "diagrams",     "en": "Diagrams",     "ar": "مخططات",             "legacy": ["Diagrams"],                "playbook": "playbooks/diagrams.md"},
+  {"key": "kinetic-type", "en": "Kinetic type", "ar": "تايبوغرافي متحرك",   "legacy": ["Kinetic type", "خطوط"],    "playbook": "playbooks/kinetic-type.md"},
+  {"key": "shapes",       "en": "Shapes",       "ar": "أشكال",              "legacy": ["Shapes"],                  "playbook": "playbooks/shapes.md"},
+  {"key": "particles",    "en": "Particles",    "ar": "جسيمات",             "legacy": ["Particles"],               "playbook": "playbooks/particles.md"},
+  {"key": "characters",   "en": "Characters",   "ar": "شخصيات",             "legacy": ["Characters", "الشخصيات"],  "playbook": "playbooks/characters.md"},
+  {"key": "photos",       "en": "Photos",       "ar": "صور",                "legacy": ["Photos"],                  "playbook": "playbooks/photos.md"},
+  {"key": "music",        "en": "Music",        "ar": "موسيقى",             "legacy": ["Music"],                   "playbook": "playbooks/music.md"},
+  {"key": "code",         "en": "Code",         "ar": "كود",                "legacy": ["Code"],                    "playbook": "playbooks/code.md"},
+  {"key": "hand-drawn",   "en": "Hand-drawn",   "ar": "رسم يدوي",           "legacy": ["الرسم اليدوي"],            "playbook": "playbooks/hand-drawn.md"},
+  {"key": "3d",           "en": "3D",           "ar": "ثلاثي الأبعاد",      "legacy": ["3D"],                      "playbook": "playbooks/3d.md"},
+  {"key": "ads",          "en": "Ads",          "ar": "إعلانات",            "legacy": ["إعلانات"],                 "playbook": "playbooks/ads.md"}
+]

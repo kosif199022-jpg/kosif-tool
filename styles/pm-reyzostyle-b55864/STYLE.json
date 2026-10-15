@@ -1,15 +1,31 @@
 {
   "id": "pm-reyzostyle-b55864",
   "name": "Chunku product promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@reyzostyle",
   "creator_url": "https://x.com/reyzostyle/status/2105421514665542114",
   "page": "https://www.promptsmotion.com/reyzostyle-b55864",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/dfbfe013-4f9b-4fe8-b3fd-84c2b0bea4da/1ebd46ec04e2b6d8.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/59144a44-7a98-4f52-8b17-b7b109016eb5/37a27cb7ee70e28c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 212,
+  "published": "2026-09-30",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 29,
+  "listed": true,
+  "skill": "styles/pm-reyzostyle-b55864/SKILL.md",
+  "playbooks": []
 }

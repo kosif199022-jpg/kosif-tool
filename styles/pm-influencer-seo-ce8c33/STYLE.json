@@ -1,14 +1,30 @@
 {
   "id": "pm-influencer-seo-ce8c33",
   "name": "fal motion design showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@influencer_seo",
   "creator_url": "https://x.com/influencer_seo/status/2104827314400026936",
   "page": "https://www.promptsmotion.com/influencer-seo-ce8c33",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/6bcbc0d9-0ebc-49c1-b9a3-f8e30674d3e0/ccede8070131b87e.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/effabe1e-1512-4555-9419-4b5cd9a1d3cd/f3907192ae90eeef.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 87,
+  "published": "2026-09-29",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 32,
+  "listed": true,
+  "skill": "styles/pm-influencer-seo-ce8c33/SKILL.md",
+  "playbooks": []
 }

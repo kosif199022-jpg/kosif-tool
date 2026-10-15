@@ -1,14 +1,30 @@
 {
   "id": "pm-ndhabarde11-f155b4",
   "name": "Motion designer portrait showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@ndhabarde11",
   "creator_url": "https://x.com/ndhabarde11/status/2103832593355686104",
   "page": "https://www.promptsmotion.com/ndhabarde11-f155b4",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f82c7276-abc2-4b19-b524-aebaa625bbdf/214f276f5725a6c6.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/ef247f83-fec3-442c-a74d-874ebd6cbf63/7f01f3f56229f4f6.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1920
+  },
+  "aspect_label": "9:16",
+  "rank": 149,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 29,
+  "listed": true,
+  "skill": "styles/pm-ndhabarde11-f155b4/SKILL.md",
+  "playbooks": []
 }

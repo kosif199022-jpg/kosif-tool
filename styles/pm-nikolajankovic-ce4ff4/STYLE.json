@@ -1,14 +1,30 @@
 {
   "id": "pm-nikolajankovic-ce4ff4",
   "name": "DeFi Saver stop-motion explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Diagrams",
-    "Characters"
+    "diagrams",
+    "characters"
   ],
   "creator": "@_nikolajankovic",
   "creator_url": "https://x.com/_nikolajankovic/status/2102867033100616097",
   "page": "https://www.promptsmotion.com/nikolajankovic-ce4ff4",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/db07d079-a0dd-411b-a899-de7c22ae3fc6/f1b1028bfbbd73eb.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/fe4972f9-50be-478b-88b1-e3b42de8c8cf/25e112e25f767ce3.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 848
+  },
+  "aspect_label": "other",
+  "rank": 76,
+  "published": "2026-09-23",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 15,
+  "listed": true,
+  "skill": "styles/pm-nikolajankovic-ce4ff4/SKILL.md",
+  "playbooks": []
 }

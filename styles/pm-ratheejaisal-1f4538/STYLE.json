@@ -1,13 +1,29 @@
 {
   "id": "pm-ratheejaisal-1f4538",
   "name": "founder.page launch video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI"
+    "product-ui"
   ],
   "creator": "@RatheeJaisal",
   "creator_url": "https://x.com/RatheeJaisal/status/2103774864742154698",
   "page": "https://www.promptsmotion.com/ratheejaisal-1f4538",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/2de11de5-a364-4eb2-a2d9-4a9c33888c4c/082ae40fc7e74279.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/46cfb56d-fd64-42f4-bcf5-3af814dcfd79/60dead606ed7c2bf.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 80,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 24,
+  "listed": true,
+  "skill": "styles/pm-ratheejaisal-1f4538/SKILL.md",
+  "playbooks": []
 }

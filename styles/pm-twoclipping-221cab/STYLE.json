@@ -1,23 +1,70 @@
 {
   "id": "pm-twoclipping-221cab",
   "name": "Photo print app launch film",
+  "name_ar": "فيلم إطلاق تطبيق طباعة الصور بلقطة واحدة",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Phone",
-    "Charts",
-    "Diagrams",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "product-ui",
+    "phone",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@twoclipping",
   "creator_url": "https://x.com/twoclipping/status/2103835273813496100",
   "page": "https://www.promptsmotion.com/twoclipping-221cab",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/65e786ed-b682-4a01-82b5-18cec18c8ac0/d39558a75554ad37.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/98dc9583-11dd-4c64-9cfd-1b299c7ade7c/4562997504608b29.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1440,
+    "h": 1440
+  },
+  "aspect_label": "1:1",
+  "rank": 2,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "Canvas",
+    "HTML",
+    "SVG"
+  ],
+  "source_prompt_words": 912,
+  "listed": true,
+  "skill": "styles/pm-twoclipping-221cab/SKILL.md",
+  "playbooks": [],
+  "summary_ar": "فيلم إطلاق مربع بأسلوب عروض آبل، لقطة متصلة واحدة بلا قطع، كل مشهد يتولد من سابقه على إيقاع 120 نبضة.",
+  "summary_en": "A square Apple-style launch film in one continuous take where every scene is sculpted out of the previous one on a 120 BPM beat grid.",
+  "keywords": [
+    "liquid glass",
+    "iris wipe",
+    "continuous take",
+    "beat-synced",
+    "cursor-driven ui",
+    "morph transitions",
+    "closed-form spring",
+    "playwright render",
+    "زجاج سائل",
+    "لقطة واحدة متصلة",
+    "مزامنة الإيقاع",
+    "تحولات شكلية",
+    "فيلم إطلاق منتج",
+    "طباعة صور"
+  ],
+  "difficulty": 5,
+  "duration_s": 27,
+  "stack": [
+    "HTML Canvas",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-twoclipping-221cab/BRIEF.md"
 }

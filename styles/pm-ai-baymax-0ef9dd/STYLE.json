@@ -1,14 +1,30 @@
 {
   "id": "pm-ai-baymax-0ef9dd",
   "name": "FigPad product promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Code"
+    "product-ui",
+    "code"
   ],
   "creator": "@Ai_Baymax",
   "creator_url": "https://x.com/Ai_Baymax/status/2103411004902416787",
   "page": "https://www.promptsmotion.com/ai-baymax-0ef9dd",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/4d08646b-dcd2-4045-904a-089ed9a5c0a9/9d3541af9a9d2c4e.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/fdeee4c9-687e-4b50-a52d-63dc63527823/e146d18aaca39e26.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 116,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 10,
+  "listed": true,
+  "skill": "styles/pm-ai-baymax-0ef9dd/SKILL.md",
+  "playbooks": []
 }

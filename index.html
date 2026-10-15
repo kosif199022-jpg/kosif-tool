@@ -1,57 +1,60 @@
 <!doctype html>
-<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KOSIF TOOL — أطلس استايلات الأنيميشن</title>
-<meta name="description" content="مكتبة استايلات الموشن جرافيك، مع روابط الفيديوهات الأصلية وتعليمات Claude التنفيذية">
-<style>
-:root{color-scheme:dark;--bg:#080e19;--card:#111c2c;--stroke:#263650;--text:#edf5ff;--muted:#a6b5ca;--a:#84e5d3}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 2%,#173b43 0,transparent 36%),var(--bg);color:var(--text);font:16px system-ui,-apple-system,Segoe UI,Tahoma,sans-serif}
-main{max-width:1420px;margin:auto;padding:30px 22px}header{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-h1{font-size:clamp(26px,4vw,44px);letter-spacing:-.035em;margin:.5rem 0}p{color:var(--muted);line-height:1.75}a{color:var(--a)}.tag{color:var(--a);background:#173330;display:inline-block;border:1px solid #31564f;padding:5px 12px;border-radius:30px;font-size:13px}
-.controls{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0;align-items:center}
-input,select{background:#101c2c;border:1px solid #31445a;border-radius:11px;padding:13px;color:white;font:inherit}
-input{flex:2;min-width:250px}select{flex:1;min-width:150px}
-small,.meta{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.card{border:1px solid var(--stroke);background:linear-gradient(170deg,#162436,#0d1624);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
-.photo{aspect-ratio:16/9;position:relative;background:linear-gradient(45deg,#153744,#21263e);display:flex;align-items:center;justify-content:center}
-.photo img{display:block;object-fit:cover;width:100%;height:100%;min-height:0}
-.photo span{position:absolute;right:9px;bottom:9px;background:#06111ddd;color:#e8faff;border-radius:6px;padding:4px 8px;font-size:12px}
-.body{padding:16px;display:flex;flex-direction:column;gap:9px;flex:1}h2{font-size:17px;line-height:1.4;margin:0;overflow-wrap:anywhere}.id{color:#9bc0c7;font:12px ui-monospace,monospace;direction:ltr;text-align:right}
-.chips{display:flex;flex-wrap:wrap;gap:6px;min-height:28px}.chip{font-size:11px;padding:5px 8px;border-radius:15px;background:#27394c;color:#c6dbe8}
-.buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px}.buttons a,.buttons button{border:1px solid #3d6370;color:#eef;border-radius:9px;background:#14293b;padding:8px 12px;text-decoration:none;font-size:13px;cursor:pointer;font:inherit}
-.buttons a:hover,.buttons button:hover{background:#235063}
-#status{margin:12px 0;font-size:14px;color:#b6d7d5}
-footer{margin-top:40px;border-top:1px solid var(--stroke);padding:25px 0;font-size:13px}
-dialog{background:#111c2c;border:1px solid #3b5b67;border-radius:18px;color:white;max-width:95vw;width:860px;padding:20px}dialog::backdrop{background:#000c}dialog video{width:100%;max-height:72vh}
-@media(max-width:550px){main{padding:16px 12px}.grid{grid-template-columns:1fr}.controls{margin:14px 0}}
-</style></head>
-<body><main><header><div><span class="tag">KOSIF TOOL · Motion Atlas</span><h1>أطلس الموشن جرافيك والأنيميشن</h1><p>ابحث عن استايل، شاهد الفيديو من مصدره، وانسخ أمرًا جاهزًا لكلاود يقرأ دليل التنفيذ الخاص به.</p></div><a href="https://github.com/kosif199022-jpg/kosif-tool">فتح المستودع على GitHub ↗</a></header>
-<div class="controls"><input id="q" type="search" placeholder="ابحث بالاسم أو الـ ID أو اسم المبدع…"><select id="source"><option value="">كل المصادر</option><option value="PromptsMotion">PromptsMotion</option><option value="KOSIF original style">KOSIF original</option></select><select id="cat"><option value="">كل التصنيفات</option></select></div><div id="status" role="status">جاري تحميل الفهرس…</div><div class="grid" id="grid"></div>
-<footer>مكتبة مراجع تنفيذية مستقلة. روابط الفيديوهات والصور تشير إلى المواقع الأصلية، وحقوقها لأصحابها. ملفات SKILL.md برومبتات جديدة من إعداد KOSIF، وليست نسخًا من برومبتات أصحاب الأعمال. <a href="https://www.promptsmotion.com/terms">شروط المصدر</a>.</footer>
-<dialog id="viewer"><button id="close">إغلاق ✕</button><h2 id="vtitle"></h2><video id="vid" controls playsinline preload="none"></video><p><a id="origin" target="_blank" rel="noopener noreferrer">شاهد الفيديو في المصدر الأصلي ↗</a></p></dialog>
-</main><script>
-const grid=document.getElementById('grid'),q=document.getElementById('q'),cat=document.getElementById('cat'),source=document.getElementById('source'),status=document.getElementById('status');
-const viewer=document.getElementById('viewer'),vid=document.getElementById('vid');
-let rows=[];
-function el(tag,klass,txt){const n=document.createElement(tag);if(klass)n.className=klass;if(txt!==undefined)n.textContent=txt;return n}
-function aLink(text,url){const n=el('a',null,text);n.href=url;n.target='_blank';n.rel='noopener noreferrer';return n}
-function render(){
-const search=q.value.trim().toLowerCase();const list=rows.filter(r=>(!source.value||r.origin===source.value)&&(!cat.value||(r.category||[]).includes(cat.value))&&(!search||[r.id,r.name,r.creator,...(r.category||[])].join(' ').toLowerCase().includes(search)));
-status.textContent='نتائج '+list.length+' من '+rows.length+' استايل. الفيديوهات خارجية، لا يتم نسخها للمستودع.';
-grid.replaceChildren();
-const frag=document.createDocumentFragment();
-for(const r of list){
-const card=el('article','card'),photo=el('div','photo');
-if(r.poster){const img=el('img');img.src=r.poster;img.alt='معاينة من المصدر: '+r.name;img.loading='lazy';img.referrerPolicy='no-referrer';img.onerror=()=>{img.remove();photo.append(el('span',null,'شاهد المرجع الأصلي'));};photo.append(img);}else{photo.append(el('span',null,'مرجع خارجي'))}
-photo.append(el('span',null,r.origin==='PromptsMotion'?'مقطع موشن':'ملف استايل'));
-const body=el('div','body');body.append(el('h2',null,r.name),el('div','id',r.id),el('div','meta',r.creator||'KOSIF'));
-const chips=el('div','chips');(r.category||[]).slice(0,4).forEach(t=>chips.append(el('span','chip',t)));body.append(chips);
-const buttons=el('div','buttons');buttons.append(aLink('المصدر ↗',r.page),aLink('برومبت الاستايل ↗','https://github.com/kosif199022-jpg/kosif-tool/blob/main/styles/'+r.id+'/SKILL.md'));
-if(r.video){const btn=el('button',null,'شاهد الفيديو ▶');btn.onclick=()=>{document.getElementById('vtitle').textContent=r.name;vid.src=r.video;document.getElementById('origin').href=r.page;viewer.showModal();};buttons.append(btn);}
-const btn=el('button',null,'انسخ طلب Claude');btn.onclick=async()=>{const txt='اقرأ المستودع https://github.com/kosif199022-jpg/kosif-tool ثم CLAUDE.md وAGENTS.md و styles/'+r.id+'/SKILL.md وSTYLE.json. استايل: '+r.id+'. شاهد الفيديو من '+r.page+' إن كانت الأدوات تسمح، واصنع موشن جرافيك حقيقيًا من الملف المرفق، مع تحريك الكاميرا والعناصر والصوت، وورّيني المعاينة قبل الرندر النهائي.';try{await navigator.clipboard.writeText(txt);btn.textContent='تم النسخ ✓';setTimeout(()=>btn.textContent='انسخ طلب Claude',1500)}catch(e){window.prompt('انسخ الطلب:',txt)}};buttons.append(btn);body.append(buttons);
-card.append(photo,body);frag.append(card);
-}grid.append(frag);
-}
-async function boot(){try{const r=await fetch('catalog/styles.json');if(!r.ok)throw new Error('HTTP '+r.status);rows=await r.json();const cats=[...new Set(rows.flatMap(r=>r.category||[]))].sort();for(const t of cats){const op=el('option',null,t);op.value=t;cat.append(op)}render()}catch(e){status.textContent='لم يمكن تحميل الفهرس من الملف المحلي. افتح الصفحة من GitHub Pages أو شغّل خادم HTTP محليًا. '+e.message;}}
-q.oninput=render;cat.onchange=render;source.onchange=render;document.getElementById('close').onclick=()=>viewer.close();viewer.onclose=()=>{vid.pause();vid.removeAttribute('src');vid.load();};boot();
-</script></body></html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOSIF TOOL — أطلس الموشن جرافيك</title>
+<meta name="description" content="أطلس استايلات الموشن جرافيك لكلاود: 288 استايلًا مع ملفات إبداعية ودلائل تنفيذ ومولّد طلبات جاهزة لـ Claude Code. Motion graphics style atlas for Claude Code with briefs, playbooks and a request generator.">
+<meta name="theme-color" content="#070b14">
+<meta property="og:title" content="KOSIF TOOL — Motion Graphics Atlas for Claude Code">
+<meta property="og:description" content="288 motion styles, original briefs, production playbooks and a ready-to-paste Claude Code request generator. Arabic and English.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kosif199022-jpg.github.io/kosif-tool/">
+<link rel="icon" href="web/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="web/app.css">
+<script>
+  // Apply saved theme/language before paint to avoid flashes.
+  (function () {
+    try {
+      var th = localStorage.getItem('kosif.theme');
+      if (th === 'light' || th === 'dark') document.documentElement.setAttribute('data-theme', th);
+      var lg = localStorage.getItem('kosif.lang');
+      if (lg === 'en') { document.documentElement.lang = 'en'; document.documentElement.dir = 'ltr'; }
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="#/"><span class="logo">K</span><span>KOSIF TOOL<small data-i18n="hero.kicker">أطلس استايلات مفتوح لكلاود</small></span></a>
+    <nav class="main" id="nav">
+      <a href="#/" data-route="library" data-i18n="nav.library">المكتبة</a>
+      <a href="#/generator" data-route="generator" data-i18n="nav.generator">مولّد الطلب</a>
+      <a href="#/playbooks" data-route="playbooks" data-i18n="nav.playbooks">الدلائل</a>
+      <a href="#/guide" data-route="guide" data-i18n="nav.guide">كيف أستخدمه</a>
+      <a href="#/favorites" data-route="favorites" data-i18n="nav.favorites">المفضلة</a>
+      <a href="https://github.com/kosif199022-jpg/kosif-tool" target="_blank" rel="noopener noreferrer" data-i18n="nav.github">GitHub</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="langToggle" data-i18n="lang.toggle">English</button>
+      <button class="icon-btn" id="themeToggle" data-i18n-title="theme.toggle" aria-label="Toggle theme">◐</button>
+    </div>
+  </div>
+</header>
+<main id="view" aria-live="polite">
+  <div class="skeleton" aria-hidden="true"></div>
+</main>
+<footer class="site-footer">
+  <div class="inner">
+    <span data-i18n="footer.text"></span>
+    <span><a href="https://www.promptsmotion.com/terms" target="_blank" rel="noopener noreferrer" data-i18n="footer.terms">شروط المصدر</a> · <a href="https://github.com/kosif199022-jpg/kosif-tool" target="_blank" rel="noopener noreferrer">kosif199022-jpg/kosif-tool</a></span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="web/app.js"></script>
+</body>
+</html>

@@ -1,15 +1,31 @@
 {
   "id": "pm-bizibeast-10f264",
   "name": "Bento.surf product video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@bizibeast",
   "creator_url": "https://x.com/bizibeast/status/2103696876130505124",
   "page": "https://www.promptsmotion.com/bizibeast-10f264",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/6f81454a-5911-48a0-a1be-86256da4469e/3949a22f9de75ce1.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/f615f47a-188e-4038-8515-2de28495ffc3/20b4caf657c7896a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 99,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 28,
+  "listed": true,
+  "skill": "styles/pm-bizibeast-10f264/SKILL.md",
+  "playbooks": []
 }

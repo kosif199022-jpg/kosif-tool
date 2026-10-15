@@ -1,13 +1,29 @@
 {
   "id": "pm-madebyjmayala-b9204d",
   "name": "Gene Spectra promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@madebyjmayala",
   "creator_url": "https://x.com/madebyjmayala/status/2103578285892649220",
   "page": "https://www.promptsmotion.com/madebyjmayala-b9204d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/92ddbf09-d93c-464d-adea-6fa98f3f52c3/c9e041463d8db41b.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/64ec9653-ace7-4722-97d7-3ac46e3082b0/abade05b423b11d5.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 227,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 23,
+  "listed": true,
+  "skill": "styles/pm-madebyjmayala-b9204d/SKILL.md",
+  "playbooks": []
 }

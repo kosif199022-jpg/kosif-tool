@@ -1,11 +1,27 @@
 {
   "id": "pm-triglyceee-bd5b08",
   "name": "Moroccan political history timeline",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@TrigLyceee",
   "creator_url": "https://x.com/TrigLyceee/status/2103804459986161719",
   "page": "https://www.promptsmotion.com/triglyceee-bd5b08",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f4dcb4a0-c17b-4899-a0f5-2bedb1411a38/547ef52f7f36a078.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/f98f993d-c1b7-43ec-88a8-caff012ac0a8/da2395bce7e0176c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 854,
+    "h": 480
+  },
+  "aspect_label": "16:9",
+  "rank": 205,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 11,
+  "listed": true,
+  "skill": "styles/pm-triglyceee-bd5b08/SKILL.md",
+  "playbooks": []
 }

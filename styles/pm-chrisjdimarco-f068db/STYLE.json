@@ -1,13 +1,29 @@
 {
   "id": "pm-chrisjdimarco-f068db",
   "name": "Fiery samurai kata",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Code"
+    "code"
   ],
   "creator": "@chrisjdimarco",
   "creator_url": "https://x.com/chrisjdimarco/status/2103232192847524106",
   "page": "https://www.promptsmotion.com/chrisjdimarco-f068db",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/d827cdd9-27f9-4068-b66f-2ff8fa4bbd04/304c06bbd5ed2db1.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/8790bc52-d2ab-4bd5-95ae-3a0ac0df2485/d66f3825db26dae8.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1292
+  },
+  "aspect_label": "other",
+  "rank": 155,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 32,
+  "listed": true,
+  "skill": "styles/pm-chrisjdimarco-f068db/SKILL.md",
+  "playbooks": []
 }

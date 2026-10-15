@@ -1,12 +1,27 @@
 {
   "id": "fake3d",
   "name": "عمق 2.5D",
+  "name_ar": "عمق 2.5D",
+  "origin": "KOSIF original style",
+  "type": "Style",
   "category": [
-    "3D"
+    "3d",
+    "photos"
   ],
+  "creator": "KOSIF + attributed sources",
+  "creator_url": null,
   "page": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/fake3d",
   "video": "https://github.com/motalim-ai/motion-starter-kit/blob/main/styles/fake3d/reference.mp4",
   "poster": "https://github.com/motalim-ai/motion-starter-kit/blob/main/styles/fake3d/preview.jpg",
-  "creator": "KOSIF + attributed sources",
-  "origin": "KOSIF original style"
+  "aspect": null,
+  "aspect_label": null,
+  "rank": null,
+  "published": null,
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": null,
+  "listed": true,
+  "skill": "styles/fake3d/SKILL.md",
+  "playbooks": []
 }

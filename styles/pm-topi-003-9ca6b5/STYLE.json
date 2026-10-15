@@ -1,14 +1,30 @@
 {
   "id": "pm-topi-003-9ca6b5",
   "name": "Kinetic type motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@_topi_003",
   "creator_url": "https://x.com/_topi_003/status/2104086342204592443",
   "page": "https://www.promptsmotion.com/topi-003-9ca6b5",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/9db91890-9e60-45d3-bb85-ca64e62f3d7b/f4932df82aefc458.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/a3ef48d7-9795-4170-bb12-e67f87a4507d/d1364a7da2be815b.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 210,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 28,
+  "listed": true,
+  "skill": "styles/pm-topi-003-9ca6b5/SKILL.md",
+  "playbooks": []
 }

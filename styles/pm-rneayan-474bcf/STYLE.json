@@ -1,13 +1,29 @@
 {
   "id": "pm-rneayan-474bcf",
   "name": "Risograph studio intro",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@rneayan",
   "creator_url": "https://x.com/rneayan/status/2103401006281441493",
   "page": "https://www.promptsmotion.com/rneayan-474bcf",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c3819f97-1591-463c-87fc-857467c87c59/e32e52c5e85d107e.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/46886183-b81d-4874-9b9a-b3021aef71f5/458584e92077b957.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 178,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 7,
+  "listed": true,
+  "skill": "styles/pm-rneayan-474bcf/SKILL.md",
+  "playbooks": []
 }

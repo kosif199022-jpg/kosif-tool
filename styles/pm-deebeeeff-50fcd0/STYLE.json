@@ -1,13 +1,29 @@
 {
   "id": "pm-deebeeeff-50fcd0",
   "name": "Recipe brand 20th anniversary",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@deebeeeff",
   "creator_url": "https://x.com/deebeeeff/status/2104952364365234301",
   "page": "https://www.promptsmotion.com/deebeeeff-50fcd0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/43aaa446-479e-4f8a-90c4-a1405601fec0/56874ff7eac6c866.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/6300be79-fcc2-49a8-9646-b82a696149b1/d2afdaebcab6be0a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1080
+  },
+  "aspect_label": "1:1",
+  "rank": 234,
+  "published": "2026-09-29",
+  "model": "Opus 5.5",
+  "effort": "Medium",
+  "tech": [],
+  "source_prompt_words": 13,
+  "listed": true,
+  "skill": "styles/pm-deebeeeff-50fcd0/SKILL.md",
+  "playbooks": []
 }

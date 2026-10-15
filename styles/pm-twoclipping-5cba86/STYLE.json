@@ -1,21 +1,41 @@
 {
   "id": "pm-twoclipping-5cba86",
   "name": "Shape morphing through UI states",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "product-ui",
+    "charts",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@twoclipping",
   "creator_url": "https://x.com/twoclipping/status/2103273003555402193",
   "page": "https://www.promptsmotion.com/twoclipping-5cba86",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/b1e8fafd-2502-4dd5-a458-33f9b85a2c80/b31d90b380cbb28d.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/ab39ad05-5c50-418b-a526-610327006458/9a98945de15ea773.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1440,
+    "h": 1440
+  },
+  "aspect_label": "1:1",
+  "rank": 62,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "Canvas",
+    "HTML"
+  ],
+  "source_prompt_words": 474,
+  "listed": true,
+  "skill": "styles/pm-twoclipping-5cba86/SKILL.md",
+  "playbooks": []
 }

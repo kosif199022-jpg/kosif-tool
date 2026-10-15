@@ -1,11 +1,27 @@
 {
   "id": "pm-ghinaiya-nirmal-5d8fec",
   "name": "Claude motion design reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@ghinaiya_nirmal",
   "creator_url": "https://x.com/ghinaiya_nirmal/status/2103540656182308943",
   "page": "https://www.promptsmotion.com/ghinaiya-nirmal-5d8fec",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/50c63297-c464-44ef-95dd-c243a05eeee3/829c5e73287d43b4.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e23b4cb6-06f4-4b2c-8bba-9f1c88efba03/c51bde26e1a7e66c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 109,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 9,
+  "listed": true,
+  "skill": "styles/pm-ghinaiya-nirmal-5d8fec/SKILL.md",
+  "playbooks": []
 }

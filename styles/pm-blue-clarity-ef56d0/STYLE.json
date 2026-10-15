@@ -1,16 +1,32 @@
 {
   "id": "pm-blue-clarity-ef56d0",
   "name": "Particle sphere motion reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Shapes",
-    "Particles"
+    "charts",
+    "kinetic-type",
+    "shapes",
+    "particles"
   ],
   "creator": "@blue_clarity",
   "creator_url": "https://x.com/blue_clarity/status/2103564589065449603",
   "page": "https://www.promptsmotion.com/blue-clarity-ef56d0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c03fb71a-7760-41e1-bffa-71042c2c6dbb/847ca76a3bbfc3d0.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/08df4220-d1c2-4ae7-8b2d-55db28ccc2e2/a607ed45537747aa.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 16,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Medium",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-blue-clarity-ef56d0/SKILL.md",
+  "playbooks": []
 }

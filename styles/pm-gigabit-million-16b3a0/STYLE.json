@@ -1,13 +1,29 @@
 {
   "id": "pm-gigabit-million-16b3a0",
   "name": "Steam new releases news recap",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@gigabit_million",
   "creator_url": "https://x.com/gigabit_million/status/2104068536041959719",
   "page": "https://www.promptsmotion.com/gigabit-million-16b3a0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/4b253501-4052-41b0-a850-cb20458d9645/05e19ad13fbfe8ba.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/f985ad08-d242-4ae9-94d5-355a5402e331/6f685362e309a7a4.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 146,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 34,
+  "listed": true,
+  "skill": "styles/pm-gigabit-million-16b3a0/SKILL.md",
+  "playbooks": []
 }

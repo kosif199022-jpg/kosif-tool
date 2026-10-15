@@ -1,17 +1,33 @@
 {
   "id": "pm-lukasersil-0ed38e",
   "name": "Motion techniques showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Photos"
+    "charts",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "photos"
   ],
   "creator": "@lukasersil",
   "creator_url": "https://x.com/lukasersil/status/2103742861971726495",
   "page": "https://www.promptsmotion.com/lukasersil-0ed38e",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/0d7b8e8e-97ac-4023-b981-26760a026a99/01808821089a5959.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/f169b7f0-2a5e-48f4-9831-7c7dfab2ecbd/0eb08b047c37bf11.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 11,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 105,
+  "listed": true,
+  "skill": "styles/pm-lukasersil-0ed38e/SKILL.md",
+  "playbooks": []
 }

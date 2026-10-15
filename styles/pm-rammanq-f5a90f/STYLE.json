@@ -1,14 +1,30 @@
 {
   "id": "pm-rammanq-f5a90f",
   "name": "AllInvestView product promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts"
+    "product-ui",
+    "charts"
   ],
   "creator": "@rammanq",
   "creator_url": "https://x.com/rammanq/status/2103788796022034553",
   "page": "https://www.promptsmotion.com/rammanq-f5a90f",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/7ebee9da-6a9f-4650-be3c-c371f36bcf84/178ee6744e6e0614.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e0b6348c-9ff5-4a75-a8b6-0f57eba6382b/3a134837de308575.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 720,
+    "h": 720
+  },
+  "aspect_label": "1:1",
+  "rank": 229,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 17,
+  "listed": true,
+  "skill": "styles/pm-rammanq-f5a90f/SKILL.md",
+  "playbooks": []
 }

@@ -1,14 +1,30 @@
 {
   "id": "pm-thilina-a-891c09",
   "name": "sweetRegret app update reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts"
+    "product-ui",
+    "charts"
   ],
   "creator": "@thilina_a",
   "creator_url": "https://x.com/thilina_a/status/2104455320424915273",
   "page": "https://www.promptsmotion.com/thilina-a-891c09",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/0620f8a6-3772-46b4-9ccd-ca7a9e2c1c6d/04789872209fd296.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/967a0e39-bb17-41bf-9da7-448ce383bd21/8f410edc02afaa58.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1920
+  },
+  "aspect_label": "9:16",
+  "rank": 113,
+  "published": "2026-09-28",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 29,
+  "listed": true,
+  "skill": "styles/pm-thilina-a-891c09/SKILL.md",
+  "playbooks": []
 }

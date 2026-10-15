@@ -1,11 +1,27 @@
 {
   "id": "pm-micheleharmonic-77628e",
   "name": "GravityDEX anime hype edit",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@MicheleHarmonic",
   "creator_url": "https://x.com/MicheleHarmonic/status/2103111448352244175",
   "page": "https://www.promptsmotion.com/micheleharmonic-77628e",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f83b07b9-77aa-42b1-97ea-171dd9ead09e/62d56351a9781fd9.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/52a862a0-036c-4f59-b499-44ad87b72f38/b058033d1368e9ef.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1920
+  },
+  "aspect_label": "9:16",
+  "rank": 83,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 10,
+  "listed": true,
+  "skill": "styles/pm-micheleharmonic-77628e/SKILL.md",
+  "playbooks": []
 }

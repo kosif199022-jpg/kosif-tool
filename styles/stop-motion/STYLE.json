@@ -1,12 +1,27 @@
 {
   "id": "stop-motion",
   "name": "ستوب موشن",
+  "name_ar": "ستوب موشن",
+  "origin": "KOSIF original style",
+  "type": "Style",
   "category": [
-    "الشخصيات"
+    "characters",
+    "photos"
   ],
+  "creator": "KOSIF + attributed sources",
+  "creator_url": null,
   "page": "https://github.com/kosif199022-jpg/kosif-one",
   "video": null,
   "poster": null,
-  "creator": "KOSIF + attributed sources",
-  "origin": "KOSIF original style"
+  "aspect": null,
+  "aspect_label": null,
+  "rank": null,
+  "published": null,
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": null,
+  "listed": true,
+  "skill": "styles/stop-motion/SKILL.md",
+  "playbooks": []
 }

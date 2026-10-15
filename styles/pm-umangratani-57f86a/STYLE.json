@@ -1,15 +1,31 @@
 {
   "id": "pm-umangratani-57f86a",
   "name": "Shape and dot motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Shapes"
+    "charts",
+    "kinetic-type",
+    "shapes"
   ],
   "creator": "@umangratani",
   "creator_url": "https://x.com/umangratani/status/2103486881136840800",
   "page": "https://www.promptsmotion.com/umangratani-57f86a",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/94c8f459-2a1b-4e44-b431-600ce1a50928/fd7e2a3109c87f55.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7056f725-b922-46cd-ae3f-5e148d4df046/5ea314fdb1997a8d.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 179,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-umangratani-57f86a/SKILL.md",
+  "playbooks": []
 }

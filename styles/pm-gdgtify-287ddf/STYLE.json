@@ -1,21 +1,42 @@
 {
   "id": "pm-gdgtify-287ddf",
   "name": "Speech built as architecture",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Phone",
-    "Charts",
-    "Diagrams",
-    "Kinetic type",
-    "Particles",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "phone",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@Gdgtify",
   "creator_url": "https://x.com/Gdgtify/status/2103458245213929495",
   "page": "https://www.promptsmotion.com/gdgtify-287ddf",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/bb278d29-502c-4974-9f47-c02ed0d9b187/f223a12f643544e4.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/c940bacc-a08b-4c09-ba31-b6301a39aa08/ea36d538a1b596e1.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1080
+  },
+  "aspect_label": "1:1",
+  "rank": 208,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "Canvas",
+    "HTML",
+    "SVG"
+  ],
+  "source_prompt_words": 648,
+  "listed": true,
+  "skill": "styles/pm-gdgtify-287ddf/SKILL.md",
+  "playbooks": []
 }

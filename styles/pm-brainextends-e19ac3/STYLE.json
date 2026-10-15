@@ -1,21 +1,40 @@
 {
   "id": "pm-brainextends-e19ac3",
   "name": "Spotify product film",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Diagrams",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Photos",
-    "Music"
+    "product-ui",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music"
   ],
   "creator": "@brainextends",
   "creator_url": "https://x.com/brainextends/status/2103801834930606193",
   "page": "https://www.promptsmotion.com/brainextends-e19ac3",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/7fa4c697-bd0b-4f73-ad9b-86f86bc3d35e/d383e34f8dd70c97.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7523a5a6-42a9-45d5-9475-fbf96647fccc/24f3dadfc928345b.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 78,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "Canvas"
+  ],
+  "source_prompt_words": 1210,
+  "listed": true,
+  "skill": "styles/pm-brainextends-e19ac3/SKILL.md",
+  "playbooks": []
 }

@@ -1,14 +1,30 @@
 {
   "id": "pm-souravbhar871-61f424",
   "name": "Kinetic type self-portrait",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@souravbhar871",
   "creator_url": "https://x.com/souravbhar871/status/2103711849703477361",
   "page": "https://www.promptsmotion.com/souravbhar871-61f424",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f4a854f5-23ce-46e3-b778-d4c9bb8c5361/ebe2e97b6e5bae17.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7b3b56e2-dc62-4c7a-8524-c9d529920754/9b674b2f2a8e86fe.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 176,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 37,
+  "listed": true,
+  "skill": "styles/pm-souravbhar871-61f424/SKILL.md",
+  "playbooks": []
 }

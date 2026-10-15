@@ -1,14 +1,30 @@
 {
   "id": "pm-elliot-garreffa-f334bc",
   "name": "Muse connector tracker promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@elliot_garreffa",
   "creator_url": "https://x.com/elliot_garreffa/status/2104213514944446825",
   "page": "https://www.promptsmotion.com/elliot-garreffa-f334bc",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/95ecda2b-6afc-4b5e-bb8c-964c1f97f4df/54bedef96cf44646.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/b7f88142-90c0-4207-a68c-292b85cbef64/e20ce8e243c0b94a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 97,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-elliot-garreffa-f334bc/SKILL.md",
+  "playbooks": []
 }

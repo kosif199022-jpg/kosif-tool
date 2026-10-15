@@ -1,13 +1,29 @@
 {
   "id": "pm-heyiammallik-e72d17",
   "name": "Portfolio motion reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Music"
+    "music"
   ],
   "creator": "@heyiammallik",
   "creator_url": "https://x.com/heyiammallik/status/2103837803587293397",
   "page": "https://www.promptsmotion.com/heyiammallik-e72d17",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/6d88b69a-064b-499f-b9db-490e6039f6c5/e068631cbe7dd141.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/88744033-8082-4905-9e1a-781775a91737/570e12ca22a91756.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 160,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 60,
+  "listed": true,
+  "skill": "styles/pm-heyiammallik-e72d17/SKILL.md",
+  "playbooks": []
 }

@@ -1,14 +1,30 @@
 {
   "id": "pm-itisrazak-3ad902",
   "name": "Distilbook motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@itisRazak",
   "creator_url": "https://x.com/itisRazak/status/2103517930424332386",
   "page": "https://www.promptsmotion.com/itisrazak-3ad902",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a80b6886-604b-4379-9fe1-1205d55c18e0/121642195e22ae0e.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7a3cca24-d0b8-44e2-8e03-11cc53810c6e/68b3523d9c25635d.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 848,
+    "h": 480
+  },
+  "aspect_label": "16:9",
+  "rank": 9,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 27,
+  "listed": true,
+  "skill": "styles/pm-itisrazak-3ad902/SKILL.md",
+  "playbooks": []
 }

@@ -1,15 +1,31 @@
 {
   "id": "pm-1stnoel-c20a89",
   "name": "Sotto reading app explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Diagrams",
-    "Characters"
+    "product-ui",
+    "diagrams",
+    "characters"
   ],
   "creator": "@1stnoel_",
   "creator_url": "https://x.com/1stnoel_/status/2103247530259603851",
   "page": "https://www.promptsmotion.com/1stnoel-c20a89",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f28c0158-3805-4d9e-9e13-e0feb9667b2d/e975bcaf09fe28b6.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/1d3df9eb-c3df-4730-aa71-4de4ff8faae7/b0d2b2ece6904f04.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 96,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 11,
+  "listed": true,
+  "skill": "styles/pm-1stnoel-c20a89/SKILL.md",
+  "playbooks": []
 }

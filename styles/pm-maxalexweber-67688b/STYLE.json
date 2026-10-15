@@ -1,13 +1,29 @@
 {
   "id": "pm-maxalexweber-67688b",
   "name": "ODATANO Cardano hype edit",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@maxalexweber",
   "creator_url": "https://x.com/maxalexweber/status/2103118009535459784",
   "page": "https://www.promptsmotion.com/maxalexweber-67688b",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a6556ee6-c5b3-4795-b655-200ff7242b40/4208a6c973d2cce9.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/211c1f22-8113-4999-8ce7-ca27150044c8/af49c15ac49db26a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 142,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 7,
+  "listed": true,
+  "skill": "styles/pm-maxalexweber-67688b/SKILL.md",
+  "playbooks": []
 }

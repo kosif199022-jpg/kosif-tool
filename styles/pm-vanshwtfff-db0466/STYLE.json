@@ -1,14 +1,30 @@
 {
   "id": "pm-vanshwtfff-db0466",
   "name": "Motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@VanshWTFFF",
   "creator_url": "https://x.com/VanshWTFFF/status/2103644352794992798",
   "page": "https://www.promptsmotion.com/vanshwtfff-db0466",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f8eb2a71-adf1-4b99-be92-3459d22b13d4/1e542a5200e37db1.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/749d8570-f181-4343-963d-4189795143b1/a38af5ff40821e0e.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 108,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 24,
+  "listed": true,
+  "skill": "styles/pm-vanshwtfff-db0466/SKILL.md",
+  "playbooks": []
 }

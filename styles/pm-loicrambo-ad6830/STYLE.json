@@ -1,14 +1,30 @@
 {
   "id": "pm-loicrambo-ad6830",
   "name": "Cycle of life animation",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@loicRambo",
   "creator_url": "https://x.com/loicRambo/status/2103428454355980558",
   "page": "https://www.promptsmotion.com/loicrambo-ad6830",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/d52fd0a1-1ab1-45fa-b2e3-81e2c59994a9/e33ead185689e2ca.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/87ad608f-758b-494f-8c8a-afc895af29fe/c09e87c183fb6605.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 166,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 71,
+  "listed": true,
+  "skill": "styles/pm-loicrambo-ad6830/SKILL.md",
+  "playbooks": []
 }

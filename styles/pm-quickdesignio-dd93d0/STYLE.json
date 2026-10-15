@@ -1,13 +1,29 @@
 {
   "id": "pm-quickdesignio-dd93d0",
   "name": "QuickDesign brand promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@quickdesignio",
   "creator_url": "https://x.com/quickdesignio/status/2103617779857338399",
   "page": "https://www.promptsmotion.com/quickdesignio-dd93d0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/e3a9d448-e496-406d-8600-fc16b2e707e0/21db24c1b8bcbc21.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e602892d-dbc4-44d6-9005-7b3e6bcbb311/6b0a47bce9c63e3c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 40,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 24,
+  "listed": true,
+  "skill": "styles/pm-quickdesignio-dd93d0/SKILL.md",
+  "playbooks": []
 }
