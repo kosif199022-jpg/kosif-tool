@@ -7,7 +7,7 @@ description: Create a new video using the motion design language referenced at t
 
 ## Primary motion reference
 Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/whiteboard
-Video URL: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/whiteboard/reference.mp4
+Video URL: https://github.com/motalim-ai/motion-starter-kit/blob/main/styles/whiteboard/reference.mp4
 Credit: KOSIF + attributed sources.
 
 Observe this exact reference before implementing when browser/video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, character acting, palette and typography. If you cannot watch it, disclose that; this production guide alone does not prove exact visual similarity.

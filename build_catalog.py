@@ -166,7 +166,7 @@ def main():
  for line in BASIC.splitlines():
   ident,name,cat=line.split("|")
   source=("https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/"+ident) if ident in TENS else ("https://github.com/kosif199022-jpg/kosif-one")
-  record={"id":ident,"name":name,"category":[cat],"page":source,"video":(source+"/reference.mp4" if ident in TENS else None),"poster":(source+"/preview.jpg" if ident in TENS else None),"creator":"KOSIF + attributed sources","origin":"KOSIF original style"}
+  record={"id":ident,"name":name,"category":[cat],"page":source,"video":(source.replace("/tree/","/blob/")+"/reference.mp4" if ident in TENS else None),"poster":(source.replace("/tree/","/blob/")+"/preview.jpg" if ident in TENS else None),"creator":"KOSIF + attributed sources","origin":"KOSIF original style"}
   records.insert(0,record)
  assert len(records)>=250,f"Only {len(records)} records found, aborting"
  for i,r in enumerate(records):
