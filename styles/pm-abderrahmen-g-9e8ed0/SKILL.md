@@ -1,9 +1,9 @@
 ---
 name: pm-abderrahmen-g-9e8ed0
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A playful film built from scanned hand-drawn pages: the animals peel off their sheets and hop, with every movement sounded by Web Audio on the same frame.
 ---
 
-# KOSIF TOOL — Sketchbook animals come alive
+# KOSIF TOOL — Sketchbook animals come alive / حيوانات دفتر الرسم تنبض بالحياة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/abderrahmen-g-9e8ed0
@@ -17,9 +17,17 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم مرح من مسحات دفتر رسم يدوية: الحيوانات تنفصل عن صفحاتها وتقفز، وكل حركة يرافقها صوت مُركَّب بـ Web Audio في الإطار نفسه.
+
+A playful film built from scanned hand-drawn pages: the animals peel off their sheets and hop, with every movement sounded by Web Audio on the same frame.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio, GSAP), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

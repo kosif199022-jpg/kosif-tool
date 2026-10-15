@@ -27,5 +27,8 @@
   "source_prompt_words": 47,
   "listed": true,
   "skill": "styles/pm-kmasiff-cc72cb/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

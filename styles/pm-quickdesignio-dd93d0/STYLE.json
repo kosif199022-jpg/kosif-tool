@@ -1,7 +1,7 @@
 {
   "id": "pm-quickdesignio-dd93d0",
   "name": "QuickDesign brand promo",
-  "name_ar": null,
+  "name_ar": "ترويج علامة QuickDesign: السرعة كحجّة بصرية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,33 @@
   "source_prompt_words": 24,
   "listed": true,
   "skill": "styles/pm-quickdesignio-dd93d0/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "ترويج أفقي مدته 15 ثانية لأداة تصميم سريعة، يبني الشعار من أشكال أولية ثم يبرهن على توفير الوقت بمخططات وعدّادات متحركة.",
+  "summary_en": "A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.",
+  "keywords": [
+    "ترويج علامة",
+    "أداة تصميم",
+    "أشكال أولية",
+    "لوحة تصميم",
+    "مخطط مقارنة",
+    "قوالب",
+    "brand promo",
+    "design tool",
+    "shape snap",
+    "auto layout",
+    "bar chart",
+    "card flip",
+    "counter",
+    "wordmark build"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-quickdesignio-dd93d0/BRIEF.md"
 }

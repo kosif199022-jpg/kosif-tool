@@ -26,5 +26,7 @@
   "source_prompt_words": 42,
   "listed": true,
   "skill": "styles/pm-jacksonfall-54b2ac/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

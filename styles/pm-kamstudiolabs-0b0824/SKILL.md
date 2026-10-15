@@ -1,9 +1,9 @@
 ---
 name: pm-kamstudiolabs-0b0824
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Forty-five dialogue-free seconds: a lighthouse keeper relights a dead lamp in a storm, and the sound design carries half of the story.
 ---
 
-# KOSIF TOOL — Lighthouse keeper silent short
+# KOSIF TOOL — Lighthouse keeper silent short / فيلم صامت قصير عن حارس المنارة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kamstudiolabs-0b0824
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #59
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+خمس وأربعون ثانية بلا حوار: حارس منارة يعيد إشعال المصباح في عاصفة، والصوت وحده يروي نصف القصة.
+
+Forty-five dialogue-free seconds: a lighthouse keeper relights a dead lamp in a storm, and the sound design carries half of the story.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, Web Audio), suggested duration (45 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Music / موسيقى.

@@ -34,7 +34,11 @@
   "source_prompt_words": 178,
   "listed": true,
   "skill": "styles/pm-aschapmann-131210/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ],
   "summary_ar": "فيلم إطلاق مدته 30 ثانية مبني بالكامل بالكود في Remotion، يروي قصة السوق والألم والحل عبر أربع إلى خمس مشاهد وينتهي بشعار SVG متحرك.",
   "summary_en": "A 30-second, fully code-built Remotion launch film telling market, pain, fix and payoff in 4-5 scenes, ending on an animated SVG logo with tagline and URL.",
   "keywords": [

@@ -27,5 +27,7 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-umangratani-57f86a/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

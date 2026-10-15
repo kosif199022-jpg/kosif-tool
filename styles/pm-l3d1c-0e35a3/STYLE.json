@@ -1,7 +1,7 @@
 {
   "id": "pm-l3d1c-0e35a3",
   "name": "PicTwin AI app ad",
-  "name_ar": null,
+  "name_ar": "إعلان عمودي لتطبيق PicTwin للصور بالذكاء الاصطناعي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,32 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-l3d1c-0e35a3/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "إعلان عمودي قصير يُظهر كيف تتحوّل صورة شخصية واحدة إلى نسخة توأم مولّدة بالذكاء الاصطناعي داخل واجهة هاتف حيّة بكشف قبل/بعد.",
+  "summary_en": "A vertical 15 s app ad where one selfie becomes an AI-generated twin inside a live phone UI, told as a split-screen before/after reveal.",
+  "keywords": [
+    "إعلان تطبيق",
+    "صورة شخصية",
+    "توأم بالذكاء الاصطناعي",
+    "واجهة هاتف",
+    "قبل وبعد",
+    "app ad",
+    "selfie",
+    "ai avatar",
+    "phone mockup",
+    "split reveal",
+    "progress ring",
+    "vertical ad",
+    "reels"
+  ],
+  "difficulty": 2,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-l3d1c-0e35a3/BRIEF.md"
 }

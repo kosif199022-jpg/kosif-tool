@@ -1,7 +1,7 @@
 {
   "id": "pm-jake11moran-a269c4",
   "name": "Animated agent session story",
-  "name_ar": null,
+  "name_ar": "حكاية جلسة الوكيل البرمجي",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
@@ -26,5 +26,30 @@
   "source_prompt_words": 31,
   "listed": true,
   "skill": "styles/pm-jake11moran-a269c4/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "فيلم قصير مُلحَّن يحوّل سجل جلسة حقيقية بين مطوّر ووكيل برمجي إلى حكاية متحركة بشخصيتين وأحداث كود.",
+  "summary_en": "A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.",
+  "keywords": [
+    "claude code",
+    "session replay",
+    "agent story",
+    "hyperframes",
+    "terminal animation",
+    "code montage",
+    "character animation",
+    "قصة برمجية",
+    "وكيل ذكاء اصطناعي",
+    "شخصيات كرتونية",
+    "سجل الجلسة",
+    "موسيقى تصويرية",
+    "مونتاج كود"
+  ],
+  "difficulty": 4,
+  "duration_s": 45,
+  "stack": [
+    "CSS",
+    "GSAP",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-jake11moran-a269c4/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: pm-melvynx-6cde6c
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second promo where the email tool's own interface is the hero: a composer unfolds, a message launches, the inbox sorts itself and an open-rate curve climbs.
 ---
 
-# KOSIF TOOL — Email tool promo reel
+# KOSIF TOOL — Email tool promo reel / ريل ترويجي لأداة بريد إلكتروني
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/melvynx-6cde6c
@@ -17,9 +17,17 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل مدته 15 ثانية يجعل واجهة أداة البريد هي البطل: نافذة إنشاء تتفتح، رسالة تنطلق، صندوق وارد يرتّب نفسه، ومنحنى معدل الفتح يصعد.
+
+A 15-second promo where the email tool's own interface is the hero: a composer unfolds, a message launches, the inbox sorts itself and an open-rate curve climbs.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

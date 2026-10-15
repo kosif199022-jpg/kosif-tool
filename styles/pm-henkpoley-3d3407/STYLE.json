@@ -29,5 +29,7 @@
   "source_prompt_words": 37,
   "listed": true,
   "skill": "styles/pm-henkpoley-3d3407/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "pm-davidshulmanfl-371638",
   "name": "Clay-style music video",
-  "name_ar": null,
+  "name_ar": "فيديو موسيقي بأسلوب الصلصال المتحرّك بمراجع معاصرة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,31 @@
   "source_prompt_words": 37,
   "listed": true,
   "skill": "styles/pm-davidshulmanfl-371638/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "فيديو موسيقي لدقيقة واحدة بمظهر تحريك الصلصال الإيقافي مع أغنية أصلية بروح البوب الفني الثمانيني ورموز حياتنا الرقمية الحالية.",
+  "summary_en": "A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.",
+  "keywords": [
+    "صلصال",
+    "تحريك إيقافي",
+    "فيديو موسيقي",
+    "أغنية أصلية",
+    "بوب فني",
+    "ثمانينات",
+    "stop motion",
+    "claymation",
+    "metaball",
+    "animate on twos",
+    "lyric sync",
+    "art pop",
+    "replacement animation",
+    "music video"
+  ],
+  "difficulty": 5,
+  "duration_s": 60,
+  "stack": [
+    "HTML Canvas",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-davidshulmanfl-371638/BRIEF.md"
 }

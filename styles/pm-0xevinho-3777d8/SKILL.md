@@ -1,9 +1,9 @@
 ---
 name: pm-0xevinho-3777d8
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A pixel-art wizard conjures crypto coins and candlestick charts with one spell, animated in stepped 8-bit frames with a retro game feel.
 ---
 
-# KOSIF TOOL — Pixel wizard crypto animation
+# KOSIF TOOL — Pixel wizard crypto animation / ساحر بكسل يستحضر العملات الرقمية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/0xevinho-3777d8
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #94
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+مقطع بكسل آرت لساحر صغير يستحضر عملات رقمية وشموع سعرية بتعويذة واحدة، بحركة إطارات مقطّعة على طريقة ألعاب الثمانينيات.
+
+A pixel-art wizard conjures crypto coins and candlestick charts with one spell, animated in stepped 8-bit frames with a retro game feel.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Remotion), suggested duration (10 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: creative motion.

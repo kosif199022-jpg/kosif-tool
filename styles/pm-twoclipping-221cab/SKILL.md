@@ -1,9 +1,9 @@
 ---
 name: pm-twoclipping-221cab
-description: A square Apple-style launch film in one continuous take where every scene is sculpted out of the previous one on a 120 BPM beat grid.
+description: Create a new video using the motion design language referenced at this catalog entry.
 ---
 
-# KOSIF TOOL — Photo print app launch film / فيلم إطلاق تطبيق طباعة الصور بلقطة واحدة
+# KOSIF TOOL — Photo print app launch film
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/twoclipping-221cab
@@ -18,16 +18,12 @@ description: A square Apple-style launch film in one continuous take where every
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
-## Creative brief (الملف الإبداعي)
-فيلم إطلاق مربع بأسلوب عروض آبل، لقطة متصلة واحدة بلا قطع، كل مشهد يتولد من سابقه على إيقاع 120 نبضة.
-
-A square Apple-style launch film in one continuous take where every scene is sculpted out of the previous one on a 120 BPM beat grid.
-
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, SVG, CSS), suggested duration (27 s), aspect 1:1, difficulty 5/5.
-
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Phone / هاتف, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

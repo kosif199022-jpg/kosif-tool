@@ -1,7 +1,7 @@
 {
   "id": "pm-twoclipping-6dd14e",
   "name": "UGC ad generator promo",
-  "name_ar": "إعلان منتج توليد محتوى UGC على شبكة إيقاعية",
+  "name_ar": null,
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -35,31 +35,9 @@
   "source_prompt_words": 444,
   "listed": true,
   "skill": "styles/pm-twoclipping-6dd14e/SKILL.md",
-  "playbooks": [],
-  "summary_ar": "إعلان عالي الجودة بأسلوب بسيط مدته 20 ثانية، فكرة واحدة لكل لقطة، مقاطع حقيقية فقط، وكل قطع على نبضة.",
-  "summary_en": "A 20-second high-end minimal promo for a UGC ad generator: one idea per shot, real vertical footage only, every cut on a downbeat.",
-  "keywords": [
-    "saas promo",
-    "beat grid",
-    "match cut",
-    "masked type",
-    "real footage",
-    "3d carousel",
-    "scan line",
-    "motion blur subframes",
-    "إعلان منتج",
-    "مقاطع حقيقية",
-    "قطع مطابق",
-    "شبكة نبضات",
-    "تصميم بسيط",
-    "مولد إعلانات"
-  ],
-  "difficulty": 5,
-  "duration_s": 20,
-  "stack": [
-    "HTML Canvas",
-    "CSS",
-    "WebGL"
-  ],
-  "brief": "styles/pm-twoclipping-6dd14e/BRIEF.md"
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/phone.md",
+    "playbooks/photos.md"
+  ]
 }

@@ -26,5 +26,7 @@
   "source_prompt_words": 32,
   "listed": true,
   "skill": "styles/pm-blushpetal795-0c85c2/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

@@ -1,9 +1,9 @@
 ---
 name: pm-samaote-5e2fc2
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.
 ---
 
-# KOSIF TOOL — Synced lyrics motion video
+# KOSIF TOOL — Synced lyrics motion video / فيديو كلمات أغنية متزامن مع الصوت
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/samaote-5e2fc2
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+كلمات الأغنية تظهر على نبرة المغني بالضبط بينما تتنفس الخلفية مع الإيقاع، بأسلوب يليق بعرض أعمال مصمم موشن.
+
+Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, Web Audio, SVG), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

@@ -26,5 +26,7 @@
   "source_prompt_words": 37,
   "listed": true,
   "skill": "styles/pm-souravbhar871-61f424/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

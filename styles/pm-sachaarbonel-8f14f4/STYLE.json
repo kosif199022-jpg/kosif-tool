@@ -26,5 +26,8 @@
   "source_prompt_words": 17,
   "listed": true,
   "skill": "styles/pm-sachaarbonel-8f14f4/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

@@ -26,5 +26,7 @@
   "source_prompt_words": 36,
   "listed": true,
   "skill": "styles/pm-sudiyasa-f48ac9/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

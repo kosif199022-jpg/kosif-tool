@@ -1,9 +1,9 @@
 ---
 name: pm-ajith-io-ea7f2d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A cold, tight 30-second product reel presenting Distilbook in three acts: a numeric hook, a card tour, then proof by numbers, on a persistent grid with one accent colour.
 ---
 
-# KOSIF TOOL — Distilbook motion showreel
+# KOSIF TOOL — Distilbook motion showreel / ديستيل بوك: ريل ثلاثين ثانية على شبكة قاسية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ajith-io-ea7f2d
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل منتج بارد الإيقاع مدته 30 ثانية يعرض Distilbook في ثلاث حركات: صدمة رقمية، جولة بطاقات، ثم برهان بالأرقام، على شبكة ثابتة بلون تمييز واحد.
+
+A cold, tight 30-second product reel presenting Distilbook in three acts: a numeric hook, a card tour, then proof by numbers, on a persistent grid with one accent colour.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

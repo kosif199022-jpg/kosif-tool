@@ -26,5 +26,7 @@
   "source_prompt_words": 32,
   "listed": true,
   "skill": "styles/pm-math-files-39c9d0/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

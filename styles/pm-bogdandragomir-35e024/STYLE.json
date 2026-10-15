@@ -27,5 +27,7 @@
   "source_prompt_words": 33,
   "listed": true,
   "skill": "styles/pm-bogdandragomir-35e024/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

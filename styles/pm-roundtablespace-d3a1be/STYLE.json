@@ -27,5 +27,7 @@
   "source_prompt_words": 18,
   "listed": true,
   "skill": "styles/pm-roundtablespace-d3a1be/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

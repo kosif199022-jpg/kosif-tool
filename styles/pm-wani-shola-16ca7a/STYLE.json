@@ -33,5 +33,9 @@
   "source_prompt_words": 173,
   "listed": true,
   "skill": "styles/pm-wani-shola-16ca7a/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/phone.md",
+    "playbooks/charts.md"
+  ]
 }

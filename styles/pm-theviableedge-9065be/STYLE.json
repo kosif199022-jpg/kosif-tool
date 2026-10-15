@@ -25,5 +25,7 @@
   "source_prompt_words": 27,
   "listed": true,
   "skill": "styles/pm-theviableedge-9065be/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

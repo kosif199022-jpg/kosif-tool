@@ -25,5 +25,7 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-apoorvjain25-d24184/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/photos.md"
+  ]
 }

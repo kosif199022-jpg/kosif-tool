@@ -25,5 +25,7 @@
   "source_prompt_words": 18,
   "listed": true,
   "skill": "styles/pm-viktoroddy-98c1d8/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

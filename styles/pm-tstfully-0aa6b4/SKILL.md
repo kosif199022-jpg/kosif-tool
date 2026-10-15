@@ -1,9 +1,9 @@
 ---
 name: pm-tstfully-0aa6b4
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15 s landscape product ad for a tool that turns a pasted YouTube link into a full transcript, closing with counters and small charts that quantify the result.
 ---
 
-# KOSIF TOOL — YouTube transcript product ad
+# KOSIF TOOL — YouTube transcript product ad / إعلان منتج: من رابط يوتيوب إلى نص كامل
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/tstfully-0aa6b4
@@ -17,9 +17,17 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان أفقي مدته 15 ثانية يشرح أداة تحوّل رابط فيديو يوتيوب إلى نصّ مفرّغ كامل، مع عدّادات ومخططات تلخّص النتيجة.
+
+A 15 s landscape product ad for a tool that turns a pasted YouTube link into a full transcript, closing with counters and small charts that quantify the result.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

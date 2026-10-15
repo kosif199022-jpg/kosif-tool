@@ -40,5 +40,9 @@
   "source_prompt_words": 2082,
   "listed": true,
   "skill": "styles/pm-daniel-haida-8691d4/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

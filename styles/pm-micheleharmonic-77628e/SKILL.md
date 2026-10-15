@@ -1,9 +1,9 @@
 ---
 name: pm-micheleharmonic-77628e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical anime-style hype edit that fuses a decentralised exchange with an original gravity-wielding fighter, cut hard to the beat with glitch accents.
 ---
 
-# KOSIF TOOL — GravityDEX anime hype edit
+# KOSIF TOOL — GravityDEX anime hype edit / مونتاج أنمي حماسي عمودي لمنصة GravityDEX
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/micheleharmonic-77628e
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #83
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+مونتاج عمودي قصير بروح الأنمي يربط منصة تداول لامركزية بشخصية مقاتلة أصلية تتحكم بالجاذبية، بقطع على الإيقاع ولمسات glitch.
+
+A vertical anime-style hype edit that fuses a decentralised exchange with an original gravity-wielding fighter, cut hard to the beat with glitch accents.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, GSAP, HTML Canvas), suggested duration (15 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: creative motion.

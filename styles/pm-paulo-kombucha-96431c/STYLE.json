@@ -1,7 +1,7 @@
 {
   "id": "pm-paulo-kombucha-96431c",
   "name": "Mascot referral program promo",
-  "name_ar": null,
+  "name_ar": "إعلان برنامج الإحالة بالتميمة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,32 @@
   "source_prompt_words": 13,
   "listed": true,
   "skill": "styles/pm-paulo-kombucha-96431c/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "إعلان موشن جرافيك في 15 ثانية تقوده تميمة العلامة لشرح برنامج الإحالة: ادعُ صديقًا، يربح كلاكما، والرسم البياني يثبت ذلك.",
+  "summary_en": "A 15-second mascot-led motion spot explaining a referral programme: invite a friend, both of you win, and a growing chart proves it.",
+  "keywords": [
+    "referral program",
+    "mascot animation",
+    "invite a friend",
+    "bar chart",
+    "share sheet",
+    "reward",
+    "brand promo",
+    "برنامج إحالة",
+    "تميمة متحركة",
+    "ادعُ صديقًا",
+    "رسم بياني",
+    "مكافأة",
+    "مشاركة الرابط"
+  ],
+  "difficulty": 2,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "SVG",
+    "React"
+  ],
+  "brief": "styles/pm-paulo-kombucha-96431c/BRIEF.md"
 }

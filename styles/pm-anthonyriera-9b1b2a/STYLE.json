@@ -31,5 +31,7 @@
   "source_prompt_words": 40,
   "listed": true,
   "skill": "styles/pm-anthonyriera-9b1b2a/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

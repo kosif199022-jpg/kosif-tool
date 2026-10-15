@@ -27,7 +27,11 @@
   "source_prompt_words": 88,
   "listed": true,
   "skill": "styles/pm-techyoutbe-945b56/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ],
   "summary_ar": "فيديو إطلاق 30 ثانية بأسلوب منشورات إطلاق المنتجات على X: واجهة حقيقية في إطار جهاز، بطاقات ميزات، ومخطط يقيس الفائدة.",
   "summary_en": "A 30s X-style SaaS launch film: real product UI in a device frame, three feature cards, a benefit chart and a clean CTA.",
   "keywords": [

@@ -1,9 +1,9 @@
 ---
 name: pm-mandelduck-95fd08
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A walkable 3D scene inside the village of Starry Night rendered in moving brush strokes, where the player hunts for cats hidden among the houses and the cypress.
 ---
 
-# KOSIF TOOL — Starry Night cat-spotting game
+# KOSIF TOOL — Starry Night cat-spotting game / ليلة النجوم: نزهة ثلاثية الأبعاد لاصطياد القطط
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/mandelduck-95fd08
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #12
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+مشهد ثلاثي الأبعاد قابل للمشي داخل قرية لوحة ليلة النجوم بلمسة فرشاة متحركة، حيث يبحث اللاعب عن قطط مختبئة بين البيوت وشجرة السرو.
+
+A walkable 3D scene inside the village of Starry Night rendered in moving brush strokes, where the player hunts for cats hidden among the houses and the cypress.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Web Audio), suggested duration (30 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات.

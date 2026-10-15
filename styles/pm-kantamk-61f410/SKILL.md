@@ -1,9 +1,9 @@
 ---
 name: pm-kantamk-61f410
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical physics loop: a ball bounces inside twelve concentric rings and escapes them one by one, with a countdown and a rising note on every escape.
 ---
 
-# KOSIF TOOL — Ball escaping twelve rings
+# KOSIF TOOL — Ball escaping twelve rings / كرة تهرب من اثنتي عشرة حلقة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kantamk-61f410
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #58
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+محاكاة فيزيائية عمودية: كرة ترتد داخل حلقات متحدة المركز وتفلت منها واحدة تلو الأخرى، مع عدّاد ونغمة تصعد عند كل هروب.
+
+A vertical physics loop: a ball bounces inside twelve concentric rings and escapes them one by one, with a countdown and a rising note on every escape.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio), suggested duration (25 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: creative motion.

@@ -1,9 +1,9 @@
 ---
 name: pm-utopyaszx-1b2f94
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second Bold Pilot promo that turns SEO into a flight: a result row climbs from rank 38 to 1, a traffic curve takes off, and keyword chips dock in formation.
 ---
 
-# KOSIF TOOL — Bold Pilot SEO promo
+# KOSIF TOOL — Bold Pilot SEO promo / بولد بايلوت: تسلّق الترتيب إلى المركز الأول
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/utopyaszx-1b2f94
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+برومو 15 ثانية لعلامة Bold Pilot يحوّل تحسين محركات البحث إلى رحلة طيران: صف نتيجة يتسلق من المركز 38 إلى الأول ومخطط زيارات يقلع.
+
+A 15-second Bold Pilot promo that turns SEO into a flight: a result row climbs from rank 38 to 1, a traffic curve takes off, and keyword chips dock in formation.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

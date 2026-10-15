@@ -1,7 +1,7 @@
 {
   "id": "pm-kloss-xyz-b9b3f6",
   "name": "History of AI animated timeline video",
-  "name_ar": "خط زمني متحرك لتاريخ الذكاء الاصطناعي",
+  "name_ar": null,
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [],
@@ -23,29 +23,5 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-kloss-xyz-b9b3f6/SKILL.md",
-  "playbooks": [],
-  "summary_ar": "رحلة كاميرا على خط زمني أفقي تتوقف عند محطات الذكاء الاصطناعي الكبرى، وكل محطة تُرسم كمخطط صغير حي.",
-  "summary_en": "A camera ride along a horizontal timeline that stops at the major AI milestones, each drawn as a small living diagram rather than a slide.",
-  "keywords": [
-    "timeline",
-    "explainer",
-    "ai milestones",
-    "camera travel",
-    "self-drawing diagrams",
-    "education",
-    "خط زمني",
-    "شرح متحرك",
-    "ذكاء اصطناعي",
-    "محطات تاريخية",
-    "مخططات ترسم نفسها",
-    "remotion",
-    "svg"
-  ],
-  "difficulty": 3,
-  "duration_s": 60,
-  "stack": [
-    "Remotion",
-    "SVG"
-  ],
-  "brief": "styles/pm-kloss-xyz-b9b3f6/BRIEF.md"
+  "playbooks": []
 }

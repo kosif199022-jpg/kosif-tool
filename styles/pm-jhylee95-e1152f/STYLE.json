@@ -27,5 +27,7 @@
   "source_prompt_words": 67,
   "listed": true,
   "skill": "styles/pm-jhylee95-e1152f/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

@@ -38,5 +38,10 @@
   "source_prompt_words": 804,
   "listed": true,
   "skill": "styles/pm-ultimaxbt-2ddf1e/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/phone.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

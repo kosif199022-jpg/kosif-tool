@@ -29,5 +29,7 @@
   "source_prompt_words": 56,
   "listed": true,
   "skill": "styles/pm-anilraok-eff262/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

@@ -1,9 +1,9 @@
 ---
 name: pm-listudio-820c7b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.
 ---
 
-# KOSIF TOOL — GenVizu product launch
+# KOSIF TOOL — GenVizu product launch / إطلاق GenVizu: من الوصف إلى التصوّر
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/listudio-820c7b
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو إطلاق 20 ثانية لمنتج GenVizu يصلح كخلفية Hero ومادة تسويقية: وصف نصي يتحول إلى رسوم بيانية داخل واجهة المنتج ثم يدور بحلقة نظيفة.
+
+A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

@@ -19,7 +19,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك, Characters / شخصيات, Photos / صور.
-- (no category playbook yet)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.

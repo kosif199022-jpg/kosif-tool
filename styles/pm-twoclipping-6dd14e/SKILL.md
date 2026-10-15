@@ -1,9 +1,9 @@
 ---
 name: pm-twoclipping-6dd14e
-description: A 20-second high-end minimal promo for a UGC ad generator: one idea per shot, real vertical footage only, every cut on a downbeat.
+description: Create a new video using the motion design language referenced at this catalog entry.
 ---
 
-# KOSIF TOOL — UGC ad generator promo / إعلان منتج توليد محتوى UGC على شبكة إيقاعية
+# KOSIF TOOL — UGC ad generator promo
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/twoclipping-6dd14e
@@ -18,16 +18,11 @@ description: A 20-second high-end minimal promo for a UGC ad generator: one idea
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
-## Creative brief (الملف الإبداعي)
-إعلان عالي الجودة بأسلوب بسيط مدته 20 ثانية، فكرة واحدة لكل لقطة، مقاطع حقيقية فقط، وكل قطع على نبضة.
-
-A 20-second high-end minimal promo for a UGC ad generator: one idea per shot, real vertical footage only, every cut on a downbeat.
-
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, CSS, WebGL), suggested duration (20 s), aspect 16:9, difficulty 5/5.
-
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Photos / صور, Music / موسيقى, Code / كود.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

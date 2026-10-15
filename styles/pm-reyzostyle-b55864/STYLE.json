@@ -27,5 +27,8 @@
   "source_prompt_words": 29,
   "listed": true,
   "skill": "styles/pm-reyzostyle-b55864/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

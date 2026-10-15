@@ -1,7 +1,7 @@
 {
   "id": "pm-twoclipping-5cba86",
   "name": "Shape morphing through UI states",
-  "name_ar": "شكل واحد يتحول عبر حالات الواجهة",
+  "name_ar": null,
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -37,31 +37,9 @@
   "source_prompt_words": 474,
   "listed": true,
   "skill": "styles/pm-twoclipping-5cba86/SKILL.md",
-  "playbooks": [],
-  "summary_ar": "عنصر واحد لا يُقطع أبدًا يتحول من زر إلى مشغّل إلى مخطط إلى لوحة أوامر على شبكة 120 BPM، ويقوده مؤشر يضغط ويسحب فعلًا.",
-  "summary_en": "One never-cut element morphs from button to player to chart to command palette on a 120 BPM grid, driven by a cursor that really clicks and drags.",
-  "keywords": [
-    "ui motion",
-    "micro-interactions",
-    "morphing",
-    "springs",
-    "cursor driven",
-    "seamless loop",
-    "beat grid",
-    "حركة واجهات",
-    "تحول الأشكال",
-    "نوابض",
-    "حلقة متصلة",
-    "مؤشر",
-    "تفاعلات دقيقة",
-    "dribbble"
-  ],
-  "difficulty": 5,
-  "duration_s": 14,
-  "stack": [
-    "CSS",
-    "SVG",
-    "HTML Canvas"
-  ],
-  "brief": "styles/pm-twoclipping-5cba86/BRIEF.md"
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

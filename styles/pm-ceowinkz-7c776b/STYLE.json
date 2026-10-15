@@ -25,7 +25,9 @@
   "source_prompt_words": 30,
   "listed": true,
   "skill": "styles/pm-ceowinkz-7c776b/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
   "summary_ar": "فيديو عرض 15 ثانية من شركة Winkz Enterprises لعلامة تجارية: مسار توريد متحرك ورسوم مبيعات وأدلة ثقة تقنع العلامة بمنحها حق البيع.",
   "summary_en": "A 15-second B2B pitch from Winkz Enterprises to a brand: an animated supply route, sales charts and trust proofs that argue for the right to sell its products.",
   "keywords": [

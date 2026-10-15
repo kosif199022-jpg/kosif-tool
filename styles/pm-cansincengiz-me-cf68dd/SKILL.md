@@ -1,9 +1,9 @@
 ---
 name: pm-cansincengiz-me-cf68dd
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second square promo for the Lidlezz app, built for silent autoplay in the X feed: one phone, three feature callouts and a clear CTA.
 ---
 
-# KOSIF TOOL — Lidlezz app promo
+# KOSIF TOOL — Lidlezz app promo / برومو تطبيق Lidlezz لخلاصة X المربعة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/cansincengiz-me-cf68dd
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+برومو مربع 15 ثانية لتطبيق Lidlezz مصمم للتشغيل الصامت في خلاصة X: هاتف واحد يعرض ثلاث ميزات ودعوة واضحة للتنزيل.
+
+A 15-second square promo for the Lidlezz app, built for silent autoplay in the X feed: one phone, three feature callouts and a clear CTA.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 1:1, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

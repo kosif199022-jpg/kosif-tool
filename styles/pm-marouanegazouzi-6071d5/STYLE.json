@@ -26,7 +26,9 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-marouanegazouzi-6071d5/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
   "summary_ar": "ريل 15 ثانية لاستوديو Crux تدور فيه الحروف والرسوم البيانية حول نقطة مركزية واحدة، فيتحول الشعار إلى محور الحركة.",
   "summary_en": "A 15-second reel for Crux where letters and charts all pivot around a single centre point, turning the studio mark into the axis of motion.",
   "keywords": [

@@ -26,5 +26,7 @@
   "source_prompt_words": 29,
   "listed": true,
   "skill": "styles/pm-devius-maximus-beab45/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

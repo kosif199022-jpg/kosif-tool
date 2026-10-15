@@ -1,9 +1,9 @@
 ---
 name: pm-tak3sh8-be5012
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A narrated whiteboard explainer where strokes are drawn live, walking from a frustrated spin glass to Parisi's hierarchical overlap matrix.
 ---
 
-# KOSIF TOOL — Replica symmetry breaking whiteboard
+# KOSIF TOOL — Replica symmetry breaking whiteboard / سبورة مرسومة باليد تشرح كسر تناظر النسخ في نموذج SK
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/tak3sh8-be5012
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #82
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+شرح بأسلوب السبورة البيضاء، تُرسم فيه الخطوط أمام المشاهد مع تعليق صوتي، لفكرة كسر تناظر النسخ في نموذج شيرينغتون-كيركباتريك للزجاج المغزلي.
+
+A narrated whiteboard explainer where strokes are drawn live, walking from a frustrated spin glass to Parisi's hierarchical overlap matrix.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, Remotion, Web Audio), suggested duration (60 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات.

@@ -25,5 +25,7 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-marklaunches-3b9492/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

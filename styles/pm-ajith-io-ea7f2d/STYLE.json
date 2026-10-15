@@ -26,7 +26,9 @@
   "source_prompt_words": 56,
   "listed": true,
   "skill": "styles/pm-ajith-io-ea7f2d/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
   "summary_ar": "ريل منتج بارد الإيقاع مدته 30 ثانية يعرض Distilbook في ثلاث حركات: صدمة رقمية، جولة بطاقات، ثم برهان بالأرقام، على شبكة ثابتة بلون تمييز واحد.",
   "summary_en": "A cold, tight 30-second product reel presenting Distilbook in three acts: a numeric hook, a card tour, then proof by numbers, on a persistent grid with one accent colour.",
   "keywords": [

@@ -25,5 +25,7 @@
   "source_prompt_words": 34,
   "listed": true,
   "skill": "styles/pm-gigabit-million-16b3a0/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

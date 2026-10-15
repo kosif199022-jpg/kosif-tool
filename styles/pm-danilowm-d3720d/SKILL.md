@@ -1,9 +1,9 @@
 ---
 name: pm-danilowm-d3720d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.
 ---
 
-# KOSIF TOOL — Motion designer showreel
+# KOSIF TOOL — Motion designer showreel / ريل المصمم المبني من سياق المشروع
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/danilowm-d3720d
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل 15 ثانية يستمد محتواه من ملفات المشروع نفسه: شجرة المجلدات تصبح رسمًا بيانيًا، وأسماء المكوّنات تصبح تايبوغرافي حركيًا.
+
+A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

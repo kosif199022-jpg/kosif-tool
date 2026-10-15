@@ -25,7 +25,9 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-robvjourney-ce3e1a/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
   "summary_ar": "برومو 15 ثانية لعلامة Nohandslabs يستعمل زوج أيدٍ يترك المهام فتكمل نفسها، مع رسوم بيانية للوقت المستعاد.",
   "summary_en": "A 15-second brand promo for Nohandslabs where a pair of hands lets go and the work keeps running on its own, backed by reclaimed-time charts.",
   "keywords": [

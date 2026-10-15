@@ -27,5 +27,8 @@
   "source_prompt_words": 45,
   "listed": true,
   "skill": "styles/pm-samuel-yostt-891f87/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

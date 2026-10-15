@@ -1,7 +1,7 @@
 {
   "id": "pm-xelandre-363f00",
   "name": "SaaS product launch video",
-  "name_ar": null,
+  "name_ar": "فيلم إطلاق SaaS مولّد بالكود إطارًا بإطار",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,33 @@
   "source_prompt_words": 34,
   "listed": true,
   "skill": "styles/pm-xelandre-363f00/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "فيلم إطلاق أفقي لمنتج SaaS تُحسب فيه كل لقطة من الزمن داخل صفحة HTML، وتُلتقط بمتصفح بلا واجهة ثم تُجمَّع مع ضبابية حركة وصوت مولّد برمجيًا.",
+  "summary_en": "A landscape SaaS launch film where every frame is a function of time in an HTML page, captured headlessly, then assembled with motion blur and code-made sound.",
+  "keywords": [
+    "إطلاق منتج",
+    "لوحة تحكم",
+    "كود إلى واجهة",
+    "ضبابية حركة",
+    "صوت مولّد",
+    "لقطة واحدة",
+    "saas launch",
+    "deterministic render",
+    "headless capture",
+    "playwright",
+    "ffmpeg",
+    "sub-frame blur",
+    "offline audio",
+    "dashboard build"
+  ],
+  "difficulty": 5,
+  "duration_s": 30,
+  "stack": [
+    "HTML Canvas",
+    "Web Audio",
+    "CSS"
+  ],
+  "brief": "styles/pm-xelandre-363f00/BRIEF.md"
 }

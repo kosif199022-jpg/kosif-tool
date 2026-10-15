@@ -25,5 +25,7 @@
   "source_prompt_words": 12,
   "listed": true,
   "skill": "styles/pm-0xfemyn-e114d3/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

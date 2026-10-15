@@ -37,5 +37,9 @@
   "source_prompt_words": 474,
   "listed": true,
   "skill": "styles/pm-demonugc-4c5753/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

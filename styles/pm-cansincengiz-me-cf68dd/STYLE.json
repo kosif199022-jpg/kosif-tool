@@ -25,7 +25,9 @@
   "source_prompt_words": 37,
   "listed": true,
   "skill": "styles/pm-cansincengiz-me-cf68dd/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
   "summary_ar": "برومو مربع 15 ثانية لتطبيق Lidlezz مصمم للتشغيل الصامت في خلاصة X: هاتف واحد يعرض ثلاث ميزات ودعوة واضحة للتنزيل.",
   "summary_en": "A 15-second square promo for the Lidlezz app, built for silent autoplay in the X feed: one phone, three feature callouts and a clear CTA.",
   "keywords": [

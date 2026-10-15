@@ -1,9 +1,9 @@
 ---
 name: pm-zheke-38deff
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 12s square kinetic-type piece: one bilingual sentence breaks apart, reflows and changes weight on a steady pulse, with nothing on screen but letters.
 ---
 
-# KOSIF TOOL — Kinetic type showreel
+# KOSIF TOOL — Kinetic type showreel / طباعة حركية مربعة: جملة واحدة تعيد بناء نفسها
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/zheke-38deff
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #23
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+قطعة مربعة 12 ثانية من الطباعة الحركية الثنائية اللغة: جملة واحدة تتفكك وتتجمع وتغير وزنها على إيقاع ثابت دون أي عنصر غير الحروف.
+
+A 12s square kinetic-type piece: one bilingual sentence breaks apart, reflows and changes weight on a steady pulse, with nothing on screen but letters.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, CSS), suggested duration (12 s), aspect 1:1, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك.

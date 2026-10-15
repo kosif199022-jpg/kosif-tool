@@ -26,7 +26,9 @@
   "source_prompt_words": 34,
   "listed": true,
   "skill": "styles/pm-samuel-spitz-974923/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
   "summary_ar": "ريل 20 ثانية يستعرض أربعة فصول متتابعة (الخط، البيانات، الشكل، الإيقاع) بخيط طباعي واحد يربطها دون قطع.",
   "summary_en": "A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.",
   "keywords": [

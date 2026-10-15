@@ -26,7 +26,9 @@
   "source_prompt_words": 29,
   "listed": true,
   "skill": "styles/pm-utopyaszx-1b2f94/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
   "summary_ar": "برومو 15 ثانية لعلامة Bold Pilot يحوّل تحسين محركات البحث إلى رحلة طيران: صف نتيجة يتسلق من المركز 38 إلى الأول ومخطط زيارات يقلع.",
   "summary_en": "A 15-second Bold Pilot promo that turns SEO into a flight: a result row climbs from rank 38 to 1, a traffic curve takes off, and keyword chips dock in formation.",
   "keywords": [

@@ -1,7 +1,7 @@
 {
   "id": "pm-lukasersil-0ed38e",
   "name": "Motion techniques showreel",
-  "name_ar": "جولة التقنيات: ريل الخمس عشرة ثانية",
+  "name_ar": null,
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,32 +29,8 @@
   "source_prompt_words": 105,
   "listed": true,
   "skill": "styles/pm-lukasersil-0ed38e/SKILL.md",
-  "playbooks": [],
-  "summary_ar": "ريل مدته 15 ثانية تقوده كاميرا واحدة متصلة عبر ستة عوالم صغيرة، كل عالم يستعرض تقنية (جسيمات، هندسة ثلاثية، سوائل، أقنعة، صور) وينتهي بما يبدأ به التالي.",
-  "summary_en": "A 15-second reel driven by one continuous camera through six micro-worlds, each demonstrating a technique (particles, 3D geometry, fluids, masks, photos) and ending as the next begins.",
-  "keywords": [
-    "showreel",
-    "portfolio reel",
-    "particles",
-    "جسيمات",
-    "3d geometry",
-    "fluid distortion",
-    "masking",
-    "compositing",
-    "أقنعة",
-    "إضاءة",
-    "camera flythrough",
-    "كاميرا متصلة",
-    "morph transition",
-    "تشوه سائل",
-    "depth fog"
-  ],
-  "difficulty": 5,
-  "duration_s": 15,
-  "stack": [
-    "Remotion",
-    "Three.js",
-    "WebGL"
-  ],
-  "brief": "styles/pm-lukasersil-0ed38e/BRIEF.md"
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

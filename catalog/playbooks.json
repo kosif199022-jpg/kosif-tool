@@ -1,1 +1,34 @@
-[]
+[
+ {
+  "key": "charts",
+  "title_en": "Charts and data stories",
+  "title_ar": "الرسوم البيانية وقصص البيانات",
+  "path": "playbooks/charts.md",
+  "excerpt": "This playbook covers animated bars, lines, areas, pies, counters, bar-chart races and chart morphs in KOSIF films: how to move numbers without lying about them. It fixes the visual grammar, timing values and Arabic conventions Claude applie",
+  "words_en": 2458
+ },
+ {
+  "key": "phone",
+  "title_en": "Phone and device films",
+  "title_ar": "أفلام الهاتف والأجهزة",
+  "path": "playbooks/phone.md",
+  "excerpt": "A phone film sells a screen by giving it a body: a device with mass, a light source and a surface it sits on, so that every tap, swipe and turn reads as something a hand could do. This playbook covers 3D and 2.5D phone mockups, screen persp",
+  "words_en": 2616
+ },
+ {
+  "key": "photos",
+  "title_en": "Photos and parallax",
+  "title_ar": "الصور والبارالاكس",
+  "path": "playbooks/photos.md",
+  "excerpt": "This playbook covers films built from still photographs: layered camera rigs, 2.5D depth, planar parallax, dynamic masks, Ken Burns moves and the handoff from a photo into a graphic treatment. It gives Claude concrete numbers so a photo seq",
+  "words_en": 2425
+ },
+ {
+  "key": "product-ui",
+  "title_en": "Product UI motion",
+  "title_ar": "حركة واجهات المنتج",
+  "path": "playbooks/product-ui.md",
+  "excerpt": "This playbook covers films whose subject is an app or SaaS interface: feature launches, onboarding explainers, \"how it works\" clips and release notes in motion. It tells Claude how to rebuild screens as layered components, choreograph curso",
+  "words_en": 2617
+ }
+]

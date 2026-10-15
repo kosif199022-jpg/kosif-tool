@@ -1,9 +1,9 @@
 ---
 name: pm-ratheejaisal-1f4538
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second launch spot that races through the key features of a founder's personal page product at a breathless pace, locked to the brand system.
 ---
 
-# KOSIF TOOL — founder.page launch video
+# KOSIF TOOL — founder.page launch video / فيديو إطلاق founder.page السريع
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ratheejaisal-1f4538
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان إطلاق في 20 ثانية يستعرض الميزات الرئيسية لصفحة المؤسّس الشخصية بإيقاع لاهث وهوية بصرية ملتزمة بالعلامة.
+
+A 20-second launch spot that races through the key features of a founder's personal page product at a breathless pace, locked to the brand system.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (20 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

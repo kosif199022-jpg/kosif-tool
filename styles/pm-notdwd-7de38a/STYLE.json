@@ -1,7 +1,7 @@
 {
   "id": "pm-notdwd-7de38a",
   "name": "Frame by Frame launch video",
-  "name_ar": "ستينغ منتج مربع بأسلوب كينوت زجاجي",
+  "name_ar": null,
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -37,31 +37,9 @@
   "source_prompt_words": 1833,
   "listed": true,
   "skill": "styles/pm-notdwd-7de38a/SKILL.md",
-  "playbooks": [],
-  "summary_ar": "ستينغ إطلاق مربع مدته 12 ثانية بروح عروض Apple: واجهة فاتحة، زجاج مصنفر، كاميرا لا تتوقف، وثلاث قطعات حادة مثبتة قبيل النبضة على إيقاع 124 BPM.",
-  "summary_en": "A 12-second square launch sting in a light keynote idiom: frosted-glass UI, a camera that never rests, speed-driven blur and three hard cuts pinned just ahead of the beat.",
-  "keywords": [
-    "product sting",
-    "launch video",
-    "frosted glass",
-    "keynote style",
-    "cursor animation",
-    "prompt box",
-    "blur ramp",
-    "whip tilt",
-    "124 bpm",
-    "ستينغ إطلاق",
-    "زجاج مصنفر",
-    "مؤشر الفأرة",
-    "واجهة فاتحة",
-    "مربع 1:1"
-  ],
-  "difficulty": 5,
-  "duration_s": 12,
-  "stack": [
-    "SVG",
-    "CSS",
-    "Web Audio"
-  ],
-  "brief": "styles/pm-notdwd-7de38a/BRIEF.md"
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

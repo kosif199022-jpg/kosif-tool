@@ -1,9 +1,9 @@
 ---
 name: pm-samuel-spitz-974923
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.
 ---
 
-# KOSIF TOOL — Motion design showreel
+# KOSIF TOOL — Motion design showreel / ريل عرض القدرات: فصول الحركة الأربعة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/samuel-spitz-974923
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل 20 ثانية يستعرض أربعة فصول متتابعة (الخط، البيانات، الشكل، الإيقاع) بخيط طباعي واحد يربطها دون قطع.
+
+A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

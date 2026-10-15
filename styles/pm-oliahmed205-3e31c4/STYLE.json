@@ -26,5 +26,8 @@
   "source_prompt_words": 21,
   "listed": true,
   "skill": "styles/pm-oliahmed205-3e31c4/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/photos.md"
+  ]
 }

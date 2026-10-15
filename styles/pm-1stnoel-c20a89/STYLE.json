@@ -27,5 +27,7 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-1stnoel-c20a89/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

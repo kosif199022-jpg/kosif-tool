@@ -25,5 +25,7 @@
   "source_prompt_words": 8,
   "listed": true,
   "skill": "styles/pm-rneayan-ea6129/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

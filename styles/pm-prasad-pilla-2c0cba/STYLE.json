@@ -25,5 +25,7 @@
   "source_prompt_words": 22,
   "listed": true,
   "skill": "styles/pm-prasad-pilla-2c0cba/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

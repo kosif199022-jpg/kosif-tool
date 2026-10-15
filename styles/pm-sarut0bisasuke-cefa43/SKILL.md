@@ -1,9 +1,9 @@
 ---
 name: pm-sarut0bisasuke-cefa43
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.
 ---
 
-# KOSIF TOOL — White Russian recipe animation
+# KOSIF TOOL — White Russian recipe animation / وصفة الوايت روشن من الكأس الفارغة إلى الكوكتيل
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/sarut0bisasuke-cefa43
@@ -18,9 +18,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم شرح من لقطة واحدة متصلة يبني كوكتيل الوايت روشن مكوّنًا بعد مكوّن مع إظهار الكمية ومستوى الامتلاء في الكأس خلال 30 ثانية.
+
+A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, SVG, CSS), suggested duration (30 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Diagrams / مخططات, Code / كود.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

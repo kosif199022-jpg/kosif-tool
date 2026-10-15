@@ -15,7 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد, Product UI / واجهات المنتج.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.

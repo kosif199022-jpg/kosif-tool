@@ -26,5 +26,7 @@
   "source_prompt_words": 30,
   "listed": true,
   "skill": "styles/pm-levabashidze-2d713a/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

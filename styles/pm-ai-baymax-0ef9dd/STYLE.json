@@ -26,5 +26,7 @@
   "source_prompt_words": 10,
   "listed": true,
   "skill": "styles/pm-ai-baymax-0ef9dd/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

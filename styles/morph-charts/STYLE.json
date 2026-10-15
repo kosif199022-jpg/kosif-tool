@@ -23,5 +23,7 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/morph-charts/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

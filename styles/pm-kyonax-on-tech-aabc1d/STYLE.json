@@ -29,5 +29,8 @@
   "source_prompt_words": 59,
   "listed": true,
   "skill": "styles/pm-kyonax-on-tech-aabc1d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

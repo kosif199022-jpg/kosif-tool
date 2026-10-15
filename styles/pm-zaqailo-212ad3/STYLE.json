@@ -26,5 +26,7 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-zaqailo-212ad3/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

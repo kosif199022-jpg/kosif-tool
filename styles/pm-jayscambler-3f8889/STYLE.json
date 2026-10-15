@@ -25,5 +25,7 @@
   "source_prompt_words": 25,
   "listed": true,
   "skill": "styles/pm-jayscambler-3f8889/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

@@ -37,5 +37,9 @@
   "source_prompt_words": 1854,
   "listed": true,
   "skill": "styles/pm-notdwd-c2037d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

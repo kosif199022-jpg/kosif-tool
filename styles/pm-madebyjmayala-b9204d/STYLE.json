@@ -25,5 +25,7 @@
   "source_prompt_words": 23,
   "listed": true,
   "skill": "styles/pm-madebyjmayala-b9204d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

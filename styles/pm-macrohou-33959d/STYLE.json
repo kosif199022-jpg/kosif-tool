@@ -27,5 +27,8 @@
   "source_prompt_words": 24,
   "listed": true,
   "skill": "styles/pm-macrohou-33959d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

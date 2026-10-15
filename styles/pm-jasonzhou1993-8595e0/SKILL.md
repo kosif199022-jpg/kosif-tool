@@ -1,9 +1,9 @@
 ---
 name: pm-jasonzhou1993-8595e0
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second self-promotional showreel that chains kinetic type, animated charts and shape systems into one continuous portfolio piece.
 ---
 
-# KOSIF TOOL — Claude motion reel
+# KOSIF TOOL — Claude motion reel / ريل موشن ذاتي: عرض مهارات في 15 ثانية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/jasonzhou1993-8595e0
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل سريع مدته 15 ثانية يربط الطباعة الحركية والرسوم البيانية ومنظومات الأشكال في قطعة واحدة متصلة تعمل كبطاقة تعريف لمصمم موشن.
+
+A 15-second self-promotional showreel that chains kinetic type, animated charts and shape systems into one continuous portfolio piece.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

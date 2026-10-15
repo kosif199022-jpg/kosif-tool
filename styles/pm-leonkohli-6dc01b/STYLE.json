@@ -27,5 +27,7 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-leonkohli-6dc01b/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

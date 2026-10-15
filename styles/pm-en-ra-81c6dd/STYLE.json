@@ -27,5 +27,8 @@
   "source_prompt_words": 33,
   "listed": true,
   "skill": "styles/pm-en-ra-81c6dd/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

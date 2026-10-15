@@ -29,7 +29,9 @@
   "source_prompt_words": 65,
   "listed": true,
   "skill": "styles/pm-ror-fly-9950f1/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
   "summary_ar": "فيلم شرح مربع مدته 30 ثانية يبني كوكتيل نيغروني مكوناً بعد مكون مع المقادير وهي تُسكب في الكأس.",
   "summary_en": "A 30-second square explainer that builds a Negroni ingredient by ingredient, with measurements appearing as each pour fills the glass.",
   "keywords": [

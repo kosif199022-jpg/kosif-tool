@@ -1,9 +1,9 @@
 ---
 name: pm-davidshulmanfl-371638
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.
 ---
 
-# KOSIF TOOL — Clay-style music video
+# KOSIF TOOL — Clay-style music video / فيديو موسيقي بأسلوب الصلصال المتحرّك بمراجع معاصرة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/davidshulmanfl-371638
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #39
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو موسيقي لدقيقة واحدة بمظهر تحريك الصلصال الإيقافي مع أغنية أصلية بروح البوب الفني الثمانيني ورموز حياتنا الرقمية الحالية.
+
+A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Remotion, Web Audio), suggested duration (60 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Music / موسيقى.

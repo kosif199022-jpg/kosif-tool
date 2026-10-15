@@ -1,9 +1,9 @@
 ---
 name: pm-xelandre-363f00
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A landscape SaaS launch film where every frame is a function of time in an HTML page, captured headlessly, then assembled with motion blur and code-made sound.
 ---
 
-# KOSIF TOOL — SaaS product launch video
+# KOSIF TOOL — SaaS product launch video / فيلم إطلاق SaaS مولّد بالكود إطارًا بإطار
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/xelandre-363f00
@@ -18,9 +18,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق أفقي لمنتج SaaS تُحسب فيه كل لقطة من الزمن داخل صفحة HTML، وتُلتقط بمتصفح بلا واجهة ثم تُجمَّع مع ضبابية حركة وصوت مولّد برمجيًا.
+
+A landscape SaaS launch film where every frame is a function of time in an HTML page, captured headlessly, then assembled with motion blur and code-made sound.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio, CSS), suggested duration (30 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Music / موسيقى, Code / كود.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

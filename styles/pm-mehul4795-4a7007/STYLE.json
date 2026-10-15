@@ -25,5 +25,7 @@
   "source_prompt_words": 9,
   "listed": true,
   "skill": "styles/pm-mehul4795-4a7007/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

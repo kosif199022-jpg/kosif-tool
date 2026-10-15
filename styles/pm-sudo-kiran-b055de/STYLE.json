@@ -27,5 +27,8 @@
   "source_prompt_words": 23,
   "listed": true,
   "skill": "styles/pm-sudo-kiran-b055de/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

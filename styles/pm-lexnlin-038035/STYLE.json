@@ -29,5 +29,7 @@
   "source_prompt_words": 168,
   "listed": true,
   "skill": "styles/pm-lexnlin-038035/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/photos.md"
+  ]
 }

@@ -27,5 +27,7 @@
   "source_prompt_words": 37,
   "listed": true,
   "skill": "styles/pm-polydao-7a572b/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

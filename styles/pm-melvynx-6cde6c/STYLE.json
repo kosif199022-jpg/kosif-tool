@@ -26,7 +26,10 @@
   "source_prompt_words": 19,
   "listed": true,
   "skill": "styles/pm-melvynx-6cde6c/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ],
   "summary_ar": "ريل مدته 15 ثانية يجعل واجهة أداة البريد هي البطل: نافذة إنشاء تتفتح، رسالة تنطلق، صندوق وارد يرتّب نفسه، ومنحنى معدل الفتح يصعد.",
   "summary_en": "A 15-second promo where the email tool's own interface is the hero: a composer unfolds, a message launches, the inbox sorts itself and an open-rate curve climbs.",
   "keywords": [

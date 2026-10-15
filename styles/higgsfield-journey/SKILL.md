@@ -15,7 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد, Photos / صور.
-- (no category playbook yet)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.

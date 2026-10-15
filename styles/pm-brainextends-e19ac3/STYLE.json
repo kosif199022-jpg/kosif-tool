@@ -36,5 +36,9 @@
   "source_prompt_words": 1210,
   "listed": true,
   "skill": "styles/pm-brainextends-e19ac3/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

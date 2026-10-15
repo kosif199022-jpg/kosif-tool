@@ -1,9 +1,9 @@
 ---
 name: pm-paulo-kombucha-96431c
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second mascot-led motion spot explaining a referral programme: invite a friend, both of you win, and a growing chart proves it.
 ---
 
-# KOSIF TOOL — Mascot referral program promo
+# KOSIF TOOL — Mascot referral program promo / إعلان برنامج الإحالة بالتميمة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/paulo-kombucha-96431c
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان موشن جرافيك في 15 ثانية تقوده تميمة العلامة لشرح برنامج الإحالة: ادعُ صديقًا، يربح كلاكما، والرسم البياني يثبت ذلك.
+
+A 15-second mascot-led motion spot explaining a referral programme: invite a friend, both of you win, and a growing chart proves it.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, React), suggested duration (15 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

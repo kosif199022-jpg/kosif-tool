@@ -1,9 +1,9 @@
 ---
 name: pm-robvjourney-ce3e1a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second brand promo for Nohandslabs where a pair of hands lets go and the work keeps running on its own, backed by reclaimed-time charts.
 ---
 
-# KOSIF TOOL — Nohandslabs brand promo
+# KOSIF TOOL — Nohandslabs brand promo / برومو Nohandslabs: العمل يمضي بلا أيدٍ
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/robvjourney-ce3e1a
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+برومو 15 ثانية لعلامة Nohandslabs يستعمل زوج أيدٍ يترك المهام فتكمل نفسها، مع رسوم بيانية للوقت المستعاد.
+
+A 15-second brand promo for Nohandslabs where a pair of hands lets go and the work keeps running on its own, backed by reclaimed-time charts.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

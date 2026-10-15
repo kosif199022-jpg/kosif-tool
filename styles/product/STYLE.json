@@ -23,5 +23,7 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/product/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

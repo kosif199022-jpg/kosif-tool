@@ -27,5 +27,7 @@
   "source_prompt_words": 27,
   "listed": true,
   "skill": "styles/pm-shinskinakamoto-20190b/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

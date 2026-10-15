@@ -1,9 +1,9 @@
 ---
 name: pm-techyoutbe-945b56
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30s X-style SaaS launch film: real product UI in a device frame, three feature cards, a benefit chart and a clean CTA.
 ---
 
-# KOSIF TOOL — Visual guides library launch
+# KOSIF TOOL — Visual guides library launch / إطلاق مكتبة الأدلة المرئية: فيديو منتج SaaS
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/techyoutbe-945b56
@@ -17,9 +17,18 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو إطلاق 30 ثانية بأسلوب منشورات إطلاق المنتجات على X: واجهة حقيقية في إطار جهاز، بطاقات ميزات، ومخطط يقيس الفائدة.
+
+A 30s X-style SaaS launch film: real product UI in a device frame, three feature cards, a benefit chart and a clean CTA.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Photos / صور.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

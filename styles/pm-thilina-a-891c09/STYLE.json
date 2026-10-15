@@ -26,5 +26,8 @@
   "source_prompt_words": 29,
   "listed": true,
   "skill": "styles/pm-thilina-a-891c09/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

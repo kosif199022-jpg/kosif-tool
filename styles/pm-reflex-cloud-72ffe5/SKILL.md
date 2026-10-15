@@ -1,9 +1,9 @@
 ---
 name: pm-reflex-cloud-72ffe5
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second brand reel for reflex. inc cut to music: a one-second hook, then typography, shape play, camera whips and colour flips, landing on a clean final frame.
 ---
 
-# KOSIF TOOL — Reflex brand motion reel
+# KOSIF TOOL — Reflex brand motion reel / ريفلكس: ريل رد الفعل في خمس عشرة ثانية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/reflex-cloud-72ffe5
@@ -17,9 +17,17 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل علامة لشركة reflex. inc في 15 ثانية مقطوع على الإيقاع: خطّاف في الثانية الأولى، ثم حروف وأشكال وكاميرا وتحولات لون، وإطار ختامي نظيف.
+
+A 15-second brand reel for reflex. inc cut to music: a one-second hook, then typography, shape play, camera whips and colour flips, landing on a clean final frame.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Photos / صور, Music / موسيقى.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

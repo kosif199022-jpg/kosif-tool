@@ -25,5 +25,7 @@
   "source_prompt_words": 10,
   "listed": true,
   "skill": "styles/pm-sayan-shanky-f850d8/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

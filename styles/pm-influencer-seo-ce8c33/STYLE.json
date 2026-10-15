@@ -1,7 +1,7 @@
 {
   "id": "pm-influencer-seo-ce8c33",
   "name": "fal motion design showreel",
-  "name_ar": null,
+  "name_ar": "ريل استعراضي لمنصة fal في 15 ثانية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -26,5 +26,33 @@
   "source_prompt_words": 32,
   "listed": true,
   "skill": "styles/pm-influencer-seo-ce8c33/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "شريط استعراضي كثيف في 15 ثانية بأسلوب السيرة الذاتية للمصمم، يمزج الطباعة الحركية برسوم السرعة وأصولًا مولَّدة عبر fal API.",
+  "summary_en": "A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.",
+  "keywords": [
+    "showreel",
+    "generative media",
+    "fal api",
+    "kinetic typography",
+    "bar race",
+    "latency chart",
+    "particle text",
+    "portfolio reel",
+    "شريط استعراضي",
+    "وسائط توليدية",
+    "طباعة حركية",
+    "سباق أعمدة",
+    "جسيمات",
+    "واجهة برمجية"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "WebGL"
+  ],
+  "brief": "styles/pm-influencer-seo-ce8c33/BRIEF.md"
 }

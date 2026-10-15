@@ -28,5 +28,9 @@
   "source_prompt_words": 113,
   "listed": true,
   "skill": "styles/pm-dale-vaz-cc612a/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/phone.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

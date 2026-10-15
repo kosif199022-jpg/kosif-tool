@@ -25,5 +25,7 @@
   "source_prompt_words": 18,
   "listed": true,
   "skill": "styles/pm-visheshbaghell-3aba37/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

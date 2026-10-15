@@ -27,5 +27,7 @@
   "source_prompt_words": 14,
   "listed": true,
   "skill": "styles/pm-lester-tyy-f897f7/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

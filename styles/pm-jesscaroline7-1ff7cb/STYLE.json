@@ -27,5 +27,8 @@
   "source_prompt_words": 25,
   "listed": true,
   "skill": "styles/pm-jesscaroline7-1ff7cb/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

@@ -38,5 +38,9 @@
   "source_prompt_words": 627,
   "listed": true,
   "skill": "styles/pm-techhalla-7acbc2/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

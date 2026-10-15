@@ -26,5 +26,7 @@
   "source_prompt_words": 71,
   "listed": true,
   "skill": "styles/pm-loicrambo-ad6830/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

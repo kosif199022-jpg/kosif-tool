@@ -1,9 +1,9 @@
 ---
 name: pm-marouanegazouzi-6071d5
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second reel for Crux where letters and charts all pivot around a single centre point, turning the studio mark into the axis of motion.
 ---
 
-# KOSIF TOOL — Crux motion design showreel
+# KOSIF TOOL — Crux motion design showreel / ريل Crux: كل شيء يدور حول النقطة الحاسمة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/marouanegazouzi-6071d5
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل 15 ثانية لاستوديو Crux تدور فيه الحروف والرسوم البيانية حول نقطة مركزية واحدة، فيتحول الشعار إلى محور الحركة.
+
+A 15-second reel for Crux where letters and charts all pivot around a single centre point, turning the studio mark into the axis of motion.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

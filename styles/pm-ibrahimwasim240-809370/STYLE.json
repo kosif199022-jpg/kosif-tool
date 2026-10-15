@@ -27,5 +27,7 @@
   "source_prompt_words": 21,
   "listed": true,
   "skill": "styles/pm-ibrahimwasim240-809370/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

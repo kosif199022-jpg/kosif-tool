@@ -27,5 +27,7 @@
   "source_prompt_words": 34,
   "listed": true,
   "skill": "styles/pm-ddryo-loos-300829/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

@@ -27,5 +27,8 @@
   "source_prompt_words": 38,
   "listed": true,
   "skill": "styles/pm-astrodevil-3f2054/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

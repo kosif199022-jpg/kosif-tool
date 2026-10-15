@@ -26,5 +26,7 @@
   "source_prompt_words": 25,
   "listed": true,
   "skill": "styles/pm-ezshine-c90d73/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

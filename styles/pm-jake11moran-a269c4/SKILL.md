@@ -1,9 +1,9 @@
 ---
 name: pm-jake11moran-a269c4
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.
 ---
 
-# KOSIF TOOL — Animated agent session story
+# KOSIF TOOL — Animated agent session story / حكاية جلسة الوكيل البرمجي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/jake11moran-a269c4
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #79
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيلم قصير مُلحَّن يحوّل سجل جلسة حقيقية بين مطوّر ووكيل برمجي إلى حكاية متحركة بشخصيتين وأحداث كود.
+
+A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (CSS, GSAP, Web Audio), suggested duration (45 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Code / كود.

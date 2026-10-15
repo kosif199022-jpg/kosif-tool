@@ -28,5 +28,7 @@
   "source_prompt_words": 61,
   "listed": true,
   "skill": "styles/pm-kloss-xyz-15182a/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

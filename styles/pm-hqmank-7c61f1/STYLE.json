@@ -26,5 +26,8 @@
   "source_prompt_words": 33,
   "listed": true,
   "skill": "styles/pm-hqmank-7c61f1/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "pm-twoclipping-221cab",
   "name": "Photo print app launch film",
-  "name_ar": "فيلم إطلاق تطبيق طباعة الصور بلقطة واحدة",
+  "name_ar": null,
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -40,31 +40,10 @@
   "source_prompt_words": 912,
   "listed": true,
   "skill": "styles/pm-twoclipping-221cab/SKILL.md",
-  "playbooks": [],
-  "summary_ar": "فيلم إطلاق مربع بأسلوب عروض آبل، لقطة متصلة واحدة بلا قطع، كل مشهد يتولد من سابقه على إيقاع 120 نبضة.",
-  "summary_en": "A square Apple-style launch film in one continuous take where every scene is sculpted out of the previous one on a 120 BPM beat grid.",
-  "keywords": [
-    "liquid glass",
-    "iris wipe",
-    "continuous take",
-    "beat-synced",
-    "cursor-driven ui",
-    "morph transitions",
-    "closed-form spring",
-    "playwright render",
-    "زجاج سائل",
-    "لقطة واحدة متصلة",
-    "مزامنة الإيقاع",
-    "تحولات شكلية",
-    "فيلم إطلاق منتج",
-    "طباعة صور"
-  ],
-  "difficulty": 5,
-  "duration_s": 27,
-  "stack": [
-    "HTML Canvas",
-    "SVG",
-    "CSS"
-  ],
-  "brief": "styles/pm-twoclipping-221cab/BRIEF.md"
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/phone.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

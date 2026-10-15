@@ -1,6 +1,6 @@
 # Product UI motion — حركة واجهات المنتج
 
-This playbook covers films whose subject is an app or SaaS interface: feature launches, onboarding explainers, "how it works" clips and release notes in motion. It tells Claude how to rebuild screens as layered components, choreograph cursor, tap, scroll, modal and focus events with believable timings, and frame the screen with or without a device. It sits under the style's `SKILL.md` and `BRIEF.md`: when they state a specific number, theirs wins.
+This playbook covers films whose subject is an app or SaaS interface: feature launches, onboarding explainers, "how it works" clips and release notes in motion. It tells Claude how to rebuild screens as layered components, choreograph cursor, tap, scroll, modal and focus events with believable timings, and frame the screen with or without a device. It sits under the style's `SKILL.md` and `BRIEF.md`: when they state a number, theirs wins.
 
 هذا الدليل يخص الأفلام التي بطلها واجهة تطبيق أو منتج SaaS: إطلاق ميزة، شرح أول استخدام، مقطع «كيف يعمل»، أو ملاحظات إصدار متحركة. يشرح كيف تُعاد بناء الشاشة كطبقات مستقلة، وكيف تُنسَّق حركة المؤشر والنقر والتمرير والنوافذ المنبثقة والتركيز بتوقيتات واقعية، وكيف تُؤطَّر الشاشة داخل جهاز أو بدونه. يأتي تحت `SKILL.md` و`BRIEF.md` الخاصين بالاستايل، وعند تعارض رقم محدد فالأولوية لهما.
 
@@ -14,7 +14,7 @@ Decide the framing before the plan. Device-free framing (a floating, rounded scr
 
 ## 2. Visual grammar — القواعد البصرية
 
-- **Layers, not screenshots.** Build every screen as: background → chrome (sidebar, top bar, tab bar) → content blocks (cards, rows, fields) → controls (buttons, toggles, inputs) → overlays (modal, dropdown, toast) → pointer layer → callout layer (labels, leader lines). Each layer owns its timeline so it can enter, change state and leave independently. A flattened PNG of the app may sit behind the rebuilt layers as a reference, never as the thing that animates.
+- **Layers, not screenshots.** Build every screen as: background → chrome (sidebar, top bar, tab bar) → content blocks (cards, rows, fields) → controls (buttons, toggles, inputs) → overlays (modal, dropdown, toast) → pointer layer → callout layer. Each layer owns its timeline so it can enter, change state and leave on its own. A flattened PNG may sit behind the rebuilt layers as a reference, never as the thing that animates.
 - **Tokens first.** One 8 px grid; three radii (8, 16, 24); one headline size plus two UI sizes; four elevation tiers whose shadow grows with the tier, from `0 2px 8px rgba(0,0,0,.12)` to `0 24px 64px rgba(0,0,0,.35)` for a modal. Write the tokens in `STYLE.md` and reuse them in code.
 - **Real content.** Plausible names, amounts, dates and statuses in the viewer's locale and script. No lorem ipsum, no "Item 1, Item 2", no KPI tile that disagrees with the chart beside it.
 - **Pointer design.** Device-free: a 22–26 px arrow with a 1.5 px outline in the opposite tone of the UI. In-device mobile: a 40–48 px translucent circle at 25–35 % opacity, visible only during the tap; never draw an arrow on a phone.
@@ -26,7 +26,7 @@ Decide the framing before the plan. Device-free framing (a floating, rounded scr
 
 ## 3. Motion mechanics — ميكانيكا الحركة
 
-Every interaction is a triad: **intent** (pointer arrives) → **action** (press) → **response** (the UI answers after a short latency). Skip any of the three and the film reads as fake. The numbers below are first estimates for 30 fps; refine against the reference.
+Every interaction is a triad: **intent** (pointer arrives) → **action** (press) → **response** (the UI answers after a short latency). Skip one and the film reads as fake. The numbers are first estimates at 30 fps; refine against the reference.
 
 | Event | Duration | Curve | Notes |
 |---|---|---|---|
@@ -51,11 +51,11 @@ Every interaction is a triad: **intent** (pointer arrives) → **action** (press
 
 Rules that hold across the table:
 
-- **Dwell.** After a state settles, give 1.2–2.0 s of reading time before the next intent starts (0.8 s minimum in reels). The dwell is where the voice-over lands.
-- **Speed hierarchy.** Chrome moves slowest, content medium, pointer and micro-feedback fastest. If a sidebar and a button move at the same speed, the scene flattens.
-- **One overshoot per scene.** At most one spring with visible bounce (damping < 16) per scene; every other move is expo-out or ease-in-out.
+- **Dwell.** After a state settles, give 1.2–2.0 s of reading time before the next intent (0.8 s minimum in reels). The dwell is where the voice-over lands.
+- **Speed hierarchy.** Chrome slowest, content medium, pointer and micro-feedback fastest. A sidebar and a button moving at the same speed flatten the scene.
+- **One overshoot per scene.** At most one spring with visible bounce (damping < 16); every other move is expo-out or ease-in-out.
 - **Floors and ceilings.** Nothing visible is shorter than 80 ms; nothing stays frozen longer than 1.2 s unless a caret, progress bar or slow camera keeps the frame alive.
-- **Latency is content.** 60–120 ms between release and response feels real; 0 ms feels like a slideshow, >200 ms feels like a bug.
+- **Latency is content.** 60–120 ms between release and response feels real; 0 ms is a slideshow, >200 ms is a bug.
 
 **بالعربية:** كل تفاعل ثلاثية: نية (وصول المؤشر) ← فعل (ضغط) ← استجابة بعد كمون 60–120 مللي ثانية؛ الاستجابة الفورية تبدو مزيفة وفوق 200 تبدو عطلًا. انتقال المؤشر 380–700 مللي ثانية بقوس خفيف وتوقف 80–120 قبل الضغط؛ الضغط 80 نزولًا و140 صعودًا؛ النافذة تفتح 280–320 بنابض k=170 d=18 وتغلق أسرع 160–200؛ تدرّج القوائم 40–60 لكل عنصر بسقف 400 للمجموعة؛ الكتابة 55–90 لكل حرف مع تذبذب مثبّت بالبذرة؛ التمرير 600–900 لكل ارتفاع شاشة مع وقفة 1.2–2 ثانية؛ تقريب التركيز 500–700 ثم ثبات 1.5 ثانية. وقفة قراءة 1.2–2 ثانية بعد كل حالة، الهيكل أبطأ من المحتوى والمؤشر أسرع الجميع، ونابض واحد مرتد لكل مشهد.
 
@@ -115,7 +115,7 @@ Times in ms from the start of the scene; each recipe assumes 30 fps and a 1080-w
 | 4600 | 4840 | toast slides in from the top-end corner | spring k=200 d=22 |
 | 4840 | 6800 | hold, then toast leaves in 200 ms | ease-in |
 
-**بالعربية:** أربع وصفات جاهزة: (أ) وصول الشاشة ثم رسم الهيكل ثم تدرّج البطاقات مع دفعة كاميرا بطيئة ووقفة؛ (ب) المؤشر يصل ويستقر ويضغط، ثم خلفية معتمة ولوحة تفتح بنابض وحقول متدرجة وتقريب تركيز؛ (ج) شرح يُرسم بخط قائد، وقفة، تمرير 720 بكسل والهيكل ثابت مع باراлакس خفيف، ثم شرح ثانٍ؛ (د) تعبئة نموذج بكتابة حرفية مع علامة تحقق، انتقال التركيز، إرسال، مؤشر تحميل، ثم تنبيه نجاح يدخل من الزاوية العلوية ناحية نهاية السطر. الأزمنة بالمللي ثانية من بداية المشهد والجداول أعلاه هي المرجع.
+**بالعربية:** أربع وصفات جاهزة: (أ) وصول الشاشة ثم رسم الهيكل ثم تدرّج البطاقات مع دفعة كاميرا بطيئة ووقفة؛ (ب) المؤشر يصل ويستقر ويضغط، ثم خلفية معتمة ولوحة تفتح بنابض وحقول متدرجة وتقريب تركيز؛ (ج) شرح يُرسم بخط قائد، وقفة، تمرير 720 بكسل والهيكل ثابت مع بارالاكسس خفيف، ثم شرح ثانٍ؛ (د) تعبئة نموذج بكتابة حرفية مع علامة تحقق، انتقال التركيز، إرسال، مؤشر تحميل، ثم تنبيه نجاح يدخل من الزاوية العلوية ناحية نهاية السطر. الأزمنة بالمللي ثانية من بداية المشهد والجداول أعلاه هي المرجع.
 
 ## 5. Implementation — التنفيذ
 
@@ -225,35 +225,35 @@ Sound design is sparse: one short click per press (10–30 ms transient, 12–18
 
 ## 8. Quality checklist — قائمة الفحص
 
-1. Does every interaction show intent, action and response, with 60–120 ms latency between the last two?
-2. Is every screen built from layers that can be retimed individually, with no flattened screenshot animating?
-3. Does each settled state hold for at least 1.2 s (0.8 s in reels) before the next intent begins?
-4. Is there at most one bouncing spring per scene, and are all other moves expo-out or ease-in-out?
-5. Does the pointer match the framing (arrow for device-free, tap circle inside a phone) and never teleport?
-6. Is all UI copy real, locale-correct and internally consistent, with one digit system throughout?
-7. In Arabic, is the layout mirrored (sidebar, buttons, chevrons, toasts) and are joined letters never split?
-8. Does any focus zoom above 1.4× use a 2× screen or `--scale 2`, so no pixels soften?
-9. When voice is supplied, does each press land within ±100 ms of its verb, with the audio file untouched?
-10. Did the rendered MP4 pass the duration, fps, frame-count and audio-stream checks in `TEST_REPORT.md`, and did a contact-sheet preview go to the user before the final render?
+1. Does every interaction show intent, action and response, with 60–120 ms latency before the response?
+2. Is every screen built from individually retimable layers, with no flattened screenshot animating?
+3. Does each settled state hold at least 1.2 s (0.8 s in reels) before the next intent?
+4. Is there at most one bouncing spring per scene, everything else expo-out or ease-in-out?
+5. Does the pointer match the framing (arrow device-free, tap circle in a phone) and never teleport?
+6. Is all UI copy real, locale-correct and consistent, with one digit system throughout?
+7. In Arabic, is the layout mirrored (sidebar, buttons, chevrons, toasts) with no joined letters split?
+8. Does any focus zoom above 1.4× use a 2× screen or `--scale 2`?
+9. With supplied voice, does each press land within ±100 ms of its verb and the audio stay untouched?
+10. Did a contact-sheet preview go to the user before the final render, and did the MP4 pass the duration, fps, frame-count and audio-stream checks in `TEST_REPORT.md`?
 
 **بالعربية:** عشر أسئلة نعم/لا: ثلاثية نية/فعل/استجابة بكمون 60–120؟ شاشات من طبقات لا لقطة مسطحة؟ وقفة 1.2 ثانية بعد كل حالة؟ نابض مرتد واحد لكل مشهد؟ مؤشر مناسب للإطار ولا ينتقل قفزًا؟ نص حقيقي متسق بنظام أرقام واحد؟ تخطيط عربي معكوس وحروف غير مفككة؟ دقة مضاعفة لأي تقريب فوق 1.4×؟ ضغط خلال ±100 مللي ثانية من الفعل المنطوق وصوت غير معدّل؟ فحص المدة والإطارات والصوت في `TEST_REPORT.md` ومعاينة قبل الرندر؟
 
 ## 9. Anti-patterns — أخطاء شائعة
 
-These are the tells of a generated-looking product film; each one is a reason to reject a preview.
+The tells of a generated-looking product film; each one is a reason to reject a preview.
 
-- **The teleporting cursor.** A pointer that appears over the button, or moves in a straight line at constant speed, or presses with no visible settle. Real hands arc, slow down and pause.
-- **Zero-latency UI.** Modal appears on the same frame as the click. The 60–120 ms gap is what makes the interface feel like software instead of a slideshow.
-- **Bounce on everything.** Every card, label and toast overshooting with the same spring. Overshoot is a highlight, not a default.
-- **The glass-and-glow stack.** Purple-to-blue gradient background, blurred glass cards with no content, floating orbs, a glow on every edge. Depth comes from elevation tiers and overlap.
-- **Lorem UI.** "Item 1", "John Doe", "$1,234", charts with no axis, avatars that are grey circles. Viewers pause product films; the content must survive a pause.
-- **Uniform 300 ms.** One duration and one curve for chrome, content and pointer alike. Use the speed hierarchy.
-- **Infinite stagger.** Twelve list rows entering 100 ms apart so the list takes 1.2 s to arrive. Cap the stagger at 400 ms total and 8 items.
+- **The teleporting cursor.** A pointer that appears over the button, moves in a straight line at constant speed, or presses with no settle. Real hands arc, slow down and pause.
+- **Zero-latency UI.** The modal appears on the same frame as the click. The 60–120 ms gap is what makes it feel like software instead of a slideshow.
+- **Bounce on everything.** Every card, label and toast overshooting on the same spring. Overshoot is a highlight, not a default.
+- **The glass-and-glow stack.** Purple-to-blue gradient, blurred glass cards with no content, floating orbs, a glow on every edge. Depth comes from elevation tiers and overlap.
+- **Lorem UI.** "Item 1", "John Doe", "$1,234", charts with no axis, grey-circle avatars. Viewers pause product films; the content must survive a pause.
+- **Uniform 300 ms.** One duration and one curve for chrome, content and pointer alike.
+- **Infinite stagger.** Twelve rows entering 100 ms apart so the list takes 1.2 s to arrive. Cap at 400 ms total and 8 items.
 - **Blur-in text.** Every label arriving from a Gaussian blur. Inside a UI, text fades and rises 8–16 px; blur belongs to camera focus only.
 - **3D wobble.** Screens tilting in perspective and drifting forever. Rotation is for the arrival move only.
 - **Mismatched density.** A 1× screenshot zoomed to 1.8× next to crisp vector callouts.
-- **Fake scroll.** Content and chrome moving together, or scroll without a pause. Chrome stays, content moves, then everything stops to be read.
-- **Sound on everything.** A whoosh for each list item. One click per press, one swish per screen.
+- **Fake scroll.** Chrome moving with the content, or scroll without a pause. Chrome stays, content moves, then everything stops to be read.
+- **Sound on everything.** A whoosh per list item. One click per press, one swish per screen.
 
 **بالعربية:** علامات الفيلم المولَّد التي تستوجب رفض المعاينة: مؤشر ينتقل قفزًا أو بخط مستقيم بسرعة ثابتة؛ واجهة بلا كمون تستجيب في نفس إطار النقر؛ ارتداد على كل عنصر؛ خلفية بنفسجية متدرجة مع بطاقات زجاجية فارغة وتوهج على كل حافة؛ محتوى وهمي لا يصمد عند الإيقاف؛ مدة واحدة ومنحنى واحد لكل شيء؛ تدرّج لا ينتهي؛ ضبابية دخول على كل نص؛ شاشات تميل وتهتز في منظور ثلاثي الأبعاد؛ لقطة بدقة منخفضة مكبّرة بجانب شروحات حادة؛ تمرير يحرّك الهيكل مع المحتوى بلا وقفة؛ مؤثر صوتي على كل عنصر.
 

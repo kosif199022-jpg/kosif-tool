@@ -1,9 +1,9 @@
 ---
 name: pm-quickdesignio-dd93d0
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.
 ---
 
-# KOSIF TOOL — QuickDesign brand promo
+# KOSIF TOOL — QuickDesign brand promo / ترويج علامة QuickDesign: السرعة كحجّة بصرية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/quickdesignio-dd93d0
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ترويج أفقي مدته 15 ثانية لأداة تصميم سريعة، يبني الشعار من أشكال أولية ثم يبرهن على توفير الوقت بمخططات وعدّادات متحركة.
+
+A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

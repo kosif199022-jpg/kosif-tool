@@ -26,5 +26,7 @@
   "source_prompt_words": 28,
   "listed": true,
   "skill": "styles/pm-topi-003-9ca6b5/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

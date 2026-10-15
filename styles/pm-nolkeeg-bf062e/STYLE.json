@@ -25,5 +25,7 @@
   "source_prompt_words": 90,
   "listed": true,
   "skill": "styles/pm-nolkeeg-bf062e/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

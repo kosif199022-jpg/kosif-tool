@@ -25,5 +25,7 @@
   "source_prompt_words": 10,
   "listed": true,
   "skill": "styles/pm-jazzen-chen-4542ae/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

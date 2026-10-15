@@ -38,5 +38,9 @@
   "source_prompt_words": 648,
   "listed": true,
   "skill": "styles/pm-gdgtify-287ddf/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/phone.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ]
 }

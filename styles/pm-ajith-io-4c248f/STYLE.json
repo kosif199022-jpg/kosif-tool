@@ -27,5 +27,7 @@
   "source_prompt_words": 37,
   "listed": true,
   "skill": "styles/pm-ajith-io-4c248f/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

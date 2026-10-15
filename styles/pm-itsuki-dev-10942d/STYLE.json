@@ -26,5 +26,7 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-itsuki-dev-10942d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

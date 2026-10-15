@@ -1,9 +1,9 @@
 ---
 name: pm-ultimaxbt-bbebf5
-description: A 15-second 2D film where one orange dot threads every scene: toggle, letter, spring graph, shape, halftone field and end card, looping back to the start.
+description: Create a new video using the motion design language referenced at this catalog entry.
 ---
 
-# KOSIF TOOL — Orange dot motion system / نظام حركي تقوده نقطة برتقالية واحدة
+# KOSIF TOOL — Orange dot motion system
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ultimaxbt-bbebf5
@@ -18,16 +18,10 @@ description: A 15-second 2D film where one orange dot threads every scene: toggl
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
-## Creative brief (الملف الإبداعي)
-فيلم 2D مدته 15 ثانية تربط فيه نقطة برتقالية واحدة كل المشاهد: من مفتاح تبديل إلى حرف إلى رسم زنبركي إلى شكل إلى بطاقة ختامية.
-
-A 15-second 2D film where one orange dot threads every scene: toggle, letter, spring graph, shape, halftone field and end card, looping back to the start.
-
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, CSS, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
-
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Music / موسيقى, Code / كود.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

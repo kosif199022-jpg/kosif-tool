@@ -30,5 +30,8 @@
   "source_prompt_words": 690,
   "listed": true,
   "skill": "styles/pm-antonio-kodheli-490109/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/photos.md"
+  ]
 }

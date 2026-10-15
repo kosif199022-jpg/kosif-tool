@@ -1,7 +1,7 @@
 {
   "id": "pm-grace-sunnyy-29bc61",
   "name": "Keyframe motion design reel",
-  "name_ar": "ريل الكي فريم: من داخل الخط الزمني",
+  "name_ar": null,
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,30 +25,7 @@
   "source_prompt_words": 59,
   "listed": true,
   "skill": "styles/pm-grace-sunnyy-29bc61/SKILL.md",
-  "playbooks": [],
-  "summary_ar": "ريل 15 ثانية يجعل معيّن الـ keyframe ومنحنيات المحرر بطلَي الإطار، ورأس التشغيل يعبر الشاشة طوال المدة لتثبت كل ثانية قيمتها.",
-  "summary_en": "A 15-second reel where the keyframe diamond and editor curves are the heroes, and a playhead crossing the frame makes every second accountable.",
-  "keywords": [
-    "portfolio reel",
-    "keyframe diamond",
-    "bezier curve",
-    "graph editor",
-    "playhead",
-    "easing comparison chart",
-    "12-column grid",
-    "negative space",
-    "ريل بورتفوليو",
-    "منحنى بيزييه",
-    "خط زمني",
-    "شبكة تخطيط",
-    "مقارنة تسهيل"
-  ],
-  "difficulty": 4,
-  "duration_s": 15,
-  "stack": [
-    "Remotion",
-    "React",
-    "SVG"
-  ],
-  "brief": "styles/pm-grace-sunnyy-29bc61/BRIEF.md"
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

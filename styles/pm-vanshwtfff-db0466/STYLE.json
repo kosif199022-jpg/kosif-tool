@@ -26,5 +26,7 @@
   "source_prompt_words": 24,
   "listed": true,
   "skill": "styles/pm-vanshwtfff-db0466/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

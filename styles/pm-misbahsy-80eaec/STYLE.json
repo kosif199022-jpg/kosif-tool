@@ -26,5 +26,7 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-misbahsy-80eaec/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

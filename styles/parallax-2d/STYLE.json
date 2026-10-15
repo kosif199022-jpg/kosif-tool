@@ -23,5 +23,7 @@
   "source_prompt_words": null,
   "listed": true,
   "skill": "styles/parallax-2d/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/photos.md"
+  ]
 }

@@ -27,5 +27,7 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-manuelogomigo-f33ca9/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

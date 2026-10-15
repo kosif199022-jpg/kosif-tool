@@ -15,7 +15,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Product UI / واجهات المنتج.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.

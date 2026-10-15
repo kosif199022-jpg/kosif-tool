@@ -34,5 +34,7 @@
   "source_prompt_words": 548,
   "listed": true,
   "skill": "styles/pm-theparuchh-6e08c3/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/photos.md"
+  ]
 }

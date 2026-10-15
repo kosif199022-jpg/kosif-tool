@@ -1,9 +1,9 @@
 ---
 name: pm-l3d1c-0e35a3
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical 15 s app ad where one selfie becomes an AI-generated twin inside a live phone UI, told as a split-screen before/after reveal.
 ---
 
-# KOSIF TOOL — PicTwin AI app ad
+# KOSIF TOOL — PicTwin AI app ad / إعلان عمودي لتطبيق PicTwin للصور بالذكاء الاصطناعي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/l3d1c-0e35a3
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان عمودي قصير يُظهر كيف تتحوّل صورة شخصية واحدة إلى نسخة توأم مولّدة بالذكاء الاصطناعي داخل واجهة هاتف حيّة بكشف قبل/بعد.
+
+A vertical 15 s app ad where one selfie becomes an AI-generated twin inside a live phone UI, told as a split-screen before/after reveal.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 9:16, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.

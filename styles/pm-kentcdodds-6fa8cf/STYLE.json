@@ -26,5 +26,7 @@
   "source_prompt_words": 58,
   "listed": true,
   "skill": "styles/pm-kentcdodds-6fa8cf/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

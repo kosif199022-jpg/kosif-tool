@@ -1,9 +1,9 @@
 ---
 name: pm-influencer-seo-ce8c33
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.
 ---
 
-# KOSIF TOOL — fal motion design showreel
+# KOSIF TOOL — fal motion design showreel / ريل استعراضي لمنصة fal في 15 ثانية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/influencer-seo-ce8c33
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شريط استعراضي كثيف في 15 ثانية بأسلوب السيرة الذاتية للمصمم، يمزج الطباعة الحركية برسوم السرعة وأصولًا مولَّدة عبر fal API.
+
+A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, WebGL), suggested duration (15 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

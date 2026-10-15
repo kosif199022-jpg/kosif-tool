@@ -26,5 +26,8 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-robj3d3-b18fad/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

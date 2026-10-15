@@ -513,158 +513,299 @@
   ],
   "assumptions_en": "The idea of mining file trees, module names and commit history as content is a proposal built on the instruction to use project context; the actual project, its colour and its data were not seen."
  },
- "pm-grace-sunnyy-29bc61": {
-  "id": "pm-grace-sunnyy-29bc61",
-  "title_ar": "ريل الكي فريم: من داخل الخط الزمني",
-  "summary_ar": "ريل 15 ثانية يجعل معيّن الـ keyframe ومنحنيات المحرر بطلَي الإطار، ورأس التشغيل يعبر الشاشة طوال المدة لتثبت كل ثانية قيمتها.",
-  "summary_en": "A 15-second reel where the keyframe diamond and editor curves are the heroes, and a playhead crossing the frame makes every second accountable.",
-  "concept_ar": "الموضوع ريل بورتفوليو يُشاهَد كأنه من داخل أداة التحريك: مسطرة زمنية، ورأس تشغيل، ومعيّنات keyframe، ومنحنيات bezier تُرسم ثم تُنفَّذ أمام العين. الهدف إبراز الاتجاه الفني والتكوين والحركة القوية التي طلبها المصدر، عبر إثبات أن كل حركة على الشاشة مطابقة للمنحنى المرسوم. ما يميز اللغة الحركية هو الصرامة التكوينية: شبكة من 12 عمودًا، وعنصر مهيمن واحد في كل إطار، ومساحة سلبية لا تقل عن 60%، مع رسم بياني حي يقارن ثلاثة منحنيات في اللحظة نفسها.",
-  "concept_en": "The subject is a portfolio reel seen as if from inside the animation tool: a timeline ruler, a playhead, keyframe diamonds and bezier curves that are drawn and then executed in front of the viewer. The goal is to deliver the art direction, composition and powerful motion the source asks for by proving that every movement on screen matches the curve drawn beside it. The distinctive motion language is compositional rigour: a 12-column grid, one dominant element per frame, at least 60% negative space, and a live chart comparing three easing curves at the same instant.",
+ "pm-davidshulmanfl-371638": {
+  "id": "pm-davidshulmanfl-371638",
+  "title_ar": "فيديو موسيقي بأسلوب الصلصال المتحرّك بمراجع معاصرة",
+  "summary_ar": "فيديو موسيقي لدقيقة واحدة بمظهر تحريك الصلصال الإيقافي مع أغنية أصلية بروح البوب الفني الثمانيني ورموز حياتنا الرقمية الحالية.",
+  "summary_en": "A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.",
+  "concept_ar": "الموضوع فيديو موسيقي يستحضر روح أفلام الصلصال الإيقافية في فيديوهات البوب الفني الثمانينية، لكن شخصياته وأشياءه من اليوم: هاتف، سمّاعات لاسلكية، درون توصيل، سكوتر مشترك، فقاعة محادثة ذكية. الهدف إمتاع المشاهد بإحساس يدوي محسوس يستحيل تمييزه عن العجينة الحقيقية رغم أنه مولّد بالكود. اللغة الحركية تقوم على الإطارات المتدرّجة (التحريك على اثنين وثلاثة)، واهتزاز موضعي طفيف، وأشكال كروية متكتلة تندمج كالصلصال، وتبديل أفواه الشخصية حسب مقاطع الكلمات؛ والأغنية أصلية تُؤلَّف بطبول مقفلة ومزامير نحاسية وجهير صاعد.",
+  "concept_en": "The subject is a music video that channels the hand-made stop-motion spirit of 1980s art-pop videos, recast with today's objects: a phone, wireless earbuds, a delivery drone, a shared scooter, an AI chat bubble. The goal is tactile delight, a clay feel so convincing it hides its code origin. The motion language rests on stepped frames (animating on twos and threes), seeded positional jitter, blobby metaball shapes that merge like clay, and mouth-tile replacement timed to lyric syllables; the song is original, built with gated drums, brass stabs and a sliding bass.",
   "scenes_en": [
-   "0-2s: A timeline ruler spans the bottom edge; a playhead starts at 0 and will travel the full width across the 15 s. A diamond keyframe lights up at 0.",
-   "2-5s: A bezier curve draws between two diamonds in the upper two-thirds; a ball follows the curve exactly, proving the easing in real time.",
-   "5-8s: Three curves stack (linear, ease-out, spring) and three bars race: the bars form a live comparison chart of how far each has travelled at the same moment.",
-   "8-11s: Diamonds multiply into a grid; each flips to reveal a mini-composition (type, shape, chart) built on a strict 12-column grid.",
-   "11-13.5s: The grid tilts 12° and collapses along the curve into one large diamond that becomes the designer's mark.",
-   "13.5-15s: The playhead reaches the end; name and role appear; a final keyframe diamond closes the ruler."
+   "0-6s: A clay head assembles from six blobs that roll in and merge (metaball threshold animation on Canvas); eyes blink on threes; the title letters rise as clay strips with a wobble.",
+   "6-18s: Verse 1: a phone, earbuds and a coffee cup orbit the head, each swapped by replacement frames every 2 beats; the mouth cycles through six phoneme tiles in sync with the lyric syllables.",
+   "18-30s: Chorus 1: lyric words made of clay strips fill the frame and squash on every beat hit; a parade of small modern icons (scooter, drone, delivery bag) marches across the bottom third.",
+   "30-42s: Verse 2: the head rebuilds as three modern archetypes (streamer with ring light, gamer with headset, remote worker with laptop) via set-change wipes every 8 beats.",
+   "42-54s: Chorus 2 and bridge: everything melts into one rotating blob, then a time-lapse of the painted sky board changing colour behind it, with fingerprints visible in the clay.",
+   "54-60s: Outro: the blob shrinks to a single sphere, the title card returns, and the final brass sting lands on a hard cut to black."
   ],
   "scenes_ar": [
-   "0-2 ث: مسطرة زمنية تمتد على الحافة السفلية؛ رأس التشغيل يبدأ من الصفر وسيقطع العرض الكامل خلال 15 ثانية. معيّن keyframe يضيء عند الصفر.",
-   "2-5 ث: منحنى bezier يُرسم بين معيّنين في الثلثين العلويين؛ كرة تتبع المنحنى بدقة لتثبت التسهيل في الزمن الحقيقي.",
-   "5-8 ث: ثلاثة منحنيات تتراكم (linear وease-out وspring) وثلاثة أشرطة تتسابق: الأشرطة تكوّن رسمًا بيانيًا حيًا يقارن المسافة التي قطعها كل منها في اللحظة نفسها.",
-   "8-11 ث: المعيّنات تتضاعف إلى شبكة؛ كل معيّن ينقلب ليكشف تكوينًا مصغرًا (نص، شكل، رسم بياني) مبنيًا على شبكة صارمة من 12 عمودًا.",
-   "11-13.5 ث: الشبكة تميل 12° وتنهار على طول المنحنى في معيّن كبير واحد يصبح علامة المصمم.",
-   "13.5-15 ث: رأس التشغيل يبلغ النهاية؛ الاسم والدور يظهران؛ معيّن keyframe أخير يغلق المسطرة."
+   "0-6ث: رأس من الصلصال يتكوّن من ست كتل تتدحرج وتندمج (تحريك عتبة metaball على Canvas)؛ العينان ترمشان على ثلاثة إطارات؛ حروف العنوان تصعد كشرائط صلصال مترنّحة.",
+   "6-18ث: المقطع الأول: هاتف وسمّاعات وكوب قهوة تدور حول الرأس، ويُستبدل كل منها بإطارات بديلة كل نبضتين؛ الفم يتنقل بين ست بلاطات صوتية متزامنة مع مقاطع الكلمات.",
+   "18-30ث: اللازمة الأولى: كلمات الأغنية من شرائط صلصال تملأ الإطار وتنضغط عند كل ضربة إيقاع؛ موكب من أيقونات معاصرة صغيرة (سكوتر، درون، حقيبة توصيل) يسير عبر الثلث السفلي.",
+   "30-42ث: المقطع الثاني: يُعاد بناء الرأس بثلاثة نماذج معاصرة (مُبثّ بحلقة إضاءة، لاعب بسمّاعة، عامل عن بُعد بحاسوب) عبر مسح تغيير المشهد كل 8 نبضات.",
+   "42-54ث: اللازمة الثانية والجسر: يذوب كل شيء في كتلة واحدة دوّارة، ثم تسارع زمني للوحة السماء المرسومة تتغير ألوانها خلفها، مع بصمات أصابع ظاهرة على الصلصال.",
+   "54-60ث: الخاتمة: تتقلص الكتلة إلى كرة واحدة، تعود بطاقة العنوان، وتهبط ضربة النحاس الأخيرة على قطع حاد إلى الأسود."
   ],
   "motion_rules_en": [
-   "The playhead moves linearly across the full frame width over exactly 15 s and never pauses; every beat boundary is marked by a diamond lighting up on the ruler.",
-   "Curves draw with stroke-dashoffset over 600 ms; the follower ball samples the same cubic-bezier function as the drawn curve so motion and graph always agree.",
-   "The three compared curves are linear, cubic-bezier(0.22, 1, 0.36, 1) and a spring (stiffness 200, damping 12); all three run for the same 1200 ms.",
-   "Layout is a 12-column grid with 24 px gutters; one dominant element per frame and at least 60% negative space at any moment.",
-   "Camera is locked except one 12° tilt over 500 ms during the collapse; no zooms, no shakes.",
-   "Palette: a deep background, pale type and one high-saturation accent reserved for diamonds, curves and the playhead; nothing else may use the accent.",
-   "Typography: condensed display at 200 px for the mark and name, 28 px monospace for timecodes that tick in real time.",
-   "Banned: a second accent colour, decorative particles, random camera shake, and any motion whose curve is not shown or implied on screen."
+   "Timeline runs at 24 fps but every puppet element updates only on held frames: use Math.floor(frame / 2) for twos and Math.floor(frame / 3) for threes; smooth per-frame tweening on puppets is banned.",
+   "Each held frame gets a deterministic jitter of plus or minus 1.5 px and plus or minus 0.6 degrees from seeded noise so the set breathes like real stop-motion.",
+   "Puppet motion uses linear steps with no easing; easing is reserved for the camera, which performs one 6 percent dolly-in per chorus over its full length.",
+   "Beat grid: pick a tempo near 110 BPM (545 ms per beat) and derive every hit, mouth swap and set change from it; nothing moves on an off-grid time.",
+   "Lyric clay letters squash to 0.85 y-scale on each beat hit and recover over three held frames; words never fade, they are placed or removed.",
+   "Colour: saturated primaries on a painted sky board, a fingerprint texture overlay at 12 percent opacity, and a soft top-left key light baked into shading.",
+   "Transitions are replacement cuts and set-change wipes only; banned: motion blur, glow, gradients that imply smooth 3D, and any cross-dissolve."
   ],
   "motion_rules_ar": [
-   "رأس التشغيل يتحرك خطيًا عبر عرض الإطار الكامل خلال 15 ثانية بالضبط ولا يتوقف؛ كل حد بين مقطعين يُعلَّم بمعيّن يضيء على المسطرة.",
-   "المنحنيات تُرسم بـ stroke-dashoffset خلال 600 ms؛ الكرة التابعة تأخذ عيناتها من دالة cubic-bezier نفسها المرسومة كي يتطابق الرسم مع الحركة دائمًا.",
-   "المنحنيات الثلاثة المقارنة: linear وcubic-bezier(0.22, 1, 0.36, 1) ونابض (stiffness 200 وdamping 12)؛ وتعمل الثلاثة للمدة نفسها 1200 ms.",
-   "التخطيط شبكة من 12 عمودًا بفواصل 24 px؛ عنصر مهيمن واحد في كل إطار ومساحة سلبية لا تقل عن 60% في أي لحظة.",
-   "الكاميرا ثابتة باستثناء ميل واحد 12° خلال 500 ms أثناء الانهيار؛ لا تكبير ولا اهتزاز.",
-   "اللوحة: خلفية عميقة، ونص فاتح، ولون تمييز واحد عالي التشبع محجوز للمعيّنات والمنحنيات ورأس التشغيل؛ لا يستعمله أي عنصر آخر.",
-   "الطباعة: خط عرض مضغوط بحجم 200 px للعلامة والاسم، وmonospace بحجم 28 px للأكواد الزمنية التي تتحرك في الزمن الحقيقي.",
-   "ممنوع: لون تمييز ثانٍ، والجسيمات الزخرفية، واهتزاز الكاميرا العشوائي، وأي حركة لا يُعرض منحناها أو يُلمَّح إليه على الشاشة."
+   "الخط الزمني بمعدل 24 إطارًا في الثانية لكن كل عنصر دمية يتحدّث فقط على إطارات محجوزة: استخدم Math.floor(frame / 2) للاثنين وMath.floor(frame / 3) للثلاثة؛ التدرّج الناعم لكل إطار على الدمى ممنوع.",
+   "كل إطار محجوز يأخذ اهتزازًا حتميًا ±1.5 بكسل و±0.6 درجة من ضجيج مبذور كي يتنفس المشهد كالتحريك الإيقافي الحقيقي.",
+   "حركة الدمى خطوات خطية بلا easing؛ الـ easing محجوز للكاميرا التي تؤدي اقترابًا واحدًا بنسبة 6 بالمئة في كل لازمة على كامل مدتها.",
+   "شبكة الإيقاع: اختر سرعة قريبة من 110 نبضة في الدقيقة (545 مللي ثانية للنبضة) واشتق منها كل ضربة وتبديل فم وتغيير مشهد؛ لا شيء يتحرك خارج الشبكة.",
+   "حروف الكلمات الصلصالية تنضغط إلى 0.85 على المحور الرأسي عند كل ضربة وتتعافى خلال ثلاثة إطارات محجوزة؛ الكلمات لا تتلاشى أبدًا بل تُوضع أو تُرفع.",
+   "اللون: ألوان أولية مشبعة على لوحة سماء مرسومة، طبقة ملمس بصمات بشفافية 12 بالمئة، وإضاءة رئيسية ناعمة من أعلى اليسار مدموجة في التظليل.",
+   "الانتقالات قطعات استبدال ومسح تغيير مشهد فقط؛ ممنوع: ضبابية الحركة، التوهّج، التدرّجات التي توحي بثلاثي أبعاد ناعم، وأي تلاشٍ متقاطع."
+  ],
+  "stack": [
+   "HTML Canvas",
+   "Remotion",
+   "Web Audio"
+  ],
+  "duration_s": 60,
+  "aspect": "16:9",
+  "difficulty": 5,
+  "keywords": [
+   "صلصال",
+   "تحريك إيقافي",
+   "فيديو موسيقي",
+   "أغنية أصلية",
+   "بوب فني",
+   "ثمانينات",
+   "stop motion",
+   "claymation",
+   "metaball",
+   "animate on twos",
+   "lyric sync",
+   "art pop",
+   "replacement animation",
+   "music video"
+  ],
+  "facts_from_source": [
+   "The requested length is sixty seconds.",
+   "The visual reference is the stop-motion clay style of two well-known 1980s art-pop music videos, updated with present-day figures and references.",
+   "The song itself must also be created, in a style that would sit on that era's art-pop album.",
+   "The listing tags it as music and lists a 1280x720 frame."
+  ],
+  "assumptions_en": "The specific modern objects, the 110 BPM grid, the six-part structure and the metaball technique are proposals; the source fixes only the duration, the clay stop-motion reference and the need for an original 1980s-flavoured song."
+ },
+ "pm-deifosv-04e4d3": {
+  "id": "pm-deifosv-04e4d3",
+  "title_ar": "إطلاق لعبة تنس بإحصاءات حية",
+  "summary_ar": "فيديو إطلاق عالي الطاقة للعبة تنس على الويب يعرض إحصاءات حية من الموقع واللعب على الحاسوب والهاتف وتبديل السمات على الإيقاع.",
+  "summary_en": "A high-energy launch film for a web tennis game, pulling live stats from the site and showing desktop and mobile play plus theme switching, all cut to music.",
+  "concept_ar": "الموضوع لعبة تنس تعمل في المتصفح، ويريد صاحبها فيلم إطلاق صاخبًا يثبت ثلاث حقائق: اللعبة حيّة (إحصاءات حقيقية من الموقع)، وتعمل على سطح المكتب والهاتف، ولها سمات متعددة. الهدف هو إشعار المشاهد بأن المباراة بدأت الآن ودعوته للانضمام. تتميّز لغة الحركة بكرة لا تتوقف أبدًا عن الحركة: هي التي تقود الكاميرا وتفرض القطع، وكل تغيير في الواجهة أو السمة يحدث على ارتدادة أو نبضة طبل، مع إمكانية إرفاق موجّه لتوليد الأغنية.",
+  "concept_en": "The subject is a browser tennis game whose owner wants a loud launch film proving three things: the game is alive (real stats from the site), it runs on desktop and phone, and it ships with several themes. The goal is to make the viewer feel the match is on right now and invite them in. The motion language is a ball that never stops moving: it leads the camera and forces the cuts, and every UI or theme change lands on a bounce or a drum hit, with an optional music-generation prompt delivered alongside.",
+  "scenes_en": [
+   "0-3s: A ball slams in from top-right, squashes 20% on impact, and the game logo appears inside the dent; a court line draws under it in 300ms.",
+   "3-9s: Live stats: three counters (matches today, players online, longest rally) fetched from the site roll up like a stadium scoreboard, digits flipping with a 90ms stagger.",
+   "9-16s: Desktop play: a wide browser frame shows a rally; the camera tracks the ball across the court while the browser chrome stays pinned to the frame.",
+   "16-22s: Mobile play: the browser frame tweens into a phone over 600ms, the same rally continues in portrait and thumb controls slide up from the bottom edge.",
+   "22-27s: Themes: on each beat the court re-skins (grass, clay, hard court, night) with a colour wipe radiating from the net; the ball keeps bouncing through every wipe.",
+   "27-30s: Logo, URL and a 'play now' button; the ball bounces three times, smaller each time, and stops as the full stop of the tagline."
+  ],
+  "scenes_ar": [
+   "0-3 ث: كرة تندفع من أعلى اليمين، تنضغط 20% عند الاصطدام، ويظهر شعار اللعبة داخل الانبعاج؛ يُرسم خط ملعب تحته خلال 300 مللي ثانية.",
+   "3-9 ث: الإحصاءات الحية: ثلاثة عدّادات (مباريات اليوم، لاعبون متصلون، أطول تبادل) تُجلب من الموقع وتتصاعد كلوحة نتائج ملعب، وتنقلب الأرقام بتأخير 90 مللي ثانية بين رقم وآخر.",
+   "9-16 ث: اللعب على سطح المكتب: إطار متصفح عريض يعرض تبادلًا؛ تتبع الكاميرا الكرة عبر الملعب بينما يبقى إطار المتصفح مثبّتًا.",
+   "16-22 ث: اللعب على الهاتف: يتحوّل إطار المتصفح إلى هاتف خلال 600 مللي ثانية، ويستمر التبادل نفسه بالوضع الرأسي وتنزلق أزرار الإبهام من الحافة السفلية.",
+   "22-27 ث: السمات: مع كل نبضة يتبدّل كساء الملعب (عشب، تراب، ملعب صلب، ليلي) بمسح لوني ينبثق من الشبكة؛ وتواصل الكرة ارتدادها عبر كل مسح.",
+   "27-30 ث: الشعار والعنوان وزر العب الآن؛ ترتدّ الكرة ثلاث مرات أصغر في كل مرة وتتوقف كنقطة نهاية الشعار النصي."
+  ],
+  "motion_rules_en": [
+   "The ball follows a physics arc: gravity-driven parabola with 85% restitution, 20% squash on impact and 10% stretch at peak speed; it is on screen in at least 80% of frames.",
+   "Beat grid first: detect BPM from the track (target 128-140), place every cut, counter start and theme wipe on a downbeat; allowed drift is 1 frame at 30fps.",
+   "Camera tracks the ball with a 120ms lag and a 15% overshoot, then recentres with cubic-bezier(0.2, 0.9, 0.3, 1); no handheld shake.",
+   "Stats are real values read from the site API at render time and formatted with thousands separators; placeholders are banned in the final.",
+   "The browser-to-phone morph is a single tween of width, height and corner radius over 600ms with ease-in-out; the game content inside is not scaled, it reflows.",
+   "Theme wipes are radial from the net centre, 280ms each, and only the court palette changes; UI text keeps one fixed high-contrast colour.",
+   "Type: a condensed heavy sans for numbers and headlines at 96px or larger, uppercase in Latin, with Arabic in a bold Kufi-style face at matching x-height.",
+   "Banned: slow motion, fades, any shot without the ball or a stat, and more than one phone frame on screen."
+  ],
+  "motion_rules_ar": [
+   "تتبع الكرة قوسًا فيزيائيًا: قطع مكافئ بفعل الجاذبية مع ارتداد 85%، وانضغاط 20% عند الاصطدام، وتمدّد 10% عند ذروة السرعة؛ وتظهر الكرة في 80% من الإطارات على الأقل.",
+   "شبكة الإيقاع أولًا: يُستخرج الـ BPM من المقطوعة (الهدف 128-140)، ويُوضع كل قطع وكل بداية عدّاد وكل مسح سمة على نبضة قوية؛ الانحراف المسموح إطار واحد عند 30 إطارًا في الثانية.",
+   "تتبع الكاميرا الكرة بتأخير 120 مللي ثانية وتجاوز 15% ثم تعود للمركز بمنحنى cubic-bezier(0.2, 0.9, 0.3, 1)؛ لا اهتزاز يدوي.",
+   "الإحصاءات قيم حقيقية تُقرأ من واجهة الموقع وقت التصيير وتُنسَّق بفواصل الآلاف؛ القيم المؤقتة ممنوعة في النسخة النهائية.",
+   "تحوّل المتصفح إلى هاتف تحريك واحد للعرض والارتفاع ونصف قطر الزوايا خلال 600 مللي ثانية بمنحنى ease-in-out؛ محتوى اللعبة لا يُصغَّر بل يُعاد تدفّقه.",
+   "مسحات السمات شعاعية من مركز الشبكة، 280 مللي ثانية لكل منها، ولا يتغيّر إلا لوحة ألوان الملعب؛ نص الواجهة يحتفظ بلون واحد ثابت عالي التباين.",
+   "الخط: sans مضغوط ثقيل للأرقام والعناوين بحجم 96 بكسل فأكثر، بحروف لاتينية كبيرة، والعربية بخط كوفي عريض بارتفاع حروف مطابق.",
+   "ممنوع: الحركة البطيئة، والتلاشي، وأي لقطة بلا كرة أو إحصاء، وأكثر من إطار هاتف واحد على الشاشة."
   ],
   "stack": [
    "Remotion",
    "React",
-   "SVG"
+   "Web Audio"
   ],
-  "duration_s": 15,
+  "duration_s": 30,
   "aspect": "16:9",
   "difficulty": 4,
   "keywords": [
-   "portfolio reel",
-   "keyframe diamond",
-   "bezier curve",
-   "graph editor",
-   "playhead",
-   "easing comparison chart",
-   "12-column grid",
-   "negative space",
-   "ريل بورتفوليو",
-   "منحنى بيزييه",
-   "خط زمني",
-   "شبكة تخطيط",
-   "مقارنة تسهيل"
+   "tennis game",
+   "game launch",
+   "live stats",
+   "responsive play",
+   "theme switch",
+   "beat sync",
+   "suno prompt",
+   "sports motion",
+   "لعبة تنس",
+   "إطلاق لعبة",
+   "إحصاءات حية",
+   "هاتف وحاسوب",
+   "تبديل السمات",
+   "مزامنة إيقاع"
   ],
   "facts_from_source": [
-   "A 15-second piece intended as a portfolio item attached to a résumé.",
-   "Any tools or techniques are allowed and creative freedom is total.",
-   "The creator prioritises strong visual design, bold art direction, striking composition and powerful motion, with no wasted second.",
-   "Catalogued under charts; the keyframe theme comes from the catalogue title."
+   "The tone requested is high energy.",
+   "The film must display live statistics taken from the game's website.",
+   "It must demonstrate play on both desktop and mobile, and show more than one visual theme.",
+   "The creator also wants, if needed, a text prompt they can paste into Suno to generate the soundtrack.",
+   "Tagged under product UI, phone and music; no duration is given."
   ],
-  "assumptions_en": "The inside-the-timeline concept, the curve comparison chart and the palette are proposals; the source states priorities and length but no scenes, colours or stack."
+  "assumptions_en": "The 30s length, the ball-led camera and the four named themes are proposals; the source does not say which themes exist or how the stats are exposed, so a site API read at render time is assumed. The Suno prompt is treated as a deliverable alongside the film."
  },
- "pm-ik-builds-b8bdcf": {
-  "id": "pm-ik-builds-b8bdcf",
-  "title_ar": "فيلم إطلاق منتج بأسلوب الورق والقلم",
-  "summary_ar": "فيلم إطلاق مدته 15 ثانية على خلفية ورقية مع ملاحظات تُرسم بالقلم، وكرة فيزيائية، وخط ضخم متحرك، وتبديل حاد بين الفاتح والداكن.",
-  "summary_en": "A 15s product launch on a paper canvas: marker notes draw themselves, a physics ball bounces, giant kinetic type and hard light/dark flips, one idea per 2s.",
-  "concept_ar": "الموضوع منتج برمجي يُشرح في خمس عشرة ثانية دون تعليق صوتي ودون لقطات مصورة، فالكلمات والرسوم وحدها تحمل الرسالة. الهدف أن يفهم المشتري ما يتعلمه المنتج فعلاً من بياناته لا الفكرة المجردة، لذلك تُكتب كل جملة بلغة العميل لا بلغة المحرّكين. ما يميز لغة الحركة هو التناقض المقصود: ورق فاتح هادئ تُخربش عليه ملاحظات بقلم تحبير، ثم تقطعه كرة ذات فيزياء حقيقية وكلمات ضخمة بخط Anton ولحظات انقلاب كامل إلى الوضع الداكن، بينما يصاحب كل ضربة بصرية صوت مطابق.",
-  "concept_en": "The subject is a software product explained in fifteen seconds with no narration and no filmed footage; words and drawings carry the whole message. The goal is for a buyer to grasp what the product actually learns from their data rather than an abstraction, so every line is written in customer language, never animator vocabulary. The motion language lives on deliberate contrast: a calm paper canvas scribbled with ink-marker notes, interrupted by a ball with real physics, oversized Anton type and full flips into a dark mode, while every visual hit lands with a matching sound.",
+ "pm-gautam-mer1-2ae354": {
+  "id": "pm-gautam-mer1-2ae354",
+  "title_ar": "ترويج تطبيق Matra للترجمة النصية بأسلوب Apple",
+  "summary_ar": "فيديو عمودي مدته 30 ثانية بهدوء إعلانات Apple يقدّم تطبيق ترجمة نصية للفيديو: هاتف واحد عائم، نص كبير شحيح، وكلمات تظهر متزامنة مع الكلام.",
+  "summary_en": "A 30 s vertical, Apple-calm product film for a caption app: one floating phone, sparse large type, and captions that land word by word in sync with speech.",
+  "concept_ar": "الموضوع تطبيق يولّد ترجمات نصية متزامنة للفيديو، والهدف أن يبدو المنتج فاخرًا وموثوقًا بأسلوب أفلام Apple: استوديو مظلم، جهاز واحد، ضوء يمسح الزجاج، وعبارات قصيرة تطفو بخط ضخم. اللغة الحركية بطيئة ومتعمّدة: حركة كاميرا واحدة في كل مشهد، ومنحنى easing واحد لكل الحركات الكبيرة، بينما تكون الترجمة النصية العنصر الوحيد السريع لأنها تتبع إيقاع الكلام. الدعم العربي من اليمين إلى اليسار جزء أصيل من العرض لا إضافة.",
+  "concept_en": "The subject is an app that generates synced captions for video, and the goal is to make it feel premium and trustworthy in the manner of Apple product films: a dark studio, a single device, light sweeping across glass, and short phrases floating in huge type. The motion language is slow and deliberate, one camera move per scene and one easing curve for every large motion, while the captions are the only fast element because they follow the rhythm of speech. Right-to-left Arabic support is a native part of the demo, not an afterthought.",
   "scenes_en": [
-   "0-2s: Paper canvas fades up; a Caveat handwriting note writes itself via stroke-dashoffset (420ms) posing the buyer's problem; soft pen-scratch SFX.",
-   "2-5s: Hard cut to charcoal dark mode as the drums drop; a ball with real gravity falls from the top, squashes on landing (120ms) and bounces twice while a three-word Anton headline slams in word by word.",
-   "5-8s: Back to paper on the beat; marker arrows and a hand-drawn diagram sketch the product's core loop; small accent-colour labels pop in with 60ms stagger.",
-   "8-11s: Second dark switch; the ball is launched again and, while airborne, UI card fragments assemble into a simplified product view with onion-skin trails.",
-   "11-13.5s: Light returns; one sentence of what the product does fills the frame in giant type, each word overshooting then settling.",
-   "13.5-15s: The real logo mark draws in as a stroke path, the wordmark types in beside it, a sub-bass hit lands, 400ms hold, clean out."
+   "0-4s: Black; a phone emerges from darkness as a light sweep crosses the glass over 1800 ms; the app name fades in small at the bottom at 600 ms.",
+   "4-10s: On screen a muted clip of a speaker; a thin waveform at the bottom; caption words appear one by one beneath the speaker, each landing in 120 ms with a 0.96 to 1 scale, timed to the word boundaries.",
+   "10-16s: Caption styles cycle: three presets (clean, boxed, outlined) swap every 2 s with a 240 ms crossfade, showing an Arabic example and an English example alternately.",
+   "16-22s: Headline statements float in huge type beside the device, one per 2 s, rising 30 px over 900 ms, while the camera pushes in 8 percent across the scene.",
+   "22-27s: Export flow: a tap ripple, a 1600 ms progress bar, a share sheet sliding up; the device rotates 12 degrees on its Y axis to catch the light.",
+   "27-30s: The wordmark and a store-style call to action settle at centre with a 400 ms fade; everything else dims to 20 percent."
   ],
   "scenes_ar": [
-   "0-2 ث: تظهر الخلفية الورقية؛ ملاحظة بخط Caveat تكتب نفسها عبر stroke-dashoffset خلال 420 مللي ثانية وتطرح مشكلة المشتري؛ صوت خدش قلم خفيف.",
-   "2-5 ث: قطع حاد إلى الوضع الداكن الفحمي مع سقوط الطبول؛ كرة بجاذبية حقيقية تهبط من الأعلى وتنضغط عند الارتطام (120 مللي ثانية) وترتد مرتين بينما يصطدم عنوان من ثلاث كلمات بخط Anton كلمة كلمة.",
-   "5-8 ث: عودة إلى الورق على الإيقاع؛ أسهم بقلم تحبير ومخطط مرسوم باليد يشرحان الحلقة الأساسية للمنتج؛ تسميات صغيرة بلون التمييز تنبثق بتتابع 60 مللي ثانية.",
-   "8-11 ث: تبديل داكن ثانٍ؛ تُقذف الكرة مجدداً، وأثناء تحليقها تتجمع شظايا بطاقات الواجهة في عرض مبسط للمنتج مع أثر onion skin.",
-   "11-13.5 ث: يعود الضوء؛ جملة واحدة تصف ما يفعله المنتج تملأ الإطار بخط ضخم، كل كلمة تتجاوز موضعها ثم تستقر.",
-   "13.5-15 ث: شعار العلامة الحقيقي يُرسم كمسار خطي، والاسم يُكتب بجانبه، ضربة صوتية عميقة، ثبات 400 مللي ثانية، خروج نظيف."
+   "0-4ث: أسود؛ يبرز هاتف من الظلام بينما يمسح شعاع ضوء زجاجه خلال 1800 مللي ثانية؛ يظهر اسم التطبيق صغيرًا في الأسفل بتلاشٍ خلال 600 مللي ثانية.",
+   "4-10ث: على الشاشة مقطع صامت لمتحدث؛ موجة صوتية رفيعة في الأسفل؛ كلمات الترجمة تظهر واحدة واحدة تحت المتحدث، كل كلمة تهبط خلال 120 مللي ثانية بتكبير من 0.96 إلى 1 وفق حدود الكلمات.",
+   "10-16ث: تدوير أنماط الترجمة: ثلاثة أنماط (نظيف، مؤطّر، محدّد) تتبدل كل ثانيتين بتلاشٍ متقاطع 240 مللي ثانية، مع مثال عربي ومثال إنجليزي بالتناوب.",
+   "16-22ث: عبارات رئيسية تطفو بخط ضخم بجوار الجهاز، واحدة كل ثانيتين، تصعد 30 بكسل خلال 900 مللي ثانية، بينما تقترب الكاميرا 8 بالمئة على مدى المشهد.",
+   "22-27ث: مسار التصدير: تموّج لمسة، شريط تقدّم 1600 مللي ثانية، ولوحة مشاركة تنزلق لأعلى؛ يدور الجهاز 12 درجة حول محوره الرأسي ليلتقط الضوء.",
+   "27-30ث: يستقر الشعار النصي ودعوة بأسلوب متجر التطبيقات في المنتصف بتلاشٍ 400 مللي ثانية؛ كل ما عداهما يخفت إلى 20 بالمئة."
   ],
   "motion_rules_en": [
-   "Easing: entrances use back.out(1.7) at 500-700ms; exits use power3.in at 250-350ms; the ball follows true gravity with squash of 1.25x/0.8x on impact.",
-   "Rhythm: a new visual idea every 1500-2000ms; nothing holds longer than 2s without a change of state.",
-   "Transitions: one primary move per cut (a flip to dark, a ball strike, a word slam); push, slide and swing wipes are banned.",
-   "Typography: Anton for headline type at 18-24% of frame height, words enter staggered 80ms apart; Caveat notes draw in via stroke-dashoffset over 350-500ms.",
-   "Colour: a light paper canvas, one ink colour, two accents reserved for notes; dark mode is a charcoal derived from the same palette, switched in a single frame, never crossfaded.",
-   "Camera: locked, no zooms; depth is suggested only by onion skins, smear frames and follow-through.",
-   "Every from-state is declared at t=0 so scrubbing is safe; an exit is never hidden behind an entrance.",
-   "Banned on screen: scrubbers, timecodes, fps counters, animator vocabulary, invented percentages or customer names. Audio: an SFX on every hit, master at -14 LUFS / -2 dBTP."
+   "One easing for every large move: cubic-bezier(0.16, 1, 0.3, 1) at 900 to 1400 ms; nothing large may move faster than 900 ms.",
+   "Captions are the exception: each word lands in 120 ms with scale 0.96 to 1 and opacity 0 to 1 on its start time from words.json; no word may appear early or hang late by more than 40 ms.",
+   "Camera: one move per scene (sweep, push, rotate), maximum 8 percent push and 12 degrees rotation; the device never leaves the central third of the 720x1280 frame.",
+   "Transitions are 400 ms cross-dissolves only; no wipes, no cuts, no zoom-through transitions.",
+   "Typography: one typeface in two weights, headlines at 96 px minimum in the vertical frame, Arabic set RTL with proper shaping, never faux-italic; captions on screen use a 48 px size with a 6 px safe gap from the phone's edge.",
+   "Colour: near-black background, white type, and a single accent used only for the active caption word and the progress bar; the light sweep is a white gradient at 25 percent opacity.",
+   "Banned: bounce springs, confetti, emoji, more than one moving element outside the captions at any moment, and music hits that compete with the spoken rhythm."
   ],
   "motion_rules_ar": [
-   "التسهيل: الدخول بـ back.out(1.7) خلال 500-700 مللي ثانية؛ الخروج بـ power3.in خلال 250-350 مللي ثانية؛ الكرة تتبع جاذبية حقيقية مع انضغاط 1.25x/0.8x عند الارتطام.",
-   "الإيقاع: فكرة بصرية جديدة كل 1500-2000 مللي ثانية؛ لا يبقى شيء أكثر من ثانيتين دون تغيير حالة.",
-   "الانتقالات: حركة رئيسية واحدة لكل قطع (انقلاب إلى الداكن، ضربة كرة، اصطدام كلمة)؛ يُمنع الدفع والانزلاق والتأرجح العام.",
-   "الطباعة: خط Anton للعناوين بارتفاع 18-24% من الإطار، الكلمات تدخل بتتابع 80 مللي ثانية؛ ملاحظات Caveat تُرسم عبر stroke-dashoffset خلال 350-500 مللي ثانية.",
-   "اللون: ورق فاتح، لون حبر واحد، لونا تمييز مخصصان للملاحظات؛ الوضع الداكن فحمي مشتق من اللوحة نفسها ويُبدَّل في إطار واحد لا بتلاشٍ متقاطع.",
-   "الكاميرا: ثابتة بلا تقريب؛ يُوحى بالعمق فقط عبر onion skin وإطارات السحب (smear) والمتابعة (follow-through).",
-   "كل حالة بداية تُعلن عند t=0 ليكون التمرير آمناً؛ لا يُخفى خروج عنصر خلف دخول آخر.",
-   "ممنوع على الشاشة: شريط التمرير، الكود الزمني، عداد الإطارات، مصطلحات المحرّكين، نسب مئوية أو أسماء عملاء مخترعة. الصوت: مؤثر على كل ضربة، إتقان عند -14 LUFS و -2 dBTP."
+   "easing واحد لكل حركة كبيرة: cubic-bezier(0.16, 1, 0.3, 1) بين 900 و1400 مللي ثانية؛ لا يجوز لأي عنصر كبير أن يتحرك أسرع من 900 مللي ثانية.",
+   "الترجمة النصية هي الاستثناء: كل كلمة تهبط خلال 120 مللي ثانية بتكبير من 0.96 إلى 1 وشفافية من 0 إلى 1 عند وقت بدايتها من words.json؛ لا تظهر كلمة مبكرًا أو تتأخر أكثر من 40 مللي ثانية.",
+   "الكاميرا: حركة واحدة لكل مشهد (مسح، دفع، دوران)، بحد أقصى دفعة 8 بالمئة ودوران 12 درجة؛ لا يغادر الجهاز الثلث الأوسط من الإطار 720×1280.",
+   "الانتقالات تلاشٍ متقاطع 400 مللي ثانية فقط؛ لا مسح ولا قطع ولا انتقالات بالاختراق.",
+   "الطباعة: خط واحد بوزنين، العناوين بحد أدنى 96 بكسل في الإطار العمودي، العربية باتجاه RTL مع تشكيل حروف صحيح وبلا إمالة مصطنعة؛ الترجمة على الشاشة بحجم 48 بكسل وفجوة أمان 6 بكسل من حافة الهاتف.",
+   "اللون: خلفية شبه سوداء، نص أبيض، ولون تمييز واحد يُستخدم فقط لكلمة الترجمة النشطة وشريط التقدّم؛ شعاع الضوء تدرّج أبيض بشفافية 25 بالمئة.",
+   "ممنوع: الزنبركات المرتدّة، القصاصات الملوّنة، الرموز التعبيرية، أكثر من عنصر متحرك واحد خارج الترجمة في أي لحظة، وضربات موسيقية تنافس إيقاع الكلام."
   ],
   "stack": [
-   "GSAP",
-   "HTML Canvas",
-   "SVG"
+   "Remotion",
+   "React",
+   "CSS"
+  ],
+  "duration_s": 30,
+  "aspect": "9:16",
+  "difficulty": 3,
+  "keywords": [
+   "ترجمة نصية",
+   "تطبيق كابشن",
+   "أسلوب Apple",
+   "هاتف عائم",
+   "مزامنة كلمات",
+   "استوديو مظلم",
+   "caption app",
+   "word sync",
+   "device film",
+   "light sweep",
+   "minimal product video",
+   "rtl captions",
+   "export flow",
+   "vertical promo"
+  ],
+  "facts_from_source": [
+   "The creator wants a thirty-second video of their own app.",
+   "The requested look is the Apple product-film style.",
+   "The listing tags it as product UI and lists a 720x1280 vertical frame."
+  ],
+  "assumptions_en": "That Matra is a video-caption app with Arabic support, plus every scene, timing and the words.json sync rule, are proposals; the source states only the 30 s length, the Apple-style direction and the app subject."
+ },
+ "pm-influencer-seo-ce8c33": {
+  "id": "pm-influencer-seo-ce8c33",
+  "title_ar": "ريل استعراضي لمنصة fal في 15 ثانية",
+  "summary_ar": "شريط استعراضي كثيف في 15 ثانية بأسلوب السيرة الذاتية للمصمم، يمزج الطباعة الحركية برسوم السرعة وأصولًا مولَّدة عبر fal API.",
+  "summary_en": "A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.",
+  "concept_ar": "الموضوع منصة استدلال للوسائط التوليدية تقدَّم عبر شريط استعراضي يُفترض أنه يعرض مهارة المصمم نفسه بقدر ما يعرض المنتج. الهدف هو إبهار المشاهد في 15 ثانية بثلاث رسائل: تنوّع المخرجات، والسرعة الفائقة، وسهولة الاستدعاء من الكود. تتميّز لغة الحركة بأن الأصول البصرية ليست جاهزة بل تُولَّد فعلًا عبر fal API أثناء البناء، وبطباعة حركية تضرب الكلمة على النبضة، وسباق أعمدة للزمن بالمللي ثانية يتجاوز حدود الإطار، ونبضة ضوء تسافر على خط من مقتطف كود إلى عقدة النموذج.",
+  "concept_en": "The subject is a generative-media inference platform, pitched through a showreel that is meant to display the designer's own skill as much as the product. The goal is to impress in 15 seconds with three messages: range of outputs, extreme speed, and easy calls from code. The motion language is distinctive because the visuals are not stock but actually generated through the fal API during the build, paired with kinetic type that hits a word per beat, a latency bar race that overshoots the frame edge, and a light pulse travelling along a line from a code snippet to a model node.",
+  "scenes_en": [
+   "0-2s: Black. The brand name is typed in 200ms, then shatters into 400 particles that reassemble over 600ms into a 6x4 grid of generated images.",
+   "2-6s: Kinetic type: four capability words slam in one per beat at 1.4 to 1.0 scale, each revealing a generated thumbnail behind it; the previous word is shoved off-frame by the next.",
+   "6-10s: Speed chart: a horizontal bar race of inference latency across four competitors; the brand bar shoots past the right edge while others crawl, and the millisecond readout counts down.",
+   "10-13s: API moment: a three-line request types in a code panel, a light pulse travels along a 1200px line to a model node, and the resulting image blooms from the node in 400ms.",
+   "13-15s: Lockup: the image grid from the opening tiles outward to fill the frame, then cuts to the brand colour with the logo and a 'built with' credit."
+  ],
+  "scenes_ar": [
+   "0-2 ث: سواد. يُكتب اسم العلامة خلال 200 مللي ثانية ثم يتناثر إلى 400 جسيم يعود تجمّعها خلال 600 مللي ثانية في شبكة 6×4 من صور مولَّدة.",
+   "2-6 ث: طباعة حركية: أربع كلمات قدرة تنقضّ كلمة على كل نبضة من مقياس 1.4 إلى 1.0، وتكشف كل منها صورة مصغّرة مولَّدة خلفها؛ وتدفع الكلمة التالية سابقتها خارج الإطار.",
+   "6-10 ث: رسم السرعة: سباق أعمدة أفقي لزمن الاستدلال بين أربعة منافسين؛ ينطلق عمود العلامة متجاوزًا الحافة اليمنى بينما تزحف البقية، ويتناقص عدّاد المللي ثانية.",
+   "10-13 ث: لحظة الـ API: يُكتب طلب من ثلاثة أسطر في لوحة كود، وتسافر نبضة ضوء على خط طوله 1200 بكسل إلى عقدة النموذج، وتتفتّح الصورة الناتجة من العقدة خلال 400 مللي ثانية.",
+   "13-15 ث: الختام: تتوسّع شبكة صور الافتتاح لتملأ الإطار ثم تقطع إلى لون العلامة مع الشعار وسطر بُني بواسطة."
+  ],
+  "motion_rules_en": [
+   "Generate every image and thumbnail through the fal API at build time with fixed seeds and cache them; the final render must contain zero placeholder art.",
+   "Kinetic type hits land on beats of a 140 BPM grid; each word enters with cubic-bezier(0.16, 1, 0.3, 1) over 220ms and is pushed out by the next in 160ms.",
+   "Particle shatter and reassembly run on a GPU instanced layer (400-800 particles) with per-particle random delay up to 150ms; CPU DOM particles are banned.",
+   "Chart bars race with ease-in-expo over 1200ms; the brand bar is allowed to exceed the frame by up to 20% of width; competitor bars stay within 60%.",
+   "The API pulse moves at a constant 2400px per second along an SVG path using stroke-dashoffset, with a 40px glow; the result image scales from 0.6 to 1.0 with a 5% overshoot.",
+   "Camera is static except one 1.10 push-in on the chart overshoot moment, 200ms in and 500ms out.",
+   "Colour: near-black base, one brand accent for type and the winning bar, generated images shown unfiltered at full saturation; no gradients on text.",
+   "Banned: shots longer than 2.5s, stock footage, lorem text in the code panel, and any statistic that is not labelled with its unit."
+  ],
+  "motion_rules_ar": [
+   "تُولَّد كل صورة ومصغّرة عبر fal API وقت البناء ببذور ثابتة وتُخزَّن مؤقتًا؛ ويجب ألا يحوي التصيير النهائي أي صورة مؤقتة.",
+   "تقع ضربات الطباعة الحركية على نبضات شبكة بسرعة 140 BPM؛ تدخل كل كلمة بمنحنى cubic-bezier(0.16, 1, 0.3, 1) خلال 220 مللي ثانية وتدفعها الكلمة التالية خلال 160 مللي ثانية.",
+   "يعمل تناثر الجسيمات وتجمّعها على طبقة GPU بنسخ متماثلة (400-800 جسيم) بتأخير عشوائي لكل جسيم حتى 150 مللي ثانية؛ وجسيمات DOM على المعالج ممنوعة.",
+   "تتسابق أعمدة الرسم بمنحنى ease-in-expo خلال 1200 مللي ثانية؛ يُسمح لعمود العلامة بتجاوز الإطار حتى 20% من العرض؛ وتبقى أعمدة المنافسين دون 60%.",
+   "تتحرك نبضة الـ API بسرعة ثابتة 2400 بكسل في الثانية على مسار SVG عبر stroke-dashoffset مع توهّج 40 بكسل؛ وتتدرّج صورة النتيجة من 0.6 إلى 1.0 بتجاوز 5%.",
+   "الكاميرا ثابتة باستثناء دفعة اقتراب واحدة بمقياس 1.10 عند لحظة تجاوز العمود، 200 مللي ثانية دخولًا و500 مللي ثانية خروجًا.",
+   "اللون: قاعدة شبه سوداء، ولون تمييز واحد للنصوص والعمود الفائز، وتُعرض الصور المولَّدة دون مرشّحات بكامل تشبّعها؛ لا تدرّجات على النص.",
+   "ممنوع: لقطات تتجاوز 2.5 ثانية، ولقطات مخزون، ونص lorem في لوحة الكود، وأي إحصاء لا يُذكر مع وحدته."
+  ],
+  "stack": [
+   "Remotion",
+   "React",
+   "WebGL"
   ],
   "duration_s": 15,
   "aspect": "16:9",
-  "difficulty": 4,
+  "difficulty": 5,
   "keywords": [
-   "paper canvas",
-   "marker notes",
-   "physics ball",
-   "kinetic type",
-   "dark mode flip",
-   "gsap",
-   "hyperframes",
-   "sfx hits",
-   "anton font",
-   "ورق",
-   "قلم تحبير",
-   "كرة فيزيائية",
-   "خط ضخم",
-   "إطلاق منتج"
+   "showreel",
+   "generative media",
+   "fal api",
+   "kinetic typography",
+   "bar race",
+   "latency chart",
+   "particle text",
+   "portfolio reel",
+   "شريط استعراضي",
+   "وسائط توليدية",
+   "طباعة حركية",
+   "سباق أعمدة",
+   "جسيمات",
+   "واجهة برمجية"
   ],
   "facts_from_source": [
-   "Runs 15 seconds, built with HyperFrames and GSAP, with no narration and no recorded footage.",
-   "Visual world: a light paper canvas, marker-style notes that draw themselves, a ball with real physics, oversized kinetic type and abrupt light/dark switches.",
-   "Pacing target: a fresh idea roughly every 1.5 to 2 seconds, with a sound effect on every impact.",
-   "Typography: Anton for the big moving words, Caveat handwriting animated through stroke-dashoffset.",
-   "Music is sectioned: drums drop out on the dark switch and while the ball is in the air, then return on the type and logo hits.",
-   "Copy rules: speak to the buyer, name what the product learns, no invented numbers or customer names, no UI chrome, no animator vocabulary on screen.",
-   "Ending: the real logo mark plus the product name set in the brand wordmark font, never a boxed logo image.",
-   "Audio delivery: CC0 or generated sounds only, mastered to -14 LUFS and -2 dBTP."
+   "Fixed length of 15 seconds.",
+   "It is made for fal and framed as a showreel that proves the designer's ability, in the spirit of a portfolio piece.",
+   "The creator explicitly asks that the fal API be used in producing it.",
+   "Tagged under charts and kinetic type."
   ],
-  "assumptions_en": "The product, palette, fonts and positioning are template placeholders in the source, so the beats above assume a generic B2B software product; the ball-and-flip sequence order is a proposed direction, not an observed one."
+  "assumptions_en": "The source names the platform, the duration and the API requirement but no scenes; the particle opener, the latency bar race, the code-to-node pulse and the 140 BPM grid are the director's proposals. Competitor latency figures must come from real benchmarks before publishing."
  },
  "pm-itisrazak-3ad902": {
   "id": "pm-itisrazak-3ad902",
@@ -739,6 +880,80 @@
    "Tagged on the site as charts and kinetic type."
   ],
   "assumptions_en": "Stated: 40-second duration, Distilbook as subject, showreel framing, chart and kinetic-type tags. Assumed: that Distilbook condenses books, the compression metaphor, the six-beat structure, all timings, easing values and colour roles."
+ },
+ "pm-jake11moran-a269c4": {
+  "id": "pm-jake11moran-a269c4",
+  "title_ar": "حكاية جلسة الوكيل البرمجي",
+  "summary_ar": "فيلم قصير مُلحَّن يحوّل سجل جلسة حقيقية بين مطوّر ووكيل برمجي إلى حكاية متحركة بشخصيتين وأحداث كود.",
+  "summary_en": "A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.",
+  "concept_ar": "الموضوع هو جلسة برمجة فعلية مستخرجة من سجل Claude Code المحلي، تُروى كقصة قصيرة بطلاها مطوّر ووكيل برمجي على هيئة شخصيتين كرتونيتين. الهدف هو جعل سير العمل التقني (طلب، قراءة ملفات، تعديل، اختبار، خطأ، إصلاح) مادة عاطفية ممتعة تُفهم في أقل من دقيقة. تتميّز لغة الحركة بالمزج بين تحريك شخصيات متقطّع يشبه الرسم اليدوي وواجهة طرفية ناعمة الحركة، مع موسيقى تُبنى على قوس الجلسة من الهدوء إلى الذروة إلى الحلّ.",
+  "concept_en": "The subject is an actual coding session mined from the local Claude Code history, retold as a short story whose two leads are a developer and an agent drawn as cartoon characters. The goal is to make the technical workflow (request, file reads, edits, tests, an error, the fix) emotionally legible and fun in under a minute. The motion language mixes stepped, hand-drawn-feeling character animation with smooth terminal UI motion, and a score that follows the session arc from calm to crisis to resolution.",
+  "scenes_en": [
+   "0-4s: A blinking cursor on black; the project name types in at 40ms per glyph, then the camera pulls back to reveal a tiny desk world with the developer and the agent character.",
+   "4-12s: The developer types the first request; the words roll up into a scroll that flies across the desk, the agent catches it and its eyes light up as it unrolls.",
+   "12-24s: Tool-call montage: read, search and edit events arrive as cards snapping in on beats, the touched node in a mini file tree pulses, then an error card turns the scene amber and the agent scratches its head.",
+   "24-34s: The fix: a diff block wipes green over red, test-runner dots fill one by one, and a burst of brackets and semicolons celebrates the pass.",
+   "34-42s: Scoreboard: turns, files touched and tests passed count up in a panel while the two characters high-five with a squash-and-stretch bounce.",
+   "42-45s: Outro card with the session date; everything fades except the cursor, which keeps blinking for a loop-friendly end."
+  ],
+  "scenes_ar": [
+   "0-4 ث: مؤشر يومض على خلفية سوداء؛ يُكتب اسم المشروع حرفًا حرفًا بمعدل 40 مللي ثانية للحرف، ثم تبتعد الكاميرا لتكشف عالم مكتب صغير فيه شخصية المطوّر وشخصية الوكيل.",
+   "4-12 ث: يكتب المطوّر طلبه الأول؛ تلتفّ الكلمات في لفافة تطير عبر المكتب، فيلتقطها الوكيل وتضيء عيناه عند فتحها.",
+   "12-24 ث: مونتاج استدعاءات الأدوات: أحداث القراءة والبحث والتعديل تصل كبطاقات تنغرز على الإيقاع، وتنبض العقدة المعنية في شجرة ملفات مصغّرة، ثم تأتي بطاقة خطأ تصبغ المشهد بالكهرماني ويحكّ الوكيل رأسه.",
+   "24-34 ث: الإصلاح: كتلة diff تمسح الأخضر فوق الأحمر، ونقاط مشغّل الاختبارات تمتلئ واحدة تلو الأخرى، وينفجر رذاذ من الأقواس والفواصل المنقوطة احتفالًا بالنجاح.",
+   "34-42 ث: لوحة النتائج: عدد الأدوار والملفات المعدَّلة والاختبارات الناجحة تتصاعد في لوحة بينما تتصافح الشخصيتان بقفزة ضغط وتمدّد.",
+   "42-45 ث: بطاقة ختامية بتاريخ الجلسة؛ يتلاشى كل شيء إلا المؤشر الذي يستمر في الوميض لنهاية قابلة للتكرار."
+  ],
+  "motion_rules_en": [
+   "UI cards enter with cubic-bezier(0.22, 1, 0.36, 1) over 420ms and exit with cubic-bezier(0.4, 0, 1, 1) over 260ms.",
+   "Characters animate on a stepped curve (steps(12) per second, i.e. 2-frame holds) to feel hand-drawn; UI elements stay smooth; never mix both on one element.",
+   "One camera move per scene: a slow dolly from scale 1.00 to 1.08; scene changes are hard cuts placed within 40ms of a musical downbeat; no whip pans or shake.",
+   "Each tool-call card stays at least 900ms so its file path is readable, with at most three cards stacked on screen.",
+   "Monospace type for anything quoted from the log; a rounded display face for narrative captions; Arabic captions use a Naskh-style face and keep monospace only for code.",
+   "Dark terminal base with one accent per event type (read, edit, test, error); the error state may tint the whole frame by at most 15%.",
+   "The score is composed to the session arc: sparse under the prompt, denser under tool calls, resolving on the green test run; the mix ducks 6dB under any typed text sound.",
+   "Banned: showing real file contents or secrets from the log, captions over 8 words, and any still frame held longer than 2s."
+  ],
+  "motion_rules_ar": [
+   "تدخل بطاقات الواجهة بمنحنى cubic-bezier(0.22, 1, 0.36, 1) خلال 420 مللي ثانية وتخرج بمنحنى cubic-bezier(0.4, 0, 1, 1) خلال 260 مللي ثانية.",
+   "تتحرك الشخصيات بمنحنى متدرّج (steps(12) في الثانية أي ثبات إطارين) لتبدو مرسومة باليد؛ وتبقى عناصر الواجهة ناعمة؛ لا يُجمع الأسلوبان على عنصر واحد.",
+   "حركة كاميرا واحدة لكل مشهد: دولي بطيء من مقياس 1.00 إلى 1.08؛ الانتقال بين المشاهد قطع حاد يقع ضمن 40 مللي ثانية من النبضة الموسيقية القوية؛ لا سحبات سريعة ولا اهتزاز.",
+   "تبقى كل بطاقة استدعاء أداة 900 مللي ثانية على الأقل ليُقرأ مسار الملف، بحدّ أقصى ثلاث بطاقات متراكبة على الشاشة.",
+   "خط أحادي العرض لكل ما يُقتبس من السجل؛ خط عرض مستدير لتعليقات السرد؛ التعليقات العربية بخط نسخي وتُبقي الخط أحادي العرض للكود فقط.",
+   "قاعدة طرفية داكنة مع لون تمييز واحد لكل نوع حدث (قراءة، تعديل، اختبار، خطأ)؛ يجوز لحالة الخطأ أن تصبغ الإطار كله بنسبة لا تتجاوز 15%.",
+   "تُلحَّن الموسيقى على قوس الجلسة: خفيفة تحت الطلب، أكثف تحت استدعاءات الأدوات، وتنحلّ عند نجاح الاختبار؛ ويُخفض المزج 6 ديسيبل تحت أي صوت كتابة.",
+   "ممنوع: عرض محتوى ملفات حقيقي أو أسرار من السجل، وتعليقات تتجاوز 8 كلمات، وأي إطار ثابت يدوم أكثر من ثانيتين."
+  ],
+  "stack": [
+   "CSS",
+   "GSAP",
+   "Web Audio"
+  ],
+  "duration_s": 45,
+  "aspect": "16:9",
+  "difficulty": 4,
+  "keywords": [
+   "claude code",
+   "session replay",
+   "agent story",
+   "hyperframes",
+   "terminal animation",
+   "code montage",
+   "character animation",
+   "قصة برمجية",
+   "وكيل ذكاء اصطناعي",
+   "شخصيات كرتونية",
+   "سجل الجلسة",
+   "موسيقى تصويرية",
+   "مونتاج كود"
+  ],
+  "facts_from_source": [
+   "Distributed as an installable skill rather than a single prompt.",
+   "It reads the user's local Claude Code history and picks a representative session as the story material.",
+   "The output is a short animated film with its own musical score, rendered through HyperFrames.",
+   "The creator tagged it under characters and code."
+  ],
+  "assumptions_en": "The source states only the pipeline (local history in, scored HyperFrames film out); the two-character cast, the 45s length, the stepped-animation look and the scene order are proposed directions, not observed facts."
  },
  "pm-jasonzhou1993-8595e0": {
   "id": "pm-jasonzhou1993-8595e0",
@@ -953,75 +1168,6 @@
   ],
   "assumptions_en": "The ring mechanics, the 25 s length, the countdown and the rising-pitch audio are all proposals built on the title; the source text itself says nothing about how the video looks or sounds. The vertical format follows the listed 720x1280 video."
  },
- "pm-kloss-xyz-b9b3f6": {
-  "id": "pm-kloss-xyz-b9b3f6",
-  "title_ar": "خط زمني متحرك لتاريخ الذكاء الاصطناعي",
-  "summary_ar": "رحلة كاميرا على خط زمني أفقي تتوقف عند محطات الذكاء الاصطناعي الكبرى، وكل محطة تُرسم كمخطط صغير حي.",
-  "summary_en": "A camera ride along a horizontal timeline that stops at the major AI milestones, each drawn as a small living diagram rather than a slide.",
-  "concept_ar": "الموضوع فيديو يبرز المحطات المفصلية في تاريخ الذكاء الاصطناعي، والهدف أن يستوعب المشاهد غير المتخصص تسلسل القفزات والركود في دقيقة واحدة. الاتجاه المقترح خط زمني واحد متصل تسافر عليه الكاميرا دون قطع، وعند كل محطة يُرسم مخطط رمزي بسيط (شريط آلة تورنغ، شبكة بيرسبترون، رقعة شطرنج، طبقات شبكة عصبية، خطوط انتباه بين كلمات). ما يميز اللغة الحركية أن فترات الركود تُعبَّر عنها بصريًا بخفوت الألوان وتقطّع الخط لا بالنص فقط.",
-  "concept_en": "The subject is a video highlighting the turning points of AI history; the goal is that a non-specialist viewer grasps the sequence of leaps and slumps in about a minute. The proposed direction is one continuous timeline the camera travels without cuts; at each stop a small symbolic diagram draws itself (a Turing tape, a perceptron web, a chessboard, neural layers, attention lines between words). The distinctive move is that the slow periods are expressed visually, with dimmed colour and a dashed line, not only by text.",
-  "scenes_en": [
-   "0-4s: Title over a single pulsing dot; the timeline line draws left to right across the frame and the camera starts rolling.",
-   "4-16s: Mid-century. A tape with symbols scrolls for the Turing question (1950), a cluster of dots gathers for the 1956 summer workshop, weighted lines converge into a perceptron node (1958).",
-   "16-26s: First winter. Saturation drops, the line turns dashed, an expert-system decision tree branches slowly in the 1980s, then colour returns.",
-   "26-40s: Machines win games. A chessboard lights up a checkmate (1997), an image grid tiles with labels for the 2012 deep-learning jump, Go stones fill a board (2016).",
-   "40-52s: The language era. Attention lines fan out between word tokens (2017), a chat bubble types a reply (2022), a parameter counter climbs with a log-scale bar.",
-   "52-60s: The camera pulls back to reveal the full line; one empty node labelled 'next' blinks at the end; closing card."
-  ],
-  "scenes_ar": [
-   "0-4 ث: العنوان فوق نقطة واحدة نابضة؛ يُرسم خط الزمن من اليسار إلى اليمين عبر الكادر وتبدأ الكاميرا بالتحرك.",
-   "4-16 ث: منتصف القرن. شريط برموز يتحرك لسؤال تورنغ (1950)، وتتجمع مجموعة نقاط لورشة صيف 1956، وتتلاقى خطوط موزونة في عقدة بيرسبترون (1958).",
-   "16-26 ث: الشتاء الأول. يهبط الإشباع، يصبح الخط متقطعًا، وتتفرع شجرة قرارات لنظام خبير ببطء في الثمانينيات، ثم يعود اللون.",
-   "26-40 ث: الآلات تفوز بالألعاب. رقعة شطرنج تضيء كشّ ملك (1997)، شبكة صور تتبلط بتسميات لقفزة التعلم العميق 2012، وأحجار غو تملأ الرقعة (2016).",
-   "40-52 ث: عصر اللغة. خطوط انتباه تتفرع بين رموز الكلمات (2017)، فقاعة محادثة تكتب ردًا (2022)، وعدّاد معاملات يصعد مع شريط لوغاريتمي.",
-   "52-60 ث: تتراجع الكاميرا لتكشف الخط كاملًا؛ عقدة فارغة بعنوان (التالي) تومض في النهاية؛ بطاقة ختامية."
-  ],
-  "motion_rules_en": [
-   "Camera travels along x at constant velocity between nodes and decelerates to a stop at each one over 900 ms with cubic-bezier(0.4, 0, 0.2, 1); no cuts except the final pull-back.",
-   "Node arrival: the dot scales 0 to 1 in 300 ms on a spring (stiffness 180, damping 14); the year label rises 20 px in 250 ms ease-out.",
-   "Diagrams draw with stroke-dashoffset over 600-900 ms, nearly linear, so they read as pen strokes; only one diagram animates at a time.",
-   "Each node holds 3-5 s; titles are at most 8 words; years in a monospace face, titles in a grotesk, nothing else.",
-   "Winter periods: saturation falls to 20 percent over 1 s, the line becomes dashed with a 12 px pattern, ambient motion slows to half speed.",
-   "Colour: one accent hue per era with a continuous hue drift along the line, so neighbouring eras share tints.",
-   "Banned: real company logos, product screenshots, photographs of people, parallax clutter behind the line."
-  ],
-  "motion_rules_ar": [
-   "تسافر الكاميرا على المحور x بسرعة ثابتة بين العقد وتتباطأ حتى التوقف عند كل عقدة خلال 900 ms بمنحنى cubic-bezier(0.4, 0, 0.2, 1)؛ لا قطع سوى التراجع الأخير.",
-   "وصول العقدة: تكبر النقطة من 0 إلى 1 خلال 300 ms بنابض (صلابة 180، تخميد 14)؛ ويرتفع رقم السنة 20 px خلال 250 ms بمنحنى ease-out.",
-   "تُرسم المخططات عبر stroke-dashoffset خلال 600-900 ms بمنحنى شبه خطي لتبدو كضربات قلم؛ مخطط واحد فقط يتحرك في كل لحظة.",
-   "تبقى كل عقدة 3-5 ث؛ العناوين بحد أقصى 8 كلمات؛ السنوات بخط monospace والعناوين بخط grotesk ولا شيء غيرهما.",
-   "فترات الركود: يهبط الإشباع إلى 20 بالمئة خلال 1 ث، ويصبح الخط متقطعًا بنمط 12 px، وتتباطأ الحركة المحيطة إلى نصف سرعتها.",
-   "اللون: درجة مميزة واحدة لكل حقبة مع انزياح لوني متصل على طول الخط حتى تتشارك الحقب المتجاورة الدرجات.",
-   "ممنوع: شعارات الشركات الحقيقية، لقطات شاشة المنتجات، صور الأشخاص، وفوضى التوازي الحركي خلف الخط."
-  ],
-  "stack": [
-   "Remotion",
-   "SVG"
-  ],
-  "duration_s": 60,
-  "aspect": "16:9",
-  "difficulty": 3,
-  "keywords": [
-   "timeline",
-   "explainer",
-   "ai milestones",
-   "camera travel",
-   "self-drawing diagrams",
-   "education",
-   "خط زمني",
-   "شرح متحرك",
-   "ذكاء اصطناعي",
-   "محطات تاريخية",
-   "مخططات ترسم نفسها",
-   "remotion",
-   "svg"
-  ],
-  "facts_from_source": [
-   "The subject is a video that highlights the key moments in the history of AI.",
-   "No duration, stack, visual style or list of moments is stated."
-  ],
-  "assumptions_en": "The milestone list, the 60 s runtime and the continuous-camera structure are the director's proposal; the source only names the subject. Dates are drawn from general knowledge and should be fact-checked before production."
- },
  "pm-kloss-xyz-fe0c31": {
   "id": "pm-kloss-xyz-fe0c31",
   "title_ar": "خط زمني متحرك لأبرز محطات الذكاء الاصطناعي",
@@ -1091,6 +1237,74 @@
    "The creator asked for a video that highlights the key moments in AI history; no duration, stack or structure is specified."
   ],
   "assumptions_en": "The milestone list, the 45-second length, the navy palette and the single-track camera are all my proposal; the source gives only the subject in one sentence."
+ },
+ "pm-l3d1c-0e35a3": {
+  "id": "pm-l3d1c-0e35a3",
+  "title_ar": "إعلان عمودي لتطبيق PicTwin للصور بالذكاء الاصطناعي",
+  "summary_ar": "إعلان عمودي قصير يُظهر كيف تتحوّل صورة شخصية واحدة إلى نسخة توأم مولّدة بالذكاء الاصطناعي داخل واجهة هاتف حيّة بكشف قبل/بعد.",
+  "summary_en": "A vertical 15 s app ad where one selfie becomes an AI-generated twin inside a live phone UI, told as a split-screen before/after reveal.",
+  "concept_ar": "الموضوع تطبيق ويب يستقبل صورة شخصية ويُخرج نسخة توأم منها بأساليب مختلفة، والهدف إقناع المشاهد في ثوانٍ بأن النتيجة فورية ومبهرة. اللغة الحركية مبنية على واجهة هاتف حقيقية تتفاعل كأن إصبعًا خفيًا يضغطها: رفع، تحميل، حلقة تقدّم، ثم كشف جانبي يفصل الأصل عن التوأم. كل عنصر واجهة يتحرك بزنبرك خفيف واحد لا يتكرر، ولا توجد لقطات ثابتة أبدًا.",
+  "concept_en": "The subject is a web app that takes one selfie and returns an AI twin in several looks; the goal is to convince a scrolling viewer within seconds that the result is instant and striking. The motion language is a real phone UI driven by an invisible finger: upload, progress ring, then a vertical split reveal separating original from twin. Every UI element moves with a single light spring and nothing ever sits still.",
+  "scenes_en": [
+   "0-2s: Black frame; a phone mock-up rises from the bottom edge with a spring (overshoot 1.08, 700 ms) while a selfie thumbnail drops into the upload slot and lands with a 2 px squash.",
+   "2-5s: The upload tile expands to full width (400 ms, easeOutQuint); a progress ring sweeps 0 to 360 degrees over 1200 ms while short Arabic status labels swap with 150 ms crossfades.",
+   "5-9s: Split reveal: a vertical wipe line travels left to right over 900 ms uncovering the AI twin beside the original; hold 600 ms, then three style presets swap every 500 ms with a 3 percent scale pop.",
+   "9-12s: Three benefit pills (speed, privacy, styles) slide in from the right with 120 ms stagger; each pill icon draws on with an SVG stroke over 350 ms.",
+   "12-15s: Logo lockup settles at centre, the site URL types on letter by letter at 40 ms per character, and a CTA button pulses once (scale 1 to 1.04 to 1, 500 ms)."
+  ],
+  "scenes_ar": [
+   "0-2ث: إطار أسود؛ يصعد نموذج الهاتف من الحافة السفلية بزنبرك (تجاوز 1.08 خلال 700 مللي ثانية) بينما تسقط صورة شخصية مصغّرة في خانة الرفع وتنضغط 2 بكسل عند الهبوط.",
+   "2-5ث: تتمدد خانة الرفع إلى كامل العرض (400 مللي ثانية، easeOutQuint)؛ تدور حلقة التقدّم من 0 إلى 360 درجة خلال 1200 مللي ثانية مع تبدّل عبارات حالة عربية قصيرة بتلاشٍ متقاطع 150 مللي ثانية.",
+   "5-9ث: كشف منقسم: خط مسح عمودي ينتقل من اليسار إلى اليمين خلال 900 مللي ثانية ليظهر التوأم بجوار الأصل؛ ثبات 600 مللي ثانية ثم تتبدّل ثلاثة أنماط كل 500 مللي ثانية مع نبضة تكبير 3 بالمئة.",
+   "9-12ث: ثلاث كبسولات مزايا (السرعة، الخصوصية، الأنماط) تنزلق من اليمين بتأخير 120 مللي ثانية بينها؛ أيقونة كل كبسولة تُرسم بخط SVG خلال 350 مللي ثانية.",
+   "12-15ث: يستقر الشعار في المنتصف، ويُكتب عنوان الموقع حرفًا حرفًا بمعدل 40 مللي ثانية للحرف، وينبض زر الدعوة مرة واحدة (1 إلى 1.04 إلى 1 خلال 500 مللي ثانية)."
+  ],
+  "motion_rules_en": [
+   "All UI entrances use one spring (stiffness 180, damping 18) or cubic-bezier(0.22, 1, 0.36, 1) between 350 and 700 ms; exits are 40 percent faster than entrances.",
+   "The phone stays within a 1080x1920 safe area with 120 px top and bottom margins so platform UI never covers the screen content.",
+   "Camera: locked, with a single 6 percent push-in on the split reveal (5-9 s) and no other camera movement.",
+   "Transitions are hardware-like: wipes and expands inside the phone; no cross-dissolves between full scenes.",
+   "Typography: Arabic UI labels in one sans family, two weights only; headline words land with a 60 ms stagger and never exceed three lines.",
+   "Colour: a near-black background, one accent for progress and CTA, photos remain untinted; the accent must not appear on more than two elements at once.",
+   "Banned: fake glow, confetti, stock whoosh cues, text over the face region of the selfie, and any blur on the twin result."
+  ],
+  "motion_rules_ar": [
+   "كل مداخل الواجهة تستخدم زنبركًا واحدًا (صلابة 180، تخميد 18) أو cubic-bezier(0.22, 1, 0.36, 1) بين 350 و700 مللي ثانية؛ الخروج أسرع من الدخول بنسبة 40 بالمئة.",
+   "يبقى الهاتف داخل منطقة آمنة 1080×1920 بهامش 120 بكسل أعلى وأسفل حتى لا تغطي واجهة المنصة محتوى الشاشة.",
+   "الكاميرا: ثابتة، مع دفعة اقتراب واحدة بنسبة 6 بالمئة أثناء الكشف المنقسم (5-9ث) ولا حركة كاميرا أخرى.",
+   "الانتقالات تشبه سلوك الجهاز: مسح وتمدد داخل الهاتف؛ لا تلاشي متقاطع بين المشاهد الكاملة.",
+   "الطباعة: عناوين الواجهة العربية بعائلة sans واحدة ووزنين فقط؛ كلمات العنوان تهبط بتأخير 60 مللي ثانية ولا تتجاوز ثلاثة أسطر.",
+   "اللون: خلفية شبه سوداء، لون تمييز واحد للتقدّم وزر الدعوة، والصور تبقى بدون صبغة؛ لا يظهر لون التمييز على أكثر من عنصرين في آن واحد.",
+   "ممنوع: التوهّج المصطنع، القصاصات الملوّنة، مؤثرات الصوت الجاهزة، النص فوق منطقة الوجه في الصورة، وأي ضبابية على نتيجة التوأم."
+  ],
+  "stack": [
+   "Remotion",
+   "React",
+   "SVG"
+  ],
+  "duration_s": 15,
+  "aspect": "9:16",
+  "difficulty": 2,
+  "keywords": [
+   "إعلان تطبيق",
+   "صورة شخصية",
+   "توأم بالذكاء الاصطناعي",
+   "واجهة هاتف",
+   "قبل وبعد",
+   "app ad",
+   "selfie",
+   "ai avatar",
+   "phone mockup",
+   "split reveal",
+   "progress ring",
+   "vertical ad",
+   "reels"
+  ],
+  "facts_from_source": [
+   "The creator asked for a motion-design advertisement for their own website; nothing else is specified.",
+   "The listing tags the piece as product UI and lists a vertical 1080x1920 frame."
+  ],
+  "assumptions_en": "The product function (an AI twin generated from one photo), the 15 s length and the split-reveal structure are assumptions drawn from the app name; only the ad purpose and vertical format are given."
  },
  "pm-listudio-820c7b": {
   "id": "pm-listudio-820c7b",
@@ -1166,82 +1380,6 @@
    "Tagged product UI; no duration, colours or stack are stated."
   ],
   "assumptions_en": "GenVizu is assumed to be a text-to-visualisation tool based on its name; the 20-second loop, the prompt-to-chart premise and the UI beats are proposals pending a look at the real product."
- },
- "pm-lukasersil-0ed38e": {
-  "id": "pm-lukasersil-0ed38e",
-  "title_ar": "جولة التقنيات: ريل الخمس عشرة ثانية",
-  "summary_ar": "ريل مدته 15 ثانية تقوده كاميرا واحدة متصلة عبر ستة عوالم صغيرة، كل عالم يستعرض تقنية (جسيمات، هندسة ثلاثية، سوائل، أقنعة، صور) وينتهي بما يبدأ به التالي.",
-  "summary_en": "A 15-second reel driven by one continuous camera through six micro-worlds, each demonstrating a technique (particles, 3D geometry, fluids, masks, photos) and ending as the next begins.",
-  "concept_ar": "الموضوع ريل شخصي لمصمم موشن يريد عرض أوسع طيف ممكن من التقنيات المتقدمة في 15 ثانية دون أن يبدو كخليط عشوائي. الهدف التواصلي هو إقناع مدير فني بأن صاحب الريل يتحكم في الإيقاع والانتقال والإضاءة والعمق بقدر تحكمه في المؤثرات. ما يميز اللغة الحركية أن كل تقنية تُسلّم للتي تليها مادياً: الحرف يتفتت جسيمات، الجسيمات تتكثف جسماً ثلاثياً، الجسم يصبح ممراً، والممر يتموج سائلاً؛ فلا يوجد قطع واحد، بل سلسلة تحوّلات تتابعها الكاميرا.",
-  "concept_en": "The subject is a personal reel for a motion designer who wants to show the widest possible spread of advanced techniques in 15 seconds without it reading as a random pile of effects. The goal is to convince an art director that the author controls pacing, transitions, lighting and depth as much as the effects themselves. What makes the motion language distinctive is that each technique physically hands off to the next: a letter shatters into particles, particles condense into a 3D solid, the solid extrudes into a corridor, the corridor ripples into liquid; there is not a single cut, only a chain of transformations the camera follows.",
-  "scenes_en": [
-   "0-2s: One oversized word slams into frame with per-letter stagger, then its glyphs shatter into roughly 4,000 particles that scatter toward the lens.",
-   "2-5s: The particles swirl inward and condense into a rotating faceted solid with a rim light; the camera orbits 40 degrees while the solid's edges extrude.",
-   "5-8s: The extrusions become walls of a corridor; the camera flies through as geometric masks on the walls open to reveal photographs sliding past in parallax.",
-   "8-11s: The far wall liquefies: a displacement field warps the last photo into a colour field, and kinetic phrases ride the waves with their baselines following the distortion.",
-   "11-13s: The liquid settles into a floor; bars of a chart rise from it like a skyline, the camera tilts up and the bars catch depth fog.",
-   "13-15s: Everything collapses toward a single point of light that resolves into the designer's name card; hold 1 second on black with the name."
-  ],
-  "scenes_ar": [
-   "0-2 ث: كلمة واحدة ضخمة تضرب الإطار بتدرج لكل حرف، ثم تتفتت حروفها إلى نحو 4,000 جسيم تتناثر نحو العدسة.",
-   "2-5 ث: تدور الجسيمات إلى الداخل وتتكثف جسماً متعدد الأوجه يدور بإضاءة حافة؛ تدور الكاميرا 40 درجة بينما تنبثق حواف الجسم إلى الخارج.",
-   "5-8 ث: تصبح الانبثاقات جدران ممر؛ تطير الكاميرا عبره بينما تنفتح أقنعة هندسية على الجدران كاشفة صوراً تنزلق في parallax.",
-   "8-11 ث: يسيل الجدار البعيد: حقل إزاحة يشوّه آخر صورة إلى حقل لوني، وعبارات حركية تركب الموجات بخطوط قاعدة تتبع التشوه.",
-   "11-13 ث: يهدأ السائل إلى أرضية؛ ترتفع منها أعمدة رسم بياني كأفق مدينة، وتميل الكاميرا لأعلى ويلف الأعمدة ضباب عمق.",
-   "13-15 ث: ينهار كل شيء نحو نقطة ضوء واحدة تتحول إلى بطاقة اسم المصمم؛ تثبيت ثانية على الأسود مع الاسم."
-  ],
-  "motion_rules_en": [
-   "No hard cuts anywhere: every scene boundary is a morph, a camera carry-through or a fill-the-frame match; the average beat is 2.5 s and no beat exceeds 3 s.",
-   "Entrances use expo-out cubic-bezier(0.19, 1, 0.22, 1) over 400-700 ms; dissolutions (shatter, liquefy) use ease-in cubic-bezier(0.7, 0, 0.84, 0) so energy builds before release.",
-   "One 3D camera for the full 15 s with field of view drifting between 35 and 60 degrees; moves are keyed as position plus look-at, never as separate rotation tweens.",
-   "Particles are GPU-instanced points, 2,000-6,000 per beat, size 1.5-3 px, with per-particle delay derived from distance to the origin so flows read as waves.",
-   "Lighting is a single key, a rim and depth fog starting at 60 percent of scene depth; shadows are soft and never pure black.",
-   "Typography: one ultra-bold grotesk in exactly two weights; type always sits on a surface or path in the scene, never floats as a flat overlay.",
-   "Colour: one near-black base, white, and two accents that are never on screen at full saturation at the same time.",
-   "Banned: lens flares, glitch overlays, stock textures, more than one font family, shake or wiggle expressions, any crossfade."
-  ],
-  "motion_rules_ar": [
-   "لا قطع حاد في أي مكان: كل حد بين مشهدين هو morph أو حمل كاميرا أو match بملء الإطار؛ متوسط اللقطة 2.5 ثانية ولا تتجاوز أي لقطة 3 ثوان.",
-   "الدخولات بمنحنى expo-out بقيمة cubic-bezier(0.19, 1, 0.22, 1) خلال 400-700 ms؛ التفكك (التفتت، التسييل) بمنحنى ease-in بقيمة cubic-bezier(0.7, 0, 0.84, 0) لتتراكم الطاقة قبل الانفلات.",
-   "كاميرا ثلاثية واحدة طوال 15 ثانية مع مجال رؤية ينزاح بين 35 و60 درجة؛ تُمفتح الحركات كموضع مع look-at، ولا تُحرَّك الدورانات منفصلة أبداً.",
-   "الجسيمات نقاط instanced على GPU، من 2,000 إلى 6,000 في كل لقطة، حجمها 1.5-3 px، مع تأخير لكل جسيم مشتق من بعده عن المركز لتُقرأ التدفقات كموجات.",
-   "الإضاءة مفتاح واحد وحافة وضباب عمق يبدأ عند 60 بالمئة من عمق المشهد؛ الظلال ناعمة ولا تكون سوداء خالصة أبداً.",
-   "الطباعة: خط grotesk فائق الثقل بوزنين فقط؛ النص يجلس دائماً على سطح أو مسار داخل المشهد ولا يطفو كطبقة مسطحة.",
-   "اللون: قاعدة شبه سوداء، أبيض، ولونا تمييز لا يظهران معاً بكامل تشبعهما في اللحظة نفسها.",
-   "ممنوع: lens flare، طبقات glitch، خامات جاهزة، أكثر من عائلة خط، تعبيرات اهتزاز أو wiggle، وأي crossfade."
-  ],
-  "stack": [
-   "Remotion",
-   "Three.js",
-   "WebGL"
-  ],
-  "duration_s": 15,
-  "aspect": "16:9",
-  "difficulty": 5,
-  "keywords": [
-   "showreel",
-   "portfolio reel",
-   "particles",
-   "جسيمات",
-   "3d geometry",
-   "fluid distortion",
-   "masking",
-   "compositing",
-   "أقنعة",
-   "إضاءة",
-   "camera flythrough",
-   "كاميرا متصلة",
-   "morph transition",
-   "تشوه سائل",
-   "depth fog"
-  ],
-  "facts_from_source": [
-   "Duration is stated as 15 seconds and the piece is framed as a portfolio reel meant to get a motion designer hired.",
-   "The creator lists the techniques to cover: kinetic typography, transitions, 2D and 3D animation, abstract geometry, fluid simulation, particles, distortion, masking, compositing, lighting, depth and camera movement.",
-   "The creator wants fast, confident pacing with every shot flowing into the next, and an art-directed feel rather than a loose effects collection.",
-   "Site tags: charts, kinetic type, shapes, particles, photos."
-  ],
-  "assumptions_en": "Stated: 15 seconds, the technique list, fast pacing, seamless transitions and the art-directed intent. Assumed: the six-world hand-off structure, particle counts, easing values, lighting setup and the two-accent palette."
  },
  "pm-mandelduck-95fd08": {
   "id": "pm-mandelduck-95fd08",
@@ -1676,156 +1814,220 @@
   ],
   "assumptions_en": "The source only fixes the length and the résumé-reel purpose; the chapter structure, 120 BPM grid, two-tone palette and all timings are proposed. The 1280x720 frame is read as 16:9."
  },
- "pm-notdwd-7de38a": {
-  "id": "pm-notdwd-7de38a",
-  "title_ar": "ستينغ منتج مربع بأسلوب كينوت زجاجي",
-  "summary_ar": "ستينغ إطلاق مربع مدته 12 ثانية بروح عروض Apple: واجهة فاتحة، زجاج مصنفر، كاميرا لا تتوقف، وثلاث قطعات حادة مثبتة قبيل النبضة على إيقاع 124 BPM.",
-  "summary_en": "A 12-second square launch sting in a light keynote idiom: frosted-glass UI, a camera that never rests, speed-driven blur and three hard cuts pinned just ahead of the beat.",
-  "concept_ar": "الموضوع تطبيق يعيش داخل منصة مجتمعية، والستينغ يأخذ المشاهد من ترويسة المنتج إلى أيقونة تدور حولها مربعات، ثم شريط قوائم وصندوق أوامر وصفحة إجابة وبطاقات وشعار وبطاقة ختام سوداء. الهدف هو إحساس الإطلاق الراقي بمستوى عروض الشركات الكبرى في ثوانٍ قليلة. ما يميز لغة الحركة أن لا لقطة تبدأ ساكنة: كل لقطة تدخل وهي تتباطأ أسياً وتخرج وهي تتسارع نحو ضبابية حركة، وكل بكسل دالة خالصة لرقم الإطار.",
-  "concept_en": "The subject is an app living inside a community hub; the sting travels from the product header to an icon with orbiting squares, then a menu bar, a prompt box, an answer page, cards, the logo and a black end card. The goal is a premium launch feeling at big-keynote quality within seconds. The distinctive motion language: no shot starts still. Every shot enters decelerating exponentially and leaves accelerating into motion blur, and every pixel is a pure function of the frame index.",
+ "pm-paulo-kombucha-96431c": {
+  "id": "pm-paulo-kombucha-96431c",
+  "title_ar": "إعلان برنامج الإحالة بالتميمة",
+  "summary_ar": "إعلان موشن جرافيك في 15 ثانية تقوده تميمة العلامة لشرح برنامج الإحالة: ادعُ صديقًا، يربح كلاكما، والرسم البياني يثبت ذلك.",
+  "summary_en": "A 15-second mascot-led motion spot explaining a referral programme: invite a friend, both of you win, and a growing chart proves it.",
+  "concept_ar": "الموضوع برنامج إحالة لعلامة مشروبات (يُفترض كومبوتشا من اسم الحساب) تُقدّمه تميمة كرتونية ودودة. الهدف أن يفهم المشاهد في 15 ثانية آلية بسيطة: تشارك رابطك، ينضم صديقك، ويحصل الطرفان على مكافأة، ثم يضغط زر المشاركة. تتميّز لغة الحركة بتميمة مرنة بحركة ضغط وتمدّد واضحة، ورمز رابط يُقذف كالكرة بين شخصيتين، ورسم أعمدة ينمو فعليًا كجزء من الحكاية لا كشريحة إحصائية منفصلة.",
+  "concept_en": "The subject is a referral programme for a beverage brand (assumed kombucha from the handle) presented by a friendly cartoon mascot. The goal is that in 15 seconds the viewer grasps a simple mechanic: share your link, a friend joins, both sides get a reward, then taps share. The motion language is a rubbery mascot with pronounced squash and stretch, a link token tossed like a ball between two characters, and a bar chart that grows as part of the story rather than as a separate statistics slide.",
   "scenes_en": [
-   "0-2.4s: A pale blue haze clears to an off-white page; the product lockup (logo disc, name, a dark 'on hub' pill) rises and settles while a light app window fades in around it; a cursor glides in, tilts toward its target, swells on hover and presses the logo as the camera pushes to 1.2x.",
-   "2.4-3.4s: Hard cut on the drop: a navy squircle icon shrinks on a grey halo while four coloured squares spin in counter-clockwise and lock into a cross; the icon then collapses and the squares line up as blur ramps up.",
-   "3.4-5.3s: Cut to a laptop bezel and dark menu bar over a sky-gradient wallpaper; the cursor presses the product mark, a frosted prompt box springs out, the prompt types at roughly one character per frame with micro-holds, then the frame whip-tilts upward into a light flash.",
-   "5.3-7.2s: The answer page lands from below with heavy vertical smear that sharpens as it decelerates; one key phrase sits in black against grey body text; a white card with a cover image rises over it while the page behind softens.",
-   "7.2-8.2s: Blur-dissolve to two stacked cards whose giant titles are cut from frosted copies of their own cover art; they enter from below with stagger, drift, then accelerate out.",
-   "8.2-12s: Blur-dissolve to the lone logo disc, the only true hold in the film; then a hard cut to a black end card where the wordmark arrives horizontally streaked, shrinks slowly and finally collapses inward as the piece ends mid-motion."
+   "0-2s: The mascot pops up from the bottom edge with a 15% overshoot bounce and waves; a two-line headline drops in, one line per beat.",
+   "2-6s: A friend silhouette slides in from the right; the mascot tosses a glowing link token that arcs across with a motion trail and lands in the friend's hand, which fills with colour on catch.",
+   "6-10s: Reward chart: a bar labelled 'you' and a bar labelled 'your friend' grow in sync over 700ms, then a third bar 'together' stacks above them while the amounts tick up.",
+   "10-13s: A share sheet with three buttons (copy link, message, QR code) fans out from the mascot's hand at 60-degree intervals; each button ripples when tapped.",
+   "13-15s: The mascot gives a thumbs-up, the referral code appears in a pill under the call to action, and the brand colour holds for the last 800ms."
   ],
   "scenes_ar": [
-   "0-2.4 ث: ضباب أزرق شاحب ينقشع عن صفحة بيضاء مائلة للدفء؛ تركيبة المنتج (قرص الشعار، الاسم، كبسولة داكنة «على المنصة») ترتفع وتستقر بينما تظهر نافذة تطبيق فاتحة حولها؛ مؤشر ينزلق للداخل، يميل نحو هدفه، يكبر عند التحويم ويضغط الشعار مع دفعة كاميرا إلى 1.2x.",
-   "2.4-3.4 ث: قطع حاد على الدروب: أيقونة كحلية مربعة مستديرة تتقلص فوق هالة رمادية بينما تدور أربعة مربعات ملونة عكس عقارب الساعة وتثبت على شكل صليب؛ ثم تنهار الأيقونة وتصطف المربعات مع تصاعد الضبابية.",
-   "3.4-5.3 ث: قطع إلى إطار حاسوب محمول وشريط قوائم داكن فوق خلفية سماء متدرجة؛ المؤشر يضغط علامة المنتج، صندوق أوامر زجاجي مصنفر يقفز للخارج، الأمر يُكتب بمعدل حرف واحد تقريباً لكل إطار مع توقفات دقيقة، ثم يميل الإطار بعنف للأعلى داخل وميض فاتح.",
-   "5.3-7.2 ث: صفحة الإجابة تهبط من الأسفل مع تلطيخ رأسي ثقيل يتضح مع التباطؤ؛ عبارة مفتاحية واحدة بالأسود وسط نص رمادي؛ بطاقة بيضاء بصورة غلاف ترتفع فوقها بينما تنعّم الصفحة خلفها.",
-   "7.2-8.2 ث: انتقال ضبابي إلى بطاقتين متراصتين عناوينهما الضخمة مقصوصة من نسخ مصنفرة من صور غلافيهما؛ تدخلان من الأسفل بتأخير بينهما، تنجرفان، ثم تتسارعان للخروج.",
-   "8.2-12 ث: انتقال ضبابي إلى قرص الشعار وحده، وهو الثبات الحقيقي الوحيد في الفيلم؛ ثم قطع حاد إلى بطاقة ختام سوداء تصل فيها العلامة النصية ممدودة أفقياً، تتقلص ببطء ثم تنهار للداخل وينتهي الفيلم في منتصف الحركة."
+   "0-2 ث: تقفز التميمة من الحافة السفلية بارتداد يتجاوز الهدف 15% وتلوّح؛ يهبط عنوان من سطرين، سطر على كل نبضة.",
+   "2-6 ث: ينزلق ظل صديق من اليمين؛ تقذف التميمة رمز رابط متوهّجًا يرسم قوسًا بأثر حركة ويستقر في يد الصديق التي تمتلئ باللون عند الالتقاط.",
+   "6-10 ث: رسم المكافآت: عمود باسم أنت وعمود باسم صديقك ينموان معًا خلال 700 مللي ثانية، ثم يُكدَّس عمود ثالث باسم معًا فوقهما بينما تتصاعد القيم.",
+   "10-13 ث: ورقة مشاركة بثلاثة أزرار (نسخ الرابط، رسالة، رمز QR) تتفتّح من يد التميمة بفواصل 60 درجة؛ ويتموّج كل زر عند الضغط.",
+   "13-15 ث: ترفع التميمة إبهامها، ويظهر رمز الإحالة في شارة تحت نداء الفعل، ويثبت لون العلامة آخر 800 مللي ثانية."
   ],
   "motion_rules_en": [
-   "Every shot is already in motion on its first frame: entrances use an exponential ease-out closing roughly 12-19% of whatever distance remains each frame, and exits accelerate into a blur ramp; no shot begins or ends on a still.",
-   "Blur is a function of velocity: round CSS blur for slow drift, directional SVG feGaussianBlur (separate x/y) for whips and smears; a frame must never go empty because blur wiped the shape out.",
-   "Three hard cuts are locked to exact frames two frames ahead of a beat at 124 BPM; every other transition is a blur-dissolve. Crossfades are banned.",
-   "Camera: a 2D stage with push-ins about the centre (1.0 to 1.2 ease-in-out, then easing back to about 1.04) and pans of about 125 px during clicks; the whip-tilt moves roughly 25 px per frame with 6-8 px vertical blur leading into the answer page.",
-   "Typography: Inter at weights 400-700 only; names and pills appear blurred and sharpen into place, sliding a few pixels as they resolve; no glow on UI text.",
-   "Palette: off-white page, pale haze blue, navy, exactly three accents (electric blue, cyan, mint) plus white; purple, violet, magenta and orange are forbidden everywhere.",
-   "Frosted glass is built by blurring and lightening a copy of what sits behind the shape and clipping it to the shape; the giant card titles use the same trick clipped to the letterforms.",
-   "Implementation: one HTML page driven by seek(frame) with keyframe tables and linear lookups, without CSS transitions, timers or Math.random (seeded hashes instead) and without Math.floor on motion values; render via Playwright at 59.94 fps and mux the synthesized SFX mastered to -14 LUFS."
+   "Mascot moves on cubic-bezier(0.34, 1.56, 0.64, 1) with squash to 80% height on landing and stretch to 115% at take-off; limbs follow with a 60ms overlap.",
+   "The link token travels on a parabolic path over 900ms with a 12-sample motion trail that fades over 200ms; it is the only element allowed a trail.",
+   "Chart bars grow from a 0 height with ease-out cubic over 700ms; numbers count up with the same curve and settle 100ms after the bar; axis lines draw on with stroke-dashoffset in 300ms.",
+   "Camera is static; emphasis comes from a 1.06 punch-in on the chart beat only, lasting 200ms.",
+   "Type: a rounded heavy sans for headlines, two lines max, 72px at 1080p; Arabic in a rounded bold face with word-level entrance (translateY 24px to 0, 240ms, 60ms stagger).",
+   "Colour: brand primary on the mascot and buttons, a neutral light background, one reward accent used only for the token, the bars and the code pill.",
+   "Each beat holds its key visual for at least 1s before the next action starts; no two entrances overlap by more than 100ms.",
+   "Banned: 3D render looks, drop shadows deeper than 12px, more than three bars in the chart, and any legal small print on screen."
   ],
   "motion_rules_ar": [
-   "كل لقطة تكون متحركة بالفعل في إطارها الأول: الدخول بتباطؤ أسي يقطع نحو 12-19% من المسافة المتبقية في كل إطار، والخروج يتسارع داخل منحدر ضبابية؛ لا تبدأ أي لقطة ولا تنتهي على إطار ساكن.",
-   "الضبابية دالة للسرعة: CSS blur دائري للانجراف البطيء، وSVG feGaussianBlur اتجاهي (قيم x/y منفصلة) للحركات الخاطفة والتلطيخ؛ لا يجوز أن يفرغ إطار لأن الضبابية محت الشكل.",
-   "ثلاث قطعات حادة مثبتة على إطارات دقيقة قبل النبضة بإطارين على إيقاع 124 BPM؛ كل انتقال آخر هو انتقال ضبابي. الـ crossfade ممنوع.",
-   "الكاميرا: مسرح ثنائي الأبعاد مع دفعات حول المركز (من 1.0 إلى 1.2 بمنحنى ease-in-out ثم عودة إلى نحو 1.04) وتحريك أفقي نحو 125 بكسل أثناء النقر؛ الميل الخاطف يتحرك نحو 25 بكسل لكل إطار مع ضبابية رأسية 6-8 بكسل قبل صفحة الإجابة.",
-   "الخط: Inter بأوزان 400-700 فقط؛ الأسماء والكبسولات تظهر ضبابية وتتضح في مكانها منزلقة بضعة بكسلات أثناء الوضوح؛ لا توهج على نصوص الواجهة.",
-   "اللوحة: صفحة بيضاء دافئة، أزرق ضبابي شاحب، كحلي، وثلاثة ألوان تمييز بالضبط (أزرق كهربائي، سماوي، نعناعي) مع الأبيض؛ البنفسجي والأرجواني والماجنتا والبرتقالي ممنوعة في كل مكان.",
-   "الزجاج المصنفر يُبنى بتضبيب وتفتيح نسخة مما يقع خلف الشكل وقصّها على حدوده؛ عناوين البطاقات الضخمة تستخدم الحيلة نفسها مقصوصة على الحروف.",
-   "التنفيذ: صفحة HTML واحدة تقودها دالة seek(frame) بجداول keyframes واستيفاء خطي، دون CSS transitions أو مؤقتات أو Math.random (بدلها هاشات مزروعة) ودون Math.floor على قيم الحركة؛ التصيير عبر Playwright بمعدل 59.94 إطاراً/ثانية ودمج مؤثرات صوتية مُركّبة بمستوى -14 LUFS."
-  ],
-  "stack": [
-   "SVG",
-   "CSS",
-   "Web Audio"
-  ],
-  "duration_s": 12,
-  "aspect": "1:1",
-  "difficulty": 5,
-  "keywords": [
-   "product sting",
-   "launch video",
-   "frosted glass",
-   "keynote style",
-   "cursor animation",
-   "prompt box",
-   "blur ramp",
-   "whip tilt",
-   "124 bpm",
-   "ستينغ إطلاق",
-   "زجاج مصنفر",
-   "مؤشر الفأرة",
-   "واجهة فاتحة",
-   "مربع 1:1"
-  ],
-  "facts_from_source": [
-   "Square 1080x1080 sting lasting 12 seconds (audio just over 12 s), counted in 29.97 fps frames and rendered at 59.94 fps.",
-   "Look described as keynote-like: soft, white, bright blue and glassy, set in Inter; warm and purple hues are excluded.",
-   "Eight shots: header-and-click, icon orbit, menu bar and prompt, answer page, single card, two stacked cards, logo disc, black end card.",
-   "Three hard cuts sit two frames ahead of beats of a 124 BPM track; the drop lands near 2.5 s.",
-   "Built as one HTML page where every pixel is derived from the frame index alone; rendered with Playwright, encoded H.264 at 60000/1001 and mixed with synthesized SFX at -14 LUFS.",
-   "The prompt asks the agent to collect inputs (name, logo, prompt line, page copy, card names, music) and to show four stills before the full render.",
-   "The only permitted frozen stretch is a short hold on the logo disc."
-  ],
-  "assumptions_en": "Shot boundaries in seconds are converted from the stated frame cuts; exact coordinates, pixel sizes and colour codes from the source are deliberately not reproduced and should be re-derived per product. The hub, lesson page and card names are placeholders to replace with the client's own."
- },
- "pm-prasenx-8d9323": {
-  "id": "pm-prasenx-8d9323",
-  "title_ar": "عرض أعمال بموسيقى مُركّبة بالكود بالكامل",
-  "summary_ar": "خمس عشرة ثانية يقود فيها جدول نوتات واحد الصوت والصورة معًا: كل ضربة طبلة نبضة، وكل قطع يقع على الإيقاع حتمًا.",
-  "summary_en": "Fifteen seconds where one note table drives both audio and picture: each kick is a pulse, each cut sits on the grid, and the soundtrack is pure code.",
-  "concept_ar": "الموضوع عرض أعمال لمصمم موشن مدته 15 ثانية بدقة 1920x1080 وبمعدل 60 إطارًا، لكن الشرط الذي يصنع الفكرة أن الموسيقى تُولَّد برمجيًا دون أي عينات أو ملفات صوت أو آلات افتراضية. الاتجاه المقترح: مسار بسرعة 128 BPM يُبنى من مذبذبات بسيطة (طبلة جيبية، هاي هات من ضجيج مُرشَّح، بيس منشاري، لحن مربّع)، ويُشتق كل عنصر بصري من بيانات النوتات نفسها. ما يميز اللغة الحركية أن التزامن مضمون بالبناء لا بالضبط اليدوي، فالصورة والصوت يقرآن الجدول ذاته.",
-  "concept_en": "The subject is a 15-second motion showreel at 1920x1080 and 60 fps, but the idea-defining constraint is that the music must be generated in code with no samples, audio files or virtual instruments. Proposed direction: a 128 BPM track built from simple oscillators (sine kick, filtered-noise hat, saw bass, square lead), with every visual element derived from the same note data. The distinctive quality is that sync is guaranteed by construction rather than by hand alignment, because picture and sound read one table.",
-  "scenes_en": [
-   "0-1.9s (bar 1): Count-in with kick only; a single dot pulses on each kick while the designer's name appears letter by letter on the hats.",
-   "1.9-5.6s (bars 2-3): Bass enters; a central shape morphs once per beat (circle, square, triangle, hexagon) with the stroke weight following the bass envelope.",
-   "5.6-9.4s (bars 4-5): Lead arpeggio; skill words snap in on eighth notes as kinetic type; the camera rotates 90 degrees on each bar line.",
-   "9.4-13.1s (bars 6-7): The drop; a bar-chart equaliser rises from the actual oscillator amplitudes and the palette inverts at every bar.",
-   "13.1-15s (bar 8): Everything collapses toward the centre into a monogram; one final hit; 200 ms of tail then black."
-  ],
-  "scenes_ar": [
-   "0-1.9 ث (المازورة 1): عدّ تمهيدي بالطبلة وحدها؛ نقطة واحدة تنبض مع كل ضربة بينما يظهر اسم المصمم حرفًا حرفًا على ضربات الهاي هات.",
-   "1.9-5.6 ث (المازورتان 2-3): يدخل البيس؛ شكل مركزي يتحول مرة كل ضربة (دائرة، مربع، مثلث، سداسي) وسماكة الخط تتبع غلاف البيس.",
-   "5.6-9.4 ث (المازورتان 4-5): أربيجيو اللحن؛ كلمات المهارات تقفز على نوتات الثُمن كطباعة حركية؛ وتدور الكاميرا 90 درجة عند كل خط مازورة.",
-   "9.4-13.1 ث (المازورتان 6-7): الذروة؛ مخطط أعمدة يرتفع من سعات المذبذبات الفعلية، وتنقلب اللوحة اللونية عند كل مازورة.",
-   "13.1-15 ث (المازورة 8): ينهار كل شيء نحو المركز في مونوغرام؛ ضربة أخيرة واحدة؛ 200 ms ذيل ثم أسود."
-  ],
-  "motion_rules_en": [
-   "Tempo 128 BPM at 60 fps gives 28.125 frames per beat; all keyframes are computed from beat indices, never typed as seconds.",
-   "Hard cuts land on frame floor(beat × 28.125) and only on beats 1 and 3 of a bar; any transition longer than a sixteenth note (117 ms) is a morph, not a crossfade.",
-   "Kick response: scale 1.08 to 1.0 over 220 ms with an exponential decay that mirrors the kick's amplitude envelope.",
-   "Shape morphs: 350 ms, cubic-bezier(0.65, 0, 0.35, 1), SVG paths with equal point counts so vertices glide instead of jumping.",
-   "Typography: words enter on the eighth-note grid (234 ms), hold one bar, exit by horizontal slicing on the next downbeat; one typeface, two weights.",
-   "Camera: 90-degree rotations on bar boundaries over 450 ms ease-in-out; no camera motion inside a bar.",
-   "Audio recipe: kick = sine sweeping 150 to 50 Hz over 120 ms; hat = high-passed noise burst of 40 ms; bass = saw through a 300 Hz low-pass; lead = square with 8 ms attack; rendered with OfflineAudioContext or a numeric synth and normalised near -14 LUFS.",
-   "Banned: samples, audio files, pre-rendered stems, cuts off the grid, unseeded randomness, glow stacks."
-  ],
-  "motion_rules_ar": [
-   "السرعة 128 BPM عند 60 fps تعطي 28.125 إطارًا لكل ضربة؛ تُحسب كل الإطارات المفتاحية من فهرس الضربة ولا تُكتب بالثواني يدويًا.",
-   "القطع الحاد يقع على الإطار floor(beat × 28.125) وعلى الضربتين 1 و3 من المازورة فقط؛ وأي انتقال أطول من نوتة سدس عشر (117 ms) يكون تحولًا لا تلاشيًا متقاطعًا.",
-   "استجابة الطبلة: تكبير من 1.08 إلى 1.0 خلال 220 ms بتلاشٍ أسي يحاكي غلاف سعة الطبلة.",
-   "تحولات الأشكال: 350 ms بمنحنى cubic-bezier(0.65, 0, 0.35, 1)، ومسارات SVG بعدد نقاط متساوٍ حتى تنزلق الرؤوس بدل أن تقفز.",
-   "الطباعة: تدخل الكلمات على شبكة الثُمن (234 ms)، تبقى مازورة واحدة، وتخرج بالتشريح الأفقي على الضربة الأولى التالية؛ خط واحد بوزنين.",
-   "الكاميرا: دورات 90 درجة على حدود المازورات خلال 450 ms بمنحنى ease-in-out؛ لا حركة كاميرا داخل المازورة.",
-   "وصفة الصوت: الطبلة موجة جيبية تنزلق من 150 إلى 50 Hz خلال 120 ms؛ الهاي هات دفقة ضجيج بمرشح علوي مدتها 40 ms؛ البيس موجة منشارية عبر مرشح سفلي عند 300 Hz؛ اللحن موجة مربعة بهجوم 8 ms؛ يُصدَّر عبر OfflineAudioContext أو مُركّب رقمي ويُعاير قرب -14 LUFS.",
-   "ممنوع: العينات، ملفات الصوت، المسارات المسبقة، القطع خارج الشبكة، العشوائية غير المبذورة، وتراكم التوهجات."
+   "تتحرك التميمة بمنحنى cubic-bezier(0.34, 1.56, 0.64, 1) مع انضغاط إلى 80% من الارتفاع عند الهبوط وتمدّد إلى 115% عند الانطلاق؛ وتتبع الأطراف بتداخل 60 مللي ثانية.",
+   "يسير رمز الرابط على مسار قطع مكافئ خلال 900 مللي ثانية مع أثر حركة من 12 عيّنة يتلاشى خلال 200 مللي ثانية؛ وهو العنصر الوحيد المسموح له بأثر.",
+   "تنمو أعمدة الرسم من ارتفاع صفر بمنحنى ease-out cubic خلال 700 مللي ثانية؛ وتتصاعد الأرقام بالمنحنى نفسه وتستقر بعد العمود بـ 100 مللي ثانية؛ وتُرسم خطوط المحاور بـ stroke-dashoffset خلال 300 مللي ثانية.",
+   "الكاميرا ثابتة؛ يأتي التأكيد من اقتراب 1.06 على نبضة الرسم فقط لمدة 200 مللي ثانية.",
+   "الخط: sans ثقيل مستدير للعناوين، سطران كحدّ أقصى، 72 بكسل على 1080p؛ العربية بخط عريض مستدير مع دخول على مستوى الكلمة (translateY من 24 بكسل إلى 0 خلال 240 مللي ثانية بتأخير 60 مللي ثانية).",
+   "اللون: لون العلامة الأساسي على التميمة والأزرار، وخلفية فاتحة محايدة، ولون مكافأة واحد يُستخدم فقط للرمز والأعمدة وشارة الكود.",
+   "تحتفظ كل نبضة بعنصرها البصري الرئيسي ثانية واحدة على الأقل قبل بدء الفعل التالي؛ ولا يتداخل دخولان بأكثر من 100 مللي ثانية.",
+   "ممنوع: مظهر التصيير ثلاثي الأبعاد، وظلال أعمق من 12 بكسل، وأكثر من ثلاثة أعمدة في الرسم، وأي نص قانوني صغير على الشاشة."
   ],
   "stack": [
    "Remotion",
-   "Web Audio",
+   "SVG",
+   "React"
+  ],
+  "duration_s": 15,
+  "aspect": "16:9",
+  "difficulty": 2,
+  "keywords": [
+   "referral program",
+   "mascot animation",
+   "invite a friend",
+   "bar chart",
+   "share sheet",
+   "reward",
+   "brand promo",
+   "برنامج إحالة",
+   "تميمة متحركة",
+   "ادعُ صديقًا",
+   "رسم بياني",
+   "مكافأة",
+   "مشاركة الرابط"
+  ],
+  "facts_from_source": [
+   "Fixed length of 15 seconds.",
+   "The topic is the brand's referral programme and the tone should be dynamic.",
+   "The creator filed it under charts, and the title names a mascot as the presenter."
+  ],
+  "assumptions_en": "The source gives only the duration, the topic and the chart tag; the kombucha brand, the two-sided reward, the link-toss gag and the three-button share sheet are proposed. Reward amounts are placeholders to be replaced with the real programme terms."
+ },
+ "pm-quickdesignio-dd93d0": {
+  "id": "pm-quickdesignio-dd93d0",
+  "title_ar": "ترويج علامة QuickDesign: السرعة كحجّة بصرية",
+  "summary_ar": "ترويج أفقي مدته 15 ثانية لأداة تصميم سريعة، يبني الشعار من أشكال أولية ثم يبرهن على توفير الوقت بمخططات وعدّادات متحركة.",
+  "summary_en": "A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.",
+  "concept_ar": "الموضوع علامة أداة تصميم تعد بالسرعة، والهدف مزدوج: إقناع المشاهد بقيمة الأداة وإظهار براعة حركية في الوقت نفسه. اللغة الحركية تجعل السرعة محسوسة بدل أن تُقال: أشكال أولية تلتقط مواضعها كالمغناطيس، لوحة تصميم تمتلئ تلقائيًا ببطاقات، ثم تتحول بيانات الوقت الموفّر إلى مخططات تنمو أمام العين. كل مشهد ينتهي بعنصر يصبح بذرة المشهد التالي كي لا يوجد انقطاع.",
+  "concept_en": "The subject is the brand of a design tool that promises speed, and the goal is twofold: sell the tool and show off motion craft at once. The motion language makes speed felt rather than stated: primitive shapes snap into place like magnets, a design canvas auto-fills with cards, and the time-saved data becomes charts that grow on screen. Every scene ends with an element that seeds the next one so there is never a dead cut.",
+  "scenes_en": [
+   "0-2s: Rectangles, circles and triangles fly in from the frame edges and snap into the wordmark letterforms with a spring (damping 14), each shape arriving 50 ms after the previous one.",
+   "2-5s: The wordmark shrinks to a corner and a tool canvas unfolds; a cursor drags a frame, and an auto-layout fills it with twelve cards at 80 ms stagger while grid lines fade in at 30 percent.",
+   "5-9s: Proof section: a two-bar comparison (manual vs tool) grows from the baseline over 1000 ms, a line chart of weekly output draws on via stroke-dashoffset over 1200 ms, and a counter rolls to the hours saved.",
+   "9-12s: A deck of template cards flips in CSS 3D perspective, each flip 300 ms with 90 ms stagger, revealing social post, slide and poster layouts.",
+   "12-15s: All cards collapse into the wordmark shapes from scene one, the tagline lands in two words and the URL fades up at 400 ms."
+  ],
+  "scenes_ar": [
+   "0-2ث: مستطيلات ودوائر ومثلثات تطير من حواف الإطار وتلتقط مواضعها داخل حروف الشعار النصي بزنبرك (تخميد 14)، كل شكل يصل بعد سابقه بـ50 مللي ثانية.",
+   "2-5ث: يتقلص الشعار إلى زاوية وتنفتح لوحة الأداة؛ مؤشر يسحب إطارًا، فيمتلئ تلقائيًا باثنتي عشرة بطاقة بتأخير 80 مللي ثانية بينها بينما تظهر خطوط الشبكة بشفافية 30 بالمئة.",
+   "5-9ث: قسم البرهان: مقارنة بعمودين (يدوي مقابل الأداة) تنمو من خط الأساس خلال 1000 مللي ثانية، مخطط خطي للإنتاج الأسبوعي يُرسم عبر stroke-dashoffset خلال 1200 مللي ثانية، وعدّاد يصل إلى الساعات الموفّرة.",
+   "9-12ث: مجموعة بطاقات قوالب تنقلب بمنظور CSS ثلاثي الأبعاد، كل انقلاب 300 مللي ثانية بتأخير 90 مللي ثانية، كاشفة تخطيطات منشور اجتماعي وشريحة وملصق.",
+   "12-15ث: تنطوي كل البطاقات إلى أشكال الشعار من المشهد الأول، يهبط الشعار النصي بكلمتين ويظهر عنوان الموقع بتلاشٍ خلال 400 مللي ثانية."
+  ],
+  "motion_rules_en": [
+   "Shape snaps use a spring with stiffness 220 and damping 14 (visible single overshoot); UI tweens use cubic-bezier(0.16, 1, 0.3, 1) at 400 to 600 ms.",
+   "Charts always start from zero on the same frame and finish within 1200 ms; counters use easeOutExpo and stop on a round number that matches the bar height.",
+   "Camera: one continuous 5 percent slow drift across the whole piece plus a 10 percent push on the proof section; no handheld shake.",
+   "Transitions are morphs: the last element of a scene scales or reshapes into the first element of the next; hard cuts are banned.",
+   "Typography: a geometric sans, headline words enter with 60 ms stagger and 20 px rise, never letter-by-letter; Arabic version keeps the same timings with RTL direction.",
+   "Colour: a light canvas background, one saturated brand accent on the shapes and bars, and neutral grey UI; the accent never covers more than 20 percent of the frame.",
+   "Banned: particle bursts, lens flares, bouncing logos, and stats that are not labelled as illustrative."
+  ],
+  "motion_rules_ar": [
+   "التقاط الأشكال يستخدم زنبركًا بصلابة 220 وتخميد 14 (تجاوز واحد مرئي)؛ تدرّجات الواجهة تستخدم cubic-bezier(0.16, 1, 0.3, 1) بين 400 و600 مللي ثانية.",
+   "المخططات تبدأ دائمًا من الصفر في الإطار نفسه وتكتمل خلال 1200 مللي ثانية؛ العدّادات تستخدم easeOutExpo وتتوقف عند رقم مدوّر يطابق ارتفاع العمود.",
+   "الكاميرا: انجراف بطيء مستمر بنسبة 5 بالمئة على كامل العمل مع دفعة 10 بالمئة في قسم البرهان؛ لا اهتزاز يدوي.",
+   "الانتقالات تحوّلات: آخر عنصر في المشهد يتغير حجمه أو شكله ليصبح أول عنصر في المشهد التالي؛ القطع الحاد ممنوع.",
+   "الطباعة: خط sans هندسي، كلمات العنوان تدخل بتأخير 60 مللي ثانية وصعود 20 بكسل، لا حرفًا حرفًا؛ النسخة العربية تحتفظ بالتوقيتات نفسها باتجاه RTL.",
+   "اللون: خلفية لوحة فاتحة، لون علامة مشبع واحد على الأشكال والأعمدة، وواجهة رمادية محايدة؛ لون التمييز لا يغطي أكثر من 20 بالمئة من الإطار.",
+   "ممنوع: انفجارات الجسيمات، وهج العدسة، الشعارات المرتدّة، والإحصاءات غير الموسومة بأنها توضيحية."
+  ],
+  "stack": [
+   "Remotion",
+   "React",
    "SVG"
   ],
   "duration_s": 15,
   "aspect": "16:9",
-  "difficulty": 5,
+  "difficulty": 3,
   "keywords": [
-   "procedural audio",
-   "code synth",
-   "beat grid",
-   "showreel",
-   "oscillators",
-   "audio reactive",
-   "60fps",
-   "صوت مولّد بالكود",
-   "مذبذبات",
-   "شبكة إيقاع",
-   "عرض أعمال",
-   "تزامن حتمي",
-   "web audio"
+   "ترويج علامة",
+   "أداة تصميم",
+   "أشكال أولية",
+   "لوحة تصميم",
+   "مخطط مقارنة",
+   "قوالب",
+   "brand promo",
+   "design tool",
+   "shape snap",
+   "auto layout",
+   "bar chart",
+   "card flip",
+   "counter",
+   "wordmark build"
   ],
   "facts_from_source": [
-   "Runtime is 15 seconds at 1920x1080 and 60 fps.",
-   "The soundtrack must be synthesised entirely in code: no samples, no audio files, no plugin instruments.",
-   "Every cut and transition is required to fall on the beat.",
-   "The final deliverable is an MP4 with the music mixed in, and the maker must report where it was saved.",
-   "The piece is framed as a designer's showreel for a résumé."
+   "The requested piece is a dynamic motion-graphics video of fifteen seconds.",
+   "It must present the QuickDesign brand as impressive and simultaneously demonstrate the maker's motion-design skill.",
+   "The listing tags it as charts and lists a 1920x1080 frame."
   ],
-  "assumptions_en": "The 128 BPM tempo, the oscillator recipe and the bar-by-bar structure are proposals; the source fixes only the duration, resolution, frame rate, code-only audio rule and the on-beat cut rule."
+  "assumptions_en": "That QuickDesign is a fast template-driven design tool, and every scene, timing and chart type, are proposals; the source fixes only the 15 s length and the dual promo-plus-showreel intent."
+ },
+ "pm-ratheejaisal-1f4538": {
+  "id": "pm-ratheejaisal-1f4538",
+  "title_ar": "فيديو إطلاق founder.page السريع",
+  "summary_ar": "إعلان إطلاق في 20 ثانية يستعرض الميزات الرئيسية لصفحة المؤسّس الشخصية بإيقاع لاهث وهوية بصرية ملتزمة بالعلامة.",
+  "summary_en": "A 20-second launch spot that races through the key features of a founder's personal page product at a breathless pace, locked to the brand system.",
+  "concept_ar": "الموضوع منتج يتيح لمؤسّسي الشركات الناشئة إنشاء صفحة شخصية تعرض من هم وما يبنونه (افتراض من الاسم). الهدف هو إقناع المشاهد في أقل من 20 ثانية بأن الصفحة تُبنى وتُنشر في دقائق، عبر عرض كل ميزة كلقطة قصيرة ذات فعل واحد واضح. تتميّز لغة الحركة بلقطات لا تتجاوز 4 ثوانٍ، وعناصر واجهة تنغرز في مكانها بقوة ثم تستقر، مع لون العلامة الذي يتقدّم تدريجيًا حتى يملأ الإطار في الختام.",
+  "concept_en": "The subject is a product that lets startup founders build a personal page about who they are and what they are building (assumed from the name). The goal is to convince the viewer in under 20 seconds that the page is built and published in minutes, by giving each feature one short shot with one clear action. The motion language is shots of 4s or less, UI elements that snap hard into place then settle, and a brand colour that advances across the film until it floods the final frame.",
+  "scenes_en": [
+   "0-1.5s: Hard cut into a blank browser tab; the address bar types the product URL and the logo stamps in with a 1.12 to 1.00 settle.",
+   "1.5-6s: Profile builder: name, bio and avatar fly into a page template from three sides and lock; the page then flips 180 degrees on its vertical axis to reveal a second template.",
+   "6-10s: Projects section: cards slide in as a horizontal stack, each with a status pill that flips from 'idea' to 'shipped' with a 120ms stagger.",
+   "10-14s: Links and proof: follower counters roll up, logos tile in, and a share sheet pops out of a phone-sized preview sitting beside the desktop view.",
+   "14-18s: Publish: a toggle flicks on, a 'live' badge pops, and the page shrinks into a browser frame, then a phone, then a social card in three quick scale steps.",
+   "18-20s: Logo lockup, URL and a single-line call to action; the brand colour wipes in from the left and holds."
+  ],
+  "scenes_ar": [
+   "0-1.5 ث: قطع حاد إلى تبويب متصفح فارغ؛ يُكتب عنوان المنتج في شريط العناوين ويُختم الشعار بمقياس 1.12 يستقر عند 1.00.",
+   "1.5-6 ث: منشئ الملف الشخصي: الاسم والنبذة والصورة تطير إلى قالب الصفحة من ثلاث جهات وتثبت؛ ثم تنقلب الصفحة 180 درجة حول محورها الرأسي لتكشف قالبًا ثانيًا.",
+   "6-10 ث: قسم المشاريع: بطاقات تنزلق كرصّة أفقية، في كل منها شارة حالة تنقلب من فكرة إلى مُطلَق بتأخير 120 مللي ثانية بين بطاقة وأخرى.",
+   "10-14 ث: الروابط والإثبات: عدّادات المتابعين تتصاعد، وشعارات تصطفّ، وتنبثق ورقة مشاركة من معاينة بحجم الهاتف بجوار عرض سطح المكتب.",
+   "14-18 ث: النشر: مفتاح تبديل يُشغَّل، وتظهر شارة مباشر، وتنكمش الصفحة إلى إطار متصفح ثم هاتف ثم بطاقة اجتماعية في ثلاث قفزات مقياس سريعة.",
+   "18-20 ث: الشعار والعنوان ونداء واحد للفعل؛ يمسح لون العلامة الإطار من اليسار ويثبت."
+  ],
+  "motion_rules_en": [
+   "Average shot length 2.5s and no shot over 4s; every cut is a hard cut, cross-dissolves are banned.",
+   "Elements enter with a back-out curve cubic-bezier(0.34, 1.56, 0.64, 1) over 360ms so they overshoot and settle; exits are 180ms linear slides off-frame.",
+   "Camera is locked for the full 20s; depth comes only from element scale (0.92 to 1.00) and a 24px drop shadow, never from camera moves.",
+   "Typography: one display weight for feature labels at 64px (1080p), one body weight for UI text; labels enter as whole words, never letter by letter, to save time.",
+   "Brand colour starts as a 4px accent line in scene 1, becomes buttons and pills mid-film, and fills 100% of the frame in the last 2s; no colours outside the brand palette.",
+   "UI mockups must use the product's real layout, spacing and radii; a feature is shown with exactly one interaction each.",
+   "A short rhythmic sound bed is allowed but no voiceover; on-screen labels carry the message in 3 words or fewer.",
+   "Banned: stock device frames with bezels, blur transitions, and any feature shown without a visible user action."
+  ],
+  "motion_rules_ar": [
+   "متوسط طول اللقطة 2.5 ثانية ولا لقطة تتجاوز 4 ثوانٍ؛ كل انتقال قطع حاد، والذوبان المتقاطع ممنوع.",
+   "تدخل العناصر بمنحنى back-out ‏cubic-bezier(0.34, 1.56, 0.64, 1) خلال 360 مللي ثانية لتتجاوز الهدف قليلًا ثم تستقر؛ والخروج انزلاق خطي خارج الإطار خلال 180 مللي ثانية.",
+   "الكاميرا مثبّتة طوال 20 ثانية؛ يأتي العمق فقط من مقياس العناصر (0.92 إلى 1.00) وظل إسقاط 24 بكسل، لا من حركة الكاميرا.",
+   "الطباعة: وزن عرض واحد لعناوين الميزات بحجم 64 بكسل (على 1080p) ووزن نص واحد لنصوص الواجهة؛ تدخل العناوين ككلمات كاملة لا حرفًا حرفًا توفيرًا للوقت.",
+   "يبدأ لون العلامة كخط تمييز بسماكة 4 بكسل في المشهد الأول، ثم يصبح أزرارًا وشارات في المنتصف، ويملأ 100% من الإطار في آخر ثانيتين؛ لا ألوان خارج لوحة العلامة.",
+   "يجب أن تستخدم نماذج الواجهة التخطيط الحقيقي للمنتج ومسافاته وأنصاف أقطاره؛ وتُعرض كل ميزة بتفاعل واحد بالضبط.",
+   "يُسمح بفراش صوتي إيقاعي قصير دون تعليق صوتي؛ تحمل العناوين على الشاشة الرسالة في 3 كلمات أو أقل.",
+   "ممنوع: إطارات أجهزة جاهزة بحوافّ، وانتقالات الضبابية، وأي ميزة تُعرض دون فعل مستخدم مرئي."
+  ],
+  "stack": [
+   "Remotion",
+   "React",
+   "CSS"
+  ],
+  "duration_s": 20,
+  "aspect": "16:9",
+  "difficulty": 3,
+  "keywords": [
+   "launch video",
+   "product launch",
+   "founder profile",
+   "personal page",
+   "fast cuts",
+   "feature tour",
+   "saas promo",
+   "فيديو إطلاق",
+   "صفحة شخصية",
+   "جولة ميزات",
+   "إيقاع سريع",
+   "واجهة منتج",
+   "هوية العلامة"
+  ],
+  "facts_from_source": [
+   "The requested length is 20 seconds at most.",
+   "It must cover every key feature of the product.",
+   "The pacing is explicitly fast, and the look must match the brand.",
+   "Tagged as product UI by the creator."
+  ],
+  "assumptions_en": "What founder.page actually offers is not described in the source; the four features shown (profile builder, projects, links and proof, publish) are a proposed structure for a founder profile product. The colour behaviour and shot lengths are the director's choices."
  },
  "pm-reflex-cloud-72ffe5": {
   "id": "pm-reflex-cloud-72ffe5",
@@ -2045,83 +2247,6 @@
    "The creator left the implementation open between JavaScript and HTML, whichever renders best."
   ],
   "assumptions_en": "The 1:1:1 proportions, 30 ml measures, rocks glass, stir and orange twist come from the standard Negroni recipe rather than the source; colours and timings per pour are proposed."
- },
- "pm-rossaxbt-3085b7": {
-  "id": "pm-rossaxbt-3085b7",
-  "title_ar": "فيلم إطلاق نموذج صور بأسلوب مختبرات الذكاء",
-  "summary_ar": "فيلم إطلاق مربع مدته 22 ثانية: لوحة بيضاء، خط واحد، صور حقيقية، تعليق صوتي مُولَّد وترجمة تُكتب كلمةً بكلمة وقت نطقها، وعناصر تحكم زجاجية.",
-  "summary_en": "A 22-second square launch film in the AI-lab idiom: white canvas, one typeface, real imagery, generated voiceover with word-synced captions and liquid-glass controls.",
-  "concept_ar": "الموضوع إطلاق نموذج توليد صور، والرسالة أن النموذج يملك «ذوقاً» ويتكيف مع أي أسلوب. الهدف التواصلي هو إيصال تسع جمل قصيرة من التعليق الصوتي بثقة ودون ضجيج بصري. ما يميز لغة الحركة أن جدول الكلمات يقود كل شيء: الترجمة تُكتب في لحظة النطق تماماً، الصور تتبدل على أنصاف النبضات (16th notes)، عناصر التحكم زجاج سائل يكسر المشهد خلفه، والكاميرا تنجرف باستمرار وتورّث قيمة التكبير من مشهد إلى الذي يليه.",
-  "concept_en": "The subject is an image-model launch whose message is that the model has taste and adapts to any style. The communication goal is to land nine short voiceover lines confidently with no visual noise. The distinctive motion language: the word table drives everything. Captions type at the exact moment of speech, images switch on 16th notes, controls are liquid glass refracting the scene behind them, and the camera drifts continuously, inheriting its zoom from scene to scene.",
-  "scenes_en": [
-   "0-3s: 'This is [name]': a loose collage of the product's images drifts outward while the name types in large; the category line replaces it as the first phrase ends.",
-   "3-6s: 'built for [value]': full-bleed hero images flip on 16th-note clicks, accelerating into the music drop, with the line typed in white over them.",
-   "6-9.5s: The drop on the [Verb] line: a glass prompt bar types a short request; the result card restyles on every 16th while a black chip rolls to each style name above a thumbnail strip.",
-   "9.5-12.5s: Moodboard: nine images fly into a 3x3 grid, then orbit the generated result as the 'it understands' caption types on.",
-   "12.5-15s: Two caption lines; the single emphasised word types in a brand-colour gradient with a faint glow and a soft landing sound.",
-   "15-22s: Settings panel with three glass sliders moving as each is named (hue shift, seed re-roll on 16ths, poster conversion); then 120 images burst from the centre behind a glass caption pill and gather into the logo as the name types; 'Out now' beneath, hold 2 s."
-  ],
-  "scenes_ar": [
-   "0-3 ث: «هذا هو [الاسم]»: كولاج فضفاض من صور المنتج ينجرف للخارج بينما يُكتب الاسم بحجم كبير؛ سطر الفئة يحل محله مع انتهاء العبارة الأولى.",
-   "3-6 ث: «مصنوع من أجل [القيمة]»: صور بطلة بملء الإطار تتبدل مع نقرات على أنصاف النبضات، متسارعة نحو الدروب الموسيقي، والسطر يُكتب بالأبيض فوقها.",
-   "6-9.5 ث: الدروب على سطر [الفعل]: شريط أوامر زجاجي يكتب طلباً قصيراً؛ بطاقة النتيجة تغيّر أسلوبها على كل نصف نبضة بينما تتدحرج شريحة سوداء إلى اسم كل أسلوب فوق شريط مصغرات.",
-   "9.5-12.5 ث: لوحة الإلهام: تسع صور تطير إلى شبكة 3×3 ثم تدور حول النتيجة المولّدة بينما تُكتب عبارة «إنه يفهمك».",
-   "12.5-15 ث: سطران من الترجمة؛ الكلمة المؤكدة الوحيدة تُكتب بتدرج ألوان العلامة مع توهج خافت وصوت هبوط ناعم.",
-   "15-22 ث: لوحة إعدادات بثلاثة منزلقات زجاجية تتحرك مع ذكر كل منها (تغيير الصبغة، إعادة البذرة على أنصاف النبضات، تحويل إلى ملصق)؛ ثم تنفجر 120 صورة من المركز خلف كبسولة ترجمة زجاجية وتتجمع في الشعار مع كتابة الاسم؛ «متاح الآن» أسفله مع ثبات ثانيتين."
-  ],
-  "motion_rules_en": [
-   "Nothing pops: every element fades in with an eased opacity ramp of at least 300 ms (ease-out quad or softer); a 50 ms fade reads as a pop and is rejected.",
-   "The camera drifts continuously: each scene pushes from 1.00 to about 1.04, and the next scene starts at the zoom the previous one ended on; resetting to 1.00 at a handoff is forbidden.",
-   "Image swaps happen only on 16th-note subdivisions of the track's beat grid, each with a click SFX positioned at its measured peak; these runs are the only places single-frame jumps are allowed.",
-   "Scene changes land on phrase onsets from the word table; the music drop is placed on the [Verb] line and the beat grid is anchored there.",
-   "Captions type word by word at measured onset times (Whisper alignment per pause-split segment); full stops are never shown on screen.",
-   "Liquid glass: blur the scene behind the shape (~14 px), overlay a faintly blurred, slightly enlarged (~1.06x) copy within a narrow ~12 px band at the rim, then layer milkiness, a top sheen, a bright edge and a lifted shadow; on plain white, place a slow pastel aura or a blurred photo wash behind it so the glass reads.",
-   "Typography: one brand typeface (Geist by default), black ink on white; the one emphasised word is a gradient of brand colours; no highlight boxes, which read as text selection.",
-   "Banned: beat-snapped slams, white flashes, 3D, selection-box highlights, templates; audio is ducked with a 3-band sidechain and normalised to -14 LUFS."
-  ],
-  "motion_rules_ar": [
-   "لا شيء يظهر فجأة: كل عنصر يدخل بمنحدر شفافية لا يقل عن 300 مللي ثانية (ease-out quad أو ألين)؛ التلاشي خلال 50 مللي ثانية يُقرأ كظهور مفاجئ ويُرفض.",
-   "الكاميرا تنجرف باستمرار: كل مشهد يدفع من 1.00 إلى نحو 1.04، والمشهد التالي يبدأ من قيمة التكبير التي انتهى عندها السابق؛ إعادة الضبط إلى 1.00 عند التسليم ممنوعة.",
-   "تبديل الصور يقع فقط على أنصاف النبضات في شبكة إيقاع المقطوعة، مع مؤثر نقرة موضوع عند ذروته المقاسة؛ هذه السلاسل هي المواضع الوحيدة المسموح فيها بقفزات إطار واحد.",
-   "تغييرات المشاهد تهبط على بدايات العبارات من جدول الكلمات؛ الدروب الموسيقي يوضع على سطر [الفعل] وتُثبّت شبكة الإيقاع عنده.",
-   "الترجمة تُكتب كلمة كلمة عند أزمنة البدء المقاسة (محاذاة Whisper لكل مقطع مفصول بوقفة)؛ النقاط الختامية لا تظهر على الشاشة أبداً.",
-   "الزجاج السائل: ضبّب المشهد خلف الشكل (نحو 14 بكسل)، ضع فوقه نسخة مضببة قليلاً ومكبّرة بنحو 1.06x ضمن شريط ضيق قرب الحافة (نحو 12 بكسل)، ثم أضف طبقة حليبية ولمعة علوية وحافة مضيئة وظلاً مرفوعاً؛ على الأبيض الخالص ضع هالة باستيل بطيئة أو غسلة صورة مضببة خلفه ليُقرأ الزجاج.",
-   "الخط: خط العلامة الواحد (Geist افتراضياً)، حبر أسود على أبيض؛ الكلمة المؤكدة الوحيدة بتدرج ألوان العلامة؛ لا صناديق تظليل لأنها تُقرأ كتحديد نص.",
-   "ممنوع: الصدمات المثبتة على النبضة، الومضات البيضاء، الأبعاد الثلاثية، تظليل التحديد، القوالب؛ الصوت يُخفض بـ sidechain ثلاثي النطاقات ويُطبّع إلى -14 LUFS."
-  ],
-  "stack": [
-   "HTML Canvas",
-   "Web Audio"
-  ],
-  "duration_s": 22,
-  "aspect": "1:1",
-  "difficulty": 5,
-  "keywords": [
-   "ai launch film",
-   "image model",
-   "liquid glass",
-   "word-synced captions",
-   "voiceover",
-   "elevenlabs",
-   "16th note cuts",
-   "sidechain ducking",
-   "canvas",
-   "فيلم إطلاق",
-   "ترجمة متزامنة",
-   "تعليق صوتي",
-   "زجاج سائل",
-   "نموذج صور"
-  ],
-  "facts_from_source": [
-   "Square 1440x1440 film at 60 fps lasting 22 seconds, built on one HTML canvas with a seek(t) function and rendered with Playwright using 8 motion-blur subframes.",
-   "Visual idiom: white canvas, a single typeface, black ink, real photographs or product outputs; controls are rendered as liquid glass.",
-   "A nine-line voiceover template is adapted to the product and synthesised with ElevenLabs (four takes, per-line regeneration), then aligned with Whisper per pause-split segment.",
-   "Seven scenes timed to the voice: name collage, value flashes, prompt-bar drop, moodboard grid, emphasised-word lines, settings sliders, image burst into logo with an 'Out now' hold.",
-   "Camera drift 1.0 to 1.04 per scene, eased fades of 0.3 s minimum, image changes on 16th notes with clicks, scene changes on phrase starts, drop on the verb line.",
-   "Sound: 3-band sidechain ducking, voice about 9 dB over music in the speech band, one SFX per event, loudnorm to -14 LUFS.",
-   "The agent must gather inputs, write the script, offer four voice takes and eight stills before rendering."
-  ],
-  "assumptions_en": "Scene durations in seconds are proposed to fit 22 s and will shift with the actual voice read; the default product name, voice, images and track named in the source are placeholders to be replaced by the client's own licensed assets. The listing's duration tags (39, 28, 2) are ignored in favour of the stated 22 s."
  },
  "pm-samaote-5e2fc2": {
   "id": "pm-samaote-5e2fc2",
@@ -2768,316 +2893,75 @@
   ],
   "assumptions_en": "The principles-based structure, the curve-graph overlay and the palette are proposed directions; the source only asks for a 15-second résumé reel and states no scenes, colours or stack."
  },
- "pm-twoclipping-221cab": {
-  "id": "pm-twoclipping-221cab",
-  "title_ar": "فيلم إطلاق تطبيق طباعة الصور بلقطة واحدة",
-  "summary_ar": "فيلم إطلاق مربع بأسلوب عروض آبل، لقطة متصلة واحدة بلا قطع، كل مشهد يتولد من سابقه على إيقاع 120 نبضة.",
-  "summary_en": "A square Apple-style launch film in one continuous take where every scene is sculpted out of the previous one on a 120 BPM beat grid.",
-  "concept_ar": "الموضوع تطبيق يحول صور الهاتف إلى مطبوعات مؤطرة تُعلق على الجدار، والفيلم يروي الرحلة كاملة من الشعار إلى الطباعة إلى الجدار الحقيقي. الهدف إقناع المشاهد بأن المنتج راقٍ ومصقول بقدر الفيلم نفسه. اللغة الحركية صارمة: لا تلاشي ولا قطع ولا ضبابية، بل أجسام تغير شكلها باستمرار، ومؤشر يقود كل تغيير بنقرة أو سحب حقيقي، وزجاج سائل فوق الصور، وكاميرا تقترب لتملأ المربع بكل لحظة.",
-  "concept_en": "The subject is an app that turns phone photos into framed wall prints, and the film tells the whole journey from wordmark to print to a real wall. The goal is to make the product feel as polished as the film itself. The motion language is strict: no fades, no cuts, no blur, only objects that keep changing shape, a cursor that drives each change with real clicks and drags, liquid glass over the photos and a camera that zooms so every moment fills the square.",
+ "pm-tstfully-0aa6b4": {
+  "id": "pm-tstfully-0aa6b4",
+  "title_ar": "إعلان منتج: من رابط يوتيوب إلى نص كامل",
+  "summary_ar": "إعلان أفقي مدته 15 ثانية يشرح أداة تحوّل رابط فيديو يوتيوب إلى نصّ مفرّغ كامل، مع عدّادات ومخططات تلخّص النتيجة.",
+  "summary_en": "A 15 s landscape product ad for a tool that turns a pasted YouTube link into a full transcript, closing with counters and small charts that quantify the result.",
+  "concept_ar": "الموضوع أداة تفريغ: يلصق المستخدم رابط فيديو فيحصل على كل كلمة قيلت فيه. الهدف إثبات أن العملية بثلاث خطوات (لصق، معالجة، تنزيل) وأن النص دقيق ومنظّم بطوابع زمنية. اللغة الحركية تتبع تدفق البيانات نفسه: الرابط يتحول إلى بطاقة فيديو، والموجة الصوتية تتحول إلى أسطر نص تتدفق بترتيب، ثم تتكثف الأسطر إلى أرقام ومخططات صغيرة تُقاس بها القيمة.",
+  "concept_en": "The subject is a transcription tool: paste a video link, receive every spoken word. The goal is to prove a three-step flow (paste, process, download) and that the text is accurate and time-stamped. The motion language follows the data itself: the link morphs into a video card, the waveform turns into cascading text lines, and the lines condense into counters and small charts that measure the value.",
   "scenes_en": [
-   "0-4s (beats 1-8): The brand verb compresses into its own full stop like an accordion; the stop swells into a black pill, a label rises out of a mask line inside it, and a cursor click closes six iris blades that snap open onto the first photo.",
-   "4-9s (beats 9-18): The photo circle squares off, shrinks, and a grid unfolds behind it the way a folded map opens; the grid reflows into a bento layout and a click zooms into one tile, landing on the song's drop.",
-   "9-15s (beats 19-30): A glass word pops in glyph by glyph, melts into a droplet, stretches into a glass toolbar; a drag relights the photo from daylight to golden hour, the knob becomes a lens, lifts into an orb, and the orb expands into a lock screen with glass clock digits.",
-   "15-20s (beats 31-40): The lock screen pulls back into a phone bezel; the island pinches off and grows into a desktop window that rolls up like a blind; a long-press drags the wallpaper onto a browser tab where it becomes a landing-page hero.",
-   "20-24s (beats 41-48): Scrolling turns the hero into a framed print on a product card, the mat and moulding growing from the photo edge; a frame colour paints across, a size is picked, and the button flies down into the order action.",
-   "24-27s (beats 49-54): One black shape morphs through ordered, printing, on-the-way (a van on a route) and delivered; the circle floods the frame, holds black one beat, and contracts into the print hanging on real wall footage, then reverses back to the opening dot so last frame equals first."
+   "0-2s: A wide input field sits on a dark stage; a cursor blinks at 500 ms intervals, then a link string slides in from a clipboard icon over 300 ms and the field flashes once.",
+   "2-5s: The field morphs into a video thumbnail card (border-radius and width tween, 450 ms, easeInOutCubic); a waveform strip scrolls beneath it at 120 px per second.",
+   "5-9s: Transcript cascade: text lines fall into a right-hand column with 60 ms stagger, timestamps count up on the left, and a single highlighted word travels through the text karaoke-style.",
+   "9-12s: Numbers moment: a counter rolls to the total word count over 1400 ms (easeOutExpo), a four-bar chart of words per minute grows from the baseline, and a doughnut ring fills to the detected language share.",
+   "12-15s: Export buttons (TXT, SRT, copy) pop in with 80 ms stagger, the tagline lands in two words, and the logo settles bottom-right."
   ],
   "scenes_ar": [
-   "0-4 ث (النبضات 1-8): ينضغط فعل العلامة التجارية إلى نقطته كالأكورديون؛ تنتفخ النقطة إلى كبسولة سوداء، يصعد داخلها عنوان من خط قناع، ثم تغلق نقرة المؤشر ست شفرات حدقة تنفتح فجأة على الصورة الأولى.",
-   "4-9 ث (النبضات 9-18): تتحول دائرة الصورة إلى مربع ينكمش، وتنبسط خلفه شبكة كما تُفتح خريطة مطوية؛ تعيد الشبكة ترتيبها إلى تخطيط بينتو وتكبّر نقرة إحدى البلاطات لتهبط على ذروة الأغنية.",
-   "9-15 ث (النبضات 19-30): تظهر كلمة زجاجية حرفاً حرفاً، تذوب إلى قطرة تمتد إلى شريط أدوات زجاجي؛ سحبة تعيد إضاءة الصورة من النهار إلى الساعة الذهبية، يصبح المقبض عدسة ترتفع إلى كرة، وتتسع الكرة إلى شاشة قفل بأرقام ساعة زجاجية.",
-   "15-20 ث (النبضات 31-40): تتراجع شاشة القفل إلى إطار هاتف؛ تنفصل الجزيرة الديناميكية وتكبر إلى نافذة سطح مكتب تنفتح كالستارة؛ ضغطة مطولة تسحب الخلفية إلى تبويب متصفح لتصبح بطل صفحة هبوط.",
-   "20-24 ث (النبضات 41-48): يحوّل التمرير الصورة البطلة إلى مطبوعة مؤطرة على بطاقة منتج، تنمو الحاشية والإطار من حافة الصورة؛ يُطلى لون الإطار بالعرض، يُختار المقاس، ويطير الزر إلى أسفل ليصبح أمر الطلب.",
-   "24-27 ث (النبضات 49-54): شكل أسود واحد يتحول عبر تم الطلب، جارٍ الطباعة، في الطريق (شاحنة على مسار)، تم التسليم؛ تغمر الدائرة الإطار، تثبت سوداء نبضة واحدة، ثم تنكمش إلى المطبوعة المعلقة على لقطة جدار حقيقية، وتعود عكسياً إلى نقطة البداية ليتطابق الإطار الأخير مع الأول."
+   "0-2ث: حقل إدخال عريض على خلفية داكنة؛ يومض المؤشر كل 500 مللي ثانية، ثم ينزلق نص الرابط من أيقونة الحافظة خلال 300 مللي ثانية ويومض الحقل مرة واحدة.",
+   "2-5ث: يتحوّل الحقل إلى بطاقة صورة مصغّرة للفيديو (تدرّج في نصف القطر والعرض خلال 450 مللي ثانية، easeInOutCubic)؛ شريط موجة صوتية يتدحرج تحته بسرعة 120 بكسل في الثانية.",
+   "5-9ث: شلال النص: أسطر تسقط في عمود أيمن بتأخير 60 مللي ثانية، طوابع زمنية تتزايد على اليسار، وكلمة مميّزة واحدة تنتقل عبر النص بأسلوب الكاريوكي.",
+   "9-12ث: لحظة الأرقام: عدّاد يصل إلى إجمالي الكلمات خلال 1400 مللي ثانية (easeOutExpo)، مخطط من أربعة أعمدة للكلمات في الدقيقة ينمو من خط الأساس، وحلقة دائرية تمتلئ بنسبة اللغة المكتشفة.",
+   "12-15ث: أزرار التصدير (TXT وSRT ونسخ) تظهر بتأخير 80 مللي ثانية بينها، يهبط الشعار النصي بكلمتين، ويستقر الشعار أسفل اليمين."
   ],
   "motion_rules_en": [
-   "Everything is a pure function of time inside a seek(t) call: no CSS transitions, no timers, no state between frames, so any frame can be rendered in isolation.",
-   "Springs are closed-form step responses; a property with several targets is the sum of one spring per change (stiffness 170, damping 22 as a starting point).",
-   "Transitions are morphs only: text rises from a mask line (350 ms), icons pop from scale 0 on a spring, bars draw across, pages push, and a black flood must overscale past all four corners in roughly 300 ms.",
-   "The cursor is a real actor: every state change is preceded by a visible click, drag or long-press, and the cursor scales with the camera zoom.",
-   "Camera zooms screen-recorder style so each moment fills the 1440 square; zoom duration 500-700 ms, ease cubic-bezier(0.25, 0.1, 0.25, 1).",
-   "Palette is warm off-white canvas with black UI, as the creator specified; the wordmark uses a wide heavy grotesque, the UI a clean sans, and glass elements get a rim light with slight chromatic edges.",
-   "Something changes on every beat at 120 BPM; no hold lasts longer than 1 s.",
-   "Banned by the creator: crossfades, blur-ins, brightness reveals, 3D flips, particles, glows and template-looking moves."
+   "UI tweens use cubic-bezier(0.22, 1, 0.36, 1) at 300 to 450 ms; text lines enter at 220 ms with a 12 px vertical offset and 60 ms stagger, never faster.",
+   "Counters and chart bars use easeOutExpo over 1200 to 1400 ms and start together on the same frame so the numbers read as one event.",
+   "Camera: static 1280x720 framing with one 4 percent push-in during the transcript cascade (5-9 s); no rotation, no 3D.",
+   "Scene transitions are morphs of the same element (field to card, card to column), not cuts; a cut is allowed only before the final logo.",
+   "Typography: transcript lines in a readable sans at 28 px minimum; the active karaoke word changes colour only, never size.",
+   "Colour: dark base, light text, one accent reserved for the active word, the chart fills and the CTA; thumbnails stay desaturated so the UI leads.",
+   "Banned: glitch jitter, screen shake, fake accuracy percentages presented as fact, and more than one highlighted word at a time."
   ],
   "motion_rules_ar": [
-   "كل شيء دالة خالصة في الزمن داخل استدعاء seek(t): لا CSS transitions ولا مؤقتات ولا حالة بين الإطارات، فيمكن توليد أي إطار منفرداً.",
-   "الزنبركات استجابات خطوة مغلقة الصيغة؛ الخاصية ذات الأهداف المتعددة هي مجموع زنبرك لكل تغيير (صلابة 170 وتخميد 22 كنقطة بداية).",
-   "الانتقالات تحولات شكلية فقط: النص يصعد من خط قناع (350 مللي ثانية)، الأيقونات تنبثق من مقياس صفر بزنبرك، الأعمدة تُرسم بالعرض، الصفحات تدفع، والغمر الأسود يجب أن يتجاوز الزوايا الأربع خلال نحو 300 مللي ثانية.",
-   "المؤشر ممثل حقيقي: كل تغيير حالة يسبقه نقر أو سحب أو ضغط مطول مرئي، ويتغير حجم المؤشر مع تكبير الكاميرا.",
-   "تكبير الكاميرا بأسلوب مسجل الشاشة ليملأ كل لحظة مربع 1440؛ مدة التكبير 500-700 مللي ثانية بمنحنى cubic-bezier(0.25, 0.1, 0.25, 1).",
-   "اللوحة خلفية فاتحة دافئة مع واجهة سوداء كما حدد المبدع؛ الشعار بخط غروتيسك عريض ثقيل، والواجهة بخط sans نظيف، والعناصر الزجاجية تحمل إضاءة حافة مع تلون طفيف عند الأطراف.",
-   "يتغير شيء على كل نبضة بإيقاع 120 نبضة في الدقيقة؛ لا ثبات يتجاوز ثانية واحدة.",
-   "حظر المبدع: التلاشي المتقاطع، الظهور بالضبابية، الكشف بالسطوع، القلبات ثلاثية الأبعاد، الجسيمات، الوهج، والحركات التي تبدو كقوالب جاهزة."
+   "تدرّجات الواجهة تستخدم cubic-bezier(0.22, 1, 0.36, 1) بين 300 و450 مللي ثانية؛ أسطر النص تدخل خلال 220 مللي ثانية بإزاحة عمودية 12 بكسل وتأخير 60 مللي ثانية، ولا أسرع من ذلك.",
+   "العدّادات وأعمدة المخطط تستخدم easeOutExpo خلال 1200 إلى 1400 مللي ثانية وتبدأ معًا في الإطار نفسه لتُقرأ الأرقام كحدث واحد.",
+   "الكاميرا: تأطير ثابت 1280×720 مع دفعة اقتراب واحدة 4 بالمئة أثناء شلال النص (5-9ث)؛ لا دوران ولا ثلاثي الأبعاد.",
+   "الانتقالات بين المشاهد تحوّلات للعنصر نفسه (حقل إلى بطاقة، بطاقة إلى عمود) لا قطعات؛ القطع مسموح فقط قبل الشعار الختامي.",
+   "الطباعة: أسطر النص المفرّغ بخط sans مقروء لا يقل عن 28 بكسل؛ الكلمة النشطة تغيّر لونها فقط ولا تغيّر حجمها.",
+   "اللون: قاعدة داكنة ونص فاتح ولون تمييز واحد محجوز للكلمة النشطة وتعبئة المخططات وزر الدعوة؛ الصور المصغّرة تبقى باهتة ليتقدّم تصميم الواجهة.",
+   "ممنوع: اهتزاز الغليتش، رجّ الشاشة، نسب دقة مختلقة تُعرض كحقائق، وأكثر من كلمة مميّزة واحدة في الوقت نفسه."
   ],
   "stack": [
-   "HTML Canvas",
-   "SVG",
-   "CSS"
-  ],
-  "duration_s": 27,
-  "aspect": "1:1",
-  "difficulty": 5,
-  "keywords": [
-   "liquid glass",
-   "iris wipe",
-   "continuous take",
-   "beat-synced",
-   "cursor-driven ui",
-   "morph transitions",
-   "closed-form spring",
-   "playwright render",
-   "زجاج سائل",
-   "لقطة واحدة متصلة",
-   "مزامنة الإيقاع",
-   "تحولات شكلية",
-   "فيلم إطلاق منتج",
-   "طباعة صور"
-  ],
-  "facts_from_source": [
-   "Square 1440 by 1440 frame, built as one HTML file where every style is derived from time inside a seek function.",
-   "Music runs at 120 BPM across 54 beats, which gives roughly 27 seconds; the zoom lands on the drop and the wall scene sits in the quiet breakdown.",
-   "Strictly 2D, one continuous take, no fades, blurs or cuts; objects change shape to become the next scene.",
-   "Warm off-white canvas with black UI and an iOS-style liquid-glass treatment over the photos; a wide heavy grotesque for the wordmark and a clean sans for UI.",
-   "Liquid glass is built by cloning the scene behind each element and running it through SVG displacement maps; the iris has six blades around a hexagonal aperture.",
-   "Real wall footage with plant shadows is re-encoded all-intra and drawn per frame; sound effects are placed by measured peak and the mix is normalised to -14 LUFS.",
-   "Rendered with Playwright at 60 fps using 4 blended subframes per frame, then checked frame by frame for single-frame pops.",
-   "Inputs requested from the user: a one-word brand name, 9-12 photos, a 120 BPM track with a drop and breakdown, and a stock wall clip."
-  ],
-  "assumptions_en": "The beat-to-second mapping of each scene is my proposal derived from the stated 120 BPM and 54 beats; spring constants and zoom timings are suggested values, since the source states the method but not the numbers."
- },
- "pm-twoclipping-5cba86": {
-  "id": "pm-twoclipping-5cba86",
-  "title_ar": "شكل واحد يتحول عبر حالات الواجهة",
-  "summary_ar": "عنصر واحد لا يُقطع أبدًا يتحول من زر إلى مشغّل إلى مخطط إلى لوحة أوامر على شبكة 120 BPM، ويقوده مؤشر يضغط ويسحب فعلًا.",
-  "summary_en": "One never-cut element morphs from button to player to chart to command palette on a 120 BPM grid, driven by a cursor that really clicks and drags.",
-  "concept_ar": "الموضوع فيديو مربع لحركة واجهات بمستوى Dribbble: شكل واحد يمر بثماني إلى اثنتي عشرة حالة واجهة دون قطع، فيتغير حجمه ونصف قطره ولونه بينما يتبدل محتواه بضبابية قصيرة. الهدف إثبات إتقان حركة الواجهات الدقيقة، لا عرض قوالب. ما يميز اللغة الحركية أن كل قيمة دالة صرفة في الزمن عبر نوابض بصيغة مغلقة، وأن المؤشر هو الممثل الوحيد الذي يسبب كل تغيير، وأن الإطار الأخير مطابق للأول فتدور الحلقة بلا توقف.",
-  "concept_en": "The subject is a square UI-motion film at Dribbble quality: one shape passes through eight to twelve interface states without a cut, changing size, radius and colour while its content swaps behind a short blur. The goal is to prove mastery of micro-interaction motion rather than show templates. The motion language is defined by closed-form springs that make every value a pure function of time, by a cursor that is the sole actor causing every change, and by a last frame identical to the first so the loop never stutters.",
-  "scenes_en": [
-   "0-2s (bar 1): The cursor presses a pill button; it tightens into a spinning ring; the ring closes into a tick mark on beat 4.",
-   "2-4s (bar 2): The tick widens into a capsule notification, then grows into a compact music player whose play glyph morphs into pause on the click.",
-   "4-6s (bar 3): The cursor drags the progress; the player flattens into a horizontal slider; dragging past the end stretches the track and it springs back on release.",
-   "6-8s (bar 4): The slider shrinks into a switch that flips on the beat; the knob elongates into a liquid highlight sliding between three tabs.",
-   "8-10s (bar 5): The tabs unfold into a line chart that draws itself; the cursor hovers and a tooltip follows the nearest point.",
-   "10-14s (bars 6-7): The chart folds into a command bar; typed letters filter rows; enter fires a toast; the toast shrinks back into the original button and the cursor returns to its start pose."
-  ],
-  "scenes_ar": [
-   "0-2 ث (المازورة 1): يضغط المؤشر زرًا بيضاويًا؛ ينكمش إلى حلقة دوّارة؛ وتنغلق الحلقة على علامة صح في الضربة الرابعة.",
-   "2-4 ث (المازورة 2): تتسع علامة الصح إلى كبسولة إشعار، ثم تكبر إلى مشغّل موسيقى مدمج يتحول فيه رمز التشغيل إلى إيقاف مؤقت عند النقر.",
-   "4-6 ث (المازورة 3): يسحب المؤشر شريط التقدم؛ ينبسط المشغّل إلى منزلق أفقي؛ السحب بعد النهاية يمدد المسار ويعود بنابض عند الإفلات.",
-   "6-8 ث (المازورة 4): ينكمش المنزلق إلى مفتاح تبديل ينقلب على الضربة؛ ويستطيل المقبض إلى إبراز سائل ينزلق بين ثلاثة تبويبات.",
-   "8-10 ث (المازورة 5): تتفتح التبويبات إلى مخطط خطي يرسم نفسه؛ يحوم المؤشر فيتبع تلميح أقرب نقطة.",
-   "10-14 ث (المازورتان 6-7): ينطوي المخطط إلى شريط أوامر؛ الحروف المكتوبة ترشّح الصفوف؛ الإدخال يطلق إشعارًا منبثقًا؛ ينكمش الإشعار إلى الزر الأصلي ويعود المؤشر إلى وضعه الأول."
-  ],
-  "motion_rules_en": [
-   "Grid: 120 BPM, one beat every 500 ms, 7 bars = 14 s; a state change is triggered on every beat and must be visually settled within 350 ms.",
-   "Springs: analytic step responses with damping ratio about 0.85 and natural frequency about 18 rad/s, overshoot at most 3 percent; a value that retargets several times is the sum of one spring per retarget so each frame is a pure function of t.",
-   "Morphing: width, height, corner radius and colour interpolate on the same element; inner content exits with a 6 px blur over 120 ms and the new content enters 60 ms later, never overlapping.",
-   "Stretch: the leading and trailing edges of the tab highlight and the switch knob ride separate springs (about 22 and 16 rad/s) so the leading edge pulls ahead.",
-   "Cursor: spring-moved to each target, arriving 150 ms before the beat; click = 90 ms press at scale 0.92; drags compute the value directly from cursor position while held.",
-   "Camera: zoom so the current state fills about 70 percent of the frame, on a 10 rad/s spring; no rotation, no cuts.",
-   "Palette and type: warm off-white ground, near-black and white controls, at most one accent, a single clean UI sans; no gradients on controls, no glows, shadows at most 24 px blur.",
-   "Loop and bans: frame 840 equals frame 0 including cursor position and velocity; banned are bounce easing, particles, idle stretches longer than a beat, mismatched icon strokes and any stock component."
-  ],
-  "motion_rules_ar": [
-   "الشبكة: 120 BPM، ضربة كل 500 ms، و7 مازورات = 14 ث؛ يُطلق تغيير الحالة على كل ضربة ويجب أن يستقر بصريًا خلال 350 ms.",
-   "النوابض: استجابات خطوة تحليلية بنسبة تخميد نحو 0.85 وتردد طبيعي نحو 18 rad/s، والتجاوز بحد أقصى 3 بالمئة؛ القيمة التي تغير هدفها عدة مرات هي مجموع نابض لكل تغيير حتى يكون كل إطار دالة صرفة في t.",
-   "التحول: العرض والارتفاع ونصف قطر الزوايا واللون تتداخل على العنصر نفسه؛ يخرج المحتوى الداخلي بضبابية 6 px خلال 120 ms ويدخل الجديد بعد 60 ms دون تراكب.",
-   "التمدد: الحافة الأمامية والخلفية لإبراز التبويب ولمقبض المفتاح تركبان نابضين منفصلين (نحو 22 و16 rad/s) حتى تسبق الحافة الأمامية.",
-   "المؤشر: يتحرك بنابض إلى كل هدف ويصل قبل الضربة بـ 150 ms؛ النقرة ضغط 90 ms بتصغير 0.92؛ أثناء السحب تُحسب القيمة مباشرة من موضع المؤشر.",
-   "الكاميرا: تقريب بحيث تملأ الحالة الحالية نحو 70 بالمئة من الكادر، على نابض 10 rad/s؛ لا دوران ولا قطع.",
-   "اللوحة والخط: أرضية بيضاء دافئة مائلة للرمادي، عناصر شبه سوداء وبيضاء، لون مميز واحد على الأكثر، خط واجهات sans نظيف واحد؛ لا تدرجات على العناصر، لا توهج، والظلال بضبابية لا تتجاوز 24 px.",
-   "الحلقة والممنوعات: الإطار 840 مطابق للإطار 0 بما فيه موضع المؤشر وسرعته؛ ممنوع التسهيل المرتد، الجسيمات، الخمول لأكثر من ضربة، تفاوت سماكة الأيقونات، وأي مكوّن جاهز."
-  ],
-  "stack": [
-   "CSS",
-   "SVG",
-   "HTML Canvas"
-  ],
-  "duration_s": 14,
-  "aspect": "1:1",
-  "difficulty": 5,
-  "keywords": [
-   "ui motion",
-   "micro-interactions",
-   "morphing",
-   "springs",
-   "cursor driven",
-   "seamless loop",
-   "beat grid",
-   "حركة واجهات",
-   "تحول الأشكال",
-   "نوابض",
-   "حلقة متصلة",
-   "مؤشر",
-   "تفاعلات دقيقة",
-   "dribbble"
-  ],
-  "facts_from_source": [
-   "Single HTML file on a square 1440 stage; every style is computed from time inside one seek function with no CSS transitions, timers or carried state.",
-   "One element morphs through 8-12 interface states chosen with the user; a cursor causes every change with real clicks and drags; the camera zooms so each state fills the frame.",
-   "Tempo 120 BPM over 7 bars with an event on every beat, analysed from a royalty-free song; the last frame equals the first for a loop.",
-   "Springs are closed-form step responses; leading and trailing edges use different springs for stretch.",
-   "Rendered with Playwright at 60 fps using four sub-frames blended in ffmpeg for motion blur; a one-frame-per-beat contact sheet is checked first.",
-   "Palette is warm light grey with black and white components and optionally one accent; the UI font is Geist; banned are bouncy easing, particle bursts, glows, gradients on chrome, mismatched strokes, dead time and template looks."
-  ],
-  "assumptions_en": "The exact state order per bar, the spring constants and the 70 percent framing are proposals; the source fixes the stage, tempo, bar count, pure-function rendering, loop rule and the bans. The 14 s duration is derived from 7 bars at 120 BPM."
- },
- "pm-twoclipping-6dd14e": {
-  "id": "pm-twoclipping-6dd14e",
-  "title_ar": "إعلان منتج توليد محتوى UGC على شبكة إيقاعية",
-  "summary_ar": "إعلان عالي الجودة بأسلوب بسيط مدته 20 ثانية، فكرة واحدة لكل لقطة، مقاطع حقيقية فقط، وكل قطع على نبضة.",
-  "summary_en": "A 20-second high-end minimal promo for a UGC ad generator: one idea per shot, real vertical footage only, every cut on a downbeat.",
-  "concept_ar": "الموضوع أداة تولد إعلانات بأسلوب المحتوى الذي ينتجه المستخدمون من مقاطع رأسية حقيقية، والهدف إظهار النتيجة لا الخوارزمية: مقاطع كثيرة تدخل، وإعلان فائز واحد يخرج. اللغة الحركية بسيطة ومتقشفة: لون تمييز واحد، خط sans واحد بتباعد ضيق، فراغ كبير، كشف للنص عبر الأقنعة، وقطع مطابقة تقود العين من كلمة إلى واجهة إلى مقطع. كل لقطة تشغل شريطاً موسيقياً واحداً من عشرة.",
-  "concept_en": "The subject is a tool that generates user-generated-content style ads from real vertical clips, and the goal is to show the outcome rather than the algorithm: many clips go in, one winning ad comes out. The motion language is minimal and disciplined: one accent colour, one tight-tracked sans, generous negative space, masked type reveals and match cuts that lead the eye from a word to a UI to a clip. Each shot owns exactly one bar of the ten-bar track.",
-  "scenes_en": [
-   "0-2s (bar 1): The hook sentence lands word by word on the four beats, each word revealed through a horizontal mask; no punctuation on screen.",
-   "2-4s (bar 2): One hook word morphs into the product's input field; a cursor types the brief and clicks generate.",
-   "4-6s (bar 3, the drop): A circle opens outward from the button and the frame goes dark; inside the circle a wall of real vertical clips assembles while a scan line sweeps and three tiles light up in the accent colour as winners.",
-   "6-10s (bars 4-5): The key output appears as oversized type, then a 3D carousel of real clips rotates with floor reflections and a motion-blurred whip lands on one hero clip.",
-   "10-16s (bars 6-8): The hero sits inside a phone frame next to a panel that flips into results; stats push-cut one after another on the downbeats with a counter roll.",
-   "16-20s (bars 9-10): A three-word ticker slides through, the logo resolves from the accent dot, and the frame fades to black on the final beat."
-  ],
-  "scenes_ar": [
-   "0-2 ث (الشريط 1): تهبط جملة الجذب كلمة كلمة على النبضات الأربع، كل كلمة تُكشف عبر قناع أفقي؛ لا علامات ترقيم على الشاشة.",
-   "2-4 ث (الشريط 2): تتحول إحدى كلمات الجذب إلى حقل الإدخال في المنتج؛ يكتب المؤشر الموجز وينقر توليد.",
-   "4-6 ث (الشريط 3، الذروة): تنفتح دائرة من الزر إلى الخارج ويظلم الإطار؛ داخل الدائرة يتجمع جدار من مقاطع رأسية حقيقية بينما يمسح خط ماسح وتضيء ثلاث بلاطات بلون التمييز كفائزة.",
-   "6-10 ث (الشريطان 4-5): يظهر الناتج الرئيسي بخط ضخم، ثم يدور كاروسيل ثلاثي الأبعاد من مقاطع حقيقية بانعكاسات أرضية وتهبط حركة سريعة بضبابية حركية على مقطع بطل واحد.",
-   "10-16 ث (الأشرطة 6-8): يجلس المقطع البطل داخل إطار هاتف بجانب لوحة تنقلب إلى نتائج؛ تتوالى الإحصاءات بقطع دفع على النبضات القوية مع تدحرج عدادات.",
-   "16-20 ث (الشريطان 9-10): ينزلق شريط من ثلاث كلمات، يتبلور الشعار من نقطة التمييز، ويتلاشى الإطار إلى الأسود على النبضة الأخيرة."
-  ],
-  "motion_rules_en": [
-   "Everything is computed from time inside a window-level seek(t): no CSS animations, no timers and no state carried across frames.",
-   "Grid is 10 bars at 120 BPM, 2 s per bar; every cut sits on a downbeat and every UI hit on a beat, calibrated to the real kick hits of the track.",
-   "Easing is cubic-bezier(0.16, 1, 0.3, 1) for reveals (400-600 ms) and linear for the scan line; bouncy or elastic easing is banned.",
-   "Type reveals are masked only: slide-up inside a clip rect over 350 ms with 60 ms per-word stagger; outgoing text leaves 100 ms before incoming text arrives.",
-   "Camera language is one continuous move per shot: slow push, whip or push-cut; motion blur comes from blending three subframes at plus and minus 1/240 s, never from CSS filters.",
-   "Colour: dark or white ground, one accent used only on winners, buttons and the logo dot; real footage is shown as frame-accurate JPEG sequences, never placeholder cards.",
-   "3D carousel wrappers are faded, never the preserve-3d element itself, so both faces do not flatten and show through.",
-   "Banned by the creator: shockwave rings, particle bursts, RGB split, camera shake, lens flares, neon glows, grid floors, flashing backgrounds and full stops in on-screen text."
-  ],
-  "motion_rules_ar": [
-   "كل شيء يُحسب من الزمن داخل seek(t) على مستوى النافذة: لا CSS animations ولا مؤقتات ولا حالة محمولة بين الإطارات.",
-   "الشبكة 10 أشرطة بإيقاع 120 نبضة في الدقيقة، ثانيتان لكل شريط؛ كل قطع على نبضة قوية وكل ضربة واجهة على نبضة، مع معايرة على ضربات الطبل الحقيقية للمقطوعة.",
-   "التسهيل cubic-bezier(0.16, 1, 0.3, 1) للكشف (400-600 مللي ثانية) وخطي لخط المسح؛ التسهيل الارتدادي أو المطاطي ممنوع.",
-   "كشف النص بالأقنعة فقط: انزلاق لأعلى داخل مستطيل قص خلال 350 مللي ثانية بتدرج 60 مللي ثانية لكل كلمة؛ يغادر النص الخارج قبل وصول الداخل بمئة مللي ثانية.",
-   "لغة الكاميرا حركة واحدة متصلة لكل لقطة: دفع بطيء أو حركة سريعة أو قطع دفع؛ الضبابية الحركية من مزج ثلاثة إطارات فرعية عند زائد وناقص 1/240 ثانية، وليس من مرشحات CSS.",
-   "اللون: أرضية داكنة أو بيضاء، ولون تمييز واحد يُستخدم فقط على الفائزين والأزرار ونقطة الشعار؛ اللقطات الحقيقية تُعرض كتسلسل JPEG دقيق الإطار، لا بطاقات بديلة أبداً.",
-   "الأغلفة الحاوية للكاروسيل ثلاثي الأبعاد هي ما يتلاشى، لا عنصر preserve-3d نفسه، كي لا ينبسط ويظهر وجهاه معاً.",
-   "حظر المبدع: حلقات الصدمة، انفجارات الجسيمات، انقسام RGB، اهتزاز الكاميرا، وهج العدسة، التوهج النيوني، الأرضيات الشبكية، الخلفيات الوامضة، والنقاط في نهاية النص على الشاشة."
-  ],
-  "stack": [
-   "HTML Canvas",
-   "CSS",
-   "WebGL"
-  ],
-  "duration_s": 20,
-  "aspect": "16:9",
-  "difficulty": 5,
-  "keywords": [
-   "saas promo",
-   "beat grid",
-   "match cut",
-   "masked type",
-   "real footage",
-   "3d carousel",
-   "scan line",
-   "motion blur subframes",
-   "إعلان منتج",
-   "مقاطع حقيقية",
-   "قطع مطابق",
-   "شبكة نبضات",
-   "تصميم بسيط",
-   "مولد إعلانات"
-  ],
-  "facts_from_source": [
-   "Ten bars at 120 BPM with two seconds per bar, giving a 20-second film at 1920 by 1080.",
-   "Built as one HTML file where every style is derived from time; real clips are converted to 30 fps JPEG sequences and swapped per frame.",
-   "The song is analysed with numpy for tempo, beat grid, energy per bar and the drop; cuts land on downbeats.",
-   "Rendered through Playwright at 60 fps with three subframes blended for motion blur; sound effects aligned by measured peak and the mix normalised to -14 LUFS.",
-   "Visual direction is minimal: one accent colour, one clean sans with tight tracking, masked reveals, match cuts and real footage only.",
-   "The structure runs hook words, a word-to-UI morph with cursor, a circle-open drop into a clip wall with three winners, big output type, a reflective 3D carousel, a phone plus results panel, stat push cuts, a ticker, a logo and a fade to black.",
-   "Inputs requested: product name and promise, 3-5 UI moments, an accent colour, 10-20 owned vertical clips and a licensed track with a clear drop."
-  ],
-  "assumptions_en": "Bar-to-scene allocation after the drop and the specific easing values are my proposal; the source fixes the beat grid and the shot list but not how many bars each middle shot takes."
- },
- "pm-ultimaxbt-bbebf5": {
-  "id": "pm-ultimaxbt-bbebf5",
-  "title_ar": "نظام حركي تقوده نقطة برتقالية واحدة",
-  "summary_ar": "فيلم 2D مدته 15 ثانية تربط فيه نقطة برتقالية واحدة كل المشاهد: من مفتاح تبديل إلى حرف إلى رسم زنبركي إلى شكل إلى بطاقة ختامية.",
-  "summary_en": "A 15-second 2D film where one orange dot threads every scene: toggle, letter, spring graph, shape, halftone field and end card, looping back to the start.",
-  "concept_ar": "الموضوع عرض لقدرات التصميم الحركي بلا إطارات مفتاحية يدوية، بطله نقطة برتقالية واحدة تنتقل من واجهة مستخدم إلى حرف إلى رسم بياني إلى شكل كبير ثم تعود. الهدف إقناع المشاهد بأن الحركة المتصلة أقوى من أي انتقال عشوائي. اللغة الحركية حادة ومضبوطة: تجاوزات زنبركية صغيرة، لا زمن ميت، وكل حركة متولدة من عنصر موجود على الشاشة بالفعل، ولوحة محصورة في خلفية فاتحة دافئة وأسطح شبه سوداء ولون برتقالي واحد.",
-  "concept_en": "The subject is a demonstration of motion craft without hand-set keyframes, starring a single orange dot that travels from a UI toggle to a letter to a graph to a giant shape and back. The goal is to convince the viewer that connected motion beats any random transition. The language is sharp and controlled: small spring overshoots, zero dead time, every move born from something already on screen, and a palette locked to a warm off-white canvas, near-black surfaces and one orange.",
-  "scenes_en": [
-   "0-2.5s: A cursor arrives and clicks the orange toggle beside a motion-settings label; the toggle knob springs across, the surrounding letters bend and slide until only the single word remains, and the dot settles as the tittle over its 'i'.",
-   "2.5-5.5s: The dot leaps off the word onto a graph; its flight path is drawn behind it as a spring response curve that overshoots the target and settles next to a positive percentage callout.",
-   "5.5-9s: The dot races along a line, swells into a circle that floods the frame; a near-black rounded square rotates inside it, stretches into a pill, and the scene contracts to one orange dot on black.",
-   "9-12s: Capability words orbit the dot on a circular path; the ring of letters opens outward and hands the frame to a halftone grid of tiny dots whose sizes react to the orange dot's position.",
-   "12-14s: The halftone field expands past the frame edges and flips to black, revealing the end card: a model name, the designer role and a zero-keyframes claim.",
-   "14-15s: The dot retraces its route through halftone, graph and toggle so the final frame matches the opening frame for a seamless loop."
-  ],
-  "scenes_ar": [
-   "0-2.5 ث: يصل المؤشر وينقر مفتاح التبديل البرتقالي بجانب تسمية إعدادات الحركة؛ يقفز مقبض المفتاح بزنبرك، تنحني الحروف المحيطة وتنزلق حتى لا تبقى سوى كلمة واحدة، وتستقر النقطة كنقطة فوق حرف 'i'.",
-   "2.5-5.5 ث: تقفز النقطة من الكلمة إلى رسم بياني؛ يُرسم مسار طيرانها خلفها كمنحنى استجابة زنبركية يتجاوز الهدف ثم يستقر بجانب وسم نسبة مئوية موجبة.",
-   "5.5-9 ث: تندفع النقطة على خط، تنتفخ إلى دائرة تغمر الإطار؛ يدور بداخلها مربع مستدير الزوايا شبه أسود، يتمدد إلى كبسولة، ثم ينكمش المشهد إلى نقطة برتقالية واحدة على أسود.",
-   "9-12 ث: تدور كلمات القدرات حول النقطة على مسار دائري؛ تنفتح حلقة الحروف إلى الخارج وتسلم الإطار إلى شبكة نقاط نصفية صغيرة تتجاوب أحجامها مع موضع النقطة البرتقالية.",
-   "12-14 ث: يتسع حقل النقاط النصفية متجاوزاً حواف الإطار وينقلب إلى الأسود كاشفاً البطاقة الختامية: اسم نموذج، ودور المصمم، وادعاء صفر إطارات مفتاحية.",
-   "14-15 ث: تعود النقطة على مسارها عبر النقاط النصفية والرسم البياني والمفتاح ليطابق الإطار الأخير إطار البداية في حلقة سلسة."
-  ],
-  "motion_rules_en": [
-   "All visuals are computed from time inside seek(t) at 1920 by 1080 and 60 fps: no CSS transitions, timers or state between frames.",
-   "Springs are closed-form (stiffness 150, damping 14 for the dot's jump; 220 and 26 for the toggle); the graph curve is drawn from the exact same spring function that moves the dot, so motion and plot agree.",
-   "Letters animate individually with 30 ms stagger during the word reduction; outgoing and incoming glyphs get separate timing so nothing overlaps.",
-   "Circle, rounded square and pill are one shape in different states; its position and velocity are preserved through every transformation, and fills must overscale past all four corners before contracting.",
-   "Camera stays locked; all apparent movement comes from the shape itself. No orbit, no push, no shake.",
-   "Colour is fixed as the creator specified: warm off-white canvas, near-black surfaces and one orange accent reused identically in every scene.",
-   "Every major beat carries a visual change; click, dot landing, graph peak, shape changes and final title are each placed on a measured beat.",
-   "Banned by the creator: stock footage, gradients, glows, particle bursts, random transitions and any motion not connected to an element already on screen."
-  ],
-  "motion_rules_ar": [
-   "كل المرئيات تُحسب من الزمن داخل seek(t) بدقة 1920 في 1080 و60 إطاراً في الثانية: لا CSS transitions ولا مؤقتات ولا حالة بين الإطارات.",
-   "الزنبركات مغلقة الصيغة (صلابة 150 وتخميد 14 لقفزة النقطة؛ 220 و26 للمفتاح)؛ منحنى الرسم البياني يُرسم من دالة الزنبرك نفسها التي تحرك النقطة ليتفق الحركة والرسم.",
-   "تتحرك الحروف فرادى بتدرج 30 مللي ثانية أثناء اختزال الكلمة؛ تحصل الحروف الخارجة والداخلة على توقيت منفصل كي لا يتداخل شيء.",
-   "الدائرة والمربع المستدير والكبسولة شكل واحد في حالات مختلفة؛ يُحفظ موضعه وسرعته عبر كل تحول، ويجب أن يتجاوز الغمر الزوايا الأربع قبل الانكماش.",
-   "الكاميرا مثبتة؛ كل الحركة الظاهرة تأتي من الشكل نفسه. لا دوران ولا دفع ولا اهتزاز.",
-   "اللون ثابت كما حدد المبدع: خلفية فاتحة دافئة، أسطح شبه سوداء، ولون برتقالي واحد يُعاد استخدامه بالتطابق في كل مشهد.",
-   "كل نبضة رئيسية تحمل تغييراً بصرياً؛ النقرة وهبوط النقطة وذروة الرسم وتحولات الشكل والعنوان الختامي كل منها على نبضة مقاسة.",
-   "حظر المبدع: اللقطات الجاهزة، التدرجات اللونية، الوهج، انفجارات الجسيمات، الانتقالات العشوائية، وأي حركة غير مرتبطة بعنصر موجود على الشاشة."
-  ],
-  "stack": [
-   "HTML Canvas",
-   "CSS",
+   "Remotion",
+   "React",
    "SVG"
   ],
   "duration_s": 15,
   "aspect": "16:9",
-  "difficulty": 4,
+  "difficulty": 2,
   "keywords": [
-   "connected motion",
-   "spring graph",
-   "halftone grid",
-   "toggle click",
-   "shape morph",
-   "seamless loop",
-   "orbiting type",
-   "one accent",
-   "نقطة واحدة",
-   "حركة متصلة",
-   "رسم زنبركي",
-   "شبكة نقاط نصفية",
-   "حلقة سلسة",
-   "نص دائري"
+   "تفريغ صوتي",
+   "رابط فيديو",
+   "نص مفرّغ",
+   "طوابع زمنية",
+   "كاريوكي",
+   "عدّاد",
+   "transcript",
+   "youtube link",
+   "waveform",
+   "word highlight",
+   "counter",
+   "bar chart",
+   "export srt",
+   "product ad"
   ],
   "facts_from_source": [
-   "A 16:9 2D film of about 15 seconds at 1920 by 1080 and 60 fps, built as one HTML file driven purely by time.",
-   "Palette stated by the creator: warm off-white canvas, near-black backgrounds, bold type and one vivid orange accent that links every scene.",
-   "Structure: a cursor clicks a motion toggle, the label reduces to one word, the dot jumps onto a spring graph with a percentage callout, grows into a shape that fills the frame, is orbited by capability words, hands over to a halftone field, reveals an end card and returns to the first frame.",
-   "Springs are closed-form; the graph and the dot share the same spring function; letters are animated individually; the halftone dots respond to the orange dot.",
-   "Key events are synced to measured beats and one frame per beat is rendered to check pacing before the full export.",
-   "Inputs requested: a toggle label, a hero word, a percentage, end-card text, an accent colour and a track with a clear beat."
+   "The requested piece is a motion-graphics product advertisement of fifteen seconds.",
+   "The product promise is that pasting a YouTube video link returns the complete spoken text.",
+   "The listing tags it as product UI plus charts and lists a 1280x720 frame."
   ],
-  "assumptions_en": "Per-scene second ranges and the spring constants are proposed; the source fixes the structure, palette and build method but not exact timings or stiffness values."
+  "assumptions_en": "The three-step structure, the karaoke highlight and the closing stats are proposed; the source states only the 15 s length and the paste-link-get-words promise."
  },
  "pm-utopyaszx-1b2f94": {
   "id": "pm-utopyaszx-1b2f94",
@@ -3149,6 +3033,79 @@
    "The page title labels it an SEO promo; tags are charts and kinetic type."
   ],
   "assumptions_en": "That Bold Pilot is an SEO service comes from the page title, not the prompt body; the pilot/altitude metaphor, the rank-38 starting point, the palette and all timings are proposed. 1920x1080 is read as 16:9."
+ },
+ "pm-xelandre-363f00": {
+  "id": "pm-xelandre-363f00",
+  "title_ar": "فيلم إطلاق SaaS مولّد بالكود إطارًا بإطار",
+  "summary_ar": "فيلم إطلاق أفقي لمنتج SaaS تُحسب فيه كل لقطة من الزمن داخل صفحة HTML، وتُلتقط بمتصفح بلا واجهة ثم تُجمَّع مع ضبابية حركة وصوت مولّد برمجيًا.",
+  "summary_en": "A landscape SaaS launch film where every frame is a function of time in an HTML page, captured headlessly, then assembled with motion blur and code-made sound.",
+  "concept_ar": "الموضوع إطلاق منتج SaaS يروي قصته عبر خط إنتاج برمجي بالكامل: صفحة HTML/JS تحسب كل إطار من قيمة الزمن، تُلتقط إطارًا إطارًا بمتصفح بلا واجهة، ثم تُجمَّع إلى MP4 مع ضبابية حركة وصوت مركّب بالكود. الهدف أن يشعر المشاهد بأن المنتج دقيق وهندسي: أسطر كود تتحوّل إلى لوحة تحكم، وبيانات حيّة ترتسم، ونغمات تُولد من الأحداث نفسها. اللغة الحركية حتمية بلا عشوائية: نفس الزمن يعطي نفس الصورة، وضبابية الحركة تأتي من أخذ عيّنات فرعية حقيقية لا من فلتر.",
+  "concept_en": "The subject is a SaaS launch told through a fully programmatic pipeline: an HTML/JS page computes each frame from time, a headless browser captures it frame by frame, and ffmpeg assembles the MP4 with motion blur and synthesized sound. The goal is to make the product feel precise and engineered: code lines morph into a dashboard, live data draws itself, and tones are generated by the same events. The motion language is deterministic, the same time always yields the same picture, and motion blur comes from real sub-frame samples rather than a filter.",
+  "scenes_en": [
+   "0-3s: Dark field; a cursor blinks at 530 ms, then a launch command types on at 30 ms per character, each keystroke triggering a synthesized 8 ms click.",
+   "3-8s: Code lines slide right and compile into UI blocks: each line's width tweens into a panel over 400 ms (easeOutQuint) with 90 ms stagger until a dashboard stands.",
+   "8-14s: Feature pass: three cards sweep in from the left at 1800 px per second, leaving genuine sub-frame blur trails; inside each a toggle, a slider and a sparkline animate within 600 ms.",
+   "14-20s: Data moment: a line chart draws on with the camera orbiting 15 degrees in 2D parallax, counters roll with easeOutExpo over 1400 ms, and a low drone rises in pitch with the chart.",
+   "20-26s: Integrations ring: eight abstract glyphs orbit the dashboard on a 420 px radius at 0.15 rev per second, the ring tilts 20 degrees via CSS perspective.",
+   "26-30s: Product name, launch date and URL settle in sequence 200 ms apart as the sound resolves to a sustained major chord and the frame fades to black over 600 ms."
+  ],
+  "scenes_ar": [
+   "0-3ث: حقل داكن؛ مؤشر يومض كل 530 مللي ثانية، ثم يُكتب أمر الإطلاق بمعدل 30 مللي ثانية للحرف، وكل ضغطة تطلق نقرة مركّبة طولها 8 مللي ثانية.",
+   "3-8ث: أسطر الكود تنزلق يمينًا وتُترجَم إلى كتل واجهة: عرض كل سطر يتدرّج إلى لوحة خلال 400 مللي ثانية (easeOutQuint) بتأخير 90 مللي ثانية حتى تكتمل لوحة التحكم.",
+   "8-14ث: مرور المزايا: ثلاث بطاقات تندفع من اليسار بسرعة 1800 بكسل في الثانية تاركة ذيول ضبابية حقيقية من العيّنات الفرعية؛ داخل كل بطاقة مفتاح وشريط تمرير وخط بياني صغير يتحركون خلال 600 مللي ثانية.",
+   "14-20ث: لحظة البيانات: مخطط خطي يُرسم بينما تدور الكاميرا 15 درجة بمنظور ثنائي الأبعاد متوازٍ، العدّادات تدور بـeaseOutExpo خلال 1400 مللي ثانية، ونغمة منخفضة ترتفع حدّتها مع المخطط.",
+   "20-26ث: حلقة التكاملات: ثمانية رموز مجرّدة تدور حول لوحة التحكم بنصف قطر 420 بكسل بسرعة 0.15 دورة في الثانية، وتميل الحلقة 20 درجة عبر منظور CSS.",
+   "26-30ث: اسم المنتج وتاريخ الإطلاق والرابط تستقر تباعًا بفارق 200 مللي ثانية بينما يستقر الصوت على وتر كبير ممدود ويتلاشى الإطار إلى الأسود خلال 600 مللي ثانية."
+  ],
+  "motion_rules_en": [
+   "Every visual property is a pure function render(t) in seconds; Math.random without a seed, CSS transitions and requestAnimationFrame-driven state are banned because frames are captured out of real time.",
+   "Motion blur is computed by rendering 6 sub-samples per frame across a 1/48 s shutter and averaging them on Canvas; no blur filters.",
+   "Easing: easeOutQuint for UI entrances (400 to 600 ms), easeInOutCubic for camera moves (1500 to 2500 ms), linear for orbits.",
+   "Camera: two-layer parallax at 0.6 and 1.0 scroll factors, one 15 degree orbit on the data scene, and a 3 percent drift elsewhere; no cuts, the whole film is one continuous shot.",
+   "Typography: monospaced for code and commands, a grotesk sans for UI; code text never animates letter spacing, UI headlines rise 24 px over 500 ms.",
+   "Colour: near-black base, light grey UI, one accent for interactive states and chart strokes; the accent brightens by 10 percent during the sound peak at 20 s.",
+   "Sound: generated with OfflineAudioContext at 48 kHz, each UI event spawning a short tone whose pitch is derived from its y position; final mix normalised to -14 LUFS before ffmpeg muxing."
+  ],
+  "motion_rules_ar": [
+   "كل خاصية بصرية دالة نقية render(t) بالثواني؛ Math.random بلا بذرة وانتقالات CSS والحالة المدفوعة بـrequestAnimationFrame ممنوعة لأن الإطارات تُلتقط خارج الزمن الحقيقي.",
+   "ضبابية الحركة تُحسب بتصيير 6 عيّنات فرعية لكل إطار على مدى غالق 1/48 ثانية ومتوسطتها على Canvas؛ لا فلاتر ضبابية.",
+   "الـeasing: easeOutQuint لمداخل الواجهة (400 إلى 600 مللي ثانية)، وeaseInOutCubic لحركات الكاميرا (1500 إلى 2500 مللي ثانية)، وخطي للمدارات.",
+   "الكاميرا: تزيّح على طبقتين بمعاملي 0.6 و1.0، دوران واحد 15 درجة في مشهد البيانات، وانجراف 3 بالمئة في البقية؛ لا قطعات، الفيلم كله لقطة واحدة متصلة.",
+   "الطباعة: خط أحادي العرض للكود والأوامر، وsans grotesk للواجهة؛ نص الكود لا يحرّك تباعد الحروف أبدًا، وعناوين الواجهة تصعد 24 بكسل خلال 500 مللي ثانية.",
+   "اللون: قاعدة شبه سوداء، واجهة رمادية فاتحة، لون تمييز واحد للحالات التفاعلية وخطوط المخططات؛ يزداد سطوع التمييز 10 بالمئة عند ذروة الصوت في الثانية 20.",
+   "الصوت: مولّد بـOfflineAudioContext بتردد 48 كيلوهرتز، كل حدث واجهة يطلق نغمة قصيرة تُشتق حدّتها من موضعه الرأسي؛ المزج النهائي يُعاير إلى -14 LUFS قبل الدمج بـffmpeg."
+  ],
+  "stack": [
+   "HTML Canvas",
+   "Web Audio",
+   "CSS"
+  ],
+  "duration_s": 30,
+  "aspect": "16:9",
+  "difficulty": 5,
+  "keywords": [
+   "إطلاق منتج",
+   "لوحة تحكم",
+   "كود إلى واجهة",
+   "ضبابية حركة",
+   "صوت مولّد",
+   "لقطة واحدة",
+   "saas launch",
+   "deterministic render",
+   "headless capture",
+   "playwright",
+   "ffmpeg",
+   "sub-frame blur",
+   "offline audio",
+   "dashboard build"
+  ],
+  "facts_from_source": [
+   "The animation is code-driven: an HTML/JS page in which each frame is derived from the current time value.",
+   "Frames are captured one by one with a headless Chrome controlled through Playwright.",
+   "The captured frames are assembled by ffmpeg into an MP4 that includes motion blur and sound produced by code.",
+   "The listing tags it as product UI, music and code, and lists a 1920x1080 frame; no duration is stated."
+  ],
+  "assumptions_en": "The 30 s length, the single-shot structure, the six-sample blur method and the pitch-from-position sound design are proposals; the source fixes only the time-driven HTML pipeline, headless capture, ffmpeg assembly, motion blur and generated audio."
  },
  "pm-zheke-38deff": {
   "id": "pm-zheke-38deff",

@@ -25,5 +25,7 @@
   "source_prompt_words": 7,
   "listed": true,
   "skill": "styles/pm-francoxavier33-d2dfd2/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

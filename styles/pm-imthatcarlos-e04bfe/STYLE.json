@@ -26,5 +26,7 @@
   "source_prompt_words": 37,
   "listed": true,
   "skill": "styles/pm-imthatcarlos-e04bfe/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "pm-gautam-mer1-2ae354",
   "name": "Matra caption app promo",
-  "name_ar": null,
+  "name_ar": "ترويج تطبيق Matra للترجمة النصية بأسلوب Apple",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,33 @@
   "source_prompt_words": 7,
   "listed": true,
   "skill": "styles/pm-gautam-mer1-2ae354/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "فيديو عمودي مدته 30 ثانية بهدوء إعلانات Apple يقدّم تطبيق ترجمة نصية للفيديو: هاتف واحد عائم، نص كبير شحيح، وكلمات تظهر متزامنة مع الكلام.",
+  "summary_en": "A 30 s vertical, Apple-calm product film for a caption app: one floating phone, sparse large type, and captions that land word by word in sync with speech.",
+  "keywords": [
+    "ترجمة نصية",
+    "تطبيق كابشن",
+    "أسلوب Apple",
+    "هاتف عائم",
+    "مزامنة كلمات",
+    "استوديو مظلم",
+    "caption app",
+    "word sync",
+    "device film",
+    "light sweep",
+    "minimal product video",
+    "rtl captions",
+    "export flow",
+    "vertical promo"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-gautam-mer1-2ae354/BRIEF.md"
 }

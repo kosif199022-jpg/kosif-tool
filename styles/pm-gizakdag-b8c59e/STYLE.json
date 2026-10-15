@@ -26,5 +26,7 @@
   "source_prompt_words": 30,
   "listed": true,
   "skill": "styles/pm-gizakdag-b8c59e/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

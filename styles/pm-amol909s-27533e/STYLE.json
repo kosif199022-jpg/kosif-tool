@@ -27,5 +27,8 @@
   "source_prompt_words": 43,
   "listed": true,
   "skill": "styles/pm-amol909s-27533e/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

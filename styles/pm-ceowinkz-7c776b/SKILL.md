@@ -1,9 +1,9 @@
 ---
 name: pm-ceowinkz-7c776b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second B2B pitch from Winkz Enterprises to a brand: an animated supply route, sales charts and trust proofs that argue for the right to sell its products.
 ---
 
-# KOSIF TOOL — Amazon wholesale pitch video
+# KOSIF TOOL — Amazon wholesale pitch video / عرض Winkz: لماذا نبيع منتجاتكم على أمازون
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ceowinkz-7c776b
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو عرض 15 ثانية من شركة Winkz Enterprises لعلامة تجارية: مسار توريد متحرك ورسوم مبيعات وأدلة ثقة تقنع العلامة بمنحها حق البيع.
+
+A 15-second B2B pitch from Winkz Enterprises to a brand: an animated supply route, sales charts and trust proofs that argue for the right to sell its products.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية.
-- (no category playbook yet)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.

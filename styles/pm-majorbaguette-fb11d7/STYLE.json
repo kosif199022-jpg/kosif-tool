@@ -25,5 +25,7 @@
   "source_prompt_words": 9,
   "listed": true,
   "skill": "styles/pm-majorbaguette-fb11d7/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

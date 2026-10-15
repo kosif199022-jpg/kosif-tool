@@ -27,7 +27,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-stephanlivera-df17a2/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل ذاتي مدته 15 ثانية يستعرض مهارات المصمم عبر نص حركي ورسوم بيانية حية وانتقالات متصلة بلا قطع.",
     "summary_en": "A 15-second self-portrait reel where the designer proves its craft through kinetic type, living charts and seamless morph transitions.",
     "keywords": [
@@ -56,7 +58,7 @@
   {
     "id": "pm-twoclipping-221cab",
     "name": "Photo print app launch film",
-    "name_ar": "فيلم إطلاق تطبيق طباعة الصور بلقطة واحدة",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -95,33 +97,12 @@
     "source_prompt_words": 912,
     "listed": true,
     "skill": "styles/pm-twoclipping-221cab/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "فيلم إطلاق مربع بأسلوب عروض آبل، لقطة متصلة واحدة بلا قطع، كل مشهد يتولد من سابقه على إيقاع 120 نبضة.",
-    "summary_en": "A square Apple-style launch film in one continuous take where every scene is sculpted out of the previous one on a 120 BPM beat grid.",
-    "keywords": [
-      "liquid glass",
-      "iris wipe",
-      "continuous take",
-      "beat-synced",
-      "cursor-driven ui",
-      "morph transitions",
-      "closed-form spring",
-      "playwright render",
-      "زجاج سائل",
-      "لقطة واحدة متصلة",
-      "مزامنة الإيقاع",
-      "تحولات شكلية",
-      "فيلم إطلاق منتج",
-      "طباعة صور"
-    ],
-    "difficulty": 5,
-    "duration_s": 27,
-    "stack": [
-      "HTML Canvas",
-      "SVG",
-      "CSS"
-    ],
-    "brief": "styles/pm-twoclipping-221cab/BRIEF.md"
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/phone.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-ror-fly-9950f1",
@@ -154,7 +135,9 @@
     "source_prompt_words": 65,
     "listed": true,
     "skill": "styles/pm-ror-fly-9950f1/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "فيلم شرح مربع مدته 30 ثانية يبني كوكتيل نيغروني مكوناً بعد مكون مع المقادير وهي تُسكب في الكأس.",
     "summary_en": "A 30-second square explainer that builds a Negroni ingredient by ingredient, with measurements appearing as each pour fills the glass.",
     "keywords": [
@@ -184,7 +167,7 @@
   {
     "id": "pm-twoclipping-6dd14e",
     "name": "UGC ad generator promo",
-    "name_ar": "إعلان منتج توليد محتوى UGC على شبكة إيقاعية",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -218,33 +201,11 @@
     "source_prompt_words": 444,
     "listed": true,
     "skill": "styles/pm-twoclipping-6dd14e/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "إعلان عالي الجودة بأسلوب بسيط مدته 20 ثانية، فكرة واحدة لكل لقطة، مقاطع حقيقية فقط، وكل قطع على نبضة.",
-    "summary_en": "A 20-second high-end minimal promo for a UGC ad generator: one idea per shot, real vertical footage only, every cut on a downbeat.",
-    "keywords": [
-      "saas promo",
-      "beat grid",
-      "match cut",
-      "masked type",
-      "real footage",
-      "3d carousel",
-      "scan line",
-      "motion blur subframes",
-      "إعلان منتج",
-      "مقاطع حقيقية",
-      "قطع مطابق",
-      "شبكة نبضات",
-      "تصميم بسيط",
-      "مولد إعلانات"
-    ],
-    "difficulty": 5,
-    "duration_s": 20,
-    "stack": [
-      "HTML Canvas",
-      "CSS",
-      "WebGL"
-    ],
-    "brief": "styles/pm-twoclipping-6dd14e/BRIEF.md"
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/phone.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-steventey-0d20e4",
@@ -275,7 +236,10 @@
     "source_prompt_words": 35,
     "listed": true,
     "skill": "styles/pm-steventey-0d20e4/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ],
     "summary_ar": "فيلم إطلاق SaaS مدته 15 ثانية يحول رابطاً طويلاً إلى رابط قصير ثم يفتح تحليلات النقرات كواجهة حية.",
     "summary_en": "A 15-second SaaS launch film that squeezes a long URL into a short link, then unfolds its click analytics as a living product UI.",
     "keywords": [
@@ -330,7 +294,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-thayto-dev-44b911/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "فيلم ترويجي مدته 15 ثانية يظهر سيرة ذاتية تعيد تشكيل نفسها لتطابق وظيفة، ثم يكشف بطاقة تسعير الخطة الاحترافية.",
     "summary_en": "A 15-second promo where a résumé reshapes itself to fit a job posting, then the Pro pricing card lands as the payoff.",
     "keywords": [
@@ -361,7 +327,7 @@
   {
     "id": "pm-ultimaxbt-bbebf5",
     "name": "Orange dot motion system",
-    "name_ar": "نظام حركي تقوده نقطة برتقالية واحدة",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -397,33 +363,10 @@
     "source_prompt_words": 575,
     "listed": true,
     "skill": "styles/pm-ultimaxbt-bbebf5/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "فيلم 2D مدته 15 ثانية تربط فيه نقطة برتقالية واحدة كل المشاهد: من مفتاح تبديل إلى حرف إلى رسم زنبركي إلى شكل إلى بطاقة ختامية.",
-    "summary_en": "A 15-second 2D film where one orange dot threads every scene: toggle, letter, spring graph, shape, halftone field and end card, looping back to the start.",
-    "keywords": [
-      "connected motion",
-      "spring graph",
-      "halftone grid",
-      "toggle click",
-      "shape morph",
-      "seamless loop",
-      "orbiting type",
-      "one accent",
-      "نقطة واحدة",
-      "حركة متصلة",
-      "رسم زنبركي",
-      "شبكة نقاط نصفية",
-      "حلقة سلسة",
-      "نص دائري"
-    ],
-    "difficulty": 4,
-    "duration_s": 15,
-    "stack": [
-      "HTML Canvas",
-      "CSS",
-      "SVG"
-    ],
-    "brief": "styles/pm-ultimaxbt-bbebf5/BRIEF.md"
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-kloss-xyz-fe0c31",
@@ -506,7 +449,9 @@
     "source_prompt_words": 27,
     "listed": true,
     "skill": "styles/pm-itisrazak-3ad902/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل منتج مدته 40 ثانية يحوّل فكرة اختصار الكتب إلى لغة حركية: جدران نص تنضغط إلى عناوين، وبطاقات ملخّصات، ورسوم بيانية تعدّ الوقت الموفَّر.",
     "summary_en": "A 40-second product showreel where the idea of condensing books becomes motion: text walls compress into headlines, summary cards flip and charts count saved time.",
     "keywords": [
@@ -562,7 +507,10 @@
     "source_prompt_words": 19,
     "listed": true,
     "skill": "styles/pm-melvynx-6cde6c/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل مدته 15 ثانية يجعل واجهة أداة البريد هي البطل: نافذة إنشاء تتفتح، رسالة تنطلق، صندوق وارد يرتّب نفسه، ومنحنى معدل الفتح يصعد.",
     "summary_en": "A 15-second promo where the email tool's own interface is the hero: a composer unfolds, a message launches, the inbox sorts itself and an open-rate curve climbs.",
     "keywords": [
@@ -593,7 +541,7 @@
   {
     "id": "pm-lukasersil-0ed38e",
     "name": "Motion techniques showreel",
-    "name_ar": "جولة التقنيات: ريل الخمس عشرة ثانية",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -621,34 +569,10 @@
     "source_prompt_words": 105,
     "listed": true,
     "skill": "styles/pm-lukasersil-0ed38e/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "ريل مدته 15 ثانية تقوده كاميرا واحدة متصلة عبر ستة عوالم صغيرة، كل عالم يستعرض تقنية (جسيمات، هندسة ثلاثية، سوائل، أقنعة، صور) وينتهي بما يبدأ به التالي.",
-    "summary_en": "A 15-second reel driven by one continuous camera through six micro-worlds, each demonstrating a technique (particles, 3D geometry, fluids, masks, photos) and ending as the next begins.",
-    "keywords": [
-      "showreel",
-      "portfolio reel",
-      "particles",
-      "جسيمات",
-      "3d geometry",
-      "fluid distortion",
-      "masking",
-      "compositing",
-      "أقنعة",
-      "إضاءة",
-      "camera flythrough",
-      "كاميرا متصلة",
-      "morph transition",
-      "تشوه سائل",
-      "depth fog"
-    ],
-    "difficulty": 5,
-    "duration_s": 15,
-    "stack": [
-      "Remotion",
-      "Three.js",
-      "WebGL"
-    ],
-    "brief": "styles/pm-lukasersil-0ed38e/BRIEF.md"
+    "playbooks": [
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-mandelduck-95fd08",
@@ -733,7 +657,9 @@
     "source_prompt_words": 56,
     "listed": true,
     "skill": "styles/pm-ajith-io-ea7f2d/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل منتج بارد الإيقاع مدته 30 ثانية يعرض Distilbook في ثلاث حركات: صدمة رقمية، جولة بطاقات، ثم برهان بالأرقام، على شبكة ثابتة بلون تمييز واحد.",
     "summary_en": "A cold, tight 30-second product reel presenting Distilbook in three acts: a numeric hook, a card tour, then proof by numbers, on a persistent grid with one accent colour.",
     "keywords": [
@@ -790,7 +716,9 @@
     "source_prompt_words": 29,
     "listed": true,
     "skill": "styles/pm-monokern-ade5b6/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل مدته 20 ثانية يدور حول عين مركزية: حلقات تنبض، تكبير لا نهائي داخل البؤبؤ، تناظر كاليدوسكوبي، ونص يدور حولها ورسم شعاعي ينمو في القزحية.",
     "summary_en": "A 20-second reel built around one central eye: pulsing rings, an endless zoom into the pupil, kaleidoscope symmetry, text orbiting it and a radial chart growing inside the iris.",
     "keywords": [
@@ -878,7 +806,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-blue-clarity-ef56d0/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-yunn260414-60d996",
@@ -938,7 +868,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-raphaelaubryy-4b137e/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-hqmank-7c61f1",
@@ -968,7 +900,10 @@
     "source_prompt_words": 33,
     "listed": true,
     "skill": "styles/pm-hqmank-7c61f1/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-dale-vaz-cc612a",
@@ -1000,7 +935,11 @@
     "source_prompt_words": 113,
     "listed": true,
     "skill": "styles/pm-dale-vaz-cc612a/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/phone.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-samuel-spitz-974923",
@@ -1030,7 +969,9 @@
     "source_prompt_words": 34,
     "listed": true,
     "skill": "styles/pm-samuel-spitz-974923/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل 20 ثانية يستعرض أربعة فصول متتابعة (الخط، البيانات، الشكل، الإيقاع) بخيط طباعي واحد يربطها دون قطع.",
     "summary_en": "A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.",
     "keywords": [
@@ -1086,7 +1027,11 @@
     "source_prompt_words": 88,
     "listed": true,
     "skill": "styles/pm-techyoutbe-945b56/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ],
     "summary_ar": "فيديو إطلاق 30 ثانية بأسلوب منشورات إطلاق المنتجات على X: واجهة حقيقية في إطار جهاز، بطاقات ميزات، ومخطط يقيس الفائدة.",
     "summary_en": "A 30s X-style SaaS launch film: real product UI in a device frame, three feature cards, a benefit chart and a clean CTA.",
     "keywords": [
@@ -1195,7 +1140,9 @@
     "source_prompt_words": 37,
     "listed": true,
     "skill": "styles/pm-imthatcarlos-e04bfe/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-demonugc-4c5753",
@@ -1236,7 +1183,11 @@
     "source_prompt_words": 474,
     "listed": true,
     "skill": "styles/pm-demonugc-4c5753/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-ercankeskinx-ec2568",
@@ -1325,7 +1276,9 @@
     "source_prompt_words": 25,
     "listed": true,
     "skill": "styles/pm-rendesr-86be44/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-theviableedge-9065be",
@@ -1354,7 +1307,9 @@
     "source_prompt_words": 27,
     "listed": true,
     "skill": "styles/pm-theviableedge-9065be/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-mdaman010-e7226a",
@@ -1384,7 +1339,9 @@
     "source_prompt_words": 10,
     "listed": true,
     "skill": "styles/pm-mdaman010-e7226a/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-macrohou-33959d",
@@ -1415,7 +1372,10 @@
     "source_prompt_words": 24,
     "listed": true,
     "skill": "styles/pm-macrohou-33959d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-topi-003-b0e12c",
@@ -1446,7 +1406,10 @@
     "source_prompt_words": 30,
     "listed": true,
     "skill": "styles/pm-topi-003-b0e12c/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-mrtanviir-132457",
@@ -1476,7 +1439,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-mrtanviir-132457/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل ترويج ذاتي في 15 ثانية يثبت أربع مهارات متتابعة: حروف حركية، مخططات تُبنى من الصفر، أشكال تتحول، وبطاقة توقيع ختامية.",
     "summary_en": "A 15-second self-promo reel proving four motion skills in sequence: kinetic type, charts built from zero, morphing shapes, and a signature end card.",
     "keywords": [
@@ -1531,7 +1496,9 @@
     "source_prompt_words": 29,
     "listed": true,
     "skill": "styles/pm-utopyaszx-1b2f94/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "برومو 15 ثانية لعلامة Bold Pilot يحوّل تحسين محركات البحث إلى رحلة طيران: صف نتيجة يتسلق من المركز 38 إلى الأول ومخطط زيارات يقلع.",
     "summary_en": "A 15-second Bold Pilot promo that turns SEO into a flight: a result row climbs from rank 38 to 1, a traffic curve takes off, and keyword chips dock in formation.",
     "keywords": [
@@ -1589,7 +1556,10 @@
     "source_prompt_words": 95,
     "listed": true,
     "skill": "styles/pm-reflex-cloud-72ffe5/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ],
     "summary_ar": "ريل علامة لشركة reflex. inc في 15 ثانية مقطوع على الإيقاع: خطّاف في الثانية الأولى، ثم حروف وأشكال وكاميرا وتحولات لون، وإطار ختامي نظيف.",
     "summary_en": "A 15-second brand reel for reflex. inc cut to music: a one-second hook, then typography, shape play, camera whips and colour flips, landing on a clean final frame.",
     "keywords": [
@@ -1645,12 +1615,14 @@
     "source_prompt_words": 29,
     "listed": true,
     "skill": "styles/pm-devius-maximus-beab45/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-l3d1c-0e35a3",
     "name": "PicTwin AI app ad",
-    "name_ar": null,
+    "name_ar": "إعلان عمودي لتطبيق PicTwin للصور بالذكاء الاصطناعي",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -1674,12 +1646,39 @@
     "source_prompt_words": 11,
     "listed": true,
     "skill": "styles/pm-l3d1c-0e35a3/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ],
+    "summary_ar": "إعلان عمودي قصير يُظهر كيف تتحوّل صورة شخصية واحدة إلى نسخة توأم مولّدة بالذكاء الاصطناعي داخل واجهة هاتف حيّة بكشف قبل/بعد.",
+    "summary_en": "A vertical 15 s app ad where one selfie becomes an AI-generated twin inside a live phone UI, told as a split-screen before/after reveal.",
+    "keywords": [
+      "إعلان تطبيق",
+      "صورة شخصية",
+      "توأم بالذكاء الاصطناعي",
+      "واجهة هاتف",
+      "قبل وبعد",
+      "app ad",
+      "selfie",
+      "ai avatar",
+      "phone mockup",
+      "split reveal",
+      "progress ring",
+      "vertical ad",
+      "reels"
+    ],
+    "difficulty": 2,
+    "duration_s": 15,
+    "stack": [
+      "Remotion",
+      "React",
+      "SVG"
+    ],
+    "brief": "styles/pm-l3d1c-0e35a3/BRIEF.md"
   },
   {
     "id": "pm-tstfully-0aa6b4",
     "name": "YouTube transcript product ad",
-    "name_ar": null,
+    "name_ar": "إعلان منتج: من رابط يوتيوب إلى نص كامل",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -1704,12 +1703,41 @@
     "source_prompt_words": 14,
     "listed": true,
     "skill": "styles/pm-tstfully-0aa6b4/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ],
+    "summary_ar": "إعلان أفقي مدته 15 ثانية يشرح أداة تحوّل رابط فيديو يوتيوب إلى نصّ مفرّغ كامل، مع عدّادات ومخططات تلخّص النتيجة.",
+    "summary_en": "A 15 s landscape product ad for a tool that turns a pasted YouTube link into a full transcript, closing with counters and small charts that quantify the result.",
+    "keywords": [
+      "تفريغ صوتي",
+      "رابط فيديو",
+      "نص مفرّغ",
+      "طوابع زمنية",
+      "كاريوكي",
+      "عدّاد",
+      "transcript",
+      "youtube link",
+      "waveform",
+      "word highlight",
+      "counter",
+      "bar chart",
+      "export srt",
+      "product ad"
+    ],
+    "difficulty": 2,
+    "duration_s": 15,
+    "stack": [
+      "Remotion",
+      "React",
+      "SVG"
+    ],
+    "brief": "styles/pm-tstfully-0aa6b4/BRIEF.md"
   },
   {
     "id": "pm-davidshulmanfl-371638",
     "name": "Clay-style music video",
-    "name_ar": null,
+    "name_ar": "فيديو موسيقي بأسلوب الصلصال المتحرّك بمراجع معاصرة",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -1733,12 +1761,38 @@
     "source_prompt_words": 37,
     "listed": true,
     "skill": "styles/pm-davidshulmanfl-371638/SKILL.md",
-    "playbooks": []
+    "playbooks": [],
+    "summary_ar": "فيديو موسيقي لدقيقة واحدة بمظهر تحريك الصلصال الإيقافي مع أغنية أصلية بروح البوب الفني الثمانيني ورموز حياتنا الرقمية الحالية.",
+    "summary_en": "A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.",
+    "keywords": [
+      "صلصال",
+      "تحريك إيقافي",
+      "فيديو موسيقي",
+      "أغنية أصلية",
+      "بوب فني",
+      "ثمانينات",
+      "stop motion",
+      "claymation",
+      "metaball",
+      "animate on twos",
+      "lyric sync",
+      "art pop",
+      "replacement animation",
+      "music video"
+    ],
+    "difficulty": 5,
+    "duration_s": 60,
+    "stack": [
+      "HTML Canvas",
+      "Remotion",
+      "Web Audio"
+    ],
+    "brief": "styles/pm-davidshulmanfl-371638/BRIEF.md"
   },
   {
     "id": "pm-quickdesignio-dd93d0",
     "name": "QuickDesign brand promo",
-    "name_ar": null,
+    "name_ar": "ترويج علامة QuickDesign: السرعة كحجّة بصرية",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -1762,12 +1816,40 @@
     "source_prompt_words": 24,
     "listed": true,
     "skill": "styles/pm-quickdesignio-dd93d0/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
+    "summary_ar": "ترويج أفقي مدته 15 ثانية لأداة تصميم سريعة، يبني الشعار من أشكال أولية ثم يبرهن على توفير الوقت بمخططات وعدّادات متحركة.",
+    "summary_en": "A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.",
+    "keywords": [
+      "ترويج علامة",
+      "أداة تصميم",
+      "أشكال أولية",
+      "لوحة تصميم",
+      "مخطط مقارنة",
+      "قوالب",
+      "brand promo",
+      "design tool",
+      "shape snap",
+      "auto layout",
+      "bar chart",
+      "card flip",
+      "counter",
+      "wordmark build"
+    ],
+    "difficulty": 3,
+    "duration_s": 15,
+    "stack": [
+      "Remotion",
+      "React",
+      "SVG"
+    ],
+    "brief": "styles/pm-quickdesignio-dd93d0/BRIEF.md"
   },
   {
     "id": "pm-xelandre-363f00",
     "name": "SaaS product launch video",
-    "name_ar": null,
+    "name_ar": "فيلم إطلاق SaaS مولّد بالكود إطارًا بإطار",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -1795,12 +1877,40 @@
     "source_prompt_words": 34,
     "listed": true,
     "skill": "styles/pm-xelandre-363f00/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ],
+    "summary_ar": "فيلم إطلاق أفقي لمنتج SaaS تُحسب فيه كل لقطة من الزمن داخل صفحة HTML، وتُلتقط بمتصفح بلا واجهة ثم تُجمَّع مع ضبابية حركة وصوت مولّد برمجيًا.",
+    "summary_en": "A landscape SaaS launch film where every frame is a function of time in an HTML page, captured headlessly, then assembled with motion blur and code-made sound.",
+    "keywords": [
+      "إطلاق منتج",
+      "لوحة تحكم",
+      "كود إلى واجهة",
+      "ضبابية حركة",
+      "صوت مولّد",
+      "لقطة واحدة",
+      "saas launch",
+      "deterministic render",
+      "headless capture",
+      "playwright",
+      "ffmpeg",
+      "sub-frame blur",
+      "offline audio",
+      "dashboard build"
+    ],
+    "difficulty": 5,
+    "duration_s": 30,
+    "stack": [
+      "HTML Canvas",
+      "Web Audio",
+      "CSS"
+    ],
+    "brief": "styles/pm-xelandre-363f00/BRIEF.md"
   },
   {
     "id": "pm-gautam-mer1-2ae354",
     "name": "Matra caption app promo",
-    "name_ar": null,
+    "name_ar": "ترويج تطبيق Matra للترجمة النصية بأسلوب Apple",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -1824,7 +1934,35 @@
     "source_prompt_words": 7,
     "listed": true,
     "skill": "styles/pm-gautam-mer1-2ae354/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ],
+    "summary_ar": "فيديو عمودي مدته 30 ثانية بهدوء إعلانات Apple يقدّم تطبيق ترجمة نصية للفيديو: هاتف واحد عائم، نص كبير شحيح، وكلمات تظهر متزامنة مع الكلام.",
+    "summary_en": "A 30 s vertical, Apple-calm product film for a caption app: one floating phone, sparse large type, and captions that land word by word in sync with speech.",
+    "keywords": [
+      "ترجمة نصية",
+      "تطبيق كابشن",
+      "أسلوب Apple",
+      "هاتف عائم",
+      "مزامنة كلمات",
+      "استوديو مظلم",
+      "caption app",
+      "word sync",
+      "device film",
+      "light sweep",
+      "minimal product video",
+      "rtl captions",
+      "export flow",
+      "vertical promo"
+    ],
+    "difficulty": 3,
+    "duration_s": 30,
+    "stack": [
+      "Remotion",
+      "React",
+      "CSS"
+    ],
+    "brief": "styles/pm-gautam-mer1-2ae354/BRIEF.md"
   },
   {
     "id": "pm-crazyalphaaa-bc7e75",
@@ -1854,7 +1992,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-crazyalphaaa-bc7e75/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-kangaroohere-b10f8d",
@@ -1884,7 +2024,9 @@
     "source_prompt_words": 29,
     "listed": true,
     "skill": "styles/pm-kangaroohere-b10f8d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-tolgayhickiran-e90799",
@@ -1914,7 +2056,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-tolgayhickiran-e90799/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل 15 ثانية يعرض مبادئ التحريك كأمثلة حية، حيث تؤدي الكلمة والرسم البياني المبدأ الذي يسمّيانه.",
     "summary_en": "A 15-second résumé reel in which each animation principle is performed live by the very word and chart that name it.",
     "keywords": [
@@ -1969,7 +2113,9 @@
     "source_prompt_words": 33,
     "listed": true,
     "skill": "styles/pm-danilowm-d3720d/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل 15 ثانية يستمد محتواه من ملفات المشروع نفسه: شجرة المجلدات تصبح رسمًا بيانيًا، وأسماء المكوّنات تصبح تايبوغرافي حركيًا.",
     "summary_en": "A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.",
     "keywords": [
@@ -2023,7 +2169,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-robvjourney-ce3e1a/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "برومو 15 ثانية لعلامة Nohandslabs يستعمل زوج أيدٍ يترك المهام فتكمل نفسها، مع رسوم بيانية للوقت المستعاد.",
     "summary_en": "A 15-second brand promo for Nohandslabs where a pair of hands lets go and the work keeps running on its own, backed by reclaimed-time charts.",
     "keywords": [
@@ -2077,7 +2225,9 @@
     "source_prompt_words": 37,
     "listed": true,
     "skill": "styles/pm-cansincengiz-me-cf68dd/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ],
     "summary_ar": "برومو مربع 15 ثانية لتطبيق Lidlezz مصمم للتشغيل الصامت في خلاصة X: هاتف واحد يعرض ثلاث ميزات ودعوة واضحة للتنزيل.",
     "summary_en": "A 15-second square promo for the Lidlezz app, built for silent autoplay in the X feed: one phone, three feature callouts and a clear CTA.",
     "keywords": [
@@ -2132,7 +2282,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-marouanegazouzi-6071d5/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "ريل 15 ثانية لاستوديو Crux تدور فيه الحروف والرسوم البيانية حول نقطة مركزية واحدة، فيتحول الشعار إلى محور الحركة.",
     "summary_en": "A 15-second reel for Crux where letters and charts all pivot around a single centre point, turning the studio mark into the axis of motion.",
     "keywords": [
@@ -2190,7 +2342,10 @@
     "source_prompt_words": 74,
     "listed": true,
     "skill": "styles/pm-abderrahmen-g-9e8ed0/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ],
     "summary_ar": "فيلم مرح من مسحات دفتر رسم يدوية: الحيوانات تنفصل عن صفحاتها وتقفز، وكل حركة يرافقها صوت مُركَّب بـ Web Audio في الإطار نفسه.",
     "summary_en": "A playful film built from scanned hand-drawn pages: the animals peel off their sheets and hop, with every movement sounded by Web Audio on the same frame.",
     "keywords": [
@@ -2221,7 +2376,7 @@
   {
     "id": "pm-grace-sunnyy-29bc61",
     "name": "Keyframe motion design reel",
-    "name_ar": "ريل الكي فريم: من داخل الخط الزمني",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -2245,32 +2400,9 @@
     "source_prompt_words": 59,
     "listed": true,
     "skill": "styles/pm-grace-sunnyy-29bc61/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "ريل 15 ثانية يجعل معيّن الـ keyframe ومنحنيات المحرر بطلَي الإطار، ورأس التشغيل يعبر الشاشة طوال المدة لتثبت كل ثانية قيمتها.",
-    "summary_en": "A 15-second reel where the keyframe diamond and editor curves are the heroes, and a playhead crossing the frame makes every second accountable.",
-    "keywords": [
-      "portfolio reel",
-      "keyframe diamond",
-      "bezier curve",
-      "graph editor",
-      "playhead",
-      "easing comparison chart",
-      "12-column grid",
-      "negative space",
-      "ريل بورتفوليو",
-      "منحنى بيزييه",
-      "خط زمني",
-      "شبكة تخطيط",
-      "مقارنة تسهيل"
-    ],
-    "difficulty": 4,
-    "duration_s": 15,
-    "stack": [
-      "Remotion",
-      "React",
-      "SVG"
-    ],
-    "brief": "styles/pm-grace-sunnyy-29bc61/BRIEF.md"
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-listudio-820c7b",
@@ -2299,7 +2431,9 @@
     "source_prompt_words": 19,
     "listed": true,
     "skill": "styles/pm-listudio-820c7b/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ],
     "summary_ar": "فيديو إطلاق 20 ثانية لمنتج GenVizu يصلح كخلفية Hero ومادة تسويقية: وصف نصي يتحول إلى رسوم بيانية داخل واجهة المنتج ثم يدور بحلقة نظيفة.",
     "summary_en": "A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.",
     "keywords": [
@@ -2354,7 +2488,9 @@
     "source_prompt_words": 30,
     "listed": true,
     "skill": "styles/pm-ceowinkz-7c776b/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "فيديو عرض 15 ثانية من شركة Winkz Enterprises لعلامة تجارية: مسار توريد متحرك ورسوم مبيعات وأدلة ثقة تقنع العلامة بمنحها حق البيع.",
     "summary_en": "A 15-second B2B pitch from Winkz Enterprises to a brand: an animated supply route, sales charts and trust proofs that argue for the right to sell its products.",
     "keywords": [
@@ -2409,7 +2545,9 @@
     "source_prompt_words": 9,
     "listed": true,
     "skill": "styles/pm-majorbaguette-fb11d7/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-teslachartz-c58b32",
@@ -2439,7 +2577,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-teslachartz-c58b32/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-kikelopezdesign-7cc9e8",
@@ -2497,7 +2637,9 @@
     "source_prompt_words": 38,
     "listed": true,
     "skill": "styles/pm-samaote-5e2fc2/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "كلمات الأغنية تظهر على نبرة المغني بالضبط بينما تتنفس الخلفية مع الإيقاع، بأسلوب يليق بعرض أعمال مصمم موشن.",
     "summary_en": "Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.",
     "keywords": [
@@ -2631,7 +2773,7 @@
   {
     "id": "pm-kloss-xyz-b9b3f6",
     "name": "History of AI animated timeline video",
-    "name_ar": "خط زمني متحرك لتاريخ الذكاء الاصطناعي",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [],
@@ -2653,36 +2795,12 @@
     "source_prompt_words": 11,
     "listed": true,
     "skill": "styles/pm-kloss-xyz-b9b3f6/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "رحلة كاميرا على خط زمني أفقي تتوقف عند محطات الذكاء الاصطناعي الكبرى، وكل محطة تُرسم كمخطط صغير حي.",
-    "summary_en": "A camera ride along a horizontal timeline that stops at the major AI milestones, each drawn as a small living diagram rather than a slide.",
-    "keywords": [
-      "timeline",
-      "explainer",
-      "ai milestones",
-      "camera travel",
-      "self-drawing diagrams",
-      "education",
-      "خط زمني",
-      "شرح متحرك",
-      "ذكاء اصطناعي",
-      "محطات تاريخية",
-      "مخططات ترسم نفسها",
-      "remotion",
-      "svg"
-    ],
-    "difficulty": 3,
-    "duration_s": 60,
-    "stack": [
-      "Remotion",
-      "SVG"
-    ],
-    "brief": "styles/pm-kloss-xyz-b9b3f6/BRIEF.md"
+    "playbooks": []
   },
   {
     "id": "pm-prasenx-8d9323",
     "name": "Motion showreel with a fully code-synthesized soundtrack",
-    "name_ar": "عرض أعمال بموسيقى مُركّبة بالكود بالكامل",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -2709,37 +2827,14 @@
     "source_prompt_words": 71,
     "listed": true,
     "skill": "styles/pm-prasenx-8d9323/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "خمس عشرة ثانية يقود فيها جدول نوتات واحد الصوت والصورة معًا: كل ضربة طبلة نبضة، وكل قطع يقع على الإيقاع حتمًا.",
-    "summary_en": "Fifteen seconds where one note table drives both audio and picture: each kick is a pulse, each cut sits on the grid, and the soundtrack is pure code.",
-    "keywords": [
-      "procedural audio",
-      "code synth",
-      "beat grid",
-      "showreel",
-      "oscillators",
-      "audio reactive",
-      "60fps",
-      "صوت مولّد بالكود",
-      "مذبذبات",
-      "شبكة إيقاع",
-      "عرض أعمال",
-      "تزامن حتمي",
-      "web audio"
-    ],
-    "difficulty": 5,
-    "duration_s": 15,
-    "stack": [
-      "Remotion",
-      "Web Audio",
-      "SVG"
-    ],
-    "brief": "styles/pm-prasenx-8d9323/BRIEF.md"
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-twoclipping-5cba86",
     "name": "Shape morphing through UI states",
-    "name_ar": "شكل واحد يتحول عبر حالات الواجهة",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -2775,33 +2870,11 @@
     "source_prompt_words": 474,
     "listed": true,
     "skill": "styles/pm-twoclipping-5cba86/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "عنصر واحد لا يُقطع أبدًا يتحول من زر إلى مشغّل إلى مخطط إلى لوحة أوامر على شبكة 120 BPM، ويقوده مؤشر يضغط ويسحب فعلًا.",
-    "summary_en": "One never-cut element morphs from button to player to chart to command palette on a 120 BPM grid, driven by a cursor that really clicks and drags.",
-    "keywords": [
-      "ui motion",
-      "micro-interactions",
-      "morphing",
-      "springs",
-      "cursor driven",
-      "seamless loop",
-      "beat grid",
-      "حركة واجهات",
-      "تحول الأشكال",
-      "نوابض",
-      "حلقة متصلة",
-      "مؤشر",
-      "تفاعلات دقيقة",
-      "dribbble"
-    ],
-    "difficulty": 5,
-    "duration_s": 14,
-    "stack": [
-      "CSS",
-      "SVG",
-      "HTML Canvas"
-    ],
-    "brief": "styles/pm-twoclipping-5cba86/BRIEF.md"
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-himanshutwtxs-5f4b43",
@@ -2831,7 +2904,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-himanshutwtxs-5f4b43/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-notdwd-c2037d",
@@ -2872,7 +2947,11 @@
     "source_prompt_words": 1854,
     "listed": true,
     "skill": "styles/pm-notdwd-c2037d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-samuel-yostt-891f87",
@@ -2903,7 +2982,10 @@
     "source_prompt_words": 45,
     "listed": true,
     "skill": "styles/pm-samuel-yostt-891f87/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-alex-prompter-1ea044",
@@ -2966,7 +3048,9 @@
     "source_prompt_words": 15,
     "listed": true,
     "skill": "styles/pm-sab8a-364a5a/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-itsolelehmann-e47532",
@@ -3023,7 +3107,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-jasonzhou1993-8595e0/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "شوريل سريع مدته 15 ثانية يربط الطباعة الحركية والرسوم البيانية ومنظومات الأشكال في قطعة واحدة متصلة تعمل كبطاقة تعريف لمصمم موشن.",
     "summary_en": "A 15-second self-promotional showreel that chains kinetic type, animated charts and shape systems into one continuous portfolio piece.",
     "keywords": [
@@ -3053,7 +3139,7 @@
   {
     "id": "pm-notdwd-7de38a",
     "name": "Frame by Frame launch video",
-    "name_ar": "ستينغ منتج مربع بأسلوب كينوت زجاجي",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -3089,38 +3175,16 @@
     "source_prompt_words": 1833,
     "listed": true,
     "skill": "styles/pm-notdwd-7de38a/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "ستينغ إطلاق مربع مدته 12 ثانية بروح عروض Apple: واجهة فاتحة، زجاج مصنفر، كاميرا لا تتوقف، وثلاث قطعات حادة مثبتة قبيل النبضة على إيقاع 124 BPM.",
-    "summary_en": "A 12-second square launch sting in a light keynote idiom: frosted-glass UI, a camera that never rests, speed-driven blur and three hard cuts pinned just ahead of the beat.",
-    "keywords": [
-      "product sting",
-      "launch video",
-      "frosted glass",
-      "keynote style",
-      "cursor animation",
-      "prompt box",
-      "blur ramp",
-      "whip tilt",
-      "124 bpm",
-      "ستينغ إطلاق",
-      "زجاج مصنفر",
-      "مؤشر الفأرة",
-      "واجهة فاتحة",
-      "مربع 1:1"
-    ],
-    "difficulty": 5,
-    "duration_s": 12,
-    "stack": [
-      "SVG",
-      "CSS",
-      "Web Audio"
-    ],
-    "brief": "styles/pm-notdwd-7de38a/BRIEF.md"
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-rossaxbt-3085b7",
     "name": "Ora 2 image model launch film",
-    "name_ar": "فيلم إطلاق نموذج صور بأسلوب مختبرات الذكاء",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -3153,32 +3217,10 @@
     "source_prompt_words": 1033,
     "listed": true,
     "skill": "styles/pm-rossaxbt-3085b7/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "فيلم إطلاق مربع مدته 22 ثانية: لوحة بيضاء، خط واحد، صور حقيقية، تعليق صوتي مُولَّد وترجمة تُكتب كلمةً بكلمة وقت نطقها، وعناصر تحكم زجاجية.",
-    "summary_en": "A 22-second square launch film in the AI-lab idiom: white canvas, one typeface, real imagery, generated voiceover with word-synced captions and liquid-glass controls.",
-    "keywords": [
-      "ai launch film",
-      "image model",
-      "liquid glass",
-      "word-synced captions",
-      "voiceover",
-      "elevenlabs",
-      "16th note cuts",
-      "sidechain ducking",
-      "canvas",
-      "فيلم إطلاق",
-      "ترجمة متزامنة",
-      "تعليق صوتي",
-      "زجاج سائل",
-      "نموذج صور"
-    ],
-    "difficulty": 5,
-    "duration_s": 22,
-    "stack": [
-      "HTML Canvas",
-      "Web Audio"
-    ],
-    "brief": "styles/pm-rossaxbt-3085b7/BRIEF.md"
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-nft-chen-5f8bb0",
@@ -3209,7 +3251,9 @@
     "source_prompt_words": 38,
     "listed": true,
     "skill": "styles/pm-nft-chen-5f8bb0/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-gorden-sun-041f56",
@@ -3270,7 +3314,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-ayushunleashed-ece3e3/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-kloss-xyz-15182a",
@@ -3302,7 +3348,9 @@
     "source_prompt_words": 61,
     "listed": true,
     "skill": "styles/pm-kloss-xyz-15182a/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-nikolajankovic-ce4ff4",
@@ -3363,7 +3411,9 @@
     "source_prompt_words": 18,
     "listed": true,
     "skill": "styles/pm-roundtablespace-d3a1be/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-brainextends-e19ac3",
@@ -3403,12 +3453,16 @@
     "source_prompt_words": 1210,
     "listed": true,
     "skill": "styles/pm-brainextends-e19ac3/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-jake11moran-a269c4",
     "name": "Animated agent session story",
-    "name_ar": null,
+    "name_ar": "حكاية جلسة الوكيل البرمجي",
     "origin": "PromptsMotion",
     "type": "Skill",
     "category": [
@@ -3433,12 +3487,37 @@
     "source_prompt_words": 31,
     "listed": true,
     "skill": "styles/pm-jake11moran-a269c4/SKILL.md",
-    "playbooks": []
+    "playbooks": [],
+    "summary_ar": "فيلم قصير مُلحَّن يحوّل سجل جلسة حقيقية بين مطوّر ووكيل برمجي إلى حكاية متحركة بشخصيتين وأحداث كود.",
+    "summary_en": "A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.",
+    "keywords": [
+      "claude code",
+      "session replay",
+      "agent story",
+      "hyperframes",
+      "terminal animation",
+      "code montage",
+      "character animation",
+      "قصة برمجية",
+      "وكيل ذكاء اصطناعي",
+      "شخصيات كرتونية",
+      "سجل الجلسة",
+      "موسيقى تصويرية",
+      "مونتاج كود"
+    ],
+    "difficulty": 4,
+    "duration_s": 45,
+    "stack": [
+      "CSS",
+      "GSAP",
+      "Web Audio"
+    ],
+    "brief": "styles/pm-jake11moran-a269c4/BRIEF.md"
   },
   {
     "id": "pm-ratheejaisal-1f4538",
     "name": "founder.page launch video",
-    "name_ar": null,
+    "name_ar": "فيديو إطلاق founder.page السريع",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -3462,7 +3541,34 @@
     "source_prompt_words": 24,
     "listed": true,
     "skill": "styles/pm-ratheejaisal-1f4538/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ],
+    "summary_ar": "إعلان إطلاق في 20 ثانية يستعرض الميزات الرئيسية لصفحة المؤسّس الشخصية بإيقاع لاهث وهوية بصرية ملتزمة بالعلامة.",
+    "summary_en": "A 20-second launch spot that races through the key features of a founder's personal page product at a breathless pace, locked to the brand system.",
+    "keywords": [
+      "launch video",
+      "product launch",
+      "founder profile",
+      "personal page",
+      "fast cuts",
+      "feature tour",
+      "saas promo",
+      "فيديو إطلاق",
+      "صفحة شخصية",
+      "جولة ميزات",
+      "إيقاع سريع",
+      "واجهة منتج",
+      "هوية العلامة"
+    ],
+    "difficulty": 3,
+    "duration_s": 20,
+    "stack": [
+      "Remotion",
+      "React",
+      "CSS"
+    ],
+    "brief": "styles/pm-ratheejaisal-1f4538/BRIEF.md"
   },
   {
     "id": "pm-sarut0bisasuke-cefa43",
@@ -3495,7 +3601,9 @@
     "source_prompt_words": 56,
     "listed": true,
     "skill": "styles/pm-sarut0bisasuke-cefa43/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
     "summary_ar": "فيلم شرح من لقطة واحدة متصلة يبني كوكتيل الوايت روشن مكوّنًا بعد مكوّن مع إظهار الكمية ومستوى الامتلاء في الكأس خلال 30 ثانية.",
     "summary_en": "A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.",
     "keywords": [
@@ -3634,7 +3742,7 @@
   {
     "id": "pm-deifosv-04e4d3",
     "name": "Tennis game launch video",
-    "name_ar": null,
+    "name_ar": "إطلاق لعبة تنس بإحصاءات حية",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -3660,12 +3768,41 @@
     "source_prompt_words": 36,
     "listed": true,
     "skill": "styles/pm-deifosv-04e4d3/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/phone.md"
+    ],
+    "summary_ar": "فيديو إطلاق عالي الطاقة للعبة تنس على الويب يعرض إحصاءات حية من الموقع واللعب على الحاسوب والهاتف وتبديل السمات على الإيقاع.",
+    "summary_en": "A high-energy launch film for a web tennis game, pulling live stats from the site and showing desktop and mobile play plus theme switching, all cut to music.",
+    "keywords": [
+      "tennis game",
+      "game launch",
+      "live stats",
+      "responsive play",
+      "theme switch",
+      "beat sync",
+      "suno prompt",
+      "sports motion",
+      "لعبة تنس",
+      "إطلاق لعبة",
+      "إحصاءات حية",
+      "هاتف وحاسوب",
+      "تبديل السمات",
+      "مزامنة إيقاع"
+    ],
+    "difficulty": 4,
+    "duration_s": 30,
+    "stack": [
+      "Remotion",
+      "React",
+      "Web Audio"
+    ],
+    "brief": "styles/pm-deifosv-04e4d3/BRIEF.md"
   },
   {
     "id": "pm-paulo-kombucha-96431c",
     "name": "Mascot referral program promo",
-    "name_ar": null,
+    "name_ar": "إعلان برنامج الإحالة بالتميمة",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -3689,7 +3826,34 @@
     "source_prompt_words": 13,
     "listed": true,
     "skill": "styles/pm-paulo-kombucha-96431c/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
+    "summary_ar": "إعلان موشن جرافيك في 15 ثانية تقوده تميمة العلامة لشرح برنامج الإحالة: ادعُ صديقًا، يربح كلاكما، والرسم البياني يثبت ذلك.",
+    "summary_en": "A 15-second mascot-led motion spot explaining a referral programme: invite a friend, both of you win, and a growing chart proves it.",
+    "keywords": [
+      "referral program",
+      "mascot animation",
+      "invite a friend",
+      "bar chart",
+      "share sheet",
+      "reward",
+      "brand promo",
+      "برنامج إحالة",
+      "تميمة متحركة",
+      "ادعُ صديقًا",
+      "رسم بياني",
+      "مكافأة",
+      "مشاركة الرابط"
+    ],
+    "difficulty": 2,
+    "duration_s": 15,
+    "stack": [
+      "Remotion",
+      "SVG",
+      "React"
+    ],
+    "brief": "styles/pm-paulo-kombucha-96431c/BRIEF.md"
   },
   {
     "id": "pm-jhylee95-e1152f",
@@ -3720,12 +3884,14 @@
     "source_prompt_words": 67,
     "listed": true,
     "skill": "styles/pm-jhylee95-e1152f/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-influencer-seo-ce8c33",
     "name": "fal motion design showreel",
-    "name_ar": null,
+    "name_ar": "ريل استعراضي لمنصة fal في 15 ثانية",
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -3750,7 +3916,35 @@
     "source_prompt_words": 32,
     "listed": true,
     "skill": "styles/pm-influencer-seo-ce8c33/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ],
+    "summary_ar": "شريط استعراضي كثيف في 15 ثانية بأسلوب السيرة الذاتية للمصمم، يمزج الطباعة الحركية برسوم السرعة وأصولًا مولَّدة عبر fal API.",
+    "summary_en": "A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.",
+    "keywords": [
+      "showreel",
+      "generative media",
+      "fal api",
+      "kinetic typography",
+      "bar race",
+      "latency chart",
+      "particle text",
+      "portfolio reel",
+      "شريط استعراضي",
+      "وسائط توليدية",
+      "طباعة حركية",
+      "سباق أعمدة",
+      "جسيمات",
+      "واجهة برمجية"
+    ],
+    "difficulty": 5,
+    "duration_s": 15,
+    "stack": [
+      "Remotion",
+      "React",
+      "WebGL"
+    ],
+    "brief": "styles/pm-influencer-seo-ce8c33/BRIEF.md"
   },
   {
     "id": "pm-henkvaness-0e06af",
@@ -3810,7 +4004,9 @@
     "source_prompt_words": 33,
     "listed": true,
     "skill": "styles/pm-bogdandragomir-35e024/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-0xfemyn-e114d3",
@@ -3839,7 +4035,9 @@
     "source_prompt_words": 12,
     "listed": true,
     "skill": "styles/pm-0xfemyn-e114d3/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-motiondsgnr-9dcfa6",
@@ -3869,7 +4067,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-motiondsgnr-9dcfa6/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-madhav-xo-f97f20",
@@ -3903,7 +4103,7 @@
   {
     "id": "pm-ik-builds-b8bdcf",
     "name": "Paper-style product launch film",
-    "name_ar": "فيلم إطلاق منتج بأسلوب الورق والقلم",
+    "name_ar": null,
     "origin": "PromptsMotion",
     "type": "Prompt",
     "category": [
@@ -3938,33 +4138,10 @@
     "source_prompt_words": 219,
     "listed": true,
     "skill": "styles/pm-ik-builds-b8bdcf/SKILL.md",
-    "playbooks": [],
-    "summary_ar": "فيلم إطلاق مدته 15 ثانية على خلفية ورقية مع ملاحظات تُرسم بالقلم، وكرة فيزيائية، وخط ضخم متحرك، وتبديل حاد بين الفاتح والداكن.",
-    "summary_en": "A 15s product launch on a paper canvas: marker notes draw themselves, a physics ball bounces, giant kinetic type and hard light/dark flips, one idea per 2s.",
-    "keywords": [
-      "paper canvas",
-      "marker notes",
-      "physics ball",
-      "kinetic type",
-      "dark mode flip",
-      "gsap",
-      "hyperframes",
-      "sfx hits",
-      "anton font",
-      "ورق",
-      "قلم تحبير",
-      "كرة فيزيائية",
-      "خط ضخم",
-      "إطلاق منتج"
-    ],
-    "difficulty": 4,
-    "duration_s": 15,
-    "stack": [
-      "GSAP",
-      "HTML Canvas",
-      "SVG"
-    ],
-    "brief": "styles/pm-ik-builds-b8bdcf/BRIEF.md"
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-0xevinho-3777d8",
@@ -4053,7 +4230,11 @@
     "source_prompt_words": 178,
     "listed": true,
     "skill": "styles/pm-aschapmann-131210/SKILL.md",
-    "playbooks": [],
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ],
     "summary_ar": "فيلم إطلاق مدته 30 ثانية مبني بالكامل بالكود في Remotion، يروي قصة السوق والألم والحل عبر أربع إلى خمس مشاهد وينتهي بشعار SVG متحرك.",
     "summary_en": "A 30-second, fully code-built Remotion launch film telling market, pain, fix and payoff in 4-5 scenes, ending on an animated SVG logo with tagline and URL.",
     "keywords": [
@@ -4110,7 +4291,9 @@
     "source_prompt_words": 11,
     "listed": true,
     "skill": "styles/pm-1stnoel-c20a89/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-elliot-garreffa-f334bc",
@@ -4140,7 +4323,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-elliot-garreffa-f334bc/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-wozu-co-242285",
@@ -4169,7 +4354,9 @@
     "source_prompt_words": 19,
     "listed": true,
     "skill": "styles/pm-wozu-co-242285/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-bizibeast-10f264",
@@ -4200,7 +4387,10 @@
     "source_prompt_words": 28,
     "listed": true,
     "skill": "styles/pm-bizibeast-10f264/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-demitiyageekzen-7770ad",
@@ -4290,7 +4480,10 @@
     "source_prompt_words": 21,
     "listed": true,
     "skill": "styles/pm-justincooperman-e7bbc4/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-levabashidze-2d713a",
@@ -4320,7 +4513,9 @@
     "source_prompt_words": 30,
     "listed": true,
     "skill": "styles/pm-levabashidze-2d713a/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-fionntobin-97b7af",
@@ -4350,7 +4545,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-fionntobin-97b7af/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-kyonax-on-tech-aabc1d",
@@ -4383,7 +4580,10 @@
     "source_prompt_words": 59,
     "listed": true,
     "skill": "styles/pm-kyonax-on-tech-aabc1d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-antonio-kodheli-490109",
@@ -4417,7 +4617,10 @@
     "source_prompt_words": 690,
     "listed": true,
     "skill": "styles/pm-antonio-kodheli-490109/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-kmasiff-cc72cb",
@@ -4448,7 +4651,10 @@
     "source_prompt_words": 47,
     "listed": true,
     "skill": "styles/pm-kmasiff-cc72cb/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-vanshwtfff-db0466",
@@ -4478,7 +4684,9 @@
     "source_prompt_words": 24,
     "listed": true,
     "skill": "styles/pm-vanshwtfff-db0466/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-ghinaiya-nirmal-5d8fec",
@@ -4534,7 +4742,9 @@
     "source_prompt_words": 9,
     "listed": true,
     "skill": "styles/pm-mehul4795-4a7007/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-palashbagchi11-0a4b6b",
@@ -4564,7 +4774,9 @@
     "source_prompt_words": 20,
     "listed": true,
     "skill": "styles/pm-palashbagchi11-0a4b6b/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-blueoctopusai-dd17bd",
@@ -4594,7 +4806,9 @@
     "source_prompt_words": 15,
     "listed": true,
     "skill": "styles/pm-blueoctopusai-dd17bd/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-thilina-a-891c09",
@@ -4624,7 +4838,10 @@
     "source_prompt_words": 29,
     "listed": true,
     "skill": "styles/pm-thilina-a-891c09/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-ibrahimwasim240-809370",
@@ -4655,7 +4872,9 @@
     "source_prompt_words": 21,
     "listed": true,
     "skill": "styles/pm-ibrahimwasim240-809370/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-nolkeeg-bf062e",
@@ -4684,7 +4903,9 @@
     "source_prompt_words": 90,
     "listed": true,
     "skill": "styles/pm-nolkeeg-bf062e/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-ai-baymax-0ef9dd",
@@ -4714,7 +4935,9 @@
     "source_prompt_words": 10,
     "listed": true,
     "skill": "styles/pm-ai-baymax-0ef9dd/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-leadnotifi-e83f94",
@@ -4745,7 +4968,10 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-leadnotifi-e83f94/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-shinskinakamoto-20190b",
@@ -4776,7 +5002,9 @@
     "source_prompt_words": 27,
     "listed": true,
     "skill": "styles/pm-shinskinakamoto-20190b/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-parkerrex-1a54fe",
@@ -4849,7 +5077,11 @@
     "source_prompt_words": 627,
     "listed": true,
     "skill": "styles/pm-techhalla-7acbc2/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-koldo2k-5cff87",
@@ -4881,7 +5113,10 @@
     "source_prompt_words": 277,
     "listed": true,
     "skill": "styles/pm-koldo2k-5cff87/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/phone.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-moguzbulbul-6311b6",
@@ -4940,7 +5175,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-shneural-2abdfa/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-gabrielbuzziv-4ff0c6",
@@ -4971,7 +5208,10 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-gabrielbuzziv-4ff0c6/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-thismacapital-dfba20",
@@ -5001,7 +5241,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-thismacapital-dfba20/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-emollick-8661a8",
@@ -5092,7 +5334,9 @@
     "source_prompt_words": 40,
     "listed": true,
     "skill": "styles/pm-anthonyriera-9b1b2a/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-linearuncle-5d2bae",
@@ -5153,7 +5397,10 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-robj3d3-b18fad/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-viktoroddy-98c1d8",
@@ -5182,7 +5429,9 @@
     "source_prompt_words": 18,
     "listed": true,
     "skill": "styles/pm-viktoroddy-98c1d8/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-tequilafunks-97f6c9",
@@ -5212,7 +5461,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-tequilafunks-97f6c9/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-axtonliu-0b861d",
@@ -5275,7 +5526,9 @@
     "source_prompt_words": 37,
     "listed": true,
     "skill": "styles/pm-ajith-io-4c248f/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-chatgptastra-0d95c7",
@@ -5305,7 +5558,9 @@
     "source_prompt_words": 15,
     "listed": true,
     "skill": "styles/pm-chatgptastra-0d95c7/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-0xnfrith-5be616",
@@ -5365,7 +5620,9 @@
     "source_prompt_words": 34,
     "listed": true,
     "skill": "styles/pm-ddryo-loos-300829/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-1littlecoder-9fef89",
@@ -5395,7 +5652,9 @@
     "source_prompt_words": 37,
     "listed": true,
     "skill": "styles/pm-1littlecoder-9fef89/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-pankajkumar-dev-0bee87",
@@ -5452,7 +5711,9 @@
     "source_prompt_words": 17,
     "listed": true,
     "skill": "styles/pm-arjunsh1607-93005d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-tankazunori0914-0fc886",
@@ -5482,7 +5743,9 @@
     "source_prompt_words": 24,
     "listed": true,
     "skill": "styles/pm-tankazunori0914-0fc886/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-maxalexweber-67688b",
@@ -5511,7 +5774,9 @@
     "source_prompt_words": 7,
     "listed": true,
     "skill": "styles/pm-maxalexweber-67688b/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-hbcoop-de365c",
@@ -5598,7 +5863,9 @@
     "source_prompt_words": 32,
     "listed": true,
     "skill": "styles/pm-sudeepsd-1a3485/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-gigabit-million-16b3a0",
@@ -5627,7 +5894,9 @@
     "source_prompt_words": 34,
     "listed": true,
     "skill": "styles/pm-gigabit-million-16b3a0/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-sachaarbonel-8f14f4",
@@ -5657,7 +5926,10 @@
     "source_prompt_words": 17,
     "listed": true,
     "skill": "styles/pm-sachaarbonel-8f14f4/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-agonaliu-466a8f",
@@ -5688,7 +5960,10 @@
     "source_prompt_words": 28,
     "listed": true,
     "skill": "styles/pm-agonaliu-466a8f/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-ndhabarde11-f155b4",
@@ -5718,7 +5993,9 @@
     "source_prompt_words": 29,
     "listed": true,
     "skill": "styles/pm-ndhabarde11-f155b4/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-en-ra-81c6dd",
@@ -5749,7 +6026,10 @@
     "source_prompt_words": 33,
     "listed": true,
     "skill": "styles/pm-en-ra-81c6dd/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-misbahsy-80eaec",
@@ -5779,7 +6059,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-misbahsy-80eaec/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-astrodevil-3f2054",
@@ -5810,7 +6092,10 @@
     "source_prompt_words": 38,
     "listed": true,
     "skill": "styles/pm-astrodevil-3f2054/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-buildfastwithai-ed9447",
@@ -5876,7 +6161,11 @@
     "source_prompt_words": 173,
     "listed": true,
     "skill": "styles/pm-wani-shola-16ca7a/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/phone.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-chrisjdimarco-f068db",
@@ -5934,7 +6223,9 @@
     "source_prompt_words": 11,
     "listed": true,
     "skill": "styles/pm-marklaunches-3b9492/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-ryzoft-4f85bd",
@@ -5994,7 +6285,10 @@
     "source_prompt_words": 30,
     "listed": true,
     "skill": "styles/pm-adamdesgns-478d6d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-buildfastwithai-53234e",
@@ -6140,7 +6434,9 @@
     "source_prompt_words": 37,
     "listed": true,
     "skill": "styles/pm-henkpoley-3d3407/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-miskinho-443898",
@@ -6171,7 +6467,10 @@
     "source_prompt_words": 25,
     "listed": true,
     "skill": "styles/pm-miskinho-443898/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-francoxavier33-d2dfd2",
@@ -6200,7 +6499,9 @@
     "source_prompt_words": 7,
     "listed": true,
     "skill": "styles/pm-francoxavier33-d2dfd2/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-loicrambo-ad6830",
@@ -6230,7 +6531,9 @@
     "source_prompt_words": 71,
     "listed": true,
     "skill": "styles/pm-loicrambo-ad6830/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-oliahmed205-3e31c4",
@@ -6260,7 +6563,10 @@
     "source_prompt_words": 21,
     "listed": true,
     "skill": "styles/pm-oliahmed205-3e31c4/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-pluginplay-3d4006",
@@ -6321,7 +6627,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-3xtihor-0f6911/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-johnsavage-ai-b091c0",
@@ -6352,7 +6660,9 @@
     "source_prompt_words": 29,
     "listed": true,
     "skill": "styles/pm-johnsavage-ai-b091c0/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-safarkhanshuvo-ffd52d",
@@ -6382,7 +6692,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-safarkhanshuvo-ffd52d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-x4b47x-9cc84f",
@@ -6441,7 +6753,9 @@
     "source_prompt_words": 11,
     "listed": true,
     "skill": "styles/pm-apoorvjain25-d24184/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-amitsingha89-150378",
@@ -6500,7 +6814,9 @@
     "source_prompt_words": 10,
     "listed": true,
     "skill": "styles/pm-jazzen-chen-4542ae/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-souravbhar871-61f424",
@@ -6530,7 +6846,9 @@
     "source_prompt_words": 37,
     "listed": true,
     "skill": "styles/pm-souravbhar871-61f424/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-anas0ra-e57aea",
@@ -6586,7 +6904,9 @@
     "source_prompt_words": 7,
     "listed": true,
     "skill": "styles/pm-rneayan-474bcf/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-umangratani-57f86a",
@@ -6617,7 +6937,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-umangratani-57f86a/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-charlesmendez-73b6e4",
@@ -6647,7 +6969,9 @@
     "source_prompt_words": 53,
     "listed": true,
     "skill": "styles/pm-charlesmendez-73b6e4/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-kentcdodds-6fa8cf",
@@ -6677,7 +7001,9 @@
     "source_prompt_words": 58,
     "listed": true,
     "skill": "styles/pm-kentcdodds-6fa8cf/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-konstantinsaifo-96fc89",
@@ -6764,7 +7090,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-ajith-io-b5626e/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-lexnlin-038035",
@@ -6797,7 +7125,9 @@
     "source_prompt_words": 168,
     "listed": true,
     "skill": "styles/pm-lexnlin-038035/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-ajith-io-c52e09",
@@ -6828,7 +7158,10 @@
     "source_prompt_words": 27,
     "listed": true,
     "skill": "styles/pm-ajith-io-c52e09/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-lexnlin-6161a6",
@@ -6859,7 +7192,9 @@
     "source_prompt_words": 27,
     "listed": true,
     "skill": "styles/pm-lexnlin-6161a6/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-tdinh-me-815acb",
@@ -6946,7 +7281,9 @@
     "source_prompt_words": 42,
     "listed": true,
     "skill": "styles/pm-jacksonfall-54b2ac/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-ho-ba-f3f0e9",
@@ -6978,7 +7315,10 @@
     "source_prompt_words": 96,
     "listed": true,
     "skill": "styles/pm-ho-ba-f3f0e9/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-ismailfahmi-557268",
@@ -7008,7 +7348,9 @@
     "source_prompt_words": 27,
     "listed": true,
     "skill": "styles/pm-ismailfahmi-557268/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-sudo-kiran-49176d",
@@ -7067,7 +7409,9 @@
     "source_prompt_words": 30,
     "listed": true,
     "skill": "styles/pm-gizakdag-cf4ae6/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-polydao-7a572b",
@@ -7098,7 +7442,9 @@
     "source_prompt_words": 37,
     "listed": true,
     "skill": "styles/pm-polydao-7a572b/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-ultimaxbt-2ddf1e",
@@ -7140,7 +7486,12 @@
     "source_prompt_words": 804,
     "listed": true,
     "skill": "styles/pm-ultimaxbt-2ddf1e/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/phone.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-math-files-39c9d0",
@@ -7170,7 +7521,9 @@
     "source_prompt_words": 32,
     "listed": true,
     "skill": "styles/pm-math-files-39c9d0/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-eyishazyer-af035b",
@@ -7200,7 +7553,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-eyishazyer-af035b/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-sayan-shanky-f850d8",
@@ -7229,7 +7584,9 @@
     "source_prompt_words": 10,
     "listed": true,
     "skill": "styles/pm-sayan-shanky-f850d8/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-sudo-kiran-b055de",
@@ -7260,7 +7617,10 @@
     "source_prompt_words": 23,
     "listed": true,
     "skill": "styles/pm-sudo-kiran-b055de/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-codestackr-c071bf",
@@ -7290,7 +7650,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-codestackr-c071bf/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-prasad-pilla-2c0cba",
@@ -7319,7 +7681,9 @@
     "source_prompt_words": 22,
     "listed": true,
     "skill": "styles/pm-prasad-pilla-2c0cba/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-ezshine-c90d73",
@@ -7349,7 +7713,9 @@
     "source_prompt_words": 25,
     "listed": true,
     "skill": "styles/pm-ezshine-c90d73/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-aistocksavvy-3fb9f5",
@@ -7379,7 +7745,10 @@
     "source_prompt_words": 43,
     "listed": true,
     "skill": "styles/pm-aistocksavvy-3fb9f5/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-triglyceee-bd5b08",
@@ -7435,7 +7804,9 @@
     "source_prompt_words": 18,
     "listed": true,
     "skill": "styles/pm-visheshbaghell-3aba37/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-sudo-kiran-6609ed",
@@ -7467,7 +7838,10 @@
     "source_prompt_words": 64,
     "listed": true,
     "skill": "styles/pm-sudo-kiran-6609ed/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-gdgtify-287ddf",
@@ -7509,7 +7883,11 @@
     "source_prompt_words": 648,
     "listed": true,
     "skill": "styles/pm-gdgtify-287ddf/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/phone.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-daniel-haida-8691d4",
@@ -7553,7 +7931,11 @@
     "source_prompt_words": 2082,
     "listed": true,
     "skill": "styles/pm-daniel-haida-8691d4/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md",
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-topi-003-9ca6b5",
@@ -7583,7 +7965,9 @@
     "source_prompt_words": 28,
     "listed": true,
     "skill": "styles/pm-topi-003-9ca6b5/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-jesscaroline7-1ff7cb",
@@ -7614,7 +7998,10 @@
     "source_prompt_words": 25,
     "listed": true,
     "skill": "styles/pm-jesscaroline7-1ff7cb/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-reyzostyle-b55864",
@@ -7645,7 +8032,10 @@
     "source_prompt_words": 29,
     "listed": true,
     "skill": "styles/pm-reyzostyle-b55864/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-hoyoyoda-3a5c08",
@@ -7730,7 +8120,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-manuelogomigo-f33ca9/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-jayscambler-3f8889",
@@ -7759,7 +8151,9 @@
     "source_prompt_words": 25,
     "listed": true,
     "skill": "styles/pm-jayscambler-3f8889/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-web3wesley-7bb108",
@@ -7789,7 +8183,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-web3wesley-7bb108/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-kamstudiolabs-c9bb28",
@@ -7848,7 +8244,9 @@
     "source_prompt_words": 10,
     "listed": true,
     "skill": "styles/pm-andginja-333d32/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-allforbigfire-86ff3c",
@@ -7907,7 +8305,9 @@
     "source_prompt_words": 36,
     "listed": true,
     "skill": "styles/pm-sudiyasa-f48ac9/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-m1n9-k7-ff9ab9",
@@ -7938,7 +8338,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-m1n9-k7-ff9ab9/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-sudo-kiran-4f8b59",
@@ -7969,7 +8371,10 @@
     "source_prompt_words": 23,
     "listed": true,
     "skill": "styles/pm-sudo-kiran-4f8b59/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-fractadev-149adc",
@@ -7999,7 +8404,10 @@
     "source_prompt_words": 35,
     "listed": true,
     "skill": "styles/pm-fractadev-149adc/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-zaqailo-212ad3",
@@ -8029,7 +8437,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-zaqailo-212ad3/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-itsuki-dev-10942d",
@@ -8059,7 +8469,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-itsuki-dev-10942d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-madebyjmayala-b9204d",
@@ -8088,7 +8500,9 @@
     "source_prompt_words": 23,
     "listed": true,
     "skill": "styles/pm-madebyjmayala-b9204d/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-aisongman-71ffac",
@@ -8145,7 +8559,10 @@
     "source_prompt_words": 17,
     "listed": true,
     "skill": "styles/pm-rammanq-f5a90f/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-amol909s-27533e",
@@ -8176,7 +8593,10 @@
     "source_prompt_words": 43,
     "listed": true,
     "skill": "styles/pm-amol909s-27533e/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-leonkohli-6dc01b",
@@ -8207,7 +8627,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-leonkohli-6dc01b/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-sahildesigner23-ee3155",
@@ -8237,7 +8659,9 @@
     "source_prompt_words": 26,
     "listed": true,
     "skill": "styles/pm-sahildesigner23-ee3155/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-kamstudiolabs-447565",
@@ -8295,7 +8719,9 @@
     "source_prompt_words": 13,
     "listed": true,
     "skill": "styles/pm-deebeeeff-50fcd0/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-blushpetal795-0c85c2",
@@ -8325,7 +8751,9 @@
     "source_prompt_words": 32,
     "listed": true,
     "skill": "styles/pm-blushpetal795-0c85c2/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-lester-tyy-f897f7",
@@ -8356,7 +8784,9 @@
     "source_prompt_words": 14,
     "listed": true,
     "skill": "styles/pm-lester-tyy-f897f7/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-spearwtf-3c1fd1",
@@ -8413,7 +8843,10 @@
     "source_prompt_words": 41,
     "listed": true,
     "skill": "styles/pm-iammxfschr-d68f90/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md",
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-rneayan-ea6129",
@@ -8442,7 +8875,9 @@
     "source_prompt_words": 8,
     "listed": true,
     "skill": "styles/pm-rneayan-ea6129/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   },
   {
     "id": "pm-anilraok-eff262",
@@ -8475,7 +8910,9 @@
     "source_prompt_words": 56,
     "listed": true,
     "skill": "styles/pm-anilraok-eff262/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/product-ui.md"
+    ]
   },
   {
     "id": "pm-gonzalomacagno-2de1a9",
@@ -8540,7 +8977,9 @@
     "source_prompt_words": 548,
     "listed": true,
     "skill": "styles/pm-theparuchh-6e08c3/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/photos.md"
+    ]
   },
   {
     "id": "pm-gizakdag-b8c59e",
@@ -8570,6 +9009,8 @@
     "source_prompt_words": 30,
     "listed": true,
     "skill": "styles/pm-gizakdag-b8c59e/SKILL.md",
-    "playbooks": []
+    "playbooks": [
+      "playbooks/charts.md"
+    ]
   }
 ]

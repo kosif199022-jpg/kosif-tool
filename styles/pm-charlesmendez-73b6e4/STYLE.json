@@ -26,5 +26,7 @@
   "source_prompt_words": 53,
   "listed": true,
   "skill": "styles/pm-charlesmendez-73b6e4/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

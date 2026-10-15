@@ -1,7 +1,7 @@
 {
   "id": "pm-ratheejaisal-1f4538",
   "name": "founder.page launch video",
-  "name_ar": null,
+  "name_ar": "فيديو إطلاق founder.page السريع",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,32 @@
   "source_prompt_words": 24,
   "listed": true,
   "skill": "styles/pm-ratheejaisal-1f4538/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "إعلان إطلاق في 20 ثانية يستعرض الميزات الرئيسية لصفحة المؤسّس الشخصية بإيقاع لاهث وهوية بصرية ملتزمة بالعلامة.",
+  "summary_en": "A 20-second launch spot that races through the key features of a founder's personal page product at a breathless pace, locked to the brand system.",
+  "keywords": [
+    "launch video",
+    "product launch",
+    "founder profile",
+    "personal page",
+    "fast cuts",
+    "feature tour",
+    "saas promo",
+    "فيديو إطلاق",
+    "صفحة شخصية",
+    "جولة ميزات",
+    "إيقاع سريع",
+    "واجهة منتج",
+    "هوية العلامة"
+  ],
+  "difficulty": 3,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-ratheejaisal-1f4538/BRIEF.md"
 }

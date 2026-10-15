@@ -25,7 +25,9 @@
   "source_prompt_words": 19,
   "listed": true,
   "skill": "styles/pm-listudio-820c7b/SKILL.md",
-  "playbooks": [],
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
   "summary_ar": "فيديو إطلاق 20 ثانية لمنتج GenVizu يصلح كخلفية Hero ومادة تسويقية: وصف نصي يتحول إلى رسوم بيانية داخل واجهة المنتج ثم يدور بحلقة نظيفة.",
   "summary_en": "A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.",
   "keywords": [

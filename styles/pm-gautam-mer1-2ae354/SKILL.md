@@ -1,9 +1,9 @@
 ---
 name: pm-gautam-mer1-2ae354
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30 s vertical, Apple-calm product film for a caption app: one floating phone, sparse large type, and captions that land word by word in sync with speech.
 ---
 
-# KOSIF TOOL — Matra caption app promo
+# KOSIF TOOL — Matra caption app promo / ترويج تطبيق Matra للترجمة النصية بأسلوب Apple
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/gautam-mer1-2ae354
@@ -17,9 +17,16 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو عمودي مدته 30 ثانية بهدوء إعلانات Apple يقدّم تطبيق ترجمة نصية للفيديو: هاتف واحد عائم، نص كبير شحيح، وكلمات تظهر متزامنة مع الكلام.
+
+A 30 s vertical, Apple-calm product film for a caption app: one floating phone, sparse large type, and captions that land word by word in sync with speech.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (30 s), aspect 9:16, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.
-- (no category playbook yet)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
