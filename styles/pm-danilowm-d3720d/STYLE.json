@@ -1,7 +1,7 @@
 {
   "id": "pm-danilowm-d3720d",
   "name": "Motion designer showreel",
-  "name_ar": null,
+  "name_ar": "ريل المصمم المبني من سياق المشروع",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -26,5 +26,30 @@
   "source_prompt_words": 33,
   "listed": true,
   "skill": "styles/pm-danilowm-d3720d/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "ريل 15 ثانية يستمد محتواه من ملفات المشروع نفسه: شجرة المجلدات تصبح رسمًا بيانيًا، وأسماء المكوّنات تصبح تايبوغرافي حركيًا.",
+  "summary_en": "A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.",
+  "keywords": [
+    "showreel",
+    "project context",
+    "terminal typing",
+    "folder tree chart",
+    "commit timeline",
+    "parallax lanes",
+    "monogram",
+    "kinetic type",
+    "ريل مصمم",
+    "سياق المشروع",
+    "خط زمني",
+    "رسم أعمدة",
+    "طباعة حركية"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-danilowm-d3720d/BRIEF.md"
 }

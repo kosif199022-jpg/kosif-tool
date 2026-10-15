@@ -1,7 +1,7 @@
 {
   "id": "pm-mandelduck-95fd08",
   "name": "Starry Night cat-spotting game",
-  "name_ar": null,
+  "name_ar": "ليلة النجوم: نزهة ثلاثية الأبعاد لاصطياد القطط",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,31 @@
   "source_prompt_words": 28,
   "listed": true,
   "skill": "styles/pm-mandelduck-95fd08/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "مشهد ثلاثي الأبعاد قابل للمشي داخل قرية لوحة ليلة النجوم بلمسة فرشاة متحركة، حيث يبحث اللاعب عن قطط مختبئة بين البيوت وشجرة السرو.",
+  "summary_en": "A walkable 3D scene inside the village of Starry Night rendered in moving brush strokes, where the player hunts for cats hidden among the houses and the cypress.",
+  "keywords": [
+    "3d game",
+    "van gogh",
+    "painterly shader",
+    "brush stroke",
+    "ضربات فرشاة",
+    "لعبة استكشاف",
+    "first person",
+    "hidden object",
+    "قطط",
+    "شخصيات",
+    "curl noise",
+    "swirl sky",
+    "سماء دوامات",
+    "impasto"
+  ],
+  "difficulty": 5,
+  "duration_s": 30,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-mandelduck-95fd08/BRIEF.md"
 }

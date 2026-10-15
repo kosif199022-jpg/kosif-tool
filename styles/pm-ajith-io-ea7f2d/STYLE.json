@@ -1,7 +1,7 @@
 {
   "id": "pm-ajith-io-ea7f2d",
   "name": "Distilbook motion showreel",
-  "name_ar": null,
+  "name_ar": "ديستيل بوك: ريل ثلاثين ثانية على شبكة قاسية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -26,5 +26,32 @@
   "source_prompt_words": 56,
   "listed": true,
   "skill": "styles/pm-ajith-io-ea7f2d/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "ريل منتج بارد الإيقاع مدته 30 ثانية يعرض Distilbook في ثلاث حركات: صدمة رقمية، جولة بطاقات، ثم برهان بالأرقام، على شبكة ثابتة بلون تمييز واحد.",
+  "summary_en": "A cold, tight 30-second product reel presenting Distilbook in three acts: a numeric hook, a card tour, then proof by numbers, on a persistent grid with one accent colour.",
+  "keywords": [
+    "product reel",
+    "grid system",
+    "hard cut",
+    "شبكة",
+    "قطع على الإيقاع",
+    "book summary",
+    "تلخيص",
+    "monospace",
+    "stat tiles",
+    "sparkline",
+    "ريل منتج",
+    "نص حركي",
+    "counter",
+    "distilbook",
+    "tracking animation"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-ajith-io-ea7f2d/BRIEF.md"
 }

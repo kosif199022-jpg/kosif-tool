@@ -1,7 +1,7 @@
 {
   "id": "pm-sarut0bisasuke-cefa43",
   "name": "White Russian recipe animation",
-  "name_ar": null,
+  "name_ar": "وصفة الوايت روشن من الكأس الفارغة إلى الكوكتيل",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,31 @@
   "source_prompt_words": 56,
   "listed": true,
   "skill": "styles/pm-sarut0bisasuke-cefa43/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "فيلم شرح من لقطة واحدة متصلة يبني كوكتيل الوايت روشن مكوّنًا بعد مكوّن مع إظهار الكمية ومستوى الامتلاء في الكأس خلال 30 ثانية.",
+  "summary_en": "A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.",
+  "keywords": [
+    "كوكتيل",
+    "وصفة متحركة",
+    "سكب السوائل",
+    "فودكا",
+    "قشدة",
+    "ليكيور قهوة",
+    "شرح",
+    "cocktail recipe",
+    "liquid animation",
+    "pour",
+    "measurements",
+    "explainer",
+    "canvas",
+    "bar"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "HTML Canvas",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-sarut0bisasuke-cefa43/BRIEF.md"
 }

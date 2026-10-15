@@ -1,7 +1,7 @@
 {
   "id": "pm-listudio-820c7b",
   "name": "GenVizu product launch",
-  "name_ar": null,
+  "name_ar": "إطلاق GenVizu: من الوصف إلى التصوّر",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,31 @@
   "source_prompt_words": 19,
   "listed": true,
   "skill": "styles/pm-listudio-820c7b/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "فيديو إطلاق 20 ثانية لمنتج GenVizu يصلح كخلفية Hero ومادة تسويقية: وصف نصي يتحول إلى رسوم بيانية داخل واجهة المنتج ثم يدور بحلقة نظيفة.",
+  "summary_en": "A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.",
+  "keywords": [
+    "product launch",
+    "hero video",
+    "seamless loop",
+    "prompt to chart",
+    "path morph",
+    "product ui",
+    "gtm asset",
+    "data visualisation",
+    "إطلاق منتج",
+    "فيديو hero",
+    "حلقة متصلة",
+    "تحويل رسوم",
+    "واجهة منتج",
+    "تصوّر بيانات"
+  ],
+  "difficulty": 4,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-listudio-820c7b/BRIEF.md"
 }

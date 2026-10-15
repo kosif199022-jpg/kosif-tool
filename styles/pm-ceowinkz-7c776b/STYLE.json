@@ -1,7 +1,7 @@
 {
   "id": "pm-ceowinkz-7c776b",
   "name": "Amazon wholesale pitch video",
-  "name_ar": null,
+  "name_ar": "عرض Winkz: لماذا نبيع منتجاتكم على أمازون",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,31 @@
   "source_prompt_words": 30,
   "listed": true,
   "skill": "styles/pm-ceowinkz-7c776b/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "فيديو عرض 15 ثانية من شركة Winkz Enterprises لعلامة تجارية: مسار توريد متحرك ورسوم مبيعات وأدلة ثقة تقنع العلامة بمنحها حق البيع.",
+  "summary_en": "A 15-second B2B pitch from Winkz Enterprises to a brand: an animated supply route, sales charts and trust proofs that argue for the right to sell its products.",
+  "keywords": [
+    "b2b pitch",
+    "wholesale",
+    "supply route",
+    "line chart",
+    "proof tiles",
+    "star rating meter",
+    "handshake",
+    "corporate motion",
+    "عرض تقديمي",
+    "بيع بالجملة",
+    "مسار توريد",
+    "رسم خطي",
+    "أدلة ثقة",
+    "شراكة"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-ceowinkz-7c776b/BRIEF.md"
 }

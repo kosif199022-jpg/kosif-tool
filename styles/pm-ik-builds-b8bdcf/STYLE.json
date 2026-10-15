@@ -1,7 +1,7 @@
 {
   "id": "pm-ik-builds-b8bdcf",
   "name": "Paper-style product launch film",
-  "name_ar": null,
+  "name_ar": "فيلم إطلاق منتج بأسلوب الورق والقلم",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -36,5 +36,31 @@
   "source_prompt_words": 219,
   "listed": true,
   "skill": "styles/pm-ik-builds-b8bdcf/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "فيلم إطلاق مدته 15 ثانية على خلفية ورقية مع ملاحظات تُرسم بالقلم، وكرة فيزيائية، وخط ضخم متحرك، وتبديل حاد بين الفاتح والداكن.",
+  "summary_en": "A 15s product launch on a paper canvas: marker notes draw themselves, a physics ball bounces, giant kinetic type and hard light/dark flips, one idea per 2s.",
+  "keywords": [
+    "paper canvas",
+    "marker notes",
+    "physics ball",
+    "kinetic type",
+    "dark mode flip",
+    "gsap",
+    "hyperframes",
+    "sfx hits",
+    "anton font",
+    "ورق",
+    "قلم تحبير",
+    "كرة فيزيائية",
+    "خط ضخم",
+    "إطلاق منتج"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "GSAP",
+    "HTML Canvas",
+    "SVG"
+  ],
+  "brief": "styles/pm-ik-builds-b8bdcf/BRIEF.md"
 }

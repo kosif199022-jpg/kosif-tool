@@ -1,7 +1,7 @@
 {
   "id": "pm-tak3sh8-be5012",
   "name": "Replica symmetry breaking whiteboard",
-  "name_ar": null,
+  "name_ar": "سبورة مرسومة باليد تشرح كسر تناظر النسخ في نموذج SK",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,31 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-tak3sh8-be5012/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "شرح بأسلوب السبورة البيضاء، تُرسم فيه الخطوط أمام المشاهد مع تعليق صوتي، لفكرة كسر تناظر النسخ في نموذج شيرينغتون-كيركباتريك للزجاج المغزلي.",
+  "summary_en": "A narrated whiteboard explainer where strokes are drawn live, walking from a frustrated spin glass to Parisi's hierarchical overlap matrix.",
+  "keywords": [
+    "زجاج مغزلي",
+    "فيزياء إحصائية",
+    "شرح علمي",
+    "رسم يدوي",
+    "تعليق صوتي",
+    "مصفوفة التداخل",
+    "باريزي",
+    "spin glass",
+    "parisi",
+    "overlap matrix",
+    "whiteboard",
+    "hand drawn",
+    "narration",
+    "physics explainer"
+  ],
+  "difficulty": 4,
+  "duration_s": 60,
+  "stack": [
+    "SVG",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-tak3sh8-be5012/BRIEF.md"
 }

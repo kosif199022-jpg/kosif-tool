@@ -1,7 +1,7 @@
 {
   "id": "pm-reflex-cloud-72ffe5",
   "name": "Reflex brand motion reel",
-  "name_ar": null,
+  "name_ar": "ريفلكس: ريل رد الفعل في خمس عشرة ثانية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,31 @@
   "source_prompt_words": 95,
   "listed": true,
   "skill": "styles/pm-reflex-cloud-72ffe5/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "ريل علامة لشركة reflex. inc في 15 ثانية مقطوع على الإيقاع: خطّاف في الثانية الأولى، ثم حروف وأشكال وكاميرا وتحولات لون، وإطار ختامي نظيف.",
+  "summary_en": "A 15-second brand reel for reflex. inc cut to music: a one-second hook, then typography, shape play, camera whips and colour flips, landing on a clean final frame.",
+  "keywords": [
+    "brand reel",
+    "ريل علامة",
+    "beat sync",
+    "مزامنة الإيقاع",
+    "whip pan",
+    "حركة خاطفة",
+    "dot grid",
+    "شبكة نقاط",
+    "hue flip",
+    "انقلاب لوني",
+    "hook",
+    "reaction time",
+    "خطّاف افتتاحي",
+    "kinetic type"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-reflex-cloud-72ffe5/BRIEF.md"
 }

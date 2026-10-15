@@ -1,7 +1,7 @@
 {
   "id": "pm-samaote-5e2fc2",
   "name": "Synced lyrics motion video",
-  "name_ar": null,
+  "name_ar": "فيديو كلمات أغنية متزامن مع الصوت",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -27,5 +27,29 @@
   "source_prompt_words": 38,
   "listed": true,
   "skill": "styles/pm-samaote-5e2fc2/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "كلمات الأغنية تظهر على نبرة المغني بالضبط بينما تتنفس الخلفية مع الإيقاع، بأسلوب يليق بعرض أعمال مصمم موشن.",
+  "summary_en": "Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.",
+  "keywords": [
+    "lyrics video",
+    "kinetic typography",
+    "beat sync",
+    "word timing",
+    "showreel",
+    "كلمات أغنية",
+    "تزامن صوتي",
+    "طباعة حركية",
+    "إيقاع",
+    "waveform",
+    "remotion",
+    "موجة صوتية"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "Web Audio",
+    "SVG"
+  ],
+  "brief": "styles/pm-samaote-5e2fc2/BRIEF.md"
 }

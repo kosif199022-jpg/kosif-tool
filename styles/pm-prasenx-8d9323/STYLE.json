@@ -1,7 +1,7 @@
 {
   "id": "pm-prasenx-8d9323",
   "name": "Motion showreel with a fully code-synthesized soundtrack",
-  "name_ar": null,
+  "name_ar": "عرض أعمال بموسيقى مُركّبة بالكود بالكامل",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -28,5 +28,30 @@
   "source_prompt_words": 71,
   "listed": true,
   "skill": "styles/pm-prasenx-8d9323/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "خمس عشرة ثانية يقود فيها جدول نوتات واحد الصوت والصورة معًا: كل ضربة طبلة نبضة، وكل قطع يقع على الإيقاع حتمًا.",
+  "summary_en": "Fifteen seconds where one note table drives both audio and picture: each kick is a pulse, each cut sits on the grid, and the soundtrack is pure code.",
+  "keywords": [
+    "procedural audio",
+    "code synth",
+    "beat grid",
+    "showreel",
+    "oscillators",
+    "audio reactive",
+    "60fps",
+    "صوت مولّد بالكود",
+    "مذبذبات",
+    "شبكة إيقاع",
+    "عرض أعمال",
+    "تزامن حتمي",
+    "web audio"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "Web Audio",
+    "SVG"
+  ],
+  "brief": "styles/pm-prasenx-8d9323/BRIEF.md"
 }

@@ -1,7 +1,7 @@
 {
   "id": "pm-utopyaszx-1b2f94",
   "name": "Bold Pilot SEO promo",
-  "name_ar": null,
+  "name_ar": "بولد بايلوت: تسلّق الترتيب إلى المركز الأول",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -26,5 +26,30 @@
   "source_prompt_words": 29,
   "listed": true,
   "skill": "styles/pm-utopyaszx-1b2f94/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "برومو 15 ثانية لعلامة Bold Pilot يحوّل تحسين محركات البحث إلى رحلة طيران: صف نتيجة يتسلق من المركز 38 إلى الأول ومخطط زيارات يقلع.",
+  "summary_en": "A 15-second Bold Pilot promo that turns SEO into a flight: a result row climbs from rank 38 to 1, a traffic curve takes off, and keyword chips dock in formation.",
+  "keywords": [
+    "seo",
+    "تحسين محركات البحث",
+    "ترتيب البحث",
+    "ranking climb",
+    "traffic chart",
+    "keyword chips",
+    "مخطط زيارات",
+    "كلمات مفتاحية",
+    "brand promo",
+    "برومو علامة",
+    "contrail",
+    "search results animation",
+    "سهم طائرة"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-utopyaszx-1b2f94/BRIEF.md"
 }

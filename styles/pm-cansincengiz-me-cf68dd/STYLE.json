@@ -1,7 +1,7 @@
 {
   "id": "pm-cansincengiz-me-cf68dd",
   "name": "Lidlezz app promo",
-  "name_ar": null,
+  "name_ar": "برومو تطبيق Lidlezz لخلاصة X المربعة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,30 @@
   "source_prompt_words": 37,
   "listed": true,
   "skill": "styles/pm-cansincengiz-me-cf68dd/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "برومو مربع 15 ثانية لتطبيق Lidlezz مصمم للتشغيل الصامت في خلاصة X: هاتف واحد يعرض ثلاث ميزات ودعوة واضحة للتنزيل.",
+  "summary_en": "A 15-second square promo for the Lidlezz app, built for silent autoplay in the X feed: one phone, three feature callouts and a clear CTA.",
+  "keywords": [
+    "app promo",
+    "phone mockup",
+    "feature callouts",
+    "skeleton loading",
+    "square video",
+    "x feed",
+    "silent autoplay",
+    "cta",
+    "برومو تطبيق",
+    "هاتف",
+    "واجهة مستخدم",
+    "فيديو مربع",
+    "دعوة لاتخاذ إجراء"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-cansincengiz-me-cf68dd/BRIEF.md"
 }

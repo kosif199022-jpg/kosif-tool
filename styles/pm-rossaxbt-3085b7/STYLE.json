@@ -1,7 +1,7 @@
 {
   "id": "pm-rossaxbt-3085b7",
   "name": "Ora 2 image model launch film",
-  "name_ar": null,
+  "name_ar": "فيلم إطلاق نموذج صور بأسلوب مختبرات الذكاء",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -34,5 +34,30 @@
   "source_prompt_words": 1033,
   "listed": true,
   "skill": "styles/pm-rossaxbt-3085b7/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "فيلم إطلاق مربع مدته 22 ثانية: لوحة بيضاء، خط واحد، صور حقيقية، تعليق صوتي مُولَّد وترجمة تُكتب كلمةً بكلمة وقت نطقها، وعناصر تحكم زجاجية.",
+  "summary_en": "A 22-second square launch film in the AI-lab idiom: white canvas, one typeface, real imagery, generated voiceover with word-synced captions and liquid-glass controls.",
+  "keywords": [
+    "ai launch film",
+    "image model",
+    "liquid glass",
+    "word-synced captions",
+    "voiceover",
+    "elevenlabs",
+    "16th note cuts",
+    "sidechain ducking",
+    "canvas",
+    "فيلم إطلاق",
+    "ترجمة متزامنة",
+    "تعليق صوتي",
+    "زجاج سائل",
+    "نموذج صور"
+  ],
+  "difficulty": 5,
+  "duration_s": 22,
+  "stack": [
+    "HTML Canvas",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-rossaxbt-3085b7/BRIEF.md"
 }

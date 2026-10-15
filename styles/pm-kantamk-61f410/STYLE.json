@@ -1,7 +1,7 @@
 {
   "id": "pm-kantamk-61f410",
   "name": "Ball escaping twelve rings",
-  "name_ar": null,
+  "name_ar": "كرة تهرب من اثنتي عشرة حلقة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [],
@@ -23,5 +23,28 @@
   "source_prompt_words": 7,
   "listed": true,
   "skill": "styles/pm-kantamk-61f410/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "محاكاة فيزيائية عمودية: كرة ترتد داخل حلقات متحدة المركز وتفلت منها واحدة تلو الأخرى، مع عدّاد ونغمة تصعد عند كل هروب.",
+  "summary_en": "A vertical physics loop: a ball bounces inside twelve concentric rings and escapes them one by one, with a countdown and a rising note on every escape.",
+  "keywords": [
+    "physics simulation",
+    "bouncing ball",
+    "concentric rings",
+    "satisfying loop",
+    "viral short",
+    "countdown",
+    "كرة مرتدة",
+    "محاكاة فيزيائية",
+    "حلقات",
+    "فيديو عمودي",
+    "canvas",
+    "نغمات تصاعدية"
+  ],
+  "difficulty": 3,
+  "duration_s": 25,
+  "stack": [
+    "HTML Canvas",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-kantamk-61f410/BRIEF.md"
 }

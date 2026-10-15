@@ -1,7 +1,7 @@
 {
   "id": "pm-monokern-ade5b6",
   "name": "Psychedelic hypnotic eye showreel",
-  "name_ar": null,
+  "name_ar": "العين المنوّمة: ريل سايكدلي عشرون ثانية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -26,5 +26,32 @@
   "source_prompt_words": 29,
   "listed": true,
   "skill": "styles/pm-monokern-ade5b6/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "ريل مدته 20 ثانية يدور حول عين مركزية: حلقات تنبض، تكبير لا نهائي داخل البؤبؤ، تناظر كاليدوسكوبي، ونص يدور حولها ورسم شعاعي ينمو في القزحية.",
+  "summary_en": "A 20-second reel built around one central eye: pulsing rings, an endless zoom into the pupil, kaleidoscope symmetry, text orbiting it and a radial chart growing inside the iris.",
+  "keywords": [
+    "psychedelic",
+    "hypnotic",
+    "kaleidoscope",
+    "كاليدوسكوب",
+    "infinite zoom",
+    "تكبير لا نهائي",
+    "radial chart",
+    "رسم شعاعي",
+    "circular text",
+    "نص دائري",
+    "hue rotation",
+    "تناظر",
+    "eye motif",
+    "showreel",
+    "دوران ألوان"
+  ],
+  "difficulty": 4,
+  "duration_s": 20,
+  "stack": [
+    "HTML Canvas",
+    "WebGL",
+    "Remotion"
+  ],
+  "brief": "styles/pm-monokern-ade5b6/BRIEF.md"
 }

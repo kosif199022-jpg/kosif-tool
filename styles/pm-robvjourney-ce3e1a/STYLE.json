@@ -1,7 +1,7 @@
 {
   "id": "pm-robvjourney-ce3e1a",
   "name": "Nohandslabs brand promo",
-  "name_ar": null,
+  "name_ar": "برومو Nohandslabs: العمل يمضي بلا أيدٍ",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -25,5 +25,30 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-robvjourney-ce3e1a/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "برومو 15 ثانية لعلامة Nohandslabs يستعمل زوج أيدٍ يترك المهام فتكمل نفسها، مع رسوم بيانية للوقت المستعاد.",
+  "summary_en": "A 15-second brand promo for Nohandslabs where a pair of hands lets go and the work keeps running on its own, backed by reclaimed-time charts.",
+  "keywords": [
+    "brand promo",
+    "automation",
+    "hands-free",
+    "task cards",
+    "bar chart",
+    "donut chart",
+    "wordmark assembly",
+    "line-art hands",
+    "برومو علامة",
+    "أتمتة",
+    "بطاقات مهام",
+    "رسم بياني",
+    "شعار متحرك"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-robvjourney-ce3e1a/BRIEF.md"
 }

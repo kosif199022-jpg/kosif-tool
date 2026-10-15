@@ -1,7 +1,7 @@
 {
   "id": "pm-marouanegazouzi-6071d5",
   "name": "Crux motion design showreel",
-  "name_ar": null,
+  "name_ar": "ريل Crux: كل شيء يدور حول النقطة الحاسمة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -26,5 +26,30 @@
   "source_prompt_words": 26,
   "listed": true,
   "skill": "styles/pm-marouanegazouzi-6071d5/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "ريل 15 ثانية لاستوديو Crux تدور فيه الحروف والرسوم البيانية حول نقطة مركزية واحدة، فيتحول الشعار إلى محور الحركة.",
+  "summary_en": "A 15-second reel for Crux where letters and charts all pivot around a single centre point, turning the studio mark into the axis of motion.",
+  "keywords": [
+    "showreel",
+    "centre pivot",
+    "radial bar chart",
+    "orbiting type",
+    "two-colour palette",
+    "hard cut",
+    "studio identity",
+    "kinetic type",
+    "ريل استوديو",
+    "دوران حول المركز",
+    "رسم شعاعي",
+    "هوية بصرية",
+    "طباعة حركية"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-marouanegazouzi-6071d5/BRIEF.md"
 }

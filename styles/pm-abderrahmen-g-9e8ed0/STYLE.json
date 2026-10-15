@@ -1,7 +1,7 @@
 {
   "id": "pm-abderrahmen-g-9e8ed0",
   "name": "Sketchbook animals come alive",
-  "name_ar": null,
+  "name_ar": "حيوانات دفتر الرسم تنبض بالحياة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,31 @@
   "source_prompt_words": 74,
   "listed": true,
   "skill": "styles/pm-abderrahmen-g-9e8ed0/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "فيلم مرح من مسحات دفتر رسم يدوية: الحيوانات تنفصل عن صفحاتها وتقفز، وكل حركة يرافقها صوت مُركَّب بـ Web Audio في الإطار نفسه.",
+  "summary_en": "A playful film built from scanned hand-drawn pages: the animals peel off their sheets and hop, with every movement sounded by Web Audio on the same frame.",
+  "keywords": [
+    "hand-drawn",
+    "sketchbook",
+    "cut-out animation",
+    "line boil",
+    "web audio sfx",
+    "squash and stretch",
+    "paper texture",
+    "tally chart",
+    "رسوم يدوية",
+    "دفتر رسم",
+    "تحريك قصاصات",
+    "صوت مُركَّب",
+    "شخصيات",
+    "كولاج صور"
+  ],
+  "difficulty": 4,
+  "duration_s": 20,
+  "stack": [
+    "HTML Canvas",
+    "Web Audio",
+    "GSAP"
+  ],
+  "brief": "styles/pm-abderrahmen-g-9e8ed0/BRIEF.md"
 }

@@ -1,7 +1,7 @@
 {
   "id": "pm-samuel-spitz-974923",
   "name": "Motion design showreel",
-  "name_ar": null,
+  "name_ar": "ريل عرض القدرات: فصول الحركة الأربعة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -26,5 +26,30 @@
   "source_prompt_words": 34,
   "listed": true,
   "skill": "styles/pm-samuel-spitz-974923/SKILL.md",
-  "playbooks": []
+  "playbooks": [],
+  "summary_ar": "ريل 20 ثانية يستعرض أربعة فصول متتابعة (الخط، البيانات، الشكل، الإيقاع) بخيط طباعي واحد يربطها دون قطع.",
+  "summary_en": "A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.",
+  "keywords": [
+    "showreel",
+    "ريل أعمال",
+    "portfolio reel",
+    "عرض مهارات",
+    "kinetic typography",
+    "طباعة حركية",
+    "bar chart morph",
+    "مخطط بياني",
+    "chapter transitions",
+    "انتقالات متصلة",
+    "designer résumé",
+    "remotion reel",
+    "1080p"
+  ],
+  "difficulty": 4,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-samuel-spitz-974923/BRIEF.md"
 }
