@@ -1,0 +1,12 @@
+{
+  "id": "infographic",
+  "name": "إنفوجرافيك",
+  "category": [
+    "بيانات"
+  ],
+  "page": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/infographic",
+  "video": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/infographic/reference.mp4",
+  "poster": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/infographic/preview.jpg",
+  "creator": "KOSIF + attributed sources",
+  "origin": "KOSIF original style"
+}

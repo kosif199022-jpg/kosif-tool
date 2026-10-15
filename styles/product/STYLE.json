@@ -1,0 +1,12 @@
+{
+  "id": "product",
+  "name": "إعلان إطلاق منتج",
+  "category": [
+    "إعلانات"
+  ],
+  "page": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/product",
+  "video": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/product/reference.mp4",
+  "poster": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/product/preview.jpg",
+  "creator": "KOSIF + attributed sources",
+  "origin": "KOSIF original style"
+}

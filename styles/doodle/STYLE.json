@@ -1,0 +1,12 @@
+{
+  "id": "doodle",
+  "name": "قصص الدودل",
+  "category": [
+    "الرسم اليدوي"
+  ],
+  "page": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/doodle",
+  "video": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/doodle/reference.mp4",
+  "poster": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/doodle/preview.jpg",
+  "creator": "KOSIF + attributed sources",
+  "origin": "KOSIF original style"
+}

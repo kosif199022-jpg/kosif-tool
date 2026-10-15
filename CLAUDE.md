@@ -1,0 +1,2 @@
+# Claude entry point
+Read AGENTS.md, STYLE_INDEX.md and the selected styles/<style-id>/SKILL.md + STYLE.json. Inspect the source video when your tools allow. Produce editable real motion graphics (not static slides). Preserve user's audio and synchronize to word timing when provided. Preview before final rendering. Do not copy third-party videos, text prompts, code or media without a compatible license.

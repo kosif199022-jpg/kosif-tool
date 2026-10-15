@@ -1,0 +1,12 @@
+{
+  "id": "fake3d",
+  "name": "عمق 2.5D",
+  "category": [
+    "3D"
+  ],
+  "page": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/fake3d",
+  "video": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/fake3d/reference.mp4",
+  "poster": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/fake3d/preview.jpg",
+  "creator": "KOSIF + attributed sources",
+  "origin": "KOSIF original style"
+}

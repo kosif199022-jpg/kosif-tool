@@ -1,0 +1,12 @@
+{
+  "id": "plotter",
+  "name": "قلم البلوتر",
+  "category": [
+    "الرسم اليدوي"
+  ],
+  "page": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/plotter",
+  "video": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/plotter/reference.mp4",
+  "poster": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/plotter/preview.jpg",
+  "creator": "KOSIF + attributed sources",
+  "origin": "KOSIF original style"
+}
