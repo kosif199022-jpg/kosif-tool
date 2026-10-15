@@ -1,0 +1,22 @@
+{
+  "schema": "kosif-words/1",
+  "note_ar": "مثال على توقيت الكلمات لجملة عربية. استبدله بتفريغ الصوت المرفق: لكل كلمة بداية ونهاية بالثواني من بداية الملف، والكلمات المفتاحية تحمل emphasis = true وتقود لحظات التأكيد في PLAN.md. الكلمات مرتبة زمنيًا ولا تتداخل.",
+  "note_en": "Word-timing example for an Arabic sentence. Replace it with the transcription of the supplied audio: each word has a start and an end in seconds from the file start; key words carry emphasis = true and drive the accent moments in PLAN.md. Words are in time order and never overlap.",
+  "language": "ar",
+  "direction": "rtl",
+  "audio": "voice.mp3",
+  "sample_rate": 48000,
+  "duration_s": 4.2,
+  "text": "الحركة تبدأ مع أول كلمة وتنتهي مع آخر نبضة",
+  "words": [
+    {"word": "الحركة", "start": 0.12, "end": 0.58, "emphasis": true, "scene": 1},
+    {"word": "تبدأ", "start": 0.62, "end": 0.94, "emphasis": false, "scene": 1},
+    {"word": "مع", "start": 0.98, "end": 1.12, "emphasis": false, "scene": 1},
+    {"word": "أول", "start": 1.16, "end": 1.44, "emphasis": false, "scene": 2},
+    {"word": "كلمة", "start": 1.48, "end": 1.92, "emphasis": true, "scene": 2},
+    {"word": "وتنتهي", "start": 2.24, "end": 2.78, "emphasis": false, "scene": 3},
+    {"word": "مع", "start": 2.82, "end": 2.96, "emphasis": false, "scene": 3},
+    {"word": "آخر", "start": 3.00, "end": 3.30, "emphasis": false, "scene": 3},
+    {"word": "نبضة", "start": 3.34, "end": 3.86, "emphasis": true, "scene": 3}
+  ]
+}

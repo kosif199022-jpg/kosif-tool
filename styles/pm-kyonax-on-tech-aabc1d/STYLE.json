@@ -1,17 +1,39 @@
 {
   "id": "pm-kyonax-on-tech-aabc1d",
   "name": "org2html product showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Diagrams",
-    "Kinetic type",
-    "Code"
+    "product-ui",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "code"
   ],
   "creator": "@kyonax_on_tech",
   "creator_url": "https://x.com/kyonax_on_tech/status/2103482598144049316",
   "page": "https://www.promptsmotion.com/kyonax-on-tech-aabc1d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a8bf46d5-b730-439b-bec2-e6fe4f195f37/3c613dde645edb9c.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/142d7e2b-dd4f-407c-aa21-77ff3939d618/15fdcd9f8d185e78.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 105,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 59,
+  "listed": true,
+  "skill": "styles/pm-kyonax-on-tech-aabc1d/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/code.md"
+  ]
 }

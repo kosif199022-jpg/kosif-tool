@@ -1,14 +1,33 @@
 {
   "id": "pm-fionntobin-97b7af",
   "name": "Blue editorial motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@fionntobin",
   "creator_url": "https://x.com/fionntobin/status/2103510776690479597",
   "page": "https://www.promptsmotion.com/fionntobin-97b7af",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/87fae101-70a2-4e96-95b7-731bc26243ca/46145d5656a543c4.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/18a0f360-4ad8-4a4b-8959-9b5e56e029b6/5b0b7c3c34bc685b.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 104,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-fionntobin-97b7af/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

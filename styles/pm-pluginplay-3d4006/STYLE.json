@@ -1,13 +1,33 @@
 {
   "id": "pm-pluginplay-3d4006",
   "name": "Pixel art LLM history",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Code"
+    "code"
   ],
   "creator": "@PluginPlay__",
   "creator_url": "https://x.com/PluginPlay__/status/2103910844677472343",
   "page": "https://www.promptsmotion.com/pluginplay-3d4006",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/9176db3a-d200-42e5-af68-acce718712d7/d3bc427ebf8a8f87.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/37da051e-7b92-4f2e-9c00-5aa8ba089516/ab5aaf01f7386c6d.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 168,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "HTML"
+  ],
+  "source_prompt_words": 22,
+  "listed": true,
+  "skill": "styles/pm-pluginplay-3d4006/SKILL.md",
+  "playbooks": [
+    "playbooks/code.md"
+  ]
 }

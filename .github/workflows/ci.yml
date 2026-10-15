@@ -1,0 +1,27 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate catalog and files
+        run: python3 tools/validate.py
+      - name: Derived files are up to date
+        run: python3 tools/build.py --check
+      - name: Python tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Node tests (generator, markdown)
+        run: node --test tests/*.mjs
+      - name: Syntax-check site modules
+        run: for f in web/*.js; do node --check "$f"; done

@@ -1,14 +1,59 @@
 {
   "id": "pm-thayto-dev-44b911",
   "name": "AjustaCV Pro pricing promo",
+  "name_ar": "ترويج خطة Pro لأداة ملاءمة السيرة الذاتية",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@thayto_dev",
   "creator_url": "https://x.com/thayto_dev/status/2104200591278739735",
   "page": "https://www.promptsmotion.com/thayto-dev-44b911",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/de1f1c38-57a4-40e4-aac9-bd28a594705f/eeac9a4b52462637.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/de21a207-78a5-47a8-8f7c-c10dbcbc465e/25fd08a08c237120.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 6,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-thayto-dev-44b911/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "فيلم ترويجي مدته 15 ثانية يظهر سيرة ذاتية تعيد تشكيل نفسها لتطابق وظيفة، ثم يكشف بطاقة تسعير الخطة الاحترافية.",
+  "summary_en": "A 15-second promo where a résumé reshapes itself to fit a job posting, then the Pro pricing card lands as the payoff.",
+  "keywords": [
+    "pricing promo",
+    "resume builder",
+    "job match score",
+    "gauge animation",
+    "document reorder",
+    "keyword highlight",
+    "upgrade cta",
+    "saas pricing card",
+    "سيرة ذاتية",
+    "بطاقة تسعير",
+    "درجة مطابقة",
+    "ترقية الخطة",
+    "مستند حي",
+    "ترويج اشتراك"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-thayto-dev-44b911/BRIEF.md"
 }

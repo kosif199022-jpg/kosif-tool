@@ -1,14 +1,58 @@
 {
   "id": "pm-mrtanviir-132457",
   "name": "Claude motion designer showreel",
+  "name_ar": "ريل مهارات موشن: أربعة فصول على إيقاع واحد",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@mrtanviir",
   "creator_url": "https://x.com/mrtanviir/status/2103608767309132205",
   "page": "https://www.promptsmotion.com/mrtanviir-132457",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/71a7a873-cabb-43ea-949e-3f0354dc2088/66fe0e0e14dad1d9.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0d6505cd-db38-4176-926c-d6862ee5419f/62399dc3084e4521.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 33,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-mrtanviir-132457/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "ريل ترويج ذاتي في 15 ثانية يثبت أربع مهارات متتابعة: حروف حركية، مخططات تُبنى من الصفر، أشكال تتحول، وبطاقة توقيع ختامية.",
+  "summary_en": "A 15-second self-promo reel proving four motion skills in sequence: kinetic type, charts built from zero, morphing shapes, and a signature end card.",
+  "keywords": [
+    "showreel",
+    "ريل مصمم",
+    "سيرة ذاتية متحركة",
+    "kinetic typography",
+    "bar chart animation",
+    "shape morph",
+    "beat grid",
+    "حروف حركية",
+    "مخطط متحرك",
+    "تحول الأشكال",
+    "self promo",
+    "remotion reel",
+    "قطع حاد"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-mrtanviir-132457/BRIEF.md"
 }

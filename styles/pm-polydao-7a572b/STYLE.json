@@ -1,15 +1,35 @@
 {
   "id": "pm-polydao-7a572b",
   "name": "Jev engineering showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Music"
+    "charts",
+    "kinetic-type",
+    "music"
   ],
   "creator": "@polydao",
   "creator_url": "https://x.com/polydao/status/2103783134206566862",
   "page": "https://www.promptsmotion.com/polydao-7a572b",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/5ca696eb-abfe-4f9c-b6b2-718ee0c4e30a/29160329ecae63ee.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9fc50984-41c6-415c-8730-34bc348a1b6c/0fc5f422421bc0f2.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 195,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 37,
+  "listed": true,
+  "skill": "styles/pm-polydao-7a572b/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md"
+  ]
 }

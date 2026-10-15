@@ -1,11 +1,27 @@
 {
   "id": "pm-anas0ra-e57aea",
   "name": "Shop chatbot mascot promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@anas0ra",
   "creator_url": "https://x.com/anas0ra/status/2103490331815952637",
   "page": "https://www.promptsmotion.com/anas0ra-e57aea",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/59c7c5a6-fbb2-40d0-ab18-274829a2ec21/c21a9690c1498422.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/072ed86a-a225-4d2a-95f0-e6c6b79d1e78/cf199d4376adf4dd.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 720,
+    "h": 900
+  },
+  "aspect_label": "4:5",
+  "rank": 177,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 7,
+  "listed": true,
+  "skill": "styles/pm-anas0ra-e57aea/SKILL.md",
+  "playbooks": []
 }

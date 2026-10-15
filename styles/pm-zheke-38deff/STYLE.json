@@ -1,13 +1,56 @@
 {
   "id": "pm-zheke-38deff",
   "name": "Kinetic type showreel",
+  "name_ar": "طباعة حركية مربعة: جملة واحدة تعيد بناء نفسها",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Kinetic type"
+    "kinetic-type"
   ],
   "creator": "@zheke",
   "creator_url": "https://x.com/zheke/status/2103418664854622583",
   "page": "https://www.promptsmotion.com/zheke-38deff",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/b4420b24-a1d4-43c4-b6c7-1e0c522671c9/4ee658cb707a2901.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/1ee7700c-804f-4441-bec6-2de248df4fb5/84b8ce44a5e66c65.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1080
+  },
+  "aspect_label": "1:1",
+  "rank": 23,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 12,
+  "listed": true,
+  "skill": "styles/pm-zheke-38deff/SKILL.md",
+  "playbooks": [
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "قطعة مربعة 12 ثانية من الطباعة الحركية الثنائية اللغة: جملة واحدة تتفكك وتتجمع وتغير وزنها على إيقاع ثابت دون أي عنصر غير الحروف.",
+  "summary_en": "A 12s square kinetic-type piece: one bilingual sentence breaks apart, reflows and changes weight on a steady pulse, with nothing on screen but letters.",
+  "keywords": [
+    "kinetic type",
+    "طباعة متحركة",
+    "variable font",
+    "خط متغير",
+    "arabic typography",
+    "خط عربي",
+    "square loop",
+    "حلقة مربعة",
+    "letter stagger",
+    "type reel",
+    "bilingual",
+    "ثنائي اللغة",
+    "text-to-path"
+  ],
+  "difficulty": 3,
+  "duration_s": 12,
+  "stack": [
+    "Remotion",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-zheke-38deff/BRIEF.md"
 }

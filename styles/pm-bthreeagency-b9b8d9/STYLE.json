@@ -1,14 +1,33 @@
 {
   "id": "pm-bthreeagency-b9b8d9",
   "name": "Badge unlock screen animation",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Kinetic type",
-    "Particles"
+    "kinetic-type",
+    "particles"
   ],
   "creator": "@BThreeAgency",
   "creator_url": "https://x.com/BThreeAgency/status/2103739079745827092",
   "page": "https://www.promptsmotion.com/bthreeagency-b9b8d9",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/2a5831e4-5d37-47fd-a3ef-c729df7a636d/80a2dbd149970991.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/41421b58-3a6a-483e-9ff2-dee68873ae1c/3ce7f1631173a96f.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1408,
+    "h": 1080
+  },
+  "aspect_label": "4:3",
+  "rank": 27,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 73,
+  "listed": true,
+  "skill": "styles/pm-bthreeagency-b9b8d9/SKILL.md",
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md"
+  ]
 }

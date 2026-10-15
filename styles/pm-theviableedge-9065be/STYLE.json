@@ -1,13 +1,31 @@
 {
   "id": "pm-theviableedge-9065be",
   "name": "Second brain service promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@TheViableEdge",
   "creator_url": "https://x.com/TheViableEdge/status/2104207707980869918",
   "page": "https://www.promptsmotion.com/theviableedge-9065be",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/65733401-5999-4cda-844e-eade0c2de997/453edf35ee497bd2.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/87cdabea-5f59-4725-825e-a161c9bddbe3/80ee7fe1174e98fd.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 29,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 27,
+  "listed": true,
+  "skill": "styles/pm-theviableedge-9065be/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

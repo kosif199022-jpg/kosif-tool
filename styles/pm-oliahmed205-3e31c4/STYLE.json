@@ -1,14 +1,33 @@
 {
   "id": "pm-oliahmed205-3e31c4",
   "name": "Photo retouch app promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Photos"
+    "product-ui",
+    "photos"
   ],
   "creator": "@oliahmed205",
   "creator_url": "https://x.com/oliahmed205/status/2104679078465069378",
   "page": "https://www.promptsmotion.com/oliahmed205-3e31c4",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/14d123c9-ee1c-4619-92b2-0fb0f6744bf8/7194fd51c41045bb.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/fbd6b0dc-47f5-4928-a12b-352dbf0aef76/f8dcc6443541b045.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 167,
+  "published": "2026-09-28",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 21,
+  "listed": true,
+  "skill": "styles/pm-oliahmed205-3e31c4/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/photos.md"
+  ]
 }

@@ -1,16 +1,37 @@
 {
   "id": "pm-kloss-xyz-15182a",
   "name": "Chaotic Claude POV video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Characters",
-    "Music",
-    "Code"
+    "product-ui",
+    "characters",
+    "music",
+    "code"
   ],
   "creator": "@kloss_xyz",
   "creator_url": "https://x.com/kloss_xyz/status/2103664956482941143",
   "page": "https://www.promptsmotion.com/kloss-xyz-15182a",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/76fba185-e002-4e5d-a992-b6c7eb7b26f0/4084c72a81a73964.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7c68b527-d99c-4976-be3b-02c68bcf76d0/bfbed2d4758cbdb8.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1920
+  },
+  "aspect_label": "9:16",
+  "rank": 75,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 61,
+  "listed": true,
+  "skill": "styles/pm-kloss-xyz-15182a/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/characters.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

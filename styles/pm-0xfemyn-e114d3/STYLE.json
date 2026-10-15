@@ -1,13 +1,31 @@
 {
   "id": "pm-0xfemyn-e114d3",
   "name": "AIsa API key promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@0xfemyn",
   "creator_url": "https://x.com/0xfemyn/status/2103796337041137833",
   "page": "https://www.promptsmotion.com/0xfemyn-e114d3",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/21a37f10-be2c-45d1-bfaa-29aa2f1bc2cc/310471f2551e9941.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/594a557f-02f4-458d-8f5d-e0c92d78909f/5d38c86284040ecf.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 90,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 12,
+  "listed": true,
+  "skill": "styles/pm-0xfemyn-e114d3/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

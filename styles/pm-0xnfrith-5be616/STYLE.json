@@ -1,13 +1,31 @@
 {
   "id": "pm-0xnfrith-5be616",
   "name": "Celld job ownership explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Diagrams"
+    "diagrams"
   ],
   "creator": "@0xnfrith",
   "creator_url": "https://x.com/0xnfrith/status/2103358957050068999",
   "page": "https://www.promptsmotion.com/0xnfrith-5be616",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/88b1d2f2-c042-4813-a4fe-891e1f7995f9/8d4dd27ad77a627c.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/b5ccead0-c3b1-4ffa-b0d1-56ba96baa532/9e609dcc41226e8e.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 136,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 11,
+  "listed": true,
+  "skill": "styles/pm-0xnfrith-5be616/SKILL.md",
+  "playbooks": [
+    "playbooks/diagrams.md"
+  ]
 }

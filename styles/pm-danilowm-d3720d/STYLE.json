@@ -1,14 +1,58 @@
 {
   "id": "pm-danilowm-d3720d",
   "name": "Motion designer showreel",
+  "name_ar": "ريل المصمم المبني من سياق المشروع",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@danilowm",
   "creator_url": "https://x.com/danilowm/status/2103661844661412022",
   "page": "https://www.promptsmotion.com/danilowm-d3720d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/83bd7813-438e-4952-9174-76c353dc5812/1669e15a8116a3c9.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/baa202cc-7fa0-4acd-b891-e64d2d269cd8/46b5970b49f1d57e.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 46,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 33,
+  "listed": true,
+  "skill": "styles/pm-danilowm-d3720d/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "ريل 15 ثانية يستمد محتواه من ملفات المشروع نفسه: شجرة المجلدات تصبح رسمًا بيانيًا، وأسماء المكوّنات تصبح تايبوغرافي حركيًا.",
+  "summary_en": "A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.",
+  "keywords": [
+    "showreel",
+    "project context",
+    "terminal typing",
+    "folder tree chart",
+    "commit timeline",
+    "parallax lanes",
+    "monogram",
+    "kinetic type",
+    "ريل مصمم",
+    "سياق المشروع",
+    "خط زمني",
+    "رسم أعمدة",
+    "طباعة حركية"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-danilowm-d3720d/BRIEF.md"
 }

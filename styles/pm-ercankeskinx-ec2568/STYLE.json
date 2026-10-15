@@ -1,13 +1,31 @@
 {
   "id": "pm-ercankeskinx-ec2568",
   "name": "Five scroll-based sections",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Kinetic type"
+    "kinetic-type"
   ],
   "creator": "@ercankeskinx",
   "creator_url": "https://x.com/ercankeskinx/status/2102995443818897906",
   "page": "https://www.promptsmotion.com/ercankeskinx-ec2568",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/00159639-d925-4498-a2fb-9e6ae8ca58fc/57ff5d70f234853d.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/2e4a32be-527a-43a5-9748-dbb973d952d9/5d5e97b634faedd2.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 972
+  },
+  "aspect_label": "other",
+  "rank": 26,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 12,
+  "listed": true,
+  "skill": "styles/pm-ercankeskinx-ec2568/SKILL.md",
+  "playbooks": [
+    "playbooks/kinetic-type.md"
+  ]
 }

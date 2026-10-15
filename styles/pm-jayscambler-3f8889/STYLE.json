@@ -1,13 +1,31 @@
 {
   "id": "pm-jayscambler-3f8889",
   "name": "FundMyCompute platform overview",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@JayScambler",
   "creator_url": "https://x.com/JayScambler/status/2104634653491495095",
   "page": "https://www.promptsmotion.com/jayscambler-3f8889",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/d9c4db34-ab51-45ce-8796-9678f82f2eb8/d1810d2e13f1fc68.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/08817cb8-641b-4971-87f7-1f70f8b02942/cecf516d8745e109.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 216,
+  "published": "2026-09-28",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 25,
+  "listed": true,
+  "skill": "styles/pm-jayscambler-3f8889/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

@@ -1,16 +1,37 @@
 {
   "id": "pm-dale-vaz-cc612a",
   "name": "Sahi trading terminal reveal",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Phone",
-    "Charts",
-    "Photos",
-    "Code"
+    "phone",
+    "charts",
+    "photos",
+    "code"
   ],
   "creator": "@dale_vaz",
   "creator_url": "https://x.com/dale_vaz/status/2103290592679879074",
   "page": "https://www.promptsmotion.com/dale-vaz-cc612a",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/73f95b1d-15de-48f5-8cb0-ed4ded6dd798/32681d7966ef2048.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/45cd0893-15da-438c-bc5c-c60a73b0849e/0273d0a1139babb5.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 20,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 113,
+  "listed": true,
+  "skill": "styles/pm-dale-vaz-cc612a/SKILL.md",
+  "playbooks": [
+    "playbooks/phone.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md",
+    "playbooks/code.md"
+  ]
 }

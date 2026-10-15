@@ -1,15 +1,35 @@
 {
   "id": "pm-astrodevil-3f2054",
   "name": "Studio1 intro showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@Astrodevil_",
   "creator_url": "https://x.com/Astrodevil_/status/2103600734017392708",
   "page": "https://www.promptsmotion.com/astrodevil-3f2054",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/acd55b5e-bdf0-44d6-a146-4c3d0bfd14ff/5f822c3e596ffe51.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9869df35-4255-4802-8837-aa7dd8619b86/684bb165a0cb818e.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 152,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 38,
+  "listed": true,
+  "skill": "styles/pm-astrodevil-3f2054/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

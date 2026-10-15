@@ -1,14 +1,33 @@
 {
   "id": "pm-motiondsgnr-9dcfa6",
   "name": "Bold typographic motion showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@motiondsgnr",
   "creator_url": "https://x.com/motiondsgnr/status/2103692944771313960",
   "page": "https://www.promptsmotion.com/motiondsgnr-9dcfa6",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/5acea215-88b0-47f5-a674-9ebe55d6fcb9/ae609f65fc2e6e62.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/c8447ffe-63b1-4a58-9633-8f4f8fae5f70/705848e69547f428.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 91,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-motiondsgnr-9dcfa6/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

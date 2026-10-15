@@ -1,14 +1,58 @@
 {
   "id": "pm-jasonzhou1993-8595e0",
   "name": "Claude motion reel",
+  "name_ar": "ريل موشن ذاتي: عرض مهارات في 15 ثانية",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@jasonzhou1993",
   "creator_url": "https://x.com/jasonzhou1993/status/2103663364958515541",
   "page": "https://www.promptsmotion.com/jasonzhou1993-8595e0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/ccd83189-fb76-4e1a-97a9-9e2b9e66ab7e/be4ebd80f0e546ab.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0993363f-5d4c-43c2-858a-565e7c372508/9c8e78ac9eb52c34.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 69,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-jasonzhou1993-8595e0/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "شوريل سريع مدته 15 ثانية يربط الطباعة الحركية والرسوم البيانية ومنظومات الأشكال في قطعة واحدة متصلة تعمل كبطاقة تعريف لمصمم موشن.",
+  "summary_en": "A 15-second self-promotional showreel that chains kinetic type, animated charts and shape systems into one continuous portfolio piece.",
+  "keywords": [
+    "showreel",
+    "portfolio reel",
+    "kinetic typography",
+    "animated charts",
+    "shape morph",
+    "remotion",
+    "beat sync",
+    "بورتفوليو",
+    "طباعة حركية",
+    "رسوم بيانية متحركة",
+    "مقطع تعريفي",
+    "مصمم موشن",
+    "فصول حركية"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-jasonzhou1993-8595e0/BRIEF.md"
 }

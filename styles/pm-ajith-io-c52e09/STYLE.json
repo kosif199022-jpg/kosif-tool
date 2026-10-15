@@ -1,15 +1,35 @@
 {
   "id": "pm-ajith-io-c52e09",
   "name": "Distilbook product video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@ajith_io",
   "creator_url": "https://x.com/ajith_io/status/2103469807375208546",
   "page": "https://www.promptsmotion.com/ajith-io-c52e09",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/faae9027-b3b5-4e40-9eb8-a5dcdeab6aa5/b61b0e8fc7d94bda.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/6f281876-51a1-41b3-93a3-c698dd77bc8c/29fb40efb0aaf2bf.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 186,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 27,
+  "listed": true,
+  "skill": "styles/pm-ajith-io-c52e09/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

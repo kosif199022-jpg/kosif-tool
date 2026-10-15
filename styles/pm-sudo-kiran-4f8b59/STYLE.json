@@ -1,15 +1,35 @@
 {
   "id": "pm-sudo-kiran-4f8b59",
   "name": "DistilBook product explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Diagrams"
+    "product-ui",
+    "charts",
+    "diagrams"
   ],
   "creator": "@sudo_kiran",
   "creator_url": "https://x.com/sudo_kiran/status/2103486573476254201",
   "page": "https://www.promptsmotion.com/sudo-kiran-4f8b59",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/9e0a7a41-4454-4f50-bd54-6ddc48c12779/dbf98f7c3b0198b9.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7ce15148-430e-450f-a726-e281c266ce79/e0e45f2c92a71dae.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 223,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 23,
+  "listed": true,
+  "skill": "styles/pm-sudo-kiran-4f8b59/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md"
+  ]
 }

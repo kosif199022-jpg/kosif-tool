@@ -1,13 +1,57 @@
 {
   "id": "pm-quickdesignio-dd93d0",
   "name": "QuickDesign brand promo",
+  "name_ar": "ترويج علامة QuickDesign: السرعة كحجّة بصرية",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@quickdesignio",
   "creator_url": "https://x.com/quickdesignio/status/2103617779857338399",
   "page": "https://www.promptsmotion.com/quickdesignio-dd93d0",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/e3a9d448-e496-406d-8600-fc16b2e707e0/21db24c1b8bcbc21.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e602892d-dbc4-44d6-9005-7b3e6bcbb311/6b0a47bce9c63e3c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 40,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 24,
+  "listed": true,
+  "skill": "styles/pm-quickdesignio-dd93d0/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "ترويج أفقي مدته 15 ثانية لأداة تصميم سريعة، يبني الشعار من أشكال أولية ثم يبرهن على توفير الوقت بمخططات وعدّادات متحركة.",
+  "summary_en": "A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.",
+  "keywords": [
+    "ترويج علامة",
+    "أداة تصميم",
+    "أشكال أولية",
+    "لوحة تصميم",
+    "مخطط مقارنة",
+    "قوالب",
+    "brand promo",
+    "design tool",
+    "shape snap",
+    "auto layout",
+    "bar chart",
+    "card flip",
+    "counter",
+    "wordmark build"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-quickdesignio-dd93d0/BRIEF.md"
 }

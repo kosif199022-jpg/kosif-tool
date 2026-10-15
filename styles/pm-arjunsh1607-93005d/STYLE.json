@@ -1,14 +1,33 @@
 {
   "id": "pm-arjunsh1607-93005d",
   "name": "Pixelup Labs studio showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@arjunsh1607",
   "creator_url": "https://x.com/arjunsh1607/status/2104295133432922126",
   "page": "https://www.promptsmotion.com/arjunsh1607-93005d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/fa13e09f-4fa0-4fac-b353-c75d3de61ab2/6e009e0804e82ccf.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/50aee798-4d03-4593-95eb-df3edf4b9da7/2310efbbfe60afc4.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 140,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 17,
+  "listed": true,
+  "skill": "styles/pm-arjunsh1607-93005d/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

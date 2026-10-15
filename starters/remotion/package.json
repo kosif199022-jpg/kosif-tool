@@ -1,0 +1,25 @@
+{
+  "name": "kosif-remotion-starter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "KOSIF TOOL starter for Remotion v4: staggered Arabic/English title, animated SVG line chart, closing logo card and word-level captions in a 1080x1920 film.",
+  "license": "MIT",
+  "scripts": {
+    "preview": "remotion studio",
+    "render": "remotion render KosifFilm out/film.mp4",
+    "still": "remotion still KosifFilm out/still.png --frame=60",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.535",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.535"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "5.9.3"
+  }
+}

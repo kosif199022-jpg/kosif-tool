@@ -1,12 +1,30 @@
 {
   "id": "product",
   "name": "إعلان إطلاق منتج",
+  "name_ar": "إعلان إطلاق منتج",
+  "origin": "KOSIF original style",
+  "type": "Style",
   "category": [
-    "إعلانات"
+    "ads",
+    "product-ui"
   ],
+  "creator": "KOSIF + attributed sources",
+  "creator_url": null,
   "page": "https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/product",
   "video": "https://github.com/motalim-ai/motion-starter-kit/blob/main/styles/product/reference.mp4",
   "poster": "https://github.com/motalim-ai/motion-starter-kit/blob/main/styles/product/preview.jpg",
-  "creator": "KOSIF + attributed sources",
-  "origin": "KOSIF original style"
+  "aspect": null,
+  "aspect_label": null,
+  "rank": null,
+  "published": null,
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": null,
+  "listed": true,
+  "skill": "styles/product/SKILL.md",
+  "playbooks": [
+    "playbooks/ads.md",
+    "playbooks/product-ui.md"
+  ]
 }

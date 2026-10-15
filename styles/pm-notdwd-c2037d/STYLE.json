@@ -1,21 +1,51 @@
 {
   "id": "pm-notdwd-c2037d",
   "name": "Launch video remake comparison",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "product-ui",
+    "charts",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@notdwd",
   "creator_url": "https://x.com/notdwd/status/2104401208958230764",
   "page": "https://www.promptsmotion.com/notdwd-c2037d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/763e22ec-fb38-4dc7-97ab-079b78aaa520/a739b3361e83578f.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9e0695fe-f4fd-4a38-bd97-f499494ed534/04ef9c558be40103.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 64,
+  "published": "2026-09-28",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "HTML",
+    "SVG"
+  ],
+  "source_prompt_words": 1854,
+  "listed": true,
+  "skill": "styles/pm-notdwd-c2037d/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

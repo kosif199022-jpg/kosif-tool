@@ -1,0 +1,23 @@
+Read the repository {repo} — start with CLAUDE.md, then AGENTS.md.
+Then read the style files: styles/{id}/SKILL.md and styles/{id}/STYLE.json{brief_line}
+and the category playbooks: {playbooks}
+
+Requested style: {id} — {name}.
+Original reference: {page}
+Watch the reference video if your tools allow it, and never claim you watched it if you could not. Do not copy any video, prompt text or media from the source.
+
+Source material: {source}
+Deliverable: {aspect} at {resolution}, {fps} fps, {duration} seconds, H.264 MP4 with an AAC audio track.
+Stack: {stack}
+Language: {lang}
+Brand: {brand}
+Audio and music: {audio}
+
+Workflow:
+1. Write STYLE.md (what you observed in the reference versus what you assumed) and PLAN.md (scene by scene with start/end times, motion, camera, transition and audio cue).
+2. Build real, editable motion graphics, not static slides: paths drawn in sequence, a moving camera, elements with tuned easing on entrance and exit.
+3. Arabic text renders RTL with letters kept joined; never split a word to animate its letters.
+4. If audio is supplied it is the master clock: keep it untouched and sync motion to word timings.
+5. Show me a preview (contact sheet + short clip) before the final render, then render, verify duration, frame count and audio track, and deliver the editable sources.
+
+Extra notes: {notes}

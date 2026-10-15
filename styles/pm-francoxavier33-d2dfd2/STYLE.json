@@ -1,13 +1,31 @@
 {
   "id": "pm-francoxavier33-d2dfd2",
   "name": "Parenting app hype video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI"
+    "product-ui"
   ],
   "creator": "@francoxavier33",
   "creator_url": "https://x.com/francoxavier33/status/2103486218323341663",
   "page": "https://www.promptsmotion.com/francoxavier33-d2dfd2",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f3e74b5e-895e-4785-ad2e-9c0eed5afe68/afbed29764bc7c12.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7fed1e1d-6cdf-4f96-b5dd-0377edc67e92/89c186a8ad87fd8e.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 886,
+    "h": 1920
+  },
+  "aspect_label": "other",
+  "rank": 165,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 7,
+  "listed": true,
+  "skill": "styles/pm-francoxavier33-d2dfd2/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

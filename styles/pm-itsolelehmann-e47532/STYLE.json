@@ -1,11 +1,27 @@
 {
   "id": "pm-itsolelehmann-e47532",
   "name": "Four seasons train window",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@itsolelehmann",
   "creator_url": "https://x.com/itsolelehmann/status/2103124033365762215",
   "page": "https://www.promptsmotion.com/itsolelehmann-e47532",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a8ecf299-3829-4d4a-a344-05da8544bfe8/19bb5db3e5386aa4.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/04af3168-78f7-47e2-9f0b-9476c5d74fc7/80f0569ec2bfe492.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 68,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 21,
+  "listed": true,
+  "skill": "styles/pm-itsolelehmann-e47532/SKILL.md",
+  "playbooks": []
 }

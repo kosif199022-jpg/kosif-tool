@@ -1,13 +1,31 @@
 {
   "id": "pm-majorbaguette-fb11d7",
   "name": "Brieform product presentation",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI"
+    "product-ui"
   ],
   "creator": "@MajorBaguette",
   "creator_url": "https://x.com/MajorBaguette/status/2103849602826834228",
   "page": "https://www.promptsmotion.com/majorbaguette-fb11d7",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/36f956e1-8338-4013-a893-b628ab2ea782/047196aa2eb27cd2.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9d7b621a-1f74-4729-8965-b1c7701e4789/10bc4f7d274cb65d.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 54,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 9,
+  "listed": true,
+  "skill": "styles/pm-majorbaguette-fb11d7/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ]
 }

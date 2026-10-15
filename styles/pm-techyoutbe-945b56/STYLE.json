@@ -1,15 +1,60 @@
 {
   "id": "pm-techyoutbe-945b56",
   "name": "Visual guides library launch",
+  "name_ar": "إطلاق مكتبة الأدلة المرئية: فيديو منتج SaaS",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Photos"
+    "product-ui",
+    "charts",
+    "photos"
   ],
   "creator": "@techyoutbe",
   "creator_url": "https://x.com/techyoutbe/status/2103465227807588678",
   "page": "https://www.promptsmotion.com/techyoutbe-945b56",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/845f7ff9-5e47-45fa-a0aa-388c0afb45ee/d8ee5923a01ae8f0.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/911a29c5-c86d-429f-af57-4830727e556c/73e64844dce0be1a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 22,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 88,
+  "listed": true,
+  "skill": "styles/pm-techyoutbe-945b56/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/photos.md"
+  ],
+  "summary_ar": "فيديو إطلاق 30 ثانية بأسلوب منشورات إطلاق المنتجات على X: واجهة حقيقية في إطار جهاز، بطاقات ميزات، ومخطط يقيس الفائدة.",
+  "summary_en": "A 30s X-style SaaS launch film: real product UI in a device frame, three feature cards, a benefit chart and a clean CTA.",
+  "keywords": [
+    "saas launch",
+    "إطلاق منتج",
+    "product demo",
+    "عرض واجهة",
+    "feature video",
+    "device frame",
+    "cursor animation",
+    "مؤشر الماوس",
+    "benefit chart",
+    "مقارنة قبل وبعد",
+    "twitter launch video",
+    "ui showcase",
+    "شرح ميزات"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-techyoutbe-945b56/BRIEF.md"
 }

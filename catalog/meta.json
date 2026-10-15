@@ -1,0 +1,40 @@
+{
+ "total": 288,
+ "promptsmotion": 243,
+ "base": 45,
+ "with_briefs": 44,
+ "playbooks": 17,
+ "categories": {
+  "diagrams": 37,
+  "hand-drawn": 11,
+  "characters": 47,
+  "kinetic-type": 125,
+  "ads": 6,
+  "product-ui": 82,
+  "shapes": 30,
+  "photos": 34,
+  "music": 49,
+  "charts": 150,
+  "3d": 10,
+  "particles": 20,
+  "phone": 8,
+  "code": 38
+ },
+ "types": {
+  "Style": 45,
+  "Prompt": 239,
+  "Skill": 4
+ },
+ "aspects": {
+  "unknown": 45,
+  "16:9": 202,
+  "1:1": 14,
+  "other": 7,
+  "4:3": 1,
+  "9:16": 16,
+  "21:9": 1,
+  "4:5": 2
+ },
+ "creators": 224,
+ "latest_published": "2026-10-08"
+}

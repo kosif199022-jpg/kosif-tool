@@ -1,14 +1,59 @@
 {
   "id": "pm-tstfully-0aa6b4",
   "name": "YouTube transcript product ad",
+  "name_ar": "إعلان منتج: من رابط يوتيوب إلى نص كامل",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts"
+    "product-ui",
+    "charts"
   ],
   "creator": "@tstfully",
   "creator_url": "https://x.com/tstfully/status/2104033772949680192",
   "page": "https://www.promptsmotion.com/tstfully-0aa6b4",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/11c8834c-9d9e-4e21-9219-c38bbf7fb971/3df443f430fd3d79.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/a3d5f704-6bd0-4a77-b066-00ebac0bbdba/358893962390e793.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 38,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 14,
+  "listed": true,
+  "skill": "styles/pm-tstfully-0aa6b4/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "إعلان أفقي مدته 15 ثانية يشرح أداة تحوّل رابط فيديو يوتيوب إلى نصّ مفرّغ كامل، مع عدّادات ومخططات تلخّص النتيجة.",
+  "summary_en": "A 15 s landscape product ad for a tool that turns a pasted YouTube link into a full transcript, closing with counters and small charts that quantify the result.",
+  "keywords": [
+    "تفريغ صوتي",
+    "رابط فيديو",
+    "نص مفرّغ",
+    "طوابع زمنية",
+    "كاريوكي",
+    "عدّاد",
+    "transcript",
+    "youtube link",
+    "waveform",
+    "word highlight",
+    "counter",
+    "bar chart",
+    "export srt",
+    "product ad"
+  ],
+  "difficulty": 2,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-tstfully-0aa6b4/BRIEF.md"
 }

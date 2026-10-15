@@ -1,14 +1,60 @@
 {
   "id": "pm-monokern-ade5b6",
   "name": "Psychedelic hypnotic eye showreel",
+  "name_ar": "العين المنوّمة: ريل سايكدلي عشرون ثانية",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@monokern",
   "creator_url": "https://x.com/monokern/status/2103563538828832979",
   "page": "https://www.promptsmotion.com/monokern-ade5b6",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/fce09ddd-c896-48bb-913e-5e79d3da27c2/4735f5f838b8578a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/47449ccc-66a0-413c-a267-ce1a03ee86d0/1c6760ad14192f6b.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 14,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 29,
+  "listed": true,
+  "skill": "styles/pm-monokern-ade5b6/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "ريل مدته 20 ثانية يدور حول عين مركزية: حلقات تنبض، تكبير لا نهائي داخل البؤبؤ، تناظر كاليدوسكوبي، ونص يدور حولها ورسم شعاعي ينمو في القزحية.",
+  "summary_en": "A 20-second reel built around one central eye: pulsing rings, an endless zoom into the pupil, kaleidoscope symmetry, text orbiting it and a radial chart growing inside the iris.",
+  "keywords": [
+    "psychedelic",
+    "hypnotic",
+    "kaleidoscope",
+    "كاليدوسكوب",
+    "infinite zoom",
+    "تكبير لا نهائي",
+    "radial chart",
+    "رسم شعاعي",
+    "circular text",
+    "نص دائري",
+    "hue rotation",
+    "تناظر",
+    "eye motif",
+    "showreel",
+    "دوران ألوان"
+  ],
+  "difficulty": 4,
+  "duration_s": 20,
+  "stack": [
+    "HTML Canvas",
+    "WebGL",
+    "Remotion"
+  ],
+  "brief": "styles/pm-monokern-ade5b6/BRIEF.md"
 }

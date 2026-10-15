@@ -1,14 +1,33 @@
 {
   "id": "pm-fractadev-149adc",
   "name": "Voice agent SaaS launch",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts"
+    "product-ui",
+    "charts"
   ],
   "creator": "@FractaDev",
   "creator_url": "https://x.com/FractaDev/status/2103941789744861266",
   "page": "https://www.promptsmotion.com/fractadev-149adc",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/2b5f34d6-63c2-4a48-a017-a92df15407ce/9c75a92aa7838c27.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/67134c6c-22e7-4f5d-b3cf-ffda49de4a5c/0387396da22c0620.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 224,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 35,
+  "listed": true,
+  "skill": "styles/pm-fractadev-149adc/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

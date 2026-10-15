@@ -1,19 +1,72 @@
 {
   "id": "pm-aschapmann-131210",
   "name": "SaaS launch video",
+  "name_ar": "فيلم إطلاق منتج SaaS مبرمج في Remotion",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "product-ui",
+    "charts",
+    "kinetic-type",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@aschapmann",
   "creator_url": "https://x.com/aschapmann/status/2104230888812724497",
   "page": "https://www.promptsmotion.com/aschapmann-131210",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/6f465be6-2b08-4b41-920e-c4a76a362dfd/95e1a12f4d8b8329.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0cadd48b-2482-4a70-8bf9-21b0f00ead66/7e6898d87d060d07.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 95,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "Remotion",
+    "SVG"
+  ],
+  "source_prompt_words": 178,
+  "listed": true,
+  "skill": "styles/pm-aschapmann-131210/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ],
+  "summary_ar": "فيلم إطلاق مدته 30 ثانية مبني بالكامل بالكود في Remotion، يروي قصة السوق والألم والحل عبر أربع إلى خمس مشاهد وينتهي بشعار SVG متحرك.",
+  "summary_en": "A 30-second, fully code-built Remotion launch film telling market, pain, fix and payoff in 4-5 scenes, ending on an animated SVG logo with tagline and URL.",
+  "keywords": [
+    "remotion launch",
+    "spring easing",
+    "kinetic typography",
+    "camera push",
+    "logo reveal",
+    "svg logo",
+    "product film",
+    "code video",
+    "ساس",
+    "إطلاق",
+    "نوابض",
+    "شعار متحرك",
+    "قصة المنتج",
+    "برمجة الفيديو"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-aschapmann-131210/BRIEF.md"
 }

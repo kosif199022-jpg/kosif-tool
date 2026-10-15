@@ -1,15 +1,35 @@
 {
   "id": "pm-kmasiff-cc72cb",
   "name": "Email verification tool promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Characters"
+    "product-ui",
+    "charts",
+    "characters"
   ],
   "creator": "@KmAsiff",
   "creator_url": "https://x.com/KmAsiff/status/2103810247131549880",
   "page": "https://www.promptsmotion.com/kmasiff-cc72cb",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/507292ce-7d64-4245-87ec-5676dc6d028f/7abe92d602671e77.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/1b4c2d2a-88ff-4a66-b218-d7f9b20d2077/12471c8c05408e13.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 107,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "High",
+  "tech": [],
+  "source_prompt_words": 47,
+  "listed": true,
+  "skill": "styles/pm-kmasiff-cc72cb/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/characters.md"
+  ]
 }

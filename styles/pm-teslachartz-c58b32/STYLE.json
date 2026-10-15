@@ -1,14 +1,33 @@
 {
   "id": "pm-teslachartz-c58b32",
   "name": "Motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@TeslaChartz",
   "creator_url": "https://x.com/TeslaChartz/status/2103746486978887985",
   "page": "https://www.promptsmotion.com/teslachartz-c58b32",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/24075641-a4eb-4881-8a49-cc4160bd41a2/111a063fcfabc8b2.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/93e6a958-283e-4ae4-9297-7cb95ed2b754/9c099f971475d8ff.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 55,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-teslachartz-c58b32/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

@@ -1,14 +1,33 @@
 {
   "id": "pm-ezshine-c90d73",
   "name": "AI Arena product promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Characters"
+    "product-ui",
+    "characters"
   ],
   "creator": "@ezshine",
   "creator_url": "https://x.com/ezshine/status/2103501705698750731",
   "page": "https://www.promptsmotion.com/ezshine-c90d73",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/88b977c7-b6fa-4f50-812b-7da0ff4ceff4/0547ff23cc3afb0f.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e2514a5d-d637-4ab7-9322-3b475f6bc087/2339fc8a3e580ac5.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 203,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 25,
+  "listed": true,
+  "skill": "styles/pm-ezshine-c90d73/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/characters.md"
+  ]
 }

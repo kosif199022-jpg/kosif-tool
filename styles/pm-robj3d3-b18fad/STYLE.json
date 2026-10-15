@@ -1,14 +1,33 @@
 {
   "id": "pm-robj3d3-b18fad",
   "name": "SuperX feature release teaser",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts"
+    "product-ui",
+    "charts"
   ],
   "creator": "@robj3d3",
   "creator_url": "https://x.com/robj3d3/status/2107040421989994822",
   "page": "https://www.promptsmotion.com/robj3d3-b18fad",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/6d2dad62-f260-45b7-8d75-824f4ef7889a/02285d82952dfb6c.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/dc253266-2a39-4bea-a7e3-2864232668eb/de2e3a414abbada0.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 130,
+  "published": "2026-10-05",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-robj3d3-b18fad/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }

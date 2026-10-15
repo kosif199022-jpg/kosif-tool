@@ -1,13 +1,31 @@
 {
   "id": "pm-henkvaness-0e06af",
   "name": "Prompting mistakes video tutorial",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Characters"
+    "characters"
   ],
   "creator": "@henkvaness",
   "creator_url": "https://x.com/henkvaness/status/2103801351993975279",
   "page": "https://www.promptsmotion.com/henkvaness-0e06af",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a112ec0d-1d41-4fcc-b555-d18db223bbdc/a2ae9330688a0d75.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/f4d3ced1-919f-4bad-bf60-e002f65c02b5/9619aa00fee3e3b1.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 88,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 6,
+  "listed": true,
+  "skill": "styles/pm-henkvaness-0e06af/SKILL.md",
+  "playbooks": [
+    "playbooks/characters.md"
+  ]
 }

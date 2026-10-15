@@ -1,1 +1,12 @@
-﻿__pycache__/`n*.pyc`n.venv/`nnode_modules/`nout/`noutputs/`n.env*
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+out/
+outputs/
+.env*
+.cache/
+*.mp4
+*.webm
+*.mov
+starters/remotion/out/

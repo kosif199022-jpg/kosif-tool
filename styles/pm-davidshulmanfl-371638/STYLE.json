@@ -1,13 +1,57 @@
 {
   "id": "pm-davidshulmanfl-371638",
   "name": "Clay-style music video",
+  "name_ar": "فيديو موسيقي بأسلوب الصلصال المتحرّك بمراجع معاصرة",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Music"
+    "music"
   ],
   "creator": "@DavidShulmanFL",
   "creator_url": "https://x.com/DavidShulmanFL/status/2103336310089842921",
   "page": "https://www.promptsmotion.com/davidshulmanfl-371638",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/47f053f6-221f-4dae-a302-72b6c95bc6aa/be4da510a74d0389.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/8680bf04-c278-4660-a8c1-b869bad42f8d/9c204e8d2a731a55.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 39,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 37,
+  "listed": true,
+  "skill": "styles/pm-davidshulmanfl-371638/SKILL.md",
+  "playbooks": [
+    "playbooks/music.md"
+  ],
+  "summary_ar": "فيديو موسيقي لدقيقة واحدة بمظهر تحريك الصلصال الإيقافي مع أغنية أصلية بروح البوب الفني الثمانيني ورموز حياتنا الرقمية الحالية.",
+  "summary_en": "A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.",
+  "keywords": [
+    "صلصال",
+    "تحريك إيقافي",
+    "فيديو موسيقي",
+    "أغنية أصلية",
+    "بوب فني",
+    "ثمانينات",
+    "stop motion",
+    "claymation",
+    "metaball",
+    "animate on twos",
+    "lyric sync",
+    "art pop",
+    "replacement animation",
+    "music video"
+  ],
+  "difficulty": 5,
+  "duration_s": 60,
+  "stack": [
+    "HTML Canvas",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-davidshulmanfl-371638/BRIEF.md"
 }

@@ -1,14 +1,33 @@
 {
   "id": "pm-zaqailo-212ad3",
   "name": "Motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@zaqailo",
   "creator_url": "https://x.com/zaqailo/status/2103768009017835623",
   "page": "https://www.promptsmotion.com/zaqailo-212ad3",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/861f7f35-e2f8-4420-b942-21d7f22b621a/82314833e8810fe0.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/c7574f90-4cbd-48f4-9951-c69d90cc9db6/b4416187dd95ccb9.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 225,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-zaqailo-212ad3/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

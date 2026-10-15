@@ -1,15 +1,63 @@
 {
   "id": "pm-sarut0bisasuke-cefa43",
   "name": "White Russian recipe animation",
+  "name_ar": "وصفة الوايت روشن من الكأس الفارغة إلى الكوكتيل",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Diagrams",
-    "Code"
+    "charts",
+    "diagrams",
+    "code"
   ],
   "creator": "@Sarut0biSasuke",
   "creator_url": "https://x.com/Sarut0biSasuke/status/2103418429248069973",
   "page": "https://www.promptsmotion.com/sarut0bisasuke-cefa43",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/b27a9489-7c2e-4c45-b5b8-c2bd96ad0a8a/f79a2b1e73613312.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/eda7bdc9-f26f-4ae2-9e03-617e8f3a7a42/c963d3276bd6ac31.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 81,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "HTML"
+  ],
+  "source_prompt_words": 56,
+  "listed": true,
+  "skill": "styles/pm-sarut0bisasuke-cefa43/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/code.md"
+  ],
+  "summary_ar": "فيلم شرح من لقطة واحدة متصلة يبني كوكتيل الوايت روشن مكوّنًا بعد مكوّن مع إظهار الكمية ومستوى الامتلاء في الكأس خلال 30 ثانية.",
+  "summary_en": "A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.",
+  "keywords": [
+    "كوكتيل",
+    "وصفة متحركة",
+    "سكب السوائل",
+    "فودكا",
+    "قشدة",
+    "ليكيور قهوة",
+    "شرح",
+    "cocktail recipe",
+    "liquid animation",
+    "pour",
+    "measurements",
+    "explainer",
+    "canvas",
+    "bar"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "HTML Canvas",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-sarut0bisasuke-cefa43/BRIEF.md"
 }

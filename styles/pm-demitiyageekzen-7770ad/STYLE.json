@@ -1,13 +1,33 @@
 {
   "id": "pm-demitiyageekzen-7770ad",
   "name": "Tengwang Pavilion moonlit river",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Code"
+    "code"
   ],
   "creator": "@DemitiyaGeekzen",
   "creator_url": "https://x.com/DemitiyaGeekzen/status/2103517910274818523",
   "page": "https://www.promptsmotion.com/demitiyageekzen-7770ad",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/679af3d2-b554-4251-843a-6638b16d2320/05ec50dbb0680842.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/db3ee45a-09f6-439b-a938-6a519ee036c4/7c740788c2855e2a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 100,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "HTML"
+  ],
+  "source_prompt_words": 43,
+  "listed": true,
+  "skill": "styles/pm-demitiyageekzen-7770ad/SKILL.md",
+  "playbooks": [
+    "playbooks/code.md"
+  ]
 }

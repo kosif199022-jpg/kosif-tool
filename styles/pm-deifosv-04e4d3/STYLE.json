@@ -1,15 +1,61 @@
 {
   "id": "pm-deifosv-04e4d3",
   "name": "Tennis game launch video",
+  "name_ar": "إطلاق لعبة تنس بإحصاءات حية",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Phone",
-    "Music"
+    "product-ui",
+    "phone",
+    "music"
   ],
   "creator": "@deifosv",
   "creator_url": "https://x.com/deifosv/status/2103197522382786581",
   "page": "https://www.promptsmotion.com/deifosv-04e4d3",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c2f11f47-7a3a-4c64-b7aa-48cfea0ee94a/f2257ea18d68850a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/dd12566e-6981-41ad-909d-08af37b8add1/62e16319ffded9aa.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 84,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 36,
+  "listed": true,
+  "skill": "styles/pm-deifosv-04e4d3/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/phone.md",
+    "playbooks/music.md"
+  ],
+  "summary_ar": "فيديو إطلاق عالي الطاقة للعبة تنس على الويب يعرض إحصاءات حية من الموقع واللعب على الحاسوب والهاتف وتبديل السمات على الإيقاع.",
+  "summary_en": "A high-energy launch film for a web tennis game, pulling live stats from the site and showing desktop and mobile play plus theme switching, all cut to music.",
+  "keywords": [
+    "tennis game",
+    "game launch",
+    "live stats",
+    "responsive play",
+    "theme switch",
+    "beat sync",
+    "suno prompt",
+    "sports motion",
+    "لعبة تنس",
+    "إطلاق لعبة",
+    "إحصاءات حية",
+    "هاتف وحاسوب",
+    "تبديل السمات",
+    "مزامنة إيقاع"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-deifosv-04e4d3/BRIEF.md"
 }

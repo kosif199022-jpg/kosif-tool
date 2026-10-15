@@ -1,0 +1,15 @@
+{
+  "name": "kosif-tool",
+  "version": "2.0.0",
+  "private": true,
+  "description": "KOSIF TOOL — Arabic-first motion graphics style atlas, website and production tools for Claude Code",
+  "type": "module",
+  "scripts": {
+    "serve": "npx --yes http-server -p 8080 -c-1 .",
+    "test": "node --test tests/*.mjs && python3 -m unittest discover -s tests",
+    "validate": "python3 tools/validate.py",
+    "build": "python3 tools/build.py",
+    "sync": "python3 tools/sync_catalog.py && python3 tools/build.py"
+  },
+  "license": "MIT"
+}

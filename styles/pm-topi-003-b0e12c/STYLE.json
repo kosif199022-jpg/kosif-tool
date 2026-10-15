@@ -1,15 +1,35 @@
 {
   "id": "pm-topi-003-b0e12c",
   "name": "Anime maid dance showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Photos"
+    "charts",
+    "kinetic-type",
+    "photos"
   ],
   "creator": "@_topi_003",
   "creator_url": "https://x.com/_topi_003/status/2104088986969055288",
   "page": "https://www.promptsmotion.com/topi-003-b0e12c",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/bf376b60-faa9-4f3b-92e9-c3eb662845c0/c75c2aaabaebf5a2.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/01b2f801-9b59-45a5-bbc0-9e41811d0356/4446c2270a8d89ca.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 32,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 30,
+  "listed": true,
+  "skill": "styles/pm-topi-003-b0e12c/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md"
+  ]
 }

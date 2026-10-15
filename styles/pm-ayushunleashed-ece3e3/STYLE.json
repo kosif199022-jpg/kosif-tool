@@ -1,14 +1,33 @@
 {
   "id": "pm-ayushunleashed-ece3e3",
   "name": "Claude motion design showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@ayushunleashed",
   "creator_url": "https://x.com/ayushunleashed/status/2103794962257084755",
   "page": "https://www.promptsmotion.com/ayushunleashed-ece3e3",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/d59fa043-de28-474b-872c-2b40a55be420/9442cedc79d98ce5.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/316b47cf-f170-4c6d-98cb-ba9d9789af7d/56b9bdbbeeeec31f.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 74,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-ayushunleashed-ece3e3/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

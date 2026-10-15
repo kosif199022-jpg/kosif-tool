@@ -1,14 +1,33 @@
 {
   "id": "pm-mdaman010-e7226a",
   "name": "AI data centre 3D film",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Characters"
+    "charts",
+    "characters"
   ],
   "creator": "@mdaman010",
   "creator_url": "https://x.com/mdaman010/status/2103845689713111079",
   "page": "https://www.promptsmotion.com/mdaman010-e7226a",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/23a27444-9acb-4e84-8c04-e0b3bfb62f08/e37739ca0660e268.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/d9f25ae8-918f-48dc-97e1-f75583526ed6/f4c5104bab29454b.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 982
+  },
+  "aspect_label": "other",
+  "rank": 30,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "High",
+  "tech": [],
+  "source_prompt_words": 10,
+  "listed": true,
+  "skill": "styles/pm-mdaman010-e7226a/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/characters.md"
+  ]
 }

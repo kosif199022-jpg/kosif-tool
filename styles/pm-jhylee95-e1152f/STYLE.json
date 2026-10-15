@@ -1,15 +1,35 @@
 {
   "id": "pm-jhylee95-e1152f",
   "name": "Supademo launch video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Kinetic type",
-    "Music"
+    "product-ui",
+    "kinetic-type",
+    "music"
   ],
   "creator": "@jhylee95",
   "creator_url": "https://x.com/jhylee95/status/2103604431627452427",
   "page": "https://www.promptsmotion.com/jhylee95-e1152f",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/7d8918ab-5835-442e-bc49-04933fa7a777/91759d3710bbba37.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/dfd44d00-035f-4fc3-b983-3805f7e33e87/fb8f037aca531a78.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 86,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 67,
+  "listed": true,
+  "skill": "styles/pm-jhylee95-e1152f/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md"
+  ]
 }

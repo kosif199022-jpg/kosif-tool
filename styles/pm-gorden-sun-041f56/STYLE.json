@@ -1,13 +1,33 @@
 {
   "id": "pm-gorden-sun-041f56",
   "name": "Beat-synced bouncing 3D ball",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Music"
+    "music"
   ],
   "creator": "@Gorden_Sun",
   "creator_url": "https://x.com/Gorden_Sun/status/2105302007896797351",
   "page": "https://www.promptsmotion.com/gorden-sun-041f56",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/240cec98-5f9a-4a1f-8eae-4a35e96415e0/dbbc5b47afcb731a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/860d1871-655e-4275-9240-14d277404747/f83ac09745dd01b4.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 73,
+  "published": "2026-09-30",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "Three.js"
+  ],
+  "source_prompt_words": 67,
+  "listed": true,
+  "skill": "styles/pm-gorden-sun-041f56/SKILL.md",
+  "playbooks": [
+    "playbooks/music.md"
+  ]
 }

@@ -1,11 +1,27 @@
 {
   "id": "pm-ivanfioravanti-bd9261",
   "name": "Voxel pod-racer run",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@ivanfioravanti",
   "creator_url": "https://x.com/ivanfioravanti/status/2077763009657627055",
   "page": "https://www.promptsmotion.com/ivanfioravanti-bd9261",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/b96d9c14-cf33-462d-9415-04f2da3a30f9/ivanfioravanti-bd9261-video_url.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/2cf164d9-81fd-4b0c-a539-6ec9b97968e5/ivanfioravanti-bd9261-poster.jpg",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 183,
+  "published": "2026-07-16",
+  "model": "Kimi K3",
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": 5,
+  "listed": true,
+  "skill": "styles/pm-ivanfioravanti-bd9261/SKILL.md",
+  "playbooks": []
 }

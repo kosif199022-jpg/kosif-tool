@@ -1,14 +1,33 @@
 {
   "id": "pm-andginja-333d32",
   "name": "Studio website showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Kinetic type"
+    "product-ui",
+    "kinetic-type"
   ],
   "creator": "@andginja",
   "creator_url": "https://x.com/andginja/status/2103492000733618685",
   "page": "https://www.promptsmotion.com/andginja-333d32",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/8b008900-ce01-414e-8942-9a08c29cea11/3d560f9b59d2b20b.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/feecd9c6-f2c7-41f1-a9a8-27dcd0dec09b/7be7776c3b0fa847.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 219,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 10,
+  "listed": true,
+  "skill": "styles/pm-andginja-333d32/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

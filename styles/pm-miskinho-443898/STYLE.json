@@ -1,15 +1,35 @@
 {
   "id": "pm-miskinho-443898",
   "name": "Quetzal social app reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@miskinho_",
   "creator_url": "https://x.com/miskinho_/status/2103847584531956105",
   "page": "https://www.promptsmotion.com/miskinho-443898",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/e082d6ef-eeb0-4e80-9679-1d09808a45cb/e64c8a0a57af3f96.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/a925b2c8-ae78-4aa4-a6f7-58e51ae7cd1b/226c1ac05ee2ce28.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 164,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 25,
+  "listed": true,
+  "skill": "styles/pm-miskinho-443898/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

@@ -1,11 +1,51 @@
 {
   "id": "pm-0xevinho-3777d8",
   "name": "Pixel wizard crypto animation",
+  "name_ar": "ساحر بكسل يستحضر العملات الرقمية",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@0xEvinho",
   "creator_url": "https://x.com/0xEvinho/status/2103212966703436195",
   "page": "https://www.promptsmotion.com/0xevinho-3777d8",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/95d25350-da05-43b9-8399-f97dc7ea4365/c78ae64ddaf2134f.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/21f74b5c-f264-4b77-b649-7a8e3640cd4a/75e0a530753e3aac.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 94,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 9,
+  "listed": true,
+  "skill": "styles/pm-0xevinho-3777d8/SKILL.md",
+  "playbooks": [],
+  "summary_ar": "مقطع بكسل آرت لساحر صغير يستحضر عملات رقمية وشموع سعرية بتعويذة واحدة، بحركة إطارات مقطّعة على طريقة ألعاب الثمانينيات.",
+  "summary_en": "A pixel-art wizard conjures crypto coins and candlestick charts with one spell, animated in stepped 8-bit frames with a retro game feel.",
+  "keywords": [
+    "pixel art",
+    "8-bit",
+    "retro game",
+    "sprite animation",
+    "crypto coins",
+    "candlestick",
+    "stepped frames",
+    "nearest neighbour",
+    "بكسل آرت",
+    "ساحر",
+    "عملات رقمية",
+    "تعويذة",
+    "رسوم ريترو"
+  ],
+  "difficulty": 3,
+  "duration_s": 10,
+  "stack": [
+    "HTML Canvas",
+    "Remotion"
+  ],
+  "brief": "styles/pm-0xevinho-3777d8/BRIEF.md"
 }

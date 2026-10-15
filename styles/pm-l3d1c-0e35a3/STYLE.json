@@ -1,13 +1,56 @@
 {
   "id": "pm-l3d1c-0e35a3",
   "name": "PicTwin AI app ad",
+  "name_ar": "إعلان عمودي لتطبيق PicTwin للصور بالذكاء الاصطناعي",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI"
+    "product-ui"
   ],
   "creator": "@l3d1c",
   "creator_url": "https://x.com/l3d1c/status/2103536553930752011",
   "page": "https://www.promptsmotion.com/l3d1c-0e35a3",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a842b2ef-58d5-446f-a63b-90a222e60b80/ec27b807eea3d155.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/dd1e3521-c38b-4af5-be41-4d56d8fcfc5f/cd3d8954ccb109dd.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1920
+  },
+  "aspect_label": "9:16",
+  "rank": 37,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 11,
+  "listed": true,
+  "skill": "styles/pm-l3d1c-0e35a3/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "إعلان عمودي قصير يُظهر كيف تتحوّل صورة شخصية واحدة إلى نسخة توأم مولّدة بالذكاء الاصطناعي داخل واجهة هاتف حيّة بكشف قبل/بعد.",
+  "summary_en": "A vertical 15 s app ad where one selfie becomes an AI-generated twin inside a live phone UI, told as a split-screen before/after reveal.",
+  "keywords": [
+    "إعلان تطبيق",
+    "صورة شخصية",
+    "توأم بالذكاء الاصطناعي",
+    "واجهة هاتف",
+    "قبل وبعد",
+    "app ad",
+    "selfie",
+    "ai avatar",
+    "phone mockup",
+    "split reveal",
+    "progress ring",
+    "vertical ad",
+    "reels"
+  ],
+  "difficulty": 2,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-l3d1c-0e35a3/BRIEF.md"
 }

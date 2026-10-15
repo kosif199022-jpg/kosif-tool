@@ -1,20 +1,48 @@
 {
   "id": "pm-twoclipping-6dd14e",
   "name": "UGC ad generator promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Phone",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Photos",
-    "Music",
-    "Code"
+    "product-ui",
+    "phone",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@twoclipping",
   "creator_url": "https://x.com/twoclipping/status/2102554209166000267",
   "page": "https://www.promptsmotion.com/twoclipping-6dd14e",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/3e757fa5-3f31-44f0-a299-2af1da6e8e29/284ad368d1e815db.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/00d8376b-24c3-447a-8789-08675cf74f29/c6cbcccf1007e6c4.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 4,
+  "published": "2026-09-23",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "CSS",
+    "HTML"
+  ],
+  "source_prompt_words": 444,
+  "listed": true,
+  "skill": "styles/pm-twoclipping-6dd14e/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/phone.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

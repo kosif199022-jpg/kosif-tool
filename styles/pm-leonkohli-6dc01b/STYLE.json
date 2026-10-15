@@ -1,15 +1,35 @@
 {
   "id": "pm-leonkohli-6dc01b",
   "name": "Geometric motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Shapes"
+    "charts",
+    "kinetic-type",
+    "shapes"
   ],
   "creator": "@LeonKohli",
   "creator_url": "https://x.com/LeonKohli/status/2103517696038191220",
   "page": "https://www.promptsmotion.com/leonkohli-6dc01b",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/f16403e5-fc13-4d29-b002-43e673a1b5d4/b4bb98712482940c.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/14fa72cd-119e-40a0-b8af-cb60649f37ef/95725975437b6488.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 231,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-leonkohli-6dc01b/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md"
+  ]
 }

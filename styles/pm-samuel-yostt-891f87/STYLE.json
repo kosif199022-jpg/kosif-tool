@@ -1,15 +1,35 @@
 {
   "id": "pm-samuel-yostt-891f87",
   "name": "ViralGrow product promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@samuel_yostt",
   "creator_url": "https://x.com/samuel_yostt/status/2105746669035733275",
   "page": "https://www.promptsmotion.com/samuel-yostt-891f87",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c105626b-54ee-4420-bedd-93dbb2eac9e3/9a3b7c3640c19389.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/cc4b77cf-182e-43f6-9975-20377d43f16b/77ca91d5b7e541ad.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 65,
+  "published": "2026-10-01",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 45,
+  "listed": true,
+  "skill": "styles/pm-samuel-yostt-891f87/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

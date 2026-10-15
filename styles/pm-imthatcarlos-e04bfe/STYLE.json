@@ -1,14 +1,33 @@
 {
   "id": "pm-imthatcarlos-e04bfe",
   "name": "Sherwood agentic hedge fund explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Diagrams"
+    "product-ui",
+    "diagrams"
   ],
   "creator": "@imthatcarlos",
   "creator_url": "https://x.com/imthatcarlos/status/2102849219388133592",
   "page": "https://www.promptsmotion.com/imthatcarlos-e04bfe",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/4d3be89c-5aaa-4035-a8e7-073a95eb619e/4d38c31312e5ae30.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/2f0837b0-051f-4c2c-b68d-547bb94be29d/26d3bbbd3c81dc33.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 24,
+  "published": "2026-09-23",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 37,
+  "listed": true,
+  "skill": "styles/pm-imthatcarlos-e04bfe/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/diagrams.md"
+  ]
 }

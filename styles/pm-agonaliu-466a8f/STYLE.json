@@ -1,15 +1,35 @@
 {
   "id": "pm-agonaliu-466a8f",
   "name": "Trezio app motion reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@agonaliu_",
   "creator_url": "https://x.com/agonaliu_/status/2104117465475326227",
   "page": "https://www.promptsmotion.com/agonaliu-466a8f",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c6484ee4-1f38-488a-b693-8b9927a02b12/aa3b1289ed302a18.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/3a915cc4-ed9f-4677-834e-3020faacd0b6/344047fe58b993f2.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 148,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 28,
+  "listed": true,
+  "skill": "styles/pm-agonaliu-466a8f/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

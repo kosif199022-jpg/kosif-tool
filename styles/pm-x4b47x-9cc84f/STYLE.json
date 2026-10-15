@@ -1,14 +1,33 @@
 {
   "id": "pm-x4b47x-9cc84f",
   "name": "Shadow theatre home story",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Music",
-    "Code"
+    "music",
+    "code"
   ],
   "creator": "@x4b47x",
   "creator_url": "https://x.com/x4b47x/status/2103019799614034026",
   "page": "https://www.promptsmotion.com/x4b47x-9cc84f",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/e806657a-e8e7-410c-9d7d-cc2bb60d3f63/e384e55d68f60a14.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/50364126-c742-4509-b51e-f343c5932c04/1011ba906367f1f7.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 720,
+    "h": 1280
+  },
+  "aspect_label": "9:16",
+  "rank": 172,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 30,
+  "listed": true,
+  "skill": "styles/pm-x4b47x-9cc84f/SKILL.md",
+  "playbooks": [
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

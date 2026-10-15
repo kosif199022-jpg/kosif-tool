@@ -1,19 +1,46 @@
 {
   "id": "pm-rossaxbt-3085b7",
   "name": "Ora 2 image model launch film",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Kinetic type",
-    "Shapes",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "product-ui",
+    "kinetic-type",
+    "shapes",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@rossaxbt",
   "creator_url": "https://x.com/rossaxbt/status/2107845961691091295",
   "page": "https://www.promptsmotion.com/rossaxbt-3085b7",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/5a6f2ded-d1dd-4d04-8ad9-e13a1c6af435/316596578f6f5895.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/94ee2cfd-e218-4c2b-a5e7-f10152e99368/a35c20fde7064b61.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1080,
+    "h": 1080
+  },
+  "aspect_label": "1:1",
+  "rank": 71,
+  "published": "2026-10-07",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "Canvas",
+    "HTML"
+  ],
+  "source_prompt_words": 1033,
+  "listed": true,
+  "skill": "styles/pm-rossaxbt-3085b7/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

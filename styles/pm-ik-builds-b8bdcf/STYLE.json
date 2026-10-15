@@ -1,21 +1,50 @@
 {
   "id": "pm-ik-builds-b8bdcf",
   "name": "Paper-style product launch film",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Diagrams",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Music",
-    "Code"
+    "product-ui",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "music",
+    "code"
   ],
   "creator": "@ik_builds",
   "creator_url": "https://x.com/ik_builds/status/2103890476885585923",
   "page": "https://www.promptsmotion.com/ik-builds-b8bdcf",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/e0bf12a1-88ab-4f69-a85e-edbb35bc6e83/756d3ef8c9caf40a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/c1f99ab4-4dca-4549-bce4-5d386efb315f/72d1edb33896f205.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 93,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Medium",
+  "tech": [
+    "Canvas",
+    "GSAP"
+  ],
+  "source_prompt_words": 219,
+  "listed": true,
+  "skill": "styles/pm-ik-builds-b8bdcf/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

@@ -1,11 +1,27 @@
 {
   "id": "pm-majin-appsheet-2d3c1a",
   "name": "Shin Majin-shiki promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@Majin_AppSheet",
   "creator_url": "https://x.com/Majin_AppSheet/status/2103497319899693327",
   "page": "https://www.promptsmotion.com/majin-appsheet-2d3c1a",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/88646ef5-b569-4fdd-9df8-2a01602866ac/f6ba10fcfd48db6a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/fa616f1b-3a04-4a77-9530-3be74005f886/99967a682e0e95fb.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 127,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 8,
+  "listed": true,
+  "skill": "styles/pm-majin-appsheet-2d3c1a/SKILL.md",
+  "playbooks": []
 }

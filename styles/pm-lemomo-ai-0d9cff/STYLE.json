@@ -1,14 +1,33 @@
 {
   "id": "pm-lemomo-ai-0d9cff",
   "name": "Whiteboard skill tutorial",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Diagrams",
-    "Characters"
+    "diagrams",
+    "characters"
   ],
   "creator": "@lemomo_ai",
   "creator_url": "https://x.com/lemomo_ai/status/2104070024575242622",
   "page": "https://www.promptsmotion.com/lemomo-ai-0d9cff",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/af9fff60-7901-4c6b-9389-c6906cdf3f03/da2ccfaad0ffbdde.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/3a84af36-b1c0-4289-b802-b8895c107009/b441d6d85e836081.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 144,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 27,
+  "listed": true,
+  "skill": "styles/pm-lemomo-ai-0d9cff/SKILL.md",
+  "playbooks": [
+    "playbooks/diagrams.md",
+    "playbooks/characters.md"
+  ]
 }

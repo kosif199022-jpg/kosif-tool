@@ -1,14 +1,33 @@
 {
   "id": "pm-blueoctopusai-dd17bd",
   "name": "First & 10 yellow line explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Diagrams"
+    "charts",
+    "diagrams"
   ],
   "creator": "@blueoctopusai",
   "creator_url": "https://x.com/blueoctopusai/status/2105116391439270222",
   "page": "https://www.promptsmotion.com/blueoctopusai-dd17bd",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c5b60b00-2b92-4fc6-96c6-7d8f1e1cdfe1/ec3abc350d8629c0.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/3345daf7-51bf-474e-97b1-c8a8cf128a5a/1816050a08ff4482.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 112,
+  "published": "2026-09-30",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 15,
+  "listed": true,
+  "skill": "styles/pm-blueoctopusai-dd17bd/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/diagrams.md"
+  ]
 }

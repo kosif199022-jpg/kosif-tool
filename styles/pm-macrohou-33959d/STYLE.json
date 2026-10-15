@@ -1,15 +1,35 @@
 {
   "id": "pm-macrohou-33959d",
   "name": "Ren app launch video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Music"
+    "product-ui",
+    "charts",
+    "music"
   ],
   "creator": "@macrohou",
   "creator_url": "https://x.com/macrohou/status/2103545787875733862",
   "page": "https://www.promptsmotion.com/macrohou-33959d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/766af32d-380b-4be7-bd34-d847018951ef/3247c53f5380f609.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/3d02bf73-9cf3-4347-b791-aa8219ecb1bf/1f5cf00be7cf6607.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 31,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 24,
+  "listed": true,
+  "skill": "styles/pm-macrohou-33959d/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/music.md"
+  ]
 }

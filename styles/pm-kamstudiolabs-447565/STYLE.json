@@ -1,13 +1,31 @@
 {
   "id": "pm-kamstudiolabs-447565",
   "name": "Collision-driven music machine",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Music"
+    "music"
   ],
   "creator": "@KamStudioLabs",
   "creator_url": "https://x.com/KamStudioLabs/status/2102899866762440893",
   "page": "https://www.promptsmotion.com/kamstudiolabs-447565",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a13f1b2e-06c1-4e9c-96e5-d0403cc6c753/373cc7356561d7a7.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/65ae50c0-639b-49e7-9039-0fd319d691c5/587bbef5df0d035a.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 233,
+  "published": "2026-09-23",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 19,
+  "listed": true,
+  "skill": "styles/pm-kamstudiolabs-447565/SKILL.md",
+  "playbooks": [
+    "playbooks/music.md"
+  ]
 }

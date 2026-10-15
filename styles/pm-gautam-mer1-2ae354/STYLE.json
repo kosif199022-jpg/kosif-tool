@@ -1,13 +1,57 @@
 {
   "id": "pm-gautam-mer1-2ae354",
   "name": "Matra caption app promo",
+  "name_ar": "ترويج تطبيق Matra للترجمة النصية بأسلوب Apple",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI"
+    "product-ui"
   ],
   "creator": "@gautam_mer1",
   "creator_url": "https://x.com/gautam_mer1/status/2103703336780530003",
   "page": "https://www.promptsmotion.com/gautam-mer1-2ae354",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/0ab2c2b9-446f-4927-ad6f-57ea3c2bddcb/f14079ae10f85eee.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/f430ff99-df4d-4789-a068-dcaad6af0d67/22bdc8bb74c38df3.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 720,
+    "h": 1280
+  },
+  "aspect_label": "9:16",
+  "rank": 42,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 7,
+  "listed": true,
+  "skill": "styles/pm-gautam-mer1-2ae354/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "فيديو عمودي مدته 30 ثانية بهدوء إعلانات Apple يقدّم تطبيق ترجمة نصية للفيديو: هاتف واحد عائم، نص كبير شحيح، وكلمات تظهر متزامنة مع الكلام.",
+  "summary_en": "A 30 s vertical, Apple-calm product film for a caption app: one floating phone, sparse large type, and captions that land word by word in sync with speech.",
+  "keywords": [
+    "ترجمة نصية",
+    "تطبيق كابشن",
+    "أسلوب Apple",
+    "هاتف عائم",
+    "مزامنة كلمات",
+    "استوديو مظلم",
+    "caption app",
+    "word sync",
+    "device film",
+    "light sweep",
+    "minimal product video",
+    "rtl captions",
+    "export flow",
+    "vertical promo"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-gautam-mer1-2ae354/BRIEF.md"
 }

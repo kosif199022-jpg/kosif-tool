@@ -1,13 +1,31 @@
 {
   "id": "pm-rebutonepress-810f78",
   "name": "Black hole time story",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Music"
+    "music"
   ],
   "creator": "@RebutonePress",
   "creator_url": "https://x.com/RebutonePress/status/2103478369245688099",
   "page": "https://www.promptsmotion.com/rebutonepress-810f78",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/a9563d59-343d-4dd2-8ce9-619484049386/8e9246eb547a8178.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/b52ffe1a-34f1-45e7-9fed-d8393fbd8adb/d738c02856285ef4.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 101,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 60,
+  "listed": true,
+  "skill": "styles/pm-rebutonepress-810f78/SKILL.md",
+  "playbooks": [
+    "playbooks/music.md"
+  ]
 }

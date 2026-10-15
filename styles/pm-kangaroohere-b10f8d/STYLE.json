@@ -1,14 +1,33 @@
 {
   "id": "pm-kangaroohere-b10f8d",
   "name": "Motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@KangarooHere",
   "creator_url": "https://x.com/KangarooHere/status/2103617278671818789",
   "page": "https://www.promptsmotion.com/kangaroohere-b10f8d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/99fe9fbc-ada3-4e64-96e0-2a729d03ba18/2794894a005a7f4b.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/3690b3d6-56c2-4282-934a-beee4fefd3de/d4ac1974cfa7bdd6.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 44,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Medium",
+  "tech": [],
+  "source_prompt_words": 29,
+  "listed": true,
+  "skill": "styles/pm-kangaroohere-b10f8d/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

@@ -1,14 +1,33 @@
 {
   "id": "pm-sab8a-364a5a",
   "name": "Talking-head clip edit",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Music"
+    "charts",
+    "music"
   ],
   "creator": "@sab8a",
   "creator_url": "https://x.com/sab8a/status/2103144778481475686",
   "page": "https://www.promptsmotion.com/sab8a-364a5a",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/beccc024-65e3-4e00-8ede-ff07549872e5/0ef9e68f62d5d449.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/948991cc-5ce6-4722-8b62-5cc5cf067aca/0c3229097db1f93c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 67,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 15,
+  "listed": true,
+  "skill": "styles/pm-sab8a-364a5a/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/music.md"
+  ]
 }

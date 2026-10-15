@@ -1,20 +1,47 @@
 {
   "id": "pm-theparuchh-6e08c3",
   "name": "38-second fictional game trailer built entirely in code",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Diagrams",
-    "Kinetic type",
-    "Shapes",
-    "Particles",
-    "Characters",
-    "Photos",
-    "Music",
-    "Code"
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@theparuchh",
   "creator_url": "https://x.com/theparuchh/status/2106824464092770455",
   "page": "https://www.promptsmotion.com/theparuchh-6e08c3",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/74858075-79d4-42a5-b09f-545e40446b1a/theparuchh-6e08c3-video_url.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/afc580ba-63f8-482f-8876-0ef322d19558/theparuchh-6e08c3-poster.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 242,
+  "published": "2026-10-04",
+  "model": "GPT-6 Astra",
+  "effort": null,
+  "tech": [
+    "Shaders"
+  ],
+  "source_prompt_words": 548,
+  "listed": true,
+  "skill": "styles/pm-theparuchh-6e08c3/SKILL.md",
+  "playbooks": [
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

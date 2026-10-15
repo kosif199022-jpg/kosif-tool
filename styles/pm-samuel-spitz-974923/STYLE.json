@@ -1,14 +1,58 @@
 {
   "id": "pm-samuel-spitz-974923",
   "name": "Motion design showreel",
+  "name_ar": "ريل عرض القدرات: فصول الحركة الأربعة",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@samuel_spitz",
   "creator_url": "https://x.com/samuel_spitz/status/2103544855276503053",
   "page": "https://www.promptsmotion.com/samuel-spitz-974923",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/fc6c8ff8-b1bb-4c10-be28-8aec9f6ac350/fcb2b46f3c1ee1af.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/7bdbf201-22b2-4922-9459-6d3a6feb2c27/d5ab701a35b80d3c.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 21,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 34,
+  "listed": true,
+  "skill": "styles/pm-samuel-spitz-974923/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "ريل 20 ثانية يستعرض أربعة فصول متتابعة (الخط، البيانات، الشكل، الإيقاع) بخيط طباعي واحد يربطها دون قطع.",
+  "summary_en": "A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.",
+  "keywords": [
+    "showreel",
+    "ريل أعمال",
+    "portfolio reel",
+    "عرض مهارات",
+    "kinetic typography",
+    "طباعة حركية",
+    "bar chart morph",
+    "مخطط بياني",
+    "chapter transitions",
+    "انتقالات متصلة",
+    "designer résumé",
+    "remotion reel",
+    "1080p"
+  ],
+  "difficulty": 4,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-samuel-spitz-974923/BRIEF.md"
 }

@@ -1,15 +1,35 @@
 {
   "id": "pm-bogdandragomir-35e024",
   "name": "Product intro synced to music",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Music",
-    "Code"
+    "product-ui",
+    "music",
+    "code"
   ],
   "creator": "@BogdanDragomir",
   "creator_url": "https://x.com/BogdanDragomir/status/2104045641538412658",
   "page": "https://www.promptsmotion.com/bogdandragomir-35e024",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/4c8400a1-415d-4c25-8901-b0867d5c8103/c429136f508ecbf0.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/8e182c88-e8ac-430f-bd3c-8093f90edcf1/655808c793a3877e.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 89,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 33,
+  "listed": true,
+  "skill": "styles/pm-bogdandragomir-35e024/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

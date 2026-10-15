@@ -1,15 +1,35 @@
 {
   "id": "pm-ibrahimwasim240-809370",
   "name": "Personal skills showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Characters"
+    "charts",
+    "kinetic-type",
+    "characters"
   ],
   "creator": "@ibrahimwasim240",
   "creator_url": "https://x.com/ibrahimwasim240/status/2103943233432940763",
   "page": "https://www.promptsmotion.com/ibrahimwasim240-809370",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/ff903d5d-ccc1-4d45-8513-2bd14b2a766e/eedfca39219364b5.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/340c9c58-b714-44f0-96c8-db36ba96506f/19423f087f692636.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 114,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 21,
+  "listed": true,
+  "skill": "styles/pm-ibrahimwasim240-809370/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/characters.md"
+  ]
 }

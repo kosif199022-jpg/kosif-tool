@@ -1,13 +1,31 @@
 {
   "id": "pm-emollick-8661a8",
   "name": "Recursion explained in genres",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Diagrams"
+    "diagrams"
   ],
   "creator": "@emollick",
   "creator_url": "https://x.com/emollick/status/2103688362960019567",
   "page": "https://www.promptsmotion.com/emollick-8661a8",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/05c4e4be-a136-4162-bb82-9711e11c486e/31ab0c99ba86325f.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/5a099e30-c69c-4048-8f70-192bb5745697/ca06c8af61fc15a8.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 126,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 23,
+  "listed": true,
+  "skill": "styles/pm-emollick-8661a8/SKILL.md",
+  "playbooks": [
+    "playbooks/diagrams.md"
+  ]
 }

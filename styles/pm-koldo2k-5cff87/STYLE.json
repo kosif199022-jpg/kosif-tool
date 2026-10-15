@@ -1,16 +1,37 @@
 {
   "id": "pm-koldo2k-5cff87",
   "name": "Infinite-zoom landscape loop",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Phone",
-    "Characters",
-    "Photos",
-    "Music"
+    "phone",
+    "characters",
+    "photos",
+    "music"
   ],
   "creator": "@koldo2k",
   "creator_url": "https://x.com/koldo2k/status/2103129343253778767",
   "page": "https://www.promptsmotion.com/koldo2k-5cff87",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/4b5a2ba9-9628-4492-a81f-9fca327b5378/koldo2k-5cff87-video_url.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/e6def476-6284-41bf-b5dc-7ad404bf7b57/koldo2k-5cff87-poster.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 121,
+  "published": "2026-09-24",
+  "model": "Opus 5.5",
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": 277,
+  "listed": true,
+  "skill": "styles/pm-koldo2k-5cff87/SKILL.md",
+  "playbooks": [
+    "playbooks/phone.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md"
+  ]
 }

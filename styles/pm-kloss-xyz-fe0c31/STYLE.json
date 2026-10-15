@@ -1,11 +1,53 @@
 {
   "id": "pm-kloss-xyz-fe0c31",
   "name": "History of AI timeline",
+  "name_ar": "خط زمني متحرك لأبرز محطات الذكاء الاصطناعي",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [],
   "creator": "@kloss_xyz",
   "creator_url": "https://x.com/kloss_xyz/status/2103652674336067876",
   "page": "https://www.promptsmotion.com/kloss-xyz-fe0c31",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/0742c206-9583-4d01-9d7d-83d03a1836c3/be63a1d9719949b4.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/6cf7bfde-15b5-46b6-8e50-395cb76af6c9/90effd02cc5c5533.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 8,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 11,
+  "listed": true,
+  "skill": "styles/pm-kloss-xyz-fe0c31/SKILL.md",
+  "playbooks": [],
+  "summary_ar": "فيلم خط زمني مدته 45 ثانية يسافر على مسار واحد عبر محطات الذكاء الاصطناعي الكبرى من اختبار تورنغ إلى نماذج اللغة الحديثة.",
+  "summary_en": "A 45-second timeline film that rides a single track through the big AI milestones, from the Turing test to modern language models.",
+  "keywords": [
+    "timeline",
+    "history explainer",
+    "milestones",
+    "lateral dolly",
+    "year counter",
+    "turing test",
+    "deep learning",
+    "ai winter",
+    "خط زمني",
+    "تاريخ الذكاء الاصطناعي",
+    "محطات",
+    "فيلم تعليمي",
+    "كاميرا جانبية",
+    "بطاقات معلومات"
+  ],
+  "difficulty": 3,
+  "duration_s": 45,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-kloss-xyz-fe0c31/BRIEF.md"
 }

@@ -1,14 +1,58 @@
 {
   "id": "pm-tolgayhickiran-e90799",
   "name": "Motion design principles reel",
+  "name_ar": "ريل مبادئ الموشن: الحركة تشرح نفسها",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@tolgayhickiran",
   "creator_url": "https://x.com/tolgayhickiran/status/2103619422128935120",
   "page": "https://www.promptsmotion.com/tolgayhickiran-e90799",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/e7891b8b-662c-4cae-a134-81df70202bac/d9d8213f397d27af.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/84f40d65-eb37-4090-9c7d-624ef73eb198/8cf6bac5cf814801.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 45,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Medium",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-tolgayhickiran-e90799/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "ريل 15 ثانية يعرض مبادئ التحريك كأمثلة حية، حيث تؤدي الكلمة والرسم البياني المبدأ الذي يسمّيانه.",
+  "summary_en": "A 15-second résumé reel in which each animation principle is performed live by the very word and chart that name it.",
+  "keywords": [
+    "showreel",
+    "easing",
+    "anticipation",
+    "overshoot",
+    "follow-through",
+    "bar chart",
+    "kinetic typography",
+    "résumé reel",
+    "ريل تعريفي",
+    "مبادئ التحريك",
+    "منحنيات التسهيل",
+    "رسوم بيانية متحركة",
+    "تايبوغرافي حركي"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-tolgayhickiran-e90799/BRIEF.md"
 }

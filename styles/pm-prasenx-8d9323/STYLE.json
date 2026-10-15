@@ -1,16 +1,37 @@
 {
   "id": "pm-prasenx-8d9323",
   "name": "Motion showreel with a fully code-synthesized soundtrack",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Music",
-    "Code"
+    "charts",
+    "kinetic-type",
+    "music",
+    "code"
   ],
   "creator": "@prasenx",
   "creator_url": "https://x.com/prasenx/status/2103538744695693512",
   "page": "https://www.promptsmotion.com/prasenx-8d9323",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/4570591b-d764-44cb-9e8f-3752a7d7b9f8/prasenx-8d9323-video_url.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/6cb56607-4f84-4e0d-a7ac-771ac9666ac1/prasenx-8d9323-poster.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 61,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": 71,
+  "listed": true,
+  "skill": "styles/pm-prasenx-8d9323/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
 }

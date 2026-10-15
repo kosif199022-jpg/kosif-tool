@@ -1,15 +1,35 @@
 {
   "id": "pm-amol909s-27533e",
   "name": "Commotion app showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@Amol909S",
   "creator_url": "https://x.com/Amol909S/status/2103456534768607293",
   "page": "https://www.promptsmotion.com/amol909s-27533e",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/cb280de1-fded-4da3-9430-ab09e651ca2c/a17d743402be6017.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/08f987c9-4527-41c4-9ff5-9d2e156849b9/6eadeabf6983ab57.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 230,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Medium",
+  "tech": [],
+  "source_prompt_words": 43,
+  "listed": true,
+  "skill": "styles/pm-amol909s-27533e/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

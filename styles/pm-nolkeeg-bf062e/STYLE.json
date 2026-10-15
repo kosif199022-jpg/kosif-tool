@@ -1,13 +1,31 @@
 {
   "id": "pm-nolkeeg-bf062e",
   "name": "What happens in one second",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts"
+    "charts"
   ],
   "creator": "@nolkeeg",
   "creator_url": "https://x.com/nolkeeg/status/2103841917603635633",
   "page": "https://www.promptsmotion.com/nolkeeg-bf062e",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/2d78c02d-89a9-4fb5-8ce5-86a317adc1c6/0def55191190bc7e.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/77c36210-4334-4d56-88f1-b9b717837f8a/933cd1f705015b70.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 115,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 90,
+  "listed": true,
+  "skill": "styles/pm-nolkeeg-bf062e/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md"
+  ]
 }

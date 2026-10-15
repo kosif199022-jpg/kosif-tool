@@ -1,14 +1,33 @@
 {
   "id": "pm-web3wesley-7bb108",
   "name": "Type, form, space showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@Web3Wesley",
   "creator_url": "https://x.com/Web3Wesley/status/2103644329294365164",
   "page": "https://www.promptsmotion.com/web3wesley-7bb108",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/3dce8e5e-94de-4a01-98c4-c32bb47563be/556f4457497ad679.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/d1e4ac9b-66bc-4f36-8a63-72dcb0068192/0834bf6c9bdd80a7.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 217,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 26,
+  "listed": true,
+  "skill": "styles/pm-web3wesley-7bb108/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

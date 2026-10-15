@@ -1,15 +1,35 @@
 {
   "id": "pm-adamdesgns-478d6d",
   "name": "Fitters Bible app promo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts",
-    "Kinetic type"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@Adamdesgns",
   "creator_url": "https://x.com/Adamdesgns/status/2103542756555768014",
   "page": "https://www.promptsmotion.com/adamdesgns-478d6d",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/8625810b-5f63-4f41-a514-e6af3aaa27ef/f7ea772aa9eaf3ad.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/6d2af0ea-8195-40c8-a30c-9fbf7b084c89/f622536fbcb7ec79.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 158,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 30,
+  "listed": true,
+  "skill": "styles/pm-adamdesgns-478d6d/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

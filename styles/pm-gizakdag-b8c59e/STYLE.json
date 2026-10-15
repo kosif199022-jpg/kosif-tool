@@ -1,14 +1,33 @@
 {
   "id": "pm-gizakdag-b8c59e",
   "name": "Motion design showreel exploring \"overthinking\"",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@gizakdag",
   "creator_url": "https://x.com/gizakdag/status/2103566030916239768",
   "page": "https://www.promptsmotion.com/gizakdag-b8c59e",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/c82c4225-cfd6-46c1-af2c-c02c5b8af580/gizakdag-b8c59e-video_url.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/babab844-71f0-4122-a44f-ded8a3055607/gizakdag-b8c59e-poster.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 243,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": 30,
+  "listed": true,
+  "skill": "styles/pm-gizakdag-b8c59e/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ]
 }

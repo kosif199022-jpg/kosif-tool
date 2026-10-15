@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOSIF html-canvas starter — فيلم تجريبي 9:16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap">
+<style>
+  :root { --bg: #0b1020; --ink: #f3f7ff; --muted: #9fb0cc; --accent: #7ee8d2; --accent-2: #ffb86b; --font: "Cairo", "Noto Naskh Arabic", "DejaVu Sans", system-ui, sans-serif; }
+  html, body { margin: 0; background: #000; height: 100%; overflow: hidden; font-family: var(--font); }
+  /* The stage is always 1080×1920 CSS px; #fit scales it to the window for live preview. When the renderer opens the page at exactly 1080×1920 the scale is 1. */
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: radial-gradient(ellipse at 50% 20%, #182446 0, var(--bg) 55%); color: var(--ink); }
+  #world { position: absolute; inset: 0; transform-origin: 0 0; will-change: transform; }
+  #grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 90px 90px; opacity: .6; }
+  #fx { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  .scene { position: absolute; inset: 0; }
+  /* Scene 1 — title */
+  #title { display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 0 28px; padding: 0 90px; height: 100%; font-weight: 900; font-size: 128px; line-height: 1.25; text-align: center; }
+  #title span { display: inline-block; will-change: transform, opacity; }
+  #title .accent { color: var(--accent); }
+  /* Scene 2 — chart */
+  #chartWrap { position: absolute; left: 90px; right: 90px; top: 520px; }
+  #chart { width: 100%; height: 620px; overflow: visible; }
+  #counter { position: absolute; right: 90px; top: 300px; font-size: 200px; font-weight: 900; line-height: 1; color: var(--accent-2); font-variant-numeric: tabular-nums; direction: ltr; }
+  #counterLabel { position: absolute; right: 94px; top: 500px; font-size: 44px; color: var(--muted); font-weight: 700; }
+  #chartTitle { position: absolute; left: 90px; right: 90px; top: 1180px; font-size: 72px; font-weight: 900; text-align: center; }
+  /* Scene 3 — burst */
+  #burstWord { position: absolute; inset: 0; display: grid; place-items: center; font-size: 220px; font-weight: 900; color: #fff; text-shadow: 0 0 60px rgba(126,232,210,.55); will-change: transform, opacity; }
+  #ring { position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; border: 6px solid var(--accent); border-radius: 50%; transform: translate(-50%, -50%); opacity: 0; }
+  /* Scene 4 — card */
+  #card { position: absolute; left: 120px; right: 120px; top: 640px; padding: 70px 60px; border-radius: 48px; background: linear-gradient(170deg, #1a2744, #111a30); border: 2px solid rgba(255,255,255,.08); text-align: center; box-shadow: 0 40px 120px rgba(0,0,0,.5); }
+  #logo { width: 220px; height: 220px; margin: 0 auto 24px; }
+  #cardTitle { font-size: 84px; font-weight: 900; letter-spacing: -.01em; direction: ltr; }
+  #cardSub { font-size: 44px; color: var(--muted); font-weight: 700; margin-top: 8px; }
+  /* Captions (outside the camera so they stay pinned) */
+  #captions { position: absolute; left: 60px; right: 60px; bottom: 210px; min-height: 150px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; font-size: 64px; font-weight: 700; text-align: center; unicode-bidi: plaintext; }
+  #captions span { display: inline-block; padding: 6px 18px; border-radius: 22px; color: var(--muted); transition: none; }
+  #captions span.on { color: #0b1020; background: var(--accent); }
+  #captions span.done { color: var(--ink); }
+  #progress { position: absolute; left: 0; bottom: 0; height: 14px; background: var(--accent); width: 0; }
+  #safe { position: absolute; inset: 120px 60px 220px; border: 1px dashed rgba(255,255,255,.12); pointer-events: none; display: none; }
+  /* Live controls (hidden under the renderer) */
+  #controls { position: fixed; left: 12px; bottom: 12px; z-index: 5; display: flex; gap: 8px; align-items: center; font: 14px system-ui, sans-serif; color: #fff; direction: ltr; }
+  #controls button { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid #456; background: #14203a; color: #fff; cursor: pointer; }
+  #controls input[type=range] { width: 260px; }
+  body.render #controls { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><div id="stage">
+  <div id="world">
+    <div id="grid"></div>
+    <canvas id="fx" width="1080" height="1920"></canvas>
+    <section class="scene" id="s1"><div id="title"></div></section>
+    <section class="scene" id="s2">
+      <div id="counter">0</div><div id="counterLabel">رقم له قصة</div>
+      <div id="chartWrap"><svg id="chart" viewBox="0 0 900 620" preserveAspectRatio="none">
+        <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ee8d2" stop-opacity=".35"/><stop offset="1" stop-color="#7ee8d2" stop-opacity="0"/></linearGradient></defs>
+        <g id="axes" stroke="rgba(255,255,255,.18)" stroke-width="2"><line x1="0" y1="600" x2="900" y2="600"/><line x1="0" y1="0" x2="0" y2="600"/></g>
+        <path id="areaPath" fill="url(#area)" d=""/>
+        <path id="line" fill="none" stroke="#7ee8d2" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d=""/>
+        <g id="dots"></g>
+      </svg></div>
+      <div id="chartTitle">تصعد خطوة خطوة</div>
+    </section>
+    <section class="scene" id="s3"><div id="ring"></div><div id="burstWord">الفكرة</div></section>
+    <section class="scene" id="s4"><div id="card">
+      <svg id="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#7ee8d2"/><path id="logoPath" d="M20 14v36M20 32l18-18M20 32l20 18" fill="none" stroke="#062a24" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg>
+      <div id="cardTitle">KOSIF TOOL</div><div id="cardSub">تستقر في ذاكرتك</div>
+    </div></section>
+  </div>
+  <div id="captions"></div>
+  <div id="safe"></div>
+  <div id="progress"></div>
+</div></div>
+<div id="controls"><button id="playBtn">▶ play</button><input id="scrub" type="range" min="0" max="12" step="0.01" value="0"><span id="tval">0.00s</span><label><input id="safeBox" type="checkbox"> safe area</label></div>
+<script src="words.js"></script>
+<script src="timeline.js"></script>
+<script>
+(function () {
+  const { Ease, prog, window01, lerp, clamp01, rng, cameraAt, applyCamera, activeWord, phrases, Timeline } = KOSIF;
+  const W = 1080, H = 1920, DURATION = 12, FPS = 30;
+  const words = window.KOSIF_WORDS || [];
+  const $ = (s) => document.querySelector(s);
+  const world = $('#world'), fx = $('#fx'), ctx = fx.getContext('2d');
+
+  /* ----- data for the chart scene (edit freely) ----- */
+  const series = [8, 14, 11, 22, 30, 27, 41, 48, 62, 71, 90, 128];
+  const maxV = Math.max(...series);
+  const pts = series.map((v, i) => [i * (900 / (series.length - 1)), 600 - (v / maxV) * 560]);
+  $('#line').setAttribute('d', 'M' + pts.map((p) => p.join(' ')).join(' L'));
+  $('#areaPath').setAttribute('d', 'M0 600 L' + pts.map((p) => p.join(' ')).join(' L') + ' L900 600 Z');
+  const dots = $('#dots');
+  pts.forEach((p) => { const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); c.setAttribute('cx', p[0]); c.setAttribute('cy', p[1]); c.setAttribute('r', 0); c.setAttribute('fill', '#ffb86b'); dots.append(c); });
+  const dotEls = [...dots.children];
+
+  /* ----- title words (whole words only: Arabic letters must stay joined) ----- */
+  const titleWords = ['الحركة', 'تبدأ', 'مع', 'أول', 'كلمة'];
+  const title = $('#title');
+  titleWords.forEach((w, i) => { const s = document.createElement('span'); s.textContent = w; if (i === 4) s.className = 'accent'; title.append(s); });
+  const titleEls = [...title.children];
+
+  /* ----- camera keyframes ----- */
+  const camKeys = [
+    { t: 0, x: 0, y: 0, scale: 1.0, rot: 0 },
+    { t: 3.4, x: 0, y: 0, scale: 1.08, rot: 0 },
+    { t: 3.6, x: 0, y: 0, scale: 1.0, rot: 0 },
+    { t: 7.2, x: 0, y: -40, scale: 1.04, rot: 0 },
+    { t: 7.4, x: 0, y: 0, scale: 1.0, rot: 0 },
+    { t: 10.4, x: 0, y: 0, scale: 1.12, rot: -1.5 },
+    { t: 10.6, x: 0, y: 0, scale: 1.0, rot: 0 },
+    { t: 12, x: 0, y: 0, scale: 1.02, rot: 0 },
+  ];
+
+  /* ----- particles: seeded, positions are a pure function of t ----- */
+  const rand = rng(20261015);
+  const particles = Array.from({ length: 160 }, () => {
+    const a = rand() * Math.PI * 2, sp = 420 + rand() * 900;
+    return { a, sp, size: 4 + rand() * 10, hue: rand() < 0.7 ? '#7ee8d2' : '#ffb86b', wob: rand() * 6.28, life: 0.7 + rand() * 0.3 };
+  });
+  function drawParticles(t) {
+    ctx.clearRect(0, 0, W, H);
+    const t0 = 7.45, t1 = 10.4;
+    if (t < t0 || t > t1) return;
+    const p = clamp01((t - t0) / (t1 - t0));
+    for (const q of particles) {
+      const life = Math.min(1, p / q.life);
+      const d = Ease.outExpo(life) * q.sp;
+      const x = W / 2 + Math.cos(q.a) * d + Math.sin(life * 9 + q.wob) * 12;
+      const y = H / 2 + Math.sin(q.a) * d * 1.4 + life * 120; // slight gravity
+      const alpha = 1 - Ease.inOutCubic(life);
+      ctx.globalAlpha = alpha * 0.95; ctx.fillStyle = q.hue;
+      ctx.beginPath(); ctx.arc(x, y, q.size * (1 - life * 0.6), 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  /* ----- scenes ----- */
+  const scenes = [
+    { id: 's1', t0: 0, t1: 3.4, el: $('#s1'), draw(t) {
+      titleEls.forEach((el, i) => {
+        const a = 0.25 + i * 0.16;                       // stagger 160 ms
+        const p = prog(t, a, a + 0.55, (x) => Ease.spring(x, 170, 16));
+        const out = 1 - prog(t, 3.0, 3.35, Ease.inBack);  // leave together
+        el.style.opacity = Math.min(p, out).toFixed(3);
+        el.style.transform = `translateY(${lerp(70, 0, p) + lerp(0, -60, 1 - out)}px) scale(${lerp(0.92, 1, p)})`;
+      });
+    } },
+    { id: 's2', t0: 3.4, t1: 7.2, el: $('#s2'), draw(t, p, local) {
+      const draw = prog(local, 0.2, 2.4, Ease.inOutCubic);        // line draws over 2.2 s
+      $('#line').style.strokeDashoffset = (1 - draw).toString();
+      $('#line').style.strokeDasharray = '1';
+      $('#areaPath').style.opacity = (draw * 0.9).toFixed(3);
+      dotEls.forEach((c, i) => { const at = i / (dotEls.length - 1); const pp = prog(draw, at, at + 0.08, Ease.outBack); c.setAttribute('r', (pp * 12).toFixed(2)); });
+      const n = Math.round(lerp(0, 128, prog(local, 0.2, 2.6, Ease.outQuint)));
+      $('#counter').textContent = String(n);
+      const inC = prog(local, 0, 0.5, Ease.outCubic), outC = 1 - prog(local, 3.3, 3.8, Ease.inOutCubic);
+      for (const sel of ['#counter', '#counterLabel', '#chartWrap', '#chartTitle']) { const el = $(sel); el.style.opacity = Math.min(inC, outC).toFixed(3); el.style.transform = `translateY(${lerp(40, 0, inC)}px)`; }
+    } },
+    { id: 's3', t0: 7.2, t1: 10.4, el: $('#s3'), draw(t, p, local) {
+      const w = $('#burstWord'), ring = $('#ring');
+      const pop = prog(local, 0.2, 0.75, (x) => Ease.spring(x, 150, 14));
+      const out = 1 - prog(local, 2.75, 3.2, Ease.inBack);
+      w.style.opacity = Math.min(pop, out).toFixed(3);
+      w.style.transform = `scale(${lerp(0.55, 1, pop) * lerp(1, 0.9, 1 - out)})`;
+      const r = prog(local, 0.25, 1.3, Ease.outExpo);
+      ring.style.opacity = (1 - r).toFixed(3);
+      ring.style.width = ring.style.height = `${10 + r * 1500}px`;
+    } },
+    { id: 's4', t0: 10.4, t1: 12, el: $('#s4'), draw(t, p, local) {
+      const card = $('#card');
+      const inC = prog(local, 0.1, 0.7, (x) => Ease.spring(x, 160, 17));
+      card.style.opacity = inC.toFixed(3);
+      card.style.transform = `translateY(${lerp(120, 0, inC)}px) scale(${lerp(0.94, 1, inC)})`;
+      $('#logoPath').style.strokeDasharray = '1';
+      $('#logoPath').style.strokeDashoffset = (1 - prog(local, 0.4, 1.2, Ease.inOutCubic)).toString();
+    } },
+  ];
+
+  /* ----- captions: current phrase, current word highlighted ----- */
+  const cap = $('#captions');
+  const ph = phrases(words, 0.45);
+  let capPhrase = -1;
+  function drawCaptions(t) {
+    const idx = ph.findIndex((x) => t >= x.start - 0.15 && t < x.end + 0.5);
+    if (idx !== capPhrase) {
+      capPhrase = idx; cap.replaceChildren();
+      if (idx >= 0) for (const w of ph[idx].words) { const s = document.createElement('span'); s.textContent = w.word; cap.append(s); }
+    }
+    if (idx < 0) return;
+    const spans = [...cap.children], phr = ph[idx];
+    const fade = window01(t, phr.start - 0.15, phr.end + 0.5, 0.15, 0.3);
+    cap.style.opacity = fade.toFixed(3);
+    spans.forEach((s, i) => {
+      const w = phr.words[i];
+      const on = t >= w.start && t < w.end, done = t >= w.end;
+      s.className = on ? 'on' : done ? 'done' : '';
+      const pop = on ? Ease.outBack(clamp01((t - w.start) / 0.14)) : 1;
+      s.style.transform = `scale(${lerp(0.96, 1.08, pop)})`;
+    });
+  }
+
+  const tl = new Timeline({
+    duration: DURATION, fps: FPS, scenes,
+    always(t) {
+      applyCamera(world, cameraAt(camKeys, t), W, H);
+      drawParticles(t);
+      drawCaptions(t);
+      $('#progress').style.width = `${(t / DURATION) * 100}%`;
+    },
+    onFrame(t) { scrub.value = t.toFixed(2); tval.textContent = t.toFixed(2) + 's'; },
+  });
+
+  /* ----- fit to window for live preview ----- */
+  function fit() { const s = Math.min(innerWidth / W, innerHeight / H); $('#fit').style.transform = `scale(${s})`; }
+  addEventListener('resize', fit); fit();
+
+  /* ----- live controls ----- */
+  const scrub = $('#scrub'), tval = $('#tval');
+  scrub.addEventListener('input', () => { tl.pause(); playBtn.textContent = '▶ play'; tl.seek(parseFloat(scrub.value)); });
+  const playBtn = $('#playBtn');
+  playBtn.addEventListener('click', () => { tl.toggle(); playBtn.textContent = tl.playing ? '⏸ pause' : '▶ play'; });
+  $('#safeBox').addEventListener('change', (e) => { $('#safe').style.display = e.target.checked ? 'block' : 'none'; });
+  addEventListener('keydown', (e) => { if (e.code === 'Space') { e.preventDefault(); playBtn.click(); } });
+  if (navigator.webdriver) document.body.classList.add('render');
+
+  /* ----- renderer contract ----- */
+  window.__kosif = { duration: DURATION, fps: FPS, seek: (t) => tl.seek(t) };
+  window.__kosifReady = (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => true);
+  const startAt = parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0;
+  tl.seek(startAt);
+  if (!navigator.webdriver && new URLSearchParams(location.search).get('autoplay') === '1') playBtn.click();
+})();
+</script>
+</body>
+</html>

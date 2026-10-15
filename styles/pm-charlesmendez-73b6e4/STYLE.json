@@ -1,14 +1,33 @@
 {
   "id": "pm-charlesmendez-73b6e4",
   "name": "Datagran ChatGPT ads explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Diagrams"
+    "charts",
+    "diagrams"
   ],
   "creator": "@charlesmendez",
   "creator_url": "https://x.com/charlesmendez/status/2102847039415476517",
   "page": "https://www.promptsmotion.com/charlesmendez-73b6e4",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/2b3d4d4c-28db-42f2-9c9b-70588bf8fe92/f3d315e9b43243cb.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9be39434-94f1-4fe6-947e-725aefc3c753/105f203c3a6f40c6.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 180,
+  "published": "2026-09-23",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 53,
+  "listed": true,
+  "skill": "styles/pm-charlesmendez-73b6e4/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/diagrams.md"
+  ]
 }

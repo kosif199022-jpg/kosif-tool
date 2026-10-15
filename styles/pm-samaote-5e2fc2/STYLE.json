@@ -1,15 +1,59 @@
 {
   "id": "pm-samaote-5e2fc2",
   "name": "Synced lyrics motion video",
+  "name_ar": "فيديو كلمات أغنية متزامن مع الصوت",
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Charts",
-    "Kinetic type",
-    "Music"
+    "charts",
+    "kinetic-type",
+    "music"
   ],
   "creator": "@samaote",
   "creator_url": "https://x.com/samaote/status/2103510974796124569",
   "page": "https://www.promptsmotion.com/samaote-5e2fc2",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/7bf926a8-736c-40ae-8388-f7a390c7a3b1/9352a6c111d4317a.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/34e1c909-6781-48b6-895a-359c54f5ac1a/9d7abd9043f933e6.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 57,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 38,
+  "listed": true,
+  "skill": "styles/pm-samaote-5e2fc2/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md"
+  ],
+  "summary_ar": "كلمات الأغنية تظهر على نبرة المغني بالضبط بينما تتنفس الخلفية مع الإيقاع، بأسلوب يليق بعرض أعمال مصمم موشن.",
+  "summary_en": "Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.",
+  "keywords": [
+    "lyrics video",
+    "kinetic typography",
+    "beat sync",
+    "word timing",
+    "showreel",
+    "كلمات أغنية",
+    "تزامن صوتي",
+    "طباعة حركية",
+    "إيقاع",
+    "waveform",
+    "remotion",
+    "موجة صوتية"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "Web Audio",
+    "SVG"
+  ],
+  "brief": "styles/pm-samaote-5e2fc2/BRIEF.md"
 }

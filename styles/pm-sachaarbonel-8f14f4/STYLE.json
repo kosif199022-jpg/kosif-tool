@@ -1,14 +1,33 @@
 {
   "id": "pm-sachaarbonel-8f14f4",
   "name": "Norilu product launch video",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
   "category": [
-    "Product UI",
-    "Charts"
+    "product-ui",
+    "charts"
   ],
   "creator": "@sachaarbonel",
   "creator_url": "https://x.com/sachaarbonel/status/2103614797501673648",
   "page": "https://www.promptsmotion.com/sachaarbonel-8f14f4",
   "video": "https://www.promptsmotion.com/__l5e/assets-v1/b82c67a9-f689-40dd-ad7e-175a0a992201/00dbfe8b015e3939.mp4",
   "poster": "https://www.promptsmotion.com/__l5e/assets-v1/278bb48c-7506-42b4-a615-03d81dd40b15/bbb49b7412c86290.webp",
-  "origin": "PromptsMotion"
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 147,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 17,
+  "listed": true,
+  "skill": "styles/pm-sachaarbonel-8f14f4/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ]
 }
