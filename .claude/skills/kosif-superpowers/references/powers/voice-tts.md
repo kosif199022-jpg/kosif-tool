@@ -280,7 +280,7 @@ python3 kosif-tool/tools/verify_video.py vo.mp4 --aspect 9:16 --fps 30 \
 #### VOICE-32 · توقيت كلمات التعليق المولد بـ faster-whisper · Word timings from the generated voice (faster-whisper) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تفرّغ الصوت المولد بطوابع زمنية لكل كلمة ثم تحوله إلى words.json لتتزامن الحركة والترجمة. — Transcribe the generated voice with per-word timestamps and convert to words.json so motion and captions sync.
 - **متى أستخدمها / when:** بعد كل توليد صوت لا يعيد طوابع زمنية — after any TTS without native timestamps.
-- **كيف / how:** pip install faster-whisper; resample to 16 kHz mono f32 and pass the numpy array (in this venv PyAV 19 rejects faster-whisper's open() kwargs, so do not pass a path); WhisperModel('small', device='cpu', compute_type='int8'), language='ar', word_timestamps=True; dump segments → `python3 kosif-tool/tools/words_convert.py ar.whisper.json words.json`. Ran here: 10 words, 0.00 → 7.26 s. Lesson: Whisper split «محليًا» into «محل» + «ين» — always re-attach to the known script (VOICE-33). **أرقام / params:** 16 kHz mono; model small int8 on CPU (large-v3 for final); key words ≤ 100 ms, others ≤ 150 ms.
+- **كيف / how:** pip install faster-whisper; resample to 16 kHz mono f32 and pass the numpy array (in this venv PyAV 19 rejects faster-whisper's open() kwargs, so do not pass a path); WhisperModel('small', device='cpu', compute_type='int8'), language='ar', word_timestamps=True; dump segments → `python3 kosif-tool/tools/words_convert.py ar.whisper.json words.json`. Ran in an earlier session's venv (2026-10-16; not installed in the current container, so install first): 10 words, 0.00 → 7.26 s. Lesson: Whisper split «محليًا» into «محل» + «ين» — always re-attach to the known script (VOICE-33). (code snippet in references/powers/voice-tts.md) **أرقام / params:** 16 kHz mono; model small int8 on CPU (large-v3 for final); key words ≤ 100 ms, others ≤ 150 ms.
 
 ```python
 import numpy as np, subprocess, json
@@ -295,7 +295,7 @@ json.dump({'segments': [{'start': s.start, 'end': s.end, 'text': s.text, 'words'
   open('vo.whisper.json', 'w'), ensure_ascii=False)
 ```
 
-- **الدليل / proof:** `run here 2026-10-16: faster-whisper 1.2.1 small → words.json 10 words` · `kosif-tool/playbooks/audio-sync.md:26` · `kosif-tool/tools/words_convert.py` · `100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md`
+- **الدليل / proof:** `earlier session 2026-10-16 (venv; not installed in the current container, pip install faster-whisper): faster-whisper 1.2.1 small → words.json 10 words` · `kosif-tool/playbooks/audio-sync.md:26` · `kosif-tool/tools/words_convert.py` · `100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md`
 - **تثبيت / install:** `pip install faster-whisper`
 
 #### VOICE-33 · إعادة لصق النص المعروف على توقيت ويسبر · Re-attach the known script to Whisper timings · 📄 موصوف / documented only

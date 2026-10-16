@@ -804,7 +804,7 @@
   "install": "pip install faster-whisper",
   "license": "",
   "proof": [
-   "earlier session 2026-10-16 (venv; not installed in the current container, `pip install faster-whisper`): faster-whisper 1.2.1 small → words.json 10 words",
+   "earlier session 2026-10-16 (venv; not installed in the current container, pip install faster-whisper): faster-whisper 1.2.1 small → words.json 10 words",
    "kosif-tool/playbooks/audio-sync.md:26",
    "kosif-tool/tools/words_convert.py",
    "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"
