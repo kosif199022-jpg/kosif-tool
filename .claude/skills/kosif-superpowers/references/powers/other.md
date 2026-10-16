@@ -229,7 +229,7 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الدليل / proof:** `session-2026-10-16:motion-leftovers#5` · `owner-upload:kosif-tool-ultra/kosif-500-methods.json`
 
 #### MISC-X02 · تنسيق الوكلاء لبناء فيلم متوازٍ · Agent orchestration rules for parallel film builds · 📄 موصوف / documented only
-- **ماذا / what:** حين يبني عدة وكلاء فيلمًا معًا: ملفات منفصلة لكل وكيل، وتوقيعات عدة مشتركة مجمدة، وملخصات بدل مستندات كاملة. — When several agents build one film: each owns separate files, shared kit signatures are frozen, and agents get digests instead of whole documents.
+- **ماذا / what:** حين يبني عدة وكلاء فيلمًا معًا: ملفات منفصلة لكل وكيل، وتواقيع دوال الأدوات المشتركة مجمّدة، وملخصات بدل مستندات كاملة. — When several agents build one film: each owns separate files, shared kit signatures are frozen, and agents get digests instead of whole documents.
 - **متى أستخدمها / when:** مشروع كبير يُقسم على وكلاء فرعيين — a large project split across sub-agents.
 - **كيف / how:** Parallel builders own disjoint files and write change requests instead of editing each other's; freeze the shared kit's function signatures; hand agents part files or JSON digests (one agent spent 8 min and 354.8k tokens reading ~1 MB before writing); pre-extract job ids into state.json rather than letting agents read raw transcripts; carry over the idea of liked frames, never their devices; do not message a sub-agent that runs inside a workflow (it forks a parallel copy editing the same files); serialize heavy renders and kill only your own browser processes; pre-produce during waits (assets, sound cue drafts, acceptance specs).
 - **الرخصة / license:** owner (no LICENSE file)

@@ -664,7 +664,7 @@
   "name_ar": "تنسيق الوكلاء لبناء فيلم متوازٍ",
   "name_en": "Agent orchestration rules for parallel film builds",
   "status": "documented",
-  "what": "حين يبني عدة وكلاء فيلمًا معًا: ملفات منفصلة لكل وكيل، وتوقيعات عدة مشتركة مجمدة، وملخصات بدل مستندات كاملة. — When several agents build one film: each owns separate files, shared kit signatures are frozen, and agents get digests instead of whole documents.",
+  "what": "حين يبني عدة وكلاء فيلمًا معًا: ملفات منفصلة لكل وكيل، وتواقيع دوال الأدوات المشتركة مجمّدة، وملخصات بدل مستندات كاملة. — When several agents build one film: each owns separate files, shared kit signatures are frozen, and agents get digests instead of whole documents.",
   "when": "مشروع كبير يُقسم على وكلاء فرعيين — a large project split across sub-agents.",
   "how": "Parallel builders own disjoint files and write change requests instead of editing each other's; freeze the shared kit's function signatures; hand agents part files or JSON digests (one agent spent 8 min and 354.8k tokens reading ~1 MB before writing); pre-extract job ids into state.json rather than letting agents read raw transcripts; carry over the idea of liked frames, never their devices; do not message a sub-agent that runs inside a workflow (it forks a parallel copy editing the same files); serialize heavy renders and kill only your own browser processes; pre-produce during waits (assets, sound cue drafts, acceptance specs).",
   "params": "",
