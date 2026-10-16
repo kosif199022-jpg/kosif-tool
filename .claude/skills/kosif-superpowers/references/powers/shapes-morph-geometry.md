@@ -1,1074 +1,706 @@
 # الأشكال والتحوّل — Shapes & morphing
 
-> فصل مُجمَّع آليًا من 204 ملاحظة حصاد (مستودعات KOSIF + أطلس المهارات + 253 فيديو مرجعي)، مدموجة إلى **197 قدرة** مرتبة من الأقوى دليلًا. لم يُحرَّر يدويًا بعد — تحقّق من الدليل قبل الادعاء.
-> Auto-compiled chapter: 197 powers deduplicated by name from 204 harvested atoms; strongest evidence first.
+> **قوتك هنا:** أنت تبني الصورة من أشكال صافية وتجعلها تتحول بلا قطع — دائرة تصير نجمة ثم مربعًا، زر يصير شريط تقدم، نقطة تتفتح إلى واجهة، كتل لزجة تندمج، حلقات تدور بنسب صحيحة فتلتف بلا قفزة، شبكات باوهاوس وتروشيه تتموج من المركز، وزخارف ثمانية تُرسم على الإيقاع — بأرقام تجعل الحركة مقروءة لا عشوائية.
+> **أقوى دليل:** مختبر أشكال رندرتُه في هذه الحاوية (2026-10-16، 90 إطارًا، VERIFY OK): `MOTION.morphPath` من motion-kit يحوّل دائرة→نجمة→مربعًا، فلتر اللزوجة 18/−7، زهرة 137.5°، تروشيه وباوهاوس بموجة مسافة، فائق الإهليلج بحلقات صدى، حلقات بفجوات، انفجار خطوط وحلقة صدمة، ودالة قطبية تتحول — واختبارات النحت بحقول المسافة `test_shape_kit` ‏(4/4) ومحرك أشكال Studio ‏(10/10) نجحت هنا.
+> **You can:** morph paths, containers and dot clouds, sculpt SDF solids, draw curves and compound holes, choreograph grids, orbit rings and bursts, and build Islamic ornament from code. **93 powers follow** — ✅ 16 · 🟢 17 · 📦 7 · 🔑 0 · 👁 32 · 📄 17 · 💡 4.
 
-**الحالة:** ✅ مُثبت هنا 7 · 🟢 جاهز 24 · 📦 بأمر تثبيت 39 · 👁 شوهد في فيديو 102 · 📄 موصوف 14 · 💡 فكرة 11
+**الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
+مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
 
-#### SHAPE-01 · تموج ضغطة · Press ripple with heat bloom · ✅ مُثبت هنا
-- **ماذا / what:** Expanding ring that shoves coordinates outward and adds heat.
-- **كيف / how:** Ring radius grows over 0.9s; displacement 0.18, heat 0.55.
-- **أرقام / params:** ripple 0.18, bloom 0.55, 0.9s
-- **الدليل / proof:** `kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md`
+**فحص سريع لهذه الحاوية (2026-10-16):** مختبر الأشكال (Canvas + SVG + motion-kit + GSAP المضمّن) رُندر بـ `render_html.cjs` في وضع seek ✔ · `python3 -m unittest tests.test_shape_kit` في kosif-montage-motion: 4/4 ✔ (كرة دقيقة ومغلقة، دمج ونحت ناعم، تخطي الفراغ، أرنب) · `tests.test_studio.Renderer` + `Svg` في kosif-studio: 10/10 ✔ (ثقوب، even-odd، أقواس المسار، أشكال SVG) · flubber وpolymorph-js وsvg-path-morph وMorphSVG غير مثبتة — `morphPath` من motion-kit يكفي بلا مكتبة.
 
-#### SHAPE-02 · توزيع حلزوني بالزاوية الذهبية · Golden-angle spiral placement · ✅ مُثبت هنا
-- **ماذا / what:** Places N items evenly around a centre without geometry data (districts around their city) using a sunflower spiral.
-- **كيف / how:** districtSpots(n,R): r = R*sqrt((i+.6)/n), a = i*2.39996 rad; dx=r*cos a, dy=r*sin a.
-- **أرقام / params:** golden angle 2.39996 rad; R = min(58, 20+3n)
-- **الدليل / proof:** `kosif-earth-ci-fork/app/src/engine/fusion/sales/sales-geo-engine.ts:83`
+## الفهرس / contents
+- **تحويل شكل إلى شكل — Path & shape morphing** — SHAPE-01 … SHAPE-14 (14)
+- **تحولات الحاويات والواجهات — Container & UI morphs** — SHAPE-15 … SHAPE-26 (12)
+- **الكتل اللزجة وحقول المسافة — Blobs, goo & signed-distance shapes** — SHAPE-27 … SHAPE-38 (12)
+- **المسارات والمنحنيات والبناء — Paths, curves & construction** — SHAPE-39 … SHAPE-51 (13)
+- **الشبكات والبلاطات والأنماط التوليدية — Grids, tiles & generative patterns** — SHAPE-52 … SHAPE-61 (10)
+- **الحلقات والمدارات والانفجارات — Rings, orbits & bursts** — SHAPE-62 … SHAPE-72 (11)
+- **الزخرفة والأيقونات والعناصر المصاحبة — Ornament, icons & decor** — SHAPE-73 … SHAPE-88 (16)
+- **نظام الأشكال وقواعده — Shape system & rules** — SHAPE-89 … SHAPE-93 (5)
+- توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 
-#### SHAPE-03 · خطان قطريان منجرفان · Exactly two drifting diagonal background lines · ✅ مُثبت هنا
-- **ماذا / what:** Signature motif: two translucent curved diagonal lines behind everything that drift continuously and never stop; never three.
-- **كيف / how:** for k in 0..1: ox=sin(phase*.20+k*2.3)*0.035w, oy=cos(phase*.16+k)*0.02h; quadratic curve from (-.2w+k*.63w, .93h) via (.30w+k*.41w, .43h) to (.65w+k*.5w, -.10h); stroke line colour 50% alpha, width 1.6*scale.
-- **أرقام / params:** 2 lines; drift ±3.5% w, ±2% h
-- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:47-49` · `fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:18` · `fastify-motion-bro/tests/viral-editorial.test.mjs:8`
+## تحويل شكل إلى شكل — Path & shape morphing
 
-#### SHAPE-04 · دمج ناعم للأشكال · Smooth CSG (add / sub / and) · ✅ مُثبت هنا
-- **ماذا / what:** Smooth union, subtraction and intersection with a blend radius k in metres; colours blend with the same weights.
-- **كيف / how:** Pass {op:'add'|'sub'|'and', k, color} to any sculpt primitive.
-- **أرقام / params:** k e.g. .012 m smooth union; sub with color tints the carved cavity (tested: tint red 1.0, plain side 0)
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:104` · `100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:123` · `100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:31`
+_قاعدة واحدة تحكم كل تحويل: نفس عدد النقاط ونفس اتجاه اللف، أعد أخذ العينات أولًا، 500–800 ms، ونقطة بداية متطابقة حتى لا يلتف الشكل على نفسه._
 
-#### SHAPE-05 · نحت بدوال المسافة إلى مجسم مغلق · SDF sculpting to watertight mesh · ✅ مُثبت هنا
-- **ماذا / what:** Characters and objects are sculpted from signed-distance primitives (sphere, box, smooth union, subtract with tint) and meshed with surface nets into closed, accurate geometry in the browser or Node.
-- **كيف / how:** S.sculpt().sphere(c, r).sphere(c2, r2, {k}).box(c, size, round).sphere(c, r, {op:'sub', k, color}).mesh({cells}); coarse-to-fine evaluation skips empty space.
-- **أرقام / params:** tests: sphere volume ±2%, area ±3%, radius error <1e-3, 0 open edges; evals <60% of full grid; smooth-union gap <−0.005
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/tests/js/shape_kit_check.cjs:31` · `100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:21` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:46`
+#### SHAPE-01 · تحويل المسار بإعادة العينات · Seek-safe path morph (MOTION.morphPath) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يأخذ عينات متساوية من المسارين (120 نقطة) ويستوفي بينهما عبر وكيل في خط GSAP، فيصير أي شكل أي شكل بلا إضافة. — Samples both SVG paths to N points and interpolates through a proxy on a GSAP timeline — any shape into any shape, no plugin, seekable.
+- **متى أستخدمها / when:** انتقال مشهد بشكل واحد يستمر، شعار يصير أيقونة، دائرة تصير علامة.
+- **كيف / how:** MOTION.morphPath(tl, pathEl, fromD, toD, at, {points, dur, ease, open}); getPointAtLength sampling, writes "M…L…Z" each tick via modifiers, immediateRender false. Rendered here: circle→star at 0.2 s, star→square at 1.3 s on a paused timeline driven by seek(t). Start both paths at the same angle (top-centre) to avoid a twist. **أرقام / params:** N 120 points, dur .66 s, ease E.inOut; closes with Z unless open.
+- **⚖️ ترخيص / license:** GSAP المضمّن برخصة GSAP القياسية «بلا مقابل» — ليست MIT / vendored GSAP, standard no-charge license.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:255` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:255` · `kosif-studio/motion/projects/kit_v3_demo/index.html` · `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js`
 
-#### SHAPE-06 · محلّل لغة مسارات SVG كاملة · Full SVG path language parser · ✅ مُثبت هنا
-- **ماذا / what:** Parses M L H V C S Q T A Z (absolute and relative, smooth reflections, glued arc flags) into polygons, with arcs converted by the SVG centre-parameterisation.
-- **كيف / how:** render.path('M ... Z', n=14) returns one polygon per subpath; _arc samples max(4, |dt|/2pi*64) points.
-- **أرقام / params:** 14 samples per Bezier segment
-- **الدليل / proof:** `kosif-studio/render.py:87` · `kosif-studio/render.py:192` · `kosif-studio/tests/test_studio.py:55`
+#### SHAPE-02 · قانون التحويل: نقاط متساوية واتجاه واحد · Morph law: equal points, same winding · 📄 موصوف / documented only
+- **ماذا / what:** لا تحوّل إلا مسارين بنفس عدد النقاط ونفس اتجاه اللف؛ أعد العينات أولًا بـ flubber أو نقاط محسوبة مسبقًا. — Only morph equal-point, same-winding paths; resample first (flubber or precomputed points).
+- **متى أستخدمها / when:** قبل أي تحويل — وإلا ينقلب الشكل أو يلتف.
+- **كيف / how:** Remotion: lerp [x,y] arrays with Easing.inOut(Easing.cubic); browser: flubber.interpolate(a,b,{maxSegmentLength:4}); align start points by rotating the array to the topmost vertex; reverse one path if signed areas differ. **أرقام / params:** 500–800 ms cubic-bezier(.65,0,.35,1); 64–128 points (200 for detailed shapes).
+- **📦 تثبيت / install:** `npm i flubber`
+- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:24` · `kosif-tool/playbooks/shapes.md:53-64`
+- **أساليب / styles:** `style:pm-blue-clarity-ef56d0`
 
-#### SHAPE-07 · أشكال مركبة بثقوب · Even-odd compound shapes and holes · ✅ مُثبت هنا
-- **ماذا / what:** Rings, letters with counters and logo cut-outs: subpaths bridged to one anchor so even-odd filling cancels the bridges, or explicit Hole polygons that erase.
-- **كيف / how:** render.compound(polys); render.Hole([...]) drawn after the shape it cuts; to_python._bridge for Pillow programs.
-- **الدليل / proof:** `kosif-studio/render.py:25` · `kosif-studio/render.py:229` · `kosif-studio/to_python.py:80`
+#### SHAPE-03 · فائق الإهليلج بحلقات صدى · Superellipse morph with echo rings · ✅ مُثبت هنا / proven here
+- **ماذا / what:** الشكل يمر عبر |x|ⁿ+|y|ⁿ=1 بأس متحرك (دائرة→مربع ناعم)، وحوله حلقات كنتور متأخرة كصدى. — Morph through |x|^n+|y|^n=1 with animated n (circle → squircle), surrounded by offset contour rings that lag behind.
+- **متى أستخدمها / when:** أيقونات تطبيقات، شعارات ناعمة، انتقال «تقني أنيق».
+- **كيف / how:** x = sign(cosθ)|cosθ|^(2/n)·R, y likewise; n tween 2→4.2; 5–7 rings at +12 px offsets each delayed 60 ms and fading; rendered here (Canvas lab). Can continue to a 3D cube or star. **أرقام / params:** n 2→4.2 in 400 ms; 5–7 rings, 12 px apart, 60 ms lag each.
+- **الدليل / proof:** `kosif-tool/styles/pm-levabashidze-2d713a`
+- **أساليب / styles:** `style:pm-levabashidze-2d713a`
 
-#### SHAPE-08 · تحول شكل إلى شكل · SVG path morph · 🟢 جاهز
-- **ماذا / what:** One SVG shape becomes another by resampling both paths to N points and interpolating; seek-safe.
-- **كيف / how:** MOTION.morphPath(tl, pathEl, fromD, toD, at, {points, dur, ease, open}).
-- **أرقام / params:** N=120 points, dur 0.66 s, ease E.inOut
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:255` · `kosif-studio/motion/kit/motion-kit.js:255`
+#### SHAPE-04 · تحويل بدالة قطبية · Polar-function shape morph · ✅ مُثبت هنا / proven here
+- **ماذا / what:** الشكل = r(θ) = a + b·|cos(kθ/2)|^p؛ استوفِ a وb وk وp بين أشكال مسماة (زهرة، نجمة، squircle) مع شبكة قطبية ومعادلة حية. — Shape as r(θ)=a+b·|cos(kθ/2)|^p; interpolate a, b, k, p between named forms, optionally with a polar grid and a live formula label.
+- **متى أستخدمها / when:** شرح رياضي، شعار عضوي، زهرة نابضة.
+- **كيف / how:** Sample 120–240 θ steps, fill; tween k 4→8, p .5→2 with easeInOutCubic 600 ms; flower variant r = R(1 + .12 sin(8θ + t)) with design handles and a dimension tag. Rendered here (lab). **أرقام / params:** k 4→8, 120–240 samples, 600 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-ayushunleashed-ece3e3` · `kosif-tool/styles/pm-ghinaiya-nirmal-5d8fec`
+- **أساليب / styles:** `style:pm-ayushunleashed-ece3e3` · `style:pm-ghinaiya-nirmal-5d8fec`
 
-#### SHAPE-09 · تحول أيقونة القائمة إلى إغلاق · Hamburger-to-close icon morph · 🟢 جاهز
-- **ماذا / what:** Three bars become an X: top and bottom rotate opposite 45 degrees while the middle collapses.
-- **كيف / how:** Framer Motion or CSS transitions on three spans.
-- **أرقام / params:** rotate +-45deg; middle opacity 0 scaleX 0; 0.2s
-- **الدليل / proof:** `kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/microinteraction-patterns.md`
+#### SHAPE-05 · تحويل المضلعات وأشكال باوهاوس · Polygon / Bauhaus primitive morph · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** مربع أحمر → خماسي أصفر → مثلث، أو مثلث → سداسي، باستيفاء رؤوس المضلعات. — Red square → yellow pentagon → triangle (or triangle → hexagon) by vertex interpolation.
+- **متى أستخدمها / when:** أسلوب باوهاوس، شرح هندسي، فواصل مرحة.
+- **كيف / how:** Resample both polygons to the LCM vertex count (or 60 points), interpolate, recolour in step; 400 ms with outElastic or back.out. **أرقام / params:** 400 ms; outElastic.
+- **الدليل / proof:** `kosif-tool/styles/pm-lukasersil-0ed38e` · `kosif-tool/styles/pm-itsuki-dev-10942d`
+- **أساليب / styles:** `style:pm-lukasersil-0ed38e` · `style:pm-itsuki-dev-10942d`
 
-#### SHAPE-10 · حركة على مسار SVG · Motion along an SVG path · 🟢 جاهز
-- **ماذا / what:** Move a dot, icon or cursor along an arbitrary curve, e.g. a slider following a growth curve or a plane on a route.
-- **كيف / how:** GSAP MotionPathPlugin {motionPath:{path:'M ... C ...'}} or own sampler using SVGPathElement.getPointAtLength().
-- **أرقام / params:** 1.5s power2.out typical
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md`
+#### SHAPE-06 · تحويل بنابض ونجوم تدور · Spring shape morph with orbiting stars · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** دائرة→مربع→نجمة خماسية بمنحنى نابض، وحولها حلقة نجوم صغيرة تدور. — Circle → square → 5-point star with spring easing, a ring of small stars rotating around.
+- **متى أستخدمها / when:** احتفال، إنجاز، بطاقة نجاح.
+- **كيف / how:** 200-point resample; spring stiffness 180 damping 14 drives the mix; satellites on a circle rotate 1 rev/s. **أرقام / params:** 200 pts, stiffness 180, damping 14.
+- **الدليل / proof:** `kosif-tool/styles/pm-roundtablespace-d3a1be` · `kosif-tool/styles/pm-stephanlivera-df17a2`
+- **أساليب / styles:** `style:pm-roundtablespace-d3a1be` · `style:pm-stephanlivera-df17a2`
 
-#### SHAPE-11 · أشكال طافية ومؤشر تمرير · Floating ambient shapes and scroll hint · 🟢 جاهز
-- **ماذا / what:** Continuous decorative drift uses CSS keyframes with different periods so shapes never move in lockstep; a small bouncing chevron hints at more content.
-- **كيف / how:** @keyframes with translate/rotate, ease-in-out infinite; chevron translateY bounce.
-- **أرقام / params:** periods 10s/12s/16s; drift 12-30px, rotate 5-8deg; chevron 8px every 2s (16px+ anxious, 4px invisible)
-- **الدليل / proof:** `kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md`
+#### SHAPE-07 · تحويل بصدى ملون أو أثر ضبابي · Morph with coloured echo / blur trail · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** الشكل يتحول ويدور، وخلفه نسختان ملونتان متأخرتان أو صدى ضبابي حركي، مع مدار نقطي. — Morph while rotating with two lagged coloured stroke copies or a motion-blur echo, plus a dotted orbit.
+- **متى أستخدمها / when:** شعارات حية، افتتاح، فاصل.
+- **كيف / how:** Draw copies at t−40 ms and t−80 ms in accent colours (stroke only) or 3–5 fading copies for blur; 600–800 ms easeInOutCubic; 3 orbit dots. **أرقام / params:** 600–800 ms; echoes at 40/80 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-tolgayhickiran-e90799` · `kosif-tool/styles/pm-motiondsgnr-9dcfa6`
+- **أساليب / styles:** `style:pm-tolgayhickiran-e90799` · `style:pm-motiondsgnr-9dcfa6`
 
-#### SHAPE-12 · نص على مسار · Text along SVG motion path · 🟢 جاهز
-- **ماذا / what:** Move labels or words along a curve.
-- **كيف / how:** GSAP MotionPathPlugin path 'M..C..'; or SVG <textPath> (Arabic shapes fine in textPath in Chromium).
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md` · `kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md`
+#### SHAPE-08 · تحويل داخل صندوق أداة تصميم · Design-tool gizmo morph · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** الشكل يتحول (دائرة، صدفة، نجمة) داخل صندوق تحديد رفيع بمقابض مربعة يدور، مع قراءة حية «ROT 340.9°». — Morph between shapes inside a thin rotating bounding box with square handles and a live mono readout.
+- **متى أستخدمها / when:** إعلانات أدوات تصميم، شرح Figma، «كيف صُنع».
+- **كيف / how:** Box stroke 1 px #aaa, 8 px square handles, Bezier handle dots; label in mono updates from the actual angle; morph 600 ms. **أرقام / params:** morph 600 ms; box 1 px #aaa.
+- **الدليل / proof:** `kosif-tool/styles/pm-leadnotifi-e83f94` · `kosif-tool/styles/pm-ghinaiya-nirmal-5d8fec`
+- **أساليب / styles:** `style:pm-leadnotifi-e83f94`
 
-#### SHAPE-13 · حلقات مدارية دوّارة · Orbiting arc cluster · 🟢 جاهز
-- **ماذا / what:** Six 270-degree arcs orbit a centre point at varying distance, alternating teal and lime, with pulsing opacity and gentle whole-group sway.
-- **كيف / how:** translate(w*.5,h*.34), rotate(sin(phase*.31)*.12); arc k: angle=phase*.5+k*PI/3, dist=w*(.15+.055 sin), radius w*(.04+.016 sin), sweep 1.5*PI, stroke #89d6ce/#d5f375, alpha .24+.25*sin^2, width max(2, .007w).
-- **أرقام / params:** 6 arcs; sweep 270°; colours #89d6ce #d5f375
-- **الدليل / proof:** `fastify-motion-bro/web/motion.js:13-14`
+#### SHAPE-09 · تحويل سحابة نقاط إلى أيقونة أو شبكة · Dot-cloud morph (scatter → grid / icon) · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** نقاط تبدأ عشوائية داخل شكل المصدر وتنتقل كل منها إلى موقعها في الشبكة أو الأيقونة الهدف بتأخير قطري ونابض. — N dots start scattered inside the source shape and travel to their grid cell or sampled icon point with diagonal stagger and spring easing.
+- **متى أستخدمها / when:** إحصاءات «1 من 100»، أيقونة تتكون، تحول بين رموز.
+- **كيف / how:** Sample target shape into N points (alpha > 128 on an offscreen canvas or getPointAtLength), match by sorting both sets by angle, delay = (row+col)·25 ms; ~400 dots 0.8 s easeInOutCubic. **أرقام / params:** 10×10, 25 ms diagonal; ~400 dots, 0.8 s.
+- **الدليل / proof:** `kosif-tool/styles/infographic` · `kosif-tool/styles/pm-manuelogomigo-f33ca9`
+- **أساليب / styles:** `style:infographic` · `style:pm-manuelogomigo-f33ca9`
 
-#### SHAPE-14 · نواة دائرية نابضة · Pulsing lime donut core · 🟢 جاهز
-- **ماذا / what:** A breathing lime ring at the orbit centre made of a filled disc with a dark inner disc.
-- **كيف / how:** r=w*(.12+.025*sin(phase*1.25)); fill #c9f96d at r, then #0a1724 at 0.58r.
-- **أرقام / params:** radius 12%±2.5% of width; inner 58%
-- **الدليل / proof:** `fastify-motion-bro/web/motion.js:15`
+#### SHAPE-10 · شريط ينثني فيصير حلقة · Bar bends into a ring · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** شريط مستقيم يُرسم كقوس ثابت الطول يقل نصف قطره من اللانهاية إلى L/2π فيصير حلقة، ثم تنقسم الحلقة إلى شرائح. — Draw the bar as a constant-length arc whose radius goes from huge to L/(2π) so it curls into a ring, then split it with cumulative dash offsets.
+- **متى أستخدمها / when:** من عمود بيانات إلى دائري نسب.
+- **كيف / how:** Log-interpolate r; keep the arc anchored by shifting its centre; stroke width = bar height; ~1 s. **أرقام / params:** ~1 s; stroke = bar height.
+- **الدليل / proof:** `kosif-tool/styles/infographic`
+- **أساليب / styles:** `style:infographic`
 
-#### SHAPE-15 · خطوط موجية متحركة · Animated sine-wave strands · 🟢 جاهز
-- **ماذا / what:** Three coloured sine waves cross the lower half and grow in amplitude as the scene progresses, standing in for 'hand-drawn infographic' lines.
-- **كيف / how:** For line 0..2: y=h*(.55+.07*line)+sin(x/w*3PI+phase*2+line*1.9)*(10+12p), step 4 px, colours #d3f66a #6ad8d1 #e995ff, alpha .42, width max(2,.004w).
-- **أرقام / params:** 3 waves; 1.5 cycles across width; amplitude 10→22 px
-- **الدليل / proof:** `fastify-motion-bro/web/motion.js:16`
+#### SHAPE-11 · رسم يدوي يصير نظيفًا · Sketch-to-clean morph · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** خط مرتجف يُستوفى إلى مسار ناعم عند زر «تنظيف». — A jittered polyline interpolates to its smoothed path when a “clean up” button is pressed.
+- **متى أستخدمها / when:** إعلانات أدوات رسم، قبل/بعد.
+- **كيف / how:** Keep the same samples; target = Catmull-Rom of the clean control points; 500 ms. **أرقام / params:** 500 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-adamdesgns-478d6d`
+- **أساليب / styles:** `style:pm-adamdesgns-478d6d`
 
-#### SHAPE-16 · بقعة عضوية في الزاوية · Soft organic corner blob · 🟢 جاهز
-- **ماذا / what:** Large soft tinted ellipse bleeding off the top-right corner as part of the environment.
-- **كيف / how:** ellipse centre (.93w,.14h), radii .35w x .13h, rotation PI/5, shape colour, alpha .65.
-- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:50-51`
+#### SHAPE-12 · تحول متعدد الأوجه · Facet morph (36 low-poly triangles) · 📦 بأمر تثبيت / one install
+- **ماذا / what:** كتلة لوبولي من 36 مثلثًا تتحول بين ثلاثة أشكال (كتلة، علامة، شارة) بتظليل مسطح لكل وجه. — A 36-triangle low-poly mass morphs between three silhouettes with per-facet flat shading lit from the upper left.
+- **متى أستخدمها / when:** كشف شعار هندسي، انتقال تقني.
+- **كيف / how:** npx hyperframes add facet-morph; vars forms="blob,mark,badge", hold_last, accent, exit none|fade|up; mount on a class="clip" div.
+- **📦 تثبيت / install:** `npx hyperframes add facet-morph`
+- **⚖️ ترخيص / license:** Apache-2.0.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/facet-morph/facet-morph.html`
 
-#### SHAPE-17 · مكتبة 16 أيقونة متجهية · 16-icon vector hero library · 🟢 جاهز
-- **ماذا / what:** Hand-coded Canvas path icons usable as hero objects: eye, brain, wallet, money, screen, hourglass, lightbulb, rocket, clock, cursor, chart, stairs, domino, book, people, chess, plus a default star-asterisk.
-- **كيف / how:** icon(ctx, name, r, accent, ink) with round joins, stroke width .08r; select via scene.hero.
-- **أرقام / params:** 16 named + default
-- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:12-34`
-
-#### SHAPE-18 · حلقة مدار تجميلية · Orbit ring accent · 🟢 جاهز
-- **ماذا / what:** Thin accent-coloured ellipse orbiting around the hero, slowly tilting.
-- **كيف / how:** ellipse (.5w,.405h) radii .283w x .157h, rotation sin(phase*.1)*.12, stroke 2.5*scale accent.
-- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:67-68`
-
-#### SHAPE-19 · نجمة رباعية دوارة · Rotating four-spoke starburst · 🟢 جاهز
-- **ماذا / what:** Small accent starburst near top right that spins continuously.
-- **كيف / how:** translate(.82w,.273h), rotate(phase*.21), 4 spokes from 10 to 24 scale-px.
-- **أرقام / params:** 4 spokes; 0.21 rad per phase unit
-- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:67-70`
-
-#### SHAPE-20 · تحويل الأشكال · SVG path morph (morphPath) · 🟢 جاهز
-- **ماذا / what:** Morphs one SVG path into another by resampling both to N points and interpolating; no plugin needed.
-- **كيف / how:** MOTION.morphPath(tl, pathEl, fromD, toD, at, {points, dur, ease, open}).
-- **أرقام / params:** N=120 points; dur 0.66 s; ease E.inOut; closes with Z unless open
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:255`
-
-#### SHAPE-21 · أنبوب عبر نقاط · Tube along points · 🟢 جاهز
-- **ماذا / what:** Catmull-Rom TubeGeometry for mouths, whiskers, cables.
-- **كيف / how:** K3S.tube(points, r, color, {segments}).
-- **أرقام / params:** 32 segments; 8 radial; roughness .6
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:329`
-
-#### SHAPE-22 · حلقات إهليلجية دوّارة · Rotating orbital ellipse rings · 🟢 جاهز
-- **ماذا / what:** Three concentric tilted ellipse outlines that rotate slowly around the glow centre for an orbital, 'study' feel.
-- **كيف / how:** ctx.rotate(t·0.1); ellipse radii r·(0.66+i·0.18) by r·(0.2+i·0.11), tilt 0.3+i·0.65 rad; line width 0.002·min(w,h).
-- **أرقام / params:** 3 rings; 0.1 rad/s
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:68`
-
-#### SHAPE-23 · طبقات الأشكال: دائرة وشريط · Shape layers: circle and rounded bar · 🟢 جاهز
-- **ماذا / what:** Animated accent shapes over scenes: a filled circle, or a rounded rectangle bar used as an underline/accent.
-- **كيف / how:** overlay.type='shape', shape 'circle' (arc radius size/2) or 'rectangle' (roundRect width size, height 0.24·size, radius max(2, 0.06·size)).
-- **أرقام / params:** default size 16%, colour #52dbc6 (initial bar #55dbc4 at y 72%)
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:76` · `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:158`
-
-#### SHAPE-24 · نحت أشكال ناعمة بالحقول المسافية · SDF sculpting of soft 3D shapes · 🟢 جاهز
-- **ماذا / what:** Characters and props as a list of soft primitives blended with smooth union/subtraction/intersection, meshed into a watertight geometry with vertex colours; no modelling package.
-- **كيف / how:** K3S.sculpt().ellipsoid(c,r,{k,color,op,rot}).sphere().capsule(a,b,r1,r2).box(c,h,round).torus(c,R,r).paint(c,r,colour,{soft}); geo = S.mesh({cells:120}).
-- **أرقام / params:** ops add/sub/and; k blend radius in metres (10-30 mm for plush); 136-cell body ~1.5 s, bunny 274k triangles ~4 s
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/shape-kit.js:1` · `kosif-one/tools/kosif-studio/motion/references/shape-kit.md`
-
-#### SHAPE-25 · لغة المشهد بالخطوات · Scene language (Step programs) · 🟢 جاهز
-- **ماذا / what:** A picture is an ordered program of Steps made of vector shapes, gradients, light and particles, re-rendered at any size on a 1200x800 sheet.
-- **كيف / how:** def build(): return [Step(name, [ops...], order, origin=...)] ; shapes rect, ellipse(cx,cy,rx,ry,rot), poly, path('M..C..A..Z'), compound/Hole, tube(spine, radii), dots, stroke(polys,width), catmull, translate, union.
-- **أرقام / params:** sheet 1200x800; supersampling ss=3; render(steps, scale)
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/render.py:1` · `kosif-one/tools/kosif-studio/render.py:259` · `kosif-one/tools/kosif-studio/references/drawing-guide.md`
-
-#### SHAPE-26 · منحنيات كاتمول-روم الناعمة · Catmull-Rom smooth curves · 🟢 جاهز
-- **ماذا / what:** Turns a few control points into a smooth curve through them, open or closed; the base for tubes, whale profiles and organic outlines.
-- **كيف / how:** render.catmull(points, n=10, closed=False).
-- **أرقام / params:** n samples per segment (default 10)
-- **الدليل / proof:** `kosif-studio/render.py:57`
-
-#### SHAPE-27 · أنبوب بنصف قطر متغير · Variable-radius tube (limbs, tails, horns, flames, hair) · 🟢 جاهز
-- **ماذا / what:** Builds an organic stroke along a smooth spine with a radius at each spine point, as a union of quads and discs so tight bends never punch holes.
-- **كيف / how:** render.tube(spine, radii, n=8); radii interpolated along catmull samples.
-- **أرقام / params:** discs every n//2 samples where r>0.6
-- **الدليل / proof:** `kosif-studio/render.py:286` · `kosif-studio/scenes/dragon_girl.py:229`
-
-#### SHAPE-28 · خطوط بسُمك ونهايات دائرية · Round-joined stroke outlines · 🟢 جاهز
-- **ماذا / what:** Converts polylines into filled outlines of a given width with round caps/joins (quads plus discs) — used for rain, pleats, mouth lines and SVG strokes.
-- **كيف / how:** render.stroke(polys, width, closed=False).
-- **أرقام / params:** discs n=12 below r 3 else 24
-- **الدليل / proof:** `kosif-studio/render.py:241`
-
-#### SHAPE-29 · عدة الأشكال الأساسية · Basic shape kit (rect, ellipse with rotation, poly, dots, translate, union) · 🟢 جاهز
-- **ماذا / what:** Minimal vector primitives in scene units that return polygon lists and compose by union.
-- **كيف / how:** rect(x,y,w,h); ellipse(cx,cy,rx,ry,rot,n=48); poly(pts); dots([(x,y,r)]); translate(shape,dx,dy); union(*shapes).
-- **أرقام / params:** ellipse 48 segments; dots 10/20 segments
-- **الدليل / proof:** `kosif-studio/render.py:259` · `kosif-studio/render.py:267` · `kosif-studio/render.py:278`
-
-#### SHAPE-30 · سلاسل جبال بالإزاحة العشوائية · Midpoint-displacement mountain ridges · 🟢 جاهز
-- **ماذا / what:** Generates layered mountain silhouettes by recursive midpoint displacement with optional carved peaks, filled down to the sheet bottom.
-- **كيف / how:** scenes/dragon_girl.ridge(seed, base, amp, rough=0.55, peaks=[(x, height, width)]); importable by other scenes.
-- **أرقام / params:** 7 subdivision rounds; amplitude x rough per round
-- **الدليل / proof:** `kosif-studio/scenes/dragon_girl.py:20` · `kosif-studio/scenes/dragon_girl.py:174`
-
-#### SHAPE-31 · الانضغاط والتمدد بحفظ المساحة · Area-preserving squash & stretch · 🟢 جاهز
-- **ماذا / what:** Impact squash then spring recovery.
-- **كيف / how:** Canvas ctx.scale(1+s·0.3, 1−s·0.3) around contact; s from KOSIF.window01(t,hit,hit+0.08,0.02,0.06).
-- **أرقام / params:** scaleY 0.7/scaleX 1.3 for 80 ms; spring {damping 10, stiffness 220}
-- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:25` · `kosif-tool/playbooks/shapes.md:66`
-
-#### SHAPE-32 · زخرفة ثمانية · Eight-point rosette interlude · 📦 بأمر تثبيت
-- **ماذا / what:** Two squares at 0/45° + circle (a khatam-like rosette) drawn on during instrumental interludes, rotating 9°/s and breathing on the beat.
-- **كيف / how:** V.interludes [{t, end}].
-- **أرقام / params:** R 150·k, stroke 2.2·k, draw 1.1 s stagger .12
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-studio/motion/templates/verse.html` · `kosif-studio/motion/templates/verse.html:216` · `kosif-studio/motion/verse.py:258` · `100-superskills/skills/kosif-montage-motion/templates/verse.html:298`
-
-#### SHAPE-33 · الحركة على مسار · GSAP MotionPathPlugin · 📦 بأمر تثبيت
-- **ماذا / what:** Move an element along an SVG path with auto-rotation to the path tangent (planes, arrows, comets).
-- **كيف / how:** gsap.registerPlugin(MotionPathPlugin); tl.to(el,{motionPath:{path:'#route', align:'#route', autoRotate:true}, duration:2, ease:'power1.inOut'}). Pair with a stroke-dashoffset draw of the same path.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md`
-
-#### SHAPE-34 · كتلة عضوية متموجة · Noise-displaced blob · 📦 بأمر تثبيت
-- **ماذا / what:** Sphere vertices pushed along normals by animated noise for a living blob.
-- **كيف / how:** Vertex shader: disp=pnoise(position*1.5+time*0.5); newPos=position+normal*disp*intensity.
-- **أرقام / params:** freq 1.5, speed 0.5
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md`
-
-#### SHAPE-35 · كتلة مموجة بالضوضاء · Vertex noise blob · 📦 بأمر تثبيت
-- **ماذا / what:** Sphere displaced along normals by time-driven Perlin noise for a living blob.
-- **كيف / how:** three.js ShaderMaterial; displacement = pnoise(position*1.5 + t*0.5)*intensity.
-- **أرقام / params:** freq 1.5, speed 0.5
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion`
-
-#### SHAPE-36 · انفجار الأشكال · Shapes burst emphasis scene · 📦 بأمر تثبيت
-- **ماذا / what:** A 0.6-1 s burst of 14 radial lines and an expanding ring for emphasis.
-- **كيف / how:** TEMPLATES.shapes: lines from r0=m(0.1+0.25k) to r1=m(0.16+0.42k)*jitter, alternating accent/primary, ring radius 0.42m*k, fades over the second half.
-- **أرقام / params:** 14 lines
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `app/public/js/00_editor.js:518`
-
-#### SHAPE-37 · عناصر إيموجي ونص وملصقات · Emoji, text and sticker pop-ups · 📦 بأمر تثبيت
-- **ماذا / what:** Timed overlays that spring in with a slight wobble: emoji, accent text pills, or image/SVG stickers.
-- **كيف / how:** drawOverlays(): spring(z .4, w 17) scale, rotate sin(3l)*0.03, 0.2 s fade-out; positions top 30%, center 47%, bottom 64%, corner (78%,16%); emoji 17% m; text Lalezar 6.5% m on accent pill; stickers 46% m (26% in corner) with white card or SVG shadow.
-- **أرقام / params:** pos top|center|bottom|corner
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `app/public/js/00_editor.js:412`
-
-#### SHAPE-38 · شبكة متحركة · Dynamic Grid · 📦 بأمر تثبيت
-- **ماذا / what:** CSS-variable-driven animated grid background for SaaS/code/data scenes.
-- **كيف / how:** Install with `npx hyperframes add dynamic-grid` (copies to compositions/components/dynamic-grid.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fram…
-- **أرقام / params:** density fine|standard|coarse; weight hairline|standard|bold; vars: density=standard[fine|standard|coarse]; weight=hairline[hairline|standard|bold]; tone=neutral[neutral|green|blue|violet]
-- **تثبيت / install:** `npx hyperframes add dynamic-grid` (copies to compositions/components/dynamic-grid`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/dynamic-grid/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/dynamic-grid/dynamic-grid.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/dynamic-grid.mdx`
-
-#### SHAPE-39 · تحول متعدد الأوجه · Facet Morph · 📦 بأمر تثبيت
-- **ماذا / what:** A 36-triangle low-poly mass morphs between three silhouettes (blob, mark, badge) with per-facet flat shading lit from the upper left.
-- **كيف / how:** Install with `npx hyperframes add facet-morph` (copies to compositions/components/facet-morph.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame …
-- **أرقام / params:** forms "blob,mark,badge"; hold_last true; vars: forms=blob,mark,badge; hold_last=True; accent=green[green|blue|violet]; exit=none[none|fade|up]
-- **تثبيت / install:** `npx hyperframes add facet-morph` (copies to compositions/components/facet-morph`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/facet-morph/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/facet-morph/facet-morph.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/facet-morph.mdx`
-
-#### SHAPE-40 · فاصل · Separator · 📦 بأمر تثبيت
-- **ماذا / what:** 1-pixel structural separator (horizontal/vertical) with seek-safe progress reveal.
-- **كيف / how:** Install with `npx hyperframes add separator` (copies to compositions/components/separator.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame capt…
-- **أرقام / params:** thickness hairline|medium|bold; vars: orientation=horizontal[horizontal|vertical]; thickness=hairline[hairline|medium|bold]; tone=neutral[neutral|accent|warning]
-- **تثبيت / install:** `npx hyperframes add separator` (copies to compositions/components/separator`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/separator/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/separator/separator.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/separator.mdx`
-
-#### SHAPE-41 · الكتلة الناعمة · Soft Blob Touch · 📦 بأمر تثبيت
-- **ماذا / what:** Grainy soft blob idles; a touch dot arrives, blob bulges toward it and recovers on a velocity-preserving spring.
-- **كيف / how:** Install with `npx hyperframes add soft-blob-touch` (copies to compositions/components/soft-blob-touch.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromiu…
-- **أرقام / params:** touch_x 66; touch_y 38; touch_at 1.6 s; grain fine|coarse; vars: touch_x=66(8..92); touch_y=38(8..92); touch_at=1.6(0.9..10); grain=fine[fine|coarse]; accent=green[green|blue|violet]; exit=none[none|fade|up]
-- **تثبيت / install:** `npx hyperframes add soft-blob-touch` (copies to compositions/components/soft-blob-touch`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/soft-blob-touch/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/soft-blob-touch/soft-blob-touch.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/soft-blob-touch.mdx`
-
-#### SHAPE-42 · الانقسام اللزج · Gooey Split · 📦 بأمر تثبيت
-- **ماذا / what:** Dot splits into a three-dot menu through a metaball neck, spins to a swirl mark under directional shutter blur, then re-merges.
-- **كيف / how:** Install with `npx hyperframes add gooey-split` (copies the full composition to compositions/gooey-split.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).
-- **أرقام / params:** 4.7 s; SVG blur+threshold goo; 1920x1080; duration 4.7 s
-- **تثبيت / install:** `npx hyperframes add gooey-split` (copies the full composition to compositions/gooey-split`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/blocks/gooey-split/registry-item.json` · `kosif-one/vendor/hyperframes/registry/blocks/gooey-split/gooey-split.html`
-
-#### SHAPE-43 · حلقات متموجة · Ripples · 📦 بأمر تثبيت
-- **ماذا / what:** White concentric rings rippling outward on black. A 2 s WebGPU shader background/object from the Shaders library.
-- **كيف / how:** Install `npx hyperframes add ripples` or place lib/shaders.iife.js beside the HTML and declare <canvas data-shader="Ripples" width=1920 height=1080> inside a composition root marked data-requires-webgpu data-no-timeline; layer it under titles as a background plate; render needs a WebGPU-capable Chromium.
-- **أرقام / params:** data-shader="Ripples"; 1920x1080; duration 2 s; shaders.iife.js 1,444,793 bytes (shaders 4.0.0)
-- **تثبيت / install:** `npx hyperframes add ripples` or place lib/shaders`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/blocks/ripples/registry-item.json` · `kosif-one/vendor/hyperframes/registry/blocks/ripples/ripples.html` · `kosif-one/vendor/hyperframes/registry/blocks/ripples/lib/shaders.THIRD-PARTY-LICENSES.txt`
-
-#### SHAPE-44 · حلزون · Spiral · 📦 بأمر تثبيت
-- **ماذا / what:** Bold black-and-white spiral turning (op-art). A 2 s WebGPU shader background/object from the Shaders library.
-- **كيف / how:** Install `npx hyperframes add spiral` or place lib/shaders.iife.js beside the HTML and declare <canvas data-shader="Spiral" width=1920 height=1080> inside a composition root marked data-requires-webgpu data-no-timeline; layer it under titles as a background plate; render needs a WebGPU-capable Chromium.
-- **أرقام / params:** data-shader="Spiral"; 1920x1080; duration 2 s; shaders.iife.js 1,444,793 bytes (shaders 4.0.0)
-- **تثبيت / install:** `npx hyperframes add spiral` or place lib/shaders`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/blocks/spiral/registry-item.json` · `kosif-one/vendor/hyperframes/registry/blocks/spiral/spiral.html` · `kosif-one/vendor/hyperframes/registry/blocks/spiral/lib/shaders.THIRD-PARTY-LICENSES.txt`
-
-#### SHAPE-45 · خطوط قطرية · Stripes · 📦 بأمر تثبيت
-- **ماذا / what:** Bold black-and-white diagonal stripes sliding. A 2 s WebGPU shader background/object from the Shaders library.
-- **كيف / how:** Install `npx hyperframes add stripes` or place lib/shaders.iife.js beside the HTML and declare <canvas data-shader="Stripes" width=1920 height=1080> inside a composition root marked data-requires-webgpu data-no-timeline; layer it under titles as a background plate; render needs a WebGPU-capable Chromium.
-- **أرقام / params:** data-shader="Stripes"; 1920x1080; duration 2 s; shaders.iife.js 1,444,793 bytes (shaders 4.0.0)
-- **تثبيت / install:** `npx hyperframes add stripes` or place lib/shaders`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/blocks/stripes/registry-item.json` · `kosif-one/vendor/hyperframes/registry/blocks/stripes/stripes.html` · `kosif-one/vendor/hyperframes/registry/blocks/stripes/lib/shaders.THIRD-PARTY-LICENSES.txt`
-
-#### SHAPE-46 · خلايا فورونوي · Voronoi · 📦 بأمر تثبيت
-- **ماذا / what:** Magenta cells with glowing blue centres reshaping. A 2 s WebGPU shader background/object from the Shaders library.
-- **كيف / how:** Install `npx hyperframes add voronoi` or place lib/shaders.iife.js beside the HTML and declare <canvas data-shader="Voronoi" width=1920 height=1080> inside a composition root marked data-requires-webgpu data-no-timeline; layer it under titles as a background plate; render needs a WebGPU-capable Chromium.
-- **أرقام / params:** data-shader="Voronoi"; 1920x1080; duration 2 s; shaders.iife.js 1,444,793 bytes (shaders 4.0.0)
-- **تثبيت / install:** `npx hyperframes add voronoi` or place lib/shaders`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/blocks/voronoi/registry-item.json` · `kosif-one/vendor/hyperframes/registry/blocks/voronoi/voronoi.html` · `kosif-one/vendor/hyperframes/registry/blocks/voronoi/lib/shaders.THIRD-PARTY-LICENSES.txt`
-
-#### SHAPE-47 · أيقونات SVG حية · Living SVG icons · 📦 بأمر تثبيت
-- **ماذا / what:** Animate inner SVG parts (clock hands, fan blades, pulsing dots, dash-flow lines) using the SVG transform attribute rotate(deg cx cy) for exact centers.
-- **كيف / how:** Read hyperframes-animation/rules/svg-icon-enrichment.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.
-- **أرقام / params:** ease none for linear rotation; setAttribute('transform', 'rotate(d cx cy)')
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/svg-icon-enrichment.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md`
-
-#### SHAPE-48 · تحول البطاقة كمرساة انتقال · Card morph anchor handoff · 📦 بأمر تثبيت
-- **ماذا / what:** A container morphs apparent size (uniform scale), corner radius, background and shadow between two shots then fades to reveal the real target.
-- **كيف / how:** Read hyperframes-animation/rules/card-morph-anchor.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.
-- **أرقام / params:** MORPH_DUR power2.inOut; fades power1.in/out by fraction
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/card-morph-anchor.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md`
-
-#### SHAPE-49 · حركة على مسار منحني · MotionPath along SVG curve · 📦 بأمر تثبيت
-- **ماذا / what:** Animate an element along an arbitrary SVG path with GSAP MotionPathPlugin.
-- **كيف / how:** gsap.registerPlugin(MotionPathPlugin); tl.to('.dot',{motionPath:{path:'M 12 300 C ...'},duration:1.5,ease:'power2.out'}).
-- **أرقام / params:** 1.5 s power2.out
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/techniques.md`
-
-#### SHAPE-50 · انتقال العنصر المشترك (FLIP) · FLIP / shared element continuity · 📦 بأمر تثبيت
-- **ماذا / what:** Keep one element alive as it changes box or hierarchy between states, so identity is continuous rather than crossfaded.
-- **كيف / how:** Use one continuous transform tween or FLIP between source/final boxes; split x/y/scale into eased keyframes only for deliberate beats.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/references/keyframe-patterns.md`
-
-#### SHAPE-51 · تحويل شكل SVG إلى آخر · SVG shape morph · 📦 بأمر تثبيت
-- **ماذا / what:** Interpolate one SVG shape into another; convert primitives to paths and split complex silhouettes.
-- **كيف / how:** MorphSVGPlugin preferred; verify with `hyperframes keyframes --shot`.
-- **تثبيت / install:** `see arsenal-libraries.md`
+#### SHAPE-13 · تحويل SVG بإضافة MorphSVG · MorphSVG plugin morph (HyperFrames rule) · 📄 موصوف / documented only
+- **ماذا / what:** قاعدة HyperFrames: حوّل الأشكال الأولية إلى مسارات وقسّم الصور الظلية المعقدة، وفضّل MorphSVGPlugin ثم تحقق بلقطة مفتاحية. — HyperFrames rule: convert primitives to paths, split complex silhouettes, prefer MorphSVGPlugin, verify with a keyframe shot.
+- **متى أستخدمها / when:** داخل مشاريع HyperFrames.
+- **كيف / how:** gsap.registerPlugin(MorphSVGPlugin); tl.to(a,{morphSVG:b}); hyperframes keyframes --shot to check in-betweens. Outside HyperFrames prefer SHAPE-01.
+- **⚖️ ترخيص / license:** GSAP standard no-charge license.
 - **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md`
 
-#### SHAPE-52 · حركة إيقاعية: liquid-morph · Beat motion primitive: liquid-morph · 📦 بأمر تثبيت
-- **ماذا / what:** Liquid blob morph, anchored to music events (phrase / transition).
-- **كيف / how:** Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/liquid-morph/scene.html (runnable with vendored gsap); anchor to audiomap events.
-- **أرقام / params:** anchor: phrase / transition; best span 1.0-2.5 s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/liquid-morph/scene.html` · `kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md`
-
-#### SHAPE-53 · تحول الشكل · morphPath · 📦 بأمر تثبيت
-- **ماذا / what:** One shape becomes the next as a seam.
-- **كيف / how:** motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits
-- **أرقام / params:** morphPath
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/SKILL.md:95` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md`
-
-#### SHAPE-54 · تحول شكل: نقطة إلى زر إلى شريط تقدم · Shape morph chain: dot → button → progress bar · 📦 بأمر تثبيت
-- **ماذا / what:** One red dot is the visual through-line: it falls, becomes a pill button that is clicked, flattens into a progress bar, rides a spring curve, becomes a full stop.
-- **كيف / how:** pill set at scaleX 44/400, scaleY .44 then → 1,1 in 0.42 s E.inOut at beat 4; after press: scaleX 2.0, scaleY .24 in 0.34 s, swap to #bar; #fill width 0→800 linear 1.1 s; counter 0→900.
-- **أرقام / params:** 120 BPM beat grid
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:66` · `100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:78` · `100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:89`
-
-#### SHAPE-55 · حلقة تتحول إلى قزحية تغمر الإطار · Ring → iris → colour flood · 📦 بأمر تثبيت
-- **ماذا / what:** A drawn ring shrinks and thickens into an iris point, then a circular clip opens from that point to flood the frame with the brand colour.
-- **كيف / how:** tl.to(ring, {scale:.14, strokeWidth:60, 0.45 s, E.in}, 3.65); M.iris(tl, brand, 4.05, {x:540, y:930, r0:60, r:2300, dur:.5}) (log-space ease) + M.flash peak .6.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:80` · `100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:82` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:334`
-
-#### SHAPE-56 · بناء الزخرفة الثمانية · Islamic eight-point rosette builder · 📦 بأمر تثبيت
-- **ماذا / what:** Generates a geometric rosette from code (two rotated squares forming an eight-point star, a 16-vertex star, a circle and a small inner star), draws each part in sequence and slowly rotates the whole.
-- **كيف / how:** sq(78,0), sq(78,PI/4), star8(120,92), circle r48, star8(30,14); M.drawPath each at 0.4+i*0.18 s for 1.3 s opacity .85; rosette rotates 0 -> 45 degrees over the film; stroke #f6d27a width 3 -> 5 on آمين.
-- **أرقام / params:** centre (540,760)
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/thursday-dua-animation/source/index.html:119-122` · `kosif-one/projects/thursday-dua-animation/source/index.html:195-196`
-
-#### SHAPE-57 · فوانيس تتأرجح بتوهج · Swaying lanterns with breathing glow · 📦 بأمر تثبيت
-- **ماذا / what:** Two hanging lanterns built from SVG primitives that swing like pendulums and pulse their glow independently.
-- **كيف / how:** Group per lantern: chain line, radial glow circle r120, cap, body hexagon fill #ffcf72 .92 stroke #c48a2c, ribs #b07a22, tip; rotation ±3.5 degrees yoyo 2.2/2.5 s repeat 11 (svgOrigin 0 0); glow opacity .7 -> 1 yoyo .96 s.
-- **أرقام / params:** x 200 / 880, chain 300 / 360
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/thursday-dua-animation/source/index.html:124-134` · `kosif-one/projects/thursday-dua-animation/source/index.html:164-167`
-
-#### SHAPE-58 · صورة ظلية لمسجد بنوافذ مضيئة · Mosque silhouette with flickering windows · 📦 بأمر تثبيت
-- **ماذا / what:** A dome, two minarets and ground band as flat silhouette paths, with small arched windows that flicker softly.
-- **كيف / how:** Paths in #1d0f2c, ground #140920; 8 arched window paths #ffc768 with opacity .55 -> 1 yoyo 0.9-1.7 s repeat 30 at random offsets.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/thursday-dua-animation/source/index.html:62-71` · `kosif-one/projects/thursday-dua-animation/source/index.html:136-139`
-
-#### SHAPE-59 · حلقة ترسم ونبض قلب · Ring draw + heartbeat ripples · 📦 بأمر تثبيت
-- **ماذا / what:** A gold ring draws around the sun on 'live every moment', and on two beats a second ring expands and fades like a heartbeat.
-- **كيف / how:** circle r150 stroke #f5c97a 5 px drawPath 1.1 s; ring2 opacity .9 scale 1 -> 1.9, opacity 0 in 0.9 s E.out at 36.14 and 38.94 s (transform-origin 540px 1030px).
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/index.html:69-70` · `kosif-one/projects/whatsapp-motion/projects/success/index.html:259-264`
-
-#### SHAPE-60 · غيمة من دوائر تكبر وتعتم · Circle-cluster cloud that grows, drifts and darkens · 📦 بأمر تثبيت
-- **ماذا / what:** Clouds made of five circles and a rounded base grow over the sea, drift over the mountain and darken before rain, then lighten.
-- **كيف / how:** cloud(): circles (0,0,62) (-75,18,46) (78,18,50) (-32,-34,52) (38,-40,58) + rect 248x58 rx29; scale .2 -> 1 (3.8-5.0 s), drift 4.9-6.2 s; colour mix #FFFFFF -> #A6B9CC and base #DCE8F2 -> #8FA3B8 for dark 6.0-6.5 s, back after 8.3 s.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/water-cycle-animation/index.html:109-115` · `kosif-one/projects/water-cycle-animation/index.html:159-168`
-
-#### SHAPE-61 · تحويل الأشكال بإعادة العينة · SVG path morph by resampling · 📦 بأمر تثبيت
-- **ماذا / what:** Morphs one SVG path into another of any structure by sampling both to the same number of points and interpolating.
-- **كيف / how:** M.morphPath(tl,pathEl,fromD,toD,at,{points:120,dur:.66,ease:E.inOut,open}).
-- **أرقام / params:** 120 points, 0.66 s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:254-262`
-
-#### SHAPE-62 · نجمة ثمانية في الفواصل · Interlude eight-point rosette · 📦 بأمر تثبيت
-- **ماذا / what:** During long pauses an eight-point rosette is drawn and breathes on the beat, then withdraws.
-- **كيف / how:** verse.html interlude block (pause >= 4.5 s).
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/templates/verse.html:216`
-
-#### SHAPE-63 · لغة أشكال المشهد · KOSIF scene language shapes · 📦 بأمر تثبيت
-- **ماذا / what:** rect, ellipse(rot), poly, full SVG path (arcs/beziers), compound even-odd holes, tube(spine,radii) for limbs/tails/flames, dots for sparks, stroke, translate, catmull spline, union; paints hex/hexa, lin() and rad() gradients.
-- **كيف / how:** scenes/<name>.py build() returning Step lists; render.py
-- **أرقام / params:** canvas 1200x800
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/pixel-studio-painter/references/drawing-guide.md` · `100-superskills/skills/pixel-studio-painter/scripts/render.py:87`
-
-#### SHAPE-64 · نحت بحقول المسافة · SDF sculpt primitives · 📦 بأمر تثبيت
-- **ماذا / what:** Characters and props as a chain of soft signed-distance primitives (sphere, ellipsoid, round-cone capsule, rounded box, torus) with per-item rotation and colour.
-- **كيف / how:** K3S.sculpt().color(hex).sphere(c,r,o).ellipsoid(c,[rx,ry,rz],o).capsule(a,b,r1,r2,o).box(c,[hx,hy,hz],round,o).torus(c,R,r,o); o = {k, op, color, rot:[rx,ry,rz]}.
-- **أرقام / params:** units metres; blend radius k typically 10-30 mm
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-studio/motion/kit/shape-kit.js:44` · `kosif-studio/motion/references/shape-kit.md`
-
-#### SHAPE-65 · دمج ونحت ناعم · Smooth union / carve / intersect · 📦 بأمر تثبيت
-- **ماذا / what:** Polynomial smooth min/max blends make primitives read as one stuffed, stitched object; colour blends follow the same weights.
-- **كيف / how:** o.op = 'add' (default) | 'sub' | 'and' with o.k blend radius.
-- **أرقام / params:** h = clamp(.5 ± .5·(d2-d1)/k); d = mix - k·h·(1-h)
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-studio/motion/kit/shape-kit.js:100`
-
-#### SHAPE-66 · استعلام الحقل · Field queries for placement · 📦 بأمر تثبيت
-- **ماذا / what:** Query distance/colour, project points onto the surface and raycast it, e.g. to seat eyes where a ray from the front meets the face.
-- **كيف / how:** S.dist(x,y,z), S.colorAt(...), S.project(p), S.hit(from, dir) -> {point, normal}.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-studio/motion/kit/shape-kit.js:104` · `kosif-studio/motion/references/shape-kit.md`
-
-#### SHAPE-67 · تحول دائرة إلى مربع · Circle-to-square path morph · 📦 بأمر تثبيت
-- **ماذا / what:** One shape morphs into another without a cut.
-- **كيف / how:** M.morphPath(tl, el, fromD, toD, t, {dur})
-- **أرقام / params:** 0.6 s at 4.95 s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-studio/motion/projects/kit_v3_demo/index.html:1`
-
-#### SHAPE-68 · أشكال سائلة · Style: Liquid morph (liquid-morph) · 📦 بأمر تثبيت
-- **ماذا / what:** Blobby fluid shapes merging and splitting.
-- **كيف / how:** SVG path morph with equal point count (64-128) or metaball/gooey filter (blur+threshold); noise-driven vertices. Scaffold: python3 tools/kosif.py scaffold liquid-morph <dir>.
-- **أرقام / params:** morph 500-800ms
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `style:liquid-morph` · `kosif-tool/playbooks/shapes.md`
-
-#### SHAPE-69 · أشكال · Category: Shapes · 📦 بأمر تثبيت
-- **ماذا / what:** Capability family 'shapes' (30 catalog entries) with a dedicated bilingual playbook of timings and recipes.
-- **كيف / how:** Read playbooks/shapes.md (visual grammar, motion mechanics, scene recipes, QA); build in starters/html-canvas or starters/remotion; filter catalog with python3 tools/kosif.py list --category shapes.
-- **أرقام / params:** 24px unit; radii 0/8/24/50%; strokes 2/4/8; morph 500-800ms 64-128pts; squash 0.7/1.3 80ms
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-tool/playbooks/shapes.md` · `kosif-tool/catalog/categories.json` · `kosif-tool/catalog/meta.json`
-
-#### SHAPE-70 · تحوّل المسارات بإعادة العينات · Path morph with resampling · 📦 بأمر تثبيت
-- **ماذا / what:** Morph only equal-point, same-winding paths; resample first.
-- **كيف / how:** flubber or precomputed points; Remotion Morph lerps [x,y] arrays with Easing.inOut(cubic).
-- **أرقام / params:** 500–800 ms cubic-bezier(0.65,0,0.35,1); 64–128 points
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:24` · `kosif-tool/playbooks/shapes.md:53-64`
-
-#### SHAPE-71 · زهرة نقاط ذهبية · Phyllotaxis dot flower · 👁 شوهد في فيديو
-- **ماذا / what:** n points r=c*sqrt(i), angle=i*137.5deg, rotate
-- **أرقام / params:** n~400
-- **الدليل / proof:** `style:pm-ajith-io-b5626e` · `style:pm-mrtanviir-132457` · `style:pm-umangratani-57f86a`
-
-#### SHAPE-72 · انفجار خطوط شعاعي · Radial line burst · 👁 شوهد في فيديو
-- **ماذا / what:** 12 lines from centre, length eased outExpo, staggered 20ms
-- **أرقام / params:** 400 ms
-- **الدليل / proof:** `style:pm-stephanlivera-df17a2` · `style:pm-sudo-kiran-49176d`
-
-#### SHAPE-73 · شبكة أشكال باوهاوس · Bauhaus tile grid · 👁 شوهد في فيديو
-- **ماذا / what:** grid cells with circles/quarters/triangles in 4 colours, rotate 90° stagger
-- **أرقام / params:** back.inOut(1.7), 40 ms
-- **الدليل / proof:** `style:pm-web3wesley-7bb108` · `style:pm-zaqailo-212ad3`
-
-#### SHAPE-74 · جدول ماء بشرطات متحركة · Flowing channel dashes · 👁 شوهد في فيديو
-- **ماذا / what:** draw a thick blue polyline channel with ink outline and translate white dash segments along its path via strokeDashoffset
-- **أرقام / params:** dash 20/60 px, speed ~40 px/s
-- **الدليل / proof:** `style:doodle`
-
-#### SHAPE-75 · فتحة في الجسم بجدران تلقائية · Hole with auto walls (even-odd) · 👁 شوهد في فيديو
-- **ماذا / what:** inner circle in the same path with reverse winding so extrusion layers show the hole's inner walls automatically
-- **أرقام / params:** fill-rule nonzero, reversed subpath
-- **الدليل / proof:** `style:fake3d`
-
-#### SHAPE-76 · تحول نقاط عشوائية إلى شبكة · Scatter-to-grid dot morph · 👁 شوهد في فيديو
-- **ماذا / what:** each of N dots starts at random point inside source shape and lerps to its grid cell with delay = (row+col)*k (diagonal stagger) and spring easing
-- **أرقام / params:** 10x10, k ~25 ms, total ~1 s
-- **الدليل / proof:** `style:infographic`
-
-#### SHAPE-77 · شريط ينثني فيصير حلقة · Bar bends into ring · 👁 شوهد في فيديو
-- **ماذا / what:** draw as arc of constant length L = bar length; radius r goes from very large to L/(2pi) with log interpolation; centre shifts so the arc stays anchored; then split ring with cumulative strokeDashoffse
-- **كيف / how:** draw as arc of constant length L = bar length; radius r goes from very large to L/(2pi) with log interpolation; centre shifts so the arc stays anchored; then split ring with cumulative strokeDashoffset
-- **أرقام / params:** ~1 s, stroke width = bar height
-- **الدليل / proof:** `style:infographic`
-
-#### SHAPE-78 · صندوق أيزومتريك بثلاث درجات · Three-tone iso box · 👁 شوهد في فيديو
-- **ماذا / what:** three polygons (top lightest, left mid, right darkest) of one hue plus a thin translucent white top edge stroke and soft ground shadow
-- **أرقام / params:** lightness steps ~+12/0/-12%
-- **الدليل / proof:** `style:isometric`
-
-#### SHAPE-79 · ملصقات زخرفية وشرائط تحذير · Decorative stickers and hazard tape · 👁 شوهد في فيديو
-- **ماذا / what:** starburst polygons and diagonal striped tapes in corners with slow wobble rotation; colours rotate per scene
-- **أرقام / params:** rotate ±6° over 2 s yoyo
-- **الدليل / proof:** `style:pm-0xnfrith-5be616`
-
-#### SHAPE-80 · موجة تحول الشبكة · Grid morph wave · 👁 شوهد في فيديو
-- **ماذا / what:** border-radius 0→50% with delay = distance*30 ms
-- **الدليل / proof:** `style:pm-3xtihor-0f6911`
-
-#### SHAPE-81 · رسم يدوي إلى نظيف · Sketch-to-clean morph · 👁 شوهد في فيديو
-- **ماذا / what:** jittered polyline interpolates to smoothed path 500 ms, button 'clean up'
-- **الدليل / proof:** `style:pm-adamdesgns-478d6d`
-
-#### SHAPE-82 · أنبوب مخطط · Striped tube path · 👁 شوهد في فيديو
-- **ماذا / what:** stroke same path 3x with decreasing width red/white/blue, animate dash offset
-- **الدليل / proof:** `style:pm-ajith-io-b5626e`
-
-#### SHAPE-83 · كبسولات وسوم تطفو حول العنوان · Floating tag pills around headline · 👁 شوهد في فيديو
-- **ماذا / what:** 6 white rounded pills with blue text at scattered positions avoiding the centre, each rotated randomly ±6 deg, staggered pop-in 120 ms, then idle bobbing sin(t) 4 px
-- **أرقام / params:** radius 999px, 1px #c4d8e5 border, bob period 3-4 s
-- **الدليل / proof:** `style:pm-alex-prompter-1ea044`
-
-#### SHAPE-84 · خلفية أشعة بطولية · Sunburst hero background · 👁 شوهد في فيديو
-- **ماذا / what:** alternating wedges rotating slowly
-- **الدليل / proof:** `style:pm-allforbigfire-86ff3c`
-
-#### SHAPE-85 · بحر خطوط مع شخصية رمزية · Line-art sea with mascot · 👁 شوهد في فيديو
-- **ماذا / what:** 4-6 horizontal SVG sine paths with slow phase drift and parallax speeds; small flat mascot bobs (rotate ±4 deg) and translates across
-- **أرقام / params:** wave amplitude 4-10 px, period 6 s, bob 1.5 s
-- **الدليل / proof:** `style:pm-aschapmann-131210`
-
-#### SHAPE-86 · بناء نقطة ثم خط ثم مستوى · Point-line-plane build · 👁 شوهد في فيديو
-- **ماذا / what:** Start from a crosshair point with coordinate label, stretch to a ruler line with ticks, extrude/skew into a rotated plane carrying text
-- **أرقام / params:** each stage ~1.2 s, easeInOutExpo, skew -25°
-- **الدليل / proof:** `style:pm-ayushunleashed-ece3e3`
-
-#### SHAPE-87 · تحويل أشكال بدوال قطبية · Polar-function shape morph · 👁 شوهد في فيديو
-- **ماذا / what:** Draw r(θ)=a+b·cos(kθ)^p as filled path, interpolate a,b,k,p between named forms (squircle, burst); show ghost outlines and live formula label on polar grid
-- **أرقام / params:** k 4→8, 120 samples, easeInOutCubic 600 ms
-- **الدليل / proof:** `style:pm-ayushunleashed-ece3e3`
-
-#### SHAPE-88 · تحويل مسار · 200-vertex path morph · 👁 شوهد في فيديو
-- **ماذا / what:** resample both shapes to 200 points and lerp
-- **أرقام / params:** 700ms
-- **الدليل / proof:** `style:pm-blue-clarity-ef56d0`
-
-#### SHAPE-89 · تفريد أوراق مكدسة · Card fan-out stack · 👁 شوهد في فيديو
-- **ماذا / what:** Duplicate the card N times behind, offset each by x+18 px and rotate +2..+6 deg with stagger, numbered tabs on edges
-- **أرقام / params:** 6 cards, stagger 70 ms, 400 ms easeOutBack(1.2)
-- **الدليل / proof:** `style:pm-bogdandragomir-35e024`
-
-#### SHAPE-90 · بناء كسيري متكرر · Recursive fractal build · 👁 شوهد في فيديو
-- **ماذا / what:** Sierpinski levels appear one depth at a time
-- **أرقام / params:** 4-6 levels, 200 ms each
-- **الدليل / proof:** `style:pm-buildfastwithai-53234e`
-
-#### SHAPE-91 · زخرفة حلقية حول شبكة نقاط · Kolam loop around dot grid · 👁 شوهد في فيديو
-- **ماذا / what:** single closed path weaving around n×m dots, drawn with a leading glowing dot
-- **أرقام / params:** 7×5 dots
-- **الدليل / proof:** `style:pm-buildfastwithai-53234e`
-
-#### SHAPE-92 · حلقة صدمة أرضية · Ground shockwave ring · 👁 شوهد في فيديو
-- **ماذا / what:** ellipse stroke radius 0→300 px over 500 ms, alpha fade, flattened y 0.25
-- **الدليل / proof:** `style:pm-chrisjdimarco-f068db`
-
-#### SHAPE-93 · تموج شبكة نقاط · Dot grid ripple · 👁 شوهد في فيديو
-- **ماذا / what:** grid of diamonds rotating/scaling by distance wave, colour shift to orange
-- **الدليل / proof:** `style:pm-codestackr-c071bf`
-
-#### SHAPE-94 · شبكة مربعات متموجة · Tile grid wave · 👁 شوهد في فيديو
-- **ماذا / what:** Grid of squares, rotate/scale each by sin(dist-from-centre − t), random accent tiles
-- **أرقام / params:** period ~1 s
-- **الدليل / proof:** `style:pm-crazyalphaaa-bc7e75`
-
-#### SHAPE-95 · نقطة تتفتح إلى واجهة · Dot-to-interface bloom · 👁 شوهد في فيديو
-- **ماذا / what:** glowing 8px dot, scale to rectangle frame 1.2s expo, content fades in
-- **الدليل / proof:** `style:pm-dale-vaz-cc612a`
-
-#### SHAPE-96 · حلزون ذهبي فوق مربعات فيبوناتشي · Golden spiral over Fibonacci tiles · 👁 شوهد في فيديو
-- **ماذا / what:** nest rectangles in lavender tints, label each (s40..s70), then draw an SVG quarter-arc chain with stroke-dashoffset 1.5-2 s ease-in-out
-- **أرقام / params:** stroke 1.5 px dark, fills #c8b8f0 → #e6dcf8
-- **الدليل / proof:** `style:pm-ddryo-loos-300829`
-
-#### SHAPE-97 · خلفية أشعة شمسية دوارة · Rotating sunburst ground · 👁 شوهد في فيديو
-- **ماذا / what:** Draw 24-32 alternating wedge rays from centre in two close tones, rotate slowly, add radial vignette
-- **أرقام / params:** rotation 6-10°/s, tone delta ~8% lightness
-- **الدليل / proof:** `style:pm-deebeeeff-50fcd0`
-
-#### SHAPE-98 · شريط تظليل مائل يمسح خلف النص · Slanted highlighter bar wipe · 👁 شوهد في فيديو
-- **ماذا / what:** skewed rectangle scales X from 0 to 1 from the left behind a text line, slightly larger than the text box
-- **أرقام / params:** skewX -8°, 180-250 ms easeOutCubic
-- **الدليل / proof:** `style:pm-deifosv-04e4d3`
-
-#### SHAPE-99 · تحوّل البطاقات إلى حبوب أفقية · Card-to-pill morph · 👁 شوهد في فيديو
-- **ماذا / what:** Interpolate width/height/border-radius of portrait cards into wide pills while label moves beside icon; a white disc sweeps across as a connective transition
-- **أرقام / params:** ~600 ms easeInOutQuint; radius 16 px -> 999 px
-- **الدليل / proof:** `style:pm-elliot-garreffa-f334bc`
-
-#### SHAPE-100 · مروحة عينات الألوان · Swatch fan · 👁 شوهد في فيديو
-- **ماذا / what:** stack of rounded rects rotated around pivot, stagger 80 ms
-- **الدليل / proof:** `style:pm-ercankeskinx-ec2568`
-
-#### SHAPE-101 · جدار أيقونات مائل · Tilted icon wall · 👁 شوهد في فيديو
-- **ماذا / what:** grid of rounded-square tiles with line icons, rotated ~-12 deg, drifting diagonally; one tile highlighted brighter
-- **أرقام / params:** tile 90px, radius 18px, opacity 0.25-0.4, drift 20 px/s
-- **الدليل / proof:** `style:pm-gabrielbuzziv-4ff0c6`
-
-#### SHAPE-102 · خط حبل يتدلى بالوزن · Sagging rope baseline · 👁 شوهد في فيديو
-- **ماذا / what:** Quadratic curve whose control y increases when a word hangs; spring settle
-- **أرقام / params:** sag 30-60px
-- **الدليل / proof:** `style:pm-gdgtify-287ddf`
-
-#### SHAPE-103 · تحول شكل مع مقابض التصميم · Shape morph with design handles · 👁 شوهد في فيديو
-- **ماذا / what:** interpolate path squircle -> wavy flower (n-petal sine radius); overlay bounding box, bezier handle dots and a lime dimension tag; concentric gradient rings behind
-- **أرقام / params:** r = R(1 + 0.12 sin(8θ+t)), 600 ms morph
-- **الدليل / proof:** `style:pm-ghinaiya-nirmal-5d8fec`
-
-#### SHAPE-104 · هيكل يتجمع من قطعه · Skeleton assemble along path · 👁 شوهد في فيديو
-- **ماذا / what:** bone pieces start scattered, travel along a dotted arc and snap into a skeleton silhouette with slight overshoot
-- **أرقام / params:** stagger 40 ms, 1.2 s total
-- **الدليل / proof:** `style:pm-gigabit-million-16b3a0`
-
-#### SHAPE-105 · أشرطة متلوية في الخلفية · Background ribbon loops · 👁 شوهد في فيديو
-- **ماذا / what:** 2-3 SVG cubic paths stroke-width ~6% frame, linear gradient strokes, round caps; animate control points slowly and dashoffset to draw; lower opacity to 0.35 when text on top
-- **أرقام / params:** gradients blue->violet, pink->orange
-- **الدليل / proof:** `style:pm-gonzalomacagno-2de1a9`
-
-#### SHAPE-106 · نص في شكل متحول · Text in morphing blob · 👁 شوهد في فيديو
-- **ماذا / what:** square path morphs to blob with outline over halftone dots
-- **أرقام / params:** 600ms
-- **الدليل / proof:** `style:pm-hanifproduktif-54bdee`
-
-#### SHAPE-107 · شريط قوس قزح متموج · Ribbon sine wave · 👁 شوهد في فيديو
-- **ماذا / what:** Stacked colour bands y=sin(x*k+t)
-- **أرقام / params:** 7 bands
-- **الدليل / proof:** `style:pm-hoyoyoda-3a5c08`
-
-#### SHAPE-108 · قطار مقابل يمر سريعًا · Passing oncoming train · 👁 شوهد في فيديو
-- **ماذا / what:** Long cream/red carriage strip with window blocks slides across at high speed with motion blur, occluding the landscape; rain streaks on glass as diagonal lines
-- **أرقام / params:** ~1.5 s, blur 30 px
-- **الدليل / proof:** `style:pm-itsolelehmann-e47532`
-
-#### SHAPE-109 · تحول المضلعات · Polygon morph · 👁 شوهد في فيديو
-- **ماذا / what:** interpolate vertex arrays triangle->hexagon
-- **أرقام / params:** outElastic
-- **الدليل / proof:** `style:pm-itsuki-dev-10942d`
-
-#### SHAPE-110 · موجة في شبكة أشكال · Shape grid wave · 👁 شوهد في فيديو
-- **ماذا / what:** Grid of rounded squares; a diagonal wave front rotates each cell 45-90 deg and morphs square->circle (border-radius) while switching fill/outline
-- **أرقام / params:** cell 30 px, gap 40 px, delay = (x+y)*25 ms
-- **الدليل / proof:** `style:pm-jasonzhou1993-8595e0`
-
-#### SHAPE-111 · تحول الجزيرة الديناميكية · Island morph · 👁 شوهد في فيديو
-- **ماذا / what:** animate width/height/radius of one container between states with spring
-- **أرقام / params:** stiffness 200 damping 22
-- **الدليل / proof:** `style:pm-jazzen-chen-4542ae`
-
-#### SHAPE-112 · حقل أشكال متحولة · Pattern morph field · 👁 شوهد في فيديو
-- **ماذا / what:** grid glyphs cross→blob→triangle by column phase
-- **الدليل / proof:** `style:pm-johnsavage-ai-b091c0`
-
-#### SHAPE-113 · غرفة مصباح بزجاج معيّني وعدسة فرينل · Diamond-pane lamp room & Fresnel flare · 👁 شوهد في فيديو
-- **ماذا / what:** lattice of diagonal lines over a glowing cylinder; lens as concentric ellipses; ignition = 0->1 brightness over ~400 ms with bloom spike
-- **أرقام / params:** lattice 40px cells, glow blur 30-60px
-- **الدليل / proof:** `style:pm-kamstudiolabs-0b0824`
-
-#### SHAPE-114 · حلقات متحدة المركز بفجوات دوّارة · Rotating gapped concentric rings · 👁 شوهد في فيديو
-- **ماذا / what:** draw N arcs from gapStart+gap to gapStart+2π; gapStart_i += ω_i·dt with alternating sign; spacing equal
-- **أرقام / params:** N=12, stroke 6-8px, spacing ~14px, ω 0.3-1.2 rad/s
-- **الدليل / proof:** `style:pm-kantamk-61f410`
-
-#### SHAPE-115 · تحوّل شكل داخل صندوق أداة تصميم · Design-tool gizmo morph · 👁 شوهد في فيديو
-- **ماذا / what:** Morph an SVG path between shapes (circle, scallop, star) while a thin bounding box with square handles rotates around it; show live readout 'ROT 340.9°' and shape label in mono
-- **أرقام / params:** morph 600ms; box stroke 1px #aaa
-- **الدليل / proof:** `style:pm-leadnotifi-e83f94`
-
-#### SHAPE-116 · شبكة بلاطات باوهاوس · Bauhaus tile flip grid · 👁 شوهد في فيديو
-- **ماذا / what:** N×M grid; each cell draws one of {quarter circle, triangle, bar, circle} in 4-colour palette and swaps glyph on staggered rotation
-- **أرقام / params:** 8x5 cells, stagger diagonal 30 ms, swap every 250 ms
-- **الدليل / proof:** `style:pm-leonkohli-6dc01b`
-
-#### SHAPE-117 · أقواس متحدة المركز تدور وتنهار · Concentric arc spin collapse · 👁 شوهد في فيديو
-- **ماذا / what:** Several partial arcs at decreasing radii rotate at different speeds and scale to the centre dot
-- **أرقام / params:** 6 rings, speeds 90-360°/s, collapse 500 ms easeIn
-- **الدليل / proof:** `style:pm-leonkohli-6dc01b`
-
-#### SHAPE-118 · مروحة صور خلف البطاقة · Fan-out photo stack · 👁 شوهد في فيديو
-- **ماذا / what:** Several images behind a hero card rotate outward around a common pivot to form a fan
-- **أرقام / params:** 5-8 images, ±12-25°, 500 ms easeOutBack
-- **الدليل / proof:** `style:pm-lester-tyy-f897f7`
-
-#### SHAPE-119 · تحول شكل فائق الإهليجية مع حلقات صدى · Superellipse shape morph with echo rings · 👁 شوهد في فيديو
-- **ماذا / what:** Morph through |x|^n+|y|^n=1 with animated n (2 -> 4.2), surrounded by offset contour rings that lag behind, then to 3D cube and star
-- **أرقام / params:** n tween 400 ms, 5-7 rings at 12 px offsets, ring lag 60 ms each
-- **الدليل / proof:** `style:pm-levabashidze-2d713a`
-
-#### SHAPE-120 · نقش بلاطات تروشيه · Truchet tile pattern · 👁 شوهد في فيديو
-- **ماذا / what:** Tile grid with quarter-circle arcs randomly rotated; animate rotations in a diagonal wave and recolour a subset in accent
-- **أرقام / params:** tile 60 px, stroke 14 px, wave delay 20 ms per tile
-- **الدليل / proof:** `style:pm-levabashidze-2d713a`
-
-#### SHAPE-121 · خط نبض القلب · ECG heartbeat line · 👁 شوهد في فيديو
-- **ماذا / what:** polyline spike traveling along horizon; flatline at end
-- **الدليل / proof:** `style:pm-loicrambo-ad6830`
-
-#### SHAPE-122 · تحول أشكال باوهاوس · Bauhaus shape morph · 👁 شوهد في فيديو
-- **ماذا / what:** red square → yellow pentagon → triangle with point interpolation
-- **أرقام / params:** 400ms
-- **الدليل / proof:** `style:pm-lukasersil-0ed38e`
-
-#### SHAPE-123 · شبكة مربعات تدور كموجة · Wave-rotating square grid · 👁 شوهد في فيديو
-- **ماذا / what:** rotate each square by f(distance - t) 
-- **أرقام / params:** phase 0.1/cell
-- **الدليل / proof:** `style:pm-m1n9-k7-ff9ab9`
-
-#### SHAPE-124 · أشعة شمسية دائرية · Radial sunburst rays · 👁 شوهد في فيديو
-- **ماذا / what:** conic-gradient repeating wedges in dark crimson on black, slow rotation behind title
-- **أرقام / params:** 24-36 rays, 3-6 deg/s
-- **الدليل / proof:** `style:pm-majin-appsheet-2d3c1a`
-
-#### SHAPE-125 · حلقة اكتشاف · Discovery ring burst · 👁 شوهد في فيديو
-- **ماذا / what:** radial yellow dashes burst outward around found object
-- **أرقام / params:** 500ms
-- **الدليل / proof:** `style:pm-mandelduck-95fd08`
-
-#### SHAPE-126 · تحويل أيقونة من نقاط · Dot-matrix icon morph · 👁 شوهد في فيديو
-- **ماذا / what:** sample target shape into N dots, tween each dot position with stagger
-- **أرقام / params:** ~400 dots, 0.8 s, ease inOutCubic
-- **الدليل / proof:** `style:pm-manuelogomigo-f33ca9`
-
-#### SHAPE-127 · منحنيات ليساجو · Lissajous neon curves · 👁 شوهد في فيديو
-- **ماذا / what:** (sin 3t, sin 2t, sin 5t) stroke with glow
-- **الدليل / proof:** `style:pm-math-files-39c9d0`
-
-#### SHAPE-128 · كسيرية جوليا · Julia fractal shader · 👁 شوهد في فيديو
-- **ماذا / what:** GLSL iterate z^2+c, palette purple-orange
-- **الدليل / proof:** `style:pm-math-files-39c9d0`
-
-#### SHAPE-129 · تحوّل الشعار إلى بؤبؤ عين · Logo-to-iris morph · 👁 شوهد في فيديو
-- **ماذا / what:** keep the logo ring of 8 rounded pentagons, scale it into an iris disc with radial ray gradient and add an almond eye outline with lash ticks around it
-- **أرقام / params:** ~600 ms, iris blur glow 30-40 px, colour #5cc8ff
-- **الدليل / proof:** `style:pm-micheleharmonic-77628e`
-
-#### SHAPE-130 · حلقة نقاط تتسع مع خطوط شعاعية · Expanding dot ring with radial lines · 👁 شوهد في فيديو
-- **ماذا / what:** duplicate logo dots around a larger circle (8 -> 24), thin violet lines radiate from behind towards the frame edges
-- **أرقام / params:** ring radius 40% width, lines 1.5 px #8a6cff
-- **الدليل / proof:** `style:pm-micheleharmonic-77628e`
-
-#### SHAPE-131 · انفتاح العين · Eye opening · 👁 شوهد في فيديو
-- **ماذا / what:** almond path height 0→full with iris scale, concentric outlines
-- **أرقام / params:** 800ms ease-out
-- **الدليل / proof:** `style:pm-monokern-ade5b6`
-
-#### SHAPE-132 · كاليدوسكوب · Kaleidoscope shader · 👁 شوهد في فيديو
-- **ماذا / what:** polar fold n=6-12 of rotating texture
-- **الدليل / proof:** `style:pm-monokern-ade5b6`
-
-#### SHAPE-133 · تحول شكل مع أثر ضبابي · Shape morph with blur trail · 👁 شوهد في فيديو
-- **ماذا / what:** Interpolate star polygon points (flubber-style) while rotating, with motion-blur echo; dotted orbit circle and orbiting accent dots
-- **أرقام / params:** morph 600 ms easeInOutCubic, 3 orbit dots
-- **الدليل / proof:** `style:pm-motiondsgnr-9dcfa6`
-
-#### SHAPE-134 · خطوط موجية توليدية · Ridge-line generative waves · 👁 شوهد في فيديو
-- **ماذا / what:** Stack of 40-60 horizontal polylines displaced by noise near centre (Joy Division look), with coloured bars sliding across
-- **أرقام / params:** noise amplitude ramp 0->60 px, gradient red->blue by row
-- **الدليل / proof:** `style:pm-motiondsgnr-9dcfa6`
-
-#### SHAPE-135 · شبكة نقاط موجية · Dot-grid wave · 👁 شوهد في فيديو
-- **ماذا / what:** grid dots coloured where sin(x*k - t) > threshold
-- **أرقام / params:** grid 30x20
-- **الدليل / proof:** `style:pm-mrtanviir-132457`
-
-#### SHAPE-136 · شبكة أشكال تتحول بتأخير المسافة · Distance-delayed shape grid morph · 👁 شوهد في فيديو
-- **ماذا / what:** 6x10 grid; each cell morphs circle->4-point star with ease(t-0.3*d) where d is distance from origin
-- **أرقام / params:** 60 shapes, 600 ms each
-- **الدليل / proof:** `style:pm-ndhabarde11-f155b4`
-
-#### SHAPE-137 · إطار مطاطي يتعرّج تحت الضغط · Rubber frame strain · 👁 شوهد في فيديو
-- **ماذا / what:** draw the border as an SVG path with ~40 points; displace points outward with noise/sine where the content touches, amplitude rising as the word grows
-- **أرقام / params:** amp 0→12 px, freq 3-4 waves per edge
-- **الدليل / proof:** `style:pm-pankajkumar-dev-0bee87`
-
-#### SHAPE-138 · رقصة أشكال باوهاوس الأساسية · Bauhaus primitive choreography · 👁 شوهد في فيديو
-- **ماذا / what:** circle, square, triangle, bar enter on diagonals with back.out overshoot and small rotation, layered on primary colour fields
-- **أرقام / params:** red #d6341f, yellow #e9c634, blue #2135bc, stagger 120 ms
-- **الدليل / proof:** `style:pm-pankajkumar-dev-0bee87`
-
-#### SHAPE-139 · بطاقة شفافة تعبر قطرياً · Translucent diagonal promo card sweep · 👁 شوهد في فيديو
-- **ماذا / what:** large pink frosted card rotated ~-12° with big text slides diagonally across the frame on top of the scene, partially out of frame
-- **أرقام / params:** ~700 ms, opacity 0.7, backdrop blur 8 px
-- **الدليل / proof:** `style:pm-paulo-kombucha-96431c`
-
-#### SHAPE-140 · أثر نقطي للرمي · Dotted throw trail · 👁 شوهد في فيديو
-- **ماذا / what:** bezier arc, dots every 8 px fading
-- **الدليل / proof:** `style:pm-pluginplay-3d4006`
-
-#### SHAPE-141 · شبكة بلاطات باوهاوس تتبدل · Bauhaus tile state-flip grid · 👁 شوهد في فيديو
-- **ماذا / what:** 16x9 grid; each cell picks from circle, ring, half/quarter circle, triangle with palette of 5 colours; cells rotate/flip to new state with stagger by distance from centre
-- **أرقام / params:** stagger 15-25 ms, flip 200 ms
-- **الدليل / proof:** `style:pm-prasenx-8d9323`
-
-#### SHAPE-142 · كرات لزجة تندمج · Metaball goo · 👁 شوهد في فيديو
-- **ماذا / what:** SVG feGaussianBlur 10 + feColorMatrix alpha 18 -7 on circles
-- **الدليل / proof:** `style:pm-raphaelaubryy-4b137e`
-
-#### SHAPE-143 · موجات تردد · Frequency wave stack · 👁 شوهد في فيديو
-- **ماذا / what:** 3 offset sine paths, increase frequency over time
-- **الدليل / proof:** `style:pm-reflex-cloud-72ffe5`
-
-#### SHAPE-144 · تشابك ليساجو · Lissajous complexity tangle · 👁 شوهد في فيديو
-- **ماذا / what:** x=A sin(a t+δ), y=B sin(b t); draw 20 copies with slowly drifting δ and ratios 3:2, 5:4; additive low alpha
-- **أرقام / params:** δ drift 0.2 rad/s
-- **الدليل / proof:** `style:pm-rneayan-ea6129`
-
-#### SHAPE-145 · تحويل أشكال بنابض · Spring shape morph · 👁 شوهد في فيديو
-- **ماذا / what:** Interpolate resampled polygon points circle→square→5-point star with spring easing; add ring of small stars rotating around
-- **أرقام / params:** 200 pts, stiffness 180, damping 14
-- **الدليل / proof:** `style:pm-roundtablespace-d3a1be`
-
-#### SHAPE-146 · نمط ترَشيه مع موجة تلوين · Truchet wave recolour · 👁 شوهد في فيديو
-- **ماذا / what:** Grid of quarter-arc Truchet tiles; a radial wave front rotates tiles 90° and tints them red with falloff
-- **أرقام / params:** tile 80px, stroke 18px, wave speed 600px/s
-- **الدليل / proof:** `style:pm-roundtablespace-d3a1be`
-
-#### SHAPE-147 · بوابة دوامية · Swirl portal · 👁 شوهد في فيديو
-- **ماذا / what:** ring torus glow + polar-twisted noise disc shader
-- **الدليل / proof:** `style:pm-ryzoft-4f85bd`
-
-#### SHAPE-148 · مربعات متداخلة · Nested rotating squares · 👁 شوهد في فيديو
-- **ماذا / what:** 8 squares rotate delay 50 ms each
-- **الدليل / proof:** `style:pm-safarkhanshuvo-ffd52d`
-
-#### SHAPE-149 · شاشة مقسومة واستعارة الكسوف · Split-screen eclipse metaphor · 👁 شوهد في فيديو
-- **ماذا / what:** half cream / half black; outline circle on light side, filled red dot on dark side slide toward each other and overlap into an eclipse
-- **أرقام / params:** ~1.5 s ease-in-out
-- **الدليل / proof:** `style:pm-samaote-5e2fc2`
-
-#### SHAPE-150 · شبكة بلاطات باوهاوس · Bauhaus modular tile grid · 👁 شوهد في فيديو
-- **ماذا / what:** 6x3 cells of circle/half/quarter shapes; each 200ms swaps shape and colour from 3-colour set
-- **الدليل / proof:** `style:pm-samuel-spitz-974923`
-
-#### SHAPE-151 · مدار حول جسم · Orbit ellipse accent · 👁 شوهد في فيديو
-- **ماذا / what:** thin red ellipse stroke rotating around object, tilted 20°
-- **الدليل / proof:** `style:pm-samuel-spitz-974923`
-
-#### SHAPE-152 · انفجار أشعة ملونة · Radial ray burst · 👁 شوهد في فيديو
-- **ماذا / what:** N line segments at random angles shoot outward from a ring with varied length and colour from palette, ease-out; outer arc rotates
-- **أرقام / params:** 40-60 rays; 600ms expoOut
-- **الدليل / proof:** `style:pm-shinskinakamoto-20190b`
-
-#### SHAPE-153 · تحول مربع إلى دائرة مع أقمار · Square-to-circle morph with satellites · 👁 شوهد في فيديو
-- **ماذا / what:** Animate border-radius 0->50% with rotation while three small dots orbit on a thin ring; background polka grid pulses
-- **أرقام / params:** morph 500ms; orbit 1 rev/s
-- **الدليل / proof:** `style:pm-shinskinakamoto-20190b`
-
-#### SHAPE-154 · حقل أشكال عائمة · Blob background field · 👁 شوهد في فيديو
-- **ماذا / what:** large rounded rects/circles drifting with blur
-- **أرقام / params:** 5-8 shapes
-- **الدليل / proof:** `style:pm-slvdev-64c45a`
-
-#### SHAPE-155 · بلاطات تروشيه المتموجة · Truchet wave tiles · 👁 شوهد في فيديو
-- **ماذا / what:** grid of quarter-arc tiles; rotate 90deg with delay = column*40ms; tint wavefront red
-- **أرقام / params:** tile 80px, stroke 14px
-- **الدليل / proof:** `style:pm-stephanlivera-df17a2`
-
-#### SHAPE-156 · نجمة تنفجر مع توابع · Star pop with orbiters · 👁 شوهد في فيديو
-- **ماذا / what:** star scale outBack, small stars placed on circle and rotating
-- **الدليل / proof:** `style:pm-stephanlivera-df17a2`
-
-#### SHAPE-157 · موجة شبكة نقاط · Distance-delay dot wave · 👁 شوهد في فيديو
-- **ماذا / what:** grid of squircles; scale = sin(t - dist*k); colour by ring
-- **الدليل / proof:** `style:pm-sudo-kiran-49176d`
-
-#### SHAPE-158 · كتلة متدرجة خلف نص · Gradient blob behind knockout text · 👁 شوهد في فيديو
-- **ماذا / what:** SVG blob noise morph, lime→blue gradient, text multiply
-- **الدليل / proof:** `style:pm-sudo-kiran-49176d`
-
-#### SHAPE-159 · ملء بشظايا · Shard fly-in fill · 👁 شوهد في فيديو
-- **ماذا / what:** each triangle starts off-screen rotated, eases into slot
-- **أرقام / params:** 600 ms ease-out
-- **الدليل / proof:** `style:pm-tdinh-me-815acb`
-
-#### SHAPE-160 · موجة بلاطات أرباع الدوائر · Quarter-circle tile wave · 👁 شوهد في فيديو
-- **ماذا / what:** grid of square cells each holding a quarter circle in one of 3-4 colours; rotate each cell 90° with delay = distance from centre × k
-- **أرقام / params:** cell 80-100 px; k 30 ms/cell; rotation 300 ms back.out
-- **الدليل / proof:** `style:pm-tequilafunks-97f6c9`
-
-#### SHAPE-161 · انفجار خطوط شعاعي افتتاحي · Radial line burst opener · 👁 شوهد في فيديو
-- **ماذا / what:** Single horizontal line + faint circle on black; then 36-48 rays scale out from centre with varying lengths and widths, sparks drift; cut on beat
-- **أرقام / params:** burst 400 ms easeOutExpo
-- **الدليل / proof:** `style:pm-teslachartz-c58b32`
-
-#### SHAPE-162 · تموج شعاعي في شبكة أشكال · Shape grid radial ripple · 👁 شوهد في فيديو
-- **ماذا / what:** 9x5 grid of cells with crosshair corners; each cell shows one primitive (square, plus, triangle, ring) in red/blue/black; a ripple from the centre cell swaps each cell's shape/colour with scale pop, d
-- **كيف / how:** 9x5 grid of cells with crosshair corners; each cell shows one primitive (square, plus, triangle, ring) in red/blue/black; a ripple from the centre cell swaps each cell's shape/colour with scale pop, delay = distance * k
-- **أرقام / params:** k ~40 ms per cell, pop 200 ms
-- **الدليل / proof:** `style:pm-teslachartz-c58b32`
-
-#### SHAPE-163 · كومة بطاقات تتكاثر · Card stack fan counter · 👁 شوهد في فيديو
-- **ماذا / what:** duplicate card with rotate/offset per item and 'n items' label
-- **الدليل / proof:** `style:pm-thayto-dev-44b911`
-
-#### SHAPE-164 · قناع القضمة · Bite mask · 👁 شوهد في فيديو
-- **ماذا / what:** Remove a scalloped circle-union shape from an object edge (logo cookie, phone tab bar) to show 'eaten'; animate mask radius 0->r with a few crumb particles
-- **أرقام / params:** 3 overlapping circles; 200ms; 4-6 crumbs
-- **الدليل / proof:** `style:pm-thilina-a-891c09`
-
-#### SHAPE-165 · مسار دائري بطائرة ورقية · Orbit path with paper plane · 👁 شوهد في فيديو
-- **ماذا / what:** dashed ellipse around headline; small plane icon follows the path (motion path)
-- **أرقام / params:** dash 2/6, 1.5 s per loop
-- **الدليل / proof:** `style:pm-thismacapital-dfba20`
-
-#### SHAPE-166 · تحوّل شكل مع صدى ملون · Shape morph with echo · 👁 شوهد في فيديو
-- **ماذا / what:** Interpolate path points circle→star (flubber), draw two lagged coloured stroke copies
-- **أرقام / params:** ~800 ms
-- **الدليل / proof:** `style:pm-tolgayhickiran-e90799`
-
-#### SHAPE-167 · تحول الزر إلى نافذة · Button-to-window morph · 👁 شوهد في فيديو
-- **ماذا / what:** animate width/height/border-radius of pill to 60% square card, image fades in inside
-- **أرقام / params:** ~800 ms easeInOut
-- **الدليل / proof:** `style:pm-twoclipping-221cab`
-
-#### SHAPE-168 · مؤشر مطاطي بحافتين · Two-edge stretchy indicator · 👁 شوهد في فيديو
-- **ماذا / what:** left and right edges of tab indicator/toggle knob follow separate springs (leading edge stiffer) so the shape stretches in travel and settles
-- **أرقام / params:** stiffness ratio ~1.6:1
-- **الدليل / proof:** `style:pm-twoclipping-5cba86`
-
-#### SHAPE-169 · تمطيط الدائرة إلى كبسولة · Circle to pill stretch · 👁 شوهد في فيديو
-- **ماذا / what:** animate width with fixed radius; squash on settle
-- **الدليل / proof:** `style:pm-ultimaxbt-bbebf5`
-
-#### SHAPE-170 · نقطة تتحول إلى نظام · Dot→system morph · 👁 شوهد في فيديو
-- **ماذا / what:** Start with single accent dot on empty frame, scale rings out from it and scatter satellite dots with stagger 50 ms
-- **أرقام / params:** ~1 s
-- **الدليل / proof:** `style:pm-xelandre-363f00`
-
-#### SHAPE-171 · نفق مربعات حلزوني · Spiral square tunnel · 👁 شوهد في فيديو
-- **ماذا / what:** nested squares scale 0.9 rotate 8° each, alternating colours, rotate loop
-- **الدليل / proof:** `style:pm-zheke-38deff`
-
-#### SHAPE-172 · تغيير لون الكلمة داخل الكورة فقط · Clip-path colour flip over a moving lens · 👁 شوهد في فيديو
-- **ماذا / what:** render word row twice: dark copy, and white copy clipped with clip-path: circle(r at orbX orbY); translate row horizontally so each word passes the orb
-- **أرقام / params:** orb r ~70px, row speed ~1 word/0.8 s
-- **الدليل / proof:** `style:product`
-
-#### SHAPE-173 · اختيار المنحنيات وسرعة ثابتة على المسار · Spline choice and constant-speed paths · 📄 موصوف
-- **ماذا / what:** Pick curve families for cursor paths, camera rails and object routes: Catmull-Rom to pass through waypoints, Hermite with known tangents, Bezier for handle authoring; target C1 continuity and use an arc-length table so speed is constant.
-- **كيف / how:** Plain JS/Python: sample curve, build cumulative length table, map distance->t; separate authoring points from baked samples.
-- **أرقام / params:** C0 position, C1 tangent, C2 curvature; never one high-degree polynomial through many points
-- **الدليل / proof:** `kosif-atlas/skills/2199-lvtd-skills/8088-game-smooth-curves-and-motion`
-
-#### SHAPE-174 · S07 مرح هندسي · S07 Playful geometric · 📄 موصوف
-- **ماذا / what:** Limited bold palette, circles, cards and icons; small bounces, shape swaps, varied rhythm. Lively from simple assets; can be wrong for serious topics and over-bouncing distracts.
-- **كيف / how:** SVG primitives, overshoot easings, staggered entrances; KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg)
-- **أرقام / params:** cost low-medium; MG-008 MG-029 MG-061 MG-081 MG-083 MG-108 MG-115
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md`
-
-#### SHAPE-175 · MG-112/115 حلقات دوران بنسب صحيحة · MG-112/115 Integer-ratio rotation loops · 📄 موصوف
-- **ماذا / what:** Dots orbit a centre away from the text (MG-112); two arcs rotate at related speeds around one centre (MG-115).
-- **كيف / how:** MG-112: exactly one turn in 6 s, linear, evenly spaced angles. MG-115: arc A one turn and arc B two turns per 6 s around a shared centre - integer turn ratios guarantee no jump; never export the first frame twice at the seam.
-- **أرقام / params:** 6 s; ratio 1:2
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md`
-
-#### SHAPE-176 · MG-116/117 بلاطات تنقلب وشريط صور لا ينتهي · MG-116/117 Tile flips and endless strip · 📄 موصوف
-- **ماذا / what:** A tile grid flips row by row to a second colour and back (MG-116); a row of images scrolls with its end meeting its start (MG-117).
-- **كيف / how:** MG-116: 0-4 flip, 4-8 return; scaleX or 2.5D rotate with row delay, few flips, no harsh flashing contrast. MG-117: move exactly one repeat-unit width (including gaps) in 10 s using two identical copies and linear motion - miscounted gaps cause a jump.
-- **أرقام / params:** 8 s / 10 s
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md`
-
-#### SHAPE-177 · نمذجة حقول المسافة · SDF field modeling · 📄 موصوف
-- **ماذا / what:** Compose primitive signed distance fields with transforms and booleans for shapes, morphs and raymarching.
-- **كيف / how:** Inverse-transform the point; union=min, intersect=max, smooth-min for blends; debug via slices/isolines.
-- **الدليل / proof:** `kosif-atlas/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling/SKILL.md` · `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md`
-
-#### SHAPE-178 · أيقونة بأقل الخطوط · Minimal icon via closure · 📄 موصوف
-- **ماذا / what:** Imply forms with gaps, aligned terminations and negative space; test legibility at 8-12px.
-- **كيف / how:** SVG strokes with small breaks; draw-on works especially well because perception completes the form early.
-- **أرقام / params:** test at 8-12px
-- **الدليل / proof:** `kosif-atlas/skills/1503-universal-design-principles/3812-closure-implied-shapes` · `kosif-atlas/skills/1503-universal-design-principles/3760-iconic-representation`
-
-#### SHAPE-179 · فلتر اللزوجة · SVG goo filter · 📄 موصوف
-- **ماذا / what:** Blobs merge like liquid: blur then sharpen alpha with a color matrix.
-- **كيف / how:** feGaussianBlur stdDeviation ~10 + feColorMatrix alpha row '0 0 0 18 -7'.
-- **أرقام / params:** std 10; 18 -7
-- **الدليل / proof:** `kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero` · `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion`
-
-#### SHAPE-180 · أشكال بدوال المسافة · Signed distance field shapes · 📄 موصوف
-- **ماذا / what:** Represent shapes as distance functions for smooth unions, morphs, outlines and glows.
-- **كيف / how:** GLSL or numpy: circle length(p)-r, box, smooth-min union k; morph by mixing two SDFs; glow = exp(-d*k).
-- **أرقام / params:** smin k 0.1-0.3
-- **الدليل / proof:** `kosif-atlas/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling` · `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion`
-
-#### SHAPE-181 · شبكة أيقونات 24px · 24px/2px icon grid · 📄 موصوف
-- **ماذا / what:** Unified 24px grid, 2px stroke, round caps, square viewBox, no text, <4KB file.
-- **كيف / how:** primitive SVG with seeded randomness
-- **أرقام / params:** test at 16/24/48/192 px
-- **الدليل / proof:** `100-superskills/skills/svg-illustration-icons/SKILL.md:21`
-
-#### SHAPE-182 · نظام الوحدة والشبكة · Base-unit grid system · 📄 موصوف
-- **ماذا / what:** All sizes multiples of a base unit on a column grid; final frames exactly on grid.
-- **أرقام / params:** unit 24 px; 8 or 12 columns
-- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:15` · `kosif-tool/playbooks/shapes.md:29`
-
-#### SHAPE-183 · سلالم الأشكال والأقطار · Primitive and radius/stroke scales · 📄 موصوف
-- **ماذا / what:** Max three primitives, two colours + background, radius and stroke scales, ≥30% negative space.
-- **أرقام / params:** radii 0/8/24/50%; strokes 2/4/8; negative space ≥ 30%
-- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:16-18`
-
-#### SHAPE-184 · رقصة الشبكة · Grid choreography wave · 📄 موصوف
-- **ماذا / what:** 4×4 grid rotates 90° in diagonal wave.
-- **أرقام / params:** 40 ms offset per cell; 400 ms each
-- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:47`
-
-#### SHAPE-185 · التحول عبر حالات الواجهة · Morph through UI states · 📄 موصوف
-- **ماذا / what:** Button→toggle→card→full screen.
-- **أرقام / params:** 600 ms per step; 900 ms holds
+#### SHAPE-14 · أسلوب الأشكال السائلة · Liquid-morph style · 📄 موصوف / documented only
+- **ماذا / what:** كتل سائلة تندمج وتنقسم: تحويل مسارات بنقاط متساوية أو فلتر لزوجة، ورؤوس تحركها ضوضاء. — Blobby fluid shapes merging and splitting via equal-point path morph or a gooey filter, vertices driven by noise.
+- **متى أستخدمها / when:** علامات عصرية، موسيقى، تقنية حيوية.
+- **كيف / how:** Scaffold: python3 tools/kosif.py scaffold liquid-morph <dir>; morph 500–800 ms at 64–128 points or SHAPE-27; beat-anchored variant: HyperFrames liquid-morph primitive (phrase/transition anchors, best span 1.0–2.5 s). **أرقام / params:** morph 500–800 ms; 64–128 pts.
+- **الدليل / proof:** `kosif-tool/styles/liquid-morph/SKILL.md` · `kosif-tool/styles/liquid-morph/STYLE.json` · `kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/liquid-morph/scene.html`
+
+## تحولات الحاويات والواجهات — Container & UI morphs
+
+_العنصر لا يختفي ليظهر غيره: الكائن نفسه يغيّر حجمه وزواياه ولونه فيبقى «هو» — هذا ما يجعل عرض المنتج مفهومًا._
+
+#### SHAPE-15 · العنصر المشترك (FLIP) · FLIP / shared-element continuity · 📄 موصوف / documented only
+- **ماذا / what:** أبقِ عنصرًا واحدًا حيًا وهو يغير صندوقه أو مكانه بين حالتين، فتبقى هويته متصلة بدل التلاشي المتقاطع. — Keep one element alive while it changes box or hierarchy, so identity is continuous instead of a crossfade.
+- **متى أستخدمها / when:** كل انتقال بين شاشتين يشتركان في عنصر.
+- **كيف / how:** First/Last/Invert/Play: measure both boxes, apply the inverse transform, tween to identity in one continuous transform; split x/y/scale into eased keys only for deliberate beats.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/references/keyframe-patterns.md`
+
+#### SHAPE-16 · البطاقة كمرساة انتقال · Card-morph anchor handoff · 📄 موصوف / documented only
+- **ماذا / what:** حاوية تغير حجمها الظاهري (scale موحد) وزواياها وخلفيتها وظلها بين لقطتين ثم تتلاشى لتكشف الهدف الحقيقي. — A container morphs apparent size (uniform scale), radius, background and shadow between two shots, then fades to reveal the real target.
+- **متى أستخدمها / when:** من بطاقة في قائمة إلى شاشة كاملة.
+- **كيف / how:** One paused GSAP timeline, fromTo explicit states; MORPH_DUR power2.inOut; fades power1.in/out by fraction; transforms/opacity only. **أرقام / params:** power2.inOut.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/card-morph-anchor.md`
+
+#### SHAPE-17 · سلسلة: نقطة → زر → شريط تقدم · Morph chain: dot → button → progress bar → full stop · 🟢 جاهز / ready
+- **ماذا / what:** نقطة حمراء واحدة هي الخيط البصري: تسقط، تصير زرًا يُضغط، تنبسط إلى شريط تقدم، ثم تصير نقطة نهاية. — One red dot is the through-line: it falls, becomes a pill button, is pressed, flattens into a progress bar, then a full stop.
+- **متى أستخدمها / when:** ريل منتج قصير، شوريل، «من فكرة إلى إطلاق».
+- **كيف / how:** pill from scaleX 44/400, scaleY .44 → 1,1 in .42 s E.inOut on beat 4; after press scaleX 2.0, scaleY .24 in .34 s, swap to #bar; #fill 0→800 linear 1.1 s; counter 0→900. **أرقام / params:** 120 BPM grid; .42 s / .34 s / 1.1 s.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:66`
+
+#### SHAPE-18 · جزيرة ديناميكية وزر ينفتح نافذة · Dynamic-island / button-to-window morph · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** حاوية واحدة تغير عرضها وارتفاعها ونصف قطرها بين الحالات بنابض: كبسولة→نافذة، بطاقة→كبسولة، دائرة→كبسولة. — One container animates width/height/radius between states on a spring: pill→window, card→pill, circle→pill with squash on settle.
+- **متى أستخدمها / when:** إشعارات، أزرار، تبويبات، عرض تطبيقات.
+- **كيف / how:** Spring stiffness 200 damping 22; radius 16 px → 999 px; content fades in only after 70% of the size change; ~600–800 ms easeInOutQuint if not spring. **أرقام / params:** stiffness 200, damping 22; 600–800 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-jazzen-chen-4542ae` · `kosif-tool/styles/pm-twoclipping-221cab` · `kosif-tool/styles/pm-elliot-garreffa-f334bc` · `kosif-tool/styles/pm-ultimaxbt-bbebf5`
+- **أساليب / styles:** `style:pm-jazzen-chen-4542ae` · `style:pm-twoclipping-221cab` · `style:pm-elliot-garreffa-f334bc`
+
+#### SHAPE-19 · مؤشر مطاطي بحافتين · Two-edge stretchy indicator · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** الحافة الأمامية والخلفية لمؤشر التبويب تتبع نابضين مختلفين، فيتمدد أثناء الحركة ويستقر. — Leading and trailing edges of a tab indicator follow separate springs (leading stiffer), so it stretches in travel and settles.
+- **متى أستخدمها / when:** تبويبات ومفاتيح تبديل في عرض واجهة.
+- **كيف / how:** Two springs on left/right edges; stiffness ratio ~1.6:1; draw a rounded rect between them. **أرقام / params:** stiffness ratio ~1.6:1.
+- **الدليل / proof:** `kosif-tool/styles/pm-twoclipping-5cba86`
+- **أساليب / styles:** `style:pm-twoclipping-5cba86`
+
+#### SHAPE-20 · أيقونة القائمة تصير إغلاقًا · Hamburger-to-close morph · 📄 موصوف / documented only
+- **ماذا / what:** ثلاثة خطوط تصير X: العلوي والسفلي يدوران ±45° والأوسط ينطوي. — Three bars become an X: top/bottom rotate ±45°, the middle collapses.
+- **متى أستخدمها / when:** عرض قوائم في UI demo.
+- **كيف / how:** Transforms on three spans; middle opacity 0 + scaleX 0; 0.2 s. **أرقام / params:** ±45°, 0.2 s.
+- **الدليل / proof:** `kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/microinteraction-patterns.md`
+
+#### SHAPE-21 · التحول عبر حالات الواجهة · Morph through UI states · 📄 موصوف / documented only
+- **ماذا / what:** زر → مفتاح → بطاقة → شاشة كاملة، كل خطوة 600 ms ووقفة 900 ms للقراءة. — Button → toggle → card → full screen, 600 ms per step with 900 ms holds.
+- **متى أستخدمها / when:** شرح رحلة مستخدم في لقطة واحدة.
+- **كيف / how:** Each step is a SHAPE-15 on the same element; hold 900 ms so the eye reads the state. **أرقام / params:** 600 ms per step; 900 ms holds.
 - **الدليل / proof:** `kosif-tool/playbooks/shapes.md:49`
 
-#### SHAPE-186 · معادلة الزوايا المتداخلة · Nested radius formula · 📄 موصوف
-- **ماذا / what:** inner radius = outer - gap when gap<32 px and result>2.
-- **أرقام / params:** 16px outer, 8px gap -> 8px
-- **الدليل / proof:** `kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:225`
+#### SHAPE-22 · نقطة تتفتح إلى واجهة أو نظام · Dot-to-interface / dot-to-system bloom · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** نقطة متوهجة 8px تكبر إلى إطار مستطيل في 1.2 ث (expo) ثم يظهر المحتوى، أو تطلق حلقات وأقمارًا متتابعة. — A glowing 8 px dot scales to a rectangular frame in 1.2 s (expo) then content fades in — or emits rings and satellite dots with 50 ms stagger.
+- **متى أستخدمها / when:** افتتاح منتج، «كل شيء يبدأ بفكرة».
+- **كيف / how:** Animate width/height/radius from the dot; content opacity after 80%; system variant: rings scale from the dot and satellites scatter with 50 ms stagger over ~1 s. **أرقام / params:** 8 px → frame, 1.2 s expo; satellites 50 ms stagger.
+- **الدليل / proof:** `kosif-tool/styles/pm-dale-vaz-cc612a` · `kosif-tool/styles/pm-xelandre-363f00`
+- **أساليب / styles:** `style:pm-dale-vaz-cc612a` · `style:pm-xelandre-363f00`
 
-#### SHAPE-187 · نقرة وتحول لعلامة صح · Tap ripple + circle-to-check morph · 💡 فكرة
-- **ماذا / what:** Tap ripple triggers success; circle morphs into checkmark.
-- **كيف / how:** SVG path morph (flubber-like) + ripple circle scale/fade.
-- **الدليل / proof:** `style:pm-cansincengiz-me-cf68dd`
+#### SHAPE-23 · حلقة → قزحية → غمر لوني · Ring → iris → colour flood · 🟢 جاهز / ready
+- **ماذا / what:** حلقة مرسومة تنكمش وتسمك إلى نقطة قزحية، ثم تنفتح دائرة قص من تلك النقطة لتغمر الإطار بلون العلامة. — A drawn ring shrinks and thickens into an iris point, then a circular clip opens from it to flood the frame with the brand colour.
+- **متى أستخدمها / when:** ختام شعار، انتقال إلى بطاقة CTA.
+- **كيف / how:** tl.to(ring,{scale:.14, strokeWidth:60, duration:.45, ease:E.in}, 3.65); M.iris(tl, brand, 4.05, {x:540, y:930, r0:60, r:2300, dur:.5}) with log-space ease + M.flash peak .6. **أرقام / params:** .45 s shrink; iris r 60→2300 in .5 s.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:80` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:334`
 
-#### SHAPE-188 · تجمع إلى شعار · Converge to monogram tile · 💡 فكرة
-- **ماذا / what:** Lanes/bars/line converge into a square tile that rotates 90° into monogram.
-- **كيف / how:** Transform interpolation.
-- **أرقام / params:** 90°
-- **الدليل / proof:** `style:pm-danilowm-d3720d`
+#### SHAPE-24 · الشعار يصير بؤبؤ عين · Logo-to-iris / eye opening · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** حلقة الشعار تكبر إلى قرص قزحية بتدرج شعاعي، ويُرسم حولها جفن لوزي برموش، أو عين تنفتح من خط. — The logo ring scales into an iris disc with a radial ray gradient inside an almond eye outline with lash ticks; or an eye opens from a line.
+- **متى أستخدمها / when:** رؤية، مراقبة، «انظر إلى…».
+- **كيف / how:** Almond path height 0→full 800 ms ease-out with iris scale; iris glow blur 30–40 px #5cc8ff; concentric outlines behind. **أرقام / params:** ~600–800 ms; glow 30–40 px.
+- **الدليل / proof:** `kosif-tool/styles/pm-micheleharmonic-77628e` · `kosif-tool/styles/pm-monokern-ade5b6`
+- **أساليب / styles:** `style:pm-micheleharmonic-77628e` · `style:pm-monokern-ade5b6`
 
-#### SHAPE-189 · تجمع الصلصال · Metaball clay assembly · 💡 فكرة
-- **ماذا / what:** Blobs roll in and merge via metaball threshold.
-- **كيف / how:** Canvas field sum + threshold (or SVG goo filter).
-- **أرقام / params:** 6 blobs
-- **الدليل / proof:** `style:pm-davidshulmanfl-371638`
+#### SHAPE-25 · نقرة وتحول لعلامة صح · Tap ripple + circle-to-check morph · 💡 فكرة / idea
+- **ماذا / what:** نقرة تطلق تموجًا، والدائرة تتحول إلى علامة صح. — A tap ripple triggers success; the circle morphs into a checkmark.
+- **متى أستخدمها / when:** نجاح دفع، اكتمال مهمة.
+- **كيف / how:** Untested idea from a brief: SHAPE-01 circle→check (open path) + ripple circle scale 1→1.9 fading .9→0 in .9 s; ~400 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-cansincengiz-me-cf68dd/BRIEF.md`
 
-#### SHAPE-190 · انكماش لنقطة · Converge-to-dot outro · 💡 فكرة
-- **ماذا / what:** All elements collapse to a dot which expands to logo.
-- **أرقام / params:** hold final 2 s
-- **الدليل / proof:** `style:pm-itisrazak-3ad902`
+#### SHAPE-26 · ظرف يتحول لشارة / تجمع إلى شعار · Envelope→badge, converge→monogram, collapse→dot · 💡 فكرة / idea
+- **ماذا / what:** أفكار من البريفات: ظرف مُرسل ينطلق ويصير شارة إشعار؛ خطوط تتجمع إلى مربع يدور 90° فيصير مونوغرام؛ كل العناصر تنكمش إلى نقطة تنفتح شعارًا. — Brief ideas: a sent envelope streaks off and becomes a badge; lanes converge into a tile that rotates 90° into a monogram; everything collapses to a dot that opens into the logo.
+- **متى أستخدمها / when:** ختام إعلان، كشف هوية.
+- **كيف / how:** Untested: transform interpolation + SHAPE-01; hold the final logo 2 s. **أرقام / params:** 90° turn; hold 2 s.
+- **الدليل / proof:** `kosif-tool/styles/pm-melvynx-6cde6c/BRIEF.md` · `kosif-tool/styles/pm-danilowm-d3720d/BRIEF.md` · `kosif-tool/styles/pm-itisrazak-3ad902/BRIEF.md`
 
-#### SHAPE-191 · نقطة لخط لكلمة · Dot-line-word cold open · 💡 فكرة
-- **ماذا / what:** A dot stretches to a line then snaps into a word letter by letter with drum hit per letter.
-- **الدليل / proof:** `style:pm-jasonzhou1993-8595e0`
+## الكتل اللزجة وحقول المسافة — Blobs, goo & signed-distance shapes
 
-#### SHAPE-192 · نفق الخطوط · Outline tunnel speed ramp · 💡 فكرة
-- **ماذا / what:** Mark multiplies into tunnel of outlines with ticking counter.
-- **كيف / how:** Repeated scaled outlines.
-- **الدليل / proof:** `style:pm-jasonzhou1993-8595e0`
+_الكتلة تبدو حية حين تندمج أطرافها: فلتر اللزوجة في 2D، والدمج الناعم بحقول المسافة في 3D._
 
-#### SHAPE-193 · كل شيء من المركز · Centre-origin geometry · 💡 فكرة
-- **ماذا / what:** All transforms around frame centre; elements enter from centre only.
-- **كيف / how:** transform-origin 960px 540px.
-- **أرقام / params:** (960,540)
-- **الدليل / proof:** `style:pm-marouanegazouzi-6071d5`
+#### SHAPE-27 · فلتر اللزوجة · SVG goo / metaball filter · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كرات تندمج كالسائل: تمويه ثم شحذ قناة الألفا بمصفوفة لون. — Blobs merge like liquid: blur then sharpen alpha with a colour matrix.
+- **متى أستخدمها / when:** كتل سائلة، أزرار لزجة، قطرات تنفصل، نص يذوب.
+- **كيف / how:** <filter><feGaussianBlur stdDeviation=10/><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/></filter> on a <g> of circles moved in seek(t). Rendered here (4 orbiting circles). Keep text outside the filter. Canvas alternative: sum r²/d² field and threshold. **أرقام / params:** stdDeviation 10; alpha row 18 −7.
+- **الدليل / proof:** `kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero` · `kosif-tool/styles/pm-raphaelaubryy-4b137e`
+- **أساليب / styles:** `style:pm-raphaelaubryy-4b137e`
 
-#### SHAPE-194 · ظرف يتحول لشارة · Envelope to badge morph · 💡 فكرة
-- **ماذا / what:** Sent envelope streaks off and becomes a notification badge.
-- **الدليل / proof:** `style:pm-melvynx-6cde6c`
+#### SHAPE-28 · الانقسام اللزج والكتلة الناعمة · Gooey split & soft blob touch (HyperFrames) · 📦 بأمر تثبيت / one install
+- **ماذا / what:** نقطة تنقسم إلى قائمة ثلاث نقاط عبر عنق لزج ثم تدور وتلتحم؛ وكتلة محببة تنتفخ نحو نقطة لمس وتعود بنابض يحفظ السرعة. — A dot splits into a three-dot menu through a metaball neck, spins and re-merges; a grainy blob bulges toward a touch and recovers on a velocity-preserving spring.
+- **متى أستخدمها / when:** عرض تفاعل، أزرار، شعارات سائلة.
+- **كيف / how:** npx hyperframes add gooey-split (4.7 s, SVG blur+threshold, GSAP paused timeline) | soft-blob-touch (touch_x 8–92, touch_y 8–92, touch_at .9–10 s, grain fine|coarse). **أرقام / params:** gooey-split 4.7 s; touch_at 1.6 s default.
+- **📦 تثبيت / install:** `npx hyperframes add gooey-split`
+- **⚖️ ترخيص / license:** Apache-2.0 (+ GSAP standard license inside).
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/blocks/gooey-split/gooey-split.html` · `kosif-one/vendor/hyperframes/registry/components/soft-blob-touch/soft-blob-touch.html`
 
-#### SHAPE-195 · تماثل كاليدوسكوبي · Kaleidoscope wedge symmetry · 💡 فكرة
-- **ماذا / what:** 6/8-fold symmetry mirrored from one wedge in shader.
-- **كيف / how:** Fragment shader polar fold; wedge rotates.
-- **أرقام / params:** 6 or 8 folds; wedge 10°/s
-- **الدليل / proof:** `style:pm-monokern-ade5b6`
+#### SHAPE-29 · تجمع الصلصال بالكرات · Metaball clay assembly · 💡 فكرة / idea
+- **ماذا / what:** ست كتل تتدحرج وتلتحم بعتبة الكرات المعدنية. — Six blobs roll in and merge via a metaball threshold.
+- **متى أستخدمها / when:** صلصال، منتجات لطيفة.
+- **كيف / how:** Untested idea from a brief: Canvas field sum Σr²/d² + threshold (or SHAPE-27); roll = translate + rotate of a texture inside each blob. **أرقام / params:** 6 blobs.
+- **الدليل / proof:** `kosif-tool/styles/pm-davidshulmanfl-371638/BRIEF.md`
 
-#### SHAPE-196 · التصاق مغناطيسي · Magnet snap spring · 💡 فكرة
-- **ماذا / what:** Primitives snap into place with one overshoot.
-- **كيف / how:** Remotion spring.
-- **أرقام / params:** stiffness 220 damping 14; UI cubic-bezier(0.16,1,0.3,1) 400-600 ms
-- **الدليل / proof:** `style:pm-quickdesignio-dd93d0`
+#### SHAPE-30 · كتلة عضوية بضوضاء الرؤوس · Noise-displaced 3D blob · 📦 بأمر تثبيت / one install
+- **ماذا / what:** كرة تُدفع رؤوسها على العموديات بضوضاء متحركة فتصير كتلة حية. — Sphere vertices pushed along normals by animated noise — a living blob.
+- **متى أستخدمها / when:** خلفيات تقنية، «الذكاء الاصطناعي»، صوت يتنفس.
+- **كيف / how:** three.js ShaderMaterial vertex: disp = pnoise(position·1.5 + t·.5); newPos = position + normal·disp·intensity; t = seek time (never clock). Or use the bundled three-kit noise on CPU for small meshes. **أرقام / params:** freq 1.5, speed .5, intensity .1–.3.
+- **📦 تثبيت / install:** `npm i three`
+- **الدليل / proof:** `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md`
 
-#### SHAPE-197 · تموج شبكة نقاط · Dot-grid spring ripple · 💡 فكرة
-- **ماذا / what:** Wave front through dot grid with spring overshoot.
-- **أرقام / params:** stiffness 220 damping 12; 900 px/s
-- **الدليل / proof:** `style:pm-reflex-cloud-72ffe5`
+#### SHAPE-31 · أشكال بدوال المسافة · 2D signed-distance shapes (union, morph, glow) · 📄 موصوف / documented only
+- **ماذا / what:** صف الأشكال كدوال مسافة: دمج ناعم، تحويل بالمزج بين دالتين، حدود وتوهج من المسافة نفسها. — Shapes as distance functions for smooth unions, morphs (mix two SDFs), outlines and glows.
+- **متى أستخدمها / when:** شعارات سائلة، تحولات مستحيلة بالمسارات، توهج دقيق.
+- **كيف / how:** GLSL or numpy: circle length(p)−r, box, smooth-min union with k; morph = mix(d1, d2, t); outline = abs(d) < w; glow = exp(−d·k); debug with isolines. Inverse-transform the point, never the shape. **أرقام / params:** smin k .1–.3.
+- **الدليل / proof:** `kosif-atlas/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling/SKILL.md` · `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md`
+
+#### SHAPE-32 · نحت بحقول المسافة إلى مجسم مغلق · SDF sculpting to a watertight mesh · ✅ مُثبت هنا / proven here
+- **ماذا / what:** شخصيات وأجسام تُنحت من أوليات مسافة (كرة، إهليلج، كبسولة، صندوق، طارة) بدمج ونحت ناعم، وتُشبَّك إلى هندسة مغلقة دقيقة. — Characters and props sculpted from SDF primitives with smooth union/subtract and meshed by surface nets into closed, accurate geometry.
+- **متى أستخدمها / when:** شخصيات قطيفة، ألعاب، منتجات ناعمة بلا برنامج نمذجة.
+- **كيف / how:** K3S.sculpt().color(hex).sphere(c,r,o).ellipsoid(c,[rx,ry,rz],o).capsule(a,b,r1,r2,o).box(c,[hx,hy,hz],round,o).torus(c,R,r,o).mesh({cells}); o = {k, op, color, rot}. Coarse-to-fine evaluation skips empty space. test_shape_kit passed here 4/4. **أرقام / params:** sphere volume ±2%, area ±3%, radius error < 1e−3, 0 open edges; evals < 60% of full grid; 136-cell body ~1.5 s; bunny 274k tris ~4 s.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:21` · `100-superskills/skills/kosif-montage-motion/tests/js/shape_kit_check.cjs:31` · `kosif-studio/motion/kit/shape-kit.js:44` · `kosif-studio/motion/references/shape-kit.md`
+
+#### SHAPE-33 · دمج ونحت وتقاطع ناعم · Smooth CSG (add / sub / and) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** دمج وطرح وتقاطع ناعم بنصف قطر k بالمتر، والألوان تمتزج بنفس الأوزان، والطرح الملون يلون التجويف. — Smooth union, subtraction and intersection with blend radius k in metres; colours blend with the same weights; a coloured subtraction tints the cavity.
+- **متى أستخدمها / when:** دمى «محشوة ومخيطة»، فم محفور، تفاصيل ناعمة.
+- **كيف / how:** Pass {op:"add"|"sub"|"and", k, color} to any primitive; h = clamp(.5 ± .5·(d2−d1)/k); d = mix − k·h·(1−h). Tested here (tint red 1.0 inside the carve, 0 on the plain side). **أرقام / params:** k 10–30 mm for plush (e.g. .012 m).
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:104` · `100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:31` · `kosif-studio/motion/kit/shape-kit.js:100`
+
+#### SHAPE-34 · استعلام الحقل لتثبيت العناصر · Field queries for placement · 🟢 جاهز / ready
+- **ماذا / what:** اسأل الحقل عن المسافة واللون، أسقط نقطة على السطح، أو اطلق شعاعًا — مثلًا لتثبيت العيون حيث يلتقي شعاع أمامي بالوجه. — Query distance/colour, project points onto the surface or raycast it — e.g. seat eyes where a frontal ray meets the face.
+- **متى أستخدمها / when:** تركيب عيون وأزرار وإكسسوارات على مجسم منحوت.
+- **كيف / how:** S.dist(x,y,z), S.colorAt(...), S.project(p), S.hit(from, dir) → {point, normal}; orient the accessory to the returned normal.
+- **الدليل / proof:** `kosif-studio/motion/kit/shape-kit.js:104` · `kosif-studio/motion/references/shape-kit.md`
+
+#### SHAPE-35 · حقل كتل وبقعة زاوية · Drifting blob field & corner blob · 🟢 جاهز / ready
+- **ماذا / what:** 5–8 أشكال كبيرة مستديرة تنجرف مموهة خلف المحتوى، أو بقعة إهليلجية كبيرة تنزف من الزاوية العليا اليمنى. — 5–8 large rounded shapes drifting with blur behind content, or one large tinted ellipse bleeding off the top-right corner.
+- **متى أستخدمها / when:** خلفيات هادئة لعروض وأغلفة.
+- **كيف / how:** Corner blob: ellipse centre (.93w,.14h), radii .35w×.13h, rotation π/5, alpha .65 (fastify editorial). Field: periods 10/12/16 s so shapes never move in lockstep, drift 12–30 px, rotate 5–8°. **أرقام / params:** corner ellipse .35w×.13h @ .65; drift 12–30 px, periods 10/12/16 s.
+- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:50-51` · `kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md` · `kosif-tool/styles/pm-slvdev-64c45a`
+- **أساليب / styles:** `style:pm-slvdev-64c45a`
+
+#### SHAPE-36 · كتلة متدرجة أو متحولة خلف النص · Gradient / morphing blob behind text · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** كتلة SVG تتحول بالضوضاء بتدرج ليموني→أزرق والنص فوقها بمزج multiply، أو مربع يصير كتلة بحد فوق نقاط هالفتون. — Noise-morphing SVG blob with a lime→blue gradient and multiplied text, or a square morphing to a blob with an outline over halftone dots.
+- **متى أستخدمها / when:** عناوين جريئة، اقتباسات، أغلفة ريلز.
+- **كيف / how:** Path from 12–16 polar points with radius = R(1 + .15·noise(θ, t)); Catmull-Rom closed; 600 ms morph for the square variant. **أرقام / params:** 600 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-sudo-kiran-49176d` · `kosif-tool/styles/pm-hanifproduktif-54bdee`
+- **أساليب / styles:** `style:pm-sudo-kiran-49176d` · `style:pm-hanifproduktif-54bdee`
+
+#### SHAPE-37 · إطار مطاطي وقناع قضمة · Rubber-frame strain & bite mask · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** حد الإطار مسار من ~40 نقطة ينبعج حيث يضغط المحتوى؛ وقناع «قضمة» من اتحاد ثلاث دوائر يُطرح من حافة الجسم مع فتات. — The frame border as a ~40-point path bulging where content pushes; a scalloped three-circle “bite” subtracted from an edge with crumbs.
+- **متى أستخدمها / when:** نص يكبر ويضغط الحدود؛ «أكلها» في إعلان.
+- **كيف / how:** Displace border points by noise/sine where touched, amp 0→12 px, 3–4 waves per edge; bite: mask radius 0→r in 200 ms + 4–6 crumb particles. **أرقام / params:** amp 0→12 px; bite 200 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-pankajkumar-dev-0bee87` · `kosif-tool/styles/pm-thilina-a-891c09`
+- **أساليب / styles:** `style:pm-pankajkumar-dev-0bee87` · `style:pm-thilina-a-891c09`
+
+#### SHAPE-38 · تموج ضغطة بحرارة · Press ripple with heat bloom · 📄 موصوف / documented only
+- **ماذا / what:** حلقة تتسع وتدفع الإحداثيات للخارج وتضيف «حرارة» لونية. — An expanding ring that shoves coordinates outward and adds heat.
+- **متى أستخدمها / when:** لمسات شاشة، نبضات، تأكيد.
+- **كيف / how:** Ring radius grows over .9 s; displacement .18 in a shader or canvas warp; heat .55 added as warm bloom on the ring. **أرقام / params:** ripple .18, heat .55, .9 s.
+- **الدليل / proof:** `kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md`
+
+## المسارات والمنحنيات والبناء — Paths, curves & construction
+
+_المنحنى الجيد يمر بالنقاط بسرعة ثابتة؛ والشكل الجيد يعرف ثقوبه — ابنِ الهندسة كبرنامج لا كصورة._
+
+#### SHAPE-39 · الحركة على مسار SVG · Motion along an SVG path · 📦 بأمر تثبيت / one install
+- **ماذا / what:** عنصر (طائرة، سهم، مذنب، نص) يتحرك على مسار ويدور مع مماسه. — Move an element (plane, arrow, comet, label) along a path with auto-rotation to the tangent.
+- **متى أستخدمها / when:** رحلات، أسهم بيانات، مؤشر على منحنى نمو.
+- **كيف / how:** gsap.registerPlugin(MotionPathPlugin); tl.to(el,{motionPath:{path:"#route", align:"#route", autoRotate:true}, duration:2, ease:"power1.inOut"}); pair with a dashoffset draw of the same path. Plugin-free: sample SVGPathElement.getPointAtLength(L·p) and atan2 of a nearby point. Text: SVG <textPath> shapes Arabic correctly in Chromium. **أرقام / params:** 1.5–2 s power2.out / power1.inOut.
+- **📦 تثبيت / install:** `npm i gsap`
+- **⚖️ ترخيص / license:** GSAP standard no-charge license (not MIT).
+- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/techniques.md` · `kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md`
+- **أساليب / styles:** `style:pm-thismacapital-dfba20`
+
+#### SHAPE-40 · اختيار المنحنى وسرعة ثابتة · Spline choice + arc-length constant speed · 📄 موصوف / documented only
+- **ماذا / what:** Catmull-Rom ليمر بالنقاط، Hermite لمماسات معروفة، Bezier للمقابض؛ استهدف استمرارية C1 وجدول طول قوس لسرعة ثابتة. — Catmull-Rom through waypoints, Hermite with known tangents, Bezier for handles; target C1 and use an arc-length table for constant speed.
+- **متى أستخدمها / when:** مسارات مؤشر، قضبان كاميرا، طرق أجسام.
+- **كيف / how:** Sample the curve, build cumulative length, map distance→t by binary search; keep authoring points separate from baked samples; never one high-degree polynomial through many points. **أرقام / params:** C0 position, C1 tangent, C2 curvature.
+- **الدليل / proof:** `kosif-atlas/skills/2199-lvtd-skills/8088-game-smooth-curves-and-motion`
+
+#### SHAPE-41 · محلل لغة مسارات SVG كاملة · Full SVG path parser (Studio) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحلل M L H V C S Q T A Z مطلقة ونسبية مع الانعكاسات وأعلام الأقواس الملتصقة إلى مضلعات. — Parses M L H V C S Q T A Z (absolute/relative, smooth reflections, glued arc flags) into polygons, arcs by SVG centre parameterisation.
+- **متى أستخدمها / when:** استيراد شعار SVG أو أيقونة إلى رسام Studio.
+- **كيف / how:** render.path("M … Z", n=14) → one polygon per subpath; arcs sample max(4, |dθ|/2π·64) points. test_path_arcs_and_smooth_curves_end_where_they_should passed here. **أرقام / params:** 14 samples per Bezier segment.
+- **الدليل / proof:** `kosif-studio/render.py:87` · `kosif-studio/render.py:192` · `kosif-studio/tests/test_studio.py:55`
+
+#### SHAPE-42 · أشكال مركبة بثقوب · Even-odd compound shapes & holes · ✅ مُثبت هنا / proven here
+- **ماذا / what:** حلقات وحروف بفراغات وشعارات مقصوصة: مسارات فرعية مجسورة بمرساة واحدة فيلغي ملء even-odd الجسور، أو مضلعات Hole تمحو. — Rings, letters with counters, logo cut-outs: subpaths bridged to one anchor so even-odd fill cancels the bridges, or Hole polygons that erase.
+- **متى أستخدمها / when:** كل شعار فيه فراغ داخلي، وأي حلقة.
+- **كيف / how:** render.compound(polys); render.Hole([...]) drawn after the shape it cuts; to_python._bridge for Pillow programs. In 2.5D extrusion, a reversed inner subpath shows the hole walls automatically. Tests test_holes_cut_out + test_even_odd_compound passed here.
+- **الدليل / proof:** `kosif-studio/render.py:25` · `kosif-studio/render.py:229` · `kosif-studio/to_python.py:80` · `kosif-studio/tests/test_studio.py:42`
+- **أساليب / styles:** `style:fake3d`
+
+#### SHAPE-43 · عدة الأشكال الأساسية ولغة المشهد · Basic shape kit & Step scene language · ✅ مُثبت هنا / proven here
+- **ماذا / what:** الصورة برنامج من خطوات: rect, ellipse(rot), poly, path, compound/Hole, tube, dots, stroke, catmull, translate, union مع تدرجات وضوء، تُرسم بأي حجم. — A picture as an ordered program of Steps over vector primitives, gradients and light, re-rendered at any size on a 1200×800 sheet.
+- **متى أستخدمها / when:** كل رسم بـ render.py (Studio / pixel-studio-painter).
+- **كيف / how:** def build(): return [Step(name, [ops…], order, origin=…)]; ellipse 48 segments; supersampling ss=3; reveal orders sweep/grow/rise/down/left/right/sparkle (tested as permutations). Renderer + Svg tests 10/10 here. **أرقام / params:** sheet 1200×800; ss 3; ellipse 48 segs; dots 10/20 segs.
+- **الدليل / proof:** `kosif-studio/render.py:259` · `kosif-studio/render.py:278` · `kosif-studio/tests/test_studio.py:106` · `100-superskills/skills/pixel-studio-painter/references/drawing-guide.md`
+
+#### SHAPE-44 · منحنيات كاتمول-روم · Catmull-Rom smooth curves · 🟢 جاهز / ready
+- **ماذا / what:** نقاط قليلة تصير منحنى ناعمًا يمر بها، مفتوحًا أو مغلقًا — أساس الأنابيب وملامح الحوت والخطوط العضوية. — A few control points become a smooth curve through them, open or closed — base for tubes and organic outlines.
+- **متى أستخدمها / when:** أي حد عضوي في الرسام.
+- **كيف / how:** render.catmull(points, n=10, closed=False). **أرقام / params:** n samples per segment (default 10).
+- **الدليل / proof:** `kosif-studio/render.py:57`
+
+#### SHAPE-45 · أنبوب بنصف قطر متغير · Variable-radius tube (limbs, tails, flames, hair) · 🟢 جاهز / ready
+- **ماذا / what:** ضربة عضوية على عمود فقري ناعم بنصف قطر لكل نقطة، كاتحاد أرباع وأقراص فلا تنثقب المنعطفات الحادة. — Organic stroke along a smooth spine with per-point radius, built as quads + discs so tight bends never punch holes.
+- **متى أستخدمها / when:** أطراف، ذيول، قرون، لهب، شعر — وفي 3D أفواه وكابلات.
+- **كيف / how:** render.tube(spine, radii, n=8) (discs every n//2 samples where r > .6); 3D: K3S.tube(points, r, color, {segments}) Catmull-Rom TubeGeometry 32 segments × 8 radial, roughness .6. Outlines: render.stroke(polys, width) with round caps. **أرقام / params:** 2D n 8; 3D 32×8 segments.
+- **الدليل / proof:** `kosif-studio/render.py:286` · `kosif-studio/render.py:241` · `kosif-studio/scenes/dragon_girl.py:229` · `100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:329`
+
+#### SHAPE-46 · سلاسل جبال بالإزاحة · Midpoint-displacement mountain ridges · 🟢 جاهز / ready
+- **ماذا / what:** صور ظلية لجبال متعددة الطبقات بالإزاحة العشوائية للنقطة الوسطى مع قمم منحوتة، مملوءة حتى أسفل الصفحة. — Layered mountain silhouettes by recursive midpoint displacement with optional carved peaks.
+- **متى أستخدمها / when:** مناظر طبيعية، خلفيات رحلة، بارالاكس.
+- **كيف / how:** scenes/dragon_girl.ridge(seed, base, amp, rough=.55, peaks=[(x, height, width)]); 7 rounds, amplitude × rough per round; stack 3–4 layers lighter with distance. **أرقام / params:** 7 rounds; rough .55.
+- **الدليل / proof:** `kosif-studio/scenes/dragon_girl.py:20`
+
+#### SHAPE-47 · صندوق أيزومتري بثلاث درجات · Three-tone isometric box · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** ثلاثة مضلعات من لون واحد (أعلى أفتح، يسار متوسط، يمين أغمق) مع حافة علوية بيضاء شفافة وظل أرضي ناعم. — Three polygons of one hue (top lightest, left mid, right darkest) plus a thin translucent white top edge and soft ground shadow.
+- **متى أستخدمها / when:** إنفوغراف أيزومتري، مدن مصغرة، منصات.
+- **كيف / how:** Lightness steps ~+12 / 0 / −12%; 30° projection; shadow ellipse blur 20 px at 20%. **أرقام / params:** +12/0/−12% lightness.
+- **الدليل / proof:** `kosif-tool/styles/isometric`
+- **أساليب / styles:** `style:isometric`
+
+#### SHAPE-48 · بناء نقطة ثم خط ثم مستوى · Point → line → plane build · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** يبدأ من نقطة تقاطع بإحداثياتها، تمتد إلى مسطرة بعلامات، ثم تنبثق إلى مستوى مائل يحمل النص. — Start from a crosshair point with a coordinate label, stretch to a ruler line with ticks, then extrude/skew into a plane carrying text.
+- **متى أستخدمها / when:** افتتاح تقني، شرح أبعاد، «من الصفر».
+- **كيف / how:** Each stage ~1.2 s easeInOutExpo; skew −25° for the plane. **أرقام / params:** 1.2 s per stage; skew −25°.
+- **الدليل / proof:** `kosif-tool/styles/pm-ayushunleashed-ece3e3`
+- **أساليب / styles:** `style:pm-ayushunleashed-ece3e3`
+
+#### SHAPE-49 · خطوط متدفقة ومسارات مخططة · Flowing dashes, striped tubes, dotted trails · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** قناة ماء بشرطات بيضاء تنزلق، أنبوب مخطط من ثلاث ضربات متناقصة، أثر نقطي لقوس رمي، خط نبض قلب، وحبل يتدلى بوزن الكلمة. — A water channel with sliding white dashes, a striped tube of three decreasing strokes, a dotted throw arc, an ECG spike line, a rope sagging under a word.
+- **متى أستخدمها / when:** جداول، أنابيب، مقذوفات، صحة، كلمات معلقة.
+- **كيف / how:** strokeDashoffset flow: dash 20/60 px at ~40 px/s (MOTION.flowDash(tl, path, at, dur, {pattern:"28 22", cycles:6})); stripes = same path stroked 3× red/white/blue; throw = Bezier with dots every 8 px fading; rope = quadratic with control y += sag 30–60 px on a spring. **أرقام / params:** dash 20/60 px @ 40 px/s; sag 30–60 px.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:247` · `kosif-tool/styles/doodle` · `kosif-tool/styles/pm-ajith-io-b5626e` · `kosif-tool/styles/pm-gdgtify-287ddf`
+- **أساليب / styles:** `style:doodle` · `style:pm-ajith-io-b5626e` · `style:pm-pluginplay-3d4006` · `style:pm-loicrambo-ad6830` · `style:pm-gdgtify-287ddf`
+
+#### SHAPE-50 · خيوط موجية وأشرطة متلوية · Sine strands & ribbon loops · 🟢 جاهز / ready
+- **ماذا / what:** ثلاث موجات جيبية ملونة تعبر النصف السفلي وتكبر سعتها مع تقدم المشهد، أو أشرطة متدرجة سميكة بنقاط تحكم تتحرك ببطء. — Three coloured sine waves crossing the lower half, growing in amplitude as the scene progresses; or thick gradient ribbon loops with slowly moving control points.
+- **متى أستخدمها / when:** خلفيات «إنفوغراف مرسوم»، موسيقى، تقنية.
+- **كيف / how:** y = h(.55 + .07·line) + sin(x/w·3π + 2·phase + 1.9·line)·(10 + 12p), step 4 px, colours #d3f66a #6ad8d1 #e995ff alpha .42; ribbons: 2–3 cubic paths, stroke ~6% of frame, gradient strokes, round caps, opacity .35 under text; 7-band rainbow ribbon y = sin(xk + t). **أرقام / params:** 3 waves, amplitude 10→22 px; ribbons 6% stroke.
+- **الدليل / proof:** `fastify-motion-bro/web/motion.js:16` · `kosif-tool/styles/pm-gonzalomacagno-2de1a9` · `kosif-tool/styles/pm-hoyoyoda-3a5c08`
+- **أساليب / styles:** `style:pm-gonzalomacagno-2de1a9` · `style:pm-hoyoyoda-3a5c08` · `style:pm-reflex-cloud-72ffe5`
+
+#### SHAPE-51 · خطان قطريان فقط · Exactly two drifting diagonal lines · 🟢 جاهز / ready
+- **ماذا / what:** توقيع: خطان منحنيان شفافان خلف كل شيء ينجرفان باستمرار ولا يتوقفان — أبدًا ثلاثة. — Signature motif: two translucent curved diagonals behind everything, drifting continuously — never three.
+- **متى أستخدمها / when:** أسلوب viral-editorial.
+- **كيف / how:** For k in 0..1: ox = sin(.20·phase + 2.3k)·.035w, oy = cos(.16·phase + k)·.02h; quadratic from (−.2w + .63w·k, .93h) via (.30w + .41w·k, .43h) to (.65w + .5w·k, −.10h); stroke 50% alpha, 1.6·scale. The storyboard test asserts exact_background_lines = 2 (fastify tests 24/24 passed here). **أرقام / params:** 2 lines; drift ±3.5% w, ±2% h.
+- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:47-49` · `fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:18` · `fastify-motion-bro/tests/viral-editorial.test.mjs:8`
+
+## الشبكات والبلاطات والأنماط التوليدية — Grids, tiles & generative patterns
+
+_الشبكة تتحرك كموجة من المركز: التأخير = المسافة × k. هذه الصيغة وحدها تصنع نصف أنماط الموشن الهندسي._
+
+#### SHAPE-52 · شبكة بلاطات باوهاوس · Bauhaus tile grid (glyph swap on a distance wave) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كل خلية ترسم واحدًا من {ربع دائرة، مثلث، شريط، دائرة} بلوحة 4–5 ألوان، وتبدّل شكلها ولونها بدوران متتابع حسب المسافة. — Each cell draws one of {quarter circle, triangle, bar, circle} in a 4–5 colour palette and swaps glyph/colour with rotation staggered by distance.
+- **متى أستخدمها / when:** افتتاحيات هوية، موسيقى، فواصل مرحة — من أكثر الأساليب تكرارًا في المراجع.
+- **كيف / how:** step = floor(max(0, t·4 − d·.3)) with d = x+y (diagonal) or distance from centre; rotate step·90°; palette red #d6341f, yellow #e9c634, blue #2135bc, black on cream #f3ead8. Rendered here (6×6 lab). On beat: advance one step per beat. **أرقام / params:** 8×5 to 16×9 cells; stagger 15–40 ms; swap every 200–250 ms or 1 beat; back.inOut(1.7).
+- **الدليل / proof:** `kosif-tool/styles/pm-leonkohli-6dc01b` · `kosif-tool/styles/pm-prasenx-8d9323` · `kosif-tool/styles/pm-samuel-spitz-974923` · `kosif-tool/styles/pm-zaqailo-212ad3`
+- **أساليب / styles:** `style:pm-leonkohli-6dc01b` · `style:pm-prasenx-8d9323` · `style:pm-samuel-spitz-974923` · `style:pm-web3wesley-7bb108` · `style:pm-zaqailo-212ad3` · `style:pm-tequilafunks-97f6c9`
+
+#### SHAPE-53 · بلاطات تروشيه بموجة تلوين · Truchet tiles with a recolour wave · ✅ مُثبت هنا / proven here
+- **ماذا / what:** بلاطات بأرباع دوائر بدوران عشوائي، وموجة شعاعية تديرها 90° وتلونها بالأحمر مع اضمحلال. — Quarter-arc Truchet tiles at random rotations; a radial wave front rotates them 90° and tints them red with falloff.
+- **متى أستخدمها / when:** خلفيات توليدية، انتقالات، شعارات منمطة.
+- **كيف / how:** Per tile two quarter arcs at opposite corners, stroke 14–18 px round caps; p = clamp(t·speed − d·k), rotation += ease(p)·90°, colour accent while 0<p<1. Rendered here (lab). **أرقام / params:** tile 60–80 px, stroke 14–18 px, delay 20–40 ms per tile, wave 600 px/s.
+- **الدليل / proof:** `kosif-tool/styles/pm-levabashidze-2d713a` · `kosif-tool/styles/pm-roundtablespace-d3a1be` · `kosif-tool/styles/pm-stephanlivera-df17a2`
+- **أساليب / styles:** `style:pm-levabashidze-2d713a` · `style:pm-roundtablespace-d3a1be` · `style:pm-stephanlivera-df17a2`
+
+#### SHAPE-54 · موجة في شبكة أشكال · Distance-delayed grid wave (rotate / scale / morph) · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** شبكة مربعات أو نقاط أو معينات: كل خلية تدور 45–90° أو تتحول مربعًا→دائرة أو تكبر حسب sin(المسافة − t). — Grid of squares/dots/diamonds: each cell rotates 45–90°, morphs square→circle (border-radius) or scales by sin(distance − t).
+- **متى أستخدمها / when:** خلفيات تقنية، انتقال إلى العنوان، موجة صوتية بصرية.
+- **كيف / how:** delay = (x+y)·25 ms or distance·30–40 ms; border-radius 0→50%; 4×4 grid: 40 ms per cell, 400 ms each; ripple variant swaps shape/colour with a 200 ms scale pop; spring ripple stiffness 220 damping 12 at 900 px/s. **أرقام / params:** cell 30 px gap 40 px; 25–40 ms per cell; 400–600 ms each.
+- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:47` · `kosif-tool/styles/pm-jasonzhou1993-8595e0` · `kosif-tool/styles/pm-teslachartz-c58b32` · `kosif-tool/styles/pm-ndhabarde11-f155b4`
+- **أساليب / styles:** `style:pm-jasonzhou1993-8595e0` · `style:pm-teslachartz-c58b32` · `style:pm-ndhabarde11-f155b4` · `style:pm-3xtihor-0f6911` · `style:pm-m1n9-k7-ff9ab9` · `style:pm-crazyalphaaa-bc7e75` · `style:pm-sudo-kiran-49176d` · `style:pm-codestackr-c071bf` · `style:pm-mrtanviir-132457`
+
+#### SHAPE-55 · بلاطات تنقلب وشريط لا ينتهي · Tile flips & endless strip loops (MG-116/117) · 📄 موصوف / documented only
+- **ماذا / what:** شبكة بلاطات تنقلب صفًا صفًا إلى لون ثانٍ وتعود؛ وصف صور ينزلق وطرفه يلاقي بدايته. — A tile grid flips row by row to a second colour and back; a row of images scrolls with its end meeting its start.
+- **متى أستخدمها / when:** خلفيات حلقية للمعارض والريلز.
+- **كيف / how:** MG-116: 0–4 s flip, 4–8 s return, scaleX or 2.5D rotate with row delay, no harsh flashing. MG-117: move exactly one repeat-unit width (gaps included) in 10 s using two identical copies, linear — a miscounted gap causes a jump. **أرقام / params:** 8 s / 10 s.
+- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md`
+
+#### SHAPE-56 · زهرة النقاط الذهبية · Phyllotaxis dot flower (137.5°) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** n نقطة بزاوية i·137.5° ونصف قطر c·√i تكوّن زهرة عباد شمس تدور ببطء. — n dots at angle i·137.5°, radius c·√i — a sunflower that rotates slowly.
+- **متى أستخدمها / when:** طبيعة، نمو، خلفيات هادئة، «الكثير من الأفراد».
+- **كيف / how:** Rendered here (400 dots, hue ramp, rotation .4 rad/s). Same law places N items around a centre without geometry data: r = R√((i+.6)/n), a = i·2.39996 rad (earth sales-geo engine, R = min(58, 20+3n)). **أرقام / params:** n ≈ 400; 137.5° (2.39996 rad); r = c√i.
+- **الدليل / proof:** `kosif-earth-ci-fork/app/src/engine/fusion/sales/sales-geo-engine.ts:83` · `kosif-tool/styles/pm-ajith-io-b5626e` · `kosif-tool/styles/pm-mrtanviir-132457`
+- **أساليب / styles:** `style:pm-ajith-io-b5626e` · `style:pm-mrtanviir-132457` · `style:pm-umangratani-57f86a`
+
+#### SHAPE-57 · منحنيات ليساجو · Lissajous curves & tangles · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** x = A sin(at+δ)، y = B sin(bt) بنسب 3:2 و5:4، عشرون نسخة بانجراف بطيء لـ δ ومزج جمعي. — x = A sin(at+δ), y = B sin(bt) at 3:2, 5:4; 20 copies with drifting δ, additive low alpha, glow.
+- **متى أستخدمها / when:** رياضيات، موسيقى، أوسيلوسكوب.
+- **كيف / how:** δ drift .2 rad/s; neon stroke with glow (GLOW); 3D variant (sin 3t, sin 2t, sin 5t). **أرقام / params:** δ .2 rad/s; 20 copies.
+- **الدليل / proof:** `kosif-tool/styles/pm-rneayan-ea6129` · `kosif-tool/styles/pm-math-files-39c9d0`
+- **أساليب / styles:** `style:pm-rneayan-ea6129` · `style:pm-math-files-39c9d0`
+
+#### SHAPE-58 · خطوط توليدية بأسلوب Joy Division · Ridge-line generative waves · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** 40–60 خطًا أفقيًا تزاح بالضوضاء قرب المركز مع أشرطة ملونة تنزلق. — 40–60 horizontal polylines displaced by noise near the centre, with coloured bars sliding across.
+- **متى أستخدمها / when:** موسيقى، بيانات، أغلفة.
+- **كيف / how:** Amplitude ramp 0→60 px toward the centre (Gaussian window); fill each line with background to occlude the ones behind; gradient red→blue by row. **أرقام / params:** 40–60 lines; amp 0→60 px.
+- **الدليل / proof:** `kosif-tool/styles/pm-motiondsgnr-9dcfa6`
+- **أساليب / styles:** `style:pm-motiondsgnr-9dcfa6`
+
+#### SHAPE-59 · كسيريات وزخارف رياضية · Fractals, kolam, golden spiral, kaleidoscope · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** سيربنسكي يُبنى عمقًا عمقًا، كولام يلف حول شبكة نقاط بنقطة متوهجة تقوده، حلزون ذهبي فوق مربعات فيبوناتشي، جوليا بالشيدر، وتماثل كاليدوسكوبي. — Sierpinski depth by depth, a kolam loop weaving around a dot grid led by a glowing dot, a golden spiral over Fibonacci tiles, a Julia shader, kaleidoscope symmetry.
+- **متى أستخدمها / when:** شرح رياضي، تراث هندسي، خلفيات منومة.
+- **كيف / how:** Sierpinski 4–6 levels × 200 ms; kolam 7×5 dots one closed path drawn by dashoffset; Fibonacci tiles #c8b8f0→#e6dcf8 then quarter-arc chain 1.5–2 s; Julia z²+c purple→orange; kaleidoscope = polar fold n = 6–12 of a rotating texture (wedge 10°/s). **أرقام / params:** Sierpinski 4–6 × 200 ms; kaleidoscope 6–12 folds.
+- **الدليل / proof:** `kosif-tool/styles/pm-buildfastwithai-53234e` · `kosif-tool/styles/pm-ddryo-loos-300829` · `kosif-tool/styles/pm-math-files-39c9d0` · `kosif-tool/styles/pm-monokern-ade5b6`
+- **أساليب / styles:** `style:pm-buildfastwithai-53234e` · `style:pm-ddryo-loos-300829` · `style:pm-math-files-39c9d0` · `style:pm-monokern-ade5b6`
+
+#### SHAPE-60 · جدار أيقونات مائل · Tilted icon wall · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** شبكة بلاطات مستديرة بأيقونات خطية، مائلة −12° وتنجرف قطريًا، وبلاطة واحدة أسطع. — Grid of rounded tiles with line icons rotated ~−12° drifting diagonally, one tile highlighted.
+- **متى أستخدمها / when:** خلفيات «تكاملات»، تطبيقات، منصات.
+- **كيف / how:** Tile 90 px, radius 18 px, opacity .25–.4, drift 20 px/s; highlight = full opacity + accent border. **أرقام / params:** 90 px, r 18, drift 20 px/s.
+- **الدليل / proof:** `kosif-tool/styles/pm-gabrielbuzziv-4ff0c6`
+- **أساليب / styles:** `style:pm-gabrielbuzziv-4ff0c6`
+
+#### SHAPE-61 · كتل أنماط شيدرية وشبكة متحركة · HyperFrames pattern shaders & dynamic grid · 📦 بأمر تثبيت / one install
+- **ماذا / what:** حلقات متموجة، حلزون أوب آرت، خطوط قطرية، خلايا فورونوي (WebGPU)، وشبكة متحركة بمتغيرات CSS. — Ripples, op-art spiral, sliding stripes, Voronoi cells (WebGPU shaders) and a CSS-variable dynamic grid.
+- **متى أستخدمها / when:** لوح خلفي جاهز داخل مشروع HyperFrames.
+- **كيف / how:** npx hyperframes add ripples | spiral | stripes | voronoi (data-shader, data-requires-webgpu — WebGPU not verified here) | dynamic-grid (density fine|standard|coarse, weight hairline|standard|bold). **أرقام / params:** 2 s plates, 1920×1080.
+- **📦 تثبيت / install:** `npx hyperframes add dynamic-grid`
+- **⚖️ ترخيص / license:** Apache-2.0 (+ MIT shaders library).
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/blocks/voronoi/voronoi.html` · `kosif-one/vendor/hyperframes/registry/components/dynamic-grid/dynamic-grid.html`
+
+## الحلقات والمدارات والانفجارات — Rings, orbits & bursts
+
+_الحلقة تلتف بلا قفزة حين تكون نسب الدوران أعدادًا صحيحة؛ والانفجار يُقرأ حين يخرج سريعًا (expo.out) ويخبو ببطء._
+
+#### SHAPE-62 · حلقات دوران بنسب صحيحة · Integer-ratio rotation loops (MG-112/115) · 📄 موصوف / documented only
+- **ماذا / what:** نقاط تدور حول مركز بعيدًا عن النص، أو قوسان بسرعتين مترابطتين حول مركز واحد — نسب دورات صحيحة تضمن حلقة بلا قفزة. — Dots orbit a centre away from the text, or two arcs rotate at related speeds — integer turn ratios guarantee a seamless loop.
+- **متى أستخدمها / when:** كل خلفية أو أيقونة يجب أن تلتف (loop).
+- **كيف / how:** MG-112: exactly one turn in 6 s, linear, evenly spaced angles. MG-115: arc A 1 turn, arc B 2 turns per 6 s around a shared centre; never export the first frame twice at the seam (render t ∈ [0, T)). **أرقام / params:** 6 s; ratio 1:2.
+- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md`
+
+#### SHAPE-63 · حلقات متحدة المركز بفجوات · Rotating gapped concentric rings · ✅ مُثبت هنا / proven here
+- **ماذا / what:** N قوسًا متحد المركز لكل منها فجوة، تدور بسرعات متناوبة الاتجاه. — N concentric arcs each with a gap, rotating at alternating-sign speeds.
+- **متى أستخدمها / when:** تحميل، تقنية، نبض صوت، خلفية عنوان.
+- **كيف / how:** arc from gapStart+gap to gapStart+2π; gapStart_i += ω_i·dt with alternating sign; equal spacing; round caps. Rendered here (12 rings). Collapse variant: 6 rings 90–360°/s scale to a centre dot in 500 ms easeIn. **أرقام / params:** N 12, stroke 6–8 px, spacing ~13–14 px, ω .3–1.2 rad/s.
+- **الدليل / proof:** `kosif-tool/styles/pm-kantamk-61f410` · `kosif-tool/styles/pm-leonkohli-6dc01b`
+- **أساليب / styles:** `style:pm-kantamk-61f410` · `style:pm-leonkohli-6dc01b`
+
+#### SHAPE-64 · عنقود أقواس مدارية ونواة نابضة · Orbiting arc cluster + pulsing donut core · 🟢 جاهز / ready
+- **ماذا / what:** ستة أقواس 270° تدور حول مركز بمسافات متغيرة بلونين، ونواة دائرية ليمونية تتنفس في الوسط. — Six 270° arcs orbit a centre at varying distance in teal/lime with pulsing opacity; a breathing lime donut core in the middle.
+- **متى أستخدمها / when:** خلفيات fastify motion، شاشات «يفكر».
+- **كيف / how:** Arc k: angle = .5·phase + kπ/3, dist = w(.15 + .055 sin), radius w(.04 + .016 sin), sweep 1.5π, #89d6ce / #d5f375, alpha .24 + .25 sin²; core r = w(.12 + .025 sin(1.25 phase)) #c9f96d with inner #0a1724 at .58r. **أرقام / params:** 6 arcs, 270°; core 12% ± 2.5% w.
+- **الدليل / proof:** `fastify-motion-bro/web/motion.js:13-14` · `fastify-motion-bro/web/motion.js:15`
+
+#### SHAPE-65 · حلقات مدارية إهليلجية · Orbital ellipse rings & accents · 🟢 جاهز / ready
+- **ماذا / what:** ثلاث حلقات إهليلجية مائلة تدور ببطء حول مركز التوهج، أو حلقة رفيعة تدور حول البطل، أو نجمة رباعية دوارة. — Three tilted concentric ellipses rotating slowly around the glow centre, a thin orbit ring around the hero, or a spinning four-spoke starburst.
+- **متى أستخدمها / when:** جو «دراسة/علم»، إطار حول منتج أو أيقونة.
+- **كيف / how:** ctx.rotate(.1·t); radii r(.66 + .18i) × r(.2 + .11i), tilt .3 + .65i rad, line .002·min(w,h); hero ring ellipse (.5w,.405h) .283w × .157h, rotation sin(.1 phase)·.12; starburst translate(.82w,.273h), rotate(.21 phase), spokes 10→24 px; satellites on a dashed ellipse tilted 20°. **أرقام / params:** 3 rings at .1 rad/s.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:68` · `fastify-motion-bro/web/editorial.js:67-70` · `kosif-tool/styles/pm-samuel-spitz-974923`
+- **أساليب / styles:** `style:pm-samuel-spitz-974923`
+
+#### SHAPE-66 · انفجار خطوط شعاعي · Radial line burst · ✅ مُثبت هنا / proven here
+- **ماذا / what:** 12–60 خطًا تنطلق من المركز بأطوال وألوان متفاوتة بـ expo.out مع تتابع 20 ms، ثم تخبو. — 12–60 lines shoot from the centre with varied length/colour, expo.out, 20 ms stagger, then fade.
+- **متى أستخدمها / when:** توكيد كلمة، ضربة إيقاع، اكتشاف، افتتاح.
+- **كيف / how:** r0 = 20 + 30b, r1 = 40 + 120b with b = 1 − (1−p)^5; alternate accent/primary; fade over the second half. Rendered here (14 lines). Basma TEMPLATES.shapes: 14 lines from m(.1 + .25k) to m(.16 + .42k)·jitter + ring .42m·k in .6–1 s. **أرقام / params:** 400–600 ms expo.out; 12–60 rays; stagger 20 ms.
+- **الدليل / proof:** `app/public/js/00_editor.js:518` · `kosif-tool/styles/pm-teslachartz-c58b32` · `kosif-tool/styles/pm-shinskinakamoto-20190b` · `kosif-tool/styles/pm-stephanlivera-df17a2`
+- **أساليب / styles:** `style:pm-teslachartz-c58b32` · `style:pm-shinskinakamoto-20190b` · `style:pm-stephanlivera-df17a2` · `style:pm-sudo-kiran-49176d` · `style:pm-mandelduck-95fd08`
+
+#### SHAPE-67 · حلقة صدمة أرضية ونبض قلب · Shockwave ring & heartbeat ripple · ✅ مُثبت هنا / proven here
+- **ماذا / what:** حلقة إهليلجية مسطحة (y×0.25) تتسع 0→300px في 500ms وتخبو؛ أو حلقة ثانية تكبر 1→1.9 وتخبو على نبضتين. — Flattened ellipse ring (y×.25) expanding 0→300 px in 500 ms with fade; or a second ring scaling 1→1.9 and fading on beats.
+- **متى أستخدمها / when:** هبوط جسم، ضربة، نبض، «عش كل لحظة».
+- **كيف / how:** Rendered here (shockwave under the burst). Heartbeat: circle r150 #f5c97a 5 px drawn 1.1 s, ring2 scale 1→1.9, opacity .9→0 in .9 s E.out at the beat times. **أرقام / params:** 0→300 px / 500 ms; heartbeat 1→1.9 in .9 s.
+- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/index.html` · `kosif-tool/styles/pm-chrisjdimarco-f068db`
+- **أساليب / styles:** `style:pm-chrisjdimarco-f068db`
+
+#### SHAPE-68 · أشعة شمسية دوارة · Rotating sunburst ground · ✅ مُثبت هنا / proven here
+- **ماذا / what:** 24–36 إسفينًا متناوبًا بلونين متقاربين يدور ببطء خلف العنوان مع تعتيم شعاعي. — 24–36 alternating wedge rays in two close tones rotating slowly behind the title, with radial vignette.
+- **متى أستخدمها / when:** بطاقات «بطل»، ريترو، احتفال، أغلفة.
+- **كيف / how:** conic-gradient repeating wedges or canvas arcs; tone delta ~8% lightness; rotation 3–10°/s. Rendered here (28 wedges, .12 rad/s). **أرقام / params:** 24–36 rays; 3–10°/s; Δ lightness ~8%.
+- **الدليل / proof:** `kosif-tool/styles/pm-deebeeeff-50fcd0` · `kosif-tool/styles/pm-majin-appsheet-2d3c1a` · `kosif-tool/styles/pm-allforbigfire-86ff3c`
+- **أساليب / styles:** `style:pm-deebeeeff-50fcd0` · `style:pm-majin-appsheet-2d3c1a` · `style:pm-allforbigfire-86ff3c`
+
+#### SHAPE-69 · حلقة نقاط تتسع بخطوط شعاعية · Expanding dot ring with radial lines · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** نقاط الشعار تتضاعف حول دائرة أكبر (8→24) وخطوط بنفسجية رفيعة تشع خلفها نحو أطراف الكادر. — Logo dots duplicate around a larger circle (8 → 24) while thin violet lines radiate behind toward the frame edges.
+- **متى أستخدمها / when:** كشف هوية، شبكة، «مجتمع».
+- **كيف / how:** Ring radius 40% width; lines 1.5 px #8a6cff; satellites stagger 30 ms. **أرقام / params:** 8 → 24 dots; ring 40% w.
+- **الدليل / proof:** `kosif-tool/styles/pm-micheleharmonic-77628e`
+- **أساليب / styles:** `style:pm-micheleharmonic-77628e`
+
+#### SHAPE-70 · نفق مربعات حلزوني · Spiral square tunnel & nested squares · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** مربعات متداخلة كل منها ×0.9 ومدار 8° بلونين متناوبين، أو 8 مربعات تدور بتأخير 50ms، أو نفق من نسخ الشعار. — Nested squares each ×.9 and rotated 8° in alternating colours, 8 squares rotating with 50 ms delay, or a tunnel of logo outlines.
+- **متى أستخدمها / when:** سرعة، دوار، انتقال للداخل.
+- **كيف / how:** Loop: scale every copy by 1/.9 per period and wrap; tunnel of outlines with a ticking counter for speed ramps. **أرقام / params:** ×.9, 8° per level; delay 50 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-zheke-38deff` · `kosif-tool/styles/pm-safarkhanshuvo-ffd52d` · `kosif-tool/styles/pm-jasonzhou1993-8595e0/BRIEF.md`
+- **أساليب / styles:** `style:pm-zheke-38deff` · `style:pm-safarkhanshuvo-ffd52d`
+
+#### SHAPE-71 · مربع يصير دائرة مع أقمار · Square→circle with satellites & star pop · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** border-radius 0→50% مع دوران وثلاث نقاط تدور على حلقة رفيعة، أو نجمة تقفز بـ outBack ونجوم صغيرة حولها. — border-radius 0→50% with rotation while three dots orbit on a thin ring; or a star popping with outBack and small orbiting stars.
+- **متى أستخدمها / when:** أيقونات حية، إنجاز، «جديد».
+- **كيف / how:** Morph 500 ms; orbit 1 rev/s; background polka grid pulses. **أرقام / params:** 500 ms; 1 rev/s.
+- **الدليل / proof:** `kosif-tool/styles/pm-shinskinakamoto-20190b` · `kosif-tool/styles/pm-stephanlivera-df17a2`
+- **أساليب / styles:** `style:pm-shinskinakamoto-20190b` · `style:pm-stephanlivera-df17a2`
+
+#### SHAPE-72 · بوابة دوامية ومصباح فرينل · Swirl portal & Fresnel lamp room · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** حلقة طارة متوهجة حول قرص ضوضاء ملتوٍ قطبيًا؛ أو شبكة معينات فوق أسطوانة متوهجة بعدسة حلقات تشتعل في 400ms. — Glowing torus ring around a polar-twisted noise disc; or a diamond-pane lattice over a glowing cylinder with a concentric-ellipse lens igniting in ~400 ms.
+- **متى أستخدمها / when:** خيال، بوابات، منارات.
+- **كيف / how:** Twist: θ += k/(r+ε) before sampling noise; lattice 40 px cells, glow blur 30–60 px, bloom spike on ignition. **أرقام / params:** ignite 400 ms; lattice 40 px.
+- **الدليل / proof:** `kosif-tool/styles/pm-ryzoft-4f85bd` · `kosif-tool/styles/pm-kamstudiolabs-0b0824`
+- **أساليب / styles:** `style:pm-ryzoft-4f85bd` · `style:pm-kamstudiolabs-0b0824`
+
+## الزخرفة والأيقونات والعناصر المصاحبة — Ornament, icons & decor
+
+_الزخرفة الإسلامية تُبنى من مربعين ودائرة؛ والأيقونة الجيدة تُقرأ في 16px — كل عنصر مصاحب يخدم البطل ولا ينافسه._
+
+#### SHAPE-73 · الزخرفة الثمانية من الكود · Islamic eight-point rosette builder · 🟢 جاهز / ready
+- **ماذا / what:** نجمة ثمانية من مربعين مدارين 45° + نجمة 16 رأسًا + دائرة + نجمة داخلية، يُرسم كل جزء بالتتابع وتدور الوردة كلها ببطء. — An eight-point star from two squares at 0/45°, a 16-vertex star, a circle and an inner star, each drawn in sequence while the rosette slowly turns.
+- **متى أستخدمها / when:** دعاء، مناسبات إسلامية، فواصل، هوية تراثية.
+- **كيف / how:** sq(78,0), sq(78,π/4), star8(120,92), circle r48, star8(30,14); M.drawPath each at .4 + .18i s for 1.3 s, opacity .85; rotate 0→45° over the film; stroke #f6d27a width 3→5 on the key word. **أرقام / params:** draw 1.3 s, stagger .18 s; stroke #f6d27a 3→5.
+- **الدليل / proof:** `kosif-one/projects/thursday-dua-animation/source/index.html`
+
+#### SHAPE-74 · وردة الفواصل الموسيقية · Interlude rosette (verse template) · 🟢 جاهز / ready
+- **ماذا / what:** في الوقفات الطويلة (≥ 4.5 ث) تُرسم وردة ثمانية تتنفس على الإيقاع ثم تنسحب. — During long pauses (≥ 4.5 s) an eight-point rosette is drawn, breathes on the beat, then withdraws.
+- **متى أستخدمها / when:** أفلام الشعر والأغاني والأدعية من الصوت.
+- **كيف / how:** verse.py writes interludes into verse.json (start = end + .8 s, end = next − .5 s, ≥ 1.5 s); verse.html ROSETTES: two squares at 0/45° + circle .42R #F7F2E8 .7, R 150k, stroke 2.2k accent, rotate 9°/s, beat scale +7%, draw 1.1 s stagger .12. **أرقام / params:** pause ≥ 4.5 s; 9°/s; beat +7%.
+- **الدليل / proof:** `kosif-studio/motion/templates/verse.html` · `kosif-studio/motion/verse.py:258` · `100-superskills/skills/kosif-montage-motion/templates/verse.html:298`
+
+#### SHAPE-75 · فوانيس ومسجد ونوافذ · Swaying lanterns & mosque silhouette · 🟢 جاهز / ready
+- **ماذا / what:** فانوسان من أشكال SVG يتأرجحان كالبندول بتوهج يتنفس، وصورة ظلية لقبة ومئذنتين بنوافذ مقوسة ترتعش. — Two SVG lanterns swinging like pendulums with breathing glow; a dome-and-two-minarets silhouette with softly flickering arched windows.
+- **متى أستخدمها / when:** رمضان، ليلة الجمعة، أعياد.
+- **كيف / how:** Lantern: chain line, radial glow r120, cap, hexagon body #ffcf72 .92 stroke #c48a2c, ribs #b07a22; rotation ±3.5° yoyo 2.2/2.5 s (svgOrigin 0 0); glow .7→1 yoyo .96 s. Mosque paths #1d0f2c, ground #140920; 8 windows #ffc768 .55→1 yoyo .9–1.7 s at random offsets (seeded). **أرقام / params:** ±3.5°, 2.2/2.5 s; windows .55→1.
+- **الدليل / proof:** `kosif-one/projects/thursday-dua-animation/source/index.html`
+
+#### SHAPE-76 · غيمة من دوائر تكبر وتعتم · Circle-cluster cloud that grows and darkens · 🟢 جاهز / ready
+- **ماذا / what:** غيوم من خمس دوائر وقاعدة مستديرة تكبر فوق البحر وتنجرف وتعتم قبل المطر ثم تصفو. — Clouds of five circles and a rounded base grow, drift and darken before rain, then lighten.
+- **متى أستخدمها / when:** شرح دورة الماء، طقس، قصص أطفال.
+- **كيف / how:** circles (0,0,62) (−75,18,46) (78,18,50) (−32,−34,52) (38,−40,58) + rect 248×58 rx29; scale .2→1 (3.8–5.0 s), drift 4.9–6.2 s; #FFFFFF→#A6B9CC, base #DCE8F2→#8FA3B8 for dark 6.0–6.5 s, back after 8.3 s. **أرقام / params:** 5 circles + base; scale .2→1.
+- **الدليل / proof:** `kosif-one/projects/water-cycle-animation/index.html`
+
+#### SHAPE-77 · مكتبة 16 أيقونة متجهة · 16-icon vector hero library · 🟢 جاهز / ready
+- **ماذا / what:** أيقونات Canvas مرسومة بالكود تصلح أبطالًا: عين، دماغ، محفظة، نقود، شاشة، ساعة رملية، مصباح، صاروخ، ساعة، مؤشر، رسم بياني، درج، دومينو، كتاب، أشخاص، شطرنج + نجمة. — Hand-coded Canvas icons usable as hero objects (eye, brain, wallet, money, screen, hourglass, bulb, rocket, clock, cursor, chart, stairs, domino, book, people, chess + star).
+- **متى أستخدمها / when:** ريلز تحريرية بلا أصول خارجية.
+- **كيف / how:** icon(ctx, name, r, accent, ink) with round joins, stroke .08r; choose via scene.hero. **أرقام / params:** 16 named + default.
+- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:12-34`
+
+#### SHAPE-78 · أيقونات SVG حية · Living SVG icons · 📄 موصوف / documented only
+- **ماذا / what:** حرّك أجزاء الأيقونة الداخلية: عقارب ساعة، ريش مروحة، نقاط نابضة، خطوط تدفق — بدوران حول مركز دقيق. — Animate inner SVG parts (clock hands, fan blades, pulsing dots, dash-flow lines) with rotate(deg cx cy) for exact centres.
+- **متى أستخدمها / when:** أي أيقونة ثابتة في مشهد — اجعلها تعمل.
+- **كيف / how:** setAttribute("transform", `rotate(${d} ${cx} ${cy})`); ease none for linear rotation; one paused timeline, fromTo explicit states.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/svg-icon-enrichment.md`
+
+#### SHAPE-79 · قواعد الأيقونة: شبكة 24 والإغلاق · Icon rules: 24 px grid & closure · 📄 موصوف / documented only
+- **ماذا / what:** شبكة 24px، خط 2px، نهايات دائرية، viewBox مربع، بلا نص، < 4KB؛ والإيحاء بالشكل بفجوات ونهايات متحاذية — اختبرها في 8–16px. — 24 px grid, 2 px stroke, round caps, square viewBox, no text, < 4 KB; imply forms with gaps and aligned terminals (closure) — test at 8–16 px.
+- **متى أستخدمها / when:** رسم أي أيقونة جديدة.
+- **كيف / how:** Test at 16/24/48/192 px; draw-on works especially well with closure because the eye completes the form early. **أرقام / params:** 24 px / 2 px; test 8–16 px.
+- **الدليل / proof:** `100-superskills/skills/svg-illustration-icons/SKILL.md:21` · `kosif-atlas/skills/1503-universal-design-principles/3812-closure-implied-shapes`
+
+#### SHAPE-80 · طبقات أشكال وملصقات منبثقة · Shape layers & sticker/emoji pop-ups · 📦 بأمر تثبيت / one install
+- **ماذا / what:** دائرة أو شريط مستدير كخط تحت النص في محرر الاستوديو؛ وإيموجي ونص وملصقات تنبثق بنابض وتمايل في Basma. — Studio overlay shapes (circle or rounded underline bar); Basma emoji/text/sticker pop-ups springing in with a slight wobble.
+- **متى أستخدمها / when:** توكيد سريع في مونتاج الريلز.
+- **كيف / how:** Studio: overlay.type="shape", "circle" (arc size/2) or "rectangle" (roundRect h .24·size, r max(2,.06·size)), default 16% #52dbc6. Basma drawOverlays(): spring(z .4, w 17) scale, rotate sin(3l)·.03, .2 s fade-out; positions top 30%, centre 47%, bottom 64%, corner (78%,16%); emoji 17% m; text Lalezar 6.5% on an accent pill. **أرقام / params:** spring z .4 ω 17; size 16%.
+- **📦 تثبيت / install:** `cd app && npm install`
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:76` · `app/public/js/00_editor.js:412`
+
+#### SHAPE-81 · ملصقات زخرفية وكبسولات وسوم · Decor stickers, hazard tape & floating tag pills · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** نجوم مضلعة وشرائط تحذير مخططة في الزوايا تتمايل، وكبسولات وسوم بيضاء تطفو حول العنوان بدوران عشوائي. — Starburst polygons and striped hazard tapes wobbling in corners; white tag pills floating around the headline at random tilts.
+- **متى أستخدمها / when:** ريلز مرحة، عروض SaaS، شارات.
+- **كيف / how:** Stickers rotate ±6° over 2 s yoyo, colours rotate per scene; 6 pills radius 999, 1 px #c4d8e5 border, ±6° tilt, pop-in stagger 120 ms, idle bob 4 px period 3–4 s, avoid the centre. **أرقام / params:** ±6°/2 s; pills stagger 120 ms, bob 4 px.
+- **الدليل / proof:** `kosif-tool/styles/pm-0xnfrith-5be616` · `kosif-tool/styles/pm-alex-prompter-1ea044`
+- **أساليب / styles:** `style:pm-0xnfrith-5be616` · `style:pm-alex-prompter-1ea044`
+
+#### SHAPE-82 · مروحة بطاقات وصور · Card / photo / swatch fan-out · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** نسخ البطاقة خلفها تنفتح كمروحة حول محور مشترك بإزاحة ودوران متدرج، مع ألسنة مرقمة أو عداد. — Duplicates behind a card fan out around a shared pivot with offset and stepped rotation, with numbered tabs or a count label.
+- **متى أستخدمها / when:** «مجموعة كاملة»، ألبوم، عينات ألوان.
+- **كيف / how:** 6 cards offset x +18 px and +2..+6° (or ±12–25° around a pivot for photos), stagger 70–80 ms, 400–500 ms easeOutBack(1.2). **أرقام / params:** 5–8 items, stagger 70–80 ms, 400–500 ms back.out.
+- **الدليل / proof:** `kosif-tool/styles/pm-bogdandragomir-35e024` · `kosif-tool/styles/pm-lester-tyy-f897f7` · `kosif-tool/styles/pm-ercankeskinx-ec2568`
+- **أساليب / styles:** `style:pm-bogdandragomir-35e024` · `style:pm-lester-tyy-f897f7` · `style:pm-ercankeskinx-ec2568` · `style:pm-thayto-dev-44b911`
+
+#### SHAPE-83 · شريط تظليل مائل خلف النص · Slanted highlighter bar wipe · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** مستطيل مائل يكبر أفقيًا من 0 إلى 1 خلف سطر نص، أكبر قليلًا من صندوقه. — A skewed rectangle scales X from 0 to 1 behind a text line, slightly larger than the text box.
+- **متى أستخدمها / when:** توكيد سطر، عناوين تحريرية.
+- **كيف / how:** skewX −8°, 180–250 ms easeOutCubic; for Arabic grow from the right (transform-origin right). **أرقام / params:** skewX −8°, 180–250 ms.
+- **الدليل / proof:** `kosif-tool/styles/pm-deifosv-04e4d3`
+- **أساليب / styles:** `style:pm-deifosv-04e4d3`
+
+#### SHAPE-84 · تغيير لون الكلمة داخل الكرة · Clip-path colour flip over a moving lens · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** صف كلمات مرسوم مرتين: نسخة داكنة، ونسخة بيضاء مقصوصة بدائرة الكرة، والصف ينزلق فتتلون كل كلمة حين تعبرها. — Render a word row twice — dark copy, and a white copy clipped with clip-path: circle() at the orb — and slide the row so each word flips inside the orb.
+- **متى أستخدمها / when:** عرض قيم أو مزايا متتابعة، منتج.
+- **كيف / how:** orb r ~70 px; row speed ~1 word / .8 s; for Arabic slide left→right so words enter from the right. **أرقام / params:** orb r 70 px; 0.8 s per word.
+- **الدليل / proof:** `kosif-tool/styles/product`
+- **أساليب / styles:** `style:product`
+
+#### SHAPE-85 · تجميع من شظايا أو قطع · Shard / piece assembly along a path · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** مثلثات تبدأ خارج الشاشة مدارة وتنزلق إلى أماكنها، أو قطع هيكل تسافر على قوس منقط وتلتحم بتجاوز بسيط. — Triangles start off-screen rotated and ease into slots; or skeleton pieces travel along a dotted arc and snap together with slight overshoot.
+- **متى أستخدمها / when:** كشف شكل أو شعار، تعليم تشريح.
+- **كيف / how:** Per piece: start = random off-screen pose (seeded), path = quadratic arc, 600 ms ease-out, stagger 40 ms, total ~1.2 s. **أرقام / params:** stagger 40 ms; 600 ms each.
+- **الدليل / proof:** `kosif-tool/styles/pm-tdinh-me-815acb` · `kosif-tool/styles/pm-gigabit-million-16b3a0`
+- **أساليب / styles:** `style:pm-tdinh-me-815acb` · `style:pm-gigabit-million-16b3a0`
+
+#### SHAPE-86 · شاشة مقسومة واستعارة الكسوف · Split-screen eclipse metaphor · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** نصف كريمي ونصف أسود: دائرة مفرغة في جهة ونقطة حمراء في الأخرى تنزلقان وتتداخلان ككسوف. — Half cream / half black; an outline circle and a filled red dot slide toward each other and overlap into an eclipse.
+- **متى أستخدمها / when:** مقارنة، «لقاء»، استعارة بصرية.
+- **كيف / how:** ~1.5 s ease-in-out; difference blend at the overlap. **أرقام / params:** ~1.5 s.
+- **الدليل / proof:** `kosif-tool/styles/pm-samaote-5e2fc2`
+- **أساليب / styles:** `style:pm-samaote-5e2fc2`
+
+#### SHAPE-87 · بحر خطوط مع شخصية رمزية · Line-art sea with mascot · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** 4–6 مسارات جيبية أفقية بانجراف طور وسرعات بارالاكس، وشخصية مسطحة صغيرة تتمايل وتعبر. — 4–6 horizontal SVG sine paths with slow phase drift at parallax speeds; a small flat mascot bobs (±4°) and crosses.
+- **متى أستخدمها / when:** إعلانات لطيفة، رحلات، أطفال.
+- **كيف / how:** Wave amplitude 4–10 px, period 6 s; bob 1.5 s; a passing train/vehicle strip with 30 px motion blur for fast occlusion. **أرقام / params:** amp 4–10 px, 6 s; bob ±4°/1.5 s.
+- **الدليل / proof:** `kosif-tool/styles/pm-aschapmann-131210` · `kosif-tool/styles/pm-itsolelehmann-e47532`
+- **أساليب / styles:** `style:pm-aschapmann-131210` · `style:pm-itsolelehmann-e47532`
+
+#### SHAPE-88 · فاصل بشعرة · Hairline separator (HyperFrames) · 📦 بأمر تثبيت / one install
+- **ماذا / what:** فاصل 1px أفقي أو عمودي بكشف تقدمي آمن للبحث. — 1-pixel structural separator with a seek-safe progress reveal.
+- **متى أستخدمها / when:** تخطيطات تحريرية، جداول، بطاقات.
+- **كيف / how:** npx hyperframes add separator; orientation horizontal|vertical; thickness hairline|medium|bold; tone neutral|accent|warning.
+- **📦 تثبيت / install:** `npx hyperframes add separator`
+- **⚖️ ترخيص / license:** Apache-2.0.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/separator/separator.html`
+
+## نظام الأشكال وقواعده — Shape system & rules
+
+_ثلاثة أشكال أولية، لونان وخلفية، سلم أقطار وسلم خطوط، و30% فراغ — النظام هو ما يجعل البساطة فاخرة._
+
+#### SHAPE-89 · وحدة 24 وشبكة أعمدة · Base-unit grid system · 📄 موصوف / documented only
+- **ماذا / what:** كل المقاسات مضاعفات وحدة أساس على شبكة أعمدة، والإطار الأخير يستقر على الشبكة تمامًا. — All sizes multiples of a base unit on a column grid; final frames land exactly on grid.
+- **متى أستخدمها / when:** كل مشهد أشكال.
+- **كيف / how:** unit 24 px; 8 or 12 columns; snap end states, not in-betweens. **أرقام / params:** 24 px; 8/12 columns.
+- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:15` · `kosif-tool/playbooks/shapes.md:29`
+
+#### SHAPE-90 · سلالم الأقطار والخطوط والفراغ · Primitive, radius & stroke scales · 📄 موصوف / documented only
+- **ماذا / what:** ثلاثة أشكال أولية كحد أقصى، لونان + خلفية، أقطار 0/8/24/50%، خطوط 2/4/8، وفراغ سلبي ≥ 30%. — Max three primitives, two colours + background, radii 0/8/24/50%, strokes 2/4/8, ≥ 30% negative space.
+- **متى أستخدمها / when:** تصميم أي مشهد هندسي قبل التحريك.
+- **كيف / how:** Nested radius: inner = outer − gap when gap < 32 px and result > 2 (16 px outer, 8 px gap → 8 px). **أرقام / params:** radii 0/8/24/50%; strokes 2/4/8; ≥ 30% empty.
+- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:16-18` · `kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:225`
+
+#### SHAPE-91 · انضغاط وتمدد بحفظ المساحة · Area-preserving squash & stretch · 🟢 جاهز / ready
+- **ماذا / what:** عند الاصطدام ينضغط الشكل (0.7/1.3) 80ms حول نقطة التلامس ثم يعود بنابض. — On impact squash (scaleY .7 / scaleX 1.3) for 80 ms around the contact point, then spring back.
+- **متى أستخدمها / when:** كل قفزة أو ارتطام أو ضغطة زر.
+- **كيف / how:** Canvas: ctx.scale(1 + .3s, 1 − .3s) about the contact; s = KOSIF.window01(t, hit, hit + .08, .02, .06) in the html-canvas starter; spring {damping 10, stiffness 220}. **أرقام / params:** .7/1.3 for 80 ms; spring d10 k220.
+- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:25` · `kosif-tool/playbooks/shapes.md:66` · `kosif-tool/starters/html-canvas/index.html`
+
+#### SHAPE-92 · التصاق مغناطيسي وكل شيء من المركز · Magnet snap spring & centre-origin rule · 💡 فكرة / idea
+- **ماذا / what:** الأشكال تلتصق في أماكنها بتجاوز واحد؛ وفي بعض الأساليب كل التحويلات حول مركز الإطار وكل دخول منه. — Primitives snap into place with one overshoot; in some styles every transform pivots on the frame centre and every entrance starts there.
+- **متى أستخدمها / when:** أساليب هندسية صارمة ومرتبة.
+- **كيف / how:** Untested brief ideas: Remotion spring stiffness 220 damping 14, or UI cubic-bezier(.16,1,.3,1) 400–600 ms; transform-origin 960px 540px. **أرقام / params:** k 220 d 14; origin (960,540).
+- **الدليل / proof:** `kosif-tool/styles/pm-quickdesignio-dd93d0/BRIEF.md` · `kosif-tool/styles/pm-marouanegazouzi-6071d5/BRIEF.md`
+
+#### SHAPE-93 · أسلوب المرح الهندسي (S07) · Playful geometric style (S07) · 📄 موصوف / documented only
+- **ماذا / what:** لوحة محدودة جريئة، دوائر وبطاقات وأيقونات، قفزات صغيرة وتبديل أشكال وإيقاع متنوع — حي من أصول بسيطة. — Limited bold palette, circles, cards and icons; small bounces, shape swaps, varied rhythm.
+- **متى أستخدمها / when:** تعليم، تطبيقات، محتوى خفيف — لا للمواضيع الجادة.
+- **كيف / how:** SVG primitives + overshoot easings + staggered entrances, rendered with render_html.cjs; over-bouncing distracts — one overshoot per entrance. **أرقام / params:** ideas MG-008 MG-029 MG-061 MG-081 MG-083 MG-108 MG-115.
+- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md` · `kosif-tool/playbooks/shapes.md`
+
+## توليفات قوية / power combos
+
+- **هوية باوهاوس على الإيقاع / Bauhaus beat ident:** SHAPE-52 + SHAPE-53 + BEAT (خطوة لكل نبضة) + SHAPE-01 (الشبكة تنهار إلى الشعار) + COLOR (أحمر/أصفر/أزرق/أسود على كريمي).
+- **ليلة دعاء / night dua:** SHAPE-73 + SHAPE-75 + SHAPE-74 + TEX (قمر إجرائي) + GLOW (هالة ذهبية) + ARAB (كلمات من العمق) + VOICE — الوردة تُرسم في الوقفات فقط.
+- **ريل منتج من نقطة / product reel from a dot:** SHAPE-17 + SHAPE-18 + SHAPE-23 + UI (لقطات الواجهة) + EASE (E.inOut على شبكة 120 BPM) — النقطة نفسها خيط القصة حتى بطاقة CTA.
+- **إنفوغراف حي / living infographic:** SHAPE-09 + SHAPE-10 + DATA (القيم الحقيقية) + SHAPE-56 + DRAW (رسم المحاور) — من «1 من 100» إلى دائري نسب بلا قطع.
+- **شعار سائل / liquid logo:** SHAPE-27 + SHAPE-31 + SHAPE-01 + GLOW + PART (قطرات تنفصل) + TRANS (الكتلة تغمر الإطار) — الكتل تندمج ثم تستقر حروفًا (الكلمة العربية قناع واحد).
+- **شخصية قطيفة من الحقول / plush character:** SHAPE-32 + SHAPE-33 + SHAPE-34 + TEX (خامة القطيفة والفرو) + CHAR (هيكل الأرنب) + 3D (إضاءة استوديو).
+- **شرح رياضي / math explainer:** SHAPE-04 + SHAPE-03 + SHAPE-57 + SHAPE-59 + EXPL (معادلة حية) + ARAB (تسميات عربية) — الشكل والمعادلة يتحركان معًا.
+- **ضربة توكيد / emphasis hit:** SHAPE-66 + SHAPE-67 + BEAT (onset) + TYPE/ARAB (كلمة بطلة) + CAM (هزة 12px تخمد) — كما في انفجار proofs/particles-to-arabic.
+
+## أخطاء ممنوعة / never do
+
+1. **لا تحوّل مسارين بعدد نقاط أو اتجاه لف مختلف** — الشكل ينقلب أو يلتف على نفسه في المنتصف؛ أعد العينات وحاذِ نقطة البداية (SHAPE-02).
+2. **لا تحوّل حروفًا عربية حرفًا حرفًا بالمسارات** — الحروف المتصلة تنفصل؛ حوّل الكلمة كمسار واحد أو استعمل قناعًا.
+3. **لا تلاشي متقاطع حين يوجد عنصر مشترك** — يكسر الهوية؛ استعمل FLIP أو تحول الحاوية (SHAPE-15، SHAPE-18).
+4. **لا حلقات بنسب دوران غير صحيحة في فيديو يلتف** — يظهر قفز عند نقطة الالتفاف؛ نسب صحيحة ولا تصدّر الإطار الأول مرتين (SHAPE-62).
+5. **لا عشوائية بلا بذرة في الشبكات والأنماط** — كل رندر يختلف؛ hash(x, y, seed) لكل خلية.
+6. **لا أكثر من ثلاثة أشكال أولية ولونين** — يضيع النظام ويصير الكادر ضوضاء (SHAPE-90).
+7. **لا ترتد كل الأشكال (overshoot) في كل دخول** — الارتداد الزائد يشتت؛ تجاوز واحد للبطل والباقي ease-out.
+8. **لا فلتر لزوجة على النص** — العتبة تأكل الحواف والنقاط العربية؛ النص خارج مجموعة الفلتر (SHAPE-27).
+9. **لا تطلب MorphSVG أو flubber في رندر هنا قبل تثبيتها** — غير مثبتة؛ SHAPE-01 من motion-kit يعمل بلا مكتبة.
+10. **لا تقلّد بلاطات باوهاوس وتروشيه من فيديو مرجعي حرفيًا** — ابنِ من القانون (موجة مسافة + لوحة) بلوحة وإيقاع المستخدم.
+
+## أقوى 5 حركات توقيع / 5 signature moves
+
+1. **SHAPE-01 — تحويل المسار الآمن للبحث:** دائرة→نجمة→مربع في 0.66 ث بـ 120 نقطة، بلا مكتبة، مُثبت هنا.
+2. **SHAPE-52 — شبكة باوهاوس بموجة المسافة:** خطوة لكل نبضة، أربعة أشكال وأربعة ألوان — أكثر نمط هندسي تكرارًا في المراجع.
+3. **SHAPE-27 — كتل تندمج:** stdDeviation 10 ومصفوفة 18/−7 — سائل في سطرين.
+4. **SHAPE-73 — الوردة الثمانية:** مربعان ودائرة تُرسم بالتتابع وتدور 45° — توقيع الأفلام الإسلامية.
+5. **SHAPE-66 + SHAPE-67 — الانفجار وحلقة الصدمة:** 14 خطًا بـ expo.out وحلقة مسطحة 0→300px في 500ms على الضربة.

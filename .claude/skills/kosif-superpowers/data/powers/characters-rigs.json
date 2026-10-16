@@ -1,2425 +1,1323 @@
 [
  {
+  "id": "CHAR-01",
   "family": "characters-rigs",
-  "name_ar": "مولد دورة المشي الإجرائي",
-  "name_en": "Procedural walk cycle generator",
-  "status": "proven",
-  "what": "One draw(direction,pose) function parameterised by limb angles, step phase, body bob, arm swing and squash keeps every frame on-model.",
-  "how": "Python/Pillow or canvas JS; proportion presets chibi/standard/tall; mirror side view only if symmetric, shade after mirroring with light from top-left.",
-  "params": "walk 4-8 frames; bob 1px; RPG Maker MZ walk 3 patterns 0-1-2-1",
-  "install": "",
-  "license": "MIT",
-  "proof": [
-   "kosif-atlas/skills/2460-pixel-art/9525-animate"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-01"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "بايبل شخصية الرجل العصوي",
-  "name_en": "Stickman Character Bible",
-  "status": "proven",
-  "what": "Fixed spec for an original 2D stick character pasted into every image prompt.",
-  "how": "BIBLE constant: charcoal-black 5 px brush strokes at 1080 px width, circular head = 1/4 of height, slim straight torso, single-line limbs each half a torso long, two dot eyes + one mouth stroke, tiny teal scarf at left of neck, palette black/teal + one muted warm accent.",
-  "params": "stroke 5 px @1080 px; head 25% height; limb segment 0.5 torso",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "fastify-motion-bro/scripts/profiles/stickman.mjs:8",
-   "fastify-motion-bro/skills/stickman/SKILL.md:12"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-02"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "قفل صورة الشخصية المرجعية",
-  "name_en": "Stickman reference-image lock",
-  "status": "proven",
-  "what": "If the user has their own stick figure, prompts reference the attached image unchanged and the generator must accept image input; text-only tools are refused.",
-  "how": "image='yes' -> REF block; referenceTool 'text-only' throws.",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "fastify-motion-bro/scripts/profiles/stickman.mjs:7,27",
-   "fastify-motion-bro/tests/production-profiles.test.mjs:17-23"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-03"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "قفل شخصيتين أصليتين",
-  "name_en": "Dual original character locks",
-  "status": "proven",
-  "what": "Two original family-friendly 3D designs: A a young woman (warm brown skin, curly dark shoulder hair with pale-blue ribbon, emerald jacket, cream boots); B a waist-high doll-like figure (porcelain face, lilac bob, coral/turquoise patchwork, amber buttons, teal boots).",
-  "how": "GIRL and DOLL constants pasted into all 10 image prompts.",
-  "params": "B height = waist of A",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "fastify-motion-bro/scripts/profiles/character-romance.mjs:3-4",
-   "fastify-motion-bro/tests/production-profiles.test.mjs:24-28"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-04"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "قفل الرياضي بلا وجه",
-  "name_en": "Faceless sculpt-render athlete lock",
-  "status": "proven",
-  "what": "Identical style text for every fitness clip: faceless muscular sculpt-render body, black cap and shorts, dark gym, single overhead teal-blue rim light, black falloff, shallow DOF, premium fitness-app look; needs an attached reference image.",
-  "how": "STYLE constant embedded in all 5 prompts.",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "fastify-motion-bro/scripts/profiles/fitness.mjs:15",
-   "fastify-motion-bro/skills/fitness/SKILL.md:13"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-05"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب محشو مُجهز",
-  "name_en": "Rigged plush bunny (SDF)",
-  "status": "proven",
-  "what": "A sculpted cute rabbit with pivots for head, ears, tail; eyes placed by ray hits; w-mouth; mint scarf.",
-  "how": "const b=K3S.bunny({fur, belly, pink, nose, scarf, cells, material}); animate b.parts.head/earL/earR/tail rotations.",
-  "params": "fur #f2e4d8; belly #fbf3ea; pink #ff9fb8; nose #ff7c9c; blush #ff8fab; scarf #7fe7b4; ~0.33 m tall; tested 183,752 triangles, ~4.6 s mesh time",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:453",
-   "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:40"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-06"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "هيكل قط متجهي مع دورة مشي",
-  "name_en": "Vector cat rig with gait cycle",
-  "status": "proven",
-  "what": "An orange tabby walks, notices, crouches, jumps a puddle on a parabola, lands with a squash, walks on and looks back; four legs are separately articulated with quadratic knees and a swing/stance foot cycle.",
-  "how": "pose(t): walk x = 430+59t (gait 1.12 Hz) until 4.1 s; crouch 14 px; jump u∈[5.2,6.9] → x 671.9→1050, height 147·4u(1−u), body angle −14°→12°; land crouch 18·sin; walk 48 px/s at .98 Hz; limb(): stance 60% of cycle, swing lifts 21·sin(πv); tail 12 sin 2.2t + 3 sin 5t; head attention lift and 3/4 look-back after 9.7 s.",
-  "params": "jump peak 147 px",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:59",
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:67",
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:77"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-07"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "فراشة مرشدة ترفرف",
-  "name_en": "Butterfly guide with wing flap",
-  "status": "proven",
-  "what": "A glowing butterfly leads the hero: wings flap by horizontal scale and it bobs on a sine path with a cyan halo.",
-  "how": "wing = |sin(2π·4.5t)|·.85 + .13 as scaleX; y = 348 − 20 sin 1.8t − 48 smooth((t−4.2)/1.8) + 55 smooth((t−7)/2); fill #86fff0 .87; halo r 28.",
-  "params": "4.5 Hz flap",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:107"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-08"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب قطيفة منحوت بأجزاء مفصلية",
-  "name_en": "SDF plush bunny with rig parts",
-  "status": "proven",
-  "what": "A cute plush bunny generated procedurally with named rig parts (body, head, earL/earR, tail, eyes, mouth, scarf) and a stage disc; ears pivot from the skull.",
-  "how": "S.bunny({cells:136}) → {group, parts, stats:{triangles, head.cell_m}}; S.stageDisc({radius .24, color 0x9dffb4, shadow .5}); S.studioBackdrop({inner #22504a, mid #0d2627, outer #040b0c, cy .4}); test bunny(96 cells) > 50,000 triangles.",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:29",
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:46",
-   "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:40"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-09"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية مرسومة في إحداثيات محلية",
-  "name_en": "Posed character group in local coordinates",
-  "status": "proven",
-  "what": "The duck hero is drawn once around its own origin (body, wing, legs, beak, eye highlight, helmet, scarf) and then placed, rotated and scaled as one group, so it can be re-posed or animated as a unit.",
-  "how": "Collect parts into duck[] then wrap: <g transform='translate(560 392) rotate(-16) scale(1.3)'> with a blurred warm rim glow ellipse behind; loose feathers as small rotated groups.",
-  "params": "translate(560,392) rotate(-16) scale(1.3); rim glow #fb923c rx80 ry54 op .55",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-one/projects/duck-vs-dragon/duck_dragon.py:189-228"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-10"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "سمك كوي إجرائي",
-  "name_en": "Procedural koi fish",
-  "status": "ready",
-  "what": "Swimming koi with procedural body profile and skin patterns that bend as they swim.",
-  "how": "makeKoi({length, seed, kind}).",
-  "params": "kinds kohaku, sanke, showa, ogon; length 0.62 m; 28 rings x 18 segments",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:629",
-   "kosif-studio/motion/kit/three-kit.js:629"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-11"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "سرب طيور",
-  "name_en": "Flock of birds",
-  "status": "ready",
-  "what": "Instanced V-shaped birds that flap in a shader and follow a keyed path, visible between t0 and t1.",
-  "how": "K3.makeFlock({n, path:[[t,x,y,z],...], t0, t1, spread, size, color, seed}); mesh.userData.set(t).",
-  "params": "n 18; spread 120; size 9; colour #1a1d22; flap sin(t*9)",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:203"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-12"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "سمك كوي",
-  "name_en": "Koi fish",
-  "status": "ready",
-  "what": "Procedural koi with lofted body, fins, seeded scale skin in four varieties and a swim bend that leans into turns.",
-  "how": "const k=K3.makeKoi({length, seed, kind, amp, caustics}); k.userData.set(t, path(t,out), speedHz).",
-  "params": "kinds kohaku/sanke/showa/ogon; length .62 m; bend amp .11; swim 1.6 Hz; skin 256 px; clearcoat .6",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:613",
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:629"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-13"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "دوران 360 لورقة الشخصية",
-  "name_en": "Turntable / 360 character sheet",
-  "status": "ready",
-  "what": "Camera steps front, side, back, side with holds, like a character turnaround sheet.",
-  "how": "K3.shot('turntable', {subject, size, t0, t1}).",
-  "params": "4 quarter turns; holds for 70% of each quarter; frame 80% height",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1067"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-14"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "عين لطيفة",
-  "name_en": "Cute eye (SDF kit)",
-  "status": "ready",
-  "what": "Glossy flattened eyeball, warm iris ring and two camera-facing catch-lights.",
-  "how": "K3S.eye({r, tall, color, iris}).",
-  "params": "r .012 m; tall 1.12; iris #5a3a2c at 55% opacity; catchlights .3r and .14r",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:316"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-15"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "عين برمش",
-  "name_en": "Blinking layered eye",
-  "status": "ready",
-  "what": "Sclera, emissive iris, pupil and clearcoat cornea, with a blink control.",
-  "how": "const e=K3.makeEye(r,{iris}); e.userData.blink(k 0..1).",
-  "params": "sclera #f4f6f2; iris #8fe02a (emissive 12%); pupil #05070a; cornea opacity .22",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:56"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-16"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب بمفاصل",
-  "name_en": "Primitive rabbit character with joints",
-  "status": "ready",
-  "what": "Plush rabbit from spheres/capsules with named pivots (head, earL/R, armL/R, footL/R, tail, eyes) and optional shell fur.",
-  "how": "K3.makeRabbit({color, inner, iris, fur, furLength, layers}); root.userData.joints.",
-  "params": "white #f1f0ea; inner #f3b6c0; iris #3a7bd5; fur length .1, 8 layers",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:74"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-17"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أسد بمفاصل",
-  "name_en": "Primitive lion character with joints",
-  "status": "ready",
-  "what": "Plush lion with mane, legs, tail tuft and named joints; long fur on mane.",
-  "how": "K3.makeLion({color, mane, iris, fur, furLength, layers}).",
-  "params": "body #e3b05a; mane #8a4a1c; iris #d9a21b; muzzle #f5e2b8; mane fur 2.6x length, gravity .5",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:101"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-18"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "حياة الشخصية في السكون",
-  "name_en": "Character idle life",
-  "status": "ready",
-  "what": "Breathing scale, head sway, periodic blink, ear and tail motion as a pure function of t.",
-  "how": "K3.idle(root, t, {amount, phase}).",
-  "params": "breath 1.2% at 2.2 rad/s; blink every 3.7 s lasting 0.3 s; ears .12 rad; tail .35 rad at 3.1 rad/s",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:280"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-19"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "نزهة قطة — أنيميشن شخصية SVG",
-  "name_en": "Cat walk loop (نزهة قطة) — SVG character animation",
-  "status": "ready",
-  "what": "An 8-second looping cartoon of an orange cat walking right-to-left across a soft garden, with leg cycle, body bob, tail sway, ear/eye detail and a blink, drawn as SVG strings from t.",
-  "how": "examples/cat.html: window.render(t) rebuilds the cat group; x = 680 − t·145 with a second copy 1160 px behind for a seamless loop; ?capture hides chrome for frame capture; rendered cat.mp4 and cat.gif shipped.",
-  "params": "960×540, 8 s; step frequency 1.5 Hz; bob cos(2p)·2 px; tail ±9° at half step rate; blink window 0.095 s every 4 s (offset 2.35 s); palette sky #e9efdf→#f8f3df, fur #efa849→#dc8736, face #f3b453→#e5953c; cat.mp4 960×540 24 fps 192 frames; cat.gif 640×360 12 fps",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.html",
-   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.mp4",
-   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.gif"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-20"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "دورة مشي إجرائية للساق",
-  "name_en": "Procedural walk-cycle leg",
-  "status": "ready",
-  "what": "A leg drawn as a curved stroke whose foot swings with sin(phase) and lifts only on the forward half (max(0,cos)), with far legs darker; four legs offset by π give a natural gait.",
-  "how": "leg(x, phase, far): foot = x + 22·sin(phase), knee = x + 12·sin(phase), lift = max(0, cos(phase))·15; quadratic path, stroke width 23, round caps; paw stroke 15.",
-  "params": "swing ±22 px, lift 15 px",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.html"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-21"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "آلة حالات الوضعية",
-  "name_en": "Keyframed pose state machine (walk, crouch, jump, land)",
-  "status": "ready",
-  "what": "Character action as time segments: walk 0–4.1 s, anticipation crouch, a parabolic leap, landing squash, walk again, then a look-up hold; limbs re-pose per segment.",
-  "how": "pose(t): walk x=430+59t; crouch 14·smoothstep((t−4.65)/0.55); jump 5.2–6.9 s height 147·4u(1−u) with body angle −14°→+12°; land crouch 18·sin; walk 48 px/s; look = smoothstep((t−9.7)/0.7).",
-  "params": "jump apex 147 px; flight 1.7 s; walk step 1.12 Hz then 0.98 Hz",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:59",
-   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:67"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-22"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "فراشة مرافقة ترفرف",
-  "name_en": "Butterfly companion with wing flap",
-  "status": "ready",
-  "what": "A small glowing butterfly that follows the hero and flaps by squashing its wing pair horizontally.",
-  "how": "butterfly(t,p): position offset from the hero with smoothstep drifts; wing scaleX = |sin(t·2π·4.5)|·0.85 + 0.13; body halo cyanHalo r 28; wing colour #86fff0.",
-  "params": "flap 4.5 Hz",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:107"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-23"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "انضغاط عند الاصطدام",
-  "name_en": "Contact squash",
-  "status": "ready",
-  "what": "On impact an element widens and flattens against the edge it hit, anchored at that edge, then recovers.",
-  "how": "MOTION.squash(tl, el, at, {edge, across, along, dur}).",
-  "params": "scaleX 1.08, scaleY 0.90, dur 0.13 s (8 f), E.outSoft",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:372"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-24"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب قطيفة بهيكل حركة",
-  "name_en": "Rigged plush bunny + cute recipe",
-  "status": "ready",
-  "what": "Reference cute character with named joints (body, head, earL, earR, tail, eyes, mouth, scarf) and a measured recipe for 'cute'.",
-  "how": "K3S.bunny(o); drive pivots with springs; recipe: head >= body, eyes low and wide, chubby cheeks, short limbs, pastel + one accent, neutral tone curve, breathing +-0.6%, blink, ear flop.",
-  "params": "head width 0.16 vs torso 0.14; eyes at 45% head height spaced 0.4x head width; fur #f2e4d8; ear flop 1.5 Hz zeta 0.42 (2.2 Hz/0.28 broke the 80 px/f gate); bloom threshold >= 0.9",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-one/tools/kosif-studio/motion/kit/shape-kit.js:453",
-   "kosif-one/tools/kosif-studio/motion/references/shape-kit.md",
-   "kosif-one/tools/kosif-studio/motion/projects/bunny_twin/src/main.js"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-25"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب وأسد إجرائيان",
-  "name_en": "Procedural rabbit and lion characters",
-  "status": "ready",
-  "what": "Lab-style characters with named joints, glossy eyes, plush/leather/metal materials.",
-  "how": "K3.makeRabbit(o), K3.makeLion(o), makeEye, leatherMaterial(0x15171a), metalMaterial(0xd8dde3).",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-one/tools/kosif-studio/motion/kit/lab-kit.js:74",
-   "kosif-one/tools/kosif-studio/motion/kit/lab-kit.js:101",
-   "kosif-one/tools/kosif-studio/motion/projects/lab_rabbit_lion/README.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-26"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "بانِي جناح الخفاش",
-  "name_en": "Bat-wing builder",
-  "status": "ready",
-  "what": "Builds a dragon/bat wing from shoulder, elbow, wrist and finger tips: arm bones, finger bones, veins, a wrist claw and a membrane whose edge sags in scallops between tips.",
-  "how": "scenes/dragon_girl.wing(shoulder, elbow, wrist, tips, attach, sag=0.28) -> (membrane, bones, veins).",
-  "params": "bones tube radii 8/6/4.5; fingers 3.4->0.7; scallop 12 samples",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/scenes/dragon_girl.py:88"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-27"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أشواك الظهر وصفائح البطن",
-  "name_en": "Creature detail helpers: spikes and belly plates",
-  "status": "ready",
-  "what": "Adds dorsal spines along the top of a body tube and a lighter ribbed belly band, giving reptiles instant anatomy.",
-  "how": "scenes/dragon_girl.spikes(spine, radii, every, size) and belly_plates(spine, radii).",
-  "params": "spike height (4+r*.45)*size; rib every 4th sample",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/scenes/dragon_girl.py:46",
-   "kosif-studio/scenes/dragon_girl.py:68"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-28"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شكل الريشة",
-  "name_en": "Feather leaf shape",
-  "status": "ready",
-  "what": "A narrow bending leaf polygon from base to tip used feather by feather for a duck's spread wing.",
-  "how": "scenes/duck_dragon.leaf(base, tip, width, bend, n=10).",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/scenes/duck_dragon.py:34",
-   "kosif-studio/scenes/duck_dragon.py:51"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-29"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "بناء الشخصية في إطارها المحلي",
-  "name_en": "Character built in its own local frame",
-  "status": "ready",
-  "what": "Designs a body (whale profile, a figure around its feet) in a convenient local coordinate system, then rotates/scales it into the shot — easy re-posing.",
-  "how": "whale_dragon W(x,y)/WS(shape) rotate along HEAD->TAIL; dragon_girl xf() scales the girl 1.4x around her feet.",
-  "params": "whale HEAD (700,290) -> TAIL (1200,760); girl K=1.4 around (380,619)",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/scenes/whale_dragon.py:46",
-   "kosif-studio/scenes/dragon_girl.py:288"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-30"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "هيكل SVG بنقاط دوران",
-  "name_en": "SVG cut-out rig with pivots",
-  "status": "ready",
-  "what": "Separate SVG groups per limb with explicit pivots; nested <g> rotate transforms.",
-  "how": "Remotion Arm: shoulder interpolate frames [0,6,14,24]→[0,8,-55,-48], elbow [2,10,18,26]→[0,5,-30,-24], Easing.inOut(sin); rotate(θ px py).",
-  "params": "parts: head, torso, upper/lower arm, hand, upper/lower leg, foot; elbow 2-frame offset = follow-through",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:17",
-   "kosif-tool/playbooks/characters.md:54-71"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-31"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "جسم جزيئي من الحركة",
-  "name_en": "Particle body from mocap",
-  "status": "install",
-  "what": "Fixed-camera video → background difference → seeded points → particle body.",
-  "how": "three-kit.js (window.K3) in a --3d project; render --engine studio",
-  "params": "motion.py mocap VIDEO --out body.json; makeParticleBody(json)",
-  "install": "see arsenal-libraries.md",
-  "license": "owner (three.js MIT)",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
-   "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
-   "kosif-studio/motion/kit/three-kit.js:938",
-   "kosif-studio/motion/references/x-trend-2026.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-32"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "جسد من الجسيمات",
-  "name_en": "Particle body from real motion (mocap)",
-  "status": "install",
-  "what": "A performer filmed on a fixed camera becomes glowing particles inside the silhouette, with tracer ghosts.",
-  "how": "python motion.py mocap VIDEO --out body.json (needs opencv); K3.makeParticleBody(json, {height, depth, ghosts, ghostStep, color, size}); userData.set(t, pulse).",
-  "params": "1200 points; ghosts 3 every 3 frames (alpha .35/k); height 4; colour #ffb36b; size 26",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:938",
-   "100-superskills/skills/kosif-montage-motion/scripts/qa.py:605",
-   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:938",
-   "kosif-one/tools/kosif-studio/motion/qa.py"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-33"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية ذكاء اصطناعي متحركة حسب الحالة",
-  "name_en": "Stateful AI persona animation",
-  "status": "install",
-  "what": "A narrator/host orb with five conversational states - idle, listening, thinking, speaking, asleep - driven by app or audio state.",
-  "how": "Vercel ai-elements Persona (Rive WebGL2; `npx ai-elements add persona` - needs install); a local stand-in: SVG/CSS state classes switched by words.json speaking segments in KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg).",
-  "params": "5 states",
-  "install": "npx ai-elements add persona` - needs install)",
-  "license": "Apache-2.0",
-  "proof": [
-   "kosif-atlas/skills/2722-vercel/10522-ai-elements/SKILL.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-34"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "ثبات الشخصية والأسلوب بـ IP-Adapter",
-  "name_en": "IP-Adapter character and style consistency",
-  "status": "install",
-  "what": "Condition the model on a reference image to keep a character or transfer a style across many generations.",
-  "how": "IPAdapterAdvanced weight 0.55-0.65 for characters (>0.75 copies pose, <0.4 drifts), FaceID 0.7-0.85; weight_type 'style transfer' or 'composition'; two-pass: make one canonical clean reference, then reuse it for all scenes; combine with ControlNet for pose.",
-  "params": "weight 0.55-0.65; FaceID 0.7-0.85",
-  "install": "see arsenal-libraries.md",
-  "license": "MIT",
-  "proof": [
-   "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-35"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "ستايل الشخصية العصوية",
-  "name_en": "Stickman comic style",
-  "status": "install",
-  "what": "A flexible stick figure, cards that drop and stack, and a comic beat for tips with a twist.",
-  "how": "STY.stickman: 16:9, bright, 2.1 wps, Readex Pro; bg #FBF9F4 ink #1F2328 accent #F2C94C floor #EFEAE0, colours #EB5757/#F2C94C/#5B8DEF/#9B51E0/#27AE60; sfx pop/hit/tick/shimmer; question lines end with ؟.",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "MIT-derived (motion-starter-kit styles/stickman)",
-  "proof": [
-   "app/public/js/10_studio.js:504"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-36"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية لوتي تمشي",
-  "name_en": "Lottie Character Walk",
-  "status": "install",
-  "what": "Jointed flat mascot walks in on planted feet, stops and points at a card; body acting from a Lottie JSON, stage in GSAP.",
-  "how": "Install with `npx hyperframes add lottie-character-walk` (copies the full composition to compositions/lottie-character-walk.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: lottie-web player, GSAP 3.14.2 paused timeline (window.__timelines).",
-  "params": "assets/mascot.json; 7.5 s; vars: title=Meet your guide; body=Walks in on planted feet, then points the way.; Google Fonts: Inter; 1920x1080; duration 7.5 s",
-  "install": "npx hyperframes add lottie-character-walk` (copies the full composition to compositions/lottie-character-walk",
-  "license": "Apache-2.0",
-  "proof": [
-   "kosif-one/vendor/hyperframes/registry/blocks/lottie-character-walk/registry-item.json",
-   "kosif-one/vendor/hyperframes/registry/blocks/lottie-character-walk/lottie-character-walk.html",
-   "kosif-one/vendor/hyperframes/docs/catalog/blocks/lottie-character-walk.mdx"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-37"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "محول لوتي",
-  "name_en": "Lottie / dotLottie adapter",
-  "status": "install",
-  "what": "After Effects exports play seekably via lottie-web or dotLottie registered on window.__hfLottie; multiple animations against composition time.",
-  "how": "adapters/lottie.md patterns; read beat times from file markers (tm frames / fr).",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "Apache-2.0",
-  "proof": [
-   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/lottie.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-38"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تحريك الشخصيات بلوتي",
-  "name_en": "Lottie character acting (walk cycle, gestures)",
-  "status": "install",
-  "what": "Put the character's acting (walk, stop, point, idle) in one Lottie; GSAP owns cards, captions, camera timed to the Lottie's markers; in-place cycles moved with GSAP x matched to stride; license the character.",
-  "how": "1 s walk cycle loop:true; offset actions inside the file (no per-animation start offset); registry block lottie-character-walk.",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "Apache-2.0",
-  "proof": [
-   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/lottie.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-39"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب كيوت بهيكل",
-  "name_en": "Rigged cute bunny()",
-  "status": "install",
-  "what": "Ready rigged bunny (head, ears...).",
-  "how": "shape-kit.js / lab-kit.js in a 3D project; read references/shape-kit.md",
-  "params": "K3S.bunny()",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/SKILL.md:101",
-   "100-superskills/skills/kosif-montage-motion/SKILL.md:113",
-   "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-40"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب وأسد بمفاصل",
-  "name_en": "makeRabbit / makeLion rigs",
-  "status": "install",
-  "what": "Procedural rabbit and lion with named joints userData.joints; idle breath/blink/ear/tail.",
-  "how": "shape-kit.js / lab-kit.js in a 3D project; read references/shape-kit.md",
-  "params": "makeRabbit, makeLion, idle",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/SKILL.md:101",
-   "100-superskills/skills/kosif-montage-motion/SKILL.md:113",
-   "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-41"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "حياة الخمول: تنفس ورمش ونظرات",
-  "name_en": "Idle life: breathing, blinks, glances",
-  "status": "install",
-  "what": "Characters never freeze: a small breathing scale, head sway on several sines, scheduled blinks and a look toward camera at its stop.",
-  "how": "bunny breath .006·sin(2π·0.9t); head (.05 sin1.7t, .12 sin(1.1t+.5), .05 sin1.3t); blinks smooth windows 1.18–1.34 s and 4.62–4.76 s eye scaleY 1−.85·bl; cat blinks at 2.44–2.56, 9.9–10.06, 11.3–11.45 s; lab idle(rabbit, t, {amount 1, phase 0}), head turns 0.25 rad at its stop.",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:118",
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:133",
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:77"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-42"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصيتا أرنب وأسد قطيفة",
-  "name_en": "Plush rabbit and lion characters (lab kit)",
-  "status": "install",
-  "what": "Two plush animals with joints (head, eyes, ears, tail) on a cream studio sweep, with a callout HUD naming parts and a part swap (rabbit tail recoloured and scaled into a lion tuft).",
-  "how": "K3.makeRabbit({color, inner, iris, layers 7, furLength .09}); makeLion({color, mane, iris, layers 8, furLength .07}); studio(scene); labPost(renderer,…,{bloom:0}); swap: tail colour lerp to 0x8a4a1c, scale 1+.45·sw over 16.4–17.2 s.",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:12",
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:44"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-43"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "صياد بسيط من كبسولات",
-  "name_en": "Low-poly fisherman silhouette",
-  "status": "install",
-  "what": "A seated figure seen from behind built from capsules and spheres, with cap and rod whose line drops into the water: enough to read as a person in silhouette.",
-  "how": "torso Capsule(.2,.42) rotated −.18; head sphere .13 + cap half-sphere 0xcfc6b2; legs capsules; rod cylinder .008→.02 oriented by quaternion from base to tip; Line to water.",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:96"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-44"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "عيون لامعة",
-  "name_en": "Glossy eyes + tubes",
-  "status": "install",
-  "what": "Glossy eyes with two catch-lights, mouth/stitch tubes.",
-  "how": "K3S.eye({r}), glossMaterial, tube(points,r,colour)",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/references/shape-kit.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-45"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية الأرنب",
-  "name_en": "Bunny reference character",
-  "status": "install",
-  "what": "Rigged body/head/ears/tail/eyes/mouth/scarf.",
-  "how": "K3S.bunny(o); example projects/bunny_twin 5 s 1080x1920",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/references/shape-kit.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-46"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "حركة ثانوية بالنوابض",
-  "name_en": "Spring rig secondary motion",
-  "status": "install",
-  "what": "Pivot groups driven by spring(t,t0,freq,damping) under speed gate.",
-  "how": "Pivot groups driven by spring(t,t0,freq,damping) under speed gate.",
-  "params": "ear 1.5 Hz ζ0.42 ok; 2.2 Hz ζ0.28 fails 80 px/frame at 1080x1920",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/references/shape-kit.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-47"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "دوال مشاهد جاهزة",
-  "name_en": "Ready scene helpers (dragon set)",
-  "status": "install",
-  "what": "Importable cloud, ridge (mountains), wing (bat wing), flame, tongue, spikes, belly_plates; sample scenes dragon_girl, duck_dragon, whale_dragon, whale_dragon_3d.html.",
-  "how": "from scenes.dragon_girl import ...",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/pixel-studio-painter/scripts/scenes/dragon_girl.py",
-   "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-48"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "دوران ورقة الشخصية",
-  "name_en": "Turntable character sheet",
-  "status": "install",
-  "what": "Front -> side -> back -> side holds, the 360° continuity sheet rendered before animating a character.",
-  "how": "K3.shot('turntable', {subject, size, t0, t1}).",
-  "params": "4 holds, each turns in the last 30% of its quarter",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/kit/three-kit.js:1066",
-   "kosif-studio/motion/references/book-lessons.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-49"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "عين لامعة لطيفة",
-  "name_en": "Glossy cute eye",
-  "status": "install",
-  "what": "Clearcoat dark eyeball with a warm iris ring and two catch-lights facing the camera.",
-  "how": "K3S.eye({r, tall, color, iris}); K3S.glossMaterial(color, {roughness, env}).",
-  "params": "r .012, tall 1.12, depth .78; iris #5a3a2c opacity .55; catch-lights r .3 and .14 upper-outer; gloss roughness .08, clearcoat 1, ior 1.5, env 1.6",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/kit/shape-kit.js:311"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-50"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أنابيب للخطوط",
-  "name_en": "Tube strokes (mouth, stitches)",
-  "status": "install",
-  "what": "Catmull-Rom tube for mouths, stitches, whiskers.",
-  "how": "K3S.tube(points, r, colour, {segments}).",
-  "params": "32 segments, 8 radial; mouth r 1.1 mm",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/kit/shape-kit.js:329"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-51"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب محشو مجهز",
-  "name_en": "Rigged plush bunny",
-  "status": "install",
-  "what": "Reference cute character: body, head on neck pivot, ears on root pivots, tail, glossy eyes placed by raycast, 'w' mouth, mint scarf.",
-  "how": "const b = K3S.bunny({fur, belly, pink, nose, scarf, cells, material}); animate b.parts.head/earL/earR/tail.",
-  "params": "fur #f2e4d8, belly #fbf3ea, pink #ff9fb8, nose #ff7c9c, blush #ff8fab, scarf #7fe7b4, mouth #6b3540; ~0.33 m tall; cells 132; neck pivot [0,.152,.004]",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/kit/shape-kit.js:453",
-   "kosif-studio/motion/references/shape-kit.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-52"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "عين بطبقات ورمش",
-  "name_en": "Layered eye with blink",
-  "status": "install",
-  "what": "Sclera, emissive iris, pupil and clearcoat cornea; blink by squashing y.",
-  "how": "K3.makeEye(r, {iris}); eye.userData.blink(k).",
-  "params": "sclera #f4f6f2, iris #8fe02a default, pupil #05070a, cornea opacity .22; blink scale 1-.92k",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/kit/lab-kit.js:56"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-53"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أرنب إجرائي",
-  "name_en": "Procedural plush rabbit",
-  "status": "install",
-  "what": "Primitive-built rabbit with named joints (head, ears, arms, feet, tail, eyes) and optional shell fur.",
-  "how": "K3.makeRabbit({color, inner, iris, fur, furLength, layers}); root.userData.joints.",
-  "params": "colour #f1f0ea, inner #f3b6c0, iris #3a7bd5, fur length .1, 8 layers",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/kit/lab-kit.js:74"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-54"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أسد إجرائي",
-  "name_en": "Procedural plush lion",
-  "status": "install",
-  "what": "Primitive-built lion with mane, muzzle, four legs, tail tuft and named joints; long fur on mane.",
-  "how": "K3.makeLion({color, mane, iris, fur, furLength, layers}).",
-  "params": "colour #e3b05a, mane #8a4a1c, iris #d9a21b, muzzle #f5e2b8, fur .08 (mane ×2.6, gravity .5)",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/kit/lab-kit.js:101"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-55"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "حياة الخمول",
-  "name_en": "Idle life cycle",
-  "status": "install",
-  "what": "Breath, head drift, periodic blink, ear and tail motion for any lab character.",
-  "how": "K3.idle(root, t, {amount, phase}).",
-  "params": "breath ±1.2% at 2.2 rad/s; blink every 3.7 s lasting .3 s; ears ±.12 rad at 2.6; tail ±.35 at 3.1",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/kit/lab-kit.js:280"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-56"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "مختبر الأرنب والأسد",
-  "name_en": "Plush rabbit and lion lab",
-  "status": "install",
-  "what": "Two plush fur characters on a cream studio sweep; one lens circles them and the HUD names six beats SHAPE → JOINT → LOAD → BREAK → SWAP → RANK.",
-  "how": "motion.py new NAME --lab; lab-kit makeRabbit/makeLion/schematic/orbitWalk/studio/hud/labPost/idle",
-  "params": "960×540 24 fps 20 s; rabbit #F2F0EA inner #F1B7C3 iris #3A7BD5 7 fur layers 0.09; lion #E6B35B mane #8A4A1C iris #D9A21B 8 layers 0.07",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-studio/motion/projects/lab_rabbit_lion/src/main.js:1",
-   "kosif-studio/motion/projects/lab_rabbit_lion/README.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-57"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "لوحات كوميكس",
-  "name_en": "Style: Comics panels (comics-panels)",
-  "status": "install",
-  "what": "Story told in comic-book panels with gutters, speech balloons and camera moving panel to panel.",
-  "how": "Canvas/SVG panel grid; each panel a scene with pose-to-pose rig; camera rig pans between panels; balloons pop with spring; ink outlines. Scaffold: python3 tools/kosif.py scaffold comics-panels <dir>.",
-  "params": "key poses every 8-16 frames; anticipation 4-8 frames",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "style:comics-panels",
-   "kosif-tool/playbooks/characters.md"
-  ],
-  "styles": [
-   "comics-panels"
-  ],
-  "tags": [],
-  "id": "CHAR-58"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أنمي أكشن",
-  "name_en": "Style: Anime action (anime-action)",
-  "status": "install",
-  "what": "Dynamic anime-inspired action: speed lines, impact frames, smears.",
-  "how": "2D rig + smear frames, speed-line overlays, camera shake; anticipation 4-8 frames, overshoot 5-10%. Original designs only. Scaffold: python3 tools/kosif.py scaffold anime-action <dir>.",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "style:anime-action",
-   "kosif-tool/playbooks/characters.md"
-  ],
-  "styles": [
-   "anime-action"
-  ],
-  "tags": [],
-  "id": "CHAR-59"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تحريك هيكلي",
-  "name_en": "Style: Character rig (character-rig)",
-  "status": "install",
-  "what": "Skeletal 2D/SVG character with pivots, walk cycles and lip-flap.",
-  "how": "SVG groups with transform-origin pivots; walk 12 frames/step at 24fps; 5-7 mouth shapes; moving hold 1-2%. Scaffold: python3 tools/kosif.py scaffold character-rig <dir>.",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "style:character-rig",
-   "kosif-tool/playbooks/characters.md"
-  ],
-  "styles": [
-   "character-rig"
-  ],
-  "tags": [],
-  "id": "CHAR-60"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصيات عصوية",
-  "name_en": "Style: Stickman (stickman)",
-  "status": "install",
-  "what": "Flexible stick-figure character comedy.",
-  "how": "SVG line rig with pivots, arcs, squash; on twos optional. Scaffold: python3 tools/kosif.py scaffold stickman <dir>.",
-  "params": "",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "style:stickman",
-   "kosif-tool/playbooks/characters.md"
-  ],
-  "styles": [
-   "stickman"
-  ],
-  "tags": [],
-  "id": "CHAR-61"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصيات",
-  "name_en": "Category: Characters",
-  "status": "install",
-  "what": "Capability family 'characters' (47 catalog entries) with a dedicated bilingual playbook of timings and recipes.",
-  "how": "Read playbooks/characters.md (visual grammar, motion mechanics, scene recipes, QA); build in starters/html-canvas or starters/remotion; filter catalog with python3 tools/kosif.py list --category characters.",
-  "params": "keys every 8-16 frames; anticipation 4-8f; follow-through 2-4f; walk 12f/step; 5-7 mouth shapes",
-  "install": "see arsenal-libraries.md",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md",
-   "kosif-tool/catalog/categories.json",
-   "kosif-tool/catalog/meta.json"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-62"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "صفحات ويبتون بأسلوب تشيبي",
-  "name_en": "Pastel chibi webtoon pages",
-  "status": "key",
-  "what": "Fixed animal character descriptions repeated verbatim in every prompt for identity consistency, white background, editable text overlay SVG for dialogue.",
-  "how": "Image model (external) for art; SVG text overlay for correct (Arabic) lettering.",
-  "params": "",
-  "install": "",
-  "license": "MIT",
-  "proof": [
-   "kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-63"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "جملة الشخصية المكررة حرفيًا لضمان الثبات",
-  "name_en": "Character sentence reused verbatim across a series",
-  "status": "key",
-  "what": "Image models keep no memory between calls, so a recurring character must be defined once in one sentence and pasted unchanged into every scene prompt.",
-  "how": "Write CHARACTER: <body shape, colours, face, clothing> once; copy it byte-for-byte into each prompt; keep background tone and 3-5 colour palette identical; vary only the SCENE line.",
-  "params": "palette 3-5 colours per scene",
-  "install": "",
-  "license": "Apache-2.0 / MIT",
-  "proof": [
-   "kosif-atlas/skills/1094-akbun-draw/2421-akbun-draw-storytellingimage",
-   "kosif-atlas/skills/2976-pwdev-social-media/12595-visual-consistency"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-64"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "ثبات الشخصية بمراجع متعددة في جيميناي",
-  "name_en": "Multi-reference character consistency in Gemini",
-  "status": "key",
-  "what": "Feed several reference images of each character, name them, and keep 2-3 identifiers in every follow-up prompt.",
-  "how": "Provide 4-5 references per character from different angles; label 'Character A: the red-haired knight'; in multi-turn chat say 'the same character' and repeat hair/clothing/face identifiers.",
-  "params": "4-5 refs per character (max 5 per request in generate-image skill)",
-  "install": "",
-  "license": "MIT",
-  "proof": [
-   "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen",
-   "kosif-atlas/skills/2173-tools-plugin/7917-generate-image"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-65"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تعديل الصورة المرجعية بدل توليدها",
-  "name_en": "Edit the supplied avatar instead of regenerating it",
-  "status": "key",
-  "what": "When the user's person/avatar image exists and the setting does not change, edit that image; composing a new scene makes a different person.",
-  "how": "Use 'Edit @Image1: ...' phrasing, keep face/hair/lighting unchanged; audit references (product, avatar, scene) and ask for a missing avatar before generating.",
-  "params": "",
-  "install": "",
-  "license": "MIT",
-  "proof": [
-   "kosif-atlas/skills/259-quickdesign/865-quickdesign"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-66"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "الأفاتار الناطق بالذكاء الاصطناعي",
-  "name_en": "AI talking avatars (HeyGen, Synthesia)",
-  "status": "key",
-  "what": "Script-driven presenter videos with lip-sync without filming; HeyGen offers an MCP server, many avatars and languages and personal digital twins.",
-  "how": "HeyGen MCP or API: send script, avatar, language; custom twin from a 2-5 min recording; Synthesia for full-body corporate presenters. Composite the avatar layer under coded motion graphics.",
-  "params": "230+ avatars; 140+ languages; twin from 2-5 min video",
-  "install": "",
-  "license": "MIT",
-  "proof": [
-   "kosif-atlas/skills/1446-marketing-skills/3531-video"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-67"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أوراق الشخصيات والمواقع كمراسي توليد",
-  "name_en": "Character and set sheets as generation anchors",
-  "status": "key",
-  "what": "One image call per sheet gives references for every later clip: characters in front, three-quarter and profile on a plain ground with one telling prop; sets empty and lit to the style.",
-  "how": "Generate, check against STYLE.md, redo off-style sheets and keyframes before animating (an image costs cents, a clip dollars).",
-  "params": "front / 3/4 / profile",
-  "install": "",
-  "license": "Apache-2.0",
-  "proof": [
-   "kosif-atlas/skills/1511-homie/3903-video",
-   "kosif-atlas/skills/1511-homie/3889-art"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-68"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شريط حركة كامل من إطار مرجعي واحد",
-  "name_en": "Whole-strip sprite animation from one seed frame",
-  "status": "key",
-  "what": "Generate a mascot's whole animation strip in one edit request around an approved frame, because frame-by-frame generation drifts.",
-  "how": "Place the seed on a transparent 1024 canvas with 4 slots of 256; prompt invariants (same character, facing, palette, silhouette, outfit, transparent background, exact frame count, no scenery); normalise to fixed frames (e.g. 64 px) with one shared scale and bottom-centre anchor; optionally lock frame 1 to the seed; review a preview sheet.",
-  "params": "canvas 1024; slot 256; 4 frames; 64 px frames",
-  "install": "",
-  "license": "MIT",
-  "proof": [
-   "kosif-atlas/skills/2696-game-studio/10368-sprite-pipeline"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-69"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية هندسية بتحكي",
-  "name_en": "Geometric mascot direction (characters category)",
-  "status": "key",
-  "what": "Prompt direction for Claude-coded mascots: circle body, dot eyes, squash and stretch, anticipation, blinking, reacting to on-screen text.",
-  "how": "FILM_CATS 'characters' guide + template 'character' (hop in, point at 3 cards, react, wave).",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "app/public/js/00_editor.js:2007",
-   "app/public/js/00_editor.js:1777"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-70"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "مقدم أفاتار",
-  "name_en": "Avatar presenter",
-  "status": "key",
-  "what": "Combine a presenter clip (e.g. HeyGen avatar) with editable scenes.",
-  "how": "Keep clip as project media.",
-  "params": "",
-  "install": "",
-  "license": "Apache-2.0",
-  "proof": [
-   "kosif-one/vendor/hyperframes/docs/guides/avatar-presenter.mdx"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-71"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية قصاصات بمفاصل",
-  "name_en": "Cut-out character rig with facing dial",
-  "status": "seen",
-  "what": "separate head, near/far arm, legs, body; rotate around pivots; one face value -1..1 shifts facial features and swaps near/far arm; walk phase derived from distance travelled so feet do not slide",
-  "how": "separate head, near/far arm, legs, body; rotate around pivots; one face value -1..1 shifts facial features and swaps near/far arm; walk phase derived from distance travelled so feet do not slide",
-  "params": "arm swing +-20 deg, head bob 2-3 px, step length ~40 px",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:doodle"
-  ],
-  "styles": [
-   "doodle"
-  ],
-  "tags": [],
-  "id": "CHAR-72"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تبديل الشخصية بنفخة دخان",
-  "name_en": "Class/character swap gag",
-  "status": "seen",
-  "what": "Same position, swap sprite (wizard -> knight -> rogue) via a pixel smoke puff each new spell",
-  "how": "Same position, swap sprite (wizard -> knight -> rogue) via a pixel smoke puff each new spell",
-  "params": "puff 6-8 frames",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-0xevinho-3777d8"
-  ],
-  "styles": [
-   "pm-0xevinho-3777d8"
-  ],
-  "tags": [],
-  "id": "CHAR-73"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "ظهور من خلف الأفق",
-  "name_en": "Pop-up from behind horizon",
-  "status": "seen",
-  "what": "Characters start masked below the hill line and rise with back-out overshoot, then idle bob ±3 px; stagger left to right",
-  "how": "Characters start masked below the hill line and rise with back-out overshoot, then idle bob ±3 px; stagger left to right",
-  "params": "rise 350 ms easeOutBack(1.6), stagger 150-250 ms",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-abderrahmen-g-9e8ed0"
-  ],
-  "styles": [
-   "pm-abderrahmen-g-9e8ed0"
-  ],
-  "tags": [],
-  "id": "CHAR-74"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تحول وتركيب الأجزاء",
-  "name_en": "Transform & dock",
-  "status": "seen",
-  "what": "parts tween rotation/position into slots, camera shake on contact",
-  "how": "parts tween rotation/position into slots, camera shake on contact",
-  "params": "shake 6 px 150 ms",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-allforbigfire-86ff3c"
-  ],
-  "styles": [
-   "pm-allforbigfire-86ff3c"
-  ],
-  "tags": [],
-  "id": "CHAR-75"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تميمة فقاعة كلام",
-  "name_en": "Speech-bubble mascot",
-  "status": "seen",
-  "what": "glossy white blob with tail, kawaii eyes, blush, blink and squash",
-  "how": "glossy white blob with tail, kawaii eyes, blush, blink and squash",
-  "params": "bounce 1.1/0.9",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-anas0ra-e57aea"
-  ],
-  "styles": [
-   "pm-anas0ra-e57aea"
-  ],
-  "tags": [],
-  "id": "CHAR-76"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تحويل جسم إلى شخصية بعيون",
-  "name_en": "Object-as-character face rig",
-  "status": "seen",
-  "what": "Add two glossy black spheres (metalness 0.6, roughness 0.15) slightly protruding from face plus capsule brows; animate brow y/rotation and eye scaleY for blink (100 ms)",
-  "how": "Add two glossy black spheres (metalness 0.6, roughness 0.15) slightly protruding from face plus capsule brows; animate brow y/rotation and eye scaleY for blink (100 ms)",
-  "params": "eye radius ~8% tile width; blink every 2-4 s",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-anilraok-eff262"
-  ],
-  "styles": [
-   "pm-anilraok-eff262"
-  ],
-  "tags": [],
-  "id": "CHAR-77"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تميمة مرافقة للعلامة",
-  "name_en": "Brand mascot companion",
-  "status": "seen",
-  "what": "simple spiky SVG blob with 2 eyes; idle wobble (rotate +/-4 deg, scale 0.97-1.03), hops between corners, reacts to scenes",
-  "how": "simple spiky SVG blob with 2 eyes; idle wobble (rotate +/-4 deg, scale 0.97-1.03), hops between corners, reacts to scenes",
-  "params": "size ~8-15% frame, wobble 1.2 s loop",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-anthonyriera-9b1b2a"
-  ],
-  "styles": [
-   "pm-anthonyriera-9b1b2a"
-  ],
-  "tags": [],
-  "id": "CHAR-78"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تحريك دراجة بدواسات متزامنة",
-  "name_en": "Pedalling bicycle rig",
-  "status": "seen",
-  "what": "crank angle θ(t)=ω t; pedals at θ and θ+π; legs solved with 2-bone IK from hip to pedal; wheels rotate at gear ratio × ω",
-  "how": "crank angle θ(t)=ω t; pedals at θ and θ+π; legs solved with 2-bone IK from hip to pedal; wheels rotate at gear ratio × ω",
-  "params": "ω ~ 2π×1 Hz; gear ratio ~2.5; wheel radius 0.33 m",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-axtonliu-0b861d"
-  ],
-  "styles": [
-   "pm-axtonliu-0b861d"
-  ],
-  "tags": [],
-  "id": "CHAR-79"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "حركة احتفال للشخصية",
-  "name_en": "Character celebration pose",
-  "status": "seen",
-  "what": "blend from riding pose to wings-spread pose over ~0.8 s with overshoot, hold, return",
-  "how": "blend from riding pose to wings-spread pose over ~0.8 s with overshoot, hold, return",
-  "params": "wing span rotation ~70°, ease back.out",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-axtonliu-0b861d"
-  ],
-  "styles": [
-   "pm-axtonliu-0b861d"
-  ],
-  "tags": [],
-  "id": "CHAR-80"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "حروف نوم طافية",
-  "name_en": "Floating Z sleep glyphs",
-  "status": "seen",
-  "what": "Z glyphs rise, scale up and fade sequentially",
-  "how": "Z glyphs rise, scale up and fade sequentially",
-  "params": "stagger 250 ms",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-cansincengiz-me-cf68dd"
-  ],
-  "styles": [
-   "pm-cansincengiz-me-cf68dd"
-  ],
-  "tags": [],
-  "id": "CHAR-81"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "هيكل شخصية وضعية لوضعية",
-  "name_en": "Pose-to-pose stick rig",
-  "status": "seen",
-  "what": "joint angles per pose, interpolate with easeInOut 400 ms, hold 1 s",
-  "how": "joint angles per pose, interpolate with easeInOut 400 ms, hold 1 s",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-chrisjdimarco-f068db"
-  ],
-  "styles": [
-   "pm-chrisjdimarco-f068db"
-  ],
-  "tags": [],
-  "id": "CHAR-82"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أشياء بعيون",
-  "name_en": "Googly-eye objects",
-  "status": "seen",
-  "what": "add eyes to everyday props",
-  "how": "add eyes to everyday props",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-davidshulmanfl-371638"
-  ],
-  "styles": [
-   "pm-davidshulmanfl-371638"
-  ],
-  "tags": [],
-  "id": "CHAR-83"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية عصوية",
-  "name_en": "Doodle stick figure",
-  "status": "seen",
-  "what": "SVG stroke figures, pose swap every 0.5 s with boil",
-  "how": "SVG stroke figures, pose swap every 0.5 s with boil",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-devius-maximus-beab45"
-  ],
-  "styles": [
-   "pm-devius-maximus-beab45"
-  ],
-  "tags": [],
-  "id": "CHAR-84"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "روبوت بوجه شاشة معبّر",
-  "name_en": "Screen-face robot emotions",
-  "status": "seen",
-  "what": "eyes/mouth as glyph shapes on display, swap per emotion",
-  "how": "eyes/mouth as glyph shapes on display, swap per emotion",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-faroukzy-9ff23e"
-  ],
-  "styles": [
-   "pm-faroukzy-9ff23e"
-  ],
-  "tags": [],
-  "id": "CHAR-85"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "عداء بتمويه حركة يقفز حواجز",
-  "name_en": "Motion-blurred runner figure",
-  "status": "seen",
-  "what": "Simple limb rig (stick/flat figure) run cycle along a baseline with hurdles; add directional motion blur and a figure caption",
-  "how": "Simple limb rig (stick/flat figure) run cycle along a baseline with hurdles; add directional motion blur and a figure caption",
-  "params": "cycle 8 frames, jump arc 400 ms",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-fionntobin-97b7af"
-  ],
-  "styles": [
-   "pm-fionntobin-97b7af"
-  ],
-  "tags": [],
-  "id": "CHAR-86"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "كرة شخصية بوجه وإكسسوار",
-  "name_en": "Mascot ball with face and prop",
-  "status": "seen",
-  "what": "Egg-scaled sphere with emissive orange material, two eye decals, a cone/disc hat with a point light as headlamp; squash on landing",
-  "how": "Egg-scaled sphere with emissive orange material, two eye decals, a cone/disc hat with a point light as headlamp; squash on landing",
-  "params": "scale (1,1.25,1), squash y 0.75 for 80 ms",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-gorden-sun-041f56"
-  ],
-  "styles": [
-   "pm-gorden-sun-041f56"
-  ],
-  "tags": [],
-  "id": "CHAR-87"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "كرة بالانضغاط والتمدد",
-  "name_en": "Squash & stretch ball",
-  "status": "seen",
-  "what": "scaleY/scaleX inverse pair driven by velocity (stretch along motion) and impact (squash 1.3x/0.7 for ~80 ms)",
-  "how": "scaleY/scaleX inverse pair driven by velocity (stretch along motion) and impact (squash 1.3x/0.7 for ~80 ms)",
-  "params": "preserve area: sx*sy=1",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-himanshutwtxs-5f4b43"
-  ],
-  "styles": [
-   "pm-himanshutwtxs-5f4b43"
-  ],
-  "tags": [],
-  "id": "CHAR-88"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "مسرح شخصية بديكور واحد ثابت",
-  "name_en": "Single-set character stage",
-  "status": "seen",
-  "what": "Build one illustrated room as SVG layers (background wall, window, props, desk front) with the character layer between desk back and desk front so arms/body tuck behind",
-  "how": "Build one illustrated room as SVG layers (background wall, window, props, desk front) with the character layer between desk back and desk front so arms/body tuck behind",
-  "params": "layers ~6, character pivot at desk line",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-jake11moran-a269c4"
-  ],
-  "styles": [
-   "pm-jake11moran-a269c4"
-  ],
-  "tags": [],
-  "id": "CHAR-89"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تبديل تعابير الوجه",
-  "name_en": "Expression swap rig",
-  "status": "seen",
-  "what": "Box body with eye/mouth sprite variants (dots, ^ ^ joy, angry brows, hearts, wink+tongue) swapped on beats; add sweat-drop and sparkle overlays",
-  "how": "Box body with eye/mouth sprite variants (dots, ^ ^ joy, angry brows, hearts, wink+tongue) swapped on beats; add sweat-drop and sparkle overlays",
-  "params": "8 expression states, swap in 1 frame, small bounce 6px",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-jake11moran-a269c4"
-  ],
-  "styles": [
-   "pm-jake11moran-a269c4"
-  ],
-  "tags": [],
-  "id": "CHAR-90"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية ظلية مسطحة",
-  "name_en": "Flat silhouette character staging",
-  "status": "seen",
-  "what": "single dark fill character (cap, long coat) with 2-3 jointed limbs, side profile; readable only by outline against lit backgrounds",
-  "how": "single dark fill character (cap, long coat) with 2-3 jointed limbs, side profile; readable only by outline against lit backgrounds",
-  "params": "fill ~#0d0c0b, no internal detail",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-kamstudiolabs-0b0824"
-  ],
-  "styles": [
-   "pm-kamstudiolabs-0b0824"
-  ],
-  "tags": [],
-  "id": "CHAR-91"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية يراعة متوهجة",
-  "name_en": "Glowing firefly character",
-  "status": "seen",
-  "what": "oval body, big eyes, wing flap 8 Hz, radial gradient glow on tail",
-  "how": "oval body, big eyes, wing flap 8 Hz, radial gradient glow on tail",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-kamstudiolabs-c9bb28"
-  ],
-  "styles": [
-   "pm-kamstudiolabs-c9bb28"
-  ],
-  "tags": [],
-  "id": "CHAR-92"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "قفزة شخصية على قوس",
-  "name_en": "Mascot hop arc",
-  "status": "seen",
-  "what": "Silhouette sprite follows dotted parabola, dots drawn trailing behind, lands with squash",
-  "how": "Silhouette sprite follows dotted parabola, dots drawn trailing behind, lands with squash",
-  "params": "arc ~1 s",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-kangaroohere-b10f8d"
-  ],
-  "styles": [
-   "pm-kangaroohere-b10f8d"
-  ],
-  "tags": [],
-  "id": "CHAR-93"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "كشف الشخصية البطل",
-  "name_en": "Mascot hero reveal",
-  "status": "seen",
-  "what": "3D render PNG fades/scales in with glow",
-  "how": "3D render PNG fades/scales in with glow",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-kentcdodds-6fa8cf"
-  ],
-  "styles": [
-   "pm-kentcdodds-6fa8cf"
-  ],
-  "tags": [],
-  "id": "CHAR-94"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تميمة بكسل تمشي",
-  "name_en": "Walking pixel mascot",
-  "status": "seen",
-  "what": "8-bit sprite of horizontal bricks with two eyes and four legs; 2-frame leg swap + 2 px bob, slides along with the camera",
-  "how": "8-bit sprite of horizontal bricks with two eyes and four legs; 2-frame leg swap + 2 px bob, slides along with the camera",
-  "params": "~6 fps cycle, colour #d17c55",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-lemomo-ai-0d9cff"
-  ],
-  "styles": [
-   "pm-lemomo-ai-0d9cff"
-  ],
-  "tags": [],
-  "id": "CHAR-95"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية تكبر",
-  "name_en": "Same character aging",
-  "status": "seen",
-  "what": "swap rig variant per stage keeping colours",
-  "how": "swap rig variant per stage keeping colours",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-loicrambo-ad6830"
-  ],
-  "styles": [
-   "pm-loicrambo-ad6830"
-  ],
-  "tags": [],
-  "id": "CHAR-96"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية خطية متوهجة",
-  "name_en": "Glowing stickman logo",
-  "status": "seen",
-  "what": "stroke figure in lime with blur glow, walk cycle",
-  "how": "stroke figure in lime with blur glow, walk cycle",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-marklaunches-3b9492"
-  ],
-  "styles": [
-   "pm-marklaunches-3b9492"
-  ],
-  "tags": [],
-  "id": "CHAR-97"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تميمة على دائرة ملونة",
-  "name_en": "Mascot on colour disc",
-  "status": "seen",
-  "what": "cut-out character PNG pops in (scale 0.8 -> 1.05 -> 1) while a pastel circle grows behind it; add a name pill 'Name: role' under it",
-  "how": "cut-out character PNG pops in (scale 0.8 -> 1.05 -> 1) while a pastel circle grows behind it; add a name pill 'Name: role' under it",
-  "params": "pop 300 ms, disc 400 ms",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-paulo-kombucha-96431c"
-  ],
-  "styles": [
-   "pm-paulo-kombucha-96431c"
-  ],
-  "tags": [],
-  "id": "CHAR-98"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصيات كرتونية من أشكال أولية",
-  "name_en": "Primitive toon characters",
-  "status": "seen",
-  "what": "spheres/capsules, big eyes, toon material, hierarchical joints",
-  "how": "spheres/capsules, big eyes, toon material, hierarchical joints",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-ryzoft-4f85bd"
-  ],
-  "styles": [
-   "pm-ryzoft-4f85bd"
-  ],
-  "tags": [],
-  "id": "CHAR-99"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "تحريك رسمة واحدة بعظام",
-  "name_en": "2D mesh bone rig from one image",
-  "status": "seen",
-  "what": "split illustration into parts, mesh deform with ~16 bones, sine-based dance cycles",
-  "how": "split illustration into parts, mesh deform with ~16 bones, sine-based dance cycles",
-  "params": "bpm 150",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-topi-003-b0e12c"
-  ],
-  "styles": [
-   "pm-topi-003-b0e12c"
-  ],
-  "tags": [],
-  "id": "CHAR-100"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "صورة رمزية مسطحة",
-  "name_en": "Flat avatar bust",
-  "status": "seen",
-  "what": "circle head + shoulders + tie, accessories (hat, glasses)",
-  "how": "circle head + shoulders + tie, accessories (hat, glasses)",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-triglyceee-bd5b08"
-  ],
-  "styles": [
-   "pm-triglyceee-bd5b08"
-  ],
-  "tags": [],
-  "id": "CHAR-101"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "ظل يجري",
-  "name_en": "Silhouette sprite run",
-  "status": "seen",
-  "what": "looping galloping silhouette over speed lines",
-  "how": "looping galloping silhouette over speed lines",
-  "params": "",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:pm-utopyaszx-1b2f94"
-  ],
-  "styles": [
-   "pm-utopyaszx-1b2f94"
-  ],
-  "tags": [],
-  "id": "CHAR-102"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أطراف بـ IK بعظمتين وانثناء ناعم",
-  "name_en": "Two-bone IK limbs with smooth bend",
-  "status": "seen",
-  "what": "pose = hip position, torso tilt, head tilt, facing + world targets for hands/feet; solve elbow/knee with 2-bone IK, bend direction from facing (elbow back, knee forward); draw limb as quadratic curve ",
-  "how": "pose = hip position, torso tilt, head tilt, facing + world targets for hands/feet; solve elbow/knee with 2-bone IK, bend direction from facing (elbow back, knee forward); draw limb as quadratic curve with control = 2J - (S+E)/2 so it passes through the joint",
-  "params": "stroke ~3 px, round caps",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:stickman"
-  ],
-  "styles": [
-   "stickman"
-  ],
-  "tags": [],
-  "id": "CHAR-103"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "انحناء الجسم وتمدده حسب السرعة",
-  "name_en": "Velocity-driven body bend + squash/stretch",
-  "status": "seen",
-  "what": "torso is a quadratic bezier tube hip->neck drawn twice (wide black then thinner white on top); bend amount from d(tilt)/dt between frames; stretch/squash from vertical hip velocity plus landing impuls",
-  "how": "torso is a quadratic bezier tube hip->neck drawn twice (wide black then thinner white on top); bend amount from d(tilt)/dt between frames; stretch/squash from vertical hip velocity plus landing impulses; head lags slightly",
-  "params": "tube width ~38 px, squash 0.85-1.15",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:stickman"
-  ],
-  "styles": [
-   "stickman"
-  ],
-  "tags": [],
-  "id": "CHAR-104"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "وجه معبر بتبديل العينين والفم",
-  "name_en": "Swappable expressive face",
-  "status": "seen",
-  "what": "eyes as dots with periodic blink (scaleY to 0.1 for 80 ms), brows as short strokes with angle per emotion, mouth path per emotion (smile, flat, O + sweat drop, grit, content)",
-  "how": "eyes as dots with periodic blink (scaleY to 0.1 for 80 ms), brows as short strokes with angle per emotion, mouth path per emotion (smile, flat, O + sweat drop, grit, content)",
-  "params": "blink every 2.5-4 s",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:stickman"
-  ],
-  "styles": [
-   "stickman"
-  ],
-  "tags": [],
-  "id": "CHAR-105"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "قطرة بوجه تدور على مسار منقط",
-  "name_en": "Character droplet on dotted loop",
-  "status": "seen",
-  "what": "dotted closed path around the cycle; droplet with face sampled along it by getPointAtLength over ~3 s, slight bob",
-  "how": "dotted closed path around the cycle; droplet with face sampled along it by getPointAtLength over ~3 s, slight bob",
-  "params": "dash 2/6, droplet 20 px",
-  "install": "",
-  "license": "owner-description",
-  "proof": [
-   "style:whiteboard"
-  ],
-  "styles": [
-   "whiteboard"
-  ],
-  "tags": [],
-  "id": "CHAR-106"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "مبادئ تحريك الشخصيات",
-  "name_en": "Animation principles for character clips",
+  "name_ar": "ورقة تصميم الشخصية واختبار الظل",
+  "name_en": "Model sheet & silhouette test",
   "status": "documented",
-  "what": "Locomotion needs contact/passing/extreme poses with planted feet; actions need readable anticipation, contact and recovery; hold impact frames; keep volumes constant.",
-  "how": "Define clip names, durations, loop, event markers (contact, hit window, footsteps); check body bob and limb separation; player-facing attacks avoid long anticipation; verify encoded frame count/fps/duration.",
-  "params": "",
+  "what": "اكتب النسب واللوحة وسماكة الخط والزوايا قبل التحريك، وكل وضعية مفتاحية يجب أن تُقرأ كظل أسود مصمت. / Lock proportions, palette, line weight and views before animating; every key pose must read as a solid black shape.",
+  "how": "STYLE.md: 3–5 colours, outline weight and colour, views front / side / three-quarter (+ rear and the in-video camera view) on one ground line and scale, 3–5 key expressions; one canonical spec per character kept apart from style skills (silhouette, fixed features, proportions, default palette, e.g. whale mascot #FFFFFF belly, #D9D9D9 back, #F0F0F0 cheek, #1A1A1A outline); build the SVG rig with grouped parts and pivots so every video reuses the same character; fill the pose with black to check readability.",
+  "params": "3–5 colours; 3–5 views",
   "install": "",
-  "license": "MIT",
+  "license": "",
   "proof": [
-   "kosif-atlas/skills/1526-gamegen/4162-game-animation/SKILL.md",
-   "kosif-atlas/skills/2460-pixel-art/9525-animate/SKILL.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-107"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "مواصفة الشخصية الثابتة (دستور التميمة)",
-  "name_en": "Canonical character spec (mascot bible)",
-  "status": "documented",
-  "what": "Keep one canonical spec per recurring character, separate from style skills: silhouette, fixed features (e.g. dot eyes, small curved mouth, tiny fins), proportions (features inside the front third), outline weight and colour, default palette (#FFFFFF belly, #D9D9D9 back, #F0F0F0 cheek, #1A1A1A outli…",
-  "how": "Store JSON/MD in the project; build an SVG rig with grouped parts and pivots so every video reuses the same character; expressions as swappable eye/mouth shapes.",
-  "params": "",
-  "install": "",
-  "license": "MIT",
-  "proof": [
-   "kosif-atlas/skills/1094-akbun-draw/2427-akbun-mascot-whale/SKILL.md"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-108"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "حزمة مراجع زوايا الشخصية",
-  "name_en": "Turnaround reference package",
-  "status": "documented",
-  "what": "Before animating a character, lock consistent views: front, side, rear (other side if asymmetric), three-quarter and the in-video camera view, on one ground line and scale; add face/material details, expressions and key poses; reconcile differences between views and prefer separate readable images o…",
-  "how": "Draw in SVG or generate with a fixed seed (external model); fixed-camera Blender blockout renders as reference need a Blender install.",
-  "params": "",
-  "install": "",
-  "license": "MIT",
-  "proof": [
+   "kosif-tool/playbooks/characters.md:15",
+   "kosif-atlas/skills/1094-akbun-draw/2427-akbun-mascot-whale/SKILL.md",
    "kosif-atlas/skills/1526-gamegen/4166-game-concept-art/SKILL.md"
   ],
   "styles": [],
-  "tags": [],
-  "id": "CHAR-109"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "أقفال الاستمرارية",
-  "name_en": "Continuity locks CHR/LOC",
-  "status": "documented",
-  "what": "360° character (CHR-001) and location (LOC-001) sheets with verbatim lock text in every prompt; turntable shot as 3D sheet.",
-  "how": "Write lock paragraphs; shot('turntable')",
-  "params": "views front/¾/profile/back; 5 expressions",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/kosif-montage-motion/references/continuity-protocols.md",
-   "100-superskills/skills/kosif-montage-motion/references/book-lessons.md"
+  "tags": [
+   "model sheet",
+   "silhouette",
+   "turnaround",
+   "ورقة الشخصية",
+   "mascot bible"
   ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-110"
+  "when": "قبل أول إطار لأي شخصية متكررة / before the first frame of any recurring character."
  },
  {
+  "id": "CHAR-02",
   "family": "characters-rigs",
-  "name_ar": "وصفة الكيوت",
-  "name_en": "Cute recipe",
+  "name_ar": "وصفة اللطافة",
+  "name_en": "Cute character recipe",
   "status": "documented",
-  "what": "Head>=body, low wide eyes, cheeks, tiny nose, soft blends, short limbs, pastel+one accent, toy lighting, alive acting.",
-  "how": "Head>=body, low wide eyes, cheeks, tiny nose, soft blends, short limbs, pastel+one accent, toy lighting, alive acting.",
-  "params": "head 0.16 vs torso 0.14; eyes at ~45% head height, spacing 0.4x; blends 10-30 mm; fur #f2e4d8; breathing ±0.6%",
+  "what": "نسب وقواعد شكل جعلت الأرنب يُقرأ لطيفًا: الرأس أعرض من الجسم، عيون منخفضة متباعدة، خدود، أنف صغير، أطراف قصيرة، باستيل مع لون تأكيد واحد. / Proportion and look rules that made the bunny read as cute.",
+  "how": "head width ≥ body (.16 vs .14); eyes at ~45% of head height, spacing 0.4 × head width, tall 1.12, two catch-lights; cheeks k ≈ .02; nose ≤ 1/8 head width; soft blends 10–30 mm; short limbs, big feet; pastel + one accent; warm key front-left-top with mint + pink rims, neutral tone curve, bloom threshold ≥ .9; alive acting: breathing ±0.6%, blinks, ear flop.",
+  "params": "head .16 vs torso .14; eyes 45% / 0.4×",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
+   "kosif-studio/motion/references/shape-kit.md",
    "100-superskills/skills/kosif-montage-motion/references/shape-kit.md"
   ],
   "styles": [],
-  "tags": [],
-  "id": "CHAR-111"
+  "tags": [
+   "cute",
+   "kawaii",
+   "proportions",
+   "لطيف",
+   "mascot"
+  ],
+  "when": "أي تميمة أو شخصية أطفال / any mascot or kids' character."
  },
  {
+  "id": "CHAR-03",
   "family": "characters-rigs",
-  "name_ar": "صحائف مرجعية 360° للشخصيات والأماكن",
-  "name_en": "CHR-/LOC- 360-degree reference sheets",
+  "name_ar": "أقفال الهوية النصية",
+  "name_en": "Identity lock text (CHR/LOC sheets)",
   "status": "documented",
-  "what": "Locks a recurring character or location once (views, expressions, wardrobe, layout) and reuses its lock paragraph verbatim in every later prompt to stop identity drift.",
-  "how": "Character CHR-001: name, age, build, skin/hair/eyes, marks; views front, 3/4 left, profile, back, full-body contrapposto; expressions neutral, joy, anger, fear, determination; wardrobe fabrics; one lock paragraph. Location LOC-001: era, scale, left/right/centre landmarks, HDRI-style 360 description, time-of-day variants. Prefer reference images when the platform supports them. identity_reference.py checks 5 views (front, left, right, back, three_quarter).",
+  "what": "فقرة قفل واحدة لكل شخصية ومكان تُلصق حرفيًا في كل وصف لاحق، مع صحائف 360° للزوايا والتعابير. / One lock paragraph per character and location pasted verbatim into every later prompt, with 360° sheets.",
+  "how": "CHR-001: name · age · skin tone · face shape · eyes · brows · nose · lips · hair · build/height · signature outfit · accessories · marks · MUST NOT CHANGE: …; views front, 3/4 left, profile, back, full-body contrapposto; expressions neutral, joy, anger, fear, determination; LOC-001: era, scale, left/right/centre landmarks, time-of-day variants. Models have no memory: copy the CHARACTER sentence byte-for-byte, keep background tone and the 3–5 colour palette identical, vary only the SCENE line. identity_reference.py checks 5 views (front, left, right, back, three_quarter).",
   "params": "5 views; 5 expressions",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/continuity-protocols.md",
-   "kosif-one/tools/kosif-omni/skills/kosif-think-pro/scripts/identity_reference.py"
+   "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md",
+   "100-superskills/skills/kosif-montage-motion/references/continuity-protocols.md",
+   "kosif-atlas/skills/2976-pwdev-social-media/12595-visual-consistency"
   ],
   "styles": [],
-  "tags": [],
-  "id": "CHAR-112"
+  "tags": [
+   "character lock",
+   "continuity",
+   "CHR",
+   "identity",
+   "قفل الشخصية"
+  ],
+  "when": "أي سلسلة مشاهد مولدة لنفس الشخصية / any generated series with a recurring character."
  },
  {
+  "id": "CHAR-04",
   "family": "characters-rigs",
   "name_ar": "قفل الشخصية النفسي",
-  "name_en": "Personality lock for characters",
+  "name_en": "Personality lock",
   "status": "documented",
-  "what": "Translates a fictional character's personality facets into posture, gaze and styling cues so acting stays consistent across shots.",
-  "how": "Pick 4-6 Big-Five facets; map to cues (assertive: squared shoulders, direct gaze, centre frame; anxious: guarded arms, glance off-camera, tense jaw; ordered: pressed clothes, symmetrical workspace...); add 3 if-then behaviour signatures and the driving need (autonomy/competence/relatedness). Fictional characters only.",
-  "params": "4-6 facets; 3 if-then rules",
+  "what": "تحويل سمات شخصية خيالية إلى وقفة ونظرة وملبس ثابتة حتى يبقى تمثيلها متسقًا عبر اللقطات. / Map a fictional character's personality facets to posture, gaze and styling cues.",
+  "how": "pick 4–6 Big-Five facets and map to cues (assertive: squared shoulders, direct gaze, centre frame; anxious: guarded arms, off-camera glance, tense jaw; ordered: pressed clothes, symmetrical workspace…); add 3 if-then behaviour signatures and the driving need (autonomy / competence / relatedness). Fictional characters only.",
+  "params": "4–6 facets; 3 if-then rules",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/character-psychology.md"
   ],
   "styles": [],
-  "tags": [],
-  "id": "CHAR-113"
+  "tags": [
+   "personality",
+   "acting",
+   "posture",
+   "gaze",
+   "شخصية نفسية"
+  ],
+  "when": "شخصيات قصصية بأكثر من مشهد / story characters across scenes."
  },
  {
+  "id": "CHAR-05",
   "family": "characters-rigs",
-  "name_ar": "قالب قفل الشخصية",
-  "name_en": "Character Lock template",
-  "status": "documented",
-  "what": "One-line identity spec reused verbatim across prompts.",
-  "how": "NAME · age · skin tone · face shape · eyes · brows · nose · lips · hair · build/height · signature outfit · accessories · distinctive marks · MUST NOT CHANGE: ...",
-  "params": "",
+  "name_ar": "بايبلات شخصيات fastify",
+  "name_en": "Fastify character bibles & reference locks",
+  "status": "proven",
+  "what": "مواصفات ثابتة مختبرة تُلصق في كل وصف: رجل عصوي أصلي، شخصيتان أصليتان ثلاثيتا الأبعاد، ورياضي بلا وجه / مع قفل الصورة المرجعية للمستخدم. — Tested fixed specs pasted into every prompt, plus the user's reference-image lock.",
+  "how": "Stickman BIBLE: charcoal-black 5 px brush strokes at 1080 px width, circular head = 1/4 of height, slim straight torso, single-line limbs each half a torso long, two dot eyes + one mouth stroke, tiny teal scarf at the left of the neck, palette black/teal + one muted warm accent. If the user has their own figure, prompts reference the attached image unchanged and text-only tools are refused (referenceTool 'text-only' throws). Romance: A = young woman (warm brown skin, curly dark shoulder hair with pale-blue ribbon, emerald jacket, cream boots), B = waist-high doll (porcelain face, lilac bob, coral/turquoise patchwork, amber buttons, teal boots) in all 10 prompts. Fitness: faceless muscular sculpt-render, black cap and shorts, dark gym, one overhead teal-blue rim light, shallow DOF. Profile tests 15/15 passed here.",
+  "params": "stroke 5 px @1080; head 25% height; limb 0.5 torso",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
-   "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md"
+   "fastify-motion-bro/scripts/profiles/stickman.mjs",
+   "fastify-motion-bro/scripts/profiles/character-romance.mjs",
+   "fastify-motion-bro/scripts/profiles/fitness.mjs",
+   "fastify-motion-bro/tests/production-profiles.test.mjs"
   ],
   "styles": [],
-  "tags": [],
-  "id": "CHAR-114"
+  "tags": [
+   "character bible",
+   "stickman",
+   "reference lock",
+   "fastify",
+   "بايبل"
+  ],
+  "when": "ملفات الإنتاج المرحلية stickman / character-romance / fitness / the staged production profiles."
  },
  {
+  "id": "CHAR-06",
   "family": "characters-rigs",
-  "name_ar": "ريغ شخصية SVG",
-  "name_en": "SVG character rig with pivots",
-  "status": "documented",
-  "what": "Character from circles/rects in <g> groups pivoting at shoulder, hip, neck.",
-  "how": "Build character.svg + rig.js; transform-origin per joint.",
-  "params": "3 expressions on sheet",
+  "name_ar": "ثبات الشخصية في التوليد بالمراجع",
+  "name_en": "Reference-based consistency in generators",
+  "status": "key",
+  "what": "مراجع متعددة مسماة لكل شخصية، تعديل صورة الأفاتار الموجودة بدل توليد شخص جديد، وIP-Adapter لنقل الهوية أو الأسلوب، وأوراق الشخصيات كمراسٍ قبل الفيديو. / Named multi-reference inputs, editing the supplied avatar, IP-Adapter conditioning and character sheets as anchors.",
+  "how": "4–5 references per character from different angles, labelled ('Character A: the red-haired knight'), repeat 2–3 identifiers every turn; when the setting does not change say 'Edit @Image1: …' keeping face/hair/light; ComfyUI IPAdapterAdvanced weight 0.55–0.65 for characters (> 0.75 copies pose, < 0.4 drifts), FaceID 0.7–0.85, plus ControlNet for pose; one image call per sheet (front, 3/4, profile on plain ground with one telling prop) — redo off-style sheets before animating (an image costs cents, a clip dollars). Needs Gemini/OpenAI image API keys, or a GPU ComfyUI host.",
+  "params": "4–5 refs; IPA 0.55–0.65; FaceID 0.7–0.85",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
+   "kosif-atlas/skills/2173-tools-plugin/7917-generate-image",
+   "kosif-atlas/skills/259-quickdesign/865-quickdesign",
+   "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
+   "kosif-atlas/skills/1511-homie/3889-art"
+  ],
+  "styles": [],
+  "tags": [
+   "consistency",
+   "IP-Adapter",
+   "references",
+   "avatar edit",
+   "ثبات"
+  ],
+  "when": "حين يملك المستخدم مفتاح خدمة صور/فيديو / when the user has an image/video service."
+ },
+ {
+  "id": "CHAR-07",
+  "family": "characters-rigs",
+  "name_ar": "شريط حركة كامل من إطار واحد",
+  "name_en": "Whole-strip sprite from one seed frame",
+  "status": "key",
+  "what": "ولّد شريط حركة التميمة كاملًا في طلب تعديل واحد حول إطار معتمد، لأن التوليد إطارًا إطارًا ينجرف. / Generate the whole animation strip in one edit request around an approved frame.",
+  "how": "place the seed on a transparent 1024 canvas with 4 slots of 256; prompt invariants (same character, facing, palette, silhouette, outfit, transparent background, exact frame count, no scenery); normalise to fixed frames (e.g. 64 px) with one shared scale and bottom-centre anchor; optionally lock frame 1 to the seed; review a preview sheet. Needs an image-edit model key.",
+  "params": "1024 canvas; 4 × 256 slots; 64 px frames",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2696-game-studio/10368-sprite-pipeline"
+  ],
+  "styles": [],
+  "tags": [
+   "sprite strip",
+   "seed frame",
+   "pixel mascot",
+   "سبرايت"
+  ],
+  "when": "سبرايتات ألعاب أو تميمة بكسل / game sprites, pixel mascots."
+ },
+ {
+  "id": "CHAR-08",
+  "family": "characters-rigs",
+  "name_ar": "الأفاتار الناطق",
+  "name_en": "AI talking avatars",
+  "status": "key",
+  "what": "فيديو مقدّم بمزامنة شفاه من نص دون تصوير، ثم يُركّب تحت رسوم متحركة مكتوبة بالكود. / Script-driven lip-synced presenters composited under coded motion graphics.",
+  "how": "HeyGen (MCP/API: script, avatar, language; 230+ avatars, 140+ languages; personal twin from a 2–5 min recording) or Synthesia for full-body corporate presenters; keep the presenter clip as project media and lay editable scenes and Arabic captions on top. Needs a HeyGen/Synthesia account key; check Arabic lip-sync on a still before committing.",
+  "params": "twin from 2–5 min video",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1446-marketing-skills/3531-video",
+   "kosif-one/vendor/hyperframes/docs/guides/avatar-presenter.mdx"
+  ],
+  "styles": [],
+  "tags": [
+   "avatar",
+   "HeyGen",
+   "Synthesia",
+   "presenter",
+   "lip sync",
+   "أفاتار"
+  ],
+  "when": "مقدم بلا تصوير / a presenter without filming."
+ },
+ {
+  "id": "CHAR-09",
+  "family": "characters-rigs",
+  "name_ar": "شخصية ذكاء اصطناعي بالحالات",
+  "name_en": "Stateful AI persona orb",
+  "status": "install",
+  "what": "مقدم على شكل كرة بخمس حالات: سكون، استماع، تفكير، كلام، نوم / تقودها حالة الصوت. — A narrator orb with five states driven by audio state.",
+  "how": "Vercel ai-elements Persona (Rive WebGL2) via npx ai-elements add persona; local stand-in with no install: SVG/CSS state classes switched from words.json speaking segments (speaking while a word is active, thinking in gaps > 0.7 s, idle otherwise), rendered with render_html.cjs.",
+  "params": "5 states",
+  "install": "npx ai-elements add persona",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2722-vercel/10522-ai-elements/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "persona",
+   "AI orb",
+   "states",
+   "speaking",
+   "شخصية ذكاء"
+  ],
+  "when": "شرح منتجات الذكاء الاصطناعي / AI product explainers."
+ },
+ {
+  "id": "CHAR-10",
+  "family": "characters-rigs",
+  "name_ar": "هيكل SVG بنقاط دوران",
+  "name_en": "SVG cut-out rig with pivots",
+  "status": "ready",
+  "what": "مجموعات SVG منفصلة لكل طرف بنقاط دوران صريحة ودورانات متداخلة، والكوع يتأخر إطارين ليصنع المتابعة. / Separate SVG groups per limb with explicit pivots and nested rotations; the elbow lags 2 frames.",
+  "how": "python3 tools/kosif.py scaffold character-rig <dir>; parts head, torso, upper/lower arm, hand, upper/lower leg, foot; transform rotate(θ px py) in nested <g>; Remotion arm: shoulder interpolate(frame, [0,6,14,24], [0,8,−55,−48]), elbow ([2,10,18,26] → [0,5,−30,−24]) with Easing.inOut(Easing.sin); walk 12 frames/step at 24 fps; 5–7 mouth shapes; moving hold 1–2%.",
+  "params": "elbow +2 f; 12 f/step",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/characters.md:54",
+   "kosif-tool/styles/character-rig/SKILL.md",
    "100-superskills/skills/character-animation-2d/SKILL.md"
   ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-115"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "دورات مشي وسكون وكلام",
-  "name_en": "Phase-driven walk/idle/talk cycles",
-  "status": "documented",
-  "what": "Cycles are functions of phase giving limb angles and body height.",
-  "how": "walk(phase), idle(phase), talk(phase); distinct contact and passing poses.",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/character-animation-2d/SKILL.md"
+  "styles": [
+   "character-rig"
   ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-116"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "مبادئ التحريك",
-  "name_en": "12-principles subset for rigs",
-  "status": "documented",
-  "what": "Anticipation, squash on landing, follow-through for hair/cloth, arcs; constant volumes.",
-  "how": "Anticipation, squash on landing, follow-through for hair/cloth, arcs; constant volumes.",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "100-superskills/skills/character-animation-2d/SKILL.md"
+  "tags": [
+   "rig",
+   "pivots",
+   "cut-out",
+   "SVG",
+   "هيكل",
+   "مفاصل"
   ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-117"
+  "when": "أي شخصية مسطحة تتحرك / any flat character."
  },
  {
+  "id": "CHAR-11",
   "family": "characters-rigs",
-  "name_ar": "ورقة شخصية 360",
-  "name_en": "360 character sheet + 4-angle location sheet",
-  "status": "documented",
-  "what": "Front/side/back/expressions sheet per character and a 4-angle sheet per location for continuity.",
-  "how": "prompt each view with same locks",
-  "params": "4 views + expressions",
+  "name_ar": "أطراف بـ IK بعظمتين",
+  "name_en": "Two-bone IK limbs",
+  "status": "seen",
+  "what": "تُعطى الوركَ وأهداف اليدين والقدمين في العالم، فيُحل الكوع والركبة بـ IK بعظمتين، ويُرسم الطرف منحنى يمر بالمفصل. / Give hip and world targets; solve elbow/knee with 2-bone IK and draw each limb as a curve through the joint.",
+  "how": "bend direction from facing (elbows back, knees forward); quadratic control point = 2J − (S + E)/2 so the curve passes through the joint J; stroke ~3 px round caps. Bicycle: crank θ = ω·t (ω ≈ 2π·1 Hz), pedals at θ and θ + π, legs solved hip → pedal, wheels at gear ratio ~2.5 × ω, wheel radius 0.33 m. (code snippet in references/powers/characters-rigs.md)",
+  "params": "ω ≈ 2π rad/s; gear 2.5",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
-   "100-superskills/skills/cinema-director-7layers/SKILL.md:22"
+   "kosif-tool/styles/stickman",
+   "kosif-tool/styles/pm-axtonliu-0b861d"
   ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-118"
+  "styles": [
+   "stickman",
+   "pm-axtonliu-0b861d"
+  ],
+  "tags": [
+   "IK",
+   "two-bone",
+   "limbs",
+   "stickman",
+   "bicycle",
+   "حركة عكسية"
+  ],
+  "when": "رجل عصوي، دراجة بدواسات، شخصية تمسك أشياء / stickmen, pedalling, grabbing."
  },
  {
+  "id": "CHAR-12",
   "family": "characters-rigs",
-  "name_ar": "وصفة الشخصية اللطيفة",
-  "name_en": "Cute character recipe",
-  "status": "documented",
-  "what": "Proportion and look rules that made the bunny read as cute.",
-  "how": "Apply when sculpting any mascot with K3S.",
-  "params": "head width ≥ body (.16 vs .14); eyes at ~45% head height, spacing .4×head width, tall 1.12, 2 catch-lights; cheeks k≈.02; nose ≤ 1/8 head width; blend 10-30 mm; short limbs, big feet; pastel + one accent; warm key front-left-top, mint+pink rims, tone 'neutral', bloom threshold ≥ .9; breathing ±0.6%,…",
+  "name_ar": "انحناء الجسم والمط حسب السرعة",
+  "name_en": "Velocity-driven body bend & squash",
+  "status": "seen",
+  "what": "الجذع أنبوب منحنٍ يُرسم مرتين، انحناؤه من سرعة الميل، ومطه وضغطه من سرعة الورك وصدمات الهبوط، والرأس يتأخر قليلًا. / Torso as a bent tube; bend from tilt velocity, squash/stretch from hip velocity and landings; head lags.",
+  "how": "torso = quadratic bezier hip → neck drawn wide black then thinner white on top (~38 px); bend = k·d(tilt)/dt computed from seek(t) and seek(t − 1/fps) (never accumulated); stretch/squash 0.85–1.15 from vertical hip velocity plus landing impulses; head follows 1–2 frames late.",
+  "params": "tube ~38 px; squash 0.85–1.15",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
-   "kosif-studio/motion/references/shape-kit.md"
+   "kosif-tool/styles/stickman"
   ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-119"
+  "styles": [
+   "stickman"
+  ],
+  "tags": [
+   "body bend",
+   "squash",
+   "velocity",
+   "rubbery",
+   "مط"
+  ],
+  "when": "شخصيات خطية مرنة كوميدية / rubbery comic characters."
  },
  {
-  "family": "characters-rigs",
-  "name_ar": "ورقة تصميم الشخصية",
-  "name_en": "Character model sheet",
-  "status": "documented",
-  "what": "Write proportions, palette, line weight and views in STYLE.md before animating; original designs only.",
-  "how": "Write proportions, palette, line weight and views in STYLE.md before animating; original designs only.",
-  "params": "3–5 colours; front/side/three-quarter views",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:15",
-   "kosif-tool/playbooks/characters.md:9"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-120"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "اختبار الظل الأسود",
-  "name_en": "Silhouette test",
-  "status": "documented",
-  "what": "Every key pose must read as a solid black shape.",
-  "how": "Every key pose must read as a solid black shape.",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:16"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-121"
- },
- {
+  "id": "CHAR-13",
   "family": "characters-rigs",
   "name_ar": "وجوه بتبديل الأشكال",
-  "name_en": "Swap-shape faces and mouth set",
+  "name_en": "Swap-shape faces, mouths & expressions",
   "status": "documented",
-  "what": "Eyes and mouth are swapped shapes, not distorted paths; closed mouth on M/B/P.",
-  "how": "Mouth index from phoneme/word timing.",
-  "params": "5–7 mouth shapes; switch within 1 frame",
+  "what": "العيون والفم أشكال تُبدَّل لا مسارات تُشوَّه: 5–7 أفواه، فم مغلق على م/ب، رمش، حواجب بزاوية لكل عاطفة. / Eyes and mouth are swapped shapes, not distorted paths.",
+  "how": "mouth index from phoneme/word timing (words.json), switch within 1 frame, closed on M/B/P (م ب ف in Arabic); eyes as dots blinking scaleY → 0.1 for 80 ms every 2.5–4 s; brows as short strokes angled per emotion; mouth per emotion (smile, flat, O + sweat drop, grit, content); up to 8 expression states (dots, ^ ^ joy, angry brows, hearts, wink + tongue) swapped on beats with a 6 px bounce, sweat-drop and sparkle overlays; screen-face robots swap glyph eyes per emotion.",
+  "params": "5–7 mouths; switch ≤1 f; blink 80 ms / 2.5–4 s",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
    "kosif-tool/playbooks/characters.md:18",
-   "kosif-tool/playbooks/characters.md:30"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-122"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "الوضعيات المفتاحية أولًا",
-  "name_en": "Pose-to-pose blocking",
-  "status": "documented",
-  "what": "Block keys then breakdowns.",
-  "how": "Block keys then breakdowns.",
-  "params": "keys every 8–16 frames at 24–30 fps",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:24"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-123"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "دورة المشي",
-  "name_en": "Walk cycle",
-  "status": "documented",
-  "what": "Contact-down-passing-up cycle with body bob; walk in place with background parallax at stride speed.",
-  "how": "Contact-down-passing-up cycle with body bob; walk in place with background parallax at stride speed.",
-  "params": "24 frames per two steps at 24 fps (12/step); bob 3–5% height; bg speed = stride / 0.5 s",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:27",
-   "kosif-tool/playbooks/characters.md:46"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-124"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "ثبات متحرك (تنفس)",
-  "name_en": "Moving hold / breathing",
-  "status": "documented",
-  "what": "Character never freezes during holds.",
-  "how": "Sine scale on torso.",
-  "params": "1–2% scale over 2 s",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:28"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-125"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "وصفة لحظة رد الفعل",
-  "name_en": "Reaction beat recipe",
-  "status": "documented",
-  "what": "Sink, jump, land with squash, hair follow-through, breathing hold.",
-  "how": "Sink, jump, land with squash, hair follow-through, breathing hold.",
-  "params": "0–200 ms sink 4% ease-in sine; 200–450 jump ease-out cubic; 450–700 land squash 8% spring 12/200; 450–800 follow-through; 800–2000 hold",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:36-44"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-126"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "الحديث للكاميرا",
-  "name_en": "Talk-to-camera behaviours",
-  "status": "documented",
-  "what": "Head tilts on stress, periodic blinks, mouth from phoneme timing.",
-  "how": "Head tilts on stress, periodic blinks, mouth from phoneme timing.",
-  "params": "tilt ±3°; blink every 2.5–4 s, 3-frame blink",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:48"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-127"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "الإشارة والكشف",
-  "name_en": "Point and reveal",
-  "status": "documented",
-  "what": "Arm extends on arc; target pops after finger stops.",
-  "how": "Arm extends on arc; target pops after finger stops.",
-  "params": "arm 350 ms; target pops +80 ms",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:50"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-128"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "دخول الشخصية من اليمين",
-  "name_en": "RTL character staging",
-  "status": "documented",
-  "what": "In Arabic films characters enter from right, look left; speech bubbles hold whole phrases RTL.",
-  "how": "In Arabic films characters enter from right, look left; speech bubbles hold whole phrases RTL.",
-  "params": "",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "kosif-tool/playbooks/characters.md:75"
-  ],
-  "styles": [],
-  "tags": [],
-  "id": "CHAR-129"
- },
- {
-  "family": "characters-rigs",
-  "name_ar": "شخصية ساحر بكسل",
-  "name_en": "Pixel wizard character loop",
-  "status": "idea",
-  "what": "Reusable pixel wizard with walk, staff-raise (6 stepped frames), 2-frame hat overshoot and rotating rune circle at 8 fps.",
-  "how": "Sprite sheets in Canvas/Remotion.",
-  "params": "10 s, 16:9",
-  "install": "",
-  "license": "owner",
-  "proof": [
-   "style:pm-0xevinho-3777d8"
+   "kosif-tool/styles/stickman",
+   "kosif-tool/styles/pm-jake11moran-a269c4"
   ],
   "styles": [
-   "pm-0xevinho-3777d8"
+   "stickman",
+   "pm-jake11moran-a269c4",
+   "pm-faroukzy-9ff23e"
   ],
-  "tags": [],
-  "id": "CHAR-130"
+  "tags": [
+   "lip flap",
+   "mouth shapes",
+   "expressions",
+   "blink",
+   "وجه",
+   "تعابير"
+  ],
+  "when": "كل شخصية تتكلم أو تتفاعل / every talking or reacting character."
  },
  {
+  "id": "CHAR-14",
   "family": "characters-rigs",
-  "name_ar": "قفزة بضغط ومط",
-  "name_en": "Squash/stretch hop with anticipation",
-  "status": "idea",
-  "what": "Character hops with crouch anticipation and overshoot landing.",
-  "how": "Scale keyframes + cubic-bezier landing.",
-  "params": "squash 0.85 / stretch 1.15; 120 ms crouch; land cubic-bezier(0.34,1.56,0.64,1) 450 ms",
+  "name_ar": "شخصية قصاصات بمؤشر اتجاه",
+  "name_en": "Cut-out rig with facing dial",
+  "status": "seen",
+  "what": "قيمة اتجاه واحدة من −1 إلى 1 تزيح ملامح الوجه وتبدّل الذراع القريبة والبعيدة، وطور المشي مشتق من المسافة المقطوعة فلا تنزلق القدمان. / One facing value shifts features and swaps near/far arm; walk phase from distance so feet never slide.",
+  "how": "parts head, near/far arm, legs, body around pivots; phase = distance / stepLength (~40 px) so speed changes never slide feet; arm swing ±20°, head bob 2–3 px; at facing 0 show both eyes centred.",
+  "params": "step ~40 px; arm ±20°; bob 2–3 px",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
-   "style:pm-abderrahmen-g-9e8ed0"
+   "kosif-tool/styles/doodle"
   ],
   "styles": [
-   "pm-abderrahmen-g-9e8ed0"
+   "doodle"
   ],
-  "tags": [],
-  "id": "CHAR-131"
+  "tags": [
+   "facing",
+   "cut-out",
+   "no foot sliding",
+   "doodle",
+   "قصاصات"
+  ],
+  "when": "دودل وقصص بشخصية تتجول / doodle stories with a walking character."
  },
  {
+  "id": "CHAR-15",
   "family": "characters-rigs",
-  "name_ar": "شخصيات متقطعة وواجهة ناعمة",
-  "name_en": "Stepped characters, smooth UI",
-  "status": "idea",
-  "what": "Characters on twos, UI smooth; never mixed on one element.",
-  "how": "CSS steps(12) per second.",
-  "params": "2-frame holds",
+  "name_ar": "الشخصية في إطارها المحلي",
+  "name_en": "Character built in its own local frame",
+  "status": "proven",
+  "what": "ارسم الجسم حول أصله الخاص (قدميه أو رأسه) ثم ضعه وأدره وكبّره كمجموعة واحدة، فيسهل إعادة وضعه وتحريكه. / Design a body around its own origin, then place/rotate/scale it as one group.",
+  "how": "SVG: collect parts then wrap <g transform=\"translate(560 392) rotate(-16) scale(1.3)\"> with a blurred warm rim-glow ellipse behind (#fb923c rx 80 ry 54 at .55); Pillow scenes: whale W(x,y)/WS(shape) rotate along HEAD (700,290) → TAIL (1200,760); dragon girl xf() scales 1.4× around her feet (380,619). The whale scene passes the studio judge gate (test run here).",
+  "params": "translate/rotate/scale as one group",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
-   "style:pm-jake11moran-a269c4"
+   "kosif-one/projects/duck-vs-dragon/duck_dragon.py",
+   "kosif-studio/scenes/whale_dragon.py:46",
+   "kosif-studio/scenes/dragon_girl.py:288",
+   "kosif-studio/tests/test_studio.py:227"
+  ],
+  "styles": [],
+  "tags": [
+   "local coordinates",
+   "group transform",
+   "re-pose",
+   "إطار محلي"
+  ],
+  "when": "كل شخصية تُعاد في لقطات مختلفة / every character reused across shots."
+ },
+ {
+  "id": "CHAR-16",
+  "family": "characters-rigs",
+  "name_ar": "أدوات تفاصيل المخلوقات",
+  "name_en": "Creature detail builders",
+  "status": "ready",
+  "what": "جناح خفاش من عظام وغشاء متدلٍّ بين الأطراف، أشواك ظهر، صفائح بطن، وريشة منحنية / تشريح فوري للتنانين والطيور. — Bat wing, dorsal spikes, belly plates and feather leaves.",
+  "how": "wing(shoulder, elbow, wrist, tips, attach, sag=0.28) → (membrane, bones, veins): bone tubes 8/6/4.5, fingers 3.4 → 0.7, scallops of 12 samples, wrist claw; spikes(spine, radii, every, size) with height (4 + r·.45)·size; belly_plates(spine, radii) ribbed every 4th sample; leaf(base, tip, width, bend, n=10) for each feather of a spread wing.",
+  "params": "sag 0.28; scallop 12",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/scenes/dragon_girl.py:88",
+   "kosif-studio/scenes/dragon_girl.py:46",
+   "kosif-studio/scenes/duck_dragon.py:34",
+   "100-superskills/skills/pixel-studio-painter/scripts/scenes/dragon_girl.py"
+  ],
+  "styles": [],
+  "tags": [
+   "dragon",
+   "wing",
+   "spikes",
+   "feathers",
+   "تنين",
+   "مخلوقات"
+  ],
+  "when": "تنانين، طيور، كائنات خيالية / dragons, birds, fantasy creatures."
+ },
+ {
+  "id": "CHAR-17",
+  "family": "characters-rigs",
+  "name_ar": "الرجل العصوي الكوميدي",
+  "name_en": "Stickman comic style",
+  "status": "ready",
+  "what": "رجل عصوي مرن، بطاقات تسقط وتتكدس، وضربة كوميدية لنصيحة بمفارقة. / A flexible stick figure, cards that drop and stack, a comic beat with a twist.",
+  "how": "python3 tools/kosif.py scaffold stickman <dir> (SVG line rig with pivots, arcs, squash; on twos optional). Basma STY.stickman: 16:9, bright, 2.1 wps, Readex Pro, bg #FBF9F4, ink #1F2328, accent #F2C94C, floor #EFEAE0, colours #EB5757 / #F2C94C / #5B8DEF / #9B51E0 / #27AE60; sfx pop/hit/tick/shimmer; question lines end with ؟. style:stickman: pose keys with Easing.inOut(cubic) + procedural layers (breath 0.3 Hz 2 px, thumb scroll, leg kicks, 2-step walk); card flies to hand, flips at mid (250 ms), thrown 500 ms with ghosts, box squash, counter +1.",
+  "params": "2.1 wps; breath 0.3 Hz",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/stickman/SKILL.md",
+   "app/public/js/10_studio.js:504",
+   "kosif-tool/styles/stickman"
+  ],
+  "styles": [
+   "stickman",
+   "pm-devius-maximus-beab45",
+   "pm-marklaunches-3b9492",
+   "pm-chrisjdimarco-f068db"
+  ],
+  "tags": [
+   "stickman",
+   "رجل عصوي",
+   "comic",
+   "cards",
+   "tips"
+  ],
+  "when": "نصائح ومواقف ساخرة / tips and comic situations."
+ },
+ {
+  "id": "CHAR-18",
+  "family": "characters-rigs",
+  "name_ar": "تحريك رسمة واحدة بعظام",
+  "name_en": "2D mesh bone rig from one image",
+  "status": "seen",
+  "what": "تُقسم الرسمة إلى أجزاء وتُشوَّه شبكتها بنحو 16 عظمة، مع دورات رقص جيبية على الإيقاع. / Split an illustration into parts and deform its mesh with ~16 bones, sine dance cycles on the beat.",
+  "how": "parts on separate layers with pivots; per-bone rotation = A·sin(2π·(BPM/60)·t + φ) (150 BPM in the reference); mesh deform via a skinned plane (three.js SkinnedMesh or PIXI mesh) or per-part rotation if the drawing is flat; keep amplitudes small at joints to avoid tearing.",
+  "params": "~16 bones; 150 BPM",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-topi-003-b0e12c"
+  ],
+  "styles": [
+   "pm-topi-003-b0e12c"
+  ],
+  "tags": [
+   "mesh deform",
+   "bones",
+   "dance",
+   "puppet",
+   "عظام"
+  ],
+  "when": "تحريك رسمة المستخدم أو شخصية ثابتة / animating a user's drawing."
+ },
+ {
+  "id": "CHAR-19",
+  "family": "characters-rigs",
+  "name_ar": "أشياء بوجوه وتمائم",
+  "name_en": "Object-as-character faces & mascots",
+  "status": "seen",
+  "what": "حوّل أي شيء إلى شخصية بعينين لامعتين وحاجبين: بلاطة، كرة، فقاعة كلام، كتلة شوكية / مع رمش وانضغاط وتمايل. — Turn any object into a character with glossy eyes and brows.",
+  "how": "two glossy black spheres (metalness .6, roughness .15, radius ~8% of the tile width) slightly protruding + capsule brows animated in y/rotation; blink scaleY 100 ms every 2–4 s; egg sphere scale (1, 1.25, 1) with emissive orange and a headlamp point light, landing squash y .75 for 80 ms; speech-bubble blob with kawaii eyes, blush, bounce 1.1/0.9; spiky SVG blob idle wobble ±4° and scale .97–1.03 in a 1.2 s loop, 8–15% of frame, hopping between corners and reacting; googly eyes on everyday props.",
+  "params": "eye r ~8% tile; blink 100 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-anilraok-eff262",
+   "kosif-tool/styles/pm-gorden-sun-041f56",
+   "kosif-tool/styles/pm-anthonyriera-9b1b2a",
+   "kosif-tool/styles/pm-anas0ra-e57aea"
+  ],
+  "styles": [
+   "pm-anilraok-eff262",
+   "pm-gorden-sun-041f56",
+   "pm-anthonyriera-9b1b2a",
+   "pm-anas0ra-e57aea",
+   "pm-davidshulmanfl-371638"
+  ],
+  "tags": [
+   "mascot",
+   "googly eyes",
+   "object character",
+   "تميمة"
+  ],
+  "when": "تمائم العلامات، شرح ودود / brand mascots, friendly explainers."
+ },
+ {
+  "id": "CHAR-20",
+  "family": "characters-rigs",
+  "name_ar": "مسرح شخصية بديكور واحد",
+  "name_en": "Single-set character stage",
+  "status": "seen",
+  "what": "غرفة واحدة مرسومة كطبقات SVG، والشخصية بين ظهر المكتب وواجهته فتختفي ذراعاها خلفه طبيعيًا. / One illustrated room as SVG layers with the character between desk back and desk front.",
+  "how": "~6 layers (wall, window, props, desk back, character, desk front); character pivot at the desk line; characters on twos while UI elements stay smooth — never mix the two cadences on one element (steps(12) per second).",
+  "params": "~6 layers; 2-frame holds",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-jake11moran-a269c4",
+   "kosif-tool/styles/pm-jake11moran-a269c4/BRIEF.md"
   ],
   "styles": [
    "pm-jake11moran-a269c4"
   ],
-  "tags": [],
-  "id": "CHAR-132"
+  "tags": [
+   "set",
+   "stage",
+   "layers",
+   "desk",
+   "ديكور"
+  ],
+  "when": "سلسلة حلقات بنفس المكان / episodic series in one place."
  },
  {
+  "id": "CHAR-21",
   "family": "characters-rigs",
-  "name_ar": "شخصية ظلية",
-  "name_en": "Silhouette 2-3 joint rig",
-  "status": "idea",
-  "what": "Flat silhouettes with few joints, walk 12 frames/step at 24 fps cadence.",
-  "how": "Flat silhouettes with few joints, walk 12 frames/step at 24 fps cadence.",
-  "params": "12 frames/step",
+  "name_ar": "شخصيات ظلية مسطحة",
+  "name_en": "Flat silhouette characters",
+  "status": "seen",
+  "what": "شخصية بتعبئة داكنة واحدة ومفصلين أو ثلاثة، تُقرأ بالمحيط فقط أمام خلفية مضيئة. / A single dark-fill character with 2–3 joints, read only by outline.",
+  "how": "fill ~#0d0c0b, no internal detail, side profile (cap, long coat); walk 12 frames per step at 24 fps cadence; galloping silhouettes loop over speed lines; glowing stroke figures (lime with blur glow) for logos.",
+  "params": "#0d0c0b; 12 f/step",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
-   "style:pm-kamstudiolabs-0b0824"
+   "kosif-tool/styles/pm-kamstudiolabs-0b0824",
+   "kosif-tool/styles/pm-kamstudiolabs-0b0824/BRIEF.md",
+   "kosif-tool/styles/pm-utopyaszx-1b2f94"
   ],
   "styles": [
-   "pm-kamstudiolabs-0b0824"
+   "pm-kamstudiolabs-0b0824",
+   "pm-utopyaszx-1b2f94",
+   "pm-marklaunches-3b9492"
   ],
-  "tags": [],
-  "id": "CHAR-133"
+  "tags": [
+   "silhouette",
+   "flat",
+   "shadow",
+   "ظل"
+  ],
+  "when": "قصص هادئة وأجواء ليلية / quiet stories, night moods."
  },
  {
+  "id": "CHAR-22",
   "family": "characters-rigs",
-  "name_ar": "تميمة مطاطية",
-  "name_en": "Squash-stretch mascot",
-  "status": "idea",
-  "what": "Rubbery mascot with squash on landing, stretch at take-off, limb overlap.",
-  "how": "Back-out easing + scale keys.",
-  "params": "cubic-bezier(0.34,1.56,0.64,1); squash 80%, stretch 115%; limbs 60 ms overlap",
+  "name_ar": "تمائم البكسل والسبرايت",
+  "name_en": "Pixel & sprite mascots",
+  "status": "seen",
+  "what": "تميمة بكسل تمشي بتبديل رجلين وإطارين، وساحر بكسل يرفع عصاه بست خطوات، وتبديل الشخصية بنفخة دخان. / Pixel mascots with 2-frame leg swaps, stepped staff raises and smoke-puff swaps.",
+  "how": "walking brick sprite: two eyes, four legs, 2-frame leg swap + 2 px bob at ~6 fps, colour #d17c55, slides with the camera; wizard: walk, staff raise in 6 stepped frames, 2-frame hat overshoot, rune circle at 8 fps; class swap wizard → knight → rogue behind a 6–8 frame pixel smoke puff; index = floor(frame·fps_target/30) % n.",
+  "params": "6–8 fps; puff 6–8 f",
   "install": "",
-  "license": "owner",
+  "license": "",
   "proof": [
-   "style:pm-paulo-kombucha-96431c"
+   "kosif-tool/styles/pm-lemomo-ai-0d9cff",
+   "kosif-tool/styles/pm-0xevinho-3777d8",
+   "kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md"
   ],
   "styles": [
-   "pm-paulo-kombucha-96431c"
+   "pm-lemomo-ai-0d9cff",
+   "pm-0xevinho-3777d8"
   ],
-  "tags": [],
-  "id": "CHAR-134"
+  "tags": [
+   "pixel",
+   "sprite",
+   "mascot",
+   "retro",
+   "بكسل"
+  ],
+  "when": "ألعاب، تقنية، حنين ريترو / games, tech, retro nostalgia."
+ },
+ {
+  "id": "CHAR-23",
+  "family": "characters-rigs",
+  "name_ar": "تحولات الشخصية",
+  "name_en": "Character transformations & variants",
+  "status": "seen",
+  "what": "نفس الشخصية تكبر عبر مراحل بنفس الألوان، أو أجزاؤها تنفصل وتتركب في مواضعها مع اهتزاز الكاميرا عند التلامس. / The same character ages through variants, or its parts dock into slots with a contact shake.",
+  "how": "swap rig variants per stage keeping palette and silhouette cues; transform & dock: parts tween rotation/position into slots, camera shake 6 px for 150 ms on each contact (EASE-51 hitPulse).",
+  "params": "shake 6 px / 150 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-loicrambo-ad6830",
+   "kosif-tool/styles/pm-allforbigfire-86ff3c"
+  ],
+  "styles": [
+   "pm-loicrambo-ad6830",
+   "pm-allforbigfire-86ff3c"
+  ],
+  "tags": [
+   "transformation",
+   "aging",
+   "dock",
+   "تحول"
+  ],
+  "when": "قصص النمو، روبوتات تتجمع / growth stories, assembling robots."
+ },
+ {
+  "id": "CHAR-24",
+  "family": "characters-rigs",
+  "name_ar": "دورة المشي",
+  "name_en": "Walk cycle",
+  "status": "documented",
+  "what": "تلامس ← نزول ← عبور ← صعود، مع اهتزاز الجسم، والمشي في المكان مع خلفية تتحرك بسرعة الخطوة. / Contact-down-passing-up with body bob; walk in place with background parallax at stride speed.",
+  "how": "24 frames per two steps at 24 fps (12 per step); bob 3–5% of height; background speed = stride / 0.5 s; clip names, durations, loop flag and event markers (contact, footsteps); check body bob and limb separation; phase = f(t) so any frame renders directly; walk/idle/talk as functions of phase returning limb angles and body height with distinct contact and passing poses.",
+  "params": "12 f/step; bob 3–5%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/characters.md:27",
+   "kosif-atlas/skills/1526-gamegen/4162-game-animation/SKILL.md",
+   "100-superskills/skills/character-animation-2d/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "walk cycle",
+   "contact",
+   "passing",
+   "دورة المشي",
+   "gait"
+  ],
+  "when": "كل شخصية تمشي / every walking character."
+ },
+ {
+  "id": "CHAR-25",
+  "family": "characters-rigs",
+  "name_ar": "ساق مشي إجرائية",
+  "name_en": "Procedural walk-cycle leg",
+  "status": "proven",
+  "what": "ساق مرسومة كضربة منحنية، قدمها تتأرجح بجيب الطور وترتفع في النصف الأمامي فقط، والأرجل البعيدة أغمق، وأربع أرجل بإزاحة π تعطي مشية طبيعية. / A curved-stroke leg whose foot swings with sin(phase) and lifts only on the forward half.",
+  "how": "leg(x, phase, far): foot = x + 22·sin(phase), knee = x + 12·sin(phase), lift = max(0, cos(phase))·15; quadratic path stroke 23, round caps, paw stroke 15; step 1.5 Hz, bob cos(2p)·2 px, tail ±9° at half step rate, blink 0.095 s every 4 s; the 8 s loop walks right→left (x = 680 − 145t with a copy 1160 px behind). Captured frames here at 0 / 2 / 5.5 s with Playwright (window.render(t)) show the gait advancing. (code snippet in references/powers/characters-rigs.md)",
+  "params": "swing ±22 px; lift 15 px; 1.5 Hz",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.html",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.mp4"
+  ],
+  "styles": [],
+  "tags": [
+   "walk leg",
+   "quadruped",
+   "gait",
+   "cat",
+   "ساق"
+  ],
+  "when": "حيوانات رباعية مسطحة / flat quadrupeds."
+ },
+ {
+  "id": "CHAR-26",
+  "family": "characters-rigs",
+  "name_ar": "آلة حالات الوضعية",
+  "name_en": "Keyframed pose state machine",
+  "status": "proven",
+  "what": "تمثيل الشخصية كمقاطع زمنية: مشي، انحناء تمهيدي، قفزة بقوس، ضغط هبوط، مشي، ثم نظرة للأعلى / والأطراف تعاد وضعيتها لكل مقطع. — Character action as time segments with limbs re-posed per segment.",
+  "how": "pose(t): walk x = 430 + 59t (gait 1.12 Hz) until 4.1 s; crouch 14·smoothstep((t − 4.65)/0.55); jump u ∈ [5.2, 6.9] s: x 671.9 → 1050, height 147·4u(1 − u), body angle −14° → +12°; land crouch 18·sin; walk 48 px/s at 0.98 Hz; tail 12 sin 2.2t + 3 sin 5t; look = smoothstep((t − 9.7)/0.7) with a 3/4 look-back. Four legs separately articulated (stance 60% of cycle, swing lift 21·sin(πv)). Frame captured here at 5.5 s shows the cat mid-leap over the puddle.",
+  "params": "apex 147 px; flight 1.7 s; 1.12 → 0.98 Hz",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:59",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/midnight-cat.mp4"
+  ],
+  "styles": [],
+  "tags": [
+   "pose state machine",
+   "jump",
+   "crouch",
+   "acting",
+   "آلة حالات"
+  ],
+  "when": "مشهد قصير بقصة حركية / a short scene with a physical story."
+ },
+ {
+  "id": "CHAR-27",
+  "family": "characters-rigs",
+  "name_ar": "مولد المشي للسبرايت",
+  "name_en": "Procedural sprite walk generator",
+  "status": "documented",
+  "what": "دالة رسم واحدة بمعاملات زوايا الأطراف وطور الخطوة واهتزاز الجسم وأرجحة الذراع والضغط تبقي كل إطار على النموذج. / One draw(direction, pose) function keeps every frame on-model.",
+  "how": "Python/Pillow or canvas; proportion presets chibi / standard / tall; walk 4–8 frames, bob 1 px; RPG-style 3 patterns 0-1-2-1; mirror the side view only if symmetric and shade after mirroring with light from top-left.",
+  "params": "4–8 frames; bob 1 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9525-animate"
+  ],
+  "styles": [],
+  "tags": [
+   "sprite walk",
+   "pixel",
+   "procedural",
+   "chibi"
+  ],
+  "when": "شخصيات بكسل وألعاب / pixel characters, games."
+ },
+ {
+  "id": "CHAR-28",
+  "family": "characters-rigs",
+  "name_ar": "الوضعيات المفتاحية أولًا",
+  "name_en": "Pose-to-pose blocking",
+  "status": "documented",
+  "what": "ضع الوضعيات المفتاحية ثم الوسيطة، كل 8–16 إطارًا. / Block keys, then breakdowns.",
+  "how": "keys every 8–16 frames at 24–30 fps; stick rig: joint angles per pose interpolated easeInOut over 400 ms, hold 1 s; follow-through 2–4 frames, anticipation 4–8 frames (EASE-49).",
+  "params": "keys 8–16 f; 400 ms + 1 s hold",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/characters.md:24",
+   "kosif-tool/styles/pm-chrisjdimarco-f068db"
+  ],
+  "styles": [
+   "pm-chrisjdimarco-f068db"
+  ],
+  "tags": [
+   "pose to pose",
+   "blocking",
+   "keys",
+   "وضعيات"
+  ],
+  "when": "كل تمثيل شخصية / all character acting."
+ },
+ {
+  "id": "CHAR-29",
+  "family": "characters-rigs",
+  "name_ar": "لحظة رد الفعل",
+  "name_en": "Reaction beat recipe",
+  "status": "documented",
+  "what": "هبوط، قفزة، هبوط بانضغاط، متابعة للشعر، ثبات متنفس. / Sink, jump, land with squash, hair follow-through, breathing hold.",
+  "how": "0–200 ms sink 4% ease-in sine; 200–450 ms jump ease-out cubic; 450–700 ms land squash 8% on a spring (damping 12, stiffness 200); 450–800 ms follow-through; 800–2000 ms breathing hold. Hop with anticipation: 120 ms crouch, squash .80–.85 / stretch 1.15, landing cubic-bezier(.34,1.56,.64,1) 450 ms, limbs overlap 60 ms, area preserved (sx·sy = 1).",
+  "params": "0/200/450/700/800/2000 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/characters.md:36",
+   "kosif-tool/styles/pm-abderrahmen-g-9e8ed0/BRIEF.md",
+   "kosif-tool/styles/pm-paulo-kombucha-96431c/BRIEF.md"
+  ],
+  "styles": [],
+  "tags": [
+   "reaction",
+   "jump",
+   "squash",
+   "رد فعل",
+   "hop"
+  ],
+  "when": "دهشة، فرح، اكتشاف / surprise, joy, discovery."
+ },
+ {
+  "id": "CHAR-30",
+  "family": "characters-rigs",
+  "name_ar": "الإشارة والكشف",
+  "name_en": "Point and reveal",
+  "status": "documented",
+  "what": "الذراع تمتد على قوس، والهدف يقفز بعد توقف الإصبع بـ 80 ملّي ثانية. / The arm extends on an arc; the target pops 80 ms after the finger stops.",
+  "how": "arm 350 ms on an arc; target pops at +80 ms; Basma 'character' template: hop in, point at 3 cards, react, wave (circle body, dot eyes, squash & stretch, anticipation, blinking, reacting to on-screen text).",
+  "params": "arm 350 ms; +80 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/characters.md:50",
+   "app/public/js/00_editor.js:2007"
+  ],
+  "styles": [],
+  "tags": [
+   "point",
+   "reveal",
+   "present",
+   "إشارة"
+  ],
+  "when": "شخصية تقدم بطاقات أو ميزات / a character presenting cards."
+ },
+ {
+  "id": "CHAR-31",
+  "family": "characters-rigs",
+  "name_ar": "الحديث للكاميرا",
+  "name_en": "Talk-to-camera behaviours",
+  "status": "documented",
+  "what": "ميل الرأس على النبر، رمش دوري، والفم من توقيت الأصوات. / Head tilts on stress, periodic blinks, mouth from phoneme timing.",
+  "how": "tilt ±3° on stressed words (from the emphasis picker ARAB-68 / words.json), blink every 2.5–4 s with a 3-frame blink, mouth index from word timing (CHAR-13); add a small head nod on sentence ends.",
+  "params": "±3°; blink 2.5–4 s, 3 f",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/characters.md:48"
+  ],
+  "styles": [],
+  "tags": [
+   "talking",
+   "lip sync",
+   "blink",
+   "tilt",
+   "كلام"
+  ],
+  "when": "شخصية تشرح بصوت المستخدم / a character narrating the user's voice."
+ },
+ {
+  "id": "CHAR-32",
+  "family": "characters-rigs",
+  "name_ar": "ظهور التمائم وقفزاتها",
+  "name_en": "Mascot pop-ins & hop arcs",
+  "status": "seen",
+  "what": "الشخصيات تصعد من خلف الأفق بتجاوز، أو تقفز بداخل دائرة ملونة، أو تقفز على قوس منقط. / Characters rise from behind a hill, pop in on a colour disc, or hop along a dotted parabola.",
+  "how": "horizon rise: masked below the hill line, 350 ms easeOutBack(1.6), stagger 150–250 ms left→right (start right for Arabic), then idle bob ±3 px; disc pop: cut-out PNG 0.8 → 1.05 → 1 in 300 ms while a pastel circle grows 400 ms, name pill 'الاسم: الدور' below; hop arc ~1 s along a dotted parabola drawn trailing behind, landing squash.",
+  "params": "350 ms backOut 1.6; pop 300 / disc 400 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-abderrahmen-g-9e8ed0",
+   "kosif-tool/styles/pm-paulo-kombucha-96431c",
+   "kosif-tool/styles/pm-kangaroohere-b10f8d"
+  ],
+  "styles": [
+   "pm-abderrahmen-g-9e8ed0",
+   "pm-paulo-kombucha-96431c",
+   "pm-kangaroohere-b10f8d"
+  ],
+  "tags": [
+   "pop in",
+   "horizon",
+   "mascot intro",
+   "قفزة"
+  ],
+  "when": "تقديم شخصيات أو فريق / introducing characters or a team."
+ },
+ {
+  "id": "CHAR-33",
+  "family": "characters-rigs",
+  "name_ar": "لمسات تمثيل",
+  "name_en": "Acting accents: celebrate, sleep, run",
+  "status": "seen",
+  "what": "مزج من وضعية الركوب إلى بسط الجناحين بتجاوز، حروف Z طافية للنوم، وعدّاء بتمويه حركة يقفز الحواجز. / Celebration blends, floating Z glyphs, a motion-blurred hurdler.",
+  "how": "celebration: blend riding → wings-spread over ~0.8 s back.out (wing rotation ~70°), hold, return; sleep: Z glyphs rise, scale up and fade, stagger 250 ms; runner: 8-frame cycle along a baseline, jump arc 400 ms, directional blur (EASE-61).",
+  "params": "0.8 s; Z stagger 250 ms; cycle 8 f",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-axtonliu-0b861d",
+   "kosif-tool/styles/pm-cansincengiz-me-cf68dd",
+   "kosif-tool/styles/pm-fionntobin-97b7af"
+  ],
+  "styles": [
+   "pm-axtonliu-0b861d",
+   "pm-cansincengiz-me-cf68dd",
+   "pm-fionntobin-97b7af"
+  ],
+  "tags": [
+   "celebrate",
+   "sleep",
+   "run",
+   "acting",
+   "تمثيل"
+  ],
+  "when": "ختام فرح، شخصية نائمة، رياضة / happy endings, sleepy characters, sports."
+ },
+ {
+  "id": "CHAR-34",
+  "family": "characters-rigs",
+  "name_ar": "مبادئ التحريك للهياكل",
+  "name_en": "Animation principles for rigs",
+  "status": "documented",
+  "what": "تمهيد، ضغط عند الهبوط، متابعة للشعر والقماش، أقواس، وحجم ثابت / ولحظة الاصطدام تُثبَّت. — Anticipation, landing squash, hair/cloth follow-through, arcs, constant volume; hold impact frames.",
+  "how": "locomotion needs contact / passing / extreme poses with planted feet; actions need readable anticipation, contact and recovery (player-facing attacks avoid long anticipation); hold the impact frame; keep volumes constant; verify encoded frame count, fps and duration after render.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1526-gamegen/4162-game-animation/SKILL.md",
+   "100-superskills/skills/character-animation-2d/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "principles",
+   "anticipation",
+   "follow-through",
+   "arcs",
+   "مبادئ"
+  ],
+  "when": "مراجعة أي حركة شخصية / reviewing any character motion."
+ },
+ {
+  "id": "CHAR-35",
+  "family": "characters-rigs",
+  "name_ar": "الشخصية العربية تدخل من اليمين",
+  "name_en": "RTL character staging",
+  "status": "documented",
+  "what": "في الأفلام العربية تدخل الشخصيات من اليمين وتنظر يسارًا، وفقاعات الكلام تحمل جملًا عربية كاملة من اليمين. / In Arabic films characters enter from the right and look left; bubbles hold whole RTL phrases.",
+  "how": "mirror the staging plan (entrances, look direction, reading path); balloons pop with a spring and contain whole shaped phrases (never per letter); stagger group entrances right → left.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/characters.md:75"
+  ],
+  "styles": [],
+  "tags": [
+   "RTL",
+   "staging",
+   "speech bubble",
+   "عربي",
+   "اتجاه"
+  ],
+  "when": "كل فيلم شخصيات عربي / every Arabic character film."
+ },
+ {
+  "id": "CHAR-36",
+  "family": "characters-rigs",
+  "name_ar": "حياة الخمول",
+  "name_en": "Idle life (breath, blink, glances)",
+  "status": "ready",
+  "what": "تنفس صغير، تمايل الرأس على عدة موجات، رمش مجدول، أذنان وذيل / كلها دالة للزمن. — Breathing, head sway, scheduled blinks, ears and tail as a pure function of t.",
+  "how": "K3.idle(root, t, {amount, phase}): breath ±1.2% at 2.2 rad/s, blink every 3.7 s lasting 0.3 s, ears ±.12 rad at 2.6, tail ±.35 rad at 3.1; bunny project: breath .006·sin(2π·0.9t), head (.05 sin 1.7t, .12 sin(1.1t + .5), .05 sin 1.3t), blink windows 1.18–1.34 s and 4.62–4.76 s with eye scaleY 1 − .85·bl, a 0.25 rad head turn toward camera at its stop; 2D moving hold: torso scale 1–2% over 2 s.",
+  "params": "breath 0.6–1.2%; blink /3.7 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/lab-kit.js:280",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:118",
+   "kosif-tool/playbooks/characters.md:28"
+  ],
+  "styles": [],
+  "tags": [
+   "idle",
+   "breathing",
+   "blink",
+   "moving hold",
+   "تنفس",
+   "رمش"
+  ],
+  "when": "أي ثبات للشخصية / any character hold."
+ },
+ {
+  "id": "CHAR-37",
+  "family": "characters-rigs",
+  "name_ar": "حركة ثانوية بالنوابض",
+  "name_en": "Spring-rig secondary motion",
+  "status": "ready",
+  "what": "مجموعات مفاصل تقودها نوابض (تردد وتخميد) لارتخاء الأذن وارتداد الذيل، تحت حد سرعة. / Pivot groups driven by frequency/ζ springs under a speed gate.",
+  "how": "angle = A·(1 − spring(t, t0, f, ζ)) on each pivot (EASE-25); ear flop f 1.5 Hz ζ 0.42 passes; f 2.2 Hz ζ 0.28 failed the 80 px/frame gate at 1080×1920 — measure with motion.py speed (EASE-60).",
+  "params": "1.5 Hz ζ .42 ok; 2.2/.28 fails",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/shape-kit.md",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js"
+  ],
+  "styles": [],
+  "tags": [
+   "secondary motion",
+   "spring",
+   "ears",
+   "follow through",
+   "حركة ثانوية"
+  ],
+  "when": "آذان، ذيول، شعر، إكسسوارات متدلية / ears, tails, hair, dangling props."
+ },
+ {
+  "id": "CHAR-38",
+  "family": "characters-rigs",
+  "name_ar": "فراشة ويراعة مرافقة",
+  "name_en": "Winged companions (butterfly, firefly)",
+  "status": "proven",
+  "what": "فراشة متوهجة ترشد البطل: جناحاها يرفرفان بتحجيم أفقي وتتمايل على مسار جيبي بهالة سماوية. / A glowing butterfly leads the hero, flapping by horizontal scale on a sine path.",
+  "how": "wing scaleX = |sin(2π·4.5t)|·0.85 + 0.13; y = 348 − 20 sin 1.8t − 48·smooth((t − 4.2)/1.8) + 55·smooth((t − 7)/2); fill #86fff0 at .87, halo r 28; firefly: oval body, big eyes, flap 8 Hz, radial-gradient glow on the tail. Visible in the frame captured here at 5.5 s.",
+  "params": "4.5 Hz (butterfly), 8 Hz (firefly)",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:107",
+   "kosif-tool/styles/pm-kamstudiolabs-c9bb28"
+  ],
+  "styles": [
+   "pm-kamstudiolabs-c9bb28"
+  ],
+  "tags": [
+   "butterfly",
+   "firefly",
+   "wing flap",
+   "companion",
+   "فراشة"
+  ],
+  "when": "مرشد صغير في مشهد ليلي / a small guide in night scenes."
+ },
+ {
+  "id": "CHAR-39",
+  "family": "characters-rigs",
+  "name_ar": "سرب طيور",
+  "name_en": "Flock of birds",
+  "status": "ready",
+  "what": "طيور على شكل V مكررة بالمثيلات ترفرف في الشيدر وتتبع مسارًا مفتاحيًا. / Instanced V-shaped birds flapping in a shader along a keyed path.",
+  "how": "K3.makeFlock({n:18, path:[[t,x,y,z],…], t0, t1, spread:120, size:9, color:'#1a1d22', seed}); mesh.userData.set(t); flap sin(t·9).",
+  "params": "n 18; spread 120; flap sin 9t",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:203"
+  ],
+  "styles": [],
+  "tags": [
+   "birds",
+   "flock",
+   "instancing",
+   "سرب"
+  ],
+  "when": "سماء حية، غروب، رحلة / living skies, sunsets, journeys."
+ },
+ {
+  "id": "CHAR-40",
+  "family": "characters-rigs",
+  "name_ar": "الأرنب القطيفة المنحوت",
+  "name_en": "SDF plush bunny (rigged)",
+  "status": "proven",
+  "what": "أرنب لطيف منحوت إجرائيًا بأجزاء مفصلية مسماة (جسم، رأس، أذنان، ذيل، عينان، فم، وشاح) وعيون موضوعة بإصابة الأشعة. / A procedurally sculpted plush bunny with named rig parts.",
+  "how": "const b = K3S.bunny({fur:'#f2e4d8', belly:'#fbf3ea', pink:'#ff9fb8', nose:'#ff7c9c', scarf:'#7fe7b4', cells:132}); animate b.parts.head / earL / earR / tail rotations (neck pivot [0, .152, .004], ears pivot from the skull); ~0.33 m tall; stage disc (r .24, #9dffb4, shadow .5) and studio backdrop (#22504a / #0d2627 / #040b0c); 'w' mouth and stitches as Catmull-Rom tubes (32 segments, r 1.1 mm). test_shape_kit passed here (96 cells > 50,000 triangles; 183,752 triangles at full res, ~4.6 s mesh time).",
+  "params": "~0.33 m; 132 cells",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/shape-kit.js:453",
+   "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:40",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:29"
+  ],
+  "styles": [],
+  "tags": [
+   "bunny",
+   "SDF",
+   "plush",
+   "rigged",
+   "3D mascot",
+   "أرنب"
+  ],
+  "when": "تميمة ثلاثية الأبعاد، قصص أطفال، إعلانات لطيفة / 3D mascots, kids' stories."
+ },
+ {
+  "id": "CHAR-41",
+  "family": "characters-rigs",
+  "name_ar": "عيون لامعة وعيون برمش",
+  "name_en": "Glossy & blinking eyes",
+  "status": "ready",
+  "what": "مقلة لامعة بحلقة قزحية دافئة ونقطتي ضوء، أو عين بطبقات (صلبة، قزحية مضيئة، بؤبؤ، قرنية) برمش. / Glossy eyeballs with two catch-lights, or layered eyes with a blink.",
+  "how": "K3S.eye({r:.012, tall:1.12, color, iris:'#5a3a2c'}) — iris at 55%, catch-lights .3r and .14r upper-outer, gloss roughness .08, clearcoat 1, ior 1.5, env 1.6; K3.makeEye(r, {iris}): sclera #f4f6f2, iris #8fe02a (emissive 12%), pupil #05070a, cornea opacity .22; eye.userData.blink(k) scales y by 1 − .92k.",
+  "params": "r .012; catch-lights .3/.14 r",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/shape-kit.js:311",
+   "kosif-studio/motion/kit/lab-kit.js:56"
+  ],
+  "styles": [],
+  "tags": [
+   "eyes",
+   "catch-light",
+   "blink",
+   "glossy",
+   "عيون"
+  ],
+  "when": "كل شخصية ثلاثية الأبعاد / every 3D character."
+ },
+ {
+  "id": "CHAR-42",
+  "family": "characters-rigs",
+  "name_ar": "أرنب وأسد المختبر",
+  "name_en": "Lab rabbit & lion characters",
+  "status": "ready",
+  "what": "حيوانان قطيفة بمفاصل مسماة وفرو بطبقات قشرية على أرضية استوديو كريمية، مع HUD يسمي الأجزاء ومبادلة أجزاء. / Two plush animals with named joints and shell fur on a cream sweep, with a part-naming HUD.",
+  "how": "K3.makeRabbit({color:'#f1f0ea', inner:'#f3b6c0', iris:'#3a7bd5', furLength:.09, layers:7}); K3.makeLion({color:'#e3b05a', mane:'#8a4a1c', iris:'#d9a21b', muzzle:'#f5e2b8', furLength:.07, layers:8, mane ×2.6, gravity .5}); root.userData.joints; studio(scene); labPost(renderer, …, {bloom:0}); six HUD beats SHAPE → JOINT → LOAD → BREAK → SWAP → RANK; swap: rabbit tail colour lerps to 0x8a4a1c and scales 1 + .45·sw over 16.4–17.2 s; materials leather 0x15171a, metal 0xd8dde3; motion.py new NAME --lab scaffolds it (960×540, 24 fps, 20 s).",
+  "params": "fur .07–.09; 7–8 layers",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/lab-kit.js:74",
+   "kosif-studio/motion/kit/lab-kit.js:101",
+   "kosif-studio/motion/projects/lab_rabbit_lion/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "rabbit",
+   "lion",
+   "shell fur",
+   "lab",
+   "joints",
+   "أسد"
+  ],
+  "when": "شرح «كيف صُنع»، مقارنة، علوم للأطفال / 'how it's made', comparisons, kids' science."
+ },
+ {
+  "id": "CHAR-43",
+  "family": "characters-rigs",
+  "name_ar": "سمكة كوي إجرائية",
+  "name_en": "Procedural koi",
+  "status": "ready",
+  "what": "سمكة كوي بجسم مرفوع وزعانف وجلد بنقوش حراشف ببذرة في أربعة أنواع، وانحناء سباحة يميل في المنعطفات. / A lofted koi with seeded scale skin in four varieties and a swim bend that leans into turns.",
+  "how": "const k = K3.makeKoi({length:.62, seed, kind:'kohaku'|'sanke'|'showa'|'ogon', amp:.11, caustics}); k.userData.set(t, path(t, out), 1.6); 28 rings × 18 segments, skin 256 px, clearcoat .6; base #f4eee4 (ogon #e8be5a), red #e25620 (showa #c4341c), black #181618.",
+  "params": ".62 m; swim 1.6 Hz; amp .11",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:629",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:613"
+  ],
+  "styles": [],
+  "tags": [
+   "koi",
+   "fish",
+   "swim",
+   "procedural",
+   "سمكة"
+  ],
+  "when": "برك، حدائق يابانية، هدوء / ponds, calm scenes."
+ },
+ {
+  "id": "CHAR-44",
+  "family": "characters-rigs",
+  "name_ar": "شخصيات من أشكال أولية",
+  "name_en": "Primitive toon figures",
+  "status": "ready",
+  "what": "شخصيات كرتونية من كرات وكبسولات بعيون كبيرة ومفاصل هرمية، أو صياد من الخلف يكفي ليُقرأ إنسانًا. / Toon characters from spheres and capsules with hierarchical joints.",
+  "how": "fisherman: torso Capsule(.2, .42) rotated −.18, head sphere .13 + half-sphere cap 0xcfc6b2, leg capsules, rod cylinder .008 → .02 oriented by a quaternion base → tip, Line to the water; toon material + big eyes for cartoon figures; keep pivots at joints for rotation.",
+  "params": "capsule .2/.42; head .13",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:96",
+   "kosif-tool/styles/pm-ryzoft-4f85bd"
+  ],
+  "styles": [
+   "pm-ryzoft-4f85bd"
+  ],
+  "tags": [
+   "primitive",
+   "toon",
+   "capsule",
+   "figure",
+   "شخصيات بسيطة"
+  ],
+  "when": "مشاهد ثلاثية الأبعاد سريعة تحتاج إنسانًا / quick 3D scenes needing a figure."
+ },
+ {
+  "id": "CHAR-45",
+  "family": "characters-rigs",
+  "name_ar": "دوران 360 لورقة الشخصية",
+  "name_en": "Turntable character sheet",
+  "status": "ready",
+  "what": "الكاميرا تتوقف أمام وجانب وظهر وجانب الشخصية بثبات، كورقة دوران قبل التحريك. / Camera steps front, side, back, side with holds, like a turnaround sheet.",
+  "how": "K3.shot('turntable', {subject, size, t0, t1}): 4 quarter turns, each holding 70% of its quarter and turning in the last 30%; frame at 80% of height; render once and show the user as a contact sheet.",
+  "params": "4 holds; turn in last 30%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:1066",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1067"
+  ],
+  "styles": [],
+  "tags": [
+   "turntable",
+   "360",
+   "character sheet",
+   "دوران"
+  ],
+  "when": "اعتماد الشخصية مع المستخدم قبل الفيلم / approving a character before the film."
+ },
+ {
+  "id": "CHAR-46",
+  "family": "characters-rigs",
+  "name_ar": "جسد من الجسيمات بحركة حقيقية",
+  "name_en": "Particle body from real motion (mocap)",
+  "status": "ready",
+  "what": "مؤدٍّ مصوّر بكاميرا ثابتة يصبح جسيمات متوهجة داخل ظله مع أشباح متتبعة. / A performer on a fixed camera becomes glowing particles inside the silhouette, with tracer ghosts.",
+  "how": "python motion.py mocap VIDEO --out body.json [--points 1200] (background difference, threshold 28, coords 0..1000; OpenCV 5.0 is installed here) → K3.makeParticleBody(json, {height:4, depth:.35, ghosts:3, ghostStep:3, color:'#ffb36b', size:26}); userData.set(t, pulse); ghost alpha .35/k.",
+  "params": "1200 pts; 3 ghosts every 3 f",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:938",
+   "kosif-studio/motion/motion.py",
+   "100-superskills/skills/kosif-montage-motion/scripts/qa.py:605"
+  ],
+  "styles": [],
+  "tags": [
+   "mocap",
+   "particle body",
+   "silhouette",
+   "dance",
+   "جسيمات"
+  ],
+  "when": "رقص، رياضة، لحظة سحرية / dance, sport, magical moments."
+ },
+ {
+  "id": "CHAR-47",
+  "family": "characters-rigs",
+  "name_ar": "تمثيل الشخصيات بلوتي",
+  "name_en": "Lottie character acting",
+  "status": "install",
+  "what": "تمثيل الشخصية (مشي، توقف، إشارة، سكون) في ملف Lottie واحد، وGSAP يملك البطاقات والكاميرا موقوتة على علامات الملف. / The character's acting lives in one Lottie; GSAP owns cards and camera timed to its markers.",
+  "how": "lottie-web or dotLottie player registered for seeking (goToAndStop(frame, true) from seek(t)); read beat times from markers (tm frames / fr); 1 s walk cycle loop:true moved with GSAP x matched to stride; offset actions inside the file; HyperFrames block lottie-character-walk (planted feet, stops and points at a card, 7.5 s); license the character.",
+  "params": "walk loop 1 s; block 7.5 s",
+  "install": "npm i lottie-web",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/lottie.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/lottie-character-walk/lottie-character-walk.html"
+  ],
+  "styles": [],
+  "tags": [
+   "lottie",
+   "after effects",
+   "walk",
+   "character acting",
+   "لوتي"
+  ],
+  "when": "شخصية مصممة في After Effects أو مرخصة / AE-made or licensed characters."
+ },
+ {
+  "id": "CHAR-48",
+  "family": "characters-rigs",
+  "name_ar": "لوحات الكوميكس",
+  "name_en": "Comics panels",
+  "status": "ready",
+  "what": "قصة في لوحات بفواصل وفقاعات كلام، والكاميرا تتنقل بين اللوحات. / A story in comic panels with gutters and balloons; the camera travels panel to panel.",
+  "how": "python3 tools/kosif.py scaffold comics-panels <dir>; Canvas/SVG panel grid, each panel a scene with a pose-to-pose rig (keys every 8–16 frames, anticipation 4–8 frames); camera rig pans between panels; balloons pop with a spring and hold whole Arabic phrases; ink outlines. Panels generated without text, bubbles drawn in code (ARAB-09).",
+  "params": "keys 8–16 f",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/comics-panels/SKILL.md",
+   "kosif-tool/styles/comics-panels/STYLE.json",
+   "kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b"
+  ],
+  "styles": [
+   "comics-panels"
+  ],
+  "tags": [
+   "comics",
+   "panels",
+   "speech balloons",
+   "كوميكس"
+  ],
+  "when": "قصص قصيرة وحكايات تعليمية / short stories, lessons."
+ },
+ {
+  "id": "CHAR-49",
+  "family": "characters-rigs",
+  "name_ar": "أنمي أكشن",
+  "name_en": "Anime action",
+  "status": "ready",
+  "what": "أكشن مستوحى من الأنمي: خطوط سرعة، إطارات اصطدام، لطخات حركة. / Speed lines, impact frames and smears.",
+  "how": "python3 tools/kosif.py scaffold anime-action <dir>; 2D rig + smear frames, speed-line overlays, camera shake; anticipation 4–8 frames, overshoot 5–10%; hold impact frames 2–3 frames with an inverted flash; original designs only.",
+  "params": "anticipation 4–8 f; overshoot 5–10%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/anime-action/SKILL.md",
+   "kosif-tool/styles/anime-action/STYLE.json"
+  ],
+  "styles": [
+   "anime-action"
+  ],
+  "tags": [
+   "anime",
+   "action",
+   "smear",
+   "speed lines",
+   "impact frame",
+   "أنمي"
+  ],
+  "when": "لحظات قتال أو انطلاق رياضي / fights, sports bursts."
+ },
+ {
+  "id": "CHAR-50",
+  "family": "characters-rigs",
+  "name_ar": "صفحات ويبتون بشخصيات حيوانية",
+  "name_en": "Webtoon pages with Arabic overlay",
+  "status": "key",
+  "what": "أوصاف شخصيات حيوانية ثابتة تُكرر حرفيًا في كل وصف، خلفية بيضاء، والحوار طبقة SVG قابلة للتحرير بعربية صحيحة. / Fixed animal character descriptions repeated verbatim, white background, dialogue as an editable SVG overlay.",
+  "how": "art from an image model (needs a key) with no text; dialogue balloons and Arabic lettering drawn in SVG over the panels; animate panels with gentle push-ins and balloon pops.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b"
+  ],
+  "styles": [],
+  "tags": [
+   "webtoon",
+   "chibi",
+   "kids",
+   "dialogue overlay",
+   "ويبتون"
+  ],
+  "when": "قصص أطفال مصورة / illustrated kids' stories."
  }
 ]

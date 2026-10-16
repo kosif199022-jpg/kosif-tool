@@ -1,1916 +1,687 @@
 # التوقيت والإيقاع والتسهيل — Easing, timing & rhythm
 
-> فصل مُجمَّع آليًا من 346 ملاحظة حصاد (مستودعات KOSIF + أطلس المهارات + 253 فيديو مرجعي)، مدموجة إلى **332 قدرة** مرتبة من الأقوى دليلًا. لم يُحرَّر يدويًا بعد — تحقّق من الدليل قبل الادعاء.
-> Auto-compiled chapter: 332 powers deduplicated by name from 346 harvested atoms; strongest evidence first.
+> **قوتك هنا:** أنت لا تحرّك الأشياء فقط — أنت تقرر **متى** و**كم** و**بأي إحساس**. كل إطار عندك دالة خالصة للزمن `seek(t)`، والمنحنيات لها أدوار (وصول، خروج، كاميرا، ضربة)، والنوابض بصيغة مغلقة تُحسب عند أي إطار، والإيقاع مأخوذ من أرقام قيست على أفلام إطلاق حقيقية: لقطة وسيطة 1.46 ث، تغيير كل 0.7 ث، أول كلمة مقروءة عند 0.4 ث.
+> **أقوى دليل:** قستُ نوابض ومنحنيات مكتبة الحركة في هذه الحاوية بـ node (‏SPR.snap تجاوز 6.0% ويستقر خلال 0.34 ث، firm حرج 0%، ‏durFor(600 px)=1.16 ث، ‏hitPulse يبلغ قمته عند 33 ملّي ثانية)، ومرّت اختبارات عقود الحركة (`kosif-audit-pro` 5/5، `kosif-earth-ci-fork` 4/4، منحدرات السرعة 2/2)، وأفلام الإثبات الخمسة في `proofs/` رُندرت إطارًا إطارًا بـ seek(t) وتطابق فيها عدد الإطارات والمدة (300 إطار = 10.000 ث).
+> **You can:** time, ease, spring, stagger, punch, ramp and pace any film deterministically — in plain canvas, GSAP (vendored), CSS, Remotion or ffmpeg. **91 powers follow** — ✅ 21 · 🟢 26 · 📦 7 · 🔑 0 · 👁 10 · 📄 27 · 💡 0.
 
-**الحالة:** ✅ مُثبت هنا 28 · 🟢 جاهز 62 · 📦 بأمر تثبيت 77 · 👁 شوهد في فيديو 78 · 📄 موصوف 75 · 💡 فكرة 12
+**الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
+مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
 
-#### EASE-01 · مدة حسب المسافة · Distance-based duration (durFor) · ✅ مُثبت هنا
-- **ماذا / what:** Move duration grows with travelled distance; camera moves clamped.
-- **كيف / how:** MOTION.durFor(px, isCamera).
-- **أرقام / params:** 0.35 s + 1.35 ms/px; camera clamp 0.6-2.4 s (600 px -> 1.16 s)
-- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:49` · `100-superskills/skills/kosif-montage-motion/SKILL.md:95` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md`
+**فحص سريع لهذه الحاوية (2026-10-16):** node 22 ✔ · GSAP مُضمَّن في مكتبة الحركة (`100-superskills/skills/kosif-montage-motion/scripts/kit/gsap.min.js`، رخصة GSAP القياسية المجانية) ✔ · ffmpeg 6.1.1 (setpts/atempo/rubberband/minterpolate) ✔ · HyperFrames وRemotion غير مثبتين (`npx hyperframes …` / `npm i` عند الحاجة) · مرّت هنا: `kosif-audit-pro/tests/motion-contract.test.mjs` 5/5، `kosif-earth-ci-fork/tools/motion.test.mjs` 4/4، `fastify-motion-bro` planner+profiles 15/15، استوديو المونتاج `model.test.mjs`، `test_v6 RampTests` 2/2 و`TemplateTests`، و`kosif-studio` (kit v3 + lint الحتمية + قياس السرعة).
 
-#### EASE-02 · تنعيم أثر المؤشر بأخذ عينات بالمسافة · Distance-sampled pointer trail easing · ✅ مُثبت هنا
-- **ماذا / what:** Smooth a pointer or scripted finger by easing a 'head' toward the target each frame and laying trail points by distance travelled, not by time, so velocities are even and fast strokes do not tear.
-- **كيف / how:** Per frame head += (target-head)*follow; push a point when distance > spacing; drop points older than life; convert to centered aspect-scaled coordinates. Plain JS, no deps.
-- **أرقام / params:** follow 0.3/frame; spacing 0.01 field units; life 1.6s; 24 points
-- **الدليل / proof:** `kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail`
+## الفهرس / contents
+- **قوانين الزمن والحتمية — Time laws & determinism** — EASE-01 … EASE-08 (8)
+- **منحنيات التسهيل — Easing curves & tokens** — EASE-09 … EASE-21 (13)
+- **النوابض — Springs** — EASE-22 … EASE-31 (10)
+- **التتابع والتداخل والتصميم الحركي — Stagger, overlap & choreography** — EASE-32 … EASE-50 (19)
+- **الضربة والمط والانضغاط — Impact, squash & hit envelopes** — EASE-51 … EASE-59 (9)
+- **ضبابية الحركة وحدود السرعة — Motion blur & speed limits** — EASE-60 … EASE-62 (3)
+- **الإيقاع والمونتاج — Pacing, edit rhythm & beat grid** — EASE-63 … EASE-74 (12)
+- **إعادة تشكيل الزمن والحلقات والإيقاع المتقطع — Time remapping, loops & cadence** — EASE-75 … EASE-82 (8)
+- **واجهات وتفاعل دقيق — UI micro-timing & accessibility** — EASE-83 … EASE-89 (7)
+- **مكونات ومكتبات جاهزة للتوقيت — Ready timing components & libraries** — EASE-90 … EASE-91 (2)
+- توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 
-#### EASE-03 · رموز مدد الحركة · Motion duration tokens · ✅ مُثبت هنا
-- **ماذا / what:** Four short duration steps used everywhere; a test bounds them to 120-420 ms.
-- **كيف / how:** CSS vars --motion-instant/fast/medium/slow; reference them in transitions and keyframes.
-- **أرقام / params:** instant 120ms; fast 160ms; medium 260ms; slow 420ms (at 30fps: 3.6/4.8/7.8/12.6 frames)
-- **الدليل / proof:** `kosif-audit-pro/app/globals.css:64` · `kosif-audit-pro/tests/motion-contract.test.mjs`
+## قوانين الزمن والحتمية — Time laws & determinism
 
-#### EASE-04 · منحنى التسهيل السينمائي · Cinematic ease curve · ✅ مُثبت هنا
-- **ماذا / what:** Fast-out, long soft settle curve used for scene entries, sweeps and colour transitions.
-- **كيف / how:** transition-timing-function: var(--ease-cinematic).
-- **أرقام / params:** cubic-bezier(0.22, 0.8, 0.26, 1)
-- **الدليل / proof:** `kosif-audit-pro/app/globals.css:68`
+_قبل أي منحنى: الإطار دالة للزمن، والمدة حساب لا تخمين._
 
-#### EASE-05 · منحنى النابض المتجاوز · Spring overshoot ease curve · ✅ مُثبت هنا
-- **ماذا / what:** Back-style overshoot (y2 > 1) for pops, indicator bars and icon swaps.
-- **كيف / how:** transition/animation timing var(--ease-spring).
-- **أرقام / params:** cubic-bezier(0.34, 1.35, 0.64, 1)
-- **الدليل / proof:** `kosif-audit-pro/app/globals.css:69`
+#### EASE-01 · كل شيء دالة للزمن · Everything is a function of t · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كل إطار يُرسم من `seek(t)` وحدها: بذرة عشوائية ثابتة، بلا ساعة حائط ولا مؤقتات ولا THREE.Clock، فتُرندر الإطارات بأي ترتيب وبالتوازي. — Every frame is drawn from seek(t) alone: seeded RNG, no wall clock, timers or THREE.Clock, so frames render in any order and in parallel.
+- **متى أستخدمها / when:** كل مشروع يصبح فيديو — every project that becomes a video.
+- **كيف / how:** Expose window.__kosif = {duration, fps, seek} and window.__kosifReady (fonts loaded); compute every value from t (prog/lerp/spring of t), never accumulate per frame; seeded mulberry32 rng(seed); GSAP only as a paused timeline that the renderer seeks; discrete state (typed text, counters) via modifiers, not callbacks. kosif-studio qa.py lint errors on Math.random / new THREE.Clock / Date.now (test passed here). All five proof films in proofs/ follow this contract and rendered through render_html.cjs. **أرقام / params:** rng mulberry32; seek(t) pure; render_html.cjs virtual time.
+- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js` · `kosif-studio/motion/qa.py:59` · `kosif-studio/tests/test_studio.py:684` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/neon-glow/README.md`
 
-#### EASE-06 · تتابع ظهور اللوحات · Staggered panel cascade · ✅ مُثبت هنا
-- **ماذا / what:** Panels inside a scene enter in four delay groups so the eye reads title -> journey -> action -> metrics.
-- **كيف / how:** keyframe kosif-scene-item on listed panel classes with animation-delay per group.
-- **أرقام / params:** 420ms; 8px rise; delays 30 / 80 / 130 / 180 ms
-- **الدليل / proof:** `kosif-audit-pro/app/globals.css:600` · `kosif-audit-pro/app/globals.css:648`
+#### EASE-02 · حساب الإطارات بنطاق نصف مفتوح · Half-open frame arithmetic · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كل مشهد [بداية، نهاية)، والإطار = round(ثوانٍ × fps)؛ 12 ث عند 30 = 360 إطارًا آخرها 359، والانتقال المتداخل يُحسب مرة واحدة. — Scenes are [start, end); frame = round(s × fps); 12 s at 30 fps = 360 frames (0–359); overlaps counted once.
+- **متى أستخدمها / when:** عند تخطيط المشاهد وبعد كل رندر — while planning and after every render.
+- **كيف / how:** Plan in seconds, convert once; cut lands on frame round(end×fps); for 29.97/23.976 never invent drop-frame timecode. After render, ffprobe nb_frames must equal round(duration × fps): verify_video.py checks it (proof films: 300 frames = 10.000 s, audio length = master). **أرقام / params:** frame=round(s·fps); 0–3 s@30 → 0–89, cut at 90.
+- **الدليل / proof:** `kosif-tool/tools/verify_video.py` · `kosif-tool/templates/TEST_REPORT.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/workflow.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md`
 
-#### EASE-07 · قاعدة التحريك بالتحويل والشفافية فقط · Transform/opacity-only motion rule · ✅ مُثبت هنا
-- **ماذا / what:** Interactive surfaces must not use transition-all; animation is limited to transform and opacity (plus colour fades), and money values are never animated.
-- **كيف / how:** Test asserts button/progress/tabs avoid transition-all and use explicit property lists.
-- **الدليل / proof:** `kosif-audit-pro/tests/motion-contract.test.mjs` · `kosif-audit-pro/README.md`
+#### EASE-03 · المدة الكلية حساب صريح · Duration arithmetic truth · 🟢 جاهز / ready
+- **ماذا / what:** المدة = عدد المقاطع × طول المقطع (5×6=30، N×10)، والطوابع الزمنية المعطاة تغلب تقدير سرعة الكلام؛ لا تَعِد بعشر ثوانٍ بمشاهد ست. — Total = clips × clip length; supplied timestamps override pace estimates; never promise 10 s with 6 s scenes.
+- **متى أستخدمها / when:** قبل الوعد بمدة للمستخدم وفي جدول الإشارات — before promising a length; in the cue sheet.
+- **كيف / how:** Compute totals in code and print them (stickman seconds sum, vox n×10, viral shots×6); keep a run-of-show table (one row per segment: clock, duration, cue in/out, SFX, music dip, caption style) and assert sum(durations) == total before rendering. **أرقام / params:** 5×6=30; 5×7=35; N×10.
+- **الدليل / proof:** `fastify-motion-bro/docs/PRODUCTION-GATES.md` · `fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md` · `kosif-atlas/skills/2290-event-management/8759-build-run-of-show/SKILL.md`
 
-#### EASE-08 · رموز الحركة: المنحنيات والمدد · Motion tokens (curves + durations) · ✅ مُثبت هنا
-- **ماذا / what:** A small named set of easing curves and durations shared by every animated element: entering decelerates, leaving accelerates, feedback overshoots slightly.
-- **كيف / how:** CSS custom properties in tokens.css; JS reads the same values.
-- **أرقام / params:** --sk-ease cubic-bezier(.2,.8,.2,1); ease-out (expo-like) cubic-bezier(.16,1,.3,1); ease-in cubic-bezier(.55,0,1,.45); spring cubic-bezier(.34,1.56,.64,1); fast 160ms; panel 210ms; enter 420ms; stagger 45ms; feedback within 100ms
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/tokens.css:41` · `kosif-earth-ci-fork/docs/design/SQC-IDENTITY-ar.md`
+#### EASE-04 · مقسّم المشاهد التلقائي · Auto beat-count storyboard splitter · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحوّل البريف إلى مشاهد متساوية متصلة يتحدد عددها بالمدة، بأسماء عربية وأنواع بصرية متناوبة. — Turns a brief into contiguous equal scenes whose count follows the duration, with Arabic names and rotating visual types.
+- **متى أستخدمها / when:** أول مسودة لقصة مصورة من مدة فقط — first storyboard draft from a duration.
+- **كيف / how:** makeStoryboard(): beats = 3 if d ≤ 12 s, 5 if d ≤ 35 s, else min(12, ceil(d/6)); start/end rounded to ms, last end = duration; names افتتاحية/الفكرة/التوضيح/التحول/النتيجة/الخاتمة; visuals cycle kinetic-typography → dynamic-infographic → hand-drawn-shapes; fps 30. planner tests passed here. **أرقام / params:** 3 / 5 / ≤12 beats; ~6 s per beat for long films.
+- **الدليل / proof:** `fastify-motion-bro/scripts/planner.mjs` · `fastify-motion-bro/tests/planner.test.mjs`
 
-#### EASE-09 · دخول متدرّج لكتل الشاشة · Staggered screen-enter choreography · ✅ مُثبت هنا
-- **ماذا / what:** When a screen opens, its first ten blocks fade and rise in one after another; data-only re-renders do not replay it; vertical movement only so nothing scrolls sideways.
-- **كيف / how:** SK.motion (ui/core/motion.js): on nav/render bus events set --sk-i index on each block, toggle #view.sk-enter, remove after 900ms; CSS @keyframes sk-view-in from opacity 0 translateY(10px); animation-delay calc(var(--sk-i)*var(--sk-motion-stagger)).
-- **أرقام / params:** max 10 blocks; 420ms; 45ms stagger; ease-out (.16,1,.3,1); life 900ms
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/core/motion.js` · `kosif-earth-ci-fork/ui/ds/luxe.css:365` · `kosif-earth-ci-fork/tools/motion.test.mjs`
+#### EASE-05 · تقدير المدة من سرعة الكلام وخرائط المقاطع · Word-pace estimator & clip beat maps · ✅ مُثبت هنا / proven here
+- **ماذا / what:** بلا طوابع زمنية تُشتق المدة وعدد المقاطع من عدد الكلمات، وكل مقطع 10 ث يُقسم إلى خمس ضربات بعنصر جديد كل 1.5–2 ث. — Without timestamps, total and clip count come from word count; each 10 s clip splits into five 2 s beats with a new element every 1.5–2 s.
+- **متى أستخدمها / when:** نص بلا صوت، أو أفلام مقاطع مولدة — text without audio, or generated-clip films.
+- **كيف / how:** total = words / wps (fast 2.5, relaxed 1.8) or user duration; n = ceil(total/len) with len 8 or 10 s; words split evenly. Collage map: 0–2 two cutouts snap in, 2–4 two more strike into new planes, 4–6 string/sticker link, 6–8 torn detail, 8–10 fresh element + hold; ≥4–6 elements; neighbouring clips start with different pairs. Profile tests (15/15) passed here. **أرقام / params:** 2.5 / 1.8 w/s; ≤120 clips; 0–2/2–4/4–6/6–8/8–10 s.
+- **الدليل / proof:** `fastify-motion-bro/scripts/profiles/kinetic-flow.mjs` · `fastify-motion-bro/scripts/profiles/vox-history.mjs` · `fastify-motion-bro/tests/production-profiles.test.mjs`
 
-#### EASE-10 · مقسّم المشاهد التلقائي · Auto beat-count storyboard splitter · ✅ مُثبت هنا
-- **ماذا / what:** Turns a brief into contiguous equal-length scenes whose count depends on total duration, with Arabic scene names and rotating visual types.
-- **كيف / how:** makeStoryboard(): beats = 3 if d<=12 s, 5 if d<=35 s, else min(12, ceil(d/6)); start/end rounded to ms, last end = duration; names افتتاحية/الفكرة/التوضيح/التحول/النتيجة/الخاتمة; visual cycles kinetic-typography -> dynamic-infographic -> hand-drawn-shapes; sfx 'soft-whoosh'; fps 30.
-- **أرقام / params:** 3/5/≤12 beats; ~6 s per beat for long films; fps 30
-- **الدليل / proof:** `fastify-motion-bro/scripts/planner.mjs:14-24` · `fastify-motion-bro/tests/planner.test.mjs:5-6`
+#### EASE-06 · زمن القراءة من النص الفعلي · Reading-hold formulas · 📄 موصوف / documented only
+- **ماذا / what:** كل نص يبقى ما يكفي لقراءته، محسوبًا من كلماته وحروفه لا بمدة ثابتة. — Every text holds long enough to read, computed from its real words and characters.
+- **متى أستخدمها / when:** كل بطاقة نص وترجمة وعنوان — every text card, caption and title.
+- **كيف / how:** Pick one: hold ≥ max(1.2 s, words/3 s) (~180 wpm); or hold ≥ 0.3 s + 0.06 s × characters after the last word lands; captions on screen max(chars × 0.15 s, 2 s) capped at 6 s, start 0.5 s after a cut, end 0.3 s before the next, 8-frame fades, shots < 2.8 s share or skip captions; content-driven sequencing: item time = base + chars × secPerChar + hold, reduced once into absolute windows. Verify on the target size. **أرقام / params:** ~3 words/s; 0.3 s + 0.06 s/char; captions 2–6 s.
+- **الدليل / proof:** `kosif-tool/playbooks/kinetic-type.md:31` · `kosif-atlas/skills/motion-graphics-ar/motion-typography/SKILL.md` · `kosif-atlas/skills/1096-akbun-editvideo/2465-davinciresolve-subtitle-travelnote/SKILL.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/dynamic-content-sequencing.md`
 
-#### EASE-11 · خط زمني لمشهد 6 ثوانٍ · Six-second editorial scene timeline · ✅ مُثبت هنا
-- **ماذا / what:** Every editorial scene is exactly 6 s: empty grid, kinetic spring entrance, floating hold, connected geometric exit.
-- **كيف / how:** 0–0.5 s base (only grid + lines); 0.5–3.5 s entrance (spring, stagger 6–9 frames, word-by-word masked reveal); 3.5–4.7 s hold (sine float, 0.6° wobble, 4% push-in); 4.7–6.0 s exit (masked vertical text wipe, tracking expansion, easeOutCubic 1.3 s drop).
-- **أرقام / params:** 0/0.5/3.5/4.7/6.0 s
-- **الدليل / proof:** `fastify-motion-bro/scripts/viral-editorial.mjs:63-68` · `fastify-motion-bro/web/editorial.js:40` · `fastify-motion-bro/skills/viral-editorial/SKILL.md:11`
-
-#### EASE-12 · تقدير المقاطع من سرعة الكلام · Word-pace clip estimator · ✅ مُثبت هنا
-- **ماذا / what:** Derives total duration and clip count from word count when no timestamps are supplied.
-- **كيف / how:** total = words / wps (fast 2.5, relaxed 1.8) or user duration; clips n=ceil(total/len) with len 8 or 10 s; words split evenly across clips.
-- **أرقام / params:** fast 2.5 w/s; relaxed 1.8 w/s; ≤120 clips
-- **الدليل / proof:** `fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:89-100`
-
-#### EASE-13 · خريطة كولاج 10 ثوانٍ · 10-second stop-motion collage beat map · ✅ مُثبت هنا
-- **ماذا / what:** Five 2 s beats per clip with a new element every 1.5–2 s: two cutouts snap in; two more strike into new planes; string/sticker link; another torn detail; fresh element and hold.
-- **كيف / how:** Prompt timeline from INVENTORY rotation (4 sets x 6 elements); neighbouring clips start with different pairs.
-- **أرقام / params:** 0–2/2–4/4–6/6–8/8–10 s; 4–6 elements min
-- **الدليل / proof:** `fastify-motion-bro/scripts/profiles/vox-history.mjs:14-19,50` · `fastify-motion-bro/tests/production-profiles.test.mjs:41-47`
-
-#### EASE-14 · منحدرات السرعة · Speed ramps exact · ✅ مُثبت هنا
-- **ماذا / what:** Speed ramps integrated exactly (log map), raised-cosine zoom, C1 continuity.
-- **كيف / how:** python scripts/kmotion.py timeline clip speed ramp
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/SKILL.md`
-
-#### EASE-15 · قالب العد التنازلي · Template: countdown · ✅ مُثبت هنا
-- **ماذا / what:** Each second a number slams in, squashes, a ring runs down, camera shakes; then a double flash and the go word.
-- **كيف / how:** python scripts/mtemplates.py new NAME --template countdown --set key=value ... [--seconds S --size WxH --fps F] -> projects/NAME/index.html (+ fonts, gsap, motion-kit); preview in a browser; render with motion.py render.
-- **أرقام / params:** D = from + 1.6 s; from 5 (max 10), go 'انطلق', accent #FF6B6B, bg1 #1a1a2e, bg2 #0b0b14; number 26u scale 1.9->1 0.32 s; shake amp 5
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/templates/motion/countdown.html` · `100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:52`
-
-#### EASE-16 · حركة الطبقة: ظهور ناعم · Layer entrance animation: Fade in/out (fade) · ✅ مُثبت هنا
-- **ماذا / what:** Studio text/shape layer animation 'fade'.
-- **كيف / how:** Inspector → الحركة = fade; overlay.animation='fade'; drawn in draw() with ease = 1 − (1 − clamp((t−start)/0.65))³ (easeOutCubic).
-- **أرقام / params:** opacity follows the envelope only; envelope: fade-in over min(0.6 s, d/3), fade-out over min(0.4 s, d/3)
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:75` · `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:12` · `100-superskills/skills/kosif-montage-motion/tests/studio/model.test.mjs`
-
-#### EASE-17 · حركة الطبقة: صعود ناعم · Layer entrance animation: Soft rise (rise) · ✅ مُثبت هنا
-- **ماذا / what:** Studio text/shape layer animation 'rise'.
-- **كيف / how:** Inspector → الحركة = rise; overlay.animation='rise'; drawn in draw() with ease = 1 − (1 − clamp((t−start)/0.65))³ (easeOutCubic).
-- **أرقام / params:** y offset (1−ease)·0.07·h, easing out over 0.65 s, plus the opacity envelope; envelope: fade-in over min(0.6 s, d/3), fade-out over min(0.4 s, d/3)
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:75` · `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:12` · `100-superskills/skills/kosif-montage-motion/tests/studio/model.test.mjs`
-
-#### EASE-18 · حركة الطبقة: تكبير ناعم · Layer entrance animation: Soft zoom (zoom) · ✅ مُثبت هنا
-- **ماذا / what:** Studio text/shape layer animation 'zoom'.
-- **كيف / how:** Inspector → الحركة = zoom; overlay.animation='zoom'; drawn in draw() with ease = 1 − (1 − clamp((t−start)/0.65))³ (easeOutCubic).
-- **أرقام / params:** scale 0.65 + 0.35·ease (65% → 100%) over 0.65 s, plus the opacity envelope; envelope: fade-in over min(0.6 s, d/3), fade-out over min(0.4 s, d/3)
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:75` · `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:12` · `100-superskills/skills/kosif-montage-motion/tests/studio/model.test.mjs`
-
-#### EASE-19 · حركة الطبقة: ثابت · Layer entrance animation: Static (none) · ✅ مُثبت هنا
-- **ماذا / what:** Studio text/shape layer animation 'none'.
-- **كيف / how:** Inspector → الحركة = none; overlay.animation='none'; drawn in draw() with ease = 1 − (1 − clamp((t−start)/0.65))³ (easeOutCubic).
-- **أرقام / params:** no envelope, full opacity for the layer's duration; envelope: fade-in over min(0.6 s, d/3), fade-out over min(0.4 s, d/3)
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:75` · `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:12` · `100-superskills/skills/kosif-montage-motion/tests/studio/model.test.mjs`
-
-#### EASE-20 · غلاف شفافية الطبقة · Overlay opacity envelope · ✅ مُثبت هنا
-- **ماذا / what:** A trapezoid opacity curve for any timed layer: linear fade in, hold, linear fade out, scaled down for very short layers.
-- **كيف / how:** animationProgress(o,t) = min(1, (t−start)/min(0.6, d/3), (end−t)/min(0.4, d/3)); 0 outside the window.
-- **أرقام / params:** in 0.6 s, out 0.4 s, each ≤ d/3
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:12`
-
-#### EASE-21 · رموز التسارع E · Easing tokens E (17 curves) · ✅ مُثبت هنا
-- **ماذا / what:** A house set of cubic-bezier easing curves, one per motion role, usable as GSAP ease functions.
-- **كيف / how:** MOTION.E.<name> inside any gsap tween ease; built by MOTION.bezier(x1,y1,x2,y2) (Newton solve, 8 iterations).
-- **أرقام / params:** out(.16,1,.3,1) arrivals; outSoft(.22,1,.36,1); in(.7,0,.84,0); exit(.55,.055,.675,.19) exits into a cut; inOut(.87,0,.13,1) whips/morphs; smooth(.65,0,.35,1) fades 10-14f; ui(.4,0,.2,1); cam(.48,.1,0,.9) pushes, peak ~27%; glide(.47,.2,.15,1) 150-350px moves; rest(.45,0,.1,1); contact(.55,0,.9,.55)…
-- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:22` · `kosif-studio/tests/test_studio.py:637`
-
-#### EASE-22 · أسماء التسارع القديمة · Legacy GSAP ease aliases · ✅ مُثبت هنا
-- **ماذا / what:** Four named eases kept from kit v1/v2 that templates still use.
-- **كيف / how:** MOTION.ease.slam/snap/drive/settle/linear passed to gsap.
-- **أرقام / params:** slam=expo.out; snap=back.out(1.3); drive=power4.inOut; settle=power4.out; linear=none
-- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:12`
-
-#### EASE-23 · تكبير لوغاريتمي · Log-space scale/zoom (logEase, lmix) · ✅ مُثبت هنا
-- **ماذا / what:** Interpolates scale in log space so 1x->2x feels the same as 2x->4x.
-- **كيف / how:** MOTION.lmix(a,b,t) for values; MOTION.logEase(a,b,fn) wraps an ease so a linear scale tween moves through log space.
-- **أرقام / params:** lmix = exp(log a + (log b - log a)·t)
-- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:44`
-
-#### EASE-24 · نوابض مطبَّعة · Normalised spring eases (SPRINGS) · ✅ مُثبت هنا
-- **ماذا / what:** Damped-oscillator eases normalised to end at 1, for GSAP tweens.
-- **كيف / how:** ease: MOTION.spring('snappy'|'default'|'heavy'|'playful') or {zeta, omega}.
-- **أرقام / params:** snappy zeta .62 omega 20 (measured overshoot 8.4%); default .74/17 (3.2%); heavy 1.0/13 (0%); playful .45/18 (20.5%)
-- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:52`
-
-#### EASE-25 · نوابض فيزيائية · Physical springs SPR (closed form) · ✅ مُثبت هنا
-- **ماذا / what:** Seven damping/stiffness/mass presets solved in closed form, so any frame renders without simulating earlier frames.
-- **كيف / how:** MOTION.springStep(t, MOTION.SPR.firm) (under/critical/over-damped branches, optional clamp).
-- **أرقام / params:** snap d18 k260 m.7 (zeta .67, overshoot 6%, settle .35 s); pop 11/180/.6 (14%, .53 s); land 14.5/200/1 (15%, .65 s); micro 30/500/.6 (0.4%, .17 s); firm 24/140/1 (critical, .65 s); soft 26/120/1 (.94 s); heavy 30/90/1.4 (1.53 s) — measured here with node
-- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:65`
-
-#### EASE-26 · مسار نابضي متعدد الأهداف · Retargetable spring track · ✅ مُثبت هنا
-- **ماذا / what:** A value with several targets over time = first value plus one spring per change; continuous and seekable.
-- **كيف / how:** MOTION.track(t, [[time,value],...], SPR.firm | 'default', settle=0.6).
-- **أرقام / params:** keys are move START times; default settle 0.6 s
-- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:77`
-
-#### EASE-27 · قواعد التسهيل · Easing conventions · ✅ مُثبت هنا
-- **ماذا / what:** Linear only for drift, data fills and luminance; punches expo.out 0.12-0.18 s; drifts power2.inOut; later entrances use fromTo with immediateRender:false; no CSS transitions; finite repeats.
-- **كيف / how:** lint warns + project timelines
-- **أرقام / params:** data fill 'none'; exits ease E.exit 0.2-0.25 s
-- **الدليل / proof:** `kosif-studio/motion/qa.py:65` · `kosif-studio/motion/projects/premium_edit/index.html:110`
-
-#### EASE-28 · قاعدة الحتمية · Determinism rule · ✅ مُثبت هنا
-- **ماذا / what:** Everything is a function of t: seeded RNG only, no wall clock, no timers, no THREE.Clock; frames can render in any order and in parallel.
-- **كيف / how:** lint errors; tests assert no Math.random/new THREE.Clock in kits
-- **الدليل / proof:** `kosif-studio/motion/qa.py:59` · `kosif-studio/tests/test_studio.py:585`
-
-#### EASE-29 · لقطة السرعة U · U-speed shot · 🟢 جاهز
-- **ماذا / what:** Element enters fast and decays, cruises slowly while read, then accelerates into the cut.
-- **كيف / how:** MOTION.shot(tl, el, at, {enter, cruise, exit, cut, dir, dist, exitDist, fade}).
-- **أرقام / params:** enter 0.45 s from 220 px (E.out); cruise 1.2 px/frame; exit 0.3 s E.exit over 1.4x dist
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:393` · `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:393` · `kosif-one/tools/kosif-studio/motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/SKILL.md:95`
-
-#### EASE-30 · غلاف النبضة للضربات · Hit pulse envelope · 🟢 جاهز
-- **ماذا / what:** One attack/exponential-decay envelope used for every punch, tick, kick-driven pulse and sound-synced hit.
-- **كيف / how:** MOTION.hitPulse(t, attack, tau) with t in seconds, attack/tau in 60 fps frames; sine attack then exp(-(u-attack)/tau), zero after attack+6*tau.
-- **أرقام / params:** default attack=2 f, tau=5 f; peak 2 f after its sound
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:47` · `kosif-one/tools/kosif-studio/motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/SKILL.md:95` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md`
-
-#### EASE-31 · مسار نابضي متعدد الأهداف · Retargetable spring track / zoomTrack · 🟢 جاهز
-- **ماذا / what:** A value with many keyed targets that springs to each new target continuously and stays seekable; zoomTrack does it in log space.
-- **كيف / how:** MOTION.track(t, [[t0,v0],[t1,v1],...], preset, settle) sums one spring per change; zoomTrack(t, keys) for scale.
-- **أرقام / params:** settle default 0.6 s with normalised presets; physical SPR objects accepted
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:77` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:88` · `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:77` · `kosif-one/tools/kosif-studio/motion/references/x-trend-2026.md`
-
-#### EASE-32 · انضغاط عند الاصطدام · Contact squash · 🟢 جاهز
-- **ماذا / what:** Element widens and flattens against the edge it hit, then recovers (cartoon squash).
-- **كيف / how:** MOTION.squash(tl, el, at, {edge:'bottom'|'top'|'left'|'right', across, along, dur}).
-- **أرقام / params:** scaleX 1.08 / scaleY 0.90 -> 1 in 0.13 s (8 f) E.outSoft
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:372` · `kosif-studio/motion/kit/motion-kit.js:372`
-
-#### EASE-33 · دخول عناصر القائمة تباعاً · Stagger list arrival · 🟢 جاهز
-- **ماذا / what:** Cards, bullets or icons arrive one by one with the same ease.
-- **كيف / how:** MOTION.stagger(tl, els, at, {gap, dur, from, ease}).
-- **أرقام / params:** gap 0.07 s, dur 0.55 s, from y 28 opacity 0 scale 0.96; stagger totals < 500 ms
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:557` · `kosif-studio/motion/kit/motion-kit.js:557`
-
-#### EASE-34 · إعدادات النوابض الجاهزة · Spring presets and damping-ratio intuition · 🟢 جاهز
-- **ماذا / what:** Physics springs (stiffness, damping, mass) give velocity-aware motion with natural overshoot; a handful of named presets covers most needs from gentle to stiff.
-- **كيف / how:** Framer Motion transition={{type:'spring',stiffness,damping,mass}}; in a video renderer implement the damped oscillator per frame (Remotion spring() or own x''=-k(x-1)-c x'). Overshoot exists when c < 2*sqrt(k*m).
-- **أرقام / params:** default 170/26; gentle 120/14; wobbly 180/12; stiff 210/20; slow 280/60; molasses 280/120 (mass 1); button tap 400/17; layout 500/30; 'premium' 300/30/1 with ~1.05 overshoot landing in 400-700ms; CSS fallback cubic-bezier(0.34,1.56,0.64,1) 500ms
-- **الدليل / proof:** `kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/animation-libraries.md` · `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion`
-
-#### EASE-35 · جدول سرعة الكتابة الآلية · Typewriter speed table · 🟢 جاهز
-- **ماذا / what:** Characters-per-second presets for typed text and a hard-stepped blinking caret; also realistic per-key delay for scripted typing in UI recordings.
-- **كيف / how:** GSAP TextPlugin {text:{value}, duration: len/cps, ease:'none'} or tl.call per char; caret opacity yoyo with ease 'steps(1)'; in recordings type at ~70ms per key.
-- **أرقام / params:** 3-5 cps dramatic; 8-12 natural; 15-20 tech/code; 30+ bulk fill; scripted typing delay 70ms/char; caret block 11x22px
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10377-gsap/references/effects.md` · `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md` · `kosif-atlas/skills/1511-homie/3903-video/references/RECORD.md`
-
-#### EASE-36 · رموز الحركة مع بديل تقليل الحركة · Motion and duration tokens with reduced-motion swap · 🟢 جاهز
-- **ماذا / what:** A token set for durations and easings plus a rule that reduced motion swaps to instant/linear; exposed to Tailwind theme.
-- **كيف / how:** :root vars + @media (prefers-reduced-motion: reduce) override; Tailwind transitionDuration from vars.
-- **أرقام / params:** instant 0ms; fast 100ms; normal 200ms; slow 300ms; slower 500ms; ease-in 0.4,0,1,1; ease-out 0,0,0.2,1
-- **الدليل / proof:** `kosif-atlas/skills/1567-tonone/4430-form-tokens` · `kosif-atlas/skills/3438-ux-design/14124-top-design`
-
-#### EASE-37 · انزلاق متناقص · Decaying slide distance · 🟢 جاهز
-- **ماذا / what:** Entry offset shrinks per successive word so the line seems to settle like a camera.
-- **كيف / how:** slides=[80,60,50,25,12]px applied per word index.
-- **أرقام / params:** 80→12px
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md`
-
-#### EASE-38 · قائمة لقطات على شبكة الإيقاع مع كلمات مضبوطة على البداية · Beat-grid shot list with onset-snapped words · 🟢 جاهز
-- **ماذا / what:** Plan every generated shot on the song's bar lines and use per-word times to drive lyric type.
-- **كيف / how:** grid.json holds tempo, beats, bar lines, sections and words; cuts land on bar lines (beats in fast sections); model word stamps ran 50-80 ms late so each word is snapped to the strongest vocal-band onset within −100 ms..+40 ms; characters on one side, words on the other.
-- **أرقام / params:** snap window −100..+40 ms; stamps 50-80 ms late
-- **الدليل / proof:** `kosif-atlas/skills/1511-homie/3903-video` · `kosif-atlas/skills/1511-homie/3892-music`
-
-#### EASE-39 · منحنى الاستوديو · Studio ease curve · 🟢 جاهز
-- **ماذا / what:** Smooth expo-like ease used by KOSIF 4 scene and card entries.
-- **كيف / how:** var(--ease-studio).
-- **أرقام / params:** cubic-bezier(.2,.8,.2,1)
-- **الدليل / proof:** `kosif-audit-studio/studio.css:2`
-
-#### EASE-40 · دخول المشهد بتتابع حسب الترتيب · Studio scene-in with index stagger · 🟢 جاهز
-- **ماذا / what:** Cards rise 12px and fade; delay is computed from a per-card CSS custom property set in JS.
-- **كيف / how:** style='--card-order:i'; animation: scene-in .55s var(--ease-studio) both; animation-delay: calc(var(--card-order)*45ms).
-- **أرقام / params:** view 0.48s; reference cards 0.55s @45ms/step; council seats 0.5s @40ms/step; metric cards 40/80/120ms; messages 0.35s
-- **الدليل / proof:** `kosif-audit-studio/studio.css:114` · `kosif-audit-studio/studio.css:120` · `kosif-audit-studio/studio.js:133`
-
-#### EASE-41 · زر تهدئة الحركة · User 'quiet motion' toggle · 🟢 جاهز
-- **ماذا / what:** Besides the OS setting, a user button sets data-motion=quiet on the root (or a body class) that kills all animation/transition; the canvas waveform flattens too.
-- **كيف / how:** studio.js renderMotion(): documentElement.dataset.motion = quiet|full; CSS :root[data-motion=quiet] * { animation:none; transition:none }; V5 uses localStorage key kosif:v5:motion-off -> body.dashboard-motion-off.
-- **أرقام / params:** wave level fixed at .08 when quiet
-- **الدليل / proof:** `kosif-audit-studio/studio.js:23` · `kosif-audit-studio/studio.css:140` · `kosif-audit-studio/dashboard-capabilities.css:15`
-
-#### EASE-42 · توقيت القراءة للسطور العربية · Reading-speed timing for Arabic lines · 🟢 جاهز
-- **ماذا / what:** Times script lines without audio from a words-per-second reading speed weighted by word length, with a minimum on-screen time per line.
-- **كيف / how:** MK.speedTimings(lines,wps=2.2,gap=0.8,lead=0.5,tail=1.0): word dur=(1/wps)*clamp(len/5,0.6,1.6), end at 92%; line kept >= 0.3 s/word + 0.6 s; requested film length stretches pace (never below 1.2 wps) and gaps up to 2.2 s.
-- **أرقام / params:** wps 2.2 (style 1.9-2.2); gap 0.8 s; lead 0.5 s; tail 1.0 s; min 0.3 s/word+0.6 s
+#### EASE-07 · توقيت السطور العربية بلا صوت · Arabic line timing without audio · 🟢 جاهز / ready
+- **ماذا / what:** يوقّت سطور النص العربي من سرعة قراءة بالكلمات مرجّحة بطول الكلمة، مع حد أدنى لكل سطر. — Times Arabic script lines from a words-per-second reading speed weighted by word length, with a per-line minimum.
+- **متى أستخدمها / when:** نص أو قصيدة بلا تسجيل صوتي — text or poem with no recording.
+- **كيف / how:** MK.speedTimings(lines, wps=2.2, gap=0.8, lead=0.5, tail=1.0): word dur = (1/wps) × clamp(len/5, 0.6, 1.6), word ends at 92%; a line stays ≥ 0.3 s/word + 0.6 s; a requested film length stretches pace (never below 1.2 wps) and gaps up to 2.2 s. **أرقام / params:** wps 2.2 (1.9–2.2); gap 0.8 s; lead 0.5; tail 1.0.
 - **الدليل / proof:** `app/public/js/10_studio.js:60` · `app/public/js/10_studio.js:999`
 
-#### EASE-43 · دوال التسهيل والزنبرك · Core easing functions and damped spring · 🟢 جاهز
-- **ماذا / what:** Basic easings and an analytic damped spring available to every template and to Claude-written code.
-- **كيف / how:** easeOut = 1-(1-x)^3; easeInOut cubic; easeBack c1=1.70158; spring(x seconds, z=0.42, w=16 rad/s) = 1 - e^(-z w x)(cos wd x + z w/wd sin wd x).
-- **أرقام / params:** spring damping 0.42, 16 rad/s
-- **الدليل / proof:** `app/public/js/00_editor.js:8` · `app/public/js/00_editor.js:12`
-
-#### EASE-44 · منحنيات بيزييه الاستوديو · Studio bezier curves (U.E) · 🟢 جاهز
-- **ماذا / what:** Nine cubic-bezier easing curves solved by Newton iteration for motion tokens.
-- **كيف / how:** bez(x1,y1,x2,y2) with 7 Newton steps; out(.16,1,.3,1), outSoft(.22,1,.36,1), in(.7,0,.84,0), exit(.55,.055,.675,.19), inOut(.87,0,.13,1), smooth(.65,0,.35,1), ui(.4,0,.2,1), cam(.48,.1,0,.9), whip(.6,0,.15,1).
-- **الدليل / proof:** `app/public/js/00_editor.js:2309` · `app/public/js/00_editor.js:2311`
-
-#### EASE-45 · زنبركات فيزيائية جاهزة · Physical spring presets (settle) · 🟢 جاهز
-- **ماذا / what:** Mass-spring-damper presets with under/critical/over-damped solutions.
-- **كيف / how:** SPR [c,k,m]: snap [18,260,.7], pop [11,180,.6], land [14.5,200,1], micro [30,500,.6], firm [24,140,1], soft [26,120,1], heavy [30,90,1.4]; u.settle(t,name); firm/soft/heavy never overshoot.
-- **الدليل / proof:** `app/public/js/00_editor.js:2312`
-
-#### EASE-46 · غلاف الضربة · Hit envelope · 🟢 جاهز
-- **ماذا / what:** A punch envelope that peaks shortly after an event and decays, for impacts synced to sound.
-- **كيف / how:** u.hit(t,attack=2/60,tau=5/60): sin rise during attack then exp(-(t-attack)/tau).
-- **أرقام / params:** attack 33 ms; tau 83 ms
-- **الدليل / proof:** `app/public/js/00_editor.js:2317`
-
-#### EASE-47 · انتقال ناعم بين الثيمات · Smooth theme cross-fade · 🟢 جاهز
-- **ماذا / what:** When the look changes, backgrounds, text, borders and shadows of the main frame cross-fade instead of snapping.
-- **كيف / how:** html.sk-theme-trans adds transition on background-color/color/border-color/box-shadow.
-- **أرقام / params:** 220ms cubic-bezier(.2,.8,.2,1)
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/tokens.css:99`
-
-#### EASE-48 · دخول النوافذ والقوائم والتنبيهات · Dialog / menu / toast entrances · 🟢 جاهز
-- **ماذا / what:** Dialogs settle with a slight spring overshoot (rise only, no scale so 44px targets stay full size), menus ease out, toasts slide up with a small scale-in.
-- **كيف / how:** @keyframes sk-dialog-in {opacity 0, translateY(8px)} 300ms spring; .sk-menu 220ms ease-out; sk-toast-in {translateY(12px) scale(.96)} 340ms spring; dropdown ddin translateY(-4px) scale(.98) .2s; popover sk-pop translateY(-4px) .14s.
-- **أرقام / params:** 300 / 220 / 340 / 200 / 140 ms
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/luxe.css:367` · `kosif-earth-ci-fork/ui/ds/components.css:225` · `kosif-earth-ci-fork/ui/ds/luxe.css:93`
-
-#### EASE-49 · تفاعلات الضغط والمرور · Press & hover micro-interactions · 🟢 جاهز
-- **ماذا / what:** Buttons dip on press; cards answer hover with a deeper shadow (no movement, so pinned lists do not jump); door gates lift 2px.
-- **كيف / how:** .btn:active{transform:scale(.985)} transform 180ms ease-out; .card:hover box-shadow 220ms only under (hover:hover) and (pointer:fine); .gate:hover translateY(-2px) .18s.
-- **أرقام / params:** scale .985; 180ms; 220ms; lift 2px
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/luxe.css:373` · `kosif-earth-ci-fork/ui/art/brand/earth-office-door.css`
-
-#### EASE-50 · وميض الهيكل أثناء التحميل · Skeleton shimmer loader · 🟢 جاهز
-- **ماذا / what:** Placeholder bars with a moving light band while content loads.
-- **كيف / how:** background:linear-gradient(90deg,surface-2,surface-3,surface-2); background-size:200% 100%; @keyframes sks-sh{to{background-position:-200% 0}} 1.2s linear infinite; bars 14px tall radius 7px.
-- **أرقام / params:** 1.2s linear infinite
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/shell.css:217`
-
-#### EASE-51 · نبضات الحالة · Status pulses (alert dot, recording ring, typing dots) · 🟢 جاهز
-- **ماذا / what:** Three tiny looping signals: a fading alert dot, an expanding glow ring on a recording mic, and three bouncing typing dots.
-- **كيف / how:** pulse: opacity 1->.35->1 1.6s ease-in-out infinite; ska-pulse: box-shadow 0 0 0 6px color-mix(bad 25%) at 50%, 1s; ska-dot: opacity .25 translateY(-3px) at 50%, 1s, delays 0/.15s/.3s.
-- **أرقام / params:** 1.6s; 1s; 150ms offsets
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/components.css:38` · `kosif-earth-ci-fork/ui/features/assistant.css:20`
-
-#### EASE-52 · شريط تقدم متزامن مع الفيديو · Video-synced progress bar · 🟢 جاهز
-- **ماذا / what:** A 3px bar fills linearly over exactly the clip duration while the intro plays and snaps full on completion.
-- **كيف / how:** .earth-intro.is-playing .earth-intro__progress::before{animation:earthIntroProgress 5.06s linear forwards}; is-complete sets width 100%.
-- **أرقام / params:** 3px; 5.06s linear; colour #e8bd76
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.css:21`
-
-#### EASE-53 · دوّار التحميل والدخول الهادئ · Spinner and calm enter · 🟢 جاهز
-- **ماذا / what:** A ring spinner with one transparent side, and a very short calm fade for hero cards in the SQC light look.
-- **كيف / how:** skdemo-spin: 34px ring border 4px, inline-end transparent, rotate 360deg .8s linear infinite; sqc-calm-enter opacity .65->1 translateY(4px) 180ms ease-out once.
-- **أرقام / params:** .8s; 180ms
-- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/shell.css:535` · `kosif-earth-ci-fork/ui/ds/sqc.css:251`
-
-#### EASE-54 · قاعدة حساب المدة · Duration arithmetic truth rule · 🟢 جاهز
-- **ماذا / what:** Total duration must equal clips x clip length (5x6=30, 5x7=35, Nx10=10N); supplied timestamps override word-pace estimates; never promise 10 s with 6 s scenes.
-- **كيف / how:** Compute totals in code (stickman seconds sum, vox n*10, food n*10, viral shots*6) and print them in output.
-- **أرقام / params:** 5x6=30; 5x7=35; Nx10
-- **الدليل / proof:** `fastify-motion-bro/docs/PRODUCTION-GATES.md:7` · `fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:26-27`
-
-#### EASE-55 · تسهيل خروج تكعيبي · easeOutCubic · 🟢 جاهز
-- **ماذا / what:** Standard cubic ease-out used for title slides, headline rise and hero exit.
-- **كيف / how:** ease(t)=1-(1-clamp(t))^3.
-- **الدليل / proof:** `fastify-motion-bro/web/motion.js:1` · `fastify-motion-bro/web/editorial.js:4`
-
-#### EASE-56 · نابض مخمد بتجاوز 7٪ · Damped spring with 7% overshoot · 🟢 جاهز
-- **ماذا / what:** Spring curve for hero entrances that overshoots slightly then settles.
-- **كيف / how:** spring(t)=min(1.07, 1-exp(-7t)*cos(10t)); entrance enter=spring((local-.5)/3).
-- **أرقام / params:** k=7 decay, 10 rad oscillation, cap 1.07, 3 s duration
-- **الدليل / proof:** `fastify-motion-bro/web/editorial.js:11,40`
-
-#### EASE-57 · رموز التسارع (16 منحنى) · Easing tokens E (16 cubic-bezier roles) · 🟢 جاهز
-- **ماذا / what:** A house set of cubic-bezier easing curves, one curve per motion role (arrival, exit, whip, camera push, typewriter, iris, hop...).
-- **كيف / how:** Browser page with gsap.min.js + motion-kit.js (window.MOTION); build a paused gsap.timeline, call pass MOTION.E.<token> as the GSAP ease (functions are accepted). Built by MOTION.bezier(x1,y1,x2,y2) with an 8-step Newton solve.
-- **أرقام / params:** out(.16,1,.3,1) arrivals; outSoft(.22,1,.36,1); in(.7,0,.84,0) implosions; exit(.55,.055,.675,.19) into a cut (~x1.14/frame over last 10-24 f); inOut(.87,0,.13,1) whips/morphs; smooth(.65,0,.35,1) fades 10-14 f; ui(.4,0,.2,1); cam(.48,.1,0,.9) peak ~27%; glide(.47,.2,.15,1) 150-350 px moves; rest(.4…
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:22` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:15` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md:1`
-
-#### EASE-58 · أربع تسارعات مسماة · Four named GSAP eases (slam/snap/drive/settle) · 🟢 جاهز
-- **ماذا / what:** The minimal easing vocabulary the house rules allow for 2D compositions.
-- **كيف / how:** MOTION.ease.slam / snap / drive / settle as GSAP ease strings; composition.html comment restricts films to these four.
-- **أرقام / params:** slam=expo.out; snap=back.out(1.3); drive=power4.inOut; settle=power4.out; linear=none
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:12` · `100-superskills/skills/kosif-montage-motion/templates/composition.html:27`
-
-#### EASE-59 · تسارع لوغاريتمي للزووم · Log-space ease for zooms (logEase / lmix) · 🟢 جاهز
-- **ماذا / what:** Makes a scale or zoom tween feel constant-speed perceptually by interpolating in log space.
-- **كيف / how:** MOTION.logEase(a,b,fn) returns an ease for a linear tween from a to b; MOTION.lmix(a,b,t) mixes values in log space. Used by push() and iris().
-- **أرقام / params:** logEase(from,to,E.cam); 1 -> 2.4x push feels constant; cap ~5% scale change per frame
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:43` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:316`
-
-#### EASE-60 · نبضة الضربة · hitPulse impact envelope · 🟢 جاهز
-- **ماذا / what:** One attack/exponential-decay envelope used for punches, ticks, kicks and beat flashes.
-- **كيف / how:** MOTION.hitPulse(t, attack, tau) with t in seconds, attack/tau in 60 fps frames: sine rise over attack then exp(-(u-attack)/tau), zero after attack+6 tau.
-- **أرقام / params:** attack=2 f, tau=5 f (defaults); channels.kick uses attack 1 tau 5; onset 1/4; beat 1/6
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:47`
-
-#### EASE-61 · مدة حسب المسافة · Distance-scaled duration (durFor) · 🟢 جاهز
-- **ماذا / what:** Move duration grows with travel distance so long moves don't look rushed.
-- **كيف / how:** MOTION.durFor(px, camera): 0.35 s + 1.35 ms per px; camera moves clamped.
-- **أرقام / params:** 0.35 s + 0.00135 s/px; camera clamp 0.6-2.4 s
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:49`
-
-#### EASE-62 · نوابض مطبّعة · Normalised spring eases (SPRINGS presets) · 🟢 جاهز
-- **ماذا / what:** Damped-oscillator eases normalised to end at 1, usable as GSAP eases for pops and settles.
-- **كيف / how:** MOTION.spring('snappy'|'default'|'heavy'|'playful') or spring({zeta,omega}) -> ease function.
-- **أرقام / params:** snappy zeta .62 omega 20; default .74/17; heavy 1.0/13 (critically damped); playful .45/18
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:52` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:53`
-
-#### EASE-63 · نوابض فيزيائية · Physical springs SPR + springStep · 🟢 جاهز
-- **ماذا / what:** Closed-form damped spring step response (mass/stiffness/damping), seekable at any t, critically damped by default.
-- **كيف / how:** MOTION.springStep(t, MOTION.SPR.<preset>) returns 0->1; handles under/critical/over-damped; cfg.clamp caps overshoot.
-- **أرقام / params:** snap d18 k260 m.7; pop d11 k180 m.6; land d14.5 k200 m1; micro d30 k500 m.6; firm d24 k140 m1; soft d26 k120 m1; heavy d30 k90 m1.4
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:65` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:67`
-
-#### EASE-64 · تتابع القائمة · List stagger · 🟢 جاهز
-- **ماذا / what:** Cards, bullets or icons arrive one by one; returns end time for chaining.
-- **كيف / how:** MOTION.stagger(tl, els, at, {gap, dur, from, ease}).
-- **أرقام / params:** gap 0.07 s; dur 0.55 s; from {y:28, opacity:0, scale:.96}; E.out
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:557`
-
-#### EASE-65 · دالة نابض مخمد للقفزات والارتخاء · Damped spring function for pops and flops · 🟢 جاهز
-- **ماذا / what:** An analytic damped spring from 0 to 1 starting at t0 overshoots once and settles; used for joint pops, the ear flop at the break and the spring back after the repair.
-- **كيف / how:** spring(t, t0, f=3.2 Hz, ζ=.32) = 1 − e^(−ζωx)(cos ω_d x + ζω/ω_d sin ω_d x), ω=2πf, ω_d = ω√(1−ζ²); pops f 4.2 ζ .38; flop f 1.5 ζ .42; recovery f 1.6 ζ .5.
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:12` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:128` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:148`
-
-#### EASE-66 · منحنيات السرعة · Speed ramps · 🟢 جاهز
-- **ماذا / what:** Piecewise-linear speed keys inside a clip with exact integral time map.
-- **كيف / how:** timeline clip 'ramp':[[0,1.0],[1.5,0.25],[3,1.0]]
-- **أرقام / params:** speed 0.1–10; audio dropped under ramp, constant speed pitch-preserved
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/timeline.py:36` · `100-superskills/skills/kosif-montage-motion/scripts/timeline.py:99`
-
-#### EASE-67 · دوال التنعيم · Easing helpers: smoothstep, lerp, clamp, easeOutCubic · 🟢 جاهز
-- **ماذا / what:** The small easing kit used across the studio pages for natural motion.
-- **كيف / how:** smooth(v) = v²(3−2v) after clamp; lerp(a,b,t); easeOutCubic = 1 − (1−p)³ (review page, Studio overlays, manifest player).
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:6` · `100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:431` · `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:75`
-
-#### EASE-68 · شريط تقدّم زمني · Timeline progress bar · 🟢 جاهز
-- **ماذا / what:** A bottom bar grows with normalized time so viewers feel the length of a reel.
-- **كيف / how:** kinetic_2d render(t): width = (t/DURATION)*100%; absolute bottom bar, z-index 10.
-- **أرقام / params:** height 12px, gradient 90deg #f59e0b->#ef4444
-- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html:77` · `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html:200`
-
-#### EASE-69 · رموز التسارع حسب الدور · Role-based easing tokens (MOTION.E) · 🟢 جاهز
-- **ماذا / what:** A family of 17 cubic-bezier eases, one per motion role (arrival, exit, camera, whip, UI, typewriter...), so every move in a film shares one consistent feel.
-- **كيف / how:** In a HyperFrames/GSAP composition load assets/motion-kit.js and pass MOTION.E.<role> as the GSAP ease; bezier() solves x->t with 8 Newton steps so GSAP accepts the function.
-- **أرقام / params:** out(.16,1,.3,1) arrivals; outSoft(.22,1,.36,1); in(.7,0,.84,0); exit(.55,.055,.675,.19) ~x1.14/frame over last 10-24 f; inOut(.87,0,.13,1) whips/morphs; smooth(.65,0,.35,1) fades 10-14 f; ui(.4,0,.2,1); cam(.48,.1,0,.9) peak ~27%; glide(.47,.2,.15,1) 150-350 px; rest(.45,0,.1,1); contact(.55,0,.9,.5…
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:22` · `kosif-one/tools/kosif-studio/motion/references/craft-numbers.md`
-
-#### EASE-70 · تسارعات مسماة: صدمة/خطفة/دفع/استقرار · Legacy named eases slam/snap/drive/settle · 🟢 جاهز
-- **ماذا / what:** Four short named GSAP eases from kit v1 used by the word reveals and pen strokes.
-- **كيف / how:** MOTION.ease.slam etc. passed as GSAP ease strings.
-- **أرقام / params:** slam=expo.out, snap=back.out(1.3), drive=power4.inOut, settle=power4.out, linear=none
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:12`
-
-#### EASE-71 · زووم لوغاريتمي ثابت الإحساس · Log-space zoom ease (logEase / lmix) · 🟢 جاهز
-- **ماذا / what:** Makes scale and zoom changes feel constant (1x->2x feels like 2x->4x) by interpolating in log space.
-- **كيف / how:** MOTION.logEase(a,b,fn) wraps any ease for a linear tween of scale; MOTION.lmix(a,b,t) for direct values; zoomTrack for multi-target zooms.
-- **أرقام / params:** push 1->2.4x feels constant; peak about 5% scale per frame
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:43` · `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:88`
-
-#### EASE-72 · مدة تتناسب مع المسافة · Distance-proportional duration · 🟢 جاهز
-- **ماذا / what:** Duration of a move grows with distance travelled; camera moves are clamped.
-- **كيف / how:** MOTION.durFor(px, camera) = 0.35 s + 1.35 ms per px; camera clamped to 0.6-2.4 s; slowest move >= 3x fastest.
-- **أرقام / params:** 0.35 + 0.00135*px s; camera 0.6-2.4 s
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:49` · `kosif-one/tools/kosif-studio/motion/references/craft-numbers.md`
-
-#### EASE-73 · زنبركات جاهزة كمنحنيات · Normalised spring eases (snappy/default/heavy/playful) · 🟢 جاهز
-- **ماذا / what:** Damped-oscillator eases normalised to end at 1, usable directly as GSAP eases for springy arrivals.
-- **كيف / how:** MOTION.spring('snappy'|'default'|'heavy'|'playful') returns an ease function.
-- **أرقام / params:** snappy zeta .62 omega 20 (~3% overshoot); default .74/17 (~1%); heavy 1.0/13 (0%); playful .45/18 (visible)
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:52` · `kosif-one/tools/kosif-studio/motion/references/motion-craft.md`
-
-#### EASE-74 · زنبركات فيزيائية بكتلة وصلابة · Physical spring presets SPR + springStep · 🟢 جاهز
-- **ماذا / what:** Closed-form damped spring step responses (under/critical/over-damped), seekable at any t, critically damped by default.
-- **كيف / how:** MOTION.springStep(t, MOTION.SPR.<name>) or MOTION.track(t, keys, SPR.firm); clamp option removes overshoot.
-- **أرقام / params:** snap d18 k260 m0.7; pop d11 k180 m0.6; land d14.5 k200 m1; micro d30 k500 m0.6; firm d24 k140 m1; soft d26 k120 m1; heavy d30 k90 m1.4; max two overshooting springs per film
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:65` · `kosif-one/tools/kosif-studio/motion/references/craft-numbers.md`
-
-#### EASE-75 · تغيير السرعة · Speed change · 🟢 جاهز
-- **ماذا / what:** Speed up/slow clips with pitch-safe audio.
-- **كيف / how:** setpts=0.5*PTS + atempo=2.0 (atempo range 0.5-2, chain for more); EDL clip.speed.
-- **أرقام / params:** speed 1.5 in example
-- **الدليل / proof:** `100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md` · `100-superskills/skills/pro-video-editor-ffmpeg/templates/edl.example.json`
-
-#### EASE-76 · نابض بصيغة مغلقة · Closed-form spring easing · 🟢 جاهز
-- **ماذا / what:** Deterministic damped spring evaluated analytically, overshoots ~1.05 then settles.
-- **كيف / how:** spring(x) in scene-2d.html using omega=sqrt(stiffness), zeta=damping/(2*omega).
-- **أرقام / params:** stiffness 300, damping 30, mass 1
-- **الدليل / proof:** `100-superskills/skills/claude-animation-studio/templates/scene-2d.html:49` · `100-superskills/skills/claude-animation-studio/references/motion-rules.md`
-
-#### EASE-77 · دوال التوقيت seg/lerp · seg/lerp/ease helper set · 🟢 جاهز
-- **ماذا / what:** Local progress seg(t,a,b) clamped 0..1 with lerp, easeIn/easeOut/easeInOut, breathe, glow helpers.
-- **كيف / how:** Use seg to map beat window then shape with ease or spring.
-- **الدليل / proof:** `100-superskills/skills/claude-animation-studio/templates/scene-2d.html`
-
-#### EASE-78 · مفاتيح مأخوذة من دالة · Function-sampled keyframes · 🟢 جاهز
-- **ماذا / what:** Turns any f(t) into GSAP keyframes so code-driven motion stays seek-safe.
-- **كيف / how:** tl.to(el, {keyframes: MOTION.sampled(fn, t0, t1, 60)}).
-- **أرقام / params:** 60 samples/s default
-- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:109`
-
-#### EASE-79 · حركة النابض المخمد · Damped spring motion · 🟢 جاهز
-- **ماذا / what:** Overshoot-and-settle curve for squash, pops and floppy ears as a pure function of time.
-- **كيف / how:** spring(t, t0, f, z) = 1 − e^(−zωx)(cos ω_d x + (zω/ω_d) sin ω_d x)
-- **أرقام / params:** f 3.2 Hz, ζ 0.32 (one overshoot)
-- **الدليل / proof:** `kosif-studio/motion/projects/bunny_twin/src/main.js:9`
-
-#### EASE-80 · تسهيل خطي · Easing linear (html-canvas) · 🟢 جاهز
-- **ماذا / what:** Ease.linear maps 0..1 to 0..1 for entrances/exits in the canvas starter.
-- **كيف / how:** KOSIF.Ease.linear(x) or prog(t,t0,t1,Ease.linear)
-- **أرقام / params:** formula x; used for —
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12`
-
-#### EASE-81 · تسهيل خروج تكعيبي · Easing outCubic (html-canvas) · 🟢 جاهز
-- **ماذا / what:** Ease.outCubic maps 0..1 to 0..1 for entrances/exits in the canvas starter.
-- **كيف / how:** KOSIF.Ease.outCubic(x) or prog(t,t0,t1,Ease.outCubic)
-- **أرقام / params:** formula 1-(1-x)^3; used for default for prog()
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12`
-
-#### EASE-82 · تسهيل دخول وخروج تكعيبي · Easing inOutCubic (html-canvas) · 🟢 جاهز
-- **ماذا / what:** Ease.inOutCubic maps 0..1 to 0..1 for entrances/exits in the canvas starter.
-- **كيف / how:** KOSIF.Ease.inOutCubic(x) or prog(t,t0,t1,Ease.inOutCubic)
-- **أرقام / params:** formula 4x^3 / 1-(-2x+2)^3/2; used for camera default, draw-on
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12`
-
-#### EASE-83 · تسهيل خروج أسي · Easing outExpo (html-canvas) · 🟢 جاهز
-- **ماذا / what:** Ease.outExpo maps 0..1 to 0..1 for entrances/exits in the canvas starter.
-- **كيف / how:** KOSIF.Ease.outExpo(x) or prog(t,t0,t1,Ease.outExpo)
-- **أرقام / params:** formula 1-2^(-10x); used for ring burst, particles
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12`
-
-#### EASE-84 · تسهيل خروج خماسي · Easing outQuint (html-canvas) · 🟢 جاهز
-- **ماذا / what:** Ease.outQuint maps 0..1 to 0..1 for entrances/exits in the canvas starter.
-- **كيف / how:** KOSIF.Ease.outQuint(x) or prog(t,t0,t1,Ease.outQuint)
-- **أرقام / params:** formula 1-(1-x)^5; used for counter
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12`
-
-#### EASE-85 · تسهيل ارتداد للخارج · Easing outBack (html-canvas) · 🟢 جاهز
-- **ماذا / what:** Ease.outBack maps 0..1 to 0..1 for entrances/exits in the canvas starter.
-- **كيف / how:** KOSIF.Ease.outBack(x) or prog(t,t0,t1,Ease.outBack)
-- **أرقام / params:** formula s=1.70158; used for dots pop, caption pop
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12`
-
-#### EASE-86 · تسهيل سحب للخلف قبل الخروج · Easing inBack (html-canvas) · 🟢 جاهز
-- **ماذا / what:** Ease.inBack maps 0..1 to 0..1 for entrances/exits in the canvas starter.
-- **كيف / how:** KOSIF.Ease.inBack(x) or prog(t,t0,t1,Ease.inBack)
-- **أرقام / params:** formula s=1.70158; used for exits
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12`
-
-#### EASE-87 · تسهيل نابضي مخمّد · Damped spring easing (stiffness/damping) · 🟢 جاهز
-- **ماذا / what:** Analytic damped-spring curve with under/critically damped branches; gives overshoot pops without a physics loop.
-- **كيف / how:** Ease.spring(x, stiffness, damping) inside prog()
-- **أرقام / params:** defaults 170/18; title 170/16, burst 150/14, card 160/17
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:20` · `kosif-tool/starters/html-canvas/index.html:149`
-
-#### EASE-88 · دوال التقدم والنافذة · prog / window01 / lerp timing helpers · 🟢 جاهز
-- **ماذا / what:** prog(t,t0,t1,ease) gives eased progress inside a time window; window01 combines entrance and exit windows in one value; lerp/clamp01 interpolate.
-- **كيف / how:** window01(t,t0,t1,tin=0.4,tout=0.4,easeIn=outCubic,easeOut=inOutCubic)
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:29`
-
-#### EASE-89 · أدوات الخط الزمني KOSIF · KOSIF timeline helpers (Ease/prog/window01/rng/cameraAt) · 🟢 جاهز
-- **ماذا / what:** Shared easing set and helpers used by all canvas snippets in playbooks.
-- **كيف / how:** KOSIF.Ease {linear,outCubic,inOutCubic,outExpo,outQuint,outBack,inBack,spring(x,k,d)}, prog, window01, lerp, rng, cameraAt, applyCamera, activeWord, phrases, Timeline.
-- **أرقام / params:** spring defaults k170 d18; outBack s 1.70158
-- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12-131`
-
-#### EASE-90 · منحنى الحركة السائلة · Fluid easing cubic-bezier(0.32,0.72,0,1) · 🟢 جاهز
-- **ماذا / what:** Mass/spring-like easing for all transitions, 700 ms+.
-- **كيف / how:** transition duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]
-- **أرقام / params:** 700-1000 ms
-- **الدليل / proof:** `kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:270` · `kosif-one/vendor/mcp-higgsfield-landing/src/styles/global.css:13`
-
-#### EASE-91 · نوابض الحركة · Spring presets · 📦 بأمر تثبيت
-- **ماذا / what:** Closed-form springs as GSAP eases.
-- **كيف / how:** MOTION.spring('snappy'|'default'|'heavy'|'playful')
-- **أرقام / params:** overshoot ~3% / 1% / 0 / visible; settle ~0.5 s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js` · `kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/animation-libraries.md` · `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md`
-
-#### EASE-92 · تمويه السرعة الاتجاهي · Directional speed blur · 📦 بأمر تثبيت
-- **ماذا / what:** Fast moves get a motion-blur whose strength rises and falls over the move along one axis.
-- **كيف / how:** M.speedBlur(tl,el,at,dur,{px:12,axis:'x'|'y'}) via an SVG feGaussianBlur stdDeviation 'px 0' bell (45% in E.in, 55% out E.out).
-- **أرقام / params:** 12 px
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:377-391` · `kosif-studio/motion/kit/motion-kit.js:378`
-
-#### EASE-93 · معامل موضع الخط الزمني في GSAP · GSAP timeline position parameter · 📦 بأمر تثبيت
-- **ماذا / what:** Place each tween on a master timeline by absolute time, relative offset or alignment to the previous tween, instead of chaining delays.
-- **كيف / how:** const tl = gsap.timeline({paused:true, defaults:{duration:0.5, ease:'power2.out'}}); tl.to(a,{x:100},0); tl.to(b,{y:50},'<'); tl.to(c,{opacity:0},'<0.2'); '+=0.5' after end, '-=0.2' overlap, labels via tl.addLabel('intro', 0) and 'intro+=0.3'. Nest child timelines with master.add(child, t).
-- **أرقام / params:** '<' same start; '>' after end; '<0.2' 0.2s after previous start
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md`
-
-#### EASE-94 · التتابع المتدرج stagger · GSAP stagger object · 📦 بأمر تثبيت
-- **ماذا / what:** One tween animates a list of elements with an offset between each, from start, end, center, edges or a seeded order.
-- **كيف / how:** gsap.from('.word',{y:40, autoAlpha:0, stagger:{each:0.08, from:'center'}}) or {amount:0.3} to fit the whole cascade in 0.3s. Function-based values (i)=>i*50 give per-item offsets. Keep a total stagger under ~0.5s regardless of item count.
-- **أرقام / params:** each 0.03-0.12s; amount 0.3s; total cascade <500ms
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md` · `kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/motion-principles.md`
-
-#### EASE-95 · مفردات منحنيات GSAP · GSAP ease vocabulary · 📦 بأمر تثبيت
-- **ماذا / what:** Named ease families (power1-4, expo, circ, sine, back, elastic, bounce, steps) each with .in/.out/.inOut; the ease is the emotional adverb of the move.
-- **كيف / how:** Map mood to ease: expo.out confident, sine.inOut dreamy, back.out(1.7) playful overshoot, elastic.out(1,0.3) springy, steps(1) discrete blink, 'none' for scrubbed/linear progress. Use .out for entering, .in for leaving, .inOut for moving between positions.
-- **أرقام / params:** back.out(1.7); elastic.out(1,0.3); elastic.out(1,0.5)
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md` · `kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/motion-principles.md`
-
-#### EASE-96 · نابض ريموشن والتحجيم الإدراكي · Easing.spring and perceptual scale · 📦 بأمر تثبيت
-- **ماذا / what:** Spring easing inside interpolate gives organic pushes; scale animations need a perceptual mapping because linear scale looks slower as it grows.
-- **كيف / how:** easing: Easing.spring({damping:200}) for no-bounce push; output:'perceptual-scale' on scale interpolations; posterize:3 samples every 3rd frame for a stepped, low-frame-rate look.
-- **أرقام / params:** damping 200; posterize 3
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/2712-remotion/10436-remotion-markup/timing.md` · `kosif-atlas/skills/2712-remotion/10436-remotion-markup/SKILL.md`
-
-#### EASE-97 · قاموس منحنيات GSAP حسب الغرض · GSAP ease vocabulary by intent · 📦 بأمر تثبيت
-- **ماذا / what:** Which named GSAP eases fit which job: strong deceleration for hero arrivals, gentler for scroll reveals, back for playful pop, elastic for magnetic snap-back, stepped for blinking cursors, none for scrubbed scroll.
-- **كيف / how:** gsap.timeline({defaults:{ease:'power3.out'}}); reveals power2.out; premium expo.out; playful back.out(1.4)/back.out(1.6); magnetic release elastic.out(1,0.5); cursor blink ease 'steps(1)'; scroll-linked ease 'none'. Needs gsap (npm or CDN).
-- **أرقام / params:** power3.out entrance; power2.out reveal; expo.out premium; back.out(1.4); elastic.out(1,0.5) 0.5-0.6s; steps(1)
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md` · `kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md` · `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md`
-
-#### EASE-98 · توزيع زمني لافتتاحية الصفحة/المشهد · Hero page-load choreography windows · 📦 بأمر تثبيت
-- **ماذا / what:** A strict order for an opening: structure first, headline words staggered, subtitle, navigation cascade, then supporting elements; everything overlaps so the whole entrance lands in about 1.5 s.
-- **كيف / how:** GSAP timeline with negative position offsets ('-=0.3', '-=0.5'); set initial states with gsap.set() before the timeline to avoid a flash of final layout.
-- **أرقام / params:** structure 0-200ms; title words 200-600ms; subtitle 400-800ms; nav 600-900ms; support 800-1200ms; eyebrow 0.6s, h1 0.8s (-=0.3), subtitle 0.6s (-=0.5), CTA 0.5s (-=0.3), hint 0.4s (-=0.2); start y:30 opacity:0
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/3438-ux-design/14124-top-design` · `kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md`
-
-#### EASE-99 · توليد الإطارات البينية · Frame interpolation (RIFE / FILM) · 📦 بأمر تثبيت
-- **ماذا / what:** Double apparent smoothness of low-fps generated clips.
-- **كيف / how:** RIFE VFI multiplier 2, fast_mode, ensemble (FILM VFI for large motion) then re-encode at doubled fps; local fallback without GPU: ffmpeg minterpolate (lower quality).
-- **أرقام / params:** multiplier 2; 8→16 fps
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design`
-
-#### EASE-100 · توقيت القطع · Cut timing sync modes · 📦 بأمر تثبيت
-- **ماذا / what:** Zoom cuts land on a fixed interval, beats, an editor's beat pattern, sentence starts, AI-chosen times, or the footage's own camera cuts.
-- **كيف / how:** cutList(): interval (every 0.6-8 s), beat (beats >= max(0.45, 0.8*every) apart), pattern (planCuts), speech (voiced starts after >= 0.3 s pause, >= max(0.8, every/2) apart), ai (S.cuts), shots (bridge-measured shot boundaries); cached by signature.
-- **أرقام / params:** interval|beat|pattern|speech|ai|shots
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `app/public/js/00_editor.js:166` · `app/index.html:316`
-
-#### EASE-101 · المغناطيس في التايملاين · Timeline magnetic snapping · 📦 بأمر تثبيت
-- **ماذا / what:** Scrubbing snaps to caption edges, scene edges, cuts, shot cuts and beats within 7 px.
-- **كيف / how:** snapTime(t,w): threshold 7 px converted to seconds; candidate points from S.caps, S.scenes, cutList(), S.shotCuts, S.beats.
-- **أرقام / params:** 7 px
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `app/public/js/00_editor.js:573`
-
-#### EASE-102 · توقيت نسبي للمقاطع · Relative clip start expressions · 📦 بأمر تثبيت
-- **ماذا / what:** data-start may reference another clip id with an offset so scenes chain without manual seconds.
-- **كيف / how:** data-start="intro + 0.5" or "intro - 0.5" (overlap).
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/docs/concepts/data-attributes.mdx`
-
-#### EASE-103 · تحريك GSAP بخط زمني متوقف · GSAP paused-timeline authoring · 📦 بأمر تثبيت
-- **ماذا / what:** Motion authored as a paused gsap.timeline registered under the composition id; transforms/opacity only.
-- **كيف / how:** const tl=gsap.timeline({paused:true}); window.__timelines[id]=tl; avoid top/left/width tweens; load fonts before measuring.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/docs/guides/gsap-animation.mdx`
-
-#### EASE-104 · مسار قوسي · Arc Motion Path · 📦 بأمر تثبيت
-- **ماذا / what:** A callout travels along a curved arc using the GSAP MotionPath plugin with auto-rotation to the tangent.
-- **كيف / how:** Install with `npx hyperframes add arc-motion-path` (copies to compositions/components/arc-motion-path.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromiu…
-- **أرقام / params:** GSAP MotionPathPlugin autoRotate
-- **تثبيت / install:** `npx hyperframes add arc-motion-path` (copies to compositions/components/arc-motion-path`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/arc-motion-path/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/arc-motion-path/arc-motion-path.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/arc-motion-path.mdx`
-
-#### EASE-105 · عمود توقيت الضربات · Beat Timeline · 📦 بأمر تثبيت
-- **ماذا / what:** A paused master timeline pins N titled rows to evenly spaced named labels; each enters on its label and the group exits together.
-- **كيف / how:** Install with `npx hyperframes add beat-timeline` (copies to compositions/components/beat-timeline.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fr…
-- **أرقام / params:** beatCount 4; interval 0.6 s; vars: beatCount=4(2..6); interval=0.6(0.2..2); labels=One,Two,Three,Four
-- **تثبيت / install:** `npx hyperframes add beat-timeline` (copies to compositions/components/beat-timeline`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/beat-timeline/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/beat-timeline/beat-timeline.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/beat-timeline.mdx`
-
-#### EASE-106 · أثر الصدى · Echo Trail · 📦 بأمر تثبيت
-- **ماذا / what:** Moving element drawn with N ghost copies sampled at t - i*delta with stepped opacity that collapse into the element at rest (onion skin).
-- **كيف / how:** Install with `npx hyperframes add echo-trail` (copies to compositions/components/echo-trail.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame ca…
-- **أرقام / params:** echoes 4; delta 0.09 s; path sweep|rise|arc; vars: echoes=4; delta=0.09; path=sweep[sweep|rise|arc]; accent=green[green|blue|violet]; exit=none[none|fade|up]
-- **تثبيت / install:** `npx hyperframes add echo-trail` (copies to compositions/components/echo-trail`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/echo-trail/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/echo-trail/echo-trail.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/echo-trail.mdx`
-
-#### EASE-107 · وصول ممتد · Extended Keyframe · 📦 بأمر تثبيت
-- **ماذا / what:** An arrival curve that covers most of the move in the first fifth of the duration and creeps the remainder to the final frame, exiting along the same vector with shutter blur; also exposed as a bare ease.
-- **كيف / how:** Install with `npx hyperframes add extended-keyframe` (copies to compositions/components/extended-keyframe.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chr…
-- **أرقام / params:** ~80 % of travel in first 20 % of time
-- **تثبيت / install:** `npx hyperframes add extended-keyframe` (copies to compositions/components/extended-keyframe`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/extended-keyframe/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/extended-keyframe/extended-keyframe.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/extended-keyframe.mdx`
-
-#### EASE-108 · رصة إطارات مفتاحية · Keyframe Scrub Stack · 📦 بأمر تثبيت
-- **ماذا / what:** Stack of cards keyed with offset timing and a choice of easing presets.
-- **كيف / how:** Install with `npx hyperframes add keyframe-scrub-stack` (copies to compositions/components/keyframe-scrub-stack.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headle…
-- **تثبيت / install:** `npx hyperframes add keyframe-scrub-stack` (copies to compositions/components/keyframe-scrub-stack`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/keyframe-scrub-stack/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/keyframe-scrub-stack/keyframe-scrub-stack.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/keyframe-scrub-stack.mdx`
-
-#### EASE-109 · ضبابية الحركة · Motion Blur · 📦 بأمر تثبيت
-- **ماذا / what:** AE-style shutter motion blur: samples the GSAP timeline at sub-frame times across the shutter window and averages equal-weight copies along the real trajectory (translate, scale, rotate, 3D, skew).
-- **كيف / how:** Install with `npx hyperframes add motion-blur` (copies to compositions/components/motion-blur.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame …
-- **أرقام / params:** shutterAngle 720; shutterPhase -360; samplesPerFrame 16; window [t-1/fps, t+1/fps]
-- **تثبيت / install:** `npx hyperframes add motion-blur` (copies to compositions/components/motion-blur`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/motion-blur/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/motion-blur/motion-blur.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/motion-blur.mdx`
-
-#### EASE-110 · مسافر على مسار · Offset Path Traveler · 📦 بأمر تثبيت
-- **ماذا / what:** Slotted element follows an authored SVG path with tangent rotation and curved entry/exit.
-- **كيف / how:** Install with `npx hyperframes add offset-path-traveler` (copies to compositions/components/offset-path-traveler.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headle…
-- **أرقام / params:** path SVG d string; vars: path=M -90 390 C 150 490 190 70 430 185 C 650 300 720 105 850 145 C 970 180 1030 85 1090 35; traveler_label=Live preview; accent=green[green|blue|violet]
-- **تثبيت / install:** `npx hyperframes add offset-path-traveler` (copies to compositions/components/offset-path-traveler`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/offset-path-traveler/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/offset-path-traveler/offset-path-traveler.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/offset-path-traveler.mdx`
-
-#### EASE-111 · صدمة الغالق · Shutter Slam · 📦 بأمر تثبيت
-- **ماذا / what:** One word thrown through six single-property beats (two translate slams, scale punch, full turn on each axis) under integrated shutter blur on easing measured from an AE export.
-- **كيف / how:** Install with `npx hyperframes add shutter-slam` (copies to compositions/components/shutter-slam.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fram…
-- **تثبيت / install:** `npx hyperframes add shutter-slam` (copies to compositions/components/shutter-slam`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/shutter-slam/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/shutter-slam/shutter-slam.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/shutter-slam.mdx`
-
-#### EASE-112 · المسح الشقي · Slit Scan Reveal · 📦 بأمر تثبيت
-- **ماذا / what:** Each row (or column) samples the subject at a different time offset, smearing arrival through time until offsets collapse to zero.
-- **كيف / how:** Install with `npx hyperframes add slit-scan-reveal` (copies to compositions/components/slit-scan-reveal.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chrom…
-- **أرقام / params:** axis rows|cols; spread 0.45; resolve_at 2.2 s; vars: axis=rows[rows|cols]; spread=0.45; resolve_at=2.2; accent=green[green|blue|violet]; exit=none[none|fade|up]
-- **تثبيت / install:** `npx hyperframes add slit-scan-reveal` (copies to compositions/components/slit-scan-reveal`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/slit-scan-reveal/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/slit-scan-reveal/slit-scan-reveal.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/slit-scan-reveal.mdx`
-
-#### EASE-113 · قفزة نابضية · Spring Pop · 📦 بأمر تثبيت
-- **ماذا / what:** Badge pops from near-rest scale, overshoots once and settles.
-- **كيف / how:** Install with `npx hyperframes add spring-pop` (copies to compositions/components/spring-pop.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame ca…
-- **أرقام / params:** fromScale 0.9; overshoot 1.7; vars: overshoot=1.7(1.1..2); fromScale=0.9(0.8..0.97); text=New
-- **تثبيت / install:** `npx hyperframes add spring-pop` (copies to compositions/components/spring-pop`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/spring-pop/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/spring-pop/spring-pop.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/spring-pop.mdx`
-
-#### EASE-114 · تتابع الشبكة · Stagger Cascade · 📦 بأمر تثبيت
-- **ماذا / what:** Grid of tiles fades/travels into place with an even per-item stagger.
-- **كيف / how:** Install with `npx hyperframes add stagger-cascade` (copies to compositions/components/stagger-cascade.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromiu…
-- **أرقام / params:** itemCount 6; stagger 60 ms; vars: itemCount=6(3..12); stagger=60(20..150); direction=up[up|down|left|right]
-- **تثبيت / install:** `npx hyperframes add stagger-cascade` (copies to compositions/components/stagger-cascade`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/stagger-cascade/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/stagger-cascade/stagger-cascade.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/stagger-cascade.mdx`
-
-#### EASE-115 · شبكة متتابعة · Stagger Lattice · 📦 بأمر تثبيت
-- **ماذا / what:** Staggered grid reveal in the spirit of Anime.js v4 stagger utilities, rebuilt in GSAP.
-- **كيف / how:** Install with `npx hyperframes add stagger-lattice` (copies to compositions/components/stagger-lattice.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromiu…
-- **تثبيت / install:** `npx hyperframes add stagger-lattice` (copies to compositions/components/stagger-lattice`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/stagger-lattice/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/stagger-lattice/stagger-lattice.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/stagger-lattice.mdx`
-
-#### EASE-116 · إيقاع الستوب موشن · Stop Motion Cadence · 📦 بأمر تثبيت
-- **ماذا / what:** Stepped-time law: one driver quantises time to floor(t*fps)/fps and feeds all motion; paper-cut shapes throw/land with squash, 2-frame boil, sparkles living 2-3 frames.
-- **كيف / how:** Install with `npx hyperframes add stop-motion-cadence` (copies to compositions/components/stop-motion-cadence.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless…
-- **أرقام / params:** fps 8|10|12; boil on|off; vars: fps=10[8|10|12]; boil=on[on|off]; accent=green[green|blue|violet]; exit=none[none|fade|up]
-- **تثبيت / install:** `npx hyperframes add stop-motion-cadence` (copies to compositions/components/stop-motion-cadence`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/stop-motion-cadence/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/stop-motion-cadence/stop-motion-cadence.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/stop-motion-cadence.mdx`
-
-#### EASE-117 · رمي وتثبيت · Velocity Throw Snap · 📦 بأمر تثبيت
-- **ماذا / what:** Five-shot rail whips past on a fast decaying curve, overshoots and snaps the hero shot to centre.
-- **كيف / how:** Install with `npx hyperframes add velocity-throw-snap` (copies to compositions/components/velocity-throw-snap.html); mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless…
-- **أرقام / params:** hero_index 2; vars: hero_index=2(0..4); accent=green[green|blue|violet]; card_label_prefix=Shot
-- **تثبيت / install:** `npx hyperframes add velocity-throw-snap` (copies to compositions/components/velocity-throw-snap`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/velocity-throw-snap/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/velocity-throw-snap/velocity-throw-snap.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/velocity-throw-snap.mdx`
-
-#### EASE-118 · وضع اللعب · Example project: play-mode · 📦 بأمر تثبيت
-- **ماذا / what:** Playful elastic-motion example with intro, stats and captions sub-compositions (Nunito, #0057FF, 10 s). [Local copy lacks its sub-compositions: compositions/captions.html, compositions/intro.html, compositions/stats.html.]
-- **كيف / how:** Starter project: `npx hyperframes init --example play-mode` style scaffold (index.html mounts sub-compositions via data-composition-src); reuse its palette/type as a style reference.
-- **أرقام / params:** 1920x1080; 10 s
-- **تثبيت / install:** `npx hyperframes init --example play-mode` style scaffold (index`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/examples/play-mode/registry-item.json` · `kosif-one/vendor/hyperframes/registry/examples/play-mode/index.html`
-
-#### EASE-119 · الكشف على امتداد اللقطة لا دفعة واحدة · Reveal across the whole shot (anti-slide rule) · 📦 بأمر تثبيت
-- **ماذا / what:** Front-loading all content in the first ~25% then holding reads as a PowerPoint slide; pieces must reveal as the voiceover reaches them, especially in the back half of the shot.
-- **كيف / how:** Map every Scene line to a timeline phase cued on the voiceover word; on silent frames cue on the beat.
-- **أرقام / params:** avoid >~25% front-load
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes/references/frame-worker-core.md`
-
-#### EASE-120 · توقيت تلقائي حسب طول المحتوى · Content-length driven sequencing · 📦 بأمر تثبيت
-- **ماذا / what:** A script array is reduced once into absolute [{start,end}] windows where each item's time = base + chars x secPerChar + hold, so longer content gets more screen time.
-- **كيف / how:** Read hyperframes-animation/rules/dynamic-content-sequencing.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.
-- **أرقام / params:** duration = BASE_DURATION + body.length x SEC_PER_CHAR + hold; reserve min-height 160 px
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/dynamic-content-sequencing.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md`
-
-#### EASE-121 · تنفس وحركة خمول جيبية · Sine idle loop / breathing · 📦 بأمر تثبيت
-- **ماذا / what:** Continuous breathing via sine.inOut yoyo with finite repeats, or an onUpdate phase driver for compound transforms; settle amplitude to zero in last ~20% for idles >6 s.
-- **كيف / how:** Read hyperframes-animation/rules/sine-wave-loop.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.
-- **أرقام / params:** SCALE_AMP 0.008-0.015 default (0.02-0.04 isolated/kinetic)
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/sine-wave-loop.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md`
-
-#### EASE-122 · دخول بالقفز النابض · Spring pop entrance · 📦 بأمر تثبيت
-- **ماذا / what:** The canonical arrival: scale 0 -> 1 (+ small y rise) with smooth long-tail settle; overshoot only for playful register; group stagger capped.
-- **كيف / how:** Read hyperframes-animation/rules/spring-pop-entrance.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.
-- **أرقام / params:** fromTo {scale:0,opacity:0}->{scale:1,opacity:1,ease:'power3.out'}; group items x stagger <= 0.5 s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/spring-pop-entrance.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md`
-
-#### EASE-123 · انزلاق بطيء سريع بطيء · Nudge curve slow-fast-slow slide · 📦 بأمر تثبيت
-- **ماذا / what:** Three chained tweens reposition a group: power3.in ramp, linear burst, power4.out tail.
-- **كيف / how:** Read hyperframes-animation/rules/nudge-curve.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.
-- **أرقام / params:** distance 10/65/25 %; time ~20/18/62 %; tail >= 3x ramp-in
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/nudge-curve.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md`
-
-#### EASE-124 · إعدادات توقيت الانتقال · Transition timing presets · 📦 بأمر تثبيت
-- **ماذا / what:** Six named presets: snappy 0.2 s power4.inOut; smooth 0.4 s power2.inOut; gentle 0.6 s sine.inOut; dramatic 0.5 s power3.in->out; instant 0.15 s expo.inOut; luxe 0.7 s power1.inOut.
-- **كيف / how:** Reference the preset name when planning transitions.
-- **أرقام / params:** snappy/smooth/gentle/dramatic/instant/luxe
-- **تثبيت / install:** `see arsenal-libraries.md`
+#### EASE-08 · معامل بطء واحد للدرس كله · Global slowness factor TS · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** كل توقيتات الكشف وحدات خطوة مضروبة في ثابت واحد TS، فيبطؤ الدرس كله أو يسرع برقم واحد، بينما تعيش حلقات الرسم بعد اكتمالها بالزمن الحقيقي. — Every reveal timing is step units × one TS constant, so the whole lesson slows or speeds with one number, while post-reveal loops run in real time.
+- **متى أستخدمها / when:** سبورة وشرح تعليمي يتغير طوله — whiteboard and lessons whose length changes.
+- **كيف / how:** Write timings as steps (k × TS); continuous 'living' loops (sun rotation 10°/s, rain translateY modulo 1.2 s, vapour rise, dash-offset river flow) are independent of TS so slowing the lesson never slows the weather. **أرقام / params:** TS ≈ 1.0–1.4; rain 1.2 s period; sun 10°/s.
+- **الدليل / proof:** `kosif-tool/styles/whiteboard` · `kosif-tool/styles/chalkboard`
+
+## منحنيات التسهيل — Easing curves & tokens
+
+_المنحنى هو «الحال» في جملة الحركة: اختر دورًا لا شكلًا._
+
+#### EASE-09 · رموز التسارع حسب الدور (17 منحنى) · Role-based easing tokens MOTION.E · ✅ مُثبت هنا / proven here
+- **ماذا / what:** منحنى cubic-bezier واحد لكل دور حركة (وصول، خروج إلى القطع، كاميرا، خطف، واجهة، كتابة، قزحية، قفزة) يُمرَّر مباشرة إلى GSAP. — One cubic-bezier per motion role, passed straight to GSAP as an ease function.
+- **متى أستخدمها / when:** كل فيلم بمكتبة الحركة — every film built on the motion kit.
+- **كيف / how:** Load gsap.min.js + motion-kit.js (window.MOTION) and pass MOTION.E.<role>; bezier() solves x→t with 8 Newton steps. Roles: out(.16,1,.3,1) arrivals; outSoft(.22,1,.36,1); in(.7,0,.84,0) implosions; exit(.55,.055,.675,.19) into a cut (~×1.14/frame over the last 10–24 f); inOut(.87,0,.13,1) whips/morphs; smooth(.65,0,.35,1) fades 10–14 f; ui(.4,0,.2,1); cam(.48,.1,0,.9) push, peak ~27%; glide(.47,.2,.15,1) 150–350 px; rest(.45,0,.1,1); contact(.55,0,.9,.55); whip(.6,0,.15,1); dolly(.35,0,.65,1); type(.5,1,.89,1); iris(.4,0,.7,.92); shutter(.2,.7,.2,1); hop(.35,0,.7,.85). Measured here: E.out(0.2)=0.752 (75% of travel in the first fifth), E.exit(0.5)=0.145. Basma's U.E carries nine of the same curves. **أرقام / params:** 17 roles; Newton 8 steps.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:22` · `kosif-studio/tests/test_studio.py:637` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `app/public/js/00_editor.js:2309`
+
+#### EASE-10 · أربع تسارعات مسماة فقط · Four named eases slam/snap/drive/settle · 🟢 جاهز / ready
+- **ماذا / what:** أصغر مفردات تسمح بها قواعد البيت: صدمة للوصول، خطفة بتجاوز ≤6% للهبوط، دفع للسفر والضوء، استقرار للحسم. — The minimal house vocabulary: slam for arrivals, snap (≤6% overshoot) for landings, drive for travel/light, settle for resolve.
+- **متى أستخدمها / when:** حين تريد فيلمًا متماسك الإحساس بلا منحنيات عشوائية — when a film must feel of one piece.
+- **كيف / how:** MOTION.ease.slam = expo.out, snap = back.out(1.3), drive = power4.inOut, settle = power4.out, linear = none; define once in the composition config and forbid ad-hoc cubic-beziers; back/elastic never touches an official logo. **أرقام / params:** overshoot ≤ 6%.
+- **رخصة / license:** GSAP standard no-charge license (vendored gsap.min.js)
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:12` · `100-superskills/skills/kosif-montage-motion/templates/composition.html` · `100-superskills/skills/motion-director-pro/SKILL.md` · `kosif-atlas/skills/2681-emulo/10272-video/SKILL.md`
+
+#### EASE-11 · دوال تسهيل بلا مكتبات · Dependency-free easing set · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مجموعة الحاوية الأساسية: خطي، outCubic، inOutCubic، outExpo، outQuint، outBack، inBack، نابض، مع prog وwindow01 للنوافذ الزمنية. — The starter's core set plus prog() and window01() time windows.
+- **متى أستخدمها / when:** كل مشهد canvas أو HTML بلا GSAP — every canvas/HTML scene without GSAP.
+- **كيف / how:** KOSIF.Ease from starters/html-canvas/timeline.js: outCubic 1−(1−x)³ (default of prog), inOutCubic (camera default, draw-on), outExpo 1−2^(−10x) (bursts), outQuint (counters), outBack/inBack s=1.70158 (pops / exits; outBack overshoot measured 10%), spring(x,k,d). prog(t,t0,t1,ease) = eased progress in a window; window01(t,t0,t1,tin=.4,tout=.4) = entrance and exit in one value. Same set exists as easing.ts in the Remotion starter, as smoothstep/lerp/easeOutCubic in the montage studio pages and as basma's easeOut/easeInOut/easeBack. The proof films use exactly these (outCubic, inOutCubic, inOutSine, outExpo, spring). **أرقام / params:** outBack 1.70158 → 10% overshoot.
+
+```js
+const prog = (t, t0, t1, e = Ease.outCubic) => e(Math.min(1, Math.max(0, (t - t0) / (t1 - t0))));
+// title in 0.3→0.9 s, out 3.0→3.35 s, all from t:
+const a = prog(t, 0.3, 0.9) * (1 - prog(t, 3.0, 3.35, Ease.inBack));
+ctx.globalAlpha = a; ctx.translate(0, (1 - a) * 40);
+```
+
+- **الدليل / proof:** `kosif-tool/starters/html-canvas/timeline.js:12` · `kosif-tool/starters/remotion/src/easing.ts` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/three-bloom-scene/index.html` · `app/public/js/00_editor.js:8`
+
+#### EASE-12 · رموز حركة CSS مختبرة · Tested CSS motion tokens · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مدد ومنحنيات CSS قليلة مسماة يستعملها كل عنصر، يحدّها اختبار بين 120 و420 ملّي ثانية. — A small named set of CSS durations and curves shared by every element, bounded by a test to 120–420 ms.
+- **متى أستخدمها / when:** واجهات ومشاهد HTML بالـ CSS — CSS-driven UI and HTML scenes.
+- **كيف / how:** audit-pro: --motion-instant 120 / fast 160 / medium 260 / slow 420 ms (3.6/4.8/7.8/12.6 frames at 30 fps), --ease-cinematic cubic-bezier(.22,.8,.26,1) for scene entries and colour sweeps, --ease-spring (.34,1.35,.64,1) for pops. earth: --sk-ease (.2,.8,.2,1), expo-like out (.16,1,.3,1), in (.55,0,1,.45), spring (.34,1.56,.64,1); fast 160, panel 210, enter 420, stagger 45, feedback within 100 ms. Studio ease (.2,.8,.2,1). Both test suites passed here. **أرقام / params:** 120/160/260/420 ms; 160/210/420/45 ms.
+- **الدليل / proof:** `kosif-audit-pro/app/globals.css:64` · `kosif-audit-pro/tests/motion-contract.test.mjs` · `kosif-earth-ci-fork/ui/ds/tokens.css:41` · `kosif-audit-studio/studio.css:2`
+
+#### EASE-13 · منحنيات الاستوديوهات ورموز ستايل الكتالوج · Agency curves & catalog style tokens · 📄 موصوف / documented only
+- **ماذا / what:** منحنيات الاستوديوهات الكبرى بدل افتراضيات المتصفح، ورموز الدخول/الخروج/التأكيد/الانتقال/الرسم في قالب STYLE. — Award-studio curves instead of browser defaults, plus the catalog STYLE tokens.
+- **متى أستخدمها / when:** عند كتابة STYLE.json أو مواصفة حركة لهوية — when writing STYLE.json or a brand motion spec.
+- **كيف / how:** Agency set: out-expo (.16,1,.3,1), out-quart (.25,1,.5,1), out-quint (.22,1,.36,1), out-circ (0,.55,.45,1), in-expo (.7,0,.84,0), in-quart (.5,0,.75,0), inOut-quint (.83,0,.17,1), inOut-expo (.87,0,.13,1), out-back (.34,1.56,.64,1), elastic-ish (.68,−.6,.32,1.6), strong UI (.23,1,.32,1), drawer (.32,.72,0,1), fluid (.32,.72,0,1) 700–1000 ms; durations 150/300/500/800/1200. Catalog STYLE.md: Entrance (.22,1,.36,1) 250–600 ms; Exit (.55,0,1,.45) 200–400; Accent overshoot (.34,1.56,.64,1) 120–300; Transition (.65,0,.35,1) 300–800; Path draw linear→ease-out 400–1200. Write a dedicated motion spec only when motion is the brand; otherwise just honour reduced motion. **أرقام / params:** see curve list.
+- **الدليل / proof:** `kosif-tool/templates/STYLE.md` · `kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md` · `kosif-atlas/skills/1530-webcraft/4189-design-guide-authoring/SKILL.md` · `kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md`
+
+#### EASE-14 · قاموس منحنيات GSAP حسب الإحساس · GSAP ease vocabulary by mood · 🟢 جاهز / ready
+- **ماذا / what:** كل عائلة GSAP لها إحساس: power3.out افتراضي البيت، expo.out فاخر، sine.inOut حالم، back.out مرح، elastic مغناطيسي، steps(1) وميض، none للسحب الخطي. — Each GSAP family has a mood; ~3 easing characters per film.
+- **متى أستخدمها / when:** اختيار الإحساس قبل الأرقام — choosing the feel before the numbers.
+- **كيف / how:** Timeline defaults {duration:0.6, ease:'power3.out'}; reveals power2.out; premium expo.out; calm/loops sine.inOut; hero transitions expo.inOut; playful back.out(1.4–1.7) (N ≤ 2); magnetic snap-back elastic.out(1,0.3–0.5) 0.5–0.6 s; cursor blink steps(1); scrubbed/camera/mechanical 'none'. Character taxonomy: Snap (fast in, soft settle: text, key cards), Drive (gradual acceleration then launch: vehicles, big transforms), Heavy Spring (slow massive oscillation: luxury), Elastic (stickers, icons). Feeling map for slides: dramatic slow fades 1–1.5 s + scale 0.9→1; corporate 200–300 ms; calm very slow fades; editorial staggered text. **أرقام / params:** power3.out 0.6 s; back.out(1.7); elastic.out(1,0.3).
+- **رخصة / license:** GSAP standard no-charge license
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md` · `kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md` · `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/animation_craft.md` · `kosif-atlas/skills/345-visuals/1241-html-deck/references/animations.md`
+
+#### EASE-15 · اتجاه التسهيل معنى · Ease direction = meaning · 🟢 جاهز / ready
+- **ماذا / what:** الوصول يتباطأ، الرحيل يتسارع، ما يتحرك في مكانه متناظر، والخروج 65–75% من الدخول؛ لا خطي على حركة مكانية أبدًا. — Arrivals decelerate, departures accelerate, in-place moves are symmetric; exits 65–75% of entrances; never linear on spatial moves.
+- **متى أستخدمها / when:** كل tween — every tween.
+- **كيف / how:** .out entering, .in leaving, .inOut between positions; card in 0.4 s / out 0.25 s; exit 150 ms ease-in then enter 210 ms ease-out delayed 150 ms; linear only for drift, data fills, light/luminance and constant path travel; punches expo.out 0.12–0.18 s; drifts power2.inOut; later entrances fromTo with immediateRender:false; never the same ease on more than two tweens per scene nor the same entrance direction for everything; seams between shots are velocity-matched cuts. kosif-studio qa.py lint warns on violations. **أرقام / params:** exit 0.65–0.75× entrance; exits 0.2–0.25 s E.exit.
+- **الدليل / proof:** `kosif-studio/motion/qa.py:65` · `100-superskills/skills/kosif-montage-motion/references/motion-craft.md` · `100-superskills/skills/claude-animation-studio/references/motion-rules.md` · `kosif-tool/playbooks/kinetic-type.md:30`
+
+#### EASE-16 · زووم لوغاريتمي ثابت الإحساس · Log-space zoom (logEase, lmix, zoomTrack) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يجعل التكبير 1×←2× يُحس مثل 2×←4× بالاستيفاء في فضاء اللوغاريتم. — Makes 1×→2× feel like 2×→4× by interpolating in log space.
+- **متى أستخدمها / when:** كل دفع كاميرا وتكبير كبير — every camera push and big zoom.
+- **كيف / how:** MOTION.lmix(a,b,t) = exp(log a + (log b − log a)·t) (measured here: lmix(1,4,.5) = 2); MOTION.logEase(a,b,E.cam) wraps an ease so a linear scale tween moves through log space; zoomTrack(t, keys) for multi-target zooms; cap ~5% scale change per frame. Remotion: interpolate output 'perceptual-scale'. **أرقام / params:** push 1→2.4× feels constant; ≤5%/frame.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:44` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:43` · `kosif-atlas/skills/2712-remotion/10436-remotion-markup/timing.md`
+
+#### EASE-17 · وصول مقدَّم الوزن · Front-loaded arrival (extended keyframe) · 📦 بأمر تثبيت / one install
+- **ماذا / what:** يقطع 80% من المسافة في أول 20% من الزمن ثم يزحف للنهاية، فتبدأ اللقطة متحركة ولا تُرى ساكنة أبدًا. — Covers ~80% of travel in the first 20% of time and creeps to the end, so shots start in motion.
+- **متى أستخدمها / when:** افتتاح لقطات سريعة الإيقاع — openings of fast-paced shots.
+- **كيف / how:** HyperFrames component extended-keyframe (exits along the same vector with shutter blur). Without installing: per-frame chase x += (target − x)·k with k 0.12–0.19 at 30 fps, written seek-safe as x(f) = target − (target − x0)(1 − k)^f; exits ease-in into the cut (style:pm-notdwd-7de38a). **أرقام / params:** k ≈ 0.15/frame; 80% in 20%.
+- **تثبيت / install:** `npx hyperframes add extended-keyframe`
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/extended-keyframe/extended-keyframe.html` · `kosif-tool/styles/pm-notdwd-7de38a` · `kosif-tool/styles/pm-notdwd-c2037d`
+
+#### EASE-18 · انزلاق بطيء-سريع-بطيء · Nudge curve slow–fast–slow · 📄 موصوف / documented only
+- **ماذا / what:** ثلاث مراحل متتابعة لإعادة تموضع مجموعة: منحدر power3.in، اندفاع خطي، ذيل power4.out طويل. — Three chained tweens: power3.in ramp, linear burst, long power4.out tail.
+- **متى أستخدمها / when:** نقل كتلة نصوص أو بطاقات لمكان جديد — repositioning a group.
+- **كيف / how:** distance 10% / 65% / 25%, time ~20% / 18% / 62%, tail ≥ 3× ramp-in; one paused timeline, fromTo explicit states, transforms only. **أرقام / params:** 10/65/25 % distance; 20/18/62 % time.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/nudge-curve.md`
+
+#### EASE-19 · لقطة السرعة U · U-speed shot · 🟢 جاهز / ready
+- **ماذا / what:** العنصر يدخل سريعًا ويتباطأ، يجول ببطء وهو يُقرأ، ثم يتسارع خارجًا مع القطع. — Enter fast and decay, cruise while read, accelerate out into the cut.
+- **متى أستخدمها / when:** كل لقطة نص أو منتج في مونتاج سريع — every text/product shot in a fast edit.
+- **كيف / how:** MOTION.shot(tl, el, at, {enter:.45, exit:.3, cut, dir:'x', dist:220, cruise:1.2, exitDist, fade}): enter E.out from 220 px at 40% opacity, cruise linear 1.2 px/frame (1.5–8 px/f allowed), exit E.exit over 1.4× dist ending on the cut. **أرقام / params:** enter 0.45 s / 220 px; cruise 1.2 px/f; exit 0.3 s.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:393` · `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md`
+
+#### EASE-20 · إعدادات توقيت الانتقال الستة · Transition timing presets · 📄 موصوف / documented only
+- **ماذا / what:** ستة أسماء جاهزة لمدة الانتقال ومنحناه. — Six named transition timings.
+- **متى أستخدمها / when:** عند تخطيط الانتقالات قبل البناء — planning transitions.
+- **كيف / how:** snappy 0.2 s power4.inOut; smooth 0.4 s power2.inOut; gentle 0.6 s sine.inOut; dramatic 0.5 s power3.in→out; instant 0.15 s expo.inOut; luxe 0.7 s power1.inOut. Pair with TRANS powers for the visual. **أرقام / params:** 0.15–0.7 s.
 - **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md`
 
-#### EASE-125 · مفردات التسارع والإعداد الافتراضي · Easing vocabulary and house default · 📦 بأمر تثبيت
-- **ماذا / what:** power3.out is the house entrance ease; sine.inOut for calm/loops; expo.inOut for snappy hero transitions; none for camera/mechanical; steps(N) for typing/counters; back/elastic/bounce only for explicitly playful register (back N<=2); use ~3 easing characters per film.
-- **كيف / how:** Timeline defaults {duration:0.6, ease:'power3.out'}; .out entrances, .in exits, .inOut symmetric.
-- **أرقام / params:** default 0.6 s power3.out
-- **تثبيت / install:** `see arsenal-libraries.md`
+#### EASE-21 · منحنى التسهيل على الشاشة · Easing curve shown on screen · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** ترسم منحنى bezier بمقابضه ونقطة متوهجة تجري عليه بينما جسم فوقه يتحرك بنفس التسهيل، أو لوحة مقارنة ستة صفوف. — Draw the bezier with handles and a glowing dot riding it while an object moves with that ease, or a six-row comparison board.
+- **متى أستخدمها / when:** دروس الموشن وافتتاحيات الأدوات — motion tutorials, tool intros.
+- **كيف / how:** Grid on dark ground, S-curve stroke 2–3 px (#e25f2f or off-white), handle lines + endpoints, label 'cubic-bezier(x1,y1,x2,y2)'; dot #e8503c with 12 px glow synced to a playhead on a ruler (~1.2 s). Board: rows index/name/mini-curve 60×40 px/track A→B, one ball (r 14 px) per row, same distance and duration (0.94–1.2 s) with linear, inOutCubic, outExpo, outBack(1.7), elastic, bounce. Spring variant: plot x(t) for k180 d12 and label the peak %. **أرقام / params:** 1.2 s; 6 rows; dot glow 12 px.
+- **الدليل / proof:** `kosif-tool/styles/pm-prasenx-8d9323` · `kosif-tool/styles/pm-roundtablespace-d3a1be` · `kosif-tool/styles/pm-tequilafunks-97f6c9` · `kosif-tool/styles/pm-vanshwtfff-db0466`
+
+## النوابض — Springs
+
+_نوابض بصيغة مغلقة: تُحسب عند أي إطار، وتجاوزها مقيس لا مُتخيَّل._
+
+#### EASE-22 · نوابض فيزيائية مغلقة الصيغة SPR · Physical springs SPR (closed form) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** سبعة إعدادات كتلة/صلابة/تخميد تُحل بصيغة مغلقة (ناقص/حرج/زائد التخميد)، فيُرسم أي إطار دون محاكاة ما قبله. — Seven mass/stiffness/damping presets solved in closed form; any frame renders without simulating earlier frames.
+- **متى أستخدمها / when:** هبوط حقيقي على سطح، أو استقرار هادئ بلا ارتداد — true landings, or calm settles.
+- **كيف / how:** MOTION.springStep(t, MOTION.SPR.<name>) → 0..1 (cfg.clamp caps overshoot). Measured here with node (overshoot / 1% settle): snap d18 k260 m.7 → 6.0% / 0.34 s; pop d11 k180 m.6 → 14.1% / 0.50 s; land d14.5 k200 m1 → 15.3% / 0.62 s; micro d30 k500 m.6 → 0.4% / 0.16 s; firm d24 k140 m1 → 0% / 0.58 s; soft d26 k120 → 0% / 0.83 s; heavy d30 k90 m1.4 → 0% / 1.34 s. Default firm/soft/heavy; snap/pop/land only for surface landings, max two per film. **أرقام / params:** see measured table.
+
+```js
+function springStep(t, {damping: c, stiffness: k, mass: m = 1}) {
+  if (t <= 0) return 0;
+  const w = Math.sqrt(k / m), z = c / (2 * Math.sqrt(k * m));
+  if (z < 1) { const wd = w * Math.sqrt(1 - z * z);
+    return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t)); }
+  return 1 - Math.exp(-w * t) * (1 + w * t);          // critical (z ≥ 1 approx.)
+}
+```
+
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:65` · `kosif-studio/tests/test_studio.py:637` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md`
+
+#### EASE-23 · نوابض مطبّعة كمنحنيات GSAP · Normalised spring eases · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مذبذب مخمد مطبّع لينتهي عند 1، يُمرَّر كـ ease في GSAP للقفزات. — Damped oscillator normalised to end at 1, used as a GSAP ease.
+- **متى أستخدمها / when:** قفزة بطاقة أو شارة داخل خط زمني GSAP — a pop inside a GSAP timeline.
+- **كيف / how:** ease: MOTION.spring('snappy'|'default'|'heavy'|'playful') or spring({zeta, omega}). Measured here: snappy ζ.62 ω20 → 8.4% overshoot; default ζ.74 ω17 → 3.2%; heavy ζ1 ω13 → 0%; playful ζ.45 ω18 → 20.5% (the docs' '~3%/1%' figures are lower than measured — trust the measurement). Settle ~0.5 s. **أرقام / params:** 8.4 / 3.2 / 0 / 20.5 %.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:52` · `100-superskills/skills/kosif-montage-motion/references/motion-craft.md`
+
+#### EASE-24 · قيمة تتبع أهدافًا بنابض · Retargetable spring track · ✅ مُثبت هنا / proven here
+- **ماذا / what:** قيمة لها أهداف متعددة عبر الزمن = القيمة الأولى + نابض لكل تغيير، فتبقى دالة خالصة للزمن (الإطار 812 يُرسم دون محاكاة 0–811). — First value plus one spring per change: continuous, seekable.
+- **متى أستخدمها / when:** كاميرا أو مؤشر ينتقل بين أهداف كثيرة — a camera or cursor hopping between many targets.
+- **كيف / how:** MOTION.track(t, [[time,value],...], SPR.firm | 'default', settle=0.6) — keys are move START times; zoomTrack does it in log space. Measured: track(1.0, [[0,0],[0.2,100]], SPR.firm) = 99.89. **أرقام / params:** settle 0.6 s default.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:77` · `kosif-studio/motion/references/x-trend-2026.md` · `kosif-tool/styles/pm-twoclipping-5cba86`
+
+#### EASE-25 · نابض بتردد وتخميد · Frequency–ζ analytic spring · 🟢 جاهز / ready
+- **ماذا / what:** نابض تحليلي من 0 إلى 1 يبدأ عند t0 بتردد بالهرتز ونسبة تخميد، لقفزات المفاصل وارتخاء الأذن والارتداد بعد الإصلاح. — Analytic 0→1 spring from t0 set by frequency (Hz) and ζ.
+- **متى أستخدمها / when:** شخصيات وأجسام مرنة — characters and floppy parts.
+- **كيف / how:** spring(t,t0,f,ζ) = 1 − e^(−ζωx)(cos ω_d x + ζω/ω_d sin ω_d x), ω = 2πf, ω_d = ω√(1−ζ²): default f 3.2 Hz ζ .32 (one overshoot); pops f 4.2 ζ .38; flop f 1.5 ζ .42; recovery f 1.6 ζ .5. Variants: basma spring z .42 ω 16 rad/s; fastify hero min(1.07, 1 − e^(−7t)cos 10t) over 3 s (7% cap); closed-form overlay k300 c30 (ζ≈.87) with opacity = clamp(1.4·s)·(1−out), translateY (1−s)·70, scale .92+.08 s; reference look ω≈2π·2.2, ζ≈.75. **أرقام / params:** 3.2 Hz ζ.32; 4.2/.38; 1.5/.42.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:12` · `app/public/js/00_editor.js:12` · `fastify-motion-bro/web/editorial.js` · `kosif-one/projects/egypt-2120-animation/index.html`
+
+#### EASE-26 · جداول إعدادات النوابض · Spring preset tables · 📄 موصوف / documented only
+- **ماذا / what:** أزواج صلابة/تخميد مسماة مع تقدير سريع للارتداد. — Named stiffness/damping pairs plus a quick bounce estimate.
+- **متى أستخدمها / when:** ترجمة مواصفة واجهة أو Framer إلى نابض فيديو — translating UI/Framer specs to video springs.
+- **كيف / how:** default 170/26, gentle 120/14, wobbly 180/12, stiff 210/20, slow 280/60, molasses 280/120 (mass 1); 'premium' 300/30/1 ≈1.05× overshoot landing in 400–700 ms (GSAP elastic.out(1,0.5) ~0.6 s; CSS fallback cubic-bezier(.34,1.56,.64,1)); tap 400/17; layout/tabs 500/30; UI panels 170/22 (≤1 bounce, settle ≤700 ms); brief primaries 170–200 / 12–16, 180/18. Overshoot exists when c < 2√(k·m); approx bounce = 1 − c/(2√k). Starter Ease.spring measured here: 170/18 → 5.0%, 170/16 → 8.7%, 150/14 → 11.2%. **أرقام / params:** see table.
+- **الدليل / proof:** `kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/animation-libraries.md` · `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md` · `kosif-tool/styles/pm-melvynx-6cde6c/BRIEF.md` · `kosif-tool/styles/pm-aschapmann-131210/BRIEF.md`
+
+#### EASE-27 · منحنى النابض المحسوب مسبقًا · Baked spring ease (springEase) · 📄 موصوف / documented only
+- **ماذا / what:** موضع نابض مخمد بصيغة مغلقة كـ ease آمن للبحث، يعيد المدة (الاستقرار ضمن 0.1%) والمنحنى معًا. — Closed-form spring as a seek-safe GSAP ease returning duration and ease.
+- **متى أستخدمها / when:** نوابض بمواصفة iOS (response/dampingFraction) — iOS-style spring specs.
+- **كيف / how:** springEase({response, dampingFraction}): ζ 1.0 no overshoot (house), 0.80–0.85 ≈1–1.5% (iOS feel), 0.60–0.70 ≈5–10% playful, < 0.55 forbidden; response 0.25–0.35 → 0.37–0.51 s, 0.35–0.5 → 0.51–0.74 s, 0.5–0.7 → 0.74–1.03 s; overshoot on transforms only, never opacity. **أرقام / params:** EPS 0.001; 4800 scan steps.
 - **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md`
 
-#### EASE-126 · منحنى النابض المحسوب مسبقا · Baked spring ease (springEase) · 📦 بأمر تثبيت
-- **ماذا / what:** Closed-form damped-spring position curve as a seek-safe GSAP ease; returns both duration (settle time within 0.1%) and ease.
-- **كيف / how:** springEase({response, dampingFraction}); zeta 1.0 = no overshoot (house), 0.80-0.85 ~1-1.5% (iOS feel), 0.60-0.70 ~5-10% playful, <0.55 forbidden; response 0.25-0.35 -> 0.37-0.51 s, 0.35-0.5 -> 0.51-0.74 s, 0.5-0.7 -> 0.74-1.03 s; overshoot only on transforms not opacity.
-- **أرقام / params:** EPS 0.001; N 4800 scan steps
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md`
+#### EASE-28 · ميزانية التجاوز · Overshoot budget · 📄 موصوف / documented only
+- **ماذا / what:** كم ارتدادًا يُسمح به حسب الغرض، وعدد النوابض المرتدة في الفيلم. — How much overshoot each intent may use, and how many bouncy springs per film.
+- **متى أستخدمها / when:** قبل استخدام back أو elastic — before reaching for back/elastic.
+- **كيف / how:** premium 0%; feedback 2–5%; success 5–10%; celebration 15–25%; more than half of top launch films use 0%, the rest 1–4%; ≤2 snap/pop/land springs per film; one bouncy spring per scene (damping < 16 once); never back/elastic on an official logo or brand mark. **أرقام / params:** 0 / 2–5 / 5–10 / 15–25 %.
+- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/references/motion-craft.md` · `kosif-studio/motion/references/craft-numbers.md` · `kosif-tool/playbooks/product-ui.md`
 
-#### EASE-127 · التتابع والقيم المحسوبة · Stagger and function-based values · 📦 بأمر تثبيت
-- **ماذا / what:** GSAP stagger objects (each/amount/from) and index-based function values; a group arrival reads as one beat when items x stagger <= ~0.5 s.
-- **كيف / how:** adapters/gsap-easing-and-stagger.md § Stagger / Function-Based Values.
-- **أرقام / params:** items x stagger <= 0.5 s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md`
+#### EASE-29 · نابض Remotion والتحجيم الإدراكي · Remotion spring & perceptual scale · 📦 بأمر تثبيت / one install
+- **ماذا / what:** Easing.spring داخل interpolate لدفعات عضوية، وخرج perceptual-scale لأن التكبير الخطي يبدو أبطأ كلما كبر، وposterize لإيقاع إطارات منخفض. — Spring easing inside interpolate, perceptual-scale output, posterize for stepped frames.
+- **متى أستخدمها / when:** مشاريع Remotion — Remotion projects.
+- **كيف / how:** easing: Easing.spring({damping:200}) for a no-bounce push; output:'perceptual-scale' on scale interpolations; posterize:3 samples every 3rd frame; spring({frame, fps, config:{damping, stiffness, mass}}) for entrances; the KOSIF Remotion starter derives scene lengths from total frames (sceneLayout: s1 = round(.34T), s2 = round(.40T), rest) so the film rescales when the duration follows the audio. **أرقام / params:** damping 200; posterize 3; 34%/40%/rest.
+- **تثبيت / install:** `cd kosif-tool/starters/remotion && npm i`
+- **رخصة / license:** Remotion company license (free for individuals/small teams; check terms)
+- **الدليل / proof:** `kosif-atlas/skills/2712-remotion/10436-remotion-markup/timing.md` · `kosif-tool/starters/remotion/src/Film.tsx:58`
 
-#### EASE-128 · علامات وتداخل الخط الزمني · GSAP timeline labels and nesting · 📦 بأمر تثبيت
-- **ماذا / what:** Position parameter, labels and nested timelines; in sub-compositions prefer fromTo over from; play controls only for debug.
-- **كيف / how:** adapters/gsap-timeline-and-labels.md; scene timelines added to the root must not be paused.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-timeline-and-labels.md`
+#### EASE-30 · القفزة النابضة للدخول · Spring pop entrance · ✅ مُثبت هنا / proven here
+- **ماذا / what:** الدخول القياسي: تكبير من قرب الصفر إلى 1 مع ارتفاع بسيط وتجاوز واحد، بمدد وأرقام لكل نوع عنصر. — The canonical arrival: scale up with a small rise and one overshoot, with numbers per element type.
+- **متى أستخدمها / when:** بطاقات، عقد مخطط، أيقونات، كلمة تأكيد — cards, diagram nodes, icons, emphasis words.
+- **كيف / how:** Canvas: prog(t, a, a+0.55, x => Ease.spring(x,170,16)) for scale and y (starter title; proof film arabic-voice-kinetic). Tables: prop pop 0→1.08→1 300–400 ms damping ~12; node pop scale .85→1 k160 d14 ~300 ms + 150 ms fade; label pills k120 d14, exits 200–300 ms ease-in cubic; price card k180 d14 (CTA readable ≥2 s); emphasis 1→1.12→1 over 280 ms k180 d12 landing on the stressed syllable; GSAP fromTo {scale:0,opacity:0}→{scale:1,ease:'power3.out'} with group stagger ≤0.5 s; HyperFrames spring-pop fromScale 0.9 overshoot 1.7. **أرقام / params:** 0.55 s @170/16; .85→1 @160/14; 1→1.12→1 280 ms.
+- **الدليل / proof:** `kosif-tool/starters/html-canvas/index.html:145` · `kosif-tool/playbooks/diagrams.md:27` · `kosif-tool/playbooks/kinetic-type.md:28` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/index.html`
 
-#### EASE-129 · عقد الوضعيات المفتاحية · Keyframe pose contract · 📦 بأمر تثبيت
-- **ماذا / what:** Keyframes are a pose contract: name the moving subject, the poses that prove the motion including the final state, keyframe visible channels, preserve object identity, crossfade only for replacement, final frame is part of the animation, never reset to rest or end on black unless asked.
-- **كيف / how:** hyperframes-keyframes SKILL § Contract + Procedure (identify subject/states -> smallest mechanism -> author seek-safe -> verify with check, keyframes, --shot, snapshots).
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md`
+#### EASE-31 · سقوط ثم استقرار · Drop + spring settle · 📄 موصوف / documented only
+- **ماذا / what:** الجسم يسقط بتسارع ثم يستقر بنابض، أو يصعد من تحت الأرض. — Objects drop with ease-in then settle on a spring, or rise from below the floor.
+- **متى أستخدمها / when:** منتجات ومجسمات تهبط في المشهد — products and 3D objects landing.
+- **كيف / how:** y from ease-in quad over 0.4 s then damped spring (damping 12); staggered falls (ice cubes) ~450 ms easeInQuad + 120 ms settle, stagger ~300 ms; shadow scales with height. **أرقام / params:** 0.4 s ease-in; damping 12; stagger 300 ms.
+- **الدليل / proof:** `kosif-tool/playbooks/3d.md:26` · `kosif-tool/styles/pm-sarut0bisasuke-cefa43`
 
-#### EASE-130 · سلم الوضعيات بإطارات GSAP · GSAP array/percentage keyframes (pose ladder) · 📦 بأمر تثبيت
-- **ماذا / what:** Multi-stop motion on one subject via GSAP keyframes arrays (per-step duration/ease), percentage keyframes, property arrays, ease none on parent with per-stop eases, or easeEach.
-- **كيف / how:** tl.to('.subject',{keyframes:[{x:0,duration:0.2},{x:120,duration:0.4,ease:'power2.out'},{x:100,duration:0.2,ease:'power2.inOut'}],ease:'none'}); labels for semantic states; immediateRender:false on later from/fromTo.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/references/keyframe-patterns.md`
+## التتابع والتداخل والتصميم الحركي — Stagger, overlap & choreography
 
-#### EASE-131 · اختيار آلية الحركة المناسبة · Mechanism choice table for motion · 📦 بأمر تثبيت
-- **ماذا / what:** Map the need to the smallest mechanism: same subject changes box -> FLIP/shared element; route -> path travel; trace -> stroke draw; shape change -> shape interpolation (MorphSVG); visible reveal boundary -> clip/mask/shader uniform; ordered many -> stagger; moving text -> line/word/char/band subdiv…
-- **كيف / how:** keyframes SKILL § Mechanism Choice; prefer DrawSVGPlugin then dasharray; MorphSVGPlugin for morphs.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md`
+_كيف تتوزع الحركات في الزمن حتى تُقرأ كإيماءة واحدة لا كطابور._
 
-#### EASE-132 · مبادئ التوقيت: التمهيد والمتابعة والثبات · Motion timing doctrine (anticipation, follow-through, holds) · 📦 بأمر تثبيت
-- **ماذا / what:** Anticipation only when it clarifies cause; follow-through sells energy; overshoot only for elastic subjects; constant path travel uses ease none; discrete UI states sharp ease-out; final lockups hold longer; avoid big clip-path changes while the same surface scales.
-- **كيف / how:** keyframes SKILL § Timing.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md`
+#### EASE-32 · ميزانيات التتابع · Stagger budgets · 📄 موصوف / documented only
+- **ماذا / what:** فواصل تتابع تُقرأ كإيماءة واحدة: صغيرة للحروف، أكبر للكلمات والبطاقات، والمجموع تحت نصف ثانية. — Stagger intervals that read as one gesture; total under 0.5 s.
+- **متى أستخدمها / when:** أي قائمة أو سطر أو شبكة — any list, line or grid.
+- **كيف / how:** Latin chars 20–30 ms (arc stagger 40 ms along a sine), words 50 ms (Arabic whole words 60–160 ms — never per letter, see ARAB-01), nav items 50 ms, lines/cards 100 ms, feature cards 110 ms, max ~0.2 s per item; items × stagger ≤ 0.5 s regardless of count (gsap stagger {amount:0.3}); from:'center'/'edges' or by distance for grids; same easing family across the cascade. **أرقام / params:** 20–40 / 50–100 / 100–200 ms; total < 500 ms.
+- **الدليل / proof:** `kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md` · `100-superskills/skills/kosif-montage-motion/references/motion-craft.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md`
 
-#### EASE-133 · بناء ثم تنفس ثم حسم · Build / breathe / resolve scene structure · 📦 بأمر تثبيت
-- **ماذا / what:** Every scene: build 0-30% staggered entries, breathe 30-70% with ONE ambient motion, resolve 70-100% decisive exit (exits faster than entrances); speed communicates weight (0.15-0.3 urgent, 0.3-0.5 professional, 0.5-0.8 luxury, 0.8-2.0 cinematic).
-- **كيف / how:** references/motion-principles.md.
-- **أرقام / params:** 0-30/30-70/70-100 %
-- **تثبيت / install:** `see arsenal-libraries.md`
+#### EASE-33 · تتابع القائمة في مكتبة الحركة · Kit list stagger · 🟢 جاهز / ready
+- **ماذا / what:** بطاقات ونقاط وأيقونات تصل واحدة تلو الأخرى كعناصر كاملة، وتعيد وقت النهاية للتسلسل. — Cards/bullets/icons arrive one by one as whole items; returns the end time.
+- **متى أستخدمها / when:** قوائم الميزات والنقاط — feature lists, bullets.
+- **كيف / how:** MOTION.stagger(tl, els, at, {gap:.07, dur:.55, from:{y:28, opacity:0, scale:.96}, ease:E.out}) → end time for chaining; for narration-paced bullets put each row on its spoken word (~2 s apart, fade-up 12 px 300 ms, numbered accent badge). **أرقام / params:** gap 0.07 s; dur 0.55 s; y 28 px; scale .96.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:557` · `kosif-tool/styles/pm-gigabit-million-16b3a0`
+
+#### EASE-34 · تتابع CSS بالترتيب · CSS index-stagger cascades · ✅ مُثبت هنا / proven here
+- **ماذا / what:** الكتل تدخل بتأخير محسوب من رقمها، في مجموعات تقود العين: عنوان ← رحلة ← فعل ← أرقام. — Blocks enter with a delay computed from their index, in groups that steer the eye.
+- **متى أستخدمها / when:** لوحات وبطاقات داخل مشهد HTML — panels/cards in an HTML scene.
+- **كيف / how:** style='--i:n'; animation: scene-in .55s var(--ease) both; animation-delay: calc(var(--i)*45ms). audit-pro panel groups 30/80/130/180 ms, 420 ms, 8 px rise; earth SK.motion: first 10 blocks, 420 ms, 45 ms stagger, (.16,1,.3,1), vertical only, data re-renders never replay; studio cards 12 px rise .55 s @45 ms, council seats .5 s @40 ms. Earth motion test 4/4 passed here. **أرقام / params:** 45 ms/step; 420 ms; ≤10 blocks.
+- **الدليل / proof:** `kosif-earth-ci-fork/ui/core/motion.js` · `kosif-earth-ci-fork/tools/motion.test.mjs` · `kosif-audit-pro/app/globals.css:600` · `kosif-audit-studio/studio.css:114`
+
+#### EASE-35 · نوافذ افتتاحية المشهد · Hero opening choreography windows · 📄 موصوف / documented only
+- **ماذا / what:** ترتيب صارم للافتتاح: البنية، كلمات العنوان، العنوان الفرعي، القائمة، ثم العناصر الداعمة، متداخلة لتنتهي خلال 1.5 ث. — Strict opening order with overlaps landing in ~1.5 s.
+- **متى أستخدمها / when:** أول ثانيتين من أي فيلم أو صفحة — the first two seconds.
+- **كيف / how:** structure 0–200 ms; title words 200–600; subtitle 400–800; nav 600–900; support 800–1200; GSAP: eyebrow 0.6 s, h1 0.8 s ('-=0.3'), subtitle 0.6 s ('-=0.5'), CTA 0.5 s ('-=0.3'), hint 0.4 s ('-=0.2'); start y:30 opacity:0 set with gsap.set() before the timeline to avoid a flash of the final layout. **أرقام / params:** whole entrance ≈1.5 s.
+- **الدليل / proof:** `kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md` · `kosif-atlas/skills/3438-ux-design/14124-top-design`
+
+#### EASE-36 · التداخل ونسب الفصول الأربعة · Overlap & four-act proportions · 📄 موصوف / documented only
+- **ماذا / what:** الحركة الثانوية تبدأ عند 55–75% من القائدة فيستقران معًا، وكل حركة: تمهيد، فعل، رد فعل، حسم. — Secondary starts at 55–75% of the lead; every move has anticipation, action, reaction, resolution.
+- **متى أستخدمها / when:** أي حركتين مرتبطتين — any linked pair of moves.
+- **كيف / how:** secondary at 55–75% so both settle within 2 f; shape settles 6 f before position; act proportions 10–20% / 30–50% / 10–20% / 20–30% + 100–200 ms breathing. **أرقام / params:** 55–75 %; 6 f; 10–20/30–50/10–20/20–30 %.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/references/motion-craft.md`
+
+#### EASE-37 · قواعد الثلث · The 1/3 rules · 📄 موصوف / documented only
+- **ماذا / what:** لا مسافة أكبر من ثلث الإطار بلا مفتاح وسيط، ولا يتحرك أكثر من ثلث العناصر معًا، وحدث جديد كل 2–4 ث، ولا ثبات أطول من 1.5 ضربة. — Four 1/3 guards against chaos and stillness.
+- **متى أستخدمها / when:** مراجعة أي مشهد مزدحم — reviewing a busy scene.
+- **كيف / how:** >1/3 frame travel needs an intermediate key; ≤1/3 of elements move at once; a new event every 2–4 s; no hold > 1.5 beats; nothing frozen > 1.2 s in product demos. **أرقام / params:** 1/3 frame; 2–4 s; 1.5 beats.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md` · `kosif-studio/motion/qa.py:11`
+
+#### EASE-38 · بناء ثم تنفس ثم حسم · Build / breathe / resolve · 📄 موصوف / documented only
+- **ماذا / what:** كل مشهد: بناء 0–30% بدخول متتابع، تنفس 30–70% بحركة محيطية واحدة، حسم 70–100% بخروج حاسم أسرع من الدخول. — Every scene builds, breathes with ONE ambient motion, resolves decisively.
+- **متى أستخدمها / when:** هيكلة أي مشهد 3–8 ث — structuring any 3–8 s scene.
+- **كيف / how:** 0–30 / 30–70 / 70–100 %; the editorial 6 s scene is the tested instance (EASE-41). **أرقام / params:** 0–30/30–70/70–100 %.
 - **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/motion-principles.md`
 
-#### EASE-134 · أنواع حركة البطاقات الثلاث عشرة · Recut card animation kinds (data-anim, 13) · 📦 بأمر تثبيت
-- **ماذا / what:** Closed declarative list compiled into the master timeline: fade-in, fade-out, slide-in (from, distance), kinetic-chars (pop|fade, stagger), typewriter, count-up (from, to, format .0f/.1f/.2f/,d), draw-path, grow-y (target-h), grow-x (target-w), scale-pop, blur-in, mask-reveal (direction), morph-to (…
-- **كيف / how:** data-anim + data-anim-at (seconds relative to card start, quantized to 1/fps).
-- **أرقام / params:** 13 kinds
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md`
-
-#### EASE-135 · انضباط مدد المجموعات · Group duration discipline for music frames · 📦 بأمر تثبيت
-- **ماذا / what:** Best span is the active treatment span; frames over ~6 s usually need 2+ groups; roll templates are one-roll tools; split at the next downbeat when a template would run long.
-- **كيف / how:** references/template-catalog.md § Group duration discipline.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/music-to-video/references/template-catalog.md`
-
-#### EASE-136 · عقيدة لغة الحركة · Motion language doctrine (narrative workflows) · 📦 بأمر تثبيت
-- **ماذا / what:** Smooth beats bouncy (power3 default); sequential reveal in the back ~50% timed to the voiceover; no lazy breathing and no bad pan/push ('no motion over bad motion'); internal seams are velocity-matched cuts; move vocabulary for kinetic type, typewriter, count-up, decode, camera, layout, surface/UI, …
-- **كيف / how:** references/motion-language.md Parts 1-3.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/faceless-explainer/references/motion-language.md`
-
-#### EASE-137 · عائلات التسهيل · Ease families E.out/exit/inOut/whip/cam/rest · 📦 بأمر تثبيت
-- **ماذا / what:** Three curve families by role: expo-out arrivals, ease-in exits into cuts, steep in-out or momentum for camera; linear only for drift/data/light.
-- **كيف / how:** motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits
-- **أرقام / params:** out: velocity x0.92/frame settle 18–55 f; exit x1.14/frame over 10–24 f
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/SKILL.md:95` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md`
-
-#### EASE-138 · النوابض الفيزيائية · Critically damped springs SPR · 📦 بأمر تثبيت
-- **ماذا / what:** Springs firm/soft/heavy default; snap/pop/land only for surface landings, max 2 per film; overshoot 0 or 1–4%.
-- **كيف / how:** motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits
-- **أرقام / params:** SPR.firm|soft|heavy|snap|pop|land
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/SKILL.md:95` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md`
-
-#### EASE-139 · الانضغاط عند التلامس · Squash on contact · 📦 بأمر تثبيت
-- **ماذا / what:** Contact squash and shape settling before position.
-- **كيف / how:** motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits
-- **أرقام / params:** 8%/10% over 8 f; shape settles 6 f before position
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/SKILL.md:95` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md`
-
-#### EASE-140 · التتابع · stagger · 📦 بأمر تثبيت
-- **ماذا / what:** List items arriving one by one.
-- **كيف / how:** motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits
-- **أرقام / params:** MOTION.stagger
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/SKILL.md:95` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md`
-
-#### EASE-141 · منحنيات حركة حسب الدور · Role-based easing tokens · 📦 بأمر تثبيت
-- **ماذا / what:** Each kind of move gets its own curve: arrivals, exits, whips, camera pushes, UI nudges, impacts, typewriters, irises; five_sec states 'four easings, no wall clock'.
-- **كيف / how:** M.ease {slam expo.out, snap back.out(1.3), drive power4.inOut, settle power4.out}; M.E cubic-beziers: out (.16,1,.3,1), outSoft (.22,1,.36,1), in (.7,0,.84,0), exit (.55,.055,.675,.19), inOut (.87,0,.13,1), smooth (.65,0,.35,1), ui (.4,0,.2,1), cam (.48,.1,0,.9), glide (.47,.2,.15,1), rest (.45,0,.1,1), contact (.55,0,.9,.55), whip (.6,0,.15,1), dolly (.35,0,.65,1), type (.5,1,.89,1), iris (.4,0,.7,.92), shutter (.2,.7,.2,1), hop (.35,0,.7,.85).
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:31` · `100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:69` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:12`
-
-#### EASE-142 · مط وضغط مع حفظ الحجم · Volume-preserving squash and stretch · 📦 بأمر تثبيت
-- **ماذا / what:** Impacts and loads squash objects while keeping volume, plus landing squash on a dropped dot and a character hop with landing wobble.
-- **كيف / how:** orb: sq = 1 − .16·kick, stretch = 1/√sq; M.squash(tl, dot, .42, {edge:'bottom', across:.22, along:.26, dur:.18}); bunny: scale (1+.5sq−.4land, 1−sq+breath+land), hop sin(π·u)·.026 over .42 s, land = e^(−7x)·sin(30x)·.05.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:106` · `100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:70` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:118`
-
-#### EASE-143 · مفاتيح مأخوذة بالعينات لركوب مسار · Seek-safe sampled keyframes for path riding · 📦 بأمر تثبيت
-- **ماذا / what:** Following an SVG path is baked into dense keyframes so scrubbing to any time gives the right position (no onUpdate callbacks).
-- **كيف / how:** tl.to(dot, {keyframes: M.sampled(t → path.getPointAtLength(L·E.out((t−b9)/1.15)), b9, b9+1.15, 60)}, b9) → 60 fps sub-keys with ease 'none'.
-- **أرقام / params:** 60 samples/s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:102` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:109`
-
-#### EASE-144 · تتبع متعدد الأهداف · MOTION.track multi-target · 📦 بأمر تثبيت
-- **ماذا / what:** Value with several targets as sum of one spring per change, pure function of t.
-- **كيف / how:** MOTION.track(t,[[time,value],...],preset)
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md` · `100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md`
-
-#### EASE-145 · تغيير السرعة · Speed ramp exact integral · 📦 بأمر تثبيت
-- **ماذا / what:** Speed keys linear, time map integrated; optional minterpolate.
-- **كيف / how:** clips[].ramp [[t,speed],...]; speed 0.1-10 atempo; interpolate:true
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/timeline-schema.md`
-
-#### EASE-146 · تكامل: LottieFiles motion-design skill · Integration: LottieFiles motion-design skill · 📦 بأمر تثبيت
-- **ماذا / what:** Catalogued skill/MCP/library (link only; not installed here).
-- **كيف / how:** see official setup
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md`
-
-#### EASE-147 · تكامل: GSAP · Integration: GSAP · 📦 بأمر تثبيت
-- **ماذا / what:** Catalogued skill/MCP/library (link only; not installed here).
-- **كيف / how:** see official setup
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md`
-
-#### EASE-148 · تكامل: Motion + AI Kit · Integration: Motion + AI Kit · 📦 بأمر تثبيت
-- **ماذا / what:** Catalogued skill/MCP/library (link only; not installed here).
-- **كيف / how:** see official setup
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md`
-
-#### EASE-149 · تكامل: Theatre.js · Integration: Theatre.js · 📦 بأمر تثبيت
-- **ماذا / what:** Catalogued skill/MCP/library (link only; not installed here).
-- **كيف / how:** see official setup
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md`
-
-#### EASE-150 · نابض مغلق الصيغة للنصوص · Closed-form overlay spring (k300 c30) · 📦 بأمر تثبيت
-- **ماذا / what:** Seek-safe spring for DOM overlays: an analytic damped-oscillator step response, so any frame can be rendered out of order.
-- **كيف / how:** spring(x)=1-e^(-zwx)(cos(wd x)+(zw/wd) sin(wd x)), w=sqrt(300), z=30/(2w); overlays use opacity=clamp(spring(t-t0)*1.4)*(1-out) and translateY((1-s)*70) scale(.92+.08s); plus easeInOutCubic and easeOutCubic.
-- **أرقام / params:** stiffness 300, damping 30, mass 1 (zeta ~0.87, slight overshoot)
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/egypt-2120-animation/index.html:58-64` · `kosif-one/projects/egypt-2120-animation/index.html:469-476`
-
-#### EASE-151 · ظهور منبثق مع تمويه · Blur pop-in / pop-out keyword · 📦 بأمر تثبيت
-- **ماذا / what:** Keywords and chips pop in from small and blurred with a slight overshoot, and leave by growing and blurring out.
-- **كيف / how:** in: scale .4, opacity 0, blur 16 px -> 1, 1, 0 in 0.55 s back.out(1.3); out: scale 1.12, opacity 0, blur 10 px in 0.25 s E.in.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/index.html:209-213`
-
-#### EASE-152 · كلمة تقفز بالضغط والمط · Squash-and-stretch jumping word · 📦 بأمر تثبيت
-- **ماذا / what:** The word 'بيتنطط' (he jumps around) jumps three times with stretch on take-off and squash on landing.
-- **كيف / how:** Three hops 0.42 s apart: y 0 -> -90 scaleY 1.08 in 0.2 s E.out; y 0 scaleY .86 in 0.18 s E.contact; scaleY 1 in 0.12 s.
-- **أرقام / params:** hop height 90 px; squash .86; stretch 1.08
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/index.html:243-250`
-
-#### EASE-153 · اهتزاز الضحك · Laughing wiggle · 📦 بأمر تثبيت
-- **ماذا / what:** A word wobbles left-right quickly to read as laughter.
-- **كيف / how:** rotation -4 -> 4 degrees, 0.12 s yoyo, repeat 7, sine.inOut.
-- **أرقام / params:** ±4 degrees, 0.12 s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/index.html:252`
-
-#### EASE-154 · رموز التسهيل في مكتبة الحركة · Motion Kit easing tokens (E) · 📦 بأمر تثبيت
-- **ماذا / what:** A house set of cubic-bezier curves, one family per role, usable directly as GSAP eases.
-- **كيف / how:** M.E.<name> built by bezier(x1,y1,x2,y2) (Newton solve 8 iterations); named GSAP eases M.ease: slam expo.out, snap back.out(1.3), drive power4.inOut, settle power4.out.
-- **أرقام / params:** out (.16,1,.3,1); outSoft (.22,1,.36,1); in (.7,0,.84,0); exit (.55,.055,.675,.19); inOut (.87,0,.13,1); smooth (.65,0,.35,1); ui (.4,0,.2,1); cam (.48,.1,0,.9); glide (.47,.2,.15,1); rest (.45,0,.1,1); contact (.55,0,.9,.55); whip (.6,0,.15,1); dolly (.35,0,.65,1); type (.5,1,.89,1); iris (.4,0,.7,…
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:12-41` · `kosif-one/projects/thursday-dua-animation/source/assets/motion-kit.js`
-
-#### EASE-155 · إعدادات النوابض · Spring presets (normalised + physical) · 📦 بأمر تثبيت
-- **ماذا / what:** Two spring families: normalised oscillator eases for GSAP and physical damped springs (closed form, seekable, retargetable via track()).
-- **كيف / how:** M.spring('snappy'|'default'|'heavy'|'playful') as ease; M.springStep(t,M.SPR.x); M.track(t,[[t0,v0],[t1,v1]...],preset) sums one spring per target change; M.zoomTrack works in log space.
-- **أرقام / params:** SPRINGS snappy z.62 w20, default z.74 w17, heavy z1 w13, playful z.45 w18; SPR snap d18 k260 m.7, pop d11 k180 m.6, land d14.5 k200 m1, micro d30 k500 m.6, firm d24 k140 m1, soft d26 k120 m1, heavy d30 k90 m1.4
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:51-88`
-
-#### EASE-156 · غلاف النبضة ومدة حسب المسافة · hitPulse envelope and distance-based durations · 📦 بأمر تثبيت
-- **ماذا / what:** One envelope for every punch/tick (sine attack, exponential decay, counted in 60 fps frames) and a rule that move duration grows with distance.
-- **كيف / how:** hitPulse(t,attack=2,tau=5); durFor(px,camera)=0.35 s + 1.35 ms/px, camera clamped 0.6-2.4 s.
-- **أرقام / params:** attack 2 f, tau 5 f @60 fps; 0.35 s + 0.00135 s/px
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:46-49`
-
-#### EASE-157 · مفاتيح حركة من دالة زمنية · Seek-safe sampled keyframes from code · 📦 بأمر تثبيت
-- **ماذا / what:** Any function of time becomes GSAP keyframes sampled at 60 per second, so procedural motion survives paused seeking.
-- **كيف / how:** M.sampled(fn,t0,t1,fps=60) -> [{duration:1/60,ease:'none',...fn(t)}]; used by moveCursor.
-- **أرقام / params:** 60 samples per second
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:108-109`
-
-#### EASE-158 · دحرجة ثلاثية وقلب الألوان وضغط الاصطدام · 3D roll, polarity flip, contact squash · 📦 بأمر تثبيت
-- **ماذا / what:** Three punctuation moves: a front-loaded 3D roll-in from -90 degrees, an ink/paper colour flip at act boundaries, and a squash against the edge an object hits.
-- **كيف / how:** M.roll(tl,el,at,{from:-90,dur:.17,perspective:2200}); M.polarity(tl,stage,at,bg,fg) 0.1 s; M.squash(tl,el,at,{edge,across:.08,along:.10,dur:.13}).
-- **أرقام / params:** roll 10 frames; squash 8 frames +8%/-10%
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:361-376`
-
-#### EASE-159 · لقطة السرعة U · U-speed shot (enter fast, cruise, exit into cut) · 📦 بأمر تثبيت
-- **ماذا / what:** An element enters fast and decays, keeps drifting slowly while it is read, then accelerates out right into the cut.
-- **كيف / how:** M.shot(tl,el,at,{enter:.45,exit:.3,cut,dir:'x',dist:220,cruise:1.2}) enter E.out, cruise linear, exit E.exit by dist*1.4.
-- **أرقام / params:** cruise 1.2 px/frame
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:392-401`
-
-#### EASE-160 · سرعات الرسم · Painting speed presets · 📦 بأمر تثبيت
-- **ماذا / what:** Studio drawing speed for the pixel-by-pixel playback.
-- **كيف / how:** studio.SPEEDS.
-- **أرقام / params:** بطيء 5.0, عادي 1.8, سريع 0.55, فوري 0
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/studio.py:46`
-
-#### EASE-161 · منحنى تقدّم الانتقال المقاس · Measured transition progress curves · 📦 بأمر تثبيت
-- **ماذا / what:** Transition easing extracted from the reference by re-synthesis and replayed frame-exactly.
-- **كيف / how:** mm_analyze classifies; mm_build replays curve
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `100-superskills/skills/kosif-mimic/scripts/mm_build.py:1`
-
-#### EASE-162 · زمن الرسم وسرعاته · Drawing-time model and speed presets · 📦 بأمر تثبيت
-- **ماذا / what:** Each step's drawing duration scales with the square root of its changed-pixel share times its weight, so small details are quick and the sky is slow; four named speeds.
-- **كيف / how:** tick(): dur = SPEEDS[speed] * step.weight * sqrt(n/area); pixels revealed linearly in time; UI timer 12 ms; film uses the same formula per frame.
-- **أرقام / params:** بطيء 5.0 s, عادي 1.8 s, سريع 0.55 s, فوري 0 (seconds per full-sheet step); film speeds slow 5.0 / normal 1.8 / fast 0.55
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-studio/studio.py:46` · `kosif-studio/studio.py:535` · `kosif-studio/film.py:28`
-
-#### EASE-163 · ساعة الإيقاع في التركيب · Beat clock in compositions · 📦 بأمر تثبيت
-- **ماذا / what:** Animations are placed by beat number from a BPM so picture and score share one clock.
-- **كيف / how:** const B = M.beats(120), b = B.at; tl.to(x, {...}, b(4))
-- **أرقام / params:** 120 BPM → beat n at n×0.5 s
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-studio/motion/projects/showreel/index.html:61`
-
-#### EASE-164 · تقسيم المشاهد حسب المدة · Duration-proportional scene layout · 📦 بأمر تثبيت
-- **ماذا / what:** Scene lengths are derived from total frames (34% / 40% / remainder) so the film rescales when duration follows the audio.
-- **كيف / how:** sceneLayout(total)
-- **أرقام / params:** s1=round(.34T), s2=round(.40T)
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-tool/starters/remotion/src/Film.tsx:58`
-
-#### EASE-165 · دوال تسهيل Remotion · Dependency-free easing set (Remotion) · 📦 بأمر تثبيت
-- **ماذا / what:** linear, easeOutCubic, easeInOutCubic, easeOutExpo, easeInOutSine, easeOutBack (c=1.70158), progress(frame,start,length,ease), staggerStart(i,step,offset).
-- **كيف / how:** import from ./easing; pass to interpolate({easing})
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-tool/starters/remotion/src/easing.ts`
-
-#### EASE-166 · ظهور مع تمويه · Blur fade-up reveal · 📦 بأمر تثبيت
-- **ماذا / what:** Elements enter translateY 4rem + blur 12px + opacity 0 -> rest over 1000 ms with stagger var(--d).
-- **كيف / how:** IntersectionObserver rootMargin -10% adds .is-in.
-- **أرقام / params:** 800-1000 ms
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md` · `kosif-one/vendor/mcp-higgsfield-landing/src/styles/global.css:181` · `kosif-one/vendor/mcp-higgsfield-landing/src/scripts/motion.ts:25`
-
-#### EASE-167 · تمرير ناعم GSAP وLenis · GSAP+Lenis smooth scroll sync · 📦 بأمر تثبيت
-- **ماذا / what:** Lenis autoRaf off driven by gsap.ticker, lagSmoothing(0), lenis.on scroll -> ScrollTrigger.update.
-- **تثبيت / install:** `see arsenal-libraries.md`
-- **الدليل / proof:** `kosif-one/vendor/mcp-higgsfield-landing/src/scripts/motion.ts:18`
-
-#### EASE-168 · كرة بانضغاط وتمدد · Squash and stretch ball · 👁 شوهد في فيديو
-- **ماذا / what:** scaleY = 1 - k·impact, scaleX = 1 + k·impact on contact; stretch along velocity in flight; preserve area
-- **أرقام / params:** squash 0.65/1.35 for ~3 frames; stretch 1.2 at max speed
-- **الدليل / proof:** `style:pm-chatgptastra-0d95c7` · `style:pm-eyishazyer-af035b` · `style:pm-zheke-38deff`
-
-#### EASE-169 · نسخ شبحية لإظهار تباعد الحركة · Onion-skin spacing ghosts · 👁 شوهد في فيديو
-- **ماذا / what:** sample object position at fixed frame intervals and draw outline copies at low opacity, so spacing reveals the easing
-- **أرقام / params:** every 2-3 frames, 8-12 ghosts, 1 px outline 40% opacity
-- **الدليل / proof:** `style:pm-chatgptastra-0d95c7` · `style:pm-himanshutwtxs-5f4b43`
-
-#### EASE-170 · لوحة مقارنة منحنيات التسارع · Easing comparison board · 👁 شوهد في فيديو
-- **ماذا / what:** Rows: index, easing name, small curve glyph, track A→B; a coloured ball per row runs the same distance in the same duration with linear/easeInOut/expoOut/backOut/elastic/bounce
-- **أرقام / params:** duration 0.94 s, rows 6, ball r 14px
-- **الدليل / proof:** `style:pm-roundtablespace-d3a1be` · `style:pm-stephanlivera-df17a2`
-
-#### EASE-171 · معامل بطء واحد للتوقيت · Global slowness factor TS · 👁 شوهد في فيديو
-- **ماذا / what:** express all timings as step units multiplied by one TS constant so the whole lesson can be slowed/sped uniformly, while continuous motions run on real time
-- **أرقام / params:** TS ~1.0-1.4
-- **الدليل / proof:** `style:chalkboard`
-
-#### EASE-172 · كرت يقفز لكل جملة · Sentence prop pop-in · 👁 شوهد في فيديو
-- **ماذا / what:** for every sentence spawn one visual prop (sign, question bubble, heart card) with spring scale 0 -> 1.08 -> 1 and slight rotation
-- **أرقام / params:** 300-400 ms, damping ~12
-- **الدليل / proof:** `style:doodle`
-
-#### EASE-173 · مسار عربية بمراحل وقفزة تخفي الدوران · Piecewise vehicle timeline with hop-masked turns · 👁 شوهد في فيديو
-- **ماذا / what:** position(t) as segments (wait, reverse, exit, stop at light, continue); when heading flips, add 120 ms hop + squash to hide the sprite swap
-- **أرقام / params:** squash scaleY 0.9, hop 6 px
-- **الدليل / proof:** `style:isometric`
-
-#### EASE-174 · قفزة الكرتونة بقوس بين حاملين · Parabolic object hop between carriers · 👁 شوهد في فيديو
-- **ماذا / what:** lerp xy between start/end, z = h*4t(1-t); when landed, parent the box to the carrier so it inherits motion
-- **أرقام / params:** h ~1.5 units, 400 ms
-- **الدليل / proof:** `style:isometric`
-
-#### EASE-175 · ختم حالة يُطبع على البطاقة · Stamp badge (DOWN / REJECTED / EXPIRED) · 👁 شوهد في فيديو
-- **ماذا / what:** black rounded badge with white text scales from 1.4→1 with rotation -8° and slight shake; underlying card switches to hatched grey
-- **أرقام / params:** 250 ms back.out, shake 2 frames
-- **الدليل / proof:** `style:pm-0xnfrith-5be616`
-
-#### EASE-176 · كرة التوقيت · Bouncing ball timing · 👁 شوهد في فيديو
-- **ماذا / what:** y with gravity ease, squash 1.2x on impact
-- **الدليل / proof:** `style:pm-3xtihor-0f6911`
-
-#### EASE-177 · تبديل العناوين بتلاشٍ متقاطع · Headline crossfade swap · 👁 شوهد في فيديو
-- **ماذا / what:** Outgoing headline moves y -12px and fades, incoming from +12px; overlap 200 ms
-- **أرقام / params:** 500ms easeInOut
-- **الدليل / proof:** `style:pm-ai-baymax-0ef9dd`
-
-#### EASE-178 · قفز متتابع إلى الخانات · Staggered hop-into-grid · 👁 شوهد في فيديو
-- **ماذا / what:** each tile follows parabolic arc to cell centre with rotation settling; stagger 180 ms; easeOutBack on landing with tiny bounce
-- **أرقام / params:** arc height 0.6 tile, duration 450 ms
-- **الدليل / proof:** `style:pm-anilraok-eff262`
-
-#### EASE-179 · كرة مرتدة مع أشباح · Bouncing ball with onion skin · 👁 شوهد في فيديو
-- **ماذا / what:** ball on axis, squash 0.8 at contact, ghost copies at frame steps
-- **أرقام / params:** bounce 600ms
-- **الدليل / proof:** `style:pm-blue-clarity-ef56d0`
-
-#### EASE-180 · شريط تقدم سفلي · Global progress bar · 👁 شوهد في فيديو
-- **ماذا / what:** Thin accent bar along bottom edge grows linearly with total time
-- **أرقام / params:** 3 px, 0->100% over duration
-- **الدليل / proof:** `style:pm-blushpetal795-0c85c2`
-
-#### EASE-181 · طفو المنتج · Floating product idle · 👁 شوهد في فيديو
-- **ماذا / what:** Sine bob y ±6 px with soft shadow scaling inversely
-- **أرقام / params:** period 2.5 s
-- **الدليل / proof:** `style:pm-cansincengiz-me-cf68dd`
-
-#### EASE-182 · ختم يُطبع بقوة · Paid stamp slam · 👁 شوهد في فيديو
-- **ماذا / what:** Outlined green stamp label scales from 1.6 to 1 with slight rotation (-8 deg) and a 2-frame overshoot/shake, landing on the corner of a card
-- **أرقام / params:** 180 ms, easeOutBack
-- **الدليل / proof:** `style:pm-ceowinkz-7c776b`
-
-#### EASE-183 · شريط تقدم الفصول · Chapter progress bar · 👁 شوهد في فيديو
-- **ماذا / what:** thin green line at bottom fills per chapter + label top-left
-- **الدليل / proof:** `style:pm-charlesmendez-73b6e4`
-
-#### EASE-184 · عرض منحنى التسهيل · Easing curve demo · 👁 شوهد في فيديو
-- **ماذا / what:** draw cubic-bezier with handles, pills sliding with that ease
-- **الدليل / proof:** `style:pm-codestackr-c071bf`
-
-#### EASE-185 · ارتداد مع انضغاط · Squash bounce · 👁 شوهد في فيديو
-- **ماذا / what:** Ball falls with gravity, squash on contact, ellipse shadow ring expands
-- **الدليل / proof:** `style:pm-crazyalphaaa-bc7e75`
-
-#### EASE-186 · إيقاع لقطات متساوٍ · Even shot cadence · 👁 شوهد في فيديو
-- **ماذا / what:** cut every 7.5 s = musical phrase
-- **الدليل / proof:** `style:pm-davidshulmanfl-371638`
-
-#### EASE-187 · انزلاق مفتاح التبديل · Toggle knob slide · 👁 شوهد في فيديو
-- **ماذا / what:** translateX knob + bg color swap
-- **أرقام / params:** 250 ms spring
-- **الدليل / proof:** `style:pm-demonugc-4c5753`
-
-#### EASE-188 · جملة مقسومة ذهاباً وإياباً · Split-sentence round trip · 👁 شوهد في فيديو
-- **ماذا / what:** write the script so the first half of each sentence is said on the way down and the second half on the way back up
-- **أرقام / params:** mirror structure
-- **الدليل / proof:** `style:pm-emollick-8661a8`
-
-#### EASE-189 · ضبابية حركة للأزرار · Button motion smear · 👁 شوهد في فيديو
-- **ماذا / what:** duplicate element echoes at low opacity along velocity during fast moves
-- **أرقام / params:** 3-4 echoes
-- **الدليل / proof:** `style:pm-en-ra-81c6dd`
-
-#### EASE-190 · شبكة إيقاع · Rhythm grid stagger · 👁 شوهد في فيديو
-- **ماذا / what:** squares flip/scale on beat, stagger by distance
-- **الدليل / proof:** `style:pm-eyishazyer-af035b`
-
-#### EASE-191 · سقوط كلمة بميل ثم استقرار · Tilt-settle word drop · 👁 شوهد في فيديو
-- **ماذا / what:** Enter with rotate 4° and y-30, spring to 0
-- **أرقام / params:** 400 ms
-- **الدليل / proof:** `style:pm-gdgtify-287ddf`
-
-#### EASE-192 · نقاط مرقمة تظهر تباعًا · Sequential numbered bullets · 👁 شوهد في فيديو
-- **ماذا / what:** rows fade-up 12 px with a numbered square badge in accent colour; space them to narration (~2 s)
-- **أرقام / params:** fade 300 ms, stagger to voice
-- **الدليل / proof:** `style:pm-gigabit-million-16b3a0`
-
-#### EASE-193 · تدرج الحروف على قوس · Per-letter arc stagger · 👁 شوهد في فيديو
-- **ماذا / what:** letters offset y/rotate along sine
-- **أرقام / params:** stagger 40ms
-- **الدليل / proof:** `style:pm-hanifproduktif-54bdee`
-
-#### EASE-194 · تلطيخ ضبابي · Motion blur smear · 👁 شوهد في فيديو
-- **ماذا / what:** duplicate offset copies with opacity falloff
-- **الدليل / proof:** `style:pm-hanifproduktif-54bdee`
-
-#### EASE-195 · خط تقدم سفلي · Bottom progress line · 👁 شوهد في فيديو
-- **ماذا / what:** 2px accent line width = t/duration
-- **الدليل / proof:** `style:pm-hqmank-7c61f1`
-
-#### EASE-196 · إيقاع هادئ بتوقفات طويلة · Calm hold pacing · 👁 شوهد في فيديو
-- **ماذا / what:** Each beat: ~400-600 ms of motion followed by 3-5 s hold to let the viewer read
-- **أرقام / params:** beat length ~5 s, motion 10-15%
-- **الدليل / proof:** `style:pm-iammxfschr-d68f90`
-
-#### EASE-197 · كرة قافزة بأثر شفاف لمسارها · Onion-skin bouncing ball · 👁 شوهد في فيديو
-- **ماذا / what:** Simulate ball with gravity and restitution, squash on contact (scaleX 1.2, scaleY 0.8), and leave outline ghost circles every N frames along the arc with dotted path
-- **أرقام / params:** restitution 0.6, ghost every 3 frames, ghost stroke 1 px 40% opacity
-- **الدليل / proof:** `style:pm-ik-builds-b8bdcf`
-
-#### EASE-198 · حلقة مغلقة بلا قطع · Seamless loop closure · 👁 شوهد في فيديو
-- **ماذا / what:** Make the season parameter cyclic and end the timeline at the same scroll phase/state as frame 0 so the video loops endlessly
-- **أرقام / params:** period = duration
-- **الدليل / proof:** `style:pm-itsolelehmann-e47532`
-
-#### EASE-199 · منحنى التسارع الظاهر · Visible easing curve · 👁 شوهد في فيديو
-- **ماذا / what:** small plot of easing fn with moving dot synced to shape
-- **أرقام / params:** outElastic 0.48s
-- **الدليل / proof:** `style:pm-itsuki-dev-10942d`
-
-#### EASE-200 · دخول خاطف بضبابية حركة · Motion-blur whip entrance · 👁 شوهد في فيديو
-- **ماذا / what:** translate the word ~40% of frame width in 4-6 frames with a directional blur proportional to velocity (or stack 6-8 offset copies at decreasing opacity), then hard stop
-- **أرقام / params:** 150-250 ms, easeOutExpo, blur 30-60 px
-- **الدليل / proof:** `style:pm-jhylee95-e1152f`
-
-#### EASE-201 · حلقات حركة محيطية للحياة · Ambient loops for life (pendulum, rocking) · 👁 شوهد في فيديو
-- **ماذا / what:** sine rotation of pendulum (±18°, 1 s) and rocking chair (±4°, 2 s) so static interiors feel alive
-- **أرقام / params:** ease sine, phase offsets
-- **الدليل / proof:** `style:pm-kamstudiolabs-0b0824`
-
-#### EASE-202 · وميض المفتاح عند الضرب · Hit-flash key response · 👁 شوهد في فيديو
-- **ماذا / what:** On impact, key brightens to full accent, dips down and springs back with damped oscillation, glow decays exponentially
-- **أرقام / params:** dip 4 px, spring k=300 d=18, glow decay 300 ms
-- **الدليل / proof:** `style:pm-kamstudiolabs-447565`
-
-#### EASE-203 · دائرة أثر الاصطدام · Impact ripple marker · 👁 شوهد في فيديو
-- **ماذا / what:** on each collision spawn an outline circle at contact point, radius 6->22px, alpha 0.8->0 over ~250 ms ease-out
-- **أرقام / params:** 1px stroke, ring colour
-- **الدليل / proof:** `style:pm-kantamk-61f410`
-
-#### EASE-204 · فقاعة تعليق منبثقة · Comment bubble pop · 👁 شوهد في فيديو
-- **ماذا / what:** Avatar dot + card with author, 'just now' and one-line story pops beside a frame with scale 0.9 -> 1 and fade, holds ~1.5 s
-- **أرقام / params:** 200 ms easeOutBack
-- **الدليل / proof:** `style:pm-kikelopezdesign-7cc9e8`
-
-#### EASE-205 · مونتاج بطاقات خاطفة · Rapid flash-card montage · 👁 شوهد في فيديو
-- **ماذا / what:** Sequence of full-bleed cards (one word each) hard-cut every ~250 ms with an NN/48 counter to create a chaos climax
-- **أرقام / params:** 8th-note cuts, alternating coral/black grounds
-- **الدليل / proof:** `style:pm-kloss-xyz-15182a`
-
-#### EASE-206 · بناء بطيء ثم ضربة · Slow-burn then slam pacing · 👁 شوهد في فيديو
-- **ماذا / what:** keep 6-7 s of near-still frame with tiny light changes, then a sudden collapse + cut to a full-weight title for contrast
-- **أرقام / params:** energy <0.01 then spike
-- **الدليل / proof:** `style:pm-kloss-xyz-b9b3f6`
-
-#### EASE-207 · تحريك على اثنين · On-twos cutout animation · 👁 شوهد في فيديو
-- **ماذا / what:** update cutout transforms at 15 fps while camera runs at 30 fps for a hand-made stop-motion feel
-- **أرقام / params:** hold each pose 2 frames
-- **الدليل / proof:** `style:pm-koldo2k-5cff87`
-
-#### EASE-208 · لكمة نص بضبابية حركة · Motion-blur type punch · 👁 شوهد في فيديو
-- **ماذا / what:** Short word enters fast from side with directional blur 40px->0 and slight scale overshoot on a contrasting full-colour ground
-- **أرقام / params:** 250ms
-- **الدليل / proof:** `style:pm-leadnotifi-e83f94`
-
-#### EASE-209 · كرة ترتد بضغط وتمدد مع آثار شبحية · Squash-and-stretch bounce with onion skin · 👁 شوهد في فيديو
-- **ماذا / what:** Ball follows parabolic arcs, scaleY 0.6/scaleX 1.4 at impact, stretch on fall; draw 6-8 fading ghost copies and a dotted path, with labelled callouts and a frame ruler/playhead
-- **أرقام / params:** ghost opacity 0.1-0.4, impact squash 80 ms
-- **الدليل / proof:** `style:pm-levabashidze-2d713a`
-
-#### EASE-210 · دوران النجمة بضبابية · Spinning starburst blur · 👁 شوهد في فيديو
-- **ماذا / what:** rotate fast with motion blur then settle to logo
-- **أرقام / params:** ~600 ms
-- **الدليل / proof:** `style:pm-lexnlin-038035`
-
-#### EASE-211 · مونتاج ثلاثيات بالتصنيف · Category triptych montage · 👁 شوهد في فيديو
-- **ماذا / what:** Split frame into 3 vertical photos; hard-cut the set every 0.5 s with one centred italic-serif word naming the category (Portraits., Yours.)
-- **أرقام / params:** cut 500 ms, word 120 px serif italic
-- **الدليل / proof:** `style:pm-listudio-820c7b`
-
-#### EASE-212 · مخطط تسهيل مصغر · Easing graph inset · 👁 شوهد في فيديو
-- **ماذا / what:** small HUD plot of easing with moving dot
-- **الدليل / proof:** `style:pm-m1n9-k7-ff9ab9`
-
-#### EASE-213 · بطاقات عناوين متلاحقة سريعة · Rapid-fire title cards · 👁 شوهد في فيديو
-- **ماذا / what:** sequence of full-frame single-word cards, each held 3-10 frames, hard cuts on music hits; accelerate toward the reveal
-- **أرقام / params:** 20+ cuts in 6 s at 30 fps
-- **الدليل / proof:** `style:pm-majin-appsheet-2d3c1a`
-
-#### EASE-214 · مؤقت تنازلي · Countdown pressure timer · 👁 شوهد في فيديو
-- **ماذا / what:** mm:ss.cc decreasing fast to 00:00.00 then 'FINAL'
-- **الدليل / proof:** `style:pm-marklaunches-3b9492`
-
-#### EASE-215 · إبراز تدريجي لقائمة · Checklist progressive highlight · 👁 شوهد في فيديو
-- **ماذا / what:** Vertical list of 4 serif words all dimmed 40%; on each beat one word goes to full white and gets an accent underline that wipes in from left; previous ones stay lit
-- **أرقام / params:** beat interval ~250-300 ms
-- **الدليل / proof:** `style:pm-marouanegazouzi-6071d5`
-
-#### EASE-216 · إعادة ترتيب التخطيط بانسيابية · Layout reflow morph · 👁 شوهد في فيديو
-- **ماذا / what:** FLIP animate boxes from old to new positions/sizes; collapse detail list into one chip row
-- **أرقام / params:** 600 ms cubic-bezier(.65,0,.35,1)
-- **الدليل / proof:** `style:pm-moguzbulbul-6311b6`
-
-#### EASE-217 · قطع على الإيقاع · Beat-grid scene cuts · 👁 شوهد في فيديو
-- **ماذا / what:** cut every 4 beats at 120 BPM = 2 s, or 3.75 beats
-- **أرقام / params:** bpm=120
-- **الدليل / proof:** `style:pm-mrtanviir-132457`
-
-#### EASE-218 · كلمة واحدة لكل نبضة · One-word-per-beat serif cuts · 👁 شوهد في فيديو
-- **ماذا / what:** hard cut italic serif words with ground colour flips each beat
-- **أرقام / params:** 250-500 ms
-- **الدليل / proof:** `style:pm-ndhabarde11-f155b4`
-
-#### EASE-219 · تسهيل أُسّي بحيث لا تبدأ أي لقطة ساكنة · Always-moving exponential ease-out · 👁 شوهد في فيديو
-- **ماذا / what:** Each property moves a fixed fraction of remaining distance per frame (x += (target-x)*k) so shots enter already in motion; exits accelerate (ease-in) into the cut
-- **أرقام / params:** k = 0.12-0.19 per frame at 30 fps
-- **الدليل / proof:** `style:pm-notdwd-7de38a`
-
-#### EASE-220 · دخول بتباطؤ أسّي · Exponential ease-out entrances · 👁 شوهد في فيديو
-- **ماذا / what:** per frame: pos += (target - pos) * k, k 0.12-0.19; shots start mid-move, never on a still
-- **أرقام / params:** k≈0.15
-- **الدليل / proof:** `style:pm-notdwd-c2037d`
-
-#### EASE-221 · ضبابية اتجاهية حسب السرعة · Speed-matched directional blur · 👁 شوهد في فيديو
-- **ماذا / what:** blur radius = |velocity| * c along the movement axis (SVG feGaussianBlur stdDeviation x/y or canvas filter)
-- **أرقام / params:** c ≈ 0.25 px per px/frame, cap 24px
-- **الدليل / proof:** `style:pm-notdwd-c2037d`
-
-#### EASE-222 · افتتاحية منحنى التسارع · Easing-curve editor intro · 👁 شوهد في فيديو
-- **ماذا / what:** draw cubic-bezier S-curve with handles and endpoints on dark grid; red glowing dot travels along curve in sync with a playhead on a ruler; label shows the bezier values
-- **أرقام / params:** ~1.2 s, stroke 2px off-white, dot #e8503c with 12px glow
-- **الدليل / proof:** `style:pm-prasenx-8d9323`
-
-#### EASE-223 · قطع فصول على الإيقاع · Beat-locked chapter cuts · 👁 شوهد في فيديو
-- **ماذا / what:** ~1.25–2 s per section, hard cut with palette inversion
-- **الدليل / proof:** `style:pm-raphaelaubryy-4b137e`
-
-#### EASE-224 · كرة مرتدة مع مخطط التباعد · Bouncing ball with spacing chart · 👁 شوهد في فيديو
-- **ماذا / what:** parabolic arcs with ghost trail on timeline ticks
-- **الدليل / proof:** `style:pm-rendesr-86be44`
-
-#### EASE-225 · شارة خطوة دوّارة · Rotating step badge · 👁 شوهد في فيديو
-- **ماذا / what:** small Lissajous/ellipse in corner rotating continuously; label 'STEP n/10' increments per beat
-- **أرقام / params:** rotation 90°/s
-- **الدليل / proof:** `style:pm-rneayan-ea6129`
-
-#### EASE-226 · دخول الأداة بميل · Prop tilt-in · 👁 شوهد في فيديو
-- **ماذا / what:** bottle rotates from -60deg at corner, holds, exits
-- **الدليل / proof:** `style:pm-ror-fly-9950f1`
-
-#### EASE-227 · ساعة تتقدم بسرعة · Time-lapse clock counter · 👁 شوهد في فيديو
-- **ماذا / what:** large serif clock digits incremented per frame to show time passing, with job rows completing at matching timestamps
-- **أرقام / params:** 52 minutes in ~3 s
-- **الدليل / proof:** `style:pm-sachaarbonel-8f14f4`
-
-#### EASE-228 · سقوط مكعبات الثلج · Ice drop and settle · 👁 شوهد في فيديو
-- **ماذا / what:** rounded-square cubes fall from above frame into the glass with gravity ease and a tiny settle bounce, staggered
-- **أرقام / params:** ~450 ms fall easeInQuad + 120 ms settle, stagger ~300 ms
-- **الدليل / proof:** `style:pm-sarut0bisasuke-cefa43`
-
-#### EASE-229 · بطاقات كلمة واحدة متتابعة · One-word punch cards · 👁 شوهد في فيديو
-- **ماذا / what:** Split a slogan into single words on black, each cut on the beat with slight scale-in
-- **أرقام / params:** ~1.6 s per word, scale 1.05->1
-- **الدليل / proof:** `style:pm-spearwtf-3c1fd1`
-
-#### EASE-230 · عرض منحنى التسهيل · Easing curve visualiser · 👁 شوهد في فيديو
-- **ماذا / what:** draw bezier with handles, glowing dot follows
-- **أرقام / params:** cubic-bezier(.83,0,.17,1)
-- **الدليل / proof:** `style:pm-sudiyasa-f48ac9`
-
-#### EASE-231 · عرض منحنى التسهيل كأداة محرر · Easing graph editor demo · 👁 شوهد في فيديو
-- **ماذا / what:** draw grid + cubic-bezier curve with handle lines and points; label 'cubic-bezier(x1,y1,x2,y2)'; a dot moves along curve while a ball moves with that easing
-- **أرقام / params:** curve stroke 3 px #e25f2f; 1.2 s
-- **الدليل / proof:** `style:pm-tequilafunks-97f6c9`
-
-#### EASE-232 · مونتاج سريع على كل ثُمن · Rapid-fire 8th-note montage · 👁 شوهد في فيديو
-- **ماذا / what:** At 120 BPM cut every 250 ms between bold single-word type gags: repeated word rows alternating outline/fill scrolling opposite ways, extruded 3D word with stacked offset layers, word split across colo
-- **كيف / how:** At 120 BPM cut every 250 ms between bold single-word type gags: repeated word rows alternating outline/fill scrolling opposite ways, extruded 3D word with stacked offset layers, word split across colour bars with glitch
-- **أرقام / params:** 6-7 cuts x 250 ms
-- **الدليل / proof:** `style:pm-teslachartz-c58b32`
-
-#### EASE-233 · قائمة تنزلق بتتابع مع ضبابية حركة · Stagger slide-in list with motion blur · 👁 شوهد في فيديو
-- **ماذا / what:** Rows enter from x=+100% one after another, 80 ms stagger, blur 10px->0 and opacity 0->1, ease-out back
-- **أرقام / params:** stagger 80ms; 350ms each
-- **الدليل / proof:** `style:pm-thilina-a-891c09`
-
-#### EASE-234 · انفجار قطع سريع · Strobe cut burst · 👁 شوهد في فيديو
-- **ماذا / what:** Cut every 250 ms for 2 s at climax
-- **أرقام / params:** 8 cuts
-- **الدليل / proof:** `style:pm-topi-003-9ca6b5`
-
-#### EASE-235 · عد تنازلي · Countdown intro · 👁 شوهد في فيديو
-- **ماذا / what:** numbers 6..1 on beats with silhouettes
-- **الدليل / proof:** `style:pm-topi-003-b0e12c`
-
-#### EASE-236 · نابض محسوب كدالة زمن صرفة · Closed-form spring as pure function of time · 👁 شوهد في فيديو
-- **ماذا / what:** x(t)=target + sum over retargets of Δ_i * step_response(t - t_i); step_response(τ)=1 - e^(-ζωτ)(cos(ωdτ)+ζω/ωd sin(ωdτ)); deterministic seek(t), no CSS transitions
-- **أرقام / params:** ω≈2π·2.2, ζ≈0.75
-- **الدليل / proof:** `style:pm-twoclipping-5cba86`
-
-#### EASE-237 · تأرجح شكل · Pendulum shape swing · 👁 شوهد في فيديو
-- **ماذا / what:** rotate about pin with damped sine
-- **الدليل / proof:** `style:pm-ultimaxbt-2ddf1e`
-
-#### EASE-238 · منحنى النابض · Spring overshoot graph · 👁 شوهد في فيديو
-- **ماذا / what:** plot damped spring x(t); dot rides the curve; label peak %
-- **أرقام / params:** stiffness 180, damping 12
-- **الدليل / proof:** `style:pm-ultimaxbt-bbebf5`
-
-#### EASE-239 · صف عينات منحنيات التسهيل · Easing-curve specimen row · 👁 شوهد في فيديو
-- **ماذا / what:** draw six mini graphs (linear, ease-in-out, expo-out, back-out, elastic, bounce) with italic labels; a red dot rides each curve in sync while an object above moves with that ease
-- **أرقام / params:** graph 60x40 px, stroke 1.5 px white, 1 s loop
-- **الدليل / proof:** `style:pm-vanshwtfff-db0466`
-
-#### EASE-240 · قفزة بضغط وتمدد مع أشباح الحركة · Squash-and-stretch hop with onion skin · 👁 شوهد في فيديو
-- **ماذا / what:** shape jumps along a parabola; scaleY 0.6/scaleX 1.4 on landing, stretch 1.3 in air; draw dotted arc trail and semi-transparent ghost copies at past positions; impact rays + ground ripple
-- **أرقام / params:** hop 600 ms, 5 ghosts alpha 0.15, rays 8 x 30 px
-- **الدليل / proof:** `style:pm-vanshwtfff-db0466`
-
-#### EASE-241 · إيقاع لقطة لكل ميزة · One-beat-per-claim rhythm · 👁 شوهد في فيديو
-- **ماذا / what:** Deliver each value proposition as a 1-1.2 s beat: headline + single object, swap on beat
-- **أرقام / params:** ~1.15 s per beat for a 14 s film
-- **الدليل / proof:** `style:pm-wozu-co-242285`
-
-#### EASE-242 · وضعيات مفتاحية مع حركات مضافة بالكود · Pose keys with procedural overlays · 👁 شوهد في فيديو
-- **ماذا / what:** interpolate pose keyframes with Easing.inOut(cubic); add procedural layers: breathing sine, phone thumb scroll, buried leg kicks, 2-step walk cycle
-- **أرقام / params:** breath 0.3 Hz amplitude 2 px
-- **الدليل / proof:** `style:stickman`
-
-#### EASE-243 · بطاقة تطير لليد وتنقلب ثم تُرمى بأثر · Fly-to-hand, flip, throw with ghost trail · 👁 شوهد في فيديو
-- **ماذا / what:** card lerps to hand; scaleX 1->-1 flip swaps to green check face at the midpoint; parabolic throw to box with 2-3 fading ghost copies of previous positions; box squash on impact; counter +1
-- **أرقام / params:** flip 250 ms, throw 500 ms, ghost opacity 0.3/0.15
-- **الدليل / proof:** `style:stickman`
-
-#### EASE-244 · الرسمة تعيش بعد اكتمالها · Living drawing loops after reveal · 👁 شوهد في فيديو
-- **ماذا / what:** once drawn, run continuous real-time loops independent of the slowness factor: sun rotation, rain translateY modulo, vapour rise, dash-offset flow on rivers
-- **أرقام / params:** rain 1.2 s period, sun 10 deg/s
-- **الدليل / proof:** `style:whiteboard`
-
-#### EASE-245 · توقيتات بخطوات ومعامل بطء واحد · Global step timing with TS factor · 👁 شوهد في فيديو
-- **ماذا / what:** all reveal timings in step units multiplied by a single TS constant so the whole piece can be slowed by one number
-- **أرقام / params:** TS ~1
-- **الدليل / proof:** `style:whiteboard`
-
-#### EASE-246 · السرعة تعني الوزن · Speed as weight table · 📄 موصوف
-- **ماذا / what:** Duration tells the viewer how heavy and important a move is.
-- **كيف / how:** Fast 0.15-0.3s urgency; medium 0.3-0.5s most content; slow 0.5-0.8s gravity/luxury; very slow 0.8-2.0s cinematic. Never same ease on >2 tweens per scene; never same entrance direction for everything.
-- **أرقام / params:** 0.15-0.3 / 0.3-0.5 / 0.5-0.8 / 0.8-2.0 s
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/motion-principles.md`
-
-#### EASE-247 · منحنيات جاهزة بمعايير الاستوديوهات · Agency easing token set · 📄 موصوف
-- **ماذا / what:** A reusable set of cubic-bezier tokens for CSS/WAAPI/Remotion.
-- **كيف / how:** out-expo (0.16,1,0.3,1); out-quart (0.25,1,0.5,1); out-quint (0.22,1,0.36,1); out-circ (0,0.55,0.45,1); in-expo (0.7,0,0.84,0); in-quart (0.5,0,0.75,0); inOut-quint (0.83,0,0.17,1); inOut-expo (0.87,0,0.13,1); out-back (0.34,1.56,0.64,1); elastic-ish (0.68,-0.6,0.32,1.6); strong UI out (0.23,1,0.32,1); drawer (0.32,0.72,0,1).
-- **أرقام / params:** durations 150/300/500/800/1200ms
-- **الدليل / proof:** `kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md` · `kosif-atlas/skills/2981-designer-skill/12625-designer-skill/reference/motion-and-interaction.md`
-
-#### EASE-248 · سلم المدد · Duration ladder (100/300/500) · 📄 موصوف
-- **ماذا / what:** Feedback is fastest, state changes medium, layout changes slower, entrances slowest; exits about 75% of entrances.
-- **كيف / how:** 100-150ms feedback, 200-300ms state, 300-500ms layout, 500-800ms entrances; exit = 0.75x enter; ease-in only for exits. Video uses the longer end of each band.
-- **أرقام / params:** exit 0.75x
-- **الدليل / proof:** `kosif-atlas/skills/2981-designer-skill/12625-designer-skill/reference/motion-and-interaction.md`
-
-#### EASE-249 · سلّم مدد الحركة حسب المسافة · UI duration ladder scaled by distance · 📄 موصوف
-- **ماذا / what:** A small fixed set of durations keyed to how big the change is: tiny feedback is near-instant, panels and modals take longer, choreographed sequences longest. Travel distance also scales the time.
-- **كيف / how:** Define CSS custom properties (--dur-fast/normal/slow/slower) and pick by category; in GSAP/WAAPI use the same values. Rendered deterministically with kosif-tool render_html.cjs (Playwright Chromium at /opt/pw-browsers + ffmpeg, both present) in virtual-time mode.
-- **أرقام / params:** hover/press 100-150ms; toggles/dropdowns 200-300ms; modals/page 300-500ms; choreography 500ms+; 8-16px move 100-150ms, 50-100px 150-250ms, full-screen 250-350ms; most UI ~200ms (<100 imperceptible, >400 sluggish)
-- **الدليل / proof:** `kosif-atlas/skills/3529-ui-design/14308-interaction-design` · `kosif-atlas/skills/3438-ux-design/14122-refactoring-ui` · `kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/feedback-patterns.md`
-
-#### EASE-250 · مجموعة منحنيات التسارع الاحترافية · Agency custom easing token set · 📄 موصوف
-- **ماذا / what:** Named cubic-bezier curves used by award-level studios instead of browser defaults: expo/quart/quint/circ outs for arrivals, expo/quart ins for exits, symmetric quint/expo in-outs for loops, plus back and elastic overshoots.
-- **كيف / how:** Paste as :root variables; mirror in GSAP via CustomEase.create('smooth','0.16,1,0.3,1'). Works in CSS/WAAPI with no install; GSAP CustomEase needs gsap package.
-- **أرقام / params:** out-expo 0.16,1,0.3,1; out-quart 0.25,1,0.5,1; out-quint 0.22,1,0.36,1; out-circ 0,0.55,0.45,1; in-expo 0.7,0,0.84,0; in-quart 0.5,0,0.75,0; in-out-quint 0.83,0,0.17,1; in-out-expo 0.87,0,0.13,1; out-back 0.34,1.56,0.64,1; out-elastic 0.68,-0.6,0.32,1.6; durations 150/300/500/800/1200ms
-- **الدليل / proof:** `kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md` · `kosif-atlas/skills/3529-ui-design/14308-interaction-design` · `kosif-atlas/skills/166-demo-video/535-demo-video/references/scene-design-system.md`
-
-#### EASE-251 · قاعدة اتجاه التسارع للدخول والخروج · Enter/exit/state easing direction rule · 📄 موصوف
-- **ماذا / what:** Arrivals decelerate, departures accelerate, things that stay but change use symmetric easing; exits are shorter than entrances so the new state appears to win.
-- **كيف / how:** ease-out (or power*.out) on entering layers, ease-in on leaving layers, ease-in-out for in-place moves; give exit ~150ms and enter ~210ms with the enter delayed by the exit.
-- **أرقام / params:** exit 150ms ease-in, enter 210ms ease-out (delayed 150ms), move 400ms ease-in-out; panels slide in ease-out 200-400ms, out ease-in
-- **الدليل / proof:** `kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/feedback-patterns.md` · `kosif-atlas/skills/1434-react-skills/3419-vercel-react-view-transitions/references/css-recipes.md` · `kosif-atlas/skills/1567-tonone/4430-form-tokens`
-
-#### EASE-252 · قواعد التتابع بين العناصر · Stagger spacing rules · 📄 موصوف
-- **ماذا / what:** Stagger intervals that read as one gesture rather than a queue: very small per character, larger per word and per card; past ~0.2 s per item viewers feel they are waiting.
-- **كيف / how:** gsap stagger or CSS animation-delay calc(var(--i)*step); Framer staggerChildren.
-- **أرقام / params:** chars 0.02-0.03s; words 0.05s; nav items 0.05s; lines/cards 0.1s; feature cards 0.11s; max ~0.2s; per-element entrance 0.5-0.8s with 0.2-0.4s gaps and 1-2s hold after last
-- **الدليل / proof:** `kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md` · `kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md` · `kosif-atlas/skills/166-demo-video/535-demo-video/references/scene-design-system.md`
-
-#### EASE-253 · حركة واجهات المؤسسات المنضبطة · Restrained enterprise UI motion · 📄 موصوف
-- **ماذا / what:** For dashboards/admin/SaaS scenes: short micro-interactions, quick transitions, no bounce.
-- **كيف / how:** Use quart-out easing for everything.
-- **أرقام / params:** 150ms micro; 200-250ms transitions; cubic-bezier(0.25,1,0.5,1); no spring
-- **الدليل / proof:** `kosif-atlas/skills/2963-pwdev-code/12442-skill-frontend-design`
-
-#### EASE-254 · غلاف الإيقاع للمونتير · Editor pacing envelope · 📄 موصوف
-- **ماذا / what:** Pacing changes across a long video: tightest in the first 3 minutes, a little looser after the cold open, real-time for demos, tight again in the last 2 minutes.
-- **كيف / how:** Cut word-searches out of talking head; hold verdict/insight lines 1-2 s before cutting; allow 5-10% more breathing after the cold open; never stay on B-roll/slides more than 30-45 s without returning to the presenter; B-roll supports, it never patches a weak moment.
-- **أرقام / params:** first 3 min tightest; +5-10% breathing; verdict hold 1-2 s; max off-presenter 30-45 s
-- **الدليل / proof:** `kosif-atlas/skills/3067-youtube/13224-creator-editor-brief/SKILL.md` · `kosif-atlas/skills/3067-youtube/13229-creator-visual-director/SKILL.md`
-
-#### EASE-255 · البنية الدقيقة للفيديو العمودي · Vertical micro-structure · 📄 موصوف
-- **ماذا / what:** Vertical clips follow a compressed arc: 0-1 s hook that works muted and without context, 1-3 s development, then delivery, CTA inside the safe area; for generated/assembled clips: 0-3 s hook, 3-10 s problem/promise, 10-25 s proof, 25 s+ close; under ~30 s retains best on Reels/Shorts.
-- **كيف / how:** Lay these as markers in the timeline template; each story card in a sequence must survive alone because viewers enter mid-sequence.
-- **أرقام / params:** 0-1/1-3/3+ s; or 0-3/3-10/10-25/25+ s; target <=30 s
-- **الدليل / proof:** `kosif-atlas/skills/2976-pwdev-social-media/12592-story-reels/SKILL.md` · `kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen/SKILL.md`
-
-#### EASE-256 · قالب الفيديو القصير 60 ثانية · 60-second short template · 📄 موصوف
-- **ماذا / what:** 0-3 s pattern-interrupt hook, 3-15 s problem or promise, 15-50 s the value, 50-60 s CTA; one idea per video; hook in the first frame before any title card; captions always on.
-- **كيف / how:** Use as the default grid for talking-head reels; map words.json segments into these windows and flag overflow.
-- **أرقام / params:** 0-3 / 3-15 / 15-50 / 50-60 s
-- **الدليل / proof:** `kosif-atlas/skills/192-marketing-skills/617-video-content-strategist/SKILL.md`
-
-#### EASE-257 · أربع منحنيات حركة مسماة · Four named motion helpers · 📄 موصوف
-- **ماذا / what:** Restrict a film to three or four easing roles: slam = easeOutExpo (arrivals and impacts), snap = easeOutBack with overshoot capped near 6% (chips landing), drive = easeInOutQuart (travel, light, drift), settle = easeOutQuart (final resolve); back/elastic overshoot never touches a logo or official br…
-- **كيف / how:** Define them once in the composition config and forbid ad-hoc cubic-beziers elsewhere; the same film uses a non-black ground colour so light has somewhere to fall off.
-- **أرقام / params:** overshoot <=6%
-- **الدليل / proof:** `kosif-atlas/skills/2681-emulo/10272-video/SKILL.md`
-
-#### EASE-258 · خريطة الحركة إلى الإحساس في الشرائح · Motion-to-feeling map for slides · 📄 موصوف
-- **ماذا / what:** Choose motion by feeling: dramatic = slow fades 1-1.5 s and scale 0.9->1 with parallax; techy = neon glow, text scramble, grid reveals; playful = spring easing and gentle float; corporate = fast subtle 200-300 ms; calm = very slow fades; editorial = staggered text reveals with image-text interplay. …
-- **كيف / how:** Default reveal: opacity 0 + translateY(30px) -> 0 over 0.6 s with ease-out-expo cubic-bezier(0.16,1,0.3,1), children staggered 0.1 s; variants scale 0.9, translateX(-50px), blur(10px) over 0.8 s; depth via layered radial gradients and a 50 px grid at 3% white; grain as inline SVG noise; animate only transform/opacity; honour reduced motion.
-- **أرقام / params:** 0.6 s; stagger 0.1 s; 30 px; scale 0.9; blur 10 px; grid 50 px @3%
-- **الدليل / proof:** `kosif-atlas/skills/345-visuals/1241-html-deck/references/animations.md`
-
-#### EASE-259 · حساب الإطارات والتايم كود بنطاق نصف مفتوح · Half-open frame and timecode arithmetic · 📄 موصوف
-- **ماذا / what:** Treat every scene as [start, end); frame = round(seconds x fps). 0-3 s at 30 fps covers frames 0-89 and the cut lands on 90; a 12 s piece ends at frame 360 with 359 the last frame shown. Overlapping transitions are counted once, not added to both scenes. For 29.97/23.976 do not invent drop-frame tim…
-- **كيف / how:** Python helper while planning; after render check ffprobe nb_frames == round(duration x fps) (kosif-tool verify_video.py / TEST_REPORT).
-- **أرقام / params:** frame=round(s*fps); 0-3 s@30 -> 0-89; 12 s@30 -> 360 frames (0-359)
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/workflow.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/examples.md`
-
-#### EASE-260 · S12 رياضي سريع · S12 Sports energy · 📄 موصوف
-- **ماذا / what:** High contrast, directional lines, big numbers; cuts on the beat, limited thrusts, freeze frames. High energy and readable motion; needs fitting footage and licensed music; avoid fast flashing.
-- **كيف / how:** Beat markers from the audio file, ffmpeg freeze (tpad/loop) + overlays, speed lines in SVG; KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg)
-- **أرقام / params:** cost medium-high; MG-003 MG-091..MG-095 MG-097..MG-100
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md`
-
-#### EASE-261 · MG-097 عد تنازلي قبل الانطلاق · MG-097 3-2-1 countdown · 📄 موصوف
-- **ماذا / what:** Numbers 3, 2, 1 appear steadily and the frame opens on 'go'.
-- **كيف / how:** 0-1 / 1-2 / 2-3 s numbers with hold keys, 3-4 s expanding mask; tie it to a real moment or state it is a visual opener. Regular ticks and a start hit.
-- **أرقام / params:** 4 s
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-music-sports.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md`
-
-#### EASE-262 · MG-118/119/120 تمايل بفروق طور وبندول وإطار متحرك · MG-118/119/120 Phase-offset sway, pendulum and border tracer · 📄 موصوف
-- **ماذا / what:** Edge branches sway around a title with different delays (MG-118); a product tilts like a pendulum with a coupled shadow (MG-119); a short segment travels around a rectangle border (MG-120).
-- **كيف / how:** MG-118: 0-4 tilt, 4-8 return; pivots at branch bases, never all in phase. MG-119: 0-1.5 / 1.5-4.5 / 4.5-6 s sinusoidal limited rotation, shadow scale tied to tilt; 2D sway cannot show unseen sides. MG-120: one 6 s lap, trim-path offset with constant arc length, inside safe area, text static.
-- **أرقام / params:** 8 s / 6 s / 6 s
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md`
-
-#### EASE-263 · جدول الإشارات الزمنية للمونتاج · Edit cue sheet (run-of-show style) · 📄 موصوف
-- **ماذا / what:** A timed table with one row per segment: clock time, duration, segment, explicit cues (graphic in/out, SFX, music dip, caption style) and an owner; durations must add up exactly to the total, buffers are planned, and no cue is left implicit; keep contingencies beside it.
-- **كيف / how:** Generate CSV/HTML from the timeline JSON; Python assert sum(durations) == total.
-- **الدليل / proof:** `kosif-atlas/skills/2290-event-management/8759-build-run-of-show/SKILL.md`
-
-#### EASE-264 · مواصفة الحركة فقط حين تكون الحركة هوية · Motion spec only when motion is the brand · 📄 موصوف
-- **ماذا / what:** Write a dedicated motion spec (easing curves, duration scale, triggers, purpose: feedback, continuity, expression) only for expressive brands or projects already using framer-motion, GSAP or Lottie; utility work just honours prefers-reduced-motion. Mood clusters for naming a direction: premium (Arch…
-- **كيف / how:** Store duration/easing tokens in the kosif-tool style STYLE.json.
-- **الدليل / proof:** `kosif-atlas/skills/1530-webcraft/4189-design-guide-authoring/SKILL.md`
-
-#### EASE-265 · قواعد الوقفات في قص المتكلم · Speech pause grammar for talking-head cuts · 📄 موصوف
-- **ماذا / what:** Treat word gaps >0.7 s as cut candidates, keep ~0.4 s breath at sentence ends, keep 0.8-2 s of deliberate silence after a turning point, decision, failure or realisation, never cut a filler when neighbouring word gap <0.15 s (the splice becomes audible), keep only the last take of a retake group.
-- **كيف / how:** From word-timestamp transcript (whisper word_timestamps) build a segment list, then re-assemble with startFrame/endFrame (Resolve AppendToTimeline) or ffmpeg trim+concat; V1 picture trimmed by the same length as A1 speech.
-- **أرقام / params:** gap>0.7 cut; breath 0.4; keep pause 0.8-2.0; min splice gap 0.15
+#### EASE-39 · السرعة تعني الوزن · Speed = weight tiers · 📄 موصوف / documented only
+- **ماذا / what:** المدة تخبر المشاهد كم الحركة ثقيلة ومهمة، وأبطأ حركة ≈3× أسرعها. — Duration tells weight; slowest ≈3× fastest.
+- **متى أستخدمها / when:** توزيع المدد على عناصر المشهد — assigning durations.
+- **كيف / how:** fast 0.15–0.3 s urgency/energy; medium 0.3–0.5 s professional; slow 0.5–0.8 s gravity/luxury; very slow 0.8–2.0 s cinematic; large moves never faster than 900 ms (900–1400 ms with one easing); enterprise/dashboard: 150 ms micro, 200–250 ms transitions, quart-out, no spring. **أرقام / params:** 0.15–0.3 / 0.3–0.5 / 0.5–0.8 / 0.8–2.0 s; ratio 3×.
+- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/motion-principles.md` · `100-superskills/skills/claude-animation-studio/references/motion-rules.md` · `kosif-tool/styles/pm-gautam-mer1-2ae354/BRIEF.md` · `kosif-atlas/skills/2963-pwdev-code/12442-skill-frontend-design`
+
+#### EASE-40 · مدة حسب المسافة · Distance-based duration durFor · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مدة الحركة تكبر مع المسافة فلا تبدو الحركات الطويلة مستعجلة، وحركات الكاميرا محصورة. — Duration grows with distance; camera moves clamped.
+- **متى أستخدمها / when:** كل حركة انتقال مكاني — every travel move.
+- **كيف / how:** MOTION.durFor(px, camera) = 0.35 s + 1.35 ms/px; camera clamped 0.6–2.4 s. Measured here: durFor(600) = 1.16 s; camera durFor(100) = 0.6, durFor(3000) = 2.4. UI scale: 8–16 px 100–150 ms, 50–100 px 150–250 ms, full screen 250–350 ms (1.8–2× of a 100 px move). **أرقام / params:** 0.35 s + 0.00135 s/px; camera 0.6–2.4 s.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:49` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:49` · `kosif-atlas/skills/3529-ui-design/14308-interaction-design`
+
+#### EASE-41 · مشهد تحريري بست ثوانٍ · Six-second editorial scene timeline · 🟢 جاهز / ready
+- **ماذا / what:** كل مشهد تحريري 6 ث بالضبط: شبكة فارغة، دخول نابض، ثبات طافٍ، خروج هندسي متصل. — Every editorial scene is exactly 6 s: grid, spring entrance, floating hold, geometric exit.
+- **متى أستخدمها / when:** ريلز تحريرية ثلاثية الأبعاد — viral editorial reels.
+- **كيف / how:** 0–0.5 s base (grid + lines only); 0.5–3.5 s entrance (spring, stagger 6–9 frames, word-masked reveal); 3.5–4.7 s hold (sine float, 0.6° wobble, 4% push-in); 4.7–6.0 s exit (masked vertical wipe, tracking expansion on Latin only, easeOutCubic 1.3 s drop). **أرقام / params:** 0 / 0.5 / 3.5 / 4.7 / 6.0 s.
+- **الدليل / proof:** `fastify-motion-bro/scripts/viral-editorial.mjs` · `fastify-motion-bro/web/editorial.js` · `fastify-motion-bro/skills/viral-editorial/SKILL.md`
+
+#### EASE-42 · سلالم مدد الواجهات · UI duration ladders · 📄 موصوف / documented only
+- **ماذا / what:** مجموعة صغيرة ثابتة من المدد حسب حجم التغيير ونوع العنصر، والخروج ≈75% من الدخول. — A fixed set of durations keyed to the size of change and element type.
+- **متى أستخدمها / when:** عرض منتج أو واجهة متحركة — product and UI scenes.
+- **كيف / how:** feedback 100–150 ms, state/toggles 200–300, layout/modals 300–500, entrances/choreography 500–800+; element table: micro 80–120, button 120–180, icon 150–250, card 200–350, modal 300–400, page 400–600, dramatic reveal 600–1200, ambient 2–20 s; <100 ms imperceptible, >400 ms sluggish for UI; video uses the long end of each band; exit = 0.75× enter, ease-in only for exits. **أرقام / params:** 100/300/500 ladder.
+- **الدليل / proof:** `kosif-atlas/skills/2981-designer-skill/12625-designer-skill/reference/motion-and-interaction.md` · `kosif-studio/motion/references/motion-craft.md` · `kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/feedback-patterns.md`
+
+#### EASE-43 · جدول توقيت عرض المنتج · Product-demo interaction timing · 📄 موصوف / documented only
+- **ماذا / what:** مدد ومنحنيات لـ17 حدث واجهة، مع وقفة قراءة بعد كل حالة وتسلسل سرعات: المؤشر أسرع، الإطار أبطأ. — Durations for 17 UI events, reading dwell after states and a speed hierarchy.
+- **متى أستخدمها / when:** فيديو ديمو تطبيق — app demo videos.
+- **كيف / how:** cursor 380–700 ms over 200–900 px cubic-bezier(.2,.8,.2,1) on a 2–4% arc, settle 80–120; hover 120–160; press 80 down / 140 up spring k300 d20 (button .96, cursor .88); ripple 320–400 ms 0→48 px; modal backdrop 200, panel 280–320 spring k170 d18 from scale .96 y 12; close 160–200; dropdown 180–220 expo-out; dwell 1.2–2.0 s (reels 0.8 s); nothing < 80 ms; scripted typing ~70 ms/key. **أرقام / params:** cursor 380–700 ms; dwell 1.2–2.0 s.
+- **الدليل / proof:** `kosif-tool/playbooks/product-ui.md` · `kosif-atlas/skills/1511-homie/3903-video/references/RECORD.md`
+
+#### EASE-44 · اكشف على امتداد اللقطة · Reveal across the shot (anti-slide) · 📄 موصوف / documented only
+- **ماذا / what:** وضع كل المحتوى في أول ربع ثم الثبات يجعل اللقطة شريحة باوربوينت؛ اكشف القطع حين يصلها التعليق، خاصة في النصف الثاني. — Front-loading then holding reads as a slide; reveal as the voiceover reaches each piece.
+- **متى أستخدمها / when:** شرح بتعليق صوتي — narrated explainers.
+- **كيف / how:** Map every script line to a timeline phase cued on its voiceover word (words.json); silent frames cue on the beat; avoid > ~25% front-load; first frame already readable; animate between meaningful states only and name each move with one verb (reveal, flow, accumulate, compare, transition, pulse, highlight, decay, orbit, slice, scrub); the final frame must still prove the claim without motion. **أرقام / params:** front-load ≤ 25%.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes/references/frame-worker-core.md` · `kosif-atlas/skills/2690-build-web-data-visualization/10335-visualization-strategy-and-critique/SKILL.md`
+
+#### EASE-45 · أبقِ كل عنصر حيًا · Keep every element alive · 📄 موصوف / documented only
+- **ماذا / what:** لا عنصر يتجمد وسط المشهد: الأرقام تعدّ، الصور تنجرف، العناصر الثابتة تطفو قليلًا. — No element sits frozen mid-scene.
+- **متى أستخدمها / when:** مشاهد الثبات الطويلة — long holds.
+- **كيف / how:** stat counts from 0; screenshot slow zoom 1→1.03 or pan; logos shimmer sweep or gentle scale pulse; persistent element float y ±4–6 px sine yoyo; with music a bass pulse of 3–4% on the logo; holds creep ~4% scale/s. **أرقام / params:** zoom 1→1.03; float ±4–6 px; pulse 3–4%.
+- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-6-build.md` · `app/public/js/00_editor.js:1568`
+
+#### EASE-46 · سلّم الوضعيات بإطارات GSAP · Pose ladder & mechanism choice · 📄 موصوف / documented only
+- **ماذا / what:** حركة متعددة المحطات على موضوع واحد بمصفوفة keyframes، مع عقد وضعيات يحدد الحالات التي تثبت الحركة وأصغر آلية تكفي. — Multi-stop motion via keyframe arrays, with a pose contract and the smallest sufficient mechanism.
+- **متى أستخدمها / when:** حركة معقدة لعنصر واحد — complex motion of one subject.
+- **كيف / how:** tl.to('.s', {keyframes:[{x:0,duration:.2},{x:120,duration:.4,ease:'power2.out'},{x:100,duration:.2,ease:'power2.inOut'}], ease:'none'}); labels for semantic states; immediateRender:false on later from/fromTo. Contract: name the subject, the poses (incl. final), keep identity, crossfade only for replacement, never reset to rest or end on black unless asked. Mechanism: box change → FLIP; route → path travel; trace → stroke draw; shape change → morph; reveal boundary → clip/mask; many → stagger; text → line/word subdivision (whole words for Arabic).
+- **رخصة / license:** GSAP standard no-charge license
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md` · `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/references/keyframe-patterns.md`
+
+#### EASE-47 · الخط الزمني الرئيسي المتوقف · Paused master timeline authoring · 🟢 جاهز / ready
+- **ماذا / what:** كل الحركة على خط زمني GSAP متوقف واحد يسجّل تحت معرف التركيب، بمواضع مطلقة ونسبية وعلامات وخطوط متداخلة. — All motion on one paused GSAP timeline registered under the composition id.
+- **متى أستخدمها / when:** كل تركيب GSAP يُرندر — every GSAP composition that renders.
+- **كيف / how:** const tl = gsap.timeline({paused:true, defaults:{duration:.5, ease:'power2.out'}}); window.__timelines[id] = tl; positions 0 (absolute), '<' (same start), '>' (after end), '<0.2', '+=0.5', '-=0.2'; tl.addLabel('intro',0) and 'intro+=0.3'; nest with master.add(child, t) (child scene timelines added to the root are not paused); in sub-compositions prefer fromTo; transforms/opacity only, no top/left/width tweens; load fonts before measuring. HyperFrames adds data-start="intro + 0.5". The kit composition template and mtemplates scaffold this contract. **أرقام / params:** one paused timeline.
+- **رخصة / license:** GSAP standard no-charge license (vendored)
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/templates/composition.html` · `kosif-one/vendor/hyperframes/docs/guides/gsap-animation.mdx` · `kosif-one/vendor/hyperframes/docs/concepts/data-attributes.mdx` · `kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md`
+
+#### EASE-48 · مفاتيح مأخوذة من دالة · Function-sampled keyframes · ✅ مُثبت هنا / proven here
+- **ماذا / what:** أي دالة للزمن تصبح مفاتيح GSAP بمعدل 60 في الثانية، فتنجو الحركة الإجرائية من البحث المتوقف. — Any f(t) becomes GSAP keyframes at 60/s, so procedural motion survives paused seeking.
+- **متى أستخدمها / when:** ركوب مسار SVG، مؤشر بفيزياء، أي حركة من كود — path riding, physics cursors, code-driven motion.
+- **كيف / how:** tl.to(el, {keyframes: MOTION.sampled(fn, t0, t1, 60)}) (measured: 1 s → 61 keys, ease 'none'); path riding: sampled(t → path.getPointAtLength(L·E.out((t−b)/1.15)), b, b+1.15, 60); never onUpdate callbacks. **أرقام / params:** 60 samples/s.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:109` · `100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html`
+
+#### EASE-49 · التمهيد والمتابعة · Anticipation & follow-through · 📄 موصوف / documented only
+- **ماذا / what:** حركة معاكسة قبل الفعل حين توضح السبب، وأجزاء ثانوية تتأخر وتتجاوز لتبيع الطاقة. — Counter-move before action when it clarifies cause; secondary parts lag and overshoot.
+- **متى أستخدمها / when:** شخصيات، أشكال سريعة، منتجات تنطلق — characters, fast shapes, launches.
+- **كيف / how:** anticipation 4–8 frames, or 8–12% of the move for 120–180 ms opposite to travel; follow-through lag 2–4 frames with 5–10% overshoot; fast moves on arcs 250–400 ms ease-in-out quint; constant path travel uses ease none; final lockups hold longer. **أرقام / params:** 4–8 f; 8–12% / 120–180 ms; lag 2–4 f.
+- **الدليل / proof:** `kosif-tool/playbooks/characters.md:25` · `kosif-tool/playbooks/shapes.md:26` · `kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md`
+
+#### EASE-50 · دخول بميل ثم استقرار · Tilt-in settle · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** الكلمة أو الأداة تدخل مائلة ثم تستقر بنابض. — A word or prop enters tilted and springs upright.
+- **متى أستخدمها / when:** كلمات بطلة وأدوات في إعلان — hero words and props in ads.
+- **كيف / how:** word: rotate 4°, y −30 → 0 with a spring over 400 ms; prop: rotate from −60° at a corner, hold, exit. **أرقام / params:** 4°; 400 ms; −60° prop.
+- **الدليل / proof:** `kosif-tool/styles/pm-gdgtify-287ddf` · `kosif-tool/styles/pm-ror-fly-9950f1`
+
+## الضربة والمط والانضغاط — Impact, squash & hit envelopes
+
+_لحظة الاصطدام هي الإيقاع: غلاف واحد لكل ضربة، وانضغاط يحفظ الحجم._
+
+#### EASE-51 · غلاف الضربة hitPulse · Hit pulse envelope · ✅ مُثبت هنا / proven here
+- **ماذا / what:** غلاف واحد لكل ضربة وتكة وركلة: صعود جيبي ثم اضمحلال أسي، يبلغ قمته بعد الصوت بإطارين. — One attack/exponential-decay envelope for every punch, tick and kick, peaking 2 frames after its sound.
+- **متى أستخدمها / when:** أي حدث متزامن مع صوت — any sound-synced event.
+- **كيف / how:** MOTION.hitPulse(t, attack=2, tau=5) with t in s and attack/tau in 60 fps frames: sin rise over attack then exp(−(u−attack)/tau), zero after attack + 6·tau. Measured here: peak 1.0 at 33 ms, zero after 533 ms. channels.kick uses attack 1 tau 5, onset 1/4, beat 1/6; basma u.hit attack 33 ms tau 83 ms. Align bursts to the real contact/apex frame (from word timestamps or onsets), never the clip start; respect flash limits. **أرقام / params:** attack 2 f, tau 5 f @60 fps.
+
+```js
+const hitPulse = (t, attack = 2, tau = 5) => {        // t seconds, attack/tau in 60 fps frames
+  const u = t * 60;
+  if (u <= 0 || u > attack + 6 * tau) return 0;
+  return u < attack ? Math.sin((u / attack) * Math.PI / 2) : Math.exp(-(u - attack) / tau);
+};
+scale = 1 + 0.06 * hitPulse(t - kickTime);           // punch on every kick
+```
+
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:47` · `app/public/js/00_editor.js:2317` · `kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx/SKILL.md`
+
+#### EASE-52 · انضغاط التلامس · Contact squash · 🟢 جاهز / ready
+- **ماذا / what:** العنصر يتسع ويتسطح عند الحافة التي اصطدم بها ثم يتعافى، والشكل يستقر قبل الموضع بستة إطارات. — Widen-and-flatten anchored to the edge hit, then recover; shape settles 6 f before position.
+- **متى أستخدمها / when:** هبوط، اصطدام، كلمة تقع — landings, impacts, dropped words.
+- **كيف / how:** MOTION.squash(tl, el, at, {edge:'bottom'|'top'|'left'|'right', across:.08, along:.10, dur:.13}) → scaleX 1.08 / scaleY 0.90 → 1 in 0.13 s (8 f) E.outSoft; volume-preserving version: sq = 1 − .16·kick, stretch = 1/√sq; landing wobble e^(−7x)·sin(30x)·.05. **أرقام / params:** +8% / −10% over 8 f.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:372` · `100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js`
+
+#### EASE-53 · كلمة تقفز بالمط والضغط · Squash-and-stretch hop · 🟢 جاهز / ready
+- **ماذا / what:** كلمة أو جسم يقفز بمط عند الإقلاع وضغط عند الهبوط، مثل «بيتنطط» ثلاث قفزات. — A word or object hops with stretch on take-off and squash on landing.
+- **متى أستخدمها / when:** كلمات مرحة، ملصقات، شخصيات بسيطة — playful words, stickers, simple characters.
+- **كيف / how:** Three hops 0.42 s apart: y 0 → −90 with scaleY 1.08 in 0.2 s E.out; y 0 scaleY .86 in 0.18 s E.contact; scaleY 1 in 0.12 s. Bunny hop: sin(π·u)·.026 over .42 s. Classic ball: scaleY .6–.8 / scaleX 1.2–1.4 at impact for 2–3 frames, stretch 1.2–1.3 at max speed along velocity, preserve area. **أرقام / params:** hop 90 px; squash .86; stretch 1.08.
+- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/index.html` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js`
+
+#### EASE-54 · أشباح تبيّن التباعد · Onion-skin spacing ghosts & echo trail · 📦 بأمر تثبيت / one install
+- **ماذا / what:** نسخ شبحية لمواضع سابقة على فترات ثابتة فيظهر التسارع والتباطؤ، أو أثر صدى ينهار في العنصر عند التوقف. — Outline copies of past positions at fixed intervals so ease spacing becomes visible, or an echo trail that collapses at rest.
+- **متى أستخدمها / when:** دروس مبادئ الحركة، أزرار سريعة، رميات — animation-principle lessons, fast buttons, throws.
+- **كيف / how:** Sample the same seek(t) at t − i·Δ: 6–12 ghosts every 2–3 frames, 1–1.5 px outline at 40% (or filled at 0.1–0.4), dotted arc path, optional frame ruler and playhead; physics ball with restitution 0.6 and ghost every 3 f. HyperFrames echo-trail: echoes 4, delta 0.09 s, path sweep|rise|arc. Fast-move smear: 3–4 echoes at low opacity along velocity. **أرقام / params:** 6–12 ghosts; every 2–3 f; 40%.
+- **تثبيت / install:** `npx hyperframes add echo-trail`
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/echo-trail/echo-trail.html` · `kosif-tool/styles/pm-chatgptastra-0d95c7` · `kosif-tool/styles/pm-ik-builds-b8bdcf` · `kosif-tool/styles/pm-himanshutwtxs-5f4b43`
+
+#### EASE-55 · قفزة بقوس بين حاملين · Parabolic hops & piecewise paths · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** جسم يقفز بقوس بين نقطتين ويرث حركة حامله بعد الهبوط، ومسار مركبة على مراحل تخفي قفزة صغيرة دوران الصورة. — Parabolic hops that re-parent on landing, and piecewise vehicle paths whose turns hide behind a hop.
+- **متى أستخدمها / when:** رسوم isometric ولوجستيات وبطاقات تطير لليد — isometric scenes, logistics, cards flying to a hand.
+- **كيف / how:** lerp xy start→end, z = h·4t(1−t) (h ≈ 1.5 units, 400 ms); on landing parent to the carrier. Grid hop: each tile arcs to its cell (arc 0.6 tile, 450 ms, stagger 180 ms, easeOutBack landing). Vehicle: position(t) as segments (wait, reverse, exit, stop at light, continue); when heading flips add a 120 ms hop + squash scaleY .9, hop 6 px to hide the sprite swap. Stickman card: lerp to hand, scaleX 1→−1 flip at mid swaps the face (250 ms), parabolic throw 500 ms with 2–3 ghosts (.3/.15), box squash, counter +1. **أرقام / params:** z = h·4t(1−t); 400–500 ms.
+- **الدليل / proof:** `kosif-tool/styles/isometric` · `kosif-tool/styles/pm-anilraok-eff262` · `kosif-tool/styles/stickman`
+
+#### EASE-56 · ختم يُطبع بقوة · Stamp slam · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** شارة «مدفوع / مرفوض / منتهي» تنزل من 1.4–1.6 إلى 1 مع ميل −8° واهتزاز إطارين. — A status stamp slams from 1.4–1.6× to 1 with −8° and a 2-frame shake.
+- **متى أستخدمها / when:** حالات الفواتير والقرارات في الشرح — status changes in explainers.
+- **كيف / how:** scale 1.6→1 in 180–250 ms back.out, rotation −8°, 2-frame overshoot/shake; underlying card switches to hatched grey (rejected) or the stamp is outlined green (paid); pair with a hitPulse and a short SFX. **أرقام / params:** 180–250 ms; −8°; shake 2 f.
+- **الدليل / proof:** `kosif-tool/styles/pm-ceowinkz-7c776b` · `kosif-tool/styles/pm-0xnfrith-5be616`
+
+#### EASE-57 · حلقة الأثر ووميض المفتاح · Impact ripple & key hit-flash · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** دائرة تتسع من نقطة الاصطدام، ومفتاح يلمع بلون التأكيد ويغطس ثم يرتد بنابض. — An outline ring spawns at contact; a key brightens, dips and springs back.
+- **متى أستخدمها / when:** لوحات مفاتيح، اصطدامات، نقرات — keyboards, collisions, taps.
+- **كيف / how:** ring radius 6→22 px, alpha .8→0 over ~250 ms ease-out, 1 px stroke; key: full accent, dip 4 px, spring k300 d18, glow exponential decay 300 ms. **أرقام / params:** 250 ms; dip 4 px; k300 d18.
+- **الدليل / proof:** `kosif-tool/styles/pm-kantamk-61f410` · `kosif-tool/styles/pm-kamstudiolabs-447565`
+
+#### EASE-58 · ظهور منبثق مع تمويه · Blur pop-in / pop-out · 🟢 جاهز / ready
+- **ماذا / what:** الكلمات والشرائح تظهر من صغيرة ضبابية بتجاوز بسيط، وتغادر بالتكبير والضبابية. — Keywords pop in small and blurred with slight overshoot, and leave by growing and blurring.
+- **متى أستخدمها / when:** كلمات مفتاحية في ريلز — keywords in reels.
+- **كيف / how:** in: scale .4, opacity 0, blur 16 px → 1, 1, 0 in 0.55 s back.out(1.3); out: scale 1.12, opacity 0, blur 10 px in 0.25 s E.in. Blur only on short words, never a long Arabic line. **أرقام / params:** in 0.55 s; out 0.25 s; blur 16/10 px.
+- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/index.html`
+
+#### EASE-59 · اهتزاز الضحك والتمايل · Laughing wiggle & phase-offset sway · 🟢 جاهز / ready
+- **ماذا / what:** كلمة تهتز يمينًا ويسارًا لتُقرأ ضحكًا، وفروع تتمايل حول عنوان بفروق طور، وبندول بظل مقترن. — A word wobbles to read as laughter; branches sway with phase offsets; a pendulum with a coupled shadow.
+- **متى أستخدمها / when:** ريلز مرحة وحلقات هادئة — playful reels and calm loops.
+- **كيف / how:** wiggle rotation −4°→4°, 0.12 s yoyo, repeat 7, sine.inOut. MG-118 sway: pivots at branch bases, 0–4 s tilt, 4–8 s return, never all in phase; MG-119 pendulum 0–1.5/1.5–4.5/4.5–6 s sinusoidal limited rotation, shadow scale tied to tilt (2D cannot show unseen sides); MG-120 border tracer: one 6 s lap, trim-path offset with constant arc length. **أرقام / params:** ±4°, 0.12 s ×7; 8 s / 6 s / 6 s loops.
+- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/projects/success/index.html` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md`
+
+## ضبابية الحركة وحدود السرعة — Motion blur & speed limits
+
+_السرعة تُقاس بالبكسل لكل إطار؛ فوق الحد إما ضبابية أو إعادة تصميم._
+
+#### EASE-60 · حدود السرعة بالبكسل لكل إطار · Speed limits in px/frame · ✅ مُثبت هنا / proven here
+- **ماذا / what:** النص المقروء ≤3 بكسل/إطار، وفوق 12–20 بكسل/إطار يلزم ضبابية، وفوق 80 أعد التصميم؛ وقِس ذلك على الفيلم المرندر. — Text being read ≤3 px/f; >12–20 px/f needs blur; >80 px/f redesign; measure it on the rendered film.
+- **متى أستخدمها / when:** مراجعة كل فيلم قبل التسليم — QA before delivery.
+- **كيف / how:** kosif-studio motion.py speed / sheet measures px/frame and frame-difference energy on a render (test_sheet_and_speed_measure_a_film passed here); norms: motion-energy median ≈1.4, p90 ≈6.0, ≤12 px/f without blur, idea felt by 1 s, scale change ≤5%/frame, ≤2 uses of any transition. **أرقام / params:** ≤3 / 12–20 / 80 px/f.
+- **الدليل / proof:** `kosif-studio/motion/qa.py:407` · `kosif-studio/tests/test_studio.py:699` · `kosif-studio/motion/references/craft-numbers.md`
+
+#### EASE-61 · تمويه السرعة الاتجاهي · Directional speed blur · 🟢 جاهز / ready
+- **ماذا / what:** ضبابية على محور واحد ترتفع وتهبط على امتداد حركة سريعة، أو تتناسب مع السرعة لحظيًا. — A one-axis blur that swells and clears over a fast move, or scales with instantaneous velocity.
+- **متى أستخدمها / when:** دخول خاطف، دوران سريع، قوائم تنزلق — whip entrances, fast spins, sliding lists.
+- **كيف / how:** MOTION.speedBlur(tl, el, at, dur, {px:12, axis:'x'|'y'}): SVG feGaussianBlur stdDeviation 'px 0' bell (45% rise E.in, 55% clear E.out). Velocity-matched: radius = |v|·c, c ≈ 0.25 px per px/frame, cap 24 px. Whip entrance: ~40% of frame width in 4–6 frames (150–250 ms easeOutExpo) with 30–60 px blur, hard stop; type punch blur 40→0 over 250 ms; list rows from x +100%, 80 ms stagger, blur 10→0; starburst spin with blur settling into the logo ~600 ms. **أرقام / params:** 12 px bell; c 0.25, cap 24 px.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:378` · `kosif-tool/styles/pm-notdwd-c2037d` · `kosif-tool/styles/pm-jhylee95-e1152f`
+
+#### EASE-62 · ضبابية الغالق الحقيقية · Shutter motion blur · 📦 بأمر تثبيت / one install
+- **ماذا / what:** ضبابية حركة على طريقة After Effects: عينات من الخط الزمني داخل نافذة الغالق تُدمج بالتساوي على المسار الحقيقي. — AE-style shutter blur averaging sub-frame samples along the real trajectory.
+- **متى أستخدمها / when:** حركات خاطفة تحتاج واقعية — whips that need realism.
+- **كيف / how:** HyperFrames motion-blur: shutterAngle 720, shutterPhase −360, 16 samples/frame, window [t−1/fps, t+1/fps] (translate, scale, rotate, 3D, skew). Remotion: @remotion/motion-blur (CameraMotionBlur / Trail). In plain canvas: render seek(t + k·δ) for k = 0..N−1 into an accumulation buffer at 1/N alpha (cost ×N). **أرقام / params:** 720°; 16 samples.
+- **تثبيت / install:** `npx hyperframes add motion-blur`
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/motion-blur/motion-blur.html` · `kosif-one/vendor/hyperframes/docs/catalog/components/motion-blur.mdx`
+
+## الإيقاع والمونتاج — Pacing, edit rhythm & beat grid
+
+_إيقاع الفيلم كله: أطوال اللقطات، أماكن القطع، والضربات الموسيقية._
+
+#### EASE-63 · معايير الإيقاع من أفلام الإطلاق · Pacing medians of top launch films · 🟢 جاهز / ready
+- **ماذا / what:** قيم وسيطة قيست على أفلام منشورة تُستخدم كافتراضيات وتُفحص على الرندر. — Measured medians of shipped films, used as defaults and checked on the render.
+- **متى أستخدمها / when:** تخطيط أي فيلم 15–60 ث — planning any 15–60 s film.
+- **كيف / how:** median shot 1.46 s (1.1–2.8); picture change every ~0.7 s (dense 0.33); first visible change 0.10 s; first readable word 0.4 s, premise by 2 s; one designed hold 1.0–1.6 s; lull 1–4 s at ~65%; last energy peak at 82%; calm outro 8–20%; end card ~2.2 s (assemble 1.0–1.3, hold 0.6–1.3); 3–4 words per card ~0.4 s/word, ≥0.5 s/card; scene lengths in whole beats when BPM is known. Check with motion.py measure / study. **أرقام / params:** 1.46 s; 0.7 s; 0.4 s; 82%; 2.2 s.
+- **الدليل / proof:** `kosif-studio/motion/references/craft-numbers.md` · `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md` · `app/public/js/00_editor.js:2024`
+
+#### EASE-64 · إيقاع المونتاج حسب النوع · Edit rhythm by genre · 📄 موصوف / documented only
+- **ماذا / what:** أهداف قيست لمتوسط طول اللقطة وعدد القطعات في الدقيقة الأولى، وتنويع اللقطات السريعة مع لقطات التنفس. — Measured ASL and first-minute cut targets per genre, alternating fast and breathing shots.
+- **متى أستخدمها / when:** مونتاج فيديو يوتيوب أو مقالة مصورة — YouTube edits and video essays.
+- **كيف / how:** explainer/essay ASL 3.3 s (2.5–4), 20 cuts in the first 60 s (15–25), same picture ≤8 s, cards 30–50%; build vlog ASL 8 s (5–12), 3 cuts first minute, same screen ≤40 s; reflection ASL 3.8 s (3–5); alternate 0.5–1.5 s fast shots with 2.5–4.0 s breathing shots; long videos: tightest first 3 min, +5–10% breathing after the cold open, verdict lines held 1–2 s, never > 30–45 s off the presenter. Never delete meaningful pauses to hit numbers. **أرقام / params:** ASL 3.3 / 8 / 3.8 s.
+- **الدليل / proof:** `kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md` · `100-superskills/skills/kosif-montage-motion/references/montage_grammar.md` · `kosif-atlas/skills/3067-youtube/13224-creator-editor-brief/SKILL.md`
+
+#### EASE-65 · البنية الدقيقة للفيديو القصير · Short-form micro-structure · 📄 موصوف / documented only
+- **ماذا / what:** الفيديو العمودي قوس مضغوط: خطاف 0–1 ث يعمل بلا صوت، تطوير، ثم الوعد والدليل والدعوة داخل المنطقة الآمنة. — Vertical clips follow a compressed arc with a muted-safe hook.
+- **متى أستخدمها / when:** ريلز وشورتس وتيك توك — reels, shorts, TikTok.
+- **كيف / how:** 0–1 / 1–3 / 3+ s; or 0–3 hook, 3–10 problem/promise, 10–25 proof, 25+ close; 60 s template 0–3 / 3–15 / 15–50 / 50–60 CTA; one idea per video, hook in the first frame before any title card, captions always on, ≤30 s retains best; each story card must survive alone. Map words.json segments into these windows and flag overflow. **أرقام / params:** ≤30 s; hook ≤1–3 s.
+- **الدليل / proof:** `kosif-atlas/skills/2976-pwdev-social-media/12592-story-reels/SKILL.md` · `kosif-atlas/skills/192-marketing-skills/617-video-content-strategist/SKILL.md`
+
+#### EASE-66 · القص على الإيقاع 60/BPM · Beat-cut rule · 📄 موصوف / documented only
+- **ماذا / what:** التغييرات الكبرى على الضربات القوية، واللمسات على الضربات الضعيفة، وكل ميزة في ضربة. — Major changes on downbeats, accents on off-beats, one claim per beat.
+- **متى أستخدمها / when:** أي مونتاج على موسيقى — any edit on music.
+- **كيف / how:** beat = 60/BPM (120 → 0.500 s, 100 → 0.600, 85 → 0.705); scene change / B-roll / impact on the downbeat; punch-zoom, quick camera, caption keyword on the off-beat; cut every 4 beats (2 s at 120) or one value per 1–1.2 s beat; even cadence on musical phrases (7.5 s); checklist words light up on each beat (250–300 ms) and stay lit; split at the next downbeat when a template runs long (frames > ~6 s need 2+ groups). **أرقام / params:** 120 BPM = 0.5 s.
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md` · `kosif-one/vendor/hyperframes/skills/music-to-video/references/template-catalog.md` · `kosif-tool/styles/pm-mrtanviir-132457`
+
+#### EASE-67 · ساعة الإيقاع في التركيب · Beat clock in compositions · 🟢 جاهز / ready
+- **ماذا / what:** الحركات توضع برقم الضربة من BPM أو من تحليل الصوت، فيشترك الصوت والصورة في ساعة واحدة. — Animations are placed by beat number so picture and score share one clock.
+- **متى أستخدمها / when:** موشن على موسيقى — motion on music.
+- **كيف / how:** const B = MOTION.beats(120); tl.to(x, {...}, B.at(4)); or beats(json from motion.py beats) with downbeats every 4th; channels(json): ch.kick(t), ch.onset(t), ch.v('bass', t), ch.tape(t) drive visuals from the soundtrack frame by frame. HyperFrames beat-timeline pins N rows to evenly spaced labels (beatCount 4, interval 0.6 s). **أرقام / params:** beat n at n × 60/BPM.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js` · `kosif-studio/motion/projects/showreel/index.html:61` · `kosif-one/vendor/hyperframes/registry/components/beat-timeline/beat-timeline.html`
+
+#### EASE-68 · قائمة لقطات على شبكة الإيقاع · Beat-grid shot list with onset-snapped words · 📄 موصوف / documented only
+- **ماذا / what:** كل لقطة على خطوط المازورة، والكلمات تُضبط على أقوى بداية صوتية لأن طوابع النموذج تتأخر 50–80 ملّي ثانية. — Shots on bar lines; words snapped to the strongest vocal onset because model stamps run 50–80 ms late.
+- **متى أستخدمها / when:** أغنية أو كليب كلمات — lyric videos and songs.
+- **كيف / how:** grid.json holds tempo, beats, bar lines, sections, words; cuts on bar lines (beats in fast sections); snap each word to the strongest vocal-band onset within −100..+40 ms; characters on one side of frame, words on the other. **أرقام / params:** snap window −100..+40 ms.
+- **الدليل / proof:** `kosif-atlas/skills/1511-homie/3903-video` · `kosif-atlas/skills/1511-homie/3892-music`
+
+#### EASE-69 · أنماط توقيت القطع والمغناطيس · Cut timing modes & magnetic snapping · 🟢 جاهز / ready
+- **ماذا / what:** قطعات الزووم تقع على فاصل ثابت أو الضربات أو نمط أو بدايات الجمل أو اختيار ذكي أو قطعات الكاميرا الأصلية، والسحب يلتصق بالحواف. — Zoom cuts land on interval, beats, pattern, speech starts, AI times or source shot cuts; scrubbing snaps within 7 px.
+- **متى أستخدمها / when:** محرر بصمة لمونتاج المتكلم — the Basma editor for talking clips.
+- **كيف / how:** cutList(): interval (every 0.6–8 s), beat (beats ≥ max(0.45, 0.8·every) apart), pattern (planCuts), speech (voiced starts after ≥0.3 s pause, ≥ max(0.8, every/2) apart), ai, shots (measured boundaries); snapTime(t, w) snaps to captions, scenes, cuts, shot cuts and beats within 7 px. **أرقام / params:** interval|beat|pattern|speech|ai|shots; 7 px.
+- **الدليل / proof:** `app/public/js/00_editor.js:166` · `app/public/js/00_editor.js:573`
+
+#### EASE-70 · قواعد الوقفات في قص المتكلم · Speech pause grammar · 📄 موصوف / documented only
+- **ماذا / what:** الفجوات فوق 0.7 ث مرشحة للقطع، ونفس 0.4 ث آخر الجملة، وصمت 0.8–2 ث بعد لحظة تحوّل، ولا قطع إذا كانت الفجوة المجاورة < 0.15 ث. — Gaps >0.7 s are cut candidates; keep breaths and meaningful silences; never splice where a neighbouring gap <0.15 s.
+- **متى أستخدمها / when:** تنظيف مقابلة أو درس مصور — cleaning an interview or lesson.
+- **كيف / how:** From word timestamps (whisper word_timestamps / words.json) build segments; keep only the last take of a retake group; reassemble with ffmpeg trim+concat; trim V1 by the same length as A1; the user's audio stays untouched outside the cut points. **أرقام / params:** gap > 0.7; breath 0.4; keep 0.8–2.0; min 0.15 s.
 - **الدليل / proof:** `kosif-atlas/skills/1096-akbun-editvideo/2453-davinciresolve-cut-devtalk/SKILL.md`
 
-#### EASE-266 · قاعدة توقيت الترجمة · Caption timing rule · 📄 موصوف
-- **ماذا / what:** On-screen time = max(chars × 0.15 s, 2 s), capped at 6 s; start 0.5 s after a cut and end 0.3 s before the next; shots under 2.8 s either share the caption with the next same-place shot or get none; 8-frame fade in/out.
-- **كيف / how:** Compute from cut list; place via ASS events or Text+/HTML
-- **أرقام / params:** 0.15 s/char; 2-6 s; +0.5/-0.3 s; 8 f fade
-- **الدليل / proof:** `kosif-atlas/skills/1096-akbun-editvideo/2465-davinciresolve-subtitle-travelnote/SKILL.md`
-
-#### EASE-267 · إيقاع المونتاج حسب النوع · Edit rhythm presets by genre · 📄 موصوف
-- **ماذا / what:** Measured rhythm targets: explainer/essay ASL 3.3 s (2.5-4), 20 cuts in first 60 s (15-25), same picture ≤8 s, cards 30-50%; build/project vlog ASL 8 s (5-12), 3 cuts first minute, same screen ≤40 s, dissolve 12 f only around timelapses; reflection ASL 3.8 s (3-5), 20 cuts, same picture ≤6 s, voice 6…
-- **كيف / how:** Compute ASL and first-minute cut count from the cut list; adjust by swapping b-roll at noun/action sentence boundaries, never delete meaningful pauses to hit numbers
-- **أرقام / params:** ASL 3.3 / 8 / 3.8 s
-- **الدليل / proof:** `kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md` · `kosif-atlas/skills/1096-akbun-editvideo/2462-davinciresolve-style-project/SKILL.md` · `kosif-atlas/skills/1096-akbun-editvideo/2463-davinciresolve-style-reflection/SKILL.md`
-
-#### EASE-268 · تسريع وتبطيء متدرج · Speed ramp and slow motion · 📄 موصوف
-- **ماذا / what:** Change clip speed (constant, or ramped by splitting into segments with different setpts), optionally synthesising in-between frames for smooth slow motion.
-- **كيف / how:** video setpts=PTS/F (F>1 faster); audio atempo=F (0.5-2 per instance, chain for more) or rubberband=tempo=F (pitch-preserving, present locally); smooth slow-mo: minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:vsbmc=1; ramp = trim pieces at 1.0 -> 0.5 -> 1.0 and concat (or Remotion playbackRate per Sequence)
-- **أرقام / params:** atempo 0.5-2.0
-- **الدليل / proof:** `kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md` · `kosif-atlas/skills/1526-gamegen/4173-game-trailer/SKILL.md`
-
-#### EASE-269 · حركة نابضية · Spring motion defaults · 📄 موصوف
-- **ماذا / what:** Primary motion uses springs with slight overshoot, settling in 400-700ms.
-- **كيف / how:** Framer Motion spring stiffness 300 damping 30 mass 1; GSAP elastic.out(1,0.5) ~0.6s; CSS cubic-bezier(0.34,1.56,0.64,1).
-- **أرقام / params:** overshoot 1.05x
-- **الدليل / proof:** `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md`
-
-#### EASE-270 · مزامنة المؤثر مع لحظة الاصطدام · Sync VFX to contact frame · 📄 موصوف
-- **ماذا / what:** Align bursts to the real impact/apex frame, not clip start; test on varied backgrounds and honor flash limits.
-- **كيف / how:** Use event markers/word timestamps.
-- **الدليل / proof:** `kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx/SKILL.md`
-
-#### EASE-271 · زمن القراءة من النص · Reading-time from real text · 📄 موصوف
-- **ماذا / what:** Hold each text long enough to read, computed from the actual words.
-- **كيف / how:** hold ≥ max(1.2s, words/3 s) approx (≈180 wpm); verify on target size.
-- **أرقام / params:** ~3 words/s
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-typography/SKILL.md` · `kosif-atlas/skills/motion-graphics-ar/motion-typography/references/quality-and-editors.md`
-
-#### EASE-272 · التحريك على الاثنين والثلاثة · Hold mix on 1s/2s/3s · 📄 موصوف
-- **ماذا / what:** Drawn animation alternates holds of 1, 2 or 3 frames per drawing; the mix is a measurable fingerprint of a style.
-- **كيف / how:** When animating hand-drawn layers, step time with Math.floor(frame/2)*2 for twos; keep camera moves on ones for smoothness.
-- **أرقام / params:** on twos at 24fps = 12 drawings/s
-- **الدليل / proof:** `kosif-atlas/skills/2414-animation/9355-learn-style` · `kosif-atlas/skills/2414-animation/9357-rotoscope`
-
-#### EASE-273 · حركة نابضية · Spring physics motion · 📄 موصوف
-- **ماذا / what:** Springs with slight overshoot feel alive.
-- **كيف / how:** Framer Motion stiffness 300 damping 30 mass 1; GSAP elastic.out(1,0.5); CSS fallback cubic-bezier(0.34,1.56,0.64,1); Remotion spring().
-- **أرقام / params:** overshoot 1.05; settle 400-700ms
-- **الدليل / proof:** `kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion`
-
-#### EASE-274 · سمِّ فعل الحركة · Name the animation verb · 📄 موصوف
-- **ماذا / what:** Every chart motion must be one named verb (reveal, flow, accumulate, compare, transition, pulse, highlight, decay, orbit, slice, scrub) tied to data or story state.
-- **كيف / how:** Write the verb per scene before coding; first frame already readable; animate between meaningful states only; one scene clock; final frame or key frames must still prove the claim without motion (also serves as thumbnail and reduced-motion fallback).
-- **الدليل / proof:** `kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/webgl-2d-animation-patterns.md` · `kosif-atlas/skills/2690-build-web-data-visualization/10335-visualization-strategy-and-critique/SKILL.md` · `kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/SKILL.md`
-
-#### EASE-275 · إبقاء عناصر الأرقام حية · Keep every stat element alive · 📄 موصوف
-- **ماذا / what:** No element sits frozen mid-scene: stats count, images drift, persistent items float subtly.
-- **كيف / how:** Stat/number: counter from 0; screenshot: slow zoom 1->1.03 or pan; logos: shimmer sweep or gentle scale pulse; any persistent element: float y +/-4-6 px sine in-out yoyo; with music, bass pulses a logo 3-4%.
-- **أرقام / params:** zoom 1.00->1.03; float +/-4-6 px; bass pulse 3-4%
-- **الدليل / proof:** `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-6-build.md`
-
-#### EASE-276 · أرقام حرفة الحركة · Motion craft numbers for coded scenes · 📄 موصوف
-- **ماذا / what:** Measured craft rules baked into the code contract Claude follows.
-- **كيف / how:** Something moves within 0.1 s; arrivals U.E.out 0.3-0.9 s; exits U.E.exit 0.17-0.4 s; zero overshoot default (max two true landings); travel time 0.35 s + 1.35 ms/px; secondary starts at 55-75% of leader; stagger 0.06-0.12 s; read text <= 3 px/frame; 3-4 words/card ~0.4 s/word, >= 0.5 s/card; words arrive from 40% opacity with small rise; holds creep ~4% scale/s; one accent colour ~5% of pixels; banned: crossfades, glow on type, glassmorphism, multi-hue gradients, purpose-less particles, floaty d…
-- **الدليل / proof:** `app/public/js/00_editor.js:1568`
-
-#### EASE-277 · قواعد إيقاع الفيلم · Film pacing rules · 📄 موصوف
-- **ماذا / what:** Pacing targets for storyboarded films.
-- **كيف / how:** genFilm prompt: first word readable by 0.4 s, premise by 2 s; picture change ~every 0.7 s; median shot ~1.5 s (1.1-2.8); one designed 1.0-1.6 s hold; lull near 65%; last energy peak near 82%; end card ~9% (assemble 1 s, hold 0.8 s); 3-4 words per card; scene lengths in whole beats when BPM known.
-- **الدليل / proof:** `app/public/js/00_editor.js:2024`
-
-#### EASE-278 · معايير الإيقاع · Pacing medians · 📄 موصوف
-- **ماذا / what:** Measured medians of top motion films used as defaults.
-- **كيف / how:** Apply as defaults while authoring; verify with kmotion measure/speed/sheet
-- **أرقام / params:** median shot 1.46 s (1.1–2.8); change every ~0.7 s; first change 0.10 s; first word 0.4 s; premise by 2 s; one hold 1.0–1.6 s; last peak at 82%; lull at ~65%; end card 2.2 s (assemble 1.0–1.3, hold 0.6–1.3)
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md`
-
-#### EASE-279 · تداخل الحركات · Overlap of secondary moves · 📄 موصوف
-- **ماذا / what:** Secondary move starts at 55–75% of the lead so both settle within 2 f.
-- **كيف / how:** Apply as defaults while authoring; verify with kmotion measure/speed/sheet
-- **أرقام / params:** 55–75%
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/craft-numbers.md`
-
-#### EASE-280 · تنويع أطوال اللقطات · Shot length variety · 📄 موصوف
-- **ماذا / what:** Alternate fast shots with breathing shots to avoid rhythmic monotony.
-- **أرقام / params:** fast 0.5-1.5 s; breathing 2.5-4.0 s
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/montage_grammar.md`
-
-#### EASE-281 · قواعد اتجاه التسارع · Easing direction rules · 📄 موصوف
-- **ماذا / what:** Never linear on spatial moves; entrances ease-out, exits ease-in, on-screen ease-in-out, ambient sine; exit ~65-75% of entrance.
-- **أرقام / params:** exit 65-75%
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md`
-
-#### EASE-282 · جدول المدد · Duration table by element · 📄 موصوف
-- **ماذا / what:** LottieFiles timing by element size; scale with distance.
-- **أرقام / params:** micro 80-120 ms; button 120-180; icon 150-250; card 200-350; modal 300-400; page 400-600; reveal 600-1200; ambient 2-20 s; full screen 1.8-2x
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md`
-
-#### EASE-283 · ميزانية التجاوز · Overshoot budget · 📄 موصوف
-- **ماذا / what:** How much overshoot per intent.
-- **أرقام / params:** premium 0%; feedback 2-5%; success 5-10%; celebration 15-25%
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md`
-
-#### EASE-284 · ميزانية التتابع · Stagger budget · 📄 موصوف
-- **ماذا / what:** Stagger totals under 500 ms, same easing family.
-- **أرقام / params:** micro 20-40 ms; standard 50-100; dramatic 100-200; total <500 ms
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md`
-
-#### EASE-285 · قواعد الثلث · 1/3 rules · 📄 موصوف
-- **ماذا / what:** No travel >1/3 frame without intermediate key; at most 1/3 of elements move at once; new event every 2-4 s; no hold >1.5 beats.
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md`
-
-#### EASE-286 · الفصول الأربعة للحركة · Four-act motion · 📄 موصوف
-- **ماذا / what:** Anticipation, action, reaction, resolution proportions.
-- **أرقام / params:** 10-20% / 30-50% / 10-20% / 20-30% + 100-200 ms breathing
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/motion-craft.md`
-
-#### EASE-287 · قاعدة القص على الإيقاع · Beat-cut timing rule (60/BPM) · 📄 موصوف
-- **ماذا / what:** Place major visual changes on downbeats, small accents on off-beats, and alternate fast and breathing shot lengths.
-- **كيف / how:** beat = 60/BPM s; scene change/B-roll/impact on downbeat; punch-zoom, quick camera, caption keyword on off-beat; mix 0.5-1.5 s shots with 2.5-4.0 s shots.
-- **أرقام / params:** 120 BPM = 0.500 s; 100 BPM = 0.600 s; 85 BPM = 0.705 s
-- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md` · `kosif-one/tools/kosif-omni/skills/kosif-video/SKILL.md`
-
-#### EASE-288 · أنماط التمهيد الحركي الأربعة · Easing profile taxonomy (Snap/Drive/Heavy Spring/Elastic) · 📄 موصوف
-- **ماذا / what:** Four named motion characters for choosing easing by meaning.
-- **كيف / how:** Snap = fast in, soft settle (text, key cards); Drive = gradual acceleration then strong launch (vehicles, big transforms); Heavy Spring = slow massive oscillation (luxury, weight); Elastic/Playful = bouncy overshoot (stickers, icons). kinetic_2d ships a spring() helper (exp(-10t) * sin) but the template actually uses cubic ease-out.
-- **أرقام / params:** spring helper: a*2^(-10t)*sin((t*d)*2PI/(0.4d)) + c
-- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/animation_craft.md` · `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html:137`
-
-#### EASE-289 · معايير الإيقاع من أفلام الإطلاق · Pacing norms from top launch films · 📄 موصوف
-- **ماذا / what:** Measured medians to aim for: shot length, picture-change rate, first change, first readable word, holds, energy peak, end card.
-- **كيف / how:** Use as defaults when planning beats; check with motion.py measure/study.
-- **أرقام / params:** median shot 1.46 s (1.1-2.8); change every ~0.7 s; first change 0.10 s; first word 0.4 s, premise by ~2 s; one hold 1.0-1.6 s; last energy peak at 82%, lull 1-4 s at ~65%, calm outro 8-20%; end card 2.2 s (assemble 1.0-1.3, hold 0.6-1.3)
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/references/craft-numbers.md`
-
-#### EASE-290 · حدود السرعة وقواعد الوزن · Speed limits and weight rules · 📄 موصوف
-- **ماذا / what:** Motion budget: overlap secondary moves, settle shape before position, limit speeds, rarely overshoot.
-- **كيف / how:** Apply while choreographing; verify with motion.py speed.
-- **أرقام / params:** zero overshoot norm (or 1-4%); secondary starts at 55-75% of lead; shape settles 6 f before position; text <= 3 px/f; > 12-20 px/f needs blur; nothing > 80 px/f
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/references/craft-numbers.md`
-
-#### EASE-291 · مدد العناصر وحدود الارتداد · Element duration and overshoot budgets · 📄 موصوف
-- **ماذا / what:** Durations by element type, stagger totals and overshoot budgets by context.
-- **كيف / how:** Apply when timing UI and explainer elements.
-- **أرقام / params:** micro 80-120 ms, button 120-180, icon 150-250, card 200-350, modal 300-400, page 400-600, dramatic 600-1200, ambient 2-20 s; distance scaling up to 1.8-2x full screen; overshoot premium 0%, feedback 2-5%, success 5-10%, celebration 15-25%; stagger totals < 500 ms (micro 20-40, standard 50-100, drama…
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/references/motion-craft.md`
-
-#### EASE-292 · حركة بطيئة باستيفاء · Optical-flow slow motion · 📄 موصوف
-- **ماذا / what:** Smooth 0.5x slowmo by synthesising frames.
-- **كيف / how:** minterpolate=fps=60:mi_mode=mci,setpts=2.0*PTS
-- **أرقام / params:** 60 fps, mci
-- **الدليل / proof:** `100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md`
-
-#### EASE-293 · طبقات السرعة حسب الإحساس · Speed tiers by mood · 📄 موصوف
-- **ماذا / what:** Duration communicates energy; slowest move should be ~3x fastest.
-- **كيف / how:** Pick per element: fast energy, medium pro, slow luxury, very slow cinematic.
-- **أرقام / params:** 0.15-0.3 / 0.3-0.5 / 0.5-0.8 / 0.8-2 s; ratio 3x
-- **الدليل / proof:** `100-superskills/skills/claude-animation-studio/references/motion-rules.md`
-
-#### EASE-294 · اتجاه التمهيد معنى · Ease direction = meaning · 📄 موصوف
-- **ماذا / what:** .out for entrances, .in for exits, .inOut between positions; entrance longer than exit; max two tweens sharing one ease.
-- **كيف / how:** Card enters 0.4 s, exits 0.25 s.
-- **أرقام / params:** 0.4 in / 0.25 out
-- **الدليل / proof:** `100-superskills/skills/claude-animation-studio/references/motion-rules.md`
-
-#### EASE-295 · أربعة تمهيدات · Four-ease vocabulary slam/snap/drive/settle · 📄 موصوف
-- **ماذا / what:** Only four eases: slam easeOutExpo for impacts, snap easeOutBack <=6% overshoot for landing, drive easeInOutQuart travel/light, settle easeOutQuart resolution; no elastic/back on official logo.
-- **أرقام / params:** overshoot <=6%
-- **الدليل / proof:** `100-superskills/skills/motion-director-pro/SKILL.md`
-
-#### EASE-296 · أرقام الإيقاع · Pacing numbers of top motion films · 📄 موصوف
-- **ماذا / what:** Median measurements at 60 fps from shipped films (via the MIT cinetic skill and others).
-- **كيف / how:** Plan shot lengths and holds; verify with motion.py measure / study.
-- **أرقام / params:** median shot 1.46 s (1.1-2.8); picture change every ~.7 s (dense .33); first visible change .10 s; first readable word .4 s, premise by 2 s; one designed hold 1.0-1.6 s; last energy peak at 82%, lull 1-4 s at ~65%, outro 8-20%; end card 2.2 s (assemble 1.0-1.3, hold .6-1.3); frame diff median 1.4 p90…
-- **الدليل / proof:** `kosif-studio/motion/references/craft-numbers.md`
-
-#### EASE-297 · قواعد سرعة الحركة · Motion speed and curve-role rules · 📄 موصوف
-- **ماذا / what:** One curve family per role, near-zero overshoot, speed limits that decide when to blur or redesign.
-- **كيف / how:** Use E.out arrivals, E.exit into cuts, E.inOut/E.whip/E.cam repositioning; check px/f with motion.py speed.
-- **أرقام / params:** arrivals settle 18-55 f; exits 10-24 f; >half of top films 0% overshoot, rest 1-4%; ≤2 snap/pop/land springs per film; slowest move ≥ 3× fastest; secondary starts at 55-75% of lead; text being read ≤ 3 px/f; > 12-20 px/f needs blur; > 80 px/f redesign; shape settles 6 f before position; squash 8%/10…
-- **الدليل / proof:** `kosif-studio/motion/references/craft-numbers.md`
-
-#### EASE-298 · جدول مدد العناصر · Element duration table · 📄 موصوف
-- **ماذا / what:** Durations by element type, overshoot budget and stagger totals (LottieFiles motion-design, MIT).
-- **كيف / how:** Pick durations from the table; scale by distance.
-- **أرقام / params:** micro 80-120 ms, button 120-180, icon 150-250, card 200-350, modal 300-400, page 400-600, dramatic reveal 600-1200, ambient 2-20 s; full screen 1.8-2× of 100 px; overshoot premium 0%, feedback 2-5%, success 5-10%, celebration 15-25%; stagger total < 500 ms (micro 20-40, standard 50-100, dramatic 100…
-- **الدليل / proof:** `kosif-studio/motion/references/motion-craft.md`
-
-#### EASE-299 · أرقام الحرفة · Craft-number norms · 📄 موصوف
-- **ماذا / what:** Measured launch-film norms used by QA: motion energy median ≈1.4 and p90 ≈6.0, something new every 2-4 s, ≤2 uses of any transition, idea felt by 1 s, ≤12 px/frame without blur.
-- **كيف / how:** qa.study / measure / speed
-- **الدليل / proof:** `kosif-studio/motion/qa.py:11` · `kosif-studio/motion/qa.py:407`
-
-#### EASE-300 · منحنى دخول · Easing token: Entrance · 📄 موصوف
-- **ماذا / what:** Documented default curve and duration range for entrance motions.
-- **كيف / how:** use as CSS transition/WAAPI easing or GSAP CustomEase
-- **أرقام / params:** cubic-bezier(0.22, 1, 0.36, 1); 250-600 ms
-- **الدليل / proof:** `kosif-tool/templates/STYLE.md`
-
-#### EASE-301 · منحنى خروج · Easing token: Exit · 📄 موصوف
-- **ماذا / what:** Documented default curve and duration range for exit motions.
-- **كيف / how:** use as CSS transition/WAAPI easing or GSAP CustomEase
-- **أرقام / params:** cubic-bezier(0.55, 0, 1, 0.45); 200-400 ms
-- **الدليل / proof:** `kosif-tool/templates/STYLE.md`
-
-#### EASE-302 · منحنى تأكيد بارتداد · Easing token: Accent overshoot · 📄 موصوف
-- **ماذا / what:** Documented default curve and duration range for accent overshoot motions.
-- **كيف / how:** use as CSS transition/WAAPI easing or GSAP CustomEase
-- **أرقام / params:** cubic-bezier(0.34, 1.56, 0.64, 1); 120-300 ms
-- **الدليل / proof:** `kosif-tool/templates/STYLE.md`
-
-#### EASE-303 · منحنى انتقال · Easing token: Transition · 📄 موصوف
-- **ماذا / what:** Documented default curve and duration range for transition motions.
-- **كيف / how:** use as CSS transition/WAAPI easing or GSAP CustomEase
-- **أرقام / params:** cubic-bezier(0.65, 0, 0.35, 1); 300-800 ms
-- **الدليل / proof:** `kosif-tool/templates/STYLE.md`
-
-#### EASE-304 · منحنى رسم مسار · Easing token: Path draw · 📄 موصوف
-- **ماذا / what:** Documented default curve and duration range for path draw motions.
-- **كيف / how:** use as CSS transition/WAAPI easing or GSAP CustomEase
-- **أرقام / params:** linear -> ease-out, sequential; 400-1200 ms
-- **الدليل / proof:** `kosif-tool/templates/STYLE.md`
-
-#### EASE-305 · سقوط واستقرار بنابض · Drop + spring settle entrance (3D) · 📄 موصوف
-- **ماذا / what:** Objects land with an ease-in drop then a spring settle, or rise from below the floor.
-- **كيف / how:** Position y from ease-in quad then damped spring.
-- **أرقام / params:** drop 0.4 s ease-in; spring damping 12
-- **الدليل / proof:** `kosif-tool/playbooks/3d.md:26`
-
-#### EASE-306 · توقيت ضربة الميزة · Feature beat timing · 📄 موصوف
-- **ماذا / what:** Feature beats enter fast, hold until read, exit quicker, cut on music.
-- **أرقام / params:** enter 300–450 ms ease-out quint; exit 200 ms
-- **الدليل / proof:** `kosif-tool/playbooks/ads.md:26`
-
-#### EASE-307 · هبوط بطاقة السعر · Price card landing · 📄 موصوف
-- **ماذا / what:** Price counts up only if it is a saving; otherwise lands with a spring; max 2 lines, CTA verb first.
-- **كيف / how:** spring config.
-- **أرقام / params:** spring damping 14 stiffness 180; CTA readable ≥ 2 s
-- **الدليل / proof:** `kosif-tool/playbooks/ads.md:19` · `kosif-tool/playbooks/ads.md:28`
-
-#### EASE-308 · الاستباق والمتابعة · Anticipation and follow-through · 📄 موصوف
-- **ماذا / what:** Counter-move before action; secondary parts lag and overshoot.
-- **أرقام / params:** anticipation 4–8 frames; follow-through lag 2–4 frames, overshoot 5–10%
-- **الدليل / proof:** `kosif-tool/playbooks/characters.md:25`
-
-#### EASE-309 · ظهور الحبوب والتسميات · Pills/labels pop and exits · 📄 موصوف
-- **ماذا / what:** Label pills spring in; exits short ease-in.
-- **أرقام / params:** spring {damping 14, stiffness 120, mass 1}; exit 200–300 ms ease-in cubic
-- **الدليل / proof:** `kosif-tool/playbooks/charts.md:43`
-
-#### EASE-310 · ظهور العقدة · Node pop · 📄 موصوف
-- **ماذا / what:** Scale spring pop with quick fade.
-- **أرقام / params:** scale 0.85→1 spring {damping 14, stiffness 160} ~300 ms; opacity 150 ms
-- **الدليل / proof:** `kosif-tool/playbooks/diagrams.md:27`
-
-#### EASE-311 · منحنى دخول الكلمة · Word entrance curve · 📄 موصوف
-- **ماذا / what:** Rise and fade in per word.
-- **أرقام / params:** 300–450 ms; translateY 40–70 px; cubic-bezier(0.22,1,0.36,1); opacity in first 60%
-- **الدليل / proof:** `kosif-tool/playbooks/kinetic-type.md:26`
-
-#### EASE-312 · تدرج الكلمات · Word stagger · 📄 موصوف
-- **ماذا / what:** Fixed stagger without audio, word start − 60 ms with audio.
-- **أرقام / params:** 70–120 ms; −60 ms anticipation
-- **الدليل / proof:** `kosif-tool/playbooks/kinetic-type.md:27`
-
-#### EASE-313 · نبضة التأكيد · Emphasis pop · 📄 موصوف
-- **ماذا / what:** Scale pop or weight crossfade on emphasis word, landing on stressed syllable.
-- **أرقام / params:** 1→1.12→1 over 280 ms spring {damping 12, stiffness 180}; or 500→900 weight with 150 ms crossfade
-- **الدليل / proof:** `kosif-tool/playbooks/kinetic-type.md:28` · `kosif-tool/playbooks/kinetic-type.md:85`
-
-#### EASE-314 · الخروج أقصر من الدخول · Exit shorter than entrance · 📄 موصوف
-- **ماذا / what:** Exits are quicker and move opposite to entrance.
-- **أرقام / params:** 200–300 ms ease-in cubic; 30 px
-- **الدليل / proof:** `kosif-tool/playbooks/kinetic-type.md:30`
-
-#### EASE-315 · معادلة مدة القراءة · Reading hold formula · 📄 موصوف
-- **ماذا / what:** Minimum readable hold after last word lands.
-- **أرقام / params:** hold ≥ 0.3 s + 0.06 s × characters
-- **الدليل / proof:** `kosif-tool/playbooks/kinetic-type.md:31`
-
-#### EASE-316 · استباق الحركة السريعة · Pre-move anticipation · 📄 موصوف
-- **ماذا / what:** Move opposite to travel before fast move.
-- **أرقام / params:** 8–12% for 120–180 ms
-- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:26`
-
-#### EASE-317 · حركة سريعة على قوس · Fast arc travel · 📄 موصوف
-- **ماذا / what:** Fast moves on arcs.
-- **أرقام / params:** 250–400 ms ease-in-out quint
-- **الدليل / proof:** `kosif-tool/playbooks/shapes.md:27`
-
-#### EASE-318 · دخول وخروج وتدرج الصور · Photo entrance/exit/stagger/holds · 📄 موصوف
-- **ماذا / what:** Standard photo timings.
-- **أرقام / params:** in 400 ms opacity + scale 1.04→1 cubic-bezier(0.22,1,0.36,1); out 250–300 ms cubic-bezier(0.55,0,1,0.45); next starts 2 frames early; stagger 80–120 ms (60 for ≥6); ≤ 6 photos; holds 2.5–5 s narration, 1.2–2 s montage, ≥ 8 frames
-- **الدليل / proof:** `kosif-tool/playbooks/photos.md:40`
-
-#### EASE-319 · جدول توقيتات تفاعل الواجهة · UI interaction timing table · 📄 موصوف
-- **ماذا / what:** Reference durations and curves for 17 UI events.
-- **أرقام / params:** cursor 380–700 ms/200–900 px cubic-bezier(0.2,0.8,0.2,1) arc 2–4% settle 80–120; hover 120–160; press 80 down/140 up spring k300 d20, button 0.96 cursor 0.88; ripple 320–400 0→48 px; modal backdrop 200 panel 280–320 spring k170 d18 scale 0.96 y12; close 160–200; dropdown 180–220 expo-out; toggle 180…
-- **الدليل / proof:** `kosif-tool/playbooks/product-ui.md:31-50`
-
-#### EASE-320 · وقفة القراءة وتسلسل السرعة ونابض واحد · Dwell, speed hierarchy, one overshoot · 📄 موصوف
-- **ماذا / what:** Reading dwell after states; chrome slowest, pointer fastest; one bouncy spring per scene; floors/ceilings.
-- **أرقام / params:** dwell 1.2–2.0 s (reels 0.8 s); overshoot only damping < 16 once; nothing < 80 ms; nothing frozen > 1.2 s
-- **الدليل / proof:** `kosif-tool/playbooks/product-ui.md:54-58`
-
-#### EASE-321 · معدلات إطارات متدرجة · Tiered stepped frame rates · 💡 فكرة
-- **ماذا / what:** Different sprite loops run at fixed low fps with no tweening.
-- **كيف / how:** Remotion: sprite index = floor(frame*fps_target/30) % n.
-- **أرقام / params:** idle 4 fps, walk 8 fps (4-frame cycle), spell 12 fps
-- **الدليل / proof:** `style:pm-0xevinho-3777d8`
-
-#### EASE-322 · حركة حاسمة بلا ارتداد · Decisive no-overshoot easing · 💡 فكرة
-- **ماذا / what:** Short moves with expo-like out curve and no bounce.
-- **كيف / how:** CSS/Remotion bezier.
-- **أرقام / params:** 300-450 ms cubic-bezier(0.22,1,0.36,1)
-- **الدليل / proof:** `style:pm-ajith-io-ea7f2d`
-
-#### EASE-323 · دخول بنوابض · Spring entrances 170-200 · 💡 فكرة
-- **ماذا / what:** Every primary entrance uses a spring rather than tween.
-- **كيف / how:** Remotion spring().
-- **أرقام / params:** stiffness 170-200, damping 12-16, mass 1
-- **الدليل / proof:** `style:pm-aschapmann-131210`
-
-#### EASE-324 · سقوط الأيقونة بارتداد · Icon bounce drop · 💡 فكرة
-- **ماذا / what:** App icon drops with back-out bounce; other entrances smooth.
-- **كيف / how:** cubic-bezier.
-- **أرقام / params:** icon cubic-bezier(0.34,1.56,0.64,1) 600 ms; others (0.2,0.8,0.2,1) 500 ms
-- **الدليل / proof:** `style:pm-cansincengiz-me-cf68dd`
-
-#### EASE-325 · حزمة دخول وخروج · Entrance/stagger/exit kit · 💡 فكرة
-- **ماذا / what:** Expo-out entrances, short list stagger, fade+drift exits; single push across piece.
-- **كيف / how:** CSS.
-- **أرقام / params:** enter (0.16,1,0.3,1) 700 ms; stagger 50 ms; exit 300 ms +20 px; push 1.0→1.06/15 s
-- **الدليل / proof:** `style:pm-danilowm-d3720d`
-
-#### EASE-326 · حركة إيقاف على اثنين وثلاثة · Stop-motion on twos/threes · 💡 فكرة
-- **ماذا / what:** Puppets update only on held frames with linear steps.
-- **كيف / how:** Math.floor(frame/2) or /3 at 24 fps.
-- **أرقام / params:** 24 fps; holds 2/3
-- **الدليل / proof:** `style:pm-davidshulmanfl-371638`
-
-#### EASE-327 · حركات كبيرة بطيئة · Slow-large-move rule · 💡 فكرة
-- **ماذا / what:** Large moves never faster than 900 ms, one easing.
-- **كيف / how:** cubic-bezier(0.16,1,0.3,1).
-- **أرقام / params:** 900-1400 ms
-- **الدليل / proof:** `style:pm-gautam-mer1-2ae354`
-
-#### EASE-328 · نابض الواجهة · UI spring settle · 💡 فكرة
-- **ماذا / what:** Panels spring in, bounce at most once.
-- **كيف / how:** spring stiffness 170 damping 22 mass 1.
-- **أرقام / params:** settle ≤700 ms
-- **الدليل / proof:** `style:pm-melvynx-6cde6c`
-
-#### EASE-329 · نبض جيبي · Sinusoidal pulse 2 Hz · 💡 فكرة
-- **ماذا / what:** Scale pulse sine with safe frequency.
-- **كيف / how:** scale=1+0.06*sin(2π·2t).
-- **أرقام / params:** 2 Hz; 6% amp; nothing >3 Hz
-- **الدليل / proof:** `style:pm-monokern-ade5b6`
-
-#### EASE-330 · شبكة 120 وخروج أسرع · 120 BPM grid, fast exits · 💡 فكرة
-- **ماذا / what:** Entries overshoot slowly, exits snap faster.
-- **كيف / how:** Quantize events to 250/500 ms.
-- **أرقام / params:** in cubic-bezier(0.22,1,0.36,1) 450 ms; out cubic-bezier(0.64,0,0.78,0) 220 ms
-- **الدليل / proof:** `style:pm-mrtanviir-132457`
-
-#### EASE-331 · نابض أساسي · Spring 180/18 primary · 💡 فكرة
-- **ماذا / what:** stiffness 180 damping 18 mass 1; UI cubic-bezier(0.2,0.8,0.2,1) 450 ms
-- **أرقام / params:** max hold 900 ms
-- **الدليل / proof:** `style:pm-stephanlivera-df17a2`
-
-#### EASE-332 · رسم منحنى التسهيل · On-screen easing curve demo · 💡 فكرة
-- **ماذا / what:** Draw the easing graph while applying it.
-- **أرقام / params:** exits 40% shorter; spring 180/14 overshoot cap 12%; label >=600 ms
-- **الدليل / proof:** `style:pm-tolgayhickiran-e90799`
+#### EASE-71 · انفجار القطع السريع · Rapid-fire cut bursts · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** بطاقات كلمة واحدة بقطع حاد كل ثُمن نغمة (250 ملّي ثانية عند 120)، تتسارع نحو الكشف. — One-word cards hard-cut on every eighth note, accelerating to the reveal.
+- **متى أستخدمها / when:** ذروة ريل أو تريلر — the climax of a reel or trailer.
+- **كيف / how:** full-bleed single-word cards held 3–10 frames (20+ cuts in 6 s at 30 fps), alternating grounds (coral/black) or colour flips per beat; climax strobe: cut every 250 ms for 2 s (8 cuts); triptych montage: 3 vertical photos swapped every 0.5 s with one centred serif-italic category word (120 px); slogan split into words on black ~1.6 s each with scale 1.05→1; keep flashes under 3 Hz of full-frame luminance change. **أرقام / params:** 250 ms cuts; 3–10 f holds.
+- **الدليل / proof:** `kosif-tool/styles/pm-kloss-xyz-15182a` · `kosif-tool/styles/pm-majin-appsheet-2d3c1a` · `kosif-tool/styles/pm-teslachartz-c58b32` · `kosif-tool/styles/pm-listudio-820c7b`
+
+#### EASE-72 · بناء بطيء ثم ضربة · Contrast pacing: slow burn, calm hold · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** 6–7 ث شبه ساكنة بتغيرات ضوء صغيرة ثم انهيار مفاجئ إلى عنوان كامل الوزن، أو إيقاع هادئ: حركة قصيرة ثم ثبات طويل للقراءة. — Near-still build then a sudden slam; or calm beats of short motion followed by long reading holds.
+- **متى أستخدمها / when:** افتتاحيات درامية وأفلام هادئة فاخرة — dramatic openings and calm premium films.
+- **كيف / how:** slow burn: motion energy < 0.01 for 6–7 s then a spike + cut to a full-weight title; calm: each ~5 s beat = 400–600 ms of motion (10–15%) + 3–5 s hold; mirrored script: first half of each sentence said on the way down, second half on the way back up. **أرقام / params:** energy < 0.01 then spike; motion 10–15% of each beat.
+- **الدليل / proof:** `kosif-tool/styles/pm-kloss-xyz-b9b3f6` · `kosif-tool/styles/pm-iammxfschr-d68f90` · `kosif-tool/styles/pm-emollick-8661a8`
+
+#### EASE-73 · قالب العد التنازلي · Countdown template · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كل ثانية رقم يضرب ويُضغط، حلقة تنقص، الكاميرا تهتز، ثم وميض مزدوج وكلمة «انطلق». — Each second a number slams in and squashes, a ring runs down, the camera shakes, then a double flash and the go word.
+- **متى أستخدمها / when:** افتتاح حدث، إطلاق، رياضة — event openers, launches, sports.
+- **كيف / how:** python scripts/mtemplates.py new NAME --template countdown --set from=5 go=انطلق accent=#FF6B6B → projects/NAME/index.html (+ fonts, gsap, motion-kit); D = from + 1.6 s (from ≤ 10); number 26u scale 1.9→1 in 0.32 s; shake amp 5; bg #1a1a2e→#0b0b14. Every template generated and linted here (TemplateTests). Variants: 3-2-1 with hold keys then an expanding mask at 3–4 s; mm:ss.cc pressure timer to 00:00.00 then 'FINAL'; numbers on beats with silhouettes; time-lapse clock (52 min in ~3 s) with rows completing at matching stamps. **أرقام / params:** 1.9→1 / 0.32 s; shake 5; D = from + 1.6 s.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/templates/motion/countdown.html` · `100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:52` · `100-superskills/skills/kosif-montage-motion/tests/test_v6.py` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-music-sports.md`
+
+#### EASE-74 · شريط التقدم الزمني · Timeline progress bars · 🟢 جاهز / ready
+- **ماذا / what:** شريط رفيع يمتد خطيًا مع الزمن فيحس المشاهد طول الريل أو الفصل. — A thin bar grows linearly with time so viewers feel the length.
+- **متى أستخدمها / when:** دروس، قوائم، فصول — lessons, lists, chapters.
+- **كيف / how:** width = (t/DURATION)·100% at the bottom edge, z-index above content: 2–3 px accent line (earth intro #e8bd76 over exactly 5.06 s linear, snaps full on completion), or 12 px gradient #f59e0b→#ef4444 (omni kinetic_2d); chapter bars fill per chapter with a top-left label; a rotating corner badge 'STEP n/10' (90°/s) increments per beat. **أرقام / params:** 2–12 px; linear.
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html` · `kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.css`
+
+## إعادة تشكيل الزمن والحلقات والإيقاع المتقطع — Time remapping, loops & cadence
+
+_تغيير سرعة الزمن نفسه، وحلقات تجعل الثابت حيًا، وإيقاع الإطارات المرسومة._
+
+#### EASE-75 · منحدرات سرعة بتكامل دقيق · Exact speed ramps · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مفاتيح سرعة خطية داخل المقطع مع خريطة زمن متكاملة بدقة (لوغاريتمية) واستمرارية C1. — Piecewise-linear speed keys with an exactly integrated (log) time map.
+- **متى أستخدمها / when:** لحظة بطيئة داخل مقطع رياضي أو منتج — a slow-mo moment inside an action clip.
+- **كيف / how:** timeline clip "ramp": [[0,1.0],[1.5,0.25],[3,1.0]] (speed 0.1–10) compiles to setpts with log() (RampTests 2/2 passed here); audio is dropped under a ramp, constant speed is pitch-preserved: setpts=PTS/F + atempo=F (0.5–2 per instance, chain for more) or rubberband=tempo=F; Remotion: playbackRate per Sequence. **أرقام / params:** speed 0.1–10; atempo 0.5–2.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/timeline.py:36` · `100-superskills/skills/kosif-montage-motion/tests/test_v6.py` · `100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md`
+
+#### EASE-76 · حركة بطيئة بإطارات مولدة · Optical-flow slow motion & frame interpolation · 🟢 جاهز / ready
+- **ماذا / what:** تبطيء ناعم 0.5× بتوليد إطارات بينية، أو مضاعفة نعومة مقاطع الذكاء الاصطناعي منخفضة الإطارات. — Smooth 0.5× slow-mo by synthesising frames; doubling smoothness of low-fps generated clips.
+- **متى أستخدمها / when:** لقطات قصيرة تحتاج بطئًا، ومقاطع مولدة 8–16 fps — short slow-mo shots, 8–16 fps generated clips.
+- **كيف / how:** ffmpeg (installed): minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:vsbmc=1,setpts=2.0*PTS; RIFE (×2, fast_mode, ensemble) or FILM for large motion need a GPU workflow (not here) — minterpolate is the local fallback; inspect for warping on edges and text. **أرقام / params:** fps 60, mci; ×2.
+- **الدليل / proof:** `100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md` · `kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md` · `kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design`
+
+#### EASE-77 · الإيقاع المتقطع على اثنين وثلاثة · Stepped cadence: on twos & threes · 📦 بأمر تثبيت / one install
+- **ماذا / what:** الزمن يُكمَّم إلى floor(t·fps)/fps فتتحدث الدمى كل إطارين أو ثلاثة بإحساس ستوب موشن، بينما تبقى الكاميرا ناعمة. — Time quantised to floor(t·fps)/fps for a stop-motion feel while the camera stays smooth.
+- **متى أستخدمها / when:** كولاج، قص ورق، رسوم يدوية — collage, paper-cut, hand-drawn looks.
+- **كيف / how:** tq = Math.floor(t * 12) / 12 for drawings (on twos at 24 fps = 12 drawings/s; cutouts at 15 fps inside a 30 fps film); camera on ones; sprite loops at fixed low fps with no tweening (idle 4, walk 8 with a 4-frame cycle, spell 12): index = floor(frame·fps_target/30) % n; 2-frame boil and sparkles living 2–3 frames; the 1s/2s/3s hold mix is a style fingerprint. HyperFrames stop-motion-cadence (fps 8|10|12, boil on|off). **أرقام / params:** 12 drawings/s; 8–12 fps.
+- **تثبيت / install:** `npx hyperframes add stop-motion-cadence`
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/stop-motion-cadence/stop-motion-cadence.html` · `kosif-atlas/skills/2414-animation/9355-learn-style` · `kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md` · `kosif-tool/styles/pm-koldo2k-5cff87`
+
+#### EASE-78 · حلقات التنفس والطفو · Sine idle loops & breathing · 🟢 جاهز / ready
+- **ماذا / what:** تنفس مستمر بموجة جيبية وتكرارات محدودة، طفو المنتج، بندول وكرسي هزاز، وتهدئة السعة إلى الصفر قبل النهاية. — Continuous sine breathing with finite repeats, product float, pendulums; amplitude settles to zero at the end.
+- **متى أستخدمها / when:** أي ثبات أطول من ثانيتين — any hold longer than two seconds.
+- **كيف / how:** scale amp 0.008–0.015 (0.02–0.04 for isolated kinetic objects); product bob y ±6 px period 2.5 s with the shadow scaling inversely; pendulum ±18° per 1 s, rocking ±4° per 2 s, phase offsets so nothing moves in unison; character breath 0.3 Hz 2 px; pulse 1 + 0.06·sin(2π·2t) and nothing above 3 Hz; settle amplitude to zero in the last ~20% for idles > 6 s; MOTION.breathe in the kit. **أرقام / params:** amp .008–.015; ±6 px / 2.5 s; ≤3 Hz.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/sine-wave-loop.md` · `kosif-studio/motion/kit/motion-kit.js` · `kosif-tool/styles/pm-cansincengiz-me-cf68dd` · `kosif-tool/styles/pm-kamstudiolabs-0b0824`
+
+#### EASE-79 · حلقة مغلقة بلا قطع · Seamless loop closure · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** اجعل معامل الحركة دوريًا وأنهِ الخط الزمني بنفس حالة الإطار الأول فيتكرر الفيديو بلا نهاية. — Make every driver periodic and end on the frame-0 state.
+- **متى أستخدمها / when:** خلفيات حلقية وأغلفة متحركة — looping backgrounds and covers.
+- **كيف / how:** period = duration (or an integer fraction); every sine uses 2π·k·t/D with integer k; noise sampled on a circle (cos, sin of 2πt/D); verify by diffing frame 0 against frame N (should match frame N−1 → 0 continuity). **أرقام / params:** period = duration.
+- **الدليل / proof:** `kosif-tool/styles/pm-itsolelehmann-e47532`
+
+#### EASE-80 · حلقات الحالة الصغيرة · Status micro-loops · 🟢 جاهز / ready
+- **ماذا / what:** إشارات صغيرة متكررة: وميض الهيكل، نقطة تنبيه، حلقة تسجيل، نقاط الكتابة، دوّار التحميل. — Tiny looping signals: skeleton shimmer, alert dot, recording ring, typing dots, spinner.
+- **متى أستخدمها / when:** مشاهد واجهات ومساعدات ذكية — UI and assistant scenes.
+- **كيف / how:** shimmer linear-gradient(90deg, s2, s3, s2) at 200% size, background-position → −200% in 1.2 s linear infinite, bars 14 px radius 7; alert pulse opacity 1→.35→1 1.6 s ease-in-out; recording ring box-shadow 0 0 0 6px at 50% over 1 s; typing dots opacity .25 translateY(−3 px) at 50%, 1 s, delays 0/.15/.3 s; spinner 34 px ring, border 4 px, one side transparent, .8 s linear; calm enter opacity .65→1, y 4 px, 180 ms. In a render use finite repeats tied to t. **أرقام / params:** 1.2 s / 1.6 s / 1 s / .8 s.
+- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/shell.css:217` · `kosif-earth-ci-fork/ui/ds/components.css:38` · `kosif-earth-ci-fork/ui/features/assistant.css:20`
+
+#### EASE-81 · سرعات الكتابة الآلية · Typewriter speed table · 🟢 جاهز / ready
+- **ماذا / what:** حروف في الثانية لكل إحساس، ومؤشر وميض بخطوات حادة. — Characters per second per mood, with a hard-stepped caret.
+- **متى أستخدمها / when:** أوامر طرفية، كود، عناوين تُكتب — terminal commands, code, typed titles.
+- **كيف / how:** 3–5 cps dramatic, 8–12 natural, 15–20 tech/code, 30+ bulk fill; caret opacity yoyo with steps(1), block 11×22 px; kit MOTION.typeOn drives the count through a modifier (seek-safe) with E.type (.5,1,.89,1) for an eased count; Arabic text types by whole words or a mask wipe, not characters (ARAB-01). **أرقام / params:** 3–5 / 8–12 / 15–20 / 30+ cps.
+- **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js` · `kosif-atlas/skills/2702-hyperframes/10377-gsap/references/effects.md` · `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md`
+
+#### EASE-82 · زمن الرسم حسب حجم الخطوة · Drawing-time model · 🟢 جاهز / ready
+- **ماذا / what:** مدة رسم كل خطوة تتناسب مع الجذر التربيعي لحصتها من البكسلات المتغيرة مضروبة في وزنها، فالتفاصيل سريعة والسماء بطيئة. — Each painting step lasts ∝ √(changed-pixel share) × weight.
+- **متى أستخدمها / when:** مشاهد تُرسم أمام المشاهد في استوديو الرسم — scenes painted on screen.
+- **كيف / how:** dur = SPEEDS[speed] · step.weight · √(n/area); pixels revealed linearly in time; speeds slow 5.0, normal 1.8, fast 0.55, instant 0 (seconds per full-sheet step); the film renderer uses the same formula per frame. **أرقام / params:** 5.0 / 1.8 / 0.55 / 0 s.
+- **الدليل / proof:** `kosif-studio/studio.py:46` · `kosif-studio/film.py:28`
+
+## واجهات وتفاعل دقيق — UI micro-timing & accessibility
+
+_توقيت الأزرار والنوافذ والحالات — وحق المشاهد في حركة هادئة._
+
+#### EASE-83 · تفاعلات الضغط والمرور والنوافذ · Press, hover & dialog entrances · 🟢 جاهز / ready
+- **ماذا / what:** الأزرار تغطس عند الضغط، البطاقات ترد بظل أعمق، النوافذ تستقر بتجاوز بسيط بلا تحجيم، والتنبيهات تنزلق للأعلى. — Buttons dip, cards deepen their shadow, dialogs settle with slight overshoot (rise only), toasts slide up.
+- **متى أستخدمها / when:** ديمو واجهات ولقطات تطبيقات — UI demos.
+- **كيف / how:** .btn:active scale(.985) 180 ms ease-out; card hover box-shadow 220 ms (no movement); gate lift −2 px .18 s; dialog translateY(8 px) 300 ms spring (no scale so 44 px targets stay full size); menu 220 ms ease-out; toast translateY(12 px) scale(.96) 340 ms spring; dropdown y −4 px scale .98 .2 s; popover .14 s; toggle knob translateX + colour swap 250 ms spring; comment bubble 0.9→1 200 ms easeOutBack, hold ~1.5 s; theme cross-fade on bg/colour/border/shadow 220 ms (.2,.8,.2,1). **أرقام / params:** 180 / 220 / 300 / 340 ms.
+- **الدليل / proof:** `kosif-earth-ci-fork/ui/ds/luxe.css:373` · `kosif-earth-ci-fork/ui/ds/luxe.css:367` · `kosif-earth-ci-fork/ui/ds/tokens.css:99`
+
+#### EASE-84 · التحويل والشفافية فقط · Transform/opacity-only contract · ✅ مُثبت هنا / proven here
+- **ماذا / what:** الأسطح التفاعلية لا تستخدم transition-all، والحركة محصورة في transform وopacity (وتلاشي الألوان)، والقيم المالية لا تتحرك أبدًا. — No transition-all; animate transform/opacity only; money values never animate.
+- **متى أستخدمها / when:** كل واجهة ومشهد HTML — every UI and HTML scene.
+- **كيف / how:** explicit property lists in transitions; GPU-friendly transforms; numbers that carry legal/financial meaning appear final, never counted; the motion-contract test asserts it for buttons, progress and tabs (5/5 passed here).
+- **الدليل / proof:** `kosif-audit-pro/tests/motion-contract.test.mjs` · `kosif-audit-pro/README.md`
+
+#### EASE-85 · زر تهدئة الحركة وتقليلها · Quiet-motion toggle & reduced motion · 🟢 جاهز / ready
+- **ماذا / what:** بجانب إعداد النظام، زر يضع data-motion=quiet فيقتل كل حركة وانتقال، ورموز الحركة تتحول إلى فورية. — Besides the OS setting, a toggle sets data-motion=quiet and kills animation; tokens swap to instant/linear.
+- **متى أستخدمها / when:** صفحات المعاينة والمشغّلات التفاعلية — preview pages and interactive players.
+- **كيف / how:** documentElement.dataset.motion = 'quiet'|'full'; :root[data-motion=quiet] * {animation:none; transition:none}; waveform level fixed at .08; @media (prefers-reduced-motion: reduce) overrides tokens (instant 0, fast 100, normal 200, slow 300, slower 500 ms); the rendered video itself is unaffected. **أرقام / params:** wave level .08 when quiet.
+- **الدليل / proof:** `kosif-audit-studio/studio.js:23` · `kosif-audit-studio/studio.css:140` · `kosif-atlas/skills/1567-tonone/4430-form-tokens`
+
+#### EASE-86 · حركات طبقات الاستوديو · Studio layer entrances & opacity envelope · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كل طبقة نص أو شكل في استوديو المونتاج تختار: ظهور، صعود، تكبير، أو ثابت، فوق غلاف شفافية شبه منحرف. — Each studio text/shape layer picks fade, rise, zoom or none over a trapezoid opacity envelope.
+- **متى أستخدمها / when:** إضافة نص فوق فيديو في محرر المتصفح — adding text over footage in the browser editor.
+- **كيف / how:** animationProgress(o,t) = min(1, (t−start)/min(0.6, d/3), (end−t)/min(0.4, d/3)), 0 outside; ease = 1 − (1 − clamp((t−start)/0.65))³; rise y offset (1−ease)·0.07·h; zoom scale 0.65 + 0.35·ease; none = full opacity. model.test.mjs passed here. **أرقام / params:** in 0.6 s, out 0.4 s, each ≤ d/3; 0.65 s ease.
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:12` · `100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:75` · `100-superskills/skills/kosif-montage-motion/tests/studio/model.test.mjs`
+
+#### EASE-87 · تبديل الحالات بانسيابية · State swaps: FLIP reflow & headline crossfade · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** الصناديق تنتقل من مواضعها القديمة إلى الجديدة، والعنوان الخارج يصعد ويتلاشى بينما الداخل يأتي من الأسفل بتداخل 200 ملّي ثانية. — FLIP boxes to new layout; outgoing headline up and out while the new one rises, 200 ms overlap.
+- **متى أستخدمها / when:** إعادة ترتيب واجهة، تبديل عناوين — layout changes, headline swaps.
+- **كيف / how:** FLIP: measure first/last rects, animate the inverse to identity over 600 ms cubic-bezier(.65,0,.35,1); collapse a detail list into one chip row. Headline: out y −12 px + fade, in from +12 px, 500 ms easeInOut, overlap 200 ms. **أرقام / params:** 600 ms (.65,0,.35,1); ±12 px, 200 ms overlap.
+- **الدليل / proof:** `kosif-tool/styles/pm-moguzbulbul-6311b6` · `kosif-tool/styles/pm-ai-baymax-0ef9dd`
+
+#### EASE-88 · تنعيم أثر المؤشر بالمسافة · Distance-sampled pointer trail · 📄 موصوف / documented only
+- **ماذا / what:** رأس يقترب من الهدف كل إطار ونقاط الأثر توضع حسب المسافة لا الزمن، فلا يتمزق الأثر في الضربات السريعة. — A head eased toward the target each frame, trail points laid by distance travelled.
+- **متى أستخدمها / when:** إصبع أو مؤشر مرسوم بأثر — scripted finger/cursor trails.
+- **كيف / how:** head += (target − head)·0.3 per frame; push a point when distance > 0.01 field units; drop points older than 1.6 s; 24 points; for a seek-safe render compute the head from a sampled path (EASE-48) rather than accumulating. **أرقام / params:** follow 0.3/f; spacing 0.01; life 1.6 s; 24 pts.
+- **الدليل / proof:** `kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail`
+
+#### EASE-89 · توقيتات الصور وضربات الميزات · Photo & feature-beat timings · 📄 موصوف / documented only
+- **ماذا / what:** أرقام قياسية لدخول الصور وخروجها وتتابعها وثباتها، ولضربات الميزات في الإعلانات. — Standard photo entrance/exit/stagger/holds and ad feature beats.
+- **متى أستخدمها / when:** ألبومات صور، إعلانات منتج — photo stories, product ads.
+- **كيف / how:** photo in 400 ms opacity + scale 1.04→1 (.22,1,.36,1); out 250–300 ms (.55,0,1,.45); next starts 2 frames early; stagger 80–120 ms (60 for ≥6); ≤6 photos at once; holds 2.5–5 s with narration, 1.2–2 s montage, ≥8 frames. Feature beat: enter 300–450 ms ease-out quint, hold until read, exit 200 ms, cut on music. Word entrance 300–450 ms, rise 40–70 px, opacity in the first 60%; word stagger 70–120 ms (or word start − 60 ms with audio); decaying slide 80/60/50/25/12 px per successive word. **أرقام / params:** 400 / 250–300 ms; holds 2.5–5 s.
+- **الدليل / proof:** `kosif-tool/playbooks/photos.md:40` · `kosif-tool/playbooks/ads.md:26` · `kosif-tool/playbooks/kinetic-type.md:26` · `kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md`
+
+## مكونات ومكتبات جاهزة للتوقيت — Ready timing components & libraries
+
+_ما يمكن استدعاؤه بأمر واحد بدل بنائه._
+
+#### EASE-90 · مكونات HyperFrames للتوقيت · HyperFrames timing components · 📦 بأمر تثبيت / one install
+- **ماذا / what:** مكونات مسجلة تُضاف بأمر واحد وتُركّب على div بالـ data attributes، والمدة الزائدة تصبح ثباتًا لا تمديدًا. — Registry components added with one command and mounted via data attributes.
+- **متى أستخدمها / when:** تركيبات HyperFrames — HyperFrames compositions.
+- **كيف / how:** npx hyperframes add <name> copies compositions/components/<name>.html; mount on a class="clip" div with data-composition-src + data-start/data-duration/data-track-index and JSON overrides in data-variable-values; colours/fonts from the 18 theme tokens; preview/render with npx hyperframes preview|render. Timing set: arc-motion-path (MotionPath autoRotate); beat-timeline (beatCount 4, 0.6 s); echo-trail (4 echoes, 0.09 s); extended-keyframe; keyframe-scrub-stack; motion-blur (720°, 16 samples); offset-path-traveler (SVG path, tangent rotation); shutter-slam (one word through six single-property beats under shutter blur); slit-scan-reveal (rows|cols, spread .45, resolve 2.2 s); spring-pop (fromScale .9, overshoot 1.7); stagger-cascade (6 items, 60 ms); stagger-lattice; stop-motion-cadence (8|10|12 fps); velocity-throw-snap (5-shot rail, hero index 2); talking-head recut cards with 13 data-anim kinds quantised to 1/fps. **أرقام / params:** 15 components.
+- **تثبيت / install:** `npx hyperframes add spring-pop`
+- **رخصة / license:** Apache-2.0 (components use GSAP: standard no-charge license)
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/shutter-slam/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/velocity-throw-snap/velocity-throw-snap.html` · `kosif-one/vendor/hyperframes/registry/components/slit-scan-reveal/slit-scan-reveal.html` · `kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md`
+
+#### EASE-91 · مكتبات توقيت إضافية · Extra timing libraries · 📦 بأمر تثبيت / one install
+- **ماذا / what:** محركات توقيت بديلة حين يلزم: anime.js، Motion، Theatre.js، Lottie، وMotion Canvas. — Alternative timing engines when needed.
+- **متى أستخدمها / when:** حين يطلب المستخدم محركًا بعينه أو تسلسلًا مرئيًا للمفاتيح — when a specific engine or a visual keyframe editor is wanted.
+- **كيف / how:** animejs 4.5 (stagger utilities, MIT), motion 14 (springs, MIT), @theatre/core 0.7 (keyframe sequencing; studio is AGPL — keep it out of shipped bundles), lottie-web 5.13 (play AE exports, seek by frame), @motion-canvas/core 3.17 (generator timelines). Render any of them through render_html.cjs only after wiring seek(t) to the library's own seek/goToAndStop — never real time. **أرقام / params:** seek-wired only.
+- **تثبيت / install:** `npm i animejs motion @theatre/core lottie-web`
+- **رخصة / license:** Theatre.js studio AGPL-3.0; others MIT/Apache
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md`
+
+## توليفات قوية / power combos
+
+- **ريل كلام على ساعة الكلمات / talking reel on the word clock:** EASE-01 + EASE-06 + EASE-51 + ARAB-62 + SYNC (words.json) — كل كلمة تدخل عند موعد نطقها (أقصى فرق 33 ملّي ثانية في فيلم الإثبات)، وضربة hitPulse على الكلمة المنبورة، والصوت الأصلي لا يُمس.
+- **مونتاج على البيت / beat montage:** EASE-66 + EASE-67 + EASE-71 + BEAT (BPM والضربات) + TRANS — القطع الكبير على الضربة القوية، الزووم على الضعيفة، وذروة بطاقات كل ثُمن نغمة.
+- **إطلاق منتج فاخر / premium launch:** EASE-63 + EASE-09 (out/exit/cam) + EASE-16 + EASE-28 (تجاوز 0%) + CAM + GLOW — لقطة وسيطة 1.46 ث، دفع كاميرا لوغاريتمي، ولا ارتداد على الشعار.
+- **درس مبادئ الحركة / animation-principles lesson:** EASE-21 + EASE-54 + EASE-53 + EASE-49 + DRAW — منحنى التسهيل يُرسم على الشاشة، كرة بانضغاط وأشباح تبيّن التباعد.
+- **ديمو تطبيق / app demo:** EASE-43 + EASE-83 + EASE-42 + EASE-81 + UI — مؤشر بقوس 2–4%، ضغط 80/140 ملّي ثانية، وقفة قراءة 1.2–2 ث، وكتابة 15–20 حرفًا/ث.
+- **سبورة تعليمية / whiteboard lesson:** EASE-08 + EASE-82 + EASE-44 + DRAW + ARAB-22 — معامل بطء واحد، رسم بسرعة تتناسب مع حجم الخطوة، وكشف على امتداد التعليق.
+- **ستوب موشن كولاج / stop-motion collage:** EASE-77 + EASE-05 + EASE-56 + TEX (ورق) — رسوم على اثنين، خمس ضربات لكل 10 ث، وأختام تضرب.
+- **قصة بيانات / data story:** EASE-44 (فعل حركة لكل مشهد) + EASE-30 + EASE-45 + DATA — عقد تقفز بنابض k160 d14 والأرقام تعدّ ولا عنصر يتجمد.
+- **فيديو حلقي للغلاف / looping cover:** EASE-79 + EASE-78 + PART — كل موجة بتكرار صحيح داخل المدة، وتنفس بسعة 1%.
+
+## أخطاء ممنوعة / never do
+
+1. **لا ساعة حائط ولا Math.random ولا مؤقتات في مشهد يُرندر** — الإطارات تختلف بين رندر وآخر ولا يمكن الرندر بالتوازي؛ كل شيء من seek(t) وبذرة ثابتة (EASE-01).
+2. **لا تراكم القيم إطارًا بعد إطار (x += …) في الرندر** — البحث إلى إطار بعيد يعطي نتيجة خاطئة؛ استخدم صيغة مغلقة أو MOTION.sampled (EASE-17/48).
+3. **لا تحرك موقعًا مكانيًا بمنحنى خطي** — يبدو آليًا؛ الخطي للانجراف والبيانات والضوء فقط (EASE-15).
+4. **لا back/elastic على شعار رسمي ولا أكثر من نابضين مرتدين في الفيلم** — يرخص الهوية ويُتعب العين؛ الافتراضي تجاوز 0% (EASE-28).
+5. **لا تتابع حرفًا حرفًا على العربية** — يكسر الوصل؛ تتابع الكلمات 60–160 ملّي ثانية أو قناع (EASE-32، ARAB-01).
+6. **لا تملأ أول ربع اللقطة ثم تجمّد** — تصبح شريحة؛ اكشف مع التعليق (EASE-44).
+7. **لا تتجاوز 3 بكسل/إطار لنص يُقرأ ولا 80 بكسل/إطار لأي شيء** — لا يُقرأ ويتقطع؛ قِس بـ motion.py speed (EASE-60).
+8. **لا تثق بنسب التجاوز المكتوبة في الوثائق دون قياس** — قستُ هنا: spring('snappy') يتجاوز 8.4% لا 3% (EASE-23).
+9. **لا وميض كامل الإطار أسرع من 3 هرتز** — خطر على المصابين بالصرع ويُرفض في المنصات (EASE-71/78).
+10. **لا تحذف وقفة ذات معنى لتصل إلى رقم ASL** — الأرقام إرشاد لا هدف؛ والقطع حيث الفجوة < 0.15 ث يُسمع (EASE-64/70).
+11. **لا تعِد بمدة لا يحتملها الحساب** — 5 مشاهد × 6 ث = 30 ث وليس 25 (EASE-03).
+12. **لا CSS transitions ولا تكرار لا نهائي في صفحة تُرندر** — لا تُبحث بالزمن الافتراضي؛ تكرارات محدودة مربوطة بـ t (EASE-80).
+
+## أقوى 5 حركات توقيع / 5 signature moves
+
+1. **EASE-09 — منحنيات الأدوار:** ‏E.out للوصول، E.exit إلى القطع، E.cam للكاميرا — أول ما تختاره لأي فيلم؛ مقيسة هنا.
+2. **EASE-22 — نوابض SPR المغلقة:** ‏firm للاستقرار الهادئ (0%، 0.58 ث)، وsnap لهبوط حقيقي (6%، 0.34 ث) — أي إطار يُحسب مباشرة.
+3. **EASE-51 — غلاف الضربة:** قمة بعد الصوت بإطارين واضمحلال أسي — يجعل كل ركلة وكلمة منبورة «تضرب».
+4. **EASE-19 — لقطة السرعة U:** دخول سريع، تجوال 1.2 بكسل/إطار، تسارع إلى القطع — توقيع المونتاج السريع الأنيق.
+5. **EASE-63 — أرقام الإيقاع:** لقطة 1.46 ث، أول كلمة 0.4 ث، ذروة عند 82%، بطاقة نهاية 2.2 ث — ابدأ كل تخطيط منها.
