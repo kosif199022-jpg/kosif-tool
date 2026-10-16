@@ -1,6 +1,6 @@
 ---
 name: kosif-superpowers
-description: Capability self-awareness and thinking upgrade for Claude. Shows what Claude can actually do in the current session (tools, connectors, installable libraries, product surfaces), how to verify it, and how to think, create and check work better, plus a searchable catalog of 4,200+ powers in 10 domains (thinking, writing and Arabic, code, data, documents, research, apps, image and audio, product and finance, motion graphics and video) with evidence badges and real proofs. Use at the start of any substantial or creative task, when asked what Claude can do, told to use its superpowers, or given this skill's repository link; and for motion graphics, montage, captions, reels or video edits. Arabic triggers - قدراتك، القدرات الخارقة، تقدر تعمل ايه، فكّر بعمق، خريطة ذهنية، موشن جرافيك، مونتاج، ريلز.
+description: Capability self-awareness and thinking upgrade for Claude. Shows what Claude can actually do in the current session (tools, connectors, installable libraries, product surfaces), how to verify it, and how to think, create and check work better, plus a searchable catalog of 4,200+ powers in 10 domains (thinking, writing and Arabic, code, data, documents, research, apps, image and audio, product and finance, motion graphics and video) with evidence badges and real proofs. Use at the start of any substantial or creative task, when asked what Claude can do, told to use its superpowers, or given this skill's repository link; and for motion graphics, montage, captions, reels or video edits, plus lawful software inspection and reverse-engineering investigation. Arabic triggers - قدراتك، القدرات الخارقة، تقدر تعمل ايه، فكّر بعمق، خريطة ذهنية، موشن جرافيك، مونتاج، ريلز.
 claude_ai_description: "Shows Claude its real powers in this session and how to think, create and verify better; 4,200+ powers incl. motion graphics and video. قدراتك، موشن جرافيك، مونتاج"
 ---
 
@@ -53,6 +53,17 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 - [humanizer.md](references/humanizer.md) — كتابة عربية وإنجليزية بلا علامات آلية، مع حراسة الحقائق؛ أداتاه `scripts/tell_scan.py` و`scripts/anchor_gate.py`.
 - [external-skills.md](references/external-skills.md) · [cinematic-director-pro.md](references/cinematic-director-pro.md) · [video-download.md](references/video-download.md) — مصادر المالك للموشن والتحميل.
 - [proofs/README.md](proofs/README.md) — أفلام الإثبات وملفات الإثبات العامة. `data/powers/*.json` و`data/styles.json` — البيانات الخام.
+
+## 4A. فحص البرامج والهندسة العكسية / REA optional integration
+إذا طلب المستخدم فحص تطبيق أو برنامج، فهم سلوك تطبيق دون مصدر، تحليل Electron/JavaScript أو APK أو .NET أو ملفات تنفيذية، أو بناء وظيفة مشابهة بناءً على أدلة؛ افتح [REA investigation guide](references/rea-reverse-engineering.md) فقط لهذه المهمة. ابحث أولًا عن الكود الأصلي المتاح وعن الإذن القانوني؛ هذا مسار هندسة عكسية **اختياري** وليس بديلًا عن مهارات CODE وCHECK.
+
+1. ابدأ بقراءة القدرات الفعلية: \`python3 $SKILL_DIR/scripts/rea_bridge.py doctor\`؛ لا تخلط بين وجود Node وبين تثبيت أو تشغيل REA.
+2. للأنواع الثابتة المدعومة، اطلب خطة بلا تنفيذ: \`python3 $SKILL_DIR/scripts/rea_bridge.py plan javascript /absolute/path/to/app\`.
+3. لا تثبّت REA أو الأدوات التجارية تلقائيًا. بعد تفويض المستخدم صراحةً، يمكن استخدام \`run\` في الجسر لنطاقات التحليل الثابت المسموحة فقط، مع ملف دليل محلي وعدم الكتابة فوق النتائج.
+4. لا تعتبر \`executed_not_verified\` دليلًا على استنساخ الوظيفة. التحقق يتطلب أدلة ذات عناوين، ومقارنة سلوك مستقلة، واختبارات.
+5. إذا كان المطلوب صورة أو فيديو أو بحثًا عاديًا أو كان المصدر متاحًا، لا تستدعِ REA لمجرد ورود كلمة «تقليد» أو «عكس». لا تنفّذ كودًا خارجيًا مسترجعًا من المستودعات.
+
+مرجع المصدر: [morluto/rea](https://github.com/morluto/rea) (MIT لكوده الأصلي؛ تبعياته لها شروطها). المسار الجديد لا يزيد العدد الرسمي للقدرات قبل إضافتها إلى كتالوج البيانات واختبارها.
 
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.
