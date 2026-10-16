@@ -21,6 +21,10 @@ jobs:
         run: python3 tools/build.py --check
       - name: Python tests
         run: python3 -m unittest discover -s tests -v
+      - name: KOSIF Superpowers integrity + routing evaluations
+        run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
+      - name: REA bridge and router safety regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_rea_*.py' -v
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules

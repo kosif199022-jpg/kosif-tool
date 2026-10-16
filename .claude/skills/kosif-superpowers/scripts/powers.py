@@ -177,6 +177,17 @@ INTENT.update({
     "debug": ["@CODE"], "refactor": ["@CODE"], "code": ["@CODE"], "coding": ["code", "@CODE"],
     "programming": ["code", "@CODE"], "pull request": ["github", "@CODE"], "repo": ["github", "@CODE"],
     "github": ["@CODE"], "unit test": ["tests", "@CODE", "@CHECK"], "مراجعة كود": ["review", "@CODE", "@CHECK"],
+    # lawful software inspection / REA: route to engineering and verification, never execution by itself
+    "هندسة عكسية": ["reverse engineering", "evidence", "@CODE", "@CHECK", "@SEC"],
+    "تحليل برنامج": ["software inspection", "reverse engineering", "@CODE", "@CHECK"],
+    "تحليل ملف تنفيذي": ["binary", "reverse engineering", "@CODE", "@SEC"],
+    "reverse engineering": ["software inspection", "@CODE", "@CHECK", "@SEC"],
+    "reverse engineer": ["reverse engineering", "@CODE", "@CHECK", "@SEC"],
+    "rea": ["reverse engineering", "@CODE", "@CHECK"],
+    "rea-agents": ["reverse engineering", "@CODE", "@CHECK"],
+    "electron": ["javascript", "static inspection", "@CODE"],
+    "apk": ["android", "static inspection", "@CODE", "@SEC"],
+    "decompile": ["binary", "code analysis", "@CODE", "@SEC"],
     # writing, prompts, ideas, Arabic language
     "اكتب": ["write", "@WRITE"], "مقال": ["article", "@WRITE"], "صياغة": ["rewrite", "@WRITE"],
     "كتابة": ["write", "@WRITE"], "write": ["@WRITE"], "article": ["@WRITE"], "essay": ["@WRITE"],
