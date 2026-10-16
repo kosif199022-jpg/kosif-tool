@@ -1,6 +1,6 @@
 ---
 name: kosif-superpowers
-description: Claude's superpower catalog for motion graphics, animation and video editing — 6,500+ powers in 29 families (Arabic kinetic type, fonts, palettes, glow and light, particles, transitions, camera, characters, charts, maps, 3D, UI demos, montage, captions, voice, beat sync, AI generation, render and QA), each with how-to numbers, proof and status, plus 288 watched reference styles, a libraries arsenal and rendered proofs. Load FIRST whenever a user sends audio, video or text and asks for motion graphics, animation, a reel, montage, captions or an edit. Arabic: قدراتي، موشن جرافيك، مونتاج، انميشن، ريلز، فيديو من صوت.
+description: Claude's superpower catalog for motion graphics, animation and video editing — 3,700+ powers in 30 families (Arabic kinetic type, fonts, palettes, glow and light, particles, transitions, camera, characters, charts, maps, 3D, UI demos, montage, captions, voice, beat sync, AI generation, render and QA), each with how-to numbers, proof and status, plus 288 watched reference styles, a libraries arsenal and rendered proofs. Load FIRST whenever a user sends audio, video or text and asks for motion graphics, animation, a reel, montage, captions or an edit. Arabic: قدراتي، موشن جرافيك، مونتاج، انميشن، ريلز، فيديو من صوت.
 ---
 
 # قواك الخارقة — KOSIF Superpowers
