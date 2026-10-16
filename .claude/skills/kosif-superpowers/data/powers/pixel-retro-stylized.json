@@ -1,0 +1,1654 @@
+[
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "سبرايت بكسل بلوحة ألوان مقفلة",
+  "name_en": "Palette-locked pixel sprite spec",
+  "status": "proven",
+  "what": "Author small sprites as character grids mapped to a fixed palette; larger ones via a procedural Python generator.",
+  "how": "Pillow: rows of palette keys -> PNG at 1x, upscale nearest-neighbor x8 for preview; hand grids up to ~24x24. Rules: silhouette first, one light direction, hue-shifted ramps, selective outline, no pillow shading, no dithering on small sprites.",
+  "params": "scale 8 preview; <=24x24 hand grid",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9527-sprite"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-01"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "ثيم J وحشي حمضي",
+  "name_en": "Kinetic theme J Brutalist Acid",
+  "status": "proven",
+  "what": "Locked kinetic-typography look for Flow prompts: flat black ultra-condensed heavy sans.",
+  "how": "kinetic-flow setup {\"theme\":\"J\"} -> STYLE LOCK paragraph repeated verbatim in every clip prompt (background, hero type colour, small type colour, finish, overlay, animation, transition, end card).",
+  "params": "background #BDBDB8, accent/hero #C6FF00, small #0A0A0A; flat black ultra-condensed heavy sans; industrial chrome + black rubber; concrete grain, harsh top light, blank tape tabs, grid; hard snapping acid highlight punch; glitch cut + whip-slide; acid-lime box slams under wordmark",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:13"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-02"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "ثيم K ريترو السبعينات الدافئ",
+  "name_en": "Kinetic theme K Retro 70s Warm",
+  "status": "proven",
+  "what": "Locked kinetic-typography look for Flow prompts: rounded heavy warm-brown retro serif.",
+  "how": "kinetic-flow setup {\"theme\":\"K\"} -> STYLE LOCK paragraph repeated verbatim in every clip prompt (background, hero type colour, small type colour, finish, overlay, animation, transition, end card).",
+  "params": "background #F3E3C3, accent/hero #E8732C, small #5A3A22; rounded heavy warm-brown retro serif; matte faded analog objects; film grain, warm vignette, orange/mustard sunburst corner; wobbly 70s bounce-in; sunburst stripe wipe; sunburst rotating behind brand",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:14"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-03"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "ثيم N قص ورقي",
+  "name_en": "Kinetic theme N Paper Craft Cutout",
+  "status": "proven",
+  "what": "Locked kinetic-typography look for Flow prompts: flat black thick sans with tiny cut-paper shadow.",
+  "how": "kinetic-flow setup {\"theme\":\"N\"} -> STYLE LOCK paragraph repeated verbatim in every clip prompt (background, hero type colour, small type colour, finish, overlay, animation, transition, end card).",
+  "params": "background #F2EBDD, accent/hero #D94032, small #1A1A1A; flat black thick sans with tiny cut-paper shadow; layered cardstock + paper fibres; torn-paper corners, kraft texture, shadows; stepped stop-motion cutout slides; physical paper sheet slide; paper folds reveal brand",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:17"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-04"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "ثيم Q كروم Y2K القزحي",
+  "name_en": "Kinetic theme Q Y2K Chrome Iridescent",
+  "status": "proven",
+  "what": "Locked kinetic-typography look for Flow prompts: black wide heavy sans with subtle iridescent outline.",
+  "how": "kinetic-flow setup {\"theme\":\"Q\"} -> STYLE LOCK paragraph repeated verbatim in every clip prompt (background, hero type colour, small type colour, finish, overlay, animation, transition, end card).",
+  "params": "background #E9ECF2, accent/hero #141414, small #5A5F6E; black wide heavy sans with subtle iridescent outline; liquid chrome with iridescent reflections; pale lilac gradient, chrome droplets, star sparkles; shimmer sweep with snap stretch; liquid silver morph wipe; chrome blob uncovers wordmark",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:20"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-05"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "دورات حركة بكسلية برمجية",
+  "name_en": "Procedural sprite cycles",
+  "status": "ready",
+  "what": "One draw(direction, pose) generator produces every frame from parameters (limb angles, step phase, bob, arm swing, squash) so fixes propagate to all frames.",
+  "how": "Plan cycles in a table (key poses, frame counts, durations); RPG Maker MZ walk = 3 patterns 0-1-2-1 at 48x48; mirror only symmetric designs then shade; GIF delays in 10ms units floor 20ms; VFX fade by stepping down a palette ramp; hold impact frames.",
+  "params": "MZ 48x48; GIF min 20ms",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9525-animate/SKILL.md",
+   "kosif-atlas/skills/2460-pixel-art/9530-vfx/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-06"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تأثير بكسلة",
+  "name_en": "Pixelation post shader",
+  "status": "ready",
+  "what": "Snap UVs to a cell grid; cellUV=fract(uv/size) allows per-cell patterns.",
+  "how": "uvPixel=size*floor(uv/size). Animate size for progressive depixelation (powers of 2).",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-07"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "هاف تون / طباعة نقطية",
+  "name_en": "Halftone & CMYK halftone",
+  "status": "ready",
+  "what": "Dots sized by luma; four rotated CMYK grids multiplied for print look.",
+  "how": "luma=dot(rgb,(0.2126,0.7152,0.0722)); r=R*(0.1+luma); smoothstep with fwidth AA; 3x3 neighbor sampling; gooey via smooth-min.",
+  "params": "angles C15 M75 Y0 K45",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-08"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مظاهر ASCII وLED وليغو",
+  "name_en": "ASCII / threshold-matrix / LED / Lego / crochet looks",
+  "status": "ready",
+  "what": "Family of post looks from per-cell shaping: ASCII glyph atlas by luma, 8x8 threshold matrices, staggered LED panels, Lego studs, woven crochet, fluted glass.",
+  "how": "Pixelate then shape each cell by luma/SDF; ASCII uses canvas texture of chars indexed by luma.",
+  "params": "8x8 matrices",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-09"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مظهر القص بإيقاف الحركة",
+  "name_en": "Stepped stop-motion cutout look",
+  "status": "ready",
+  "what": "Stepped, snappy cut-paper motion used by theme N and the vox collage profile (pop/drop/slide with short settle, no slow CGI drift).",
+  "how": "Request in prompts; in Canvas could be emulated by quantising t to 12 fps steps (not implemented).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:17",
+   "fastify-motion-bro/scripts/profiles/vox-history.mjs:11,50"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-10"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "جليتش رقمي",
+  "name_en": "Digital glitch stutter (2D)",
+  "status": "ready",
+  "what": "Short seeded RGB-split and slice displacement that returns to clean.",
+  "how": "MOTION.glitch(tl, el, at, {dur, amp, seed}).",
+  "params": "<=0.4 s (default 0.3 s), 30 steps/s, amp 10 px, red rgba(255,0,80,.7) / cyan rgba(0,200,255,.7) drop shadows, random inset slices",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:548"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-11"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تشويش مرتبط بتحليل الصوت",
+  "name_en": "Analysis-keyed glitch pass (3D)",
+  "status": "ready",
+  "what": "One post pass with chroma split, slice displacement, a negative tear, freeze monochrome and tape-speed warp, hashed per frame.",
+  "how": "makeGlitchPass(); glitch.set({chroma, slice, negative, mono, warp, frame}).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:916"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-12"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "أنماط المعالجة اللاحقة",
+  "name_en": "Post-processing patterns",
+  "status": "install",
+  "what": "Screen-space looks built from pixelation cells: luma-sized halftone dots, SDF patterns, crochet/woven, fluted glass, moire, chromatic dispersion, refraction, fresnel.",
+  "how": "Cell UV from floor(uv/size); radius = uRadius*(0.1+luma) with luma weights 0.2126/0.7152/0.0722; smoothstep AA; chromatic aberration shift ~0.002; neighbor sampling to break the grid; backside-render trick for glass dispersion.",
+  "params": "CA 0.002; luma 0.2126/0.7152/0.0722",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-13"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "معالجة نقطية ونمط الطباعة",
+  "name_en": "Halftone / CMYK / pixel post-processing",
+  "status": "install",
+  "what": "Turn a scene into halftone dots, rotated CMYK screens, LED/Lego cells or ASCII by pixelating UVs and shaping each cell by luminance.",
+  "how": "Fragment shader: uvPixel = size*floor(uv/size); cellUV = fract(uv/size); dot radius from luma (0.2126,0.7152,0.0722); fwidth antialiasing; CMYK angles C15 M75 Y0 K45.",
+  "params": "luma weights 0.2126/0.7152/0.0722; CMYK screen angles 15/75/0/45 deg",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion",
+   "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/examples/webgl/halftone.frag"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-14"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثرات بكسل بسلم ألوان",
+  "name_en": "Palette-stepped pixel VFX sheets",
+  "status": "install",
+  "what": "Sparks, slashes, explosions as sprite-sheets that fade by stepping down a palette ramp, not alpha; hold the impact frame.",
+  "how": "Python stdlib renderer from a spec; timing table first; GIF delays ≥20ms in hundredths.",
+  "params": "2-4 review rounds",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9530-vfx/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-15"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مشهد بكسل متحرك في ملف HTML واحد",
+  "name_en": "Self-contained pixel cutscene in HTML",
+  "status": "install",
+  "what": "Canvas 2D scene with fixed logical resolution, 60Hz step, sprite cadence 8-12fps, parallax, typed dialogue, optional embedded WAV.",
+  "how": "Single HTML, no libs; expose window seek(t)/frameDataURL/duration for frame capture; render to MP4 by stepping seek and piping PNGs to ffmpeg.",
+  "params": "160x144, 240x160, 320x180; integer upscale",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9526-scene"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-16"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "بكسلة وأنماط داخل الخلية",
+  "name_en": "Pixelation and cell-local patterns",
+  "status": "install",
+  "what": "Snap UVs to a grid then shape each cell (bars, SDF dots, threshold matrices) for LED, receipt, Lego, crochet looks.",
+  "how": "GLSL: uvPixel = size*floor(uv/size); cellUV = fract(uv/size). Ideas also doable in canvas/ffmpeg.",
+  "params": "8x8 threshold matrices",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-17"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Tape Damage",
+  "name_en": "Media effect: Tape Damage",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Tape Damage family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-18"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Film Artifacts",
+  "name_en": "Media effect: Film Artifacts",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Film Artifacts family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-19"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Scanlines",
+  "name_en": "Media effect: Scanlines",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Scanlines family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-20"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: CRT Curvature",
+  "name_en": "Media effect: CRT Curvature",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the CRT Curvature family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-21"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Channel Separation",
+  "name_en": "Media effect: Channel Separation",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Channel Separation family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-22"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Digital Glitch",
+  "name_en": "Media effect: Digital Glitch",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Digital Glitch family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-23"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Chroma Softening",
+  "name_en": "Media effect: Chroma Softening",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Chroma Softening family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-24"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Halftone",
+  "name_en": "Media effect: Halftone",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Halftone family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-25"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Two-Ink Print",
+  "name_en": "Media effect: Two-Ink Print",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Two-Ink Print family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-26"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Ordered Dither",
+  "name_en": "Media effect: Ordered Dither",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Ordered Dither family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-27"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Mono Screen",
+  "name_en": "Media effect: Mono Screen",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Mono Screen family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-28"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: ASCII (8 styles)",
+  "name_en": "Media effect: ASCII (8 styles)",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the ASCII (8 styles) family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-29"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Engraving",
+  "name_en": "Media effect: Engraving",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Engraving family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-30"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Crosshatch",
+  "name_en": "Media effect: Crosshatch",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Crosshatch family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-31"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مؤثر وسائط: Kuwahara Paint",
+  "name_en": "Media effect: Kuwahara Paint",
+  "status": "install",
+  "what": "Non-destructive image/video treatment from the Kuwahara Paint family.",
+  "how": "Studio or `hyperframes media-treatment --selector <css> --apply`; writes data attributes, source untouched.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-32"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تحويل المشهد إلى أسكي",
+  "name_en": "ASCII Render Pass",
+  "status": "install",
+  "what": "A slotted scene is rasterised once, its luminance grid is sampled and redrawn as ASCII glyphs from a density ramp; resolution steps coarse to fine until legible.",
+  "how": "Install with `npx hyperframes add ascii-render-pass` (copies to compositions/components/ascii-render-pass.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chr…",
+  "params": "charset \" .:-=+*#%@\"; grid coarse|med|fine; resolve_at 1.4 s; vars: charset= .:-=+*#%@; grid=med[coarse|med|fine]; resolve_at=1.4(0.6..10); accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add ascii-render-pass` (copies to compositions/components/ascii-render-pass",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/ascii-render-pass/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/ascii-render-pass/ascii-render-pass.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/ascii-render-pass.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-33"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "كشف بأثر أسكي",
+  "name_en": "ASCII Trail Reveal",
+  "status": "install",
+  "what": "A fixed S-curve sweeps through a seeded ASCII grid, flipping cells away to uncover a labelled panel.",
+  "how": "Install with `npx hyperframes add ascii-trail-reveal` (copies to compositions/components/ascii-trail-reveal.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless C…",
+  "params": "trail_width narrow|wide; vars: label=The reveal; accent=green[green|blue|violet]; trail_width=narrow[narrow|wide]",
+  "install": "npx hyperframes add ascii-trail-reveal` (copies to compositions/components/ascii-trail-reveal",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/ascii-trail-reveal/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/ascii-trail-reveal/ascii-trail-reveal.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/ascii-trail-reveal.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-34"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تنقيط باير",
+  "name_en": "Ordered Dither Pass",
+  "status": "install",
+  "what": "Bayer-matrix ordered dithering of a slotted scene: emerges from 2-tone noise to clean or dissolves back; stateless per frame.",
+  "how": "Install with `npx hyperframes add ordered-dither-pass` (copies to compositions/components/ordered-dither-pass.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless…",
+  "params": "matrix 2|4|8; levels 2; direction in|out; vars: matrix=4[2|4|8]; direction=in[in|out]; levels=2(2..6); accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add ordered-dither-pass` (copies to compositions/components/ordered-dither-pass",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/ordered-dither-pass/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/ordered-dither-pass/ordered-dither-pass.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/ordered-dither-pass.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-35"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "نص غليتش",
+  "name_en": "RGB Glitch Text",
+  "status": "install",
+  "what": "RGB-offset copies of text jitter during a short glitch window.",
+  "how": "Install with `npx hyperframes add rgb-glitch-text` (copies to compositions/components/rgb-glitch-text.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromiu…",
+  "params": "intensity subtle|standard|extreme; vars: text=GLITCH; intensity=standard[subtle|standard|extreme]; tone=ink[ink|paper|accent]",
+  "install": "npx hyperframes add rgb-glitch-text` (copies to compositions/components/rgb-glitch-text",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/rgb-glitch-text/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/rgb-glitch-text/rgb-glitch-text.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/rgb-glitch-text.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-36"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "شريط المسح",
+  "name_en": "Scan Band",
+  "status": "install",
+  "what": "Diagonal distortion band sweeps a wordmark once, showing red/cyan split only inside the band.",
+  "how": "Install with `npx hyperframes add scan-band` (copies to compositions/components/scan-band.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame capt…",
+  "params": "band_angle 12 deg; vars: wordmark=HYPERFRAMES; band_angle=12(-30..30)",
+  "install": "npx hyperframes add scan-band` (copies to compositions/components/scan-band",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/scan-band/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/scan-band/scan-band.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/scan-band.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-37"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "شاشة فيزيائية",
+  "name_en": "On-Screen Display Effect",
+  "status": "install",
+  "what": "Grid, scanline, vignette and sheen overlay plus 3D-warp wrapper so footage reads as playing on a real display.",
+  "how": "Install with `npx hyperframes add yt-screen-warp` (copies to compositions/components/yt-screen-warp.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium …",
+  "params": "",
+  "install": "npx hyperframes add yt-screen-warp` (copies to compositions/components/yt-screen-warp",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/yt-screen-warp/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/yt-screen-warp/yt-screen-warp.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/yt-screen-warp.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-38"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "واجهة الكاميرا المنزلية",
+  "name_en": "Camcorder HUD",
+  "status": "install",
+  "what": "Responsive REC dot, battery, editable date and timeline-driven counter overlay for camcorder looks.",
+  "how": "Install with `npx hyperframes add camcorder-hud` (copies the full composition to compositions/camcorder-hud.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "4 s overlay; 1920x1080; duration 4 s",
+  "install": "npx hyperframes add camcorder-hud` (copies the full composition to compositions/camcorder-hud",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/camcorder-hud/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/camcorder-hud/camcorder-hud.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/camcorder-hud.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-39"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "حقل الهافتون",
+  "name_en": "Halftone Field",
+  "status": "install",
+  "what": "Full-bleed halftone LED-wall field: dot size and colour follow a slow simplex-noise flow.",
+  "how": "Install with `npx hyperframes add halftone-field` (copies the full composition to compositions/halftone-field.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: WebGL fragment shader, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "cellSize 54; frequency 2; speed 5; gamma 12; palette #00AAFF #C2FF67 #6600FF #000000; vars: frequency=2(1..10); speed=5(0..10); cellSize=54(1..100); gamma=12(1..20); paletteBias=2(0..20); palette1=#00AAFF; palette2=#C2FF67; palette3=#6600FF; palette4=#000000; background=#000000; quantize=False; 1920…",
+  "install": "npx hyperframes add halftone-field` (copies the full composition to compositions/halftone-field",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/halftone-field/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/halftone-field/halftone-field.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/halftone-field.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-40"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "راسم الإشارة",
+  "name_en": "Oscilloscope Trace",
+  "status": "install",
+  "what": "CRT oscilloscope beam sweeps a waveform across a 10x8 graticule with closed-form phosphor persistence exp(-age/tau), brighter where the beam slows.",
+  "how": "Install with `npx hyperframes add oscilloscope-trace` (copies the full composition to compositions/oscilloscope-trace.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: Canvas 2D painter, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "waveform sine|square|triangle|data; frequency 12; amplitude 3; persistenceMs 100; phosphorColor #5dff8f; sweepRate 5; vars: waveform=sine[sine|square|triangle|data]; frequency=12(0.1..200); amplitude=3(0.1..4); persistenceMs=100(1..1000); phosphorColor=#5dff8f; sweepRate=5(0.25..60); dataSeries=; 19…",
+  "install": "npx hyperframes add oscilloscope-trace` (copies the full composition to compositions/oscilloscope-trace",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/oscilloscope-trace/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/oscilloscope-trace/oscilloscope-trace.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/oscilloscope-trace.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-41"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "لوحة LCD",
+  "name_en": "Scanline Board Background",
+  "status": "install",
+  "what": "Textured paper board with drifting scanlines, optional pixel grid, static grain, and blur-focus title with chromatic fringe.",
+  "how": "Install with `npx hyperframes add yt-lcd-background` (copies the full composition to compositions/yt-lcd-background.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "10 s; 1920x1080; duration 10 s",
+  "install": "npx hyperframes add yt-lcd-background` (copies the full composition to compositions/yt-lcd-background",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/yt-lcd-background/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/yt-lcd-background/yt-lcd-background.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/yt-lcd-background.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-42"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تنقيط انتشار الخطأ الدقيق",
+  "name_en": "Exact error-diffusion dither (offline)",
+  "status": "install",
+  "what": "Sequential Floyd-Steinberg, Atkinson, Jarvis-Judice-Ninke, Stucki, Burkes and Sierra dithers with a custom palette and point size on images/video.",
+  "how": "node <skill>/scripts/dither.mjs --input src.mp4 --out src.atkinson.mp4 --algorithm atkinson --palette '#0f380f,#306230,#8bac0f,#9bbc0f' --point-size 3.",
+  "params": "Game Boy palette example #0f380f #306230 #8bac0f #9bbc0f",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/media-use/scripts/dither.mjs",
+   "kosif-one/vendor/hyperframes/skills/media-use/scripts/dither.test.mjs",
+   "kosif-one/vendor/hyperframes/skills/media-use/scripts/lib/error-diffusion.mjs"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-43"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "حركة إيقاعية: chromatic-split",
+  "name_en": "Beat motion primitive: chromatic-split",
+  "status": "install",
+  "what": "RGB channel split on a word, anchored to music events (snare / glitch / surge).",
+  "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/chromatic-split/scene.html (runnable with vendored gsap); anchor to audiomap events.",
+  "params": "anchor: snare / glitch / surge; best span 0.1-0.6 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/chromatic-split/scene.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-44"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "حركة إيقاعية: binary-decrypt",
+  "name_en": "Beat motion primitive: binary-decrypt",
+  "status": "install",
+  "what": "Scramble -> decode text, anchored to music events (roll / build).",
+  "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/binary-decrypt/scene.html (runnable with vendored gsap); anchor to audiomap events.",
+  "params": "anchor: roll / build; best span 0.8-2.5 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/binary-decrypt/scene.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-45"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "حركة إيقاعية: pixel-dissolve",
+  "name_en": "Beat motion primitive: pixel-dissolve",
+  "status": "install",
+  "what": "Pixelated dissolve, anchored to music events (transition / hard_stop).",
+  "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/pixel-dissolve/scene.html (runnable with vendored gsap); anchor to audiomap events.",
+  "params": "anchor: transition / hard_stop; best span 0.5-1.5 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/pixel-dissolve/scene.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-46"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "حركة إيقاعية: datamosh-smear",
+  "name_en": "Beat motion primitive: datamosh-smear",
+  "status": "install",
+  "what": "Datamosh motion smear, anchored to music events (glitch / transition).",
+  "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/datamosh-smear/scene.html (runnable with vendored gsap); anchor to audiomap events.",
+  "params": "anchor: glitch / transition; best span 0.4-1.2 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/datamosh-smear/scene.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-47"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "الجلتش",
+  "name_en": "glitch",
+  "status": "install",
+  "what": "Digital stutter accent.",
+  "how": "motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits",
+  "params": "≤0.4 s; MOTION.glitch",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:95",
+   "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
+   "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-48"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تشويش رقمي",
+  "name_en": "DOM glitch stutter",
+  "status": "install",
+  "what": "RGB-split drop-shadows plus random clip slices, seeded, returning to clean.",
+  "how": "MOTION.glitch(tl, el, at, {dur, amp, seed}).",
+  "params": "≤ .3 s, 30 steps/s, amp 10 px, magenta rgba(255,0,80,.7) / cyan rgba(0,200,255,.7)",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:548"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-49"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مرشح التشويش",
+  "name_en": "Analysis-keyed glitch pass",
+  "status": "install",
+  "what": "One shader pass with chroma split, band slice displacement, negative tear, cold-silver freeze monochrome and tape warp.",
+  "how": "const g = K3.makeGlitchPass(); composer.addPass(g); g.userData.set({chroma, slice, negative, mono, warp, frame}).",
+  "params": "24 bands, slice shift ±0.06 on ~28% bands, chroma 1.2% offset, warp .01; rule: negative only a few frames, mono = 'time stopped'",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:916",
+   "kosif-studio/motion/references/hyperframes-authoring.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-50"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تحويل الصورة إلى ملصق متجه بعدد ألوان",
+  "name_en": "Photo poster vectorisation (k colours)",
+  "status": "install",
+  "what": "Photos are smoothed with an edge-preserving filter and grouped into k Lab colours, giving a flat-paint poster that scales without limit.",
+  "how": "vectorize.trace(path, colors=k) or auto when looks_like_photo; _photo_memberships uses bilateralFilter + cv2.kmeans KMEANS_PP.",
+  "params": "k = 24 default; up 4 (>260 px) or 6; simplify 1.1; min_area 2.5; sharpen 0.4",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/vectorize.py:164",
+   "kosif-studio/vectorize.py:188",
+   "kosif-studio/scenes/1612747e-9555-4848-9125-39f7ef17c88e.json"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-51"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "ريترو",
+  "name_en": "Style: Retrowave (retrowave)",
+  "status": "install",
+  "what": "80s synthwave: neon grid floor, sunset gradient, chrome text.",
+  "how": "Three.js or 2.5D perspective grid scrolling toward camera; gradient sun with scanline bands; bloom-like glow via layered blur. Scaffold: python3 tools/kosif.py scaffold retrowave <dir>.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:retrowave",
+   "kosif-tool/playbooks/ads.md"
+  ],
+  "styles": [
+   "retrowave"
+  ],
+  "tags": [],
+  "id": "RETRO-52"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "بيكسل آرت",
+  "name_en": "Style: Pixel art (pixel-art)",
+  "status": "install",
+  "what": "Sprite-based low-res pixel characters and worlds.",
+  "how": "Canvas at low internal res, imageSmoothingEnabled=false, integer upscale; sprite frames on twos. Scaffold: python3 tools/kosif.py scaffold pixel-art <dir>.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:pixel-art",
+   "kosif-tool/playbooks/characters.md"
+  ],
+  "styles": [
+   "pixel-art"
+  ],
+  "tags": [],
+  "id": "RETRO-53"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مشهد بكسل مع انعكاس مائي",
+  "name_en": "Pixel diorama with water reflection",
+  "status": "seen",
+  "what": "Render scene to low-res canvas (~480x270), mirror the upper half into the lake with darker tint and per-row horizontal sine offset, upscale x4 with imageSmoothingEnabled=false",
+  "how": "Render scene to low-res canvas (~480x270), mirror the upper half into the lake with darker tint and per-row horizontal sine offset, upscale x4 with imageSmoothingEnabled=false",
+  "params": "ripple amplitude 1-2 px, row phase speed 2 rad/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-0xevinho-3777d8"
+  ],
+  "styles": [
+   "pm-0xevinho-3777d8"
+  ],
+  "tags": [],
+  "id": "RETRO-54"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "رسم شخصيات بكسل بالكود",
+  "name_en": "Pixel sprite in code",
+  "status": "seen",
+  "what": "draw sprites from char grids on canvas, imageSmoothing off",
+  "how": "draw sprites from char grids on canvas, imageSmoothing off",
+  "params": "16x16 scaled x3",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-aisongman-71ffac"
+  ],
+  "styles": [
+   "pm-aisongman-71ffac"
+  ],
+  "tags": [],
+  "id": "RETRO-55"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "خطوط سرعة شعاعية",
+  "name_en": "Radial speed lines",
+  "status": "seen",
+  "what": "random radial strokes flickering per frame",
+  "how": "random radial strokes flickering per frame",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-allforbigfire-86ff3c"
+  ],
+  "styles": [
+   "pm-allforbigfire-86ff3c"
+  ],
+  "tags": [],
+  "id": "RETRO-56"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تحوّل التميمة بين حالات رسم",
+  "name_en": "Mascot render-state morph",
+  "status": "seen",
+  "what": "swap the same silhouette between solid fill, ordered-dither halftone, and dashed outline wireframe with 3D guide ellipses; fill with dither rising from bottom",
+  "how": "swap the same silhouette between solid fill, ordered-dither halftone, and dashed outline wireframe with 3D guide ellipses; fill with dither rising from bottom",
+  "params": "dither cell 6px, dash 8/6",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-anthonyriera-9b1b2a"
+  ],
+  "styles": [
+   "pm-anthonyriera-9b1b2a"
+  ],
+  "tags": [],
+  "id": "RETRO-57"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "خطوط أوب آرت متحدة المركز",
+  "name_en": "Op-art concentric moiré",
+  "status": "seen",
+  "what": "Concentric stripes from two centres or radial sinusoid threshold, animate phase for vibrating moiré",
+  "how": "Concentric stripes from two centres or radial sinusoid threshold, animate phase for vibrating moiré",
+  "params": "stripe 12px, red/cream/black",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ayushunleashed-ece3e3"
+  ],
+  "styles": [
+   "pm-ayushunleashed-ece3e3"
+  ],
+  "tags": [],
+  "id": "RETRO-58"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "واجهة لعبة 8-بت مع صندوق حوار",
+  "name_en": "8-bit platformer HUD + dialogue",
+  "status": "seen",
+  "what": "pixel font HUD (LEVEL/coins/TIME), pixel parallax hills, bordered dialogue box with typewriter caption",
+  "how": "pixel font HUD (LEVEL/coins/TIME), pixel parallax hills, bordered dialogue box with typewriter caption",
+  "params": "pixel scale 4x, typewriter 30 ms/char",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-emollick-8661a8"
+  ],
+  "styles": [
+   "pm-emollick-8661a8"
+  ],
+  "tags": [],
+  "id": "RETRO-59"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "شريط إعلان تلفزيوني قديم",
+  "name_en": "Infomercial lower third",
+  "status": "seen",
+  "what": "purple sunburst, CRT TV prop, yellow slanted 'CALL NOW!' block + phone number bar, VHS PLAY/clock OSD, tracking noise lines",
+  "how": "purple sunburst, CRT TV prop, yellow slanted 'CALL NOW!' block + phone number bar, VHS PLAY/clock OSD, tracking noise lines",
+  "params": "VHS noise 2-3 lines, scanlines 2px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-emollick-8661a8"
+  ],
+  "styles": [
+   "pm-emollick-8661a8"
+  ],
+  "tags": [],
+  "id": "RETRO-60"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "كلمة بتأثير الجلتش وفصل الألوان",
+  "name_en": "RGB-split glitch word",
+  "status": "seen",
+  "what": "render word 3x in red/cyan/white with random x offsets, slice into horizontal strips shifting randomly, flash coloured bars, retrigger on 1/8 notes",
+  "how": "render word 3x in red/cyan/white with random x offsets, slice into horizontal strips shifting randomly, flash coloured bars, retrigger on 1/8 notes",
+  "params": "offset 4-12 px, 6-10 slices, retrigger 234 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "styles": [
+   "pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "tags": [],
+  "id": "RETRO-61"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مشهد بكسل مكبّر",
+  "name_en": "Pixel scene upscale",
+  "status": "seen",
+  "what": "Draw at 320x180 then scale 6x imageSmoothing off",
+  "how": "Draw at 320x180 then scale 6x imageSmoothing off",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-hoyoyoda-3a5c08"
+  ],
+  "styles": [
+   "pm-hoyoyoda-3a5c08"
+  ],
+  "tags": [],
+  "id": "RETRO-62"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "بطاقة عنوان اللعبة",
+  "name_en": "Game title card",
+  "status": "seen",
+  "what": "dark translucent panel with blocky uppercase title, dismiss on start",
+  "how": "dark translucent panel with blocky uppercase title, dismiss on start",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ivanfioravanti-bd9261"
+  ],
+  "styles": [
+   "pm-ivanfioravanti-bd9261"
+  ],
+  "tags": [],
+  "id": "RETRO-63"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "شعار ASCII",
+  "name_en": "ASCII logo",
+  "status": "seen",
+  "what": "sample logo mask, render chars on grid",
+  "how": "sample logo mask, render chars on grid",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jacksonfall-54b2ac"
+  ],
+  "styles": [
+   "pm-jacksonfall-54b2ac"
+  ],
+  "tags": [],
+  "id": "RETRO-64"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مسرح غروب بكسلي",
+  "name_en": "Pixel sunset stage",
+  "status": "seen",
+  "what": "low-res canvas 320x180 upscaled nearest, striped sun, reflection lines",
+  "how": "low-res canvas 320x180 upscaled nearest, striped sun, reflection lines",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-pluginplay-3d4006"
+  ],
+  "styles": [
+   "pm-pluginplay-3d4006"
+  ],
+  "tags": [],
+  "id": "RETRO-65"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "لافتة بكسل",
+  "name_en": "Pixel caption box",
+  "status": "seen",
+  "what": "yellow box, black border, year tag, pop 1 frame",
+  "how": "yellow box, black border, year tag, pop 1 frame",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-pluginplay-3d4006"
+  ],
+  "styles": [
+   "pm-pluginplay-3d4006"
+  ],
+  "tags": [],
+  "id": "RETRO-66"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تحويل صورة إلى ASCII",
+  "name_en": "ASCII art render",
+  "status": "seen",
+  "what": "Sample luminance grid, map to char ramp ' .:-=+*#%@', colour per cell",
+  "how": "Sample luminance grid, map to char ramp ' .:-=+*#%@', colour per cell",
+  "params": "120 cols",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rames-jusso-589f80"
+  ],
+  "styles": [
+   "pm-rames-jusso-589f80"
+  ],
+  "tags": [],
+  "id": "RETRO-67"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "كشف أرقام بشبكة بكسل",
+  "name_en": "Pixel grid digit reveal",
+  "status": "seen",
+  "what": "grid 30px cells; cells inside glyph mask flip to accent with radial stagger",
+  "how": "grid 30px cells; cells inside glyph mask flip to accent with radial stagger",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-raphaelaubryy-4b137e"
+  ],
+  "styles": [
+   "pm-raphaelaubryy-4b137e"
+  ],
+  "tags": [],
+  "id": "RETRO-68"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "عنوان نيون ريترو",
+  "name_en": "Synthwave neon title",
+  "status": "seen",
+  "what": "striped sun, perspective grid, neon stroke glow",
+  "how": "striped sun, perspective grid, neon stroke glow",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rendesr-86be44"
+  ],
+  "styles": [
+   "pm-rendesr-86be44"
+  ],
+  "tags": [],
+  "id": "RETRO-69"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "إزاحة سوء التسجيل",
+  "name_en": "Misregistration offset",
+  "status": "seen",
+  "what": "duplicate layer in second ink offset 4px, multiply",
+  "how": "duplicate layer in second ink offset 4px, multiply",
+  "params": "4-6px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rneayan-474bcf"
+  ],
+  "styles": [
+   "pm-rneayan-474bcf"
+  ],
+  "tags": [],
+  "id": "RETRO-70"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "أيقونة بكسلية تتجمّع",
+  "name_en": "Pixel icon assemble",
+  "status": "seen",
+  "what": "Hand icon built from squares appearing randomly, top squares float/ flicker",
+  "how": "Hand icon built from squares appearing randomly, top squares float/ flicker",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-robvjourney-ce3e1a"
+  ],
+  "styles": [
+   "pm-robvjourney-ce3e1a"
+  ],
+  "tags": [],
+  "id": "RETRO-71"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "عالم مانغا بخطوط سرعة",
+  "name_en": "Manga speed-line burst world",
+  "status": "seen",
+  "what": "Desaturate + high-contrast threshold the subject, radial speed-line burst behind, ink splatters, halftone, stacked katakana SFX on the left, white speech balloon with tail",
+  "how": "Desaturate + high-contrast threshold the subject, radial speed-line burst behind, ink splatters, halftone, stacked katakana SFX on the left, white speech balloon with tail",
+  "params": "contrast 1.6, lines 60-90 radial",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sab8a-364a5a"
+  ],
+  "styles": [
+   "pm-sab8a-364a5a"
+  ],
+  "tags": [],
+  "id": "RETRO-72"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "لوحة LED نقطية متحركة",
+  "name_en": "LED dot-matrix ticker",
+  "status": "seen",
+  "what": "Text rendered as glowing dots on a dark board, ticker row scrolls with coloured up/down markers",
+  "how": "Text rendered as glowing dots on a dark board, ticker row scrolls with coloured up/down markers",
+  "params": "dot pitch 4 px, glow blur 6 px, scroll 100 px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-spearwtf-3c1fd1"
+  ],
+  "styles": [
+   "pm-spearwtf-3c1fd1"
+  ],
+  "tags": [],
+  "id": "RETRO-73"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مشاهد البكسل وتلاشي اللوحة",
+  "name_en": "Pixel scene timing & palette fades",
+  "status": "documented",
+  "what": "Pixel films run a fixed 60 Hz logic step with 8-12 fps sprite cadence at a small logical resolution, integer-scaled, with light changes stepped through palette or Bayer dither - never alpha, gradients or blur.",
+  "how": "Logical sizes 160x144, 240x160, 320x180; integer coordinates; embed sprites as offscreen canvases; expose window.__pixelScene {seek, frameDataURL, play, duration}; audio WAV inlined as data URL and muxed on record.",
+  "params": "60 Hz step; 8-12 fps sprites; 320x180",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9526-scene/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-74"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مشهد بكسل آرت في ملف HTML",
+  "name_en": "Pixel-art scene as one HTML file",
+  "status": "documented",
+  "what": "Self-contained Canvas 2D cutscenes at a tiny logical resolution integer-scaled; fixed 60 Hz step; sprites animate at 8-12 fps; lighting and fades step through palette colors or Bayer dither, never alpha/blur; optional embedded WAV.",
+  "how": "Plain Canvas 2D, no libraries; expose a scene hook (window.__pixelScene / window.__kosif.seek) for frame-accurate rendering.",
+  "params": "logical 160x144, 240x160 or 320x180; 60 Hz; sprite 8-12 fps; integer coords",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9526-scene"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-75"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "S10 ريترو مطبوع",
+  "name_en": "S10 Printed retro",
+  "status": "documented",
+  "what": "Light grain, limited-ink printing, simple edges; slight intentional jitter and card swaps. Distinctive period identity; texture weakens small text and is not a way to hide a poor source.",
+  "how": "Two/three-colour separations with mix-blend-mode:multiply, ffmpeg noise=alls=8:allf=t (suggested) grain, stepped 'boil' offsets; KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg)",
+  "params": "cost medium; MG-024 MG-075 MG-104 MG-106 MG-109 MG-117",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-76"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "MG-075 ذاكرة داخل شرائط فيلم",
+  "name_en": "MG-075 Memory on film strips",
+  "status": "documented",
+  "what": "Two photos ride two film strips at different speeds and stop on a title - for biographies and memories.",
+  "how": "0-2 strips enter, 2-5 photos pass, 5-8 title; repeated masks, position animation, slight exposure variation; fake damage must never hide faces or falsify photo dates. Faint projector sound.",
+  "params": "8 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-cinematic-titles.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-77"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "MG-104 نمط طباعة ريزوغراف متحرك",
+  "name_en": "MG-104 Animated risograph misregistration",
+  "status": "documented",
+  "what": "Two ink layers drift slightly then register around a simple drawing, giving a printed character.",
+  "how": "0-1 paper, 1-3 drift, 3-5 settle; colour copies with multiply blend and limited offset; keep the main text copy readable and don't overdo misregistration. Local: CSS mix-blend-mode:multiply layers + grain.",
+  "params": "5 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-collage-textures.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-78"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "MG-109 طباعة خشنة تكشف صورة",
+  "name_en": "MG-109 Halftone threshold reveal",
+  "status": "documented",
+  "what": "Printed dots multiply until the image becomes clear inside them.",
+  "how": "0-1 few dots, 1-3 density, 3-5 clear image; halftone/dot-pattern mask with an animated threshold; test moire and compression before committing fine dots. Local: canvas per-cell dot radius = f(luma, t) or ImageMagick ordered-dither frames.",
+  "params": "5 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-collage-textures.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-79"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "خريطة اختبار البلاطات",
+  "name_en": "Tileset coverage map",
+  "status": "documented",
+  "what": "For tiled backgrounds (square, isometric, hex) include filled, empty, edge, outer-corner, inner-corner and isolated pieces; test them on a compact map that exercises every transition and narrow passage; check seams, transparency, filtering, atlas bleed, half-cell offsets and isometric depth sorting …",
+  "how": "Tiles in PIL/SVG, test map assembled on canvas, pans rendered via KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg); pad atlas cells to avoid bleed.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1526-gamegen/4172-game-tilesets/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-80"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تلاشي بنمط بيير",
+  "name_en": "Bayer-dither fades and lighting",
+  "status": "documented",
+  "what": "Fades and light changes in pixel scenes step through palette colors or ordered Bayer dither patterns instead of gradients.",
+  "how": "Canvas 2D: 4x4 or 8x8 Bayer threshold matrix compared to fade level per pixel; integer scaling only.",
+  "params": "Bayer 4x4/8x8",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9526-scene"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-81"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "البلاطات المتصلة والبارالاكس",
+  "name_en": "Seamless tiles and parallax rules",
+  "status": "documented",
+  "what": "Tilesets as blob-47 or 16-tile corner sets; parallax layers get slower, darker and less detailed with depth and the scroll step must divide the loop width.",
+  "how": "Preview a 3x3 repeat to catch seams; procedural generator for sheets.",
+  "params": "blob-47; 16-tile corner",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9528-tileset"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-82"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تأثير فن الأسكي",
+  "name_en": "ASCII art post-effect",
+  "status": "documented",
+  "what": "Map each cell's luma to a character from a glyph atlas texture.",
+  "how": "Canvas: draw charset to texture, sample index = floor(luma*N). Arabic letters could be used as glyph set.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-83"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "لو-فاي",
+  "name_en": "Lo-fi / Cozy loop",
+  "status": "documented",
+  "what": "Evening purple-blue with warm yellow and grain; 4-8 s loop of rain, steam, lamp flicker, breathing character.",
+  "how": "Copy style sheet section into DESIGN.md, then build via claude-animation-studio render(t).",
+  "params": "#2B2D42->#5C5470, #F2C14E; Tajawal 500, Mulish/Karla; all motion 1-3 s, none faster than 0.8 s, no cuts",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/trend-animation-styles/references/styles.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-84"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مولد سبرايت إجرائي",
+  "name_en": "Procedural sprite generator draw(direction,pose)",
+  "status": "documented",
+  "what": "Parametric limb drawing keeps all frames on-model.",
+  "how": "python PIL generator",
+  "params": "sizes 16/32/48; preview x4; GIF",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-art-game-assets/SKILL.md:22"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-85"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "لوحة بكسل مقفلة",
+  "name_en": "Locked material palette (highlight/base/shadow/line)",
+  "status": "documented",
+  "what": "Palette by material roles, light from top-left, no off-palette colours, connected 1px outlines, constant volumes.",
+  "how": "spec palette",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-art-game-assets/SKILL.md:23"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-86"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "تايلسيت",
+  "name_en": "Tilesets: RPG Maker A1-A5/B-E, blob-47, 16-tile corner",
+  "status": "documented",
+  "what": "Vendored sprite/tileset skills describing autotile layouts, seamless backgrounds, parallax layers.",
+  "how": "stdlib renderer described in atlas",
+  "params": "blob-47; hand grids up to ~24x24",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "100-superskills/skills/pixel-art-game-assets/references/sources.md:9",
+   "100-superskills/skills/pixel-art-game-assets/references/sources.md:196"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-87"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "ورقة سبرايت",
+  "name_en": "Sprite sheet + held impact frames",
+  "status": "documented",
+  "what": "Engine-ordered sheet, preview GIF, held frames on hits, contact/pass checks.",
+  "how": "PIL",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-art-game-assets/SKILL.md:24"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-88"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "التحريك على اثنين أو واحد",
+  "name_en": "Animating on twos vs ones",
+  "status": "documented",
+  "what": "On twos for hand-drawn/stop-motion feel, ones for smooth vector.",
+  "how": "Quantize t to 2-frame steps.",
+  "params": "12 drawings/s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/characters.md:29"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-89"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "مقاطع بكسل في المونتاج",
+  "name_en": "Pixel-art montage segments",
+  "status": "idea",
+  "what": "Insert a retro pixel cutscene (dithered sky, parallax, typed dialogue) as a chapter break inside a modern edit.",
+  "how": "Render canvas scene frames at 320x180, upscale nearest x6 to 1920x1080 with ffmpeg -sws_flags neighbor.",
+  "params": "x6 nearest",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9526-scene"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "RETRO-90"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "حركة بكسل على شبكة صحيحة",
+  "name_en": "Integer-grid pixel motion",
+  "status": "idea",
+  "what": "All motion snaps to whole pixels on a low-res grid upscaled with nearest-neighbour; no smoothing.",
+  "how": "Canvas at low res, imageSmoothingEnabled=false, Math.round positions, CSS image-rendering:pixelated upscale.",
+  "params": "integer px steps; nearest-neighbour",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-0xevinho-3777d8"
+  ],
+  "styles": [
+   "pm-0xevinho-3777d8"
+  ],
+  "tags": [],
+  "id": "RETRO-91"
+ },
+ {
+  "family": "pixel-retro-stylized",
+  "name_ar": "غليتش شرائح وإزاحة ألوان",
+  "name_en": "Slice glitch + RGB split",
+  "status": "idea",
+  "what": "Short horizontal slice displacement and channel offset after hits.",
+  "how": "Canvas/shader slice offsets + per-channel translate for 2-4 frames.",
+  "params": "slices <=24 px; RGB 4-6 px; 2-4 frames",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-micheleharmonic-77628e"
+  ],
+  "styles": [
+   "pm-micheleharmonic-77628e"
+  ],
+  "tags": [],
+  "id": "RETRO-92"
+ }
+]

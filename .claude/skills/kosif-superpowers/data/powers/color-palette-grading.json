@@ -1,0 +1,2525 @@
+[
+ {
+  "id": "COLOR-01",
+  "family": "color-palette-grading",
+  "name_ar": "أحد عشر لوكًا جاهزًا بـFFmpeg",
+  "name_en": "Eleven FFmpeg grade presets",
+  "status": "proven",
+  "what": "جدول GRADES في montage.py: أحد عشر تلوينًا مسمّى (curves/colorbalance/eq) تطبّقه على مقطع أو على كل لقطة في المونتاج، والحبيبات مبذورة فتتكرر النتيجة نفسها. / The montage.py GRADES table: eleven named curves/colorbalance/eq grades for one clip or per cut, with seeded grain so re-renders are identical.",
+  "how": "CLI: `python montage.py grade CLIP.mp4 --preset teal_orange [--out X.mp4]` (also `kmotion grade`, `montage cut --grade`, timeline JSON `clips[].grade`, `smart_montage.py grade`). Output libx264 -preset medium -crf 17, format=yuv420p, audio stream copied untouched. The same chain can be pasted into any `-vf`. Verified in this container on 2026-10-16: all 11 chains ran on testsrc2 with rc=0 (blue_hour pulls YAVG 121.6→108.2 and V 127→133.7; teal_orange pushes U to 135.6), and kosif-studio's test asserts blue_hour + sodium_night run through ffmpeg. The kosif-studio, 100-superskills and kosif-one/tools tables match value for value (only line endings differ); kosif-omni's smart_montage carries the first six at CRF 18 with unseeded vintage grain alls=12 — prefer the seeded table. (code snippet in references/powers/color-palette-grading.md) (full table in references/powers/color-palette-grading.md)",
+  "params": "11 presets; CRF 17 (smart_montage CRF 18); grain all_seed=7; audio -c:a copy",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/montage.py:42",
+   "kosif-studio/tests/test_studio.py:818",
+   "100-superskills/skills/kosif-montage-motion/scripts/montage.py:42",
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/smart_montage.py:29"
+  ],
+  "styles": [],
+  "tags": [
+   "تلوين",
+   "لوك",
+   "فلتر",
+   "مونتاج",
+   "grade",
+   "color grading",
+   "ffmpeg",
+   "teal orange",
+   "golden hour",
+   "cyberpunk",
+   "vintage",
+   "blue hour",
+   "preset"
+  ]
+ },
+ {
+  "id": "COLOR-02",
+  "family": "color-palette-grading",
+  "name_ar": "ترميم الفوتيج القديم",
+  "name_en": "Restore grade for old or soft footage",
+  "status": "proven",
+  "what": "تلوين إنقاذ: إزالة ضوضاء زمنية خفيفة، سواد أنظف، انضغاط للإضاءات، دفء خفيف في المنتصف، وشحذ متكيف — ونسخة FINAL_EDIT المضبوطة يدويًا التي شُحنت. / A rescue grade: light temporal denoise, cleaner blacks, highlight roll-off, warmer mids and contrast-adaptive sharpening — plus the hand-tuned FINAL_EDIT variant that shipped.",
+  "how": "`montage.py grade CLIP --preset restore`. Chain: hqdn3d=1.2:1.2:3:3 → eq contrast 1.12 brightness −0.015 saturation 1.07 gamma 0.97 → curves all `0/0 .06/.035 .25/.22 .5/.5 .8/.82 .94/.93 1/.97` → colorbalance rs .012 bs −.01 rm .025 gm .005 bm −.02 → cas 0.3. FINAL_EDIT (talking head, Lanczos 720×1280→1080×1920): eq contrast 1.12 brightness −0.02 saturation 1.10 gamma 0.96, same curves, colorbalance rs .015 bs −.01 rm .01, cas 0.32. Ran here on testsrc2 (rc=0). Upscale before CAS, never after.",
+  "params": "hqdn3d 1.2:1.2:3:3; gamma .97/.96; cas .3/.32; whites capped at .97",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/montage.py:42",
+   "100-superskills/skills/kosif-montage-motion/scripts/montage.py:53",
+   "kosif-studio/out/FINAL_EDIT/project/grade.txt",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:12"
+  ],
+  "styles": [],
+  "tags": [
+   "ترميم",
+   "تحسين",
+   "فيديو قديم",
+   "شحذ",
+   "restore",
+   "denoise",
+   "sharpen",
+   "cas",
+   "old footage",
+   "talking head"
+  ]
+ },
+ {
+  "id": "COLOR-03",
+  "family": "color-palette-grading",
+  "name_ar": "تلوينات مشاريع بسطر واحد",
+  "name_en": "One-line project grades (muted Ghorba, navy door + RTL mirror)",
+  "status": "proven",
+  "what": "تلوينات صغيرة شُحنت في مشاريع حقيقية: «الغربة» الهادئ المعتم قليلًا بنسختين، وتلوين colorbalance يسحب لقطة رمادية نحو الكحلي مع عكس أفقي ليفرغ اليمين للنص العربي. / Small grades shipped in real projects: the quiet, slightly darker Ghorba look in two calibrations, and a colorbalance pull from charcoal toward brand navy with an hflip so empty space sits on the right for Arabic text.",
+  "how": "Ghorba v1 `eq=contrast=1.08:saturation=0.86:brightness=-0.023`, v2 `eq=contrast=1.06:saturation=0.95:brightness=-0.009` inside the per-shot -vf. Navy door: `-vf \"hflip,colorbalance=rs=-.10:gs=-.03:bs=.25:rm=-.05:bm=.10\"` then H.264 width 1280 crf 27 -an +faststart. All three ran here on testsrc2 (rc=0).",
+  "params": "sat .86/.95; brightness −.023/−.009; bs +.25 navy pull",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:146",
+   "kosif-one/projects/KOSIF_Motion_Ghorba/tools/render_ghorba_preview.py:139",
+   "kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md"
+  ],
+  "styles": [],
+  "tags": [
+   "حزين",
+   "هادئ",
+   "كحلي",
+   "عكس",
+   "muted",
+   "melancholy",
+   "navy",
+   "hflip",
+   "rtl",
+   "eq"
+  ]
+ },
+ {
+  "id": "COLOR-04",
+  "family": "color-palette-grading",
+  "name_ar": "خَبز أي تلوين في LUT",
+  "name_en": "Bake any grade into a Hald CLUT / .cube and apply LUTs",
+  "status": "proven",
+  "what": "تحوّل أي سلسلة FFmpeg إلى صورة Hald أو ملف .cube بحجم 33 نقطة، ثم تطبقها بـlut3d أو haldclut بنتيجة شبه مطابقة — وتطبق LUT التحويل أو LUT الإبداعي من الكاميرا بالطريقة نفسها. / Turn any FFmpeg chain into a Hald image or a 33-point .cube and re-apply it with lut3d/haldclut almost identically; camera conversion and creative LUTs go in the same way.",
+  "how": "haldclutsrc=8 (64³ entries) → run the grade chain on that one frame → apply with `[v][hald]haldclut=interp=tetrahedral`, or resample the Hald to a 33³ .cube (NumPy, R fastest) and use `lut3d=file=look.cube:interp=tetrahedral`. Verified here with teal_orange on 640×360 testsrc2: Hald vs direct grade PSNR 51.9 dB, 33³ cube vs direct 47.9 dB. Spatial or temporal parts (noise, unsharp, cas, vignette) do not bake — re-add them after the LUT. Use 33- or 65-point cubes and tetrahedral interpolation on 10-bit sources to avoid banding; never apply a conversion LUT twice. (code snippet in references/powers/color-palette-grading.md)",
+  "params": "haldclutsrc level 8; cube 33³ (or 65³); PSNR 51.9 / 47.9 dB measured",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/montage.py:42",
+   "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2435-akbun-davinciresolve-logconvert/SKILL.md",
+   "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
+  ],
+  "styles": [],
+  "tags": [
+   "LUT",
+   "كيوب",
+   "هالد",
+   "تصدير اللوك",
+   "lut3d",
+   "haldclut",
+   "cube",
+   "bake",
+   "export look"
+  ]
+ },
+ {
+  "id": "COLOR-05",
+  "family": "color-palette-grading",
+  "name_ar": "لوكات المتصفح بالفلاتر وطبقات الدمج",
+  "name_en": "Browser looks: CSS filter + blend-mode tint layers",
+  "status": "proven",
+  "what": "أحد عشر لوكًا من محرر «بصمة» تُبنى من فلتر CSS واحد وطبقات صبغة بأنماط دمج، مع منزلقات تباين وتشبع وإضاءة، وتلوين «الحبر والزعفران» الذي يعيد تلوين فيديو بلا إعادة ترميز. / Basma's eleven looks built from one CSS filter plus blended tint layers, with contrast/saturation/brightness sliders, and the 'ink & saffron' re-tone that recolours a clip at runtime without re-encoding.",
+  "how": "Canvas: ctx.filter = look.f, drawImage, then for each tint [hex, alpha, mode] set globalAlpha + globalCompositeOperation and fillRect; then gradeFilter adds contrast() saturate() brightness() from sliders (contrast 0.8–1.4, saturate 0.5–1.6, brightness 0.8–1.2, vignette 0–0.8, optional soft-light tint alpha 0.16). Ink & saffron (video element): grayscale(1) sepia(.5) saturate(1.35) hue-rotate(-8deg) contrast(1.05) brightness(.82); banner wash linear-gradient(160deg, rgba(217,83,14,.55), rgba(29,24,20,.9)) with background-blend-mode:color. All 12 rendered in Chromium (Playwright) in this container on 2026-10-16. (code snippet in references/powers/color-palette-grading.md) (full table in references/powers/color-palette-grading.md)",
+  "params": "11 looks + ink_saffron; slider ranges c .8–1.4 / s .5–1.6 / b .8–1.2",
+  "install": "",
+  "license": "",
+  "proof": [
+   "app/public/js/00_editor.js:204",
+   "app/public/js/00_editor.js:217",
+   "kosif-earth-ci-fork/unlock.html:85",
+   "kosif-earth-ci-fork/ui/ds/sqc.css:308"
+  ],
+  "styles": [],
+  "tags": [
+   "فلتر",
+   "لوك فوري",
+   "متصفح",
+   "زعفران",
+   "css filter",
+   "canvas",
+   "blend mode",
+   "soft-light",
+   "browser grade",
+   "sepia"
+  ]
+ },
+ {
+  "id": "COLOR-06",
+  "family": "color-palette-grading",
+  "name_ar": "سلسلة FFmpeg المُصدّرة من «بصمة»",
+  "name_en": "Basma fingerprint grade chain export",
+  "status": "ready",
+  "what": "سكربت بايثون مُصدَّر من استوديو «بصمة» يعيد إنتاج التلوين بفلاتر FFmpeg عادية: eq وcolorbalance وفينيت وحبيبات وأشرطة سينما. / The Python script Basma exports reproduces a look with plain FFmpeg: eq, colorbalance, vignette, grain and letterbox bars.",
+  "how": "grade_chain(): eq=contrast:saturation:brightness=(b−1)·0.5; teal_orange → colorbalance rs=−0.08:bs=0.10:rh=0.08:bh=−0.06; bw → hue=s=0; warm/cool → colorbalance rm/bm ±0.6·k; vignette=PI/5 when strength > 0.3; grain → noise=alls=6+40·g:allf=t; letterbox → drawbox 10.5% top and bottom. Pure FFmpeg, nothing to install.",
+  "params": "vignette PI/5 if >0.3; grain alls 6+40g; letterbox 10.5%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "app/public/js/10_studio.js:1683"
+  ],
+  "styles": [],
+  "tags": [
+   "تصدير",
+   "سكربت",
+   "أشرطة سينما",
+   "export",
+   "letterbox",
+   "colorbalance",
+   "grain",
+   "vignette"
+  ]
+ },
+ {
+  "id": "COLOR-07",
+  "family": "color-palette-grading",
+  "name_ar": "أمزجة فيلم الكلمات وتلوينها",
+  "name_en": "Verse moods: palette plus matching footage grade",
+  "status": "ready",
+  "what": "خمسة أمزجة (ليل، فجر، ذهب، بحر، حبر) لكل منها لوحة سماء/هالة/ذرات، وكل مزاج يختار تلوين الفوتيج المناسب تلقائيًا، والفيلم يزداد إضاءة على طول قوسه. / Five moods (night, dawn, gold, sea, ink), each a sky/halo/mote palette that also picks the matching footage grade; the film brightens along its arc.",
+  "how": "`verse.py AUDIO --mood night|dawn|gold|sea|ink --accent '#E7B65A'`; songreel MOOD_GRADE maps night→blue_hour, dawn/gold→golden_hour, sea→teal_orange, ink→vintage_film (COLOR-01). Each section shifts hue +7°/−5° and brightness rises 0.9→1.15 over the film. (full table in references/powers/color-palette-grading.md)",
+  "params": "night #0B0F1E/#221C3B glow #ECBD51 mote #F9E094; dawn #12142B/#994329/#FAA442/#FFDDA3; gold #110D09/#372715/#EEAD2B/#FBD774; sea #07131D/#16444B/#3CDDD2/#ACF6F6; ink #0A0A0A/#1C1C1C/#B2B2B2/#EBEBEB",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/verse.py:49",
+   "100-superskills/skills/kosif-montage-motion/scripts/songreel.py:78",
+   "100-superskills/skills/kosif-montage-motion/templates/verse.html:79",
+   "kosif-one/tools/kosif-studio/motion/templates/verse.html:64"
+  ],
+  "styles": [],
+  "tags": [
+   "دعاء",
+   "قصيدة",
+   "أغنية",
+   "مزاج",
+   "ليل",
+   "فجر",
+   "mood",
+   "verse",
+   "lyric film",
+   "sky palette",
+   "dua"
+  ]
+ },
+ {
+  "id": "COLOR-08",
+  "family": "color-palette-grading",
+  "name_ar": "مكتبة اللوكات المسماة",
+  "name_en": "Named film-stock and photo looks library",
+  "status": "documented",
+  "what": "قاموس لوكات بأسماء يفهمها العميل: أفلام كوداك وفوجي وسينستيل، و«بليتش بايباس» و«ويس أندرسون» الباستيل، وسبعة لوكات صور بوحدات أدوبي. / A vocabulary of looks a client recognises: Kodak/Fuji/CineStill stocks, bleach bypass, pastel Wes, and seven photo-set looks in Adobe units.",
+  "how": "Director KB (CSS base + mood): teal_orange (blockbuster, contrast 1.12 sat 1.15), bleach_bypass (gritty, contrast 1.3 sat .6), cold_desat (sad, sat .6 brightness .96), warm_vintage (nostalgia, sepia .25 contrast .95), kodak_portra (intimate, contrast .95 brightness 1.04), vision3_500t (filmic night, contrast 1.1), cinestill_800t (dreamy neon, contrast 1.08 sat 1.1), fuji_velvia (vivid travel, contrast 1.2 sat 1.45), noir_bw (grayscale, contrast 1.4), neon_cyber (contrast 1.15 sat 1.35), pastel_wes (contrast .88). Film shorthand: Portra 400, Ektar 100, CineStill 800T split tone #D4A050 highlights / #1A3040 shadows, Velvia. Photo looks (Adobe units — exact needs the Adobe connector; approximate locally with colortemperature/vibrance/eq or a numpy .cube): Warm & Golden temp 32/120 lum 67 vibrance +15; Bright & Airy 20/60/62 sat −10 vibrance +10 brightness +15; Moody & Cinematic 20/−50/45 sat −20 contrast +25; Cool & Fresh 18/−123/45 vibrance +10. Translate to COLOR-01/05 chains; never promise an exact stock emulation.",
+  "params": "11 KB grades; CineStill split #D4A050/#1A3040; 7 photo looks",
+  "install": "",
+  "license": "",
+  "proof": [
+   "app/public/js/10_studio.js:8",
+   "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md",
+   "kosif-atlas/skills/103-adobe-for-creativity/230-adobe-batch-edit-photos/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "كوداك",
+   "فيلم",
+   "سينمائي",
+   "قاموس",
+   "film stock",
+   "portra",
+   "cinestill",
+   "bleach bypass",
+   "velvia",
+   "look names"
+  ]
+ },
+ {
+  "id": "COLOR-09",
+  "family": "color-palette-grading",
+  "name_ar": "نموذج تلوين HyperFrames",
+  "name_en": "HyperFrames WebGL grade model, 17 presets and media-treatment CLI",
+  "status": "install",
+  "what": "محرك تلوين WebGL كامل: تعريض وتباين وإضاءات وظلال وأبيض وأسود وحرارة وصبغة وحيوية وتشبع، وعجلات وثلاثة منحنيات وحتى أربع تحديدات HSL وحبيبات وفينيت وLUT، مع 17 إعدادًا جاهزًا وأداة تحفظ المعالجة على العنصر. / A full WebGL grade: exposure/contrast/highlights/shadows/whites/blacks/temperature/tint/vibrance/saturation, wheels, curves, up to 4 HSL selections, grain, vignette, custom .cube, 17 presets, and a CLI that persists the treatment on an element.",
+  "how": "Grade object `{preset, intensity, adjust:{exposure −2..2, others −1..1}, details:{vignette, vignetteFeather, grain, grainSize}, colorSpace:'rec709'}`. Persist: `npx hyperframes media-treatment --selector '#hero' --grading '<json>' --apply --json`; measure with `--analyze --json`; list controls with `--capabilities --json`. Presets: neutral, warm-daylight (exposure .06 contrast .07 temperature .18 sat .08), clean-studio, skin-soft, food-pop (contrast .1 temperature .14 sat .18), night-lift, muted-editorial (sat −.12 vignette .1), vintage-wash, mono-clean (sat −1), mono-fade, soft-boost, bright-pop, deep-contrast (contrast .2), creator-camcorder, vhs-playback, editorial-halftone, two-ink-print. grade-compare renders a 16-cell A/B sheet. Vendored source in kosif-one/vendor/hyperframes; the CLI is not installed here.",
+  "params": "17 presets; HSL selections ≤4; exposure −2..2; grade-compare 16 cells",
+  "install": "npm i -D hyperframes@0.8.164   # then: npx hyperframes media-treatment --capabilities --json",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/packages/core/src/colorGrading.ts:448",
+   "kosif-one/vendor/hyperframes/packages/cli/src/commands/media-treatment.ts",
+   "kosif-one/vendor/hyperframes/docs/guides/color-grading.mdx",
+   "kosif-one/vendor/hyperframes/skills/media-use/references/grading.md"
+  ],
+  "styles": [],
+  "tags": [
+   "هايبرفريمز",
+   "تلوين ويب",
+   "منحنيات",
+   "hyperframes",
+   "webgl grade",
+   "presets",
+   "hsl",
+   "media-treatment",
+   "skin-soft"
+  ]
+ },
+ {
+  "id": "COLOR-10",
+  "family": "color-palette-grading",
+  "name_ar": "وصفات المعالجة وممرات الملاحظات",
+  "name_en": "HyperFrames treatment recipes and feedback lanes",
+  "status": "install",
+  "what": "19 بذرة معالجة مختبرة (بورتريه طبيعي، صقل منتج، VHS، 8 ملم، هافتون، طباعة بلونين...) وقاعدة تحوّل ملاحظة العميل الغامضة إلى «ممر» معالجة محدد. / 19 tested treatment seeds (natural portrait, product polish, VHS, 8mm, halftone, two-ink print…) plus a rule that maps vague client feedback to one treatment lane.",
+  "how": "Lanes: correction (too dark/flat/warm) → wheels/curves/HSL secondary → preset or custom treatment (premium, cinematic) → shader effect (retro, print, ASCII, glitch, camcorder) → privacy blur/pixelate → framing/motion → seek-safe treatment keyframes. First inspect an early/middle/late contact sheet (`hyperframes snapshot <p> --frames 3`), then start from a seed and tune only inside its bounded ranges; adjust values are absolute, not deltas. (full table in references/powers/color-palette-grading.md)",
+  "params": "Natural Portrait {preset:'skin-soft', intensity:0.6}; VHS grain .16 tapeDamage .82 tapeTracking .85 chromaBleed .5 CA .18 scanlines .35 glitch .32",
+  "install": "npm i -D hyperframes@0.8.164",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/media-use/references/media-treatment-recipes.md",
+   "kosif-one/vendor/hyperframes/skills/media-use/references/media-treatments.md"
+  ],
+  "styles": [],
+  "tags": [
+   "معالجة",
+   "VHS",
+   "هافتون",
+   "ملاحظات العميل",
+   "treatment",
+   "vhs",
+   "halftone",
+   "dither",
+   "crt",
+   "feedback lane"
+  ]
+ },
+ {
+  "id": "COLOR-11",
+  "family": "color-palette-grading",
+  "name_ar": "لوكات LUT مع بديل حتمي",
+  "name_en": "LUT looks with deterministic buildCube fallback",
+  "status": "install",
+  "what": "ثلاثة لوكات LUT مفهرسة تُجلب عند الطلب، ومع غياب الشبكة تُبنى محليًا من معاملاتها بمكعب 33³ — فلا تعتمد على ملف مجهول. / Three indexed LUT looks fetched on demand; offline they are rebuilt locally from parameters as a 33³ cube.",
+  "how": "`npx hyperframes media-use resolve --type lut …` (add `--local-only` to force buildCube). teal-orange-blockbuster (intensity .85; contrast .18; split tone shadows [−.04,.05,.09] highlights [.1,.04,−.03]); bleach-bypass (.8; contrast .55, saturation −.72); film-fade (.75; blacks +.35, contrast −.28, temperature +.16). Never paste a .cube into context — reference the file.",
+  "params": "cube 33³ default; 3 looks",
+  "install": "npm i -D hyperframes@0.8.164",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/media-use/luts/index.json",
+   "kosif-one/vendor/hyperframes/skills/media-use/luts/README.md",
+   "kosif-one/vendor/hyperframes/skills/media-use/references/grading.md"
+  ],
+  "styles": [],
+  "tags": [
+   "LUT",
+   "بليتش",
+   "أفلام",
+   "lut",
+   "bleach bypass",
+   "film fade",
+   "offline",
+   "buildCube"
+  ]
+ },
+ {
+  "id": "COLOR-12",
+  "family": "color-palette-grading",
+  "name_ar": "كشف التلوين بالمقارنة",
+  "name_en": "Grade Split Reveal (flat → graded sweep)",
+  "status": "install",
+  "what": "الصورة نفسها مرتين — خام ومُلوّنة — بحافة صلبة تمسح الإطار، تتوقف للمقارنة، ثم تستقر على النسخة الملوّنة؛ والتلوينان حقيقيان بـWebGL. / The same picture twice — flat and graded — with a hard edge that sweeps, pauses for comparison, then commits to the grade; both are real WebGL grades.",
+  "how": "`npx hyperframes add grade-split-reveal` → mount on a `.clip` div with data-composition-src/data-start/data-duration/data-track-index and JSON data-variable-values. Looks: warm-cinematic (deep-contrast, contrast .28, temp .18, vibrance .26, vignette .3, grain .1) | cool-teal (contrast .32, temp −.26, tint .08) | bleach-bypass (contrast .54, sat −.46, grain .18); split 62% (25–85); edge hairline 2 px | bold 6 px | hidden. Extra duration becomes hold, never time-stretch. Pure-HTML alternative: two stacked layers, top one clip-path inset animated left→right.",
+  "params": "split 62% (25–85); edge 2/6 px; 3 looks",
+  "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add grade-split-reveal",
+  "license": "registry compositions are timed with GSAP — GSAP 'Standard no-charge' license (gsap.com/standard-license), not MIT.",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/grade-split-reveal/grade-split-reveal.html",
+   "kosif-one/vendor/hyperframes/registry/components/grade-split-reveal/registry-item.json",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/grade-split-reveal.mdx"
+  ],
+  "styles": [],
+  "tags": [
+   "قبل وبعد",
+   "مقارنة",
+   "before after",
+   "split reveal",
+   "wipe",
+   "grade compare"
+  ]
+ },
+ {
+  "id": "COLOR-13",
+  "family": "color-palette-grading",
+  "name_ar": "ترتيب عقد التلوين",
+  "name_en": "Grade order: technical before creative",
+  "status": "documented",
+  "what": "التصحيح التقني أولًا لكل لقطة ثم عقدة «لوك» إبداعية منفصلة؛ لا تخلطهما أبدًا. / Per-clip technical correction first, then a separate creative LOOK node; never mix the two.",
+  "how": "Resolve: EXPOSURE → WB (before the Log→Rec.709 transform) → CST/LUT → CONTRAST → SAT (ceiling ~1.25 with shadow/highlight roll-off) → LOOK as a new serial node; LUT/CST runs first in time and everything is measured on its output. DWG/Intermediate path: input CST → global exposure → WB → contrast 1.3 pivot 0.336 → colour-slice sat → selective → output CST → creative LUT, tetrahedral. FFmpeg analogue: eq/exposure → colorbalance/colortemperature → lut3d → eq=contrast → hue=s → look LUT/curves, each its own filter. Phone footage needs less.",
+  "params": "SAT ≤1.25; DWG contrast 1.3 pivot 0.336",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow/references/look-scopes.md",
+   "100-superskills/skills/davinci-resolve-pipeline/references/color-grading-order.md"
+  ],
+  "styles": [],
+  "tags": [
+   "ترتيب",
+   "دافنشي",
+   "تصحيح",
+   "node order",
+   "resolve",
+   "primary correction",
+   "workflow"
+  ]
+ },
+ {
+  "id": "COLOR-14",
+  "family": "color-palette-grading",
+  "name_ar": "كشف اللوج قبل LUT",
+  "name_en": "Log detection before a conversion LUT",
+  "status": "proven",
+  "what": "لا تطبق LUT تحويل Log إلا على لقطة ثبت أنها Log؛ وسم bt709 والمظهر الباهت ليسا دليلًا. / Apply a Log→Rec.709 LUT only to clips proven Log; a bt709 tag or a flat look is not evidence.",
+  "how": "Priority: user profile > NLE input colour space/gamma containing 'log' > `ffprobe -show_streams -of json` color_transfer containing 'log' > 8-bit yuv420p ⇒ not Log (Apple Log / I-Log are 10-bit). Some Log files are tagged bt709. Then `lut3d=Log_to_Rec709.cube` (65-point), once only. `--selftest` passed in this container on 2026-10-16 (PYTHONPATH = the exposure skill's scripts). Live CDL writes need DaVinci Resolve Studio (paid app, not here); in this container apply the same numbers with FFmpeg.",
+  "params": "10-bit required for Apple Log / I-Log; 65-point cube",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2435-akbun-davinciresolve-logconvert/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2435-akbun-davinciresolve-logconvert/scripts/logconvert.py"
+  ],
+  "styles": [],
+  "tags": [
+   "لوج",
+   "تحويل",
+   "آيفون",
+   "log",
+   "apple log",
+   "ffprobe",
+   "color_transfer",
+   "rec709"
+  ]
+ },
+ {
+  "id": "COLOR-15",
+  "family": "color-palette-grading",
+  "name_ar": "التعريض حسب وقت اليوم",
+  "name_en": "Exposure bands by time of day + cut jump caps",
+  "status": "proven",
+  "what": "لا تساوِ إضاءة كل اللقطات: الليل أغمق والساعة الذهبية الأسطع، وحدّ أقصى لقفزة الإضاءة بين لقطتين متتاليتين حتى لا تتعب العين. / Don't normalise everything: night darker, golden hour brightest, and cap the brightness jump between adjacent cuts to avoid flicker fatigue.",
+  "how": "Measure median luma (10-bit 0–1023): night 120–280, morning 320–460, day 420–560, golden 440–600, blue hour 310–485. Adjacent tail→head difference ≤60 same period / ≤120 across periods; per-clip shift ≤±120; >0.5% pixels clipped lowers target by 40; tolerance 15; sunrise/sunset windows ±30 min / 1.5 h. FFmpeg: `signalstats` YAVG → `eq=brightness/gamma`. `--selftest` passed in this container on 2026-10-16 (PYTHONPATH = the exposure skill's scripts). Live CDL writes need DaVinci Resolve Studio (paid app, not here); in this container apply the same numbers with FFmpeg.",
+  "params": "bands 120–280 / 320–460 / 420–560 / 440–600 / 310–485; jump ≤60/≤120",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2434-akbun-davinciresolve-exposure/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2434-akbun-davinciresolve-exposure/scripts/exposure_scope.py"
+  ],
+  "styles": [],
+  "tags": [
+   "إضاءة",
+   "تعريض",
+   "وقت اليوم",
+   "exposure",
+   "time of day",
+   "signalstats",
+   "shot matching"
+  ]
+ },
+ {
+  "id": "COLOR-16",
+  "family": "color-palette-grading",
+  "name_ar": "توازن الأبيض بالبكسلات المحايدة",
+  "name_en": "Neutral-pixel white balance",
+  "status": "proven",
+  "what": "تقدير الصبغة من البكسلات الرمادية متوسطة الإضاءة، وتثبيت الأخضر وتحريك الأحمر والأزرق — مع خيار إبقاء دفء أو برودة مقصودة. / Estimate the cast from low-saturation mid-brightness pixels, hold G and move R/B, optionally keeping a deliberate warm or cool bias.",
+  "how": "Downscale to 320 px; neutral = max channel 25–85% and saturation ≤20%; need ≥0.5% of pixels; target R−B = 0 (or +30 warm / −20 cool on request); CDL Offset ±0.10, Slope 1±0.20, ≤3 secant iterations. FFmpeg: colorbalance / colortemperature / colorchannelmixer, or `grayworld` (built in here). `--selftest` passed in this container on 2026-10-16 (PYTHONPATH = the exposure skill's scripts). Live CDL writes need DaVinci Resolve Studio (paid app, not here); in this container apply the same numbers with FFmpeg.",
+  "params": "R−B 0/+30/−20; offset ±.10; slope 1±.20",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2444-akbun-davinciresolve-whitebalance/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2444-akbun-davinciresolve-whitebalance/scripts/whitebalance.py"
+  ],
+  "styles": [],
+  "tags": [
+   "توازن الأبيض",
+   "صبغة",
+   "white balance",
+   "cast",
+   "grayworld",
+   "neutral"
+  ]
+ },
+ {
+  "id": "COLOR-17",
+  "family": "color-palette-grading",
+  "name_ar": "تباين حول محور مع حماية القص",
+  "name_en": "Pivot contrast with clip guard",
+  "status": "proven",
+  "what": "تباين S حول نقطة ارتكاز تناسب فضاء العقدة، ويتراجع تلقائيًا إذا بدأ السواد أو البياض بالقص. / S-contrast around a pivot matched to the node space that backs off automatically if blacks or whites clip.",
+  "how": "Default 1.15 (range 0.5–1.5), pivot 0.435 on the LUT path, 0.336 for DaVinci Intermediate; clipping if p1 < 16 or p99 > 1008 (10-bit) or >0.5% clipped → reduce, max 3 retries, stop at 1.0. FFmpeg: curves S or eq=contrast with a pivoted lutyuv. `--selftest` passed in this container on 2026-10-16 (PYTHONPATH = the exposure skill's scripts). Live CDL writes need DaVinci Resolve Studio (paid app, not here); in this container apply the same numbers with FFmpeg.",
+  "params": "1.15; pivot .435/.336; p1<16, p99>1008",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2432-akbun-davinciresolve-contrast/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2432-akbun-davinciresolve-contrast/scripts/contrast.py"
+  ],
+  "styles": [],
+  "tags": [
+   "تباين",
+   "contrast",
+   "pivot",
+   "clipping",
+   "s-curve"
+  ]
+ },
+ {
+  "id": "COLOR-18",
+  "family": "color-palette-grading",
+  "name_ar": "أرضية تشبع وانحدار سينمائي",
+  "name_en": "Saturation floor with film roll-off",
+  "status": "proven",
+  "what": "أضف تشبعًا فقط للقطات الباهتة عن نطاق وقتها (لا تنقص أبدًا)، بحد 1.25، واخفض التشبع في الظلال والإضاءات العالية كما يفعل الفيلم. / Only add saturation to clips below their time-of-day band (never remove), capped at 1.25, rolling saturation off in shadows and highlights like film.",
+  "how": "Bands (mean max−min, 10-bit): morning 50–110, day 60–120, afternoon 60–130, evening 45–100, night 30–80; Sat = floor/measured ≤1.25; roll-off below 15% and above 85% luma down to 60%. FFmpeg: eq=saturation / hue=s plus a luma-selective lutyuv. `--selftest` passed in this container on 2026-10-16 (PYTHONPATH = the exposure skill's scripts). Live CDL writes need DaVinci Resolve Studio (paid app, not here); in this container apply the same numbers with FFmpeg.",
+  "params": "cap 1.25; roll-off 15%/85% → 60%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2440-akbun-davinciresolve-saturation/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2440-akbun-davinciresolve-saturation/scripts/saturation.py"
+  ],
+  "styles": [],
+  "tags": [
+   "تشبع",
+   "saturation",
+   "roll-off",
+   "film",
+   "vibrance"
+  ]
+ },
+ {
+  "id": "COLOR-19",
+  "family": "color-palette-grading",
+  "name_ar": "تعزيز السماء فقط",
+  "name_en": "Sky hue-window boost",
+  "status": "proven",
+  "what": "تعميق السماء الزرقاء وحدها بنافذة لونية ناعمة حول 215°، دون لمس العشب أو البشرة. / Deepen blue skies only, with a soft hue window around 215°, leaving grass and skin alone.",
+  "how": "Resolve DCTL: weight w falls off outside 215° ±20°, sat × (1 + 0.25w), lum × (1 − 0.1w), measured on the upper half. FFmpeg 6.1 here: `huesaturation=colors=b+c:saturation=0.25:intensity=-0.04:strength=5` — tested on a synthetic frame: sky #7fa8d8→#70a0da while grass #6b8a3c and skin #d9a27a stayed identical. `--selftest` passed in this container on 2026-10-16 (PYTHONPATH = the exposure skill's scripts). Live CDL writes need DaVinci Resolve Studio (paid app, not here); in this container apply the same numbers with FFmpeg. (code snippet in references/powers/color-palette-grading.md)",
+  "params": "hue 215° width 40° sat 1.25 lum 0.9; ffmpeg strength 5",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2442-akbun-davinciresolve-sky/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2442-akbun-davinciresolve-sky/scripts/sky.py"
+  ],
+  "styles": [],
+  "tags": [
+   "سماء",
+   "أزرق",
+   "تحديد لوني",
+   "sky",
+   "qualifier",
+   "huesaturation",
+   "secondary"
+  ]
+ },
+ {
+  "id": "COLOR-20",
+  "family": "color-palette-grading",
+  "name_ar": "لوكات مقاسة بأهداف السكوب",
+  "name_en": "Scope-target looks (Japan summer, New York, Still, Tokyo night)",
+  "status": "documented",
+  "what": "لوكات إبداعية مكتوبة كأهداف قياس على مخرج Rec.709: نسب IRE لـP10/P50/P95 ونصف قطر عناقيد اللون على الفكتورسكوب. / Creative looks written as measurable targets on the Rec.709 output: P10/P50/P95 in IRE and colour-cluster radius on a normalised vectorscope.",
+  "how": "Y'=0.2126R'+0.7152G'+0.0722B', IRE=100·Y'; Cb=(B'−Y')/1.8556, Cr=(R'−Y')/1.5748; radius normalised to the 100% colour-bar hexagon. Build with curves/colorbalance/lut3d, compare +0/+1/+2 stop variants, then measure. (full table in references/powers/color-palette-grading.md)",
+  "params": "see table",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2436-akbun-davinciresolve-look-japan-summer/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2437-akbun-davinciresolve-look-new-york/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2438-akbun-davinciresolve-look-still/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2439-akbun-davinciresolve-look-tokyo-night"
+  ],
+  "styles": [],
+  "tags": [
+   "سكوب",
+   "قياس",
+   "طوكيو",
+   "IRE",
+   "vectorscope",
+   "scopes",
+   "measured look",
+   "tokyo night"
+  ]
+ },
+ {
+  "id": "COLOR-21",
+  "family": "color-palette-grading",
+  "name_ar": "توجيه التلوين حسب اللقطة وأرضية الإضاءة",
+  "name_en": "Per-shot-type direction, one light floor, value before colour",
+  "status": "documented",
+  "what": "جدول تلوين لكل نوع لقطة، وأرضية إضاءة واحدة وسقف واحد للفيلم كله، والقيمة (الفاتح/الغامق) تُقرر قبل اللون. / A grade table per shot type, one luminance floor and ceiling per film, and value (light/dark) decided before hue.",
+  "how": "Table shot type | colour direction | notes: talking head = base grade with warm ambient pull; screen recordings crisp, high-contrast on text; graphics on the brand background; animation free palette; drifting scenes get a correction note. Name one floor (deepest black) and the brightest section's ceiling — no jumps dark→white. Realistic tonal range > 150 of 255; peak saturation only in fire and eyes.",
+  "params": "tonal range >150/255; one floor per film",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/3067-youtube/13229-creator-visual-director/SKILL.md",
+   "100-superskills/skills/motion-director-pro/references/motion-floor.md",
+   "kosif-studio/references/drawing-guide.md:62"
+  ],
+  "styles": [],
+  "tags": [
+   "قيمة",
+   "إضاءة",
+   "توجيه",
+   "value",
+   "luminance floor",
+   "shot type",
+   "direction"
+  ]
+ },
+ {
+  "id": "COLOR-22",
+  "family": "color-palette-grading",
+  "name_ar": "تحليل حرارة اللون والميل والتشبع",
+  "name_en": "Colour analysis: CCT, cast, colourfulness, 6-colour palette",
+  "status": "proven",
+  "what": "أداة تقرأ صورة أو إطارًا وتعطيك: حرارة اللون بالكلفن، وميله الدافئ/البارد، ومقدار الألوان، وتوزيع الإضاءة، وستة ألوان سائدة بحصصها. / Reads an image or frame and returns CCT in kelvin, warm/cool cast, colourfulness, tonal zones and six dominant colours with shares.",
+  "how": "`python3 kosif-one/tools/kosif-omni/skills/kosif-vision/scripts/image_analyze.py FRAME.png` → JSON: exposure (p1/median/p99, clipped %, zones, verdict), colour (McCamy CCT via sRGB→linear→XYZ, valid 1000–25000 K; cast warm if R̄−B̄ > 12, cool if < −12; colourfulness = hypot(σrg, σyb) + 0.3·hypot(μrg, μyb) labelled <15 not … >82 highly) and palette (median-cut to 6 on a 256 px thumbnail). Ran here on a graded frame.",
+  "params": "cast ±12; CCT 1000–25000 K; palette k=6 @256 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-vision/scripts/image_analyze.py:100",
+   "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:59",
+   "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:120"
+  ],
+  "styles": [],
+  "tags": [
+   "تحليل",
+   "كلفن",
+   "حرارة اللون",
+   "analysis",
+   "cct",
+   "kelvin",
+   "colourfulness",
+   "cast",
+   "palette"
+  ]
+ },
+ {
+  "id": "COLOR-23",
+  "family": "color-palette-grading",
+  "name_ar": "إزاحة الميرد واختيار الجل",
+  "name_en": "Mired shift → CTO/CTB gel",
+  "status": "proven",
+  "what": "حساب حتمي: من حرارة إلى حرارة كم «ميرد» وأي جل يقرّبك — لتخطيط إضاءة لقطة أو برومبت أو مشهد ثلاثي الأبعاد مقنع. / Deterministic maths: mired shift between two colour temperatures and the nearest gel, for believable lighting in shots, prompts and 3D.",
+  "how": "`echo '{\"op\":\"mired\",\"from_k\":3200,\"to_k\":5600}' | python3 light_calc.py` → shift = 1e6/to − 1e6/from. Ran here: −133.9 → Full CTB, 'cooler (blue)'. Gels: Full CTB −159, ½ CTB −68, ¼ CTB −30, ⅛ CTB −12, ⅛ CTO +20, ¼ CTO +42, ½ CTO +81, Full CTO +159.",
+  "params": "3200→5600 K = −133.9 mired → Full CTB",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-lighting/scripts/light_calc.py:69",
+   "kosif-one/tools/kosif-omni/skills/kosif-lighting/scripts/light_calc.py:22",
+   "100-superskills/skills/kosif-montage-motion/scripts/omni/light_calc.py:69"
+  ],
+  "styles": [],
+  "tags": [
+   "كلفن",
+   "جل",
+   "إضاءة",
+   "mired",
+   "gel",
+   "cto",
+   "ctb",
+   "kelvin",
+   "lighting"
+  ]
+ },
+ {
+  "id": "COLOR-24",
+  "family": "color-palette-grading",
+  "name_ar": "استخراج الباليت وتسمية الألوان",
+  "name_en": "Palette extraction, colour naming and ΔE",
+  "status": "proven",
+  "what": "يسحب الألوان السائدة من أي مرجع ويسمّيها بأقرب اسم من 20 اسمًا بمسافة Lab، ويقيس الفرق ΔE — لبناء قفل أسلوب أو جملة يفهمها العميل. / Pulls dominant colours from any reference, names them by nearest Lab distance among 20 names, and measures ΔE — for a style lock or a client-readable sentence.",
+  "how": "mm_color.palette(img, k=5) → [{hex, share, name}], color_name(rgb), delta_e(c1,c2) — ran here (testsrc → #9DFE77 green 49.7%, #A300FC purple 31.3%). Studio qa.study → k-means k=6 (KMEANS_PP, 30 iters, eps 0.5, 3 attempts) into style_guide.md (needs OpenCV). Basma analyzeRef: 16–72 samples every 0.25 s at 40×40, 512-bucket RGB histogram weighted 0.25+saturation, keep colours with L1 > 90; darkest → bg, most saturated → accent.",
+  "params": "20 names; k 5–6; Basma L1 > 90",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-mimic/scripts/mm_color.py:134",
+   "kosif-studio/motion/qa.py:383",
+   "app/public/js/00_editor.js:1299"
+  ],
+  "styles": [],
+  "tags": [
+   "استخراج الألوان",
+   "باليت",
+   "تسمية",
+   "palette extraction",
+   "kmeans",
+   "delta e",
+   "color name",
+   "reference"
+  ]
+ },
+ {
+  "id": "COLOR-25",
+  "family": "color-palette-grading",
+  "name_ar": "باليت وخلفية لكل نبضة من المرجع",
+  "name_en": "Reference palette + background per beat",
+  "status": "proven",
+  "what": "يقسم فيديو مرجعيًا إلى نبضات (قطع، ذوبان، دخول) ويعطي كل نبضة لون خلفية وباليت، بدقة ±8 لكل قناة في الاختبار. / Splits a reference video into beats (cuts, dissolves, entrances) and gives each beat a background hex and palette, within ±8 per channel on synthetic tests.",
+  "how": "`analyze.analyze(film, out)` → analysis.json {width, height, aspect, duration, beats:[{t0,t1,background,palette:[{hex}]}], scenes, audio:{lufs}} + overview.jpg, timeline.jpg, brief.json and 3 frames per beat; beats ≤3.05 s. tests/test_analyze.py ran here: 5 tests OK.",
+  "params": "±8/channel; beats ≤3.05 s; 3 frames per beat",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/tests/test_analyze.py:50",
+   "100-superskills/skills/kosif-montage-motion/tests/test_analyze.py:39"
+  ],
+  "styles": [],
+  "tags": [
+   "مرجع",
+   "تحليل",
+   "نبضة",
+   "reference",
+   "beats",
+   "background",
+   "breakdown"
+  ]
+ },
+ {
+  "id": "COLOR-26",
+  "family": "color-palette-grading",
+  "name_ar": "نقل رينهارد إلى LUT لكل لقطة",
+  "name_en": "Reinhard Lab transfer → per-shot .cube",
+  "status": "proven",
+  "what": "يطابق إحصاءات Lab للقطة جديدة مع لقطة مرجعية ويخبزها في LUT بحجم 33³ يُطبق لكل لقطة على حدة. / Matches a new shot's Lab statistics to a reference shot and bakes it into a 33³ LUT applied per shot.",
+  "how": "lab_stats(src) / lab_stats(ref) → reinhard_lut(src, dst, size=33, strength=0.85, max_gain=2.2) → write_cube → apply_lut or FFmpeg lut3d. Ran here: mean Lab (69.0, 14.8, 10.3) moved toward the sodium_night reference (62.7, 11.7, 17.1) → (64.4, 10.4, 16.1); the written .cube also applied with ffmpeg lut3d (rc=0). Gains clamped so flat sources cannot explode. (code snippet in references/powers/color-palette-grading.md)",
+  "params": "size 33; strength .85; max_gain 2.2",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-mimic/scripts/mm_color.py",
+   "100-superskills/skills/kosif-mimic/scripts/mm_color.py:1",
+   "100-superskills/skills/kosif-mimic/scripts/mm_build.py:105"
+  ],
+  "styles": [],
+  "tags": [
+   "مطابقة",
+   "نقل اللون",
+   "رينهارد",
+   "color transfer",
+   "reinhard",
+   "lab",
+   "match",
+   "lut per shot"
+  ]
+ },
+ {
+  "id": "COLOR-27",
+  "family": "color-palette-grading",
+  "name_ar": "مطابقة اللقطات بنقل لوني محدود",
+  "name_en": "Bounded colour transfer + Hungarian shot match",
+  "status": "proven",
+  "what": "يختار لكل لقطة مرجعية أنسب مقطع ونقطة بداية من مكتبتك (لون، تباين، تشبع، حركة) بالتعيين المجري، ثم ينقل اللون بمكسب وإزاحة محدودين لا ينفلتان. / Picks, for every reference shot, the best pool clip and in-point (colour, contrast, saturation, motion) by Hungarian assignment, then transfers colour with clamped gain/offset.",
+  "how": "`mimic match PROJECT/study --pool POOL [--set N=file@sec] [--strength 0.7]`; colour_transfer(look{mean,std}, mean, std, strength) → per channel (gain, offset) with 0.6 ≤ gain ≤ 1.6 and −120 ≤ offset ≤ 120; windows containing source cuts are rejected. Real study: costs 0.356–0.602, gains .82–1.6, offsets −73…+113. tests/test_mimic.py ran here: 10 tests OK.",
+  "params": "gain .6–1.6; offset ±120; strength .7",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/tests/test_mimic.py:91",
+   "100-superskills/skills/kosif-montage-motion/references/mimic.md",
+   "kosif-one/projects/mimic-jumuah/study/match.json"
+  ],
+  "styles": [],
+  "tags": [
+   "مطابقة",
+   "محاكاة",
+   "مونتاج",
+   "mimic",
+   "hungarian",
+   "shot match",
+   "colour transfer"
+  ]
+ },
+ {
+  "id": "COLOR-28",
+  "family": "color-palette-grading",
+  "name_ar": "إصلاح تلقائي ومطابقة مرجع في «بصمة»",
+  "name_en": "Basma measured auto-fix, reference match and look classifier",
+  "status": "install",
+  "what": "يصلح الفيديو المعتم أو المسطح أو المصبوغ من بكسلاته بلا ذكاء اصطناعي ويشرح الإصلاح بالعربية، ويطابق مقطعك مع مرجع، ويسمّي لوك المرجع. / Fixes dark/flat/cast footage from its own pixels without AI and explains the fix in Arabic, matches a clip to a reference, and labels the reference's look.",
+  "how": "measureFix(): luma percentiles p02/p50/p98; contrast = clamp(200/range, 0.9, 1.3) when range < 200; brightness toward mid 118 (0.85–1.3) when mid outside 112–150; saturation clamp(0.24/s, 1, 1.25) when 0.05 < s < 0.18; grey-world on near-neutral pixels (s < 0.22, 50 < l < 215, ≥6% of pixels) → per-channel gains 0.82–1.18 as a multiply colour. Match: contrast ratio clamp 0.8–1.4, saturate 0.5–1.6, brightness 0.8–1.2, tint = reference mean hex, bw when ref saturation < 0.08, letterbox copied. DNA classifier: sat < 0.07 → bw; blue shadows > 6 with red highlights > 10 → teal_orange; warmth > 0.1 → golden (sat > 0.3) or warm; warmth < −0.05 → blue_hour (mean L < 90) or cool; contrast > 0.26 & sat > 0.32 → clean; sat > 0.45 & dark → cyber. Runs inside the Basma editor (Vite app).",
+  "params": "contrast .9–1.3; gains .82–1.18; mid 118",
+  "install": "cd /home/user/app && npm install && npm run dev",
+  "license": "",
+  "proof": [
+   "app/public/js/00_editor.js:2976",
+   "app/public/js/00_editor.js:2364",
+   "app/public/js/10_studio.js:1213"
+  ],
+  "styles": [],
+  "tags": [
+   "إصلاح تلقائي",
+   "مطابقة مرجع",
+   "بصمة",
+   "auto fix",
+   "grey world",
+   "reference match",
+   "look classifier"
+  ]
+ },
+ {
+  "id": "COLOR-29",
+  "family": "color-palette-grading",
+  "name_ar": "تغيير لون بلون مع الحفاظ على الظل",
+  "name_en": "Local recolour A→B keeping shading (Arabic requests)",
+  "status": "proven",
+  "what": "«غيّر الأحمر إلى أزرق» تُنفذ محليًا: قناع لوني بتسامح، ثم استبدال الصبغة مع إبقاء الطيات والظلال، وفهم طلبات العربية والإنجليزية. / 'Change red to blue' done locally: a tolerant colour mask, hue replacement that keeps folds and shading, and parsing of Arabic or English requests.",
+  "how": "edit_pack TOOLS: recolor(img, src_hex, dst_hex, tolerance=40, region=None, keep_shading=True) via HSV (V scaled by dst/src, S scaled), plus adjust(brightness/contrast/saturation/sharpness), tint(hex, 0.3), erase(softness 14). parse_colour_request('غيّر الأحمر إلى أزرق') → ('#d62828', '#2f6fd6'). Ran here: gold #c9a227 → #1ac5d9 (target #19c3d9) while a red block stayed #b5432c.",
+  "params": "tolerance 40–42; tint .3; Pillow only",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/scripts/edit_pack.py:50",
+   "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md"
+  ],
+  "styles": [],
+  "tags": [
+   "تغيير اللون",
+   "تلوين جزئي",
+   "recolor",
+   "change color",
+   "mask",
+   "tint",
+   "arabic request"
+  ]
+ },
+ {
+  "id": "COLOR-30",
+  "family": "color-palette-grading",
+  "name_ar": "ألوان الشعار الحقيقية",
+  "name_en": "Logo true colours + antialias-blend detection",
+  "status": "install",
+  "what": "يستخرج ألوان الشعار الفعلية كمتوسطات للبكسلات النقية، ويتعرف على بكسلات التنعيم عند الحواف فلا يحسبها ألوانًا جديدة. / Finds a logo's true colours as means of pure pixels and recognises antialias edge blends so they are not mistaken for palette colours.",
+  "how": "vectorize._palette(rgba, max_colors=16, min_share=.001): quantise /8 to rank, keep candidates ≥30 apart, average everything within 22. _edge_blends tests 4 neighbour directions (neighbour contrast > 40, t in 0.08–0.92, distance < 18); _mixture least-squares 2–3 colour weights 6–94% within tol 16. vectorize.py imports OpenCV, which is not installed here.",
+  "params": "max 16 colours; ≥30 apart; blend tol 16",
+  "install": "pip install opencv-python-headless",
+  "license": "",
+  "proof": [
+   "kosif-studio/vectorize.py:45",
+   "kosif-studio/vectorize.py:24",
+   "kosif-studio/scenes/aghnam_logo.json"
+  ],
+  "styles": [],
+  "tags": [
+   "شعار",
+   "ألوان دقيقة",
+   "logo colors",
+   "antialias",
+   "vectorize",
+   "brand"
+  ]
+ },
+ {
+  "id": "COLOR-31",
+  "family": "color-palette-grading",
+  "name_ar": "هوية كاملة من لون واحد",
+  "name_en": "One hex → full WCAG token set (+ 9 accent presets)",
+  "status": "proven",
+  "what": "تعطي لونًا واحدًا فتحصل على ثيم فاتح وداكن وألوان حالات ومسافات وأحجام خط وتوقيتات حركة — كل زوج يمر اختبار التباين — مع كتلة CSS جاهزة. / Give one colour and get light + dark themes, status colours, spacing, type scale and motion tokens — every pair contrast-checked — plus a ready CSS block.",
+  "how": "`echo '{\"brand\":\"#8a5a2b\",\"name\":\"k\"}' | python3 design_tokens.py` (also MCP kosif_design_tokens): lightness is walked until text pairs reach 4.6:1 and UI pairs 3:1; CSS has :root, prefers-color-scheme dark guarded by :not([data-theme=light]), [data-theme=dark] and reduced-motion 0 ms. Ran here: #8a5a2b → dark brand #d4985e, light ink #221911 on #faf9f7 = 16.42:1, all 22 checked pairs pass. Runtime twin in EARTH: accentTokens(hex, dark, surface) mixes toward black (light) until 3:1 or toward white (dark) until 4:1 in steps of .08 (max .9), on-brand white if ≥3.2 else #06101f, brand-2 = 32% white mix, deep = 55% toward #0b1f3a, soft = 11% (22% dark), gradient 135° b2 0% / c 55% / deep 100%. Nine accent presets feed it: كوبالت #2340c4, زمردي #0f9d6c, أخضر وطني #006c35, فيروزي #0e8a9a, ملكي #6b4ee6, عنبري #c2410c, ذهبي #b8862b, قرمزي #d0343f, فحمي #3b4a5e. (code snippet in references/powers/color-palette-grading.md)",
+  "params": "text 4.6:1, UI 3:1; status hues ok 140° warn 35° bad 4° info 200° (s .65); space 4–64 px; type ratio 1.25; t-fast 120 ms, t 180 ms; ease cubic-bezier(.2,.8,.2,1)",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-web-design/scripts/design_tokens.py:62",
+   "kosif-earth-ci-fork/ui/layouts/shell.js:76",
+   "kosif-earth-ci-fork/ui/layouts/shell.js:69",
+   "kosif-atlas/skills/196-landing/621-landing/scripts/brand_palette_validator.py"
+  ],
+  "styles": [],
+  "tags": [
+   "هوية",
+   "لون واحد",
+   "رموز تصميم",
+   "تباين",
+   "brand tokens",
+   "design tokens",
+   "wcag",
+   "dark mode",
+   "accent"
+  ]
+ },
+ {
+  "id": "COLOR-32",
+  "family": "color-palette-grading",
+  "name_ar": "هوية «دفتر KOSIF»",
+  "name_en": "Dafter KOSIF ledger identity (default, light + night)",
+  "status": "proven",
+  "what": "الهوية الافتراضية: ورق دفاتر كريمي، بطاقات بيضاء دافئة، حبر فحمي للعناوين والأزرار، ولون زعفران واحد للعلامات والحالة النشطة — ونسخة ليلية. / The default identity: cream ledger paper, warm white cards, charcoal ink for rails/headings/buttons and a single saffron accent — with a night twin.",
+  "how": "html[data-look=kosif][data-brand=ledger] (+ [data-theme=dark]); map bg/ink/accent to scene background, type and highlight. Saffron text uses the darker step #a53e07 (5.9:1); ink #1d1814 is 17:1. identity_unity.test.mjs ran here (5/5 pass).",
+  "params": "light: bg #fbf8f3 surface #fffdf9 line #e3d9cc ink #1d1814 ink-2 #4b4139 saffron #d9530e text #a53e07 soft #fbe9dc ok #2c7a4b warn #a76a10 bad #b3261e info #2f5f8f; night: bg #161310 surface #1c1814 ink #f5ede3 brand #f2732d gold-ink #ff9a5f grad 135° #ff9a5f→#f2732d 45%→#a53e07",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-earth-ci-fork/ui/ds/tokens.css:263",
+   "kosif-earth-ci-fork/ui/ds/tokens.css:284",
+   "kosif-earth-ci-fork/docs/design/SQC-IDENTITY-ar.md",
+   "kosif-earth-ci-fork/tools/identity_unity.test.mjs"
+  ],
+  "styles": [],
+  "tags": [
+   "دفتر",
+   "زعفران",
+   "هوية كاشف",
+   "كريمي",
+   "ledger",
+   "saffron",
+   "kosif identity",
+   "cream"
+  ]
+ },
+ {
+  "id": "COLOR-33",
+  "family": "color-palette-grading",
+  "name_ar": "مظاهر KOSIF EARTH",
+  "name_en": "KOSIF EARTH identity looks (14)",
+  "status": "ready",
+  "what": "أربعة عشر مظهرًا مختبرًا في واجهة المالك، منها عربية الروح (تراث الوادي، نجد الفاخر، الواحة، الدفتر المسطر) — كلها رموز CSS تنقلها مباشرة إلى مشهد. / Fourteen identity looks from the owner's app, several with Arabic character (Heritage Valley, Najd luxe, Oasis, Notebook) — CSS tokens you lift straight into a scene.",
+  "how": "Select with [data-look=…] / [data-brand=…] (+ [data-theme=dark]); copy --sk-* values into :root of the composition. Cobalt & Ice is covered by identity_unity.test.mjs (ran here); the rest are owner CSS. Earth-office door forbids a full-image green tint or hue-rotate; intro amber is a title-card palette over space footage. (full table in references/powers/color-palette-grading.md)",
+  "params": "see table",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-earth-ci-fork/ui/ds/tokens.css:162",
+   "kosif-earth-ci-fork/ui/ds/tokens.css:378",
+   "kosif-earth-ci-fork/ui/ds/tokens.css:7",
+   "kosif-earth-ci-fork/ui/art/brand/earth-office-door.css"
+  ],
+  "styles": [],
+  "tags": [
+   "نجد",
+   "تراث",
+   "واحة",
+   "كحلي وذهبي",
+   "najd",
+   "heritage",
+   "navy gold",
+   "identity",
+   "theme"
+  ]
+ },
+ {
+  "id": "COLOR-34",
+  "family": "color-palette-grading",
+  "name_ar": "إعادة تلوين حسب الدور",
+  "name_en": "Role-based palette remap (brandCSS)",
+  "status": "proven",
+  "what": "يعيد كتابة أوراق أنماط مصممة بالكوبالت إلى هوية الدفتر حسب الدور: النص زعفران مقروء، الخلفيات المعبأة حبر، والخطوط زعفران — مع الحفاظ على الشفافية. / Rewrites cobalt-authored stylesheets into the ledger identity by role: text → readable saffron, filled backgrounds → ink, strokes → saffron, alpha suffixes kept.",
+  "how": "brandCSS(css): three role regexes for #2340c4 (color: → #a53e07, background: → #1d1814, else → #d9530e), then a 44-pair hex table and an rgba() triplet table (e.g. #0b1030→#1d1814, #19c3d9→#f2732d, #f4f6fb→#fbf8f3, rgba(35,64,196,…)→rgba(217,83,14,…)). Used for print, letterhead, charts print CSS and presentations. identity_unity.test.mjs ran here (5/5).",
+  "params": "3 role rules + 44 hex pairs + rgba table",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-earth-ci-fork/ui/core/sk.js:348",
+   "kosif-earth-ci-fork/tools/identity_unity.test.mjs"
+  ],
+  "styles": [],
+  "tags": [
+   "إعادة تلوين",
+   "هوية",
+   "remap",
+   "rebrand",
+   "role",
+   "css rewrite"
+  ]
+ },
+ {
+  "id": "COLOR-35",
+  "family": "color-palette-grading",
+  "name_ar": "تحويل انتقائي ذهبي→جليدي",
+  "name_en": "Selective gold→ice hue rotation (image and video)",
+  "status": "proven",
+  "what": "يدير نطاق الذهبي فقط إلى سماوي جليدي بأوزان ناعمة، ويقرّب الكحلي نحو الكوبالت، ويترك الخشب والبشرة والأحمر كما هي — للصور وللفيديو إطارًا بإطار. / Rotates only the gold hue band to ice cyan with smooth weights, nudges navy to cobalt and leaves wood, skin and reds untouched — stills or MP4 frame by frame.",
+  "how": "`python3 tools/brand/recolor_ice.py IN OUT` (webp/png/jpg or mp4). NumPy HSV: w = smooth(h,18,30)·(1−smooth(h,62,74))·smooth(s,.08,.22); target hue 190+(h−45)·.35; blue band 196–248 pulled half-way to 228; s·(1−.1w), v·(1−.06w). Video: rawvideo rgb24 pipe → libx264 -preset slow -crf 24 yuv420p +faststart (audio dropped — re-mux the original audio). Ran here: #c9a227 → #34a6bd, red #b5432c unchanged, navy #0b1f3a → #0b1a3a.",
+  "params": "gold ~22–68° → ice ~185–195°; crf 24; webp q82",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-earth-ci-fork/tools/brand/recolor_ice.py",
+   "kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md"
+  ],
+  "styles": [],
+  "tags": [
+   "تحويل لوني",
+   "ذهبي",
+   "جليدي",
+   "hue rotation",
+   "selective color",
+   "recolor video",
+   "brand"
+  ]
+ },
+ {
+  "id": "COLOR-36",
+  "family": "color-palette-grading",
+  "name_ar": "باليتات الشيدر كمتغيرات",
+  "name_en": "Shader palettes as uniforms (Crystal World)",
+  "status": "proven",
+  "what": "عالم بلوري ثلاثي الأبعاد بلوحتين (كوبالت وجليد / حبر وزعفران كهرماني) تُمرَّر كمتغيرات، ولا لون مثبت داخل الشيدر — والاختبار يفرض ذلك. / A crystal-world shader with two palettes (cobalt ice / ledger amber) passed as uniforms; no colour is hard-coded in the shader and a test enforces it.",
+  "how": "PALETTES.cobalt / PALETTES.ledger chosen from data-brand or an explicit option. cobalt iceA (.043,.063,.19) iceB (.10,.76,.85) skyB (.86,.95,1) rim (.60,.93,.97); ledger iceA (.114,.094,.078) iceB (.85,.33,.055) skyB (.98,.95,.90) rim (.98,.76,.55) snow (1,.9,.78). identity_unity.test.mjs ran here (5/5).",
+  "params": "2 palettes × iceA/iceB/skyB/rim/snow uniforms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/crystal-world.js:102",
+   "kosif-earth-ci-fork/tools/identity_unity.test.mjs"
+  ],
+  "styles": [],
+  "tags": [
+   "شيدر",
+   "متغيرات",
+   "بلوري",
+   "shader uniforms",
+   "palette",
+   "webgl",
+   "identity"
+  ]
+ },
+ {
+  "id": "COLOR-37",
+  "family": "color-palette-grading",
+  "name_ar": "باليتات منتجات التدقيق",
+  "name_en": "KOSIF audit palettes + cascade-order theming",
+  "status": "proven",
+  "what": "لوحات «ريش الطيور» الفاتحة والداكنة، ولوحة القيادة النيلية، والثيم التحريري البنفسجي الذهبي الكريمي، ولوحات التراث والليل — مقفلة باختبارات، وطبقات ثيم تُرتب بالتحميل. / Feather light/dark, the indigo dashboard, the purple-gold-cream editorial theme, heritage and night palettes — locked by tests, themes layered by cascade order.",
+  "how": "Copy the :root block; switch html[data-theme=dark]; status hues: primary violet focus, teal done, amber attention, coral risk. Cascade: continuous-review.css → dashboard-theme.css → product-model.css → kosif-one-editorial-theme.css; the test asserts that order and that meta theme-color (#24113f) is a colour the final theme paints. palette.test.mjs (5/5) and dashboard-theme.test.js (5/5) ran here. (full table in references/powers/color-palette-grading.md)",
+  "params": "see table",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-audit-pro/app/globals.css:21",
+   "kosif-audit-pro/tests/palette.test.mjs",
+   "kosif-audit-studio/kosif-one-editorial-theme.css",
+   "kosif-audit-studio/tests/dashboard-theme.test.js"
+  ],
+  "styles": [],
+  "tags": [
+   "تدقيق",
+   "بنفسجي وذهبي",
+   "ثيم",
+   "audit",
+   "dashboard",
+   "feather",
+   "cascade",
+   "dark theme"
+  ]
+ },
+ {
+  "id": "COLOR-38",
+  "family": "color-palette-grading",
+  "name_ar": "ثيمات Kinetic Flow السبعة عشر",
+  "name_en": "Kinetic-flow locked themes A–Q + custom R",
+  "status": "proven",
+  "what": "سبعة عشر ثيمًا مقفلًا لفيديوهات التايبوغرافي الحركي: خلفية ولون بطل ولون صغير وخط وخامة وانتقال ونهاية — تُكرر حرفيًا في كل برومبت مقطع، مع ثيم R مخصص يتحقق من الـhex. / Seventeen locked kinetic-type themes (background, hero, small colour, font, finish, transition, end card) repeated verbatim in every clip prompt, plus a custom theme R with hex validation.",
+  "how": "kinetic-flow setup {\"theme\":\"A\"} → STYLE LOCK paragraph repeated in every clip; R requires background, accent (^#[0-9a-f]{6}$), font, finish, overlay, animation, transition (small defaults #333333, end card 'fade to black'); S copies a reference (COLOR-56). production-profiles.test.mjs ran here (10/10). (full table in references/powers/color-palette-grading.md)",
+  "params": "17 themes; 7 required keys for R",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:4",
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:24-30,44-54",
+   "fastify-motion-bro/tests/production-profiles.test.mjs:67-74"
+  ],
+  "styles": [],
+  "tags": [
+   "ثيمات",
+   "تايبوغرافي",
+   "قفل الأسلوب",
+   "kinetic",
+   "themes",
+   "style lock",
+   "neon",
+   "gold noir",
+   "swiss"
+  ]
+ },
+ {
+  "id": "COLOR-39",
+  "family": "color-palette-grading",
+  "name_ar": "باليتات الافتتاحي الفيروسي",
+  "name_en": "Viral-editorial palettes 1–3 + 80/20 rule",
+  "status": "proven",
+  "what": "ثلاث لوحات للمحرك التحريري: توقيع تحريري (أوف وايت + بنفسجي)، تقني داكن (رمادي أردوازي + فيروزي)، أكاديمي عالي التباين (كريمي + طوبي) — وكل تسلسل 80% محايد و20% لون واحد. / Three palettes for the editorial renderer — Signature Editorial, Dark Technical, High-Contrast Academic — and each sequence is ~80% neutral, ~20% one accent.",
+  "how": "PALETTES['1'|'2'|'3'] → compileStoryboard.palette → editorial renderer. viral-editorial.test.mjs (7/7) and production-profiles.test.mjs (10/10) ran here.",
+  "params": "1: bg #F4F1EC grid #D7D4D0 accent #6134B9 text #24212A line #D5CFD9 shape #E6DFF5; 2: #1B252C / #36414A / #24DAD1 / #EFF8F7 / #364B50 / #24373B; 3: #F1E9DD / #D8CAB8 / #BC5935 / #2C2928 / #DFCEBD / #E9D1C0; 80/20",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/scripts/viral-editorial.mjs:6",
+   "fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:19",
+   "fastify-motion-bro/tests/viral-editorial.test.mjs"
+  ],
+  "styles": [],
+  "tags": [
+   "تحريري",
+   "فيروسي",
+   "80/20",
+   "editorial",
+   "viral",
+   "palette",
+   "explainer"
+  ]
+ },
+ {
+  "id": "COLOR-40",
+  "family": "color-palette-grading",
+  "name_ar": "باليتات أفلام المالك",
+  "name_en": "Owner film palettes from shipped projects",
+  "status": "ready",
+  "what": "لوحات خرجت من أفلام ومشاريع حقيقية — كحلي وذهبي، عاجي وحبر وذهبي، نيون مختبري، مدينة ممطرة، بحر ليلي، نقطة حمراء — جاهزة للنسخ. / Palettes lifted from real shipped films and projects — navy/gold, ivory/ink/gold, lab neon, rainy neon city, night sea, red dot — ready to copy.",
+  "how": "Copy the :root tokens or the hex roles; keep one carrier/accent per palette (COLOR-54). midnight_cat and duck-vs-dragon are tested-code; the rest are owner code. (full table in references/powers/color-palette-grading.md)",
+  "params": "see table",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:23",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:14",
+   "kosif-one/projects/duck-vs-dragon/duck_dragon.py:13-56",
+   "fastify-motion-bro/web/motion.js:9-21"
+  ],
+  "styles": [],
+  "tags": [
+   "باليت",
+   "كحلي وذهبي",
+   "نيون",
+   "ألوان أفلام",
+   "palette",
+   "navy gold",
+   "neon city",
+   "film palette"
+  ]
+ },
+ {
+  "id": "COLOR-41",
+  "family": "color-palette-grading",
+  "name_ar": "باليتات القوالب وخاناتها",
+  "name_en": "Starter palettes and palette slots",
+  "status": "proven",
+  "what": "قالب Canvas المختبر يبدأ بلوحة «كحلي وتركوازي» وخلفية شعاعية وشبكة 90 بكسل؛ وSTYLE.md فيه خانات الألوان؛ وقالب Remotion يأخذ لون التمييز كخاصية. / The tested canvas starter opens on 'midnight teal' with a radial backdrop and a 90 px grid; STYLE.md carries the colour slots; the Remotion starter takes the accent as a prop.",
+  "how": "html-canvas: --bg #0b1020 --ink #f3f7ff --muted #9fb0cc --accent #7ee8d2 --accent-2 #ffb86b; stage radial-gradient(#182446 → #0b1020 55%); grid rgba(255,255,255,.045) every 90 px at opacity .6. templates/STYLE.md §4.1 defaults (marked estimated): bg #0B0F19 fg #F5F7FA accent #FFB020 muted #8A93A6 line #2A3346. Remotion: ink #0b0d12, paper #f4f1ea, accent prop (default #ff7a1a, example #19c37d) + withAlpha(color, a) (appends hex byte or uses color-mix) — Remotion needs `npm i` in starters/remotion and is under the Remotion company license.",
+  "params": "midnight teal; grid 90 px @ .045; STYLE.md 5 tokens; accent prop",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/starters/html-canvas/index.html:9",
+   "kosif-tool/templates/STYLE.md",
+   "kosif-tool/starters/remotion/src/Film.tsx:49",
+   "kosif-tool/starters/remotion/props.example.json"
+  ],
+  "styles": [],
+  "tags": [
+   "قالب",
+   "بداية",
+   "خانات الألوان",
+   "starter",
+   "scaffold",
+   "remotion",
+   "withAlpha",
+   "style.md"
+  ]
+ },
+ {
+  "id": "COLOR-42",
+  "family": "color-palette-grading",
+  "name_ar": "ثيمات HyperFrames وعقد الرموز",
+  "name_en": "HyperFrames themes + 18-token contract",
+  "status": "ready",
+  "what": "ملف ثيم واحد يعيد تلوين كل المكونات لأنها تقرأ 18 متغير CSS نفسها (لوحة، خط، شكل، حركة) — وثلاثة ثيمات جاهزة: محايد، جريء، تحريري. / One theme file restyles every component because all read the same 18 CSS custom properties (palette, type, shape, motion); three ready themes: neutral, bold, editorial.",
+  "how": "One :root defines --bg --fg --muted --surface --border --brand --accent --accent-2 --font-display --font-body --font-mono --radius --space-1..3 --dur-beat --ease-standard --ease-emphasis; primitives use var(--fg, #f8fafc) and never declare tokens in :root. Link themes/*.css before compositions (plain CSS, nothing to install).",
+  "params": "neutral: #f3f4f6 / #111318 / brand #1d4ed8 / #0284c7 / #60a5fa, Inter, beat .4 s; bold: #080611 / #fff8ff / #ff3d81 / #7c5cff / #00d4ff, Impact, beat .32 s, overshoot cubic-bezier(.34,1.56,.64,1); editorial: #e9e1d2 / #202725 / #246b63 / #31776f / #8a6549, Georgia, beat .48 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/themes/CONTRACT.md",
+   "kosif-one/vendor/hyperframes/themes/neutral.css",
+   "kosif-one/vendor/hyperframes/themes/bold.css",
+   "kosif-one/vendor/hyperframes/themes/editorial.css"
+  ],
+  "styles": [],
+  "tags": [
+   "ثيم",
+   "رموز",
+   "متغيرات CSS",
+   "theme",
+   "tokens",
+   "css variables",
+   "hyperframes"
+  ]
+ },
+ {
+  "id": "COLOR-43",
+  "family": "color-palette-grading",
+  "name_ar": "مكتبات باليتات جاهزة",
+  "name_en": "Ready palette libraries (families, deck presets, recut themes, demo kit, dark ladders)",
+  "status": "documented",
+  "what": "مئات الألوان مرتبة حسب الغرض: 9 عائلات × 8 صفوف، و12 ستايل عروض بخطوطها، و6 ثيمات بطاقات، وطقم ديمو داكن دلالي، وسلالم خلفيات داكنة. / Hundreds of colours sorted by purpose: 9 families × 8 rows, 12 deck presets with fonts, 6 recut card themes, a semantic dark demo kit and dark-ground ladders.",
+  "how": "Pick ONE row and declare one bg, one fg, one accent before writing HTML; never mix rows. Demo kit timing: entrances 0.5–0.8 s cubic-bezier(0.16,1,0.3,1), gaps 0.2–0.4 s, crossfade 0.3–0.5 s, hold 1–2 s. Heading text gradient #FFFFFF→#9B9B9B on dark / #000000→#666666 on light. The Arko sushi palette (#131209 / #f3eadb / #d0703a) sits in vendor code with no licence — look, don't copy. (full table in references/powers/color-palette-grading.md)",
+  "params": "9×8 rows (~360 hex); 12 deck presets; 6 recut themes",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/palettes/dark-premium.md",
+   "kosif-atlas/skills/880-superloopy/1944-superloopy-slides/STYLE_PRESETS.md",
+   "kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md",
+   "kosif-atlas/skills/166-demo-video/535-demo-video/references/scene-design-system.md"
+  ],
+  "styles": [],
+  "tags": [
+   "مكتبة ألوان",
+   "باليتات جاهزة",
+   "palette library",
+   "presets",
+   "neon",
+   "pastel",
+   "corporate",
+   "premium"
+  ]
+ },
+ {
+  "id": "COLOR-44",
+  "family": "color-palette-grading",
+  "name_ar": "اللون حسب العاطفة والقطاع والثقافة",
+  "name_en": "Brand colour by emotion, sector and culture",
+  "status": "documented",
+  "what": "جدول يقترح لونًا أساسيًا حسب الشعور المطلوب، وأعراف القطاعات، وتنبيه لمعاني الألوان عند الجمهور العربي والخليجي والمصري. / A table proposing a primary by desired emotion, sector conventions, and a watch-list for colour meanings with Arabic, Gulf and Egyptian audiences.",
+  "how": "Pick one primary, derive light/dark/alpha in HSL (lighten 15%, darken 8%, glow rgba(primary,.12)) and validate 4.5:1. Never use the same hue for primary and destructive; finance blue/green trust, health calm teal; run a competitive audit and decide fit vs break. Before locking, list what each colour means to the target audience (red, white, green, yellow differ by culture) and add text cues.",
+  "params": "trust #1E40AF; navy #1E3A5F; energy #DC2626; warm #EA580C; growth #16A34A; teal #0D9488; premium #7C3AED; developer #4F46E5; heritage amber #D97706; neutral #374151",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/3454-brand-landingpage/14160-brand-landingpage/references/stitch-architecture.md",
+   "kosif-atlas/skills/1567-tonone/4427-form-palette",
+   "kosif-atlas/skills/1503-universal-design-principles/3813-color"
+  ],
+  "styles": [],
+  "tags": [
+   "عاطفة",
+   "قطاع",
+   "ثقافة",
+   "معنى اللون",
+   "emotion",
+   "industry",
+   "culture",
+   "brand color",
+   "symbolism"
+  ]
+ },
+ {
+  "id": "COLOR-45",
+  "family": "color-palette-grading",
+  "name_ar": "ألوان الحالات الدلالية",
+  "name_en": "Semantic status colours (soft-tint chips, 5-stop ladder)",
+  "status": "proven",
+  "what": "كل حالة (نجاح، تحذير، خطر، معلومة) لها صبغة خفيفة خلفية ولون قوي أمامي وأيقونة، وسلّم من خمس درجات لكل لون — فالمعنى لا يحمله اللون وحده. / Each status gets a pale tint background, a strong foreground and an icon, plus a five-stop ladder per hue — meaning never rides on colour alone.",
+  "how": "Chip: 36×36 rounded tile, bg = soft token, fg = strong token, icon 18 px (violet #f0edfa/#5b2acb, teal #e4f4f3/#087f86, amber #fff1d7/#ad6700, coral #fbe8ea/#c93343) — palette.test.mjs ran here. Ladder: 50 tinted bg, 300 border/icon, 500 fill, 700 text on tint, 900 text on dark (50+700 passes AA body; 50+500 large text only). Default hues HSL success 142 (70%), warning 38 (90%), destructive 0 (75%), info 220 (90%). Diagram pairs light fill + dark stroke: start #fed7aa/#c2410c, success #a7f3d0/#047857, decision #fef3c7/#b45309, AI #ddd6fe/#6d28d9, error #fecaca/#b91c1c; inactive dashed. Seen: 2×3 dark glass verdict cards with corner glow radius 120 px α .35, stagger 80 ms.",
+  "params": "tile 36 px icon 18 px; stops 50/300/500/700/900",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-audit-pro/app/globals.css:1297",
+   "kosif-audit-pro/tests/palette.test.mjs",
+   "kosif-atlas/skills/1503-universal-design-principles/3815-color-semantic-systems",
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw"
+  ],
+  "styles": [
+   "pm-kmasiff-cc72cb",
+   "pm-parkerrex-1a54fe"
+  ],
+  "tags": [
+   "حالات",
+   "نجاح",
+   "خطأ",
+   "شارات",
+   "status",
+   "success",
+   "error",
+   "chips",
+   "semantic"
+  ]
+ },
+ {
+  "id": "COLOR-46",
+  "family": "color-palette-grading",
+  "name_ar": "باليتات آمنة لعمى الألوان",
+  "name_en": "Colour-blind-safe categorical palettes",
+  "status": "ready",
+  "what": "أوكابي-إيتو وبول تول ولوحة الفئات السبع بإضاءة متساوية — ومع كل لون شكل أو تسمية، لأن 8% من الرجال لا يميزون الأحمر من الأخضر. / Okabe-Ito, Paul Tol and a matched-lightness 7-hue set — always paired with shape or label, because ~8% of men miss red/green.",
+  "how": "Okabe-Ito #E69F00 #56B4E9 #009E73 #F0E442 #0072B2 #D55E00 #CC79A7 #000000 (on white use #0072B2 #D55E00 #009E73 #CC79A7 #000000 for 3:1). Tol Bright #4477AA #EE6677 #228833 #CCBB44 #66CCEE #AA3377 #BBBBBB (7); High-contrast #004488 #DDAA33 #BB5566 (3, best in greyscale); Vibrant #EE7733 #0077BB #33BBEE #EE3377 #CC3311 #009988 #BBBBBB. 7-hue: hsl(220 70% 55%) (160 60% 45%) (40 90% 55%) (310 60% 55%) (10 70% 55%) (270 50% 55%) (85 50% 45%). Never interpolate these; ≤5–7 categories; add icons, direct labels, dashes; simulate with Chrome 'Emulate vision deficiencies'.",
+  "params": "Okabe-Ito 8 (5 on white); Tol 7/3/7/9/6; ≤7 hues",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/assets/color_palettes.py",
+   "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/references/color_palettes.md",
+   "kosif-atlas/skills/1503-universal-design-principles/3815-color-semantic-systems",
+   "kosif-atlas/skills/1503-universal-design-principles/3814-color-accessibility-and-mode"
+  ],
+  "styles": [],
+  "tags": [
+   "عمى الألوان",
+   "إتاحة",
+   "رسم بياني",
+   "colorblind",
+   "okabe-ito",
+   "paul tol",
+   "categorical",
+   "accessibility"
+  ]
+ },
+ {
+  "id": "COLOR-47",
+  "family": "color-palette-grading",
+  "name_ar": "خرائط الألوان وتسلسل الرسم البياني",
+  "name_en": "Colormap semantics and chart colour hierarchy",
+  "status": "documented",
+  "what": "اختر نوع الخريطة اللونية حسب معنى البيانات، ولون تمييز واحد يحمل الاستنتاج والباقي رمادي، ولكل لون معنى واحد في الفيلم كله. / Pick the colormap by what the data means; one accent carries the insight, context stays grey; each hue has exactly one meaning per film.",
+  "how": "Sequential = monotonic lightness (viridis, plasma, inferno, magma, cividis); diverging only around a meaningful centre (RdBu_r, PuOr, BrBG) with a centred norm (e.g. vmin −2, centre 0, vmax 5), no-data in neutral grey; cyclic for angles/hours; ColorBrewer at its exact class count; no rainbow for ordered values. Chart hierarchy: ≤4 hues, chrome at 20–30% contrast, highlight 100% vs others 35–45%, no gradients/shadows/perspective on data. Write a role→hex ledger before animating; accent on ≤2 marks; never let red/green or blue/purple alone carry a distinction.",
+  "params": "≤4 hues; chrome 20–30%; others 35–45%; accent ≤2 marks",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/charts.md:19-20",
+   "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/references/color_palettes.md",
+   "kosif-atlas/skills/2690-build-web-data-visualization/10318-accessibility-and-inclusive-visualizatio/references/color-contrast-and-redundant-encoding.md",
+   "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "بيانات",
+   "خريطة لونية",
+   "رسم بياني",
+   "colormap",
+   "viridis",
+   "diverging",
+   "chart color",
+   "insight"
+  ]
+ },
+ {
+  "id": "COLOR-48",
+  "family": "color-palette-grading",
+  "name_ar": "التدرج الحراري بسبع محطات",
+  "name_en": "Thermal 7-stop heat ramp",
+  "status": "proven",
+  "what": "تدرج كاميرا حرارية (بارد، عميق، أخضر، أصفر، برتقالي، أحمر، أبيض) لحقول الحرارة وخرائط الشدة، مع سقف يمنعه من الاحتراق للأبيض. / A heat-camera ramp (cold, deep, green, yellow, orange, red, white) for heat fields and intensity maps, capped so it never blows to white.",
+  "how": "Map heat 0–1 through seven stops blended with smoothstep at 0, .12, .30, .45, .60, .78, 1; cap heat at 0.75; background heat 0.34–0.66; keep dark→light so heat reads as brightness when you swap in a brand ramp. Full-screen fragment shader: fbm 5 octaves warp-the-warp, melt cycle 6 s, blob 0.37, flow 0.26, rim 0.6, halo 0.45; trail 24 points fading over 1.6 s.",
+  "params": "stops 0/.12/.30/.45/.60/.78/1; cap .75",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md",
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/references/thermal-finger-trail.html"
+  ],
+  "styles": [],
+  "tags": [
+   "حراري",
+   "خريطة حرارة",
+   "thermal",
+   "heatmap",
+   "ramp",
+   "shader"
+  ]
+ },
+ {
+  "id": "COLOR-49",
+  "family": "color-palette-grading",
+  "name_ar": "تدرجا ماغما والجبل",
+  "name_en": "Magma colormap and alpine terrain ramp",
+  "status": "ready",
+  "what": "تدرج ماغما مضغوط (أسود → بنفسجي → أرجواني → مرجاني → برتقالي → ذهبي باهت) للطيف الصوتي، وتدرج جبلي يلون التضاريس بالارتفاع والميل. / A compact magma ramp (black→violet→magenta→coral→orange→pale gold) for spectrograms, and an alpine ramp that colours terrain by height and slope.",
+  "how": "qa._magma(v) stops 0 (0,0,4) · .2 (40,11,84) · .4 (120,28,109) · .6 (192,58,118) · .75 (236,105,89) · .88 (251,165,74) · 1 (252,253,191). K3.alpineColour as makeTerrain colour: deep #2f4a3a (<−5 m), sand #b9a77a → grass #4e6e34 (5–25 m), grass2 #6b8a3c, rock #5d5a58/#7a6f66 (120–420 m, slope .28–.6), snow #f4f7fb above 520–700 m.",
+  "params": "magma 7 stops; alpine 6 bands",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/qa.py:439",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:135"
+  ],
+  "styles": [],
+  "tags": [
+   "ماغما",
+   "تضاريس",
+   "طيف صوتي",
+   "magma",
+   "spectrogram",
+   "terrain",
+   "alpine",
+   "ramp"
+  ]
+ },
+ {
+  "id": "COLOR-50",
+  "family": "color-palette-grading",
+  "name_ar": "مولّد التناغم اللوني",
+  "name_en": "Harmony generator 2D/3D + harmony detector",
+  "status": "proven",
+  "what": "يبني ألوانًا متكاملة أو متجاورة أو ثلاثية أو منقسمة أو رباعية من درجة أساس واحدة، كنصوص CSS أو ألوان three.js — ويصنّف لوحة موجودة. / Builds complementary/analogous/triadic/split/tetradic hues from one base as CSS strings or THREE.Color, and classifies an existing palette.",
+  "how": "MOTION.palette(scheme, baseHue, {sat, light:[…]}) → {hues, css}; K3.harmony(scheme, hue, {sat .6, light .5}) → THREE.Color. Offsets: complementary 0/180, analogous −30/0/30, triadic 0/120/240, split 0/150/210, tetradic 0/60/180/240; defaults S 60% L 50%. blue_hour uses harmony('complementary', 222) → [222, 42] (blue sky vs orange lamps). Keep one family dominant, the complement only as accent. Detector: take chromatic colours (OKLCH C ≥ 0.04), test mono (±15°), analogous (±30°), complementary, split (±150°), triadic (±120°), square — tolerance ±15°; free combinations allowed but flagged. Ran here in Chromium (vendored kit/gsap.min.js + motion-kit.js): MOTION.palette('split', 210) → hues [210, 0, 60] as hsl(… 60% 50%), ('complementary', 222) → [222, 42].",
+  "params": "offsets as listed; tolerance ±15°; C ≥ .04",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:113",
+   "kosif-studio/motion/kit/three-kit.js:1176",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:24",
+   "kosif-atlas/skills/3593-bespoke-design-system/14409-bespoke-design-system/references/color-harmony-math.md"
+  ],
+  "styles": [],
+  "tags": [
+   "تناغم",
+   "ألوان متكاملة",
+   "عجلة الألوان",
+   "harmony",
+   "complementary",
+   "triadic",
+   "analogous",
+   "color wheel"
+  ]
+ },
+ {
+  "id": "COLOR-51",
+  "family": "color-palette-grading",
+  "name_ar": "تدرجات إدراكية OKLCH وظلال بإزاحة الصبغة",
+  "name_en": "Perceptual OKLCH ramps and hue-shifted shading",
+  "status": "documented",
+  "what": "ابنِ السلالم في OKLCH حتى تبدو الخطوات متساوية فعلًا، وحرّك الصبغة: الظلال تبرد والإضاءات تدفأ بدل التغميق فقط؛ ولا أبيض نقي ولا رمادي محايد في لوحة فنية. / Build ramps in OKLCH so steps look even, and shift hue — shadows cooler, highlights warmer — instead of just darkening; no pure white or neutral grey in a painterly palette.",
+  "how": "sRGB → linear → OKLab → OKLCH (Ottosson 2020); keep H within ±10° per family, vary L and C; Chromium renders oklch() natively in HTML/Remotion. Neutral ramp check: OKLCH L per stop, deltas d, uniformity = 1 − (max|d| − min|d|)/mean|d| ≥ 0.7. Material ramps 3–5 steps rotating hue 10–20° and raising saturation in darks. Painting family: deep blues, pale yellows, a green touch, warm ochre.",
+  "params": "hue drift ≤10°; uniformity ≥0.7; shift 10–20°/step",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/3593-bespoke-design-system/14409-bespoke-design-system/references/color-harmony-math.md",
+   "kosif-atlas/skills/2460-pixel-art/9527-sprite",
+   "kosif-atlas/skills/2981-designer-skill/12625-designer-skill/reference/css-techniques.md",
+   "kosif-tool/styles/pm-mandelduck-95fd08/BRIEF.md"
+  ],
+  "styles": [],
+  "tags": [
+   "OKLCH",
+   "تدرج",
+   "ظلال",
+   "إدراكي",
+   "oklch",
+   "perceptual",
+   "ramp",
+   "hue shift",
+   "shading"
+  ]
+ },
+ {
+  "id": "COLOR-52",
+  "family": "color-palette-grading",
+  "name_ar": "حساب التباين WCAG",
+  "name_en": "WCAG contrast math, role tiers and alpha flattening",
+  "status": "proven",
+  "what": "احسب الإضاءة النسبية ونسبة التباين لكل نص فوق خلفيته قبل الرندر، بعتبة حسب دور النص، وادمج الشفافية أولًا لأن اللوحة الزجاجية فوق الفيديو تتغير. / Compute relative luminance and contrast for every caption/background pair before render, with thresholds by role, flattening alpha first because a glass plate over video changes.",
+  "how": "Decode sRGB (c/12.92 if c ≤ 0.04045 else ((c+0.055)/1.055)^2.4), L = 0.2126R + 0.7152G + 0.0722B, ratio = (Lmax+0.05)/(Lmin+0.05). Body 4.5:1 (AAA 7:1); large text/UI/brand/links 3:1; disabled/hover optional — only body failures block delivery. Translucent plates: out = fg·α + bg·(1−α) per channel, sampling the darkest and brightest frames under the plate. Accessibility cut: AAA pairs, solid borders, no text over gradients (@media (prefers-contrast: more)). design_tokens.py implements this and ran here (22 pairs pass). (code snippet in references/powers/color-palette-grading.md)",
+  "params": "4.5 / 3.0 / none; AAA 7:1",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-web-design/scripts/design_tokens.py:92",
+   "kosif-atlas/skills/3593-bespoke-design-system/14409-bespoke-design-system/references/color-harmony-math.md",
+   "kosif-atlas/skills/2199-lvtd-skills/8013-color-math-accessibility",
+   "100-superskills/skills/brand-identity-logo/SKILL.md:23"
+  ],
+  "styles": [],
+  "tags": [
+   "تباين",
+   "إتاحة",
+   "قراءة",
+   "contrast",
+   "wcag",
+   "accessibility",
+   "luminance",
+   "captions"
+  ]
+ },
+ {
+  "id": "COLOR-53",
+  "family": "color-palette-grading",
+  "name_ar": "الوضع الداكن بلا قلب",
+  "name_en": "Dark variant without inversion",
+  "status": "documented",
+  "what": "لا تقلب الألوان: خلفية قريبة من الأسود بصبغة الهوية، نص أوف وايت، وألوان الهوية أقل تشبعًا وأفتح قليلًا — وتجنب الأسود والأبيض النقيين. / Don't invert: a brand-tinted near-black ground, off-white text, brand colours desaturated and lifted — and avoid pure #000/#fff.",
+  "how": "bg hsl(220 10% 8%), text ~hsl(0 0% 90%); brand hsl(220 90% 50%) → hsl(220 70% 60%) (sat −20 pts, L +10 pts); darkest ~#111827 to avoid halation; use #0a0a0a and #fafaf9 instead of black/white; text tiers by opacity 100/60/40%, borders 10%. Re-run contrast in both modes.",
+  "params": "sat −20, L +10; tiers 100/60/40/10%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1503-universal-design-principles/3814-color-accessibility-and-mode",
+   "kosif-atlas/skills/3438-ux-design/14124-top-design"
+  ],
+  "styles": [],
+  "tags": [
+   "داكن",
+   "ليلي",
+   "dark mode",
+   "night",
+   "halation",
+   "inversion"
+  ]
+ },
+ {
+  "id": "COLOR-54",
+  "family": "color-palette-grading",
+  "name_ar": "لون تمييز واحد بمعنى واحد",
+  "name_en": "One accent, one meaning (~5% of the frame)",
+  "status": "ready",
+  "what": "لون تمييز واحد بمعنى واحد يغطي نحو 5% من البكسلات، ولحظة واحدة يملأ فيها الإطار؛ الوصول يُصبغ ثم يرتاح إلى المحايد؛ والمحايدات تميل لصبغة الهوية لا للرمادي. / One accent with one meaning on ~5% of pixels and one full-bleed beat; arrivals tint then relax to neutral; neutrals lean toward the brand hue instead of pure grey.",
+  "how": "Lock roles before animating: one primary, a ~9-stop neutral ramp, success/warning/destructive as a separate axis (≈5 roles). Sequences ~80% neutral / ~20% accent; accent marks exactly one element per composition and never a placeholder (stand-in cards, avatars and series are alpha steps of the ink). Arrival tints relax to neutral over 12–50 frames. premium_edit takes --ivory/--ink/--accent/--accent2 (#F5F0E6 / #121417 / #E7B65A / #F3D9A4). Seen as ink black #090909, bone #f4f1ea and one signal orange #f27525 used only for the active element; light canvas with one #ff4c2d for selection, cursor and impact numbers.",
+  "params": "accent ≈5% pixels; 80/20; tint relax 12–50 f; 5 roles",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/direct.py:288",
+   "kosif-studio/motion/references/craft-numbers.md",
+   "kosif-earth-ci-fork/docs/design/SQC-IDENTITY-ar.md",
+   "kosif-one/vendor/hyperframes/registry/components/CATALOG.md"
+  ],
+  "styles": [
+   "plotter",
+   "pm-kikelopezdesign-7cc9e8",
+   "pm-majorbaguette-fb11d7",
+   "pm-manuelogomigo-f33ca9"
+  ],
+  "tags": [
+   "لون واحد",
+   "تمييز",
+   "بساطة",
+   "one accent",
+   "restraint",
+   "80/20",
+   "focus",
+   "neutral"
+  ]
+ },
+ {
+  "id": "COLOR-55",
+  "family": "color-palette-grading",
+  "name_ar": "أنظمة لونين أو ثلاثة صارمة",
+  "name_en": "Strict two- and three-colour systems",
+  "status": "seen",
+  "what": "أنت أنتجت أفلامًا بلونين أو ثلاثة فقط حيث التباين نفسه يصنع الإيقاع: حبر وورق ولون إشارة، تُقلب الأدوار بين الفصول. / You have produced films with only two or three colours where contrast itself makes the rhythm: ink, paper and one signal colour, roles swapped between chapters.",
+  "how": "Choose ink + paper + one signal; every element must use one of them (no tints except alpha of ink); flip ground per chapter or bar (COLOR-66/67); max 3 hues, white type on a saturated single ground for heroes; avoid multi-gradients, sparkles and purple 'AI' clichés. Build: CSS vars --ink/--paper/--signal, scenes swap which is ground. (full table in references/powers/color-palette-grading.md)",
+  "params": "2–3 hues only; flip per chapter/bar",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-fionntobin-97b7af",
+   "style:pm-grace-sunnyy-29bc61",
+   "style:pm-leadnotifi-e83f94",
+   "kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero/SKILL.md"
+  ],
+  "styles": [
+   "pm-fionntobin-97b7af",
+   "pm-grace-sunnyy-29bc61",
+   "pm-leadnotifi-e83f94",
+   "plotter",
+   "pm-majorbaguette-fb11d7",
+   "pm-levabashidze-2d713a",
+   "pm-micheleharmonic-77628e"
+  ],
+  "tags": [
+   "لونان",
+   "ثلاثة ألوان",
+   "بساطة",
+   "two colour",
+   "three colour",
+   "minimal",
+   "ink paper",
+   "signal"
+  ]
+ },
+ {
+  "id": "COLOR-56",
+  "family": "color-palette-grading",
+  "name_ar": "قفل الأسلوب وبصمة المرجع",
+  "name_en": "Style lock and reference style-DNA (+ exact hex after generation)",
+  "status": "proven",
+  "what": "قفل أسلوب يُنسخ حرفيًا في كل لقطة (5 ألوان hex، إضاءة، عدسة، تلوين، حبيبات، حقبة، 3 كلمات مزاج)، ووضع S ينسخ لوك مرجع بعد فحص 5–8 لقطات فعلًا — والهوية الدقيقة تُطبق في طبقة الحركة لا تُترك لمولد الصور. / A style lock copied verbatim into every shot (5 hex, lighting, lens, grade, grain, era, 3 mood words); mode S copies a reference look only after inspecting 5–8 frames; exact brand hex is applied in the motion layer, not trusted to the generator.",
+  "how": "Intake 4–6 named hex (one bg = lightest, one accent). kinetic-flow theme S → REFERENCE stage demands DNA (palette hex, typography, objects, transitions, timing) → SCRIPT, label 'Reference: <name>'; never copy words, logos or people. Generators: 3–10 style references, then grade or overlay the true hex (e.g. a #8B2635 band) in HTML/SVG/Remotion — seeds do not transfer across models. production-profiles.test.mjs ran here (10/10).",
+  "params": "5 HEX + 3 mood words; 5–8 screenshots; 3–10 refs",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:22,46",
+   "fastify-motion-bro/tests/production-profiles.test.mjs:67-74",
+   "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md",
+   "kosif-atlas/skills/2306-generative-web-media/8850-brand-conditioned-generation"
+  ],
+  "styles": [],
+  "tags": [
+   "قفل الأسلوب",
+   "مرجع",
+   "هوية دقيقة",
+   "style lock",
+   "reference",
+   "style dna",
+   "brand hex",
+   "generation"
+  ]
+ },
+ {
+  "id": "COLOR-57",
+  "family": "color-palette-grading",
+  "name_ar": "تحويل النغمات ACES وAgX وNeutral",
+  "name_en": "Tone-mapping choice: ACES, AgX or Neutral",
+  "status": "ready",
+  "what": "اختيار منحنى تحويل النغمات لكل لقطة: ACES قوي، AgX يحفظ صبغة الإضاءات الساطعة (نيون ونار)، وNeutral أمين لألوان المنتجات. / Pick the tone curve per shot: ACES punchy, AgX keeps hue in bright highlights (neon, fire), PBR Neutral faithful for products.",
+  "how": "K3.makeRenderer(canvas, W, H, {tone:'aces'|'agx'|'neutral', exposure}) — pixelRatio 1, PCFShadowMap, preserveDrawingBuffer. Shipped exposures: blue_hour agx 1.05, night_boat agx .95, bunny neutral .9, lab neutral 1.0, koi .62, sound_ground .7; omni cinematic template uses ACESFilmic exposure 1.25 with FogExp2(#030712, .035). Runs in Chromium with no npm install through the pre-built `kit/three-kit.bundle.js` (904 KB IIFE with three.js inside); the ES-module `three-kit.js` needs `three` resolvable.",
+  "params": "exposure .5–1.25; agx for lamps/neon, neutral for products",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:76",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:17",
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/cinematic_3d.html:102",
+   "kosif-studio/motion/references/book-lessons.md"
+  ],
+  "styles": [],
+  "tags": [
+   "تحويل النغمات",
+   "ثلاثي",
+   "tone mapping",
+   "aces",
+   "agx",
+   "neutral",
+   "exposure",
+   "three.js"
+  ]
+ },
+ {
+  "id": "COLOR-58",
+  "family": "color-palette-grading",
+  "name_ar": "تمريرة المظهر",
+  "name_en": "Look pass: gamut mask, Purkinje night vision, split toning",
+  "status": "ready",
+  "what": "تمريرة بعد الرندر: قناع طيف يخفض تشبع الألوان خارج إسفين مختار فتتماسك اللوحة، ورؤية ليلية تُزرّق الظلال وتغرق الأحمر أولًا، وتقسيم لوني دافئ/بارد. / A post pass: a gamut mask that desaturates hues outside a chosen wedge, Purkinje night vision that turns darks rod-blue and sinks reds first, and warm-light / cool-shadow split toning.",
+  "how": "const look = K3.makeLookPass({warm, cool}); composer.addPass(look); look.userData.set({gamut:[centreHueDeg, widthDeg, strength], night:0..1, split:0..1}) before OutputPass. Gamut edge feather 25° beyond half-width; night rod weights (.05,.55,.40), tint (.72,.86,1.12) on luma .02–.35, darken 25%; split warm #ffc98a / cool #5a7fb8, luma ramp .1–.7, strength ×0.35. Shipped: blue_hour {night .55, split .45, warm #ffb36a, cool #4a6aa8}; night_boat {night .35, split .55, warm #ffa860, cool #4f6fa8}. Runs in Chromium with no npm install through the pre-built `kit/three-kit.bundle.js` (904 KB IIFE with three.js inside); the ES-module `three-kit.js` needs `three` resolvable.",
+  "params": "gamut feather 25°; split ×.35; night darken 25%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1148",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1164",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:124",
+   "kosif-studio/motion/kit/three-kit.js:1147"
+  ],
+  "styles": [],
+  "tags": [
+   "رؤية ليلية",
+   "قناع الطيف",
+   "تقسيم لوني",
+   "gamut mask",
+   "night vision",
+   "purkinje",
+   "split toning",
+   "look pass"
+  ]
+ },
+ {
+  "id": "COLOR-59",
+  "family": "color-palette-grading",
+  "name_ar": "المنظور الجوي",
+  "name_en": "Aerial perspective: 3-channel fog, fog toward the sun, sky bounce",
+  "status": "ready",
+  "what": "ضباب بثلاث قنوات (الأزرق يتشتت أكثر) فيصبح البعيد أزرق وأقل تباينًا؛ والضباب يدفأ حين تنظر نحو شمس منخفضة ويبقى باردًا بعيدًا عنها — قواعد غورني في الكود. / Per-channel fog (blue scatters most) so distance turns bluer and flatter; haze warms toward a low sun and stays cool away from it — Gurney's rules in code.",
+  "how": "K3.aerialPerspective({scatter:[0.62, 0.85, 1.25]}) before the first render (patches the fog chunk), scene.fog colour = horizon sky (FogExp2). Per frame K3.fogTowardSun(scene, camera, sunDir, cool, warm, amount) with weight = max(0, dot(view, sun))³ × amount; skyBounce({sky, ground}) cool from above, warm from below. blue_hour: four identical dark ridges 0x2b2420 at 0.7/1.4/2.6/4.5 km, FogExp2(0x8790b0, 0.00062), cool 0x8790b0, warm 0xc49a8a, amount .9, scatter [.55,.8,1.3]. Seen: exponential fog tinted to sky #90b5ca. Runs in Chromium with no npm install through the pre-built `kit/three-kit.bundle.js` (904 KB IIFE with three.js inside); the ES-module `three-kit.js` needs `three` resolvable.",
+  "params": "scatter [.62,.85,1.25]; weight dot³; ridges .7/1.4/2.6/4.5 km",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1131",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1201",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:54",
+   "kosif-studio/motion/references/book-lessons.md"
+  ],
+  "styles": [
+   "pm-ivanfioravanti-bd9261"
+  ],
+  "tags": [
+   "ضباب",
+   "منظور جوي",
+   "غروب",
+   "aerial perspective",
+   "fog",
+   "atmosphere",
+   "gurney",
+   "haze"
+  ]
+ },
+ {
+  "id": "COLOR-60",
+  "family": "color-palette-grading",
+  "name_ar": "تمريرة تلوين الشيدر",
+  "name_en": "Shader grade pass driven by story or music",
+  "status": "ready",
+  "what": "تلوين نهائي على مستوى الشيدر: ظلال باردة وإضاءات دافئة، دفء، رفع للسواد، انحراف لوني عند الحواف، فينيت وحبيبات — والمفاتيح تتغير كل إطار مع القصة أو الموسيقى. / A shader finish: cool shadows / warm highlights, warmth, black lift, edge chromatic aberration, vignette and grain — uniforms change per frame with story or music.",
+  "how": "post.grade.uniforms uWarm / uLift / uVig / uCA: shadows (0.92,0.98,1.08), highlights (1.08,1.0,0.92), warm tint (1.05,.98,.9) × uWarm .5, vignette .42 smoothstep .35–.95, CA 1.2 px at 1920 scaled by radius. Shipped: koi warm .55 lift .02; sound_ground lift .08 ('no pure black') and warm .45 + .3·bass; water_cycle warm .75→.2 over 5 s, lift .08·overcast. Egypt-2120 pass after OutputPass: CA dot(d,d)·.006, saturation mix 1.08, oval vignette .38 smoothstep(.25,.85,|d·(1.1,.82)|), grain (hash−.5)·.028 stepped at 1/30 s. Runs in Chromium with no npm install through the pre-built `kit/three-kit.bundle.js` (904 KB IIFE with three.js inside); the ES-module `three-kit.js` needs `three` resolvable.",
+  "params": "vig .38–.42; CA .006 / 1.2 px; grain .028; lift .02–.08",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:389",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:69",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:104",
+   "kosif-one/projects/egypt-2120-animation/index.html:436-444"
+  ],
+  "styles": [],
+  "tags": [
+   "تشطيب",
+   "انحراف لوني",
+   "حبيبات",
+   "دفء",
+   "film finish",
+   "chromatic aberration",
+   "grain",
+   "lift",
+   "audio reactive"
+  ]
+ },
+ {
+  "id": "COLOR-61",
+  "family": "color-palette-grading",
+  "name_ar": "ألوان مصادر الضوء العملية",
+  "name_en": "Named practical light colours (sodium, mercury, moon, flame)",
+  "status": "ready",
+  "what": "ألوان مسماة لمصادر حقيقية — صوديوم، زئبق، قمر، لهب — وحرارات متباينة (قمر 4100K مقابل فانوس 1900K) تجعل الليل مقنعًا. / Named real-source colours — sodium, mercury, moon, flame — and contrasting temperatures (4100 K moon vs 1900 K lantern) that make night believable.",
+  "how": "K3.lightColor('sodium'|'mercury'|'moon'|'flame') from LIGHT_SOURCES. night_boat: sky zenith (0.004,0.008,0.024), horizon (0.035,0.058,0.105), fog #0d1626, sea #061525, lantern #ff9a3c, title #f3ead8, rule #e0a35a — one ember source against navy and silver. Plan the gel with COLOR-23. Runs in Chromium with no npm install through the pre-built `kit/three-kit.bundle.js` (904 KB IIFE with three.js inside); the ES-module `three-kit.js` needs `three` resolvable.",
+  "params": "moon 4100 K; lantern 1900 K #ff9a3c",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:137",
+   "kosif-studio/motion/references/book-lessons.md"
+  ],
+  "styles": [],
+  "tags": [
+   "مصابيح",
+   "قمر",
+   "نار",
+   "صوديوم",
+   "practical lights",
+   "sodium",
+   "moonlight",
+   "lantern",
+   "kelvin"
+  ]
+ },
+ {
+  "id": "COLOR-62",
+  "family": "color-palette-grading",
+  "name_ar": "تشطيب الرسام الفيلمي",
+  "name_en": "Painter filmic curve, split-tone grade and grain",
+  "status": "proven",
+  "what": "في مشاهد الرسم بالكود: منحنى ACES فيلمي بتعريض وتباين وتشبع ورفع، وتلوين يرفع الظلال نحو لون والإضاءات نحو آخر، وحبيبات مبذورة. / For code-painted scenes: an ACES-fitted filmic curve with exposure/contrast/saturation/lift, a shadows→colour / highlights→colour grade, and seeded grain.",
+  "how": "filmic(exposure, contrast, saturation, lift) with y = x(2.51x+.03)/(x(2.43x+.59)+.14) — scenes that use it set ROLLOFF = 1.0; grade(shadows, highlights, amount, contrast); grain(amount, seed). Shipped: whale (1.0, 1.14, 1.04); dragon night grade #0b0820 / #ffe9cf .45 c1.06; duck storm #0a1426 / #ffe2c4 .4 c1.08. Ran here via render.py on a gradient plate: mean abs change filmic 26.7, grade 2.1, grain 4.1 (the module imports without OpenCV; its unittest file needs OpenCV).",
+  "params": "ACES fit; grade amount .4–.45; grain .02",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:769",
+   "kosif-studio/render.py:797",
+   "kosif-studio/scenes/whale_dragon.py:287",
+   "kosif-studio/scenes/dragon_girl.py:414"
+  ],
+  "styles": [],
+  "tags": [
+   "فيلمي",
+   "رسام",
+   "تقسيم لوني",
+   "filmic",
+   "aces",
+   "split tone",
+   "painter",
+   "pillow"
+  ]
+ },
+ {
+  "id": "COLOR-63",
+  "family": "color-palette-grading",
+  "name_ar": "انضغاط الإضاءات العالية",
+  "name_en": "Highlight roll-off quantiser",
+  "status": "proven",
+  "what": "يحوّل اللوحة العائمة إلى 8 بت بكتف tanh فوق نقطة ركبة، فتبقى النار والتوهج غنية بدل القص — وركبة 1.0 تحفظ ألوان الشعار بدقة. / Converts the float canvas to 8-bit with a tanh shoulder above a knee so fire and glows stay rich instead of clipping; knee 1.0 keeps logo colours exact.",
+  "how": "to_uint8(rolloff=k): x > k → k + (1−k)·tanh((x−k)/(1−k)); default 0.82, filmic scenes 1.0. Ran here: a pure white fill renders (244,244,244) at the default knee and (255,255,255) at 1.0. (code snippet in references/powers/color-palette-grading.md)",
+  "params": "knee .82 default; 1.0 exact colours",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:820",
+   "kosif-studio/scenes/whale_dragon.py:30",
+   "kosif-studio/tests/test_studio.py:99"
+  ],
+  "styles": [],
+  "tags": [
+   "إضاءات عالية",
+   "قص",
+   "توهج",
+   "highlight rolloff",
+   "tanh",
+   "clipping",
+   "tone curve"
+  ]
+ },
+ {
+  "id": "COLOR-64",
+  "family": "color-palette-grading",
+  "name_ar": "التعتيم الطرفي في كل محرك",
+  "name_en": "Vignette in every engine",
+  "status": "proven",
+  "what": "تعتيم الأطراف لتركيز العين في المركز — بنفس الروح في Canvas وthree.js وFFmpeg وCSS ومشاهد الرسام. / Edge darkening that focuses the centre — the same intent in Canvas, three.js, FFmpeg, CSS and painter scenes.",
+  "how": "2D motion-kit: MOTION.vignette(stage, {inner:55%, strength:.42, z:89}) = transparent to 55% → rgba(0,0,0,.42). Painter: vignette(strength) smoothstep from 35% of the half-diagonal, typical .45–.6 (ran here). TSL/WebGPU: v = clamp(1 − dist·1.5, 0, 1); color.rgb *= v. FFmpeg: vignette=PI/5 (Basma uses it when strength > 0.3; I used PI/4.5 in tests). CSS: radial-gradient overlay. Photo stacks 10–15% (COLOR-82).",
+  "params": "inner 55% / .42; painter .45–.6; TSL falloff 1.5; ffmpeg PI/5",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:782",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:457",
+   "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/post-processing.md",
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:457"
+  ],
+  "styles": [],
+  "tags": [
+   "تعتيم الأطراف",
+   "فينيت",
+   "تركيز",
+   "vignette",
+   "focus",
+   "edges"
+  ]
+ },
+ {
+  "id": "COLOR-65",
+  "family": "color-palette-grading",
+  "name_ar": "تدرجات بشفافية وأنماط دمج",
+  "name_en": "Gradient paints with alpha stops and blend modes",
+  "status": "proven",
+  "what": "تعبئة أي شكل أو نص بتدرج خطي أو شعاعي بمحطات تحمل شفافية (#rrggbbaa)، مع تنعيم ودمج normal/add/screen/multiply. / Fill any shape or text with linear/radial gradients whose stops carry alpha (#rrggbbaa), softened by blur, with normal/add/screen/multiply blending.",
+  "how": "lin((x1,y1),(x2,y2),[(0,c0),…,(1,cn)]) / rad((cx,cy), r, stops), evaluated per pixel by Ctx.paint; fill(shape, paint, alpha, blur, mode). Ran here with a #0b1020→#ffb86b plate.",
+  "params": "stops with alpha; modes normal/add/screen/multiply",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:46",
+   "kosif-studio/render.py:346",
+   "kosif-one/tools/kosif-studio/render.py:397"
+  ],
+  "styles": [],
+  "tags": [
+   "تدرج",
+   "شفافية",
+   "دمج",
+   "gradient",
+   "alpha",
+   "blend mode",
+   "radial",
+   "linear"
+  ]
+ },
+ {
+  "id": "COLOR-66",
+  "family": "color-palette-grading",
+  "name_ar": "قلب القطبية بين الفصول",
+  "name_en": "Polarity flip ink↔paper at act boundaries",
+  "status": "proven",
+  "what": "المسرح يبدّل الخلفية والمقدمة (حبر↔ورق) عند حدود الفصل راكبًا القطع — من الفوضى المظلمة إلى الحل المضيء، أو من الفاتح إلى «الصورة الأكبر». / The stage swaps background and foreground (ink↔paper) at an act boundary, riding a cut — dark chaos to airy solution, or light to the 'bigger picture'.",
+  "how": "MOTION.polarity(tl, stage, at, bg, fg) = one tl.to on backgroundColor + color, 0.1 s (6 f) E.smooth, only at act boundaries, never on a static frame. Ran here in Chromium with the vendored gsap: at t=0.9 s bg rgb(11,13,18), at 1.05 s mid-grey rgb(128,127,126), at 1.2 s rgb(244,241,234) with ink inverted. Observed variants: instant 0-frame switch on a drop with the hero held in place; e-ink style 2–4-frame invert flash then swap (<150 ms); #fafcf9→#0e271e over ~500 ms keeping white cards; charcoal #201f1a→cream #f6efe7 over ~300 ms at ~⅓ of the film; same hue family 90%→25% lightness for act 2.",
+  "params": "0.1 s E.smooth; 0–500 ms variants",
+  "install": "",
+  "license": "motion-kit runs on GSAP — GSAP 'Standard no-charge' license (gsap.com/standard-license), not MIT.",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:368",
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:368",
+   "style:pm-ik-builds-b8bdcf",
+   "style:pm-xelandre-363f00"
+  ],
+  "styles": [
+   "pm-ik-builds-b8bdcf",
+   "pm-bogdandragomir-35e024",
+   "pm-elliot-garreffa-f334bc",
+   "pm-xelandre-363f00",
+   "pm-gabrielbuzziv-4ff0c6",
+   "pm-deebeeeff-50fcd0",
+   "pm-twoclipping-6dd14e",
+   "pm-micheleharmonic-77628e"
+  ],
+  "tags": [
+   "قلب القطبية",
+   "داكن فاتح",
+   "فصل",
+   "polarity",
+   "invert",
+   "act break",
+   "dark light"
+  ]
+ },
+ {
+  "id": "COLOR-67",
+  "family": "color-palette-grading",
+  "name_ar": "فصول وضربات بحقول لونية",
+  "name_en": "Colour-field chapter and beat flips",
+  "status": "seen",
+  "what": "كل فصل أو ضربة يملك خلفية مسطحة مشبعة من 3–4 ألوان للهوية، والقطع نفسه يصبح تغيير لون، ولون النص ينقلب ليبقى مقروءًا. / Each chapter or beat owns one flat saturated ground from a 3–4-colour brand set; every cut is also a colour change and text inverts to stay legible.",
+  "how": "Keep ink colours constant, rotate grounds; flood the next colour across the frame (~400 ms) or hard-cut on the beat (≤1 flip per bar, never tweened when the brief says instant). Owner base: MOTION.polarity for two colours; HyperFrames palette-flip primitive re-skins via 0 ms variable flips anchored to section changes (needs gsap on the page — vendored as kit/gsap.min.js). (code snippet in references/powers/color-palette-grading.md) (full table in references/powers/color-palette-grading.md)",
+  "params": "3–4 grounds; flood ~400 ms or 0 ms on beat; ≤1 flip/bar",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-bizibeast-10f264",
+   "style:pm-jhylee95-e1152f",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/palette-flip/scene.html",
+   "kosif-tool/styles/pm-reflex-cloud-72ffe5/BRIEF.md"
+  ],
+  "styles": [
+   "pm-bizibeast-10f264",
+   "pm-jhylee95-e1152f",
+   "pm-roundtablespace-d3a1be",
+   "pm-1littlecoder-9fef89",
+   "pm-sudeepsd-1a3485",
+   "pm-agonaliu-466a8f",
+   "pm-levabashidze-2d713a",
+   "pm-buildfastwithai-53234e",
+   "pm-techyoutbe-945b56",
+   "pm-souravbhar871-61f424",
+   "pm-leadnotifi-e83f94"
+  ],
+  "tags": [
+   "خلفيات ملونة",
+   "إيقاع",
+   "فصول",
+   "color field",
+   "beat flip",
+   "chapter colors",
+   "flat background"
+  ]
+ },
+ {
+  "id": "COLOR-68",
+  "family": "color-palette-grading",
+  "name_ar": "ضربة لون كامل للإطار",
+  "name_en": "Full-bleed accent beat / brand flash fill",
+  "status": "seen",
+  "what": "لحظة واحدة يمتلئ فيها الإطار كله بلون الهوية أو لون صادم — للنكتة أو الوعد أو الشعار — ثم يعود المسرح. / One moment where the whole frame floods with the brand or a shock colour — for the punchline, promise or logo — then the stage returns.",
+  "how": "Tween the stage background to the brand for ~0.8 s while the hero shrinks to a tile (#1ed760 → darker #18a04a), or hard-cut to a flat accent frame with tone-on-tone serif text 15% darker and hold ~0.7 s, then collapse to a centre dash; or switch to lime for one scene with a hard cut or 200 ms fade, then back to cream; or one white punchline card in a dark film, cut in/out on the beat (~1 s). This is the one full-bleed beat COLOR-54 allows.",
+  "params": "hold .7–1 s; fade ≤200 ms; tone-on-tone −15%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-brainextends-e19ac3",
+   "style:pm-marouanegazouzi-6071d5",
+   "style:pm-0xnfrith-5be616",
+   "style:pm-robvjourney-ce3e1a"
+  ],
+  "styles": [
+   "pm-brainextends-e19ac3",
+   "pm-marouanegazouzi-6071d5",
+   "pm-0xnfrith-5be616",
+   "pm-robvjourney-ce3e1a",
+   "pm-manuelogomigo-f33ca9"
+  ],
+  "tags": [
+   "وميض",
+   "لون الهوية",
+   "ضربة",
+   "brand flash",
+   "full bleed",
+   "accent beat",
+   "punchline"
+  ]
+ },
+ {
+  "id": "COLOR-69",
+  "family": "color-palette-grading",
+  "name_ar": "تحريك تدرج السماء ووقت اليوم",
+  "name_en": "Sky-stop tweening: time of day and seasons",
+  "status": "ready",
+  "what": "لوحة الفيلم كلها تنجرف بتحريك محطات تدرج السماء: ليل → فجر → صباح، أو غروب → شفق → ليل في لقطة واحدة، أو دورة الفصول — مع إضاءة المصابيح حين يعتم. / The whole film palette drifts by tweening sky-gradient stops: night→dawn→morning, sunset→dusk→night in one take, or a season cycle — lamps switch on as it darkens.",
+  "how": "GSAP on SVG stop-color: tl.to('#s0', {attr:{'stop-color':…}, duration:11, ease:'sine.inOut'}, 0) then a 13.7 s second leg; silhouette fill #1d0f2c→#3a1d3c; veil opacity .38→.22 linear; stars fade out from 2 s over 9 s. Thursday-dua stops: night #0b1033/#3b1f5e/#b9507a → dawn #2b3d86/#c4677a/#ffb066 → morning #34509a/#f2a079/#ffd890. Observed: sunset #f0bd9f/#e58c8c → dusk #9f6986 → night #292142 over ~25 s; day→night with a cool grey multiply 0→35% #6a6f86 and a 300 px lamp glow; 3D: sun elevation + exposure −2 EV over 4–6 s, fog to teal-black; season parameter 0..4 (~7 s each, 1–2 s crossfades) swapping tree fill and particle emitter. gsap is vendored as kit/gsap.min.js. (code snippet in references/powers/color-palette-grading.md)",
+  "params": "legs 11 s + 13.7 s; ~25 s single take; seasons 7 s",
+  "install": "",
+  "license": "GSAP 'Standard no-charge' license (gsap.com/standard-license), not MIT.",
+  "proof": [
+   "kosif-one/projects/thursday-dua-animation/source/index.html:142-151",
+   "style:pm-demitiyageekzen-7770ad",
+   "style:pm-itsolelehmann-e47532",
+   "kosif-tool/styles/pm-kamstudiolabs-0b0824/BRIEF.md"
+  ],
+  "styles": [
+   "pm-demitiyageekzen-7770ad",
+   "pm-itsolelehmann-e47532",
+   "pm-jake11moran-a269c4",
+   "pm-theparuchh-6e08c3",
+   "pm-anas0ra-e57aea",
+   "pm-marklaunches-3b9492",
+   "pm-x4b47x-9cc84f",
+   "doodle",
+   "fake3d"
+  ],
+  "tags": [
+   "سماء",
+   "فجر",
+   "غروب",
+   "فصول",
+   "وقت اليوم",
+   "sky gradient",
+   "time of day",
+   "sunset",
+   "dawn",
+   "seasons"
+  ]
+ },
+ {
+  "id": "COLOR-70",
+  "family": "color-palette-grading",
+  "name_ar": "التلوين كقصة",
+  "name_en": "Grade change as story (drain, bloom, freeze to grey)",
+  "status": "ready",
+  "what": "اللون يحكي المغزى: صورة المال تنطفئ للرمادي بصبغة حمراء عند «غير سعيد»، وصورة الفرح تومض ثم تستقر دافئة مشبعة، واللحظة تزداد غنى — أو يتجمد اللون للرمادي لمدة مقطع موسيقي ثم يعود. / Colour carries the moral: the money plate drains to grey with a red cast on 'unhappy', the joy plate flashes over-bright and settles warm and saturated, the moment keeps getting richer — or colour freezes to grey for one bar and snaps back.",
+  "how": "GSAP on img CSS filter: drain grayscale(.9) brightness(.7) contrast(1.15) in 0.6 s + tint rgba(80,0,0,.22); joy brightness(1.6) saturate(.6) → brightness(1) saturate(1.15) in 0.9 s; moment saturate(.9) → saturate(1.25) brightness(1.05) over 8 s; tints rgba(10,30,45,.25), rgba(20,60,110,.18), rgba(255,170,60,.08). Freeze: saturate(0) + a slight contrast drop switched in 1 frame, held one bar, snapped back on the downbeat.",
+  "params": "drain .6 s; bloom .9 s; enrich 8 s; freeze = 1 bar",
+  "install": "",
+  "license": "GSAP 'Standard no-charge' license when timed with GSAP.",
+  "proof": [
+   "kosif-one/projects/whatsapp-motion/projects/success/index.html:52-59",
+   "kosif-one/projects/whatsapp-motion/projects/success/index.html:146-150",
+   "style:pm-samaote-5e2fc2"
+  ],
+  "styles": [
+   "pm-samaote-5e2fc2"
+  ],
+  "tags": [
+   "قصة",
+   "مشاعر",
+   "رمادي",
+   "تجميد",
+   "story grade",
+   "desaturate",
+   "emotion",
+   "freeze"
+  ]
+ },
+ {
+  "id": "COLOR-71",
+  "family": "color-palette-grading",
+  "name_ar": "منطق الألوان السردي",
+  "name_en": "Narrative colour logic (problem → solution)",
+  "status": "seen",
+  "what": "لون واحد لكل فصل سردي: أحمر متوهج لنقاط الألم وسماوي للعرض، وبطاقة يقلب توهجها ونصها من الأحمر للسماوي لتظهر المشكلة وهي تُحل؛ ولكل مرحلة حياة أرضيتها. / One accent per narrative act: red glow for pain points, cyan for the offer, a card whose glow and text flip red→cyan as the problem is solved; each life stage owns its ground.",
+  "how": "Ground #0a1822→#10374b radial, red #e8333f for the problem (glow + second headline line), cyan #1fb3e6 for the offer, green #2ee6a0 for proof; flip a card's glow + text over ~300 ms at the turn. Red reserved for mistakes, green for fixes (#c9463d / #1f7a4f on cream #eee8dc). Navy base, white type, orange ≤15% of the frame; red/green only in charts.",
+  "params": "1 accent per act; orange ≤15%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-ceowinkz-7c776b",
+   "style:pm-henkvaness-0e06af",
+   "style:pm-loicrambo-ad6830",
+   "kosif-tool/styles/pm-ceowinkz-7c776b/BRIEF.md"
+  ],
+  "styles": [
+   "pm-ceowinkz-7c776b",
+   "pm-henkvaness-0e06af",
+   "pm-loicrambo-ad6830",
+   "pm-ismailfahmi-557268"
+  ],
+  "tags": [
+   "مشكلة وحل",
+   "سرد",
+   "أحمر",
+   "problem solution",
+   "narrative color",
+   "pitch",
+   "transformation"
+  ]
+ },
+ {
+  "id": "COLOR-72",
+  "family": "color-palette-grading",
+  "name_ar": "لون لكل عنصر",
+  "name_en": "Per-item hue coding at equal luminance",
+  "status": "seen",
+  "what": "كل عنصر أو صوت أو فئة يحصل على صبغة واحدة تتكرر في شارته ونقطته وإطاره وتوهجه، بإضاءة متقاربة على خلفية ثابتة — والعين تتبع العنصر بلونه. / Each item, voice or class gets one hue reused on its pill, bullet, brackets and glow, at similar luminance on a constant ground — the eye tracks it by colour.",
+  "how": "Hues at ~70% saturation and similar lightness (check with COLOR-46/52); keep the base constant (navy); reuse the same colours in the recap list. Observed sets: items orange/blue/purple/amber/green/pink; instruments cyan glock, amber marimba, violet bass, red drums, yellow cymbals on navy; skills lime #c6f432 primary + #7b4fe8 / #ff2e88 / #3fd0e6 on #0a0815; multi-ink black #1c1c1c structure, red #c42d3f errors, blue #2b4a9b definitions, green #2f8a5b conclusions; hot #e8665a / cold #3ec7c0; one solid colour column per faction; sentiment classes teal/pink/yellow crossfaded.",
+  "params": "~70% saturation; equal luminance; ≤7 hues",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-gigabit-million-16b3a0",
+   "style:pm-kamstudiolabs-447565",
+   "style:pm-tak3sh8-be5012",
+   "style:pm-ibrahimwasim240-809370"
+  ],
+  "styles": [
+   "pm-gigabit-million-16b3a0",
+   "pm-kamstudiolabs-447565",
+   "pm-tak3sh8-be5012",
+   "pm-ibrahimwasim240-809370",
+   "pm-mdaman010-e7226a",
+   "pm-triglyceee-bd5b08",
+   "pm-ismailfahmi-557268"
+  ],
+  "tags": [
+   "ترميز لوني",
+   "فئات",
+   "آلات",
+   "color coding",
+   "per item",
+   "categories",
+   "legend"
+  ]
+ },
+ {
+  "id": "COLOR-73",
+  "family": "color-palette-grading",
+  "name_ar": "صبغة الإطار للحدث",
+  "name_en": "Full-frame event tint and flash",
+  "status": "seen",
+  "what": "يُصبغ الإطار كله بلون الحدث طوال مدته (تعويذة زرقاء، قرمزية، حمراء) ويقوى للحظة الاصطدام؛ وحالة الخطأ تصبغ حتى 15% عنبري. / Multiply/overlay the whole frame with the event colour for its duration (blue, crimson, red spell), flashing stronger on impact; an error state tints up to 15% amber.",
+  "how": "Overlay div or Canvas fillRect with mix-blend-mode multiply/overlay at 30–60% for the cast, 2–3 frames stronger on impact, then release; for UI errors cap at 15%. Keep text contrast checked (COLOR-52).",
+  "params": "tint 30–60%; flash 2–3 frames; error ≤15%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-0xevinho-3777d8",
+   "kosif-tool/styles/pm-jake11moran-a269c4/BRIEF.md"
+  ],
+  "styles": [
+   "pm-0xevinho-3777d8",
+   "pm-tstfully-0aa6b4"
+  ],
+  "tags": [
+   "صبغة",
+   "وميض",
+   "حدث",
+   "tint",
+   "flash",
+   "impact",
+   "error state"
+  ]
+ },
+ {
+  "id": "COLOR-74",
+  "family": "color-palette-grading",
+  "name_ar": "حلقات بتدرج الصبغة ودوران اللون",
+  "name_en": "Hue-indexed rings and slow hue rotation",
+  "status": "seen",
+  "what": "صبغة كل حلقة تُشتق من ترتيبها (وردي في الداخل حتى فيروزي في الخارج)، والعداد يأخذ لون الحلقة الداخلية؛ أو خلفية تدور صبغتها 360° كل 10 ثوانٍ بدل القطع. / Each ring's hue comes from its index (pink inside to teal outside) and the counter takes the innermost hue; or a background that rotates 360° per 10 s instead of cutting.",
+  "how": "hue = 330° → 185° across ring index, HSL L ~65% S ~80% on near-black; or step 30° per ring around the wheel. Rotation: CSS filter hue-rotate or a shader uniform 360°/10 s while keeping text ≥4.5:1 (check at the worst hue).",
+  "params": "330°→185°; L 65% S 80%; 360°/10 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-kantamk-61f410",
+   "kosif-tool/styles/pm-kantamk-61f410/BRIEF.md",
+   "kosif-tool/styles/pm-monokern-ade5b6/BRIEF.md"
+  ],
+  "styles": [
+   "pm-kantamk-61f410",
+   "pm-monokern-ade5b6"
+  ],
+  "tags": [
+   "حلقات",
+   "دوران الصبغة",
+   "عداد",
+   "hue rotate",
+   "rings",
+   "rainbow",
+   "index color"
+  ]
+ },
+ {
+  "id": "COLOR-75",
+  "family": "color-palette-grading",
+  "name_ar": "عنوان بلونين وكلمة مميزة",
+  "name_en": "Two-tone headline and accent word",
+  "status": "seen",
+  "what": "أول العبارة بلون والنكتة بلون الهوية، أو كلمة واحدة لكل ضربة تأخذ تعبئة ليمونية وخطًا سميكًا تحتها — واللون نفسه لكل الأزرار التفاعلية. / First phrase in one colour, punchline in the brand colour, or one word per beat gets a lime fill and thick underline — the same colour reused on interactive pills.",
+  "how": "Cream #f3f0e4 + lime #d8f24a on navy #07131f; black heavy grotesk #111 with the last 1–2 words in brand orange #ef5a0c and an orange dot bullet on the kicker; strict black/white + lime #c5fc34 for the beat word, magenta #ff2bd6 only for bars and bullets. For Arabic apply the colour to whole words (see ARAB powers).",
+  "params": "1 accent word per beat; underline thick",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-deifosv-04e4d3",
+   "style:pm-paulo-kombucha-96431c",
+   "style:pm-techhalla-7acbc2"
+  ],
+  "styles": [
+   "pm-deifosv-04e4d3",
+   "pm-paulo-kombucha-96431c",
+   "pm-techhalla-7acbc2"
+  ],
+  "tags": [
+   "عنوان",
+   "كلمة مميزة",
+   "لونان",
+   "headline",
+   "accent word",
+   "two tone",
+   "highlight"
+  ]
+ },
+ {
+  "id": "COLOR-76",
+  "family": "color-palette-grading",
+  "name_ar": "شريط عينات الألوان",
+  "name_en": "Swatch-strip reveal",
+  "status": "seen",
+  "what": "صف من ستة مربعات ألوان بأسماء hex تحتها يظهر من اليسار لليمين كدليل «كتاب الأسلوب». / A row of six colour squares with hex labels pops in left to right as a 'style book' proof.",
+  "how": "40 px squares, mono hex labels 8 px under each, stagger 50 ms, scale 0→1 with a small overshoot; feed it the palette from COLOR-24 or COLOR-31 (RTL layouts reverse the order).",
+  "params": "40 px; mono 8 px; stagger 50 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-kyonax-on-tech-aabc1d"
+  ],
+  "styles": [
+   "pm-kyonax-on-tech-aabc1d"
+  ],
+  "tags": [
+   "عينات ألوان",
+   "هوية",
+   "swatches",
+   "style guide",
+   "palette reveal"
+  ]
+ },
+ {
+  "id": "COLOR-77",
+  "family": "color-palette-grading",
+  "name_ar": "باليت مفهرسة من 16 لونًا",
+  "name_en": "Indexed 16-colour palette with alternating accent flash",
+  "status": "idea",
+  "what": "فكرة: سقف 16 لونًا للفيلم كله، ولونا تمييز يتبادلان على الإطارات الفردية والزوجية لثلاثة إطارات عند كل تعويذة، وومضة أخيرة بأربعة ألوان. / Idea: cap the whole film at 16 colours; two accents alternate on odd/even frames for 3 frames per spell, and a final 4-colour flash.",
+  "how": "Untested: keep an indexed palette array, quantise every frame to it (Pillow quantize with a fixed palette or HyperFrames ordered dither), swap the two accent indices on frame parity for 3 frames.",
+  "params": "16 colours; 2 accents; 3-frame flash",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md"
+  ],
+  "styles": [],
+  "tags": [
+   "بكسل",
+   "ريترو",
+   "16 لون",
+   "indexed palette",
+   "pixel art",
+   "retro",
+   "flash"
+  ]
+ },
+ {
+  "id": "COLOR-78",
+  "family": "color-palette-grading",
+  "name_ar": "أرضيات داكنة شعاعية",
+  "name_en": "Radial dark grounds",
+  "status": "proven",
+  "what": "خلفية داكنة بمركز أفتح قليلًا — كحلي تقني، جمر دافئ، توهج أحمر، HUD دافئ — وهي بداية القالب المختبر. / A dark ground with a slightly lighter centre — tech navy, ember, red glow, warm HUD — and the tested starter's default.",
+  "how": "Canvas starter: radial-gradient(#182446 → #0b1020 55%) + 90 px grid at .045 (tested). Fastify: createLinearGradient(0,0,w,h) stop0 #0c1728 on even scenes / #132337 on odd → #090d1d, so consecutive scenes breathe. 3D: K3S.studioBackdrop({inner #1e4a44, mid #0c2224 at 55%, outer #050c0d, cy .42}) as scene.background (512 px canvas). Observed: navy #131e35 → #0a121f; ember: black + off-centre #43211a at 40%; warm HUD #3a1a0e → #0e0e0b + 40 px grid at 4% + vignette; dark + radial red 15%; navy + gold accent.",
+  "params": "centre→edge 55%; grid 90 px @ .045; alt start per scene",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/starters/html-canvas/index.html:14",
+   "fastify-motion-bro/web/motion.js:9",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:336",
+   "style:pm-tankazunori0914-0fc886"
+  ],
+  "styles": [
+   "pm-yunn260414-60d996",
+   "pm-astrodevil-3f2054",
+   "pm-tankazunori0914-0fc886",
+   "pm-tstfully-0aa6b4",
+   "pm-ezshine-c90d73",
+   "pm-kamstudiolabs-c9bb28"
+  ],
+  "tags": [
+   "خلفية داكنة",
+   "شعاعي",
+   "كحلي",
+   "dark background",
+   "radial gradient",
+   "navy",
+   "hud"
+  ]
+ },
+ {
+  "id": "COLOR-79",
+  "family": "color-palette-grading",
+  "name_ar": "أرضية ورقية كريمية",
+  "name_en": "Warm paper editorial ground",
+  "status": "seen",
+  "what": "ورق كريمي دافئ بحبر شبه أسود ولون واحد للفعل، مع فينيت شعاعي خفيف — للفصول الهادئة والخاتمات العاطفية والشرح التحريري. / Warm cream paper with near-black ink and one action colour, under a faint radial vignette — for calm chapters, emotional outros and editorial explainers.",
+  "how": "Base #f4eee0 / ink #1f1b17 / highlight #f6cf9a / action #d9472b; radial #fcf7ed → #f2ebe1 with rust #c0502e; #efefe5 with an 8% vignette behind dark UI cards; #e6e1d2 with a 35% edge vignette and coral accent words in italic serif; split variant: two close grounds #f6f2e9 / #ebdcc7 with a soft shadow seam, coffee ink #3e2a20, terracotta #b0643a. Owner equivalents: ledger #fbf8f3 (COLOR-32), viral-editorial palettes 1/3 (COLOR-39).",
+  "params": "vignette 8–35%; one action colour",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-1stnoel-c20a89",
+   "style:pm-ho-ba-f3f0e9",
+   "style:pm-kloss-xyz-15182a",
+   "style:pm-sarut0bisasuke-cefa43"
+  ],
+  "styles": [
+   "pm-1stnoel-c20a89",
+   "pm-ho-ba-f3f0e9",
+   "pm-iammxfschr-d68f90",
+   "pm-kloss-xyz-15182a",
+   "pm-sarut0bisasuke-cefa43",
+   "pm-wani-shola-16ca7a",
+   "pm-amitsingha89-150378",
+   "pm-henkvaness-0e06af"
+  ],
+  "tags": [
+   "ورق",
+   "كريمي",
+   "تحريري",
+   "paper",
+   "cream",
+   "editorial",
+   "warm background"
+  ]
+ },
+ {
+  "id": "COLOR-80",
+  "family": "color-palette-grading",
+  "name_ar": "خلفية بقع ضبابية متحركة",
+  "name_en": "Drifting blob / mesh-gradient ambient ground",
+  "status": "install",
+  "what": "3–4 بقع لونية ضخمة شديدة الضبابية تنجرف ببطء على أساس فاتح أو داكن — شفق بنفسجي برتقالي أسفل الإطار، أو باستيل خوخي ولافندر، أو تدرج خطي باستيل مع شبكة نقاط. / 3–4 huge, heavily blurred colour blobs drifting slowly over a light or dark base — violet/orange aurora along the bottom, peach/lavender pastels, or a pastel linear gradient with a dot grid.",
+  "how": "Pure CSS (works now): absolutely positioned divs with radial-gradient(closest-side, colour, transparent), size 60–80% of width, opacity .15–.9, blur 120–300 px, sine drift period 8–12 s (10–40 px per 10 s); warm one blob up on a key event. Pastel linear: linear-gradient(180deg, #c4a4ed, #f3daed) with #1c1838 text (>7:1), or 30° peach #f6eada → lavender #dfe4f2 with 1 px dots every 24 px at 8%. Shader: noise(uv·k + t·0.05) mixing #00F0FF / #7000FF / #000000. HyperFrames ready blocks: mesh-gradient-bg, mk-background (10 s, 1920×1080, GSAP). (code snippet in references/powers/color-palette-grading.md)",
+  "params": "blur 120–300 px; period 8–12 s; dots 1 px / 24 px @ 8%",
+  "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add mesh-gradient-bg",
+  "license": "the HyperFrames blocks are timed with GSAP — GSAP 'Standard no-charge' license; the pure-CSS recipe needs no licence.",
+  "proof": [
+   "style:product",
+   "kosif-one/vendor/hyperframes/registry/components/mesh-gradient-bg/mesh-gradient-bg.html",
+   "kosif-one/vendor/hyperframes/registry/blocks/mk-background/mk-background.html",
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [
+   "product",
+   "pm-justincooperman-e7bbc4",
+   "pm-mehul4795-4a7007",
+   "pm-sachaarbonel-8f14f4",
+   "pm-samuel-yostt-891f87",
+   "pm-sudo-kiran-4f8b59",
+   "pm-francoxavier33-d2dfd2",
+   "pm-gonzalomacagno-2de1a9",
+   "pm-ai-baymax-0ef9dd"
+  ],
+  "tags": [
+   "بقع ضبابية",
+   "شفق",
+   "باستيل",
+   "خلفية متحركة",
+   "mesh gradient",
+   "aurora",
+   "blob",
+   "pastel",
+   "ambient"
+  ]
+ },
+ {
+  "id": "COLOR-81",
+  "family": "color-palette-grading",
+  "name_ar": "لوحات شيدر WebGPU",
+  "name_en": "WebGPU shader colour plates",
+  "status": "install",
+  "what": "سبع خلفيات شيدر جاهزة مدة كل منها ثانيتان: بقعة مرجانية، عجلة ألوان، تدرج متدفق، خريطة حرارية، تدرج شبكي، بلازما، دوامة. / Seven ready 2 s shader plates: coral Blob, ColorWheel, FlowingGradient, Heatmap orb, MeshGradient, Plasma, Swirl.",
+  "how": "`npx hyperframes add blob|color-wheel|flowing-gradient|heatmap|mesh-gradient|plasma|swirl`, or place lib/shaders.iife.js (1,444,793 bytes, shaders 4.0.0) beside the HTML and declare <canvas data-shader=\"Plasma\" width=1920 height=1080> in a root marked data-requires-webgpu data-no-timeline. Rendering needs a WebGPU-capable Chromium — headless WebGPU is not verified here; fall back to COLOR-80's CSS blobs if it fails.",
+  "params": "7 shaders; 1920×1080; 2 s loops",
+  "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add plasma",
+  "license": "Apache-2.0 AND MIT (see lib/shaders.THIRD-PARTY-LICENSES.txt).",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/plasma/plasma.html",
+   "kosif-one/vendor/hyperframes/registry/blocks/mesh-gradient/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/blob/lib/shaders.THIRD-PARTY-LICENSES.txt"
+  ],
+  "styles": [],
+  "tags": [
+   "شيدر",
+   "بلازما",
+   "خلفية",
+   "webgpu",
+   "shader",
+   "plasma",
+   "gradient",
+   "background plate"
+  ]
+ },
+ {
+  "id": "COLOR-82",
+  "family": "color-palette-grading",
+  "name_ar": "توحيد الطبقات",
+  "name_en": "Unify the stack: one grade, grain, vignette",
+  "status": "documented",
+  "what": "تلوين واحد فوق التركيب كله، وحبيبات 2–4%، وفينيت 10–15%، وظل تلامس لكل قصاصة — حتى تُقرأ الطبقات كصورة واحدة. / One grade over the whole composition, 2–4% grain, a 10–15% vignette and a contact shadow for every cut-out, so layers read as one photograph.",
+  "how": "Grade the final composite, not each layer (a per-layer warm over-sharpened HDR grade never fuses); grain 2–4%; vignette 10–15%; contact shadow blur 24 px, offset 0, opacity .35. Check question before render: is one grade plus grain applied to the whole stack?",
+  "params": "grain 2–4%; vignette 10–15%; shadow 24 px @ .35",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/photos.md:21"
+  ],
+  "styles": [],
+  "tags": [
+   "كولاج",
+   "توحيد",
+   "حبيبات",
+   "collage",
+   "composite",
+   "grain",
+   "unify"
+  ]
+ },
+ {
+  "id": "COLOR-83",
+  "family": "color-palette-grading",
+  "name_ar": "سلم المعالجة",
+  "name_en": "Treatment ladder: colour → duotone → halftone → vector",
+  "status": "documented",
+  "what": "الصورة تنزل درجات الأسلوب على الإيقاع أو الكلمات: لون كامل، ثنائي اللون، هافتون، ثم فيكتور مسطح — ونسخ بوب آرت ثنائية اللون بتوقيت متتابع. / A photo steps down stylisations on beats or words: full colour, duotone, halftone, flat vector — plus pop-art duotone clones with offset timing.",
+  "how": "duotone 300 ms → halftone 300 ms → flat vector 400 ms, each on a beat or word boundary; luma threshold 0.5; dot pitch 8–12 px at 1080 width. Duotone = map luma between two hex (CSS: grayscale + two blended layers; FFmpeg: format=gray then lut/colorize; HyperFrames two-ink-print). Tiles: one duotone shader per tile with staggered starts.",
+  "params": "300/300/400 ms; threshold .5; pitch 8–12 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/photos.md:42",
+   "style:pm-topi-003-b0e12c"
+  ],
+  "styles": [
+   "pm-topi-003-b0e12c"
+  ],
+  "tags": [
+   "ثنائي اللون",
+   "هافتون",
+   "بوب آرت",
+   "duotone",
+   "halftone",
+   "pop art",
+   "stylize"
+  ]
+ },
+ {
+  "id": "COLOR-84",
+  "family": "color-palette-grading",
+  "name_ar": "تشطيب الكولاج العتيق مع الوميض",
+  "name_en": "Vintage collage finish with exposure flicker",
+  "status": "seen",
+  "what": "عوالم كولاج فوتوغرافي بتلوين عتيق باهت: نزع 40% من التشبع، صبغة سيبيا، فينيت داكن، حبيبات متحركة، ووميض تعريض خفيف. / Photo-collage worlds under a muted vintage grade: ~40% desaturation, sepia tint, dark vignette, animated grain and a slight exposure flicker.",
+  "how": "Observed numbers: vignette 0.6, grain 8%, flicker ±3% luminance; palette #221d17 / #332b22 / #6b746d / #a09b89 / #c4c2b3 / #928573. FFmpeg recipe (this exact chain ran here; YAVG swung 89.3–99.3 across 30 frames): hue=s=0.6 → a 50% sepia colorchannelmixer → eq brightness 0.03·sin(2π·6t) with eval=frame → vignette → noise alls=8 allf=t+u. (code snippet in references/powers/color-palette-grading.md)",
+  "params": "desat 40%; vignette .6; grain 8%; flicker ±3% at ~6 Hz",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-koldo2k-5cff87"
+  ],
+  "styles": [
+   "pm-koldo2k-5cff87"
+  ],
+  "tags": [
+   "عتيق",
+   "سيبيا",
+   "وميض",
+   "كولاج",
+   "vintage",
+   "sepia",
+   "flicker",
+   "collage",
+   "film"
+  ]
+ },
+ {
+  "id": "COLOR-85",
+  "family": "color-palette-grading",
+  "name_ar": "لوحات الغروب والسايكدلك والدفع الأحادي",
+  "name_en": "Sunset/synthwave, psychedelic and monohue-push palettes",
+  "status": "seen",
+  "what": "سماء خوخية وردية نيلية مع ظلال بنفسجية وإضاءات برتقالية، وشمس عملاقة مخططة، ولوحة سايكدلك نيلية برتقالية وردية ليمونية، ودفع كل الصور نحو بنفسجي واحد بسواد مسحوق. / Peach→pink→indigo skies with purple shadows and orange highlights, a giant striped sun, an indigo/orange/pink/lemon psychedelic palette, and pushing all imagery toward one violet with crushed blacks.",
+  "how": "Sunset: sky #f5c798 → #e5a880 → #9a6766 → #170926, lift shadows to purple, highlights to orange, slight vignette. Synthwave sun: radial red gradient disc with horizontal dark bands in its bottom third. Monohue push: base #0c0b10, accent #9a6cf0, crush blacks, lift highlights, grain 4% + vignette for cohesion (FFmpeg: hue=s=0.4 then colorbalance toward violet, or a Reinhard transfer to a violet reference, COLOR-26).",
+  "params": "sunset 4 stops; violet push grain 4%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-axtonliu-0b861d",
+   "style:pm-chrisjdimarco-f068db",
+   "style:pm-gizakdag-cf4ae6",
+   "style:pm-influencer-seo-ce8c33"
+  ],
+  "styles": [
+   "pm-axtonliu-0b861d",
+   "pm-chrisjdimarco-f068db",
+   "pm-gizakdag-cf4ae6",
+   "pm-influencer-seo-ce8c33"
+  ],
+  "tags": [
+   "غروب",
+   "سينثويف",
+   "بنفسجي",
+   "سايكدلك",
+   "sunset",
+   "synthwave",
+   "psychedelic",
+   "monochrome push",
+   "violet"
+  ]
+ },
+ {
+  "id": "COLOR-86",
+  "family": "color-palette-grading",
+  "name_ar": "طين أبيض ولون للبيانات فقط",
+  "name_en": "White clay render with colour only for data",
+  "status": "seen",
+  "what": "مشهد ثلاثي الأبعاد كله رمادي فاتح كالطين، بإضاءة نصف كروية وضباب أبيض، واللون محجوز فقط لتدفق البيانات. / A 3D scene entirely in light-grey clay under hemisphere light and white fog, with colour reserved only for data flows.",
+  "how": "MeshStandardMaterial light grey (roughness high), HemisphereLight, white FogExp2; tone mapping neutral (COLOR-57); the only saturated colour is the moving data (one hue per flow, COLOR-72).",
+  "params": "1 data hue per flow; everything else grey",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-sayan-shanky-f850d8"
+  ],
+  "styles": [
+   "pm-sayan-shanky-f850d8"
+  ],
+  "tags": [
+   "طين",
+   "ثلاثي",
+   "بيانات",
+   "clay render",
+   "monochrome 3d",
+   "data flow",
+   "architecture"
+  ]
+ }
+]

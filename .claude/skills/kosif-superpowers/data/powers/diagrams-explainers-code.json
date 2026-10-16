@@ -1,0 +1,4410 @@
+[
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "التوأم الهيكلي — حل الجملونات",
+  "name_en": "Structural Twin truss solver",
+  "status": "proven",
+  "what": "Linear-elastic pin-jointed 2D/3D truss solver: reactions, axial force/stress, first-limit ranking, hypothetical brittle removal, swap and recompute.",
+  "how": "python scripts/kmotion.py structural --sample|--model geo.json --swap AB --area 0.0002 --fracture-scale 3.2 --out twin.json",
+  "params": "schema kosif.structural-twin.v0.1; ≤400 nodes/1600 members; sample A-B-C 12000 N → first limit 2.9463x; bunny 35 nodes/109 members first limit 2.38x",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/STRUCTURAL_TWIN.md",
+   "100-superskills/skills/kosif-montage-motion/PHYSICS_ADDENDUM_AR.md",
+   "kosif-studio/motion/structural_twin.py:128",
+   "kosif-studio/motion/structural_twin.py:242"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-01"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أسهم تلتصق بالحواف",
+  "name_en": "Edge-snapped, tangent-correct arrows",
+  "status": "proven",
+  "what": "Connectors end exactly at the target outline and arrowheads follow the curve's final tangent.",
+  "how": "SVG <marker orient='auto'> with refX near tip; curve modes straight, cubic with perpendicular bow, orthogonal-h/v, waypoints. Marker ~3-4x stroke width.",
+  "params": "markerWidth 3 (mm); bow e.g. 14mm",
+  "install": "",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-atlas/skills/2657-figures/10114-svg-primitives",
+   "kosif-atlas/skills/2657-figures/10113-svg-figure"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-02"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "ترتيب طبقات ثابت",
+  "name_en": "Deterministic layer paint order",
+  "status": "proven",
+  "what": "Paint background -> connectors -> boxes -> labels so lines pass under shapes.",
+  "how": "Group SVG into named <g> layers in registration order; animate layers in the same order for build-up reveals.",
+  "params": "",
+  "install": "",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-atlas/skills/2657-figures/10114-svg-primitives"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-03"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "لوحة التوأم التفاعلية",
+  "name_en": "Twin HUD viewer twinview",
+  "status": "proven",
+  "what": "Offline standalone HTML dashboard with baseline, swap and load slider (linear scaling).",
+  "how": "python scripts/kmotion.py twinview twin.json --out twin.html",
+  "params": "tested at 1365 and 390 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/STRUCTURAL_TWIN.md",
+   "100-superskills/skills/kosif-montage-motion/PHYSICS_ADDENDUM_AR.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-04"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "توأم إنشائي",
+  "name_en": "Structural twin truss overlay",
+  "status": "proven",
+  "what": "Draws a truss model in 3D over a character/object, members coloured by utilisation (green -> yellow -> red), joints riding rig parts, grow/hide/break/flash per member.",
+  "how": "const tw=K3S.trussOverlay(model, {nodeParts, radius, jointRadius}); tw.update({alpha, jointAlpha, utilOf(id), camera, flash(id)}). Model from structural_twin.py.",
+  "params": "member r .0022 m; joint r .0042; util stops 0 (.35,1,.72) .5 (.75,1,.45) .8 (1,.86,.35) 1.0 (1,.36,.28)",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:395",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:401"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-05"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "قالب النقاط",
+  "name_en": "Template: bullet-list",
+  "status": "proven",
+  "what": "Title, rule, then up to six items slide in each with a circle and a pen-drawn check mark.",
+  "how": "python scripts/mtemplates.py new NAME --template bullet-list --set key=value ... [--seconds S --size WxH --fps F] -> projects/NAME/index.html (+ fonts, gsap, motion-kit); preview in a browser; render with motion.py render.",
+  "params": "8 s; title, items split by '|' (max 6), accent #5BD1A5, bg1 #10233a, bg2 #071321; item gap .35-.7 s; check path drawn .3 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/templates/motion/bullet-list.html",
+   "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:58"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-06"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "جلسة الطرفية كمشهد",
+  "name_en": "Terminal session as a scene",
+  "status": "ready",
+  "what": "Developer-tool beats as a terminal: prompt glyph, characters typed one by one, block caret blinking on hard steps, output appearing after a settle; real sessions can be captured as asciinema .cast and rendered to GIF.",
+  "how": "HTML terminal with tl.call per character (or TextPlugin); or generate a synthetic .cast JSON and replay it in the composition (asciinema/agg are external installs).",
+  "params": "typing 15-20 cps for tech; caret 11x22px steps(1); settle ms after each command",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
+   "kosif-atlas/skills/2734-charly-check/10674-record",
+   "kosif-atlas/skills/166-demo-video/535-demo-video"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-07"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتابة حرف بحرف مع مؤشر",
+  "name_en": "Character typing with blinking cursor",
+  "status": "ready",
+  "what": "Terminal-style reveal by updating textContent over time, with a stepped cursor blink.",
+  "how": "tl.call per char at (i/len)*0.9s; cursor tl.to opacity 0 duration 0.12 yoyo repeat 20 ease steps(1). Not for Arabic per-letter (shaping changes) — reveal Arabic by mask instead.",
+  "params": "blink 0.12s",
+  "install": "",
+  "license": "unknown",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-08"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "ظهور عقد الرحلة بالتتابع",
+  "name_en": "Journey nodes pop-in stagger",
+  "status": "ready",
+  "what": "Five stage nodes pop up with spring after the line starts drawing; done = teal fill + check, current = violet with 4px halo.",
+  "how": "li animation kosif-journey-node with nth-child delays.",
+  "params": "260ms spring; translate 7px + scale .88 -> 1; delays 180/225/270/315/360 ms (45ms step); node 36px, border 2px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-pro/app/globals.css:998",
+   "kosif-audit-pro/components/kosif/overview.tsx:56"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-09"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كشف سلسلة التتبع تتابعيًا",
+  "name_en": "Trace chain sequential reveal",
+  "status": "ready",
+  "what": "Source -> request -> procedure -> result -> decision cards appear one by one, then short connector ticks grow between them.",
+  "how": "li keyframe kosif-trace-node with 50ms step delays; li::after connector 8x2px scaleX 0->1.",
+  "params": "nodes 260ms, delays 170/220/270/320/370 ms; connectors 160ms at 340ms, transform-origin right",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-pro/app/globals.css:2191",
+   "kosif-audit-pro/app/globals.css:2223",
+   "kosif-audit-pro/components/kosif/views.tsx:467"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-10"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خطوط تدفق متحركة",
+  "name_en": "Marching-ants flow edges",
+  "status": "ready",
+  "what": "Connections in a flow map animate their dash offset so inputs/drafts visibly flow; outputs stay solid.",
+  "how": "SVG line stroke-dasharray 7 6 (inputs, warn colour) or 3 5 (drafts, violet); @keyframes pf-flow{to{stroke-dashoffset:-26}} 1.6s linear infinite; vector-effect non-scaling-stroke; dot-grid canvas radial-gradient 1px every 24px.",
+  "params": "dash 7/6 and 3/5; offset -26; 1.6s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/components/studio.css:25"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-11"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خريطة الاستوديو: الكيان في المنتصف",
+  "name_en": "Studio node map (entity in the middle)",
+  "status": "ready",
+  "what": "Reusable shell that draws an entity with what feeds it on one side and what it yields on the other as draggable number-carrying nodes over a dot grid, with an inspector and fixed tabs.",
+  "how": "SK.studio.mount(root,spec) -> {paint,focus,focused}; nodes 150px x >=80px absolutely positioned translate(-50%,-50%); hover scale 1.025; drag stores positions; edges as SVG lines classed in/draft/out/note.",
+  "params": "dot grid 24px; node radius --sk-r",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/components/studio.js",
+   "kosif-earth-ci-fork/ui/components/studio.css"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-12"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرطات متدفقة",
+  "name_en": "Marching dashes (flowDash)",
+  "status": "ready",
+  "what": "Animated dashed line flow for pipes, routes and data flow diagrams.",
+  "how": "MOTION.flowDash(tl, path, at, dur, {pattern, cycles}).",
+  "params": "pattern '28 22'; 6 cycles over the duration; linear",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:247"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-13"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "منظر تخطيطي ومفكك",
+  "name_en": "Schematic / wireframe / exploded view",
+  "status": "ready",
+  "what": "Fades a character from plush to lime edge-lines over a ghost, explodes parts from the body and shows dashed joint rings.",
+  "how": "const s=K3.schematic(root,{color, ghost, lineOpacity, angle}); s.set(k, camera); s.explode(k); s.joints(k).",
+  "params": "lines #a8ff3c max opacity .42; ghost #f7f8f2 .55; explode 1.1x radial; joint ring .1-.125",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:135"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-14"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تعليقات مرتبطة بالمجسم",
+  "name_en": "Projected 3D callouts",
+  "status": "ready",
+  "what": "Dashed ring on a 3D anchor projected to screen, leader line, label card and live measurement chip.",
+  "how": "h.addCallout({anchor, label, title, text, side, radius, measure(t)}); set callout.show 0..1 each frame.",
+  "params": "ring radius 4.5% H dashed 2px accent; card 14-22% W; leader dx 9% W, dy -14% H",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:233"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-15"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "بناء نموذج الجمالون من التشريح",
+  "name_en": "Truss model authoring from anatomy",
+  "status": "ready",
+  "what": "A truss is laid on a character's anatomy: ground contacts pinned, two four-node rings (pelvis, chest) cross-braced, neck, skull nodes with 4-nearest-neighbour bracing, ear triangles to mid and tip, member areas by region.",
+  "how": "node(name, p, owner) with head-local + NECK offset and ear Euler XYZ (three.js order) rotation; bar(a,b) dedupe; knn(head, 4); area 1.2e-4 body, 4.0e-5 ear roots, 4.2e-5/3.4e-5 ear; PLUSH E 8 MPa, strength 2 MPa; loads crown −1.9 N, ear tip (−.12, 0, −.048) N.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/twin/build_truss.py:46",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/twin/build_truss.py:114"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-16"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "توأم إنشائي",
+  "name_en": "Structural truss twin",
+  "status": "ready",
+  "what": "Illustrative 2D/3D pin-jointed truss analysis + offline dashboard (#081213 bg, mint #9dffb4).",
+  "how": "structural_twin.py --sample --out r.json; twin_dashboard.py r.json --out d.html",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/structural_twin.py",
+   "100-superskills/skills/kosif-montage-motion/scripts/twin_dashboard.py:763"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-17"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خطوط متقطعة متدفقة",
+  "name_en": "Flowing dashes",
+  "status": "ready",
+  "what": "Marches a dash pattern along a path to show flow (water, data, current).",
+  "how": "MOTION.flowDash(tl, path, at, dur, {pattern, cycles}).",
+  "params": "pattern '28 22', 6 cycles, linear",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:247"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-18"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "هيكل إنشائي فوق الشخصية",
+  "name_en": "Structural truss overlay on a rig",
+  "status": "ready",
+  "what": "3D truss members and joints coloured by utilisation that ride the character rig.",
+  "how": "K3S.trussOverlay(model, {nodeParts}) fed by structural_twin.py output.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/shape-kit.js:401"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-19"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "وضع المخطط: سلكي ومفكك ومفاصل",
+  "name_en": "Schematic modes: wireframe, exploded view, joint markers",
+  "status": "ready",
+  "what": "Fades solid parts toward lime wireframe edges, explodes parts away from the body, shows dashed rings at pivots.",
+  "how": "s = K3.schematic(root, {color}); s.set(amount); s.explode(k); s.joints(k).",
+  "params": "line colour #a8ff3c, line opacity 0.42, ghost #f7f8f2",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/lab-kit.js:135"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-20"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "التوأم الإنشائي",
+  "name_en": "Structural twin (truss solver) + dashboard",
+  "status": "ready",
+  "what": "Illustrative 2D/3D pin-jointed truss analysis (SHAPE, JOINT, LOAD, BREAK, SWAP, RANK) whose numbers drive an explainer film and an offline dashboard; not certified FEA.",
+  "how": "python structural_twin.py MODEL.json (kmotion structural) ; twin_dashboard.py; bunny_twin project shows it in 3D.",
+  "params": "linear elastic, axial only, no buckling",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/structural_twin.py",
+   "kosif-one/tools/kosif-studio/motion/references/STRUCTURAL_TWIN.md",
+   "kosif-one/tools/kosif-studio/motion/twin_dashboard.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-21"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "صناديق تتسع لنصها تلقائيًا",
+  "name_en": "Auto-fit labeled boxes",
+  "status": "install",
+  "what": "Box size computed from measured text bbox plus padding so labels never overflow.",
+  "how": "fontTools glyph advance measurement (or canvas measureText in browser), then rect = bbox + padding; center with text-anchor middle + dominant-baseline middle. For Arabic use browser measuring (shaping).",
+  "params": "padding 2mm",
+  "install": "see arsenal-libraries.md",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-atlas/skills/2657-figures/10114-svg-primitives",
+   "kosif-atlas/skills/2657-figures/10113-svg-figure"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-22"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخططات Mermaid من نص",
+  "name_en": "Mermaid text-to-diagram",
+  "status": "install",
+  "what": "Flowchart, sequence, class, state, ER, Gantt diagrams from text; rendering also validates syntax.",
+  "how": "mmdc -i x.mmd -o x.svg -t dark|forest -b transparent; then animate SVG nodes (stagger opacity/draw-on edges). Needs npm @mermaid-js/mermaid-cli (Puppeteer).",
+  "params": "themes default/dark/forest/neutral",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1245-mermaid-cli/2925-mermaid-cli"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-23"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخططات D2",
+  "name_en": "D2 declarative diagrams with animated GIF",
+  "status": "install",
+  "what": "Declarative diagram language with dagre/elk layouts, many themes, outputs SVG/PNG/PDF and animated GIF.",
+  "how": "d2 binary; d2 --theme N --layout elk in.d2 out.svg; tala layout is paid.",
+  "params": "layouts dagre, elk, tala(paid)",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2173-tools-plugin/7914-d2-diagrams"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-24"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتابة ملفات Excalidraw",
+  "name_en": "Excalidraw JSON authoring",
+  "status": "install",
+  "what": "Generate .excalidraw JSON scenes (rectangles, ellipses, diamonds, arrows, lines, free text) for an editable whiteboard look.",
+  "how": "Write JSON per schema; render via excalidraw render template in headless browser or open in excalidraw.com; large diagrams built section by section.",
+  "params": "roughness 1, fontFamily 1/3",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw",
+   "kosif-atlas/skills/2966-pwdev-excalidraw/12488-excalidraw"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-25"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط معماري داكن وفاتح",
+  "name_en": "Dark/light architecture diagram themes",
+  "status": "install",
+  "what": "Dark SVG theme by default, div-based light theme for print; groupings as boundaries (VPC, cluster).",
+  "how": "HTML -> headless PNG. Ideas only.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "copyleft:WTFPL-x4919",
+  "proof": [
+   "kosif-atlas/skills/x4919-visual-gen/x20317-architecture-diagram"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-26"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "اختيار خوارزمية تخطيط الشبكات",
+  "name_en": "Graph layout algorithm choice",
+  "status": "install",
+  "what": "Trees, DAGs, block diagrams and networks each need a different layout engine.",
+  "how": "Rooted tree/decision tree -> tidy tree (Reingold-Tilford/Buchheim); flows, state machines, dependencies -> layered Sugiyama; ports/ERDs -> layered + orthogonal routing; undirected networks -> stress/Kamada-Kawai/Fruchterman-Reingold (multilevel when large); distance from root -> radial; cycles -> circular. Prefer stable layouts when animating between revisions.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout/references/algorithm-selection.md",
+   "kosif-atlas/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-27"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخططات SVG برمجية",
+  "name_en": "Programmatic SVG schematics",
+  "status": "install",
+  "what": "Python builder for boxes-and-arrows with auto-fit text, edge-snapped arrows and deterministic layer order.",
+  "how": "Canvas in mm units; layers registered in paint order (background -> connectors -> boxes -> labels); LabeledBox auto-sizes from measured text + padding; Arrow.connect snaps to box edges, curved arrows keep tangent-correct heads via marker orient=auto; save SVG (+PNG via cairosvg). The same ideas are easy to hand-write in JS for animation.",
+  "params": "font 7 pt default; padding 2 mm",
+  "install": "see arsenal-libraries.md",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-atlas/skills/2657-figures/10114-svg-primitives/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-28"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شبكة مفاهيم بقوة الجذب",
+  "name_en": "Force-directed concept graph",
+  "status": "install",
+  "what": "A mind-map outline (root, branches, children, colors) rendered as an animated force graph.",
+  "how": "Convert the JSON outline to nodes/links; run a force simulation (d3-force or force-graph) for N ticks offline, then animate nodes settling from the center in branch order; branch color per top-level node; cap depth ~6.",
+  "params": "max depth 6",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/30-learning/39-forcegraph-exporter/SKILL.md",
+   "kosif-atlas/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout/references/algorithm-selection.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-29"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تشغيل أمر في الطرفية",
+  "name_en": "Code Terminal Run",
+  "status": "install",
+  "what": "Token-chrome terminal: prompt types deterministically, executes after a beat, output lines print on cues, fresh prompt appears.",
+  "how": "Install with `npx hyperframes add code-terminal-run` (copies to compositions/components/code-terminal-run.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chr…",
+  "params": "prompt_glyph $; cadence uniform|human; vars: prompt_glyph=$; cadence=human[uniform|human]; cues=; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add code-terminal-run` (copies to compositions/components/code-terminal-run",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/code-terminal-run/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/code-terminal-run/code-terminal-run.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/code-terminal-run.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-30"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "محور الكوكبة",
+  "name_en": "Constellation Hub",
+  "status": "install",
+  "what": "Feature nodes light up in narration order while real-length SVG connectors draw out from a central hub, ending in a lockup.",
+  "how": "Install with `npx hyperframes add constellation-hub` (copies to compositions/components/constellation-hub.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chr…",
+  "params": "nodes \"Capture,Compose,Render,Share\"; cues; vars: hub_label=Product; nodes=Capture,Compose,Render,Share; cues=; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add constellation-hub` (copies to compositions/components/constellation-hub",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/constellation-hub/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/constellation-hub/constellation-hub.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/constellation-hub.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-31"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تجميع بطاقات الميزات",
+  "name_en": "Grid Card Assemble",
+  "status": "install",
+  "what": "N capability cards (thin icon draws on, mono label, optional body) stagger into a grid or list then hold.",
+  "how": "Install with `npx hyperframes add grid-card-assemble` (copies to compositions/components/grid-card-assemble.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless C…",
+  "params": "items list; layout grid|list; columns 0=auto; vars: items=Capture,Compose,Render,Publish; layout=grid[grid|list]; columns=0(0..4); cues=; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add grid-card-assemble` (copies to compositions/components/grid-card-assemble",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/grid-card-assemble/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/grid-card-assemble/grid-card-assemble.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/grid-card-assemble.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-32"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "نواة ومدارات",
+  "name_en": "Locked Nucleus Orbit",
+  "status": "install",
+  "what": "Fixed nucleus with deterministic satellite orbits that settle into a composed lockup.",
+  "how": "Install with `npx hyperframes add locked-nucleus-orbit` (copies to compositions/components/locked-nucleus-orbit.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headle…",
+  "params": "satellites 4; vars: label=core; accent=green[green|blue|violet]; satellites=4(3..6)",
+  "install": "npx hyperframes add locked-nucleus-orbit` (copies to compositions/components/locked-nucleus-orbit",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/locked-nucleus-orbit/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/locked-nucleus-orbit/locked-nucleus-orbit.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/locked-nucleus-orbit.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-33"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "الإحاطة الدائرية",
+  "name_en": "Radial Surround",
+  "status": "install",
+  "what": "Hairline chips assemble on an ellipse around a fixed centre subject and can converge inward with edge dim.",
+  "how": "Install with `npx hyperframes add radial-surround` (copies to compositions/components/radial-surround.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromiu…",
+  "params": "chips list; close_in true; vars: center_label=Your team; chips=Docs,Tickets,Dashboards,Inbox,Chat,Sheets; close_in=True; cues=; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add radial-surround` (copies to compositions/components/radial-surround",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/radial-surround/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/radial-surround/radial-surround.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/radial-surround.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-34"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "محاكي الطرفية",
+  "name_en": "Terminal Simulator",
+  "status": "install",
+  "what": "Terminal window types commands and streams log output.",
+  "how": "Install with `npx hyperframes add terminal-simulator` (copies to compositions/components/terminal-simulator.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless C…",
+  "params": "",
+  "install": "npx hyperframes add terminal-simulator` (copies to compositions/components/terminal-simulator",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/terminal-simulator/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/terminal-simulator/terminal-simulator.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/terminal-simulator.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-35"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كود على لوح ثلاثي الأبعاد",
+  "name_en": "Code 3D Extrude",
+  "status": "install",
+  "what": "Syntax-highlighted code on a lit, beveled WebGL slab rotating through space to a readable rest.",
+  "how": "Install with `npx hyperframes add code-3d-extrude` (copies the full composition to compositions/code-3d-extrude.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: Three.js 0.147.0 (CDN), Canvas 2D painter, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "8 s; 1920x1080; duration 8 s",
+  "install": "npx hyperframes add code-3d-extrude` (copies the full composition to compositions/code-3d-extrude",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-3d-extrude/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-3d-extrude/code-3d-extrude.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-3d-extrude.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-36"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "فرق الكود",
+  "name_en": "Code Diff",
+  "status": "install",
+  "what": "Colour diff: removed lines collapse in red, added lines expand in green.",
+  "how": "Install with `npx hyperframes add code-diff` (copies the full composition to compositions/code-diff.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "6 s; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add code-diff` (copies the full composition to compositions/code-diff",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-diff/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-diff/code-diff.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-diff.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-37"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "إبراز سطر كود",
+  "name_en": "Code Highlight Sweep",
+  "status": "install",
+  "what": "Highlight band sweeps a target line while context dims.",
+  "how": "Install with `npx hyperframes add code-highlight` (copies the full composition to compositions/code-highlight.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "5 s; 1920x1080; duration 5 s",
+  "install": "npx hyperframes add code-highlight` (copies the full composition to compositions/code-highlight",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-highlight/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-highlight/code-highlight.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-highlight.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-38"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تحول الكود",
+  "name_en": "Code Morph",
+  "status": "install",
+  "what": "One snippet morphs into another: tokens glide, leavers fade, enterers fade in (Shiki Magic Move behaviour on paused GSAP).",
+  "how": "Install with `npx hyperframes add code-morph` (copies the full composition to compositions/code-morph.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "7 s; 1920x1080; duration 7 s",
+  "install": "npx hyperframes add code-morph` (copies the full composition to compositions/code-morph",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-morph/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-morph/code-morph.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-morph.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-39"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كود من الجزيئات",
+  "name_en": "Code Particle Assemble",
+  "status": "install",
+  "what": "Thousands of GPU points fly to the exact glyph pixels of syntax-highlighted code.",
+  "how": "Install with `npx hyperframes add code-particle-assemble` (copies the full composition to compositions/code-particle-assemble.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: Three.js 0.147.0 (CDN), WebGL fragment shader, Canvas 2D painter, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "WebGL; 8 s; 1920x1080; duration 8 s",
+  "install": "npx hyperframes add code-particle-assemble` (copies the full composition to compositions/code-particle-assemble",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-particle-assemble/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-particle-assemble/code-particle-assemble.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-particle-assemble.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-40"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تمرير الكود",
+  "name_en": "Code Scroll To Line",
+  "status": "install",
+  "what": "Camera scrolls a long file to centre and spotlight a target line.",
+  "how": "Install with `npx hyperframes add code-scroll` (copies the full composition to compositions/code-scroll.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "6 s; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add code-scroll` (copies the full composition to compositions/code-scroll",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-scroll/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-scroll/code-scroll.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-scroll.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-41"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كود يذوب بالشيدر",
+  "name_en": "Code Shader Dissolve",
+  "status": "install",
+  "what": "Fragment shader resolves code out of seeded noise with a chromatic dissolve front and edge glow.",
+  "how": "Install with `npx hyperframes add code-shader-dissolve` (copies the full composition to compositions/code-shader-dissolve.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: Three.js 0.147.0 (CDN), WebGL fragment shader, Canvas 2D painter, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "7 s; 1920x1080; duration 7 s",
+  "install": "npx hyperframes add code-shader-dissolve` (copies the full composition to compositions/code-shader-dissolve",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-shader-dissolve/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-shader-dissolve/code-shader-dissolve.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-shader-dissolve.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-42"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "طرفية آبل برو",
+  "name_en": "Code Snippet - Apple Terminal Pro",
+  "status": "install",
+  "what": "Apple Terminal \"Pro\" profile: black background, grey text, lime cursor, per-character shell typing.",
+  "how": "Install with `npx hyperframes add code-snippet-apple-terminal-pro` (copies the full composition to compositions/code-snippet-apple-terminal-pro.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "12 s; 1920x1080; duration 12 s",
+  "install": "npx hyperframes add code-snippet-apple-terminal-pro` (copies the full composition to compositions/code-snippet-apple-terminal-pro",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-snippet-apple-terminal-pro/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-snippet-apple-terminal-pro/code-snippet-apple-terminal-pro.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-snippet-apple-terminal-pro.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-43"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "محرر في إس كود داكن 2026",
+  "name_en": "Code Snippet - Dark 2026",
+  "status": "install",
+  "what": "VS Code workbench with activity bar, sidebar, tabs, terminal, status bar and per-character typing in the Dark 2026 theme.",
+  "how": "Install with `npx hyperframes add code-snippet-dark-2026` (copies the full composition to compositions/code-snippet-dark-2026.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "11 s; 1920x1080; duration 11 s",
+  "install": "npx hyperframes add code-snippet-dark-2026` (copies the full composition to compositions/code-snippet-dark-2026",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-snippet-dark-2026/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-snippet-dark-2026/code-snippet-dark-2026.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-snippet-dark-2026.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-44"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "محرر في إس كود داكن حديث",
+  "name_en": "Code Snippet - Dark Modern",
+  "status": "install",
+  "what": "Same VS Code workbench typing scene in the Dark Modern theme.",
+  "how": "Install with `npx hyperframes add code-snippet-dark-modern` (copies the full composition to compositions/code-snippet-dark-modern.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "11 s; 1920x1080; duration 11 s",
+  "install": "npx hyperframes add code-snippet-dark-modern` (copies the full composition to compositions/code-snippet-dark-modern",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-snippet-dark-modern/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-snippet-dark-modern/code-snippet-dark-modern.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-snippet-dark-modern.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-45"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتابة الكود",
+  "name_en": "Code Typing",
+  "status": "install",
+  "what": "Token-streamed typing with a caret that tracks the frontier, no CSS animation.",
+  "how": "Install with `npx hyperframes add code-typing` (copies the full composition to compositions/code-typing.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "5 s; 1920x1080; duration 5 s",
+  "install": "npx hyperframes add code-typing` (copies the full composition to compositions/code-typing",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/code-typing/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-typing/code-typing.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/code-typing.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-46"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط القرار",
+  "name_en": "Flowchart",
+  "status": "install",
+  "what": "Animated decision tree: SVG connectors, sticky-note nodes, cursor interaction and typing correction.",
+  "how": "Install with `npx hyperframes add flowchart` (copies the full composition to compositions/flowchart.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "1920x1080; 12 s; Google Fonts: Inter; 1920x1080; duration 12 s",
+  "install": "npx hyperframes add flowchart` (copies the full composition to compositions/flowchart",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/flowchart/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/flowchart/flowchart.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/flowchart.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-47"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط القرار العمودي",
+  "name_en": "Flowchart Vertical",
+  "status": "install",
+  "what": "Portrait version of the decision-tree flowchart.",
+  "how": "Install with `npx hyperframes add flowchart-vertical` (copies the full composition to compositions/flowchart-vertical.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "1440x2560; 12 s; Google Fonts: Inter; 1440x2560; duration 12 s",
+  "install": "npx hyperframes add flowchart-vertical` (copies the full composition to compositions/flowchart-vertical",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/flowchart-vertical/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/flowchart-vertical/flowchart-vertical.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/flowchart-vertical.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-48"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شجرة القرار",
+  "name_en": "Example project: decision-tree",
+  "status": "install",
+  "what": "Animated branching flowchart example project (10 s, Inter). [Local copy lacks its sub-compositions: compositions/decision_tree.html.]",
+  "how": "Starter project: `npx hyperframes init --example decision-tree` style scaffold (index.html mounts sub-compositions via data-composition-src); reuse its palette/type as a style reference.",
+  "params": "1920x1080; 10 s",
+  "install": "npx hyperframes init --example decision-tree` style scaffold (index",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/examples/decision-tree/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/examples/decision-tree/index.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-49"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مرجع التقنيات البصرية الثلاث عشرة",
+  "name_en": "Visual techniques reference (13)",
+  "status": "install",
+  "what": "SVG path drawing, Canvas 2D procedural art (hash noise driven by a GSAP proxy), CSS 3D transforms, per-word kinetic type, Lottie, video compositing, char-by-char typing, variable-font axis animation, MotionPathPlugin, velocity-matched transitions, audio-reactive animation, clip-path reveal masks, We…",
+  "how": "techniques.md sections 1-13 + 'when to use what' energy table.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/techniques.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-50"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "فئة موشن: إبراز مقال إخباري",
+  "name_en": "Motion-graphics category: News article highlight",
+  "status": "install",
+  "what": "Category module: article text at readable size slides up, keyword highlighted in place + source card.",
+  "how": "Director sets category 'news' in shot-plan.json; builder follows motion-graphics/categories/news/module.md reuse-first.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/news/module.md",
+   "kosif-one/vendor/hyperframes/skills/motion-graphics/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-51"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "فيديو شرح بلا وجه",
+  "name_en": "Faceless explainer workflow",
+  "status": "install",
+  "what": "Arbitrary text to a narrated explainer (up to ~3 min, sweet spot 30-90 s) where every visual is invented typography, abstract graphics, diagrams or data-viz: preset -> frame.md, storyboard + SCRIPT.md, background audio, per-frame time-coded shot sequences, parallel frame workers, captions, transitio…",
+  "how": "build-frame.mjs --preset <name>; audio.mjs --script SCRIPT.md --storyboard STORYBOARD.md --voice <id> &; audio.mjs sync-durations / fetch-sfx; frame-packets.mjs; captions.mjs build; assemble-index.mjs; transitions.mjs inject + verify; lint; check; snapshot; preview; render.",
+  "params": "default voice Marcia (HeyGen) / am_michael (Kokoro)",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/faceless-explainer/SKILL.md",
+   "kosif-one/vendor/hyperframes/skills/faceless-explainer/scripts/frame-packets.test.mjs",
+   "kosif-one/vendor/hyperframes/skills/faceless-explainer/scripts/audio.test.mjs"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-52"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أنواع إطارات طلب الدمج",
+  "name_en": "PR frame types and treatments",
+  "status": "install",
+  "what": "hook, problem, change, diff, before_after, mechanism (show runtime behavior, not code), impact, evidence (+N/-M, passing test, benchmark), credits, cta mapped to code-editorial treatments (Cover, Statement, Pull-quote, navy Code Surface, Number/Impact, Closing).",
+  "how": "pr-to-video/references/story-design.md.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/story-design.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-53"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتلة تحريك الكود: code-diff",
+  "name_en": "Code animation block: code-diff",
+  "status": "install",
+  "what": "Unified diff in an editor window: removed lines collapse red, added expand green, staggered (6 s); exactly 2 states.",
+  "how": "npx hyperframes add code-diff; fill __TOKENS states / __BLOCK params per pr-to-video/references/code-vocabulary.md.",
+  "params": "",
+  "install": "npx hyperframes add code-diff",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-diff"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-54"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتلة تحريك الكود: code-morph",
+  "name_en": "Code animation block: code-morph",
+  "status": "install",
+  "what": "One snippet transforms into another; shared tokens glide (FLIP), leavers fade, enterers fade in (7 s).",
+  "how": "npx hyperframes add code-morph; fill __TOKENS states / __BLOCK params per pr-to-video/references/code-vocabulary.md.",
+  "params": "",
+  "install": "npx hyperframes add code-morph",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-morph"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-55"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتلة تحريك الكود: code-typing",
+  "name_en": "Code animation block: code-typing",
+  "status": "install",
+  "what": "Per-character typewriter reveal with gliding caret (5 s).",
+  "how": "npx hyperframes add code-typing; fill __TOKENS states / __BLOCK params per pr-to-video/references/code-vocabulary.md.",
+  "params": "",
+  "install": "npx hyperframes add code-typing",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-typing"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-56"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتلة تحريك الكود: code-highlight",
+  "name_en": "Code animation block: code-highlight",
+  "status": "install",
+  "what": "Blue band sweeps one line, the rest dims (5 s; line 0-based).",
+  "how": "npx hyperframes add code-highlight; fill __TOKENS states / __BLOCK params per pr-to-video/references/code-vocabulary.md.",
+  "params": "",
+  "install": "npx hyperframes add code-highlight",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-highlight"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-57"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتلة تحريك الكود: code-scroll",
+  "name_en": "Code animation block: code-scroll",
+  "status": "install",
+  "what": "Camera scrolls a long file to center a target line and dims the rest (6 s; line 1-based).",
+  "how": "npx hyperframes add code-scroll; fill __TOKENS states / __BLOCK params per pr-to-video/references/code-vocabulary.md.",
+  "params": "",
+  "install": "npx hyperframes add code-scroll",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-scroll"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-58"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتلة تحريك الكود: code-3d-extrude",
+  "name_en": "Code animation block: code-3d-extrude",
+  "status": "install",
+  "what": "Code on a lit beveled 3D slab that rotates and settles (8 s, WebGL).",
+  "how": "npx hyperframes add code-3d-extrude; fill __TOKENS states / __BLOCK params per pr-to-video/references/code-vocabulary.md.",
+  "params": "",
+  "install": "npx hyperframes add code-3d-extrude",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-3d-extrude"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-59"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتلة تحريك الكود: code-particle-assemble",
+  "name_en": "Code animation block: code-particle-assemble",
+  "status": "install",
+  "what": "GPU particles scatter then fly to glyph pixels and resolve to syntax color (8 s, WebGL).",
+  "how": "npx hyperframes add code-particle-assemble; fill __TOKENS states / __BLOCK params per pr-to-video/references/code-vocabulary.md.",
+  "params": "",
+  "install": "npx hyperframes add code-particle-assemble",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-particle-assemble"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-60"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتلة تحريك الكود: code-shader-dissolve",
+  "name_en": "Code animation block: code-shader-dissolve",
+  "status": "install",
+  "what": "Code compiles into existence from seeded noise with a moving dissolve front + edge glow (7 s, WebGL).",
+  "how": "npx hyperframes add code-shader-dissolve; fill __TOKENS states / __BLOCK params per pr-to-video/references/code-vocabulary.md.",
+  "params": "",
+  "install": "npx hyperframes add code-shader-dissolve",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
+   "kosif-one/vendor/hyperframes/registry/blocks/code-shader-dissolve"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-61"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "إطار الآلية: تحريك سلوك الكود",
+  "name_en": "Mechanism beat: animate what code does",
+  "status": "install",
+  "what": "Show runtime behavior instead of code: retry/backoff request lifecycle (fire -> 500 -> growing wait -> retry -> 200), cache racing lanes (cold DB vs cached), serial lane reshaping into parallel lanes, race bug then fixed flow, performance bars racing, tangled call-graph untangling, data flowing a ne…",
+  "how": "Invented SVG/GSAP diagram or flowchart / flowchart-vertical / data-chart blocks.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-62"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "وضع المخطط والتفجير",
+  "name_en": "schematic wire↔plush / explode / joints",
+  "status": "install",
+  "what": "set(k) wire↔plush, explode(k), joints(k) dashed pivots.",
+  "how": "shape-kit.js / lab-kit.js in a 3D project; read references/shape-kit.md",
+  "params": "schematic",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:101",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:113",
+   "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-63"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تراكب الجملون",
+  "name_en": "trussOverlay",
+  "status": "install",
+  "what": "Structural twin drawn in 3D over a sculpt.",
+  "how": "shape-kit.js / lab-kit.js in a 3D project; read references/shape-kit.md",
+  "params": "K3S.trussOverlay",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:101",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:113",
+   "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-64"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "رموز المعنى في verse",
+  "name_en": "verse meaning symbols",
+  "status": "install",
+  "what": "Draws a symbol above a line by concept: sun, moon, heart, clock, money, trophy, road, question, check, home, rain, light; counts up spoken numbers.",
+  "how": "python scripts/kmotion.py verse (CONCEPTS, concept_of)",
+  "params": "12 symbols",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-65"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "فيلم التوأم الإنشائي",
+  "name_en": "Structural twin film (truss analysis as animation)",
+  "status": "install",
+  "what": "A cute object becomes an illustrative 3D pin-jointed truss whose real solver output drives the film: joints pop on, members grow, load rises, the weakest member breaks, a thicker part is swapped in and failure modes are ranked.",
+  "how": "python projects/bunny_twin/twin/build_truss.py → model.json (35 nodes, 109 members, 5 pinned supports), report.json, assets/twin.js; S.trussOverlay(local, {nodeParts, radius .0015, jointRadius .0032}) bound to rig parts; utilOf(id) = util·L; flash on weak member; kmotion render projects/bunny_twin --engine studio --blur 2.",
+  "params": "baseline first limit 2.38× (earL_out-crown, tension) → after ×2.6 area swap 3.77×; break at 3.0× → mechanism",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/twin/build_truss.py:1",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:71",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/assets/twin.js"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-66"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أسهم أحمال ملونة بالشدة",
+  "name_en": "Load arrows coloured by magnitude",
+  "status": "install",
+  "what": "Force arrows (cylinder shaft + cone head) sit on the loaded points, grow with load and shift hue from yellow toward red as the load approaches failure.",
+  "how": "makeArrow(len): Cylinder r .0032 + Cone .011×.022; colour setHSL(lerp(.14, .02, (L−1.5)/1.5), 1, .62); scale .8+.25·L/Lmax; ear arrow rotated −π/2 and removed after the break.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:86",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:162"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-67"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "وسوم مثبتة بقياسات حية",
+  "name_en": "Anchored callouts with live measurements",
+  "status": "install",
+  "what": "Callouts attach to 3D joints and show a bilingual label, a title, a description and a measurement that can vary with time.",
+  "how": "H1 = hud(root, W, H, {title, subtitle, seed}); H1.addCallout({anchor: joint, label 'THE EAR · الأذن', title, text, side, measure: t → '0.42 m'}); co.show = pulse(t, a, b); H1.update(t, camera, {stage, side, duration}).",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:32",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:69"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-68"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرح علمي ثلاثي الأبعاد بأربع مراحل",
+  "name_en": "Four-stage science explainer in 3D",
+  "status": "install",
+  "what": "A cinematic explainer that times numbered Arabic stage labels to what the 3D world shows: evaporation, condensation, precipitation, runoff.",
+  "how": "labels revealWords/hideWords: ١ 3.3–6.1 s, ٢ 6.9–9.3 s, ٣ 10.1–12.5 s, ٤ 13.1–15.1 s; world states (vapour 2.6–7.2, clouds 5.8–9.4, storm 9.5–13.4, river 12.6–14.4) align; end title 15.7 s.",
+  "params": "17 s 1920×1080 30 fps",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/index.html:59",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:83"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-69"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "رسومات استعارية لجملة منطوقة",
+  "name_en": "Metaphor graphics for a spoken claim",
+  "status": "install",
+  "what": "Each spoken idea gets one simple drawn metaphor beside the speaker: a 24-hour clock for 'with yourself 24 hours', a rising path for 'your dream', a weight rail with a counter dropping 94→76 kg for 'your weight', a car drawing driving off for 'your car', a time bar draining right-to-left for 'wasting…",
+  "how": "SVG groups #clock #dream #scale #car #timebar #endring each drawn/animated only while its words are spoken (see speech() times).",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:58",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:220",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:267"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-70"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تكامل: Manim Community",
+  "name_en": "Integration: Manim Community",
+  "status": "install",
+  "what": "Catalogued skill/MCP/library (link only; not installed here).",
+  "how": "see official setup",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-71"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "ستايل دورة الماء التعليمي المسطح",
+  "name_en": "Flat educational water cycle (style)",
+  "status": "install",
+  "what": "A 10 s 16:9 flat classroom explainer: one fixed wide view of sea, sun, sky and mountain; four stages (evaporation, condensation, precipitation, collection) each with one main motion, a white caption bar on top, a stage-tracker pill bar at the bottom and an orange loop arrow to close.",
+  "how": "Single SVG + render(t) in plain JS; Cairo 700/800; capture to MP4 with Playwright + ffmpeg.",
+  "params": "1920x1080, 30 fps, 300 frames; stages 1.5-4.0 / 4.0-6.1 / 6.1-8.0 / 8.0-8.9 / recap 8.9-10",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html",
+   "kosif-one/projects/water-cycle-animation/DESIGN.md",
+   "kosif-one/projects/water-cycle-animation/STORYBOARD.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-72"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "سهم الدورة الختامي",
+  "name_en": "Recap loop arrow draw-on",
+  "status": "install",
+  "what": "A big orange loop arrow draws around the whole scene to say 'and it repeats'; the arrowhead marker is attached only when the stroke is complete.",
+  "how": "pathLength=1 dash draw 8.9-9.8 s eased; marker-end url(#head) set when progress > .98; colour #FF7A00 9 px.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html:30-32",
+   "kosif-one/projects/water-cycle-animation/index.html:76",
+   "kosif-one/projects/water-cycle-animation/index.html:181-185"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-73"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شريط المراحل",
+  "name_en": "Stage tracker pills (RTL)",
+  "status": "install",
+  "what": "A bottom bar of numbered stage pills, ordered right-to-left, where the current stage fills orange and all stages light up together in the recap.",
+  "how": "4 pills 260x70 rx35 at y 968, x = 1395 - i*290; fill mix(#FFFFFF,#FF7A00,on), text mix(#0B2545,#FFFFFF,on); on = max(fadeWin(stage), seg(8.9,9.3)*.85).",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html:131-136",
+   "kosif-one/projects/water-cycle-animation/index.html:193-198"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-74"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أسهم الحرارة المتحركة",
+  "name_en": "Heat arrows (marching dashes)",
+  "status": "install",
+  "what": "Dashed orange arrows from the sun to the sea whose dashes march to show energy flowing.",
+  "how": "stroke #FF9E2C 7 px dasharray '20 18'; dashoffset -140t; opacity fadeWin(1.6,4.1,.35); sun rays rotate 18 deg/s and pulse 1+.06 sin(4PI t) while heating.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html:45-48",
+   "kosif-one/projects/water-cycle-animation/index.html:141-145"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-75"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "اختيار نوع المخطط",
+  "name_en": "Mermaid diagram type picker",
+  "status": "install",
+  "what": "flow→flowchart, time→sequence, data→ER, decisions→decision tree; mindmap too.",
+  "how": "write diagram.mmd, export with mmdc if present else raw SVG",
+  "params": "max 12 nodes; one direction TB or LR; every arrow labelled; B/W readable",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/diagrams-mermaid-architecture/SKILL.md:21"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-76"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تيار متقطع متحرك",
+  "name_en": "Flowing dash current",
+  "status": "install",
+  "what": "Animates a dashed stroke to show flow (current, data, water) along a path.",
+  "how": "MOTION.flowDash(tl, path, at, dur, {pattern, cycles}).",
+  "params": "pattern '28 22', 6 cycles, linear",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:247"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-77"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "طبقة الجملون الإنشائي",
+  "name_en": "Structural truss overlay",
+  "status": "install",
+  "what": "3D members and joints of a structural-twin model, joints riding rig parts, members coloured by utilisation with flash/hide/grow/gap per member.",
+  "how": "const tr = K3S.trussOverlay(report.model, {nodeParts, radius, jointRadius}); tr.update({alpha, utilOf, camera, flash}).",
+  "params": "utilisation ramp 0 (.35,1,.72) -> .5 (.75,1,.45) -> .8 (1,.86,.35) -> 1 (1,.36,.28); member r 2.2 mm, joint 4.2 mm",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/shape-kit.js:395"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-78"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أوضاع المخطط",
+  "name_en": "Schematic modes (wire, explode, joints)",
+  "status": "install",
+  "what": "Every part gets an edge overlay and ghost; fade plush -> wireframe, explode parts from the body, show dashed joint rings that face the camera.",
+  "how": "const s = K3.schematic(root, {color, ghost, lineOpacity, angle}); s.set(k, camera); s.explode(k); s.joints(k).",
+  "params": "lime #a8ff3c lines max .42, ghost #f7f8f2 .55, solids fade to 8%; explode ×1.1 radial",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/lab-kit.js:135"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-79"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تحويل الصورة إلى برنامج بايثون مطابق",
+  "name_en": "Image to standalone Pillow program (exact)",
+  "status": "install",
+  "what": "Writes a self-contained Python program: the picture's colour regions as readable draw.polygon calls (largest first, editable), then the original's embedded bytes complete every pixel the drawing missed; running it writes an identical PNG and verifies itself.",
+  "how": "python studio.py --image-code photo.jpg or python to_python.py img [out.py]; Studio 📤 button; holes joined even-odd by _bridge.",
+  "params": "trace max_side 520; base64 lines of 100 chars; README reports a 900x900 ad -> 3,394 polygons, 0 differing pixels",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/to_python.py:1",
+   "kosif-studio/to_python.py:90",
+   "kosif-studio/scenes/5.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-80"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرح دورة المياه ثنائي الأبعاد",
+  "name_en": "2D water-cycle explainer",
+  "status": "install",
+  "what": "17 s SVG/GSAP explainer: dawn sunrise with title slam, evaporation vapour with arrows drawn upward, clouds snapping and darkening, camera push to the peak with rain, lightning and snow, river drawing to the sea, a golden loop ring through four stages.",
+  "how": "projects/water_cycle: M.drawPath ×9, M.flowDash, M.vapour, M.rain, M.flash, M.camera, M.grain, M.vignette",
+  "params": "beats 0-2.7 / 2.8-6.4 / 6.2-9.4 / 9.5-12.8 / 12.4-15.1 / 15.2-17 s; palette #FFD166 #FFE8C2 #7FD4FF #5EC8FF #2A6F97 #0D1B2A",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/projects/water_cycle/index.html:152",
+   "kosif-studio/out/water_cycle.mp4",
+   "kosif-studio/tests/test_studio.py:629"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-81"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "رسومات تقنية",
+  "name_en": "Style: Tech blueprint (tech-blueprint)",
+  "status": "install",
+  "what": "Engineering-drawing look: thin cyan/white line art on a dark blue grid that draws itself, with dimension lines and callouts.",
+  "how": "SVG paths on a 24px grid; stroke-dashoffset draw-on at 900-1200 px/s, nodes pop with spring d14 s160, camera pans 700-1000ms cubic-bezier(.65,0,.35,1). Scaffold: python3 tools/kosif.py scaffold tech-blueprint <dir>.",
+  "params": "stroke 3-4px; arrowheads 14-18px; zoom max 1.8",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:tech-blueprint",
+   "kosif-tool/playbooks/diagrams.md"
+  ],
+  "styles": [
+   "tech-blueprint"
+  ],
+  "tags": [],
+  "id": "EXPL-82"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخططات",
+  "name_en": "Category: Diagrams",
+  "status": "install",
+  "what": "Capability family 'diagrams' (37 catalog entries) with a dedicated bilingual playbook of timings and recipes.",
+  "how": "Read playbooks/diagrams.md (visual grammar, motion mechanics, scene recipes, QA); build in starters/html-canvas or starters/remotion; filter catalog with python3 tools/kosif.py list --category diagrams.",
+  "params": "<=7 nodes; stroke 3-4px; node pop spring d14 s160; edge 900-1200px/s; camera 700-1000ms; zoom<=1.8",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md",
+   "kosif-tool/catalog/categories.json",
+   "kosif-tool/catalog/meta.json"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-83"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كود",
+  "name_en": "Category: Code",
+  "status": "install",
+  "what": "Capability family 'code' (38 catalog entries) with a dedicated bilingual playbook of timings and recipes.",
+  "how": "Read playbooks/code.md (visual grammar, motion mechanics, scene recipes, QA); build in starters/html-canvas or starters/remotion; filter catalog with python3 tools/kosif.py list --category code.",
+  "params": "mono 28-40px, <=14 lines; typing 25-45 cps; caret 530ms; frame budget <50ms; seeded noise",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md",
+   "kosif-tool/catalog/categories.json",
+   "kosif-tool/catalog/meta.json"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-84"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كتابة بتذبذب مزروع",
+  "name_en": "Seeded typing animation",
+  "status": "install",
+  "what": "Character typing with jitter, punctuation pauses and blinking caret; long code pasted as block.",
+  "how": "Remotion Typed component: per-char delay (1/cps)×(0.8+random(`k${i}`)×0.4) + 0.3 s after [.,;:]; caret ▍.",
+  "params": "25–45 cps (default 35) ±20% jitter; 250–400 ms after punctuation; caret 530 ms; paste fade 200 ms",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md:25",
+   "kosif-tool/playbooks/code.md:55-67"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-85"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "توليد أيقونات بخلفية شفافة",
+  "name_en": "Transparent icon generation",
+  "status": "key",
+  "what": "Generate flat icons with alpha for explainers, themed by a shared palette.",
+  "how": "Request transparent background from the image model; if the PNG comes back opaque, remove near-white by threshold (Pillow) or use BiRefNet via rembg + onnxruntime for complex edges; batch with a template 'a flat icon of a {item}'; 1024 px square.",
+  "params": "1024 px; threshold or BiRefNet",
+  "install": "",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-atlas/skills/2657-figures/10115-transparent-icons"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-86"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخططات ومحرر كود",
+  "name_en": "Diagram and code-editor film categories",
+  "status": "key",
+  "what": "Claude-coded diagrams (3-5 labelled nodes appearing in order, drawn connectors with moving flow dots) and dark code editors (line numbers, LTR monospace typing token by token with palette syntax colours, result panel).",
+  "how": "FILM_CATS 'diagrams' and 'code'; templates concept, what-is, timeline, how-to, code-explain, dev-tool.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "app/public/js/00_editor.js:2007",
+   "app/public/js/00_editor.js:1777"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-87"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "فيديو شرح طلب الدمج البرمجي",
+  "name_en": "PR-to-video code-change explainer",
+  "status": "key",
+  "what": "A GitHub PR (URL / owner/repo#N) becomes a changelog / feature-reveal / fix / refactor explainer: gh fetch of pr.json + diff.patch (paginated files), offline ingest to tokens/text/people, contributor avatars for a credits close, code-editorial design, frame workers, captions, render.",
+  "how": "node fetch-pr.mjs --pr <ref> --out-dir ./capture; node ingest.mjs --pr-json ... --diff ...; node fetch-people-avatars.mjs --people ...; then the shared narrative pipeline.",
+  "params": "",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/SKILL.md",
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/scripts/fetch-pr.mjs",
+   "kosif-one/vendor/hyperframes/skills/pr-to-video/scripts/ingest.mjs"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-88"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تكامل: Manim MCP",
+  "name_en": "Integration: Manim MCP",
+  "status": "key",
+  "what": "Catalogued skill/MCP/library (link only; not installed here).",
+  "how": "see official setup",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-89"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "إثبات بصري بطيران الخلايا",
+  "name_en": "Cell-flight visual proof",
+  "status": "seen",
+  "what": "for each source cell centre, lerp to a target cell centre in the rotated hypotenuse grid, rotate to the hypotenuse angle, add hop = h*sin(pi t); stagger cells; counter = arrived count; glow square on ",
+  "how": "for each source cell centre, lerp to a target cell centre in the rotated hypotenuse grid, rotate to the hypotenuse angle, add hop = h*sin(pi t); stagger cells; counter = arrived count; glow square on completion",
+  "params": "25 cells, stagger ~120 ms, hop 20 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:chalkboard"
+  ],
+  "styles": [
+   "chalkboard"
+  ],
+  "tags": [],
+  "id": "EXPL-90"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مقارنة نسب بكرات تصغر",
+  "name_en": "Shrinking-sphere scale comparison",
+  "status": "seen",
+  "what": "row of spheres sized by sqrt(value) (with min clamp for tiny), staggered pop-in right-to-left with arrows and % captions",
+  "how": "row of spheres sized by sqrt(value) (with min clamp for tiny), staggered pop-in right-to-left with arrows and % captions",
+  "params": "4 spheres, stagger 250 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:infographic"
+  ],
+  "styles": [
+   "infographic"
+  ],
+  "tags": [],
+  "id": "EXPL-91"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "نقاط بيانات تطير على قوس منقط",
+  "name_en": "Data packets along dotted arc",
+  "status": "seen",
+  "what": "quadratic bezier between two projected world points; dashed stroke; 3-5 glowing dots offset along t with stagger",
+  "how": "quadratic bezier between two projected world points; dashed stroke; 3-5 glowing dots offset along t with stagger",
+  "params": "dash 4/6, dot r 4, ~1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:isometric"
+  ],
+  "styles": [
+   "isometric"
+  ],
+  "tags": [],
+  "id": "EXPL-92"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "علم ينبثق وكارت ورقي متصل",
+  "name_en": "Pop-up flag + pinned paper card",
+  "status": "seen",
+  "what": "on arrival: flag scaleY 0->1 spring (~300 ms) with stamp SFX; card fades+slides 12px with shadow, dotted curved leader to flag; card shows city in Ruqaa, date in red, one fact line",
+  "how": "on arrival: flag scaleY 0->1 spring (~300 ms) with stamp SFX; card fades+slides 12px with shadow, dotted curved leader to flag; card shows city in Ruqaa, date in red, one fact line",
+  "params": "card bg #efe3c4, border double 1px, shadow 0 8px 20px rgba(0,0,0,.25)",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:map-journey"
+  ],
+  "styles": [
+   "map-journey"
+  ],
+  "tags": [],
+  "id": "EXPL-93"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "معاينة وكود ومعادلة جنبًا إلى جنب",
+  "name_en": "Preview + code + formula triptych",
+  "status": "seen",
+  "what": "left: framed canvas with ruler and red playhead; right: monospace code with orange literals; below: serif italic formula; playhead time drives both the shapes and a highlighted code line",
+  "how": "left: framed canvas with ruler and red playhead; right: monospace code with orange literals; below: serif italic formula; playhead time drives both the shapes and a highlighted code line",
+  "params": "playhead label 't = 1.97 s', mono 12-14 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:plotter"
+  ],
+  "styles": [
+   "plotter"
+  ],
+  "tags": [],
+  "id": "EXPL-94"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط عقد بإشارة متحركة",
+  "name_en": "Node wire signal flow",
+  "status": "seen",
+  "what": "boxes connected by orthogonal lines that draw on; an orange dot travels along the active wire; invalid route marked with an orange X",
+  "how": "boxes connected by orthogonal lines that draw on; an orange dot travels along the active wire; invalid route marked with an orange X",
+  "params": "wire draw 500 ms, dot travel 800 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:plotter"
+  ],
+  "styles": [
+   "plotter"
+  ],
+  "tags": [],
+  "id": "EXPL-95"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "محور متوهج بخطوط توصيل",
+  "name_en": "Glowing hub with connector spokes",
+  "status": "seen",
+  "what": "App icon in rounded square with orange bloom; SVG cubic curves draw (stroke-dashoffset) to 4 stat cards that then fade in and count",
+  "how": "App icon in rounded square with orange bloom; SVG cubic curves draw (stroke-dashoffset) to 4 stat cards that then fade in and count",
+  "params": "glow blur 30-40 px, line draw 400 ms, stagger 150 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-0xfemyn-e114d3"
+  ],
+  "styles": [
+   "pm-0xfemyn-e114d3"
+  ],
+  "tags": [],
+  "id": "EXPL-96"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "بطاقتا مقارنة بعلامات صح وخطأ",
+  "name_en": "Two-option trade-off cards",
+  "status": "seen",
+  "what": "two cards side by side with coloured headers, rows with green check or black cross boxes, rotated stickers summarising each option, cost note below",
+  "how": "two cards side by side with coloured headers, rows with green check or black cross boxes, rotated stickers summarising each option, cost note below",
+  "params": "rows stagger 120 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-0xnfrith-5be616"
+  ],
+  "styles": [
+   "pm-0xnfrith-5be616"
+  ],
+  "tags": [],
+  "id": "EXPL-97"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "صفحة كلمات كأشرطة تمتلئ",
+  "name_en": "Known-words bar page",
+  "status": "seen",
+  "what": "Represent text as rounded rectangles of word widths; fill them dark progressively to show comprehension; mark unknown word in accent",
+  "how": "Represent text as rounded rectangles of word widths; fill them dark progressively to show comprehension; mark unknown word in accent",
+  "params": "row fill 120-200 ms per row, bar height 8 px radius 4 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-1stnoel-c20a89"
+  ],
+  "styles": [
+   "pm-1stnoel-c20a89"
+  ],
+  "tags": [],
+  "id": "EXPL-98"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط بحساب حي",
+  "name_en": "Live math diagram",
+  "status": "seen",
+  "what": "wireframe isometric box, highlighted vector, side panel of values computing then result counter",
+  "how": "wireframe isometric box, highlighted vector, side panel of values computing then result counter",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-adamdesgns-478d6d"
+  ],
+  "styles": [
+   "pm-adamdesgns-478d6d"
+  ],
+  "tags": [],
+  "id": "EXPL-99"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خريطة معرفة شعاعية",
+  "name_en": "Radial knowledge graph",
+  "status": "seen",
+  "what": "hero card at centre; satellite cards placed on an ellipse; lines draw from centre outward, tag pills sit on the lines; dot grid behind",
+  "how": "hero card at centre; satellite cards placed on an ellipse; lines draw from centre outward, tag pills sit on the lines; dot grid behind",
+  "params": "10 nodes, line draw 300 ms, stagger 50 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-agonaliu-466a8f"
+  ],
+  "styles": [
+   "pm-agonaliu-466a8f"
+  ],
+  "tags": [],
+  "id": "EXPL-100"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "بطاقات خطوات مرقمة",
+  "name_en": "Numbered step cards",
+  "status": "seen",
+  "what": "Eyebrow 'HOW IT WORKS' tracked caps; three white cards with yellow circular number badge, outline icon and bold label slide/fade in left-to-right",
+  "how": "Eyebrow 'HOW IT WORKS' tracked caps; three white cards with yellow circular number badge, outline icon and bold label slide/fade in left-to-right",
+  "params": "card 240x210 px, radius 16, stagger ~1.2-1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-alex-prompter-1ea044"
+  ],
+  "styles": [
+   "pm-alex-prompter-1ea044"
+  ],
+  "tags": [],
+  "id": "EXPL-101"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خطوات مرقمة",
+  "name_en": "Numbered steps",
+  "status": "seen",
+  "what": "cards with number badge connected by dashed line",
+  "how": "cards with number badge connected by dashed line",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-amitsingha89-150378"
+  ],
+  "styles": [
+   "pm-amitsingha89-150378"
+  ],
+  "tags": [],
+  "id": "EXPL-102"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مسار متوهج للتوجيه",
+  "name_en": "Glowing route path",
+  "status": "seen",
+  "what": "bezier from node to chosen target with stroke glow",
+  "how": "bezier from node to chosen target with stroke glow",
+  "params": "600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-amol909s-27533e"
+  ],
+  "styles": [
+   "pm-amol909s-27533e"
+  ],
+  "tags": [],
+  "id": "EXPL-103"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شبكة حسابات تتفرع",
+  "name_en": "Fan-out avatar network",
+  "status": "seen",
+  "what": "N coloured avatar squares spring out from a centre object along straight lines with stagger",
+  "how": "N coloured avatar squares spring out from a centre object along straight lines with stagger",
+  "params": "N=5, stagger 120 ms, spring overshoot 1.1",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-anthonyriera-9b1b2a"
+  ],
+  "styles": [
+   "pm-anthonyriera-9b1b2a"
+  ],
+  "tags": [],
+  "id": "EXPL-104"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مسار عشوائي",
+  "name_en": "Random walk path",
+  "status": "seen",
+  "what": "polyline random steps drawn progressively",
+  "how": "polyline random steps drawn progressively",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-apoorvjain25-d24184"
+  ],
+  "styles": [
+   "pm-apoorvjain25-d24184"
+  ],
+  "tags": [],
+  "id": "EXPL-105"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تدفق أتمتة بعقد وخطوط",
+  "name_en": "Automation node flow",
+  "status": "seen",
+  "what": "Three cards (trigger, engine, result) connected by straight lines that draw left to right; status chips pop under each as data passes",
+  "how": "Three cards (trigger, engine, result) connected by straight lines that draw left to right; status chips pop under each as data passes",
+  "params": "line draw 300 ms each; chips pop 200 ms; engine card dark with live dot",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-bizibeast-10f264"
+  ],
+  "styles": [
+   "pm-bizibeast-10f264"
+  ],
+  "tags": [],
+  "id": "EXPL-106"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "منحنى توقيت حي",
+  "name_en": "Live easing HUD",
+  "status": "seen",
+  "what": "small cubic-bezier plot in corner with dot following current ease",
+  "how": "small cubic-bezier plot in corner with dot following current ease",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-blue-clarity-ef56d0"
+  ],
+  "styles": [
+   "pm-blue-clarity-ef56d0"
+  ],
+  "tags": [],
+  "id": "EXPL-107"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط سلسلة إشارة بروابط موجية",
+  "name_en": "Signal-chain diagram with wave links",
+  "status": "seen",
+  "what": "row of outlined boxes (title + mono sub-label) connected by animated sine-wave segments; draw left to right, waves scroll to show flow; a larger waveform label above",
+  "how": "row of outlined boxes (title + mono sub-label) connected by animated sine-wave segments; draw left to right, waves scroll to show flow; a larger waveform label above",
+  "params": "box stroke 1 px yellow/green, wave amplitude 4 px, scroll 60 px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-blueoctopusai-dd17bd"
+  ],
+  "styles": [
+   "pm-blueoctopusai-dd17bd"
+  ],
+  "tags": [],
+  "id": "EXPL-108"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تضخيم مقياس لتوضيح فكرة",
+  "name_en": "Exaggerated-scale visualisation",
+  "status": "seen",
+  "what": "scale a subtle physical property (field crown) vertically ×N with a tint and label 'shown ×9.6' plus callout tags 'FLAT CHORD' vs 'CROWN'",
+  "how": "scale a subtle physical property (field crown) vertically ×N with a tint and label 'shown ×9.6' plus callout tags 'FLAT CHORD' vs 'CROWN'",
+  "params": "scale ×5-10, tint teal 40%",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-blueoctopusai-dd17bd"
+  ],
+  "styles": [
+   "pm-blueoctopusai-dd17bd"
+  ],
+  "tags": [],
+  "id": "EXPL-109"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تفرع منتج إلى عدة منصات",
+  "name_en": "One-to-many marketplace branches",
+  "status": "seen",
+  "what": "Glowing product node on the left; three bezier curves draw to stacked platform cards on the right with travelling light dots; each card shows a signal-bar meter that fills",
+  "how": "Glowing product node on the left; three bezier curves draw to stacked platform cards on the right with travelling light dots; each card shows a signal-bar meter that fills",
+  "params": "curve draw 500 ms stagger 150 ms, dot travel 700 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ceowinkz-7c776b"
+  ],
+  "styles": [
+   "pm-ceowinkz-7c776b"
+  ],
+  "tags": [],
+  "id": "EXPL-110"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط ربط مركزي",
+  "name_en": "Hub-spoke integration graph",
+  "status": "seen",
+  "what": "center logo, lines draw to service pills",
+  "how": "center logo, lines draw to service pills",
+  "params": "600 ms each",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-charlesmendez-73b6e4"
+  ],
+  "styles": [
+   "pm-charlesmendez-73b6e4"
+  ],
+  "tags": [],
+  "id": "EXPL-111"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شطب القاعدة الخاطئة وعلامة صح",
+  "name_en": "Strike-through wrong rule + checkmark",
+  "status": "seen",
+  "what": "red line draws over 'linear = robotic', then blue 'ease in-out' with a drawn check",
+  "how": "red line draws over 'linear = robotic', then blue 'ease in-out' with a drawn check",
+  "params": "strike 250 ms, check 300 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-chatgptastra-0d95c7"
+  ],
+  "styles": [
+   "pm-chatgptastra-0d95c7"
+  ],
+  "tags": [],
+  "id": "EXPL-112"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "سباق منحنيات التسهيل",
+  "name_en": "Easing comparison race",
+  "status": "seen",
+  "what": "Draw cubic-bezier graph with handles; three balls on tracks animate linear vs ease-out vs custom simultaneously",
+  "how": "Draw cubic-bezier graph with handles; three balls on tracks animate linear vs ease-out vs custom simultaneously",
+  "params": "1 s loops",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-crazyalphaaa-bc7e75"
+  ],
+  "styles": [
+   "pm-crazyalphaaa-bc7e75"
+  ],
+  "tags": [],
+  "id": "EXPL-113"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "طبقات شفافة متراكبة إيزومترية",
+  "name_en": "Isometric translucent layer stack",
+  "status": "seen",
+  "what": "CSS rotateX(55deg) rotateZ(-45deg) rounded plates, opacity gradient light→solid blue, stack with 18 px offset; top plate lifted with dashed outline; leader lines draw right then mono labels fade in",
+  "how": "CSS rotateX(55deg) rotateZ(-45deg) rounded plates, opacity gradient light→solid blue, stack with 18 px offset; top plate lifted with dashed outline; leader lines draw right then mono labels fade in",
+  "params": "6-7 plates, blue #1f7bf2, glow below",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ddryo-loos-300829"
+  ],
+  "styles": [
+   "pm-ddryo-loos-300829"
+  ],
+  "tags": [],
+  "id": "EXPL-114"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خطوط تفرع ترسم من بطاقة إلى قائمة",
+  "name_en": "Connector-line branch reveal",
+  "status": "seen",
+  "what": "From a source card draw thin curved SVG paths to target rows using stroke-dashoffset, then fade the rows in staggered",
+  "how": "From a source card draw thin curved SVG paths to target rows using stroke-dashoffset, then fade the rows in staggered",
+  "params": "stroke 1 px grey-blue, 400-500 ms per branch, 150 ms stagger",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-elliot-garreffa-f334bc"
+  ],
+  "styles": [
+   "pm-elliot-garreffa-f334bc"
+  ],
+  "tags": [],
+  "id": "EXPL-115"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شريط مكدس الاستدعاء",
+  "name_en": "Call-stack breadcrumb HUD",
+  "status": "seen",
+  "what": "top bar of mono chips, each coloured per genre with pause icon; active chip filled with play icon; push/pop chips with slide",
+  "how": "top bar of mono chips, each coloured per genre with pause icon; active chip filled with play icon; push/pop chips with slide",
+  "params": "chip h 22px, mono 12px, push 200 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-emollick-8661a8"
+  ],
+  "styles": [
+   "pm-emollick-8661a8"
+  ],
+  "tags": [],
+  "id": "EXPL-116"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خطوط توزيع بيانات",
+  "name_en": "Data fan-out lines",
+  "status": "seen",
+  "what": "code block left, bezier lines to chips with travelling dots",
+  "how": "code block left, bezier lines to chips with travelling dots",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ezshine-c90d73"
+  ],
+  "styles": [
+   "pm-ezshine-c90d73"
+  ],
+  "tags": [],
+  "id": "EXPL-117"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تعرّف على عناصر الصورة وفرزها",
+  "name_en": "Photo object detection sort",
+  "status": "seen",
+  "what": "overlay corner-bracket boxes on items in a photo, show 'identifying' status, then thumbnails fly into labelled bucket cards with counts",
+  "how": "overlay corner-bracket boxes on items in a photo, show 'identifying' status, then thumbnails fly into labelled bucket cards with counts",
+  "params": "4 buckets, fly 500 ms with ease-in-out",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-gabrielbuzziv-4ff0c6"
+  ],
+  "styles": [
+   "pm-gabrielbuzziv-4ff0c6"
+  ],
+  "tags": [],
+  "id": "EXPL-118"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "سلسلة موارد بأسهم متقطعة",
+  "name_en": "Resource chain diagram",
+  "status": "seen",
+  "what": "circular icon nodes connected by dashed arrows that draw on left-to-right, labels under each",
+  "how": "circular icon nodes connected by dashed arrows that draw on left-to-right, labels under each",
+  "params": "dash 6/6, 300 ms per link",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-gigabit-million-16b3a0"
+  ],
+  "styles": [
+   "pm-gigabit-million-16b3a0"
+  ],
+  "tags": [],
+  "id": "EXPL-119"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "بطاقة أمر مع تظليل أحمر للكلمات الخاطئة",
+  "name_en": "Prompt card with red problem highlights",
+  "status": "seen",
+  "what": "dark rounded card (#3f3b37) with cream monospace text typed in; then red rectangles scale-X from 0 behind the faulty words, text turns light",
+  "how": "dark rounded card (#3f3b37) with cream monospace text typed in; then red rectangles scale-X from 0 behind the faulty words, text turns light",
+  "params": "type ~30 ms/char, highlight wipe 250 ms each, stagger 300 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-henkvaness-0e06af"
+  ],
+  "styles": [
+   "pm-henkvaness-0e06af"
+  ],
+  "tags": [],
+  "id": "EXPL-120"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرح منحنى التسارع",
+  "name_en": "Easing graph explainer",
+  "status": "seen",
+  "what": "axes (position/time) draw on, Bezier S-curve with handles draws, playhead line scrubs while a square moves on a track below in sync",
+  "how": "axes (position/time) draw on, Bezier S-curve with handles draws, playhead line scrubs while a square moves on a track below in sync",
+  "params": "cubic-bezier(.65,0,.35,1)",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-himanshutwtxs-5f4b43"
+  ],
+  "styles": [
+   "pm-himanshutwtxs-5f4b43"
+  ],
+  "tags": [],
+  "id": "EXPL-121"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "طرفية تحديث بأمر واحد",
+  "name_en": "Terminal one-command update",
+  "status": "seen",
+  "what": "Dark terminal window prints log lines sequentially, final line in green as success",
+  "how": "Dark terminal window prints log lines sequentially, final line in green as success",
+  "params": "line every 120 ms, mono 12 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-iammxfschr-d68f90"
+  ],
+  "styles": [
+   "pm-iammxfschr-d68f90"
+  ],
+  "tags": [],
+  "id": "EXPL-122"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "محرر كود بجانب معاينة حية",
+  "name_en": "Code editor + live preview split",
+  "status": "seen",
+  "what": "Left pane types code char-by-char with syntax colours and line numbers; right pane shows the result reacting (sprite jumps when the jump() line completes); test checklist ticks below",
+  "how": "Left pane types code char-by-char with syntax colours and line numbers; right pane shows the result reacting (sprite jumps when the jump() line completes); test checklist ticks below",
+  "params": "~25 chars/s; caret blink 500ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ibrahimwasim240-809370"
+  ],
+  "styles": [
+   "pm-ibrahimwasim240-809370"
+  ],
+  "tags": [],
+  "id": "EXPL-123"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خطوات مرقمة مع شريط تقدم",
+  "name_en": "Numbered step flow with stepper",
+  "status": "seen",
+  "what": "big mono 01–04, headline with accent word, top 4-segment bar fills",
+  "how": "big mono 01–04, headline with accent word, top 4-segment bar fills",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-imthatcarlos-e04bfe"
+  ],
+  "styles": [
+   "pm-imthatcarlos-e04bfe"
+  ],
+  "tags": [],
+  "id": "EXPL-124"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "افتتاحية طرفية تكتب كوداً",
+  "name_en": "Terminal typewriter opener",
+  "status": "seen",
+  "what": "dot-grid dark field, small label line, '>' prompt with code typed at fixed cadence and a block cursor, underline rule and a tiny return-key chip with tagline",
+  "how": "dot-grid dark field, small label line, '>' prompt with code typed at fixed cadence and a block cursor, underline rule and a tiny return-key chip with tagline",
+  "params": "~30 ms/char",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-influencer-seo-ce8c33"
+  ],
+  "styles": [
+   "pm-influencer-seo-ce8c33"
+  ],
+  "tags": [],
+  "id": "EXPL-125"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خريطة ذهنية دائرية",
+  "name_en": "Radial mind-map",
+  "status": "seen",
+  "what": "central illustrated circle, 5 circular icon nodes around, arrows draw, labels under",
+  "how": "central illustrated circle, 5 circular icon nodes around, arrows draw, labels under",
+  "params": "stagger 120ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-itisrazak-3ad902"
+  ],
+  "styles": [
+   "pm-itisrazak-3ad902"
+  ],
+  "tags": [],
+  "id": "EXPL-126"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أسلاك إشارة",
+  "name_en": "Signal wires",
+  "status": "seen",
+  "what": "SVG bezier paths with glowing dots animating along length",
+  "how": "SVG bezier paths with glowing dots animating along length",
+  "params": "dash offset, 1.2 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jayscambler-3f8889"
+  ],
+  "styles": [
+   "pm-jayscambler-3f8889"
+  ],
+  "tags": [],
+  "id": "EXPL-127"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تحديد منقّط مع طمس",
+  "name_en": "Dashed marquee blur",
+  "status": "seen",
+  "what": "draw a dashed selection rectangle over part of a text/UI element, then apply backdrop blur inside it with a cursor nearby",
+  "how": "draw a dashed selection rectangle over part of a text/UI element, then apply backdrop blur inside it with a cursor nearby",
+  "params": "dash 4/4 px, blur 12 px, 300 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jhylee95-e1152f"
+  ],
+  "styles": [
+   "pm-jhylee95-e1152f"
+  ],
+  "tags": [],
+  "id": "EXPL-128"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كود مجرد بأشرطة",
+  "name_en": "Abstract code as pills",
+  "status": "seen",
+  "what": "rounded rects of syntax colours + bracket glyphs on rows",
+  "how": "rounded rects of syntax colours + bracket glyphs on rows",
+  "params": "radius 50%",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kamstudiolabs-c9bb28"
+  ],
+  "styles": [
+   "pm-kamstudiolabs-c9bb28"
+  ],
+  "tags": [],
+  "id": "EXPL-129"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تمييز خطأ أحمر",
+  "name_en": "Error highlight sweep",
+  "status": "seen",
+  "what": "red band scaleX across line + squiggle draw",
+  "how": "red band scaleX across line + squiggle draw",
+  "params": "0.6 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kamstudiolabs-c9bb28"
+  ],
+  "styles": [
+   "pm-kamstudiolabs-c9bb28"
+  ],
+  "tags": [],
+  "id": "EXPL-130"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "رقائق الرموز مع أرقامها",
+  "name_en": "Token chips with ids",
+  "status": "seen",
+  "what": "Split a phrase into tokens, render each as rounded pastel chip in mono with small grey id number beneath, pop in with stagger",
+  "how": "Split a phrase into tokens, render each as rounded pastel chip in mono with small grey id number beneath, pop in with stagger",
+  "params": "radius 8px, stagger 90 ms, scale 0.8→1 back-out",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kloss-xyz-15182a"
+  ],
+  "styles": [
+   "pm-kloss-xyz-15182a"
+  ],
+  "tags": [],
+  "id": "EXPL-131"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "حوار طرفية",
+  "name_en": "Terminal typewriter dialogue",
+  "status": "seen",
+  "what": "amber mono text typed with caret in bordered panel",
+  "how": "amber mono text typed with caret in bordered panel",
+  "params": "30 ms/char",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kloss-xyz-fe0c31"
+  ],
+  "styles": [
+   "pm-kloss-xyz-fe0c31"
+  ],
+  "tags": [],
+  "id": "EXPL-132"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أقواس الانتباه",
+  "name_en": "Attention arcs",
+  "status": "seen",
+  "what": "arcs from one word to others, weight=stroke width, highlight token",
+  "how": "arcs from one word to others, weight=stroke width, highlight token",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kloss-xyz-fe0c31"
+  ],
+  "styles": [
+   "pm-kloss-xyz-fe0c31"
+  ],
+  "tags": [],
+  "id": "EXPL-133"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "عرض الالتفاف بالبكسل",
+  "name_en": "Pixel convolution demo",
+  "status": "seen",
+  "what": "pixel digit, kernel square scanning, heatmap output",
+  "how": "pixel digit, kernel square scanning, heatmap output",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kloss-xyz-fe0c31"
+  ],
+  "styles": [
+   "pm-kloss-xyz-fe0c31"
+  ],
+  "tags": [],
+  "id": "EXPL-134"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط تكاملات مركزي",
+  "name_en": "Hub-and-spoke integrations diagram",
+  "status": "seen",
+  "what": "centre app icon, 8 labelled tool nodes around it; dashed connectors draw out from centre with a travelling dot",
+  "how": "centre app icon, 8 labelled tool nodes around it; dashed connectors draw out from centre with a travelling dot",
+  "params": "connectors draw 400 ms stagger 50 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kmasiff-cc72cb"
+  ],
+  "styles": [
+   "pm-kmasiff-cc72cb"
+  ],
+  "tags": [],
+  "id": "EXPL-135"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تسميات مرتبطة بالأجزاء",
+  "name_en": "3D callout labels",
+  "status": "seen",
+  "what": "project 3D points to screen, pill labels with leader line",
+  "how": "project 3D points to screen, pill labels with leader line",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-konstantinsaifo-96fc89"
+  ],
+  "styles": [
+   "pm-konstantinsaifo-96fc89"
+  ],
+  "tags": [],
+  "id": "EXPL-136"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خطوط توضيحية تشير لعناصر الواجهة",
+  "name_en": "Callout leader lines to UI",
+  "status": "seen",
+  "what": "from points on a rendered page, draw thin amber elbow lines outward to mono labels at the frame sides; draw-on 300 ms each, stagger 80 ms",
+  "how": "from points on a rendered page, draw thin amber elbow lines outward to mono labels at the frame sides; draw-on 300 ms each, stagger 80 ms",
+  "params": "1 px amber, small square end-cap, label mono 10 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kyonax-on-tech-aabc1d"
+  ],
+  "styles": [
+   "pm-kyonax-on-tech-aabc1d"
+  ],
+  "tags": [],
+  "id": "EXPL-137"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شجرة عقد متتالية",
+  "name_en": "Tree/AST node cascade",
+  "status": "seen",
+  "what": "indented boxed nodes (document > heading > paragraph > codeBlock) appear one by one with elbow connectors drawn on, key:value metadata in mono next to each",
+  "how": "indented boxed nodes (document > heading > paragraph > codeBlock) appear one by one with elbow connectors drawn on, key:value metadata in mono next to each",
+  "params": "stagger 120 ms, box border 1 px grey, label mono",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kyonax-on-tech-aabc1d"
+  ],
+  "styles": [
+   "pm-kyonax-on-tech-aabc1d"
+  ],
+  "tags": [],
+  "id": "EXPL-138"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "محور مركزي بأذرع للتكاملات",
+  "name_en": "Hub and spoke integrations",
+  "status": "seen",
+  "what": "Central blob with gooey arms growing to labelled nodes (pill tags), small dots travelling along arms",
+  "how": "Central blob with gooey arms growing to labelled nodes (pill tags), small dots travelling along arms",
+  "params": "6-7 arms; stagger 80ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-leadnotifi-e83f94"
+  ],
+  "styles": [
+   "pm-leadnotifi-e83f94"
+  ],
+  "tags": [],
+  "id": "EXPL-139"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خط زمني للعملية بأيقونات مرسومة",
+  "name_en": "Process timeline with doodle icons",
+  "status": "seen",
+  "what": "horizontal marker line draws, circular nodes pop at steps, hand-drawn icons (mic, music note, frame) and a dashed badge 'OK?' appear above, labels in handwriting below",
+  "how": "horizontal marker line draws, circular nodes pop at steps, hand-drawn icons (mic, music note, frame) and a dashed badge 'OK?' appear above, labels in handwriting below",
+  "params": "node pop 200 ms back.out",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lemomo-ai-0d9cff"
+  ],
+  "styles": [
+   "pm-lemomo-ai-0d9cff"
+  ],
+  "tags": [],
+  "id": "EXPL-140"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "منحنى نابض مرسوم بجانب النص",
+  "name_en": "Spring curve graph with text",
+  "status": "seen",
+  "what": "Plot the easing function in a small framed graph, a dot runs along it synced to the text animation using the same spring",
+  "how": "Plot the easing function in a small framed graph, a dot runs along it synced to the text animation using the same spring",
+  "params": "spring(1, 100, 10, 0) style; graph 20% width",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-levabashidze-2d713a"
+  ],
+  "styles": [
+   "pm-levabashidze-2d713a"
+  ],
+  "tags": [],
+  "id": "EXPL-141"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "طرفية تثبيت",
+  "name_en": "Terminal install",
+  "status": "seen",
+  "what": "dark rounded panel, typed command, check lines",
+  "how": "dark rounded panel, typed command, check lines",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lexnlin-6161a6"
+  ],
+  "styles": [
+   "pm-lexnlin-6161a6"
+  ],
+  "tags": [],
+  "id": "EXPL-142"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تحويل القاطع إلى مماس",
+  "name_en": "Secant-to-tangent limit animation",
+  "status": "seen",
+  "what": "ValueTracker dt from 2 → 0.001 (exponential ease); line through (a,f(a)) and (a+dt,f(a+dt)) redrawn via always_redraw; DecimalNumber shows dt and slope",
+  "how": "ValueTracker dt from 2 → 0.001 (exponential ease); line through (a,f(a)) and (a+dt,f(a+dt)) redrawn via always_redraw; DecimalNumber shows dt and slope",
+  "params": "dt 2→1→0.1→0.01→0.001, each step ~2-3 s, run_time per step with smooth",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-linearuncle-5d2bae"
+  ],
+  "styles": [
+   "pm-linearuncle-5d2bae"
+  ],
+  "tags": [],
+  "id": "EXPL-143"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "اشتقاق جبري بألوان دلالية",
+  "name_en": "Colour-coded algebra derivation",
+  "status": "seen",
+  "what": "MathTex with isolated substrings; colour terms that cancel in red, final result in green; TransformMatchingTex between lines",
+  "how": "MathTex with isolated substrings; colour terms that cancel in red, final result in green; TransformMatchingTex between lines",
+  "params": "line spacing ~12% H; each line Write ~1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-linearuncle-5d2bae"
+  ],
+  "styles": [
+   "pm-linearuncle-5d2bae"
+  ],
+  "tags": [],
+  "id": "EXPL-144"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تأطير أجزاء المعادلة بشروح",
+  "name_en": "Boxed formula annotation",
+  "status": "seen",
+  "what": "SurroundingRectangle around numerator/denominator with small caption above/below in matching colour, Create ~0.6 s",
+  "how": "SurroundingRectangle around numerator/denominator with small caption above/below in matching colour, Create ~0.6 s",
+  "params": "stroke 2px, buff 0.08",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-linearuncle-5d2bae"
+  ],
+  "styles": [
+   "pm-linearuncle-5d2bae"
+  ],
+  "tags": [],
+  "id": "EXPL-145"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شبكة ساعات للروتين",
+  "name_en": "Clock-face routine grid",
+  "status": "seen",
+  "what": "duplicate scene into grid to show monotony",
+  "how": "duplicate scene into grid to show monotony",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-loicrambo-ad6830"
+  ],
+  "styles": [
+   "pm-loicrambo-ad6830"
+  ],
+  "tags": [],
+  "id": "EXPL-146"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شجرة قرارات",
+  "name_en": "Decision branch tree",
+  "status": "seen",
+  "what": "faded options around, line draws to highlighted pill",
+  "how": "faded options around, line draws to highlighted pill",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-macrohou-33959d"
+  ],
+  "styles": [
+   "pm-macrohou-33959d"
+  ],
+  "tags": [],
+  "id": "EXPL-147"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "افتتاحية طرفية تترجم كودًا",
+  "name_en": "Compile-terminal opener",
+  "status": "seen",
+  "what": "Mono prompt typed per char, then 'compiling X.cpp [■■■■■] ok' rows whose block bars fill",
+  "how": "Mono prompt typed per char, then 'compiling X.cpp [■■■■■] ok' rows whose block bars fill",
+  "params": "typing 30 ms/char, bar fill 300 ms each, rows stagger 150 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-madhav-xo-f97f20"
+  ],
+  "styles": [
+   "pm-madhav-xo-f97f20"
+  ],
+  "tags": [],
+  "id": "EXPL-148"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "رسم بدوائر فورييه",
+  "name_en": "Fourier epicycle drawing",
+  "status": "seen",
+  "what": "DFT of path, chain of rotating vectors, trail glow",
+  "how": "DFT of path, chain of rotating vectors, trail glow",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-math-files-39c9d0"
+  ],
+  "styles": [
+   "pm-math-files-39c9d0"
+  ],
+  "tags": [],
+  "id": "EXPL-149"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تتبع الجيب",
+  "name_en": "Unit-circle sine trace",
+  "status": "seen",
+  "what": "point on circle projects to scrolling sine",
+  "how": "point on circle projects to scrolling sine",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-math-files-39c9d0"
+  ],
+  "styles": [
+   "pm-math-files-39c9d0"
+  ],
+  "tags": [],
+  "id": "EXPL-150"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "عُقد تتصل بخطوط إلى شعار مركزي",
+  "name_en": "Nodes wired to hub logo",
+  "status": "seen",
+  "what": "three labels at top arc; lines stroke-draw from each to the centre (~300 ms staggered) then the hub logo pops with ring",
+  "how": "three labels at top arc; lines stroke-draw from each to the centre (~300 ms staggered) then the hub logo pops with ring",
+  "params": "line 1 px #4b6fd8",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-maxalexweber-67688b"
+  ],
+  "styles": [
+   "pm-maxalexweber-67688b"
+  ],
+  "tags": [],
+  "id": "EXPL-151"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "إقلاع بسطر طرفية يُكتب",
+  "name_en": "Terminal typewriter boot",
+  "status": "seen",
+  "what": "mono 12 px dim text '> verb…' typed at ~40 ms/char with caret",
+  "how": "mono 12 px dim text '> verb…' typed at ~40 ms/char with caret",
+  "params": "colour #566992",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-maxalexweber-67688b"
+  ],
+  "styles": [
+   "pm-maxalexweber-67688b"
+  ],
+  "tags": [],
+  "id": "EXPL-152"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرطات متدفقة على مسار",
+  "name_en": "Flow dashes along path",
+  "status": "seen",
+  "what": "animate dash offset along tube/curve; color codes power/data/heat",
+  "how": "animate dash offset along tube/curve; color codes power/data/heat",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-mdaman010-e7226a"
+  ],
+  "styles": [
+   "pm-mdaman010-e7226a"
+  ],
+  "tags": [],
+  "id": "EXPL-153"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تسميات بخطوط إشارة",
+  "name_en": "Leader-line callouts",
+  "status": "seen",
+  "what": "dot + line + label anchored to 3D point projected",
+  "how": "dot + line + label anchored to 3D point projected",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-mdaman010-e7226a"
+  ],
+  "styles": [
+   "pm-mdaman010-e7226a"
+  ],
+  "tags": [],
+  "id": "EXPL-154"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "توصيل العقد",
+  "name_en": "Node connector graph",
+  "status": "seen",
+  "what": "pills connected by curved bezier lines with a travelling dot",
+  "how": "pills connected by curved bezier lines with a travelling dot",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-melvynx-6cde6c"
+  ],
+  "styles": [
+   "pm-melvynx-6cde6c"
+  ],
+  "tags": [],
+  "id": "EXPL-155"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "سحابة رقاقات كود عائمة",
+  "name_en": "Floating code-chip cloud",
+  "status": "seen",
+  "what": "20-30 mono pills with random positions, slow sine drift 4-8 px, opacity 0.4-0.9 around hero text",
+  "how": "20-30 mono pills with random positions, slow sine drift 4-8 px, opacity 0.4-0.9 around hero text",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-misbahsy-80eaec"
+  ],
+  "styles": [
+   "pm-misbahsy-80eaec"
+  ],
+  "tags": [],
+  "id": "EXPL-156"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط موزع ومحاور",
+  "name_en": "Hub-and-spoke router graph",
+  "status": "seen",
+  "what": "left inputs → central card → right list; connectors with moving dash offset, 80 ms stagger",
+  "how": "left inputs → central card → right list; connectors with moving dash offset, 80 ms stagger",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-misbahsy-80eaec"
+  ],
+  "styles": [
+   "pm-misbahsy-80eaec"
+  ],
+  "tags": [],
+  "id": "EXPL-157"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مسار الاحتياط",
+  "name_en": "Failover path",
+  "status": "seen",
+  "what": "request pill → diamond node; red failed branch then green success branch draws on 400 ms",
+  "how": "request pill → diamond node; red failed branch then green success branch draws on 400 ms",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-misbahsy-80eaec"
+  ],
+  "styles": [
+   "pm-misbahsy-80eaec"
+  ],
+  "tags": [],
+  "id": "EXPL-158"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أقواس زوايا للتركيز",
+  "name_en": "Corner crop brackets",
+  "status": "seen",
+  "what": "four L-shaped 1 px marks placed at a region's corners, animate from larger rect to target rect",
+  "how": "four L-shaped 1 px marks placed at a region's corners, animate from larger rect to target rect",
+  "params": "arm 12 px, ease-out 300 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-moguzbulbul-6311b6"
+  ],
+  "styles": [
+   "pm-moguzbulbul-6311b6"
+  ],
+  "tags": [],
+  "id": "EXPL-159"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "أسهم قياس بملاحظات",
+  "name_en": "Annotated dimension arrows",
+  "status": "seen",
+  "what": "line with end ticks/arrowhead plus tiny mono uppercase label describing the change",
+  "how": "line with end ticks/arrowhead plus tiny mono uppercase label describing the change",
+  "params": "mono 9px tracking .1em",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-moguzbulbul-6311b6"
+  ],
+  "styles": [
+   "pm-moguzbulbul-6311b6"
+  ],
+  "tags": [],
+  "id": "EXPL-160"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "سلسلة خطوات معاملة",
+  "name_en": "Transaction step chain",
+  "status": "seen",
+  "what": "Dashed container labelled 'one transaction'; slightly rotated paper chips appear and straighten into a vertical chain joined by arrows",
+  "how": "Dashed container labelled 'one transaction'; slightly rotated paper chips appear and straighten into a vertical chain joined by arrows",
+  "params": "chip rot ±6°→0, stagger 0.6 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-nikolajankovic-ce4ff4"
+  ],
+  "styles": [
+   "pm-nikolajankovic-ce4ff4"
+  ],
+  "tags": [],
+  "id": "EXPL-161"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شجرة تفرّع اتصال",
+  "name_en": "Branching connection tree",
+  "status": "seen",
+  "what": "Address chip at top, curved hand-drawn lines draw-on to N boxes below, focus box circled with yellow highlighter",
+  "how": "Address chip at top, curved hand-drawn lines draw-on to N boxes below, focus box circled with yellow highlighter",
+  "params": "draw-on 0.8 s each",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-nikolajankovic-ce4ff4"
+  ],
+  "styles": [
+   "pm-nikolajankovic-ce4ff4"
+  ],
+  "tags": [],
+  "id": "EXPL-162"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خريطة نظام بفقاعات",
+  "name_en": "Bubble ecosystem map",
+  "status": "seen",
+  "what": "Scatter hand-drawn ellipses with protocol names and small empty blobs, connected by dotted paths; tiny boat icon traverses",
+  "how": "Scatter hand-drawn ellipses with protocol names and small empty blobs, connected by dotted paths; tiny boat icon traverses",
+  "params": "~9 named + 12 empty blobs",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-nikolajankovic-ce4ff4"
+  ],
+  "styles": [
+   "pm-nikolajankovic-ce4ff4"
+  ],
+  "tags": [],
+  "id": "EXPL-163"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "سجل أحداث ملوّن",
+  "name_en": "Colour-coded event log",
+  "status": "seen",
+  "what": "Monospace table of last 6 events: time, id, status (green/red), remaining; new rows push old ones up",
+  "how": "Monospace table of last 6 events: time, id, status (green/red), remaining; new rows push old ones up",
+  "params": "6 rows; columns aligned by fixed char widths",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-parkerrex-1a54fe"
+  ],
+  "styles": [
+   "pm-parkerrex-1a54fe"
+  ],
+  "tags": [],
+  "id": "EXPL-164"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط شلال",
+  "name_en": "Cascade flow diagram",
+  "status": "seen",
+  "what": "stacked boxes with arrows revealing sequentially",
+  "how": "stacked boxes with arrows revealing sequentially",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-polydao-7a572b"
+  ],
+  "styles": [
+   "pm-polydao-7a572b"
+  ],
+  "tags": [],
+  "id": "EXPL-165"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط محور وأذرع",
+  "name_en": "Hub and spoke diagram",
+  "status": "seen",
+  "what": "centre icon, labels around, thin lines",
+  "how": "centre icon, labels around, thin lines",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-prasad-pilla-2c0cba"
+  ],
+  "styles": [
+   "pm-prasad-pilla-2c0cba"
+  ],
+  "tags": [],
+  "id": "EXPL-166"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "لوحة قياسات حية بأرقام تتغير",
+  "name_en": "Live telemetry HUD",
+  "status": "seen",
+  "what": "Two mono panels with symbol label + right-aligned tabular value updated from a physics model each frame; switch values to ∞ / 'lost' at the horizon",
+  "how": "Two mono panels with symbol label + right-aligned tabular value updated from a physics model each frame; switch values to ∞ / 'lost' at the horizon",
+  "params": "amber labels #e0a060, white values, 1 px rule; 2 decimals",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rebutonepress-810f78"
+  ],
+  "styles": [
+   "pm-rebutonepress-810f78"
+  ],
+  "tags": [],
+  "id": "EXPL-167"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "افتتاح بسطر طرفية",
+  "name_en": "Terminal cold open",
+  "status": "seen",
+  "what": "Mono '$ command --' typed with block cursor on black",
+  "how": "Mono '$ command --' typed with block cursor on black",
+  "params": "50 ms/char",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-robvjourney-ce3e1a"
+  ],
+  "styles": [
+   "pm-robvjourney-ce3e1a"
+  ],
+  "tags": [],
+  "id": "EXPL-168"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مؤشر خطوات",
+  "name_en": "Six-step stepper",
+  "status": "seen",
+  "what": "circles linked by line; active ring, done = filled check, line fills",
+  "how": "circles linked by line; active ring, done = filled check, line fills",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ror-fly-9950f1"
+  ],
+  "styles": [
+   "pm-ror-fly-9950f1"
+  ],
+  "tags": [],
+  "id": "EXPL-169"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "قائمة مكوّنات بعلامات صح مرسومة",
+  "name_en": "Checklist with drawn ticks and pointer",
+  "status": "seen",
+  "what": "rows of circle + amount + name; upcoming rows at 45% opacity, an arrow glyph slides to the active row, on completion stroke-dash draw a check mark inside the circle",
+  "how": "rows of circle + amount + name; upcoming rows at 45% opacity, an arrow glyph slides to the active row, on completion stroke-dash draw a check mark inside the circle",
+  "params": "tick draw ~250 ms, arrow move ~300 ms easeOutCubic",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sarut0bisasuke-cefa43"
+  ],
+  "styles": [
+   "pm-sarut0bisasuke-cefa43"
+  ],
+  "tags": [],
+  "id": "EXPL-170"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تسمية بخط مؤشر",
+  "name_en": "Leader-line callout",
+  "status": "seen",
+  "what": "project 3D anchor to screen, draw 1px line + bold label + grey sub, fade 300 ms",
+  "how": "project 3D anchor to screen, draw 1px line + bold label + grey sub, fade 300 ms",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sayan-shanky-f850d8"
+  ],
+  "styles": [
+   "pm-sayan-shanky-f850d8"
+  ],
+  "tags": [],
+  "id": "EXPL-171"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شبكة شركاء",
+  "name_en": "Avatar network bloom",
+  "status": "seen",
+  "what": "avatars pop around centre logo with green value pills",
+  "how": "avatars pop around centre logo with green value pills",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-steventey-0d20e4"
+  ],
+  "styles": [
+   "pm-steventey-0d20e4"
+  ],
+  "tags": [],
+  "id": "EXPL-172"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "رسم توضيحي يبنى مع الصوت",
+  "name_en": "Synced diagram build",
+  "status": "seen",
+  "what": "Each labelled arrow/icon fades+draws at its word timestamp",
+  "how": "Each labelled arrow/icon fades+draws at its word timestamp",
+  "params": "stagger by words.json",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sudo-kiran-6609ed"
+  ],
+  "styles": [
+   "pm-sudo-kiran-6609ed"
+  ],
+  "tags": [],
+  "id": "EXPL-173"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط عقد بنقاط متدفقة",
+  "name_en": "Node pill diagram with flowing dots",
+  "status": "seen",
+  "what": "SVG bezier connectors draw-on 500 ms, dot travelling along path",
+  "how": "SVG bezier connectors draw-on 500 ms, dot travelling along path",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sudo-kiran-b055de"
+  ],
+  "styles": [
+   "pm-sudo-kiran-b055de"
+  ],
+  "tags": [],
+  "id": "EXPL-174"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مصفوفة كتلية بالتهشير تتفرّع",
+  "name_en": "Hatched block matrix refinement",
+  "status": "seen",
+  "what": "draw a hatched square, arrow, then the same square split into 2x2 blocks with diagonal blocks cross-hatched in a new colour, arrow, then nested sub-blocks — shows recursive structure",
+  "how": "draw a hatched square, arrow, then the same square split into 2x2 blocks with diagonal blocks cross-hatched in a new colour, arrow, then nested sub-blocks — shows recursive structure",
+  "params": "3 stages left->right, hatch spacing ~8 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tak3sh8-be5012"
+  ],
+  "styles": [
+   "pm-tak3sh8-be5012"
+  ],
+  "tags": [],
+  "id": "EXPL-175"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شبكة عُقد بحواف موجبة وسالبة",
+  "name_en": "Graph network with signed edges",
+  "status": "seen",
+  "what": "place N nodes on a circle, each with an up/down arrow glyph; draw every pair edge one by one coloured by sign",
+  "how": "place N nodes on a circle, each with an up/down arrow glyph; draw every pair edge one by one coloured by sign",
+  "params": "N=7-8, edge draw ~80 ms stagger",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tak3sh8-be5012"
+  ],
+  "styles": [
+   "pm-tak3sh8-be5012"
+  ],
+  "tags": [],
+  "id": "EXPL-176"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شجرة هرمية مع خطوط مستويات",
+  "name_en": "Ultrametric tree with level guides",
+  "status": "seen",
+  "what": "binary tree drawn root-down, dashed horizontal level lines labelled in different colours, leaf dots appear last with a caption",
+  "how": "binary tree drawn root-down, dashed horizontal level lines labelled in different colours, leaf dots appear last with a caption",
+  "params": "3 levels, 8 leaves",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tak3sh8-be5012"
+  ],
+  "styles": [
+   "pm-tak3sh8-be5012"
+  ],
+  "tags": [],
+  "id": "EXPL-177"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "بطاقة كود JSON تُكتب",
+  "name_en": "Typed JSON prompt card",
+  "status": "seen",
+  "what": "Thin lime-bordered box with pink filename tab; mono text types with block cursor; small tag chips float around it",
+  "how": "Thin lime-bordered box with pink filename tab; mono text types with block cursor; small tag chips float around it",
+  "params": "~30 chars/s; chips drift 10px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-techhalla-7acbc2"
+  ],
+  "styles": [
+   "pm-techhalla-7acbc2"
+  ],
+  "tags": [],
+  "id": "EXPL-178"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط معماري يرسم نفسه",
+  "name_en": "Architecture flow draw-on",
+  "status": "seen",
+  "what": "nodes as outlined pills, connector lines draw 300ms then dot pulses travel along",
+  "how": "nodes as outlined pills, connector lines draw 300ms then dot pulses travel along",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-techyoutbe-945b56"
+  ],
+  "styles": [
+   "pm-techyoutbe-945b56"
+  ],
+  "tags": [],
+  "id": "EXPL-179"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط مقارنة التسهيل",
+  "name_en": "Easing comparison diagram",
+  "status": "seen",
+  "what": "Plot a cubic-bezier curve with handles and a dot travelling along it; beside it three horizontal tracks where dots move with linear, ease-out and custom eases simultaneously, with % readouts; headline",
+  "how": "Plot a cubic-bezier curve with handles and a dot travelling along it; beside it three horizontal tracks where dots move with linear, ease-out and custom eases simultaneously, with % readouts; headline 'TIMING IS EVERYTHING.'",
+  "params": "cubic-bezier(0.85,0,0.15,1), 1.2 s loop",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-teslachartz-c58b32"
+  ],
+  "styles": [
+   "pm-teslachartz-c58b32"
+  ],
+  "tags": [],
+  "id": "EXPL-180"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خطوط تعارض بين الملاحظات",
+  "name_en": "Conflict connector lines",
+  "status": "seen",
+  "what": "SVG lines from cards to node with ≠ badge",
+  "how": "SVG lines from cards to node with ≠ badge",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-theviableedge-9065be"
+  ],
+  "styles": [
+   "pm-theviableedge-9065be"
+  ],
+  "tags": [],
+  "id": "EXPL-181"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "جولة شجرة ملفات",
+  "name_en": "Terminal file tree walkthrough",
+  "status": "seen",
+  "what": "dark panel, highlight bar steps rows",
+  "how": "dark panel, highlight bar steps rows",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-theviableedge-9065be"
+  ],
+  "styles": [
+   "pm-theviableedge-9065be"
+  ],
+  "tags": [],
+  "id": "EXPL-182"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شجرة انشقاق",
+  "name_en": "Party split tree",
+  "status": "seen",
+  "what": "pills joined by elbow connectors",
+  "how": "pills joined by elbow connectors",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-triglyceee-bd5b08"
+  ],
+  "styles": [
+   "pm-triglyceee-bd5b08"
+  ],
+  "tags": [],
+  "id": "EXPL-183"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "لوحة JSON",
+  "name_en": "JSON response panel",
+  "status": "seen",
+  "what": "syntax coloured lines appear + 200 OK pill",
+  "how": "syntax coloured lines appear + 200 OK pill",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tstfully-0aa6b4"
+  ],
+  "styles": [
+   "pm-tstfully-0aa6b4"
+  ],
+  "tags": [],
+  "id": "EXPL-184"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "طرفية مع بطاقة تعريف",
+  "name_en": "Terminal + definition card split",
+  "status": "seen",
+  "what": "macOS-style dark terminal left 60%, typed lines 30–40 ms/char; right card with big mono command in accent + one-line meaning",
+  "how": "macOS-style dark terminal left 60%, typed lines 30–40 ms/char; right card with big mono command in accent + one-line meaning",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-yunn260414-60d996"
+  ],
+  "styles": [
+   "pm-yunn260414-60d996"
+  ],
+  "tags": [],
+  "id": "EXPL-185"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "ثلاث لوحات تشبيه",
+  "name_en": "Analogy panel triptych",
+  "status": "seen",
+  "what": "3 bordered cards each own accent colour, icon+title+caption, active one glows",
+  "how": "3 bordered cards each own accent colour, icon+title+caption, active one glows",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-yunn260414-60d996"
+  ],
+  "styles": [
+   "pm-yunn260414-60d996"
+  ],
+  "tags": [],
+  "id": "EXPL-186"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "رسم شجرة الفروع",
+  "name_en": "Branch graph draw-on",
+  "status": "seen",
+  "what": "nodes as rings on a line, branch curves down with spring, label pill on HEAD",
+  "how": "nodes as rings on a line, branch curves down with spring, label pill on HEAD",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-yunn260414-60d996"
+  ],
+  "styles": [
+   "pm-yunn260414-60d996"
+  ],
+  "tags": [],
+  "id": "EXPL-187"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "نظام البطاقات للفيديو الشارح",
+  "name_en": "Explainer card system for essays",
+  "status": "documented",
+  "what": "A coherent card kit: full-screen chapter cards, principle cards with boxes/arrows whose spoken element turns red, before/after tables with a red circle on the spoken row, keyword pops, numbered titles.",
+  "how": "Chapter card: pastel ground #EFE6F7, yellow #FFD400 heavy type with #1A1A1A outline at 6% of glyph height, glyphs 14% of frame height, 3-4 s, 1-2 stickers. Principle card: white ground, labels 3.5% height #1A1A1A, spoken element turns #E53935 0.3 s after it is said. Table: row count x 2 s. Keyword pop: #FFD400 + outline, 1-3 words, 6% height, 0.8-2 s. Numbered title: 8% height, 2-3 s. Author as HTML/CSS/JS timeline in the kosif scaffold, preview with node tools/render_html.cjs --preview, render …",
+  "params": "#EFE6F7 #FFD400 #1A1A1A #E53935; 14%/8%/6%/3.5% heights; highlight delay 0.3 s",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-188"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "لقطة الوثيقة مع قلم التظليل",
+  "name_en": "Source-document highlighter shot",
+  "status": "documented",
+  "what": "Show the original source document unchanged with a translucent yellow highlighter sweeping across the sentence being spoken, held 3-5 s.",
+  "how": "Screenshot or render the document page, animate a semi-transparent yellow rectangle (mix-blend multiply) growing along the line timed to words.json; for Arabic sweep right-to-left.",
+  "params": "3-5 s; yellow translucent",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-189"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "قواعد تركيب مخطط الشرح",
+  "name_en": "Explainer diagram composition rules",
+  "status": "documented",
+  "what": "Reduce a system to 3-7 role-level components and at most 5 steps; choose left-to-right or top-to-bottom reading with the fewest crossings; circled step numbers only when order matters; normal flow in neutral lines, only problems/errors/bottlenecks in red, yellow reserved for the single hero; in a se…",
+  "how": "Build as SVG in the HTML engine with a fixed layout JSON reused across scenes, animating highlight changes between frames.",
+  "params": "3-7 components; <=5 steps; 1 yellow hero",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1098-akbun-presentation/2476-akbun-presentation-visual/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-190"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "MG-081/083 دائرة تتحول لدورة وكرة تنقل الفكرة",
+  "name_en": "MG-081/083 Cycle diagram and travelling token",
+  "status": "documented",
+  "what": "Four icons spread on a circle and arrows grow between them in order (MG-081); a small ball travels three stations and changes colour by each stage's function (MG-083).",
+  "how": "MG-081: 0-1 title, 1-7 stages, 7-10 full cycle; direction readable even muted. MG-083: 0-1 enter, 1-7 stations, 7-9 result; Bezier path with stops and markers; colour change must mean something. SVG paths + dashoffset arrows.",
+  "params": "10 s / 9 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-191"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "MG-084 خطأ ثم تصحيح بصري",
+  "name_en": "MG-084 Mistake then visual correction",
+  "status": "documented",
+  "what": "A wrong example freezes, gets ringed, slides aside and the correct version appears.",
+  "how": "0-2 example, 2-3 alert, 3-6 fix, 6-8 summary; freeze frame, masks, sequential comparison; illustrate dangerous actions instead of filming them.",
+  "params": "8 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-192"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "MG-087 مسار قرار مرئي",
+  "name_en": "MG-087 Visual decision path",
+  "status": "documented",
+  "what": "A question appears, two coloured branches extend and an example case travels to its outcome.",
+  "how": "0-2 question, 2-5 branches, 5-8 example path, 8-10 result; shape lines + text cards with the chosen branch highlighted; high-stakes advice needs expert review.",
+  "params": "10 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-193"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "MG-088 مقارنة سرعة دون تضليل",
+  "name_en": "MG-088 Fair speed comparison",
+  "status": "documented",
+  "what": "Two objects cover the same distance next to a visible clock.",
+  "how": "0-1 conditions, 1-6 motion, 6-8 result; identical paths and fixed distances with timers; any change in time or distance between the two is stated.",
+  "params": "8 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-194"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "MG-090 معادلة تتكون خطوة خطوة",
+  "name_en": "MG-090 Equation built step by step (bidi-safe)",
+  "status": "documented",
+  "what": "Givens appear, then the operator, then the result, with the term being explained tinted; constant spacing between separate text layers. Inside Arabic narration the numbers and symbols must keep their direction - never mirror the equation. Pair with math-exposition habits: define each symbol before u…",
+  "how": "0-2 givens, 2-5 operation, 5-8 result, 8-10 read. Render math with KaTeX/MathJax SVG (CDN) or pre-rendered SVG; wrap formulas in an LTR isolate (dir=ltr / unicode-bidi:isolate) inside RTL captions; reveal terms by opacity/colour keys.",
+  "params": "10 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) + MIT (write-math)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md",
+   "kosif-atlas/skills/994-write-math/2278-write-math/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-195"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "إطار شرح تعليمي أحادي اللون",
+  "name_en": "Learning-mono explainer frame",
+  "status": "documented",
+  "what": "Minimal black-and-white 16:9 study frames: white background, title #111111 at top-left, body #333333, annotations #767676, unfilled 1-2 px boxes, dashed grey grouping boxes, thin arrows with small triangular heads and 2-4-word labels; one red accent #D93025 (second accent blue #1A73E8 only when the …",
+  "how": "Build natively as SVG/HTML (no image model, so text is exact), animate arrows/labels with dashoffset and stagger in KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg); narration carries the long explanation.",
+  "params": "accent <5%; margin 5-7%; 3-5 points; title <=40 chars; labels <=4 words",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1094-akbun-draw/2418-akbun-draw-learning-mono/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-196"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "نافذة كود مشروحة بأسهم وتعليقات",
+  "name_en": "Annotated code-window figure",
+  "status": "documented",
+  "what": "Code explainer look: rounded dark editor window #2A2622 with three traffic-light dots; white handwritten-marker title, no logos; syntax colours keys #E06C9F, strings #E5A86B, numbers #A78BFA, punctuation light grey; at most 3 highlights as green outline boxes #7EE787 with hand-drawn yellow curved ar…",
+  "how": "Render in HTML with pre-tokenised spans or Prism/highlight.js (CDN) and animate: window in -> lines reveal -> box draws -> arrow draws -> callout pops, in KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg); text stays exact unlike image models.",
+  "params": "4:3; 4-12 lines; <=3 callouts; 60/35 split",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1094-akbun-draw/2426-akbun-generateimage-code/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-197"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "حدود الإغلاق البصري للأيقونات المختصرة",
+  "name_en": "Closure limits for minimal icons",
+  "status": "documented",
+  "what": "Implied or minimal shapes stop working below about 24 px, for novice or cross-cultural audiences and in high-stakes information; pair minimal icons with labels, make critical marks explicit and test at the smallest rendered size (e.g. 9:16 phone).",
+  "how": "Render a contact sheet at final scale and inspect.",
+  "params": "<~24 px",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1503-universal-design-principles/3811-closure-completion-cost/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-198"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "طبقة اقتباس مقال",
+  "name_en": "Article excerpt overlay",
+  "status": "documented",
+  "what": "Quote a source on top of running footage: paper panel #FAFAF6 with #171717 text, 75-90% width, ≥5% margins, body glyph 3-4% H; in 0.15-0.3 s, hold for reading, out 0.15-0.25 s; optional red underline #D92D20 (stroke 0.25-0.4% H, 10-20% glyph gap), ellipse callout with 20-35% padding, yellow highligh…",
+  "how": "HTML/GSAP or Remotion layer above V1; Resolve Fusion on overlay track",
+  "params": "see what",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2430-akbun-davinciresolve-article-overlay/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-199"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مواصفات بطاقات الشرح",
+  "name_en": "Explainer card specs",
+  "status": "documented",
+  "what": "Chapter card: full-screen pastel (#EFE6F7-like) with bold #FFD400 title outlined #1A1A1A (outline 6% of glyph), glyph 14% H, 3-4 s; principle card: white, boxes/arrows/labels 3.5% H, element turns #E53935 0.3 s after it is spoken; before/after table 3 columns with red circle on spoken row; numbered …",
+  "how": "HyperFrames HTML per card (data-width/height/fps match timeline) -> render mp4 -> place on GFX track",
+  "params": "see what",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2458-davinciresolve-gfx-hyperframes/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-200"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خط ثابت العرض للكود",
+  "name_en": "Monospace for code",
+  "status": "documented",
+  "what": "Code on screen reads best in monospace with generous leading and tinted background.",
+  "how": "JetBrains Mono/Geist Mono, line-height 1.6, background tint.",
+  "params": "lh 1.6",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1503-universal-design-principles/3825-legibility-contrast-and-spacing/SKILL.md",
+   "kosif-atlas/skills/2722-vercel/10536-geist/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-201"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "SVG بوحدة الملليمتر",
+  "name_en": "mm-unit SVG with matching viewBox",
+  "status": "documented",
+  "what": "Set width/height in mm with an equal viewBox so every coordinate and font-size is a mm length.",
+  "how": "Hand SVG or Python string; font-size pt*25.4/72 for mm.",
+  "params": "7pt = 2.47mm",
+  "install": "",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-atlas/skills/2657-figures/10113-svg-figure"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-202"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مفردات الأنماط البصرية",
+  "name_en": "Visual pattern vocabulary for explainers",
+  "status": "documented",
+  "what": "Fan-out, convergence, tree, cycle, cloud, assembly line (chaos->order), side-by-side, gap/break, lines-as-structure timelines.",
+  "how": "Map concept to pattern; timelines = line + 10-20px dots + free labels; animate in reading order.",
+  "params": "dots 10-20px",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-203"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "لوحة JSON Canvas",
+  "name_en": "JSON Canvas board layout",
+  "status": "documented",
+  "what": "Open spec for spatial boards: nodes (text, file, link, group) with x,y,width,height and edges with sides/arrows.",
+  "how": "Write .canvas JSON; can serve as a storyboard/mind-map source that a script turns into animated SVG camera moves.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/3013-obsidian-second-brain/12869-json-canvas"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-204"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "قواعد الرسم التخطيطي التحريري",
+  "name_en": "Editorial diagram grammar",
+  "status": "documented",
+  "what": "Minimal, legible explainer diagrams: delete first, one or two accented nodes, strict connector rules.",
+  "how": "Target density 4/10, more than ~9 nodes means two diagrams; accent on <=2 nodes; right-angle rounded elbows (no diagonals); 6-10 px gap between arrow label and line; no overlapping connectors; >=12 px between attach points on one edge; no connector behind a non-endpoint box; arrows drawn before boxes; 4 px grid. Palette roles paper #f5f5f5, ink #2d3142, muted #4f5d75, soft #7a8399, accent #eb6c36, link #2e5aa8.",
+  "params": "density 4/10; <=9 nodes; label gap 6-10 px; attach spacing >=12 px; 4 px grid",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/345-visuals/1242-html-diagram/SKILL.md",
+   "kosif-atlas/skills/345-visuals/1242-html-diagram/references/svg-primitives.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-205"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "اختيار نوع المخطط التوضيحي",
+  "name_en": "Diagram type chooser",
+  "status": "documented",
+  "what": "Eight diagram types cover most explainers; if a table says it better, use the table.",
+  "how": "Branching decisions -> flowchart; messages over time between actors -> sequence; components and links -> architecture; dated events -> timeline; parent-child -> tree; cross-team handoffs -> swimlane; two-axis positioning -> quadrant; reinforcing cycle -> loop. Pick the dominant axis when two fit.",
+  "params": "8 types",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/345-visuals/1242-html-diagram/SKILL.md",
+   "kosif-atlas/skills/2212-majestic-misc/8300-show-me/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-206"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "ألوان دلالية لمخططات البنية",
+  "name_en": "Architecture diagram semantic colors",
+  "status": "documented",
+  "what": "Dark-theme system diagrams where color encodes component type and dashed rectangles mark boundaries.",
+  "how": "Frontend cyan #22d3ee, backend emerald #34d399, data violet #a78bfa, cloud amber #fbbf24, security rose #fb7185, message bus orange #fb923c, external slate #94a3b8; regions dashed 8,4 amber rx 12; security groups dashed 4,4. Ideas only (copyleft-folder source).",
+  "params": "dash 8,4 / 4,4; rx 12",
+  "install": "",
+  "license": "copyleft:x4919-visual-gen(WTFPL-declared)",
+  "proof": [
+   "kosif-atlas/skills/x4919-visual-gen/x20317-architecture-diagram/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-207"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "قواعد الدقة والوضوح لشرح الأطفال",
+  "name_en": "Science-accuracy and legibility rules for kids' explainers",
+  "status": "documented",
+  "what": "Never show wrong science (vapour rises from the sea, clouds form by cooling, rain falls on land, water returns to the sea); one main motion per stage; no flashing; text >= 40 px at 1080p and contrast >= 4.5:1.",
+  "how": "Check against DESIGN.md 'What NOT to Do' before rendering.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/DESIGN.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-208"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "المسطح التعليمي",
+  "name_en": "Flat Explainer style",
+  "status": "documented",
+  "what": "Light flat palette with one orange highlight for current stage; one main motion per stage; self-drawing strokes.",
+  "how": "Copy style sheet section into DESIGN.md, then build via claude-animation-studio render(t).",
+  "params": "bg #EAF7FF; highlight #FF7A00; Cairo 800/700; text 40px+; pathLength=1 dashoffset",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/trend-animation-styles/references/styles.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-209"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرح تعليمي بخطوات سببية",
+  "name_en": "Causal-step explainer",
+  "status": "documented",
+  "what": "Concept split into 3-6 causal steps, one sentence each, fixed camera, one mover per stage, stage bar at bottom, fact-check every claim.",
+  "how": "Narration 2.5 words/s; on-screen text shorter than spoken; test via imaginary student.",
+  "params": "3-6 steps; 2.5 w/s; 40px+; 4.5:1",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/explainer-edu-animation/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-210"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرح وحلّ خطوة بخطوة بالتحقق",
+  "name_en": "Math & Science Tutor",
+  "status": "documented",
+  "what": "Owner-built skill \"Math & Science Tutor\" (own words): workflow guidance for math & science tutor; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill math-science-tutor (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/math-science-tutor/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-211"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تصميم أنظمة قبل البناء",
+  "name_en": "Software Architecture & ADRs",
+  "status": "documented",
+  "what": "Owner-built skill \"Software Architecture & ADRs\" (own words): workflow guidance for software architecture & adrs; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill software-architecture-adr (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/software-architecture-adr/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-212"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "لوحات SVG مصغرة",
+  "name_en": "SVG thumbnail storyboard frames",
+  "status": "documented",
+  "what": "Simple rect/circle SVG thumbs showing composition per shot.",
+  "how": "write thumbs.svg",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/storyboard-shotlist/SKILL.md:24"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-213"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "ألوان أدوار العقد",
+  "name_en": "Role-coloured diagram nodes",
+  "status": "documented",
+  "what": "Source, processing, storage, external role colours with measured contrast.",
+  "how": "Mermaid classDef",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/diagrams-mermaid-architecture/SKILL.md:24"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-214"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرح التوأم الإنشائي",
+  "name_en": "Structural twin six-beat explainer",
+  "status": "documented",
+  "what": "Pin-jointed 2D/3D truss solved linear-elastically, then filmed as SHAPE→JOINT→LOAD→BREAK→SWAP→RANK with measured units and on-screen 'illustrative' labels.",
+  "how": "python scripts/kmotion.py structural --sample --out twin.json --swap AB --area 0.0002 --fracture-scale 3.2; twinview twin.json --out twin.html; K3S.trussOverlay in 3D.",
+  "params": "bunny: 35 nodes, 109 members, chosen felt values; first limit 2.38× at earL_out-crown; removal at 3.0× -> mechanism; swap 2.6× area -> limit 3.77×, bottleneck moves to earL_front-crown",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/references/STRUCTURAL_TWIN.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-215"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "طباعة الكود على الشاشة",
+  "name_en": "On-screen code typography",
+  "status": "documented",
+  "what": "Real monospace, limited lines, one syntax theme, highlight 1–3 lines, plausible correct code.",
+  "how": "Real monospace, limited lines, one syntax theme, highlight 1–3 lines, plausible correct code.",
+  "params": "28–40 px at 1080 width; ≤ 14 lines",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md:15-16"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-216"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تمييز سطر الكود",
+  "name_en": "Code line highlight",
+  "status": "documented",
+  "what": "Band slides behind key line, others dim.",
+  "how": "Band slides behind key line, others dim.",
+  "params": "250 ms ease-out cubic; others 50%",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md:26"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-217"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تمرير بأسطر كاملة",
+  "name_en": "Whole-line scrolling",
+  "status": "documented",
+  "what": "Scroll code by whole lines.",
+  "how": "Scroll code by whole lines.",
+  "params": "200–300 ms per step ease-in-out",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md:27"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-218"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "وصفة أمر ونتيجة",
+  "name_en": "Command and result recipe",
+  "status": "documented",
+  "what": "Terminal scales in, command types, enter flash, output in blocks, success highlight with push.",
+  "how": "Terminal scales in, command types, enter flash, output in blocks, success highlight with push.",
+  "params": "0–300 ms scale from 0.96; 300–1300 type 35 cps; 1300–1600 caret/enter; 1600–2400 3 output blocks; 2400–3000 highlight + 3% push",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md:35-43"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-219"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "كشف الفرق",
+  "name_en": "Diff reveal",
+  "status": "documented",
+  "what": "Removed lines collapse red, added expand green, unchanged slide.",
+  "how": "Removed lines collapse red, added expand green, unchanged slide.",
+  "params": "removed 250 ms; added 300 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md:49"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-220"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "قواعد العقد والروابط",
+  "name_en": "Diagram node/edge grammar",
+  "status": "documented",
+  "what": "One shape family, one stroke width, straight or one-bend orthogonal edges, curves only for feedback loops.",
+  "how": "One shape family, one stroke width, straight or one-bend orthogonal edges, curves only for feedback loops.",
+  "params": "radius 16–24 px; stroke 3–4 px; arrowheads 14–18 px; node labels 32–44 px; edge labels 24–28 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:15-20"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-221"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "حد سبع عقد",
+  "name_en": "Seven-node chapter limit",
+  "status": "documented",
+  "what": "At most 7 nodes visible; bigger systems in chapters with camera moves.",
+  "how": "At most 7 nodes visible; bigger systems in chapters with camera moves.",
+  "params": "≤ 7 nodes",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:16"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-222"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "حالات العقد",
+  "name_en": "Active/visited/future node states",
+  "status": "documented",
+  "what": "Active node accent, visited ink at 70%, future not drawn.",
+  "how": "Active node accent, visited ink at 70%, future not drawn.",
+  "params": "visited 70%",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:19"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-223"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "الترتيب السببي",
+  "name_en": "Causal reveal order",
+  "status": "documented",
+  "what": "Node appears, outgoing edge draws, next node pops when pen arrives.",
+  "how": "Node appears, outgoing edge draws, next node pops when pen arrives.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:26"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-224"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "نبضة بيانات على الرابط",
+  "name_en": "Data pulse along edge",
+  "status": "documented",
+  "what": "Dot travels edge path repeatedly while flow is described.",
+  "how": "getPointAtLength.",
+  "params": "dot 10–14 px; 600–900 ms in-out; 400 ms gaps",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:29"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-225"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "رأس التشغيل للخط الزمني",
+  "name_en": "Timeline playhead",
+  "status": "documented",
+  "what": "Constant-speed playhead; markers pop on arrival, labels after; current era band.",
+  "how": "Constant-speed playhead; markers pop on arrival, labels after; current era band.",
+  "params": "axis draw 600 ms; marker pop 200 ms; label +120 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:31",
+   "kosif-tool/playbooks/diagrams.md:50"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-226"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "وصفة عملية من ثلاث خطوات",
+  "name_en": "Three-step process recipe",
+  "status": "documented",
+  "what": "Node-edge-node chain with dimming and final data pulse.",
+  "how": "Node-edge-node chain with dimming and final data pulse.",
+  "params": "nodes pop 0/900/1800 ms spring 14/160; edges 300–900, 1200–1800; hold 2100–3600 with pulse",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:37-46"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-227"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "التكبير على مكوّن",
+  "name_en": "Zoom into component",
+  "status": "documented",
+  "what": "Whole system hold, camera to one node, node opens into sub-diagram.",
+  "how": "Whole system hold, camera to one node, node opens into sub-diagram.",
+  "params": "2 s hold; scale 1.5 in 900 ms; crossfade 300 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:48"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-228"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مخطط قبل وبعد",
+  "name_en": "Before/after diagram",
+  "status": "documented",
+  "what": "Duplicate diagram; after copy redraws only changed edges in accent.",
+  "how": "Duplicate diagram; after copy redraws only changed edges in accent.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:52"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-229"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "عكس المخطط للعربية",
+  "name_en": "Mirrored RTL diagrams",
+  "status": "documented",
+  "what": "First node on right, arrows point left, arrowhead markers mirrored; Latin ids isolated.",
+  "how": "First node on right, arrows point left, arrowhead markers mirrored; Latin ids isolated.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:18",
+   "kosif-tool/playbooks/diagrams.md:71"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-230"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "ترتيب بناء المخطط",
+  "name_en": "Diagram build-up reveal order",
+  "status": "idea",
+  "what": "Reveal diagram nodes, then connectors drawing on, then labels, following reading order (RTL for Arabic).",
+  "how": "Use layer order from svg-primitives; stagger 0.08-0.15s per node.",
+  "params": "stagger 0.08-0.15s",
+  "install": "",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-atlas/skills/2657-figures/10114-svg-primitives",
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-231"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "نموذج مجرة الأدلة",
+  "name_en": "Evidence galaxy graph model",
+  "status": "idea",
+  "what": "Four-node chain account -> evidence -> standard -> finding meant to drive a node-link 'galaxy' visual of audit traceability.",
+  "how": "Data object with nodes[] and links[] plus traceEvidence(id) helper; no renderer exists.",
+  "params": "4 nodes, 3 links",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-studio/cinema/evidenceGalaxy.js"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "EXPL-232"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مسار توريد",
+  "name_en": "Supply route with traveling box",
+  "status": "idea",
+  "what": "Route line draws through nodes; icon travels at constant speed and pauses at each node which pops.",
+  "how": "SVG path + getPointAtLength.",
+  "params": "draw 1200 ms; node pop 150 ms; pause 200 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-ceowinkz-7c776b"
+  ],
+  "styles": [
+   "pm-ceowinkz-7c776b"
+  ],
+  "tags": [],
+  "id": "EXPL-233"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شجرة ملفات إلى أعمدة",
+  "name_en": "Folder tree to bar chart",
+  "status": "idea",
+  "what": "Nested folder lines extrude into bars of line counts from the real repo.",
+  "how": "Data from repo (cloc) → bars counting up.",
+  "params": "600 ms count",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-danilowm-d3720d"
+  ],
+  "styles": [
+   "pm-danilowm-d3720d"
+  ],
+  "tags": [],
+  "id": "EXPL-234"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "بطاقات استدعاء الأدوات",
+  "name_en": "Tool-call cards montage",
+  "status": "idea",
+  "what": "Agent tool events (read/search/edit/test/error) as cards snapping on beats with file-tree pulses.",
+  "how": "Cards enter (0.22,1,0.36,1) 420 ms; exit (0.4,0,1,1) 260 ms.",
+  "params": "≥900 ms on screen; ≤3 stacked",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-jake11moran-a269c4"
+  ],
+  "styles": [
+   "pm-jake11moran-a269c4"
+  ],
+  "tags": [],
+  "id": "EXPL-235"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "مسح الفرق ونقاط الاختبار",
+  "name_en": "Diff wipe + test dots",
+  "status": "idea",
+  "what": "Green wipe over red diff, test dots fill one by one, bracket burst.",
+  "how": "Clip wipe.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-jake11moran-a269c4"
+  ],
+  "styles": [
+   "pm-jake11moran-a269c4"
+  ],
+  "tags": [],
+  "id": "EXPL-236"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "خط زمني بتحريك جانبي",
+  "name_en": "Lateral dolly timeline",
+  "status": "idea",
+  "what": "One continuous lateral camera along a track, slowing near dense clusters.",
+  "how": "cubic-bezier(0.4,0,0.2,1) per segment.",
+  "params": "30% speed in clusters",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-kloss-xyz-fe0c31"
+  ],
+  "styles": [
+   "pm-kloss-xyz-fe0c31"
+  ],
+  "tags": [],
+  "id": "EXPL-237"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "بطاقات المعالم",
+  "name_en": "Milestone card rise with micro-anim",
+  "status": "idea",
+  "what": "Cards rise from marker; SVG illustration completes micro-animation.",
+  "how": "spring damping 20.",
+  "params": "400 ms, 40 px; micro 1-1.5 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-kloss-xyz-fe0c31"
+  ],
+  "styles": [
+   "pm-kloss-xyz-fe0c31"
+  ],
+  "tags": [],
+  "id": "EXPL-238"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "شرح زجاج اللف",
+  "name_en": "Spin-glass overlap matrix explainer",
+  "status": "idea",
+  "what": "Matrix uniform -> nested Parisi blocks -> tree.",
+  "how": "Matrix uniform -> nested Parisi blocks -> tree.",
+  "params": "camera 800 ms easeInOutQuad, <=5 moves",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-tak3sh8-be5012"
+  ],
+  "styles": [
+   "pm-tak3sh8-be5012"
+  ],
+  "tags": [],
+  "id": "EXPL-239"
+ },
+ {
+  "family": "diagrams-explainers-code",
+  "name_ar": "تسميات بخط قائد",
+  "name_en": "Leader-line feature labels",
+  "status": "idea",
+  "what": "1 px line draws 250 ms; text +150 ms; 2-4 words",
+  "how": "1 px line draws 250 ms; text +150 ms; 2-4 words",
+  "params": "shadow blur 40 px 8%",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-techyoutbe-945b56"
+  ],
+  "styles": [
+   "pm-techyoutbe-945b56"
+  ],
+  "tags": [],
+  "id": "EXPL-240"
+ }
+]

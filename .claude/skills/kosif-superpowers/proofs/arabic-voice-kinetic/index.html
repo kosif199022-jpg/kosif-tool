@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Kinetic Arabic</title>
+<!--
+  KOSIF superpowers proof — arabic-voice-kinetic (9:16, 1080×1920, 30 fps, 11.5 s).
+  Every frame is a pure function of t: window.__kosif.seek(t) draws it.
+  Data: words.js (= words.json) — 15 words, start/end in seconds, key flags.
+  Edit the numbers in CONFIG below; nothing else depends on wall-clock time.
+-->
+<style>
+  @font-face { font-family: "Amiri"; src: url("../_shared/fonts/Amiri-Bold.ttf") format("truetype"); font-weight: 700; font-display: block; }
+  @font-face { font-family: "Cairo"; src: url("../_shared/fonts/Cairo[slnt,wght].ttf") format("truetype"); font-weight: 200 1000; font-display: block; }
+  @font-face { font-family: "JBMono"; src: url("../_shared/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: block; }
+  :root {
+    --ink: #fff6e8; --ink-dim: rgba(255, 240, 220, .9); --gold: #ffc56e; --gold-2: #ff9a5c; --muted: rgba(250, 232, 210, .62);
+    --bg: #0b1026;
+  }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); color: var(--ink); }
+  #bg { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  /* screen-fixed soft fade so text leaving the frame never collides with the title or the progress HUD */
+  #view { position: absolute; inset: 0; -webkit-mask-image: linear-gradient(to bottom, transparent 280px, #000 440px, #000 1530px, transparent 1640px);
+          mask-image: linear-gradient(to bottom, transparent 280px, #000 440px, #000 1530px, transparent 1640px); }
+  #world { position: absolute; inset: 0; transform-origin: 540px 960px; will-change: transform; }
+  #poem { position: absolute; left: 120px; right: 120px; top: 0; display: flex; flex-direction: column; gap: 44px; }
+  /* block + text-wrap: balance → 2+2 / 3+2 / 3+3 lines instead of a lonely last word */
+  .sent { display: block; text-wrap: balance; font: 700 112px/1.5 "Amiri", serif; text-align: center; word-spacing: 4px;
+          transform-origin: 50% 50%; will-change: transform, opacity, filter; }
+  .w { position: relative; display: inline-block; padding: 0 .1em; will-change: transform, opacity; }
+  .w .txt { position: relative; z-index: 2; display: inline-block; color: var(--ink-dim); }
+  .w .halo { position: absolute; z-index: 0; left: -40%; right: -40%; top: -10%; bottom: -10%; border-radius: 50%;
+             background: radial-gradient(closest-side, rgba(255, 190, 110, .55), rgba(255, 150, 90, .18) 55%, transparent 100%); opacity: 0; }
+  .w .ul { position: absolute; z-index: 1; right: .14em; left: .14em; bottom: .26em; height: 7px; border-radius: 7px;
+           background: linear-gradient(to left, var(--gold), var(--gold-2) 70%, rgba(255, 154, 92, 0)); transform-origin: 100% 50%; transform: scaleX(0); }
+  #top { position: absolute; left: 90px; right: 90px; top: 132px; text-align: center; }
+  #kicker { font: 700 38px/1.4 "Cairo", sans-serif; color: var(--muted); display: inline-flex; align-items: center; gap: 26px; }
+  #kicker i { display: inline-block; width: 110px; height: 2px; background: linear-gradient(to left, transparent, var(--gold)); transform-origin: 0 50%; }
+  #kicker i:first-child { background: linear-gradient(to right, transparent, var(--gold)); transform-origin: 100% 50%; }
+  #tech { margin-top: 14px; font: 500 21px/1 "JBMono", monospace; letter-spacing: .22em; color: rgba(250, 232, 210, .42); direction: ltr; }
+  #hud { position: absolute; left: 120px; right: 120px; top: 1668px; }
+  #track { position: relative; height: 4px; border-radius: 4px; background: rgba(255, 240, 220, .14); }
+  #fill { position: absolute; right: 0; top: 0; bottom: 0; border-radius: 4px; background: linear-gradient(to left, var(--gold), var(--gold-2)); width: 0; }
+  #head { position: absolute; top: 50%; width: 16px; height: 16px; margin: -8px -8px 0 0; border-radius: 50%; background: #fff3dc;
+          box-shadow: 0 0 18px 6px rgba(255, 190, 110, .75); }
+  .tick { position: absolute; top: 50%; width: 6px; height: 6px; margin: -3px -3px 0 0; border-radius: 50%; background: rgba(255, 240, 220, .35); }
+  .tick.key { width: 10px; height: 10px; margin: -5px -5px 0 0; }
+  #meta { display: flex; justify-content: space-between; margin-top: 26px; color: var(--muted); text-shadow: 0 1px 10px rgba(30, 12, 30, .55); }
+  #count { font: 600 30px/1 "Cairo", sans-serif; }
+  #tc { font: 500 24px/1 "JBMono", monospace; direction: ltr; letter-spacing: .06em; padding-top: 4px; }
+  #controls { position: fixed; left: 10px; bottom: 10px; z-index: 9; direction: ltr; font: 13px system-ui, sans-serif; color: #fff; display: flex; gap: 8px; align-items: center; }
+  #controls input { width: 240px; }
+  body.render #controls { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><div id="stage">
+  <canvas id="bg" width="1080" height="1920"></canvas>
+  <div id="view"><div id="world"><div id="poem"></div></div></div>
+  <div id="top"><div id="kicker"><i></i><span>عن الضوء والصبر</span><i></i></div><div id="tech">PIPER · WHISPER · 30 FPS</div></div>
+  <div id="hud"><div id="track"><div id="fill"></div><div id="ticks"></div><div id="head"></div></div>
+    <div id="meta"><span id="count"></span><span id="tc"></span></div></div>
+</div></div>
+<div id="controls"><button id="play">play</button><input id="scrub" type="range" min="0" max="11.5" step="0.01" value="0"><span id="tv"></span></div>
+<script src="words.js"></script>
+<script>
+(() => {
+  'use strict';
+  /* ---------------- CONFIG (edit me) ---------------- */
+  const CONFIG = {
+    W: 1080, H: 1920, FPS: 30, DURATION: 11.5,
+    enter: 0.42,          // word entrance (s): soft right→left mask wipe + rise + de-blur
+    rise: 34,             // px the word rises while entering
+    blur: 9,              // px blur at the first entrance frame
+    dimTo: 0.30,          // opacity of a finished sentence (key words keep KEY_DIM)
+    keyDim: 0.78,
+    sentenceGap: 0.28,    // previous sentence starts dimming this long before the next one speaks
+    camFocusY: 905,       // screen y where the speaking sentence is centred
+    outro: 10.62,         // whole poem returns to full light from here
+    seed: 20261016,
+  };
+  const { W, H, FPS, DURATION } = CONFIG;
+  const WORDS = window.KOSIF_WORDS || [];
+
+  /* ---------------- math ---------------- */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const Ease = {
+    outCubic: (x) => 1 - Math.pow(1 - x, 3),
+    inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    inOutSine: (x) => -(Math.cos(Math.PI * x) - 1) / 2,
+    outQuart: (x) => 1 - Math.pow(1 - x, 4),
+    spring: (x, k = 180, c = 19) => { if (x >= 1) return 1; const w = Math.sqrt(k), z = c / (2 * w), wd = w * Math.sqrt(1 - z * z);
+      return 1 - Math.exp(-z * w * x) * (Math.cos(wd * x) + (z * w / wd) * Math.sin(wd * x)); },
+  };
+  const prog = (t, a, b, e = Ease.outCubic) => e(clamp01((t - a) / Math.max(1e-6, b - a)));
+  const smooth = (a, b, x) => { const p = clamp01((x - a) / (b - a)); return p * p * (3 - 2 * p); };
+  function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let z = s;
+    z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
+  const mixHex = (a, b, p) => { const A = parseInt(a.slice(1), 16), B = parseInt(b.slice(1), 16);
+    const ch = (s) => Math.round(lerp((A >> s) & 255, (B >> s) & 255, p)); return `rgb(${ch(16)},${ch(8)},${ch(0)})`; };
+  const ramp = (stops, p) => { for (let i = 1; i < stops.length; i++) if (p <= stops[i][0]) return mixHex(stops[i - 1][1], stops[i][1], (p - stops[i - 1][0]) / (stops[i][0] - stops[i - 1][0])); return stops[stops.length - 1][1]; };
+
+  /* ---------------- DOM: sentences from punctuation in the display words ---------------- */
+  const $ = (s) => document.querySelector(s);
+  const poem = $('#poem'), world = $('#world');
+  const sentences = [];
+  let cur = null;
+  WORDS.forEach((w, i) => {
+    if (!cur) { cur = { el: document.createElement('div'), words: [] }; cur.el.className = 'sent'; poem.append(cur.el); sentences.push(cur); }
+    const el = document.createElement('span'); el.className = 'w' + (w.key ? ' key' : '');
+    el.innerHTML = '<b class="halo"></b><span class="txt"></span><i class="ul"></i>';
+    el.querySelector('.txt').textContent = w.word;               // whole word: Arabic joining stays intact
+    if (cur.el.childNodes.length) cur.el.append(' ');            // real space = a balanced line-break opportunity
+    cur.el.append(el);
+    cur.words.push({ ...w, i, el, txt: el.querySelector('.txt'), ul: el.querySelector('.ul'), halo: el.querySelector('.halo') });
+    if (/[.؟!]$/.test(w.word) || i === WORDS.length - 1) cur = null;  // sentence ends on . ؟ !
+  });
+  sentences.forEach((s) => { s.start = s.words[0].start; s.end = s.words[s.words.length - 1].end; });
+
+  /* progress ticks: one per word start, key words larger */
+  const ticks = $('#ticks');
+  const tickEls = WORDS.map((w) => { const d = document.createElement('i'); d.className = 'tick' + (w.key ? ' key' : '');
+    d.style.right = `${(w.start / DURATION) * 100}%`; ticks.append(d); return d; });
+  const arabicDigits = (n) => String(n).replace(/\d/g, (d) => '٠١٢٣٤٥٦٧٨٩'[d]);
+
+  /* ---------------- layout-dependent camera targets (measured after fonts load) ---------------- */
+  let poemTop = 0, centers = [], poemH = 0;
+  function measure() {
+    poem.style.top = '0px';
+    poemH = poem.offsetHeight;
+    poemTop = Math.round((H - poemH) / 2) + 30;                 // whole poem centred (outro framing)
+    poem.style.top = poemTop + 'px';
+    centers = sentences.map((s) => poemTop + s.el.offsetTop + s.el.offsetHeight / 2);
+  }
+
+  /* camera: y offset so the speaking sentence sits at camFocusY; eased 0.9 s moves */
+  function cameraAt(t) {
+    const keys = [];
+    sentences.forEach((s, k) => keys.push({ t: Math.max(0, s.start - 0.55), y: CONFIG.camFocusY - centers[k] }));
+    keys.push({ t: CONFIG.outro, y: 0 });
+    let y = keys[0].y;                                           // chain of eased 0.95 s moves
+    for (let k = 1; k < keys.length; k++) y = lerp(y, keys[k].y, prog(t, keys[k].t, keys[k].t + 0.95, Ease.inOutCubic));
+    const push = lerp(1.0, 1.03, Ease.inOutSine(clamp01(t / CONFIG.outro)));
+    const out = prog(t, CONFIG.outro, CONFIG.outro + 0.8, Ease.inOutCubic);
+    return { y, s: lerp(push, 0.94, out), x: Math.sin(t * 0.42) * 6 * (1 - out) };
+  }
+
+  /* ---------------- background canvas: sky drift, rising light, rays, dust, grain ---------------- */
+  const cv = $('#bg'), g = cv.getContext('2d');
+  const R = rng(CONFIG.seed);
+  const dust = Array.from({ length: 110 }, () => ({ x: R() * W, y: R() * H, v: 8 + R() * 26, sz: 0.8 + R() * 2.6, ph: R() * 6.283, sw: 6 + R() * 22, tw: 0.6 + R() * 1.6 }));
+  const grain = [0, 1, 2, 3].map((k) => { const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d');
+    const id = x.createImageData(256, 256), r = rng(CONFIG.seed + 101 * k);
+    for (let i = 0; i < id.data.length; i += 4) { const v = 110 + r() * 145; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; }
+    x.putImageData(id, 0, 0); return c; });
+  const SKY_TOP = [[0, '#080c22'], [0.55, '#151642'], [1, '#2a2253']];
+  const SKY_MID = [[0, '#0e1233'], [0.55, '#2d2251'], [1, '#5a3358']];
+  const SKY_LOW = [[0, '#141634'], [0.5, '#4a2a4c'], [1, '#c76a52']];
+
+  function drawBg(t) {
+    const d = smooth(0.2, DURATION - 0.3, t);               // dawn factor: 0 → 1 over the film
+    const sky = g.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0, ramp(SKY_TOP, d)); sky.addColorStop(0.55, ramp(SKY_MID, d)); sky.addColorStop(1, ramp(SKY_LOW, d));
+    g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1; g.fillStyle = sky; g.fillRect(0, 0, W, H);
+
+    // the light: rises from below the frame, drifts sideways very slowly
+    const lx = 540 + Math.sin(t * 0.33) * 70, ly = lerp(2360, 1890, Ease.inOutSine(d));
+    const glowA = 0.28 + 0.42 * d + 0.12 * prog(t, CONFIG.outro, DURATION, Ease.inOutSine);
+    g.globalCompositeOperation = 'lighter';
+    let rg = g.createRadialGradient(lx, ly, 0, lx, ly, 1250);
+    rg.addColorStop(0, `rgba(255,205,140,${glowA})`); rg.addColorStop(0.35, `rgba(255,150,110,${glowA * 0.35})`); rg.addColorStop(1, 'rgba(255,140,110,0)');
+    g.fillStyle = rg; g.fillRect(0, 0, W, H);
+    rg = g.createRadialGradient(lx, ly, 0, lx, ly, 210);
+    rg.addColorStop(0, `rgba(255,236,200,${0.18 + 0.34 * d})`); rg.addColorStop(1, 'rgba(255,220,170,0)');
+    g.fillStyle = rg; g.fillRect(0, 0, W, H);
+
+    // rays: 11 soft wedges, rotating 2.2°/s
+    g.save(); g.translate(lx, ly);
+    const rot = (t * 2.2 * Math.PI) / 180;
+    for (let k = 0; k < 11; k++) {
+      const a = -Math.PI / 2 + (k - 5) * 0.16 + rot * (k % 2 ? 1 : -0.6), spread = 0.035 + 0.02 * ((k * 7) % 3);
+      const len = 2300, alpha = (0.035 + 0.03 * d) * (0.6 + 0.4 * Math.sin(t * 0.8 + k * 1.7));
+      const lg = g.createLinearGradient(0, 0, Math.cos(a) * len, Math.sin(a) * len);
+      lg.addColorStop(0, `rgba(255,214,160,${alpha})`); lg.addColorStop(1, 'rgba(255,214,160,0)');
+      g.fillStyle = lg; g.beginPath(); g.moveTo(0, 0);
+      g.lineTo(Math.cos(a - spread) * len, Math.sin(a - spread) * len); g.lineTo(Math.cos(a + spread) * len, Math.sin(a + spread) * len); g.closePath(); g.fill();
+    }
+    g.restore();
+
+    // dust motes, lit by proximity to the light
+    for (const p of dust) {
+      const y = ((p.y - p.v * t) % H + H) % H, x = p.x + Math.sin(t * 0.5 + p.ph) * p.sw;
+      const near = Math.exp(-Math.hypot(x - lx, y - ly) / 900);
+      const a = (0.10 + 0.55 * near) * (0.65 + 0.35 * Math.sin(t * p.tw + p.ph));
+      g.fillStyle = `rgba(255,226,186,${a.toFixed(3)})`; g.beginPath(); g.arc(x, y, p.sz, 0, 6.283); g.fill();
+    }
+
+    // vignette + grain (seeded per frame, so renders are identical)
+    g.globalCompositeOperation = 'source-over';
+    const vg = g.createRadialGradient(540, 900, 380, 540, 960, 1250);
+    vg.addColorStop(0, 'rgba(4,5,16,0)'); vg.addColorStop(1, 'rgba(4,5,16,0.55)');
+    g.fillStyle = vg; g.fillRect(0, 0, W, H);
+    const f = Math.round(t * FPS), gr = rng(CONFIG.seed + f);
+    g.globalCompositeOperation = 'overlay'; g.globalAlpha = 0.07;
+    g.fillStyle = g.createPattern(grain[f % 4], 'repeat');
+    g.save(); g.translate(-Math.floor(gr() * 256), -Math.floor(gr() * 256)); g.fillRect(0, 0, W + 256, H + 256); g.restore();
+    g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+  }
+
+  /* ---------------- words ---------------- */
+  function drawWords(t) {
+    const outro = prog(t, CONFIG.outro, CONFIG.outro + 0.7, Ease.inOutCubic);
+    sentences.forEach((s, k) => {
+      const next = sentences[k + 1];
+      const dim = next ? prog(t, next.start - CONFIG.sentenceGap, next.start + 0.35, Ease.inOutCubic) * (1 - outro) : 0;
+      s.el.style.filter = dim > 0.001 ? `blur(${(dim * 1.6).toFixed(2)}px)` : 'none';
+      s.el.style.transform = `scale(${lerp(1, 0.94, dim).toFixed(4)})`;
+      for (const w of s.words) {
+        const e = clamp01((t - w.start) / CONFIG.enter);
+        const on = t >= w.start;
+        const sp = Ease.spring(e);
+        const op = on ? lerp(0.12, 1, Ease.outCubic(e)) : 0;        // 12 % floor: visible on the first frame at/after the spoken start
+        const fade = lerp(1, w.key ? CONFIG.keyDim : CONFIG.dimTo, dim);
+        w.el.style.opacity = (op * fade).toFixed(3);
+        const speaking = t >= w.start && t < w.end + 0.12;
+        const pulse = speaking ? Math.sin(Math.PI * clamp01((t - w.start) / Math.max(0.2, w.end + 0.12 - w.start))) : 0;
+        w.el.style.transform = `translateY(${lerp(CONFIG.rise, 0, sp).toFixed(2)}px) scale(${(lerp(0.965, 1, sp) + 0.035 * pulse).toFixed(4)})`;
+        if (on && e < 1) {                                           // soft mask wipe, right → left (reading direction)
+          const a = lerp(-35, 100, Ease.outQuart(e));
+          const m = `linear-gradient(to left, #000 ${a.toFixed(1)}%, transparent ${(a + 35).toFixed(1)}%)`;
+          w.txt.style.webkitMaskImage = w.txt.style.maskImage = m;
+          w.txt.style.filter = `blur(${((1 - Ease.outCubic(e)) * CONFIG.blur).toFixed(2)}px)`;
+        } else { w.txt.style.webkitMaskImage = w.txt.style.maskImage = 'none'; w.txt.style.filter = 'none'; }
+        // colour: speaking word is bright ivory; key words turn gold and keep a soft glow
+        if (w.key) {
+          const k1 = prog(t, w.start + 0.05, w.start + 0.45, Ease.outCubic);
+          const glow = (on ? k1 : 0) * (0.55 + 0.45 * Math.max(pulse, outro));
+          w.txt.style.color = on ? mixHex('#fff0dc', '#ffc56e', k1) : '#fff0dc';
+          w.txt.style.textShadow = `0 0 ${(28 * glow).toFixed(1)}px rgba(255,180,100,${(0.75 * glow).toFixed(3)}), 0 0 ${(70 * glow).toFixed(1)}px rgba(255,140,90,${(0.35 * glow).toFixed(3)})`;
+          w.halo.style.opacity = (0.7 * glow * (0.5 + 0.5 * pulse) * (1 - 0.6 * dim)).toFixed(3);
+          const draw = prog(t, w.start + 0.08, Math.max(w.end, w.start + 0.5), Ease.inOutCubic);
+          w.ul.style.transform = `scaleX(${draw.toFixed(4)})`;
+        } else {
+          w.txt.style.color = speaking ? '#ffffff' : 'rgba(255,240,222,0.9)';
+          w.txt.style.textShadow = speaking ? `0 0 ${(22 * pulse).toFixed(1)}px rgba(255,236,210,${(0.5 * pulse).toFixed(3)})` : 'none';
+        }
+      }
+    });
+  }
+
+  /* ---------------- HUD ---------------- */
+  const fill = $('#fill'), head = $('#head'), count = $('#count'), tc = $('#tc');
+  const kick = $('#top'), rules = [...document.querySelectorAll('#kicker i')];
+  function drawHud(t) {
+    const p = t / DURATION;
+    fill.style.width = `${(p * 100).toFixed(3)}%`;
+    head.style.right = `${(p * 100).toFixed(3)}%`;
+    WORDS.forEach((w, i) => { const lit = t >= w.start;
+      tickEls[i].style.background = lit ? (w.key ? '#ffc56e' : 'rgba(255,240,220,.85)') : 'rgba(255,240,220,.28)';
+      tickEls[i].style.boxShadow = lit && w.key ? '0 0 10px 2px rgba(255,180,100,.6)' : 'none'; });
+    const said = WORDS.filter((w) => t >= w.start).length;
+    count.textContent = `الكلمة ${arabicDigits(said)} من ${arabicDigits(WORDS.length)}`;
+    const ss = t.toFixed(2).padStart(5, '0');
+    tc.textContent = `00:${ss} / 00:${DURATION.toFixed(2)}`;
+    const a = prog(t, -0.5, 0.7, Ease.outCubic);          // already 80 % visible on frame 0 (thumbnail)
+    kick.style.opacity = a.toFixed(3); kick.style.transform = `translateY(${lerp(-18, 0, a).toFixed(2)}px)`;
+    rules.forEach((r) => (r.style.transform = `scaleX(${prog(t, -0.2, 1.0, Ease.inOutCubic).toFixed(4)})`));
+    $('#hud').style.opacity = prog(t, -0.3, 0.6, Ease.outCubic).toFixed(3);
+  }
+
+  /* ---------------- frame ---------------- */
+  function seek(t) {
+    t = Math.max(0, Math.min(DURATION, t));
+    drawBg(t);
+    const cam = cameraAt(t);
+    world.style.transform = `translate(${cam.x.toFixed(2)}px, ${cam.y.toFixed(2)}px) scale(${cam.s.toFixed(4)})`;
+    drawWords(t);
+    drawHud(t);
+    scrub.value = t.toFixed(2); tv.textContent = t.toFixed(2) + 's';
+  }
+
+  /* ---------------- preview helpers + renderer contract ---------------- */
+  const scrub = $('#scrub'), tv = $('#tv'), play = $('#play');
+  function fit() { const s = Math.min(innerWidth / W, innerHeight / H); $('#fit').style.transform = `scale(${s})`; }
+  addEventListener('resize', fit); fit();
+  if (navigator.webdriver) document.body.classList.add('render');
+  let raf = 0, t0 = 0, tStart = 0;
+  scrub.addEventListener('input', () => { cancelAnimationFrame(raf); raf = 0; seek(+scrub.value); });
+  play.addEventListener('click', () => { if (raf) { cancelAnimationFrame(raf); raf = 0; return; }
+    tStart = +scrub.value; t0 = performance.now();
+    const step = (now) => { seek((tStart + (now - t0) / 1000) % DURATION); raf = requestAnimationFrame(step); }; raf = requestAnimationFrame(step); });
+
+  window.__kosif = { duration: DURATION, fps: FPS, seek };
+  window.__kosifReady = (document.fonts ? document.fonts.ready : Promise.resolve())
+    .then(() => Promise.all([['700 112px Amiri', 'الضوء'], ['700 38px Cairo', 'الضوء'], ['500 21px JBMono', 'PIPER 0']].map(([f, s]) => document.fonts.load(f, s))))
+    .then(() => { measure(); seek(+(new URLSearchParams(location.search).get('t') || 0)); return true; });
+})();
+</script>
+</body>
+</html>

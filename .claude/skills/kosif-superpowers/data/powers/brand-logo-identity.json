@@ -1,0 +1,3983 @@
+[
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بناء شعار SQC",
+  "name_en": "SQC mark construction (S + crystal Q with audit tick + C)",
+  "status": "proven",
+  "what": "Geometric monogram: S as a rounded stroke path, Q as a hexagonal cut crystal with inner facet lines whose tail is an audit check-mark, C as an open arc, and a 45-degree diamond dot.",
+  "how": "SVG viewBox 300x110: S path stroke 19; hex polygon 150,16 183,35 183,73 150,92 117,73 117,35 with facet fill + stroke 15; facets stroke 5 opacity .55; tick M164 80 l13 13 28-33 stroke 17; C arc stroke 19; rect 12x12 rotate(45). Ledger gradients #f6c39b -> #f2732d -> #a53e07; letters white->#f1e3d3 (on dark) or #3a2f27->#1d1814 (on light).",
+  "params": "logo 800x110 with SMART QUALITY CONTROL Montserrat 800 32px textLength 455",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/sqc-mark.svg",
+   "kosif-earth-ci-fork/ui/art/sqc-mark-dark.svg",
+   "kosif-earth-ci-fork/ui/art/sqc-logo.svg"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-01"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار سحابة KOSIF",
+  "name_en": "KOSIF cloud mark",
+  "status": "proven",
+  "what": "Outline cloud glyph with a small doorway at its base, stroked with a peach-to-saffron gradient.",
+  "how": "SVG viewBox 96x64, stroke 6.5 round joins; icon version on gradient #d9530e -> #110e0b at scale 3.2.",
+  "params": "gradient #f2a36b -> #d9530e",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/kosif-cloud.svg",
+   "kosif-earth-ci-fork/ui/art/kosif-icon.svg"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-02"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مكتبة البطاقات الختامية",
+  "name_en": "Kinetic end-card library (17)",
+  "status": "proven",
+  "what": "Per-theme brand outros, e.g. letters assemble from charcoal swirl, cyan outline draws then fills, single gold glint, white wordmark on red, chrome blob uncovers wordmark; added only to the last clip and only for a user-owned wordmark.",
+  "how": "theme.endcard appended when i==n-1 and brand set.",
+  "params": "17 end cards",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:4-20,115"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-03"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "خانة شعار المستخدم",
+  "name_en": "User-owned wordmark slot",
+  "status": "proven",
+  "what": "Only a user-owned wordmark may appear (top-centre strip, end card on the final clip); no fake logos, no AI-added logos or labels.",
+  "how": "kinetic brand field; prompts contain 'no logos/watermarks'.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:101,115",
+   "fastify-motion-bro/scripts/profiles/car-exploded.mjs:56",
+   "fastify-motion-bro/skills/kinetic-flow/SKILL.md:13"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-04"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قوالب الموشن الثمانية",
+  "name_en": "Motion templates (8)",
+  "status": "proven",
+  "what": "title-card, lower-third, stat-counter, quote-card, logo-reveal, countdown, end-card, bullet-list — Arabic-first, Cairo embedded.",
+  "how": "python scripts/kmotion.py template list; template new NAME --template title-card --set title=… sub=… accent=#E7B65A",
+  "params": "accent #E7B65A",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-05"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب كشف الشعار",
+  "name_en": "Template: logo-reveal",
+  "status": "proven",
+  "what": "Pen draws the logo outline, fill springs in with flash and sparkles, name and tagline reveal, slow push.",
+  "how": "python scripts/mtemplates.py new NAME --template logo-reveal --set key=value ... [--seconds S --size WxH --fps F] -> projects/NAME/index.html (+ fonts, gsap, motion-kit); preview in a browser; render with motion.py render.",
+  "params": "6 s; name 'KOSIF', tagline, accent #E7B65A, bg1 #0f1a2b, bg2 #06101c; path = SVG path in a 120x136 viewBox (default hexagon-in-hexagon); draw 1.25 s; fill at 1.5 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/templates/motion/logo-reveal.html",
+   "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:48"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-06"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تحويل ألوان CSS بما فيها oklch",
+  "name_en": "CSS colour normaliser incl. oklch",
+  "status": "proven",
+  "what": "Brand colours scraped from a site's CSS in any syntax (#abc, rgb with slash alpha, hsl, oklch) normalise to hex for the film palette.",
+  "how": "launch.to_hex('#abc')→#aabbcc; 'rgb(255 0 0 / 50%)'→#ff0000; 'hsl(120,100%,50%)'→#00ff00; 'oklch(100% 0 0)'→#ffffff; 'oklch(0.5 0 0)'→#636363; invalid → None; launch.init(site) writes material.json {palette, fonts, ctas, lang}.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:22",
+   "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:30"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-07"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "استخراج مواد فيديو إطلاق من موقع",
+  "name_en": "Site-to-launch-video material extraction",
+  "status": "proven",
+  "what": "From a website folder, title, description, fonts (Google Fonts link), CSS custom-property palette and CTAs are extracted and a launch plan is written with the right aspect and a one-sentence pitch question.",
+  "how": "launch.init(site_dir, 'polished', 'vertical', 18, out) → material.json {palette, fonts, ctas, lang}, brag-plan.md (1080×1920, 'ما هو، في جملة واحدة؟').",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:30"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-08"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نظام تصميم ورق الدفتر",
+  "name_en": "'Ledger paper' design system palette",
+  "status": "proven",
+  "what": "Cream canvas, thin dark ink borders, whisper shadows, outline pill buttons and one saffron accent, with light and dark tokens.",
+  "how": "CSS tokens in src/kosif.css per docs/04-design-system.md.",
+  "params": "paper #fbf8f3/#161310; paper-2 #f3ece2/#1f1b17; card #fffdf9/#1c1814; ink #1d1814/#f5ede3; ink-2 #4b4139; ink-3 #7b6f64; rule-soft #e0d5c8; accent #d9530e/#f2732d; good #2c7a4b; warn #a76a10; bad #b3261e; info #2f5f8f",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-web/docs/04-design-system.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-09"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مشهد الشعار المتتبَّع بأسلوب رسام اللافتات",
+  "name_en": "Traced picture as a sign-painter scene",
+  "status": "proven",
+  "what": "A traced image becomes a picture program: radial dark backdrop, soft drop shadow of the silhouette, then one step per colour layer, largest first, each growing from its own centroid.",
+  "how": "vector_scene.build(data) fits the art into 1080x730 on the 1200x800 sheet.",
+  "params": "backdrop radial #3d3648 -> #221e2a -> #121016 (r 760); shadow offset 12, alpha .45, blur 18; layer weight 1.0",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/vector_scene.py:8",
+   "kosif-studio/tests/test_studio.py:988"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-10"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة شعار ختامية برسم المسار",
+  "name_en": "Logo card with path draw-on (canvas starter)",
+  "status": "proven",
+  "what": "Closing card springs up 120 px and scales 0.94->1, then a K-like monogram path inside a rounded square draws on with dashoffset.",
+  "how": "card spring 160/17 over 0.1-0.7 s; logoPath dashoffset prog(local,0.4,1.2,inOutCubic)",
+  "params": "card radius 48, gradient 170deg #1a2744->#111a30, shadow 0 40 120 rgba(0,0,0,.5); logo 220 px, rect rx16 #7ee8d2, stroke #062a24 7",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/starters/html-canvas/index.html:34",
+   "kosif-tool/starters/html-canvas/index.html:177"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-11"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تغليف الشعار النقطي في SVG",
+  "name_en": "Raster logo embedded as SVG",
+  "status": "ready",
+  "what": "Pixel-identical SVG wrapper with base64 image when no vector source exists; not real vectorization.",
+  "how": "viewBox = pixel size from identify; <image href='data:image/png;base64,..'>. Use Potrace only for monochrome marks.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2981-designer-skill/12626-raster-logo-svg"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-12"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار كاشف برو المصغر",
+  "name_en": "KOSIF Pro favicon mark",
+  "status": "ready",
+  "what": "32px aubergine rounded square with a stroked white K and a teal dot.",
+  "how": "Inline SVG: rect rx 8 fill #2F1B68; path M9 7V25 M9 16L21 7 M9 16L22 25 stroke #FFFFFF width 3 round caps/joins; circle cx24 cy8 r3 #2EA6A6.",
+  "params": "32x32; stroke 3; teal dot r3",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-pro/public/favicon.svg"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-13"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "أيقونة تطبيق كاشف بتدرج وعلامة صح",
+  "name_en": "KOSIF Studio app icon (gradient K + check)",
+  "status": "ready",
+  "what": "512px app icon: diagonal indigo-violet-pink gradient tile, solid white K polygon, emerald check badge; maskable full-bleed variant.",
+  "how": "SVG linearGradient x1 0 y1 0 x2 1 y2 1 stops #6366f1 0, #8b5cf6 .56, #ec4899 1; rect rx 112; check circle r54 #10b981 with 18px white stroke.",
+  "params": "512x512; rx 112 (maskable 0); badge r 54 / 47",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-studio/icon.svg",
+   "kosif-audit-studio/icon-maskable.svg",
+   "kosif-audit-studio/manifest.webmanifest"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-14"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تركيبات علامة كاشف",
+  "name_en": "Brand mark lockups",
+  "status": "ready",
+  "what": "Several 'K' marks: aubergine mono square (pro), lavender-to-mint gradient tile (legacy), pale-mint leaf-shaped serif K (KOSIF 4), purple gradient tile (editorial/V5), lilac gradient tile (research lab).",
+  "how": "pro .brand-mark 44px #2f1b68 mono K 24px/700 + wordmark mono 20px ls .04em; legacy 42px gradient 145deg #f8efff -> #d9c3ff 60% -> #8fd8cd text #3b1272 weight 900; KOSIF4 42x46 #dbf6cd radius 13px 4px 13px 4px Georgia serif 34px; editorial gradient 145deg #4b2377 -> #24113f radius 14px.",
+  "params": "wordmark letter-spacing .12-.16em",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-pro/app/globals.css:348",
+   "kosif-audit-studio/styles.css:100",
+   "kosif-audit-studio/studio.css:26"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-15"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مجموعة أيقونات SVG مضمنة",
+  "name_en": "Inline SVG sprite icon set (29 symbols)",
+  "status": "ready",
+  "what": "Single hidden <svg> with 29 stroke icons referenced via <use href='#i-...'>, styled globally (stroke currentColor 1.8, round caps).",
+  "how": "<svg class='svg-sprite'><symbol id='i-mic' viewBox='0 0 24 24'>...</symbol></svg>; svg { stroke: currentColor; stroke-width:1.8 }.",
+  "params": "24x24 viewBox; ids: grid, upload, target, route, alert, book, file, inbox, users, report, play, search, moon, sun, menu, check, download, plus, filter, x, shield, link, trash, chart, gavel, command, mic, mic-off, print",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-studio/legacy.html",
+   "kosif-audit-studio/styles.css:80"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-16"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "وصفة أيقونة التطبيق",
+  "name_en": "App icon recipe (radial glow + glass sheen)",
+  "status": "ready",
+  "what": "512px rounded-square icon: radial gradient background from an off-centre highlight, a white top sheen fading out at mid-height, the mark scaled 1.4, and a letter-spaced caption.",
+  "how": "radialGradient cx .28 cy .18 r 1.05 (#3a2f27 -> #1d1814 .55 -> #110e0b); rect rx 112; inset rect rx 104 with white .16 -> 0 at .5; mark translate(46 178) scale(1.4); text QUALITY CONTROL Montserrat 800 30px letter-spacing 3.",
+  "params": "sizes 192 / 512 / 180 (apple-touch, rx 0)",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/sqc-icon.svg",
+   "kosif-earth-ci-fork/tools/brand/make_marks.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-17"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار الكبش التراثي",
+  "name_en": "Ram emblem (heritage)",
+  "status": "ready",
+  "what": "Flat vector ram head with a thick spiral horn and ridge strokes, brown tones on cream inside a rounded square.",
+  "how": "SVG 512, clipPath rx 112; horn strokes 50 and 34px round; ridges 5px.",
+  "params": "#f4ead8 bg; #5b3519 / #7a4a24 / #9a6632 / #6e4420; eye #2b1a0f",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/ram.svg",
+   "kosif-earth-ci-fork/docs/rebuild/DESIGN_SYSTEM.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-18"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "زخرفة فاصلة",
+  "name_en": "Ornament divider",
+  "status": "ready",
+  "what": "Tiny diamond-and-dots letterhead ornament for print strips.",
+  "how": "SVG 28x14: outlined diamond stroke 1.2, filled inner diamond, two dots r 1.2.",
+  "params": "#8a5a2b / #b8864e",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/ornament.svg"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-19"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "معالجات الكلمة الشعارية",
+  "name_en": "Wordmark treatments (KOSIF EARTH)",
+  "status": "ready",
+  "what": "Latin wordmarks built purely in CSS: 'KOSIF EARTH' with tracked caps and amber EARTH over video, and a door wordmark with large KOSIF plus a widely spaced 'E A R T H' tag.",
+  "how": "intro: Montserrat 800 clamp(15px,2.2vw,24px) letter-spacing .09em, b{color:#e8bd76}, text-shadow 0 2px 16px rgba(0,0,0,.35); door: .wm::before content 'KOSIF' 800 35px; ::after 'E A R T H' 700 12px #b9f3cd.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.css:8",
+   "kosif-earth-ci-fork/ui/art/brand/earth-office-door.css"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-20"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Biennale Yellow",
+  "name_en": "Frame preset: Biennale Yellow",
+  "status": "ready",
+  "what": "Ready-made video design system 'Biennale Yellow' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/biennale-yellow/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Instrument Serif display + Archivo + JetBrains Mono; colors: paper #E9E5DB, sun #F1EE2E, haze #F0DA7C, ink #1B2566, ember #E26B4A",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/biennale-yellow/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/biennale-yellow/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/biennale-yellow/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-21"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: BlockFrame",
+  "name_en": "Frame preset: BlockFrame",
+  "status": "ready",
+  "what": "Ready-made video design system 'BlockFrame' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/blockframe/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Inter 800-900 uppercase + Space Grotesk; 4px black borders (neo-brutalist); colors: black #000, offwhite #FFFDF5, pink #FE90E8, blue #C0F7FE, green #99E885, yellow #F7CB46, cream #FFDC8B",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/blockframe/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/blockframe/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/blockframe/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-22"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Blue Professional",
+  "name_en": "Frame preset: Blue Professional",
+  "status": "ready",
+  "what": "Ready-made video design system 'Blue Professional' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/blue-professional/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Space Grotesk display/numerals + Inter body; colors: bg #fdfae7, cobalt #1e2bfa, text #111111/#6b6b6b/#9a9a9a, positive #059669, negative #dc2626",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/blue-professional/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/blue-professional/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/blue-professional/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-23"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Bold Poster",
+  "name_en": "Frame preset: Bold Poster",
+  "status": "ready",
+  "what": "Ready-made video design system 'Bold Poster' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/bold-poster/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Shrikhand tilted display + Libre Baskerville body + Space Grotesk chrome; stacked text-shadow; 3px+1.5px double border; colors: bg #FFFFFF, dark #1C1410, red #D8000F, light #F5F2EF",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/bold-poster/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/bold-poster/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/bold-poster/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-24"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Broadside",
+  "name_en": "Frame preset: Broadside",
+  "status": "ready",
+  "what": "Ready-made video design system 'Broadside' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/broadside/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Barlow body + IBM Plex Mono labels (0.14em); hairline dividers; colors: ink #111111, fire-orange #E85D26, cream #F0ECE5, muted #888880",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/broadside/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/broadside/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/broadside/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-25"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Capsule",
+  "name_en": "Frame preset: Capsule",
+  "status": "ready",
+  "what": "Ready-made video design system 'Capsule' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/capsule/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Bodoni Moda display + Space Grotesk; radial accent glows + grain overlay; colors: cream #F5F5F0, ink #1A1A1A, coral #E85D4E, lime #C4D94E, lavender #C5B5E0, sky #8BB4F7, violet #A06CE8, yellow #F2D160, peach #F5B895",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/capsule/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/capsule/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/capsule/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-26"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Cartesian",
+  "name_en": "Frame preset: Cartesian",
+  "status": "ready",
+  "what": "Ready-made video design system 'Cartesian' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/cartesian/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Playfair Display 400 + Inter; five warm-stone tones; colors: bg #EDE8E0/#E2DBD1, text #1A1A1A/#5A5A5A, accent #8A8178, line #B8B0A4",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/cartesian/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/cartesian/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/cartesian/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-27"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Cobalt Grid",
+  "name_en": "Frame preset: Cobalt Grid",
+  "status": "ready",
+  "what": "Ready-made video design system 'Cobalt Grid' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/cobalt-grid/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Newsreader display + Hanken Grotesk + DM Mono; colors: paper #F0EBDE/#E6E0CE, ink #1F2BE0, ink-soft #5560E5",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/cobalt-grid/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/cobalt-grid/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/cobalt-grid/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-28"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Code Editorial",
+  "name_en": "Frame preset: Code Editorial",
+  "status": "ready",
+  "what": "Ready-made video design system 'Code Editorial' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/code-editorial/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: EB Garamond display + Inter + JetBrains Mono on warm-navy code surface; coral spike mark (fonts shipped, OFL); colors: ink #141413, cream #FAF9F5, tile #EFE9DE, coral #CC785C, navy #181715",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/code-editorial/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/code-editorial/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/code-editorial/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-29"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Coral",
+  "name_en": "Frame preset: Coral",
+  "status": "ready",
+  "what": "Ready-made video design system 'Coral' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/coral/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Bebas Neue uppercase tracked + Inter; 45-degree diagonal hatch; colors: coral #E85D5D, cream #F5F0E8, black #1A1A1A, gray #6B6B6B",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/coral/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/coral/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/coral/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-30"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Creative Mode",
+  "name_en": "Frame preset: Creative Mode",
+  "status": "ready",
+  "what": "Ready-made video design system 'Creative Mode' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/creative-mode/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Archivo Black display + Space Grotesk + JetBrains Mono taxonomy; four accents; colors: cream #EFE9D9, ink #0F0F0F, green #1F8A4C, pink #F06CA8, orange #E85A1F, yellow #F5C518",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/creative-mode/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/creative-mode/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/creative-mode/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-31"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Daisy Days",
+  "name_en": "Frame preset: Daisy Days",
+  "status": "ready",
+  "what": "Ready-made video design system 'Daisy Days' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/daisy-days/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Fredoka One + Quicksand; charcoal 3px outlines, hard offset shadows 6/4px no blur; colors: cream #F5F0E6, turquoise #7ECDC0, pink #F7C8D4, butter #FDE68A, mint #A8E6CF, lavender #D4A5E8, peach #FFCBA4, sky #A8D8F0, coral #F8635F",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/daisy-days/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/daisy-days/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/daisy-days/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-32"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب تصميم إطار: Editorial Forest",
+  "name_en": "Frame preset: Editorial Forest",
+  "status": "ready",
+  "what": "Ready-made video design system 'Editorial Forest' (1920x1080 primary, 9:16 and 1:1 documented) with type ramp, palette, components, a frame showcase and a caption skin.",
+  "how": "Adopt hyperframes-creative/frame-presets/editorial-forest/FRAME.md as project frame.md; preview frame-showcase.html; caption-skin.html styles captions.",
+  "params": "fonts: Source Serif 4 (opsz axis) display + JetBrains Mono 500 uppercase chrome; flat paper depth; colors: green #2e4a2a, pink #e89cb1, cream #efe7d4, ink #1a1a17",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/editorial-forest/FRAME.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/editorial-forest/frame-showcase.html",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/editorial-forest/caption-skin.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-33"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شريط علامة مع نقطة متوهجة",
+  "name_en": "HUD brand bar with glowing dot",
+  "status": "ready",
+  "what": "A frosted top bar holds a glowing status dot, a two-tone wordmark and a pill flag, used across the film and the dashboard for a consistent product identity.",
+  "how": "#bar height 76 px, 2 px border rgba(157,255,180,.28), radius 26, bg rgba(8,26,25,.62), backdrop blur 6px; dot 18 px lime with 22 px glow; 'KOSIF STRUCTURAL TWIN' Grotesk 30 px ls .06em; flag Mono 20 px '3D · SIM'.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/index.html:25",
+   "100-superskills/skills/kosif-montage-motion/examples/structural-twin-demo.html:6"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-34"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مظهر بطاقة العنوان في مشغل manifest",
+  "name_en": "Manifest title-card canvas look",
+  "status": "ready",
+  "what": "The browser picture of a manifest scene: dark slate background with an accent radial glow, a faint grid, three slowly rotating accent ellipses, an accent dot easing in, a rising Arabic title, a subtitle, a mono 'KOSIF / MOTION' mark, a scene counter and a progress bar.",
+  "how": "drawFrame(canvas, manifest, t) in manifest-player.js; pure in t (same t → same frame).",
+  "params": "bg #11171b; glow centre (.28w,.25h) radius .8w accent+alpha 0x32; grid #ffffff0c every unit/12; ellipses radius unit*(.17+k*.045), alpha .12+k*.13, rotate t*.12+i*.3; ease = easeOutCubic over first 25% of a scene; title 600 weight Tahoma unit*.066 #f2f4f3 rising (1−e)*unit*.05; subtitle unit*.023 #b…",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/manifest-player.js:3"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-35"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "المراجعة: لوحة هوية العلامة",
+  "name_en": "Review: brand style panel (colours, fonts, logo)",
+  "status": "ready",
+  "what": "Global brand colours (used everywhere via 'brand.<id>' references), headline/body fonts chosen from a curated list rendered in their own face, and a swappable logo.",
+  "how": "stylePane(); edits stored as brand.color.<id>, brand.font.<id>, brand.logo; colour fields require #RRGGBB.",
+  "params": "font list order switches to Arabic-first when reel lang starts with 'ar'",
+  "install": "",
+  "license": "MIT (Motion OS, Jason Lee 2026)",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:762",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:336"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-36"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "غلاف بعنوان عربي",
+  "name_en": "Poster frame with Arabic title",
+  "status": "ready",
+  "what": "Grabs a frame and sets an Arabic title on it for a cover/thumbnail.",
+  "how": "python tools.py thumb FILM --out cover.jpg [--at 2.0] [--text عنوان] [--size 1080x1920].",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/tools.py:1"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-37"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "هوية بصرية أولاً",
+  "name_en": "DESIGN.md identity gate",
+  "status": "ready",
+  "what": "Mandatory DESIGN.md: 3-5 role colours, Arabic+Latin font, motion rules, do-not list.",
+  "how": "new_scene.py writes the template.",
+  "params": "default palette bg #0F1A2B ink #F4F7FF accent #F6C76B second #2B86E0",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/claude-animation-studio/scripts/new_scene.py",
+   "100-superskills/examples/demo2d/DESIGN.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-38"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "عقد اختيار عائلة الأيقونات",
+  "name_en": "Icon family selection contract",
+  "status": "install",
+  "what": "Choose one real SVG icon family per piece from a 26-family catalog (Lucide, Phosphor, Tabler, Radix, Carbon, Heroicons v1/v2, Iconoir, Remix, Fluent, etc.), use its native grid sizes and currentColor, verify the exact license.",
+  "how": "Local SVG components, no icon fonts or runtime CDN lookups.",
+  "params": "Radix 15x15 grid; Carbon 16/20/24/32",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/references/iconography.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-39"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "توكنز التصميم بثلاث طبقات",
+  "name_en": "Three-tier design tokens",
+  "status": "install",
+  "what": "primitive (color.blue.600) -> semantic (color.text.default) -> component (button.bg.primary); themes swap semantic values only.",
+  "how": "Author W3C DTCG JSON ($value/$type), transform with Style Dictionary (npm, needs install) into CSS vars; scope themes via [data-theme][data-brand]. For video: a theme.json consumed by Remotion/GSAP scenes so one file re-brands every scene.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2278-design-systems-engineering/8697-design-token-architecture",
+   "kosif-atlas/skills/1394-stark/3327-design-tokens"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-40"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "استخدام أيقونات Lucide",
+  "name_en": "Lucide icon usage (pro)",
+  "status": "install",
+  "what": "Navigation and actions use lucide-react icons with data-icon placement hooks for directional nudges.",
+  "how": "import { Home, ListChecks, ClipboardCheck, FileCheck2, ShieldAlert, Scale, ChartNoAxesCombined, BookOpen, FileText, Bell, Moon, Sun, Upload, Menu ... } from 'lucide-react'.",
+  "params": "default size 16px (size-4) in buttons; 18-28px in tiles",
+  "install": "see arsenal-libraries.md",
+  "license": "ISC",
+  "proof": [
+   "kosif-audit-pro/components/kosif/app-shell.tsx:4"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-41"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "استيراد خط الهوية",
+  "name_en": "Brand font import from files",
+  "status": "install",
+  "what": "Loads a user's TTF/OTF/WOFF/WOFF2 into the page and the caption font list, guessing family and weight from the file name.",
+  "how": "BRAND.addFont: FontFace(family, arrayBuffer,{weight}) + document.fonts.add; weight from name: black/heavy 900, extrabold 800, semibold 600, bold 700, medium 500, light/thin 300, variable/vf '100 900'; stored in IndexedDB 'basma-brand'.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "app/public/js/10_studio.js:2612"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-42"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ألوان الهوية من اللوجو",
+  "name_en": "Logo-derived brand palette",
+  "status": "install",
+  "what": "Derives primary/accent/text/bg colours from a logo image.",
+  "how": "BRAND.colorsFromImage: 64x64 sample, skip alpha<128, near-black (<40) and near-white grey; 4096 buckets weighted 1+2*saturation; distinct colours (L1>90); accent falls back to primary lightened 45%; bg dark #0d0d10 or primary*0.15.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "app/public/js/10_studio.js:2608"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-43"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قراءة دليل الهوية",
+  "name_en": "Brand guide parsing (CSS/JSON/PDF/zip)",
+  "status": "install",
+  "what": "Reads a brand folder, zip, JSON/CSS/text guide or PDF and fills logo, fonts, palette, name, handle and tagline.",
+  "how": "BRAND.importFiles: JSZip 3.10.1 from cdnjs, logo by name /logo|شعار|mark|icon|brand/ or first SVG; fonts by extension; BRAND.fromText finds #hex near primary/accent/background/text keywords (Arabic too) and 24 known font names; PDF via pdf.js (12 pages).",
+  "params": "fonts recognised: Cairo, Tajawal, Almarai, IBM Plex Sans Arabic, Noto Kufi/Sans/Naskh Arabic, Readex Pro, Alexandria, Lalezar, Reem Kufi, Changa, Rubik, El Messiri, Amiri, Aref Ruqaa, Marhey, Lemonada, Harmattan, Markazi Text, Montserrat, Poppins, Inter, Roboto",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "app/public/js/10_studio.js:2632",
+   "app/public/js/10_studio.js:2640"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-44"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "طبقات صور حرة",
+  "name_en": "Free picture layers (logo/product/sticker)",
+  "status": "install",
+  "what": "Pictures placed freely over the video: drag to move, wheel to resize, with entrance animation, opacity, timing and paste-from-clipboard.",
+  "how": "addLayer(): x,y fractions, width 0.04-2.5 of short side (wheel x1.06/0.94), anims pop (settle 'pop'), rise (U.E.out 0.5 s, 6% rise), fade (0.4 s), float (sin 1.6t, 1.2% m), none; shadow 3% m; 'make background', 'remove background', 'edit with Gemini' actions.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "app/public/js/00_editor.js:2546",
+   "app/public/js/00_editor.js:2553"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-45"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "حقيبة الهوية مع اللوجو وكارت النهاية",
+  "name_en": "Brand kit with watermark and end card",
+  "status": "install",
+  "what": "Saved brand (logo, fonts, palette, name, handle, tagline, extra pictures) is applied to every film, montage and caption: palette lock, caption font, handle, corner logo watermark and an animated end card.",
+  "how": "BRAND.apply/layers: watermark at (0.84,0.07) width 16% on 9:16 or (0.9,0.1) width 12% otherwise, opacity 0.88, fade; end card scene 'brandend' 2.6 s at the end when duration > 6 s: radial bg primary 35%, logo 34% m with pop settle, name, tagline (accent) and handle staged at 0.35/0.6/0.85 s; brand pictures available to code scenes via u.image; persisted in localStorage + IndexedDB 'basma-brand'.",
+  "params": "end card 2.6 s; watermark op 0.88",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "app/public/js/10_studio.js:2580",
+   "app/public/js/10_studio.js:2658",
+   "app/public/js/10_studio.js:2670"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-46"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مولّد الشعار والأيقونات",
+  "name_en": "Logo/icon generator script (SVG + headless PNG)",
+  "status": "install",
+  "what": "Python script that writes the four SQC SVGs from one parametric body() and rasterises PNG icons with a headless browser.",
+  "how": "python3 tools/brand/make_marks.py (from repo root): builds sqc-mark/-dark/logo/icon SVG, then Playwright (Python) chromium channel msedge screenshots at 192/512/180 with transparent background and writes payload/*.png.b64.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/tools/brand/make_marks.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-47"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "متغيرات القالب",
+  "name_en": "Composition variables / templating",
+  "status": "install",
+  "what": "Declare typed variables, bind them to text/src, override per instance or per render for personalised batches.",
+  "how": "data-composition-variables JSON; data-var-text, data-var-src; data-variable-values on host; window.__hyperframes.getVariables(); render --variables / --variables-file / --batch rows.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/docs/concepts/variables.mdx",
+   "kosif-one/vendor/hyperframes/docs/packages/cli.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-48"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختام الدعوة للفعل",
+  "name_en": "CTA Close",
+  "status": "install",
+  "what": "Display-size action line lands word by word, one CTA capsule pops with a single overshoot, then total stillness.",
+  "how": "Install with `npx hyperframes add cta-close` (copies to compositions/components/cta-close.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame capt…",
+  "params": "action_line; button_label; vars: action_line=Make it happen; button_label=Start now; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add cta-close` (copies to compositions/components/cta-close",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/cta-close/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/cta-close/cta-close.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/cta-close.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-49"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قفل الدعوة للفعل",
+  "name_en": "CTA Lockup",
+  "status": "install",
+  "what": "Closing lockup: action line, accent CTA pill, supporting microcopy, confident hold.",
+  "how": "Install with `npx hyperframes add cta-lockup` (copies to compositions/components/cta-lockup.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame ca…",
+  "params": "microcopy \"Free while in beta\"; vars: action_line=Start building today; button_label=Get HyperFrames; microcopy=Free while in beta; accent=green[green|blue|violet]",
+  "install": "npx hyperframes add cta-lockup` (copies to compositions/components/cta-lockup",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/cta-lockup/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/cta-lockup/cta-lockup.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/cta-lockup.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-50"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختام الشعار",
+  "name_en": "Logo Brand Close",
+  "status": "install",
+  "what": "Display wordmark cascades in letter by letter, accent period lands last, tagline and wide-tracked mono URL settle, dead-still hold.",
+  "how": "Install with `npx hyperframes add logo-brand-close` (copies to compositions/components/logo-brand-close.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chrom…",
+  "params": "wordmark; tagline; url; vars: wordmark=HYPERFRAMES; tagline=Write HTML. Render video.; url=hyperframes.heygen.com; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add logo-brand-close` (copies to compositions/components/logo-brand-close",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/logo-brand-close/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/logo-brand-close/logo-brand-close.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/logo-brand-close.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-51"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "لسعة الشعار",
+  "name_en": "Logo Sting",
+  "status": "install",
+  "what": "Wordmark slams to final scale, fires one accent ring and one white impact frame, then holds.",
+  "how": "Install with `npx hyperframes add logo-sting` (copies to compositions/components/logo-sting.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame ca…",
+  "params": "vars: wordmark=HYPERFRAMES; accent=green[green|blue|violet]",
+  "install": "npx hyperframes add logo-sting` (copies to compositions/components/logo-sting",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/logo-sting/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/logo-sting/logo-sting.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/logo-sting.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-52"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة الإثبات الاجتماعي",
+  "name_en": "Social Proof Card",
+  "status": "install",
+  "what": "App-store style close: wordmark, five stars, proof line, three feature icons and CTA capsule in a quiet stagger.",
+  "how": "Install with `npx hyperframes add social-proof-card` (copies to compositions/components/social-proof-card.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chr…",
+  "params": "vars: brand=HyperFrames; proof=12,000+ creators; cta=Start rendering free; f1=Write|plain HTML; f2=Render|pixel-perfect; f3=Own|every line",
+  "install": "npx hyperframes add social-proof-card` (copies to compositions/components/social-proof-card",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/social-proof-card/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/social-proof-card/social-proof-card.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/social-proof-card.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-53"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة شهادة",
+  "name_en": "Testimonial Card",
+  "status": "install",
+  "what": "Customer quote reveals at reading pace, then avatar, name and handle settle.",
+  "how": "Install with `npx hyperframes add testimonial-card` (copies to compositions/components/testimonial-card.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chrom…",
+  "params": "rating 5; vars: quote=This changed how we ship.; author=Ken Tanaka; handle=@ken; rating=5(0..5)",
+  "install": "npx hyperframes add testimonial-card` (copies to compositions/components/testimonial-card",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/testimonial-card/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/testimonial-card/testimonial-card.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/testimonial-card.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-54"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة شهادة مفصلة",
+  "name_en": "Testimonial Proof Card",
+  "status": "install",
+  "what": "Quote revealed line by line through a soft mask, avatar disc, mono name/role, company mark and one accent-underlined phrase.",
+  "how": "Install with `npx hyperframes add testimonial-proof-card` (copies to compositions/components/testimonial-proof-card.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (he…",
+  "params": "emphasis substring; vars: quote=We shipped our launch video in a single afternoon; name=Maya Chen; role=Head of Product; company=NORTHWIND; emphasis=single afternoon; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add testimonial-proof-card` (copies to compositions/components/testimonial-proof-card",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/testimonial-proof-card/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/testimonial-proof-card/testimonial-proof-card.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/testimonial-proof-card.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-55"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شريط الثقة",
+  "name_en": "Trust Strip",
+  "status": "install",
+  "what": "Monochrome row of wide-tracked mono wordmarks fading in left-to-right by opacity only, then still.",
+  "how": "Install with `npx hyperframes add trust-strip` (copies to compositions/components/trust-strip.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame …",
+  "params": "marks list; tone muted|ink; vars: marks=Northwind, Acme Corp, Globex, Initech, Umbra; tone=muted[muted|ink]; cues=; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add trust-strip` (copies to compositions/components/trust-strip",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/trust-strip/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/trust-strip/trust-strip.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/trust-strip.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-56"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بلاطات الشعار",
+  "name_en": "Wordmark Tiles",
+  "status": "install",
+  "what": "Wordmark resolves from colour noise into correctly cropped glyph tiles through a spatial GSAP wave.",
+  "how": "Install with `npx hyperframes add wordmark-tiles` (copies to compositions/components/wordmark-tiles.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium …",
+  "params": "columns 12; waveStagger 40 ms; vars: text=LAUNCH; columns=12(8..14); waveStagger=40(15..50)",
+  "install": "npx hyperframes add wordmark-tiles` (copies to compositions/components/wordmark-tiles",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/wordmark-tiles/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/wordmark-tiles/wordmark-tiles.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/wordmark-tiles.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-57"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار مجسم",
+  "name_en": "Extruded Logo",
+  "status": "install",
+  "what": "Beveled 3D letters flip up one by one, the word swings so light rakes across bevels, then holds readable; chrome, gold or matte.",
+  "how": "Install with `npx hyperframes add extruded-logo` (copies the full composition to compositions/extruded-logo.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: Three.js 0.184.0 (CDN), Canvas 2D painter, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "Three.js; Geist OFL; 1920x1080; duration 5 s",
+  "install": "npx hyperframes add extruded-logo` (copies the full composition to compositions/extruded-logo",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/extruded-logo/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/extruded-logo/extruded-logo.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-58"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ترويج الأفاتار",
+  "name_en": "HeyGen Avatar Promo Card",
+  "status": "install",
+  "what": "Portrait offer card with a moving avatar mosaic and bold promo type (avatar mp4s and bgm not shipped locally). [Local copy lacks 11 declared file(s), e.g. assets/av_r1k1.mp4.]",
+  "how": "Install with `npx hyperframes add heygen-avatar-promo-card` (copies the full composition to compositions/heygen-avatar-promo-card.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "10 s; 1080x1920; duration 10 s",
+  "install": "npx hyperframes add heygen-avatar-promo-card` (copies the full composition to compositions/heygen-avatar-promo-card",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/heygen-avatar-promo-card/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/heygen-avatar-promo-card/heygen-avatar-promo-card.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/heygen-avatar-promo-card.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-59"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "خاتمة الشعار",
+  "name_en": "Logo Outro",
+  "status": "install",
+  "what": "Logo assembles piece by piece with glow bloom, tagline fade and URL pill.",
+  "how": "Install with `npx hyperframes add logo-outro` (copies the full composition to compositions/logo-outro.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "6 s; Google Fonts: Inter; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add logo-outro` (copies the full composition to compositions/logo-outro",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/logo-outro/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/logo-outro/logo-outro.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/logo-outro.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-60"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مقدمة شعار يوتيوب",
+  "name_en": "Logo Intro Sequence",
+  "status": "install",
+  "what": "Logo stamp pops on a lined board, kicker gives way to title with accent arrow chip, seeded line distortion.",
+  "how": "Install with `npx hyperframes add yt-logo-intro` (copies the full composition to compositions/yt-logo-intro.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "6 s; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add yt-logo-intro` (copies the full composition to compositions/yt-logo-intro",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/yt-logo-intro/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/yt-logo-intro/yt-logo-intro.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/yt-logo-intro.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-61"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ترويج منتج",
+  "name_en": "Example project: product-promo",
+  "status": "install",
+  "what": "Multi-scene product promo (logo intro, canvas scenes, logo outro) with SVG assets (20 s). [Local copy lacks its sub-compositions: compositions/scene1-logo-intro.html, compositions/scene2-4-canvas.html, compositions/scene5-logo-outro.html.]",
+  "how": "Starter project: `npx hyperframes init --example product-promo` style scaffold (index.html mounts sub-compositions via data-composition-src); reuse its palette/type as a style reference.",
+  "params": "1920x1080; 20 s",
+  "install": "npx hyperframes init --example product-promo` style scaffold (index",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/examples/product-promo/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/examples/product-promo/index.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-62"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "سؤال التصميم: موجود أو اختيار بالعين أو تفويض",
+  "name_en": "Design ask: have / pick-by-eye / leave",
+  "status": "install",
+  "what": "The design spec question has three states: use the user's frame.md/design.md, open 2-3 preset showcases in a browser so the user picks by eye (stored as style_preset), or let the workflow's design step decide/generate a design picker.",
+  "how": "Open frame-presets/<name>/frame-showcase.html for 2-3 fitting presets; record style_preset in BRIEF.md; for captured sites say the pick is layout bones, colors get remixed from the brand.",
+  "params": "2-3 presets shown",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes/references/capability-menu.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/coral/frame-showcase.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-63"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مخطط مشهد: تجميع الشعار وتثبيته",
+  "name_en": "Blueprint: Logo assemble lockup",
+  "status": "install",
+  "what": "A brand mark comes to exist (parts assemble, letters cascade, outline draws, camera pushes through negative space, spring bloom, morph from phrase, pixel streak) and resolves to a centered lockup + URL/CTA.",
+  "how": "Pick from hyperframes-animation/blueprints-index.md by role, then read hyperframes-animation/blueprints/logo-assemble-lockup.md for the multi-phase recipe; cite blueprint id per beat in the storyboard.",
+  "params": "duration 4.4-11 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/logo-assemble-lockup.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-64"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مخطط مشهد: تحول الشعار إلى زر دعوة ونقرة",
+  "name_en": "Blueprint: CTA morph press",
+  "status": "install",
+  "what": "A resting brand mark condenses into a brighter CTA and a cursor lands a human-aimed click; hook variant morphs a lone pill into a menu/prompt card.",
+  "how": "Pick from hyperframes-animation/blueprints-index.md by role, then read hyperframes-animation/blueprints/cta-morph-press.md for the multi-phase recipe; cite blueprint id per beat in the storyboard.",
+  "params": "duration 4-6 s (hook 5-7.5 s)",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/cta-morph-press.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-65"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ملف المواصفات البصرية frame.md",
+  "name_en": "frame.md design spec (video-first DESIGN.md)",
+  "status": "install",
+  "what": "A design system rewritten for the camera: frontmatter tokens (colors, type ramp in cqw units, spacing, borders) are normative brand truth, prose is context; resolution order frame.md -> design.md -> DESIGN.md.",
+  "how": "hyperframes-creative/references/design-spec.md; adopt a preset FRAME.md as frame.md; build-frame.mjs applies it in narrative workflows.",
+  "params": "type sizes in cqw (container-query width units)",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/design-spec.md",
+   "kosif-one/vendor/hyperframes/README.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-66"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "منتقي التصميم بلوحات المزاج",
+  "name_en": "Design picker mood boards",
+  "status": "install",
+  "what": "Generates contextual mood boards (architecture objects, palettes, preview_html with content tokens) served as an HTML page for the user to pick a direction.",
+  "how": "references/design-picker.md + templates/design-picker.html.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/design-picker.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-creative/templates/design-picker.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-67"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "فئة موشن: كشف الشعار",
+  "name_en": "Motion-graphics category: Logo reveal",
+  "status": "install",
+  "what": "Category module: logo sting / lockup ~3-5 s, often alpha overlay; logo-outro block, svg-path-draw.",
+  "how": "Director sets category 'logo-reveal' in shot-plan.json; builder follows motion-graphics/categories/logo-reveal/module.md reuse-first.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/logo-reveal/module.md",
+   "kosif-one/vendor/hyperframes/skills/motion-graphics/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-68"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب موسيقي: logo-split-lockup-pulse",
+  "name_en": "Music template: logo-split-lockup-pulse",
+  "status": "install",
+  "what": "Two-part mark splits to open a gap, grows a center lockup per onset, snap-closes and pulses.",
+  "how": "Pick in music-to-video/references/template-catalog.md by frame pacing + mood; fill params in the storyboard; brand comes from frame.md; copy references/templates/logo-split-lockup-pulse/index.html (program.json where present).",
+  "params": "2-4 s (>4.5 s reads stretched)",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/templates/logo-split-lockup-pulse/index.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/template-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-69"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "دمج القالب مع هوية العلامة",
+  "name_en": "Preset-to-frame.md remix (build-frame.mjs)",
+  "status": "install",
+  "what": "Copies a preset FRAME.md to frame.md and remixes brand tokens from capture/extracted/tokens.json onto the preset's color roles and swaps display/body fonts, plus copies the preset caption skin.",
+  "how": "node <skill>/scripts/build-frame.mjs --preset <name> --hyperframes .",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/faceless-explainer/scripts/build-frame.mjs",
+   "kosif-one/vendor/hyperframes/skills/product-launch-video/scripts/build-frame-colors.test.mjs",
+   "kosif-one/vendor/hyperframes/skills/product-launch-video/scripts/build-frame-subsets.test.mjs"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-70"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار يتجمع بضمّ المسافات بين الحروف",
+  "name_en": "Lockup letter-spacing collapse",
+  "status": "install",
+  "what": "The end-card wordmark condenses from wide tracking and blur into tight tracking, then a travelling dot lands as its full stop.",
+  "how": "fromTo #lock {letterSpacing 0.22em, opacity 0.4, blur 8px} → {−0.03em, 1, 0} 0.8 s E.out; dot tween to (1403,584) scale 0.42 E.rest; M.push world 1→1.045 over 2.6 s.",
+  "params": "132 px/700 wordmark, 44 px subline",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:133",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:135"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-71"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "إطار العلامة بغمر لوني",
+  "name_en": "Brand flood end frame",
+  "status": "install",
+  "what": "The brand frame is a full-screen colour flood opened by an iris from the hero shape, with a Latin wordmark and an Arabic version line revealed word by word.",
+  "how": "#brand radial gold gradient; #b1 'KOSIF Motion' Space Grotesk 150 px/700 ls −0.03em; #b2 Cairo 78 px/800 'نسخة ٥٫٢'; revealWords at 4.15 s (0.6 s, stagger .06) and 4.35 s.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:22",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:84"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-72"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تكامل: canvas-design skill",
+  "name_en": "Integration: canvas-design skill",
+  "status": "install",
+  "what": "Catalogued skill/MCP/library (link only; not installed here).",
+  "how": "see official setup",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-73"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قالب logo-reveal",
+  "name_en": "Motion template logo-reveal",
+  "status": "install",
+  "what": "Arabic-first HTML/GSAP motion template 'logo-reveal'.",
+  "how": "mtemplates.py new NAME --template logo-reveal --set key=value [--seconds --size 1080x1920 --fps 30]; render via motion.py render --engine studio",
+  "params": "SVG path pen-drawn then filled, viewBox 120x136",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:35"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-74"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تحويل الشعار إلى متجه",
+  "name_en": "Logo/flat art vectorizer",
+  "status": "install",
+  "what": "Traces pure colours of a logo/icon (8x smooth upscale, edge-blend detection) into stacked polygons and an SVG; photos become 24-colour posters.",
+  "how": "vectorize.py (studio vector mode); vector_scene.build() grows each layer from its centre.",
+  "params": "export 3840x2560",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/vectorize.py",
+   "kosif-one/tools/kosif-studio/vector_scene.py",
+   "kosif-one/tools/kosif-studio/scenes/aghnam_logo.json"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-75"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تحويل لمتجه",
+  "name_en": "Vectorize logo/photo to SVG",
+  "status": "install",
+  "what": "Traces logos with true colours and adjacent-blend test; photos k-means 24 colours; SVG + 3840x2560 export; vector_scene.py turns trace into layered program.",
+  "how": "python3 vectorize.py image",
+  "params": "k=24",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/scripts/vectorize.py",
+   "100-superskills/skills/pixel-studio-painter/scripts/vector_scene.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-76"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تحويل الشعارات إلى متجه بألوانها الحقيقية",
+  "name_en": "Logo/flat-art vectorisation with true colours",
+  "status": "install",
+  "what": "Traces an image into stacked vector colour layers with holes: it finds the pure colours (skipping antialias blends), enlarges smoothly so edges become curves, traces contours per colour and grows each layer slightly so no seams show.",
+  "how": "vectorize.trace(path) -> {source,size,photo,layers[{color,name,area,centre,polys[{hole,pts}]}],silhouette}; python vectorize.py img or studio.py --trace img.",
+  "params": "up=8x cubic, simplify 0.85 px (approxPolyDP), grow 2 px ellipse dilation, sharpen 0.9, min_area 0.9, max_side 520, max 16 colours, min share 0.1%, colour merge distance 30",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/vectorize.py:1",
+   "kosif-studio/vectorize.py:188",
+   "kosif-studio/scenes/aghnam_logo.json"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-77"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "إعلان منتج عربي: ذبيحة كاملة",
+  "name_en": "Arabic product ad poster (whole lamb)",
+  "status": "install",
+  "what": "A vector product ad on a dark studio backdrop: gold-gradient Arabic headline, weight pill, rounded badge logo, cleaver and knife block, sheep with rim light, branded box with red band and phone numbers, garlic/spice/rosemary, three trays of meat with fat marbling, vignette and grain.",
+  "how": "python studio.py ad_whole_sheep; helpers rrect(), badge(), meat(), lines(); coordinates remapped by P()/M() (8/9 scale, +200 x).",
+  "params": "badge #a8c13a/#ffffff/#e3161d; headline #f6e3b6 -> #c49c5c; pill #ead6b0 -> #cfb085; table #2a1010/#3a1616; meat #d24a52/#b3313b/#7e1e26; fat #f2d6cc; band #c91a1f",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/scenes/ad_whole_sheep.py:1",
+   "kosif-studio/scenes/ad_whole_sheep.py:27",
+   "kosif-studio/scenes/ad_whole_sheep.py:82"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-78"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "عرض تتبّع شعار أغنام الوادي",
+  "name_en": "Logo trace showcase (Aghnam al-Wadi)",
+  "status": "install",
+  "what": "A 155x183 client logo traced into 8 exact colour layers, exported as SVG and as a 1200x800 sign-painter reveal.",
+  "how": "studio.py --trace sources/aghnam_logo.png; scenes/aghnam_logo.json loads as an exact-colour scene.",
+  "params": "colours #ffffff #f4040b #aec638 #090905 #89a53f #70933d #a3a39f #cedd26",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/scenes/aghnam_logo.json",
+   "kosif-studio/out/aghnam_logo.svg",
+   "kosif-studio/out/aghnam_logo_1200x800.png"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-79"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تجميع الشعار النهائي",
+  "name_en": "Logo lockup assembly",
+  "status": "install",
+  "what": "End card where letters tighten from wide tracking and blur into place while the camera keeps breathing.",
+  "how": "gsap fromTo letterSpacing/opacity/filter + M.push",
+  "params": "letter-spacing 0.22em→−0.03em, opacity .4→1, blur 8→0 px in 0.8 s; push 1→1.045 over 2.6 s",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/projects/showreel/index.html:127"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-80"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "كشف شعار",
+  "name_en": "Style: Logo reveal (logo-reveal)",
+  "status": "install",
+  "what": "Logo assembled from its own shapes via mask, draw-on or morph, then held.",
+  "how": "SVG logo paths; resample to 64-128 pts for morph 500-800ms; draw-on; 800-1200ms reveal + 1s hold. Scaffold: python3 tools/kosif.py scaffold logo-reveal <dir>.",
+  "params": "reveal 800-1200ms",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:logo-reveal",
+   "kosif-tool/playbooks/ads.md"
+  ],
+  "styles": [
+   "logo-reveal"
+  ],
+  "tags": [],
+  "id": "BRAND-81"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة شعار بحلقة مرسومة وعلامة",
+  "name_en": "Remotion logo card ring draw + chevron mark",
+  "status": "install",
+  "what": "Glass card springs in from scale .8, a r=150 accent ring draws around via dashoffset, an original stem+chevron mark springs in, then title and 'Made with KOSIF' line fade up.",
+  "how": "card spring damping 14 stiffness 90 mass 1.1; ring progress(8,40,inOutCubic); mark spring from frame 18 damping 11 stiffness 160; text progress(34,18)",
+  "params": "card 760 px, radius 48, bg paper@.06, border paper@.12, stroke 34 for mark",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/starters/remotion/src/Film.tsx:449"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-82"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مقابلة الهوية لعميل بلا هوية",
+  "name_en": "Brand-identity interview for no-brand clients",
+  "status": "key",
+  "what": "Short interview in three parts (product, brand feel via three adjectives and light/dark, shape language sharp vs rounded) mapped to font pairs and a color variant; the original generates pages via Google Stitch (external key).",
+  "how": "Ask at most 4 forcing questions (product+pitch, audience, brand overrides, tone) then commit; map adjectives to fonts e.g. technical -> Geist/Space Grotesk, warm -> Nunito Sans/Rubik/Manrope, authority -> IBM Plex Sans/Public Sans.",
+  "params": "28 font enums; 4 questions max",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/3454-brand-landingpage/14160-brand-landingpage",
+   "kosif-atlas/skills/3454-brand-landingpage/14160-brand-landingpage/references/interview-framework.md",
+   "kosif-atlas/skills/3454-brand-landingpage/14160-brand-landingpage/references/stitch-architecture.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-83"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "Recraft للمتجهات وأسلوب العلامة",
+  "name_en": "Recraft for native vector and brand style",
+  "status": "key",
+  "what": "Recraft V3/V4 outputs true SVG vectors and accepts a brand-style upload, making it the route for icons, marks and illustration sets that must scale.",
+  "how": "Upload 3-10 on-brand references as a brand style, generate SVG, then animate the SVG paths directly (stroke draw-on, morph) in code; overlay exact brand hex afterwards.",
+  "params": "3-10 style refs",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing",
+   "kosif-atlas/skills/2306-generative-web-media/8850-brand-conditioned-generation",
+   "kosif-atlas/skills/1446-marketing-skills/3504-image"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-84"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "غلاف مرسوم من إطار حقيقي",
+  "name_en": "Painted cover from a real frame",
+  "status": "key",
+  "what": "Use a real captured frame as the image reference so a painted cover keeps the true layout and promises nothing the product lacks.",
+  "how": "Pick the busiest frame, crop 16:9 around a focus point to 1600x900 under 400 KB; for a painted variant pass '@file:frame.png' as reference and describe what is on screen (palette, time of day, action), not the title.",
+  "params": "1600x900; <400 KB",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/1511-homie/3889-art"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-85"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "موجز شعار ضد الرداءة ومجموعة الشعار",
+  "name_en": "Anti-slop logo brief and logo suite",
+  "status": "key",
+  "what": "Generated marks drift to a generic middle unless the brief is constrained; the curated vector, not a regenerated raster, is the deliverable.",
+  "how": "Positive constraints (works in one flat colour, reads at 16 px, mark works without wordmark), negatives (no gradient mesh, no swoosh/globe, avoid default SaaS blue), reference-anchored intent; generate many, human curates and modifies; spec primary, stacked, mark-only, wordmark-only, clear-space, min-size, mono.",
+  "params": "favicon legibility 16 px",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2248-brand-identity-studio/8561-logo-and-visual-system-direction"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-86"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "جلب الشعار الرسمي للعلامة",
+  "name_en": "Official brand logo resolution",
+  "status": "key",
+  "what": "Fetches the official mark (theSVG.org, then GitHub org avatar, then domain favicon) and never redraws a logo by hand.",
+  "how": "npx hyperframes media-use resolve --type logo --intent 'stripe' --project .",
+  "params": "",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/media-use/references/resolve.md",
+   "kosif-one/vendor/hyperframes/skills/media-use/references/setup-providers.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-87"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "الاستيراد من فيجما",
+  "name_en": "Figma import: assets, tokens, components, storyboards, motion, shaders",
+  "status": "key",
+  "what": "Five phases: rendered assets (sanitized SVG) and brand tokens bound as var() via REST/CLI, components, Motion animations via an MCP connector translated to GSAP, shaders from connector or native export; a Figma SECTION of frames is read as motion states, not slides.",
+  "how": "figma/SKILL.md routing; separate scoped credentials for REST and MCP; determinism rules.",
+  "params": "",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/figma/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-88"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تكامل: Canva MCP",
+  "name_en": "Integration: Canva MCP",
+  "status": "key",
+  "what": "Catalogued skill/MCP/library (link only; not installed here).",
+  "how": "see official setup",
+  "params": "",
+  "install": "",
+  "license": "proprietary",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-89"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مربعات تدور وتثبت حول الأيقونة",
+  "name_en": "Orbit-lock icon reveal",
+  "status": "seen",
+  "what": "App squircle shrinks from large while a grey halo grows; 4 coloured rounded squares spin in counter-clockwise, decelerate and lock at N/E/S/W; then collapse into a row as icon shrinks",
+  "how": "App squircle shrinks from large while a grey halo grows; 4 coloured rounded squares spin in counter-clockwise, decelerate and lock at N/E/S/W; then collapse into a row as icon shrinks",
+  "params": "orbit r≈216 px, lock in ~0.5 s, squares 92 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-notdwd-7de38a",
+   "style:pm-notdwd-c2037d"
+  ],
+  "styles": [
+   "pm-notdwd-7de38a",
+   "pm-notdwd-c2037d"
+  ],
+  "tags": [],
+  "id": "BRAND-90"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة نهاية مع زر ومؤشر ينقر",
+  "name_en": "CTA end card with cursor click",
+  "status": "seen",
+  "what": "Logo + wordmark, tagline with accent phrase underlined, URL pill + filled CTA button; cursor glides in and button depresses (scale 0.96) on click",
+  "how": "Logo + wordmark, tagline with accent phrase underlined, URL pill + filled CTA button; cursor glides in and button depresses (scale 0.96) on click",
+  "params": "cursor move 500 ms easeOut, click scale 0.96 for 120 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-0xfemyn-e114d3"
+  ],
+  "styles": [
+   "pm-0xfemyn-e114d3"
+  ],
+  "tags": [],
+  "id": "BRAND-91"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقات نيو-بروتاليست بظل صلب",
+  "name_en": "Neo-brutalist card system",
+  "status": "seen",
+  "what": "cards with 3 px black border, hard offset shadow (6px 6px 0 #111), pastel fill, white inner panel, uppercase pill label; each actor gets its own fill colour",
+  "how": "cards with 3 px black border, hard offset shadow (6px 6px 0 #111), pastel fill, white inner panel, uppercase pill label; each actor gets its own fill colour",
+  "params": "radius 0-6 px; colours pink #f47fe0, cyan #c8f8f8, green #9bf08a, yellow #f0cf4a",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-0xnfrith-5be616"
+  ],
+  "styles": [
+   "pm-0xnfrith-5be616"
+  ],
+  "tags": [],
+  "id": "BRAND-92"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "انفجار خطوط حول الشعار",
+  "name_en": "Radial spark logo burst",
+  "status": "seen",
+  "what": "logo icon spin-in, 40 radial lines shoot out and fade 400 ms",
+  "how": "logo icon spin-in, 40 radial lines shoot out and fade 400 ms",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-adamdesgns-478d6d"
+  ],
+  "styles": [
+   "pm-adamdesgns-478d6d"
+  ],
+  "tags": [],
+  "id": "BRAND-93"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "معرض أمثلة وشريط شعارات",
+  "name_en": "Social-proof gallery + logo strip",
+  "status": "seen",
+  "what": "Two rows of example cards drifting in opposite directions, edge fade masks; logo row marquee at bottom in grey",
+  "how": "Two rows of example cards drifting in opposite directions, edge fade masks; logo row marquee at bottom in grey",
+  "params": "drift 20px/s; edge fade 10%",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ai-baymax-0ef9dd"
+  ],
+  "styles": [
+   "pm-ai-baymax-0ef9dd"
+  ],
+  "tags": [],
+  "id": "BRAND-94"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بشعار وشعار لفظي واسم",
+  "name_en": "Logo + tagline + byline end card",
+  "status": "seen",
+  "what": "Icon tile above product name, accent tagline below, tiny byline; build top-down with 200 ms stagger",
+  "how": "Icon tile above product name, accent tagline below, tiny byline; build top-down with 200 ms stagger",
+  "params": "icon 100 px, name 60 px, tagline 30 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-alex-prompter-1ea044"
+  ],
+  "styles": [
+   "pm-alex-prompter-1ea044"
+  ],
+  "tags": [],
+  "id": "BRAND-95"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تجميع شعار المربعات",
+  "name_en": "Tile logo assemble",
+  "status": "seen",
+  "what": "4 rounded tiles scale in and one recolours",
+  "how": "4 rounded tiles scale in and one recolours",
+  "params": "stagger 100 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-amol909s-27533e"
+  ],
+  "styles": [
+   "pm-amol909s-27533e"
+  ],
+  "tags": [],
+  "id": "BRAND-96"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام فوق مشهد مموه",
+  "name_en": "Blurred end card",
+  "status": "seen",
+  "what": "darken+blur scene, logo, 2-line tagline, URL pill",
+  "how": "darken+blur scene, logo, 2-line tagline, URL pill",
+  "params": "fade 500 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-anas0ra-e57aea"
+  ],
+  "styles": [
+   "pm-anas0ra-e57aea"
+  ],
+  "tags": [],
+  "id": "BRAND-97"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام مع عمود بطاقات يتحرك",
+  "name_en": "End card with scrolling tile column",
+  "status": "seen",
+  "what": "left: big title + two-line tagline + black URL pill with red dot and soft shadow; right: a column of real preview tiles scrolls upward continuously",
+  "how": "left: big title + two-line tagline + black URL pill with red dot and soft shadow; right: a column of real preview tiles scrolls upward continuously",
+  "params": "scroll ~60 px/s, pill shadow 0 12 24 rgba(0,0,0,.15)",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-antonio-kodheli-490109"
+  ],
+  "styles": [
+   "pm-antonio-kodheli-490109"
+  ],
+  "tags": [],
+  "id": "BRAND-98"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار بحروف تقفز مع رابط",
+  "name_en": "Letter-pop wordmark + URL pill",
+  "status": "seen",
+  "what": "Logo icon then wordmark letters spring in individually with slight overshoot, tagline with coloured keywords, URL inside a rounded pill with arrow",
+  "how": "Logo icon then wordmark letters spring in individually with slight overshoot, tagline with coloured keywords, URL inside a rounded pill with arrow",
+  "params": "letter stagger 50 ms, overshoot 1.1",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-aschapmann-131210"
+  ],
+  "styles": [
+   "pm-aschapmann-131210"
+  ],
+  "tags": [],
+  "id": "BRAND-99"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شريط شعارات متعدد",
+  "name_en": "Multi-row logo marquee",
+  "status": "seen",
+  "what": "3 rows, alternating direction, center items bright, edges dim",
+  "how": "3 rows, alternating direction, center items bright, edges dim",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-astrodevil-3f2054"
+  ],
+  "styles": [
+   "pm-astrodevil-3f2054"
+  ],
+  "tags": [],
+  "id": "BRAND-100"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة نهاية بشعار ونقطة متوهجة",
+  "name_en": "Wordmark end card with glow dot",
+  "status": "seen",
+  "what": "Heavy extended wordmark, accent red dot as period with radial glow behind, underline draws on, mono tagline types in",
+  "how": "Heavy extended wordmark, accent red dot as period with radial glow behind, underline draws on, mono tagline types in",
+  "params": "glow radius 300px alpha 0.35, underline 500 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ayushunleashed-ece3e3"
+  ],
+  "styles": [
+   "pm-ayushunleashed-ece3e3"
+  ],
+  "tags": [],
+  "id": "BRAND-101"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار ثلاثي الأبعاد متساوي القياس",
+  "name_en": "Isometric logo end card",
+  "status": "seen",
+  "what": "Build the logo from extruded coloured tiles in isometric view assembling together, wordmark wipes in beside, tagline below",
+  "how": "Build the logo from extruded coloured tiles in isometric view assembling together, wordmark wipes in beside, tagline below",
+  "params": "extrusion 12 px, assemble 600 ms back-out",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-bizibeast-10f264"
+  ],
+  "styles": [
+   "pm-bizibeast-10f264"
+  ],
+  "tags": [],
+  "id": "BRAND-102"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام باسم يُكتب وروابط",
+  "name_en": "Typed name end card with contact pills",
+  "status": "seen",
+  "what": "Avatar badge + name typed with caret, underline rule draws, role line and outline pills for contacts pop in, script sign-off",
+  "how": "Avatar badge + name typed with caret, underline rule draws, role line and outline pills for contacts pop in, script sign-off",
+  "params": "type 40 ms/char, pills stagger 60 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-blushpetal795-0c85c2"
+  ],
+  "styles": [
+   "pm-blushpetal795-0c85c2"
+  ],
+  "tags": [],
+  "id": "BRAND-103"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "أغلفة قوائم تشغيل مصممة",
+  "name_en": "Designed playlist sleeves",
+  "status": "seen",
+  "what": "Flat colour squares with bold 2-line uppercase title, motif (concentric rings or vertical bars), tiny footer label",
+  "how": "Flat colour squares with bold 2-line uppercase title, motif (concentric rings or vertical bars), tiny footer label",
+  "params": "yellow/pink/blue/sage/purple/orange",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-brainextends-e19ac3"
+  ],
+  "styles": [
+   "pm-brainextends-e19ac3"
+  ],
+  "tags": [],
+  "id": "BRAND-104"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تجمّع العناصر نحو الشعار",
+  "name_en": "Converge-to-logo end lockup",
+  "status": "seen",
+  "what": "Covers converge to centre and scale down behind the icon which grows from the same point; icon then shifts left as wordmark and two-line tagline reveal",
+  "how": "Covers converge to centre and scale down behind the icon which grows from the same point; icon then shifts left as wordmark and two-line tagline reveal",
+  "params": "converge 800 ms, lockup gap 0.3em",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-brainextends-e19ac3"
+  ],
+  "styles": [
+   "pm-brainextends-e19ac3"
+  ],
+  "tags": [],
+  "id": "BRAND-105"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة صُنع بـ",
+  "name_en": "Built-with end card",
+  "status": "seen",
+  "what": "condensed display 2 lines + underlined subtitle + small specs row",
+  "how": "condensed display 2 lines + underlined subtitle + small specs row",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-buildfastwithai-ed9447"
+  ],
+  "styles": [
+   "pm-buildfastwithai-ed9447"
+  ],
+  "tags": [],
+  "id": "BRAND-106"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "رسم حلقة حول الشعار",
+  "name_en": "Logo ring draw-on",
+  "status": "seen",
+  "what": "Black disc icon with logo; a thick cyan ring stroke draws around it with outer glow; tracked mono brand name fades below",
+  "how": "Black disc icon with logo; a thick cyan ring stroke draws around it with outer glow; tracked mono brand name fades below",
+  "params": "ring 700 ms, stroke 14 px, glow 30 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ceowinkz-7c776b"
+  ],
+  "styles": [
+   "pm-ceowinkz-7c776b"
+  ],
+  "tags": [],
+  "id": "BRAND-107"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ظهور الشعار بتوهج",
+  "name_en": "Logo glow resolve",
+  "status": "seen",
+  "what": "Icon pops, wordmark types, soft accent radial glow, URL pill",
+  "how": "Icon pops, wordmark types, soft accent radial glow, URL pill",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-danilowm-d3720d"
+  ],
+  "styles": [
+   "pm-danilowm-d3720d"
+  ],
+  "tags": [],
+  "id": "BRAND-108"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار مع رقم إصدار متدرّج",
+  "name_en": "Logo lockup with gradient version number",
+  "status": "seen",
+  "what": "icon tile + bold wordmark + version number filled with blue→violet linear gradient, small mono URL underneath; fade/scale-in 500 ms",
+  "how": "icon tile + bold wordmark + version number filled with blue→violet linear gradient, small mono URL underneath; fade/scale-in 500 ms",
+  "params": "gradient #1f7bf2→#7b5cf5",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ddryo-loos-300829"
+  ],
+  "styles": [
+   "pm-ddryo-loos-300829"
+  ],
+  "tags": [],
+  "id": "BRAND-109"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختم دائري مسنن",
+  "name_en": "Scalloped seal badge",
+  "status": "seen",
+  "what": "Star-polygon with many points (~24) as rim, inner circle with number + label, rotate-in and gentle wobble",
+  "how": "Star-polygon with many points (~24) as rim, inner circle with number + label, rotate-in and gentle wobble",
+  "params": "24 points, rotate -30°->0, wobble ±3°",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-deebeeeff-50fcd0"
+  ],
+  "styles": [
+   "pm-deebeeeff-50fcd0"
+  ],
+  "tags": [],
+  "id": "BRAND-110"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "دخول بطاقة الشعار بنابض",
+  "name_en": "Logo card spring entrance",
+  "status": "seen",
+  "what": "Rounded white card with accent border holds a raster logo; spring scale-in, later tween smaller and up for re-layout",
+  "how": "Rounded white card with accent border holds a raster logo; spring scale-in, later tween smaller and up for re-layout",
+  "params": "spring k=200 d=14; shrink to 0.6 in 500 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-deebeeeff-50fcd0"
+  ],
+  "styles": [
+   "pm-deebeeeff-50fcd0"
+  ],
+  "tags": [],
+  "id": "BRAND-111"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بأيقونة ورابط",
+  "name_en": "App end card with URL pill",
+  "status": "seen",
+  "what": "glowing rounded app icon, two-tone wordmark, tracked uppercase tagline, row of outline chips, solid lime URL pill button, all centred over dim footage",
+  "how": "glowing rounded app icon, two-tone wordmark, tracked uppercase tagline, row of outline chips, solid lime URL pill button, all centred over dim footage",
+  "params": "stagger 120 ms, hold 4-5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-deifosv-04e4d3"
+  ],
+  "styles": [
+   "pm-deifosv-04e4d3"
+  ],
+  "tags": [],
+  "id": "BRAND-112"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختم أحمر توقيعًا للمشهد",
+  "name_en": "Seal stamp signature",
+  "status": "seen",
+  "what": "After the last verse, stamp a small red square seal with scale 1.2 -> 1 and slight rough-edge texture",
+  "how": "After the last verse, stamp a small red square seal with scale 1.2 -> 1 and slight rough-edge texture",
+  "params": "#c0302a, 150 ms punch, multiply blend",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-demitiyageekzen-7770ad"
+  ],
+  "styles": [
+   "pm-demitiyageekzen-7770ad"
+  ],
+  "tags": [],
+  "id": "BRAND-113"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "إطار ثابت للهوية حول كل المشاهد",
+  "name_en": "Persistent broadcast chrome frame",
+  "status": "seen",
+  "what": "Fix logo top-left, product mark + mono tag top-right, mono URL bottom-left and caption bottom-right across all scenes; only centre content changes",
+  "how": "Fix logo top-left, product mark + mono tag top-right, mono URL bottom-left and caption bottom-right across all scenes; only centre content changes",
+  "params": "inset 4% each side; mono 11-12 px @1080p uppercase letterspacing 0.15em",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-elliot-garreffa-f334bc"
+  ],
+  "styles": [
+   "pm-elliot-garreffa-f334bc"
+  ],
+  "tags": [],
+  "id": "BRAND-114"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار ضخم في التذييل",
+  "name_en": "Giant footer wordmark",
+  "status": "seen",
+  "what": "oversized text bleeding off bottom edge, slide up",
+  "how": "oversized text bleeding off bottom edge, slide up",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ercankeskinx-ec2568"
+  ],
+  "styles": [
+   "pm-ercankeskinx-ec2568"
+  ],
+  "tags": [],
+  "id": "BRAND-115"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مصفوفة توليد علامات من معاملات",
+  "name_en": "Parametric mark generator matrix",
+  "status": "seen",
+  "what": "Rows = parameters (body, slot, depth, width, corner, turn, fill, offset), columns = values; highlight chosen cell per row, connect with a polyline, assemble final mark; caption total combinations",
+  "how": "Rows = parameters (body, slot, depth, width, corner, turn, fill, offset), columns = values; highlight chosen cell per row, connect with a polyline, assemble final mark; caption total combinations",
+  "params": "8 params × 6 values = 1,679,616 combos; row stagger 120 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-fionntobin-97b7af"
+  ],
+  "styles": [
+   "pm-fionntobin-97b7af"
+  ],
+  "tags": [],
+  "id": "BRAND-116"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "الشعار ثم اسم العلامة ينزلق",
+  "name_en": "Logo mark then wordmark slide",
+  "status": "seen",
+  "what": "centre icon alone with radial glow, then shift left as serif wordmark reveals right, tagline + URL fade below",
+  "how": "centre icon alone with radial glow, then shift left as serif wordmark reveals right, tagline + URL fade below",
+  "params": "shift 400 ms, reveal mask 500 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-gabrielbuzziv-4ff0c6"
+  ],
+  "styles": [
+   "pm-gabrielbuzziv-4ff0c6"
+  ],
+  "tags": [],
+  "id": "BRAND-117"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختام أيقونة بتوهج",
+  "name_en": "App icon glow end card",
+  "status": "seen",
+  "what": "Icon centred on black with purple radial glow, name, tagline, store pill button",
+  "how": "Icon centred on black with purple radial glow, name, tagline, store pill button",
+  "params": "glow radius ~40% width",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-gautam-mer1-2ae354"
+  ],
+  "styles": [
+   "pm-gautam-mer1-2ae354"
+  ],
+  "tags": [],
+  "id": "BRAND-118"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام باسم ونقطة حمراء",
+  "name_en": "Wordmark + red dot end card",
+  "status": "seen",
+  "what": "wide caps wordmark slides in letter by letter with motion blur, red dot pops with an expanding thin ring, italic subtitle and mono meta row",
+  "how": "wide caps wordmark slides in letter by letter with motion blur, red dot pops with an expanding thin ring, italic subtitle and mono meta row",
+  "params": "letters stagger 40 ms, ring scale 0->1 400 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "styles": [
+   "pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "tags": [],
+  "id": "BRAND-119"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شريط تاريخ مخطط",
+  "name_en": "Striped date banner",
+  "status": "seen",
+  "what": "4 thin colour bars (violet, orange, pink, blue, each ~6px) above a white label box with dark bold uppercase date; bars scaleX 0->1 from left 300 ms then label fades",
+  "how": "4 thin colour bars (violet, orange, pink, blue, each ~6px) above a white label box with dark bold uppercase date; bars scaleX 0->1 from left 300 ms then label fades",
+  "params": "width 88% of frame",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-gonzalomacagno-2de1a9"
+  ],
+  "styles": [
+   "pm-gonzalomacagno-2de1a9"
+  ],
+  "tags": [],
+  "id": "BRAND-120"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار مع خط إطارات مفتاحية",
+  "name_en": "Keyframe-diamond wordmark lockup",
+  "status": "seen",
+  "what": "Red rotated-square diamond + heavy wordmark; below, a thin line draws left to right while diamond keyframes drop onto it; mono meta line (07 SCENES · 900 FRAMES · 128 BPM) types on; tagline with last ",
+  "how": "Red rotated-square diamond + heavy wordmark; below, a thin line draws left to right while diamond keyframes drop onto it; mono meta line (07 SCENES · 900 FRAMES · 128 BPM) types on; tagline with last words in accent; optional second-language subtitle; confetti squares drift",
+  "params": "line draw 600 ms, key drop stagger 60 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-grace-sunnyy-29bc61"
+  ],
+  "styles": [
+   "pm-grace-sunnyy-29bc61"
+  ],
+  "tags": [],
+  "id": "BRAND-121"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام مع حبوب",
+  "name_en": "Logo end card with pills",
+  "status": "seen",
+  "what": "logo + tagline + 3 pill tags stagger 80ms",
+  "how": "logo + tagline + 3 pill tags stagger 80ms",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ho-ba-f3f0e9"
+  ],
+  "styles": [
+   "pm-ho-ba-f3f0e9"
+  ],
+  "tags": [],
+  "id": "BRAND-122"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار بشرطات ملونة",
+  "name_en": "Accent hyphen wordmark",
+  "status": "seen",
+  "what": "WORD-WORD-WORD with hyphens in accent orange",
+  "how": "WORD-WORD-WORD with hyphens in accent orange",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-hqmank-7c61f1"
+  ],
+  "styles": [
+   "pm-hqmank-7c61f1"
+  ],
+  "tags": [],
+  "id": "BRAND-123"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة رقم الإصدار",
+  "name_en": "Version release card",
+  "status": "seen",
+  "what": "Logo lockup, huge serif version number, accent rule draws under it, tracked 'OUT NOW' label fades in",
+  "how": "Logo lockup, huge serif version number, accent rule draws under it, tracked 'OUT NOW' label fades in",
+  "params": "rule draw 400 ms, label letter-spacing 0.2em",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-iammxfschr-d68f90"
+  ],
+  "styles": [
+   "pm-iammxfschr-d68f90"
+  ],
+  "tags": [],
+  "id": "BRAND-124"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار بتدرج",
+  "name_en": "Gradient wordmark end",
+  "status": "seen",
+  "what": "teal→yellow linear gradient text over residual particles",
+  "how": "teal→yellow linear gradient text over residual particles",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ismailfahmi-557268"
+  ],
+  "styles": [
+   "pm-ismailfahmi-557268"
+  ],
+  "tags": [],
+  "id": "BRAND-125"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "لوحات أعمال",
+  "name_en": "Case-study panels",
+  "status": "seen",
+  "what": "each case its own palette full-frame",
+  "how": "each case its own palette full-frame",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jacksonfall-54b2ac"
+  ],
+  "styles": [
+   "pm-jacksonfall-54b2ac"
+  ],
+  "tags": [],
+  "id": "BRAND-126"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام باسم ونقطة ملونة",
+  "name_en": "Wordmark + dot end card",
+  "status": "seen",
+  "what": "Lowercase heavy wordmark with an accent-coloured round period, hairline rule, tracked mono role line, italic serif CTA in accent, tiny chapter index footer",
+  "how": "Lowercase heavy wordmark with an accent-coloured round period, hairline rule, tracked mono role line, italic serif CTA in accent, tiny chapter index footer",
+  "params": "rule draws 400 ms; stagger 150 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jasonzhou1993-8595e0"
+  ],
+  "styles": [
+   "pm-jasonzhou1993-8595e0"
+  ],
+  "tags": [],
+  "id": "BRAND-127"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بمدار",
+  "name_en": "Orbiting logo end card",
+  "status": "seen",
+  "what": "logo tile with ellipse orbit + small satellite dots",
+  "how": "logo tile with ellipse orbit + small satellite dots",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jayscambler-3f8889"
+  ],
+  "styles": [
+   "pm-jayscambler-3f8889"
+  ],
+  "tags": [],
+  "id": "BRAND-128"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نقطة ختام بلون العلامة",
+  "name_en": "Brand full-stop dot",
+  "status": "seen",
+  "what": "end every hero word with a circular period in the brand colour that pops in 1-2 frames after the word lands",
+  "how": "end every hero word with a circular period in the brand colour that pops in 1-2 frames after the word lands",
+  "params": "dot = x-height * 0.45, scale 0 -> 1.2 -> 1 in 180 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jhylee95-e1152f"
+  ],
+  "styles": [
+   "pm-jhylee95-e1152f"
+  ],
+  "tags": [],
+  "id": "BRAND-129"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مزاوجة سيرف مع سانس ثقيل",
+  "name_en": "Serif + heavy sans pairing",
+  "status": "seen",
+  "what": "Editorial serif for headlines, wide tracked heavy sans for labels",
+  "how": "Editorial serif for headlines, wide tracked heavy sans for labels",
+  "params": "tracking 0.3em",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kangaroohere-b10f8d"
+  ],
+  "styles": [
+   "pm-kangaroohere-b10f8d"
+  ],
+  "tags": [],
+  "id": "BRAND-130"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بأمر تثبيت في الطرفية",
+  "name_en": "Terminal install end card",
+  "status": "seen",
+  "what": "logo wordmark large with accent glyph + a boxed terminal line '$ npm i ...' typed with blinking block cursor, version/tag line in mono",
+  "how": "logo wordmark large with accent glyph + a boxed terminal line '$ npm i ...' typed with blinking block cursor, version/tag line in mono",
+  "params": "type 40 ms/char, cursor blink 500 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kyonax-on-tech-aabc1d"
+  ],
+  "styles": [
+   "pm-kyonax-on-tech-aabc1d"
+  ],
+  "tags": [],
+  "id": "BRAND-131"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بسيطة",
+  "name_en": "Minimal end card",
+  "status": "seen",
+  "what": "Logo wordmark with lime dot, tracked mono tagline, lime pill CTA, URL below, on black",
+  "how": "Logo wordmark with lime dot, tracked mono tagline, lime pill CTA, URL below, on black",
+  "params": "hold 3-4s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-leadnotifi-e83f94"
+  ],
+  "styles": [
+   "pm-leadnotifi-e83f94"
+  ],
+  "tags": [],
+  "id": "BRAND-132"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة شعار مع زر رابط",
+  "name_en": "Logo end card with URL pill",
+  "status": "seen",
+  "what": "Centred wordmark, one-line tagline with the same italic-serif emphasis word, white URL pill button with arrow, tiny footnote line; hold 4-6 s",
+  "how": "Centred wordmark, one-line tagline with the same italic-serif emphasis word, white URL pill button with arrow, tiny footnote line; hold 4-6 s",
+  "params": "fade 600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-listudio-820c7b"
+  ],
+  "styles": [
+   "pm-listudio-820c7b"
+  ],
+  "tags": [],
+  "id": "BRAND-133"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة شعار على أسود",
+  "name_en": "Minimal logo end card on black",
+  "status": "seen",
+  "what": "logo + name + url centered",
+  "how": "logo + name + url centered",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-macrohou-33959d"
+  ],
+  "styles": [
+   "pm-macrohou-33959d"
+  ],
+  "tags": [],
+  "id": "BRAND-134"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة اسم بخط عريض معدني",
+  "name_en": "Chrome extended name card",
+  "status": "seen",
+  "what": "Extended-wide uppercase name with vertical metallic gradient, spaced role line between hairlines, italic serif tagline with one accent-coloured word",
+  "how": "Extended-wide uppercase name with vertical metallic gradient, spaced role line between hairlines, italic serif tagline with one accent-coloured word",
+  "params": "name tracking 0.05em, tagline fade per word 120 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-madhav-xo-f97f20"
+  ],
+  "styles": [
+   "pm-madhav-xo-f97f20"
+  ],
+  "tags": [],
+  "id": "BRAND-135"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شريط أحمر مائل للعنوان",
+  "name_en": "Diagonal red band title lockup",
+  "status": "seen",
+  "what": "rotated (~-12 deg) crimson rectangle slams across; title in white on it; square outlined stamp glyph at corner; spaced Latin subtitle below on thin rule",
+  "how": "rotated (~-12 deg) crimson rectangle slams across; title in white on it; square outlined stamp glyph at corner; spaced Latin subtitle below on thin rule",
+  "params": "band #cd002f, rotate -12deg, slam 150 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-majin-appsheet-2d3c1a"
+  ],
+  "styles": [
+   "pm-majin-appsheet-2d3c1a"
+  ],
+  "tags": [],
+  "id": "BRAND-136"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة عنوان بإطار ذهبي",
+  "name_en": "Framed title card",
+  "status": "seen",
+  "what": "painting in gold frame, side panel with script title and CTA",
+  "how": "painting in gold frame, side panel with script title and CTA",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-mandelduck-95fd08"
+  ],
+  "styles": [
+   "pm-mandelduck-95fd08"
+  ],
+  "tags": [],
+  "id": "BRAND-137"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة نهاية بالشعار",
+  "name_en": "Logo end card",
+  "status": "seen",
+  "what": "Centred app icon tile, wordmark below, tagline, URL in outlined pill, small mono footer of 3 value propositions separated by dots; soft blue vignette behind",
+  "how": "Centred app icon tile, wordmark below, tagline, URL in outlined pill, small mono footer of 3 value propositions separated by dots; soft blue vignette behind",
+  "params": "elements stagger 120 ms fade-up",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-marouanegazouzi-6071d5"
+  ],
+  "styles": [
+   "pm-marouanegazouzi-6071d5"
+  ],
+  "tags": [],
+  "id": "BRAND-138"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "زر نابض",
+  "name_en": "Pulsing CTA button",
+  "status": "seen",
+  "what": "red rounded icon with expanding rings and particle dots",
+  "how": "red rounded icon with expanding rings and particle dots",
+  "params": "ring 1s loop",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-melvynx-6cde6c"
+  ],
+  "styles": [
+   "pm-melvynx-6cde6c"
+  ],
+  "tags": [],
+  "id": "BRAND-139"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "رسم الشعار خطاً ثم ملؤه",
+  "name_en": "Logo stroke draw-on then fill",
+  "status": "seen",
+  "what": "render logo shapes as open stroke chevrons, animate dashoffset, then fade fill to solid white with glow",
+  "how": "render logo shapes as open stroke chevrons, animate dashoffset, then fade fill to solid white with glow",
+  "params": "draw ~1.5 s, fill 300 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-micheleharmonic-77628e"
+  ],
+  "styles": [
+   "pm-micheleharmonic-77628e"
+  ],
+  "tags": [],
+  "id": "BRAND-140"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "كشف الشعار على خط أفق",
+  "name_en": "Horizon-line logo reveal",
+  "status": "seen",
+  "what": "thin bright horizontal line expands, glow arc above, logo slides in",
+  "how": "thin bright horizontal line expands, glow arc above, logo slides in",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-misbahsy-80eaec"
+  ],
+  "styles": [
+   "pm-misbahsy-80eaec"
+  ],
+  "tags": [],
+  "id": "BRAND-141"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختام بتجميع الشعار",
+  "name_en": "Logo assemble ending",
+  "status": "seen",
+  "what": "stroke grows into mark, wordmark fades, tagline",
+  "how": "stroke grows into mark, wordmark fades, tagline",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-miskinho-443898"
+  ],
+  "styles": [
+   "pm-miskinho-443898"
+  ],
+  "tags": [],
+  "id": "BRAND-142"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار بحروف ملونة مع أشكال كونفيتي",
+  "name_en": "Per-letter colour wordmark with confetti",
+  "status": "seen",
+  "what": "Each letter a different palette colour, pop-in stagger; underline bar wipes; geometric primitives (circle, triangle, ring, diamond, x) bob around; typewriter subtitle",
+  "how": "Each letter a different palette colour, pop-in stagger; underline bar wipes; geometric primitives (circle, triangle, ring, diamond, x) bob around; typewriter subtitle",
+  "params": "letter stagger 60 ms, bob amplitude 6 px period 2 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-motiondsgnr-9dcfa6"
+  ],
+  "styles": [
+   "pm-motiondsgnr-9dcfa6"
+  ],
+  "tags": [],
+  "id": "BRAND-143"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بشعار نصي متوهج",
+  "name_en": "Glowing wordmark end card",
+  "status": "seen",
+  "what": "hard cut to black; centred white wordmark with text-shadow bloom (0 0 30px rgba(255,255,255,.5)) and subtle radial lift",
+  "how": "hard cut to black; centred white wordmark with text-shadow bloom (0 0 30px rgba(255,255,255,.5)) and subtle radial lift",
+  "params": "hold ~2 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-notdwd-c2037d"
+  ],
+  "styles": [
+   "pm-notdwd-c2037d"
+  ],
+  "tags": [],
+  "id": "BRAND-144"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة الشعار بنبضة",
+  "name_en": "Logo end card ring pulse",
+  "status": "seen",
+  "what": "icon scale 0→1 spring, expanding ring stroke opacity fade",
+  "how": "icon scale 0→1 spring, expanding ring stroke opacity fade",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-oliahmed205-3e31c4"
+  ],
+  "styles": [
+   "pm-oliahmed205-3e31c4"
+  ],
+  "tags": [],
+  "id": "BRAND-145"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار بخط اليد وزر دعوة",
+  "name_en": "Script wordmark + CTA end card",
+  "status": "seen",
+  "what": "centred handwritten logotype fades from pale to brand red, tagline below, small black button 'Start free →', mono pricing footnote and domain",
+  "how": "centred handwritten logotype fades from pale to brand red, tagline below, small black button 'Start free →', mono pricing footnote and domain",
+  "params": "fade 600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-palashbagchi11-0a4b6b"
+  ],
+  "styles": [
+   "pm-palashbagchi11-0a4b6b"
+  ],
+  "tags": [],
+  "id": "BRAND-146"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة نهاية بنقطة معلّقة",
+  "name_en": "Pendulum dot end card",
+  "status": "seen",
+  "what": "empty frame, a thin line drops from the top with a blue dot swinging to rest (damped), name types in bottom-right",
+  "how": "empty frame, a thin line drops from the top with a blue dot swinging to rest (damped), name types in bottom-right",
+  "params": "damping ~1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-pankajkumar-dev-0bee87"
+  ],
+  "styles": [
+   "pm-pankajkumar-dev-0bee87"
+  ],
+  "tags": [],
+  "id": "BRAND-147"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بزر يُنقر",
+  "name_en": "Clicked CTA end card",
+  "status": "seen",
+  "what": "logo, two-line offer, CTA button with arrow and URL text; cursor moves in and clicks the button",
+  "how": "logo, two-line offer, CTA button with arrow and URL text; cursor moves in and clicks the button",
+  "params": "hold ~2 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-paulo-kombucha-96431c"
+  ],
+  "styles": [
+   "pm-paulo-kombucha-96431c"
+  ],
+  "tags": [],
+  "id": "BRAND-148"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختام بشعار وتوقيع",
+  "name_en": "Logo resolve lockup",
+  "status": "seen",
+  "what": "asterisk mark spins in centred, then slides left while wordmark + rule + tracked subtitle reveal on the right; tiny credits in bottom corners",
+  "how": "asterisk mark spins in centred, then slides left while wordmark + rule + tracked subtitle reveal on the right; tiny credits in bottom corners",
+  "params": "~1.5 s, ease-out cubic",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-prasenx-8d9323"
+  ],
+  "styles": [
+   "pm-prasenx-8d9323"
+  ],
+  "tags": [],
+  "id": "BRAND-149"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار بكسلي مع كتابة",
+  "name_en": "Pixel logo + typing",
+  "status": "seen",
+  "what": "pixel squares assemble then mono typing",
+  "how": "pixel squares assemble then mono typing",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-quickdesignio-dd93d0"
+  ],
+  "styles": [
+   "pm-quickdesignio-dd93d0"
+  ],
+  "tags": [],
+  "id": "BRAND-150"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "كشف الشعار بقناع",
+  "name_en": "Mask wordmark reveal",
+  "status": "seen",
+  "what": "Icon pops, then wordmark revealed by a clip rect expanding left→right",
+  "how": "Icon pops, then wordmark revealed by a clip rect expanding left→right",
+  "params": "clip 600 ms easeOutExpo",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ratheejaisal-1f4538"
+  ],
+  "styles": [
+   "pm-ratheejaisal-1f4538"
+  ],
+  "tags": [],
+  "id": "BRAND-151"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بزر يُنقر",
+  "name_en": "Cursor click CTA end card",
+  "status": "seen",
+  "what": "Centred logo + tagline + blue pill button; cursor glides in and clicks (button scale 0.96→1)",
+  "how": "Centred logo + tagline + blue pill button; cursor glides in and clicks (button scale 0.96→1)",
+  "params": "cursor path 600 ms, click 120 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ratheejaisal-1f4538"
+  ],
+  "styles": [
+   "pm-ratheejaisal-1f4538"
+  ],
+  "tags": [],
+  "id": "BRAND-152"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بناء الحروف",
+  "name_en": "Letter-build end card",
+  "status": "seen",
+  "what": "letters appear one by one with red dot accent",
+  "how": "letters appear one by one with red dot accent",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rendesr-86be44"
+  ],
+  "styles": [
+   "pm-rendesr-86be44"
+  ],
+  "tags": [],
+  "id": "BRAND-153"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تمايل الشعار",
+  "name_en": "Logo float bob",
+  "status": "seen",
+  "what": "sin y offset on mascot logo",
+  "how": "sin y offset on mascot logo",
+  "params": "amp 6px, 2 s period",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rneayan-474bcf"
+  ],
+  "styles": [
+   "pm-rneayan-474bcf"
+  ],
+  "tags": [],
+  "id": "BRAND-154"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار بسيط مع \"متاح الآن\"",
+  "name_en": "Minimal logo + 'Out now' end",
+  "status": "seen",
+  "what": "Black glyph above product name in bold sans, small grey 'Out now' typed beneath; hold 2 s while music fades on a dB curve",
+  "how": "Black glyph above product name in bold sans, small grey 'Out now' typed beneath; hold 2 s while music fades on a dB curve",
+  "params": "hold 2 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rossaxbt-3085b7"
+  ],
+  "styles": [
+   "pm-rossaxbt-3085b7"
+  ],
+  "tags": [],
+  "id": "BRAND-155"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "انفجار شعار نجمي",
+  "name_en": "Asterisk logo burst",
+  "status": "seen",
+  "what": "12 spokes scale from 0 length out of centre dot with 25-35 ms stagger and backOut, inside a thin outline circle",
+  "how": "12 spokes scale from 0 length out of centre dot with 25-35 ms stagger and backOut, inside a thin outline circle",
+  "params": "spoke width 6px, coral #f04a35",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-roundtablespace-d3a1be"
+  ],
+  "styles": [
+   "pm-roundtablespace-d3a1be"
+  ],
+  "tags": [],
+  "id": "BRAND-156"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار ختامي مع زر ونقرة مؤشر",
+  "name_en": "Logo lock-up + CTA click",
+  "status": "seen",
+  "what": "App icon scales in alone at centre, slides left as the wordmark wipes in, tagline and button fade up; cursor glides to button and click ripple ring expands and fades",
+  "how": "App icon scales in alone at centre, slides left as the wordmark wipes in, tagline and button fade up; cursor glides to button and click ripple ring expands and fades",
+  "params": "icon 400 ms back.out, ripple 0->60 px radius 400 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-samuel-yostt-891f87"
+  ],
+  "styles": [
+   "pm-samuel-yostt-891f87"
+  ],
+  "tags": [],
+  "id": "BRAND-157"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شعار بموجة صوتية ملونة",
+  "name_en": "Waveform logo end card",
+  "status": "seen",
+  "what": "Vertical rounded bars of varying height in rainbow palette animate like an equaliser next to a heavy wordmark; underline draws; status pill",
+  "how": "Vertical rounded bars of varying height in rainbow palette animate like an equaliser next to a heavy wordmark; underline draws; status pill",
+  "params": "7 bars; 120ms stagger",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-shinskinakamoto-20190b"
+  ],
+  "styles": [
+   "pm-shinskinakamoto-20190b"
+  ],
+  "tags": [],
+  "id": "BRAND-158"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "كشف الشعار ببكرات قمار",
+  "name_en": "Slot reel logo reveal",
+  "status": "seen",
+  "what": "Vertical reels with motion blur decelerate and land on the brand mark one reel after another",
+  "how": "Vertical reels with motion blur decelerate and land on the brand mark one reel after another",
+  "params": "3 reels, stop stagger 250 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-spearwtf-3c1fd1"
+  ],
+  "styles": [
+   "pm-spearwtf-3c1fd1"
+  ],
+  "tags": [],
+  "id": "BRAND-159"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة نهاية بتدرج",
+  "name_en": "Gradient mesh end card",
+  "status": "seen",
+  "what": "blurred pastel blobs under logo + CTA buttons",
+  "how": "blurred pastel blobs under logo + CTA buttons",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-steventey-0d20e4"
+  ],
+  "styles": [
+   "pm-steventey-0d20e4"
+  ],
+  "tags": [],
+  "id": "BRAND-160"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "كلمات تتبدل بالقطع مع نقطة مربعة",
+  "name_en": "Square-dot kinetic word cuts",
+  "status": "seen",
+  "what": "one uppercase word per beat, hard cut every 0.5 s, alternating navy-on-cream and white-on-navy, always ending in a yellow square full stop",
+  "how": "one uppercase word per beat, hard cut every 0.5 s, alternating navy-on-cream and white-on-navy, always ending in a yellow square full stop",
+  "params": "beat 15-16 frames at 30 fps",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sudeepsd-1a3485"
+  ],
+  "styles": [
+   "pm-sudeepsd-1a3485"
+  ],
+  "tags": [],
+  "id": "BRAND-161"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نص دائري",
+  "name_en": "Circular text ring",
+  "status": "seen",
+  "what": "text on circle path rotating around logo",
+  "how": "text on circle path rotating around logo",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sudiyasa-f48ac9"
+  ],
+  "styles": [
+   "pm-sudiyasa-f48ac9"
+  ],
+  "tags": [],
+  "id": "BRAND-162"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تغليف أيقونة",
+  "name_en": "App-icon wrap",
+  "status": "seen",
+  "what": "rounded square gradient grows behind logo",
+  "how": "rounded square gradient grows behind logo",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tdinh-me-815acb"
+  ],
+  "styles": [
+   "pm-tdinh-me-815acb"
+  ],
+  "tags": [],
+  "id": "BRAND-163"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختام باسم الحساب",
+  "name_en": "Handle lock-up end",
+  "status": "seen",
+  "what": "Vertical accent bar left of the handle, letters rise in stagger, underline wipes across, small mono call-to-action typed below with cursor",
+  "how": "Vertical accent bar left of the handle, letters rise in stagger, underline wipes across, small mono call-to-action typed below with cursor",
+  "params": "letters 60ms stagger; underline 400ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-techhalla-7acbc2"
+  ],
+  "styles": [
+   "pm-techhalla-7acbc2"
+  ],
+  "tags": [],
+  "id": "BRAND-164"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نقطة تسقط لتكمل الشعار",
+  "name_en": "Dot-drop period on wordmark",
+  "status": "seen",
+  "what": "Wordmark sits between two thin rules; a red dot (stretched while falling) drops from above and bounces to become the full stop; then subtitle and 'available for work' meta fade in",
+  "how": "Wordmark sits between two thin rules; a red dot (stretched while falling) drops from above and bounces to become the full stop; then subtitle and 'available for work' meta fade in",
+  "params": "fall 400 ms, squash 0.7 on impact, 2 bounces",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-teslachartz-c58b32"
+  ],
+  "styles": [
+   "pm-teslachartz-c58b32"
+  ],
+  "tags": [],
+  "id": "BRAND-165"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة نهاية زرقاء",
+  "name_en": "Brand blue end card",
+  "status": "seen",
+  "what": "logo + badge + 2-line pitch + URL pill",
+  "how": "logo + badge + 2-line pitch + URL pill",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-thayto-dev-44b911"
+  ],
+  "styles": [
+   "pm-thayto-dev-44b911"
+  ],
+  "tags": [],
+  "id": "BRAND-166"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة عنوان بحروف متباعدة",
+  "name_en": "Spaced-caps title card",
+  "status": "seen",
+  "what": "light sans uppercase, tracking 0.5em, per-letter fade+y settle stagger 60 ms, small emblem above, tagline tiny below, then 'COMING YEAR'",
+  "how": "light sans uppercase, tracking 0.5em, per-letter fade+y settle stagger 60 ms, small emblem above, tagline tiny below, then 'COMING YEAR'",
+  "params": "on pure black, 6-8 s hold",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-theparuchh-6e08c3"
+  ],
+  "styles": [
+   "pm-theparuchh-6e08c3"
+  ],
+  "tags": [],
+  "id": "BRAND-167"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "أيقونات طعام لطيفة بوجوه",
+  "name_en": "Kawaii flat icon set",
+  "status": "seen",
+  "what": "Simple shapes with thick outline, dot eyes and small smile; consistent stroke and palette across 8-10 objects",
+  "how": "Simple shapes with thick outline, dot eyes and small smile; consistent stroke and palette across 8-10 objects",
+  "params": "stroke 4px; eyes 2 dots; smile arc",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-thilina-a-891c09"
+  ],
+  "styles": [
+   "pm-thilina-a-891c09"
+  ],
+  "tags": [],
+  "id": "BRAND-168"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة ختام بزر دعوة",
+  "name_en": "End card CTA",
+  "status": "seen",
+  "what": "Logo + small caps subline, mascot centre, row of icons popping in stagger, pill CTA button with shadow, small store line",
+  "how": "Logo + small caps subline, mascot centre, row of icons popping in stagger, pill CTA button with shadow, small store line",
+  "params": "3s hold; icons stagger 60ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-thilina-a-891c09"
+  ],
+  "styles": [
+   "pm-thilina-a-891c09"
+  ],
+  "tags": [],
+  "id": "BRAND-169"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة نهاية بشعار يتضح",
+  "name_en": "Logo resolve end card",
+  "status": "seen",
+  "what": "icon with expanding ring, wordmark from blur to sharp, then tagline with blue second clause, bullet list and URL fade in",
+  "how": "icon with expanding ring, wordmark from blur to sharp, then tagline with blue second clause, bullet list and URL fade in",
+  "params": "blur 16px->0, 500 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-thismacapital-dfba20"
+  ],
+  "styles": [
+   "pm-thismacapital-dfba20"
+  ],
+  "tags": [],
+  "id": "BRAND-170"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بطاقة نهاية بالشعار",
+  "name_en": "Wordmark end card",
+  "status": "seen",
+  "what": "black bold lowercase word with period on off-white",
+  "how": "black bold lowercase word with period on off-white",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-twoclipping-221cab"
+  ],
+  "styles": [
+   "pm-twoclipping-221cab"
+  ],
+  "tags": [],
+  "id": "BRAND-171"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "النقطة كنقطة حرف",
+  "name_en": "Dot as letter tittle",
+  "status": "seen",
+  "what": "replace i-dot with accent circle that lands with bounce",
+  "how": "replace i-dot with accent circle that lands with bounce",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ultimaxbt-bbebf5"
+  ],
+  "styles": [
+   "pm-ultimaxbt-bbebf5"
+  ],
+  "tags": [],
+  "id": "BRAND-172"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نقطة حمراء كعلامة تجارية",
+  "name_en": "Red-dot punctuation brand mark",
+  "status": "seen",
+  "what": "wordmark ending with a period replaced by a red circle that pops with overshoot and a thin orbit ring",
+  "how": "wordmark ending with a period replaced by a red circle that pops with overshoot and a thin orbit ring",
+  "params": "scale 0->1.2->1 in 250 ms, #e0262b",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-vanshwtfff-db0466"
+  ],
+  "styles": [
+   "pm-vanshwtfff-db0466"
+  ],
+  "tags": [],
+  "id": "BRAND-173"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "شارة صغيرة بنقطة حيّة",
+  "name_en": "Pill label with live dot",
+  "status": "seen",
+  "what": "rounded-full outlined pill, uppercase tracked micro text, red dot pulsing",
+  "how": "rounded-full outlined pill, uppercase tracked micro text, red dot pulsing",
+  "params": "font 11-13 px 700, letter-spacing 0.12em, border 1px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-viktoroddy-98c1d8"
+  ],
+  "styles": [
+   "pm-viktoroddy-98c1d8"
+  ],
+  "tags": [],
+  "id": "BRAND-174"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختام بشعار ينزلق ويكشف الاسم",
+  "name_en": "Logo + wordmark mask reveal end card",
+  "status": "seen",
+  "what": "Icon centred, slides left while wordmark is revealed by a left-to-right clip mask; URL fades below",
+  "how": "Icon centred, slides left while wordmark is revealed by a left-to-right clip mask; URL fades below",
+  "params": "600 ms easeOutExpo",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-wozu-co-242285"
+  ],
+  "styles": [
+   "pm-wozu-co-242285"
+  ],
+  "tags": [],
+  "id": "BRAND-175"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ختام بالشعار وزر",
+  "name_en": "Logo + CTA resolve",
+  "status": "seen",
+  "what": "Logo mark assembles, tagline types, orange CTA button pops with scale 0.9→1",
+  "how": "Logo mark assembles, tagline types, orange CTA button pops with scale 0.9→1",
+  "params": "last 5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-xelandre-363f00"
+  ],
+  "styles": [
+   "pm-xelandre-363f00"
+  ],
+  "tags": [],
+  "id": "BRAND-176"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نقطة كعلامة هوية",
+  "name_en": "Dot as punctuation brand",
+  "status": "seen",
+  "what": "orange circle used as period in JUST CODE. and 5.5",
+  "how": "orange circle used as period in JUST CODE. and 5.5",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-zheke-38deff"
+  ],
+  "styles": [
+   "pm-zheke-38deff"
+  ],
+  "tags": [],
+  "id": "BRAND-177"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "انفتاح اسم الشعار من خلف الأيقونة",
+  "name_en": "Wordmark unfold from behind icon",
+  "status": "seen",
+  "what": "icon spring pop scale 0->1; wordmark container maxWidth 0->auto with overflow hidden, pushes icon sideways; giant faint backdrop word at 6-8% opacity behind",
+  "how": "icon spring pop scale 0->1; wordmark container maxWidth 0->auto with overflow hidden, pushes icon sideways; giant faint backdrop word at 6-8% opacity behind",
+  "params": "spring damping ~12, unfold 0.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:product"
+  ],
+  "styles": [
+   "product"
+  ],
+  "tags": [],
+  "id": "BRAND-178"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "ورقة نظام الهوية للفيديو",
+  "name_en": "Video brand system sheet",
+  "status": "documented",
+  "what": "A compact production rule-set so separate videos read as the same brand: palette roles, type families and safe sizes per format, framing, entrance/settle/transition/hold timing, sound roles, cover/closing treatment, export checks.",
+  "how": "Derive values from real design tokens and record the source for each; keep motion/design constants in one shared file (CSS :root or a JS config) used by every composition; compare exports side by side for drift.",
+  "params": "roles: background, surface, text, accent",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/101-video-skills/221-video-brand-system/SKILL.md",
+   "kosif-atlas/skills/101-video-skills/221-video-brand-system"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-179"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "استخراج هوية الموقع",
+  "name_en": "Site capture extraction set",
+  "status": "documented",
+  "what": "From a URL extract design tokens (top colors, font families/weights), visible text tagged by element, downloaded assets with descriptions, animation inventory, Lottie and video manifests, even WebGL shader source, plus full-height viewport screenshots.",
+  "how": "Playwright (installed globally, Chromium present): screenshot every viewport with ~30% overlap at 1920x1080; collect getComputedStyle colors/fonts; dump h1/p/a text with tag prefixes; list <canvas>, lottie, video. Optional Gemini vision for asset captions (key, ~$0.001/image).",
+  "params": "scroll screenshots 1920x1080, ~30% overlap; summarize 5-7 colors, fonts, sections, CTAs, vibe sentence",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-1-capture.md",
+   "kosif-atlas/skills/3594-design-clone/14410-design-clone"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-180"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "استخراج رموز التصميم من الأنماط المحسوبة",
+  "name_en": "Computed-style design token extraction",
+  "status": "documented",
+  "what": "Turn a live page into a token map: radii (min/median/max -> small/medium/large, >=9999 -> pill), shadows grouped by blur into elevation levels, transition durations into micro/normal/macro and their easing, max content width, breakpoints, density.",
+  "how": "Playwright page.evaluate over all elements' getComputedStyle; dedupe and rank; store as tokens.json; use as mood input only (do not clone a brand).",
+  "params": "breakpoint sweep 1440 -> 768 -> 390",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/3594-design-clone/14410-design-clone",
+   "kosif-atlas/skills/895-brightdata-plugin/2042-design-mirror",
+   "kosif-atlas/skills/895-brightdata-plugin/2042-design-mirror/references/css-extraction.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-181"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "MG-021 شعار يرسم بخط واحد",
+  "name_en": "MG-021 Single-stroke logo draw then fill",
+  "status": "documented",
+  "what": "A line traces the logo outline, then the outline becomes a full fill.",
+  "how": "0-2 s draw, 2-2.6 s fill, 2.6-4 s hold. SVG logo paths with stroke-dasharray/dashoffset, then cross-fade to the filled copy; simplify the reveal path for complex marks without changing the identity. Thin pen then short tone.",
+  "params": "4 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-brand-identity.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-182"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "MG-022/025 تجميع الشعار من كتل أو نقاط",
+  "name_en": "MG-022/025 Assembled mark",
+  "status": "documented",
+  "what": "Three blocks slide in from different directions with different accelerations and lock into the symbol (MG-022), or a few dots leave a regular grid and travel to the logo contour before merging (MG-025).",
+  "how": "MG-022: 0-0.6 prep, 0.6-1.8 assemble, 1.8-3 hold; respect proportions and clear space. MG-025: 0-1 grid, 1-2.8 travel, 2.8-4 merge - computed start/end positions, no paid particle plugin needed: sample points with SVGPathElement.getPointAtLength and tween from grid slots.",
+  "params": "3 s / 4 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-brand-identity.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-183"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "MG-023/030 شعار بظل مار أو من ضباب",
+  "name_en": "MG-023/030 Shadow-pass and fog logo reveals",
+  "status": "documented",
+  "what": "A slanted shadow sweeps a floor and leaves the logo looking engraved (MG-023, premium); thin fog drifts sideways to unveil the mark (MG-030, calm ending).",
+  "how": "MG-023: 0-1 floor, 1-2.8 shadow pass, 2.8-4 hold; masks + inner shadow + fake gradient light - say it is a 2D simulation without a 3D model. MG-030: 0-1 fog, 1-3 reveal, 3-5 hold; noise or fog footage as mask with opacity; don't let glow erase logo contrast. Local: CSS gradients/mask-position; SVG feTurbulence fog.",
+  "params": "4 s / 5 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-brand-identity.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-184"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "MG-024 ختم حبر للعلامة",
+  "name_en": "MG-024 Ink stamp",
+  "status": "documented",
+  "what": "A stamp lands and leaves the logo with irregular ink edges - a crafted sign-off.",
+  "how": "0-0.6 s drop, 0.6-1 s print, 1-2.5 s hold; short scale+rotation keys with an ink-texture luma matte (mask-image grunge). Keep a clean logo version for small sizes. Dry stamp hit.",
+  "params": "2.5 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-brand-identity.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-185"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "MG-027 شعار من نافذة سلبية",
+  "name_en": "MG-027 Negative-space window reveal",
+  "status": "documented",
+  "what": "Coloured shapes close over the screen leaving a hole shaped exactly like the logo.",
+  "how": "0-1.4 s shapes approach, 1.4-2 s hole forms, 2-3 s hold; inverted alpha matte (SVG mask with the logo as hole). Test contrast with light and dark logo versions.",
+  "params": "3 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-brand-identity.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-186"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نظام هوية الفيديو",
+  "name_en": "Video brand system",
+  "status": "documented",
+  "what": "Small production rulebook derived from real brand tokens: palette roles (bg/surface/text/accent), type families and safe sizes per format, framing/camera behaviour, entrance/settle/transition/hold timings, sound roles (voice, UI SFX, music, silence), cover/closing treatment, export checks; compare e…",
+  "how": "Keep values in one JSON/tokens file shared by compositions",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/101-video-skills/221-video-brand-system/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-187"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "فحص رخصة الخط",
+  "name_en": "Font license check",
+  "status": "documented",
+  "what": "Desktop/print font licences rarely cover web or video embedding; verify before shipping.",
+  "how": "Prefer OFL fonts (Google Fonts, Noto, Cairo, Tajawal, IBM Plex Sans Arabic); record licence per font in the project credits.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/3438-ux-design/14126-web-typography/SKILL.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/quality-and-editors.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-188"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "رموز خطوط الهوية",
+  "name_en": "Brand typography tokens",
+  "status": "documented",
+  "what": "Store families, scale ratio, weights, leading and tracking as tokens reused across every scene.",
+  "how": "JSON/CSS variables: --font-display, --font-text, --scale-ratio, --lh-display; scaffold per style.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1503-universal-design-principles/3823-hierarchy-typographic/SKILL.md",
+   "kosif-atlas/skills/2406-web-design/9323-design-tokens-scaffolding/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-189"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مصفوفة الثيمات متعددة العلامات",
+  "name_en": "Multi-brand theming matrix",
+  "status": "documented",
+  "what": "Brands × modes = themes; components never know which theme is active.",
+  "how": "e.g. {brandA,brandB}×{light,dark}=4 semantic maps; CSS vars or a JS object passed as Remotion props.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2278-design-systems-engineering/8697-design-token-architecture"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-190"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مونتاج شبكة الهوية",
+  "name_en": "Brand grid montage",
+  "status": "documented",
+  "what": "Multi-cell moving grid mixing real UI moments with mark, palette and type — staggered so one cell dominates at a time.",
+  "how": "Remotion/HTML grid: 2×2 for 16:9/1:1, vertical stack for 9:16; each cell its own clock, avoid simultaneous flashes; check first/last frame of each clip for blanks.",
+  "params": "2×2 or stacked",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/101-video-skills/213-brand-grid-video"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-191"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "موجز الشعار: الفكرة الواحدة",
+  "name_en": "Logo brief: the ONE THING",
+  "status": "documented",
+  "what": "Before drawing: one impression, audience+primary surface, 2-3 competitors and their territory, hard constraints; then decide fit-in vs break-out of category.",
+  "how": "Write brief block (Brand, ONE THING, For, Surface, Personality 3-5 adjectives, Must/Must-not feel, colour constraints) and confirm.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1567-tonone/4425-form-logo"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-192"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "اختيار نوع الشعار",
+  "name_en": "Mark-type choice",
+  "status": "documented",
+  "what": "Wordmark for short phonetic names; lettermark for long names; combination mark as default for new products; pictorial/abstract needs recognition investment.",
+  "how": "Wordmark for short phonetic names; lettermark for long names; combination mark as default for new products; pictorial/abstract needs recognition investment.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1567-tonone/4425-form-logo"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-193"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قواعد بناء شعار SVG",
+  "name_en": "SVG logo construction rules",
+  "status": "documented",
+  "what": "Logos as pure vector with path outlines (no <text>), viewBox only, preserveAspectRatio xMidYMid, hard-coded hex, semantic group ids (#mark, #wordmark) so they can be animated.",
+  "how": "Write SVG by hand or via Python; outline fonts with fonttools/opentype.js (needs install) for wordmarks; ids enable draw-on and part animation.",
+  "params": "32px legibility test",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1567-tonone/4425-form-logo"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-194"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مولد شعار نصي/حرفي/أيقونة",
+  "name_en": "Deterministic wordmark/monogram/favicon generator",
+  "status": "documented",
+  "what": "From a brand profile (palette + heading font) produce wordmark, rounded-square monogram and 64×64 favicon SVGs with aria labels.",
+  "how": "Node script lib/logo.mjs buildLogos(profile,{text}) in brand-forge; idea reproducible here with a short Python/JS SVG template.",
+  "params": "favicon 64×64",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1708-brand-forge/4714-generate-logo"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-195"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مواصفات حزمة الشعار",
+  "name_en": "Logo suite specification",
+  "status": "documented",
+  "what": "Primary lockup, stacked, mark alone, wordmark alone, clear-space in mark units (e.g. cap-height), min size, one-colour, reversed/B&W, do/don't gallery (stretch, recolor, respace, drop shadow).",
+  "how": "Acid test: mark must be identifiable in flat B&W. Produce each variant before animating the logo sting.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2248-brand-identity-studio/8561-logo-and-visual-system-direction"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-196"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قيود ضد الطابع العام",
+  "name_en": "Anti-slop generation constraints",
+  "status": "documented",
+  "what": "Escape the generic middle with specific positive, negative and reference-anchored constraints.",
+  "how": "Positive: 'identifiable in one flat colour', 'reads at 16px'. Negative: 'no gradient mesh', 'no swoosh/globe', 'avoid SaaS blue'. Anchored: 'like X restraint but warmer'. Generate many, human curates.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2248-brand-identity-studio/8561-logo-and-visual-system-direction"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-197"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تشريح دليل الهوية",
+  "name_en": "Brand book anatomy (10 parts)",
+  "status": "documented",
+  "what": "Strategy+archetype, logo suite, colour (HEX/RGB/OKLCH + WCAG pairs), type + license class, grid, icons, imagery, voice, do/don'ts, governance incl. AI-content rules.",
+  "how": "Build as a living HTML hub reading the token file rather than a static PDF.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2248-brand-identity-studio/8557-brand-book-assembly"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-198"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "بوابة ترخيص الخطوط والملكية",
+  "name_en": "Font-license and IP gate",
+  "status": "documented",
+  "what": "Before calling a brand deliverable final, record the font web/video license class and route IP/registrability claims to review; log human curation and modification of AI concepts.",
+  "how": "Keep a curation-and-authorship log next to the project.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2248-brand-identity-studio/8557-brand-book-assembly",
+   "kosif-atlas/skills/2248-brand-identity-studio/8558-brand-legal-and-licensing"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-199"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "محرك قواعد أنظمة التصميم المخصصة",
+  "name_en": "Bespoke design-system grammar engine",
+  "status": "documented",
+  "what": "Reverse-engineers ~140 DESIGN.md systems into rules+rationale and forward-generates a 9-section DESIGN.md for a brief, with checks for coherence (WCAG, OKLCH uniformity, hue harmony), archetype, kansei and neighbour distinctiveness.",
+  "how": "Read the grammar/ and source-design-systems/ as a style library; the python checks exist but are unreviewed third-party — reimplement the math rather than run them.",
+  "params": "max 7 questions in interactive mode",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/3593-bespoke-design-system/14409-bespoke-design-system/SKILL.md",
+   "kosif-atlas/skills/3593-bespoke-design-system/SOURCE.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-200"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "مجموعة أيقونات من SVG",
+  "name_en": "Favicon/app-icon set from SVG",
+  "status": "documented",
+  "what": "From one square SVG produce ICO 32, apple-touch 180, PWA 192/512, maskable 512 with 409 safe zone, dark-mode SVG via prefers-color-scheme.",
+  "how": "ImageMagick magick (v7) or convert (v6 present here); svgo optional.",
+  "params": "32,180,192,512; safe 409",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/3170-generate-favicon/13499-generate-favicon"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-201"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "لافتة SQC",
+  "name_en": "SQC banner art (README)",
+  "status": "documented",
+  "what": "Wide dark banner with glossy blue-to-white 3D SQC letters and 'SMART QUALITY CONTROL / AI-Powered Audit & Assurance Platform'.",
+  "how": "JPEG 1320x215, used at the top of README.",
+  "params": "blue gradient letters on near-black",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/sqc-banner.jpg",
+   "kosif-earth-ci-fork/README.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-202"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "توقيع العلامة",
+  "name_en": "Brand mark corner signature",
+  "status": "documented",
+  "what": "Maker's name with a gold hairline in a top corner, sliding in at 0.4 s.",
+  "how": "V.brand, V.brand_side in verse.js.",
+  "params": "26*k px, weight 600, letter-spacing .32em, #F7EBD0; line 70*k px rgba(231,182,90,.9); opacity .92",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/templates/verse.html:194"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-203"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "برومبت شعار بسيط",
+  "name_en": "Minimal logo mark prompt",
+  "status": "documented",
+  "what": "Template for a clean flat vector logo concept.",
+  "how": "'Minimal modern logo mark for [brand], [symbol idea], flat vector, [2 colours HEX], balanced negative space, centered on white, no extra text' — then vectorise/clean manually; generators garble text.",
+  "params": "2 HEX colours; white background",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-204"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "3 اتجاهات شعار",
+  "name_en": "3 radical logo directions as SVG",
+  "status": "documented",
+  "what": "Brief (3 values, audience, competitors, anti-references) then 3 different SVG logos, pick and refine.",
+  "how": "hand-coded SVG",
+  "params": "readable at 24px; no gradients in mono version",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/brand-identity-logo/SKILL.md:21"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-205"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "قوالب الهوية",
+  "name_en": "Brand kit templates",
+  "status": "documented",
+  "what": "Cover, square post, story, card + brand.md + tokens.json.",
+  "how": "HTML/SVG templates",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/brand-identity-logo/SKILL.md:25"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-206"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "منصة صوت العلامة",
+  "name_en": "Brand voice platform (vendored)",
+  "status": "documented",
+  "what": "3-5 voice attributes, tone-shift rules, do/don't-say, glossary, messaging hierarchy.",
+  "how": "read sources",
+  "params": "3-5 attributes",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "100-superskills/skills/brand-identity-logo/references/sources.md:210"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-207"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "كشف الشعار من أشكال العلامة",
+  "name_en": "Brand-shape logo reveal / sting",
+  "status": "documented",
+  "what": "Logo built from the brand's own shapes (mask, draw-on, morph), wordmark wipes, tagline follows.",
+  "how": "SVG draw-on + fill + wipe.",
+  "params": "800–1200 ms reveal, hold 1 s; tagline fades 200 ms after wordmark",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/ads.md:29",
+   "kosif-tool/playbooks/ads.md:52"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-208"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "حشد إلى شعار",
+  "name_en": "Crowd to logo",
+  "status": "documented",
+  "what": "Particles drift in flow field, gather into logo, solid logo crossfades.",
+  "how": "Particles drift in flow field, gather into logo, solid logo crossfades.",
+  "params": "drift 1.5 s; gather 1.2 s; crossfade 300 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:42"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-209"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نقطة إلى شعار",
+  "name_en": "Dot-to-logo recipe",
+  "status": "documented",
+  "what": "Dot drops on arc, squashes, recovers, morphs to mark, wordmark wipes.",
+  "how": "Dot drops on arc, squashes, recovers, morphs to mark, wordmark wipes.",
+  "params": "0–400 drop ease-in quad; 400–480 squash; 480–800 spring 10/220; 800–1500 morph; 1500–1900 wordmark ease-out quint",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/shapes.md:35-43"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-210"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "استخراج الهوية من CSS",
+  "name_en": "Brand identity extraction from CSS",
+  "status": "documented",
+  "what": "Pull exact bg/accent/text hexes and display/body fonts from :root vars so video matches site.",
+  "how": "Parse styles.css custom properties; record in plan Visual identity block.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/vendor/brag/skills/brag/references/step-1-inspect.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-211"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تشويه الشعار بالأثر",
+  "name_en": "Trail displacement on logos/type",
+  "status": "idea",
+  "what": "Apply the smear displacement to a logo SDF, photo or rendered Arabic text texture for a liquid reveal.",
+  "how": "Replace blob with texture2D(textTex,fuv).",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "BRAND-212"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "رسم الشعار وتوهج",
+  "name_en": "SVG logo draw + radial bloom fill",
+  "status": "idea",
+  "what": "Logo paths stroke-draw then fill blooms with radial glow; URL types and holds.",
+  "how": "stroke-dashoffset; radial gradient fade.",
+  "params": "draw 700 ms; URL hold 1.2 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-aschapmann-131210"
+  ],
+  "styles": [
+   "pm-aschapmann-131210"
+  ],
+  "tags": [],
+  "id": "BRAND-213"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "نبضتان للزر",
+  "name_en": "Double CTA pulse",
+  "status": "idea",
+  "what": "CTA pulses twice before end freeze.",
+  "how": "scale keyframes.",
+  "params": "2 pulses",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-cansincengiz-me-cf68dd"
+  ],
+  "styles": [
+   "pm-cansincengiz-me-cf68dd"
+  ],
+  "tags": [],
+  "id": "BRAND-214"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تصاعد لون العلامة",
+  "name_en": "Brand colour flood progression",
+  "status": "idea",
+  "what": "Brand colour grows from a 4px line to full-frame fill at the end.",
+  "how": "Brand colour grows from a 4px line to full-frame fill at the end.",
+  "params": "4 px line -> pills -> 100% last 2 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-ratheejaisal-1f4538"
+  ],
+  "styles": [
+   "pm-ratheejaisal-1f4538"
+  ],
+  "tags": [],
+  "id": "BRAND-215"
+ },
+ {
+  "family": "brand-logo-identity",
+  "name_ar": "تجميع الشعار بنابض",
+  "name_en": "Spring wordmark assembly",
+  "status": "idea",
+  "what": "spring stiffness 160 damping 15; 60 ms stagger",
+  "how": "spring stiffness 160 damping 15; 60 ms stagger",
+  "params": "wide geometric 140 px; mono metrics 32 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-robvjourney-ce3e1a"
+  ],
+  "styles": [
+   "pm-robvjourney-ce3e1a"
+  ],
+  "tags": [],
+  "id": "BRAND-216"
+ }
+]

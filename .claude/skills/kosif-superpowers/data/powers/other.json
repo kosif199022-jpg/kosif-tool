@@ -1,0 +1,1948 @@
+[
+ {
+  "family": "other",
+  "name_ar": "استوديو كاشف للمراجعة",
+  "name_en": "KOSIF Audit Studio app (purpose)",
+  "status": "proven",
+  "what": "No-build vanilla-JS PWA (KOSIF 4 legacy + V5 continuous review) for Arabic audit files: trial-balance engine, analytics (ratios, Benford), council, report studio, and a live voice assistant. Visual value: several stacked themes, voice orb + waveform, SVG mini-charts, conic dials, and a stub 'cinema'…",
+  "how": "Serve statically (python3 -m http.server 8080) and open index.html (V5) or legacy.html (KOSIF 4 with voice panel).",
+  "params": "v4.0.0 package; node --test tests/*.test.js",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-studio/README.md",
+   "kosif-audit-studio/package.json",
+   "kosif-audit-studio/index.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-01"
+ },
+ {
+  "family": "other",
+  "name_ar": "خادم MCP لـ Claude Code",
+  "name_en": "MCP server for Claude Code (22 tools)",
+  "status": "proven",
+  "what": "A JSON-RPC MCP endpoint that lets Claude drive the studio: plan/validate/compile, read the environment, list and run recipes as jobs, poll jobs, read/write/create projects, check/save timelines, list transitions, render manifests and run the review loop.",
+  "how": "claude mcp add --transport http kosif-web http://127.0.0.1:8766/mcp; methods initialize (protocol 2025-03-26), tools/list, tools/call, ping.",
+  "params": "tools: motion_plan, motion_validate, motion_compile, motion_templates, kosif_env, kosif_recipes, kosif_run, kosif_job, kosif_jobs, kosif_media, kosif_projects, kosif_project_read, kosif_project_write, kosif_project_create, kosif_timeline_check, kosif_timeline_save, kosif_transitions, kosif_render_ma…",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:697",
+   "100-superskills/skills/kosif-montage-motion/tests/test_web.py:205"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-02"
+ },
+ {
+  "family": "other",
+  "name_ar": "عقد رد Claude والتطبيق بعد التأكيد",
+  "name_en": "Studio reply contract and gated apply",
+  "status": "proven",
+  "what": "Claude answers with one ```json block holding notes, recipe actions, project files and an optional timeline; nothing runs until the user presses تطبيق, then files are written with .bak, the timeline is saved and actions are queued as jobs.",
+  "how": "claude_bridge.extract() (fenced json or bare object) → POST /api/claude/apply {plan}; index.html writes re-sync the kit (motion.sync_assets).",
+  "params": "shape {notes, actions:[{recipe,args}], files:[{project,path,content}], timeline:{…}, timeline_name}",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/claude_bridge.py:146",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:653"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-03"
+ },
+ {
+  "family": "other",
+  "name_ar": "ملف مشروع Studio وإعادة ربط الوسائط",
+  "name_en": "Studio project file (.kosif.json) with media re-link",
+  "status": "proven",
+  "what": "Projects save as a small JSON without media; on open, the user re-picks originals and they re-link by name, size and modification time; unknown or executable properties are dropped.",
+  "how": "Save → NAME.kosif.json; Open (≤ 1 MB) → sanitizeProject() (version 1 only); assetKey = name:size:lastModified.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:161",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:7",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:13"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-04"
+ },
+ {
+  "family": "other",
+  "name_ar": "موجّه القدرات",
+  "name_en": "Deterministic capability router",
+  "status": "proven",
+  "what": "Routes Arabic/English requests to capability families, skills and tools by keyword (animation/motion graphics/video words go to the cinema family).",
+  "how": "kosif_route text=...; kosif_capabilities; kosif_skill_read name=...; kosif_doctor for environment status.",
+  "params": "18 families",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/tools_core.py:21",
+   "kosif-one/tools/kosif-omni/skills/kosif-omni/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-05"
+ },
+ {
+  "family": "other",
+  "name_ar": "سجل مصادر كتب درايف",
+  "name_en": "Drive book provenance registry",
+  "status": "proven",
+  "what": "Registers Drive sources/chunks with SHA-256 dedupe, prompt-injection taint flags and revocation so book-derived craft rules stay traceable.",
+  "how": "skills/kosif-knowledge-atlas/scripts/knowledge_atlas.py (register_source, register_chunk, revoke_source, taint_scan); self-test script provided.",
+  "params": "content_sha256 64 hex",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-knowledge-atlas/scripts/knowledge_atlas.py",
+   "kosif-one/tools/kosif-omni/skills/kosif-knowledge-atlas/SKILL.md",
+   "kosif-one/tools/kosif-omni/skills/kosif-knowledge-atlas/scripts/knowledge_atlas_self_test.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-06"
+ },
+ {
+  "family": "other",
+  "name_ar": "بوابة الأفعال ونقاط التدخل البشري",
+  "name_en": "Human-checkpoint action gate",
+  "status": "proven",
+  "what": "Classifies planned GUI/browser steps RUN/CONFIRM/HANDOFF/BLOCK (CAPTCHA, OTP, passwords, payments, send/delete/install).",
+  "how": "kosif_action_gate {goal, steps[], approved[], allowed_domains[]}; kosif_ui_ground for element grounding; kosif_risk_gate for publish/send.",
+  "params": "exit 0 RUN, 1 CONFIRM, 4 HANDOFF, 3 BLOCK",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-computer-use/scripts/action_gate.py",
+   "kosif-one/tools/kosif-omni/skills/kosif-computer-use/scripts/ui_ground.py",
+   "kosif-one/tools/kosif-omni/mcp-server/tests/test_server.py:210"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-07"
+ },
+ {
+  "family": "other",
+  "name_ar": "أفضل وقت للنشر",
+  "name_en": "Best time to post from own analytics",
+  "status": "proven",
+  "what": "Median metric per weekday x 3-hour block from the account's own export, vs overall median; refuses below 8 posts.",
+  "how": "python social.py besttime export.csv [--metric views] [--block 3].",
+  "params": ">= 2 posts per cell",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-social/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-08"
+ },
+ {
+  "family": "other",
+  "name_ar": "البحث في الاستايلات",
+  "name_en": "Style search",
+  "status": "proven",
+  "what": "Searches 288 catalog entries by id, name, creator, keywords, category.",
+  "how": "python3 tools/kosif.py search <words> / list --category KEY / show <id> / stats.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/tools/kosif.py",
+   "kosif-tool/STYLE_INDEX.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-09"
+ },
+ {
+  "family": "other",
+  "name_ar": "عرض الاستايلات",
+  "name_en": "kosif.py list",
+  "status": "proven",
+  "what": "Table/JSON of styles filtered by category key or label, origin, type; sort by rank/name/published.",
+  "how": "python3 tools/kosif.py list [--category charts] [--origin KOSIF] [--type Style] [--sort rank|name|published] [--limit N] [--json]",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/tools/kosif.py:329"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-10"
+ },
+ {
+  "family": "other",
+  "name_ar": "البحث في الفهرس",
+  "name_en": "kosif.py search",
+  "status": "proven",
+  "what": "Case-insensitive AND search over id, names, creator, keywords, summaries, categories and legacy labels; id hits score double.",
+  "how": "python3 tools/kosif.py search kinetic arabic [--limit N] [--json]",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/tools/kosif.py:374"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-11"
+ },
+ {
+  "family": "other",
+  "name_ar": "عرض استايل",
+  "name_en": "kosif.py show",
+  "status": "proven",
+  "what": "Prints STYLE.json, BRIEF.md and playbook paths (with exists flag) and SKILL path for one id; suggests close ids on typos.",
+  "how": "python3 tools/kosif.py show <id>",
+  "params": "difflib cutoff 0.5, 5 suggestions",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/tools/kosif.py:400",
+   "kosif-tool/tools/kosif.py:227"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-12"
+ },
+ {
+  "family": "other",
+  "name_ar": "شريط التقدم والتذييل",
+  "name_en": "Footer label and progress bar",
+  "status": "ready",
+  "what": "A small lime caption with the scene id and a rounded progress bar along the bottom showing playback position.",
+  "how": "label '600 {w*.024}px Arial' #c9f96d at y=.92h; track #293951 and fill #c9f96d rounded rect at y=.96h, width .82w*t/duration.",
+  "params": "bar at 96% height, 82% width",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/web/motion.js:20-21",
+   "fastify-motion-bro/web/editorial.js:82-84"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-13"
+ },
+ {
+  "family": "other",
+  "name_ar": "تسمية آمنة وتهريب النص",
+  "name_en": "Safe naming and escaping",
+  "status": "ready",
+  "what": "Project names are one folder (letters incl. Arabic, digits, _ -, ≤64 chars); titles are HTML-escaped and JSON placed in <script> has '</' escaped.",
+  "how": "motion.safe_name, html_text, json_for_script",
+  "params": "regex ^[\\w\\u0600-\\u06FF][\\w\\u0600-\\u06FF-]{0,63}$",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/motion.py:85"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-14"
+ },
+ {
+  "family": "other",
+  "name_ar": "التعرف الضوئي على النصوص في المسح والإطارات",
+  "name_en": "OCR of scans and frames",
+  "status": "install",
+  "what": "Check whether a PDF has a text layer first (a many-page document returning only a few bytes from pdftotext is an image scan) before concluding something is absent; add an invisible OCR layer without changing appearance; Arabic needs the 'ara' traineddata.",
+  "how": "ocrmypdf + tesseract (needs install); for video frames: ffmpeg frame grab -> tesseract -l ara+eng.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1387-pdf-skills/3268-pdf-ocr-adding/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-15"
+ },
+ {
+  "family": "other",
+  "name_ar": "تطبيق كاشف للمراجعة الموحد",
+  "name_en": "KOSIF Audit Pro app (purpose)",
+  "status": "install",
+  "what": "Arabic RTL audit workspace (Next.js 16 / React 19 / Tailwind 4 / shadcn new-york) that runs a deterministic BigInt trial-balance pipeline, 10 audit rounds, 26 gates and an advisory AI council. Its value for motion work is the tested design-token + cinematic CSS motion system, not the audit logic.",
+  "how": "Read app/globals.css tokens and components/kosif/*.tsx as a reference implementation of an RTL dashboard with contract-tested palette and motion; reuse tokens in HTML/Remotion compositions.",
+  "params": "Node >=22.13; deps not installed here (no node_modules)",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-pro/README.md",
+   "kosif-audit-pro/package.json",
+   "kosif-audit-pro/app/layout.tsx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-16"
+ },
+ {
+  "family": "other",
+  "name_ar": "كتالوج الكتل والمكونات",
+  "name_en": "Registry blocks & components catalog",
+  "status": "install",
+  "what": "210 blocks and ~260 components (transitions, lower thirds, carousels, maps, charts, captions, cursors, liquid glass).",
+  "how": "hyperframes add <name>.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks",
+   "kosif-one/vendor/hyperframes/registry/components"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-17"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال night_boat",
+  "name_en": "Example project night_boat",
+  "status": "install",
+  "what": "Example composition source 'night_boat'.",
+  "how": "python scripts/kmotion.py sync projects/night_boat; render projects/night_boat --engine studio",
+  "params": "5 s 1920x1080 sea, felucca, 1900K lantern, fish splash at 2.8 s synced plink",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-18"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال blue_hour",
+  "name_en": "Example project blue_hour",
+  "status": "install",
+  "what": "Example composition source 'blue_hour'.",
+  "how": "python scripts/kmotion.py sync projects/blue_hour; render projects/blue_hour --engine studio",
+  "params": "sodium lamps vs blue hour, car light trails, star arcs",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-19"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال koi_pond",
+  "name_en": "Example project koi_pond",
+  "status": "install",
+  "what": "Example composition source 'koi_pond'.",
+  "how": "python scripts/kmotion.py sync projects/koi_pond; render projects/koi_pond --engine studio",
+  "params": "shallow water, caustics, koi, petals",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-20"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال lab_rabbit_lion",
+  "name_en": "Example project lab_rabbit_lion",
+  "status": "install",
+  "what": "Example composition source 'lab_rabbit_lion'.",
+  "how": "python scripts/kmotion.py sync projects/lab_rabbit_lion; render projects/lab_rabbit_lion --engine studio",
+  "params": "20 s 960x540 24 fps lab schematic",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-21"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال bunny_twin",
+  "name_en": "Example project bunny_twin",
+  "status": "install",
+  "what": "Example composition source 'bunny_twin'.",
+  "how": "python scripts/kmotion.py sync projects/bunny_twin; render projects/bunny_twin --engine studio",
+  "params": "5 s 1080x1920 plush bunny + truss",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-22"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال midnight_cat",
+  "name_en": "Example project midnight_cat",
+  "status": "install",
+  "what": "Example composition source 'midnight_cat'.",
+  "how": "python scripts/kmotion.py sync projects/midnight_cat; render projects/midnight_cat --engine studio",
+  "params": "12 s 1280x720 24 fps 2.5D scene",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-23"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال sound_ground",
+  "name_en": "Example project sound_ground",
+  "status": "install",
+  "what": "Example composition source 'sound_ground'.",
+  "how": "python scripts/kmotion.py sync projects/sound_ground; render projects/sound_ground --engine studio",
+  "params": "spectrogram canyon + chrome orb",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-24"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال water_cycle_3d",
+  "name_en": "Example project water_cycle_3d",
+  "status": "install",
+  "what": "Example composition source 'water_cycle_3d'.",
+  "how": "python scripts/kmotion.py sync projects/water_cycle_3d; render projects/water_cycle_3d --engine studio",
+  "params": "3D explainer",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-25"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال showreel",
+  "name_en": "Example project showreel",
+  "status": "install",
+  "what": "Example composition source 'showreel'.",
+  "how": "python scripts/kmotion.py sync projects/showreel; render projects/showreel --engine studio",
+  "params": "showreel",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-26"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشروع مثال premium_edit",
+  "name_en": "Example project premium_edit",
+  "status": "install",
+  "what": "Example composition source 'premium_edit'.",
+  "how": "python scripts/kmotion.py sync projects/premium_edit; render projects/premium_edit --engine studio",
+  "params": "directed footage edit",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:226",
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:432"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-27"
+ },
+ {
+  "family": "other",
+  "name_ar": "التحكم بسطح المكتب مع البث الحي",
+  "name_en": "Desktop control with Live View (KOSIF Mouse)",
+  "status": "install",
+  "what": "Background-first Windows automation: observe UIA tree/OCR with refs, ground Arabic/English instructions, gated batched actions with Claude's own pen pointer, Live View event stream.",
+  "how": "kosif_mouse_status/observe/find/act/do/live; emergency stop top-left corner or hold Esc; refuses over HTTP transport.",
+  "params": "observe max_side 1280; idle guard 600 ms; settle 0.03 s",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/desktop.py:1",
+   "kosif-one/tools/kosif-omni/skills/kosif-mouse/SKILL.md",
+   "kosif-one/tools/kosif-omni/mcp-server/tests/test_desktop.py:43"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-28"
+ },
+ {
+  "family": "other",
+  "name_ar": "الوصول لمكتبة الأطلس",
+  "name_en": "KOSIF Atlas library access (search/read/inspect/vendor)",
+  "status": "install",
+  "what": "Search, read-as-data, statically inspect and (with approval) vendor third-party skills from a 14,708-skill / 3,635-plugin permissive library — the place to find Remotion, ffmpeg, captions, music skills.",
+  "how": "kosif_atlas_status -> kosif_atlas_search query=... [no_executables=true] -> kosif_atlas_read skill_id=... -> kosif_atlas_inspect -> kosif_atlas_vendor confirm=true. Embedded pack file mcp-server/kosif_mcp/data/atlas_pack*.kpack is NOT present in this checkout; use KOSIF_ATLAS_SOURCE=external or the hosted edge API.",
+  "params": "verdicts READ_ONLY_OK / REVIEW_BEFORE_INSTALL / DO_NOT_INSTALL; licenses MIT 3,280, Apache-2.0 337, BSD-3 10, ...",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/atlas.py:180",
+   "kosif-one/tools/kosif-omni/skills/kosif-atlas/SKILL.md",
+   "kosif-one/tools/kosif-omni/ATLAS_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-29"
+ },
+ {
+  "family": "other",
+  "name_ar": "بحث نصي في الأطلس",
+  "name_en": "Atlas full-text skill search",
+  "status": "install",
+  "what": "FTS5 search over 15,122 third-party skills to find a technique source.",
+  "how": "tools/deep_index.py builds SQLite FTS5; query with sqlite3 MATCH.",
+  "params": "15,107,396 words indexed",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/DEEP-INDEX.md",
+   "100-superskills/tools/deep_index.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-30"
+ },
+ {
+  "family": "other",
+  "name_ar": "جسر Claude بأربع طرق",
+  "name_en": "Claude bridge with four routes (CLI, API, MCP, copy-paste)",
+  "status": "key",
+  "what": "Sends the user's request plus live studio context to Claude and reads back a JSON plan: through the Claude Code CLI, the Anthropic API with a locally stored key, MCP (Claude drives the site), or a prompt package copied into any chat and the reply pasted back.",
+  "how": "POST /api/claude/ask {task, context:{media, projects, timeline, project}}; /api/claude/package returns the prompt; backend order auto→cli→api→mcp; CLI `claude -p PROMPT --output-format text` (prompt via stdin over 28,000 chars); API POST https://api.anthropic.com/v1/messages max_tokens 8000.",
+  "params": "settings: backend auto|cli|api|mcp|none, model default 'claude-sonnet-5-5', timeout 240 s; context ≤ 60,000 chars; project file excerpt ≤ 40,000 chars; key shown only as first 7 chars",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/claude_bridge.py:27",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/claude_bridge.py:73",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/claude_bridge.py:108"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-31"
+ },
+ {
+  "family": "other",
+  "name_ar": "واجهة الأطلس المستضافة",
+  "name_en": "Hosted Atlas edge API",
+  "status": "key",
+  "what": "Cloudflare Worker for hosts without the local server: FTS search, read, Jev-judged select, Arabic->English translate, MCP endpoint.",
+  "how": "GET /search?q=&license=, GET /skill/<id>?file=, POST /select {task, top}, POST /translate, POST /mcp, GET /openapi.json at https://kosif-atlas-api.kosif199022.workers.dev.",
+  "params": "rate limits 60/min search-read, 12/min Jev-translate; 14,793 skills",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/edge/atlas-api/README.md",
+   "kosif-one/tools/kosif-omni/chatgpt/custom-gpt/ATLAS-ACTION.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-32"
+ },
+ {
+  "family": "other",
+  "name_ar": "اختيار المهارة تلقائياً",
+  "name_en": "Auto skill selection (Jev-judged)",
+  "status": "key",
+  "what": "One call that understands the task (Arabic glossary/edge translation), gathers built-in + Atlas candidates, lets the live Jev service choose (asked twice, reversed) and returns the playbook.",
+  "how": "kosif_skill_auto task='اعمل موشن جرافيك لصوت' [top 2-9] [jev true|false]; falls back to deterministic ranking offline.",
+  "params": "top default 8",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/skillengine.py:1",
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/skillengine.py:282"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-33"
+ },
+ {
+  "family": "other",
+  "name_ar": "عميل منصة العمل بالموافقة",
+  "name_en": "Consent-gated workbench client",
+  "status": "key",
+  "what": "Reads/writes plans to the private KOSIF Motion Workbench only with a token supplied through an approved flow.",
+  "how": "python site_bridge.py ... (KOSIF_SITE_TOKEN).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/site_bridge.py",
+   "kosif-one/tools/kosif-studio/tests/bridge/test_site_bridge.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-34"
+ },
+ {
+  "family": "other",
+  "name_ar": "فحص واجهة أطلس المهارات",
+  "name_en": "Skill Atlas API probe",
+  "status": "key",
+  "what": "Probes the KOSIF Atlas worker: health, skill search, Arabic->English translate, and task->skill selection with Jev.",
+  "how": "python probe.py (network) against /health, /search?q=, /translate, /select.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-edge-build/probe.py",
+   "kosif-one/tools/kosif-edge-build/defender-scan.json"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-35"
+ },
+ {
+  "family": "other",
+  "name_ar": "علامة مائية قطرية",
+  "name_en": "Diagonal trial watermark",
+  "status": "seen",
+  "what": "repeat translucent text rotated -15°",
+  "how": "repeat translucent text rotated -15°",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-henkpoley-3d3407"
+  ],
+  "styles": [
+   "pm-henkpoley-3d3407"
+  ],
+  "tags": [],
+  "id": "MISC-36"
+ },
+ {
+  "family": "other",
+  "name_ar": "منصة S.KOSIF / SQC (سياق المنتج)",
+  "name_en": "S.KOSIF / SQC product (context)",
+  "status": "documented",
+  "what": "An Arabic-first, offline-capable web platform (PWA) for accounting, audit/assurance and accountant helper tools, entered section-first (accounting, audit, helper tools) then sector then company; reporting, analytics and AI are cross-cutting. Its visual work (themes, crystal world, cinematic intro, A…",
+  "how": "Reference only: when a user asks for motion or brand work for this product, respect the three-entry structure and the 'one identity' rule (FOUNDATION 3.11.2); never invent financial numbers in visuals.",
+  "params": "3 primary entries; brand names: S.KOSIF / KOSIF / SQC - Smart Quality Control; default identity «دفتر KOSIF» since 2026-10-09",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/docs/START_HERE.md",
+   "kosif-earth-ci-fork/FOUNDATION.md:226",
+   "kosif-earth-ci-fork/FOUNDATION.md:679"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-37"
+ },
+ {
+  "family": "other",
+  "name_ar": "قائمة مهارات الأطلس حسب المحور",
+  "name_en": "Atlas skill shortlist by theme (cross-reference)",
+  "status": "documented",
+  "what": "Index of 12 candidate skills per axis (9 axes, incl. animation/3D, visual design, brand, data viz, UI QA) pulled from kosif-atlas with license and risk flags; reviewed as untrusted reference only.",
+  "how": "JSON: {axis: [{score,id,plugin,skill,license,risk,path}]}; motion axis tops: awwwards-motion (MIT, 10), webgpu-threejs-tsl (MIT), threejs-data-visualization (MIT), scrollytelling (MIT), three-webgl-game (MIT), gsap (Apache-2.0), microinteractions (MIT).",
+  "params": "9 axes x 12 = 108 entries",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/tools/fixtures/atlas-themes.json",
+   "kosif-earth-ci-fork/docs/rebuild/ATLAS_REVIEW_ar.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-38"
+ },
+ {
+  "family": "other",
+  "name_ar": "قاعدة المدخلات غير الموثوقة",
+  "name_en": "Untrusted-input safety rule",
+  "status": "documented",
+  "what": "Treat uploaded ZIPs and public repos as data; validate archive paths, sizes, nested archives and secrets; never commit user media or API keys.",
+  "how": ".gitignore excludes .env, output/, assets/user/*, *.mp4/*.mov/*.wav/*.mp3 and per-profile sessions; agent inspects archives before use.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/AGENTS.md:19-22",
+   "fastify-motion-bro/.gitignore:1-23",
+   "fastify-motion-bro/.env.example"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-39"
+ },
+ {
+  "family": "other",
+  "name_ar": "تدقيق تراخيص المصادر",
+  "name_en": "Source licence audit",
+  "status": "documented",
+  "what": "Inventory of inspiration repos with licences: motion-starter-kit MIT, brag MIT, scroll-world MIT, ai-design-skills MIT, hyperframes Apache-2.0, mcp-higgsfield-landing unverified (do not copy), kosif-one/kosif-studio owner.",
+  "how": "Consult before borrowing ideas; no vendor code is vendored here.",
+  "params": "8 sources",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/docs/SOURCE_AUDIT.md:1-11",
+   "fastify-motion-bro/README.md:69-77"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-40"
+ },
+ {
+  "family": "other",
+  "name_ar": "عقود دخول الوكلاء",
+  "name_en": "Agent entry contracts (multi-agent)",
+  "status": "documented",
+  "what": "Same contract wired for Claude (CLAUDE.md, .claude/skills), Codex/Cursor (AGENTS.md, .agents/skills), Gemini (GEMINI.md) and Copilot (.github/copilot-instructions.md).",
+  "how": "Each entry file points to AGENTS.md + the matching SKILL.md.",
+  "params": "9 skills x 3 identical copies",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/CLAUDE.md",
+   "fastify-motion-bro/GEMINI.md",
+   "fastify-motion-bro/.github/copilot-instructions.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-41"
+ },
+ {
+  "family": "other",
+  "name_ar": "خريطة مصادر الحركة من الأطلس",
+  "name_en": "Atlas-derived motion knowledge map",
+  "status": "documented",
+  "what": "The skill credits Atlas skills it distilled: awwwards-motion (MIT), hyperframes (Apache-2.0), ffmpeg/mas-video-lab (MIT), youtube subtitles/captions (MIT), remotion-best-practices (MIT), kinetic-inflated-hero/ui-motion (MIT), hyperframes sound/ambience (MIT, procedural risers/impacts/pads).",
+  "how": "Read the originals with kosif_atlas_read or from github.com/kosif199022-jpg/kosif-atlas before reuse; the procedural SFX synthesis it mentions has no code in this repo.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/atlas_15k_synthesis.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-42"
+ },
+ {
+  "family": "other",
+  "name_ar": "خريطة المراكز والوكلاء",
+  "name_en": "Hubs/agents lens map",
+  "status": "documented",
+  "what": "Maps the user's AI-Studio hubs (AutoDirector, CharacterForge, WorldBuilder, MotionVFX, CommercialFactory, VideoStudio, MusicStudio, VisualForensic...) to Omni skills/tools so Claude can speak from each lens.",
+  "how": "Look up the hub in the table and load the listed skill/tool.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/hubs-and-agents.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-43"
+ },
+ {
+  "family": "other",
+  "name_ar": "تنفيذ الصور الآمن في وضع Full Pro",
+  "name_en": "Full Pro secure image execution",
+  "status": "documented",
+  "what": "Pro-mode chain: SceneSpec -> digest freeze -> runtime authorization ticket -> secure executor -> pixel QA; host-native generation counts as bypass.",
+  "how": "Only when Full Pro is explicitly requested; local engine labels receipts LOCAL_ENGINE; the HMAC secure executor backend is packaged, not deployed.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-image-studio/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-44"
+ },
+ {
+  "family": "other",
+  "name_ar": "معيار اختيار الأداة",
+  "name_en": "Tool-choice scoring rubric",
+  "status": "documented",
+  "what": "Scores candidate tools before acting: capability 0-30, live availability 0-20, owner authority 0-15, verification/receipt 0-15, reversibility/safety 0-10, latency/cost 0-5, continuity 0-5; Jev picks among 2-5 viable ones.",
+  "how": "Apply when several render/edit routes exist (e.g. ffmpeg vs Remotion vs external app).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-source-router/SKILL.md",
+   "kosif-one/tools/kosif-omni/skills/kosif-source-router/references/mode-tool-routing-v10.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-45"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشغل التفكير الاحترافي",
+  "name_en": "KOSIF Think Pro / Full Pro runtime",
+  "status": "documented",
+  "what": "Full Pro runtime, receipts, deterministic reasoning helpers (decision sensitivity, probability, calibration, KCL probes, project forge).",
+  "how": "Load skill kosif-think-pro (Skill tool or kosif_skill_read name=kosif-think-pro).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-think-pro/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-46"
+ },
+ {
+  "family": "other",
+  "name_ar": "التفكير أولاً",
+  "name_en": "KOSIF Think (BrowserJev)",
+  "status": "documented",
+  "what": "Think-first orchestration, indexed browser action graphs, Jev ambiguity resolution, bounded recovery.",
+  "how": "Load skill kosif-think (Skill tool or kosif_skill_read name=kosif-think).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-think/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-47"
+ },
+ {
+  "family": "other",
+  "name_ar": "النواة المعرفية",
+  "name_en": "Cognitive Core 28-module graph",
+  "status": "documented",
+  "what": "28 reasoning modules (M01-M28) selected by task type; claim lifecycle and calibration.",
+  "how": "Load skill kosif-cognitive-core (Skill tool or kosif_skill_read name=kosif-cognitive-core).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-cognitive-core/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-48"
+ },
+ {
+  "family": "other",
+  "name_ar": "مجلس الخمسمئة",
+  "name_en": "Council-500 orchestration",
+  "status": "documented",
+  "what": "Same-input fan-out of up to 500 expert personas with Jev convergence and Einstein chair (not executable locally).",
+  "how": "Load skill kosif-council-500 (Skill tool or kosif_skill_read name=kosif-council-500).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-council-500/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-49"
+ },
+ {
+  "family": "other",
+  "name_ar": "كبير الخبراء أينشتاين",
+  "name_en": "Einstein chief expert synthesis",
+  "status": "documented",
+  "what": "Seven-stage synthesis producing 2-4 candidates while preserving dissent.",
+  "how": "Load skill kosif-einstein-chief-expert (Skill tool or kosif_skill_read name=kosif-einstein-chief-expert).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-einstein-chief-expert/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-50"
+ },
+ {
+  "family": "other",
+  "name_ar": "مجلس العباقرة",
+  "name_en": "Genius Council roster (1,040)",
+  "status": "documented",
+  "what": "40 elite + 1,000 scholars, 51 domains; kosif_council_panel/expert/search/protocol.",
+  "how": "Load skill kosif-expert-council (Skill tool or kosif_skill_read name=kosif-expert-council).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-expert-council/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-51"
+ },
+ {
+  "family": "other",
+  "name_ar": "التداول السريع مع جيف",
+  "name_en": "Expert-Jev fast convergence",
+  "status": "documented",
+  "what": "Clusters expert proposals and runs closed-set tournaments.",
+  "how": "Load skill kosif-expert-jev-deliberation (Skill tool or kosif_skill_read name=kosif-expert-jev-deliberation).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-expert-jev-deliberation/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-52"
+ },
+ {
+  "family": "other",
+  "name_ar": "التدقيق والمعايير الدولية",
+  "name_en": "Audit & IFRS desk",
+  "status": "documented",
+  "what": "Accounting/IFRS/VAT controls with kosif_ledger_check.",
+  "how": "Load skill kosif-audit-ifrs (Skill tool or kosif_skill_read name=kosif-audit-ifrs).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-audit-ifrs/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-53"
+ },
+ {
+  "family": "other",
+  "name_ar": "تحكيم جيف",
+  "name_en": "Jev closed-set arbitration",
+  "status": "documented",
+  "what": "Packets for yes/no, choice and rubric scoring; kosif_jev_decide calls the live service.",
+  "how": "Load skill kosif-jev (Skill tool or kosif_skill_read name=kosif-jev).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-jev/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-54"
+ },
+ {
+  "family": "other",
+  "name_ar": "متصفح جيف",
+  "name_en": "Jev Browser",
+  "status": "documented",
+  "what": "Jev-guided browser planning through host browsers.",
+  "how": "Load skill kosif-jev-browser (Skill tool or kosif_skill_read name=kosif-jev-browser).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-jev-browser/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-55"
+ },
+ {
+  "family": "other",
+  "name_ar": "جسر واتساب",
+  "name_en": "Guarded WhatsApp bridge",
+  "status": "documented",
+  "what": "Manual confirmed low-volume sends via the user's bridge.",
+  "how": "Load skill kosif-whatsapp (Skill tool or kosif_skill_read name=kosif-whatsapp).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-whatsapp/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-56"
+ },
+ {
+  "family": "other",
+  "name_ar": "جداول كوسيف",
+  "name_en": "KOSIF Sheets",
+  "status": "documented",
+  "what": "Excel/SQLite builder playbook (see chart atom).",
+  "how": "Load skill kosif-sheets (Skill tool or kosif_skill_read name=kosif-sheets).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-sheets/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-57"
+ },
+ {
+  "family": "other",
+  "name_ar": "مشغل جيت هب",
+  "name_en": "GitHub operator",
+  "status": "documented",
+  "what": "Safe git/GitHub workflows with kosif_gh_preflight.",
+  "how": "Load skill kosif-github (Skill tool or kosif_skill_read name=kosif-github).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-github/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-58"
+ },
+ {
+  "family": "other",
+  "name_ar": "أوركسترا كل الخبراء",
+  "name_en": "Full Pro all-experts orchestra",
+  "status": "documented",
+  "what": "Policy that every 'kosif think 20 s' call is Council-500 Full Pro.",
+  "how": "Load skill kosif-full-pro-all-experts (Skill tool or kosif_skill_read name=kosif-full-pro-all-experts).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-full-pro-all-experts/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-59"
+ },
+ {
+  "family": "other",
+  "name_ar": "محرك التنفيذ",
+  "name_en": "Full Pro execution engine",
+  "status": "documented",
+  "what": "Depth-first queue of real expert/Jev actions with receipts.",
+  "how": "Load skill kosif-full-pro-execution-engine (Skill tool or kosif_skill_read name=kosif-full-pro-execution-engine).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-full-pro-execution-engine/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-60"
+ },
+ {
+  "family": "other",
+  "name_ar": "بوابة التنفيذ",
+  "name_en": "Full Pro execution gate",
+  "status": "documented",
+  "what": "Fail-closed authorization before substantive execution.",
+  "how": "Load skill kosif-full-pro-execution-gate (Skill tool or kosif_skill_read name=kosif-full-pro-execution-gate).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-full-pro-execution-gate/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-61"
+ },
+ {
+  "family": "other",
+  "name_ar": "مدخل Full Pro",
+  "name_en": "Full Pro host entry",
+  "status": "documented",
+  "what": "Durable request registration; MCP kosif_full_pro_entry.",
+  "how": "Load skill kosif-full-pro-host-entry (Skill tool or kosif_skill_read name=kosif-full-pro-host-entry).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-full-pro-host-entry/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-62"
+ },
+ {
+  "family": "other",
+  "name_ar": "جسر الجوال",
+  "name_en": "Mobile Full Pro bridge",
+  "status": "documented",
+  "what": "Mobile gateway fallback for Full Pro.",
+  "how": "Load skill kosif-mobile-full-pro-bridge (Skill tool or kosif_skill_read name=kosif-mobile-full-pro-bridge).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-mobile-full-pro-bridge/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-63"
+ },
+ {
+  "family": "other",
+  "name_ar": "جسر الإصدارات",
+  "name_en": "Release bridge (GitHub/Cloudflare)",
+  "status": "documented",
+  "what": "Commit-to-deployment correlation and live verification.",
+  "how": "Load skill kosif-release-bridge (Skill tool or kosif_skill_read name=kosif-release-bridge).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-release-bridge/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-64"
+ },
+ {
+  "family": "other",
+  "name_ar": "منسق التشغيل",
+  "name_en": "Runtime orchestrator",
+  "status": "documented",
+  "what": "Leased jobs, receipts and resume for Full Pro.",
+  "how": "Load skill kosif-runtime-orchestrator (Skill tool or kosif_skill_read name=kosif-runtime-orchestrator).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-runtime-orchestrator/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-65"
+ },
+ {
+  "family": "other",
+  "name_ar": "المنفذ الآمن",
+  "name_en": "Secure executor (HMAC tickets)",
+  "status": "documented",
+  "what": "One-time execution tickets; packaged, not deployed. Hosts the strict SceneSpec validator.",
+  "how": "Load skill kosif-secure-executor (Skill tool or kosif_skill_read name=kosif-secure-executor).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-secure-executor/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-66"
+ },
+ {
+  "family": "other",
+  "name_ar": "سيد الكود",
+  "name_en": "Code Master",
+  "status": "documented",
+  "what": "Programming playbook with kosif_code_scan and kosif_delivery_gate.",
+  "how": "Load skill kosif-code-master (Skill tool or kosif_skill_read name=kosif-code-master).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-code-master/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-67"
+ },
+ {
+  "family": "other",
+  "name_ar": "مهارة الماوس",
+  "name_en": "KOSIF Mouse skill",
+  "status": "documented",
+  "what": "Playbook for Windows desktop control and Paint drawing (see drawing atoms).",
+  "how": "Load skill kosif-mouse (Skill tool or kosif_skill_read name=kosif-mouse).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-mouse/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-68"
+ },
+ {
+  "family": "other",
+  "name_ar": "أنماط تدقيق الإتاحة",
+  "name_en": "WCAG 2.2 audit patterns (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-accessibility-compliance-wcag-audit-patterns.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-accessibility-compliance-wcag-audit-patterns/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-69"
+ },
+ {
+  "family": "other",
+  "name_ar": "قاعدة هندسة البرومبت",
+  "name_en": "Prompt-engineering knowledge base (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-ai-tooling-prompt-engineering.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-ai-tooling-prompt-engineering/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-70"
+ },
+ {
+  "family": "other",
+  "name_ar": "التحقق العميق من الادعاءات",
+  "name_en": "Deep claim verification (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-discipline-do-your-research-deep.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-discipline-do-your-research-deep/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-71"
+ },
+ {
+  "family": "other",
+  "name_ar": "محاسبة hledger",
+  "name_en": "hledger plain-text accounting (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-hledger-hledger.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-hledger-hledger/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-72"
+ },
+ {
+  "family": "other",
+  "name_ar": "بناء حكم آلي",
+  "name_en": "Build an LLM judge (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-llm-evaluation-engineering-build-llm-judge.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-llm-evaluation-engineering-build-llm-judge/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-73"
+ },
+ {
+  "family": "other",
+  "name_ar": "تصميم حزمة تقييم",
+  "name_en": "Design an eval suite (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-llm-evaluation-engineering-design-eval-suite.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-llm-evaluation-engineering-design-eval-suite/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-74"
+ },
+ {
+  "family": "other",
+  "name_ar": "التحقق من الاستشهادات",
+  "name_en": "AI citation verification (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-mas-ai-workflows-ai-citation-verification.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-mas-ai-workflows-ai-citation-verification/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-75"
+ },
+ {
+  "family": "other",
+  "name_ar": "كتابة وثيقة متطلبات",
+  "name_en": "Create a PRD (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-pm-execution-create-prd.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-pm-execution-create-prd/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-76"
+ },
+ {
+  "family": "other",
+  "name_ar": "استخلاص المتطلبات",
+  "name_en": "Requirements elicitation (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-requirements-elicitation-requirements-elicitation.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-requirements-elicitation-requirements-elicitation/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-77"
+ },
+ {
+  "family": "other",
+  "name_ar": "نمذجة التهديدات STRIDE",
+  "name_en": "STRIDE threat modelling (vendored Atlas skill)",
+  "status": "documented",
+  "what": "Third-party skill vendored unmodified (except name) from the Atlas with LICENSE and ATTRIBUTION.md.",
+  "how": "Load skill atlas-security-scanning-stride-analysis-patterns.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/atlas-security-scanning-stride-analysis-patterns/SKILL.md",
+   "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-78"
+ },
+ {
+  "family": "other",
+  "name_ar": "تصميم وتحليل التجارب",
+  "name_en": "A/B Testing & Experiments",
+  "status": "documented",
+  "what": "Owner-built skill \"A/B Testing & Experiments\" (own words): workflow guidance for a/b testing & experiments; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill ab-testing-experiments (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/ab-testing-experiments/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-79"
+ },
+ {
+  "family": "other",
+  "name_ar": "قيود يومية صحيحة ومعايير IFRS/IAS مطبّقة",
+  "name_en": "Accounting, Journal Entries & IFRS",
+  "status": "documented",
+  "what": "Owner-built skill \"Accounting, Journal Entries & IFRS\" (own words): workflow guidance for accounting, journal entries & ifrs; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill accounting-ifrs-journal (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/accounting-ifrs-journal/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-80"
+ },
+ {
+  "family": "other",
+  "name_ar": "برومبتات الوكلاء وأوصاف الأدوات وملفات S",
+  "name_en": "Agent & Tool Instructions",
+  "status": "documented",
+  "what": "Owner-built skill \"Agent & Tool Instructions\" (own words): workflow guidance for agent & tool instructions; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill agent-tool-instructions (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/agent-tool-instructions/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-81"
+ },
+ {
+  "family": "other",
+  "name_ar": "واجهات API متينة (REST أو GraphQL)",
+  "name_en": "Backend & API Design",
+  "status": "documented",
+  "what": "Owner-built skill \"Backend & API Design\" (own words): workflow guidance for backend & api design; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill backend-api-design (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/backend-api-design/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-82"
+ },
+ {
+  "family": "other",
+  "name_ar": "يحوّل كتاباً أو وثائق إلى مهارة قابلة لل",
+  "name_en": "Book-to-Skill Knowledge Compiler",
+  "status": "documented",
+  "what": "Owner-built skill \"Book-to-Skill Knowledge Compiler\" (own words): workflow guidance for book-to-skill knowledge compiler; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill book-to-skill-knowledge (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/book-to-skill-knowledge/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-83"
+ },
+ {
+  "family": "other",
+  "name_ar": "من الفكرة إلى وثيقة قابلة للتنفيذ",
+  "name_en": "Business Plan & PRD",
+  "status": "documented",
+  "what": "Owner-built skill \"Business Plan & PRD\" (own words): workflow guidance for business plan & prd; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill business-plan-prd (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/business-plan-prd/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-84"
+ },
+ {
+  "family": "other",
+  "name_ar": "Workers وPages وD1 وKV وR2 وQueues",
+  "name_en": "Cloudflare & Edge Deployment",
+  "status": "documented",
+  "what": "Owner-built skill \"Cloudflare & Edge Deployment\" (own words): workflow guidance for cloudflare & edge deployment; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill cloudflare-edge-deploy (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/cloudflare-edge-deploy/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-85"
+ },
+ {
+  "family": "other",
+  "name_ar": "مراجعة صحة أولاً",
+  "name_en": "Code Review & Refactoring",
+  "status": "documented",
+  "what": "Owner-built skill \"Code Review & Refactoring\" (own words): workflow guidance for code review & refactoring; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill code-review-refactor (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/code-review-refactor/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-86"
+ },
+ {
+  "family": "other",
+  "name_ar": "ما يدخل السياق وما لا يدخل",
+  "name_en": "Context Window Budget",
+  "status": "documented",
+  "what": "Owner-built skill \"Context Window Budget\" (own words): workflow guidance for context window budget; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill context-window-budget (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/context-window-budget/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-87"
+ },
+ {
+  "family": "other",
+  "name_ar": "يحوّل أي مهارة أو خبرة إلى مساعد قابل لل",
+  "name_en": "Custom GPT & Claude Project Builder",
+  "status": "documented",
+  "what": "Owner-built skill \"Custom GPT & Claude Project Builder\" (own words): workflow guidance for custom gpt & claude project builder; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill custom-gpt-claude-project (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/custom-gpt-claude-project/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-88"
+ },
+ {
+  "family": "other",
+  "name_ar": "تصميم قواعد بيانات صحيحة",
+  "name_en": "Database Schema & Migrations",
+  "status": "documented",
+  "what": "Owner-built skill \"Database Schema & Migrations\" (own words): workflow guidance for database schema & migrations; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill database-schema-migrations (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/database-schema-migrations/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-89"
+ },
+ {
+  "family": "other",
+  "name_ar": "إصلاح أي خطأ من جذره",
+  "name_en": "Root-Cause Debugging",
+  "status": "documented",
+  "what": "Owner-built skill \"Root-Cause Debugging\" (own words): workflow guidance for root-cause debugging; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill debugging-root-cause (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/debugging-root-cause/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-90"
+ },
+ {
+  "family": "other",
+  "name_ar": "إكسل كمنصّة أتمتة",
+  "name_en": "Advanced Excel Automation",
+  "status": "documented",
+  "what": "Owner-built skill \"Advanced Excel Automation\" (own words): workflow guidance for advanced excel automation; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill excel-automation-power (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/excel-automation-power/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-91"
+ },
+ {
+  "family": "other",
+  "name_ar": "تحويل ملفات إكسل الفوضوية إلى بيانات نظي",
+  "name_en": "Excel Data Cleaning & Automation",
+  "status": "documented",
+  "what": "Owner-built skill \"Excel Data Cleaning & Automation\" (own words): workflow guidance for excel data cleaning & automation; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill excel-data-cleaning-automation (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/excel-data-cleaning-automation/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-92"
+ },
+ {
+  "family": "other",
+  "name_ar": "نماذج إكسل تصمد أمام مراجعة مجلس الإدارة",
+  "name_en": "Excel Financial Model Architect",
+  "status": "documented",
+  "what": "Owner-built skill \"Excel Financial Model Architect\" (own words): workflow guidance for excel financial model architect; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill excel-model-architect (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/excel-model-architect/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-93"
+ },
+ {
+  "family": "other",
+  "name_ar": "حل أي مشكلة إكسل",
+  "name_en": "Excel Power Formulas",
+  "status": "documented",
+  "what": "Owner-built skill \"Excel Power Formulas\" (own words): workflow guidance for excel power formulas; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill excel-power-formulas (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/excel-power-formulas/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-94"
+ },
+ {
+  "family": "other",
+  "name_ar": "أمثلة ومجموعات تدريب وتقييم عالية الجودة",
+  "name_en": "Few-Shot & Dataset Curation",
+  "status": "documented",
+  "what": "Owner-built skill \"Few-Shot & Dataset Curation\" (own words): workflow guidance for few-shot & dataset curation; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill few-shot-dataset-curation (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/few-shot-dataset-curation/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-95"
+ },
+ {
+  "family": "other",
+  "name_ar": "تعلّم بالاستدعاء النشط",
+  "name_en": "Flashcards, Quizzes & Exam Prep",
+  "status": "documented",
+  "what": "Owner-built skill \"Flashcards, Quizzes & Exam Prep\" (own words): workflow guidance for flashcards, quizzes & exam prep; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill flashcards-quiz-exam-prep (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/flashcards-quiz-exam-prep/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-96"
+ },
+ {
+  "family": "other",
+  "name_ar": "تطبيق SaaS كامل من الصفر",
+  "name_en": "Full-Stack SaaS Starter",
+  "status": "documented",
+  "what": "Owner-built skill \"Full-Stack SaaS Starter\" (own words): workflow guidance for full-stack saas starter; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill fullstack-saas-starter (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/fullstack-saas-starter/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-97"
+ },
+ {
+  "family": "other",
+  "name_ar": "إدارة المستودعات باحتراف",
+  "name_en": "Git & GitHub Workflow",
+  "status": "documented",
+  "what": "Owner-built skill \"Git & GitHub Workflow\" (own words): workflow guidance for git & github workflow; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill git-github-workflow (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/git-github-workflow/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-98"
+ },
+ {
+  "family": "other",
+  "name_ar": "أتمتة Sheets وDocs وSlides وDrive وGmail",
+  "name_en": "Google Workspace Automation",
+  "status": "documented",
+  "what": "Owner-built skill \"Google Workspace Automation\" (own words): workflow guidance for google workspace automation; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill google-workspace-automation (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/google-workspace-automation/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-99"
+ },
+ {
+  "family": "other",
+  "name_ar": "وثائق أعمال جاهزة",
+  "name_en": "Invoices, Quotes & Contracts",
+  "status": "documented",
+  "what": "Owner-built skill \"Invoices, Quotes & Contracts\" (own words): workflow guidance for invoices, quotes & contracts; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill invoices-quotes-contracts (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/invoices-quotes-contracts/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-100"
+ },
+ {
+  "family": "other",
+  "name_ar": "نقل الأنظمة القديمة بأمان",
+  "name_en": "Legacy Code Migration",
+  "status": "documented",
+  "what": "Owner-built skill \"Legacy Code Migration\" (own words): workflow guidance for legacy code migration; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill legacy-code-migration (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/legacy-code-migration/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-101"
+ },
+ {
+  "family": "other",
+  "name_ar": "برومبتات جاهزة ومُفحوصة لـ Copilot وChat",
+  "name_en": "Office Prompts Library",
+  "status": "documented",
+  "what": "Owner-built skill \"Office Prompts Library\" (own words): workflow guidance for office prompts library; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill office-prompts-library (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/office-prompts-library/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-102"
+ },
+ {
+  "family": "other",
+  "name_ar": "كل ما يخص PDF",
+  "name_en": "PDF Forms & Reports",
+  "status": "documented",
+  "what": "Owner-built skill \"PDF Forms & Reports\" (own words): workflow guidance for pdf forms & reports; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill pdf-forms-reports (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/pdf-forms-reports/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-103"
+ },
+ {
+  "family": "other",
+  "name_ar": "تأمين تطبيقات النماذج",
+  "name_en": "Prompt Injection Defense",
+  "status": "documented",
+  "what": "Owner-built skill \"Prompt Injection Defense\" (own words): workflow guidance for prompt injection defense; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill prompt-injection-defense (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/prompt-injection-defense/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-104"
+ },
+ {
+  "family": "other",
+  "name_ar": "بناء نظام أسئلة وأجوبة على ملفاتك",
+  "name_en": "RAG & Knowledge Base",
+  "status": "documented",
+  "what": "Owner-built skill \"RAG & Knowledge Base\" (own words): workflow guidance for rag & knowledge base; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill rag-knowledge-base (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/rag-knowledge-base/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-105"
+ },
+ {
+  "family": "other",
+  "name_ar": "مراجعة أمنية دفاعية",
+  "name_en": "Security Audit (STRIDE)",
+  "status": "documented",
+  "what": "Owner-built skill \"Security Audit (STRIDE)\" (own words): workflow guidance for security audit (stride); helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill security-audit-stride (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/security-audit-stride/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-106"
+ },
+ {
+  "family": "other",
+  "name_ar": "قرارات عالية الأثر بمنهج",
+  "name_en": "Strategy & Decision Sensitivity",
+  "status": "documented",
+  "what": "Owner-built skill \"Strategy & Decision Sensitivity\" (own words): workflow guidance for strategy & decision sensitivity; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill strategy-decision-sensitivity (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/strategy-decision-sensitivity/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-107"
+ },
+ {
+  "family": "other",
+  "name_ar": "توثيق يُقرأ",
+  "name_en": "Technical Docs & README",
+  "status": "documented",
+  "what": "Owner-built skill \"Technical Docs & README\" (own words): workflow guidance for technical docs & readme; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill technical-docs-readme (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/technical-docs-readme/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-108"
+ },
+ {
+  "family": "other",
+  "name_ar": "جمع بيانات عامة من المواقع باحترام الشرو",
+  "name_en": "Web Scraping & Automation",
+  "status": "documented",
+  "what": "Owner-built skill \"Web Scraping & Automation\" (own words): workflow guidance for web scraping & automation; helps a video job only as supporting planning/production knowledge.",
+  "how": "Load skill web-scraping-automation (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
+  "params": "",
+  "install": "",
+  "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
+  "proof": [
+   "100-superskills/skills/web-scraping-automation/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-109"
+ },
+ {
+  "family": "other",
+  "name_ar": "حدود توجيه KOSIF SEE",
+  "name_en": "KOSIF SEE routing limits",
+  "status": "documented",
+  "what": "Register Montage & Motion as a media execution extension under kosif-media-motion; method packs and specialists capped; never claim a render from consultation.",
+  "how": "Follow when integrating with KOSIF SEE / Atlas.",
+  "params": "max 4 method packs in Deep/Full Pro (2 normally); dynamic specialists ≤ 2 (1 normally); Atlas snapshot 15,122 skills (2026-10-07) as method evidence only",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/references/KOSIF_SEE_INTEGRATION.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-110"
+ },
+ {
+  "family": "other",
+  "name_ar": "قائمة المصادر المسموحة",
+  "name_en": "Source allowlist and reuse limits",
+  "status": "documented",
+  "what": "Allowed reference sources with licences (frontend-design Apache-2.0, HyperFrames+GSAP skills Apache-2.0, web-performance Apache-2.0, animation production MIT, GSAP matchMedia/Motion accessibility docs); others examined but not reused for missing licence text.",
+  "how": "Verify source, licence and version before moving text or code.",
+  "params": "skill description < 200 chars",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/references/sources-ar.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "MISC-111"
+ }
+]

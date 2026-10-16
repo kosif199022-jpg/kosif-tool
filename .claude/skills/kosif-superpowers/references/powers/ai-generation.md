@@ -1,0 +1,691 @@
+# التوليد بالذكاء الاصطناعي — AI generation
+
+> **ما تمنحك هذه القوة:** أنت مخرج التوليد لا زبونه — تكتب برومبتات صور وفيديو مخرَجة بطبقات فيزيائية وأقفال هوية، تحوّل مواصفة واحدة إلى صيغ تسع منصات، تختار النموذج بالترخيص والتكلفة، وتدمج اللقطة المولدة تحت حركة ونص عربي حقيقيين — وتعرف بدقة ما يحتاج مفتاحًا وما تسلّمه بدونه.  
+> *You direct generation instead of gambling on it: art-directed image/video prompts in physical layers with identity locks, one spec turned into nine platforms' syntax, models chosen by licence and cost, and generated plates fused under real motion and real Arabic type — knowing exactly what needs a key and what you deliver without one.*
+>
+> **أقوى دليل / strongest proof:** ✅ شغّلت هنا في 2026-10-16: `100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py` (ست منصات، فحص PASS) و`video_prompt_forge.py` (سبع منصات بقص المدة) و`kosif-one/…/kosif-prompt-master/scripts/prompt_forge.py` (تسع منصات + تحذيرات) و`prompt_compiler_self_test.py` (PASS) واختبارات `fastify-motion-bro` (19/19) و`kmotion aiprompts/omniprompt` (OK). والمالك يملك لقطات مولدة حقيقية مقاسة: `kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.mp4` (Seedance 2.5) و`door.mp4`/`dashboard.mp4` (Kling 3.0).  
+> *Honest limit:* لا يوجد أي مفتاح توليد في هذه الحاوية (لا GEMINI/OPENAI/FAL/HF_KEY/TOGETHER) ولا GPU — كل مسار 🔑 يُسلَّم هنا كبرومبت وخطة موسومة «لم يُولَّد»، أو تُرسم الصورة بالكود (GEN-33).
+>
+> **90 قوة في 8 أقسام / 90 powers in 8 sections:** ✅ 14 · 🟢 7 · 📦 3 · 🔑 28 · 👁 7 · 📄 30 · 💡 1.
+
+**الشارات / badges:** ✅ مُثبت هنا / proven here · 🟢 جاهز / ready · 📦 بأمر تثبيت / one install · 🔑 مفتاح أو خدمة / needs key or service · 👁 شوهد في فيديو / seen in a reference video · 📄 موصوف / documented only · 💡 فكرة / idea
+
+**المسار الافتراضي / default route:** فرز (GEN-83) ← مواصفة JSON ← مصنع البرومبت (GEN-10 إلى GEN-13) ← مفتاح وإذن تكلفة؟ نعم: صورة مفتاحية ثم فيديو (GEN-50) بمسودة رخيصة؛ لا: سلّم البرومبتات موسومة (GEN-63, GEN-89) أو ارسم بالكود (GEN-33) ← النص العربي دائمًا طبقة فوقها (GEN-84). / triage → JSON spec → forge → key + cost approval? yes: keyframe then video on a cheap draft; no: deliver labelled prompts or paint in code → Arabic type always as an overlay.
+
+| # | القسم / section | powers |
+|---|---|---|
+| 1 | تشريح البرومبت وقواعده — Prompt anatomy & rules | GEN-01–GEN-09 (9) |
+| 2 | مصانع البرومبت المُختبرة — Tested prompt forges & profile packs | GEN-10–GEN-25 (16) |
+| 3 | مكتبات المظهر والأسلوب — Look, style & vocabulary libraries | GEN-26–GEN-32 (7) |
+| 4 | توليد الصور — Image generation routes | GEN-33–GEN-48 (16) |
+| 5 | توليد الفيديو — Video generation routes | GEN-49–GEN-63 (15) |
+| 6 | الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media | GEN-64–GEN-71 (8) |
+| 7 | الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look | GEN-72–GEN-82 (11) |
+| 8 | الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics | GEN-83–GEN-90 (8) |
+
+## 1. تشريح البرومبت وقواعده — Prompt anatomy & rules
+
+القواعد التي تجعل أي برومبت صورة أو فيديو يعطي نتيجة مخرَجة لا عشوائية — قبل أن تختار المنصة. / The rules that make any image or video prompt art-directed instead of random — before you pick a platform.
+
+### GEN-01 · تشريح البرومبت السباعي والمعادلة الذهبية · Seven-layer prompt anatomy & golden formula · 📄 موصوف / documented only
+- **ماذا / what:** كل برومبت صورة أو فيديو يحمل سبع طبقات فيزيائية ملموسة بترتيب ثابت. — *Every image/video prompt carries seven concrete physical layers in a fixed order.* · **متى / when:** قبل أي برومبت توليد / before any generation prompt
+- **كيف / how:** Layers: Location · Subject · Wardrobe/materials · Lighting (source + direction + Kelvin) · Camera (body, lens, f-stop, size, move) · Atmosphere (physics: haze, dust, steam) · Technical (aspect, fps, resolution). One-line order: `[STYLE], [COMPOSITION RULE], [CAMERA+LENS+f-stop], [LIGHTING+Kelvin+direction], [SUBJECT texture], [WARDROBE fabric], [ENVIRONMENT layers], [ATMOSPHERE physics], mood: [EMOTION] --ar X:Y`. Example light: soft window key camera-left 3800K, fill −2 stops, cool rim behind; camera: Alexa Mini LF 50 mm f/1.4, eye level, MCU, slow push-in. Kelvin anchors: 1900K lantern, 3200K tungsten, 4100K moonlight, 6500K day.
+- **أرقام / params:** 7 layers; 3200K/3800K/6500K; 35mm anamorphic, 50mm f/1.4, 85mm portrait; 24/60 fps; 9:16|16:9
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/seven-layer-anatomy.md` · `100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md` · `100-superskills/skills/kosif-montage-motion/references/ai_video_models.md` · `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/ai_video_models.md`
+
+### GEN-02 · القواعد الحديدية والكلمات القوية · Iron rules: physical cues beat hype words · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مصنع البرومبت يحذّرك آليًا من كلمات المبالغة ويطالب بإضاءة بمصدر واتجاه وكلفن. — *The forge automatically warns on hype words and demands light with source, direction and Kelvin.* · **متى / when:** عند مراجعة أي برومبت قبل إرساله / when reviewing any prompt before sending
+- **كيف / how:** Never open with 'a photo of'. Delete 4K/8K/masterpiece/ultra-detailed/award-winning/trending/best quality/beautiful/hyperrealistic — they add noise, not quality. Replace with physical cues: volumetric light, subsurface scattering, chiaroscuro, Rembrandt triangle, anamorphic flare, film grain, atmospheric perspective, tungsten practicals. Coherent style tokens (soft watercolor, line-art, isometric 3D, flat 2D, vintage scientific illustration) keep a set together. Locks must be reused verbatim — a paraphrase is flagged. Ran here: `prompt_forge.py` returned `missing ['lens','style']: prompts will be weaker` for a spec without them.
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:75` · `kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md` · `kosif-atlas/skills/2657-figures/10108-ai-full-figure` · `100-superskills/skills/kosif-montage-motion/scripts/aiprompts.py:21`
+
+### GEN-03 · قائمة النفي الأساسية والصياغة الإيجابية · Negative baseline vs positive framing · 📄 موصوف / documented only
+- **ماذا / what:** متى تكتب برومبت سلبي طويل (SD/SDXL/Kling) ومتى تحوّل كل نفي إلى حالة إيجابية (Gemini/Flux/Runway). — *When to write a long negative (SD/SDXL/Kling) and when to rewrite every exclusion as a positive state (Gemini/Flux/Runway).* · **متى / when:** عند صياغة المستبعدات لكل منصة / when phrasing exclusions per platform
+- **كيف / how:** Baseline negatives (SDXL, Kling negative_prompt): blurry, deformed hands, extra fingers, watermark, text overlay, low quality, bad anatomy, floating objects, duplicate limbs, disfigured, cropped, jpeg artifacts + scene anachronisms. For Gemini/Flux/Runway rewrite positively: 'no blur'→'tack-sharp focus', 'no people'→'empty, deserted', 'no text'→'clean, text-free surfaces'. Runway inverts or ignores negatives — the forge strips them. Flux has no negative field; Wan keeps negatives short.
+- **أرقام / params:** Flux negative ≈ no effect; SDXL long negatives OK; Runway: none
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/seven-layer-anatomy.md` · `kosif-atlas/skills/881-codex-seo/1954-seo-image-gen` · `kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design` · `kosif-atlas/skills/2976-pwdev-social-media/12590-prompt-craft`
+
+### GEN-04 · معادلة برومبت الصورة ذات الخانات الست · Six-slot still prompt formula · 📄 موصوف / documented only
+- **ماذا / what:** موضوع، مكان، أسلوب، إضاءة، تكوين، مواصفة تقنية — والعنصر الإلزامي أولًا لأن المولد يزن البداية أكثر. — *Subject, setting, style, light, composition, tech spec — must-have element first because generators weight the start most.* · **متى / when:** برومبتات Flux / Ideogram / GPT-image / SDXL
+- **كيف / how:** 40–80 words, 5–8 distinct descriptors; state the aspect ratio twice (in the text and in the API parameter); append brand palette words for campaign work.
+- **أرقام / params:** 40–80 words; 5–8 descriptors; ratio ×2
+- **الدليل / proof:** `kosif-atlas/skills/1446-marketing-skills/3504-image` · `kosif-atlas/skills/2976-pwdev-social-media/12590-prompt-craft`
+
+### GEN-05 · برومبت سردي لنانو بنانا / Gemini · Narrative prose brief for Gemini / Nano Banana · 📄 موصوف / documented only
+- **ماذا / what:** نماذج Gemini للصور تستجيب لفقرات وصفية أكثر من قوائم الوسوم. — *Gemini image models respond to descriptive paragraphs better than comma tag lists.* · **متى / when:** أي توليد أو تعديل عبر Gemini
+- **كيف / how:** 1–3 short paragraphs; name body/lens/stock when photographic (85 mm f/1.4, Kodak Portra 400); weight ≈ Subject 30 % · Style 25 % · Context 15 %; end with 'ultra-realistic, high resolution' instead of tag stuffing.
+- **أرقام / params:** 30/25/15 %
+- **الدليل / proof:** `kosif-atlas/skills/881-codex-seo/1954-seo-image-gen`
+
+### GEN-06 · دليل صياغة كل مولّد وترجمة صيغة ميدجورني · Per-generator syntax & Midjourney→natural-language translation · 📄 موصوف / documented only
+- **ماذا / what:** كيف يريد كل مولد برومبته، وكيف تنقل برومبت ميدجورني إلى نموذج بلا أعلام. — *How each generator wants its prompt, and how to port a Midjourney prompt to a flag-less model.* · **متى / when:** عند نقل برومبت بين المنصات / when porting a prompt across platforms
+- **كيف / how:** ChatGPT/GPT-image: natural sentences, constraints first, ratio in words. Midjourney V7: params at end `--ar 16:9 --style raw --s 150 --v 7 --no text,watermark`; character ref `--oref URL --ow 100` (`--cref/--cw` are V6 only), `--sref URL`, `--stylize 50–250`, `--seed N` for a series; no official API → hand the user the prompt and import the chosen still back. Flux: prose, no negative field, guidance 3–4. SDXL: comma tags, `(term:1.2)` weights, separate negative, ~1 MP canvas. Ideogram: exact on-image text first, in quotes. Translation: `--ar`→aspect parameter; drop `--v/--style raw`; `--chaos 50`→'unexpected, surreal composition'; `(word:1.5)`→'prominently featuring word'; delete '8K, masterpiece'; keep camera names.
+- **أرقام / params:** MJ --s 150–250, --ow 100; Flux guidance 3–4; SDXL ~1 MP
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md` · `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/references/prompt-patterns.md` · `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:152` · `kosif-atlas/skills/881-codex-seo/1954-seo-image-gen`
+
+### GEN-07 · معادلة برومبت لقطة الفيديو · Video shot prompt formula · 📄 موصوف / documented only
+- **ماذا / what:** لقطة = أقفال + فعل واحد عبر الزمن + حركة كاميرا واحدة وسرعتها + عدسة + إضاءة + حركة البيئة + مدة/fps + أسلوب + نسبة. — *Shot = locks + one action over time + one camera move & speed + lens + light + environment motion + duration/fps + style + aspect.* · **متى / when:** أي برومبت نص→فيديو أو صورة→فيديو
+- **كيف / how:** 50–100 words (Runway best <100). Always state the camera move or 'static' — it is the parameter that changes results most and is most often forgotten. One scene per clip, never a scene change inside a clip, never request on-screen text. Generate 3–4 variations, then iterate on the best. Most-used camera words: wide, close-up, low angle, tracking, handheld, slow motion, establishing, crane, pan, dutch, bird's-eye, dolly zoom, rack focus; 2.35:1 reads as cinema.
+- **أرقام / params:** 50–100 words; 1 camera move; 3–4 variations; shot 5–10 s
+- **الدليل / proof:** `100-superskills/skills/video-prompt-director/SKILL.md:23` · `kosif-atlas/skills/1446-marketing-skills/3531-video` · `kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen` · `kosif-studio/motion/references/book-lessons.md`
+
+### GEN-08 · منع الموسيقى والترجمة المزيفة في الفيديو المولد · Suppress generated music bed & fake subtitles · 📄 موصوف / documented only
+- **ماذا / what:** نماذج الفيديو الناطقة تضيف موسيقى وتحرق ترجمة مهلوسة؛ سطران يوقفان الاثنين. — *Speaking video models add a music bed and burn hallucinated captions; two short lines stop both.* · **متى / when:** كل مقطع مولد سيُركّب عليه صوتك أو نصك / every generated clip that will carry your own audio or type
+- **كيف / how:** Append exactly `No music score. No subtitles or on-screen text.` to every segment prompt; if a reference image contains signage add 'Only the text that exists in @Image1 itself'; do not list ambient sounds. Kling/Seedance: prefer generate_audio false and add sound in post (Kling audio ≈ 5× credits).
+- **الدليل / proof:** `kosif-atlas/skills/259-quickdesign/865-quickdesign` · `kosif-atlas/skills/1874-klingai-pack/6081-klingai-pricing-basics`
+
+### GEN-09 · حدود مولدات الفيديو الحالية · Known limits of current video generators · 📄 موصوف / documented only
+- **ماذا / what:** النص على الشاشة يخرج مشوهًا، اليدان والوجوه تفشل، الاستمرارية بين اللقطات صعبة، والمقاطع قصيرة. — *On-screen text comes out illegible, hands/faces still fail, cross-shot continuity is hard, clips are short.* · **متى / when:** عند تقرير ما يُولَّد وما يُبنى بالكود / when deciding what to generate vs build in code
+- **كيف / how:** Plan cuts, not continuity; keep 1–2 subjects; compose text in the edit; build long pieces as a montage of 4–15 s clips; no subject that must stay identical across >3 shots without reference-to-video.
+- **أرقام / params:** clips 4–15 s
+- **الدليل / proof:** `kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen` · `kosif-atlas/skills/1446-marketing-skills/3531-video`
+
+## 2. مصانع البرومبت المُختبرة — Tested prompt forges & profile packs
+
+أدوات المالك التي شغّلتها هنا فعلًا: مواصفة واحدة تتحول إلى برومبتات لكل منصة، وملفات إنتاج مرحلية. / Owner tools you actually ran in this container: one spec becomes per-platform prompts, plus stage-gated production packs.
+
+### GEN-10 · مصنع البرومبت: مواصفة واحدة ← تسع منصات · Prompt forge: one spec → 9 generator prompts · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحوّل مواصفة مشهد واحدة إلى برومبتات منسقة لـ ChatGPT وMidjourney وFlux وSDXL وIdeogram وSora وVeo وRunway وKling مع تحذيرات و3 تنويعات ومقياس جودة. — *Turns one scene spec into correctly shaped prompts for ChatGPT image, Midjourney, Flux, SDXL, Ideogram, Sora, Veo, Runway and Kling, with warnings, 3 variations and a rubric.* · **متى / when:** أي طلب «اكتب لي برومبت لـ…» / any 'write me a prompt for…' request
+- **كيف / how:** `echo '<spec json>' | python3 -I kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py` (or MCP `kosif_prompt_forge`). Spec keys: mode, subject, action, environment, time, shot, angle, lens, lighting, palette, style, quality[], aspect, negative[], text, locks{}, camera_move, duration, motion, fps, dialogue, audio, platforms[]. Output keys: prompts, warnings, variations {subtle, dramatic, technical}, quality_rubric, next. SDXL canvas map 1:1 1024², 16:9 1344×768, 9:16 768×1344, 4:5 896×1152, 3:2 1216×832, 2.39:1 1536×640; SDXL CFG 5–7, 30–40 steps. Ran here on 2026-10-16 with a 9-platform video spec: valid JSON, per-platform notes, warnings returned.
+- **أرقام / params:** 9 platforms; variations subtle/dramatic/technical; SDXL CFG 5–7, 30–40 steps
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:97` · `kosif-one/tools/kosif-omni/mcp-server/tests/test_server.py:233` · `100-superskills/skills/kosif-montage-motion/references/visual-catalog.md`
+
+### GEN-11 · خصائص منصات الفيديو (DNA) · Video-model platform DNA (Veo / Runway / Kling / Sora) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** القواعد الخاصة بكل نموذج فيديو التي يطبقها المصنع تلقائيًا. — *Per-model rules the forge applies automatically.* · **متى / when:** عند اختيار صياغة لكل منصة فيديو / when shaping a prompt per video platform
+- **كيف / how:** Veo: separate 'Audio:' sentence for ambience/SFX, dialogue as `Character says: "…"` (no subtitles), 4/6/8 s clips, last frame → next first frame. Runway Gen-4: one action per shot, sequential 'X, then Y', positive phrasing only, ≤ ~300 words, start from an approved keyframe, ≤3 refs, 2–10 s. Kling: start/end frames + motion brush, 5–10 s, negative prompt allowed. Sora: one continuous shot, plausible physics, 4/8/12 s, prompt ≤4000 chars. Printed in the `notes` field when the forge ran here.
+- **أرقام / params:** Veo 4/6/8 s; Kling 5–10 s; Runway 2–10 s ≤3 refs; Sora 4/8/12 s
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:183` · `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/references/books-drive-ledger.md` · `kosif-atlas/skills/259-quickdesign/865-quickdesign`
+
+### GEN-12 · مواصفة الصورة الموحدة وستة مُنشئات · Image spec schema → 6 platform builders · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ملف JSON واحد (موضوع، بيئة، لقطة، إضاءة، أسلوب، نسبة، نفي، أقفال) يولّد برومبتات Midjourney وFlux وSDXL وChatGPT وIdeogram وNanoBanana مع فحص. — *One JSON spec drives Midjourney, Flux, SDXL, ChatGPT, Ideogram and NanoBanana prompts plus a lint pass.* · **متى / when:** طلبات صور ثابتة متعددة المنصات / multi-platform still requests
+- **كيف / how:** `python3 100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py spec.json --out prompts.md`; required: subject, environment, shot, lighting, style, aspect. Builders: MJ comma core + `--ar --s 200 --v 7 --no …`; Flux prose + 'Avoid:' clause; SDXL `(subject:1.3)` + JSON {steps 30, cfg 6.0, 1344×768 for 16:9, 768×1344 for 9:16, 896×1120 for 4:5}; ChatGPT 'Create one single image. Aspect ratio X. Do not include …' first; Ideogram quoted text first + `--ar` (best route for in-image text, still overlay Arabic yourself); NanoBanana 'Generate a single photorealistic-quality image… Exclude: …'. Ran here: all six blocks emitted, lint `PASS`.
+- **أرقام / params:** MJ --s 200 --v 7; SDXL 30 steps cfg 6.0; 12 MJ aspects
+- **الدليل / proof:** `100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:77` · `100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:102` · `100-superskills/TESTS.md:12`
+
+### GEN-13 · قوالب لقطات الفيديو لسبع منصات مع قص المدة · Shot list → 7 video-platform prompts with duration clamping · ✅ مُثبت هنا / proven here
+- **ماذا / what:** قائمة لقطات JSON تتحول إلى برومبت لكل لقطة لـ Veo وSora وKling وRunway وLuma وPika وHailuo، مع قص المدة لحد كل منصة وفحص الاستمرارية. — *A JSON shot list becomes per-shot prompts for Veo, Sora, Kling, Runway, Luma, Pika and Hailuo, durations clamped to each platform and continuity linted.* · **متى / when:** خطة لقطات لفيلم مولد / a generated-film shot plan
+- **كيف / how:** `python3 100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py shots.json --platforms veo,sora,kling,runway,luma,pika,hailuo`. Limits: Veo 8, Sora 20, Kling 10, Runway 10, Luma 9, Pika 10, Hailuo 10 s. Lint: BLOCK on named real people, REVISE when no character/style lock, flags >1 camera word per shot. Put `aspect` and `fps` at the TOP level of shots.json (ran here: a per-shot aspect was ignored and 16:9 was used; a 12 s shot was clamped to 8 s for Veo).
+- **أرقام / params:** max s: veo 8, sora 20, kling 10, runway 10, luma 9, pika 10, hailuo 10; fps 24 default
+- **الدليل / proof:** `100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:23` · `100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:63` · `100-superskills/skills/video-prompt-director/SKILL.md:23`
+
+### GEN-14 · برومبتات اللقطات السباعية (kmotion aiprompts) · kmotion aiprompts: 7-layer per-shot prompts · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كل لقطة توصف بسبع طبقات ثم تتحول إلى برومبتات Veo وSora وKling وRunway وإطار مفتاحي، بقفل أسلوب ونفي وتحذير فيزيائي. — *Each shot in seven layers becomes Veo/Sora/Kling/Runway prompts plus a keyframe, with a carried style lock, negatives and a physics warning.* · **متى / when:** من ريل أو مشروع kmotion إلى برومبتات توليد / from a kmotion reel or project to generation prompts
+- **كيف / how:** `python3 scripts/kmotion.py aiprompts SHOTS.json|reel.json|PROJECT --out ai-video-prompts.json`; `aiprompts.build(shots, title)` → shots[{layers, prompts{veo,sora,kling,runway}, warnings}]; Runway ≤1000 chars, Kling ≤2500 + negative_prompt; warning when lighting lacks direction or Kelvin; variations subtle/dramatic/technical; rubric 5×20. Example lock: 'photoreal 35mm film look, cool 4100K moonlight vs warm 1900K lantern'. Ran here: `AIPromptTests.test_seven_layers_per_platform` OK.
+- **أرقام / params:** Runway ≤1000 chars; Kling ≤2500; rubric 5×20
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/aiprompts.py:21` · `100-superskills/skills/kosif-montage-motion/tests/test_review.py:121` · `100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/index.html:35` · `100-superskills/skills/kosif-montage-motion/references/ai-video-shot-prompts.example.json`
+
+### GEN-15 · من فيديو مرجعي إلى برومبت Omni Flash · Reference breakdown → Omni Flash generation prompt · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تفكيك فيلم مرجعي إلى إيقاعات وألوان وطاقة، ثم برومبت توليد واحد مضغوط إلى 10 ثوانٍ. — *Break a reference film into beats, palette and energy, then one compact 10 s generation prompt.* · **متى / when:** «اعمل لي فيديو زي ده» / 'make me one like this'
+- **كيف / how:** 1) `python3 scripts/kmotion.py analyze VIDEO --out NAME.breakdown [--transcribe]` (beats from cuts/dissolves/entrances, per-beat hex, energy, LUFS/BPM, 3 stills per beat, brief.json; `--batch` → library.json/csv). 2) Fill the brief (you or the user). 3) `kmotion omniprompt brief.json [--overrides changes.json] [--markdown b.md]` → one block STYLE / SPECS / TIMELINE / ADD / BRAND MARK / TYPOGRAPHY LOCK / SOUND / FINAL FRAME / EXCLUDE, ≥1080 short side, compressed to 10 s (×0.83 for 12 s); overrides {palette:{old:new}, aspect, duration, tone, add[], remove[]}; refuses to remove what scenes are built on; an unfilled brief exits. Ran here: `Breakdown.test_omniprompt` OK (11.7 s).
+- **أرقام / params:** 10 s native; ≥1080 short side; ×0.83 for 12 s
+- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/omniprompt.py` · `100-superskills/skills/kosif-montage-motion/tests/test_analyze.py:65` · `100-superskills/skills/kosif-montage-motion/SKILL.md:455` · `100-superskills/skills/kosif-montage-motion/references/video-breakdown.md`
+
+### GEN-16 · مواصفة مشهد مكتوبة وبصمة SHA-256 · Typed SceneSpec compile + SHA-256 digest · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مواصفة مشهد مهيكلة تتحول إلى برومبت حتمي وبصمة؛ أي تغيير في أي حقل يغيّر البصمة فلا ينجرف البرومبت المعتمد. — *A structured scene compiles to a deterministic prompt and digest; any field change changes the digest, so the approved prompt cannot drift.* · **متى / when:** عند اعتماد برومبت مع العميل وتوثيقه / when an approved prompt must be locked and audited
+- **كيف / how:** `prompt_compiler.compile_prompt(scene)` → {prompt, negative_prompt, scene_digest, scene_spec}; 11 required fields: subject, environment, action, camera, lighting, color_grade, materials, atmosphere_vfx, composition_story, negative_constraints, aspect_ratio (W:H). Digest = sha256 over sorted compact JSON. Ran here: `prompt_compiler_self_test.py` → PASS.
+- **أرقام / params:** 11 fields; sha256(sorted compact JSON)
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-image-studio/scripts/prompt_compiler.py` · `kosif-one/tools/kosif-omni/skills/kosif-image-studio/scripts/prompt_compiler_self_test.py`
+
+### GEN-17 · أقفال الشخصية والأسلوب والمكان · Character / style / location locks · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كتل نصية ثابتة تُنسخ حرفيًا في كل برومبت ولقطة لتثبيت الهوية. — *Fixed text blocks copied verbatim into every prompt and shot for identity consistency.* · **متى / when:** أي سلسلة صور أو لقطات بنفس الشخصية / any series with the same character
+- **كيف / how:** In spec.json: `locks.character` appended to the subject, `locks.style` to the style, `locks.location` at the end. One canonical sentence per character (age, skin, hair, glasses, garment fabric), never paraphrased. Both forges emit it; the video forge flags REVISE when no lock exists.
+- **الدليل / proof:** `100-superskills/skills/image-prompt-forge/SKILL.md:22` · `100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:61` · `kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b`
+
+### GEN-18 · واجهة الأنماط المرحلية (Fastify) · Stage-gated profile CLI · ✅ مُثبت هنا / proven here
+- **ماذا / what:** واجهة سطر أوامر واحدة تقود سبعة أنماط لكتابة البرومبتات بجلسات محفوظة؛ كل مرحلة تحتاج ردًا صريحًا. — *One CLI drives seven prompt-writing profiles with persistent sessions; every stage needs an explicit reply.* · **متى / when:** عندما يطلب المستخدم نوع إنتاج محدد (stickman, food-flow…) / when the user names a production type
+- **كيف / how:** `cd fastify-motion-bro && npm run profile -- list | start <mode> | answer <mode> <text|JSON> | status | reset | clean-plate kinetic-flow <n>`; state in projects/profiles/<mode>/session.json; on completion writes prompts.txt + artifacts.json (schema fmb.profile.v1). Ran here: `node --test tests/viral-editorial.test.mjs tests/production-profiles.test.mjs tests/production-cli.test.mjs` → 19/19 pass.
+- **أرقام / params:** schema fmb.profile.v1; 7 modes
+- **الدليل / proof:** `fastify-motion-bro/scripts/profiles-cli.mjs:1-40` · `fastify-motion-bro/scripts/profiles/core.mjs:9-10` · `fastify-motion-bro/tests/production-cli.test.mjs:11-42`
+
+### GEN-19 · سلاسل برومبتات الأنماط الخمسة · Five profile prompt series (stickman, fitness, car, history, food) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** خمس حزم جاهزة تنتج أزواج صورة/حركة أو سلاسل لقطات مع مؤثرات صوتية وتعليمات الربط. — *Five ready packs producing image/motion pairs or clip series with foley and join instructions.* · **متى / when:** طلب من نوع إنتاج معروف / a known production genre
+- **كيف / how:** Each is started with `npm run profile -- start <mode>` and answered stage by stage; outputs are prompts, never media (see the honesty rule).
+
+| mode | first answer | output | numbers |
+|---|---|---|---|
+| stickman | `{"image":"no","background":"paper","genre":4,"direction":"coffee shop"}` | 5 × (IMAGE PROMPT + Flow MOTION PROMPT) | 7 s each = 35 s; wide → medium → OTS ¾ → low → close-up; clip 5 very slow push-in |
+| fitness | `Chest` (or 1–10) | 5 image-to-video prompts, one gym bay, one coach line each | 5 × 6 s = 30 s; breath/equipment SFX |
+| car-exploded | `Toyota` → `Corolla` → `{"year":"2024","trim":"LE","color":"white"}` | exactly 3: hero still, exploded still, animation | 3 prompts |
+| vox-history | `6` → topic → `10` | N × 10 s archival-collage prompts, flagged needsFactCheck | N 5–120; phases origins / first signal / people / turning point / public response / legacy |
+| food-flow | `2` → `4` | N × 10 s single-action prompts, locked scene, synced foley, tasting shot last | N × 10 s + join order |
+
+- **الدليل / proof:** `fastify-motion-bro/scripts/profiles/stickman.mjs:19-55` · `fastify-motion-bro/scripts/profiles/fitness.mjs:17-38` · `fastify-motion-bro/scripts/profiles/car-exploded.mjs:36-60` · `fastify-motion-bro/scripts/profiles/vox-history.mjs:3-56` · `fastify-motion-bro/tests/production-profiles.test.mjs:10-16`
+
+### GEN-20 · حزمة الكينتك فلو واللقطة النظيفة · Kinetic Flow prompt pack + clean plate & overlay sheet · ✅ مُثبت هنا / proven here
+- **ماذا / what:** برومبت Google Flow/Veo لكل مقطع 8 أو 10 ث بالكلمات الحرفية، وعند الطلب نسخة «لقطة نظيفة» بلا نص مع ورقة نصوص للمونتاج. — *One Flow/Veo prompt per 8 or 10 s clip with the exact script words; on request a text-free clean plate plus an overlay sheet for the editor.* · **متى / when:** ريل كينتك مولّد؛ وللعربية دائمًا اللقطة النظيفة / a generated kinetic reel; for Arabic always the clean plate
+- **كيف / how:** `npm run profile -- start kinetic-flow`; `answer kinetic-flow '{"theme":"C","ratio":"9:16","length":10,"brand":"","pace":"fast","audio":"none"}'`; `answer kinetic-flow '<script>'`. Then `clean-plate kinetic-flow <n>` rewrites clip n to forbid all on-screen text/wordmarks and returns {order, words, hero, masked reveal} so you set the exact (Arabic) words in HTML/Remotion over the plate.
+- **أرقام / params:** clip 8 s (Veo) / 10 s (Flow); 9:16|16:9|1:1; audio none|sfx
+- **الدليل / proof:** `fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:85-120` · `fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:121-129` · `fastify-motion-bro/tests/production-cli.test.mjs:28-41`
+
+### GEN-21 · برومبتات البوستر والحركة التحريرية · Viral-editorial poster + silent motion prompts · ✅ مُثبت هنا / proven here
+- **ماذا / what:** برومبت إطار 9:16 لكل سطر سكربت بلوحة ألوان مقفلة وبطل واحد مقصوص، ثم برومبت حركة صامتة 6 ث بخط زمني من 4 أجزاء. — *A 9:16 keyframe prompt per script line with locked palette and one cut-out hero, then a silent 6 s motion prompt with a 4-part timeline.* · **متى / when:** ريلز تحريري ثلاثي الأبعاد / viral editorial 3D reels
+- **كيف / how:** `makePosters(state)` after palette lock: fine grid, two background lines, exactly one 3D-looking hero cutout with halftone edge, ≤2 vector accents (starburst + dotted orbit), 1–4 word type pairing bold sans + italic serif, 10 % side margin, 80/20 colour. `makeMotionPrompts(state)`: style, backgroundMotion, timeline{base, entrance, hold, exit}, camera 4 % push, easeOutCubic with 7 % overshoot, 0.6° wobble, SFX cues, music=false, voiceover=false.
+- **أرقام / params:** 9:16; 6 s; 4 % push; 7 % overshoot; 0.6° wobble; 80/20
+- **الدليل / proof:** `fastify-motion-bro/scripts/viral-editorial.mjs:52-57` · `fastify-motion-bro/scripts/viral-editorial.mjs:58-72` · `fastify-motion-bro/tests/viral-editorial.test.mjs:7`
+
+### GEN-22 · بذور برومبت في كل سقالة · Per-shot AI prompt seeds written by the scaffold · 🟢 جاهز / ready
+- **ماذا / what:** سقالة المشروع تكتب ملف JSON ببرومبتات بداية لأربعة نماذج فيديو وسطر قفل أسلوب مشترك. — *The project scaffold also writes a JSON of starter prompts for four video models plus a shared style-lock line.* · **متى / when:** عندما يريد المستخدم نسخة مولدة موازية لفيلم الكود / when the user wants a generated twin of the coded film
+- **كيف / how:** `ultra_animator new …` writes ai_prompts.json with style_lock + shots[].veo2_prompt / sora_prompt / kling_prompt / runway_gen3_prompt at 0–30 % shot times; then refine with kosif_prompt_forge and lint with kosif_image_prompt_lint. Replace the seed lock's '8k, octane render' hype words before use (iron rules).
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/ultra_animator.py:119` · `kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/projects/demo_hero/ai_prompts.json`
+
+### GEN-23 · تخطيط موجه لنماذج الفيديو · ProPlan model-prompt stage with continuity locks · 🟢 جاهز / ready
+- **ماذا / what:** المخطِّط يتعرف على طلبات برومبتات Veo/Sora/Kling/Runway ويضيف مرحلة برومبت مع أقفال الاستمرارية. — *The planner recognises Veo/Sora/Kling/Runway prompt requests and inserts a stage with continuity locks.* · **متى / when:** عند تخطيط إنتاج يجمع كودًا وتوليدًا / planning a job that mixes code and generation
+- **كيف / how:** `python3 kosif-studio/motion/proplan.py --task 'prompt for veo …'` → inserts 'model_prompt_with_continuity' locking speaker identity, font family, palette and direction of motion.
+- **الدليل / proof:** `kosif-studio/motion/proplan.py:37` · `kosif-studio/motion/proplan.py:109`
+
+### GEN-24 · معادلة برومبت النماذج اللغوية ومدققها · LLM prompt formula + linter (prompts for agents & generators) · 🟢 جاهز / ready
+- **ماذا / what:** هيكل وفحص حتمي لبرومبتات النظام والمهام والوكلاء — مفيد حين تكتب أنت برومبتًا لنموذج آخر أو وكيل فرعي. — *Structure and deterministic lint for system/task/agent/tool prompts — for when you write prompts for another model or sub-agent.* · **متى / when:** قبل إرسال برومبت لوكيل أو لمولد آخر / before handing a prompt to an agent or another generator
+- **كيف / how:** Formula `<role> <context> <task> <inputs> <constraints> <output_format> <edge_cases> <quality_bar>`; lint via `python3 kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/llm_prompt_lint.py` or MCP `kosif_llm_prompt_lint {prompt, kind, contract, untrusted_inputs}` → exit 0/1/3. Companion instruction-only skills: prompt-master-pro (blind-spot questions before a motion job), structured-output-json, system-prompt-architect, prompt-architect-reasoning-models.
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/llm_prompt_lint.py` · `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/SKILL.md` · `100-superskills/skills/prompt-master-pro/SKILL.md` · `100-superskills/skills/structured-output-json/SKILL.md`
+
+### GEN-25 · مثال مصر 2120: حزمة برومبتات كاملة · Worked example: Egypt 2120 multi-platform pack · 📄 موصوف / documented only
+- **ماذا / what:** مثال جاهز لخمس لقطات سولاربانك مصرية بقفل أسلوب ونفي وتنويعات لأربع منصات. — *A ready five-shot solarpunk Egypt pack with style lock, negatives and variations for four platforms.* · **متى / when:** كقالب إدخال لأي فيلم مولد / as a template input for any generated film
+- **كيف / how:** Shots: orbit dive, Giza solar mirrors, Nile train, Cairo lotus tower, Alexandria Pharos; 9:16, 30 fps; lenses 24/35/28/24/35 mm; durations 3/4/4/4/3 s; palette gold / warm white / cyan on near-black; negatives: text artifacts, logos, watermarks, real people, distorted pyramids, dystopia, smog, flags. Kling gets an explicit negative; Runway none; Veo notes last-frame chaining.
+- **أرقام / params:** 5 shots; 9:16 30 fps; 3/4/4/4/3 s
+- **الدليل / proof:** `kosif-one/projects/egypt-2120-animation/ai-video-prompts.json` · `100-superskills/skills/kosif-montage-motion/references/ai-video-shot-prompts.example.json`
+
+## 3. مكتبات المظهر والأسلوب — Look, style & vocabulary libraries
+
+كلمات جاهزة تثبّت المظهر عبر سلسلة كاملة — أقفال الأسلوب، العدسات، أفلام التصوير، الأساليب المسماة. / Ready vocabularies that hold a look across a whole series — style locks, lenses, film stocks, named looks.
+
+### GEN-26 · كتالوج الأساليب المسماة (أكثر من 30 مظهرًا) · Named look catalogue (30+ looks) · 📄 موصوف / documented only
+- **ماذا / what:** سلاسل وصف جاهزة لأساليب بصرية مسماة تُلصق في طبقة الأسلوب. — *Ready descriptor strings for named visual styles, pasted into the style layer.* · **متى / when:** اختيار المظهر في أول جلسة / choosing the look at kickoff
+- **كيف / how:** Pick one look, paste its descriptor into the style layer, then lock it (style lock). Describe traits, never a living artist's name. The library names more looks than it defines: Steampunk, Pixel Art, Low/High-poly 3D, Minimalist, Abstract, Pop Art, Fantasy, Sci-Fi, Romantic, Experimental, isometric, film look, photorealistic editorial — write their lock yourself.
+
+| look | descriptor core |
+|---|---|
+| Cinematic Masterpiece | ARRI Alexa 65, anamorphic flare, grain, ACES |
+| Photorealistic | RAW, sharp, subsurface scattering, Hasselblad |
+| Anime | Ghibli-like watercolour backgrounds, cel shading |
+| 3D Render | Pixar-like stylised 3D, AO, GI |
+| Dark Fantasy | gothic, volumetric fog, chiaroscuro |
+| Product Commercial | hyper-real studio product |
+| Cyberpunk Neon | neon, holograms, rain reflections, teal + magenta |
+| Film Noir | B&W, venetian blinds, smoke, 1940s |
+| Vintage Film | Portra-400 grain, warm, light leak |
+| Watercolour | wet-on-wet, bleeding edges, paper |
+| Surrealism | impossible physics, melting |
+| Documentary | photojournalistic, available light |
+| Baroque Oil | Rembrandt chiaroscuro, impasto |
+| Gothic Horror | candlelight, fog, stone |
+| Symmetric pastel (Wes-Anderson-like) | symmetry, pastel, centred |
+| Solarpunk | living architecture, bioluminescence |
+| Claymation | stop-motion, fingerprints |
+| Comic Book | outlines, halftone |
+| Vaporwave / Synthwave | pink-purple-cyan, glitch, 80s |
+| Ukiyo-e | woodblock, flat planes |
+
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/visual-catalog.md` · `100-superskills/skills/kosif-montage-motion/references/visual-catalog.md` · `100-superskills/skills/ai-art-style-library/SKILL.md:16`
+
+### GEN-27 · مقدمات الأسلوب المتطابقة بايتًا · Byte-identical style preambles · 📄 موصوف / documented only
+- **ماذا / what:** مقدمة أسلوب واحدة متطابقة حرفًا بحرف قبل كل برومبت صورة تبقي العالم متماسكًا. — *One byte-identical style preamble before every still prompt keeps a world cohesive.* · **متى / when:** سلسلة لقطات لعالم واحد (scroll-world، فيلم منتج) / a series of stills for one world
+- **كيف / how:** Prefix every still prompt with the preamble; inject `[BG_HEX]` and `[PALETTE]`; always end with a 'no text' tail.
+
+| preamble | core words |
+|---|---|
+| clay diorama | isometric low-poly floating island, matte clay, tilt-shift, soft contact shadow |
+| flat papercraft | layered cardstock, die-cut |
+| glossy toy | vinyl toy, rim light |
+| claymation | plasticine thumbprints, softbox |
+| photoreal architectural | golden hour, magazine-interior look, full-bleed, no knockout |
+
+- **الدليل / proof:** `kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md:33`
+- **ترخيص / licence:** MIT (vendor scroll-world)
+
+### GEN-28 · استخراج قفل الأسلوب · Style-lock extraction · 📄 موصوف / documented only
+- **ماذا / what:** اختر الأسلوب حسب العاطفة والجمهور، استخرج كتلة كلمات دقيقة، طابق العدسة والإضاءة معه، واختبره على موضوعين. — *Pick a style by emotion/audience, extract an exact keyword block, match lens and light to it, test on two subjects.* · **متى / when:** قبل أي سلسلة / before any series
+- **كيف / how:** Write style-lock.txt (traits, not studio/artist names; per-style negatives) → feed as `locks.style` to image_prompt_forge; test on 2 different subjects; if both hold, freeze it.
+- **الدليل / proof:** `100-superskills/skills/ai-art-style-library/SKILL.md:21`
+
+### GEN-29 · مكتبات المعدِّلات حسب المجال وقوالب التصوير · Domain modifiers, photo templates & camera bodies · 📄 موصوف / documented only
+- **ماذا / what:** مفردات جاهزة لكل نوع لقطة تجعل الصورة مخرَجة لا عامة. — *Ready vocabularies per shot domain that make plates look art-directed, not generic.* · **متى / when:** كتابة طبقة الكاميرا والإضاءة / writing the camera & light layers
+- **كيف / how:** Cinema: ARRI Alexa 65 / RED V-Raptor, Cooke S7/i or anamorphic primes, Kodak Vision3 500T/250D. Product: polished marble or gradient sweep, 100 mm macro, softbox + strip rims, 45° hero or flat lay, focus-stacked 1:1. Portrait: 85/105/135 mm, f/1.4–f/5.6, Rembrandt, 4:5. Food: overhead window light, 50 mm, 4:5. Landscape: 16 mm, leading lines, foreground/mid/background layers, blue or golden hour, haze, 16:9. Bodies: Alexa 65/Mini LF, RED V-Raptor/Komodo, Venice 2, IMAX 70 mm, Hasselblad X2D, URSA 12K, Ronin 4D, iPhone/Pixel Pro, GoPro/FPV, VHS.
+- **أرقام / params:** 85mm f/1.4; 100mm macro; 16mm; Vision3 500T
+- **الدليل / proof:** `kosif-atlas/skills/881-codex-seo/1954-seo-image-gen` · `kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md` · `100-superskills/skills/kosif-montage-motion/references/visual-catalog.md`
+
+### GEN-30 · مفردات التلوين وحزم أسلوب الفيديو · Grade vocabulary, film stocks & video style packs · 📄 موصوف / documented only
+- **ماذا / what:** أسماء مظاهر وأفلام تصوير وحزم كلمات قصيرة توجه لون ومزاج اللقطة المولدة. — *Named looks, film stocks and short keyword packs that steer the grade and mood of generated footage.* · **متى / when:** عندما يجب أن يطابق اللقطة المولدة تلوين الفيلم / when a generated shot must match the film's grade
+- **كيف / how:** Looks: teal & orange, desaturated cold, warm vintage, high-contrast noir. Stocks: Kodak Vision3 500T (tungsten night), Vision3 250D (daylight), Fuji Eterna Vivid, Kodak Portra. Packs — Cinematic: cinematic grading, anamorphic flare, shallow DOF, film grain, 35 mm. Documentary: handheld, natural light, candid. Commercial: clean even light, bright and airy. Social: vertical 9:16, high contrast, saturated. Then grade the result for real in post (COLOR family) — prompt words only get you close.
+- **الدليل / proof:** `kosif-atlas/skills/347-legends-seo-dungeon/1261-seo-image-gen/references/prompt-engineering.md` · `kosif-atlas/skills/1446-marketing-skills/3531-video` · `kosif-atlas/skills/1874-klingai-pack/6087-klingai-style-transfer`
+
+### GEN-31 · وصفات أساليب كلينج بنطاقات cfg_scale · Kling style recipes with cfg_scale bands · 📄 موصوف / documented only
+- **ماذا / what:** الأسلوب في Kling = كلمات + مدى التزام النموذج بها (cfg_scale 0–1). — *In Kling, style = keywords + how strictly the model follows them (cfg_scale 0–1).* · **متى / when:** توليد Kling بأسلوب محدد / styled Kling generation
+- **كيف / how:** Lower cfg for realism (model freedom), higher for strongly stylised looks.
+
+| style | keywords | cfg_scale |
+|---|---|---|
+| photoreal | — | 0.4–0.5 |
+| cinematic | anamorphic lens, film grain, 35mm | 0.5–0.6 |
+| neon cyberpunk | neon, rain reflections | 0.5–0.6 |
+| anime | cel-shaded, clean lines | 0.6–0.7 |
+| vintage 8 mm | light leaks | 0.6–0.7 |
+| watercolor / oil | wet edges / impasto | 0.7–0.8 |
+| pixel art | 16-bit limited palette | 0.8–0.9 |
+
+- **أرقام / params:** cfg 0.4–0.9
+- **الدليل / proof:** `kosif-atlas/skills/1874-klingai-pack/6087-klingai-style-transfer`
+
+### GEN-32 · البرومبت العكسي ونقد الصورة · Reverse prompt & image critique · 📄 موصوف / documented only
+- **ماذا / what:** تحليل عربي من 11 عنوانًا ينتهي ببرومبت إنجليزي لإعادة الإنشاء، وتحويل صورة مرجعية إلى طبقات سبع. — *An 11-heading Arabic analysis ending in an English recreation prompt; turn a reference image into the seven layers.* · **متى / when:** عندما يرسل المستخدم صورة ويقول «زيها» / when the user sends an image and says 'like this'
+- **كيف / how:** Measure first, then: الخلاصة، التكوين، الكاميرا، الإضاءة، الألوان، العناصر، الجودة التقنية، مؤشرات التوليد، الدرجات /10، الإصلاحات، برومبت إعادة الإنشاء (lint it). Commands /compare, /ocr (Arabic RTL, [؟] for unreadable), /critique, /reverse, /score. No face identification. Automated captioners (Florence-2 PromptGen, WD14, BLIP) need ComfyUI; Ideogram describe returns a structured JSON prompt. Only on images the user owns or may use.
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-vision/SKILL.md` · `100-superskills/skills/image-critique-reverse-prompt/SKILL.md:25` · `kosif-atlas/skills/2142-comfyui-plugin/7651-comfy-image-utils`
+
+## 4. توليد الصور — Image generation routes
+
+طرق الحصول على صورة فعلية: كلها خارجية بمفتاح ما عدا ما ترسمه أنت بالكود أو sd-turbo المحلي. / Ways to get an actual still: all external and keyed, except what you paint in code yourself or local sd-turbo.
+
+### GEN-33 · أنت المولّد: صورة من وصف بالكود (SVG / Canvas / PIL / Three.js) · You are the generator: picture from a description as code · 🟢 جاهز / ready
+- **ماذا / what:** قبل أي مولد خارجي، ارسم الصورة بنفسك برنامجًا: SVG أو PIL أو مشهد KOSIF أو صفحة Three.js — قابلة للتحريك والتعديل والعربية سليمة. — *Before any external model, paint the picture yourself as a program — SVG, PIL, a KOSIF scene or a Three.js page — animatable, editable, with correct Arabic.* · **متى / when:** خلفيات، ملصقات، أيقونات، رسوم مسطحة، مشاهد بسيطة / backgrounds, stickers, icons, flat illustration, simple scenes
+- **كيف / how:** Format routing: SVG 1200×800 viewBox drawn back-to-front with no filters; PIL for raster textures; Three.js page with a `render(t)` contract (three@0.170.0 from cdn.jsdelivr.net). Sticker: 512×512, thick white outline, 2–4 palette colours, no text. SVG background: full-frame viewBox, dark ground dominant, ≤3 gradients, calm empty centre. Always sanitise: strip script, foreignObject, image, iframe, a, style, animate, set, on* attributes, external href/url() and javascript:. Studio extract_code pulls the runnable block from a reply.
+- **الدليل / proof:** `kosif-studio/studio.py:55` · `kosif-studio/studio.py:856` · `app/public/js/00_editor.js:1669`
+
+### GEN-34 · استخراج الكود من رد الذكاء الاصطناعي · AI-reply code extraction · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يسحب الكتلة القابلة للتشغيل من رد مغلّف بنثر وأسوار ```، مفضّلًا الكتل التي تحمل IMAGE_B64 أو imports أو markup. — *Pulls the runnable block out of a prose-and-fences reply, preferring blocks with IMAGE_B64, imports or markup.* · **متى / when:** كلما وصلك كود من نموذج آخر أو وكيل / whenever code comes back from another model or agent
+- **كيف / how:** `studio.extract_code(text)`: regex over fenced blocks; falls back to stripping lone fences; bare code returned as is. Ran here directly: prose + ```python block → 'import io\nx=1'. (Its unittest file also imports cv2: `pip install opencv-python-headless` to run the full suite.)
+- **الدليل / proof:** `kosif-studio/studio.py:156` · `kosif-studio/tests/test_studio.py:433`
+
+### GEN-35 · جسر الذكاء في الاستوديو (Claude CLI / API / يدوي) · Studio AI bridge: Claude CLI → API → manual · 🟢 جاهز / ready
+- **ماذا / what:** يختار كيف يسأل الاستوديو نموذجًا: `claude -p` محليًا أولًا، ثم Messages API بمفتاح، وإلا حزمة نسخ ولصق بتعليمات عربية. — *Chooses how the studio asks a model: local `claude -p` first, then the Messages API with a key, else a copy-paste package with Arabic steps.* · **متى / when:** تعديل صورة أو توليد صورة من وصف داخل kosif-studio / editing or creating a picture inside kosif-studio
+- **كيف / how:** `python3 kosif-studio/ai_bridge.py [prompt]`; settings.json backend auto|cli|api|none; prompts ≥28 000 chars go via stdin; CLI readiness cached 10 min; defaults model claude-sonnet-5-5, max_tokens 8000, timeout 240 s. Edit flow (Ctrl+E): reply must contain IMAGE_B64 and `# EDITS START`; result drawn original-first then edit; Ctrl+Z undo. With backend none it always works (manual package).
+- **أرقام / params:** ≥28000 chars → stdin; 10 min cache; 240 s timeout
+- **الدليل / proof:** `kosif-studio/ai_bridge.py:56` · `kosif-studio/ai_bridge.py:99` · `kosif-studio/studio.py:799`
+
+### GEN-36 · صورة فوتوغرافية محلية sd-turbo أو Pollinations · Photo from prompt: local sd-turbo or Pollinations · 📦 بأمر تثبيت / one install
+- **ماذا / what:** عندما لا يرسم الكود صورة فوتوغرافية: sd-turbo محليًا على المعالج، أو Pollinations FLUX أونلاين بموافقة. — *When code cannot paint a photograph: sd-turbo locally on CPU, or Pollinations FLUX online with consent.* · **متى / when:** لقطة خلفية فوتوغرافية بلا مفتاح / a photographic plate without a key
+- **كيف / how:** `python3 kosif-studio/generate.py "prompt" --out out/photo.png --backend local --size 1344x768 --seed 7 [--negative …] [--code]`. Local: 4 steps, guidance 0, dims multiple of 8, ~2 GB weights from huggingface.co (reachable here); CPU only (4 cores, 15 GB RAM) — expect minutes, not seconds. Online backend: model flux, nologo, enhance false, 180 s timeout — pollinations is not in the verified-hosts list, ask before sending any prompt off-machine. `--code` also writes a Python program for the result.
+- **أرقام / params:** 4 steps; guidance 0; ÷8 dims; seed 7
+- **الدليل / proof:** `kosif-studio/generate.py:24` · `kosif-studio/generate.py:53` · `kosif-one/tools/kosif-studio/generate.py` · `100-superskills/skills/pixel-studio-painter/scripts/generate.py`
+- **تثبيت / install:** `pip install diffusers torch transformers accelerate`
+- **ترخيص / licence:** sd-turbo weights: Stability AI community licence (check commercial terms); Pollinations: service terms
+
+### GEN-37 · توليد وتعديل الصور بـ Gemini (نانو بنانا) · Gemini / Nano Banana image generate & edit · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** صور B-roll وخلفيات وطبقات وملصقات وتعديل صور موجودة بنسبة المشروع ولوحته. — *B-roll stills, backgrounds, layers, stickers and edits of existing pictures in the project's aspect and palette.* · **متى / when:** عندما تحتاج صورة لا يرسمها الكود / when code cannot paint the still
+- **كيف / how:** REST: `POST https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key=$GEMINI_API_KEY` with responseModalities IMAGE (or TEXT+IMAGE), imageConfig.aspectRatio, imageSize uppercase '512'|'1K'|'2K'|'4K'; decode base64 inlineData to PNG; ≤5 reference images as extra parts. Models: gemini-3.1-flash-image (default), gemini-2.5-flash-image (fixed 1K), gemini-3-pro-image. App route (basma): Claude first rewrites the request through an image formula and the film LOOK (doodle = thick friendly outlines, flat pastel; chalkboard = white chalk on dark green; product = dramatic studio light, glossy); sticker vs photo prompt; always 'no text/watermark'.
+- **أرقام / params:** 14 ratios incl. 1:8, 8:1, 21:9; ~$0.02/0.04/0.08/0.16 per 512/1K/2K/4K; free ≈10 RPM
+- **الدليل / proof:** `kosif-atlas/skills/1481-llm-tools/3666-gemini-image` · `app/public/js/00_editor.js:1917` · `app/public/js/10_studio.js:4164` · `kosif-atlas/skills/881-codex-seo/1954-seo-image-gen`
+- **تثبيت / install:** `pip install google-genai (optional SDK)`
+
+### GEN-38 · تحرير بمراجع متعددة قبل التحريك (نانو بنانا) · Nano Banana multi-reference edit before animation · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** صحّح أو ركّب الإطار الأول بتعديل صورة رخيص واعتمده قبل صرف نقاط الفيديو. — *Fix or compose the first frame with a cheap image edit and approve it before spending on video.* · **متى / when:** قبل أي صورة→فيديو / before any image-to-video
+- **كيف / how:** Label refs @Image1…(≈5 in the API, up to 14 in the app); prompt only the change: 'Edit @Image1: change pose to …; keep face, hair, lighting'; 2K default, 4K for fine product text. Recipes: decade re-style, multi-image composite, character sheet from one image (same person from back/left/right), 'retain the look' style ref, staging 'retain structure and composition', outfit swap, storyboard marker style. Forge v4 marks version-sensitive syntax unverified unless the provider is confirmed current.
+- **أرقام / params:** image ≈12 credits vs clip 250–500
+- **الدليل / proof:** `kosif-atlas/skills/259-quickdesign/865-quickdesign` · `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/references/books-drive-ledger.md` · `kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge_v4_truth.py`
+
+### GEN-39 · عائلة FLUX عبر Together وحلقة Kontext · FLUX via Together + Kontext edit round-trip + LoRA · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** FLUX.2 وFLUX.1 schnell وKontext وImagen 4 وغيرها خلف نقطة واحدة؛ ثم Kontext يغيّر شيئًا واحدًا ويحفظ الباقي. — *FLUX.2, FLUX.1 schnell, Kontext, Imagen 4 and more behind one endpoint; then Kontext changes one thing and keeps the rest.* · **متى / when:** مسودات رخيصة سريعة وتعديل موضعي / cheap fast drafts and targeted edits
+- **كيف / how:** `client.images.generate(model, prompt, width, height, steps, seed)` with TOGETHER_API_KEY; sizes 1024², 1344×768, 768×1344, 1248×832, 1184×864; schnell 4 steps; guidance 3.5 default (1–5 creative, 8–10 faithful). Kontext: model black-forest-labs/FLUX.1-kontext-pro (or -max), image_url = previous result, 'replace the car colour with blue', 28 steps; save both versions. FLUX.2 dev: ≤2 image_loras at scale 0.3–1.2 + reference_images. Cost = MP × price/MP × steps/default.
+- **أرقام / params:** schnell 4 steps; Kontext 28; LoRA ≤2 @0.3–1.2
+- **الدليل / proof:** `kosif-atlas/skills/3214-togetherai-skills/13594-together-images`
+- **تثبيت / install:** `pip install together`
+
+### GEN-40 · GPT Image وIdeogram للصور ذات النص · GPT Image & Ideogram V4 (text-capable stills, edit, describe) · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** مسارا الصور حين يُطلب نص داخل الصورة أو تحرير بقناع أو وصف منظم. — *The still routes when in-image text, masked edits or a structured description are needed.* · **متى / when:** لافتة أو منتج عليه كلمات لاتينية / a sign or product carrying Latin words
+- **كيف / how:** GPT Image (gpt-image-1/2) via OpenAI Images API (OPENAI_API_KEY) or Codex `image_gen`; transparent background for icons; quality high when text is requested; may rewrite prompts. Ideogram V4: multipart POST https://api.ideogram.ai/v1/ideogram-v4/generate (or /async + poll), header Api-Key; JSON prompting disables magic prompt; check is_image_safe; download at once (URLs expire). Tools: mask edit, remix, describe → structured JSON (boxes 0–1000 [y_min,x_min,y_max,x_max]), bg remove/replace, reframe, upscale, text layerization; inputs ≤25 MB. Arabic: still overlay real type yourself.
+- **الدليل / proof:** `kosif-atlas/skills/1446-marketing-skills/3504-image` · `kosif-atlas/skills/2657-figures/10115-transparent-icons` · `kosif-atlas/skills/1869-ideogram-pack/5946-ideogram-core-workflow-a` · `kosif-atlas/skills/1869-ideogram-pack/5947-ideogram-core-workflow-b`
+
+### GEN-41 · صور Higgsfield (Soul v2 / Marketing Studio / gpt_image_2) · Higgsfield image generation · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** توليد صور لقطات خلفية بالتوازي عبر عميل Higgsfield الرسمي. — *Plate stills in parallel through the official Higgsfield client.* · **متى / when:** عندما يملك المالك رصيد Higgsfield / when the owner's Higgsfield credit is available
+- **كيف / how:** `subscribe('marketing-studio/image', {prompt: shot + STYLE, aspect_ratio: '9:16', resolution: '2k'})` or 'higgsfield-ai/soul/v2/standard' for a credential check; ThreadPoolExecutor(6); skip files that exist; save sources.json URL map. CLI alt: `higgsfield generate create gpt_image_2 --aspect_ratio 3:2 --resolution 2k --quality high --wait` (3–8 min each; run detached). HF_KEY='key-id:key-secret' in .env.local (gitignored).
+- **أرقام / params:** 9:16 2k; 6 workers; 3–8 min/still
+- **الدليل / proof:** `kosif-one/projects/higgsfield/image.py` · `kosif-one/projects/whatsapp-motion/gen_images.py` · `kosif-one/projects/whatsapp-motion/assets/sources.json` · `kosif-one/vendor/scroll-world/skills/scroll-world/references/pipeline.md`
+- **تثبيت / install:** `pip install higgsfield-client python-dotenv`
+
+### GEN-42 · وصفة صور الهوية: كائن معدني وكريستال (ذهبي/جليدي) · Brand-still recipe: metal + crystal object on brand ground · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** قواعد برومبت لصور قطاعات بالهوية: كائن رمزي واحد معدن مصقول + كريستال مضلّع على خلفية لون الهوية، إضاءة حافة دافئة، ونفي صارم للنص والشعارات والناس. — *Prompt grammar for on-brand sector stills: one symbolic object in polished metal + faceted crystal on a flat brand ground, warm rim light, hard negative against text, logos and people.* · **متى / when:** صور قطاعات وأغلفة لمنصة KOSIF Earth / sector & cover stills
+- **كيف / how:** Gold identity: ground #0B1F3A, metal #C9A227, 'luxury annual report' mood. Ice variant: 'ice-blue brushed metal and faceted clear crystal on a deep cobalt-night background #0B1030, cool cyan rim light #19C3D9'. Suffix: 'No text, no letters, no numbers, no logos, no people'. Higgsfield Image 2.0, quality high, 2k; post: hflip for RTL space, WebP q80 (1600 w heroes, 720×480 sectors, 1200 audit, 900 cover). Measured spend: ~$0.21/image fixed ratio, 15 images + 2 clips = $3.79.
+- **أرقام / params:** #0B1F3A / #C9A227; ice #0B1030 / #19C3D9; WebP q80
+- **الدليل / proof:** `kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md` · `kosif-earth-ci-fork/AGENT_WORKLOG.md:744`
+
+### GEN-43 · لقطات بمساحة فارغة للكتابة · AI plates that reserve typography space · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** كل برومبت لقطة ينتهي بلاحقة أسلوب مشتركة تطلب ثلثًا علويًا/سفليًا فارغًا وبلا أي نص. — *Every shot prompt ends with a shared style suffix asking for empty upper/lower thirds and no text at all.* · **متى / when:** خلفيات سيُكتب فوقها نص عربي متحرك / plates that will carry animated Arabic type
+- **كيف / how:** Shared STYLE suffix: editorial cinematic photography, shallow depth of field, anamorphic look, grain, empty upper/lower thirds, no text, letters, logos or watermark. Example set of six plates (s1_question … s6_paths) at 9:16 2k. Then place type in the empty third with the ARAB/TYPE families.
+- **أرقام / params:** 6 plates; 9:16 2k
+- **الدليل / proof:** `kosif-one/projects/whatsapp-motion/gen_images.py:19-37` · `kosif-atlas/skills/2976-pwdev-social-media/12583-creative-concept/SKILL.md`
+
+### GEN-44 · أيقونات شفافة بثيم وشرائط سبرايت ثابتة · Themed transparent icons & consistent sprite strips · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** أيقونات مسطحة بخلفية شفافة من ملف ثيم، وشريط حركة كامل بتعديل واحد من إطار بذرة معتمد. — *Flat transparent icons styled by a theme JSON, and a whole animation strip in one edit from an approved seed frame.* · **متى / when:** مجموعة أيقونات أو شخصية سبرايت لفيلم / an icon set or a sprite character
+- **كيف / how:** Icons: generate_icon.py via Codex image_gen, OpenAI Images or a flux-schnell host, --size 1024; theme {palette, stroke weight, style/negative tokens}; fallback near-white threshold or rembg. Sprites: image-edit API from the seed frame; prompt invariants: same character, facing, palette, silhouette, transparent bg, exact frame count; then Pillow normalise to one shared scale and a bottom-centre anchor.
+- **الدليل / proof:** `kosif-atlas/skills/2657-figures/10115-transparent-icons` · `kosif-atlas/skills/2696-game-studio/10368-sprite-pipeline` · `kosif-atlas/skills/1526-gamegen/4171-game-sprites`
+- **ترخيص / licence:** icons skill BSD-3-Clause; sprite skills MIT
+
+### GEN-45 · تعديل قبل إعادة التوليد: توسيع وترميم وقص وتكبير · Edit before regenerate: outpaint, inpaint, cut-out, upscale · 📦 بأمر تثبيت / one install
+- **ماذا / what:** إذا وُجد أصل معتمد فوسّعه أو رمّمه أو افصل موضوعه أو كبّره بدل رمي نرد جديد. — *If an approved asset exists, outpaint, inpaint, cut out or upscale it instead of rolling a new image.* · **متى / when:** تغيير النسبة 16:9→9:16، طبقات باراللاكس / re-aspecting, parallax layers
+- **كيف / how:** Local here: `rembg i in.png out.png` for cut-outs → parallax layers; reframing without generation = blurred-background pad in ffmpeg. External: Adobe image_generative_expand into tall (9:16/4:5) and wide (2:1/16:9) masters then crop each platform (preview 1:1, 4:5, wide first); Cloudinary URL effects e_background_removal, b_gen_fill, e_gen_replace, e_gen_remove, e_gen_background_replace (seed_), e_upscale (credit costs 230/120/100/75/50 tx); FLUX.2 Pro Outpaint; realesrgan-ncnn-vulkan ×4 (not installed).
+- **الدليل / proof:** `kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing` · `kosif-atlas/skills/103-adobe-for-creativity/232-adobe-create-social-variations/SKILL.md` · `kosif-atlas/skills/1119-cloudinary/2560-cloudinary-transformations/references/ai-transformations.md`
+- **تثبيت / install:** `pip install rembg`
+- **ترخيص / licence:** rembg MIT; model weights per their cards
+
+### GEN-46 · شجرة اختيار نموذج الصور والترخيص أولًا · Image-model routing tree (licence first) · 📄 موصوف / documented only
+- **ماذا / what:** اختر المولد حسب الحاجة: نص مقروء، ثبات هوية، تعديل، متجهات، جمال أقصى، أو كمية رخيصة — بعد فحص الترخيص. — *Pick the generator by need — legible text, set consistency, editing, vector, top aesthetics or cheap volume — after the licence check.* · **متى / when:** قبل أول استدعاء مدفوع / before the first paid call
+- **كيف / how:** Text in image: Ideogram 3/4 → Gemini → GPT Image. Set consistency: Flux multi-reference, Nano Banana Pro, Recraft. Edit existing: Gemini, Flux Kontext, ChatGPT Images. Vector/SVG: Recraft V3/V4 (or draw it yourself). Max aesthetics: Flux 1.1 Pro, Midjourney v7 (manual). Volume: Flux Schnell, Gemini Flash, self-hosted SD. Never FLUX.1-dev on client work (non-commercial weights).
+- **الدليل / proof:** `kosif-atlas/skills/1446-marketing-skills/3504-image` · `kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing` · `kosif-atlas/skills/2976-pwdev-social-media/12588-image-gen`
+
+### GEN-47 · وصفات ComfyUI: المُعيِّن والجدولة وقياس منحنيات الضوضاء · ComfyUI sampler/scheduler recipes & measured sigma curves · 📄 موصوف / documented only
+- **ماذا / what:** لكل عائلة نماذج مُعيِّن وجدولة وخطوات وCFG تعمل، وادعاءات الجداول تُقاس لا تُصدّق. — *Each model family has a working sampler, scheduler, steps and CFG; schedule claims are measured, not believed.* · **متى / when:** عند بناء رسم ComfyUI على جهاز بمعالج رسوميات / building a ComfyUI graph on a GPU host
+- **كيف / how:** SD1.5/SDXL: dpmpp_2m + karras, 25 steps, cfg 7–8. Flux: euler + sgm_uniform/simple, ~20 steps, cfg 1–3.5. Krea: euler + simple, 20 steps (8 turbo), cfg 1. Denoise 1.0 txt2img, 0.3–0.7 img2img. Measured (high/mid/low of 20 steps): simple 3/8/9, beta57 3/6/11 (detail finishes), linear_quadratic 17/3/0 (layout exploration). No GPU and no ComfyUI in this container.
+- **أرقام / params:** SDXL 25 steps cfg 7–8; Flux 20 steps cfg 1–3.5
+- **الدليل / proof:** `kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design` · `kosif-atlas/skills/2142-comfyui-plugin/7648-comfy-corpus-validation`
+
+### GEN-48 · LoRA وControlNet والترميم في ComfyUI · ComfyUI LoRA bands, ControlNet & inpainting · 📄 موصوف / documented only
+- **ماذا / what:** قوة LoRA حسب نوعها، وتوجيه البنية بالحواف والعمق والوضعية، وترميم منطقة بقناع. — *LoRA strength by kind, structure guidance from edges/depth/pose, and masked regional regeneration.* · **متى / when:** ثبات شخصية أو تكوين على مولد محلي / character or layout control on a local model
+- **كيف / how:** LoraLoader between checkpoint and sampler: style 0.6–0.9, concept 0.4–0.6; honour trigger words. ControlNetApplyAdvanced: 0.3–0.5 loose, 0.5–0.8 balanced, 0.8–1.0 strict; start 0.0 / end 0.8 leaves detail free; stack OpenPose+Depth or Canny+Depth (preprocessors Canny, DepthAnything, DWPose, LineArt, Scribble, SoftEdge, Normal, SAM, Tile). Inpaint: white mask = regenerate; VAEEncode + SetLatentNoiseMask, denoise 0.6–0.85; RMBG/SAM nodes for cut-outs; outpaint by padding.
+- **أرقام / params:** LoRA 0.4–0.9; ControlNet 0.3–1.0 end 0.8; denoise 0.6–0.85
+- **الدليل / proof:** `kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design` · `kosif-atlas/skills/1514-huggingface-skills/3937-huggingface-lora-space-builder`
+
+## 5. توليد الفيديو — Video generation routes
+
+منصات الفيديو المولّد وعقود واجهاتها وحيل الاستمرارية — لا شيء منها يعمل هنا بلا مفتاح؛ ما تسلّمه بدونه هو البرومبت والخطة. / Generated-video platforms, their API contracts and continuity tricks — none runs here without a key; without one you deliver prompts and a plan.
+
+### GEN-49 · شجرة اختيار نموذج الفيديو ومسودة رخيصة ثم نهائي · Video-model routing tree & cheap draft → premium final · 📄 موصوف / documented only
+- **ماذا / what:** اختر مولد الفيديو بما يهم: صوت متزامن، سعر الثانية، ثبات الشخصية، أوزان مفتوحة، أو صورة→فيديو؛ وارسم بالرخيص وأنهِ بالغالي مرة واحدة. — *Pick the video model by what matters — synced audio, cost/second, character consistency, open weights, or image-to-video — and draft cheap, finish premium once.* · **متى / when:** قبل أي توليد فيديو / before any video generation
+- **كيف / how:** Quality + audio: Veo 3, Sora 2. Cheap volume: Kling, Seedance. Character consistency: Hailuo/MiniMax, Seedance R2V with references. Self-hosted: Wan 2.x, HunyuanVideo, LTX. Storyboard-to-video: Runway, LTX Studio. Spoken multi-segment UGC: Seedance 2.0 R2V. Drafts: Flux Schnell / Gemini Flash 512 stills, Kling standard, Seedance 480p; finals: Veo/Runway, Kling professional, 1080p. Image-to-video from an approved frame saves credits.
+- **الدليل / proof:** `kosif-atlas/skills/1446-marketing-skills/3531-video` · `kosif-atlas/skills/259-quickdesign/865-quickdesign` · `kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing`
+
+### GEN-50 · صورة مفتاحية أولًا ثم تحريكها · Keyframe-first image-to-video · 📄 موصوف / documented only
+- **ماذا / what:** اعتمد إطارًا ثابتًا أولًا ثم حرّكه ببرومبت حركة فقط؛ مقطع اختبار واحد قبل أي سلسلة. — *Approve a still first, then animate it with a motion-only prompt; one test clip before any series.* · **متى / when:** كل لقطة مولدة مهمة / every important generated shot
+- **كيف / how:** image-prompt-forge → curate → I2V with --dur 5 and a vertical ratio like 720:1280. Motion prompt shape: `[subject action], [camera move: static/pan/dolly/orbital], [pace], [duration]` — do not re-describe what the image already shows. Price clips separately from stills; redo off-style keyframes (cents) before clips (dollars).
+- **أرقام / params:** test clip 5 s; 720:1280
+- **الدليل / proof:** `100-superskills/skills/video-prompt-director/SKILL.md:24` · `kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen` · `kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md`
+
+### GEN-51 · Seedance 2.5 عبر Higgsfield (محروس ومدفوع) · Seedance 2.5 text/image-to-video via Higgsfield (guarded) · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** استدعاء من الخادم يرسل مهمة فيديو ولا يعلن النجاح إلا لنتيجة مكتملة برابط صالح؛ الفشل والإشراف والإلغاء ترجع غير صفر. — *A server-side call that submits a video job and reports success only for a completed result with a valid URL; failed, moderated or cancelled return non-zero.* · **متى / when:** لقطة إدراج مولدة (علم، مقدمة، حلقة هوية) بإذن المالك وتكلفته / an AI insert shot with the owner's approval and budget
+- **كيف / how:** `higgsfield_client.subscribe('bytedance/seedance-2.5/text-to-video', arguments={prompt, duration, resolution, aspect_ratio, generate_audio}, on_enqueue, on_queue_update)`; status from the last Status class (Queued, InProgress, Completed, Failed, NSFW, Cancelled); offline tests `python test_higgsfield.py`. Real outputs already in the owner repos: earth-intro (Seedance 2.5 I2V, 1280×720, 24 fps, 5.056 s, AAC 32 kHz) and the flag slow-motion insert (6 s, 1080p, 9:16, no audio: low angle, golden sunset over desert and canal, 35 mm grain, warm amber, backlit dust, no text, no people).
+- **أرقام / params:** 5 s 720p 16:9 demo; 6 s 1080p 9:16 reel shot
+- **الدليل / proof:** `kosif-studio/main.py:20` · `kosif-studio/HIGGSFIELD_SETUP.md` · `kosif-one/projects/higgsfield/gen_reel_shot.py:14-23` · `kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.mp4`
+- **تثبيت / install:** `pip install higgsfield-client python-dotenv`
+- **ترخيص / licence:** Higgsfield SDK / service terms; billable
+
+### GEN-52 · حلقات فيديو Kling للهوية وواجهة Kling · Kling text/image-to-video API (+ real brand loops) · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** واجهة Kling REST لإنشاء مهام فيديو وانتظارها؛ والمالك يملك حلقتي هوية صامتتين 5 ث صُنعتا بها. — *Kling's REST API creates video tasks you poll; the owner already has two silent 5 s brand loops made with it.* · **متى / when:** B-roll سينمائي رخيص، حلقات خلفية، دوران منتج / cheap cinematic b-roll, background loops, product turns
+- **كيف / how:** `POST https://api.klingai.com/v1/videos/text2video` with a Bearer JWT (HS256 from access/secret key, exp 30 min, regenerate per request); body model_name (kling-v2-6, v2-5-turbo, v2-master, v1-6), prompt ≤2500 chars, negative_prompt, duration as STRING '5'|'10', aspect_ratio, mode standard|professional, cfg_scale 0–1, callback_url; poll until succeed/failed. image2video adds image + image_tail XOR camera_control XOR masks. Kling 3 via fal: 3–15 s, explicit camera verbs. Brand loops: Kling 3.0 Standard T2V 5 s → mirrored, graded, H.264 1280 crf 27 faststart (measured 1280×720, 24 fps, 5.04 s, 2.0 / 0.94 Mbps).
+- **أرقام / params:** duration '5'|'10'; v2.6 1080p 30–48 fps; 8 ratios
+- **الدليل / proof:** `kosif-atlas/skills/1874-klingai-pack/6089-klingai-text-to-video` · `kosif-atlas/skills/1874-klingai-pack/6075-klingai-image-to-video` · `kosif-earth-ci-fork/ui/art/brand/door.mp4` · `kosif-earth-ci-fork/ui/art/brand/dashboard.mp4`
+
+### GEN-53 · فرشاة الحركة والقناع الثابت (سينماغراف) · Kling motion brush & static mask (cinemagraph) · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** حرّك مناطق مختارة من صورة على مسارات مرسومة وأبقِ الباقي متجمدًا. — *Animate selected regions of a still along drawn paths while the rest stays frozen.* · **متى / when:** سينماغراف: دخان، ماء، قماش يتحرك في صورة ثابتة / cinemagraphs
+- **كيف / how:** image2video with dynamic_masks [{mask: white-region PNG, trajectories:[{x,y,t} normalised 0–1]}] — ≤6 paths on v2.6 — plus static_mask for regions that must not move. Cannot combine with camera_control or image_tail.
+- **أرقام / params:** ≤6 trajectories; coords 0–1
+- **الدليل / proof:** `kosif-atlas/skills/1874-klingai-pack/6075-klingai-image-to-video` · `kosif-atlas/skills/1874-klingai-pack/6078-klingai-known-pitfalls`
+
+### GEN-54 · تمديد فيديو Kling بالتسلسل ونظام الرصيد · Kling extension chain & credit model · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** مدّ مقطعًا منتهيًا بخطوات 5 ث، كل خطوة تكمل السابقة؛ وارسم بوضع standard وأنهِ بـ professional. — *Lengthen a finished clip in 5 s steps; draft in standard mode and finish in professional.* · **متى / when:** مشهد أطول من 10 ث بلا قطع / a shot longer than 10 s without a cut
+- **كيف / how:** `POST /v1/videos/video-extend {task_id, prompt (next story beat), duration '5', mode}`; the new task_id feeds the next step. Credits: standard 10/20 for 5/10 s, professional 35/70, with audio 50/100 and 100/200; API ≈ $0.07–0.14/s. Generate 5 s and extend rather than 10 s; add audio in post. Extras: /v1/videos/effects (hug, kiss, heart, expand, squish), /v1/images/kolors (≤2048², 1 credit) → image2video as a cheap style-first route, /v1/videos/lip-sync.
+- **أرقام / params:** +5 s/step; std 10/20, pro 35/70; audio ×5
+- **الدليل / proof:** `kosif-atlas/skills/1874-klingai-pack/6092-klingai-video-extension` · `kosif-atlas/skills/1874-klingai-pack/6081-klingai-pricing-basics` · `kosif-atlas/skills/1874-klingai-pack/6079-klingai-model-catalog`
+
+### GEN-55 · واجهة Runway حسب النموذج والتزامن · Runway task API & concurrency model · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** أجسام طلب Runway تختلف حسب النموذج وكل توليد مهمة غير متزامنة، والسعة تحكمها حدود التزامن لا عدد الطلبات بالدقيقة. — *Runway bodies differ per model and every generation is an async task; capacity is per-model concurrency, not requests per minute.* · **متى / when:** لقطات من لوحة قصة بإطار معتمد / storyboard shots from approved frames
+- **كيف / how:** gen4.5 takes text or image, gen4_turbo needs an image, gen3a_turbo legacy. Server-side secret + X-Runway-Version header; submit, store the task id at once, poll with the SDK wait helper; states PENDING, RUNNING, THROTTLED (queued, not failed), SUCCEEDED, FAILED, CANCELLED. Local media → ephemeral upload → runway:// URI valid 24 h. Model Router dryRun estimates cost. Per-model semaphore below tier (5 concurrent → admit 4, reserve 1); never resubmit after a disconnect — resume from the stored id; pause on 429 daily-quota.
+- **أرقام / params:** runway:// 24 h; 5 s smoke test
+- **الدليل / proof:** `kosif-atlas/skills/1900-runway-pack/6659-runway-core-workflow-a` · `kosif-atlas/skills/1900-runway-pack/6669-runway-rate-limits` · `kosif-atlas/skills/1900-runway-pack/6661-runway-cost-tuning`
+
+### GEN-56 · قواعد المراجع في Seedance 2.0 R2V · Seedance 2.0 reference-to-video grammar · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** Seedance يقرأ مراجع موسومة (@Image1 و@Audio1 و@Video1) فتأتي الهوية والملابس والمكان من الصور، والبرومبت يضيف الجديد فقط. — *Seedance reads labelled references (@Image1, @Audio1, @Video1): identity, wardrobe and setting come from images, the prompt only adds what is new.* · **متى / when:** شخصية ثابتة عبر لقطات، إعلان UGC ناطق / a consistent character across shots, spoken UGC
+- **كيف / how:** Pass each photo as a separate reference in order; prompt like '@Image2 in @Image3, holds @Image1 toward camera. The person says: "…"'; never re-describe what references show (it causes drift). Integer duration 4–15 s; 480p/720p/1080p; 9:16, 16:9, 1:1, 4:3, 3:4, 21:9; native audio on by default (turn off when your own track will play). Hosts: fal, QuickDesign, Higgsfield.
+- **أرقام / params:** 4–15 s integer; ≈40 credits/s at 1080p
+- **الدليل / proof:** `kosif-atlas/skills/259-quickdesign/865-quickdesign` · `kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md`
+
+### GEN-57 · لقطة أداء مولدة متزامنة مع مقطع الأغنية · Reference-to-video performance shot synced to a song slice · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** شخصية تغني مقطعًا دقيقًا من الأغنية: النموذج يستلم ورقة الأسلوب وورقة الشخصية وشريحة الصوت فيقع الفم على الموسيقى بالبناء. — *A character sings an exact slice of the song: style sheet, character sheet and the audio slice go in, so mouth and hits land by construction.* · **متى / when:** فيديو موسيقي أو قصيدة مغناة / a music video or sung poem
+- **كيف / how:** Slice the song to the shot with ffmpeg (48 kHz PCM, whole-second duration); Seedance 2.5 R2V on fal; prompt: style of @Image1, the singer from @Image2 sings @Audio1 with precise lip sync, mouth closed when @Audio1 is silent, static camera, no text, one continuous shot. 480p/720p when a draw-over follows (1080p ≈ 2× cost). Picture-only shots use I2V with generate_audio false. Your master audio stays untouched; the slice is only a reference.
+- **أرقام / params:** 48 kHz slice; integer s; 480–720p
+- **الدليل / proof:** `kosif-atlas/skills/1511-homie/3903-video` · `kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md`
+- **ترخيص / licence:** Apache-2.0 (skill)
+
+### GEN-58 · ثبات الصوت عبر مرجع صوتي · Voice continuity via reference audio · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** ثبّت صوتًا واحدًا عبر مقاطع مولدة بإعطاء صوت المقطع الأول كمرجع للبقية. — *Lock one voice across generated segments by feeding segment 1's own audio as the reference for the rest.* · **متى / when:** إعلان أو شرح متعدد المقاطع بشخصية ناطقة / multi-segment spoken pieces
+- **كيف / how:** Render segment 1 → `ffmpeg -i s1.mp4 -vn -acodec libmp3lame -q:a 2 ref.mp3` → pass as --reference-audio (≤3 clips, 2–15 s each, ≤15 MB) to segments 2..N → concat with `-c copy`. Avoid clone + TTS + lipsync chains (length drift, ~2× cost).
+- **أرقام / params:** ref 2–15 s, ≤3 clips, ≤15 MB
+- **الدليل / proof:** `kosif-atlas/skills/259-quickdesign/865-quickdesign`
+
+### GEN-59 · Veo عبر Gemini وقيود Sora 2 · Veo via Gemini & Sora 2 constraints · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** Veo يولّد B-roll ولقطات بطولة وخلفيات حلقية عبر عملية طويلة تُستطلع؛ Sora 2 لقطة سينمائية واحدة بمدد ثابتة. — *Veo makes B-roll, hero shots and loopable backgrounds via a long-running operation you poll; Sora 2 gives one cinematic shot at fixed durations.* · **متى / when:** B-roll بصوت أصلي، خلفية حلقية هادئة / b-roll with native audio, calm loop backgrounds
+- **كيف / how:** Veo: `POST models/{veo}:predictLongRunning {instances:[{prompt}], parameters:{aspectRatio: '9:16'|'16:9'}}`, poll every 8 s, abort after 8 min or 6 network failures; models veo-3.1-generate-preview, -fast-, -lite-; background mode appends 'slow, calm, loopable, no people, no text'; Veo prose + an 'Audio:' line, 4/6/8 s, ≤2.5 Arabic words/s of speech. Sora 2: 4, 8 or 12 s only, prompt ≤4000 chars, describe subject/setting fully (the image is a hint), fresh voice per call; Together exposes sora-2 / sora-2-pro at 8 s 1280×720.
+- **أرقام / params:** poll 8 s; timeout 8 min; Veo 4/6/8 s; Sora 4/8/12 s
+- **الدليل / proof:** `app/public/js/00_editor.js:1935` · `app/public/js/00_editor.js:2097` · `kosif-atlas/skills/259-quickdesign/865-quickdesign` · `kosif-atlas/skills/3214-togetherai-skills/13597-together-video`
+
+### GEN-60 · منصات التجميع: fal وTogether وWaveSpeed وHF Spaces وVertex · Aggregator hubs: fal, Together, WaveSpeed, HF Spaces, Vertex · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** نقطة واحدة لمئات النماذج مع تسعير وتخزين وكتالوج فيديو موحد. — *One endpoint for hundreds of models with pricing, storage and a unified video catalogue.* · **متى / when:** حين تحتاج نموذجًا معينًا بلا حساب منفصل / when you need a model without a separate account
+- **كيف / how:** fal: FAL_KEY (`Authorization: Key …`), queue https://queue.fal.run, price via https://api.fal.ai/v1/models/pricing?endpoint_id=…, upload `@file:` inputs first, hosted MCP search_models / get_model_schema / get_pricing. Together video: seconds, fps 15–60 (24), steps 10–50, guidance 6–10 (avoid >12), negative_prompt, frame_images [{input_image, frame:'first'|'last'}]; Veo 3.0 8 s up to 1920×1080, Hailuo 02 10 s 25 fps. WaveSpeed CLI: `wavespeed models --type …` → `run <model> -h` → `--json`. HF MCP: space_search → dynamic_space(view_parameters) → invoke (bg removal, Whisper, FLUX.1-schnell). Vertex: Gemini video understanding (≈2 h default, 6 h low-res), Imagen 4, Lyria. Download results at once — signed URLs expire.
+- **أرقام / params:** fps 15–60; steps 10–50; guidance 6–10
+- **الدليل / proof:** `kosif-atlas/skills/1511-homie/3903-video` · `kosif-atlas/skills/3214-togetherai-skills/13597-together-video` · `kosif-atlas/skills/3396-wavespeed-cli/13932-wavespeed-cli/SKILL.md` · `kosif-atlas/skills/1514-huggingface-skills/3922-hf-mcp/SKILL.md`
+- **تثبيت / install:** `pip install fal-client together`
+
+### GEN-61 · خياطة الإطارات وسلاسل البداية/النهاية · Frame stitching & start/end-image chains for long AI video · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** بناء فيديو مولد طويل من مقاطع قصيرة يبدأ كل منها من آخر إطار في السابق، أو بنماذج تقبل إطار بداية ونهاية. — *Build long generated sequences from short chunks each starting on the previous last frame, or with models that accept start and end images.* · **متى / when:** مشهد مولد متصل أطول من حد المنصة / a continuous generated sequence beyond the platform limit
+- **كيف / how:** Chunks ~5 s (Veo 4/6/8): define start state, action, end state, camera move; last frame of n → first frame of n+1 (`ffmpeg -sseof -0.05 -i n.mp4 -frames:v 1 last.png`); repeat locks, light direction and Kelvin; keep the 180° rule, same fps/aspect; cut on motion or hard match; compare adjacent first/last frames (brightness, CCT, framing). Seam-holding models: seedance_2_0 (1080p, dive 8 s, connectors 5 s), kling3_0 (720p, --sound off), seedance_2_0_mini draft 720p; N=6 1080p chain ≈ $27. Photo-to-photo POV walk: real venue photos as first/last frames, MiniMax H3, 8 s 2K → 1080p, no cuts/fades (6 clips ≈ $5).
+- **أرقام / params:** ~5 s chunks; N=6 ≈ $27
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/continuity-protocols.md` · `100-superskills/skills/kosif-montage-motion/references/continuity-protocols.md` · `kosif-one/vendor/scroll-world/skills/scroll-world/references/pipeline.md` · `kosif-one/vendor/mcp-higgsfield-landing/PROMPTS.md:128`
+- **ترخيص / licence:** scroll-world MIT; mcp-higgsfield-landing has no licence — read only, never copy its prompts
+
+### GEN-62 · فيديو مفتوح الأوزان: Wan 2.x وLTX وAnimateDiff · Open-weights video: Wan 2.x, LTX-Video, AnimateDiff · 📄 موصوف / documented only
+- **ماذا / what:** نماذج فيديو تعمل ذاتيًا على جهاز بمعالج رسوميات. — *Self-hosted video models for a GPU host.* · **متى / when:** عندما يملك المستخدم GPU ويريد بلا اشتراك / when the user has a GPU and wants no subscription
+- **كيف / how:** Wan (ComfyUI): WanVideoModelLoader → TextEncode/ImageEncode → Sampler → VAEDecode → VHS_VideoCombine; 33–81 frames, 832×480, 20–30 steps, cfg 5–7, shift 5–8, brief negatives. LTX (diffusers): LTXPipeline / LTXImageToVideoPipeline / LTXConditionPipeline (keyframes), 30–50 steps (8–12 distilled), 121 frames @24 fps, enable_vae_tiling >768 px. AnimateDiff (SD1.5): context_length 16, overlap 4, mm_sd_v15_v2, 16 frames @8 fps = 2 s loops. This container has no GPU — diffusers installs, but do not promise a render here.
+- **أرقام / params:** Wan 832×480 33–81 f; LTX 121 f @24; AnimateDiff 16 f @8 fps
+- **الدليل / proof:** `kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design` · `kosif-atlas/skills/1514-huggingface-skills/3937-huggingface-lora-space-builder` · `kosif-atlas/skills/3214-togetherai-skills/13597-together-video`
+
+### GEN-63 · وصلة Higgsfield كمسار برومبت فقط · Higgsfield / paid clip route as prompt-only deliverable · 📄 موصوف / documented only
+- **ماذا / what:** بدون مفتاح وإذن تكلفة، المُسلَّم هو لوحة قصة وبرومبتات يشغلها المستخدم بنفسه — موسومة «لم يُولَّد». — *Without a key and cost approval the deliverable is a storyboard plus prompts the user runs — labelled 'not generated'.* · **متى / when:** كل طلب توليد فيديو في هذه الحاوية / every video-generation request in this container
+- **كيف / how:** Write shot cards + platform prompts (forges above), mark each 'prompt only — none has been rendered'; Fastify keeps HF_CREDENTIALS as a placeholder and requires explicit cost approval; the linked landing example has no verified licence and must not be copied.
+- **الدليل / proof:** `fastify-motion-bro/docs/ENGINE_ROUTER.md:6` · `fastify-motion-bro/docs/SOURCE_AUDIT.md:7` · `kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen`
+
+## 6. الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media
+
+موسيقى مولّدة، مقدم افتراضي، دبلجة، مجسمات ثلاثية، وجلب الأصول. / Generated music, avatars, dubbing, 3D models and asset resolving.
+
+### GEN-64 · توليد الموسيقى: Lyria وMusicGen · Music generation: Lyria & MusicGen · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** مقطع موسيقي أو أغنية بـ Gemini Lyria، أو MusicGen-small كبذرة ≤30 ث تُدار بتلاشٍ متقاطع، مع BPM حسب القطاع. — *A music clip or song with Gemini Lyria, or MusicGen-small as a ≤30 s seed crossfade-looped, with BPM by industry.* · **متى / when:** حين لا توجد موسيقى من المستخدم ولا مكتبة مرخصة / when the user gave no music and no licensed library fits
+- **كيف / how:** Basma: `POST v1beta/interactions` model lyria-3-clip-preview (30 s) or lyria-3.5 (full song); detects free-tier 'limit: 0' and falls back to the local composer. HyperFrames: `resolve --type bgm --intent …` → catalogue first, then `scripts/lyria-recipe.py --output --duration --prompt [--bpm]` detached + `wait-bgm.mjs`. BPM by industry: crypto 100, finance 92, creative 115, SaaS 108; feature cascade +10, demo loop −8. Then duck under voice and normalise (BEAT/SYNC families).
+- **أرقام / params:** BPM 92–115; seed ≤28–30 s
+- **الدليل / proof:** `app/public/js/10_studio.js:2554` · `kosif-one/vendor/hyperframes/skills/media-use/audio/references/bgm.md` · `kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/lyria-recipe.py`
+- **ترخيص / licence:** HyperFrames Apache-2.0; Lyria / MusicGen output per provider/model terms
+
+### GEN-65 · كلمات أغنية وموجز Suno/Udio · Song lyrics + Suno/Udio brief · 📄 موصوف / documented only
+- **ماذا / what:** بنية (كوبليه/لازمة/جسر) بتوقيتات، وزن وقافية عربية، مقام، BPM، آلات، صوت، مزاج — بلا أسماء فنانين أحياء. — *Structure with timings, Arabic metre and rhyme, maqam, BPM, instruments, vocal, mood — no living artist names.* · **متى / when:** أغنية لريل أو إعلان / a song for a reel or ad
+- **كيف / how:** Write lyrics.md + music-brief.md; include a short reel cut (hook + chorus); the user runs Suno/Udio and returns the track, which you then treat as untouched master audio.
+- **الدليل / proof:** `100-superskills/skills/music-song-brief/SKILL.md`
+
+### GEN-66 · أمر واحد لجلب أي وسائط · Media resolve: one verb for any asset · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** حلّ موسيقى أو مؤثر أو صورة أو أيقونة أو شعار أو صوت أو LUT إلى ملف محلي مجمّد وسجل، بسطر مخرجات واحد. — *Resolve bgm, sfx, image, icon, logo, voice, grade or LUT into a frozen local file plus ledger record, with one output line.* · **متى / when:** جلب الأصول في مشروع HyperFrames / fetching assets in a HyperFrames project
+- **كيف / how:** `npx hyperframes media-use resolve --type <bgm|sfx|image|icon|logo|voice|grade|lut|video> --intent '<description>' --project <dir> [--candidates] [--from file --adopt] [--json]`; catalogues 10k+ tracks, 75k+ vectors, 19 bundled SFX (catalogue access goes through the vendor service); on a catalogue miss images fall back to local FLUX via mflux (Apple Silicon) or Codex image_gen.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/media-use/SKILL.md` · `kosif-one/vendor/hyperframes/skills/media-use/references/resolve.md` · `kosif-one/vendor/hyperframes/skills/media-use/references/setup-providers.md`
+- **ترخيص / licence:** Apache-2.0
+
+### GEN-67 · مقدم افتراضي ودبلجة وترجمة فيديو وتكبير · Avatar presenter, dub, video translate & upscale · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** فيديو مقدم افتراضي من سكربت، صورة→مقطع ناطق، دبلجة للغة أخرى، وتكبير صور ×4. — *Avatar video from a script, photo → talking clip, dubbing, and ×4 image upscale.* · **متى / when:** متحدث بلا تصوير أو نسخة بلغة ثانية / a presenter without a shoot, or a second-language version
+- **كيف / how:** HeyGen CLI: `heygen video create`, `heygen lipsync`, `heygen video-translate`; hosted HyperFrames MCP connector renders without the local CLI; Adobe Quick Cut picks highlights into 15/45/90 s reels (run ×3, user picks). Upscale `realesrgan-ncnn-vulkan -i in.png -o out.png -s 4` (not installed). Always disclose synthetic humans/voices; never a real person without consent.
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/media-use/references/operations.md` · `kosif-one/vendor/hyperframes/docs/guides/mcp.mdx` · `kosif-atlas/skills/103-adobe-for-creativity/236-adobe-edit-quick-cut/SKILL.md`
+
+### GEN-68 · توليد مجسمات ثلاثية بالذكاء · Text/image → 3D model (Meshy, Tripo, Rodin, TRELLIS) · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** نص أو صورة إلى ملف GLB لاستخدامه في مشهد Three.js. — *Text or image to a GLB for a Three.js scene.* · **متى / when:** مجسم منتج أو شخصية لا يوجد له نموذج / a product or prop with no model
+- **كيف / how:** External paid APIs or MCPs (Meshy MCP, Tripo MCP); check commercial licence; then load the GLB in the 3D family's pipeline (three / @react-three/fiber are npm-installable here).
+- **الدليل / proof:** `kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing` · `100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md` · `kosif-studio/motion/references/tools-catalog-2.md`
+
+### GEN-69 · توجيه مزودي الإبداع وشبكة الموصلات · Creative provider routing & connector mesh · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** جدول توجيه يكشف نية صورة/فيديو/تصميم/عرض بالعربية أو الإنجليزية ويرتب الخدمات المتصلة حسب الأولوية والتكلفة. — *A routing table that detects image/video/design/presentation intent in Arabic or English and ranks connected services by priority and cost.* · **متى / when:** حين تكون موصلات المالك متاحة في الجلسة / when the owner's connectors are live in the session
+- **كيف / how:** routeLanes(task) regexes: image /(image|photo|poster|graphic|illustration|صورة|بوستر|رسم|جرافيك|تصوير)/, video /(video|animation|avatar|motion|reel|فيديو|تحريك|أفاتار|موشن)/, design, presentation. Priorities: Figma 100, Adobe Express 98, Adobe 90, Canva 88, Runway 88, Higgsfield 86, OpenArt 84, HeyGen 82, Gamma 82, Descript 80, Genspark 78. A registered app is not proof of a connection — check the session's tools first.
+- **الدليل / proof:** `kosif-earth-ci-fork/think-mcp/worker.js:156` · `kosif-earth-ci-fork/think-mcp/worker.js:812` · `kosif-one/tools/kosif-omni/.app.json` · `kosif-studio/motion/references/tools-catalog-2.md`
+
+### GEN-70 · خوادم المالك: KOSIF Think وJev والمنصة الخاصة · Owner MCP runtimes: KOSIF Think, Jev arbiter, private Workbench · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** خوادم MCP للمالك تنفذ مهام صور SceneSpec بإيصالات ثبات، وتختار مسارًا من مجموعة مغلقة، وتجمع مشاريع ثنائية الأبعاد من منصة خاصة. — *Owner MCP servers that run SceneSpec image jobs with stability receipts, pick a route from a closed set, and compile 2D projects from a private workbench.* · **متى / when:** عند ربط موصل KOSIF في الجلسة / when the KOSIF connector is attached
+- **كيف / how:** KOSIF Think (Cloudflare Worker): kosif_full_pro_start/execute/status, kosif_secure_image_execute, kosif_verify_evidence; tests in test/*.mjs. Jev: kosif_jev_decide (stability true). Workbench: `python3 kosif-studio/motion/site_bridge.py health|templates|plan|validate|compile|project --allow-remote` with KOSIF_SITE_TOKEN, exact HTTPS origin, no redirects, 1 MiB limit, 20 s timeout, credential echo refused, exclusive file creation.
+- **الدليل / proof:** `kosif-one/tools/kosif-think-live/HANDOFF-README.md` · `kosif-one/tools/kosif-think-live/test/scene-quality.test.mjs` · `kosif-studio/motion/site_bridge.py:1` · `kosif-studio/tests/bridge/test_site_bridge.py:1`
+
+### GEN-71 · البحث في مكتبة برومبتات المالك · Owner prompt-system corpus search · 📄 موصوف / documented only
+- **ماذا / what:** بحث BM25 واعٍ بالعربية في ملفات أنظمة البرومبت الخاصة بالمالك (Dragon V20، Blue Jewel، Cinema AI…). — *Arabic-aware BM25 search over the owner's own prompt-system files (Dragon V20, Blue Jewel, Cinema AI…).* · **متى / when:** حين يذكر المالك نظام برومبت باسمه / when the owner names one of his prompt systems
+- **كيف / how:** kosif_corpus_configure path=<folder> → kosif_corpus_index (repeat until done) → kosif_corpus_search query=… → kosif_corpus_read file offset length (200–30000 bytes; 8 hits, 3 per file). The corpus folder is not in any repo here — ask for it.
+- **الدليل / proof:** `kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/corpus.py` · `kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/source-index.md`
+
+## 7. الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look
+
+أقوى استخدام للتوليد في فيلم موشن: لقطة مولدة تحتها، ورسم/حركة/نص حقيقي فوقها — وواجهات «جارٍ التوليد» نفسها كمادة حركية. / The strongest use of generation in a motion film: a generated base underneath, real drawing/motion/type on top — and the 'Generating…' UI itself as motion material.
+
+### GEN-72 · الرسم فوق لقطات مولدة (Draw-over) · Draw-over on generated bases · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** استخدم مقاطع الذكاء الاصطناعي قاعدة حركة فقط؛ مظهر JS مكتوب يدويًا يعيد رسم كل إطار (طباعة حبرين نصف تون، خطوط، ارتجاف 12/ث، ملمس ورق) مع نص الكلمات حدثًا رئيسيًا عكس الموضوع. — *AI clips are motion bases only; a hand-written JS look redraws every frame (two-ink halftone, line work, 12/s boil, paper tooth) with lyric type as a main event opposite the subject.* · **متى / when:** فيديو موسيقي أو قصيدة بهوية مرسومة / a music video or poem with a drawn identity
+- **كيف / how:** shots.json per shot: at, dur, base frames, baseStart, focus 0..1, type big|quiet|none, side; film.js renderAt(t); headless Chrome photographs every frame. 480p/720p bases suffice under a draw-over. The generated base needs a key; the draw-over look itself is pure code you can write and run here on any footage (Playwright Chromium is installed).
+- **أرقام / params:** boil 12/s; bases 480–720p
+- **الدليل / proof:** `kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md` · `kosif-atlas/skills/1511-homie/3903-video/scripts/drawover/look.js`
+- **ترخيص / licence:** Apache-2.0 (skill) — write your own look, do not paste look.js
+
+### GEN-73 · توليد ثم تتبّع · Generate-then-trace · 💡 فكرة / idea
+- **ماذا / what:** ولّد لقطات أساس بنموذج فيديو ثم أعد رسمها حتميًا بـ JavaScript (canvas/SVG/three) لتصبح قابلة للتحرير. — *Generate base shots with a video model, then redraw them deterministically in JavaScript so they become editable.* · **متى / when:** حين يريد المستخدم حركة طبيعية لكن مخرجًا قابلًا للتعديل / natural motion but an editable result
+- **كيف / how:** AI clip as reference only → extract frames (`ffmpeg -i base.mp4 -vf fps=12 f_%04d.png`) → trace key poses as SVG paths or vectorise (`pip install vtracer`) → animate with GSAP/Remotion at the reference timing.
+- **الدليل / proof:** `kosif-studio/motion/references/x-trend-2026.md`
+- **تثبيت / install:** `pip install vtracer`
+
+### GEN-74 · واجهات «جارٍ التوليد» من HyperFrames · AI-UI motion blocks (streaming text, typed prompt, chat reveal…) · 📦 بأمر تثبيت / one install
+- **ماذا / what:** مكونات وكتل جاهزة تحرّك واجهات الذكاء الاصطناعي نفسها: نص يتدفق كإجابة، أمر يُكتب، ترتيب إجابة، محادثة، قناع رؤية آلية. — *Ready components and blocks that animate AI interfaces themselves: streamed answer text, typed prompt, answer ranking, chat exchanges, machine-vision masks.* · **متى / when:** إعلان منتج ذكاء اصطناعي أو شرح «كيف يعمل» / an AI product ad or 'how it works' explainer
+- **كيف / how:** `npx -y hyperframes@0.8.164 add <id>` → mount on a `class="clip"` div via data-composition-src + data-start/data-duration/data-track-index, overrides as JSON in data-variable-values; colours/fonts from the 18 theme tokens; `npx hyperframes preview` / `render`. Re-skin every chat UI to a neutral or the client's own brand — never ship a look-alike of a real assistant's product.
+
+| id | kind | what it does | key numbers |
+|---|---|---|---|
+| streaming-text | component | words arrive in uneven token bursts, land grey, ink to full colour | size 27 (18–64); tone dark-on-light / light-on-dark |
+| typed-prompt | component | prompt types in human cadence behind a caret, optional backspace-retype of last word | glyph `>`; cadence uniform/human; caret blink/solid |
+| segmentation-flood | component | translucent masks flood a subject in scanline steps, bracket + mono label per region, 2-frame HUD flicker | flood_at 0.8 s; accent green/blue/violet |
+| ai-answer-rank | block | question types, assistant lists 3 picks, re-ranks so the promoted brand slides in | 1080×1080, 9 s; #16a34a / #18181b / #fcfcfb |
+| ai-chat-reveal | block | keyboard rises, question sent, answer streams with thinking dot and bullets | 1080×1920, 19.3 s |
+| chatgpt-exchange | block | prompt, streamed answer, comparison table, scroll back (re-skin!) | 1080×1920, 14.9 s |
+| claude-exchange | block | prompt, search/reasoning steps, streamed answer with citations (re-skin!) | 1080×1920, 21.4 s; EB Garamond + Inter |
+
+- **الدليل / proof:** `kosif-one/vendor/hyperframes/registry/components/streaming-text/registry-item.json` · `kosif-one/vendor/hyperframes/registry/components/typed-prompt/typed-prompt.html` · `kosif-one/vendor/hyperframes/registry/blocks/ai-chat-reveal/ai-chat-reveal.html` · `kosif-one/vendor/hyperframes/registry/components/segmentation-flood/registry-item.json`
+- **تثبيت / install:** `npx -y hyperframes@0.8.164 add streaming-text`
+- **ترخيص / licence:** HyperFrames Apache-2.0; blocks run on GSAP 3.14.2 (GSAP standard 'no charge' licence)
+
+### GEN-75 · بطاقات توليد من الضبابية إلى الوضوح · Blur-to-sharp 'Generating…' tiles · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** صف من 4 بطاقات طولية تبدأ عناصر نائبة داكنة ثم تظهر الصورة من ضبابية 40px إلى 0 مع منحنى سطوع، متتابعة يسارًا ليمين والزر يقرأ «جارٍ التوليد…». — *A row of 4 portrait tiles starts as dark rounded placeholders, then reveals images from 40 px blur to 0 with a brightness ramp, staggered left to right while the button reads 'Generating…'.* · **متى / when:** أي عرض منتج توليد صور / any image-generation product demo
+- **كيف / how:** Build: 4 cards, radius 16 px, placeholder #13181d; per card `filter: blur(40px) brightness(0.4)` → `blur(0) brightness(1)` over 1 s, ease power2.out, stagger 300 ms (RTL: right to left for Arabic UI); button label pulses opacity 0.6↔1 at 1.2 s period until the last tile lands. Palette from the reference: #070709 ground, #f2f2f2 text, neo-grotesk 600 + italic serif emphasis word. Optional skeleton shimmer (see the cream demo): 110° white gradient at 25 % opacity sweeping 1.2 s.
+
+```js
+gsap.timeline()
+  .to('.tile img', { filter: 'blur(0px) brightness(1)', duration: 1,
+       ease: 'power2.out', stagger: { each: 0.3, from: isRTL ? 'end' : 'start' } })
+  .to('.btn-label', { opacity: 1, duration: 0.2 }, '<');
+// initial CSS: .tile img { filter: blur(40px) brightness(.4) }
+```
+- **أرقام / params:** blur 40→0 px / 1 s; stagger 300 ms
+- **الدليل / proof:** `style:pm-listudio-820c7b` · `kosif-tool/styles/pm-listudio-820c7b`
+
+### GEN-76 · صورة مولدة كمحتوى بطل داخل واجهة · AI photo as the 'result' inside a UI mock · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** ولّد مسبقًا صورة منتج متسقة مع الهوية واستخدمها كنتيجة داخل محاكاة الواجهة لتجعل العرض مقنعًا. — *Pre-generate an on-brand product photo and use it as the 'result' inside the UI mock so the demo is believable.* · **متى / when:** عرض منتج يتضمن «اطلب صورة فتظهر» / a demo where a request produces an image
+- **كيف / how:** Chat panel types the request → cursor clicks send → skeleton shimmer card → crossfade to the photo (300 ms) → camera glides to the email preview where the image drops in with a star sparkle. Reference: warm cream #f7f4ed / #fcfbf9, ink #1e1e1e, greens #4f7a52 / #8fc78f, Inter-like 500–600, 30 fps, 30 s. Photo: warm autumn grade, a fictional product mark (never a real brand).
+- **الدليل / proof:** `style:pm-justincooperman-e7bbc4` · `kosif-tool/styles/pm-justincooperman-e7bbc4`
+
+### GEN-77 · شريط استعراض أصول مولدة بإخراج فني واحد · AI-generated asset showreel with one art direction · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** مجموعة صور/مقاطع متسقة بتوجيه فني واحد (بنفسجي + أسود، ماكرو لامع) تُقطع على الإيقاع، وكلمات ضخمة حروفها مملوءة باللقطات. — *A coherent set of generated images/clips under one art direction (violet + black, glossy macro) cut on beats, with giant words whose letters are filled with the footage.* · **متى / when:** شريط منصة توليدية أو استعراض أعمال / a generative-platform reel or portfolio
+- **كيف / how:** Generate 6–12 assets at build time with fixed seeds and cache (no placeholders) — keyed step; then in code: terminal types the generate call over a dot grid → macro hero → giant uppercase words (VIDEO / AUDIO / 3D) with `background-clip: text` over the clip → tilted 3D thumbnail wall → counter to 1,000+ → 'prompt in. pixels out.' card. Reference palette #0c0b10 / #1f132f / #2e1c4e / #9a6cf0 / #5b2bd6 / #efe9f7, heavy wide grotesk + italic serif numbers, 60 fps, 15 s.
+- **أرقام / params:** 1 palette; fixed seeds; 6–12 assets
+- **الدليل / proof:** `style:pm-influencer-seo-ce8c33` · `kosif-tool/styles/pm-influencer-seo-ce8c33/BRIEF.md`
+
+### GEN-78 · عمل فني سائل قزحي · Iridescent liquid artwork (generated or shaded) · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** صورة سائل لؤلؤي (لافندر، سماوي، وردي، ذهبي، نعناعي) تُستخدم أصلًا بطلًا متسقًا — وبديلها شيدر يمكنك كتابته هنا بلا مفتاح. — *A pearlescent fluid image (lavender, cyan, blush, gold, mint) used as a consistent hero asset — with a shader alternative you can write here, keyless.* · **متى / when:** غلاف ألبوم أو بطاقة منتج فاخرة / an album cover or premium product card
+- **كيف / how:** Shader route (no key): domain-warped fbm — q = fbm(p), r = fbm(p + 4q + 0.15t), v = fbm(p + 4r) — mapped through a 5-stop thin-film ramp (lavender → cyan → blush → gold → mint) with a fresnel-like rim = pow(1 − |v − 0.5|·2, 3) added as white highlight; animate t slowly (0.05–0.1 /s). Reference stage: near-black #0d0e10 rounded rectangle over green gradient, accent #1ed760, 30 fps, 18 s.
+- **أرقام / params:** 5-colour thin-film ramp; t 0.05–0.1/s
+- **الدليل / proof:** `style:pm-brainextends-e19ac3` · `kosif-tool/styles/pm-brainextends-e19ac3`
+
+### GEN-79 · لقطة صلصال مولدة · Claymation AI shot · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** مقاطع بمظهر صلصال/ستوب موشن (رجل صلصال يغني، سيارات لعب، غيوم قطن) لفيديو موسيقي. — *Clay/stop-motion-look clips (a singing clay man, toy cars, cotton clouds) for a music video.* · **متى / when:** فيديو موسيقي مرح / a playful music video
+- **كيف / how:** Per 7.5 s clip: plasticine stop-motion, thumbprints, soft studio softbox, saturated sets (#3aa3d8 sky, #d9bd23 yellow, #b66176, #e23a2a red stage); 24 fps; cut on the song's bar lines; add a 12 fps step (`ffmpeg -vf fps=12,fps=24`) for stop-motion cadence. Generated footage needs a key; disclose it as AI.
+- **أرقام / params:** 7.5 s clips; 24 fps; 12 fps step
+- **الدليل / proof:** `style:pm-davidshulmanfl-371638` · `kosif-tool/styles/pm-davidshulmanfl-371638`
+
+### GEN-80 · خلفية لوحة زيتية مولدة بحركة كن برنز · Painterly AI backdrop with slow Ken Burns · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** لوحات رسم زيتية خضراء (يد روبوت، فرسان) خلف تعليق نصي، بتحريك كن برنز بطيء ونص أسفل اليسار. — *Green painterly illustrations (robot hand, knights) behind captions with a slow Ken Burns move and text bottom-left.* · **متى / when:** فصول شرح طويلة تحتاج تنوعًا بصريًا / long explainer chapters needing visual variety
+- **كيف / how:** Generate textless plates in one style lock (keyed) or paint them in code; Ken Burns: scale 1.00 → 1.06 and 1–2 % pan over the whole hold, linear or sine.inOut; caption bottom-left (bottom-right for Arabic) at 80 px safe area. Reference palette #0a0a0a / #f4f5ef / #3ee08a / #538843 / #132216, neutral grotesk 600, 30 fps.
+- **أرقام / params:** scale 1.00→1.06; 1–2 % pan
+- **الدليل / proof:** `style:pm-imthatcarlos-e04bfe` · `kosif-tool/styles/pm-imthatcarlos-e04bfe`
+
+### GEN-81 · كولاج مقصوص وبوابات زووم لا نهائي · Cutout collage portals for infinite zoom (generated or sourced cutouts) · 👁 شوهد في فيديو / seen in a reference video
+- **ماذا / what:** زووم أسّي بسرعة ثابتة عبر عوالم كولاج: كل جسم مقصوص بوابة يحمل زجاجه العالم التالي، والطبقات بباراللاكس. — *A constant-speed exponential zoom through collage worlds: each cutout object is a portal whose glass already holds the next world, layers in parallax.* · **متى / when:** افتتاحية سريالية أو انتقال بين فصول / a surreal opener or chapter transition
+- **كيف / how:** Cutouts from generated (or public-domain) images: generate the character/object on pure green #00B140, key it per frame (`ffmpeg -vf chromakey=0x00B140:0.12:0.05`) or `rembg`, ping-pong a short loop for idle motion. Zoom: scale = base^t (exponential), each world nested at the portal's centre at 1/base scale so the cut is invisible; parallax depth 0.6–1.0 per layer. Reference palette #221d17 / #332b22 / #6b746d / #a09b89 / #c4c2b3, no on-screen text, 30 fps, 10 s.
+- **أرقام / params:** key #00B140; exponential zoom; parallax 0.6–1.0
+- **الدليل / proof:** `style:pm-koldo2k-5cff87` · `kosif-tool/styles/pm-koldo2k-5cff87`
+
+### GEN-82 · فيلم موشن بستوري بورد يكتب Claude كوده · Storyboard-first motion film with Claude-written, sandboxed scene code · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** Claude يخطط 3–6 مشاهد مجموعها طول الفيلم بالضبط، ثم يكتب لكل مشهد دالة Canvas نقية لكل إطار تُترجم في نطاق مقيد وتُختبر وتُصلح ذاتيًا. — *Claude plans 3–6 scenes summing exactly to the film length, then writes a pure per-frame Canvas function per scene, compiled in a restricted scope, test-rendered and auto-repaired.* · **متى / when:** داخل تطبيق بسمة بمفتاح؛ والنمط نفسه تطبقه هنا مباشرة / in the basma app with a key; the pattern itself you apply here directly
+- **كيف / how:** genFilm(brief, dur, cat) → JSON {title, palette, scenes[{name,dur,category,brief}], voiceover, images[≤3]}; durations rescaled to D (2–120 s); 11 categories: type, ui, phone, charts, diagrams, shapes, particles, characters, photos, music (+1). Scene contract `(ctx,t,d,W,H,P,u)` at 30 fps; compileScene shadows window/document/fetch/localStorage/XMLHttpRequest/WebSocket/navigator/Function, 'use strict', ≤300 000 loop iterations per frame; test renders at t = 0, 0.3d, 0.6d, 0.99d on 360×640. Pasted gallery prompts (≤6000 chars) are adapted to Canvas scenes with Arabic text; templates can be studied (cuts, rhythm, palette measured) and 2–4 mixed.
+- **أرقام / params:** 3–6 scenes; 30 fps; 300000 iters/frame; tests at 0/.3/.6/.99
+- **الدليل / proof:** `app/public/js/00_editor.js:530` · `app/public/js/00_editor.js:2024` · `app/public/js/00_editor.js:2007` · `app/public/js/10_studio.js:4687`
+
+## 8. الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics
+
+الانضباط الذي يمنع الصرف المزدوج، والانجراف البصري، والتزييف. / The discipline that prevents double spend, visual drift and fakery.
+
+### GEN-83 · فرز: توليد أم تركيب · Generate-or-compose triage · 📄 موصوف / documented only
+- **ماذا / what:** معظم إطارات الهوية تركيب لا توليد: النص على لون مسطح والصور الموجودة والمتجهات تُبنى بالكود؛ يُولَّد فقط الخلفيات والملمس والتجريد والمشاهد المستحيلة. — *Most brand frames are composition: text on flat colour, existing photos and vectors are built in code; generate only backgrounds, textures, abstractions and impossible scenes.* · **متى / when:** أول خطوة قبل أي استدعاء مدفوع / first step before any paid call
+- **كيف / how:** Table: asset | type | source (compose / use-existing / photograph / generate) | decision; report how many generations were eliminated. Generated images must reserve a clean area for text. Typography always in HTML/SVG — critical for Arabic.
+- **الدليل / proof:** `kosif-atlas/skills/2976-pwdev-social-media/12582-cost-control` · `kosif-atlas/skills/2976-pwdev-social-media/12583-creative-concept/SKILL.md` · `kosif-atlas/skills/2976-pwdev-social-media/12588-image-gen`
+
+### GEN-84 · النص فوق الصورة لا داخلها · Overlay text, never bake it · 📄 موصوف / documented only
+- **ماذا / what:** النماذج تشوّه الحروف (خصوصًا العربية)؛ كل نص طبقة حية بتشكيل سليم، والهوية بالهيكس الدقيق فوق اللقطة. — *Models garble letters (especially Arabic); every text is a live, correctly shaped layer, and the brand's exact hex sits on top of the plate.* · **متى / when:** كل صورة أو مقطع مولد / every generated still or clip
+- **كيف / how:** Generate textless plates ('clean, text-free surfaces'); set Arabic in the HTML/Remotion layer with proper shaping (ARAB family); brand-conditioning = 3–10 on-brand reference images + post-overlay of exact hex and real type, not a pinned seed.
+- **أرقام / params:** 3–10 refs
+- **الدليل / proof:** `kosif-atlas/skills/2306-generative-web-media/8850-brand-conditioned-generation` · `fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:121-129`
+
+### GEN-85 · المراسي الأربع للثبات البصري · Four anchors of visual consistency · 📄 موصوف / documented only
+- **ماذا / what:** المولدات بلا ذاكرة؛ الثبات من العملية: نموذج ونسخة ثابتان، كتلة أساس ثابتة + كتلة متغيرة، بذور مسجلة، وصورة مرجع أسلوب. — *Generators are stateless; consistency comes from process: one fixed model/version, fixed base block + variable block, logged seeds, an approved style reference.* · **متى / when:** أي حملة أو سلسلة صور / any campaign or series
+- **كيف / how:** Manifest JSON per asset {model, version, seed, base, variable, file}; render a contact sheet as an HTML grid and review side by side on palette, light direction/temperature, framing distance, texture/grain, era. One outlier → regenerate it; ≥3 → fix the base and regenerate all; after 3 failed rounds generate only backgrounds and compose the rest.
+- **أرقام / params:** 1 outlier → regen; ≥3 → fix base
+- **الدليل / proof:** `kosif-atlas/skills/2976-pwdev-social-media/12595-visual-consistency/SKILL.md` · `kosif-atlas/skills/2306-generative-web-media/8850-brand-conditioned-generation`
+
+### GEN-86 · انضباط ميزانية التوليد المدفوع · Paid-generation budget discipline · 🟢 جاهز / ready
+- **ماذا / what:** كل توليد مدفوع مُسعَّر ومسقوف ومُجرَّب جافًا ومرسل مرة واحدة ومُوصَّل عند القبول وقابل للاستئناف فلا يُدفع مرتين. — *Every paid generation is priced, capped, dry-run, sent once, receipted at acceptance and resumable, so nothing is paid twice.* · **متى / when:** قبل كل استدعاء يكلف مالًا / before every call that costs money
+- **كيف / how:** Quote → user-approved cap → dry run → single call with --yes → receipt line → on re-run poll the stored request id. Riskiest shot first as a pilot. 2 variations in round 1; change one axis per round (subject, composition, light, style or palette); yield <30 % = weak prompt; >3 rounds on one asset = switch to composition. Estimate in calls with user-supplied unit prices, never invented currency; a budget log exits non-zero over the cap.
+- **أرقام / params:** 2 variations; <30 % yield; >3 rounds alarm
+- **الدليل / proof:** `kosif-atlas/skills/1511-homie/3903-video` · `kosif-atlas/skills/1511-homie/3889-art` · `kosif-atlas/skills/2976-pwdev-social-media/12582-cost-control` · `kosif-atlas/skills/2306-generative-web-media/8852-generation-budget-guard/SKILL.md`
+- **ترخيص / licence:** Apache-2.0 / MIT
+
+### GEN-87 · الترخيص أولًا وFirefly المحمي قانونيًا · Licence-first model choice & indemnified Firefly · 📄 موصوف / documented only
+- **ماذا / what:** قرّر الاستخدام التجاري قبل الجمال: أوزان FLUX.1-dev غير تجارية؛ والعميل الذي يحتاج تعويضًا قانونيًا يذهب إلى Firefly. — *Decide commercial use before aesthetics: FLUX.1-dev weights are non-commercial; a client needing IP indemnity goes to Firefly.* · **متى / when:** بداية كل مشروع عميل / the start of every client job
+- **كيف / how:** Tag every brief commercial / non-commercial / override; set indemnity_required for resold assets; audit media folders for non-commercial outputs before delivery. Firefly: OAuth server-to-server with enterprise entitlement, x-api-key + bearer, follow the returned statusUrl with jittered polling and a hard time limit, keep content-credential metadata.
+- **الدليل / proof:** `kosif-atlas/skills/2306-generative-web-media/8853-license-and-provenance-ledger` · `kosif-atlas/skills/2248-brand-identity-studio/8558-brand-legal-and-licensing` · `kosif-atlas/skills/1819-adobe-pack/4892-adobe-core-workflow-a`
+
+### GEN-88 · الإفصاح عن الوسائط المصطنعة وحدود التوليد · Synthetic-media disclosure, provenance & ethical limits · 📄 موصوف / documented only
+- **ماذا / what:** لا وجوه أو أصوات أشخاص حقيقيين، لا «بأسلوب» فنان حي، لا شعارات أو شخصيات محمية، لا مشاهد وثائقية مزيفة؛ وسم المولّد وتوثيق مصدره. — *No real people's faces or voices, no living artist's style, no logos or copyrighted characters, no fake documentary scenes; label and track generated media.* · **متى / when:** كل مخرج فيه لقطة مولدة / every deliverable containing a generated shot
+- **كيف / how:** Keep a manifest of which shots are generated; add an on-screen disclosure line or end-card note when generated humans/voices appear; EU audiences: C2PA signing (some generators add SynthID); UGC-style ads still need ad disclosure; never present generated footage as a real recording; for public-sector pieces avoid AI depictions of services, staff or beneficiaries; describe qualities instead of names.
+- **الدليل / proof:** `kosif-atlas/skills/1520-digital-marketing-pro/3975-ad-creative/SKILL.md` · `kosif-atlas/skills/1511-homie/3903-video/references/HONESTY.md` · `kosif-atlas/skills/2976-pwdev-social-media/12588-image-gen`
+
+### GEN-89 · التمييز بين البرومبت والوسائط · Prompt ≠ media honesty rule · 🟢 جاهز / ready
+- **ماذا / what:** البرومبت ليس صورة، والصورة ليست فيديو مُرندرًا، والإشارة الصوتية ليست ملفًا صوتيًا؛ كل مخرج نصي يقول «لم يُرندر شيء». — *A prompt is not a still, a still is not a rendered video, an SFX cue is not an audio file; text outputs must say 'none has been rendered'.* · **متى / when:** كل تسليم برومبتات / every prompt deliverable
+- **كيف / how:** Profiles end with explicit disclaimers; the compiled editorial storyboard carries a caveat field. In your own replies: name exactly what exists on disk (path + ffprobe numbers) versus what is only a prompt.
+- **الدليل / proof:** `fastify-motion-bro/docs/PRODUCTION-GATES.md:8` · `fastify-motion-bro/scripts/viral-editorial.mjs:91` · `fastify-motion-bro/scripts/profiles/food-flow.mjs:98`
+
+### GEN-90 · خدمة الصور المصغرة المدفوعة · Thumbnail generation via paid MCP · 🔑 مفتاح أو خدمة / needs key or paid service
+- **ماذا / what:** استوديو صور مصغرة مستضاف: بحث اتجاهات، تحليل إطارات، نص الغلاف، محاكاة نسبة النقر، توليد ونشر. — *A hosted thumbnail studio: trend research, frame analysis, overlay text options, CTR simulation, generation and publishing.* · **متى / when:** غلاف يوتيوب حين يملك المستخدم الخدمة / a YouTube cover when the user has the service
+- **كيف / how:** Personal access token + paid plan; poll jobs every ~3 s (70–100 s typical); seeds per image ≈ Gemini 7, OpenAI 11, Grok 3; YouTube allows ~100 custom thumbnail uploads per channel per 24 h. For Arabic covers prefer local HTML composition (`kmotion poster` / frame grab + type).
+- **أرقام / params:** poll 3 s; 70–100 s/job
+- **الدليل / proof:** `kosif-atlas/skills/932-vidseeds/2185-vidseeds-thumbnails/SKILL.md`
+
+## توليفات قوية / power combos
+
+1. **GEN-20 + GEN-84 + ARAB + SYNC**: ريل كينتك عربي مولّد. تطلب من Flow/Veo لقطات نظيفة بلا نص، ثم تكتب الكلمات العربية بتشكيل سليم فوقها على توقيت `words.json`. / Arabic kinetic reel: clean plates from Flow/Veo, real shaped Arabic type on top, timed to `words.json`.
+2. **GEN-15 + GEN-10 + COLOR**: «اعمل لي زي ده». تفكّك الفيلم المرجعي إلى إيقاعات وألوان، ثم تكتب برومبت Omni وبرومبتات تسع منصات بالهيكس المقاس، ثم تلوّن الناتج فعليًا في المونتاج. / 'Make one like this': breakdown → Omni + 9-platform prompts carrying measured hex → real grade in post.
+3. **GEN-72 + GEN-57 + BEAT + TEX**: فيديو موسيقي مرسوم. لقطة أداء من Seedance على شريحة الأغنية بدقة 480p، ومظهر حبرين ونصف تون بارتجاف 12/ث يُعاد رسمه في كل إطار، والقطع على الضربات. / Drawn music video: a 480p Seedance performance base on the song slice, a two-ink halftone look with 12/s boil redrawn every frame, cuts on beats.
+4. **GEN-50 + GEN-38 + GEN-61 + CAM**: مشهد مولّد طويل ومتصل. تُعتمد الصورة المفتاحية بتعديل رخيص، ويبدأ كل مقطع من آخر إطار في سابقه، وحركة كاميرا واحدة لكل مقطع. / Long continuous generated sequence: approved keyframe via cheap edit, last-frame chaining, one camera move per chunk.
+5. **GEN-42 + GEN-43 + BRAND + TYPE**: صور قطاعات بالهوية. كائن معدني وكريستال على #0B1F3A، مع ثلث فارغ يحمل عنوانًا حيًّا، ثم قلب أفقي لإفساح مساحة RTL. / On-brand sector stills: metal + crystal on #0B1F3A, an empty third for live type, hflip for RTL space.
+6. **GEN-74 + GEN-75 + GEN-76 + UI**: إعلان منتج ذكاء اصطناعي. أمر يُكتب، ثم نص يتدفق كإجابة، ثم بطاقات تتضح من ضبابية 40px، ثم صورة البطل داخل الواجهة. كل ذلك يُعاد تلوينه لهوية العميل. / AI product ad: typed prompt → streamed answer → 40 px blur-to-sharp tiles → hero image in the UI, all re-skinned to the client brand.
+7. **GEN-33 + GEN-78 + GLOW**: بطل قزحي بلا أي مفتاح. شيدر fbm بتدرج الغشاء الرقيق مع توهج حافة، وكله يُرسم بالكود هنا. / Keyless iridescent hero: fbm thin-film shader with a rim bloom, all code, rendered here.
+8. **GEN-64 + GEN-58 + VOICE + BEAT**: شرح ناطق متعدد المقاطع. صوت واحد ثابت عبر المرجع الصوتي، وموسيقى Lyria بـ BPM القطاع مخفوضة تحت الصوت. / Spoken multi-segment explainer: one voice locked by reference audio, a Lyria bed at the industry BPM ducked under it.
+9. **GEN-81 + GEN-45 + TRANS + 3D**: افتتاحية زووم لا نهائي. قصاصات من rembg تُستخدم بوابات متداخلة بزووم أُسّي وباراللاكس عمق 0.6–1.0. / Infinite-zoom opener: rembg cutouts as nested portals, exponential zoom, 0.6–1.0 parallax depth.
+10. **GEN-83 + GEN-86 + GEN-89 + QA**: تسليم صادق. جدول فرز يحذف التوليد غير اللازم، وسقف ميزانية بإيصال، ثم بيان دقيق لما وُلّد فعلًا (ffprobe) وما بقي برومبتًا. / Honest delivery: triage table, capped receipted spend, an exact statement of what was generated (ffprobe) vs what is only a prompt.
+
+## أخطاء ممنوعة / never do
+
+1. **لا تدّعِ أنك ولّدت صورة أو فيديو بلا مفتاح / Never claim a still or clip was generated without a key**. لا يوجد أي مفتاح توليد في هذه الحاوية. سلّم البرومبت واكتب عليه «لم يُرندر شيء» (GEN-89).
+2. **لا تخبز النص، والعربي خصوصًا، داخل الصورة المولدة / Never bake text, above all Arabic, into a generated image**. النماذج تشوّه الحروف وتكسر اتصالها، فاجعل النص طبقة حية (GEN-84).
+3. **لا تكرر التوليد حتى «يعجبك» / Never loop generations until something looks good**. هذا صرف مزدوج بلا سقف. تنويعتان في الجولة الأولى، وغيّر محورًا واحدًا كل جولة، وبعد 3 جولات انتقل إلى التركيب (GEN-86).
+4. **لا وجوه أو أصوات أشخاص حقيقيين، ولا «بأسلوب» فنان حي، ولا شعارات حقيقية / No real people's faces or voices, no living artist's style, no real logos**. هذا تزييف وخطر قانوني (GEN-88).
+5. **لا FLUX.1-dev ولا أي أوزان غير تجارية في عمل عميل / No FLUX.1-dev or other non-commercial weights on client work**. افحص الترخيص قبل أن تنظر إلى الجمال (GEN-87).
+6. **لا كلمات مبالغة (4K، masterpiece، 8K، trending) / No hype words**. تضيف تشويشًا ولا تضيف جودة. استبدلها بعدسة وكلفن واتجاه ضوء (GEN-02).
+7. **لا برومبت سلبي في Runway، ولا قائمة نفي طويلة في Flux أو Gemini / No negatives for Runway, no long negative list for Flux or Gemini**. Runway يعكس النفي أو يتجاهله، وFlux لا يملك حقلًا للنفي أصلًا. اكتب الحالة الإيجابية بدلًا منه (GEN-03).
+8. **لا تغيّر المشهد داخل مقطع واحد، ولا أكثر من حركة كاميرا للقطة / No scene change inside a clip, no more than one camera move per shot**. النموذج ينجرف والفحص يرفضه (GEN-07، GEN-13).
+9. **لا تعِد وصف ما في الصور المرجعية في Seedance R2V / Never re-describe what the references show in Seedance R2V**. التكرار يسبب انجراف الهوية (GEN-56).
+10. **لا تترك الموسيقى المولدة أو صوت النموذج يحل محل صوت المستخدم / Never let a generated music bed or model audio replace the user's audio**. أضف «No music score. No subtitles.»، واترك الماستر كما هو (GEN-08).
+11. **لا تنسخ برومبتات طرف ثالث، ولا look.js، ولا برومبتات صفحة الهبوط بلا ترخيص / Don't copy third-party prompts, look.js, or the unlicensed landing page's prompts**. اكتب برومبتك بنفسك واذكر المصدر برابط (GEN-61، GEN-72).
+12. **لا تطلق واجهة محادثة تشبه منتجًا حقيقيًا / Never ship a chat UI that imitates a real assistant's product**. أعد تلوين كتل chatgpt/claude-exchange بهوية محايدة أو بهوية العميل (GEN-74).
+
+## أقوى 5 حركات توقيع / 5 signature moves
+
+1. **GEN-10 + GEN-12 + GEN-13**: مواصفة واحدة تخرج منها صيغ ست منصات للصور وسبع للفيديو وتسع في المصنع. كلها شغّلتها هنا، وتعمل بلا مفتاح، وتجيب فورًا عن طلب «اكتب لي برومبت». / One spec → 6 image + 7 video + 9 forge formats, all proven here, keyless; the instant answer to any 'write me a prompt'.
+2. **GEN-20 + GEN-84**: لقطة مولدة نظيفة وفوقها نص عربي حي. أهم قاعدة تجمع التوليد بالموشن العربي، وهي مثبتة باختبارات Fastify. / Clean generated plate + live Arabic type; the key rule joining generation and Arabic motion, proven by the Fastify tests.
+3. **GEN-15**: فيديو مرجعي يتحول إلى تفكيك ثم برومبت Omni بطول 10 ثوانٍ، ومثبت هنا. هكذا تحوّل «زي ده» إلى خطة مقاسة. / Reference video → breakdown → 10 s Omni prompt, proven here; turns 'like this' into a measured plan.
+4. **GEN-72**: الرسم فوق قاعدة مولدة. الذكاء الاصطناعي يعطي الحركة، وكودك يعطي الهوية، فيخرج فيلم لا يشبه أي مخرجات ذكاء اصطناعي عامة. / Draw-over: AI gives motion, your code gives identity; a film that never looks like generic AI output.
+5. **GEN-75 + GEN-74**: واجهات «جارٍ التوليد» المتحركة، من الضبابية إلى الوضوح والنص المتدفق. شوهدت في أفلام مرجعية وتُبنى بتثبيت واحد، وهي المادة الحركية لأي إعلان منتج ذكاء اصطناعي. / Animated 'Generating…' UI (blur-to-sharp, streamed text), seen in reference films and one install away; the motion material of every AI-product ad.

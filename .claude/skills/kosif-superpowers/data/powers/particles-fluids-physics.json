@@ -1,0 +1,4684 @@
+[
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بحر عاكس",
+  "name_en": "Reflective sea",
+  "status": "proven",
+  "what": "three.js Water plane with generated wave normals and sun reflection.",
+  "how": "K3.makeSea({size, res, color, distortion, waveSize, level}); per frame water.material.uniforms.time / sunDirection / sunColor.",
+  "params": "size 30000; res 768; color #0e4a63; distortion 2.4; waveSize 3",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:245",
+   "100-superskills/skills/kosif-montage-motion/templates/scene3d/src/main.js:25",
+   "kosif-studio/motion/kit/three-kit.js:245"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-01"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سحب حجمية",
+  "name_en": "Raymarched volumetric cloud slab",
+  "status": "proven",
+  "what": "A box of fbm-density clouds raymarched with self-shadowing and a powder term; cover and darkness animate.",
+  "how": "K3.makeCloudSlab({size, center}); userData.set(t, cover, dark, sunDir, camPos, sunCol, skyCol).",
+  "params": "size [7000,520,4200] centre [0,1240,-900]; 36 view steps; 3 light steps x70; sky #9fb6cc; sun #fff2d9",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:273",
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:273"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-02"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نفث النار بطبقات",
+  "name_en": "Layered fire breath",
+  "status": "proven",
+  "what": "A fire jet made of three nested filled paths (outer red, mid orange, yellow core), a blurred white-hot core, 12 flame tongues along the stream and a radial splash where it hits.",
+  "how": "Quadratic-curve outlines outer/mid/core; extra blur20 copy under outer; loop i<12 placing small flame shapes along a line (980-600t, 380+340t); splash fan every 20 degrees from -80 to 80.",
+  "params": "outer #dc2626 (+#f97316 blur20 .85), mid #f97316, core #fde68a, hot #fffbeb blur8 .8, tongues #fb923c .8",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/duck-vs-dragon/duck_dragon.py:165-187",
+   "kosif-studio/scenes/dragon_girl.py:108",
+   "kosif-studio/scenes/dragon_girl.py:261",
+   "kosif-studio/scenes/whale_dragon.py:247"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-03"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل حراري يُلطَّخ بالإصبع",
+  "name_en": "Thermal finger-trail shader field",
+  "status": "proven",
+  "what": "A heat-camera blob of domain-warped noise mapped through a seven-stop heat ramp; a pointer trail drags the field like wet paint and heals; a press sends a ripple ring.",
+  "how": "Single full-screen fragment shader (WebGL1), trail of points with velocity+age passed as uniforms; displacement = sum(velocity*smoothstep(radius)*age)*smudge. In video, feed a scripted Catmull-Rom path as the 'finger'. Reference HTML is self-contained except DialKit CDN panel.",
+  "params": "fbm 5 octaves, warp-the-warp; ramp stops 0/.12/.30/.45/.60/.78/1; heat cap 0.75; smudge 9 (>14 tears); radius 0.17; 24 points; life 1.6s; melt 6s; flow 0.26; blob 0.37; ripple 0.18/bloom 0.55/0.9s; rim 0.6/halo 0.45; DPR cap 2 disc, 1.25 full-bleed",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail",
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/references/thermal-finger-trail.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-04"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سحب لوني بأثر الإصبع",
+  "name_en": "Velocity smear trail",
+  "status": "proven",
+  "what": "Field sampled from where a pointer came from, so colour is dragged like wet paint and heals.",
+  "how": "24 trail points (pos+velocity+age, life 1.6s) as uniforms; disp+=vel*smoothstep(r,0,d)*age; uv+=disp*9. Head eases 30%/frame; new point every 0.01 field units. For video, script a fake path.",
+  "params": "smudge 9 (>14 tears), radius 0.17",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-05"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مؤثرات بكسل تتلاشى بدرجات اللوحة",
+  "name_en": "Pixel VFX via palette-step fades",
+  "status": "proven",
+  "what": "Sparks, slashes, explosions and spells that grow, burst and fade by stepping down a bright-to-dark ramp, never alpha.",
+  "how": "Procedural draw(frame) in Pillow; hold the impact frame; frames fx0..fxN with fps or durations_ms.",
+  "params": "ramp 4-6 colors; hold impact 2-3 frames",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2460-pixel-art/9530-vfx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-06"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات ثلج/جمر على المعالج الرسومي",
+  "name_en": "GPU snow / ember particles",
+  "status": "proven",
+  "what": "Point-sprite particles that fall, sway and fade with depth, additively blended over the shards (snow for cobalt, warm embers for ledger).",
+  "how": "Vertex shader: y = mod(y - t*(.25+size*.15),16)-8; x += sin(t*.6+z*3.1+size*7)*.25; pointSize=(1.5+3.5*size)*dpr*clamp(10/d,.2,2.5); alpha clamp(1.2-d/22,.05,.8). Fragment: round sprite discard r>.25, smoothstep falloff. Blend ONE,ONE, depthMask false.",
+  "params": "160 particles phone / 360 desktop; field 24x16x(2..20)",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/crystal-world.js:65",
+   "kosif-earth-ci-fork/ui/art/crystal-world.js:149"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-07"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر بطبقات متوازية العمق",
+  "name_en": "Layered parallax rain",
+  "status": "proven",
+  "what": "Two rain layers (far thin, near thick and fast) are slanted streaks with wrap-around that shift with the camera track for depth.",
+  "how": "far: 152 drops, speed 340–600 px/s, length 11–25 px, #86b7c9 .8 px α .13, parallax .03; near: 32 drops, 630 px/s, 37 px, #95d6df 1.3 px α .17, parallax .1; x drifts −95 px/s.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:108"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-08"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تموجات وبقع رذاذ وانعكاسات مبللة",
+  "name_en": "Puddle ripples, splashes and wet reflections",
+  "status": "proven",
+  "what": "A wet street: broken coloured horizontal reflection strokes, expanding elliptical ripples, splash droplets on landing paws and a flattened dark reflection of the hero.",
+  "how": "85 jittered reflection lines (rose inside x 760–1110 else cyan, α .025–.125); 20 ripples rx 5→29, ry 1→5, period 1/0.65 s; 6 splash events × 11 droplets: x+vx·a, y + vy·a + 145a², life .63 s; hero reflection scale(1, −0.25) opacity .085.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:109",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:122"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-09"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جو الشرر والدخان والتعتيم",
+  "name_en": "Embers, smoke and vignette atmosphere",
+  "status": "proven",
+  "what": "Atmospheric finish for a still: 110 seeded embers in four fire colours, 9 large blurred smoke ellipses and a radial edge darkening.",
+  "how": "Seeded random positions; circles r in {1.2,1.6,2.2,3,3.8}; smoke ellipses rx 120-260 ry 18-40 opacity .16 blur20; vignette radialGradient from .55 (transparent) to 1 (black .6).",
+  "params": "embers #fde047 #fbbf24 #fb923c #f97316 op .55-1; vignette r=950",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/duck-vs-dragon/duck_dragon.py:230-239"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-10"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار جزيئات بعشوائية مزروعة",
+  "name_en": "Seeded canvas particle burst",
+  "status": "proven",
+  "what": "160 seeded particles explode from centre with outExpo distance, sine wobble, slight gravity and inOutCubic fade; positions are a pure function of t.",
+  "how": "rng(20261015); per particle angle, speed 420-1320 px, size 4-14, 70% #7ee8d2 / 30% #ffb86b; window 7.45-10.4 s",
+  "params": "y stretch 1.4, gravity +120 px over life, wobble 12 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/starters/html-canvas/index.html:118"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-11"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بخار ثنائي الأبعاد",
+  "name_en": "2D vapour / steam puffs",
+  "status": "ready",
+  "what": "Rising, growing, fading SVG circles for steam, smoke or breath.",
+  "how": "MOTION.vapour(tl, svgGroup, {n, r, rise, height, drift, spread, color, at, dur, x0, x1, y0, seed}).",
+  "params": "n 70; r 18 px; rise 2.6 s; height 320 px; drift 120 px; scale .5->1.4; color rgba(255,255,255,.55)",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:283",
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:283"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-12"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تموج قماش وأعلام",
+  "name_en": "Cloth / flag wave",
+  "status": "ready",
+  "what": "Travelling wave anchored at one edge for flags, banners and signs.",
+  "how": "K3.addWave(material, {amp, freq, wavelength, span, time}).",
+  "params": "amp .08; freq 2.4; wavelength .9; span 1.0",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:977",
+   "kosif-studio/motion/kit/three-kit.js:977"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-13"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بخار ومطر بالجسيمات",
+  "name_en": "GPU vapour and rain points",
+  "status": "ready",
+  "what": "Seeded point sprites with uniforms uT/uOn for rising vapour and falling rain in 3D.",
+  "how": "makeVapour({n, region, y, seed}); makeRain({n, region, seed}).",
+  "params": "vapour n 1400, rain n 9000",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:325",
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:343",
+   "kosif-studio/motion/kit/three-kit.js:325"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-14"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شرر مرتبط بالضربات",
+  "name_en": "Event sparks on the tape clock",
+  "status": "ready",
+  "what": "Sparks thrown at events (kicks) that hang in the air when the track stops.",
+  "how": "makeSparks([{t,x,y,z}], {per, speed, seed}).",
+  "params": "60 sparks per event, speed 5",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:886",
+   "kosif-studio/motion/kit/three-kit.js:886"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-15"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "طبقة إجرائية حتمية على الكانفس",
+  "name_en": "Deterministic canvas procedural layer",
+  "status": "ready",
+  "what": "Starfields, noise and particle textures drawn per frame from a hash of (index, frame) so every render is identical.",
+  "how": "Canvas 2D drawFrame(t) with integer hash instead of Math.random, driven by a GSAP proxy {time} or window.__kosif.seek(t).",
+  "params": "e.g. 200 points, brightness = hash(i, floor(t*10))",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
+   "kosif-atlas/skills/3198-remotion/13555-remotion-video-builder"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-16"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "صندوق النويز",
+  "name_en": "Noise toolbox (Perlin/Simplex/Curl/FBM)",
+  "status": "ready",
+  "what": "Organic randomness: Perlin for blobs, Simplex for gradients, Curl for divergence-free fluid motion, FBM for clouds/terrain.",
+  "how": "glsl-noise functions pasted into shader; FBM 4-6 octaves; curl noise drives particle velocity.",
+  "params": "FBM 5 octaves typical",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-17"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ضوضاء حتمية بدالة هاش",
+  "name_en": "Deterministic hash noise in canvas",
+  "status": "ready",
+  "what": "Integer hash per (index,time-bucket) gives reproducible flicker/particles so every render is identical.",
+  "how": "Canvas 2D drawFrame(t) driven by a GSAP proxy or Remotion frame; never Math.random at render time.",
+  "params": "200 particles, t*10 buckets",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-18"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل جسيمات متناثرة",
+  "name_en": "Golden-ratio drifting particle field",
+  "status": "ready",
+  "what": "26 soft teal dots spread by golden-ratio offsets that wobble and breathe in opacity over time.",
+  "how": "x=(w*(k*.618%1)+sin(phase+k)*15) mod w, y=(h*(k*.381%1)+cos(phase*.67+k)*20) mod h, radius 1.2+(k%3) px, fill rgba(159,236,226, .07..0.23).",
+  "params": "26 dots; drift ±15 px x, ±20 px y; alpha 0.07–0.23",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/web/motion.js:11"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-19"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر ثنائي الأبعاد",
+  "name_en": "2D rain particles",
+  "status": "ready",
+  "what": "Seeded falling rain streaks (SVG lines or DOM divs) with container fade in/out.",
+  "how": "MOTION.rain(tl, container, {n, fall, len, angle, color, at, dur, seed, x0..y1}).",
+  "params": "n 240; fall 0.55 s; len 46 px; angle -8 deg; width 1-2.6 px; color rgba(220,235,255,.75); fade in .6 s out .8 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:265"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-20"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نجوم متلألئة",
+  "name_en": "Twinkle sparkle field",
+  "status": "ready",
+  "what": "Small seeded dots that twinkle in a region (dust, stars, accents).",
+  "how": "MOTION.sparkle(tl, svgGroup, {n, x0, x1, y0, y1, color, at, seed}).",
+  "params": "n 40; r 1-3.2 px; opacity .15<->1 over 0.6-1.8 s yoyo x40; sine.inOut",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:300"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-21"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ضباب جسيمي",
+  "name_en": "GPU mist / vapour points",
+  "status": "ready",
+  "what": "Rising, drifting additive point sprites for mist or steam over a region.",
+  "how": "K3.makeVapour({n, region, y, seed}); userData.set(t, on).",
+  "params": "n 1400; life 6-10 s; rise 520-940 units; additive; alpha x0.16; size cap 170 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:325"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-22"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر ثلاثي الأبعاد",
+  "name_en": "GPU rain streaks",
+  "status": "ready",
+  "what": "Thousands of falling streak sprites with wind slant.",
+  "how": "K3.makeRain({n, region, top, seed}); userData.set(t, on).",
+  "params": "n 9000; speed 900-1400 u/s; top 1500; slant 120; colour (0.85,0.92,1.0) alpha .55",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:343"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-23"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ماء ضحل",
+  "name_en": "Shallow pond water shader",
+  "status": "ready",
+  "what": "Sum-of-sines swell with analytic normals, expanding ripple rings, Fresnel sky/bank reflection, GGX sun glint, angle-dependent transparency and dappled light.",
+  "how": "const w=K3.makeShallowWater({width, depth, seg, ripples, amp, clarity, glint, skyTop, skyHorizon, bank, deep, shallow}); w.userData.ripple(x,z,t0,amp); w.userData.set(t, sun, sunCol).",
+  "params": "30x30 m, 256 seg; 6 swell waves amp .012; 24 ripple rings, life 3.5 s, front 0.34 m/s; deep #0d3b3a shallow #2f6f62; sky #6f9cc8/#f2d6b0; bank #26301c",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:506"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-24"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تمايل النباتات",
+  "name_en": "Wind sway for plants",
+  "status": "ready",
+  "what": "Vertex-shader bend growing with height squared, phase per instance, with gusts.",
+  "how": "K3.addSway(material, {amp, freq, time}).",
+  "params": "amp .06; freq 1.3 Hz; gust 0.6+0.4 sin",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:591"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-25"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بتلات تسقط على الماء",
+  "name_en": "Sakura petals on water",
+  "status": "ready",
+  "what": "Instanced petals fall with flutter, land on the water (each landing sends a ripple) and float.",
+  "how": "K3.makePetals({n, region, times:[t0,t1], level, floating, size, water, seed}); userData.set(t).",
+  "params": "n 120; fall 2.4-4.6 s from 1.6-4 m; pink HSL h .96-.99 s .35-.65 l .84-.93; ripple amp .0016-.0024",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:685"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-26"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شرر على ساعة الشريط",
+  "name_en": "Tape-clock sparks",
+  "status": "ready",
+  "what": "Additive sparks thrown at sound events, moving on the tape clock so they hang in the air when the track stops.",
+  "how": "K3.makeSparks([{t,x,y,z}], {per, speed, gravity, drift, color, size}); userData.set(t, tapeFn).",
+  "params": "per 60 per event; speed 5; gravity 6; life .5-1.6 s; colour #ffa040",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:886"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-27"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل جزيئات غبار منجرف",
+  "name_en": "Drifting dust particle field (38 motes)",
+  "status": "ready",
+  "what": "Small luminous dots drift sideways and bob vertically at staggered speeds and opacities; deterministic in t.",
+  "how": "for i<38: x = (i·137.3 + t·(5+i%3)) mod w, y = (sin(i·2.71 + t·0.18)·0.42 + 0.5)·h, radius 1+(i%3)·0.5, alpha 0.15+(i%5)·0.09, fill #d5fff0.",
+  "params": "38 particles; 5–7 px/s drift",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:69"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-28"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر بطبقتين",
+  "name_en": "Two-layer parallax rain",
+  "status": "ready",
+  "what": "Rain as thin slanted strokes in a far layer (many, short, slow) and a near layer (few, long, fast) with different parallax, drawn behind and in front of the action.",
+  "how": "rain(t, cam, near): far 152 drops, length 11–25 px, speed 340–600 px/s, width 0.8, opacity .13, colour #86b7c9; near 32 drops, length 37 px, 630 px/s, width 1.3, opacity .17, #95d6df; wrap 1450×850.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:108"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-29"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "رذاذ البرك وحلقة التموج",
+  "name_en": "Puddle splash bursts with ripple ring",
+  "status": "ready",
+  "what": "At each foot impact, 11 droplets fly ballistically and fade while an expanding elliptical ripple ring spreads on the water.",
+  "how": "splash(t,p): events at 5.2, 6.9, 7.53, 8.02, 8.55, 9.1 s; droplet vx ±105, vy −45…−129, gravity 145 px/s², life 0.63 s, colour #91e2df; ring rx 4+75a, ry 1+12a.",
+  "params": "11 droplets per event; 0.63 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:122"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-30"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ضجيج تجزئة حتمي",
+  "name_en": "Deterministic hash noise for procedural scenes",
+  "status": "ready",
+  "what": "Replaces Math.random with a repeatable hash so every frame of a procedural scene renders identically on re-render.",
+  "how": "rnd(i) = fract(sin(i·127.1 + 311.7)·43758.5453123); index by element ids/time-independent seeds.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:9"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-31"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "هالة شعاعية وجسيمات طافية",
+  "name_en": "Radial aura + drifting particle canvas",
+  "status": "ready",
+  "what": "A 2D canvas background with a soft amber/sky radial glow and dozens of small dots drifting upward and wrapping.",
+  "how": "kinetic_2d: ctx.createRadialGradient(W/2,H/2,50,W/2,H/2,W*0.7) stops amber .15 / sky .08 / transparent; 60 particles y = (y0 - t*40*speed) mod H, drawn at alpha 0.4. Seed the random generator (e.g. mulberry32) if two renders must match.",
+  "params": "60 particles, radius 2-6 px, speed factor 1-3 (40-120 px/s), colours #f59e0b / #38bdf8, alpha 0.4; aura radius 0.7*W",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html:128",
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html:150"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-32"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر ثنائي الأبعاد",
+  "name_en": "2D seeded rain",
+  "status": "ready",
+  "what": "Slanted rain streaks in SVG or HTML, each with seeded length/width/speed, fading in and out.",
+  "how": "MOTION.rain(tl, container, {n, x0..y1, fall, len, angle, color, at, dur, seed}).",
+  "params": "n 240, fall 0.55 s, len 46 px (x0.6-1.4), width 1-2.6 px, angle -8 deg, color rgba(220,235,255,.75), fadeIn 0.6 s, fadeOut 0.8 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:265"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-33"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نجوم متلألئة",
+  "name_en": "Twinkling sparkle field",
+  "status": "ready",
+  "what": "Seeded dots twinkling (yoyo opacity) across a region: stars, dust, magic.",
+  "how": "MOTION.sparkle(tl, container, {n, x0..y1, color, at, seed}).",
+  "params": "n 40, r 1-3.2 px, opacity 0.15<->1, 0.6-1.8 s, 40 repeats",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:300"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-34"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سرب طيور",
+  "name_en": "Flapping bird flock",
+  "status": "ready",
+  "what": "Instanced V-shaped birds flapping along a keyed path with seeded offsets, visible between t0 and t1.",
+  "how": "makeFlock({n, path:[[t,x,y,z]...], seed}); flock.userData.set(t).",
+  "params": "n 18",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:203"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-35"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ماء ضحل شفاف بتموجات",
+  "name_en": "Shallow see-through water with ripples",
+  "status": "ready",
+  "what": "Sum-of-sines swell with analytic normals, ripple rings from petals/drops/fish, Fresnel sky reflection, GGX sun glint and depth-tinted transmission.",
+  "how": "makeShallowWater({width, depth, seg, ripples}); add rings at events.",
+  "params": "30x30 m, 256 segments, up to 24 rings",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:506"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-36"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تمايل الريح وتموج القماش",
+  "name_en": "Wind sway and cloth wave shaders",
+  "status": "ready",
+  "what": "Vertex shader patches: plants bend with height squared (sway); flags/banners ripple from an anchored edge (wave).",
+  "how": "addSway(material, {amp, freq}); addWave(material, {amp, freq, wavelength, span}).",
+  "params": "sway amp 0.06, 1.3 Hz; wave amp 0.08, 2.4 Hz, wavelength 0.9",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:591",
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:977"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-37"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بتلات ساكورا تتساقط وتطفو",
+  "name_en": "Falling and floating sakura petals",
+  "status": "ready",
+  "what": "Instanced petals fall with seeded flutter, land on water (ringing it) and drift/bob.",
+  "how": "makePetals({n, region, times, floating, level, seed}).",
+  "params": "n 120, region [-4,4,-3,3], times [0,8]",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:685"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-38"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "غيوم ودخان وبخار من عناقيد بيضاوية",
+  "name_en": "Ellipse-cluster clouds, smoke and steam",
+  "status": "ready",
+  "what": "Seeded clusters of ellipses tapered toward the ends read as clouds when blurred; offset copies in screen/add give moonlit tops and fire-lit bellies.",
+  "how": "scenes/dragon_girl.cloud(cx, cy, w, h, n, seed) + fill(blur 12-20) + translated fill(mode='screen'|'add').",
+  "params": "ellipse widths w*.07-.16, heights h*.3-.6; blur 13-17",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/scenes/dragon_girl.py:36",
+   "kosif-studio/scenes/dragon_girl.py:165",
+   "kosif-studio/scenes/whale_dragon.py:257"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-39"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل نجوم",
+  "name_en": "Starfield with sky-weighted density",
+  "status": "ready",
+  "what": "Seeded stars denser near the top, kept clear of the moon, with larger stars getting a soft blue halo.",
+  "how": "y = 480*rand^1.7; dots(...) '#e4e9ff' .9 add; halos r*3.5 '#7f93ff' .35 blur 2.5.",
+  "params": "280 stars, sizes .45/.55/.7/.9/1.25",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/scenes/dragon_girl.py:144"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-40"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "الشرر والجمر على مسار",
+  "name_en": "Embers and sparks along a path",
+  "status": "ready",
+  "what": "Sparks scattered with Gaussian noise along the fire's path and drifting upward, kept off the hero's face, with glowing larger embers.",
+  "how": "dots(emb) '#ffd27a' .9 add + halos x3 '#ff7a2a' .45 blur 2.4; order='sparkle'.",
+  "params": "dragon_girl 320 + 120 ambient; whale 220; sigma 44/36 px, lift up to 100",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/scenes/dragon_girl.py:408",
+   "kosif-studio/scenes/whale_dragon.py:282"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-41"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "البخار عند تصادم النار والماء",
+  "name_en": "Steam at a fire-water collision",
+  "status": "ready",
+  "what": "Screen-mode cloud cluster with multiply noise, a warm add offset beneath, a hot core glow, curling flame tongues in six directions and warm spray dots.",
+  "how": "cloud(...) fill '#d6dde6' .45 blur 12 screen; noise .5 cell 20; translate +14 '#ff8a3a' .32 add; glow '#fff0c0' 26 .7; 6 tongues.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/scenes/whale_dragon.py:257"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-42"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مولد عشوائي مزروع",
+  "name_en": "mulberry32 seeded rng helper",
+  "status": "ready",
+  "what": "Small seeded PRNG for repeatable procedural layouts across renders.",
+  "how": "KOSIF.rng(seed)()",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/starters/html-canvas/timeline.js:40"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-43"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار مزروع البذرة",
+  "name_en": "Seeded burst",
+  "status": "ready",
+  "what": "Analytic burst computed from t: distance by easeOutExpo, gravity, alpha fade.",
+  "how": "Canvas drawBurst: KOSIF.rng(20261015), 160 parts {a, sp 400–1300, r 4–14}; d=outExpo(life)·sp; alpha 1−inOutCubic(life); y += life·120; r shrinks 60%.",
+  "params": "speed 400–1300 px/s; gravity 60–150 px/s²; lifetime 0.7–1.0",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:25",
+   "kosif-tool/playbooks/particles.md:52-66",
+   "kosif-tool/starters/html-canvas/index.html:118"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-44"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أدوات الضوضاء في الشيدر",
+  "name_en": "GLSL noise toolbox",
+  "status": "install",
+  "what": "Perlin/Simplex for organic fields, curl noise for divergence-free fluid particle motion, FBM for clouds/terrain, domain warping (warp the warp) for curling flow.",
+  "how": "glsl-noise functions in fragment shaders; blob = vertex displacement pnoise(position*1.5 + t*0.5); FBM 5 octaves; for video drive uniform time from frame/fps, not clock.elapsedTime.",
+  "params": "FBM 5 octaves; freq 1.5; speed 0.5",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-45"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات على المعالج الرسومي",
+  "name_en": "GPU particle systems (FBO)",
+  "status": "install",
+  "what": "Store particle positions in a float texture, update them in a simulation shader rendered to an offscreen target, and read that texture in the points shader for 100k+ particles.",
+  "how": "DataTexture RGBA per particle -> SimulationMaterial -> WebGLRenderTarget (useFBO) -> points uniform uPositions; glow points via distance(gl_PointCoord,0.5); basic BufferGeometry points for small counts. Seed positions deterministically for render.",
+  "params": "100k+ particles",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-46"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات بالحوسبة على GPU",
+  "name_en": "GPU compute particles (100k)",
+  "status": "install",
+  "what": "Simulate 100k particles with gravity/bounce on the GPU via storage buffers.",
+  "how": "TSL instancedArray(N,'vec3') for positions/velocities; Fn(...)().compute(N); renderer.compute(update) per frame; sprite/instanced mesh reads buffers.",
+  "params": "N=100000, gravity -9.8, bounce 0.7, friction 0.98, hitStrength 5",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/examples/particle-system.js",
+   "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/compute-shaders.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-47"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نقاط مضيئة جمعية",
+  "name_en": "Additive glowing point sprites",
+  "status": "install",
+  "what": "Soft round glowing particles from gl_PointCoord falloff.",
+  "how": "Fragment: s=pow(1-distance(gl_PointCoord,0.5),3); AdditiveBlending, depthWrite=false.",
+  "params": "count 5000, spread ±2, falloff power 3",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-48"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "محاكاة جسيمات عبر FBO",
+  "name_en": "FBO particle simulation",
+  "status": "install",
+  "what": "Store positions in a float texture and update in a simulation pass for 100k+ particles in WebGL.",
+  "how": "DataTexture RGBA Float; SimulationMaterial renders to useFBO target; render pass reads uPositions. Ping-pong two targets.",
+  "params": "100k+",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-49"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سقوط فيزيائي",
+  "name_en": "Rapier physics drops",
+  "status": "install",
+  "what": "Rigid-body voxels/logos falling and stacking with real physics.",
+  "how": "@react-three/rapier or rapier3d; for deterministic video, step fixed dt=1/fps per frame.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
+   "kosif-atlas/skills/2696-game-studio/10367-react-three-fiber-game/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-50"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مجموعة دوال الضوضاء",
+  "name_en": "Noise family toolkit",
+  "status": "install",
+  "what": "Perlin for organic blobs, Simplex for gradients, Curl for divergence-free fluid particle flow, FBM for clouds/terrain.",
+  "how": "GLSL (three.js/R3F) or JS simplex-noise; flow field = sample curl noise per particle per frame and integrate positions.",
+  "params": "FBM 4-6 octaves",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-51"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "طبقات التدفق في deck.gl",
+  "name_en": "deck.gl flow layers",
+  "status": "install",
+  "what": "GPU layers for animated movement on maps: timestamped trips, origin-destination arcs, paths, hex aggregation.",
+  "how": "TripsLayer with currentTime driven by the frame for fading trails; ArcLayer for OD links (state whether geodesic or schematic); PathLayer/LineLayer static; HexagonLayer/GridLayer for density; overlay on MapLibre/Mapbox/Google. Width/color carry volume; trails carry direction/recency.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/deckgl-d3-geo-stack-selection.md",
+   "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/particle-effects-and-flow.md",
+   "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/webgl-2d-animation-patterns.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-52"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أنظمة الجزيئات الخمسة",
+  "name_en": "Particle systems (5)",
+  "status": "install",
+  "what": "Deterministic particle overlays that are a pure function of time.",
+  "how": "drawParticles(): dust (54 white dots rising 1.8%/s, twinkle alpha 0.18-0.48), bokeh (16 screen-blended discs 3-10% m in primary/accent, alpha 0.08-0.15), sparks (54 accent dots rising 12%/s in 'lighter'), snow (54 white falling 6%/s), confetti (46 rotating flips in accent/primary/text/#ff6b5e falling 16%/s); positions from rnd(i) = frac(sin(i*127.1+311.7)*43758.5453).",
+  "params": "dust|bokeh|sparks|confetti|snow",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "app/public/js/00_editor.js:234"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-53"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "قصاصات الاحتفال",
+  "name_en": "Confetti",
+  "status": "install",
+  "what": "Seeded, deterministic confetti burst with gravity.",
+  "how": "Install with `npx hyperframes add confetti` (copies to compositions/components/confetti.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame captur…",
+  "params": "",
+  "install": "npx hyperframes add confetti` (copies to compositions/components/confetti",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/confetti/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/confetti/confetti.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/confetti.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-54"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كشف صورة بالجزيئات",
+  "name_en": "Particle Image Reveal",
+  "status": "install",
+  "what": "Seeded particle field converges while a slotted image reveals beneath, trails thinning until clean.",
+  "how": "Install with `npx hyperframes add particle-image-reveal` (copies to compositions/components/particle-image-reveal.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (head…",
+  "params": "density low|med|high; direction ltr|center; vars: density=med[low|med|high]; direction=ltr[ltr|center]; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add particle-image-reveal` (copies to compositions/components/particle-image-reveal",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/particle-image-reveal/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/particle-image-reveal/particle-image-reveal.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/particle-image-reveal.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-55"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نص من الجزيئات",
+  "name_en": "Particle Text Dissolve",
+  "status": "install",
+  "what": "Text assembles from (or dissolves into) seeded particles whose targets are sampled once from the rendered text bitmap; one onUpdate painter, no per-particle tweens.",
+  "how": "Install with `npx hyperframes add particle-text-dissolve` (copies to compositions/components/particle-text-dissolve.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (he…",
+  "params": "direction in|out; vars: text=Dissolve; direction=in[in|out]; density=med[low|med|high]; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add particle-text-dissolve` (copies to compositions/components/particle-text-dissolve",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/particle-text-dissolve/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/particle-text-dissolve/particle-text-dissolve.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/particle-text-dissolve.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-56"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تأرجح البندول",
+  "name_en": "Pendulum Swing",
+  "status": "install",
+  "what": "Content hanging from a pivot swings into rest with gravity-damped oscillation.",
+  "how": "Install with `npx hyperframes add pendulum-swing` (copies to compositions/components/pendulum-swing.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium …",
+  "params": "pivot top-center|top-left|top-right; amplitude gentle|standard|wide; vars: pivot=top-center[top-center|top-left|top-right]; amplitude=standard[gentle|standard|wide]; direction=right[right|left]; tone=ink[ink|paper|accent]",
+  "install": "npx hyperframes add pendulum-swing` (copies to compositions/components/pendulum-swing",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/pendulum-swing/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/pendulum-swing/pendulum-swing.html",
+   "kosif-one/vendor/hyperframes/registry/components/pendulum-swing/demo.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-57"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خروج فيزيائي",
+  "name_en": "Physical Exit",
+  "status": "install",
+  "what": "Card leaves with physical momentum (toss, drop, slide) keeping acceleration and rotation, no fade.",
+  "how": "Install with `npx hyperframes add physical-exit` (copies to compositions/components/physical-exit.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fr…",
+  "params": "mode toss|drop|slide; vars: mode=toss[toss|drop|slide]; text=Later; accent=green[green|blue|violet]",
+  "install": "npx hyperframes add physical-exit` (copies to compositions/components/physical-exit",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/physical-exit/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/physical-exit/physical-exit.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/physical-exit.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-58"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خلط الرصة",
+  "name_en": "Spring Stack Shuffle",
+  "status": "install",
+  "what": "Stack of 3-5 slotted cards reshuffles on cues: back card arcs over and lands in front with mass; mid-flight cues redirect with velocity preserved.",
+  "how": "Install with `npx hyperframes add spring-stack-shuffle` (copies to compositions/components/spring-stack-shuffle.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headle…",
+  "params": "cues \"0.9, 1.7, 1.95\"; vars: cards=4(3..5); cues=0.9, 1.7, 1.95; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add spring-stack-shuffle` (copies to compositions/components/spring-stack-shuffle",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/spring-stack-shuffle/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/spring-stack-shuffle/spring-stack-shuffle.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/spring-stack-shuffle.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-59"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تساقط الثلج",
+  "name_en": "Snow",
+  "status": "install",
+  "what": "Seek-safe falling snow overlay; per-flake size/speed/opacity correlated for depth, radial mask keeps centre clear.",
+  "how": "Install with `npx hyperframes add snow` (copies the full composition to compositions/snow.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "density sparse|dense; speed calm|gust; 6 s; vars: density=sparse[sparse|dense]; speed=calm[calm|gust]; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add snow` (copies the full composition to compositions/snow",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/snow/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/snow/snow.html",
+   "kosif-one/vendor/hyperframes/registry/blocks/snow/demo.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-60"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "المجرة الحلزونية",
+  "name_en": "Spiral Galaxy",
+  "status": "install",
+  "what": "Spiral galaxy with differential rotation (inner stars faster) using 20,000 additive GPU sprites solved directly from time.",
+  "how": "Install with `npx hyperframes add spiral-galaxy` (copies the full composition to compositions/spiral-galaxy.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: Three.js 0.147.0 (CDN), WebGL fragment shader, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "stars 20000; arms 3; rate 0.25; glow 1.9; core #ffa575; rim #311599; Three 0.147; vars: stars=20000(2000..40000); arms=3(2..8); rate=0.25(0..1.5); glow=1.9(0.2..4); size=10(2..40); core=#ffa575; rim=#311599; 1920x1080; duration 10 s",
+  "install": "npx hyperframes add spiral-galaxy` (copies the full composition to compositions/spiral-galaxy",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/spiral-galaxy/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/spiral-galaxy/spiral-galaxy.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/spiral-galaxy.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-61"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل النجوم",
+  "name_en": "Starfield",
+  "status": "install",
+  "what": "Seek-safe night sky: three size tiers twinkle and drift in two parallax layers, radial mask keeps centre clear.",
+  "how": "Install with `npx hyperframes add starfield` (copies the full composition to compositions/starfield.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "density sparse|dense; tone warm|cool|white; speed slow|fast; vars: density=sparse[sparse|dense]; tone=warm[warm|cool|white]; speed=slow[slow|fast]; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add starfield` (copies the full composition to compositions/starfield",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/starfield/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/starfield/starfield.html",
+   "kosif-one/vendor/hyperframes/registry/blocks/starfield/demo.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-62"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خلفية سائلة",
+  "name_en": "Liquid Background",
+  "status": "install",
+  "what": "Liquid simulation by vertex displacement on a subdivided plane with HTML floating above the rippling surface.",
+  "how": "Install with `npx hyperframes add vfx-liquid-background` (copies the full composition to compositions/vfx-liquid-background.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: Three.js 0.147.0 (CDN), HTML-in-Canvas (canvas layoutsubtree + ctx.drawElementImage, experimental Chromium API), WebGL fragment shader, Canvas 2D painter, inline SVG,…",
+  "params": "12 s; Google Fonts: Inter; 1920x1080; duration 12 s",
+  "install": "npx hyperframes add vfx-liquid-background` (copies the full composition to compositions/vfx-liquid-background",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/vfx-liquid-background/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/vfx-liquid-background/vfx-liquid-background.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/vfx-liquid-background.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-63"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرة لزجة",
+  "name_en": "Goo",
+  "status": "install",
+  "what": "Glossy green liquid ball whose surface bulges and ripples. A 2 s WebGPU shader background/object from the Shaders library.",
+  "how": "Install `npx hyperframes add goo` or place lib/shaders.iife.js beside the HTML and declare <canvas data-shader=\"Goo\" width=1920 height=1080> inside a composition root marked data-requires-webgpu data-no-timeline; layer it under titles as a background plate; render needs a WebGPU-capable Chromium.",
+  "params": "data-shader=\"Goo\"; 1920x1080; duration 2 s; shaders.iife.js 1,444,793 bytes (shaders 4.0.0)",
+  "install": "npx hyperframes add goo` or place lib/shaders",
+  "license": "Apache-2.0 AND MIT",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/goo/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/goo/goo.html",
+   "kosif-one/vendor/hyperframes/registry/blocks/goo/lib/shaders.THIRD-PARTY-LICENSES.txt"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-64"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سديم",
+  "name_en": "Nebula",
+  "status": "install",
+  "what": "Pink and blue gas swirling inside a small sphere. A 2 s WebGPU shader background/object from the Shaders library.",
+  "how": "Install `npx hyperframes add nebula` or place lib/shaders.iife.js beside the HTML and declare <canvas data-shader=\"Nebula\" width=1920 height=1080> inside a composition root marked data-requires-webgpu data-no-timeline; layer it under titles as a background plate; render needs a WebGPU-capable Chromium.",
+  "params": "data-shader=\"Nebula\"; 1920x1080; duration 2 s; shaders.iife.js 1,444,793 bytes (shaders 4.0.0)",
+  "install": "npx hyperframes add nebula` or place lib/shaders",
+  "license": "Apache-2.0 AND MIT",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/nebula/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/nebula/nebula.html",
+   "kosif-one/vendor/hyperframes/registry/blocks/nebula/lib/shaders.THIRD-PARTY-LICENSES.txt"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-65"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "إزاحة تصادمية فيزيائية",
+  "name_en": "Reactive displacement collision",
+  "status": "install",
+  "what": "An entering element's tween drives the exiting element's displacement (three concurrent tweens), victim finishing before the intruder for hit-then-settle; optional damped wobble.",
+  "how": "Read hyperframes-animation/rules/reactive-displacement.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
+  "params": "victim durations 40-50% of intruder; intruder back.out(BOUNCE)",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/reactive-displacement.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-66"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار جسيمات وقصاصات حتمي",
+  "name_en": "Deterministic particle / confetti burst",
+  "status": "install",
+  "what": "Confetti pop with gravity drift, dot burst behind text, glyph dissolve to particles; fixed pool, index-seeded launch values, one ease-none driver computing ballistic positions as pure function of T.",
+  "how": "Read hyperframes-animation/rules/particle-burst.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
+  "params": "<= ~40 particles; gravity G in closed form; chip border-radius 2 px (50% for dots)",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/particle-burst.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-67"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حركة إيقاعية: gooey-metaball",
+  "name_en": "Beat motion primitive: gooey-metaball",
+  "status": "install",
+  "what": "Gooey metaball merge field, anchored to music events (build / drop).",
+  "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/gooey-metaball/scene.html (runnable with vendored gsap); anchor to audiomap events.",
+  "params": "anchor: build / drop; best span 1.5-3.0 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/gooey-metaball/scene.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-68"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حركة إيقاعية: particle-burst",
+  "name_en": "Beat motion primitive: particle-burst",
+  "status": "install",
+  "what": "Particle explosion burst, anchored to music events (drop / crash).",
+  "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/particle-burst/scene.html (runnable with vendored gsap); anchor to audiomap events.",
+  "params": "anchor: drop / crash; best span 0.2-1.2 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/particle-burst/scene.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-69"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حركة إيقاعية: radial-burst-lines",
+  "name_en": "Beat motion primitive: radial-burst-lines",
+  "status": "install",
+  "what": "Radial speed-lines burst, anchored to music events (drop / surge).",
+  "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/radial-burst-lines/scene.html (runnable with vendored gsap); anchor to audiomap events.",
+  "params": "anchor: drop / surge; best span 0.2-0.8 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/radial-burst-lines/scene.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-70"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حركة إيقاعية: bg-flow-field",
+  "name_en": "Beat motion primitive: bg-flow-field",
+  "status": "install",
+  "what": "Generative curl-noise background bed, anchored to music events (energy / whole span bed).",
+  "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/bg-flow-field/scene.html (runnable with vendored gsap); anchor to audiomap events.",
+  "params": "anchor: energy / whole span bed; best span 4-12 s",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/bg-flow-field/scene.html",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-71"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أدوات الكيت القديم",
+  "name_en": "Legacy kit eases and FX",
+  "status": "install",
+  "what": "ease slam/snap/drive/settle, rain, vapour, sparkle, camera, flash, stepped grain, vignette.",
+  "how": "motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits",
+  "params": "MOTION.ease.*, rain, vapour, sparkle, flash, grain, vignette",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:95",
+   "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
+   "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-72"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "الماء الضحل والكاوستكس",
+  "name_en": "Shallow water + caustics",
+  "status": "install",
+  "what": "Sum-of-sines swell, ripple rings, Fresnel, GGX glint, transmission; procedural caustics on sunlight with depth absorption.",
+  "how": "three-kit.js (window.K3) in a --3d project; render --engine studio",
+  "params": "caustic scale ≈5.5 (5–15 cm cells); makeShallowWater, addCaustics",
+  "install": "see arsenal-libraries.md",
+  "license": "owner (three.js MIT)",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
+   "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-73"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل لمعان متلألئ ببذرة",
+  "name_en": "Seeded twinkling sparkle field",
+  "status": "install",
+  "what": "Small SVG dots twinkle (yoyo opacity) across a region at random phases; reproducible by seed.",
+  "how": "M.sparkle(tl, group, {at:0, n:48, seed:5, x0:0, x1:1080, y0:200, y1:1700, color:'#ffe9b8'}) → circles r 1–3.2, opacity .15↔1, 0.6–1.8 s sine.inOut, repeat 40.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:66",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:300"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-74"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ذرات غبار تطفو فوق اللقطة",
+  "name_en": "Drifting dust motes over footage",
+  "status": "install",
+  "what": "Warm seeded dust particles rise and fade during the 'dream' and 'lift' moments, screen-blended over the plate.",
+  "how": "34 divs, size 4–13 px, radial rgba(255,232,190,.95)→0, screen; drift 60–200 px; opacity .35–.85 over 1 s then rise and fade over 1.6 s; delays 0–0.6 s; M.rng(31).",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:157"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-75"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شرر الكسر وحلقة الوميض",
+  "name_en": "Snap sparks and flash ring",
+  "status": "install",
+  "what": "When a member breaks, deterministic sparks fly ballistically from its midpoint and a camera-facing torus ring expands; the same ring returns in green for the repair.",
+  "how": "26 Points, soft sprite, additive, colour 0xffb08a, size .0075; pos = mid + v·k − (0, 0.9k²); opacity 1−ts/0.6; ring Torus(1, .06) scale .004+.04·easeOut(ts/0.4), colour 0xff907a → 0x9dffb4 on swap.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:93",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:170"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-76"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شرر على كل ضربة وجمر يتبع ساعة الشريط",
+  "name_en": "Kick-triggered sparks and embers on the tape clock",
+  "status": "install",
+  "what": "Every kick drum throws a burst of sparks from the lava river; 2400 slow embers drift in the air; both freeze mid-air when the tape stops.",
+  "how": "makeSparks(kicks.map(t→{t,x:0,y:.1,z:0}), {per 90, speed 6.5, gravity 7, drift 15 m/s, size 4.5, seed 11}); sparks.userData.set(t, tape); embers wrap along 120 m, colour 0xff9a5a, size .09 additive.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:56",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:61"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-77"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "قفزة سمكة: حلقات ورذاذ",
+  "name_en": "Fish jump: rings and spray",
+  "status": "install",
+  "what": "A fish breaks a moonlit surface: 60 spray points arc under gravity and two additive rings expand and decay, the second 0.35 s later.",
+  "how": "rings opacity .9·exp(−0.9u), scale 0.6+3.4u; spray v ∈ (±.8, 1.4–3.4, ±.8), y = .05 + vy·u − 4.9u², u ≤ 0.7 s, opacity .8·(1−ft/.7); at 2.8 s, 6.5 m off the bow; paired with a splash SFX.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:205",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:238"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-78"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقول نجوم: أقواس دوّارة وتلألؤ",
+  "name_en": "Star fields: rotating arcs and twinkling scintillation",
+  "status": "install",
+  "what": "Two star recipes: a sphere of stars rotating about the pole (exaggerated so a long exposure draws arcs) and a seeded sky where each star twinkles at its own rate, more near the horizon, washed out near the moon.",
+  "how": "blue_hour: 1600 points r 8000, brightness pow(rand,3), size 2+3.5b, pole rotation (−.45,0,.25), y-rot 0.011·t; night_boat: 2600 points r 10000, tw = .75+.25·sin(t(3+.2f)+f)·(1−y), moonWash smoothstep(.995,.93, d·moon), size 1.4+2.2b.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:44",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:164"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-79"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مسارات ضوء السيارات",
+  "name_en": "Light trails from moving cars",
+  "status": "install",
+  "what": "Tail lights going away and headlights coming in become continuous streaks during a long-exposure render by stretching each light along its motion.",
+  "how": "18 cars, 22–27 m/s, wrap 1560 m; tail 0xff1e1e×6, head 0xfff1d8×6 spheres r .16; scale.z = 1 + trailLength(v)/(2·0.16)·1.2 and offset forward so the streak never sits inside the body.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:107"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-80"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حياة طبيعية: أسماك كوي وبتلات وزنابق وقصب",
+  "name_en": "Nature life: koi, petals, lily pads, reeds and grass",
+  "status": "install",
+  "what": "A living pond: seven koi bend as they swim looping Lissajous paths at different depths, 170 petals fall and float (landing rings on water), 34 lily pads bob, 2200 reeds and 6000 grass blades sway in wind.",
+  "how": "makeKoi({seed, length .62–.92, amp .10–.14, caustics}); path x = cx + ax·sin(dir·w·t+ph), z = cz + az·sin(2·dir·w·t+ph2), depth −.22…−.52; makePetals({n 170, floating .45, water, size 1.5}); makeBlades({n 2200, tall .95, amp .07, freq 1.2}) and ({n 6000, tall .22, amp .25, freq 1.7}); pads notched CircleGeometry(.2, 28, .25, 2π−.25), bob .004.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:50",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:66",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:78"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-81"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أنظمة الطقس: بخار وسحب ومطر وطيور",
+  "name_en": "Weather systems: vapour, cloud slab, rain, flocks",
+  "status": "install",
+  "what": "An explainer drives evaporation vapour, a volumetric cloud slab whose cover and colour follow the story, rain, a flowing river reveal and two bird flocks crossing near the focus plane.",
+  "how": "makeVapour({region}) set(t, ramp(2.6,3.6)·(1−ramp(6.2,7.2))); makeCloudSlab set(t, cover, overcast, sun, camPos, light, shadow 0x9fb6cc→0x56616d); makeRain set(t, ramp(9.5,10.3)·(1−ramp(12.6,13.4))); makeRibbon river reveal(ramp(12.6,14.4)); makeFlock({n 16, t0 2.9, t1 4.8, size 16, spread 220, path}); forest on slopes ≤ .42, 28–430 m.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:34",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:83"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-82"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حركة من فيديو",
+  "name_en": "Mocap from video to particles",
+  "status": "install",
+  "what": "Median background, difference, morphology, seeded points -> JSON -> particle body.",
+  "how": "motion.py mocap; makeParticleBody",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-83"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تكامل: algorithmic-art skill",
+  "name_en": "Integration: algorithmic-art skill",
+  "status": "install",
+  "what": "Catalogued skill/MCP/library (link only; not installed here).",
+  "how": "see official setup",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-84"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل جسيمات مضيئة ثلاثي الأبعاد",
+  "name_en": "Additive point-sprite star field",
+  "status": "install",
+  "what": "Hundreds of glowing points scattered in a volume and slowly rotating, adding depth and sparkle around the hero.",
+  "how": "cinematic_3d: BufferGeometry with 400 random positions in a 20x25x20 box; PointsMaterial{color #38bdf8, size 0.08, opacity .75, AdditiveBlending}; particles.rotation.y = 0.08*t.",
+  "params": "400 points, size 0.08, opacity 0.75, rotation 0.08 rad/s",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/cinematic_3d.html:165",
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/cinematic_3d.html:211"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-85"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شيدر ماء بالموج واللمعان",
+  "name_en": "Stylised water shader (waves, fresnel, sparkle)",
+  "status": "install",
+  "what": "Moving water with three summed sine waves, analytic normals, fresnel sky reflection, a hot sun specular, hashed glints and exponential-squared fog.",
+  "how": "Vertex: a=sin(x*.045+1.1t)*.7+sin(z*.06+.8t)*.6+sin((x+z)*.13+1.9t)*.25 scaled by amp; fragment: fres=pow(1-N.V,4), spec=pow(R.L,400)*14+pow(R.L,24)*.5, sparkle step(.9965, hash(floor(xz*1.6)+floor(9t))), fog 1-exp(-(d*fogDen)^2).",
+  "params": "Nile: deep #0A3A66 sky #7FB2E0 amp .12; sea: deep #051833 sky #5E70A8 amp 1 sparkle .8",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/egypt-2120-animation/index.html:100-120",
+   "kosif-one/projects/egypt-2120-animation/index.html:278-280",
+   "kosif-one/projects/egypt-2120-animation/index.html:380-382"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-86"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "آثار ضوئية من تاريخ الحركة",
+  "name_en": "Light trails from time-sampled history",
+  "status": "install",
+  "what": "Moving lights leave fading streaks: each mover is drawn K times at slightly earlier times with shrinking size and alpha.",
+  "how": "For k in 0..K-1 sample position at t-k*dt, size = head ? 3.4-4.2 : 2.2-2.6*(1-k/K), alpha = head ? 1 : .55-.7*(1-k/K); used for 36 drones x16 samples (dt .045), 9 sky lanes x30 taxis x14 (dt .03), maglev trail 70 samples along the curve.",
+  "params": "drones 36x16, lanes 9x30x14 colours #55E6FF #FF5AD9 #FFD27A #FFFFFF, maglev trail #7FE9FF",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/egypt-2120-animation/index.html:246-258",
+   "kosif-one/projects/egypt-2120-animation/index.html:356-367",
+   "kosif-one/projects/egypt-2120-animation/index.html:312"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-87"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بتلات ورد تتساقط كدالة للزمن",
+  "name_en": "Seeded falling petals as a pure function of time",
+  "status": "install",
+  "what": "Rose petals fall, drift, sway and spin forever but every frame is computed from t alone, so seeking is exact.",
+  "how": "22 petals from M.rng(11): x, scale .7-1.5, fall period 7-12 s, phase; y=-60+u*2050 with u=(t/dur+ph)%1; x+=drift*u (±170) + sin(1.3t+9ph)*sway (20-50); rotate spin*u (±300-700); driven by a proxy tween {t:0->T} with onUpdate.",
+  "params": "colours #e8436a / #f27b93 op .9",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/thursday-dua-animation/source/index.html:170-184"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-88"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "موج بحر متحرك",
+  "name_en": "Animated sea wave path",
+  "status": "install",
+  "what": "A flat-style sea surface rebuilt every frame from a sine wave, with a foam stroke along the crest.",
+  "how": "for x in -20..1000 step 20: y=790+9 sin(x/180*2PI+2.2t); fill path with gradient #2B86E0 -> #1559A8; foam stroke #CFE9FF 5 px op .8.",
+  "params": "amplitude 9 px, wavelength 180 px, speed 2.2 rad/s",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html:147-150"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-89"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خيوط بخار صاعدة",
+  "name_en": "Rising vapour wisps",
+  "status": "install",
+  "what": "Evaporation drawn as wavy lines that rise from the sea, sway and fade in/out over their life.",
+  "how": "14 wisps (7 x positions, 2 waves 1.05 s apart, start 1.6+0.17i), life 1.7 s; 9-point polyline with x+14 sin(y/60+5t+x); y0=770-420p; opacity sin(PI p)*.9; stroke #7FBFFF 8 px round.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html:107",
+   "kosif-one/projects/water-cycle-animation/index.html:152-157"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-90"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خطوط مطر",
+  "name_en": "Seeded rain streaks",
+  "status": "install",
+  "what": "Rain as short slanted lines falling in a loop below the cloud base, faded in and out by stage.",
+  "how": "38 drops from LCG seed 7 (x 1240-1660), y=340+((950t+off)%470), line 28 px long slanted 6 px, stroke #3D8BFF 6 px; opacity fadeWin(t,6.3,8.3,.3). Motion Kit also has M.rain (240 drops, angle -8 degrees, fall .55 s).",
+  "params": "fall speed 950 px/s",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html:117-118",
+   "kosif-one/projects/water-cycle-animation/index.html:171-174",
+   "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:265-282"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-91"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات المكتبة: مطر وبخار ولمعان",
+  "name_en": "Kit particles: rain, vapour, sparkle",
+  "status": "install",
+  "what": "Three seeded particle generators that work in SVG or HTML containers: slanted rain streaks, rising puffs of vapour and twinkling dots.",
+  "how": "M.rain(tl,c,{n:240,fall:.55,len:46,angle:-8,at,dur}); M.vapour(tl,c,{n:70,r:18,rise:2.6,height:320,drift:120}); M.sparkle(tl,c,{n:40,x0,x1,y0,y1,color,at}) opacity .15 <-> 1 over 0.6-1.8 s yoyo.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:264-308"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-92"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سطح ماء مرسوم",
+  "name_en": "Painted water surface",
+  "status": "install",
+  "what": "Stretched-noise water with sky reflection and light glints in an area.",
+  "how": "water(area, lights, deep='#0a1118', sky='#2a3a4c', cell=18, stretch=6).",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/render.py:652"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-93"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سطح ماء",
+  "name_en": "Scene op: water surface",
+  "status": "install",
+  "what": "KOSIF Studio scene operation: water.",
+  "how": "water(area,lights,deep #0a1118,sky #2a3a4c,cell 18,stretch 6,height,...)",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md",
+   "100-superskills/skills/pixel-studio-painter/scripts/render.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-94"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر",
+  "name_en": "SVG/DOM rain",
+  "status": "install",
+  "what": "Seeded rain streaks (SVG lines or divs) falling on repeat with fade in/out.",
+  "how": "MOTION.rain(tl, container, {n, fall, len, angle, color, at, dur, seed, x0..y1}).",
+  "params": "n 240, fall .55 s, length 46 px (×0.6-1.4), angle -8°, width 1-2.6 px, colour rgba(220,235,255,.75), fadeIn .6 fadeOut .8",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:265"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-95"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بخار",
+  "name_en": "SVG vapour puffs",
+  "status": "install",
+  "what": "Rising, growing, fading circles for steam/evaporation explainers.",
+  "how": "MOTION.vapour(tl, svgGroup, {n, r, rise, height, drift, spread, at, dur, x0, x1, y0}).",
+  "params": "n 70, radius 18 px (×0.6-1.7), rise 2.6 s, height 320 px, drift 120 px, scale .5->1.4, sine.out",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:283"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-96"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تلألؤ",
+  "name_en": "Sparkle field",
+  "status": "install",
+  "what": "Seeded twinkling dots.",
+  "how": "MOTION.sparkle(tl, svgGroup, {n, x0..y1, at, color, seed}).",
+  "params": "n 40, r 1-3.2 px, opacity .15<->1 over .6-1.8 s, yoyo 40 repeats",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:300"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-97"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سرب طيور",
+  "name_en": "Bird flock",
+  "status": "install",
+  "what": "Instanced flapping V-birds following a keyed path with seeded offsets, visible in a time window.",
+  "how": "K3.makeFlock({n, path:[[t,x,y,z]...], t0, t1, spread, size, color}); mesh.userData.set(t).",
+  "params": "n 18, spread 120, size 9, flap sin(9t), colour #1a1d22",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:203"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-98"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سحب مرسومة بالأشعة",
+  "name_en": "Raymarched cloud slab",
+  "status": "install",
+  "what": "Volumetric cloud layer inside a box: 36 march steps, 3 light taps, powder term, coverage and darkness controls.",
+  "how": "K3.makeCloudSlab({size, center}); clouds.userData.set(t, cover, dark, sun, camPos, sunCol, skyCol).",
+  "params": "size [7000,520,4200], centre [0,1240,-900], sky #9fb6cc, sun #fff2d9",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:273"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-99"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ماء ضحل شفاف",
+  "name_en": "Shallow see-through water",
+  "status": "install",
+  "what": "Sum-of-sines swell with analytic normals, ripple rings, Fresnel reflection that mirrors dark banks near the horizon, GGX sun glint and depth-tinted transmission.",
+  "how": "K3.makeShallowWater({width, depth, seg, ripples, skyTop, skyHorizon, bank, bankHeight, deep, shallow, amp, glint, clarity}).",
+  "params": "30×30 m, 256 seg, 24 ripple rings, sky top #6f9cc8, horizon #f2d6b0, bank #26301c h .12, deep #0d3b3a, shallow #2f6f62, amp .012, clarity .62",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:506",
+   "kosif-studio/tests/test_studio.py:637"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-100"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تمايل الرياح",
+  "name_en": "Wind sway shader",
+  "status": "install",
+  "what": "Vertex bend ∝ height² with per-instance phase for reeds, grass, leaves.",
+  "how": "K3.addSway(material, {amp, freq, time}).",
+  "params": "amp .06, freq 1.3 Hz",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:591"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-101"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بتلات متساقطة",
+  "name_en": "Falling petals that ring the water",
+  "status": "install",
+  "what": "Sakura petals fall with seeded flutter, land, ring the water and drift.",
+  "how": "K3.makePetals({n, region, times:[ta,tb], level, size, seed}).",
+  "params": "n 120, region [-4,4,-3,3], times [0,8], size 1.4",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/three-kit.js:685"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-102"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خطوط المطر",
+  "name_en": "Rain streaks with exposure smear",
+  "status": "install",
+  "what": "Slanted stroke lines in two depth layers (thin far, thick near), a warm layer lit by fire, then directional motion blur.",
+  "how": "rain(seed, n, x0, x1, y0, y1, length, width, slant=-0.25) -> stroke(); fill colours #a8bbd4/.15, #cddcef/.2, fire-lit #ffb066 add.",
+  "params": "520 + 150 + 160 streaks; lengths 24/60/36; duck uses 950 far drops",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/scenes/whale_dragon.py:55",
+   "kosif-studio/scenes/whale_dragon.py:269",
+   "kosif-studio/scenes/duck_dragon.py:24"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-103"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "الرذاذ والزبد وانهمار الماء",
+  "name_en": "Spray, foam and water sheeting",
+  "status": "install",
+  "what": "Breaching-water effects: Gaussian spray dots in white and warm add, foam lines along wave crests, water sheets as screen strokes running off a body, then motion blur.",
+  "how": "spray(seed, cx, cy, n, sx, sy, up, sizes) and foam(seed, y, amp, n) helpers + dots/stroke fills + motion_blur.",
+  "params": "spray 460 dots sigma 160x70; foam 5 crest rows at y 496-712",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/scenes/whale_dragon.py:65",
+   "kosif-studio/scenes/whale_dragon.py:70",
+   "kosif-studio/scenes/whale_dragon.py:233"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-104"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "التقاط الحركة إلى جسيمات",
+  "name_en": "Mocap: performer silhouette → particles",
+  "status": "install",
+  "what": "From a fixed-camera video, subtracts a median background, cleans the silhouette and samples a stable set of particle positions per frame for a three-kit particle body.",
+  "how": "python motion.py mocap VIDEO --out body.json [--fps 30 --points 1200 --from 0 --dur D]",
+  "params": "480 px; threshold 28; Gaussian 5×5; open/close ellipse 5×5 (close ×2); components ≥1 % of largest; 30× seeded candidates (seed 7); coords 0-1000, −1 unused",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/qa.py:598"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-105"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "غبار متطاير فوق الفيديو",
+  "name_en": "Seeded dust particles over footage",
+  "status": "install",
+  "what": "Seeded dust specks drifting upward through warm passages of a talking-head edit.",
+  "how": "DOM particles created from M.rng and animated on the timeline",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/projects/premium_edit/index.html:157"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-106"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات",
+  "name_en": "Category: Particles",
+  "status": "install",
+  "what": "Capability family 'particles' (20 catalog entries) with a dedicated bilingual playbook of timings and recipes.",
+  "how": "Read playbooks/particles.md (visual grammar, motion mechanics, scene recipes, QA); build in starters/html-canvas or starters/remotion; filter catalog with python3 tools/kosif.py list --category particles.",
+  "params": "sizes 4/8/14px; 150-600 Canvas, 20000 WebGL; burst 400-1300px/s gravity 60-150px/s2; flow-field noise scale 0.0025",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md",
+   "kosif-tool/catalog/categories.json",
+   "kosif-tool/catalog/meta.json"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-107"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات منحنية في هوديني",
+  "name_en": "Houdini VEX curl-flow particles",
+  "status": "key",
+  "what": "Advect points by noise velocity, orient to velocity, shrink near end of life.",
+  "how": "VEX wrangle: @v=lerp(@v,noise*speed,blend); @orient=quaternion(maketransform(normalize(@v),up)); @pscale=base*(1-smooth(0.7,1,@age/@life)). Run via hython.",
+  "params": "shrink from 70% of life",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/228-mas-3d-games/708-houdini/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-108"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "محاكاة هوديني",
+  "name_en": "Houdini FLIP/Pyro/Vellum/RBD + Karma",
+  "status": "key",
+  "what": "Pro fluid, smoke, cloth and rigid-body solvers; USD/MaterialX rendering with Karma XPU and cryptomatte AOVs.",
+  "how": "Commercial license; hython headless baking. Not available here.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/228-mas-3d-games/708-houdini/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-109"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حلقة جزيئات",
+  "name_en": "Particle torus",
+  "status": "seen",
+  "what": "points on torus projected with perspective, rotate, size by depth",
+  "how": "points on torus projected with perspective, rotate, size by depth",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-codestackr-c071bf",
+   "style:pm-roundtablespace-d3a1be"
+  ],
+  "styles": [
+   "pm-codestackr-c071bf",
+   "pm-roundtablespace-d3a1be"
+  ],
+  "tags": [],
+  "id": "PART-110"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرة جسيمات",
+  "name_en": "Particle sphere",
+  "status": "seen",
+  "what": "Fibonacci-sphere points projected and rotated, coloured dots",
+  "how": "Fibonacci-sphere points projected and rotated, coloured dots",
+  "params": "~600 points",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-crazyalphaaa-bc7e75",
+   "style:pm-zaqailo-212ad3"
+  ],
+  "styles": [
+   "pm-crazyalphaaa-bc7e75",
+   "pm-zaqailo-212ad3"
+  ],
+  "tags": [],
+  "id": "PART-111"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تراب طباشير يتساقط",
+  "name_en": "Falling chalk dust particles",
+  "status": "seen",
+  "what": "for the last ~14 frames the chalk was drawing, spawn a dot at that tip; it falls with gravity and fades over 0.5 s; deterministic random(seed)",
+  "how": "for the last ~14 frames the chalk was drawing, spawn a dot at that tip; it falls with gravity and fades over 0.5 s; deterministic random(seed)",
+  "params": "r 0.8-1.5 px, g ~400 px/s^2",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:chalkboard"
+  ],
+  "styles": [
+   "chalkboard"
+  ],
+  "tags": [],
+  "id": "PART-112"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر من الغيمة مع حلقات ارتطام",
+  "name_en": "Rain with splash rings",
+  "status": "seen",
+  "what": "short blue dashes fall from the cloud footprint with random x and speed; on ground y spawn small ellipse rings that expand and fade",
+  "how": "short blue dashes fall from the cloud footprint with random x and speed; on ground y spawn small ellipse rings that expand and fade",
+  "params": "40-60 streaks, fall 600-900 ms, ring 300 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:doodle"
+  ],
+  "styles": [
+   "doodle"
+  ],
+  "tags": [],
+  "id": "PART-113"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار قصاصات عند الوصول",
+  "name_en": "Confetti burst on arrival",
+  "status": "seen",
+  "what": "20-40 small rotated rectangles in stage colours with random velocity, gravity and spin, fading after ~1 s",
+  "how": "20-40 small rotated rectangles in stage colours with random velocity, gravity and spin, fading after ~1 s",
+  "params": "g ~900 px/s^2",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:isometric"
+  ],
+  "styles": [
+   "isometric"
+  ],
+  "tags": [],
+  "id": "PART-114"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أوتار تهتز عند الاصطدام",
+  "name_en": "Vibrating strings impact",
+  "status": "seen",
+  "what": "5 horizontal quadratic curves; on impact set control-point offset to amplitude A and decay with damped sine A·e^(-6t)·sin(30t)",
+  "how": "5 horizontal quadratic curves; on impact set control-point offset to amplitude A and decay with damped sine A·e^(-6t)·sin(30t)",
+  "params": "A ≈ 4% h, 400 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-1littlecoder-9fef89"
+  ],
+  "styles": [
+   "pm-1littlecoder-9fef89"
+  ],
+  "tags": [],
+  "id": "PART-115"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "دوامة جسيمات",
+  "name_en": "Particle vortex",
+  "status": "seen",
+  "what": "3k points on spiral, angle+=k/r",
+  "how": "3k points on spiral, angle+=k/r",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-3xtihor-0f6911"
+  ],
+  "styles": [
+   "pm-3xtihor-0f6911"
+  ],
+  "tags": [],
+  "id": "PART-116"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أشعة تحت الماء وتمايل",
+  "name_en": "Underwater rays and bobbing",
+  "status": "seen",
+  "what": "Vertical blue gradient with semi-transparent diagonal light shafts; jellyfish bob with sine y and tentacle sway, bubbles rise and wobble, fish cross horizontally",
+  "how": "Vertical blue gradient with semi-transparent diagonal light shafts; jellyfish bob with sine y and tentacle sway, bubbles rise and wobble, fish cross horizontally",
+  "params": "bob amplitude 10 px at 0.4 Hz, bubbles 20-40 px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-abderrahmen-g-9e8ed0"
+  ],
+  "styles": [
+   "pm-abderrahmen-g-9e8ed0"
+  ],
+  "tags": [],
+  "id": "PART-117"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تفكك النص إلى شرارات جمرية",
+  "name_en": "Text disintegrates into embers",
+  "status": "seen",
+  "what": "sample text pixels into points; each point gets delayed release (left→right noise threshold), curl-noise velocity, colour from white to orange, additive blending",
+  "how": "sample text pixels into points; each point gets delayed release (left→right noise threshold), curl-noise velocity, colour from white to orange, additive blending",
+  "params": "20-60k points; release sweep 1.2 s; life 2 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ajith-io-4c248f"
+  ],
+  "styles": [
+   "pm-ajith-io-4c248f"
+  ],
+  "tags": [],
+  "id": "PART-118"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "موجة شبكة نقاط",
+  "name_en": "Dot grid wave",
+  "status": "seen",
+  "what": "grid of dots, colour flips along sine wave front",
+  "how": "grid of dots, colour flips along sine wave front",
+  "params": "spacing 40px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ajith-io-b5626e"
+  ],
+  "styles": [
+   "pm-ajith-io-b5626e"
+  ],
+  "tags": [],
+  "id": "PART-119"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سرب حروف",
+  "name_en": "Letter flock",
+  "status": "seen",
+  "what": "boids with glyph sprites over gradient sky",
+  "how": "boids with glyph sprites over gradient sky",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ajith-io-ea7f2d"
+  ],
+  "styles": [
+   "pm-ajith-io-ea7f2d"
+  ],
+  "tags": [],
+  "id": "PART-120"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار قصاصات احتفالي",
+  "name_en": "Confetti celebration burst",
+  "status": "seen",
+  "what": "300 thin planes with random colour from palette, initial upward velocity, gravity 9.8, drag 0.98, random angular velocity",
+  "how": "300 thin planes with random colour from palette, initial upward velocity, gravity 9.8, drag 0.98, random angular velocity",
+  "params": "lifetime 2.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-anilraok-eff262"
+  ],
+  "styles": [
+   "pm-anilraok-eff262"
+  ],
+  "tags": [],
+  "id": "PART-121"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خطوط فضاء",
+  "name_en": "Hyperspace streaks",
+  "status": "seen",
+  "what": "radial lines length∝speed",
+  "how": "radial lines length∝speed",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-apoorvjain25-d24184"
+  ],
+  "styles": [
+   "pm-apoorvjain25-d24184"
+  ],
+  "tags": [],
+  "id": "PART-122"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حياة محيطة: نوارس وفوانيس",
+  "name_en": "Ambient life: gulls and lamps",
+  "status": "seen",
+  "what": "few bird sprites/meshes with flap cycle on slow paths; emissive lantern heads on posts",
+  "how": "few bird sprites/meshes with flap cycle on slow paths; emissive lantern heads on posts",
+  "params": "3-5 gulls, flap 3 Hz",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-axtonliu-0b861d"
+  ],
+  "styles": [
+   "pm-axtonliu-0b861d"
+  ],
+  "tags": [],
+  "id": "PART-123"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرة جسيمات فيبوناتشي",
+  "name_en": "Fibonacci particle sphere",
+  "status": "seen",
+  "what": "Place N points with golden-angle spiral on unit sphere, rotate in y, project with perspective, sort by depth, size/alpha by z, a few red accent points, plus elliptical orbit line",
+  "how": "Place N points with golden-angle spiral on unit sphere, rotate in y, project with perspective, sort by depth, size/alpha by z, a few red accent points, plus elliptical orbit line",
+  "params": "N=1200, FOV 42°, rot 167°/s guess",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ayushunleashed-ece3e3"
+  ],
+  "styles": [
+   "pm-ayushunleashed-ece3e3"
+  ],
+  "tags": [],
+  "id": "PART-124"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مربعات شفافة عائمة كقصاصات",
+  "name_en": "Confetti rounded squares",
+  "status": "seen",
+  "what": "Spawn 20-30 translucent rounded squares of brand colours drifting upward with slow rotation and parallax depth by size",
+  "how": "Spawn 20-30 translucent rounded squares of brand colours drifting upward with slow rotation and parallax depth by size",
+  "params": "opacity 0.4-0.7, speed 20-60 px/s, rotation 10-30°/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-bizibeast-10f264"
+  ],
+  "styles": [
+   "pm-bizibeast-10f264"
+  ],
+  "tags": [],
+  "id": "PART-125"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خطوط تتجمع",
+  "name_en": "Line particles regroup",
+  "status": "seen",
+  "what": "line segments explode then attract to rectangle targets",
+  "how": "line segments explode then attract to rectangle targets",
+  "params": "1s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-blue-clarity-ef56d0"
+  ],
+  "styles": [
+   "pm-blue-clarity-ef56d0"
+  ],
+  "tags": [],
+  "id": "PART-126"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تحول الجسيمات إلى شبكة ثم واجهة",
+  "name_en": "Particles-to-grid-to-UI resolve",
+  "status": "seen",
+  "what": "Each sphere tweens to a snapped grid cell (stagger by distance), grid dots then fade while UI layers fade up in their place",
+  "how": "Each sphere tweens to a snapped grid cell (stagger by distance), grid dots then fade while UI layers fade up in their place",
+  "params": "grid pitch ~24 px, tween 600 ms easeInOutCubic, stagger 0-300 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-bogdandragomir-35e024"
+  ],
+  "styles": [
+   "pm-bogdandragomir-35e024"
+  ],
+  "tags": [],
+  "id": "PART-127"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أيقونة تتكوّن من سحابة نقاط",
+  "name_en": "Icon coalescing from point cloud",
+  "status": "seen",
+  "what": "Sample points along icon SVG path, start them scattered in a teardrop cloud and spring to target positions",
+  "how": "Sample points along icon SVG path, start them scattered in a teardrop cloud and spring to target positions",
+  "params": "300-600 points, spring stiffness 120, damping 18, ~600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-bogdandragomir-35e024"
+  ],
+  "styles": [
+   "pm-bogdandragomir-35e024"
+  ],
+  "tags": [],
+  "id": "PART-128"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار فتح إنجاز",
+  "name_en": "Achievement unlock burst",
+  "status": "seen",
+  "what": "spawn 80 gold star particles radial, gravity 0.05, fade 2 s",
+  "how": "spawn 80 gold star particles radial, gravity 0.05, fade 2 s",
+  "params": "colors #e3b75a/#fff",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-bthreeagency-b9b8d9"
+  ],
+  "styles": [
+   "pm-bthreeagency-b9b8d9"
+  ],
+  "tags": [],
+  "id": "PART-129"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات غبار للعمق",
+  "name_en": "Dust particle depth field",
+  "status": "seen",
+  "what": "40-80 small soft dots of varied blur and opacity drifting slowly upward over a radial navy gradient to add depth behind flat UI",
+  "how": "40-80 small soft dots of varied blur and opacity drifting slowly upward over a radial navy gradient to add depth behind flat UI",
+  "params": "size 2-6 px, speed 5-15 px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ceowinkz-7c776b"
+  ],
+  "styles": [
+   "pm-ceowinkz-7c776b"
+  ],
+  "tags": [],
+  "id": "PART-130"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شبكة نقاط تتأثر بجسم متحرك",
+  "name_en": "Dot-grid field displacement",
+  "status": "seen",
+  "what": "grid of dots; each dot offset away from a moving attractor and tinted red/blue by distance; chain of balls follows leader with lag (follow-through)",
+  "how": "grid of dots; each dot offset away from a moving attractor and tinted red/blue by distance; chain of balls follows leader with lag (follow-through)",
+  "params": "grid 28 px, radius 160 px, chain 15 balls lag 2 frames",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-chatgptastra-0d95c7"
+  ],
+  "styles": [
+   "pm-chatgptastra-0d95c7"
+  ],
+  "tags": [],
+  "id": "PART-131"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "باعث لهب",
+  "name_en": "Canvas fire emitter",
+  "status": "seen",
+  "what": "spawn 30-60 particles/frame rising with noise, colour ramp white→yellow→red→transparent, lighter blend",
+  "how": "spawn 30-60 particles/frame rising with noise, colour ramp white→yellow→red→transparent, lighter blend",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-chrisjdimarco-f068db"
+  ],
+  "styles": [
+   "pm-chrisjdimarco-f068db"
+  ],
+  "tags": [],
+  "id": "PART-132"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بلوب سائل",
+  "name_en": "Metaball blob",
+  "status": "seen",
+  "what": "SVG gooey filter or metaballs with inner lighter circles, offset blue shadow",
+  "how": "SVG gooey filter or metaballs with inner lighter circles, offset blue shadow",
+  "params": "blur 12 + threshold",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-crazyalphaaa-bc7e75"
+  ],
+  "styles": [
+   "pm-crazyalphaaa-bc7e75"
+  ],
+  "tags": [],
+  "id": "PART-133"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "فاصل كوكبة النجوم",
+  "name_en": "Constellation interlude",
+  "status": "seen",
+  "what": "random star points, lines connect nearby, purple radial haze",
+  "how": "random star points, lines connect nearby, purple radial haze",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-dale-vaz-cc612a"
+  ],
+  "styles": [
+   "pm-dale-vaz-cc612a"
+  ],
+  "tags": [],
+  "id": "PART-134"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر قصاصات الورق",
+  "name_en": "Confetti rain",
+  "status": "seen",
+  "what": "Small rectangles in brand + festive colours spawned above, fall with gravity, sway (sin) and 3D flip (scaleY cos)",
+  "how": "Small rectangles in brand + festive colours spawned above, fall with gravity, sway (sin) and 3D flip (scaleY cos)",
+  "params": "150 pcs, fall 150-300 px/s, sway 20 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-deebeeeff-50fcd0"
+  ],
+  "styles": [
+   "pm-deebeeeff-50fcd0"
+  ],
+  "tags": [],
+  "id": "PART-135"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ماء متموج عاكس بتظليل إجرائي",
+  "name_en": "Procedural reflective water",
+  "status": "seen",
+  "what": "Fragment shader: mirror the sky above horizon, distort with scrolling layered sine/noise normals, add specular streaks under bright sources",
+  "how": "Fragment shader: mirror the sky above horizon, distort with scrolling layered sine/noise normals, add specular streaks under bright sources",
+  "params": "2-3 noise octaves, scroll 0.02-0.05 uv/s, reflection darken 20%",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-demitiyageekzen-7770ad"
+  ],
+  "styles": [
+   "pm-demitiyageekzen-7770ad"
+  ],
+  "tags": [],
+  "id": "PART-136"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "فوانيس عائمة مضيئة على الماء",
+  "name_en": "Floating lantern particles",
+  "status": "seen",
+  "what": "Small emissive lotus sprites placed in perspective on the water plane, drifting slowly with flicker and a short vertical reflection streak each",
+  "how": "Small emissive lotus sprites placed in perspective on the water plane, drifting slowly with flicker and a short vertical reflection streak each",
+  "params": "8-15 lanterns, flicker 0.85-1.0 at 3-6 Hz, drift 5-10 px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-demitiyageekzen-7770ad"
+  ],
+  "styles": [
+   "pm-demitiyageekzen-7770ad"
+  ],
+  "tags": [],
+  "id": "PART-137"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار قصاصات",
+  "name_en": "Confetti burst",
+  "status": "seen",
+  "what": "40 particles gravity + spin from button",
+  "how": "40 particles gravity + spin from button",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-devius-maximus-beab45"
+  ],
+  "styles": [
+   "pm-devius-maximus-beab45"
+  ],
+  "tags": [],
+  "id": "PART-138"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "طبقات أمواج متوازية",
+  "name_en": "Parallax wave layers",
+  "status": "seen",
+  "what": "3-5 sine wave bands with offset phase & speeds",
+  "how": "3-5 sine wave bands with offset phase & speeds",
+  "params": "amp 10-30px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-faroukzy-9ff23e"
+  ],
+  "styles": [
+   "pm-faroukzy-9ff23e"
+  ],
+  "tags": [],
+  "id": "PART-139"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نظام مطر",
+  "name_en": "Rain streak system",
+  "status": "seen",
+  "what": "slanted short lines falling fast with alpha",
+  "how": "slanted short lines falling fast with alpha",
+  "params": "~400 drops",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-faroukzy-9ff23e"
+  ],
+  "styles": [
+   "pm-faroukzy-9ff23e"
+  ],
+  "tags": [],
+  "id": "PART-140"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شبكة نقاط تتحرك فيها موجة",
+  "name_en": "Travelling wave dot grid",
+  "status": "seen",
+  "what": "grid of small grey dots; cells near a moving sine band scale up into pink squares, falloff by distance",
+  "how": "grid of small grey dots; cells near a moving sine band scale up into pink squares, falloff by distance",
+  "params": "grid 24 px, band width 120 px, speed 400 px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "styles": [
+   "pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "tags": [],
+  "id": "PART-141"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بقع سائلة متداخلة",
+  "name_en": "Metaball fluid blobs",
+  "status": "seen",
+  "what": "several circles blurred + threshold (gooey filter) moving on noise paths, merging; overlaid italic word",
+  "how": "several circles blurred + threshold (gooey filter) moving on noise paths, merging; overlaid italic word",
+  "params": "SVG feGaussianBlur 12 + feColorMatrix alpha 20 -8",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "styles": [
+   "pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "tags": [],
+  "id": "PART-142"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شظايا كريستال طافية",
+  "name_en": "Floating crystal shards",
+  "status": "seen",
+  "what": "Instanced flat star/shard meshes in neon emissive colours drifting and spinning in the foreground for depth",
+  "how": "Instanced flat star/shard meshes in neon emissive colours drifting and spinning in the foreground for depth",
+  "params": "count ~40, rot 0.5 rad/s, depth-of-field feel by size",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-gorden-sun-041f56"
+  ],
+  "styles": [
+   "pm-gorden-sun-041f56"
+  ],
+  "tags": [],
+  "id": "PART-143"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات تكوّن كلمة",
+  "name_en": "Particles assemble a word",
+  "status": "seen",
+  "what": "Sample points from rasterised text; start particles from a dot-matrix shape, drift them with curl noise, then spring them to their target text points; mix red and white particles",
+  "how": "Sample points from rasterised text; start particles from a dot-matrix shape, drift them with curl noise, then spring them to their target text points; mix red and white particles",
+  "params": "~4800 particles, spring k ~0.08, damping 0.85",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-grace-sunnyy-29bc61"
+  ],
+  "styles": [
+   "pm-grace-sunnyy-29bc61"
+  ],
+  "tags": [],
+  "id": "PART-144"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نقاط مسار الارتداد",
+  "name_en": "Bounce trajectory dots",
+  "status": "seen",
+  "what": "simulate y'' = -g with restitution e on contact; stamp a red dot every N frames to leave a dotted parabola trail; annotate 'e = 0.75'",
+  "how": "simulate y'' = -g with restitution e on contact; stamp a red dot every N frames to leave a dotted parabola trail; annotate 'e = 0.75'",
+  "params": "e 0.75, dot 4 px #c9452c, every 2 frames",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-hbcoop-de365c"
+  ],
+  "styles": [
+   "pm-hbcoop-de365c"
+  ],
+  "tags": [],
+  "id": "PART-145"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سرب جسيمات منقّطة",
+  "name_en": "Boids stipple flock",
+  "status": "seen",
+  "what": "8,192 points with separation/alignment/cohesion (GPU or instanced), drawn as 1-2 px dark dots, projected soft shadow below",
+  "how": "8,192 points with separation/alignment/cohesion (GPU or instanced), drawn as 1-2 px dark dots, projected soft shadow below",
+  "params": "n 8192, point 1.5 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-hbcoop-de365c"
+  ],
+  "styles": [
+   "pm-hbcoop-de365c"
+  ],
+  "tags": [],
+  "id": "PART-146"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل نقاط يتشوه بالحركة",
+  "name_en": "Dot-matrix displacement field",
+  "status": "seen",
+  "what": "grid of dots; each dot offset by falloff from a moving attractor; trail of large blue dots with lagging follow-through and red secondary particles",
+  "how": "grid of dots; each dot offset by falloff from a moving attractor; trail of large blue dots with lagging follow-through and red secondary particles",
+  "params": "grid 24px, falloff radius 200px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-himanshutwtxs-5f4b43"
+  ],
+  "styles": [
+   "pm-himanshutwtxs-5f4b43"
+  ],
+  "tags": [],
+  "id": "PART-147"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "وميض نجوم",
+  "name_en": "Star twinkle",
+  "status": "seen",
+  "what": "Random phase sine on alpha, cross sparkles",
+  "how": "Random phase sine on alpha, cross sparkles",
+  "params": "60 stars",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-hoyoyoda-3a5c08"
+  ],
+  "styles": [
+   "pm-hoyoyoda-3a5c08"
+  ],
+  "tags": [],
+  "id": "PART-148"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات بكسل تتجمع نصاً",
+  "name_en": "Pixel particles assemble text",
+  "status": "seen",
+  "what": "Sample text pixels on an offscreen canvas, spawn square particles at random positions, tween each to its target with easeOutExpo and random delay 0-600 ms",
+  "how": "Sample text pixels on an offscreen canvas, spawn square particles at random positions, tween each to its target with easeOutExpo and random delay 0-600 ms",
+  "params": "particle 6px; 1.2-1.5s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ibrahimwasim240-809370"
+  ],
+  "styles": [
+   "pm-ibrahimwasim240-809370"
+  ],
+  "tags": [],
+  "id": "PART-149"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شفط دوامي للعناصر",
+  "name_en": "Vortex suck-in",
+  "status": "seen",
+  "what": "Cards spiral toward the hero object while scaling down; radial scribble lines around the object convey force",
+  "how": "Cards spiral toward the hero object while scaling down; radial scribble lines around the object convey force",
+  "params": "300-500 ms easeInCubic, rotation 90-180 deg",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ik-builds-b8bdcf"
+  ],
+  "styles": [
+   "pm-ik-builds-b8bdcf"
+  ],
+  "tags": [],
+  "id": "PART-150"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سرب جسيمات متدفق",
+  "name_en": "Flow-field streak swarm",
+  "status": "seen",
+  "what": "~10k particles, curl noise velocity, draw short lines with alpha trail 0.1",
+  "how": "~10k particles, curl noise velocity, draw short lines with alpha trail 0.1",
+  "params": "additive blend",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ismailfahmi-557268"
+  ],
+  "styles": [
+   "pm-ismailfahmi-557268"
+  ],
+  "tags": [],
+  "id": "PART-151"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تحول الجسيمات إلى شكل",
+  "name_en": "Particle target morph",
+  "status": "seen",
+  "what": "lerp each particle to target point sets (clusters, histogram bins) over 1.2s easeInOut",
+  "how": "lerp each particle to target point sets (clusters, histogram bins) over 1.2s easeInOut",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ismailfahmi-557268"
+  ],
+  "styles": [
+   "pm-ismailfahmi-557268"
+  ],
+  "tags": [],
+  "id": "PART-152"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جزيئات موسمية: بتلات وأوراق وثلج",
+  "name_en": "Seasonal particles",
+  "status": "seen",
+  "what": "Emitters drifting diagonally with the wind direction of travel: blossoms (pink ellipses, spin), leaves (orange quads, tumbling), snow (white dots, slow fall, sine sway)",
+  "how": "Emitters drifting diagonally with the wind direction of travel: blossoms (pink ellipses, spin), leaves (orange quads, tumbling), snow (white dots, slow fall, sine sway)",
+  "params": "60-150 particles, vx -100..-300 px/s, sway amp 10 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-itsolelehmann-e47532"
+  ],
+  "styles": [
+   "pm-itsolelehmann-e47532"
+  ],
+  "tags": [],
+  "id": "PART-153"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بخار قهوة يتصاعد",
+  "name_en": "Coffee steam curls",
+  "status": "seen",
+  "what": "3 thin translucent white bezier strokes rising from the cup, each offset by noise over time and fading out at the top",
+  "how": "3 thin translucent white bezier strokes rising from the cup, each offset by noise over time and fading out at the top",
+  "params": "rise 40 px/s, opacity 0.4->0, loop 3 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-itsolelehmann-e47532"
+  ],
+  "styles": [
+   "pm-itsolelehmann-e47532"
+  ],
+  "tags": [],
+  "id": "PART-154"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "عادم جسيمات مكعبة",
+  "name_en": "Cube particle exhaust",
+  "status": "seen",
+  "what": "spawn small emissive cubes behind engine, random velocity, scale/alpha fade",
+  "how": "spawn small emissive cubes behind engine, random velocity, scale/alpha fade",
+  "params": "life ~1s, 40/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ivanfioravanti-bd9261"
+  ],
+  "styles": [
+   "pm-ivanfioravanti-bd9261"
+  ],
+  "tags": [],
+  "id": "PART-155"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جزيئات تتجمع لتكوين كلمة",
+  "name_en": "Particles to text",
+  "status": "seen",
+  "what": "Sample points from text rendered to offscreen canvas; spawn particles at a burst origin and lerp each to its target with ease-out plus noise; colour by gradient",
+  "how": "Sample points from text rendered to offscreen canvas; spawn particles at a burst origin and lerp each to its target with ease-out plus noise; colour by gradient",
+  "params": "2-4k particles, 800 ms travel, size 2 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jasonzhou1993-8595e0"
+  ],
+  "styles": [
+   "pm-jasonzhou1993-8595e0"
+  ],
+  "tags": [],
+  "id": "PART-156"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شرائط خطوط موجية",
+  "name_en": "Line-ribbon waves",
+  "status": "seen",
+  "what": "Draw 100-200 thin sine curves whose phase/amplitude are offset per line and driven by noise over time, stroked with an orange->magenta->blue gradient at low alpha",
+  "how": "Draw 100-200 thin sine curves whose phase/amplitude are offset per line and driven by noise over time, stroked with an orange->magenta->blue gradient at low alpha",
+  "params": "lineWidth 0.6, alpha 0.3, 3-4 bands",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jasonzhou1993-8595e0"
+  ],
+  "styles": [
+   "pm-jasonzhou1993-8595e0"
+  ],
+  "tags": [],
+  "id": "PART-157"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شعار بكسلي من جسيمات",
+  "name_en": "Particle-to-pixel logo",
+  "status": "seen",
+  "what": "random particles ease to grid cells of logo bitmap",
+  "how": "random particles ease to grid cells of logo bitmap",
+  "params": "~600 px cells, 1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jayscambler-3f8889"
+  ],
+  "styles": [
+   "pm-jayscambler-3f8889"
+  ],
+  "tags": [],
+  "id": "PART-158"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر وضباب جوي",
+  "name_en": "Rain and fog atmosphere",
+  "status": "seen",
+  "what": "300-500 thin streaks falling at ~10-15° with slight speed variance; 2-3 blurred horizontal fog bands drifting slowly at different speeds",
+  "how": "300-500 thin streaks falling at ~10-15° with slight speed variance; 2-3 blurred horizontal fog bands drifting slowly at different speeds",
+  "params": "streak alpha 0.25-0.4, length 12-24px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kamstudiolabs-0b0824"
+  ],
+  "styles": [
+   "pm-kamstudiolabs-0b0824"
+  ],
+  "tags": [],
+  "id": "PART-159"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شرارات الاصطدام",
+  "name_en": "Impact spark lines",
+  "status": "seen",
+  "what": "Emit 4-6 short radial line particles at impact point that fly out and fade",
+  "how": "Emit 4-6 short radial line particles at impact point that fly out and fade",
+  "params": "life 200 ms, speed 200 px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kamstudiolabs-447565"
+  ],
+  "styles": [
+   "pm-kamstudiolabs-447565"
+  ],
+  "tags": [],
+  "id": "PART-160"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ارتداد كرة داخل حلقة دائرية",
+  "name_en": "Ball-in-ring circular reflection physics",
+  "status": "seen",
+  "what": "fixed timestep; when |p-c| >= R - r, reflect velocity about normal n=(p-c)/|p-c|: v = v - 2(v·n)n; keep speed constant (restitution 1); check gap: if atan2 angle within rotating gap window, let ball p",
+  "how": "fixed timestep; when |p-c| >= R - r, reflect velocity about normal n=(p-c)/|p-c|: v = v - 2(v·n)n; keep speed constant (restitution 1); check gap: if atan2 angle within rotating gap window, let ball pass and remove ring",
+  "params": "substeps 4/frame, speed ~600 px/s @720w, gap ~30-40 deg",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kantamk-61f410"
+  ],
+  "styles": [
+   "pm-kantamk-61f410"
+  ],
+  "tags": [],
+  "id": "PART-161"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ذيل حركة مدبّب",
+  "name_en": "Tapered motion trail",
+  "status": "seen",
+  "what": "store last bounce point and recent positions; draw line segments with width and alpha decreasing toward the tail",
+  "how": "store last bounce point and recent positions; draw line segments with width and alpha decreasing toward the tail",
+  "params": "trail ~0.3 s, width 6->0px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kantamk-61f410"
+  ],
+  "styles": [
+   "pm-kantamk-61f410"
+  ],
+  "tags": [],
+  "id": "PART-162"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تفتت الحلقة إلى نقاط",
+  "name_en": "Ring-burst particle dissolve",
+  "status": "seen",
+  "what": "on escape, sample ~60 points along the ring, give radial outward velocity 40-120 px/s with slight random tangent, glowing dots fade over ~2 s",
+  "how": "on escape, sample ~60 points along the ring, give radial outward velocity 40-120 px/s with slight random tangent, glowing dots fade over ~2 s",
+  "params": "dot radius 1.5-3px, seeded RNG",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kantamk-61f410"
+  ],
+  "styles": [
+   "pm-kantamk-61f410"
+  ],
+  "tags": [],
+  "id": "PART-163"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرة نقاط تتجمع ثم تنهار",
+  "name_en": "Point-cloud sphere gather/collapse",
+  "status": "seen",
+  "what": "~400 points on a Fibonacci sphere, project with slow Y rotation; scale radius 0->R (ease-out 1.5 s) to form, R->0 (ease-in 0.6 s) to collapse into origin dot",
+  "how": "~400 points on a Fibonacci sphere, project with slow Y rotation; scale radius 0->R (ease-out 1.5 s) to form, R->0 (ease-in 0.6 s) to collapse into origin dot",
+  "params": "point alpha 0.25, size 1-1.5px, R ~25% height",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kloss-xyz-b9b3f6"
+  ],
+  "styles": [
+   "pm-kloss-xyz-b9b3f6"
+  ],
+  "tags": [],
+  "id": "PART-164"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كلمة من الضوضاء",
+  "name_en": "Noise-to-word denoise",
+  "status": "seen",
+  "what": "particles lerp from random to text-sampled positions over steps",
+  "how": "particles lerp from random to text-sampled positions over steps",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kloss-xyz-fe0c31"
+  ],
+  "styles": [
+   "pm-kloss-xyz-fe0c31"
+  ],
+  "tags": [],
+  "id": "PART-165"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مجرة جزيئات",
+  "name_en": "Particle galaxy outro",
+  "status": "seen",
+  "what": "log spiral points rotating with depth fade",
+  "how": "log spiral points rotating with depth fade",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kloss-xyz-fe0c31"
+  ],
+  "styles": [
+   "pm-kloss-xyz-fe0c31"
+  ],
+  "tags": [],
+  "id": "PART-166"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شيدر لهب العادم",
+  "name_en": "Exhaust plume shader",
+  "status": "seen",
+  "what": "additive cone with noise and shock-diamond bright bands",
+  "how": "additive cone with noise and shock-diamond bright bands",
+  "params": "violet->white core",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-konstantinsaifo-96fc89"
+  ],
+  "styles": [
+   "pm-konstantinsaifo-96fc89"
+  ],
+  "tags": [],
+  "id": "PART-167"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "قطرات لزجة تتصل وتنفصل",
+  "name_en": "Metaball gooey flow",
+  "status": "seen",
+  "what": "Circles moving along paths with SVG filter feGaussianBlur(stdDev 10) + feColorMatrix alpha 20 -8 so they merge like liquid; add small white specular dot",
+  "how": "Circles moving along paths with SVG filter feGaussianBlur(stdDev 10) + feColorMatrix alpha 20 -8 so they merge like liquid; add small white specular dot",
+  "params": "blur 10; alpha matrix 0 0 0 20 -8",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-leadnotifi-e83f94"
+  ],
+  "styles": [
+   "pm-leadnotifi-e83f94"
+  ],
+  "tags": [],
+  "id": "PART-168"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شبكة نقاط تموج بموجة",
+  "name_en": "Rippling dot-matrix field",
+  "status": "seen",
+  "what": "Grid of small squares; scale and colour each by a travelling sine/radial wave so a lime band sweeps across",
+  "how": "Grid of small squares; scale and colour each by a travelling sine/radial wave so a lime band sweeps across",
+  "params": "grid 24px; wave speed 400px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-leadnotifi-e83f94"
+  ],
+  "styles": [
+   "pm-leadnotifi-e83f94"
+  ],
+  "tags": [],
+  "id": "PART-169"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نفق جسيمات بخطوط سرعة",
+  "name_en": "Particle streak tunnel",
+  "status": "seen",
+  "what": "Thousands of particles on a cylinder moving toward camera rendered as short lines (velocity streaks), dark hole in centre",
+  "how": "Thousands of particles on a cylinder moving toward camera rendered as short lines (velocity streaks), dark hole in centre",
+  "params": "3000 pts, warm multicolour, additive blend, 1 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-leonkohli-6dc01b"
+  ],
+  "styles": [
+   "pm-leonkohli-6dc01b"
+  ],
+  "tags": [],
+  "id": "PART-170"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تكدس ملصقات أسفل الشاشة",
+  "name_en": "Poster pile spill",
+  "status": "seen",
+  "what": "Dozens of image cards drop from above with random rotation and pile along the bottom edge (pre-baked rigid body or eased random rest positions)",
+  "how": "Dozens of image cards drop from above with random rotation and pile along the bottom edge (pre-baked rigid body or eased random rest positions)",
+  "params": "40-60 cards, rot ±30°, stagger 30 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lester-tyy-f897f7"
+  ],
+  "styles": [
+   "pm-lester-tyy-f897f7"
+  ],
+  "tags": [],
+  "id": "PART-171"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تكدس رقائق بفيزياء",
+  "name_en": "Physics chip pile",
+  "status": "seen",
+  "what": "chips drop with gravity and settle with bounce",
+  "how": "chips drop with gravity and settle with bounce",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lexnlin-6161a6"
+  ],
+  "styles": [
+   "pm-lexnlin-6161a6"
+  ],
+  "tags": [],
+  "id": "PART-172"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سائل ملون",
+  "name_en": "Fluid sim backdrop",
+  "status": "seen",
+  "what": "GPU stable fluids with dye injection; outlined text overlay",
+  "how": "GPU stable fluids with dye injection; outlined text overlay",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lukasersil-0ed38e"
+  ],
+  "styles": [
+   "pm-lukasersil-0ed38e"
+  ],
+  "tags": [],
+  "id": "PART-173"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار جزيئات",
+  "name_en": "Particle burst tunnel",
+  "status": "seen",
+  "what": "thousands of points radially accelerating with motion streaks",
+  "how": "thousands of points radially accelerating with motion streaks",
+  "params": "1s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lukasersil-0ed38e"
+  ],
+  "styles": [
+   "pm-lukasersil-0ed38e"
+  ],
+  "tags": [],
+  "id": "PART-174"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نص من جسيمات",
+  "name_en": "Particle-filled text",
+  "status": "seen",
+  "what": "sample text pixels, place many dots, jitter",
+  "how": "sample text pixels, place many dots, jitter",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-m1n9-k7-ff9ab9"
+  ],
+  "styles": [
+   "pm-m1n9-k7-ff9ab9"
+  ],
+  "tags": [],
+  "id": "PART-175"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل موجة جسيمات",
+  "name_en": "3D particle wave field",
+  "status": "seen",
+  "what": "grid of points with sin displacement, perspective",
+  "how": "grid of points with sin displacement, perspective",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-m1n9-k7-ff9ab9"
+  ],
+  "styles": [
+   "pm-m1n9-k7-ff9ab9"
+  ],
+  "tags": [],
+  "id": "PART-176"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار جزيئات المنتج",
+  "name_en": "Product particle explosion",
+  "status": "seen",
+  "what": "3D-ish pills scattered with blur by depth, outward drift",
+  "how": "3D-ish pills scattered with blur by depth, outward drift",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-macrohou-33959d"
+  ],
+  "styles": [
+   "pm-macrohou-33959d"
+  ],
+  "tags": [],
+  "id": "PART-177"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "لولب يتحول إلى خيوط",
+  "name_en": "Helix to strands",
+  "status": "seen",
+  "what": "sinusoidal double helix whose points become bezier strands to target bar",
+  "how": "sinusoidal double helix whose points become bezier strands to target bar",
+  "params": "1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-madebyjmayala-b9204d"
+  ],
+  "styles": [
+   "pm-madebyjmayala-b9204d"
+  ],
+  "tags": [],
+  "id": "PART-178"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أيقونة مبنية من جسيمات",
+  "name_en": "Particle-built icon",
+  "status": "seen",
+  "what": "Sample points from an SVG icon (padlock/logo) and spring scattered particles into it, additive blending + bloom, glowing focal point (keyhole)",
+  "how": "Sample points from an SVG icon (padlock/logo) and spring scattered particles into it, additive blending + bloom, glowing focal point (keyhole)",
+  "params": "3000-6000 points, size 1-2 px, bloom strength 1.5, spring 600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-madhav-xo-f97f20"
+  ],
+  "styles": [
+   "pm-madhav-xo-f97f20"
+  ],
+  "tags": [],
+  "id": "PART-179"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نمو عباد الشمس",
+  "name_en": "Phyllotaxis growth",
+  "status": "seen",
+  "what": "n*137.508deg, r=c*sqrt(n), grow n over time",
+  "how": "n*137.508deg, r=c*sqrt(n), grow n over time",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-math-files-39c9d0"
+  ],
+  "styles": [
+   "pm-math-files-39c9d0"
+  ],
+  "tags": [],
+  "id": "PART-180"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل نجوم بقفزة فضائية",
+  "name_en": "Hyperspace starfield warp",
+  "status": "seen",
+  "what": "N≈600 points with z depth; project x/z, y/z; draw line from previous to current projected position; speed ramps up on drops",
+  "how": "N≈600 points with z depth; project x/z, y/z; draw line from previous to current projected position; speed ramps up on drops",
+  "params": "speed 2→30 units/frame, stroke 1 px #9db4ff alpha 0.6",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-maxalexweber-67688b"
+  ],
+  "styles": [
+   "pm-maxalexweber-67688b"
+  ],
+  "tags": [],
+  "id": "PART-181"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرة جسيمات بحلقات مدارية",
+  "name_en": "Particle sphere with orbit rings",
+  "status": "seen",
+  "what": "Fibonacci-sphere points projected in 3D, gradient colour by height, two tilted thin ellipses; burst into velocity streaks",
+  "how": "Fibonacci-sphere points projected in 3D, gradient colour by height, two tilted thin ellipses; burst into velocity streaks",
+  "params": "2000 points, rotation 0.4 rad/s, streak length 10-30 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-motiondsgnr-9dcfa6"
+  ],
+  "styles": [
+   "pm-motiondsgnr-9dcfa6"
+  ],
+  "tags": [],
+  "id": "PART-182"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سائل ميتابول خلف النص",
+  "name_en": "Metaball liquid behind text",
+  "status": "seen",
+  "what": "Blurred blob field with threshold (or SVG goo filter), dark inner holes, moves behind bold headline; text keeps a gradient fill",
+  "how": "Blurred blob field with threshold (or SVG goo filter), dark inner holes, moves behind bold headline; text keeps a gradient fill",
+  "params": "gaussian blur 20 px + alpha threshold, 4-6 blobs",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-motiondsgnr-9dcfa6"
+  ],
+  "styles": [
+   "pm-motiondsgnr-9dcfa6"
+  ],
+  "tags": [],
+  "id": "PART-183"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جزيئات تتجمع في كلمة",
+  "name_en": "Particle text assembly",
+  "status": "seen",
+  "what": "sample text pixels as targets; particles advect by curl noise then lerp to targets",
+  "how": "sample text pixels as targets; particles advect by curl noise then lerp to targets",
+  "params": "6000 particles, 1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ndhabarde11-f155b4"
+  ],
+  "styles": [
+   "pm-ndhabarde11-f155b4"
+  ],
+  "tags": [],
+  "id": "PART-184"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خطوط رصاص متوهجة",
+  "name_en": "Tracer streaks",
+  "status": "seen",
+  "what": "Short additive-blended line segments fired in bursts of 6-10 along a direction, moving very fast and fading; warm white core",
+  "how": "Short additive-blended line segments fired in bursts of 6-10 along a direction, moving very fast and fading; warm white core",
+  "params": "speed ~3000 u/s, life 0.3 s, colour #fff2d0",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-nft-chen-5f8bb0"
+  ],
+  "styles": [
+   "pm-nft-chen-5f8bb0"
+  ],
+  "tags": [],
+  "id": "PART-185"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ذيول بخار من أطراف الأجنحة",
+  "name_en": "Wingtip contrail ribbons",
+  "status": "seen",
+  "what": "Record last N wingtip positions each frame and draw a flat ribbon mesh with alpha fading toward the tail",
+  "how": "Record last N wingtip positions each frame and draw a flat ribbon mesh with alpha fading toward the tail",
+  "params": "N = 60, width 0.3 u, alpha 0.8->0",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-nft-chen-5f8bb0"
+  ],
+  "styles": [
+   "pm-nft-chen-5f8bb0"
+  ],
+  "tags": [],
+  "id": "PART-186"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نجوم ممتدة كالانتقال الفضائي",
+  "name_en": "Warp star streaks",
+  "status": "seen",
+  "what": "Stars stretched into lines along radial vectors to imply camera travel between scenes",
+  "how": "Stars stretched into lines along radial vectors to imply camera travel between scenes",
+  "params": "streak length 50-200px; 0.8s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-nolkeeg-bf062e"
+  ],
+  "styles": [
+   "pm-nolkeeg-bf062e"
+  ],
+  "tags": [],
+  "id": "PART-187"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار بكسلي",
+  "name_en": "Pixel explosion",
+  "status": "seen",
+  "what": "circles orange/grey expand+fade 600 ms",
+  "how": "circles orange/grey expand+fade 600 ms",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-pluginplay-3d4006"
+  ],
+  "styles": [
+   "pm-pluginplay-3d4006"
+  ],
+  "tags": [],
+  "id": "PART-188"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تجمع جسيمات إلى نص",
+  "name_en": "Particle-to-text assembly",
+  "status": "seen",
+  "what": "sample text pixels to ~3k points, lerp from random with ease-out 800ms",
+  "how": "sample text pixels to ~3k points, lerp from random with ease-out 800ms",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-raphaelaubryy-4b137e"
+  ],
+  "styles": [
+   "pm-raphaelaubryy-4b137e"
+  ],
+  "tags": [],
+  "id": "PART-189"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كشف بحقل خطوط متدفق",
+  "name_en": "Flow-field line reveal",
+  "status": "seen",
+  "what": "grid of short strokes oriented by noise; text mask colors lines",
+  "how": "grid of short strokes oriented by noise; text mask colors lines",
+  "params": "noise scale 0.003",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rendesr-86be44"
+  ],
+  "styles": [
+   "pm-rendesr-86be44"
+  ],
+  "tags": [],
+  "id": "PART-190"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حزمة موجات ضوضائية متعددة",
+  "name_en": "Multi-trace noisy waveform band",
+  "status": "seen",
+  "what": "N=15 polylines across width; y = base + sum of 3 sines with per-trace phase + simplex noise(t*2, x*0.01)*amp; alpha 0.25 each, additive",
+  "how": "N=15 polylines across width; y = base + sum of 3 sines with per-trace phase + simplex noise(t*2, x*0.01)*amp; alpha 0.25 each, additive",
+  "params": "amp 20-60px, 200 points per trace, update every frame",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rneayan-ea6129"
+  ],
+  "styles": [
+   "pm-rneayan-ea6129"
+  ],
+  "tags": [],
+  "id": "PART-191"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار جزيئات بشكل الشعار ثم تجمعها",
+  "name_en": "Iconic particle burst to logo",
+  "status": "seen",
+  "what": "spawn 80-150 tiny X glyph particles with random velocity, mix of white and red, then lerp to centre target with ease-in; crossfade into large X",
+  "how": "spawn 80-150 tiny X glyph particles with random velocity, mix of white and red, then lerp to centre target with ease-in; crossfade into large X",
+  "params": "scatter 0.6 s, converge 0.8 s, motion blur",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-robj3d3-b18fad"
+  ],
+  "styles": [
+   "pm-robj3d3-b18fad"
+  ],
+  "tags": [],
+  "id": "PART-192"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تفكك النص لجسيمات",
+  "name_en": "Text→particle burst",
+  "status": "seen",
+  "what": "Sample text pixels into particles, apply outward velocity + noise drift",
+  "how": "Sample text pixels into particles, apply outward velocity + noise drift",
+  "params": "~800 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-robvjourney-ce3e1a"
+  ],
+  "styles": [
+   "pm-robvjourney-ce3e1a"
+  ],
+  "tags": [],
+  "id": "PART-193"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سكب وارتفاع السائل",
+  "name_en": "Liquid fill with pour stream",
+  "status": "seen",
+  "what": "bezier stream from bottle neck; clip-rect rising per oz; colour blend",
+  "how": "bezier stream from bottle neck; clip-rect rising per oz; colour blend",
+  "params": "~2.5 s per pour",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ror-fly-9950f1"
+  ],
+  "styles": [
+   "pm-ror-fly-9950f1"
+  ],
+  "tags": [],
+  "id": "PART-194"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار سحابة صور",
+  "name_en": "Image burst cloud",
+  "status": "seen",
+  "what": "~120 rounded image cards spawn at centre and fly radially outward with varied depth (scale 0.4-1.2), slight rotation and soft shadows, slowing to a drifting cloud around a caption pill",
+  "how": "~120 rounded image cards spawn at centre and fly radially outward with varied depth (scale 0.4-1.2), slight rotation and soft shadows, slowing to a drifting cloud around a caption pill",
+  "params": "burst 700 ms expo-out, then drift 10 px/s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rossaxbt-3085b7"
+  ],
+  "styles": [
+   "pm-rossaxbt-3085b7"
+  ],
+  "tags": [],
+  "id": "PART-195"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تجميع النص بالجسيمات",
+  "name_en": "Particles assemble text",
+  "status": "seen",
+  "what": "sample text pixels, lerp from random",
+  "how": "sample text pixels, lerp from random",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-safarkhanshuvo-ffd52d"
+  ],
+  "styles": [
+   "pm-safarkhanshuvo-ffd52d"
+  ],
+  "tags": [],
+  "id": "PART-196"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرات سائلة معدنية",
+  "name_en": "Chrome metaball fluid",
+  "status": "seen",
+  "what": "Raymarched SDF smooth-union of 3-5 spheres orbiting, env-map chrome material on flat accent bg",
+  "how": "Raymarched SDF smooth-union of 3-5 spheres orbiting, env-map chrome material on flat accent bg",
+  "params": "smooth k=0.4, orbit 0.5 Hz",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sahildesigner23-ee3155"
+  ],
+  "styles": [
+   "pm-sahildesigner23-ee3155"
+  ],
+  "tags": [],
+  "id": "PART-197"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "زجاجة تميل وتسكب",
+  "name_en": "Tilt-and-pour bottle",
+  "status": "seen",
+  "what": "bottle group translates in from top-right, rotates about its neck to ~-45°, a 4-6 px stream path grows from neck to surface then retracts before the bottle exits",
+  "how": "bottle group translates in from top-right, rotates about its neck to ~-45°, a 4-6 px stream path grows from neck to surface then retracts before the bottle exits",
+  "params": "enter 500 ms easeOutBack, hold during pour, exit 400 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sarut0bisasuke-cefa43"
+  ],
+  "styles": [
+   "pm-sarut0bisasuke-cefa43"
+  ],
+  "tags": [],
+  "id": "PART-198"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سُحب قشدة تنتشر",
+  "name_en": "Diffusing cream clouds",
+  "status": "seen",
+  "what": "spawn 6-10 light blobs at the pour point, blur 12-20 px, drift downward and sideways with noise, clip to the liquid shape, then fade into a pale top layer",
+  "how": "spawn 6-10 light blobs at the pour point, blur 12-20 px, drift downward and sideways with noise, clip to the liquid shape, then fade into a pale top layer",
+  "params": "duration ~3 s, opacity 0.8 -> 0.4",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sarut0bisasuke-cefa43"
+  ],
+  "styles": [
+   "pm-sarut0bisasuke-cefa43"
+  ],
+  "tags": [],
+  "id": "PART-199"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جزيئات تدفق على مسار",
+  "name_en": "Flow particles along path",
+  "status": "seen",
+  "what": "instanced dashes moving along CatmullRom curve, speed 0.2 u/s, colour per flow type",
+  "how": "instanced dashes moving along CatmullRom curve, speed 0.2 u/s, colour per flow type",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sayan-shanky-f850d8"
+  ],
+  "styles": [
+   "pm-sayan-shanky-f850d8"
+  ],
+  "tags": [],
+  "id": "PART-200"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خطوط حرارة صاعدة",
+  "name_en": "Heat streaks",
+  "status": "seen",
+  "what": "red vertical line sprites rising and fading above object",
+  "how": "red vertical line sprites rising and fading above object",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sayan-shanky-f850d8"
+  ],
+  "styles": [
+   "pm-sayan-shanky-f850d8"
+  ],
+  "tags": [],
+  "id": "PART-201"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات تبني كلمة",
+  "name_en": "Particles assemble word",
+  "status": "seen",
+  "what": "Explode coloured particles from centre, then tween each to a sampled pixel of the target word; caption counts particles",
+  "how": "Explode coloured particles from centre, then tween each to a sampled pixel of the target word; caption counts particles",
+  "params": "2000 particles; 1s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-shinskinakamoto-20190b"
+  ],
+  "styles": [
+   "pm-shinskinakamoto-20190b"
+  ],
+  "tags": [],
+  "id": "PART-202"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مجرة جزيئات حلزونية",
+  "name_en": "Particle spiral galaxy",
+  "status": "seen",
+  "what": "thousands of points on logarithmic spiral arms coloured by arm, rotating with differential speed",
+  "how": "thousands of points on logarithmic spiral arms coloured by arm, rotating with differential speed",
+  "params": "~5k pts, 2 arms red/white-blue",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-shneural-2abdfa"
+  ],
+  "styles": [
+   "pm-shneural-2abdfa"
+  ],
+  "tags": [],
+  "id": "PART-203"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار شرطات شعاعي",
+  "name_en": "Radial dash burst",
+  "status": "seen",
+  "what": "spawn 80-150 short line segments at the centre with random angles; move outward with decelerating speed, rotate along velocity, fade out; 3-colour mix",
+  "how": "spawn 80-150 short line segments at the centre with random angles; move outward with decelerating speed, rotate along velocity, fade out; 3-colour mix",
+  "params": "white 70 %, yellow 20 %, red 10 %; life 600-900 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sudeepsd-1a3485"
+  ],
+  "styles": [
+   "pm-sudeepsd-1a3485"
+  ],
+  "tags": [],
+  "id": "PART-204"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مدار حلزوني لنقاط",
+  "name_en": "Spiral orbit of N dots",
+  "status": "seen",
+  "what": "dots on log-spiral arms rotating",
+  "how": "dots on log-spiral arms rotating",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sudiyasa-f48ac9"
+  ],
+  "styles": [
+   "pm-sudiyasa-f48ac9"
+  ],
+  "tags": [],
+  "id": "PART-205"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرة لغات بفقاعات",
+  "name_en": "Multilingual chips globe",
+  "status": "seen",
+  "what": "Fibonacci dot sphere rotating slowly; chips pop at projected points",
+  "how": "Fibonacci dot sphere rotating slowly; chips pop at projected points",
+  "params": "~600 dots",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sudo-kiran-6609ed"
+  ],
+  "styles": [
+   "pm-sudo-kiran-6609ed"
+  ],
+  "tags": [],
+  "id": "PART-206"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "قصاصات احتفال على الختام",
+  "name_en": "Confetti end card",
+  "status": "seen",
+  "what": "40 small rects with gravity + spin around logo + CTA button",
+  "how": "40 small rects with gravity + spin around logo + CTA button",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sudo-kiran-6609ed"
+  ],
+  "styles": [
+   "pm-sudo-kiran-6609ed"
+  ],
+  "tags": [],
+  "id": "PART-207"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تحول سحابة جزيئات من حلقة إلى كرة",
+  "name_en": "Particle torus-to-sphere morph",
+  "status": "seen",
+  "what": "N points with two target positions (torus surface, sphere surface); lerp with easing and add short streak lines oriented along velocity; colour ramp orange→blue",
+  "how": "N points with two target positions (torus surface, sphere surface); lerp with easing and add short streak lines oriented along velocity; colour ramp orange→blue",
+  "params": "N 5-10k, morph 1.5 s, slow y rotation",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tequilafunks-97f6c9"
+  ],
+  "styles": [
+   "pm-tequilafunks-97f6c9"
+  ],
+  "tags": [],
+  "id": "PART-208"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تحطم إلى مربعات بانحراف لوني",
+  "name_en": "Shatter to squares with RGB split",
+  "status": "seen",
+  "what": "Replace mesh faces with square particles carrying their colours, fling them outward on a spiral with rotation, apply chromatic aberration (offset R/B channels 4-8 px) and motion blur",
+  "how": "Replace mesh faces with square particles carrying their colours, fling them outward on a spiral with rotation, apply chromatic aberration (offset R/B channels 4-8 px) and motion blur",
+  "params": "300-600 particles, 600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-teslachartz-c58b32"
+  ],
+  "styles": [
+   "pm-teslachartz-c58b32"
+  ],
+  "tags": [],
+  "id": "PART-209"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرات سائلة مع خطوط كنتور",
+  "name_en": "Metaballs with iso-contours",
+  "status": "seen",
+  "what": "Sum of 7 radial fields; fill threshold region lime, draw several iso-lines (marching squares) as thin black contours; balls drift and merge; heavy blue word on top",
+  "how": "Sum of 7 radial fields; fill threshold region lime, draw several iso-lines (marching squares) as thin black contours; balls drift and merge; heavy blue word on top",
+  "params": "7 balls, 4-6 contour levels",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-teslachartz-c58b32"
+  ],
+  "styles": [
+   "pm-teslachartz-c58b32"
+  ],
+  "tags": [],
+  "id": "PART-210"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شرر متصاعد",
+  "name_en": "Rising ember particles",
+  "status": "seen",
+  "what": "particle system of tiny emissive points, upward velocity 0.3-1 m/s, turbulence noise, random lifetime 2-4 s, motion blur streaks",
+  "how": "particle system of tiny emissive points, upward velocity 0.3-1 m/s, turbulence noise, random lifetime 2-4 s, motion blur streaks",
+  "params": "500-2000 particles",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-theparuchh-6e08c3"
+  ],
+  "styles": [
+   "pm-theparuchh-6e08c3"
+  ],
+  "tags": [],
+  "id": "PART-211"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "برطمان يمتلئ مع عدّاد",
+  "name_en": "Jar fill with counter",
+  "status": "seen",
+  "what": "Items drop from above lid with gravity + small bounce and random rotation ±15°, stacking in rows; a text counter increments per item",
+  "how": "Items drop from above lid with gravity + small bounce and random rotation ±15°, stacking in rows; a text counter increments per item",
+  "params": "gravity ~2500 px/s2; restitution 0.3; 1 item / 120 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-thilina-a-891c09"
+  ],
+  "styles": [
+   "pm-thilina-a-891c09"
+  ],
+  "tags": [],
+  "id": "PART-212"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مجرة جسيمات حلزونية",
+  "name_en": "Spiral galaxy particles",
+  "status": "seen",
+  "what": "Particles on log-spiral arms, angular velocity ∝ 1/r, multicoloured streak trails",
+  "how": "Particles on log-spiral arms, angular velocity ∝ 1/r, multicoloured streak trails",
+  "params": "~3000 pts",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tolgayhickiran-e90799"
+  ],
+  "styles": [
+   "pm-tolgayhickiran-e90799"
+  ],
+  "tags": [],
+  "id": "PART-213"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات تتجمع لكلمة",
+  "name_en": "Particles to wordmark",
+  "status": "seen",
+  "what": "Sample text pixels as targets; vortex then lerp to targets",
+  "how": "Sample text pixels as targets; vortex then lerp to targets",
+  "params": "3000 pts, 1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-topi-003-9ca6b5"
+  ],
+  "styles": [
+   "pm-topi-003-9ca6b5"
+  ],
+  "tags": [],
+  "id": "PART-214"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شبكة نقاط موجية",
+  "name_en": "Wave dot grid",
+  "status": "seen",
+  "what": "grid dots coloured where sin(x+t) > threshold",
+  "how": "grid dots coloured where sin(x+t) > threshold",
+  "params": "spacing 24px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-umangratani-57f86a"
+  ],
+  "styles": [
+   "pm-umangratani-57f86a"
+  ],
+  "tags": [],
+  "id": "PART-215"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سجادة شرطات تتبع حقل تدفق",
+  "name_en": "Flow-field dash carpet",
+  "status": "seen",
+  "what": "grid of short line segments coloured red/black/blue on yellow; each rotates to angle = noise(x,y,t)*2π",
+  "how": "grid of short line segments coloured red/black/blue on yellow; each rotates to angle = noise(x,y,t)*2π",
+  "params": "grid 40 px, segment 24x5 px, noise scale 0.004",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-vanshwtfff-db0466"
+  ],
+  "styles": [
+   "pm-vanshwtfff-db0466"
+  ],
+  "tags": [],
+  "id": "PART-216"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بطاقة نهاية بنثار لامع",
+  "name_en": "Confetti spark end card",
+  "status": "seen",
+  "what": "burst of small multicolour dots/squares around logo with gravity and fade",
+  "how": "burst of small multicolour dots/squares around logo with gravity and fade",
+  "params": "60-120 particles, life 1.5-2 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-viktoroddy-98c1d8"
+  ],
+  "styles": [
+   "pm-viktoroddy-98c1d8"
+  ],
+  "tags": [],
+  "id": "PART-217"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرة ترتد بالجاذبية",
+  "name_en": "Gravity bounce ball",
+  "status": "seen",
+  "what": "parabolic y with damping",
+  "how": "parabolic y with damping",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-web3wesley-7bb108"
+  ],
+  "styles": [
+   "pm-web3wesley-7bb108"
+  ],
+  "tags": [],
+  "id": "PART-218"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات تشكل نصاً",
+  "name_en": "Particle hair to text",
+  "status": "seen",
+  "what": "short line particles swirl radially then align to text mask",
+  "how": "short line particles swirl radially then align to text mask",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-web3wesley-7bb108"
+  ],
+  "styles": [
+   "pm-web3wesley-7bb108"
+  ],
+  "tags": [],
+  "id": "PART-219"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أيقونات تسقط في وعاء",
+  "name_en": "Icons dropping into a container",
+  "status": "seen",
+  "what": "Rounded icon tiles fall with gravity and rotate into an illustrated bowl, slight bounce, label inside bowl",
+  "how": "Rounded icon tiles fall with gravity and rotate into an illustrated bowl, slight bounce, label inside bowl",
+  "params": "fall 500 ms easeInQuad + bounce 15%, random rotation ±15°",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-wozu-co-242285"
+  ],
+  "styles": [
+   "pm-wozu-co-242285"
+  ],
+  "tags": [],
+  "id": "PART-220"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "انفجار شظايا",
+  "name_en": "Shard burst",
+  "status": "seen",
+  "what": "triangles explode radially from glowing core with spin",
+  "how": "triangles explode radially from glowing core with spin",
+  "params": "600 ms easeOutExpo",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-zaqailo-212ad3"
+  ],
+  "styles": [
+   "pm-zaqailo-212ad3"
+  ],
+  "tags": [],
+  "id": "PART-221"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "بطاقات تسقط وتتكدس ثم ينهار البرج",
+  "name_en": "Falling stack with bounce and collapse",
+  "status": "seen",
+  "what": "each card a function of time with phases: drop with bounce (easeOutBounce), shared tower sway (sine growing amplitude), topple rotation about base, settle on pile",
+  "how": "each card a function of time with phases: drop with bounce (easeOutBounce), shared tower sway (sine growing amplitude), topple rotation about base, settle on pile",
+  "params": "drop ~300 ms, stagger 400 ms, sway up to 6 deg",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:stickman"
+  ],
+  "styles": [
+   "stickman"
+  ],
+  "tags": [],
+  "id": "PART-222"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "S11 عضوي سائل",
+  "name_en": "S11 Organic flowing",
+  "status": "documented",
+  "what": "Curves, soft gradients, leaves or ink; slow breathing, flowing, organic reveals. Calm and flexible for backgrounds; heavy warping damages logos and text and health claims must be substantiated.",
+  "how": "SVG blobs with animated path morph/feTurbulence, blurred gradient blobs on canvas; KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg)",
+  "params": "cost medium; MG-005 MG-015 MG-030 MG-081 MG-111 MG-113 MG-114 MG-118",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-223"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "MG-111/113/114 خلفيات هادئة متكررة",
+  "name_en": "MG-111/113/114 Ambient background loops",
+  "status": "documented",
+  "what": "Two blurred colour blobs drift apart and back (MG-111); three wavy lines shift periodically behind a podcast title (MG-113); a few light specks drift with varied depth (MG-114).",
+  "how": "MG-111: 0-4 apart, 4-8 back; test gradients for banding after compression. MG-113: one full 8 s wave cycle, low contrast under long text. MG-114: 10 s drift with staggered fade at edges - every speck's cycle must divide the loop length for a true seamless loop. Canvas with t mod period; tiny dither noise against banding.",
+  "params": "8 s / 8 s / 10 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-224"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "المؤثر البصري على لحظة التلامس",
+  "name_en": "Visual impact synced to contact frame",
+  "status": "documented",
+  "what": "Particle bursts and hit SFX land on the actual contact/apex frame, not clip start; honour reduced-motion and flashing limits.",
+  "how": "Event markers -> trigger both audio and particles.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-225"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خبز المحاكاة قبل الريندر",
+  "name_en": "Bake sims before frame renders",
+  "status": "documented",
+  "what": "Stateful simulations must be baked so independent frames match; Blender sims do not transfer through GLB.",
+  "how": "Bake in Blender, render sequences or export sprite sheets; runtime particles in engine.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-226"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ماذا يمثل الجسيم الواحد",
+  "name_en": "What does one particle mean",
+  "status": "documented",
+  "what": "Particles in data videos must be entity, sample, carrier (direction only) or focus cue; pure texture is not allowed in analytical scenes.",
+  "how": "State the unit on screen or in VO; cap counts; sample instead of drawing every edge; pair with static width/labels for quantity; provide a final static frame. Avoid for aggregated or uncertain human harm.",
+  "params": "",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/particle-effects-and-flow.md",
+   "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/deckgl-d3-geo-stack-selection.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-227"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تدفق الجسيمات على المسارات والروابط",
+  "name_en": "Particle flow along routes and edges",
+  "status": "documented",
+  "what": "Dots travelling along routes, pipes or network edges to show direction and activity, with fading trails.",
+  "how": "Precompute paths (polyline/arc/spline/geodesic); each particle has offset phase and speed; position = pointAt((t*speed+phase) % 1); trail = last k positions with decaying opacity; emission sampled, not one per entity unless real; never all edges at once (filter to focus neighborhood); Three.js Points/instanced quads or PixiJS ParticleContainer for many sprites; Canvas2D for a few hundred.",
+  "params": "trail k 8-20 samples; additive blend clamped",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/particle-effects-and-flow.md",
+   "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-228"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ذرات صاعدة وحلقات الإيقاع",
+  "name_en": "Rising motes + kick rings",
+  "status": "documented",
+  "what": "72 light motes rise and twinkle, lifted by onsets; each kick sends an expanding ring for 1.3 s.",
+  "how": "verse.html draw(t) with SOUND.kicks; additive 'lighter' compositing.",
+  "params": "motes r 2-9 px, speed .006-.026/s; ring radius (0.16 + 0.42 dt) min(W,H), alpha .22 (1-dt/1.3)^2",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/templates/verse.html:153",
+   "100-superskills/skills/kosif-montage-motion/templates/verse.html:161"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-229"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مفردات المؤثرات البيئية",
+  "name_en": "Environmental VFX vocabulary",
+  "status": "documented",
+  "what": "Effect families to specify (or build procedurally) around a subject.",
+  "how": "Name the effect, its direction and its interaction with light/subject (rain streak direction, splash response, smoke/fire interaction).",
+  "params": "fire, smoke, rain, fog, sparks, debris, dust, energy, splashes, trails, motion blur, wind, haze, cloud layers",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/kosif-visual-aesthetics-council/SKILL.md",
+   "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/visual-execution-contract.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-230"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل ضوضاء تحليلي",
+  "name_en": "Analytic noise field",
+  "status": "documented",
+  "what": "Deterministic noise from summed prime-frequency sines or seeded simplex, scrolled through time.",
+  "how": "Deterministic noise from summed prime-frequency sines or seeded simplex, scrolled through time.",
+  "params": "3–4 sines; 0.1–0.3 units/s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md:28"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-231"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خلفية خطوط تدفق توليدية",
+  "name_en": "Generative flow-line backdrop",
+  "status": "documented",
+  "what": "Seeded flow lines behind titles.",
+  "how": "Seeded flow lines behind titles.",
+  "params": "15% opacity; 0.2 units/s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/code.md:47"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-232"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "الجسيمات ذات المعنى",
+  "name_en": "Particle meaning rule",
+  "status": "documented",
+  "what": "Particles must show quantity→structure, energy, flow or dissolution; remove decorative dust.",
+  "how": "Particles must show quantity→structure, energy, flow or dissolution; remove decorative dust.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:9"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-233"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "ميزانية الجسيمات",
+  "name_en": "Particle size/colour/count budget",
+  "status": "documented",
+  "what": "Limited sizes and colours; count budget by renderer; behind type; uneven density.",
+  "how": "Limited sizes and colours; count budget by renderer; behind type; uneven density.",
+  "params": "sizes 4/8/14 px; ≤ 2 colours; 150–600 on Canvas 2D; ≤ 20 000 WebGL points",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:15-18"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-234"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "حقل تدفق",
+  "name_en": "Flow field particles",
+  "status": "documented",
+  "what": "Particles follow angle from analytic noise.",
+  "how": "Particles follow angle from analytic noise.",
+  "params": "angle = noise(x·0.0025, y·0.0025, t·0.2)·2π; speed 40–120 px/s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:26"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-235"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تجمع في شكل أو نص",
+  "name_en": "Gather into shape / text",
+  "status": "documented",
+  "what": "Sample target points from shape or offscreen-rendered text, ease each particle to target with per-particle delay.",
+  "how": "Sample target points from shape or offscreen-rendered text, ease each particle to target with per-particle delay.",
+  "params": "900–1400 ms in-out cubic; delay 0–300 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:27"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-236"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جذب بالتربيع العكسي",
+  "name_en": "Inverse-square attraction",
+  "status": "documented",
+  "what": "Attraction to hero element, clamped, procedural only.",
+  "how": "Attraction to hero element, clamped, procedural only.",
+  "params": "force ∝ 1/d²",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:28"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-237"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "وصفة انفجار الكشف",
+  "name_en": "Reveal burst recipe",
+  "status": "documented",
+  "what": "Hero word scales in, seeded particles burst, ring expands and fades.",
+  "how": "Hero word scales in, seeded particles burst, ring expands and fades.",
+  "params": "word 0–250 ms spring 14/150; 160 particles 50–3000 ms; ring 100–1100 ms outExpo",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:38-40"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-238"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تفكك النص",
+  "name_en": "Text dissolve",
+  "status": "documented",
+  "what": "Replace word pixels with particles that drift up and fade; Arabic sampled from whole shaped word, readable ≥1 s first.",
+  "how": "Replace word pixels with particles that drift up and fade; Arabic sampled from whole shaped word, readable ≥1 s first.",
+  "params": "drift 200 px; 1.5 s; hold ≥ 1 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:44",
+   "kosif-tool/playbooks/particles.md:72"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-239"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تيار بيانات على مسار",
+  "name_en": "Data stream along path",
+  "status": "documented",
+  "what": "Particles travel along an SVG path with offsets.",
+  "how": "Particles travel along an SVG path with offsets.",
+  "params": "600 ms per traversal",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/particles.md:46"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-240"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "شبكات تتموج حول المؤشر",
+  "name_en": "Cursor-field ripple grids",
+  "status": "idea",
+  "what": "Dots or grid lines displaced outward around a pointer and relaxing slowly behind it; proximity sharpens near content and softens far content.",
+  "how": "Canvas 2D grid with per-point spring back toward rest, force from pointer distance; deterministic when the pointer is scripted.",
+  "params": "near-zero response latency, generous settle",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/342-kernel/1223-frontend/motion/cursor-field.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-241"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جماليات توليدية مُبذّرة",
+  "name_en": "Seeded generative aesthetics",
+  "status": "idea",
+  "what": "Seeded deterministic generative art idea from algorithmic-art.",
+  "how": "Seeded deterministic generative art idea from algorithmic-art.",
+  "params": "",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "PART-242"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "جسيمات بكسل تنكمش",
+  "name_en": "Shrink-to-die pixel particles",
+  "status": "idea",
+  "what": "Spark burst particles that die by losing 1 px per frame instead of alpha fade.",
+  "how": "Canvas particle array, size-- each frame.",
+  "params": "24 particles, 3-5 frame life",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-0xevinho-3777d8"
+  ],
+  "styles": [
+   "pm-0xevinho-3777d8"
+  ],
+  "tags": [],
+  "id": "PART-243"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "كرة فيزيائية",
+  "name_en": "Physics ball arc with restitution",
+  "status": "idea",
+  "what": "Gravity parabola with bounce energy loss and squash/stretch.",
+  "how": "Per-frame integration.",
+  "params": "restitution 85%; squash 20% impact; stretch 10%; on screen ≥80%",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-deifosv-04e4d3"
+  ],
+  "styles": [
+   "pm-deifosv-04e4d3"
+  ],
+  "tags": [],
+  "id": "PART-244"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تفتت النص لشبكة صور",
+  "name_en": "Text shatter to image grid",
+  "status": "idea",
+  "what": "Typed brand name shatters into GPU particles reassembling into a grid of images.",
+  "how": "Instanced WebGL (three.js InstancedMesh); random delay ≤150 ms.",
+  "params": "400-800 particles; 600 ms; 6x4 grid",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-influencer-seo-ce8c33"
+  ],
+  "styles": [
+   "pm-influencer-seo-ce8c33"
+  ],
+  "tags": [],
+  "id": "PART-245"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "مطر مائل",
+  "name_en": "Angled rain particles",
+  "status": "idea",
+  "what": "Wind-angled rain streaks.",
+  "how": "Particle system.",
+  "params": "300-500 drops; 1.2 s fall; 15°",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-kamstudiolabs-0b0824"
+  ],
+  "styles": [
+   "pm-kamstudiolabs-0b0824"
+  ],
+  "tags": [],
+  "id": "PART-246"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "أمواج متوازية",
+  "name_en": "Sine-path parallax waves",
+  "status": "idea",
+  "what": "Three layered sine wave paths at parallax ratios.",
+  "how": "SVG paths.",
+  "params": "1 : 0.6 : 0.3",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-kamstudiolabs-0b0824"
+  ],
+  "styles": [
+   "pm-kamstudiolabs-0b0824"
+  ],
+  "tags": [],
+  "id": "PART-247"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "محاكاة الحلقات",
+  "name_en": "Ring escape physics sim",
+  "status": "idea",
+  "what": "Ball ricochets within 12 rotating gapped rings; deterministic sim.",
+  "how": "Fixed sub-step physics.",
+  "params": "120 Hz sub-step @60 fps; restitution 1.0; gravity ≤200 px/s²; ring speed 0.3+0.08i rad/s alternating; gap 28°",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-kantamk-61f410"
+  ],
+  "styles": [
+   "pm-kantamk-61f410"
+  ],
+  "tags": [],
+  "id": "PART-248"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "تشظي الحلقة",
+  "name_en": "Ring shard burst",
+  "status": "idea",
+  "what": "Ring splits into arc shards flying out.",
+  "how": "ease-out quad.",
+  "params": "24 shards; 400-600 px/s; 500 ms fade",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-kantamk-61f410"
+  ],
+  "styles": [
+   "pm-kantamk-61f410"
+  ],
+  "tags": [],
+  "id": "PART-249"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "نص يتحول لمخطط",
+  "name_en": "Prompt to particles to chart",
+  "status": "idea",
+  "what": "Prompt dissolves into particles reforming as charts.",
+  "how": "Particle targets from chart geometry.",
+  "params": "morph 700 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-listudio-820c7b"
+  ],
+  "styles": [
+   "pm-listudio-820c7b"
+  ],
+  "tags": [],
+  "id": "PART-250"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سماء دوامية",
+  "name_en": "Curl-noise swirling sky",
+  "status": "idea",
+  "what": "Sky flows with curl noise and global rotation, never pauses.",
+  "how": "Curl noise flow field.",
+  "params": "~0.15 rad/s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-mandelduck-95fd08"
+  ],
+  "styles": [
+   "pm-mandelduck-95fd08"
+  ],
+  "tags": [],
+  "id": "PART-251"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "خطوط سرعة شعاعية",
+  "name_en": "Radial speed lines",
+  "status": "idea",
+  "what": "Strokes from frame edge to centre regenerated per hit.",
+  "how": "Canvas: random radial strokes, lifetime 3-5 frames.",
+  "params": "80-140 lines; 3-5 frames life",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-micheleharmonic-77628e"
+  ],
+  "styles": [
+   "pm-micheleharmonic-77628e"
+  ],
+  "tags": [],
+  "id": "PART-252"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "رمية قوسية بأثر",
+  "name_en": "Parabolic toss with trail",
+  "status": "idea",
+  "what": "Token thrown on parabola with fading sample trail.",
+  "how": "Sample positions; draw 12 ghost copies.",
+  "params": "900 ms; 12 samples; trail fade 200 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-paulo-kombucha-96431c"
+  ],
+  "styles": [
+   "pm-paulo-kombucha-96431c"
+  ],
+  "tags": [],
+  "id": "PART-253"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "منسوب سائل متموج",
+  "name_en": "Pour level with sine wobble",
+  "status": "idea",
+  "what": "Liquid level eases to exact amount with damped surface wobble.",
+  "how": "Canvas/SVG; cubic-bezier(0.33,0,0.2,1).",
+  "params": "wobble 2-4 px @1.5 Hz; damp 600 ms; pour 2.5-3 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-ror-fly-9950f1"
+  ],
+  "styles": [
+   "pm-ror-fly-9950f1"
+  ],
+  "tags": [],
+  "id": "PART-254"
+ },
+ {
+  "family": "particles-fluids-physics",
+  "name_ar": "سقوط مكعبات الثلج",
+  "name_en": "Ice-cube bounce drop",
+  "status": "idea",
+  "what": "easeOutBounce 700 ms; bounce 12 px; 180 ms stagger",
+  "how": "easeOutBounce 700 ms; bounce 12 px; 180 ms stagger",
+  "params": "fill easeOutCubic 1400-1800 ms; ripple 2-3 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-sarut0bisasuke-cefa43"
+  ],
+  "styles": [
+   "pm-sarut0bisasuke-cefa43"
+  ],
+  "tags": [],
+  "id": "PART-255"
+ }
+]

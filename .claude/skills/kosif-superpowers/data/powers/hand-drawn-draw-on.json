@@ -1,0 +1,3495 @@
+[
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم خط الرحلة من اليمين",
+  "name_en": "Journey line draw-on (RTL)",
+  "status": "proven",
+  "what": "A 2px progress line grows from the right edge; its colour stops encode state (grey future, violet current, teal done).",
+  "how": "::before line, transform-origin: right center; keyframe scaleX 0->1 with opacity .2->1.",
+  "params": "680ms ease-cinematic, delay 160ms; gradient to left: border 0-38%, primary 38-64%, teal 64-100%; inset 10%",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-audit-pro/app/globals.css:981",
+   "kosif-audit-pro/app/globals.css:1082"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-01"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ترتيب ظهور الرسام: فرشاة، نمو، صعود، نزول، يمين، يسار، تناثر",
+  "name_en": "Painter reveal orders (sweep/grow/rise/down/left/right/sparkle)",
+  "status": "proven",
+  "what": "Sorts the changed pixels of each step the way a painter lays them: horizontal boustrophedon brush bands, growth outward from an origin, figures rising from their feet, scattered sparkle for details.",
+  "how": "Step(order=..., origin=(x,y)); reveal_order(idx, W, step, scale, seed) returns a permutation; studio/film play it pixel by pixel.",
+  "params": "sweep band height round(7*scale) px, back-and-forth rows, jitter 26*scale; grow: distance to origin + jitter 9*scale; rise/down/left/right jitter 7*scale; sparkle = random",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/render.py:846",
+   "kosif-studio/tests/test_studio.py:93"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-02"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسار تدريجياً",
+  "name_en": "SVG path draw-on",
+  "status": "ready",
+  "what": "A stroke traces itself like a pen for arrows, connectors, diagrams, checkmarks and logo outlines.",
+  "how": "Set stroke-dasharray and stroke-dashoffset to path.getTotalLength(), then tween offset to 0 (GSAP or WAAPI).",
+  "params": "0.7s power2.out typical; success checkmark 300-500ms ease-out; round linecaps",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
+   "kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/feedback-patterns.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-03"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الخط السفلي بتبديل نقطة الأصل",
+  "name_en": "Underline draw and swap-origin hover",
+  "status": "ready",
+  "what": "Underlines grow from one side and leave from the other by swapping transform-origin; or a background-size gradient draws a hairline.",
+  "how": "::after scaleX 0->1 with origin right->left on hover; or background-size 0% 1px -> 100% 1px.",
+  "params": "0.4s ease-out-expo; 1px line",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-04"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم فوق لقطات مولدة",
+  "name_en": "Draw-over film on generated bases",
+  "status": "ready",
+  "what": "Generated clips provide motion; a hand-built JavaScript drawing layer is the actual picture, with every frame a pure function of time rendered frame-exactly in a headless browser; both 16:9 and 9:16 modes come from the same film.",
+  "how": "Extract base frames with ffmpeg, draw stylised strokes/fills in canvas per frame using time t, render with Playwright, mux original audio; contact-sheet every cell before delivery.",
+  "params": "",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/1511-homie/3903-video/SKILL.md",
+   "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-05"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الخط تدريجيا",
+  "name_en": "Line draw-on reveal",
+  "status": "ready",
+  "what": "A time-series or route line that draws itself from start to end, often with a glowing head and an end label popping in.",
+  "how": "SVG: set stroke-dasharray = path length and animate stroke-dashoffset from length to 0 driven by seek(t); or recompute a partial polyline by cumulative distance (same idea as slicing a route by km). Ease with a cubic-bezier (0.645,0.045,0.355,1) over the reveal window, then fade in the end marker and value label.",
+  "params": "dash length = getTotalLength(); bezier 0.645,0.045,0.355,1",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
+   "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-explainer-architecture.md",
+   "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-06"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "منظر الوادي عند الغسق (متجه)",
+  "name_en": "Valley dusk vector landscape",
+  "status": "ready",
+  "what": "Layered-dune lavender dusk scene with crescent moon, stars, a sheep flock on the horizon and palm silhouettes, recreated as vector from a Canva render.",
+  "how": "SVG with three dune paths (gradients d1/d2/d3), palms #4e46a8, flock ellipses; good as a parallax layer set (each dune a layer).",
+  "params": "sky #8f8ae0 -> #c9c3f5 -> #f1e9fb; 1200x600, xMinYMax slice",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/ui/art/valley-dusk.svg",
+   "kosif-earth-ci-fork/docs/rebuild/DESIGN_SYSTEM.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-07"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الخط بالقلم",
+  "name_en": "Pen draw-on stroke (drawPath)",
+  "status": "ready",
+  "what": "Any SVG path is drawn on like a pen via dash offset, with an optional arrow/head that pops in at the end.",
+  "how": "MOTION.drawPath(tl, path, at, dur, {ease, opacity, head, headOrigin}); uses getTotalLength().",
+  "params": "ease power4.inOut default; head scale 0->1 0.35 s spring snappy starting 0.1 s before the end",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:237"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-08"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسومات خطية (سيارة وساعة ومقياس)",
+  "name_en": "Line-art icon drawings (car, clock, rail)",
+  "status": "ready",
+  "what": "Minimal ivory line drawings used as idea metaphors over footage: a car outline with two wheels and moving road dashes, a 24-tick clock with a rotating gold hand, a vertical measurement rail with a sliding marker.",
+  "how": "SVG path car body (stroke 2.6, round joins) + wheel circles r 19; road = 6 gold dashes sliding −70 px; clock ring r 150 with 24 ticks (every 6th longer and 3 px) and hand rotating 360° in 1 s; rail 460 px with 18 ticks (every 3rd longer).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:58",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:198",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:222"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-09"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم يتكون",
+  "name_en": "Studio vector renderer + draw-on",
+  "status": "ready",
+  "what": "Program-of-steps vector picture on 1200x800 sheet revealed pixel by pixel (sweep/grow/rise/sparkle).",
+  "how": "film.py drawing SCENE --speed slow|normal|fast",
+  "params": "speeds 5.0/1.8/0.55",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/render.py",
+   "100-superskills/skills/kosif-montage-motion/scripts/film.py:28"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-10"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الخط بالقلم مع رأس سهم",
+  "name_en": "Pen draw-on stroke with landing arrowhead",
+  "status": "ready",
+  "what": "Any SVG path is drawn like a pen by animating its dash offset; an optional head (arrow, dot) pops in at the end with a spring.",
+  "how": "MOTION.drawPath(tl, pathEl, at, dur, {head, headOrigin, ease, opacity}).",
+  "params": "dasharray=len; ease power4.inOut; head spring snappy 0.35 s at end-0.1 s",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:237"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-11"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "نهر يرسم نفسه",
+  "name_en": "River ribbon revealed along a curve",
+  "status": "ready",
+  "what": "A flattened tube along a curve whose draw range grows so a river advances down its valley.",
+  "how": "makeRibbon(curve, {segments, radius, radial}); reveal with geometry.setDrawRange.",
+  "params": "segments 220, radius 11, radial 10",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:255"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-12"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ترتيب الرسام في الكشف",
+  "name_en": "Painter reveal orders",
+  "status": "ready",
+  "what": "Each step's changed pixels are laid down like a painter: brush sweeps back and forth, grow from an origin, rise from the feet, fall, left/right, or sparkle last.",
+  "how": "Step(..., order='sweep'|'grow'|'rise'|'down'|'left'|'right'|'sparkle', origin=(x,y)); render.reveal_order().",
+  "params": "sweep band 7*scale px; jitter 7-26*scale",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/render.py:846"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-13"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الرابط مع رأس السهم",
+  "name_en": "SVG edge draw-on with arrowhead",
+  "status": "ready",
+  "what": "stroke-dashoffset from length to 0; arrowhead appears at end.",
+  "how": "Remotion Edge: strokeDasharray=len, strokeDashoffset=len*(1-p), markerEnd when p>0.95; html-canvas: pathLength='1', dashoffset = 1 - KOSIF.prog(t,t0,t1,Ease.inOutCubic).",
+  "params": "900–1200 px/s ease-in-out cubic; arrowhead in last 80 ms; stroke #9fb0cc 4 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/diagrams.md:28",
+   "kosif-tool/playbooks/diagrams.md:58-67"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-14"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "يد مثبتة على رأس القلم",
+  "name_en": "Hand overlay pinned to pen tip",
+  "status": "ready",
+  "what": "Hand image follows path point, lags 1 frame, rotates with stroke; removed during holds.",
+  "how": "path.getPointAtLength(p × getTotalLength()); Remotion DrawnPath with tip circle r 5.",
+  "params": "lag 1 frame; rotation ±5°",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:27",
+   "kosif-tool/playbooks/hand-drawn.md:56-71"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-15"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "محرك فرشاة الحبر",
+  "name_en": "Ink brush engine rendering",
+  "status": "install",
+  "what": "Vector paths rendered through a deterministic capsule-dab brush with edge bias, gaussian softness, tone layers and paper grain to look hand-inked.",
+  "how": "ink.js capsule dabs of width 2*bias along contours; JS separable gaussian blur (Chromium canvas blur silently no-ops at very small sigma); tone layers at several gray levels for dry-brush; paperGrain opacity; scene modules expose window.renderFrame(t) and are rendered by Playwright into frames then ffmpeg.",
+  "params": "source blur sigma ~0.85px",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2414-animation/9357-rotoscope/SKILL.md",
+   "kosif-atlas/skills/2414-animation/9357-rotoscope/reference/method.md",
+   "kosif-atlas/skills/2414-animation/9357-rotoscope/scripts/roto.js"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-16"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تتبع ورسم وقياس لقطات مرجعية",
+  "name_en": "Rotoscope trace-measure-fit loop",
+  "status": "install",
+  "what": "Decode a reference animation into distinct drawings, trace each to vector paths, re-render, and measure against source (XOR vs codec noise floor, SSIM) to learn a drawn style.",
+  "how": "Dedup drawings by large-gray-step pixel count not mean diff; threshold at midpoint of ink/paper gray modes; supersample 4x before findContours; approxPolyDP; unsharp mask before trace; overrides JSON per drawing range (bias, blur, sharp, levels, tint). Use for studying styles, never shipping traced third-party geometry.",
+  "params": "S=4 supersample; XOR ~0.22%",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2414-animation/9357-rotoscope/reference/method.md",
+   "kosif-atlas/skills/2414-animation/9357-rotoscope/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-17"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ترجمة كتابة يدوية متتابعة",
+  "name_en": "Typewriter handwritten caption",
+  "status": "install",
+  "what": "Left-aligned handwritten-style sentence that reveals letter by letter after the full layout is fixed (so text never re-centres while typing), optional underline or hand-drawn circle accent.",
+  "how": "Fusion Text+ Write On End animated; reveal over 65% of clip by default (RevealDelay + RevealDuration ≤ 1); placement 8-12% inside frame edges on empty area; glyph 4-5% H; circle via shape WriteLength. In HTML: clip-path/char spans with GSAP stagger.",
+  "params": "reveal 0.65 of clip",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2431-akbun-davinciresolve-caption-template/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2431-akbun-davinciresolve-caption-template/references/template-controls.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-18"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قياس أسلوب الرسم اليدوي",
+  "name_en": "Hand-drawn style pack measurement",
+  "status": "install",
+  "what": "Turn a rotoscoped reference into numeric style bands (palette, edge softness, stroke width, roughness, boil, holds) and check new animation against them, without copying source geometry.",
+  "how": "Animation plugin: ffmpeg libx264 + Node + playwright-core Chromium + numpy/opencv; learn.py/controls.py (not run here)",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2414-animation/9355-learn-style/SKILL.md",
+   "kosif-atlas/skills/2414-animation/9358-setup/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-19"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تعليقات يدوية خشنة على النص",
+  "name_en": "Rough-notation hand-drawn annotations",
+  "status": "install",
+  "what": "Sketchy highlight, circle, underline, strike, crossed-off, box and bracket marks drawn around words with a progress value.",
+  "how": "Remotion @remotion/rough-notation components <Highlight>/<Circle>/<Underline>/<Box>/<Bracket>; drive progress with interpolate(frame,[15,40],[0,1],clamp). Plain HTML alternative: rough-notation npm. Needs package install.",
+  "params": "highlight rgba(255,236,79,0.62); draw window ~25 frames",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2712-remotion/10436-remotion-markup/text-highlights.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-20"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أسلوب الرسم الخشن بخطوط التظليل",
+  "name_en": "Rough sketch rendering style (roughness/hachure)",
+  "status": "install",
+  "what": "Excalidraw/rough.js-style strokes with controllable wobble and hachure or cross-hatch fills.",
+  "how": "Excalidraw JSON elements carry roughness 0/1/2, fillStyle solid|hachure|cross-hatch, strokeStyle solid|dashed|dotted, seed for reproducible wobble. For video use rough.js on canvas/SVG with fixed seed per frame to avoid boiling, or re-seed every 2-3 frames for deliberate boil.",
+  "params": "roughness 0-2; seed fixed; fontFamily 1 hand / 3 mono",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-21"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تحويل الحبر النقطي إلى متجهات",
+  "name_en": "Raster-to-vector ink tracing",
+  "status": "install",
+  "what": "Trace two-tone ink drawings to polygon paths with holes so they can be re-rendered or animated as vectors.",
+  "how": "OpenCV findContours on 4x-supersampled image after unsharp mask, approxPolyDP; correct inward bias by a ring of capsule dabs at render. S=8 adds nothing over S=4.",
+  "params": "supersample S=4; unsharp then blur sigma ~0.85px",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2414-animation/9357-rotoscope"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-22"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "محرك فرشاة حبر حتمي",
+  "name_en": "Deterministic ink brush engine on canvas",
+  "status": "install",
+  "what": "Paths are rendered through capsule dabs, separable gaussian blur, optional paper grain and tone layers so the same input yields identical pixels.",
+  "how": "Canvas 2D in headless Chromium (Playwright) with an ink.js-style capsule() and paperGrain(); renderFrame(t) API for frame-accurate capture. Chromium ctx.filter blur is ignored below ~0.8px, so implement JS blur.",
+  "params": "blur floor 0.8px; grain off for faithful copy",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2414-animation/9357-rotoscope"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-23"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "كشف الحدود متعددة الأجزاء",
+  "name_en": "Multi-segment border reveal",
+  "status": "install",
+  "what": "Draw a complete country border (many rings/islands) as one timed stroke by cumulative length, without inventing joins.",
+  "how": "Store each segment line, its length and cumulative start; for a reveal window [from,to] km slice every overlapping segment and emit a MultiLineString; skip slivers under 0.0008 km; never clip the border to the viewport (it may leave frame naturally).",
+  "params": "sliver threshold 0.0008 km",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-explainer-architecture.md",
+   "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-geo-prep.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-24"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "مخططات تجادل لا تعرض",
+  "name_en": "Diagrams that argue (visual patterns)",
+  "status": "install",
+  "what": "Shape carries meaning: fan-out, convergence, tree, cycle, cloud, assembly line, side-by-side, gap, lines as structure.",
+  "how": "Isomorphism test: remove all text, the structure should still communicate. Timelines as a line with 10-20 px dots and free labels; trees as trunk+branch lines; assembly line chaos->process->order. Excalidraw JSON with roughness 0-2 gives a hand-drawn look and can be rendered to PNG then animated (draw-on of strokes).",
+  "params": "roughness 0 smooth / 1 default / 2 rough; timeline dots 10-20 px",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw/SKILL.md",
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw/references/visual-patterns.md",
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw/references/json-schema.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-25"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم فوق اللقطات المولدة بشكل حتمي",
+  "name_en": "Deterministic draw-over on generated bases",
+  "status": "install",
+  "what": "Generated clips provide motion; a hand-built JavaScript look redraws every frame as a pure function of time (two-ink print, halftone, line work, boiling lines) with kinetic lyric type.",
+  "how": "film.js renderAt(t) in headless Chrome, frame-exact capture then ffmpeg encode with the song; look.js default: two inks on paper, halftone dots, line work, line boil 12×/s, fixed paper tooth; shots.json fields at, dur, base, baseStart, focus (0..1), type big|quiet|none, side; 16:9 and 1080x1920 modes.",
+  "params": "boil 12 fps; 1080x1920 vertical",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/1511-homie/3903-video"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-26"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خطوط حبر بضغط",
+  "name_en": "Pressure ink strokes (draw-on)",
+  "status": "install",
+  "what": "Draws a polyline progressively by arc length with tapered ends and pressure variation, returning the pen head for a hand/spark.",
+  "how": "INK.stroke(c,pts,k,w,col,seed,{plain,alpha}): cumulative length; taper = min(1, .35+5u, .35+5(1-u)); pressure .74+.26 sin(0.9i+3.7seed); INK.strokes runs a list sequentially sharing progress by length; INK.at returns a point at fraction k.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner (perfect-freehand in spirit)",
+  "proof": [
+   "app/public/js/10_studio.js:208",
+   "app/public/js/10_studio.js:210"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-27"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تظليل بخطوط مائلة",
+  "name_en": "Hatching fill",
+  "status": "install",
+  "what": "Colours a closed shape with progressive diagonal hatching like a whiteboard marker.",
+  "how": "INK.hatch(c,outline,k,col,gap,w,alpha=0.5): clip to outline, draw diagonal lines up to k of span/gap.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "app/public/js/10_studio.js:232"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-28"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "مكتبة أيقونات مرسومة",
+  "name_en": "Stroke motif icon library (16)",
+  "status": "install",
+  "what": "Sixteen icons built from strokes (with fill outlines for hatching) and an Arabic keyword matcher that picks one per line.",
+  "how": "MOT: sun, cloud, wave, drop, bulb, heart, star, check, chart, target, clock, mountain, phone, people, doc, arrow; MK.motifFor(text,i) matches regexes (شمس/سحاب/بحر/فكر/قلب/نمو/هدف/وقت/جبل...) else cycles 8 defaults.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "app/public/js/10_studio.js:245",
+   "app/public/js/10_studio.js:262"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-29"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ستايل السبورة البيضاء",
+  "name_en": "Whiteboard style",
+  "status": "install",
+  "what": "Lesson-style film: marker writing and motif doodles on a white board, step by step, synced to the voice.",
+  "how": "STY.whiteboard (board engine shared with chalkboard): 16:9, mood calm, 2.0 wps, font Marhey, palette bg #F4F4F1 ink #23272E accent #E0412E colours #1E63D6/#E0412E/#F28C12/#2E9B4F; sfx write=pen, line=click, end=shimmer; lines revealed right-to-left with the pen.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT-derived (motion-starter-kit styles/whiteboard)",
+  "proof": [
+   "app/public/js/10_studio.js:342",
+   "app/public/js/10_studio.js:438"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-30"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ستايل السبورة والطباشير",
+  "name_en": "Chalkboard style",
+  "status": "install",
+  "what": "Maths/science lesson in chalk on a green board.",
+  "how": "STY.chalkboard: 16:9, calm, 1.9 wps, font Aref Ruqaa, bg #264A3E ink #F3F1E7 accent #F6E07A colours #F6E07A/#F4A9BC/#9AD3F0/#A9E6A2; sfx write=chalk, line=tick, end=shimmer.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT-derived (motion-starter-kit styles/chalkboard)",
+  "proof": [
+   "app/public/js/10_studio.js:471"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-31"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ستايل دودل حكاية",
+  "name_en": "Doodle story style",
+  "status": "install",
+  "what": "An ink-drawn world in one take with a walking character and word-by-word speech with one glowing word; vertical.",
+  "how": "STY.doodle: 9:16, calm, 1.9 wps, font Tajawal; palette sky #AFDCF0->#EAF6F4, sand #F1D9AE, grass #BCDB92, water #6FB3C8, ink #3A2A1E, text #1E2B45, em #F07F2E, glow #FFD0A0, robe #F6F0E4, turban #2F4E86, skin #C98B5B; sfx pop/shimmer/swish/swell.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT-derived (motion-starter-kit styles/doodle)",
+  "proof": [
+   "app/public/js/10_studio.js:854"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-32"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ستايل البلوتر",
+  "name_en": "Plotter style",
+  "status": "install",
+  "what": "Tech explainer: a pen plotter traces a curve on dark grid paper with an orange spark, mono annotations, a timeline ruler and STEP counters while words light up with the voice.",
+  "how": "STY.plotter: 16:9, tech, 2.2 wps; fonts Readex Pro + IBM Plex Mono; bg #0B0B0C ink #F4F4F2 dim #3A3A3E accent #FF5A1F grid rgba(255,255,255,.055) at 6.2% m drifting 3 px/s; 180-point seeded curve; vignette 0.5 + grain 0.08; sfx blip/hit/whoosh/drop.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT-derived (motion-starter-kit styles/plotter)",
+  "proof": [
+   "app/public/js/10_studio.js:292"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-33"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسارات SVG",
+  "name_en": "SVG draw-on safety",
+  "status": "install",
+  "what": "Stroke draw-on must measure path after d is set and not fight CSS dasharray.",
+  "how": "Lint svg_measure_before_path_d, svg_drawon_css_dasharray_conflict; registry hw-* and svg-stroke-trace components.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/packages/lint/src/rules/gsap.ts"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-34"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قلم التعليق",
+  "name_en": "Annotate Cursor",
+  "status": "install",
+  "what": "A marker pen glides in and hand-draws a loop, underline or arrow around a region with ink exactly under the nib, then lifts away.",
+  "how": "Install with `npx hyperframes add cursor-annotate` (copies to compositions/components/cursor-annotate.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromiu…",
+  "params": "shape circle|underline|arrow; color #f43f5e; target_x/y/w/h %; vars: shape=circle[circle|underline|arrow]; color=#f43f5e; target_x=40(0..95); target_y=38(0..95); target_w=20(2..90); target_h=16(2..90)",
+  "install": "npx hyperframes add cursor-annotate` (copies to compositions/components/cursor-annotate",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/cursor-annotate/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/cursor-annotate/cursor-annotate.html",
+   "kosif-one/vendor/hyperframes/registry/components/cursor-annotate/demo.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-35"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "سهم مرسوم باليد",
+  "name_en": "Hand-Drawn Arrow",
+  "status": "install",
+  "what": "Wobbly draw-on arrow in straight/gentle/swoop poses with plain/soft/sharp/spray stroke textures and a stretch pulse when the head arrives; boils on screen.",
+  "how": "Install with `npx hyperframes add hw-arrow` (copies to compositions/components/hw-arrow.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame captur…",
+  "params": "stroke matrix plain|soft|sharp|spray; Caveat 700 bundled",
+  "install": "npx hyperframes add hw-arrow` (copies to compositions/components/hw-arrow",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/hw-arrow/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/hw-arrow/hw-arrow.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/hw-arrow.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-36"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "غليان الرسم اليدوي",
+  "name_en": "Hand-Drawn Boil",
+  "status": "install",
+  "what": "Seek-safe helper library: hand-drawn jitter that re-poses every N frames from quantised time through a seeded hash, wobbly ellipse generator, boil control off/calm/lively, curvature-adaptive pen ease, stroke matrix.",
+  "how": "Install with `npx hyperframes add hw-boil` (copies to compositions/components/hw-boil.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame capture …",
+  "params": "boil off|calm|lively; spray = index-seeded dots",
+  "install": "npx hyperframes add hw-boil` (copies to compositions/components/hw-boil",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/hw-boil/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/hw-boil/hw-boil.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/hw-boil.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-37"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "صندوق بعنوان يدوي",
+  "name_en": "Hand-Drawn Box Label",
+  "status": "install",
+  "what": "Wobbly rounded rectangle draws on (or drops in with volume-preserving squash and spring) with a handwritten label.",
+  "how": "Install with `npx hyperframes add hw-box-label` (copies to compositions/components/hw-box-label.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fram…",
+  "params": "",
+  "install": "npx hyperframes add hw-box-label` (copies to compositions/components/hw-box-label",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/hw-box-label/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/hw-box-label/hw-box-label.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/hw-box-label.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-38"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "دائرة تعليق يدوية",
+  "name_en": "Scribble Callout Circle",
+  "status": "install",
+  "what": "Wobbly ellipse drawn around a target, optional scribble fill and curved connector; handwritten label pops in with momentum and shapes squash on contact.",
+  "how": "Install with `npx hyperframes add hw-callout-circle` (copies to compositions/components/hw-callout-circle.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chr…",
+  "params": "",
+  "install": "npx hyperframes add hw-callout-circle` (copies to compositions/components/hw-callout-circle",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/hw-callout-circle/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/hw-callout-circle/hw-callout-circle.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/hw-callout-circle.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-39"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط سفلي يدوي",
+  "name_en": "Squiggle Marks",
+  "status": "install",
+  "what": "Hand-drawn squiggle underline, double-pass strikethrough and bracket marks that draw on.",
+  "how": "Install with `npx hyperframes add hw-underline` (copies to compositions/components/hw-underline.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fram…",
+  "params": "",
+  "install": "npx hyperframes add hw-underline` (copies to compositions/components/hw-underline",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/hw-underline/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/hw-underline/hw-underline.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/hw-underline.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-40"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "بطاقة قائمة بالماركر",
+  "name_en": "Marker Checklist Card",
+  "status": "install",
+  "what": "Paper card with marker headline, underline and a drawn ellipse on one word, then three checklist rows whose ticks draw on (typewriter labels, marker values).",
+  "how": "Install with `npx hyperframes add marker-checklist-card` (copies to compositions/components/marker-checklist-card.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (head…",
+  "params": "Permanent Marker 400 + Courier Prime 700 bundled; vars: top=THE POWER; mid=OF; circled=ONE; rest=FILE; l1=WRITE; v1=HTML; l2=RENDER; v2=IN 4K; l3=SHIP; v3=TODAY",
+  "install": "npx hyperframes add marker-checklist-card` (copies to compositions/components/marker-checklist-card",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/marker-checklist-card/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/marker-checklist-card/marker-checklist-card.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/marker-checklist-card.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-41"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "إبراز بالماركر",
+  "name_en": "Marker Highlight",
+  "status": "install",
+  "what": "Display text settles, then one hand-drawn marker stroke (highlight/circle/underline/scribble) draws over the emphasis word on cue.",
+  "how": "Install with `npx hyperframes add marker-highlight` (copies to compositions/components/marker-highlight.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chrom…",
+  "params": "draw_at 0.9 s; vars: text=Ship it with confidence; emphasis_word=confidence; style=highlight[highlight|circle|underline|scribble]; draw_at=0.9(0..None); accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add marker-highlight` (copies to compositions/components/marker-highlight",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/marker-highlight/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/marker-highlight/marker-highlight.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/marker-highlight.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-42"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "نص مخيط",
+  "name_en": "Stitched Text Draw",
+  "status": "install",
+  "what": "Single-stroke display alphabet drawn as thread stitches: dash patterns, angle jitter, needle-hole dots, leading needle and thread-tail overshoot.",
+  "how": "Install with `npx hyperframes add stitched-text-draw` (copies to compositions/components/stitched-text-draw.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless C…",
+  "params": "stitch fine|coarse; vars: text=STITCH; stitch=fine[fine|coarse]; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add stitched-text-draw` (copies to compositions/components/stitched-text-draw",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/stitched-text-draw/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/stitched-text-draw/stitched-text-draw.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/stitched-text-draw.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-43"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم خط محمل",
+  "name_en": "SVG Line Draw Loader",
+  "status": "install",
+  "what": "Anime.js-style path-drawing loader as a seekable GSAP stroke timeline.",
+  "how": "Install with `npx hyperframes add svg-line-draw-loader` (copies to compositions/components/svg-line-draw-loader.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headle…",
+  "params": "",
+  "install": "npx hyperframes add svg-line-draw-loader` (copies to compositions/components/svg-line-draw-loader",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/svg-line-draw-loader/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/svg-line-draw-loader/svg-line-draw-loader.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/svg-line-draw-loader.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-44"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تتبع الخط",
+  "name_en": "SVG Stroke Trace",
+  "status": "install",
+  "what": "Authored SVG path draws from its measured length, holds with drift and optionally fills if closed.",
+  "how": "Install with `npx hyperframes add svg-stroke-trace` (copies to compositions/components/svg-stroke-trace.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chrom…",
+  "params": "stroke_width 12; path d; vars: path=M 92 328 C 178 142 292 138 366 276 C 430 396 500 414 558 262 C 622 94 724 112 786 274 C 836 406 894 376 930 194; stroke_width=12(2..32); accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add svg-stroke-trace` (copies to compositions/components/svg-stroke-trace",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/svg-stroke-trace/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/svg-stroke-trace/svg-stroke-trace.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/svg-stroke-trace.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-45"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تعليق بأسلوب فوكس",
+  "name_en": "Vox Annotate",
+  "status": "install",
+  "what": "Keyword in a held sentence gets a marker stroke while a thin connector draws to a mono callout label in one beat.",
+  "how": "Install with `npx hyperframes add vox-annotate` (copies to compositions/components/vox-annotate.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fram…",
+  "params": "style highlight|circle|underline|scribble; draw_at 0.9 s; vars: text=Ship the story, not the spec; keyword=story; note=the annotate beat; style=highlight[highlight|circle|underline|scribble]; draw_at=0.9(0..None); accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add vox-annotate` (copies to compositions/components/vox-annotate",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/vox-annotate/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/vox-annotate/vox-annotate.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/vox-annotate.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-46"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم السبورة",
+  "name_en": "Whiteboard Ink",
+  "status": "install",
+  "what": "Whiteboard sketch draws one measured stroke at a time with a pen nib on the tip; presets or own multi-stroke SVG; data-ink=accent stroke uses accent.",
+  "how": "Install with `npx hyperframes add whiteboard-ink` (copies to compositions/components/whiteboard-ink.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium …",
+  "params": "sketch bulb|flow|rocket; pen show|hide; vars: sketch=bulb[bulb|flow|rocket]; caption=Draw the idea; pen=show[show|hide]; accent=green[green|blue|violet]; exit=none[none|fade|up]",
+  "install": "npx hyperframes add whiteboard-ink` (copies to compositions/components/whiteboard-ink",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/whiteboard-ink/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/whiteboard-ink/whiteboard-ink.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/whiteboard-ink.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-47"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "دائرة مؤشرة",
+  "name_en": "Pointer Circle + Countdown",
+  "status": "install",
+  "what": "Draw-on ellipse around a target plus a countdown chip pulsing each tick.",
+  "how": "Install with `npx hyperframes add yt-circle-pointer` (copies to compositions/components/yt-circle-pointer.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chr…",
+  "params": "",
+  "install": "npx hyperframes add yt-circle-pointer` (copies to compositions/components/yt-circle-pointer",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/yt-circle-pointer/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/components/yt-circle-pointer/yt-circle-pointer.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/components/yt-circle-pointer.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-48"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "إطار مرسوم باليد",
+  "name_en": "Sketched Frame",
+  "status": "install",
+  "what": "Media inside a hand-drawn border with corner doodles and handwritten caption; tilts and boils.",
+  "how": "Install with `npx hyperframes add hw-frame` (copies the full composition to compositions/hw-frame.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "Caveat 700; 1920x1080; duration 8 s",
+  "install": "npx hyperframes add hw-frame` (copies the full composition to compositions/hw-frame",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-frame/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-frame/hw-frame.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/hw-frame.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-49"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "كتابة على مسار",
+  "name_en": "Text Along a Path",
+  "status": "install",
+  "what": "Handwriting flows along any SVG path with per-character reveal.",
+  "how": "Install with `npx hyperframes add hw-path-text` (copies the full composition to compositions/hw-path-text.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "Caveat 700; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add hw-path-text` (copies the full composition to compositions/hw-path-text",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-path-text/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-path-text/hw-path-text.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/hw-path-text.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-50"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط أنابيب يدوي",
+  "name_en": "Hand-Drawn Flowchart",
+  "status": "install",
+  "what": "Wobbly boxes with handwritten labels joined by curved connectors, drawing on in sequence from a node list.",
+  "how": "Install with `npx hyperframes add hw-pipeline` (copies the full composition to compositions/hw-pipeline.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "Caveat 700; 7 s; 1920x1080; duration 7 s",
+  "install": "npx hyperframes add hw-pipeline` (copies the full composition to compositions/hw-pipeline",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-pipeline/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-pipeline/hw-pipeline.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/hw-pipeline.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-51"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "انتقال الشخبطة",
+  "name_en": "Scribble Transition",
+  "status": "install",
+  "what": "Overlay transition: scribble bands accumulate to cover the frame, host cuts underneath, scribble clears.",
+  "how": "Install with `npx hyperframes add hw-scribble-transition` (copies the full composition to compositions/hw-scribble-transition.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "2.2 s; 1920x1080; duration 2.2 s",
+  "install": "npx hyperframes add hw-scribble-transition` (copies the full composition to compositions/hw-scribble-transition",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-scribble-transition/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-scribble-transition/hw-scribble-transition.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/hw-scribble-transition.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-52"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "فقاعة كلام يدوية",
+  "name_en": "Speech Bubble",
+  "status": "install",
+  "what": "Hand-drawn speech bubble with positionable tail: outline draws, paper fill fades, text types per character; boils.",
+  "how": "Install with `npx hyperframes add hw-text-cloud` (copies the full composition to compositions/hw-text-cloud.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "Caveat 700; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add hw-text-cloud` (copies the full composition to compositions/hw-text-cloud",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-text-cloud/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-text-cloud/hw-text-cloud.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/hw-text-cloud.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-53"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "عنوان بخط اليد",
+  "name_en": "Handwritten Title",
+  "status": "install",
+  "what": "Handwritten display text with scalar-driven word highlight sweep and seeded squiggle underline sized to the text; boils.",
+  "how": "Install with `npx hyperframes add hw-title` (copies the full composition to compositions/hw-title.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "Caveat 700; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add hw-title` (copies the full composition to compositions/hw-title",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-title/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-title/hw-title.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/hw-title.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-54"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "كتابة العنوان بالقلم",
+  "name_en": "Handwritten Write-On Title",
+  "status": "install",
+  "what": "True glyph write-on: filled Caveat letters revealed by baked per-glyph centreline strokes in real stroke order with curvature-adaptive pen speed and pen lifts.",
+  "how": "Install with `npx hyperframes add hw-write-title` (copies the full composition to compositions/hw-write-title.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: inline SVG, GSAP 3.14.2 paused timeline (window.__timelines).",
+  "params": "Caveat 700; 1920x1080; duration 6 s",
+  "install": "npx hyperframes add hw-write-title` (copies the full composition to compositions/hw-write-title",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-write-title/registry-item.json",
+   "kosif-one/vendor/hyperframes/registry/blocks/hw-write-title/hw-write-title.html",
+   "kosif-one/vendor/hyperframes/docs/catalog/blocks/hw-write-title.mdx"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-55"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسار ذاتيا",
+  "name_en": "SVG path self-draw",
+  "status": "install",
+  "what": "Outline draws stroke by stroke via stroke-dasharray/dashoffset measured with getTotalLength at setup; rings rotate -90deg to start at 12 o'clock.",
+  "how": "Read hyperframes-animation/rules/svg-path-draw.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
+  "params": "each segment starts at ~70-80% of previous segment's duration; ease power2.out",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/svg-path-draw.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-56"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أنماط قلم التحديد",
+  "name_en": "Marker highlight drawing modes",
+  "status": "install",
+  "what": "Pure CSS + GSAP marker emphasis: highlight (yellow sweep), circle (hand-drawn ellipse), burst (radiating lines), scribble, sketchout (rough rectangle).",
+  "how": "Read hyperframes-animation/rules/css-marker-patterns.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
+  "params": "highlight bar inset 0 -6px, radius 3 px, scaleX 0->1 0.5 s power2.out at 0.6 s; multi-line stagger 0.3 s; ellipse border-radius 50% + slight rotation",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/css-marker-patterns.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-57"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "مكونات الرسم اليدوي",
+  "name_en": "Registry hand-drawn components and blocks",
+  "status": "install",
+  "what": "hw-arrow, hw-boil, hw-box-label, hw-callout-circle, hw-underline components; hw-frame, hw-path-text, hw-pipeline, hw-scribble-transition, hw-text-cloud, hw-title, hw-write-title blocks; plus whiteboard-ink, marker-highlight, outline-draw, stitched-text-draw.",
+  "how": "npx hyperframes add hw-*.",
+  "params": "",
+  "install": "npx hyperframes add hw-*",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components",
+   "kosif-one/vendor/hyperframes/registry/blocks"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-58"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خطوط هيرشي أحادية الخط للكتابة اليدوية",
+  "name_en": "Hershey single-stroke fonts for handwriting draw-on",
+  "status": "install",
+  "what": "HersheyScript1 and HersheyScriptMed SVG stroke fonts used to WRITE apex words stroke by stroke (neonsign, aurora, chalkboard, graffiti, brush, spectrum).",
+  "how": "python scripts/gen-stroke-path.py builds stroke paths; theme fonts.strokeFont = 'HersheyScript1.svg'.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Hershey fonts (public-domain style notice; unverified)",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/embedded-captions/assets/strokefonts/HersheyScript1.svg",
+   "kosif-one/vendor/hyperframes/skills/embedded-captions/assets/strokefonts/HersheyScriptMed.svg",
+   "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/gen-stroke-path.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-59"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "دائرة إبراز على أصل حقيقي",
+  "name_en": "Circle highlight on real asset sample",
+  "status": "install",
+  "what": "Reference sample of a drawn circle highlight around a located object in an image (asset-fusion).",
+  "how": "Open samples/asset-fusion/_ref-circle-highlight.html.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/motion-graphics/samples/asset-fusion/_ref-circle-highlight.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-60"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسار",
+  "name_en": "drawPath pen stroke",
+  "status": "install",
+  "what": "SVG stroke draw-on with optional arrowhead landing on arrival; flowDash for moving current.",
+  "how": "motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits",
+  "params": "drawPath(...,{head}); flowDash",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/SKILL.md:95",
+   "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
+   "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-61"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الخط تدريجياً برأس قلم",
+  "name_en": "Stroke draw-on with pen head",
+  "status": "install",
+  "what": "Any SVG stroke draws itself via dash offset; an optional dot pops at the leading end like a pen tip.",
+  "how": "M.drawPath(tl, path, at, dur, {head:dot, ease, opacity}) → strokeDashoffset len→0; head scale 0→1 with spring('snappy') at at+dur−0.1; used for the gold ring (0.9 s E.out), clock ring (1.0 s), dream path (0.9 s), car body (0.75 s), wheels (0.4 s), spring curve (1.15 s), end ring (0.62 s).",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:67",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:204",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:98"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-62"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ظهور العلامات بالتتابع",
+  "name_en": "Staggered tick reveal",
+  "status": "install",
+  "what": "Clock ticks or scale marks appear one after another right after their ring draws, adding a mechanical rhythm.",
+  "how": "tl.to(tickEls, {opacity:.9, duration:.08, stagger:.035, ease:'none'}, 1.95) for 24 ticks; scale rail ticks static at .7 with slide-in x −24→0.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:205"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-63"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "شريط مسح سلكي فوق المجسم",
+  "name_en": "Wireframe scan band over a sculpt",
+  "status": "install",
+  "what": "A glowing wireframe band sweeps up the character's mesh with a bright leading edge and a shrinking ground ring, reading as 'digitising the object'.",
+  "how": "ShaderMaterial wireframe on the same geometry: band = smoothstep(.09,0, scan−y)·step(y, scan+.004); edge = smoothstep(.012,0,|y−scan|); colour mix (.62,1,.72)→(.95,1,.8); scanY lerp(−.02,.4) over .78 s; ring 0xd0ff6a scale 1.15→0.6.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:59",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:137"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-64"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تشكّل من مخطط سلكي إلى مجسم قطيفة",
+  "name_en": "Schematic wireframe → plush formation",
+  "status": "install",
+  "what": "Characters form from a technical schematic into finished plush over the opening seconds; parts can explode apart and joint markers glow while the lens visits them.",
+  "how": "schematic(obj).set(form, camera) with form = 1 − ease(ramp(t, .4, 2.8)); .explode(.35·pulse(3.2, 6.2)); .joints(pulse(3.0, 9.0)).",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:19",
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:53"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-65"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم يدوي Rough.js",
+  "name_en": "Rough.js hand-drawn",
+  "status": "install",
+  "what": "Sketchy SVG/Canvas shapes.",
+  "how": "in-page lib",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "MIT",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-66"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسار تدريجياً",
+  "name_en": "SVG draw-on (Vivus/Lazy Line/Walkway)",
+  "status": "install",
+  "what": "Path stroke reveal libs.",
+  "how": "in-page lib; or GSAP stroke-dashoffset",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "unknown",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-67"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم متجهي بالقلم في برنامج الرسام",
+  "name_en": "Vector drawing by pen in Windows Paint (SVG/shapes)",
+  "status": "install",
+  "what": "Claude draws SVG paths or primitive shapes stroke by stroke into Paint (or any canvas window) with its own synthetic pen, fitted into a target box, optionally hatch-filled.",
+  "how": "kosif_mouse_act window=Paint actions=[{do:'draw', target:'canvas', viewbox:[0,0,100,100], svg:'M50 30 C35 18 ...'} or shapes:[{type:circle|ellipse|arc|rect|line|polyline|polygon|path, fill:true}], expect:{changed:true}]; for solid areas outline then bucket-fill (1 tap per area).",
+  "params": "fit margin 0.08; hatch gap default 2 px (whole-pixel rows); closed shapes run on 30% past start to seal bucket fills; arcs sampled every 6 deg (>= 12 points)",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/desktop.py:1032",
+   "kosif-one/tools/kosif-omni/skills/kosif-mouse/SKILL.md",
+   "kosif-one/tools/kosif-omni/mcp-server/tests/test_desktop.py:259"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-68"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "إعادة رسم صورة بكسل ببكسل في الرسام",
+  "name_en": "Pixel-exact image redraw in Paint (KOSIF Replicate)",
+  "status": "install",
+  "what": "Redraws an image by hand in Windows Paint with Pencil 1 px and the colour dialog, then verifies every pixel and repairs until identical — a provable 'hand-made' recreation (or a fast 64-colour approximation).",
+  "how": "kosif_paint_copy image=<png> window=Paint [zoom 4] [colors 64] [budget_s 3600]; resumable; CLI python -m kosif_mcp.replicate --save new.png compares RGB and alpha; --erase-transparent.",
+  "params": "limit 200,000 px; ~0.6-0.68 s per colour; taps ~1,030 px/s; 85x98 logo 2,650 colours = 100% (8,330/8,330 px) in ~25 min; 64 colours ~1.3 min mean dE 2.4; two-coat recipe for hues Paint cannot hold (20% opacity)",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/replicate.py:1",
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/replicate.py:1003",
+   "kosif-one/tools/kosif-omni/mcp-server/tests/test_replicate.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-69"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المحراب بقلم ذهبي",
+  "name_en": "Gold pen draw-on of a mihrab arch",
+  "status": "install",
+  "what": "The pointed arch (and an inner parallel arch, two date rules) draws itself like a gold pen at the start, then thickens on the final 'آمين'.",
+  "how": "SVG path with stroke url(#gold) linearGradient #fff0b3/#e8b04a/#fff0b3, width 7 round caps; M.drawPath(tl,path,0,1.7,{ease:E.out}); inner arch #f3c766 op .55 width 3 at 0.25 s; on 22.95 s stroke-width 7 -> 9.",
+  "params": "arch d='M150,1760 L150,1010 C150,770 370,610 540,520 C710,610 930,770 930,1010 L930,1760'",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/thursday-dua-animation/source/index.html:74-77",
+   "kosif-one/projects/thursday-dua-animation/source/index.html:188-194",
+   "kosif-one/projects/thursday-dua-animation/source/index.html:220"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-70"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "نهر يمتلئ ثم يجري",
+  "name_en": "River fill then flow (pathLength dash)",
+  "status": "install",
+  "what": "A river first fills from the mountain to the sea, then light dashes run along it to show flow.",
+  "how": "Same path three times: dry bed #CDE7F7 20 px; water #2B8CE6 pathLength=1 dasharray '1 1' dashoffset 1 -> 0 (7.3-8.7 s); flow #A9DBFF 6 px dasharray '0.04 0.07' dashoffset -0.35t, opacity in at 8.4 s.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html:63-66",
+   "kosif-one/projects/water-cycle-animation/index.html:176-179"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-71"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسار بالقلم وتدفق الشرطات",
+  "name_en": "SVG pen draw-on and flowing dashes",
+  "status": "install",
+  "what": "Any stroke draws itself like a pen (optionally popping an arrowhead at the end), or carries marching dashes to show flow.",
+  "how": "M.drawPath(tl,path,at,dur,{ease:power4.inOut,opacity,head}) using getTotalLength dasharray/dashoffset; M.flowDash(tl,path,at,dur,{pattern:'28 22',cycles:6}).",
+  "params": "head pops 0.1 s before end with snappy spring 0.35 s",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:236-253"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-72"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "فيلم رسم الصورة بيكسل ببيكسل",
+  "name_en": "Drawing film: picture forming pixel by pixel",
+  "status": "install",
+  "what": "Records any scene, code file or image being painted in painter order as an MP4.",
+  "how": "python film.py drawing <scene|code|image> --out x.mp4 [--fps 30 --speed normal]; python film.py animate page.html|scene.py --out x.mp4 [--seconds 6].",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-studio/film.py:1"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-73"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "استوديو الرسم بيكسل ببيكسل",
+  "name_en": "Pixel-by-pixel drawing studio",
+  "status": "install",
+  "what": "Desktop app that paints any picture in painter order, replaying PIL/SVG/matplotlib/turtle code step by step.",
+  "how": "python3 studio.py --code drawing.py | --image photo.jpg | --image-code; headless runner.py CODE OUT -> job_*.npz, done.json",
+  "params": "canvas 1200x800, export 3840x2560",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/scripts/studio.py",
+   "100-superskills/skills/pixel-studio-painter/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-74"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "إعادة رسم مطابقة",
+  "name_en": "Exact redraw (zero-pixel diff)",
+  "status": "install",
+  "what": "Three stages (blocks, refine, fine touches) ending with assert of 0 mismatched pixels incl. alpha; photos test 4 plans (6/10/16/24 block colours) in ~3 s, Jev picks twice in swapped order.",
+  "how": "exact.py; jev_client.py",
+  "params": "6/10/16/24 colours",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/scripts/exact.py",
+   "100-superskills/skills/pixel-studio-painter/scripts/jev_client.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-75"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "صورة إلى كود بايثون",
+  "name_en": "Image to standalone Pillow program",
+  "status": "install",
+  "what": "Writes a Pillow-only program drawing polygons then completing pixels from embedded original and self-verifying; --data-only form.",
+  "how": "python3 to_python.py / studio.py --image-code",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/scripts/to_python.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-76"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "استيراد SVG",
+  "name_en": "SVG import to draw steps",
+  "status": "install",
+  "what": "Every SVG element becomes a drawing step in order.",
+  "how": "svg_import.py",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/scripts/svg_import.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-77"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ترتيب ظهور الخطوات",
+  "name_en": "Scene op: Step reveal orders",
+  "status": "install",
+  "what": "KOSIF Studio scene operation: Step.",
+  "how": "Step(name,ops,order sweep|grow|rise|down|left|right|sparkle,origin,weight)",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md",
+   "100-superskills/skills/pixel-studio-painter/scripts/render.py"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-78"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "فيلم الرسم",
+  "name_en": "Drawing film / animate to MP4",
+  "status": "install",
+  "what": "Video of the picture forming pixel by pixel, or animate render(t)/build_t(t) scenes, frames piped to ffmpeg.",
+  "how": "python3 film.py drawing|animate SRC --out x.mp4 --fps 30 --speed normal --seconds N",
+  "params": "30 fps, hold 1.5 s",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/pixel-studio-painter/scripts/film.py:229"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-79"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسار بالقلم",
+  "name_en": "Pen draw-on stroke with arrowhead",
+  "status": "install",
+  "what": "Draws any SVG path like a pen via stroke-dashoffset; optional arrowhead lands with a spring just before the stroke ends.",
+  "how": "MOTION.drawPath(tl, path, at, dur, {ease, head, headOrigin, opacity}).",
+  "params": "default ease power4.inOut; head scale 0->1 in .35 s spring snappy at at+dur-0.1",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:237",
+   "kosif-studio/motion/references/hyperframes-authoring.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-80"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أيقونات المعنى",
+  "name_en": "Meaning icons drawn on (12)",
+  "status": "install",
+  "what": "Stroke-only 200×200 icons chosen by the meaning of a line and drawn with drawPath, breathing on the beat; numbers count up instead.",
+  "how": "line.motif.kind in sun|moon|heart|clock|money|trophy|road|question|check|home|rain|light, or kind 'count' with value.",
+  "params": "stroke 5, round caps, accent colour; draw .7 s stagger .06; breathe 1+.06·beat+.04·rms",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/templates/verse.html"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-81"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "مسجّل أوامر PIL بترتيب الكود",
+  "name_en": "PIL drawing-command recorder (draw in the code's own order)",
+  "status": "install",
+  "what": "Monkey-patches ImageDraw so every rectangle/ellipse/polygon/line/arc/text call is snapshotted; consecutive calls of one kind are grouped into strokes, so the picture forms in the order the code drew it.",
+  "how": "Recorder.install() wraps ImageDraw methods, Image.paste/alpha_composite and save/show; commit() stores PNG snapshots; labels are Arabic call names with counts.",
+  "params": "RUN = 20 commands per stroke (360 sky lines -> 18 strokes); stream thinned when > 300 snapshots; final job 'اللمسات الأخيرة'",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/runner.py:247",
+   "kosif-studio/runner.py:359",
+   "kosif-studio/runner.py:39"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-82"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "فيلم الرسم: تشكّل الصورة كفيديو",
+  "name_en": "Drawing film: the picture forming as MP4",
+  "status": "install",
+  "what": "Records any scene, code file or image being painted pixel by pixel into an H.264 video, holding the finished frame at the end — a painting timelapse.",
+  "how": "python film.py drawing <scene|code file|image> --out out/x.mp4 [--fps 30] [--speed normal]; images are first wrapped as image code; native canvases are fitted into a 1280x720 frame on #1b1b1b.",
+  "params": "fps 30; hold 1.5 s; libx264 preset medium crf 18 yuv420p, GOP 2*fps, +faststart; scene sheet 1200x800",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/film.py:59",
+   "kosif-studio/film.py:100",
+   "kosif-studio/studio.py:891"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-83"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "الرسم المطابق تماماً: كتل ثم تدقيق ثم لمسات",
+  "name_en": "Exact-match painting (block-in, refine, final touches)",
+  "status": "install",
+  "what": "Repaints any image from a blank transparent sheet in painter stages and ends identical to the original in every RGBA value: flat colour blocks first, then tonal refinement for photos, then exact correction of every remaining pixel.",
+  "how": "exact.plan(rgba, block_k, fine_k) yields jobs (label, order, origin, weight, idx, cols); block-in uses the logo's own palette or Lab k-means on a bilateral-filtered copy (+median 5); refine splits changed pixels into luminance tertiles (shadows, mid-tones, lights); asserts array_equal at the end.",
+  "params": "block-in jobs grow, weight 0.9; refine sparkle weight 0.7 with change threshold sum|diff|>12; bilateral 9/40/9; k-means cap 60000 samples, 40 iters",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/exact.py:1",
+   "kosif-studio/exact.py:66",
+   "kosif-studio/exact.py:151"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-84"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسوم خطية صغيرة فوق الفيديو",
+  "name_en": "Line micro-graphics over footage",
+  "status": "install",
+  "what": "Thin ivory line drawings that illustrate each spoken example for ~1.2 s: a 24-hour clock with ticks and sweeping hand, a dream path rising with glow, a measurement rail with sliding marker, a one-line car with road streak, a draining time bar, a closing ring.",
+  "how": "inline SVG + M.drawPath / GSAP rotation",
+  "params": "stroke 2-3 px #F5F0E6 with #E7B65A accents; ring r 150 at (205,640)",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-studio/motion/projects/premium_edit/index.html:56",
+   "kosif-studio/out/FINAL_EDIT/EDIT_NOTES.txt"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-85"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "وايتبورد سينمائي",
+  "name_en": "Style: Whiteboard cinematic (whiteboard-cinematic)",
+  "status": "install",
+  "what": "Whiteboard explainer upgraded with camera dolly, depth and dramatic framing between drawings.",
+  "how": "Draw-on strokes 800-1400 px/s with hand overlay pinned to path tip; camera pushes/pans to clean board space after 1.5-2s hold. Scaffold: python3 tools/kosif.py scaffold whiteboard-cinematic <dir>.",
+  "params": "pen 4/8px; texture 5-10%",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:whiteboard-cinematic",
+   "kosif-tool/playbooks/hand-drawn.md"
+  ],
+  "styles": [
+   "whiteboard-cinematic"
+  ],
+  "tags": [],
+  "id": "DRAW-86"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "إطار بإطار",
+  "name_en": "Style: Frame by frame (frame-by-frame)",
+  "status": "install",
+  "what": "Traditional per-frame drawn animation feel on twos.",
+  "how": "Swap drawings every 2 frames (12 dps); boil with 3 stroke variants every 2-3 frames. Scaffold: python3 tools/kosif.py scaffold frame-by-frame <dir>.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:frame-by-frame",
+   "kosif-tool/playbooks/hand-drawn.md"
+  ],
+  "styles": [
+   "frame-by-frame"
+  ],
+  "tags": [],
+  "id": "DRAW-87"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "سبورة طباشير",
+  "name_en": "Style: Chalkboard (chalkboard)",
+  "status": "install",
+  "what": "Chalk drawing on green/black board, inverted ink.",
+  "how": "Draw-on 800-1400 px/s, chalk texture strokes, board texture 5-10%. Scaffold: python3 tools/kosif.py scaffold chalkboard <dir>.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:chalkboard",
+   "kosif-tool/playbooks/hand-drawn.md"
+  ],
+  "styles": [
+   "chalkboard"
+  ],
+  "tags": [],
+  "id": "DRAW-88"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "سبورة بيضاء",
+  "name_en": "Style: Whiteboard (whiteboard)",
+  "status": "install",
+  "what": "Marker drawing on whiteboard step by step with hand.",
+  "how": "Hand overlay lags 1 frame, rotates +-5 deg; hold 1.5-2s; pan to clean space. Scaffold: python3 tools/kosif.py scaffold whiteboard <dir>.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:whiteboard",
+   "kosif-tool/playbooks/hand-drawn.md"
+  ],
+  "styles": [
+   "whiteboard"
+  ],
+  "tags": [],
+  "id": "DRAW-89"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قصص الدودل",
+  "name_en": "Style: Doodle stories (doodle)",
+  "status": "install",
+  "what": "Ink doodle characters in one connected world, boiling lines.",
+  "how": "Boil: 3 stroke variants every 2-3 frames; continuous camera through world. Scaffold: python3 tools/kosif.py scaffold doodle <dir>.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:doodle",
+   "kosif-tool/playbooks/hand-drawn.md"
+  ],
+  "styles": [
+   "doodle"
+  ],
+  "tags": [],
+  "id": "DRAW-90"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قلم البلوتر",
+  "name_en": "Style: Plotter pen (plotter)",
+  "status": "install",
+  "what": "Mechanical pen-plotter drawing at constant speed.",
+  "how": "Constant pen speed, no easing; optional pen-up travel lines at 10% opacity. Scaffold: python3 tools/kosif.py scaffold plotter <dir>.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "style:plotter",
+   "kosif-tool/playbooks/hand-drawn.md"
+  ],
+  "styles": [
+   "plotter"
+  ],
+  "tags": [],
+  "id": "DRAW-91"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم يدوي",
+  "name_en": "Category: Hand-drawn",
+  "status": "install",
+  "what": "Capability family 'hand-drawn' (11 catalog entries) with a dedicated bilingual playbook of timings and recipes.",
+  "how": "Read playbooks/hand-drawn.md (visual grammar, motion mechanics, scene recipes, QA); build in starters/html-canvas or starters/remotion; filter catalog with python3 tools/kosif.py list --category hand-drawn.",
+  "params": "pen 800-1400px/s; lift 60-120ms; hatching 2000px/s; boil every 2-3 frames; texture 5-10%",
+  "install": "see arsenal-libraries.md",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md",
+   "kosif-tool/catalog/categories.json",
+   "kosif-tool/catalog/meta.json"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-92"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الحلقات بالتمرير",
+  "name_en": "SVG ring draw-on with scroll",
+  "status": "install",
+  "what": "Sand spiral grooves draw centre-out via strokeDashoffset 1->0 scrubbed.",
+  "how": "gsap.set dasharray 1; to offset 0 ease none scrub 1 start top 85% end center 40%.",
+  "params": "",
+  "install": "see arsenal-libraries.md",
+  "license": "none",
+  "proof": [
+   "kosif-one/vendor/mcp-higgsfield-landing/src/scripts/motion.ts:64"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-93"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "برومبت إطار ستوري بورد بالرصاص",
+  "name_en": "Pencil storyboard frame prompt",
+  "status": "key",
+  "what": "A reusable prompt for 16:9 gray pencil storyboard frames: no colour except thin red lines for camera axis and eye line, camera drawn as a box on a tripod with a direction arrow, dashed frame rectangle, handwritten dimension notes.",
+  "how": "Fill slots (props, camera position, person view, action, frame cut line); output per shot as PNG via an image model or render the same look procedurally (SVG strokes with jitter) here.",
+  "params": "16:9; gray pencil + red axis lines",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2448-akbun-vlog-shotsketch/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2449-akbun-vlog-storyboard/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-94"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أسلوب رسم الماركر على السبورة",
+  "name_en": "Whiteboard marker-doodle illustration style",
+  "status": "key",
+  "what": "A graphic-recording look: warm cream paper, bold slightly wobbly navy ink outlines, loose marker hatching that overshoots the lines, a few bright colours, faceless white crowd figures, red/orange emphasis arrows.",
+  "how": "Use the fixed English template (style lines unchanged, only CHARACTER/SCENE/LABEL slots filled) to generate one illustration per narration beat; then in Remotion/GSAP reveal the plate with a draw-on mask or wipe to fake the hand drawing.",
+  "params": "3-5 colours; 1-2 short labels max; 2-5 scenes per story",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1094-akbun-draw/2421-akbun-draw-storytellingimage"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-95"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أسلوب القلم الرصاص الهادئ بلون واحد",
+  "name_en": "Quiet pencil one-accent style",
+  "status": "key",
+  "what": "Grayscale graphite scene on cream paper with two thirds of the frame empty and exactly one small object filled in a single accent colour.",
+  "how": "Prompt: cream #F4ECDC, landscape 4:3, subjects small on a thin ground line, graphite #4A4A4A-#9A9A9A, hatching only, ONE object flat teal #2E7D8C. In motion, animate only the coloured object or let it be the transition anchor.",
+  "params": "#F4ECDC; #4A4A4A-#9A9A9A; accent #2E7D8C; 4:3",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1094-akbun-draw/2419-akbun-draw-quiet-pencil"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-96"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "دائرة يدوية لتأكيد الخطأ",
+  "name_en": "Hand-drawn circle emphasis",
+  "status": "seen",
+  "what": "irregular double-loop ellipse path drawn with stroke-dashoffset around the duplicate items, plus radiating burst ticks around a label",
+  "how": "irregular double-loop ellipse path drawn with stroke-dashoffset around the duplicate items, plus radiating burst ticks around a label",
+  "params": "draw 500 ms, stroke 3 px black",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-0xnfrith-5be616",
+   "style:pm-tak3sh8-be5012"
+  ],
+  "styles": [
+   "pm-0xnfrith-5be616",
+   "pm-tak3sh8-be5012"
+  ],
+  "tags": [],
+  "id": "DRAW-97"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "طباشيرة بلا يد تتبع رأس الخط",
+  "name_en": "Hand-less chalk tip follower",
+  "status": "seen",
+  "what": "place a rotated rounded-rect chalk sprite at the current stroke tip; tint it to the stroke colour; between strokes lift it (scale 1->1.08, shadow offset 2->10 px) and move along an eased path",
+  "how": "place a rotated rounded-rect chalk sprite at the current stroke tip; tint it to the stroke colour; between strokes lift it (scale 1->1.08, shadow offset 2->10 px) and move along an eased path",
+  "params": "chalk 60x12 px, lift 250 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:chalkboard"
+  ],
+  "styles": [
+   "chalkboard"
+  ],
+  "tags": [],
+  "id": "DRAW-98"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط طباشير بضغط متغير وهالة",
+  "name_en": "Pressure chalk stroke with halo",
+  "status": "seen",
+  "what": "sample points along path, getStroke(points.slice(0, n*progress)) from perfect-freehand; draw twice: wider halo at ~0.12 opacity then the stroke",
+  "how": "sample points along path, getStroke(points.slice(0, n*progress)) from perfect-freehand; draw twice: wider halo at ~0.12 opacity then the stroke",
+  "params": "size 6-8, thinning 0.5, halo x2.2",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:chalkboard"
+  ],
+  "styles": [
+   "chalkboard"
+  ],
+  "tags": [],
+  "id": "DRAW-99"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تقسيم المسارات المتعددة قبل الرسم الحر",
+  "name_en": "Split multi-M paths for freehand",
+  "status": "seen",
+  "what": "split a path with several M commands (e.g. grid lines) into separate strokes; distribute overall progress across them proportional to their length so freehand never bridges them with a scribble",
+  "how": "split a path with several M commands (e.g. grid lines) into separate strokes; distribute overall progress across them proportional to their length so freehand never bridges them with a scribble",
+  "params": "length-weighted progress",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:chalkboard"
+  ],
+  "styles": [
+   "chalkboard"
+  ],
+  "tags": [],
+  "id": "DRAW-100"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط حبر متغيّر السُّمك",
+  "name_en": "Variable-width ink outline",
+  "status": "seen",
+  "what": "sample each SVG path to points, assign pressure via sin over arc length, run perfect-freehand getStroke and fill with ink colour; cache static shapes",
+  "how": "sample each SVG path to points, assign pressure via sin over arc length, run perfect-freehand getStroke and fill with ink colour; cache static shapes",
+  "params": "size 3-6 px at 720w, thinning 0.5, ink #2f2820",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:doodle"
+  ],
+  "styles": [
+   "doodle"
+  ],
+  "tags": [],
+  "id": "DRAW-101"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "بناء الجسم: خط ثم تعبئة ثم سُمك",
+  "name_en": "Stroke-to-fill-to-extrude build",
+  "status": "seen",
+  "what": "outline dash draw-on, then face opacity 0->1, then extrusion depth 0->full, starting from a sparkle",
+  "how": "outline dash draw-on, then face opacity 0->1, then extrusion depth 0->full, starting from a sparkle",
+  "params": "0.6 s / 0.3 s / 0.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:fake3d"
+  ],
+  "styles": [
+   "fake3d"
+  ],
+  "tags": [],
+  "id": "DRAW-102"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خطوط ماء موازية للساحل",
+  "name_en": "Triple coastline water lines",
+  "status": "seen",
+  "what": "stroke the sea boundary 3 times with decreasing widths, alternating ink then sea colour on top, all clipped inside the sea polygon -> three parallel ripples",
+  "how": "stroke the sea boundary 3 times with decreasing widths, alternating ink then sea colour on top, all clipped inside the sea polygon -> three parallel ripples",
+  "params": "widths ~18/12/6 px, ink #5d5140, sea #bfcdbe",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:map-journey"
+  ],
+  "styles": [
+   "map-journey"
+  ],
+  "tags": [],
+  "id": "DRAW-103"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم خط حبر برعشة يد",
+  "name_en": "Hand-jitter ink stroke draw-on",
+  "status": "seen",
+  "what": "smooth polygon with Catmull-Rom, add fixed seeded jitter (~0.5-1 px), animate strokeDashoffset via pathLength=1 over ~2 s",
+  "how": "smooth polygon with Catmull-Rom, add fixed seeded jitter (~0.5-1 px), animate strokeDashoffset via pathLength=1 over ~2 s",
+  "params": "seeded noise, ease-in-out",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:map-journey"
+  ],
+  "styles": [
+   "map-journey"
+  ],
+  "tags": [],
+  "id": "DRAW-104"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قلم بشرارة يرسم المنحنى",
+  "name_en": "Spark pen plotter draw-on",
+  "status": "seen",
+  "what": "animate stroke-dashoffset of an SVG path and place a glowing orange dot plus 4-6 tiny particle sparks at getPointAtLength(progress); thin bone-white line with faint glow behind",
+  "how": "animate stroke-dashoffset of an SVG path and place a glowing orange dot plus 4-6 tiny particle sparks at getPointAtLength(progress); thin bone-white line with faint glow behind",
+  "params": "line 1.5 px, spark core 6 px #f27525, glow blur 10 px, 1-2 s per stroke, easeInOutCubic",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:plotter"
+  ],
+  "styles": [
+   "plotter"
+  ],
+  "tags": [],
+  "id": "DRAW-105"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "نقطة تجرّ خطاً يرسم رمزاً",
+  "name_en": "Dot-led line draw into a glyph",
+  "status": "seen",
+  "what": "SVG path for a looping '?' with stroke-dashoffset animated while the dot rides the path tip (getPointAtLength)",
+  "how": "SVG path for a looping '?' with stroke-dashoffset animated while the dot rides the path tip (getPointAtLength)",
+  "params": "stroke 3 px white, ~0.8 s ease-in-out",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-1littlecoder-9fef89"
+  ],
+  "styles": [
+   "pm-1littlecoder-9fef89"
+  ],
+  "tags": [],
+  "id": "DRAW-106"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "حديقة تنمو",
+  "name_en": "Growing garden",
+  "status": "seen",
+  "what": "Flowers scale-Y from their root point (transform-origin bottom) with staggered delays, then insects fly on Lissajous/sine paths with wing flap (scaleX oscillation)",
+  "how": "Flowers scale-Y from their root point (transform-origin bottom) with staggered delays, then insects fly on Lissajous/sine paths with wing flap (scaleX oscillation)",
+  "params": "grow 500-700 ms easeOut, stagger 80 ms, flap 8 Hz",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-abderrahmen-g-9e8ed0"
+  ],
+  "styles": [
+   "pm-abderrahmen-g-9e8ed0"
+  ],
+  "tags": [],
+  "id": "DRAW-107"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الأنبوب",
+  "name_en": "Pipe draw-on",
+  "status": "seen",
+  "what": "thick rounded stroke with light gradient, dashoffset 600 ms, dimension tick lines",
+  "how": "thick rounded stroke with light gradient, dashoffset 600 ms, dimension tick lines",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-adamdesgns-478d6d"
+  ],
+  "styles": [
+   "pm-adamdesgns-478d6d"
+  ],
+  "tags": [],
+  "id": "DRAW-108"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "كشف رسم السبورة",
+  "name_en": "Whiteboard reveal",
+  "status": "seen",
+  "what": "mask-reveal sketch illustration parts per sentence",
+  "how": "mask-reveal sketch illustration parts per sentence",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ajith-io-c52e09"
+  ],
+  "styles": [
+   "pm-ajith-io-c52e09"
+  ],
+  "tags": [],
+  "id": "DRAW-109"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "كتابة يدوية",
+  "name_en": "Handwritten slogan write-on",
+  "status": "seen",
+  "what": "script font revealed by mask with arrow drawn",
+  "how": "script font revealed by mask with arrow drawn",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ajith-io-ea7f2d"
+  ],
+  "styles": [
+   "pm-ajith-io-ea7f2d"
+  ],
+  "tags": [],
+  "id": "DRAW-110"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم الشعار بالخط",
+  "name_en": "Monogram stroke draw-on",
+  "status": "seen",
+  "what": "SVG stroke-dashoffset 1→0",
+  "how": "SVG stroke-dashoffset 1→0",
+  "params": "1 s inOut",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-andginja-333d32"
+  ],
+  "styles": [
+   "pm-andginja-333d32"
+  ],
+  "tags": [],
+  "id": "DRAW-111"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم هندسي يُخطّ",
+  "name_en": "Geometric line draw-on",
+  "status": "seen",
+  "what": "SVG stroke-dashoffset on plan/temple outlines, stagger cells 40 ms",
+  "how": "SVG stroke-dashoffset on plan/temple outlines, stagger cells 40 ms",
+  "params": "1.5 s per drawing",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-buildfastwithai-53234e"
+  ],
+  "styles": [
+   "pm-buildfastwithai-53234e"
+  ],
+  "tags": [],
+  "id": "DRAW-112"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "شروح بخط اليد مع أسهم مرسومة",
+  "name_en": "Handwritten annotations with arrows",
+  "status": "seen",
+  "what": "handwritten font notes typed on, curved SVG arrow drawn with stroke-dashoffset pointing to subject; red for wrong, blue for right",
+  "how": "handwritten font notes typed on, curved SVG arrow drawn with stroke-dashoffset pointing to subject; red for wrong, blue for right",
+  "params": "arrow draw 300 ms; note 25 ms/char; blue #2f7bf5, red #ef3b55",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-chatgptastra-0d95c7"
+  ],
+  "styles": [
+   "pm-chatgptastra-0d95c7"
+  ],
+  "tags": [],
+  "id": "DRAW-113"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "كتابة عنوان بخط يدوي",
+  "name_en": "Script headline write-on",
+  "status": "seen",
+  "what": "Script font text revealed by left-to-right mask wipe with gold gradient fill and soft shadow",
+  "how": "Script font text revealed by left-to-right mask wipe with gold gradient fill and soft shadow",
+  "params": "800 ms linear-ish, gradient #f5c542->#d8a664",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-deebeeeff-50fcd0"
+  ],
+  "styles": [
+   "pm-deebeeeff-50fcd0"
+  ],
+  "tags": [],
+  "id": "DRAW-114"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خيوط تعليق",
+  "name_en": "Hang strings",
+  "status": "seen",
+  "what": "Thin vertical lines draw down then word drops on spring",
+  "how": "Thin vertical lines draw down then word drops on spring",
+  "params": "1px gold",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-gdgtify-287ddf"
+  ],
+  "styles": [
+   "pm-gdgtify-287ddf"
+  ],
+  "tags": [],
+  "id": "DRAW-115"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم خط نيون برأس متوهج",
+  "name_en": "Neon line draw with glowing head",
+  "status": "seen",
+  "what": "stroke-dashoffset reveal of a smooth curve in lime; a grey offset ghost copy trails; a glowing dot rides the leading end with value label",
+  "how": "stroke-dashoffset reveal of a smooth curve in lime; a grey offset ghost copy trails; a glowing dot rides the leading end with value label",
+  "params": "stroke 4 px #d4ff3a, glow 12 px, draw 1 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "styles": [
+   "pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "tags": [],
+  "id": "DRAW-116"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط حبر مهتز يدوي",
+  "name_en": "Hand-inked stroke wobble",
+  "status": "seen",
+  "what": "offset stroke points with small noise (±0.6 px) and slight width variation to mimic ink on paper",
+  "how": "offset stroke points with small noise (±0.6 px) and slight width variation to mimic ink on paper",
+  "params": "stroke 4-6 px #1a1a18",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-hbcoop-de365c"
+  ],
+  "styles": [
+   "pm-hbcoop-de365c"
+  ],
+  "tags": [],
+  "id": "DRAW-117"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم خطي استعاري",
+  "name_en": "Line-art metaphor illustration",
+  "status": "seen",
+  "what": "simple outline drawing (copier/printer) that outputs copies sliding out, a red blot spreading to show an error copied everywhere, with an italic red serif aside",
+  "how": "simple outline drawing (copier/printer) that outputs copies sliding out, a red blot spreading to show an error copied everywhere, with an italic red serif aside",
+  "params": "stroke 2 px charcoal, pages slide 600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-henkvaness-0e06af"
+  ],
+  "styles": [
+   "pm-henkvaness-0e06af"
+  ],
+  "tags": [],
+  "id": "DRAW-118"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "طبقة تعليقات بخط اليد",
+  "name_en": "Handwritten annotation layer",
+  "status": "seen",
+  "what": "script font text revealed per letter (~30 ms) plus SVG arrow paths drawn with stroke-dashoffset; blue for correct, red for wrong; strikethrough line drawn over wrong statement",
+  "how": "script font text revealed per letter (~30 ms) plus SVG arrow paths drawn with stroke-dashoffset; blue for correct, red for wrong; strikethrough line drawn over wrong statement",
+  "params": "Kalam/Caveat 600, arrow draw 250 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-himanshutwtxs-5f4b43"
+  ],
+  "styles": [
+   "pm-himanshutwtxs-5f4b43"
+  ],
+  "tags": [],
+  "id": "DRAW-119"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط يمتد إلى العنوان",
+  "name_en": "Underline sweep to heading",
+  "status": "seen",
+  "what": "red line scaleX 0→1 easeOut 500ms then heading unblurs",
+  "how": "red line scaleX 0→1 easeOut 500ms then heading unblurs",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ho-ba-f3f0e9"
+  ],
+  "styles": [
+   "pm-ho-ba-f3f0e9"
+  ],
+  "tags": [],
+  "id": "DRAW-120"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "كتابة يدوية بقلم ماركر ترسم نفسها",
+  "name_en": "Marker handwriting draw-on",
+  "status": "seen",
+  "what": "Handwriting font converted to paths (or single-line font), animate stroke-dashoffset per glyph; curved arrow drawn first then label",
+  "how": "Handwriting font converted to paths (or single-line font), animate stroke-dashoffset per glyph; curved arrow drawn first then label",
+  "params": "~40 ms per glyph, arrow 300 ms, colours in accent ink",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ik-builds-b8bdcf"
+  ],
+  "styles": [
+   "pm-ik-builds-b8bdcf"
+  ],
+  "tags": [],
+  "id": "DRAW-121"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رابط محاط بدائرة يدوية",
+  "name_en": "Hand-circled CTA",
+  "status": "seen",
+  "what": "Draw a wobbly ellipse around the URL with stroke-dashoffset after the tagline lands",
+  "how": "Draw a wobbly ellipse around the URL with stroke-dashoffset after the tagline lands",
+  "params": "ellipse 400 ms, accent rust colour, stroke 2 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ik-builds-b8bdcf"
+  ],
+  "styles": [
+   "pm-ik-builds-b8bdcf"
+  ],
+  "tags": [],
+  "id": "DRAW-122"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تحويل النص إلى رسم يدوي",
+  "name_en": "Text-to-doodle diagram",
+  "status": "seen",
+  "what": "SVG paths with stroke-dashoffset draw-on, handwritten labels fade in after each path",
+  "how": "SVG paths with stroke-dashoffset draw-on, handwritten labels fade in after each path",
+  "params": "each path 400-800ms, stagger 150ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-itisrazak-3ad902"
+  ],
+  "styles": [
+   "pm-itisrazak-3ad902"
+  ],
+  "tags": [],
+  "id": "DRAW-123"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "شريط خطوط فنية",
+  "name_en": "Line-art ribbon",
+  "status": "seen",
+  "what": "parametric curves drawn as many thin strokes on yellow",
+  "how": "parametric curves drawn as many thin strokes on yellow",
+  "params": "stroke 1px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-itsuki-dev-10942d"
+  ],
+  "styles": [
+   "pm-itsuki-dev-10942d"
+  ],
+  "tags": [],
+  "id": "DRAW-124"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم مسطح بحدود حبر",
+  "name_en": "Ink-outline flat illustration",
+  "status": "seen",
+  "what": "Flat fills with 3-4px dark ink strokes slightly uneven, muted warm palette, subtle paper grain overlay",
+  "how": "Flat fills with 3-4px dark ink strokes slightly uneven, muted warm palette, subtle paper grain overlay",
+  "params": "stroke #2a2a2a, grain 6% opacity",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jake11moran-a269c4"
+  ],
+  "styles": [
+   "pm-jake11moran-a269c4"
+  ],
+  "tags": [],
+  "id": "DRAW-125"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "شرارة ترسم المحيط",
+  "name_en": "Outline spark trace",
+  "status": "seen",
+  "what": "bright dot travels along SVG path with stroke-dashoffset trailing",
+  "how": "bright dot travels along SVG path with stroke-dashoffset trailing",
+  "params": "1.5 s ease-in-out",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-jazzen-chen-4542ae"
+  ],
+  "styles": [
+   "pm-jazzen-chen-4542ae"
+  ],
+  "tags": [],
+  "id": "DRAW-126"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم أيقونة خطية",
+  "name_en": "Line icon draw-on",
+  "status": "seen",
+  "what": "SVG stroke-dashoffset draw of circuit/chart/target icons",
+  "how": "SVG stroke-dashoffset draw of circuit/chart/target icons",
+  "params": "~600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-kangaroohere-b10f8d"
+  ],
+  "styles": [
+   "pm-kangaroohere-b10f8d"
+  ],
+  "tags": [],
+  "id": "DRAW-127"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قلم ماركر يكتب بخط اليد",
+  "name_en": "Marker-pen handwriting reveal",
+  "status": "seen",
+  "what": "SVG paths of handwritten letters revealed with stroke-dashoffset in writing order; a marker image follows getPointAtLength of the active path, tilted ~30°",
+  "how": "SVG paths of handwritten letters revealed with stroke-dashoffset in writing order; a marker image follows getPointAtLength of the active path, tilted ~30°",
+  "params": "~120 ms per letter, stroke 3 px #1f1d19",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lemomo-ai-0d9cff"
+  ],
+  "styles": [
+   "pm-lemomo-ai-0d9cff"
+  ],
+  "tags": [],
+  "id": "DRAW-128"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ملاحظة بخط اليد داخل إطار",
+  "name_en": "Boxed handwritten callout",
+  "status": "seen",
+  "what": "rough rounded rectangle path (jittered) draws first in accent orange, then handwritten words appear inside",
+  "how": "rough rounded rectangle path (jittered) draws first in accent orange, then handwritten words appear inside",
+  "params": "box 400 ms + text 600 ms, #d17c55",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lemomo-ai-0d9cff"
+  ],
+  "styles": [
+   "pm-lemomo-ai-0d9cff"
+  ],
+  "tags": [],
+  "id": "DRAW-129"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم خط الحبر",
+  "name_en": "Ink stroke draw-on",
+  "status": "seen",
+  "what": "SVG path dashoffset 1->0 with ease-in-out",
+  "how": "SVG path dashoffset 1->0 with ease-in-out",
+  "params": "~800 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-lexnlin-038035"
+  ],
+  "styles": [
+   "pm-lexnlin-038035"
+  ],
+  "tags": [],
+  "id": "DRAW-130"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط تحتي يرسم",
+  "name_en": "Underline draw accent",
+  "status": "seen",
+  "what": "stroke path under word dashoffset",
+  "how": "stroke path under word dashoffset",
+  "params": "0.4 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-m1n9-k7-ff9ab9"
+  ],
+  "styles": [
+   "pm-m1n9-k7-ff9ab9"
+  ],
+  "tags": [],
+  "id": "DRAW-131"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط نبض يتحول لشعار",
+  "name_en": "Heartbeat stroke to logo",
+  "status": "seen",
+  "what": "SVG path of flat line with one ECG spike; animate stroke-dashoffset 1 -> 0 over ~1 s with ease-in-out, add duplicate path with blur 8-12 px for glow; later reuse the spike as the logo glyph in an app-",
+  "how": "SVG path of flat line with one ECG spike; animate stroke-dashoffset 1 -> 0 over ~1 s with ease-in-out, add duplicate path with blur 8-12 px for glow; later reuse the spike as the logo glyph in an app-icon tile",
+  "params": "stroke 3 px #cfe0ff, glow #4f8fe6 at 60%",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-marouanegazouzi-6071d5"
+  ],
+  "styles": [
+   "pm-marouanegazouzi-6071d5"
+  ],
+  "tags": [],
+  "id": "DRAW-132"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تحويل خط اليد إلى نص",
+  "name_en": "Handwriting-to-transcript demo",
+  "status": "seen",
+  "what": "lined sticky note with script font revealed line by line (mask left->right), then arrow and typed transcript card below",
+  "how": "lined sticky note with script font revealed line by line (mask left->right), then arrow and typed transcript card below",
+  "params": "line reveal 500 ms each",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-mehul4795-4a7007"
+  ],
+  "styles": [
+   "pm-mehul4795-4a7007"
+  ],
+  "tags": [],
+  "id": "DRAW-133"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "شريط مخطط يرسم",
+  "name_en": "Striped ribbon draw-on",
+  "status": "seen",
+  "what": "3 parallel offset strokes red/white/blue with dashoffset animation",
+  "how": "3 parallel offset strokes red/white/blue with dashoffset animation",
+  "params": "1.5 s",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-mrtanviir-132457"
+  ],
+  "styles": [
+   "pm-mrtanviir-132457"
+  ],
+  "tags": [],
+  "id": "DRAW-134"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ارتعاش خط الرصاص بـ12 إطاراً",
+  "name_en": "Graphite line boil at 12 fps",
+  "status": "seen",
+  "what": "Render every stroke with per-frame random offset seeded by floor(t*12); hold frames on twos; grey #3a3c3c 2px rough strokes",
+  "how": "Render every stroke with per-frame random offset seeded by floor(t*12); hold frames on twos; grey #3a3c3c 2px rough strokes",
+  "params": "jitter ±1.2px, roughness 1.5, fps 12",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-nikolajankovic-ce4ff4"
+  ],
+  "styles": [
+   "pm-nikolajankovic-ce4ff4"
+  ],
+  "tags": [],
+  "id": "DRAW-135"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط نبض قلب بحلقات",
+  "name_en": "ECG pulse with ring markers",
+  "status": "seen",
+  "what": "Orange heartbeat polyline draws left->right with glow; at each beat a white dot appears with an expanding faint ring and warm halo",
+  "how": "Orange heartbeat polyline draws left->right with glow; at each beat a white dot appears with an expanding faint ring and warm halo",
+  "params": "stroke 2px #e8603a; ring 0->60px 800ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-nolkeeg-bf062e"
+  ],
+  "styles": [
+   "pm-nolkeeg-bf062e"
+  ],
+  "tags": [],
+  "id": "DRAW-136"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط يُرسم تحت السؤال",
+  "name_en": "Underline draw under question",
+  "status": "seen",
+  "what": "after headline lands, a thick black rule draws left-to-right under the last line",
+  "how": "after headline lands, a thick black rule draws left-to-right under the last line",
+  "params": "4 px, 400 ms ease-out",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-palashbagchi11-0a4b6b"
+  ],
+  "styles": [
+   "pm-palashbagchi11-0a4b6b"
+  ],
+  "tags": [],
+  "id": "DRAW-137"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "شطب بخربشة ثم إعادة كتابة",
+  "name_en": "Scribble strike-through rewrite",
+  "status": "seen",
+  "what": "draw a looping magenta scribble path over the old words via stroke-dashoffset, fade old words to 50%, then slide the new line up below",
+  "how": "draw a looping magenta scribble path over the old words via stroke-dashoffset, fade old words to 50%, then slide the new line up below",
+  "params": "scribble 300 ms, new line 250 ms easeOutBack",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-paulo-kombucha-96431c"
+  ],
+  "styles": [
+   "pm-paulo-kombucha-96431c"
+  ],
+  "tags": [],
+  "id": "DRAW-138"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "مسار متموج",
+  "name_en": "Squiggle path see→act",
+  "status": "seen",
+  "what": "SVG path dashoffset between two nodes",
+  "how": "SVG path dashoffset between two nodes",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-reflex-cloud-72ffe5"
+  ],
+  "styles": [
+   "pm-reflex-cloud-72ffe5"
+  ],
+  "tags": [],
+  "id": "DRAW-139"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم خط الشعاع لصورة ظلية",
+  "name_en": "Beam draw-on silhouette",
+  "status": "seen",
+  "what": "SVG path of logo shape; stroke-dashoffset from length to 0 over ~2 s with bright dot at path head (getPointAtLength), plus slight jitter",
+  "how": "SVG path of logo shape; stroke-dashoffset from length to 0 over ~2 s with bright dot at path head (getPointAtLength), plus slight jitter",
+  "params": "head dot radius 4px with glow 20px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-rneayan-ea6129"
+  ],
+  "styles": [
+   "pm-rneayan-ea6129"
+  ],
+  "tags": [],
+  "id": "DRAW-140"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "حدود مرسومة باليد",
+  "name_en": "Hand-drawn wobble outline",
+  "status": "seen",
+  "what": "jittered SVG paths, 2-3px dark stroke, flat pastel fill",
+  "how": "jittered SVG paths, 2-3px dark stroke, flat pastel fill",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-ror-fly-9950f1"
+  ],
+  "styles": [
+   "pm-ror-fly-9950f1"
+  ],
+  "tags": [],
+  "id": "DRAW-141"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "علامات الإثارة: سهم ودائرة حمراء",
+  "name_en": "Clickbait marks: red arrow and circle",
+  "status": "seen",
+  "what": "Curved red 3D arrow pointing at face and red ring drawn around head via stroke-dashoffset; yellow Impact text with black stroke 'NO WAY?!'",
+  "how": "Curved red 3D arrow pointing at face and red ring drawn around head via stroke-dashoffset; yellow Impact text with black stroke 'NO WAY?!'",
+  "params": "circle draw 300 ms, arrow slide 250 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sab8a-364a5a"
+  ],
+  "styles": [
+   "pm-sab8a-364a5a"
+  ],
+  "tags": [],
+  "id": "DRAW-142"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قوس متوهج يُرسم في الختام",
+  "name_en": "Glowing draw-on closing arc",
+  "status": "seen",
+  "what": "SVG path (smile arc) stroke-dashoffset 100%->0 with drop-shadow glow, title blurred behind, countdown hits 00:00",
+  "how": "SVG path (smile arc) stroke-dashoffset 100%->0 with drop-shadow glow, title blurred behind, countdown hits 00:00",
+  "params": "stroke 3px #ff4a20, glow 8px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-samaote-5e2fc2"
+  ],
+  "styles": [
+   "pm-samaote-5e2fc2"
+  ],
+  "tags": [],
+  "id": "DRAW-143"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط حلزوني يرسم نفسه",
+  "name_en": "Loop line draw-on",
+  "status": "seen",
+  "what": "SVG path with loops, dashoffset 1→0 over 1.2s",
+  "how": "SVG path with loops, dashoffset 1→0 over 1.2s",
+  "params": "",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-samuel-spitz-974923"
+  ],
+  "styles": [
+   "pm-samuel-spitz-974923"
+  ],
+  "tags": [],
+  "id": "DRAW-144"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "إناء بخط يد مرتعش",
+  "name_en": "Wobbly hand-drawn container",
+  "status": "seen",
+  "what": "SVG path with small per-vertex noise (1-2 px) and a slightly uneven 3 px dark-brown stroke; inner wall highlight stripe at 20% white",
+  "how": "SVG path with small per-vertex noise (1-2 px) and a slightly uneven 3 px dark-brown stroke; inner wall highlight stripe at 20% white",
+  "params": "optionally re-jitter every 3-4 frames for boil",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sarut0bisasuke-cefa43"
+  ],
+  "styles": [
+   "pm-sarut0bisasuke-cefa43"
+  ],
+  "tags": [],
+  "id": "DRAW-145"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أقواس تحريك دائرية",
+  "name_en": "Stir orbit arcs",
+  "status": "seen",
+  "what": "two thin elliptical arcs around the glass drawn/rotated to suggest stirring while a straw sits diagonally in the glass",
+  "how": "two thin elliptical arcs around the glass drawn/rotated to suggest stirring while a straw sits diagonally in the glass",
+  "params": "arc rotation ~1 turn/s, stroke 2 px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-sarut0bisasuke-cefa43"
+  ],
+  "styles": [
+   "pm-sarut0bisasuke-cefa43"
+  ],
+  "tags": [],
+  "id": "DRAW-146"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "منحنى فكرة يُرسم",
+  "name_en": "Thought curve draw-on",
+  "status": "seen",
+  "what": "SVG path with loop, dashoffset animate, endpoint dot",
+  "how": "SVG path with loop, dashoffset animate, endpoint dot",
+  "params": "600 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-souravbhar871-61f424"
+  ],
+  "styles": [
+   "pm-souravbhar871-61f424"
+  ],
+  "tags": [],
+  "id": "DRAW-147"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم بالماركر يتبع رأس الخط",
+  "name_en": "Marker-follows-stroke draw-on",
+  "status": "seen",
+  "what": "animate stroke-dashoffset of each SVG path; place a marker sprite at getPointAtLength(progress) rotated ~-40°, swap its cap colour with the ink colour",
+  "how": "animate stroke-dashoffset of each SVG path; place a marker sprite at getPointAtLength(progress) rotated ~-40°, swap its cap colour with the ink colour",
+  "params": "speed ~400-600 px/s; text paths ~0.6-1.5 s per line",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tak3sh8-be5012"
+  ],
+  "styles": [
+   "pm-tak3sh8-be5012"
+  ],
+  "tags": [],
+  "id": "DRAW-148"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم شبكة سلكية",
+  "name_en": "Wireframe mesh draw",
+  "status": "seen",
+  "what": "edges stroke-dashoffset staggered",
+  "how": "edges stroke-dashoffset staggered",
+  "params": "~1.5 s total",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-tdinh-me-815acb"
+  ],
+  "styles": [
+   "pm-tdinh-me-815acb"
+  ],
+  "tags": [],
+  "id": "DRAW-149"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط تحت الكلمة يُرسم",
+  "name_en": "Underline swoosh draw-on",
+  "status": "seen",
+  "what": "hand-drawn curved SVG stroke under the accent word, stroke-dashoffset animates to 0",
+  "how": "hand-drawn curved SVG stroke under the accent word, stroke-dashoffset animates to 0",
+  "params": "stroke 4px brand blue, 300 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-thismacapital-dfba20"
+  ],
+  "styles": [
+   "pm-thismacapital-dfba20"
+  ],
+  "tags": [],
+  "id": "DRAW-150"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "شريط مخطط مرسوم",
+  "name_en": "Striped ribbon stroke",
+  "status": "seen",
+  "what": "3 stacked strokes red/white/blue draw along curve",
+  "how": "3 stacked strokes red/white/blue draw along curve",
+  "params": "width 30px",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:pm-umangratani-57f86a"
+  ],
+  "styles": [
+   "pm-umangratani-57f86a"
+  ],
+  "tags": [],
+  "id": "DRAW-151"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خط ماركر حر يُرسم بالتدريج",
+  "name_en": "Progress-revealed freehand marker stroke",
+  "status": "seen",
+  "what": "sample path with getPointAtLength (clamp to L - 1e-4 to avoid null), pass points up to eased progress into getStroke(simulatePressure) and fill the outline polygon in marker colour",
+  "how": "sample path with getPointAtLength (clamp to L - 1e-4 to avoid null), pass points up to eased progress into getStroke(simulatePressure) and fill the outline polygon in marker colour",
+  "params": "size 8-10, thinning 0.6, easeInOut per stroke",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:whiteboard"
+  ],
+  "styles": [
+   "whiteboard"
+  ],
+  "tags": [],
+  "id": "DRAW-152"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ماركر بلا يد يتبع رأس الخط",
+  "name_en": "Hand-less marker tip follower",
+  "status": "seen",
+  "what": "marker sprite (body + coloured cap + 'MARKER' label) positioned/rotated at the stroke tip; recolour cap to the active stroke; lift between strokes with growing shadow",
+  "how": "marker sprite (body + coloured cap + 'MARKER' label) positioned/rotated at the stroke tip; recolour cap to the active stroke; lift between strokes with growing shadow",
+  "params": "angle ~-35deg, lift 200 ms",
+  "install": "",
+  "license": "owner-description",
+  "proof": [
+   "style:whiteboard"
+  ],
+  "styles": [
+   "whiteboard"
+  ],
+  "tags": [],
+  "id": "DRAW-153"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تمييز النص بقلم التحديد",
+  "name_en": "Marker highlight modes",
+  "status": "documented",
+  "what": "Five deterministic emphasis styles on words: highlight sweep, hand circle, burst lines, scribble underline, sketch-out strike.",
+  "how": "Highlight: absolute span inset -6px, scaleX 0->1 0.5s power2.out; circle: 3px border ellipse back.out(1.7) 0.6s; burst: 12 lines at 30deg steps with lengths 40-80px, stagger 0.03; scribble: wavy SVG path stroke 3px round caps drawn with dashoffset. Remotion alt: @remotion/rough-notation <Highlight/Circle/Underline/StrikeThrough/CrossedOff/Box/Bracket progress=...>.",
+  "params": "burst 12 lines 40-80px; stagger 0.03s",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/css-patterns.md",
+   "kosif-atlas/skills/2712-remotion/10436-remotion-markup/text-highlights.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-154"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسار تدريجيًا",
+  "name_en": "SVG stroke draw-on",
+  "status": "documented",
+  "what": "A path traces itself like a pen stroke by animating dash offset from full length to zero.",
+  "how": "len = path.getTotalLength(); set strokeDasharray=len, strokeDashoffset=len; tl.to(path,{strokeDashoffset:0, duration:0.7, ease:'power2.out'}); stroke-linecap round; works for arrows, connectors, logos, underlines.",
+  "params": "0.7s power2.out",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
+   "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/css-patterns.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-155"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أسلوب رسومات السبورة البيضاء",
+  "name_en": "Whiteboard-doodle illustration style",
+  "status": "documented",
+  "what": "Marker-doodle look for story illustrations: warm cream paper (not pure white), bold slightly wobbly navy/black outlines, loose hatched marker fills that overshoot the lines, 3-5 bright primaries per scene, one exaggerated protagonist, uncoloured faceless white mini-silhouettes for crowds, oversized …",
+  "how": "For generation, reuse a fixed CHARACTER sentence verbatim across all scene prompts (models have no memory); split stories into 2-5 scenes (intro -> problem -> solution). Procedurally reproducible here with SVG jittered strokes + hatch patterns and draw-on stroke-dashoffset animation.",
+  "params": "3-5 colours; 2-5 scenes",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1094-akbun-draw/2421-akbun-draw-storytellingimage/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-156"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "S14 خطوط مرسومة",
+  "name_en": "S14 Drawn linework",
+  "status": "documented",
+  "what": "Simple lines, marks and signs, white space; path drawing, emphasis circles, line turning into shape. Focused explanation with light assets; paths need tuning and Arabic letter joins must never break.",
+  "how": "SVG stroke-dasharray/dashoffset draw-on with slight jitter for a hand feel; text revealed by masks, not re-drawn; KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg)",
+  "params": "cost low-medium; MG-015 MG-021 MG-035 MG-054 MG-081 MG-086 MG-090 MG-120",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-157"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "MG-015 نص يكتب بقناع فرشاة",
+  "name_en": "MG-015 Brush-mask write-on (right to left)",
+  "status": "documented",
+  "what": "A brush stroke reveals a finished phrase from right to left - a warm handwritten opening.",
+  "how": "0-0.5 s stroke starts, 0.5-2.5 s reveal, 2.5-4 s read. Animate a thick SVG stroke (dashoffset) used as a mask over correctly typeset text; this is a reveal, not generating Arabic glyphs from arbitrary paths.",
+  "params": "4 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-158"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "MG-074 خط أفق يبني مدينة",
+  "name_en": "MG-074 Skyline line becomes the city",
+  "status": "documented",
+  "what": "One line draws symbolic buildings and then dissolves into city footage aligned on the horizon.",
+  "how": "0-1 line, 1-4 draw, 4-7 match dissolve to footage; trim-path drawing then a dissolve matched to the horizon; draw generic or licensed landmarks only.",
+  "params": "7 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-cinematic-titles.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-159"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "MG-105/107 خربشة توضيحية ومسح قلم تمييز",
+  "name_en": "MG-105/107 Doodle annotations and highlighter swipe",
+  "status": "documented",
+  "what": "Arrow, circle and underline are drawn on top of the referenced object (MG-105); a semi-transparent marker band runs under a short sentence and leaves colour (MG-107).",
+  "how": "MG-105: 0-1 shot, 1-4 marks, 4-6 read; stroke/trim-path drawing with tracking if needed; each mark explains one point and never covers the subject. MG-107: 0-1 text, 1-2 highlight, 2-4 read; start the swipe from the RIGHT for Arabic and check contrast. Local: jittered hand-drawn SVG paths, multiply-blended highlight rect.",
+  "params": "6 s / 4 s",
+  "install": "",
+  "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-collage-textures.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-160"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "مشهد قلم رصاص هادئ",
+  "name_en": "Quiet pencil scene",
+  "status": "documented",
+  "what": "Calm illustration grammar: warm cream paper, the top two-thirds left empty, 1-3 small grey pencil subjects on a low ground line, a figure seen from behind, and exactly one desaturated teal prop where the meaning lands; the subject changes, the style never does.",
+  "how": "Either an image-model prompt (external) or SVG with pencil texture (feTurbulence + feDisplacementMap) and slow draw-on in KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg); suits reflective narration B-roll and end cards.",
+  "params": "1-3 subjects; 1 teal accent; top 2/3 empty",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1094-akbun-draw/2419-akbun-draw-quiet-pencil/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-161"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "حزمة أسلوب من مقطع مرجعي",
+  "name_en": "Style pack from reference clip",
+  "status": "documented",
+  "what": "Turn a traced reference animation into a statistics-only style pack (palette ink/paper/tone ramp, knobs, p10/p50/p90 bands) and check new scenes against it — never store source frames.",
+  "how": "animation plugin learn.py (unreviewed; reimplement): measure edge roughness, solidity, palette; store style.json bands.",
+  "params": "p10/p50/p90",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2414-animation/9355-learn-style"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-162"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "رسم المسار ذاتيًا",
+  "name_en": "SVG path draw-on (stroke-dashoffset)",
+  "status": "documented",
+  "what": "A stroke appears to be traced by a pen by animating its dash offset from full length to zero.",
+  "how": "Inline SVG in HTML/GSAP or Remotion: set stroke-dasharray=stroke-dashoffset=path.getTotalLength(), tween offset to 0; fill none, round caps. Fill can fade in after the stroke completes.",
+  "params": "duration 0.5-0.9s, ease power2.out, stroke-linecap round",
+  "install": "",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-163"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ارتعاش الخط المتعمد",
+  "name_en": "Line boil (deliberate redraw jitter)",
+  "status": "documented",
+  "what": "Hand-drawn animation vibes come from lines that re-wobble on 2s or 3s; the animation plugin measures boil as a style statistic.",
+  "how": "Re-seed rough/noise displacement every 2 frames (on twos at 24fps) or 3; keep amplitude 0.5-1.5px at 1080p. Measured per style pack in learn-style.",
+  "params": "update every 2-3 frames; amp 0.5-1.5px",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2414-animation/9355-learn-style",
+   "kosif-atlas/skills/2414-animation/9357-rotoscope"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-164"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "خريطة مسار مرسومة باليد",
+  "name_en": "Hand-drawn route sketch map",
+  "status": "documented",
+  "what": "A crayon-textured flat illustration of a trip route: numbered stops on cream paper, colored route lines, no invented roads.",
+  "how": "Palette: paper #FBF6E9, confirmed path #B9AEA6, routes #8CC63F / #8E6BB0 / #F2A03D, greenery #DDE8B5 #7FB241 #3F6B2A, water #A9CDE8, ink #2B2B2B, panel #F7F1DC; 3:4 frame; numbers only as text; if no direction info, flow stops top-to-bottom. Can be an image-generation prompt or drawn in SVG with a rough stroke filter and animated draw-on.",
+  "params": "aspect 3:4; 3 route colors",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/1094-akbun-draw/2422-akbun-draw-travel-blog/SKILL.md",
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw/references/visual-patterns.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-165"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "إعادة رسم مخرجات Canva متجهياً",
+  "name_en": "Canva render -> hand vector recreation",
+  "status": "documented",
+  "what": "When a generated raster cannot be downloaded or must stay sharp at any size, recreate it as a compact SVG (sky 2.6 KB, ram emblem, valley dusk, ornament) and score it against the render.",
+  "how": "Generate in Canva (media ids recorded), then hand-author SVG with gradients/filters; Jev scored Canva render 3.84/4 vs vector 3.79/4 for the emblem.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-earth-ci-fork/docs/design/KOSIF-LUXE.md",
+   "kosif-earth-ci-fork/docs/rebuild/DESIGN_SYSTEM.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-166"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أسلوب الرسم اليدوي",
+  "name_en": "Hand-drawn / whiteboard style (requested, not built)",
+  "status": "documented",
+  "what": "Doodle, whiteboard, chalkboard and plotter styles are offered and a 'hand-drawn-shapes' scene type is planned, but no stroke draw-on renderer exists; roadmap v0.5 promises real stroke animation.",
+  "how": "Today: write bespoke SVG/Canvas stroke-dashoffset scenes or route to another engine.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "fastify-motion-bro/README.md:52-56",
+   "fastify-motion-bro/scripts/planner.mjs:21",
+   "fastify-motion-bro/docs/ROADMAP.md:6"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-167"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "أيقونات حسب المعنى",
+  "name_en": "Meaning-matched line icons (12)",
+  "status": "documented",
+  "what": "Stroke-only symbols drawn on above a line when its meaning matches, breathing on the beat; numbers count up instead.",
+  "how": "verse.py sets line.motif {kind, t, end, value}; verse.html ICONS + drawPath per stroke (0.7 s, 0.06 s stagger).",
+  "params": "icons: sun, moon, heart, clock, money, trophy, road, question, check, home, rain, light; 200x200 box, stroke 5, accent; count motif 150 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/templates/verse.html:258"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-168"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قالب موشن: كشف الشعار بالرسم",
+  "name_en": "Motion template: Logo reveal (pen draw-on) (logo-reveal)",
+  "status": "documented",
+  "what": "Arabic-first, deterministic motion template 'logo-reveal' that becomes an editable project with its parameters kept in template.json.",
+  "how": "Projects tab → 'قالب موشن…' or recipe template (new NAME --template logo-reveal --set key=\"value\" … --size 1080x1920 --seconds N), or MCP kosif_project_create {kind:'template', template:'logo-reveal', params}; GET /api/templates lists params with defaults.",
+  "params": "logo SVG path drawn by pen, then filled, then name and tagline; 6 s; name KOSIF, tagline 'حركة لها معنى', default hexagon path in viewBox 120×136, accent #E7B65A, bg #0f1a2b → #06101c",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:14",
+   "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:48",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:127"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-169"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قالب موشن: نقاط بعلامات صح مرسومة",
+  "name_en": "Motion template: Bullet list with drawn ticks (bullet-list)",
+  "status": "documented",
+  "what": "Arabic-first, deterministic motion template 'bullet-list' that becomes an editable project with its parameters kept in template.json.",
+  "how": "Projects tab → 'قالب موشن…' or recipe template (new NAME --template bullet-list --set key=\"value\" … --size 1080x1920 --seconds N), or MCP kosif_project_create {kind:'template', template:'bullet-list', params}; GET /api/templates lists params with defaults.",
+  "params": "title then up to 6 items appearing with a drawn check each; 8 s; title 'ثلاث خطوات', items 'خطّط|نفّذ|راجع', accent #5BD1A5, bg #10233a → #071321",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:14",
+   "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:58",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:127"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-170"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "محوّل مسارات SVG إلى نقاط",
+  "name_en": "SVG path sampler (M/L/H/V/C/Q/T/Z)",
+  "status": "documented",
+  "what": "Pure-Python sampling of SVG path data (absolute/relative, cubic and quadratic curves) into polylines — reusable for draw-on/stroke animations.",
+  "how": "desktop._svg_paths(d) -> list of point lists; desktop._shape_paths(shapes); desktop._fit_tf(paths, box, margin, viewbox) to scale into a frame. Lift the functions into a render(t) draw-on by revealing points up to t.",
+  "params": "curves sampled (not chords); closed paths return to start",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/desktop.py:1032",
+   "kosif-one/tools/kosif-omni/mcp-server/tests/test_desktop.py:259"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-171"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "الخط الذي يرسم نفسه",
+  "name_en": "Self-drawing Line Art",
+  "status": "documented",
+  "what": "stroke-dashoffset easeInOut with staggered durations, then fill fades in.",
+  "how": "Copy style sheet section into DESIGN.md, then build via claude-animation-studio render(t).",
+  "params": "stroke #111 or #F4F7FF; Changa 600; never draw all paths at once",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "100-superskills/skills/trend-animation-styles/references/styles.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-172"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "سماكات الخطوط المرسومة",
+  "name_en": "Stroke weight tokens",
+  "status": "documented",
+  "what": "Primary path 6 px round/round, secondary 3 px, grid 1.5 px butt/miter at 1080 width.",
+  "how": "STYLE.md §4.3",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/templates/STYLE.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-173"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "عائلة سماكات القلم",
+  "name_en": "Pen weight family and ink",
+  "status": "documented",
+  "what": "One pen weight family, one ink + one highlight; chalkboard inverts.",
+  "how": "One pen weight family, one ink + one highlight; chalkboard inverts.",
+  "params": "e.g. 4 and 8 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:15"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-174"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "عدم الكمال المقصود",
+  "name_en": "Deliberate stroke imperfection",
+  "status": "documented",
+  "what": "Slight wobble, round caps, corner overshoot; objects from few strokes.",
+  "how": "Slight wobble, round caps, corner overshoot; objects from few strokes.",
+  "params": "1–2 px wobble; 5–30 strokes per object",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:16-17"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-175"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ترتيب الرسم البشري",
+  "name_en": "Human draw order",
+  "status": "documented",
+  "what": "Outline, details, fill/hatching; RTL for Arabic writing.",
+  "how": "Outline, details, fill/hatching; RTL for Arabic writing.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:24"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-176"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "سرعة القلم والرفع",
+  "name_en": "Pen speed and lifts",
+  "status": "documented",
+  "what": "Constant-ish pen speed with per-stroke easing and pauses between strokes; fills after.",
+  "how": "Constant-ish pen speed with per-stroke easing and pauses between strokes; fills after.",
+  "params": "800–1400 px/s; lift 60–120 ms; hatching 2000 px/s or 300 ms wipe",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:25-26"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-177"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ارتعاش الخط (boil)",
+  "name_en": "Line boil",
+  "status": "documented",
+  "what": "Swap slightly different stroke versions on twos.",
+  "how": "Swap slightly different stroke versions on twos.",
+  "params": "3 versions every 2–3 frames",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:28"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-178"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "إيقاع السبورة وتحريكها",
+  "name_en": "Whiteboard rhythm and pan",
+  "status": "documented",
+  "what": "Draw while narrating, hold at sentence end, slide to fresh board space.",
+  "how": "Draw while narrating, hold at sentence end, slide to fresh board space.",
+  "params": "hold 1.5–2 s; pan 1 board-width in 800 ms ease-in-out",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:29",
+   "kosif-tool/playbooks/hand-drawn.md:46"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-179"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "جمالية البلوتر",
+  "name_en": "Plotter aesthetic",
+  "status": "documented",
+  "what": "Constant pen speed, no easing, optional visible pen-up travel.",
+  "how": "Constant pen speed, no easing, optional visible pen-up travel.",
+  "params": "pen-up lines at 10%",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:30"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-180"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "وصفة ارسم وسمِّ",
+  "name_en": "Draw-and-label recipe",
+  "status": "documented",
+  "what": "Outline, details, highlight fill, handwritten label, hold with hand exit.",
+  "how": "Outline, details, highlight fill, handwritten label, hold with hand exit.",
+  "params": "0–900 outline; 900–1300 details; 1300–1600 fill; 1600–2300 label; 2300–4000 hold",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:36-44"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-181"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "معادلة طباشير مع غبار",
+  "name_en": "Chalkboard formula with dust puffs",
+  "status": "documented",
+  "what": "Chalk strokes with dusty texture; small dust puff on each completed term.",
+  "how": "Chalk strokes with dusty texture; small dust puff on each completed term.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/playbooks/hand-drawn.md:50"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-182"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "شرح سبورة من التعليق الصوتي",
+  "name_en": "Whiteboard explainer from narration",
+  "status": "idea",
+  "what": "Each narration sentence triggers its Excalidraw-style element drawing on, with a camera pan to the next region.",
+  "how": "Build scene as SVG with rough strokes; per element draw-on start = sentence onset; camera via viewBox tween.",
+  "params": "pan 0.6-0.8s",
+  "install": "",
+  "license": "MIT",
+  "proof": [
+   "kosif-atlas/skills/2790-work/11181-draw-excalidraw",
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
+   "kosif-atlas/skills/2712-remotion/10436-remotion-markup/text-highlights.md"
+  ],
+  "styles": [],
+  "tags": [],
+  "id": "DRAW-183"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "قص الرسومات من الورق",
+  "name_en": "Sketch cut-out lift with alpha mask",
+  "status": "idea",
+  "what": "Scanned drawings are lifted off a photographed sketchbook page via alpha masks and animated as cut-outs.",
+  "how": "PNG alpha cut-outs; only translate, rotate ±12°, uniform scale; never recolour or trace.",
+  "params": "rotate max ±12°",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-abderrahmen-g-9e8ed0"
+  ],
+  "styles": [
+   "pm-abderrahmen-g-9e8ed0"
+  ],
+  "tags": [],
+  "id": "DRAW-184"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "ارتعاش الخطوط اليدوي",
+  "name_en": "Line boil at 8 fps",
+  "status": "idea",
+  "what": "Hand-drawn outline wobble by cycling scan variants or jitter, held on threes.",
+  "how": "Cycle 2-3 variants or 2 px jitter, hold 3 frames at 24 fps.",
+  "params": "8 fps, 2 px",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-abderrahmen-g-9e8ed0"
+  ],
+  "styles": [
+   "pm-abderrahmen-g-9e8ed0"
+  ],
+  "tags": [],
+  "id": "DRAW-185"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "تظليل بالقلم",
+  "name_en": "Highlighter sweep",
+  "status": "idea",
+  "what": "Highlighter sweep isolates key sentences.",
+  "how": "Rect scaleX behind text.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-itisrazak-3ad902"
+  ],
+  "styles": [
+   "pm-itisrazak-3ad902"
+  ],
+  "tags": [],
+  "id": "DRAW-186"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "حبوب بأيقونات مرسومة",
+  "name_en": "Icon stroke draw-on pills",
+  "status": "idea",
+  "what": "Benefit pills slide in; icons stroke-draw.",
+  "how": "dashoffset.",
+  "params": "350 ms; 120 ms stagger",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-l3d1c-0e35a3"
+  ],
+  "styles": [
+   "pm-l3d1c-0e35a3"
+  ],
+  "tags": [],
+  "id": "DRAW-187"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "يدان خطيتان تطلقان",
+  "name_en": "Line-art hand release metaphor",
+  "status": "idea",
+  "what": "Outlined hands release an object that keeps moving alone.",
+  "how": "Outlined hands release an object that keeps moving alone.",
+  "params": "900 ms cubic-bezier(0.33,1,0.68,1); 120 ms hold then linear",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-robvjourney-ce3e1a"
+  ],
+  "styles": [
+   "pm-robvjourney-ce3e1a"
+  ],
+  "tags": [],
+  "id": "DRAW-188"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "سبورة بسرعة قلم ثابتة",
+  "name_en": "Constant pen-speed whiteboard",
+  "status": "idea",
+  "what": "Strokes revealed linearly at pen speed, synced to narration.",
+  "how": "SVG dashoffset; duration=length/speed.",
+  "params": "500-700 px/s; lead <=150 ms",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-tak3sh8-be5012"
+  ],
+  "styles": [
+   "pm-tak3sh8-be5012"
+  ],
+  "tags": [],
+  "id": "DRAW-189"
+ },
+ {
+  "family": "hand-drawn-draw-on",
+  "name_ar": "مسح بالممحاة",
+  "name_en": "Eraser-shape wipe",
+  "status": "idea",
+  "what": "400 ms wipe following eraser shape",
+  "how": "400 ms wipe following eraser shape",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "style:pm-tak3sh8-be5012"
+  ],
+  "styles": [
+   "pm-tak3sh8-be5012"
+  ],
+  "tags": [],
+  "id": "DRAW-190"
+ }
+]
