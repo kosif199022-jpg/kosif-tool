@@ -162,7 +162,7 @@
   "id": "CODE-07",
   "family": "code-engineering",
   "domain": "code",
-  "name_ar": "ورِّث أسلوب المستودع",
+  "name_ar": "اتبع أسلوب المستودع القائم",
   "name_en": "Inherit the repo's style",
   "status": "documented",
   "what": "اكتب الكود الجديد بأسلوب المستودع الموجود: افحص أعرافه، واحسم التعارضات واحدًا واحدًا، وطابق نمط التكاملات القائمة. — Write new code in the repo's existing style: scan its conventions, resolve conflicts one at a time, mirror existing integrations.",

@@ -82,31 +82,31 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 32 | brand-voice | extract reusable VOICE PROFILE from 5-20 samples | Content, marketing & business | 2 |  |
 | 33 | brownfield-retrospective | retroactive process audit with 4-axis gap register | Thinking & planning | 1 |  |
 | 34 | browser-qa | post-deploy UI verification with browser MCP | Verification, QA & tests | 2 |  |
-| 35 | bun-runtime | Bun vs Node | DevOps, tooling & infra | 0 |  |
+| 35 | bun-runtime | when to use Bun instead of Node: runtime, package manager, test runner differences | DevOps, tooling & infra | 0 |  |
 | 36 | canary-watch | monitor deployed URL after release | DevOps, tooling & infra | 1 |  |
 | 37 | carrier-relationship-management | truckload carrier sourcing/rates | Industry domain specialist | 0 |  |
 | 38 | change-impact | evidence-backed blast radius before change, reconcile after | Thinking & planning | 3 | → CODE-05 |
-| 39 | cisco-ios-patterns | Cisco IOS review | DevOps, tooling & infra | 0 | community/port |
+| 39 | cisco-ios-patterns | review Cisco IOS configurations for correctness and risky commands | DevOps, tooling & infra | 0 | community/port |
 | 40 | ck | per-project memory via /ck node commands | Skills, memory & context | 1 | community/port |
 | 41 | claude-devfleet | parallel agents in worktrees via DevFleet | Agents & orchestration | 1 | 🔑, community/port |
 | 42 | click-path-audit | trace each button's state writes to find handlers that undo each other | Verification, QA & tests | 2 | community/port; → CODE-13 |
-| 43 | clickhouse-io | ClickHouse patterns | Data, ML & LLM ops | 0 |  |
+| 43 | clickhouse-io | ClickHouse schema, ingestion and query patterns for analytics | Data, ML & LLM ops | 0 |  |
 | 44 | code-tour | CodeTour .tour walkthroughs | Research, docs & knowledge | 1 |  |
 | 45 | codebase-onboarding | map unfamiliar repo → onboarding guide + starter CLAUDE.md | Research, docs & knowledge | 2 | → CODE-04 |
-| 46 | codehealth-mcp | CodeScene MCP (🔑 service) | Integrations & connectors | 0 | 🔑, community/port |
+| 46 | codehealth-mcp | CodeScene code-health analysis via its MCP server | Integrations & connectors | 0 | 🔑, community/port |
 | 47 | coding-standards | naming/readability conventions | Languages, frameworks & code | 0 |  |
 | 48 | competitive-platform-analysis | scope & filter competitor set | Content, marketing & business | 1 |  |
 | 49 | competitive-report-structure | assemble competitor report | Content, marketing & business | 1 |  |
-| 50 | compose-multiplatform-patterns | Compose MP | Languages, frameworks & code | 0 |  |
+| 50 | compose-multiplatform-patterns | Compose Multiplatform UI structure and state patterns | Languages, frameworks & code | 0 |  |
 | 51 | config-gc | garbage-collect ~/.claude config | Skills, memory & context | 1 |  |
-| 52 | configure-ecc | ECC setup wizard | ECC internals / host-specific | 0 |  |
+| 52 | configure-ecc | ECC's own setup wizard (scopes, hook profile) | ECC internals / host-specific | 0 |  |
 | 53 | connections-optimizer | X/LinkedIn network pruning | Content, marketing & business | 0 |  |
 | 54 | content-engine | platform-native content systems (X, TikTok, YouTube) — relevant to reels | Content, marketing & business | 2 |  |
 | 55 | content-hash-cache-pattern | SHA-256 content-hash cache for expensive file processing (render caching) | Languages, frameworks & code | 2 | → CODE-21 |
 | 56 | context-and-decisions | CONTEXT.md glossary vs ADR routing | Thinking & planning | 1 |  |
 | 57 | context-budget | route to native /context; bounded opt-in static audit | Skills, memory & context | 2 | → AGENT-29 |
 | 58 | continuous-agent-loop | loop with gates/evals/recovery (pointer) | Agents & orchestration | 1 |  |
-| 59 | continuous-learning | v1, superseded | Skills, memory & context | 0 | deprecated (use v2) |
+| 59 | continuous-learning | first version of ECC learning (whole skills at session end); superseded by v2 | Skills, memory & context | 0 | deprecated (use v2) |
 | 60 | continuous-learning-v2 | hook-observed atomic "instincts" with confidence 0.3-0.9 | Skills, memory & context | 2 | → AGENT-32 |
 | 61 | contract-first | one machine-checkable contract (OpenAPI etc.) | Languages, frameworks & code | 1 |  |
 | 62 | conventional-commit-review | Conventional Commits drafting | DevOps, tooling & infra | 0 | → CODE-22 |
@@ -115,19 +115,19 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 65 | council | 4-voice decision council with fresh subagents | Thinking & planning | 3 | → AGENT-12 |
 | 66 | council-multi-model | add external Codex critique (Codex-specific) | Thinking & planning | 1 | needs Codex CLI |
 | 67 | counterparty-channel-discipline | agents in shared channels: mention gating | Agents & orchestration | 1 |  |
-| 68 | cpp-coding-standards | C++ Core Guidelines | Languages, frameworks & code | 0 |  |
-| 69 | cpp-testing | GoogleTest | Verification, QA & tests | 0 |  |
+| 68 | cpp-coding-standards | C++ Core Guidelines applied: ownership, RAII, safe modern idioms | Languages, frameworks & code | 0 |  |
+| 69 | cpp-testing | GoogleTest unit tests and coverage for C++ | Verification, QA & tests | 0 |  |
 | 70 | crosspost | adapt one post per platform | Content, marketing & business | 1 |  |
-| 71 | csharp-testing | xUnit | Verification, QA & tests | 0 |  |
-| 72 | customer-billing-ops | Stripe-like billing ops (🔑) | Content, marketing & business | 0 | 🔑 |
+| 71 | csharp-testing | xUnit tests, mocks and coverage for .NET | Verification, QA & tests | 0 |  |
+| 72 | customer-billing-ops | Stripe-style billing operations: refunds, disputes, plan changes | Content, marketing & business | 0 | 🔑 |
 | 73 | customs-trade-compliance | HS codes, Incoterms | Industry domain specialist | 0 |  |
-| 74 | dart-flutter-patterns | Flutter | Languages, frameworks & code | 0 |  |
+| 74 | dart-flutter-patterns | Flutter app structure, state management and widget patterns | Languages, frameworks & code | 0 |  |
 | 75 | dashboard-builder | dashboards that answer operator questions | Data, ML & LLM ops | 1 | community/port |
 | 76 | data-scraper-agent | scheduled scraping agent with AI enrichment (capability example) | Agents & orchestration | 2 | community/port |
 | 77 | data-throughput-accelerator | isolate bottleneck in large data movement | DevOps, tooling & infra | 1 |  |
 | 78 | database-migrations | expand-contract migrations | Languages, frameworks & code | 0 |  |
 | 79 | deep-research | cited multi-source research with untrusted-source rules | Research, docs & knowledge | 3 | 🔑; → SEC-01 |
-| 80 | deepseek-harness-setup | ECC on DeepSeek harness | ECC internals / host-specific | 0 | community/port |
+| 80 | deepseek-harness-setup | run ECC inside another vendor's agent harness | ECC internals / host-specific | 0 | community/port |
 | 81 | defi-amm-security | Solidity AMM checklist | Industry domain specialist | 0 | community/port |
 | 82 | delivery-gate | Stop hook blocking finish until checks pass; detects rationalization phrases | Verification, QA & tests | 2 | → AGENT-21 |
 | 83 | deployment-patterns | CI/CD, Docker, rollback | DevOps, tooling & infra | 0 |  |
@@ -138,17 +138,17 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 88 | django-security | Django hardening: authn/authz, CSRF, injection and XSS defences, safe deploy settings | Security & safety | 0 |  |
 | 89 | django-tdd | test-first Django with pytest-django, factories, mocks and API tests | Verification, QA & tests | 0 |  |
 | 90 | django-verification | Django pre-merge loop: lint/types, migration safety, tests, dependency and code scans | Verification, QA & tests | 0 |  |
-| 91 | dmux-workflows | tmux parallel agents | Agents & orchestration | 1 |  |
+| 91 | dmux-workflows | run parallel agents in tmux panes | Agents & orchestration | 1 |  |
 | 92 | docker-patterns | Docker and Compose for local dev: networking, volumes, multi-service setups, container security | DevOps, tooling & infra | 0 |  |
-| 93 | docs-governance | ECC doc routing | ECC internals / host-specific | 0 |  |
+| 93 | docs-governance | ECC's internal rules for where docs go | ECC internals / host-specific | 0 |  |
 | 94 | documentation-lookup | fetch live library docs (Context7) instead of memory | Research, docs & knowledge | 3 | → CODE-02 |
 | 95 | dotnet-patterns | idiomatic C#/.NET: dependency injection, async/await, conventions | Languages, frameworks & code | 0 |  |
 | 96 | dynamic-workflow-mode | when to build a task-local harness; objective/inputs/outputs/eval/handoff | Agents & orchestration | 3 |  |
 | 97 | e2e-testing | Playwright POM, flaky strategies | Verification, QA & tests | 1 |  |
 | 98 | ecc-guide | answer from live repo surface, not memory (pattern relevant) | ECC internals / host-specific | 1 | community/port |
 | 99 | ecc-recipes | map workflow to ECC command group | ECC internals / host-specific | 0 | community/port |
-| 100 | ecc-tools-cost-audit | ECC billing audit | ECC internals / host-specific | 0 |  |
-| 101 | email-ops | mailbox triage | DevOps, tooling & infra | 0 |  |
+| 100 | ecc-tools-cost-audit | audit ECC hosted-tool billing | ECC internals / host-specific | 0 |  |
+| 101 | email-ops | evidence-first mailbox triage and drafting | DevOps, tooling & infra | 0 |  |
 | 102 | energy-procurement | electricity/gas procurement | Industry domain specialist | 0 |  |
 | 103 | enterprise-agent-ops | lifecycle/observability for long-lived agents | DevOps, tooling & infra | 1 |  |
 | 104 | error-handling | typed errors, retries, circuit breakers TS/Py/Go | Languages, frameworks & code | 1 | → CODE-15 |
@@ -166,14 +166,14 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 116 | frontend-design-direction | Pick purpose/audience/tone/memorable detail before UI; content-state matrix; rendered evidence gate with JSON checker | Design & UI craft | 3 | community/port |
 | 117 | frontend-patterns | React/Next patterns, state, perf | Languages, frameworks & code | 1 |  |
 | 118 | frontend-slides | Zero-dependency animated HTML decks, 3 style previews, viewport-fit rules, PPTX conversion | Motion, video & media | 3 |  |
-| 119 | fsharp-testing | F# xUnit/FsCheck | Verification, QA & tests | 0 |  |
+| 119 | fsharp-testing | F# tests with xUnit and property-based FsCheck | Verification, QA & tests | 0 |  |
 | 120 | gan-style-harness | Planner/Generator/Evaluator loop with weighted 4-criterion rubric, Playwright evaluator, 5-15 iterations | Agents & orchestration | 3 | paraphrases an Anthropic engineering post; → AGENT-13 |
 | 121 | gateguard | PreToolUse hook: deny first edit until concrete facts (importers, API, schema, verbatim instruction) are presented | Agents & orchestration | 3 | community/port; → CODE-06 |
 | 122 | generating-python-installer | Nuitka + Inno Setup Windows installers, DLL slimming | DevOps, tooling & infra | 1 |  |
 | 123 | git-workflow | Branching, commits, rebase vs merge, conflicts | DevOps, tooling & infra | 1 |  |
 | 124 | github-ops | gh CLI issue/PR/CI/release ops | DevOps, tooling & infra | 1 |  |
-| 125 | golang-patterns | Idiomatic Go | Languages, frameworks & code | 0 |  |
-| 126 | golang-testing | Go table tests, fuzzing, bench | Verification, QA & tests | 0 |  |
+| 125 | golang-patterns | idiomatic Go: errors, interfaces, concurrency, package layout | Languages, frameworks & code | 0 |  |
+| 126 | golang-testing | Go table-driven tests, fuzzing and benchmarks | Verification, QA & tests | 0 |  |
 | 127 | google-workspace-ops | Drive/Docs/Sheets/Slides as one workflow surface | Integrations & connectors | 2 | 🔑 |
 | 128 | growth-log | Learning entries = root cause + transferable rule + signal; Bole merge principle | Skills, memory & context | 3 | → AGENT-32 |
 | 129 | healthcare-cdss-patterns | Drug interaction, NEWS2/qSOFA scoring | Industry domain specialist | 0 |  |
@@ -184,10 +184,10 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 134 | hexagonal-architecture | Ports & adapters design | Thinking & planning | 1 |  |
 | 135 | hipaa-compliance | HIPAA entrypoint | Security & safety | 0 |  |
 | 136 | homelab-network-readiness | VLAN/DNS/WireGuard readiness checklist | DevOps, tooling & infra | 0 |  |
-| 137 | homelab-network-setup | Home network planning | DevOps, tooling & infra | 0 |  |
-| 138 | homelab-pihole-dns | Pi-hole setup | DevOps, tooling & infra | 0 |  |
+| 137 | homelab-network-setup | plan a home network from hardware and goals | DevOps, tooling & infra | 0 |  |
+| 138 | homelab-pihole-dns | set up Pi-hole DNS filtering | DevOps, tooling & infra | 0 |  |
 | 139 | homelab-vlan-segmentation | VLANs on UniFi/pfSense/MikroTik | DevOps, tooling & infra | 0 |  |
-| 140 | homelab-wireguard-vpn | WireGuard setup | DevOps, tooling & infra | 0 |  |
+| 140 | homelab-wireguard-vpn | set up a WireGuard VPN | DevOps, tooling & infra | 0 |  |
 | 141 | hookify-rules | Markdown+YAML rules that warn/block bash/file/prompt/stop events | Agents & orchestration | 2 | → AGENT-20 |
 | 142 | i18n-sync | Translate/sync JSON locale files with terminology checks | Languages, frameworks & code | 1 |  |
 | 143 | inherit-legacy-style | Scan codebase for implicit conventions, resolve conflicts one at a time, write .ai-style-rules | Languages, frameworks & code | 2 | → CODE-07 |
@@ -197,24 +197,24 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 147 | investor-outreach | Investor emails | Content, marketing & business | 0 |  |
 | 148 | ios-icon-gen | iOS icons from SF Symbols / Iconify API (275k icons) | Design & UI craft | 1 |  |
 | 149 | iterative-retrieval | Dispatch/Evaluate/Refine/Loop context retrieval, max 3 cycles, relevance thresholds | Agents & orchestration | 3 | → AGENT-03 |
-| 150 | ito-baskets | Itô prediction-market data | Integrations & connectors | 0 | 🔑 |
-| 151 | ito-compute | Itô GPU RFQ | Integrations & connectors | 0 | 🔑 |
-| 152 | ito-inference | Itô serving handoff | Integrations & connectors | 0 | 🔑 |
-| 153 | ito-training | Itô training handoff | Integrations & connectors | 0 | 🔑 |
-| 154 | java-coding-standards | Java/Spring standards | Languages, frameworks & code | 0 |  |
+| 150 | ito-baskets | query Itô prediction-market basket data (vendor API) | Integrations & connectors | 0 | 🔑 |
+| 151 | ito-compute | request GPU compute quotes from the Itô vendor | Integrations & connectors | 0 | 🔑 |
+| 152 | ito-inference | hand a model to Itô for serving (vendor) | Integrations & connectors | 0 | 🔑 |
+| 153 | ito-training | hand a training job to Itô (vendor) | Integrations & connectors | 0 | 🔑 |
+| 154 | java-coding-standards | Java and Spring naming, structure and readability standards | Languages, frameworks & code | 0 |  |
 | 155 | jira-integration | Jira via MCP/REST | Integrations & connectors | 1 | 🔑 |
-| 156 | jpa-patterns | JPA/Hibernate | Languages, frameworks & code | 0 |  |
+| 156 | jpa-patterns | JPA/Hibernate entity mapping, fetching and transaction pitfalls | Languages, frameworks & code | 0 |  |
 | 157 | knowledge-ops | 6-layer knowledge architecture + ingestion classify/dedupe | Skills, memory & context | 2 | → AGENT-33 |
-| 158 | kotlin-coroutines-flows | Kotlin coroutines | Languages, frameworks & code | 0 |  |
-| 159 | kotlin-exposed-patterns | Exposed ORM | Languages, frameworks & code | 0 |  |
-| 160 | kotlin-ktor-patterns | Ktor server | Languages, frameworks & code | 0 |  |
-| 161 | kotlin-patterns | Idiomatic Kotlin | Languages, frameworks & code | 0 |  |
-| 162 | kotlin-testing | Kotest/MockK | Verification, QA & tests | 0 |  |
+| 158 | kotlin-coroutines-flows | Kotlin coroutines and Flow: scopes, cancellation, testing | Languages, frameworks & code | 0 |  |
+| 159 | kotlin-exposed-patterns | Kotlin Exposed ORM queries and transactions | Languages, frameworks & code | 0 |  |
+| 160 | kotlin-ktor-patterns | Ktor server routing, plugins and testing | Languages, frameworks & code | 0 |  |
+| 161 | kotlin-patterns | idiomatic Kotlin: null safety, data classes, extension functions | Languages, frameworks & code | 0 |  |
+| 162 | kotlin-testing | Kotest and MockK tests for Kotlin | Verification, QA & tests | 0 |  |
 | 163 | kubernetes-patterns | K8s workloads, probes, RBAC | DevOps, tooling & infra | 1 |  |
-| 164 | laravel-patterns | Laravel architecture | Languages, frameworks & code | 0 |  |
+| 164 | laravel-patterns | Laravel architecture: services, Eloquent, queues | Languages, frameworks & code | 0 |  |
 | 165 | laravel-plugin-discovery | Find Laravel packages via LaraPlugins MCP | Research, docs & knowledge | 1 | 🔑 |
-| 166 | laravel-security | Laravel security | Security & safety | 0 |  |
-| 167 | laravel-tdd | Laravel tests | Verification, QA & tests | 0 |  |
+| 166 | laravel-security | Laravel hardening: validation, auth, mass assignment, CSRF | Security & safety | 0 |  |
+| 167 | laravel-tdd | test-first Laravel with Pest/PHPUnit | Verification, QA & tests | 0 |  |
 | 168 | laravel-verification | Verification loop: env, lint, static, tests, scans | Verification, QA & tests | 1 |  |
 | 169 | latency-critical-systems | p50/p95/p99, freshness tracking (MIT) | DevOps, tooling & infra | 1 |  |
 | 170 | lead-intelligence | Agent lead scoring and outreach pipeline | Content, marketing & business | 0 |  |
@@ -238,19 +238,19 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 188 | motion-advanced | motion/react drag, gestures, text anim, SVG path draw, useAnimate | Motion, video & media | 3 |  |
 | 189 | motion-foundations | Motion tokens, 5 spring presets, reduced motion, SSR-safe initial states | Motion, video & media | 3 |  |
 | 190 | motion-patterns | Button/modal/toast/stagger/page/scroll/layout animations | Motion, video & media | 2 |  |
-| 191 | mybatis-patterns | MyBatis | Languages, frameworks & code | 0 |  |
-| 192 | mysql-patterns | MySQL/MariaDB | Languages, frameworks & code | 0 |  |
-| 193 | nanoclaw-repl | ECC REPL ops | ECC internals / host-specific | 0 | stub |
-| 194 | nasiko-control-plane | Nasiko CLI lifecycle | ECC internals / host-specific | 0 | stub |
-| 195 | nestjs-patterns | NestJS | Languages, frameworks & code | 0 |  |
+| 191 | mybatis-patterns | MyBatis mapper and dynamic SQL patterns | Languages, frameworks & code | 0 |  |
+| 192 | mysql-patterns | MySQL/MariaDB schema, indexing and query tuning | Languages, frameworks & code | 0 |  |
+| 193 | nanoclaw-repl | ECC-internal REPL operations (stub) | ECC internals / host-specific | 0 | stub |
+| 194 | nasiko-control-plane | ECC-internal Nasiko CLI lifecycle (stub) | ECC internals / host-specific | 0 | stub |
+| 195 | nestjs-patterns | NestJS modules, providers, guards and testing | Languages, frameworks & code | 0 |  |
 | 196 | netmiko-ssh-automation | Netmiko SSH automation | DevOps, tooling & infra | 0 |  |
 | 197 | network-bgp-diagnostics | BGP diagnostics | DevOps, tooling & infra | 0 |  |
 | 198 | network-config-validation | Router config checks | DevOps, tooling & infra | 0 |  |
-| 199 | network-interface-health | Interface errors | DevOps, tooling & infra | 0 |  |
-| 200 | nextjs-turbopack | Next 16 Turbopack notes | Languages, frameworks & code | 0 |  |
+| 199 | network-interface-health | diagnose interface errors, drops and flaps | DevOps, tooling & infra | 0 |  |
+| 200 | nextjs-turbopack | notes on Next.js 16 with Turbopack | Languages, frameworks & code | 0 |  |
 | 201 | nodejs-keccak256 | Keccak-256 vs SHA3 pitfall | Industry domain specialist | 0 |  |
 | 202 | nutrient-document-processing | Nutrient DWS API: convert/OCR/redact/sign docs | Integrations & connectors | 1 | 🔑 |
-| 203 | nuxt4-patterns | Nuxt 4 | Languages, frameworks & code | 0 |  |
+| 203 | nuxt4-patterns | Nuxt 4 structure and data-fetching patterns | Languages, frameworks & code | 0 |  |
 | 204 | openclaw-persona-forge | (Chinese) agent persona/SOUL.md generator with random "card draw", avatar prompts | Content, marketing & business | 1 |  |
 | 205 | opensource-pipeline | Fork, sanitize, package private project for public release (3 agents) | DevOps, tooling & infra | 1 |  |
 | 206 | operator-approval-loop | Approval contract for agent-drafted outbound messages, hashed drafts, receipts | Security & safety | 1 | → SEC-16 |
@@ -279,31 +279,31 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 229 | project-flow-ops | GitHub plus Linear triage | DevOps, tooling & infra | 0 |  |
 | 230 | prompt-caching-strategy | prompt-cache layout for LLM APIs | Data, ML & LLM ops | 1 |  |
 | 231 | prompt-optimizer | diagnose a draft prompt (intent, scope, missing context), output an improved prompt | Thinking & planning | 2 | community/port |
-| 232 | python-patterns | Pythonic idioms | Languages, frameworks & code | 0 |  |
-| 233 | python-testing | pytest and TDD | Verification, QA & tests | 0 |  |
-| 234 | pytorch-patterns | training-loop practice | Data, ML & LLM ops | 1 |  |
+| 232 | python-patterns | Pythonic idioms: typing, dataclasses, context managers, packaging | Languages, frameworks & code | 0 |  |
+| 233 | python-testing | pytest fixtures, parametrization and TDD | Verification, QA & tests | 0 |  |
+| 234 | pytorch-patterns | PyTorch training-loop, data loading and reproducibility practice | Data, ML & LLM ops | 1 |  |
 | 235 | quality-nonconformance | NCR, 5-Why, 8D root cause | Industry domain specialist | 1 | Apache-2.0 |
-| 236 | quarkus-patterns | Java Quarkus | Languages, frameworks & code | 0 |  |
+| 236 | quarkus-patterns | Quarkus service structure and extensions | Languages, frameworks & code | 0 |  |
 | 237 | quarkus-security | Quarkus security: JWT/OIDC, role checks, validation, safe queries | Security & safety | 0 |  |
 | 238 | quarkus-tdd | test-first Quarkus services with JUnit 5, mocks, REST tests and coverage | Verification, QA & tests | 0 |  |
 | 239 | quarkus-verification | Quarkus pre-merge loop: build, static analysis, coverage, dependency and container scans | Verification, QA & tests | 0 |  |
-| 240 | rails-patterns | Rails 7/8 | Languages, frameworks & code | 0 |  |
+| 240 | rails-patterns | Rails 7/8 architecture and Active Record patterns | Languages, frameworks & code | 0 |  |
 | 241 | ralphinho-rfc-pipeline | RFC to a multi-agent DAG of work units with acceptance tests | Agents & orchestration | 2 |  |
-| 242 | react-native-patterns | Expo and RN | Languages, frameworks & code | 0 |  |
-| 243 | react-patterns | React 18/19 | Languages, frameworks & code | 1 |  |
+| 242 | react-native-patterns | React Native / Expo app structure and native modules | Languages, frameworks & code | 0 |  |
+| 243 | react-patterns | React 18/19 component, hook and server-component patterns | Languages, frameworks & code | 1 |  |
 | 244 | react-performance | 70+ perf rules (Vercel-derived) | Languages, frameworks & code | 0 | from Vercel rules (MIT) |
-| 245 | react-testing | RTL, MSW, axe | Verification, QA & tests | 0 |  |
+| 245 | react-testing | React Testing Library, MSW mocks and axe accessibility checks | Verification, QA & tests | 0 |  |
 | 246 | recsys-pipeline-architect | Source, Hydrator, Filter, Scorer, Selector, SideEffect | Data, ML & LLM ops | 1 |  |
 | 247 | recursive-decision-ledger | append-only ledger for repeated rollouts; confidence is never approval | Thinking & planning | 2 |  |
-| 248 | redis-patterns | caching and locks | Languages, frameworks & code | 0 |  |
+| 248 | redis-patterns | Redis caching, locks, rate limits and data structures | Languages, frameworks & code | 0 |  |
 | 249 | regex-vs-llm-structured-text | regex first, confidence score, LLM only on the low-confidence tail | Data, ML & LLM ops | 2 | → CODE-20 |
 | 250 | remotion-video-creation | index of 29 Remotion rule files | Motion, video & media | 3 | mirrors Remotion rules (Remotion licence) |
 | 251 | repo-scan | installs an external skill from a pinned commit | DevOps, tooling & infra | 0 |  |
 | 252 | research-ops | evidence-first current-state research, labeled evidence types | Research, docs & knowledge | 3 |  |
 | 253 | returns-reverse-logistics | returns-ops expertise | Industry domain specialist | 0 | Apache-2.0 |
 | 254 | rules-distill | scan skills, pull out cross-cutting principles, turn them into rules | Skills, memory & context | 2 |  |
-| 255 | rust-patterns | Rust | Languages, frameworks & code | 0 |  |
-| 256 | rust-testing | Rust tests | Verification, QA & tests | 0 |  |
+| 255 | rust-patterns | idiomatic Rust: ownership, errors, traits, async | Languages, frameworks & code | 0 |  |
+| 256 | rust-testing | Rust unit, integration and property tests | Verification, QA & tests | 0 |  |
 | 257 | safety-guard | careful, freeze and guard modes for destructive commands | Security & safety | 1 | → SEC-15 |
 | 258 | santa-method | two context-isolated reviewers on the same rubric, both must pass, fix loop with a cap | Verification, QA & tests | 3 | community/port; → AGENT-11 |
 | 259 | scientific-db-pubmed-database | PubMed E-utilities | Research, docs & knowledge | 1 |  |
@@ -313,25 +313,25 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 263 | scientific-thinking-scholar-evaluation | evaluate papers and evidence quality | Research, docs & knowledge | 2 |  |
 | 264 | search-first | search for an existing package, MCP, skill or repo before building; adopt, extend, compose or build | Thinking & planning | 3 | → CODE-01 |
 | 265 | security-bounty-hunter | remotely reachable vulnerability hunting | Security & safety | 0 |  |
-| 266 | security-review | appsec checklist | Security & safety | 1 | → SEC-08 |
+| 266 | security-review | application-security review checklist for code changes | Security & safety | 1 | → SEC-08 |
 | 267 | security-scan | AgentShield scan of .claude config | Security & safety | 1 | → SEC-09 |
-| 268 | seo | technical SEO | Content, marketing & business | 0 |  |
+| 268 | seo | technical SEO audits: crawlability, metadata, structured data, Core Web Vitals | Content, marketing & business | 0 |  |
 | 269 | skill-comply | measure whether skills or rules are followed, using scenarios at 3 strictness levels | Skills, memory & context | 2 | → AGENT-27 |
 | 270 | skill-host-compat | lint skill frontmatter for Codex/Cursor | ECC internals / host-specific | 0 |  |
 | 271 | skill-scout | search local, marketplace and GitHub skills before creating one; vet; rank | Skills, memory & context | 3 | community/port; → AGENT-26 |
 | 272 | skill-stocktake | audit skill quality, quick or full | Skills, memory & context | 2 |  |
 | 273 | social-graph-ranker | warm-intro graph scoring | Industry domain specialist | 0 |  |
 | 274 | social-publisher | post to 13 platforms via SocialClaw | Integrations & connectors | 1 | 🔑 |
-| 275 | springboot-patterns | Java | Languages, frameworks & code | 0 |  |
+| 275 | springboot-patterns | Spring Boot service layering, configuration and REST patterns | Languages, frameworks & code | 0 |  |
 | 276 | springboot-security | Spring Security review: authn/authz, validation, CSRF, headers, rate limits, secrets | Security & safety | 0 |  |
 | 277 | springboot-tdd | test-first Spring Boot with JUnit 5, MockMvc and Testcontainers | Verification, QA & tests | 0 |  |
 | 278 | springboot-verification | Spring Boot pre-merge loop: build, static analysis, integration tests, coverage, dependency scans | Verification, QA & tests | 0 |  |
 | 279 | story-lifecycle | file-based epic, story, sprint loop | Thinking & planning | 0 |  |
 | 280 | strategic-compact | compact context at phase boundaries; what survives compaction | Skills, memory & context | 2 | → AGENT-29 |
-| 281 | swift-actor-persistence | Swift actors | Languages, frameworks & code | 0 |  |
-| 282 | swift-concurrency-6-2 | Swift 6.2 | Languages, frameworks & code | 0 |  |
-| 283 | swift-protocol-di-testing | Swift DI | Languages, frameworks & code | 0 |  |
-| 284 | swiftui-patterns | SwiftUI | Languages, frameworks & code | 0 |  |
+| 281 | swift-actor-persistence | Swift actors for thread-safe persistence | Languages, frameworks & code | 0 |  |
+| 282 | swift-concurrency-6-2 | Swift 6.2 concurrency: async/await, actors, Sendable | Languages, frameworks & code | 0 |  |
+| 283 | swift-protocol-di-testing | protocol-based dependency injection for testable Swift | Languages, frameworks & code | 0 |  |
+| 284 | swiftui-patterns | SwiftUI views, state and navigation patterns | Languages, frameworks & code | 0 |  |
 | 285 | taste | creative-direction vocabulary (angelcore, hyperpop): mood, colour, beat | Motion, video & media | 3 |  |
 | 286 | taste-application | generate or cut against a measured style pack: LUT grade, cadence, overlays | Motion, video & media | 3 |  |
 | 287 | taste-distillation | measure reference videos into a style pack (LUT, cut cadence, stills, plates) | Motion, video & media | 3 |  |
@@ -342,21 +342,21 @@ Relevance totals: 3 = 39, 2 = 48, 1 = 90, 0 = 134.
 | 292 | terminal-opener | shell-free launch plan for a visible terminal | DevOps, tooling & infra | 0 |  |
 | 293 | terminal-ops | evidence-first repo execution with exact status words | Thinking & planning | 2 | → AGENT-05, CODE-22 |
 | 294 | test-collaboration | TEST-ID traceability | Verification, QA & tests | 0 |  |
-| 295 | tinystruct-patterns | tinystruct Java framework | Languages, frameworks & code | 0 |  |
+| 295 | tinystruct-patterns | patterns for the tinystruct Java framework | Languages, frameworks & code | 0 |  |
 | 296 | token-budget-advisor | offer a 25/50/75/100% depth choice with token estimates | Skills, memory & context | 1 |  |
 | 297 | token-card | usage stat card from CLI logs | ECC internals / host-specific | 0 |  |
 | 298 | ui-demo | record polished UI demo videos with Playwright (WebM) | Motion, video & media | 3 |  |
 | 299 | ui-to-vue | screenshots to Vue 3 components | Languages, frameworks & code | 1 |  |
-| 300 | uncloud | Uncloud cluster ops | DevOps, tooling & infra | 0 |  |
+| 300 | uncloud | operate Uncloud container clusters | DevOps, tooling & infra | 0 |  |
 | 301 | unified-memory | cross-agent memory vault and handoffs | Skills, memory & context | 1 |  |
-| 302 | unified-notifications-ops | alert routing | DevOps, tooling & infra | 0 |  |
+| 302 | unified-notifications-ops | route alerts and notifications to the right channel | DevOps, tooling & infra | 0 |  |
 | 303 | verification-loop | 6-phase build, types, lint, tests, security grep, diff report | Verification, QA & tests | 3 | → CODE-09 |
 | 304 | video-editing | footage pipeline: capture, LLM structure, FFmpeg, Remotion, AI audio and visuals, finish | Motion, video & media | 3 |  |
 | 305 | videodb | VideoDB SDK: index, search and edit video and audio, RTSP | Motion, video & media | 2 | 🔑 |
 | 306 | visa-doc-translate | OCR plus a bilingual PDF | Research, docs & knowledge | 1 |  |
-| 307 | vite-patterns | Vite | Languages, frameworks & code | 0 |  |
-| 308 | vue-patterns | Vue 3 | Languages, frameworks & code | 0 |  |
-| 309 | windows-desktop-e2e | pywinauto UIA tests | Verification, QA & tests | 0 |  |
+| 307 | vite-patterns | Vite configuration, plugins and build optimization | Languages, frameworks & code | 0 |  |
+| 308 | vue-patterns | Vue 3 Composition API and component patterns | Languages, frameworks & code | 0 |  |
+| 309 | windows-desktop-e2e | end-to-end tests of Windows desktop apps with pywinauto (UI Automation) | Verification, QA & tests | 0 |  |
 | 310 | workspace-surface-audit | inventory what this workspace or machine can do now: MCPs, plugins, env key names; gaps | Skills, memory & context | 3 |  |
 | 311 | x-api | X API posting and OAuth | Integrations & connectors | 1 | 🔑 |
 

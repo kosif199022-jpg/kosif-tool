@@ -23,7 +23,7 @@
 15. Value vs fluff
 
 ## 1. ما هي ECC / What ECC is
-A cross-harness "agent operating system" packaged mainly as a Claude Code plugin: **71 agents, 311 skills, 97 legacy slash commands, a hook runtime (~27 hook entries), 22 rule packs, 3 context modes, 34 MCP server templates, the AgentShield scanner and an alpha Rust control plane (ecc2)**. Its motto is roughly "optimize the context window; persist everything else". Principles: delegate to specialist agents, test first (80% coverage target), security first, plan before executing. Skills are the canonical surface; commands are compatibility shims. Adapters exist for Codex, Cursor, OpenCode, Gemini CLI, Zed, Copilot and others, and it ships translated docs including Arabic (`docs/ar/`).
+A cross-harness "agent operating system" packaged mainly as a Claude Code plugin: **71 agents, 311 skills, 97 legacy slash commands, a hook runtime (~27 hook entries), 22 rule packs, 3 context modes, 34 MCP server templates, the AgentShield scanner and an alpha Rust control plane (ecc2)**. Its motto is roughly "optimize the context window; persist everything else". Principles: delegate to specialist agents, test first (80% coverage target), security first, plan before executing. Skills are the canonical surface; commands are compatibility shims. Adapters exist for other coding agents and editors (Codex, Cursor, OpenCode, Zed, Copilot and more), and it ships translated docs including Arabic (`docs/ar/`).
 
 ## 2. التثبيت / Install — exact commands, and when not to
 Prerequisites: Node ≥18; for the plugin route Git and Claude Code ≥2.1. Official channels only: the GitHub repo, npm `ecc-universal` / `ecc-agentshield`, plugin slug `ecc@ecc`.
@@ -161,5 +161,5 @@ Paraphrased; each line ends with where the method lives in this skill.
 
 ## 15. القيمة مقابل الحشو / Value vs fluff
 - **Valuable:** completion contract; fail-closed adversarial verification; capability-surface ladder; pass@k vs pass^k; session handoff schema; scoped instincts with promotion rules; security deny list and unicode scans; MCP/tool budget numbers; generator–evaluator thresholds; fact-forcing before edits.
-- **Host-specific:** Codex/Cursor/Kimi adapters, cross-provider commands, desktop notifications, the hosted ECC app, epic/coordination commands, ECC-internal skills (configure-ecc, agent-sort, nanoclaw, nasiko…). Hooks need local Claude Code settings.
+- **Host-specific:** adapters for other coding agents, cross-provider commands, desktop notifications, the hosted ECC app, epic/coordination commands, ECC-internal skills (configure-ecc, agent-sort, nanoclaw, nasiko…). Hooks need local Claude Code settings.
 - **Unverified / marketing:** star counts, AgentShield rule/test/coverage figures, third-party token-saving benchmarks, fixed model-tier ratios (they date quickly), GateGuard's A/B score (two tasks). About 130 of the 311 skills are language, framework or industry references — a capability signal ("Claude can act as a specialist here"), not method.
