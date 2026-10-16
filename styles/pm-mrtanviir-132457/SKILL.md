@@ -1,6 +1,6 @@
 ---
 name: pm-mrtanviir-132457
-description: A 15-second self-promo reel proving four motion skills in sequence: kinetic type, charts built from zero, morphing shapes, and a signature end card.
+description: A fast 15-second motion-skills reel cut on a 120 BPM grid: dots, a letter in a circle, giant uppercase words on red, a blue rounded square with transform handles, a phyllotaxis dot flower, a waving dot grid, a 3D particle cloud, a striped ribbon drawing a curve on yellow, text on circular paths and a closing serif signature.
 ---
 
 # KOSIF TOOL — Claude motion designer showreel / ريل مهارات موشن: أربعة فصول على إيقاع واحد
@@ -18,11 +18,11 @@ description: A 15-second self-promo reel proving four motion skills in sequence:
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل ترويج ذاتي في 15 ثانية يثبت أربع مهارات متتابعة: حروف حركية، مخططات تُبنى من الصفر، أشكال تتحول، وبطاقة توقيع ختامية.
+ريل مهارات موشن سريع مدته 15 ثانية مقطوع على شبكة 120 نبضة في الدقيقة: نقاط، حرف داخل دائرة، كلمات ضخمة على الأحمر، مربع أزرق مستدير بمقابض تحويل، زهرة نقاط فيلوتاكسية، شبكة نقاط بموجة، سحابة جسيمات ثلاثية الأبعاد، شريط مخطط يرسم منحنى على الأصفر، نص على مسارات دائرية، وختام Claude.
 
-A 15-second self-promo reel proving four motion skills in sequence: kinetic type, charts built from zero, morphing shapes, and a signature end card.
+A fast 15-second motion-skills reel cut on a 120 BPM grid: dots, a letter in a circle, giant uppercase words on red, a blue rounded square with transform handles, a phyllotaxis dot flower, a waving dot grid, a 3D particle cloud, a striped ribbon drawing a curve on yellow, text on circular paths and a closing serif signature.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

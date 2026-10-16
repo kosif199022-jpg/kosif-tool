@@ -1,9 +1,9 @@
 ---
 name: pm-abderrahmen-g-9e8ed0
-description: A playful film built from scanned hand-drawn pages: the animals peel off their sheets and hop, with every movement sounded by Web Audio on the same frame.
+description: A roughly 78-second film on watercolour paper: a green hill and a smiling sun, then hand-drawn animals popping up as white-bordered stickers with a good-morning line and written sound words, a fast word-by-word section over extreme macro zooms into the drawings, a garden growing with faced vegetables, an underwater scene, a sunset wash, a glowing night village and a finale ring of every character over pastel sunburst rays.
 ---
 
-# KOSIF TOOL — Sketchbook animals come alive / حيوانات دفتر الرسم تنبض بالحياة
+# KOSIF TOOL — Sketchbook animals come alive / رسومات يدوية تنبض بالحياة: من الصباح إلى الليل
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/abderrahmen-g-9e8ed0
@@ -18,11 +18,11 @@ description: A playful film built from scanned hand-drawn pages: the animals pee
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيلم مرح من مسحات دفتر رسم يدوية: الحيوانات تنفصل عن صفحاتها وتقفز، وكل حركة يرافقها صوت مُركَّب بـ Web Audio في الإطار نفسه.
+فيلم مدته نحو 78 ثانية على ورق ألوان مائية: تلة خضراء وشمس مبتسمة، ثم حيوانات مرسومة باليد تنبثق كملصقات بحواف بيضاء مع تحية صباح وأصوات مكتوبة، ثم قسم سريع كلمة بكلمة فوق تقريب شديد للرسومات، حديقة تنمو بخضار ذات وجوه، مشهد تحت الماء، غروب، قرية ليلية مضيئة، وختام بحلقة من كل الشخصيات فوق أشعة باستيل.
 
-A playful film built from scanned hand-drawn pages: the animals peel off their sheets and hop, with every movement sounded by Web Audio on the same frame.
+A roughly 78-second film on watercolour paper: a green hill and a smiling sun, then hand-drawn animals popping up as white-bordered stickers with a good-morning line and written sound words, a fast word-by-word section over extreme macro zooms into the drawings, a garden growing with faced vegetables, an underwater scene, a sunset wash, a glowing night village and a finale ring of every character over pastel sunburst rays.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio, GSAP), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio, GSAP), suggested duration (78 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.

@@ -1,9 +1,9 @@
 ---
 name: pm-danilowm-d3720d
-description: A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.
+description: A 15-second, six-chapter reel on a light ground for a pet-friendly places app: words pulling into focus from blur with a teal underline, an SVG city map drawing on with dropping pins, a count-up from 1,011 to 1,317 with category bars, a perspective grid of venue cards with a camera flight, a search bar typing and clicking, then the app logo resolve.
 ---
 
-# KOSIF TOOL — Motion designer showreel / ريل المصمم المبني من سياق المشروع
+# KOSIF TOOL — Motion designer showreel / ريل تطبيق الأماكن الصديقة للحيوانات في ستة فصول
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/danilowm-d3720d
@@ -18,9 +18,9 @@ description: A 15-second reel whose content is mined from the project itself: th
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل 15 ثانية يستمد محتواه من ملفات المشروع نفسه: شجرة المجلدات تصبح رسمًا بيانيًا، وأسماء المكوّنات تصبح تايبوغرافي حركيًا.
+ريل مدته 15 ثانية في ستة فصول مرقمة على خلفية فاتحة لتطبيق أماكن صديقة للحيوانات الأليفة: كلمات تتضح من الضبابية مع خط سفلي فيروزي، خريطة مدينة SVG تُرسم وتسقط عليها الدبابيس، عدّاد من 1,011 إلى 1,317 مع أعمدة الفئات، شبكة بطاقات أماكن بمنظور وطيران كاميرا، شريط بحث يُكتب فيه ويُنقر، وختام بالشعار.
 
-A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.
+A 15-second, six-chapter reel on a light ground for a pet-friendly places app: words pulling into focus from blur with a teal underline, an SVG city map drawing on with dropping pins, a count-up from 1,011 to 1,317 with category bars, a perspective grid of venue cards with a camera flight, a search bar typing and clicking, then the app logo resolve.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 

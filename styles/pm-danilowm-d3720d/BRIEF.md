@@ -1,11 +1,11 @@
-# ريل المصمم المبني من سياق المشروع — Motion designer showreel
+# ريل تطبيق الأماكن الصديقة للحيوانات في ستة فصول — Motion designer showreel
 
-> ريل 15 ثانية يستمد محتواه من ملفات المشروع نفسه: شجرة المجلدات تصبح رسمًا بيانيًا، وأسماء المكوّنات تصبح تايبوغرافي حركيًا.
+> ريل مدته 15 ثانية في ستة فصول مرقمة على خلفية فاتحة لتطبيق أماكن صديقة للحيوانات الأليفة: كلمات تتضح من الضبابية مع خط سفلي فيروزي، خريطة مدينة SVG تُرسم وتسقط عليها الدبابيس، عدّاد من 1,011 إلى 1,317 مع أعمدة الفئات، شبكة بطاقات أماكن بمنظور وطيران كاميرا، شريط بحث يُكتب فيه ويُنقر، وختام بالشعار.
 >
-> A 15-second reel whose content is mined from the project itself: the folder tree becomes a chart and component names become kinetic type.
+> A 15-second, six-chapter reel on a light ground for a pet-friendly places app: words pulling into focus from blur with a teal underline, an SVG city map drawing on with dropping pins, a count-up from 1,011 to 1,317 with category bars, a perspective grid of venue cards with a camera flight, a search bar typing and clicking, then the app logo resolve.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/danilowm-d3720d
 - التصنيفات / Categories: charts, kinetic-type
@@ -13,46 +13,44 @@ Original KOSIF brief derived only from the reference title, tags and public desc
 - التقنية المقترحة / Stack: Remotion, React, SVG
 
 ## الفكرة
-الموضوع ريل تعريفي يُثبت قدرة المصمم عبر تحويل المشروع الحقيقي إلى مادة بصرية بدل استخدام محتوى عام. الهدف أن يرى المشاهد في 15 ثانية مهارات الطباعة والرسوم البيانية والانتقالات وهي تعمل على بيانات حقيقية: عدد الأسطر، وأسماء الوحدات، وخط زمني للـ commits. ما يميز اللغة الحركية هو الانتقال المتواصل من واجهة الطرفية إلى تصميم عرض كبير، مع ثلاث مسارات تايبوغرافية متوازية بسرعات مختلفة تمنح الإطار عمقًا دون 3D.
+الموضوع تطبيق يدل أصحاب الحيوانات الأليفة على الأماكن التي ترحب بها في مدينتهم. كل فصل يحمل وسماً أحادياً يذكر التقنية المعروضة (خط حركي، رسم مسارات SVG، بيانات متحركة، طيران كاميرا ثلاثي الأبعاد، تصميم واجهة، كشف العلامة)، فيكون الريل عرضاً للمنتج وللمهارة معاً. اللغة نظيفة ومشرقة: أبيض ورمادي فاتح، فيروزي واحد، غروتسك هندسي بتباعد ضيق، وحركة هادئة إلا في طيران الكاميرا.
 
 ## Concept
-The subject is a résumé reel that proves the designer's range by turning the real project into visual material instead of generic content. The goal is to let a viewer watch typography, charts and transitions operate on real data within 15 seconds: line counts, module names and a commit timeline. The distinctive motion language is a continuous shift from terminal UI into large display design, with three parallel type lanes moving at different speeds to give depth without 3D.
+The subject is an app that shows pet owners which places in their city welcome animals. Each chapter carries a mono label naming the technique on show (kinetic type, SVG path draw, data in motion, 3D camera flight, UI choreography, brand resolve), so the reel promotes the product and the craft at once. The language is clean and bright: white and light grey, one teal, a tightly tracked geometric grotesk, and calm motion except for the camera flight.
 
 ## المشاهد المقترحة
-- 0-2 ث: مؤشر بأسلوب الطرفية يكتب اسم المشروع؛ النص يقفز إلى خط عرض بحجم 160 px بينما تنقلب الخلفية من الداكن إلى محايد دافئ.
-- 2-5 ث: شجرة مجلدات المشروع تتكشف كخطوط متداخلة؛ عدد أسطر كل مجلد يمتد إلى رسم أعمدة أفقي وتعدّ القيم تصاعديًا خلال 600 ms.
-- 5-8 ث: أسماء المكوّنات أو الوحدات تطير كتايبوغرافي حركي على ثلاث مسارات متدرجة، كل مسار بسرعة مختلفة (نسبة parallax 1 : 0.7 : 0.45).
-- 8-11 ث: خط زمني للـ commits يُرسم من اليسار إلى اليمين كرسم خطي بست إلى ثماني نقاط؛ تظهر تسميات بالتاريخ وملخص من كلمة واحدة.
-- 11-13 ث: المسارات الثلاثة والأعمدة والخط تتجمع في بلاطة مربعة واحدة تدور 90° لتصبح monogram المصمم.
-- 13-15 ث: الاسم واللقب وجملة تعريف واحدة تنزلق تحت الـ monogram، وشريط تقدم رفيع يكمل الإطار.
+- 0-2.5 ث: 01/06 خط حركي: عنوان من ثلاث كلمات يتضح كلمة كلمة من ضبابية شديدة على رمادي فاتح؛ الكلمة الأخيرة تصبح فيروزية ويُرسم تحتها خط فيروزي؛ آثار أقدام باهتة تنجرف.
+- 2.5-5 ث: قطع إلى 02/06 رسم المسارات: عمود يساري بوسم موقع أحادي وعنوان يُكتب؛ وعلى اليمين خريطة شوارع مدينة تُرسم بالأبيض والنعناعي ثم تسقط دبابيس فيروزية بارتداد متتابع ودبوس مختار ينبض مع شارة اسم.
+- 5-7.5 ث: 03/06 بيانات متحركة: رقم ضخم يعدّ من نحو 1,011 إلى 1,317 مع تعليق، وستة أعمدة أفقية فيروزية للفئات تنمو مع قيمها.
+- 7.5-10 ث: 04/06 طيران الكاميرا: شبكة مائلة بمنظور من بطاقات أماكن نعناعية بأيقونات؛ الكاميرا تنزلق وتميل فوقها ثم تستقر على بطاقة واحدة واضحة.
+- 10-12.5 ث: 05/06 تصميم الواجهة: عنوان يسأل إلى أين نذهب اليوم؛ حقل بحث يُكتب فيه استعلام، تُختار شارة فئة وينقر المؤشر زر البحث الفيروزي.
+- 12.5-15 ث: 06/06 كشف العلامة: أيقونة تطبيق فيروزية مستديرة بآثار أقدام، اسم التطبيق يُكتب بجانبها، سطر شعار، زر رابط بخط أحادي وإحصاءات صغيرة في الزاوية.
 
 ## Proposed scenes
-- 0-2s: A terminal-style cursor types the project name; the text snaps to a 160 px display face as the background flips from dark to a warm neutral.
-- 2-5s: The project folder tree unfolds as nested lines; each folder's line count extrudes into a horizontal bar chart with values counting up over 600 ms.
-- 5-8s: Component or module names fly in as kinetic type on three staggered lanes, each lane scrolling at a different speed (parallax ratio 1 : 0.7 : 0.45).
-- 8-11s: A commit timeline draws left to right as a line chart with 6-8 node dots; labels pop with the date and a one-word summary.
-- 11-13s: The three lanes, the bars and the line converge into a single square tile that rotates 90° and becomes the designer's monogram.
-- 13-15s: Name, title and a one-line pitch slide in beneath the monogram, and a thin progress bar completes the frame.
+- 0-2.5s: 01/06 kinetic type: a three-word headline pulls into focus word by word from heavy blur on light grey; the last word turns teal and a teal underline draws beneath; faint paw prints drift.
+- 2.5-5s: Cut to 02/06 path draw: left column with a mono location label and a headline that types in; on the right a city street map draws in white and mint, then teal pins drop with a bounce stagger and a selected pin pulses with a label chip.
+- 5-7.5s: 03/06 data in motion: a giant numeral counts from about 1,011 to 1,317 with a caption, and six horizontal teal category bars grow with their values.
+- 7.5-10s: 04/06 camera flight: a tilted perspective grid of mint venue cards with icons; the camera dollies and tilts over it, then settles on one card in focus.
+- 10-12.5s: 05/06 UI choreography: a headline asks where to go today; a search field types a query, a category chip is selected and a cursor clicks the teal search button.
+- 12.5-15s: 06/06 brand resolve: a teal rounded app icon with paw prints, the app name typing in beside it, a tagline, a mono URL pill and small stats in the corner.
 
 ## قواعد الحركة
-- الدخول بـ cubic-bezier(0.16, 1, 0.3, 1) خلال 700 ms؛ عناصر القوائم بتفاوت 50 ms؛ الخروج تلاشٍ 300 ms مع انزياح 20 px.
-- كتابة الطرفية بسرعة 40 ms لكل حرف مع مؤشر يومض كل 500 ms؛ القفزة إلى خط العرض قفزة تكبير واحدة 250 ms وليست crossfade.
-- مسارات الـ parallax تتحرك بنسبة سرعات 1 : 0.7 : 0.45 ولا تتوقف في منتصف كلمة؛ الكلمات المغادرة تتلاشى في آخر 120 px.
-- قيم رسم الأعمدة تعدّ تصاعديًا خلال 600 ms بأرقام جدولية؛ خط الـ commits يُرسم خلال 900 ms وتظهر كل عقدة بتكبير من 0 إلى 1 خلال 150 ms.
-- الكاميرا: دفعة بطيئة واحدة من 1.0 إلى 1.06 على مدى 15 ثانية؛ لا حركات كاميرا أخرى ولا دوران سوى دوران البلاطة 90°.
-- اللوحة: لونان محايدان ولون تمييز واحد مأخوذ من هوية المشروع نفسها؛ بيانات الـ monospace تبقى محايدة، وخط العرض يستعمل التمييز في المقطع الأخير فقط.
-- الطباعة: خط عرض واحد للأسماء والعناوين، وخط monospace واحد لكل البيانات؛ خط العرض لا يقل عن 96 px والـ monospace لا يقل عن 28 px.
-- ممنوع: لقطات الأرشيف، وتصييرات 3D عامة، وتأثيرات glitch لا علاقة لها بالمشروع، وأي رقم غير مستخرج من المستودع الفعلي.
+- ستة فصول بطول نحو 2.5 ثانية لكل منها، بوسم أحادي أسفل اليسار بصيغة NN/06 واسم التقنية، والدقة ومعدل الإطارات أسفل اليمين.
+- الكلمات تتضح من ضبابية نحو 20 بكسل إلى الحدة في قرابة 400 مللي ثانية واحدة تلو الأخرى؛ كلمة التأكيد تصبح فيروزية ويُرسم تحتها خط.
+- شوارع الخريطة تُرسم بـ stroke-dashoffset ثم تسقط الدبابيس بارتداد صغير متتابع.
+- العدّاد والأعمدة يتحركان معاً: الرقم يعدّ بينما ينمو كل عمود فئة من الصفر إلى قيمته.
+- قطعة واحدة فقط (نحو 2.5 ث)؛ بقية التغييرات تلاشٍ متقاطع أو طيران الكاميرا ثلاثي الأبعاد فوق شبكة البطاقات المائلة.
+- اللوحة: رمادي فاتح #f7f7f7، أبيض #ffffff، فيروزي #1db394، نعناعي #e2f2ee، نص شبه أسود #1a1a1a ورمادي مخضر #b8cdcb.
+- الخط: غروتسك هندسي 700 بحالة الجملة وتباعد ضيق مع تسميات أحادية صغيرة؛ نصوص الشاشة بالبرتغالية في المرجع.
 
 ## Motion rules
-- Entrances use cubic-bezier(0.16, 1, 0.3, 1) over 700 ms; list items stagger by 50 ms; exits are 300 ms fades combined with a 20 px drift.
-- Terminal typing runs at 40 ms per character with a 500 ms blinking cursor; the jump to display type is a single 250 ms scale snap, not a crossfade.
-- Parallax lanes scroll at a 1 : 0.7 : 0.45 speed ratio and never stop mid-word; words leaving a lane fade over the last 120 px.
-- Bar chart values count up over 600 ms with tabular figures; the commit line draws over 900 ms and each node pops with a 150 ms scale from 0 to 1.
-- Camera: a single slow push-in from 1.0 to 1.06 across the full 15 s; no other camera moves and no rotation except the 90° tile turn.
-- Palette: two neutrals plus one accent taken from the project's own brand colour; monospace data stays neutral, display type uses the accent only on the final beat.
-- Typography: one display face for names and titles, one monospace face for all data; display never below 96 px, monospace never below 28 px.
-- Banned: stock footage, generic 3D renders, glitch effects unrelated to the project, and any number not derived from the real repository.
+- Six chapters of about 2.5 s, each labelled bottom-left in mono as NN/06 plus the technique name; resolution and fps sit bottom-right.
+- Words focus in from about 20 px blur to sharp over roughly 400 ms, one after another; the accent word turns teal and gets an underline draw.
+- Map streets draw with stroke-dashoffset, then pins drop with a small bounce on a stagger.
+- Counter and bars move together: the numeral ticks while each category bar grows from zero to its value.
+- Only one cut (about 2.5 s); other changes are crossfades or the 3D camera flight across the tilted card grid.
+- Palette: light grey #f7f7f7, white #ffffff, teal #1db394, mint #e2f2ee, near-black #1a1a1a text and grey-teal #b8cdcb.
+- Type: geometric grotesk 700 in sentence case with tight tracking, small mono labels; on-screen copy is Portuguese in the reference.
 
 ## Facts stated by the source (rewritten in our words)
 - A fast 15-second résumé-style reel was requested.
@@ -60,7 +58,7 @@ The subject is a résumé reel that proves the designer's range by turning the r
 - Catalogued as charts and kinetic type; no colours, scenes or stack are given.
 
 ## Assumptions
-The idea of mining file trees, module names and commit history as content is a proposal built on the instruction to use project context; the actual project, its colour and its data were not seen.
+Observed from frames sampled every ~1.25 s: the six labelled chapters, the map, counter, card grid, search UI, logo and the teal-on-light palette. Assumed: easing values and audio; the product came from the creator's project context, which we did not see beyond the video.
 
 ## Keywords
-showreel, project context, terminal typing, folder tree chart, commit timeline, parallax lanes, monogram, kinetic type, ريل مصمم, سياق المشروع, خط زمني, رسم أعمدة, طباعة حركية
+product reel, pet friendly app, chapter labels, blur focus type, svg map draw, pin drop, counter with bars, camera flight, search ui, ريل منتج, خريطة متحركة, دبابيس, عدّاد, طيران الكاميرا

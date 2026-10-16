@@ -1,6 +1,6 @@
 ---
 name: pm-utopyaszx-1b2f94
-description: A 15-second Bold Pilot promo that turns SEO into a flight: a result row climbs from rank 38 to 1, a traffic curve takes off, and keyword chips dock in formation.
+description: A 15-second promo for an automated SEO service in three numbered steps: keyword pills on red with a rolling counter, an article card typing itself beside live stat counters, a weekly grid filling with published cards, then a red wipe to a galloping jockey silhouette and the logo lockup.
 ---
 
 # KOSIF TOOL — Bold Pilot SEO promo / بولد بايلوت: تسلّق الترتيب إلى المركز الأول
@@ -18,9 +18,9 @@ description: A 15-second Bold Pilot promo that turns SEO into a flight: a result
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-برومو 15 ثانية لعلامة Bold Pilot يحوّل تحسين محركات البحث إلى رحلة طيران: صف نتيجة يتسلق من المركز 38 إلى الأول ومخطط زيارات يقلع.
+إعلان مدته 15 ثانية لخدمة SEO آلية في ثلاث خطوات مرقمة: وسوم كلمات مفتاحية على الأحمر وعدّاد يدور، بطاقة مقال تُكتب مع عدادات إحصاء حية، شبكة أسبوعية تمتلئ بمقالات منشورة، ثم مسح أحمر إلى فارس على حصان يعدو وختام بالشعار.
 
-A 15-second Bold Pilot promo that turns SEO into a flight: a result row climbs from rank 38 to 1, a traffic curve takes off, and keyword chips dock in formation.
+A 15-second promo for an automated SEO service in three numbered steps: keyword pills on red with a rolling counter, an article card typing itself beside live stat counters, a weekly grid filling with published cards, then a red wipe to a galloping jockey silhouette and the logo lockup.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 

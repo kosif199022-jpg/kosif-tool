@@ -1,6 +1,6 @@
 ---
 name: pm-kamstudiolabs-0b0824
-description: Forty-five dialogue-free seconds: a lighthouse keeper relights a dead lamp in a storm, and the sound design carries half of the story.
+description: A dialogue-free short of about 46 seconds in a 2.35:1 frame: a wide-tracked serif title, then a lighthouse on a rock in rain and fog whose lamp goes out; inside, the keeper dozes in a rocking chair beside a stove, pendulum clock and lantern, the room darkens, he climbs a spiral stair with the lantern to the lamp room, relights the lens, the beams sweep the sea again while he walks the gallery, and it fades to a distant lighthouse in darkness.
 ---
 
 # KOSIF TOOL — Lighthouse keeper silent short / فيلم صامت قصير عن حارس المنارة
@@ -18,11 +18,11 @@ description: Forty-five dialogue-free seconds: a lighthouse keeper relights a de
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-خمس وأربعون ثانية بلا حوار: حارس منارة يعيد إشعال المصباح في عاصفة، والصوت وحده يروي نصف القصة.
+فيلم قصير بلا حوار مدته نحو 46 ثانية بإطار 2.35:1: عنوان سيريف متباعد الحروف، ثم منارة على صخرة في المطر والضباب ينطفئ مصباحها؛ في الداخل يغفو الحارس على كرسي هزاز بجانب موقد وساعة بندول وفانوس، تظلم الغرفة فيصعد درجاً حلزونياً بالفانوس إلى غرفة المصباح، يعيد إشعال العدسة، تمسح الأشعة البحر من جديد وهو يمشي على الشرفة، وينتهي بمنارة بعيدة في الظلام.
 
-Forty-five dialogue-free seconds: a lighthouse keeper relights a dead lamp in a storm, and the sound design carries half of the story.
+A dialogue-free short of about 46 seconds in a 2.35:1 frame: a wide-tracked serif title, then a lighthouse on a rock in rain and fog whose lamp goes out; inside, the keeper dozes in a rocking chair beside a stove, pendulum clock and lantern, the room darkens, he climbs a spiral stair with the lantern to the lamp room, relights the lens, the beams sweep the sea again while he walks the gallery, and it fades to a distant lighthouse in darkness.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, Web Audio), suggested duration (45 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, Web Audio), suggested duration (46 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Music / موسيقى.

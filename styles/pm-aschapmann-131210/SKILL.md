@@ -1,6 +1,6 @@
 ---
 name: pm-aschapmann-131210
-description: A 30-second, fully code-built Remotion launch film telling market, pain, fix and payoff in 4-5 scenes, ending on an animated SVG logo with tagline and URL.
+description: A 30-second dark launch film for a forum marketing tool: it opens on a tilted wall of forum-post cards behind a word-by-word headline, then three pain cards with realistic UI examples, a small red sailing-ship mascot riding glowing line waves under the product name, a post card that gets an AI draft reply typed beneath it, a three-step timeline, and a red sunrise behind the sea with a letter-pop logo reveal.
 ---
 
 # KOSIF TOOL — SaaS launch video / فيلم إطلاق منتج SaaS مبرمج في Remotion
@@ -19,11 +19,11 @@ description: A 30-second, fully code-built Remotion launch film telling market, 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيلم إطلاق مدته 30 ثانية مبني بالكامل بالكود في Remotion، يروي قصة السوق والألم والحل عبر أربع إلى خمس مشاهد وينتهي بشعار SVG متحرك.
+فيلم إطلاق مدته 30 ثانية لأداة تسويق عبر المنتديات على خلفية داكنة: يبدأ بجدار مائل من بطاقات المنشورات خلف عنوان يظهر كلمة كلمة، ثم ثلاث بطاقات ألم بأمثلة واجهة حقيقية، سفينة شراعية حمراء صغيرة تبحر على أمواج خطية متوهجة تحت اسم المنتج، بطاقة منشور يُكتب تحتها رد مقترح، خط زمني من ثلاث مراحل، وختام بشروق أحمر خلف البحر وكشف الشعار حرفاً حرفاً.
 
-A 30-second, fully code-built Remotion launch film telling market, pain, fix and payoff in 4-5 scenes, ending on an animated SVG logo with tagline and URL.
+A 30-second dark launch film for a forum marketing tool: it opens on a tilted wall of forum-post cards behind a word-by-word headline, then three pain cards with realistic UI examples, a small red sailing-ship mascot riding glowing line waves under the product name, a post card that gets an AI draft reply typed beneath it, a three-step timeline, and a red sunrise behind the sea with a letter-pop logo reveal.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.

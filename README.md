@@ -82,7 +82,7 @@ The site is plain static files at the repository root and needs no build step. `
 ## Attribution and source policy
 
 - Third-party video, posters, prompts, voice and music are never rehosted. Links point to the owners' pages; creators are credited on every entry.
-- `SKILL.md`, `BRIEF.md` and the playbooks are original KOSIF writing. Briefs are derived from an entry's title, categories and public description and were written without watching the videos; `tools/check_originality.py` guards against reused wording.
+- `SKILL.md`, `BRIEF.md` and the playbooks are original KOSIF writing. Briefs are derived from an entry's title, categories and public description and were written without watching the videos, except those whose note says they were revised against frames sampled from the reference video; `tools/check_originality.py` guards against reused wording.
 - An externally linked example is not a claim that the exact animation has been coded or validated here.
 - Source terms: https://www.promptsmotion.com/terms · Contact for removals: see the source site.
 

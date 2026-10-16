@@ -1,58 +1,58 @@
 # حكاية جلسة الوكيل البرمجي — Animated agent session story
 
-> فيلم قصير مُلحَّن يحوّل سجل جلسة حقيقية بين مطوّر ووكيل برمجي إلى حكاية متحركة بشخصيتين وأحداث كود.
+> فيلم كرتوني دافئ مدته نحو 53 ثانية في مكتب واحد ثابت: الوكيل شخصية صندوق برتقالي بعينين نقطيتين وذراعين قصيرتين خلف مكتب عليه لوحة نحاسية. يبدأ نائماً ليلاً، ثم تقريب إلى الشاشة التي تكتب بدء الجلسة، وتصل رسائل المستخدم كطائرات ورقية تنفتح إلى ملاحظات مكتوبة باليد؛ يتفاعل الوكيل بتعابير مختلفة والشاشة تعرض كوداً أو صورة أو شريط تقدم أو علامة صح، وتتراكم المكافآت على رأسه والنافذة تنتقل من النهار إلى الليل.
 >
-> A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.
+> A warm, ink-outlined cartoon of about 53 seconds in a single fixed office: the agent is an orange box character with dot eyes and stubby arms behind a desk with a brass plaque. It starts asleep at night, a push-in to the monitor types the session start, then user messages arrive as paper airplanes that unfold into handwritten notes; the agent reacts with expressions while the monitor shows code, an image, a progress bar or a green check, rewards pile up on its head and the window cycles from day to night.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/jake11moran-a269c4
 - التصنيفات / Categories: characters, code
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 45 s · الصعوبة / Difficulty: 4/5
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 53 s · الصعوبة / Difficulty: 4/5
 - التقنية المقترحة / Stack: CSS, GSAP, Web Audio
 
 ## الفكرة
-الموضوع هو جلسة برمجة فعلية مستخرجة من سجل Claude Code المحلي، تُروى كقصة قصيرة بطلاها مطوّر ووكيل برمجي على هيئة شخصيتين كرتونيتين. الهدف هو جعل سير العمل التقني (طلب، قراءة ملفات، تعديل، اختبار، خطأ، إصلاح) مادة عاطفية ممتعة تُفهم في أقل من دقيقة. تتميّز لغة الحركة بالمزج بين تحريك شخصيات متقطّع يشبه الرسم اليدوي وواجهة طرفية ناعمة الحركة، مع موسيقى تُبنى على قوس الجلسة من الهدوء إلى الذروة إلى الحلّ.
+الموضوع جلسة برمجة حقيقية بين مستخدم ووكيل ذكاء اصطناعي، تُروى كيوم عمل لشخصية واحدة محبوبة. لا يظهر المستخدم أبداً؛ صوته رسائل ورقية تطير إلى المكتب. كل رسالة لحظة: الوكيل يقرأ، يتفاعل بوجهه (فرح، تركيز، قلق، إعجاب)، والشاشة تكشف ما يفعله. المكافآت (وشاح «رائع» ومشابك فراشات) تتراكم كذاكرة مرئية للجلسة، وضوء النافذة يقيس مرور الوقت. ديكور واحد بلا قطعات، وكاميرا تقترب وتبتعد فقط.
 
 ## Concept
-The subject is an actual coding session mined from the local Claude Code history, retold as a short story whose two leads are a developer and an agent drawn as cartoon characters. The goal is to make the technical workflow (request, file reads, edits, tests, an error, the fix) emotionally legible and fun in under a minute. The motion language mixes stepped, hand-drawn-feeling character animation with smooth terminal UI motion, and a score that follows the session arc from calm to crisis to resolution.
+The subject is a real coding session between a user and an AI agent, told as one workday of a single lovable character. The user never appears; their voice is paper messages flying into the office. Each message is a beat: the agent reads, reacts with its face (joy, focus, worry, delight) and the monitor reveals what it is doing. Rewards (a 'so cool' sash and butterfly clips) pile up as a visible memory of the session, and the window light measures time passing. One set, no cuts, a camera that only pushes in and pulls back.
 
 ## المشاهد المقترحة
-- 0-4 ث: مؤشر يومض على خلفية سوداء؛ يُكتب اسم المشروع حرفًا حرفًا بمعدل 40 مللي ثانية للحرف، ثم تبتعد الكاميرا لتكشف عالم مكتب صغير فيه شخصية المطوّر وشخصية الوكيل.
-- 4-12 ث: يكتب المطوّر طلبه الأول؛ تلتفّ الكلمات في لفافة تطير عبر المكتب، فيلتقطها الوكيل وتضيء عيناه عند فتحها.
-- 12-24 ث: مونتاج استدعاءات الأدوات: أحداث القراءة والبحث والتعديل تصل كبطاقات تنغرز على الإيقاع، وتنبض العقدة المعنية في شجرة ملفات مصغّرة، ثم تأتي بطاقة خطأ تصبغ المشهد بالكهرماني ويحكّ الوكيل رأسه.
-- 24-34 ث: الإصلاح: كتلة diff تمسح الأخضر فوق الأحمر، ونقاط مشغّل الاختبارات تمتلئ واحدة تلو الأخرى، وينفجر رذاذ من الأقواس والفواصل المنقوطة احتفالًا بالنجاح.
-- 34-42 ث: لوحة النتائج: عدد الأدوار والملفات المعدَّلة والاختبارات الناجحة تتصاعد في لوحة بينما تتصافح الشخصيتان بقفزة ضغط وتمدّد.
-- 42-45 ث: بطاقة ختامية بتاريخ الجلسة؛ يتلاشى كل شيء إلا المؤشر الذي يستمر في الوميض لنهاية قابلة للتكرار.
+- 0-4.4 ث: ليل: الوكيل الصندوقي نائم على مكتبه مع Zzz متكررة، النافذة كحلية بقمر ومصباح المكتب يتوهج؛ في الغرفة غيتار ولوحة دبابيس وملصق منحنى تخفيف وأسطوانة.
+- 4.4-8.8 ث: تقريب إلى الشاشة حيث يكتب سطر أخضر أحادي بدء الجلسة بمؤشر مربع، ثم ابتعاد بينما تضيء النافذة بالنهار.
+- 8.8-17.6 ث: طائرة ورقية تطير من اليسار، تهبط وتنفتح؛ الوكيل يعبس مركزاً والشاشة تمتلئ بأسطر كود؛ ثم تضييق عينين سعيد حين تظهر أيقونة صورة.
+- 17.6-26.3 ث: تصل ملاحظات أخرى: ملاحظة دائرية بخط اليد تطالب برسائل حقيقية تجعل الوكيل يتعرق بفم نقطي وكود أحمر على الشاشة؛ وملاحظة عن نسخة تصميم ثانية تعيد الفرح.
+- 26.3-35 ث: نجاح: علامة صح خضراء تملأ الشاشة، الوكيل بعينين على شكل قلب ووشاح وردي «رائع» ومشبك فراشة؛ وملاحظة تطلب البناء.
+- 35-44 ث: النافذة تتحول إلى الغسق ثم الليل؛ شريط تقدم يجري على الشاشة والوكيل مركز، ثم علامة صح أخرى ولمعة.
+- 44-52.7 ث: الختام ليلاً: مشابك فراشات أكثر ووشاح ثانٍ يتوجان الوكيل المبتسم بجانب علامة صح خضراء تحت ضوء المصباح.
 
 ## Proposed scenes
-- 0-4s: A blinking cursor on black; the project name types in at 40ms per glyph, then the camera pulls back to reveal a tiny desk world with the developer and the agent character.
-- 4-12s: The developer types the first request; the words roll up into a scroll that flies across the desk, the agent catches it and its eyes light up as it unrolls.
-- 12-24s: Tool-call montage: read, search and edit events arrive as cards snapping in on beats, the touched node in a mini file tree pulses, then an error card turns the scene amber and the agent scratches its head.
-- 24-34s: The fix: a diff block wipes green over red, test-runner dots fill one by one, and a burst of brackets and semicolons celebrates the pass.
-- 34-42s: Scoreboard: turns, files touched and tests passed count up in a panel while the two characters high-five with a squash-and-stretch bounce.
-- 42-45s: Outro card with the session date; everything fades except the cursor, which keeps blinking for a loop-friendly end.
+- 0-4.4s: Night: the box agent sleeps at its desk with a looping Zzz, the window navy with a moon, desk lamp glowing; the room shows a guitar, corkboard, easing-curve poster and record.
+- 4.4-8.8s: Push-in to the monitor where a green mono line types the session start with a block cursor, then pull back as the window brightens to day.
+- 8.8-17.6s: A paper airplane flies in from the left, lands and unfolds; the agent frowns in focus while the monitor fills with code lines; then a happy squint as an image icon appears.
+- 17.6-26.3s: More notes arrive: a round handwritten note demanding real messages makes the agent sweat with a dot mouth and red code on screen; a design-pass note brings joy again.
+- 26.3-35s: Success: a green check fills the monitor, the agent gets heart eyes and a pink 'so cool' sash plus a butterfly clip; a note asks to build.
+- 35-44s: The window turns to dusk and night; a progress bar runs on the monitor while the agent concentrates, then another check and a sparkle.
+- 44-52.7s: Finale at night: more butterfly clips and a second sash crown the beaming agent beside a green check under the lamp glow.
 
 ## قواعد الحركة
-- تدخل بطاقات الواجهة بمنحنى cubic-bezier(0.22, 1, 0.36, 1) خلال 420 مللي ثانية وتخرج بمنحنى cubic-bezier(0.4, 0, 1, 1) خلال 260 مللي ثانية.
-- تتحرك الشخصيات بمنحنى متدرّج (steps(12) في الثانية أي ثبات إطارين) لتبدو مرسومة باليد؛ وتبقى عناصر الواجهة ناعمة؛ لا يُجمع الأسلوبان على عنصر واحد.
-- حركة كاميرا واحدة لكل مشهد: دولي بطيء من مقياس 1.00 إلى 1.08؛ الانتقال بين المشاهد قطع حاد يقع ضمن 40 مللي ثانية من النبضة الموسيقية القوية؛ لا سحبات سريعة ولا اهتزاز.
-- تبقى كل بطاقة استدعاء أداة 900 مللي ثانية على الأقل ليُقرأ مسار الملف، بحدّ أقصى ثلاث بطاقات متراكبة على الشاشة.
-- خط أحادي العرض لكل ما يُقتبس من السجل؛ خط عرض مستدير لتعليقات السرد؛ التعليقات العربية بخط نسخي وتُبقي الخط أحادي العرض للكود فقط.
-- قاعدة طرفية داكنة مع لون تمييز واحد لكل نوع حدث (قراءة، تعديل، اختبار، خطأ)؛ يجوز لحالة الخطأ أن تصبغ الإطار كله بنسبة لا تتجاوز 15%.
-- تُلحَّن الموسيقى على قوس الجلسة: خفيفة تحت الطلب، أكثف تحت استدعاءات الأدوات، وتنحلّ عند نجاح الاختبار؛ ويُخفض المزج 6 ديسيبل تحت أي صوت كتابة.
-- ممنوع: عرض محتوى ملفات حقيقي أو أسرار من السجل، وتعليقات تتجاوز 8 كلمات، وأي إطار ثابت يدوم أكثر من ثانيتين.
+- ديكور واحد متصل بلا أي قطعة؛ الكاميرا ثابتة على لقطة عريضة وتقترب فقط من الشاشة (نحو 0.8 ثانية) ثم تبتعد.
+- كل رسالة من المستخدم طائرة ورقية على مسار منحنٍ تهبط وتنفتح إلى ملاحظة بخط اليد في نحو ثانية.
+- التمثيل بتبديل أشكال العينين والفم في كل لحظة (عبوس تركيز، فرح بعينين مضيقتين، قطرة عرق، عينان على شكل قلب) مع إيماءات ذراع صغيرة وانضغاط عند الفرح.
+- الشاشة تروي العمل: أسطر كود، أيقونة صورة، كود خطأ أحمر، شريط تقدم، علامة صح خضراء.
+- المكافآت تتراكم ولا تُمحى: نص الوشاح يتبع مساراً منحنياً ومشابك الفراشات تزداد على الرأس.
+- الوقت يمر بالإضاءة: سماء النافذة تتلاشى من النهار إلى الليل والغرفة تبرد إلى الرمادي مع بركة ضوء دافئة من المصباح؛ وبخار يتصاعد من الكوب.
+- اللوحة: جدار كريمي #eadbbb، إطار سفلي فيروزي #95a7a2، برتقالي الوكيل #c37851 و#b7683e، ليل #312f45، حبر بني #7d4d43، خط #2a2a2a، وردي #e05a7a، أصفر #f2c84a، أخضر #4caf50 وورق #f1e8d1؛ التصيير بمعدل 24 إطاراً.
 
 ## Motion rules
-- UI cards enter with cubic-bezier(0.22, 1, 0.36, 1) over 420ms and exit with cubic-bezier(0.4, 0, 1, 1) over 260ms.
-- Characters animate on a stepped curve (steps(12) per second, i.e. 2-frame holds) to feel hand-drawn; UI elements stay smooth; never mix both on one element.
-- One camera move per scene: a slow dolly from scale 1.00 to 1.08; scene changes are hard cuts placed within 40ms of a musical downbeat; no whip pans or shake.
-- Each tool-call card stays at least 900ms so its file path is readable, with at most three cards stacked on screen.
-- Monospace type for anything quoted from the log; a rounded display face for narrative captions; Arabic captions use a Naskh-style face and keep monospace only for code.
-- Dark terminal base with one accent per event type (read, edit, test, error); the error state may tint the whole frame by at most 15%.
-- The score is composed to the session arc: sparse under the prompt, denser under tool calls, resolving on the green test run; the mix ducks 6dB under any typed text sound.
-- Banned: showing real file contents or secrets from the log, captions over 8 words, and any still frame held longer than 2s.
+- One continuous set with zero cuts; the camera is locked wide and only pushes in to the monitor (~0.8 s) and pulls back.
+- Each user message is a paper airplane on a curved flight path that lands and unfolds into a handwritten note in about 1 s.
+- Acting is done by swapping eye and mouth shapes per beat (focus frown, squint joy, sweat drop, heart eyes) plus small arm gestures and squash on joy.
+- The monitor narrates the work: code lines, an image icon, red error code, a progress bar, a green check.
+- Rewards accumulate and never reset: sash text follows a curved path, butterfly clips add up on the head.
+- Time passes through lighting: the window sky crossfades day to night and the room cools to grey with a warm desk-lamp pool; steam rises from the mug.
+- Palette: cream wall #eadbbb, teal wainscot #95a7a2, agent orange #c37851 and #b7683e, night #312f45, brown ink #7d4d43, outline #2a2a2a, pink #e05a7a, yellow #f2c84a, green #4caf50 and paper #f1e8d1; render at 24 fps.
 
 ## Facts stated by the source (rewritten in our words)
 - Distributed as an installable skill rather than a single prompt.
@@ -61,7 +61,7 @@ The subject is an actual coding session mined from the local Claude Code history
 - The creator tagged it under characters and code.
 
 ## Assumptions
-The source states only the pipeline (local history in, scored HyperFrames film out); the two-character cast, the 45s length, the stepped-animation look and the scene order are proposed directions, not observed facts.
+Observed from frames sampled every ~4.4 s: the single office set, the box agent, paper-airplane notes, monitor states, expression swaps, accumulating rewards and the day-to-night window, with no cuts over about 52.7 s at 24 fps. Assumed: the score and sound effects (not heard) and exact beat boundaries; there is no developer character, terminal base or diff wipe.
 
 ## Keywords
-claude code, session replay, agent story, hyperframes, terminal animation, code montage, character animation, قصة برمجية, وكيل ذكاء اصطناعي, شخصيات كرتونية, سجل الجلسة, موسيقى تصويرية, مونتاج كود
+claude code, session replay, agent story, character animation, cartoon office, paper airplane notes, expression swaps, day to night, one continuous set, قصة برمجية, وكيل ذكاء اصطناعي, شخصية كرتونية, رسائل ورقية, من النهار إلى الليل

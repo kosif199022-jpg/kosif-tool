@@ -1,7 +1,7 @@
 {
   "id": "pm-samaote-5e2fc2",
   "name": "Synced lyrics motion video",
-  "name_ar": "فيديو كلمات أغنية متزامن مع الصوت",
+  "name_ar": "فيديو كلمات أغنية تحكيه شمس: من الشروق إلى الكسوف",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -32,21 +32,23 @@
     "playbooks/kinetic-type.md",
     "playbooks/music.md"
   ],
-  "summary_ar": "كلمات الأغنية تظهر على نبرة المغني بالضبط بينما تتنفس الخلفية مع الإيقاع، بأسلوب يليق بعرض أعمال مصمم موشن.",
-  "summary_en": "Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.",
+  "summary_ar": "فيديو كلمات أغنية مدته 30 ثانية تحكيه شمس: تشرق فوق أفق البحر، تشتعل وتملأ الإطار، تفقد ألوانها في لحظة «أوقف الزمن»، تصير نقطة حمراء مسطحة على ورق كريمي بشبكة، وتنتهي بكسوف وقوس ابتسامة أحمر متوهج. الخط يتغير بين الأقسام داخل إطار HUD دائم بعدّاد تنازلي وعدّاد مازورات ووسم الفصل.",
+  "summary_en": "A 30-second lyric video told through a sun: it rises over a sea horizon, ignites and fills the frame, drains to grey on a 'stop time' beat, becomes a flat red dot on cream paper with a grid, and ends in an eclipse and a glowing red smile arc. Lyric type changes per section inside a persistent HUD with a countdown, bar counter and chapter label.",
   "keywords": [
-    "lyrics video",
-    "kinetic typography",
-    "beat sync",
+    "lyric video",
     "word timing",
-    "showreel",
+    "beat sync",
+    "sun narrative",
+    "eclipse",
+    "focus pull",
+    "hud countdown",
+    "text on circle",
+    "greyscale snap",
+    "film grain",
     "كلمات أغنية",
     "تزامن صوتي",
-    "طباعة حركية",
-    "إيقاع",
-    "waveform",
-    "remotion",
-    "موجة صوتية"
+    "شمس",
+    "طباعة حركية"
   ],
   "difficulty": 4,
   "duration_s": 30,

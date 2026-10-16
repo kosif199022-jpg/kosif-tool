@@ -24,30 +24,31 @@
   "listed": true,
   "skill": "styles/pm-kloss-xyz-fe0c31/SKILL.md",
   "playbooks": [],
-  "summary_ar": "فيلم خط زمني مدته 45 ثانية يسافر على مسار واحد عبر محطات الذكاء الاصطناعي الكبرى من اختبار تورنغ إلى نماذج اللغة الحديثة.",
-  "summary_en": "A 45-second timeline film that rides a single track through the big AI milestones, from the Turing test to modern language models.",
+  "summary_ar": "فيلم وثائقي داكن طويل (نحو 172 ثانية) عن تاريخ الذكاء الاصطناعي مقسّم إلى فصول مرقّمة: مخطط عصبون منطقي، عنوان دارتموث، طرفية ELIZA، منحنى شتاءات الذكاء الاصطناعي، شبكة التفاف تقرأ الرقم 7، فسيفساء ImageNet، لوح Go ثلاثي الأبعاد، أقواس الانتباه، كلمة تولد من الضجيج، وختام بمجرّة جسيمات.",
+  "summary_en": "A long, dark documentary film (about 172 s) on the history of AI split into numbered chapters: a logic-neuron diagram, the Dartmouth title, an ELIZA terminal, the AI-winter curve, a convolution net reading a 7, an ImageNet mosaic, a 3D Go board, attention arcs, a word forming from noise and a closing particle galaxy.",
   "keywords": [
-    "timeline",
     "history explainer",
-    "milestones",
-    "lateral dolly",
-    "year counter",
-    "turing test",
-    "deep learning",
-    "ai winter",
-    "خط زمني",
+    "documentary",
+    "chapter plates",
+    "ai history",
+    "neuron diagram",
+    "terminal typewriter",
+    "ai winter chart",
+    "attention arcs",
+    "diffusion denoise",
+    "particle galaxy",
     "تاريخ الذكاء الاصطناعي",
-    "محطات",
-    "فيلم تعليمي",
-    "كاميرا جانبية",
-    "بطاقات معلومات"
+    "فيلم وثائقي",
+    "فصول مرقمة",
+    "مخططات خطية"
   ],
-  "difficulty": 3,
-  "duration_s": 45,
+  "difficulty": 4,
+  "duration_s": 172,
   "stack": [
     "Remotion",
     "React",
-    "SVG"
+    "SVG",
+    "Three.js"
   ],
   "brief": "styles/pm-kloss-xyz-fe0c31/BRIEF.md"
 }

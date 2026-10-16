@@ -30,29 +30,31 @@
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
-  "summary_ar": "ريل ترويج ذاتي في 15 ثانية يثبت أربع مهارات متتابعة: حروف حركية، مخططات تُبنى من الصفر، أشكال تتحول، وبطاقة توقيع ختامية.",
-  "summary_en": "A 15-second self-promo reel proving four motion skills in sequence: kinetic type, charts built from zero, morphing shapes, and a signature end card.",
+  "summary_ar": "ريل مهارات موشن سريع مدته 15 ثانية مقطوع على شبكة 120 نبضة في الدقيقة: نقاط، حرف داخل دائرة، كلمات ضخمة على الأحمر، مربع أزرق مستدير بمقابض تحويل، زهرة نقاط فيلوتاكسية، شبكة نقاط بموجة، سحابة جسيمات ثلاثية الأبعاد، شريط مخطط يرسم منحنى على الأصفر، نص على مسارات دائرية، وختام Claude.",
+  "summary_en": "A fast 15-second motion-skills reel cut on a 120 BPM grid: dots, a letter in a circle, giant uppercase words on red, a blue rounded square with transform handles, a phyllotaxis dot flower, a waving dot grid, a 3D particle cloud, a striped ribbon drawing a curve on yellow, text on circular paths and a closing serif signature.",
   "keywords": [
     "showreel",
-    "ريل مصمم",
-    "سيرة ذاتية متحركة",
-    "kinetic typography",
-    "bar chart animation",
-    "shape morph",
-    "beat grid",
-    "حروف حركية",
-    "مخطط متحرك",
-    "تحول الأشكال",
     "self promo",
-    "remotion reel",
-    "قطع حاد"
+    "beat cuts",
+    "120 bpm",
+    "phyllotaxis",
+    "dot grid wave",
+    "particle cloud",
+    "ribbon draw",
+    "circular text",
+    "hud overlay",
+    "ريل مصمم",
+    "قطع على الإيقاع",
+    "أنماط توليدية",
+    "نص دائري"
   ],
   "difficulty": 3,
   "duration_s": 15,
   "stack": [
     "Remotion",
     "React",
-    "SVG"
+    "SVG",
+    "Three.js"
   ],
   "brief": "styles/pm-mrtanviir-132457/BRIEF.md"
 }

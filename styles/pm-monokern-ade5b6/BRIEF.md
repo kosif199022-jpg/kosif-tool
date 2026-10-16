@@ -1,58 +1,60 @@
 # العين المنوّمة: ريل سايكدلي عشرون ثانية — Psychedelic hypnotic eye showreel
 
-> ريل مدته 20 ثانية يدور حول عين مركزية: حلقات تنبض، تكبير لا نهائي داخل البؤبؤ، تناظر كاليدوسكوبي، ونص يدور حولها ورسم شعاعي ينمو في القزحية.
+> ريل سايكدلي مدته 20 ثانية: عين تنفتح من خط أفقي، ثم أنفاق من العيون والحلقات المتوهجة، أشعة قوس قزح، كتلة كروم سائل متقزحة، مشكالات، حلزون عيون، مشهد ضبابي أبيض، عين نيون، وعنوان ختامي متوهج.
 >
-> A 20-second reel built around one central eye: pulsing rings, an endless zoom into the pupil, kaleidoscope symmetry, text orbiting it and a radial chart growing inside the iris.
+> A 20-second psychedelic reel: an eye opens from a horizontal line, then tunnels of eyes and glowing rings, rainbow rays, an iridescent liquid-chrome blob, kaleidoscopes, a spiral of eyes, a foggy white scene, a neon eye and a glowing end title.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/monokern-ade5b6
 - التصنيفات / Categories: charts, kinetic-type
 - النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 20 s · الصعوبة / Difficulty: 4/5
-- التقنية المقترحة / Stack: HTML Canvas, WebGL, Remotion
+- التقنية المقترحة / Stack: WebGL, HTML Canvas, Remotion
 
 ## الفكرة
-الموضوع ريل شخصي بطابع سايكدلي منوّم، يلتقط الانتباه ويمسكه بالتكرار والتناظر. الهدف أن يثبت المصمم سيطرته على الإيقاع البصري: الصورة لا تتوقف عن الحركة لكنها لا تتعب العين. اللغة الحركية تعتمد على عين واحدة كبؤرة ثابتة تُبنى حولها كل الحركة: تكبير مستمر بسرعة ثابتة نحو البؤبؤ يخلق إحساس النفق، تناظر سداسي يحوّل أي شكل إلى زخرفة، ودوران ألوان بطيء بدلاً من القطع؛ كل البيانات والنصوص تُرسم بشكل شعاعي حول المركز لا في صفوف.
+الموضوع عين واحدة تتكرر وتتحول، والهدف إحساس تنويمي يسحب العين نحو المركز. كل شيء متمركز شعاعياً والكاميرا تتقدم باستمرار. المشاهد تتعاقب كتنويعات على الدائرة: نفق، أشعة، كتلة سائلة، مشكال، حلزون، ثم عين أخرى، بتوهج قوي وحواف لونية منفصلة، وتنتهي بعنوان واحد متوهج.
 
 ## Concept
-The subject is a personal reel with a psychedelic, hypnotic character that grabs attention and holds it through repetition and symmetry. The goal is to prove command of visual rhythm: the image never stops moving yet never tires the eye. The motion language uses one eye as a fixed focal point around which everything is built: a constant-speed zoom toward the pupil creates a tunnel feeling, six-fold symmetry turns any shape into ornament, and slow hue rotation replaces cuts; all data and text are laid out radially around the centre rather than in rows.
+The subject is a single eye repeated and transformed, aiming for a hypnotic pull toward the centre. Everything is radially centred and the camera keeps pushing in. Scenes follow as variations on the circle: tunnel, rays, liquid blob, kaleidoscope, spiral, then another eye, with strong glow and chromatic fringes, ending on one glowing title.
 
 ## المشاهد المقترحة
-- 0-3 ث: نقطة على الأسود تتسع إلى قزحية؛ حلقات متحدة المركز تنبض للخارج مع كل ضربة بإيقاع 120 BPM، ويرسم الجفنان نفسيهما كقوسين.
-- 3-8 ث: تدفع الكاميرا بثبات داخل البؤبؤ؛ نفق من حلقات ومثلثات وأقواس متداخلة يمر بينما تدور الألوان ببطء.
-- 8-12 ث: ينطوي النفق إلى كاليدوسكوب سداسي؛ حلقة من كلمات قصيرة تدور حول المركز على مسار دائري، عكس اتجاه دوران النمط.
-- 12-16 ث: داخل القزحية ينمو رسم أعمدة شعاعي قطعة قطعة، وتدور قيمه كتسميات صغيرة؛ ينقبض البؤبؤ عند اكتمال الرسم.
-- 16-19 ث: يضيق لولب من الحافة نحو الداخل، يفقد النمط تشبعه، وترمش العين مرتين.
-- 19-20 ث: أسود مع اسم المصمم وحلقة رفيعة واحدة تكمل دورة ثم تتوقف.
+- 0-1.7 ث: حقل بنفسجي شبه أسود بخطوط عدسة متحدة المركز رفيعة؛ شق أفقي ينفتح إلى عين بقزحية متقزحة.
+- 1.7-4 ث: الكاميرا تدخل البؤبؤ إلى نفق من حلقات وردية وزرقاء متوهجة يتقدم بلا نهاية.
+- 4-6.7 ث: قطع حاد: نفق من عيون صغيرة كثيرة في حلقات حول قلب أبيض متوهج، ثم أشعة قوس قزح تنطلق من حلقة نيون.
+- 6.7-10 ث: كتلة كروم سائل متقزحة تتمايل مع قطرات تابعة فوق حلقات داكنة، ثم تتحول إلى مشكال سداسي التناظر.
+- 10-13.4 ث: قطع حاد عند نحو 11.4 ث إلى حلزون عيون يدور نحو مركز ساطع.
+- 13.4-16.7 ث: مشهد أبيض ضبابي باهت من كرات لامعة وأرضية متموجة، ودفعة وميض حول 15.5-16 ث، ثم مشكال نيون ثانٍ.
+- 16.7-18.4 ث: عين نيون بجفون مخططة بالأرجواني والفيروزي وبؤبؤ من حلقة متوهجة.
+- 18.4-20 ث: عنوان ختامي بأحرف كبيرة عريضة ممتدة مع توهج وحواف لونية منفصلة وتحته سطر سيريف مائل.
 
 ## Proposed scenes
-- 0-3s: A dot on black dilates into an iris; concentric rings pulse outward on every beat at 120 BPM and the eyelids draw themselves as two arcs.
-- 3-8s: The camera pushes steadily into the pupil; a tunnel of nested rings, triangles and arcs scrolls past while hues cycle slowly.
-- 8-12s: The tunnel folds into a six-fold kaleidoscope; a ring of short words rotates around the centre on a circular path, counter-rotating against the pattern.
-- 12-16s: Inside the iris a radial bar chart grows segment by segment, with values orbiting as small labels; the pupil contracts as the chart completes.
-- 16-19s: A spiral tightens from the edge inward, the pattern desaturates and the eye blinks twice.
-- 19-20s: Black with the designer's name and a single thin ring that completes a rotation and stops.
+- 0-1.7s: Near-black violet field with thin concentric lens lines; a horizontal slit opens into an eye with an iridescent iris.
+- 1.7-4s: The camera pushes into the pupil into a tunnel of glowing pink and blue rings that zooms endlessly.
+- 4-6.7s: Hard cut: a tunnel of many small eyes arranged in rings around a white glowing core, then rainbow rays radiating from a neon ring.
+- 6.7-10s: An iridescent liquid-chrome blob wobbles with satellite droplets on dark rings, morphing into a six-fold kaleidoscope.
+- 10-13.4s: Hard cut at about 11.4 s to a spiral of eyes rotating into a bright centre.
+- 13.4-16.7s: A foggy, washed-out white scene of glossy spheres and rippled floor, a flicker burst around 15.5-16 s, and a second neon kaleidoscope.
+- 16.7-18.4s: A neon eye with striped magenta and teal lids and a glowing ring pupil.
+- 18.4-20s: End title in wide extended uppercase with a glow bloom and chromatic fringe, an italic serif line beneath.
 
 ## قواعد الحركة
-- التكبير للداخل يعمل بمعدل ثابت (المقياس يتضاعف كل 2.5 ثانية) بلا easing طوال مدته؛ البداية والنهاية فقط تستخدمان ease-in-out بمدة 600 ms.
-- النبضات جيبية بتردد 2 Hz وسعة 6 بالمئة من المقياس؛ لا يومض شيء على الشاشة أسرع من 3 Hz للبقاء تحت عتبات الحساسية الضوئية.
-- تدور درجة اللون 360 درجة كاملة خلال 10 ثوان على نمط الخلفية؛ النص وخطوط الرسم تحافظ على تباين إضاءة لا يقل عن 4.5:1 مع ما خلفها.
-- التناظر سداسي أو ثماني فقط، مبني من قطاع مصدر واحد يُعكس في الـshader؛ يمكن للقطاع نفسه أن يدور 10 درجات في الثانية.
-- النص يجلس على مسارات دائرية ويدور 15 درجة في الثانية؛ الدوران المعاكس للنمط إلزامي لتبقى الكلمات مقروءة.
-- الرسم الشعاعي ينمو مع عقارب الساعة، قطعة كل 300 ms بمنحنى cubic-bezier(0.33, 1, 0.68, 1)؛ تظهر التسميات بعد قطعتها بـ150 ms.
-- الكاميرا دفعة واحدة للداخل بلا حركات جانبية؛ مركز العين لا يغادر مركز الإطار تماماً.
-- ممنوع: glitch عشوائي، قطع وميضي، أكثر من دورانين متعاكسين معاً، ظلال ساقطة، وأي نص غير موزع شعاعياً.
+- تقريب مستمر: الكاميرا لا تتوقف عن التقدم نحو المركز، والتكوينات تبقى متناظرة شعاعياً.
+- نوّع الانتقالات: اختراق البؤبؤ، قطعتان حادتان (نحو 4 و11.4 ث) ودفعة وميض قصيرة قرب 15.5-16 ث.
+- كل عنصر يتوهج: مزج جمعي وتوهج وانفصال لوني خفيف على الحواف الساطعة.
+- الأشكال لا تتوقف: الحلقات تنبض للخارج، المشكالات تدور، الحلزون يلتف، والكتلة تتمايل بإزاحة يقودها الضجيج.
+- اللوحة: بنفسجي شبه أسود #0e0312 مع وردي حار #ff3fa4 وسماوي #3fd1ff وليموني #9dff6a وإضاءات بيضاء #ffffff وظلال رمادية مزرقة #5f7787.
+- التزم بحدود الحساسية الضوئية (لا أكثر من ثلاث ومضات كاملة في الثانية).
+- النص في النهاية فقط: عنوان غروتسك ممتد 800 بأحرف كبيرة مع سطر سيريف مائل؛ تسميات HUD صغيرة في الزوايا.
 
 ## Motion rules
-- The inward zoom runs at a constant rate (scale doubles every 2.5 s) with no easing while it lasts; only its start and end use a 600 ms ease-in-out.
-- Pulses are sinusoidal at 2 Hz with an amplitude of 6 percent scale; nothing on screen flashes faster than 3 Hz, to stay below photosensitivity thresholds.
-- Hue rotates a full 360 degrees over 10 s on the background pattern; text and chart strokes keep luminance contrast of at least 4.5:1 against whatever is behind them.
-- Symmetry is six- or eight-fold only, built from one source wedge mirrored in the shader; the wedge itself may rotate at 10 degrees per second.
-- Text sits on circular paths and rotates at 15 degrees per second; counter-rotation against the pattern is mandatory so the words stay readable.
-- The radial chart grows clockwise, one segment per 300 ms with cubic-bezier(0.33, 1, 0.68, 1); labels fade in 150 ms after their segment.
-- The camera is a single push-in with no lateral moves; the eye centre never leaves the exact frame centre.
-- Banned: random noise glitch, strobe cuts, more than two opposing rotations at once, drop shadows, and any text not laid out radially.
+- Constant push-in: the camera never stops zooming toward the centre; compositions stay radially symmetric.
+- Mix transition types: zoom-through the pupil, two hard cuts (about 4 and 11.4 s) and one short flicker burst near 15.5-16 s.
+- Every element glows: additive blending, bloom and a slight chromatic fringe on bright edges.
+- Shapes keep moving: rings pulse outward, kaleidoscopes rotate, the spiral turns, the blob wobbles with noise-driven displacement.
+- Palette: near-black violet #0e0312 with hot pink #ff3fa4, cyan #3fd1ff, lime #9dff6a, white #ffffff highlights and slate #5f7787 shadows.
+- Keep flashes within photosensitivity limits (no more than three full-frame flashes per second).
+- Text appears only at the end: wide extended grotesk 800 uppercase title plus italic serif tagline; tiny HUD labels sit in the corners.
 
 ## Facts stated by the source (rewritten in our words)
 - The creator asked for a 20-second dynamic motion graphics piece with a psychedelic and hypnotic feel, framed as a showreel.
@@ -60,7 +62,7 @@ The subject is a personal reel with a psychedelic, hypnotic character that grabs
 - No stack, colours or structure are described.
 
 ## Assumptions
-Stated: 20 seconds, psychedelic and hypnotic mood, showreel framing, chart and kinetic-type tags, the eye as motif from the title. Assumed: the constant-rate zoom, kaleidoscope symmetry, BPM, hue-cycle timing, the radial chart and the photosensitivity limits.
+Observed from frames sampled every ~1.7 s: the eye opening, tunnels, rays, chrome blob, kaleidoscopes, spiral, fog scene, neon eye and the glowing end title, plus cuts near 4 and 11.4 s. Assumed: shader methods, exact hues of the glow ramps and music sync.
 
 ## Keywords
-psychedelic, hypnotic, kaleidoscope, كاليدوسكوب, infinite zoom, تكبير لا نهائي, radial chart, رسم شعاعي, circular text, نص دائري, hue rotation, تناظر, eye motif, showreel, دوران ألوان
+psychedelic, hypnotic, eye motif, infinite zoom, kaleidoscope, liquid chrome, spiral, neon glow, chromatic aberration, تكبير لا نهائي, كاليدوسكوب, عين, توهج نيون, كروم سائل

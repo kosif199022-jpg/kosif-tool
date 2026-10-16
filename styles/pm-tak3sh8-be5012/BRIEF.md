@@ -1,56 +1,58 @@
 # سبورة مرسومة باليد تشرح كسر تناظر النسخ في نموذج SK — Replica symmetry breaking whiteboard
 
-> شرح بأسلوب السبورة البيضاء، تُرسم فيه الخطوط أمام المشاهد مع تعليق صوتي، لفكرة كسر تناظر النسخ في نموذج شيرينغتون-كيركباتريك للزجاج المغزلي.
+> شرح سبورة طويل (نحو 5 دقائق و8 ثوانٍ) داخل إطار سبورة على جدار رمادي داكن، يكتب فيه قلم ظاهر عنوان كل قسم ثم يرسم: شبكة مغازل متصلة كلها بأزواج حمراء وزرقاء، مثلث محبط ومنحنى طاقة وعر، نسخ في صناديق بأقواس اقتران، مصفوفة تداخل بنتيجة خاطئة محاطة بالأحمر، مصفوفات كتل متداخلة مظللة، ثم شجرة فوق مترية ومخطط P(q). ممحاة تمسح السبورة بين الفصول، وترجمة متزامنة مع التعليق أسفلها، وينتهي بملخص من خمس نقاط ملونة.
 >
-> A narrated whiteboard explainer where strokes are drawn live, walking from a frustrated spin glass to Parisi's hierarchical overlap matrix.
+> A long whiteboard explainer (about 5 min 8 s) inside a framed board on a dark slate wall, where a visible marker writes each section title and then draws: an all-to-all spin network with red and blue couplings, a frustrated triangle and a rugged energy curve, boxed replicas with coupling arcs, an overlap matrix with a red-circled wrong result, hatched nested block matrices, then an ultrametric tree and a P(q) plot. An eraser wipes the board between chapters, narration-synced subtitles sit below, and it ends on a colour-coded five-point recap.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/tak3sh8-be5012
 - التصنيفات / Categories: diagrams
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 60 s · الصعوبة / Difficulty: 4/5
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 308 s · الصعوبة / Difficulty: 4/5
 - التقنية المقترحة / Stack: SVG, Remotion, Web Audio
 
 ## الفكرة
-الموضوع فيزيائي متقدّم: نموذج شيرينغتون-كيركباتريك (SK) للزجاج المغزلي، حيث تتفاعل كل المغازل مع بعضها بأوزان عشوائية، وحلّه عبر خدعة النسخ (replica trick) ثم اكتشاف أن الحل المتناظر بين النسخ غير مستقر، فيُكسر التناظر هرميًا كما اقترح باريزي. الهدف أن يخرج مشاهد غير متخصص بحدس بصري: المشهد الطاقي له وديان كثيرة، والمصفوفة التي تقيس تشابه النسخ تتحوّل من قيمة واحدة إلى كتل متداخلة ثم إلى شجرة. اللغة الحركية هي سبورة بيضاء يرسمها قلم ماركر خطًا خطًا بتزامن مع كلمات التعليق الصوتي، بلا مؤثرات لامعة، مع لون واحد فقط للتأكيد على لحظة الكسر.
+الموضوع كسر تناظر النسخ في نموذج شيرينغتون-كيركباتريك للزجاج المغزلي، يُشرح كدرس سبورة بإيقاع المحاضرة. سبعة فصول تقريباً، كل منها يبدأ بعنوان مكتوب ومسطّر ثم يتراكم الرسم والمعادلات على السبورة نفسها بإيقاع جمل التعليق. أربعة ألوان حبر لكل منها دور (أسود للبنية، أحمر للخطأ والاقتران الموجب، أزرق للسالب والمنحنيات، أخضر للنتائج)، والقلم يظهر على رأس الخط ويتغير لون غطائه مع لون الحبر.
 
 ## Concept
-The subject is advanced physics: the Sherrington-Kirkpatrick spin glass, where every spin couples to every other with random weights, the replica trick used to average over disorder, and the discovery that the replica-symmetric solution is unstable, leading to Parisi's hierarchical symmetry breaking. The goal is to leave a non-specialist with a visual intuition: an energy landscape with many valleys, and an overlap matrix that goes from one uniform value to nested blocks and finally to a tree. The motion language is a whiteboard drawn stroke by stroke by a marker in sync with narration, with no glossy effects and a single accent colour reserved for the moment symmetry breaks.
+The subject is how the Sherrington-Kirkpatrick spin glass loses its replica symmetry, explained as a whiteboard lesson at lecture pace. There are about seven chapters, each starting with a written, underlined title, after which drawings and equations accumulate on the same board in step with the narration sentences. Four ink colours each have a role (black for structure, red for errors and positive couplings, blue for negative couplings and curves, green for results), and the marker is visible at the stroke tip, its cap colour matching the ink.
 
 ## المشاهد المقترحة
-- 0-8ث: يُكتب العنوان بخط اليد أعلى اليسار؛ تظهر حلقة من 8-10 مغازل كأسهم صغيرة، وتربط خطوط الماركر كل زوج منها، بعضها موسوم بزائد وبعضها بناقص لبيان الأوزان العشوائية.
-- 8-18ث: يُرسم منحنى مشهد طاقي خشن بوديان كثيرة متفاوتة العمق؛ كرة صغيرة تجرّب واديين وتعلق، لتجسيد الإحباط (frustration) وتعدد الحالات القريبة من الأرضية.
-- 18-30ث: تُكتب خدعة النسخ على إيقاع المعلّق: n نسخة من النظام كمستطيلات متراصّة، ويُكتب التداخل بين نسختين كرمز q بمؤشرين.
-- 30-42ث: تُرسم مصفوفة تداخل n×n؛ يملأ الحل المتناظر كل خلية خارج القطر بالقيمة نفسها، ثم يظهر تحتها خط مرتجف بلون التأكيد يحمل كلمة غير مستقر.
-- 42-55ث: تُعاد المصفوفة بكتل متداخلة على طول القطر (مستوى أول ثم مستوى ثانٍ داخله)، وتُرسم إلى جانبها شجرة متفرّعة تبيّن هرمية الحالات.
-- 55-60ث: تُسحب السبورة إلى لقطة واسعة؛ تُحاط ثلاث خلاصات من سطر واحد بدوائر، ويُسطّر العنوان مع اختتام التعليق الصوتي.
+- 0-45 ث: النموذج: العنوان يُكتب ويُسطّر؛ عقد المغازل بأسهم صاعدة وهابطة تظهر في حلقة ثم تُرسم الحواف بين الجميع واحدة تلو الأخرى بالأحمر والأزرق؛ وتُكتب الملاحظات والهاميلتوني يميناً مع مفتاح الألوان.
+- 45-75 ث: الإحباط: مثلث مغازل بروابط موجبة وسالبة وعلامة استفهام، ملاحظة حمراء بأن لا ترتيب يرضي الثلاثة، ومنحنى طاقة وعر أزرق يُرسم من اليسار إلى اليمين على محورين معنونين.
+- 75-125 ث: حيلة النسخ: صيغة الطاقة الحرة وحيلة النهاية تُكتبان بالأسود والأزرق؛ تظهر نسخ من نظام المغازل في صناديق مع أقواس اقتران خضراء تحتها وتعريف التداخل.
+- 125-155 ث: التخمين الأول: مصفوفة تداخل بقيم متساوية وملاحظة؛ والإنتروبيا السالبة الناتجة تُحاط بالأحمر مع علامة خطأ؛ ثم تنزلق ممحاة وتمسح السبورة في نحو ثانية.
+- 155-205 ث: الكسر خطوة خطوة: مربع مظلل يصبح أرباعاً بتظليل أخضر ثم كتلاً فرعية حمراء أعمق، مع أسهم بين المراحل الثلاث.
+- 205-257 ث: المعنى: شجرة فوق مترية تُرسم من الأعلى إلى الأسفل بخطوط مستويات متقطعة معنونة بثلاثة ألوان وأوراق تمثل الحالات النقية، بجانب مخطط P(q) يُرسم على محورين.
+- 257-308 ث: ملخص على سبورة نظيفة: خمسة أسطر مرقمة يُكتب كل منها مع جملة من التعليق، كل سطر بلون فصله، مع حاشية في إطار في النهاية.
 
 ## Proposed scenes
-- 0-8s: Title is handwritten top-left; a ring of 8-10 spins appears as small arrows, and marker lines connect every pair, some labelled plus and some minus to show random couplings.
-- 8-18s: A rough energy-landscape curve is drawn with many valleys of different depths; a small ball tries two valleys and gets stuck, visualising frustration and many near-ground states.
-- 18-30s: The replica trick is written out in the narrator's rhythm: n copies of the system sketched as stacked rectangles, and the overlap between two copies written as q with two indices.
-- 30-42s: An n-by-n overlap matrix is drawn; the replica-symmetric guess fills every off-diagonal cell with the same value, then a wobbling 'unstable' underline appears in the accent colour.
-- 42-55s: The matrix is redrawn with nested blocks along the diagonal (one level, then a second level inside), and a branching tree is drawn beside it to show the hierarchy of states.
-- 55-60s: The board is panned back to a wide view; three one-line takeaways are circled and the title is underlined as the narration closes.
+- 0-45s: The model: title written and underlined; spin nodes with up and down arrows appear in a ring, then all-to-all edges draw one by one in red and blue; notes and the Hamiltonian write on at the right with a colour legend.
+- 45-75s: Frustration: a triangle of spins with plus and minus bonds and a question mark, a red note that no arrangement pleases all three, and a blue rugged energy curve drawn left to right along labelled axes.
+- 75-125s: The replica trick: the free-energy formula and the limit trick write on in black and blue; boxed copies of the spin system appear with green coupling arcs beneath and the overlap definition.
+- 125-155s: First guess: an overlap matrix with equal entries and a note; the resulting negative entropy is circled in red with a cross; then an eraser block slides in and wipes the board in about 1 s.
+- 155-205s: Breaking it step by step: a hatched square becomes quadrants with green hatching, then deeper red sub-blocks, with arrows between the three stages.
+- 205-257s: What it means: an ultrametric tree drawn top-down with dashed level lines labelled in three colours and leaves as pure states, beside a P(q) plot drawn on axes.
+- 257-308s: Recap on a clean board: five numbered lines written one per narration sentence, each coloured to match its chapter, with a boxed footnote at the end.
 
 ## قواعد الحركة
-- يُكشف كل خط عبر SVG stroke-dashoffset بسرعة قلم ثابتة تقارب 500-700 بكسل في الثانية بمنحنى linear؛ لا يظهر أي منحنى مكتملًا دفعة واحدة.
-- يبدأ كل خط عند الطابع الزمني للكلمة التي يوضّحها؛ عند توفّر توقيت الكلمات يُعاد ضبط الرسم عليها ولا يسبق الصوت بأكثر من 150 مللي ثانية.
-- تتحرك الكاميرا فقط بين مناطق السبورة: تحريك أفقي أو تقريب خلال 800 مللي ثانية بمنحنى easeInOutQuad، بحد أقصى خمس حركات في الفيلم كله، وما عدا ذلك ثابتة.
-- الطباعة: خط يحاكي الكتابة اليدوية للتسميات وخط monospace نظيف للمعادلات؛ تظهر الحروف بالرسم لا بالتلاشي.
-- الألوان: سبورة بيضاء، ماركر شبه أسود، ولون تأكيد دافئ واحد (مقترح أحمر) يُستعمل فقط لخط عدم الاستقرار ولكتل التناظر المكسور.
-- المسح يتم بمسحة 400 مللي ثانية تتبع شكل الممحاة لا بتلاشي الشفافية؛ تُمسح المنطقة قبل إعادة الرسم فيها.
-- ممنوع: التلاشي المتقاطع بأسلوب الشرائح، والظلال، والتدرّجات اللونية، والأيقونات المرتدّة، وأي حركة ليست رسمًا أو مسحًا أو تحريك كاميرا.
+- كل خط وسهم وحرف ومنحنى يُرسم بالتسلسل بإيقاع التعليق؛ أيقونة قلم تركب رأس الخط ويتغير لون غطائها مع الحبر.
+- أربعة أحبار بأدوار ثابتة: أسود #1c1c1c للبنية، أحمر #c42d3f للأخطاء والاقتران الموجب، أزرق #2b4a9b للاقتران السالب والمنحنيات، أخضر #2f8a5b للنتائج.
+- الفصول تتراكم على سبورة واحدة بلا قطعات؛ ممحاة تنزلق وتمسح السبورة (نحو ثانية) بين الفصول.
+- العناوين أعلى اليسار بخط قلم يدوي مع خط سفلي مرسوم؛ والنتائج المهمة تُحاط بقطع ناقص أحمر.
+- الترجمة بخط بسيط بلا زوائد تتبدل مع كل جملة من التعليق في سطر أو سطرين في الوسط على الجدار أسفل السبورة.
+- لقطة عريضة ثابتة: سبورة بيضاء #fbfcf7 بملمس مسح خفيف داخل إطار ألمنيوم رمادي بحامل أقلام، على جدار رمادي أزرق داكن #2f3a3e مع تظليل شعاعي.
+- إيقاع محاضرة: وقفات ساكنة طويلة بينما يستمر التعليق فوق رسم مكتمل (السبورة ثابتة معظم الوقت).
 
 ## Motion rules
-- Every line is revealed with SVG stroke-dashoffset at a constant pen speed of roughly 500-700 px per second with linear easing; curves never pop in fully formed.
-- Each stroke starts on the timestamp of the word it illustrates; when word timings are provided, the drawing is retimed to them and never leads the voice by more than 150 ms.
-- Camera moves only between board regions: a pan or a zoom of 800 ms with easeInOutQuad, at most five moves in the whole film, otherwise static.
-- Typography is a handwritten-style font for labels and a clean monospace for the formulas; letters appear by stroke, not by fade.
-- Colour: white board, near-black marker, one warm accent (proposed red) used only for the unstable underline and the broken-symmetry blocks.
-- Erasing uses a 400 ms wipe that follows an eraser shape, not an opacity fade; a region is erased before it is redrawn.
-- Banned: slide-style crossfades, drop shadows, gradients, bouncing icons, and any motion that is not either drawing, erasing or panning.
+- Every line, arrow, letter and curve draws on in sequence, paced to the narration; a marker icon rides the stroke tip and its cap switches colour with the ink.
+- Four inks with fixed roles: black #1c1c1c for structure, red #c42d3f for errors and positive couplings, blue #2b4a9b for negative couplings and curves, green #2f8a5b for results.
+- Chapters accumulate on one board with no cuts; an eraser block slides in and wipes the board clean (about 1 s) between chapters.
+- Titles sit top-left in handwritten marker and get a hand-drawn underline; key results are circled with a red ellipse.
+- Subtitles in a plain sans swap per narration sentence in one or two centred lines on the wall below the board.
+- Static locked wide shot: an off-white board #fbfcf7 with faint smudge texture inside a grey aluminium frame with a pen tray, on a dark slate wall #2f3a3e with a radial vignette.
+- Lecture pace: long still holds while narration continues over a finished drawing (the board is static most of the time).
 
 ## Facts stated by the source (rewritten in our words)
 - The creator asked for a quick, hand-drawn whiteboard-style animation explaining how replica symmetry gets broken in the Sherrington-Kirkpatrick spin-glass model.
@@ -58,7 +60,7 @@ The subject is advanced physics: the Sherrington-Kirkpatrick spin glass, where e
 - No duration, stack or scene structure is stated; the page lists diagrams as its only tag.
 
 ## Assumptions
-Only the whiteboard look, the physics topic and the narrated MP4 output are stated; the 60-second length, the six-beat structure, the accent colour and all timings are my proposed direction.
+Observed from frames sampled every ~25.7 s plus motion analysis: the chapter titles and drawings, the four ink colours, the visible marker, the eraser wipes, the subtitles and the five-point recap over about 308 s. Assumed: exact chapter boundaries (estimated between samples) and the narration voice, which was not heard.
 
 ## Keywords
-زجاج مغزلي, فيزياء إحصائية, شرح علمي, رسم يدوي, تعليق صوتي, مصفوفة التداخل, باريزي, spin glass, parisi, overlap matrix, whiteboard, hand drawn, narration, physics explainer
+whiteboard, hand drawn, physics explainer, spin glass, overlap matrix, parisi, marker draw-on, eraser wipe, narration subtitles, زجاج مغزلي, سبورة, رسم يدوي, تعليق صوتي, شرح علمي

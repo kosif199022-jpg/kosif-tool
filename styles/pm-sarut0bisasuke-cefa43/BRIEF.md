@@ -1,11 +1,11 @@
 # وصفة الوايت روشن من الكأس الفارغة إلى الكوكتيل — White Russian recipe animation
 
-> فيلم شرح من لقطة واحدة متصلة يبني كوكتيل الوايت روشن مكوّنًا بعد مكوّن مع إظهار الكمية ومستوى الامتلاء في الكأس خلال 30 ثانية.
+> شرح وصفة مدته 30 ثانية بلا صوت على شاشة منقسمة: لوح ورقي كريمي يساراً بكأس مرسوم بخط مرتعش ومسطرة أونصات، وشريط جانبي بيج يميناً بعنوان مكتوب باليد وقائمة مكونات. تسقط مكعبات الثلج، ثم تميل زجاجتان وإبريق قشدة وتسكب بينما يرتفع السائل ويعدّ عدّاد كسور وشريط من خمس خطوات يمتلئ؛ تنتشر القشدة كغيوم في الطبقة الداكنة، ويدور المحرّك، وينتهي بعبارة مكتوبة باليد مع رذاذ حبر.
 >
-> A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.
+> A silent 30-second recipe explainer on a split screen: a cream paper panel on the left with a wobbly hand-drawn rocks glass and an oz ruler, and a beige sidebar on the right with a handwritten title and an ingredient checklist. Ice drops, two bottles and a cream jug tilt in and pour while the liquid rises, a fraction counter ticks and a 5-step progress bar fills; cream diffuses as clouds into the dark layer, a stirrer swirls, and it ends on a handwritten sign-off with ink splatter.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/sarut0bisasuke-cefa43
 - التصنيفات / Categories: charts, diagrams, code
@@ -13,46 +13,46 @@ Original KOSIF brief derived only from the reference title, tags and public desc
 - التقنية المقترحة / Stack: HTML Canvas, SVG, CSS
 
 ## الفكرة
-الموضوع هو وصفة كوكتيل الوايت روشن بثلاثة مكوّنات: فودكا، ليكيور قهوة، وقشدة، تُسكب تباعًا فوق الثلج في كأس قصيرة. الهدف أن يفهم المشاهد الترتيب والكميات من مجرد مشاهدة الكأس تمتلئ، فيكون مستوى السائل هو المؤشر الرئيسي بدل النص. ما يميّز لغة الحركة أنها لقطة واحدة لا تُقطع: الكاميرا ثابتة أمام الكأس، وكل ما يتغيّر هو الطبقات السائلة وعدّادات الملّيلتر وبطاقات الأسماء، وتُرسم السوائل بتموّج سطحي بسيط عبر Canvas.
+الموضوع وصفة كوكتيل الوايت روشن من الكأس الفارغة إلى المشروب الجاهز، بأسلوب فيديو شرح. التنظيم واضح: الكأس والمقادير في منطقة العمل، والوصفة كاملة في الشريط الجانبي كقائمة يتقدم عليها مؤشر، وشريط خطوات في الأعلى يقول أين نحن. الأسلوب ورقي مرسوم باليد بخطوط مرتعشة قليلاً، والحركة هادئة تقودها السوائل: سكب، ارتفاع المستوى، وانتشار القشدة كغيوم.
 
 ## Concept
-The subject is a three-ingredient White Russian: vodka, coffee liqueur and cream poured in turn over ice in a short rocks glass. The communication goal is that a viewer understands order and quantities just by watching the glass fill, so the liquid level, not the text, is the primary indicator. The motion language is a single uncut shot: the camera stays fixed on the glass while liquid layers, millilitre counters and ingredient labels do all the work, with the liquids drawn as gently rippling surfaces in Canvas.
+The subject is a White Russian recipe from empty glass to finished drink, in an explainer manner. The organisation is clear: glass and measures in the work area, the full recipe in the sidebar as a checklist with a moving pointer, and a step bar at the top saying where we are. The style is hand-drawn paper with slightly wobbly lines, and the motion is calm and led by liquids: pouring, rising level and cream blooming like clouds.
 
 ## المشاهد المقترحة
-- 0-3ث: يظهر العنوان مع كأس قصيرة فارغة في المنتصف؛ خط أفقي رفيع يمثّل سطح البار، وقائمة مكوّنات باهتة تقف على اليمين.
-- 3-7ث: تسقط أربع مكعبات ثلج واحدة تلو الأخرى، ترتدّ مرة ثم تستقر؛ تظهر هالة صقيع خفيفة على حافة الكأس.
-- 7-13ث: تميل زجاجة الفودكا من أعلى اليسار؛ ينساب خيط شفاف بينما يعدّ العدّاد من 0 إلى 50 مل ويرتفع خط الامتلاء إلى نحو ثلث الكأس.
-- 13-19ث: يُسكب ليكيور القهوة كطبقة داكنة؛ يعدّ العدّاد من 0 إلى 20 مل، يغمق السائل من الأسفل وتضيء بطاقة المكوّن على اليمين.
-- 19-25ث: تُسكب القشدة ببطء فوق ظهر ملعقة؛ تطفو كغطاء فاتح ثم تتموّج داخل الطبقة الداكنة بدوّامات ناعمة (30 مل).
-- 25-30ث: تحريك واحد خفيف بملعقة البار، وتضيء قائمة الوصفة على اليمين بالكميات الثلاث كاملة، ويعود العنوان كبطاقة ختام.
+- 0-3 ث: يظهر التخطيط المنقسم: ورق كريمي يساراً بكأس فارغة بحدود مرتعشة بجانب مسطرة أونصات عمودية؛ وشريط جانبي بيج يميناً بترويسة أحادية وعنوان بخط اليد وسطر الحصص وقائمة من خمسة بنود؛ وشريط تقدم من خمسة أجزاء في الأعلى.
+- 3-7 ث: الخطوة 1 الثلج: ثلاثة مكعبات ثلج تسقط من الأعلى واحداً تلو الآخر (نحو نصف ثانية لكل منها) وتستقر؛ الجزء الأول من شريط التقدم يمتلئ بالطيني ويحصل البند الأول على علامة صح مرسومة.
+- 7-12 ث: الخطوة 2 الفودكا: زجاجة تنزلق من أعلى اليمين وتميل نحو 45 درجة، خيط رفيع يسقط، المستوى الشفاف يرتفع والعدّاد الكبير المكتوب باليد يعدّ من 0 إلى 1 ثم 1½ أونصة مع وسم صغير بالمليلتر.
+- 12-17 ث: الخطوة 3 ليكيور القهوة: خيط داكن يغوص تحت الفودكا ويغمق العمود من الأسفل بينما يعدّ العدّاد ½ ثم ¾؛ وهي ذروة حركة الفيلم.
+- 17-23 ث: الخطوة 4 القشدة: إبريق صغير يسكب والقشدة تتفتح كغيوم ناعمة مموهة تنجرف داخل الطبقة الداكنة ثم تستقر كغطاء شاحب.
+- 23-27 ث: الخطوة 5 التقديم: قشة تحريك تسقط قطرياً وأقواس دائرية مرسومة باليد تدور حول الكأس؛ يكتمل آخر جزء وآخر علامة في القائمة.
+- 27-30 ث: الختام: يُمسح النص على اليسار ويُكتب سطر بخط اليد يحتفي بالمشروب مع بضع نقاط رذاذ حبر.
 
 ## Proposed scenes
-- 0-3s: Title and an empty rocks glass fade up at centre; a thin horizontal rule marks the counter top and a small ingredient list sits dimmed on the right.
-- 3-7s: Four ice cubes drop one after another, bounce once and settle; the glass gets a faint frosted rim.
-- 7-13s: A vodka bottle tilts in from top-left; a clear stream pours while a counter runs 0 to 50 ml and the fill line rises to about a third of the glass.
-- 13-19s: Coffee liqueur pours as a dark layer; the counter runs 0 to 20 ml, the liquid darkens from the bottom and the label on the right lights up.
-- 19-25s: Cream is poured slowly over the back of a spoon; it floats as a pale cap, then marbles into the dark layer with soft swirls (30 ml).
-- 25-30s: A bar spoon gives one gentle stir, the recipe list on the right is now fully lit with all three amounts, and the title returns as an end card.
+- 0-3s: Split layout appears: left cream paper with an empty wobbly-outlined rocks glass beside a vertical oz ruler; right beige sidebar with a mono header, handwritten title, a serves line and a five-row checklist; a 5-segment progress bar sits on top.
+- 3-7s: Step 1 ice: three ice cubes drop in from the top one by one (about 0.5 s each) and settle; the first progress segment fills in terracotta and the first checklist row gets a hand-drawn tick.
+- 7-12s: Step 2 vodka: a bottle slides in from the top right and tilts about 45 degrees, a thin stream falls, the clear level rises and the big handwritten counter ticks 0 to 1 to 1½ oz with a small ml sub-label.
+- 12-17s: Step 3 coffee liqueur: a dark stream sinks below the vodka and the column darkens from the bottom while the counter ticks ½ then ¾; the motion peak of the film.
+- 17-23s: Step 4 cream: a small jug pours and the cream blooms as soft blurred clouds drifting inside the dark layer before settling as a pale cap.
+- 23-27s: Step 5 serve: a stirrer straw drops in diagonally and hand-drawn circular arcs orbit the glass; the last segment and checklist tick complete.
+- 27-30s: Outro: the left text clears and a handwritten 'good drink' line writes on with a few ink splatter dots.
 
 ## قواعد الحركة
-- امتلاء السائل بمنحنى easeOutCubic خلال 1400-1800 مللي ثانية لكل سكبة؛ يحمل السطح تموّجًا جيبيًا بارتفاع 2-3 بكسل يخمد تمامًا بعد 600 مللي ثانية من توقّف السكب.
-- تسقط مكعبات الثلج بمنحنى easeOutBounce (ارتداد 12 بكسل) خلال 700 مللي ثانية لكل مكعب، بفاصل 180 مللي ثانية بينها.
-- عدّادات الملّيلتر مربوطة بقيمة التقدّم نفسها التي تحرّك ارتفاع السائل، فلا ينفصل الرقم عن المستوى أبدًا.
-- تنزلق بطاقات المكوّنات 24 بكسل من اليمين بمنحنى easeOutQuint خلال 450 مللي ثانية، وتخفت إلى 40% شفافية بعد انتهاء السكب.
-- الكاميرا: لقطة واحدة متصلة بإطار ثابت مع دفعة بطيئة واحدة من مقياس 1.00 إلى 1.06 على مدى 30 ثانية كاملة؛ لا قطع ولا اهتزاز يدوي.
-- تدخل الزجاجة بمنحنى easeOutBack (تجاوز 1.15) خلال 600 مللي ثانية، وتميل إلى 35 درجة بمنحنى easeInOutSine، وتخرج من حيث دخلت.
-- اتجاه الألوان (مقترح): خلفية بار داكنة دافئة، فودكا شفافة، ليكيور بني عميق، قشدة عاجية؛ يجب أن تبقى السوائل الثلاثة متمايزة في الإضاءة بوضوح.
-- ممنوع: الصور الفوتوغرافية الجاهزة، والتصيير ثلاثي الأبعاد، والانتقالات بين المشاهد، وأي نص يظهر قبل أن يكون مكوّنه داخل الكأس فعلًا.
+- تخطيط واحد ثابت متصل بلا قطعات: ثلثا الإطار لمنطقة العمل يساراً وثلث للشريط الجانبي يميناً مع ظل عمودي ناعم بينهما؛ كتل النص تتبدل في كل خطوة بتلاشٍ سريع.
+- التقدم ظاهر دائماً: شريط من خمسة أجزاء (ثلج، فودكا، قهوة، قشدة، تقديم) يمتلئ جزءاً جزءاً والوسم النشط بالطيني؛ مؤشر القائمة ينزل وكل بند منتهٍ يحصل على علامة صح مرسومة.
+- السوائل تقود الحركة: السكب خيوط رفيعة من زجاجات مائلة نحو 45 درجة، المستوى يرتفع بنعومة مع سهم على المسطرة يتبع السطح، والطبقة الداكنة تغوص تحت الشفافة.
+- القشدة تنتشر كأشكال غيوم مموهة تنجرف داخل الطبقة الداكنة، لا كتغيير لون مسطح.
+- المقادير تُعرض برقم ضخم مكتوب باليد بالأونصة مع كسور مكدسة (½، ¾) ووسم صغير أحادي بالمليلتر.
+- اللوحة: ورق #f6f2e9، بيج الشريط الجانبي #ebdcc7، حبر بني داكن #3e2a20، طيني #b0643a، أزرق الثلج #d6e2ea، كريمي #efe4cf وظل #b8a796.
+- الخط: خط قلم يدوي عفوي للعناوين والخطوات والأرقام، وأحادي صغير متباعد بأحرف كبيرة للتسميات؛ المرجع بلا صوت.
 
 ## Motion rules
-- Liquid fill uses easeOutCubic over 1400-1800 ms per pour; the surface carries a 2-3 px sine ripple that damps to zero 600 ms after the pour stops.
-- Ice cubes fall with easeOutBounce (bounce height 12 px) over 700 ms each, staggered 180 ms apart.
-- Millilitre counters are bound to the same progress value as the fill height, so number and level never drift apart.
-- Ingredient labels slide in 24 px from the right with easeOutQuint over 450 ms and dim to 40% opacity once the pour ends.
-- Camera: one continuous shot, fixed framing, with a single slow push-in from scale 1.00 to 1.06 across the full 30 s; no cuts and no handheld shake.
-- The bottle enters with easeOutBack (overshoot 1.15) over 600 ms, tilts to 35 degrees with easeInOutSine, and leaves the way it came.
-- Colour direction (proposed): warm dark bar backdrop, clear vodka, deep brown liqueur, ivory cream; keep the three liquids clearly distinct in luminance.
-- Banned: stock photos, 3D renders, transitions between scenes, and any text that appears before its ingredient is actually in the glass.
+- One continuous locked layout with no cuts: 2/3 work area on the left, 1/3 sidebar on the right with a soft vertical shadow seam; text blocks swap per step with quick fades.
+- Progress is always visible: a 5-segment bar (ice, vodka, coffee, cream, serve) fills segment by segment with the active label in terracotta; the checklist pointer moves down and each finished row gets a hand-drawn tick stroke.
+- Liquids drive the motion: pours are thin streams from bottles tilted about 45 degrees, the level rises smoothly with a ruler arrow tracking the surface, and the dark layer sinks below the clear one.
+- Cream diffuses as blurred cloud shapes drifting within the dark layer, never as a flat colour change.
+- Measurements are shown as a huge handwritten numeral in ounces with stacked fractions (½, ¾) and a small mono ml sub-label.
+- Palette: paper #f6f2e9, sidebar beige #ebdcc7, dark brown ink #3e2a20, terracotta #b0643a, ice blue #d6e2ea, cream #efe4cf and shadow #b8a796.
+- Type: casual handwritten marker for titles, steps and numbers, small wide-tracked mono uppercase for labels; the reference has no audio.
 
 ## Facts stated by the source (rewritten in our words)
 - The requested length is 30 seconds.
@@ -61,7 +61,7 @@ The subject is a three-ingredient White Russian: vodka, coffee liqueur and cream
 - Ingredients and their measurements should appear as each one goes into the glass, in an explainer-video manner.
 
 ## Assumptions
-The source states duration, subject and explainer framing; the measurements (50/20/30 ml), the single-shot approach, colours and timings are my proposed direction and not observed from the video.
+Observed from the watched video: the split paper layout, three ice cubes, the bottle and jug pours, the oz counter with fractions, the 5-step bar and checklist, the cream clouds, the stirrer and the handwritten sign-off, with no cuts and no audio over 30 s. Assumed: exact step boundaries, estimated from motion energy peaks.
 
 ## Keywords
-كوكتيل, وصفة متحركة, سكب السوائل, فودكا, قشدة, ليكيور قهوة, شرح, cocktail recipe, liquid animation, pour, measurements, explainer, canvas, bar
+cocktail recipe, liquid animation, pour, rising level, cream diffusion, progress bar, checklist, hand-drawn, split layout, كوكتيل, وصفة متحركة, سكب السوائل, شريط تقدم, رسم يدوي

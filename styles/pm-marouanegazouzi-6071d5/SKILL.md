@@ -1,9 +1,9 @@
 ---
 name: pm-marouanegazouzi-6071d5
-description: A 15-second reel for Crux where letters and charts all pivot around a single centre point, turning the studio mark into the axis of motion.
+description: A 15-second reel for an X-post analytics app inside a persistent HUD: a glowing heartbeat line that becomes the logo glyph, a big serif headline over ghosted repeating text, a dot histogram resolving into a bell curve with a counter and percentile band, a light-burst into the logo, a UI card with metric bars and multipliers, an orbital radar, a split-flap board, a full blue frame and an end card.
 ---
 
-# KOSIF TOOL — Crux motion design showreel / ريل Crux: كل شيء يدور حول النقطة الحاسمة
+# KOSIF TOOL — Crux motion design showreel / ريل Crux: تحليلات منشورات X داخل إطار HUD
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/marouanegazouzi-6071d5
@@ -18,11 +18,11 @@ description: A 15-second reel for Crux where letters and charts all pivot around
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل 15 ثانية لاستوديو Crux تدور فيه الحروف والرسوم البيانية حول نقطة مركزية واحدة، فيتحول الشعار إلى محور الحركة.
+ريل مدته 15 ثانية لتطبيق تحليلات منشورات X داخل إطار HUD دائم: خط نبض متوهج يصير رمز الشعار، عنوان سيريف كبير فوق نص شبحي متكرر، مدرّج نقاط يتحول إلى منحنى جرسي مع عدّاد ونطاق مئيني، ومضة ضوء إلى الشعار، بطاقة واجهة بأشرطة مقاييس ومضاعفات، رادار مداري، لوحة حروف قلّابة، إطار أزرق كامل، وبطاقة ختام.
 
-A 15-second reel for Crux where letters and charts all pivot around a single centre point, turning the studio mark into the axis of motion.
+A 15-second reel for an X-post analytics app inside a persistent HUD: a glowing heartbeat line that becomes the logo glyph, a big serif headline over ghosted repeating text, a dot histogram resolving into a bell curve with a counter and percentile band, a light-burst into the logo, a UI card with metric bars and multipliers, an orbital radar, a split-flap board, a full blue frame and an end card.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

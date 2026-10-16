@@ -1,6 +1,6 @@
 ---
 name: pm-kloss-xyz-fe0c31
-description: A 45-second timeline film that rides a single track through the big AI milestones, from the Turing test to modern language models.
+description: A long, dark documentary film (about 172 s) on the history of AI split into numbered chapters: a logic-neuron diagram, the Dartmouth title, an ELIZA terminal, the AI-winter curve, a convolution net reading a 7, an ImageNet mosaic, a 3D Go board, attention arcs, a word forming from noise and a closing particle galaxy.
 ---
 
 # KOSIF TOOL — History of AI timeline / خط زمني متحرك لأبرز محطات الذكاء الاصطناعي
@@ -18,11 +18,11 @@ description: A 45-second timeline film that rides a single track through the big
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيلم خط زمني مدته 45 ثانية يسافر على مسار واحد عبر محطات الذكاء الاصطناعي الكبرى من اختبار تورنغ إلى نماذج اللغة الحديثة.
+فيلم وثائقي داكن طويل (نحو 172 ثانية) عن تاريخ الذكاء الاصطناعي مقسّم إلى فصول مرقّمة: مخطط عصبون منطقي، عنوان دارتموث، طرفية ELIZA، منحنى شتاءات الذكاء الاصطناعي، شبكة التفاف تقرأ الرقم 7، فسيفساء ImageNet، لوح Go ثلاثي الأبعاد، أقواس الانتباه، كلمة تولد من الضجيج، وختام بمجرّة جسيمات.
 
-A 45-second timeline film that rides a single track through the big AI milestones, from the Turing test to modern language models.
+A long, dark documentary film (about 172 s) on the history of AI split into numbered chapters: a logic-neuron diagram, the Dartmouth title, an ELIZA terminal, the AI-winter curve, a convolution net reading a 7, an ImageNet mosaic, a 3D Go board, attention arcs, a word forming from noise and a closing particle galaxy.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (45 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (172 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: creative motion.

@@ -1,56 +1,56 @@
 # فيلم إطلاق منتج SaaS مبرمج في Remotion — SaaS launch video
 
-> فيلم إطلاق مدته 30 ثانية مبني بالكامل بالكود في Remotion، يروي قصة السوق والألم والحل عبر أربع إلى خمس مشاهد وينتهي بشعار SVG متحرك.
+> فيلم إطلاق مدته 30 ثانية لأداة تسويق عبر المنتديات على خلفية داكنة: يبدأ بجدار مائل من بطاقات المنشورات خلف عنوان يظهر كلمة كلمة، ثم ثلاث بطاقات ألم بأمثلة واجهة حقيقية، سفينة شراعية حمراء صغيرة تبحر على أمواج خطية متوهجة تحت اسم المنتج، بطاقة منشور يُكتب تحتها رد مقترح، خط زمني من ثلاث مراحل، وختام بشروق أحمر خلف البحر وكشف الشعار حرفاً حرفاً.
 >
-> A 30-second, fully code-built Remotion launch film telling market, pain, fix and payoff in 4-5 scenes, ending on an animated SVG logo with tagline and URL.
+> A 30-second dark launch film for a forum marketing tool: it opens on a tilted wall of forum-post cards behind a word-by-word headline, then three pain cards with realistic UI examples, a small red sailing-ship mascot riding glowing line waves under the product name, a post card that gets an AI draft reply typed beneath it, a three-step timeline, and a red sunrise behind the sea with a letter-pop logo reveal.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/aschapmann-131210
 - التصنيفات / Categories: product-ui, charts, kinetic-type, characters, photos, music, code
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 30 s · الصعوبة / Difficulty: 4/5
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 30 s · الصعوبة / Difficulty: 3/5
 - التقنية المقترحة / Stack: Remotion, React, SVG
 
 ## الفكرة
-الموضوع منتج SaaS يُقدَّم للمرة الأولى، والمادة الخام تُستخرج من صفحة الهبوط والكود الفعلي: النص والألوان والخط والشعار المحوَّل إلى SVG. الهدف أن تُقرأ القصة كخط واحد متصل: لماذا يهم هذا السوق، لماذا الوضع الحالي مؤلم، كيف يحل المنتج المشكلة، وماذا يحصل عليه المستخدم. لغة الحركة هي لغة فيلم منتج فاخر: كلمات تظهر واحدة تلو الأخرى بنوابض، دفعات كاميرا هادئة، عمق وتوهج، وعناصر تُبنى على الإيقاع مع مؤثر صوتي ناعم لكل ظهور وصمت فيما عدا ذلك.
+الموضوع أداة تجد المنشورات المناسبة في المنتديات وتكتب لها ردوداً مقترحة لجلب العملاء. القصة بأربعة فصول: السوق (المنتدى منجم ذهب)، الألم (منشورات كثيرة تختفي بسرعة ورد واحد خاطئ يكلفك)، الحل (سفينة رمزية تبحر بين المنشورات ورد يُكتب آلياً)، والنتيجة (مراحل من اليوم الأول إلى الشهر الثالث). اللغة فيلم منتج هادئ: نوابض للكلمات، دفعات كاميرا بطيئة، عمق ميدان، وتوهج أحمر واحد يربط كل شيء.
 
 ## Concept
-The subject is a SaaS product at launch, with raw material pulled from its real landing page and codebase: text, palette, typeface and a logo traced to SVG. The goal is a single continuous storyline: why this market matters, why today hurts, how the product fixes it, and what the user walks away with. The motion language is that of a premium product film: words arriving one by one on springs, gentle camera pushes, depth plus glow, elements assembling on the beat with a soft sound for each appearance and silence in between.
+The subject is a tool that finds the right forum posts and drafts replies to win customers. The story has four acts: the market (the forum as a goldmine), the pain (too many posts, gone in hours, one wrong reply costs you), the fix (a mascot ship sailing among posts and a reply typing itself), and the outcome (stages from day one to month three). The language is a calm product film: springs for words, slow camera pushes, depth of field and one red glow tying everything together.
 
 ## المشاهد المقترحة
-- 0-6 ث: لماذا يهم السوق: حقل متدرج داكن، عنوان من سطر واحد ينبثق كلمة كلمة بنابض (stiffness 180، damping 14)، دفعة كاميرا بطيئة بنسبة 4% على امتداد المشهد.
-- 6-12 ث: ألم الوضع الحالي: ثلاث شظايا واجهة متشابكة تنجرف وتتداخل بتوهج خافت؛ عنوان قصير يواجهها؛ الكاميرا تنزاح 60 بكسل يساراً.
-- 12-19 ث: كيف يحل المنتج المشكلة: الشظايا تلتحم في واجهة المنتج الحقيقية، الشعار المتتبَّع يظهر في زاوية، تسميات المزايا تُبنى على أرباع الإيقاع.
-- 19-25 ث: ما الذي تحصل عليه: بطاقات النتائج تنزلق للأعلى بنوابض متتابعة، خط مخطط رفيع يُرسم خلال 900 مللي ثانية، كل بطاقة تحصل على نقرة صوتية ناعمة.
-- 25-30 ث: كشف الشعار: مسارات SVG تُرسم خلال 700 مللي ثانية، التعبئة تتفتح بتوهج شعاعي، الشعار النصي يتلاشى تحته، عنوان الموقع يُكتب ويثبت 1.2 ثانية.
+- 0-4 ث: تدرج رمادي داكن: جدار مموه من بطاقات منشورات المنتدى على مستوى مائل ينجرف ببطء مع عمق ميدان بينما يظهر عنوان كلمة كلمة بنابض، والكلمات المفتاحية بالأحمر مع أيقونة العلامة داخل السطر.
+- 4-9.5 ث: ثلاث بطاقات ألم تُبنى من اليسار إلى اليمين بفارق نحو 300 مللي ثانية، لكل منها شارة أيقونة وعنوان قصير ومثال واجهة صغير (شارة غير مقروء، عدّاد تصويت سلبي، ختم حذف من المشرفين) وتعليق.
+- 9.5-12.5 ث: قطع حاد إلى البحر: سفينة شراعية حمراء صغيرة تتمايل على أمواج خطية متوهجة بتباين عمق تحت اسم المنتج.
+- 12.5-17 ث: بطاقات المنشورات ترتفع وتطفو فوق البحر في صف بينما تبحر السفينة تحتها؛ بطاقة واحدة تتضح مع شارة درجة صلة ورد مقترح يُكتب حرفاً حرفاً بمؤشر مربع أحمر.
+- 17-23.5 ث: الخط الزمني: بطاقة اليوم الأول تظهر، ثم موصلات متموجة متوهجة تُرسم إلى بطاقتي الأسبوع الثاني والشهر الثالث مع دخول كل منها بنابض.
+- 23.5-30 ث: الختام: السفينة تبحر من اليسار إلى اليمين بينما يرتفع توهج شروق أحمر خلف الأفق؛ أيقونة الشعار وحروف الاسم تقفز واحداً تلو الآخر بتجاوز، ثم يظهر سطر الشعار وزر الرابط.
 
 ## Proposed scenes
-- 0-6s: Why it matters: a dark gradient field, a one-line title springs in word by word (stiffness 180, damping 14), a slow 4% camera push across the scene.
-- 6-12s: The pain today: three tangled UI fragments drift and overlap with dim glow; a short title counters them; camera pans 60px left.
-- 12-19s: How it fixes it: fragments snap into the product's real interface, the traced logo appears in a corner, feature labels build in on quarter-beats.
-- 19-25s: What you get: outcome cards slide up on staggered springs, a thin chart line draws across 900ms, each card gets one soft tick sound.
-- 25-30s: Logo reveal: SVG paths draw over 700ms, the fill blooms with a radial glow, the tagline fades under it, the URL types in and holds 1.2s.
+- 0-4s: Dark slate gradient: a blurred wall of forum-post cards on a tilted plane drifts slowly with depth of field while a headline springs in word by word, key words in red with an inline brand icon.
+- 4-9.5s: Three pain cards build left to right about 300 ms apart, each with an icon chip, a short title, a mini UI example (an unread badge, a downvote counter, a removed-by-moderators stamp) and a caption.
+- 9.5-12.5s: A hard cut to the sea: a small red sailing-ship mascot bobs on parallax glowing line waves under the product wordmark.
+- 12.5-17s: Post cards rise and float above the sea in a row as the ship sails beneath; one card comes into focus with a relevance score badge and a draft reply typed character by character with a red block caret.
+- 17-23.5s: Timeline: a Day 1 card appears, then glowing wavy connectors draw to Week 2+ and Month 3+ cards as each springs in.
+- 23.5-30s: Finale: the ship sails left to right as a red sunrise glow rises behind the horizon; the logo icon and wordmark letters pop in one by one with overshoot, then a tagline and a URL pill fade up.
 
 ## قواعد الحركة
-- نوابض لكل دخول: stiffness 170-200، damping 12-16، كتلة 1؛ لا حركات خطية أو ease-in-out للحركات الرئيسية.
-- الخط الحركي يدخل كلمة كلمة بفاصل 70 مللي ثانية؛ لا تُكمل كلمة دخولها بعد بداية المشهد التالي.
-- الكاميرا: دفعات بطيئة متصلة بنسبة 3-5% لكل مشهد أو انزياحات أقل من 80 بكسل؛ لا انزياحات خاطفة ولا دوران.
-- كل مشهد يبقى مقروءاً: 1.8 ثانية على الأقل دون حركة على العنوان بعد استقراره.
-- الصوت: مؤثر ناعم واحد لكل عنصر يظهر، وصمت فيما عدا ذلك؛ لا يُفترض وجود خلفية موسيقية.
-- اللون والخط من موقع العلامة فقط؛ التوهج نسخة مموهة بشفافية 30%، لا مرشح bloom عام.
-- الشعار SVG متجهي ليُرسم كخط ويُكبَّر؛ يُمنع الشعار النقطي.
-- قبل التسليم تُفحص الإطارات بحثاً عن تداخل أو قص أو إيقاع متعجل؛ أي عنصر يظهر أقل من 400 مللي ثانية تُمدَّد مدته.
+- نوابض لكل دخول (stiffness نحو 180، damping نحو 14)؛ كلمات العنوان بفارق 70-100 مللي ثانية، ترتفع نحو 20 بكسل مع زوال ضبابية من 8 بكسل.
+- قطعة حادة واحدة (نحو 9.5-10 ث) إلى عالم البحر؛ وبقية التغييرات تلاشٍ متقاطع أو ذوبان بالضبابية، والعناصر تخرج بتلاشٍ وهبوط خفيف.
+- دفعات كاميرا بطيئة بنسبة 3-5% لكل مشهد مع انجراف لطيف؛ جدار البطاقات الافتتاحي على مستوى مائل بمنظور وضبابية عمق ميدان قوية.
+- التوهج رمز العلامة: توهج أحمر شعاعي خلف البطاقة المركزة، موصلات متوهجة، وتفتح شروق أحمر في الختام.
+- البحر مرسوم لا مصور: 4-6 مسارات خطوط جيبية بانجراف طور بطيء وسرعات تباين عمق؛ والسفينة تتمايل نحو ±4 درجات.
+- اللوحة: رمادي داكن #17171a إلى #27292f، أحمر #ff4a2e، ألوان الشروق #814643 و#582d2d، نص #f2f2f2، أخضر #3ecf8e للواجهة الإيجابية وبني باهت #957270.
+- الخط: غروتسك هندسي مستدير 700-800 بحالة الجملة للعناوين والعائلة نفسها بوزن عادي للواجهة؛ وقفات مقروءة طويلة بين اللحظات ومؤثرات صوتية ناعمة لكل عنصر.
 
 ## Motion rules
-- Springs for every entrance: stiffness 170-200, damping 12-16, mass 1; no linear or ease-in-out tweens for primary moves.
-- Kinetic type enters word by word with 70ms spacing; a word never finishes its entrance after the next scene begins.
-- Camera: continuous slow pushes of 3-5% scale per scene or pans under 80px; no whip pans, no rotation.
-- Each scene stays readable: a minimum of 1.8s with no movement on the title after it settles.
-- Audio: one soft SFX per appearing element, otherwise silence; no music bed is assumed.
-- Colour and font come only from the brand's own site; glow is a blurred duplicate at 30% opacity, never a generic bloom filter.
-- The logo is vector SVG so it can be stroke-drawn and scaled; a bitmap logo is banned.
-- Before delivery, frames are inspected for overlaps, clipping and rushed beats; anything visible under 400ms is extended.
+- Springs for every entrance (stiffness about 180, damping about 14); headline words 70-100 ms apart, rising from about 20 px with blur clearing from 8 px.
+- One hard cut (about 9.5-10 s) into the sea world; other changes are crossfades or blur dissolves, and elements exit with a fade and slight drop.
+- Slow camera push-ins of 3-5% per scene and gentle drift; the opening card wall sits on a tilted perspective plane with heavy depth-of-field blur.
+- Glow is a brand motif: red radial glow behind the focused card, glowing connectors, a red sunrise bloom in the finale.
+- Sea is drawn, not filmed: 4-6 sine line paths with slow phase drift at parallax speeds; the mascot bobs about ±4 degrees.
+- Palette: slate #17171a to #27292f, red #ff4a2e, sunrise #814643 and #582d2d, text #f2f2f2, green #3ecf8e for positive UI and muted #957270.
+- Type: rounded geometric grotesk 700-800 sentence case for headlines, same family regular for UI; long readable holds between beats and soft per-element sound effects.
 
 ## Facts stated by the source (rewritten in our words)
 - Length is fixed at 30 seconds and the whole film is written as Remotion code so it can be edited and re-rendered.
@@ -61,7 +61,7 @@ The subject is a SaaS product at launch, with raw material pulled from its real 
 - Ending: a closing animated logo, then tagline and web address, followed by a self-check of rendered frames for overlaps, clipping or rushed timing.
 
 ## Assumptions
-The product itself is a placeholder, so scene content assumes a generic B2B tool; specific timings, spring values and the dark gradient look are proposed, not stated.
+Observed from the watched video (15 sampled frames): the card-wall opener, the three pain cards, the ship mascot on a line-art sea, the typed draft reply, the Day/Week/Month timeline and the letter-pop logo over a red sunrise, in 30 s with one hard cut. Assumed: exact spring values and the soft sound effects (audio was quiet and not verified).
 
 ## Keywords
-remotion launch, spring easing, kinetic typography, camera push, logo reveal, svg logo, product film, code video, ساس, إطلاق, نوابض, شعار متحرك, قصة المنتج, برمجة الفيديو
+remotion launch, spring easing, kinetic typography, camera push, pain cards, ship mascot, line-art sea, typewriter reply, glowing timeline, letter-pop logo, إطلاق منتج, نوابض, تميمة, شعار متحرك

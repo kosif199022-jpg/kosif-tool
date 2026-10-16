@@ -1,9 +1,9 @@
 ---
 name: pm-listudio-820c7b
-description: A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.
+description: A 52-second launch film for an AI image and video prompt platform on a dark ground: a prompt types into an input pill, a cinematic image fills the frame, shrinks into a card and becomes a tilted 3D gallery wall, and short headlines mixing sans and italic serif sit over realistic UI: a model picker, four images resolving from blur, still-to-motion, an infinite canvas with an agent checklist, a fast triptych montage and a logo end card.
 ---
 
-# KOSIF TOOL — GenVizu product launch / إطلاق GenVizu: من الوصف إلى التصوّر
+# KOSIF TOOL — GenVizu product launch / إطلاق GenVizu: منصة أوامر الصور والفيديو بالذكاء الاصطناعي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/listudio-820c7b
@@ -18,11 +18,11 @@ description: A 20-second launch film for GenVizu usable as a website hero and GT
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيديو إطلاق 20 ثانية لمنتج GenVizu يصلح كخلفية Hero ومادة تسويقية: وصف نصي يتحول إلى رسوم بيانية داخل واجهة المنتج ثم يدور بحلقة نظيفة.
+فيلم إطلاق مدته 52 ثانية لمنصة أوامر توليد الصور والفيديو بالذكاء الاصطناعي على خلفية داكنة: أمر يُكتب في حقل إدخال، صورة سينمائية تملأ الإطار ثم تصغر إلى بطاقة وتصير جداراً ثلاثي الأبعاد مائلاً من الصور، عناوين قصيرة تمزج الغروتسك بالسيريف المائل فوق واجهات واقعية: منتقي نماذج، أربع صور تتضح من الضبابية، صورة تتحول إلى حركة، لوحة لا نهائية بقائمة مهام وكيل، مونتاج ثلاثي سريع وختام بالشعار.
 
-A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.
+A 52-second launch film for an AI image and video prompt platform on a dark ground: a prompt types into an input pill, a cinematic image fills the frame, shrinks into a card and becomes a tilted 3D gallery wall, and short headlines mixing sans and italic serif sit over realistic UI: a model picker, four images resolving from blur, still-to-motion, an infinite canvas with an agent checklist, a fast triptych montage and a logo end card.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (52 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.

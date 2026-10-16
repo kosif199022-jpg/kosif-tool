@@ -1,7 +1,7 @@
 {
   "id": "pm-tolgayhickiran-e90799",
   "name": "Motion design principles reel",
-  "name_ar": "ريل مبادئ الموشن: الحركة تشرح نفسها",
+  "name_ar": "ريل موشن داكن بإطار HUD: عروض تقنية متتابعة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -30,29 +30,31 @@
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
-  "summary_ar": "ريل 15 ثانية يعرض مبادئ التحريك كأمثلة حية، حيث تؤدي الكلمة والرسم البياني المبدأ الذي يسمّيانه.",
-  "summary_en": "A 15-second résumé reel in which each animation principle is performed live by the very word and chart that name it.",
+  "summary_ar": "ريل مدته 15 ثانية داخل إطار HUD: دائرة بنقاط تدور وعلامات شعاعية مع «HELLO, I_» تُكتب، خطوط مسح، كلمة MOTION بتشويش وانفصال RGB، شبكة أشكال ملونة، دائرة تتحول إلى نجمة على الليموني، مجرة جسيمات حلزونية، كتل بكسل برتقالية، RHYTHM فوق أعمدة معادل صوت، حلقة سلكية ثلاثية الأبعاد، وتوقيع CLAUDE داخل حلقة.",
+  "summary_en": "A 15-second HUD-framed reel: a circle with orbiting dots and radial ticks while 'HELLO, I_' types, scan lines, a glitched RGB-split MOTION, a grid of coloured shapes, a circle morphing to a star on lime, a spiral particle galaxy, orange pixel blocks, RHYTHM over equaliser bars, a wireframe torus and a CLAUDE signature inside a ring.",
   "keywords": [
     "showreel",
-    "easing",
-    "anticipation",
-    "overshoot",
-    "follow-through",
-    "bar chart",
-    "kinetic typography",
-    "résumé reel",
+    "hud overlay",
+    "typewriter",
+    "rgb glitch",
+    "shape grid",
+    "path morph",
+    "particle galaxy",
+    "pixel dissolve",
+    "equaliser bars",
+    "wireframe torus",
     "ريل تعريفي",
-    "مبادئ التحريك",
-    "منحنيات التسهيل",
-    "رسوم بيانية متحركة",
-    "تايبوغرافي حركي"
+    "تشويش رقمي",
+    "تحويل الأشكال",
+    "جسيمات"
   ],
-  "difficulty": 3,
+  "difficulty": 4,
   "duration_s": 15,
   "stack": [
     "Remotion",
     "React",
-    "SVG"
+    "SVG",
+    "Three.js"
   ],
   "brief": "styles/pm-tolgayhickiran-e90799/BRIEF.md"
 }

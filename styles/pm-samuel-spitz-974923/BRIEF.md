@@ -1,56 +1,58 @@
 # ريل عرض القدرات: فصول الحركة الأربعة — Motion design showreel
 
-> ريل 20 ثانية يستعرض أربعة فصول متتابعة (الخط، البيانات، الشكل، الإيقاع) بخيط طباعي واحد يربطها دون قطع.
+> ريل فصول مدته 15 ثانية بإطار HUD: حلقة حمراء، كلمة MOTION بخط سفلي يُرسم، شبكة أشكال باوهاوس تتبدل ألوانها، لوح ثلاثي الأبعاد مائل مع كرة كروم وكلمة depth مائلة، كرة كروم كبيرة على حرير داكن يدور حولها مدار أحمر، TYPE. على الأحمر، TIME. بملمس كروم، وختام REEL '26 بخط أحمر منساب.
 >
-> A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.
+> A 15-second chaptered reel with a HUD frame: a red ring, a MOTION wordmark with an underline drawing on, a Bauhaus shape grid that recolours, a tilted 3D panel with a chrome sphere and italic 'depth', a large chrome sphere on dark silk with an orbiting red ellipse, 'TYPE.' on red, chrome-filled 'TIME.' and a REEL '26 end card with a flowing red line.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/samuel-spitz-974923
 - التصنيفات / Categories: charts, kinetic-type
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 20 s · الصعوبة / Difficulty: 4/5
-- التقنية المقترحة / Stack: Remotion, React, SVG
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 4/5
+- التقنية المقترحة / Stack: Remotion, React, Three.js, SVG
 
 ## الفكرة
-ريل أعمال يجمع أربعة تخصصات (الطباعة الحركية، تصوير البيانات، الشكل، الإيقاع) في فيلم واحد متصل بلا قطع صريح حتى الفصل الأخير. الهدف إقناع المشاهد خلال عشرين ثانية بأن المصمم يتقن المجال كله لا جزءاً منه. ما يميز لغة الحركة أن كل فصل يولد من عنصر الفصل السابق: خط الأساس يصبح سكة كاميرا، والحروف تتحول إلى أعمدة بيانية، ومحيط المخطط ينتفخ ليصبح شكلاً.
+الموضوع ريل أعمال لمصمم موشن يقدّم مهاراته في فصول قصيرة معنونة: الهندسة، العمق، المادة، الخط والزمن. لكل فصل حقل لوني خاص (أسود، كريمي، أزرق كوبالت، أحمر، حرير داكن) وتتبدل الفصول بقطعات حادة. يجمعها إطار HUD ثابت: رقم الفصل واسمه أعلى اليسار وعدّاد زمني أسفل الإطار، ويختم الريل بخط أحمر يُرسم كتوقيع.
 
 ## Concept
-A portfolio reel that gathers four disciplines (kinetic type, data visualisation, form, rhythm) into one continuous film with no hard cut until the last chapter. The goal is to convince a viewer in twenty seconds that the designer commands the whole field, not a corner of it. The motion language is distinctive because each chapter is born from an element of the previous one: the baseline becomes a camera rail, letters become bars, a chart outline inflates into a shape.
+The subject is a motion designer's reel presenting skills in short labelled chapters: geometry, depth, material, type and time. Each chapter has its own colour field (black, cream, cobalt blue, red, dark silk) and chapters change on hard cuts. A constant HUD frame ties them together: chapter number and name top-left and a timecode along the bottom, and the reel signs off with a red line drawn like a signature.
 
 ## المشاهد المقترحة
-- 0-3ث: عنوان افتتاحي: كلمة لكل تخصص تصعد حرفاً حرفاً، ثم تستقر الحروف على خط أساس واحد يتحول إلى سكة تقود الكاميرا نحو الفصل الأول.
-- 3-7ث: فصل الخط: عبارة رئيسية تنقسم إلى ثلاثة أوزان (رفيع، عادي، ثقيل) تنزلق فوق بعضها بسرعات مختلفة؛ كلمة واحدة تنقلب إلى العربية ثم تعود لإثبات التعامل الثنائي اللغة.
-- 7-11ث: فصل البيانات: حروف العبارة تنهار لتصبح أعمدة؛ المخطط يعد قيمه صعوداً، ثم تتصل قمم الأعمدة بخط بياني يمتد إلى مساحة مظللة، وتسمية توضيحية تتبع الذروة.
-- 11-14ث: فصل الشكل: محيط المساحة البيانية ينتفخ إلى كتلة مستديرة تتقسم إلى شبكة بلاطات تدور ثلاثي الأبعاد لتكشف شعاراً.
-- 14-18ث: فصل الإيقاع: قطعات حادة على النبض: ثلاث ضربات لونية تملأ الإطار، كل واحدة تحمل رقماً (سنوات، مشاريع، عملاء) مع عداد.
-- 18-20ث: الخاتمة: كل العناصر تنطوي عائدة إلى خط الأساس الافتتاحي؛ الاسم والدور يثبتان 1.2 ثانية أخيرة مع تنفس خفيف في المقياس.
+- 0-1.2 ث: حقل أسود؛ حلقة حمراء رفيعة تظهر في الوسط.
+- 1.2-2.5 ث: كلمة MOTION بأحرف كبيرة عريضة سميكة تنزلق حرفاً حرفاً بالكريمي مع حرف ملوّن مختلف، وخط سفلي أحمر يُرسم تحتها.
+- 2.5-5 ث: قطع حاد إلى الكريمي، فصل الهندسة: شبكة 6×3 من وحدات باوهاوس (دوائر، أرباع دوائر، مربعات) بالأسود والأحمر والكوبالت تتبادل الأشكال والألوان مربعاً مربعاً.
+- 5-7.5 ث: حقل أزرق كوبالت، فصل العمق: لوح شبكي داكن يميل في الأبعاد الثلاثة مع آثار إطارات سلكية، كرة كروم وخط جيبي أحمر خلف كلمة depth بخط سيريف مائل.
+- 7.7-10.9 ث: قطع حاد إلى حرير داكن، فصل المادة: كرة كروم كبيرة بإضاءة حافة حمراء تحت تقريب بطيء؛ مدار أحمر وآخر أبيض رفيع يدوران حولها مع تسمية صغيرة.
+- 10.9-12.5 ث: قطع حاد إلى الأحمر مع TYPE. بأحرف سوداء ثقيلة، ثم إلى الأسود مع TIME. مملوءة بملمس كروم متحرك.
+- 12.5-15 ث: بطاقة ختام على الأسود: REEL '26 والسنة بالأحمر، سطر سيريف مائل، وخط أحمر ملتف يُرسم عبر النصف السفلي؛ إحصاءات صغيرة في الزاوية.
 
 ## Proposed scenes
-- 0-3s: Opening title: one word per discipline rises letter by letter; the letters settle onto a single baseline, and that baseline becomes a camera rail that carries us into chapter one.
-- 3-7s: TYPE chapter: a headline phrase splits into three weights (thin, regular, black) that slide past each other at different speeds; one word flips to Arabic and back to prove bilingual handling.
-- 7-11s: DATA chapter: the headline letters collapse into bars; the bar chart counts up to its values, the bar tops connect into a line that extrudes into an area, and a callout label tracks the peak.
-- 11-14s: FORM chapter: the area outline inflates into a rounded blob; the blob subdivides into a grid of tiles that rotate in 3D to reveal a logo mark.
-- 14-18s: RHYTHM chapter: hard-synced beat edits: three full-frame colour slams, each carrying one number (years, projects, clients) with a counter.
-- 18-20s: Close: every element folds back into the baseline from the intro; name and role sit still for the final 1.2s with a subtle breathing scale.
+- 0-1.2s: Black field; a thin red ring appears at centre.
+- 1.2-2.5s: MOTION in wide black-weight uppercase slides in letter by letter in cream, one letter tinted, as a red underline draws beneath.
+- 2.5-5s: Hard cut to cream, chapter 'Geometry': a 6x3 grid of Bauhaus modules (circles, quarter-rounds, squares) in black, red and cobalt swaps shapes and colours tile by tile.
+- 5-7.5s: Cobalt-blue field, chapter 'Depth': a dark grid panel tilts in 3D with wireframe frame trails, a chrome sphere and a red sine line behind an italic serif 'depth'.
+- 7.7-10.9s: Hard cut to dark silk, chapter 'Material': a large chrome sphere with red rim light under a slow push; a red ellipse and a thin white ellipse orbit it with a small specular label.
+- 10.9-12.5s: Hard cut to red with 'TYPE.' in black heavy caps, then black with 'TIME.' filled with a moving chrome texture.
+- 12.5-15s: End card on black: REEL '26 with the year in red, an italic serif tagline and a looping red line drawing on across the lower half; tiny stats in the corner.
 
 ## قواعد الحركة
-- منحنى الحركة الرئيسي للمواضع: cubic-bezier(0.16, 1, 0.3, 1) خلال 600-800ms؛ يُمنع المنحنى الخطي لأي عنصر تتابعه العين.
-- الانتقال بين الفصول تحوّل لا قطع: عنصر من الفصل المنتهي يصبح أول عنصر في الفصل التالي (خط الأساس إلى سكة، الحروف إلى أعمدة، المحيط إلى كتلة). القطع الحاد مسموح داخل فصل الإيقاع فقط.
-- الكاميرا: كاميرا افتراضية واحدة متصلة؛ التحريك الأفقي بنفس منحنى العناصر، والتقريب محصور بين 1.0 و1.35x؛ لا اهتزاز للكاميرا في أي موضع.
-- الطباعة: تدرج دخول الحروف 30-40ms؛ الكلمات تدخل من 24px أسفل موضعها مع ضبابية 4px تزول خلال 180ms؛ لا دوران للحروف خارج فصل الخط.
-- المخططات: الأعمدة تنمو من الصفر بنابض 500ms (stiffness 170, damping 22)؛ العدادات الرقمية تستخدم ease-out خلال 900ms وتثبت على العدد الصحيح النهائي.
-- اللون (مقترح): أساس داكن محايد، ومحايد فاتح للنصوص، ولون مشبع واحد لا يتجاوز 10% من أي إطار؛ ضربات فصل الإيقاع يجوز أن تعكس الأساس واللون المشبع لإطار واحد فقط.
-- ممنوع: وهج العدسة الجاهز، ظلال أعرض من 8px، قصاصات الاحتفال، أكثر من خطين، وأي عنصر ينجرف بلا غاية.
+- الفصول تتبدل بقطعات حادة (نحو 2.5 و7.7 و10.9 ث) مع تغيير حقل اللون في كل مرة؛ الحركة داخل الفصل متصلة.
+- HUD ثابت: رقم الفصل واسمه أعلى اليسار بخط صغير، عدّاد زمني وعدّاد الريل أسفل الإطار، وأقواس زوايا.
+- الخطوط تُرسم بـ stroke-dashoffset: خط MOTION السفلي، الخط الجيبي الأحمر في لوح العمق، والخط الملتف في الختام.
+- مربعات الشبكة تبدّل الشكل واللون بجدول متتابع لا دفعة واحدة.
+- أبعاد ثلاثة حقيقية للعمق والمادة: لوح مائل بآثار سلكية، كرة كروم عاكسة بإضاءة حافة حمراء ومدارات تدور حولها.
+- اللوحة: أسود #0a0a0a، كريمي #ede9de، أحمر #ff3d1f، كوبالت #2f4bff، فضي كروم #c0c0c0 وبني مسود #271917.
+- الخط: هندسي عريض 900 بأحرف كبيرة للكلمات، سيريف مائل لكلمة depth والسطر الختامي، وخط أحادي صغير للـ HUD.
 
 ## Motion rules
-- Master easing for position moves: cubic-bezier(0.16, 1, 0.3, 1) over 600-800ms; never linear for anything the eye tracks.
-- Chapter transitions are morphs, not cuts: an element of the outgoing chapter becomes the first element of the incoming one (baseline to rail, letters to bars, outline to blob). Hard cuts are allowed only inside the RHYTHM chapter.
-- Camera: one continuous virtual camera; pans travel on the same easing as elements, zoom limited to 1.0-1.35x; no camera shake anywhere.
-- Typography: letter stagger 30-40ms; words enter from 24px below with a 4px blur that clears in 180ms; no per-letter rotation outside the TYPE chapter.
-- Charts: bars grow from zero on a 500ms spring (stiffness 170, damping 22); value counters use ease-out over 900ms and snap to the final integer.
-- Colour (proposed): one dark neutral base, one light neutral for type, one saturated accent covering no more than 10% of any frame; the RHYTHM slams may invert base and accent for exactly one frame each.
-- Banned: stock lens flares, drop shadows wider than 8px, confetti particles, more than two typefaces, any element drifting without purpose.
+- Chapters change on hard cuts (about 2.5, 7.7 and 10.9 s) with a colour-field change each time; motion inside a chapter is continuous.
+- A constant HUD: chapter index and name top-left in tiny type, timecode and reel counter along the bottom, corner brackets.
+- Lines draw on with stroke-dashoffset: the MOTION underline, the red sine in the depth panel and the looping end line.
+- Grid tiles swap shape and colour on a staggered schedule rather than all at once.
+- Real 3D for depth and material: tilted panel with trailing wireframes, a reflective chrome sphere with red rim light and orbiting ellipses.
+- Palette: black #0a0a0a, cream #ede9de, red #ff3d1f, cobalt #2f4bff, chrome silver #c0c0c0 and deep brown-black #271917.
+- Type: wide geometric sans 900 uppercase for words, italic serif display for 'depth' and the tagline, tiny mono for HUD.
 
 ## Facts stated by the source (rewritten in our words)
 - The creator asked for a piece that could anchor a top-tier designer's demo reel and double as a visual CV.
@@ -58,7 +60,7 @@ A portfolio reel that gathers four disciplines (kinetic type, data visualisation
 - Tagged on the source page as charts and kinetic type; frame size listed as 1920x1080.
 
 ## Assumptions
-The four-chapter structure, the 20s runtime, the palette and every timing are my proposal; the source gives no duration, colours or scene list.
+Observed from frames sampled every ~1.25 s: the chapter list, colour fields, cuts, chrome sphere, HUD frame and the 15 s runtime. Assumed: easing values, the 3D renderer and audio, which was quiet in the reference.
 
 ## Keywords
-showreel, ريل أعمال, portfolio reel, عرض مهارات, kinetic typography, طباعة حركية, bar chart morph, مخطط بياني, chapter transitions, انتقالات متصلة, designer résumé, remotion reel, 1080p
+showreel, chapter reel, hud frame, bauhaus grid, chrome sphere, 3d panel, hard cuts, line draw, image-filled type, ريل أعمال, شبكة باوهاوس, كرة كروم, فصول, رسم الخط

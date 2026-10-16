@@ -1,6 +1,6 @@
 ---
 name: pm-deifosv-04e4d3
-description: A high-energy launch film for a web tennis game, pulling live stats from the site and showing desktop and mobile play plus theme switching, all cut to music.
+description: A 30-second launch trailer for a browser 3D tennis game: dimmed top-down gameplay under huge condensed headlines, opening with live stat counters (games played, hours on court) and a LIVE pill, then 'no download, no install, no sign-up' on slanted highlighter bars, a phone mock-up running the game with device chips, a court roll call with city names, a wireframe globe with player dots and arcs, and an end card with app icon and URL pill.
 ---
 
 # KOSIF TOOL — Tennis game launch video / إطلاق لعبة تنس بإحصاءات حية
@@ -18,11 +18,11 @@ description: A high-energy launch film for a web tennis game, pulling live stats
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيديو إطلاق عالي الطاقة للعبة تنس على الويب يعرض إحصاءات حية من الموقع واللعب على الحاسوب والهاتف وتبديل السمات على الإيقاع.
+فيلم إطلاق مدته 30 ثانية للعبة تنس ثلاثية الأبعاد في المتصفح: لقطات لعب علوية معتمة تحت عناوين مكثفة ضخمة، تبدأ بعدادات إحصاء حية (مباريات لُعبت، ساعات على الملعب) مع شارة LIVE، ثم «بلا تنزيل، بلا تثبيت، بلا تسجيل» على أشرطة تظليل مائلة، هاتف يشغّل اللعبة مع شارات الأجهزة، استعراض الملاعب بأسماء المدن، كرة أرضية سلكية بنقاط لاعبين وأقواس، وبطاقة ختام بالأيقونة والرابط.
 
-A high-energy launch film for a web tennis game, pulling live stats from the site and showing desktop and mobile play plus theme switching, all cut to music.
+A 30-second launch trailer for a browser 3D tennis game: dimmed top-down gameplay under huge condensed headlines, opening with live stat counters (games played, hours on court) and a LIVE pill, then 'no download, no install, no sign-up' on slanted highlighter bars, a phone mock-up running the game with device chips, a court roll call with city names, a wireframe globe with player dots and arcs, and an end card with app icon and URL pill.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Web Audio), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, Web Audio), suggested duration (30 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Phone / هاتف, Music / موسيقى.

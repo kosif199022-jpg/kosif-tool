@@ -1,9 +1,9 @@
 ---
 name: pm-zheke-38deff
-description: A 12s square kinetic-type piece: one bilingual sentence breaks apart, reflows and changes weight on a steady pulse, with nothing on screen but letters.
+description: A square, rapid-cut 15-second piece: 'HI' with a bouncing orange ball, then 'I CAN' followed by a verb acted out literally: SQUASH, OVERSHOOT, RENDER with a glossy 3D sphere, particles, BEND LIGHT through refractive glass blobs, a spiral square tunnel, STRETCH with chromatic split, AFTER EFFECTS struck through, JUST CODE. and a closing model name.
 ---
 
-# KOSIF TOOL — Kinetic type showreel / طباعة حركية مربعة: جملة واحدة تعيد بناء نفسها
+# KOSIF TOOL — Kinetic type showreel / طباعة حركية مربعة: «أستطيع» والفعل يمثّل معناه
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/zheke-38deff
@@ -18,11 +18,11 @@ description: A 12s square kinetic-type piece: one bilingual sentence breaks apar
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-قطعة مربعة 12 ثانية من الطباعة الحركية الثنائية اللغة: جملة واحدة تتفكك وتتجمع وتغير وزنها على إيقاع ثابت دون أي عنصر غير الحروف.
+قطعة مربعة سريعة القطع مدتها 15 ثانية: كلمة HI مع كرة برتقالية ترتد، ثم «I CAN» يليها فعل يُمثَّل حرفياً: SQUASH، OVERSHOOT، RENDER بكرة لامعة ثلاثية الأبعاد، جسيمات، BEND LIGHT بفقاعات زجاجية كاسرة، نفق مربعات حلزوني، STRETCH بانفصال لوني، AFTER EFFECTS مشطوبة، JUST CODE. وختام OPUS 5.5.
 
-A 12s square kinetic-type piece: one bilingual sentence breaks apart, reflows and changes weight on a steady pulse, with nothing on screen but letters.
+A square, rapid-cut 15-second piece: 'HI' with a bouncing orange ball, then 'I CAN' followed by a verb acted out literally: SQUASH, OVERSHOOT, RENDER with a glossy 3D sphere, particles, BEND LIGHT through refractive glass blobs, a spiral square tunnel, STRETCH with chromatic split, AFTER EFFECTS struck through, JUST CODE. and a closing model name.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, CSS), suggested duration (12 s), aspect 1:1, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, CSS), suggested duration (15 s), aspect 1:1, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك.

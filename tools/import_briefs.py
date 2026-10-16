@@ -51,6 +51,9 @@ def problems(b: dict) -> list[str]:
         out.append(f"keywords count {len(b['keywords'])} outside 6-20")
     if isinstance(b.get("scenes_en"), list) and not 3 <= len(b["scenes_en"]) <= 8:
         out.append("scenes_en should have 3-8 beats")
+    rv = b.get("revised_from_video")
+    if rv is not None and not (isinstance(rv, str) and len(rv) == 10 and rv[4] == "-" and rv[7] == "-"):
+        out.append("revised_from_video must be an ISO date string (YYYY-MM-DD)")
     if isinstance(b.get("title_ar"), str) and len(b["title_ar"]) > 80:
         out.append("title_ar longer than 80 chars")
     return out
@@ -58,6 +61,16 @@ def problems(b: dict) -> list[str]:
 
 def bullets(items: list[str]) -> str:
     return "\n".join("- " + x.strip() for x in items) or "- —"
+
+
+def provenance(b: dict) -> str:
+    """Provenance note: unwatched draft by default, or revised against sampled video frames."""
+    when = b.get("revised_from_video")
+    if when:
+        return (f"ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع ({when})؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.\n"
+                f"Original KOSIF brief, revised against frames sampled from the reference video ({when}); timings and colours are approximate readings from those frames, so check the reference for fine detail.")
+    return ("ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.\n"
+            "Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.")
 
 
 def render_md(rec: dict, b: dict) -> str:
@@ -68,8 +81,7 @@ def render_md(rec: dict, b: dict) -> str:
 >
 > {b['summary_en']}
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+{provenance(b)}
 
 - المرجع / Reference: {rec.get('page')}
 - التصنيفات / Categories: {', '.join(rec.get('category') or []) or '—'}

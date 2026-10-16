@@ -1,58 +1,56 @@
 # إطلاق لعبة تنس بإحصاءات حية — Tennis game launch video
 
-> فيديو إطلاق عالي الطاقة للعبة تنس على الويب يعرض إحصاءات حية من الموقع واللعب على الحاسوب والهاتف وتبديل السمات على الإيقاع.
+> فيلم إطلاق مدته 30 ثانية للعبة تنس ثلاثية الأبعاد في المتصفح: لقطات لعب علوية معتمة تحت عناوين مكثفة ضخمة، تبدأ بعدادات إحصاء حية (مباريات لُعبت، ساعات على الملعب) مع شارة LIVE، ثم «بلا تنزيل، بلا تثبيت، بلا تسجيل» على أشرطة تظليل مائلة، هاتف يشغّل اللعبة مع شارات الأجهزة، استعراض الملاعب بأسماء المدن، كرة أرضية سلكية بنقاط لاعبين وأقواس، وبطاقة ختام بالأيقونة والرابط.
 >
-> A high-energy launch film for a web tennis game, pulling live stats from the site and showing desktop and mobile play plus theme switching, all cut to music.
+> A 30-second launch trailer for a browser 3D tennis game: dimmed top-down gameplay under huge condensed headlines, opening with live stat counters (games played, hours on court) and a LIVE pill, then 'no download, no install, no sign-up' on slanted highlighter bars, a phone mock-up running the game with device chips, a court roll call with city names, a wireframe globe with player dots and arcs, and an end card with app icon and URL pill.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/deifosv-04e4d3
 - التصنيفات / Categories: product-ui, phone, music
 - النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 30 s · الصعوبة / Difficulty: 4/5
-- التقنية المقترحة / Stack: Remotion, React, Web Audio
+- التقنية المقترحة / Stack: Remotion, React, Three.js, Web Audio
 
 ## الفكرة
-الموضوع لعبة تنس تعمل في المتصفح، ويريد صاحبها فيلم إطلاق صاخبًا يثبت ثلاث حقائق: اللعبة حيّة (إحصاءات حقيقية من الموقع)، وتعمل على سطح المكتب والهاتف، ولها سمات متعددة. الهدف هو إشعار المشاهد بأن المباراة بدأت الآن ودعوته للانضمام. تتميّز لغة الحركة بكرة لا تتوقف أبدًا عن الحركة: هي التي تقود الكاميرا وتفرض القطع، وكل تغيير في الواجهة أو السمة يحدث على ارتدادة أو نبضة طبل، مع إمكانية إرفاق موجّه لتوليد الأغنية.
+الموضوع لعبة تنس مجانية في المتصفح، والفيلم يبيعها بأدلة: أرقام حية من الموقع، سهولة الدخول، اللعب على الهاتف والحاسوب، تنوع الملاعب، ولعب عالمي. اللقطات الحقيقية للعبة هي الخلفية دائماً تقريباً، معتمة بطبقة كحلية، وفوقها خطوط مكثفة ثقيلة بالكريمي والليموني. الإيقاع عالٍ ومقطوع على الموسيقى، ويتسارع في استعراض الملاعب.
 
 ## Concept
-The subject is a browser tennis game whose owner wants a loud launch film proving three things: the game is alive (real stats from the site), it runs on desktop and phone, and it ships with several themes. The goal is to make the viewer feel the match is on right now and invite them in. The motion language is a ball that never stops moving: it leads the camera and forces the cuts, and every UI or theme change lands on a bounce or a drum hit, with an optional music-generation prompt delivered alongside.
+The subject is a free browser tennis game, and the film sells it with proof: live numbers from the site, zero friction, play on phone and desktop, varied courts and worldwide play. Real gameplay is almost always the backdrop, dimmed by a navy overlay, with heavy condensed type in cream and lime on top. The rhythm is high energy and cut to the music, accelerating in the court roll call.
 
 ## المشاهد المقترحة
-- 0-3 ث: كرة تندفع من أعلى اليمين، تنضغط 20% عند الاصطدام، ويظهر شعار اللعبة داخل الانبعاج؛ يُرسم خط ملعب تحته خلال 300 مللي ثانية.
-- 3-9 ث: الإحصاءات الحية: ثلاثة عدّادات (مباريات اليوم، لاعبون متصلون، أطول تبادل) تُجلب من الموقع وتتصاعد كلوحة نتائج ملعب، وتنقلب الأرقام بتأخير 90 مللي ثانية بين رقم وآخر.
-- 9-16 ث: اللعب على سطح المكتب: إطار متصفح عريض يعرض تبادلًا؛ تتبع الكاميرا الكرة عبر الملعب بينما يبقى إطار المتصفح مثبّتًا.
-- 16-22 ث: اللعب على الهاتف: يتحوّل إطار المتصفح إلى هاتف خلال 600 مللي ثانية، ويستمر التبادل نفسه بالوضع الرأسي وتنزلق أزرار الإبهام من الحافة السفلية.
-- 22-27 ث: السمات: مع كل نبضة يتبدّل كساء الملعب (عشب، تراب، ملعب صلب، ليلي) بمسح لوني ينبثق من الشبكة؛ وتواصل الكرة ارتدادها عبر كل مسح.
-- 27-30 ث: الشعار والعنوان وزر العب الآن؛ ترتدّ الكرة ثلاث مرات أصغر في كل مرة وتتوقف كنقطة نهاية الشعار النصي.
+- 0-5 ث: لقطات ملعب علوية معتمة: شارة LIVE فوق عدّاد ليموني ضخم يصعد إلى عدد المباريات مع وسم كريمي؛ ثم قطع إلى ملعب أخضر يصعد فيه عدّاد ثانٍ إلى الساعات على الملعب.
+- 5-10 ث: أسطر العنوان تتكدس سطراً مع كل نبضة (بلا تنزيل، بلا تثبيت، بلا تسجيل) والأسطر السابقة تخفت إلى رمادي بنحو 40% بينما يجلس السطر النشط على شريط تظليل فيروزي مائل يُمسح؛ ووسم صغير أسفل اليمين يقول إنها تعمل في أي متصفح.
+- 10-15 ث: تخطيط منقسم: هاتف يساراً يشغّل اللعبة ويتبدل ملعبه من الأزرق إلى الترابي؛ وعلى اليمين وسم وعنوان من ثلاثة أسطر وشارات الأجهزة تنبثق واحدة تلو الأخرى.
+- 15-20.5 ث: استعراض الملاعب: قطعات حادة كل ثانية تقريباً إلى لون ملعب جديد (عشب، كثبان، صلب، ترابي) مع وسم مرقم واسم مدينة ضخم، تحت عنوان يعدّ الملاعب.
+- 20.5-25 ث: تلاشٍ إلى الكحلي بنجوم خافتة: كرة أرضية سلكية تدور بنقاط لاعبين متوهجة وأقواس متقطعة تُرسم بينها، ثم عنوان بلونين عن اللعب مع أي أحد في أي مكان على اليسار.
+- 25-30 ث: بطاقة ختام فوق لقطات معتمة: أيقونة التطبيق تنبثق، اسم بلونين، سطر وسم، ثلاث شارات وزر رابط ليموني، ثم ثبات.
 
 ## Proposed scenes
-- 0-3s: A ball slams in from top-right, squashes 20% on impact, and the game logo appears inside the dent; a court line draws under it in 300ms.
-- 3-9s: Live stats: three counters (matches today, players online, longest rally) fetched from the site roll up like a stadium scoreboard, digits flipping with a 90ms stagger.
-- 9-16s: Desktop play: a wide browser frame shows a rally; the camera tracks the ball across the court while the browser chrome stays pinned to the frame.
-- 16-22s: Mobile play: the browser frame tweens into a phone over 600ms, the same rally continues in portrait and thumb controls slide up from the bottom edge.
-- 22-27s: Themes: on each beat the court re-skins (grass, clay, hard court, night) with a colour wipe radiating from the net; the ball keeps bouncing through every wipe.
-- 27-30s: Logo, URL and a 'play now' button; the ball bounces three times, smaller each time, and stops as the full stop of the tagline.
+- 0-5s: Dimmed top-down court footage: a LIVE pill above a huge lime counter rolling up to the games played with a cream label; cut to a green court where a second counter rolls to the hours on court.
+- 5-10s: Headline lines stack one per beat (no download, no install, no sign-up), earlier lines dimming to about 40% grey while the active line sits on a slanted teal highlighter bar that wipes in; a small kicker bottom-right says it opens in any browser.
+- 10-15s: Split layout: a phone mock-up on the left runs the game, its court swapping from blue to clay; on the right a kicker, a three-line headline and device chips popping in one by one.
+- 15-20.5s: Court roll call: hard cuts about every second to a new court colour (grass, dunes, hard, clay) with a numbered kicker and a huge city name, under a headline counting courts.
+- 20.5-25s: Fade to navy with faint stars: a rotating wireframe globe with glowing player dots and dashed arcs drawing between them, then a two-tone headline about playing anyone anywhere on the left.
+- 25-30s: End card over dimmed footage: the app icon pops, a two-tone wordmark, a kicker line, three chips and a lime URL pill, then a still hold.
 
 ## قواعد الحركة
-- تتبع الكرة قوسًا فيزيائيًا: قطع مكافئ بفعل الجاذبية مع ارتداد 85%، وانضغاط 20% عند الاصطدام، وتمدّد 10% عند ذروة السرعة؛ وتظهر الكرة في 80% من الإطارات على الأقل.
-- شبكة الإيقاع أولًا: يُستخرج الـ BPM من المقطوعة (الهدف 128-140)، ويُوضع كل قطع وكل بداية عدّاد وكل مسح سمة على نبضة قوية؛ الانحراف المسموح إطار واحد عند 30 إطارًا في الثانية.
-- تتبع الكاميرا الكرة بتأخير 120 مللي ثانية وتجاوز 15% ثم تعود للمركز بمنحنى cubic-bezier(0.2, 0.9, 0.3, 1)؛ لا اهتزاز يدوي.
-- الإحصاءات قيم حقيقية تُقرأ من واجهة الموقع وقت التصيير وتُنسَّق بفواصل الآلاف؛ القيم المؤقتة ممنوعة في النسخة النهائية.
-- تحوّل المتصفح إلى هاتف تحريك واحد للعرض والارتفاع ونصف قطر الزوايا خلال 600 مللي ثانية بمنحنى ease-in-out؛ محتوى اللعبة لا يُصغَّر بل يُعاد تدفّقه.
-- مسحات السمات شعاعية من مركز الشبكة، 280 مللي ثانية لكل منها، ولا يتغيّر إلا لوحة ألوان الملعب؛ نص الواجهة يحتفظ بلون واحد ثابت عالي التباين.
-- الخط: sans مضغوط ثقيل للأرقام والعناوين بحجم 96 بكسل فأكثر، بحروف لاتينية كبيرة، والعربية بخط كوفي عريض بارتفاع حروف مطابق.
-- ممنوع: الحركة البطيئة، والتلاشي، وأي لقطة بلا كرة أو إحصاء، وأكثر من إطار هاتف واحد على الشاشة.
+- القطع على النبضة: نحو 16 قطعة حادة، كل ثانيتين تقريباً في البداية وكل ثانية تقريباً في استعراض الملاعب (15-21 ث)؛ مع فترة هادئة في قسم الهاتف.
+- لقطات اللعب تبقى في الخلفية معتمة بطبقة كحلية ليُقرأ الخط؛ وطبقات الموشن نفسها ثابتة.
+- العناوين تتكدس مع كل نبضة والأسطر السابقة تخفت؛ والسطر النشط يحصل على شريط تظليل مائل يُمسح في نحو 200 مللي ثانية.
+- الأرقام تعدّ حية (إحصاءات مسحوبة من الموقع وقت التصيير)؛ والشارات تنبثق بالتتابع.
+- الكرة الأرضية سلكية تدور بنقاط متوهجة وأقواس متقطعة تُرسم بين اللاعبين.
+- اللوحة: كحلي #07131f، رمادي أزرق #4b5f64، ليموني #d8f24a، كريمي #f3f0e4، فيروزي #2f6b78، ترابي #b4583a وعشبي #3f7a3c.
+- الخط: غروتسك مكثف ثقيل بأحرف كبيرة للعناوين والأرقام، خط شبه عريض للنص، ووسوم صغيرة متباعدة بأحرف كبيرة؛ العناوين بلونين كريمي وليموني.
 
 ## Motion rules
-- The ball follows a physics arc: gravity-driven parabola with 85% restitution, 20% squash on impact and 10% stretch at peak speed; it is on screen in at least 80% of frames.
-- Beat grid first: detect BPM from the track (target 128-140), place every cut, counter start and theme wipe on a downbeat; allowed drift is 1 frame at 30fps.
-- Camera tracks the ball with a 120ms lag and a 15% overshoot, then recentres with cubic-bezier(0.2, 0.9, 0.3, 1); no handheld shake.
-- Stats are real values read from the site API at render time and formatted with thousands separators; placeholders are banned in the final.
-- The browser-to-phone morph is a single tween of width, height and corner radius over 600ms with ease-in-out; the game content inside is not scaled, it reflows.
-- Theme wipes are radial from the net centre, 280ms each, and only the court palette changes; UI text keeps one fixed high-contrast colour.
-- Type: a condensed heavy sans for numbers and headlines at 96px or larger, uppercase in Latin, with Arabic in a bold Kufi-style face at matching x-height.
-- Banned: slow motion, fades, any shot without the ball or a stat, and more than one phone frame on screen.
+- Cut on the beat: about 16 hard cuts, roughly every 2 s early and every ~1 s during the court roll call (15-21 s); quiet stretch during the phone section.
+- Gameplay footage stays underneath, dimmed with a navy overlay so the type reads; motion-graphic layers themselves are static.
+- Headlines stack per beat with earlier lines dimming; the active line gets a slanted highlighter bar wiping in over about 200 ms.
+- Numbers count up live (stats pulled from the site at render time); chips pop in sequentially.
+- The globe is a rotating wireframe sphere with glowing dots and dashed arcs drawing between players.
+- Palette: navy #07131f, slate #4b5f64, lime #d8f24a, cream #f3f0e4, teal #2f6b78, clay #b4583a and grass #3f7a3c.
+- Type: condensed heavy uppercase grotesk for headlines and numbers, semibold sans for body, small tracked uppercase kickers; headlines are two-tone cream and lime.
 
 ## Facts stated by the source (rewritten in our words)
 - The tone requested is high energy.
@@ -62,7 +60,7 @@ The subject is a browser tennis game whose owner wants a loud launch film provin
 - Tagged under product UI, phone and music; no duration is given.
 
 ## Assumptions
-The 30s length, the ball-led camera and the four named themes are proposals; the source does not say which themes exist or how the stats are exposed, so a site API read at render time is assumed. The Suno prompt is treated as a deliverable alongside the film.
+Observed from frames sampled every ~2.5 s plus cut detection: the stat counters, the no-friction headline stack, the phone section, the city court roll call, the globe and the end card over 30 s. Assumed: the generated music (not heard) and how the live stats are fetched; there is no ball-led camera or bouncing-ball ending.
 
 ## Keywords
-tennis game, game launch, live stats, responsive play, theme switch, beat sync, suno prompt, sports motion, لعبة تنس, إطلاق لعبة, إحصاءات حية, هاتف وحاسوب, تبديل السمات, مزامنة إيقاع
+game launch, tennis game, live stats, gameplay footage, highlighter bar, phone mockup, court roll call, wireframe globe, beat cuts, إطلاق لعبة, لعبة تنس, إحصاءات حية, قطع على الإيقاع, كرة أرضية

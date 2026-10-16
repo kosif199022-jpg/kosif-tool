@@ -1,6 +1,6 @@
 ---
 name: pm-melvynx-6cde6c
-description: A 15-second promo where the email tool's own interface is the hero: a composer unfolds, a message launches, the inbox sorts itself and an open-rate curve climbs.
+description: A calm, roughly 45-second promo for an email tool on warm off-white: a giant 'Email' word, a year odometer rolling to 2018, a CSV import wizard, a dot grid showing 80% never open, a rising monthly bill, then an AI-agent terminal that cannot reach the old tool, a red button that connects agents, and a logo with call to action.
 ---
 
 # KOSIF TOOL — Email tool promo reel / ريل ترويجي لأداة بريد إلكتروني
@@ -18,11 +18,11 @@ description: A 15-second promo where the email tool's own interface is the hero:
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل مدته 15 ثانية يجعل واجهة أداة البريد هي البطل: نافذة إنشاء تتفتح، رسالة تنطلق، صندوق وارد يرتّب نفسه، ومنحنى معدل الفتح يصعد.
+إعلان هادئ مدته نحو 45 ثانية على خلفية بيضاء دافئة لأداة بريد إلكتروني: كلمة Email ضخمة، عدّاد سنة يدور إلى 2018، معالج استيراد CSV، شبكة نقاط تُظهر أن 80% لا يفتحون الرسائل، فاتورة شهرية تتصاعد، ثم وكيل ذكاء اصطناعي يفشل في الوصول إلى الأداة القديمة وزر أحمر يربطه بالأداة الجديدة، وختام بالشعار والدعوة.
 
-A 15-second promo where the email tool's own interface is the hero: a composer unfolds, a message launches, the inbox sorts itself and an open-rate curve climbs.
+A calm, roughly 45-second promo for an email tool on warm off-white: a giant 'Email' word, a year odometer rolling to 2018, a CSV import wizard, a dot grid showing 80% never open, a rising monthly bill, then an AI-agent terminal that cannot reach the old tool, a red button that connects agents, and a logo with call to action.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (45 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.

@@ -1,6 +1,6 @@
 ---
 name: pm-kantamk-61f410
-description: A vertical physics loop: a ball bounces inside twelve concentric rings and escapes them one by one, with a countdown and a rising note on every escape.
+description: A roughly 32-second vertical clip on a near-black navy ground: a glowing white ball ricochets inside twelve concentric rings with rotating gaps, coloured from pink at the centre through purple and blue to teal outside. Each time the ball slips through a gap, that ring dissolves into glowing dots and the rings-left counter drops, until the ball escapes, 'ESCAPED.' appears and an end card follows.
 ---
 
 # KOSIF TOOL — Ball escaping twelve rings / كرة تهرب من اثنتي عشرة حلقة
@@ -18,11 +18,11 @@ description: A vertical physics loop: a ball bounces inside twelve concentric ri
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-محاكاة فيزيائية عمودية: كرة ترتد داخل حلقات متحدة المركز وتفلت منها واحدة تلو الأخرى، مع عدّاد ونغمة تصعد عند كل هروب.
+مقطع عمودي مدته نحو 32 ثانية على أرضية كحلية شبه سوداء: كرة بيضاء متوهجة ترتد داخل اثنتي عشرة حلقة متحدة المركز بفجوات دوارة، ألوانها من الوردي في الوسط إلى البنفسجي والأزرق ثم الفيروزي في الخارج. كلما عبرت الكرة فجوة تذوب الحلقة إلى نقاط متوهجة وينقص عدّاد الحلقات المتبقية، حتى تهرب الكرة وتظهر ESCAPED. ثم بطاقة ختام.
 
-A vertical physics loop: a ball bounces inside twelve concentric rings and escapes them one by one, with a countdown and a rising note on every escape.
+A roughly 32-second vertical clip on a near-black navy ground: a glowing white ball ricochets inside twelve concentric rings with rotating gaps, coloured from pink at the centre through purple and blue to teal outside. Each time the ball slips through a gap, that ring dissolves into glowing dots and the rings-left counter drops, until the ball escapes, 'ESCAPED.' appears and an end card follows.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio), suggested duration (25 s), aspect 9:16, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio), suggested duration (32 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: creative motion.

@@ -1,7 +1,7 @@
 {
   "id": "pm-listudio-820c7b",
   "name": "GenVizu product launch",
-  "name_ar": "إطلاق GenVizu: من الوصف إلى التصوّر",
+  "name_ar": "إطلاق GenVizu: منصة أوامر الصور والفيديو بالذكاء الاصطناعي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -28,30 +28,30 @@
   "playbooks": [
     "playbooks/product-ui.md"
   ],
-  "summary_ar": "فيديو إطلاق 20 ثانية لمنتج GenVizu يصلح كخلفية Hero ومادة تسويقية: وصف نصي يتحول إلى رسوم بيانية داخل واجهة المنتج ثم يدور بحلقة نظيفة.",
-  "summary_en": "A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.",
+  "summary_ar": "فيلم إطلاق مدته 52 ثانية لمنصة أوامر توليد الصور والفيديو بالذكاء الاصطناعي على خلفية داكنة: أمر يُكتب في حقل إدخال، صورة سينمائية تملأ الإطار ثم تصغر إلى بطاقة وتصير جداراً ثلاثي الأبعاد مائلاً من الصور، عناوين قصيرة تمزج الغروتسك بالسيريف المائل فوق واجهات واقعية: منتقي نماذج، أربع صور تتضح من الضبابية، صورة تتحول إلى حركة، لوحة لا نهائية بقائمة مهام وكيل، مونتاج ثلاثي سريع وختام بالشعار.",
+  "summary_en": "A 52-second launch film for an AI image and video prompt platform on a dark ground: a prompt types into an input pill, a cinematic image fills the frame, shrinks into a card and becomes a tilted 3D gallery wall, and short headlines mixing sans and italic serif sit over realistic UI: a model picker, four images resolving from blur, still-to-motion, an infinite canvas with an agent checklist, a fast triptych montage and a logo end card.",
   "keywords": [
     "product launch",
     "hero video",
-    "seamless loop",
-    "prompt to chart",
-    "path morph",
-    "product ui",
-    "gtm asset",
-    "data visualisation",
+    "ai image platform",
+    "prompt typing",
+    "3d card wall",
+    "blur to sharp",
+    "image to video",
+    "node canvas",
+    "triptych montage",
     "إطلاق منتج",
-    "فيديو hero",
-    "حلقة متصلة",
-    "تحويل رسوم",
+    "جدار صور",
     "واجهة منتج",
-    "تصوّر بيانات"
+    "مونتاج سريع",
+    "كتابة أمر"
   ],
   "difficulty": 4,
-  "duration_s": 20,
+  "duration_s": 52,
   "stack": [
     "Remotion",
     "React",
-    "SVG"
+    "CSS"
   ],
   "brief": "styles/pm-listudio-820c7b/BRIEF.md"
 }

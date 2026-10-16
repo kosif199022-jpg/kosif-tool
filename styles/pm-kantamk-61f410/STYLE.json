@@ -24,24 +24,25 @@
   "listed": true,
   "skill": "styles/pm-kantamk-61f410/SKILL.md",
   "playbooks": [],
-  "summary_ar": "محاكاة فيزيائية عمودية: كرة ترتد داخل حلقات متحدة المركز وتفلت منها واحدة تلو الأخرى، مع عدّاد ونغمة تصعد عند كل هروب.",
-  "summary_en": "A vertical physics loop: a ball bounces inside twelve concentric rings and escapes them one by one, with a countdown and a rising note on every escape.",
+  "summary_ar": "مقطع عمودي مدته نحو 32 ثانية على أرضية كحلية شبه سوداء: كرة بيضاء متوهجة ترتد داخل اثنتي عشرة حلقة متحدة المركز بفجوات دوارة، ألوانها من الوردي في الوسط إلى البنفسجي والأزرق ثم الفيروزي في الخارج. كلما عبرت الكرة فجوة تذوب الحلقة إلى نقاط متوهجة وينقص عدّاد الحلقات المتبقية، حتى تهرب الكرة وتظهر ESCAPED. ثم بطاقة ختام.",
+  "summary_en": "A roughly 32-second vertical clip on a near-black navy ground: a glowing white ball ricochets inside twelve concentric rings with rotating gaps, coloured from pink at the centre through purple and blue to teal outside. Each time the ball slips through a gap, that ring dissolves into glowing dots and the rings-left counter drops, until the ball escapes, 'ESCAPED.' appears and an end card follows.",
   "keywords": [
     "physics simulation",
     "bouncing ball",
     "concentric rings",
     "satisfying loop",
     "viral short",
-    "countdown",
+    "rings left counter",
+    "procedural melody",
+    "dot dissolve",
     "كرة مرتدة",
     "محاكاة فيزيائية",
     "حلقات",
     "فيديو عمودي",
-    "canvas",
-    "نغمات تصاعدية"
+    "نغمات مولدة"
   ],
   "difficulty": 3,
-  "duration_s": 25,
+  "duration_s": 32,
   "stack": [
     "HTML Canvas",
     "Web Audio"
