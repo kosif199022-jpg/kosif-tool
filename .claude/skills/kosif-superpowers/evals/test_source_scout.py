@@ -15,6 +15,7 @@ spec.loader.exec_module(scout)
 class SourceScoutTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        cls.registry=json.loads(scout.DATA.read_text(encoding="utf-8"))
         cls.rows=scout.load()
 
     def top(self, query):
@@ -22,10 +23,10 @@ class SourceScoutTests(unittest.TestCase):
         return results[0]["repo"] if results else ""
 
     def test_catalog_has_all_reviewed_sources(self):
-        self.assertEqual(len(self.rows),22)
-        self.assertEqual(len({r["repo"] for r in self.rows}),22)
-        self.assertEqual(len({r["domain"] for r in self.rows}),9)
-        self.assertTrue(scout.validate({"schema":"kosif.community-sources.v1","sources":self.rows}))
+        self.assertEqual(len(self.rows),31)
+        self.assertEqual(len({r["repo"] for r in self.rows}),31)
+        self.assertEqual(len({r["domain"] for r in self.rows}),13)
+        self.assertTrue(scout.validate(self.registry))
 
     def test_domain_specific_routing(self):
         queries={
@@ -74,7 +75,7 @@ class SourceScoutTests(unittest.TestCase):
         self.assertFalse(any("verified"==z["status"] for z in self.rows))
 
     def test_untrusted_catalog_mutations_are_rejected(self):
-        altered=json.loads(json.dumps({"schema":"kosif.community-sources.v1","sources":self.rows}))
+        altered=json.loads(json.dumps(self.registry))
         altered["sources"][0]["status"]="executor_exposed"
         with self.assertRaises(ValueError):
             scout.validate(altered)
@@ -83,12 +84,52 @@ class SourceScoutTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             scout.validate(altered)
 
+    def test_two_user_repos_get_correct_routes(self):
+        self.assertEqual(self.top("scalability load balancing cache sharding consistency"), "donnemartin/system-design-primer")
+        self.assertEqual(self.top("choose python libraries packages pip uv"), "vinta/awesome-python")
+        self.assertEqual(self.top("convert docx pptx xlsx markdown"), "microsoft/markitdown")
+
+    def test_snapshot_ranking_has_ten_valid_unique_repos(self):
+        ranking=self.registry["python_top10"]["items"]
+        self.assertEqual(len(ranking),10)
+        self.assertEqual([x["rank"] for x in ranking],list(range(1,11)))
+        self.assertEqual([x["repo"] for x in ranking[:2]],
+                         ["public-apis/public-apis","EbookFoundation/free-programming-books"])
+        self.assertEqual(ranking[-1]["repo"],"Significant-Gravitas/AutoGPT")
+        self.assertTrue(all(a["stars"] > b["stars"] for a,b in zip(ranking,ranking[1:])))
+        self.assertTrue(scout.validate(self.registry))
+
+    def test_snapshot_tamper_is_rejected(self):
+        tampered=json.loads(json.dumps(self.registry))
+        tampered["python_top10"]["items"][0]["stars"]=0
+        with self.assertRaises(ValueError):
+            scout.validate(tampered)
+        tampered=json.loads(json.dumps(self.registry))
+        tampered["python_top10"]["items"][0]["repo"]="unknown/repository"
+        with self.assertRaises(ValueError):
+            scout.validate(tampered)
+
+    def test_python_ranking_cli_reports_snapshot_not_live(self):
+        run=subprocess.run([sys.executable,str(PATH),"python-top"],text=True,
+                           capture_output=True,check=False,timeout=5)
+        self.assertEqual(run.returncode,0,run.stderr)
+        data=json.loads(run.stdout)
+        self.assertEqual(len(data["items"]),10)
+        self.assertFalse(data["live_star_counts"])
+
+    def test_noncode_cc_by_reuse_gated(self):
+        for repo in ("donnemartin/system-design-primer","vinta/awesome-python"):
+            with self.subTest(repo=repo):
+                self.assertEqual(scout.suggest(repo,self.rows,code_reuse=True)[0]["reuse_gate"],
+                                 "check_rights_first")
+
     def test_cli_runs_without_network_or_install(self):
         run=subprocess.run([sys.executable,str(PATH),"check"],text=True,
                            capture_output=True,check=False,timeout=5)
         self.assertEqual(run.returncode,0,run.stderr)
         obj=json.loads(run.stdout)
-        self.assertEqual(obj["source_count"],22)
+        self.assertEqual(obj["source_count"],31)
+        self.assertEqual(obj["python_rank_count"],10)
         self.assertFalse(obj["runtime_proven"])
 
 
