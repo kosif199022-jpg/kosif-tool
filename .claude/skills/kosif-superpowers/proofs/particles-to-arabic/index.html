@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Particles to Arabic — KOSIF proof</title>
+<style>
+  /* OFL fonts shipped next to the proofs (no network needed). */
+  @font-face { font-family: "PLalezar"; src: url("../_shared/fonts/Lalezar-Regular.ttf") format("truetype"); }
+  @font-face { font-family: "PCairo"; src: url("../_shared/fonts/cairo-arabic-600-normal.woff2") format("woff2"); font-weight: 600; }
+  @font-face { font-family: "PGrotesk"; src: url("../_shared/fonts/space-grotesk-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+  @font-face { font-family: "PMono"; src: url("../_shared/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+  html, body { margin: 0; height: 100%; background: #05040a; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  canvas { display: block; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px/1.3 system-ui, sans-serif; color: #9ab; direction: ltr; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><canvas id="out" width="1080" height="1920"></canvas></div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=5 opens at 5 s</div>
+<script>
+(function () {
+  'use strict';
+  /* ============================================================ settings (edit me) */
+  const W = 1080, H = 1920, DUR = 10, FPS = 30;
+  const SEED = 20261016;
+  const N = 6000;                         // particle count
+  const WORD = 'إبداع';                   // shaped as ONE string, sampled as a bitmap: letters stay joined
+  const WORD_FONT = 'PLalezar', WORD_MAX_W = 860, WORD_MAX_PX = 430, WORD_Y = 830;
+  const LINE_AR = 'من الفوضى يولد المعنى';
+  const LINE_EN = 'FROM CHAOS, MEANING';
+  // Timeline (seconds)
+  const T = {
+    fadeIn: [0, 0.9],
+    attractStart: 2.2, attractSpread: 1.1, attractDur: 1.75,   // per-particle start = 2.2 + 1.1·order
+    sweep: [5.15, 6.55],                                        // light sweep across the word (RTL)
+    lineIn: [5.0, 5.9], lineOut: [6.85, 7.15],
+    gather: [6.85, 7.3],                                        // anticipation: word contracts 6 %
+    explode: 7.3, life: 2.5, drag: 2.4,                         // closed-form drag k = 2.4 /s
+    endMark: [8.5, 9.3],
+  };
+  // Palette: gradient along the word, right → left (reading order)
+  const PAL = ['#ffd27a', '#ffb067', '#ff7d8e', '#e86bd6', '#8f8cff', '#6fe3ff'];
+  const EMBER = [255, 138, 61];
+  const BG_TOP = '#07060f', BG_BOT = '#120a1f';
+
+  /* ============================================================ helpers */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const Ease = {
+    inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    outCubic: (x) => 1 - Math.pow(1 - x, 3),
+    inCubic: (x) => x * x * x,
+    inOutSine: (x) => -(Math.cos(Math.PI * x) - 1) / 2,
+    outExpo: (x) => (x >= 1 ? 1 : 1 - Math.pow(2, -10 * x)),
+  };
+  const prog = (t, a, b, e = Ease.inOutCubic) => e(clamp01((t - a) / (b - a)));
+  function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let z = s; z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
+  const hex = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+  function mk(w, h) { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
+
+  /* ============================================================ curl-noise flow field
+     Stream function ψ = Σ a·sin(k·x + ω·t + φ). Velocity = (∂ψ/∂y, −∂ψ/∂x) is divergence-free (curl
+     noise), so particles swirl in eddies without bunching. Analytic derivatives = no grid, no aliasing. */
+  const R = rng(SEED);
+  const WAVES = [];
+  for (let k = 0; k < 7; k++) {
+    const lambda = 260 + R() * 760, ang = R() * Math.PI * 2, kk = (Math.PI * 2) / lambda;
+    const speed = 38 + R() * 46;                    // px/s contributed by this wave
+    WAVES.push({ kx: Math.cos(ang) * kk, ky: Math.sin(ang) * kk, a: speed / kk, w: 0.25 + R() * 0.55, ph: R() * 6.283 });
+  }
+  function flowVel(x, y, t, out) {
+    let vx = 0, vy = -18;                          // gentle updraft
+    for (let k = 0; k < WAVES.length; k++) {
+      const q = WAVES[k], c = q.a * Math.cos(q.kx * x + q.ky * y + q.w * t + q.ph);
+      vx += c * q.ky; vy -= c * q.kx;
+    }
+    out[0] = vx; out[1] = vy;
+  }
+
+  /* ============================================================ state (all precomputed once) */
+  const SIM_HZ = 60, SIM_END = 5.4, STEPS = Math.ceil(SIM_END * SIM_HZ) + 1;
+  let flow;                         // Float32Array [step][i][xy] — RK2 integrated, sampled exactly on seek
+  const tx = new Float32Array(N), ty = new Float32Array(N);       // targets on the shaped word
+  const start = new Float32Array(N), swirl = new Float32Array(N), size = new Float32Array(N);
+  const ex = new Float32Array(N), ey = new Float32Array(N), edel = new Float32Array(N);  // explosion velocity + delay
+  const shimA = new Float32Array(N), shimP = new Float32Array(N);
+  const colIdx = new Uint8Array(N);
+  let wordBox = { x0: 0, x1: W, y0: 0, y1: H, cx: W / 2, cy: H / 2 };
+  const NCOL = 12, COLS = [];
+
+  function buildColours() {
+    for (let i = 0; i < NCOL; i++) {
+      const f = i / (NCOL - 1) * (PAL.length - 1), a = Math.floor(f), b = Math.min(PAL.length - 1, a + 1), p = f - a;
+      const ca = hex(PAL[a]), cb = hex(PAL[b]);
+      COLS.push([0, 1, 2].map((j) => Math.round(lerp(ca[j], cb[j], p))));
+    }
+  }
+
+  function sampleWord() {
+    // Render the whole word with the browser's shaper (HarfBuzz) → joined letters, correct RTL.
+    const c = mk(W, H), g = c.getContext('2d');
+    g.direction = 'rtl'; g.textAlign = 'center'; g.textBaseline = 'alphabetic';
+    g.font = `${WORD_MAX_PX}px "${WORD_FONT}"`;
+    const m = g.measureText(WORD);
+    const px = Math.min(WORD_MAX_PX, WORD_MAX_PX * WORD_MAX_W / m.width);
+    g.font = `${px}px "${WORD_FONT}"`;
+    const m2 = g.measureText(WORD);
+    const base = WORD_Y + (m2.actualBoundingBoxAscent - m2.actualBoundingBoxDescent) / 2;
+    g.fillStyle = '#fff'; g.fillText(WORD, W / 2, base);
+    const d = g.getImageData(0, 0, W, H).data;
+    const pts = [];
+    let x0 = W, x1 = 0, y0 = H, y1 = 0;
+    for (let y = 0; y < H; y += 2) for (let x = 0; x < W; x += 2) {
+      if (d[(y * W + x) * 4 + 3] > 150) { pts.push(x, y); if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+    }
+    wordBox = { x0, x1, y0, y1, cx: (x0 + x1) / 2, cy: (y0 + y1) / 2 };
+    const M = pts.length / 2, r = rng(SEED ^ 0x9e3779b9);
+    // seeded Fisher–Yates over the pixel list, then take N (wrap with sub-pixel jitter if the word is small)
+    const idx = new Uint32Array(M); for (let i = 0; i < M; i++) idx[i] = i;
+    for (let i = M - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); const s = idx[i]; idx[i] = idx[j]; idx[j] = s; }
+    for (let i = 0; i < N; i++) {
+      const k = idx[i % M], jit = i >= M ? 1 : 0;
+      tx[i] = pts[k * 2] + (jit ? (r() - 0.5) * 2 : 0.5); ty[i] = pts[k * 2 + 1] + (jit ? (r() - 0.5) * 2 : 0.5);
+    }
+    return M;
+  }
+
+  function prepare() {
+    buildColours();
+    const samples = sampleWord();
+    const r = rng(SEED + 7);
+    const pos = new Float32Array(N * 2);
+    for (let i = 0; i < N; i++) { pos[i * 2] = -80 + r() * (W + 160); pos[i * 2 + 1] = -80 + r() * (H + 160); }
+    const { x0, x1, cx, cy } = wordBox;
+    for (let i = 0; i < N; i++) {
+      const u = (tx[i] - x0) / Math.max(1, x1 - x0);         // 0 = left end, 1 = right end
+      colIdx[i] = Math.min(NCOL - 1, Math.round((1 - u) * (NCOL - 1)));
+      start[i] = T.attractStart + T.attractSpread * ((1 - u) * 0.72 + r() * 0.28);   // right-to-left formation
+      swirl[i] = (r() < 0.5 ? -1 : 1) * (0.18 + r() * 0.32);
+      size[i] = 1.1 + r() * r() * 2.4;
+      shimA[i] = 0.6 + r() * 1.4; shimP[i] = r() * 6.283;
+      // explosion: radial from the word centre + jitter, speed skewed (few fast sparks, many slow embers)
+      let dx = tx[i] - cx + (r() - 0.5) * 160, dy = (ty[i] - cy) * 1.6 + (r() - 0.5) * 160;
+      const l = Math.hypot(dx, dy) || 1, sp = 380 + 1700 * Math.pow(r(), 2.2);
+      ex[i] = dx / l * sp; ey[i] = dy / l * sp;
+      edel[i] = Math.hypot(tx[i] - cx, ty[i] - cy) / 3200;   // shock front travels 3200 px/s
+    }
+    // RK2 (midpoint) integration at 60 Hz, every step stored → seek(t) is an exact lookup + lerp.
+    flow = new Float32Array(STEPS * N * 2);
+    flow.set(pos, 0);
+    const v1 = [0, 0], v2 = [0, 0], dt = 1 / SIM_HZ;
+    for (let s = 1; s < STEPS; s++) {
+      const tt = (s - 1) * dt, o0 = (s - 1) * N * 2, o1 = s * N * 2;
+      for (let i = 0; i < N; i++) {
+        const x = flow[o0 + i * 2], y = flow[o0 + i * 2 + 1];
+        flowVel(x, y, tt, v1);
+        flowVel(x + v1[0] * dt / 2, y + v1[1] * dt / 2, tt + dt / 2, v2);
+        flow[o1 + i * 2] = x + v2[0] * dt; flow[o1 + i * 2 + 1] = y + v2[1] * dt;
+      }
+    }
+    return samples;
+  }
+
+  /* ============================================================ particle position at time t (pure) */
+  function particleAt(i, t, out) {
+    // 1) free flight in the flow field
+    const f = Math.min(STEPS - 1.0001, Math.max(0, t * SIM_HZ)), s0 = Math.floor(f), fr = f - s0;
+    const o0 = s0 * N * 2 + i * 2, o1 = o0 + N * 2;
+    let x = lerp(flow[o0], flow[o1], fr), y = lerp(flow[o0 + 1], flow[o1 + 1], fr);
+    // 2) attraction to the sampled glyph point, along a curved (swirling) path
+    const u = clamp01((t - start[i]) / T.attractDur);
+    let form = 0;
+    if (u > 0) {
+      const e = Ease.inOutCubic(u);
+      const dx = tx[i] - x, dy = ty[i] - y, bend = Math.sin(Math.PI * e) * swirl[i];
+      x = x + dx * e - dy * bend; y = y + dy * e + dx * bend;
+      form = e;
+    }
+    // 3) hold: micro shimmer so the word breathes
+    if (form >= 1) {
+      x = tx[i] + Math.sin(t * 2.6 + shimP[i]) * shimA[i];
+      y = ty[i] + Math.cos(t * 2.1 + shimP[i] * 1.3) * shimA[i];
+    }
+    // 4) anticipation: contract 6 % toward the centre (inCubic), then explode with closed-form drag
+    const { cx, cy } = wordBox;
+    const g = prog(t, T.gather[0], T.gather[1], Ease.inCubic) * 0.06;
+    x = cx + (x - cx) * (1 - g); y = cy + (y - cy) * (1 - g);
+    let alive = 1, ember = 0;
+    const tau = t - T.explode - edel[i];
+    if (tau > 0) {
+      const k = T.drag, d = (1 - Math.exp(-k * tau)) / k;      // ∫ e^{-kτ} dτ
+      x += ex[i] * d; y += ey[i] * d - 46 * tau * tau;            // embers rise (buoyancy)
+      alive = Math.pow(clamp01(1 - tau / T.life), 1.7);
+      ember = clamp01(tau / 0.9);
+    }
+    out[0] = x; out[1] = y; out[2] = form; out[3] = alive; out[4] = ember;
+  }
+
+  /* ============================================================ rendering */
+  const out = document.getElementById('out'), ctx = out.getContext('2d');
+  const layer = mk(W, H), lg = layer.getContext('2d');
+  const half = mk(W / 2, H / 2), hg = half.getContext('2d');
+  const quarter = mk(W / 4, H / 4), qg = quarter.getContext('2d');
+  const textC = mk(W, H), tg = textC.getContext('2d');
+  let grain;
+  function buildGrain() {
+    grain = mk(256, 256); const g = grain.getContext('2d'), im = g.createImageData(256, 256), r = rng(SEED + 99);
+    for (let i = 0; i < im.data.length; i += 4) { const v = 128 + (r() - 0.5) * 70; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; }
+    g.putImageData(im, 0, 0);
+  }
+
+  const P = new Float32Array(5), Q = new Float32Array(5);
+  const NA = 4;            // alpha buckets
+  const paths = [];        // [colour][alpha] → Path2D, rebuilt per frame
+  function drawParticles(t) {
+    lg.setTransform(1, 0, 0, 1, 0, 0);
+    lg.clearRect(0, 0, W, H);
+    lg.globalCompositeOperation = 'lighter';
+    lg.lineCap = 'round';
+    const fadeIn = 0.35 + 0.65 * prog(t, T.fadeIn[0], T.fadeIn[1], Ease.outCubic);   // never an empty first frame
+    const sweepX = lerp(wordBox.x1 + 200, wordBox.x0 - 200, prog(t, T.sweep[0], T.sweep[1], Ease.inOutSine));
+    const sweepOn = t > T.sweep[0] && t < T.sweep[1];
+    for (let c = 0; c < NCOL; c++) { paths[c] = []; for (let a = 0; a < NA; a++) paths[c][a] = { thin: new Path2D(), thick: new Path2D() }; }
+    const hot = new Path2D(), embers = [new Path2D(), new Path2D(), new Path2D()];
+    const dtTrail = 0.055;   // streak length = motion over the last 55 ms (motion blur, still a pure function of t)
+    for (let i = 0; i < N; i++) {
+      particleAt(i, t, P); particleAt(i, Math.max(0, t - dtTrail), Q);
+      const alive = P[3] * fadeIn; if (alive < 0.02) continue;
+      let x = P[0], y = P[1], qx = Q[0], qy = Q[1];
+      if (x < -20 || x > W + 20 || y < -20 || y > H + 20) continue;
+      let sdx = x - qx, sdy = y - qy; const sl = Math.hypot(sdx, sdy);
+      if (sl > 34) { qx = x - sdx / sl * 34; qy = y - sdy / sl * 34; }      // cap streaks at 34 px
+      else if (sl < 0.4) qx = x + 0.4;
+      const fm = P[2] * P[2] * P[2];
+      const bright = (0.5 + 0.5 * fm) * alive * (P[2] > 0 && P[2] < 1 ? 0.75 : 1);  // in-flight sparks a bit dimmer                 // dimmer while drifting, full once formed
+      const a = Math.min(NA - 1, Math.floor(bright * NA));
+      const p = size[i] > 2.2 ? paths[colIdx[i]][a].thick : paths[colIdx[i]][a].thin;
+      if (P[4] > 0.25) { const b = Math.min(2, Math.floor(alive * 3)); embers[b].moveTo(qx, qy); embers[b].lineTo(x, y); continue; }
+      p.moveTo(qx, qy); p.lineTo(x, y);
+      if (sweepOn && P[2] >= 1 && Math.abs(tx[i] - sweepX) < 90) { hot.moveTo(qx, qy); hot.lineTo(x + 0.4, y); }
+    }
+    for (let c = 0; c < NCOL; c++) {
+      const [r, g, b] = COLS[c];
+      for (let a = 0; a < NA; a++) {
+        const al = (a + 0.5) / NA;
+        lg.strokeStyle = `rgba(${r},${g},${b},${al.toFixed(3)})`;
+        lg.lineWidth = 1.5; lg.stroke(paths[c][a].thin);
+        lg.lineWidth = 2.8; lg.stroke(paths[c][a].thick);
+      }
+    }
+    for (let b = 0; b < 3; b++) {
+      lg.strokeStyle = `rgba(${EMBER[0]},${EMBER[1]},${EMBER[2]},${(0.25 + b * 0.3).toFixed(2)})`;
+      lg.lineWidth = 2.0; lg.stroke(embers[b]);
+    }
+    if (sweepOn) { lg.strokeStyle = 'rgba(255,250,235,0.85)'; lg.lineWidth = 2.6; lg.stroke(hot); }
+    lg.globalCompositeOperation = 'source-over';
+  }
+
+  function drawLines(t) {
+    tg.setTransform(1, 0, 0, 1, 0, 0);
+    tg.clearRect(0, 0, W, H);
+    const aIn = prog(t, T.lineIn[0], T.lineIn[1], Ease.outCubic), aOut = 1 - prog(t, T.lineOut[0], T.lineOut[1]);
+    const a = Math.min(aIn, aOut);
+    if (a <= 0.001) return;
+    const y = wordBox.y1 + 190;
+    // Arabic line: shaped as one string; revealed by a soft right-to-left mask (never per letter)
+    tg.save();
+    tg.direction = 'rtl'; tg.textAlign = 'center'; tg.font = '600 58px "PCairo"';
+    tg.fillStyle = '#f4ecff'; tg.globalAlpha = aOut;
+    tg.shadowColor = 'rgba(255,170,120,0.55)'; tg.shadowBlur = 18;
+    tg.fillText(LINE_AR, W / 2, y);
+    tg.restore();
+    // mask: gradient edge travels from right to left
+    const edge = lerp(W - 90 + 120, 90 - 120, aIn);
+    tg.save(); tg.globalCompositeOperation = 'destination-in';
+    const gr = tg.createLinearGradient(edge - 120, 0, edge + 120, 0);
+    gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,1)');
+    tg.fillStyle = gr; tg.fillRect(0, y - 90, W, 120);
+    tg.restore();
+    // English line: tracked caps, rises 18 px
+    tg.save();
+    tg.direction = 'ltr'; tg.textAlign = 'center'; tg.font = '500 30px "PGrotesk"';
+    tg.letterSpacing = `${lerp(18, 9, aIn).toFixed(1)}px`;
+    tg.fillStyle = `rgba(200,190,230,${(0.8 * a).toFixed(3)})`;
+    tg.fillText(LINE_EN, W / 2, y + 66 + 18 * (1 - aIn));
+    tg.restore();
+  }
+
+  function frame(t) {
+    // camera: slow push-in, then a decaying shake when the word bursts
+    const zoom = 1 + 0.05 * prog(t, 0, T.explode, Ease.inOutSine) + 0.025 * prog(t, T.explode, DUR, Ease.outCubic);
+    const st = t - T.explode, shake = st > 0 ? 12 * Math.exp(-st * 7) : 0;
+    const sx = shake * Math.sin(st * 63), sy = shake * Math.cos(st * 51);
+    drawParticles(t);
+    drawLines(t);
+    // background
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+    const bg = ctx.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, BG_TOP); bg.addColorStop(1, BG_BOT);
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+    // warm core light behind the word while it holds; flash at the burst
+    const formed = prog(t, 3.6, 5.2) * (1 - prog(t, T.explode, T.explode + 1.4, Ease.outCubic));
+    const flash = st > 0 ? Math.exp(-st * 5) : 0;
+    const glowA = 0.22 * formed + 0.55 * flash;
+    if (glowA > 0.003) {
+      const rg = ctx.createRadialGradient(wordBox.cx, wordBox.cy, 0, wordBox.cx, wordBox.cy, 700 + 500 * flash);
+      rg.addColorStop(0, `rgba(255,140,110,${glowA.toFixed(3)})`); rg.addColorStop(1, 'rgba(255,140,110,0)');
+      ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+    }
+    // camera transform for particles + lines
+    const cam = (g) => { g.setTransform(zoom, 0, 0, zoom, W / 2 * (1 - zoom) + sx, wordBox.cy * (1 - zoom) + sy); };
+    ctx.save(); cam(ctx);
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.drawImage(layer, 0, 0);
+    ctx.restore();
+    // bloom: ½-res blur 6 px and ¼-res blur 14 px of the particle layer, added on top
+    hg.clearRect(0, 0, W / 2, H / 2); hg.filter = 'blur(6px)'; hg.drawImage(layer, 0, 0, W / 2, H / 2); hg.filter = 'none';
+    qg.clearRect(0, 0, W / 4, H / 4); qg.filter = 'blur(14px)'; qg.drawImage(layer, 0, 0, W / 4, H / 4); qg.filter = 'none';
+    ctx.save(); cam(ctx); ctx.globalCompositeOperation = 'lighter';
+    ctx.globalAlpha = 0.95; ctx.drawImage(half, 0, 0, W, H);
+    ctx.globalAlpha = 0.85; ctx.drawImage(quarter, 0, 0, W, H);
+    ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+    ctx.drawImage(textC, 0, 0);
+    ctx.restore();
+    // end mark + spec label
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    const em = prog(t, T.endMark[0], T.endMark[1], Ease.outCubic);
+    if (em > 0) {
+      ctx.save(); ctx.globalAlpha = em; ctx.direction = 'rtl'; ctx.textAlign = 'center';
+      ctx.font = '600 46px "PCairo"'; ctx.fillStyle = '#efe6ff';
+      ctx.fillText('كُن شرارة', W / 2, H / 2 + 20 - 14 * (1 - em));
+      ctx.direction = 'ltr'; ctx.font = '500 24px "PGrotesk"'; ctx.letterSpacing = '10px'; ctx.fillStyle = 'rgba(190,180,220,0.75)';
+      ctx.fillText('KOSIF SUPERPOWERS', W / 2, H / 2 + 80);
+      ctx.restore();
+    }
+    ctx.save(); ctx.direction = 'ltr'; ctx.textAlign = 'center'; ctx.font = '500 22px "PMono"';
+    ctx.fillStyle = `rgba(170,160,200,${(0.45 * prog(t, 0.3, 1.2)).toFixed(3)})`; ctx.letterSpacing = '3px';
+    ctx.fillText(`N = ${N.toLocaleString('en-US')}  ·  SEED ${SEED}  ·  t = ${t.toFixed(2)} s`, W / 2, H - 150);
+    ctx.restore();
+    // vignette + grain
+    const vg = ctx.createRadialGradient(W / 2, H * 0.45, H * 0.25, W / 2, H * 0.45, H * 0.75);
+    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.6)');
+    ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
+    const fi = Math.round(t * FPS), ox = (fi * 73) % 256, oy = (fi * 151) % 256;
+    ctx.globalAlpha = 0.05; ctx.globalCompositeOperation = 'overlay';
+    ctx.fillStyle = ctx.createPattern(grain, 'repeat'); ctx.translate(-ox, -oy); ctx.fillRect(0, 0, W + 256, H + 256);
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+  }
+
+  /* ============================================================ contract + preview UI */
+  let cur = 0;
+  const ready = document.fonts.load(`100px "${WORD_FONT}"`, WORD)
+    .then(() => Promise.all([document.fonts.load('600 58px "PCairo"', LINE_AR), document.fonts.load('500 30px "PGrotesk"', 'A'), document.fonts.load('500 22px "PMono"', 'N')]))
+    .then(() => document.fonts.ready)
+    .then(() => { buildGrain(); window.__kosifSamples = prepare(); frame(0); });
+  window.__kosifReady = ready;
+  window.__kosif = { duration: DUR, fps: FPS, seek(t) { cur = t; frame(t); } };
+
+  function fit() { const s = Math.min(innerWidth / W, innerHeight / H); const f = document.getElementById('fit'); f.style.transform = `scale(${s})`; f.style.left = `${(innerWidth - W * s) / 2}px`; }
+  addEventListener('resize', fit); fit();
+  if (navigator.webdriver) document.body.classList.add('render');
+  else ready.then(() => {
+    const q = new URLSearchParams(location.search); cur = parseFloat(q.get('t') || '0') || 0; frame(cur);
+    let playing = false, last = 0;
+    const step = (now) => { if (!playing) return; cur += (now - last) / 1000; last = now; if (cur > DUR) cur = 0; frame(cur); requestAnimationFrame(step); };
+    addEventListener('keydown', (e) => {
+      if (e.code === 'Space') { playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(step); }
+      if (e.code === 'ArrowRight') { playing = false; cur = Math.min(DUR, cur + 1 / FPS); frame(cur); }
+      if (e.code === 'ArrowLeft') { playing = false; cur = Math.max(0, cur - 1 / FPS); frame(cur); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
