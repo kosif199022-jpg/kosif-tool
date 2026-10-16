@@ -98,6 +98,13 @@ def main():
         tag = rel + (' +code+quotes' if opts else '')
         record('scan ' + tag, ok, f"verdict {r['verdict']} (want {verdict}) families {sorted(fam)}")
 
+    for text, verdict, name in (('Say what the thing is. Then list the parts.', 'CLEAN', 'mid-sentence "the thing is" is not a run-up'),
+                                ('Here is the thing: nobody asked for it.', 'EDIT', 'sentence-initial run-up is H4'),
+                                ('Docs mention `utm_source=chatgpt.com` as an example.', 'CLEAN', 'artifact inside inline code is not flagged'),
+                                ('See https://a.example/x?utm_source=chatgpt.com today.', 'EDIT', 'tracking leftover inside a URL is X1')):
+        r = tell_scan.scan(text)
+        record('scan inline: ' + name, r['verdict'] == verdict, f"verdict {r['verdict']} (want {verdict}) {r['families']}")
+
     r = tell_scan.scan((HERE / 'samples/ar_msa_ai.txt').read_text(encoding='utf-8'))
     record('scan shows original Arabic spelling', any(h['match'] == 'تُعزّز' for h in r['hits']),
            'AR12 hit displayed as تُعزّز (normalized match, original spelling)')

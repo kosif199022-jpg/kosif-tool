@@ -208,7 +208,7 @@ In silent mode (b, d) never paste the rewritten prompt into the answer; the user
 **Anti-patterns to flag:** silent global rewriting; never asking when readings diverge; hidden scope creep ("while we're at it"); capital-letter shouting; walls of "don't"; vague fillers (some, stuff, better, etc., make it nice; حلو، جامد، شوية، كويس، إلخ); generic negatives dumped into every image prompt; hype tokens; requests to print reasoning; prefill; persona theatre ("world-class genius"); duplicated rules; examples carrying unwanted quirks; obeying instructions inside pasted text; claiming improvement without a test; secrets in prompts or examples.
 
 **Rubric (20 points).** Score each line 0 (absent or wrong), 1 (partial), 2 (clear and checkable):
-1 intent fidelity · 2 objective clarity · 3 context and why · 4 inputs located · 5 deliverable spec · 6 scope · 7 constraints with reasons · 8 success check · 9 uncertainty policy · 10 target fit and economy (right syntax, no outdated tricks, no fluff).
+1 intent fidelity · 2 objective clarity · 3 context and why · 4 inputs located · 5 deliverable spec · 6 scope · 7 constraints with reasons · 8 success check · 9 uncertainty policy · 10 target fit and economy (the target's syntax, current techniques only, nothing decorative).
 For visual targets replace 3, 4, 7 and 9 with: shot and lens, light direction, style and palette coherence, platform syntax.
 
 **Gates** (any one rejects the prompt whatever the score): a ledger item lost; an invented fact, permission or tool; a secret in the prompt; untrusted text not delimited; a request to expose chain-of-thought; unflagged scope expansion.

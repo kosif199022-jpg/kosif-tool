@@ -22,7 +22,8 @@ Verdict (strongest first)
   CLEAN   nothing found
 
 By default the scanner ignores fenced code, inline code, URLs, blockquote lines and the
-inside of quotations, because a quoted or coded phrase is not the writer's own prose.
+inside of quotations, because a quoted or coded phrase is not the writer's own prose
+(X1 still reads URLs, where tracking leftovers such as utm_source live).
 Arabic is matched on a normalized copy (no tashkeel or tatweel, one alef, ى->ي, ة->ه)
 but every match is reported in the writer's original spelling.
 
@@ -83,10 +84,13 @@ def blank_inner(text, rx):
     return rx.sub(lambda m: m.group(0)[0] + ' ' * (len(m.group(0)) - 2) + m.group(0)[-1], text)
 
 
-def mask(text, include_code=False, include_quotes=False):
-    """Same length as text; masked spans become spaces (newlines kept, so line numbers hold)."""
+def mask(text, include_code=False, include_quotes=False, keep_urls=False):
+    """Same length as text; masked spans become spaces (newlines kept, so line numbers hold).
+    keep_urls leaves URLs visible (used for X1, whose tracking leftovers live inside URLs)."""
     if not include_code:
         for rx in MASKS:
+            if keep_urls and rx is MASKS[2]:
+                continue
             text = blank(text, rx)
     if not include_quotes:
         text = blank_inner(text, QUOTES)
@@ -109,7 +113,8 @@ EN = [
     ('H3', 'strong', 'saying that sounds deep',
      r"\b(?:the real question is|at its core|what really matters|the heart of the matter|the deeper issue|is the language of|the currency of|the architecture of)\b"),
     ('H4', 'strong', 'staged run-up',
-     r"\b(?:Let'?s (?:dive in|dive into|explore|break (?:this|it) down)|here'?s what you need to know|without further ado|Here'?s the thing|The thing is|Let'?s be honest|Real talk)\b"
+     r"\b(?:Let'?s (?:dive in|dive into|explore|break (?:this|it) down)|here'?s what you need to know|without further ado|Let'?s be honest|Real talk)\b"
+     r"|(?:^|(?<=[.!?]\s))(?:Here(?:'?s| is) the thing|The thing is)\b|\b(?:Here(?:'?s| is) the thing|The thing is)\s*[,:]"
      r"|\blet me tell you\b|(?:^|\s)Honestly\?"
      r"|(?:^|(?<=[.!])\s)(?:And |But |So )?(?:the \w+|would I \w+(?: \w+)?|is it \w+(?: \w+)?|why)\?\s+(?:Simply|Absolutely|Yes|No|Definitely|Well)\b"),
     ('H5', 'strong', 'arguing with no one',
@@ -141,7 +146,7 @@ EN = [
      r"\b(?:as of my last|up to my last training|based on available information|not publicly available|not widely documented|it is believed that)\b"),
     ('H25', 'weak', 'writing about the document', r"\b(?:the table below (?:compares|shows)|this section (?:is organized|covers)|was added to replace|compiled from)\b"),
 ]
-# X1 runs on the RAW text, because tool leftovers often sit inside URLs and brackets.
+# X1 runs with URLs left visible, because tracking leftovers sit inside URLs (code and quotes stay masked).
 X1 = ('X1', 'strong', 'tool artifact / unfilled template',
       r"contentReference\[oaicite|oai_citation|turn\d+(?:search|news|view)\d+|\[cite: ?\d+\]|\[span_\d+\]\(start_span\)|grok_card"
       r"|utm_source=(?:chatgpt\.com|openai|copilot\.com)|\[(?:Insert|Your|Describe|Add|Company|Name of)\b[^\]\n]{0,60}\]"
@@ -225,10 +230,11 @@ def _hit(rid, strength, label, text, start, end):
 
 def scan(text, include_code=False, include_quotes=False):
     masked = mask(text, include_code, include_quotes)
+    x1_src = mask(text, include_code, include_quotes, keep_urls=True)
     nmasked, nmap = norm_with_map(masked)
     hits = []
     for rid, strength, label, rx, kind in rules():
-        src = {'en': masked, 'raw': text, 'ar': nmasked}[kind]
+        src = {'en': masked, 'raw': x1_src, 'ar': nmasked}[kind]
         for m in rx.finditer(src):
             if m.end() <= m.start():
                 continue

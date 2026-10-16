@@ -184,7 +184,7 @@ def render(stem: str, rows) -> str:
     L += ["", "## المصادر والرخص / sources & licences", ""]
     L.append("- الرخص / licences: " + " · ".join(f"{k} ({v})" for k, v in sorted(lic.items(), key=lambda kv: (-kv[1], kv[0]))))
     L.append("- الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the "
-             "source; no long third-party text is copied. `—` means no third-party code is involved.")
+             "source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).")
     L += ["", "---",
           f"_مولَّد آليًا من `data/powers/{stem}.json` بواسطة `scripts/build_chapters.py` — Generated; edit the JSON, then run "
           f"`python3 scripts/build_chapters.py` (`--check` fails while this file is stale)._", ""]
@@ -197,8 +197,10 @@ def main(argv=None) -> int:
     ap.add_argument("--family", help="only this family stem")
     ap.add_argument("--force", action="store_true", help="overwrite a chapter even without the generated marker")
     ap.add_argument("--prune", action="store_true", help="delete generated chapters whose JSON no longer exists")
+    ap.add_argument("--out", metavar="DIR", help="write chapters here instead of references/powers (for tests)")
     ap.add_argument("-q", "--quiet", action="store_true")
     a = ap.parse_args(argv)
+    out_dir = Path(a.out) if a.out else OUT
     fams, errors = general_families()
     for e in errors:
         print(f"warning: {e}", file=sys.stderr)
@@ -209,7 +211,7 @@ def main(argv=None) -> int:
             return 2
     stale, wrote, same, refused = [], [], [], []
     for stem, _path, rows in fams:
-        out = OUT / f"{stem}.md"
+        out = out_dir / f"{stem}.md"
         text = render(stem, rows)
         old = out.read_text(encoding="utf-8") if out.is_file() else None
         if old == text:
@@ -221,14 +223,14 @@ def main(argv=None) -> int:
         if a.check:
             stale.append(stem + (" (missing)" if old is None else " (stale)"))
             continue
-        OUT.mkdir(parents=True, exist_ok=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         out.write_text(text, encoding="utf-8")
         wrote.append(stem)
     # generated chapters whose JSON is gone
     live = {f[0] for f in fams} if not a.family else set()
     orphans = []
-    if not a.family and OUT.is_dir():
-        for f in sorted(OUT.glob("*.md")):
+    if not a.family and out_dir.is_dir():
+        for f in sorted(out_dir.glob("*.md")):
             if f.stem in live or f.stem in MOTION_STEMS:
                 continue
             try:
@@ -239,7 +241,7 @@ def main(argv=None) -> int:
     for f in orphans:
         if a.prune and not a.check:
             f.unlink()
-            print(f"pruned {f.relative_to(ROOT)} (no JSON)")
+            print(f"pruned {f.name} (no JSON)")
         else:
             stale.append(f"{f.stem} (generated chapter without JSON; run --prune)")
     for stem in refused:
@@ -255,7 +257,7 @@ def main(argv=None) -> int:
         return 0
     if not a.quiet:
         for s in wrote:
-            print(f"wrote references/powers/{s}.md")
+            print(f"wrote {out_dir / (s + '.md')}" if a.out else f"wrote references/powers/{s}.md")
         print(f"build_chapters: {len(wrote)} written · {len(same)} unchanged · {len(refused)} refused · "
               f"{len(fams)} general famil{'y' if len(fams) == 1 else 'ies'} · motion chapters untouched")
     return 1 if refused else 0

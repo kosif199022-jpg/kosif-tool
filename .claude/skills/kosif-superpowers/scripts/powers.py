@@ -554,19 +554,17 @@ def cmd_family(powers, _styles, a) -> int:
     return 0
 
 
-def cmd_suggest(powers, styles, a) -> int:
-    if not check_domain(powers, a):
-        return 2
-    brief = " ".join(a.brief)
+def suggest(powers, styles, brief: str, limit: int = 18, domain: str = None) -> dict:
+    """Rank powers for a brief across all domains (or one). Used by `suggest` and by evals."""
     words = expand(re.findall(r"[\w:]+", brief), brief)
     words = [w for w in words if w[:1] in "@~!" or (len(norm(w)) >= 2 and norm(w) not in STOP)]
     fam_i, dom_i, hints = intent_of(words)
     general = {m[0] for m in FAMILY_META.values()}
     general_intent = any(f in general for f in fam_i)
-    pool = by_domain(powers, a)
+    pool = [p for p in powers if not domain or (p.get("domain") or DEFAULT_DOMAIN) == domain]
     picked, fams = [], Counter()
     for s, p in rank(pool, words, inject=True):
-        if len(picked) >= a.limit:
+        if len(picked) >= limit:
             break
         cap = 5 if (general_intent and not dom_i.get("motion") and prefix_of(p) in fam_i) else 3
         if fams[p.get("family")] >= cap:  # spread across families
@@ -574,32 +572,41 @@ def cmd_suggest(powers, styles, a) -> int:
         fams[p.get("family")] += 1
         picked.append((s, p))
     motion_share = sum(1 for _s, p in picked if p.get("domain") == "motion") / max(1, len(picked))
-    dom_filter = getattr(a, "domain", None)
-    motion_out = dom_filter == "motion" or (not dom_filter and bool(
+    motion_out = domain == "motion" or (not domain and bool(
         dom_i.get("motion") or (not general_intent and motion_share >= 0.5)))
     st = []
     if motion_out and styles:
         st = sorted(styles, key=lambda s: -sum(norm(json.dumps(s, ensure_ascii=False)).count(norm(w))
                                                for w in words if w[:1] not in "@~!"))[:8]
     aspect = re.search(r"\b(9:16|16:9|1:1|4:5)\b", brief)
-    chapters = list(OrderedDict.fromkeys(p.get("family") for _s, p in picked))
+    return {"brief": brief, "domain_filter": domain, "picked": picked, "styles": st, "motion": motion_out,
+            "intent": {"families": dict(fam_i), "domains": dict(dom_i)}, "hints": hints,
+            "chapters": list(OrderedDict.fromkeys(p.get("family") for _s, p in picked)),
+            "format": (aspect.group(1) if aspect else "9:16 default") if motion_out else None}
+
+
+def cmd_suggest(powers, styles, a) -> int:
+    if not check_domain(powers, a):
+        return 2
+    brief = " ".join(a.brief)
+    r = suggest(powers, styles, brief, a.limit, getattr(a, "domain", None))
+    picked, st, chapters, hints = r["picked"], r["styles"], r["chapters"], r["hints"]
     if getattr(a, "json", False):
-        emit({"brief": brief, "domain_filter": dom_filter, "intent": {"families": dict(fam_i), "domains": dict(dom_i)},
+        emit({"brief": brief, "domain_filter": r["domain_filter"], "intent": r["intent"],
               "powers": [short(p, s) for s, p in picked],
               "styles": [{"id": s.get("id"), "title_ar": s.get("title_ar"), "proves_ar": s.get("proves_ar")} for s in st],
-              "chapters": [f"references/powers/{f}.md" for f in chapters],
-              "format": (aspect.group(1) if aspect else "9:16 default") if motion_out else None,
+              "chapters": [f"references/powers/{f}.md" for f in chapters], "format": r["format"],
               "hints": [HINTS[h] for h in hints if h in HINTS]})
         return 0
     print(f"# powers for: {brief}")
     for _s, p in picked:
         print(line(p))
-    if motion_out:
+    if r["motion"]:
         if st:
             print("\n# reference styles to study")
             for s in st:
                 print(f"{s.get('id'):<28} {s.get('title_ar', '')} — {s.get('proves_ar', '')}"[:160])
-        print(f"\nformat: {aspect.group(1) if aspect else '9:16 default'} · then: python3 tools/kosif.py scaffold <style> <dir>")
+        print(f"\nformat: {r['format']} · then: python3 tools/kosif.py scaffold <style> <dir>")
     else:
         print("\n# chapters to open")
         for f in chapters:

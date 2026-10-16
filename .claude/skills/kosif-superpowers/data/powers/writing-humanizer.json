@@ -392,7 +392,7 @@
   "status": "proven",
   "what": "يلتقط بقايا الاستشهاد والتتبع وقوالب لم تُملأ مثل [Your Name] و[اسم الشركة]. — Catches citation and tracking leftovers and unfilled placeholders.",
   "when": "Text pasted from a chat assistant or a template before it is published or sent.",
-  "how": "X1 (strong) runs on the raw text, including URLs: contentReference[oaicite…], oai_citation, turn0search0, [cite: N], [span_N](start_span), grok_card, utm_source=chatgpt.com|openai|copilot.com, [Insert…]/[Your…]/[Name of…], [اسمك]/[اسم الشركة]/[أدخل…]/[ضع…]. Fix: remove the artifact; fill the placeholder or ask. Tested on artifacts.txt → EDIT.",
+  "how": "X1 (strong) reads URLs too (code and quotations stay masked): contentReference[oaicite…], oai_citation, turn0search0, [cite: N], [span_N](start_span), grok_card, utm_source=chatgpt.com|openai|copilot.com, [Insert…]/[Your…]/[Name of…], [اسمك]/[اسم الشركة]/[أدخل…]/[ضع…]. Fix: remove the artifact; fill the placeholder or ask. Tested on artifacts.txt → EDIT.",
   "params": "",
   "install": "",
   "license": "original (this skill)",
