@@ -1,60 +1,64 @@
-# ساحر بكسل يستحضر العملات الرقمية — Pixel wizard crypto animation
+# ساحر بكسل يضرب دمية التدريب حتى التصفية — Pixel wizard crypto animation
 
-> مقطع بكسل آرت لساحر صغير يستحضر عملات رقمية وشموع سعرية بتعويذة واحدة، بحركة إطارات مقطّعة على طريقة ألعاب الثمانينيات.
+> مشهد بكسل آرت ليلي ثابت مدته 20 ثانية بجانب بحيرة (قمر، صنوبر، نار مخيم، راية حمراء، انعكاسات ماء متموجة) يواجه فيه بطل دمية تدريب. يبدل البطل فئته كل بضع ثوانٍ (ساحر أزرق، ساحر أحمر، فارس، لص بقلنسوة) ويلقي تعاويذ تُكتب أسماؤها في شريط علوي بينما تتكدس أرقام الضرر كسجل قتال. التعويذة الأخيرة ترسم شموع صعود خضراء تنهار إلى شموع حمراء، يغمر الأحمر الشاشة ويظهر رقم سالب ضخم وكلمة REKT.
 >
-> A pixel-art wizard conjures crypto coins and candlestick charts with one spell, animated in stepped 8-bit frames with a retro game feel.
+> A fixed 20-second night pixel-art diorama by a lake (moon, pines, campfire, red banner, rippling reflections) where a hero faces a training dummy. The hero swaps classes every few seconds (blue wizard, red wizard, knight, hooded rogue) and casts spells whose names type into a top banner while damage numbers stack like a combat log. The final spell draws a green candlestick rally that crashes into red candles, the screen floods red, a huge negative figure and REKT appear and the dummy is left charred.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/0xevinho-3777d8
 - التصنيفات / Categories: —
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 10 s · الصعوبة / Difficulty: 3/5
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 20 s · الصعوبة / Difficulty: 3/5
 - التقنية المقترحة / Stack: HTML Canvas, Remotion
 
 ## الفكرة
-الموضوع ساحر مرسوم بالبكسل يؤدي تعويذة تتحول إلى عملات رقمية ورموز بلوكتشين، وهو نسخة من فكرة سابقة أُعيد توجيهها نحو عالم الكريبتو. الهدف الترفيه السريع وبناء شخصية قابلة لإعادة الاستخدام في محتوى مجتمعات العملات. لغة الحركة تلتزم بقيود ألعاب الكونسول القديمة: إطارات مقطّعة لا مُنعَّمة، شبكة بكسل ثابتة، ألوان محدودة، وتضخيم كوميدي في لحظة انطلاق التعويذة.
+الموضوع نكتة كريبتو بلغة ألعاب الأدوار: كل تعويذة أقوى من سابقتها، والأرقام تكبر، حتى تأتي أقوى تعويذة على الإطلاق: التصفية، فتنهار السوق ويخسر الجميع. الديكور ثابت تماماً والكاميرا مقفلة، والحركة كلها من الشخصيات والمؤثرات وتلوين المشهد بحسب التعويذة. الإيقاع إيقاع لعبة: نحو ثانيتين لكل تعويذة، أرقام ضرر تنبثق، ثم الذروة الحمراء.
 
 ## Concept
-The subject is a pixel-drawn wizard whose spell turns into crypto coins and blockchain symbols, a remix of an earlier idea redirected toward the crypto world. The goal is quick entertainment and a reusable character for crypto-community content. The motion language obeys old console constraints: stepped frames instead of smooth tweens, a fixed pixel grid, a limited palette, and comic exaggeration at the moment the spell fires.
+The subject is a crypto joke told in RPG language: each spell is stronger than the last and the numbers grow, until the most powerful spell of all arrives, liquidation, and the market crashes. The set is completely fixed and the camera locked; all motion comes from characters, effects and the scene tint changing per spell. The rhythm is game-like: about two seconds per spell, damage numbers popping, then the red climax.
 
 ## المشاهد المقترحة
-- 0-1.5 ث: سماء ليلية بنجوم 2x2 بكسل تومض بمعدل 4 إطارات/ث؛ الساحر يدخل من اليسار بدورة مشي من 4 إطارات ويتوقف في المنتصف.
-- 1.5-3.5 ث: العصا ترتفع عبر 6 إطارات مقطّعة؛ دائرة رونية تدور تحته بمعدل 8 إطارات/ث مع تصاعد طنين.
-- 3.5-6 ث: تنطلق التعويذة: انفجار شرارات بكسل (24 جزيئاً، عمر 3 إطارات) وعملات تنبثق واحدة كل 150 مللي ثانية، كل منها تنقلب بدورة من 6 إطارات.
-- 6-8.5 ث: تتراكم العملات في مخطط شموع يتصاعد؛ قبعة الساحر ترتفع دهشةً مع تجاوز من إطارين.
-- 8.5-10 ث: صاروخ بكسل يعبر خلفه؛ تجميد على وضعية، وميض بأربعة ألوان، بطاقة ختام.
+- 0-1.7 ث: ديكور البحيرة الليلي: ساحر أزرق يساراً ودمية تدريب يميناً، نار مخيم تومض، راية تتموج، نجوم تتلألأ وانعكاسات القمر في الماء.
+- 1.7-5 ث: العاصفة الثلجية: الشريط يكتب اسم التعويذة بين سهمين، دائرة سحرية تدور تحت الساحر، مطر جليدي وغيمة ثلج دوامة تضرب الدمية، المشهد يصطبغ بالأزرق وأرقام الضرر تتكدس أعلى اليمين مع رقم ضربة حرجة كبير قرب القمر.
+- 5-8.3 ث: البطل يتحول إلى ساحر أحمر؛ النيزك: بوابة حلقية حمراء تنفتح في السماء، نيزك مشتعل يعبر من أعلى اليمين والمشهد يصطبغ بالقرمزي بينما يتكدس عمود من أرقام الضرر.
+- 8.3-13.3 ث: نفخة دخان تحول البطل إلى فارس؛ غضب التنين: ضربة سيف، دائرة صدمة حمراء وتيار تنين ناري يعبر الدمية مع أرقام مكدسة أكثر.
+- 13.3-15 ث: تبديل بالدخان إلى لص بقلنسوة مع دائرة سحرية خضراء ومجموع يكبر.
+- 15-18.3 ث: التصفية: شموع خضراء تصعد عبر السماء ثم شموع حمراء تهوي على خط ساقط؛ أرقام ضرر سالبة تتكدس، الشاشة تغمرها الحمرة، حلقة حمراء تتسع، شعاع أحمر عمودي يضرب الدمية، ويظهر رقم دولارات سالب ضخم وختم REKT.
+- 18.3-20 ث: ما بعد ذلك: يعود الليل، الدمية محترقة، الشخصية ذات القلنسوة تحمل شعلة وتبقى REKT بالأحمر.
 
 ## Proposed scenes
-- 0-1.5s: A night sky of 2x2-pixel stars twinkles at 4 fps; the wizard walks in from the left on a 4-frame cycle and stops centre.
-- 1.5-3.5s: The staff rises over 6 stepped frames; a rune circle rotates under him at 8 fps while a hum builds.
-- 3.5-6s: The spell fires: a burst of pixel sparks (24 particles, 3-frame life) and coins pop out one per 150ms, each flipping on a 6-frame cycle.
-- 6-8.5s: Coins stack into a candlestick chart that climbs; the wizard's hat lifts in surprise with a 2-frame overshoot.
-- 8.5-10s: A pixel rocket crosses behind him; freeze on a pose, a 4-colour flash, end card.
+- 0-1.7s: The lakeside night diorama: a blue wizard on the left, a training dummy on the right, campfire flicker, banner wave, twinkling stars and moon reflections in the water.
+- 1.7-5s: Blizzard: the banner types the spell name between arrows, a magic circle spins under the wizard, icy rain and a swirling ice cloud hit the dummy, the scene tints blue and damage numbers stack top-right with a big critical number near the moon.
+- 5-8.3s: The hero swaps to a red wizard; meteor: a red ring portal opens in the sky, a flaming meteor crosses from the top right and the scene tints crimson as a column of damage numbers stacks.
+- 8.3-13.3s: A smoke puff swaps the hero to a knight; dragon fury: a sword slash, a red shock circle and a fire-dragon stream across the dummy with more stacked numbers.
+- 13.3-15s: A smoke swap to a hooded rogue with a green magic circle and a growing total.
+- 15-18.3s: Liquidation: green candles climb across the sky, then red candles plunge along a falling line; negative damage numbers stack, the screen floods red, a red ring expands, a vertical red beam hits the dummy, a huge negative dollar figure and REKT stamp appear.
+- 18.3-20s: Aftermath: the night returns, the dummy is charred, the hooded figure holds a torch and REKT remains in red.
 
 ## قواعد الحركة
-- لا حركة دون البكسل: كل عنصر يتحرك بخطوات بكسل كاملة على شبكة صحيحة، ويُكبَّر بأسلوب nearest-neighbour؛ تُمنع مرشحات التنعيم.
-- معدلات الإطارات: حلقات السكون 4 إطارات/ث، دورات المشي 8، انفجارات التعويذة 12؛ لا استيفاء بين الإطارات المفتاحية بمنحنيات easing.
-- اللوحة محدودة بـ 16 لوناً؛ التعويذة تستخدم لوني تمييز فقط يومضان على إطارات متناوبة لثلاثة إطارات.
-- الجزيئات تعيش 3-5 إطارات وتموت بالانكماش بكسلاً واحداً في كل إطار، لا بتلاشي الشفافية.
-- الكاميرا ثابتة؛ يُسمح باهتزاز الشاشة مرة واحدة بإزاحة بكسلين لثلاثة إطارات عند هبوط التعويذة.
-- العملات والشموع تُرسم كـ sprites بحجم 8x8؛ المخطط ينمو شمعة كل 250 مللي ثانية مع وميض أبيض لإطار واحد على كل شمعة.
-- النص بخط بكسل نقطي يُكشف حرفاً حرفاً كل 60 مللي ثانية؛ يُمنع الخط المنعَّم.
+- لقطة عريضة مقفلة لديكور واحد ثابت: البطل في الثلث الأيسر، الدمية في الثلث الأيمن، الشريط أعلى الوسط، سجل الضرر أعلى اليمين قرب القمر، وانعكاس البحيرة في أسفل 30%.
+- انضباط البكسل: تكبير بأقرب جار وحلقات رسوم متحركة بمعدل إطارات متدرج منخفض (نار المخيم، الراية، النجوم، تموجات الماء).
+- نحو ثانيتين لكل تعويذة؛ تبديل الفئة يحدث في المكان خلف نفخة دخان؛ ونحو 11 قطعة أو ومضة تحدد تغير التعاويذ.
+- أسماء التعاويذ تُكتب حرفاً حرفاً بخط بكسلي ذهبي محدد بين سهمين؛ وأرقام الضرر تنبثق وتتكدس في عمود من أربعة صفوف كل 150-250 مللي ثانية.
+- كل تعويذة تعيد تلوين المشهد (أزرق للعاصفة الثلجية، قرمزي للنيزك والتصفية) وتضيف أثرها: خطوط مطر، نيزك وبوابة، ضربة سيف وتيار تنين، مخطط شموع.
+- اللوحة: نيلي ليلي #191639 و#0e152f، نبيذي #491635، ذهبي #f2c94c، أحمر #e5484d، أزرق جليدي #4aa3ff، أخضر #7bd650، وردي #ff7aa8 ورقّي #e8dcb0.
+- المرجع بلا صوت؛ أضف أصوات تعاويذ وضربات بأسلوب 8-بت فقط عند الطلب.
 
 ## Motion rules
-- No sub-pixel motion: every element moves in whole-pixel steps on an integer grid, scaled up with nearest-neighbour; smoothing filters are banned.
-- Frame rates: idle loops at 4 fps, walk cycles at 8 fps, spell bursts at 12 fps; never interpolate between keyframes with easing curves.
-- Palette capped at 16 colours; the spell uses 2 accent colours only, flashing on alternate frames for 3 frames.
-- Particles live 3-5 frames and die by shrinking one pixel per frame, not by fading alpha.
-- Camera is fixed; screen shake is allowed once, as a 2-pixel offset for 3 frames when the spell lands.
-- Coins and chart candles are drawn as 8x8 sprites; the chart grows one candle per 250ms with a 1-frame white flash on each.
-- Text is a bitmap pixel font revealed letter by letter at 60ms per character; anti-aliased type is banned.
+- Locked wide shot of one fixed diorama: hero on the left third, dummy on the right third, banner top-centre, damage log top-right near the moon, lake reflection in the bottom 30%.
+- Pixel discipline: nearest-neighbour scaling, sprite loops at low stepped frame rates (campfire, banner, stars, water ripples).
+- About 2 s per spell; class swaps happen in place behind a smoke puff; about 11 cuts or flashes mark spell changes.
+- Spell names type letter by letter in a gold outlined bitmap font between arrows; damage numbers pop and stack in a four-row column every 150-250 ms.
+- Each spell retints the scene (blue for blizzard, crimson for meteor and liquidation) and adds its own effect: rain lines, meteor and portal, sword slash and dragon stream, candlestick chart.
+- Palette: night indigo #191639 and #0e152f, wine #491635, gold #f2c94c, red #e5484d, ice blue #4aa3ff, green #7bd650, pink #ff7aa8 and parchment #e8dcb0.
+- The reference has no audio; add 8-bit spell and hit sounds only if requested.
 
 ## Facts stated by the source (rewritten in our words)
 - The source only asks for a variant of an earlier piece with a crypto reference; the pixel-wizard subject comes from the public title.
 
 ## Assumptions
-Nothing about duration, palette, stack or scenes is stated; the 10-second length, the 8-bit framing and the coin-to-chart gag are all proposed direction.
+Observed from frames sampled every ~1.67 s: the fixed lakeside diorama, the four classes, the blizzard, meteor, dragon fury and liquidation spells, the damage log, the candlestick rally and crash, REKT and the 20 s silent runtime. Assumed: exact swap timings and any micro screen shake; no coins or rocket appear.
 
 ## Keywords
-pixel art, 8-bit, retro game, sprite animation, crypto coins, candlestick, stepped frames, nearest neighbour, بكسل آرت, ساحر, عملات رقمية, تعويذة, رسوم ريترو
+pixel art, 8-bit, rpg spells, training dummy, damage numbers, class swap, candlestick crash, liquidation, lakeside night, بكسل آرت, ساحر, تعاويذ, شموع تداول, رسوم ريترو

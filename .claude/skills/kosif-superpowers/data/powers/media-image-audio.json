@@ -1,0 +1,811 @@
+[
+ {
+  "id": "MEDIA-01",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "كتابة العربية على الصور بـ Pillow",
+  "name_en": "Arabic text on images with Pillow (raqm)",
+  "status": "proven",
+  "what": "Pillow 12 يشكّل العربية بنفسه عبر raqm؛ أمرّر النص كما هو مع الاتجاه واللغة ونقطة الارتكاز. — Pillow 12 shapes Arabic itself through raqm; pass the text as-is with direction, language and anchor.",
+  "when": "thumbnails, social cards, certificates, OCR test images, labels on frames",
+  "how": "f=ImageFont.truetype(path,64,layout_engine=ImageFont.Layout.RAQM); draw.text((right_x,y), text, font=f, direction='rtl', language='ar', anchor='ra'). Check PIL.features.check('raqm') first (True, raqm 0.10.5, on 2026-10-16). Use bundled OFL fonts (Amiri, Cairo, Tajawal) because system Arabic fonts are poor.",
+  "params": "anchor 'ra' = right edge, ascender line; 'la' for LTR",
+  "install": "pip install pillow",
+  "license": "MIT-CMU",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "pillow",
+   "arabic text",
+   "raqm",
+   "image text",
+   "خط عربي",
+   "صورة",
+   "كتابة على الصور"
+  ],
+  "section": "النص العربي على الصور — Arabic text on images",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-02",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "لا تشكّل العربية مرتين",
+  "name_en": "Never double-shape Arabic",
+  "status": "proven",
+  "what": "إضافة arabic_reshaper وpython-bidi فوق محرك يشكّل بنفسه تقلب الكلمات وتفصل الحروف. — Adding arabic_reshaper + python-bidi on top of an engine that already shapes reverses the words and breaks the letters.",
+  "when": "old snippets with get_display(reshape(s)); text appears reversed",
+  "how": "Rule: raw string for raqm/HarfBuzz engines (Pillow 12, matplotlib 3.11, browsers, LibreOffice, weasyprint); reshape + bidi only for reportlab or builds without raqm. Contact panel 4 shows both lines side by side.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "arabic_reshaper",
+   "bidi",
+   "reversed text",
+   "تشكيل",
+   "نص معكوس"
+  ],
+  "section": "النص العربي على الصور — Arabic text on images",
+  "source": "proofs/general-media/contact.png"
+ },
+ {
+  "id": "MEDIA-03",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "التعرف على العربية والإنجليزية بـ tesseract",
+  "name_en": "Arabic + English OCR with tesseract",
+  "status": "proven",
+  "what": "أستخرج النص العربي والإنجليزي من الصور محليًا بعد تثبيت حزمة العربية. — Extract Arabic and English text from images locally once the Arabic pack is installed.",
+  "when": "screenshots, scans, photos of documents, images inside PDFs",
+  "how": "apt-get install -y tesseract-ocr tesseract-ocr-ara (6 s); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 6'). Proof: clean naskh, sans and English lines read at similarity 0.99 in 0.41 s; mean word confidence 90.6. Strip U+200E/U+200F marks from the output.",
+  "params": "--psm 6 block, 7 single line, 4 columns; 300 dpi for scans",
+  "install": "apt-get install tesseract-ocr tesseract-ocr-ara && pip install pytesseract",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "ocr",
+   "tesseract",
+   "arabic ocr",
+   "pytesseract",
+   "تعرف ضوئي",
+   "استخراج نص من صورة"
+  ],
+  "section": "التعرف الضوئي على الحروف — OCR",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-04",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "نقاط ضعف OCR العربي",
+  "name_en": "Arabic OCR weak spots (digits, display fonts)",
+  "status": "proven",
+  "what": "نموذج ara الافتراضي يخطئ في الأرقام الهندية العربية والخطوط الكوفية والعرضية؛ أتحقق من كل رقم. — The stock ara model misreads Arabic-Indic digits and Kufi/display fonts; validate every number.",
+  "when": "invoices, phone numbers, dates, prices read by OCR",
+  "how": "Measured (56 px, psm 7): Arabic-Indic digits 0.51-0.84 similarity (a phone number came back as garbage); the same line with Western digits 1.0; Reem Kufi merged two words. Mitigations: -l ara for pure Arabic lines (ara+eng can emit Latin junk); range/checksum checks; ask the user to confirm numbers; try tessdata_best (untested).",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "ocr digits",
+   "arabic-indic",
+   "kufi",
+   "validation",
+   "أرقام هندية",
+   "أخطاء التعرف"
+  ],
+  "section": "التعرف الضوئي على الحروف — OCR",
+  "source": "proofs/general-media/results.json#findings"
+ },
+ {
+  "id": "MEDIA-05",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "تقويم الصفحات المائلة",
+  "name_en": "Deskew scans before OCR",
+  "status": "proven",
+  "what": "أقدّر زاوية الميل من كتل السطور وأدوّر الصورة قبل التعرف، فيرتفع التطابق كثيرًا. — Estimate the skew angle from line blobs and rotate before OCR; accuracy rises sharply.",
+  "when": "photographed or scanned pages that are visibly tilted",
+  "how": "median 3 -> Otsu (inverted) -> morph open 2x2 -> dilate with a 60x5 kernel -> contours > 5000 px -> cv2.minAreaRect angles (subtract 90 when w<h) -> median -> warpAffine back. Proof: true 12°, estimated 12.07°, OCR 0.598 -> 0.912.",
+  "params": "",
+  "install": "pip install opencv-python-headless",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "deskew",
+   "opencv",
+   "scan",
+   "ocr preprocessing",
+   "تقويم الميل"
+  ],
+  "section": "التعرف الضوئي على الحروف — OCR",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-06",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "قس قبل أن تعالج",
+  "name_en": "Measure preprocessing, do not assume it helps",
+  "status": "proven",
+  "what": "التحويل إلى أبيض وأسود بعتبة تكيفية خفّض دقة tesseract 5 بعد التقويم؛ كل خطوة تُقاس. — Adaptive-threshold binarisation lowered tesseract 5 accuracy after deskew; measure every step.",
+  "when": "building any OCR or image pipeline",
+  "how": "Score each variant against ground truth (difflib ratio on NFKC text). Proof: grayscale deskew 0.912, the same plus adaptiveThreshold(31, C=15) 0.814. Tesseract's LSTM engine works on grayscale; binarise only if a measurement shows it helps.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "preprocessing",
+   "binarization",
+   "measurement",
+   "قياس"
+  ],
+  "section": "التعرف الضوئي على الحروف — OCR",
+  "source": "proofs/general-media/results.json#findings"
+ },
+ {
+  "id": "MEDIA-07",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "OCR بديل عبر pip",
+  "name_en": "easyocr (pure-pip OCR)",
+  "status": "install",
+  "what": "تعرّف ضوئي يدعم العربية دون apt، لكنه يسحب torch ونماذج. — OCR with Arabic support and no apt step, but it pulls torch and model files.",
+  "when": "hosts without apt/root",
+  "how": "pip install torch --index-url https://download.pytorch.org/whl/cpu (21 s, 769 MB in the arsenal run) then pip install easyocr; reader=easyocr.Reader(['ar','en']). Model download and accuracy not tested here.",
+  "params": "",
+  "install": "pip install easyocr",
+  "license": "Apache-2.0",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "easyocr",
+   "ocr",
+   "torch",
+   "pip only"
+  ],
+  "section": "التعرف الضوئي على الحروف — OCR",
+  "source": "session-2026-10-16:general-arsenal.md (metadata)"
+ },
+ {
+  "id": "MEDIA-08",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "عمليات OpenCV الأساسية",
+  "name_en": "OpenCV basics (edges, threshold, warp)",
+  "status": "proven",
+  "what": "حواف، وعتبات، وتدوير، وتحويلات منظور، وكشف أشكال — أساس أي خط معالجة صور. — Edges, thresholds, rotation, perspective warps and contours: the base of any image pipeline.",
+  "when": "cleanup, measurement, masks, document straightening",
+  "how": "cv2.Canny(gray,80,160); cv2.threshold(..., THRESH_OTSU); cv2.getRotationMatrix2D + warpAffine(borderValue=255); cv2.findContours. Note: opencv-python-headless is version 5.0 (major bump), so check the API before writing code.",
+  "params": "",
+  "install": "pip install opencv-python-headless",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "opencv",
+   "canny",
+   "edges",
+   "threshold",
+   "معالجة صور"
+  ],
+  "section": "معالجة الصور — Image processing",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-09",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "ضغط الصور ومقارنة الجودة",
+  "name_en": "Image compression with quality metrics",
+  "status": "proven",
+  "what": "أختار الصيغة بالأرقام: WebP وAVIF أصغر بكثير من PNG وJPEG مع SSIM مرتفع. — Choose formats by numbers: WebP and AVIF are much smaller than PNG/JPEG while keeping SSIM high.",
+  "when": "web images, thumbnails, artifacts under size limits",
+  "how": "Pillow save: PNG optimize, WebP quality 80, AVIF quality 50, JPEG 85; measure with cv2.PSNR and skimage structural_similarity(channel_axis=2). Proof (640x480 synthetic): 12.0 / 5.5 / 3.3 / 15.8 KB; WebP PSNR 39.7 dB, SSIM 0.982.",
+  "params": "",
+  "install": "pip install pillow scikit-image opencv-python-headless",
+  "license": "MIT-CMU / BSD-3-Clause / Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "webp",
+   "avif",
+   "compression",
+   "ssim",
+   "psnr",
+   "ضغط الصور"
+  ],
+  "section": "معالجة الصور — Image processing",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-10",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "استخراج لوحة الألوان",
+  "name_en": "Dominant palette with k-means",
+  "status": "proven",
+  "what": "أستخرج الألوان الغالبة من صورة أو شعار لبناء هوية أو مطابقة تصميم. — Extract dominant colours from an image or logo to build or match a palette.",
+  "when": "brand matching, palette from a photo, colour grading references",
+  "how": "Z=img.reshape(-1,3).astype(np.float32); cv2.kmeans(Z, k, None, (EPS+MAX_ITER,30,0.5), 4, cv2.KMEANS_PP_CENTERS); sort centres by cluster size. Proof: k=4 recovered three disc colours within 0.9-2.3 RGB units. Gradients need a larger k or a LAB colour space.",
+  "params": "",
+  "install": "pip install opencv-python-headless",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "palette",
+   "kmeans",
+   "colors",
+   "brand",
+   "لوحة ألوان"
+  ],
+  "section": "معالجة الصور — Image processing",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-11",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "رموز QR والباركود",
+  "name_en": "QR codes and barcodes (encode + decode)",
+  "status": "proven",
+  "what": "أولّد رموز QR (حتى بروابط فيها عربية) وأفك ترميزها للتحقق، وأولّد باركود EAN/Code128. — Generate QR codes (even URLs with Arabic) and decode them back to verify; generate EAN/Code128 barcodes.",
+  "when": "menus, posters, invoices, packaging, end cards",
+  "how": "qrcode.make(payload, box_size=8, border=4).save(p); cv2.QRCodeDetector().detectAndDecode(cv2.imread(p)) must equal the payload. Barcode: barcode.get('ean13', digits, writer=ImageWriter()).save('bc').",
+  "params": "",
+  "install": "pip install qrcode python-barcode opencv-python-headless",
+  "license": "BSD / MIT / Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "qr code",
+   "barcode",
+   "decode",
+   "باركود",
+   "رمز QR"
+  ],
+  "section": "معالجة الصور — Image processing",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-12",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "ImageMagick من سطر الأوامر",
+  "name_en": "ImageMagick 6 CLI",
+  "status": "proven",
+  "what": "تحويلات سريعة للصور من الطرفية؛ الإصدار المتوفر 6 (convert) لا 7 (magick). — Quick image transforms from the shell; the available version is 6 (`convert`), not 7 (`magick`).",
+  "when": "batch resize, format conversion, montage, quick fixes",
+  "how": "convert in.png -resize 50% -colorspace Gray -unsharp 0x1 out.png; identify -format '%w %h %[colorspace]' out.png -> 750 235 Gray (proof). Use mogrify for in-place batches on copies only.",
+  "params": "",
+  "install": "apt-get install imagemagick (6.9.12 present)",
+  "license": "ImageMagick License (Apache-2.0-style)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
+   "session-2026-10-16:env-probe.md#5-real-install-tests"
+  ],
+  "styles": [],
+  "tags": [
+   "imagemagick",
+   "convert",
+   "resize",
+   "batch",
+   "تحويل الصور"
+  ],
+  "section": "معالجة الصور — Image processing",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-13",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "SVG إلى PNG",
+  "name_en": "SVG to PNG (cairosvg)",
+  "status": "proven",
+  "what": "أحوّل رسوم SVG إلى صور نقطية لإدراجها في مستندات أو فيديو. — Rasterise SVG for documents or video.",
+  "when": "icons, logos, diagrams drawn as SVG",
+  "how": "cairosvg.svg2png(bytestring=svg, write_to='o.png', output_width=1024). For Arabic text inside SVG prefer Chromium rendering (APP-05 snap) because it has full shaping; Arabic in cairosvg was not tested.",
+  "params": "",
+  "install": "pip install cairosvg",
+  "license": "LGPL-3.0-or-later",
+  "proof": [
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "svg",
+   "png",
+   "cairosvg",
+   "rasterize"
+  ],
+  "section": "معالجة الصور — Image processing",
+  "source": "session-2026-10-16:general-arsenal.md"
+ },
+ {
+  "id": "MEDIA-14",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "المراجعة البصرية لمخرجاتي",
+  "name_en": "Look at your own outputs (vision QA)",
+  "status": "proven",
+  "what": "أفتح الصور وصفحات PDF التي أنتجتها بأداة القراءة وأراها فعلًا قبل الادعاء بأنها صحيحة. — Open the images and PDF pages I produced with the Read tool and actually look before claiming they are right.",
+  "when": "after every render, chart, document or OCR test image",
+  "how": "Build a contact sheet (Pillow tiles, quantize to stay under 300 KB), Read it, and check Arabic joining, direction, cropping and overlaps. In this session, looking caught a reversed matplotlib title, a chart split over two pages, and a wrong filter name.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "vision",
+   "qa",
+   "contact sheet",
+   "look",
+   "مراجعة بصرية"
+  ],
+  "section": "معالجة الصور — Image processing",
+  "source": "proofs/general-*/contact.png"
+ },
+ {
+  "id": "MEDIA-15",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "توليد إشارات صوتية للاختبار",
+  "name_en": "Synthesize test audio",
+  "status": "proven",
+  "what": "أصنع صوتًا معروف الخصائص (نغمة، صمت، نقرات بإيقاع) لاختبار أي خط معالجة. — Make audio with known properties (tone, silence, clicks at a tempo) to test any audio pipeline.",
+  "when": "before trusting a beat, pitch, loudness or silence detector on real audio",
+  "how": "numpy: 0.2*sin(2*pi*440*t) for 2 s, zeros for 1 s, decaying 1 kHz clicks every 0.5 s (120 BPM); soundfile.write(p, sig, 48000, subtype='PCM_16').",
+  "params": "",
+  "install": "pip install numpy soundfile",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "test signal",
+   "synthesis",
+   "soundfile",
+   "صوت اختبار"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-16",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "قياس طبقة الصوت",
+  "name_en": "Pitch tracking (librosa YIN)",
+  "status": "proven",
+  "what": "أقيس التردد الأساسي لصوت أو نغمة. — Measure the fundamental frequency of a voice or tone.",
+  "when": "tuning checks, voice analysis, verifying generated tones",
+  "how": "f0=librosa.yin(y, fmin=100, fmax=1000, sr=sr); np.median(f0). Proof: 440 Hz tone -> 440.6 Hz. librosa is 1.0 now; check the API before writing from memory.",
+  "params": "",
+  "install": "pip install librosa",
+  "license": "ISC",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "pitch",
+   "yin",
+   "librosa",
+   "frequency",
+   "طبقة الصوت"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-17",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "كشف بدايات الأصوات والإيقاع",
+  "name_en": "Onset and tempo detection",
+  "status": "proven",
+  "what": "أجد لحظات الضربات والمسافات بينها لاستنتاج الإيقاع. — Find hit times and their spacing to infer tempo.",
+  "when": "cutting to the beat, syncing captions, rhythm checks",
+  "how": "librosa.onset.onset_detect(y=seg, sr=sr, units='time'); tempo = 60/median(diff). Start the window about 0.1 s before the first hit, because an onset at sample 0 is missed (first run found 5 of 6). Proof: 6 onsets, 0.501 s spacing (119.7 BPM).",
+  "params": "",
+  "install": "pip install librosa",
+  "license": "ISC",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "onset",
+   "beat",
+   "tempo",
+   "bpm",
+   "إيقاع",
+   "ضربات"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-18",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "قياس الجهارة LUFS",
+  "name_en": "Loudness measurement (LUFS)",
+  "status": "proven",
+  "what": "أقيس الجهارة المتكاملة بطريقتين مستقلتين (pyloudnorm وffmpeg ebur128) وأتحقق من اتفاقهما. — Measure integrated loudness two independent ways (pyloudnorm, ffmpeg ebur128) and check that they agree.",
+  "when": "delivering voice-overs, podcasts, reels, music beds",
+  "how": "pyln.Meter(sr).integrated_loudness(x); ffmpeg -i f -af ebur128=peak=true -f null - (read the last 'I:'). Proof: -13.96 vs -13.9 LUFS on the normalised file.",
+  "params": "",
+  "install": "pip install pyloudnorm",
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "lufs",
+   "loudness",
+   "ebur128",
+   "pyloudnorm",
+   "جهارة"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-19",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "تطبيع الجهارة بمرورين خطّيين",
+  "name_en": "Two-pass linear loudnorm to a target",
+  "status": "proven",
+  "what": "أرفع الصوت إلى −14 LUFS بكسب ثابت دون ضغط، وأتأكد أن ffmpeg لم ينتقل سرًا إلى الوضع الديناميكي. — Bring audio to -14 LUFS with pure gain (no compression), and confirm ffmpeg did not silently switch to dynamic mode.",
+  "when": "final audio for any delivery; preserving the user's audio character",
+  "how": "Pass 1: loudnorm=I=-14:TP=-1:LRA=11:print_format=json -f null. Pass 2: the measured_* values + offset + linear=true + print_format=json, and LRA set above the measured LRA (max(11, input_lra+1)); assert normalization_type == 'linear'. Proof: -18.05 -> -13.96 LUFS, linear. With LRA=11 and a measured LRA of 17.8 the mode went dynamic.",
+  "params": "I -14, TP -1 dBTP; streaming platforms vary (-14 to -16)",
+  "install": "ffmpeg (6.1.1 present)",
+  "license": "LGPL/GPL (ffmpeg build)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "loudnorm",
+   "ffmpeg",
+   "normalize",
+   "-14 lufs",
+   "تطبيع الصوت"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-20",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "كشف الصمت",
+  "name_en": "Silence detection",
+  "status": "proven",
+  "what": "أجد فترات الصمت لقصها أو لتقسيم المقاطع. — Find silent stretches to trim them or split segments.",
+  "when": "podcast cleanup, splitting takes, jump cuts",
+  "how": "ffmpeg -i f -af silencedetect=noise=-50dB:d=0.5 -f null - ; parse silence_start / silence_end. Proof: 2.0 -> 3.0 s found exactly. Tune noise to the room tone (-35 to -50 dB).",
+  "params": "",
+  "install": "ffmpeg",
+  "license": "LGPL/GPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "silence",
+   "silencedetect",
+   "trim",
+   "jump cut",
+   "صمت",
+   "قص"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-21",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "صور الموجة والطيف",
+  "name_en": "Waveform and spectrogram images",
+  "status": "proven",
+  "what": "أرسم شكل الموجة والطيف لصوت لعرضه أو لفحصه بالعين. — Draw a waveform and a spectrogram of audio to show or inspect it.",
+  "when": "podcast covers, QA of edits, explaining audio",
+  "how": "ffmpeg -i f -filter_complex showwavespic=s=1200x200:colors=#2a78d6 -frames:v 1 w.png ; ffmpeg -i f -lavfi showspectrumpic=s=1200x300:legend=0 s.png. The filter is showwavespic; there is no 'showwavespng' (the first run failed on that name).",
+  "params": "",
+  "install": "ffmpeg",
+  "license": "LGPL/GPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "waveform",
+   "spectrogram",
+   "ffmpeg",
+   "visualize",
+   "شكل الموجة",
+   "طيف"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-22",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "قص وتلاشي وتصدير بـ pydub",
+  "name_en": "Slice, fade and export with pydub (Python 3.13)",
+  "status": "proven",
+  "what": "تحرير صوتي بسيط بالمللي ثانية؛ على بايثون 3.13 يحتاج حزمة audioop-lts. — Simple millisecond audio editing; on Python 3.13 it needs the audioop-lts package.",
+  "when": "trimming intros, fades, joining clips, exporting MP3",
+  "how": "pip install pydub audioop-lts (without it: ModuleNotFoundError 'pyaudioop'); AudioSegment.from_wav(p)[:2000].fade_in(200).fade_out(400).export('o.mp3', format='mp3', bitrate='128k'). Proof: ffprobe 2.040 s (the MP3 encoder adds padding).",
+  "params": "",
+  "install": "pip install pydub audioop-lts",
+  "license": "MIT / PSF",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "pydub",
+   "audio edit",
+   "fade",
+   "mp3",
+   "تحرير الصوت"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-23",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "تحويل الصيغ والتحقق من المدة",
+  "name_en": "Transcode and verify duration",
+  "status": "proven",
+  "what": "أحوّل إلى AAC أو MP3 وأتحقق بـ ffprobe أن المدة لم تتغير. — Transcode to AAC or MP3 and verify with ffprobe that the duration did not change.",
+  "when": "delivering audio for web, messaging or video",
+  "how": "ffmpeg -i in.wav -c:a aac -b:a 96k out.m4a; ffprobe -v error -show_entries format=duration -of csv=p=0 out.m4a. Proof: 6.000 s for a 6.0 s source, 34 KB (MP3 via pydub: 2.040 s for 2.0 s, encoder padding). Never overwrite the user's original.",
+  "params": "",
+  "install": "ffmpeg",
+  "license": "LGPL/GPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "transcode",
+   "aac",
+   "m4a",
+   "mp3",
+   "ffprobe",
+   "تحويل صيغة"
+  ],
+  "section": "الصوت — Audio",
+  "source": "proofs/general-media/make_media.py"
+ },
+ {
+  "id": "MEDIA-24",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "مؤثرات صوتية بـ pedalboard",
+  "name_en": "Audio effects (pedalboard, GPL)",
+  "status": "proven",
+  "what": "ضاغط وصدى وفلاتر بجودة استوديو من Python؛ الرخصة GPL. — Studio-grade compressor, reverb and filters from Python; licensed GPL.",
+  "when": "polishing a voice-over or music bed (use as a tool, do not vendor it)",
+  "how": "Pedalboard([Compressor(), Reverb()])(audio, sr) (arsenal run). Keep the original and render a copy.",
+  "params": "",
+  "install": "pip install pedalboard",
+  "license": "GPL-3.0",
+  "proof": [
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "pedalboard",
+   "effects",
+   "reverb",
+   "compressor",
+   "مؤثرات"
+  ],
+  "section": "الصوت — Audio",
+  "source": "session-2026-10-16:general-arsenal.md"
+ },
+ {
+  "id": "MEDIA-25",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "تحويل الكلام إلى نص محليًا",
+  "name_en": "Local speech-to-text (faster-whisper)",
+  "status": "install",
+  "what": "تفريغ الكلام العربي بطوابع زمنية للكلمات على المعالج بنماذج صغيرة. — Transcribe Arabic speech with word timestamps on CPU using small models.",
+  "when": "captions, words.json for sync, meeting notes",
+  "how": "pip install faster-whisper; WhisperModel('small', device='cpu', compute_type='int8').transcribe(p, language='ar', word_timestamps=True). Models download from huggingface.co (reachable on 2026-10-16). Not run in this proof; see the motion audio-sync family for the caption pipeline.",
+  "params": "",
+  "install": "pip install faster-whisper",
+  "license": "MIT",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "whisper",
+   "speech to text",
+   "transcription",
+   "تفريغ",
+   "كلام"
+  ],
+  "section": "خدمات وأدوات ثقيلة — Services & heavy tools",
+  "source": "session-2026-10-16:general-arsenal.md (metadata)"
+ },
+ {
+  "id": "MEDIA-26",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "فصل المسارات الصوتية",
+  "name_en": "Stem separation (demucs)",
+  "status": "install",
+  "what": "فصل الصوت البشري عن الموسيقى؛ بطيء على المعالج. — Separate vocals from music; slow on CPU.",
+  "when": "remove music under speech, karaoke, remix",
+  "how": "pip install demucs (needs torch); demucs --two-stems=vocals in.wav. Expect minutes per track without a GPU. Not run here.",
+  "params": "",
+  "install": "pip install demucs",
+  "license": "MIT",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "demucs",
+   "stems",
+   "vocals",
+   "فصل الصوت"
+  ],
+  "section": "خدمات وأدوات ثقيلة — Services & heavy tools",
+  "source": "session-2026-10-16:general-arsenal.md (metadata)"
+ },
+ {
+  "id": "MEDIA-27",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "إزالة الخلفية محليًا",
+  "name_en": "Background removal (rembg)",
+  "status": "install",
+  "what": "قص الشخص أو المنتج من الخلفية بنموذج U2Net محلي. — Cut out a person or product from the background with a local U2Net model.",
+  "when": "product shots, thumbnails, stickers",
+  "how": "pip install rembg; rembg i in.png out.png. The model downloads on first use; not tested here. The paid service alternative is MEDIA-29.",
+  "params": "",
+  "install": "pip install rembg",
+  "license": "MIT",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "rembg",
+   "background removal",
+   "cutout",
+   "إزالة الخلفية"
+  ],
+  "section": "خدمات وأدوات ثقيلة — Services & heavy tools",
+  "source": "session-2026-10-16:general-arsenal.md (metadata)"
+ },
+ {
+  "id": "MEDIA-28",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "بيانات الصور الوصفية",
+  "name_en": "Image metadata (EXIF)",
+  "status": "install",
+  "what": "قراءة وحذف بيانات الكاميرا والموقع قبل النشر. — Read and strip camera and GPS metadata before publishing.",
+  "when": "privacy before sharing photos; checking capture dates",
+  "how": "Pillow: Image.open(p).getexif(); strip by re-saving without exif. Full tool: apt-get install libimage-exiftool-perl; exiftool -all= copy.jpg. Not run here.",
+  "params": "",
+  "install": "apt-get install libimage-exiftool-perl",
+  "license": "Artistic/GPL (exiftool)",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "exif",
+   "metadata",
+   "privacy",
+   "gps",
+   "خصوصية"
+  ],
+  "section": "خدمات وأدوات ثقيلة — Services & heavy tools",
+  "source": "session-2026-10-16:env-probe.md#3 (exiftool missing, apt available)"
+ },
+ {
+  "id": "MEDIA-29",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "توليد وتحسين الصور والأصوات بالذكاء الاصطناعي (مدفوع)",
+  "name_en": "AI image/audio generation and upscaling (paid connector)",
+  "status": "key",
+  "what": "عند وجود موصل مثل Higgsfield: توليد صور وصوت، وتكبير، وإزالة خلفية، ودبلجة — بأرصدة مدفوعة وبطلب صريح. — With a connector such as Higgsfield: image and audio generation, upscaling, background removal, dubbing; it costs credits, so only on explicit request.",
+  "when": "the user explicitly asks for generated or upscaled media and the connector is attached",
+  "how": "Check the tool list for mcp__<server>__generate_image / upscale_image / remove_background / dubbing; read the connector's own instructions; quote the cost first; never call paid tools without the user's intent. No GPU locally, so local diffusion is impractical.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "higgsfield",
+   "image generation",
+   "upscale",
+   "dubbing",
+   "paid",
+   "توليد صور"
+  ],
+  "section": "خدمات وأدوات ثقيلة — Services & heavy tools",
+  "source": "session-2026-10-16:claude-surfaces.md#4"
+ },
+ {
+  "id": "MEDIA-30",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "صيغ HEIC وصور الهواتف",
+  "name_en": "HEIC/HEIF input from phones",
+  "status": "install",
+  "what": "فتح صور الآيفون بصيغة HEIC وتحويلها. — Open and convert iPhone HEIC photos.",
+  "when": "the user uploads .heic files",
+  "how": "pip install pillow-heif; from pillow_heif import register_heif_opener; register_heif_opener(); then Image.open('x.heic'). AVIF works natively in Pillow 12 (proven in MEDIA-09); HEIC was not tested.",
+  "params": "",
+  "install": "pip install pillow-heif",
+  "license": "BSD-3-Clause",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "heic",
+   "heif",
+   "iphone",
+   "photos",
+   "صور الهاتف"
+  ],
+  "section": "خدمات وأدوات ثقيلة — Services & heavy tools",
+  "source": "session-2026-10-16:general-arsenal.md (metadata)"
+ }
+]

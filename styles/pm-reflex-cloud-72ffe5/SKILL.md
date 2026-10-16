@@ -1,6 +1,6 @@
 ---
 name: pm-reflex-cloud-72ffe5
-description: A 15-second brand reel for reflex. inc cut to music: a one-second hook, then typography, shape play, camera whips and colour flips, landing on a clean final frame.
+description: A 15-second tech brand reel cut to the beat: a halftone macro eye with a HUD tag, a giant typewriter-style 'act', a squiggle path from see to act, a frame counter climbing beside a spinning blurred film strip, frequency waves on red then cyan with a spectrum bar, an extruded 3D 'f' on violet and a mono logo lockup.
 ---
 
 # KOSIF TOOL — Reflex brand motion reel / ريفلكس: ريل رد الفعل في خمس عشرة ثانية
@@ -18,11 +18,11 @@ description: A 15-second brand reel for reflex. inc cut to music: a one-second h
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل علامة لشركة reflex. inc في 15 ثانية مقطوع على الإيقاع: خطّاف في الثانية الأولى، ثم حروف وأشكال وكاميرا وتحولات لون، وإطار ختامي نظيف.
+ريل علامة تقنية مدته 15 ثانية بقطعات على الإيقاع: عين ماكرو بنقاط نصف لونية ووسم HUD، كلمة act ضخمة بخط آلة كاتبة، مسار متعرج من «يرى» إلى «يفعل»، عدّاد إطارات يتصاعد مع شريط فيلم يدور بضبابية، موجات تردد على الأحمر ثم السماوي مع شريط طيف، حرف f بارز ثلاثي الأبعاد على البنفسجي، وختام بشعار أحادي.
 
-A 15-second brand reel for reflex. inc cut to music: a one-second hook, then typography, shape play, camera whips and colour flips, landing on a clean final frame.
+A 15-second tech brand reel cut to the beat: a halftone macro eye with a HUD tag, a giant typewriter-style 'act', a squiggle path from see to act, a frame counter climbing beside a spinning blurred film strip, frequency waves on red then cyan with a spectrum bar, an extruded 3D 'f' on violet and a mono logo lockup.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Photos / صور, Music / موسيقى.

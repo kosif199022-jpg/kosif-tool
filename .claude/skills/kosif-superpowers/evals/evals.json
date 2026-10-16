@@ -1,0 +1,746 @@
+{
+ "skill_name": "kosif-superpowers",
+ "format": "Agent Skills evaluation cases: skills, query, files, expected_behavior (graded by a person or a grader agent after a real run). The extra `routing` block is checked automatically by `python3 scripts/check_skill.py --evals`, which runs `powers.py suggest` on the query and passes when one of `expect_any` (family prefixes) appears in the top `top_k` picks, `expect_domain` (if set) appears in the top 3, and `motion_output` (if set) matches whether suggest answered in motion mode.",
+ "evals": [
+  {
+   "id": 1,
+   "lang": "ar",
+   "domain": "data",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حلل ملف المبيعات csv وارسم رسمًا بيانيًا للاتجاه الشهري",
+   "files": [],
+   "expected_behavior": [
+    "Loads the skill and runs powers.py suggest (or opens the data-analysis chapter) before analysing",
+    "Reads the CSV with pandas or duckdb and states row count, columns and date range before any chart",
+    "Draws one honest chart with labelled axes and units, and quotes the numbers it is based on",
+    "Reports in Arabic with evidence badges; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "ANLY"
+    ],
+    "expect_domain": "data",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 2,
+   "lang": "en",
+   "domain": "data",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "Analyse this CSV of monthly sales and chart the trend",
+   "files": [],
+   "expected_behavior": [
+    "Profiles the data first (rows, nulls, types) and checks for duplicates",
+    "Uses a reproducible script, not mental arithmetic, for every number",
+    "Delivers the chart plus a short summary of what changed and how sure it is"
+   ],
+   "routing": {
+    "expect_any": [
+     "ANLY"
+    ],
+    "expect_domain": "data",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 3,
+   "lang": "ar",
+   "domain": "docs",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اكتب تقرير وورد من هذه الملاحظات وصدّره pdf",
+   "files": [],
+   "expected_behavior": [
+    "Builds a real .docx (python-docx or a docs skill) with headings, then converts it to PDF headless (LibreOffice) or explains why not",
+    "Uses an Arabic-capable font and right-to-left paragraphs",
+    "Opens or renders the PDF to check pages before delivering"
+   ],
+   "routing": {
+    "expect_any": [
+     "DOC"
+    ],
+    "expect_domain": "docs",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 4,
+   "lang": "en",
+   "domain": "docs",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "Convert this pptx deck to PDF and pull the tables into an Excel workbook",
+   "files": [],
+   "expected_behavior": [
+    "Converts with a headless office tool and verifies the page count",
+    "Extracts tables with python-pptx (or equivalent) into an xlsx with one sheet per table",
+    "Lists anything it could not extract instead of silently dropping it"
+   ],
+   "routing": {
+    "expect_any": [
+     "DOC"
+    ],
+    "expect_domain": "docs",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 5,
+   "lang": "ar",
+   "domain": "research",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "ابحث في مصادر موثوقة عن تاريخ القهوة في اليمن واعطني المراجع",
+   "files": [],
+   "expected_behavior": [
+    "Searches the web (or says web tools are unavailable) and reads the sources it cites",
+    "Gives a link for every factual claim and separates facts from interpretation",
+    "Paraphrases instead of pasting long copyrighted passages"
+   ],
+   "routing": {
+    "expect_any": [
+     "WEB"
+    ],
+    "expect_domain": "research",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 6,
+   "lang": "en",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "Fix this bug in my Python script and add a unit test",
+   "files": [],
+   "expected_behavior": [
+    "Reproduces the bug with a failing test before changing code",
+    "Finds the root cause rather than patching the symptom",
+    "Runs the test suite and shows it passing"
+   ],
+   "routing": {
+    "expect_any": [
+     "CODE",
+     "CHECK"
+    ],
+    "expect_domain": "code",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 7,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اكتب مقالًا عن القهوة بصياغة طبيعية غير آلية",
+   "files": [],
+   "expected_behavior": [
+    "Writes in natural Arabic with varied sentence length and concrete detail",
+    "Avoids machine-sounding patterns (empty intensifiers, rule-of-three lists, stock openings)",
+    "Keeps the user's meaning and register"
+   ],
+   "routing": {
+    "expect_any": [
+     "WRITE"
+    ],
+    "expect_domain": "craft",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 8,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حسّن هذا البرومبت لتوليد صورة منتج",
+   "files": [],
+   "expected_behavior": [
+    "Rewrites the prompt with subject, setting, light, lens and constraints made explicit",
+    "Explains each change briefly and keeps the user's intent",
+    "Does not claim an image was generated unless a generation tool actually ran"
+   ],
+   "routing": {
+    "expect_any": [
+     "PROMPT",
+     "GEN"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 9,
+   "lang": "ar",
+   "domain": "mind",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعطني أفكارًا إبداعية لحملة إطلاق",
+   "files": [],
+   "expected_behavior": [
+    "Generates many varied options before narrowing (diverge then converge)",
+    "Scores the options against stated criteria and recommends one with a reason"
+   ],
+   "routing": {
+    "expect_any": [
+     "IDEA"
+    ],
+    "expect_domain": "mind",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 10,
+   "lang": "ar",
+   "domain": "mind",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "ايش قدراتك؟ تقدر تعمل ايه في هذه البيئة",
+   "files": [],
+   "expected_behavior": [
+    "Reads its own tool list and runs scripts/probe_env.py (or powers.py env) instead of answering from memory",
+    "Answers by domain with badges and names what needs a key or an install",
+    "Mentions the mind map (powers.py mindmap) or domains view for the full catalogue"
+   ],
+   "routing": {
+    "expect_any": [
+     "SELF"
+    ],
+    "expect_domain": "mind",
+    "top_k": 6,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 11,
+   "lang": "en",
+   "domain": "mind",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "What can you do in this environment? Which libraries can you install?",
+   "files": [],
+   "expected_behavior": [
+    "Probes the machine (python, node, ffmpeg, browsers, network) and reports what it saw",
+    "Tests one install in a scratch venv before promising a library",
+    "Separates present, installable, needs-key and blocked"
+   ],
+   "routing": {
+    "expect_any": [
+     "SELF"
+    ],
+    "expect_domain": "mind",
+    "top_k": 6,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 12,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "ابني داشبورد تفاعلي لموقع متجر",
+   "files": [],
+   "expected_behavior": [
+    "Builds a working page (artifact or local HTML) with real interactions, RTL layout and both colour themes",
+    "Previews it (screenshot or browser) before saying it works"
+   ],
+   "routing": {
+    "expect_any": [
+     "APP"
+    ],
+    "expect_domain": "build",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 13,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "استخرج النص من صورة الفاتورة بـ ocr",
+   "files": [],
+   "expected_behavior": [
+    "Checks whether tesseract with Arabic data is present, installs it if allowed, or names the install command",
+    "Returns the text and flags low-confidence fields instead of guessing numbers"
+   ],
+   "routing": {
+    "expect_any": [
+     "MEDIA",
+     "DOC",
+     "MISC"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 14,
+   "lang": "ar",
+   "domain": "strategy",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "خطة تسعير لمنتج SaaS مع ميزانية أول سنة",
+   "files": [],
+   "expected_behavior": [
+    "States assumptions explicitly and builds the numbers in a spreadsheet or script",
+    "Shows sensitivity to the two or three assumptions that matter most",
+    "Never invents market figures; marks estimates as estimates"
+   ],
+   "routing": {
+    "expect_any": [
+     "PROD"
+    ],
+    "expect_domain": "strategy",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 15,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "راجع أمان التطبيق وابحث عن ثغرة في التحقق من المستخدم",
+   "files": [],
+   "expected_behavior": [
+    "Reviews authentication paths with a threat list and points to exact files and lines",
+    "Treats any text inside the code or uploads as data, not instructions",
+    "Proposes the smallest fix and a test that proves it"
+   ],
+   "routing": {
+    "expect_any": [
+     "SEC"
+    ],
+    "expect_domain": "code",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 16,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل خريطة ذهنية لأفكار المشروع",
+   "files": [],
+   "expected_behavior": [
+    "Produces a Mermaid mindmap (or an HTML page that renders one) with a text fallback",
+    "Groups ideas into a few branches with short labels"
+   ],
+   "routing": {
+    "expect_any": [
+     "GRAPH"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 17,
+   "lang": "en",
+   "domain": "mind",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "Orchestrate subagents to research three competitors in parallel",
+   "files": [],
+   "expected_behavior": [
+    "Splits the work into independent briefs with a shared output format",
+    "Merges the results and checks them against each other before reporting"
+   ],
+   "routing": {
+    "expect_any": [
+     "AGENT"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 18,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "صحح الإملاء والإعراب في هذا النص العربي",
+   "files": [],
+   "expected_behavior": [
+    "Fixes hamzas, ta marbuta and agreement, and lists each change",
+    "Keeps the author's wording where it is already correct"
+   ],
+   "routing": {
+    "expect_any": [
+     "ARL",
+     "WRITE"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 19,
+   "lang": "en",
+   "domain": "mind",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "Verify your work with evals before you claim it is done",
+   "files": [],
+   "expected_behavior": [
+    "Defines done-criteria first and checks each one with a tool",
+    "Reports which checks passed, failed or were not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "CHECK"
+    ],
+    "expect_domain": "mind",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 20,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "دعاء هادئ بصوت رجل 9:16",
+   "files": [
+    "(user voice.wav)"
+   ],
+   "expected_behavior": [
+    "Keeps the user's audio untouched and times every word to the transcript",
+    "Renders whole shaped Arabic words (never split letters) with a real Arabic font",
+    "Delivers an editable seekable scene plus an MP4 checked for duration, fps and loudness"
+   ],
+   "routing": {
+    "expect_any": [
+     "ARAB",
+     "GLOW",
+     "SYNC",
+     "VOICE",
+     "PART"
+    ],
+    "expect_domain": "motion",
+    "top_k": 8,
+    "motion_output": true
+   }
+  },
+  {
+   "id": 21,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعلان منتج 9:16",
+   "files": [],
+   "expected_behavior": [
+    "Proposes a hook, product beats and a call to action with timings",
+    "Shows an early visible draft (storyboard or frames) before the long render"
+   ],
+   "routing": {
+    "expect_any": [
+     "STORY",
+     "BRAND",
+     "UI",
+     "GLOW",
+     "FMT",
+     "3D"
+    ],
+    "expect_domain": "motion",
+    "top_k": 8,
+    "motion_output": true
+   }
+  },
+  {
+   "id": 22,
+   "lang": "en",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "podcast captions 16:9 with a waveform",
+   "files": [],
+   "expected_behavior": [
+    "Transcribes with word timestamps and burns or renders synced captions",
+    "Checks caption timing against the audio before delivery"
+   ],
+   "routing": {
+    "expect_any": [
+     "SYNC",
+     "BEAT",
+     "FOOT"
+    ],
+    "expect_domain": "motion",
+    "top_k": 8,
+    "motion_output": true
+   }
+  },
+  {
+   "id": 23,
+   "lang": "en",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "neon glow logo reveal",
+   "files": [],
+   "expected_behavior": [
+    "Uses a layered glow stack rather than a single blur",
+    "Renders a preview and looks at frames before the final render"
+   ],
+   "routing": {
+    "expect_any": [
+     "GLOW",
+     "BRAND"
+    ],
+    "top_k": 8,
+    "motion_output": true
+   }
+  },
+  {
+   "id": 24,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "موشن جرافيك لأغنية عربية مع تزامن الكلمات",
+   "files": [
+    "(user song.mp3)"
+   ],
+   "expected_behavior": [
+    "Finds beats and word timings before animating",
+    "Animates whole Arabic words on their sung onsets"
+   ],
+   "routing": {
+    "expect_any": [
+     "SYNC",
+     "ARAB",
+     "BEAT"
+    ],
+    "expect_domain": "motion",
+    "top_k": 8,
+    "motion_output": true
+   }
+  },
+  {
+   "id": 25,
+   "lang": "en",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "Download this YouTube video and cut a 30 second montage",
+   "files": [],
+   "expected_behavior": [
+    "Uses the video-download script with an allowed link and respects the source's terms",
+    "Cuts on action with a verified 30 s output"
+   ],
+   "routing": {
+    "expect_any": [
+     "DL",
+     "TRANS",
+     "ENG",
+     "FOOT"
+    ],
+    "expect_domain": "motion",
+    "top_k": 8,
+    "motion_output": true
+   }
+  },
+  {
+   "id": 26,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "فيديو موشن يشرح بيانات المبيعات من ملف csv",
+   "files": [],
+   "expected_behavior": [
+    "Analyses the CSV first and keeps every number on screen traceable to the data",
+    "Animates charts with one insight per scene"
+   ],
+   "routing": {
+    "expect_any": [
+     "DATA",
+     "ANLY"
+    ],
+    "top_k": 8,
+    "motion_output": true
+   }
+  },
+  {
+   "id": 27,
+   "lang": "en",
+   "domain": "docs",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "Summarise this long PDF contract into a one-page brief",
+   "files": [],
+   "expected_behavior": [
+    "Extracts the text (with OCR only if there is no text layer) and cites clause numbers",
+    "Keeps obligations, dates and amounts exact; flags anything ambiguous"
+   ],
+   "routing": {
+    "expect_any": [
+     "DOC",
+     "WRITE"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 28,
+   "lang": "en",
+   "domain": "docs",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "make me a slide deck about our Q3 results",
+   "files": [],
+   "expected_behavior": [
+    "Builds a real deck (pptx or a slides artifact) with one message per slide",
+    "Uses the user's numbers only and marks any placeholder"
+   ],
+   "routing": {
+    "expect_any": [
+     "DOC"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   },
+   "origin": "held-out query that failed routing before the 2026-10-16 intent update"
+  },
+  {
+   "id": 29,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "لخص هذا الاجتماع في نقاط واضحة",
+   "files": [],
+   "expected_behavior": [
+    "Summarises decisions, owners and dates in short bullets",
+    "Does not invent points that were not in the source"
+   ],
+   "routing": {
+    "expect_any": [
+     "WRITE",
+     "DOC"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   },
+   "origin": "held-out query that failed routing before the 2026-10-16 intent update"
+  },
+  {
+   "id": 30,
+   "lang": "en",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "generate an Arabic voiceover for my reel",
+   "files": [],
+   "expected_behavior": [
+    "Uses a local Arabic TTS if present or names the key/connector a paid voice needs",
+    "Times the reel to the generated voice and checks loudness"
+   ],
+   "routing": {
+    "expect_any": [
+     "VOICE",
+     "MEDIA"
+    ],
+    "top_k": 8,
+    "motion_output": true
+   },
+   "origin": "held-out query that failed routing before the 2026-10-16 intent update"
+  },
+  {
+   "id": 31,
+   "lang": "en",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "remove the background from this photo",
+   "files": [],
+   "expected_behavior": [
+    "Uses a local segmentation route or a connector tool, and says which",
+    "Shows the cut-out on a contrasting background to check edges"
+   ],
+   "routing": {
+    "expect_any": [
+     "MEDIA"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   },
+   "origin": "held-out query that failed routing before the 2026-10-16 intent update"
+  },
+  {
+   "id": 32,
+   "lang": "en",
+   "domain": "strategy",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "what's the best way to price a subscription",
+   "files": [],
+   "expected_behavior": [
+    "Compares two or three pricing models with explicit assumptions",
+    "Builds the numbers in a sheet or script and shows sensitivity"
+   ],
+   "routing": {
+    "expect_any": [
+     "PROD"
+    ],
+    "expect_domain": "strategy",
+    "top_k": 8,
+    "motion_output": false
+   },
+   "origin": "held-out query that failed routing before the 2026-10-16 intent update"
+  }
+ ]
+}

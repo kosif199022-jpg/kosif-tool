@@ -18,6 +18,14 @@
 
 وفوق ذلك: دلائل تنفيذ لكل تصنيف في `playbooks/`، قوالب إنتاج في `templates/`، مشاريع بداية في `starters/`، وأدوات في `tools/`، وموقع ثابت يعمل على GitHub Pages من جذر المستودع.
 
+## مهارة القدرات الخارقة لـ Claude
+
+المجلد [`.claude/skills/kosif-superpowers/`](.claude/skills/kosif-superpowers/SKILL.md) مهارة تعرّف Claude بقدراته الحقيقية في كل جلسة: الأدوات والموصلات، والمكتبات التي يثبّتها بأمر واحد، وطرق التفكير والإبداع والتحقق، وكتالوج من 4,200+ قدرة في 10 مجالات (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها وصفة ودليل.
+
+- **في Claude Code:** تُحمَّل تلقائيًا من هذا المستودع، أو انسخ المجلد إلى `~/.claude/skills/`.
+- **في claude.ai:** `python3 .claude/skills/kosif-superpowers/scripts/package_skill.py` ثم ارفع ملف `.skill` الناتج.
+- **ابدأ بـ:** `python3 .claude/skills/kosif-superpowers/scripts/probe_env.py` ثم `powers.py suggest "<طلبك>"`. الخريطة الذهنية للقدرات: [capability-map.md](.claude/skills/kosif-superpowers/references/capability-map.md).
+
 ## الاستخدام السريع مع Claude Code
 
 1. افتح [الموقع](https://kosif199022-jpg.github.io/kosif-tool/) واختر استايلًا (أو ابحث في `STYLE_INDEX.md`).
@@ -82,7 +90,7 @@ The site is plain static files at the repository root and needs no build step. `
 ## Attribution and source policy
 
 - Third-party video, posters, prompts, voice and music are never rehosted. Links point to the owners' pages; creators are credited on every entry.
-- `SKILL.md`, `BRIEF.md` and the playbooks are original KOSIF writing. Briefs are derived from an entry's title, categories and public description and were written without watching the videos; `tools/check_originality.py` guards against reused wording.
+- `SKILL.md`, `BRIEF.md` and the playbooks are original KOSIF writing. Briefs are derived from an entry's title, categories and public description and were written without watching the videos, except those whose note says they were revised against frames sampled from the reference video; `tools/check_originality.py` guards against reused wording.
 - An externally linked example is not a claim that the exact animation has been coded or validated here.
 - Source terms: https://www.promptsmotion.com/terms · Contact for removals: see the source site.
 

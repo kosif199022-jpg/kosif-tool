@@ -1,6 +1,6 @@
 ---
 name: pm-monokern-ade5b6
-description: A 20-second reel built around one central eye: pulsing rings, an endless zoom into the pupil, kaleidoscope symmetry, text orbiting it and a radial chart growing inside the iris.
+description: A 20-second psychedelic reel: an eye opens from a horizontal line, then tunnels of eyes and glowing rings, rainbow rays, an iridescent liquid-chrome blob, kaleidoscopes, a spiral of eyes, a foggy white scene, a neon eye and a glowing end title.
 ---
 
 # KOSIF TOOL — Psychedelic hypnotic eye showreel / العين المنوّمة: ريل سايكدلي عشرون ثانية
@@ -18,11 +18,11 @@ description: A 20-second reel built around one central eye: pulsing rings, an en
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل مدته 20 ثانية يدور حول عين مركزية: حلقات تنبض، تكبير لا نهائي داخل البؤبؤ، تناظر كاليدوسكوبي، ونص يدور حولها ورسم شعاعي ينمو في القزحية.
+ريل سايكدلي مدته 20 ثانية: عين تنفتح من خط أفقي، ثم أنفاق من العيون والحلقات المتوهجة، أشعة قوس قزح، كتلة كروم سائل متقزحة، مشكالات، حلزون عيون، مشهد ضبابي أبيض، عين نيون، وعنوان ختامي متوهج.
 
-A 20-second reel built around one central eye: pulsing rings, an endless zoom into the pupil, kaleidoscope symmetry, text orbiting it and a radial chart growing inside the iris.
+A 20-second psychedelic reel: an eye opens from a horizontal line, then tunnels of eyes and glowing rings, rainbow rays, an iridescent liquid-chrome blob, kaleidoscopes, a spiral of eyes, a foggy white scene, a neon eye and a glowing end title.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, WebGL, Remotion), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (WebGL, HTML Canvas, Remotion), suggested duration (20 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

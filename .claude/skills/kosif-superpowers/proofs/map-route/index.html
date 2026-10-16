@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map Route — KOSIF proof</title>
+<style>
+  @font-face { font-family: "MCairo"; src: url("../_shared/fonts/Cairo%5Bslnt,wght%5D.ttf") format("truetype"); font-weight: 200 1000; }
+  html, body { margin: 0; height: 100%; background: #08111f; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  canvas { display: block; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px/1.3 system-ui, sans-serif; color: #9ab; direction: ltr; }
+  body.render #hud { display: none; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+</head>
+<body>
+<div id="fit"><canvas id="out" width="1080" height="1920"></canvas></div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=5 opens at 5 s</div>
+<script>
+(function () {
+  'use strict';
+  /* ============================================================ settings (edit me) */
+  const W = 1080, H = 1920, DUR = 10, FPS = 30;
+  const ATLAS = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json';
+  // real coordinates [lon, lat]
+  const STOPS = [
+    { name: 'القاهرة', lonlat: [31.2357, 30.0444], drop: 0.8, side: 1, dy: 34 },
+    { name: 'الإسكندرية', lonlat: [29.9187, 31.2001], drop: 3.75, side: -1, dy: -60 },
+    { name: 'واحة سيوة', lonlat: [25.5195, 29.2032], drop: 7.55, side: 0, dy: 52 },
+  ];
+  const LEGS = [[1.55, 3.75], [4.35, 7.55]];        // draw-on windows (s), inOutCubic by arc length
+  // approximate Nile course (decorative, hand-picked city coordinates)
+  const NILE = [[32.90, 24.09], [32.64, 25.69], [31.18, 27.18], [30.75, 28.10], [31.23, 30.04]];
+  const NILE_BRANCHES = [[[31.23, 30.04], [30.94, 30.55], [30.42, 31.40]], [[31.23, 30.04], [31.35, 30.70], [31.81, 31.42]]];
+  const LABELS = [
+    { text: 'البحر المتوسط', lonlat: [28.6, 32.85], size: 34, col: 'rgba(140,190,255,0.55)', w: 500 },
+    { text: 'مصر', lonlat: [29.6, 26.4], size: 64, col: 'rgba(255,226,170,0.30)', w: 800 },
+    { text: 'ليبيا', lonlat: [23.6, 27.0], size: 40, col: 'rgba(200,210,235,0.28)', w: 600 },
+    { text: 'البحر الأحمر', lonlat: [35.6, 25.4], size: 30, col: 'rgba(140,190,255,0.50)', w: 500 },
+  ];
+  const COL = { sea0: '#0b1a2e', sea1: '#06101d', land: '#16212f', landEdge: 'rgba(120,145,180,0.35)', egypt: '#1f2f42', egyptEdge: '#c9a35a',
+    route: '#ffc857', head: '#fff6dd', nile: 'rgba(90,170,255,0.55)', ink: '#f3f0e8', muted: 'rgba(200,210,235,0.66)' };
+  const CAM = { anchor: [540, 960], zoom: [1.0, 1.28], push: [0.2, 9.4], labelRight: 250, labelLeft: 130 };   // slow push towards the route
+  const FONT = 'MCairo';
+
+  /* ============================================================ helpers */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const Ease = {
+    outCubic: (x) => 1 - Math.pow(1 - x, 3),
+    inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    inOutSine: (x) => -(Math.cos(Math.PI * x) - 1) / 2,
+    outBounce: (x) => { const n = 7.5625, d = 2.75;
+      if (x < 1 / d) return n * x * x; if (x < 2 / d) return n * (x -= 1.5 / d) * x + 0.75;
+      if (x < 2.5 / d) return n * (x -= 2.25 / d) * x + 0.9375; return n * (x -= 2.625 / d) * x + 0.984375; },
+  };
+  const prog = (t, a, b, e = Ease.inOutCubic) => e(clamp01((t - a) / (b - a)));
+  const AR = '٠١٢٣٤٥٦٧٨٩', arDigits = (s) => String(s).replace(/[0-9]/g, (d) => AR[+d]);
+  function haversine([lo1, la1], [lo2, la2]) {        // km, mean Earth radius 6371 km
+    const r = Math.PI / 180, dLa = (la2 - la1) * r, dLo = (lo2 - lo1) * r;
+    const a = Math.sin(dLa / 2) ** 2 + Math.cos(la1 * r) * Math.cos(la2 * r) * Math.sin(dLo / 2) ** 2;
+    return 2 * 6371 * Math.asin(Math.sqrt(a));
+  }
+  const f = (w, px) => `${w} ${px}px "${FONT}"`;
+
+  /* ============================================================ state */
+  const cv = document.getElementById('out'), g = cv.getContext('2d');
+  let countries = null, egypt = null, usedFallback = false;
+  let proj, path, route = [], legKm = [], legStartIdx = [], cum = [], totalLen = 0, focus0, focus1;
+
+  // fallback only if the CDN atlas cannot load: a coarse hand-traced Egypt outline (lon/lat)
+  const EGYPT_FALLBACK = { type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [[[25.0, 31.6], [27.3, 31.4], [29.0, 30.9], [30.4, 31.5], [31.9, 31.5], [32.3, 31.2], [34.2, 31.3], [34.9, 29.5], [34.3, 27.8], [33.6, 28.3], [32.6, 29.9], [32.4, 29.8], [33.9, 26.6], [35.6, 23.9], [36.9, 22.0], [25.0, 22.0], [25.0, 31.6]]] } };
+
+  async function load() {
+    try {
+      if (!window.d3 || !window.topojson) throw new Error('d3/topojson not loaded');
+      const topo = await (await fetch(ATLAS)).json();
+      countries = topojson.feature(topo, topo.objects.countries).features;
+      egypt = countries.find((c) => c.id === '818');
+      if (!egypt) throw new Error('Egypt not in atlas');
+    } catch (e) {
+      console.warn('atlas fallback:', e); usedFallback = true; egypt = EGYPT_FALLBACK; countries = [EGYPT_FALLBACK];
+    }
+    proj = d3.geoMercator().fitExtent([[90, 560], [990, 1500]], egypt);
+    path = d3.geoPath(proj, g);
+    // route: great-circle legs sampled with geoInterpolate, projected; arc length per point
+    for (let l = 0; l < STOPS.length - 1; l++) {
+      const a = STOPS[l].lonlat, b = STOPS[l + 1].lonlat, gi = d3.geoInterpolate(a, b);
+      legKm.push(haversine(a, b)); legStartIdx.push(route.length ? route.length - 1 : 0);
+      for (let s = route.length ? 1 : 0; s <= 120; s++) route.push(proj(gi(s / 120)));
+    }
+    cum = [0]; for (let i = 1; i < route.length; i++) cum.push(cum[i - 1] + Math.hypot(route[i][0] - route[i - 1][0], route[i][1] - route[i - 1][1]));
+    totalLen = cum[cum.length - 1];
+    const ex = d3.extent(route, (p) => p[0]), ey = d3.extent(route, (p) => p[1]);
+    // final framing: centre the route PLUS its widest labels (Cairo label right, Siwa label left) inside the phone-safe width
+    const z1 = CAM.zoom[1];
+    focus0 = proj([30.0, 26.6]); focus1 = [((ex[0] - CAM.labelLeft / z1) + (ex[1] + CAM.labelRight / z1)) / 2, (ey[0] + ey[1]) / 2];
+    window.__kosifInfo = { usedFallback, legKm, totalKm: legKm[0] + legKm[1] };
+  }
+
+  // progress along the whole route in px of arc length at time t, plus km travelled
+  function routeState(t) {
+    const legLen = [cum[legStartIdx[1]], totalLen - cum[legStartIdx[1]]];
+    let s = 0, km = 0;
+    for (let l = 0; l < 2; l++) {
+      const p = prog(t, LEGS[l][0], LEGS[l][1], Ease.inOutCubic);
+      s += legLen[l] * p; km += legKm[l] * p;
+    }
+    return { s, km };
+  }
+  function pointAt(s) {
+    let i = 1; while (i < cum.length - 1 && cum[i] < s) i++;
+    const a = route[i - 1], b = route[i], u = clamp01((s - cum[i - 1]) / Math.max(1e-6, cum[i] - cum[i - 1]));
+    return [lerp(a[0], b[0], u), lerp(a[1], b[1], u), Math.atan2(b[1] - a[1], b[0] - a[0])];
+  }
+
+  function frame(t) {
+    g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.setLineDash([]);
+    // sea
+    const sea = g.createLinearGradient(0, 0, 0, H); sea.addColorStop(0, COL.sea0); sea.addColorStop(1, COL.sea1);
+    g.fillStyle = sea; g.fillRect(0, 0, W, H);
+    const st = routeState(t), head = st.s > 0 ? pointAt(st.s) : route[0].concat(0);
+    // camera: push in towards the route, drifting slightly with the moving head
+    const p = prog(t, CAM.push[0], CAM.push[1], Ease.inOutSine), z = lerp(CAM.zoom[0], CAM.zoom[1], p);
+    const fx = lerp(focus0[0], lerp(focus1[0], head[0], 0.05), p), fy = lerp(focus0[1], lerp(focus1[1], head[1], 0.12), p);
+    const tx = CAM.anchor[0] - fx * z, ty = CAM.anchor[1] - fy * z;
+    const toScreen = (q) => [q[0] * z + tx, q[1] * z + ty];
+    const mapIn = prog(t, -0.45, 0.9, Ease.outCubic);
+    g.setTransform(z, 0, 0, z, tx, ty);
+    // graticule
+    g.globalAlpha = 0.5 * mapIn; g.beginPath(); path(d3.geoGraticule().step([2, 2])()); g.strokeStyle = 'rgba(120,160,220,0.10)'; g.lineWidth = 1 / z; g.stroke();
+    // land (neighbours) then Egypt
+    g.globalAlpha = mapIn;
+    g.beginPath(); for (const c of countries) if (c !== egypt) path(c);
+    g.fillStyle = COL.land; g.fill(); g.strokeStyle = COL.landEdge; g.lineWidth = 1.2 / z; g.stroke();
+    g.beginPath(); path(egypt);
+    g.save(); g.shadowColor = 'rgba(255,200,110,0.25)'; g.shadowBlur = 40; g.fillStyle = COL.egypt; g.fill(); g.restore();
+    // border draws on over the first 1.4 s
+    g.save(); const perim = 6000; g.setLineDash([perim * prog(t, 0.1, 1.5, Ease.inOutCubic), perim]);
+    g.strokeStyle = COL.egyptEdge; g.lineWidth = 2.2 / z; g.stroke(); g.restore();
+    // Nile (approximate, decorative)
+    g.save(); g.globalAlpha = mapIn * prog(t, 0.4, 1.4); g.strokeStyle = COL.nile; g.lineCap = 'round'; g.lineJoin = 'round'; g.lineWidth = 3.2 / z;
+    g.beginPath(); path({ type: 'LineString', coordinates: NILE }); for (const br of NILE_BRANCHES) path({ type: 'LineString', coordinates: br }); g.stroke(); g.restore();
+    g.globalAlpha = 1;
+
+    // route: dark under-stroke + gold line drawn by arc length, comet glow behind the head
+    if (st.s > 0.5) {
+      g.save(); g.lineCap = 'round'; g.lineJoin = 'round';
+      g.beginPath(); route.forEach((q, i) => (i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1])));
+      g.setLineDash([st.s, totalLen + 10]);
+      g.strokeStyle = 'rgba(0,0,0,0.55)'; g.lineWidth = 11 / z; g.stroke();
+      g.strokeStyle = COL.route; g.lineWidth = 5 / z; g.shadowColor = 'rgba(255,190,80,0.8)'; g.shadowBlur = 16; g.stroke();
+      // bright comet tail: last 110 px of arc length
+      const tail = 110 / z; const tl = Math.min(tail, st.s); g.setLineDash([tl, totalLen * 2 + 10]); g.lineDashOffset = -(st.s - tl);
+      g.strokeStyle = 'rgba(255,246,221,0.9)'; g.lineWidth = 4 / z; g.shadowBlur = 22; g.stroke();
+      g.restore();
+    }
+    g.setTransform(1, 0, 0, 1, 0, 0);
+
+    // pins (screen space so their size stays constant), dropped with outBounce, ripple on landing
+    STOPS.forEach((s, i) => {
+      const q = toScreen(proj(s.lonlat)), d = prog(t, s.drop, s.drop + 0.7, Ease.outBounce);
+      if (t < s.drop) return;
+      const yOff = -220 * (1 - d), land = t - (s.drop + 0.26);
+      // shadow
+      g.save(); g.globalAlpha = 0.5 * d; g.fillStyle = '#000'; g.beginPath(); g.ellipse(q[0], q[1] + 2, 16 * (0.4 + 0.6 * d), 6 * (0.4 + 0.6 * d), 0, 0, Math.PI * 2); g.fill(); g.restore();
+      if (land > 0 && land < 1.2) { const rp = land / 1.2; g.save(); g.strokeStyle = `rgba(255,200,87,${(0.8 * (1 - rp)).toFixed(3)})`; g.lineWidth = 3; g.beginPath(); g.ellipse(q[0], q[1], 14 + 70 * Ease.outCubic(rp), (14 + 70 * Ease.outCubic(rp)) * 0.42, 0, 0, Math.PI * 2); g.stroke(); g.restore(); }
+      // teardrop pin
+      const px = q[0], py = q[1] + yOff, r = 20;
+      g.save(); g.translate(px, py);
+      g.beginPath(); g.moveTo(0, 0); g.bezierCurveTo(-r * 0.6, -r * 1.2, -r * 1.25, -r * 1.55, -r * 1.25, -r * 2.25);
+      g.arc(0, -r * 2.25, r * 1.25, Math.PI, 0); g.bezierCurveTo(r * 1.25, -r * 1.55, r * 0.6, -r * 1.2, 0, 0); g.closePath();
+      const pg = g.createLinearGradient(0, -r * 3.5, 0, 0); pg.addColorStop(0, '#ffd98a'); pg.addColorStop(1, '#ff8f3d');
+      g.fillStyle = pg; g.shadowColor = 'rgba(0,0,0,0.45)'; g.shadowBlur = 14; g.shadowOffsetY = 6; g.fill();
+      g.shadowColor = 'transparent'; g.fillStyle = '#0b1a2e'; g.beginPath(); g.arc(0, -r * 2.25, r * 0.5, 0, Math.PI * 2); g.fill();
+      g.restore();
+      // name label (whole shaped word, fades + rises)
+      const la = prog(t, s.drop + 0.3, s.drop + 0.8, Ease.outCubic);
+      if (la > 0) {
+        g.save(); g.globalAlpha = la; g.direction = 'rtl'; g.font = f(800, 44); g.textBaseline = 'middle';
+        g.textAlign = s.side > 0 ? 'left' : s.side < 0 ? 'right' : 'center';
+        const lx = q[0] + s.side * 42, ly = q[1] + s.dy + 12 * (1 - la);
+        const w = g.measureText(s.name).width, bx = s.side > 0 ? lx - 16 : s.side < 0 ? lx - w - 16 : lx - w / 2 - 16;
+        g.fillStyle = 'rgba(8,17,31,0.72)'; g.beginPath(); g.roundRect(bx, ly - 34, w + 32, 66, 14); g.fill();
+        g.fillStyle = COL.ink; g.fillText(s.name, lx, ly + 2);
+        g.restore();
+      }
+    });
+
+    // moving head (screen space)
+    if (st.s > 0.5 && st.s < totalLen - 0.5) {
+      const q = toScreen(head);
+      const rg = g.createRadialGradient(q[0], q[1], 0, q[0], q[1], 46); rg.addColorStop(0, 'rgba(255,246,221,0.95)'); rg.addColorStop(0.25, 'rgba(255,200,87,0.55)'); rg.addColorStop(1, 'rgba(255,200,87,0)');
+      g.fillStyle = rg; g.beginPath(); g.arc(q[0], q[1], 46, 0, Math.PI * 2); g.fill();
+      g.fillStyle = COL.head; g.beginPath(); g.arc(q[0], q[1], 8, 0, Math.PI * 2); g.fill();
+    }
+
+    // place labels for seas / countries (screen space, fade in)
+    g.save(); g.direction = 'rtl'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    for (const L of LABELS) { const q = toScreen(proj(L.lonlat)); g.globalAlpha = mapIn * prog(t, 0.6, 1.6); g.font = f(L.w, L.size); g.fillStyle = L.col; g.fillText(L.text, q[0], q[1]); }
+    g.restore();
+
+    // leg distance tags at each leg midpoint once drawn
+    for (let l = 0; l < 2; l++) {
+      const a = prog(t, LEGS[l][1] - 0.1, LEGS[l][1] + 0.5, Ease.outCubic); if (a <= 0) continue;
+      const i0 = legStartIdx[l], i1 = l === 0 ? legStartIdx[1] : route.length - 1, mid = toScreen(route[Math.round((i0 + i1) / 2)]);
+      const txt = `${arDigits(Math.round(legKm[l]))} كم`;
+      g.save(); g.globalAlpha = a; g.direction = 'rtl'; g.font = f(700, 30); g.textAlign = 'center'; g.textBaseline = 'middle';
+      // offset along the leg's normal, on the side away from the other leg and the labels
+      const qa = toScreen(route[i0]), qb = toScreen(route[i1]), dl = Math.hypot(qb[0] - qa[0], qb[1] - qa[1]) || 1, sg = l === 0 ? 1 : -1, off = l === 0 ? 72 : 46;
+      mid[0] += sg * -(qb[1] - qa[1]) / dl * off; mid[1] += sg * (qb[0] - qa[0]) / dl * off;
+      const w = g.measureText(txt).width, oy = 0;
+      g.fillStyle = 'rgba(255,200,87,0.16)'; g.strokeStyle = 'rgba(255,200,87,0.6)'; g.lineWidth = 2;
+      g.beginPath(); g.roundRect(mid[0] - w / 2 - 16, mid[1] + oy - 24, w + 32, 48, 24); g.fill(); g.stroke();
+      g.fillStyle = '#ffe2a8'; g.fillText(txt, mid[0], mid[1] + oy + 1); g.restore();
+    }
+
+    // vignette
+    const vg = g.createRadialGradient(W / 2, H * 0.52, H * 0.25, W / 2, H * 0.52, H * 0.72);
+    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.55)'); g.fillStyle = vg; g.fillRect(0, 0, W, H);
+
+    // title block (top, RTL mask reveal)
+    const ti = prog(t, -0.3, 0.8, Ease.outCubic);
+    g.save(); g.beginPath(); g.rect(lerp(W, 0, ti), 0, W, 420); g.clip();
+    g.direction = 'rtl'; g.textAlign = 'right'; g.fillStyle = COL.ink; g.font = f(800, 84); g.fillText('رحلة إلى الواحة', W - 90, 230);
+    g.fillStyle = COL.muted; g.font = f(500, 36); g.fillText('القاهرة ← الإسكندرية ← سيوة', W - 90, 300);
+    g.restore();
+
+    // distance card (bottom)
+    const ca = prog(t, 1.2, 1.8, Ease.outCubic);
+    g.save(); g.globalAlpha = ca; const cy = 1640 + 30 * (1 - ca);
+    g.fillStyle = 'rgba(8,17,31,0.78)'; g.strokeStyle = 'rgba(255,200,87,0.35)'; g.lineWidth = 2;
+    g.beginPath(); g.roundRect(90, cy, W - 180, 170, 28); g.fill(); g.stroke();
+    g.direction = 'rtl'; g.textAlign = 'right'; g.textBaseline = 'middle';
+    g.fillStyle = COL.muted; g.font = f(600, 32); g.fillText('المسافة المقطوعة (خط مستقيم)', W - 130, cy + 56);
+    const done = t >= LEGS[1][1] + 0.3;
+    g.fillStyle = done ? '#ffd27a' : COL.ink; g.font = f(800, 72);
+    g.textAlign = 'left'; g.direction = 'rtl'; g.fillText(`${arDigits(Math.round(st.km))} كم`, 130, cy + 92);
+    g.textAlign = 'right'; g.fillStyle = COL.muted; g.font = f(500, 26);
+    g.fillText(done ? 'وصلنا إلى سيوة' : (st.km > 0 ? (t < LEGS[0][1] + 0.2 ? 'في الطريق إلى الإسكندرية' : 'في الطريق إلى سيوة') : 'نقطة الانطلاق: القاهرة'), W - 130, cy + 118);
+    g.restore();
+    g.save(); g.direction = 'rtl'; g.textAlign = 'right'; g.font = f(500, 22); g.fillStyle = 'rgba(200,210,235,0.38)';
+    g.fillText(usedFallback ? 'خريطة مبسّطة مرسومة يدويًا · المسافات بصيغة هافرسين' : 'Natural Earth / world-atlas 110m · المسافات بصيغة هافرسين', W - 90, H - 60);
+    g.restore();
+  }
+
+  /* ============================================================ contract + preview UI */
+  let cur = 0;
+  const ready = Promise.all([document.fonts.load(f(800, 84), 'رحلة ٠١٢'), document.fonts.load(f(500, 36), 'القاهرة')])
+    .then(() => document.fonts.ready).then(load).then(() => frame(0));
+  window.__kosifReady = ready;
+  window.__kosif = { duration: DUR, fps: FPS, seek(t) { cur = t; frame(t); } };
+  function fit() { const s = Math.min(innerWidth / W, innerHeight / H), el = document.getElementById('fit'); el.style.transform = `scale(${s})`; el.style.left = `${(innerWidth - W * s) / 2}px`; }
+  addEventListener('resize', fit); fit();
+  if (navigator.webdriver) document.body.classList.add('render');
+  else ready.then(() => {
+    cur = parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0; frame(cur);
+    let playing = false, last = 0;
+    const step = (now) => { if (!playing) return; cur += (now - last) / 1000; last = now; if (cur > DUR) cur = 0; frame(cur); requestAnimationFrame(step); };
+    addEventListener('keydown', (e) => {
+      if (e.code === 'Space') { playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(step); }
+      if (e.code === 'ArrowRight') { playing = false; cur = Math.min(DUR, cur + 1 / FPS); frame(cur); }
+      if (e.code === 'ArrowLeft') { playing = false; cur = Math.max(0, cur - 1 / FPS); frame(cur); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beat Sync — KOSIF proof</title>
+<style>
+  @font-face { font-family: "BCairo"; src: url("../_shared/fonts/cairo-arabic-800-normal.woff2") format("woff2"); font-weight: 800; unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F; }
+  @font-face { font-family: "BCairo"; src: url("../_shared/fonts/cairo-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+  @font-face { font-family: "BMono"; src: url("../_shared/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  canvas { display: block; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px/1.3 system-ui, sans-serif; color: #9ab; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><canvas id="out" width="1080" height="1080"></canvas></div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=4.5</div>
+<script src="beats.js"></script>
+<script>
+(function () {
+  'use strict';
+  const W = 1080, H = 1080, FPS = 30, B = window.BEATS, DUR = B.duration;
+  /* ---------------- tokens ---------------- */
+  const PUNCH = { peak: 1.15, release: 0.120 };     // scale 1.0 -> 1.15 on the onset frame, back to 1.0 over 120 ms (outQuad)
+  const SCENES = [   // one scene per bar; hard cut on each detected downbeat
+    { bg: '#0d1b3d', ink: '#f4f1ff', acc: '#ffcf3f', dim: '#24386b', words: ['كل', 'ضربة', 'لها', 'موعد'] },
+    { bg: '#ff3d5a', ink: '#1a0610', acc: '#fff3c4', dim: '#c92a46', words: ['الصورة', 'تتبع', 'الطبل', 'بدقة'] },
+    { bg: '#0f2e24', ink: '#eafff6', acc: '#7cf5c4', dim: '#1d4a3b', words: ['واحد', 'اثنان', 'ثلاثة', 'أربعة'] },
+    { bg: '#f2ede4', ink: '#141414', acc: '#ff5a1f', dim: '#d9d1c3', words: ['الإيقاع', 'صار', 'حركة', 'مرئية'] },
+  ];
+  const AR = '800 172px "BCairo"', AR_S = '800 54px "BCairo"', MONO = '700 26px "BMono"', MONO_S = '700 19px "BMono"';
+  const CENTER = { x: 540, y: 545 };
+
+  /* ---------------- helpers ---------------- */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const outQuad = (x) => 1 - (1 - x) * (1 - x);
+  const snap = (t) => Math.round(t * FPS) / FPS;               // an onset is shown on its nearest frame
+  const beats = B.beats.map(snap), onsets = B.onsets.map((o) => ({ ...o, f: snap(o.t) }));
+  const bars = B.downbeats.map(snap);
+  const barEnd = beats[beats.length - 1] + (beats[1] - beats[0]);
+  function lastBefore(list, t) { let k = -1; for (let i = 0; i < list.length; i++) if (list[i] <= t + 1e-6) k = i; return k; }
+  // punch envelope of the most recent event in `list` (times), 0 between events
+  function env(list, t, rel = PUNCH.release) { const k = lastBefore(list, t); if (k < 0) return 0; const dt = t - list[k]; return dt > rel + 1e-6 ? 0 : 1 - outQuad(clamp01(dt / rel)); }
+  const kicks = onsets.filter((o) => o.type === 'kick').map((o) => o.f);
+  const snares = onsets.filter((o) => o.type === 'snare').map((o) => o.f);
+  const hats = onsets.filter((o) => o.type === 'hat').map((o) => o.f);
+
+  const out = document.getElementById('out'), g = out.getContext('2d');
+
+  function drawWord(text, x, y, font, color, s, knock) {
+    g.save(); g.translate(x, y); g.scale(s, s);
+    g.font = font; g.direction = 'rtl'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    if (knock) { g.strokeStyle = knock; g.lineWidth = 30; g.lineJoin = 'round'; g.strokeText(text, 0, 0); }
+    g.fillStyle = color; g.fillText(text, 0, 0); g.restore();
+  }
+
+  /* ---------------- scene shapes (all static between events) ---------------- */
+  function shapes(si, sc, t, bi, pk) {
+    const kE = env(kicks, t), sE = env(snares, t), hE = env(hats, t, 0.1);
+    const { x: cx, y: cy } = CENTER;
+    g.save();
+    if (si === 0) {               // ring + 8 orbit dots (dots flash on hats)
+      g.strokeStyle = sc.acc; g.lineWidth = 14 + 10 * kE;
+      g.beginPath(); g.arc(cx, cy, 215 * pk, 0, Math.PI * 2); g.stroke();
+      for (let i = 0; i < 8; i++) {
+        const a = -Math.PI / 2 + (i / 8) * Math.PI * 2 + Math.PI / 8, r = 272;
+        const lit = i <= bi * 2 + 1 || hE > 0;              // two dots per beat; every hat flashes the whole orbit
+        g.fillStyle = lit ? sc.acc : sc.dim;
+        g.beginPath(); g.arc(cx + Math.cos(a) * r, cy + Math.sin(a) * r, 14 + 14 * hE, 0, Math.PI * 2); g.fill();
+      }
+    } else if (si === 1) {        // 4x4 tiles, column = beat in bar, hats pop the second row
+      const s = 128, gap = 18, x0 = cx - (4 * s + 3 * gap) / 2, y0 = cy - (4 * s + 3 * gap) / 2;
+      for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) {
+        const col = 3 - c;        // RTL: the first beat lights the right-hand column
+        const on = col <= bi;
+        const cur = col === bi;
+        const k = cur ? pk : 1;
+        const w = s * k * (on ? 1 : 0.6 + 0.4 * hE);      // hats pop the unlit tiles
+        g.fillStyle = on ? (cur ? sc.acc : sc.dim) : hE > 0 ? sc.dim : 'rgba(26,6,16,0.16)';
+        const x = x0 + c * (s + gap) + s / 2, y = y0 + r * (s + gap) + s / 2;
+        g.fillRect(x - w / 2, y - w / 2, w, w);
+        if (on && !cur && hE > 0) { g.globalAlpha = 0.6 * hE; g.fillStyle = sc.acc; g.fillRect(x - w / 2, y - w / 2, w, w); g.globalAlpha = 1; }
+      }
+    } else if (si === 2) {        // nested polygons that step 15 deg per beat (eased over 120 ms) + hat sparks
+      const step = (bi + (1 - env(beats, t))) * 15;
+      for (let k = 0; k < 4; k++) {
+        const n = 3 + k, R = (150 + k * 50) * (k === 0 ? pk : 1 + (pk - 1) * 0.4);
+        g.strokeStyle = k === 0 ? sc.acc : sc.dim; g.lineWidth = k === 0 ? 16 : 10; g.lineJoin = 'round';
+        g.beginPath();
+        for (let i = 0; i <= n; i++) { const a = ((step * (k % 2 ? -1 : 1)) * Math.PI) / 180 + (i / n) * Math.PI * 2 - Math.PI / 2; const px = cx + Math.cos(a) * R, py = cy + Math.sin(a) * R; i ? g.lineTo(px, py) : g.moveTo(px, py); }
+        g.stroke();
+      }
+      if (hE > 0) { g.fillStyle = sc.acc; for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2 + 0.26; const r = 330 - 30 * hE; g.beginPath(); g.arc(cx + Math.cos(a) * r, cy + Math.sin(a) * r, 20 * hE + 4, 0, Math.PI * 2); g.fill(); } }
+    } else {                      // equaliser: 12 bars driven by kick / snare / hat envelopes
+      const n = 12, bw = 54, gap = 18, x0 = cx - (n * bw + (n - 1) * gap) / 2, base = cy + 280;
+      for (let i = 0; i < n; i++) {
+        const lane = i < 4 ? kE : i < 8 ? sE : hE;
+        const h = 40 + 200 * lane * (0.6 + 0.4 * Math.sin(i * 1.7) ** 2);
+        g.fillStyle = lane > 0 ? sc.acc : sc.dim;
+        g.fillRect(x0 + i * (bw + gap), base - h, bw, h);
+      }
+    }
+    g.restore();
+  }
+
+  /* ---------------- beat-grid HUD ---------------- */
+  function hud(sc, t, bar, bi) {
+    const top = 866, left = 170, right = W - 90, w = right - left, laneH = 26, gap = 8;
+    const t0 = bars[0], t1 = barEnd, X = (tt) => left + ((tt - t0) / (t1 - t0)) * w;
+    g.save(); g.direction = 'ltr';
+    g.font = MONO; g.textBaseline = 'alphabetic'; g.fillStyle = sc.ink; g.globalAlpha = 0.9;
+    g.textAlign = 'left'; g.fillText(`${B.bpm_detected.toFixed(1)} BPM`, 90, 120);
+    g.textAlign = 'right'; g.fillText(bar < 0 ? 'COUNT-IN' : `BAR ${bar + 1}/4 · BEAT ${bi + 1}`, right, 120);
+    g.globalAlpha = 1;
+    // bar blocks
+    for (let b = 0; b < 4; b++) {
+      const a = bars[b], z = b < 3 ? bars[b + 1] : barEnd;
+      g.fillStyle = b === bar ? sc.acc : sc.ink; g.globalAlpha = b === bar ? 0.22 : 0.07;
+      g.fillRect(X(a) + 2, top, X(z) - X(a) - 4, 3 * laneH + 2 * gap);
+    }
+    g.globalAlpha = 1;
+    // lanes with detected onsets
+    const lanes = ['kick', 'snare', 'hat'];
+    g.font = MONO_S; g.textAlign = 'left';
+    lanes.forEach((ln, li) => {
+      const y = top + li * (laneH + gap);
+      g.fillStyle = sc.ink; g.globalAlpha = 0.55; g.textAlign = 'right'; g.fillText(ln.toUpperCase(), left - 14, y + laneH - 6); g.textAlign = 'left';
+      g.globalAlpha = 1;
+      for (const o of onsets) if (o.type === ln) {
+        const past = o.f <= t + 1e-6, x = X(o.t);
+        g.fillStyle = past ? sc.acc : sc.ink; g.globalAlpha = past ? 1 : 0.3;
+        g.fillRect(x - 4, y + (ln === 'hat' ? 8 : 0), 8, ln === 'hat' ? laneH - 8 : laneH);
+      }
+      g.globalAlpha = 1;
+    });
+    // playhead
+    const px = X(Math.min(t1, Math.max(t0, t)));
+    g.fillStyle = sc.ink; g.fillRect(px - 1.5, top - 14, 3, 3 * laneH + 2 * gap + 28);
+    // offset readout: visual frame time minus detected onset
+    const k = lastBefore(onsets.map((o) => o.f), t);
+    g.font = MONO_S; g.textAlign = 'right'; g.fillStyle = sc.ink; g.globalAlpha = 0.75;
+    const txt = k < 0 ? 'Δ frame−onset  —' : `${onsets[k].type.toUpperCase()} @ ${onsets[k].t.toFixed(3)} s · frame ${Math.round(onsets[k].f * FPS)} · Δ ${((onsets[k].f - onsets[k].t) * 1000).toFixed(1)} ms`;
+    g.fillText(txt, right, top + 3 * laneH + 2 * gap + 40);
+    g.restore();
+  }
+
+  /* ---------------- frame ---------------- */
+  function render(t) {
+    const bar = lastBefore(bars, t) >= 0 && t < barEnd + 0.6 ? Math.min(3, lastBefore(bars, t)) : -1;
+    const sc = SCENES[Math.max(0, bar)];
+    const kb = lastBefore(beats, t), bi = bar < 0 ? -1 : Math.max(0, kb - bar * 4);
+    const pk = 1 + (PUNCH.peak - 1) * env(beats, t);
+    // background, snare flash, kick zoom of the whole frame (2 %)
+    g.setTransform(1, 0, 0, 1, 0, 0);
+    g.fillStyle = bar < 0 ? '#07080c' : sc.bg; g.fillRect(0, 0, W, H);
+    if (bar >= 0) {
+      const sE = env(snares, t);
+      if (sE > 0) { g.fillStyle = sc.acc; g.globalAlpha = 0.16 * sE; g.fillRect(0, 0, W, H); g.globalAlpha = 1; }
+      const z = 1 + 0.02 * env(kicks, t);
+      g.setTransform(z, 0, 0, z, CENTER.x * (1 - z), CENTER.y * (1 - z));
+      shapes(bar, sc, t, bi, pk);
+      // phrase so far (small, RTL), current word big with the punch
+      const words = sc.words.slice(0, bi + 1);
+      g.font = AR_S; g.direction = 'rtl';
+      const ws = words.map((w) => g.measureText(w).width), sp = 22, total = ws.reduce((a, b) => a + b, 0) + sp * (ws.length - 1);
+      let x = CENTER.x + total / 2;
+      words.forEach((w, i) => { drawWord(w, x - ws[i] / 2, 196, AR_S, i === bi ? sc.acc : sc.ink, 1); x -= ws[i] + sp; });
+      const cw = sc.words[bi];
+      const isPlate = bar === 1;   // red scene: dark word on cream plate for contrast
+      if (isPlate) { g.save(); g.translate(CENTER.x, CENTER.y); g.scale(pk, pk); g.font = AR; const m = g.measureText(cw).width; g.fillStyle = sc.ink; g.fillRect(-m / 2 - 40, -105, m + 80, 210); g.restore(); }
+      drawWord(cw, CENTER.x, CENTER.y + 8, AR, isPlate ? sc.acc : sc.ink, pk, isPlate ? null : sc.bg);
+      g.setTransform(1, 0, 0, 1, 0, 0);
+    } else {
+      g.font = '800 120px "BCairo"'; g.fillStyle = '#f4f1ff'; g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.globalAlpha = clamp01(t / 0.25); g.fillText('إيقاع', CENTER.x, CENTER.y); g.globalAlpha = 1;
+    }
+    hud(bar < 0 ? { ink: '#f4f1ff', acc: '#ffcf3f' } : sc, t, bar, bi);
+    // tail fade
+    const f = clamp01((t - (DUR - 0.35)) / 0.35);
+    if (f > 0) { g.fillStyle = `rgba(0,0,0,${f})`; g.fillRect(0, 0, W, H); }
+  }
+
+  /* ---------------- contract ---------------- */
+  let T0 = 0, playing = false, last = 0;
+  function seek(t) { T0 = Math.max(0, Math.min(DUR, t)); render(T0); }
+  const ready = Promise.all([document.fonts.load(AR, 'كل ضربة'), document.fonts.load(MONO, 'BPM 0'), document.fonts.load('800 40px "BCairo"', 'A1')])
+    .then(() => document.fonts.ready).then(() => { seek(parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0); return true; });
+  window.__kosif = { duration: DUR, fps: FPS, seek };
+  window.__kosifReady = ready;
+  if (navigator.webdriver) document.body.classList.add('render');
+  function fit() { const k = Math.min(innerWidth / W, innerHeight / H); document.getElementById('fit').style.transform = `scale(${k})`; }
+  addEventListener('resize', fit); fit();
+  function loop(now) { if (!playing) return; const dt = (now - last) / 1000; last = now; let t = T0 + dt; if (t >= DUR) t = 0; seek(t); requestAnimationFrame(loop); }
+  addEventListener('keydown', (e) => {
+    if (e.code === 'Space') { e.preventDefault(); playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(loop); }
+    if (e.code === 'ArrowRight') seek(T0 + 1 / FPS);
+    if (e.code === 'ArrowLeft') seek(T0 - 1 / FPS);
+  });
+})();
+</script>
+</body>
+</html>

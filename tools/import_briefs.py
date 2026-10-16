@@ -20,7 +20,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog" / "styles.json"
 BRIEFS = ROOT / "catalog" / "briefs.json"
-ASPECTS = {"16:9", "9:16", "1:1", "4:5"}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from aspects import is_valid as aspect_ok  # noqa: E402  (any W:H such as 2.35:1, WxH or name)
 STACKS = {"Remotion", "React", "HTML Canvas", "SVG", "CSS", "GSAP", "Three.js", "WebGL", "Web Audio", "Lottie"}
 STR = ("id", "title_ar", "summary_ar", "summary_en", "concept_ar", "concept_en", "aspect", "assumptions_en")
 LISTS = ("scenes_en", "scenes_ar", "motion_rules_en", "motion_rules_ar", "stack", "keywords", "facts_from_source")
@@ -38,8 +39,8 @@ def problems(b: dict) -> list[str]:
     for k in LISTS:
         if k in b and (not isinstance(b[k], list) or any(not isinstance(x, str) for x in b[k])):
             out.append(f"{k} not a list of strings")
-    if b.get("aspect") not in ASPECTS:
-        out.append(f"aspect {b.get('aspect')!r} not in {sorted(ASPECTS)}")
+    if not isinstance(b.get("aspect"), str) or not aspect_ok(b["aspect"]):
+        out.append(f"aspect {b.get('aspect')!r} is not a readable ratio (W:H, WxH or a name)")
     d = b.get("difficulty")
     if not isinstance(d, int) or not 1 <= d <= 5:
         out.append("difficulty must be an integer 1-5")
@@ -51,6 +52,9 @@ def problems(b: dict) -> list[str]:
         out.append(f"keywords count {len(b['keywords'])} outside 6-20")
     if isinstance(b.get("scenes_en"), list) and not 3 <= len(b["scenes_en"]) <= 8:
         out.append("scenes_en should have 3-8 beats")
+    rv = b.get("revised_from_video")
+    if rv is not None and not (isinstance(rv, str) and len(rv) == 10 and rv[4] == "-" and rv[7] == "-"):
+        out.append("revised_from_video must be an ISO date string (YYYY-MM-DD)")
     if isinstance(b.get("title_ar"), str) and len(b["title_ar"]) > 80:
         out.append("title_ar longer than 80 chars")
     return out
@@ -58,6 +62,16 @@ def problems(b: dict) -> list[str]:
 
 def bullets(items: list[str]) -> str:
     return "\n".join("- " + x.strip() for x in items) or "- —"
+
+
+def provenance(b: dict) -> str:
+    """Provenance note: unwatched draft by default, or revised against sampled video frames."""
+    when = b.get("revised_from_video")
+    if when:
+        return (f"ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع ({when})؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.\n"
+                f"Original KOSIF brief, revised against frames sampled from the reference video ({when}); timings and colours are approximate readings from those frames, so check the reference for fine detail.")
+    return ("ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.\n"
+            "Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.")
 
 
 def render_md(rec: dict, b: dict) -> str:
@@ -68,8 +82,7 @@ def render_md(rec: dict, b: dict) -> str:
 >
 > {b['summary_en']}
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+{provenance(b)}
 
 - المرجع / Reference: {rec.get('page')}
 - التصنيفات / Categories: {', '.join(rec.get('category') or []) or '—'}

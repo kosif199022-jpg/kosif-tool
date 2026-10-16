@@ -1,6 +1,6 @@
 ---
 name: pm-influencer-seo-ce8c33
-description: A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.
+description: A 15-second violet-on-black showreel for a generative media platform: a code terminal types a generate call over a dot grid, a cut to a generated macro of violet petals with water drops, then giant words VIDEO, AUDIO and 3D whose letters are filled with generated footage, with index numbers, model names and a waveform, a tilted wall of generated thumbnails, a counter rolling to 1,000+, a huge number over a portrait, a prompt card with a generate button, and the logo on white.
 ---
 
 # KOSIF TOOL — fal motion design showreel / ريل استعراضي لمنصة fal في 15 ثانية
@@ -18,9 +18,9 @@ description: A dense 15-second showreel in portfolio style that blends kinetic t
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-شريط استعراضي كثيف في 15 ثانية بأسلوب السيرة الذاتية للمصمم، يمزج الطباعة الحركية برسوم السرعة وأصولًا مولَّدة عبر fal API.
+ريل استعراضي مدته 15 ثانية بالبنفسجي على الأسود لمنصة وسائط توليدية: طرفية تكتب استدعاء توليد فوق شبكة نقاط، قطع إلى لقطة ماكرو مولدة لبتلات بنفسجية بقطرات ماء، ثم كلمات ضخمة VIDEO وAUDIO و3D تمتلئ حروفها بلقطات مولدة مع أرقام فهرسة وأسماء نماذج وموجة صوتية، جدار مائل من الصور المصغرة، عدّاد يصل إلى 1,000+، رقم ضخم فوق صورة شخصية، بطاقة أمر بزر توليد، وختام بالشعار على الأبيض.
 
-A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.
+A 15-second violet-on-black showreel for a generative media platform: a code terminal types a generate call over a dot grid, a cut to a generated macro of violet petals with water drops, then giant words VIDEO, AUDIO and 3D whose letters are filled with generated footage, with index numbers, model names and a waveform, a tilted wall of generated thumbnails, a counter rolling to 1,000+, a huge number over a portrait, a prompt card with a generate button, and the logo on white.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, WebGL), suggested duration (15 s), aspect 16:9, difficulty 5/5.
 

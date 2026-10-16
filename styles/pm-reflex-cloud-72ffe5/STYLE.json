@@ -36,30 +36,31 @@
     "playbooks/photos.md",
     "playbooks/music.md"
   ],
-  "summary_ar": "ريل علامة لشركة reflex. inc في 15 ثانية مقطوع على الإيقاع: خطّاف في الثانية الأولى، ثم حروف وأشكال وكاميرا وتحولات لون، وإطار ختامي نظيف.",
-  "summary_en": "A 15-second brand reel for reflex. inc cut to music: a one-second hook, then typography, shape play, camera whips and colour flips, landing on a clean final frame.",
+  "summary_ar": "ريل علامة تقنية مدته 15 ثانية بقطعات على الإيقاع: عين ماكرو بنقاط نصف لونية ووسم HUD، كلمة act ضخمة بخط آلة كاتبة، مسار متعرج من «يرى» إلى «يفعل»، عدّاد إطارات يتصاعد مع شريط فيلم يدور بضبابية، موجات تردد على الأحمر ثم السماوي مع شريط طيف، حرف f بارز ثلاثي الأبعاد على البنفسجي، وختام بشعار أحادي.",
+  "summary_en": "A 15-second tech brand reel cut to the beat: a halftone macro eye with a HUD tag, a giant typewriter-style 'act', a squiggle path from see to act, a frame counter climbing beside a spinning blurred film strip, frequency waves on red then cyan with a spectrum bar, an extruded 3D 'f' on violet and a mono logo lockup.",
   "keywords": [
     "brand reel",
+    "beat cuts",
+    "halftone eye",
+    "typewriter mono",
+    "counter",
+    "radial blur",
+    "sine waves",
+    "3d extruded letter",
+    "focus pull",
     "ريل علامة",
-    "beat sync",
-    "مزامنة الإيقاع",
-    "whip pan",
-    "حركة خاطفة",
-    "dot grid",
-    "شبكة نقاط",
-    "hue flip",
-    "انقلاب لوني",
-    "hook",
-    "reaction time",
-    "خطّاف افتتاحي",
-    "kinetic type"
+    "قطع على الإيقاع",
+    "عدّاد",
+    "موجات",
+    "حرف ثلاثي الأبعاد"
   ],
   "difficulty": 4,
   "duration_s": 15,
   "stack": [
     "Remotion",
     "React",
-    "Web Audio"
+    "Three.js",
+    "SVG"
   ],
   "brief": "styles/pm-reflex-cloud-72ffe5/BRIEF.md"
 }

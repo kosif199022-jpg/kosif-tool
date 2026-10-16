@@ -1,6 +1,6 @@
 ---
 name: pm-cansincengiz-me-cf68dd
-description: A 15-second square promo for the Lidlezz app, built for silent autoplay in the X feed: one phone, three feature callouts and a clear CTA.
+description: A square 15-second promo for a Mac app: a 3D laptop shows a coding-agent terminal, the lid closes and Zs float up, a giant 'ZZ.' on blue and the wordmark; the closed laptop floats over a blue gradient with status cards (working, 147 tool calls, a 61° temperature gauge, 85% battery, task finished, Mac sleeps), ending on a white wordmark with a URL button.
 ---
 
 # KOSIF TOOL — Lidlezz app promo / برومو تطبيق Lidlezz لخلاصة X المربعة
@@ -18,11 +18,11 @@ description: A 15-second square promo for the Lidlezz app, built for silent auto
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-برومو مربع 15 ثانية لتطبيق Lidlezz مصمم للتشغيل الصامت في خلاصة X: هاتف واحد يعرض ثلاث ميزات ودعوة واضحة للتنزيل.
+برومو مربع مدته 15 ثانية لتطبيق Mac: حاسوب محمول ثلاثي الأبعاد يعرض طرفية وكيل برمجة، يُغلق غطاؤه وتطفو حروف Z، ثم ZZ. ضخمة على الأزرق واسم التطبيق؛ يطفو الحاسوب المغلق فوق تدرج أزرق مع بطاقات حالة (يعمل، 147 استدعاء أداة، حرارة 61°، بطارية 85%، انتهت المهمة، الجهاز ينام) وختام أبيض بالاسم وزر الرابط.
 
-A 15-second square promo for the Lidlezz app, built for silent autoplay in the X feed: one phone, three feature callouts and a clear CTA.
+A square 15-second promo for a Mac app: a 3D laptop shows a coding-agent terminal, the lid closes and Zs float up, a giant 'ZZ.' on blue and the wordmark; the closed laptop floats over a blue gradient with status cards (working, 147 tool calls, a 61° temperature gauge, 85% battery, task finished, Mac sleeps), ending on a white wordmark with a URL button.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 1:1, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js), suggested duration (15 s), aspect 1:1, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.

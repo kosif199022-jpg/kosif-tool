@@ -1,9 +1,9 @@
 ---
 name: pm-ajith-io-ea7f2d
-description: A cold, tight 30-second product reel presenting Distilbook in three acts: a numeric hook, a card tour, then proof by numbers, on a persistent grid with one accent colour.
+description: A 32-second product reel that opens on a doodled document beside an orange flower on paper, dives through speed lines into a radial burst, rainbow stripes, a ribbon of coloured cards in purple space, a flock of letters, a glowing orb that becomes a light thread growing a sprout card over a planet, a wall of cards, then back to paper with a handwritten line and the logo.
 ---
 
-# KOSIF TOOL — Distilbook motion showreel / ديستيل بوك: ريل ثلاثين ثانية على شبكة قاسية
+# KOSIF TOOL — Distilbook motion showreel / ديستيل بوك: رحلة ملوّنة من الورق إلى الفضاء
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ajith-io-ea7f2d
@@ -18,11 +18,11 @@ description: A cold, tight 30-second product reel presenting Distilbook in three
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل منتج بارد الإيقاع مدته 30 ثانية يعرض Distilbook في ثلاث حركات: صدمة رقمية، جولة بطاقات، ثم برهان بالأرقام، على شبكة ثابتة بلون تمييز واحد.
+ريل منتج مدته 32 ثانية يبدأ بمستند مرسوم بخط اليد بجانب زهرة برتقالية على ورق، ثم يغوص عبر خطوط سرعة إلى انفجار شعاعي، أشرطة قوس قزح، شريط بطاقات ملونة في فضاء بنفسجي، سرب حروف، كرة متوهجة تصير خيط ضوء ينبت بطاقة فوق كوكب، جدار بطاقات، ثم عودة إلى الورق بعبارة مكتوبة باليد والشعار.
 
-A cold, tight 30-second product reel presenting Distilbook in three acts: a numeric hook, a card tour, then proof by numbers, on a persistent grid with one accent colour.
+A 32-second product reel that opens on a doodled document beside an orange flower on paper, dives through speed lines into a radial burst, rainbow stripes, a ribbon of coloured cards in purple space, a flock of letters, a glowing orb that becomes a light thread growing a sprout card over a planet, a wall of cards, then back to paper with a handwritten line and the logo.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG), suggested duration (32 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

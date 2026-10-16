@@ -1,58 +1,60 @@
-# إطلاق GenVizu: من الوصف إلى التصوّر — GenVizu product launch
+# إطلاق GenVizu: منصة أوامر الصور والفيديو بالذكاء الاصطناعي — GenVizu product launch
 
-> فيديو إطلاق 20 ثانية لمنتج GenVizu يصلح كخلفية Hero ومادة تسويقية: وصف نصي يتحول إلى رسوم بيانية داخل واجهة المنتج ثم يدور بحلقة نظيفة.
+> فيلم إطلاق مدته 52 ثانية لمنصة أوامر توليد الصور والفيديو بالذكاء الاصطناعي على خلفية داكنة: أمر يُكتب في حقل إدخال، صورة سينمائية تملأ الإطار ثم تصغر إلى بطاقة وتصير جداراً ثلاثي الأبعاد مائلاً من الصور، عناوين قصيرة تمزج الغروتسك بالسيريف المائل فوق واجهات واقعية: منتقي نماذج، أربع صور تتضح من الضبابية، صورة تتحول إلى حركة، لوحة لا نهائية بقائمة مهام وكيل، مونتاج ثلاثي سريع وختام بالشعار.
 >
-> A 20-second launch film for GenVizu usable as a website hero and GTM asset: a typed prompt becomes charts inside the product UI, then loops cleanly.
+> A 52-second launch film for an AI image and video prompt platform on a dark ground: a prompt types into an input pill, a cinematic image fills the frame, shrinks into a card and becomes a tilted 3D gallery wall, and short headlines mixing sans and italic serif sit over realistic UI: a model picker, four images resolving from blur, still-to-motion, an infinite canvas with an agent checklist, a fast triptych montage and a logo end card.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/listudio-820c7b
 - التصنيفات / Categories: product-ui
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 20 s · الصعوبة / Difficulty: 4/5
-- التقنية المقترحة / Stack: Remotion, React, SVG
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 52 s · الصعوبة / Difficulty: 4/5
+- التقنية المقترحة / Stack: Remotion, React, CSS
 
 ## الفكرة
-الموضوع فيديو إصدار لمنتج اسمه GenVizu، وسيُستخدم على رأس الصفحة وفي مواد الذهاب إلى السوق، لذا الهدف أن يعمل بلا صوت، ويبدأ وينتهي بالإطار نفسه كي يدور في حلقة. الفرضية الإبداعية أن المنتج يولّد تصورات بيانية من وصف نصي، فتُبنى اللغة الحركية على تحوّل: نص يُكتب فيذوب إلى جسيمات تعيد تشكيل نفسها كرسم أعمدة ثم خطي ثم مبعثر، وتظهر واجهة المنتج حول الرسم تدريجيًا. ما يميزها أن الواجهة تُعرض كما شُحنت فعلًا بألوانها وخطها، والحركة تبقى هادئة بما يناسب خلفية موقع.
+الموضوع منصة تجمع آلاف الأوامر المجربة لتوليد الصور والفيديو مع نماذج متعددة ووكيل يبني سير العمل. الفيلم يبدأ من أبسط فعل (كتابة أمر) ويكبر تدريجياً: صورة واحدة، ثم آلاف، ثم أدوات، ثم وكيل، ثم مونتاج سريع للنتائج. لغة الحركة هادئة وفاخرة: أسود عميق، واجهات حقيقية بمساحات سلبية واسعة، كلمة واحدة بسيريف مائل في كل عنوان، وتسارع في النهاية.
 
 ## Concept
-The subject is a release film for a product called GenVizu, meant for a website hero and go-to-market materials, so the goal is to work silently and to start and end on the same frame for a clean loop. The creative premise is that the product generates visualisations from a text description, so the motion language is built on transformation: typed text dissolves into particles that reform as a bar chart, then a line, then a scatter, while the product UI fades in around the chart. Its distinctive trait is fidelity, the UI appears exactly as shipped with its own colours and font, and motion stays calm enough to sit behind a headline.
+The subject is a platform that collects thousands of proven prompts for image and video generation, with many models and an agent that builds workflows. The film starts from the simplest act (typing a prompt) and grows: one image, then thousands, then tools, then an agent, then a fast montage of results. The motion language is calm and premium: deep black, real interfaces with wide negative space, one italic serif word per headline, and acceleration at the end.
 
 ## المشاهد المقترحة
-- 0-2 ث: لوحة فارغة بمؤشر إدخال يومض؛ وصف قصير يكتب نفسه بسرعة 35 ms لكل حرف.
-- 2-6 ث: نص الوصف يذوب إلى جسيمات تعيد التشكل كرسم أعمدة، ثم تتحول إلى رسم خطي، ثم إلى مخطط مبعثر؛ كل تحول 700 ms.
-- 6-10 ث: إطار واجهة المنتج يظهر حول الرسم: شريط جانبي وشريط أدوات ولوحة بيانات؛ عناصر الواجهة تنزلق من حوافها بتفاوت 60 ms.
-- 10-14 ث: مؤشر يعدّل معامِلًا واحدًا؛ الرسم يتحدث فورًا، وتُفتح لوحة مشاركة مع تحريك للتصدير.
-- 14-18 ث: ثلاث بطاقات رسوم تتفرّد كمروحة لإظهار التنوع؛ شعار GenVizu يرتفع والبطاقات تنطوي خلفه.
-- 18-20 ث: الشعار النصي والدعوة يثبتان 1.5 ثانية؛ الإطار الأخير يطابق خلفية الإطار الأول ليدور بحلقة نظيفة كخلفية Hero.
+- 0-3 ث: شبه أسود: أمر يُكتب في حقل إدخال صغير مستدير بمؤشر، ثم يُضغط الزر مع تموج وردي.
+- 3-7.5 ث: صورة سينمائية لشخصية على ممشى بحري وردي تملأ الإطار ثم تصغر إلى بطاقة مستديرة.
+- 7.5-13 ث: البطاقة تنضم إلى عشرات غيرها على جدار مائل بمنظور ينجرف قطرياً؛ عنوان عن آلاف الأوامر المجربة في الوسط وكلمته المفتاحية بسيريف مائل.
+- 13-21 ث: لوحة تفاصيل تنزلق من اليمين فوق الجدار المعتم المموه بنص الأمر وتنويعاته؛ رزمة عناوين تُبنى سطراً سطراً (شاهده، انسخه، اجعله لك) بينما تخفت الأسطر السابقة.
+- 21-30 ث: عنوان عن كل النماذج الكبرى في استوديو واحد فوق قائمة نماذج يتصفحها المؤشر؛ ثم أربع صور عمودية 9:16 تتضح واحدة تلو الأخرى من ضبابية شديدة إلى الحدة بينما يظهر زر بحالة التوليد.
+- 30-34.7 ث: من الصورة إلى الحركة: صورة تدب فيها الحياة داخل بطاقة مستديرة والمعرض معتم خلفها، مع تعليق يمزج الغروتسك والسيريف المائل.
+- 34.7-43 ث: لوحة لا نهائية: مخطط عقد ينزاح بينما تمتلئ العقد بصور منتج، لوحة وكيل على اليمين تؤشر قائمة مهامها ورسالة نشر سير العمل تنبثق؛ والعنوان يقول صف ما تريد والوكيل يبنيه.
+- 43-52 ث: مونتاج ثلاثي من صور عمودية بعناوين سيريف من كلمة واحدة يُقطع كل 0.5 ثانية، ثم بطاقة ختام فحمية ثابتة بالشعار وسطر وصف وزر رابط.
 
 ## Proposed scenes
-- 0-2s: An empty canvas with a blinking input cursor; a short prompt types itself at 35 ms per character.
-- 2-6s: The prompt text dissolves into particles that re-form as a bar chart, then morph into a line chart, then a scatter plot, each morph taking 700 ms.
-- 6-10s: The product UI frame fades in around the chart: sidebar, toolbar, data panel; UI elements slide in from their own edges with a 60 ms stagger.
-- 10-14s: A cursor edits one parameter; the chart updates live, and a share panel opens with an export animation.
-- 14-18s: Three chart cards fan out to show variety; the GenVizu wordmark rises and the cards tuck behind it.
-- 18-20s: Tagline and CTA hold for 1.5 s; the final frame matches the first frame's background so it loops cleanly as a hero.
+- 0-3s: Near-black: a prompt types into a small pill input with a caret, then the button is pressed with a pink ripple.
+- 3-7.5s: A cinematic image of a figure on a pink seaside promenade fills the frame, then scales down into a rounded card.
+- 7.5-13s: The card joins dozens of others on a tilted perspective wall drifting diagonally; a headline about thousands of proven prompts sits centred, the key word in italic serif.
+- 13-21s: A detail panel slides in from the right over the dimmed, blurred wall with the prompt text and variants; a headline stack builds line by line (see it, copy it, make it yours) as earlier lines dim.
+- 21-30s: A headline about every top model in one studio above a model dropdown the cursor browses; then four 9:16 tiles resolve one after another from heavy blur to sharp while a button reads 'Generating…'.
+- 30-34.7s: Still to motion: an image comes alive inside a rounded card with the gallery dimmed behind, captioned in sans plus italic serif.
+- 34.7-43s: Infinite canvas: a node graph pans as nodes fill with product images, an agent panel on the right ticks its checklist and a 'workflow published' toast pops; the headline says you describe it and the agent builds it.
+- 43-52s: Triptych montage of vertical photos with one-word serif titles cut every 0.5 s, then a still charcoal end card with the logo, a tagline and a URL pill button.
 
 ## قواعد الحركة
-- مبني كحلقة متصلة 20 ثانية: الإطار الأول والأخير متطابقان بكسلًا بكسل، والثبات الأخير 1.5 ثانية لا يحمل حركة سوى تنفس عتامة 2% على زر الدعوة.
-- الدخول بـ cubic-bezier(0.25, 1, 0.5, 1) خلال 600 ms؛ لوحات الواجهة بتفاوت 60 ms من الحافة التي تنتمي إليها.
-- تحولات الرسوم تُدخل مسارات SVG بعدد نقاط متساوٍ خلال 700 ms؛ تبقى نقاط البيانات موسومة أثناء التحول كي يظل الرسم مقروءًا.
-- الكتابة بسرعة 35 ms لكل حرف مع وميض مؤشر كل 530 ms؛ الوصف لا يتجاوز ثماني كلمات.
-- الكاميرا: dolly بطيء من 1.0 إلى 1.04 عبر المقاطع 2-5، ويُعاد إلى 1.0 أثناء إظلام قصير 200 ms قبل المقطع الأخير.
-- اللوحة والطباعة من المنتج نفسه: ألوان الواجهة كما شُحنت، وخط الواجهة لنصوصها، وخط عرض واحد للشعار فقط؛ لا ألوان مختلقة.
-- يجب أن يعمل صامتًا: كل مقطع يحمل تسمية مرئية أو حالة واجهة تفسر نفسها دون تعليق صوتي.
-- ممنوع: بيانات مزيفة دون وسم، ومقاطع تعتمد على الصوت، والوميض، وأي عنصر واجهة غير موجود في المنتج الحقيقي.
+- انمُ من الواحد إلى الكثير: أمر واحد يُكتب، صورة واحدة، ثم جدار صور، ثم أدوات ووكيل ومونتاج.
+- العناوين تجمع نيو غروتسك 600-700 مع كلمة واحدة بسيريف مائل عالي التباين؛ الأسطر المكدسة تنزلق للأعلى نحو 20 بكسل وتخفت السابقة إلى نحو 30%.
+- واجهة حقيقية بمساحات سلبية واسعة: حقل الإدخال، لوحة التفاصيل، قائمة النماذج، حالات التوليد، لوحة العقد ورسالة التأكيد.
+- الضبابية حالة: الصور المولدة تتضح من ضبابية شديدة إلى الحدة واحدة بعد الأخرى؛ والمعارض الخلفية مموهة ومعتمة خلف اللوحات.
+- كاميرا افتراضية تنجرف فوق جدار البطاقات المائل وتنزاح عبر اللوحة؛ وثابتة فيما عدا ذلك.
+- الإيقاع يتسارع: مقدمة كتابة هادئة، لحظات واجهة متوسطة، ثم قطعات حادة كل 0.5 ثانية في المونتاج (نحو 43-46 ث) قبل بطاقة ختام ثابتة.
+- اللوحة: أسود #070709، لوحات #13181d و#232525، رمادي #555a5a، نص رمادي دافئ #aba7a2، أبيض #f2f2f2، وردي #e8a3b8 لتموج الضغط وأخضر #3fb950 لحالات النجاح.
 
 ## Motion rules
-- Built as a 20 s seamless loop: the first and last frames are pixel-identical, and the final 1.5 s hold uses no motion except a 2% opacity breathe on the CTA.
-- Entrances use cubic-bezier(0.25, 1, 0.5, 1) over 600 ms; UI panels stagger by 60 ms from the edge they belong to.
-- Chart morphs interpolate SVG paths with equal point counts over 700 ms; data points stay labelled during the morph so the chart remains readable.
-- Typing runs at 35 ms per character with a 530 ms cursor blink; the prompt never exceeds eight words.
-- Camera: a slow dolly from 1.0 to 1.04 across beats 2-5, reset to 1.0 during a 200 ms dark dip before the final beat.
-- Palette and typography are the product's own: UI colours as shipped, the UI font for interface text, one display face only for the wordmark; no invented hues.
-- Must work muted: every beat carries a visible label or UI state that explains itself without narration.
-- Banned: unlabeled fake data, beats that rely on sound, flashing, and any UI element that does not exist in the real product.
+- Grow from one to many: a single typed prompt, one image, then a wall of images, then tools, agent and montage.
+- Headlines pair a neo-grotesk 600-700 with one italic high-contrast serif word; stacked lines slide up about 20 px while earlier lines dim to about 30%.
+- Real UI with wide negative space: input pill, detail panel, model dropdown, generate states, node canvas and toast.
+- Blur is a state: generated tiles resolve from heavy blur to sharp one after another; background galleries sit blurred and dimmed behind panels.
+- Virtual camera drifts over the tilted 3D card wall and pans across the canvas; otherwise static.
+- Pacing accelerates: quiet typing intro, medium UI beats, then hard cuts every 0.5 s in the montage (about 43-46 s) before a still end card.
+- Palette: black #070709, panels #13181d and #232525, grey #555a5a, warm grey text #aba7a2, white #f2f2f2, pink #e8a3b8 for the press ripple and green #3fb950 for success states.
 
 ## Facts stated by the source (rewritten in our words)
 - The creator asked for the project at a supplied link, GenVizu, to be studied first.
@@ -61,7 +63,7 @@ The subject is a release film for a product called GenVizu, meant for a website 
 - Tagged product UI; no duration, colours or stack are stated.
 
 ## Assumptions
-GenVizu is assumed to be a text-to-visualisation tool based on its name; the 20-second loop, the prompt-to-chart premise and the UI beats are proposals pending a look at the real product.
+Observed from frames sampled every ~4.3 s plus motion analysis: the prompt-to-gallery opening, headline beats, model picker, blur-to-sharp tiles, still-to-motion, agent canvas, 0.5 s montage and the 52 s length. Assumed: exact beat boundaries and music sync; the product generates images and video, it is not a chart tool, and the film is not a seamless loop.
 
 ## Keywords
-product launch, hero video, seamless loop, prompt to chart, path morph, product ui, gtm asset, data visualisation, إطلاق منتج, فيديو hero, حلقة متصلة, تحويل رسوم, واجهة منتج, تصوّر بيانات
+product launch, hero video, ai image platform, prompt typing, 3d card wall, blur to sharp, image to video, node canvas, triptych montage, إطلاق منتج, جدار صور, واجهة منتج, مونتاج سريع, كتابة أمر

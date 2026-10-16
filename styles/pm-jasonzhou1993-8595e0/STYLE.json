@@ -30,28 +30,30 @@
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
-  "summary_ar": "شوريل سريع مدته 15 ثانية يربط الطباعة الحركية والرسوم البيانية ومنظومات الأشكال في قطعة واحدة متصلة تعمل كبطاقة تعريف لمصمم موشن.",
-  "summary_en": "A 15-second self-promotional showreel that chains kinetic type, animated charts and shape systems into one continuous portfolio piece.",
+  "summary_ar": "ريل ذاتي مدته 15 ثانية مقسم إلى فصول مرقمة داخل إطار HUD: نقطة برتقالية على خط زمني، خط حركي TIMING وSPACING وEASING على البرتقالي والكريمي مع صفوف نصية محيطية متحركة وتعليق برمجي، شبكة مربعات ودوائر تدور، انفجار جسيمات يبني كلمة FLOW، كرة سحابة نقاط فوق أرضية شبكية، مسح بأشرطة لونية إلى بطاقة بيانات، موجات خطوط خلف عبارة سيريف مائلة، وبطاقة ختام.",
+  "summary_en": "A 15-second self-showreel split into numbered chapters inside a HUD frame: an orange dot on a timeline, kinetic type TIMING / SPACING / EASING over orange and cream with outlined marquee rows and a code comment, a grid of rotating squares and circles, a particle burst that assembles FLOW, a 3D point-cloud sphere over a floor grid, vertical colour-stripe wipes into a data card, flowing line ribbons behind an italic serif phrase, and an end card.",
   "keywords": [
     "showreel",
     "portfolio reel",
+    "chapter reel",
+    "hud overlay",
     "kinetic typography",
-    "animated charts",
-    "shape morph",
-    "remotion",
-    "beat sync",
-    "بورتفوليو",
+    "easing demo",
+    "particles to text",
+    "point sphere",
+    "stripe wipe",
+    "data card",
+    "line ribbons",
+    "ريل تعريفي",
     "طباعة حركية",
-    "رسوم بيانية متحركة",
-    "مقطع تعريفي",
-    "مصمم موشن",
-    "فصول حركية"
+    "جسيمات"
   ],
-  "difficulty": 3,
+  "difficulty": 4,
   "duration_s": 15,
   "stack": [
     "Remotion",
     "React",
+    "Three.js",
     "SVG"
   ],
   "brief": "styles/pm-jasonzhou1993-8595e0/BRIEF.md"

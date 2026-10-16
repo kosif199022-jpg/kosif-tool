@@ -1,6 +1,6 @@
 ---
 name: pm-techyoutbe-945b56
-description: A 30s X-style SaaS launch film: real product UI in a device frame, three feature cards, a benefit chart and a clean CTA.
+description: A 40-second launch film for a library of visual tech guides: a big 'CI/CD.' on a light ground, an architecture diagram drawing itself on cobalt blue, the logo on navy, a carousel of colourful ebook covers, a yellow cover beside a typing terminal, a scrolling wall of topic pills on yellow, a product card clicked by a cursor and a closing CTA.
 ---
 
 # KOSIF TOOL — Visual guides library launch / إطلاق مكتبة الأدلة المرئية: فيديو منتج SaaS
@@ -18,11 +18,11 @@ description: A 30s X-style SaaS launch film: real product UI in a device frame, 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيديو إطلاق 30 ثانية بأسلوب منشورات إطلاق المنتجات على X: واجهة حقيقية في إطار جهاز، بطاقات ميزات، ومخطط يقيس الفائدة.
+فيديو إطلاق مدته 40 ثانية لمكتبة أدلة مرئية تقنية: كلمة CI/CD. كبيرة على خلفية فاتحة، مخطط بنية يرسم نفسه على أزرق كوبالت، الشعار على كحلي، شريط دوّار من أغلفة كتب إلكترونية ملونة، غلاف أصفر بجانب طرفية تكتب، جدار وسوم متحرك على الأصفر، بطاقة منتج ينقرها المؤشر، ودعوة ختامية.
 
-A 30s X-style SaaS launch film: real product UI in a device frame, three feature cards, a benefit chart and a clean CTA.
+A 40-second launch film for a library of visual tech guides: a big 'CI/CD.' on a light ground, an architecture diagram drawing itself on cobalt blue, the logo on navy, a carousel of colourful ebook covers, a yellow cover beside a typing terminal, a scrolling wall of topic pills on yellow, a product card clicked by a cursor and a closing CTA.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (40 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Photos / صور.

@@ -1,56 +1,54 @@
-# إعلان برنامج الإحالة بالتميمة — Mascot referral program promo
+# إعلان برنامج الإحالة لاستوديو التمائم — Mascot referral program promo
 
-> إعلان موشن جرافيك في 15 ثانية تقوده تميمة العلامة لشرح برنامج الإحالة: ادعُ صديقًا، يربح كلاكما، والرسم البياني يثبت ذلك.
+> إعلان إحالة مدته 15 ثانية لاستوديو تمائم: عبارة «أخبر صديقاً» يُشطب عليها بخربشة وردية وتُعاد كتابتها مع ملصق برتقالي مائل وتميمة صغيرة، مسح دائري برتقالي إلى حقل أمر يُكتب فيه وصف ويُنقر زر الإنشاء فتظهر تميمة بطاطا ثلاثية الأبعاد في دائرة وردية، تمائم أخرى بشارات أسماء، بطاقة شفافة مائلة «20% مدى الحياة» تعبر الإطار، حاسبة أرباح يسحب فيها المؤشر شريطاً من 50 إلى 500 والعائد يصل إلى 5,000 دولار، وبطاقة ختام بزر يُنقر.
 >
-> A 15-second mascot-led motion spot explaining a referral programme: invite a friend, both of you win, and a growing chart proves it.
+> A 15-second referral promo for a mascot studio: 'tell a friend' gets a pink scribble strike-through and is rewritten with a tilted orange sticker and a small mascot, an orange circle wipe leads to a prompt box that types a description and clicks create, revealing a 3D potato mascot in a pink circle, more mascots with name pills, a tilted translucent lifetime-commission card sweeps across, an earnings calculator where a cursor drags a slider from 50 to 500 while the payout ticks to $5,000, and an end card with a clicked affiliate button.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/paulo-kombucha-96431c
 - التصنيفات / Categories: charts
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 2/5
-- التقنية المقترحة / Stack: Remotion, SVG, React
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 3/5
+- التقنية المقترحة / Stack: Remotion, React, SVG
 
 ## الفكرة
-الموضوع برنامج إحالة لعلامة مشروبات (يُفترض كومبوتشا من اسم الحساب) تُقدّمه تميمة كرتونية ودودة. الهدف أن يفهم المشاهد في 15 ثانية آلية بسيطة: تشارك رابطك، ينضم صديقك، ويحصل الطرفان على مكافأة، ثم يضغط زر المشاركة. تتميّز لغة الحركة بتميمة مرنة بحركة ضغط وتمدّد واضحة، ورمز رابط يُقذف كالكرة بين شخصيتين، ورسم أعمدة ينمو فعليًا كجزء من الحكاية لا كشريحة إحصائية منفصلة.
+الموضوع برنامج شركاء لاستوديو يصنع تمائم بالذكاء الاصطناعي: بدل أن تخبر صديقاً مجاناً، احصل على نسبة مدى الحياة. الفيلم يصحح العبارة أمام العين بالخربشة، ثم يعرض المنتج (وصف يتحول إلى تميمة)، ثم يثبت المكسب بحاسبة تفاعلية. اللغة نظيفة ومرحة: أبيض، أسود ثقيل، برتقالي ووردي، ملصقات مائلة، ومؤشر يقوم بالتفاعلات.
 
 ## Concept
-The subject is a referral programme for a beverage brand (assumed kombucha from the handle) presented by a friendly cartoon mascot. The goal is that in 15 seconds the viewer grasps a simple mechanic: share your link, a friend joins, both sides get a reward, then taps share. The motion language is a rubbery mascot with pronounced squash and stretch, a link token tossed like a ball between two characters, and a bar chart that grows as part of the story rather than as a separate statistics slide.
+The subject is an affiliate programme for a studio that makes mascots with AI: instead of telling a friend for free, earn a lifetime share. The film corrects the phrase on screen with a scribble, shows the product (a description turning into a mascot), then proves the payoff with an interactive calculator. The language is clean and playful: white, heavy black, orange and pink, tilted stickers and a cursor performing the interactions.
 
 ## المشاهد المقترحة
-- 0-2 ث: تقفز التميمة من الحافة السفلية بارتداد يتجاوز الهدف 15% وتلوّح؛ يهبط عنوان من سطرين، سطر على كل نبضة.
-- 2-6 ث: ينزلق ظل صديق من اليمين؛ تقذف التميمة رمز رابط متوهّجًا يرسم قوسًا بأثر حركة ويستقر في يد الصديق التي تمتلئ باللون عند الالتقاط.
-- 6-10 ث: رسم المكافآت: عمود باسم أنت وعمود باسم صديقك ينموان معًا خلال 700 مللي ثانية، ثم يُكدَّس عمود ثالث باسم معًا فوقهما بينما تتصاعد القيم.
-- 10-13 ث: ورقة مشاركة بثلاثة أزرار (نسخ الرابط، رسالة، رمز QR) تتفتّح من يد التميمة بفواصل 60 درجة؛ ويتموّج كل زر عند الضغط.
-- 13-15 ث: ترفع التميمة إبهامها، ويظهر رمز الإحالة في شارة تحت نداء الفعل، ويثبت لون العلامة آخر 800 مللي ثانية.
+- 0-2.5 ث: أرضية بيضاء: وسم بنقطة برتقالية وعنوان ثقيل من سطرين عن إخبار صديق؛ خربشة أرجوانية تشطبه في نحو 300 مللي ثانية ويرتفع سطر بديل، وملصق برتقالي مائل ينبثق بتجاوز بجانب تميمة صغيرة.
+- 2.5-5.5 ث: مسح دائري برتقالي يتسع من خارج الإطار؛ حقل أمر يُكتب فيه وصف تميمة بمؤشر، المؤشر يتحرك وينقر زر الإنشاء، وتنبثق تميمة بطاطا ثلاثية الأبعاد لامعة بتجاوز فوق دائرة وردية تكبر.
+- 5.5-8.5 ث: تظهر تمائم أخرى وتنزلق تحتها شارات أسمائها؛ وبطاقة شفافة مائلة تعلن نسبة مدى الحياة تعبر الإطار قطرياً.
+- 8.5-12 ث: بطاقة حاسبة منقسمة، أدوات فاتحة يساراً ولوحة نتيجة سوداء يميناً: المؤشر يسحب شريطاً فيعدّ العملاء من 50 إلى نحو 500 والعائد يعدّ معه حتى 5,000 دولار؛ ثم يصطدم ملصق تنبيه مائل.
+- 12-15 ث: بطاقة ختام على أبيض دافئ: الشعار بكلمة بخط مكتوب، سطر بلونين (أسود وبرتقالي)، تميمة يميناً، ومؤشر ينقر زر الانضمام كشريك مع انضغاط.
 
 ## Proposed scenes
-- 0-2s: The mascot pops up from the bottom edge with a 15% overshoot bounce and waves; a two-line headline drops in, one line per beat.
-- 2-6s: A friend silhouette slides in from the right; the mascot tosses a glowing link token that arcs across with a motion trail and lands in the friend's hand, which fills with colour on catch.
-- 6-10s: Reward chart: a bar labelled 'you' and a bar labelled 'your friend' grow in sync over 700ms, then a third bar 'together' stacks above them while the amounts tick up.
-- 10-13s: A share sheet with three buttons (copy link, message, QR code) fans out from the mascot's hand at 60-degree intervals; each button ripples when tapped.
-- 13-15s: The mascot gives a thumbs-up, the referral code appears in a pill under the call to action, and the brand colour holds for the last 800ms.
+- 0-2.5s: White ground: a kicker with an orange dot and a heavy two-line headline about telling a friend; a magenta scribble strikes through it in about 300 ms and a replacement line slides up, a tilted orange sticker pops in with overshoot beside a small mascot.
+- 2.5-5.5s: An orange circle wipe expands from off-frame; a prompt box types a mascot description with a caret, a cursor moves and clicks create, and a glossy 3D potato mascot pops in with overshoot over a growing pink circle.
+- 5.5-8.5s: More mascots appear with name pills sliding in beneath them; a tilted translucent card announcing a lifetime percentage sweeps diagonally across the frame.
+- 8.5-12s: A split calculator card, light controls left and black result panel right: the cursor drags a slider so customers count 50 to about 500 while the payout ticks in sync to $5,000; a tilted disclaimer sticker slaps in.
+- 12-15s: End card on warm off-white: logo with a script word, a two-tone line (black plus orange), a mascot on the right and a cursor clicking the affiliate button with a press scale.
 
 ## قواعد الحركة
-- تتحرك التميمة بمنحنى cubic-bezier(0.34, 1.56, 0.64, 1) مع انضغاط إلى 80% من الارتفاع عند الهبوط وتمدّد إلى 115% عند الانطلاق؛ وتتبع الأطراف بتداخل 60 مللي ثانية.
-- يسير رمز الرابط على مسار قطع مكافئ خلال 900 مللي ثانية مع أثر حركة من 12 عيّنة يتلاشى خلال 200 مللي ثانية؛ وهو العنصر الوحيد المسموح له بأثر.
-- تنمو أعمدة الرسم من ارتفاع صفر بمنحنى ease-out cubic خلال 700 مللي ثانية؛ وتتصاعد الأرقام بالمنحنى نفسه وتستقر بعد العمود بـ 100 مللي ثانية؛ وتُرسم خطوط المحاور بـ stroke-dashoffset خلال 300 مللي ثانية.
-- الكاميرا ثابتة؛ يأتي التأكيد من اقتراب 1.06 على نبضة الرسم فقط لمدة 200 مللي ثانية.
-- الخط: sans ثقيل مستدير للعناوين، سطران كحدّ أقصى، 72 بكسل على 1080p؛ العربية بخط عريض مستدير مع دخول على مستوى الكلمة (translateY من 24 بكسل إلى 0 خلال 240 مللي ثانية بتأخير 60 مللي ثانية).
-- اللون: لون العلامة الأساسي على التميمة والأزرار، وخلفية فاتحة محايدة، ولون مكافأة واحد يُستخدم فقط للرمز والأعمدة وشارة الكود.
-- تحتفظ كل نبضة بعنصرها البصري الرئيسي ثانية واحدة على الأقل قبل بدء الفعل التالي؛ ولا يتداخل دخولان بأكثر من 100 مللي ثانية.
-- ممنوع: مظهر التصيير ثلاثي الأبعاد، وظلال أعمق من 12 بكسل، وأكثر من ثلاثة أعمدة في الرسم، وأي نص قانوني صغير على الشاشة.
+- بلا قطعات حادة: المشاهد تتبدل باستمرار كل 2-3 ثوانٍ عبر مسح دائري برتقالي ودفع كتل النص وعبور بطاقة قطرياً.
+- التصحيح هو الخطاف: خربشة أرجوانية مرسومة باليد تشطب العبارة (نحو 300 مللي ثانية) ثم يرتفع السطر البديل.
+- الملصقات والشارات تنبثق بدوران وتجاوز (نحو 250 مللي ثانية)؛ والتمائم تكبر بتجاوز فوق دائرة وردية تنمو خلفها.
+- مؤشر ظاهر يؤدي كل تفاعل: مؤشر الكتابة، نقر الإنشاء، سحب الشريط والضغط على زر الدعوة.
+- الأرقام مربوطة بالشريط: عدد العملاء والعائد يعدّان معاً لحظياً.
+- اللوحة: أبيض #ffffff، أبيض دافئ #f7f6f4، حبر #111111، برتقالي #ef5a0c، وردي #f3d3e0، أرجواني #c8358f وبني #3f241f، مع لوحة نتيجة سوداء واحدة.
+- الخط: غروتسك ثقيل جداً ضيق بحالة الجملة مع عناوين بلونين (أسود وكلمات أخيرة برتقالية)، وسم صغير متباعد بأحرف كبيرة ونقطة برتقالية، وخط عادي للواجهة.
 
 ## Motion rules
-- Mascot moves on cubic-bezier(0.34, 1.56, 0.64, 1) with squash to 80% height on landing and stretch to 115% at take-off; limbs follow with a 60ms overlap.
-- The link token travels on a parabolic path over 900ms with a 12-sample motion trail that fades over 200ms; it is the only element allowed a trail.
-- Chart bars grow from a 0 height with ease-out cubic over 700ms; numbers count up with the same curve and settle 100ms after the bar; axis lines draw on with stroke-dashoffset in 300ms.
-- Camera is static; emphasis comes from a 1.06 punch-in on the chart beat only, lasting 200ms.
-- Type: a rounded heavy sans for headlines, two lines max, 72px at 1080p; Arabic in a rounded bold face with word-level entrance (translateY 24px to 0, 240ms, 60ms stagger).
-- Colour: brand primary on the mascot and buttons, a neutral light background, one reward accent used only for the token, the bars and the code pill.
-- Each beat holds its key visual for at least 1s before the next action starts; no two entrances overlap by more than 100ms.
-- Banned: 3D render looks, drop shadows deeper than 12px, more than three bars in the chart, and any legal small print on screen.
+- No hard cuts: scenes change continuously every 2-3 s through an orange circle wipe, pushes of text blocks and a diagonal card sweep.
+- Correction is the hook: a hand-drawn magenta scribble strike-through (~300 ms) followed by the replacement line sliding up.
+- Stickers and pills pop with rotation and overshoot (~250 ms); mascots scale in with overshoot over a pink circle growing behind them.
+- A visible cursor performs every interaction: typing caret, create click, slider drag and CTA press.
+- Numbers are bound to the slider: customer count and payout tick together in real time.
+- Palette: white #ffffff, warm off-white #f7f6f4, ink #111111, orange #ef5a0c, pink #f3d3e0, magenta #c8358f and brown #3f241f, with one black result panel.
+- Type: very heavy tight grotesk in sentence case with two-tone headlines (black plus orange last words), small tracked uppercase kicker with an orange dot, regular sans for UI.
 
 ## Facts stated by the source (rewritten in our words)
 - Fixed length of 15 seconds.
@@ -58,7 +56,7 @@ The subject is a referral programme for a beverage brand (assumed kombucha from 
 - The creator filed it under charts, and the title names a mascot as the presenter.
 
 ## Assumptions
-The source gives only the duration, the topic and the chart tag; the kombucha brand, the two-sided reward, the link-toss gag and the three-button share sheet are proposed. Reward amounts are placeholders to be replaced with the real programme terms.
+Observed from the watched video: the scribble correction, the circle wipe, the prompt-to-mascot reveal, the name pills, the diagonal card, the slider calculator and the clicked end card over 15 s with no hard cuts. Assumed: the quiet audio content and exact timings between motion peaks; the brand is a mascot studio, not a drink, and the mascots are glossy 3D images.
 
 ## Keywords
-referral program, mascot animation, invite a friend, bar chart, share sheet, reward, brand promo, برنامج إحالة, تميمة متحركة, ادعُ صديقًا, رسم بياني, مكافأة, مشاركة الرابط
+referral program, affiliate promo, mascot, scribble strike-through, sticker pop, circle wipe, prompt typing, earnings calculator, slider, برنامج إحالة, تميمة, حاسبة أرباح, ملصقات, مؤشر

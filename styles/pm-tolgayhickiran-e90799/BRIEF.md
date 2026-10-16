@@ -1,58 +1,60 @@
-# ريل مبادئ الموشن: الحركة تشرح نفسها — Motion design principles reel
+# ريل موشن داكن بإطار HUD: عروض تقنية متتابعة — Motion design principles reel
 
-> ريل 15 ثانية يعرض مبادئ التحريك كأمثلة حية، حيث تؤدي الكلمة والرسم البياني المبدأ الذي يسمّيانه.
+> ريل مدته 15 ثانية داخل إطار HUD: دائرة بنقاط تدور وعلامات شعاعية مع «HELLO, I_» تُكتب، خطوط مسح، كلمة MOTION بتشويش وانفصال RGB، شبكة أشكال ملونة، دائرة تتحول إلى نجمة على الليموني، مجرة جسيمات حلزونية، كتل بكسل برتقالية، RHYTHM فوق أعمدة معادل صوت، حلقة سلكية ثلاثية الأبعاد، وتوقيع CLAUDE داخل حلقة.
 >
-> A 15-second résumé reel in which each animation principle is performed live by the very word and chart that name it.
+> A 15-second HUD-framed reel: a circle with orbiting dots and radial ticks while 'HELLO, I_' types, scan lines, a glitched RGB-split MOTION, a grid of coloured shapes, a circle morphing to a star on lime, a spiral particle galaxy, orange pixel blocks, RHYTHM over equaliser bars, a wireframe torus and a CLAUDE signature inside a ring.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/tolgayhickiran-e90799
 - التصنيفات / Categories: charts, kinetic-type
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 3/5
-- التقنية المقترحة / Stack: Remotion, React, SVG
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 4/5
+- التقنية المقترحة / Stack: Remotion, React, SVG, Three.js
 
 ## الفكرة
-الموضوع ريل تعريفي للمصمم يُبنى على مبادئ التحريك الأساسية: التسهيل، والتهيئة، والتجاوز، والمتابعة، والتمثيل المسرحي. الهدف إثبات الحرفة في 15 ثانية دون كلام، فكل مبدأ تؤديه الكلمة التي تحمل اسمه والرسم البياني المجاور لها. ما يميز اللغة الحركية هنا أن منحنى الـ easing يُرسم على الشاشة في اللحظة نفسها التي يُطبَّق فيها، فيتحول الريل إلى درس مرئي وبطاقة مهارات في آن واحد.
+الموضوع ريل يرافق السيرة الذاتية لمصمم موشن، يعرض تقنية مختلفة في كل لقطة قصيرة: كتابة آلية، تشويش رقمي، أنماط أشكال، تحويل مسارات، جسيمات، تفكك بكسلي، أعمدة إيقاع، وأبعاد ثلاثة سلكية. أغلبها عروض مجردة لا كلمات تشرح نفسها؛ فقط MOTION وRHYTHM تجسدان معناهما. يجمعها إطار HUD ثابت برمز المشهد واسمه أسفل اليسار ومسطرة زمنية أسفل الوسط ودقة الإطار أسفل اليمين، على خلفية شبه سوداء بحبيبات مع حقول ليمونية.
 
 ## Concept
-The subject is a résumé reel built on core animation principles: easing, anticipation, overshoot, follow-through and staging. The goal is to prove craft in 15 seconds without narration, so each principle is performed by the word that names it and by the chart beside it. What makes the motion language distinctive is that the easing curve is drawn on screen at the same moment it is applied, turning the reel into both a visual lesson and a skills card.
+The subject is a reel to accompany a motion designer's CV, showing a different technique in each short shot: typewriter, digital glitch, shape patterns, path morphing, particles, pixel dissolve, rhythm bars and wireframe 3D. Most are abstract demos rather than words acting out their meaning; only MOTION and RHYTHM embody what they say. A fixed HUD ties them together, with scene code and name bottom-left, a scrub ruler bottom-centre and resolution bottom-right, on a grainy near-black ground with lime fields.
 
 ## المشاهد المقترحة
-- 0-2 ث: إطار أسود؛ كلمة EASING تدخل على مسار خطي فتتعثر، ثم تعود بدخول cubic ease-out بينما يُرسم منحنى صغير في الزاوية.
-- 2-5 ث: ANTICIPATION: الكلمة تنخفض 8% قبل أن تقفز خارج الإطار؛ ورسم أعمدة أسفلها يضغط أعمدته قبل أن ترتفع إلى طولها الكامل.
-- 5-8 ث: OVERSHOOT: ثلاثة عدّادات إحصائية (مثل +120 و98% و4.9) تهبط بنابض، والأعمدة تتجاوز قيمتها 12% ثم تستقر، مع رسم منحنى النابض بجوارها.
-- 8-11 ث: FOLLOW-THROUGH: رسم خطي يندفع إلى الإطار؛ طرفه يتخطى القيمة النهائية ثم يعود، ومعه تسمية تتأخر 80 ms.
-- 11-13.5 ث: STAGING: كل شيء ينهار إلى كلمة واحدة MOTION في المنتصف بخط grotesk ثقيل، مع تظليل خفيف يركّز النظر.
-- 13.5-15 ث: الاسم والدور ومعرّف التواصل تنزلق أسفلها، ومنحنى الرسم ينغلق ليصبح علامة شعار صغيرة.
+- 0-1.2 ث: شبه أسود بحبيبات: دائرة بيضاء تدور حولها نقاط ملونة صغيرة، علامات شعاعية تطير للخارج و«HELLO, I_» تُكتب بخط أحادي صغير مع مؤشر يومض.
+- 1.2-2.5 ث: خطوط مسح برتقالية وحمراء رفيعة تكنس الإطار أفقياً.
+- 2.5-3.8 ث: كلمة MOTION بأحرف مكثفة ثقيلة تتقطع إلى شرائح تشويش بانفصال RGB فوق خط برتقالي، مع سطر فرعي متباعد عن الخط الذي يؤدي.
+- 3.8-5 ث: شبكة كاملة من أشكال صغيرة (دوائر، مربعات، مربعات مستديرة) بالأحمر والبنفسجي والليموني والأبيض تدور وتبدّل ألوانها عشوائياً.
+- 5-7.5 ث: حقل ليموني: دائرة سوداء تتحول عبر شكل مربع مستدير إلى نجمة، نقطتان سوداوان تدوران على مدار بيضاوي، وخط ملون مزاح يردد الحافة، ونص محيطي ضخم خلفها.
+- 7.5-10 ث: قطع حاد إلى الأسود: مجرة حلزونية من خطوط جسيمات ملونة تدور حول قلب أبيض؛ ثم كتل بكسل برتقالية تفكك شكلاً مع قراءة مسطرة.
+- 10-12.5 ث: حقل ليموني: RHYTHM بأحرف سوداء مكثفة وأعمدة معادل صوت تقفز تحتها؛ ثم قطع حاد إلى حلقة سلكية ثلاثية الأبعاد تدور بنقاط ليمونية ومدار أحمر متقطع على أسود بنجوم.
+- 12.5-15 ث: حقل رمادي شعاعي يُرسم فيه قوس أحمر، ثم الأسود: القوس يكتمل حلقة حول CLAUDE كريمية بأحرف مكثفة مع خط ليموني وسطر الدور بأحرف متباعدة.
 
 ## Proposed scenes
-- 0-2s: Black frame; the word EASING slides in on a linear path, stutters, then re-enters on a cubic ease-out while a small curve graph draws itself in the corner.
-- 2-5s: ANTICIPATION: the word crouches 8% downward before leaping up and out of frame; a bar chart below pre-compresses its bars before they shoot to full height.
-- 5-8s: OVERSHOOT: three stat counters (e.g. 120+, 98%, 4.9) land with a spring, bars overshoot 12% then settle; the spring curve is drawn beside them.
-- 8-11s: FOLLOW-THROUGH: a line chart whips in; its endpoint continues past the final value and drifts back, with a trailing label that lags by 80 ms.
-- 11-13.5s: STAGING: everything collapses to one centred word MOTION set in a heavy grotesk, with a thin spotlight vignette pulling focus.
-- 13.5-15s: Name, role and contact handle slide in beneath, and the curve graph closes into a tiny logo mark.
+- 0-1.2s: Near-black with grain: a white circle with small coloured dots orbiting, radial ticks flying outward and 'HELLO, I_' typing in tiny mono with a blinking cursor.
+- 1.2-2.5s: Thin orange and red scan lines sweep horizontally across the frame.
+- 2.5-3.8s: MOTION in condensed heavy caps breaks into RGB-split glitch slices over an orange underline, with a wide-tracked subtitle about typography that performs.
+- 3.8-5s: A full-frame grid of small shapes (circles, squares, rounded squares) in red, violet, lime and white rotates and cycles colours randomly.
+- 5-7.5s: Lime field: a black circle morphs through a squircle into a star, two black dots orbit on an ellipse and an offset coloured stroke echoes the outline, giant outline text behind.
+- 7.5-10s: Hard cut to black: a spiral galaxy of coloured particle streaks rotates around a white core; then orange pixel blocks dissolve a shape with a ruler readout.
+- 10-12.5s: Lime field: RHYTHM in black condensed caps with equaliser bars bouncing beneath; hard cut to a rotating wireframe torus with lime dots and a dashed red orbit on starry black.
+- 12.5-15s: Grey radial field where a red arc draws, then black: the arc completes a ring around a cream CLAUDE in condensed caps with a lime rule and a spaced role line.
 
 ## قواعد الحركة
-- التسهيل الأساسي للدخول cubic-bezier(0.22, 1, 0.36, 1)؛ والخروج cubic-bezier(0.64, 0, 0.78, 0) بمدة أقصر بنسبة 40% من الدخول.
-- مبدأ واحد لكل مقطع؛ تظهر تسمية المبدأ 600 ms على الأقل قبل بدء أي عرض كي يقرأها المشاهد أولًا.
-- النوابض بقيم stiffness 180 وdamping 14 وmass 1؛ ولا يتجاوز التجاوز 12% من مسافة الحركة.
-- الرسوم البيانية تنمو من خط الصفر فقط؛ الأعمدة خلال 500 ms بتفاوت 60 ms، والخطوط تُرسم بـ stroke-dashoffset خلال 700 ms.
-- الكاميرا إطار ثنائي الأبعاد ثابت بلا دوران ثلاثي الأبعاد؛ العمق يأتي من التكبير (حد أقصى 1.08) وظل بعمق 6 px يكبر مع الارتفاع.
-- اللوحة: خلفية داكنة واحدة، ونص أبيض مائل للدفء، ولون تمييز واحد للمنحنى وتعبئة الرسوم؛ لا يتجاوز لون التمييز 20% من مساحة الإطار.
-- الطباعة: grotesk ثقيل بحجم 180 px لأسماء المبادئ و36 px monospace للتسميات؛ تباعد الحروف يتحرك من +0.2 em إلى 0 عند الدخول خلال 400 ms.
-- ممنوع: motion blur، والتوهجات العدسية، وانفجارات الجسيمات، وأي قطع دون خروج مرئي للعنصر السابق.
+- تقنية واحدة لكل لقطة بطول نحو 1.2-2.5 ثانية؛ قطعات حادة (خصوصاً حول 7.5 و11.2 ث) مع انتقال تشويش وتفكك بكسلي.
+- HUD ثابت: رمز المشهد واسمه أسفل اليسار (SC.0N / NAME)، مسطرة زمنية أسفل الوسط، الدقة ومعدل الإطارات أسفل اليمين، أقواس زوايا وحبيبات فيلم فوق كل شيء.
+- تحويل المسارات يستوفي أعداد نقاط متطابقة (دائرة ثم مربع مستدير ثم نجمة) مع خط ملون مزاح يتبع التعبئة.
+- التشويش قصير (نحو 200 مللي ثانية): شرائح أفقية مزاحة مع انفصال قناتي الأحمر والسماوي.
+- الجسيمات والأبعاد الثلاثة إجرائية: خطوط مجرة حلزونية وحلقة سلكية تدور مع مدار متقطع.
+- اللوحة: شبه أسود #0d0c12، ليموني #c8e62a، برتقالي #ef5a3c، بنفسجي #7b5cff، كريمي #f0ece4 ورمادي #3a3742.
+- الخط: غروتسك مكثف 900 بأحرف كبيرة للكلمات، أحادي للـ HUD والكتابة الآلية، وتباعد واسع للسطور الفرعية.
 
 ## Motion rules
-- Primary easing is cubic-bezier(0.22, 1, 0.36, 1) for all entrances; exits use cubic-bezier(0.64, 0, 0.78, 0) and are 40% shorter than entrances.
-- One principle per beat; the principle label appears for at least 600 ms before any demonstration starts so the viewer can read it first.
-- Springs use stiffness 180, damping 14, mass 1; cap overshoot at 12% of the travel distance.
-- Charts animate from a zero baseline only; bars grow over 500 ms with a 60 ms stagger, lines draw via stroke-dashoffset over 700 ms.
-- Camera is a locked 2D frame; no 3D rotation. Depth comes from scale (max 1.08) and a 6 px drop-shadow that scales with elevation.
-- Palette: one dark background, one off-white text, a single accent for the curve graph and chart fills; the accent never exceeds 20% of frame area.
-- Typography: a heavy grotesk at 180 px for principle names, 36 px monospace for labels; letter-spacing animates from +0.2 em to 0 on entrance over 400 ms.
-- Banned: motion blur, lens flares, particle bursts, and any cut without the previous element visibly exiting.
+- One technique per shot, roughly 1.2-2.5 s each; hard cuts (notably around 7.5 and 11.2 s) plus a glitch transition and a pixel dissolve.
+- Constant HUD: scene code and name bottom-left (SC.0N / NAME), scrub ruler bottom-centre, resolution and fps bottom-right, corner brackets and film grain over everything.
+- Path morphs interpolate matching point counts (circle to squircle to star) with an offset coloured stroke trailing the fill.
+- Glitch is brief (about 200 ms): horizontal slices offset with red and cyan channel split.
+- Particles and 3D are procedural: spiral galaxy streaks and a wireframe torus rotating with a dashed orbit.
+- Palette: near-black #0d0c12, lime #c8e62a, orange #ef5a3c, violet #7b5cff, cream #f0ece4 and grey #3a3742.
+- Type: condensed grotesk 900 uppercase for words, mono for HUD and typewriter, wide tracking for subtitles.
 
 ## Facts stated by the source (rewritten in our words)
 - Requested as a fast-paced 15-second motion piece.
@@ -61,7 +63,7 @@ The subject is a résumé reel built on core animation principles: easing, antic
 - The creator asked for maximum effort with no further constraints.
 
 ## Assumptions
-The principles-based structure, the curve-graph overlay and the palette are proposed directions; the source only asks for a 15-second résumé reel and states no scenes, colours or stack.
+Observed from frames sampled every ~1.25 s: the shot list, the HUD layout, the dark and lime palette, the cuts and the CLAUDE signature. Assumed: whether the equaliser is audio-reactive, the music and exact cut positions; there is no easing-graph overlay or chart-driven principle demo in the reference.
 
 ## Keywords
-showreel, easing, anticipation, overshoot, follow-through, bar chart, kinetic typography, résumé reel, ريل تعريفي, مبادئ التحريك, منحنيات التسهيل, رسوم بيانية متحركة, تايبوغرافي حركي
+showreel, hud overlay, typewriter, rgb glitch, shape grid, path morph, particle galaxy, pixel dissolve, equaliser bars, wireframe torus, ريل تعريفي, تشويش رقمي, تحويل الأشكال, جسيمات

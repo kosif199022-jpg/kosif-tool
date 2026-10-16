@@ -28,29 +28,30 @@
   "playbooks": [
     "playbooks/product-ui.md"
   ],
-  "summary_ar": "برومو مربع 15 ثانية لتطبيق Lidlezz مصمم للتشغيل الصامت في خلاصة X: هاتف واحد يعرض ثلاث ميزات ودعوة واضحة للتنزيل.",
-  "summary_en": "A 15-second square promo for the Lidlezz app, built for silent autoplay in the X feed: one phone, three feature callouts and a clear CTA.",
+  "summary_ar": "برومو مربع مدته 15 ثانية لتطبيق Mac: حاسوب محمول ثلاثي الأبعاد يعرض طرفية وكيل برمجة، يُغلق غطاؤه وتطفو حروف Z، ثم ZZ. ضخمة على الأزرق واسم التطبيق؛ يطفو الحاسوب المغلق فوق تدرج أزرق مع بطاقات حالة (يعمل، 147 استدعاء أداة، حرارة 61°، بطارية 85%، انتهت المهمة، الجهاز ينام) وختام أبيض بالاسم وزر الرابط.",
+  "summary_en": "A square 15-second promo for a Mac app: a 3D laptop shows a coding-agent terminal, the lid closes and Zs float up, a giant 'ZZ.' on blue and the wordmark; the closed laptop floats over a blue gradient with status cards (working, 147 tool calls, a 61° temperature gauge, 85% battery, task finished, Mac sleeps), ending on a white wordmark with a URL button.",
   "keywords": [
     "app promo",
-    "phone mockup",
-    "feature callouts",
-    "skeleton loading",
     "square video",
-    "x feed",
+    "3d laptop",
+    "lid close",
+    "status cards",
+    "gauge fill",
+    "battery bar",
     "silent autoplay",
-    "cta",
+    "blue gradient",
     "برومو تطبيق",
-    "هاتف",
-    "واجهة مستخدم",
+    "حاسوب محمول",
     "فيديو مربع",
-    "دعوة لاتخاذ إجراء"
+    "بطاقات حالة",
+    "ذكاء اصطناعي"
   ],
   "difficulty": 3,
   "duration_s": 15,
   "stack": [
     "Remotion",
     "React",
-    "CSS"
+    "Three.js"
   ],
   "brief": "styles/pm-cansincengiz-me-cf68dd/BRIEF.md"
 }

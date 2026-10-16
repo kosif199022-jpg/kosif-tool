@@ -1,6 +1,6 @@
 ---
 name: pm-stephanlivera-df17a2
-description: A 15-second self-portrait reel where the designer proves its craft through kinetic type, living charts and seamless morph transitions.
+description: A fast 15-second self-promo reel of separate vignettes joined by hard cuts and colour flips: a line burst, a giant CLAUDE wordmark on red, a six-easing comparison board, a star pop on electric blue, rippling Truchet tiles, a 3D particle torus and a giant EASE.
 ---
 
 # KOSIF TOOL — Claude motion designer showreel / ريل تعريفي لمصمم موشن بالذكاء الاصطناعي
@@ -18,11 +18,11 @@ description: A 15-second self-portrait reel where the designer proves its craft 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل ذاتي مدته 15 ثانية يستعرض مهارات المصمم عبر نص حركي ورسوم بيانية حية وانتقالات متصلة بلا قطع.
+ريل تعريفي سريع مدته 15 ثانية من مقاطع منفصلة تتبدل بقطعات حادة وقلب ألوان: انفجار خطوط، كلمة CLAUDE ضخمة على أحمر، لوحة مقارنة ستة منحنيات تخفيف، نجمة على أزرق كهربائي، بلاط Truchet متموج، حلقة جسيمات ثلاثية الأبعاد وكلمة EASE.
 
-A 15-second self-portrait reel where the designer proves its craft through kinetic type, living charts and seamless morph transitions.
+A fast 15-second self-promo reel of separate vignettes joined by hard cuts and colour flips: a line burst, a giant CLAUDE wordmark on red, a six-easing comparison board, a star pop on electric blue, rippling Truchet tiles, a 3D particle torus and a giant EASE.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

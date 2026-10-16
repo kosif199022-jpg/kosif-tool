@@ -1,6 +1,6 @@
 ---
 name: pm-davidshulmanfl-371638
-description: A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.
+description: A 60-second music video with a claymation look (its shots appear to be AI-generated footage): a suited clay man sings among drones, toy cars and cotton clouds, split-screen grids, googly-eyed objects, a rollercoaster around a globe, a cardboard city and a stage finale.
 ---
 
 # KOSIF TOOL — Clay-style music video / فيديو موسيقي بأسلوب الصلصال المتحرّك بمراجع معاصرة
@@ -18,9 +18,9 @@ description: A 60 s music video with a code-built stop-motion clay look, an orig
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيديو موسيقي لدقيقة واحدة بمظهر تحريك الصلصال الإيقافي مع أغنية أصلية بروح البوب الفني الثمانيني ورموز حياتنا الرقمية الحالية.
+فيديو موسيقي مدته 60 ثانية بمظهر صلصال متحرك (يبدو أن لقطاته مولّدة بالذكاء الاصطناعي): رجل صلصال ببدلة يغني بين طائرات مسيّرة وسيارات لعبة وغيوم قطنية، شبكات شاشة منقسمة، أشياء بعيون متحركة، أفعوانية حول كرة أرضية، مدينة كرتونية، وختام على مسرح.
 
-A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.
+A 60-second music video with a claymation look (its shots appear to be AI-generated footage): a suited clay man sings among drones, toy cars and cotton clouds, split-screen grids, googly-eyed objects, a rollercoaster around a globe, a cardboard city and a stage finale.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Remotion, Web Audio), suggested duration (60 s), aspect 16:9, difficulty 5/5.
 

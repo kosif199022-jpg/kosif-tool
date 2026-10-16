@@ -1,11 +1,11 @@
 # عرض Winkz: لماذا نبيع منتجاتكم على أمازون — Amazon wholesale pitch video
 
-> فيديو عرض 15 ثانية من شركة Winkz Enterprises لعلامة تجارية: مسار توريد متحرك ورسوم مبيعات وأدلة ثقة تقنع العلامة بمنحها حق البيع.
+> عرض B2B مدته 15 ثانية من شركة جملة على أمازون إلى العلامات التجارية، على خلفية كحلية بإطار HUD وغبار طافٍ: شعار W داخل حلقة سماوية تُرسم، ثم فصل مشكلة أحمر (بائعون كثر، سعر ينهار) ببطاقة Buy Box يهبط سعرها، ثم فصل حل سماوي: حماية السعر، طلب مدفوع مقدماً بقيمة 10,000 دولار، إعادة بناء القائمة قبل وبعد، منتج يتفرع إلى ثلاثة أسواق، ومنحنى نمو يطير سهمه إلى الشعار الختامي.
 >
-> A 15-second B2B pitch from Winkz Enterprises to a brand: an animated supply route, sales charts and trust proofs that argue for the right to sell its products.
+> A 15-second B2B pitch from an Amazon wholesale company to brands, on a navy ground with a HUD frame and floating dust: a W logo inside a cyan ring drawing on, a red problem act (too many sellers, price sliding) with a Buy Box card whose price counts down, then a cyan solution act: price protected, a $10,000 paid-upfront order, a before/after listing rebuild, one product branching to three marketplaces, and a growth line whose arrow flies into the final logo.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/ceowinkz-7c776b
 - التصنيفات / Categories: charts
@@ -13,46 +13,46 @@ Original KOSIF brief derived only from the reference title, tags and public desc
 - التقنية المقترحة / Stack: Remotion, React, SVG
 
 ## الفكرة
-الموضوع عرض تقديمي موجَّه من شركة بيع بالجملة على أمازون إلى علامة تجارية، والهدف إقناع العلامة في 15 ثانية بأن الشركة شريك موثوق يبيع منتجاتها بانضباط. اللغة الحركية تعتمد على الأدلة الرقمية لا الشعارات: خط توريد يُرسم من العلامة إلى المستودع إلى أمازون إلى العميل، ورسم خطي للوحدات المباعة مع خط ثابت لأرضية السعر، وثلاث بلاطات إثبات تمتلئ بقيمها. ما يميزها أن كل رقم ينمو من الصفر مع محور واضح، وأن لون التمييز البرتقالي يُستخدم بشح كي يبقى الطابع رسميًا.
+الموضوع شركة بيع بالجملة على أمازون تقنع علامة تجارية بمنحها حق البيع. الحجة في فصلين بلونين: المشكلة بالأحمر (حرب أسعار وبائعون كثر) ثم الحل بالسماوي (حماية السعر، دفع مقدم، قوائم أفضل، أسواق أكثر، نمو). لغة الحركة لغة لوحة تجارية حية: عناوين ثقيلة بأحرف كبيرة تسقط حرفاً حرفاً، أرقام أسعار تعدّ، ختم يصطدم، وانتقالات بخطف وضبابية، داخل إطار HUD برقم الفصل.
 
 ## Concept
-The subject is a pitch from an Amazon wholesale company to a brand, and the goal is to convince that brand within 15 seconds that the company is a disciplined, trustworthy seller of its products. The motion language relies on numeric evidence rather than slogans: a supply route drawn from brand to warehouse to Amazon to customer, a line chart of units sold with a flat price-floor line, and three proof tiles filling to their values. Its distinctive trait is that every number grows from zero with a visible axis, and the orange accent is rationed so the tone stays corporate.
+The subject is an Amazon wholesale company persuading a brand to authorise it to sell. The argument runs in two colour-coded acts: the problem in red (price war, too many sellers), then the solution in cyan (price protection, upfront payment, better listings, more marketplaces, growth). The motion language is a live commercial dashboard: heavy uppercase headlines dropping in letter by letter, price figures counting, a stamp slamming and whip-blur transitions, inside a HUD frame with chapter numbers.
 
 ## المشاهد المقترحة
-- 0-2 ث: شعار WINKZ ENTERPRISES يُثبَّت بتوقف 3 إطارات على كل كلمة؛ عنوان فرعي 'شريك بيع بالجملة على أمازون' ينزلق تحته.
-- 2-5 ث: أيقونة صندوق منتج تسير على خط مسار من 'العلامة' إلى 'مستودع Winkz' إلى 'أمازون' إلى 'العميل'، وكل عقدة تضيء عند وصوله.
-- 5-8 ث: رسم خطي للوحدات المباعة شهريًا يصعد عبر الإطار مع عدّاد؛ خط ثانٍ (أرضية سعر العلامة) يبقى مستويًا للدلالة على انضباط التسعير.
-- 8-11 ث: ثلاث بلاطات إثبات تنقلب: مقياس تقييم خمس نجوم يمتلئ إلى قيمته، وحلقة نسبة للشحن في الموعد، وعدد العلامات التي تمثلها الشركة.
-- 11-13 ث: إطار مقسوم: مكان شعار العلامة على اليسار وWinkz على اليمين، وخط مصافحة يُرسم بينهما.
-- 13-15 ث: دعوة 'لنتحدث' مع بيانات التواصل؛ خط المسار من المقطع الثاني يدور مرة واحدة في الخلفية.
+- 0-1.5 ث: تدرج كحلي شعاعي بغبار طافٍ وأقواس زوايا: حلقة سماوية تُرسم 360 درجة حول أيقونة W مع توهج وسطر العلامة يُكتب تحتها.
+- 1.5-4.5 ث: 01 حرب الأسعار: عنوان بأحرف كبيرة من سطرين يسقط حرفاً حرفاً بضبابية والسطر الثاني بالأحمر؛ سعر بطاقة Buy Box يهبط من نحو 34.99 إلى 24.99 بينما يرتفع عدد البائعين وتنبثق دبابيس أسعار المنافسين حول البطاقة.
+- 4.5-5.5 ث: خطف أفقي بخطوط سرعة؛ البطاقة تنقلب من الأحمر إلى السماوي مع حماية السعر.
+- 5.5-7.5 ث: عدّاد 10,000 دولار مع صف أيقونات مكعبات يمتلئ، ثم ختم أخضر «مدفوع مقدماً» يصطدم مائلاً نحو -8 درجات.
+- 7.5-9.5 ث: قائمة منتج قبل باهتة ومموهة بقائمة علامات X حمراء يكنسها شريط ضوء عمودي متوهج إلى بطاقة بعد واضحة بعلامات صح.
+- 9.5-11.5 ث: عقدة منتج واحدة ترسم ثلاثة موصلات منحنية إلى ثلاث بطاقات أسواق، ونقاط تجري عليها وأشرطة إشارة تمتلئ.
+- 11.5-15 ث: منحنى يُرسم من اليسار إلى اليمين بتسميات الأشهر ونقاط تنبثق وتعبئة متدرجة؛ سهم يركب المنحنى ثم يطير إلى سهم الشعار الختامي مع الرابط؛ ويصل تقدم الـ HUD إلى 06 التوسع.
 
 ## Proposed scenes
-- 0-2s: The WINKZ ENTERPRISES wordmark snaps in with a 3-frame hold on each word; the subtitle 'Amazon wholesale partner' slides under it.
-- 2-5s: A product box icon travels along a route line from 'brand' to 'Winkz warehouse' to 'Amazon' to 'customer', each node lighting up as it arrives.
-- 5-8s: A line chart of monthly units sold climbs across the frame with a counter; a second line (the brand's price floor) stays flat to signal price discipline.
-- 8-11s: Three proof tiles flip in: a 5-star rating meter filling to its value, a percentage ring for on-time shipping, and a count of brands represented.
-- 11-13s: A split frame: the brand's logo placeholder on the left, Winkz on the right, and a handshake line draws between them.
-- 13-15s: CTA 'Let's talk' with contact details; the route line from beat 2 loops once in the background.
+- 0-1.5s: Navy radial gradient with floating dust and corner brackets: a cyan ring draws 360 degrees around a W icon with glow and a brand line types under it.
+- 1.5-4.5s: 01 price war: a two-line uppercase headline drops in letter by letter with blur, second line in red; a Buy Box card's price ticks down from about $34.99 to $24.99 while a seller count rises and competitor price pins pop in around the card.
+- 4.5-5.5s: A horizontal speed-streak whip; the card flips from red to cyan as the price is protected.
+- 5.5-7.5s: A $10,000 counter with a row of cube icons filling, then a green PAID UPFRONT stamp slams in rotated about -8 degrees.
+- 7.5-9.5s: A desaturated, blurry before listing with a red X list is swept by a glowing vertical light bar into a crisp after card with checkmarks.
+- 9.5-11.5s: One product node draws three bezier connectors to three marketplace cards, dots travelling along them and signal bars filling.
+- 11.5-15s: A line chart draws left to right with month labels, node dots popping and a gradient area fill; an arrow rides the line and flies off into the arrow of the final logo with URL; the HUD progress reaches 06 scale.
 
 ## قواعد الحركة
-- الدخول بـ cubic-bezier(0.2, 0.9, 0.3, 1) خلال 500 ms؛ الشعار يستعمل توقفات حادة 3 إطارات لكل كلمة بدل التسهيل كي يبدو حاسمًا.
-- الرسوم البيانية تبدأ دائمًا من الصفر وتُظهر تسميات المحاور وتتحرك خلال 800 ms؛ العدّادات بأرقام جدولية وتستقر بعد 100 ms من رسمها.
-- مسار التوريد يُرسم خلال 1200 ms مع ظهور العقد خلال 150 ms؛ أيقونة الصندوق تتحرك بسرعة ثابتة وتتوقف 200 ms عند كل عقدة.
-- بلاطات الإثبات تنقلب بـ rotateX من 90° إلى 0° خلال 400 ms بتفاوت 120 ms؛ مقياس النجوم يمتلئ من اليسار إلى اليمين خلال 600 ms.
-- الكاميرا ثابتة ثنائية الأبعاد؛ التأكيد يأتي من التكبير (حد أقصى 1.05) وخط سفلي بلون التمييز بسمك بكسل واحد، لا من الزوم.
-- اللوحة: أساس كحلي، ونص أبيض، ولون تمييز برتقالي واحد لا يتجاوز 15% من مساحة الإطار؛ الأحمر والأخضر داخل الرسوم البيانية فقط.
-- الطباعة: عناوين grotesk ثقيلة بحجم 120 px، وأرقام جدولية 64 px، وتعليقات 28 px؛ لا أكثر من سبع كلمات على الشاشة في آن واحد.
-- ممنوع: شعار أمازون أو مظهرها التجاري (الكلمة فقط)، والادعاءات المعروضة كحقائق دون وسم مؤقت، والوميض السريع أو الومضات.
+- اللون يحمل الحجة: الأحمر لفصل المشكلة، السماوي لفصل الحل، والأخضر فقط لختم الدفع والنجاح.
+- العناوين تسقط حرفاً حرفاً بمنظور وضبابية حركة بتتابع نحو 30 مللي ثانية؛ والسطر الثاني ملون.
+- HUD في كل إطار: رقم الفصل واسمه (من 01 حرب الأسعار إلى 06 التوسع) مع فك ترميز بحروف مبعثرة، عدّاد زمني، وشرطات تقدم مقسمة أسفل اليمين.
+- الأرقام تتحرك: الأسعار تهبط بأرقام جدولية، مجموع الطلب يصعد، والدبابيس والعقد تنبثق بتجاوز صغير.
+- الانتقالات: قطعات حادة، خطف أفقي بضبابية حركة، مسح بشريط ضوء لقبل وبعد، وحركة مطابقة يصبح فيها سهم المنحنى سهم الشعار.
+- اللوحة: كحلي #0a1822 إلى #10374b، سماوي #1fb3e6، أحمر #e8333f، أخضر #2ee6a0، أبيض مائل للرمادي #eaecf0، رمادي #c3c8ce وكهرماني #f59e0b لزر سلة واحد.
+- الخط: غروتسك ثقيل 900 بأحرف كبيرة ونقاط ختامية للعناوين، أحادي متباعد للـ HUD والتسميات؛ جسيمات الغبار تنجرف بتباين عمق.
 
 ## Motion rules
-- Entrances use cubic-bezier(0.2, 0.9, 0.3, 1) over 500 ms; the wordmark uses hard 3-frame holds per word instead of easing so it feels decisive.
-- Charts always start from zero, show axis labels, and animate over 800 ms; counters use tabular figures and settle 100 ms after their chart.
-- The supply route draws over 1200 ms with node pops of 150 ms; the box icon moves at constant speed and pauses 200 ms at each node.
-- Proof tiles flip in with rotateX from 90° to 0° over 400 ms and a 120 ms stagger; the star meter fills left to right over 600 ms.
-- Camera is locked 2D; emphasis comes from scale (max 1.05) and a one-pixel accent underline, never from zoom.
-- Palette: navy base, white type, one orange accent capped at 15% of frame area; red and green appear only inside charts.
-- Typography: bold grotesk headlines at 120 px, tabular numerals at 64 px, captions at 28 px; no more than seven words on screen at once.
-- Banned: Amazon's logo or trade dress (the word only), claims shown as facts without a placeholder label, and rapid flicker or strobing.
+- Colour carries the argument: red marks the problem act, cyan the solution act, green only for the paid stamp and success.
+- Headlines drop in per letter with perspective and motion blur on a ~30 ms stagger; the second line is coloured.
+- HUD on every frame: chapter index and name (01 price war to 06 scale) with character-scramble decoding, ticking timecode and segmented progress dashes bottom-right.
+- Numbers move: prices count down with tabular figures, the order total counts up, pins and nodes pop with small overshoot.
+- Transitions: hard cuts, a horizontal whip with motion blur, a light-bar scan wipe for before/after and a match move where the chart arrow becomes the logo arrow.
+- Palette: navy #0a1822 to #10374b, cyan #1fb3e6, red #e8333f, green #2ee6a0, off-white #eaecf0, grey #c3c8ce and amber #f59e0b for a single cart button.
+- Type: heavy grotesk 900 uppercase with full stops for headlines, letter-spaced mono for HUD and labels; dust particles drift with parallax for depth.
 
 ## Facts stated by the source (rewritten in our words)
 - A dynamic 15-second motion piece is requested.
@@ -61,7 +61,7 @@ The subject is a pitch from an Amazon wholesale company to a brand, and the goal
 - Catalogued under charts; no colours, scenes or stack are described.
 
 ## Assumptions
-All metrics, the supply-route structure and the navy-and-orange palette are proposals; the company's real figures, logo and brand colours were not provided.
+Observed from the watched video and motion analysis: the two-act red/cyan structure, the logo ring, Buy Box price war, upfront stamp, before/after wipe, marketplace branching, chart-to-logo arrow and HUD chapters. Assumed: exact beat boundaries (cuts were detected near 4.7 and 13.2 s) and the audio; the brand's real figures must replace the on-screen numbers.
 
 ## Keywords
-b2b pitch, wholesale, supply route, line chart, proof tiles, star rating meter, handshake, corporate motion, عرض تقديمي, بيع بالجملة, مسار توريد, رسم خطي, أدلة ثقة, شراكة
+b2b pitch, wholesale, price war, counter, stamp slam, before after wipe, marketplace nodes, line chart, hud frame, عرض تقديمي, بيع بالجملة, حرب أسعار, ختم, رسم خطي

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio Reactive Spectrum</title>
+<!--
+  KOSIF superpowers proof — audio-reactive-spectrum (1:1, 1080×1080, 30 fps, 11.5 s).
+  features.js = per-frame RMS + 16 log bands baked by extract_features.py (attack/release included),
+  words.js = word timing of the same voice. Every frame is a pure function of t (no history).
+-->
+<style>
+  @font-face { font-family: "Cairo"; src: url("../_shared/fonts/Cairo[slnt,wght].ttf") format("truetype"); font-weight: 200 1000; font-display: block; }
+  @font-face { font-family: "JBMono"; src: url("../_shared/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: block; }
+  :root { --ink: #f6f1ff; --dim: rgba(236, 230, 255, .34); --gold: #ffc56e; --teal: #6fe3d0; --coral: #ff7a59; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #05060f; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #stage { position: relative; width: 1080px; height: 1080px; overflow: hidden; background: #05060f; color: var(--ink); }
+  #cv { position: absolute; inset: 0; width: 1080px; height: 1080px; }
+  #brand { position: absolute; right: 90px; top: 64px; font: 800 36px/1.3 "Cairo", sans-serif; }
+  #brand small { display: block; font: 600 22px/1.4 "Cairo", sans-serif; color: rgba(236, 230, 255, .5); }
+  #spec { position: absolute; left: 90px; top: 72px; font: 500 18px/1.65 "JBMono", monospace; letter-spacing: .14em; color: rgba(236, 230, 255, .42); direction: ltr; text-align: left; }
+  #spec b { font-weight: 500; color: var(--teal); }
+  #caps { position: absolute; left: 90px; right: 90px; top: 838px; height: 170px; }
+  .line { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .line p { margin: 0; text-align: center; text-wrap: balance; font: 800 60px/1.38 "Cairo", sans-serif; transform-origin: 50% 50%; }
+  .k { position: relative; display: inline-block; color: var(--dim); }
+  .k .fill { position: absolute; inset: 0; color: var(--gold); white-space: nowrap; text-shadow: 0 0 22px rgba(255, 190, 100, .55); }
+  .k.key .fill { color: #ffe1a8; }
+  #controls { position: fixed; left: 10px; bottom: 10px; z-index: 9; direction: ltr; font: 13px system-ui, sans-serif; color: #fff; display: flex; gap: 8px; }
+  #controls input { width: 240px; }
+  body.render #controls { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><div id="stage">
+  <canvas id="cv" width="1080" height="1080"></canvas>
+  <div id="brand">طيف الصوت<small>الصوت يرسم الضوء</small></div>
+  <div id="spec">RMS <b id="rmsv">0.00</b><br>16 BANDS · FFT 4096<br>30 FPS · <span id="tc">00.00</span></div>
+  <div id="caps"></div>
+</div></div>
+<div id="controls"><button id="play">play</button><input id="scrub" type="range" min="0" max="11.5" step="0.01" value="0"></div>
+<script src="features.js"></script>
+<script src="words.js"></script>
+<script>
+(() => {
+  'use strict';
+  /* ---------------- CONFIG ---------------- */
+  const CONFIG = {
+    S: 1080, FPS: 30, DURATION: 11.5,
+    cx: 540, cy: 452,
+    core: 92, coreGain: 0.24,      // shape breathing: +24 % at full RMS (10–30 % band)
+    textGain: 0.045,               // caption breathing: +4.5 % at full RMS (3–6 % band)
+    bars: 72, barR0: 150, barMin: 10, barMax: 150, barW: 8,
+    ring: 338,                     // progress ring radius
+    echoes: [4, 8, 12],            // ghost outlines from frames f-4, f-8, f-12 (afterimage, no state)
+    seed: 1016,
+  };
+  const { S, FPS, DURATION, cx, cy } = CONFIG;
+  const F = window.KOSIF_FEATURES, WORDS = window.KOSIF_WORDS || [];
+
+  /* ---------------- helpers ---------------- */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const Ease = { outCubic: (x) => 1 - Math.pow(1 - x, 3), inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    outBack: (x, s = 1.6) => 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2) };
+  const prog = (t, a, b, e = Ease.outCubic) => e(clamp01((t - a) / Math.max(1e-6, b - a)));
+  function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let z = s;
+    z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
+  const frameOf = (t) => Math.max(0, Math.min(F.frames - 1, Math.round(t * FPS)));
+  const rmsAt = (f) => F.rms[Math.max(0, Math.min(F.frames - 1, f))];
+  /* value of the spectrum at u ∈ [0,1] (0 = bass, 1 = treble), cosine-interpolated between the 16 bands */
+  function bandAt(f, u) {
+    const b = F.bands[Math.max(0, Math.min(F.frames - 1, f))], x = u * (b.length - 1), i = Math.floor(x), k = x - i;
+    const m = (1 - Math.cos(Math.PI * k)) / 2; return lerp(b[i], b[Math.min(b.length - 1, i + 1)], m);
+  }
+  /* colour along the spectrum: coral (bass) → gold → teal (treble) */
+  const COLS = [[255, 122, 89], [255, 197, 110], [111, 227, 208]];
+  function colAt(u, a) { const x = u * 2, i = Math.min(1, Math.floor(x)), k = x - i, A = COLS[i], B = COLS[i + 1];
+    return `rgba(${Math.round(lerp(A[0], B[0], k))},${Math.round(lerp(A[1], B[1], k))},${Math.round(lerp(A[2], B[2], k))},${a})`; }
+  /* bar k → angle: bass at the bottom, treble at the top, mirrored left/right */
+  const N = CONFIG.bars, HALF = N / 2;
+  const barAngle = (k) => { const j = k < HALF ? k : N - 1 - k, u = (j + 0.5) / HALF, side = k < HALF ? 1 : -1;
+    return { u, a: Math.PI / 2 - side * u * Math.PI }; };   // canvas: +π/2 = down
+
+  /* ---------------- canvas ---------------- */
+  const cv = document.getElementById('cv'), g = cv.getContext('2d');
+  const layer = document.createElement('canvas'); layer.width = layer.height = S; const L = layer.getContext('2d');
+  const R = rng(CONFIG.seed);
+  const motes = Array.from({ length: 90 }, () => ({ born: R() * DURATION, a: R() * Math.PI * 2, sp: 60 + R() * 140, sz: 1 + R() * 2.4, spin: (R() - 0.5) * 0.6 }));
+  const stars = Array.from({ length: 140 }, () => ({ x: R() * S, y: R() * S, s: 0.5 + R() * 1.4, ph: R() * 6.28 }));
+  const grain = [0, 1, 2].map((k) => { const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d');
+    const id = x.createImageData(256, 256), r = rng(CONFIG.seed + 77 * k);
+    for (let i = 0; i < id.data.length; i += 4) { const v = 100 + r() * 155; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; }
+    x.putImageData(id, 0, 0); return c; });
+  // onsets (rising RMS) for shockwave rings — derived from the baked features, so still stateless
+  const onsets = []; for (let f = 2; f < F.frames; f++) if (F.rms[f] - F.rms[f - 2] > 0.32 && (!onsets.length || f - onsets[onsets.length - 1] > 8)) onsets.push(f);
+
+  /* closed smooth outline through the bar tips (quadratic curves through midpoints, 2× bar resolution) */
+  function tipPath(ctx, f, rOff, scale) {
+    const M = N * 2, pts = [];
+    for (let k = 0; k < M; k++) { const j = k < M / 2 ? k : M - 1 - k, u = (j + 0.5) / (M / 2), a = Math.PI / 2 - (k < M / 2 ? 1 : -1) * u * Math.PI;
+      const r = (CONFIG.barR0 + CONFIG.barMin + CONFIG.barMax * bandAt(f, u)) * scale + rOff; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]); }
+    const mid = (p, q) => [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2];
+    ctx.beginPath(); const m0 = mid(pts[M - 1], pts[0]); ctx.moveTo(m0[0], m0[1]);
+    for (let k = 0; k < M; k++) { const m = mid(pts[k], pts[(k + 1) % M]); ctx.quadraticCurveTo(pts[k][0], pts[k][1], m[0], m[1]); }
+    ctx.closePath();
+  }
+
+  function draw(t) {
+    const f = frameOf(t), rms = rmsAt(f);
+    const intro = prog(t, 0, 0.6, Ease.outCubic), outro = 1 - prog(t, DURATION - 0.5, DURATION, Ease.inOutCubic);
+    const life = Math.min(intro, outro) * 0.85 + 0.15;
+    // background: deep radial + slow rotating colour wash that brightens with the voice
+    g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1;
+    let bg = g.createRadialGradient(cx, cy, 40, cx, cy, 820);
+    bg.addColorStop(0, '#1a1d44'); bg.addColorStop(0.45, '#0c0e26'); bg.addColorStop(1, '#04050c');
+    g.fillStyle = bg; g.fillRect(0, 0, S, S);
+    g.save(); g.translate(cx, cy); g.rotate(t * 0.12);
+    const wash = g.createConicGradient ? g.createConicGradient(0, 0, 0) : null;
+    if (wash) { wash.addColorStop(0, 'rgba(255,122,89,.10)'); wash.addColorStop(0.33, 'rgba(111,227,208,.08)'); wash.addColorStop(0.66, 'rgba(255,197,110,.09)'); wash.addColorStop(1, 'rgba(255,122,89,.10)');
+      g.globalAlpha = 0.5 + 0.5 * rms; g.fillStyle = wash; g.beginPath(); g.arc(0, 0, 640, 0, 6.283); g.fill(); g.globalAlpha = 1; }
+    g.restore();
+    for (const s of stars) { g.fillStyle = `rgba(230,225,255,${(0.10 + 0.18 * (0.5 + 0.5 * Math.sin(t * 1.3 + s.ph))).toFixed(3)})`; g.fillRect(s.x, s.y, s.s, s.s); }
+    // guide circles
+    g.strokeStyle = 'rgba(236,230,255,.06)'; g.lineWidth = 1.5;
+    for (const r of [CONFIG.barR0 - 18, 245, CONFIG.ring]) { g.beginPath(); g.arc(cx, cy, r, 0, 6.283); g.stroke(); }
+
+    // spectrum layer (drawn once, composited twice: blurred glow + crisp)
+    L.clearRect(0, 0, S, S);
+    L.lineCap = 'round';
+    const sc = intro;                                              // bars grow in during the first 0.6 s
+    CONFIG.echoes.forEach((d, i) => {                              // afterimage outlines from earlier frames
+      L.strokeStyle = `rgba(255,214,160,${(0.20 - i * 0.05) * life})`; L.lineWidth = 2;
+      tipPath(L, f - d, 8 + d * 2.2, sc); L.stroke();
+    });
+    for (let k = 0; k < N; k++) {
+      const { u, a } = barAngle(k), v = bandAt(f, u) * sc;
+      const r0 = CONFIG.barR0, r1 = r0 + CONFIG.barMin + CONFIG.barMax * v;
+      L.strokeStyle = colAt(u, (0.55 + 0.45 * v) * life); L.lineWidth = CONFIG.barW;
+      L.beginPath(); L.moveTo(cx + Math.cos(a) * r0, cy + Math.sin(a) * r0); L.lineTo(cx + Math.cos(a) * r1, cy + Math.sin(a) * r1); L.stroke();
+    }
+    g.globalCompositeOperation = 'lighter';
+    g.filter = 'blur(16px)'; g.globalAlpha = 0.9; g.drawImage(layer, 0, 0);
+    g.filter = 'blur(4px)'; g.globalAlpha = 0.6; g.drawImage(layer, 0, 0);
+    g.filter = 'none'; g.globalAlpha = 1; g.drawImage(layer, 0, 0);
+
+    // shockwave rings on voice onsets (each lives 0.7 s)
+    for (const o of onsets) { const age = t - o / FPS; if (age < 0 || age > 0.7) continue; const p = Ease.outCubic(age / 0.7);
+      g.strokeStyle = `rgba(255,220,170,${(0.45 * (1 - p)).toFixed(3)})`; g.lineWidth = 3 * (1 - p) + 0.5;
+      g.beginPath(); g.arc(cx, cy, lerp(CONFIG.core * 1.2, CONFIG.ring + 30, p), 0, 6.283); g.stroke(); }
+
+    // motes: born on a seeded schedule, launched faster when the voice is louder at birth
+    for (const m of motes) { const age = t - m.born; if (age < 0 || age > 2.4) continue;
+      const boost = 0.4 + rmsAt(Math.round(m.born * FPS)), d = CONFIG.core * 1.1 + m.sp * boost * age, a = m.a + m.spin * age;
+      const al = (1 - age / 2.4) * 0.8 * life; g.fillStyle = `rgba(255,226,186,${al.toFixed(3)})`;
+      g.beginPath(); g.arc(cx + Math.cos(a) * d, cy + Math.sin(a) * d, m.sz, 0, 6.283); g.fill(); }
+
+    // breathing core: scale follows RMS (+24 %) with a tiny idle breath so pauses are never dead
+    const breath = 1 + CONFIG.coreGain * rms + 0.015 * Math.sin(t * 2.2);
+    const r = CONFIG.core * breath * lerp(0.6, 1, intro);
+    let cg = g.createRadialGradient(cx, cy, 0, cx, cy, r * 2.6);
+    cg.addColorStop(0, `rgba(255,190,120,${0.30 + 0.35 * rms})`); cg.addColorStop(1, 'rgba(255,120,90,0)');
+    g.fillStyle = cg; g.beginPath(); g.arc(cx, cy, r * 2.6, 0, 6.283); g.fill();
+    g.globalCompositeOperation = 'source-over';
+    cg = g.createRadialGradient(cx - r * 0.25, cy - r * 0.3, r * 0.05, cx, cy, r);
+    cg.addColorStop(0, '#fff6e6'); cg.addColorStop(0.45, '#ffcf86'); cg.addColorStop(0.85, '#ff8a62'); cg.addColorStop(1, 'rgba(255,110,90,0.0)');
+    g.fillStyle = cg; g.beginPath(); g.arc(cx, cy, r, 0, 6.283); g.fill();
+    g.strokeStyle = `rgba(255,240,220,${0.35 + 0.4 * rms})`; g.lineWidth = 2;
+    g.beginPath(); g.arc(cx, cy, r * 1.16, 0, 6.283); g.stroke();
+
+    // progress ring (clockwise from the top) with word ticks
+    const p = t / DURATION, a0 = -Math.PI / 2;
+    g.lineCap = 'round'; g.strokeStyle = 'rgba(236,230,255,.12)'; g.lineWidth = 3;
+    g.beginPath(); g.arc(cx, cy, CONFIG.ring, 0, 6.283); g.stroke();
+    g.strokeStyle = '#ffc56e'; g.beginPath(); g.arc(cx, cy, CONFIG.ring, a0, a0 + p * 6.283); g.stroke();
+    for (const w of WORDS) { const a = a0 + (w.start / DURATION) * 6.283, lit = t >= w.start;
+      g.fillStyle = lit ? (w.key ? '#ffc56e' : 'rgba(255,240,220,.9)') : 'rgba(236,230,255,.25)';
+      g.beginPath(); g.arc(cx + Math.cos(a) * CONFIG.ring, cy + Math.sin(a) * CONFIG.ring, w.key ? 5 : 3.2, 0, 6.283); g.fill(); }
+    const ha = a0 + p * 6.283; g.fillStyle = '#fff3dc'; g.shadowColor = 'rgba(255,190,110,.9)'; g.shadowBlur = 16;
+    g.beginPath(); g.arc(cx + Math.cos(ha) * CONFIG.ring, cy + Math.sin(ha) * CONFIG.ring, 7, 0, 6.283); g.fill(); g.shadowBlur = 0;
+
+    // vignette + seeded grain
+    const vg = g.createRadialGradient(cx, cy, 380, cx, cy, 800); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.55)');
+    g.fillStyle = vg; g.fillRect(0, 0, S, S);
+    const gr = rng(CONFIG.seed + f); g.globalCompositeOperation = 'overlay'; g.globalAlpha = 0.06;
+    g.fillStyle = g.createPattern(grain[f % 3], 'repeat'); g.save(); g.translate(-Math.floor(gr() * 256), -Math.floor(gr() * 256)); g.fillRect(0, 0, S + 256, S + 256); g.restore();
+    g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    return rms;
+  }
+
+  /* ---------------- karaoke captions ---------------- */
+  const caps = document.getElementById('caps');
+  const sentences = []; let cur = null;
+  WORDS.forEach((w, i) => {
+    if (!cur) { const line = document.createElement('div'); line.className = 'line'; const pEl = document.createElement('p'); line.append(pEl); caps.append(line);
+      cur = { line, p: pEl, words: [] }; sentences.push(cur); }
+    const k = document.createElement('span'); k.className = 'k' + (w.key ? ' key' : '');
+    k.textContent = w.word;                                          // whole words only: joining is preserved
+    const fill = document.createElement('span'); fill.className = 'fill'; fill.textContent = w.word; k.append(fill);
+    if (cur.words.length) cur.p.append(' ');
+    cur.p.append(k); cur.words.push({ ...w, el: k, fill });
+    if (/[.؟!]$/.test(w.word) || i === WORDS.length - 1) cur = null;
+  });
+  sentences.forEach((s, i) => { s.start = s.words[0].start; s.end = s.words[s.words.length - 1].end; });
+
+  function drawCaps(t, rms) {
+    sentences.forEach((s, i) => {
+      const next = sentences[i + 1];
+      // strictly sequential: the old line leaves after its last word, the new one lands before its first word
+      const tIn = i === 0 ? s.start - 0.35 : s.start - 0.2;
+      const tOut = next ? Math.max(s.end + 0.02, next.start - 0.42) : DURATION + 1;
+      const a = prog(t, tIn, tIn + 0.32, Ease.outCubic), b = prog(t, tOut, tOut + 0.2, Ease.inOutCubic);
+      const vis = Math.min(a, 1 - b);
+      s.line.style.opacity = vis.toFixed(3);
+      s.line.style.filter = b > 0.001 ? `blur(${(6 * b).toFixed(2)}px)` : 'none';
+      s.line.style.transform = `translateY(${(lerp(26, 0, a) - 26 * b).toFixed(2)}px)`;
+      s.p.style.transform = `scale(${(1 + CONFIG.textGain * rms * vis).toFixed(4)})`;   // caption breathing 0–4.5 %
+      for (const w of s.words) {
+        const p = clamp01((t - w.start) / Math.max(0.12, w.end - w.start));
+        w.fill.style.clipPath = `inset(-30% 0 -30% ${((1 - p) * 100).toFixed(2)}%)`;    // fills right → left (reading direction)
+        const speaking = t >= w.start && t < w.end;
+        const pop = speaking ? Math.sin(Math.PI * p) : 0;
+        w.el.style.transform = `translateY(${(-6 * pop).toFixed(2)}px)`;
+        w.fill.style.textShadow = `0 0 ${(14 + 20 * pop).toFixed(1)}px rgba(255,190,100,${(0.35 + 0.4 * pop).toFixed(3)})`;
+      }
+    });
+  }
+
+  /* ---------------- frame + contract ---------------- */
+  const rmsv = document.getElementById('rmsv'), tc = document.getElementById('tc');
+  function seek(t) {
+    t = Math.max(0, Math.min(DURATION, t));
+    const rms = draw(t);
+    drawCaps(t, rms);
+    rmsv.textContent = rms.toFixed(2); tc.textContent = t.toFixed(2).padStart(5, '0');
+    document.getElementById('scrub').value = t.toFixed(2);
+  }
+  function fit() { const s = Math.min(innerWidth / S, innerHeight / S); document.getElementById('fit').style.transform = `scale(${s})`; }
+  addEventListener('resize', fit); fit();
+  if (navigator.webdriver) document.body.classList.add('render');
+  const scrub = document.getElementById('scrub'), play = document.getElementById('play'); let raf = 0;
+  scrub.addEventListener('input', () => { cancelAnimationFrame(raf); raf = 0; seek(+scrub.value); });
+  play.addEventListener('click', () => { if (raf) { cancelAnimationFrame(raf); raf = 0; return; } const t0 = performance.now(), s0 = +scrub.value;
+    const step = (now) => { seek((s0 + (now - t0) / 1000) % DURATION); raf = requestAnimationFrame(step); }; raf = requestAnimationFrame(step); });
+
+  window.__kosif = { duration: DURATION, fps: FPS, seek };
+  window.__kosifReady = (document.fonts ? document.fonts.ready : Promise.resolve())
+    .then(() => Promise.all([['800 60px Cairo', 'الضوء'], ['500 18px JBMono', 'RMS 0']].map(([f, s]) => document.fonts.load(f, s))))
+    .then(() => { seek(+(new URLSearchParams(location.search).get('t') || 0)); return true; });
+})();
+</script>
+</body>
+</html>

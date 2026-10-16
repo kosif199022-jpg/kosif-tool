@@ -30,28 +30,31 @@
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
-  "summary_ar": "ريل ذاتي مدته 15 ثانية يستعرض مهارات المصمم عبر نص حركي ورسوم بيانية حية وانتقالات متصلة بلا قطع.",
-  "summary_en": "A 15-second self-portrait reel where the designer proves its craft through kinetic type, living charts and seamless morph transitions.",
+  "summary_ar": "ريل تعريفي سريع مدته 15 ثانية من مقاطع منفصلة تتبدل بقطعات حادة وقلب ألوان: انفجار خطوط، كلمة CLAUDE ضخمة على أحمر، لوحة مقارنة ستة منحنيات تخفيف، نجمة على أزرق كهربائي، بلاط Truchet متموج، حلقة جسيمات ثلاثية الأبعاد وكلمة EASE.",
+  "summary_en": "A fast 15-second self-promo reel of separate vignettes joined by hard cuts and colour flips: a line burst, a giant CLAUDE wordmark on red, a six-easing comparison board, a star pop on electric blue, rippling Truchet tiles, a 3D particle torus and a giant EASE.",
   "keywords": [
     "showreel",
-    "portfolio reel",
-    "kinetic typography",
-    "spring easing",
-    "bar chart animation",
-    "morph transition",
+    "self promo",
+    "hard cuts",
+    "colour flip",
+    "easing curves",
+    "truchet pattern",
+    "particle torus",
+    "hud overlay",
+    "wide grotesk",
     "ريل تعريفي",
-    "نص حركي",
-    "رسوم بيانية متحركة",
-    "انتقالات متصلة",
-    "سيرة ذاتية",
-    "self promo"
+    "منحنيات التخفيف",
+    "قطع حاد",
+    "أنماط توليدية",
+    "نص ضخم"
   ],
   "difficulty": 3,
   "duration_s": 15,
   "stack": [
     "Remotion",
     "React",
-    "SVG"
+    "SVG",
+    "Three.js"
   ],
   "brief": "styles/pm-stephanlivera-df17a2/BRIEF.md"
 }

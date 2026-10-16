@@ -32,7 +32,10 @@ HERE = Path(__file__).resolve().parent
 DEFAULT_ROOT = HERE.parent
 REPO_URL = "https://github.com/kosif199022-jpg/kosif-tool"
 
-RESOLUTIONS = {"9:16": "1080x1920", "16:9": "1920x1080", "1:1": "1080x1080", "4:5": "1080x1350"}
+sys.path.insert(0, str(HERE))
+from aspects import PRESETS, resolve as resolve_aspect  # noqa: E402  (any W:H, WxH or platform name)
+
+RESOLUTIONS = {k: f"{w}x{h}" for k, (w, h) in PRESETS.items()}
 ORIGINS = ("PromptsMotion", "KOSIF original style")
 TYPES = ("Prompt", "Skill", "Style")
 STARTERS = ("html-canvas", "remotion", "none")
@@ -94,7 +97,7 @@ KOSIF TOOL — motion graphics style atlas for Claude Code
                                   [--sort rank|name|published] [--limit N] [--json]
   python3 tools/kosif.py search   <query...> [--limit N] [--json]
   python3 tools/kosif.py show     <id>
-  python3 tools/kosif.py prompt   <id> [--lang ar|en] [--aspect 9:16|16:9|1:1|4:5] [--fps 30] [--duration 15]
+  python3 tools/kosif.py prompt   <id> [--lang ar|en] [--aspect 9:16|16:9|1:1|4:5|21:9|2.35:1|1920x816|reel|cinema…] [--fps 30] [--duration 15]
                                   [--source "audio voice.mp3"] [--stack auto|remotion|canvas|svg|three]
                                   [--brand "..."] [--audio keep|music|sfx|silent] [--content-lang ar|en|both]
                                   [--notes "..."] [--out FILE]
@@ -424,7 +427,7 @@ def cmd_show(atlas: Atlas, args) -> int:
 
 def add_prompt_options(p: argparse.ArgumentParser) -> None:
     p.add_argument("--lang", choices=("ar", "en"), default="ar", help="لغة الطلب / request template language (default ar)")
-    p.add_argument("--aspect", choices=tuple(RESOLUTIONS), default=None, help="نسبة العرض / output aspect (default: reference aspect or 9:16)")
+    p.add_argument("--aspect", type=_aspect_arg, default=None, help="نسبة العرض بأي مقاس / any aspect: W:H (21:9, 2.35:1, 3:4), WxH pixels (1920x816) or a name (reel, square, cinema…); default: reference aspect or 9:16")
     p.add_argument("--fps", type=int, default=30, help="إطار/ثانية / frames per second (default 30)")
     p.add_argument("--duration", type=float, default=None, help="المدة بالثواني / duration in seconds (default: brief/record or 15)")
     p.add_argument("--source", default=None, help='المادة المصدرية / source material: "audio voice.mp3", "video clip.mp4", "text script.md", "none" or free text')
@@ -435,9 +438,26 @@ def add_prompt_options(p: argparse.ArgumentParser) -> None:
     p.add_argument("--notes", default="", help="ملاحظات إضافية / extra notes")
 
 
+def _aspect_arg(value: str) -> str:
+    try:
+        return resolve_aspect(value)[0] if "x" not in value.lower() and "×" not in value else value.lower().replace("×", "x")
+    except ValueError as e:
+        raise argparse.ArgumentTypeError(str(e))
+
+
+def aspect_resolution(aspect: str) -> str:
+    _, w, h = resolve_aspect(aspect)
+    return f"{w}x{h}"
+
+
 def default_aspect(rec: dict) -> str:
     label = rec.get("aspect_label")
-    return label if label in RESOLUTIONS else "9:16"
+    if label in RESOLUTIONS:
+        return label
+    a = rec.get("aspect") or {}
+    if isinstance(a, dict) and a.get("w") and a.get("h"):
+        return f"{a['w']}x{a['h']}"  # keep the reference's real frame (e.g. 2.35:1)
+    return "9:16"
 
 
 def default_duration(rec: dict) -> float:
@@ -477,7 +497,7 @@ def build_prompt(atlas: Atlas, rec: dict, args) -> str:
         "playbooks": pb_text,
         "source": parse_source(args.source, lang),
         "aspect": aspect,
-        "resolution": RESOLUTIONS[aspect],
+        "resolution": aspect_resolution(aspect),
         "fps": str(args.fps),
         "duration": fmt_num(duration),
         "stack": STACKS[args.stack][lang],
@@ -526,7 +546,7 @@ def doc_variables(atlas: Atlas, rec: dict, args) -> dict:
         "skill": rec.get("skill") or f"styles/{rec['id']}/SKILL.md",
         "brief": brief.relative_to(atlas.root).as_posix() if brief else "—",
         "aspect": aspect,
-        "resolution": RESOLUTIONS[aspect],
+        "resolution": aspect_resolution(aspect),
         "fps": str(fps),
         "duration": fmt_num(duration),
         "frames": str(int(round(duration * fps))),

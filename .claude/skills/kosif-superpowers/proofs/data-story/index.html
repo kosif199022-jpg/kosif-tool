@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Story — KOSIF proof</title>
+<style>
+  /* OFL fonts shipped next to the proofs. Cairo has Arabic-Indic digits, used for EVERY number. */
+  @font-face { font-family: "DCairo"; src: url("../_shared/fonts/Cairo%5Bslnt,wght%5D.ttf") format("truetype"); font-weight: 200 1000; }
+  html, body { margin: 0; height: 100%; background: #0b1020; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  canvas { display: block; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px/1.3 system-ui, sans-serif; color: #9ab; direction: ltr; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><canvas id="out" width="1920" height="1080"></canvas></div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=5 opens at 5 s</div>
+<script>
+(function () {
+  'use strict';
+  /* ============================================================ data (ILLUSTRATIVE sample numbers, not real) */
+  const TOTAL = 1284000;
+  const DATA = [                       // order = reading order (right → left) = clockwise from 12 o'clock
+    { name: 'البحث',      pct: 38, col: '#ff7a59' },
+    { name: 'التواصل',    pct: 24, col: '#ffc145' },
+    { name: 'مباشر',      pct: 16, col: '#4fd1a5' },
+    { name: 'البريد',     pct: 11, col: '#4ea8ff' },
+    { name: 'الإحالات',   pct: 7,  col: '#a78bfa' },
+    { name: 'الإعلانات',  pct: 4,  col: '#f472b6' },
+  ];
+  /* ============================================================ settings (edit me) */
+  const W = 1920, H = 1080, DUR = 9, FPS = 30;
+  const BG0 = '#0b1020', BG1 = '#141a33', INK = '#eef1ff', MUTED = 'rgba(190,200,235,0.62)', GRID = 'rgba(160,175,230,0.10)';
+  const FONT = 'DCairo';
+  const CHART = { right: 1720, left: 330, base: 870, maxH: 470, barW: 150 };   // bars (RTL: first item on the right)
+  const DONUT = { cx: 680, cy: 548, R: 300, r: 186, pad: 0.014 };
+  const T = {
+    title: [-0.3, 0.7], axis: [0.25, 0.95],
+    bars: 0.7, stagger: 0.075, spring: { k: 170, c: 15 },     // stagger 75 ms, damped spring (ζ ≈ 0.58)
+    counter: [0.7, 2.7],
+    labelsOut: [3.05, 3.4], morph: 3.3, morphDur: 1.15, morphStagger: 0.085,
+    counterMove: [3.4, 4.6], legend: [3.9, 4.9], inner: [4.6, 5.1],
+    pop: [5.05, 5.55], leader: [5.45, 6.25], callout: [6.0, 6.8],
+  };
+  const SEG = { top: 44, side: 12 };   // outline samples for the bar → arc morph (same count on both shapes)
+
+  /* ============================================================ helpers */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const Ease = {
+    outCubic: (x) => 1 - Math.pow(1 - x, 3),
+    inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    outExpo: (x) => (x >= 1 ? 1 : 1 - Math.pow(2, -10 * x)),
+    outQuart: (x) => 1 - Math.pow(1 - x, 4),
+    outBack: (x, s = 1.9) => 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2),
+    inOutSine: (x) => -(Math.cos(Math.PI * x) - 1) / 2,
+  };
+  const prog = (t, a, b, e = Ease.inOutCubic) => e(clamp01((t - a) / (b - a)));
+  function spring(dt, k, c) {          // unit step response of a damped spring, closed form in dt (seconds)
+    if (dt <= 0) return 0;
+    const w = Math.sqrt(k), z = c / (2 * w), wd = w * Math.sqrt(1 - z * z);
+    return 1 - Math.exp(-z * w * dt) * (Math.cos(wd * dt) + (z * w / wd) * Math.sin(wd * dt));
+  }
+  const AR = '٠١٢٣٤٥٦٧٨٩';
+  const arDigits = (s) => String(s).replace(/[0-9]/g, (d) => AR[+d]);
+  const arInt = (n) => arDigits(Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '٬'));
+  const hexA = (h, a) => `rgba(${parseInt(h.slice(1, 3), 16)},${parseInt(h.slice(3, 5), 16)},${parseInt(h.slice(5, 7), 16)},${a})`;
+
+  /* ============================================================ geometry */
+  const N = DATA.length, gap = (CHART.right - CHART.left - N * CHART.barW) / (N - 1);
+  const bars = DATA.map((d, i) => {
+    const x1 = CHART.right - i * (CHART.barW + gap), x0 = x1 - CHART.barW;
+    return { x0, x1, cx: (x0 + x1) / 2, h: CHART.maxH * d.pct / DATA[0].pct };
+  });
+  let acc = 0;
+  const arcs = DATA.map((d) => {
+    const a0 = -Math.PI / 2 + acc * Math.PI * 2 / 100 + DONUT.pad / 2; acc += d.pct;
+    const a1 = -Math.PI / 2 + acc * Math.PI * 2 / 100 - DONUT.pad / 2;
+    return { a0, a1, mid: (a0 + a1) / 2 };
+  });
+  // Outline of a bar (rect) and of its slice (annular sector), sampled with matching topology:
+  // top edge R→L ↔ outer arc a0→a1, left side ↔ radial at a1, bottom edge L→R ↔ inner arc a1→a0, right side ↔ radial at a0.
+  function rectOutline(b, h, out) {
+    const y0 = CHART.base - h, y1 = CHART.base; let k = 0;
+    for (let s = 0; s < SEG.top; s++) { const u = s / SEG.top; out[k++] = lerp(b.x1, b.x0, u); out[k++] = y0; }
+    for (let s = 0; s < SEG.side; s++) { const u = s / SEG.side; out[k++] = b.x0; out[k++] = lerp(y0, y1, u); }
+    for (let s = 0; s < SEG.top; s++) { const u = s / SEG.top; out[k++] = lerp(b.x0, b.x1, u); out[k++] = y1; }
+    for (let s = 0; s < SEG.side; s++) { const u = s / SEG.side; out[k++] = b.x1; out[k++] = lerp(y1, y0, u); }
+  }
+  function arcOutline(a, push, out) {
+    const cx = DONUT.cx + Math.cos(a.mid) * push, cy = DONUT.cy + Math.sin(a.mid) * push; let k = 0;
+    for (let s = 0; s < SEG.top; s++) { const q = lerp(a.a0, a.a1, s / SEG.top); out[k++] = cx + Math.cos(q) * DONUT.R; out[k++] = cy + Math.sin(q) * DONUT.R; }
+    for (let s = 0; s < SEG.side; s++) { const rr = lerp(DONUT.R, DONUT.r, s / SEG.side); out[k++] = cx + Math.cos(a.a1) * rr; out[k++] = cy + Math.sin(a.a1) * rr; }
+    for (let s = 0; s < SEG.top; s++) { const q = lerp(a.a1, a.a0, s / SEG.top); out[k++] = cx + Math.cos(q) * DONUT.r; out[k++] = cy + Math.sin(q) * DONUT.r; }
+    for (let s = 0; s < SEG.side; s++) { const rr = lerp(DONUT.r, DONUT.R, s / SEG.side); out[k++] = cx + Math.cos(a.a0) * rr; out[k++] = cy + Math.sin(a.a0) * rr; }
+  }
+  const NP = 2 * (SEG.top + SEG.side), A = new Float32Array(NP * 2), B = new Float32Array(NP * 2);
+
+  /* ============================================================ render */
+  const cv = document.getElementById('out'), g = cv.getContext('2d');
+  const titleLayer = document.createElement('canvas'); titleLayer.width = W; titleLayer.height = 250;
+  const f = (w, px) => `${w} ${px}px "${FONT}"`;
+
+  function drawBackground(t) {
+    const bg = g.createLinearGradient(0, 0, W, H); bg.addColorStop(0, BG1); bg.addColorStop(1, BG0);
+    g.fillStyle = bg; g.fillRect(0, 0, W, H);
+    // slow light drift behind the chart (never static)
+    const lx = lerp(1450, 650, Ease.inOutSine(t / DUR)), rg = g.createRadialGradient(lx, 520, 0, lx, 520, 900);
+    rg.addColorStop(0, 'rgba(110,130,255,0.10)'); rg.addColorStop(1, 'rgba(110,130,255,0)');
+    g.fillStyle = rg; g.fillRect(0, 0, W, H);
+  }
+
+  function drawTitle(t) {
+    const p = prog(t, T.title[0], T.title[1], Ease.outCubic);
+    const L = titleLayer.getContext('2d'); L.setTransform(1, 0, 0, 1, 0, 0); L.clearRect(0, 0, W, 250);
+    const g0 = g; { const g = L;
+    g.save();
+    // RTL soft mask reveal of the whole shaped line (never per letter)
+    const edge = lerp(W, 900, p);
+    const m = g.createLinearGradient(edge - 160, 0, edge, 0); m.addColorStop(0, 'rgba(0,0,0,0)'); m.addColorStop(1, 'rgba(0,0,0,1)');
+    g.beginPath(); g.rect(0, 0, W, 250); g.clip();
+    g.direction = 'rtl'; g.textAlign = 'right';
+    g.fillStyle = INK; g.font = f(800, 66); g.fillText('من أين يأتي زوّار المتجر؟', W - 120, 150);
+    g.fillStyle = MUTED; g.font = f(500, 30); g.fillText('توزيع الزيارات حسب المصدر · بيانات توضيحية وليست حقيقية', W - 120, 205);
+    g.globalCompositeOperation = 'destination-in'; g.fillStyle = m; g.fillRect(0, 0, W, 250);
+    g.restore(); }
+    g0.drawImage(titleLayer, 0, 0);
+  }
+
+  // odometer: each column rolls continuously; low digits spin faster, all land exactly at the end
+  function drawCounter(t, x, y, scale, alignCenter) {
+    const pc = prog(t, T.counter[0], T.counter[1], Ease.outExpo), v = pc >= 0.9995 ? TOTAL : TOTAL * pc;
+    const str = Math.round(TOTAL).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');   // fixed layout of the final value
+    const px = 76 * scale, lh = px * 1.12;
+    g.save(); g.font = f(800, px); g.direction = 'ltr'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    let cw = 0; for (let d = 0; d < 10; d++) cw = Math.max(cw, g.measureText(AR[d]).width);
+    const sepW = g.measureText('٬').width * 0.9;
+    let total = 0; for (const ch of str) total += ch === ',' ? sepW : cw;
+    let cx = alignCenter ? x - total / 2 : x;
+    const digitsCount = str.replace(/,/g, '').length; let di = 0;
+    for (const ch of str) {
+      if (ch === ',') { g.fillStyle = INK; g.fillText('٬', cx + sepW / 2, y); cx += sepW; continue; }
+      const pow = Math.pow(10, digitsCount - 1 - di++), d0 = Math.floor(v / pow) % 10;
+      const below = pow === 1 ? v % 1 : (v % pow) / pow, fr = pow === 1 ? below : clamp01((below - 0.9) / 0.1);
+      const lead = v < pow && pow > 1;                 // leading zeros stay hidden until the column is reached
+      g.save(); g.beginPath(); g.rect(cx, y - lh / 2, cw, lh); g.clip();
+      for (let k = 0; k < 2; k++) {
+        const dd = (d0 + k) % 10, yy = y + (k - fr) * lh;
+        g.fillStyle = lead ? 'rgba(238,241,255,0.12)' : INK;
+        g.fillText(AR[dd], cx + cw / 2, yy);
+      }
+      g.restore(); cx += cw;
+    }
+    g.restore();
+    return total;
+  }
+
+  function frame(t) {
+    g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    drawBackground(t);
+    drawTitle(t);
+
+    const mOut = 1 - prog(t, T.labelsOut[0], T.labelsOut[1]);       // bar furniture fades as the morph starts
+    // grid + baseline (draws on right → left)
+    const ax = prog(t, T.axis[0], T.axis[1], Ease.outQuart);
+    if (mOut > 0 && ax > 0) {
+      g.save(); g.globalAlpha = mOut;
+      g.strokeStyle = GRID; g.lineWidth = 1.5;
+      for (let k = 1; k <= 4; k++) { const y = CHART.base - CHART.maxH * k / 4; g.beginPath(); g.moveTo(CHART.right + 40, y); g.lineTo(lerp(CHART.right + 40, CHART.left - 40, ax), y); g.stroke(); }
+      g.strokeStyle = 'rgba(220,226,255,0.55)'; g.lineWidth = 3;
+      g.beginPath(); g.moveTo(CHART.right + 40, CHART.base); g.lineTo(lerp(CHART.right + 40, CHART.left - 40, ax), CHART.base); g.stroke();
+      g.restore();
+    }
+
+    // bars → arcs
+    for (let i = 0; i < N; i++) {
+      const b = bars[i], d = DATA[i];
+      const sp = spring(t - (T.bars + i * T.stagger), T.spring.k, T.spring.c);
+      const h = Math.max(0, b.h * sp);
+      const m = prog(t, T.morph + i * T.morphStagger, T.morph + i * T.morphStagger + T.morphDur, Ease.inOutCubic);
+      const push = i === 0 ? 18 * prog(t, T.pop[0], T.pop[1], Ease.outBack) : 0;
+      rectOutline(b, Math.max(h, 0.001), A); arcOutline(arcs[i], push, B);
+      g.beginPath();
+      for (let k = 0; k < NP; k++) {
+        const x = lerp(A[k * 2], B[k * 2], m), y = lerp(A[k * 2 + 1], B[k * 2 + 1], m);
+        k ? g.lineTo(x, y) : g.moveTo(x, y);
+      }
+      g.closePath();
+      const gr = g.createLinearGradient(0, CHART.base - b.h, 0, CHART.base);
+      gr.addColorStop(0, d.col); gr.addColorStop(1, hexA(d.col, lerp(0.55, 1, m)));
+      g.fillStyle = gr;
+      if (i === 0 && push > 0) { g.save(); g.shadowColor = hexA(d.col, 0.55); g.shadowBlur = 40 * prog(t, T.pop[0], T.pop[1]); g.fill(); g.restore(); } else g.fill();
+
+      // value label above the bar: rides the spring, never overlaps (one per 150 px column, max 3 glyphs)
+      if (mOut > 0 && sp > 0.02) {
+        g.save(); g.globalAlpha = mOut * clamp01(sp * 1.6);
+        g.direction = 'rtl'; g.textAlign = 'center'; g.fillStyle = INK; g.font = f(800, 44);
+        const shown = Math.min(d.pct, Math.round(d.pct * clamp01(sp)));
+        g.fillText(arDigits(shown) + '٪', b.cx, CHART.base - h - 22);
+        g.restore();
+      }
+    }
+
+    // category labels: under the bars, then they travel into a legend row under the donut
+    const lg = prog(t, T.legend[0], T.legend[1], Ease.inOutCubic);
+    const labIn = prog(t, 0.9, 1.6, Ease.outCubic);
+    g.save(); g.font = f(600, 30); g.direction = 'rtl'; g.textAlign = 'right';
+    // legend layout (right → left) centred under the donut + callout area
+    const lw = DATA.map((d) => g.measureText(`${d.name} ${arDigits(d.pct)}٪`).width + 44);
+    const lTotal = lw.reduce((s, w) => s + w, 0) + 34 * (N - 1);
+    let lx = W / 2 + lTotal / 2;
+    for (let i = 0; i < N; i++) {
+      const d = DATA[i], b = bars[i];
+      const fromX = b.cx + g.measureText(d.name).width / 2, fromY = CHART.base + 56;
+      const toX = lx, toY = 990;
+      const x = lerp(fromX, toX, lg), y = lerp(fromY, toY, lg);
+      g.globalAlpha = labIn;
+      g.fillStyle = lg > 0 ? hexA(d.col, lg) : 'rgba(0,0,0,0)';
+      if (lg > 0) { g.beginPath(); g.arc(x - 12, y - 10, 9 * lg, 0, Math.PI * 2); g.fill(); }
+      g.fillStyle = lg > 0.5 ? INK : MUTED;
+      const label = lg > 0.5 ? `${d.name} ${arDigits(d.pct)}٪` : d.name;
+      g.fillText(label, x - 30 * lg, y);
+      lx -= lw[i] + 34;
+    }
+    g.restore();
+
+    // percentages inside slices ≥ 10 %
+    const inn = prog(t, T.inner[0], T.inner[1], Ease.outCubic);
+    if (inn > 0) {
+      g.save(); g.globalAlpha = inn; g.font = f(800, 34); g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = '#0b1020';
+      for (let i = 0; i < N; i++) {
+        if (DATA[i].pct < 10) continue;
+        const push = i === 0 ? 18 * prog(t, T.pop[0], T.pop[1], Ease.outBack) : 0, rr = (DONUT.R + DONUT.r) / 2 + push;
+        g.fillText(arDigits(DATA[i].pct) + '٪', DONUT.cx + Math.cos(arcs[i].mid) * rr, DONUT.cy + Math.sin(arcs[i].mid) * rr + 2);
+      }
+      g.restore();
+    }
+
+    // counter: top-left during the bars, then glides into the donut hole
+    const cm = prog(t, T.counterMove[0], T.counterMove[1], Ease.inOutCubic);
+    const cAlpha = prog(t, 0.5, 1.0, Ease.outCubic);
+    g.save(); g.globalAlpha = cAlpha;
+    const cx = lerp(150, DONUT.cx, cm), cy = lerp(160, DONUT.cy - 10, cm), sc = lerp(1, 0.68, cm);
+    const cw = drawCounter(t, cx, cy, sc, cm > 0.5);
+    g.direction = 'rtl'; g.font = f(600, lerp(28, 26, cm)); g.fillStyle = MUTED;
+    if (cm > 0.5) { g.textAlign = 'center'; g.globalAlpha = cAlpha * (cm - 0.5) * 2; g.fillText('زيارة في الشهر', DONUT.cx, DONUT.cy + 46); }
+    else { g.textAlign = 'right'; g.globalAlpha = cAlpha * (1 - cm * 2); g.fillText('إجمالي الزيارات الشهرية', 150 + cw, 225); }
+    g.restore();
+
+    // annotation callout: leader line draws on from the biggest slice, then the text reveals RTL
+    const ld = prog(t, T.leader[0], T.leader[1], Ease.inOutCubic);
+    if (ld > 0) {
+      const a = arcs[0].mid, push = 18;
+      const p0 = [DONUT.cx + Math.cos(a) * (DONUT.R + push + 10), DONUT.cy + Math.sin(a) * (DONUT.R + push + 10)];
+      const p1 = [p0[0] + 120, p0[1] - 110], p2 = [1060, p1[1]];
+      const l1 = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]), l2 = p2[0] - p1[0], L = l1 + l2, s = ld * L;
+      g.save(); g.strokeStyle = 'rgba(255,214,190,0.9)'; g.lineWidth = 3; g.lineCap = 'round';
+      g.beginPath(); g.moveTo(p0[0], p0[1]);
+      if (s <= l1) g.lineTo(lerp(p0[0], p1[0], s / l1), lerp(p0[1], p1[1], s / l1));
+      else { g.lineTo(p1[0], p1[1]); g.lineTo(p1[0] + (s - l1), p1[1]); }
+      g.stroke();
+      g.fillStyle = '#ffd6be'; g.beginPath(); g.arc(p0[0], p0[1], 7 * Math.min(1, ld * 4), 0, Math.PI * 2); g.fill();
+      g.restore();
+      const cp = prog(t, T.callout[0], T.callout[1], Ease.outCubic);
+      if (cp > 0) {
+        const bx0 = p2[0] + 24, bx1 = W - 120, ty = p2[1];
+        g.save();
+        g.beginPath(); g.rect(lerp(bx1, bx0 - 40, cp), ty - 80, bx1 - bx0 + 80, 220); g.clip();
+        g.direction = 'rtl'; g.textAlign = 'right';
+        g.globalAlpha = cp;
+        const fit = (w, px, txt) => { g.font = f(w, px); const mw = g.measureText(txt).width; if (mw > bx1 - bx0) g.font = f(w, Math.floor(px * (bx1 - bx0) / mw)); };
+        fit(800, 46, 'البحث وحده يجلب أكثر من ثلث الزيارات');
+        g.fillStyle = INK; g.fillText('البحث وحده يجلب أكثر من ثلث الزيارات', bx1, ty - 6);
+        g.fillStyle = '#ffb59b'; g.font = f(600, 32);
+        g.fillText(`٣٨٪ ≈ ${arDigits(Math.round(TOTAL * 0.38 / 1000))} ألف زيارة شهريًا`, bx1, ty + 50);
+        g.fillStyle = MUTED; g.font = f(500, 26); g.fillText('ركّز الميزانية على تحسين الظهور في محركات البحث', bx1, ty + 100);
+        g.restore();
+      }
+    }
+    // source line
+    g.save(); g.direction = 'rtl'; g.textAlign = 'right'; g.font = f(500, 22); g.fillStyle = 'rgba(190,200,235,0.40)';
+    g.globalAlpha = prog(t, 1.0, 1.6); g.fillText('المصدر: أرقام توضيحية لغرض العرض فقط', W - 120, H - 36); g.restore();
+  }
+
+  /* ============================================================ contract + preview UI */
+  let cur = 0;
+  const ready = Promise.all([document.fonts.load(f(800, 66), 'من أين ٠١٢'), document.fonts.load(f(500, 30), 'بيانات'), document.fonts.load(f(600, 30), 'البحث')])
+    .then(() => document.fonts.ready).then(() => frame(0));
+  window.__kosifReady = ready;
+  window.__kosif = { duration: DUR, fps: FPS, seek(t) { cur = t; frame(t); } };
+  function fit() { const s = Math.min(innerWidth / W, innerHeight / H), el = document.getElementById('fit'); el.style.transform = `scale(${s})`; el.style.left = `${(innerWidth - W * s) / 2}px`; }
+  addEventListener('resize', fit); fit();
+  if (navigator.webdriver) document.body.classList.add('render');
+  else ready.then(() => {
+    cur = parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0; frame(cur);
+    let playing = false, last = 0;
+    const step = (now) => { if (!playing) return; cur += (now - last) / 1000; last = now; if (cur > DUR) cur = 0; frame(cur); requestAnimationFrame(step); };
+    addEventListener('keydown', (e) => {
+      if (e.code === 'Space') { playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(step); }
+      if (e.code === 'ArrowRight') { playing = false; cur = Math.min(DUR, cur + 1 / FPS); frame(cur); }
+      if (e.code === 'ArrowLeft') { playing = false; cur = Math.max(0, cur - 1 / FPS); frame(cur); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

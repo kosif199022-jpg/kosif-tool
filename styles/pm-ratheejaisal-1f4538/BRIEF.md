@@ -1,11 +1,11 @@
 # فيديو إطلاق founder.page السريع — founder.page launch video
 
-> إعلان إطلاق في 20 ثانية يستعرض الميزات الرئيسية لصفحة المؤسّس الشخصية بإيقاع لاهث وهوية بصرية ملتزمة بالعلامة.
+> إعلان إطلاق مدته 20 ثانية بلا صوت على خلفية بيضاء مائلة للرمادي البارد: كشف الشعار بقناع من اليسار إلى اليمين، ثم لقطات على تخطيط ثابت (عنوان عريض من سطرين مع وسم أحادي صغير يساراً وبطاقة واجهة بيضاء بظل يميناً): حجز اسم المستخدم، بطاقة ملف شخصي، قائمة مشاريع بشارات «مباشر»، عدّاد إيرادات فوق خريطة حرارية، عدّاد زوار بخط صغير، سباق أعمدة إيرادات، دليل مؤسسين على خريطة عالم منقطة، شارة توثيق داخل موقع، وبطاقة ختام بزر ينقره المؤشر.
 >
-> A 20-second launch spot that races through the key features of a founder's personal page product at a breathless pace, locked to the brand system.
+> A silent 20-second launch spot on a cool off-white ground: the logo reveals with a left-to-right mask, then a run of shots on one fixed layout (a bold two-line headline with a small mono kicker on the left, a white shadowed UI card on the right): claiming a handle, a profile card, a project list with Live pills, a revenue counter over a heatmap, a visitors counter with a sparkline, a revenue bar race, a founder directory on a dotted world map, a verified badge on a site and an end card with a CTA clicked by a cursor.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/ratheejaisal-1f4538
 - التصنيفات / Categories: product-ui
@@ -13,46 +13,48 @@ Original KOSIF brief derived only from the reference title, tags and public desc
 - التقنية المقترحة / Stack: Remotion, React, CSS
 
 ## الفكرة
-الموضوع منتج يتيح لمؤسّسي الشركات الناشئة إنشاء صفحة شخصية تعرض من هم وما يبنونه (افتراض من الاسم). الهدف هو إقناع المشاهد في أقل من 20 ثانية بأن الصفحة تُبنى وتُنشر في دقائق، عبر عرض كل ميزة كلقطة قصيرة ذات فعل واحد واضح. تتميّز لغة الحركة بلقطات لا تتجاوز 4 ثوانٍ، وعناصر واجهة تنغرز في مكانها بقوة ثم تستقر، مع لون العلامة الذي يتقدّم تدريجيًا حتى يملأ الإطار في الختام.
+الموضوع منتج صفحة شخصية للمؤسسين تجمع مشاريعهم وإيراداتهم الموثقة في رابط واحد. الفيلم جولة ميزات سريعة على قالب واحد ثابت: العين لا تحتاج إلى إعادة توجيه، فقط محتوى البطاقة يتغير. كل لقطة نحو 1.7 ثانية: عنوان قصير بسطرين والسطر الثاني بالأزرق أو الأخضر، وبطاقة واجهة تبرهن على الميزة بأرقام تعدّ ورسوم تُرسم.
 
 ## Concept
-The subject is a product that lets startup founders build a personal page about who they are and what they are building (assumed from the name). The goal is to convince the viewer in under 20 seconds that the page is built and published in minutes, by giving each feature one short shot with one clear action. The motion language is shots of 4s or less, UI elements that snap hard into place then settle, and a brand colour that advances across the film until it floods the final frame.
+The subject is a personal-page product for founders that gathers their projects and verified revenue behind one link. The film is a fast feature tour on a single fixed template: the eye never has to relocate, only the card content changes. Each shot lasts about 1.7 s: a short two-line headline with the second line in blue or green, and a UI card that proves the feature with counting numbers and drawn charts.
 
 ## المشاهد المقترحة
-- 0-1.5 ث: قطع حاد إلى تبويب متصفح فارغ؛ يُكتب عنوان المنتج في شريط العناوين ويُختم الشعار بمقياس 1.12 يستقر عند 1.00.
-- 1.5-6 ث: منشئ الملف الشخصي: الاسم والنبذة والصورة تطير إلى قالب الصفحة من ثلاث جهات وتثبت؛ ثم تنقلب الصفحة 180 درجة حول محورها الرأسي لتكشف قالبًا ثانيًا.
-- 6-10 ث: قسم المشاريع: بطاقات تنزلق كرصّة أفقية، في كل منها شارة حالة تنقلب من فكرة إلى مُطلَق بتأخير 120 مللي ثانية بين بطاقة وأخرى.
-- 10-14 ث: الروابط والإثبات: عدّادات المتابعين تتصاعد، وشعارات تصطفّ، وتنبثق ورقة مشاركة من معاينة بحجم الهاتف بجوار عرض سطح المكتب.
-- 14-18 ث: النشر: مفتاح تبديل يُشغَّل، وتظهر شارة مباشر، وتنكمش الصفحة إلى إطار متصفح ثم هاتف ثم بطاقة اجتماعية في ثلاث قفزات مقياس سريعة.
-- 18-20 ث: الشعار والعنوان ونداء واحد للفعل؛ يمسح لون العلامة الإطار من اليسار ويثبت.
+- 0-1.7 ث: أرضية بيضاء باردة مع بقع لافندرية باهتة: أيقونة الوجه الزرقاء واسم المنتج ينكشفان بقناع من اليسار إلى اليمين في نحو 600 مللي ثانية.
+- 1.7-5 ث: وسم وعنوان عن اسمك وصفحتك؛ على اليمين حقل يُكتب فيه اسم المستخدم بنحو 12 حرفاً في الثانية قبل زر الحجز؛ ثم بطاقة ملف شخصي بصورة وعلامة توثيق وأزرار.
+- 5-6.7 ث: عنوان عن كل المشاريع خلف رابط واحد؛ بطاقة قائمة مشاريع تدخل صفوفها بتتابع نحو 120 مللي ثانية، لكل منها شارة «مباشر» خضراء وأرقام شهرية.
+- 6.7-10 ث: عنوان عن إيرادات حقيقية بالأخضر؛ بطاقة إيرادات تعدّ من نحو 3,154 إلى 3,281 دولاراً بينما تمتلئ خلايا خريطة حرارية وتظهر شارات مزودي الدفع؛ ثم الزوار، بعدّاد يصل إلى 11,512 وخط صغير يُرسم حتى نقطة نهايته.
+- 10-13.3 ث: عنوان عن أن السباق بدأ؛ سباق أعمدة أفقية ملونة تتغير أطوالها وتتبادل المراتب بينما يتقدم تاريخ كبير باهت في الخلفية.
+- 13.3-16.7 ث: عنوان عن أن يجدك الناس؛ دليل مؤسسين بثلاثة أرقام وشارات مناطق بجانب خريطة عالم منقطة تنبثق عليها دبابيس بمجموعات صور وأعداد.
+- 16.7-18.3 ث: عنوان عن العرض في أي مكان؛ هيكل موقع إلكتروني مدمجة فيه شارة إيرادات موثقة صغيرة.
+- 18.3-20 ث: بطاقة ختام في الوسط: الشعار وسطر الوصف وزر دعوة أزرق يتحرك إليه المؤشر وينقره.
 
 ## Proposed scenes
-- 0-1.5s: Hard cut into a blank browser tab; the address bar types the product URL and the logo stamps in with a 1.12 to 1.00 settle.
-- 1.5-6s: Profile builder: name, bio and avatar fly into a page template from three sides and lock; the page then flips 180 degrees on its vertical axis to reveal a second template.
-- 6-10s: Projects section: cards slide in as a horizontal stack, each with a status pill that flips from 'idea' to 'shipped' with a 120ms stagger.
-- 10-14s: Links and proof: follower counters roll up, logos tile in, and a share sheet pops out of a phone-sized preview sitting beside the desktop view.
-- 14-18s: Publish: a toggle flicks on, a 'live' badge pops, and the page shrinks into a browser frame, then a phone, then a social card in three quick scale steps.
-- 18-20s: Logo lockup, URL and a single-line call to action; the brand colour wipes in from the left and holds.
+- 0-1.7s: Cool off-white ground with faint lavender blobs: the blue face icon and the wordmark reveal with a left-to-right mask in about 600 ms.
+- 1.7-5s: Kicker plus headline about your handle and your page; on the right an input types a handle at about 12 characters per second before the claim button; then a profile card with avatar, verified tick and buttons.
+- 5-6.7s: Headline about every project behind one link; a project list card with rows staggering in about 120 ms apart, each with a green Live pill and monthly figures.
+- 6.7-10s: Headline about real revenue in green; a revenue card counts from about $3,154 to $3,281 while heatmap cells fill and provider chips appear; then visitors counted, with a counter rolling to 11,512 and a sparkline drawing to an endpoint dot.
+- 10-13.3s: Headline about the race being on; a horizontal bar race where coloured bars resize and swap ranks while a large date watermark ticks.
+- 13.3-16.7s: Headline about getting found; a founder directory with three stats and region chips beside a dotted world map whose pins pop with avatar clusters and counts.
+- 16.7-18.3s: Headline about showing it off anywhere; a website skeleton with a small verified revenue badge embedded in it.
+- 18.3-20s: Centred end card: logo, tagline and a blue CTA button that the cursor moves to and clicks.
 
 ## قواعد الحركة
-- متوسط طول اللقطة 2.5 ثانية ولا لقطة تتجاوز 4 ثوانٍ؛ كل انتقال قطع حاد، والذوبان المتقاطع ممنوع.
-- تدخل العناصر بمنحنى back-out ‏cubic-bezier(0.34, 1.56, 0.64, 1) خلال 360 مللي ثانية لتتجاوز الهدف قليلًا ثم تستقر؛ والخروج انزلاق خطي خارج الإطار خلال 180 مللي ثانية.
-- الكاميرا مثبّتة طوال 20 ثانية؛ يأتي العمق فقط من مقياس العناصر (0.92 إلى 1.00) وظل إسقاط 24 بكسل، لا من حركة الكاميرا.
-- الطباعة: وزن عرض واحد لعناوين الميزات بحجم 64 بكسل (على 1080p) ووزن نص واحد لنصوص الواجهة؛ تدخل العناوين ككلمات كاملة لا حرفًا حرفًا توفيرًا للوقت.
-- يبدأ لون العلامة كخط تمييز بسماكة 4 بكسل في المشهد الأول، ثم يصبح أزرارًا وشارات في المنتصف، ويملأ 100% من الإطار في آخر ثانيتين؛ لا ألوان خارج لوحة العلامة.
-- يجب أن تستخدم نماذج الواجهة التخطيط الحقيقي للمنتج ومسافاته وأنصاف أقطاره؛ وتُعرض كل ميزة بتفاعل واحد بالضبط.
-- يُسمح بفراش صوتي إيقاعي قصير دون تعليق صوتي؛ تحمل العناوين على الشاشة الرسالة في 3 كلمات أو أقل.
-- ممنوع: إطارات أجهزة جاهزة بحوافّ، وانتقالات الضبابية، وأي ميزة تُعرض دون فعل مستخدم مرئي.
+- تخطيط ثابت 40/60 لكل لقطة ميزة: وسم وعنوان على اليسار وبطاقة بيضاء طافية بظل ناعم على اليمين؛ المحتوى وحده يتبدل.
+- بلا قطعات حادة: تلاشٍ ناعم وتبديل بالانزلاق مع تحول محتوى البطاقة في مكانه؛ نحو 1.7 ثانية لكل ميزة.
+- العناوين ترتفع وتظهر سطراً سطراً (نحو 300 مللي ثانية بتتابع 100 مللي ثانية)؛ والسطر الثاني بالأزرق أو الأخضر.
+- الإثبات بالحركة: كتابة في الحقل، صفوف قائمة متتابعة تظهر من 40% إلى 100%، عدادات تدور نحو ثانية، امتلاء الخريطة الحرارية، رسم الخط الصغير، إعادة ترتيب سباق الأعمدة، وانبثاق دبابيس الخريطة.
+- كاميرا ثنائية الأبعاد ثابتة؛ العمق من ظلال البطاقات وبقع التدرج اللافندرية الباهتة فقط.
+- اللوحة: أبيض بارد #f5f6fa، أبيض #ffffff، حبر #111318، أزرق #3b6fe0، أخضر #22b55a، رمادي #929eab، وألوان الرسوم #f2b83a و#e0456a و#8b6be0 و#2bb8a8 و#e88a4a.
+- الخط: غروتسك ضيق 700-800 بحالة الجملة للعناوين، وسم أحادي بأحرف صغيرة مع نقطة زرقاء، خط 500 للواجهة وأحادي للأرقام؛ المرجع بلا صوت.
 
 ## Motion rules
-- Average shot length 2.5s and no shot over 4s; every cut is a hard cut, cross-dissolves are banned.
-- Elements enter with a back-out curve cubic-bezier(0.34, 1.56, 0.64, 1) over 360ms so they overshoot and settle; exits are 180ms linear slides off-frame.
-- Camera is locked for the full 20s; depth comes only from element scale (0.92 to 1.00) and a 24px drop shadow, never from camera moves.
-- Typography: one display weight for feature labels at 64px (1080p), one body weight for UI text; labels enter as whole words, never letter by letter, to save time.
-- Brand colour starts as a 4px accent line in scene 1, becomes buttons and pills mid-film, and fills 100% of the frame in the last 2s; no colours outside the brand palette.
-- UI mockups must use the product's real layout, spacing and radii; a feature is shown with exactly one interaction each.
-- A short rhythmic sound bed is allowed but no voiceover; on-screen labels carry the message in 3 words or fewer.
-- Banned: stock device frames with bezels, blur transitions, and any feature shown without a visible user action.
+- One fixed 40/60 layout for every feature shot: kicker and headline on the left, a floating white card with soft shadow on the right; only the content swaps.
+- No hard cuts: soft crossfades and slide swaps, with card content morphing in place; about 1.7 s per feature.
+- Headlines rise and fade per line (~300 ms, 100 ms stagger); the second line is brand blue or green.
+- Proof through motion: input typing, list stagger with rows fading from 40% to 100%, counters rolling about 1 s, heatmap fill, sparkline draw-on, bar race reorder, map pins popping.
+- Locked flat 2D camera; depth only from card shadows and the faint lavender gradient blobs.
+- Palette: off-white #f5f6fa, white #ffffff, ink #111318, blue #3b6fe0, green #22b55a, grey #929eab, plus chart colours #f2b83a, #e0456a, #8b6be0, #2bb8a8 and #e88a4a.
+- Type: tight grotesk 700-800 sentence case headlines, mono small caps kicker with a blue dot, sans 500 for UI and mono for figures; the reference is silent.
 
 ## Facts stated by the source (rewritten in our words)
 - The requested length is 20 seconds at most.
@@ -61,7 +63,7 @@ The subject is a product that lets startup founders build a personal page about 
 - Tagged as product UI by the creator.
 
 ## Assumptions
-What founder.page actually offers is not described in the source; the four features shown (profile builder, projects, links and proof, publish) are a proposed structure for a founder profile product. The colour behaviour and shot lengths are the director's choices.
+Observed from frames sampled every ~1.67 s: the logo mask reveal, the fixed headline-plus-card layout, each feature card, the bar race, the map directory, the badge, the CTA click, the 20 s length and the absence of audio and hard cuts. Assumed: exact easing values; there is no browser-tab intro, page flip or brand-colour flood.
 
 ## Keywords
-launch video, product launch, founder profile, personal page, fast cuts, feature tour, saas promo, فيديو إطلاق, صفحة شخصية, جولة ميزات, إيقاع سريع, واجهة منتج, هوية العلامة
+launch video, feature tour, founder profile, fixed layout, ui card, counter, heatmap, sparkline, bar chart race, world map pins, فيديو إطلاق, جولة ميزات, عدّاد, سباق أعمدة

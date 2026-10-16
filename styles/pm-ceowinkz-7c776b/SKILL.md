@@ -1,6 +1,6 @@
 ---
 name: pm-ceowinkz-7c776b
-description: A 15-second B2B pitch from Winkz Enterprises to a brand: an animated supply route, sales charts and trust proofs that argue for the right to sell its products.
+description: A 15-second B2B pitch from an Amazon wholesale company to brands, on a navy ground with a HUD frame and floating dust: a W logo inside a cyan ring drawing on, a red problem act (too many sellers, price sliding) with a Buy Box card whose price counts down, then a cyan solution act: price protected, a $10,000 paid-upfront order, a before/after listing rebuild, one product branching to three marketplaces, and a growth line whose arrow flies into the final logo.
 ---
 
 # KOSIF TOOL — Amazon wholesale pitch video / عرض Winkz: لماذا نبيع منتجاتكم على أمازون
@@ -18,9 +18,9 @@ description: A 15-second B2B pitch from Winkz Enterprises to a brand: an animate
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيديو عرض 15 ثانية من شركة Winkz Enterprises لعلامة تجارية: مسار توريد متحرك ورسوم مبيعات وأدلة ثقة تقنع العلامة بمنحها حق البيع.
+عرض B2B مدته 15 ثانية من شركة جملة على أمازون إلى العلامات التجارية، على خلفية كحلية بإطار HUD وغبار طافٍ: شعار W داخل حلقة سماوية تُرسم، ثم فصل مشكلة أحمر (بائعون كثر، سعر ينهار) ببطاقة Buy Box يهبط سعرها، ثم فصل حل سماوي: حماية السعر، طلب مدفوع مقدماً بقيمة 10,000 دولار، إعادة بناء القائمة قبل وبعد، منتج يتفرع إلى ثلاثة أسواق، ومنحنى نمو يطير سهمه إلى الشعار الختامي.
 
-A 15-second B2B pitch from Winkz Enterprises to a brand: an animated supply route, sales charts and trust proofs that argue for the right to sell its products.
+A 15-second B2B pitch from an Amazon wholesale company to brands, on a navy ground with a HUD frame and floating dust: a W logo inside a cyan ring drawing on, a red problem act (too many sellers, price sliding) with a Buy Box card whose price counts down, then a cyan solution act: price protected, a $10,000 paid-upfront order, a before/after listing rebuild, one product branching to three marketplaces, and a growth line whose arrow flies into the final logo.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
