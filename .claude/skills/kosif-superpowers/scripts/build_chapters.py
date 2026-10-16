@@ -94,9 +94,16 @@ def general_families():
     return out, errors
 
 
+def _unlink(seg: str) -> str:
+    """Escape '[x](y)' outside code unless y is a web URL, so quoted patterns never become dead links."""
+    return re.sub(r"\]\((?!https?://)", r"]\\(", seg)
+
+
 def clean(text) -> str:
     """One-bullet text: keep newlines but indent them so they stay inside the list item."""
     s = str(text if text is not None else "").strip()
+    parts = s.split("`")
+    s = "`".join(_unlink(x) if i % 2 == 0 else x for i, x in enumerate(parts))  # odd parts are code spans
     return s.replace("\r\n", "\n").replace("\n", "\n  ")
 
 

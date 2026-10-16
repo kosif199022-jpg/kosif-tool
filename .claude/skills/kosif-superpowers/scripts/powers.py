@@ -220,6 +220,19 @@ INTENT.update({
     "خريطة ذهنية": ["mindmap", "mermaid", "@GRAPH", "!mindmap"], "خرائط ذهنية": ["mindmap", "@GRAPH", "!mindmap"],
     "mind map": ["mindmap", "@GRAPH", "!mindmap"], "mindmap": ["@GRAPH", "!mindmap"],
     "knowledge graph": ["@GRAPH"], "graphify": ["@GRAPH"],
+    # summaries, voice, comparisons, slides, errors
+    "لخص": ["summary", "@WRITE"], "تلخيص": ["summary", "@WRITE"], "ملخص": ["summary", "@WRITE"],
+    "summarize": ["summary", "@WRITE"], "summarise": ["summary", "@WRITE"], "summary": ["@WRITE"],
+    "voiceover": ["voice", "narration", "tts"], "voice over": ["voice", "narration", "tts"],
+    "تعليق صوتي": ["voice", "narration", "tts"], "narration": ["voice", "tts"],
+    "قارن": ["compare", "@THINK", "@WEB"], "مقارنة": ["compare", "@THINK", "@WEB"], "compare": ["@THINK", "@WEB"],
+    "comparison": ["compare", "@THINK", "@WEB"], "recommend": ["decision", "@THINK"],
+    "price": ["pricing", "@PROD"], "سعر": ["pricing", "@PROD"], "أسعار": ["pricing", "@PROD"],
+    "subscription": ["pricing", "@PROD"], "اشتراك": ["pricing", "@PROD"],
+    "slides": ["pptx", "@DOC"], "slide deck": ["pptx", "@DOC"], "deck": ["pptx", "@DOC"], "شرائح": ["pptx", "@DOC"],
+    "error": ["debug", "@CODE"], "stack trace": ["debug", "@CODE"], "traceback": ["debug", "@CODE"],
+    "exception": ["debug", "@CODE"],
+    "background removal": ["@MEDIA"], "photo": ["image"],
     # thinking, verification, agents
     "تفكير": ["thinking", "@THINK"], "قرار": ["decision", "@THINK"], "decision": ["@THINK"],
     "reasoning": ["@THINK"], "think": ["@THINK"], "thinking": ["@THINK"], "premortem": ["@THINK"],
@@ -330,8 +343,10 @@ def _key_matches(key: str, nk: str, nw: str) -> bool:
 def expand(words: list, brief: str = "") -> list:
     """Words + intent terms. Special tokens (@FAMILY, ~domain, !hint) ride along."""
     out = list(words)
-    joined = " " + " ".join(norm(w) for w in re.findall(r"[\w:]+", brief or " ".join(words))) + " "
-    multi = [k for k in INTENT if " " in k and " " + norm(k) + " " in joined]
+    toks = [norm(w) for w in re.findall(r"[\w:]+", brief or " ".join(words))]
+    joined = " " + " ".join(toks) + " "
+    loose = " " + " ".join(t for t in toks if t not in STOP) + " "  # "remove the background" ~ "remove background"
+    multi = [k for k in INTENT if " " in k and (" " + norm(k) + " " in joined or " " + norm(k) + " " in loose)]
     for k in multi:
         out += INTENT[k]
     multi_n = [norm(k) for k in multi]

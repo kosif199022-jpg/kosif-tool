@@ -57,10 +57,11 @@ BASE_KEYS = ("id", "family", "name_ar", "name_en", "status", "what", "how", "par
              "proof", "styles", "tags")
 GENERAL_KEYS = BASE_KEYS + ("domain", "when", "section", "source")
 LIST_KEYS = ("proof", "styles", "tags")
-ID_RE = re.compile(r"^[A-Z0-9]+-(?:P)?\d{2,3}$")
+ID_RE = re.compile(r"^[A-Z0-9]+-[A-Z]?\d{2,3}$")  # motion add-on series use one letter (GLOW-P01, CAM-X01)
 TOC_RE = re.compile(r"^#{1,4}\s.*(الفهرس|المحتويات|contents|table of contents|\bTOC\b)", re.I | re.M)
 LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
-MODEL_RE = re.compile(r"claude-(?:opus|sonnet|haiku|fable)[\w.-]*|\b(?:Opus|Sonnet|Haiku)\s?\d|\bClaude (?:Opus|Sonnet|Haiku|Fable)\b|\bFable\b")
+MODEL_RE = re.compile(r"claude-(?:opus|sonnet|haiku|fable)[\w.-]*|\b(?:Opus|Sonnet|Haiku)\s?[3-9](?:\.\d)?\b(?!\d|\s?k)"
+                      r"|\bClaude (?:Opus|Sonnet|Haiku|Fable)\b|\bFable\b")  # the audio codec "Opus 96k" is not a model
 SECRET_RE = re.compile(r"sk-ant-[A-Za-z0-9_-]{20,}|sk-[A-Za-z0-9]{32,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}"
                        r"|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35}|xox[baprs]-[A-Za-z0-9-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 COUNT_KEYS = ("powers", "families", "domains", "styles", "watched") + P.STATUSES
@@ -229,7 +230,7 @@ def check_records(r: Report, rows):
         if st not in P.STATUSES:
             r.err("records", f"{rid}: invalid status {st!r}")
         if not ID_RE.match(str(rec.get("id", ""))):
-            r.err("records", f"{rid}: id must look like PREFIX-NN (2 digits, 3 above 99)")
+            r.err("records", f"{rid}: id must look like PREFIX-NN (2 digits, 3 above 99; motion add-ons PREFIX-XNN)")
         if rec.get("family") != f.stem:
             r.err("records", f"{rid}: family {rec.get('family')!r} differs from file {f.name}")
         if rec.get("domain") and rec["domain"] not in P.DOMAINS:
