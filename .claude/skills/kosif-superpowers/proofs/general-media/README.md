@@ -32,7 +32,7 @@ $S/venv/bin/python -I make_media.py $S/media                               # 16 
 | 12 | `silencedetect=noise=-50dB:d=0.5` | silence 2.0 → 3.0 s found |
 | 13 | `showwavespic` waveform and `showspectrumpic` spectrogram PNGs | both drawn (contact panels 6–7) |
 | 14 | pydub 0.25.1: slice 0–2 s, fade in 200 ms / out 400 ms, export MP3 128k; ffprobe | 2.040 s |
-| 15 | ffmpeg → Opus 64k; ffprobe | 6.006 s, 45 KB |
+| 15 | ffmpeg → Ogg (libopus 64k); ffprobe | 6.006 s, 45 KB |
 | 16 | Contact sheet | 242 KB, inspected by eye |
 
 ## Findings (measured, recorded in `results.json → findings`)

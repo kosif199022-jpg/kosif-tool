@@ -9,7 +9,7 @@
   {
    "name": "tesseract ara+eng OCR of rendered Arabic+English (naskh/clean fonts, Western digits)",
    "ok": true,
-   "detail": "similarity 0.99 (per line [1.0, 1.0, 0.972]) in 0.41 s; tesseract 5.3.4"
+   "detail": "similarity 0.99 (per line [1.0, 1.0, 0.972]) in 0.32 s; tesseract 5.3.4"
   },
   {
    "name": "OpenCV deskew: minAreaRect angle within 0.5 deg of truth",
@@ -72,9 +72,9 @@
    "detail": "2.040 s"
   },
   {
-   "name": "ffmpeg transcode to Opus 64k keeps duration",
+   "name": "ffmpeg transcode to AAC 96k (.m4a) keeps duration",
    "ok": true,
-   "detail": "6.006 s, 45400 B"
+   "detail": "6.000 s, 33581 B"
   },
   {
    "name": "contact.png < 300 KB",
@@ -120,7 +120,7 @@
   "lufs_out_ebur128": -13.9
  },
  "timings_s": {
-  "ocr": 0.41
+  "ocr": 0.32
  },
  "findings": [
   {

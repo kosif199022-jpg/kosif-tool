@@ -254,9 +254,9 @@ seg = AudioSegment.from_wav(WAV)[:2000].fade_in(200).fade_out(400)
 seg.export(W / "tone.mp3", format="mp3", bitrate="128k")
 dur = float(sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(W / "tone.mp3")]).stdout)
 check("pydub slice + fades + MP3 export (ffprobe duration ~2.0 s)", abs(dur - 2.0) < 0.06, f"{dur:.3f} s")
-sh(["ffmpeg", "-hide_banner", "-y", "-i", str(NORM), "-c:a", "libopus", "-b:a", "64k", str(W / "test.opus")])
-dur_o = float(sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(W / "test.opus")]).stdout)
-check("ffmpeg transcode to Opus 64k keeps duration", abs(dur_o - 6.0) < 0.05, f"{dur_o:.3f} s, {(W / 'test.opus').stat().st_size} B")
+sh(["ffmpeg", "-hide_banner", "-y", "-i", str(NORM), "-c:a", "aac", "-b:a", "96k", str(W / "test.m4a")])
+dur_o = float(sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(W / "test.m4a")]).stdout)
+check("ffmpeg transcode to AAC 96k (.m4a) keeps duration", abs(dur_o - 6.0) < 0.05, f"{dur_o:.3f} s, {(W / 'test.m4a').stat().st_size} B")
 
 # ------------------------------------------------------------ 7. contact sheet
 lab_font = ImageFont.truetype(str(FONTS / "Cairo[slnt,wght].ttf"), 20)

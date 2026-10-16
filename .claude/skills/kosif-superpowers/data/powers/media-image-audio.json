@@ -611,9 +611,9 @@
   "name_ar": "تحويل الصيغ والتحقق من المدة",
   "name_en": "Transcode and verify duration",
   "status": "proven",
-  "what": "أحوّل إلى Opus أو MP3 أو AAC وأتحقق بـ ffprobe أن المدة لم تتغير. — Transcode to Opus/MP3/AAC and verify with ffprobe that the duration did not change.",
+  "what": "أحوّل إلى Ogg/libopus أو MP3 أو AAC وأتحقق بـ ffprobe أن المدة لم تتغير. — Transcode to Ogg (libopus), MP3 or AAC and verify with ffprobe that the duration did not change.",
   "when": "delivering audio for web, messaging or video",
-  "how": "ffmpeg -i in.wav -c:a libopus -b:a 64k out.opus; ffprobe -v error -show_entries format=duration -of csv=p=0 out.opus. Proof: 6.006 s for a 6.0 s source, 45 KB. Never overwrite the user's original.",
+  "how": "ffmpeg -i in.wav -c:a libopus -b:a 64k out.ogg; ffprobe -v error -show_entries format=duration -of csv=p=0 out.ogg. Proof: 6.006 s for a 6.0 s source, 45 KB. Never overwrite the user's original.",
   "params": "",
   "install": "ffmpeg",
   "license": "LGPL/GPL",
@@ -623,7 +623,8 @@
   "styles": [],
   "tags": [
    "transcode",
-   "opus",
+   "libopus",
+   "ogg",
    "mp3",
    "ffprobe",
    "تحويل صيغة"
