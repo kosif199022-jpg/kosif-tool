@@ -358,7 +358,7 @@ class VirtualDriver {
 
 // ------------------------------------------------------------------ encoding
 
-function encodeVideo({ framesDir, fps, out, crf, audio, start, width, height }) {
+function encodeVideo({ framesDir, fps, out, crf, audio, start, width, height, capWidth, capHeight }) {
   const args = ['-y', '-hide_banner', '-loglevel', 'error', '-nostats',
     '-framerate', String(fps), '-i', path.join(framesDir, 'frame_%06d.png')];
   if (audio) {
@@ -366,6 +366,7 @@ function encodeVideo({ framesDir, fps, out, crf, audio, start, width, height }) 
     args.push('-i', audio);
   }
   const vf = [];
+  if (capWidth && (capWidth !== width || capHeight !== height)) vf.push(`scale=${width}:${height}:flags=lanczos`);
   if (width % 2 || height % 2) {
     warn(`output size ${width}x${height} is odd; padding to even dimensions for yuv420p`);
     vf.push('pad=ceil(iw/2)*2:ceil(ih/2)*2:0:0:black');
@@ -493,6 +494,8 @@ async function main() {
   const outPath = path.resolve(String(args.out));
   const outWidth = Math.round(width * scale);
   const outHeight = Math.round(height * scale);
+  // Chromium ignores a device scale below 1 for screenshots: capture at 1x and let ffmpeg downscale.
+  const capScale = Math.max(1, scale), capWidth = Math.round(width * capScale), capHeight = Math.round(height * capScale);
 
   const input = String(args.in);
   let url;
@@ -524,7 +527,7 @@ async function main() {
   }
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
 
-  const browserOpts = { isFile, width, height, scale, offline, seed, virtual: mode === 'virtual' };
+  const browserOpts = { isFile, width, height, scale: capScale, offline, seed, virtual: mode === 'virtual' };
   let session = await openBrowser(playwright, browserOpts);
   let exitCode = 0;
   try {
@@ -569,7 +572,7 @@ async function main() {
         await driver.goTo(t);
         const file = path.join(framesDir, `preview_raw_${String(k).padStart(2, '0')}.png`);
         await driver.capture(file);
-        if (k === 0) checkFrameSize(file, outWidth, outHeight);
+        if (k === 0) checkFrameSize(file, capWidth, capHeight);
         picks.push({ file, t, index: idx });
         log(`preview ${k + 1}/${indices.length}: frame ${idx} (t=${fmtTime(t)})`);
       }
@@ -584,14 +587,14 @@ async function main() {
         await driver.goTo(t);
         const file = path.join(framesDir, frameName(i));
         await driver.capture(file);
-        if (i === 0) checkFrameSize(file, outWidth, outHeight);
+        if (i === 0) checkFrameSize(file, capWidth, capHeight);
         if ((i + 1) % 30 === 0 || i + 1 === total) {
           const elapsed = (Date.now() - t0) / 1000;
           log(`frame ${i + 1}/${total} (t=${fmtTime(t)}) ${elapsed.toFixed(1)}s elapsed`);
         }
       }
       log(`encoding ${total} frames -> ${outPath}`);
-      encodeVideo({ framesDir, fps, out: outPath, crf, audio, start, width: outWidth, height: outHeight });
+      encodeVideo({ framesDir, fps, out: outPath, crf, audio, start, width: outWidth, height: outHeight, capWidth, capHeight });
       const probe = probeVideo(outPath);
       const want = { fps, frames: total, duration: total / fps, width: outWidth + (outWidth % 2), height: outHeight + (outHeight % 2), audio: !!audio };
       const problems = verifyProbe(probe, want);
