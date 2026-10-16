@@ -1,8 +1,8 @@
 # الشخصيات والتحريك الهيكلي — Characters & rigs
 
 > **قوتك هنا:** أنت تصمم شخصية أصلية وتثبّت هويتها، وتبني لها هيكلًا بمفاصل (SVG أو Canvas أو three.js)، وتمشّيها بدورة إجرائية لا تنزلق قدماها، وتجعلها تقفز وتنضغط وتتنفس وترمش وتتكلم — وتجعلها «حيّة» حتى وهي ساكنة.
-> **أقوى دليل:** صوّرتُ هنا إطارات من مشهد القطة السينمائي (`cinematic-cat.html`) عند 0 و2 و5.5 ث بـ Playwright: القطة في منتصف القفزة فوق البركة والفراشة المرشدة ترفرف — هيكل بأربع أرجل وآلة وضعيات تعمل كدالة للزمن؛ ومرّت هنا اختبارات الأرنب القطيفة المنحوت (`test_shape_kit` 4/4، أكثر من 50 ألف مثلث) وأقفال شخصيات fastify (15/15) ومشهد الحوت في `kosif-studio` (Judge 2/2).
-> **You can:** design, lock, rig, walk, act and idle original characters in 2D and 3D, and route to avatar/AI services only when the user has a key. **50 powers follow** — ✅ 6 · 🟢 14 · 📦 2 · 🔑 4 · 👁 11 · 📄 13 · 💡 0.
+> **أقوى دليل:** فيلم الإثبات `proofs/character-rig` (شخصية مسطحة بـ IK بعظمتين، مشية بلا انزلاق، تهيؤ وقفزة مقذوفة وهبوط بانضغاط، وشاح Verlet، وفقاعة كلام عربية كلمةً كلمة — 9.5 ث، 13/13). وصوّرتُ هنا إطارات من مشهد القطة السينمائي (`cinematic-cat.html`) عند 0 و2 و5.5 ث بـ Playwright: القطة في منتصف القفزة فوق البركة والفراشة المرشدة ترفرف — هيكل بأربع أرجل وآلة وضعيات تعمل كدالة للزمن؛ ومرّت هنا اختبارات الأرنب القطيفة المنحوت (`test_shape_kit` 4/4، أكثر من 50 ألف مثلث) وأقفال شخصيات fastify (15/15) ومشهد الحوت في `kosif-studio` (Judge 2/2).
+> **You can:** design, lock, rig, walk, act and idle original characters in 2D and 3D, and route to avatar/AI services only when the user has a key. **50 powers follow** — ✅ 12 · 🟢 13 · 📦 2 · 🔑 4 · 👁 10 · 📄 9 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -87,10 +87,10 @@ _قصاصات بمفاصل، IK بعظمتين، وجوه تُبدَّل._
 - **كيف / how:** python3 tools/kosif.py scaffold character-rig <dir>; parts head, torso, upper/lower arm, hand, upper/lower leg, foot; transform rotate(θ px py) in nested <g>; Remotion arm: shoulder interpolate(frame, [0,6,14,24], [0,8,−55,−48]), elbow ([2,10,18,26] → [0,5,−30,−24]) with Easing.inOut(Easing.sin); walk 12 frames/step at 24 fps; 5–7 mouth shapes; moving hold 1–2%. **أرقام / params:** elbow +2 f; 12 f/step.
 - **الدليل / proof:** `kosif-tool/playbooks/characters.md:54` · `kosif-tool/styles/character-rig/SKILL.md` · `100-superskills/skills/character-animation-2d/SKILL.md`
 
-#### CHAR-11 · أطراف بـ IK بعظمتين · Two-bone IK limbs · 👁 شوهد في فيديو / seen in a reference video
+#### CHAR-11 · أطراف بـ IK بعظمتين · Two-bone IK limbs · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تُعطى الوركَ وأهداف اليدين والقدمين في العالم، فيُحل الكوع والركبة بـ IK بعظمتين، ويُرسم الطرف منحنى يمر بالمفصل. — Give hip and world targets; solve elbow/knee with 2-bone IK and draw each limb as a curve through the joint.
 - **متى أستخدمها / when:** رجل عصوي، دراجة بدواسات، شخصية تمسك أشياء — stickmen, pedalling, grabbing.
-- **كيف / how:** bend direction from facing (elbows back, knees forward); quadratic control point = 2J − (S + E)/2 so the curve passes through the joint J; stroke ~3 px round caps. Bicycle: crank θ = ω·t (ω ≈ 2π·1 Hz), pedals at θ and θ + π, legs solved hip → pedal, wheels at gear ratio ~2.5 × ω, wheel radius 0.33 m. **أرقام / params:** ω ≈ 2π rad/s; gear 2.5.
+- **كيف / how:** bend direction from facing (elbows back, knees forward); quadratic control point = 2J − (S + E)/2 so the curve passes through the joint J; stroke ~3 px round caps. Bicycle: crank θ = ω·t (ω ≈ 2π·1 Hz), pedals at θ and θ + π, legs solved hip → pedal, wheels at gear ratio ~2.5 × ω, wheel radius 0.33 m. Proof film character-rig (rendered and verified here, 13/13) uses law-of-cosines ik() for legs and arms: thigh and shin 116 px each, upper arm 84 px, forearm 80 px, knees bend forward and elbows back; open index.html?bones=1 to see the bones. **أرقام / params:** ω ≈ 2π rad/s; gear 2.5.
 
 ```js
 function ik2(S, T, l1, l2, bend = 1) {            // shoulder/hip S → target T
@@ -103,7 +103,7 @@ function ik2(S, T, l1, l2, bend = 1) {            // shoulder/hip S → target T
 }
 ```
 
-- **الدليل / proof:** `kosif-tool/styles/stickman` · `kosif-tool/styles/pm-axtonliu-0b861d`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/character-rig/README.md` · `kosif-tool/styles/stickman` · `kosif-tool/styles/pm-axtonliu-0b861d`
 
 #### CHAR-12 · انحناء الجسم والمط حسب السرعة · Velocity-driven body bend & squash · 👁 شوهد في فيديو / seen in a reference video
 - **ماذا / what:** الجذع أنبوب منحنٍ يُرسم مرتين، انحناؤه من سرعة الميل، ومطه وضغطه من سرعة الورك وصدمات الهبوط، والرأس يتأخر قليلًا. — Torso as a bent tube; bend from tilt velocity, squash/stretch from hip velocity and landings; head lags.
@@ -111,11 +111,11 @@ function ik2(S, T, l1, l2, bend = 1) {            // shoulder/hip S → target T
 - **كيف / how:** torso = quadratic bezier hip → neck drawn wide black then thinner white on top (~38 px); bend = k·d(tilt)/dt computed from seek(t) and seek(t − 1/fps) (never accumulated); stretch/squash 0.85–1.15 from vertical hip velocity plus landing impulses; head follows 1–2 frames late. **أرقام / params:** tube ~38 px; squash 0.85–1.15.
 - **الدليل / proof:** `kosif-tool/styles/stickman`
 
-#### CHAR-13 · وجوه بتبديل الأشكال · Swap-shape faces, mouths & expressions · 📄 موصوف / documented only
+#### CHAR-13 · وجوه بتبديل الأشكال · Swap-shape faces, mouths & expressions · ✅ مُثبت هنا / proven here
 - **ماذا / what:** العيون والفم أشكال تُبدَّل لا مسارات تُشوَّه: 5–7 أفواه، فم مغلق على م/ب، رمش، حواجب بزاوية لكل عاطفة. — Eyes and mouth are swapped shapes, not distorted paths.
 - **متى أستخدمها / when:** كل شخصية تتكلم أو تتفاعل — every talking or reacting character.
-- **كيف / how:** mouth index from phoneme/word timing (words.json), switch within 1 frame, closed on M/B/P (م ب ف in Arabic); eyes as dots blinking scaleY → 0.1 for 80 ms every 2.5–4 s; brows as short strokes angled per emotion; mouth per emotion (smile, flat, O + sweat drop, grit, content); up to 8 expression states (dots, ^ ^ joy, angry brows, hearts, wink + tongue) swapped on beats with a 6 px bounce, sweat-drop and sparkle overlays; screen-face robots swap glyph eyes per emotion. **أرقام / params:** 5–7 mouths; switch ≤1 f; blink 80 ms / 2.5–4 s.
-- **الدليل / proof:** `kosif-tool/playbooks/characters.md:18` · `kosif-tool/styles/stickman` · `kosif-tool/styles/pm-jake11moran-a269c4`
+- **كيف / how:** mouth index from phoneme/word timing (words.json), switch within 1 frame, closed on M/B/P (م ب ف in Arabic); eyes as dots blinking scaleY → 0.1 for 80 ms every 2.5–4 s; brows as short strokes angled per emotion; mouth per emotion (smile, flat, O + sweat drop, grit, content); up to 8 expression states (dots, ^ ^ joy, angry brows, hearts, wink + tongue) swapped on beats with a 6 px bounce, sweat-drop and sparkle overlays; screen-face robots swap glyph eyes per emotion. Proven in character-rig: neutral → surprised → determined → happy → talking, each swap with a head-scale pulse 1 + 0.07·e^(−14τ)·cos(30τ), 3 blinks, mouth opening on each word's timing (open/close only — no visemes). **أرقام / params:** 5–7 mouths; switch ≤1 f; blink 80 ms / 2.5–4 s.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/character-rig/README.md` · `kosif-tool/playbooks/characters.md:18` · `kosif-tool/styles/stickman` · `kosif-tool/styles/pm-jake11moran-a269c4`
 
 #### CHAR-14 · شخصية قصاصات بمؤشر اتجاه · Cut-out rig with facing dial · 👁 شوهد في فيديو / seen in a reference video
 - **ماذا / what:** قيمة اتجاه واحدة من −1 إلى 1 تزيح ملامح الوجه وتبدّل الذراع القريبة والبعيدة، وطور المشي مشتق من المسافة المقطوعة فلا تنزلق القدمان. — One facing value shifts features and swaps near/far arm; walk phase from distance so feet never slide.
@@ -181,11 +181,11 @@ function ik2(S, T, l1, l2, bend = 1) {            // shoulder/hip S → target T
 
 _دورة مشي بلا انزلاق، قفزة بقوس، ورد فعل يُقرأ._
 
-#### CHAR-24 · دورة المشي · Walk cycle · 📄 موصوف / documented only
+#### CHAR-24 · دورة المشي بلا انزلاق · Walk cycle without foot sliding · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تلامس ← نزول ← عبور ← صعود، مع اهتزاز الجسم، والمشي في المكان مع خلفية تتحرك بسرعة الخطوة. — Contact-down-passing-up with body bob; walk in place with background parallax at stride speed.
 - **متى أستخدمها / when:** كل شخصية تمشي — every walking character.
-- **كيف / how:** 24 frames per two steps at 24 fps (12 per step); bob 3–5% of height; background speed = stride / 0.5 s; clip names, durations, loop flag and event markers (contact, footsteps); check body bob and limb separation; phase = f(t) so any frame renders directly; walk/idle/talk as functions of phase returning limb angles and body height with distinct contact and passing poses. **أرقام / params:** 12 f/step; bob 3–5%.
-- **الدليل / proof:** `kosif-tool/playbooks/characters.md:27` · `kosif-atlas/skills/1526-gamegen/4162-game-animation/SKILL.md` · `100-superskills/skills/character-animation-2d/SKILL.md`
+- **كيف / how:** 24 frames per two steps at 24 fps (12 per step); bob 3–5% of height; background speed = stride / 0.5 s; clip names, durations, loop flag and event markers (contact, footsteps); check body bob and limb separation; phase = f(t) so any frame renders directly; walk/idle/talk as functions of phase returning limb angles and body height with distinct contact and passing poses. Proven in character-rig: each foot's phase c = (d/C) mod 1 from the distance actually travelled; stance half pins the foot in world coordinates, swing half moves it on an inOutSine arc lifting 44 px; stride 118 px at 290 px/s (2.46 steps/s); hip bob 9·cos(4πd/C) lowest at contact; arms swing ±26° opposite the legs; the stop ends with a settling step of the rear foot; 3-layer parallax 0.25 / 0.5 / 1.0. **أرقام / params:** 12 f/step; bob 3–5%.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/character-rig/README.md` · `kosif-tool/playbooks/characters.md:27` · `kosif-atlas/skills/1526-gamegen/4162-game-animation/SKILL.md` · `100-superskills/skills/character-animation-2d/SKILL.md`
 
 #### CHAR-25 · ساق مشي إجرائية · Procedural walk-cycle leg · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ساق مرسومة كضربة منحنية، قدمها تتأرجح بجيب الطور وترتفع في النصف الأمامي فقط، والأرجل البعيدة أغمق، وأربع أرجل بإزاحة π تعطي مشية طبيعية. — A curved-stroke leg whose foot swings with sin(phase) and lifts only on the forward half.
@@ -222,11 +222,11 @@ function leg(x, phase, far) {
 - **كيف / how:** keys every 8–16 frames at 24–30 fps; stick rig: joint angles per pose interpolated easeInOut over 400 ms, hold 1 s; follow-through 2–4 frames, anticipation 4–8 frames (EASE-49). **أرقام / params:** keys 8–16 f; 400 ms + 1 s hold.
 - **الدليل / proof:** `kosif-tool/playbooks/characters.md:24` · `kosif-tool/styles/pm-chrisjdimarco-f068db`
 
-#### CHAR-29 · لحظة رد الفعل · Reaction beat recipe · 📄 موصوف / documented only
+#### CHAR-29 · لحظة رد الفعل والقفزة · Reaction & jump recipe · ✅ مُثبت هنا / proven here
 - **ماذا / what:** هبوط، قفزة، هبوط بانضغاط، متابعة للشعر، ثبات متنفس. — Sink, jump, land with squash, hair follow-through, breathing hold.
 - **متى أستخدمها / when:** دهشة، فرح، اكتشاف — surprise, joy, discovery.
-- **كيف / how:** 0–200 ms sink 4% ease-in sine; 200–450 ms jump ease-out cubic; 450–700 ms land squash 8% on a spring (damping 12, stiffness 200); 450–800 ms follow-through; 800–2000 ms breathing hold. Hop with anticipation: 120 ms crouch, squash .80–.85 / stretch 1.15, landing cubic-bezier(.34,1.56,.64,1) 450 ms, limbs overlap 60 ms, area preserved (sx·sy = 1). **أرقام / params:** 0/200/450/700/800/2000 ms.
-- **الدليل / proof:** `kosif-tool/playbooks/characters.md:36` · `kosif-tool/styles/pm-abderrahmen-g-9e8ed0/BRIEF.md` · `kosif-tool/styles/pm-paulo-kombucha-96431c/BRIEF.md`
+- **كيف / how:** 0–200 ms sink 4% ease-in sine; 200–450 ms jump ease-out cubic; 450–700 ms land squash 8% on a spring (damping 12, stiffness 200); 450–800 ms follow-through; 800–2000 ms breathing hold. Hop with anticipation: 120 ms crouch, squash .80–.85 / stretch 1.15, landing cubic-bezier(.34,1.56,.64,1) 450 ms, limbs overlap 60 ms, area preserved (sx·sy = 1). Proven in character-rig: anticipation crouch lowers the hip 62 px in 0.44 s and squashes the torso to sy 0.87; take-off stretch +16%; ballistic flight under constant gravity to a 300 px apex; landing sy = 1 − 0.24·e^(−6.5τ)·cos(13τ) with sx ≈ 1/sy; head lag 26·e^(−5τ)·sin(13(τ − 0.05)); arms overshoot rest then settle; a '!' pops when the box appears. **أرقام / params:** 0/200/450/700/800/2000 ms.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/character-rig/README.md` · `kosif-tool/playbooks/characters.md:36` · `kosif-tool/styles/pm-abderrahmen-g-9e8ed0/BRIEF.md` · `kosif-tool/styles/pm-paulo-kombucha-96431c/BRIEF.md`
 
 #### CHAR-30 · الإشارة والكشف · Point and reveal · 📄 موصوف / documented only
 - **ماذا / what:** الذراع تمتد على قوس، والهدف يقفز بعد توقف الإصبع بـ 80 ملّي ثانية. — The arm extends on an arc; the target pops 80 ms after the finger stops.
@@ -258,11 +258,11 @@ function leg(x, phase, far) {
 - **كيف / how:** locomotion needs contact / passing / extreme poses with planted feet; actions need readable anticipation, contact and recovery (player-facing attacks avoid long anticipation); hold the impact frame; keep volumes constant; verify encoded frame count, fps and duration after render.
 - **الدليل / proof:** `kosif-atlas/skills/1526-gamegen/4162-game-animation/SKILL.md` · `100-superskills/skills/character-animation-2d/SKILL.md`
 
-#### CHAR-35 · الشخصية العربية تدخل من اليمين · RTL character staging · 📄 موصوف / documented only
+#### CHAR-35 · الشخصية العربية وفقاعة كلامها · RTL staging & Arabic speech bubble · ✅ مُثبت هنا / proven here
 - **ماذا / what:** في الأفلام العربية تدخل الشخصيات من اليمين وتنظر يسارًا، وفقاعات الكلام تحمل جملًا عربية كاملة من اليمين. — In Arabic films characters enter from the right and look left; bubbles hold whole RTL phrases.
 - **متى أستخدمها / when:** كل فيلم شخصيات عربي — every Arabic character film.
-- **كيف / how:** mirror the staging plan (entrances, look direction, reading path); balloons pop with a spring and contain whole shaped phrases (never per letter); stagger group entrances right → left.
-- **الدليل / proof:** `kosif-tool/playbooks/characters.md:75`
+- **كيف / how:** mirror the staging plan (entrances, look direction, reading path); balloons pop with a spring and contain whole shaped phrases (never per letter); stagger group entrances right → left. Proven in character-rig: the bubble springs out from its tail tip (k 230, ζ ≈ 0.5) and the line «قفزةٌ واحدة… وصارت العقبةُ خلفي!» appears word by word right → left in Cairo 800 at 50 px, each word whole and shaped, popping with outBack on its spoken time; the camera eases to ×1.18–1.26 while the character talks.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/character-rig/README.md` · `kosif-tool/playbooks/characters.md:75`
 
 ## حياة الشخصية والحركة الثانوية — Idle life & secondary motion
 
@@ -274,11 +274,11 @@ _الشخصية لا تتجمد أبدًا._
 - **كيف / how:** K3.idle(root, t, {amount, phase}): breath ±1.2% at 2.2 rad/s, blink every 3.7 s lasting 0.3 s, ears ±.12 rad at 2.6, tail ±.35 rad at 3.1; bunny project: breath .006·sin(2π·0.9t), head (.05 sin 1.7t, .12 sin(1.1t + .5), .05 sin 1.3t), blink windows 1.18–1.34 s and 4.62–4.76 s with eye scaleY 1 − .85·bl, a 0.25 rad head turn toward camera at its stop; 2D moving hold: torso scale 1–2% over 2 s. **أرقام / params:** breath 0.6–1.2%; blink /3.7 s.
 - **الدليل / proof:** `kosif-studio/motion/kit/lab-kit.js:280` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:118` · `kosif-tool/playbooks/characters.md:28`
 
-#### CHAR-37 · حركة ثانوية بالنوابض · Spring-rig secondary motion · 🟢 جاهز / ready
+#### CHAR-37 · حركة ثانوية بالنوابض والسلاسل · Spring & chain secondary motion · ✅ مُثبت هنا / proven here
 - **ماذا / what:** مجموعات مفاصل تقودها نوابض (تردد وتخميد) لارتخاء الأذن وارتداد الذيل، تحت حد سرعة. — Pivot groups driven by frequency/ζ springs under a speed gate.
 - **متى أستخدمها / when:** آذان، ذيول، شعر، إكسسوارات متدلية — ears, tails, hair, dangling props.
-- **كيف / how:** angle = A·(1 − spring(t, t0, f, ζ)) on each pivot (EASE-25); ear flop f 1.5 Hz ζ 0.42 passes; f 2.2 Hz ζ 0.28 failed the 80 px/frame gate at 1080×1920 — measure with motion.py speed (EASE-60). **أرقام / params:** 1.5 Hz ζ .42 ok; 2.2/.28 fails.
-- **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/shape-kit.md` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js`
+- **كيف / how:** angle = A·(1 − spring(t, t0, f, ζ)) on each pivot (EASE-25); ear flop f 1.5 Hz ζ 0.42 passes; f 2.2 Hz ζ 0.28 failed the 80 px/frame gate at 1080×1920 — measure with motion.py speed (EASE-60). Chains: character-rig's scarf is a 9-link Verlet chain re-simulated from t = 0 at a fixed step on every seek, so any frame is identical whatever order it renders in (verified film). **أرقام / params:** 1.5 Hz ζ .42 ok; 2.2/.28 fails.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/character-rig/README.md` · `100-superskills/skills/kosif-montage-motion/references/shape-kit.md` · `100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js`
 
 #### CHAR-38 · فراشة ويراعة مرافقة · Winged companions (butterfly, firefly) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** فراشة متوهجة ترشد البطل: جناحاها يرفرفان بتحجيم أفقي وتتمايل على مسار جيبي بهالة سماوية. — A glowing butterfly leads the hero, flapping by horizontal scale on a sine path.
@@ -383,7 +383,7 @@ _ما يُستدعى بأمر واحد._
 2. **لا انزلاق للقدمين** — اشتق طور المشي من المسافة المقطوعة لا من الزمن وحده (CHAR-14/24).
 3. **لا تشوّه مسار الفم والعينين** — بدّل أشكالًا جاهزة خلال إطار واحد، والفم مغلق على م/ب (CHAR-13).
 4. **لا شخصية متجمدة** — تنفس 0.6–2%، رمش كل 2.5–4 ث، حتى في الثبات (CHAR-36).
-5. **لا تراكم الفيزياء إطارًا بإطار في الرندر** — الانحناء من الفرق بين seek(t) وseek(t − 1/fps)، والنوابض بصيغة مغلقة (CHAR-12/37).
+5. **لا تراكم الفيزياء بين إطارات الرندر** — الانحناء من الفرق بين seek(t) وseek(t − 1/fps)، والنوابض بصيغة مغلقة، وإن احتجت محاكاة (وشاح، سلسلة) فأعد حسابها من t=0 بخطوة ثابتة عند كل seek (CHAR-12/37).
 6. **لا نوابض أذن سريعة بلا قياس** — 2.2 هرتز بتخميد 0.28 تجاوز حد 80 بكسل/إطار؛ قِس السرعة (CHAR-37).
 7. **لا تولّد شخصًا جديدًا حين يكون للمستخدم صورة** — عدّل صورته؛ التوليد الجديد يعطي شخصًا آخر (CHAR-06).
 8. **لا تخلط إيقاع «على اثنين» مع حركة ناعمة على العنصر نفسه** — الشخصية متقطعة والواجهة ناعمة، كلٌّ في طبقته (CHAR-20).
@@ -392,7 +392,7 @@ _ما يُستدعى بأمر واحد._
 
 ## أقوى 5 حركات توقيع / 5 signature moves
 
-1. **CHAR-26 — آلة حالات الوضعية:** مشي ← انحناء ← قفزة بقوس 147 بكسل ← هبوط ← نظرة — قصة حركية كاملة في 10 ث، مصورة هنا.
+1. **CHAR-26 + CHAR-29 — آلة الوضعيات والقفزة:** مشي ← تهيؤ ← قفزة مقذوفة ← هبوط بانضغاط ← كلام — مُثبتة في فيلمَي القطة وcharacter-rig.
 2. **CHAR-40 — الأرنب القطيفة:** تميمة ثلاثية الأبعاد بمفاصل مسماة جاهزة للتمثيل، مختبرة هنا.
 3. **CHAR-36 — حياة الخمول:** تنفس ورمش ونظرة للكاميرا — ما يجعل أي شخصية حيّة.
 4. **CHAR-11 — IK بعظمتين:** أطراف ترسم نفسها نحو أهداف في العالم — ستيكمان يمسك ويرمي ويركب دراجة.

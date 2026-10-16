@@ -1,8 +1,8 @@
 # الرسم اليدوي والرسم الحي — Hand-drawn & draw-on
 
 > **قوتك هنا:** أنت ترسم أمام المشاهد: خط يكتب نفسه بسرعة قلم حقيقية، رأس قلم أو ماركر أو شرارة يتبع الطرف، دوائر وأسهم وخطوط تأكيد بيد مرتعشة، تظليل بالماركر، وارتعاش «الغليان» على اثنين — ثم تذهب أبعد: استوديو يرسم أي صورة بكسلًا بكسلًا بترتيب رسّام وينتهي مطابقًا للأصل في كل قيمة RGBA.
-> **أقوى دليل:** فيلم الإثبات `proofs/glass-luxury-logo` حيث يُرسم خاتم ثماني بخط ذهبي بين 4.0 و5.6 ث (`pathLength=1` + `dashoffset`) و`proofs/neon-glow` حيث يسري الضوء في أنبوب الفنجان وهو يُرسم — كلاهما رُندر وفُحص هنا (13/13)؛ ومرّت هنا اختبارات استوديو الرسام في `kosif-studio` (ترتيب الكشف، استيراد SVG، الرسم المطابق، فيلم الرسم، مسجل أوامر PIL: 23 اختبارًا)، واختبارات محوّل مسارات SVG في omni (4/4)، وتوليد قوالب logo-reveal وbullet-list بعلامات صح مرسومة.
-> **You can:** draw on any path, write titles by mask, annotate footage, boil lines, hatch fills, and paint pictures stroke by stroke. **60 powers follow** — ✅ 10 · 🟢 17 · 📦 7 · 🔑 0 · 👁 7 · 📄 19 · 💡 0.
+> **أقوى دليل:** فيلم الإثبات `proofs/whiteboard-draw` (سبورة 9:16 بقلم ماركر مرسوم بالكود، ضربات بضغط وتدبيب، تظليل مقصوص على الشكل، عنوان عربي بقناع من اليمين، 13/13) و`proofs/glass-luxury-logo` حيث يُرسم خاتم ثماني بخط ذهبي بين 4.0 و5.6 ث (`pathLength=1` + `dashoffset`) و`proofs/neon-glow` حيث يسري الضوء في أنبوب الفنجان وهو يُرسم — كلاهما رُندر وفُحص هنا (13/13)؛ ومرّت هنا اختبارات استوديو الرسام في `kosif-studio` (ترتيب الكشف، استيراد SVG، الرسم المطابق، فيلم الرسم، مسجل أوامر PIL: 23 اختبارًا)، واختبارات محوّل مسارات SVG في omni (4/4)، وتوليد قوالب logo-reveal وbullet-list بعلامات صح مرسومة.
+> **You can:** draw on any path, write titles by mask, annotate footage, boil lines, hatch fills, and paint pictures stroke by stroke. **60 powers follow** — ✅ 17 · 🟢 15 · 📦 6 · 🔑 0 · 👁 6 · 📄 16 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -48,17 +48,17 @@ function drawOn(path, t, t0, t1, ease = Ease.inOutCubic) {
 - **رخصة / license:** GSAP standard no-charge license (vendored)
 - **الدليل / proof:** `kosif-studio/motion/kit/motion-kit.js:237` · `100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:237` · `100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:204` · `kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js`
 
-#### DRAW-03 · سرعة القلم والرفع · Pen speed & lifts · 📄 موصوف / documented only
+#### DRAW-03 · سرعة القلم والرفع · Pen speed & lifts · ✅ مُثبت هنا / proven here
 - **ماذا / what:** القلم يسير بسرعة شبه ثابتة على طول المسار مع تسهيل لكل ضربة ووقفات رفع قصيرة، والمدة = الطول ÷ السرعة. — Near-constant pen speed per stroke, short lifts, duration = length / speed.
 - **متى أستخدمها / when:** كل سبورة ورسم يدوي — every whiteboard and hand-drawn scene.
-- **كيف / how:** pen 800–1400 px/s with ease-in-out per stroke; lift 60–120 ms between strokes; hatching 2000 px/s or a 300 ms wipe; narrated whiteboards 500–700 px/s with the stroke leading the word by ≤150 ms; plotter = constant speed, no easing, pen-up travel lines at 10% opacity; text paths ~0.6–1.5 s per line. **أرقام / params:** 800–1400 px/s; lift 60–120 ms; hatch 2000 px/s.
-- **الدليل / proof:** `kosif-tool/playbooks/hand-drawn.md:25` · `kosif-tool/styles/pm-tak3sh8-be5012/BRIEF.md` · `kosif-tool/styles/plotter/SKILL.md`
+- **كيف / how:** pen 800–1400 px/s with ease-in-out per stroke; lift 60–120 ms between strokes; hatching 2000 px/s or a 300 ms wipe; narrated whiteboards 500–700 px/s with the stroke leading the word by ≤150 ms; plotter = constant speed, no easing, pen-up travel lines at 10% opacity; text paths ~0.6–1.5 s per line. Proof film whiteboard-draw (rendered and verified here, 13/13) times every stroke by arc length: strokes 3000 px/s, hatching 5600 px/s, progress e(u) = 0.55·inOutSine(u) + 0.45·u whose derivative is the pen speed (it drives width and the marker squeak), gaps 55 ms between strokes, 30 ms between short ones, 170 ms between groups — editing a shape re-times the whole film. **أرقام / params:** 800–1400 px/s; lift 60–120 ms; hatch 2000 px/s.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md` · `kosif-tool/playbooks/hand-drawn.md:25` · `kosif-tool/styles/pm-tak3sh8-be5012/BRIEF.md` · `kosif-tool/styles/plotter/SKILL.md`
 
-#### DRAW-04 · ترتيب الرسم البشري ووصفة «ارسم وسمِّ» · Human draw order & draw-and-label · 📄 موصوف / documented only
+#### DRAW-04 · ترتيب الرسم البشري ووصفة «ارسم وسمِّ» · Human draw order & draw-and-label · ✅ مُثبت هنا / proven here
 - **ماذا / what:** المحيط أولًا ثم التفاصيل ثم التعبئة ثم الاسم المكتوب ثم الثبات، والكتابة العربية من اليمين. — Outline, details, fill, handwritten label, hold; Arabic writing right to left.
 - **متى أستخدمها / when:** أي عنصر يُشرح بالرسم — any object explained by drawing.
-- **كيف / how:** 0–900 ms outline (ease-in-out per stroke) → 900–1300 details → 1300–1600 highlight fill wipe (ease-out) → 1600–2300 label writes beside it (constant) → 2300–4000 hold while the hand leaves (ease-in). 3D-ish objects: outline dash 0.6 s → face opacity 0.3 s → extrusion depth 0.5 s, starting from a sparkle (style:fake3d). One pen weight family (e.g. 4 and 8 px), one ink + one highlight; primary path 6 px round, secondary 3 px, grid 1.5 px at 1080 width. **أرقام / params:** 0/900/1300/1600/2300/4000 ms.
-- **الدليل / proof:** `kosif-tool/playbooks/hand-drawn.md:36` · `kosif-tool/templates/STYLE.md` · `kosif-tool/styles/fake3d`
+- **كيف / how:** 0–900 ms outline (ease-in-out per stroke) → 900–1300 details → 1300–1600 highlight fill wipe (ease-out) → 1600–2300 label writes beside it (constant) → 2300–4000 hold while the hand leaves (ease-in). 3D-ish objects: outline dash 0.6 s → face opacity 0.3 s → extrusion depth 0.5 s, starting from a sparkle (style:fake3d). One pen weight family (e.g. 4 and 8 px), one ink + one highlight; primary path 6 px round, secondary 3 px, grid 1.5 px at 1080 width. Proof film whiteboard-draw follows a human order: title (RTL mask) → red underline from the right → sun circle overshooting its start, then hatching, then 8 rays → water drop → two causal arrows → cross-hatched pot and plant → 'النتيجة: نمو' with a red circle. **أرقام / params:** 0/900/1300/1600/2300/4000 ms.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md` · `kosif-tool/playbooks/hand-drawn.md:36` · `kosif-tool/templates/STYLE.md` · `kosif-tool/styles/fake3d`
 
 #### DRAW-05 · رابط مخطط برأس سهم · Diagram edge draw-on with arrowhead · 🟢 جاهز / ready
 - **ماذا / what:** رابط بين عقدتين يُرسم ثم يظهر رأس السهم في آخر 80 ملّي ثانية. — A connector draws, then its arrowhead appears in the last 80 ms.
@@ -66,11 +66,11 @@ function drawOn(path, t, t0, t1, ease = Ease.inOutCubic) {
 - **كيف / how:** Remotion Edge: strokeDasharray = len, strokeDashoffset = len·(1 − p), markerEnd only when p > 0.95; html-canvas: pathLength="1", dashoffset = 1 − KOSIF.prog(t, t0, t1, Ease.inOutCubic); 900–1200 px/s ease-in-out cubic; stroke #9fb0cc 4 px. **أرقام / params:** 900–1200 px/s; arrowhead last 80 ms.
 - **الدليل / proof:** `kosif-tool/playbooks/diagrams.md:28` · `kosif-tool/starters/html-canvas/timeline.js`
 
-#### DRAW-06 · رأس يتبع الخط: يد، ماركر، طباشيرة · Pen-tip followers: hand, marker, chalk · 🟢 جاهز / ready
+#### DRAW-06 · رأس يتبع الخط: يد، ماركر، طباشيرة · Pen-tip followers: hand, marker, chalk · ✅ مُثبت هنا / proven here
 - **ماذا / what:** صورة يد أو ماركر أو طباشيرة مثبتة على طرف الخط الجاري، تميل معه وتُرفع بين الضربات. — A hand, marker or chalk sprite pinned to the live stroke tip, tilting with it and lifting between strokes.
 - **متى أستخدمها / when:** سبورة، شرح بالماركر، معادلات طباشير — whiteboard, marker explainers, chalk formulas.
-- **كيف / how:** tip = path.getPointAtLength(p·len) (clamp to len − 1e-4 to avoid null); hand lags 1 frame and rotates ±5° with direction, removed during holds; marker sprite (body + coloured cap) at −35°…−40°, cap recoloured to the active ink, lift 200 ms with a growing shadow (2→10 px offset); chalk 60×12 px rounded rect tinted to the stroke, lift scale 1→1.08 over 250 ms along an eased path; the playbook's Remotion DrawnPath draws a 5 px tip circle. **أرقام / params:** lag 1 f; ±5°; marker −35°; lift 200–250 ms.
-- **الدليل / proof:** `kosif-tool/playbooks/hand-drawn.md:27` · `kosif-tool/styles/whiteboard` · `kosif-tool/styles/chalkboard` · `kosif-tool/styles/pm-lemomo-ai-0d9cff`
+- **كيف / how:** tip = path.getPointAtLength(p·len) (clamp to len − 1e-4 to avoid null); hand lags 1 frame and rotates ±5° with direction, removed during holds; marker sprite (body + coloured cap) at −35°…−40°, cap recoloured to the active ink, lift 200 ms with a growing shadow (2→10 px offset); chalk 60×12 px rounded rect tinted to the stroke, lift scale 1→1.08 over 250 ms along an eased path; the playbook's Remotion DrawnPath draws a 5 px tip circle. Proof film whiteboard-draw draws the marker in code (felt tip, collar, gradient barrel, ink-coloured band and cap), lifts it between strokes with sin(πu) on an inOutCubic travel while its shadow moves away, recolours it on pen swaps, and the camera follows 7% of its mean position over the last 0.9 s (zoom 1.02 → 1.06). **أرقام / params:** lag 1 f; ±5°; marker −35°; lift 200–250 ms.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md` · `kosif-tool/playbooks/hand-drawn.md:27` · `kosif-tool/styles/whiteboard` · `kosif-tool/styles/chalkboard` · `kosif-tool/styles/pm-lemomo-ai-0d9cff`
 
 #### DRAW-07 · رأس متوهج يجرّ الخط · Glowing head draw · ✅ مُثبت هنا / proven here
 - **ماذا / what:** نقطة أو شرارة مضيئة تركب رأس الخط، مع نسخة شبحية أو هالة، كخط نبض أو شعاع يرسم شعارًا. — A glowing dot or spark rides the line head, with a ghost copy or halo — ECG pulses, beams drawing a logo.
@@ -125,11 +125,11 @@ function drawOn(path, t, t0, t1, ease = Ease.inOutCubic) {
 
 _العنوان يُكتب أمام العين — بالقناع للعربية، وبترتيب الضربات للاتينية._
 
-#### DRAW-15 · كتابة بقناع فرشاة من اليمين · Brush-mask write-on (RTL) · 📄 موصوف / documented only
+#### DRAW-15 · كتابة بقناع فرشاة من اليمين · Brush-mask write-on (RTL) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ضربة فرشاة سميكة تكشف عبارة عربية مكتملة من اليمين إلى اليسار — كشف لنص مُشكّل لا توليد حروف. — A thick brush stroke reveals a finished Arabic phrase right to left — a reveal of shaped text, not generated glyphs.
 - **متى أستخدمها / when:** افتتاحيات دافئة، عناوين بخط يدوي، شعار نصي — warm openings, handwritten titles.
-- **كيف / how:** Typeset the phrase in a real Arabic face (Aref Ruqaa, Marhey, Amiri), then animate a thick SVG stroke (dashoffset) or a soft-edged rect used as a mask: 0–0.5 s stroke starts, 0.5–2.5 s reveal, 2.5–4 s read; script headlines: mask wipe ~800 ms with gold gradient #f5c542→#d8a664 and soft shadow; sticky-note handwriting: one line per 500 ms; Latin goes left→right. See ARAB-22 for the soft-mask + pen-tip version. **أرقام / params:** 4 s MG-015; wipe 500–800 ms per line.
-- **الدليل / proof:** `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md` · `kosif-tool/playbooks/hand-drawn.md` · `kosif-tool/styles/pm-deebeeeff-50fcd0`
+- **كيف / how:** Typeset the phrase in a real Arabic face (Aref Ruqaa, Marhey, Amiri), then animate a thick SVG stroke (dashoffset) or a soft-edged rect used as a mask: 0–0.5 s stroke starts, 0.5–2.5 s reveal, 2.5–4 s read; script headlines: mask wipe ~800 ms with gold gradient #f5c542→#d8a664 and soft shadow; sticky-note handwriting: one line per 500 ms; Latin goes left→right. Proven in whiteboard-draw: each Aref Ruqaa line is drawn whole and shaped, revealed right → left by a 46 px gradient mask (destination-in) while the pen tip walks the ink centre of each pixel column with a 7 Hz writing tremor. See ARAB-22 for the soft-mask + pen-tip version. **أرقام / params:** 4 s MG-015; wipe 500–800 ms per line.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md` · `kosif-tool/playbooks/hand-drawn.md` · `kosif-tool/styles/pm-deebeeeff-50fcd0`
 
 #### DRAW-16 · كتابة حقيقية بترتيب الضربات (لاتيني) · True glyph write-on with stroke order (Latin) · 📦 بأمر تثبيت / one install
 - **ماذا / what:** حروف Caveat معبأة تُكشف بخطوط مركزية مخبوزة لكل حرف بترتيب الكتابة الحقيقي وسرعة قلم تتكيف مع الانحناء ورفع القلم. — Filled Caveat letters revealed by baked per-glyph centrelines in real stroke order.
@@ -155,11 +155,11 @@ _دائرة، سهم، خط تحتي، تظليل — يد المعلم فوق �
 - **كيف / how:** highlight: span inset 0 −6px, radius 3 px, scaleX 0→1 in 0.5 s power2.out at ~0.6 s, multiply blend, colour rgba(255,236,79,.62); multi-line stagger 0.3 s; Arabic starts the swipe from the RIGHT (transform-origin right) and checks contrast; circle: 3 px ellipse border-radius 50% with slight rotation, back.out(1.7) 0.6 s; burst: 12 lines at 30° steps, 40–80 px, stagger 0.03 s; scribble: wavy path 3 px round caps drawn by dashoffset; sketch-out: rough rectangle. Underlines: ::after scaleX 0→1 swapping transform-origin (enter from one side, leave from the other) 0.4 s expo-out, or background-size 0%→100% 1px; thick 4 px rule 400 ms ease-out under the last line. **أرقام / params:** 0.5 s sweep; 12 burst lines; underline 0.3–0.5 s.
 - **الدليل / proof:** `kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/css-marker-patterns.md` · `kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/css-patterns.md` · `kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-collage-textures.md`
 
-#### DRAW-19 · دائرة يدوية مرتعشة · Hand-drawn circle emphasis · 👁 شوهد في فيديو / seen in a reference video
+#### DRAW-19 · دائرة يدوية مرتعشة · Hand-drawn circle emphasis · ✅ مُثبت هنا / proven here
 - **ماذا / what:** إهليلج غير منتظم بحلقتين يتجاوز بدايته يُرسم حول خطأ أو رابط أو معادلة، مع علامات انفجار أو ✗. — An irregular, overshooting double-loop ellipse drawn around a target.
 - **متى أستخدمها / when:** إبراز خطأ، رابط الدعوة، وجه في صورة مصغرة — errors, CTAs, faces in thumbnails.
-- **كيف / how:** jittered ellipse path (start and end overlap ~15%), stroke 2–3 px, draw 300–700 ms by dashoffset after the content lands; extras: burst ticks around a label, a short underline and a red ✗; clickbait variant: red ring around the head (300 ms) + curved red arrow sliding in (250 ms) + yellow Impact caption with black stroke. **أرقام / params:** 300–700 ms; 2–3 px.
-- **الدليل / proof:** `kosif-tool/styles/pm-0xnfrith-5be616` · `kosif-tool/styles/pm-ik-builds-b8bdcf` · `kosif-tool/styles/pm-tak3sh8-be5012` · `kosif-tool/styles/pm-sab8a-364a5a`
+- **كيف / how:** jittered ellipse path (start and end overlap ~15%), stroke 2–3 px, draw 300–700 ms by dashoffset after the content lands; extras: burst ticks around a label, a short underline and a red ✗; clickbait variant: red ring around the head (300 ms) + curved red arrow sliding in (250 ms) + yellow Impact caption with black stroke. Proven in whiteboard-draw: a red circle closes around «نمو» as the final beat, drawn by the pressure-stroke builder (DRAW-28). **أرقام / params:** 300–700 ms; 2–3 px.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md` · `kosif-tool/styles/pm-0xnfrith-5be616` · `kosif-tool/styles/pm-ik-builds-b8bdcf` · `kosif-tool/styles/pm-sab8a-364a5a`
 
 #### DRAW-20 · خربشة توضيحية فوق الصورة · Doodle annotations on footage · 👁 شوهد في فيديو / seen in a reference video
 - **ماذا / what:** سهم ودائرة وخط تحتي تُرسم فوق الشيء المقصود، وملاحظات بخط اليد بالأزرق للصحيح والأحمر للخطأ. — Arrows, circles and underlines drawn over the referenced object; handwritten notes, blue right / red wrong.
@@ -215,12 +215,11 @@ _النقص المقصود هو ما يجعل الرسم «يدويًا»._
 - **تثبيت / install:** `npm i roughjs`
 - **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/references/tools-catalog.md` · `kosif-atlas/skills/2790-work/11181-draw-excalidraw`
 
-#### DRAW-28 · خطوط بضغط perfect-freehand · Pressure strokes (perfect-freehand) · 📦 بأمر تثبيت / one install
+#### DRAW-28 · خطوط بضغط على طريقة perfect-freehand · Pressure strokes & clipped hatching · ✅ مُثبت هنا / proven here
 - **ماذا / what:** النقاط على المسار تتحول إلى مضلع خط بعرض متغير كالحبر أو الماركر أو الطباشير، ويُرسم تدريجيًا بتمرير جزء من النقاط. — Path points become a variable-width ink/marker/chalk polygon, drawn progressively by passing a prefix of the points.
 - **متى أستخدمها / when:** سبورة ودودل وطباشير بجودة يدوية — premium whiteboard, doodle and chalk.
-- **كيف / how:** sample with getPointAtLength (clamp to L − 1e-4); getStroke(points.slice(0, n·ease(p)), {size, thinning, simulatePressure}) → fill the outline polygon; marker size 8–10 thinning .6; chalk size 6–8 thinning .5 drawn twice (halo ×2.2 at ~0.12 opacity, then the stroke); doodle 3–6 px at 720 w ink #2f2820 with pressure from sin over arc length; cache static shapes. **أرقام / params:** marker 8–10/.6; chalk 6–8/.5; halo ×2.2.
-- **تثبيت / install:** `npm i perfect-freehand`
-- **الدليل / proof:** `kosif-tool/styles/whiteboard` · `kosif-tool/styles/chalkboard` · `kosif-tool/styles/doodle`
+- **كيف / how:** sample with getPointAtLength (clamp to L − 1e-4); getStroke(points.slice(0, n·ease(p)), {size, thinning, simulatePressure}) → fill the outline polygon; marker size 8–10 thinning .6; chalk size 6–8 thinning .5 drawn twice (halo ×2.2 at ~0.12 opacity, then the stroke); doodle 3–6 px at 720 w ink #2f2820 with pressure from sin over arc length; cache static shapes. No install needed — whiteboard-draw (verified 13/13) ships its own builder: resample every 2.5 px, width = size × pressure × start taper × end taper, pressure 1.10 − 0.32·(v/vmax) (faster = thinner), start taper 0.42 + 0.58·min(1, s/16), end taper 0.30 + 0.70·min(1, (L − s)/22), felt-tip grain, outline = left/right offsets + two round caps filled with multiply so crossings darken; hatching = wavy parallel zig-zag lines drawn without lifting, then ctx.clip() to the shape (sun −35° gap 19 px, drop 35°, pot ±45° cross-hatch gap 24 px, leaves 70°/110° gap 15 px). The npm library (npm i perfect-freehand) is an alternative. **أرقام / params:** marker 8–10/.6; chalk 6–8/.5; halo ×2.2; resample 2.5 px.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md` · `kosif-tool/styles/whiteboard` · `kosif-tool/styles/chalkboard` · `kosif-tool/styles/doodle`
 
 #### DRAW-29 · حبر بصمة بضغط وتظليل · Basma INK pressure strokes & hatching · 🟢 جاهز / ready
 - **ماذا / what:** خط يُرسم تدريجيًا بطول القوس بأطراف مدببة وضغط متغير ويعيد رأس القلم، وتعبئة شكل مغلق بتظليل مائل تدريجي كالماركر. — Progressive tapered pressure strokes returning the pen head, plus progressive diagonal hatching.
@@ -250,11 +249,11 @@ _النقص المقصود هو ما يجعل الرسم «يدويًا»._
 
 _أساليب كاملة في الكتالوج ومحرر بصمة — اختر واحدًا وابنِ عليه._
 
-#### DRAW-33 · سبورة بيضاء · Whiteboard · 🟢 جاهز / ready
+#### DRAW-33 · سبورة بيضاء · Whiteboard · ✅ مُثبت هنا / proven here
 - **ماذا / what:** رسم بالماركر على سبورة خطوة بخطوة بيد أو بلا يد، متزامن مع الصوت، ثم انتقال إلى مساحة نظيفة. — Marker drawing step by step with or without a hand, synced to the voice, then a pan to clean space.
 - **متى أستخدمها / when:** دروس وشروحات بتعليق صوتي — narrated lessons.
-- **كيف / how:** python3 tools/kosif.py scaffold whiteboard <dir> (playbook hand-drawn); hold 1.5–2 s at sentence end, then pan one board-width in 800 ms ease-in-out; each sentence triggers its element's draw-on (start = sentence onset). Basma STY.whiteboard: 16:9, calm, 2.0 wps, font Marhey, bg #F4F4F1, ink #23272E, accent #E0412E, colours #1E63D6 / #E0412E / #F28C12 / #2E9B4F; sfx write=pen, line=click, end=shimmer; lines revealed right→left behind the pen. style:whiteboard wrote an Arabic title with a soft mask and marker tip. **أرقام / params:** hold 1.5–2 s; pan 800 ms; 2.0 wps.
-- **الدليل / proof:** `kosif-tool/styles/whiteboard/SKILL.md` · `kosif-tool/playbooks/hand-drawn.md:29` · `app/public/js/10_studio.js:342`
+- **كيف / how:** python3 tools/kosif.py scaffold whiteboard <dir> (playbook hand-drawn); hold 1.5–2 s at sentence end, then pan one board-width in 800 ms ease-in-out; each sentence triggers its element's draw-on (start = sentence onset). Basma STY.whiteboard: 16:9, calm, 2.0 wps, font Marhey, bg #F4F4F1, ink #23272E, accent #E0412E, colours #1E63D6 / #E0412E / #F28C12 / #2E9B4F; sfx write=pen, line=click, end=shimmer; lines revealed right→left behind the pen. style:whiteboard wrote an Arabic title with a soft mask and marker tip. Proof film whiteboard-draw (1080×1920, 10 s, 300 frames, −14.1 LUFS, 13/13): 'كيف تنمو النبتة؟' cause → effect lesson on an ivory board #f6f3ec with ±2.5% value-noise texture, fibres and faint old erase marks; inks black #1e2330, blue #1f5fd1, red #d6332b; marker squeak synthesised from the same stroke schedule. **أرقام / params:** hold 1.5–2 s; pan 800 ms; 2.0 wps.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md` · `kosif-tool/styles/whiteboard/SKILL.md` · `kosif-tool/playbooks/hand-drawn.md:29` · `app/public/js/10_studio.js:342`
 
 #### DRAW-34 · سبورة سينمائية · Whiteboard cinematic · 🟢 جاهز / ready
 - **ماذا / what:** شرح السبورة مع دفع كاميرا وعمق وتأطير درامي بين الرسومات. — Whiteboard explainer upgraded with camera dolly, depth and dramatic framing.
