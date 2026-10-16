@@ -2366,5 +2366,62 @@
    "مراجعة",
    "مفتاح"
   ]
+ },
+ {
+  "id": "GEN-X01",
+  "family": "ai-generation",
+  "domain": "motion",
+  "name_ar": "إنتاج فيديو مرجعي عبر Higgsfield",
+  "name_en": "Higgsfield reference-video production parameters and prompt skeleton",
+  "status": "key",
+  "what": "معاملات إنتاج مجرّبة لتوليد لقطات فيديو من صور مرجعية عبر Higgsfield، وهيكل برومبت يصف الأداء لا الشكل فقط. — Tested production settings for generating video shots from reference images on Higgsfield, and a prompt skeleton that directs the performance, not just the look.",
+  "when": "المستخدم يريد لقطات مولدة وصرّح بالإنفاق — the user wants generated shots and has authorised spend.",
+  "how": "Stills at 2k–4k for references; video at 1080p, high bitrate, generate_audio off, 4–30 s, delivered as 24 fps HEVC; in the owner's films ≈ 12 credits per second at 1080p, ≤ 12 jobs per batch, 3–6 min per 5 s clip, plus a ~30 % reshoot reserve. Skeleton: REFERENCE DEFINITIONS / SCENE / CHARACTERS / WORLD / ACTING TASK (motive, goal, obstacle, tactic) / SHOTS with timecodes / CAMERA AND LOOK / AUDIO / CONSTRAINTS; one continuous shot with one motivated move; open mid-motion with the money moment 1–3 s in. Model names and prices drift: list the connector's current models and quote cost before generating; never spend without explicit approval.",
+  "params": "1080p; 4–30 s; ≈ 12 credits/s; reserve 30 %; ≤ 12 per batch",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
+  ],
+  "styles": [],
+  "tags": [
+   "higgsfield",
+   "reference video",
+   "prompt skeleton",
+   "credits",
+   "توليد فيديو",
+   "برومبت"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
+ },
+ {
+  "id": "GEN-X02",
+  "family": "ai-generation",
+  "domain": "motion",
+  "name_ar": "توليد متصل ثم قص",
+  "name_en": "One continuous generation, then cut",
+  "status": "documented",
+  "what": "ولّد لقطة طويلة متصلة ثم قصّها على إيقاع المرجع، بدل توليد كل لقطة وحدها. — Generate one long continuous take and cut it to the reference rhythm instead of generating every shot separately.",
+  "when": "ريل مولّد بإيقاع قطع سريع — a generated reel with fast cutting.",
+  "how": "Plan the takes from the reference's cut rhythm; prompt the continuous take so any 0.8 s window stands as its own shot; cutting one generation reached 77 % usable footage versus 21 % for one generation per shot (3 calls gave 13 s). Sample shot lengths from the reference distribution, not its mean; when supplementing footage use its detected shot boundaries; crop the capture app's UI from borrowed screen recordings (temporal-variance masks keep animated chrome). Re-encode the cuts (FOOT-X03).",
+  "params": "any 0.8 s window = a shot; 77 % vs 21 % usable",
+  "install": "",
+  "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
+  "proof": [
+   "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "generation",
+   "continuous take",
+   "cadence",
+   "reel",
+   "توليد",
+   "قص",
+   "إيقاع"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md"
  }
 ]

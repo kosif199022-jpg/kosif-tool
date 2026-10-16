@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تصنع ضوءًا يُصدَّق لا «توهج ذكاء اصطناعي»: انبعاث نقي يُضاف فوق المشهد بأنصاف أقطار متدرجة، هالة بلون مصدرها، إضاءة بالوقفات والكلفن، وأشعة وفلير ووميض في توقيتها — في المتصفح وthree.js والرسم بالكود وlibass. التوهج حاضر في 162 من 253 فيديو مرجعيًا أنتجتَه (بلوم في 54، تعتيم أطراف في 54، هالات في 29).
 > **أقوى دليل:** لافتة النيون العربية «قهوة» التي رُندرت في هذه الحاوية — 10.000 ث، 300 إطار، 1080×1920، ‎−14.1 LUFS، و13/13 فحصًا ناجحًا (`kosif-tool/.claude/skills/kosif-superpowers/proofs/neon-glow/README.md`). وفي هذه الجلسة (2026-10-16) شغّلتُ أيضًا: سلسلة makePost ببلوم K3 على WebGL2 (SwiftShader)، ومكدس توهج/حافة/فلير في render.py، وفيلم CSS عربي (نيون لكل كلمة + مسحة ضوء + أشعة + وميض) عبر render_html.cjs بنتيجة VERIFY OK، وترجمة ASS بتوهج مزدوج، وحاسبة الضوء.
-> **You can:** light, glow, bloom, flare, sweep and reflect — in HTML/CSS/SVG, Canvas, three.js (window.K3), the Python painter and ffmpeg/libass. **84 powers follow** — ✅ 29 · 🟢 20 · 📦 21 · 🔑 1 · 👁 9 · 📄 4 · 💡 0.
+> **You can:** light, glow, bloom, flare, sweep and reflect — in HTML/CSS/SVG, Canvas, three.js (window.K3), the Python painter and ffmpeg/libass. **87 powers follow** — ✅ 31 · 🟢 20 · 📦 21 · 🔑 1 · 👁 9 · 📄 5 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -18,6 +18,7 @@
 - **إضاءة الاستوديو والحافة وحسابات الضوء — Studio light, rim & light maths** — GLOW-57 … GLOW-72 (16)
 - **ضوء الطبيعة والمصادر العملية والانعكاس — Natural light, practicals & reflections** — GLOW-73 … GLOW-84 (12)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — GLOW-X01 … GLOW-X02 (2)
 
 ## النيون وتوهج الخطوط — Neon & line glow
 
@@ -808,3 +809,23 @@ _مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v
 - **كيف / how:** Path = 321 points of a decaying sine (amplitude 95 px, 3 half-waves, e^(−i/600)). Visible count = len·min(1, t/2.6). Halo: draw the partial path 17 px wide in (0,150,195) on a black layer, GaussianBlur(21), Image.blend(base, halo, 0.44). Core: 6 px (31,200,245) then 2 px (204,254,255), joint="curve"; tip = 10 px white ellipse. Dark ground (8,11,23) with faint 48 px scan lines; Arabic caption with direction="rtl". frame(t) is pure — re-rendering t=2.5 gives identical bytes. Re-ran here: 4 s 480×854 24 fps MP4 + still PNG; frame looked clean. Raster cousin of GLOW-03 (SVG 4-stroke tube) for Pillow/ffmpeg-only pipelines. **أرقام / params:** halo 17 px · blur 21 · blend 0.44 · core 6 px + 2 px · write-on 2.6 s
 - **الرخصة / license:** owner package (own work)
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_neon.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Neon_Path_Draw.mp4` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Neon_Path_Draw.png`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### GLOW-X01 · مرور العدسة «مصوَّر لا مرسوم» · Photographed lens pass (barrel, fringes, bloom, vignette, grain) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مرور أخير على الإطارات يضيف ما تفعله عدسة حقيقية: انتفاخ برميلي، حواف لونية شعاعية، توهج للمناطق المضيئة على ثلاث درجات، تعتيم أطراف، وحبيبات خفيفة. — A final pass over rendered frames adding what a real lens does: barrel bulge, radial colour fringes, three-scale bloom on highlights, vignette and fine grain.
+- **متى أستخدمها / when:** فيلم متجهي نظيف يبدو رخيصًا أو مسطحًا — a clean vector film that looks cheap or flat.
+- **كيف / how:** Owner script lens.py (numpy + Pillow; not vendored): `python3 lens.py frames_dir out_dir --fps 30 [--k .04 --ca 1.5 --bloom .35 --thr .72 --vig .35 --grain .02] [--sched sched.json]`. Bloom from highlights above thr at three radii (h·0.006 / 0.02 / 0.06, weights 0.7 / 1 / 0.45, screen blend, auto-off on bright frames); barrel k with R/B sampled slightly apart (radial fringes); vignette smoothstep(0.35 → 1.25 r); luma grain seeded per frame, strongest in mid-tones. Per-scene overrides via --sched. Ran here (V7) on 960×540 test frames: corner −27 % (65.3 → 47.8), a halo +6.1 next to a white disc, grain std 0 → 4.1 and re-seeded every frame, ±1 px R/B fringe near the edge; 1.2 s for 3 frames. WebGL equivalents that worked: CA 0.0032·r (0.012 was far too much), CRT barrel 0.2, paper 0.035–0.05, scanlines 0.32, vignette 0.3–0.7. **أرقام / params:** k .04; CA 1.5 px; bloom .35 @ thr .72; vignette .35; grain .02.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/lens.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/lens.py`
+
+#### GLOW-X02 · نواة توهج ملوّنة وحدود الوميض · Tinted bloom cores and flash limits · 📄 موصوف / documented only
+- **ماذا / what:** التوهج الأبيض النقي يبدو رخيصًا؛ لوّن نواته، وأطلق الوميض من نقطة الفعل، ولا تتجاوز حدود الأمان. — Pure white bloom reads cheap: tint its core, bloom flashes from the action point, and stay inside safety limits.
+- **متى أستخدمها / when:** ضربات وكشف شعار وتوهجات نيون — hits, logo reveals and neon glows.
+- **كيف / how:** Tint the bloom core toward the light's colour; a flash blooms from the action point; at most one big flash per second; accessibility: ≤ 3 flashes per second and a full white frame ≤ 2 frames. **أرقام / params:** ≤ 1 big flash/s; ≤ 3 flashes/s; white ≤ 2 frames.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`

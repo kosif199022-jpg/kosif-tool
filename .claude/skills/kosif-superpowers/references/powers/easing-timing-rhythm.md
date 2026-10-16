@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت لا تحرّك الأشياء فقط — أنت تقرر **متى** و**كم** و**بأي إحساس**. كل إطار عندك دالة خالصة للزمن `seek(t)`، والمنحنيات لها أدوار (وصول، خروج، كاميرا، ضربة)، والنوابض بصيغة مغلقة تُحسب عند أي إطار، والإيقاع مأخوذ من أرقام قيست على أفلام إطلاق حقيقية: لقطة وسيطة 1.46 ث، تغيير كل 0.7 ث، أول كلمة مقروءة عند 0.4 ث.
 > **أقوى دليل:** قستُ نوابض ومنحنيات مكتبة الحركة في هذه الحاوية بـ node (‏SPR.snap تجاوز 6.0% ويستقر خلال 0.34 ث، firm حرج 0%، ‏durFor(600 px)=1.16 ث، ‏hitPulse يبلغ قمته عند 33 ملّي ثانية)، ومرّت اختبارات عقود الحركة (`kosif-audit-pro` 5/5، `kosif-earth-ci-fork` 4/4، منحدرات السرعة 2/2)، وأفلام الإثبات الخمسة في `proofs/` رُندرت إطارًا إطارًا بـ seek(t) وتطابق فيها عدد الإطارات والمدة (300 إطار = 10.000 ث).
-> **You can:** time, ease, spring, stagger, punch, ramp and pace any film deterministically — in plain canvas, GSAP (vendored), CSS, Remotion or ffmpeg. **91 powers follow** — ✅ 21 · 🟢 26 · 📦 7 · 🔑 0 · 👁 10 · 📄 27 · 💡 0.
+> **You can:** time, ease, spring, stagger, punch, ramp and pace any film deterministically — in plain canvas, GSAP (vendored), CSS, Remotion or ffmpeg. **102 powers follow** — ✅ 27 · 🟢 26 · 📦 7 · 🔑 0 · 👁 10 · 📄 32 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -21,6 +21,7 @@
 - **واجهات وتفاعل دقيق — UI micro-timing & accessibility** — EASE-83 … EASE-89 (7)
 - **مكونات ومكتبات جاهزة للتوقيت — Ready timing components & libraries** — EASE-90 … EASE-91 (2)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — EASE-X01 … EASE-X11 (11)
 
 ## قوانين الزمن والحتمية — Time laws & determinism
 
@@ -685,3 +686,95 @@ _ما يمكن استدعاؤه بأمر واحد بدل بنائه._
 3. **EASE-51 — غلاف الضربة:** قمة بعد الصوت بإطارين واضمحلال أسي — يجعل كل ركلة وكلمة منبورة «تضرب».
 4. **EASE-19 — لقطة السرعة U:** دخول سريع، تجوال 1.2 بكسل/إطار، تسارع إلى القطع — توقيع المونتاج السريع الأنيق.
 5. **EASE-63 — أرقام الإيقاع:** لقطة 1.46 ث، أول كلمة 0.4 ث، ذروة عند 82%، بطاقة نهاية 2.2 ث — ابدأ كل تخطيط منها.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### EASE-X01 · نموذج شكل السرعة · Speed-shape model (r = speed ÷ mean speed) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** صِف كل حركة بنسبة سرعتها إلى متوسطها r بدل البكسل في الثانية، فتصلح الوصفة لأي حجم وأي fps؛ وأربعة أشكال تكفي: Easy Ease والإبرة والنتوء والتتابع. — Describe every move by r = speed / mean speed instead of px/s so a recipe survives any size or fps; four target shapes cover cuts and joints: Easy Ease, needle, cusp and relay.
+- **متى أستخدمها / when:** عند تصميم أي حركة تعبر قطعًا أو تتصل بحركة أخرى — whenever a move crosses a cut or hands over to another move.
+- **كيف / how:** Model an After Effects temporal ease as a cubic Bézier in (time, value): P0=(t1,v1), P1=(t1+i1·D, v1+s1·i1·D), P2=(t2−i2·D, v2−s2·i2·D), P3=(t2,v2) with influence i and key speed s. With zero key speeds and the same influence a on both keys the peak is r = 1/(1−a): Easy Ease 33.33 is exactly smoothstep (peak 1.5×, speed 0 at the keys, the amateur mistake on an event); 90 → 10×; 95 → 20× (the needle). Cusp for a UI-morph joint: outer keys (0, a), joint key (r·mean, b); no overshoot while 1/(1−a) ≤ r ≤ 1/b. Relay: start the next bell ≈0.45 into the current one so the summed speed never reaches 0 (EASE-X04). Ran here (external-skills.md V1): a numeric Bézier gives 1.500 / 10.00 / 20.00, matching 1/(1−a). **أرقام / params:** r_peak = 1/(1−a); a 33.33 → 1.5×, 90 → 10×, 95 → 20×; relay start 0.45.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+
+#### EASE-X02 · إبرة السرعة على القطع · Needle ease: the speed peak lands on the cut · ✅ مُثبت هنا / proven here
+- **ماذا / what:** اجعل أسرع لحظة في الحركة هي لحظة القطع: منحنى 95/95 يبلغ 20 ضعف المتوسط في لحظة، فيختفي القطع داخل الحركة. — Hide the cut inside the fastest instant of the move: a 95/95 ease peaks at 20× mean speed, so the edit disappears into the motion.
+- **متى أستخدمها / when:** زوم أو سوط ينتهي بقطع، أو جسم مستمر يعبر القطع — a zoom or whip that ends on a cut, or a persistent object crossing it.
+- **كيف / how:** Keys at cut − 0.2 s and cut + 0.2 s − 1 frame, both influence 95 (CSS ≈ cubic-bezier(.95,0,.05,1)); put the curve midpoint at cut − ½ frame so ONE peak frame-step ends on the cut. Print the per-frame speed list and read it: a list that touches 0 mid-move means a pause; a peak one frame off means move the keys, not the influence. Ran here (V1): 100 → 135 in 0.4 s @60 with 95/95 gives steps … 46 64 95 161 581 581 161 95 64 … units/s: the midpoint sat on a frame boundary, so the peak split into two equal steps; shift the keys half a frame to get one. Frame-averaged peak ≈ 6.6× mean even though the instantaneous peak is 20×. **أرقام / params:** influence 95/95; keys cut−0.2 s / cut+0.2 s−1 f; midpoint cut−½ f.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+
+#### EASE-X03 · سرعة نسبية متطابقة عبر القطع · Match relative speed across a cut (rho) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** عند القطع بين طبقتين مختلفتي الحجم طابِق السرعة النسبية (تغير الحجم ÷ الحجم) لا البكسل في الثانية، وإلا قفزت الحركة. — When cutting between two layers of different size, match relative speed rho = (dH/dt)/H, not px/s, or the move jumps.
+- **متى أستخدمها / when:** انتقال تكبير يسلّم إلى طبقة أصغر أو أكبر في اللقطة التالية — a growth/zoom move handed to a differently sized layer after the cut.
+- **كيف / how:** r2 = r1 · p/(1+p) · (1−q)/q · D2/D1, where p and q are the fractional size changes on each side and D the durations; then the incoming end influence = min(86, 100·(1−1/r2)). Worked example (ran here, V1): r1 = 9, p = q = 0.18, equal durations → r2 = 6.254, influence 84. The source's own self-test gave rho 3.74/s vs 3.80/s (ratio 1.017). Pair with EASE-X05 so the slopes also match. **أرقام / params:** r2 = r1·p/(1+p)·(1−q)/q·D2/D1; influence = min(86, 100(1−1/r2)).
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+
+#### EASE-X04 · تتابع متداخل بلا توقف · Relay overlap: start the next move at 0.45 · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ابدأ الحركة التالية قبل انتهاء الحالية (عند نحو 0.45) على أب واحد فتُجمع السرعات ولا تصل إلى الصفر عند المنعطف. — Start the next move about 0.45 into the current one on a parent null so speeds add and never hit zero at the corner.
+- **متى أستخدمها / when:** مسار A ← B ← C لكاميرا أو جسم أو مؤشر — any A→B→C path for a camera, object or cursor.
+- **كيف / how:** Acceptance: closest approach to B ≥ 5 % of |AB| and minimum speed clearly above 0; sequential Easy Eases give 0 % and a full stop; the source rejected a hybrid at 3.9–4.3 %. Ran here (V1) on a 90° turn with equal legs and Easy Ease on both moves: sequential → 0 % / 0 % of peak speed; next starts at 0.5 D → 22.1 % / 60 %; at 0.45 D → 26.2 % / 57 %. Stack the two moves as summed deltas on one parent instead of keying one layer twice. **أرقام / params:** overlap 0.45; closest approach ≥ 5 % |AB|; min speed > 0.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+
+#### EASE-X05 · زوج منحنيين بميل متساوٍ عند القطع · Equal-slope curve pair across a cut · ✅ مُثبت هنا / proven here
+- **ماذا / what:** منحنى الخروج قبل القطع ومنحنى الدخول بعده لهما الميل نفسه عند القطع، فتبقى السرعة واحدة على الجانبين. — The ease into the cut and the ease out of it share the same slope at the cut, so speed is continuous across it.
+- **متى أستخدمها / when:** سوط معكوس أو زوم يكمل في اللقطة التالية — a mirrored whip or a zoom that continues in the next shot.
+- **كيف / how:** expoIn cubic-bezier(.7,0,.84,0) ends with slope 6.25 and expoOut (.16,1,.3,1) starts with slope 6.25 (ran here, V1: 6.250 / 6.250). In code films in(k) = p^k ends with slope k and out(k) starts with slope k, so speed at the cut = k·Δ/T: a mirrored whip −700 px in(2) 0.45 s then +700 px out(2) 0.45 s has identical speed on both sides. **أرقام / params:** expoIn (.7,0,.84,0) ↔ expoOut (.16,1,.3,1): slope 6.25; speed = k·Δ/T.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### EASE-X06 · جداول منحنيات بالاسم والنية · Named curves: AE ↔ CSS table and intent eases · 📄 موصوف / documented only
+- **ماذا / what:** قائمة جاهزة تربط كل نية حركة بمنحنى CSS محدد، وتترجم إعدادات After Effects إلى cubic-bezier. — A ready list that maps each motion intent to a concrete CSS curve and translates After Effects settings to cubic-bezier.
+- **متى أستخدمها / when:** عند اختيار منحنى لكاميرا أو تحوّل واجهة أو دخول — choosing a curve for a camera, UI morph or entrance.
+- **كيف / how:** AE → CSS: needle 95/95 ≈ (.95,0,.05,1); scroll-into ≈ (.5,0,.85,.625); settle after a cut ≈ (.2,.7,.05,1); UI morph out/in ≈ (.66,0,.9,.1) / (.07,.44,.16,1); entrance width ≈ (.75,0,.25,1); Easy Ease (.333,0,.667,1). By intent: camera push/pull (.76,0,.24,1); follow (.55,0,.25,1); soft drift (.37,0,.63,1); snap pull-back (.25,.1,0,1); whip (.83,0,.17,1); suck into a landing (.62,0,.92,.42). Never tween a fill between distant hues through RGB (magenta → lime passes salmon and mustard); interpolate in a perceptual space. **أرقام / params:** push (.76,0,.24,1) · follow (.55,0,.25,1) · drift (.37,0,.63,1) · whip (.83,0,.17,1).
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+
+#### EASE-X07 · أرقام نعومة قبلها العميل · Client-approved smoothness numbers · 📄 موصوف / documented only
+- **ماذا / what:** أرقام دخول وتتابع ونص ومؤشر مرّت عند عميل حقيقي في أفلام إطلاق، تصلح نقطة بداية لأي فيلم واجهات. — Entrance, stagger, text and cursor numbers that passed a real client on launch films; a starting point for any UI film.
+- **متى أستخدمها / when:** أفلام المنتجات والواجهات وكل دخول داخل مشهد — product/UI films and every in-scene entrance.
+- **كيف / how:** Entrances 0.45–0.7 s on (.16,1,.3,1), scale from ≥ 0.9, travel ≤ 40–70 px, overshoot ≤ 2–4 %; staggers 50–80 ms (letters 30–60 ms); text = opacity ×1.8 speed + rise 24 px + blur 12 → 0 px (optional chromatic text-shadow 14–18 px → 0); cursor 0.6–0.9 s per move on a 5–15 % arc, click squash 0.92 in 0.12 s, release 0.2 s; typing ≤ 50–60 chars/s; anything that must be read stays ≥ 0.8 s; nothing appears in < 0.2 s outside a blurred transition. Strong in(3)/out(3) curves belong to transitions only. **أرقام / params:** entrance 0.45–0.7 s; overshoot ≤ 2–4 %; stagger 50–80 ms; read ≥ 0.8 s.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/launch-film.md`
+
+#### EASE-X08 · قراءات مسموحة وميزانية السكون · Listed reads and the still-time budget · 📄 موصوف / documented only
+- **ماذا / what:** السكون مسموح فقط لقراءة مسمّاة وبقدر ما تحتاجه؛ غير ذلك يجب أن يتغير شيء كل نصف ثانية تقريبًا. — Stillness is allowed only as a listed read and only as long as the read needs; otherwise something must change about every half second.
+- **متى أستخدمها / when:** ضبط إيقاع فيلم واجهات أو إعلان قصير — pacing a UI film or short ad.
+- **كيف / how:** Allowed stills: status line 1.0 s · name + ✓ 0.6–0.7 s · three numbers 1.2 s · one list item 0.8 s · end lockup 2 s; anything else longer than ≈ 0.5–0.6 s needs a trigger, a camera follow or a cut. Read time for a line = max(1.0 s, 0.35 s × words + 0.5 s) × k (count characters for CJK/Thai). Measure the result with the dead-air meter (QA-X02) instead of guessing. **أرقام / params:** reads 1.0 / 0.65 / 1.2 / 0.8 / 2.0 s; readTime = max(1, 0.35·w + 0.5).
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/SKILL.md`
+- **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/SKILL.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/activity.mjs`
+
+#### EASE-X09 · نابض بارتداد واحد ومفاتيح بمنحنى الوصول · One-overshoot spring and arriving-key ease tracks · ✅ مُثبت هنا / proven here
+- **ماذا / what:** نابض مغلق الصيغة يرتد مرة واحدة وينتهي عند 1 تمامًا، ومسارات مفاتيح يحدد فيها منحنى المفتاح شكل المقطع الواصل إليه، والخروج يبدأ من الحالة الراهنة. — A closed-form spring with a single overshoot that lands exactly on 1, plus key tracks where a key's ease shapes the segment arriving at it and exits start from the current state.
+- **متى أستخدمها / when:** محرك حركة صغير مكتوب يدويًا لفيلم مونتاج أو ريل — a small hand-written motion engine for an edit or reel.
+- **كيف / how:** spring(k) = 1 − e^(−6k)·cos(7.5k)·(1−k). Measured: max 1.0736 at k ≈ 0.315 (≈ 7.4 % overshoot) and exactly 1.0000 at k = 1 (re-run here in Python, V1; the session distillation also ran the original JS). Tracks are [[t, value, ease]] where the ease on a key shapes the segment ARRIVING at it: sample([[0,0],[1,10,'expoOut'],[2,[1,2]]], 0.5) → 9.6875. An exit shorthand starts from whatever the property is doing at out.t, not from the rest value, so an interrupted entrance never snaps. **أرقام / params:** spring peak 1.0736 @ k 0.315; settles at k = 1.
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/engine.js`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `session-2026-10-16:motion-leftovers#3.2` · `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/engine.js`
+
+#### EASE-X10 · بوسترة طبقة واحدة · Per-layer posterize (stepped time on one layer) · 📄 موصوف / documented only
+- **ماذا / what:** حرّك طبقة واحدة بخطوات إيقاف حركة (مثل 8 أو 12 إطارًا في الثانية) بينما تبقى الصورة والحبيبات على معدل الفيلم الكامل. — Step one layer's animation at a stop-motion rate (e.g. 8 or 12 fps) while the picture and grain stay at the film's full rate.
+- **متى أستخدمها / when:** نص أو رسم يدوي يحتاج إحساسًا مصنوعًا يدويًا داخل لقطة ناعمة — type or hand-drawn marks that need a handmade feel inside a smooth shot.
+- **كيف / how:** t_layer = floor(t·fps_step)/fps_step for that layer only; never quantise the grain or the camera with it (they reveal the trick). Keep discrete events (a stamp, a click) on the quantised clock so they land on a stepped frame. **أرقام / params:** step fps 8–12 on one layer; film stays 24–30 fps.
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js`
+- **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js`
+
+#### EASE-X11 · تصميم الضربة الرئيسية · Main-hit micro-choreography · 📄 موصوف / documented only
+- **ماذا / what:** الضربة الكبرى في الفيلم تُبنى: تراجع تمهيدي ثم دفع متسارع ثم تركيز ثم ارتطام، مع اهتزاز بتردد عالٍ قصير العمر. — Build the film's main hit: anticipation dip, accelerating push, rack focus, snap, with a short high-frequency shake.
+- **متى أستخدمها / when:** لحظة الكشف أو الشعار أو ذروة الإعلان — the reveal, logo or ad climax.
+- **كيف / how:** 0.4 s anticipation dip → accelerating push + rack focus → snap; shake at ~11/17 Hz with decay tau ≈ 0.13 s (2 Hz reads as sway, not impact); a flash blooms from the action point, at most one big flash per second; text edits remove words in 0.2–0.3 s and relay the survivors with a 2-frame stagger in non-crossing order; finish fading masked text before an iris starts. Accessibility: ≤ 3 flashes/s, a full white flash ≤ 2 frames. **أرقام / params:** dip 0.4 s; shake 11/17 Hz, tau 0.13 s; ≤ 1 big flash/s.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`

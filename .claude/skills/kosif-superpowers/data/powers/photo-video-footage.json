@@ -1448,5 +1448,151 @@
    "قص",
    "تنقية صوت"
   ]
+ },
+ {
+  "id": "FOOT-X01",
+  "family": "photo-video-footage",
+  "domain": "motion",
+  "name_ar": "انضباط مونتاج المادة الحقيقية",
+  "name_en": "Real-footage edit discipline (source-to-programme map)",
+  "status": "documented",
+  "what": "المادة الأصلية هي الأساس: احفظ مدتها وترتيبها وكلامها ووقفاتها ونسبتها وصوتها، وابنِ خريطة زمن من المصدر إلى البرنامج قبل أي إضافة. — The source is the base: keep its duration, order, speech, pauses, aspect and sound, and build a source-to-programme time map before adding anything.",
+  "when": "مونتاج متحدث أو مقابلة أو فيديو أرسله المستخدم — editing a talking head, interview or user video.",
+  "how": "Transcript + time map; account for cuts already baked into the source (never reveal stray frames of an adjacent take when returning from B-roll); when shifting a shot boundary keep the absolute timing of spoken words; choose fps from the actual source; do not upscale without reason; long videos get fewer inserts and more reading time; no presenter → no splits or presenter captions. Names, numbers, interfaces and quotes must match the source; ask about an unintelligible phrase rather than inventing it. Presenter splits: a restrained push entry only for horizontal splits with one presenter; the insert keeps its final crop through the slide; the presenter is re-cropped, never squeezed (crop aspect = card aspect).",
+  "params": "",
+  "install": "",
+  "license": "unknown (reference only)",
+  "proof": [
+   "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md",
+   "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/split-layout.js"
+  ],
+  "styles": [],
+  "tags": [
+   "footage",
+   "edit",
+   "transcript",
+   "talking head",
+   "مونتاج",
+   "مادة حقيقية",
+   "متحدث"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md"
+ },
+ {
+  "id": "FOOT-X02",
+  "family": "photo-video-footage",
+  "domain": "motion",
+  "name_ar": "فحص القدرة واختبارات قصيرة قبل التصدير",
+  "name_en": "Capability preflight and short tests before an expensive export",
+  "status": "documented",
+  "what": "قبل وعد بملف MP4 تأكد من الوصول إلى المصدر وفك الصورة والصوت وأدوات التصدير والخطوط والأقنعة، واصنع اختبارات قصيرة أولًا. — Before promising an MP4 confirm access to the source, picture and audio decode, export tools, fonts and masks, and make short tests first.",
+  "when": "بداية أي مونتاج على مادة المستخدم — the start of any edit on user footage.",
+  "how": "If something is missing say exactly what and the smallest way forward; never present HTML, code or a plan as a finished video; work on a copy (an installed skill directory may be read-only). Short tests: light and dark B-roll, B&W, typography, one split, one mask. Keep layers clean (source, inserts, text, masks, sound) and the previous version. Rights: a Pinterest find does not establish usage rights; generation is optional and needs an agreed budget; generated imagery is never presented as historical evidence. Deliver the MP4, an editable project, a dependency list and sources; if music was added, also a version without it. 'Contact sheets and numbers do not replace watching and listening'; never report an unperformed check as passed.",
+  "params": "",
+  "install": "",
+  "license": "unknown (reference only)",
+  "proof": [
+   "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "preflight",
+   "rights",
+   "b-roll",
+   "delivery",
+   "فحص مسبق",
+   "حقوق",
+   "تسليم"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md"
+ },
+ {
+  "id": "FOOT-X03",
+  "family": "photo-video-footage",
+  "domain": "motion",
+  "name_ar": "القص الدقيق بالإطار يحتاج إعادة ترميز",
+  "name_en": "Frame-accurate trims need a re-encode",
+  "status": "proven",
+  "what": "القص بنسخ التدفق دون ترميز يلتصق بالإطارات المفتاحية؛ للقص الدقيق أعد الترميز. — Stream-copy trims snap to keyframes; re-encode for frame-accurate cuts.",
+  "when": "قص لقطات على ضربات أو كلمات بدقة إطار — cutting shots on beats or words to the frame.",
+  "how": "Ran here (V8) on a 10 s 30 fps clip with a keyframe every 60 frames, asking for 1.3–3.3 s (60 frames from frame 39): output seeking with -c copy started at the next keyframe (frame 60) → 41 frames, 1.367 s; input seeking with -c copy kept 62 frames / 2.167 s; re-encoding (`ffmpeg -ss 1.3 -to 3.3 -i in.mp4 -c:v libx264 …`) gave exactly 60 frames, 2.000 s, starting at frame 39. Use -c copy only for rough, keyframe-aligned trims; use proxies (scale=960:-2, ultrafast, crf 28) for previews.",
+  "params": "copy: 41 or 62 frames vs requested 60; re-encode: 60",
+  "install": "",
+  "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md",
+   "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "trim",
+   "keyframe",
+   "gop",
+   "ffmpeg",
+   "stream copy",
+   "قص",
+   "إطار مفتاحي"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md"
+ },
+ {
+  "id": "FOOT-X04",
+  "family": "photo-video-footage",
+  "domain": "motion",
+  "name_ar": "طبقات أدوات المونتاج وحالات المشروع",
+  "name_en": "Footage editing layers and project-state hygiene",
+  "status": "documented",
+  "what": "لا تجعل أداة واحدة تفعل كل شيء: التقاط، ثم بنية بالذكاء (نص، مواضيع، مقاطع ميتة، قائمة قص)، ثم ffmpeg، ثم Remotion، ثم صوت أو صورة مولدة، ثم برنامج مونتاج للتشطيب. — Do not make one tool do everything: capture, then AI structure (transcript, topics, dead sections, edit list), then ffmpeg, then Remotion, then generated audio/visuals, then an editor for finishing.",
+  "when": "مشروع مونتاج طويل أو متعدد الأدوات — a long or multi-tool edit project.",
+  "how": "The model's job is structure: transcript, topics, dead sections, the EDL and scaffolded ffmpeg commands. Checkpoint the project before and after editor or audio-workstation changes; an API read-back is not proof it was saved; keep rendered media, the editable project and the approval as separate states; audition generated music for silence.",
+  "params": "",
+  "install": "",
+  "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
+  "proof": [
+   "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "editing pipeline",
+   "edl",
+   "ffmpeg",
+   "remotion",
+   "مونتاج",
+   "خط عمل"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
+ },
+ {
+  "id": "FOOT-X05",
+  "family": "photo-video-footage",
+  "domain": "motion",
+  "name_ar": "عقد محاكاة فيديو مرجعي",
+  "name_en": "Reference-video imitation contract (8 steps)",
+  "status": "documented",
+  "what": "لتقليد مونتاج فيديو أرسله المستخدم: افحص، حلّل، طابق النص العربي، احفظ الصوت، استخدم مادة مرخصة، ارندر فقط بأداة متاحة، افحص، ثم سلّم مع تقرير الفروقات. — To imitate a user's reference edit: inspect, analyse, match the Arabic overlay, keep the audio, use licensed assets, render only with an available executor, QA, and deliver with a discrepancy report.",
+  "when": "«اعمل مثل هذا الفيديو» أو «نفس المونتاج» — 'make it like this video' or 'the same edit'.",
+  "how": "1 inspect (ffprobe; originals read-only; timestamped deterministic frame samples) → 2 analyse (separate scene cuts from camera motion; classify cut/fade/wipe/slide/zoom-blur with measured ranges; keep uncertainty explicit) → 3 Arabic overlay (region geometry, in/out spans, font candidates not identities ARAB-X02, HarfBuzz shaping, mixed script and digits) → 4 audio (original when authorised; no invented word precision) → 5 assets (Pinterest = mood only; licensed media; never copy watermarks) → 6 render only with an exposed executor, else return the plan marked EXECUTOR_NOT_EXPOSED → 7 QA gates (MP4 exists, codec/duration/fps, non-frozen motion, safe zones, Arabic legibility, overlay timing, licence manifest, before/after storyboard; any failure blocks an 'exact match' claim) → 8 deliver MP4 + editable JSON shot plan + storyboard + font-candidate report + discrepancy summary. Not this route: a still image with the same font, Suno lyrics, motion from audio without a reference video, imitating email wording, or only downloading a link.",
+  "params": "8 steps; failed gate → no 'exact match'",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md"
+  ],
+  "styles": [],
+  "tags": [
+   "imitation",
+   "reference video",
+   "recreate edit",
+   "محاكاة",
+   "نفس المونتاج",
+   "فيديو مرجعي"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md"
  }
 ]

@@ -1,0 +1,177 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-kosif-tool/2fb85c57-7eb4-555c-b065-6435300ab234/scratchpad/proofwork/media",
+ "checks": [
+  {
+   "name": "Pillow wheel has raqm (HarfBuzz+FriBiDi) layout",
+   "ok": true,
+   "detail": "raqm 0.10.5"
+  },
+  {
+   "name": "tesseract ara+eng OCR of rendered Arabic+English (naskh/clean fonts, Western digits)",
+   "ok": true,
+   "detail": "similarity 0.99 (per line [1.0, 1.0, 0.972]) in 0.41 s; tesseract 5.3.4"
+  },
+  {
+   "name": "OpenCV deskew: minAreaRect angle within 0.5 deg of truth",
+   "ok": true,
+   "detail": "estimated -12.07 deg (true 12.00)"
+  },
+  {
+   "name": "deskew (median 3 + rotate back) recovers OCR on a 12 deg noisy scan",
+   "ok": true,
+   "detail": "similarity skewed+noisy 0.598 -> deskewed 0.912 (binarised: 0.814)"
+  },
+  {
+   "name": "Pillow encodes PNG/WebP/AVIF/JPEG; WebP q80 keeps SSIM >= 0.95",
+   "ok": true,
+   "detail": "{'png': 12008, 'webp': 5452, 'avif': 3305, 'jpeg': 15796}; PSNR 39.7 dB, SSIM 0.9823"
+  },
+  {
+   "name": "OpenCV k-means (k=4) palette recovers the 3 disc colours (< 10 RGB units)",
+   "ok": true,
+   "detail": "distances [0.9, 0.9, 2.3]"
+  },
+  {
+   "name": "ImageMagick convert: resize 50% + Gray + unsharp; identify confirms",
+   "ok": true,
+   "detail": "750 235 Gray"
+  },
+  {
+   "name": "QR: qrcode encodes UTF-8 Arabic URL, OpenCV decodes it back",
+   "ok": true,
+   "detail": "https://example.com/menu?item=قهوة&lang=ar"
+  },
+  {
+   "name": "librosa YIN pitch of the 440 Hz segment",
+   "ok": true,
+   "detail": "440.6 Hz"
+  },
+  {
+   "name": "librosa onsets of 120 BPM clicks: median spacing 0.5 s",
+   "ok": true,
+   "detail": "6 onsets, median IOI 0.501 s -> 119.7 BPM"
+  },
+  {
+   "name": "ffmpeg 2-pass loudnorm (linear) hits -14 LUFS; pyloudnorm and ebur128 agree within 0.5 LU",
+   "ok": true,
+   "detail": "in -18.05 -> out -13.96 (pyloudnorm) / -13.9 (ebur128), pass-2 mode linear"
+  },
+  {
+   "name": "ffmpeg silencedetect finds the 2.0-3.0 s gap",
+   "ok": true,
+   "detail": "starts [2.0], ends [3.00002]"
+  },
+  {
+   "name": "ffmpeg draws waveform + spectrogram PNGs",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "pydub slice + fades + MP3 export (ffprobe duration ~2.0 s)",
+   "ok": true,
+   "detail": "2.040 s"
+  },
+  {
+   "name": "ffmpeg transcode to Opus 64k keeps duration",
+   "ok": true,
+   "detail": "6.006 s, 45400 B"
+  },
+  {
+   "name": "contact.png < 300 KB",
+   "ok": true,
+   "detail": "242478 B"
+  }
+ ],
+ "numbers": {
+  "ocr_lines": [
+   "الذكاء الاصطناعي يقرأ النص العربي",
+   "سعر القهوة 15 ريالا في عام 2026",
+   "‎Invoice 2026-10 total: 1,250.75 SAR‏"
+  ],
+  "ocr_similarity_per_line": [
+   1.0,
+   1.0,
+   0.972
+  ],
+  "ocr_mean_word_conf": 90.6,
+  "skew_true_deg": 12.0,
+  "skew_estimated_deg": -12.07,
+  "ocr_sim_skewed": 0.598,
+  "ocr_sim_deskewed": 0.912,
+  "sizes_B": {
+   "png": 12008,
+   "webp": 5452,
+   "avif": 3305,
+   "jpeg": 15796
+  },
+  "webp_psnr_db": 39.74,
+  "webp_ssim": 0.9823,
+  "loudnorm_pass1": {
+   "input_i": "-18.09",
+   "input_tp": "-12.40",
+   "input_lra": "17.80",
+   "normalization_type": "dynamic"
+  },
+  "loudnorm_pass2_mode": "linear",
+  "pitch_hz": 440.6,
+  "onsets": 6,
+  "lufs_in": -18.05,
+  "lufs_out_pyloudnorm": -13.96,
+  "lufs_out_ebur128": -13.9
+ },
+ "timings_s": {
+  "ocr": 0.41
+ },
+ "findings": [
+  {
+   "what": "OCR ara psm7, Amiri-Regular 56px",
+   "text": "سعر القهوة ١٥ ريالا في عام ٢٠٢٦",
+   "similarity": 0.839,
+   "ocr": "سعر القهوة ه١‏ ريالا في عام اير"
+  },
+  {
+   "what": "OCR ara psm7, Amiri-Regular 56px",
+   "text": "سعر القهوة 15 ريالا في عام 2026",
+   "similarity": 1.0,
+   "ocr": "سعر القهوة 15 ريالا في عام 2026"
+  },
+  {
+   "what": "OCR ara psm7, Tajawal-Bold 56px",
+   "text": "رقم الهاتف ٠١٢٣٤٥٦٧٨٩",
+   "similarity": 0.512,
+   "ocr": "رقم الهاتف 9/ادمعهاراء"
+  },
+  {
+   "what": "OCR ara+eng psm7, Cairo 56px",
+   "text": "سعر القهوة 15 ريالا في عام 2026",
+   "similarity": 1.0,
+   "ocr": "سعر القهوة 15 ريالا في عام 2026"
+  },
+  {
+   "what": "OCR ara psm7, ReemKufi 56px",
+   "text": "سعر القهوة 15 ريالا في عام 2026",
+   "similarity": 0.968,
+   "ocr": "سعر القهوة 15 ريالافجي عام 2026"
+  },
+  {
+   "what": "adaptive threshold (31, C=15) after deskew on gaussian-noise scan",
+   "similarity": 0.814,
+   "note": "binarising blindly can HURT tesseract 5 (LSTM works on grayscale); measure before adding preprocessing"
+  }
+ ],
+ "versions": {
+  "pillow": "12.3.0",
+  "opencv-python-headless": "5.0.0.93",
+  "scikit-image": "0.26.0",
+  "pytesseract": "0.3.13",
+  "qrcode": "8.2",
+  "librosa": "1.0.0",
+  "soundfile": "0.14.0",
+  "pyloudnorm": "0.2.0",
+  "pydub": "0.25.1",
+  "numpy": "2.5.4",
+  "tesseract": "5.3.4",
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers"
+ },
+ "summary": "16/16 checks passed"
+}

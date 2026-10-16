@@ -1648,5 +1648,34 @@
    "خيط بصري",
    "editorial"
   ]
+ },
+ {
+  "id": "DRAW-X01",
+  "family": "hand-drawn-draw-on",
+  "domain": "motion",
+  "name_ar": "ريشة تكتب السطر الفعلي",
+  "name_en": "Quill that writes the actual line (ink frontier)",
+  "status": "documented",
+  "what": "يد بريشة تتبع حافة الحبر المتقدمة للسطر نفسه، فتبدو كأنها تكتب كلمات الأغنية حقًا. — A quill hand follows the advancing ink frontier of the line itself, so it truly seems to write the lyric.",
+  "when": "مشهد حبر على ورق في فيلم كلمات — an ink-on-paper scene in a lyric film.",
+  "how": "Compute inkFrontier(t) from the line's reveal progress and place the hand's nib on it every frame (RTL for Arabic, so the hand moves right to left); keep the hand slightly behind the frontier so ink appears under the nib.",
+  "params": "",
+  "install": "",
+  "license": "owner (song audio and lyrics are third-party; not included)",
+  "proof": [
+   "owner-upload:film_project/film/film.js"
+  ],
+  "styles": [],
+  "tags": [
+   "quill",
+   "handwriting",
+   "ink",
+   "draw-on",
+   "ريشة",
+   "كتابة يدوية",
+   "حبر"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:film_project/film/film.js"
  }
 ]

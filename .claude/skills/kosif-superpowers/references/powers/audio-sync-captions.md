@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** تجعل الصوت ساعة الفيلم: تفرّغ العربية بتوقيت الكلمات، تحاذي النص الصحيح بتشكيله على التفريغ، وتدخل كل كلمة على موعد نطقها — ثم تقيس الفرق إطارًا بإطار بدل أن تفترضه. وتحرق ترجمة كاريوكي عربية بسبعة ستايلات دون أن يتغير ترتيب الكلمات.
 > **أقوى دليل:** فيلم `proofs/arabic-voice-kinetic` (أقصى فرق 33 ms، صفر كلمات مبكرة، 15/15 كلمة) و`proofs/audio-reactive-spectrum` (تعبئة كل كلمة ≤ 35 ms بعد نطقها)؛ واختبارات الكاريوكي والقصيدة وVoice2Motion والإخراج التلقائي نجحت هنا، و`words_convert.py` حوّل SRT عربيًا أمامي.
-> **You can:** keep audio untouched, transcribe and align Arabic, estimate honestly without ASR, design and burn captions, animate words on their times and build films from sound. **58 powers follow** — ✅ 20 · 🟢 9 · 📦 7 · 🔑 1 · 👁 5 · 📄 16 · 💡 0.
+> **You can:** keep audio untouched, transcribe and align Arabic, estimate honestly without ASR, design and burn captions, animate words on their times and build films from sound. **60 powers follow** — ✅ 21 · 🟢 9 · 📦 7 · 🔑 1 · 👁 5 · 📄 17 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -19,6 +19,7 @@
 - **أفلام من الصوت — Films from sound** — SYNC-45 … SYNC-52 (8)
 - **الصمت والقص والتزامن الصوتي — Silence, cuts & audio sync utilities** — SYNC-53 … SYNC-58 (6)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — SYNC-X01 … SYNC-X02 (2)
 
 ## الصوت ساعة رئيسية وملف words.json — Audio as master clock & words.json
 
@@ -479,3 +480,23 @@ _أدوات صغيرة تمنع كوارث كبيرة: صمت مُقاس، دم�
 3. **SYNC-10 + SYNC-45 — فيلم دعاء أو قصيدة من الصوت:** النص الصحيح على أزمنة التفريغ، سطر ≤ 7 كلمات، وضوء يتنفس مع الصوت.
 4. **SYNC-46 — رسالة صوتية تصير موشن بالمعنى:** طقس وزحام ودعم واسترداد، كل جملة مشهد.
 5. **SYNC-05 — قِس قبل أن تسلّم:** «SYNC OK» أو لا تسليم.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### SYNC-X01 · تحليل أغنية لفيلم كلمات · Song analysis for a lyric film (bands, kicks, word times) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** من ملف الأغنية استخرج أغلفة طاقة لكل إطار (باس، صوت المغني، حدة)، والضربات، والإيقاع، وأزمنة تقديرية للكلمات داخل نوافذ أسطر يعطيها المستخدم، مع وسم صادق لجودة التوقيت. — From the song file derive per-frame band envelopes (low, vocal, high), kicks, tempo and estimated word times inside user-given line windows, with an honest timing-quality label.
+- **متى أستخدمها / when:** فيلم كلمات أغنية بلا تفريغ صوتي آلي متاح — a lyric film when no ASR alignment is available.
+- **كيف / how:** Per video frame (hop = sr/fps) a Hann 2048 FFT: bands low 35–160 Hz, vocal 300–3200 Hz, high 4000–11000 Hz; RMS; spectral flux on log1p; normalise each by its 98th percentile, clip 1.2, light smoothing. Kicks = low-band rises > 0.18 that are local maxima (±2 frames). BPM by flux autocorrelation limited to 60–160 (beware half-time: a ~138 BPM feel read as 69.2). Word weights ∝ max(2, len(word)); span = 0.9 × line so the held last syllable keeps a tail; snap to vocal-band onsets within 0.22 s; min gap 0.12 s. Write words.json with timing_quality = 'line windows from user; edges from vocal energy; word times estimated (not ASR)'. The session distillation re-ran it: 56.92 s, bpm ~69.2, 25 kicks; line starts matched the shipped data except 2.033 vs 2.0 and 26.3 vs 26.333 — the edge refinement almost never moves a start. Prefer real alignment when audio-sync tools are available. **أرقام / params:** bands 35–160 / 300–3200 / 4000–11000 Hz; kick rise > 0.18; snap ≤ 0.22 s; gap ≥ 0.12 s.
+- **الرخصة / license:** owner (song audio and lyrics are third-party; not included)
+- **المصدر / source:** `owner-upload:film_project/film/analyze.py`
+- **الدليل / proof:** `session-2026-10-16:motion-leftovers#4.1` · `owner-upload:film_project/film/analyze.py`
+
+#### SYNC-X02 · قفل موضع مقطع الترجمة · Caption chunk position lock · 📄 موصوف / documented only
+- **ماذا / what:** الكلمات تظهر واحدة واحدة في مكانها النهائي، والمقطع يحتفظ بموضع واحد طوال عمره حتى لو قُطعت الصورة تحته. — Words appear one by one in their final place, and a caption chunk keeps one position for its whole life even when the picture cuts underneath.
+- **متى أستخدمها / when:** ترجمات كلمة بكلمة على متحدث أو مونتاج سريع — word-by-word captions on a speaker or a fast edit.
+- **كيف / how:** Measure every word once with the real font on a canvas and justify lines across a shared width, so widths never depend on DOM timing; words arrive expo-out over 0.24 s with a small rise and blur; the block drifts up slowly; key words in an italic serif accent; validate the layout with visible word bounding boxes, not element boxes. For Arabic keep whole words and RTL order (ARAB rules). **أرقام / params:** word in 0.24 s expo-out; one position per chunk.
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js`
+- **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js`

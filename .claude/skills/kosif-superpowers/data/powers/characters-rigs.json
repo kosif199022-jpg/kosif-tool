@@ -1327,5 +1327,35 @@
    "ويبتون"
   ],
   "when": "قصص أطفال مصورة / illustrated kids' stories."
+ },
+ {
+  "id": "CHAR-X01",
+  "family": "characters-rigs",
+  "domain": "motion",
+  "name_ar": "شخصيات حية ببصمات حركة",
+  "name_en": "Alive characters: personality motion signatures",
+  "status": "documented",
+  "what": "لكل شخصية بصمة حركة رياضية (عصبي يرتجف، متعلق يقفز، نعسان يطفو)، وحركة الخمول ضعف ما يبدو صحيحًا في صورة ثابتة. — Each character gets a motion signature (grumpy jitters, clingy hops, sleepy floats), and idle motion runs at about twice what looks right in a still.",
+  "when": "شخصيات صغيرة لطيفة أو تمائم في فيلم منتج — small mascots or pets in a product film.",
+  "how": "Grumpy: jitter sin(83t)·8 + sin(61t)·5 px with huffs max(0, sin 5t)^5 and a 2.5 Hz stomp. Clingy: hops at 1.9 Hz, landing squash 1.19 / 0.83. Sleepy: float sin(2.4t)·32 px. Hyper: hops 2.6 Hz, saccade eyes sign(sin 5.2t)·|sin|^0.2·26. Arrival squash 0.1·e^(−7a)·sin(19a); blink every 1.7–2.3 s and hide awkward shape intermediates behind a blink. Vector idle: breath scaleY 1 + 0.014·sin(2.4t), head 2.5 px / 1.2°, tail 4°·sin(1.9t). SDF bodies on the CPU at ⅓ resolution, upscaled with blur(5px); snap colour-mixed backgrounds with smoothstep(.38,.62) to avoid muddy grey. Judge on 2-frame contact sheets.",
+  "params": "idle ×2; blink 1.7–2.3 s; squash 1.19/0.83; breath 1.4 %",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
+  ],
+  "styles": [],
+  "tags": [
+   "character",
+   "idle",
+   "squash",
+   "blink",
+   "personality",
+   "شخصية",
+   "خمول",
+   "رمش"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
  }
 ]

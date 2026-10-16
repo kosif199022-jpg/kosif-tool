@@ -3,7 +3,7 @@
 > **قوتك هنا:** أنت المخرج قبل أن تكون المحرّك: تسأل رسالة واحدة قصيرة بالعربية، تقترح 2–3 اتجاهات مختلفة فعلًا، تختار خطافًا يُفهم في ثانية، تبني القصة على صراع وقرار، تحمل الفيلم بشيء واحد يعبر كل اللقطات، وتختم عن قصد — وكل نبضة تضيف معلومة جديدة أو تُحذف.
 > **أقوى دليل:** خطط حتمية مجرَّبة هنا: `kmotion proplan` قسّم فيلم 11 ث إلى hook/setup/contrast/payoff/end_card عند الإطارات 0/40/119/205/277، و`story_lint.py` أعطى درجة 72 مع تحذيرات حقيقية، وموجّه `plan.py` حوّل «عايز ريل من فيديو كلام مع ترجمة وموسيقى» إلى talking_reel، واختبارات Fastify (24 اختبارًا) واختبار `test_direct_plans_like_an_editor` نجحت كلها.
 > **You can:** route any Arabic request, write the brief/plan/storyboard as data, pick hooks and arcs with second budgets, direct taste (one signature, one device, no AI-look), and run ready genre engines (talking edit, launch film, stickman, romance, dua, montage).
-> **85 powers follow** — ✅ 14 · 🟢 20 · 📦 2 · 🔑 1 · 👁 11 · 📄 37 · 💡 0.
+> **94 powers follow** — ✅ 14 · 🟢 20 · 📦 2 · 🔑 1 · 👁 11 · 📄 46 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -20,6 +20,7 @@
 - **محركات الأنواع والأفلام الجاهزة — Genre engines & ready films** — STORY-59 … STORY-77 (19)
 - **الأفكار والتغليف والتخطيط — Ideation, packaging & planning** — STORY-78 … STORY-85 (8)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — STORY-X01 … STORY-X06 (6)
 
 ## الاستقبال والتوجيه — Intake & routing
 
@@ -621,3 +622,55 @@ _مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v
 - **كيف / how:** smooth → closed-form damped spring or cubic-bezier(0.16,1,0.3,1), bounded overshoot (not everything needs a spring) · staggered → overlapping timeline with measured offsets synced to voice/beat, not a hard-coded 125 ms · alive hold → bounded micro-motion that never hurts reading · on the beat → detected onsets from the real audio · motion blur → sub-frame sampling (tmix over whole adjacent frames is not shutter blur) · Arabic writing → word/run spring + clip-path, never split("") · glyph scramble → seeded, Latin or unjoined glyphs only · line draw → getTotalLength + dashoffset + tip at getPointAtLength · elastic transition → shared geometry into the next scene (a cut is sometimes better) · mask wipe → clipPath/canvas compositing · gooey → feGaussianBlur + feColorMatrix · liquid glass → background distortion + rim light only if GPU justifies it · camera move → deterministic matrix, text inside safe zones · UI demo → rebuilt layered components, not a zoomed screenshot · seamless loop → every animated state incl. velocities periodic at the seam · deterministic seek → frame = f(t, seed, assets), verified by shuffled frame order · voice to motion → forced alignment → events → meaning → keys, ±100 ms only once measured · 3D trailer → camera spline, light rig, verified hardware. **أرقام / params:** 18 mappings
 - **الرخصة / license:** owner package (own work)
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/MOTION_TECHNIQUE_LEXICON.md`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### STORY-X01 · السيناريو أولًا وخريطة المحفزات · Scenario first: beat-grid shot table and trigger map · 📄 موصوف / documented only
+- **ماذا / what:** قبل البناء: جدول لقطات على شبكة الإيقاع وخريطة محفزات (زمن · سبب · نتيجة · كاميرا) وسؤالان على الأكثر، ثم معايرة نحو خمسة إطارات مفتاحية قبل التوسع. — Before building: a shot table on the beat grid, a trigger map (time · cause · effect · camera), at most two questions, then calibrate about five key frames before fanning out.
+- **متى أستخدمها / when:** بداية أي فيلم حركة أو إعلان — the start of any motion film or ad.
+- **كيف / how:** Show something visible within 10–15 minutes; the trigger map makes every transition motivated (TRANS-X01); key frames are approved before scenes are built in parallel; status answers give clock time, what changed, the stage, an image and a clock-time ETA, and offer to stop. 'Stop' halts everything, including credit spend. **أرقام / params:** first visible result ≤ 10–15 min; ≤ 2 questions; ~5 calibration frames.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/SKILL.md`
+
+#### STORY-X02 · ذوق العميل: من الرفض إلى قاعدة · Client taste: from rejection to rule · 📄 موصوف / documented only
+- **ماذا / what:** كل رفض من العميل يتحول إلى قاعدة مكتوبة تُطبق في الأفلام التالية. — Every client rejection becomes a written rule applied to later films.
+- **متى أستخدمها / when:** مشروع مع عميل يتكرر أو مراجعات متعددة — repeat clients or multi-round reviews.
+- **كيف / how:** Rules that transferred: flat clean vector reads cheap → add a photographed pass (GLOW-X01) and tint bloom cores; write 'differences from the references' on the storyboard (palette, shape, type, story); an era palette may be borrowed, a brand identity never; one world per film with 6–12 small true details near the hero; the single accent colour and the frame centre are reserved for the story event; 'as in the reference' = sample that range every 0.08 s and copy the motion grammar beat by beat in your own palette and type; 'code-based' means no 3D app at all, so state the toolchain in the first reply; characters idle at about 2× the amplitude that looks right in a still. **أرقام / params:** ref sampling every 0.08 s; 6–12 true details.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/client-taste.md`
+
+#### STORY-X03 · انضباط التكرار والنسخ · Iteration and version discipline · 📄 موصوف / documented only
+- **ماذا / what:** رقّم النسخ ولا تكتب فوقها، وغيّر فقط ما سُمّي، وإذا قيل «النسخة السابقة أفضل» انسخ كودها وأرقامها حرفيًا. — Number versions and never overwrite; change only named items; if told 'vN was better', copy vN's code and numbers verbatim.
+- **متى أستخدمها / when:** كل جولة تعديل — every revision round.
+- **كيف / how:** Back up the approved version; a new reference mid-project → merge its beats into the approved cut with a beat → reference table; patch-render only the changed ranges; never ship silent and never ship without frame-level QA (QA-X01 plus stills every 2 frames ±0.5 s around each cut); fix diagnosed defects before new ideas.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`
+
+#### STORY-X04 · تقديرات وقت واقعية · Realistic time estimates · 📄 موصوف / documented only
+- **ماذا / what:** قدّر وقت العمل من أرقام فعلية لا من حدس؛ التقديرات السابقة كانت أعلى من الواقع بثلاث إلى أربع مرات. — Estimate from measured actuals, not intuition; past estimates were 3–4× too high.
+- **متى أستخدمها / when:** حين يسأل المستخدم «كم سيستغرق؟» أو عند التخطيط — when the user asks how long, or when planning.
+- **كيف / how:** Storyboard 15–25 min; film 25–45 min after the go for 4–7 scene files; revision 15–40 min; an agent round 30–60 min. Actuals on four owner films: 39 min (estimated 1.5–2 h), 63 min, 1 h 53 min (two rounds), 4 h 50 min (four versions). Masters with 8 sub-frames and a 0.5 shutter take about 20 s of render per film second. **أرقام / params:** storyboard 15–25 min; film 25–45 min; revision 15–40 min.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/launch-film.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/launch-film.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+
+#### STORY-X05 · استعارات بصرية من فيلم الأغنية · Visual metaphors from the owner's song film · 📄 موصوف / documented only
+- **ماذا / what:** أدوات سرد مرسومة بالكود: وجهان متقابلان بينهما ضوء، ونجوم ترسم وجهًا، وبورتريه مصنوع من كلمات الأغنية، وسماء تمر عليها ساعات اليوم. — Code-drawn story devices: two facing profiles with light between them, stars that draw a face, a portrait made of the lyric's words, and a time-lapse sky.
+- **متى أستخدمها / when:** فيلم أغنية رومانسية أو قصة بلا لقطات حقيقية — a love-song film or a story without real footage.
+- **كيف / how:** Rubin-vase profiles: his profile fills bottom → top with her words (portrait made of text). Constellation profile: chosen profile points become stars that draw her face before they meet and complete in the finale. Time-lapse sky colour keys with sun and moon, a blossoming tree, a moon ring pulsing with the audio, meteors on the climactic word. The README traces which catalog styles inspired each idea: keep that catalog → film traceability. The whole 56.92 s 9:16 film is one deterministic canvas file with seek(t) plus three small Python tools; the song stays untouched.
+- **الرخصة / license:** owner (song audio and lyrics are third-party; not included)
+- **المصدر / source:** `owner-upload:film_project/film/README_AR.md`
+- **الدليل / proof:** `owner-upload:film_project/film/README_AR.md` · `owner-upload:film_project/film/film.js`
+
+#### STORY-X06 · اعرض ثلاث معاينات بدل الأسئلة · Show three previews instead of a questionnaire · 📄 موصوف / documented only
+- **ماذا / what:** لاكتشاف الذوق ابنِ ثلاثة إطارات معاينة مختلفة فعلًا ودع المستخدم يختار، بدل قائمة أسئلة. — To discover taste, build three genuinely different single-frame previews and let the user pick, instead of a questionnaire.
+- **متى أستخدمها / when:** بداية مشروع والمستخدم لا يعرف ما يريد — the start of a project when the user cannot describe the look.
+- **كيف / how:** Each preview is small (under ~100 lines) and shows one direction: palette, type and motion feel. Then build the chosen one with tokens. Works for decks, title cards and film looks alike. **أرقام / params:** 3 previews; < ~100 lines each.
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa)
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/frontend-slides/SKILL.md`
+- **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/frontend-slides/SKILL.md`

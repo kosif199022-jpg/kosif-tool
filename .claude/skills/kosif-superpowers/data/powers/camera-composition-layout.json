@@ -7692,5 +7692,90 @@
   ],
   "tags": [],
   "id": "CAM-421"
+ },
+ {
+  "id": "CAM-X01",
+  "family": "camera-composition-layout",
+  "domain": "motion",
+  "name_ar": "الكاميرا داخل المشاهد فقط",
+  "name_en": "Camera lives inside scenes, neutral in transition windows",
+  "status": "documented",
+  "what": "حركة الكاميرا تحدث داخل المشهد وتعود محايدة في نافذة الانتقال، وتُبنى مفاتيحها كفروق مجمّعة. — Camera moves happen inside scenes and return to neutral in transition windows; their keys are stacked deltas.",
+  "when": "أي فيلم ثنائي ونصف الأبعاد أو واجهات بكاميرا افتراضية — any 2.5D or UI film with a virtual camera.",
+  "how": "Orbits ry ≤ 2.5°, rx ≤ 1.6°; pushes ×1.02–1.09; key the camera as summed deltas on stacked nulls; counter-transform HUD chrome so it stays flat; open on a tilted pose {s 1.12, rx 14, ry −11, rz −1.5} and settle frontal over 1.4 s with bezier(.3,.3,.15,1). Depth of field on DOM layers: blur = min(18, k·|1 − D/depth|) with k 6–10; camera-move blur via feGaussianBlur = half-frame travel × 0.32, max 44 px.",
+  "params": "orbit ≤ 2.5°/1.6°; push ×1.02–1.09; DOF blur ≤ 18 px; move blur ≤ 44 px",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+  ],
+  "styles": [],
+  "tags": [
+   "virtual camera",
+   "null",
+   "orbit",
+   "depth of field",
+   "كاميرا",
+   "عمق الميدان"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+ },
+ {
+  "id": "CAM-X02",
+  "family": "camera-composition-layout",
+  "domain": "motion",
+  "name_ar": "حركات كاميرا لها دافع",
+  "name_en": "Motivated camera moves table",
+  "status": "documented",
+  "what": "كل حركة كاميرا تتبع حدثًا: مؤشر كتابة، تصدير، انفجار نتائج. — Every camera move follows an event: a typing caret, an export, a burst of results.",
+  "when": "عرض منتج تتحرك فيه الكاميرا داخل واجهة واحدة — a product demo where the camera travels inside one UI.",
+  "how": "Follow the caret: +290 px with rx 11°; crane back: distance +1450 with rx 20°; pull out on export: D × 1.62; on a burst of results: D × 2.5. Always counter-transform the HUD; never move the camera at peak velocity while text is animating.",
+  "params": "follow +290 px rx 11°; crane +1450 rx 20°; export ×1.62; burst ×2.5",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md",
+   "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
+  ],
+  "styles": [],
+  "tags": [
+   "motivated camera",
+   "follow",
+   "crane",
+   "pull out",
+   "حركة مبررة",
+   "متابعة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+ },
+ {
+  "id": "CAM-X03",
+  "family": "camera-composition-layout",
+  "domain": "motion",
+  "name_ar": "فيلم علامة بكاميرا واحدة",
+  "name_en": "Single-camera brand film",
+  "status": "documented",
+  "what": "فيلم علامة يُروى بحركة كاميرا مهيمنة واحدة وينتهي بدفع بطيء نحو العلامة لا يتراجع أبدًا. — A brand film told with one dominant camera verb that ends on a slow push toward the brand and never retreats.",
+  "when": "فيلم علامة قصير بلا قطع كثيرة — a short brand film with few cuts.",
+  "how": "One dominant verb (push, orbit or travel); every push ≥ 1.14× (smaller reads static); no peak camera velocity while text animates; end on a slow push toward the brand; a one-to-many carousel uses about 13 cards ~28° apart turning ~200°. Depth comes from a motivated camera over flat designed layouts, not from tilting UI into 3D.",
+  "params": "push ≥ 1.14×; carousel 13 cards × 28°, ~200° turn",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
+  ],
+  "styles": [],
+  "tags": [
+   "brand film",
+   "single camera",
+   "push in",
+   "carousel",
+   "فيلم علامة",
+   "كاميرا واحدة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
  }
 ]

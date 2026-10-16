@@ -3,7 +3,9 @@
 > فصل مُجمَّع آليًا من 475 ملاحظة حصاد (مستودعات KOSIF + أطلس المهارات + 253 فيديو مرجعي)، مدموجة إلى **460 قدرة** مرتبة من الأقوى دليلًا. لم يُحرَّر يدويًا بعد — تحقّق من الدليل قبل الادعاء.
 > Auto-compiled chapter: 460 powers deduplicated by name from 475 harvested atoms; strongest evidence first.
 
-**الحالة:** ✅ مُثبت هنا 27 · 🟢 جاهز 58 · 📦 بأمر تثبيت 175 · 🔑 مفتاح/خدمة 1 · 👁 شوهد في فيديو 114 · 📄 موصوف 67 · 💡 فكرة 18
+**الحالة:** ✅ مُثبت هنا 27 · 🟢 جاهز 58 · 📦 بأمر تثبيت 175 · 🔑 مفتاح/خدمة 1 · 👁 شوهد في فيديو 114 · 📄 موصوف 79 · 💡 فكرة 18 · المجموع / total 472
+
+**إضافات v2 — v2 additions:** TRANS-X01 … TRANS-X12 (12) — في آخر الفصل / at the end of this chapter.
 
 #### TRANS-01 · انتقال تطبيقات الموبايل: غمس للأسود · Phone-editor transition: dipblack · ✅ مُثبت هنا
 - **ماذا / what:** Custom transition modelling what CapCut/InShot do: dip to black.
@@ -2708,3 +2710,103 @@
 #### TRANS-460 · انزلاق مع تلاشي · Slide-up crossfade · 💡 فكرة
 - **ماذا / what:** 20 px up, 400 ms
 - **الدليل / proof:** `style:pm-techyoutbe-945b56`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### TRANS-X01 · لكل انتقال سبب يُسمّى · Every transition needs a nameable cause · 📄 موصوف / documented only
+- **ماذا / what:** الانتقال الذي لا سبب له يبدو عشوائيًا؛ اربطه بنقرة أو ضغطة مفتاح أو جسم يقترب من العدسة أو لون يفيض من زر، واستبدل التلاشي بتغيير حالة. — A transition without a cause reads as random: tie it to a click, a key press, an object at the lens or a colour flooding from a button, and replace fades with state changes.
+- **متى أستخدمها / when:** تخطيط أي فيلم إطلاق أو ريل سريع — planning any launch film or fast reel.
+- **كيف / how:** Hard cuts with the speed peak on the cut feel energetic; object transitions without a cut feel premium. Cut on the music grid (0.5 s multiples at 120 BPM) and shorten shots toward the climax (e.g. 0.85 s then 0.65 s). State changes instead of opacity: tile flip 0.42 s, push-swap, a hard font swap per beat with a 6 % pulse, clip-path wipe, panels sliding out from under. Nothing important appears or disappears by opacity alone: it is carried, grown, pushed, wiped or morphed. **أرقام / params:** cuts on 0.5 s grid @120 BPM; tile flip 0.42 s; font swap pulse 6 %.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/SKILL.md`
+
+#### TRANS-X02 · زوم الإبرة على جسم مستمر · Needle zoom on a persistent object · 📄 موصوف / documented only
+- **ماذا / what:** جسم واحد يبقى بينما تُقطع الخلفيات تحته ثلاث مرات في الثانية؛ الإبرة تمر عبر القطع دون أن تُرى. — One object persists while the backgrounds hard-cut beneath it three times a second; the needle carries it through the cut unseen.
+- **متى أستخدمها / when:** شعار أو منتج يبقى في المركز عبر عدة لقطات — a logo or product staying centre-frame across several shots.
+- **كيف / how:** needle(t, cut, 1, 1.12): keys at cut − 0.2 s and cut + 0.2 s − 1 frame, cubic-bezier(.95,0,.05,1); backgrounds hard-cut about 3×/s and never scale. Move the pivot first (one film moved the pivot to the centre of the letter O over 1.92–2.22 s before an x⁵ zoom at 2.05–2.5 s). Parallax: layers behind zoom at scale^0.6, layers in front at scale^1.35. Needles beyond ×9 need 16–24 motion-blur sub-frames. **أرقام / params:** ×1 → 1.12 over ±0.2 s; parallax s^0.6 / s^1.35; ×9+ → 16–24 sub-frames.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X03 · استمرار الطيران عبر الأشياء · Fly-through continuation rule · 📄 موصوف / documented only
+- **ماذا / what:** إذا طارت الكاميرا داخل شيء فاللقطة التالية تبدأ أصغر وتتباطأ نحو الداخل؛ لا تبدأ كبيرة ثم تنكمش. — If the camera flies into something, the next shot starts smaller and decelerates inward; never start it large and shrink.
+- **متى أستخدمها / when:** انتقال «داخل الشاشة» أو داخل حرف أو زر — a dive into a screen, a letter or a button.
+- **كيف / how:** Example that shipped: A ×1.04 → ×12 with an x⁵ curve over 0.45 s; B ×0.26 → ×1 with out() over 0.9 s plus 4 % drift. A rejected version started B at ×5.2 and shrank. Exception: when the cut frame is a solid colour (A ×1 → ×12 expoIn 0.48 s until colour fills the frame) B may start at ×5.2 → ×1. Lockup dive: ×1 → ×3.4 in(2) 0.35 s, fade only in the last 0.17 s, thin chrome fades first; incoming letters ×1.9 → ×1 out(3) with 15–20 ms stagger. Size match: a dive with into-bezier (.5,0,.85,.625) 0.58 s where the tile width at the cut equals the next prompt-bar width. Check the cut with QA-X04. **أرقام / params:** A ×1.04→×12 x⁵ 0.45 s · B ×0.26→×1 0.9 s + 4 % drift.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X04 · حمل الجسم بإحداثيات الشاشة · Object carry contract in screen pixels · 📄 موصوف / documented only
+- **ماذا / what:** لنقل عنصر من مشهد إلى آخر يرسم المشهد القادم نسخة مطابقة في المستطيل نفسه على الشاشة ويخفي الأصل تحتها، فلا يرى المشاهد أي قفزة. — To carry an element between scenes, the incoming scene draws an identical copy at the same on-screen rect and hides the original under it, so nothing jumps.
+- **متى أستخدمها / when:** بطاقة أو صورة أو زر ينتقل بين مشهدين بكاميرتين مختلفتين — a card, image or button travelling between scenes with different cameras.
+- **كيف / how:** Agree on screen pixels: screen = 960 + s·(local − 960) with a neutral camera; the outgoing scene reports the element's screen rect, the incoming one draws its copy there. Lift ×1.05–1.12 with a growing shadow over 0.1 s, travel on smooth(), set down. Grow-from-a-point variant: results start at the Generate button centre at ×0.06, fly on arcs, bank −6…+5° → 0, opacity front-loaded over 0.06 s, centre item first, sides +0.06 / +0.12 s. **أرقام / params:** lift ×1.05–1.12 + shadow 0.1 s; grow from ×0.06; side stagger 0.06/0.12 s.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X05 · اللطخة والسوط بطبقات وزوج التأرجح · Smear, layered-parallax whip and swing pair · 📄 موصوف / documented only
+- **ماذا / what:** سوط تتحرك فيه كل طبقة بعامل سفر مختلف فيبدو كتصوير حقيقي، ولطخة تبقى معتمة وهي تعبر حافة الإطار. — A whip where every layer travels by its own factor so it reads as a real camera, and a smear that stays opaque while crossing the frame edge.
+- **متى أستخدمها / when:** انتقال سريع بين بطاقات أو شاشات أو مشاهد واجهة — a fast move between cards, screens or UI scenes.
+- **كيف / how:** Smear ≈ 1150 px with in(2) (≈ 9000 px/s at the end), opaque across the edge, fade only in the last 0.12 s. Whip: wind-up +12 px over 0.14 s, then in(3) to −1500 px in 0.3–0.55 s; travel factors dots 0.5, glow 0.7, type 1.0–1.05, UI 1.1, cursors 1.2 (lead 20 ms); x-blur ≤ 10–18 px. Swing pair: out expoIn 0.36 s / 300 px with 20–24° tilt, in expoOut 0.7 s / 600 px. Mirrored whip: −700 px in(2) 0.45 s / +700 px out(2) 0.45 s (equal speed, EASE-X05). Known failure: 0.14 s whips with 46 px blur and 5–6 empty frames read 'too sharp' → fixed with 620 px over 0.34 s. **أرقام / params:** whip 0.3–0.55 s, factors .5/.7/1/1.1/1.2; blur ≤ 10–18 px; swing 0.36 s ↔ 0.7 s.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X06 · تحوّل الواجهة بالحجم لا بالمقياس · UI morph by size, not scale (button → CTA) · 📄 موصوف / documented only
+- **ماذا / what:** عند تحويل زر إلى شريط أو بطاقة غيّر العرض والارتفاع الحقيقيين لا scale، ودع اللون يسبق الحجم. — When a button becomes a bar or card, change real width/height, not scale, and let colour lead size.
+- **متى أستخدمها / when:** عرض منتج يتحول فيه عنصر صغير إلى شاشة أو نداء إجراء — a product demo where a small element becomes a screen or CTA.
+- **كيف / how:** Morph 1 +18 % size, morph 2 −18 %; in 3D the incoming camera distance D = w·PERSP / w_screen so the copy matches on screen. Worked case: a 47×23 px button rotated 4.3° grows in log size over 0.55 s into an 800×164 pill; colour leads size; the label rolls vertically. Tile → full-frame colour match cut with in(2) 0.45 s. **أرقام / params:** ±18 % size; button→pill 0.55 s log size; tile→frame in(2) 0.45 s.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X07 · فيضان اللون من نقطة الفعل · Colour flood from the action point · 📄 موصوف / documented only
+- **ماذا / what:** خلفية جديدة تتدفق من نقطة النقر كبقعة حية متموجة الحواف لا كدائرة صلبة. — A new background floods out from the click point as a living, wobbling blob, not a hard circle.
+- **متى أستخدمها / when:** تغيير خلفية مشهد بعد نقرة أو ضغطة زر — changing a scene's background after a click or button press.
+- **كيف / how:** Base disc plus 4 radial blobs (r 820–1050 px) drifting on Lissajous paths ±140/±90 px, union of 3 wobbling circles, 420 px feather; radius R = smooth(p)·(distance to the farthest corner + 504 px); an iridescent fringe ring on the edge. **أرقام / params:** 4 blobs r 820–1050; feather 420 px; R = smooth(p)·(corner + 504).
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X08 · انسكاب الأعمدة ومنحدر التعريض · Column pour and exposure-ramp reveals · 📄 موصوف / documented only
+- **ماذا / what:** طريقتان لتبديل الخلفية بلا تلاشٍ: أعمدة تنسكب من المركز، أو صورة تُضاء تدريجيًا من العتمة بدل لوحة نصية. — Two fade-free background changes: columns pouring from the centre, or a picture brought up from darkness instead of a text plate.
+- **متى أستخدمها / when:** تبديل خلفيات بإيقاع أو كشف صورة منتج — rhythmic background swaps or a product reveal.
+- **كيف / how:** Pour: 48 px columns, centre-first stagger 0.02 + hash·0.24 + |i − n/2|/n·0.14, each column 0.34 s, a 6-glyph head. Exposure ramp: brightness(.42) saturate(.9) → 1 over 0.75 s replaces text plates and fades. Plate cuts: hard-cut background plates 3×/s with +6 % drift. Infinite band: overscan +360 px each side (2640 px wide at 1920), no camera swing in that scene, all transitions happen inside the band. **أرقام / params:** columns 48 px × 0.34 s; ramp 0.75 s; overscan +360 px.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X09 · تسليم القزحية إلى شعار · Iris hand-off into a wordmark · 📄 موصوف / documented only
+- **ماذا / what:** دائرة تنغلق على جسم دوار ثم يصبح الجسم نفسه حرفًا في الشعار. — A circle closes onto a spinning object and the object itself becomes a letter of the wordmark.
+- **متى أستخدمها / when:** نهاية فيلم تصل إلى الشعار — a film ending that lands on the logo.
+- **كيف / how:** A vinyl record spins with rotation = distance / radius · 57.3° (rolls without slipping); the clip circle shrinks from 1150 px to the record radius × 0.96; the record becomes the 'o'. Finish fading any masked text before the iris starts. **أرقام / params:** rotation = d/r·57.3°; clip 1150 px → r·0.96.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X10 · قطع الخلل بالأشرطة · Band glitch cut · 📄 موصوف / documented only
+- **ماذا / what:** خلل قصير متماثل حول القطع: أشرطة أفقية تنزاح وانحراف لوني يزداد ثم يزول. — A short symmetric glitch around the cut: horizontal bands shift and chromatic aberration swells and clears.
+- **متى أستخدمها / when:** 3–4 قطعات فقط في فيلم تقني أو ريل — only 3–4 cuts in a tech film or reel.
+- **كيف / how:** Triangular envelope g over ±0.07 s; 34 bands; a band shifts when hash > 1 − 0.55·g, by up to ±0.035 of the width, wrapped with fract(); chromatic aberration × (1 + 5g). More than 3–4 per film becomes noise. **أرقام / params:** ±0.07 s; 34 bands; shift ≤ 0.035·W; CA ×(1+5g).
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### TRANS-X11 · زوم لانهائي حول نقطة بؤرية · Focal-point infinite-zoom transition · 📄 موصوف / documented only
+- **ماذا / what:** كل مشهد يحدد نقطة ضوء يخرج منها؛ نغوص فيها فيولد المشهد التالي داخل ذلك الضوء. — Each scene names the point of light it leaves through; we dive into it and the next scene is born inside that light.
+- **متى أستخدمها / when:** فيلم أغنية أو قصة متصلة بلا قطع ظاهر — a song film or a continuous story without visible cuts.
+- **كيف / how:** Each scene function returns its outgoing focus point. Over ±0.42 s scene A is zoomed K^pe (K = 9) about the focus point while the point drifts to centre; a 35 % ghost copy at ×1.08 adds a streak; scene B is masked destination-in by a radial gradient whose radius grows 170 → 1450 px and is drawn at zA/K so it lives inside the focal light; a warm glow follows sin(πp). Good focus targets: a lit window, a point of light, a thread, an ink dot, the evening star. **أرقام / params:** K = 9; half-width 0.42 s; mask radius 170 → 1450 px; ghost 35 % ×1.08.
+- **الرخصة / license:** owner (song audio and lyrics are third-party; not included)
+- **المصدر / source:** `owner-upload:film_project/film/film.js`
+- **الدليل / proof:** `owner-upload:film_project/film/film.js` · `owner-upload:film_project/film/README_AR.md`
+
+#### TRANS-X12 · انتقالات دُفع ثمنها · Transition failures already paid for · 📄 موصوف / documented only
+- **ماذا / what:** قائمة أخطاء رفضها العميل فعلًا، كي لا تُكرر. — Failures a real client already rejected, so they are not repeated.
+- **متى أستخدمها / when:** مراجعة أي انتقال قبل الرندر النهائي — reviewing any transition before the final render.
+- **كيف / how:** Starting the shot after a fly-through larger and shrinking (×5.2 → ×1 after ×12 in) reads backwards; 0.14 s whips with 46 px blur and 5–6 empty frames read too sharp (use ~620 px over 0.34 s); chromatic aberration 0.012·r is far too much (0.0032·r is enough); 4 fixed motion-blur sub-frames look cheap (use adaptive counts, ENG-X01); animated grain on a UI film defeats the dead-air meter and doubles bitrate; opacity-only appearances read as slides; tilting flat UI into 3D to fake depth reads cheap.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`

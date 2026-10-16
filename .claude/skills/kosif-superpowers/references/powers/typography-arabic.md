@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تحرّك العربية كما تُقرأ — كلمات كاملة متصلة الحروف، من اليمين، بخطوط مفتوحة محمّلة قبل الإطار الأول، بمحرك تشكيل واحد، ومتزامنة مع الكلمة المنطوقة. 11 منشورًا فقط من 3,984 منشور موشن رصدناها كانت عربية (`kosif-studio/motion/references/x-trend-2026.md`) — العربية المتحركة الصحيحة هي ميزتك.
 > **أقوى دليل:** كاريوكي ASS عربي بحدث لكل كلمة ومرّ اختباره (`kosif-studio/tests/test_studio.py:765`) وأعدتُ رسمه في هذه الحاوية بترتيب كلمات صحيح، وقوالب الموشن المختبرة (`mtemplates.py`)، و`style:whiteboard` حيث كتبتَ عنوانًا عربيًا بقناع ناعم ورأس ماركر.
-> **You can:** shape, place, reveal, punch and caption Arabic correctly in HTML, Remotion, Pillow and libass. **90 powers follow** — ✅ 19 · 🟢 36 · 📦 6 · 🔑 0 · 👁 11 · 📄 17 · 💡 1.
+> **You can:** shape, place, reveal, punch and caption Arabic correctly in HTML, Remotion, Pillow and libass. **93 powers follow** — ✅ 19 · 🟢 36 · 📦 6 · 🔑 0 · 👁 11 · 📄 20 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -19,6 +19,7 @@
 - **الأرقام والعزل والتوطين — Numbers, bidi & localisation** — ARAB-72 … ARAB-83 (12)
 - **المحاكاة والمطابقة ومحركات الرسم — Mimic, matching & raster engines** — ARAB-84 … ARAB-90 (7)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — ARAB-X01 … ARAB-X03 (3)
 
 ## قوانين التشكيل والاتجاه — Shaping & direction laws
 
@@ -760,3 +761,30 @@ _حين يُطلب «مثل هذا المرجع» أو يُرسم النص خا�
 4. **ARAB-22 — كتابة بقناع ناعم ورأس قلم:** العربية تُكتب من اليمين بحافة 4–8% وماركر يتبعها — توقيع الشرح التعليمي.
 5. **ARAB-66 — فيلم الكلمات من الصوت:** أغنية أو دعاء ← أسطر بالبرمجة الديناميكية، كلمات مفتاحية بالنبر، كلمات من العمق، وضوء يقوده الصوت.
 
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### ARAB-X01 · كشف الكلمة العربية كاملة من اليمين · RTL whole-word lyric reveal with key-word pop · 📄 موصوف / documented only
+- **ماذا / what:** كل كلمة عربية تنكشف كاملة بقناع يتحرك من اليمين إلى اليسار قبل نطقها بقليل، والكلمة المفتاحية أكبر وتنبض وتلمع بذهب متحرك. — Each Arabic word is revealed whole by a mask moving right to left just before it is sung; the key word is larger, pops and carries a moving gold sheen.
+- **متى أستخدمها / when:** فيلم كلمات أغنية أو شعر عربي — an Arabic lyric or poetry film.
+- **كيف / how:** canvas direction = 'rtl'; a clip rect grows right → left with an eOut3 curve over 0.5 s, starting 0.1 s before the word; rise 34 px; key word ×1.3 with a decaying pop 1 + 0.08·e^(−Δt/0.35) and a moving gold gradient; the active word gets an additive glow; exit with blur ≤ 10 px and rising seeded gold sparks. Letters are never split, so Arabic joining survives. **أرقام / params:** mask 0.5 s from −0.1 s; rise 34 px; key ×1.3, pop 0.08·e^(−Δt/0.35).
+- **الرخصة / license:** owner (song audio and lyrics are third-party; not included)
+- **المصدر / source:** `owner-upload:film_project/film/film.js`
+- **الدليل / proof:** `owner-upload:film_project/film/film.js`
+
+#### ARAB-X02 · ترشيح الخط لا الجزم به · Font matches are candidates, not identities · 📄 موصوف / documented only
+- **ماذا / what:** عند تقليد فيديو لا تقل «هذا الخط هو X» دون دليل؛ قدّم مرشحين بدرجة ثقة، وتأكد من الاحتياطي اللاتيني كي لا تظهر مربعات فارغة. — When imitating a video never state 'this font is X' without evidence; offer ranked candidates, and make sure there is a Latin fallback so no empty boxes appear.
+- **متى أستخدمها / when:** محاكاة فيديو مرجعي أو مطابقة هوية بصرية — imitating a reference video or matching a visual identity.
+- **كيف / how:** Report font candidates with evidence (shapes compared, sample frames); shape Arabic through HarfBuzz/RAQM; check mixed Arabic + Latin + digits in every label. Lesson from the owner's catalog renderer: a single Arabic font with no Latin fallback drew tofu boxes for 'Parallax', 'BPM', 'WebGL' inside Arabic labels.
+- **الرخصة / license:** owner
+- **المصدر / source:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md`
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md` · `session-2026-10-16:see-atlas#11.7`
+
+#### ARAB-X03 · الزخرفة والكشيدة للنبذة فقط · Unicode ornaments and kashida: bios only · 📄 موصوف / documented only
+- **ماذا / what:** النص المزخرف بالرموز والمطوّل بالكشيدة يصلح لنبذة حساب، لكنه يكسر تشكيل الحروف العربية في الفيديو المرندر. — Ornament-wrapped and kashida-stretched text is fine for a social bio but breaks Arabic shaping in rendered video.
+- **متى أستخدمها / when:** طلب «زخرفة اسم» أو نص مزين لمنصة — a request to 'decorate a name' or style text for a platform.
+- **كيف / how:** Generate decorated bio text inline when asked (frames, stars, crescents, kashida), but in motion graphics animate real words with real fonts and stretch with font features or layout, never with tatweel characters. This is the useful core of the owner's 150 text-decoration methods (30 base styles × 5 variants).
+- **الرخصة / license:** owner
+- **المصدر / source:** `owner-upload:kosif-tool-ultra/kosif-500-methods.json`
+- **الدليل / proof:** `session-2026-10-16:motion-leftovers#5` · `owner-upload:kosif-tool-ultra/kosif-500-methods.json`

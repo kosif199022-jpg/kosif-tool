@@ -2853,5 +2853,64 @@
   ],
   "when": "عندما لا يوجد دليل هوية / when there is no brand guide.",
   "section": "بطاقات العناوين والأنظمة التحريرية — Title cards, lockups & editorial systems"
+ },
+ {
+  "id": "TYPE-X01",
+  "family": "typography-latin",
+  "domain": "motion",
+  "name_ar": "نص يعبر القطع",
+  "name_en": "Type that keeps moving through cuts",
+  "status": "documented",
+  "what": "طبقات النص التوكيدي لها حركة مستمرة خاصة (انجراف، تأرجح، تباعد حروف) مستقلة عن شبكة اللقطات، فتحمل العين عبر القطع. — Emphasis type layers carry their own continuous motion (drift, sway, tracking) independent of the shot grid, so they carry the eye across cuts.",
+  "when": "مونتاج متحدث مع نصوص تأكيد ولقطات مساندة — a talking-head edit with emphasis type and B-roll.",
+  "how": "Enter styles: soft, blur, rise, cut, type, wipe, slam, pop, blurpop, draw, flicker; exits cut (default), blur, fade 0.12 s, drift 0.28 s. Reveal per word on the spoken word; *word* → italic serif accent. Use a readability halo instead of a hard drop shadow, and do not put dark plates under text: darken the background exposure and add a soft shadow (0 8px 48px rgba(0,0,0,.45)).",
+  "params": "fade 0.12 s; drift exit 0.28 s; shadow 0 8 48 px α .45",
+  "install": "",
+  "license": "unknown (reference only)",
+  "proof": [
+   "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js",
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
+  ],
+  "styles": [],
+  "tags": [
+   "kinetic type",
+   "continuity",
+   "cut",
+   "emphasis",
+   "نص متحرك",
+   "استمرار",
+   "قطع"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js"
+ },
+ {
+  "id": "TYPE-X02",
+  "family": "typography-latin",
+  "domain": "motion",
+  "name_ar": "ثلاث عائلات خطوط بمصدر واحد",
+  "name_en": "Three font families from one source of truth",
+  "status": "documented",
+  "what": "ثلاث عائلات فقط (بلا تذييل، بتذييل، أحادية)، والوزن الثقيل وزن 800 من العائلة نفسها لا عائلة رابعة، ومصدر واحد يكتب متغيرات CSS للـDOM والـcanvas معًا. — Exactly three families (sans, serif, mono); 'heavy' is weight 800 of the sans, not a fourth family; one source writes the CSS variables for both DOM and canvas.",
+  "when": "أي فيلم يجمع نص DOM ونص canvas — any film mixing DOM text and canvas text.",
+  "how": "Write the tokens once (CSS custom properties) and read them for canvas too, so the two can never drift; audit with a familyOf() check that every rendered run uses one of the three; pick faces from a rendered specimen in the real copy, and keep a face the client liked. Force-load every face before capture (ENG-X03).",
+  "params": "3 families; heavy = 800",
+  "install": "",
+  "license": "unknown (reference only)",
+  "proof": [
+   "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/fonts.js",
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
+  ],
+  "styles": [],
+  "tags": [
+   "font tokens",
+   "typography system",
+   "canvas",
+   "css variables",
+   "خطوط",
+   "نظام خطوط"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/fonts.js"
  }
 ]

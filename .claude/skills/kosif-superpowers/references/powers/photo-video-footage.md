@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** تأخذ صور المستخدم ولقطاته الخام كما هي وتصنع منها فيلمًا: تكشف القطعات، تختار أنشط النوافذ، تثبّت وتنظّف وتمسح الترجمة القديمة وتموّه المارة، ثم تحرّك الصور بكين بيرنز وبارالاكس وتضع اللقطات داخل تكوين HTML بدقة الإطار.
 > **أقوى دليل:** اختبارات `kosif-montage-motion` شغّلتُها هنا (كشف اللقطات، مترجم التايملاين ومنحدرات السرعة، دراسة المرجع mimic، الملاءمة 9:16) واختبار مسح الترجمة في `kosif-studio`، وتثبيت vidstab ولوح all-intra على مقطع اختبار، و11 وصفة ffmpeg (كروما، تشويش، zoompan، perspective، pixelize، scdet…) نجحت كلها في هذه الحاوية.
-> **You can:** source with credits, triage, cut, restore, matte, animate stills and auto-edit. **58 powers follow** — ✅ 15 · 🟢 17 · 📦 7 · 🔑 3 · 👁 2 · 📄 14 · 💡 0.
+> **You can:** source with credits, triage, cut, restore, matte, animate stills and auto-edit. **64 powers follow** — ✅ 17 · 🟢 17 · 📦 7 · 🔑 3 · 👁 2 · 📄 18 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -19,6 +19,7 @@
 - **اللقطات داخل التكوين والعرض — Footage inside compositions** — FOOT-47 … FOOT-53 (7)
 - **المونتاج التلقائي — Auto-edit workflows** — FOOT-54 … FOOT-58 (5)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — FOOT-X01 … FOOT-X05 (5)
 
 ## جلب الوسائط وحقوقها — Sourcing, ingest & rights
 
@@ -453,3 +454,47 @@ _مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v
 - **كيف / how:** ffprobe first; each range must be finite, 0 ≤ a < b ≤ duration+0.03 and ≥ 0.10 s; at most 30 cuts; refuses output == input. Per cut: trim + setpts, scale=W:H:force_original_aspect_ratio=decrease, pad centred, fps, setsar=1, yuv420p; audio atrim + asetpts + aresample=48000 (+ afftdn=nf=-25 with --denoise); concat=n:v=1:a=1; --normalize appends loudnorm=I=-16:TP=-1.5:LRA=11. No-audio sources get -an. Prints a JSON receipt (duration, streams, cuts, denoised). Re-ran here on the bundled 4 s test clip with --cut 0:1.2 --cut 2:3.4 --denoise --normalize → 2.625 s, h264 480×854 24 fps + AAC. Note: loudnorm here targets −16 LUFS; the superpowers delivery target is −14 LUFS, so pass the final mix through your own loudnorm step. **أرقام / params:** ≤30 cuts · ≥0.1 s each · afftdn nf=-25 · loudnorm I=-16 TP=-1.5 LRA=11 · crf 21 · default 480×854@24
 - **الرخصة / license:** owner package (own work)
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/video_edit.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tests/test_v3_edit.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Edited_Footage_Real.mp4`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### FOOT-X01 · انضباط مونتاج المادة الحقيقية · Real-footage edit discipline (source-to-programme map) · 📄 موصوف / documented only
+- **ماذا / what:** المادة الأصلية هي الأساس: احفظ مدتها وترتيبها وكلامها ووقفاتها ونسبتها وصوتها، وابنِ خريطة زمن من المصدر إلى البرنامج قبل أي إضافة. — The source is the base: keep its duration, order, speech, pauses, aspect and sound, and build a source-to-programme time map before adding anything.
+- **متى أستخدمها / when:** مونتاج متحدث أو مقابلة أو فيديو أرسله المستخدم — editing a talking head, interview or user video.
+- **كيف / how:** Transcript + time map; account for cuts already baked into the source (never reveal stray frames of an adjacent take when returning from B-roll); when shifting a shot boundary keep the absolute timing of spoken words; choose fps from the actual source; do not upscale without reason; long videos get fewer inserts and more reading time; no presenter → no splits or presenter captions. Names, numbers, interfaces and quotes must match the source; ask about an unintelligible phrase rather than inventing it. Presenter splits: a restrained push entry only for horizontal splits with one presenter; the insert keeps its final crop through the slide; the presenter is re-cropped, never squeezed (crop aspect = card aspect).
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md`
+- **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md` · `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/split-layout.js`
+
+#### FOOT-X02 · فحص القدرة واختبارات قصيرة قبل التصدير · Capability preflight and short tests before an expensive export · 📄 موصوف / documented only
+- **ماذا / what:** قبل وعد بملف MP4 تأكد من الوصول إلى المصدر وفك الصورة والصوت وأدوات التصدير والخطوط والأقنعة، واصنع اختبارات قصيرة أولًا. — Before promising an MP4 confirm access to the source, picture and audio decode, export tools, fonts and masks, and make short tests first.
+- **متى أستخدمها / when:** بداية أي مونتاج على مادة المستخدم — the start of any edit on user footage.
+- **كيف / how:** If something is missing say exactly what and the smallest way forward; never present HTML, code or a plan as a finished video; work on a copy (an installed skill directory may be read-only). Short tests: light and dark B-roll, B&W, typography, one split, one mask. Keep layers clean (source, inserts, text, masks, sound) and the previous version. Rights: a Pinterest find does not establish usage rights; generation is optional and needs an agreed budget; generated imagery is never presented as historical evidence. Deliver the MP4, an editable project, a dependency list and sources; if music was added, also a version without it. 'Contact sheets and numbers do not replace watching and listening'; never report an unperformed check as passed.
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md`
+- **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md`
+
+#### FOOT-X03 · القص الدقيق بالإطار يحتاج إعادة ترميز · Frame-accurate trims need a re-encode · ✅ مُثبت هنا / proven here
+- **ماذا / what:** القص بنسخ التدفق دون ترميز يلتصق بالإطارات المفتاحية؛ للقص الدقيق أعد الترميز. — Stream-copy trims snap to keyframes; re-encode for frame-accurate cuts.
+- **متى أستخدمها / when:** قص لقطات على ضربات أو كلمات بدقة إطار — cutting shots on beats or words to the frame.
+- **كيف / how:** Ran here (V8) on a 10 s 30 fps clip with a keyframe every 60 frames, asking for 1.3–3.3 s (60 frames from frame 39): output seeking with -c copy started at the next keyframe (frame 60) → 41 frames, 1.367 s; input seeking with -c copy kept 62 frames / 2.167 s; re-encoding (`ffmpeg -ss 1.3 -to 3.3 -i in.mp4 -c:v libx264 …`) gave exactly 60 frames, 2.000 s, starting at frame 39. Use -c copy only for rough, keyframe-aligned trims; use proxies (scale=960:-2, ultrafast, crf 28) for previews. **أرقام / params:** copy: 41 or 62 frames vs requested 60; re-encode: 60.
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa)
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md` · `https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md`
+
+#### FOOT-X04 · طبقات أدوات المونتاج وحالات المشروع · Footage editing layers and project-state hygiene · 📄 موصوف / documented only
+- **ماذا / what:** لا تجعل أداة واحدة تفعل كل شيء: التقاط، ثم بنية بالذكاء (نص، مواضيع، مقاطع ميتة، قائمة قص)، ثم ffmpeg، ثم Remotion، ثم صوت أو صورة مولدة، ثم برنامج مونتاج للتشطيب. — Do not make one tool do everything: capture, then AI structure (transcript, topics, dead sections, edit list), then ffmpeg, then Remotion, then generated audio/visuals, then an editor for finishing.
+- **متى أستخدمها / when:** مشروع مونتاج طويل أو متعدد الأدوات — a long or multi-tool edit project.
+- **كيف / how:** The model's job is structure: transcript, topics, dead sections, the EDL and scaffolded ffmpeg commands. Checkpoint the project before and after editor or audio-workstation changes; an API read-back is not proof it was saved; keep rendered media, the editable project and the approval as separate states; audition generated music for silence.
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa)
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md`
+- **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md`
+
+#### FOOT-X05 · عقد محاكاة فيديو مرجعي · Reference-video imitation contract (8 steps) · 📄 موصوف / documented only
+- **ماذا / what:** لتقليد مونتاج فيديو أرسله المستخدم: افحص، حلّل، طابق النص العربي، احفظ الصوت، استخدم مادة مرخصة، ارندر فقط بأداة متاحة، افحص، ثم سلّم مع تقرير الفروقات. — To imitate a user's reference edit: inspect, analyse, match the Arabic overlay, keep the audio, use licensed assets, render only with an available executor, QA, and deliver with a discrepancy report.
+- **متى أستخدمها / when:** «اعمل مثل هذا الفيديو» أو «نفس المونتاج» — 'make it like this video' or 'the same edit'.
+- **كيف / how:** 1 inspect (ffprobe; originals read-only; timestamped deterministic frame samples) → 2 analyse (separate scene cuts from camera motion; classify cut/fade/wipe/slide/zoom-blur with measured ranges; keep uncertainty explicit) → 3 Arabic overlay (region geometry, in/out spans, font candidates not identities ARAB-X02, HarfBuzz shaping, mixed script and digits) → 4 audio (original when authorised; no invented word precision) → 5 assets (Pinterest = mood only; licensed media; never copy watermarks) → 6 render only with an exposed executor, else return the plan marked EXECUTOR_NOT_EXPOSED → 7 QA gates (MP4 exists, codec/duration/fps, non-frozen motion, safe zones, Arabic legibility, overlay timing, licence manifest, before/after storyboard; any failure blocks an 'exact match' claim) → 8 deliver MP4 + editable JSON shot plan + storyboard + font-candidate report + discrepancy summary. Not this route: a still image with the same font, Suno lyrics, motion from audio without a reference video, imitating email wording, or only downloading a link. **أرقام / params:** 8 steps; failed gate → no 'exact match'.
+- **الرخصة / license:** owner
+- **المصدر / source:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md`
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md`

@@ -2468,5 +2468,93 @@
    "transition",
    "type block"
   ]
+ },
+ {
+  "id": "ARAB-X01",
+  "family": "typography-arabic",
+  "domain": "motion",
+  "name_ar": "كشف الكلمة العربية كاملة من اليمين",
+  "name_en": "RTL whole-word lyric reveal with key-word pop",
+  "status": "documented",
+  "what": "كل كلمة عربية تنكشف كاملة بقناع يتحرك من اليمين إلى اليسار قبل نطقها بقليل، والكلمة المفتاحية أكبر وتنبض وتلمع بذهب متحرك. — Each Arabic word is revealed whole by a mask moving right to left just before it is sung; the key word is larger, pops and carries a moving gold sheen.",
+  "when": "فيلم كلمات أغنية أو شعر عربي — an Arabic lyric or poetry film.",
+  "how": "canvas direction = 'rtl'; a clip rect grows right → left with an eOut3 curve over 0.5 s, starting 0.1 s before the word; rise 34 px; key word ×1.3 with a decaying pop 1 + 0.08·e^(−Δt/0.35) and a moving gold gradient; the active word gets an additive glow; exit with blur ≤ 10 px and rising seeded gold sparks. Letters are never split, so Arabic joining survives.",
+  "params": "mask 0.5 s from −0.1 s; rise 34 px; key ×1.3, pop 0.08·e^(−Δt/0.35)",
+  "install": "",
+  "license": "owner (song audio and lyrics are third-party; not included)",
+  "proof": [
+   "owner-upload:film_project/film/film.js"
+  ],
+  "styles": [],
+  "tags": [
+   "arabic",
+   "rtl",
+   "lyrics",
+   "mask reveal",
+   "كلمات عربية",
+   "كشف",
+   "قناع"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:film_project/film/film.js"
+ },
+ {
+  "id": "ARAB-X02",
+  "family": "typography-arabic",
+  "domain": "motion",
+  "name_ar": "ترشيح الخط لا الجزم به",
+  "name_en": "Font matches are candidates, not identities",
+  "status": "documented",
+  "what": "عند تقليد فيديو لا تقل «هذا الخط هو X» دون دليل؛ قدّم مرشحين بدرجة ثقة، وتأكد من الاحتياطي اللاتيني كي لا تظهر مربعات فارغة. — When imitating a video never state 'this font is X' without evidence; offer ranked candidates, and make sure there is a Latin fallback so no empty boxes appear.",
+  "when": "محاكاة فيديو مرجعي أو مطابقة هوية بصرية — imitating a reference video or matching a visual identity.",
+  "how": "Report font candidates with evidence (shapes compared, sample frames); shape Arabic through HarfBuzz/RAQM; check mixed Arabic + Latin + digits in every label. Lesson from the owner's catalog renderer: a single Arabic font with no Latin fallback drew tofu boxes for 'Parallax', 'BPM', 'WebGL' inside Arabic labels.",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md",
+   "session-2026-10-16:see-atlas#11.7"
+  ],
+  "styles": [],
+  "tags": [
+   "font matching",
+   "fallback",
+   "tofu",
+   "imitation",
+   "مطابقة الخط",
+   "خط احتياطي"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md"
+ },
+ {
+  "id": "ARAB-X03",
+  "family": "typography-arabic",
+  "domain": "motion",
+  "name_ar": "الزخرفة والكشيدة للنبذة فقط",
+  "name_en": "Unicode ornaments and kashida: bios only",
+  "status": "documented",
+  "what": "النص المزخرف بالرموز والمطوّل بالكشيدة يصلح لنبذة حساب، لكنه يكسر تشكيل الحروف العربية في الفيديو المرندر. — Ornament-wrapped and kashida-stretched text is fine for a social bio but breaks Arabic shaping in rendered video.",
+  "when": "طلب «زخرفة اسم» أو نص مزين لمنصة — a request to 'decorate a name' or style text for a platform.",
+  "how": "Generate decorated bio text inline when asked (frames, stars, crescents, kashida), but in motion graphics animate real words with real fonts and stretch with font features or layout, never with tatweel characters. This is the useful core of the owner's 150 text-decoration methods (30 base styles × 5 variants).",
+  "params": "",
+  "install": "",
+  "license": "owner",
+  "proof": [
+   "session-2026-10-16:motion-leftovers#5",
+   "owner-upload:kosif-tool-ultra/kosif-500-methods.json"
+  ],
+  "styles": [],
+  "tags": [
+   "kashida",
+   "decoration",
+   "unicode",
+   "bio",
+   "كشيدة",
+   "زخرفة",
+   "تطويل"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:kosif-tool-ultra/kosif-500-methods.json"
  }
 ]

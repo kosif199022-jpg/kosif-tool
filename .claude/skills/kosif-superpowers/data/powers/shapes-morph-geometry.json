@@ -2405,5 +2405,62 @@
    "geometric",
    "style"
   ]
+ },
+ {
+  "id": "SHAPE-X01",
+  "family": "shapes-morph-geometry",
+  "domain": "motion",
+  "name_ar": "تحوّل هندسي بلا مزج",
+  "name_en": "Geometric morph without a crossfade (letter → planet)",
+  "status": "documented",
+  "what": "حوّل شكلًا إلى آخر عبر سلسلة أشكال وسيطة تحمل النقاط نفسها، لا بمزج صورتين. — Turn one shape into another through a chain of intermediate shapes carrying the same points, never by crossfading two images.",
+  "when": "حرف من الشعار يصبح كوكبًا أو كرة أو أيقونة — a logo letter becoming a planet, sphere or icon.",
+  "how": "Letter O → ellipse → 3D ring → 6 meridian copies → wire sphere → dotted Earth: map source points onto each stage, depth-sort, draw the back half at α 0.3.",
+  "params": "6 meridians; back half α 0.3",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+  ],
+  "styles": [],
+  "tags": [
+   "morph",
+   "letter",
+   "sphere",
+   "points",
+   "تحوّل",
+   "كرة",
+   "نقاط"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+ },
+ {
+  "id": "SHAPE-X02",
+  "family": "shapes-morph-geometry",
+  "domain": "motion",
+  "name_ar": "لقطة متصلة من عناصر مشتركة",
+  "name_en": "One continuous shot from shared elements",
+  "status": "documented",
+  "what": "العناصر نفسها تعيد ترتيب نفسها من شكل إلى آخر (مروحة ثم رسم بياني ثم حلقة) فتصنع فيلمًا بلا قطع. — The same elements rearrange from one formation to the next (fan, then graph, then ring), making a film with no cuts.",
+  "when": "فيلم بيانات أو منتج بلا قطع — a data or product film without cuts.",
+  "how": "28 tiles with pose functions fan → graph → ring; greedy nearest assignment between formations; ring slots sorted by angle so paths never cross; stagger 0.014–0.02 s; pinhole projection f 1500.",
+  "params": "28 tiles; stagger 0.014–0.02 s; f 1500",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+  ],
+  "styles": [],
+  "tags": [
+   "formation",
+   "continuous shot",
+   "tiles",
+   "assignment",
+   "تشكيل",
+   "لقطة متصلة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
  }
 ]

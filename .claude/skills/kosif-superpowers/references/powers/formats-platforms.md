@@ -3,7 +3,7 @@
 > **قوتك هنا:** تسلّم فيلمًا واحدًا كأنه عشرة: كل منصة بمقاسها وحدودها ومنطقتها الآمنة، مُعاد تأطيره حول الوجه لا مقصوصًا من المنتصف، بغلاف ليس أسود، وبعلوّ −14 LUFS، ومعه نص النشر مفحوصًا بحدود كل منصة — دون أن تنشر شيئًا بنفسك.
 > **أقوى دليل:** شغّلتَ هنا `kmotion.py platforms` على فيديو اختبار فخرجت نسخ tiktok/whatsapp/youtube مع تقرير حدود، و`kmotion.py export` أخرج 9:16 و1:1 وغلافًا وGIF، واختبارا `test_platforms_table` و`test_poster_pick_and_bake` نجحا (`100-superskills/skills/kosif-montage-motion/tests/test_v6.py:180`, `100-superskills/skills/kosif-montage-motion/tests/test_launch.py:89`).
 > **You can:** pick the canvas from the destination, keep text out of platform chrome, reframe any ratio, encode web-safe masters, HLS ladders and alpha overlays, and ship per-platform files + post packs.
-> **69 powers follow** — ✅ 17 · 🟢 15 · 📦 6 · 🔑 3 · 👁 2 · 📄 26 · 💡 0.
+> **70 powers follow** — ✅ 17 · 🟢 15 · 📦 6 · 🔑 3 · 👁 2 · 📄 27 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -19,6 +19,7 @@
 - **الأغلفة والصور المصغرة والأصول الثابتة — Thumbnails, covers & static assets** — FMT-44 … FMT-54 (11)
 - **قوالب السوشيال وإيقاع الإعلانات — Social formats, ad slots & platform blocks** — FMT-55 … FMT-69 (15)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — FMT-X01 (1)
 
 ## المقاسات والنسب — Canvases & aspect ratios
 
@@ -543,3 +544,15 @@ _كل خانة إعلانية تفرض هيكلًا؛ وكل مقطع قصير �
 3. **FMT-44 — الغلاف كإطار أول:** يختفي «المربع الأسود» في كل معاينات السوشيال.
 4. **FMT-33 — حزمة النشر المفحوصة:** كابشن، وسوم، عنوان، نص غلاف وبديل — بحدود كل منصة وبلا نشر تلقائي.
 5. **FMT-32 — حزمة التسليم الكاملة:** كل النسب + غلاف بعنوان عربي + GIF/WebP في أمر واحد.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### FMT-X01 · ماستر بلا صوت وملاحظة صادقة عن الصوت · Masters with a no-sound copy and an honest audio note · 📄 موصوف / documented only
+- **ماذا / what:** سلّم الماستر ومعه نسخة بلا صوت، وقل بوضوح إن الصوت فُحص بالأرقام لا بالاستماع. — Deliver the master plus a no-sound copy, and state plainly that the audio was checked numerically, not by listening.
+- **متى أستخدمها / when:** تسليم فيلم إطلاق أو إعلان بصوت مؤقت — delivering a launch film or ad with a placeholder track.
+- **كيف / how:** Launch films: 1920×1080 30 fps H.264 with sub-frame motion blur + a _nosound master (the final sound is often made by a human in an editor). Brand masters: 1920×1080 24 fps H.264 High, BT.709, 20–30 Mbps, AAC 256k. Loudness target −14 LUFS / −1.2 dBTP, and the payoff line must stand clearly above the music (a −21 LUFS master with the payoff only +2.7 dB over music was not client-ready). **أرقام / params:** H.264 High BT.709 20–30 Mbps; AAC 256k; −14 LUFS / −1.2 dBTP.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/launch-film.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/music_window.py`

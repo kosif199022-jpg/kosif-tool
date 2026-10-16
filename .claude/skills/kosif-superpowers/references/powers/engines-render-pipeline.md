@@ -3,7 +3,9 @@
 > فصل مُجمَّع آليًا من 443 ملاحظة حصاد (مستودعات KOSIF + أطلس المهارات + 253 فيديو مرجعي)، مدموجة إلى **435 قدرة** مرتبة من الأقوى دليلًا. لم يُحرَّر يدويًا بعد — تحقّق من الدليل قبل الادعاء.
 > Auto-compiled chapter: 435 powers deduplicated by name from 443 harvested atoms; strongest evidence first.
 
-**الحالة:** ✅ مُثبت هنا 53 · 🟢 جاهز 60 · 📦 بأمر تثبيت 208 · 🔑 مفتاح/خدمة 27 · 👁 شوهد في فيديو 8 · 📄 موصوف 78 · 💡 فكرة 1
+**الحالة:** ✅ مُثبت هنا 54 · 🟢 جاهز 60 · 📦 بأمر تثبيت 209 · 🔑 مفتاح/خدمة 27 · 👁 شوهد في فيديو 8 · 📄 موصوف 82 · 💡 فكرة 1 · المجموع / total 441
+
+**إضافات v2 — v2 additions:** ENG-X01 … ENG-X05 (5) — في آخر الفصل / at the end of this chapter.
 
 #### ENG-01 · عقد تركيب HyperFrames · HyperFrames composition contract · ✅ مُثبت هنا
 - **ماذا / what:** Every film is one index.html whose root div carries data-composition-id, data-width, data-height, data-duration and data-fps, with GSAP timelines registered in window.__timelines and the motion-kit shim so either engine can seek it.
@@ -2628,3 +2630,48 @@ _مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v
 - **كيف / how:** Element types text/line/box/ring/bars; easings linear, ease_out_cubic, spring_pop (1−e^(−7t)·cos 12t). Each element animates over the first third of its life: progress = ease(min(1, 3·(t−start)/duration)); text scales from 0.5× and rises 35 px; ring draws an arc −90°→+270°; bars grow in a stagger (progress·n − k). Arabic text gets direction="rtl" through Pillow RAQM. The validator rejects odd sizes, >3840 px, fps outside 1–60, >10,800 frames, >100 elements, text >300 chars and non-normalised x/y. ffmpeg: -f rawvideo -pix_fmt rgb24 -i - -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p +faststart; optional --audio muxes AAC 160k with -shortest. Re-ran here: 480×854, 24 fps, 4.000 s in 1.7 s wall time. Honest limits seen on the decoded frame at 2.5 s: the BARS block grows up into the second title (layout bug in the sample spec) and only DejaVu is found here (no Noto Sans Arabic), yet the words joined correctly. Full-frame renderer only — no alpha overlay over footage. **أرقام / params:** 480×854 · 24 fps · 4 s · crf 23 · bounds 96–3840 px, ≤10,800 frames, ≤100 elements
 - **الرخصة / license:** owner package (own work)
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/kosif_scene_graph.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/templates/example_scene.json` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/CineGraph_Arabic_Intro.mp4` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/CINEGRAPH_CINECLAUDE_REVIEW.md`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### ENG-X01 · ضبابية حركة تكيفية · Adaptive motion-blur sample count (180° shutter) · 📄 موصوف / documented only
+- **ماذا / what:** عدد الإطارات الفرعية لكل إطار يتحدد بمقدار الحركة فيه، والإطارات الفرعية لا تعبر قطعًا حادًا أبدًا. — The number of sub-frames per frame follows how much moves in it, and sub-frames never straddle a hard cut.
+- **متى أستخدمها / when:** رندر نهائي لفيلم فيه سوط أو زوم سريع — a final render of a film with whips or fast zooms.
+- **كيف / how:** 180° shutter centred: sub-frame k of N at t = (n + 0.5·((k+0.5)/N − 0.5))/fps (N = 4 → offsets −0.1875, −0.0625, +0.0625, +0.1875 frame). Adaptive: luma difference between t−½ and t+½ frame at ¼ resolution; n = 1 if diff < 0.5, else clamp(3 + 1.6·diff, 5, 14), rounded up; ≥ 6 for rolling objects. Clamp sub-frames at hard cuts (the film publishes its hard-cut times); quantise discrete events. Four fixed sub-frames look cheap; masters with 8 sub-frames and shutter 0.5 cost about 20 s of render per film second. Extends ENG-349. **أرقام / params:** n = 1 | clamp(3 + 1.6·diff, 5, 14); ≥ 6 rolling; no straddled cuts.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+
+#### ENG-X02 · عمال رندر متداخلون وبوابة استمرار · Interleaved render workers and a continuity gate · 📄 موصوف / documented only
+- **ماذا / what:** وزّع الإطارات على العمال بالتناوب لا بكتل متصلة، وارفض الترميز إن نقص إطار واحد. — Deal frames to workers round-robin rather than in contiguous chunks, and refuse to encode if a single frame is missing.
+- **متى أستخدمها / when:** رندر فيلم طويل أو ثقيل على عدة عمليات متصفح — rendering a long or heavy film on several browser processes.
+- **كيف / how:** Worker i renders frames i, i+N, i+2N… (--from i/fps --every N) so heavy scenes are shared evenly: 3:09 versus 5:18 for contiguous chunks on the same film. Before encoding, check the frame sequence is complete (no gaps) and stop otherwise. Bitrate 24–30 Mbps for 1080p30 (15 s ≈ 45–57 MB). Serialize heavy renders and kill only your own browser processes. **أرقام / params:** interleave by N; 24–30 Mbps @1080p30.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/render_film.sh` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+
+#### ENG-X03 · أخطاء رندر دُفع ثمنها · Render bugs already paid for · 📄 موصوف / documented only
+- **ماذا / what:** قائمة أعطال حقيقية في التقاط المتصفح والرندر بالبايثون مع علاجها، تُفحص قبل أي رندر كبير. — Real failures in browser capture and Python rendering with their fixes, to check before any big render.
+- **متى أستخدمها / when:** قبل رندر متوازٍ أو نهائي — before a parallel or final render.
+- **كيف / how:** One DevTools port per parallel capture (shared ports mixed scenes); document.fonts.ready resolves before unused faces load → force-load every face (7–20 px layout drift otherwise); measuring a display:none element returns 0; browser profiles fill the disk (ENOSPC) → clean temp profiles; ProcessPool code needs an `if __name__ == '__main__'` guard; relative output paths silently lose the MP4; file:// taints canvas → `--allow-file-access-from-files`; a grain tile in a pooled canvas is cleared on reuse; SDF squash without rescaling distance becomes a blob; clip-path: inset() cuts glyph tops → negative insets −20…−60 %; Pillow floodfill on an array-backed image is a no-op → .copy() first; set globalAlpha by multiplying, not assigning. For offline determinism vendor fonts and libraries instead of loading them from a CDN. **أرقام / params:** negative clip insets −20…−60 %; one port per worker.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md` · `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/SKILL.md`
+
+#### ENG-X04 · خط رندر فيلم الأغنية · Song-film render pipeline (seek → JPEG → ffmpeg, song untouched) · 📄 موصوف / documented only
+- **ماذا / what:** فيلم أغنية كامل من ملف canvas واحد: المتصفح يقفز إلى كل زمن، يصدّر صورة، وffmpeg يرمّز، ثم تُدمج الأغنية دون تعديل. — A full song film from one canvas file: the browser seeks each time, exports an image, ffmpeg encodes, and the song is muxed unchanged.
+- **متى أستخدمها / when:** فيلم كلمات أو موسيقى مرسوم بالكامل بالكود — a lyric or music film drawn entirely in code.
+- **كيف / how:** Playwright evaluates seek(t); canvas.toDataURL('image/jpeg', 0.9) for each frame (wait for window.FILM_READY); pipe MJPEG into `ffmpeg -c:v libx264 -crf 16 -pix_fmt yuv420p`; N worker chunks joined with the concat demuxer (-c copy); mux the song with `-c:a aac -b:a 256k -ar 48000 -shortest -movflags +faststart`. Test frames first (`render.py frames 3,10.5`) and a 4-column contact sheet. Lesson: contiguous chunks are unbalanced, interleave instead (ENG-X02). The owner's film: 1080×1920, 30 fps, 56.92 s, 8 scenes. **أرقام / params:** JPEG q 0.9 → crf 16; AAC 256k 48 kHz.
+- **الرخصة / license:** owner (song audio and lyrics are third-party; not included)
+- **المصدر / source:** `owner-upload:film_project/film/render.py`
+- **الدليل / proof:** `owner-upload:film_project/film/render.py` · `owner-upload:film_project/film/sheet.py` · `owner-upload:film_project/film/README_AR.md`
+
+#### ENG-X05 · قائمة قواعد Remotion · Remotion rule checklist · 📦 بأمر تثبيت / one install
+- **ماذا / what:** خريطة مختصرة لما يجب معرفته قبل بناء فيديو بـRemotion: من التركيب والتوقيت إلى الترجمات والانتقالات والقياس. — A short map of what to know before building a Remotion video: from compositions and timing to captions, transitions and measurement.
+- **متى أستخدمها / when:** حين يكون Remotion هو المحرك المختار — when Remotion is the chosen engine.
+- **كيف / how:** Rule topics: compositions, sequencing, timing (spring/easing), animations, text animations, transitions, trimming, videos, audio, assets, fonts, gifs, lottie, charts, 3D via React Three Fiber, tailwind, measuring text (fit and overflow), calculate-metadata, media helpers (can-decode, extract frames, audio/video duration and dimensions), display captions (pages with word highlight), import SRT, transcribe captions. Check Remotion's licence: some companies need a paid licence.
+- **تثبيت / install:** `npx create-video@latest`
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa); Remotion has its own licence
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation/SKILL.md`
+- **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation/SKILL.md`

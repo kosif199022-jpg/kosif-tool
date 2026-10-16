@@ -7798,5 +7798,148 @@
    "مخطط مشهد",
    "أنبوب"
   ]
+ },
+ {
+  "id": "ENG-X01",
+  "family": "engines-render-pipeline",
+  "domain": "motion",
+  "name_ar": "ضبابية حركة تكيفية",
+  "name_en": "Adaptive motion-blur sample count (180° shutter)",
+  "status": "documented",
+  "what": "عدد الإطارات الفرعية لكل إطار يتحدد بمقدار الحركة فيه، والإطارات الفرعية لا تعبر قطعًا حادًا أبدًا. — The number of sub-frames per frame follows how much moves in it, and sub-frames never straddle a hard cut.",
+  "when": "رندر نهائي لفيلم فيه سوط أو زوم سريع — a final render of a film with whips or fast zooms.",
+  "how": "180° shutter centred: sub-frame k of N at t = (n + 0.5·((k+0.5)/N − 0.5))/fps (N = 4 → offsets −0.1875, −0.0625, +0.0625, +0.1875 frame). Adaptive: luma difference between t−½ and t+½ frame at ¼ resolution; n = 1 if diff < 0.5, else clamp(3 + 1.6·diff, 5, 14), rounded up; ≥ 6 for rolling objects. Clamp sub-frames at hard cuts (the film publishes its hard-cut times); quantise discrete events. Four fixed sub-frames look cheap; masters with 8 sub-frames and shutter 0.5 cost about 20 s of render per film second. Extends ENG-349.",
+  "params": "n = 1 | clamp(3 + 1.6·diff, 5, 14); ≥ 6 rolling; no straddled cuts",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
+  ],
+  "styles": [],
+  "tags": [
+   "motion blur",
+   "sub-frames",
+   "shutter",
+   "render",
+   "ضبابية الحركة",
+   "إطارات فرعية"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
+ },
+ {
+  "id": "ENG-X02",
+  "family": "engines-render-pipeline",
+  "domain": "motion",
+  "name_ar": "عمال رندر متداخلون وبوابة استمرار",
+  "name_en": "Interleaved render workers and a continuity gate",
+  "status": "documented",
+  "what": "وزّع الإطارات على العمال بالتناوب لا بكتل متصلة، وارفض الترميز إن نقص إطار واحد. — Deal frames to workers round-robin rather than in contiguous chunks, and refuse to encode if a single frame is missing.",
+  "when": "رندر فيلم طويل أو ثقيل على عدة عمليات متصفح — rendering a long or heavy film on several browser processes.",
+  "how": "Worker i renders frames i, i+N, i+2N… (--from i/fps --every N) so heavy scenes are shared evenly: 3:09 versus 5:18 for contiguous chunks on the same film. Before encoding, check the frame sequence is complete (no gaps) and stop otherwise. Bitrate 24–30 Mbps for 1080p30 (15 s ≈ 45–57 MB). Serialize heavy renders and kill only your own browser processes.",
+  "params": "interleave by N; 24–30 Mbps @1080p30",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/render_film.sh",
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
+  ],
+  "styles": [],
+  "tags": [
+   "parallel render",
+   "workers",
+   "frames",
+   "encode",
+   "رندر متوازٍ",
+   "عمال"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
+ },
+ {
+  "id": "ENG-X03",
+  "family": "engines-render-pipeline",
+  "domain": "motion",
+  "name_ar": "أخطاء رندر دُفع ثمنها",
+  "name_en": "Render bugs already paid for",
+  "status": "documented",
+  "what": "قائمة أعطال حقيقية في التقاط المتصفح والرندر بالبايثون مع علاجها، تُفحص قبل أي رندر كبير. — Real failures in browser capture and Python rendering with their fixes, to check before any big render.",
+  "when": "قبل رندر متوازٍ أو نهائي — before a parallel or final render.",
+  "how": "One DevTools port per parallel capture (shared ports mixed scenes); document.fonts.ready resolves before unused faces load → force-load every face (7–20 px layout drift otherwise); measuring a display:none element returns 0; browser profiles fill the disk (ENOSPC) → clean temp profiles; ProcessPool code needs an `if __name__ == '__main__'` guard; relative output paths silently lose the MP4; file:// taints canvas → `--allow-file-access-from-files`; a grain tile in a pooled canvas is cleared on reuse; SDF squash without rescaling distance becomes a blob; clip-path: inset() cuts glyph tops → negative insets −20…−60 %; Pillow floodfill on an array-backed image is a no-op → .copy() first; set globalAlpha by multiplying, not assigning. For offline determinism vendor fonts and libraries instead of loading them from a CDN.",
+  "params": "negative clip insets −20…−60 %; one port per worker",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md",
+   "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "render bugs",
+   "fonts",
+   "puppeteer",
+   "canvas",
+   "أخطاء الرندر",
+   "خطوط"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
+ },
+ {
+  "id": "ENG-X04",
+  "family": "engines-render-pipeline",
+  "domain": "motion",
+  "name_ar": "خط رندر فيلم الأغنية",
+  "name_en": "Song-film render pipeline (seek → JPEG → ffmpeg, song untouched)",
+  "status": "documented",
+  "what": "فيلم أغنية كامل من ملف canvas واحد: المتصفح يقفز إلى كل زمن، يصدّر صورة، وffmpeg يرمّز، ثم تُدمج الأغنية دون تعديل. — A full song film from one canvas file: the browser seeks each time, exports an image, ffmpeg encodes, and the song is muxed unchanged.",
+  "when": "فيلم كلمات أو موسيقى مرسوم بالكامل بالكود — a lyric or music film drawn entirely in code.",
+  "how": "Playwright evaluates seek(t); canvas.toDataURL('image/jpeg', 0.9) for each frame (wait for window.FILM_READY); pipe MJPEG into `ffmpeg -c:v libx264 -crf 16 -pix_fmt yuv420p`; N worker chunks joined with the concat demuxer (-c copy); mux the song with `-c:a aac -b:a 256k -ar 48000 -shortest -movflags +faststart`. Test frames first (`render.py frames 3,10.5`) and a 4-column contact sheet. Lesson: contiguous chunks are unbalanced, interleave instead (ENG-X02). The owner's film: 1080×1920, 30 fps, 56.92 s, 8 scenes.",
+  "params": "JPEG q 0.9 → crf 16; AAC 256k 48 kHz",
+  "install": "",
+  "license": "owner (song audio and lyrics are third-party; not included)",
+  "proof": [
+   "owner-upload:film_project/film/render.py",
+   "owner-upload:film_project/film/sheet.py",
+   "owner-upload:film_project/film/README_AR.md"
+  ],
+  "styles": [],
+  "tags": [
+   "song film",
+   "playwright",
+   "ffmpeg",
+   "canvas",
+   "فيلم أغنية",
+   "رندر"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:film_project/film/render.py"
+ },
+ {
+  "id": "ENG-X05",
+  "family": "engines-render-pipeline",
+  "domain": "motion",
+  "name_ar": "قائمة قواعد Remotion",
+  "name_en": "Remotion rule checklist",
+  "status": "install",
+  "what": "خريطة مختصرة لما يجب معرفته قبل بناء فيديو بـRemotion: من التركيب والتوقيت إلى الترجمات والانتقالات والقياس. — A short map of what to know before building a Remotion video: from compositions and timing to captions, transitions and measurement.",
+  "when": "حين يكون Remotion هو المحرك المختار — when Remotion is the chosen engine.",
+  "how": "Rule topics: compositions, sequencing, timing (spring/easing), animations, text animations, transitions, trimming, videos, audio, assets, fonts, gifs, lottie, charts, 3D via React Three Fiber, tailwind, measuring text (fit and overflow), calculate-metadata, media helpers (can-decode, extract frames, audio/video duration and dimensions), display captions (pages with word highlight), import SRT, transcribe captions. Check Remotion's licence: some companies need a paid licence.",
+  "params": "",
+  "install": "npx create-video@latest",
+  "license": "MIT (ECC, (c) 2026 Affaan Mustafa); Remotion has its own licence",
+  "proof": [
+   "https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "remotion",
+   "react video",
+   "captions",
+   "transitions",
+   "ريموشن"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation/SKILL.md"
  }
 ]

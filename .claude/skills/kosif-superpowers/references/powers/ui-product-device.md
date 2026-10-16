@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** تصنع عرض منتج يبدو كتسجيل حقيقي لكنه مُخرج إطارًا بإطار — مؤشر بفيزياء يضع رأسه على الهدف، ضغطة تستجيب بعد 60–120 ms، هاتف بمنظور صحيح وواجهة عربية معكوسة كما ينبغي، ووكيل ذكاء اصطناعي يشطب مهامه أمام المشاهد.
 > **أقوى دليل:** رندرتُ هنا مؤشر motion-kit مع الضغط والكتابة (`kosif-studio/motion/projects/kit_v3_demo`، 180 إطارًا، VERIFY OK) ووصفة واجهة Canvas من `kosif-tool/playbooks/product-ui.md` (120 إطارًا 9:16)، واختبار مشغل HTML المستقل نجح؛ وبطاقات الزجاج مثبتة في فيلم `proofs/glass-luxury-logo`.
-> **You can:** direct silent demos, cursors, typing/agent theater, micro-interactions, phones and browsers, scroll tours and launch films from a URL. **89 powers follow** — ✅ 5 · 🟢 15 · 📦 23 · 🔑 1 · 👁 16 · 📄 27 · 💡 2.
+> **You can:** direct silent demos, cursors, typing/agent theater, micro-interactions, phones and browsers, scroll tours and launch films from a URL. **93 powers follow** — ✅ 6 · 🟢 15 · 📦 24 · 🔑 1 · 👁 16 · 📄 29 · 💡 2.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -19,6 +19,7 @@
 - **التقاط المواقع والتسجيل وأفلام الإطلاق — Capture, recording & launch films** — UI-72 … UI-78 (7)
 - **أنظمة التصميم والقوالب والأدوات — Design tokens, templates & tooling** — UI-79 … UI-89 (11)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — UI-X01 … UI-X04 (4)
 
 ## قوانين إخراج عرض المنتج — Product-demo direction laws
 
@@ -697,3 +698,41 @@ _ما تحتاجه لتبدو الواجهة احترافية من أول إطا
 3. **UI-49 — كشف الهاتف البطل:** صعود 140 px مع yaw −22°→−8°، لمعة تعبر، صفوف كل 70 ms، ودفعة 1.04.
 4. **UI-41 — بطاقة تصبح لوحة:** تحويل فقط، أبناء يعوضون المقياس، نابض ~300 بنسبة إخماد 0.8.
 5. **UI-58 + UI-59 — جولة تمرير بشروح مرسومة:** −720 px في 800 ms، توقف ≥ 600 ms، وخط قائد 260 ms.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### UI-X01 · المؤشر بطلًا · Cursor as protagonist · 📄 موصوف / documented only
+- **ماذا / what:** في أفلام الواجهات المؤشر هو البطل: كبير، ينقر برأس السهم، لا يغطي ما ينقره، ويتغير الزر بعد النقرة بإطارين. — In UI films the cursor is the hero: large, clicks with the arrow tip, never covers what it clicks, and the button changes two frames after the click.
+- **متى أستخدمها / when:** عرض منتج أو تعليمي لواجهة — a product or tutorial demo of an interface.
+- **كيف / how:** Size 128–176 px at 1920 wide; hover 150–250 ms; press 1 → 0.96 → 1; state change 2 frames after the click; drag = lift + arc + target highlight + shrink into the slot; touch indicator 56–72 px. Headless browser recordings do not draw the pointer (seen here, QA-X02), so draw the cursor as its own layer. **أرقام / params:** 128–176 px; hover 150–250 ms; press 0.96; +2 frames to state change.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md`
+
+#### UI-X02 · تسليم المجسم وطبقات منفجرة · Mockup hand-off and exploded layers · 📄 موصوف / documented only
+- **ماذا / what:** انتقل من شاشة جهاز إلى الواجهة المسطحة بقلب القطبية (فاتح ↔ داكن)، وافصل طبقات الواجهة في العمق بمسافات متزايدة. — Move from a device screen to the flat UI with a polarity flip (light ↔ dark), and explode UI layers in depth with growing gaps.
+- **متى أستخدمها / when:** كشف بنية تطبيق أو الانتقال من الهاتف إلى الشاشة الكاملة — revealing an app's structure or going from phone to full screen.
+- **كيف / how:** Exploded layers at z = k·(70 + 150·i); stagger in-plane movement only, 0.03 s per layer; keep text layers frontal (counter-transform) so they stay readable. **أرقام / params:** z = k·(70 + 150 i); 0.03 s per layer.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### UI-X03 · تسجيل عرض واجهة بـPlaywright · Playwright UI demo recording (WebM) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** سجّل تطبيق ويب حقيقي وهو يُستخدم إلى فيديو WebM عبر Playwright، ثم حوّله إلى MP4. — Record a real web app being used to a WebM video with Playwright, then convert to MP4.
+- **متى أستخدمها / when:** عرض سريع لواجهة حقيقية حين لا يلزم إطار دقيق بالزمن — a quick demo of a real interface when frame-exact timing is not needed.
+- **كيف / how:** newContext({recordVideo: {dir, size: {width: 1280, height: 720}}}); drive the page (mouse.move with steps, down/up, typing); close the context to flush the file; `ffmpeg -i demo.webm -c:v libx264 -pix_fmt yuv420p -r 30 demo.mp4`. Ran here (V9) with the preinstalled Node Playwright and its bundled Chromium: VP8 1280×720, 25 fps, 2.2 s. Limits: real-time capture (not seek(t), so not deterministic) and no pointer drawn — draw a cursor layer (UI-X01) or use the seek(t) capture pipeline for films. **أرقام / params:** 1280×720 VP8 25 fps; convert to H.264 30 fps.
+- **تثبيت / install:** `npm i -D playwright && npx playwright install chromium`
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa); Playwright Apache-2.0
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/ui-demo/SKILL.md`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md` · `https://github.com/affaan-m/ECC/tree/main/skills/ui-demo/SKILL.md`
+
+#### UI-X04 · رموز الحركة وصقل الواجهة · Motion tokens and interface polish (React UIs) · 📦 بأمر تثبيت / one install
+- **ماذا / what:** لواجهات React: مدد من رموز ثابتة، ونوابض من خمسة إعدادات مسبقة، وتحريك transform وopacity فقط، واحترام تقليل الحركة؛ مع تفاصيل صقل تظهر في الفيديو. — For React UIs: durations from fixed tokens, springs from five presets, animate only transform and opacity, respect reduced motion; plus polish details that show on video.
+- **متى أستخدمها / when:** بناء واجهة تفاعلية أو صفحة هبوط ستُصوَّر — building an interactive UI or landing page that will be filmed.
+- **كيف / how:** Import from motion/react; durations from a motionTokens object (instant / fast / normal / slow / crawl); springs from five presets (snappy, gentle, bouncy, instant, release); `initial` equals the server-rendered state; reduced motion → opacity only; never animate width/height/top/left/margin/padding. Polish: enter = opacity + small translateY (+ blur), exit shorter (~150 ms); press scale 0.96; icon swap = crossfade with scale and blur; never `transition: all`; tabular-nums for counters and timers; text-wrap: balance on headings; concentric radii (outer = inner + padding); hit areas ≥ 40–44 px. **أرقام / params:** exit ~150 ms; press 0.96; hit area ≥ 44 px.
+- **تثبيت / install:** `npm i motion`
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa); motion library MIT
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/motion-foundations/SKILL.md`
+- **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/motion-foundations/SKILL.md` · `https://github.com/affaan-m/ECC/tree/main/skills/make-interfaces-feel-better/SKILL.md`

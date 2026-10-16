@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت ترسم أمام المشاهد: خط يكتب نفسه بسرعة قلم حقيقية، رأس قلم أو ماركر أو شرارة يتبع الطرف، دوائر وأسهم وخطوط تأكيد بيد مرتعشة، تظليل بالماركر، وارتعاش «الغليان» على اثنين — ثم تذهب أبعد: استوديو يرسم أي صورة بكسلًا بكسلًا بترتيب رسّام وينتهي مطابقًا للأصل في كل قيمة RGBA.
 > **أقوى دليل:** فيلم الإثبات `proofs/whiteboard-draw` (سبورة 9:16 بقلم ماركر مرسوم بالكود، ضربات بضغط وتدبيب، تظليل مقصوص على الشكل، عنوان عربي بقناع من اليمين، 13/13) و`proofs/glass-luxury-logo` حيث يُرسم خاتم ثماني بخط ذهبي بين 4.0 و5.6 ث (`pathLength=1` + `dashoffset`) و`proofs/neon-glow` حيث يسري الضوء في أنبوب الفنجان وهو يُرسم — كلاهما رُندر وفُحص هنا (13/13)؛ ومرّت هنا اختبارات استوديو الرسام في `kosif-studio` (ترتيب الكشف، استيراد SVG، الرسم المطابق، فيلم الرسم، مسجل أوامر PIL: 23 اختبارًا)، واختبارات محوّل مسارات SVG في omni (4/4)، وتوليد قوالب logo-reveal وbullet-list بعلامات صح مرسومة.
-> **You can:** draw on any path, write titles by mask, annotate footage, boil lines, hatch fills, and paint pictures stroke by stroke. **60 powers follow** — ✅ 17 · 🟢 15 · 📦 6 · 🔑 0 · 👁 6 · 📄 16 · 💡 0.
+> **You can:** draw on any path, write titles by mask, annotate footage, boil lines, hatch fills, and paint pictures stroke by stroke. **62 powers follow** — ✅ 18 · 🟢 15 · 📦 6 · 🔑 0 · 👁 6 · 📄 17 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -19,6 +19,7 @@
 - **مكونات ومكتبات جاهزة — Ready components & libraries** — DRAW-59 … DRAW-60 (2)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 - إضافات من Cinematic Director PRO v5
+- **إضافات v2 — v2 additions** — DRAW-X01 (1)
 
 ## رسم المسار — Path draw-on core
 
@@ -471,3 +472,15 @@ _مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v
 - **كيف / how:** 13 waypoints interpolated 18 steps each; drawn length = smoothstep(t/4.1); beat dots grow with smoothstep((t−(0.9+0.85k))/0.55) and their labels (01 CAPTURE, 02 CONNECT, 03 RESURFACE) appear at the same instants; from 4.25 s an ellipse (rx 100, ry 42) draws over 1.1 s around the wordmark. Editorial palette: paper (246,241,230), ink (31,36,34), one accent (213,70,48), 6 px stroke, pen-tip dot. Audio generated in NumPy (see BEAT-P01). Re-ran here: 6.000 s, 360×640, 24 fps, H.264 + AAC 96k. **أرقام / params:** 360×640 · 24 fps · 6 s · draw 4.1 s · beats at 0.9/1.75/2.6 s · loop 4.25–5.35 s
 - **الرخصة / license:** owner package (own work)
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_continuous_line.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Continuous_Line_Logo_Story.mp4` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/INTEGRATION_REPORT.json`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### DRAW-X01 · ريشة تكتب السطر الفعلي · Quill that writes the actual line (ink frontier) · 📄 موصوف / documented only
+- **ماذا / what:** يد بريشة تتبع حافة الحبر المتقدمة للسطر نفسه، فتبدو كأنها تكتب كلمات الأغنية حقًا. — A quill hand follows the advancing ink frontier of the line itself, so it truly seems to write the lyric.
+- **متى أستخدمها / when:** مشهد حبر على ورق في فيلم كلمات — an ink-on-paper scene in a lyric film.
+- **كيف / how:** Compute inkFrontier(t) from the line's reveal progress and place the hand's nib on it every frame (RTL for Arabic, so the hand moves right to left); keep the hand slightly behind the frontier so ink appears under the nib.
+- **الرخصة / license:** owner (song audio and lyrics are third-party; not included)
+- **المصدر / source:** `owner-upload:film_project/film/film.js`
+- **الدليل / proof:** `owner-upload:film_project/film/film.js`

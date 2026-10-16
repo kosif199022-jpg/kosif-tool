@@ -2547,5 +2547,66 @@
    "توهج",
    "raster"
   ]
+ },
+ {
+  "id": "GLOW-X01",
+  "family": "light-glow-bloom",
+  "domain": "motion",
+  "name_ar": "مرور العدسة «مصوَّر لا مرسوم»",
+  "name_en": "Photographed lens pass (barrel, fringes, bloom, vignette, grain)",
+  "status": "proven",
+  "what": "مرور أخير على الإطارات يضيف ما تفعله عدسة حقيقية: انتفاخ برميلي، حواف لونية شعاعية، توهج للمناطق المضيئة على ثلاث درجات، تعتيم أطراف، وحبيبات خفيفة. — A final pass over rendered frames adding what a real lens does: barrel bulge, radial colour fringes, three-scale bloom on highlights, vignette and fine grain.",
+  "when": "فيلم متجهي نظيف يبدو رخيصًا أو مسطحًا — a clean vector film that looks cheap or flat.",
+  "how": "Owner script lens.py (numpy + Pillow; not vendored): `python3 lens.py frames_dir out_dir --fps 30 [--k .04 --ca 1.5 --bloom .35 --thr .72 --vig .35 --grain .02] [--sched sched.json]`. Bloom from highlights above thr at three radii (h·0.006 / 0.02 / 0.06, weights 0.7 / 1 / 0.45, screen blend, auto-off on bright frames); barrel k with R/B sampled slightly apart (radial fringes); vignette smoothstep(0.35 → 1.25 r); luma grain seeded per frame, strongest in mid-tones. Per-scene overrides via --sched. Ran here (V7) on 960×540 test frames: corner −27 % (65.3 → 47.8), a halo +6.1 next to a white disc, grain std 0 → 4.1 and re-seeded every frame, ±1 px R/B fringe near the edge; 1.2 s for 3 frames. WebGL equivalents that worked: CA 0.0032·r (0.012 was far too much), CRT barrel 0.2, paper 0.035–0.05, scanlines 0.32, vignette 0.3–0.7.",
+  "params": "k .04; CA 1.5 px; bloom .35 @ thr .72; vignette .35; grain .02",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/lens.py"
+  ],
+  "styles": [],
+  "tags": [
+   "lens",
+   "bloom",
+   "vignette",
+   "chromatic aberration",
+   "grain",
+   "عدسة",
+   "توهج",
+   "تعتيم الأطراف"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/lens.py"
+ },
+ {
+  "id": "GLOW-X02",
+  "family": "light-glow-bloom",
+  "domain": "motion",
+  "name_ar": "نواة توهج ملوّنة وحدود الوميض",
+  "name_en": "Tinted bloom cores and flash limits",
+  "status": "documented",
+  "what": "التوهج الأبيض النقي يبدو رخيصًا؛ لوّن نواته، وأطلق الوميض من نقطة الفعل، ولا تتجاوز حدود الأمان. — Pure white bloom reads cheap: tint its core, bloom flashes from the action point, and stay inside safety limits.",
+  "when": "ضربات وكشف شعار وتوهجات نيون — hits, logo reveals and neon glows.",
+  "how": "Tint the bloom core toward the light's colour; a flash blooms from the action point; at most one big flash per second; accessibility: ≤ 3 flashes per second and a full white frame ≤ 2 frames.",
+  "params": "≤ 1 big flash/s; ≤ 3 flashes/s; white ≤ 2 frames",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md",
+   "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
+  ],
+  "styles": [],
+  "tags": [
+   "bloom",
+   "flash",
+   "safety",
+   "tint",
+   "وميض",
+   "توهج",
+   "أمان"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
  }
 ]

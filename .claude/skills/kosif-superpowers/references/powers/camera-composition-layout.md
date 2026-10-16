@@ -3,7 +3,9 @@
 > فصل مُجمَّع آليًا من 446 ملاحظة حصاد (مستودعات KOSIF + أطلس المهارات + 253 فيديو مرجعي)، مدموجة إلى **421 قدرة** مرتبة من الأقوى دليلًا. لم يُحرَّر يدويًا بعد — تحقّق من الدليل قبل الادعاء.
 > Auto-compiled chapter: 421 powers deduplicated by name from 446 harvested atoms; strongest evidence first.
 
-**الحالة:** ✅ مُثبت هنا 13 · 🟢 جاهز 45 · 📦 بأمر تثبيت 122 · 🔑 مفتاح/خدمة 14 · 👁 شوهد في فيديو 145 · 📄 موصوف 67 · 💡 فكرة 15
+**الحالة:** ✅ مُثبت هنا 13 · 🟢 جاهز 45 · 📦 بأمر تثبيت 122 · 🔑 مفتاح/خدمة 14 · 👁 شوهد في فيديو 145 · 📄 موصوف 70 · 💡 فكرة 15 · المجموع / total 424
+
+**إضافات v2 — v2 additions:** CAM-X01 … CAM-X03 (3) — في آخر الفصل / at the end of this chapter.
 
 #### CAM-01 · مسار تكبير لوغاريتمي · Log-space zoom track · ✅ مُثبت هنا
 - **ماذا / what:** Spring track on log(scale) for camera zooms with several targets.
@@ -2363,3 +2365,31 @@
 #### CAM-421 · لقطة واحدة · One-shot slow push · 💡 فكرة
 - **ماذا / what:** scale 1.00->1.06 over 30 s
 - **الدليل / proof:** `style:pm-sarut0bisasuke-cefa43`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### CAM-X01 · الكاميرا داخل المشاهد فقط · Camera lives inside scenes, neutral in transition windows · 📄 موصوف / documented only
+- **ماذا / what:** حركة الكاميرا تحدث داخل المشهد وتعود محايدة في نافذة الانتقال، وتُبنى مفاتيحها كفروق مجمّعة. — Camera moves happen inside scenes and return to neutral in transition windows; their keys are stacked deltas.
+- **متى أستخدمها / when:** أي فيلم ثنائي ونصف الأبعاد أو واجهات بكاميرا افتراضية — any 2.5D or UI film with a virtual camera.
+- **كيف / how:** Orbits ry ≤ 2.5°, rx ≤ 1.6°; pushes ×1.02–1.09; key the camera as summed deltas on stacked nulls; counter-transform HUD chrome so it stays flat; open on a tilted pose {s 1.12, rx 14, ry −11, rz −1.5} and settle frontal over 1.4 s with bezier(.3,.3,.15,1). Depth of field on DOM layers: blur = min(18, k·|1 − D/depth|) with k 6–10; camera-move blur via feGaussianBlur = half-frame travel × 0.32, max 44 px. **أرقام / params:** orbit ≤ 2.5°/1.6°; push ×1.02–1.09; DOF blur ≤ 18 px; move blur ≤ 44 px.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### CAM-X02 · حركات كاميرا لها دافع · Motivated camera moves table · 📄 موصوف / documented only
+- **ماذا / what:** كل حركة كاميرا تتبع حدثًا: مؤشر كتابة، تصدير، انفجار نتائج. — Every camera move follows an event: a typing caret, an export, a burst of results.
+- **متى أستخدمها / when:** عرض منتج تتحرك فيه الكاميرا داخل واجهة واحدة — a product demo where the camera travels inside one UI.
+- **كيف / how:** Follow the caret: +290 px with rx 11°; crane back: distance +1450 with rx 20°; pull out on export: D × 1.62; on a burst of results: D × 2.5. Always counter-transform the HUD; never move the camera at peak velocity while text is animating. **أرقام / params:** follow +290 px rx 11°; crane +1450 rx 20°; export ×1.62; burst ×2.5.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md` · `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+
+#### CAM-X03 · فيلم علامة بكاميرا واحدة · Single-camera brand film · 📄 موصوف / documented only
+- **ماذا / what:** فيلم علامة يُروى بحركة كاميرا مهيمنة واحدة وينتهي بدفع بطيء نحو العلامة لا يتراجع أبدًا. — A brand film told with one dominant camera verb that ends on a slow push toward the brand and never retreats.
+- **متى أستخدمها / when:** فيلم علامة قصير بلا قطع كثيرة — a short brand film with few cuts.
+- **كيف / how:** One dominant verb (push, orbit or travel); every push ≥ 1.14× (smaller reads static); no peak camera velocity while text animates; end on a slow push toward the brand; a one-to-many carousel uses about 13 cards ~28° apart turning ~200°. Depth comes from a motivated camera over flat designed layouts, not from tilting UI into 3D. **أرقام / params:** push ≥ 1.14×; carousel 13 cards × 28°, ~200° turn.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`

@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تصمم شخصية أصلية وتثبّت هويتها، وتبني لها هيكلًا بمفاصل (SVG أو Canvas أو three.js)، وتمشّيها بدورة إجرائية لا تنزلق قدماها، وتجعلها تقفز وتنضغط وتتنفس وترمش وتتكلم — وتجعلها «حيّة» حتى وهي ساكنة.
 > **أقوى دليل:** فيلم الإثبات `proofs/character-rig` (شخصية مسطحة بـ IK بعظمتين، مشية بلا انزلاق، تهيؤ وقفزة مقذوفة وهبوط بانضغاط، وشاح Verlet، وفقاعة كلام عربية كلمةً كلمة — 9.5 ث، 13/13). وصوّرتُ هنا إطارات من مشهد القطة السينمائي (`cinematic-cat.html`) عند 0 و2 و5.5 ث بـ Playwright: القطة في منتصف القفزة فوق البركة والفراشة المرشدة ترفرف — هيكل بأربع أرجل وآلة وضعيات تعمل كدالة للزمن؛ ومرّت هنا اختبارات الأرنب القطيفة المنحوت (`test_shape_kit` 4/4، أكثر من 50 ألف مثلث) وأقفال شخصيات fastify (15/15) ومشهد الحوت في `kosif-studio` (Judge 2/2).
-> **You can:** design, lock, rig, walk, act and idle original characters in 2D and 3D, and route to avatar/AI services only when the user has a key. **50 powers follow** — ✅ 12 · 🟢 13 · 📦 2 · 🔑 4 · 👁 10 · 📄 9 · 💡 0.
+> **You can:** design, lock, rig, walk, act and idle original characters in 2D and 3D, and route to avatar/AI services only when the user has a key. **51 powers follow** — ✅ 12 · 🟢 13 · 📦 2 · 🔑 4 · 👁 10 · 📄 10 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -17,6 +17,7 @@
 - **شخصيات ثلاثية الأبعاد — 3D characters** — CHAR-40 … CHAR-46 (7)
 - **محركات ومكونات وأساليب جاهزة — Engines, components & catalog styles** — CHAR-47 … CHAR-50 (4)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — CHAR-X01 (1)
 
 ## التصميم والثبات — Design, model sheets & identity locks
 
@@ -397,3 +398,15 @@ _ما يُستدعى بأمر واحد._
 3. **CHAR-36 — حياة الخمول:** تنفس ورمش ونظرة للكاميرا — ما يجعل أي شخصية حيّة.
 4. **CHAR-11 — IK بعظمتين:** أطراف ترسم نفسها نحو أهداف في العالم — ستيكمان يمسك ويرمي ويركب دراجة.
 5. **CHAR-29 — لحظة رد الفعل:** هبوط 4%، قفزة، ضغط 8% بنابض، متابعة — دهشة تُقرأ في ثانيتين.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### CHAR-X01 · شخصيات حية ببصمات حركة · Alive characters: personality motion signatures · 📄 موصوف / documented only
+- **ماذا / what:** لكل شخصية بصمة حركة رياضية (عصبي يرتجف، متعلق يقفز، نعسان يطفو)، وحركة الخمول ضعف ما يبدو صحيحًا في صورة ثابتة. — Each character gets a motion signature (grumpy jitters, clingy hops, sleepy floats), and idle motion runs at about twice what looks right in a still.
+- **متى أستخدمها / when:** شخصيات صغيرة لطيفة أو تمائم في فيلم منتج — small mascots or pets in a product film.
+- **كيف / how:** Grumpy: jitter sin(83t)·8 + sin(61t)·5 px with huffs max(0, sin 5t)^5 and a 2.5 Hz stomp. Clingy: hops at 1.9 Hz, landing squash 1.19 / 0.83. Sleepy: float sin(2.4t)·32 px. Hyper: hops 2.6 Hz, saccade eyes sign(sin 5.2t)·|sin|^0.2·26. Arrival squash 0.1·e^(−7a)·sin(19a); blink every 1.7–2.3 s and hide awkward shape intermediates behind a blink. Vector idle: breath scaleY 1 + 0.014·sin(2.4t), head 2.5 px / 1.2°, tail 4°·sin(1.9t). SDF bodies on the CPU at ⅓ resolution, upscaled with blur(5px); snap colour-mixed backgrounds with smoothstep(.38,.62) to avoid muddy grey. Judge on 2-frame contact sheets. **أرقام / params:** idle ×2; blink 1.7–2.3 s; squash 1.19/0.83; breath 1.4 %.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`

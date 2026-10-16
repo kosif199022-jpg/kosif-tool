@@ -2306,5 +2306,123 @@
    "hover",
    "web"
   ]
+ },
+ {
+  "id": "UI-X01",
+  "family": "ui-product-device",
+  "domain": "motion",
+  "name_ar": "المؤشر بطلًا",
+  "name_en": "Cursor as protagonist",
+  "status": "documented",
+  "what": "في أفلام الواجهات المؤشر هو البطل: كبير، ينقر برأس السهم، لا يغطي ما ينقره، ويتغير الزر بعد النقرة بإطارين. — In UI films the cursor is the hero: large, clicks with the arrow tip, never covers what it clicks, and the button changes two frames after the click.",
+  "when": "عرض منتج أو تعليمي لواجهة — a product or tutorial demo of an interface.",
+  "how": "Size 128–176 px at 1920 wide; hover 150–250 ms; press 1 → 0.96 → 1; state change 2 frames after the click; drag = lift + arc + target highlight + shrink into the slot; touch indicator 56–72 px. Headless browser recordings do not draw the pointer (seen here, QA-X02), so draw the cursor as its own layer.",
+  "params": "128–176 px; hover 150–250 ms; press 0.96; +2 frames to state change",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md"
+  ],
+  "styles": [],
+  "tags": [
+   "cursor",
+   "click",
+   "drag",
+   "ui demo",
+   "مؤشر",
+   "نقرة",
+   "سحب"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
+ },
+ {
+  "id": "UI-X02",
+  "family": "ui-product-device",
+  "domain": "motion",
+  "name_ar": "تسليم المجسم وطبقات منفجرة",
+  "name_en": "Mockup hand-off and exploded layers",
+  "status": "documented",
+  "what": "انتقل من شاشة جهاز إلى الواجهة المسطحة بقلب القطبية (فاتح ↔ داكن)، وافصل طبقات الواجهة في العمق بمسافات متزايدة. — Move from a device screen to the flat UI with a polarity flip (light ↔ dark), and explode UI layers in depth with growing gaps.",
+  "when": "كشف بنية تطبيق أو الانتقال من الهاتف إلى الشاشة الكاملة — revealing an app's structure or going from phone to full screen.",
+  "how": "Exploded layers at z = k·(70 + 150·i); stagger in-plane movement only, 0.03 s per layer; keep text layers frontal (counter-transform) so they stay readable.",
+  "params": "z = k·(70 + 150 i); 0.03 s per layer",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+  ],
+  "styles": [],
+  "tags": [
+   "mockup",
+   "exploded view",
+   "layers",
+   "phone",
+   "طبقات",
+   "مجسم",
+   "هاتف"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+ },
+ {
+  "id": "UI-X03",
+  "family": "ui-product-device",
+  "domain": "motion",
+  "name_ar": "تسجيل عرض واجهة بـPlaywright",
+  "name_en": "Playwright UI demo recording (WebM)",
+  "status": "proven",
+  "what": "سجّل تطبيق ويب حقيقي وهو يُستخدم إلى فيديو WebM عبر Playwright، ثم حوّله إلى MP4. — Record a real web app being used to a WebM video with Playwright, then convert to MP4.",
+  "when": "عرض سريع لواجهة حقيقية حين لا يلزم إطار دقيق بالزمن — a quick demo of a real interface when frame-exact timing is not needed.",
+  "how": "newContext({recordVideo: {dir, size: {width: 1280, height: 720}}}); drive the page (mouse.move with steps, down/up, typing); close the context to flush the file; `ffmpeg -i demo.webm -c:v libx264 -pix_fmt yuv420p -r 30 demo.mp4`. Ran here (V9) with the preinstalled Node Playwright and its bundled Chromium: VP8 1280×720, 25 fps, 2.2 s. Limits: real-time capture (not seek(t), so not deterministic) and no pointer drawn — draw a cursor layer (UI-X01) or use the seek(t) capture pipeline for films.",
+  "params": "1280×720 VP8 25 fps; convert to H.264 30 fps",
+  "install": "npm i -D playwright && npx playwright install chromium",
+  "license": "MIT (ECC, (c) 2026 Affaan Mustafa); Playwright Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "https://github.com/affaan-m/ECC/tree/main/skills/ui-demo/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "playwright",
+   "screen recording",
+   "webm",
+   "ui demo",
+   "تسجيل الشاشة",
+   "عرض واجهة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "https://github.com/affaan-m/ECC/tree/main/skills/ui-demo/SKILL.md"
+ },
+ {
+  "id": "UI-X04",
+  "family": "ui-product-device",
+  "domain": "motion",
+  "name_ar": "رموز الحركة وصقل الواجهة",
+  "name_en": "Motion tokens and interface polish (React UIs)",
+  "status": "install",
+  "what": "لواجهات React: مدد من رموز ثابتة، ونوابض من خمسة إعدادات مسبقة، وتحريك transform وopacity فقط، واحترام تقليل الحركة؛ مع تفاصيل صقل تظهر في الفيديو. — For React UIs: durations from fixed tokens, springs from five presets, animate only transform and opacity, respect reduced motion; plus polish details that show on video.",
+  "when": "بناء واجهة تفاعلية أو صفحة هبوط ستُصوَّر — building an interactive UI or landing page that will be filmed.",
+  "how": "Import from motion/react; durations from a motionTokens object (instant / fast / normal / slow / crawl); springs from five presets (snappy, gentle, bouncy, instant, release); `initial` equals the server-rendered state; reduced motion → opacity only; never animate width/height/top/left/margin/padding. Polish: enter = opacity + small translateY (+ blur), exit shorter (~150 ms); press scale 0.96; icon swap = crossfade with scale and blur; never `transition: all`; tabular-nums for counters and timers; text-wrap: balance on headings; concentric radii (outer = inner + padding); hit areas ≥ 40–44 px.",
+  "params": "exit ~150 ms; press 0.96; hit area ≥ 44 px",
+  "install": "npm i motion",
+  "license": "MIT (ECC, (c) 2026 Affaan Mustafa); motion library MIT",
+  "proof": [
+   "https://github.com/affaan-m/ECC/tree/main/skills/motion-foundations/SKILL.md",
+   "https://github.com/affaan-m/ECC/tree/main/skills/make-interfaces-feel-better/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "motion tokens",
+   "react",
+   "framer motion",
+   "reduced motion",
+   "polish",
+   "رموز الحركة",
+   "واجهة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "https://github.com/affaan-m/ECC/tree/main/skills/motion-foundations/SKILL.md"
  }
 ]

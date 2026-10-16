@@ -829,5 +829,35 @@
    "neobrutalism",
    "neon"
   ]
+ },
+ {
+  "id": "RETRO-X01",
+  "family": "pixel-retro-stylized",
+  "domain": "motion",
+  "name_ar": "شاشة LED نقطية وكلمات بكسل حقيقية",
+  "name_en": "LED dot lattice bulge and true pixel words",
+  "status": "documented",
+  "what": "شاشة نقاط LED تنتفخ كعدسة مع حواف لونية على مستوى النقطة، وكلمات بكسل تُرسم من خرائط 5×7 حقيقية لا من خط بكسل مكبر. — An LED dot screen that bulges like a lens with per-dot colour fringes, and pixel words drawn from real 5×7 bitmaps rather than an enlarged pixel font.",
+  "when": "مظهر لوحة إعلانات LED أو ألعاب قديمة — an LED billboard or retro-game look.",
+  "how": "Barrel bulge on a dot lattice with k 0.10–0.17: position × (1 + k·r²), dot size × (1 + 1.6k·r²); dot-level fringes #FF2A3C / #2A6BFF at α 0.55 with 'lighter' compositing. A pixel TTF at 540 px renders rounded corners: draw 5×7 bitmaps cell by cell instead.",
+  "params": "k 0.10–0.17; size ×(1 + 1.6k r²); fringe α .55",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md",
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
+  ],
+  "styles": [],
+  "tags": [
+   "led",
+   "dot matrix",
+   "pixel font",
+   "bitmap",
+   "نقاط",
+   "بكسل",
+   "شاشة LED"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
  }
 ]

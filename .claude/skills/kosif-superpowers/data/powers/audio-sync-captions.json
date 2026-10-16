@@ -1418,5 +1418,63 @@
    "visemes",
    "mouth"
   ]
+ },
+ {
+  "id": "SYNC-X01",
+  "family": "audio-sync-captions",
+  "domain": "motion",
+  "name_ar": "تحليل أغنية لفيلم كلمات",
+  "name_en": "Song analysis for a lyric film (bands, kicks, word times)",
+  "status": "proven",
+  "what": "من ملف الأغنية استخرج أغلفة طاقة لكل إطار (باس، صوت المغني، حدة)، والضربات، والإيقاع، وأزمنة تقديرية للكلمات داخل نوافذ أسطر يعطيها المستخدم، مع وسم صادق لجودة التوقيت. — From the song file derive per-frame band envelopes (low, vocal, high), kicks, tempo and estimated word times inside user-given line windows, with an honest timing-quality label.",
+  "when": "فيلم كلمات أغنية بلا تفريغ صوتي آلي متاح — a lyric film when no ASR alignment is available.",
+  "how": "Per video frame (hop = sr/fps) a Hann 2048 FFT: bands low 35–160 Hz, vocal 300–3200 Hz, high 4000–11000 Hz; RMS; spectral flux on log1p; normalise each by its 98th percentile, clip 1.2, light smoothing. Kicks = low-band rises > 0.18 that are local maxima (±2 frames). BPM by flux autocorrelation limited to 60–160 (beware half-time: a ~138 BPM feel read as 69.2). Word weights ∝ max(2, len(word)); span = 0.9 × line so the held last syllable keeps a tail; snap to vocal-band onsets within 0.22 s; min gap 0.12 s. Write words.json with timing_quality = 'line windows from user; edges from vocal energy; word times estimated (not ASR)'. The session distillation re-ran it: 56.92 s, bpm ~69.2, 25 kicks; line starts matched the shipped data except 2.033 vs 2.0 and 26.3 vs 26.333 — the edge refinement almost never moves a start. Prefer real alignment when audio-sync tools are available.",
+  "params": "bands 35–160 / 300–3200 / 4000–11000 Hz; kick rise > 0.18; snap ≤ 0.22 s; gap ≥ 0.12 s",
+  "install": "",
+  "license": "owner (song audio and lyrics are third-party; not included)",
+  "proof": [
+   "session-2026-10-16:motion-leftovers#4.1",
+   "owner-upload:film_project/film/analyze.py"
+  ],
+  "styles": [],
+  "tags": [
+   "lyrics",
+   "words.json",
+   "onset",
+   "kick",
+   "song film",
+   "كلمات الأغنية",
+   "توقيت الكلمات"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:film_project/film/analyze.py"
+ },
+ {
+  "id": "SYNC-X02",
+  "family": "audio-sync-captions",
+  "domain": "motion",
+  "name_ar": "قفل موضع مقطع الترجمة",
+  "name_en": "Caption chunk position lock",
+  "status": "documented",
+  "what": "الكلمات تظهر واحدة واحدة في مكانها النهائي، والمقطع يحتفظ بموضع واحد طوال عمره حتى لو قُطعت الصورة تحته. — Words appear one by one in their final place, and a caption chunk keeps one position for its whole life even when the picture cuts underneath.",
+  "when": "ترجمات كلمة بكلمة على متحدث أو مونتاج سريع — word-by-word captions on a speaker or a fast edit.",
+  "how": "Measure every word once with the real font on a canvas and justify lines across a shared width, so widths never depend on DOM timing; words arrive expo-out over 0.24 s with a small rise and blur; the block drifts up slowly; key words in an italic serif accent; validate the layout with visible word bounding boxes, not element boxes. For Arabic keep whole words and RTL order (ARAB rules).",
+  "params": "word in 0.24 s expo-out; one position per chunk",
+  "install": "",
+  "license": "unknown (reference only)",
+  "proof": [
+   "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js"
+  ],
+  "styles": [],
+  "tags": [
+   "captions",
+   "subtitles",
+   "word by word",
+   "layout",
+   "ترجمة",
+   "كلمة بكلمة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js"
  }
 ]

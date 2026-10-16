@@ -1,0 +1,193 @@
+$ graphify extract . --code-only
+[graphify extract] scanning $V/sample
+[graphify extract] --code-only: skipping 1 non-code file(s) (1 docs, 0 papers, 0 images) — no LLM extraction
+[graphify extract] found 12 code, 0 docs, 0 papers, 0 images
+[graphify extract] AST extraction on 12 code files...
+[graphify extract] wrote $V/sample/graphify-out/graph.json: 244 nodes, 586 edges, 8 communities
+[graphify extract] wrote $V/sample/graphify-out/.graphify_analysis.json
+[graphify extract] next: run `graphify cluster-only $V/sample` to generate GRAPH_REPORT.md and name communities
+[exit=0 time=1.49s]
+
+$ graphify cluster-only . --no-label
+Loading existing graph...
+Graph: 244 nodes, 586 edges
+Re-clustering...
+Done - 8 communities. GRAPH_REPORT.md, graph.json and graph.html updated.
+[exit=0 time=0.55s]
+
+$ graphify god-nodes --top 6
+God nodes (most connected):
+  1. Atlas - 25 edges
+  2. main() - 24 edges
+  3. build_prompt() - 16 edges
+  4. run() - 14 edges
+  5. CliError - 12 edges
+  6. doc_variables() - 12 edges
+[exit=0 time=0.29s]
+
+$ graphify query build prompt --budget 600
+Graph: graphify-out/graph.json (244 nodes) | Traversal: BFS depth=2 | Start: ['build_prompt()', 'build.py'] | 107 nodes found
+
+[!] TRUNCATED: showing 27 of 107 nodes (~600-token budget). The answer may be among the 80 cut nodes — raise the token budget to 2563 to get all 107 (CLI: --budget 2563, MCP: token_budget=2563) or narrow the query (e.g. context_filter=['call'], or get_node for a specific symbol).
+
+NODE build_prompt() [src=tools/kosif.py loc=L472 community=Community 1]
+NODE build.py [src=tools/build.py loc=L1 community=Community 2]
+NODE kosif.py [src=tools/kosif.py loc=L1 community=Community 1]
+NODE json [src= loc= community=Community 4]
+NODE re [src= loc= community=Community 2]
+NODE Atlas [src=tools/kosif.py loc=L140 community=Community 1]
+NODE argparse [src= loc= community=Community 2]
+NODE CliError [src=tools/kosif.py loc=L135 community=Community 1]
+NODE pathlib [src= loc= community=Community 2]
+NODE sys [src= loc= community=Community 2]
+NODE cmd_scaffold() [src=tools/kosif.py loc=L560 community=Community 1]
+NODE main() [src=tools/build.py loc=L144 community=Community 2]
+NODE display_name() [src=tools/kosif.py loc=L264 community=Community 1]
+NODE .playbooks_for() [src=tools/kosif.py loc=L206 community=Community 1]
+NODE cmd_prompt() [src=tools/kosif.py loc=L516 community=Community 1]
+NODE fill_template() [src=tools/kosif.py loc=L287 community=Community 1]
+NODE collections [src= loc= community=Community 2]
+NODE load_json() [src=tools/build.py loc=L42 community=Community 2]
+NODE playbook_meta() [src=tools/build.py loc=L46 community=Community 2]
+NODE aspect_resolution() [src=tools/kosif.py loc=L448 community=Community 1]
+NODE .has_brief() [src=tools/kosif.py loc=L259 community=Community 1]
+NODE unfilled() [src=tools/kosif.py loc=L292 community=Community 1]
+NODE default_aspect() [src=tools/kosif.py loc=L453 community=Community 1]
+NODE default_duration() [src=tools/kosif.py loc=L463 community=Community 1]
+NODE fmt_num() [src=tools/kosif.py loc=L468 community=Community 1]
+NODE parse_source() [src=tools/kosif.py loc=L296 community=Community 1]
+NODE skill_md() [src=tools/build.py loc=L63 community=Community 2]
+... (truncated — 80 more nodes cut by ~600-token budget. Narrow with context_filter=['call'] or use get_node for a specific symbol)
+[exit=0 time=0.31s]
+
+$ graphify explain cmd_scaffold()
+Node: cmd_scaffold()
+  ID:        tools_kosif_cmd_scaffold
+  Source:    tools/kosif.py L560
+  Type:      code
+  Community: Community 1
+  Degree:    10
+
+Connections (10):
+  <-- kosif.py [contains] [EXTRACTED] tools/kosif.py:L560
+  --> Atlas [references] [EXTRACTED] tools/kosif.py:L560
+  --> build_prompt() [calls] [EXTRACTED] tools/kosif.py:L589
+  --> CliError [calls] [EXTRACTED] tools/kosif.py:L564
+  --> doc_variables() [calls] [EXTRACTED] tools/kosif.py:L569
+  --> shutil [calls] [EXTRACTED] tools/kosif.py:L585
+  <-- main() [indirect_call] [INFERRED] tools/kosif.py:L746
+  --> .find() [calls] [INFERRED] tools/kosif.py:L561
+  --> fill_template() [calls] [EXTRACTED] tools/kosif.py:L577
+  --> unfilled() [calls] [EXTRACTED] tools/kosif.py:L578
+[exit=0 time=0.27s]
+
+$ graphify explain main()
+Ambiguous: 'main()' matches 11 nodes in different files.
+  tools/render_html.cjs
+    id: tools_render_html_main
+  tools/kosif.py
+    id: tools_kosif_main
+  tools/build.py
+    id: tools_build_main
+  tools/check_originality.py
+    id: tools_check_originality_main
+  tools/words_convert.py
+    id: tools_words_convert_main
+  scripts/fetch_video.py
+    id: scripts_fetch_video_main
+  tools/verify_video.py
+    id: tools_verify_video_main
+  tools/validate.py
+    id: tools_validate_main
+  tools/import_briefs.py
+    id: tools_import_briefs_main
+  tools/sync_catalog.py
+    id: tools_sync_catalog_main
+  scripts/powers.py
+    id: scripts_powers_main
+Retry with path::symbol using one of the paths above (e.g. <path>::main()) or the full node id.
+[exit=3 time=0.25s]
+
+$ graphify explain zzzqqq
+No node matching 'zzzqqq' found.
+[exit=4 time=0.29s]
+
+$ graphify affected aspects.py --depth 2
+Affected nodes for aspects.py
+Relations: calls, indirect_call, references, imports, imports_from, dynamic_import, re_exports, inherits, extends, implements, uses, mixes_in, embeds, defines, requires
+Depth: 2
+- import_briefs.py [imports_from] tools/import_briefs.py:L24
+- kosif.py [imports_from] tools/kosif.py:L36
+- verify_video.py [imports_from] tools/verify_video.py:L27
+- main() [calls] tools/verify_video.py:L91
+- _aspect_arg() [calls] tools/kosif.py:L443
+- aspect_resolution() [calls] tools/kosif.py:L449
+- problems() [calls] tools/import_briefs.py:L42
+- add_prompt_options() [indirect_call] tools/kosif.py:L430
+- build_prompt() [calls] tools/kosif.py:L500
+- doc_variables() [calls] tools/kosif.py:L549
+- main() [calls] tools/import_briefs.py:L148
+[exit=0 time=0.23s]
+
+$ graphify path cmd_scaffold() resolve()
+Shortest path (2 hops):
+  cmd_scaffold() <--contains [EXTRACTED]-- kosif.py --imports [EXTRACTED]--> resolve()
+[exit=0 time=0.26s]
+
+$ graphify query كيف يتم بناء البرومبت
+No matching nodes found.
+[exit=4 time=0.41s]
+
+$ graphify query فيديو --budget 300
+Graph: graphify-out/graph.json (244 nodes) | Traversal: BFS depth=2 | Start: ['Flexible aspect ratios / أي مقاس فيديو — shared by kosif.py, import_briefs.py…', 'Download videos from links for montage — تحميل فيديوهات من الروابط للمونتاج. A…'] | 33 nodes found
+
+[!] TRUNCATED: showing 12 of 33 nodes (~300-token budget). The answer may be among the 21 cut nodes — raise the token budget to 763 to get all 33 (CLI: --budget 763, MCP: token_budget=763) or narrow the query (e.g. context_filter=['call'], or get_node for a specific symbol).
+
+NODE Flexible aspect ratios / أي مقاس فيديو — shared by kosif.py, import_briefs.py… [src=tools/aspects.py loc=L1 community=Community 5]
+NODE Download videos from links for montage — تحميل فيديوهات من الروابط للمونتاج. A… [src=scripts/fetch_video.py loc=L2 community=Community 3]
+NODE fetch_video.py [src=scripts/fetch_video.py loc=L1 community=Community 3]
+NODE aspects.py [src=tools/aspects.py loc=L1 community=Community 5]
+NODE kosif.py [src=tools/kosif.py loc=L1 community=Community 1]
+NODE json [src= loc= community=Community 4]
+NODE re [src= loc= community=Community 2]
+NODE argparse [src= loc= community=Community 2]
+NODE verify_video.py [src=tools/verify_video.py loc=L1 community=Community 3]
+NODE import_briefs.py [src=tools/import_briefs.py loc=L1 community=Community 5]
+NODE pathlib [src= loc= community=Community 2]
+NODE shutil [src= loc= community=Community 3]
+... (truncated — 21 more nodes cut by ~300-token budget. Narrow with context_filter=['call'] or use get_node for a specific symbol)
+[exit=0 time=0.43s]
+
+$ graphify export wiki
+Wiki: 18 articles written to graphify-out/wiki/
+  graphify-out/wiki/index.md  ->  agent entry point
+[exit=0 time=0.32s]
+
+$ graphify save-result --question what does cmd_scaffold call --answer build_prompt() and the style loader --type query --nodes cmd_scaffold() build_prompt() --outcome useful
+Saved to graphify-out/memory/query_20261016_182432_1e19bb93_what_does_cmd_scaffold_call.md
+[exit=0 time=0.15s]
+
+$ graphify save-result --question where is the render entry --answer ambiguous main() --nodes main() --outcome dead_end
+Saved to graphify-out/memory/query_20261016_182432_54d51f15_where_is_the_render_entry.md
+[exit=0 time=0.13s]
+
+$ graphify reflect --graph graphify-out/graph.json
+Reflected 2 memories (1 useful, 1 dead ends, 0 corrected) -> graphify-out/reflections/LESSONS.md
+[exit=0 time=0.14s]
+
+$ graphify benchmark
+
+graphify token reduction benchmark
+──────────────────────────────────────────────────
+  Corpus:          12,200 words → ~16,266 tokens (naive)
+  Graph:           244 nodes, 586 edges
+  Avg query cost:  ~4,576 tokens
+  Reduction:       3.6x fewer tokens per query
+
+  Per question:
+    [10.1x] what is the main entry point
+    [2.5x] what connects the data layer to the api
+    [2.8x] what are the core abstractions
+
+[exit=0 time=0.32s]
+

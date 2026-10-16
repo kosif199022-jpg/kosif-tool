@@ -1702,5 +1702,33 @@
    "تدقيق"
   ],
   "when": "شرح تتبع الأدلة في التدقيق / audit traceability explainers."
+ },
+ {
+  "id": "EXPL-X01",
+  "family": "diagrams-explainers-code",
+  "domain": "motion",
+  "name_ar": "فيديو شرح بـManim",
+  "name_en": "Manim explainer workflow",
+  "status": "install",
+  "what": "لشرح فكرة رياضية أو تقنية: جملة بصرية واحدة، ثم 3–6 مشاهد يثبت كل منها شيئًا واحدًا، ورندر سريع منخفض الجودة قبل الصقل. — For a math or technical idea: one visual thesis sentence, 3–6 scenes each proving one thing, and a fast low-quality render before polish.",
+  "when": "شرح معادلة أو خوارزمية أو مفهوم علمي — explaining an equation, algorithm or scientific concept.",
+  "how": "Outline before code; smoke-render with `manim -ql`; motion explains a state change, reveal progressively; polish typography and pacing; hand off to ffmpeg or Remotion only if it adds value. Deliver a 16:9 MP4, a thumbnail readable at social size and the storyboard. Needs ffmpeg; LaTeX only for TeX formulas; system cairo/pango may need apt packages.",
+  "params": "3–6 scenes; -ql smoke render",
+  "install": "pip install manim",
+  "license": "MIT (ECC, (c) 2026 Affaan Mustafa); Manim Community MIT",
+  "proof": [
+   "https://github.com/affaan-m/ECC/tree/main/skills/manim-video/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "manim",
+   "explainer",
+   "math",
+   "animation",
+   "شرح",
+   "رياضيات"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "https://github.com/affaan-m/ECC/tree/main/skills/manim-video/SKILL.md"
  }
 ]

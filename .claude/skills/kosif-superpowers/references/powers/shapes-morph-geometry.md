@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تبني الصورة من أشكال صافية وتجعلها تتحول بلا قطع — دائرة تصير نجمة ثم مربعًا، زر يصير شريط تقدم، نقطة تتفتح إلى واجهة، كتل لزجة تندمج، حلقات تدور بنسب صحيحة فتلتف بلا قفزة، شبكات باوهاوس وتروشيه تتموج من المركز، وزخارف ثمانية تُرسم على الإيقاع — بأرقام تجعل الحركة مقروءة لا عشوائية.
 > **أقوى دليل:** مختبر أشكال رندرتُه في هذه الحاوية (2026-10-16، 90 إطارًا، VERIFY OK): `MOTION.morphPath` من motion-kit يحوّل دائرة→نجمة→مربعًا، فلتر اللزوجة 18/−7، زهرة 137.5°، تروشيه وباوهاوس بموجة مسافة، فائق الإهليلج بحلقات صدى، حلقات بفجوات، انفجار خطوط وحلقة صدمة، ودالة قطبية تتحول — واختبارات النحت بحقول المسافة `test_shape_kit` ‏(4/4) ومحرك أشكال Studio ‏(10/10) نجحت هنا.
-> **You can:** morph paths, containers and dot clouds, sculpt SDF solids, draw curves and compound holes, choreograph grids, orbit rings and bursts, and build Islamic ornament from code. **93 powers follow** — ✅ 16 · 🟢 17 · 📦 7 · 🔑 0 · 👁 32 · 📄 17 · 💡 4.
+> **You can:** morph paths, containers and dot clouds, sculpt SDF solids, draw curves and compound holes, choreograph grids, orbit rings and bursts, and build Islamic ornament from code. **95 powers follow** — ✅ 16 · 🟢 17 · 📦 7 · 🔑 0 · 👁 32 · 📄 19 · 💡 4.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -19,6 +19,7 @@
 - **الزخرفة والأيقونات والعناصر المصاحبة — Ornament, icons & decor** — SHAPE-73 … SHAPE-88 (16)
 - **نظام الأشكال وقواعده — Shape system & rules** — SHAPE-89 … SHAPE-93 (5)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — SHAPE-X01 … SHAPE-X02 (2)
 
 ## تحويل شكل إلى شكل — Path & shape morphing
 
@@ -704,3 +705,23 @@ _ثلاثة أشكال أولية، لونان وخلفية، سلم أقطار 
 3. **SHAPE-27 — كتل تندمج:** stdDeviation 10 ومصفوفة 18/−7 — سائل في سطرين.
 4. **SHAPE-73 — الوردة الثمانية:** مربعان ودائرة تُرسم بالتتابع وتدور 45° — توقيع الأفلام الإسلامية.
 5. **SHAPE-66 + SHAPE-67 — الانفجار وحلقة الصدمة:** 14 خطًا بـ expo.out وحلقة مسطحة 0→300px في 500ms على الضربة.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### SHAPE-X01 · تحوّل هندسي بلا مزج · Geometric morph without a crossfade (letter → planet) · 📄 موصوف / documented only
+- **ماذا / what:** حوّل شكلًا إلى آخر عبر سلسلة أشكال وسيطة تحمل النقاط نفسها، لا بمزج صورتين. — Turn one shape into another through a chain of intermediate shapes carrying the same points, never by crossfading two images.
+- **متى أستخدمها / when:** حرف من الشعار يصبح كوكبًا أو كرة أو أيقونة — a logo letter becoming a planet, sphere or icon.
+- **كيف / how:** Letter O → ellipse → 3D ring → 6 meridian copies → wire sphere → dotted Earth: map source points onto each stage, depth-sort, draw the back half at α 0.3. **أرقام / params:** 6 meridians; back half α 0.3.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+#### SHAPE-X02 · لقطة متصلة من عناصر مشتركة · One continuous shot from shared elements · 📄 موصوف / documented only
+- **ماذا / what:** العناصر نفسها تعيد ترتيب نفسها من شكل إلى آخر (مروحة ثم رسم بياني ثم حلقة) فتصنع فيلمًا بلا قطع. — The same elements rearrange from one formation to the next (fan, then graph, then ring), making a film with no cuts.
+- **متى أستخدمها / when:** فيلم بيانات أو منتج بلا قطع — a data or product film without cuts.
+- **كيف / how:** 28 tiles with pose functions fan → graph → ring; greedy nearest assignment between formations; ring slots sorted by angle so paths never cross; stagger 0.014–0.02 s; pinhole projection f 1500. **أرقام / params:** 28 tiles; stagger 0.014–0.02 s; f 1500.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`

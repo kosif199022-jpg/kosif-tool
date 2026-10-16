@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تعطي السطح المسطح جسدًا — حبيبات فيلم تتحرك مع كل إطار، ورق وقصاصات وتمزيق، هالفتون وتنقيط طباعي، زجاج يجمّد ما خلفه، كروم وقطيفة وفرو في 3D، وضوضاء إجرائية تصنع جلدًا وصخرًا وماءً وغيمًا — كلها من كود بلا صور مُنزّلة.
 > **أقوى دليل:** فيلم `proofs/neon-glow` (طوب إجرائي يتلوّن بضوء اللافتة، أرض مبتلة تعكسها، حبيبات وتظليل أطراف) و`proofs/glass-luxury-logo` (زجاج blur 22px بعمق، ذهب معدني بأربع طبقات) — كلاهما رُندر هنا ونجح في 13/13 فحصًا؛ ومختبر خامات رندرتُه في هذه الحاوية (2026-10-16): حبيبات feTurbulence ببذرة لكل إطار، هالفتون لامبرت، تنقيط Bayer، زجاج، تمزيق ورق، غيوم SVG، طوب مضاء، وكلمة عربية مملوءة بسائل fbm — وMOTION.grain/vignette من motion-kit في وضع الساعة الافتراضية.
-> **You can:** grain, print, paper, glass, chrome, plush, fur, noise-built skin/rock/water and living backgrounds in CSS/SVG, Canvas, Pillow, three.js and ffmpeg. **94 powers follow** — ✅ 18 · 🟢 24 · 📦 11 · 🔑 0 · 👁 26 · 📄 14 · 💡 1.
+> **You can:** grain, print, paper, glass, chrome, plush, fur, noise-built skin/rock/water and living backgrounds in CSS/SVG, Canvas, Pillow, three.js and ffmpeg. **96 powers follow** — ✅ 18 · 🟢 24 · 📦 11 · 🔑 0 · 👁 26 · 📄 16 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -18,6 +18,7 @@
 - **الخلفيات الحية والشبكات والجدران — Living backgrounds, grids & walls** — TEX-71 … TEX-83 (13)
 - **الخامات ثلاثية الأبعاد — 3D materials** — TEX-84 … TEX-94 (11)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — TEX-X01 … TEX-X02 (2)
 
 ## الحبيبات والتشطيب السينمائي — Grain & film finish
 
@@ -722,3 +723,23 @@ _عائلة مادة واحدة لكل فيلم: مطفي للصلصال وال�
 3. **TEX-61 — كلمة عربية مملوءة بسائل:** fbm مشوّه بثلاثة أحبار داخل الكلمة المشكلة، ثم يكبر القناع ليصير المشهد التالي.
 4. **TEX-59 + TEX-78 — جدار يتلوّن وأرض تعكس:** الضوء يُبنى مرة ويُضرب في الطوب ويُعكس على الأرض المبتلة — سر واقعية فيلم النيون.
 5. **TEX-29 — هالفتون لامبرت بضوء يدور:** كرة من نقاط فقط تُظلَّل وتدور — طباعة حية في 20 سطرًا.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### TEX-X01 · حبيبات فيلم صحيحة · Film grain done right (post-mortem) · 📄 موصوف / documented only
+- **ماذا / what:** حبيبات بدت «ملصقًا ثابتًا» رغم أنها تتغير كل إطار؛ التشخيص والإصلاح يعلّمان كيف تُصنع حبيبات تعيش داخل الصورة. — Grain that looked like a static sticker although it changed every frame; the diagnosis and fix show how to make grain that lives inside the picture.
+- **متى أستخدمها / when:** مظهر أرشيفي أو سينمائي، أو أي حبيبات متحركة — an archival or filmic look, or any animated grain.
+- **كيف / how:** Causes found: coarse 2.4 px clumps with 60 % of the energy in deep shadows/highlights; a clump layer that was ONE noise field translated ≈ (32, 18) px per frame, so consecutive frames correlated 0.52–0.54 (a pattern sliding over the picture) while per-frame residual correlation was only ~0.035; grain in screen coordinates while gate weave moved the picture (grain detached); sine-hash 1 px grain losing GPU precision for large arguments (patterned, changed character at each cut); frame index modulo 997 repeating the sequence at 39.9 s. Fix: sparse-convolution noise (one Gaussian blob per cell, 3×3 neighbourhood, kernel e^−4.5 at one cell so no seams), two octaves (1.15 px fine, 2.6 px coarse ≈ 10 % of variance), hashed by (cell, frame) with sine-free hashes, sampled at the weaved film position, weighted to mid-tones, normalised std. Policy: UI/SaaS films keep grain static and ≤ 0.02–0.04 luma (or none); documentary grain must move, but in film coordinates. **أرقام / params:** fine 1.15 px + coarse 2.6 px (~10 %); no modulo index; film coordinates.
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/picture.js`
+- **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/picture.js`
+
+#### TEX-X02 · سلسلة مرور أرشيفية · Archival post chain order (WebGL) · 📄 موصوف / documented only
+- **ماذا / what:** ترتيب مراحل المظهر الأرشيفي مهم: الاهتزاز والنعومة قبل التوهج، والتدريج ثم عمر الطبعة، ثم التعتيم، ثم الحبيبات بإحداثيات الفيلم، ثم الغبار والوميض. — The order of archival-look stages matters: weave and softness before bloom, grade then print age, then vignette, then grain in film coordinates, then dust and flash.
+- **متى أستخدمها / when:** مونتاج وثائقي أو أرشيفي بالأبيض والأسود أو بلون فيلمي — a documentary or archival edit in B&W or film colour.
+- **كيف / how:** compose → bright-pass + 4× downsample → separable 13-tap Gaussian (σ ≈ 3.2 texels at ¼ res ≈ 13 px full res) → main pass: gate weave (≈ 1 px slow drift + per-frame jitter; more for older prints) → lens/emulsion softness 0.8 px (≤ 1.4 old print) → bloom/halation → grade (doc | light neutral B&W | film) → print and archive age (low-frequency density breathing, value noise on a 3-cell lattice) → vignette → grain in film coordinates (TEX-X01) → dust and scratches → flash. Keep one texture-orientation convention across framebuffer passes (GL bottom-up vs top-down uploads). **أرقام / params:** blur σ ≈ 3.2 texels @ ¼; weave ≈ 1 px; softness 0.8–1.4 px.
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/picture.js`
+- **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/picture.js`

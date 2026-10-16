@@ -5,7 +5,9 @@
 >
 > **أقوى دليل / strongest proof:** ✅ `fastify-motion-bro/scripts/profiles/kinetic-flow.mjs` (lead/hero/tail beats) — `node --test tests/production-profiles.test.mjs` passed 10/10 in this container; ✅ the MIDNIGHT tracked title (`…/midnight_cat/test.cjs`, 289 deterministic samples); 🟢 the motion-kit (`maskRise`, `riseWords`, `typeOn`, `scramble`, `counter`, `glitch`, `lowerThird`) runs offline on vendored GSAP; and you have produced these moves in the watched reference films, e.g. `style:pm-micheleharmonic-77628e`, `style:pm-tequilafunks-97f6c9`, `style:pm-kloss-xyz-15182a`.
 >
-> **90 قوة في 8 أقسام / 90 powers in 8 sections:** ✅ 2 · 🟢 13 · 📦 20 · 🔑 1 · 👁 35 · 📄 17 · 💡 2. للنص العربي اقرأ فصل ARAB أولًا — كل ما هنا لاتيني ما لم يُذكر غير ذلك. / For Arabic text read the ARAB chapter first.
+> **92 قوة في 8 أقسام + إضافات v2 / 92 powers in 8 sections + v2 additions:** ✅ 2 · 🟢 13 · 📦 20 · 🔑 1 · 👁 35 · 📄 19 · 💡 2. للنص العربي اقرأ فصل ARAB أولًا — كل ما هنا لاتيني ما لم يُذكر غير ذلك. / For Arabic text read the ARAB chapter first.
+>
+> **إضافات v2 — v2 additions:** TYPE-X01 … TYPE-X02 (2) — في آخر الفصل / at the end of this chapter.
 
 **الشارات / badges:** ✅ مُثبت هنا / proven here · 🟢 جاهز / ready · 📦 بأمر تثبيت / one install · 🔑 مفتاح أو خدمة / needs key or service · 👁 شوهد في فيديو / seen in a reference video · 📄 موصوف / documented only · 💡 فكرة / idea
 
@@ -826,3 +828,23 @@ svg += `<g opacity="${title}"><text x="88" y="139" fill="#dcebe5" font-size="43"
 3. **TYPE-33** — فك التشفير لعناوين HUD والأرقام — مُبذَّر وقابل للتقديم وجاهز. / Seeded, seekable decode for HUD labels and metrics.
 4. **TYPE-41** — صدمة العنوان على الضربة مع اهتزاز 3 إطارات — قلب أي مونتاج حماسي. / Headline slam on the beat with a 3-frame shake — the heart of any hype edit.
 5. **TYPE-79** — العنوان السينمائي المتباعد — مثبت هنا ويفتح أي فيلم قصير بهدوء. / The tracked cinematic title — proven here, opens any short film with calm.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### TYPE-X01 · نص يعبر القطع · Type that keeps moving through cuts · 📄 موصوف / documented only
+- **ماذا / what:** طبقات النص التوكيدي لها حركة مستمرة خاصة (انجراف، تأرجح، تباعد حروف) مستقلة عن شبكة اللقطات، فتحمل العين عبر القطع. — Emphasis type layers carry their own continuous motion (drift, sway, tracking) independent of the shot grid, so they carry the eye across cuts.
+- **متى أستخدمها / when:** مونتاج متحدث مع نصوص تأكيد ولقطات مساندة — a talking-head edit with emphasis type and B-roll.
+- **كيف / how:** Enter styles: soft, blur, rise, cut, type, wipe, slam, pop, blurpop, draw, flicker; exits cut (default), blur, fade 0.12 s, drift 0.28 s. Reveal per word on the spoken word; *word* → italic serif accent. Use a readability halo instead of a hard drop shadow, and do not put dark plates under text: darken the background exposure and add a soft shadow (0 8px 48px rgba(0,0,0,.45)). **أرقام / params:** fade 0.12 s; drift exit 0.28 s; shadow 0 8 48 px α .45.
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js`
+- **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`
+
+#### TYPE-X02 · ثلاث عائلات خطوط بمصدر واحد · Three font families from one source of truth · 📄 موصوف / documented only
+- **ماذا / what:** ثلاث عائلات فقط (بلا تذييل، بتذييل، أحادية)، والوزن الثقيل وزن 800 من العائلة نفسها لا عائلة رابعة، ومصدر واحد يكتب متغيرات CSS للـDOM والـcanvas معًا. — Exactly three families (sans, serif, mono); 'heavy' is weight 800 of the sans, not a fourth family; one source writes the CSS variables for both DOM and canvas.
+- **متى أستخدمها / when:** أي فيلم يجمع نص DOM ونص canvas — any film mixing DOM text and canvas text.
+- **كيف / how:** Write the tokens once (CSS custom properties) and read them for canvas too, so the two can never drift; audit with a familyOf() check that every rendered run uses one of the three; pick faces from a rendered specimen in the real copy, and keep a face the client liked. Force-load every face before capture (ENG-X03). **أرقام / params:** 3 families; heavy = 800.
+- **الرخصة / license:** unknown (reference only)
+- **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/fonts.js`
+- **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/fonts.js` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`

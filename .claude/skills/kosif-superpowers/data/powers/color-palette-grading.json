@@ -2521,5 +2521,36 @@
    "data flow",
    "architecture"
   ]
+ },
+ {
+  "id": "COLOR-X01",
+  "family": "color-palette-grading",
+  "domain": "motion",
+  "name_ar": "حزمة أسلوب مقيسة والتدريج بالقياس",
+  "name_en": "Measured style pack and grading by measurement",
+  "status": "documented",
+  "what": "البرومبت لا يصنع تدريجًا لونيًا؛ القياس يصنعه: قِس الكروما لكل منطقة إضاءة والوسيط والتباين ونسبة الخلفية الداكنة، ثم طبّق الفرق. — A prompt cannot deliver a grade; measurement can: measure chroma per lightness zone, medians, contrast and dark-background share, then apply the difference.",
+  "when": "مطابقة مظهر فيديو مرجعي أو تثبيت لون سلسلة لقطات مولدة — matching a reference look or locking colour across generated shots.",
+  "how": "Measure in CIELAB: chroma per L* zone with edges [0, 15, 35, 55, 75, 100] (print the whole curve); median + MAD, not mean + std (skew inflated a mean ~2×, 36.9 vs 17.5); contrast = std(L*); background share = pixels below L* 10 as its own statistic; mask UI chrome (letterbox, status bar, icons) first. Generate neutral ('Colour: none. Render neutral.') and grade afterwards: in the source, three paid generations moved midtone a* only +1.9…+0.3 against a +24.9 target, while one measured pass hit chroma MAE 1.88. Apply: direct measurement beat a baked LUT (MAE 1.58); anchor tone instead of CDF matching when histograms differ (background kept 69 % vs 26 %); grade in batches of 6 frames (48 ran out of memory); never ship on MAE alone, check the background share too. One pack per genre.",
+  "params": "L* zones 0/15/35/55/75/100; median+MAD; batch 6 frames",
+  "install": "",
+  "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
+  "proof": [
+   "https://github.com/affaan-m/ECC/tree/main/skills/taste-distillation/SKILL.md",
+   "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "grade",
+   "lut",
+   "lab",
+   "style match",
+   "measurement",
+   "تدريج لوني",
+   "قياس",
+   "مطابقة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "https://github.com/affaan-m/ECC/tree/main/skills/taste-distillation/SKILL.md"
  }
 ]

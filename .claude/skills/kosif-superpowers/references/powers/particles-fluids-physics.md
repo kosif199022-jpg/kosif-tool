@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** آلاف النقاط التي تعني شيئًا — غبار يعطي الهواء عمقًا، شرر يقع على الضربة، مطر بطبقتين وبرك تتموج، قصاصات احتفال، سحابة تتجمع كلمةً عربية متصلة ثم تنفجر جمرًا، مجرات وكرات فيبوناتشي، ماء وبحر وسحب حجمية في 3D، وكرات ترتد بمعامل ارتداد حقيقي — وكلها دالة خالصة للزمن فيتطابق كل رندر.
 > **أقوى دليل:** فيلم `proofs/particles-to-arabic` (6000 جسيم في حقل curl خالٍ من التباعد بتكامل RK2 مخزّن مسبقًا، تتجمع «إبداع» من اليمين ثم تنفجر بسحب مغلق الصيغة — 13/13)؛ ومختبر جسيمات رندرتُه هنا (2026-10-16، 90 إطارًا): `MOTION.rain/vapour/sparkle` من motion-kit، انفجار ببذرة وجاذبية، قصاصات تنقلب، خطوط حقل تدفق، كرة فيبوناتشي، قفزة فضائية، كرة ترتد بـ e=0.75، ومجرة ω∝1/r — وإطارات 3D من `night_boat` (بحر وقفزة سمكة بحلقات) و`midnight_cat` (مطر بطبقتين وبرك).
-> **You can:** burst, rain, snow, dust, confetti, gather and dissolve words, flow fields, galaxies, water, clouds, fire, sparks and rigid-body-feeling drops — in Canvas, SVG/GSAP, three.js and Pillow. **75 powers follow** — ✅ 17 · 🟢 13 · 📦 13 · 🔑 1 · 👁 20 · 📄 10 · 💡 1.
+> **You can:** burst, rain, snow, dust, confetti, gather and dissolve words, flow fields, galaxies, water, clouds, fire, sparks and rigid-body-feeling drops — in Canvas, SVG/GSAP, three.js and Pillow. **76 powers follow** — ✅ 17 · 🟢 13 · 📦 13 · 🔑 1 · 👁 20 · 📄 11 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -19,6 +19,7 @@
 - **النار والدخان والماء والطقس — Fire, smoke, water & weather** — PART-53 … PART-67 (15)
 - **الفيزياء والأجسام — Physics & bodies** — PART-68 … PART-75 (8)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — PART-X01 (1)
 
 ## قوانين الحتمية والمعنى — Determinism & meaning laws
 
@@ -600,3 +601,15 @@ _الفيزياء في الفيديو تُحسب بخطوة ثابتة 1/fps (أ
 3. **PART-37 — مطر بطبقتين وبرك:** 152 بعيدة + 32 قريبة وحلقات ورذاذ — أسرع طريق لليل سينمائي.
 4. **PART-46 — كرة فيبوناتشي:** 900 نقطة بالزاوية الذهبية وشفافية بالعمق — «عالمي/ذكاء اصطناعي» في 15 سطرًا.
 5. **PART-43 — ذرات تصعد مع الصوت:** onset يرفعها وكل ركلة حلقة — الجسيمات تسمع الموسيقى.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### PART-X01 · مطر الرموز وموجات الحروف · Code rain, glyph streams and the crash beat · 📄 موصوف / documented only
+- **ماذا / what:** عدّة «داخل النظام»: مطر رموز وتيارات حروف على منحنيات وحلقات صدمة من الرموز ولحظة انهيار. — An 'inside the system' kit: code rain, glyph streams on curves, glyph shockwave rings and a crash beat.
+- **متى أستخدمها / when:** فيلم تقني أو أمني أو لحظة «تعطل» — a tech or security film or a 'crash' moment.
+- **كيف / how:** Use a glyph atlas per (font, size, colour, weight) for thousands of glyphs. Rain: per-column 80–420 px/s, length 4–30, head glyph changes at 16 Hz, trail at 2.5 Hz, alpha (1 − j/L)^1.5 · 0.8, glyphs ≥ 30 px at α 0.8 on dark to survive the lens pass. Streams: ~38 glyphs along quadratic Béziers over 0.72 s. Shockwave rings of 56/40 glyphs, r 240 → 1250 px. Crash beat: freeze + dim the rain to 0.4, resume at 1.3×, 36 px tear bands, a red modal with back(.16), shake 16 px at 5 Hz decaying at 9, CRT collapse scaleY → 0.015. **أرقام / params:** rain 80–420 px/s; head 16 Hz; trail 2.5 Hz; glyph ≥ 30 px.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`

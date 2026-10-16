@@ -3,7 +3,7 @@
 > **قوتك هنا:** ما حول الفيلم: أن تجد الأسلوب والأداة الصحيحة بسرعة، أن تتصل باستوديوهات المالك عبر MCP وجسر Claude، أن تحمي المستخدم (مدخلات غير موثوقة، بوابات تأكيد بشري، أسماء آمنة، تراخيص المصادر)، وأن تعرف أي مهارات مساندة موجودة عندما يكون الفيديو جزءًا من مشروع أكبر.
 > **أقوى دليل:** `kosif.py search/list/show` تعمل هنا (واختبار test_cli ناجح، ومقترحات للأخطاء الإملائية مثل whitebord → whiteboard)، واختبارات خادم MCP للاستوديو `test_web` ناجحة، واختبارات موجّه kosif-omni وبواباته ناجحة (60 من 62 — فشل اختباران لسلامة الحزمة).
 > **You can:** search the 288-style catalogue, drive the KOSIF studio over MCP, route to the right capability/tool, gate risky actions, keep projects portable and safe, and pull in supporting playbooks when needed.
-> **21 powers follow** — ✅ 5 · 🟢 7 · 📦 2 · 🔑 2 · 👁 0 · 📄 5 · 💡 0.
+> **27 powers follow** — ✅ 7 · 🟢 7 · 📦 2 · 🔑 2 · 👁 0 · 📄 9 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -16,6 +16,7 @@
 - **الأمان والتراخيص — Safety & licensing** — MISC-10 … MISC-15 (6)
 - **الأدوات والمهارات المساندة — Supporting tools & playbooks** — MISC-16 … MISC-21 (6)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — MISC-X01 … MISC-X02 (2)
 
 ## البحث في الكتالوج والمكتبات — Catalogue & library search
 
@@ -214,3 +215,23 @@ _مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v
 - **كيف / how:** python3 tools/render_catalog.py --id A22 (or --all [--fps 15 --seconds 2]); 280×498 frames in ten visual families (path, spring, chart, camera, type, ui, particle, person, wave, film). references/CAPABILITIES.csv lists for each Axx the mechanism, prerequisite, sample output and acceptance check (e.g. A23 word-by-word reveal: sync ±100 ms on key words; A50 deterministic seek: shuffled-seek test; A52 frame-diff spike report). catalog/index.html is a searchable offline gallery. These clips illustrate the idea — they are not proof that 3D, ASR, lip-sync or mimic run. Ran --id A22 here: OK. **أرقام / params:** 60 cards · 280×498 · 10 families
 - **الرخصة / license:** owner package (own work)
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_catalog.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/CAPABILITIES.csv` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/catalog/CATALOG.json` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/catalog/index.html`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### MISC-X01 · أدوات نص الويب: حكم الطرق الخمسمئة · Web text utilities: the 500-methods verdict · 📄 موصوف / documented only
+- **ماذا / what:** أداة المالك «500 طريقة» تختزل إلى أفكار قليلة: 30 زخرفة نصية، 10 وصفات بطاقات CSS، 23 تحويلًا نصيًا، و5 أطر برومبت؛ الباقي تنويعات. — The owner's '500 methods' tool reduces to a few ideas: 30 text decorations, 10 CSS card recipes, 23 text transforms and 5 prompt frameworks; the rest are variants.
+- **متى أستخدمها / when:** طلب زخرفة نص أو بطاقة CSS أو تحويل نص — a request for decorated text, a CSS card or a text transform.
+- **كيف / how:** CSS surfaces worth keeping as a palette for UI cards: glassmorphism, double neon glow, royal animated gradient, 3D elevated, soft neumorphism, gradient accent bar, holographic foil, cyber pill, dot-matrix surface, laser horizon card (e.g. glass = linear-gradient(300deg, #38bdf822, #818cf833), backdrop-filter: blur(16px), 1px border #38bdf866, radius 20px, shadow 0 12px 32px -8px #38bdf844). Encoders (Base64, hex, binary, URL slug, CONSTANT_CASE…) are one-liners: do them inline. Prompt frameworks: chain of thought, AIDA, SWOT → action plan, explain simply (Feynman), blueprint output. Decorations: ARAB-X03. Never republish the tool's web export: it embeds a third-party web config key. **أرقام / params:** 10 CSS recipes; 23 transforms; 5 frameworks.
+- **الرخصة / license:** owner
+- **المصدر / source:** `owner-upload:kosif-tool-ultra/kosif-500-methods.json`
+- **الدليل / proof:** `session-2026-10-16:motion-leftovers#5` · `owner-upload:kosif-tool-ultra/kosif-500-methods.json`
+
+#### MISC-X02 · تنسيق الوكلاء لبناء فيلم متوازٍ · Agent orchestration rules for parallel film builds · 📄 موصوف / documented only
+- **ماذا / what:** حين يبني عدة وكلاء فيلمًا معًا: ملفات منفصلة لكل وكيل، وتوقيعات عدة مشتركة مجمدة، وملخصات بدل مستندات كاملة. — When several agents build one film: each owns separate files, shared kit signatures are frozen, and agents get digests instead of whole documents.
+- **متى أستخدمها / when:** مشروع كبير يُقسم على وكلاء فرعيين — a large project split across sub-agents.
+- **كيف / how:** Parallel builders own disjoint files and write change requests instead of editing each other's; freeze the shared kit's function signatures; hand agents part files or JSON digests (one agent spent 8 min and 354.8k tokens reading ~1 MB before writing); pre-extract job ids into state.json rather than letting agents read raw transcripts; carry over the idea of liked frames, never their devices; do not message a sub-agent that runs inside a workflow (it forks a parallel copy editing the same files); serialize heavy renders and kill only your own browser processes; pre-produce during waits (assets, sound cue drafts, acceptance specs).
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`

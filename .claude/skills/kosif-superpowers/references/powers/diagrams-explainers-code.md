@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تشرح بالحركة: مخطط يُبنى بالترتيب السببي مع الصوت، عقدة تقفز ثم رابط يُرسم ثم نبضة بيانات تجري، كود يُكتب ويُبرز ويتحول، معادلة تتكون خطوة خطوة دون أن تنعكس داخل جملة عربية، ونموذج هندسي حقيقي تُحسب أرقامه ثم تتحول إلى فيلم.
 > **أقوى دليل:** حلّال «التوأم الإنشائي» شُغّل هنا فأعطى معامل أول انهيار 2.946× لعيّنة المثلث، ومرّت اختباراته (17/17)، ومرّ فحص القواعد الثابتة لتركيب دورة المياه في `kosif-studio`، واختبار تحويل الصورة إلى برنامج بايثون مطابق.
-> **You can:** plan, lay out, build, animate and narrate diagrams, code scenes and math/science explainers — RTL-aware. **64 powers follow** — ✅ 2 · 🟢 11 · 📦 10 · 🔑 1 · 👁 12 · 📄 26 · 💡 2.
+> **You can:** plan, lay out, build, animate and narrate diagrams, code scenes and math/science explainers — RTL-aware. **65 powers follow** — ✅ 2 · 🟢 11 · 📦 11 · 🔑 1 · 👁 12 · 📄 26 · 💡 2.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -17,6 +17,7 @@
 - **الرياضيات والعلوم والهندسة — Math, science & engineering** — EXPL-44 … EXPL-55 (12)
 - **بطاقات الشرح والوثائق — Explainer cards & documents** — EXPL-56 … EXPL-64 (9)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — EXPL-X01 (1)
 
 ## قواعد المخطط — Diagram grammar & composition
 
@@ -481,3 +482,16 @@ _بطاقات وفصول ومقتطفات تحمل الحجة._
 3. **EXPL-34 — جلسة الطرفية:** كتابة 35 حرفًا/ث، وميض Enter، مخرجات على دفعات، دفع 3% عند النجاح.
 4. **EXPL-50 — التوأم الإنشائي:** أرقام هندسية حقيقية محسوبة هنا تتحول إلى فيلم ولوحة.
 5. **EXPL-26 — شريط المراحل من اليمين:** حبوب مرقمة تمتلئ مع كل مرحلة وتضيء معًا في الخلاصة.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### EXPL-X01 · فيديو شرح بـManim · Manim explainer workflow · 📦 بأمر تثبيت / one install
+- **ماذا / what:** لشرح فكرة رياضية أو تقنية: جملة بصرية واحدة، ثم 3–6 مشاهد يثبت كل منها شيئًا واحدًا، ورندر سريع منخفض الجودة قبل الصقل. — For a math or technical idea: one visual thesis sentence, 3–6 scenes each proving one thing, and a fast low-quality render before polish.
+- **متى أستخدمها / when:** شرح معادلة أو خوارزمية أو مفهوم علمي — explaining an equation, algorithm or scientific concept.
+- **كيف / how:** Outline before code; smoke-render with `manim -ql`; motion explains a state change, reveal progressively; polish typography and pacing; hand off to ffmpeg or Remotion only if it adds value. Deliver a 16:9 MP4, a thumbnail readable at social size and the storyboard. Needs ffmpeg; LaTeX only for TeX formulas; system cairo/pango may need apt packages. **أرقام / params:** 3–6 scenes; -ql smoke render.
+- **تثبيت / install:** `pip install manim`
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa); Manim Community MIT
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/manim-video/SKILL.md`
+- **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/manim-video/SKILL.md`

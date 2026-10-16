@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تقرر اللون كمخرج لا كمزيّن — تقيس اللقطة ثم تصححها، تطابقها مع مرجع بأرقام محدودة، تلبسها لوكًا بسطر FFmpeg أو بفلتر متصفح أو بـLUT مخبوز، وتبني هوية كاملة من لون واحد مع تباين مضمون، ثم تحرّك اللون نفسه كأداة سرد: قلب قطبية، فصول بحقول لونية، سماء تتحول من الليل إلى الفجر.
 > **أقوى دليل:** الأحد عشر تلوينًا في `kosif-studio/motion/montage.py:42` نُفذت كلها في هذه الحاوية يوم 2026-10-16 (rc=0، واختبار `kosif-studio/tests/test_studio.py:818` يثبت blue_hour وsodium_night)، وخبزتُ teal_orange في Hald/‏.cube وأعدت تطبيقه بدقة 51.9/47.9 dB PSNR، ونقل رينهارد إلى LUT واختبارات المطابقة (`test_mimic.py` 10/10، `test_analyze.py` 5/5) واختبارات الهوية (`identity_unity`، `palette`، `dashboard-theme` 5/5 لكل منها) مرّت هنا.
-> **You can:** measure, correct, match, grade, palette-build, contrast-check and animate colour across FFmpeg, HTML/Canvas, three.js, Pillow and HyperFrames. **86 powers follow** — ✅ 38 · 🟢 15 · 📦 8 · 🔑 0 · 👁 13 · 📄 11 · 💡 1.
+> **You can:** measure, correct, match, grade, palette-build, contrast-check and animate colour across FFmpeg, HTML/Canvas, three.js, Pillow and HyperFrames. **87 powers follow** — ✅ 38 · 🟢 15 · 📦 8 · 🔑 0 · 👁 13 · 📄 12 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`). `app/` = محرر «بصمة» (Basma).
@@ -18,6 +18,7 @@
 - **اللون عبر الزمن — Colour over time** — COLOR-66 … COLOR-77 (12)
 - **الخلفيات والتدرجات والمعالجات — Grounds, gradients & treatments** — COLOR-78 … COLOR-86 (9)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — COLOR-X01 (1)
 
 ## اللوكات الجاهزة للفوتيج — Ready footage looks
 
@@ -892,3 +893,15 @@ eq=brightness='0.03*sin(2*PI*t*6)':eval=frame,vignette=angle=PI/4.5,noise=alls=8
 3. **COLOR-26 — رينهارد إلى LUT لكل لقطة:** «خلّه مثل هذا الفيلم» بأرقام: Lab mean/std بقوة 0.85 في مكعب 33³ يعمل في FFmpeg.
 4. **COLOR-66 — قلب القطبية:** حبر↔ورق عند منعطف القصة في 0.1 s — أبسط حركة لونية وأقواها سرديًا، وشوهدت في ثمانية من أفلامك.
 5. **COLOR-69 — سماء تتحول:** ليل ← فجر ← صباح بتحريك ثلاث محطات تدرج على 24.7 s — توقيع أفلام الدعاء والقصائد.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### COLOR-X01 · حزمة أسلوب مقيسة والتدريج بالقياس · Measured style pack and grading by measurement · 📄 موصوف / documented only
+- **ماذا / what:** البرومبت لا يصنع تدريجًا لونيًا؛ القياس يصنعه: قِس الكروما لكل منطقة إضاءة والوسيط والتباين ونسبة الخلفية الداكنة، ثم طبّق الفرق. — A prompt cannot deliver a grade; measurement can: measure chroma per lightness zone, medians, contrast and dark-background share, then apply the difference.
+- **متى أستخدمها / when:** مطابقة مظهر فيديو مرجعي أو تثبيت لون سلسلة لقطات مولدة — matching a reference look or locking colour across generated shots.
+- **كيف / how:** Measure in CIELAB: chroma per L* zone with edges [0, 15, 35, 55, 75, 100] (print the whole curve); median + MAD, not mean + std (skew inflated a mean ~2×, 36.9 vs 17.5); contrast = std(L*); background share = pixels below L* 10 as its own statistic; mask UI chrome (letterbox, status bar, icons) first. Generate neutral ('Colour: none. Render neutral.') and grade afterwards: in the source, three paid generations moved midtone a* only +1.9…+0.3 against a +24.9 target, while one measured pass hit chroma MAE 1.88. Apply: direct measurement beat a baked LUT (MAE 1.58); anchor tone instead of CDF matching when histograms differ (background kept 69 % vs 26 %); grade in batches of 6 frames (48 ran out of memory); never ship on MAE alone, check the background share too. One pack per genre. **أرقام / params:** L* zones 0/15/35/55/75/100; median+MAD; batch 6 frames.
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa)
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/taste-distillation/SKILL.md`
+- **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/taste-distillation/SKILL.md` · `https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md`

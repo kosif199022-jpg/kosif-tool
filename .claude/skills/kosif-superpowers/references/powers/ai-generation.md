@@ -6,7 +6,9 @@
 > **أقوى دليل / strongest proof:** ✅ شغّلت هنا في 2026-10-16: `100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py` (ست منصات، فحص PASS) و`video_prompt_forge.py` (سبع منصات بقص المدة) و`kosif-one/…/kosif-prompt-master/scripts/prompt_forge.py` (تسع منصات + تحذيرات) و`prompt_compiler_self_test.py` (PASS) واختبارات `fastify-motion-bro` (19/19) و`kmotion aiprompts/omniprompt` (OK). والمالك يملك لقطات مولدة حقيقية مقاسة: `kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.mp4` (Seedance 2.5) و`door.mp4`/`dashboard.mp4` (Kling 3.0).  
 > *Honest limit:* لا يوجد أي مفتاح توليد في هذه الحاوية (لا GEMINI/OPENAI/FAL/HF_KEY/TOGETHER) ولا GPU — كل مسار 🔑 يُسلَّم هنا كبرومبت وخطة موسومة «لم يُولَّد»، أو تُرسم الصورة بالكود (GEN-33).
 >
-> **90 قوة في 8 أقسام / 90 powers in 8 sections:** ✅ 14 · 🟢 7 · 📦 3 · 🔑 28 · 👁 7 · 📄 30 · 💡 1.
+> **93 قوة في 8 أقسام + إضافات v2 / 93 powers in 8 sections + v2 additions:** ✅ 14 · 🟢 7 · 📦 3 · 🔑 30 · 👁 7 · 📄 31 · 💡 1.
+>
+> **إضافات v2 — v2 additions:** GEN-X01 … GEN-X02 (2) — في آخر الفصل / at the end of this chapter.
 
 **الشارات / badges:** ✅ مُثبت هنا / proven here · 🟢 جاهز / ready · 📦 بأمر تثبيت / one install · 🔑 مفتاح أو خدمة / needs key or service · 👁 شوهد في فيديو / seen in a reference video · 📄 موصوف / documented only · 💡 فكرة / idea
 
@@ -700,3 +702,23 @@ _مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v
 - **التثبيت / install:** `pip install anthropic`
 - **الرخصة / license:** owner package (own work)
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/claude_api_review.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/API_MODE.md`
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### GEN-X01 · إنتاج فيديو مرجعي عبر Higgsfield · Higgsfield reference-video production parameters and prompt skeleton · 🔑 مفتاح أو خدمة / needs key or service
+- **ماذا / what:** معاملات إنتاج مجرّبة لتوليد لقطات فيديو من صور مرجعية عبر Higgsfield، وهيكل برومبت يصف الأداء لا الشكل فقط. — Tested production settings for generating video shots from reference images on Higgsfield, and a prompt skeleton that directs the performance, not just the look.
+- **متى أستخدمها / when:** المستخدم يريد لقطات مولدة وصرّح بالإنفاق — the user wants generated shots and has authorised spend.
+- **كيف / how:** Stills at 2k–4k for references; video at 1080p, high bitrate, generate_audio off, 4–30 s, delivered as 24 fps HEVC; in the owner's films ≈ 12 credits per second at 1080p, ≤ 12 jobs per batch, 3–6 min per 5 s clip, plus a ~30 % reshoot reserve. Skeleton: REFERENCE DEFINITIONS / SCENE / CHARACTERS / WORLD / ACTING TASK (motive, goal, obstacle, tactic) / SHOTS with timecodes / CAMERA AND LOOK / AUDIO / CONSTRAINTS; one continuous shot with one motivated move; open mid-motion with the money moment 1–3 s in. Model names and prices drift: list the connector's current models and quote cost before generating; never spend without explicit approval. **أرقام / params:** 1080p; 4–30 s; ≈ 12 credits/s; reserve 30 %; ≤ 12 per batch.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+- **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+
+#### GEN-X02 · توليد متصل ثم قص · One continuous generation, then cut · 📄 موصوف / documented only
+- **ماذا / what:** ولّد لقطة طويلة متصلة ثم قصّها على إيقاع المرجع، بدل توليد كل لقطة وحدها. — Generate one long continuous take and cut it to the reference rhythm instead of generating every shot separately.
+- **متى أستخدمها / when:** ريل مولّد بإيقاع قطع سريع — a generated reel with fast cutting.
+- **كيف / how:** Plan the takes from the reference's cut rhythm; prompt the continuous take so any 0.8 s window stands as its own shot; cutting one generation reached 77 % usable footage versus 21 % for one generation per shot (3 calls gave 13 s). Sample shot lengths from the reference distribution, not its mean; when supplementing footage use its detected shot boundaries; crop the capture app's UI from borrowed screen recordings (temporal-variance masks keep animated chrome). Re-encode the cuts (FOOT-X03). **أرقام / params:** any 0.8 s window = a shot; 77 % vs 21 % usable.
+- **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa)
+- **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md`
+- **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md`

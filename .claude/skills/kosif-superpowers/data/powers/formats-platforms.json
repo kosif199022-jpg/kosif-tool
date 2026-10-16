@@ -1770,5 +1770,36 @@
    "marketing",
    "newsletter"
   ]
+ },
+ {
+  "id": "FMT-X01",
+  "family": "formats-platforms",
+  "domain": "motion",
+  "name_ar": "ماستر بلا صوت وملاحظة صادقة عن الصوت",
+  "name_en": "Masters with a no-sound copy and an honest audio note",
+  "status": "documented",
+  "what": "سلّم الماستر ومعه نسخة بلا صوت، وقل بوضوح إن الصوت فُحص بالأرقام لا بالاستماع. — Deliver the master plus a no-sound copy, and state plainly that the audio was checked numerically, not by listening.",
+  "when": "تسليم فيلم إطلاق أو إعلان بصوت مؤقت — delivering a launch film or ad with a placeholder track.",
+  "how": "Launch films: 1920×1080 30 fps H.264 with sub-frame motion blur + a _nosound master (the final sound is often made by a human in an editor). Brand masters: 1920×1080 24 fps H.264 High, BT.709, 20–30 Mbps, AAC 256k. Loudness target −14 LUFS / −1.2 dBTP, and the payoff line must stand clearly above the music (a −21 LUFS master with the payoff only +2.7 dB over music was not client-ready).",
+  "params": "H.264 High BT.709 20–30 Mbps; AAC 256k; −14 LUFS / −1.2 dBTP",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/launch-film.md",
+   "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md",
+   "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/music_window.py"
+  ],
+  "styles": [],
+  "tags": [
+   "master",
+   "delivery",
+   "nosound",
+   "loudness",
+   "تسليم",
+   "ماستر",
+   "بلا صوت"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
  }
 ]

@@ -3,7 +3,7 @@
 > **قوتك هنا:** تصنع البكسل كما يجب — دقة منطقية صغيرة، إحداثيات صحيحة، تكبير بأقرب جار، وإضاءة تتدرج عبر اللوحة أو مصفوفة Bayer لا عبر الشفافية — ثم تضيف الطباعة القديمة (هافتون، ريزوغراف، حبرين)، الـ CRT والـ VHS، الـ ASCII، والغليتش بجرعات قصيرة.
 > **أقوى دليل:** مختبر هنا: مشهد 320×180 بلوحة Game Boy من 4 ألوان ودخول بعتبة Bayer 4×4، كُبّر ×6 بـ `scale=…:flags=neighbor` إلى 1920×1080 (48 إطارًا، تباين داخل الكتلة 2.37 فقط بعد الترميز)، ثم غليتش `rgbashift` وخطوط مسح وحبيبات، وASCII وهافتون؛ واختبارات `dither.mjs` (Floyd-Steinberg/Atkinson…) نجحت 3/3، وثيمات Fastify الريترو مقفلة بالاختبارات.
 > **You can:** build pixel cutscenes, sprites and tiles, retro print and screen looks, ASCII/halftone/LED post passes and beat-anchored glitch — in Canvas, Pillow, ffmpeg or WebGL.
-> **31 powers follow** — ✅ 10 · 🟢 4 · 📦 3 · 🔑 0 · 👁 5 · 📄 8 · 💡 1.
+> **32 powers follow** — ✅ 10 · 🟢 4 · 📦 3 · 🔑 0 · 👁 5 · 📄 9 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -18,6 +18,7 @@
 - **الغليتش — Glitch** — RETRO-26 … RETRO-28 (3)
 - **الثيمات المقفلة والأساليب الخاصة — Locked themes & special styles** — RETRO-29 … RETRO-31 (3)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **إضافات v2 — v2 additions** — RETRO-X01 (1)
 
 ## البكسل آرت — Pixel art
 
@@ -293,3 +294,15 @@ _لوك كامل في فقرة واحدة تُلصق حرفيًا في كل أم
 3. **RETRO-22 — ASCII يتدقق حتى يُقرأ:** خشن ← ناعم في 1.4 ث لشعار أو كشف.
 4. **RETRO-28 — كلمة غليتش على ثُمن النوتة:** 6–10 شرائح وإزاحة 4–12 بكسل.
 5. **RETRO-29 — ثيم مقفل:** فقرة لوك واحدة تُلصق حرفيًا في كل مقطع مولد.
+
+## إضافات v2 — v2 additions
+
+_قدرات أُضيفت في الإصدار الثاني من حزم المالك (higgsfield-motion-saas وhiggsfield-motion-claude ومهارة المونتاج التحريرية وفيلم الأغنية وKOSIF SEE) ومن مهارات ECC (رخصة MIT)، مكتوبة بكلماتنا. ✅ هنا = شُغّلت في جلسة 2026-10-16 وسجلها في [external-skills.md](../external-skills.md)؛ مسارات `owner-upload:` تشير إلى أرشيفات المالك لا إلى هذا المستودع. — v2 additions from the owner's packages and ECC skills (MIT), in our own words; ✅ = run in this session, log in external-skills.md; `owner-upload:` paths point into the owner's archives, not this repo._
+
+#### RETRO-X01 · شاشة LED نقطية وكلمات بكسل حقيقية · LED dot lattice bulge and true pixel words · 📄 موصوف / documented only
+- **ماذا / what:** شاشة نقاط LED تنتفخ كعدسة مع حواف لونية على مستوى النقطة، وكلمات بكسل تُرسم من خرائط 5×7 حقيقية لا من خط بكسل مكبر. — An LED dot screen that bulges like a lens with per-dot colour fringes, and pixel words drawn from real 5×7 bitmaps rather than an enlarged pixel font.
+- **متى أستخدمها / when:** مظهر لوحة إعلانات LED أو ألعاب قديمة — an LED billboard or retro-game look.
+- **كيف / how:** Barrel bulge on a dot lattice with k 0.10–0.17: position × (1 + k·r²), dot size × (1 + 1.6k·r²); dot-level fringes #FF2A3C / #2A6BFF at α 0.55 with 'lighter' compositing. A pixel TTF at 540 px renders rounded corners: draw 5×7 bitmaps cell by cell instead. **أرقام / params:** k 0.10–0.17; size ×(1 + 1.6k r²); fringe α .55.
+- **الرخصة / license:** owner (no LICENSE file)
+- **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+- **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`
