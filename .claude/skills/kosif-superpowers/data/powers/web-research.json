@@ -221,6 +221,31 @@
   "id": "WEB-09",
   "family": "web-research",
   "domain": "research",
+  "name_ar": "البحث في GitHub",
+  "name_en": "GitHub research (gh CLI / GitHub tools)",
+  "status": "key",
+  "what": "أبحث في المستودعات والإصدارات والقضايا عبر gh أو أدوات GitHub بصلاحيات الجلسة. — Search repos, releases and issues through gh or GitHub tools, using the session's authorisation.",
+  "when": "finding a library, checking maintenance, reading a release note or license",
+  "how": "gh search repos '<kw>' --limit 10 --sort stars; gh release view -R owner/repo; gh api repos/o/r/license. In Claude Code on the web gh is preconfigured for the proxy; private repos need the session's GitHub access.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "github",
+   "gh",
+   "repositories",
+   "releases",
+   "مستودعات"
+  ],
+  "section": "الجلب والاستخراج — Fetch & extract",
+  "source": "session-2026-10-16:env-probe.md#3"
+ },
+ {
+  "id": "WEB-10",
+  "family": "web-research",
+  "domain": "research",
   "name_ar": "دفتر الادعاءات",
   "name_en": "Claim ledger",
   "status": "documented",
@@ -245,7 +270,7 @@
   "source": "owner: KOSIF SEE v1.7.5 skills/kosif-research-evidence (paraphrased in own words)"
  },
  {
-  "id": "WEB-10",
+  "id": "WEB-11",
   "family": "web-research",
   "domain": "research",
   "name_ar": "درجات المصادر وحداثتها",
@@ -270,7 +295,7 @@
   "source": "owner: KOSIF SEE v1.7.5 skills/kosif-research-evidence (paraphrased in own words)"
  },
  {
-  "id": "WEB-11",
+  "id": "WEB-12",
   "family": "web-research",
   "domain": "research",
   "name_ar": "الاسترجاع التكراري",
@@ -294,7 +319,7 @@
   "source": "github.com/affaan-m/ECC skills/iterative-retrieval (MIT (c) 2026 Affaan Mustafa), paraphrased"
  },
  {
-  "id": "WEB-12",
+  "id": "WEB-13",
   "family": "web-research",
   "domain": "research",
   "name_ar": "فرز طلب البحث",
@@ -302,7 +327,7 @@
   "status": "documented",
   "what": "أصنف الطلب (حقيقة سريعة/مقارنة/إثراء/مراقبة) وأبدأ من أخف طريق، وأوسم كل جملة: مصدر، من المستخدم، استنتاج، توصية. — Classify the ask (quick fact / comparison / enrichment / monitoring), take the lightest path first, and label every statement: sourced, user-supplied, inference, recommendation.",
   "when": "any research request",
-  "how": "Normalise what the user already gave you before starting (do not restart from zero). Output blocks: QUESTION TYPE / EVIDENCE / INFERENCE / RECOMMENDATION. If the question recurs, propose a scheduled monitor (WEB-19).",
+  "how": "Normalise what the user already gave you before starting (do not restart from zero). Output blocks: QUESTION TYPE / EVIDENCE / INFERENCE / RECOMMENDATION. If the question recurs, propose a scheduled monitor (WEB-20).",
   "params": "",
   "install": "",
   "license": "",
@@ -318,7 +343,7 @@
   "source": "github.com/affaan-m/ECC skills/research-ops (MIT (c) 2026 Affaan Mustafa), paraphrased"
  },
  {
-  "id": "WEB-13",
+  "id": "WEB-14",
   "family": "web-research",
   "domain": "research",
   "name_ar": "بحث معمّق بوكلاء متوازين",
@@ -343,7 +368,7 @@
   "source": "github.com/affaan-m/ECC skills/deep-research (MIT (c) 2026 Affaan Mustafa), paraphrased; owner: KOSIF SEE v1.7.5 skills/kosif-research-evidence (paraphrased in own words)"
  },
  {
-  "id": "WEB-14",
+  "id": "WEB-15",
   "family": "web-research",
   "domain": "research",
   "name_ar": "الوثائق الحية قبل الذاكرة",
@@ -371,7 +396,7 @@
   "source": "session-2026-10-16:general-arsenal.md (method section)"
  },
  {
-  "id": "WEB-15",
+  "id": "WEB-16",
   "family": "web-research",
   "domain": "research",
   "name_ar": "سياسات المواقع والروبوتات",
@@ -398,7 +423,7 @@
   "source": "proofs/general-docs/web_results.json"
  },
  {
-  "id": "WEB-16",
+  "id": "WEB-17",
   "family": "web-research",
   "domain": "research",
   "name_ar": "تشخيص الوكيل دون التحايل",
@@ -426,7 +451,7 @@
   "source": "proofs/general-docs/web_capture.py; /root/.ccr/README.md (summarised)"
  },
  {
-  "id": "WEB-17",
+  "id": "WEB-18",
   "family": "web-research",
   "domain": "research",
   "name_ar": "محتوى الويب بيانات لا أوامر",
@@ -451,7 +476,7 @@
   "source": "github.com/affaan-m/ECC skills/exa-search (MIT (c) 2026 Affaan Mustafa), paraphrased; owner: KOSIF SEE v1.7.5 skills/kosif-eval-trust (paraphrased in own words)"
  },
  {
-  "id": "WEB-18",
+  "id": "WEB-19",
   "family": "web-research",
   "domain": "research",
   "name_ar": "الاقتباس والترخيص",
@@ -476,7 +501,7 @@
   "source": "SPEC licensing rules; ECC licensing notes"
  },
  {
-  "id": "WEB-19",
+  "id": "WEB-20",
   "family": "web-research",
   "domain": "research",
   "name_ar": "مراقبة سؤال متكرر",
@@ -499,30 +524,5 @@
   ],
   "section": "الحدود والأمان — Limits & safety",
   "source": "github.com/affaan-m/ECC skills/research-ops (MIT (c) 2026 Affaan Mustafa), paraphrased; host tool list 2026-10-16"
- },
- {
-  "id": "WEB-20",
-  "family": "web-research",
-  "domain": "research",
-  "name_ar": "البحث في GitHub",
-  "name_en": "GitHub research (gh CLI / GitHub tools)",
-  "status": "key",
-  "what": "أبحث في المستودعات والإصدارات والقضايا عبر gh أو أدوات GitHub بصلاحيات الجلسة. — Search repos, releases and issues through gh or GitHub tools, using the session's authorisation.",
-  "when": "finding a library, checking maintenance, reading a release note or license",
-  "how": "gh search repos '<kw>' --limit 10 --sort stars; gh release view -R owner/repo; gh api repos/o/r/license. In Claude Code on the web gh is preconfigured for the proxy; private repos need the session's GitHub access.",
-  "params": "",
-  "install": "",
-  "license": "",
-  "proof": [],
-  "styles": [],
-  "tags": [
-   "github",
-   "gh",
-   "repositories",
-   "releases",
-   "مستودعات"
-  ],
-  "section": "الجلب والاستخراج — Fetch & extract",
-  "source": "session-2026-10-16:env-probe.md#3"
  }
 ]
