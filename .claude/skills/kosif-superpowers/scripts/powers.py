@@ -183,6 +183,7 @@ INTENT.update({
     "تحليل ملف تنفيذي": ["binary", "reverse engineering", "@CODE", "@SEC"],
     "reverse engineering": ["software inspection", "@CODE", "@CHECK", "@SEC"],
     "reverse engineer": ["reverse engineering", "@CODE", "@CHECK", "@SEC"],
+    "rea": ["reverse engineering", "@CODE", "@CHECK"],
     "rea-agents": ["reverse engineering", "@CODE", "@CHECK"],
     "electron": ["javascript", "static inspection", "@CODE"],
     "apk": ["android", "static inspection", "@CODE", "@SEC"],
