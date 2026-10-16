@@ -25,6 +25,8 @@ jobs:
         run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
       - name: REA bridge and router safety regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_rea_*.py' -v
+      - name: Community source scout and safety regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_scout.py' -v
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules
