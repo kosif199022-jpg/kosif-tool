@@ -6611,9 +6611,9 @@
   "family": "qa-verification",
   "name_ar": "إيصال تنفيذ مُتحقَّق منه: لا نجاح بلا دليل",
   "name_en": "Evidence receipt validator (no verified success without evidence)",
-  "status": "proven",
+  "status": "documented",
   "what": "كل خطوة مهمة تُرجع إيصالًا بثمانية حقول، والفاحص يرفض أي «تم» بلا دليل. / Every consequential step returns an 8-field receipt; the gate rejects any verified success that carries no evidence.",
-  "how": "Receipt = {status: success|warning|error, summary, owner, evidence:[{type,ref}], artifacts:[], next_actions:[], retryable: bool, verified: bool}. Rules: all keys present; owner non-empty; evidence/artifacts/next_actions are arrays; booleans are real booleans; verified=true requires status=success AND non-empty evidence (else UNVERIFIED_SUCCESS_CLAIM); error can never be verified. CLI: python3 integrations/kosif-see/ecc_contract_gate.py validate-receipt r.json → exit 0 / 2. Ran here: a receipt with verified=true and evidence [] returned UNVERIFIED_SUCCESS_CLAIM, exit 2. Pair with QA-46 (ffprobe delivery receipt): put the ffprobe JSON and frame-sheet path into evidence. Idea adapted from ECC (MIT).",
+  "how": "Receipt = {status: success|warning|error, summary, owner, evidence:[{type,ref}], artifacts:[], next_actions:[], retryable: bool, verified: bool}. Rules: all keys present; owner non-empty; evidence/artifacts/next_actions are arrays; booleans are real booleans; verified=true requires status=success AND non-empty evidence (else UNVERIFIED_SUCCESS_CLAIM); error can never be verified. CLI: python3 integrations/kosif-see/ecc_contract_gate.py validate-receipt r.json → exit 0 / 2. Ran here: a receipt with verified=true and evidence [] returned UNVERIFIED_SUCCESS_CLAIM, exit 2. Pair with QA-46 (ffprobe delivery receipt): put the ffprobe JSON and frame-sheet path into evidence. Idea adapted from ECC (MIT). Status note: the code is owner material that is not vendored in this skill; the numbers above are from one run on the owner's copy on 2026-10-16 and cannot be re-run from here, so this is 📄 documented, not ✅.",
   "params": "8 required keys · exit 0 pass / 2 fail",
   "install": "",
   "license": "owner package; method adapted from affaan-m/ECC (MIT), no ECC code",
@@ -6673,6 +6673,7 @@
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/fdiff.swift"
   ],
   "styles": [],
@@ -6705,6 +6706,7 @@
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/activity.mjs"
   ],
   "styles": [],
@@ -6766,6 +6768,7 @@
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
   "styles": [],

@@ -234,7 +234,7 @@ def main(argv=None) -> int:
         out.write_text(text, encoding="utf-8")
         wrote.append(stem)
     # generated chapters whose JSON is gone
-    live = {f[0] for f in fams} if not a.family else set()
+    live = ({f[0] for f in fams} | {j.stem for j in DATA.glob("*.json")}) if not a.family else set()  # a JSON that fails to parse is never pruned
     orphans = []
     if not a.family and out_dir.is_dir():
         for f in sorted(out_dir.glob("*.md")):
@@ -251,6 +251,8 @@ def main(argv=None) -> int:
             print(f"pruned {f.name} (no JSON)")
         else:
             stale.append(f"{f.stem} (generated chapter without JSON; run --prune)")
+    if errors:
+        stale += [f"{e.split('.json')[0]} (JSON does not parse: {e})" for e in errors] if a.check else []
     for stem in refused:
         print(f"refused: references/powers/{stem}.md exists without the generated marker (use --force)", file=sys.stderr)
     if a.check:
@@ -267,7 +269,9 @@ def main(argv=None) -> int:
             print(f"wrote {out_dir / (s + '.md')}" if a.out else f"wrote references/powers/{s}.md")
         print(f"build_chapters: {len(wrote)} written · {len(same)} unchanged · {len(refused)} refused · "
               f"{len(fams)} general famil{'y' if len(fams) == 1 else 'ies'} · motion chapters untouched")
-    return 1 if refused else 0
+    if errors:
+        print(f"build_chapters: {len(errors)} family JSON file(s) failed to load (see warnings above)", file=sys.stderr)
+    return 1 if refused or errors else 0
 
 
 if __name__ == "__main__":

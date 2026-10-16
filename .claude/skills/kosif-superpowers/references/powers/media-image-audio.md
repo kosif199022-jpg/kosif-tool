@@ -23,7 +23,7 @@
 ## النص العربي على الصور — Arabic text on images
 
 #### MEDIA-01 · كتابة العربية على الصور بـ Pillow · Arabic text on images with Pillow (raqm) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** Pillow 12 يشكّل العربية بنفسه عبر raqm؛ أمرّر النص كما هو مع الاتجاه واللغة ونقطة الارتكاز. — Pillow 12 shapes Arabic itself through raqm; pass the text as-is with direction, language and anchor.
+- **ماذا / what:** Pillow 12 يشكّل العربية بنفسه عبر raqm؛ مرّر النص كما هو مع الاتجاه واللغة ونقطة الارتكاز. — Pillow 12 shapes Arabic itself through raqm; pass the text as-is with direction, language and anchor.
 - **متى أستخدمها / when:** thumbnails, social cards, certificates, OCR test images, labels on frames
 - **كيف / how:** f=ImageFont.truetype(path,64,layout_engine=ImageFont.Layout.RAQM); draw.text((right_x,y), text, font=f, direction='rtl', language='ar', anchor='ra'). Check PIL.features.check('raqm') first (True, raqm 0.10.5, on 2026-10-16). Use bundled OFL fonts (Amiri, Cairo, Tajawal) because system Arabic fonts are poor. **أرقام / params:** anchor 'ra' = right edge, ascender line; 'la' for LTR
 - **تثبيت / install:** `pip install pillow`
@@ -41,7 +41,7 @@
 ## التعرف الضوئي على الحروف — OCR
 
 #### MEDIA-03 · التعرف على العربية والإنجليزية بـ tesseract · Arabic + English OCR with tesseract · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أستخرج النص العربي والإنجليزي من الصور محليًا بعد تثبيت حزمة العربية. — Extract Arabic and English text from images locally once the Arabic pack is installed.
+- **ماذا / what:** استخرج النص العربي والإنجليزي من الصور محليًا بعد تثبيت حزمة العربية. — Extract Arabic and English text from images locally once the Arabic pack is installed.
 - **متى أستخدمها / when:** screenshots, scans, photos of documents, images inside PDFs
 - **كيف / how:** apt-get install -y tesseract-ocr tesseract-ocr-ara (6 s); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 6'). Proof: clean naskh, sans and English lines read at similarity 0.99 in 0.41 s; mean word confidence 90.6. Strip U+200E/U+200F marks from the output. **أرقام / params:** --psm 6 block, 7 single line, 4 columns; 300 dpi for scans
 - **تثبيت / install:** `apt-get install tesseract-ocr tesseract-ocr-ara && pip install pytesseract`
@@ -50,14 +50,14 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-04 · نقاط ضعف OCR العربي · Arabic OCR weak spots (digits, display fonts) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** نموذج ara الافتراضي يخطئ في الأرقام الهندية العربية والخطوط الكوفية والعرضية؛ أتحقق من كل رقم. — The stock ara model misreads Arabic-Indic digits and Kufi/display fonts; validate every number.
+- **ماذا / what:** نموذج ara الافتراضي يخطئ في الأرقام الهندية العربية والخطوط الكوفية والعرضية؛ تحقق من كل رقم. — The stock ara model misreads Arabic-Indic digits and Kufi/display fonts; validate every number.
 - **متى أستخدمها / when:** invoices, phone numbers, dates, prices read by OCR
 - **كيف / how:** Measured (56 px, psm 7): Arabic-Indic digits 0.51-0.84 similarity (a phone number came back as garbage); the same line with Western digits 1.0; Reem Kufi merged two words. Mitigations: -l ara for pure Arabic lines (ara+eng can emit Latin junk); range/checksum checks; ask the user to confirm numbers; try tessdata_best (untested).
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/results.json#findings
 
 #### MEDIA-05 · تقويم الصفحات المائلة · Deskew scans before OCR · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أقدّر زاوية الميل من كتل السطور وأدوّر الصورة قبل التعرف، فيرتفع التطابق كثيرًا. — Estimate the skew angle from line blobs and rotate before OCR; accuracy rises sharply.
+- **ماذا / what:** قدّر زاوية الميل من كتل السطور ودوّر الصورة قبل التعرف، فيرتفع التطابق كثيرًا. — Estimate the skew angle from line blobs and rotate before OCR; accuracy rises sharply.
 - **متى أستخدمها / when:** photographed or scanned pages that are visibly tilted
 - **كيف / how:** median 3 -> Otsu (inverted) -> morph open 2x2 -> dilate with a 60x5 kernel -> contours > 5000 px -> cv2.minAreaRect angles (subtract 90 when w<h) -> median -> warpAffine back. Proof: true 12°, estimated 12.07°, OCR 0.598 -> 0.912.
 - **تثبيت / install:** `pip install opencv-python-headless`
@@ -93,7 +93,7 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-09 · ضغط الصور ومقارنة الجودة · Image compression with quality metrics · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أختار الصيغة بالأرقام: WebP وAVIF أصغر بكثير من PNG وJPEG مع SSIM مرتفع. — Choose formats by numbers: WebP and AVIF are much smaller than PNG/JPEG while keeping SSIM high.
+- **ماذا / what:** اختر الصيغة بالأرقام: WebP وAVIF أصغر بكثير من PNG وJPEG مع SSIM مرتفع. — Choose formats by numbers: WebP and AVIF are much smaller than PNG/JPEG while keeping SSIM high.
 - **متى أستخدمها / when:** web images, thumbnails, artifacts under size limits
 - **كيف / how:** Pillow save: PNG optimize, WebP quality 80, AVIF quality 50, JPEG 85; measure with cv2.PSNR and skimage structural_similarity(channel_axis=2). Proof (640x480 synthetic): 12.0 / 5.5 / 3.3 / 15.8 KB; WebP PSNR 39.7 dB, SSIM 0.982.
 - **تثبيت / install:** `pip install pillow scikit-image opencv-python-headless`
@@ -102,7 +102,7 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-10 · استخراج لوحة الألوان · Dominant palette with k-means · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أستخرج الألوان الغالبة من صورة أو شعار لبناء هوية أو مطابقة تصميم. — Extract dominant colours from an image or logo to build or match a palette.
+- **ماذا / what:** استخرج الألوان الغالبة من صورة أو شعار لبناء هوية أو مطابقة تصميم. — Extract dominant colours from an image or logo to build or match a palette.
 - **متى أستخدمها / when:** brand matching, palette from a photo, colour grading references
 - **كيف / how:** Z=img.reshape(-1,3).astype(np.float32); cv2.kmeans(Z, k, None, (EPS+MAX_ITER,30,0.5), 4, cv2.KMEANS_PP_CENTERS); sort centres by cluster size. Proof: k=4 recovered three disc colours within 0.9-2.3 RGB units. Gradients need a larger k or a LAB colour space.
 - **تثبيت / install:** `pip install opencv-python-headless`
@@ -111,7 +111,7 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-11 · رموز QR والباركود · QR codes and barcodes (encode + decode) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أولّد رموز QR (حتى بروابط فيها عربية) وأفك ترميزها للتحقق، وأولّد باركود EAN/Code128. — Generate QR codes (even URLs with Arabic) and decode them back to verify; generate EAN/Code128 barcodes.
+- **ماذا / what:** ولّد رموز QR (حتى بروابط فيها عربية) وفكّ ترميزها للتحقق، وولّد باركود EAN/Code128. — Generate QR codes (even URLs with Arabic) and decode them back to verify; generate EAN/Code128 barcodes.
 - **متى أستخدمها / when:** menus, posters, invoices, packaging, end cards
 - **كيف / how:** qrcode.make(payload, box_size=8, border=4).save(p); cv2.QRCodeDetector().detectAndDecode(cv2.imread(p)) must equal the payload. Barcode: barcode.get('ean13', digits, writer=ImageWriter()).save('bc').
 - **تثبيت / install:** `pip install qrcode python-barcode opencv-python-headless`
@@ -129,16 +129,16 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-13 · SVG إلى PNG · SVG to PNG (cairosvg) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحوّل رسوم SVG إلى صور نقطية لإدراجها في مستندات أو فيديو. — Rasterise SVG for documents or video.
+- **ماذا / what:** حوّل رسوم SVG إلى صور نقطية لإدراجها في مستندات أو فيديو. — Rasterise SVG for documents or video.
 - **متى أستخدمها / when:** icons, logos, diagrams drawn as SVG
 - **كيف / how:** cairosvg.svg2png(bytestring=svg, write_to='o.png', output_width=1024). For Arabic text inside SVG prefer Chromium rendering (APP-05 snap) because it has full shaping; Arabic in cairosvg was not tested.
 - **تثبيت / install:** `pip install cairosvg`
 - **الرخصة / license:** LGPL-3.0-or-later
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### MEDIA-14 · المراجعة البصرية لمخرجاتي · Look at your own outputs (vision QA) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أفتح الصور وصفحات PDF التي أنتجتها بأداة القراءة وأراها فعلًا قبل الادعاء بأنها صحيحة. — Open the images and PDF pages I produced with the Read tool and actually look before claiming they are right.
+- **ماذا / what:** افتح الصور وصفحات PDF التي أنتجتها بأداة القراءة وانظر إليها فعلًا قبل الادعاء بأنها صحيحة. — Open the images and PDF pages I produced with the Read tool and actually look before claiming they are right.
 - **متى أستخدمها / when:** after every render, chart, document or OCR test image
 - **كيف / how:** Build a contact sheet (Pillow tiles, quantize to stay under 300 KB), Read it, and check Arabic joining, direction, cropping and overlaps. In this session, looking caught a reversed matplotlib title, a chart split over two pages, and a wrong filter name.
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
@@ -147,7 +147,7 @@
 ## الصوت — Audio
 
 #### MEDIA-15 · توليد إشارات صوتية للاختبار · Synthesize test audio · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أصنع صوتًا معروف الخصائص (نغمة، صمت، نقرات بإيقاع) لاختبار أي خط معالجة. — Make audio with known properties (tone, silence, clicks at a tempo) to test any audio pipeline.
+- **ماذا / what:** اصنع صوتًا معروف الخصائص (نغمة، صمت، نقرات بإيقاع) لاختبار أي خط معالجة. — Make audio with known properties (tone, silence, clicks at a tempo) to test any audio pipeline.
 - **متى أستخدمها / when:** before trusting a beat, pitch, loudness or silence detector on real audio
 - **كيف / how:** numpy: 0.2*sin(2*pi*440*t) for 2 s, zeros for 1 s, decaying 1 kHz clicks every 0.5 s (120 BPM); soundfile.write(p, sig, 48000, subtype='PCM_16').
 - **تثبيت / install:** `pip install numpy soundfile`
@@ -156,25 +156,25 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-16 · قياس طبقة الصوت · Pitch tracking (librosa YIN) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أقيس التردد الأساسي لصوت أو نغمة. — Measure the fundamental frequency of a voice or tone.
+- **ماذا / what:** قِس التردد الأساسي لصوت أو نغمة. — Measure the fundamental frequency of a voice or tone.
 - **متى أستخدمها / when:** tuning checks, voice analysis, verifying generated tones
-- **كيف / how:** f0=librosa.yin(y, fmin=100, fmax=1000, sr=sr); np.median(f0). Proof: 440 Hz tone -> 440.6 Hz. librosa is 1.0 now; check the API before writing from memory.
+- **كيف / how:** f0=librosa.yin(y, fmin=100, fmax=1000, sr=sr); np.median(f0). Proof: 440 Hz tone -> 440.6 Hz. librosa is 1.0 now; check the API before writing from memory. librosa ran in an earlier session's venv (2026-10-16) and is not installed in the current container: `pip install librosa` first.
 - **تثبيت / install:** `pip install librosa`
 - **الرخصة / license:** ISC
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-17 · كشف بدايات الأصوات والإيقاع · Onset and tempo detection · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أجد لحظات الضربات والمسافات بينها لاستنتاج الإيقاع. — Find hit times and their spacing to infer tempo.
+- **ماذا / what:** جِد لحظات الضربات والمسافات بينها لاستنتاج الإيقاع. — Find hit times and their spacing to infer tempo.
 - **متى أستخدمها / when:** cutting to the beat, syncing captions, rhythm checks
-- **كيف / how:** librosa.onset.onset_detect(y=seg, sr=sr, units='time'); tempo = 60/median(diff). Start the window about 0.1 s before the first hit, because an onset at sample 0 is missed (first run found 5 of 6). Proof: 6 onsets, 0.501 s spacing (119.7 BPM).
+- **كيف / how:** librosa.onset.onset_detect(y=seg, sr=sr, units='time'); tempo = 60/median(diff). Start the window about 0.1 s before the first hit, because an onset at sample 0 is missed (first run found 5 of 6). Proof: 6 onsets, 0.501 s spacing (119.7 BPM). librosa ran in an earlier session's venv (2026-10-16) and is not installed in the current container: `pip install librosa` first.
 - **تثبيت / install:** `pip install librosa`
 - **الرخصة / license:** ISC
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-18 · قياس الجهارة LUFS · Loudness measurement (LUFS) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أقيس الجهارة المتكاملة بطريقتين مستقلتين (pyloudnorm وffmpeg ebur128) وأتحقق من اتفاقهما. — Measure integrated loudness two independent ways (pyloudnorm, ffmpeg ebur128) and check that they agree.
+- **ماذا / what:** قِس الجهارة المتكاملة بطريقتين مستقلتين (pyloudnorm وffmpeg ebur128) وتحقق من اتفاقهما. — Measure integrated loudness two independent ways (pyloudnorm, ffmpeg ebur128) and check that they agree.
 - **متى أستخدمها / when:** delivering voice-overs, podcasts, reels, music beds
 - **كيف / how:** pyln.Meter(sr).integrated_loudness(x); ffmpeg -i f -af ebur128=peak=true -f null - (read the last 'I:'). Proof: -13.96 vs -13.9 LUFS on the normalised file.
 - **تثبيت / install:** `pip install pyloudnorm`
@@ -183,7 +183,7 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-19 · تطبيع الجهارة بمرورين خطّيين · Two-pass linear loudnorm to a target · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أرفع الصوت إلى −14 LUFS بكسب ثابت دون ضغط، وأتأكد أن ffmpeg لم ينتقل سرًا إلى الوضع الديناميكي. — Bring audio to -14 LUFS with pure gain (no compression), and confirm ffmpeg did not silently switch to dynamic mode.
+- **ماذا / what:** ارفع الصوت إلى −14 LUFS بكسب ثابت دون ضغط، وتأكد أن ffmpeg لم ينتقل سرًا إلى الوضع الديناميكي. — Bring audio to -14 LUFS with pure gain (no compression), and confirm ffmpeg did not silently switch to dynamic mode.
 - **متى أستخدمها / when:** final audio for any delivery; preserving the user's audio character
 - **كيف / how:** Pass 1: loudnorm=I=-14:TP=-1:LRA=11:print_format=json -f null. Pass 2: the measured_* values + offset + linear=true + print_format=json, and LRA set above the measured LRA (max(11, input_lra+1)); assert normalization_type == 'linear'. Proof: -18.05 -> -13.96 LUFS, linear. With LRA=11 and a measured LRA of 17.8 the mode went dynamic. **أرقام / params:** I -14, TP -1 dBTP; streaming platforms vary (-14 to -16)
 - **تثبيت / install:** `ffmpeg (6.1.1 present)`
@@ -192,7 +192,7 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-20 · كشف الصمت · Silence detection · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أجد فترات الصمت لقصها أو لتقسيم المقاطع. — Find silent stretches to trim them or split segments.
+- **ماذا / what:** جِد فترات الصمت لقصها أو لتقسيم المقاطع. — Find silent stretches to trim them or split segments.
 - **متى أستخدمها / when:** podcast cleanup, splitting takes, jump cuts
 - **كيف / how:** ffmpeg -i f -af silencedetect=noise=-50dB:d=0.5 -f null - ; parse silence_start / silence_end. Proof: 2.0 -> 3.0 s found exactly. Tune noise to the room tone (-35 to -50 dB).
 - **تثبيت / install:** `ffmpeg`
@@ -201,7 +201,7 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-21 · صور الموجة والطيف · Waveform and spectrogram images · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أرسم شكل الموجة والطيف لصوت لعرضه أو لفحصه بالعين. — Draw a waveform and a spectrogram of audio to show or inspect it.
+- **ماذا / what:** ارسم شكل الموجة والطيف لصوت لعرضه أو لفحصه بالعين. — Draw a waveform and a spectrogram of audio to show or inspect it.
 - **متى أستخدمها / when:** podcast covers, QA of edits, explaining audio
 - **كيف / how:** ffmpeg -i f -filter_complex showwavespic=s=1200x200:colors=#2a78d6 -frames:v 1 w.png ; ffmpeg -i f -lavfi showspectrumpic=s=1200x300:legend=0 s.png. The filter is showwavespic; there is no 'showwavespng' (the first run failed on that name).
 - **تثبيت / install:** `ffmpeg`
@@ -219,7 +219,7 @@
 - **المصدر / source:** proofs/general-media/make_media.py
 
 #### MEDIA-23 · تحويل الصيغ والتحقق من المدة · Transcode and verify duration · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحوّل إلى AAC أو MP3 وأتحقق بـ ffprobe أن المدة لم تتغير. — Transcode to AAC or MP3 and verify with ffprobe that the duration did not change.
+- **ماذا / what:** حوّل إلى AAC أو MP3 وتحقق بـ ffprobe أن المدة لم تتغير. — Transcode to AAC or MP3 and verify with ffprobe that the duration did not change.
 - **متى أستخدمها / when:** delivering audio for web, messaging or video
 - **كيف / how:** ffmpeg -i in.wav -c:a aac -b:a 96k out.m4a; ffprobe -v error -show_entries format=duration -of csv=p=0 out.m4a. Proof: 6.000 s for a 6.0 s source, 34 KB (MP3 via pydub: 2.040 s for 2.0 s, encoder padding). Never overwrite the user's original.
 - **تثبيت / install:** `ffmpeg`
@@ -233,7 +233,7 @@
 - **كيف / how:** Pedalboard([Compressor(), Reverb()])(audio, sr) (arsenal run). Keep the original and render a copy.
 - **تثبيت / install:** `pip install pedalboard`
 - **الرخصة / license:** GPL-3.0
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 ## خدمات وأدوات ثقيلة — Services & heavy tools

@@ -26,7 +26,7 @@ Totals in the table: ✅ 77 · 📦 62 · ❌ 0.
 
 ## 2. واجهات الذاكرة قديمة / Training-data APIs are stale: lessons
 Check the version and run one line before you build on remembered code. Each of these was caught in a real run (re-confirmed items marked P16, see `proofs/general-discovery/README.md`):
-1. **pulp 4.0**: `pulp.LpVariable('x',0,4)` raises TypeError (the core is now Rust) and `PULP_CBC_CMD` is gone; the only bundled solver is HiGHS. Use `x = m.add_variable('x', 0, 4); m.solve(pulp.HiGHS(msg=False))`, or prefer ortools (P16).
+1. **pulp 4.0**: `pulp.LpVariable('x',0,4)` raises TypeError (the core is now Rust) and `PULP_CBC_CMD` is gone; the only bundled solver is HiGHS. Use `x = m.add_variable('x', 0, 4); m.solve(pulp.HiGHS(msg=False))`, or use ortools (P16). Do not import pulp 4 (highspy) and ortools in one Python process: both bundle HiGHS, so ortools fails with an ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 2. **mcp 2.x**: `from mcp.server.fastmcp import FastMCP` fails; use `from mcp.server import MCPServer` with `@srv.tool()` (P16).
 3. **markitdown 0.1.8**: the bare install fails on .docx; install `"markitdown[docx,pdf,xlsx,pptx]"`.
 4. **pymupdf**: `import fitz` is deprecated; use `import pymupdf`. It is AGPL-3.0.
@@ -36,7 +36,7 @@ Check the version and run one line before you build on remembered code. Each of 
 8. **graphviz** (Python) only builds DOT source; rendering needs the `dot` binary (`apt-get install -y graphviz`), mermaid-cli or viz.js.
 9. **faker('ar_EG')** returned a Latin name: do not trust locales for Arabic fixtures.
 10. **weasyprint 70** rendered RTL Arabic HTML to PDF (pango present). It is the best HTML→PDF path for Arabic reports.
-11. **PIL and matplotlib do not shape Arabic**: run `arabic_reshaper.reshape()` + `bidi.algorithm.get_display()` first.
+11. **Pillow 12 and matplotlib 3.11 shape Arabic themselves** (both wheels bundle libraqm 0.10.5): pass raw logical text. Adding `arabic_reshaper.reshape()` + `bidi.algorithm.get_display()` on top reverses it (`proofs/general-data`, `mpl_arabic_modes.png`). Route on `PIL.features.check('raqm')` or `matplotlib.ft2font.__libraqm_version__`; use reshaper+bidi only for reportlab or a build without raqm.
 12. **Major bumps**: pandas 3, numpy 2.5, polars 2, opencv 5, transformers 5, sentence-transformers 6, librosa 1.0, mermaid 12, next 16, vite 8, tailwind 4, react 19.
 13. **npm `plantuml` is a 0.0.2 stub**: use plantuml.jar with Java. `@hyperframes/cli` does not exist on npm; the HyperFrames CLI is the `hyperframes` bin.
 14. **Python-version gates**: `kokoro` resolves to 0.7.16 on Python 3.13 (latest needs below 3.13); `TTS` (Coqui) needs below 3.12, so use the `coqui-tts` fork or `uv venv --python 3.12` (P14).
@@ -163,7 +163,7 @@ Columns: package · ecosystem · version (2026-10-16) · license · what it unlo
 ### الصوت — Audio
 | package | eco | version | license | unlocks | status | evidence / caveat |
 |---|---|---|---|---|---|---|
-| `librosa` | PyPI | 1.0.0 | ISC | analysis: pitch, beats, onsets | ✅ | YIN pitch of 440 Hz sine = 440.4 |
+| `librosa` | PyPI | 1.0.0 | ISC | analysis: pitch, beats, onsets | ✅ | YIN pitch of 440 Hz sine = 440.4 (venv in the 2026-10-16 run; not preinstalled — `pip install librosa`) |
 | `soundfile` | PyPI | 0.14.0 | BSD-3-Clause | WAV/FLAC IO | ✅ |  |
 | `pydub` | PyPI | 0.25.1 | MIT | simple audio editing via ffmpeg | 📦 | ffmpeg present; pydub unmaintained & audioop removed in py3.13 |
 | `pyloudnorm` | PyPI | 0.2.0 | MIT | LUFS loudness (BS.1770) | ✅ | -9.76 LUFS on test sine |
@@ -197,7 +197,7 @@ Columns: package · ecosystem · version (2026-10-16) · license · what it unlo
 |---|---|---|---|---|---|---|
 | `camel-tools` | PyPI | 1.6.0 | MIT | morphology, dialect ID, NER | 📦 | data packages to download |
 | `pyarabic` | PyPI | 0.6.15 | GPL (version not stated) | tashkeel strip, normalize | 📦 | GPL |
-| `arabic-reshaper` | PyPI | 3.0.1 | MIT | glyph shaping for non-shaping renderers (PIL/matplotlib) | ✅ | reshaped+bidi "سلام" |
+| `arabic-reshaper` | PyPI | 3.0.1 | MIT | glyph shaping for non-shaping renderers (reportlab, or PIL/matplotlib builds without raqm) | ✅ | reshaped+bidi "سلام" |
 | `python-bidi` | PyPI | 0.6.11 | LGPL (version per repo) | bidi reorder | ✅ | LGPL |
 | `farasapy` | PyPI | 0.1.1 | none on PyPI | Farasa segmenter wrapper | 📦 | needs Java; no license on PyPI |
 

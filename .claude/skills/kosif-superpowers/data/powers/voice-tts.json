@@ -799,12 +799,12 @@
   "name_en": "Word timings from the generated voice (faster-whisper)",
   "status": "proven",
   "what": "تفرّغ الصوت المولد بطوابع زمنية لكل كلمة ثم تحوله إلى words.json لتتزامن الحركة والترجمة. / Transcribe the generated voice with per-word timestamps and convert to words.json so motion and captions sync.",
-  "how": "pip install faster-whisper; resample to 16 kHz mono f32 and pass the numpy array (in this venv PyAV 19 rejects faster-whisper's open() kwargs, so do not pass a path); WhisperModel('small', device='cpu', compute_type='int8'), language='ar', word_timestamps=True; dump segments → `python3 kosif-tool/tools/words_convert.py ar.whisper.json words.json`. Ran here: 10 words, 0.00 → 7.26 s. Lesson: Whisper split «محليًا» into «محل» + «ين» — always re-attach to the known script (VOICE-33). (code snippet in references/powers/voice-tts.md)",
+  "how": "pip install faster-whisper; resample to 16 kHz mono f32 and pass the numpy array (in this venv PyAV 19 rejects faster-whisper's open() kwargs, so do not pass a path); WhisperModel('small', device='cpu', compute_type='int8'), language='ar', word_timestamps=True; dump segments → `python3 kosif-tool/tools/words_convert.py ar.whisper.json words.json`. Ran in an earlier session's venv (2026-10-16; not installed in the current container, so install first): 10 words, 0.00 → 7.26 s. Lesson: Whisper split «محليًا» into «محل» + «ين» — always re-attach to the known script (VOICE-33). (code snippet in references/powers/voice-tts.md)",
   "params": "16 kHz mono; model small int8 on CPU (large-v3 for final); key words ≤ 100 ms, others ≤ 150 ms",
   "install": "pip install faster-whisper",
   "license": "",
   "proof": [
-   "run here 2026-10-16: faster-whisper 1.2.1 small → words.json 10 words",
+   "earlier session 2026-10-16 (venv; not installed in the current container, `pip install faster-whisper`): faster-whisper 1.2.1 small → words.json 10 words",
    "kosif-tool/playbooks/audio-sync.md:26",
    "kosif-tool/tools/words_convert.py",
    "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"

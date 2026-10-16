@@ -28,7 +28,7 @@ HERE = Path(__file__).resolve().parent
 FONTS = HERE.parent / "_shared" / "fonts"
 W = Path(sys.argv[1] if len(sys.argv) > 1 else "/tmp/general-media").resolve()
 W.mkdir(parents=True, exist_ok=True)
-R: dict = {"workdir": str(W), "checks": [], "numbers": {}, "timings_s": {}}
+R: dict = {"workdir": "<workdir>/" + W.name, "checks": [], "numbers": {}, "timings_s": {}}
 
 
 def check(name, ok, detail=""):

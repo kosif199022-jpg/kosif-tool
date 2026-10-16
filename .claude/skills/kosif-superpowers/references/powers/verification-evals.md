@@ -14,7 +14,7 @@
 ## الفهرس / contents
 
 - **حلقة التحقق — Verification loop** — CHECK-01 … CHECK-07 (7)
-- **سلّم الأدلة والإيصالات — Evidence ladder & receipts** — CHECK-08 … CHECK-10 (3)
+- **سُلَّم الأدلة والإيصالات — Evidence ladder & receipts** — CHECK-08 … CHECK-10 (3)
 - **التقييمات — Evals** — CHECK-11 … CHECK-20 (7)
 - **المراجعون المستقلون — Independent reviewers** — CHECK-15 … CHECK-17 (3)
 - **تطوير المهارة ذاتيًا — Skill self-evolution** — CHECK-21 … CHECK-26 (6)
@@ -77,9 +77,9 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16 distill thinking-methods §5 step 8; motion QA-P02 bounded review (owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills; owner)
 
-## سلّم الأدلة والإيصالات — Evidence ladder & receipts
+## سُلَّم الأدلة والإيصالات — Evidence ladder & receipts
 
-#### CHECK-08 · سلّم الأدلة للادعاءات · Evidence ladder for claims (badges are earned, leased and downgraded) · 📄 موصوف / documented only
+#### CHECK-08 · سُلَّم الأدلة للادعاءات · Evidence ladder for claims (badges are earned, leased and downgraded) · 📄 موصوف / documented only
 - **ماذا / what:** كل ادعاء يحمل شارة أدنى حالة صحيحة؛ لا تُرفع الشارة من رسالة نجاح بل من فحص منجز، والإثبات القديم صالح بتاريخه فقط حتى يُعاد فحصه. — Every claim carries the badge of its lowest true state; a badge rises from a checked postcondition, never from a success message, and old proof is a dated lease.
 - **متى أستخدمها / when:** Writing any status, catalog record, report or 'what can you do' answer.
 - **كيف / how:** Ladder: 💡 idea → 📄 documented → 📦 install (one documented command away) → 🔑 key/account → 🟢 ready (code here runs with usual tools) → ✅ proven (ran, with a proof path); 👁 seen applies to motion references only. Rules: (1) use the lowest true badge; (2) upgrade only with a proof file or a dated run record; (3) a ✅ from another container is a lease — re-probe before relying on it; a failed probe downgrades the claim for this answer only and goes into the environment snapshot, history is not rewritten; (4) separate 'proven in this container', 'on claude.ai', 'API-only'. **أرقام / params:** 7 badges · proof path required for ✅

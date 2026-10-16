@@ -31,7 +31,7 @@ LINE_EN = "Sales rose 12.5% in Q3 (mixed RTL + LTR line)."
 ROWS = [("القاهرة", 1200), ("الرياض", 950), ("دبي", 780), ("عمّان", 410)]
 KEY = "المبيعات"  # word that must survive every round-trip
 
-R: dict = {"workdir": str(W), "checks": [], "timings_s": {}}
+R: dict = {"workdir": "<workdir>/" + W.name, "checks": [], "timings_s": {}}
 
 
 def check(name: str, ok: bool, detail="") -> None:

@@ -741,6 +741,129 @@
     "motion_output": false
    },
    "origin": "held-out query that failed routing before the 2026-10-16 intent update"
+  },
+  {
+   "id": 33,
+   "lang": "en",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "write a LinkedIn post that doesn't sound like AI",
+   "files": [],
+   "expected_behavior": [
+    "Writes the post in a natural human voice for LinkedIn",
+    "Runs tell_scan.py on the draft and fixes strong tells without inventing facts"
+   ],
+   "routing": {
+    "expect_any": [
+     "WRITE"
+    ],
+    "top_k": 8,
+    "motion_output": false,
+    "expect_domain": "craft"
+   },
+   "origin": "review routing finding 2026-10-16"
+  },
+  {
+   "id": 34,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اكتبلي بوست لينكدان ميبانش انه مكتوب بالذكاء الاصطناعي",
+   "files": [],
+   "expected_behavior": [
+    "Writes in the user's dialect register with a natural voice",
+    "Scans the draft for Arabic tells and keeps facts unchanged"
+   ],
+   "routing": {
+    "expect_any": [
+     "WRITE"
+    ],
+    "top_k": 8,
+    "motion_output": false,
+    "expect_domain": "craft"
+   },
+   "origin": "review routing finding 2026-10-16"
+  },
+  {
+   "id": 35,
+   "lang": "ar",
+   "domain": "data",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حلل ملف المبيعات ده وطلعلي تقرير",
+   "files": [],
+   "expected_behavior": [
+    "Asks for or opens the sales file and computes the numbers with code",
+    "Delivers a report document with charts and states what was checked"
+   ],
+   "routing": {
+    "expect_any": [
+     "ANLY",
+     "DOC"
+    ],
+    "top_k": 8,
+    "motion_output": false,
+    "expect_all": [
+     "ANLY",
+     "DOC"
+    ]
+   },
+   "origin": "review routing finding 2026-10-16"
+  },
+  {
+   "id": 36,
+   "lang": "en",
+   "domain": "strategy",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "build a financial model for my startup",
+   "files": [],
+   "expected_behavior": [
+    "States assumptions explicitly and builds the model in a sheet or script",
+    "Shows scenarios or sensitivity and checks the totals"
+   ],
+   "routing": {
+    "expect_any": [
+     "PROD",
+     "ANLY"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   },
+   "origin": "review routing finding 2026-10-16"
+  },
+  {
+   "id": 37,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "ترجم العقد ده وطلعه PDF",
+   "files": [],
+   "expected_behavior": [
+    "Translates the contract faithfully, keeping names, numbers and dates",
+    "Exports a PDF with correct Arabic shaping and RTL, and verifies it renders"
+   ],
+   "routing": {
+    "expect_any": [
+     "ARL",
+     "DOC"
+    ],
+    "top_k": 8,
+    "motion_output": false,
+    "expect_all": [
+     "ARL",
+     "DOC"
+    ]
+   },
+   "origin": "review routing finding 2026-10-16"
   }
  ]
 }

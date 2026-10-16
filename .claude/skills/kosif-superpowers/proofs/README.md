@@ -5,7 +5,7 @@
 
 ## الفهرس / contents
 1. أفلام الحركة — Motion proof films (15)
-2. إثباتات عامة — General proofs (6)
+2. إثباتات عامة — General proofs (7)
 3. تشغيلات إضافات الحركة v2 — Runs behind the v2 motion additions
 4. ملاحظات — Notes
 
@@ -32,7 +32,7 @@ Original films rendered with `render_html.cjs` and checked with `verify_video.py
 | [three-bloom-scene](three-bloom-scene/README.md) | بلّورة ضوء ثلاثية الأبعاد بـThree.js: عقدة زجاج فيزيائي بخيط مضيء يُرسم، حلقات مدارية متوهجة، 2,600 جسيم، UnrealBloom، كاميرا تقترب وتدور وتفسح مكانًا لعنوان عربي (صامت، WebGL برمجي) | 1920×1080 |
 | [whiteboard-draw](whiteboard-draw/README.md) | شرح على سبورة بقلم ماركر بترتيب يد إنسان: عنوان عربي يُكتب من اليمين، شمس وقطرة وأسهم سببية، تظليل مقصوص على الشكل، القلم يُرفع بين الضربات، صوت صرير مولّد من جدول الضربات؛ 13/13 | 1080×1920 |
 
-الخطوط المشتركة في [`_shared/fonts`](_shared/fonts) (رخصة OFL: Amiri، Cairo، Reem Kufi، Aref Ruqaa، Tajawal، Lalezar، Space Grotesk، JetBrains Mono). / Shared fonts live in `_shared/fonts` (OFL).
+الخطوط المشتركة في [`_shared/fonts`](_shared/fonts) (رخصة OFL: Amiri، Cairo، Reem Kufi، Aref Ruqaa، Tajawal، Lalezar، Space Grotesk، JetBrains Mono). / Shared fonts live in `_shared/fonts` (OFL); each family's licence travels next to it as `OFL-<Family>.txt`.
 
 ## 2. إثباتات عامة — General proofs
 
@@ -46,10 +46,11 @@ Proof folders for the non-motion domains, each run in a Claude Code cloud contai
 | [general-media](general-media/README.md) | صور ونصوص عربية مقروءة آليًا (OCR)، ضغط وجودة، لوحة ألوان، رمز QR، وتحليل صوت وتوحيد جهارته وقصّه — images, OCR and audio (MEDIA-*) | 16/16 |
 | [general-writing](general-writing/README.md) | سكربتات الكتابة (`tell_scan.py`، `anchor_gate.py`) وأدوات اللغة العربية على نصوص أصلية — writing and Arabic-language powers (WRITE, PROMPT-02, ARL) | 58/58 |
 | [general-graphify](general-graphify/README.md) | خريطة معرفة للكود بلا مفتاح: تثبيت Graphify، رسم الكود، الاستعلام، أثر التغيير، خادم MCP محلي وموصل مستضاف — code knowledge graph (GRAPH-*, CODE-03, SEC-14) | run log in folder |
+| [general-earlier-runs](general-earlier-runs/README.md) | سجل مشحون لتشغيلات جلسة سابقة كانت أدلتها في ملفات مؤقتة فقط (Hugging Face، torch للمعالج، تحديث Graphify وتكامله مع Claude Code) — shipped log of earlier-session runs (WEB-08, SELF-28, GRAPH-05, GRAPH-09) | HF re-run 2/2; rest marked not re-run |
 
 ## 3. تشغيلات إضافات الحركة v2 — Runs behind the v2 motion additions
 
-The v2 motion additions (`*-X01…` IDs in the motion families) did not need a new film. Their ✅ runs (speed-shape maths, frame-diff and text-contrast ports, the owner's music, sound and lens scripts, a frame-accurate trim test and a Playwright UI recording) are logged with commands and numbers in [`references/external-skills.md` §15](../references/external-skills.md), and the two ported tools are printed in §10 of that file.
+The v2 motion additions (`*-X01…` IDs in the motion families) did not need a new film. Their runs (speed-shape maths, frame-diff and text-contrast ports, the owner's music, sound and lens scripts, a frame-accurate trim test and a Playwright UI recording) are logged with commands and numbers in [`references/external-skills.md` §15](../references/external-skills.md), and the two ported tools are printed in §10 of that file. Our own harnesses for V1, V2 and V8 ship in [motion-v2](motion-v2/README.md) with captured output. Records that rest on the owner's unvendored scripts (V4–V7, the song film's analyze.py) are 📄, not ✅.
 
 ## 4. ملاحظات — Notes
 - Every film follows the `seek(t)` contract: each frame is a pure function of time with seeded randomness, so frames render in any order.

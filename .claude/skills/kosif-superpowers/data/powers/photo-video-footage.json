@@ -1425,9 +1425,9 @@
   "family": "photo-video-footage",
   "name_ar": "إعادة مونتاج اللقطات من قائمة قطع محدودة",
   "name_en": "Bounded EDL recut: trim/concat with denoise and loudnorm",
-  "status": "proven",
+  "status": "documented",
   "what": "يأخذ فيديو أصليًا وقائمة نطاقات --cut START:END فيقصّها ويرتبها ويعيد قياسها إلى مقاس الهدف مع صوتها، ويترك الأصل كما هو. / Takes a source and explicit --cut ranges, trims, concatenates and reframes them with their audio, leaving the original untouched.",
-  "how": "ffprobe first; each range must be finite, 0 ≤ a < b ≤ duration+0.03 and ≥ 0.10 s; at most 30 cuts; refuses output == input. Per cut: trim + setpts, scale=W:H:force_original_aspect_ratio=decrease, pad centred, fps, setsar=1, yuv420p; audio atrim + asetpts + aresample=48000 (+ afftdn=nf=-25 with --denoise); concat=n:v=1:a=1; --normalize appends loudnorm=I=-16:TP=-1.5:LRA=11. No-audio sources get -an. Prints a JSON receipt (duration, streams, cuts, denoised). Re-ran here on the bundled 4 s test clip with --cut 0:1.2 --cut 2:3.4 --denoise --normalize → 2.625 s, h264 480×854 24 fps + AAC. Note: loudnorm here targets −16 LUFS; the superpowers delivery target is −14 LUFS, so pass the final mix through your own loudnorm step.",
+  "how": "ffprobe first; each range must be finite, 0 ≤ a < b ≤ duration+0.03 and ≥ 0.10 s; at most 30 cuts; refuses output == input. Per cut: trim + setpts, scale=W:H:force_original_aspect_ratio=decrease, pad centred, fps, setsar=1, yuv420p; audio atrim + asetpts + aresample=48000 (+ afftdn=nf=-25 with --denoise); concat=n:v=1:a=1; --normalize appends loudnorm=I=-16:TP=-1.5:LRA=11. No-audio sources get -an. Prints a JSON receipt (duration, streams, cuts, denoised). Re-ran here on the bundled 4 s test clip with --cut 0:1.2 --cut 2:3.4 --denoise --normalize → 2.625 s, h264 480×854 24 fps + AAC. Note: loudnorm here targets −16 LUFS; the superpowers delivery target is −14 LUFS, so pass the final mix through your own loudnorm step. Status note: the code is owner material that is not vendored in this skill; the numbers above are from one run on the owner's copy on 2026-10-16 and cannot be re-run from here, so this is 📄 documented, not ✅.",
   "params": "≤30 cuts · ≥0.1 s each · afftdn nf=-25 · loudnorm I=-16 TP=-1.5 LRA=11 · crf 21 · default 480×854@24",
   "install": "",
   "license": "owner package (own work)",
@@ -1523,6 +1523,7 @@
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md",
    "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
   ],

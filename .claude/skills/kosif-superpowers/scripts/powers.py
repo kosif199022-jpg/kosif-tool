@@ -182,6 +182,16 @@ INTENT.update({
     "كتابة": ["write", "@WRITE"], "write": ["@WRITE"], "article": ["@WRITE"], "essay": ["@WRITE"],
     "rewrite": ["@WRITE"], "humanize": ["@WRITE"], "blog": ["article", "@WRITE"], "email": ["@WRITE"],
     "إيميل": ["email", "@WRITE"], "copywriting": ["@WRITE"],
+    "اكتبلي": ["write", "@WRITE"], "اكتب لي": ["write", "@WRITE"], "بوست": ["post", "social", "@WRITE"],
+    "منشور": ["post", "social", "@WRITE"], "لينكدان": ["linkedin", "@WRITE"], "لينكد ان": ["linkedin", "@WRITE"],
+    "linkedin": ["post", "@WRITE"], "post": ["@WRITE"], "tweet": ["post", "@WRITE"], "caption for": ["post", "@WRITE"],
+    "sound like ai": ["humanize", "@WRITE"], "sounds like ai": ["humanize", "@WRITE"], "ai-sounding": ["humanize", "@WRITE"],
+    "مكتوب بالذكاء": ["humanize", "@WRITE"], "بالذكاء الاصطناعي": ["humanize", "@WRITE"], "ميبانش": ["humanize", "@WRITE"],
+    "ترجم": ["translate", "translation", "@ARL", "@ARL"], "ترجمة": ["translation", "@ARL"], "ترجمه": ["translation", "@ARL"],
+    "translate": ["translation", "@ARL", "@ARL"], "translation": ["@ARL"],
+    "عقد": ["contract", "@DOC"], "contract": ["@DOC"],
+    "مبيعات": ["sales", "data", "@ANLY"], "sales": ["@ANLY"],
+    "ملف": ["file", "@DOC"], "طلعلي": ["@DOC"], "وطلعلي": ["@DOC"],
     "برومبت": ["prompt", "@PROMPT"], "برومت": ["prompt", "@PROMPT"], "prompt": ["@PROMPT"],
     "prompts": ["prompt", "@PROMPT"], "system prompt": ["@PROMPT"],
     "فكرة": ["ideas", "@IDEA"], "أفكار": ["ideas", "@IDEA"], "إبداع": ["creative", "@IDEA"],
@@ -210,7 +220,8 @@ INTENT.update({
     "strategy": ["@PROD"], "استراتيجية": ["strategy", "@PROD"], "business plan": ["@PROD"],
     "ميزانية": ["budget", "@PROD"], "budget": ["@PROD"], "finance": ["@PROD"], "financial": ["finance", "@PROD"],
     "تمويل": ["finance", "@PROD"], "إيرادات": ["revenue", "@PROD"], "أرباح": ["profit", "@PROD"],
-    "نموذج مالي": ["finance", "@PROD"], "prd": ["@PROD"], "دراسة جدوى": ["@PROD"],
+    "نموذج مالي": ["finance", "@PROD", "@ANLY"], "financial model": ["finance", "model", "@PROD", "@ANLY"],
+    "startup": ["@PROD"], "ستارت اب": ["@PROD"], "شركة ناشئة": ["@PROD"], "forecast": ["@ANLY", "@PROD"], "prd": ["@PROD"], "دراسة جدوى": ["@PROD"],
     # security
     "أمان": ["security", "@SEC"], "ثغرة": ["vulnerability", "@SEC"], "ثغرات": ["vulnerability", "@SEC"],
     "اختراق": ["security", "@SEC"], "حماية": ["security", "@SEC"], "security": ["@SEC"], "vulnerability": ["@SEC"],
@@ -621,7 +632,11 @@ def cmd_suggest(powers, styles, a) -> int:
             print("\n# reference styles to study")
             for s in st:
                 print(f"{s.get('id'):<28} {s.get('title_ar', '')} — {s.get('proves_ar', '')}"[:160])
-        print(f"\nformat: {r['format']} · then: python3 tools/kosif.py scaffold <style> <dir>")
+        if (ROOT.parents[2] / "tools" / "kosif.py").is_file() if len(ROOT.parents) > 2 else False:
+            print(f"\nformat: {r['format']} · then: python3 tools/kosif.py scaffold <style> <dir> (from the kosif-tool repo root)")
+        else:
+            print(f"\nformat: {r['format']} · then: build an HTML scene with window.__kosif = {{duration, seek(t)}}, "
+                  "capture frames with Playwright and encode with ffmpeg (SKILL.md §5)")
     else:
         print("\n# chapters to open")
         for f in chapters:

@@ -210,7 +210,7 @@
   "id": "CHECK-08",
   "family": "verification-evals",
   "domain": "mind",
-  "name_ar": "سلّم الأدلة للادعاءات",
+  "name_ar": "سُلَّم الأدلة للادعاءات",
   "name_en": "Evidence ladder for claims (badges are earned, leased and downgraded)",
   "status": "documented",
   "what": "كل ادعاء يحمل شارة أدنى حالة صحيحة؛ لا تُرفع الشارة من رسالة نجاح بل من فحص منجز، والإثبات القديم صالح بتاريخه فقط حتى يُعاد فحصه. — Every claim carries the badge of its lowest true state; a badge rises from a checked postcondition, never from a success message, and old proof is a dated lease.",
@@ -226,12 +226,12 @@
    "badges",
    "proof",
    "honesty",
-   "سلّم الأدلة",
+   "سُلَّم الأدلة",
    "شارات",
    "إثبات",
    "صدق"
   ],
-  "section": "سلّم الأدلة والإيصالات — Evidence ladder & receipts",
+  "section": "سُلَّم الأدلة والإيصالات — Evidence ladder & receipts",
   "source": "kosif-superpowers badge rules (SKILL.md, owner) + owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see capability-truth states (owner) — distill see-core §5"
  },
  {
@@ -259,7 +259,7 @@
    "دليل",
    "شرط لاحق"
   ],
-  "section": "سلّم الأدلة والإيصالات — Evidence ladder & receipts",
+  "section": "سُلَّم الأدلة والإيصالات — Evidence ladder & receipts",
   "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/ECC_DISTILLED_CORE.md §3 + tools/ecc_contract_gate.py validate-receipt (owner; run on fixtures in session-2026-10-16, distill see-core §17), adapted from github.com/affaan-m/ECC (MIT © 2026 Affaan Mustafa; paraphrased)"
  },
  {
@@ -287,7 +287,7 @@
    "تقرير",
    "صدق"
   ],
-  "section": "سلّم الأدلة والإيصالات — Evidence ladder & receipts",
+  "section": "سُلَّم الأدلة والإيصالات — Evidence ladder & receipts",
   "source": "github.com/affaan-m/ECC skills/terminal-ops (MIT © 2026 Affaan Mustafa; paraphrased); references/cinematic-director-pro.md rule CODE_WRITTEN ≠ VIDEO_RENDERED ≠ QA_PASS (owner)"
  },
  {

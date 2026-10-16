@@ -336,7 +336,8 @@ def tool_version(name: str, text: str) -> str:
         if m:
             return m.group(1)
     lines = [ln for ln in (text or "").splitlines()
-             if ln.strip() and not ln.startswith(("Picked up", "NOTE:", "WARNING", "warning"))]
+             if ln.strip() and not ln.startswith(("Picked up", "NOTE:", "WARNING", "warning"))
+             and not re.match(r"^\(process:\d+\)", ln) and not re.search(r"WARNING|CRITICAL|\*\*", ln)]
     for ln in lines[:3]:
         v = ver(ln)
         if v:
@@ -482,7 +483,10 @@ def probe_url(opener, url: str, timeout: float) -> dict:
             r = {"status": resp.status, "class": "ok"}
     except urllib.error.HTTPError as e:
         code = e.code
-        r = {"status": code, "class": "blocked" if code == 407 else ("ok" if code < 400 else "reachable")}
+        if code in (403, 407, 502, 504):  # proxy policy denial or relay failure: not a working route
+            r = {"status": code, "class": "blocked", "detail": "policy/relay answer %d" % code}
+        else:
+            r = {"status": code, "class": "ok" if code < 400 else "reachable"}
     except urllib.error.URLError as e:
         reason = e.reason
         txt = str(reason)
@@ -785,6 +789,10 @@ def domain_rows(c: dict) -> list:
                 if u or u is None and m.get(mgr, {}).get("present"):
                     state = "install" if u else "unknown"
                     fix = "%s %s" % (m[mgr]["cmd"], pkg)
+                    if mgr == "npm" and pkg.startswith("-g ") and not c["system"].get("is_root"):
+                        fix = "npx -y " + pkg[3:]  # a non-root global install hits EACCES on a root-owned prefix
+                    if m[mgr]["cmd"].startswith("python3 -m venv"):
+                        fix = fix.replace("&& python3 -m ", "&& .venv/bin/python -m ")
                     break
         out.append({"domain": label, "state": state, "badge": BADGE[state], "present": have, "fix": fix,
                     "families": fams.split()})
@@ -1011,6 +1019,8 @@ def card(c: dict, snapshot: bool = False) -> str:
         if ap:
             fails = ", ".join("%s (%s%s)" % (f.get("host"), f.get("kind"), " ×%d" % f["count"] if f.get("count", 1) > 1 else "")
                               for f in ap.get("recent_relay_failures", [])) or "none"
+            if snapshot:  # host names are this session's traffic history, not a machine fact
+                fails = "%d" % len(ap.get("recent_relay_failures", []))
             L.append("Agent proxy: enabled=%s, covers every host=%s, selective=%s, preconfigured CLIs: %s; recent relay failures: %s. "
                      "Rules: never disable TLS verification or unset the proxy; a 403/407/502 is a policy answer to report, not to route around; "
                      "Node's built-in fetch needs NODE_USE_ENV_PROXY=1; details in %s." % (
@@ -1023,7 +1033,7 @@ def card(c: dict, snapshot: bool = False) -> str:
             L.append("| %s | %s | %s | %s | %s |" % (host, r.get("role"), r.get("class") + (" (%s)" % r["detail"] if r.get("detail") else ""),
                                                  r.get("status") or "—", r.get("ms")))
         L.append("")
-        L.append("Classes: ok = 2xx/3xx · reachable = the host answered 4xx/5xx (normal for bare roots) · blocked = proxy refused · "
+        L.append("Classes: ok = 2xx/3xx · reachable = the host answered 4xx/5xx (normal for bare roots) · blocked = proxy refused, or a 403/407/502/504 policy or relay answer · "
                  "offline = DNS/timeout · tls-error = certificate not trusted.")
     L.append("")
     L.append("%s Machine & runtimes — الجهاز والبيئات" % sub)

@@ -1,5 +1,5 @@
 {
- "workdir": "/tmp/claude-0/-home-user-kosif-tool/2fb85c57-7eb4-555c-b065-6435300ab234/scratchpad/proofwork/data",
+ "workdir": "<workdir>/data",
  "checks": [
   {
    "name": "csv: expected row count",

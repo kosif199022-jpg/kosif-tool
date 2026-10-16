@@ -25,14 +25,14 @@
 ## المبدأ: اعرف قبل أن تقول لا — Principle: know before you say no
 
 #### SELF-01 · اعرف قبل أن تقول لا · Registry before no · 📄 موصوف / documented only
-- **ماذا / what:** لا تقل «لا أستطيع» قبل أن تفحص خريطة القدرات وأدواتك وسجل الحزم ومحاولة تثبيت. — Never answer "I can't" until you have checked the capability map, your tool list, the package registry and an install attempt.
+- **ماذا / what:** لا تقل «لا أستطيع» قبل أن تفحص خريطة القدرات وأدواتك وسجل الحزم، وتحاول التثبيت. — Never answer "I can't" until you have checked the capability map, your tool list, the package registry and an install attempt.
 - **متى أستخدمها / when:** any request that sounds outside chat: render a video, OCR a scan, read a repo, build a PDF, call an API, use a library you think is missing; أي طلب يبدو مستحيلًا أو خارج المحادثة
 - **كيف / how:** 1) `python3 scripts/powers.py search <words>` in this skill; 2) scan your tool list and ToolSearch for deferred tools (SELF-05, SELF-06); 3) probe: `command -v X`, `python3 -c 'import X'`; 4) registry: `pip index versions X` or `npm view X version license`; 5) install into a venv or scratch folder and run the smallest example (SELF-26, SELF-27); 6) only then answer: done, needs a key (name it), or blocked (name the gate) plus the best keyless alternative. **أرقام / params:** max 6 steps before answering; a proxy 403/407 is a policy block: report it, never route around it
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** owner KOSIF SEE v1.7.5 registry rule (distill see-core §6, §19A); ECC search-first, MIT https://github.com/affaan-m/ECC
 
-#### SELF-02 · سلّم حقيقة القدرة · Capability-truth ladder · 📄 موصوف / documented only
+#### SELF-02 · سُلَّم حقيقة القدرة · Capability-truth ladder · 📄 موصوف / documented only
 - **ماذا / what:** لكل قدرة حالة واحدة صادقة من فكرة إلى مُتحقَّق منها؛ أبلغ دائمًا بأدنى حالة صحيحة. — Every capability sits on one rung from idea to verified; always report the lowest rung that is true.
 - **متى أستخدمها / when:** before you claim anything works, before giving a badge, when writing a final report
 - **كيف / how:** IDEA 💡 (no source) → DOCUMENTED 📄 (a file describes it with numbers) → INSTALLABLE 📦 (registry resolves through the proxy) → NEEDS-KEY 🔑 (name the key, account or connector) → PRESENT 🟢 (`command -v`, import or tool listed in this session) → EXECUTED (exit code and output path known) → VERIFIED ✅ (postcondition checked: ffprobe numbers, tests pass, file reopens, frame viewed). BLOCKED = named gate + next step. Never merge two rungs into a yes/no. **أرقام / params:** badges ✅🟢📦🔑👁📄💡 · report lowest true
@@ -40,7 +40,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** owner KOSIF SEE v1.7.5 capability-truth states (distill see-core §5)
 
-#### SELF-03 · الإثبات عقد إيجار له تاريخ · Proofs are dated leases · 📄 موصوف / documented only
+#### SELF-03 · الإثبات له تاريخ صلاحية · Proofs are dated leases · 📄 موصوف / documented only
 - **ماذا / what:** الإثبات من جلسة أو حاوية أخرى تاريخي فقط؛ أعد الفحص إن تغيّر المكان أو اليوم. — A proof from another session or container is history; re-probe when the container, surface or day differs.
 - **متى أستخدمها / when:** you read ✅ in this skill, in a README or in memory and are about to rely on it
 - **كيف / how:** Read the proof's date and surface. If either differs from now, run the probe (import, `command -v`, a one-line smoke test) before promising. A failed re-probe lowers the badge for this answer only, without editing history. Live examples (P6, P19): `faster_whisper` is marked as run in the motion arsenal but is not importable in a fresh container; tesseract went from missing to present within one day. **أرقام / params:** stamp every ✅ with date + surface
@@ -130,7 +130,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill env-probe §1, §6; run P5
 
-#### SELF-15 · سلّم اختبار الشبكة · Network test ladder · ✅ مُثبت هنا / proven here
+#### SELF-15 · سُلَّم اختبار الشبكة · Network test ladder · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اختبر مضيفين أو أكثر لتعرف مستوى الشبكة: كاملة، أو سجلات فقط، أو لا شيء. — Test a few hosts to learn the network level: full, registries only, or none.
 - **متى أستخدمها / when:** before promising installs, downloads, web fetches or API calls
 - **كيف / how:** `curl -sS -o /dev/null -m 8 -w '%{http_code} %{time_total}\n' https://pypi.org/simple/` plus registry.npmjs.org, api.github.com, huggingface.co and a non-registry host (example.com). 200/200 means full egress; registry 200 with other hosts 403 means an allowlist; DNS failures or timeouts mean no network (API sandbox). In a cloud session also run `curl "$HTTPS_PROXY/__agentproxy/status"`. P8: all 7 hosts returned 200. **أرقام / params:** timeout 8 s per host · classify ok / policy-blocked (403, 407, CONNECT 502) / offline
@@ -168,7 +168,7 @@
 - **المصدر / source:** distill env-probe §2-3; run P5
 
 #### SELF-20 · خطوط عربية قبل الرندر · Arabic font probe · ✅ مُثبت هنا / proven here
-- **ماذا / what:** افحص الخطوط العربية المثبتة؛ الافتراضي غالبًا لا يصلح للعرض فاشحن خطك. — Check the installed Arabic fonts; the defaults are usually not display quality, so ship your own.
+- **ماذا / what:** افحص الخطوط العربية المثبتة؛ الافتراضي غالبًا لا يصلح للعرض فضمّن خطك وحمّله قبل الرندر. — Check the installed Arabic fonts; the defaults are usually not display quality, so ship your own.
 - **متى أستخدمها / when:** any Arabic text in images, PDFs, video or HTML renders
 - **كيف / how:** `fc-list :lang=ar family | sort -u`. P7 found only DejaVu, FreeMono/FreeSerif and Unifont. Use OFL fonts from `proofs/_shared/fonts` (Amiri, Cairo, Reem Kufi, Aref Ruqaa, Tajawal, Lalezar), or `apt-get install fonts-noto-core fonts-kacst`, and load the font before the first frame.
 - **تثبيت / install:** `apt-get install -y fonts-noto-core fonts-kacst`
@@ -236,7 +236,7 @@
 - **كيف / how:** `pip install torch --index-url https://download.pytorch.org/whl/cpu` (default pip pulls GBs of CUDA). Earlier on 2026-10-16: 21 s, 769 MB, tensor inverse ran. HF: config.json in 0.49 s and a 540 KB weight in 1.0 s although cdn-lfs.huggingface.co was blocked (redirects use another CDN). Keep models small (30 GB disk, 4 CPUs, no GPU in that snapshot). **أرقام / params:** CPU wheel index · small models only
 - **تثبيت / install:** `pip install torch --index-url https://download.pytorch.org/whl/cpu`
 - **الرخصة / license:** BSD-3-Clause (torch; compound expression on PyPI)
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#Method (reproducible)` · `session-2026-10-16:env-probe.md#5. Real install tests`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** distill general-arsenal (method), env-probe §5
 
 #### SELF-29 · بوابة الرخصة قبل التبني · License gate before adopting · ✅ مُثبت هنا / proven here

@@ -34,7 +34,7 @@ So before any "I can't", "not available" or "I don't have access":
 
 Typical "impossible" requests that were one step away in a cloud session on 2026-10-16: OCR (tesseract + `ara` via apt, then pytesseract read a test image exactly, P20), HTML→MP4 (Playwright's bundled Chromium plus ffmpeg), Arabic RTL PDF from HTML (weasyprint), CPU torch (21 s install), SQL on CSV (duckdb), GitHub search (the GitHub MCP tool when `gh search` is blocked, P13). Re-check each one; these are leases, not facts.
 
-## 2. سلم حقيقة القدرة / Capability-truth ladder
+## 2. سُلَّم حقيقة القدرة / Capability-truth ladder
 
 | State | Means | Minimal evidence | Badge |
 |---|---|---|---|
@@ -54,7 +54,7 @@ Rules:
 - A ✅ from another container or day is a **lease**. Re-probe before you rely on it. A failed re-probe lowers the badge for this answer only. On 2026-10-16, `faster_whisper` (marked as run in the motion arsenal) was not importable in a fresh container, and tesseract changed from missing to present within the same day (proof P6, P19).
 - A demo asset is not an engine, a plan is not a render, and a selected method is not an execution.
 
-## 3. سلم الاكتشاف / Discovery ladder
+## 3. سُلَّم الاكتشاف / Discovery ladder
 
 Do steps 1-4 at the start of any non-trivial task. They cost seconds and are read-only. Do 5-9 when the task needs the machine, the network or a library.
 
@@ -148,7 +148,7 @@ Keep independent work independent. When one piece fails, keep the others' result
 
 ## 9. الإبلاغ / Report
 
-**Capability card** (≤10 lines, after discovery):
+**Capability card** (≤10 lines, after discovery). The values below are an example from one measured container on 2026-10-16, not normal values: measure your own, including network access (cloud environments default to a limited, allowlisted network level, so never assume full access):
 ```
 Surface: Claude Code cloud · 4 vCPU · 15 GiB · 24 GB free · GPU none · network full (proxy)
 Tools: Bash, Read(images/PDF), WebFetch*, Artifact, Skill · MCP: github(read), Higgsfield(paid), graphify

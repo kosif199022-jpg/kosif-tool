@@ -64,7 +64,7 @@ Endpoint check: `https://api.graphify.com/mcp` answers HTTP 401 without a token 
 Lesson: a hosted graph describes the indexed commit, not your working tree. Check the freshness block and use the local CLI for unindexed changes (GRAPH-15).
 
 ## 6. ما لم يُختبر / Not tested here
-`/graphify` skill flow with subagents, semantic extraction of docs/PDFs/images, video transcription, `graphify install --project` in the real repo (it edits CLAUDE.md and settings — needs consent; an earlier session tested it in a sandbox HOME), `graphify update` and the export formats other than wiki (tested by an earlier session the same day), Neo4j push, HTTP MCP transport, `claude mcp add` registration, hosted `remember`/`recall`.
+`/graphify` skill flow with subagents, semantic extraction of docs/PDFs/images, video transcription, `graphify install --project` in the real repo (it edits CLAUDE.md and settings — needs consent; an earlier session tested it in a sandbox HOME), `graphify update` and the export formats other than wiki (tested by an earlier session the same day; see [../general-earlier-runs/README.md](../general-earlier-runs/README.md)), `graphify hook install` and `graphify claude install|uninstall` (documented only), Neo4j push, HTTP MCP transport, `claude mcp add` registration, hosted `remember`/`recall`.
 
 ## 7. الملفات / Files
 | File | What |
@@ -79,4 +79,4 @@ Lesson: a hosted graph describes the indexed commit, not your working tree. Chec
 Large outputs (graph.json 200 KB, graph.html 235 KB, wiki/) were left in the scratch venv; rerun the commands above to regenerate them.
 
 ## 8. الرخص / Credits
-Graphify — https://github.com/Graphify-Labs/graphify — Apache-2.0 (earlier contributions MIT), "Graphify, Copyright 2026 Safi Shamsi and the Graphify contributors". GRAPH_REPORT.md, LESSONS.md and the transcripts are tool output generated from this repo's own code. `graph_mindmap.py` and this README are original to kosif-superpowers. Not an official Graphify project.
+Graphify — https://github.com/Graphify-Labs/graphify — Apache-2.0 (earlier contributions MIT), "Graphify, Copyright 2026 Safi Shamsi and the Graphify contributors". GRAPH_REPORT.md, LESSONS.md and the transcripts are tool output generated from this repo's own code. `graph_mindmap.py` and this README are original to kosif-superpowers. Not an official Graphify project. `mcp-stdio-probe.txt` and `run-log.txt` are captured tool output and so quote Graphify's own tool descriptions and messages; those strings remain Graphify's, under its LICENSE and NOTICE (https://github.com/Graphify-Labs/graphify/blob/main/NOTICE). Our summaries in this README and in `references/graphify.md` are paraphrased.

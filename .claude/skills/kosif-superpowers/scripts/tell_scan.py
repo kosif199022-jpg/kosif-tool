@@ -36,6 +36,7 @@ Stdlib only, read-only, no network, Python 3.8+.
 """
 import argparse
 import json
+import bisect
 import re
 import statistics
 import sys
@@ -186,7 +187,7 @@ AR = [  # written in plain spelling; compiled after norm_ar, matched on a normal
      r"[،,]\s*(?:مما|ما|الأمر الذي)\s+(?:يعكس|تعكس|يؤكد|تؤكد|يسهم|يساهم|يبرز|يعزز)|في خطوة (?:تهدف|تعكس|تؤكد)|وذلك في إطار|بما يسهم في"),
     ('AR16', 'normal', 'لغة إعلانية', r"يقع في قلب|خلاب|ساحر|آسر|وجهة لا تفوت|تجربة لا تنسى|فريد من نوعه|على الإطلاق|هتنبهر|مش هتصدق"),
     ('AR17', 'normal', 'سلطة مستعارة', r"يرى الخبراء|يؤكد الخبراء|تشير الدراسات|أثبتت الدراسات|وفقًا للخبراء|يرى المراقبون|الخبراء (?:يرون|يؤكدون)"),
-    ('AR18', 'normal', 'يُعد/يمثل بدل الجملة الاسمية', W('يعد', 'تعد', 'يعتبر', 'تعتبر', 'يمثل', 'تمثل', 'يشكل', 'تشكل') + r"|بمثابة|يتمثل في"),
+    ('AR18', 'normal', 'يُعد/يمثل بدل الجملة الاسمية', r"(?<!لم )(?<!لن )(?<!كان )(?<!سوف )(?<!ما )" + W('يعد', 'تعد') + r"(?!\s+(?:ال)?(?:أيام|ايام|ساعات|دقائق|نقود|فلوس))|" + W('يعتبر', 'تعتبر', 'يمثل', 'تمثل', 'يشكل', 'تشكل') + r"|بمثابة|يتمثل في"),
     ('AR22', 'strong', 'بقايا الشات',
      r"بالتأكيد!|سؤال رائع|إليك (?:أهم|بعض|ما)|(?:آمل|أتمنى) أن (?:يكون|تكون) (?:هذا |ده |هذه المعلومات )?مفيد|هل تريدني أن|كمساعد ذكي|كنموذج لغوي"),
     ('AR22b', 'normal', 'مجاملة دردشة (طبيعية في الرسائل)', r"بكل سرور|لا تتردد|يسعدني|تحت أمرك|لو حابب|قولي لو|هل تود"),
@@ -223,12 +224,23 @@ def sentences(text):
     return [x.strip() for x in SENT_SPLIT.split(text) if len(x.split()) >= 2]
 
 
+_NL = [None, []]
+
+
+def _line_of(text, start):
+    """Line number via a newline index built once per text (O(log n) per hit, not O(n))."""
+    if _NL[0] is not text:
+        _NL[0], _NL[1] = text, [i for i, c in enumerate(text) if c == '\n']
+    return bisect.bisect_left(_NL[1], start) + 1
+
+
 def _hit(rid, strength, label, text, start, end):
-    return {'id': rid, 'strength': strength, 'label': label, 'line': text.count('\n', 0, start) + 1,
+    return {'id': rid, 'strength': strength, 'label': label, 'line': _line_of(text, start),
             'start': start, 'end': end, 'match': ' '.join(text[start:end].split())[:60]}
 
 
 def scan(text, include_code=False, include_quotes=False):
+    text = unicodedata.normalize('NFC', text)  # decomposed (NFD) hamza would otherwise never fold; offsets refer to the NFC copy
     masked = mask(text, include_code, include_quotes)
     x1_src = mask(text, include_code, include_quotes, keep_urls=True)
     nmasked, nmap = norm_with_map(masked)
@@ -338,7 +350,7 @@ def main(argv=None):
     reports = []
     for f in a.files:
         try:
-            text = sys.stdin.read() if f == '-' else Path(f).read_text(encoding='utf-8')
+            text = sys.stdin.buffer.read().decode('utf-8') if f == '-' else Path(f).read_text(encoding='utf-8')
         except (OSError, UnicodeDecodeError) as e:
             ap.error(f'{f}: {e}')
         r = scan(text, a.include_code, a.include_quotes)
@@ -362,4 +374,14 @@ def main(argv=None):
 
 
 if __name__ == '__main__':
+    for _s in (sys.stdout, sys.stderr):
+        try:
+            _s.reconfigure(encoding='utf-8')
+        except (AttributeError, ValueError):
+            pass
+    try:
+        import signal
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+    except (AttributeError, ValueError, ImportError):
+        pass
     sys.exit(main())

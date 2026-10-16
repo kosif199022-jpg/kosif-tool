@@ -2461,6 +2461,7 @@
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
   "styles": [],
@@ -2494,6 +2495,7 @@
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
   "styles": [],
@@ -2525,6 +2527,7 @@
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
   "styles": [],
@@ -2554,6 +2557,7 @@
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
   "styles": [],
@@ -2584,6 +2588,7 @@
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
@@ -2706,6 +2711,7 @@
   "license": "unknown (reference only)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "session-2026-10-16:motion-leftovers#3.2",
    "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/engine.js"
   ],
