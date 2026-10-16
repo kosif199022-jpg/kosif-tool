@@ -352,19 +352,17 @@ def check_docker_daemon() -> dict:
 
 
 def check_python() -> dict:
-    py = {"version": platform.python_version(), "executable_name": Path(sys.executable).name}
-    try:
-        import venv  # noqa: F401
-        py["venv"] = True
-    except ImportError:
-        py["venv"] = False
-    try:
-        import ensurepip  # noqa: F401
-        py["ensurepip"] = True
-    except ImportError:
-        py["ensurepip"] = False
     import importlib.util
+    import sysconfig
+    py = {"version": platform.python_version(), "executable_name": Path(sys.executable).name,
+          "venv": importlib.util.find_spec("venv") is not None,
+          "ensurepip": importlib.util.find_spec("ensurepip") is not None}
     py["pip_module"] = importlib.util.find_spec("pip") is not None
+    py["in_venv"] = sys.prefix != getattr(sys, "base_prefix", sys.prefix)
+    try:
+        py["externally_managed"] = Path(sysconfig.get_path("stdlib"), "EXTERNALLY-MANAGED").exists()
+    except (KeyError, TypeError, OSError):
+        py["externally_managed"] = False
     names = set()
     try:
         from importlib import metadata as md
@@ -705,12 +703,19 @@ def managers(c: dict) -> dict:
         return hosts.get(h, {}).get("class") in ("ok", "reachable")
 
     root_ok = sysd.get("is_root") or sysd.get("sudo_nopasswd")
-    pip_present = c["python"].get("pip_module") or "uv" in bins or "pip" in bins or "pip3" in bins
+    py = c["python"]
+    pip_present = py.get("pip_module") or "uv" in bins or "pip" in bins or "pip3" in bins
+    if py.get("in_venv"):
+        pip_cmd = "uv pip install" if "uv" in bins else "python3 -m pip install"
+    elif py.get("externally_managed") or not py.get("pip_module"):
+        pip_cmd = "python3 -m venv .venv && .venv/bin/pip install"  # PEP 668 system Python: use a venv
+    else:
+        pip_cmd = "python3 -m pip install"
     return {
-        "pip": {"present": bool(pip_present), "network": reach("pypi.org"), "cmd": "uv pip install" if "uv" in bins else "pip install"},
+        "pip": {"present": bool(pip_present), "network": reach("pypi.org"), "cmd": pip_cmd},
         "npm": {"present": "npm" in bins, "network": reach("registry.npmjs.org"), "cmd": "npm i"},
         "apt": {"present": "apt-get" in bins and bool(root_ok), "network": reach(net.get("apt_host", "")) if not unknown else None,
-                "cmd": ("" if sysd.get("is_root") else "sudo ") + "apt-get install -y"},
+                "cmd": ("" if sysd.get("is_root") else "sudo ") + "apt-get update -qq && " + ("" if sysd.get("is_root") else "sudo ") + "apt-get install -y"},
         "brew": {"present": "brew" in bins, "network": None if unknown else net.get("level") in ("full", "partial"), "cmd": "brew install"},
     }
 
@@ -1045,8 +1050,9 @@ def card(c: dict, snapshot: bool = False) -> str:
     L.append("")
     L.append("- Python %s: %s distributions; notable present: %s" % (py.get("version"), py.get("dist_count"), ", ".join(py.get("notable", [])) or "none"))
     L.append("- Notable absent (install on demand): " + (", ".join(py.get("notable_missing", [])) or "none"))
-    L.append("- venv %s · ensurepip %s · pip module %s · sqlite3 %s" % (
-        "yes" if py.get("venv") else "no", "yes" if py.get("ensurepip") else "no", "yes" if py.get("pip_module") else "no", py.get("sqlite3") or "no"))
+    L.append("- venv %s · ensurepip %s · pip module %s · inside a venv %s · system Python externally managed (PEP 668) %s · sqlite3 %s" % (
+        "yes" if py.get("venv") else "no", "yes" if py.get("ensurepip") else "no", "yes" if py.get("pip_module") else "no",
+        "yes" if py.get("in_venv") else "no", "yes" if py.get("externally_managed") else "no", py.get("sqlite3") or "no"))
     g = c.get("node", {}).get("global", [])
     L.append("- Node global packages (%d): %s" % (len(g), ", ".join(g) or "none"))
     L.append("")

@@ -4,6 +4,14 @@ Real runs, in a Claude Code cloud container on 2026-10-16, of the two writing sc
 
 Every sample and pair in this folder is original text written for these tests (no upstream or Wikipedia examples).
 
+## الفهرس / contents
+- [Re-run (from the skill folder)](#re-run-from-the-skill-folder)
+- [Results on 2026-10-16](#results-on-2026-10-16)
+- [What the folder holds](#what-the-folder-holds)
+- [Run log (verbatim excerpts)](#run-log-verbatim-excerpts)
+- [Bugs fixed while porting the prototypes](#bugs-fixed-while-porting-the-prototypes)
+- [Honest limits](#honest-limits)
+
 ## Re-run (from the skill folder)
 
 ```bash

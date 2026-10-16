@@ -18,6 +18,14 @@
 
 وفوق ذلك: دلائل تنفيذ لكل تصنيف في `playbooks/`، قوالب إنتاج في `templates/`، مشاريع بداية في `starters/`، وأدوات في `tools/`، وموقع ثابت يعمل على GitHub Pages من جذر المستودع.
 
+## مهارة القدرات الخارقة لـ Claude
+
+المجلد [`.claude/skills/kosif-superpowers/`](.claude/skills/kosif-superpowers/SKILL.md) مهارة تعرّف Claude بقدراته الحقيقية في كل جلسة: الأدوات والموصلات، والمكتبات التي يثبّتها بأمر واحد، وطرق التفكير والإبداع والتحقق، وكتالوج من 4,200+ قدرة في 10 مجالات (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها وصفة ودليل.
+
+- **في Claude Code:** تُحمَّل تلقائيًا من هذا المستودع، أو انسخ المجلد إلى `~/.claude/skills/`.
+- **في claude.ai:** `python3 .claude/skills/kosif-superpowers/scripts/package_skill.py` ثم ارفع ملف `.skill` الناتج.
+- **ابدأ بـ:** `python3 .claude/skills/kosif-superpowers/scripts/probe_env.py` ثم `powers.py suggest "<طلبك>"`. الخريطة الذهنية للقدرات: [capability-map.md](.claude/skills/kosif-superpowers/references/capability-map.md).
+
 ## الاستخدام السريع مع Claude Code
 
 1. افتح [الموقع](https://kosif199022-jpg.github.io/kosif-tool/) واختر استايلًا (أو ابحث في `STYLE_INDEX.md`).

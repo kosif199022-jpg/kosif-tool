@@ -1342,8 +1342,7 @@
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/score.py:1",
-   "kosif-one/tools/kosif-studio/motion/score.py:340",
-   "/tmp/claude-0/-home-user/39d82892-8140-5bc1-8072-589adc90e615/scratchpad/harvest/repos/run1/s.wav"
+   "kosif-one/tools/kosif-studio/motion/score.py:340"
   ],
   "styles": [],
   "tags": [],
@@ -1361,8 +1360,7 @@
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/ambience.py:1",
-   "kosif-one/tools/kosif-studio/motion/ambience.py:178",
-   "/tmp/claude-0/-home-user/39d82892-8140-5bc1-8072-589adc90e615/scratchpad/harvest/repos/run1/a.wav"
+   "kosif-one/tools/kosif-studio/motion/ambience.py:178"
   ],
   "styles": [],
   "tags": [],

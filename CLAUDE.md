@@ -1,6 +1,6 @@
 # Claude entry point
 
-First load `.claude/skills/kosif-superpowers/SKILL.md` — your catalog of motion/montage superpowers (6,400+ powers with proof, libraries arsenal, 253 watched styles).
+First load `.claude/skills/kosif-superpowers/SKILL.md` and run its power-up protocol: it shows what you can really do in this session (tools, connectors, installable libraries), how to think, create and verify better, and a catalog of 4,200+ powers in 10 domains, motion and montage included, each with evidence and proof.
 
 Read AGENTS.md, then the selected style's `styles/<style-id>/SKILL.md`, `STYLE.json` and `BRIEF.md` (when present), then the playbooks that the SKILL.md lists (`playbooks/<category>.md`, plus `playbooks/arabic-typography.md` for Arabic text, `playbooks/audio-sync.md` when audio is supplied and `playbooks/render-pipeline.md` before rendering). Find IDs in `STYLE_INDEX.md` or with `python3 tools/kosif.py search <words>`.
 

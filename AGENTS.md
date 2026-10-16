@@ -11,4 +11,4 @@
 9. If a style appears as an external-only example, use its brief as a creative direction, not proof of an existing tested implementation.
 10. Catalog maintenance: `tools/sync_catalog.py` → `tools/import_briefs.py` (new briefs) → `tools/build.py` → `tools/validate.py`. Never store third-party prompt text in the repository.
 
-11. Capabilities: `.claude/skills/kosif-superpowers/` lists every power with how-to and proof; search with `python3 .claude/skills/kosif-superpowers/scripts/powers.py suggest "<brief>"`.
+11. Capabilities: `.claude/skills/kosif-superpowers/` maps every power (thinking, writing, code, data, documents, research, apps, media, strategy, motion) with how-to and proof. Probe the session with `python3 .claude/skills/kosif-superpowers/scripts/probe_env.py` and search with `python3 .claude/skills/kosif-superpowers/scripts/powers.py suggest "<brief>"`.

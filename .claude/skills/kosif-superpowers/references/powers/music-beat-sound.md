@@ -7,6 +7,22 @@
 
 **إضافات v2 — v2 additions:** BEAT-X01 … BEAT-X10 (10) — في آخر الفصل / at the end of this chapter.
 
+## الفهرس / contents
+_الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بالمعرّف أو استخدم_ `python3 scripts/powers.py family <family>` _— entries are ordered strongest evidence first; jump by ID or use the CLI._
+- ✅ مُثبت هنا: BEAT-01 … BEAT-27 (27)
+- 🟢 جاهز: BEAT-28 … BEAT-86 (59)
+- 📦 بأمر تثبيت: BEAT-87 … BEAT-160 (74)
+- 🔑 مفتاح/خدمة: BEAT-161 … BEAT-180 (20)
+- 👁 شوهد في فيديو: BEAT-181 … BEAT-212 (32)
+- 📄 موصوف: BEAT-213 … BEAT-282 (70)
+- 💡 فكرة: BEAT-283 … BEAT-294 (12)
+- ✅ مُثبت هنا: BEAT-P01 … BEAT-X05 (6)
+- 📄 موصوف: BEAT-X06 … BEAT-X07 (2)
+- 🔑 مفتاح أو خدمة: BEAT-X08 … BEAT-X09 (2)
+- 📄 موصوف: BEAT-X10 … BEAT-X10 (1)
+- إضافات من Cinematic Director PRO v5
+- إضافات v2 — v2 additions
+
 #### BEAT-01 · توحيد الجهارة بمرورين · Two-pass loudness normalisation · ✅ مُثبت هنا
 - **ماذا / what:** Measure integrated loudness first, then apply the measured values linearly so the mix lands on target without pumping.
 - **كيف / how:** pass1: -af loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json -f null - ; pass2: loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=..:measured_TP=..:measured_LRA=..:measured_thresh=..:linear=true,aresample=48000. AAC adds ~0.5 dB overshoot so aim TP -1.5 to measure ~-1 dBTP.
@@ -440,13 +456,13 @@
 - **ماذا / what:** An original soundtrack synthesised with numpy (no samples): sections of kick/clap/hats/sub/bass/pad/pluck/lead/bell, chord progression, risers, booms and drops.
 - **كيف / how:** python score.py out.wav --spec score.json [--cues cues.json] [--stems DIR] | --bpm 120 --seconds 15 --key A --scale minor --mood launch|calm.
 - **أرقام / params:** 48 kHz stereo; kick 'four'|'half'; chords in roman numerals (i, VI, III, VII); moods launch (half-time intro -> four-on-floor, stop at 55%, riser + boom) and calm (pad + pluck)
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/score.py:1` · `kosif-one/tools/kosif-studio/motion/score.py:340` · `/tmp/claude-0/-home-user/39d82892-8140-5bc1-8072-589adc90e615/scratchpad/harvest/repos/run1/s.wav`
+- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/score.py:1` · `kosif-one/tools/kosif-studio/motion/score.py:340`
 
 #### BEAT-76 · أصوات أجواء مولدة · Synthesised ambience · 🟢 جاهز
 - **ماذا / what:** Deterministic ambience: sea swell, wind, a soft pad on chords, rain with thunder roll, whooshes, dawn birdsong, water drops and a brook.
 - **كيف / how:** python ambience.py out.wav --seconds 17 [--rain 9.6:12.8] [--thunder 10.6] [--whoosh 0.6,15.3] [--chords 0:A,6:F] [--birds t0:t1] [--sea 0..1] [--drops t] [--brook t0:t1] [--seed 7].
 - **أرقام / params:** 44.1 kHz stereo; birds = seeded FM chirps ~2.2 phrases/s panned L/R
-- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/ambience.py:1` · `kosif-one/tools/kosif-studio/motion/ambience.py:178` · `/tmp/claude-0/-home-user/39d82892-8140-5bc1-8072-589adc90e615/scratchpad/harvest/repos/run1/a.wav`
+- **الدليل / proof:** `kosif-one/tools/kosif-studio/motion/ambience.py:1` · `kosif-one/tools/kosif-studio/motion/ambience.py:178`
 
 #### BEAT-77 · ضبط علو الصوت للنشر · Broadcast loudness master · 🟢 جاهز
 - **ماذا / what:** Every mix normalised to -14 LUFS with a ceiling under -1 dBTP, AAC 256k 48 kHz.

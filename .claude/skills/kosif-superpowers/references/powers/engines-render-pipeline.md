@@ -7,6 +7,21 @@
 
 **إضافات v2 — v2 additions:** ENG-X01 … ENG-X05 (5) — في آخر الفصل / at the end of this chapter.
 
+## الفهرس / contents
+_الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بالمعرّف أو استخدم_ `python3 scripts/powers.py family <family>` _— entries are ordered strongest evidence first; jump by ID or use the CLI._
+- ✅ مُثبت هنا: ENG-01 … ENG-53 (53)
+- 🟢 جاهز: ENG-54 … ENG-113 (60)
+- 📦 بأمر تثبيت: ENG-114 … ENG-321 (208)
+- 🔑 مفتاح/خدمة: ENG-322 … ENG-348 (27)
+- 👁 شوهد في فيديو: ENG-349 … ENG-356 (8)
+- 📄 موصوف: ENG-357 … ENG-434 (78)
+- 💡 فكرة: ENG-435 … ENG-435 (1)
+- ✅ مُثبت هنا: ENG-P01 … ENG-P01 (1)
+- 📄 موصوف: ENG-X01 … ENG-X04 (4)
+- 📦 بأمر تثبيت: ENG-X05 … ENG-X05 (1)
+- إضافات من Cinematic Director PRO v5
+- إضافات v2 — v2 additions
+
 #### ENG-01 · عقد تركيب HyperFrames · HyperFrames composition contract · ✅ مُثبت هنا
 - **ماذا / what:** Every film is one index.html whose root div carries data-composition-id, data-width, data-height, data-duration and data-fps, with GSAP timelines registered in window.__timelines and the motion-kit shim so either engine can seek it.
 - **كيف / how:** python motion.py new NAME; author a paused gsap.timeline, register window.__timelines['root']=tl, call MOTION.shim('root', seconds); everything must be a function of t.
@@ -2068,7 +2083,7 @@
 
 #### ENG-332 · توجيه المهام للموديلات · AI router: task-to-model and effort · 🔑 مفتاح/خدمة
 - **ماذا / what:** Routes each job to Claude or Gemini by user preference, cost and availability, with per-task model, effort and token budgets; Gemini goes free-first through the app server with a hedged fallback chain.
-- **كيف / how:** AIR.TASKS: code/film/imitate -> claude-opus-5-5 effort high (20000/14000/12000 tokens); plan/agent/script/vision/review/highlights -> claude-sonnet-5-5 medium; quick/post/captions -> claude-haiku-5-5 low; adaptive thinking for high/max; 400 -> retry without effort; 404 -> sonnet. Gemini: gfetch free route then user key; gemChain [chosen, gemini-3.6-flash, gemini-3.5-flash-lite] skipping sick models (3 min); hedge starts the next model if the first fails or is silent.
+- **كيف / how:** AIR.TASKS: code/film/imitate -> <top-tier Claude model> effort high (20000/14000/12000 tokens); plan/agent/script/vision/review/highlights -> <mid-tier Claude model> medium; quick/post/captions -> <small fast Claude model> low; adaptive thinking for high/max; 400 -> retry without effort; 404 -> sonnet. Gemini: gfetch free route then user key; gemChain [chosen, gemini-3.6-flash, gemini-3.5-flash-lite] skipping sick models (3 min); hedge starts the next model if the first fails or is silent.
 - **الدليل / proof:** `app/public/js/10_studio.js:2179` · `app/public/js/10_studio.js:2200` · `app/public/js/10_studio.js:2233`
 
 #### ENG-333 · وكيل الأدوات بخطوات ظاهرة · Agent tool runner with live steps · 🔑 مفتاح/خدمة

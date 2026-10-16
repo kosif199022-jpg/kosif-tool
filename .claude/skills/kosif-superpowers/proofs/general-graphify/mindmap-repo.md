@@ -152,6 +152,9 @@ mindmap
 - **reel.js** (community 30, 1 nodes): `reel.js` (0)
 - **words.js** (community 31, 1 nodes): `html-canvas/words.js` (0)
 
+## الفهرس / contents
+- [Bridges (cross-community edges)](#bridges-cross-community-edges)
+
 ## Bridges (cross-community edges)
 - fetch_video.py +14 <-> test_validate.py +1: 10 edges
 - fetch_video.py +14 <-> aspects.py +2: 6 edges

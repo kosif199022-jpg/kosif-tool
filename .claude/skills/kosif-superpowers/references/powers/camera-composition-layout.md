@@ -7,6 +7,18 @@
 
 **إضافات v2 — v2 additions:** CAM-X01 … CAM-X03 (3) — في آخر الفصل / at the end of this chapter.
 
+## الفهرس / contents
+_الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بالمعرّف أو استخدم_ `python3 scripts/powers.py family <family>` _— entries are ordered strongest evidence first; jump by ID or use the CLI._
+- ✅ مُثبت هنا: CAM-01 … CAM-13 (13)
+- 🟢 جاهز: CAM-14 … CAM-58 (45)
+- 📦 بأمر تثبيت: CAM-59 … CAM-180 (122)
+- 🔑 مفتاح/خدمة: CAM-181 … CAM-194 (14)
+- 👁 شوهد في فيديو: CAM-195 … CAM-339 (145)
+- 📄 موصوف: CAM-340 … CAM-406 (67)
+- 💡 فكرة: CAM-407 … CAM-421 (15)
+- 📄 موصوف: CAM-X01 … CAM-X03 (3)
+- إضافات v2 — v2 additions
+
 #### CAM-01 · مسار تكبير لوغاريتمي · Log-space zoom track · ✅ مُثبت هنا
 - **ماذا / what:** Spring track on log(scale) for camera zooms with several targets.
 - **كيف / how:** MOTION.zoomTrack(t, [[t,scale],...], preset).

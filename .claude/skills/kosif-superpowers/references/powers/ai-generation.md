@@ -25,6 +25,21 @@
 | 7 | الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look | GEN-72–GEN-82 (11) |
 | 8 | الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics | GEN-83–GEN-90 (8) |
 
+## الفهرس / contents
+- [1. تشريح البرومبت وقواعده — Prompt anatomy & rules](#1-تشريح-البرومبت-وقواعده--prompt-anatomy--rules)
+- [2. مصانع البرومبت المُختبرة — Tested prompt forges & profile packs](#2-مصانع-البرومبت-المُختبرة--tested-prompt-forges--profile-packs)
+- [3. مكتبات المظهر والأسلوب — Look, style & vocabulary libraries](#3-مكتبات-المظهر-والأسلوب--look-style--vocabulary-libraries)
+- [4. توليد الصور — Image generation routes](#4-توليد-الصور--image-generation-routes)
+- [5. توليد الفيديو — Video generation routes](#5-توليد-الفيديو--video-generation-routes)
+- [6. الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media](#6-الصوت-والموسيقى-والوسائط-المساعدة--music-avatars--assisted-media)
+- [7. الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look](#7-الهجين-الذكاء-الاصطناعي-قاعدة-والكود-مظهر--hybrid-ai-as-base-code-as-look)
+- [8. الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics](#8-الثبات-والميزانية-والأخلاق--consistency-budget-licence--ethics)
+- [توليفات قوية / power combos](#توليفات-قوية--power-combos)
+- [أخطاء ممنوعة / never do](#أخطاء-ممنوعة--never-do)
+- [أقوى 5 حركات توقيع / 5 signature moves](#أقوى-5-حركات-توقيع--5-signature-moves)
+- [إضافات من Cinematic Director PRO v5](#إضافات-من-cinematic-director-pro-v5)
+- [إضافات v2 — v2 additions](#إضافات-v2--v2-additions)
+
 ## 1. تشريح البرومبت وقواعده — Prompt anatomy & rules
 
 القواعد التي تجعل أي برومبت صورة أو فيديو يعطي نتيجة مخرَجة لا عشوائية — قبل أن تختار المنصة. / The rules that make any image or video prompt art-directed instead of random — before you pick a platform.
@@ -287,7 +302,7 @@
 
 ### GEN-35 · جسر الذكاء في الاستوديو (Claude CLI / API / يدوي) · Studio AI bridge: Claude CLI → API → manual · 🟢 جاهز / ready
 - **ماذا / what:** يختار كيف يسأل الاستوديو نموذجًا: `claude -p` محليًا أولًا، ثم Messages API بمفتاح، وإلا حزمة نسخ ولصق بتعليمات عربية. — *Chooses how the studio asks a model: local `claude -p` first, then the Messages API with a key, else a copy-paste package with Arabic steps.* · **متى / when:** تعديل صورة أو توليد صورة من وصف داخل kosif-studio / editing or creating a picture inside kosif-studio
-- **كيف / how:** `python3 kosif-studio/ai_bridge.py [prompt]`; settings.json backend auto|cli|api|none; prompts ≥28 000 chars go via stdin; CLI readiness cached 10 min; defaults model claude-sonnet-5-5, max_tokens 8000, timeout 240 s. Edit flow (Ctrl+E): reply must contain IMAGE_B64 and `# EDITS START`; result drawn original-first then edit; Ctrl+Z undo. With backend none it always works (manual package).
+- **كيف / how:** `python3 kosif-studio/ai_bridge.py [prompt]`; settings.json backend auto|cli|api|none; prompts ≥28 000 chars go via stdin; CLI readiness cached 10 min; defaults model <mid-tier Claude model>, max_tokens 8000, timeout 240 s. Edit flow (Ctrl+E): reply must contain IMAGE_B64 and `# EDITS START`; result drawn original-first then edit; Ctrl+Z undo. With backend none it always works (manual package).
 - **أرقام / params:** ≥28000 chars → stdin; 10 min cache; 240 s timeout
 - **الدليل / proof:** `kosif-studio/ai_bridge.py:56` · `kosif-studio/ai_bridge.py:99` · `kosif-studio/studio.py:799`
 

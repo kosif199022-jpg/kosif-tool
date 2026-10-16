@@ -7,6 +7,22 @@
 
 **إضافات v2 — v2 additions:** QA-X01 … QA-X07 (7) — في آخر الفصل / at the end of this chapter.
 
+## الفهرس / contents
+_الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بالمعرّف أو استخدم_ `python3 scripts/powers.py family <family>` _— entries are ordered strongest evidence first; jump by ID or use the CLI._
+- ✅ مُثبت هنا: QA-01 … QA-67 (67)
+- 🟢 جاهز: QA-68 … QA-125 (58)
+- 📦 بأمر تثبيت: QA-126 … QA-213 (88)
+- 🔑 مفتاح/خدمة: QA-214 … QA-227 (14)
+- 👁 شوهد في فيديو: QA-228 … QA-230 (3)
+- 📄 موصوف: QA-231 … QA-367 (137)
+- 💡 فكرة: QA-368 … QA-372 (5)
+- ✅ مُثبت هنا: QA-P01 … QA-P01 (1)
+- 📄 موصوف: QA-P02 … QA-P02 (1)
+- ✅ مُثبت هنا: QA-X01 … QA-X04 (4)
+- 📄 موصوف: QA-X05 … QA-X07 (3)
+- إضافات من Cinematic Director PRO v5
+- إضافات v2 — v2 additions
+
 #### QA-01 · بوابة التسليم · Delivery gate (inspect) · ✅ مُثبت هنا
 - **ماذا / what:** Last check before delivery: H.264/yuv420p, black and frozen stretches, integrated LUFS and true peak, sampled exposure.
 - **كيف / how:** python motion.py inspect FILM.mp4 [--lufs -14] [--allow 6.6-7.3].

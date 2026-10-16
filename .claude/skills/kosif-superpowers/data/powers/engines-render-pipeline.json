@@ -5927,7 +5927,7 @@
   "name_en": "AI router: task-to-model and effort",
   "status": "key",
   "what": "Routes each job to Claude or Gemini by user preference, cost and availability, with per-task model, effort and token budgets; Gemini goes free-first through the app server with a hedged fallback chain.",
-  "how": "AIR.TASKS: code/film/imitate -> claude-opus-5-5 effort high (20000/14000/12000 tokens); plan/agent/script/vision/review/highlights -> claude-sonnet-5-5 medium; quick/post/captions -> claude-haiku-5-5 low; adaptive thinking for high/max; 400 -> retry without effort; 404 -> sonnet. Gemini: gfetch free route then user key; gemChain [chosen, gemini-3.6-flash, gemini-3.5-flash-lite] skipping sick models (3 min); hedge starts the next model if the first fails or is silent.",
+  "how": "AIR.TASKS: code/film/imitate -> <top-tier Claude model> effort high (20000/14000/12000 tokens); plan/agent/script/vision/review/highlights -> <mid-tier Claude model> medium; quick/post/captions -> <small fast Claude model> low; adaptive thinking for high/max; 400 -> retry without effort; 404 -> sonnet. Gemini: gfetch free route then user key; gemChain [chosen, gemini-3.6-flash, gemini-3.5-flash-lite] skipping sick models (3 min); hedge starts the next model if the first fails or is silent.",
   "params": "",
   "install": "",
   "license": "owner",

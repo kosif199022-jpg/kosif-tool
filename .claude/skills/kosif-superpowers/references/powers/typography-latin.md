@@ -24,6 +24,20 @@
 | 7 | مسارات ودوائر وجدران نصية — Paths, rings & type walls | TYPE-72–TYPE-78 (7) |
 | 8 | بطاقات العناوين والأنظمة التحريرية — Title cards, lockups & editorial systems | TYPE-79–TYPE-90 (12) |
 
+## الفهرس / contents
+- [1. نظام الخط والخطوط والقراءة — Type system, fonts & legibility](#1-نظام-الخط-والخطوط-والقراءة--type-system-fonts--legibility)
+- [2. الدخول والكشف — Entrances & reveals](#2-الدخول-والكشف--entrances--reveals)
+- [3. الكتابة والشفرة والعدّادات — Typing, decoding & counters](#3-الكتابة-والشفرة-والعدّادات--typing-decoding--counters)
+- [4. ضربات الإيقاع والصدمة — Beat slams & punches](#4-ضربات-الإيقاع-والصدمة--beat-slams--punches)
+- [5. التأكيد داخل السطر — In-line emphasis](#5-التأكيد-داخل-السطر--in-line-emphasis)
+- [6. الخط مادةً وشكلًا — Type as material & form](#6-الخط-مادةً-وشكلًا--type-as-material--form)
+- [7. مسارات ودوائر وجدران نصية — Paths, rings & type walls](#7-مسارات-ودوائر-وجدران-نصية--paths-rings--type-walls)
+- [8. بطاقات العناوين والأنظمة التحريرية — Title cards, lockups & editorial systems](#8-بطاقات-العناوين-والأنظمة-التحريرية--title-cards-lockups--editorial-systems)
+- [توليفات قوية / power combos](#توليفات-قوية--power-combos)
+- [أخطاء ممنوعة / never do](#أخطاء-ممنوعة--never-do)
+- [أقوى 5 حركات توقيع / 5 signature moves](#أقوى-5-حركات-توقيع--5-signature-moves)
+- [إضافات v2 — v2 additions](#إضافات-v2--v2-additions)
+
 ## 1. نظام الخط والخطوط والقراءة — Type system, fonts & legibility
 
 القواعد التي تجعل كل حركة لاحقة مقروءة على شاشة الهاتف، والخطوط التي في يدك فعلًا. / The rules that keep every later move readable on a phone, and the fonts you actually have.

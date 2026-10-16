@@ -7,6 +7,18 @@
 
 **إضافات v2 — v2 additions:** TRANS-X01 … TRANS-X12 (12) — في آخر الفصل / at the end of this chapter.
 
+## الفهرس / contents
+_الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بالمعرّف أو استخدم_ `python3 scripts/powers.py family <family>` _— entries are ordered strongest evidence first; jump by ID or use the CLI._
+- ✅ مُثبت هنا: TRANS-01 … TRANS-27 (27)
+- 🟢 جاهز: TRANS-28 … TRANS-85 (58)
+- 📦 بأمر تثبيت: TRANS-86 … TRANS-260 (175)
+- 🔑 مفتاح/خدمة: TRANS-261 … TRANS-261 (1)
+- 👁 شوهد في فيديو: TRANS-262 … TRANS-375 (114)
+- 📄 موصوف: TRANS-376 … TRANS-442 (67)
+- 💡 فكرة: TRANS-443 … TRANS-460 (18)
+- 📄 موصوف: TRANS-X01 … TRANS-X12 (12)
+- إضافات v2 — v2 additions
+
 #### TRANS-01 · انتقال تطبيقات الموبايل: غمس للأسود · Phone-editor transition: dipblack · ✅ مُثبت هنا
 - **ماذا / what:** Custom transition modelling what CapCut/InShot do: dip to black.
 - **كيف / how:** mm_transitions.render('dipblack', A, B, P, **params) (custom kinds need OpenCV or SciPy here).
