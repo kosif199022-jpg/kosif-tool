@@ -30,7 +30,7 @@ python3 tools/verify_video.py $OUT/film.mp4 --aspect 16:9 --fps 30 --duration 9 
 ffmpeg -i $OUT/film_preview.png -q:v 4 $P/sheet.jpg
 ```
 
-**نتيجة الفحص:** VERIFY_LINE
+**نتيجة الفحص:** لم يُرندَر ولم يُفحص بعد (المصدر موجود فقط) — not rendered or verified yet; treat as source only
 
 **حدود صريحة:** الفيلم صامت. الرندر يمرّ عبر WebGL برمجي (SwiftShader) في الحاوية، فاستغرق RENDER_TIME. الصفحة تحتاج الشبكة لتحميل three من CDN. الأرضية مظلمة عمدًا: ظهرت في المعاينة الأولى رمادية لأن `scene.environmentIntensity` يتجاوز `envMapIntensity`، فأعطيناها envMap خاصًا بشدة 0.06. الانكسار والتشتت (dispersion) تقريبيان، فهما من نموذج three.js وليسا تتبّع أشعة.
 
@@ -49,7 +49,7 @@ ffmpeg -i $OUT/film_preview.png -q:v 4 $P/sheet.jpg
 
 **Power families:** three-d-scenes, light-glow-bloom, camera-composition-layout, particles-fluids-physics, texture-material, typography-arabic/latin, easing-timing-rhythm, engines-render-pipeline, qa-verification.
 
-**Verify:** VERIFY_LINE
+**Verify:** لم يُرندَر ولم يُفحص بعد (المصدر موجود فقط) — not rendered or verified yet; treat as source only
 
 **Limits:**
 - The film is silent.

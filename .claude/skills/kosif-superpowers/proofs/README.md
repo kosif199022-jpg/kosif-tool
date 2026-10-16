@@ -17,3 +17,5 @@
 | [texture-lab](texture-lab/README.md) | تكوين متحرك واحد بأربع خامات مكتوبة يدويًا: حبيبات فيلم مبذورة، نقاط CMYK بشاشات تدور، ريزوغراف بحبرين وانزياح تسجيل، شاشة CRT بتحدّب وانحراف لوني (صامت) | 1920×1080 |
 
 الخطوط المشتركة في `_shared/fonts` (رخصة OFL).
+| [character-rig](character-rig/README.md) | شخصية مسطحة بـIK بعظمتين، مشية، تهيؤ وقفزة وهبوط، فقاعة كلام عربية، صوت مولّد؛ 13/13 | 1920×1080 |
+| [transitions-reel](transitions-reel/README.md) | ثمانية انتقالات مسمّاة بين بطاقات عربية (iris، wipe، zoom-through، glitch، whip، light-leak…)؛ 13/13 | 1080×1920 |

@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Character Rig — KOSIF proof</title>
+<style>
+  @font-face { font-family: "Cairo"; src: url("../_shared/fonts/Cairo[slnt,wght].ttf") format("truetype"); font-weight: 200 1000; font-display: block; }
+  html, body { margin: 0; height: 100%; background: #111; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  canvas { display: block; width: 1920px; height: 1080px; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px system-ui, sans-serif; color: #9ab; direction: ltr; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><canvas id="c" width="1920" height="1080"></canvas></div>
+<div id="hud">space: play/pause · ←/→: frame · ?t=4.5 · ?bones=1 shows the IK skeleton</div>
+<script src="motion.js"></script>
+<script>
+(function () {
+  'use strict';
+  const W = 1920, H = 1080, FPS = 30;
+  const M = window.RIG_MOTION;
+  const { DURATION, GROUND, HIP_H, STRIDE, C, X0, VMAX, CRATE, T, JUMP, SPEECH, speed, dist } = M;
+  const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+  const SHOW_BONES = new URLSearchParams(location.search).get('bones') === '1';
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x), lerp = (a, b, p) => a + (b - a) * p;
+  const ss = (x) => { x = clamp01(x); return 0.5 - 0.5 * Math.cos(Math.PI * x); };            // inOutSine
+  const outBack = (x, s = 1.9) => 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2);
+  const inOutCubic = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const win = (t, a, b) => clamp01((t - a) / (b - a));
+  const spring = (x, k = 200, z = 14) => { if (x <= 0) return 0; const w = Math.sqrt(k), d = z / (2 * w), wd = w * Math.sqrt(1 - d * d); return 1 - Math.exp(-d * w * x) * (Math.cos(wd * x) + (d * w / wd) * Math.sin(wd * x)); };
+  const rad = (d) => d * Math.PI / 180;
+
+  /* ---------------- palette ---------------- */
+  const COL = {
+    sky0: '#ffe9c6', sky1: '#ffc99a', sun: '#fff6df', cloud: '#fff4e3',
+    hillFar: '#efb58a', hillMid: '#d98b66', ground: '#96b86d', groundDark: '#7aa057', path: '#e3c995', tuft: '#5e8b47',
+    crate: '#cf914f', crateDark: '#8e5a2a', crateLight: '#e8b072',
+    shirt: '#e5533f', shirtDark: '#b8402f', pants: '#34446b', pantsFar: '#26324f', skin: '#f3c29a', skinFar: '#d9a47c',
+    hair: '#2c2421', shoe: '#1f1f29', scarf: '#f3b33d', scarfDark: '#d6912a', ink: '#262838', bubble: '#fffaf1',
+  };
+
+  /* ---------------- rig dimensions ---------------- */
+  const THIGH = 116, SHIN = 116, UPARM = 84, FOREARM = 80, TORSO = 150, HEAD_R = 56;
+
+  /* 2-bone IK: returns the middle joint. bend = +1 / −1 picks the side the joint bulges to. */
+  function ik(a, target, l1, l2, bend) {
+    let dx = target[0] - a[0], dy = target[1] - a[1];
+    let d = Math.hypot(dx, dy); const maxD = l1 + l2 - 0.01, minD = Math.abs(l1 - l2) + 0.01;
+    const dc = Math.max(minD, Math.min(maxD, d));
+    const base = Math.atan2(dy, dx);
+    const cosA = (l1 * l1 + dc * dc - l2 * l2) / (2 * l1 * dc);
+    const ang = base - bend * Math.acos(Math.max(-1, Math.min(1, cosA)));
+    const j = [a[0] + Math.cos(ang) * l1, a[1] + Math.sin(ang) * l1];
+    const end = [a[0] + dx / (d || 1) * dc, a[1] + dy / (d || 1) * dc];
+    return { j, end };
+  }
+
+  /* ---------------- procedural walk: feet planted in world space (no sliding) ---------------- */
+  function footWalk(d, off, sf) {
+    const c = d / C + off, k = Math.floor(c), f = c - k;
+    const xk = X0 + k * C - off * C + STRIDE / 2;
+    if (f < 0.5) return [xk, GROUND];                                                 // stance: planted
+    const s = (f - 0.5) / 0.5;                                                          // swing: arc to the next plant
+    return [xk + C * ss(s), GROUND - Math.sin(Math.PI * s) * 44 * Math.max(0.25, sf) - Math.max(0, Math.sin(Math.PI * s * 1.6)) * 6];
+  }
+
+  /* ---------------- the pose as a pure function of t ---------------- */
+  const STAND_A = footWalk(M.D_STOP, 0, 0), SETTLE_TO = [JUMP.x0 + 40, GROUND];
+  const LAND_A = [JUMP.x1 - 36, GROUND], LAND_B = [JUMP.x1 + 40, GROUND];
+  function pose(t) {
+    const P = { expr: 'neutral', mouth: 0, sy: 1, lean: 0, headLag: 0, headTilt: 0 };
+    const d = dist(t), v = speed(t), sf = v / VMAX;
+    let hx = X0 + d, hy = GROUND - HIP_H + 9 * sf * Math.cos(4 * Math.PI * d / C);  // hip bob: lowest at contact
+    let fa = footWalk(d, 0, sf), fb = footWalk(d, 0.5, sf);
+    P.lean = 6 * sf;
+    // arms: opposite to legs, ±26° at full speed (angle from straight down, + = forward)
+    const swing = 26 * sf * Math.cos(2 * Math.PI * d / C);
+    let an = -swing + 4, af = swing - 2;
+    // settle step: the trailing foot catches up
+    if (t >= T.settle[0]) {
+      const u = win(t, T.settle[0], T.settle[1]), b0 = footWalk(M.D_STOP, 0.5, 0.25);
+      fa = STAND_A;
+      fb = [lerp(b0[0], SETTLE_TO[0], ss(u)), lerp(b0[1], GROUND, ss(u)) - Math.sin(Math.PI * u) * 18];
+      hy = GROUND - HIP_H - Math.sin(Math.PI * u) * 4;
+    }
+    if (t >= T.notice) {                                                                 // surprise: lean back, arms flare
+      const u = spring(t - T.notice, 260, 16);
+      P.expr = 'surprised'; P.lean = lerp(0, -9, u); P.headTilt = -8 * u; an = lerp(an, 28, u); af = lerp(af, -22, u);
+      hy -= 8 * u;
+    }
+    if (t >= T.crouch[0]) {                                                              // anticipation
+      const u = ss(win(t, T.crouch[0], T.crouch[1]));
+      P.expr = 'determined'; hy = GROUND - HIP_H + 62 * u; hx += 10 * u; P.lean = lerp(-9, 24, u); P.headTilt = lerp(-8, 8, u);
+      an = lerp(28, -70, u); af = lerp(-22, -62, u); P.sy = 1 - 0.13 * u;
+    }
+    if (t >= T.air[0]) {                                                                 // ballistic flight (constant g)
+      const u = win(t, T.air[0], T.air[1]);
+      const y0 = GROUND - HIP_H + 62, y1 = GROUND - HIP_H;
+      hx = lerp(JUMP.x0 + 10, JUMP.x1, u);
+      hy = lerp(y0, y1, u) - JUMP.apex * 4 * u * (1 - u);
+      P.expr = u < 0.12 ? 'determined' : 'joy';
+      const tuckA = [hx - 40, hy + 132], tuckB = [hx + 26, hy + 112];
+      const pa = STAND_A, pb = SETTLE_TO;
+      const kIn = ss(u / 0.22), kOut = ss((u - 0.72) / 0.28);
+      fa = [lerp(lerp(pa[0], tuckA[0], kIn), LAND_A[0], kOut), lerp(lerp(pa[1], tuckA[1], kIn), LAND_A[1], kOut)];
+      fb = [lerp(lerp(pb[0], tuckB[0], kIn), LAND_B[0], kOut), lerp(lerp(pb[1], tuckB[1], kIn), LAND_B[1], kOut)];
+      // stretch on take-off, neutral at the apex, slight stretch before impact
+      P.sy = 1 + 0.16 * Math.exp(-Math.pow((u - 0.08) / 0.14, 2)) + 0.06 * Math.exp(-Math.pow((u - 0.95) / 0.08, 2));
+      P.lean = lerp(16, -6, ss(u));
+      an = lerp(-70, 150, ss(u / 0.3)); af = lerp(-62, 135, ss(u / 0.34));
+      an = lerp(an, 60, ss((u - 0.6) / 0.4)); af = lerp(af, 48, ss((u - 0.6) / 0.4));
+    }
+    if (t >= T.air[1]) {                                                                 // impact: squash → spring back
+      const tau = t - T.air[1];
+      const drop = 92 * Math.exp(-6 * tau) * Math.sin(12 * tau) / 0.62;
+      hx = JUMP.x1; hy = GROUND - HIP_H + Math.max(-6, drop);
+      fa = LAND_A; fb = LAND_B;
+      P.sy = 1 - 0.24 * Math.exp(-6.5 * tau) * Math.cos(13 * tau);
+      P.headLag = 26 * Math.exp(-5 * tau) * Math.sin(13 * (tau - 0.05)) * (tau > 0.05 ? 1 : 0);
+      P.lean = 18 * Math.exp(-5 * tau) * Math.cos(9 * tau);
+      // follow-through: arms keep falling past rest, then settle
+      const fall = 1 - Math.exp(-7 * tau) * Math.cos(11 * tau);
+      an = lerp(60, 6, fall); af = lerp(48, -4, fall);
+      P.expr = tau < 0.5 ? 'joy' : 'neutral';
+    }
+    if (t >= T.talk[0] - 0.25) {                                                         // presenting gesture while talking
+      const u = spring(t - (T.talk[0] - 0.25), 160, 15);
+      an = lerp(an, 62 + 10 * Math.sin((t - T.talk[0]) * 3.4), u); af = lerp(af, -4, u);
+      P.headTilt = lerp(0, -5, u);
+      P.expr = 'talk';
+      for (const w of SPEECH) if (t >= w.t && t < w.t + 0.32) P.mouth = Math.max(P.mouth, Math.abs(Math.sin(Math.PI * (t - w.t) / 0.16)));
+    }
+    P.hip = [hx, hy]; P.fa = fa; P.fb = fb; P.an = an; P.af = af; P.v = sf;
+    return P;
+  }
+
+  /* ---------------- camera: critically-damped follow, integrated from t=0 (deterministic) ---------------- */
+  function camera(t) {
+    const dt = 1 / 240, n = Math.round(t / dt);
+    let x = X0 + 350, vx = 0, y = 575, vy = 0, z = 1.18, vz = 0;
+    const w = 2.6, wz = 3.2;
+    for (let i = 0; i <= n; i++) {
+      const tt = i * dt;
+      const p = hipOnly(tt);
+      const talk = ss(win(tt, T.talk[0] - 0.6, T.talk[0] + 0.6));
+      const tx = p[0] + 260 * speed(tt) / VMAX + 90 + talk * 210, ty = 575 + (p[1] - (GROUND - HIP_H)) * 0.2 - talk * 35;
+      const tz = 1.18 + 0.08 * talk;
+      vx += (w * w * (tx - x) - 2 * w * vx) * dt; x += vx * dt;
+      vy += (w * w * (ty - y) - 2 * w * vy) * dt; y += vy * dt;
+      vz += (wz * wz * (tz - z) - 2 * wz * vz) * dt; z += vz * dt;
+    }
+    return { x, y, z };
+  }
+  function hipOnly(t) {          // cheap hip position for the camera
+    if (t < T.air[0]) return [X0 + dist(t), GROUND - HIP_H];
+    if (t < T.air[1]) { const u = win(t, T.air[0], T.air[1]); return [lerp(JUMP.x0, JUMP.x1, u), GROUND - HIP_H - JUMP.apex * 4 * u * (1 - u)]; }
+    return [JUMP.x1, GROUND - HIP_H];
+  }
+
+  /* ---------------- scarf: verlet chain pinned at the neck, integrated from t=0 ---------------- */
+  function scarf(t) {
+    const N = 9, SEG = 19, dt = 1 / 120, steps = Math.round(t / dt);
+    const neck0 = neckOf(pose(0));
+    let p = Array.from({ length: N }, (_, i) => [neck0[0] - i * SEG, neck0[1] + i * 3]), q = p.map((a) => a.slice());
+    for (let s = 1; s <= steps; s++) {
+      const nk = neckOf(pose(s * dt));
+      for (let i = 1; i < N; i++) {
+        const vx = (p[i][0] - q[i][0]) * 0.9, vy = (p[i][1] - q[i][1]) * 0.9;
+        q[i] = p[i].slice(); p[i] = [p[i][0] + vx - 260 * dt * dt, p[i][1] + vy + 1500 * dt * dt];   // gravity + light head-wind
+      }
+      p[0] = nk; q[0] = nk;
+      for (let it = 0; it < 4; it++) for (let i = 1; i < N; i++) {
+        const a = p[i - 1], b = p[i], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, k = (l - SEG) / l;
+        p[i] = [b[0] - dx * k, b[1] - dy * k];
+      }
+    }
+    return p;
+  }
+  function neckOf(P) {
+    const a = rad(P.lean), len = TORSO * P.sy;
+    return [P.hip[0] + Math.sin(a) * len * 0.9, P.hip[1] - Math.cos(a) * len * 0.9];
+  }
+  // memo for the scarf so a sequential render is O(1) per frame
+  let scarfCache = { t: -1, p: null };
+  function scarfAt(t) { if (Math.abs(scarfCache.t - t) < 1e-9) return scarfCache.p; scarfCache = { t, p: scarf(t) }; return scarfCache.p; }
+
+  /* ---------------- scenery ---------------- */
+  const hill = (x, seed, amp, base) => base - amp * (0.55 * Math.sin(x * 0.0021 + seed) + 0.3 * Math.sin(x * 0.0047 + seed * 2.1) + 0.15 * Math.sin(x * 0.011 + seed * 3.7));
+  function drawBackground(cam) {
+    const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, COL.sky0); g.addColorStop(0.75, COL.sky1); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    const sx = 1450 - (cam.x - 1000) * 0.04;
+    ctx.fillStyle = COL.sun; ctx.globalAlpha = 0.9; ctx.beginPath(); ctx.arc(sx, 250, 92, 0, Math.PI * 2); ctx.fill();
+    ctx.globalAlpha = 0.25; ctx.beginPath(); ctx.arc(sx, 250, 140, 0, Math.PI * 2); ctx.fill(); ctx.globalAlpha = 1;
+    // clouds (parallax 0.12 + slow drift)
+    ctx.fillStyle = COL.cloud;
+    for (let i = 0; i < 5; i++) {
+      const cx = ((i * 520 + 200 - (cam.x * 0.12) + tNow * 14) % 2600 + 2600) % 2600 - 300, cy = 140 + (i % 3) * 70;
+      for (const [ox, oy, r] of [[0, 0, 42], [46, -16, 52], [96, 0, 40], [48, 12, 38]]) { ctx.beginPath(); ctx.arc(cx + ox, cy + oy, r, 0, Math.PI * 2); ctx.fill(); }
+    }
+    for (const [par, col, seed, amp, base] of [[0.25, COL.hillFar, 1.3, 110, 650], [0.5, COL.hillMid, 4.2, 90, 760]]) {
+      ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(0, H);
+      for (let x = 0; x <= W; x += 16) { const wx = x / cam.z + cam.x * par; ctx.lineTo(x, (hill(wx, seed, amp, base) - 560) * Math.pow(cam.z, par) + 560 - (cam.y - 560) * par); }
+      ctx.lineTo(W, H); ctx.closePath(); ctx.fill();
+    }
+  }
+  function drawGroundWorld(cam) {
+    const x0 = cam.x - W / 2 / cam.z - 200, x1 = cam.x + W / 2 / cam.z + 200;
+    ctx.fillStyle = COL.ground; ctx.fillRect(x0, GROUND, x1 - x0, 700);
+    ctx.fillStyle = COL.path; ctx.fillRect(x0, GROUND, x1 - x0, 26);
+    ctx.fillStyle = COL.groundDark; ctx.fillRect(x0, GROUND + 26, x1 - x0, 8);
+    // pebbles and tufts at fixed world positions (seeded by index)
+    for (let i = Math.floor(x0 / 70); i < x1 / 70; i++) {
+      const h = Math.sin(i * 12.9898) * 43758.5453, r = h - Math.floor(h);
+      const x = i * 70 + r * 50;
+      if (r < 0.35) { ctx.fillStyle = '#c9ad7a'; ctx.beginPath(); ctx.ellipse(x, GROUND + 12, 7 + r * 10, 4, 0, 0, Math.PI * 2); ctx.fill(); }
+      else if (r > 0.6) { ctx.strokeStyle = COL.tuft; ctx.lineWidth = 4; ctx.lineCap = 'round'; for (let k = -1; k <= 1; k++) { ctx.beginPath(); ctx.moveTo(x + k * 6, GROUND + 58 + r * 40); ctx.lineTo(x + k * 12, GROUND + 34 + r * 40); ctx.stroke(); } }
+    }
+  }
+  function drawCrate() {
+    const { x, w, h } = CRATE, y = GROUND - h;
+    ctx.fillStyle = 'rgba(60,40,20,.18)'; ctx.beginPath(); ctx.ellipse(x + w / 2, GROUND + 4, w * 0.62, 12, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = COL.crate; ctx.fillRect(x, y, w, h);
+    ctx.fillStyle = COL.crateLight; ctx.fillRect(x, y, w, 10);
+    ctx.strokeStyle = COL.crateDark; ctx.lineWidth = 6; ctx.strokeRect(x + 3, y + 3, w - 6, h - 6);
+    ctx.lineWidth = 4; for (let k = 1; k < 4; k++) { ctx.beginPath(); ctx.moveTo(x + 8, y + k * h / 4); ctx.lineTo(x + w - 8, y + k * h / 4); ctx.stroke(); }
+    ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(x + 14, y + h - 14); ctx.lineTo(x + w - 14, y + 14); ctx.stroke();
+  }
+  function drawDust(t) {
+    const evs = M.events.filter((e) => (e.type === 'step' || e.type === 'land' || e.type === 'takeoff') && t >= e.t && t < e.t + 0.7);
+    for (const e of evs) {
+      const u = (t - e.t) / 0.7, big = e.type === 'land' ? 2.2 : e.type === 'takeoff' ? 1.4 : 0.8 * (e.v || 1);
+      for (let k = 0; k < 6; k++) {
+        const dir = k < 3 ? -1 : 1, sp = (0.5 + ((k * 37) % 7) / 7) * big;
+        const x = e.x + dir * (20 + 90 * sp * (1 - Math.pow(1 - u, 3))) + (e.type === 'step' ? 0 : 0);
+        const y = GROUND - 8 - 30 * sp * u * (1 - u) * 2;
+        ctx.fillStyle = `rgba(214,190,145,${(1 - u) * 0.75})`; ctx.beginPath(); ctx.arc(x, y, (8 + 16 * u) * Math.sqrt(sp), 0, Math.PI * 2); ctx.fill();
+      }
+    }
+  }
+
+  /* ---------------- character ---------------- */
+  function limb(a, j, b, w, col) {
+    ctx.strokeStyle = col; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(j[0], j[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+  }
+  function shoe(p, col, tilt) { ctx.save(); ctx.translate(p[0], p[1]); ctx.rotate(tilt); ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(-14, -14, 46, 22, 10); ctx.fill(); ctx.restore(); }
+  function arm(shoulder, angDeg, near, P) {
+    const a = rad(angDeg), reach = (UPARM + FOREARM) * (near && P.expr === 'talk' ? 0.86 : 0.93);
+    const target = [shoulder[0] + Math.sin(a) * reach, shoulder[1] + Math.cos(a) * reach];
+    const { j, end } = ik(shoulder, target, UPARM, FOREARM, angDeg > 95 ? -1 : 1);    // elbows point back
+    ctx.strokeStyle = near ? COL.shirt : COL.shirtDark; ctx.lineWidth = 24; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(shoulder[0], shoulder[1]); ctx.lineTo(j[0], j[1]); ctx.stroke();
+    ctx.strokeStyle = near ? COL.skin : COL.skinFar; ctx.lineWidth = 19;
+    ctx.beginPath(); ctx.moveTo(j[0], j[1]); ctx.lineTo(end[0], end[1]); ctx.stroke();
+    ctx.fillStyle = near ? COL.skin : COL.skinFar; ctx.beginPath(); ctx.arc(end[0], end[1], 14, 0, Math.PI * 2); ctx.fill();
+    return { shoulder, j, end };
+  }
+  function leg(hip, foot, near) {
+    const { j, end } = ik(hip, foot, THIGH, SHIN, -1);                               // knees point forward (+x)
+    limb(hip, j, end, 30, near ? COL.pants : COL.pantsFar);
+    const ground = foot[1] >= GROUND - 1;
+    shoe(end, COL.shoe, ground ? 0 : Math.atan2(end[1] - j[1], end[0] - j[0]) - Math.PI / 2 + 0.35);
+    return { hip, j, end };
+  }
+
+  let lastExpr = 'neutral', exprSince = 0;
+  function exprChange(t) {                    // when did the current expression start? (pure: scans backwards)
+    const e = pose(t).expr; let s = t;
+    for (let k = 1; k < 30; k++) { const tt = t - k / 60; if (tt < 0 || pose(tt).expr !== e) break; s = tt; }
+    return t - s;
+  }
+  const BLINKS = [1.45, 5.98, 8.05];
+  function face(P, t) {
+    const age = exprChange(t);
+    const pop = 1 + 0.07 * Math.exp(-age * 14) * Math.cos(age * 30);
+    ctx.scale(pop, pop);
+    let blink = 1; for (const b of BLINKS) { const u = (t - b) / 0.14; if (u > 0 && u < 1) blink = Math.min(blink, Math.abs(1 - 2 * u) * 0.9 + 0.1); }
+    const E = P.expr, eyeY = -8, eyes = [[10, eyeY], [36, eyeY]];
+    ctx.lineCap = 'round'; ctx.strokeStyle = COL.ink; ctx.fillStyle = COL.ink;
+    // brows
+    ctx.lineWidth = 5;
+    for (const [i, [ex, ey]] of eyes.entries()) {
+      ctx.beginPath();
+      if (E === 'surprised') { ctx.moveTo(ex - 9, ey - 28); ctx.quadraticCurveTo(ex, ey - 36, ex + 9, ey - 28); }
+      else if (E === 'determined') { const s = i ? -1 : 1; ctx.moveTo(ex - 10, ey - 18 - 6 * s); ctx.lineTo(ex + 10, ey - 18 + 6 * s); }
+      else { ctx.moveTo(ex - 8, ey - 19); ctx.quadraticCurveTo(ex, ey - 23, ex + 8, ey - 19); }
+      ctx.stroke();
+    }
+    // eyes
+    for (const [ex, ey] of eyes) {
+      ctx.save(); ctx.translate(ex, ey); ctx.scale(1, blink);
+      if (E === 'surprised') { ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(0, 0, 11, 0, Math.PI * 2); ctx.fill(); ctx.lineWidth = 2.5; ctx.stroke(); ctx.fillStyle = COL.ink; ctx.beginPath(); ctx.arc(3, 0, 5, 0, Math.PI * 2); ctx.fill(); }
+      else if (E === 'joy') { ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(0, 4, 8, Math.PI * 1.1, Math.PI * 1.9); ctx.stroke(); }
+      else if (E === 'determined') { ctx.beginPath(); ctx.ellipse(2, 1, 6.5, 4.2, 0, 0, Math.PI * 2); ctx.fill(); }
+      else { ctx.beginPath(); ctx.ellipse(2, 0, 6, 7.5, 0, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(4, -3, 2, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = COL.ink; }
+      ctx.restore();
+    }
+    // cheek
+    ctx.fillStyle = 'rgba(232,110,90,.35)'; ctx.beginPath(); ctx.ellipse(40, 16, 10, 6, 0, 0, Math.PI * 2); ctx.fill();
+    // mouth
+    ctx.fillStyle = '#7a2230'; ctx.strokeStyle = COL.ink; ctx.lineWidth = 4.5;
+    const mx = 26, my = 26;
+    if (E === 'surprised') { ctx.beginPath(); ctx.ellipse(mx, my + 2, 7, 10, 0, 0, Math.PI * 2); ctx.fill(); }
+    else if (E === 'determined') { ctx.beginPath(); ctx.moveTo(mx - 11, my + 2); ctx.lineTo(mx + 10, my - 1); ctx.stroke(); }
+    else if (E === 'joy') { ctx.beginPath(); ctx.moveTo(mx - 15, my - 3); ctx.quadraticCurveTo(mx, my - 1, mx + 15, my - 5); ctx.quadraticCurveTo(mx + 4, my + 22, mx - 15, my - 3); ctx.fill(); ctx.fillStyle = '#e7737c'; ctx.beginPath(); ctx.ellipse(mx - 1, my + 8, 6, 3.5, 0, 0, Math.PI * 2); ctx.fill(); }
+    else if (E === 'talk' && P.mouth > 0.02) { const o = P.mouth; ctx.beginPath(); ctx.moveTo(mx - 13, my - 2); ctx.quadraticCurveTo(mx, my, mx + 13, my - 4); ctx.quadraticCurveTo(mx + 2, my + 4 + 16 * o, mx - 13, my - 2); ctx.fill(); }
+    else { ctx.beginPath(); ctx.moveTo(mx - 12, my - 2); ctx.quadraticCurveTo(mx, my + 8, mx + 13, my - 4); ctx.stroke(); }
+  }
+  function head(P, t, neck) {
+    const a = rad(P.lean * 0.6 + P.headTilt);
+    const c = [neck[0] + Math.sin(rad(P.lean)) * 42, neck[1] - 50 + P.headLag];
+    ctx.save(); ctx.translate(c[0], c[1]); ctx.rotate(a);
+    ctx.fillStyle = COL.skin; ctx.beginPath(); ctx.arc(0, 0, HEAD_R, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = COL.skinFar; ctx.beginPath(); ctx.ellipse(-16, 4, 10, 14, 0, 0, Math.PI * 2); ctx.fill();   // ear
+    ctx.fillStyle = COL.hair; ctx.beginPath(); ctx.arc(0, 0, HEAD_R + 2, Math.PI * 0.98, Math.PI * 1.9); ctx.quadraticCurveTo(20, -30, -10, -24); ctx.quadraticCurveTo(-30, -10, -44, 20); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(-6, -56); ctx.quadraticCurveTo(10, -76, 24, -62); ctx.quadraticCurveTo(10, -64, 4, -52); ctx.fill();   // tuft
+    face(P, t);
+    ctx.restore();
+    return c;
+  }
+  function drawCharacter(t, P) {
+    const hip = P.hip, lean = rad(P.lean);
+    // contact shadow (shrinks with height)
+    const hgt = Math.max(0, GROUND - HIP_H - hip[1]);
+    ctx.fillStyle = `rgba(70,50,30,${0.22 * (1 - Math.min(0.7, hgt / 400))})`; ctx.beginPath(); ctx.ellipse(hip[0], GROUND + 6, 90 * (1 - Math.min(0.5, hgt / 600)), 13, 0, 0, Math.PI * 2); ctx.fill();
+    // squash & stretch: torso/head scale around the hip; volume kept (sx ≈ 1/sy)
+    const sy = P.sy, sx = 1 + (1 / sy - 1) * 0.9;
+    const torsoTop = [hip[0] + Math.sin(lean) * TORSO * sy, hip[1] - Math.cos(lean) * TORSO * sy];
+    const shoulder = [hip[0] + Math.sin(lean) * TORSO * sy * 0.86, hip[1] - Math.cos(lean) * TORSO * sy * 0.86];
+    const neck = neckOf(P);
+    const bones = [];
+    bones.push(arm([shoulder[0] - 10, shoulder[1]], P.af, false, P));
+    bones.push(leg([hip[0] - 6, hip[1]], P.fb, false));
+    // scarf tail behind the body
+    const sc = scarfAt(t);
+    ctx.strokeStyle = COL.scarfDark; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    for (let i = 1; i < sc.length; i++) { ctx.lineWidth = 24 - i * 1.7; ctx.beginPath(); ctx.moveTo(sc[i - 1][0], sc[i - 1][1]); ctx.lineTo(sc[i][0], sc[i][1]); ctx.stroke(); }
+    // torso capsule
+    ctx.save(); ctx.translate(hip[0], hip[1]); ctx.rotate(lean); ctx.scale(sx, sy);
+    ctx.fillStyle = COL.shirt; ctx.beginPath(); ctx.roundRect(-44, -TORSO - 8, 88, TORSO + 26, 40); ctx.fill();
+    ctx.fillStyle = COL.shirtDark; ctx.beginPath(); ctx.roundRect(-44, -18, 88, 22, 8); ctx.fill();        // belt line
+    ctx.fillStyle = 'rgba(255,255,255,.18)'; ctx.beginPath(); ctx.roundRect(12, -TORSO + 10, 16, TORSO - 50, 8); ctx.fill();
+    ctx.restore();
+    bones.push(leg([hip[0] + 6, hip[1]], P.fa, true));
+    // scarf knot over the neck
+    ctx.fillStyle = COL.scarf; ctx.beginPath(); ctx.ellipse(neck[0], neck[1] + 4, 34 * sx, 16, lean, 0, Math.PI * 2); ctx.fill();
+    const hc = head(P, t, [torsoTop[0], torsoTop[1] - 6]);
+    bones.push(arm([shoulder[0] + 6, shoulder[1]], P.an, true, P));
+    if (SHOW_BONES) {
+      ctx.strokeStyle = '#00d1ff'; ctx.lineWidth = 3; ctx.fillStyle = '#00d1ff';
+      for (const b of bones) { const pts = b.shoulder ? [b.shoulder, b.j, b.end] : [b.hip, b.j, b.end]; ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]))); ctx.stroke(); pts.forEach((p) => { ctx.beginPath(); ctx.arc(p[0], p[1], 6, 0, Math.PI * 2); ctx.fill(); }); }
+    }
+    return hc;
+  }
+
+  /* ---------------- "!" and speech bubble ---------------- */
+  function exclaim(t, hc) {
+    const u = t - T.notice; if (u < 0 || t > T.crouch[0] + 0.2) return;
+    const s = spring(u, 300, 12), out = 1 - clamp01((t - T.crouch[0]) / 0.2);
+    ctx.save(); ctx.translate(hc[0] + 40, hc[1] - 110); ctx.rotate(rad(12)); ctx.scale(s, s); ctx.globalAlpha = out;
+    ctx.fillStyle = COL.shirt; ctx.beginPath(); ctx.roundRect(-9, -52, 18, 50, 9); ctx.fill(); ctx.beginPath(); ctx.arc(0, 16, 10, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  }
+  const LINES = [[0, 1], [2, 3, 4]];   // word indices per line (RTL)
+  let layout = null;
+  function layoutBubble() {
+    ctx.font = '800 50px "Cairo"'; ctx.direction = 'rtl';
+    const space = 16, lh = 74;
+    const lines = LINES.map((ids) => { const ws = ids.map((i) => ({ i, w: ctx.measureText(SPEECH[i].w).width })); return { ws, width: ws.reduce((a, b) => a + b.w, 0) + space * (ws.length - 1) }; });
+    const bw = Math.max(...lines.map((l) => l.width)) + 80, bh = lines.length * lh + 44;
+    layout = { lines, bw, bh, space, lh };
+  }
+  function bubble(t, hc) {
+    if (t < T.talk[0]) return;
+    if (!layout) layoutBubble();
+    const { lines, bw, bh, space, lh } = layout;
+    const tail = [hc[0] + 62, hc[1] - 20];
+    const bx = tail[0] + 92, by = tail[1] - bh * 0.78;        // bubble top-left (world), to the right of the face
+    const s = spring(t - T.talk[0], 230, 15);
+    ctx.save(); ctx.translate(tail[0], tail[1]); ctx.scale(s, s); ctx.translate(-tail[0], -tail[1]);
+    ctx.fillStyle = 'rgba(60,40,20,.16)'; ctx.beginPath(); ctx.roundRect(bx + 8, by + 12, bw, bh, 34); ctx.fill();
+    ctx.fillStyle = COL.bubble; ctx.strokeStyle = COL.ink; ctx.lineWidth = 5; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, 34);
+    ctx.moveTo(bx + 2, by + bh * 0.52); ctx.lineTo(tail[0] + 10, tail[1] + 6); ctx.lineTo(bx + 2, by + bh * 0.82);
+    ctx.fill(); ctx.stroke();
+    ctx.fillStyle = COL.bubble; ctx.fillRect(bx - 3, by + bh * 0.52 + 5, 10, bh * 0.3 - 10);   // hide the stroke where the tail joins
+    ctx.font = '800 50px "Cairo"'; ctx.direction = 'rtl'; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+    lines.forEach((ln, li) => {
+      let x = bx + bw / 2 + ln.width / 2; const y = by + 22 + lh * (li + 0.5) + 2;
+      for (const { i, w } of ln.ws) {
+        const u = clamp01((t - SPEECH[i].t) / 0.28);
+        if (u > 0) {
+          const k = outBack(u, 2.2), cx = x - w / 2;
+          ctx.save(); ctx.globalAlpha = clamp01(u * 2.5); ctx.translate(cx, y + (1 - k) * 18); ctx.scale(0.7 + 0.3 * k, 0.7 + 0.3 * k);
+          ctx.fillStyle = i === 3 || i === 4 ? COL.shirt : COL.ink; ctx.fillText(SPEECH[i].w, w / 2, 0); ctx.restore();
+        }
+        x -= w + space;
+      }
+    });
+    ctx.restore();
+  }
+
+  /* ---------------- frame ---------------- */
+  let tNow = 0;
+  function render(t) {
+    tNow = t;
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1;
+    const cam = camera(t), P = pose(t);
+    drawBackground(cam);
+    ctx.setTransform(cam.z, 0, 0, cam.z, W / 2 - cam.x * cam.z, 540 - cam.y * cam.z);
+    drawGroundWorld(cam);
+    drawCrate();
+    drawDust(t);
+    const hc = drawCharacter(t, P);
+    exclaim(t, hc);
+    bubble(t, hc);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    // vignette + head/tail fades
+    const vg = ctx.createRadialGradient(W / 2, H / 2, H * 0.45, W / 2, H / 2, H * 1.05); vg.addColorStop(0, 'rgba(80,40,20,0)'); vg.addColorStop(1, 'rgba(80,40,20,.28)');
+    ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
+    const fade = Math.max(1 - t / 0.3, (t - (DURATION - 0.2)) / 0.2 * 0.85);
+    if (fade > 0) { ctx.fillStyle = `rgba(255,233,198,${clamp01(fade)})`; ctx.fillRect(0, 0, W, H); }
+  }
+
+  /* ---------------- boot + renderer contract ---------------- */
+  function fit() { const s = Math.min(innerWidth / W, innerHeight / H); document.getElementById('fit').style.transform = `scale(${s})`; }
+  addEventListener('resize', fit); fit();
+  if (navigator.webdriver) document.body.classList.add('render');
+  let cur = 0, playing = false, last = 0;
+  const seek = (t) => { cur = Math.max(0, Math.min(DURATION, t)); render(cur); };
+  const ready = document.fonts.load('800 50px "Cairo"', SPEECH.map((s) => s.w).join(' ')).then(() => document.fonts.ready).then(() => true);
+  window.__kosif = { duration: DURATION, fps: FPS, seek };
+  window.__kosifReady = ready;
+  ready.then(() => {
+    seek(parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0);
+    const loop = (now) => { if (!playing) return; cur += (now - last) / 1000; last = now; if (cur > DURATION) cur = 0; render(cur); requestAnimationFrame(loop); };
+    addEventListener('keydown', (e) => {
+      if (e.code === 'Space') { e.preventDefault(); playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(loop); }
+      if (e.code === 'ArrowRight') seek(cur + 1 / FPS);
+      if (e.code === 'ArrowLeft') seek(cur - 1 / FPS);
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 ---
 name: kosif-superpowers
-description: Claude's superpower catalog for motion graphics, animation and video editing — 6,400+ powers in 29 families (Arabic kinetic type, fonts, palettes, glow and light, particles, transitions, camera, characters, charts, maps, 3D, UI demos, montage, captions, voice, beat sync, AI generation, render and QA), each with how-to numbers, proof and status, plus 288 watched reference styles, a libraries arsenal and rendered proofs. Load FIRST whenever a user sends audio, video or text and asks for motion graphics, animation, a reel, montage, captions or an edit. Arabic: قدراتي، موشن جرافيك، مونتاج، انميشن، ريلز، فيديو من صوت.
+description: Claude's superpower catalog for motion graphics, animation and video editing — 6,500+ powers in 29 families (Arabic kinetic type, fonts, palettes, glow and light, particles, transitions, camera, characters, charts, maps, 3D, UI demos, montage, captions, voice, beat sync, AI generation, render and QA), each with how-to numbers, proof and status, plus 288 watched reference styles, a libraries arsenal and rendered proofs. Load FIRST whenever a user sends audio, video or text and asks for motion graphics, animation, a reel, montage, captions or an edit. Arabic: قدراتي، موشن جرافيك، مونتاج، انميشن، ريلز، فيديو من صوت.
 ---
 
 # قواك الخارقة — KOSIF Superpowers
@@ -20,7 +20,7 @@ You have real motion-direction superpowers. This skill tells you exactly what ea
 
 ## الحالات / badges (use the lowest that is true)
 ✅ مُثبت هنا · 🟢 جاهز (كود موجود) · 📦 بأمر تثبيت · 🔑 يحتاج مفتاحًا أو خدمة · 👁 شوهد في فيديو صنعتَه (والوصفة مرفقة) · 📄 موصوف · 💡 فكرة.
-Stats now: 6,434 powers — ✅ 522 · 🟢 815 · 📦 1,784 · 🔑 205 · 👁 1,502 · 📄 1,430 · 💡 176. Run `python3 scripts/powers.py stats`.
+Stats now: 3,702 powers in 30 families — ✅ 526 · 🟢 636 · 📦 872 · 🔑 149 · 👁 609 · 📄 840 · 💡 70. Run `python3 scripts/powers.py stats`.
 
 ## خريطة القوى / power map — `references/powers/<family>.md`
 | العائلة | الملف | البادئة |
