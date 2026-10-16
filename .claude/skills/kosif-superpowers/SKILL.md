@@ -61,6 +61,7 @@ Stats now: 6,434 powers — ✅ 522 · 🟢 815 · 📦 1,784 · 🔑 205 · �
 - [arsenal-libraries.md](references/arsenal-libraries.md) — كل مكتبة npm/pip قابلة للتثبيت هنا (فُحصت)، المثبت فعلًا، تنبيهات الرخص، والتوليفات الذهبية، وقواعد Remotion بالعربية.
 - [styles-atlas.md](references/styles-atlas.md) — 288 أسلوبًا، 253 منها شوهد فيديوها فعلًا: ماذا يثبت كل واحد، ألوانه وتقنيته؛ و38 بريفًا تخالف الفيديو.
 - [external-skills.md](references/external-skills.md) — خلاصة مهارتي Higgsfield motion اللتين أرسلهما المالك (قانون القطع عند أقصى سرعة، التداخل 0.45، نظام الرموز).
+- [cinematic-director-pro.md](references/cinematic-director-pro.md) — خلاصة حزمة المالك KOSIF Cinematic Director PRO v5: الموجّه، 20 وصفة أسلوب، قاموس الحركة، أطلس 72 مكتبة، إيصالات ECC، أدواتها و28 اختبارًا أعيد تشغيلها هنا.
 - [proofs/README.md](proofs/README.md) — أفلام الإثبات المرندرة هنا.
 - `data/powers/*.json` و`data/styles.json` — البيانات للبحث الآلي.
 

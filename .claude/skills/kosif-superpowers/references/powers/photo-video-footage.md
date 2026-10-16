@@ -1158,3 +1158,13 @@
 - **كيف / how:** Hard-cut crops per 300 ms.
 - **أرقام / params:** 300 ms tempo
 - **الدليل / proof:** `style:pm-abderrahmen-g-9e8ed0`
+
+## إضافات من Cinematic Director PRO v5
+
+_مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v5 (انظر [cinematic-director-pro.md](../cinematic-director-pro.md)). مسارات الدليل `owner-upload:` تشير إلى ملفات داخل أرشيف المالك، لا إلى هذا المستودع._
+
+#### FOOT-P01 · إعادة مونتاج اللقطات من قائمة قطع محدودة · Bounded EDL recut: trim/concat with denoise and loudnorm · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يأخذ فيديو أصليًا وقائمة نطاقات --cut START:END فيقصّها ويرتبها ويعيد قياسها إلى مقاس الهدف مع صوتها، ويترك الأصل كما هو. / Takes a source and explicit --cut ranges, trims, concatenates and reframes them with their audio, leaving the original untouched.
+- **كيف / how:** ffprobe first; each range must be finite, 0 ≤ a < b ≤ duration+0.03 and ≥ 0.10 s; at most 30 cuts; refuses output == input. Per cut: trim + setpts, scale=W:H:force_original_aspect_ratio=decrease, pad centred, fps, setsar=1, yuv420p; audio atrim + asetpts + aresample=48000 (+ afftdn=nf=-25 with --denoise); concat=n:v=1:a=1; --normalize appends loudnorm=I=-16:TP=-1.5:LRA=11. No-audio sources get -an. Prints a JSON receipt (duration, streams, cuts, denoised). Re-ran here on the bundled 4 s test clip with --cut 0:1.2 --cut 2:3.4 --denoise --normalize → 2.625 s, h264 480×854 24 fps + AAC. Note: loudnorm here targets −16 LUFS; the superpowers delivery target is −14 LUFS, so pass the final mix through your own loudnorm step. **أرقام / params:** ≤30 cuts · ≥0.1 s each · afftdn nf=-25 · loudnorm I=-16 TP=-1.5 LRA=11 · crf 21 · default 480×854@24
+- **الرخصة / license:** owner package (own work)
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/video_edit.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tests/test_v3_edit.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Edited_Footage_Real.mp4`

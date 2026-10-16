@@ -689,3 +689,14 @@ gsap.timeline()
 3. **GEN-15**: فيديو مرجعي يتحول إلى تفكيك ثم برومبت Omni بطول 10 ثوانٍ، ومثبت هنا. هكذا تحوّل «زي ده» إلى خطة مقاسة. / Reference video → breakdown → 10 s Omni prompt, proven here; turns 'like this' into a measured plan.
 4. **GEN-72**: الرسم فوق قاعدة مولدة. الذكاء الاصطناعي يعطي الحركة، وكودك يعطي الهوية، فيخرج فيلم لا يشبه أي مخرجات ذكاء اصطناعي عامة. / Draw-over: AI gives motion, your code gives identity; a film that never looks like generic AI output.
 5. **GEN-75 + GEN-74**: واجهات «جارٍ التوليد» المتحركة، من الضبابية إلى الوضوح والنص المتدفق. شوهدت في أفلام مرجعية وتُبنى بتثبيت واحد، وهي المادة الحركية لأي إعلان منتج ذكاء اصطناعي. / Animated 'Generating…' UI (blur-to-sharp, streamed text), seen in reference films and one install away; the motion material of every AI-product ad.
+
+## إضافات من Cinematic Director PRO v5
+
+_مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v5 (انظر [cinematic-director-pro.md](../cinematic-director-pro.md)). مسارات الدليل `owner-upload:` تشير إلى ملفات داخل أرشيف المالك، لا إلى هذا المستودع._
+
+#### GEN-P01 · مراجعة ثانية مدفوعة من Claude API بقفلين · Optional paid Claude API second-opinion review (double opt-in) · 🔑 مفتاح/خدمة / key or service
+- **ماذا / what:** سكربت يرسل ملف إحاطة نصيًا إلى نموذج Claude لنقد الخطة، ولا يعمل إلا بعلمين صريحين ومفتاح في البيئة. / Sends a text brief to a Claude model for critique; runs only with two explicit flags and a key in the environment.
+- **كيف / how:** python3 tools/claude_api_review.py brief.md --model <ID from your account> --send --ack-billing --output out/review.txt. Refuses without both flags, without ANTHROPIC_API_KEY in the environment, without the anthropic SDK, for briefs > 120 KB, or for --max-tokens outside 128–4096; writes nothing if the reply has no text. It is a text plan review only — it does not render, speed up ffmpeg or unlock tools. Normal work never needs it: Claude Code itself is the director. Not run here (no key, no paid call). **أرقام / params:** --max-tokens 128–4096 (default 1200) · brief ≤120 KB
+- **التثبيت / install:** `pip install anthropic`
+- **الرخصة / license:** owner package (own work)
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/claude_api_review.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/API_MODE.md`

@@ -2132,3 +2132,19 @@
 - **كيف / how:** Count flashes per second in timeline.
 - **أرقام / params:** <=2 consecutive frames; <=3 flashes/s
 - **الدليل / proof:** `style:pm-micheleharmonic-77628e`
+
+## إضافات من Cinematic Director PRO v5
+
+_مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v5 (انظر [cinematic-director-pro.md](../cinematic-director-pro.md)). مسارات الدليل `owner-upload:` تشير إلى ملفات داخل أرشيف المالك، لا إلى هذا المستودع._
+
+#### QA-P01 · إيصال تنفيذ مُتحقَّق منه: لا نجاح بلا دليل · Evidence receipt validator (no verified success without evidence) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كل خطوة مهمة تُرجع إيصالًا بثمانية حقول، والفاحص يرفض أي «تم» بلا دليل. / Every consequential step returns an 8-field receipt; the gate rejects any verified success that carries no evidence.
+- **كيف / how:** Receipt = {status: success|warning|error, summary, owner, evidence:[{type,ref}], artifacts:[], next_actions:[], retryable: bool, verified: bool}. Rules: all keys present; owner non-empty; evidence/artifacts/next_actions are arrays; booleans are real booleans; verified=true requires status=success AND non-empty evidence (else UNVERIFIED_SUCCESS_CLAIM); error can never be verified. CLI: python3 integrations/kosif-see/ecc_contract_gate.py validate-receipt r.json → exit 0 / 2. Ran here: a receipt with verified=true and evidence [] returned UNVERIFIED_SUCCESS_CLAIM, exit 2. Pair with QA-46 (ffprobe delivery receipt): put the ffprobe JSON and frame-sheet path into evidence. Idea adapted from ECC (MIT). **أرقام / params:** 8 required keys · exit 0 pass / 2 fail
+- **الرخصة / license:** owner package; method adapted from affaan-m/ECC (MIT), no ECC code
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/ecc_contract_gate.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tests/test_ecc_upgrade.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/ECC_DISTILLED_CORE.md`
+
+#### QA-P02 · حلقة مراجعة الرندر المحدودة · Bounded iterative render review (½-second frames, 2–4 rounds) · 📄 موصوف / documented only
+- **ماذا / what:** راجع الإطارات على فواصل ثابتة، أصلح، أعد الرندر — بعدد جولات محدود وشرط توقف واضح لا دوران بلا نهاية. / Review frames at fixed intervals, fix, re-render — a bounded number of rounds with a clear stop rule.
+- **كيف / how:** Sample a frame every 0.5 s (every 0.25 s for short idents/logos); check motion, legibility, text clipping, sync and audio; fix the worst defect first; re-render. Plan 2–4 rounds by job size and stop as soon as the acceptance list passes or the time/budget cap is hit. Keep CODE_WRITTEN ≠ VIDEO_RENDERED ≠ QA_PASS as three separate states in the report. **أرقام / params:** frame step 0.5 s (0.25 s idents) · 2–4 rounds · three states
+- **الرخصة / license:** owner package (own work)
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/GOOGLE_DOC_DISTILLATION.md` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/.claude/skills/kosif-cinematic-director/SKILL.md`

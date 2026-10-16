@@ -2520,5 +2520,32 @@
    "premium",
    "documentary"
   ]
+ },
+ {
+  "id": "GLOW-P01",
+  "family": "light-glow-bloom",
+  "name_ar": "كتابة مسار نيون نقطية بطبقتي توهج في Pillow",
+  "name_en": "Raster neon path-write in Pillow (blurred halo + hot core)",
+  "status": "proven",
+  "what": "خط نيون يُرسم تدريجيًا بلا متصفح: هالة مموهة مدموجة ثم قلب ساطع ونقطة رأس بيضاء. / A neon line writes on without a browser: a blurred halo blended in, then a bright core and a white tip dot.",
+  "how": "Path = 321 points of a decaying sine (amplitude 95 px, 3 half-waves, e^(−i/600)). Visible count = len·min(1, t/2.6). Halo: draw the partial path 17 px wide in (0,150,195) on a black layer, GaussianBlur(21), Image.blend(base, halo, 0.44). Core: 6 px (31,200,245) then 2 px (204,254,255), joint=\"curve\"; tip = 10 px white ellipse. Dark ground (8,11,23) with faint 48 px scan lines; Arabic caption with direction=\"rtl\". frame(t) is pure — re-rendering t=2.5 gives identical bytes. Re-ran here: 4 s 480×854 24 fps MP4 + still PNG; frame looked clean. Raster cousin of GLOW-03 (SVG 4-stroke tube) for Pillow/ffmpeg-only pipelines.",
+  "params": "halo 17 px · blur 21 · blend 0.44 · core 6 px + 2 px · write-on 2.6 s",
+  "install": "",
+  "license": "owner package (own work)",
+  "proof": [
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_neon.py",
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Neon_Path_Draw.mp4",
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Neon_Path_Draw.png"
+  ],
+  "styles": [],
+  "tags": [
+   "neon",
+   "pillow",
+   "glow",
+   "path draw",
+   "نيون",
+   "توهج",
+   "raster"
+  ]
  }
 ]

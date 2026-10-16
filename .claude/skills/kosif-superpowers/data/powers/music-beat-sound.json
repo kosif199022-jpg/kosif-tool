@@ -5256,5 +5256,31 @@
   ],
   "tags": [],
   "id": "BEAT-294"
+ },
+ {
+  "id": "BEAT-P01",
+  "family": "music-beat-sound",
+  "name_ar": "نقرات صوتية مولّدة على لحظات الحركة",
+  "name_en": "Code-synthesised chirp ticks on motion events",
+  "status": "proven",
+  "what": "مؤثرات صغيرة تُكتب بمعادلة على موعد كل حدث بصري، فوق طنين منخفض خفيف، بلا ملفات صوت خارجية. / Short chirps written as a formula at each visual event over a faint low bed — no external audio files.",
+  "how": "sr 24 kHz mono 16-bit. Bed: 0.009·sin(2π·160·t)·sin²(πt/D). For each event time a: z = t−a; add 0.075·e^(−50z)·sin(2π(320+190z)z) for 0 ≤ z < 0.14 s (a rising chirp that dies in ~100 ms). Event list = the same times that drive the picture (0.3, 1.0, 1.85, 2.7, 4.3, 5.35 s), so sound and motion share one clock. Clip to ±1, write WAV, mux AAC with -shortest.",
+  "params": "peak 0.075 · decay 50/s · 320 Hz + 190 Hz/s sweep · 140 ms · bed 160 Hz at 0.009",
+  "install": "",
+  "license": "owner package (own work)",
+  "proof": [
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_continuous_line.py",
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Continuous_Line_Logo_Story.wav"
+  ],
+  "styles": [],
+  "tags": [
+   "sfx",
+   "chirp",
+   "synth",
+   "numpy",
+   "مؤثرات",
+   "نقرة",
+   "صوت مولد"
+  ]
  }
 ]

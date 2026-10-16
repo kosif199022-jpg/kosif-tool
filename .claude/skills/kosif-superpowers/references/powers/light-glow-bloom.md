@@ -798,3 +798,13 @@ _ضوء يأتي من داخل العالم: سماء وشمس، أوراق، م
 3. **GLOW-16 — بركة الضوء خلف البطل:** تتفتح إلى ≤ .45 ثم تتنفس ±6% — أول ما تضعه خلف أي عنوان أو شعار على خلفية داكنة.
 4. **GLOW-26 — makePost ببلوم بلون المصدر:** bundle واحد بلا npm، بلوم .22 بعتبة .9، أشعة وفلير مع الشمس، وحارس NaN — كل مشهد ثلاثي يبدو مصوَّرًا.
 5. **GLOW-47 — أشعة إلهية فوق اللقطة:** repeating-conic مقنّع يتلاشى للأسفل + بلوم دافئ بـ screen + ومضة على الذروة — توقيع الدعاء والكشف والأبواب التي تنفتح.
+
+## إضافات من Cinematic Director PRO v5
+
+_مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v5 (انظر [cinematic-director-pro.md](../cinematic-director-pro.md)). مسارات الدليل `owner-upload:` تشير إلى ملفات داخل أرشيف المالك، لا إلى هذا المستودع._
+
+#### GLOW-P01 · كتابة مسار نيون نقطية بطبقتي توهج في Pillow · Raster neon path-write in Pillow (blurred halo + hot core) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** خط نيون يُرسم تدريجيًا بلا متصفح: هالة مموهة مدموجة ثم قلب ساطع ونقطة رأس بيضاء. / A neon line writes on without a browser: a blurred halo blended in, then a bright core and a white tip dot.
+- **كيف / how:** Path = 321 points of a decaying sine (amplitude 95 px, 3 half-waves, e^(−i/600)). Visible count = len·min(1, t/2.6). Halo: draw the partial path 17 px wide in (0,150,195) on a black layer, GaussianBlur(21), Image.blend(base, halo, 0.44). Core: 6 px (31,200,245) then 2 px (204,254,255), joint="curve"; tip = 10 px white ellipse. Dark ground (8,11,23) with faint 48 px scan lines; Arabic caption with direction="rtl". frame(t) is pure — re-rendering t=2.5 gives identical bytes. Re-ran here: 4 s 480×854 24 fps MP4 + still PNG; frame looked clean. Raster cousin of GLOW-03 (SVG 4-stroke tube) for Pillow/ffmpeg-only pipelines. **أرقام / params:** halo 17 px · blur 21 · blend 0.44 · core 6 px + 2 px · write-on 2.6 s
+- **الرخصة / license:** owner package (own work)
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_neon.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Neon_Path_Draw.mp4` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Neon_Path_Draw.png`

@@ -1105,3 +1105,13 @@
 #### DRAW-190 · مسح بالممحاة · Eraser-shape wipe · 💡 فكرة
 - **ماذا / what:** 400 ms wipe following eraser shape
 - **الدليل / proof:** `style:pm-tak3sh8-be5012`
+
+## إضافات من Cinematic Director PRO v5
+
+_مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v5 (انظر [cinematic-director-pro.md](../cinematic-director-pro.md)). مسارات الدليل `owner-upload:` تشير إلى ملفات داخل أرشيف المالك، لا إلى هذا المستودع._
+
+#### DRAW-P01 · قصة الخط الواحد المستمر حتى الشعار · Continuous-line logo story (one stroke → three beats → wordmark loop) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** خط واحد لا ينقطع يمر بثلاث محطات مرقّمة ثم يلتف حول الشعار، مع صوت مولّد بالكود. / One unbroken line travels through three numbered beats and closes into a loop around the wordmark, with code-synthesised sound.
+- **كيف / how:** 13 waypoints interpolated 18 steps each; drawn length = smoothstep(t/4.1); beat dots grow with smoothstep((t−(0.9+0.85k))/0.55) and their labels (01 CAPTURE, 02 CONNECT, 03 RESURFACE) appear at the same instants; from 4.25 s an ellipse (rx 100, ry 42) draws over 1.1 s around the wordmark. Editorial palette: paper (246,241,230), ink (31,36,34), one accent (213,70,48), 6 px stroke, pen-tip dot. Audio generated in NumPy (see BEAT-P01). Re-ran here: 6.000 s, 360×640, 24 fps, H.264 + AAC 96k. **أرقام / params:** 360×640 · 24 fps · 6 s · draw 4.1 s · beats at 0.9/1.75/2.6 s · loop 4.25–5.35 s
+- **الرخصة / license:** owner package (own work)
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_continuous_line.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Continuous_Line_Logo_Story.mp4` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/INTEGRATION_REPORT.json`

@@ -1734,3 +1734,13 @@
 - **كيف / how:** OfflineAudioContext.
 - **أرقام / params:** 48 kHz; normalise -14 LUFS
 - **الدليل / proof:** `style:pm-xelandre-363f00`
+
+## إضافات من Cinematic Director PRO v5
+
+_مستخلصة من حزمة المالك KOSIF Claude Cinematic Director PRO v5 (انظر [cinematic-director-pro.md](../cinematic-director-pro.md)). مسارات الدليل `owner-upload:` تشير إلى ملفات داخل أرشيف المالك، لا إلى هذا المستودع._
+
+#### BEAT-P01 · نقرات صوتية مولّدة على لحظات الحركة · Code-synthesised chirp ticks on motion events · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مؤثرات صغيرة تُكتب بمعادلة على موعد كل حدث بصري، فوق طنين منخفض خفيف، بلا ملفات صوت خارجية. / Short chirps written as a formula at each visual event over a faint low bed — no external audio files.
+- **كيف / how:** sr 24 kHz mono 16-bit. Bed: 0.009·sin(2π·160·t)·sin²(πt/D). For each event time a: z = t−a; add 0.075·e^(−50z)·sin(2π(320+190z)z) for 0 ≤ z < 0.14 s (a rising chirp that dies in ~100 ms). Event list = the same times that drive the picture (0.3, 1.0, 1.85, 2.7, 4.3, 5.35 s), so sound and motion share one clock. Clip to ±1, write WAV, mux AAC with -shortest. **أرقام / params:** peak 0.075 · decay 50/s · 320 Hz + 190 Hz/s sweep · 140 ms · bed 160 Hz at 0.009
+- **الرخصة / license:** owner package (own work)
+- **الدليل / proof:** `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_continuous_line.py` · `owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Continuous_Line_Logo_Story.wav`

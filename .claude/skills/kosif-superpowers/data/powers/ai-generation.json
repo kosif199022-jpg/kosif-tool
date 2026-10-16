@@ -2341,5 +2341,30 @@
    "غلاف",
    "CTR"
   ]
+ },
+ {
+  "id": "GEN-P01",
+  "family": "ai-generation",
+  "name_ar": "مراجعة ثانية مدفوعة من Claude API بقفلين",
+  "name_en": "Optional paid Claude API second-opinion review (double opt-in)",
+  "status": "key",
+  "what": "سكربت يرسل ملف إحاطة نصيًا إلى نموذج Claude لنقد الخطة، ولا يعمل إلا بعلمين صريحين ومفتاح في البيئة. / Sends a text brief to a Claude model for critique; runs only with two explicit flags and a key in the environment.",
+  "how": "python3 tools/claude_api_review.py brief.md --model <ID from your account> --send --ack-billing --output out/review.txt. Refuses without both flags, without ANTHROPIC_API_KEY in the environment, without the anthropic SDK, for briefs > 120 KB, or for --max-tokens outside 128–4096; writes nothing if the reply has no text. It is a text plan review only — it does not render, speed up ffmpeg or unlock tools. Normal work never needs it: Claude Code itself is the director. Not run here (no key, no paid call).",
+  "params": "--max-tokens 128–4096 (default 1200) · brief ≤120 KB",
+  "install": "pip install anthropic",
+  "license": "owner package (own work)",
+  "proof": [
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/claude_api_review.py",
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/API_MODE.md"
+  ],
+  "styles": [],
+  "tags": [
+   "claude api",
+   "review",
+   "paid",
+   "anthropic",
+   "مراجعة",
+   "مفتاح"
+  ]
  }
 ]

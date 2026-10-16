@@ -8628,5 +8628,80 @@
   ],
   "tags": [],
   "id": "STORY-484"
+ },
+ {
+  "id": "STORY-P01",
+  "family": "story-direction-ideas",
+  "name_ar": "عشرون وصفة أسلوب موشن بمحركاتها",
+  "name_en": "20 motion style recipes (S01–S20) with engine candidates",
+  "status": "documented",
+  "what": "قائمة أصلية بعشرين أسلوبًا، لكل واحد هدف بصري ومحركات مرشحة ومعاينة مفهومية مربوطة؛ للاختيار السريع لا كإثبات تنفيذ. / An original list of 20 styles, each with a visual goal, candidate engines and a linked concept preview — for quick choice, not proof of execution.",
+  "how": "S01 particles (Pixi/Three/Canvas, A24) · S02 liquid-morph (Flubber/GLSL/SVG, A13) · S03 holographic (Three/OGL/Blender, A36) · S04 neon-glow (SVG/Canvas/FFmpeg, A03) · S05 wireframe-3d exploded parts (Three/Blender, A31) · S06 glassmorphism (CSS/Three, A34) · S07 kinetic-type word by word, Arabic shaped (Remotion/SVG/HarfBuzz, A08) · S08 isometric process (SVG/Three, A32) · S09 clay-3d (Blender/Three, A35) · S10 ascii terminal (Canvas/SVG, A10) · S11 gradient-mesh (GLSL/OGL, A28) · S12 comic-book panels with camera moves (SVG/Remotion, A41) · S13 split-flap stats (Canvas/Remotion, A19) · S14 retro-vhs (FFmpeg/GLSL, A49) · S15 halftone (Canvas/GLSL, A25) · S16 bauhaus primitives (D3/SVG/Motion Canvas, A17) · S17 pixel-art grid (Canvas/Pixi, A51) · S18 blueprint (SVG/Manim/Blender, A02) · S19 art-deco metallic ornament (SVG/Canvas, A23) · S20 neo-brutalism blocks (HTML/CSS/Remotion, A09). Every linked preview is flagged example_is_exact_style=false. Source: distilled from the owner-supplied Google Doc (Tyler Mommsen, motion-graphics prompts). For build numbers open the matching existing powers (e.g. TYPE-35 split-flap, SHAPE-73 bauhaus, RETRO-33 ascii, 3D-106 isometric).",
+  "params": "20 presets · fields id, slug, name_ar, visual_goal, engine_candidates, example_reference_id",
+  "install": "",
+  "license": "owner package (own work)",
+  "proof": [
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/STYLE_PRESETS_20.json",
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/style_gallery.html",
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/GOOGLE_DOC_DISTILLATION.md"
+  ],
+  "styles": [],
+  "tags": [
+   "style presets",
+   "styles",
+   "وصفات أسلوب",
+   "أساليب",
+   "art deco",
+   "holographic",
+   "blueprint",
+   "split-flap"
+  ]
+ },
+ {
+  "id": "STORY-P02",
+  "family": "story-direction-ideas",
+  "name_ar": "الإحاطة السينمائية بثماني خانات",
+  "name_en": "Eight-slot cinematic brief (PRODUCT → … → OUTPUT)",
+  "status": "documented",
+  "what": "قبل أي كود اكتب الإحاطة في ثماني خانات ثابتة حتى لا يبقى قرار بصري أو صوتي مفتوحًا. / Before any code, fill eight fixed slots so no visual or sound decision stays open.",
+  "how": "PRODUCT/TOPIC → STORY → FORMAT (aspect, duration, fps) → LOOK (hex colours, fonts, camera angle) → MOTION (easing family, transitions, the one continuous thread object — see STORY-175) → SOUND (who is the master clock: the voice if there is speech; real beat map, never an assumed 120 BPM) → QUALITY (acceptance list) → OUTPUT (files, codecs, editable source). Then choose the engine: UI/logo/type in React → Remotion; DOM-seekable → HyperFrames; diagrams/maths → Motion Canvas or Manim; real 3D camera → Three.js/Blender after a GPU check; existing footage → FFmpeg + ffprobe + scene detect/ASR; photoreal generated shots → an external generator that is actually available.",
+  "params": "8 slots · hex colours required · voice = master clock",
+  "install": "",
+  "license": "owner package (own work)",
+  "proof": [
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/GOOGLE_DOC_DISTILLATION.md"
+  ],
+  "styles": [],
+  "tags": [
+   "brief",
+   "creative brief",
+   "إحاطة",
+   "تخطيط",
+   "engine choice"
+  ]
+ },
+ {
+  "id": "STORY-P03",
+  "family": "story-direction-ideas",
+  "name_ar": "قاموس تحويل وصف الهواة إلى أوامر حركة",
+  "name_en": "Amateur → pro motion lexicon (adjective → code direction)",
+  "status": "documented",
+  "what": "يحوّل كلمات مثل «ناعم» و«متتابع» و«مع الإيقاع» إلى تعليمات قابلة للبرمجة، مع متى لا تُستخدم. / Turns words like \"smooth\", \"staggered\" or \"on the beat\" into programmable instructions, with when not to use them.",
+  "how": "smooth → closed-form damped spring or cubic-bezier(0.16,1,0.3,1), bounded overshoot (not everything needs a spring) · staggered → overlapping timeline with measured offsets synced to voice/beat, not a hard-coded 125 ms · alive hold → bounded micro-motion that never hurts reading · on the beat → detected onsets from the real audio · motion blur → sub-frame sampling (tmix over whole adjacent frames is not shutter blur) · Arabic writing → word/run spring + clip-path, never split(\"\") · glyph scramble → seeded, Latin or unjoined glyphs only · line draw → getTotalLength + dashoffset + tip at getPointAtLength · elastic transition → shared geometry into the next scene (a cut is sometimes better) · mask wipe → clipPath/canvas compositing · gooey → feGaussianBlur + feColorMatrix · liquid glass → background distortion + rim light only if GPU justifies it · camera move → deterministic matrix, text inside safe zones · UI demo → rebuilt layered components, not a zoomed screenshot · seamless loop → every animated state incl. velocities periodic at the seam · deterministic seek → frame = f(t, seed, assets), verified by shuffled frame order · voice to motion → forced alignment → events → meaning → keys, ±100 ms only once measured · 3D trailer → camera spline, light rig, verified hardware.",
+  "params": "18 mappings",
+  "install": "",
+  "license": "owner package (own work)",
+  "proof": [
+   "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/MOTION_TECHNIQUE_LEXICON.md"
+  ],
+  "styles": [],
+  "tags": [
+   "lexicon",
+   "vocabulary",
+   "قاموس",
+   "مصطلحات",
+   "direction",
+   "brief translation"
+  ]
  }
 ]
