@@ -87,6 +87,7 @@ class SuperpowersTest(unittest.TestCase):
     def test_proofs_have_readme_and_small_sheet(self):
         for d in sorted(x for x in (SKILL / "proofs").iterdir() if x.is_dir() and not x.name.startswith("_")):
             self.assertTrue((d / "README.md").is_file(), f"{d.name} lacks README.md")
+            self.assertNotIn("VERIFY_LINE", (d / "README.md").read_text(encoding="utf-8"), f"{d.name}/README.md still has the VERIFY_LINE placeholder")
             sheet = d / "sheet.jpg"
             self.assertTrue(sheet.is_file(), f"{d.name} lacks sheet.jpg")
             self.assertLessEqual(sheet.stat().st_size, MAX_SHEET, f"{d.name}/sheet.jpg too large")

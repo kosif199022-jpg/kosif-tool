@@ -43,8 +43,8 @@ _قبل الحركة: كم عقدة، أي نوع، أي لون، وأي اتج�
 #### EXPL-04 · ترتيب البناء السببي وحالات العقد · Causal build order & node states · 📄 موصوف / documented only
 - **ماذا / what:** تظهر العقدة، يُرسم رابطها الخارج، وتقفز التالية حين يصلها القلم؛ النشطة بلون التأكيد، المزورة 70%، والمستقبلية غير مرسومة. — Node appears, outgoing edge draws, next node pops when the pen arrives; active accent, visited 70%, future not drawn.
 - **متى أستخدمها / when:** كل مخطط يُبنى أمام المشاهد — every diagram built on screen.
-- **كيف / how:** paint order background → connectors → boxes → labels (lines pass under shapes) in named <g> layers, animated in the same order; node stagger 0.08–0.15 s; reading order RTL for Arabic; front-load nothing — reveal each node on its spoken word (EXPL-21). **أرقام / params:** stagger 0.08–0.15 s; visited 70%.
-- **الدليل / proof:** `kosif-tool/playbooks/diagrams.md:19` · `kosif-tool/playbooks/diagrams.md:26` · `kosif-atlas/skills/2657-figures/10114-svg-primitives`
+- **كيف / how:** paint order background → connectors → boxes → labels (lines pass under shapes) in named <g> layers, animated in the same order; node stagger 0.08–0.15 s; reading order RTL for Arabic; front-load nothing — reveal each node on its spoken word (EXPL-21). The whiteboard-draw proof film (verified 13/13) builds a cause → effect diagram this way: sun and water drop, then two causal arrows, then the plant and the circled result. **أرقام / params:** stagger 0.08–0.15 s; visited 70%.
+- **الدليل / proof:** `kosif-tool/playbooks/diagrams.md:19` · `kosif-tool/playbooks/diagrams.md:26` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md` · `kosif-atlas/skills/2657-figures/10114-svg-primitives`
 
 #### EXPL-05 · عكس المخطط للعربية · Mirrored RTL diagrams · 📄 موصوف / documented only
 - **ماذا / what:** العقدة الأولى يمينًا والأسهم تشير يسارًا ورؤوسها معكوسة، والمعرفات اللاتينية معزولة. — First node on the right, arrows point left, mirrored markers, Latin ids isolated.

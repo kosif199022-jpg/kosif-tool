@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تعطي السطح المسطح جسدًا — حبيبات فيلم تتحرك مع كل إطار، ورق وقصاصات وتمزيق، هالفتون وتنقيط طباعي، زجاج يجمّد ما خلفه، كروم وقطيفة وفرو في 3D، وضوضاء إجرائية تصنع جلدًا وصخرًا وماءً وغيمًا — كلها من كود بلا صور مُنزّلة.
 > **أقوى دليل:** فيلم `proofs/neon-glow` (طوب إجرائي يتلوّن بضوء اللافتة، أرض مبتلة تعكسها، حبيبات وتظليل أطراف) و`proofs/glass-luxury-logo` (زجاج blur 22px بعمق، ذهب معدني بأربع طبقات) — كلاهما رُندر هنا ونجح في 13/13 فحصًا؛ ومختبر خامات رندرتُه في هذه الحاوية (2026-10-16): حبيبات feTurbulence ببذرة لكل إطار، هالفتون لامبرت، تنقيط Bayer، زجاج، تمزيق ورق، غيوم SVG، طوب مضاء، وكلمة عربية مملوءة بسائل fbm — وMOTION.grain/vignette من motion-kit في وضع الساعة الافتراضية.
-> **You can:** grain, print, paper, glass, chrome, plush, fur, noise-built skin/rock/water and living backgrounds in CSS/SVG, Canvas, Pillow, three.js and ffmpeg. **94 powers follow** — ✅ 18 · 🟢 27 · 📦 8 · 🔑 0 · 👁 26 · 📄 14 · 💡 1.
+> **You can:** grain, print, paper, glass, chrome, plush, fur, noise-built skin/rock/water and living backgrounds in CSS/SVG, Canvas, Pillow, three.js and ffmpeg. **94 powers follow** — ✅ 18 · 🟢 24 · 📦 11 · 🔑 0 · 👁 26 · 📄 14 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -376,10 +376,11 @@ _الزجاج يحتاج شيئًا خلفه ليجمّده، والكروم ي�
 - **الدليل / proof:** `kosif-tool/styles/infographic` · `kosif-tool/styles/product`
 - **أساليب / styles:** `style:infographic` · `style:product`
 
-#### TEX-49 · كروم يعكس المشهد حيًا · Chrome via live CubeCamera reflection · 🟢 جاهز / ready
+#### TEX-49 · كروم يعكس المشهد حيًا · Chrome via live CubeCamera reflection · 📦 بأمر تثبيت / one install
 - **ماذا / what:** كرة مرآة تعكس الوادي الحقيقي عبر كاميرا مكعبة تُحدّث كل إطار. — A mirror sphere reflects the actual scene through a cube camera updated every frame.
 - **متى أستخدمها / when:** أجسام كروم بطلة، شعارات معدنية ثلاثية.
-- **كيف / how:** WebGLCubeRenderTarget(256, HalfFloat, mipmaps); CubeCamera(.05, 600); MeshStandardMaterial metalness 1, roughness .06, envMap = cube; per frame: hide orb → cubeCam.update → show. Bundled three-kit (no install). **أرقام / params:** 256², half float; roughness .06.
+- **كيف / how:** WebGLCubeRenderTarget(256, HalfFloat, mipmaps); CubeCamera(.05, 600); MeshStandardMaterial metalness 1, roughness .06, envMap = cube; per frame: hide orb → cubeCam.update → show. The demo project loads assets/main.bundle.js, which is not built in this checkout — install esbuild and bundle first; the kit itself (three-kit.bundle.js) is prebuilt. **أرقام / params:** 256², half float; roughness .06.
+- **📦 تثبيت / install:** `cd 100-superskills/skills/kosif-montage-motion/scripts && npm install three@0.186.1 esbuild && python3 motion.py bundle sound_ground`
 - **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:51` · `100-superskills/skills/kosif-montage-motion/SKILL.md:106`
 
 #### TEX-50 · ظلال ارتفاع ناعمة متعددة · Layered soft elevation shadows · 🟢 جاهز / ready
@@ -673,16 +674,18 @@ _عائلة مادة واحدة لكل فيلم: مطفي للصلصال وال�
 - **كيف / how:** K3.makePebbles({n, region, accept, height, size, flat, clump, seed}); K3.makeBlades({n, region, tall, width, seed}). **أرقام / params:** pebbles n 2400, size .06 m (×.4–2.8), flat .5; blades n 1500, tall .9 m.
 - **الدليل / proof:** `kosif-studio/motion/kit/three-kit.js:724` · `kosif-one/tools/kosif-studio/motion/kit/three-kit.js:746`
 
-#### TEX-93 · قاع بركة بانكسارات ضوئية · Pond bed terrain with caustics · 🟢 جاهز / ready
+#### TEX-93 · قاع بركة بانكسارات ضوئية · Pond bed terrain with caustics · 📦 بأمر تثبيت / one install
 - **ماذا / what:** قاع بركة ملوّن بالعمق والميل (طمي، رمل، طين، طحلب) مع كاوستكس متحركة تمتص الأحمر مع العمق. — Pond bowl coloured by depth and slope (silt, sand, mud, moss) with animated caustics absorbing red with depth.
 - **متى أستخدمها / when:** أسماك كوي، ماء صافٍ، طبيعة هادئة.
-- **كيف / how:** makeTerrain({size 44, seg 320, albedoRepeat 10, normalRepeat 22, normalScale .8, texSize 512}); addCaustics(material,{time, level 0, strength 3.2, scale 5.5, absorb [1.35,.42,1.0], sun}); pebbles 2600 × .038 + rim 170 × .24. **أرقام / params:** silt #4a4532 sand #857a5c mud #2e2a20 moss #3d5a26 #5f7a33.
+- **كيف / how:** makeTerrain({size 44, seg 320, albedoRepeat 10, normalRepeat 22, normalScale .8, texSize 512}); addCaustics(material,{time, level 0, strength 3.2, scale 5.5, absorb [1.35,.42,1.0], sun}); pebbles 2600 × .038 + rim 170 × .24. The demo project loads assets/main.bundle.js, which is not built in this checkout — install esbuild and bundle first; the kit itself (three-kit.bundle.js) is prebuilt. **أرقام / params:** silt #4a4532 sand #857a5c mud #2e2a20 moss #3d5a26 #5f7a33.
+- **📦 تثبيت / install:** `cd 100-superskills/skills/kosif-montage-motion/scripts && npm install three@0.186.1 esbuild && python3 motion.py bundle koi_pond`
 - **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:9` · `100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:39`
 
-#### TEX-94 · أسفلت مبلل وطلاء عاكس · Wet asphalt + retro-reflective road paint · 🟢 جاهز / ready
+#### TEX-94 · أسفلت مبلل وطلاء عاكس · Wet asphalt + retro-reflective road paint · 📦 بأمر تثبيت / one install
 - **ماذا / what:** أسفلت ليلي قليل الخشونة يلمع مع المصابيح، وشرطات وسط وخطوط حواف تتوهج بخفة. — Slightly wet low-roughness asphalt glinting with lamps; centre dashes and edge lines glowing faintly.
 - **متى أستخدمها / when:** طرق ليلية، سيارات، رحلات.
-- **كيف / how:** Road ribbon from CatmullRom (800 segments, 8 m wide) MeshStandard 0x15161a roughness .32; paint 0xe8e4da emissive 0x6a6658 ×.6; 340 instanced dashes .16×3 m every 12 m; edge lines .14 m at ±(4−.35) m. **أرقام / params:** roughness .32; emissive ×.6; dash every 12 m.
+- **كيف / how:** Road ribbon from CatmullRom (800 segments, 8 m wide) MeshStandard 0x15161a roughness .32; paint 0xe8e4da emissive 0x6a6658 ×.6; 340 instanced dashes .16×3 m every 12 m; edge lines .14 m at ±(4−.35) m. The demo project loads assets/main.bundle.js, which is not built in this checkout — install esbuild and bundle first; the kit itself (three-kit.bundle.js) is prebuilt. **أرقام / params:** roughness .32; emissive ×.6; dash every 12 m.
+- **📦 تثبيت / install:** `cd 100-superskills/skills/kosif-montage-motion/scripts && npm install three@0.186.1 esbuild && python3 motion.py bundle blue_hour`
 - **الدليل / proof:** `100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:64`
 
 ## توليفات قوية / power combos
