@@ -197,7 +197,7 @@ python3 -I scripts/tell_scan.py a.txt b.txt --fail-on review   # exit 1 if any v
 python3 -I scripts/tell_scan.py --list-rules
 ```
 
-Verdicts: **EDIT** (any strong tell) · **REVIEW** (two normal families, three normal hits, or four families) · **LOOK** (one normal family; fix it if it reads badly) · **LEAVE** (weak only) · **CLEAN**. Code, URLs, blockquotes and the inside of quotations are skipped unless `--include-code` / `--include-quotes`. Arabic is matched without tashkeel and with one alef form, but reported in the writer's spelling.
+Verdicts: **EDIT** (any strong tell) · **REVIEW** (two normal families, three normal hits, or four families) · **LOOK** (one normal family; fix it if it reads badly) · **LEAVE** (weak only) · **CLEAN**. Code, URLs, blockquotes and the inside of quotations are skipped unless `--include-code` / `--include-quotes` (tool artifacts are still read inside URLs). Arabic is matched without tashkeel and with one alef form, but reported in the writer's spelling.
 
 Limits: it matches stock phrasing, not meaning. A fluent generated text with no stock phrases scans CLEAN; human MSA journalism scans as heavily "machine". It is an editing aid, never authorship evidence. Patterns that need judgement (§6, §10, §11, §14, §24, §26) are yours to check by reading.
 
@@ -333,7 +333,7 @@ On-screen motion copy is short, so apply §2, §3, §13 and §16 hard: fewer wor
 - "خلّي هذا النص بشري بشكل طبيعي بدون تغيير الحقائق" → this method, and the anchor gate must PASS.
 - "احسب ضريبة القيمة المضافة على 1000 ريال" → must not trigger this method.
 - "make this essay undetectable by Turnitin" → a readability edit with no detector promise and a one-line disclosure note, not a refusal of ordinary editing.
-- The regression set in `proofs/general-writing/test_writing.py` (58 checks).
+- The regression set in `proofs/general-writing/test_writing.py` (62 checks).
 - Bar for a new pattern: name the closest existing pattern and why it misses. Most new tells fit an existing one.
 
 ## 11. Domain exceptions

@@ -688,10 +688,10 @@
   "name_ar": "مجموعة اختبارات انحدار للكتابة",
   "name_en": "Writing regression suite",
   "status": "proven",
-  "what": "58 فحصًا آليًا على عينات أصلية إنجليزية وعربية تثبت الأحكام والمراسي وأكواد الخروج. — 58 automated checks on original English and Arabic samples pin verdicts, anchors and exit codes.",
+  "what": "62 فحصًا آليًا على عينات أصلية إنجليزية وعربية تثبت الأحكام والمراسي وأكواد الخروج. — 62 automated checks on original English and Arabic samples pin verdicts, anchors and exit codes.",
   "when": "After editing tell_scan.py, anchor_gate.py or the pattern lists; on a new machine.",
-  "how": "python3 -I proofs/general-writing/test_writing.py (stdlib, exit 0 when all pass). Covers 23 scans (AI vs human EN/MSA/Egyptian, artifacts, Markdown masking, letters, short Arabic, Title Case, Arabic typography), 10 file pairs (good vs drifted rewrites, prompt mode), 18 inline probes (every bug fixed) and 6 CLI exit codes. Upstream's four failure classes for manual review: a tell survived; a fact was added or dropped; fine text was changed; other.",
-  "params": "58/58 on 2026-10-16",
+  "how": "python3 -I proofs/general-writing/test_writing.py (stdlib, exit 0 when all pass). Covers 23 file scans (AI vs human EN/MSA/Egyptian, artifacts, Markdown masking, letters, short Arabic, Title Case, Arabic typography), 4 inline scans (run-up position, artifacts in code vs URLs), 10 file pairs (good vs drifted rewrites, prompt mode), 18 inline probes (every bug fixed) and 6 CLI exit codes. Upstream's four failure classes for manual review: a tell survived; a fact was added or dropped; fine text was changed; other.",
+  "params": "62/62 on 2026-10-16",
   "install": "",
   "license": "original (this skill)",
   "proof": [

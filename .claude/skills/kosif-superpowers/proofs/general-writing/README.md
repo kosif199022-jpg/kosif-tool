@@ -7,7 +7,7 @@ Every sample and pair in this folder is original text written for these tests (n
 ## Re-run (from the skill folder)
 
 ```bash
-python3 -I proofs/general-writing/test_writing.py        # 58 checks, exit 0 when all pass (stdlib only)
+python3 -I proofs/general-writing/test_writing.py        # 62 checks, exit 0 when all pass (stdlib only)
 python3 -I proofs/general-writing/arabic_probe.py        # PASS / SKIP / FAIL per Arabic capability on this machine
 ```
 
@@ -19,7 +19,7 @@ OCR needs `apt-get install -y tesseract-ocr tesseract-ocr-ara` (root).
 
 | Check | Result |
 |---|---|
-| `test_writing.py` (23 scans, 10 file pairs, 18 probes, 6 CLI exit codes, 1 display check) | **58/58 pass**, exit 0 |
+| `test_writing.py` (23 file scans, 4 inline scans, 10 file pairs, 18 anchor probes, 6 CLI exit codes, 1 display check) | **62/62 pass**, exit 0 |
 | `arabic_probe.py`, system Python 3.13.16 | 7 pass, 3 skip (reshaper, camel-tools, pyarabic not installed), 0 fail |
 | `arabic_probe.py`, venv with the optional libraries | **10 pass**, 0 skip, 0 fail |
 | Café rewrite (English, worked example in `references/humanizer.md`) | scan EDIT (23 hits) → CLEAN; anchor gate PASS with 15 anchors kept |
@@ -71,6 +71,10 @@ PASS  scan pairs/ar9_5_before.txt                verdict REVIEW (want REVIEW) fa
 PASS  scan pairs/ar9_5_after.txt                 verdict CLEAN (want CLEAN) families []
 PASS  scan pairs/ar9_7_before.txt                verdict REVIEW (want REVIEW) families ['AR13', 'AR15']
 PASS  scan pairs/ar9_7_after.txt                 verdict CLEAN (want CLEAN) families []
+PASS  scan inline: mid-sentence "the thing is" is not a run-up verdict CLEAN (want CLEAN) []
+PASS  scan inline: sentence-initial run-up is H4 verdict EDIT (want EDIT) ['H4']
+PASS  scan inline: artifact inside inline code is not flagged verdict CLEAN (want CLEAN) []
+PASS  scan inline: tracking leftover inside a URL is X1 verdict EDIT (want EDIT) ['X1']
 PASS  scan shows original Arabic spelling        AR12 hit displayed as تُعزّز (normalized match, original spelling)
 PASS  gate en_before -> en_after_good            PASS (rewrite) kept 10 dropped []
 PASS  gate en_before -> en_after_drift           REVIEW_REQUIRED (rewrite) kept 4 dropped [('email', 'sales@example.com'), ('number', '12'), ('number', '1200000'), ('number', '3'), ('number', '37.5%'), ('version', 'v2.4.1')]
@@ -107,7 +111,7 @@ PASS  cli scan --fail-on review (EDIT) exits 1   exit 1 (want 1)
 PASS  cli scan --fail-on look (CLEAN) exits 0    exit 0 (want 0)
 PASS  cli scan --list-rules exits 0              exit 0 (want 0)
 
-58/58 checks passed
+62/62 checks passed
 ```
 
 ```text
@@ -188,6 +192,7 @@ The 2026-10-16 humanizer distillation shipped prototypes of both scripts. These 
 | tell_scan | letter sign-offs ("Let me know if", "يسعدني", "لا تتردد", "تحت أمرك") were strong chatbot tells | moved to normal (H22b, AR22b); "predates chatbots" rule |
 | tell_scan | any bold counted as a normal tell; emoji counted twice | bold labels on list items normal, other bold weak; weak hit dropped when its stronger sibling covers it |
 | tell_scan | no Title Case, mixed-digit or tatweel checks | H20t/H20+, AR26d, AR26t; plus AR6 stock pairs and the حيث glue |
+| tell_scan | tool artifacts quoted in inline code (docs that discuss them) were flagged; mid-sentence "what the thing is" was a run-up | X1 reads URLs but not code or quotations; "The thing is" counts only at a sentence start or before a comma or colon |
 
 ## Honest limits
 
