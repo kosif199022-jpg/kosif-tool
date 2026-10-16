@@ -4,6 +4,22 @@
 **288** styles · **243** PromptsMotion references · **45** KOSIF base styles · **44** original briefs · **17** playbooks · **224** credited creators
 <!-- stats:end -->
 
+## ابدأ من هنا — خريطة المستودع / Start here
+
+مستودع واحد فيه ثلاث طبقات تعمل معًا. اقرأ هذه الخريطة مرة واحدة فتعرف أين كل شيء.
+
+| الطبقة / layer | ما هي / what | من أين تبدأ / start |
+|---|---|---|
+| **المهارة العامة** `.claude/skills/kosif-superpowers/` | تعرّف Claude بقدراته الحقيقية في كل جلسة وبطرق التفكير والإبداع والتحقق، مع كتالوج 4,223 قدرة في 10 مجالات (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها شارة دليل | [SKILL.md](.claude/skills/kosif-superpowers/SKILL.md) ثم [الخريطة الذهنية](.claude/skills/kosif-superpowers/references/capability-map.md) |
+| **أطلس الموشن** `styles/` `playbooks/` `catalog/` | 288 أسلوب موشن جرافيك، لكل منها SKILL.md وSTYLE.json وBRIEF.md، و17 دليل إنتاج | [STYLE_INDEX.md](STYLE_INDEX.md) · [AGENTS.md](AGENTS.md) |
+| **الأدوات** `tools/` `starters/` `templates/` | `kosif.py` (بحث وتجهيز مشروع)، `render_html.cjs` (رندر HTML إلى فيديو)، `verify_video.py` (فحص الناتج)، ومشروعا بداية html-canvas وRemotion | [tools/render_html.md](tools/render_html.md) |
+| **مهارة المونتاج التحريري** `.claude/skills/editorial-film-edit/` | مهارة مستقلة لمونتاج لقطات بأسلوب أرشيفي تحريري مع مراجع متصفح جاهزة | [SKILL.md](.claude/skills/editorial-film-edit/SKILL.md) |
+| **الموقع** `index.html` `web/` | واجهة تصفح الأساليب ومولّد الطلبات، تُنشر على GitHub Pages | https://kosif199022-jpg.github.io/kosif-tool/ |
+
+**لـ Claude:** حين تفتح هذا المستودع، حمّل `.claude/skills/kosif-superpowers/SKILL.md` ونفّذ بروتوكول التشغيل فيه قبل أن تبدأ، ثم اقرأ `AGENTS.md` إن كان الطلب موشن جرافيك. الفحص الكامل: `python3 tools/validate.py` و`python3 -m unittest discover -s tests`.
+**For Claude:** on entering this repo, load the superpowers SKILL.md first and run its power-up protocol; read AGENTS.md for motion work. Everything that was on separate branches is now merged here.
+
+
 **الموقع:** https://kosif199022-jpg.github.io/kosif-tool/ · **الفهرس:** [STYLE_INDEX.md](STYLE_INDEX.md) · **الدلائل:** [playbooks/](playbooks/)
 
 <div dir="rtl">

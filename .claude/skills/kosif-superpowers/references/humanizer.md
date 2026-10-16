@@ -131,7 +131,7 @@ Before: "Export isn't just faster, it's a new way to work: 40 s became 12 s." Af
 
 ### X. Tool artifacts and unfilled templates (strong, the most objective evidence)
 
-Citation and tracking leftovers from chat assistants (`contentReference[oaicite:…]`, `oai_citation`, `turn0search0`, `[cite: 1]`, `[span_1](start_span)`, `grok_card`, `utm_source=chatgpt.com`, `utm_source=openai`, `utm_source=copilot.com`), and unfilled placeholders (`[Your Name]`, `[Insert date]`, `[اسم الشركة]`, `[أدخل التاريخ]`). Fix: remove the artifact; fill the placeholder or ask. Also check Markdown used where the target is not Markdown, broken or invented links and DOIs, and named references that are never used.
+Citation and tracking leftovers from chat assistants (`contentReference[oaicite:…]`, `oai_citation`, `turn0search0`, `[cite: 1]`, `[span_1]` with `(start_span)`, `grok_card`, `utm_source=chatgpt.com`, `utm_source=openai`, `utm_source=copilot.com`), and unfilled placeholders (`[Your Name]`, `[Insert date]`, `[اسم الشركة]`, `[أدخل التاريخ]`). Fix: remove the artifact; fill the placeholder or ask. Also check Markdown used where the target is not Markdown, broken or invented links and DOIs, and named references that are never used.
 
 ## 4. The rewrite process
 

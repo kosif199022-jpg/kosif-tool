@@ -89,8 +89,10 @@ class SuperpowersTest(unittest.TestCase):
             self.assertTrue((d / "README.md").is_file(), f"{d.name} lacks README.md")
             self.assertNotIn("VERIFY_LINE", (d / "README.md").read_text(encoding="utf-8"), f"{d.name}/README.md still has the VERIFY_LINE placeholder")
             sheet = d / "sheet.jpg"
-            self.assertTrue(sheet.is_file(), f"{d.name} lacks sheet.jpg")
-            self.assertLessEqual(sheet.stat().st_size, MAX_SHEET, f"{d.name}/sheet.jpg too large")
+            if (d / "index.html").is_file():  # motion proofs are scenes and need a contact sheet; text/data proofs do not
+                self.assertTrue(sheet.is_file(), f"{d.name} lacks sheet.jpg")
+            if sheet.is_file():
+                self.assertLessEqual(sheet.stat().st_size, MAX_SHEET, f"{d.name}/sheet.jpg too large")
         videos = [p for p in SKILL.rglob("*") if p.suffix.lower() in {".mp4", ".mov", ".webm", ".wav", ".mp3"}]
         self.assertEqual(videos, [], "rendered media must stay out of the repository")
 
