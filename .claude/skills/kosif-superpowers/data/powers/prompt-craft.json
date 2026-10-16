@@ -108,7 +108,7 @@
   "id": "PROMPT-05",
   "family": "prompt-craft",
   "domain": "craft",
-  "name_ar": "سلّم التقنيات: الأرخص الذي ينجح",
+  "name_ar": "سُلَّم التقنيات: الأرخص الذي ينجح",
   "name_en": "Technique ladder L0–L7",
   "status": "documented",
   "what": "ابدأ بتعليمة واضحة ولا تصعد إلى الأمثلة أو التقسيم أو الأدوات أو التقييم إلا حين يفشل اختبار. — Start with a clear instruction and climb to examples, decomposition, tools or evals only when a test fails.",

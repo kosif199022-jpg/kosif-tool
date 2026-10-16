@@ -5,7 +5,7 @@
 
 ## المحتويات — Contents
 1. [حلقة التحقق — The verification loop](#1-حلقة-التحقق--the-verification-loop)
-2. [سلم الأدلة والإيصالات — Evidence ladder, receipts, status words](#2-سلم-الأدلة-والإيصالات--evidence-ladder-receipts-status-words)
+2. [سُلَّم الأدلة والإيصالات — Evidence ladder, receipts, status words](#2-سُلَّم-الأدلة-والإيصالات--evidence-ladder-receipts-status-words)
 3. [التقييمات — Evals](#3-التقييمات--evals)
 4. [المراجعون المستقلون — Independent reviewers](#4-المراجعون-المستقلون--independent-reviewers)
 5. [بوابة السجلات — The record gate (tested)](#5-بوابة-السجلات--the-record-gate-tested)
@@ -45,7 +45,7 @@ Probe a command before relying on it (`command -v soffice pdftotext`); machine f
 
 ---
 
-## 2. سلم الأدلة والإيصالات — Evidence ladder, receipts, status words
+## 2. سُلَّم الأدلة والإيصالات — Evidence ladder, receipts, status words
 
 **Ladder (CHECK-08).** 💡 idea → 📄 documented → 📦 install (one documented command away) → 🔑 key or account → 🟢 ready (code here runs with the usual tools) → ✅ proven (ran, with a proof path); 👁 seen is for motion references only. Use the lowest true badge.
 
@@ -168,7 +168,7 @@ What it checks: unique IDs across all families; the 13 base keys on every record
 | English-only `what` | fail | caught |
 | legacy record missing `how` | fail | caught |
 
-Score: 10/10 seeded defects caught, 2/2 controls clean. Final re-run after the THINK, IDEA and CHECK files were written: 3,926 records present at that moment (other families were still being added), 0 problems. Re-run it yourself; counts change as the catalog grows.
+Score: 10/10 seeded defects caught, 2/2 controls clean. Final re-run after the THINK, IDEA and CHECK files were written: 3,926 records present at that moment (other families were still being added), 0 problems. Re-run it yourself; counts change as the catalog grows (current count: `python3 scripts/powers.py stats`).
 
 ---
 

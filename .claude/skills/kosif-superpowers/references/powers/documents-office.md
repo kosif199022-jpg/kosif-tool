@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** إنشاء ملفات وورد وإكسل وباوربوينت وPDF وتحويلها واستخراج محتواها. — Create, convert and extract Word, Excel, PowerPoint and PDF files.
 > **أقوى دليل / strongest evidence:** **DOC-01** RTL Arabic DOCX with python-docx (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md`) · **DOC-02** Arabic XLSX with formulas and a native chart (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md`)
-> **28 powers follow** — ✅ 22 · 🟢 0 · 📦 1 · 🔑 4 · 👁 0 · 📄 1 · 💡 0.
+> **28 powers follow** — ✅ 21 · 🟢 0 · 📦 2 · 🔑 4 · 👁 0 · 📄 1 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -23,7 +23,7 @@
 ## إنشاء المستندات — Create documents
 
 #### DOC-01 · مستند Word عربي من اليمين · RTL Arabic DOCX with python-docx · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أنشئ ملف Word بعناوين وفقرات وجداول عربية من اليمين إلى اليسار وأقرؤه مرة أخرى للتحقق. — Create a Word file with right-to-left Arabic headings, paragraphs and tables, then read it back to verify.
+- **ماذا / what:** أنشئ ملف Word بعناوين وفقرات وجداول عربية من اليمين إلى اليسار، ثم اقرأه مرة أخرى للتحقق. — Create a Word file with right-to-left Arabic headings, paragraphs and tables, then read it back to verify.
 - **متى أستخدمها / when:** reports, letters, contracts or forms the user wants as .docx
 - **كيف / how:** python-docx has no RTL switch: add OxmlElement('w:bidi') to each paragraph's pPr; on each run add w:rtl, set w:rFonts w:cs='Amiri' (Arabic uses the complex-script font) and w:szCs; add w:bidiVisual to the table's tblPr so column 1 sits on the right. Read back with docx.Document(path) and check the XML for <w:bidi/>. **أرقام / params:** font size via both w:sz and w:szCs; heading level 1 = 20 pt in proof
 - **تثبيت / install:** `pip install python-docx`
@@ -41,7 +41,7 @@
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-03 · إعادة حساب معادلات Excel بـ LibreOffice · Recalculate XLSX formulas headless · ✅ مُثبت هنا / proven here
-- **ماذا / what:** openpyxl يكتب المعادلات ولا يحسبها؛ أعيد الحساب بتحويل LibreOffice ثم أقرأ القيم. — openpyxl writes formulas but never computes them; recalculate with a LibreOffice round trip, then read the values.
+- **ماذا / what:** openpyxl يكتب المعادلات ولا يحسبها؛ أعِد الحساب بتحويل LibreOffice ثم اقرأ القيم. — openpyxl writes formulas but never computes them; recalculate with a LibreOffice round trip, then read the values.
 - **متى أستخدمها / when:** before quoting any number from a workbook you generated; before sending it to someone without Excel
 - **كيف / how:** soffice --headless --norestore --convert-to xlsx --outdir recalc book.xlsx (1.2 s), then openpyxl.load_workbook('recalc/book.xlsx', data_only=True). Before recalculation data_only returns None; after it the proof read 3340 and 0.3593.
 - **تثبيت / install:** `apt-get install libreoffice-calc (present in the cloud image 2026-10-16)`
@@ -59,7 +59,7 @@
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-05 · PDF عربي من HTML وCSS · Arabic PDF from HTML/CSS (weasyprint) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أصمم التقرير بـ HTML وCSS مع خطوط عربية مضمّنة وأطبعه PDF بحروف متصلة صحيحة. — Design the report in HTML/CSS with embedded Arabic fonts and print a PDF with correctly joined letters.
+- **ماذا / what:** صمّم التقرير بـ HTML وCSS مع خطوط عربية مضمّنة، واطبعه PDF بحروف متصلة صحيحة. — Design the report in HTML/CSS with embedded Arabic fonts and print a PDF with correctly joined letters.
 - **متى أستخدمها / when:** polished PDF reports, invoices or certificates; anything where CSS layout beats word-processor layout
 - **كيف / how:** <html lang=ar dir=rtl>; @font-face { font-family: Amiri; src: url(file:///.../Amiri-Regular.ttf) }; @page { size: A4; margin: 16mm }; isolate English with a direction:ltr class; weasyprint.HTML(string=html, base_url=dir).write_pdf(out). Proof: 0.33 s, 17.9 KB, fonts embedded as subsets.
 - **تثبيت / install:** `pip install weasyprint (needs pango; present in the cloud image)`
@@ -68,7 +68,7 @@
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-06 · PDF من المتصفح الخفي · HTML to PDF with headless Chromium · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أطبع أي صفحة HTML (حتى المعتمدة على JavaScript) إلى PDF عبر Chromium الخفي. — Print any HTML page, including JavaScript-driven ones, to PDF through headless Chromium.
+- **ماذا / what:** اطبع أي صفحة HTML (حتى المعتمدة على JavaScript) إلى PDF عبر Chromium الخفي. — Print any HTML page, including JavaScript-driven ones, to PDF through headless Chromium.
 - **متى أستخدمها / when:** the page uses JS charts or modern CSS that weasyprint does not support
 - **كيف / how:** Playwright: page.goto(file URL); await document.fonts.ready; page.pdf({path, format:'A4', printBackground:true}). Proof snap.cjs printed the RTL dashboard; pdffonts shows Tajawal-Bold embedded.
 - **تثبيت / install:** `npm i playwright && npx playwright install chromium (bundled at /opt/pw-browsers in the cloud image)`
@@ -91,13 +91,13 @@
 - **كيف / how:** npm i docx pptxgenjs exceljs pdf-lib; Packer.toBuffer(doc); pptx.writeFile(); workbook.xlsx.writeFile(); PDFDocument.create(). All four produced files in the arsenal snapshot (Latin text only; RTL not tested).
 - **تثبيت / install:** `npm i docx pptxgenjs exceljs pdf-lib`
 - **الرخصة / license:** MIT
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 ## التحويل والطباعة — Convert & print
 
 #### DOC-09 · تحويل Office إلى PDF دفعة واحدة · Batch Office to PDF with LibreOffice · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحوّل docx وpptx وxlsx إلى PDF في أمر واحد دون واجهة. — Convert docx, pptx and xlsx to PDF in one headless command.
+- **ماذا / what:** حوّل docx وpptx وxlsx إلى PDF في أمر واحد دون واجهة. — Convert docx, pptx and xlsx to PDF in one headless command.
 - **متى أستخدمها / when:** the user needs a PDF of an office file; visual QA of a generated office file
 - **كيف / how:** soffice --headless --norestore --convert-to pdf --outdir out a.docx b.pptx c.xlsx (1.6 s for three files). For sheets set fitToPage first (DOC-11). Then render the pages to PNG and look at them (DOC-18).
 - **تثبيت / install:** `apt-get install libreoffice (present in the cloud image)`
@@ -106,7 +106,7 @@
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-10 · خطوط خاصة لـ LibreOffice دون تثبيت · Private fontconfig for LibreOffice and pango · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أوجّه LibreOffice وweasyprint إلى خطوط المشروع بملف fonts.conf خاص بدل تثبيتها في النظام. — Point LibreOffice and weasyprint at project fonts through a private fonts.conf instead of installing them.
+- **ماذا / what:** وجّه LibreOffice وweasyprint إلى خطوط المشروع بملف fonts.conf خاص بدل تثبيتها في النظام. — Point LibreOffice and weasyprint at project fonts through a private fonts.conf instead of installing them.
 - **متى أستخدمها / when:** Arabic falls back to DejaVu/FreeSerif in converted PDFs; you must not modify the system
 - **كيف / how:** Write fonts.conf: <include>/etc/fonts/fonts.conf</include><dir>/path/to/fonts</dir><cachedir>/tmp/fc</cachedir>; run soffice with env FONTCONFIG_FILE=that file (also set os.environ for weasyprint). Proof: pdffonts lists Amiri-Regular/Amiri-Bold in the LibreOffice PDF.
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md`
@@ -120,7 +120,7 @@
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-12 · Markdown ↔ Word بـ pandoc · Markdown <-> DOCX with pandoc (RTL) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أكتب بـ Markdown وأخرج Word عربيًا، أو أحوّل Word إلى Markdown للقراءة. — Write in Markdown and output Arabic Word, or turn Word into Markdown for reading.
+- **ماذا / what:** اكتب بـ Markdown وأخرج Word عربيًا، أو حوّل Word إلى Markdown للقراءة. — Write in Markdown and output Arabic Word, or turn Word into Markdown for reading.
 - **متى أستخدمها / when:** long text drafted in Markdown; reading a .docx into context
 - **كيف / how:** front matter 'dir: rtl' and 'lang: ar'; pandoc note.md -o note.docx; pandoc note.docx -t gfm. Proof: the Arabic table survived md -> docx -> md. Use --reference-doc=style.docx for house styles (not tested).
 - **تثبيت / install:** `apt-get install pandoc (3.1.3 present)`
@@ -129,7 +129,7 @@
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-13 · دمج وتدوير وتشفير PDF · Merge, rotate and encrypt PDFs (pypdf) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أدمج ملفات PDF وأدوّر صفحات وأحميها بكلمة مرور AES-256. — Merge PDFs, rotate pages and protect them with an AES-256 password.
+- **ماذا / what:** ادمج ملفات PDF ودوّر الصفحات واحمها بكلمة مرور AES-256. — Merge PDFs, rotate pages and protect them with an AES-256 password.
 - **متى أستخدمها / when:** assembling a packet, fixing orientation, sharing a protected file
 - **كيف / how:** w=pypdf.PdfWriter(); w.append(f) per file; w.pages[0].rotate(90); w.encrypt(user_password=pw, algorithm='AES-256'); w.write(out); reopen: r.is_encrypted, r.decrypt(pw). Proof: 3 files -> 4 pages, /Rotate 90, the password works.
 - **تثبيت / install:** `pip install pypdf`
@@ -156,7 +156,7 @@
 - **المصدر / source:** proofs/general-data/README.md
 
 #### DOC-16 · تحويل أي مستند إلى Markdown · Any office file to Markdown (markitdown) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحوّل docx وxlsx وpptx إلى Markdown لقراءتها في السياق؛ الحزمة تحتاج الإضافات. — Turn docx, xlsx and pptx into Markdown to read them into context; the package needs its extras.
+- **ماذا / what:** حوّل docx وxlsx وpptx إلى Markdown لقراءتها في السياق؛ الحزمة تحتاج الإضافات. — Turn docx, xlsx and pptx into Markdown to read them into context; the package needs its extras.
 - **متى أستخدمها / when:** the user uploads an office file and asks about its contents
 - **كيف / how:** pip install "markitdown[docx,pdf,xlsx,pptx]" (a bare install fails on docx with MissingDependencyException); MarkItDown().convert(path).text_content. Arabic is kept for docx/xlsx/pptx; for PDFs it comes out reversed (use DOC-14).
 - **تثبيت / install:** `pip install "markitdown[docx,pdf,xlsx,pptx]"`
@@ -165,7 +165,7 @@
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-17 · OCR لصفحات PDF الممسوحة · OCR for scanned PDF pages · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحوّل صفحة PDF بلا طبقة نص إلى صورة 300 نقطة وأقرؤها بـ tesseract العربي. — Rasterise a PDF page with no text layer at 300 dpi and read it with Arabic tesseract.
+- **ماذا / what:** حوّل صفحة PDF بلا طبقة نص إلى صورة 300 نقطة واقرأها بـ tesseract العربي. — Rasterise a PDF page with no text layer at 300 dpi and read it with Arabic tesseract.
 - **متى أستخدمها / when:** scans, photographed pages, PDFs where text extraction returns nothing
 - **كيف / how:** img=pypdfium2.PdfDocument(p)[i].render(scale=300/72).to_pil().convert('L'); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 4'). Proof: title and English line recovered in 0.78 s. Validate digits (see MEDIA OCR findings).
 - **تثبيت / install:** `apt-get install tesseract-ocr tesseract-ocr-ara; pip install pytesseract pypdfium2`
@@ -174,7 +174,7 @@
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-18 · تصيير صفحات PDF للمراجعة البصرية · Render PDF pages to PNG for visual QA · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحوّل كل صفحة إلى صورة وأقصّها حول الحبر وأجمعها في ورقة اتصال ثم أنظر إليها قبل التسليم. — Render each page to an image, crop to the ink, tile a contact sheet, and look at it before delivery.
+- **ماذا / what:** حوّل كل صفحة إلى صورة وقصّها حول الحبر واجمعها في ورقة اتصال، ثم انظر إليها قبل التسليم. — Render each page to an image, crop to the ink, tile a contact sheet, and look at it before delivery.
 - **متى أستخدمها / when:** after generating or converting any document; Arabic shaping, overflow or missing-font checks
 - **كيف / how:** pypdfium2: page.render(scale=2).to_pil(); crop with ImageChops.difference against white .getbbox(); tile with Pillow; quantize(128) to keep it < 300 KB; then open it with the Read tool and look. Proof contact.png: 50 KB, six documents.
 - **تثبيت / install:** `pip install pypdfium2 pillow`
@@ -188,16 +188,16 @@
 - **كيف / how:** import pymupdf (not `import fitz`, which is deprecated); doc[0].get_text(); doc[0].get_pixmap().save('p.png'). Arabic order not tested; check it like DOC-14.
 - **تثبيت / install:** `pip install pymupdf`
 - **الرخصة / license:** AGPL-3.0 or commercial
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
-#### DOC-20 · جداول PDF بالمواقع (LTR) · PDF tables with positions (pdfplumber) · ✅ مُثبت هنا / proven here
+#### DOC-20 · جداول PDF بالمواقع (LTR) · PDF tables with positions (pdfplumber) · 📦 بأمر تثبيت / one install
 - **ماذا / what:** pdfplumber يعطي إحداثيات الكلمات والجداول؛ ممتاز للإنجليزية ولكنه يعكس العربية. — pdfplumber gives word and table coordinates; excellent for English, but it reverses Arabic.
 - **متى أستخدمها / when:** extracting tables from left-to-right PDFs (statements, invoices)
-- **كيف / how:** page.extract_tables(); page.extract_words() for x/y. For Arabic cells reverse the string or re-read the region with pypdf/pdftotext -layout -x -y -W -H.
+- **كيف / how:** page.extract_tables(); page.extract_words() for x/y. For Arabic cells reverse the string or re-read the region with pypdf/pdftotext -layout -x -y -W -H. Not run here: only pdfplumber extract_text was exercised (it returned Arabic reversed); extract_tables and extract_words are untested in this skill.
 - **تثبيت / install:** `pip install pdfplumber`
 - **الرخصة / license:** MIT
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
 #### DOC-21 · تحليل PDF بالتخطيط (ثقيل) · Layout-aware PDF parsing (docling, camelot, tabula) · 📦 بأمر تثبيت / one install
@@ -212,13 +212,13 @@
 ## العربية في المستندات — Arabic in documents
 
 #### DOC-22 · اتجاه النص المختلط في المستندات · Mixed-direction text hygiene · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أعزل المقاطع اللاتينية والأرقام داخل النص العربي حتى لا تنقلب علامات الترقيم والأقواس. — Isolate Latin runs and numbers inside Arabic text so punctuation and brackets do not flip.
+- **ماذا / what:** اعزل المقاطع اللاتينية والأرقام داخل النص العربي حتى لا تنقلب علامات الترقيم والأقواس. — Isolate Latin runs and numbers inside Arabic text so punctuation and brackets do not flip.
 - **متى أستخدمها / when:** Arabic text containing English names, codes, URLs, versions or percentages
 - **كيف / how:** HTML: <span dir=ltr> or <bdi>, or a class with direction:ltr; DOCX: keep LTR runs without w:rtl; PPTX: separate runs. Choose one numeral system per document (Arabic-Indic ٠-٩ or Western 0-9) and keep it. The proof PDF holds an LTR English line inside an RTL page.
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md`
 - **المصدر / source:** proofs/general-docs/make_docs.py
 
-#### DOC-23 · من أشكّل العربية يدويًا ومن لا · Which engines need manual Arabic shaping · ✅ مُثبت هنا / proven here
+#### DOC-23 · من يشكّل العربية بنفسه ومن يحتاج تشكيلًا يدويًا · Which engines need manual Arabic shaping · ✅ مُثبت هنا / proven here
 - **ماذا / what:** weasyprint وLibreOffice وWord وPowerPoint وChromium وPillow 12 وmatplotlib 3.11 تشكّل بنفسها؛ reportlab وحده يحتاج reshaper وbidi. — weasyprint, LibreOffice, Word/PowerPoint XML, Chromium, Pillow 12 and matplotlib 3.11 shape Arabic themselves; only reportlab needs reshaper + bidi.
 - **متى أستخدمها / when:** choosing a rendering path for Arabic
 - **كيف / how:** Default to raw logical strings. Add arabic_reshaper.reshape + bidi.get_display only for engines without a shaper (reportlab, old PIL/matplotlib without raqm). Doing both reverses the text. All of these were exercised across the docs, data and media proofs.
@@ -226,7 +226,7 @@
 - **المصدر / source:** proofs/general-*/README.md
 
 #### DOC-24 · مراجعة المستند قبل التسليم · Document delivery gate · 📄 موصوف / documented only
-- **ماذا / what:** لا أسلّم مستندًا قبل قراءته آليًا والنظر إلى صفحاته وتطابق أرقامه. — Never deliver a document before reading it back, looking at its pages and reconciling its numbers.
+- **ماذا / what:** لا تسلّم مستندًا قبل قراءته آليًا والنظر إلى صفحاته والتأكد من تطابق أرقامه. — Never deliver a document before reading it back, looking at its pages and reconciling its numbers.
 - **متى أستخدمها / when:** every generated docx/xlsx/pptx/pdf
 - **كيف / how:** Checklist: 1) read back text with the format's own library; 2) recalc spreadsheets; 3) render pages to PNG and look (Arabic joined, right-aligned, nothing cut); 4) numbers come from the frozen results file (ANLY compute-freeze); 5) file size and page count are sensible; 6) state anything you could not verify (e.g., not opened in MS Office).
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
@@ -235,7 +235,7 @@
 ## أدوات المضيف والموصلات — Host skills & connectors
 
 #### DOC-25 · مهارات المستندات المدمجة في المضيف · Host document skills (docx/xlsx/pptx/pdf) · 🔑 مفتاح أو خدمة / needs key or service
-- **ماذا / what:** في بعض الحسابات تظهر مهارات جاهزة للمستندات؛ أحمّلها قبل العمل إن وُجدت. — Some accounts list ready-made document skills; load them before working when they exist.
+- **ماذا / what:** في بعض الحسابات تظهر مهارات جاهزة للمستندات؛ حمّلها قبل العمل إن وُجدت. — Some accounts list ready-made document skills; load them before working when they exist.
 - **متى أستخدمها / when:** the session's skill list shows docx/xlsx/pptx/pdf skills (e.g. anthropic-skills:docx)
 - **كيف / how:** Read the skill listing; invoke the matching skill first. It carries tested recipes, such as tracked changes and templates. They require the account feature; this session listed them (2026-10-16) and they were not invoked here.
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)

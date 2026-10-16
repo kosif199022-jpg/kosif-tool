@@ -49,7 +49,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py`
 - **المصدر / source:** scripts/tell_scan.py; references/humanizer.md §7
 
-#### WRITE-04 · سلّم الحكم بحسب قوة الدليل · Evidence-weighted verdict ladder · ✅ مُثبت هنا / proven here
+#### WRITE-04 · سُلَّم الحكم بحسب قوة الدليل · Evidence-weighted verdict ladder · ✅ مُثبت هنا / proven here
 - **ماذا / what:** لا تعدّل لمجرد شرطة واحدة: الحكم EDIT/REVIEW/LOOK/LEAVE/CLEAN يحسب قوة العلامات وتجمعها. — Do not edit over one em dash: the verdict weighs strength and clustering of tells.
 - **متى أستخدمها / when:** Deciding whether a text needs a rewrite at all, especially human text with one odd word.
 - **كيف / how:** Strong tell → EDIT. Two normal families, three normal hits or four families → REVIEW. One normal family → LOOK (fix if it reads badly). Weak only → LEAVE. Weak hits shadowed by a stronger sibling (emoji inside a decorated heading, bold inside a bold label) are dropped. Tested: neutral human sentence with one dash and "crucial" → LOOK, not EDIT; Arabic typography slips only → LEAVE. **أرقام / params:** dash density becomes normal at ≥3 dashes and ≥1 per 100 words; two or more Title Case headings become normal

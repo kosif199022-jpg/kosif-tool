@@ -72,16 +72,18 @@ EN_WORDS = {
                 r'|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|billion'
                 r'|half|quarter|dozen|twice)\b', re.I),
 }
-AR_WORDS = {
-    'month': ar_words('يناير', 'فبراير', 'مارس', 'أبريل', 'ابريل', 'إبريل', 'مايو', 'يونيو', 'يونية', 'يوليو', 'يولية',
+AR_LISTS = {
+    'month': ('يناير', 'فبراير', 'مارس', 'أبريل', 'ابريل', 'إبريل', 'مايو', 'يونيو', 'يونية', 'يوليو', 'يولية',
                       'أغسطس', 'اغسطس', 'سبتمبر', 'أكتوبر', 'اكتوبر', 'نوفمبر', 'ديسمبر',
                       'كانون', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'تشرين',
                       'محرم', 'صفر', 'ربيع', 'جمادى', 'رجب', 'شعبان', 'رمضان', 'شوال', 'القعدة', 'الحجة'),
-    'weekday': ar_words('سبت', 'الأحد', 'الاحد', 'اثنين', 'إثنين', 'اتنين', 'تلات', 'ثلاثاء', 'أربعاء', 'اربعاء', 'خميس', 'جمعة'),
-    'numword': ar_words('واحد', 'واحدة', 'اثنين', 'اثنان', 'اتنين', 'ثلاث', 'ثلاثة', 'تلات', 'تلاتة', 'أربع', 'أربعة', 'خمس', 'خمسة',
+    'weekday': ('سبت', 'الأحد', 'الاحد', 'اثنين', 'إثنين', 'اتنين', 'تلات', 'ثلاثاء', 'أربعاء', 'اربعاء', 'خميس', 'جمعة'),
+    'numword': ('واحد', 'واحدة', 'اثنين', 'اثنان', 'اتنين', 'ثلاث', 'ثلاثة', 'تلات', 'تلاتة', 'أربع', 'أربعة', 'خمس', 'خمسة',
                         'ستة', 'سبعة', 'ثمان', 'ثمانية', 'تمانية', 'تسع', 'تسعة', 'عشر', 'عشرة', 'عشرين', 'عشرون',
                         'مائة', 'مئة', 'مية', 'ألف', 'آلاف', 'مليون', 'ملايين', 'مليار', 'نصف', 'ربع', 'ثلث'),
 }
+# match on a folded copy (أإآٱ→ا, ى→ي, ة→ه) so informal spellings such as خمسه, الف, الاف count as anchors
+AR_WORDS = {k: ar_words(*sorted({w.translate(FOLD) for w in v}, key=len, reverse=True)) for k, v in AR_LISTS.items()}
 
 
 def clean(text):
@@ -122,10 +124,12 @@ def anchors(text, keep=()):
     out += [('currency', CUR_FOLD.get(m.group(), m.group().upper())) for m in CUR.finditer(s)]
     for kind, (rx, flags) in EN_WORDS.items():
         out += [(kind, re.sub(r'(day)s$', r'\1', m.group().lower())) for m in re.finditer(rx, s, flags)]   # Fridays == Friday
+    sf = s.translate(FOLD)                          # same length as s: FOLD maps one char to one char
     for kind, rx in AR_WORDS.items():
-        for m in re.finditer(rx, s):
-            SHOWN.setdefault(fold_ar(m.group('w')), m.group('w'))
-            out.append((kind, fold_ar(m.group('w'))))
+        for m in re.finditer(rx, sf):
+            orig = s[m.start('w'):m.end('w')]
+            SHOWN.setdefault(fold_ar(orig), orig)
+            out.append((kind, fold_ar(orig)))
     for term in keep:                               # names count by presence: mentioning a name once instead of
         if keep_regex(term).search(s):              # three times is not a fact change, losing it entirely is
             out.append(('keep', term))
@@ -199,4 +203,9 @@ def main(argv=None):
 
 
 if __name__ == '__main__':
+    for _s in (sys.stdout, sys.stderr):
+        try:
+            _s.reconfigure(encoding='utf-8')
+        except (AttributeError, ValueError):
+            pass
     sys.exit(main())

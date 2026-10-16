@@ -51,7 +51,14 @@
    "lint prose",
    "english",
    "فحص النص",
-   "علامات آلية"
+   "علامات آلية",
+   "linkedin",
+   "social post",
+   "sound like ai",
+   "لينكدان",
+   "لينكد إن",
+   "بوست",
+   "منشور"
   ],
   "section": "الفحص الآلي — Automated scan",
   "source": "scripts/tell_scan.py; https://github.com/blader/humanizer (MIT, (c) 2025 Siqi Chen; adapted, own words)"
@@ -82,7 +89,15 @@
    "عامية مصرية",
    "ركاكة",
    "ترجمة حرفية",
-   "أسلوب آلي"
+   "أسلوب آلي",
+   "لينكدان",
+   "بوست",
+   "منشور",
+   "مكتوب بالذكاء الاصطناعي",
+   "ميبانش",
+   "يبان",
+   "linkedin",
+   "social post"
   ],
   "section": "الفحص الآلي — Automated scan",
   "source": "scripts/tell_scan.py; references/humanizer.md §7"
@@ -91,7 +106,7 @@
   "id": "WRITE-04",
   "family": "writing-humanizer",
   "domain": "craft",
-  "name_ar": "سلّم الحكم بحسب قوة الدليل",
+  "name_ar": "سُلَّم الحكم بحسب قوة الدليل",
   "name_en": "Evidence-weighted verdict ladder",
   "status": "proven",
   "what": "لا تعدّل لمجرد شرطة واحدة: الحكم EDIT/REVIEW/LOOK/LEAVE/CLEAN يحسب قوة العلامات وتجمعها. — Do not edit over one em dash: the verdict weighs strength and clustering of tells.",
@@ -166,7 +181,12 @@
    "polish",
    "tighten",
    "إعادة صياغة",
-   "تحرير"
+   "تحرير",
+   "linkedin",
+   "social post",
+   "بوست",
+   "منشور",
+   "sound like ai"
   ],
   "section": "عملية إعادة الصياغة — Rewrite process",
   "source": "https://github.com/blader/humanizer (MIT, (c) 2025 Siqi Chen; adapted, own words); references/humanizer.md §4"
@@ -197,7 +217,13 @@
    "no invention",
    "قفل الحقائق",
    "أرقام",
-   "تواريخ"
+   "تواريخ",
+   "translate",
+   "translation",
+   "ترجم",
+   "ترجمة",
+   "عقد",
+   "contract"
   ],
   "section": "قفل الحقائق — Fact lock",
   "source": "scripts/anchor_gate.py (re-implements the idea of the owner's writing_fact_gate.py and fixes its Arabic bugs); owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-research-evidence/references/KOSIF_HUMANIZER_AR_EN.md (owner)"
@@ -513,7 +539,13 @@
    "dialect",
    "سجل لغوي",
    "بالمصري",
-   "فصحى مبسطة"
+   "فصحى مبسطة",
+   "translate",
+   "translation",
+   "ترجم",
+   "ترجمة",
+   "عقد",
+   "contract"
   ],
   "section": "العربية الفصحى والمصرية — Arabic MSA and Egyptian",
   "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-research-evidence/references/KOSIF_HUMANIZER_AR_EN.md (owner); references/humanizer.md §7.2"
@@ -624,7 +656,12 @@
    "contract",
    "مالي",
    "قانوني",
-   "تدقيق"
+   "تدقيق",
+   "translate",
+   "translation",
+   "ترجم",
+   "ترجمة",
+   "عقد"
   ],
   "section": "الحدود والأمانة — Limits and honesty",
   "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-research-evidence/references/KOSIF_HUMANIZER_AR_EN.md (owner)"
@@ -651,7 +688,9 @@
    "ethics",
    "أمانة",
    "إفصاح",
-   "كشف الذكاء الاصطناعي"
+   "كشف الذكاء الاصطناعي",
+   "لينكدان",
+   "بوست"
   ],
   "section": "الحدود والأمانة — Limits and honesty",
   "source": "references/humanizer.md §1; owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-research-evidence/references/KOSIF_HUMANIZER_AR_EN.md (owner)"

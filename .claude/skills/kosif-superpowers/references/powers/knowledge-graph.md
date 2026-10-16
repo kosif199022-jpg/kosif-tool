@@ -56,9 +56,9 @@
 #### GRAPH-05 · تحديث الخريطة بعد التعديلات · Keep the map fresh · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حدّث الرسم بعد تعديل الكود في ثانية تقريبًا، أو اربطه بخطافات git ليتحدث تلقائيًا. — Refresh the graph after edits in about a second, or wire git hooks to do it automatically.
 - **متى أستخدمها / when:** after edits, before asking the graph again
-- **كيف / how:** `graphify update .` re-extracts changed code files (AST only, ≈1.2 s on the sample) and rewrites graph.json, graph.html and GRAPH_REPORT.md; docstrings become rationale nodes. `graphify hook install` adds post-commit/post-checkout/post-merge rebuilds plus a graph.json merge driver (ask first: it edits .git/hooks). Docs and images need the /graphify skill flow (GRAPH-10). **أرقام / params:** ≈1.2 s per update on a small repo
+- **كيف / how:** `graphify update .` re-extracts changed code files (AST only, ≈1.2 s on the sample) and rewrites graph.json, graph.html and GRAPH_REPORT.md; docstrings become rationale nodes. `graphify hook install` (documented, not run here) adds post-commit/post-checkout/post-merge rebuilds plus a graph.json merge driver (ask first: it edits .git/hooks). Docs and images need the /graphify skill flow (GRAPH-10). **أرقام / params:** ≈1.2 s per update on a small repo
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** `session-2026-10-16:graphify.md#3.9`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/graphify.md`
 - **المصدر / source:** https://github.com/Graphify-Labs/graphify
 
 #### GRAPH-06 · ذاكرة دروس مبنية على الخريطة · Graph-backed lessons · ✅ مُثبت هنا / proven here
@@ -72,7 +72,7 @@
 #### GRAPH-07 · تقديم الخريطة عبر MCP محلي · Serve the graph over a local MCP server · ✅ مُثبت هنا / proven here
 - **ماذا / what:** شغّل خادم MCP محليًا يعرض الرسم لأي وكيل: عشر أدوات وست موارد. — Run a local MCP server that exposes the graph to any agent: 10 tools and 6 resources.
 - **متى أستخدمها / when:** you want Claude (or another agent) to query a local graph as tools across sessions
-- **كيف / how:** `graphify-mcp <abs>/graphify-out/graph.json` (stdio). Tools: query_graph, get_node, get_neighbors, get_community, god_nodes, graph_stats, shortest_path, list_prs, get_pr_impact, triage_prs (the last three need `gh`). Resources: graphify://report, stats, god-nodes, surprises, audit, questions. Probed here over JSON-RPC: graph_stats → 244 nodes, 586 edges, 8 communities, 94% EXTRACTED; whole session 1.06 s. Register (changes the user's MCP config, so ask): `claude mcp add graphify-local -- <abs>/venv/bin/graphify-mcp <abs>/graphify-out/graph.json`. HTTP mode binds 127.0.0.1 and takes --api-key. **أرقام / params:** 10 tools; 6 resources
+- **كيف / how:** `graphify-mcp <abs>/graphify-out/graph.json` (stdio). Tools: query_graph, get_node, get_neighbors, get_community, god_nodes, graph_stats, shortest_path, list_prs, get_pr_impact, triage_prs (the last three need `gh`). Resources: graphify://report, stats, god-nodes, surprises, audit, questions. Probed here over JSON-RPC: graph_stats → 244 nodes, 586 edges, 8 communities, 94% EXTRACTED; whole session 1.06 s. Register (changes the user's MCP config, so ask): `claude mcp add graphify-local -- <abs>/venv/bin/graphify-mcp <abs>/graphify-out/graph.json`. HTTP mode binds 127.0.0.1 and takes --api-key (documented, not tested here). **أرقام / params:** 10 tools; 6 resources
 - **تثبيت / install:** `pip install "graphifyy[mcp]==0.9.91"`
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/mcp-stdio-probe.txt`
@@ -89,9 +89,9 @@
 #### GRAPH-09 · جعل Claude Code يستشير الخريطة تلقائيًا · Make Claude Code consult the graph automatically · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ثبّت مهارة Graphify وكتلة CLAUDE.md وخطافات PreToolUse لتذكير Claude بسؤال الخريطة قبل البحث أو القراءة — بموافقة المستخدم فقط. — Install the Graphify skill, a CLAUDE.md block and PreToolUse hooks that nudge Claude to query the graph before grep/read — only with consent.
 - **متى أستخدمها / when:** a team wants every session to use the map; long-lived repos
-- **كيف / how:** `graphify install --project` writes .claude/skills/graphify/, .claude/CLAUDE.md, a `## graphify` block in ./CLAUDE.md and .claude/settings.json hooks (Bash|Grep → `graphify hook-guard search`; Read|Glob → `graphify hook-guard read`, timeout 10 s). `graphify claude install [--strict]` adds only the CLAUDE.md section + hooks; `graphify claude uninstall` / `graphify uninstall` remove them. Hook behaviour (tested with fake hook JSON in a sandbox HOME): first grep in a session gets an additionalContext nudge with 'Start with: graphify explain …' and file:line hints, later identical calls are silent; ≈0.1 s per call; fails open. Edits CLAUDE.md and settings, so ask first. **أرقام / params:** hook timeout 10 s; nudge cap 5
+- **كيف / how:** `graphify install --project` writes .claude/skills/graphify/, .claude/CLAUDE.md, a `## graphify` block in ./CLAUDE.md and .claude/settings.json hooks (Bash|Grep → `graphify hook-guard search`; Read|Glob → `graphify hook-guard read`, timeout 10 s). Documented, not run here: `graphify claude install [--strict]` adds only the CLAUDE.md section + hooks; `graphify claude uninstall` / `graphify uninstall` remove them. Hook behaviour (tested with fake hook JSON in a sandbox HOME): first grep in a session gets an additionalContext nudge with 'Start with: graphify explain …' and file:line hints, later identical calls are silent; ≈0.1 s per call; fails open. Edits CLAUDE.md and settings, so ask first. **أرقام / params:** hook timeout 10 s; nudge cap 5
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** `session-2026-10-16:graphify.md#3.11` · `session-2026-10-16:graphify.md#3.12`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/graphify.md`
 - **المصدر / source:** https://github.com/Graphify-Labs/graphify
 
 #### GRAPH-10 · الوثائق والصور والفيديو داخل الخريطة · Docs, PDFs, images and media in the graph · 🔑 مفتاح أو خدمة / needs key or service

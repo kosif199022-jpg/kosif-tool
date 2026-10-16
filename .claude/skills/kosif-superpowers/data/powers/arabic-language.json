@@ -158,14 +158,14 @@
   "status": "proven",
   "what": "المتصفح أو Pillow مع RAQM يشكّلان النص الخام مباشرة؛ arabic-reshaper مع python-bidi فقط للعارض الذي لا يشكّل؛ ولا تشكّل مرتين. — The browser or Pillow+RAQM shape raw text; reshaper+bidi only for renderers that do not shape; never shape twice.",
   "when": "Drawing Arabic into images, charts, PDFs or video frames outside a browser.",
-  "how": "Check: PIL.features.check(\"raqm\") (True here, Pillow 12.3.0) → ImageFont.truetype(font, size, layout_engine=ImageFont.Layout.RAQM) and draw raw logical text with direction=\"rtl\". Without RAQM (or for matplotlib/reportlab): arabic_reshaper.reshape(t) then bidi.get_display(), with a font that has Presentation Forms-B (Amiri, Noto Naskh). Tested: reshaper gives U+FEB3 U+FEFC U+FEE1 for \"سلام\"; RAQM shaped \"سلام\" in Amiri at 82 px width. Full routing and failure modes: ARAB-06.",
+  "how": "Check: PIL.features.check(\"raqm\") (True here, Pillow 12.3.0) → ImageFont.truetype(font, size, layout_engine=ImageFont.Layout.RAQM) and draw raw logical text with direction=\"rtl\". matplotlib 3.11 also bundles libraqm (check matplotlib.ft2font.__libraqm_version__): pass raw text there too; adding reshaper+bidi on top reverses it (proofs/general-data, mpl_arabic_modes.png). Only for reportlab, or a Pillow/matplotlib build without raqm: arabic_reshaper.reshape(t) then bidi.get_display(), with a font that has Presentation Forms-B (Amiri, Noto Naskh). Tested: reshaper gives U+FEB3 U+FEFC U+FEE1 for \"سلام\"; RAQM shaped \"سلام\" in Amiri at 82 px width. Full routing and failure modes: ARAB-06.",
   "params": "",
   "install": "pip install arabic-reshaper python-bidi",
   "license": "arabic-reshaper MIT; python-bidi LGPL",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py",
-   "session-2026-10-16:general-arsenal.md#Full table"
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
   "styles": [],
   "tags": [
@@ -489,7 +489,13 @@
    "levantine",
    "لهجة",
    "عامية",
-   "فصحى"
+   "فصحى",
+   "translate",
+   "translation",
+   "ترجم",
+   "ترجمة",
+   "عقد",
+   "contract"
   ],
   "section": "اللهجات والسجل والنحو — Dialects, register and grammar",
   "source": "references/humanizer.md §7.2; owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5 (register choice, owner)"
@@ -547,7 +553,13 @@
    "number",
    "نحو",
    "مطابقة",
-   "العدد والمعدود"
+   "العدد والمعدود",
+   "translate",
+   "translation",
+   "ترجم",
+   "ترجمة",
+   "عقد",
+   "contract"
   ],
   "section": "اللهجات والسجل والنحو — Dialects, register and grammar",
   "source": "references/humanizer.md §7.6; references/powers/typography-arabic.md ARAB-76"

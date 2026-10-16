@@ -28,7 +28,7 @@ Any subset of keys is allowed; each key present must equal the live value from p
   python3 check_skill.py --strict       # warnings fail too
   python3 check_skill.py --json         # machine-readable report
   python3 check_skill.py --print-counts # the marker line for SKILL.md
-  python3 check_skill.py --evals        # routing evals: run powers.py suggest on each eval query
+  python3 check_skill.py --evals        # all checks, then routing evals (powers.py suggest per eval query)
 
 Python 3.8+ standard library only.
 """
@@ -53,6 +53,7 @@ BASE = REPO.parent  # proof paths are relative to this folder (/home/user)
 IN_REPO = (REPO / ".claude" / "skills" / SK.name).resolve() == SK.resolve() and (REPO / "tools").is_dir()
 SKIP_DIRS = {"dist", "__pycache__", "node_modules", ".git"}
 UPLOAD_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
+PACKAGE_ONLY_KEYS = {"claude_ai_description"}  # stripped by package_skill.py
 BASE_KEYS = ("id", "family", "name_ar", "name_en", "status", "what", "how", "params", "install", "license",
              "proof", "styles", "tags")
 GENERAL_KEYS = BASE_KEYS + ("domain", "when", "section", "source")
@@ -65,6 +66,8 @@ MODEL_RE = re.compile(r"claude-(?:opus|sonnet|haiku|fable)[\w.-]*|\b(?:Opus|Sonn
 SECRET_RE = re.compile(r"sk-ant-[A-Za-z0-9_-]{20,}|sk-[A-Za-z0-9]{32,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}"
                        r"|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35}|xox[baprs]-[A-Za-z0-9-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 COUNT_KEYS = ("powers", "families", "domains", "styles", "watched") + P.STATUSES
+LEAK_RE = re.compile(r"/tmp/claude-\d+/|scratchpad/[^\s\"']*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+                     r"|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/scratchpad|session_[0-9A-Za-z]{20,}")
 TEXT_EXT = {".md", ".json", ".py", ".html", ".js", ".cjs", ".mjs", ".css", ".txt", ".sh", ".yml", ".yaml"}
 
 
@@ -131,6 +134,8 @@ def parse_frontmatter(text: str):
             continue
         if len(val) >= 2 and val[0] == val[-1] and val[0] in "\"'":
             val = val[1:-1]
+        elif val and (re.search(r":\s|\s#", val) or val[0] in "[{&*!|>'\"%@`"):
+            fm.setdefault("__unsafe__", []).append(key)
         fm[key] = val
         i += 1
     return fm, text[m.end():]
@@ -147,6 +152,9 @@ def check_frontmatter(r: Report):
     if fm is None:
         r.err("frontmatter", "SKILL.md has no YAML frontmatter between --- lines")
         return
+    for k in fm.pop("__unsafe__", []):
+        r.err("frontmatter", f"{k}: unquoted value contains ': ' or ' #' or starts with a YAML indicator; "
+                             "a real YAML loader rejects it — quote the value or use a > block")
     name, desc = fm.get("name", ""), fm.get("description", "")
     if not name:
         r.err("frontmatter", "name is missing")
@@ -169,8 +177,12 @@ def check_frontmatter(r: Report):
         if re.match(r"^\s*(I|I'm|We|You|Your)\b", desc) or re.search(r"\b(I can|I will|I'm|my skills)\b", desc):
             r.warn("frontmatter", "description should be written in the third person (no I / you openings)")
         if len(desc) > 200:
-            r.info("frontmatter", f"description is {len(desc)} chars; some upload screens show only the first ~200, so keep the triggers early")
-    extra = sorted(set(fm) - UPLOAD_KEYS)
+            r.info("frontmatter", f"description is {len(desc)} chars; claude.ai uploads use a short description — "
+                                  "package_skill.py writes the frontmatter `claude_ai_description` (≤200) into the package")
+    short = fm.get("claude_ai_description", "")
+    if short and len(short) > 200:
+        r.err("frontmatter", f"claude_ai_description is {len(short)} chars (max 200)")
+    extra = sorted(set(fm) - UPLOAD_KEYS - PACKAGE_ONLY_KEYS)
     if extra:
         r.warn("frontmatter", f"frontmatter keys {extra} are accepted by Claude Code but rejected by zip upload validators")
     if len(fm.get("compatibility", "")) > 500:
@@ -300,6 +312,28 @@ def check_proofs(r: Report, rows):
             if not path.exists():
                 level = r.err if why in ("skill", "repo") or f.stem not in BC.MOTION_STEMS else r.warn
                 level("proofs", f"{rec.get('id')}: proof path not found: {p}")
+    unbacked = []
+    for f, _i, rec in rows:
+        if rec.get("status") != "proven":
+            continue
+        ok = False
+        for p in rec.get("proof") or []:
+            if not isinstance(p, str):
+                continue
+            path, why = resolve_proof(p)
+            if why in ("skill", "repo") and path is not None and path.exists():
+                ok = True
+                break
+        if not ok:
+            unbacked.append((f.stem in BC.MOTION_STEMS, rec.get("id")))
+    if unbacked:
+        gen = [i for m, i in unbacked if not m]
+        mot = [i for m, i in unbacked if m]
+        for label, ids in (("general", gen), ("motion", mot)):
+            if ids:
+                r.warn("proofs", f"{len(ids)} {label} ✅ record(s) have no proof file under kosif-tool/ "
+                                 f"(session/owner/other-repo receipts only; not verifiable from this copy): "
+                                 + ", ".join(ids[:8]) + (" …" if len(ids) > 8 else ""))
     note = f"{checked} proof paths checked"
     if skipped:
         note += " · skipped " + ", ".join(f"{k} {v}" for k, v in skipped.most_common())
@@ -376,6 +410,9 @@ def check_secrets(r: Report):
         m = SECRET_RE.search(f.read_text(encoding="utf-8", errors="replace"))
         if m:
             r.err("secrets", f"{rel(f)} contains something that looks like a credential ({m.group(0)[:8]}…)")
+        m = LEAK_RE.search(f.read_text(encoding="utf-8", errors="replace"))
+        if m:
+            r.err("secrets", f"{rel(f)} leaks a session or scratchpad path ({m.group(0)[:24]}…); use a relative or <placeholder> path")
 
 
 # ------------------------------------------------------------------ chapters & counts
@@ -476,6 +513,9 @@ def check_evals(r: Report):
 
 
 def run_evals(min_pass: float, as_json: bool) -> int:
+    if not (SK / "evals" / "evals.json").is_file():
+        print("routing evals: evals/evals.json is not in this copy (packages leave it out) — skipped")
+        return 0
     cases = load_evals()
     powers, styles = P.load_powers(), P.load_styles()
     prefixes = {P.prefix_of(p) for p in powers}
@@ -498,6 +538,10 @@ def run_evals(min_pass: float, as_json: bool) -> int:
             fails = []
             if not any(w in top for w in want):
                 fails.append(f"none of {want} in top {k}")
+            need = [x.upper() for x in rt.get("expect_all", [])]
+            miss = [w for w in need if w not in top]
+            if miss:
+                fails.append(f"{miss} missing from top {k} (expect_all)")
             dom = rt.get("expect_domain")
             if dom and dom not in [p.get("domain") for p in picks[:3]]:
                 fails.append(f"domain {dom} not in top 3")
@@ -528,15 +572,13 @@ def main(argv=None) -> int:
     ap.add_argument("--strict", action="store_true", help="warnings also fail")
     ap.add_argument("--json", action="store_true", help="JSON report")
     ap.add_argument("--print-counts", action="store_true", help="print the counts marker for SKILL.md and exit")
-    ap.add_argument("--evals", action="store_true", help="run the routing evals instead of the checks")
+    ap.add_argument("--evals", action="store_true", help="run all checks AND the routing evals (both must pass)")
     ap.add_argument("--min-pass", type=float, default=0.8, help="routing pass rate needed with --evals (default 0.8)")
     ap.add_argument("-v", "--verbose", action="store_true", help="also print info lines")
     a = ap.parse_args(argv)
     if a.print_counts:
         print(marker_line(live_counts()))
         return 0
-    if a.evals:
-        return run_evals(a.min_pass, a.json)
     r = Report()
     check_frontmatter(r)
     rows = load_records(r)
@@ -555,16 +597,26 @@ def main(argv=None) -> int:
         print(json.dumps({"ok": not failed, "errors": errors, "warnings": warns, "checks": list(r.checks),
                           "items": [{"level": lv, "check": c, "message": m} for lv, c, m in r.items]},
                          ensure_ascii=False, indent=1))
+        if a.evals:
+            return max(1 if failed else 0, run_evals(a.min_pass, a.json))
         return 1 if failed else 0
     for lv, c, m in r.items:
         if lv == "info" and not a.verbose:
             continue
         print(f"{lv.upper():<5} [{c}] {m}")
     print(f"check_skill: {len(r.checks)} checks · {errors} error(s) · {warns} warning(s) → {'FAIL' if failed else 'OK'}")
+    if a.evals:
+        print()
+        return max(1 if failed else 0, run_evals(a.min_pass, a.json))
     return 1 if failed else 0
 
 
 if __name__ == "__main__":
+    for _s in (sys.stdout, sys.stderr):
+        try:
+            _s.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
     try:
         import signal
         signal.signal(signal.SIGPIPE, signal.SIG_DFL)

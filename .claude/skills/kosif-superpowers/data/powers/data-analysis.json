@@ -6,7 +6,7 @@
   "name_ar": "تحليل الجداول بـ pandas",
   "name_en": "pandas groupby / pivot analysis",
   "status": "proven",
-  "what": "أجمّع وألخّص وأدوّر الجداول (groupby وpivot_table) على ملفات CSV أو Excel. — Group, summarise and pivot tabular data from CSV/Excel with pandas.",
+  "what": "اجمع ولخّص وأعِد تشكيل الجداول (groupby وpivot_table) على ملفات CSV أو Excel. — Group, summarise and pivot tabular data from CSV/Excel with pandas.",
   "when": "any table question: totals per group, shares, top-N, month-by-channel pivots; user uploads a CSV/XLSX",
   "how": "pd.read_csv(path, encoding='utf-8-sig') -> df.groupby(key, sort=False)[cols].sum().sort_values(...) ; df.pivot_table(index, columns, values, aggfunc='sum'). Check shape against expectations (proof: 180 rows, pivot 12x3). pandas 3.x is current: check the installed version before you write code from memory.",
   "params": "encoding utf-8-sig for Arabic CSVs from Excel; keep money as integer minor units",
@@ -25,7 +25,15 @@
    "csv",
    "جداول",
    "تحليل بيانات",
-   "تجميع"
+   "تجميع",
+   "sales",
+   "sales report",
+   "مبيعات",
+   "المبيعات",
+   "حلل",
+   "تحليل",
+   "تقرير",
+   "report"
   ],
   "section": "الجداول والاستعلام — Tables & SQL",
   "source": "proofs/general-data/make_data.py"
@@ -37,7 +45,7 @@
   "name_ar": "SQL مباشرة على ملفات CSV بـ DuckDB",
   "name_en": "DuckDB SQL straight on CSV/Parquet",
   "status": "proven",
-  "what": "أكتب SQL كامل (CTE ودوال نافذة) على ملف CSV أو Parquet دون تحميله أو إنشاء قاعدة. — Run full SQL (CTEs, window functions) over CSV/Parquet files in-process, no server, no load step.",
+  "what": "اكتب SQL كاملًا (CTE ودوال نافذة) على ملف CSV أو Parquet دون تحميله أو إنشاء قاعدة. — Run full SQL (CTEs, window functions) over CSV/Parquet files in-process, no server, no load step.",
   "when": "joins, window functions (LAG, RANK, running totals), month-over-month, files bigger than comfortable pandas memory",
   "how": "con=duckdb.connect(); con.sql(\"WITH m AS (SELECT month, region, SUM(revenue) rev FROM read_csv('f.csv', header=true) GROUP BY 1,2) SELECT *, rev-LAG(rev) OVER (PARTITION BY region ORDER BY month) mom, RANK() OVER (PARTITION BY month ORDER BY rev DESC) rk FROM m\").df(). Proof ran a CTE + LAG + RANK + NULLIF query on the raw CSV in 0.05 s.",
   "params": "explicit column lists; NULLIF(x,0) guards; ORDER BY inside every window",
@@ -68,7 +76,7 @@
   "name_ar": "تصدير Parquet وقراءته",
   "name_en": "Parquet export and read-back",
   "status": "proven",
-  "what": "أحوّل CSV إلى Parquet مضغوط بأنواع أعمدة ثابتة وأتحقق من عدد الصفوف بعد القراءة. — Convert CSV to typed, compressed Parquet and verify the row count on read-back.",
+  "what": "حوّل CSV إلى Parquet مضغوط بأنواع أعمدة ثابتة، وتحقق من عدد الصفوف بعد القراءة. — Convert CSV to typed, compressed Parquet and verify the row count on read-back.",
   "when": "handing data to another tool or session; repeated queries on the same data; keeping types stable",
   "how": "duckdb: COPY (SELECT cols FROM read_csv('f.csv', header=true)) TO 'f.parquet' (FORMAT parquet); then SELECT COUNT(*) FROM 'f.parquet'. pyarrow alternative: pq.write_table / pq.read_table. Proof: 180 rows -> 3,590 B -> 180 rows.",
   "params": "",
@@ -104,7 +112,7 @@
   "install": "pip install polars",
   "license": "MIT",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -124,7 +132,7 @@
   "name_ar": "ملفات CSV عربية تفتح صحيحة في Excel",
   "name_en": "Arabic-safe CSV (utf-8-sig)",
   "status": "proven",
-  "what": "أكتب CSV بترميز UTF-8 مع BOM حتى يعرض Excel الحروف العربية، وأقرؤه بنفس الترميز. — Write CSV as UTF-8 with BOM so Excel shows Arabic, and read it back with the same codec.",
+  "what": "اكتب CSV بترميز UTF-8 مع BOM حتى يعرض Excel الحروف العربية، واقرأه بالترميز نفسه. — Write CSV as UTF-8 with BOM so Excel shows Arabic, and read it back with the same codec.",
   "when": "any CSV with Arabic headers or values that a person will open in Excel",
   "how": "open(p,'w',newline='',encoding='utf-8-sig') + csv.DictWriter; read with encoding='utf-8-sig' (otherwise the first header gets a \\ufeff prefix). Proof wrote and re-read 180 Arabic rows; Excel itself was not opened.",
   "params": "",
@@ -153,7 +161,7 @@
   "name_ar": "حل رياضي دقيق بـ sympy",
   "name_en": "Exact symbolic solving with sympy",
   "status": "proven",
-  "what": "أحل المعادلات والاشتقاق والتكامل حلًا رمزيًا دقيقًا بدل الحساب الذهني. — Solve equations, derivatives and integrals exactly instead of doing mental arithmetic.",
+  "what": "حُلّ المعادلات والاشتقاق والتكامل حلًا رمزيًا دقيقًا بدل الحساب الذهني. — Solve equations, derivatives and integrals exactly instead of doing mental arithmetic.",
   "when": "break-even, optimum price, closed-form answers, checking a numeric optimiser, any 'exact' number",
   "how": "Q,p=sp.symbols('Q p',positive=True); sp.solve(sp.Eq(50*Q-30*Q-120000,0),Q) -> [6000]; sp.solve(sp.diff((p-20)*(1000-10*p),p),p) -> [60] and diff twice = -20 < 0 confirms a maximum; sp.integrate(sp.exp(-x**2),(x,-sp.oo,sp.oo)) -> sqrt(pi).",
   "params": "",
@@ -183,7 +191,7 @@
   "name_ar": "اختبارات إحصائية وانحدار بـ scipy",
   "name_en": "scipy.stats regression and tests",
   "status": "proven",
-  "what": "أقيس الاتجاه (انحدار خطي) وأقارن مجموعتين باختبار Welch وأبلّغ الأثر والدلالة معًا. — Fit trends and compare groups (Welch t-test), reporting effect and significance together.",
+  "what": "قِس الاتجاه (انحدار خطي) وقارن مجموعتين باختبار Welch، وأبلغ عن الأثر والدلالة معًا. — Fit trends and compare groups (Welch t-test), reporting effect and significance together.",
   "when": "'is this growing?', 'is A different from B?', before claiming a difference in a report",
   "how": "r=stats.linregress(x,y) -> slope, r^2=r.rvalue**2; stats.ttest_ind(a,b,equal_var=False). Proof: slope +8,018/month, r^2 0.706; Welch t=3.60, p=2.2e-3 on synthetic data. Report the slope or difference with units, not just p.",
   "params": "Welch by default (unequal variances); n small -> say so",
@@ -219,7 +227,7 @@
   "install": "pip install statsmodels",
   "license": "BSD-3-Clause",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -239,7 +247,7 @@
   "name_ar": "محاكاة مونت كارلو للمخاطر",
   "name_en": "Seeded Monte Carlo risk check",
   "status": "proven",
-  "what": "أحوّل الافتراضات غير المؤكدة إلى توزيعات وأحسب احتمال الخسارة والنسب المئوية بدل رقم واحد. — Turn uncertain assumptions into distributions and report P(loss) and percentiles instead of one point estimate.",
+  "what": "حوّل الافتراضات غير المؤكدة إلى توزيعات، واحسب احتمال الخسارة والنسب المئوية بدل رقم واحد. — Turn uncertain assumptions into distributions and report P(loss) and percentiles instead of one point estimate.",
   "when": "plans, budgets and forecasts that rest on guessed inputs; 'how risky is this?'",
   "how": "rng=np.random.default_rng(seed); draw demand ~N, price ~triangular, cost ~U (100k draws); profit=units*(price-cost)-fixed; report (profit<0).mean() and np.percentile(profit,[5,50,95]). Proof: P(loss)=0.356, P5 -33,252, P50 10,570, P95 61,457.",
   "params": "N=100,000, fixed seed, state the distributions in the output",
@@ -328,7 +336,7 @@
   "name_ar": "فحص ألوان الرسم آليًا",
   "name_en": "Validate chart colours with the dataviz checker",
   "status": "proven",
-  "what": "أشغّل مدقق ألوان مهارة dataviz (التباين، شريط الإضاءة، عمى الألوان) بدل الحكم بالعين. — Run the dataviz skill's palette validator (contrast, lightness band, colour-blind separation) instead of eyeballing.",
+  "what": "شغّل مدقق ألوان مهارة dataviz (التباين، شريط الإضاءة، عمى الألوان) بدل الحكم بالعين. — Run the dataviz skill's palette validator (contrast, lightness band, colour-blind separation) instead of eyeballing.",
   "when": "any chart with colour; always before multi-series categorical palettes",
   "how": "Load the dataviz skill if the host lists it, then `node <skill>/scripts/validate_palette.js \"#hex,#hex\" --mode light` and again `--mode dark`. Fix every FAIL. Proof: #2a78d6 (light) and #3987e5 (dark) PASS all checks.",
   "params": "CVD dE >= 8 target; contrast >= 3:1 on surface; max 3 series for scatter-like forms",
@@ -363,7 +371,7 @@
   "install": "pip install plotly",
   "license": "MIT",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -389,7 +397,7 @@
   "install": "pip install altair",
   "license": "BSD-3-Clause",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -415,7 +423,7 @@
   "install": "pip install seaborn",
   "license": "BSD-3-Clause",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -441,7 +449,7 @@
   "install": "pip install scikit-learn",
   "license": "BSD-3-Clause",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -469,7 +477,7 @@
   "install": "pip install xgboost lightgbm",
   "license": "Apache-2.0 / MIT (lightgbm's PyPI field is blank; upstream is MIT)",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -488,7 +496,7 @@
   "name_ar": "برمجة خطية لمزيج المنتجات",
   "name_en": "Linear programming with scipy/HiGHS",
   "status": "proven",
-  "what": "أحسب التوليفة المثلى تحت القيود بمحلّل HiGHS وأتحقق من الرأس بحل دقيق. — Find the optimal mix under constraints with HiGHS and confirm the vertex exactly.",
+  "what": "احسب التوليفة المثلى تحت القيود بمحلّل HiGHS، وتحقق من الرأس بحل دقيق. — Find the optimal mix under constraints with HiGHS and confirm the vertex exactly.",
   "when": "allocation, product mix, schedules, budgets with limits",
   "how": "optimize.linprog(c=[-40,-30], A_ub=[[1,1],[2,1]], b_ub=[40,60], bounds=[(0,None)]*2, method='highs') (negate to maximise) -> x=y=20, profit 1,400; confirm with sympy.solve on the two binding constraints.",
   "params": "",
@@ -518,12 +526,12 @@
   "status": "proven",
   "what": "محللات Google للبرمجة الخطية والصحيحة والقيود والمسارات. — Google's solvers for LP, MIP, constraint programming and routing.",
   "when": "integer decisions, scheduling, vehicle routing, assignment",
-  "how": "pywraplp.Solver.CreateSolver('GLOP') for LP, 'SCIP'/'CBC' for MIP; cp_model.CpModel() for CP-SAT. The arsenal GLOP run maximised 3x on [0,10] to 10.0.",
+  "how": "pywraplp.Solver.CreateSolver('GLOP') for LP, 'SCIP'/'CBC' for MIP; cp_model.CpModel() for CP-SAT. The arsenal GLOP run maximised 3x on [0,10] to 10.0. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports \"HiGHS: Not Available\". Use separate processes or venvs.",
   "params": "",
   "install": "pip install ortools",
   "license": "Apache-2.0",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -546,12 +554,12 @@
   "status": "proven",
   "what": "الصيغة القديمة LpVariable وPULP_CBC_CMD تفشل في PuLP 4؛ المحلّل المتاح HiGHS. — The old LpVariable/PULP_CBC_CMD style fails in PuLP 4; the available solver is HiGHS.",
   "when": "any code you remember from PuLP 2.x/3.x",
-  "how": "x=m.add_variable('x',0,4); m.solve(pulp.HiGHS(msg=False)); pulp.listSolvers(onlyAvailable=True) -> ['HiGHS']. For robustness prefer OR-Tools.",
+  "how": "x=m.add_variable('x',0,4); m.solve(pulp.HiGHS(msg=False)); pulp.listSolvers(onlyAvailable=True) -> ['HiGHS']. If you need OR-Tools instead, run it in a separate process or venv. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports \"HiGHS: Not Available\". Use separate processes or venvs.",
   "params": "",
   "install": "pip install pulp",
   "license": "MIT",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -570,14 +578,14 @@
   "name_ar": "تحسين محدّب بـ cvxpy",
   "name_en": "Convex optimisation with cvxpy",
   "status": "proven",
-  "what": "أصوغ مسائل التحسين المحدّب كما تُكتب رياضيًا. — Write convex optimisation problems the way they look on paper.",
+  "what": "صُغ مسائل التحسين المحدّب كما تُكتب رياضيًا. — Write convex optimisation problems the way they look on paper.",
   "when": "portfolio weights, least squares with constraints, regularised fits",
   "how": "x=cp.Variable(); cp.Problem(cp.Minimize((x-2)**2)).solve() -> 2.0 (arsenal run).",
   "params": "",
   "install": "pip install cvxpy",
   "license": "Apache-2.0",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -596,14 +604,14 @@
   "name_ar": "حل قيود منطقية بـ z3",
   "name_en": "z3 SMT constraint solving",
   "status": "proven",
-  "what": "أثبت أو أجد حلولًا لقيود منطقية وعددية (ألغاز، جداول، تحقق). — Find or rule out solutions to logical/integer constraints (puzzles, rosters, verification).",
+  "what": "أثبِت قيودًا منطقية وعددية أو جد حلولًا لها (ألغاز، جداول، تحقق). — Find or rule out solutions to logical/integer constraints (puzzles, rosters, verification).",
   "when": "'is there any assignment that…', configuration checks, puzzles",
   "how": "a,b=z3.Ints('a b'); s=z3.Solver(); s.add(a+b==10,a-b==4); s.check(); s.model() -> a=7,b=3 (arsenal run). unsat is itself a proof of impossibility.",
   "params": "",
   "install": "pip install z3-solver",
   "license": "MIT",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -631,7 +639,7 @@
   "install": "pip install networkx",
   "license": "BSD-3-Clause",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -658,7 +666,7 @@
   "install": "pip install geopandas shapely pyproj",
   "license": "BSD-3-Clause / MIT",
   "proof": [
-   "session-2026-10-16:general-arsenal.md#full-table"
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
   "styles": [],
   "tags": [
@@ -720,7 +728,12 @@
    "freeze numbers",
    "مطابقة",
    "أرقام دقيقة",
-   "تحقق"
+   "تحقق",
+   "sales",
+   "report",
+   "مبيعات",
+   "تقرير",
+   "حلل"
   ],
   "section": "انضباط الأرقام — Number discipline",
   "source": "owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words); implemented in proofs/general-data/make_data.py"
@@ -758,7 +771,7 @@
   "name_ar": "بيانات اختبار معلنة ومبذورة",
   "name_en": "Seeded, labelled synthetic data",
   "status": "proven",
-  "what": "أولّد بيانات تجريبية ببذرة ثابتة وأكتب «اصطناعية» على كل مخرج؛ مكتبة faker لا تضمن أسماء عربية. — Generate fixtures from a fixed seed and label every output as synthetic; faker's Arabic locales are unreliable.",
+  "what": "ولّد بيانات تجريبية ببذرة ثابتة واكتب «اصطناعية» على كل مخرج؛ مكتبة faker لا تضمن أسماء عربية. — Generate fixtures from a fixed seed and label every output as synthetic; faker's Arabic locales are unreliable.",
   "when": "demos, tests, proofs, examples without real data",
   "how": "np.random.default_rng(7); write the seed in the output. faker('ar_EG').name() returned a Latin name in the arsenal run, so hand-write Arabic name lists. Proof chart and dashboard both say 'synthetic (seed 7)'.",
   "params": "",
@@ -799,7 +812,10 @@
    "excel",
    "spreadsheet",
    "نموذج مالي",
-   "اكسل"
+   "اكسل",
+   "startup",
+   "financial",
+   "شركة ناشئة"
   ],
   "section": "انضباط الأرقام — Number discipline",
   "source": "owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words)"

@@ -1425,16 +1425,16 @@
   "domain": "motion",
   "name_ar": "تحليل أغنية لفيلم كلمات",
   "name_en": "Song analysis for a lyric film (bands, kicks, word times)",
-  "status": "proven",
+  "status": "documented",
   "what": "من ملف الأغنية استخرج أغلفة طاقة لكل إطار (باس، صوت المغني، حدة)، والضربات، والإيقاع، وأزمنة تقديرية للكلمات داخل نوافذ أسطر يعطيها المستخدم، مع وسم صادق لجودة التوقيت. — From the song file derive per-frame band envelopes (low, vocal, high), kicks, tempo and estimated word times inside user-given line windows, with an honest timing-quality label.",
   "when": "فيلم كلمات أغنية بلا تفريغ صوتي آلي متاح — a lyric film when no ASR alignment is available.",
-  "how": "Per video frame (hop = sr/fps) a Hann 2048 FFT: bands low 35–160 Hz, vocal 300–3200 Hz, high 4000–11000 Hz; RMS; spectral flux on log1p; normalise each by its 98th percentile, clip 1.2, light smoothing. Kicks = low-band rises > 0.18 that are local maxima (±2 frames). BPM by flux autocorrelation limited to 60–160 (beware half-time: a ~138 BPM feel read as 69.2). Word weights ∝ max(2, len(word)); span = 0.9 × line so the held last syllable keeps a tail; snap to vocal-band onsets within 0.22 s; min gap 0.12 s. Write words.json with timing_quality = 'line windows from user; edges from vocal energy; word times estimated (not ASR)'. The session distillation re-ran it: 56.92 s, bpm ~69.2, 25 kicks; line starts matched the shipped data except 2.033 vs 2.0 and 26.3 vs 26.333 — the edge refinement almost never moves a start. Prefer real alignment when audio-sync tools are available.",
+  "how": "Per video frame (hop = sr/fps) a Hann 2048 FFT: bands low 35–160 Hz, vocal 300–3200 Hz, high 4000–11000 Hz; RMS; spectral flux on log1p; normalise each by its 98th percentile, clip 1.2, light smoothing. Kicks = low-band rises > 0.18 that are local maxima (±2 frames). BPM by flux autocorrelation limited to 60–160 (beware half-time: a ~138 BPM feel read as 69.2). Word weights ∝ max(2, len(word)); span = 0.9 × line so the held last syllable keeps a tail; snap to vocal-band onsets within 0.22 s; min gap 0.12 s. Write words.json with timing_quality = 'line windows from user; edges from vocal energy; word times estimated (not ASR)'. The session distillation re-ran it: 56.92 s, bpm ~69.2, 25 kicks; line starts matched the shipped data except 2.033 vs 2.0 and 26.3 vs 26.333 — the edge refinement almost never moves a start. Prefer real alignment when audio-sync tools are available. Status note: the code is owner material that is not vendored in this skill; the numbers above are from one run on the owner's copy on 2026-10-16 and cannot be re-run from here, so this is 📄 documented, not ✅.",
   "params": "bands 35–160 / 300–3200 / 4000–11000 Hz; kick rise > 0.18; snap ≤ 0.22 s; gap ≥ 0.12 s",
   "install": "",
   "license": "owner (song audio and lyrics are third-party; not included)",
   "proof": [
-   "session-2026-10-16:motion-leftovers#4.1",
-   "owner-upload:film_project/film/analyze.py"
+   "owner-upload:film_project/film/analyze.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md"
   ],
   "styles": [],
   "tags": [

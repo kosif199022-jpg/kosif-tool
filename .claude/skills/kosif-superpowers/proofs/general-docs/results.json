@@ -1,5 +1,5 @@
 {
- "workdir": "/tmp/claude-0/-home-user-kosif-tool/2fb85c57-7eb4-555c-b065-6435300ab234/scratchpad/proofwork/docs",
+ "workdir": "<workdir>/docs",
  "checks": [
   {
    "name": "docx: write + read back Arabic heading/table",

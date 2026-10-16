@@ -82,10 +82,10 @@
 #### ARL-06 · تشكيل الحروف للعرض: محرك واحد فقط · Shaping Arabic for display: exactly one engine · ✅ مُثبت هنا / proven here
 - **ماذا / what:** المتصفح أو Pillow مع RAQM يشكّلان النص الخام مباشرة؛ arabic-reshaper مع python-bidi فقط للعارض الذي لا يشكّل؛ ولا تشكّل مرتين. — The browser or Pillow+RAQM shape raw text; reshaper+bidi only for renderers that do not shape; never shape twice.
 - **متى أستخدمها / when:** Drawing Arabic into images, charts, PDFs or video frames outside a browser.
-- **كيف / how:** Check: PIL.features.check("raqm") (True here, Pillow 12.3.0) → ImageFont.truetype(font, size, layout_engine=ImageFont.Layout.RAQM) and draw raw logical text with direction="rtl". Without RAQM (or for matplotlib/reportlab): arabic_reshaper.reshape(t) then bidi.get_display(), with a font that has Presentation Forms-B (Amiri, Noto Naskh). Tested: reshaper gives U+FEB3 U+FEFC U+FEE1 for "سلام"; RAQM shaped "سلام" in Amiri at 82 px width. Full routing and failure modes: ARAB-06.
+- **كيف / how:** Check: PIL.features.check("raqm") (True here, Pillow 12.3.0) → ImageFont.truetype(font, size, layout_engine=ImageFont.Layout.RAQM) and draw raw logical text with direction="rtl". matplotlib 3.11 also bundles libraqm (check matplotlib.ft2font.__libraqm_version__): pass raw text there too; adding reshaper+bidi on top reverses it (proofs/general-data, mpl_arabic_modes.png). Only for reportlab, or a Pillow/matplotlib build without raqm: arabic_reshaper.reshape(t) then bidi.get_display(), with a font that has Presentation Forms-B (Amiri, Noto Naskh). Tested: reshaper gives U+FEB3 U+FEFC U+FEE1 for "سلام"; RAQM shaped "سلام" in Amiri at 82 px width. Full routing and failure modes: ARAB-06.
 - **تثبيت / install:** `pip install arabic-reshaper python-bidi`
 - **الرخصة / license:** arabic-reshaper MIT; python-bidi LGPL
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py` · `session-2026-10-16:general-arsenal.md#Full table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** session run 2026-10-16; references/powers/typography-arabic.md ARAB-06
 
 #### ARL-07 · الاتجاه الثنائي في النصوص المختلطة · Bidi in mixed Arabic/Latin text · 📄 موصوف / documented only

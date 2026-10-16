@@ -174,7 +174,7 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/SYSTEM_REGISTRY.json idea 'consult the registry before declaring anything missing' (owner; rewritten) — distill see-core §6, §19A; claude-surfaces §5
 
-#### THINK-20 · سلّم صدق القدرة · Capability-truth ladder: exposure ≠ authorization ≠ execution ≠ verification · 📄 موصوف / documented only
+#### THINK-20 · سُلَّم حقيقة القدرة · Capability-truth ladder: exposure ≠ authorization ≠ execution ≠ verification · 📄 موصوف / documented only
 - **ماذا / what:** وجود الأداة ليس إذنًا، والإذن ليس تنفيذًا، والتنفيذ ليس تحققًا؛ أبلغ دائمًا عن أدنى حالة صحيحة. — Having a tool is not permission, permission is not action, action is not proof; always report the lowest true state.
 - **متى أستخدمها / when:** Every capability claim, every status line, every 'done'.
 - **كيف / how:** States: IDEA 💡 → DOCUMENTED 📄 → INSTALLABLE 📦 → NEEDS-KEY 🔑 → PRESENT (🟢 when code exists) → EXECUTED → VERIFIED ✅ → PROVEN-BEFORE (a dated lease; re-probe in a new container) · BLOCKED (reason + next step). Rules: a success message is transport evidence, not verification; a demo asset is not an engine; a plan is not a render; choosing a method is not executing it; a prompt cannot create a tool or a permission. Missing runtime → say 'plan only, not executed' and offer the install. **أرقام / params:** 8 states + BLOCKED
@@ -182,7 +182,7 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/SKILL.md §6 + OPERATIONAL_RUNBOOK vocabularies (owner; 5 vocabularies unified) and owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-agent-contracts/SKILL.md — distill see-core §5, see-atlas §7
 
-#### THINK-21 · سلّم اختيار السطح · Surface selection: rule → skill → MCP → local CLI → API · 📄 موصوف / documented only
+#### THINK-21 · سُلَّم اختيار السطح · Surface selection: rule → skill → MCP → local CLI → API · 📄 موصوف / documented only
 - **ماذا / what:** اختر المكان الصحيح لكل قدرة: قاعدة دائمة، أو فصل مهارة، أو موصل، أو سكربت محلي، أو واجهة برمجية بإذن. — Put each capability on the right surface: always-on rule, skill chapter, connector, local script, or an approved API call.
 - **متى أستخدمها / when:** Designing a workflow, adding a capability to the skill, or choosing how to do a repeated task.
 - **كيف / how:** Always-true invariant → one line in CLAUDE.md / SKILL.md. Occasional procedure → a skill chapter loaded on demand. Repeated stateful integration → an MCP server/connector, only after confirming it is connected. Deterministic transformation → a local script/CLI verified here (ffmpeg, python). Narrow authenticated or paid operation → a direct API call with explicit approval, a budget and a key supplied through a proper channel. No new runtime surface for fashion; a CLI wrapped by a skill often costs fewer tokens than an MCP wrapper. **أرقام / params:** 5 rungs

@@ -23,8 +23,8 @@ Probed on 2026-10-16: every package below resolves in its registry except rows m
 ## مُجرَّب هنا فعلًا / actually run here
 > هذه نتائج جلسات سابقة في بيئات venv، وليست مثبتة مسبقًا: في حاوية جديدة لم يكن `faster_whisper` ولا `librosa` قابلين للاستيراد (2026-10-16). ثبّت ثم تحقق قبل الادعاء. — These ran in earlier sessions' venvs and are not preinstalled; in a fresh container `faster_whisper` and `librosa` were not importable (2026-10-16). Install, then verify, before claiming.
 - **Piper TTS عربي** (صوت `ar_JO-kareem-medium` من huggingface) ← صوت عربي بلا مفتاح ✅
-- **faster-whisper small** بالعربية مع توقيت كل كلمة ✅ — مرّر مصفوفة numpy من `librosa.load(path, sr=16000)` لا مسار الملف. توقيته مبكر ~135 مللي ثانية؛ لمزامنة ≤100 مللي ثانية استخدم محاذاة Piper أو CTC.
-- librosa · soundfile · pyloudnorm ✅ · render_html + verify_video ✅ (أفلام الإثبات 13/13)
+- **faster-whisper small** بالعربية مع توقيت كل كلمة ✅ (جلسة سابقة 2026-10-16، غير مثبت الآن: `pip install faster-whisper`) — مرّر مصفوفة numpy من `librosa.load(path, sr=16000)` لا مسار الملف. توقيته مبكر ~135 مللي ثانية؛ لمزامنة ≤100 مللي ثانية استخدم محاذاة Piper أو CTC.
+- librosa · soundfile · pyloudnorm ✅ (جلسة سابقة، غير مثبتة الآن: `pip install librosa soundfile pyloudnorm`) · render_html + verify_video ✅ (أفلام الإثبات 13/13)
 
 ## مكتبات JavaScript (npm)
 | الحزمة / package | الإصدار / version | الرخصة / license |

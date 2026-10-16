@@ -23,7 +23,7 @@
 ## الجداول والاستعلام — Tables & SQL
 
 #### ANLY-01 · تحليل الجداول بـ pandas · pandas groupby / pivot analysis · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أجمّع وألخّص وأدوّر الجداول (groupby وpivot_table) على ملفات CSV أو Excel. — Group, summarise and pivot tabular data from CSV/Excel with pandas.
+- **ماذا / what:** اجمع ولخّص وأعِد تشكيل الجداول (groupby وpivot_table) على ملفات CSV أو Excel. — Group, summarise and pivot tabular data from CSV/Excel with pandas.
 - **متى أستخدمها / when:** any table question: totals per group, shares, top-N, month-by-channel pivots; user uploads a CSV/XLSX
 - **كيف / how:** pd.read_csv(path, encoding='utf-8-sig') -> df.groupby(key, sort=False)[cols].sum().sort_values(...) ; df.pivot_table(index, columns, values, aggfunc='sum'). Check shape against expectations (proof: 180 rows, pivot 12x3). pandas 3.x is current: check the installed version before you write code from memory. **أرقام / params:** encoding utf-8-sig for Arabic CSVs from Excel; keep money as integer minor units
 - **تثبيت / install:** `pip install pandas`
@@ -32,7 +32,7 @@
 - **المصدر / source:** proofs/general-data/make_data.py
 
 #### ANLY-02 · SQL مباشرة على ملفات CSV بـ DuckDB · DuckDB SQL straight on CSV/Parquet · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أكتب SQL كامل (CTE ودوال نافذة) على ملف CSV أو Parquet دون تحميله أو إنشاء قاعدة. — Run full SQL (CTEs, window functions) over CSV/Parquet files in-process, no server, no load step.
+- **ماذا / what:** اكتب SQL كاملًا (CTE ودوال نافذة) على ملف CSV أو Parquet دون تحميله أو إنشاء قاعدة. — Run full SQL (CTEs, window functions) over CSV/Parquet files in-process, no server, no load step.
 - **متى أستخدمها / when:** joins, window functions (LAG, RANK, running totals), month-over-month, files bigger than comfortable pandas memory
 - **كيف / how:** con=duckdb.connect(); con.sql("WITH m AS (SELECT month, region, SUM(revenue) rev FROM read_csv('f.csv', header=true) GROUP BY 1,2) SELECT *, rev-LAG(rev) OVER (PARTITION BY region ORDER BY month) mom, RANK() OVER (PARTITION BY month ORDER BY rev DESC) rk FROM m").df(). Proof ran a CTE + LAG + RANK + NULLIF query on the raw CSV in 0.05 s. **أرقام / params:** explicit column lists; NULLIF(x,0) guards; ORDER BY inside every window
 - **تثبيت / install:** `pip install duckdb`
@@ -41,7 +41,7 @@
 - **المصدر / source:** proofs/general-data/make_data.py
 
 #### ANLY-03 · تصدير Parquet وقراءته · Parquet export and read-back · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحوّل CSV إلى Parquet مضغوط بأنواع أعمدة ثابتة وأتحقق من عدد الصفوف بعد القراءة. — Convert CSV to typed, compressed Parquet and verify the row count on read-back.
+- **ماذا / what:** حوّل CSV إلى Parquet مضغوط بأنواع أعمدة ثابتة، وتحقق من عدد الصفوف بعد القراءة. — Convert CSV to typed, compressed Parquet and verify the row count on read-back.
 - **متى أستخدمها / when:** handing data to another tool or session; repeated queries on the same data; keeping types stable
 - **كيف / how:** duckdb: COPY (SELECT cols FROM read_csv('f.csv', header=true)) TO 'f.parquet' (FORMAT parquet); then SELECT COUNT(*) FROM 'f.parquet'. pyarrow alternative: pq.write_table / pq.read_table. Proof: 180 rows -> 3,590 B -> 180 rows.
 - **تثبيت / install:** `pip install duckdb (or pyarrow)`
@@ -55,11 +55,11 @@
 - **كيف / how:** pl.scan_csv(path).group_by('k').agg(pl.col('v').sum()).collect(). Before writing code from memory, check `python -c 'import polars;print(polars.__version__)'`: the 2026-10-16 snapshot had 2.0.0 and its API differs from 1.x.
 - **تثبيت / install:** `pip install polars`
 - **الرخصة / license:** MIT
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-05 · ملفات CSV عربية تفتح صحيحة في Excel · Arabic-safe CSV (utf-8-sig) · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أكتب CSV بترميز UTF-8 مع BOM حتى يعرض Excel الحروف العربية، وأقرؤه بنفس الترميز. — Write CSV as UTF-8 with BOM so Excel shows Arabic, and read it back with the same codec.
+- **ماذا / what:** اكتب CSV بترميز UTF-8 مع BOM حتى يعرض Excel الحروف العربية، واقرأه بالترميز نفسه. — Write CSV as UTF-8 with BOM so Excel shows Arabic, and read it back with the same codec.
 - **متى أستخدمها / when:** any CSV with Arabic headers or values that a person will open in Excel
 - **كيف / how:** open(p,'w',newline='',encoding='utf-8-sig') + csv.DictWriter; read with encoding='utf-8-sig' (otherwise the first header gets a \ufeff prefix). Proof wrote and re-read 180 Arabic rows; Excel itself was not opened.
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
@@ -68,7 +68,7 @@
 ## الحساب الدقيق والإحصاء — Exact maths & statistics
 
 #### ANLY-06 · حل رياضي دقيق بـ sympy · Exact symbolic solving with sympy · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحل المعادلات والاشتقاق والتكامل حلًا رمزيًا دقيقًا بدل الحساب الذهني. — Solve equations, derivatives and integrals exactly instead of doing mental arithmetic.
+- **ماذا / what:** حُلّ المعادلات والاشتقاق والتكامل حلًا رمزيًا دقيقًا بدل الحساب الذهني. — Solve equations, derivatives and integrals exactly instead of doing mental arithmetic.
 - **متى أستخدمها / when:** break-even, optimum price, closed-form answers, checking a numeric optimiser, any 'exact' number
 - **كيف / how:** Q,p=sp.symbols('Q p',positive=True); sp.solve(sp.Eq(50*Q-30*Q-120000,0),Q) -> [6000]; sp.solve(sp.diff((p-20)*(1000-10*p),p),p) -> [60] and diff twice = -20 < 0 confirms a maximum; sp.integrate(sp.exp(-x**2),(x,-sp.oo,sp.oo)) -> sqrt(pi).
 - **تثبيت / install:** `pip install sympy`
@@ -77,7 +77,7 @@
 - **المصدر / source:** proofs/general-data/make_data.py
 
 #### ANLY-07 · اختبارات إحصائية وانحدار بـ scipy · scipy.stats regression and tests · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أقيس الاتجاه (انحدار خطي) وأقارن مجموعتين باختبار Welch وأبلّغ الأثر والدلالة معًا. — Fit trends and compare groups (Welch t-test), reporting effect and significance together.
+- **ماذا / what:** قِس الاتجاه (انحدار خطي) وقارن مجموعتين باختبار Welch، وأبلغ عن الأثر والدلالة معًا. — Fit trends and compare groups (Welch t-test), reporting effect and significance together.
 - **متى أستخدمها / when:** 'is this growing?', 'is A different from B?', before claiming a difference in a report
 - **كيف / how:** r=stats.linregress(x,y) -> slope, r^2=r.rvalue**2; stats.ttest_ind(a,b,equal_var=False). Proof: slope +8,018/month, r^2 0.706; Welch t=3.60, p=2.2e-3 on synthetic data. Report the slope or difference with units, not just p. **أرقام / params:** Welch by default (unequal variances); n small -> say so
 - **تثبيت / install:** `pip install scipy`
@@ -91,11 +91,11 @@
 - **كيف / how:** sm.OLS(y, sm.add_constant(X)).fit().summary(). The arsenal smoke test recovered slope 2.0 on y=2x+1.
 - **تثبيت / install:** `pip install statsmodels`
 - **الرخصة / license:** BSD-3-Clause
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-09 · محاكاة مونت كارلو للمخاطر · Seeded Monte Carlo risk check · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحوّل الافتراضات غير المؤكدة إلى توزيعات وأحسب احتمال الخسارة والنسب المئوية بدل رقم واحد. — Turn uncertain assumptions into distributions and report P(loss) and percentiles instead of one point estimate.
+- **ماذا / what:** حوّل الافتراضات غير المؤكدة إلى توزيعات، واحسب احتمال الخسارة والنسب المئوية بدل رقم واحد. — Turn uncertain assumptions into distributions and report P(loss) and percentiles instead of one point estimate.
 - **متى أستخدمها / when:** plans, budgets and forecasts that rest on guessed inputs; 'how risky is this?'
 - **كيف / how:** rng=np.random.default_rng(seed); draw demand ~N, price ~triangular, cost ~U (100k draws); profit=units*(price-cost)-fixed; report (profit<0).mean() and np.percentile(profit,[5,50,95]). Proof: P(loss)=0.356, P5 -33,252, P50 10,570, P95 61,457. **أرقام / params:** N=100,000, fixed seed, state the distributions in the output
 - **تثبيت / install:** `pip install numpy`
@@ -122,7 +122,7 @@
 - **المصدر / source:** proofs/general-data/mpl_arabic_modes.png
 
 #### ANLY-12 · فحص ألوان الرسم آليًا · Validate chart colours with the dataviz checker · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أشغّل مدقق ألوان مهارة dataviz (التباين، شريط الإضاءة، عمى الألوان) بدل الحكم بالعين. — Run the dataviz skill's palette validator (contrast, lightness band, colour-blind separation) instead of eyeballing.
+- **ماذا / what:** شغّل مدقق ألوان مهارة dataviz (التباين، شريط الإضاءة، عمى الألوان) بدل الحكم بالعين. — Run the dataviz skill's palette validator (contrast, lightness band, colour-blind separation) instead of eyeballing.
 - **متى أستخدمها / when:** any chart with colour; always before multi-series categorical palettes
 - **كيف / how:** Load the dataviz skill if the host lists it, then `node <skill>/scripts/validate_palette.js "#hex,#hex" --mode light` and again `--mode dark`. Fix every FAIL. Proof: #2a78d6 (light) and #3987e5 (dark) PASS all checks. **أرقام / params:** CVD dE >= 8 target; contrast >= 3:1 on surface; max 3 series for scatter-like forms
 - **الرخصة / license:** host skill
@@ -135,7 +135,7 @@
 - **كيف / how:** px.bar(df,x,y).write_html('c.html', include_plotlyjs='cdn') to avoid inlining the library. The arsenal run inlined it and got 4.8 MB; the 'cdn' variant was not timed. PNG export needs kaleido + Chrome.
 - **تثبيت / install:** `pip install plotly`
 - **الرخصة / license:** MIT
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-14 · مواصفات Vega-Lite بـ altair · altair / Vega-Lite chart specs · ✅ مُثبت هنا / proven here
@@ -144,7 +144,7 @@
 - **كيف / how:** alt.Chart(df).mark_bar().encode(x='k', y='v').to_json(). The arsenal run produced the JSON.
 - **تثبيت / install:** `pip install altair`
 - **الرخصة / license:** BSD-3-Clause
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-15 · رسوم إحصائية بـ seaborn · seaborn statistical plots · ✅ مُثبت هنا / proven here
@@ -153,7 +153,7 @@
 - **كيف / how:** sns.histplot(data); sns.boxplot(x=,y=,data=). Then apply the same Arabic/font rules as matplotlib.
 - **تثبيت / install:** `pip install seaborn`
 - **الرخصة / license:** BSD-3-Clause
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 ## التعلم الآلي والتحسين — ML & optimisation
@@ -164,7 +164,7 @@
 - **كيف / how:** Pipeline([('scale',StandardScaler()),('m',RandomForestClassifier(random_state=0))]); evaluate with cross_val_score, never with the training score. The arsenal smoke test fitted iris; its training score of 1.0 shows the API works and says nothing about accuracy.
 - **تثبيت / install:** `pip install scikit-learn`
 - **الرخصة / license:** BSD-3-Clause
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-17 · تعزيز متدرّج XGBoost وLightGBM · Gradient boosting (XGBoost, LightGBM) · ✅ مُثبت هنا / proven here
@@ -173,11 +173,11 @@
 - **كيف / how:** xgb.XGBRegressor(n_estimators=...).fit(X,y); lgb.LGBMRegressor(verbose=-1). Use early stopping on a validation split. Both ran fit/predict in the arsenal snapshot.
 - **تثبيت / install:** `pip install xgboost lightgbm`
 - **الرخصة / license:** Apache-2.0 / MIT (lightgbm's PyPI field is blank; upstream is MIT)
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-18 · برمجة خطية لمزيج المنتجات · Linear programming with scipy/HiGHS · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أحسب التوليفة المثلى تحت القيود بمحلّل HiGHS وأتحقق من الرأس بحل دقيق. — Find the optimal mix under constraints with HiGHS and confirm the vertex exactly.
+- **ماذا / what:** احسب التوليفة المثلى تحت القيود بمحلّل HiGHS، وتحقق من الرأس بحل دقيق. — Find the optimal mix under constraints with HiGHS and confirm the vertex exactly.
 - **متى أستخدمها / when:** allocation, product mix, schedules, budgets with limits
 - **كيف / how:** optimize.linprog(c=[-40,-30], A_ub=[[1,1],[2,1]], b_ub=[40,60], bounds=[(0,None)]*2, method='highs') (negate to maximise) -> x=y=20, profit 1,400; confirm with sympy.solve on the two binding constraints.
 - **تثبيت / install:** `pip install scipy`
@@ -188,37 +188,37 @@
 #### ANLY-19 · OR-Tools للجدولة والمسارات · OR-Tools (LP/MIP/CP-SAT/routing) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** محللات Google للبرمجة الخطية والصحيحة والقيود والمسارات. — Google's solvers for LP, MIP, constraint programming and routing.
 - **متى أستخدمها / when:** integer decisions, scheduling, vehicle routing, assignment
-- **كيف / how:** pywraplp.Solver.CreateSolver('GLOP') for LP, 'SCIP'/'CBC' for MIP; cp_model.CpModel() for CP-SAT. The arsenal GLOP run maximised 3x on [0,10] to 10.0.
+- **كيف / how:** pywraplp.Solver.CreateSolver('GLOP') for LP, 'SCIP'/'CBC' for MIP; cp_model.CpModel() for CP-SAT. The arsenal GLOP run maximised 3x on [0,10] to 10.0. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 - **تثبيت / install:** `pip install ortools`
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-20 · تغيّر واجهة PuLP 4.0 · PuLP 4.0 API change · ✅ مُثبت هنا / proven here
 - **ماذا / what:** الصيغة القديمة LpVariable وPULP_CBC_CMD تفشل في PuLP 4؛ المحلّل المتاح HiGHS. — The old LpVariable/PULP_CBC_CMD style fails in PuLP 4; the available solver is HiGHS.
 - **متى أستخدمها / when:** any code you remember from PuLP 2.x/3.x
-- **كيف / how:** x=m.add_variable('x',0,4); m.solve(pulp.HiGHS(msg=False)); pulp.listSolvers(onlyAvailable=True) -> ['HiGHS']. For robustness prefer OR-Tools.
+- **كيف / how:** x=m.add_variable('x',0,4); m.solve(pulp.HiGHS(msg=False)); pulp.listSolvers(onlyAvailable=True) -> ['HiGHS']. If you need OR-Tools instead, run it in a separate process or venv. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 - **تثبيت / install:** `pip install pulp`
 - **الرخصة / license:** MIT
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-21 · تحسين محدّب بـ cvxpy · Convex optimisation with cvxpy · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أصوغ مسائل التحسين المحدّب كما تُكتب رياضيًا. — Write convex optimisation problems the way they look on paper.
+- **ماذا / what:** صُغ مسائل التحسين المحدّب كما تُكتب رياضيًا. — Write convex optimisation problems the way they look on paper.
 - **متى أستخدمها / when:** portfolio weights, least squares with constraints, regularised fits
 - **كيف / how:** x=cp.Variable(); cp.Problem(cp.Minimize((x-2)**2)).solve() -> 2.0 (arsenal run).
 - **تثبيت / install:** `pip install cvxpy`
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-22 · حل قيود منطقية بـ z3 · z3 SMT constraint solving · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أثبت أو أجد حلولًا لقيود منطقية وعددية (ألغاز، جداول، تحقق). — Find or rule out solutions to logical/integer constraints (puzzles, rosters, verification).
+- **ماذا / what:** أثبِت قيودًا منطقية وعددية أو جد حلولًا لها (ألغاز، جداول، تحقق). — Find or rule out solutions to logical/integer constraints (puzzles, rosters, verification).
 - **متى أستخدمها / when:** 'is there any assignment that…', configuration checks, puzzles
 - **كيف / how:** a,b=z3.Ints('a b'); s=z3.Solver(); s.add(a+b==10,a-b==4); s.check(); s.model() -> a=7,b=3 (arsenal run). unsat is itself a proof of impossibility.
 - **تثبيت / install:** `pip install z3-solver`
 - **الرخصة / license:** MIT
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-23 · خوارزميات الرسوم البيانية بـ networkx · Graph algorithms with networkx · ✅ مُثبت هنا / proven here
@@ -227,7 +227,7 @@
 - **كيف / how:** nx.shortest_path(G,a,b); nx.pagerank(G); nx.community.louvain_communities(G). The arsenal run returned the shortest path on path_graph(5).
 - **تثبيت / install:** `pip install networkx`
 - **الرخصة / license:** BSD-3-Clause
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-24 · تحليل مكاني بـ geopandas · Spatial analysis (geopandas/shapely/pyproj) · ✅ مُثبت هنا / proven here
@@ -236,7 +236,7 @@
 - **كيف / how:** gdf.to_crs(3857) before measuring metres; Transformer.from_crs(4326,3857,always_xy=True). The arsenal run gave Cairo lon 31.2 -> x 3,473,168 m.
 - **تثبيت / install:** `pip install geopandas shapely pyproj`
 - **الرخصة / license:** BSD-3-Clause / MIT
-- **الدليل / proof:** `session-2026-10-16:general-arsenal.md#full-table`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
 
 #### ANLY-25 · تنبؤ الأعمال بـ prophet · Business forecasting with prophet · 📦 بأمر تثبيت / one install
@@ -265,7 +265,7 @@
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words)
 
 #### ANLY-28 · بيانات اختبار معلنة ومبذورة · Seeded, labelled synthetic data · ✅ مُثبت هنا / proven here
-- **ماذا / what:** أولّد بيانات تجريبية ببذرة ثابتة وأكتب «اصطناعية» على كل مخرج؛ مكتبة faker لا تضمن أسماء عربية. — Generate fixtures from a fixed seed and label every output as synthetic; faker's Arabic locales are unreliable.
+- **ماذا / what:** ولّد بيانات تجريبية ببذرة ثابتة واكتب «اصطناعية» على كل مخرج؛ مكتبة faker لا تضمن أسماء عربية. — Generate fixtures from a fixed seed and label every output as synthetic; faker's Arabic locales are unreliable.
 - **متى أستخدمها / when:** demos, tests, proofs, examples without real data
 - **كيف / how:** np.random.default_rng(7); write the seed in the output. faker('ar_EG').name() returned a Latin name in the arsenal run, so hand-write Arabic name lists. Proof chart and dashboard both say 'synthetic (seed 7)'.
 - **تثبيت / install:** `pip install numpy (faker optional)`

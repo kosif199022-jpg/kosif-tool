@@ -59,7 +59,7 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (one-question rule)
 
-#### PROMPT-05 · سلّم التقنيات: الأرخص الذي ينجح · Technique ladder L0–L7 · 📄 موصوف / documented only
+#### PROMPT-05 · سُلَّم التقنيات: الأرخص الذي ينجح · Technique ladder L0–L7 · 📄 موصوف / documented only
 - **ماذا / what:** ابدأ بتعليمة واضحة ولا تصعد إلى الأمثلة أو التقسيم أو الأدوات أو التقييم إلا حين يفشل اختبار. — Start with a clear instruction and climb to examples, decomposition, tools or evals only when a test fails.
 - **متى أستخدمها / when:** Choosing how much prompt machinery a task deserves.
 - **كيف / how:** L0 clear direct instruction → L1 reason and audience → L2 exact output spec (schema, structured outputs, template) → L3 1–5 diverse examples in tags → L4 tags around mixed content, long data first and the ask last → L5 decomposition or chain (draft → critique → revise) → L6 tools + runnable verification → L7 eval set and A/B. Never stack by default. Schema-valid output can still be false: check validity and correctness separately. **أرقام / params:** examples: 3–5 recommended, only wanted behaviour in them

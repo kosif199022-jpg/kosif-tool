@@ -8,17 +8,23 @@ Runs scripts/check_skill.py first and stops on errors (use --no-check to skip).
   python3 package_skill.py                     # → dist/kosif-superpowers.skill (dist/ is git-ignored)
   python3 package_skill.py --lite              # drop images/audio/video (keeps all text and fonts)
   python3 package_skill.py -o ~/out/           # another folder
-  python3 package_skill.py -o build/ks.zip     # exact file name (.zip or .skill)
+  python3 package_skill.py -o ~/out/ks.zip     # exact file name (.zip or .skill), outside the skill folder
   python3 package_skill.py --list              # show what would be packed, write nothing
 
 Excluded always: dist/, __pycache__/, *.pyc, .DS_Store, node_modules/, .git*, evals/ (dev-only;
-add --with-evals to keep them). The archive is deterministic: same files → same bytes.
+add --with-evals to keep them), *.skill/*.zip archives. The archive is deterministic: same files → same bytes.
+
+claude.ai limits (help article 12512198, checked 2026-10-16): name ≤64 chars, description ≤200 chars, the zip
+holds the skill folder as its root. The packaged SKILL.md therefore gets the frontmatter key
+`claude_ai_description` (≤200 chars) as its description; the long description stays in the repo for Claude Code.
+No zip size cap is documented there; if the upload refuses the file, try --lite.
 Python 3.8+ standard library only.
 """
 from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
 import zipfile
 from pathlib import Path
@@ -28,7 +34,8 @@ SK = HERE.parent
 NAME = SK.name
 EXCLUDE_DIRS = {"dist", "__pycache__", "node_modules", ".git"}
 EXCLUDE_FILES = {".DS_Store", "Thumbs.db", ".gitignore", ".gitattributes"}
-EXCLUDE_EXT = {".pyc", ".pyo"}
+EXCLUDE_EXT = {".pyc", ".pyo", ".skill", ".zip"}
+DESC_MAX = 200
 MEDIA_EXT = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif", ".mp4", ".webm", ".mov", ".mkv", ".wav", ".mp3",
              ".ogg", ".m4a", ".flac", ".aac"}
 FIXED_TIME = (1980, 1, 1, 0, 0, 0)
@@ -88,6 +95,32 @@ def run_checks() -> int:
     return check_skill.main([])
 
 
+def upload_skill_md(text: str):
+    """SKILL.md for claude.ai: description := claude_ai_description (≤200 chars). Returns (text, error)."""
+    m = re.match(r"^---\r?\n(.*?)\r?\n---\r?\n", text, re.S)
+    if not m:
+        return text, "SKILL.md has no frontmatter"
+    lines = m.group(1).splitlines()
+    short = next((ln.split(":", 1)[1].strip() for ln in lines if ln.startswith("claude_ai_description:")), "")
+    if len(short) >= 2 and short[0] == short[-1] and short[0] in "\"'":
+        short = short[1:-1]
+    if not short:
+        desc = next((ln.split(":", 1)[1].strip() for ln in lines if ln.startswith("description:")), "")
+        if len(desc) <= DESC_MAX:
+            return text, None
+        return text, f"description is {len(desc)} chars; claude.ai allows {DESC_MAX} — add claude_ai_description to the frontmatter"
+    if len(short) > DESC_MAX:
+        return text, f"claude_ai_description is {len(short)} chars (max {DESC_MAX})"
+    out = []
+    for ln in lines:
+        if ln.startswith("claude_ai_description:"):
+            continue
+        if ln.startswith("description:"):
+            ln = "description: " + short
+        out.append(ln)
+    return "---\n" + "\n".join(out) + "\n---\n" + text[m.end():], None
+
+
 def build(dest: Path, files) -> int:
     dest.parent.mkdir(parents=True, exist_ok=True)
     tmp = dest.with_name(dest.name + ".tmp")
@@ -96,6 +129,8 @@ def build(dest: Path, files) -> int:
         for relp in files:
             src = SK / relp
             data = src.read_bytes()
+            if relp.as_posix() == "SKILL.md":
+                data = upload_skill_md(data.decode("utf-8"))[0].encode("utf-8")
             total += len(data)
             info = zipfile.ZipInfo(f"{NAME}/{relp.as_posix()}", date_time=FIXED_TIME)
             info.compress_type = zipfile.ZIP_DEFLATED
@@ -145,6 +180,17 @@ def main(argv=None) -> int:
         print("package_skill: validation failed — fix the errors above or pass --no-check", file=sys.stderr)
         return 1
     dest = target_path(a.out, a.lite)
+    try:
+        inside = dest.resolve().relative_to(SK.resolve())
+    except ValueError:
+        inside = None
+    if inside is not None and inside.parts[0] != "dist":
+        print(f"package_skill: {dest} is inside the skill folder; write to dist/ or a folder outside it", file=sys.stderr)
+        return 1
+    _t, derr = upload_skill_md((SK / "SKILL.md").read_text(encoding="utf-8"))
+    if derr:
+        print(f"package_skill: {derr}", file=sys.stderr)
+        return 1
     raw = build(dest, files)
     problems = verify(dest)
     size = dest.stat().st_size
@@ -153,10 +199,22 @@ def main(argv=None) -> int:
     if skipped:
         print("  skipped: " + ", ".join(f"{k} {len(v)}" for k, v in skipped.items()))
     print(f"  upload: claude.ai → Customize → Skills → upload {dest.name} (rename to .zip if the picker asks for one)")
+    print(f"  packaged SKILL.md uses the short claude.ai description (≤{DESC_MAX} chars); no size cap is documented — "
+          "if the upload refuses the file, rebuild with --lite")
     for p in problems:
         print(f"  PROBLEM: {p}", file=sys.stderr)
     return 1 if problems else 0
 
 
 if __name__ == "__main__":
+    for _s in (sys.stdout, sys.stderr):
+        try:
+            _s.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
+    try:
+        import signal
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+    except (AttributeError, ValueError, ImportError):
+        pass
     sys.exit(main())

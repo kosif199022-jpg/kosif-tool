@@ -19,7 +19,7 @@ What this gives you: a dated capability card of the machine where the skill was 
 
 ## Capability card — بطاقة القدرات
 
-**Claude Code cloud session** · Ubuntu 24.04.5 LTS · 4 CPU · 15.7 GiB RAM · 22.3 GiB free disk · GPU: none · network: **full** · python 3.13.16 · node 22.22.0 · probe 1.7 s
+**Claude Code cloud session** · Ubuntu 24.04.5 LTS · 4 CPU · 15.7 GiB RAM · 22.1 GiB free disk · GPU: none · network: **full** · python 3.13.16 · node 22.22.0 · probe 2.0 s
 
 Legend: 🟢 present now (answered a version or import check) · 📦 one install command away (manager present and its registry reachable) · 🔑 needs a key, account or connector · ❌ not available here · ❔ unknown. The probe proves presence, not quality: ✅ stays reserved for powers with a real run and a proof path.
 
@@ -57,10 +57,14 @@ Legend: 🟢 present now (answered a version or import check) · 📦 one instal
 - 🟢 **git 2.43.0 + gh 2.89.0** → clone, branch, diff, PRs and CI logs (gh auth not checked) → `CODE AGENT`
 - 🟢 **compilers: gcc, clang, go, rustc, java** → build native tools from source when no package exists → `CODE`
 - 🟢 **open outbound network** → fetch docs, papers and pages from the shell (respect licenses and robots) → `WEB`
-- 📦 **pip / uv + pypi reachable** → any wheel library is one command away (python3 -m pip install); 26 📦 catalog powers name a pip command → `ANLY MEDIA DOC SYNC GEN`
+- 📦 **pip / uv + pypi reachable** → any wheel library is one command away (python3 -m pip install); 27 📦 catalog powers name a pip command → `ANLY MEDIA DOC SYNC GEN`
 - 📦 **npm + registry reachable** → Remotion, d3, three.js, lottie, Motion Canvas, mermaid-cli; 327 📦 catalog powers name an npm/npx command → `APP ENG 3D DATA UI`
 - 📦 **apt-get as root + mirror reachable** → system packages: tesseract, texlive, graphviz, blender, sox, fonts-noto; 2 📦 catalog powers name an apt/brew command → `MEDIA GRAPH 3D ARAB DOC`
 - 📦 **huggingface.co reachable (no GPU)** → download small model weights and datasets; CPU only, keep models small (whisper tiny/base) → `GEN MEDIA SYNC`
+- 🔑 **env name AWS_ACCESS_KEY_ID present** → AWS (value not read; it may be a proxy placeholder) → `CODE APP`
+- 🔑 **env name CLOUDSDK_AUTH_ACCESS_TOKEN present** → Google Cloud (value not read; it may be a proxy placeholder) → `CODE ANLY`
+- 🔑 **env name GH_TOKEN present** → GitHub (value not read; it may be a proxy placeholder) → `CODE AGENT`
+- 🔑 **env name GITHUB_TOKEN present** → GitHub (value not read; it may be a proxy placeholder) → `CODE AGENT`
 - ❔ **docker client only (daemon not reachable)** → isolated services and toolchains → `CODE APP`
 
 ### One-line fixes — إصلاحات بسطر واحد
@@ -80,28 +84,28 @@ Legend: 🟢 present now (answered a version or import check) · 📦 one instal
 ### Network — الشبكة
 
 Level **full**. Proxy env names: HTTPS_PROXY, https_proxy, NO_PROXY, no_proxy. CA bundle loaded from: SSL_CERT_FILE, REQUESTS_CA_BUNDLE, CURL_CA_BUNDLE (verification stays on).
-Agent proxy: enabled=True, covers every host=True, selective=False, preconfigured CLIs: bq, gcloud, gh, gsutil; recent relay failures: cdn-lfs.huggingface.co:443 (connect_rejected), www.gnu.org:443 (ws_closed_mid_exchange ×5). Rules: never disable TLS verification or unset the proxy; a 403/407/502 is a policy answer to report, not to route around; Node's built-in fetch needs NODE_USE_ENV_PROXY=1; details in /root/.ccr/README.md.
+Agent proxy: enabled=True, covers every host=True, selective=False, preconfigured CLIs: bq, gcloud, gh, gsutil; recent relay failures: 2. Rules: never disable TLS verification or unset the proxy; a 403/407/502 is a policy answer to report, not to route around; Node's built-in fetch needs NODE_USE_ENV_PROXY=1; details in /root/.ccr/README.md.
 
 | Host | Role | Class | HTTP | ms |
 |---|---|---|---|---|
-| pypi.org | pip | ok | 200 | 39 |
-| registry.npmjs.org | npm | ok | 200 | 50 |
-| github.com | git | reachable | 400 | 288 |
-| api.github.com | git | reachable | 400 | 288 |
-| huggingface.co | models | ok | 200 | 697 |
-| cdn.jsdelivr.net | cdn | ok | 200 | 671 |
-| fonts.googleapis.com | fonts | ok | 200 | 457 |
+| pypi.org | pip | ok | 200 | 51 |
+| registry.npmjs.org | npm | ok | 200 | 56 |
+| github.com | git | reachable | 400 | 303 |
+| api.github.com | git | reachable | 400 | 318 |
+| huggingface.co | models | ok | 200 | 454 |
+| cdn.jsdelivr.net | cdn | ok | 200 | 695 |
+| fonts.googleapis.com | fonts | ok | 200 | 324 |
 | api.anthropic.com | claude-api | reachable | 404 | 44 |
-| example.com | generic | ok | 200 | 406 |
-| en.wikipedia.org | generic | ok | 200 | 579 |
-| archive.ubuntu.com | apt | ok | 200 | 116 |
+| example.com | generic | ok | 200 | 425 |
+| en.wikipedia.org | generic | ok | 200 | 567 |
+| archive.ubuntu.com | apt | ok | 200 | 206 |
 
-Classes: ok = 2xx/3xx · reachable = the host answered 4xx/5xx (normal for bare roots) · blocked = proxy refused · offline = DNS/timeout · tls-error = certificate not trusted.
+Classes: ok = 2xx/3xx · reachable = the host answered 4xx/5xx (normal for bare roots) · blocked = proxy refused, or a 403/407/502/504 policy or relay answer · offline = DNS/timeout · tls-error = certificate not trusted.
 
 ### Machine & runtimes — الجهاز والبيئات
 
 - OS: Ubuntu 24.04.5 LTS (x86_64, kernel 6.18.44-fc-v139) · user: root · container markers: none
-- CPU 4 · RAM 15.7 GiB (14.9 GiB free) · disk free 22.3 GiB of 252.0 · temp write 157 MB/s · GPU: none (CPU rendering only)
+- CPU 4 · RAM 15.7 GiB (14.9 GiB free) · disk free 22.1 GiB of 252.0 · temp write 78 MB/s · GPU: none (CPU rendering only)
 - Versions: bun 1.4.2 · convert 6.9.12 · docker 29.8.2 · ffmpeg 6.1.1 · gcc 13.3.0 · gh 2.89.0 · git 2.43.0 · go 1.24.7 · java 21.0.12.1 · jq 1.7 · node 22.22.0 · npm 10.9.4 · pandoc 3.1.3 · pip 24.0 · playwright 1.56.1 · psql 16.15 · rustc 1.97.0 · soffice 24.2.7.2 · tesseract 5.3.4 · uv 0.11.32
 - Package managers: pip usable · npm usable · apt usable · brew absent
 - CLI tools by group: **pkg** apt-get · **cloud** bq, gcloud, gsutil · **dev** bun, cargo, clang, cmake, docker, g++, gcc, gh, git, go, java, make, node, npm, npx, perl, php, pip, pip3, pnpm, rg, ruby, rustc, uv, yarn · **image** convert, identify, tesseract · **misc** curl, fc-list, sudo, unzip, wget, zip · **video** ffmpeg, ffprobe · **data** jq, psql, redis-cli, redis-server, yq · **docs** libreoffice, pandoc, pdftoppm, pdftotext, soffice · **browser** playwright
@@ -123,6 +127,7 @@ Classes: ok = 2xx/3xx · reachable = the host answered 4xx/5xx (normal for bare 
 
 ### Credentials & connectors — المفاتيح والموصلات
 
+- Service credential env names present (values never read): AWS_ACCESS_KEY_ID, CLOUDSDK_AUTH_ACCESS_TOKEN, GH_TOKEN, GITHUB_TOKEN
 - MCP connectors, deferred tools and skills are invisible to this script: read your own tool list, load deferred tools with ToolSearch, and check the skills listing before deciding what you can do.
 
 ### Host evidence — دليل نوع المضيف

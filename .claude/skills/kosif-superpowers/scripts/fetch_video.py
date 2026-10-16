@@ -22,6 +22,7 @@ import json
 import os
 import shutil
 import subprocess
+import urllib.parse
 import sys
 from pathlib import Path
 
@@ -39,6 +40,27 @@ def find_ytdlp() -> list[str] | None:
 
 def sh(cmd: list[str], **kw) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, text=True, capture_output=True, **kw)
+
+
+QUALITY_ALIASES = {"4k": "2160", "2k": "1440", "uhd": "2160", "fhd": "1080", "hd": "720"}
+
+
+def norm_quality(q: str) -> str:
+    q = (q or "").strip().lower()
+    q = QUALITY_ALIASES.get(q, q)
+    if q.endswith("p"):
+        q = q[:-1]
+    if q in ("best", "audio") or q.isdigit():
+        return q
+    raise argparse.ArgumentTypeError(f"--quality must be best, audio, a height such as 1080 or 1080p, or 4k (got {q!r})")
+
+
+def is_url(u: str) -> bool:
+    try:
+        parts = urllib.parse.urlsplit(u)
+    except ValueError:
+        return False
+    return parts.scheme in ("http", "https") and bool(parts.netloc)
 
 
 def selector(quality: str) -> tuple[str, list[str]]:
@@ -73,7 +95,7 @@ def attempt(ytdlp, url, out_dir, fmt, extra, cookies, imp, connections, proxy):
         cmd += ["--impersonate", imp]
     if proxy:
         cmd += ["--proxy", proxy]
-    cmd.append(url)
+    cmd += ["--", url]  # "--" stops a URL that starts with "-" from being read as a yt-dlp option
     p = sh(cmd)
     paths = [l for l in p.stdout.splitlines() if l.strip() and Path(l.strip()).is_file()]
     return (paths[-1].strip() if p.returncode == 0 and paths else None), p.stderr[-600:]
@@ -151,7 +173,7 @@ def main(argv=None) -> int:
     ap.add_argument("urls", nargs="*")
     ap.add_argument("--urls", dest="urlfile", help="text file with one URL per line")
     ap.add_argument("-o", "--out", default="downloads")
-    ap.add_argument("--quality", default="1080", help="best | 2160 | 1080 | 720 | 480 | audio (default 1080)")
+    ap.add_argument("--quality", default="1080", type=norm_quality, help="best | 2160 | 1080 | 720 | 480 | audio (default 1080)")
     ap.add_argument("--cookies", help="Netscape-format cookies.txt exported from your own browser")
     ap.add_argument("--connections", type=int, default=8)
     ap.add_argument("--proxy")
@@ -170,6 +192,10 @@ def main(argv=None) -> int:
     urls = list(a.urls)
     if a.urlfile:
         urls += [l.strip() for l in Path(a.urlfile).read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
+    bad = [u for u in urls if not is_url(u)]
+    if bad:
+        print("skipping entries that are not http(s) URLs: " + ", ".join(repr(u[:60]) for u in bad), file=sys.stderr)
+        urls = [u for u in urls if is_url(u)]
     if not urls:
         ap.print_usage()
         return 2
