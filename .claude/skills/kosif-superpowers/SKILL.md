@@ -11,7 +11,8 @@ You have real motion-direction superpowers. This skill tells you exactly what ea
 
 ## ما تستطيعه بإيجاز / what you can do
 1. **تحوّل صوتًا عربيًا إلى فيلم متزامن:** تفريغ بكلمات وتوقيتات (faster-whisper)، كلمات عربية متصلة الحروف تدخل على موعد نطقها، لوحة ألوان وإضاءة، وتسليم بمستوى -14 LUFS. ✅ مُثبت: `proofs/arabic-voice-kinetic`.
-2. **تولّد الصوت نفسه:** صوت عربي بلا مفتاح (Piper) ومؤثرات وموسيقى مصنّعة بالكود. ✅
+2. **تحمّل فيديوهات من الروابط التي يرسلها المستخدم** وتدخلها في المونتاج (`scripts/fetch_video.py`). ✅
+2b. **تولّد الصوت نفسه:** صوت عربي بلا مفتاح (Piper) ومؤثرات وموسيقى مصنّعة بالكود. ✅
 3. **تصنع أي مظهر:** نيون متوهج (`proofs/neon-glow`)، فخامة زجاجية وذهب (`proofs/glass-luxury-logo`)، طيف يتفاعل مع الصوت (`proofs/audio-reactive-spectrum`)، وأكثر من 250 أسلوبًا رأيتَه في الأطلس.
 4. **تمنتج:** قص، 58 انتقالًا في ffmpeg، تلوين وLUTs، ترجمة كاريوكي عربية بـlibass، خفض الموسيقى تحت الصوت، قص الصمت، 9:16 ذكي.
 5. **تبني بأي محرك:** Canvas/HTML بدالة `seek(t)` حتمية (بلا تثبيت)، SVG+GSAP، Remotion، Three.js مع Bloom، HyperFrames، Manim، Blender بلا واجهة.
@@ -59,6 +60,7 @@ Stats now: 6,434 powers — ✅ 522 · 🟢 815 · 📦 1,784 · 🔑 205 · �
 
 ## مراجع أخرى / other references
 - [arsenal-libraries.md](references/arsenal-libraries.md) — كل مكتبة npm/pip قابلة للتثبيت هنا (فُحصت)، المثبت فعلًا، تنبيهات الرخص، والتوليفات الذهبية، وقواعد Remotion بالعربية.
+- [video-download.md](references/video-download.md) — **تحميل فيديوهات من أي رابط** بـ`scripts/fetch_video.py` (yt-dlp): قائمة روابط، جودة، صوت فقط، نسخة آمنة للمونتاج، كوكيز، وحدود هذه الحاوية. فصل القوى: [video-download](references/powers/video-download.md) (DL).
 - [styles-atlas.md](references/styles-atlas.md) — 288 أسلوبًا، 253 منها شوهد فيديوها فعلًا: ماذا يثبت كل واحد، ألوانه وتقنيته؛ و38 بريفًا تخالف الفيديو.
 - [external-skills.md](references/external-skills.md) — خلاصة مهارتي Higgsfield motion اللتين أرسلهما المالك (قانون القطع عند أقصى سرعة، التداخل 0.45، نظام الرموز).
 - [cinematic-director-pro.md](references/cinematic-director-pro.md) — خلاصة حزمة المالك KOSIF Cinematic Director PRO v5: الموجّه، 20 وصفة أسلوب، قاموس الحركة، أطلس 72 مكتبة، إيصالات ECC، أدواتها و28 اختبارًا أعيد تشغيلها هنا.
