@@ -1,0 +1,336 @@
+{
+  "schema": "kosif.community-sources.v1",
+  "note": "Readme + GitHub repository metadata inspected 2026-10-17. Source references only; no imported third-party code, no executable assumptions.",
+  "sources": [
+    {
+      "id": "SRC-01",
+      "repo": "Panniantong/Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "license": "MIT",
+      "domain": "research",
+      "idea_ar": "توصيل مصادر الويب الاجتماعي مع ترتيب الموصلات وفحص صحتها",
+      "signals": [
+        "social platform read search youtube reddit twitter xiaohongshu bilibili",
+        "بحث منصات اجتماعية يوتيوب ريديت تويتر"
+      ],
+      "caution": "OAuth/cookies require separate authorization; do not scrape private feeds",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-02",
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "license": "BSD-3-Clause",
+      "domain": "learning",
+      "idea_ar": "تصميم مناهج تعلم واختبارات تدرجية ومشاريع تطبيقية",
+      "signals": [
+        "coding curriculum course certification learn programming web development",
+        "منهج تعلم برمجة دروس اختبارات"
+      ],
+      "caution": "Curriculum content may have separate licensing",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-03",
+      "repo": "awesome-selfhosted/awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "license": "NOASSERTION",
+      "domain": "operations",
+      "idea_ar": "البحث عن بدائل استضافة ذاتية مع فحص الصيانة والترخيص",
+      "signals": [
+        "selfhost self-hosted private deployment alternative server hosting",
+        "استضافة ذاتية سيرفر بديل محلي"
+      ],
+      "caution": "Collection entries have independent licenses and security posture",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-04",
+      "repo": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "license": "MIT",
+      "domain": "engineering",
+      "idea_ar": "سير تخطيط وتصميم واختبارات وتطوير تدريجي للوكلاء البرمجيين",
+      "signals": [
+        "test driven development tdd plan subagent code review software skills",
+        "تطوير برمجي اختبارات قبل الكود مراجعة خطة"
+      ],
+      "caution": "Methods are reference guidance; no auto-run",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-05",
+      "repo": "trimstray/the-book-of-secret-knowledge",
+      "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+      "license": "MIT",
+      "domain": "operations",
+      "idea_ar": "دليل تشخيص الطرفية والشبكات ومراجع أمن تشغيلية",
+      "signals": [
+        "linux administration shell terminal troubleshoot network command-line debugging",
+        "لينكس طرفية اوامر شبكات تشخيص"
+      ],
+      "caution": "Some security techniques are dual-use; defensive only",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-06",
+      "repo": "codecrafters-io/build-your-own-x",
+      "url": "https://github.com/codecrafters-io/build-your-own-x",
+      "license": "NOASSERTION",
+      "domain": "learning",
+      "idea_ar": "فهم التقنيات من المبادئ الأولى ببناء نموذج مبسط أصيل",
+      "signals": [
+        "build your own compiler database operating system redis git framework from scratch",
+        "ابني من الصفر مترجم قاعدة بيانات نظام"
+      ],
+      "caution": "Curated tutorials have individual authors and licenses",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-07",
+      "repo": "openclaw/openclaw",
+      "url": "https://github.com/openclaw/openclaw",
+      "license": "MIT",
+      "domain": "agents",
+      "idea_ar": "بنية وكلاء محليين متعددَي القنوات مع عزل الصلاحيات والرسائل",
+      "signals": [
+        "local ai agent chat channels device assistant gateway integrations",
+        "وكيل محلي قنوات رسائل مساعد متعدد القنوات"
+      ],
+      "caution": "Device actions and messaging require consent and live executor",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-08",
+      "repo": "DietrichGebert/ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "license": "MIT",
+      "domain": "engineering",
+      "idea_ar": "مراجعة تستهدف أقل تغيير آمن وحذف التعقيد غير الضروري",
+      "signals": [
+        "minimal code review simplify refactor remove complexity lean software",
+        "تبسيط كود مراجعة اقل تعديل"
+      ],
+      "caution": "Review methodology is not proof of a fix",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-09",
+      "repo": "NousResearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "license": "MIT",
+      "domain": "agents",
+      "idea_ar": "ذاكرة مهام الوكيل والتحسن بالتغذية الراجعة والتحكم في الأدوات",
+      "signals": [
+        "agent memory persistent skill self improve autonomous assistant session",
+        "ذاكرة وكلاء تحسين ذاتي جلسات"
+      ],
+      "caution": "Untrusted skills and external API access require gating",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-10",
+      "repo": "f/prompts.chat",
+      "url": "https://github.com/f/prompts.chat",
+      "license": "NOASSERTION",
+      "domain": "prompts",
+      "idea_ar": "فهرسة القوالب وتقييم ملاءمة البرومبتات بدل نسخها آليًا",
+      "signals": [
+        "prompt template library prompt marketplace system instructions examples",
+        "مكتبة برومبتات قوالب تعليمات"
+      ],
+      "caution": "Prompt content and submitted material may have separate licenses",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-11",
+      "repo": "langchain-ai/langchain",
+      "url": "https://github.com/langchain-ai/langchain",
+      "license": "MIT",
+      "domain": "agents",
+      "idea_ar": "تركيب سلاسل أدوات وواجهات مزودين واستدعاءات منظمة",
+      "signals": [
+        "langchain chains tools model provider retrieval rag orchestration",
+        "سلسلة ادوات استرجاع RAG لانجتشين"
+      ],
+      "caution": "Version-specific APIs need current docs and verification",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-12",
+      "repo": "rasbt/LLMs-from-scratch",
+      "url": "https://github.com/rasbt/LLMs-from-scratch",
+      "license": "NOASSERTION",
+      "domain": "learning",
+      "idea_ar": "مرجع عملي لفهم تجزئة النص والانتباه والتدريب والنماذج",
+      "signals": [
+        "transformer attention tokenization pretraining fine tuning pytorch llm",
+        "ترانسفورمر انتباه توكن تدريب نماذج لغوية"
+      ],
+      "caution": "Book and examples may have different reuse rights",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-13",
+      "repo": "dair-ai/Prompt-Engineering-Guide",
+      "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+      "license": "MIT",
+      "domain": "prompts",
+      "idea_ar": "تحسين البرومبت والتقييم والتحقق من الاسترجاع والأمان",
+      "signals": [
+        "prompt engineering few shot rag context engineering evals instructions",
+        "هندسة البرومبت استرجاع تقييم"
+      ],
+      "caution": "Research examples are methods not measured improvements here",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-14",
+      "repo": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "license": "Apache-2.0",
+      "domain": "finance",
+      "idea_ar": "نظام أدوار محلل وباحث ومخاطر مع سجل قرار مالي قابل للتدقيق",
+      "signals": [
+        "trading agents market analyst researcher portfolio risk investment debate",
+        "وكلاء تداول اسواق مخاطر محفظة استثمار"
+      ],
+      "caution": "Financial examples are educational, not autonomous investment authorization",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-15",
+      "repo": "krahets/hello-algo",
+      "url": "https://github.com/krahets/hello-algo",
+      "license": "NOASSERTION",
+      "domain": "learning",
+      "idea_ar": "شرح الخوارزميات بالتصوير والاختبارات والأمثلة الصغيرة",
+      "signals": [
+        "algorithm visualization data structure complexity sorting graph",
+        "خوارزميات هياكل بيانات تصور فرز رسومات"
+      ],
+      "caution": "Illustrations and translations may have distinct attribution terms",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-16",
+      "repo": "GraphiteEditor/Graphite",
+      "url": "https://github.com/GraphiteEditor/Graphite",
+      "license": "Apache-2.0",
+      "domain": "creative",
+      "idea_ar": "تصميم رسوم متجهة إجرائية بعقد قابلة للتعديل",
+      "signals": [
+        "node based procedural vector graphics svg graphic design 2d",
+        "رسوم متجهة عقد تصميم جرافيك SVG"
+      ],
+      "caution": "Integration needs compatible runtime; do not copy branded assets",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-17",
+      "repo": "alyssaxuu/motionity",
+      "url": "https://github.com/alyssaxuu/motionity",
+      "license": "MIT",
+      "domain": "creative",
+      "idea_ar": "نمذجة تايم لاين الموشن والكَي فريم والأقنعة والمؤثرات",
+      "signals": [
+        "motion graphics editor keyframes timeline masking video animation",
+        "موشن جرافيك مفاتيح حركة تايملاين اقنعة"
+      ],
+      "caution": "Upstream last push is older; verify maintenance and dependencies",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-18",
+      "repo": "hcengineering/platform",
+      "url": "https://github.com/hcengineering/platform",
+      "license": "EPL-2.0",
+      "domain": "collaboration",
+      "idea_ar": "تخطيط تعاون ومهام ومراسلات عمل مترابطة دون استيراد الكود",
+      "signals": [
+        "project collaboration tasks chat issue tracker workspace huly",
+        "إدارة مشاريع مهام تعاون محادثات هولي"
+      ],
+      "caution": "README says repository frozen; EPL-2.0 terms apply to code reuse",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-19",
+      "repo": "trekhleb/javascript-algorithms",
+      "url": "https://github.com/trekhleb/javascript-algorithms",
+      "license": "MIT",
+      "domain": "learning",
+      "idea_ar": "مكتبة أنماط خوارزمية مع تحليل التعقيد واختبارات دقيقة",
+      "signals": [
+        "javascript algorithm data structures big o sorting graphs",
+        "جافاسكريبت خوارزميات هياكل بيانات تعقيد"
+      ],
+      "caution": "Verify individual examples before use in production",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-20",
+      "repo": "CyC2018/CS-Notes",
+      "url": "https://github.com/CyC2018/CS-Notes",
+      "license": "NOASSERTION",
+      "domain": "learning",
+      "idea_ar": "توسيع منهج التشخيص لشبكات وأنظمة تشغيل وقواعد بيانات",
+      "signals": [
+        "computer science operating system networking database system design cs notes",
+        "علوم الحاسب نظم تشغيل شبكات قواعد بيانات"
+      ],
+      "caution": "Content license unverified in repository metadata",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-21",
+      "repo": "jlevy/the-art-of-command-line",
+      "url": "https://github.com/jlevy/the-art-of-command-line",
+      "license": "NOASSERTION",
+      "domain": "operations",
+      "idea_ar": "وصفات طرفية واضحة وقابلة للإعادة لتشخيص الملفات والعمليات",
+      "signals": [
+        "command line shell terminal files processes grep awk sed",
+        "سطر اوامر طرفية ملفات عمليات"
+      ],
+      "caution": "Do not automatically execute commands from guides",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-22",
+      "repo": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode",
+      "license": "MIT",
+      "domain": "engineering",
+      "idea_ar": "مقارنة بنية مساعد برمجي متعدد المزودين وأدوات الكود",
+      "signals": [
+        "coding agent opencode model provider terminal editor developer assistant",
+        "وكيل برمجة مساعد كود محرر اوبن كود"
+      ],
+      "caution": "Tool calls require scoped permissions and verified executor",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    }
+  ]
+}
