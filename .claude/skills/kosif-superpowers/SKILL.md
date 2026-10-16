@@ -71,6 +71,7 @@ Stats now: 6,434 powers — ✅ 522 · 🟢 815 · 📦 1,784 · 🔑 205 · �
 1. **افهم المادة:** صوت؟ قِس المدة، فرّغ بكلماتها (`faster-whisper`, `language="ar"`, `word_timestamps=True`، مرّر مصفوفة numpy). موسيقى؟ BPM والضربات (librosa). فيديو؟ القطعات (PySceneDetect أو `select='gt(scene,0.35)'`)، والوجوه، والجهارة. نص؟ اكتب سيناريو بتوقيتات.
 2. **اختر قواك:** `powers.py suggest "<وصف الطلب>"` ثم افتح الفصول المقترحة والأساليب المرجعية في `styles-atlas.md`. اختر لوحة وخطًا عربيًا (Amiri/Cairo/Reem Kufi/Aref Ruqaa…) ونحو 3–6 قوى متوافقة.
 3. **أرسل للمستخدم شيئًا مرئيًا مبكرًا:** سيناريو مختصر أو لوحة إطارات خلال دقائق، لا بنية تحتية طويلة.
+3b. **أي مقاس:** المقاس ليس محصورًا في 9:16 — `--aspect` يقبل أي نسبة (`4:5`, `3:4`, `21:9`, `2.35:1`)، أو بكسلات (`1920x816`)، أو اسمًا (`reel`, `square`, `cinema`, `سينما`) في `kosif.py prompt` و`render_html.cjs` و`verify_video.py` والموقع. ستارتر html-canvas يتّسع لأي إطار (يُبقي التكوين كاملًا ويملأ الخلفية)؛ لإعادة تكوين حقيقية لكل مقاس غيّر W/H وأعد توزيع العناصر.
 4. **ابنِ:** `python3 tools/kosif.py scaffold <style> <dir>` ثم مشهد حتمي `window.__kosif = {duration, seek(t)}`. العربية كلمات كاملة لا حروف، RTL، هوامش آمنة ≥90px.
 5. **عاين:** `node tools/render_html.cjs --in index.html --out out/p.mp4 --preview` وانظر للإطارات بعينك وأصلح.
 6. **ارندر وتحقق:** `--audio voice.wav`، ثم loudnorm إلى -14 LUFS، ثم `python3 tools/verify_video.py film.mp4 --aspect 9:16 --fps 30 --duration <s> --audio voice.wav`.

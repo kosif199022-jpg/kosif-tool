@@ -9,7 +9,7 @@ Original KOSIF brief, revised against frames sampled from the reference video (2
 
 - المرجع / Reference: https://www.promptsmotion.com/kamstudiolabs-0b0824
 - التصنيفات / Categories: characters, music
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 46 s · الصعوبة / Difficulty: 4/5
+- النسبة المقترحة / Aspect: 2.35:1 · المدة / Duration: 46 s · الصعوبة / Difficulty: 4/5
 - التقنية المقترحة / Stack: Remotion, SVG, Web Audio
 
 ## الفكرة

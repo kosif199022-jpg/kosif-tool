@@ -20,7 +20,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog" / "styles.json"
 BRIEFS = ROOT / "catalog" / "briefs.json"
-ASPECTS = {"16:9", "9:16", "1:1", "4:5"}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from aspects import is_valid as aspect_ok  # noqa: E402  (any W:H such as 2.35:1, WxH or name)
 STACKS = {"Remotion", "React", "HTML Canvas", "SVG", "CSS", "GSAP", "Three.js", "WebGL", "Web Audio", "Lottie"}
 STR = ("id", "title_ar", "summary_ar", "summary_en", "concept_ar", "concept_en", "aspect", "assumptions_en")
 LISTS = ("scenes_en", "scenes_ar", "motion_rules_en", "motion_rules_ar", "stack", "keywords", "facts_from_source")
@@ -38,8 +39,8 @@ def problems(b: dict) -> list[str]:
     for k in LISTS:
         if k in b and (not isinstance(b[k], list) or any(not isinstance(x, str) for x in b[k])):
             out.append(f"{k} not a list of strings")
-    if b.get("aspect") not in ASPECTS:
-        out.append(f"aspect {b.get('aspect')!r} not in {sorted(ASPECTS)}")
+    if not isinstance(b.get("aspect"), str) or not aspect_ok(b["aspect"]):
+        out.append(f"aspect {b.get('aspect')!r} is not a readable ratio (W:H, WxH or a name)")
     d = b.get("difficulty")
     if not isinstance(d, int) or not 1 <= d <= 5:
         out.append("difficulty must be an integer 1-5")

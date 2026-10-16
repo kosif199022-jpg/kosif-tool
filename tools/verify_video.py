@@ -21,8 +21,10 @@ import re
 import shutil
 import subprocess
 import sys
+from pathlib import Path
 
-ASPECTS = {"9:16": 9 / 16, "16:9": 16 / 9, "1:1": 1.0, "4:5": 0.8, "4:3": 4 / 3, "21:9": 21 / 9}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from aspects import ratio_of  # noqa: E402  (any W:H, WxH or name)
 
 
 def probe(path: str) -> dict:
@@ -56,7 +58,7 @@ def frac(s: str) -> float:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("video")
-    ap.add_argument("--aspect", choices=sorted(ASPECTS))
+    ap.add_argument("--aspect", help="any ratio: 9:16, 21:9, 2.35:1, 1920x816, reel, cinema…")
     ap.add_argument("--fps", type=float)
     ap.add_argument("--duration", type=float, help="expected duration in seconds")
     ap.add_argument("--audio", help="master audio file whose duration the video must match")
@@ -86,7 +88,7 @@ def main() -> int:
     checks.append(("pixel format is 4:2:0 8-bit (universal playback)", v.get("pix_fmt") in ("yuv420p", "yuvj420p"), v.get("pix_fmt", "?")))
     checks.append(("even dimensions", w % 2 == 0 and h % 2 == 0, f"{w}x{h}"))
     if args.aspect:
-        checks.append((f"aspect is {args.aspect}", abs(w / h - ASPECTS[args.aspect]) < 0.01, f"{w}x{h} = {w / h:.3f}"))
+        checks.append((f"aspect is {args.aspect}", abs(w / h - ratio_of(args.aspect)) < 0.01, f"{w}x{h} = {w / h:.3f}"))
     if args.fps:
         checks.append((f"frame rate is {args.fps:g}", abs(fps - args.fps) < 0.05, f"{fps:.3f}"))
     if args.duration:

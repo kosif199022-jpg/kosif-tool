@@ -41,7 +41,8 @@ Renders an animated HTML page to MP4 frame by frame with headless Chromium (Play
 |---|---|
 | `--in <file.html|URL>` | page to render (local file or http URL) |
 | `--out <file>` | output `.mp4`; with `--preview` a PNG contact sheet |
-| `--width`, `--height` | viewport in CSS px (default 1080×1920) |
+| `--aspect` | any frame: `9:16`, `16:9`, `4:5`, `3:4`, `21:9`, `2.35:1`, `1920x816`, `reel`, `square`, `cinema` (sets width/height; ratios inside 9:16…16:9 get a 1080 px short side, wider/taller ones a 1920 px long side, always even) |
+| `--width`, `--height` | viewport in CSS px (default 1080×1920; override `--aspect`) |
 | `--fps` | frames per second (default 30) |
 | `--duration`, `--start` | seconds; seek mode defaults to `window.__kosif.duration` |
 | `--audio <file>` | muxed as AAC with `-shortest`; the audio is never resampled or time-stretched |

@@ -1,7 +1,25 @@
 // Shared request builder for the website and tests. Mirrors tools/kosif.py `prompt`.
 // Works in the browser (ES module) and in Node (node --test / plain import).
 export const REPO_URL = 'https://github.com/kosif199022-jpg/kosif-tool';
-export const RESOLUTIONS = { '9:16': '1080x1920', '16:9': '1920x1080', '1:1': '1080x1080', '4:5': '1080x1350' };
+export const RESOLUTIONS = { '9:16': '1080x1920', '16:9': '1920x1080', '1:1': '1080x1080', '4:5': '1080x1350', '4:3': '1440x1080', '3:4': '1080x1440', '2:3': '1080x1620', '21:9': '1920x824', '2.35:1': '1920x818', '2.39:1': '1920x804' };
+// Any aspect: W:H (21:9, 2.35:1), WxH pixels (1920x816) or a name. Mirrors tools/aspects.py.
+export const ASPECT_NAMES = { reel: '9:16', story: '9:16', tiktok: '9:16', shorts: '9:16', vertical: '9:16', 'ريلز': '9:16', 'طولي': '9:16', youtube: '16:9', landscape: '16:9', horizontal: '16:9', 'عرضي': '16:9', square: '1:1', 'مربع': '1:1', feed: '4:5', portrait: '4:5', instagram: '4:5', classic: '4:3', cinema: '2.39:1', scope: '2.39:1', 'سينما': '2.39:1', 'سينمائي': '2.39:1', ultrawide: '21:9', wide: '21:9', flat: '1.85:1' };
+const even = n => { n = Math.round(n); return n % 2 ? n + 1 : n; };
+export function resolveAspect(spec) {
+  let s = String(spec == null ? '' : spec).trim().toLowerCase();
+  if (!s) return null;
+  s = ASPECT_NAMES[s] || s;
+  if (RESOLUTIONS[s]) { const [w, h] = RESOLUTIONS[s].split('x').map(Number); return { label: s, w, h }; }
+  let m = s.match(/^(\d{2,5})\s*[x×*]\s*(\d{2,5})$/);
+  if (m) { const w = even(+m[1]), h = even(+m[2]); return { label: `${w}x${h}`, w, h }; }
+  m = s.match(/^(\d+(?:\.\d+)?)\s*[:/]\s*(\d+(?:\.\d+)?)$/);
+  if (!m) return null;
+  const r = +m[1] / +m[2];
+  if (!(r >= 0.2 && r <= 5)) return null;
+  const [w, h] = (r >= 9 / 16 && r <= 16 / 9) ? (r >= 1 ? [even(1080 * r), 1080] : [1080, even(1080 / r)]) : (r > 1 ? [1920, even(1920 / r)] : [even(1920 * r), 1920]);
+  return { label: s.replace(/\s+/g, ''), w, h };
+}
+const resOf = a => { const x = resolveAspect(a); return x ? `${x.w}x${x.h}` : RESOLUTIONS['9:16']; };
 export const STACKS = {
   auto: { ar: 'اختر الأنسب للمادة (Remotion/React للتحرير القابل للتعديل، HTML Canvas أو SVG للرسوم الخفيفة، Three.js للمشاهد الفراغية الحقيقية)', en: 'choose the best fit for the material (Remotion/React for editable sequences, HTML Canvas or SVG for light vector motion, Three.js for true spatial scenes)' },
   remotion: { ar: 'Remotion/React (مشروع starters/remotion في المستودع)', en: 'Remotion/React (starters/remotion in the repository)' },
@@ -28,7 +46,8 @@ export const LANGS = {
 };
 
 export function defaultsFor(record, brief) {
-  const aspect = record && RESOLUTIONS[record.aspect_label] ? record.aspect_label : (brief && RESOLUTIONS[brief.aspect] ? brief.aspect : '9:16');
+  const real = record && record.aspect && record.aspect.w ? `${record.aspect.w}x${record.aspect.h}` : null;
+  const aspect = record && RESOLUTIONS[record.aspect_label] ? record.aspect_label : (brief && resolveAspect(brief.aspect) ? brief.aspect : (real || '9:16'));
   const duration = (brief && brief.duration_s) || (record && record.duration_s) || 15;
   return { aspect, duration, fps: 30, stack: 'auto', source: 'none', audio: 'keep', lang: 'ar', reqLang: 'ar', brand: '', notes: '', detail: '' };
 }
@@ -52,7 +71,7 @@ export function buildRequest({ template, record, categories = [], options = {}, 
   const playbooks = (record.playbooks && record.playbooks.length)
     ? record.playbooks
     : (record.category || []).map(k => catMap[k] && catMap[k].playbook).filter(Boolean);
-  const aspect = RESOLUTIONS[options.aspect] ? options.aspect : '9:16';
+  const aspect = resolveAspect(options.aspect) ? String(options.aspect).trim() : '9:16';
   const sourceKey = SOURCES[options.source] ? options.source : 'none';
   const detail = (options.detail || '').trim() || (L === 'ar' ? '(أرفق الملف)' : '(attach the file)');
   const vars = {
@@ -64,7 +83,7 @@ export function buildRequest({ template, record, categories = [], options = {}, 
     playbooks: playbooks.length ? playbooks.join(L === 'ar' ? '، ' : ', ') : (L === 'ar' ? 'لا يوجد دليل فئة لهذا الاستايل' : 'no category playbook for this style'),
     source: SOURCES[sourceKey][L].replace('{detail}', detail),
     aspect,
-    resolution: RESOLUTIONS[aspect],
+    resolution: resOf(aspect),
     fps: String(options.fps || 30),
     duration: String(options.duration || 15),
     stack: (STACKS[options.stack] || STACKS.auto)[L],

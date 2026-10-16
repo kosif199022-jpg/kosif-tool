@@ -22,7 +22,7 @@ Observe this exact reference before implementing when browser or video tools per
 
 A dialogue-free short of about 46 seconds in a 2.35:1 frame: a wide-tracked serif title, then a lighthouse on a rock in rain and fog whose lamp goes out; inside, the keeper dozes in a rocking chair beside a stove, pendulum clock and lantern, the room darkens, he climbs a spiral stair with the lantern to the lamp room, relights the lens, the beams sweep the sea again while he walks the gallery, and it fades to a distant lighthouse in darkness.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, Web Audio), suggested duration (46 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, Web Audio), suggested duration (46 s), aspect 2.35:1, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Music / موسيقى.
