@@ -1,6 +1,6 @@
 {
   "schema": "kosif.community-sources.v1",
-  "note": "Readme + GitHub repository metadata inspected 2026-10-17. Source references only; no imported third-party code, no executable assumptions.",
+  "note": "31 curated GitHub repository sources: 24 user links (22 earlier + 2 new), plus seven new from Python primary-language top 10, with 3 overlapping sources. Research/source references, not installed executors.",
   "sources": [
     {
       "id": "SRC-01",
@@ -331,6 +331,211 @@
       "caution": "Tool calls require scoped permissions and verified executor",
       "source_checked": "2026-10-17",
       "status": "reference_only"
+    },
+    {
+      "id": "SRC-23",
+      "repo": "donnemartin/system-design-primer",
+      "url": "https://github.com/donnemartin/system-design-primer",
+      "license": "CC-BY-4.0",
+      "domain": "architecture",
+      "idea_ar": "تصميم أنظمة تتحمل التوسع: تحديد المتطلبات، تقدير الطلب، المفاضلة بين الكاش والقاعدة والطوابير، اختبار نقاط الاختناق والتوافر",
+      "signals": [
+        "system design scalability architecture load balancing cache database sharding consistency availability distributed systems",
+        "تصميم انظمه قابليه التوسع احمال مخابئ طوابير معماريه خدمات"
+      ],
+      "caution": "الترخيص CC BY 4.0 من LICENSE.txt مع إلزام النسب؛ لا تنسخ الرسوم والنصوص بدون تحقق من حقوقها",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-24",
+      "repo": "vinta/awesome-python",
+      "url": "https://github.com/vinta/awesome-python",
+      "license": "CC-BY-4.0",
+      "domain": "python",
+      "idea_ar": "اختيار مكتبات Python بالمتطلبات والصيانة والترخيص والتوافق قبل أي تثبيت؛ بحث مصنف إلى الذكاء الاصطناعي والبيانات والويب والاختبارات",
+      "signals": [
+        "python library framework package pip uv ai machine learning data etl testing web api",
+        "مكتبات بايثون حزم فريمورك علم بيانات اختبار واجهات"
+      ],
+      "caution": "المكتبة فهرس للمشاريع؛ كل حزمة Python مرتبطة لها ترخيص منفصل ومتطلبات وإصدارات مختلفة",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-25",
+      "repo": "public-apis/public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "license": "MIT",
+      "domain": "research",
+      "idea_ar": "اكتشاف واجهات API العامة وتقييم المصادقة والتكلفة والحدود والتوافق مع سياسات البيانات",
+      "signals": [
+        "public api free apis endpoint http oauth integration directory",
+        "واجهات برمجة مجانية بحث عن api موصلات"
+      ],
+      "caution": "كل API في الفهرس له شروط استخدامه وسعره وسياسات خصوصيته ومصادقته",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-26",
+      "repo": "EbookFoundation/free-programming-books",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "license": "CC-BY-4.0",
+      "domain": "learning",
+      "idea_ar": "اكتشاف دورات وكتب مجانية مرتبة حسب اللغة والموضوع والهدف التعليمي",
+      "signals": [
+        "programming books free ebooks courses online tutorials textbooks learning",
+        "كتب برمجة مجانية دورات تعلم مواد تعليمية"
+      ],
+      "caution": "فهرس تحت CC BY 4.0، أما الكتب المرتبطة فحقوقها مستقلة",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-27",
+      "repo": "practical-tutorials/project-based-learning",
+      "url": "https://github.com/practical-tutorials/project-based-learning",
+      "license": "MIT",
+      "domain": "learning",
+      "idea_ar": "التعلم بمشروعات تطبيقية صغيرة قابلة للاختبار مع معايير واضحة للانتهاء",
+      "signals": [
+        "project based learning tutorial build application learn by doing hands on",
+        "مشروعات تعلم برمجة تطبيق عملي مشروع تدريبي"
+      ],
+      "caution": "روابط الشروح الخارجية يملكها مؤلفون مستقلون ولا تعني إذنًا بنسخ المحتوى",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-28",
+      "repo": "TheAlgorithms/Python",
+      "url": "https://github.com/TheAlgorithms/Python",
+      "license": "MIT",
+      "domain": "learning",
+      "idea_ar": "أمثلة خوارزميات Python مع اختبارات صحة ومقارنات تعقيد وقيود الأداء",
+      "signals": [
+        "python algorithms data structure recursion graph dynamic programming sorting complexity",
+        "خوارزميات بايثون هياكل بيانات رسم بياني تعقيد فرز"
+      ],
+      "caution": "المستودع تعليمي؛ المكتبة القياسية أو البدائل المحسنة قد تكون أنسب للإنتاج",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-29",
+      "repo": "yt-dlp/yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "license": "Unlicense",
+      "domain": "media",
+      "idea_ar": "فحص قدرات تحميل الوسائط المسموح بها قانونيًا، وبيانات الفصول والجودة والصيغ دون تجاوز قيود الخدمة",
+      "signals": [
+        "video downloader metadata format extractor subtitles ffmpeg streaming media python",
+        "تحميل فيديو ميديا ترجمة بيانات وصفية جودة صيغ"
+      ],
+      "caution": "التزم بشروط المنصة وحقوق المحتوى، ولا تتجاوز DRM أو الحماية أو الوصول الخاص",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-30",
+      "repo": "microsoft/markitdown",
+      "url": "https://github.com/microsoft/markitdown",
+      "license": "MIT",
+      "domain": "data",
+      "idea_ar": "تحويل المستندات إلى Markdown مع حفظ البنية ومراقبة الوصول للملفات وفحص النص الناتج",
+      "signals": [
+        "markitdown document conversion markdown pdf docx xlsx pptx content extraction",
+        "تحويل مستندات إلى ماركداون pdf وورد اكسل باوربوينت"
+      ],
+      "caution": "الأداة تجري عمليات إدخال/إخراج بصلاحيات العملية؛ قيّد المسارات والملفات الحساسة",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
+    },
+    {
+      "id": "SRC-31",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "license": "NOASSERTION",
+      "domain": "agents",
+      "idea_ar": "دراسة منصات الوكلاء طويلة الأمد وتدفقات المهام والاستعادة والمراقبة تحت صلاحيات محددة",
+      "signals": [
+        "autogpt autonomous agents workflows long running task automation graph trigger",
+        "وكلاء ذاتيون مهام طويلة استعادة حالة سير عمل"
+      ],
+      "caution": "GitHub لم يعط ترخيص SPDX واضحًا؛ راجع تراخيص المجلد/المكوّن قبل نسخ الكود",
+      "source_checked": "2026-10-17",
+      "status": "reference_only"
     }
-  ]
+  ],
+  "python_top10": {
+    "method": "public GitHub repositories with primary language Python ordered by stars",
+    "observed_date": "2026-10-17",
+    "rank_reference": "https://nazsam.github.io/github-top-repos/languages/python.html",
+    "rank_reference_date": "2026-10-15",
+    "github_verification": "https://github.com/topics/python",
+    "note": "Stars are a point-in-time observation and not a quality/performance metric; the top 10 may shift.",
+    "items": [
+      {
+        "rank": 1,
+        "repo": "public-apis/public-apis",
+        "stars": 489479,
+        "language": "Python"
+      },
+      {
+        "rank": 2,
+        "repo": "EbookFoundation/free-programming-books",
+        "stars": 399218,
+        "language": "Python"
+      },
+      {
+        "rank": 3,
+        "repo": "donnemartin/system-design-primer",
+        "stars": 374452,
+        "language": "Python"
+      },
+      {
+        "rank": 4,
+        "repo": "vinta/awesome-python",
+        "stars": 327968,
+        "language": "Python"
+      },
+      {
+        "rank": 5,
+        "repo": "practical-tutorials/project-based-learning",
+        "stars": 286928,
+        "language": "Python"
+      },
+      {
+        "rank": 6,
+        "repo": "NousResearch/hermes-agent",
+        "stars": 254427,
+        "language": "Python"
+      },
+      {
+        "rank": 7,
+        "repo": "TheAlgorithms/Python",
+        "stars": 225318,
+        "language": "Python"
+      },
+      {
+        "rank": 8,
+        "repo": "yt-dlp/yt-dlp",
+        "stars": 198462,
+        "language": "Python"
+      },
+      {
+        "rank": 9,
+        "repo": "microsoft/markitdown",
+        "stars": 190606,
+        "language": "Python"
+      },
+      {
+        "rank": 10,
+        "repo": "Significant-Gravitas/AutoGPT",
+        "stars": 187614,
+        "language": "Python"
+      }
+    ]
+  }
 }
