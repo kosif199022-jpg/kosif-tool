@@ -32,7 +32,7 @@ jobs:
       - name: Test executable motion runtime and 25-engine registry
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_runtime.py' -v
       - name: Test 12 deterministic motion primitives
-        run: node --test .claude/skills/kosif-superpowers/evals/test_motion_toolkit.mjs
+        run: node --test .claude/skills/kosif-superpowers/evals/test_motion_toolkit.mjs .claude/skills/kosif-superpowers/evals/test_motion_template.mjs
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules
