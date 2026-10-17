@@ -134,6 +134,16 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 توليد ملف HTML ≠ إنتاج فيديو MP4، ومزامنة الكلمات المستوردة ≠ تفريغ صوت آلي. لإخراج MP4 يستعمل محرك الرندر الموجود وتُقاس جودة الإطارات والصوت فعليًا. يدعم محرك SVG الأصلي أيضًا مورف مقيّد لضلوع متطابقة ومؤشر سن قلم مرسوم يتتبع المسار؛ لا تدّعِ وجود morph لأي مسارات عشوائية أو يد فوتوغرافية. مصدر التعلم والتحقق من التراخيص: Theatre.js، Flubber، WhisperX، PySceneDetect، AnimatedDrawings، SVG.js وغيرها موثقة بالدليل، وليست كلها مثبتة أو منسوخة. لا تزيد عداد قدرات KOSIF الرسمي بمجرد ظهور أسماء مستودعات.
 
+## 4F. Repository Capability Transfer — فحص وضغط المستودعات للكود
+
+**نفّذ بدل جمع الروابط:** اقرأ [دليل نقل القدرات القابل للاختبار](references/repository-capability-transfer.md) ثم استخدم `scripts/repository_capability_packer.py` على مستودع محلي أو ZIP مصدر مرخَّص للفحص. الأداة تحسب بصمات SHA256، تحدد اللغات والملفات والقدرات المرشحة من البنية، وتجهز ZIP حتميًا بعد رفض المسارات الخطرة واستبعاد ملفات البناء والأسرار المعروفة *بالأسماء*. لا تنفذ كود المصدر، ولا تثبت المكتبات، ولا ترفع أية قدرة إلى ✅ لمجرد وجود ZIP.
+
+    python3 $SKILL_DIR/scripts/repository_capability_packer.py inspect ./repository --out ./repo-report.json
+    python3 $SKILL_DIR/scripts/repository_capability_packer.py pack ./repository --out ./repo-safe.zip --report ./transfer-report.json
+    python3 -m unittest discover -s $SKILL_DIR/evals -p test_repository_capability_packer.py -v
+
+قبل نسخ أي كود: اقرأ رخص الملفات والتبعيات والأصول، صمّم Adapter ضيقًا واختبار قبول، ثم تحقّق من تشغيله فعليًا. الفلترة بالاسم لا تُعتبر ماسح أسرار شاملًا؛ افحص ZIP وتقرير البصمات قبل مشاركته.
+
 ## 4G. تنفيذ أصلي جديد — KOSIF Creative Intelligence (audio → motion)
 
 لربط صوت حقيقي بالرسم وتحريك الشخصيات والكاميرا، افتح [دليل Creative Intelligence التنفيذي](references/creative-intelligence-execution.md) بدل الاكتفاء بروابط Librosa وWhisperX وRemotion. الجسر الموجود الآن:
