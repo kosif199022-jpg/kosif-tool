@@ -40,7 +40,7 @@ export function camera(t,{start=0,end=8,zoomStart=1,zoomEnd=1.08,
 }
 export function walkRig(t,{onset=3.3,frequency=6,stride=14,armSwing=12}={}){
   const activation=ease((t-onset)/.5);
-  const w=Math.sin((t-onset)*frequency)*activation;
+  const w=activation===0 ? 0 : Math.sin((t-onset)*frequency)*activation;
   return {leftLegDeg:w*stride,rightLegDeg:-w*stride,
           leftArmDeg:-w*armSwing,rightArmDeg:w*armSwing,active:activation};
 }
