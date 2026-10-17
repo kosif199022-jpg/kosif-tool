@@ -1,0 +1,65 @@
+name: Package KOSIF Superpowers for Claude
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.claude/skills/kosif-superpowers/**'
+      - '.github/workflows/skill-package.yml'
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-superpowers/**'
+      - '.github/workflows/skill-package.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify full skill catalog and routing
+        run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
+      - name: Verify original executable Motion Lab
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_*.py' -v
+          node --test .claude/skills/kosif-superpowers/evals/test_motion_engine.mjs
+      - name: Package portable Claude skill
+        run: python3 .claude/skills/kosif-superpowers/scripts/package_skill.py --out dist/kosif-superpowers.skill --lite --with-evals
+      - name: Verify distributable contains executable capabilities
+        run: |
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+          path = Path("dist/kosif-superpowers.skill")
+          assert path.is_file() and path.stat().st_size > 1000
+          with zipfile.ZipFile(path) as z:
+              assert z.testzip() is None
+              names = set(z.namelist())
+              required = [
+                  "SKILL.md",
+                  "scripts/motion_director.py",
+                  "scripts/motion_stack.py",
+                  "scripts/motion_reference_probe.py",
+                  "assets/motion_engine.js",
+                  "data/motion_sources.json",
+                  "references/executable-creative-motion.md",
+                  "scripts/source_scout.py",
+                  "scripts/rea_bridge.py",
+                  "evals/test_motion_director.py"
+              ]
+              root = "kosif-superpowers/"
+              missing = [name for name in required if root + name not in names]
+              assert not missing, f"Missing capabilities in Claude skill: {missing}"
+              print(f"Verified skill bundle with {len(names)} entries and executable motion components")
+          PY
+      - name: Upload installable skill artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kosif-superpowers-claude-skill
+          path: dist/kosif-superpowers.skill
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
