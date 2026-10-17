@@ -27,6 +27,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_rea_*.py' -v
       - name: Community source scout and safety regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_scout.py' -v
+      - name: Capacity and Python readiness regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_system_python.py' -v
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules
