@@ -119,6 +119,93 @@ MANIM_SOURCE=dedent("""
     """).strip()+"\n"
 
 
+# Three.js, PixiJS, and p5.js optional full-project source adapters.
+VITE_HTML="""<!doctype html><html><head><meta charset="utf-8">
+<style>html,body{margin:0;height:100%;background:#f4f0e6}canvas{display:block;max-width:100vw;max-height:100vh;margin:auto}</style>
+</head><body><main id="root"></main><script type="module" src="/src/main.js"></script></body></html>
+"""
+THREE_PACKAGE={"name":"kosif-three-scene","private":True,"type":"module",
+ "scripts":{"dev":"vite --host 127.0.0.1","build":"vite build"},
+ "dependencies":{"three":"^0.180.0"},"devDependencies":{"vite":"^6.0.0"}}
+THREE_SOURCE=dedent("""
+    import * as THREE from 'three';
+    const scene=new THREE.Scene();
+    scene.background=new THREE.Color('#f4f0e6');
+    const camera=new THREE.PerspectiveCamera(40,9/16,0.1,100);
+    camera.position.set(0,0,8);
+    const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+    renderer.setSize(1080,1920);
+    document.querySelector('#root').appendChild(renderer.domElement);
+    const mesh=new THREE.Mesh(new THREE.BoxGeometry(2.5,2.5,2.5),
+        new THREE.MeshNormalMaterial());
+    scene.add(mesh);
+    const duration=6;
+    window.__kosif={duration,fps:30,seek(t) {
+      const sec=Math.max(0,Math.min(duration,t));
+      mesh.rotation.x=sec*0.5;
+      mesh.rotation.y=sec*0.75;
+      camera.position.z=8-sec*0.3;
+      renderer.render(scene,camera);
+    }};
+    window.__kosifReady=Promise.resolve();
+    window.__kosif.seek(0);
+""").strip()+"\n"
+
+PIXI_PACKAGE={"name":"kosif-pixi-scene","private":True,"type":"module",
+ "scripts":{"dev":"vite --host 127.0.0.1","build":"vite build"},
+ "dependencies":{"pixi.js":"^8.0.0"},"devDependencies":{"vite":"^6.0.0"}}
+PIXI_SOURCE=dedent("""
+    import {Application,Graphics} from 'pixi.js';
+    // PixiJS v8 asynchronous setup is a real renderer readiness dependency.
+    const app=new Application();
+    const ready=(async()=>{
+      await app.init({width:1080,height:1920,background:'#f4f0e6',autoStart:false});
+      document.querySelector('#root').appendChild(app.canvas);
+      app.ticker.stop();
+      const ball=new Graphics().circle(0,0,130).fill(0x355b47);
+      app.stage.addChild(ball);
+      const duration=6;
+      window.__kosif={duration,fps:30,seek(t) {
+        const sec=Math.max(0,Math.min(duration,t));
+        ball.x=200+sec*110;
+        ball.y=900+Math.sin(sec*3)*170;
+        app.renderer.render(app.stage);
+      }};
+      window.__kosif.seek(0);
+    })();
+    window.__kosifReady=ready;
+""").strip()+"\n"
+
+P5_PACKAGE={"name":"kosif-p5-sketch","private":True,"type":"module",
+ "scripts":{"dev":"vite --host 127.0.0.1","build":"vite build"},
+ "dependencies":{"p5":"^2.0.0"},"devDependencies":{"vite":"^6.0.0"}}
+P5_SOURCE=dedent("""
+    import p5 from 'p5';
+    let sketch;
+    const duration=6;
+    new p5(p=>{
+      p.setup=()=>{
+        p.createCanvas(1080,1920).parent('root');
+        p.noLoop();
+        sketch=p;
+        window.__kosif={duration,fps:30,seek(sec){
+          const t=Math.max(0,Math.min(duration,sec));
+          p.background('#f4f0e6');
+          p.stroke('#172824');
+          p.strokeWeight(8);
+          p.noFill();
+          p.circle(540,950,240+180*Math.sin(t*2));
+          p.line(160,1400,160+t*120,1400);
+        }};
+        window.__kosif.seek(0);
+      };
+    });
+    window.__kosifReady=new Promise(resolve=>{
+      const t=setInterval(()=>{if(sketch){clearInterval(t);resolve();}},10);
+    });
+""").strip()+"\n"
+
+
 def validate_registry():
     obj=json.loads(REGISTRY.read_text(encoding="utf-8"))
     sources=obj.get("sources")
@@ -139,6 +226,13 @@ def recipes():
                     "src/index.jsx":REMOTION_INDEX,"src/root.jsx":REMOTION_ROOT,
                     "src/video.jsx":REMOTION_VIDEO},
         "manim":{"main.py":MANIM_SOURCE},
+        "three":{"package.json":json.dumps(THREE_PACKAGE,indent=2)+"\n",
+                 "index.html":VITE_HTML,"src/main.js":THREE_SOURCE},
+        "pixi":{"package.json":json.dumps(PIXI_PACKAGE,indent=2)+"\n",
+                "index.html":VITE_HTML,"src/main.js":PIXI_SOURCE},
+        "p5":{"package.json":json.dumps(P5_PACKAGE,indent=2)+"\n",
+              "index.html":VITE_HTML,"src/main.js":P5_SOURCE},
+
     }
 
 
