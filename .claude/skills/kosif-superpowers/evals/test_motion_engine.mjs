@@ -63,7 +63,10 @@ test('camera transforms and character arms/legs change at different frames',()=>
   const after=nodes.stage.attrs.transform;
   assert.notEqual(after,before);
   assert.notEqual(puppet[2].attrs.transform,armBefore);
-  assert.equal(puppet[4].attrs.transform,puppet[3].attrs.transform);
+  assert.equal(parseFloat(puppet[4].attrs.transform.slice(7)),
+    parseFloat(puppet[3].attrs.transform.slice(7)));
+  assert.ok(puppet[4].attrs.transform.endsWith(' 0 94)'));
+  assert.ok(puppet[3].attrs.transform.endsWith(' 0 8)'));
 });
 test('time clamping, blank captions outside intervals and determinism',()=>{
   const {nodes,window}=load();
