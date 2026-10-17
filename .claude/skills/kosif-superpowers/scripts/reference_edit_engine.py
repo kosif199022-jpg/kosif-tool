@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 import shutil
 import statistics
+from creative_quality_gate import inspect_plan
 import sys
 
 FPS=(24,25,30,60)
@@ -194,7 +195,7 @@ def plan(probe,cues=None,fps=30,mode="original"):
     sizes=[s["frames"] for s in shots]
     return {"schema":"kosif.reference-edit.v1","mode":mode,
         "fps":fps,"width":1080,"height":1920,"duration":round(duration,6),
-        "totalFrames":total_frames,"audio":None,"shots":shots,
+        "totalFrames":total_frames,"audio":None,"shots":shots,"alignedWords":words,
         "evidence":{"referenceSeconds":ref_duration,"referenceCuts":len(cuts),
              "scaleFactor":round(duration/ref_duration,6),
              "frameAdjustmentForWords":adjustments,
@@ -273,6 +274,10 @@ def create_project(project,edit,manifest=None,assets_dir=None):
         (dest/"src"/"Video.jsx").write_text(VIDEO,encoding="utf8")
         (dest/"src"/"plan.json").write_text(json.dumps(e,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
         (dest/"decision-report.json").write_text(json.dumps(e["evidence"],ensure_ascii=False,indent=2)+"\n",encoding="utf8")
+        audit=inspect_plan(e,dest)
+        if audit["failures"]:
+            raise ValueError("creative quality gate blocked project: "+", ".join(audit["failures"]))
+        (dest/"quality-audit.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
         (dest/"README.md").write_text(
           "# KOSIF Reference Edit — original editable project\n\n"
           "1. Review src/plan.json cut timings and src/Video.jsx motion styles.\n"
