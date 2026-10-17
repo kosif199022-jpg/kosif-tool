@@ -45,6 +45,10 @@ jobs:
               required = [
                   "SKILL.md",
                   "scripts/motion_director.py",
+                  "scripts/code_drawing_master.py",
+                  "references/code-drawing-master.md",
+                  "evals/test_code_drawing_master.py",
+                  "evals/test_code_drawing_engine.mjs",
                   "scripts/motion_stack.py",
                   "scripts/motion_reference_probe.py",
                   "assets/motion_engine.js",
