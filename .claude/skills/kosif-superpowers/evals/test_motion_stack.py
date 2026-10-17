@@ -22,7 +22,7 @@ class MotionStackTests(unittest.TestCase):
         self.assertTrue(all(s["runtime_state"]=="not_probed" for s in sources))
 
     def test_three_original_scaffold_backends_exist(self):
-        self.assertEqual(set(stack.recipes()),{"gsap","remotion","manim"})
+        self.assertEqual(set(stack.recipes()),{"gsap","remotion","manim","three","pixi","p5"})
 
     def test_all_backends_create_editable_sources_without_install(self):
         for name in stack.recipes():
@@ -56,6 +56,17 @@ class MotionStackTests(unittest.TestCase):
     def test_manin_has_scene_with_path(self):
         self.assertIn("class KOSIFExplain(Scene)",stack.recipes()["manim"]["main.py"])
         self.assertIn("MoveAlongPath",stack.recipes()["manim"]["main.py"])
+
+    def test_three_pixi_and_p5_use_real_frame_seek_contract(self):
+        for name, module in (("three","three"),("pixi","pixi.js"),("p5","p5")):
+            with self.subTest(backend=name):
+                files=stack.recipes()[name]
+                source=files["src/main.js"]
+                pkg=json.loads(files["package.json"])
+                self.assertIn(module,pkg["dependencies"])
+                self.assertIn("window.__kosif",source)
+                self.assertIn("seek(",source)
+                self.assertIn("vite",pkg["scripts"]["build"])
 
     def test_doctor_does_not_claim_runtime(self):
         self.assertFalse(stack.doctor()["third_party_motion_engines_verified"])
