@@ -37,3 +37,13 @@ jobs:
         run: node --test tests/*.mjs
       - name: Syntax-check site modules
         run: for f in web/*.js; do node --check "$f"; done
+
+      - name: Build installable Claude Superpowers skill
+        run: python3 .claude/skills/kosif-superpowers/scripts/package_skill.py --lite -o ./dist/kosif-superpowers.skill
+      - name: Upload Claude installable skill
+        uses: actions/upload-artifact@v4
+        with:
+          name: kosif-superpowers-installable
+          path: dist/kosif-superpowers.skill
+          retention-days: 14
+          if-no-files-found: error
