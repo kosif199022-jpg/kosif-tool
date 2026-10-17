@@ -159,6 +159,11 @@ def make_story(cast="human",expression="happy",location="street",action="walk",
     stage=scene_paths(location)
     stage += [{"type":"text","text":"KOSIF DRAWING","direction":"ltr","fontSize":60,
                "x":540,"y":330,"start":0.3,"end":1.5,"fill":GREEN}]
+    stage.append({"type":"morph","start":round(dur*0.72,3),
+                  "end":round(dur*0.96,3),"closed":True,
+                  "from":[[510,500],[555,500],[575,545],[535,578],[494,545]],
+                  "to":[[535,470],[558,520],[600,526],[568,558],[532,590]],
+                  "stroke":GREEN,"strokeWidth":7})
     actors=[cast] if cast!="human+cat" else ["human","cat"]
     for kind in actors:
         x=400 if cast=="human+cat" and kind=="human" else (700 if kind=="cat" and cast=="human+cat" else 540)
