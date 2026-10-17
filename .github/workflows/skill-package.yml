@@ -5,6 +5,10 @@ on:
     paths:
       - '.claude/skills/kosif-superpowers/**'
       - '.github/workflows/skill-package.yml'
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-superpowers/**'
+      - '.github/workflows/skill-package.yml'
   workflow_dispatch:
 permissions:
   contents: read
