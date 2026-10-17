@@ -22,9 +22,10 @@ RENDERER = REPO_ROOT / "tools" / "render_html.cjs"
 
 
 def read_engines():
-    rows = json.loads(ENGINE_DATA.read_text(encoding="utf-8"))
-    assert isinstance(rows, list) and len(rows) >= 20
-    return rows
+    data = json.loads(ENGINE_DATA.read_text(encoding="utf-8"))
+    if data.get("schema") != "kosif.motion-engine-map.v1" or not isinstance(data.get("engines"), list) or len(data["engines"]) != 25:
+        raise ValueError("Unexpected motion engine registry")
+    return data["engines"]
 
 
 def detect():
@@ -38,8 +39,8 @@ def detect():
 
 
 def safe_text(x, label):
-    if not x or len(x)>120 or "\n" in x or "\r" in x:
-        raise ValueError(label+" must be 1-120 characters without newlines")
+    if not x or len(x)>36 or "\n" in x or "\r" in x:
+        raise ValueError(label+" must be 1-36 characters without newlines")
     return html.escape(x,quote=True)
 
 
