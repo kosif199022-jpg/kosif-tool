@@ -88,6 +88,33 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 نسب المصدر واجب؛ محتوى System Design Primer وAwesome Python مرخص CC BY 4.0 في ملف LICENSE الخاص بكل منهما، والمشاريع المرتبطة قد تكون لها تراخيص مختلفة. لا تعتبر وجود فهرس 31 مصدرًا أو أدوات تخطيط قدرتين حيتين تم التحقق من عملهما على جهاز المستخدم دون فحص بيئته.
 
+## 4D. القدرة التنفيذية الجديدة — KOSIF Creative Motion Lab
+**لا تكتفِ بترشيح المستودعات.** إذا طلب المستخدم موشن أو رسمًا بالكود أو فيديو، افتح [Executable Creative Motion Lab](references/executable-creative-motion.md)، ثم **استخدم الأدوات الأصلية داخل المهارة** لإنشاء المصدر الفعلي، وفحص الناتج، وتصدير MP4 عند توفر محرك الرندر. مصدر القدرة هنا هو كود أصلي قابل للتنفيذ؛ المكتبات الخارجية خيارات مستقلة بشروطها.
+
+من داخل جذر المستودع أو مسار المهارة المثبتة:
+
+    python3 $SKILL_DIR/scripts/motion_director.py doctor
+    python3 $SKILL_DIR/scripts/motion_director.py sample --out ./storyboard.json
+    python3 $SKILL_DIR/scripts/motion_director.py compile ./storyboard.json --out ./motion.html
+
+الملف HTML المولد يحتوي فعلًا على **رسم خطوط SVG تدريجيًا، تحريك جسم شخصية مرسومة بعد ظهورها، حركة كاميرا وتوقيت كلمات صوتية مُعطى**؛ لا تقل إن لديك نص الصوت أو توقيتاته الدقيقة دون فحص ملف المستخدم. للحصول على أدلة فيديو مرجعي مصرح به:
+
+    python3 $SKILL_DIR/scripts/motion_reference_probe.py ./reference.mp4 --cuts --out ./reference-cuts.json
+
+لإنشاء مشاريع قابلة للتعديل تستدعي المكتبات الحقيقية (دون تنزيل تلقائي):
+
+    python3 $SKILL_DIR/scripts/motion_stack.py list
+    python3 $SKILL_DIR/scripts/motion_stack.py scaffold gsap --out ./gsap-project
+    python3 $SKILL_DIR/scripts/motion_stack.py scaffold remotion --out ./remotion-project
+    python3 $SKILL_DIR/scripts/motion_stack.py scaffold manim --out ./manim-project
+
+محرك الاستوديو الأصلي للمهارة مستقل عن JS packages؛ تشغيل GSAP/Rough/Vivus/Remotion/Manim الحقيقي يحتاج تثبيتها قانونيًا داخل بيئة المستخدم واختبارها. يعرض ملف [25 creative technologies](data/motion_sources.json) ما يمكن تعلمه من كل محرك والأدوار والتراخيص، وليس 25 محركًا مثبتًا. Remotion وGSAP لهما شروط استخدام خاصة تستلزم مراجعة قبل توزيع منتج تجاري. لعمل MP4 من HTML مع الصوت عبر الأدوات القائمة في *المستودع الكامل* لا داخل المهارة المنفردة:
+
+    python3 $SKILL_DIR/scripts/motion_director.py render ./motion.html --out ./motion.mp4 --audio ./voice.wav
+    python3 tools/verify_video.py ./motion.mp4 --aspect 9:16 --fps 30 --duration 9 --audio ./voice.wav
+
+**حقيقة القدرات:** إنشاء HTML ناجح ≠ إنتاج MP4، واستنباط قطع الفيديو ≠ محاكاة الحركة، ووجود المكتبات في GitHub ≠ تشغيلها. ابحث عن الدليل الفعلي في ناتج الأوامر واختبار الإطارات والصوت قبل وسم القدرة مثبتة. لا تُدخل التقنيات الـ25 في عداد 4,223 تلقائيًا.
+
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.
 2. **اختر قواك:** `powers.py suggest "<الوصف>"` ثم الفصول المقترحة والأساليب في [styles-atlas.md](references/styles-atlas.md). اختر لوحة وخطًا عربيًا (Amiri, Cairo, Reem Kufi, Aref Ruqaa…) ونحو 3–6 قوى متوافقة.
