@@ -18,7 +18,7 @@ python3 "$SKILL_DIR/scripts/audio_cue_mapper.py" ./voice.wav --aligned-words ./w
 python3 "$SKILL_DIR/scripts/creative_reasoning_bridge.py" ./cues.json --style auto --out ./scene.json --report ./decision.json
 python3 "$SKILL_DIR/scripts/motion_director.py" compile ./scene.json --out ./film.html
 python3 "$SKILL_DIR/scripts/motion_director.py" render ./film.html --out ./film.mp4 --audio ./voice.wav
-python3 "$SKILL_DIR/scripts/verify_video.py" ./film.mp4 --aspect 9:16 --fps 30 --duration 9 --audio ./voice.wav
+python3 tools/verify_video.py ./film.mp4 --aspect 9:16 --fps 30 --duration 9 --audio ./voice.wav
 ```
 
 `words.json` may be `{ "words": [{"text":"مرحبا", "start":0.5, "end":1.1}] }` or WhisperX `{"segments":[{"words":[{"word":"مرحبا","start":0.5,"end":1.1}]}]}`; times must be source-audio seconds. The `--aligned-words` option is optional. If the input speech is not a WAV, transcode to the supported PCM format **separately** while preserving the original audio for final export; alignment remains anchored to original playback timeline. The actual audio track is never modified by either KOSIF bridge.
