@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOSIF Motion: Doodle Film</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f0e2;display:grid;place-items:center;min-height:100vh}
+svg{display:block;width:min(100vw,56.25vh);height:auto;max-height:100vh;background:#f6f0e2}
+.ink{fill:none;stroke:#213b34;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.thin{stroke-width:4}text{font-family:Tahoma,"DejaVu Sans",Arial,sans-serif;direction:rtl;text-anchor:middle;fill:#213b34}
+#caption{font-size:44px;font-weight:700}#headline{font-size:74px;font-weight:900}.small{font-size:28px}
+</style></head><body>
+<svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1920" fill="#f6f0e2"/>
+<rect x="25" y="25" width="1030" height="1870" fill="none" stroke="#d3c9ac" stroke-width="3" rx="30"/>
+<g id="camera">
+ <path class="ink thin reveal" data-start="0" data-end="1.1" d="M120 190 Q300 95 540 190 T960 190"/>
+ <path class="ink thin reveal" data-start=".25" data-end="1.5" d="M140 360 Q300 310 540 360 T940 360"/>
+ <circle cx="880" cy="475" r="74" fill="#d8ad72" opacity=".75"/>
+ <path class="ink thin reveal" data-start="1" data-end="2.4" d="M817 475 a63 63 0 1 0 126 0 a63 63 0 1 0 -126 0"/>
+ <g id="titles"><text id="headline" x="540" y="600">__TITLE__</text>
+ <text id="caption" x="540" y="675">__SUBTITLE__</text></g>
+ <g id="character">
+  <ellipse cx="520" cy="1490" rx="150" ry="23" fill="#d7d0be"/>
+  <path class="ink reveal" data-start="1.2" data-end="2.4" d="M455 1143 Q440 1240 450 1340 L590 1340 Q610 1240 580 1143"/>
+  <path class="ink reveal" data-start="1.9" data-end="3" d="M446 1130 Q427 1070 460 1010 Q520 940 580 1010 Q617 1070 591 1130 Q525 1190 446 1130Z"/>
+  <path class="ink thin reveal" data-start="2.4" data-end="3" d="M480 1072 l2 4 m65 -4 l2 4 M489 1110 Q523 1134 554 1110"/>
+  <g id="armL"><path class="ink reveal" data-start="2.5" data-end="3.5" d="M452 1190 Q392 1240 376 1310"/></g>
+  <g id="armR"><path class="ink reveal" data-start="2.5" data-end="3.5" d="M585 1190 Q636 1240 650 1305"/></g>
+  <g id="legL"><path class="ink reveal" data-start="2.7" data-end="3.7" d="M477 1340 Q455 1405 447 1453"/></g>
+  <g id="legR"><path class="ink reveal" data-start="2.7" data-end="3.7" d="M552 1340 Q574 1405 590 1453"/></g>
+ </g>
+ <g id="diagram">
+  <path class="ink reveal" data-start="4" data-end="5.2" d="M190 1580 L190 1500 L350 1500 L350 1580"/>
+  <path class="ink reveal" data-start="4.5" data-end="5.8" d="M440 1580 L440 1400 L600 1400 L600 1580"/>
+  <path class="ink reveal" data-start="5" data-end="6.4" d="M690 1580 L690 1310 L850 1310 L850 1580"/>
+  <path class="ink thin reveal" data-start="5.2" data-end="6.8" d="M150 1580 H900"/>
+ </g>
+</g>
+<g id="pen" opacity="0">
+ <path d="M-14 -50 L14 -50 L12 12 L0 29 L-12 12 Z" fill="#f6f0e2" stroke="#213b34" stroke-width="4"/>
+ <path d="M-12 12 L12 12 L0 29 Z" fill="#213b34"/>
+</g>
+<text class="small" x="540" y="1810">KOSIF • Animation by Code</text>
+</svg>
+<script>"use strict";(()=>{
+const duration=__DURATION__,fps=__FPS__;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{const v=clamp(x);return v*v*(3-2*v)};
+const $=id=>document.getElementById(id);
+const opacity=(id,v)=>$(id).setAttribute("opacity",String(clamp(v)));
+const transform=(id,v)=>$(id).setAttribute("transform",v);
+const paths=Array.from(document.querySelectorAll(".reveal")).map(el=>({
+ el,length:el.getTotalLength(),a:Number(el.dataset.start),b:Number(el.dataset.end)
+}));
+for(const p of paths){p.el.style.strokeDasharray=String(p.length);p.el.style.strokeDashoffset=String(p.length);}
+function seek(input){
+ const t=clamp(Number(input)||0,0,duration);
+ for(const p of paths)p.el.style.strokeDashoffset=String(p.length*(1-ease((t-p.a)/(p.b-p.a))));
+ opacity("titles",ease(t/.9)*(1-ease((t-5.7)/1.8)));
+ opacity("diagram",ease((t-4)/.7));
+ const walking=ease((t-3.3)/.5),step=Math.sin((t-3.3)*6)*walking;
+ transform("legL","rotate("+(step*14).toFixed(3)+" 477 1340)");
+ transform("legR","rotate("+(-step*14).toFixed(3)+" 552 1340)");
+ transform("armL","rotate("+(-step*12).toFixed(3)+" 452 1190)");
+ transform("armR","rotate("+(step*12).toFixed(3)+" 585 1190)");
+ transform("character","translate("+(ease((t-3.3)/2.5)*95).toFixed(3)+" 0)");
+ const z=1+.07*ease(t/5),p=ease((t-3.8)/2)*30;
+ transform("camera","translate("+(-540*(z-1)-p).toFixed(3)+" "+(-960*(z-1)).toFixed(3)+") scale("+z.toFixed(5)+")");
+ const active=paths.find(q=>t>=q.a&&t<=q.b);
+ if(active){
+   const xy=active.el.getPointAtLength(active.length*ease((t-active.a)/(active.b-active.a)));
+   transform("pen","translate("+xy.x.toFixed(3)+" "+xy.y.toFixed(3)+") rotate(30)");
+   opacity("pen",1);
+ }else opacity("pen",0);
+ return {time:t,progress:t/duration,paths:paths.length};
+}
+window.__kosif={duration,fps,seek};
+window.__kosifReady=document.fonts.ready;
+seek(0);
+})();</script>
+</body></html>
