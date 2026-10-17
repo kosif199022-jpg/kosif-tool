@@ -197,6 +197,16 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 اجتياز البوابات البنيوية لا يساوي فحصًا فنيًا أو نجاح MP4، ولا يعني أنه تم فهم مشاعر الأغنية. الأداء/المعنى/الحقوق/جودة العرض تتطلب اختبارًا مستقلاً وقرار المستخدم.
 
+## 4K. قياس بصمة الفيديو المرجعي — Reference Visual Intelligence
+
+لو المستخدم طلب **فهم ألوان وإضاءة ومونتاج فيديو مرجعي أو نقل خصائصه إلى مشاهد جديدة**، شغّل أدوات [دليل البصمة البصرية التنفيذي](references/reference-visual-transfer.md). لا تعُد إلى مجرد روابط Katana أو SAM 2. هذه قدرة KOSIF أصلية لتوليد بيانات مقاسة من فيديو محلي مصرح به، مع فحص التراخيص والصلاحيات.
+
+    python3 $SKILL_DIR/scripts/motion_reference_probe.py ./reference.mp4 --cuts --out ./cuts.json
+    python3 $SKILL_DIR/scripts/reference_visual_fingerprint.py ./reference.mp4 --probe ./cuts.json --out ./visual.json
+    python3 $SKILL_DIR/scripts/reference_edit_engine.py --probe ./cuts.json --visual ./visual.json --out ./new-remotion
+
+النتيجة تقرير يقيس لقطات مصغرة 64×36 بمعدل 2 إطار/ثانية وبصمة الإضاءة والألوان والتغيرات المرئية، ثم مشروع Remotion جديد بألوان مشاهد مستقاة من القياسات. لا ينسخ صور المرجع ولا الصوت؛ ولا يصنّف حركة الكاميرا تصنيفًا مؤكدًا أو يفهم القصة دون تحليل إضافي. يتحقق من مصدر الفيديو ومدة التقرير وقيم الألوان قبل أي إنتاج. **أداة داخل المهارة ≠ ffmpeg مثبت ≠ فيديو مُنتج ومُراجع**. ثبّت أي تبعيات خارجية بموافقة، ولا تعتبر كود Katana الملكي متاحًا لمجرد وجود Higgsfield Skills.
+
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.
 2. **اختر قواك:** `powers.py suggest "<الوصف>"` ثم الفصول المقترحة والأساليب في [styles-atlas.md](references/styles-atlas.md). اختر لوحة وخطًا عربيًا (Amiri, Cairo, Reem Kufi, Aref Ruqaa…) ونحو 3–6 قوى متوافقة.
