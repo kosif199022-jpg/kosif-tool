@@ -61,8 +61,11 @@ function Shot({shot}) {
   const bg=shot.index%2===0?"#f4f0e6":"#172824";
   const ink=shot.index%2===0?"#172824":"#f4f0e6";
   const zoom=1.04+progress*0.09;
+  // Frame-accurate energy-transient responsiveness, not a claimed verified musical beat.
+  const nearest=Math.min(999,...(shot.pulseFrames||[]).map(t=>Math.abs(t-frame)));
+  const pulseScale=1+0.16*Math.max(0,1-nearest/5);
   return <AbsoluteFill style={{background:bg,overflow:"hidden"}}>
-    {shot.asset && <AbsoluteFill style={{transform:"scale("+zoom+")"}}>
+    {shot.asset && <AbsoluteFill style={{transform:"scale("+(zoom*pulseScale)+")"}}>
       <OffthreadVideo src={staticFile("assets/"+shot.asset)}
         muted style={{height:"100%",width:"100%",objectFit:"cover"}} />
     </AbsoluteFill>}
@@ -70,10 +73,10 @@ function Shot({shot}) {
       <div style={{position:"absolute",left:"10%",top:"20%",
           width:"80%",height:"65%",border:"8px solid "+ink,
           borderRadius:"45%",transform:"translateY("+floatY+"px) rotate("+
-            (progress*25)+"deg) scale("+zoom+")",opacity:.24}} />
+            (progress*25)+"deg) scale("+(zoom*pulseScale)+")",opacity:.24}} />
       <div style={{position:"absolute",left:"38%",top:"42%",
           width:160,height:160,borderRadius:"50%",
-          background:ink,transform:"translateX("+(progress*220-100)+"px)"}} />
+          background:ink,transform:"translateX("+(progress*220-100)+"px) scale("+pulseScale+")"}} />
     </AbsoluteFill>}
     <AbsoluteFill style={{display:"flex",alignItems:"center",
       justifyContent:"center",padding:100}}>
@@ -183,7 +186,8 @@ def plan(probe,cues=None,fps=30,mode="original"):
         shots.append({"index":i,"startFrame":start,"endFrame":end,"frames":end-start,
                       "startSeconds":round(a,6),"endSeconds":round(b,6),
                       "caption":" ".join(utterance[:10])[:140] or ("مشهد "+str(i+1)),
-                      "transientCandidates":nearby[:30],"asset":None,
+                      "transientCandidates":nearby[:30],
+                      "pulseFrames":[round(t*fps)-start for t in nearby[:30]],"asset":None,
                       "motion":{"camera":"slow-push" if i%2==0 else "lateral-float",
                                 "transition":"hard-cut"}})
     assert sum(s["frames"] for s in shots)==total_frames
