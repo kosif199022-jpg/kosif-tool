@@ -17,6 +17,8 @@ import sys
 SKILL = Path(__file__).resolve().parent.parent
 ENGINE = SKILL / "assets" / "motion_engine.js"
 RENDERER = SKILL.parents[2] / "tools" / "render_html.cjs"
+if not RENDERER.is_file():
+    RENDERER = SKILL / "resources" / "motion-runtime" / "render_html.cjs"
 HEX = re.compile(r"^#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?$")
 PATH_DATA = re.compile(r"^[\d\s+\-.,EeMmLlHhVvCcQqSsTtAaZz]+$")
 MAX_ELEMENTS = 80
@@ -214,7 +216,7 @@ def render(html_path,output,audio=None):
     if not src.is_file() or dest.suffix.lower()!=".mp4" or dest.exists() or not dest.parent.is_dir():
         raise ValueError("existing HTML and fresh output .mp4 path required")
     if not (RENDERER.is_file() and shutil.which("node") and shutil.which("ffmpeg") and shutil.which("ffprobe")):
-        raise ValueError("full kosif-tool tools/render_html.cjs + node + ffmpeg/ffprobe required")
+        raise ValueError("KOSIF bundled render_html.cjs + node + Playwright/Chromium + ffmpeg/ffprobe required")
     cmd=["node",str(RENDERER),"--in",str(src.resolve()),"--out",str(dest.resolve()),
          "--mode","seek","--offline"]
     if audio:
@@ -226,7 +228,7 @@ def render(html_path,output,audio=None):
                           stdin=subprocess.DEVNULL,check=False,timeout=1200)
     return {"status":"render_command_completed" if result.returncode==0 else "render_failed",
             "return_code":result.returncode,"mp4_exists":dest.is_file(),
-            "verified":False,"next":"Independently inspect video with tools/verify_video.py",
+            "verified":False,"next":"Independently inspect video with scripts/verify_video.py in the skill",
             "stderr_tail":result.stderr[-1500:] if result.returncode else ""}
 
 
