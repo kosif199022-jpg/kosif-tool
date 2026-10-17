@@ -28,6 +28,7 @@
       const outer = el('g',{},layer);
       const inner = el('g',{},outer);
       let drawable = [];
+      let pen = null;
       if (item.type === 'path') {
         drawable=[el('path',{d:item.d,stroke:item.stroke || '#172824',
           'stroke-width': item.strokeWidth || 6,fill:'none',
@@ -52,12 +53,26 @@
         ];
         drawable=paths.map((d,i)=>el('path',{d,fill:'none',stroke:item.stroke||'#172824',
           'stroke-width':i<6?7:4,'stroke-linecap':'round'},p));
+      } else if (item.type === 'actor') {
+        // Each body part retains a named anatomical pivot. Paths are
+        // independently drawn, then articulated only after drawing finishes.
+        const p = el('g',{transform:'translate('+item.x+' '+item.y+') scale('+(item.scale||1)+')'},inner);
+        drawable=(item.parts||[]).map(part=>el('path',{
+          d:part.d, stroke:part.stroke||'#172824',
+          'stroke-width':part.strokeWidth||4,fill:part.fill||'none',
+          'stroke-linecap':'round','stroke-linejoin':'round'
+        },p));
+        pen=el('circle',{r:5,fill:'#355b47',opacity:0},p);
+      } else if (item.type === 'morph') {
+        drawable=[el('path',{stroke:item.stroke||'#172824',
+          'stroke-width':item.strokeWidth||6,fill:item.fill||'none',
+          'stroke-linejoin':'round','stroke-linecap':'round'},inner)];
       }
       const pathLen=drawable.map(d=>{
         try { return typeof d.getTotalLength==='function' ? d.getTotalLength() : 0; }
         catch { return 0; }
       });
-      return {item,outer,inner,drawable,pathLen};
+      return {item,outer,inner,drawable,pathLen,pen};
     });
     return {sc,layer,entries};
   });
@@ -70,7 +85,7 @@
       const shown=sc.id===current.id;
       layer.style.display=shown?'':'none';
       if (!shown) return;
-      entries.forEach(({item,outer,inner,drawable,pathLen})=>{
+      entries.forEach(({item,outer,inner,drawable,pathLen,pen})=>{
         const start=item.start === undefined ? sc.start : item.start;
         const end=item.end === undefined ? sc.end : item.end;
         const reveal=fraction(sec,start,end);
@@ -95,14 +110,67 @@
           drawable[4].setAttribute('transform','rotate('+(-gait)+' 0 94)');
           drawable[5].setAttribute('transform','rotate('+gait+' 0 94)');
         }
+        if (item.type==='morph') {
+          const coords=item.from.map((a,i)=>{
+            const b=item.to[i];
+            return [lerp(a[0],b[0],reveal),lerp(a[1],b[1],reveal)];
+          });
+          const d=coords.map((pt,i)=>(i?' L':'M')+pt[0]+' '+pt[1]).join('')
+             +(item.closed===false?'':' Z');
+          drawable[0].setAttribute('d',d);
+          try {pathLen[0]=drawable[0].getTotalLength();} catch {pathLen[0]=0;}
+        }
         for (let i=0;i<drawable.length;i++) {
           const node=drawable[i],len=pathLen[i];
+          const partReveal=item.type==='actor'
+            ? smooth(C(reveal*drawable.length-i))
+            : reveal;
           if (len>0) {
             node.style.strokeDasharray=String(len+2);
-            node.style.strokeDashoffset=String((len+2)*(1-reveal));
+            node.style.strokeDashoffset=String((len+2)*(1-partReveal));
           } else {
-            node.style.opacity=String(reveal);
+            node.style.opacity=String(partReveal);
           }
+          if (item.type==='actor') node.style.fillOpacity=String(partReveal);
+        }
+        // The drawing tip follows the active path at each seekable frame.
+        if (pen) {
+          const index=Math.min(drawable.length-1,Math.floor(reveal*drawable.length));
+          const local=C(reveal*drawable.length-index);
+          const line=drawable[index];
+          if (sec>=start && reveal<1 && typeof line.getPointAtLength==='function' && pathLen[index]>0) {
+            const point=line.getPointAtLength(local*pathLen[index]);
+            pen.setAttribute('cx',point.x);
+            pen.setAttribute('cy',point.y);
+            pen.style.opacity='1';
+          } else {
+            pen.style.opacity='0';
+          }
+        }
+        if (item.type==='actor') {
+          const action=item.action||'idle';
+          const age=Math.max(0,sec-end);
+          const active=sec>=end;
+          const speed=action==='run'?14:7;
+          const gait=active?Math.sin(age*speed)*((action==='run')?42:24):0;
+          (item.parts||[]).forEach((part,i)=>{
+            let angle=0;
+            if (active) {
+              if (action==='walk'||action==='run') {
+                if (part.role==='arm-left'||part.role==='leg-right') angle=gait;
+                if (part.role==='arm-right'||part.role==='leg-left') angle=-gait;
+              } else if (action==='wave'&&part.role==='arm-right') {
+                angle=-55+Math.sin(age*9)*20;
+              } else if (action==='point'&&part.role==='arm-right') {
+                angle=-65;
+              } else if (action==='sit'&&(part.role==='leg-left'||part.role==='leg-right')) {
+                angle=part.role==='leg-left'?-65:65;
+              }
+              if (part.role==='head'&&(action==='walk'||action==='run')) angle=Math.sin(age*speed)*2;
+            }
+            const pivot=part.pivot||[0,0];
+            drawable[i].setAttribute('transform','rotate('+angle+' '+pivot[0]+' '+pivot[1]+')');
+          });
         }
       });
     });
