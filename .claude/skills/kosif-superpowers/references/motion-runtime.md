@@ -1,6 +1,6 @@
 # KOSIF Superpowers — Motion Runtime & Engine Fusion
 
-**This is an executable capability pack, not just a repo bookmark list.** KOSIF now owns original deterministic SVG/JS motion code, a safe film creator, reusable math and animation utilities, 25 engine route cards, and the existing HTML→MP4/FFmpeg renderer from the full kosif-tool checkout.
+**This is an executable capability pack, not just a repo bookmark list.** KOSIF now owns original deterministic SVG/JS motion code, a safe film creator, reusable math and animation utilities, 25 engine route cards, and a **bundled copy of KOSIF-owned HTML→MP4 renderer**, with video/aspect verification helpers for skill-only installs.
 
 ## Working KOSIF-owned capabilities
 
@@ -16,7 +16,7 @@
 | Explainer diagram | Incrementally revealed bars in template |
 | Arabic captions | wordCueState() tracks complete Arabic words |
 | Frame arithmetic | timeCode(), assertFrameContract() |
-| MP4 export pathway | Existing tools/render_html.cjs requires Playwright, FFmpeg and Chromium |
+| MP4 export pathway | Bundled resources/motion-runtime/render_html.cjs requires Playwright, FFmpeg and Chromium |
 
 These are runnable local motion mechanics, not claims that Blender, GSAP, Remotion, Lottie, or any other provider is preinstalled. Full character rigging, auto-motion-video imitation, full timeline editor and proprietary plugins are not implemented by this small core.
 
@@ -32,16 +32,16 @@ These are runnable local motion mechanics, not claims that Blender, GSAP, Remoti
        python3 $SKILL_DIR/scripts/motion_runtime.py scaffold --out /absolute/new_project --title "قصيف يرسم" --subtitle "الرسم والتحريك بالكود" --duration 8 --fps 30
 
 3. Open the generated film.html in a browser. Check frame states by calling window.__kosif.seek(2.5), window.__kosif.seek(4) and window.__kosif.seek(7) separately. An HTML file alone is not a verified film.
-4. Render only after checking current dependencies in the complete kosif-tool checkout:
+4. Render only after checking current dependencies in the current skill installation (the full repo is not required):
 
        python3 $SKILL_DIR/scripts/motion_runtime.py render --in /absolute/new_project/film.html --out /absolute/new_project/preview.png --fps 30 --run
        python3 $SKILL_DIR/scripts/motion_runtime.py render --in /absolute/new_project/film.html --out /absolute/new_project/film.mp4 --fps 30 --run
 
-   Requires Node.js, a configured Chromium/Playwright runtime, the repository renderer and FFmpeg. Does not install anything. The repository may be unavailable inside a skill-only upload.
+   Requires Node.js, a configured Chromium/Playwright runtime, the bundled renderer and FFmpeg. Does not install anything. The renderer and verification helpers are copied from KOSIF's own MIT-licensed repository files and included in the skill upload.
 5. To incorporate original voice use --audio /absolute/original.wav with MP4. User audio stays the master clock; align beats/words to the storyboard and revise frame timings, not the voice.
-6. After render, inspect frames and ffprobe output. From full repo root:
+6. After render, inspect frames and ffprobe output. From any working directory with SKILL_DIR pointing to the skill:
 
-       python3 tools/verify_video.py /absolute/new_project/film.mp4 --aspect 9:16 --fps 30 --duration 8
+       python3 $SKILL_DIR/scripts/verify_video.py /absolute/new_project/film.mp4 --aspect 9:16 --fps 30 --duration 8
 
    Add --audio /absolute/original.wav only when original voice was included. Record exact artifact paths and failures. Do not call preview or CLI exit-code proof of creative correctness.
 
