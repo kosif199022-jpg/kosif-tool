@@ -40,6 +40,20 @@ class CodeDrawingMasterTests(unittest.TestCase):
         self.assertNotEqual(paths(a),paths(b))
         self.assertGreaterEqual(len(paths(a)),5)
 
+    def test_morph_exists_with_checked_corresponding_vertices(self):
+        model=drawing.make_story()
+        morph=next(x for x in model["scenes"][0]["elements"] if x["type"]=="morph")
+        self.assertEqual(len(morph["from"]),len(morph["to"]))
+        self.assertNotEqual(morph["from"],morph["to"])
+        self.assertTrue(morph["end"]>morph["start"])
+
+    def test_morph_vertex_injection_rejected(self):
+        model=drawing.make_story()
+        morph=next(x for x in model["scenes"][0]["elements"] if x["type"]=="morph")
+        morph["to"][0][1]='eval(alert(1))'
+        with self.assertRaises(ValueError):
+            drawing.director.validate(model)
+
     def test_staged_path_drawing_and_post_draw_motion(self):
         scene=drawing.make_story()["scenes"][0]
         for actor in (i for i in scene["elements"] if i["type"]=="actor"):
