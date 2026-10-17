@@ -178,6 +178,15 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 مشروع Remotion المولّد يستفيد من مرشحات الصوت لتكبير وتحريك الأشكال واللقطات وفق الإطار، ولا يقتصر على عرض بيانات BPM. التقييم الصحيح يتطلب معاينة الفيديو والصوت، ولا يتحول تخمين BPM إلى حقيقة مؤكدة بدون اختبار مرجعي.
 
+## 4J. KOSIF Creative Quality Gate — اختبار صحة القرار قبل التصيير
+
+عندما تولّد خطة مونتاج أو تختار توقيت القطعات، استدعِ [محرك مراقبة الجودة والتفكير](references/creative-quality-gates.md). **كود التنفيذ**: scripts/creative_quality_gate.py؛ يفحص صراحةً اتصال إطارات المشاهد بلا فجوات، وعدم فصل كلمات حقيقية موثّقة زمنيًا، وصحة مراجع الملفات البديلة، وصدق تقرير الإثبات. يستدعيه reference_edit_engine.py تلقائيًا، فيمنع تصدير مشروع خاطئ ويولّد quality-audit.json إلى جانب مصادر Remotion.
+
+    python3 $SKILL_DIR/scripts/creative_quality_gate.py ./my-project/src/plan.json --project-dir ./my-project --out ./my-quality-report.json
+    python3 -m unittest discover -s $SKILL_DIR/evals -p test_creative_quality_gate.py -v
+
+اجتياز البوابات البنيوية لا يساوي فحصًا فنيًا أو نجاح MP4، ولا يعني أنه تم فهم مشاعر الأغنية. الأداء/المعنى/الحقوق/جودة العرض تتطلب اختبارًا مستقلاً وقرار المستخدم.
+
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.
 2. **اختر قواك:** `powers.py suggest "<الوصف>"` ثم الفصول المقترحة والأساليب في [styles-atlas.md](references/styles-atlas.md). اختر لوحة وخطًا عربيًا (Amiri, Cairo, Reem Kufi, Aref Ruqaa…) ونحو 3–6 قوى متوافقة.

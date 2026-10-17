@@ -33,6 +33,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_scout.py' -v
       - name: Capacity and Python readiness regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_system_python.py' -v
+      - name: Evidence-backed creative quality and timeline logic gates
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_quality_gate.py' -v
       - name: Measured music hypotheses and audio-reactive visuals tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_music_rhythm_engine.py' -v
       - name: Reference Edit Engine Python and project generation tests
