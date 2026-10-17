@@ -28,6 +28,7 @@
       const outer = el('g',{},layer);
       const inner = el('g',{},outer);
       let drawable = [];
+      let pen = null;
       if (item.type === 'path') {
         drawable=[el('path',{d:item.d,stroke:item.stroke || '#172824',
           'stroke-width': item.strokeWidth || 6,fill:'none',
@@ -61,11 +62,13 @@
           'stroke-width':part.strokeWidth||4,fill:part.fill||'none',
           'stroke-linecap':'round','stroke-linejoin':'round'
         },p));
+        pen=el('circle',{r:5,fill:'#355b47',opacity:0},p);
+      }
       const pathLen=drawable.map(d=>{
         try { return typeof d.getTotalLength==='function' ? d.getTotalLength() : 0; }
         catch { return 0; }
       });
-      return {item,outer,inner,drawable,pathLen};
+      return {item,outer,inner,drawable,pathLen,pen};
     });
     return {sc,layer,entries};
   });
@@ -78,7 +81,7 @@
       const shown=sc.id===current.id;
       layer.style.display=shown?'':'none';
       if (!shown) return;
-      entries.forEach(({item,outer,inner,drawable,pathLen})=>{
+      entries.forEach(({item,outer,inner,drawable,pathLen,pen})=>{
         const start=item.start === undefined ? sc.start : item.start;
         const end=item.end === undefined ? sc.end : item.end;
         const reveal=fraction(sec,start,end);
@@ -115,6 +118,20 @@
             node.style.opacity=String(partReveal);
           }
           if (item.type==='actor') node.style.fillOpacity=String(partReveal);
+        }
+        // The drawing tip follows the active path at each seekable frame.
+        if (pen) {
+          const index=Math.min(drawable.length-1,Math.floor(reveal*drawable.length));
+          const local=C(reveal*drawable.length-index);
+          const line=drawable[index];
+          if (sec>=start && reveal<1 && typeof line.getPointAtLength==='function' && pathLen[index]>0) {
+            const point=line.getPointAtLength(local*pathLen[index]);
+            pen.setAttribute('cx',point.x);
+            pen.setAttribute('cy',point.y);
+            pen.style.opacity='1';
+          } else {
+            pen.style.opacity='0';
+          }
         }
         if (item.type==='actor') {
           const action=item.action||'idle';
