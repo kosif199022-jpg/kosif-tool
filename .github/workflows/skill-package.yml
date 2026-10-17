@@ -26,6 +26,10 @@ jobs:
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_*.py' -v
           node --test .claude/skills/kosif-superpowers/evals/test_motion_engine.mjs
+      - name: Test new Code Drawing Master before packaging
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
+          node --test .claude/skills/kosif-superpowers/evals/test_code_drawing_engine.mjs
       - name: Package portable Claude skill
         run: python3 .claude/skills/kosif-superpowers/scripts/package_skill.py --out dist/kosif-superpowers.skill --lite --with-evals
       - name: Verify distributable contains executable capabilities
