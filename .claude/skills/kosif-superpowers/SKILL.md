@@ -168,6 +168,16 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 بعد التوليد: راجع خطة التحرير والحقوق وترخيص Remotion، ثم شغّل npm install / npm run studio / npm run render داخل مجلد المشروع، وتحقق من الفيلم بنفسك. النتائج المقاسة هنا: **توقيت المرشّحات وخطة قطع، لا استخراج Motion Vectors، ولا تشغيل Katana الأصلية، ولا إثبات جودة MP4 بدون الرندر**. أي أدوات SAM2 أو CoTracker أو Higgsfield خدمة منفصلة تُفعّل بإذن وتكلفة وترخيص واضح.
 
+## 4I. KOSIF Music Rhythm Intelligence — تحليل إيقاع عملي وربطه بالموشن
+
+لتحليل موسيقى أو أغنية عند وجود ملف PCM WAV محلي، استخدم [محرك الإيقاع التنفيذي](references/music-rhythm-execution.md): يحسب عدة فرضيات BPM من مرشحات تغيّر الطاقة التي قِيست فعلاً، ويخرج فترات الطاقة العالية والمنخفضة. لا تخمّن كلمات الأغاني أو مشاعر المطرب أو تضع شارة ثقة زائفة، فالسرعة هنا تقدير قابل للنقض.
+
+    python3 $SKILL_DIR/scripts/audio_cue_mapper.py ./voice.wav --out ./cues.json
+    python3 $SKILL_DIR/scripts/music_rhythm_engine.py ./cues.json --out ./rhythm.json
+    python3 $SKILL_DIR/scripts/reference_edit_engine.py --probe ./cuts.json --cues ./cues.json --out ./new-film-project
+
+مشروع Remotion المولّد يستفيد من مرشحات الصوت لتكبير وتحريك الأشكال واللقطات وفق الإطار، ولا يقتصر على عرض بيانات BPM. التقييم الصحيح يتطلب معاينة الفيديو والصوت، ولا يتحول تخمين BPM إلى حقيقة مؤكدة بدون اختبار مرجعي.
+
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.
 2. **اختر قواك:** `powers.py suggest "<الوصف>"` ثم الفصول المقترحة والأساليب في [styles-atlas.md](references/styles-atlas.md). اختر لوحة وخطًا عربيًا (Amiri, Cairo, Reem Kufi, Aref Ruqaa…) ونحو 3–6 قوى متوافقة.
