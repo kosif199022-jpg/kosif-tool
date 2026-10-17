@@ -107,8 +107,11 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
     python3 $SKILL_DIR/scripts/motion_stack.py scaffold gsap --out ./gsap-project
     python3 $SKILL_DIR/scripts/motion_stack.py scaffold remotion --out ./remotion-project
     python3 $SKILL_DIR/scripts/motion_stack.py scaffold manim --out ./manim-project
+    python3 $SKILL_DIR/scripts/motion_stack.py scaffold three --out ./three-project
+    python3 $SKILL_DIR/scripts/motion_stack.py scaffold pixi --out ./pixi-project
+    python3 $SKILL_DIR/scripts/motion_stack.py scaffold p5 --out ./p5-project
 
-محرك الاستوديو الأصلي للمهارة مستقل عن JS packages؛ تشغيل GSAP/Rough/Vivus/Remotion/Manim الحقيقي يحتاج تثبيتها قانونيًا داخل بيئة المستخدم واختبارها. يعرض ملف [25 creative technologies](data/motion_sources.json) ما يمكن تعلمه من كل محرك والأدوار والتراخيص، وليس 25 محركًا مثبتًا. Remotion وGSAP لهما شروط استخدام خاصة تستلزم مراجعة قبل توزيع منتج تجاري. لعمل MP4 من HTML مع الصوت عبر الأدوات القائمة في *المستودع الكامل* لا داخل المهارة المنفردة:
+محرك الاستوديو الأصلي للمهارة مستقل عن JS packages؛ تشغيل GSAP/Rough/Vivus/Remotion/Manim/Three.js/PixiJS/p5.js الحقيقي يحتاج تثبيتها قانونيًا داخل بيئة المستخدم واختبارها. يعرض ملف [25 creative technologies](data/motion_sources.json) ما يمكن تعلمه من كل محرك والأدوار والتراخيص، وليس 25 محركًا مثبتًا. Remotion وGSAP لهما شروط استخدام خاصة تستلزم مراجعة قبل توزيع منتج تجاري. لعمل MP4 من HTML مع الصوت عبر الأدوات القائمة في *المستودع الكامل* لا داخل المهارة المنفردة:
 
     python3 $SKILL_DIR/scripts/motion_director.py render ./motion.html --out ./motion.mp4 --audio ./voice.wav
     python3 tools/verify_video.py ./motion.mp4 --aspect 9:16 --fps 30 --duration 9 --audio ./voice.wav
