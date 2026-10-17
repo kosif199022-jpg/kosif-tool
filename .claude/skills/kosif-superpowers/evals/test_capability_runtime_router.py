@@ -17,7 +17,7 @@ class CapabilityRouterTests(unittest.TestCase):
     def test_all_registered_capabilities_load_and_ids_unique(self):
         rows=router.load_registry()
         self.assertGreaterEqual(len(rows),22)
-        self.assertEqual(len(set(x["id"] for x in rows)),21)
+        self.assertEqual(len(set(x["id"] for x in rows)),len(rows))
 
     def test_arabic_katana_routes_to_editable_original_engine(self):
         hits=router.route("اعمل محاكاة مونتاج فيديو بكاتانا لكن بالكود",router.load_registry())
