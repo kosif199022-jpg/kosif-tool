@@ -29,6 +29,12 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_scout.py' -v
       - name: Capacity and Python readiness regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_system_python.py' -v
+      - name: Motion Lab execution and safety regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_*.py' -v
+      - name: Motion engine JavaScript execution contract
+        run: node --test .claude/skills/kosif-superpowers/evals/test_motion_engine.mjs
+      - name: Motion engine JavaScript syntax
+        run: node --check .claude/skills/kosif-superpowers/assets/motion_engine.js
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules
