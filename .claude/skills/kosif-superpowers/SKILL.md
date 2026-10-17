@@ -88,6 +88,18 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 نسب المصدر واجب؛ محتوى System Design Primer وAwesome Python مرخص CC BY 4.0 في ملف LICENSE الخاص بكل منهما، والمشاريع المرتبطة قد تكون لها تراخيص مختلفة. لا تعتبر وجود فهرس 31 مصدرًا أو أدوات تخطيط قدرتين حيتين تم التحقق من عملهما على جهاز المستخدم دون فحص بيئته.
 
+## 4D. قدرات الموشن التنفيذية / Original executable Motion Runtime
+
+عند طلب إنتاج **موشن جرافيك أو فيلم مرسوم بالكود أو أنيميشن متزامن مع الصوت**، افتح [بروتوكول KOSIF Motion Runtime](references/motion-runtime.md) قبل الاكتفاء بالمراجع. صار داخل المهارة محرك SVG حتمي أصلي للرسم بالقلم، تحريك الشخصية والكاميرا، كَي فريم، التدرج والـeasing وتوقيت كلمات عربية، وليس مجرد وصف لمستودعات خارجية.
+
+- تحقق من الأدوات الحية: python3 $SKILL_DIR/scripts/motion_runtime.py doctor
+- حدد المحركات الخارجية الـ25 ومتطلبات تفعيلها: python3 $SKILL_DIR/scripts/motion_runtime.py engines
+- أنشئ فيلم SVG فعليًا: python3 $SKILL_DIR/scripts/motion_runtime.py scaffold --out /absolute/new-film --title "قصيف يرسم" --subtitle "موشن جرافيك بالكود" --duration 8 --fps 30
+- حركات قابلة لإعادة الاستخدام: resources/motion-runtime/motion_toolkit.mjs
+- للرندر MP4: استدعِ render --run فقط بعد التأكد من وجود tools/render_html.cjs في نسخة المستودع الكاملة، ووجود Node/Playwright/Chromium/FFmpeg؛ اختبر الصوت والإطارات بنفسك. إن غاب محرك فلا تسمّه منفّذًا أو متحققًا.
+
+لا تنسخ كود الآخرين دون التحقق من الترخيص؛ Remotion وGSAP وtldraw وغيرها قد تتطلب شروط استعمال خاصة. ادرس قدرات أي مكتبة من مصدرها الأصلي وقم بتطبيق التكامل الاختياري فقط عندما تحتاجه المهمة. **لا تزيد رقم 4,223 المثبت على أساس روابط أو وصفة.** وقيمة الإنجاز تقاس بالفيلم/الاختبارات والتزامن الفعلي، لا بعدد المحركات الموجودة في مصفوفة الخيارات.
+
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.
 2. **اختر قواك:** `powers.py suggest "<الوصف>"` ثم الفصول المقترحة والأساليب في [styles-atlas.md](references/styles-atlas.md). اختر لوحة وخطًا عربيًا (Amiri, Cairo, Reem Kufi, Aref Ruqaa…) ونحو 3–6 قوى متوافقة.
