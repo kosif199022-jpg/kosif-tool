@@ -19,6 +19,8 @@ TEMPLATE = SKILL / "resources" / "motion-runtime" / "doodle-film.template.html"
 ENGINE_DATA = SKILL / "data" / "motion_engines.json"
 REPO_ROOT = Path(__file__).resolve().parents[4]
 RENDERER = REPO_ROOT / "tools" / "render_html.cjs"
+if not RENDERER.is_file():
+    RENDERER = SKILL / "resources" / "motion-runtime" / "render_html.cjs"
 
 
 def read_engines():
