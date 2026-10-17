@@ -36,6 +36,8 @@ jobs:
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_repository_capability_packer.py' -v
       - name: Test source cut transfer and executable Remotion project generator
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_edit_engine.py' -v
+      - name: Test audio rhythm hypotheses and frame-reactive motion
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_music_rhythm_engine.py' -v
       - name: Package portable Claude skill
         run: python3 .claude/skills/kosif-superpowers/scripts/package_skill.py --out dist/kosif-superpowers.skill --lite --with-evals
       - name: Verify distributable contains executable capabilities
