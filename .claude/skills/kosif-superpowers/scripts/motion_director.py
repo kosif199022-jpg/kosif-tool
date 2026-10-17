@@ -102,7 +102,7 @@ def validate(spec):
         if count>MAX_ELEMENTS:
             raise ValueError("too many elements")
         for item in elements:
-            if not isinstance(item,dict) or item.get("type") not in {"path","circle","text","character"}:
+            if not isinstance(item,dict) or item.get("type") not in {"path","circle","text","character","actor"}:
                 raise ValueError("unsupported vector element type")
             a=number(item.get("start",start),start,end)
             b=number(item.get("end",end),start,end)
@@ -126,6 +126,39 @@ def validate(spec):
                     number(item.get(k),-4096,4096)
                 if "scale" in item:
                     number(item["scale"],0.1,4)
+            elif item["type"]=="actor":
+                for k in ("x","y"):
+                    number(item.get(k),-4096,4096)
+                if "scale" in item:
+                    number(item["scale"],0.1,4)
+                if item.get("action","idle") not in {"idle","walk","run","wave","point","sit"}:
+                    raise ValueError("unsupported actor action")
+                parts=item.get("parts")
+                if not isinstance(parts,list) or not 3<=len(parts)<=64:
+                    raise ValueError("actor requires 3..64 vector parts")
+                for part in parts:
+                    if not isinstance(part,dict):
+                        raise ValueError("invalid actor part")
+                    role=part.get("role","detail")
+                    if role not in {"head","body","hair","eye","nose","mouth","jacket",
+                                    "shirt","arm-left","arm-right","leg-left","leg-right",
+                                    "hand-left","hand-right","shoe-left","shoe-right",
+                                    "ear","tail","whisker","detail"}:
+                        raise ValueError("unsupported actor part role")
+                    d=part.get("d")
+                    if not isinstance(d,str) or len(d)>2500 or not PATH_DATA.fullmatch(d):
+                        raise ValueError("unsafe actor SVG path")
+                    if "stroke" in part:
+                        color(part["stroke"])
+                    if "fill" in part and part["fill"]!="none":
+                        color(part["fill"])
+                    if "strokeWidth" in part:
+                        number(part["strokeWidth"],0.1,40)
+                    pivot=part.get("pivot",[0,0])
+                    if not isinstance(pivot,list) or len(pivot)!=2:
+                        raise ValueError("actor joint pivot must be a 2-point list")
+                    for v in pivot:
+                        number(v,-4096,4096)
             else:
                 text(item.get("text"))
                 for k in ("x","y"):
