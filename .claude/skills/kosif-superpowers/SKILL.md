@@ -44,17 +44,17 @@ Reading order for a newcomer: `AGENTS.md` → `tools/kosif.py` (Atlas, scaffold)
 | key | بالعربية | adds | reach first for | details |
 |---|---|---|---|---|
 | `observe` | رصد المرجع | fetch permitted media, contact sheet, scene cuts, palette, frame-step analysis | `scripts/fetch_reference.py`, ffmpeg; OpenCV / PySceneDetect when installed | [reference-inspection.md](references/reference-inspection.md), [capabilities.md#observe](references/capabilities.md#observe) |
-| `animate` | التحريك | timelines, easing, path and shape morphing, physics, particles | GSAP / anime.js / motion in `starters/html-canvas`; flubber for morphs | [capabilities.md#animate](references/capabilities.md#animate) |
+| `animate` | التحريك | timelines, easing, path and shape morphing, physics, particles | GSAP / anime.js / Motion in `starters/html-canvas`; PixiJS for GPU effects; flubber for morphs | [capabilities.md#animate](references/capabilities.md#animate) |
 | `render` | الرندر | deterministic frames, encoding, programmatic video, previews, gates | `tools/render_html.cjs`, Remotion, ffmpeg | [capabilities.md#render](references/capabilities.md#render) |
 | `space` | الفضاء ثلاثي الأبعاد | WebGL scenes, cameras, 3D text, model loading, depth-based parallax | three.js (+ troika for Arabic 3D text), react-three-fiber | [capabilities.md#space](references/capabilities.md#space) |
-| `draw` | الرسم | SVG/Canvas drawing, sketchy looks, draw-on strokes, creative coding | p5.js, Rough.js, Paper.js, PixiJS | [capabilities.md#draw](references/capabilities.md#draw) |
-| `data` | البيانات | charts, maps, diagrams, data-driven motion | D3, ECharts, Vega-Lite, MapLibre, Mermaid | [capabilities.md#data](references/capabilities.md#data) |
+| `draw` | الرسم | SVG/Canvas drawing, sketchy looks, draw-on strokes, creative coding | p5.js, Rough.js, Paper.js, Fabric.js, Excalidraw | [capabilities.md#draw](references/capabilities.md#draw) |
+| `data` | البيانات | charts, maps, diagrams, data-driven motion | D3, ECharts, Vega, Plotly, MapLibre, Mermaid | [capabilities.md#data](references/capabilities.md#data) |
 | `voice` | الصوت | word timestamps, forced alignment, TTS, beat and loudness analysis | faster-whisper / WhisperX (install first), librosa, `tools/words_convert.py` | [capabilities.md#voice](references/capabilities.md#voice) |
-| `arabic` | النص العربي | RTL shaping, bidi, fonts, diacritics, Arabic NLP | HarfBuzz-backed browsers, arabic-reshaper + python-bidi, Noto/Amiri fonts | [capabilities.md#arabic](references/capabilities.md#arabic), `playbooks/arabic-typography.md` |
+| `arabic` | النص العربي | RTL shaping, bidi, fonts, diacritics, Arabic NLP | HarfBuzz (browsers, harfbuzzjs), arabic-reshaper + python-bidi, Google Fonts (Noto, Amiri, Cairo) | [capabilities.md#arabic](references/capabilities.md#arabic), `playbooks/arabic-typography.md` |
 | `captions` | الترجمات | subtitle formats, word-timing conversion, karaoke captions | `tools/words_convert.py`, pysubs2, ffsubsync | [capabilities.md#captions](references/capabilities.md#captions) |
-| `generate` | التوليد | AI images, video, 3D, talking heads, voices as original assets | ComfyUI-class pipelines run elsewhere; weights licenses checked | [capabilities.md#generate](references/capabilities.md#generate) |
+| `generate` | التوليد | AI images, video, 3D, talking heads, voices as original assets | ComfyUI / diffusers pipelines run elsewhere; weights licenses checked | [capabilities.md#generate](references/capabilities.md#generate) |
 | `orchestrate` | التنسيق | Claude Code skills, subagents, worktrees, MCP, browser automation for QA | process checklist below; Playwright MCP, chrome-devtools-mcp | [capabilities.md#orchestrate](references/capabilities.md#orchestrate) |
-| `design` | التصميم | UI motion patterns, icon sets, design tokens, scroll/parallax | Lucide / Phosphor icons, open-props tokens, Lenis | [capabilities.md#design](references/capabilities.md#design) |
+| `design` | التصميم | UI motion patterns, icon sets, design tokens, scroll/parallax | Lucide / Iconify icons, Style Dictionary tokens, shadcn/ui, Shiki code colours, Lenis | [capabilities.md#design](references/capabilities.md#design) |
 
 Every repository in the catalog carries: GitHub URL, stars, license and a license note (permissive · weak copyleft · copyleft: run as an external tool · model/weights license · custom), bilingual summary, the KOSIF step it serves, a one-line invocation and the playbooks it strengthens. `python3 .claude/skills/kosif-superpowers/scripts/superpowers.py search <words>` finds them in Arabic or English.
 
