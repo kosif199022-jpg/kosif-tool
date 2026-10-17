@@ -49,6 +49,7 @@ const ease=x=>{const v=clamp(x);return v*v*(3-2*v)};
 const $=id=>document.getElementById(id);
 const opacity=(id,v)=>$(id).setAttribute("opacity",String(clamp(v)));
 const transform=(id,v)=>$(id).setAttribute("transform",v);
+$("camera").appendChild($("pen")); // keep the pen in the same transform space as the SVG paths
 const paths=Array.from(document.querySelectorAll(".reveal")).map(el=>({
  el,length:el.getTotalLength(),a:Number(el.dataset.start),b:Number(el.dataset.end)
 }));
