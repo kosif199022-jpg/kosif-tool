@@ -98,3 +98,26 @@ test('word captions use provided timestamps',()=>{
   assert.equal(nodes.captions.children[1].textContent,'أهلا');
   assert.equal(window.__kosif.seek(1.8).word,null);
 });
+
+test('matched five-point vector morph changes actual SVG d across frames',()=>{
+  const item={type:'morph',start:0,end:4,stroke:'#172824',
+    from:[[10,10],[100,10],[100,100],[10,100],[5,50]],
+    to:[[20,20],[70,0],[130,80],[20,90],[0,30]]};
+  spec.scenes[0].elements.push(item);
+  try {
+    const {window,nodes}=load('idle');
+    const morphOuter=nodes.art.children[0].children[1];
+    const curve=morphOuter.children[0].children[0];
+    window.__kosif.seek(0);
+    const before=curve.attrs.d;
+    window.__kosif.seek(2);
+    const midway=curve.attrs.d;
+    window.__kosif.seek(4);
+    assert.notEqual(before,midway);
+    assert.ok(midway.includes(' Z'));
+    assert.equal(window.__kosif.duration,6);
+    assert.equal(curve.tag,'path');
+  } finally {
+    spec.scenes[0].elements.pop();
+  }
+});
