@@ -259,7 +259,9 @@
         "reference edit",
         "editing style",
         "remix",
-        "ريمكس"
+        "ريمكس",
+        "مونتاج",
+        "بكاتانا"
       ],
       "script": "scripts/reference_edit_engine.py",
       "subcommand": "--probe <cuts.json> --out <new-project-dir>",
