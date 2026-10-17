@@ -89,6 +89,9 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 نسب المصدر واجب؛ محتوى System Design Primer وAwesome Python مرخص CC BY 4.0 في ملف LICENSE الخاص بكل منهما، والمشاريع المرتبطة قد تكون لها تراخيص مختلفة. لا تعتبر وجود فهرس 31 مصدرًا أو أدوات تخطيط قدرتين حيتين تم التحقق من عملهما على جهاز المستخدم دون فحص بيئته.
 
 ## 4D. القدرة التنفيذية الجديدة — KOSIF Creative Motion Lab
+
+**جسر Motion Starter Kit التنفيذي:** لو المستخدم أرسل [motalim-ai/motion-starter-kit](https://github.com/motalim-ai/motion-starter-kit)، لا تكتفِ بفتح مرجع خارجي. اقرأ [جسر Motion Starter Kit التنفيذي](references/motion-starter-kit-bridge.md)، واستدعِ `scripts/motion_kit_bridge.py` لتحويل `lines[].words[].w/start/end` إلى Storyboard وHTML KOSIF. أوامر: `styles`، و`demo --style doodle --out demo.json --html demo.html`، و`build --style plotter --timings words.json --out plotter.json --html plotter.html`. أربع طرق SVG قابلة للتنفيذ (doodle, plotter, whiteboard, infographic) وستة أنماط للمراجعة فقط؛ لا تعتبر عرض الستايل إثبات تطابق فيديو مرجعي. لا تخمّن توقيت كلام حقيقي، ولا تعلن عن MP4 قبل رندره وفحصه. هذا الجسر تكامل أصلي مع KOSIF وليس نسخًا للمستودع.
+
 **لا تكتفِ بترشيح المستودعات.** إذا طلب المستخدم موشن أو رسمًا بالكود أو فيديو، افتح [Executable Creative Motion Lab](references/executable-creative-motion.md)، ثم **استخدم الأدوات الأصلية داخل المهارة** لإنشاء المصدر الفعلي، وفحص الناتج، وتصدير MP4 عند توفر محرك الرندر. مصدر القدرة هنا هو كود أصلي قابل للتنفيذ؛ المكتبات الخارجية خيارات مستقلة بشروطها.
 
 من داخل جذر المستودع أو مسار المهارة المثبتة:
