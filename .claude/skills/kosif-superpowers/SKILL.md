@@ -234,3 +234,8 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 ## Motion runtime bridge / جسر الرندر التنفيذي
 - Use `scripts/motion_runtime.py` for deterministic motion runtime tasks, with `data/motion_engines.json` and `references/motion-runtime.md`; run `evals/test_motion_runtime.py` to validate this added engine before production use.
 - Keep existing `scripts/motion_director.py` and `resources/motion-runtime/` workflows as separate, compatible paths; don't replace either runtime. Verify rendered video and audio before delivery.
+
+## Reference-media inspector / فحص فيديو المرجع
+- For permissioned HTTP(S) media references use `scripts/fetch_reference.py` to inspect frame contact sheets, color palette, cuts and metadata, or `scripts/superpowers.py` to search the separate 100-repository tool map in `repos.json`.
+- Read [reference inspection rules](references/reference-inspection.md), [100-repository tool catalog](references/repos.md), and [capability recipes](references/capabilities.md); always honor source licensing and use `--list` to inspect before downloading.
+- The inspector refuses private network destinations, non-HTTP(S) HLS URIs, encrypted streams, unbounded downloads and remote ffmpeg protocols. Output is cached in `.kosif-cache/` and must never be committed.
