@@ -230,3 +230,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 - **إن أُعطيت رابط المستودع فقط:** اقرأ هذا الملف، ثم من جذر المستودع `SKILL_DIR=.claude/skills/kosif-superpowers` وشغّل الخطوة 1 من البروتوكول.
 - **بعد تعديل الكتالوج:** `python3 $SKILL_DIR/scripts/build_chapters.py` ثم `python3 $SKILL_DIR/scripts/check_skill.py --evals` (كل فحوص البنية والروابط والأدلة والأرقام والتسريبات، ثم حالات التوجيه في evals/؛ يفشل إن فشل أيٌّ منهما). حدّث سطر الأرقام أعلاه بما يطبعه `check_skill.py --print-counts`.
 - **لتطوير المهارة نفسها:** اتبع حلقة التطوير الآمن في [verification.md](references/verification.md): خط أساس، فرضية، أصغر تغيير، تقييم، مقارنة، ثم قرار بالدليل.
+
+## Motion runtime bridge / جسر الرندر التنفيذي
+- Use `scripts/motion_runtime.py` for deterministic motion runtime tasks, with `data/motion_engines.json` and `references/motion-runtime.md`; run `evals/test_motion_runtime.py` to validate this added engine before production use.
+- Keep existing `scripts/motion_director.py` and `resources/motion-runtime/` workflows as separate, compatible paths; don't replace either runtime. Verify rendered video and audio before delivery.

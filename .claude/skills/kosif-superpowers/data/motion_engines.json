@@ -1,0 +1,383 @@
+{
+  "schema": "kosif.motion-engine-map.v1",
+  "note": "25 external projects mapped to actually runnable original KOSIF motion core, optionally installed adapters and legal provider requirements. No third-party code bundled.",
+  "engines": [
+    {
+      "id": "MOT-EXT-01",
+      "repo": "excalidraw/excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "family": "whiteboard",
+      "license_note": "MIT",
+      "capabilities": [
+        "freehand scene layout",
+        "sketch outlines",
+        "annotation placement"
+      ],
+      "integration": "export editable layout or recreate original shapes; external editor optional",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-02",
+      "repo": "mrdoob/three.js",
+      "url": "https://github.com/mrdoob/three.js",
+      "family": "3d",
+      "license_note": "MIT",
+      "capabilities": [
+        "mesh animation",
+        "perspective camera",
+        "lights",
+        "3d scene graphs"
+      ],
+      "integration": "optional package three and browser GPU",
+      "builtin_equivalent": "existing KOSIF renderer or optional provider",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-03",
+      "repo": "juliangarnier/anime",
+      "url": "https://github.com/juliangarnier/anime",
+      "family": "timeline",
+      "license_note": "MIT",
+      "capabilities": [
+        "SVG transforms",
+        "easing",
+        "keyframe timelines"
+      ],
+      "integration": "optional animejs version-specific adapter",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-04",
+      "repo": "remotion-dev/remotion",
+      "url": "https://github.com/remotion-dev/remotion",
+      "family": "export",
+      "license_note": "LICENSE_REQUIRED",
+      "capabilities": [
+        "React sequence and programmatic MP4 output"
+      ],
+      "integration": "use existing starters/remotion; check commercial license before use",
+      "builtin_equivalent": "existing KOSIF renderer or optional provider",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-05",
+      "repo": "tldraw/tldraw",
+      "url": "https://github.com/tldraw/tldraw",
+      "family": "whiteboard",
+      "license_note": "LICENSE_REQUIRED",
+      "capabilities": [
+        "infinite canvas",
+        "pointer drawing",
+        "editable whiteboard"
+      ],
+      "integration": "SDK license and workspace permission checks",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-06",
+      "repo": "pixijs/pixijs",
+      "url": "https://github.com/pixijs/pixijs",
+      "family": "2d",
+      "license_note": "MIT",
+      "capabilities": [
+        "GPU accelerated layered 2d scenes",
+        "sprites"
+      ],
+      "integration": "optional pixi.js WebGL renderer",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-07",
+      "repo": "3b1b/manim",
+      "url": "https://github.com/3b1b/manim",
+      "family": "explain",
+      "license_note": "MIT",
+      "capabilities": [
+        "math animation",
+        "labeled geometry",
+        "explanatory scenes"
+      ],
+      "integration": "optional Python Manim environment",
+      "builtin_equivalent": "existing KOSIF renderer or optional provider",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-08",
+      "repo": "motiondivision/motion",
+      "url": "https://github.com/motiondivision/motion",
+      "family": "timeline",
+      "license_note": "MIT",
+      "capabilities": [
+        "React/JS motion values",
+        "spring and gesture animation"
+      ],
+      "integration": "optional motion library",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-09",
+      "repo": "pmndrs/react-three-fiber",
+      "url": "https://github.com/pmndrs/react-three-fiber",
+      "family": "3d",
+      "license_note": "MIT",
+      "capabilities": [
+        "React component scene graph for Three.js"
+      ],
+      "integration": "optional @react-three/fiber; requires three",
+      "builtin_equivalent": "existing KOSIF renderer or optional provider",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-10",
+      "repo": "airbnb/lottie-web",
+      "url": "https://github.com/airbnb/lottie-web",
+      "family": "vector",
+      "license_note": "MIT",
+      "capabilities": [
+        "Lottie vector animation playback and state control"
+      ],
+      "integration": "optional lottie-web + lawful JSON assets",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-11",
+      "repo": "fabricjs/fabric.js",
+      "url": "https://github.com/fabricjs/fabric.js",
+      "family": "vector",
+      "license_note": "MIT",
+      "capabilities": [
+        "editable Canvas objects",
+        "SVG export and transforms"
+      ],
+      "integration": "optional fabric package",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-12",
+      "repo": "greensock/GSAP",
+      "url": "https://github.com/greensock/GSAP",
+      "family": "timeline",
+      "license_note": "LICENSE_REQUIRED",
+      "capabilities": [
+        "precise timeline animation",
+        "SVG paths and plugins"
+      ],
+      "integration": "optional gsap; verify GreenSock licensing terms",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-13",
+      "repo": "processing/p5.js",
+      "url": "https://github.com/processing/p5.js",
+      "family": "creative",
+      "license_note": "LGPL-2.1",
+      "capabilities": [
+        "generative creative sketches and frame graphics"
+      ],
+      "integration": "optional p5.js; comply with LGPL terms",
+      "builtin_equivalent": "existing KOSIF renderer or optional provider",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-14",
+      "repo": "rough-stuff/rough",
+      "url": "https://github.com/rough-stuff/rough",
+      "family": "whiteboard",
+      "license_note": "MIT",
+      "capabilities": [
+        "hand-drawn vector path/shape styling"
+      ],
+      "integration": "optional roughjs; original seeded sketch fallback",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-15",
+      "repo": "motion-canvas/motion-canvas",
+      "url": "https://github.com/motion-canvas/motion-canvas",
+      "family": "export",
+      "license_note": "MIT",
+      "capabilities": [
+        "TypeScript video scenes",
+        "timeline and visualization"
+      ],
+      "integration": "optional motion-canvas project starter",
+      "builtin_equivalent": "existing KOSIF renderer or optional provider",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-16",
+      "repo": "mojs/mojs",
+      "url": "https://github.com/mojs/mojs",
+      "family": "effects",
+      "license_note": "MIT",
+      "capabilities": [
+        "burst particles",
+        "timeline transitions and motion graphics"
+      ],
+      "integration": "optional @mojs/core",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-17",
+      "repo": "paperjs/paper.js",
+      "url": "https://github.com/paperjs/paper.js",
+      "family": "vector",
+      "license_note": "LICENSE_VERIFY",
+      "capabilities": [
+        "path geometry",
+        "offsets",
+        "bezier editing"
+      ],
+      "integration": "optional paper package; confirm license text",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-18",
+      "repo": "FFmpeg/FFmpeg",
+      "url": "https://github.com/FFmpeg/FFmpeg",
+      "family": "export",
+      "license_note": "LGPL/GPL_CONFIG",
+      "capabilities": [
+        "MP4 mux",
+        "encoding",
+        "sound",
+        "compositing",
+        "metadata verification"
+      ],
+      "integration": "existing KOSIF render_html uses ffmpeg binary; probe availability",
+      "builtin_equivalent": "existing KOSIF renderer or optional provider",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-19",
+      "repo": "GraphiteEditor/Graphite",
+      "url": "https://github.com/GraphiteEditor/Graphite",
+      "family": "vector",
+      "license_note": "Apache-2.0",
+      "capabilities": [
+        "procedural node graph and editable vector art"
+      ],
+      "integration": "Graphite app optional; study node graph approach",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-20",
+      "repo": "blender/blender",
+      "url": "https://github.com/blender/blender",
+      "family": "3d",
+      "license_note": "GPL",
+      "capabilities": [
+        "3d animation",
+        "rigging",
+        "Grease Pencil",
+        "cameras"
+      ],
+      "integration": "Blender optional external tool, verify machine",
+      "builtin_equivalent": "existing KOSIF renderer or optional provider",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-21",
+      "repo": "maxwellito/vivus",
+      "url": "https://github.com/maxwellito/vivus",
+      "family": "whiteboard",
+      "license_note": "MIT",
+      "capabilities": [
+        "SVG stroke progressive path reveal"
+      ],
+      "integration": "built-in deterministic strokeDashoffset fallback; optional Vivus",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-22",
+      "repo": "KDE/krita",
+      "url": "https://github.com/KDE/krita",
+      "family": "character",
+      "license_note": "GPL-3.0",
+      "capabilities": [
+        "hand-drawn animation cel and frame art"
+      ],
+      "integration": "external Krita optional; asset import after permission",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-23",
+      "repo": "opentoonz/opentoonz",
+      "url": "https://github.com/opentoonz/opentoonz",
+      "family": "character",
+      "license_note": "LICENSE_VERIFY",
+      "capabilities": [
+        "2d character animation",
+        "exposure sheets"
+      ],
+      "integration": "optional desktop workflow, verify dependencies",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-24",
+      "repo": "synfig/synfig",
+      "url": "https://github.com/synfig/synfig",
+      "family": "character",
+      "license_note": "GPL-3.0",
+      "capabilities": [
+        "2d bone deformation and vector tweening"
+      ],
+      "integration": "optional Synfig native editor, import rendered assets",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    },
+    {
+      "id": "MOT-EXT-25",
+      "repo": "pencil2d/pencil",
+      "url": "https://github.com/pencil2d/pencil",
+      "family": "character",
+      "license_note": "GPL-2.0",
+      "capabilities": [
+        "frame-by-frame traditional 2d drawing"
+      ],
+      "integration": "optional Pencil2D desktop; rendered frames after permission",
+      "builtin_equivalent": "deterministic SVG runtime / motion_toolkit primitives",
+      "status": "source_understood_adapter_or_recipe_not_bundled",
+      "source_date": "2026-10-17"
+    }
+  ]
+}
