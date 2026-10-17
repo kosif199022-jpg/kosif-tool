@@ -188,7 +188,7 @@ def plan(probe,cues=None,fps=30,mode="original"):
                       "startSeconds":round(a,6),"endSeconds":round(b,6),
                       "caption":" ".join(utterance[:10])[:140] or ("مشهد "+str(i+1)),
                       "transientCandidates":nearby[:30],
-                      "pulseFrames":[round(t*fps)-start for t in nearby[:30]],"asset":None,
+                      "pulseFrames":[max(0,min(end-start-1,round(t*fps)-start)) for t in nearby[:30]],"asset":None,
                       "motion":{"camera":"slow-push" if i%2==0 else "lateral-float",
                                 "transition":"hard-cut"}})
     assert sum(s["frames"] for s in shots)==total_frames
