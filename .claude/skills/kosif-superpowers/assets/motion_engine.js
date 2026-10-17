@@ -63,6 +63,10 @@
           'stroke-linecap':'round','stroke-linejoin':'round'
         },p));
         pen=el('circle',{r:5,fill:'#355b47',opacity:0},p);
+      } else if (item.type === 'morph') {
+        drawable=[el('path',{stroke:item.stroke||'#172824',
+          'stroke-width':item.strokeWidth||6,fill:item.fill||'none',
+          'stroke-linejoin':'round','stroke-linecap':'round'},inner)];
       }
       const pathLen=drawable.map(d=>{
         try { return typeof d.getTotalLength==='function' ? d.getTotalLength() : 0; }
@@ -105,6 +109,16 @@
           drawable[3].setAttribute('transform','rotate('+(-gait)+' 0 8)');
           drawable[4].setAttribute('transform','rotate('+(-gait)+' 0 94)');
           drawable[5].setAttribute('transform','rotate('+gait+' 0 94)');
+        }
+        if (item.type==='morph') {
+          const coords=item.from.map((a,i)=>{
+            const b=item.to[i];
+            return [lerp(a[0],b[0],reveal),lerp(a[1],b[1],reveal)];
+          });
+          const d=coords.map((pt,i)=>(i?' L':'M')+pt[0]+' '+pt[1]).join('')
+             +(item.closed===false?'':' Z');
+          drawable[0].setAttribute('d',d);
+          try {pathLen[0]=drawable[0].getTotalLength();} catch {pathLen[0]=0;}
         }
         for (let i=0;i<drawable.length;i++) {
           const node=drawable[i],len=pathLen[i];
