@@ -96,7 +96,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 - حدد المحركات الخارجية الـ25 ومتطلبات تفعيلها: python3 $SKILL_DIR/scripts/motion_runtime.py engines
 - أنشئ فيلم SVG فعليًا: python3 $SKILL_DIR/scripts/motion_runtime.py scaffold --out /absolute/new-film --title "قصيف يرسم" --subtitle "موشن جرافيك بالكود" --duration 8 --fps 30
 - حركات قابلة لإعادة الاستخدام: resources/motion-runtime/motion_toolkit.mjs
-- للرندر MP4: استدعِ render --run فقط بعد التأكد من وجود tools/render_html.cjs في نسخة المستودع الكاملة، ووجود Node/Playwright/Chromium/FFmpeg؛ اختبر الصوت والإطارات بنفسك. إن غاب محرك فلا تسمّه منفّذًا أو متحققًا.
+- للرندر MP4: استدعِ render --run فقط بعد التأكد من وجود محرك الرندر المضمّن resources/motion-runtime/render_html.cjs ووجود Node/Playwright/Chromium/FFmpeg؛ اختبر الصوت والإطارات بنفسك. إن غاب محرك فلا تسمّه منفّذًا أو متحققًا.
 
 لا تنسخ كود الآخرين دون التحقق من الترخيص؛ Remotion وGSAP وtldraw وغيرها قد تتطلب شروط استعمال خاصة. ادرس قدرات أي مكتبة من مصدرها الأصلي وقم بتطبيق التكامل الاختياري فقط عندما تحتاجه المهمة. **لا تزيد رقم 4,223 المثبت على أساس روابط أو وصفة.** وقيمة الإنجاز تقاس بالفيلم/الاختبارات والتزامن الفعلي، لا بعدد المحركات الموجودة في مصفوفة الخيارات.
 
