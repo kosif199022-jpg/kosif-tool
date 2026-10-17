@@ -102,7 +102,7 @@ def validate(spec):
         if count>MAX_ELEMENTS:
             raise ValueError("too many elements")
         for item in elements:
-            if not isinstance(item,dict) or item.get("type") not in {"path","circle","text","character","actor"}:
+            if not isinstance(item,dict) or item.get("type") not in {"path","circle","text","character","actor","morph"}:
                 raise ValueError("unsupported vector element type")
             a=number(item.get("start",start),start,end)
             b=number(item.get("end",end),start,end)
@@ -126,6 +126,20 @@ def validate(spec):
                     number(item.get(k),-4096,4096)
                 if "scale" in item:
                     number(item["scale"],0.1,4)
+            elif item["type"]=="morph":
+                origin=item.get("from")
+                target=item.get("to")
+                if (not isinstance(origin,list) or not isinstance(target,list)
+                    or not 3<=len(origin)<=64 or len(origin)!=len(target)):
+                    raise ValueError("morph requires 3..64 matched 2D vertices")
+                for pts in (origin,target):
+                    for point in pts:
+                        if not isinstance(point,list) or len(point)!=2:
+                            raise ValueError("morph vertex must be [x,y]")
+                        for coord in point:
+                            number(coord,-4096,4096)
+                if "closed" in item and type(item["closed"]) is not bool:
+                    raise ValueError("morph closed must be boolean")
             elif item["type"]=="actor":
                 for k in ("x","y"):
                     number(item.get(k),-4096,4096)
