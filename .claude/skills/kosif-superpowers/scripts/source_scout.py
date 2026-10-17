@@ -96,7 +96,7 @@ def suggest(query, sources, limit=5, domain=None, code_reuse=False):
         slug=norm(row["repo"].split("/")[-1])
         # Exact repository names are authoritative; partial noun overlap is only a recommendation.
         exact = (full in norm(query)) or (len(slug) >= 7 and slug not in {"python", "tools", "platform"} and
-                  re.search(r"(?<![\\w])" + re.escape(slug) + r"(?![\\w])", norm(query)) is not None)
+                  re.search(r"(?<!\w)" + re.escape(slug) + r"(?!\w)", norm(query)) is not None)
         terms=words(" ".join(row["signals"])+" "+row["repo"])
         common=q & terms
         if not common and not exact:
