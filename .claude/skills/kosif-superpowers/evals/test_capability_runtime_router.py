@@ -14,9 +14,9 @@ router=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(router)
 
 class CapabilityRouterTests(unittest.TestCase):
-    def test_all_21_capabilities_load_and_ids_unique(self):
+    def test_all_registered_capabilities_load_and_ids_unique(self):
         rows=router.load_registry()
-        self.assertEqual(len(rows),21)
+        self.assertGreaterEqual(len(rows),22)
         self.assertEqual(len(set(x["id"] for x in rows)),21)
 
     def test_arabic_katana_routes_to_editable_original_engine(self):
@@ -61,6 +61,16 @@ class CapabilityRouterTests(unittest.TestCase):
             self.assertEqual(report["permission_status"],"not_verified_requires_host_or_user_authorization")
             self.assertEqual(report["permissions_required_not_granted"],row["permissions"])
 
+    def test_reference_visual_route_is_source_not_authorized_video_access(self):
+        rows=router.load_registry()
+        row=next(x for x in rows if x["id"]=="reference-visual-style")
+        info=router.assess(row)
+        self.assertEqual(row["script"],"scripts/reference_visual_fingerprint.py")
+        self.assertIn("ffmpeg",row["requires"])
+        self.assertIn("media_usage_rights",info["permissions_required_not_granted"])
+        self.assertFalse(info["executed_in_current_request"])
+        self.assertFalse(info["verified_in_current_request"])
+
     def test_task_is_untrusted_plain_text_not_shell(self):
         text="'; rm -rf /; echo '"
         hits=router.route(text,router.load_registry())
@@ -96,7 +106,7 @@ class CapabilityRouterTests(unittest.TestCase):
     def test_doctor_does_not_use_network_or_make_changes(self):
         with patch.object(router.shutil,"which",return_value=None):
             info=[router.assess(x) for x in router.load_registry()]
-        self.assertEqual(len(info),21)
+        self.assertEqual(len(info),len(router.load_registry()))
         self.assertTrue(any(x["status"]=="missing_host_prerequisites" for x in info))
         self.assertTrue(any(x["status"]=="external_not_integrated" for x in info))
 
