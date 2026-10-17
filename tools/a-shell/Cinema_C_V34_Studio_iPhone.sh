@@ -1,6 +1,17 @@
 #!/bin/sh
-# Cinema C V33 — AnyPlatform — iPhone / a-Shell
-# Built on V32 AudioLab (all proven paths kept). New in V33:
+# Cinema C V34 — Studio — iPhone / a-Shell
+# New in V34 (recipes from the KOSIF superpowers catalog):
+# - c --studio [FILE] / menu 14: trim (lossless or exact), compress to
+#   16/25/50 MB, Reels 9:16 with blurred fill, GIF with a 15 MB budget,
+#   cover JPG, two-pass loudness -14 LUFS, cut pauses, mute, audio only
+# - menu 12: download only a PART (start-end) of a long video
+# - menu 13: video + Arabic/English subtitles (.srt + embedded soft subs)
+# - c --batch [links.txt]: many links in one go, failed ones saved for retry
+# - c --history: Cinema_Downloads/history.txt (date | link | file)
+# - all tools share one encoder chain that only uses encoders this
+#   a-Shell ffmpeg really has (VideoToolbox -> libx264 -> MPEG-4)
+#
+# New in V33:
 # - Photos SAFE no longer dies when the iPhone hardware encoder fails
 #   (h264_videotoolbox -12903) on an a-Shell ffmpeg without libx264:
 #     1) instant lossless REMUX when the file is already H.264/HEVC
@@ -38,7 +49,7 @@
 set -u
 
 APP='Cinema C'
-VERSION='33.0-AnyPlatform-iPhone'
+VERSION='34.0-Studio-iPhone'
 
 HOME_DIR=${HOME:-.}
 BIN_DIR="$HOME_DIR/Documents/bin"
@@ -79,6 +90,13 @@ LAB_DOCTOR=0
 SETUP_AI=0
 DO_UPDATE=0
 
+# V34 flags
+STUDIO_LOCAL=0
+STUDIO_FILE=''
+BATCH=0
+BATCH_FILE=''
+SHOW_HISTORY=0
+
 # V33 flags
 SAFE_LOCAL=0
 SAFE_FILE=''
@@ -93,7 +111,7 @@ warn() { printf 'WARN: %s\n' "$*" >&2; }
 have() { command -v "$1" >/dev/null 2>&1; }
 
 usage() {
-  say 'Cinema C V33 — AnyPlatform — iPhone / a-Shell'
+  say 'Cinema C V34 — Studio — iPhone / a-Shell'
   say ''
   say 'Daily use:'
   say '  c'
@@ -101,6 +119,15 @@ usage() {
   say 'Single video (TikTok, Instagram, YouTube, X, Facebook, Snapchat, ...):'
   say '  paste a video/reel URL (or the whole share text) -> quality -> Photos SAFE or Files'
   say '  press Enter on an empty prompt to use the URL in the clipboard'
+  say ''
+  say 'Many links at once:'
+  say '  c --batch              (paste links, empty line to start)'
+  say '  c --batch links.txt'
+  say ''
+  say 'Studio (trim, compress, reels 9:16, GIF, cover, loudness, cut pauses):'
+  say '  c --studio             (pick from Cinema_Downloads)'
+  say '  c --studio "file.mp4"'
+  say '  c --history'
   say ''
   say 'Fix a file you already downloaded for Photos:'
   say '  c --safe               (pick from Cinema_Downloads)'
@@ -123,7 +150,7 @@ usage() {
   say '  c --doctor             (tests yt-dlp, ffmpeg and every encoder on this iPhone)'
   say ''
   say 'Install once:'
-  say '  sh ./Cinema_C_V33_AnyPlatform_iPhone.sh --install'
+  say '  sh ./Cinema_C_V34_Studio_iPhone.sh --install'
   say ''
   say 'Facebook authentication:'
   say '  c --setup-facebook-cookies'
@@ -323,6 +350,24 @@ parse_args() {
         DOCTOR=1
         shift
         ;;
+      --studio)
+        STUDIO_LOCAL=1
+        shift
+        if [ "$#" -gt 0 ]; then
+          case "$1" in -*) ;; *) STUDIO_FILE=$1; shift ;; esac
+        fi
+        ;;
+      --batch)
+        BATCH=1
+        shift
+        if [ "$#" -gt 0 ]; then
+          case "$1" in -*) ;; *) BATCH_FILE=$1; shift ;; esac
+        fi
+        ;;
+      --history)
+        SHOW_HISTORY=1
+        shift
+        ;;
       --version)
         say "$APP $VERSION"
         exit 0
@@ -354,7 +399,9 @@ install_self() {
   say 'For diagnostics: c --fb-doctor'
   say 'Audio Lab: menu option 11, or c --lab for files already downloaded.'
   say 'NEW: Photos SAFE remuxes H.264/HEVC instantly and survives encoder failures.'
-  say 'NEW: c --safe fixes an existing download; c --doctor tests this iPhone.'
+  say 'c --safe fixes an existing download; c --doctor tests this iPhone.'
+  say 'NEW: c --studio (trim/compress/reels/GIF/loudness), c --batch, c --history.'
+  say 'NEW: menu 12 = part of a video, 13 = subtitles, 14 = download + studio.'
 }
 
 prompt_url() {
@@ -890,6 +937,9 @@ show_menu() {
   say ' 9) AUDIO — MP3'
   say '10) EXACT site formats — show IDs'
   say '11) AUDIO LAB — voice / music separation'
+  say '12) PART only — download from START to END'
+  say '13) VIDEO + SUBTITLES — Arabic / English'
+  say '14) STUDIO — download, then trim / compress / reels / GIF...'
   say ' 0) Cancel'
   say '----------------------------------------'
 }
@@ -977,6 +1027,56 @@ new_work_dir() {
 }
 
 OUTPUT_COUNT=0
+SUB_FILES=''
+SECTION=''        # "START-END" for --download-sections
+WANT_SUBS=0
+SUB_LANGS=${CINEMA_SUB_LANGS:-'ar.*,ar,en.*,en,-live_chat'}
+
+collect_subs() {
+  SUB_FILES=''
+  for f in "$WORK_DIR"/*.srt "$WORK_DIR"/*.vtt; do
+    [ -f "$f" ] || continue
+    dest="$DOWNLOAD_DIR/${f##*/}"
+    [ ! -e "$dest" ] || dest="$DOWNLOAD_DIR/Cinema_$$_${f##*/}"
+    mv "$f" "$dest" 2>/dev/null || continue
+    SUB_FILES="${SUB_FILES}$dest
+"
+  done
+}
+
+log_history() {
+  # Files app: Cinema_Downloads/history.txt (date, link, file)
+  hist="$DOWNLOAD_DIR/history.txt"
+  stamp=$(date '+%Y-%m-%d %H:%M' 2>/dev/null || printf '-')
+  n_h=$(printf '%s' "$OUTPUTS" | sed '/^$/d' | wc -l | tr -d ' ')
+  i_h=0
+  while [ "$i_h" -lt "$n_h" ]; do
+    i_h=$((i_h + 1))
+    f_h=$(printf '%s' "$OUTPUTS" | sed '/^$/d' | sed -n "${i_h}p")
+    printf '%s | %s | %s\n' "$stamp" "$INPUT" "${f_h##*/}" >> "$hist" 2>/dev/null || true
+  done
+}
+
+embed_subs() {
+  # Soft subtitles inside the MP4 (Files/VLC/QuickTime show them as CC).
+  [ -n "$SUB_FILES" ] || return 0
+  case "$OUTPUT_FILE" in *.mp4|*.MP4|*.m4v|*.mov) ;; *) return 0 ;; esac
+  sub=$(printf '%s' "$SUB_FILES" | sed '/^$/d' | grep -E '\.ar[.-]|\.ar\.' | sed -n '1p')
+  [ -n "$sub" ] || sub=$(printf '%s' "$SUB_FILES" | sed '/^$/d' | sed -n '1p')
+  case "$sub" in *.srt) ;; *) return 0 ;; esac
+  lang=eng
+  case "$sub" in *.ar.*|*.ar-*) lang=ara ;; esac
+  t="$OUTPUT_FILE.subs.mp4"
+  SAFE_LOG="$STATE_DIR/last_safe_ffmpeg.txt"
+  if safe_ff -i "$OUTPUT_FILE" -i "$sub" -map 0:v? -map 0:a? -map 1:0 \
+      -c copy -c:s mov_text -metadata:s:s:0 language="$lang" \
+      -movflags +faststart "$t" && [ -s "$t" ]; then
+    mv "$t" "$OUTPUT_FILE" && say "[C] Subtitles embedded ($lang): ${sub##*/}"
+  else
+    rm -f "$t" 2>/dev/null || true
+    say '[C] Subtitles kept as separate .srt files.'
+  fi
+}
 
 collect_outputs() {
   # Historical method: inspect the unique job folder only after yt-dlp exits.
@@ -1024,6 +1124,11 @@ move_to_downloads() {
   if [ -e "$dest" ]; then
     stamp=$(date '+%Y%m%d_%H%M%S' 2>/dev/null || printf '%s' "$$")
     dest="$DOWNLOAD_DIR/Cinema_${stamp}_$base"
+    n_u=1
+    while [ -e "$dest" ]; do
+      n_u=$((n_u + 1))
+      dest="$DOWNLOAD_DIR/Cinema_${stamp}_${n_u}_$base"
+    done
   fi
 
   mv "$OUTPUT_FILE" "$dest" || {
@@ -1056,6 +1161,11 @@ ytdlp_attempt() {
 
   [ -z "$COOKIES" ] || set -- "$@" --cookies "$COOKIES"
   [ -z "$y_imp" ] || set -- "$@" --impersonate "$y_imp"
+  [ -z "$SECTION" ] || set -- "$@" --download-sections "*$SECTION"
+  if [ "$WANT_SUBS" -eq 1 ]; then
+    set -- "$@" --write-subs --write-auto-subs --sub-langs "$SUB_LANGS" --sub-format 'srt/vtt/best'
+    have ffmpeg && set -- "$@" --convert-subs srt
+  fi
 
   case "$y_act" in
     merge)
@@ -1110,9 +1220,12 @@ run_download() {
 
     if [ "$recovered" -eq 0 ]; then
       err 'yt-dlp reported a download error.'
-      say 'Most common fix: the site changed and yt-dlp needs an update.'
-      printf 'Update yt-dlp now and retry once? [Y/n]: '
-      IFS= read -r up || up=''
+      up=n
+      if [ "$BATCH" -eq 0 ]; then
+        say 'Most common fix: the site changed and yt-dlp needs an update.'
+        printf 'Update yt-dlp now and retry once? [Y/n]: '
+        IFS= read -r up || up=''
+      fi
       case "$up" in
         n|N|no|NO) ;;
         *)
@@ -1133,7 +1246,18 @@ run_download() {
     fi
   fi
 
+  collect_subs
   collect_outputs || return 1
+  log_history
+  if [ "$WANT_SUBS" -eq 1 ]; then
+    if [ -n "$SUB_FILES" ]; then
+      say '[C] Subtitles:'
+      printf '%s' "$SUB_FILES" | sed '/^$/d; s/^/  /'
+      embed_subs
+    else
+      say '[C] This video has no Arabic/English subtitles on the site.'
+    fi
+  fi
 
   say ''
   if [ "$OUTPUT_COUNT" -gt 1 ]; then
@@ -1190,6 +1314,7 @@ SRC_PIXFMT=''
 SRC_W=0
 SRC_H=0
 SRC_ACODEC=''
+SRC_DUR=0
 
 probe_media() {
   # Reads codecs from `ffmpeg -i` (no ffprobe: it stalled on-device before).
@@ -1207,6 +1332,16 @@ probe_media() {
   SRC_H=${dims#*x}
   case "$SRC_W" in ''|*[!0-9]*) SRC_W=0 ;; esac
   case "$SRC_H" in ''|*[!0-9]*) SRC_H=0 ;; esac
+
+  d=$(sed -n 's/.*Duration: \([0-9]*:[0-9]*:[0-9.]*\).*/\1/p' "$info" 2>/dev/null | sed -n '1p')
+  SRC_DUR=$(time_to_sec "${d:-0}")
+}
+
+time_to_sec() {
+  # "75" / "1:15" / "00:01:15.5" -> seconds (decimal). Empty on bad input.
+  # (validation in grep -E: some awk builds lack {m,n} intervals)
+  printf '%s\n' "$1" | grep -Eq '^[0-9]+(\.[0-9]+)?(:[0-9]+(\.[0-9]+)?){0,2}$' || return 0
+  printf '%s\n' "$1" | awk -F: '{ t = 0; for (i = 1; i <= NF; i++) t = t * 60 + $i; printf "%.3f", t }'
 }
 
 safe_ff() {
@@ -1247,23 +1382,84 @@ safe_bitrate() {
 
 # Even width/height (H.264 needs it); optional long-edge cap.
 EVEN_VF='scale=trunc(iw/2)*2:trunc(ih/2)*2,format=yuv420p'
-CAP1080_VF="scale='if(gt(iw,ih),min(1920,iw),-2)':'if(gt(iw,ih),-2,min(1920,ih))',scale=trunc(iw/2)*2:trunc(ih/2)*2,format=yuv420p"
+CAP_VF="scale='if(gt(iw,ih),min(1920,iw),-2)':'if(gt(iw,ih),-2,min(1920,ih))'"
+CAP1080_VF="$CAP_VF,$EVEN_VF"
 
-safe_try_encode() {
-  # $1 label ; $2 vf ; rest = video codec args
+# ---- Shared encoder chain (Photos SAFE + Studio) ----
+# Set before calling encode_video:
+#   ENC_IN ENC_OUT       input / output (.mp4)
+#   ENC_VF               video filter, '' = none (even size + yuv420p is added)
+#   ENC_BR               video bitrate, '' = automatic from the resolution
+#   ENC_AUDIO            audio args (word-split), e.g. '-c:a aac -b:a 192k'
+#   ENC_PRE              input args before -i (word-split), e.g. '-ss 10 -t 5'
+#   ENC_SIZE             1 = bitrate is a size budget (no quality mode)
+# Sets ENC_METHOD. Encoders are tried only when `ffmpeg -encoders` lists them.
+ENC_IN=''; ENC_OUT=''; ENC_VF=''; ENC_BR=''; ENC_AUDIO=''; ENC_PRE=''; ENC_SIZE=0
+ENC_METHOD=''
+
+enc_try() {
+  # $1 label ; $2 full vf ; rest = video codec args
   label=$1; vf=$2; shift 2
   say "[C] Trying $label..."
-  rm -f "$tmp" 2>/dev/null || true
+  rm -f "$ENC_OUT" 2>/dev/null || true
   # shellcheck disable=SC2086
-  if safe_ff -i "$OUTPUT_FILE" -map 0:v:0 -map 0:a:0? -sn -dn \
-      -vf "$vf" "$@" $AUDIO_ARGS -movflags +faststart "$tmp" \
-     && safe_check "$tmp"; then
-    SAFE_METHOD=$label
+  if safe_ff $ENC_PRE -i "$ENC_IN" -map 0:v:0 -map 0:a:0? -sn -dn \
+      -vf "$vf" "$@" $ENC_AUDIO -movflags +faststart "$ENC_OUT" \
+     && safe_check "$ENC_OUT"; then
+    ENC_METHOD=$label
     return 0
   fi
   safe_show_log
-  rm -f "$tmp" 2>/dev/null || true
+  rm -f "$ENC_OUT" 2>/dev/null || true
   return 1
+}
+
+encode_video() {
+  ENC_METHOD=''
+  [ -n "$SAFE_LOG" ] || SAFE_LOG="$STATE_DIR/last_safe_ffmpeg.txt"
+  br=$ENC_BR
+  [ -n "$br" ] || br=$(safe_bitrate)
+  if [ -n "$ENC_VF" ]; then
+    vf_full="$ENC_VF,$EVEN_VF"; vf_cap="$ENC_VF,$CAP1080_VF"
+  else
+    vf_full=$EVEN_VF; vf_cap=$CAP1080_VF
+  fi
+  say '[C] Converting. Keep a-Shell OPEN on screen until it finishes:'
+  say '[C] iOS blocks the hardware encoder in the background (error -12903).'
+
+  if has_encoder h264_videotoolbox; then
+    enc_try 'hardware H.264' "$vf_full" \
+      -c:v h264_videotoolbox -b:v "$br" -allow_sw 1 -profile:v high && return 0
+    br_cap=$br
+    [ "$ENC_SIZE" -eq 1 ] || br_cap=8000k
+    enc_try 'hardware H.264 (<=1080p)' "$vf_cap" \
+      -c:v h264_videotoolbox -b:v "$br_cap" -allow_sw 1 && return 0
+  fi
+  if has_encoder hevc_videotoolbox; then
+    enc_try 'hardware HEVC' "$vf_full" \
+      -c:v hevc_videotoolbox -b:v "$br" -allow_sw 1 -tag:v hvc1 && return 0
+  fi
+  if has_encoder libx264; then
+    if [ "$ENC_SIZE" -eq 1 ]; then
+      enc_try 'software H.264 (libx264)' "$vf_full" -c:v libx264 -preset veryfast -b:v "$br" -maxrate "$br" -bufsize "$((${br%k} * 2))k" && return 0
+    else
+      enc_try 'software H.264 (libx264)' "$vf_full" -c:v libx264 -preset veryfast -crf 18 && return 0
+    fi
+  fi
+  if has_encoder mpeg4; then
+    # Built into every ffmpeg. Photos plays MPEG-4 Part 2; quality is lower
+    # than H.264, so it is the last resort.
+    if [ "$ENC_SIZE" -eq 1 ]; then
+      enc_try 'built-in MPEG-4 (last resort)' "$vf_cap" -c:v mpeg4 -b:v "$br" -maxrate "$br" -bufsize "$((${br%k} * 2))k" -qmax 51 -tag:v mp4v && return 0
+    else
+      enc_try 'built-in MPEG-4 (last resort)' "$vf_cap" -c:v mpeg4 -q:v 2 -tag:v mp4v && return 0
+    fi
+  fi
+  return 1
+}
+
+enc_reset() {
+  ENC_IN=''; ENC_OUT=''; ENC_VF=''; ENC_BR=''; ENC_AUDIO=''; ENC_PRE=''; ENC_SIZE=0
 }
 
 make_photos_safe_copy() {
@@ -1288,6 +1484,11 @@ make_photos_safe_copy() {
   if [ -e "$PHOTOS_SAFE_FILE" ]; then
     stamp=$(date '+%Y%m%d_%H%M%S' 2>/dev/null || printf '%s' "$$")
     PHOTOS_SAFE_FILE="$DOWNLOAD_DIR/PhotosSafe_${stamp}_${stem}.mp4"
+    n_u=1
+    while [ -e "$PHOTOS_SAFE_FILE" ]; do
+      n_u=$((n_u + 1))
+      PHOTOS_SAFE_FILE="$DOWNLOAD_DIR/PhotosSafe_${stamp}_${n_u}_${stem}.mp4"
+    done
   fi
 
   tmp="$PHOTOS_SAFE_FILE.tmp.mp4"
@@ -1328,31 +1529,9 @@ make_photos_safe_copy() {
 
   # 2) Convert. Every encoder is checked before use.
   if [ -z "$SAFE_METHOD" ]; then
-    br=$(safe_bitrate)
-    say '[C] Converting to H.264. Keep a-Shell OPEN on screen until it finishes:'
-    say '[C] iOS blocks the hardware encoder in the background (error -12903).'
-
-    if has_encoder h264_videotoolbox; then
-      safe_try_encode 'hardware H.264' "$EVEN_VF" \
-        -c:v h264_videotoolbox -b:v "$br" -allow_sw 1 -profile:v high \
-        || safe_try_encode 'hardware H.264 (<=1080p)' "$CAP1080_VF" \
-          -c:v h264_videotoolbox -b:v 8000k -allow_sw 1 \
-        || true
-    fi
-    if [ -z "$SAFE_METHOD" ] && has_encoder hevc_videotoolbox; then
-      safe_try_encode 'hardware HEVC' "$EVEN_VF" \
-        -c:v hevc_videotoolbox -b:v "$br" -allow_sw 1 -tag:v hvc1 || true
-    fi
-    if [ -z "$SAFE_METHOD" ] && has_encoder libx264; then
-      safe_try_encode 'software H.264 (libx264)' "$EVEN_VF" \
-        -c:v libx264 -preset veryfast -crf 18 || true
-    fi
-    if [ -z "$SAFE_METHOD" ] && has_encoder mpeg4; then
-      # Built into every ffmpeg. Photos plays MPEG-4 Part 2; quality is
-      # lower than H.264, so it is the last resort.
-      safe_try_encode 'built-in MPEG-4 (last resort)' "$CAP1080_VF" \
-        -c:v mpeg4 -q:v 2 -tag:v mp4v || true
-    fi
+    enc_reset
+    ENC_IN=$OUTPUT_FILE; ENC_OUT=$tmp; ENC_AUDIO=$AUDIO_ARGS
+    encode_video && SAFE_METHOD=$ENC_METHOD
   fi
 
   [ -n "$SAFE_METHOD" ] || {
@@ -1543,7 +1722,13 @@ lab_unique() {
   if [ ! -e "$p" ]; then printf '%s' "$p"; return; fi
   stem=${p%.*}; ext=${p##*.}
   stamp=$(date '+%H%M%S' 2>/dev/null || printf '%s' "$$")
-  printf '%s' "${stem}_${stamp}.${ext}"
+  p="${stem}_${stamp}.${ext}"
+  n_u=1
+  while [ -e "$p" ]; do
+    n_u=$((n_u + 1))
+    p="${stem}_${stamp}_${n_u}.${ext}"
+  done
+  printf '%s' "$p"
 }
 
 lab_add_out() {
@@ -2081,9 +2266,472 @@ doctor() {
   has_encoder libx264 && doctor_encode_test 'software H.264' -c:v libx264 -preset veryfast
   has_encoder mpeg4 && doctor_encode_test 'built-in MPEG-4' -c:v mpeg4 -q:v 2 -tag:v mp4v
   say ''
+  say 'Studio filters:'
+  for flt in loudnorm silencedetect palettegen paletteuse gblur boxblur lutyuv select aselect; do
+    if has_filter "$flt"; then say "  $flt: yes"; else say "  $flt: no"; fi
+  done
+  say ''
   say 'Photos SAFE copies H.264/HEVC files without any encoder, so most'
   say 'downloads work even when every encoder above FAILS.'
   return 0
+}
+
+# =====================================================================
+# V34 STUDIO - edit a file on the iPhone after download (offline)
+# Recipes from the KOSIF superpowers catalog, reduced to what a-Shell's
+# ffmpeg can run without libx264:
+#   reels 9:16 blurred fill (FMT) . two-pass loudness -14 LUFS (BEAT-01)
+#   GIF palettegen with a size budget (FMT) . silence cut (montage)
+# Lossless tools (trim fast, mute, audio, cover) never touch an encoder.
+# =====================================================================
+
+STUDIO_DIR_NAME='Studio'
+STUDIO_SRC=''
+STUDIO_LAST=''
+
+studio_out() {
+  # $1 label ; $2 ext -> unique output path in Cinema_Downloads/Studio
+  d="$DOWNLOAD_DIR/$STUDIO_DIR_NAME"
+  mkdir -p "$d" || return 1
+  b=${STUDIO_SRC##*/}
+  b=${b%.*}
+  b=$(printf '%s' "$b" | sed 's/^PhotosSafe_//')
+  lab_unique "$d/$b - $1.$2"
+}
+
+ask_time() {
+  # $1 prompt ; $2 default -> ASK_SEC (seconds)
+  printf '%s [%s]: ' "$1" "$2"
+  IFS= read -r t_in || t_in=''
+  [ -n "$t_in" ] || t_in=$2
+  ASK_SEC=$(time_to_sec "$t_in")
+  [ -n "$ASK_SEC" ] || { err "Bad time: $t_in (use 75, 1:15 or 0:01:15)"; return 1; }
+}
+
+ask_range() {
+  # -> R_START R_LEN (seconds)
+  [ "$SRC_DUR" = '0.000' ] || say "[ST] Length: ${SRC_DUR%.*}s"
+  ask_time 'Start (e.g. 0:05)' '0' || return 1
+  R_START=$ASK_SEC
+  end_default=${SRC_DUR%.*}
+  [ -n "$end_default" ] && [ "$end_default" != '0' ] || end_default='0:10'
+  ask_time 'End   (e.g. 0:20)' "$end_default" || return 1
+  R_LEN=$(awk -v a="$R_START" -v b="$ASK_SEC" 'BEGIN { d = b - a; if (d > 0) printf "%.3f", d }')
+  [ -n "$R_LEN" ] || { err 'End must be after start.'; return 1; }
+}
+
+studio_done() {
+  # $1 = produced file
+  STUDIO_LAST=$1
+  sz=$(du -k "$1" 2>/dev/null | awk '{ printf "%.1f MB", $1 / 1024 }')
+  say ''
+  say "[ST] Ready ($sz): $1"
+}
+
+st_trim_fast() {
+  ask_range || return 1
+  ext=${STUDIO_SRC##*.}
+  out=$(studio_out 'TRIM' "$ext") || return 1
+  say '[ST] Cutting without re-encoding (starts at the nearest keyframe)...'
+  safe_ff -ss "$R_START" -i "$STUDIO_SRC" -t "$R_LEN" -map 0:v? -map 0:a? \
+    -c copy -avoid_negative_ts make_zero -movflags +faststart "$out" \
+    && [ -s "$out" ] || { safe_show_log; rm -f "$out"; return 1; }
+  studio_done "$out"
+}
+
+st_trim_exact() {
+  ask_range || return 1
+  out=$(studio_out 'CUT' mp4) || return 1
+  enc_reset
+  ENC_IN=$STUDIO_SRC; ENC_OUT=$out; ENC_PRE="-ss $R_START -t $R_LEN"
+  ENC_AUDIO='-c:a aac -b:a 192k'
+  encode_video || return 1
+  studio_done "$out"
+}
+
+st_compress() {
+  say ''
+  say 'Target size:'
+  say ' 1) 16 MB  (WhatsApp status / old limit)'
+  say ' 2) 25 MB  (email / Discord)'
+  say ' 3) 50 MB'
+  say ' 4) custom'
+  printf 'Number [1]: '
+  IFS= read -r k || k=''
+  case "$k" in
+    2) mb=25 ;; 3) mb=50 ;;
+    4) printf 'MB: '; IFS= read -r mb || mb='' ;;
+    *) mb=16 ;;
+  esac
+  case "$mb" in ''|*[!0-9]*) err 'Whole number of MB, please.'; return 1 ;; esac
+  dur=${SRC_DUR%.*}
+  [ "${dur:-0}" -gt 0 ] || { err 'Could not read the video length.'; return 1; }
+  # total kbit budget x 0.92 container margin, minus 128k audio
+  vk=$(awk -v mb="$mb" -v d="$SRC_DUR" 'BEGIN { v = mb * 8192 * 0.92 / d - 128; printf "%d", v }')
+  if [ "$vk" -lt 150 ]; then
+    err "Too long for $mb MB (would need ${vk}k video). Trim it first or pick a bigger size."
+    return 1
+  fi
+  vf=''
+  # Low budgets look better smaller: cap the shorter side at 720 / 480.
+  if [ "$vk" -lt 700 ]; then
+    vf="scale='if(gt(iw,ih),-2,min(480,iw))':'if(gt(iw,ih),min(480,ih),-2)'"
+  elif [ "$vk" -lt 2500 ]; then
+    vf="scale='if(gt(iw,ih),-2,min(720,iw))':'if(gt(iw,ih),min(720,ih),-2)'"
+  fi
+  say "[ST] Video budget: ${vk}k for ${dur}s"
+  out=$(studio_out "${mb}MB" mp4) || return 1
+  limit_kb=$((mb * 1024))
+  for pass in 1 2; do
+    enc_reset
+    ENC_IN=$STUDIO_SRC; ENC_OUT=$out; ENC_VF=$vf; ENC_BR="${vk}k"; ENC_SIZE=1
+    ENC_AUDIO='-c:a aac -b:a 128k'
+    encode_video || return 1
+    real_kb=$(du -k "$out" | awk '{ print $1 }')
+    [ "$real_kb" -gt "$limit_kb" ] || break
+    [ "$pass" -eq 1 ] || break
+    # Encoder overshot: scale the bitrate by the miss and try once more.
+    vk=$(awk -v v="$vk" -v l="$limit_kb" -v r="$real_kb" 'BEGIN { printf "%d", v * l / r * 0.95 }')
+    # ...and drop one size step: very busy footage hits the quality floor.
+    if [ "$vk" -lt 1500 ]; then
+      vf="scale='if(gt(iw,ih),-2,min(360,iw))':'if(gt(iw,ih),min(360,ih),-2)'"
+    else
+      vf="scale='if(gt(iw,ih),-2,min(540,iw))':'if(gt(iw,ih),min(540,ih),-2)'"
+    fi
+    say "[ST] $((real_kb / 1024)).$(( (real_kb % 1024) * 10 / 1024 )) MB is over $mb MB; retrying at ${vk}k, smaller frame..."
+    [ "$vk" -ge 100 ] || break
+  done
+  studio_done "$out"
+  [ "$real_kb" -le "$limit_kb" ] || warn "Still over $mb MB. Trim it first or pick a bigger size."
+}
+
+blur_fill_vf() {
+  # 9:16 1080x1920: blurred, darkened copy behind the fitted video (FMT recipe).
+  if has_filter gblur; then blur='gblur=sigma=30'
+  elif has_filter boxblur; then blur='boxblur=20:2'
+  else blur='scale=36:64,scale=1080:1920:flags=bilinear'; fi
+  dark=''
+  has_filter lutyuv && dark=",lutyuv=y=val*0.85"
+  printf '%s' "split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,${blur}${dark}[bg];[b]scale=1080:1920:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2"
+}
+
+st_reels() {
+  say ''
+  say 'Reels / TikTok / Shorts 9:16:'
+  say ' 1) Fit + blurred background (nothing cut off)'
+  say ' 2) Fill (crop the sides)'
+  printf 'Number [1]: '
+  IFS= read -r k || k=''
+  if [ "$k" = '2' ]; then
+    vf='scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920'; label='REELS_FILL'
+  else
+    vf=$(blur_fill_vf); label='REELS'
+  fi
+  out=$(studio_out "$label" mp4) || return 1
+  enc_reset
+  ENC_IN=$STUDIO_SRC; ENC_OUT=$out; ENC_VF=$vf; ENC_BR='8000k'
+  ENC_AUDIO='-c:a aac -b:a 192k'
+  encode_video || return 1
+  studio_done "$out"
+}
+
+st_gif() {
+  ask_time 'Start' '0' || return 1
+  g_start=$ASK_SEC
+  ask_time 'Seconds' '5' || return 1
+  g_len=$ASK_SEC
+  out=$(studio_out 'GIF' gif) || return 1
+  # FMT budget ladder: 480px/15fps -> 360px/12fps -> 270px/10fps, <= 15 MB
+  for step in '480 15 192' '360 12 128' '270 10 96'; do
+    set -- $step
+    say "[ST] GIF ${1}px ${2}fps..."
+    safe_ff -ss "$g_start" -t "$g_len" -i "$STUDIO_SRC" -an \
+      -vf "fps=$2,scale=$1:-2:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff:max_colors=$3[p];[b][p]paletteuse=dither=sierra2_4a:diff_mode=rectangle" \
+      -loop 0 "$out" || { safe_show_log; rm -f "$out"; return 1; }
+    kb=$(du -k "$out" | awk '{ print $1 }')
+    [ "$kb" -gt 15360 ] || break
+    say "[ST] $((kb / 1024)) MB is too big; smaller..."
+  done
+  studio_done "$out"
+  say '[ST] Open it, then Share -> Save Image to keep it animated in Photos.'
+}
+
+st_cover() {
+  ask_time 'Frame time' '1' || return 1
+  out=$(studio_out 'COVER' jpg) || return 1
+  safe_ff -ss "$ASK_SEC" -i "$STUDIO_SRC" -frames:v 1 -q:v 2 "$out" \
+    && [ -s "$out" ] || { safe_show_log; rm -f "$out"; return 1; }
+  studio_done "$out"
+}
+
+loudnorm_af() {
+  # Two-pass EBU R128 to -14 LUFS / -1.5 dBTP (BEAT-01). Prints the filter.
+  m="$STATE_DIR/.loudnorm.txt"
+  ffmpeg -nostdin -hide_banner -i "$STUDIO_SRC" -vn -sn -dn \
+    -af 'loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json' -f null /dev/null > /dev/null 2> "$m" || true
+  mi=$(json_num input_i "$m"); mtp=$(json_num input_tp "$m")
+  mlra=$(json_num input_lra "$m"); mth=$(json_num input_thresh "$m"); off=$(json_num target_offset "$m")
+  if [ -n "$mi" ] && [ -n "$mtp" ] && [ -n "$mlra" ] && [ -n "$mth" ]; then
+    say "[ST] Measured: ${mi} LUFS, peak ${mtp} dBTP -> target -14 LUFS" >&2
+    printf '%s' "loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=$mi:measured_TP=$mtp:measured_LRA=$mlra:measured_thresh=$mth:offset=${off:-0}:linear=true,aresample=48000"
+  else
+    printf '%s' 'loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000'
+  fi
+}
+
+json_num() {
+  # $1 key ; $2 file -> number from loudnorm's JSON ("key" : "-23.5")
+  sed -n "s/.*\"$1\" *: *\"\\(-*[0-9.inf]*\\)\".*/\\1/p" "$2" | sed -n '1p' | grep -v inf
+}
+
+st_loud() {
+  [ -n "$SRC_ACODEC" ] || { err 'This file has no audio.'; return 1; }
+  say '[ST] Measuring loudness (pass 1/2)...'
+  af=$(loudnorm_af)
+  if [ -n "$SRC_VCODEC" ]; then
+    out=$(studio_out 'LOUD' mp4) || return 1
+    set -- -map 0:v:0 -c:v copy
+  else
+    out=$(studio_out 'LOUD' m4a) || return 1
+    set -- -vn
+  fi
+  say '[ST] Applying (pass 2/2, video untouched)...'
+  safe_ff -i "$STUDIO_SRC" "$@" -map 0:a:0 -af "$af" -c:a aac -b:a 192k \
+    -movflags +faststart "$out" && [ -s "$out" ] || { safe_show_log; rm -f "$out"; return 1; }
+  studio_done "$out"
+}
+
+st_silence() {
+  [ -n "$SRC_ACODEC" ] || { err 'This file has no audio.'; return 1; }
+  say '[ST] Finding pauses (quieter than -35 dB, longer than 0.6s)...'
+  sl="$STATE_DIR/.silence.txt"
+  ffmpeg -nostdin -hide_banner -i "$STUDIO_SRC" -vn -sn -dn \
+    -af 'silencedetect=noise=-35dB:d=0.6' -f null /dev/null > /dev/null 2> "$sl" || true
+  # Pair silence_start / silence_end, keep 0.15s of breath on each side.
+  expr=$(grep -Eo 'silence_(start|end): *-?[0-9.]+' "$sl" | awk -F': *' -v dur="$SRC_DUR" '
+    /start/ { s = $2 }
+    /end/   { e = $2; a = s + 0.15; b = e - 0.15; if (b - a > 0.2) { out = out sep "between(t," a "," b ")"; sep = "+"; n++ } }
+    END { if (s != "" && e < s) { a = s + 0.15; b = dur; if (b - a > 0.2) { out = out sep "between(t," a "," b ")"; n++ } } if (n) print out }')
+  [ -n "$expr" ] || { say '[ST] No long pauses found. Nothing to cut.'; return 0; }
+  cnt=$(printf '%s' "$expr" | grep -o 'between' | wc -l | tr -d ' ')
+  say "[ST] Cutting $cnt pauses..."
+  if [ -n "$SRC_VCODEC" ]; then
+    out=$(studio_out 'NO_PAUSES' mp4) || return 1
+    enc_reset
+    ENC_IN=$STUDIO_SRC; ENC_OUT=$out
+    ENC_VF="select='not($expr)',setpts=N/FRAME_RATE/TB"
+    ENC_AUDIO="-af aselect='not($expr)',asetpts=N/SR/TB -c:a aac -b:a 192k"
+    encode_video || return 1
+  else
+    out=$(studio_out 'NO_PAUSES' m4a) || return 1
+    safe_ff -i "$STUDIO_SRC" -vn -af "aselect='not($expr)',asetpts=N/SR/TB" \
+      -c:a aac -b:a 192k "$out" && [ -s "$out" ] || { safe_show_log; rm -f "$out"; return 1; }
+  fi
+  studio_done "$out"
+}
+
+st_mute() {
+  out=$(studio_out 'MUTED' mp4) || return 1
+  safe_ff -i "$STUDIO_SRC" -map 0:v:0 -c copy -an -movflags +faststart "$out" \
+    && [ -s "$out" ] || { safe_show_log; rm -f "$out"; return 1; }
+  studio_done "$out"
+}
+
+st_audio() {
+  [ -n "$SRC_ACODEC" ] || { err 'This file has no audio.'; return 1; }
+  out=$(studio_out 'AUDIO' m4a) || return 1
+  if [ "$SRC_ACODEC" = 'aac' ]; then set -- -c:a copy; else set -- -c:a aac -b:a 192k; fi
+  safe_ff -i "$STUDIO_SRC" -vn -sn -dn -map 0:a:0 "$@" -movflags +faststart "$out" \
+    && [ -s "$out" ] || { safe_show_log; rm -f "$out"; return 1; }
+  studio_done "$out"
+}
+
+studio_menu() {
+  say ''
+  say "STUDIO — ${STUDIO_SRC##*/}"
+  say '----------------------------------------'
+  say ' 1) TRIM fast      — no quality loss (keyframe cut)'
+  say ' 2) TRIM exact     — frame-accurate (re-encode)'
+  say ' 3) COMPRESS       — fit 16 / 25 / 50 MB'
+  say ' 4) REELS 9:16     — blurred background or fill'
+  say ' 5) GIF            — animated, <= 15 MB'
+  say ' 6) COVER image    — JPG frame'
+  say ' 7) LOUDNESS       — -14 LUFS like TikTok/YouTube'
+  say ' 8) CUT PAUSES     — remove silences'
+  say ' 9) MUTE video     — remove sound (lossless)'
+  say '10) AUDIO only     — M4A (lossless when possible)'
+  say '11) AUDIO LAB      — voice / music separation'
+  say ' 0) Done'
+  say '----------------------------------------'
+  printf 'Number: '
+  IFS= read -r STUDIO_CHOICE || STUDIO_CHOICE=0
+}
+
+studio_session() {
+  # $1 = local media file
+  STUDIO_SRC=$1
+  [ -f "$STUDIO_SRC" ] || { err "File not found: $STUDIO_SRC"; return 1; }
+  have ffmpeg || { err 'Studio needs ffmpeg in a-Shell.'; return 1; }
+  mkdir -p "$STATE_DIR" 2>/dev/null || true
+  SAFE_LOG="$STATE_DIR/last_safe_ffmpeg.txt"
+  probe_media "$STUDIO_SRC"
+  while :; do
+    STUDIO_LAST=''
+    studio_menu
+    needs_video=1
+    case "$STUDIO_CHOICE" in
+      ''|0) return 0 ;;
+      7|8|10|11) needs_video=0 ;;
+    esac
+    if [ "$needs_video" -eq 1 ] && [ -z "$SRC_VCODEC" ]; then
+      err 'This file has no video track.'
+      continue
+    fi
+    rc=0
+    case "$STUDIO_CHOICE" in
+      1) st_trim_fast || rc=1 ;;
+      2) st_trim_exact || rc=1 ;;
+      3) st_compress || rc=1 ;;
+      4) st_reels || rc=1 ;;
+      5) st_gif || rc=1 ;;
+      6) st_cover || rc=1 ;;
+      7) st_loud || rc=1 ;;
+      8) st_silence || rc=1 ;;
+      9) st_mute || rc=1 ;;
+      10) st_audio || rc=1 ;;
+      11) lab_menu && lab_process "$STUDIO_SRC"; continue ;;
+      *) err 'Wrong number.'; continue ;;
+    esac
+    if [ "$rc" -ne 0 ]; then
+      err 'That tool failed. The original file is untouched.'
+      continue
+    fi
+    [ -n "$STUDIO_LAST" ] && [ -f "$STUDIO_LAST" ] || continue
+    case "$STUDIO_LAST" in
+      *.mp4)
+        printf 'Save this result to Photos now? [y/N]: '
+        IFS= read -r yn || yn=''
+        case "$yn" in
+          y|Y|yes|YES)
+            OUTPUT_FILE=$STUDIO_LAST; OUTPUTS=''; OUTPUT_COUNT=1
+            finish_one_photos || true
+            ;;
+        esac
+        ;;
+      *.gif|*.jpg)
+        have open && open "$STUDIO_LAST" >/dev/null 2>&1 || true
+        ;;
+    esac
+    printf 'Use the RESULT for the next tool instead of the original? [y/N]: '
+    IFS= read -r yn || yn=''
+    case "$yn" in
+      y|Y|yes|YES)
+        case "$STUDIO_LAST" in
+          *.gif|*.jpg) say '[ST] Keeping the original (that result is an image).' ;;
+          *) STUDIO_SRC=$STUDIO_LAST; probe_media "$STUDIO_SRC" ;;
+        esac
+        ;;
+    esac
+  done
+}
+
+studio_local_flow() {
+  if [ -n "$STUDIO_FILE" ]; then
+    LAB_SRC=$STUDIO_FILE
+    [ -f "$LAB_SRC" ] || [ ! -f "$DOWNLOAD_DIR/$LAB_SRC" ] || LAB_SRC="$DOWNLOAD_DIR/$LAB_SRC"
+  else
+    lab_pick_local || return 1
+  fi
+  studio_session "$LAB_SRC"
+}
+
+# ---------------- batch: many links in one go ----------------
+
+batch_flow() {
+  list="$STATE_DIR/batch_links.txt"
+  mkdir -p "$STATE_DIR" || return 1
+  : > "$list"
+  if [ -n "$BATCH_FILE" ]; then
+    for d_b in "$HOME_DIR/Documents" "$DOWNLOAD_DIR"; do
+      [ -f "$BATCH_FILE" ] || [ ! -f "$d_b/$BATCH_FILE" ] || BATCH_FILE="$d_b/$BATCH_FILE"
+    done
+    [ -f "$BATCH_FILE" ] || { err "Links file not found: $BATCH_FILE"; return 1; }
+    grep -Eo 'https?://[^[:space:]"<>]+' "$BATCH_FILE" >> "$list" 2>/dev/null || true
+  else
+    say 'Paste links (one or many per line). Empty line = start.'
+    while :; do
+      printf '> '
+      IFS= read -r line || break
+      [ -n "$line" ] || break
+      printf '%s\n' "$line" | grep -Eo 'https?://[^[:space:]"<>]+' >> "$list" 2>/dev/null || true
+    done
+  fi
+  # de-duplicate, keep order
+  awk '!seen[$0]++' "$list" > "$list.u" && mv "$list.u" "$list"
+  total=$(count_lines_file "$list")
+  [ "$total" -gt 0 ] || { err 'No links found.'; return 1; }
+  say "[C] $total links."
+
+  say 'Quality for all:'
+  say ' 1) BEST   2) 1080p   3) 720p   4) AUDIO M4A'
+  printf 'Number [1]: '
+  IFS= read -r q || q=''
+  act=merge
+  case "$q" in
+    2) set_quality_cap 1080; sel=$(selector_for_height 1080) ;;
+    3) set_quality_cap 720; sel=$(selector_for_height 720) ;;
+    4) set_quality_cap ''; sel='bestaudio/best'; act=m4a; have ffmpeg || act=none ;;
+    *) set_quality_cap ''; sel=$(best_selector) ;;
+  esac
+  mk_safe=0
+  if [ "$act" = merge ] && have ffmpeg; then
+    printf 'Also build Photos SAFE copies? [y/N]: '
+    IFS= read -r yn || yn=''
+    case "$yn" in y|Y|yes|YES) mk_safe=1 ;; esac
+  fi
+
+  BATCH=1
+  ok=0; bad=0; i_b=0; failed_list="$DOWNLOAD_DIR/failed_links.txt"
+  : > "$failed_list" 2>/dev/null || true
+  while [ "$i_b" -lt "$total" ]; do
+    i_b=$((i_b + 1))
+    INPUT=$(sed -n "${i_b}p" "$list")
+    say ''
+    say "[$i_b/$total] $INPUT"
+    if run_download "$sel" "$act"; then
+      ok=$((ok + 1))
+      if [ "$mk_safe" -eq 1 ]; then
+        n_o=$(printf '%s' "$OUTPUTS" | sed '/^$/d' | wc -l | tr -d ' ')
+        j=0
+        while [ "$j" -lt "$n_o" ]; do
+          j=$((j + 1))
+          OUTPUT_FILE=$(printf '%s' "$OUTPUTS" | sed '/^$/d' | sed -n "${j}p")
+          is_video_file "$OUTPUT_FILE" && { make_photos_safe_copy || true; }
+        done
+      fi
+    else
+      bad=$((bad + 1))
+      printf '%s\n' "$INPUT" >> "$failed_list"
+    fi
+  done
+  say ''
+  say '========================================'
+  say "[C] Batch finished: $ok OK, $bad failed, of $total."
+  say "[C] Folder: $DOWNLOAD_DIR"
+  [ "$bad" -eq 0 ] && rm -f "$failed_list" 2>/dev/null
+  [ "$bad" -eq 0 ] || {
+    say "[C] Failed links saved to: $failed_list"
+    say '[C] Update yt-dlp, then retry only those:  c --update ; c --batch failed_links.txt'
+  }
+  say '========================================'
+  [ "$ok" -gt 0 ]
+}
+
+show_history() {
+  hist="$DOWNLOAD_DIR/history.txt"
+  [ -s "$hist" ] || { say 'No downloads recorded yet.'; return 0; }
+  say 'Last 20 downloads:'
+  tail -n 20 "$hist"
 }
 
 update_ytdlp() {
@@ -2132,6 +2780,16 @@ main() {
     exit $?
   fi
 
+  if [ "$SHOW_HISTORY" -eq 1 ]; then
+    show_history
+    exit 0
+  fi
+
+  if [ "$STUDIO_LOCAL" -eq 1 ]; then
+    studio_local_flow
+    exit $?
+  fi
+
   # Offline: works on files already on the iPhone, yt-dlp not required.
   if [ "$LAB_LOCAL" -eq 1 ]; then
     lab_local_flow
@@ -2145,6 +2803,11 @@ main() {
 
   if [ "$FB_DOCTOR" -eq 1 ]; then
     facebook_doctor
+    exit $?
+  fi
+
+  if [ "$BATCH" -eq 1 ]; then
+    batch_flow
     exit $?
   fi
 
@@ -2207,6 +2870,29 @@ main() {
       ;;
     11)
       lab_url_flow
+      exit $?
+      ;;
+    12)
+      ask_time 'Start (e.g. 1:30)' '0' || exit 1
+      p_start=$ASK_SEC
+      ask_time 'End   (e.g. 2:10)' '0:30' || exit 1
+      p_end=$ASK_SEC
+      awk -v a="$p_start" -v b="$p_end" 'BEGIN { exit !(b > a) }' || { err 'End must be after start.'; exit 1; }
+      SECTION="$p_start-$p_end"
+      choose_destination video
+      say "[C] Downloading only ${p_start}s -> ${p_end}s (cut at the nearest keyframe)..."
+      run_download "$(best_selector)" merge || exit 1
+      ;;
+    13)
+      WANT_SUBS=1
+      choose_destination video
+      say '[C] Downloading BEST + subtitles (Arabic first, then English; auto-translated if the site has it)...'
+      run_download "$(best_selector)" merge || exit 1
+      ;;
+    14)
+      say '[C] Downloading BEST for the Studio...'
+      run_download "$(best_selector)" merge || exit 1
+      studio_session "$OUTPUT_FILE"
       exit $?
       ;;
     *)
