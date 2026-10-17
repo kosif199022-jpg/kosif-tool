@@ -38,7 +38,7 @@ def rhythm(cues,min_bpm=60,max_bpm=200):
     if len(events)>=4:
         for bpm in range(min_bpm,max_bpm+1):
             period=60/bpm
-            best=(0,-1,None)
+            best=(0,float('inf'),-1,None)
             for anchor in events[:min(12,len(events))]:
                 errs=[min((t-anchor)%period, period-((t-anchor)%period)) for t in events]
                 close=sum(err<=0.055 for err in errs)
@@ -46,11 +46,14 @@ def rhythm(cues,min_bpm=60,max_bpm=200):
                 coverage=min(1,len(events)/expected)
                 score=(close/len(events))*(0.60+0.40*coverage)
                 # Penalize artificial fast tempos with extra "missing" beats.
-                if score>best[0]:best=(score,close,anchor)
+                mean_error=statistics.mean(errs)
+                if score>best[0]+1e-9 or (abs(score-best[0])<=1e-9 and mean_error<best[1]):
+                    best=(score,mean_error,close,anchor)
             sorted_scores.append({"bpm":bpm,"match":round(best[0],5),
-                                  "aligned_onsets":best[1],
-                                  "phase_anchor_seconds":best[2]})
-    sorted_scores.sort(key=lambda x:(-x["match"],x["bpm"]))
+                                  "aligned_onsets":best[2],
+                                  "mean_error_seconds":round(best[1],6),
+                                  "phase_anchor_seconds":best[3]})
+    sorted_scores.sort(key=lambda x:(-x["match"],x["mean_error_seconds"],x["bpm"]))
     # Avoid listing near-duplicate tempo hypotheses as meaningfully distinct.
     alternatives=[]
     for x in sorted_scores:
