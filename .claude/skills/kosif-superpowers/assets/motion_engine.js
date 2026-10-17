@@ -83,6 +83,18 @@
           Math.sin((sec-end)*7)*Math.min(6,Math.max(0,(sec-end)*8)) : 0;
         outer.setAttribute('transform','translate('+x+' '+(y+wobble)+')');
         inner.setAttribute('opacity',String(item.type==='text' ? reveal : 1));
+        // A drawn character becomes an animated rig after its strokes finish.
+        // Its arms and legs swing around anatomical SVG pivot points while moving.
+        const walkStart=movement.start===undefined?end:movement.start;
+        const walkEnd=movement.end===undefined?sc.end:movement.end;
+        const walking=item.type==='character' && sec>=walkStart && sec<walkEnd;
+        const gait=walking ? Math.sin((sec-walkStart)*9)*25 : 0;
+        if (item.type==='character' && drawable.length>=6) {
+          drawable[2].setAttribute('transform','rotate('+gait+' 0 8)');
+          drawable[3].setAttribute('transform','rotate('+(-gait)+' 0 8)');
+          drawable[4].setAttribute('transform','rotate('+(-gait)+' 0 94)');
+          drawable[5].setAttribute('transform','rotate('+gait+' 0 94)');
+        }
         for (let i=0;i<drawable.length;i++) {
           const node=drawable[i],len=pathLen[i];
           if (len>0) {
