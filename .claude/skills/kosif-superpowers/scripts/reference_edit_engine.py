@@ -59,8 +59,9 @@ function Shot({shot}) {
   const floatY=Math.sin(frame*0.035)*18;
   const opacity=interpolate(frame,[0,Math.min(8,shot.frames-1)],
     [0,1],{extrapolateRight:"clamp"});
-  const bg=shot.index%2===0?"#f4f0e6":"#172824";
-  const ink=shot.index%2===0?"#172824":"#f4f0e6";
+  const bg=shot.style?.background || (shot.index%2===0?"#f4f0e6":"#172824");
+  const ink=shot.style?.ink || (shot.index%2===0?"#172824":"#f4f0e6");
+  const accent=shot.style?.accent || ink;
   const zoom=1.04+progress*0.09;
   // Frame-accurate energy-transient responsiveness, not a claimed verified musical beat.
   const nearest=Math.min(999,...(shot.pulseFrames||[]).map(t=>Math.abs(t-frame)));
@@ -77,7 +78,7 @@ function Shot({shot}) {
             (progress*25)+"deg) scale("+(zoom*pulseScale)+")",opacity:.24}} />
       <div style={{position:"absolute",left:"38%",top:"42%",
           width:160,height:160,borderRadius:"50%",
-          background:ink,transform:"translateX("+(progress*220-100)+"px) scale("+pulseScale+")"}} />
+          background:accent,transform:"translateX("+(progress*220-100)+"px) scale("+pulseScale+")"}} />
     </AbsoluteFill>}
     <AbsoluteFill style={{display:"flex",alignItems:"center",
       justifyContent:"center",padding:100}}>
@@ -208,6 +209,70 @@ def plan(probe,cues=None,fps=30,mode="original"):
         "licenseNotes":"Source timing only. Use owned/relicensed clips and obey Remotion commercial license."}
 
 
+
+def apply_visual_fingerprint(edit,visual):
+    """Transfer aggregate color/layout measurements into NEW edit project styles.
+
+    Never copies source pixels, reference shots, captions or audio. The
+    palette is quantized from measured 64x36 sampled frames and must not be
+    treated as source-faithful color grading or automatic semantic recognition.
+    """
+    if not isinstance(visual,dict) or visual.get("schema")!="kosif.reference-visual-fingerprint.v1":
+        raise ValueError("requires measured KOSIF visual fingerprint")
+    ref=scalar(edit["evidence"]["referenceSeconds"],"reference seconds",.1,300)
+    observed=scalar(visual.get("duration"),"visual duration",.1,120)
+    if abs(ref-observed)>.25:
+        raise ValueError("reference and visual fingerprint durations mismatch")
+    sections=visual.get("sections")
+    if not isinstance(sections,list) or not 1<=len(sections)<=MAX_SHOTS:
+        raise ValueError("invalid measured visual sections")
+    checked=[]
+    previous=0.0
+    for idx,s in enumerate(sections):
+        if not isinstance(s,dict) or s.get("index")!=idx:
+            raise ValueError("sections need ordered indices")
+        start=scalar(s.get("start"),"visual start",0,observed)
+        end=scalar(s.get("end"),"visual end",0,observed)
+        if abs(start-previous)>.1 or end<=start:
+            raise ValueError("visual spans must be contiguous and ordered")
+        previous=end
+        palette=s.get("palette")
+        if not isinstance(palette,list) or not 1<=len(palette)<=4:
+            raise ValueError("missing measured hex palette")
+        if any(not isinstance(col,str) or not re.fullmatch(r"#[0-9a-f]{6}",col) for col in palette):
+            raise ValueError("untrusted palette value rejected")
+        motion=s.get("possible_translation")
+        if motion not in ("none","horizontal_candidate","vertical_candidate"):
+            raise ValueError("unknown motion evidence label")
+        checked.append(s)
+    if abs(previous-observed)>.15:
+        raise ValueError("visual sections do not cover reference duration")
+    def legible_ink(bg):
+        rgb=[int(bg[i:i+2],16) for i in (1,3,5)]
+        # WCAG relative luminance estimate, chosen ink from a fixed trusted pair.
+        def linear(c):
+            v=c/255
+            return v/12.92 if v<=.04045 else ((v+.055)/1.055)**2.4
+        lum=.2126*linear(rgb[0])+.7152*linear(rgb[1])+.0722*linear(rgb[2])
+        return "#172824" if lum>.23 else "#f4f0e6"
+    for shot in edit["shots"]:
+        middle=(shot["startFrame"]+shot["endFrame"])/(2*edit["fps"])
+        sec=middle*ref/edit["duration"]
+        source=next((s for s in checked if s["start"]<=sec<s["end"]),checked[-1])
+        bg=source["palette"][0]
+        accent=source["palette"][1] if len(source["palette"])>1 else "#355b47"
+        shot["style"]={
+            "background":bg,"ink":legible_ink(bg),"accent":accent,
+            "panHint":source["possible_translation"],
+            "provenance":"measured 64x36 pixel statistics, inspired design only"
+        }
+    edit["evidence"]["visualStyleApplied"]=True
+    edit["evidence"]["visualSamplingVerifiedByExternalVideo"]=False
+    edit["evidence"]["visualSourcePixelsCopied"]=False
+    edit["evidence"]["objectTrackingVerified"]=False
+    edit["evidence"]["visualSource"]="KOSIF reference-visual-fingerprint.v1"
+    return edit
+
 def basename(value,extensions):
     if not isinstance(value,str) or not BASENAME.fullmatch(value) or value.startswith("."):
         raise ValueError("asset must be a simple filename, no subdirectories or traversal")
@@ -303,6 +368,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--probe",required=True,help="saved motion_reference_probe.py JSON")
     ap.add_argument("--cues",help="audio_cue_mapper.py JSON with optional aligned words")
+    ap.add_argument("--visual",help="reference_visual_fingerprint.py JSON of same authorized source")
     ap.add_argument("--manifest",help="optional {clips:[...],audio:'...'} owned replacement media")
     ap.add_argument("--assets-dir",help="local authorized replacement media directory")
     ap.add_argument("--fps",type=int,choices=FPS,default=30)
@@ -312,6 +378,8 @@ def main():
         ref=load(args.probe); cues=load(args.cues) if args.cues else None
         manifest=load(args.manifest) if args.manifest else None
         edit=plan(ref,cues,args.fps)
+        if args.visual:
+            apply_visual_fingerprint(edit,load(args.visual))
         print(json.dumps(create_project(args.out,edit,manifest,args.assets_dir),ensure_ascii=False))
     except (ValueError,KeyError,OSError,TypeError,json.JSONDecodeError) as exc:
         ap.error(str(exc))
