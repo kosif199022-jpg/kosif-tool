@@ -23,6 +23,10 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: KOSIF Superpowers integrity + routing evaluations
         run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
+      - name: Creative audio-to-motion reasoning tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_intelligence.py' -v
+      - name: Safe repository capability transfer tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_repository_capability_packer.py' -v
       - name: REA bridge and router safety regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_rea_*.py' -v
       - name: Community source scout and safety regression tests
