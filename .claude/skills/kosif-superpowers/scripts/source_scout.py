@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "community_sources.json"
 LICENSE_COPY_SAFE = {"MIT", "Apache-2.0", "BSD-3-Clause"}
 VALID_DOMAINS = {"research", "learning", "operations", "engineering", "agents",
-                 "prompts", "finance", "creative", "collaboration"}
+                 "prompts", "finance", "creative", "collaboration", "architecture", "python", "media", "data"}
 STOP = {"the", "and", "for", "with", "from", "your", "any", "one", "can",
         "how", "what", "this", "that", "you", "app", "tool", "tools",
         "في", "من", "على", "الى", "الي", "عن", "عايز", "محتاج", "اريد",
@@ -46,8 +46,8 @@ def validate(obj):
     if not isinstance(obj, dict) or obj.get("schema") != "kosif.community-sources.v1":
         raise ValueError("invalid source schema")
     items = obj.get("sources")
-    if not isinstance(items, list) or len(items) != 22:
-        raise ValueError("source registry must contain exactly 22 reviewed repos")
+    if not isinstance(items, list) or len(items) != 31:
+        raise ValueError("source registry must contain exactly 31 reviewed repos")
     ids, repos = set(), set()
     for row in items:
         if not isinstance(row, dict):
@@ -66,6 +66,23 @@ def validate(obj):
             raise ValueError("unknown domain or executable status")
         if not isinstance(row["signals"], list) or not all(isinstance(s, str) for s in row["signals"]):
             raise ValueError("invalid signals")
+    top = obj.get("python_top10")
+    if not isinstance(top, dict) or not isinstance(top.get("items"), list) or len(top["items"]) != 10:
+        raise ValueError("missing ranked top 10 Python source snapshot")
+    if top.get("method") != "public GitHub repositories with primary language Python ordered by stars":
+        raise ValueError("ranking methodology drift")
+    if not top.get("observed_date") or not top.get("rank_reference"):
+        raise ValueError("ranking provenance missing")
+    ranks = top["items"]
+    if any(x.get("rank") != i + 1 or x.get("language") != "Python" or
+           not isinstance(x.get("stars"), int) or x["stars"] <= 0 or
+           x.get("repo", "").lower() not in repos
+           for i, x in enumerate(ranks)):
+        raise ValueError("ranking rows inconsistent with source catalog")
+    if len({x["repo"].lower() for x in ranks}) != 10:
+        raise ValueError("duplicate ranked repos")
+    if any(ranks[i]["stars"] < ranks[i+1]["stars"] for i in range(9)):
+        raise ValueError("Python ranking not sorted by stars descending")
     return True
 
 
@@ -78,7 +95,8 @@ def suggest(query, sources, limit=5, domain=None, code_reuse=False):
         full=norm(row["repo"])
         slug=norm(row["repo"].split("/")[-1])
         # Exact repository names are authoritative; partial noun overlap is only a recommendation.
-        exact = (full in norm(query) or slug in norm(query)) if len(slug) >= 4 else False
+        exact = (full in norm(query)) or (len(slug) >= 7 and slug not in {"python", "tools", "platform"} and
+                  re.search(r"(?<!\w)" + re.escape(slug) + r"(?!\w)", norm(query)) is not None)
         terms=words(" ".join(row["signals"])+" "+row["repo"])
         common=q & terms
         if not common and not exact:
@@ -108,6 +126,7 @@ def main(argv=None):
     cli = argparse.ArgumentParser(description=__doc__)
     sub=cli.add_subparsers(dest="cmd", required=True)
     sub.add_parser("check")
+    sub.add_parser("python-top")
     listed=sub.add_parser("list")
     listed.add_argument("--domain", choices=sorted(VALID_DOMAINS))
     shown=sub.add_parser("show")
@@ -121,8 +140,12 @@ def main(argv=None):
     try:
         rows=load()
         if a.cmd=="check":
-            result={"status":"catalog_valid", "source_count":len(rows),
+            result={"status":"catalog_valid", "source_count":len(rows), "python_rank_count":10,
                     "domains":sorted({x["domain"] for x in rows}), "runtime_proven":False}
+        elif a.cmd=="python-top":
+            snapshot = json.loads(DATA.read_text(encoding="utf-8"))["python_top10"]
+            result = {"status":"rank_snapshot", **snapshot, "live_star_counts":False,
+                      "execution":"reference_only"}
         elif a.cmd=="list":
             result={"sources":[{"id":r["id"], "repo":r["repo"], "domain":r["domain"],
                                 "license":r["license"]} for r in rows
