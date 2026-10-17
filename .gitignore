@@ -10,3 +10,4 @@ outputs/
 *.webm
 *.mov
 starters/remotion/out/
+.kosif-cache/
