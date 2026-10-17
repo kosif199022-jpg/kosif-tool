@@ -250,6 +250,39 @@
       "summary": "This does not track a moving person or recover source keyframes."
     },
     {
+      "id": "reference-visual-style",
+      "title": "Measure actual reference-video color, exposure and coarse frame motion",
+      "aliases": [
+        "بصمة الفيديو",
+        "تحليل بصري",
+        "ألوان فيديو",
+        "فهم الفيديو المرجعي",
+        "بصمة بصرية",
+        "قياس الحركة",
+        "visual fingerprint",
+        "reference visual",
+        "visual style",
+        "palette from video",
+        "video colors",
+        "reference look"
+      ],
+      "script": "scripts/reference_visual_fingerprint.py",
+      "subcommand": "<authorized-reference.mp4> --probe <matching-cuts.json> --out <new-visual.json>",
+      "requires": [
+        "python3",
+        "ffmpeg",
+        "ffprobe"
+      ],
+      "permissions": [
+        "read_user_media",
+        "media_usage_rights",
+        "write_new_files"
+      ],
+      "proof": "low-resolution measured video frame palette and motion candidates; reviewed generated edit style",
+      "external": "facebookresearch/co-tracker",
+      "summary": "Read actual downscaled reference frames; annotate new Remotion edits with measured palette and guarded motion hints, not pixel cloning."
+    },
+    {
       "id": "reference-edit-remix",
       "title": "Generate new editable Remotion montage from reference timing",
       "aliases": [
