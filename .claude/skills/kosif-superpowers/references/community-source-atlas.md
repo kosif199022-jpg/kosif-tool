@@ -1,6 +1,6 @@
-# KOSIF Superpowers — 22 Community Sources: implementation playbooks
+# KOSIF Superpowers — 31 Community Sources: implementation playbooks
 
-**Reviewed:** 2026-10-17, repository README + GitHub license metadata. These are **references** and proposed methods, not 22 installed runtime tools or 22 new verified powers. Machine-readable registry: data/community_sources.json; deterministic finder: scripts/source_scout.py.
+**Reviewed:** 2026-10-17, repository README + GitHub license metadata. These are **references** and proposed methods, not 31 installed runtime tools or 31 new verified powers. Machine-readable registry: data/community_sources.json; deterministic finder: scripts/source_scout.py.
 
 ## Objective
 
@@ -77,9 +77,64 @@ No automatically invoked installation, network scraping, device control, externa
 
 ## Acceptance and failure boundary
 
-- The registry has all 22 unique requested source URLs and distinct IDs.
+- The registry has 31 unique curated source URLs and distinct IDs.
 - The locator routes meaningful Arabic/English prompts to relevant sources; unrelated requests yield an empty list.
 - Unknown-license reuse is blocked from being described as ready to copy.
 - A catalog edit cannot self-promote a candidate into an executable status.
 - Tests run in GitHub CI with the existing KOSIF skill verification; failures prevent promoting a release.
 - 4,223 remains the original catalog count unless new powers are individually documented, audited and regenerated through build_chapters.py.
+
+
+## 9. Architecture and Python source expansion (2026-10-17)
+
+Two new user-requested sources and seven unique Python top-ten sources are indexed without duplication:
+
+- [System Design Primer](https://github.com/donnemartin/system-design-primer) — design scalable systems from explicit requirements, database/queue/cache tradeoffs, resilience, consistency and availability. License file: CC BY 4.0 with attribution.
+- [Awesome Python](https://github.com/vinta/awesome-python) — find candidate frameworks, libraries and tools by domain; inspect each project's version, license and installation prerequisites separately. License file: CC BY 4.0 with attribution.
+- [Public APIs](https://github.com/public-apis/public-apis) — public service/API reference discovery, not automatic authorization for API calls.
+- [Free Programming Books](https://github.com/EbookFoundation/free-programming-books) — learning resources with independently licensed linked content.
+- [Project Based Learning](https://github.com/practical-tutorials/project-based-learning) — hands-on projects, testable end goals and staged engineering.
+- [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python) — clear explanations and complexity comparisons for Python algorithms.
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — legal audio/video format and metadata workflows; respect website terms and content rights.
+- [MarkItDown](https://github.com/microsoft/markitdown) — authorized file conversion to Markdown. The converter has the privileges of its process; sensitive paths require a separate access check.
+- [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) — ideas for guarded multi-step agent workflows; repository metadata license is nonstandard/unknown and copying code is not pre-approved.
+
+### Practical original KOSIF tools
+
+Architecture deterministic capacity sketch, requiring caller supplied assumptions (not a benchmark):
+
+    python3 $SKILL_DIR/scripts/architecture_sizer.py --daily-requests 86400 --peak-factor 5 --payload-bytes 1000 --retention-days 7 --replica-rps 100 --target-utilization 0.5 --copies 2
+
+The result separates average and peak request rates, minimum replica count under assumed sustained throughput, logical/replicated storage and omitted infrastructure overhead.
+
+Python dependency discovery, metadata-only: no package imports, installs, execution or external requests:
+
+    python3 $SKILL_DIR/scripts/python_package_probe.py pandas numpy httpx
+
+Installed distribution metadata is not proof of functioning application readiness.
+
+31-source task search and top ten ranked Python snapshot:
+
+    python3 $SKILL_DIR/scripts/source_scout.py check
+    python3 $SKILL_DIR/scripts/source_scout.py python-top
+    python3 $SKILL_DIR/scripts/source_scout.py suggest "Python testing libraries and data ETL" --domain python
+    python3 $SKILL_DIR/scripts/source_scout.py suggest "load balancing caching distributed architecture" --domain architecture
+
+### Popularity research method
+
+Top-ten means public GitHub repositories whose primary language is Python, ordered by stars. Baseline ranking: https://nazsam.github.io/github-top-repos/languages/python.html, last updated 2026-10-15. GitHub stars independently checked on 2026-10-17. This includes cross-topic learning and agent projects; it does not identify the best Python packages.
+
+| Rank | GitHub repository | Stars (2026-10-17 snapshot) |
+|---:|---|---:|
+| 1 | public-apis/public-apis | 489479 |
+| 2 | EbookFoundation/free-programming-books | 399218 |
+| 3 | donnemartin/system-design-primer | 374452 |
+| 4 | vinta/awesome-python | 327968 |
+| 5 | practical-tutorials/project-based-learning | 286928 |
+| 6 | NousResearch/hermes-agent | 254427 |
+| 7 | TheAlgorithms/Python | 225318 |
+| 8 | yt-dlp/yt-dlp | 198462 |
+| 9 | microsoft/markitdown | 190606 |
+| 10 | Significant-Gravitas/AutoGPT | 187614 |
+
+Three of these existed in the original 22-source registry. The two explicit new user sources plus seven nonduplicate ranking sources bring the total to 31. These are reference candidates, not installed executors. The KOSIF 4,223-count core catalog stays unchanged until independently audited power records exist.
