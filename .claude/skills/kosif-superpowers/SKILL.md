@@ -134,6 +134,20 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 توليد ملف HTML ≠ إنتاج فيديو MP4، ومزامنة الكلمات المستوردة ≠ تفريغ صوت آلي. لإخراج MP4 يستعمل محرك الرندر الموجود وتُقاس جودة الإطارات والصوت فعليًا. يدعم محرك SVG الأصلي أيضًا مورف مقيّد لضلوع متطابقة ومؤشر سن قلم مرسوم يتتبع المسار؛ لا تدّعِ وجود morph لأي مسارات عشوائية أو يد فوتوغرافية. مصدر التعلم والتحقق من التراخيص: Theatre.js، Flubber، WhisperX، PySceneDetect، AnimatedDrawings، SVG.js وغيرها موثقة بالدليل، وليست كلها مثبتة أو منسوخة. لا تزيد عداد قدرات KOSIF الرسمي بمجرد ظهور أسماء مستودعات.
 
+## 4G. تنفيذ أصلي جديد — KOSIF Creative Intelligence (audio → motion)
+
+لربط صوت حقيقي بالرسم وتحريك الشخصيات والكاميرا، افتح [دليل Creative Intelligence التنفيذي](references/creative-intelligence-execution.md) بدل الاكتفاء بروابط Librosa وWhisperX وRemotion. الجسر الموجود الآن:
+- `scripts/audio_cue_mapper.py` يحلل WAV PCM بقياس RMS وتغيرات الطاقة، ويستورد كلمات WhisperX المحددة زمنيًا دون تخمين.
+- `scripts/creative_reasoning_bridge.py` يقارن doodle وkinetic وcinematic بمعايير معلنة ثم يولد ملف Storyboard مطابقًا لعقد `motion_director.py`، مع تقرير قرار قابل للمراجعة.
+- `evals/test_creative_intelligence.py` يغطي توقيت الكلمات العربية وتداخلها وثبات النتائج وحماية الملفات من الاستبدال.
+
+    python3 $SKILL_DIR/scripts/audio_cue_mapper.py ./voice.wav --aligned-words ./words.json --out ./cues.json
+    python3 $SKILL_DIR/scripts/creative_reasoning_bridge.py ./cues.json --out ./scene.json --report ./decisions.json
+    python3 $SKILL_DIR/scripts/motion_director.py compile ./scene.json --out ./film.html
+    python3 -m unittest discover -s $SKILL_DIR/evals -p test_creative_intelligence.py -v
+
+حدود الإثبات: مرشحات تغيرات الطاقة ليست BPM أو ضربات موسيقية مؤكدة، وتحليل الطاقة لا يستنتج مشاعر الأغنية ولا معناها. الفيديو MP4 لا يُعد منجزًا حتى يُرندر وتُقاس إطاراته ومساره الصوتي. لا تنسخ ملفات مكتبات الطرف الثالث أو تحول المستودعات إلى شارات ✅ دون اختبارات وترخيص.
+
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.
 2. **اختر قواك:** `powers.py suggest "<الوصف>"` ثم الفصول المقترحة والأساليب في [styles-atlas.md](references/styles-atlas.md). اختر لوحة وخطًا عربيًا (Amiri, Cairo, Reem Kufi, Aref Ruqaa…) ونحو 3–6 قوى متوافقة.
