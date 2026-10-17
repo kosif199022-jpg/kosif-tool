@@ -16,6 +16,9 @@
 | Create GSAP/Rough/Vivus projects | scripts/motion_stack.py scaffold gsap | User-installed npm dependencies | Generates source only |
 | Create Remotion React composition | scripts/motion_stack.py scaffold remotion | User-installed Remotion and license | Generates source only |
 | Create Manim animation scene | scripts/motion_stack.py scaffold manim | User-installed Manim | Generates source only |
+| Create interactive 3D scene | scripts/motion_stack.py scaffold three | User-installed Three.js + Vite | Generates source only |
+| Create accelerated 2D scene | scripts/motion_stack.py scaffold pixi | User-installed PixiJS + Vite | Generates source only |
+| Create generative art sketch | scripts/motion_stack.py scaffold p5 | User-installed p5.js + Vite | Generates source only |
 | Identify 25 external creative engines | data/motion_sources.json | None | Registry is reference, not installed code |
 
 ## Start producing something, rather than just suggesting technologies
@@ -55,8 +58,11 @@ Never claim MP4 created until the output file and verification are observed. The
     python3 "$SKILL_DIR/scripts/motion_stack.py" scaffold gsap --out ./kosif-gsap
     python3 "$SKILL_DIR/scripts/motion_stack.py" scaffold remotion --out ./kosif-remotion
     python3 "$SKILL_DIR/scripts/motion_stack.py" scaffold manim --out ./kosif-manim
+    python3 "$SKILL_DIR/scripts/motion_stack.py" scaffold three --out ./kosif-three
+    python3 "$SKILL_DIR/scripts/motion_stack.py" scaffold pixi --out ./kosif-pixi
+    python3 "$SKILL_DIR/scripts/motion_stack.py" scaffold p5 --out ./kosif-p5
 
-The GSAP project imports installed gsap, roughjs and vivus, and exposes a frame-seekable animation timeline. The Remotion project includes a valid React composition and render script; install dependencies only when the user approves and check the Remotion company license for commercial usage. The Manim project includes a Python Scene with path creation and MoveAlongPath. Generated sources require real package versions and full environment verification; they are not pre-bundled copies of the underlying engines.
+The GSAP project imports installed gsap, roughjs and vivus, and exposes a frame-seekable animation timeline. The Remotion project includes a valid React composition and render script; install dependencies only when the user approves and check the Remotion company license for commercial usage. The Manim project includes a Python Scene with path creation and MoveAlongPath. The Three.js, PixiJS, and p5.js scaffolds include original frame-seekable interactive renderers, but depend on locally installed library packages and must be built and tested before runtime claims. Generated sources require real package versions and full environment verification; they are not pre-bundled copies of the underlying engines.
 
 ## How the 25 technologies transfer practical ideas to KOSIF
 
