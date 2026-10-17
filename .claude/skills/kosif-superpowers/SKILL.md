@@ -158,6 +158,16 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 حدود الإثبات: مرشحات تغيرات الطاقة ليست BPM أو ضربات موسيقية مؤكدة، وتحليل الطاقة لا يستنتج مشاعر الأغنية ولا معناها. الفيديو MP4 لا يُعد منجزًا حتى يُرندر وتُقاس إطاراته ومساره الصوتي. لا تنسخ ملفات مكتبات الطرف الثالث أو تحول المستودعات إلى شارات ✅ دون اختبارات وترخيص.
 
+## 4H. KOSIF Reference Edit Engine — إعادة بناء المونتاج قابل للتعديل
+
+عندما يطلب المستخدم محاكاة **طريقة مونتاج فيديو مرجعي** أو Kit شبيه بفكرة Katana، افتح [قدرة إعادة بناء المونتاج التنفيذية](references/reference-edit-execution.md)، ولا تكتفِ بعرض المستودعات. المحرك الجديد يستخرج من تقرير FFmpeg توقيت القطعات، ويحوّلها إلى لقطات بإطارات دقيقة ومشروع Remotion بملفات React أصلية، ويتيح نسخ **لقطات المالك فقط** من Manifest محمي. يدعم إيقاع الصوت وتوقيت الكلمات المراجع، دون اختلاق تفسير للأغنية.
+
+    python3 $SKILL_DIR/scripts/motion_reference_probe.py ./reference.mp4 --cuts --out ./cuts.json
+    python3 $SKILL_DIR/scripts/reference_edit_engine.py --probe ./cuts.json --cues ./cues.json --fps 30 --out ./remotion-project
+    python3 -m unittest discover -s $SKILL_DIR/evals -p test_reference_edit_engine.py -v
+
+بعد التوليد: راجع خطة التحرير والحقوق وترخيص Remotion، ثم شغّل npm install / npm run studio / npm run render داخل مجلد المشروع، وتحقق من الفيلم بنفسك. النتائج المقاسة هنا: **توقيت المرشّحات وخطة قطع، لا استخراج Motion Vectors، ولا تشغيل Katana الأصلية، ولا إثبات جودة MP4 بدون الرندر**. أي أدوات SAM2 أو CoTracker أو Higgsfield خدمة منفصلة تُفعّل بإذن وتكلفة وترخيص واضح.
+
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.
 2. **اختر قواك:** `powers.py suggest "<الوصف>"` ثم الفصول المقترحة والأساليب في [styles-atlas.md](references/styles-atlas.md). اختر لوحة وخطًا عربيًا (Amiri, Cairo, Reem Kufi, Aref Ruqaa…) ونحو 3–6 قوى متوافقة.
