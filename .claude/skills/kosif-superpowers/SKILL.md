@@ -111,10 +111,12 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
     python3 $SKILL_DIR/scripts/motion_stack.py scaffold pixi --out ./pixi-project
     python3 $SKILL_DIR/scripts/motion_stack.py scaffold p5 --out ./p5-project
 
-محرك الاستوديو الأصلي للمهارة مستقل عن JS packages؛ تشغيل GSAP/Rough/Vivus/Remotion/Manim/Three.js/PixiJS/p5.js الحقيقي يحتاج تثبيتها قانونيًا داخل بيئة المستخدم واختبارها. يعرض ملف [25 creative technologies](data/motion_sources.json) ما يمكن تعلمه من كل محرك والأدوار والتراخيص، وليس 25 محركًا مثبتًا. Remotion وGSAP لهما شروط استخدام خاصة تستلزم مراجعة قبل توزيع منتج تجاري. لعمل MP4 من HTML مع الصوت عبر الأدوات القائمة في *المستودع الكامل* لا داخل المهارة المنفردة:
+محرك الاستوديو الأصلي للمهارة مستقل عن JS packages؛ تشغيل GSAP/Rough/Vivus/Remotion/Manim/Three.js/PixiJS/p5.js الحقيقي يحتاج تثبيتها قانونيًا داخل بيئة المستخدم واختبارها. يعرض ملف [25 creative technologies](data/motion_sources.json) ما يمكن تعلمه من كل محرك والأدوار والتراخيص، وليس 25 محركًا مثبتًا. Remotion وGSAP لهما شروط استخدام خاصة تستلزم مراجعة قبل توزيع منتج تجاري. لإنتاج MP4 من HTML مع الصوت، يوجد الآن **محرك KOSIF المضمّن داخل حزمة المهارة** في resources/motion-runtime/render_html.cjs، ومعه scripts/verify_video.py و scripts/aspects.py. يمكن تشغيله دون نسخ المستودع الكامل بشرط توفر Node.js وPlaywright/Chromium وFFmpeg/ffprobe وفحص الناتج:
 
     python3 $SKILL_DIR/scripts/motion_director.py render ./motion.html --out ./motion.mp4 --audio ./voice.wav
     python3 tools/verify_video.py ./motion.mp4 --aspect 9:16 --fps 30 --duration 9 --audio ./voice.wav
+
+**مكتبة حركة إضافية مجربة:** resources/motion-runtime/motion_toolkit.mjs (12 دالة لخط الزمن، الكَي فريم، Easing، التوقيت العربي، وتحريك الشخصية والكاميرا والرسم اليدوي)، ومعها نموذج SVG مستقل resources/motion-runtime/doodle-film.template.html؛ انظر [بروتوكول الإنتاج والاختبار](references/executable-creative-motion.md). إنشاء حزمة رفع Claude: python3 $SKILL_DIR/scripts/package_skill.py --lite. **لا تُسمِّ الأدوات مثبتة إلا بعد probe وتشغيلها.**
 
 **حقيقة القدرات:** إنشاء HTML ناجح ≠ إنتاج MP4، واستنباط قطع الفيديو ≠ محاكاة الحركة، ووجود المكتبات في GitHub ≠ تشغيلها. ابحث عن الدليل الفعلي في ناتج الأوامر واختبار الإطارات والصوت قبل وسم القدرة مثبتة. لا تُدخل التقنيات الـ25 في عداد 4,223 تلقائيًا.
 

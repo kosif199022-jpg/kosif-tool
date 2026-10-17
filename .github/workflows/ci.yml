@@ -35,6 +35,8 @@ jobs:
         run: node --test .claude/skills/kosif-superpowers/evals/test_motion_engine.mjs
       - name: Motion engine JavaScript syntax
         run: node --check .claude/skills/kosif-superpowers/assets/motion_engine.js
+      - name: Portable KOSIF motion toolkit and SVG seek tests
+        run: node --test .claude/skills/kosif-superpowers/evals/test_motion_toolkit.mjs .claude/skills/kosif-superpowers/evals/test_motion_template.mjs
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules
