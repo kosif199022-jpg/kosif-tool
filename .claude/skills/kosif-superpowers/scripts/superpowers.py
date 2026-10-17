@@ -23,6 +23,7 @@ import json
 import os
 import re
 import shutil
+import signal
 import sys
 from collections import Counter
 from pathlib import Path
@@ -433,4 +434,5 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)  # quiet exit when piped into head
     sys.exit(main())
