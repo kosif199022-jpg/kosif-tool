@@ -58,6 +58,10 @@ jobs:
               names = set(z.namelist())
               required = [
                   "SKILL.md",
+                  "scripts/capability_runtime_router.py",
+                  "data/capability_routes.json",
+                  "references/capability-operating-manual.md",
+                  "evals/test_capability_runtime_router.py",
                   "scripts/motion_director.py",
                   "scripts/code_drawing_master.py",
                   "references/code-drawing-master.md",
