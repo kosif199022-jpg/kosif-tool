@@ -89,7 +89,8 @@ def _motion(previous,current):
                 total+=(a-b)**2;n+=1
         return total/n if n else 0.0
     baseline=mse(0,0)
-    texture=math.sqrt(sum((v-sum(previous)/len(previous))**2 for v in previous)/len(previous))
+    mean_luma=sum(previous)/len(previous)
+    texture=math.sqrt(sum((v-mean_luma)**2 for v in previous)/len(previous))
     if baseline<50 or texture<8:
         return {"dx":0,"dy":0,"evidence":"insufficient texture/change"}
     best=(baseline,0,0)
