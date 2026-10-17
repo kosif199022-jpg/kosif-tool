@@ -1,0 +1,534 @@
+{
+  "schema": "kosif.capability-routes.v1",
+  "rule": "Read-only route discovery. File presence does not prove execution. External dependencies and permissions are never assumed or installed automatically.",
+  "routes": [
+    {
+      "id": "environment-probe",
+      "title": "What can this machine actually run?",
+      "aliases": [
+        "قدرات",
+        "امكانيات",
+        "صلاحيات",
+        "جهاز",
+        "hardware",
+        "available tools",
+        "tools",
+        "environment",
+        "doctor"
+      ],
+      "script": "scripts/probe_env.py",
+      "subcommand": "--json --no-network",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "host_inventory"
+      ],
+      "proof": "tool inventory snapshot",
+      "external": "",
+      "summary": "Inspect runtime capabilities before deciding, without revealing secret values."
+    },
+    {
+      "id": "power-recall",
+      "title": "Recall best-matching KOSIF skills",
+      "aliases": [
+        "مهارة",
+        "قدراتي",
+        "سوبر باور",
+        "superpowers",
+        "ability",
+        "skill",
+        "capabilities"
+      ],
+      "script": "scripts/powers.py",
+      "subcommand": "suggest '{task}'",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [],
+      "proof": "ranked skill IDs with status",
+      "external": "obra/superpowers",
+      "summary": "Choose a narrow tested capability instead of reading all catalogs."
+    },
+    {
+      "id": "safe-source-inspection",
+      "title": "Inspect and safely pack user-authorized source repository",
+      "aliases": [
+        "مستودع",
+        "فحص مستودع",
+        "ضغط",
+        "حزمة",
+        "repository",
+        "archive",
+        "zip",
+        "repo",
+        "source code"
+      ],
+      "script": "scripts/repository_capability_packer.py",
+      "subcommand": "inspect <authorized-local-repository> --out <new-report.json>",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "read_user_files",
+        "distribution_review"
+      ],
+      "proof": "hashes plus capability candidates, not execution proof",
+      "external": "codecrafters-io/build-your-own-x",
+      "summary": "Never execute repository setup scripts; reject traversal/symlinks."
+    },
+    {
+      "id": "source-discovery",
+      "title": "Find source ecosystem candidate",
+      "aliases": [
+        "github",
+        "بحث مستودع",
+        "مراجع",
+        "discover library",
+        "research repositories"
+      ],
+      "script": "scripts/source_scout.py",
+      "subcommand": "--help",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "network_if_used"
+      ],
+      "proof": "source candidate shortlist",
+      "external": "vinta/awesome-python",
+      "summary": "Find evidence and inspect license before actual integration."
+    },
+    {
+      "id": "python-readiness",
+      "title": "Inspect Python environment and packages",
+      "aliases": [
+        "python",
+        "بايثون",
+        "pip",
+        "dependency",
+        "packages",
+        "برمجة"
+      ],
+      "script": "scripts/python_package_probe.py",
+      "subcommand": "--help",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "install_only_after_approval"
+      ],
+      "proof": "package readiness report",
+      "external": "vinta/awesome-python",
+      "summary": "Prefer venv or scratch environment and a pin/test cycle."
+    },
+    {
+      "id": "sound-energy",
+      "title": "Measure actual PCM WAV amplitude transients",
+      "aliases": [
+        "صوت",
+        "موسيقى",
+        "أغنية",
+        "audio",
+        "music",
+        "energy",
+        "onset",
+        "song"
+      ],
+      "script": "scripts/audio_cue_mapper.py",
+      "subcommand": "<owned-audio.wav> --out <new-cues.json>",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "read_user_media"
+      ],
+      "proof": "measured RMS not verified beat/BPM",
+      "external": "librosa/librosa",
+      "summary": "Actual standard-library RMS; requires supported WAV."
+    },
+    {
+      "id": "rhythm-hypotheses",
+      "title": "Compare BPM hypotheses from measured events",
+      "aliases": [
+        "إيقاع",
+        "نبض",
+        "beat",
+        "bpm",
+        "rhythm",
+        "tempo"
+      ],
+      "script": "scripts/music_rhythm_engine.py",
+      "subcommand": "--help",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "read_user_media"
+      ],
+      "proof": "candidate tempo rankings, not musical truth",
+      "external": "MTG/essentia",
+      "summary": "Do not classify music emotion from amplitude alone."
+    },
+    {
+      "id": "word-alignment-import",
+      "title": "Import existing trustworthy word timestamps",
+      "aliases": [
+        "كلمات",
+        "تفريغ",
+        "ترجمة",
+        "whisper",
+        "lyrics",
+        "words",
+        "subtitle",
+        "caption"
+      ],
+      "script": "scripts/audio_cue_mapper.py",
+      "subcommand": "<owned-audio.wav> --aligned-words <words.json> --out <new-cues.json>",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "read_user_media"
+      ],
+      "proof": "exact supplied word seconds",
+      "external": "m-bain/whisperX",
+      "summary": "Does NOT run ASR or transcribe lyrics."
+    },
+    {
+      "id": "creative-decision",
+      "title": "Generate editable original audio-driven storyboard",
+      "aliases": [
+        "فكرة",
+        "مشهد",
+        "سيناريو",
+        "تخيل",
+        "expression",
+        "reasoning",
+        "storyboard",
+        "visual direction",
+        "إخراج"
+      ],
+      "script": "scripts/creative_reasoning_bridge.py",
+      "subcommand": "<cues.json> --out <scene.json> --report <decisions.json>",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "write_new_files"
+      ],
+      "proof": "declared candidate style scores and validated storyboard",
+      "external": "stanfordnlp/dspy",
+      "summary": "No certified emotional reasoning or artistic judgment."
+    },
+    {
+      "id": "reference-video-scan",
+      "title": "Inspect authorized video metadata and cut candidates",
+      "aliases": [
+        "فيديو مرجعي",
+        "فيديو",
+        "تقليد",
+        "محاكاة",
+        "video reference",
+        "shot detection",
+        "cuts",
+        "scene detect"
+      ],
+      "script": "scripts/motion_reference_probe.py",
+      "subcommand": "<authorized-video.mp4> --cuts --out <cuts.json>",
+      "requires": [
+        "python3",
+        "ffprobe",
+        "ffmpeg"
+      ],
+      "permissions": [
+        "read_user_media",
+        "media_usage_rights"
+      ],
+      "proof": "actual metadata and heuristic cuts",
+      "external": "Breakthrough/PySceneDetect",
+      "summary": "This does not track a moving person or recover source keyframes."
+    },
+    {
+      "id": "reference-edit-remix",
+      "title": "Generate new editable Remotion montage from reference timing",
+      "aliases": [
+        "katana",
+        "كاتانا",
+        "استنساخ مونتاج",
+        "reference edit",
+        "editing style",
+        "remix",
+        "ريمكس",
+        "مونتاج",
+        "بكاتانا"
+      ],
+      "script": "scripts/reference_edit_engine.py",
+      "subcommand": "--probe <cuts.json> --out <new-project-dir>",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "read_user_media",
+        "media_usage_rights",
+        "write_new_files"
+      ],
+      "proof": "frame-exact edit plan, source-only Remotion project",
+      "external": "remotion-dev/remotion",
+      "summary": "Optional user-owned media. Rendering needs external Node/Remotion license."
+    },
+    {
+      "id": "code-drawing",
+      "title": "Draw and animate procedural human/cat characters",
+      "aliases": [
+        "ارسم",
+        "رسم",
+        "شخصية",
+        "قطة",
+        "لوحة",
+        "draw",
+        "svg",
+        "doodle",
+        "whiteboard",
+        "characters"
+      ],
+      "script": "scripts/code_drawing_master.py",
+      "subcommand": "--cast human+cat --location street --action walk --out <scene.json> --html <scene.html>",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "write_new_files"
+      ],
+      "proof": "editable scene JSON and seekable HTML",
+      "external": "excalidraw/excalidraw",
+      "summary": "Original SVG rigs, not photo-real hand or fully realistic pose solver."
+    },
+    {
+      "id": "motion-compile",
+      "title": "Compile validated timeline into seekable SVG animation",
+      "aliases": [
+        "أنيميشن",
+        "موشن",
+        "تحريك",
+        "motion",
+        "animation",
+        "frame",
+        "timelines"
+      ],
+      "script": "scripts/motion_director.py",
+      "subcommand": "compile <scene.json> --out <new-film.html>",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "write_new_files"
+      ],
+      "proof": "HTML source compiled, NOT exported video",
+      "external": "motalim-ai/motion-starter-kit",
+      "summary": "Times must already be measured; don't guess spoken words."
+    },
+    {
+      "id": "video-export",
+      "title": "Render and inspect MP4 with original audio",
+      "aliases": [
+        "صدر",
+        "تصدير",
+        "mp4",
+        "render",
+        "encoding",
+        "export",
+        "final video"
+      ],
+      "script": "scripts/motion_director.py",
+      "subcommand": "render <film.html> --out <new-film.mp4> --audio <user-voice.wav>",
+      "requires": [
+        "python3",
+        "node",
+        "ffmpeg",
+        "ffprobe"
+      ],
+      "permissions": [
+        "read_user_media",
+        "write_new_files",
+        "dependency_install_if_needed"
+      ],
+      "proof": "real MP4, ffprobe and visual/audio inspection required",
+      "external": "remotion-dev/remotion",
+      "summary": "Requires host renderer Chromium/Playwright and ffmpeg; never promise output prematurely."
+    },
+    {
+      "id": "quality-gate",
+      "title": "Verify concrete shot, frame and word timing constraints",
+      "aliases": [
+        "تحقق",
+        "الجودة",
+        "صح",
+        "قرار",
+        "review",
+        "validate",
+        "quality",
+        "check",
+        "اختبر"
+      ],
+      "script": "scripts/creative_quality_gate.py",
+      "subcommand": "--help",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "read_user_files"
+      ],
+      "proof": "pass/fail measured structural checks only",
+      "external": "promptfoo/promptfoo",
+      "summary": "No guarantee of visual beauty, user likeness or semantic fidelity."
+    },
+    {
+      "id": "compositing",
+      "title": "Composite visual effects via authorized external engine",
+      "aliases": [
+        "مؤثرات",
+        "تراكب",
+        "روتوسكوب",
+        "composite",
+        "node graph",
+        "vfx"
+      ],
+      "script": null,
+      "subcommand": null,
+      "requires": [
+        "natron"
+      ],
+      "permissions": [
+        "install_only_after_approval",
+        "media_usage_rights"
+      ],
+      "proof": "external adapter absent; blocked until real integration",
+      "external": "NatronGitHub/Natron",
+      "summary": "Do not present Natron as bundled."
+    },
+    {
+      "id": "pixel-tracking",
+      "title": "Track object points over time through external model",
+      "aliases": [
+        "تتبع",
+        "حركة شخص",
+        "motion tracking",
+        "optical flow",
+        "point tracking"
+      ],
+      "script": null,
+      "subcommand": null,
+      "requires": [
+        "torch"
+      ],
+      "permissions": [
+        "install_only_after_approval",
+        "download_model_weights",
+        "media_usage_rights"
+      ],
+      "proof": "external CoTracker not bundled and weights not checked",
+      "external": "facebookresearch/co-tracker",
+      "summary": "Requires model weights/acceleration and user media."
+    },
+    {
+      "id": "segmentation",
+      "title": "Segment people and objects in source video",
+      "aliases": [
+        "قص عنصر",
+        "خلفية",
+        "عزل",
+        "segment",
+        "masking",
+        "subject"
+      ],
+      "script": null,
+      "subcommand": null,
+      "requires": [
+        "torch"
+      ],
+      "permissions": [
+        "install_only_after_approval",
+        "download_model_weights",
+        "media_usage_rights"
+      ],
+      "proof": "external SAM2 not bundled and weights not checked",
+      "external": "facebookresearch/sam2",
+      "summary": "Not an active feature just because torch exists."
+    },
+    {
+      "id": "generated-video",
+      "title": "Use external Higgsfield generation with explicit cost grant",
+      "aliases": [
+        "higgsfield",
+        "هيجس فيلد",
+        "katana official",
+        "توليد فيديو",
+        "generation",
+        "seedance"
+      ],
+      "script": null,
+      "subcommand": null,
+      "requires": [],
+      "permissions": [
+        "third_party_account",
+        "paid_generation_approval",
+        "upload_user_assets",
+        "media_usage_rights"
+      ],
+      "proof": "requires connected official Higgsfield workflow, model access and charged user approval",
+      "external": "higgsfield-ai/skills",
+      "summary": "KOSIF does not contain Katana's proprietary code. No paid calls without consent."
+    },
+    {
+      "id": "agent-channels",
+      "title": "Inspect external research/agent access before action",
+      "aliases": [
+        "agent reach",
+        "remote",
+        "connector",
+        "social",
+        "reddit",
+        "youtube",
+        "telegram",
+        "بحث سوشيال"
+      ],
+      "script": null,
+      "subcommand": null,
+      "requires": [],
+      "permissions": [
+        "connector_authorization",
+        "private_account_scope",
+        "network_if_used"
+      ],
+      "proof": "gateway is external; KOSIF never inherits account permissions",
+      "external": "Panniantong/Agent-Reach",
+      "summary": "Source suggestions and permission policy only; tool must actually be connected."
+    },
+    {
+      "id": "system-engineering",
+      "title": "Stage code design/test/verify workflow",
+      "aliases": [
+        "system design",
+        "تصميم نظام",
+        "معمارية",
+        "bugs",
+        "تطوير",
+        "debug",
+        "tdd",
+        "test"
+      ],
+      "script": "scripts/check_skill.py",
+      "subcommand": "--evals",
+      "requires": [
+        "python3"
+      ],
+      "permissions": [
+        "write_repo_changes_after_approval"
+      ],
+      "proof": "CI assertions plus explicit error ledger",
+      "external": "donnemartin/system-design-primer",
+      "summary": "Follows red-green, smallest change, interfaces, and executable QA."
+    }
+  ]
+}

@@ -23,6 +23,16 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 6. **ابنِ بذكاء / build.** أرِ المستخدم شيئًا مرئيًا مبكرًا. وزّع العمل المستقل على وكلاء متوازيين عند الحاجة، وابدأ بأصغر محرك يكفي. [agent-orchestration](references/powers/agent-orchestration.md)
 7. **تحقّق ثم سلّم / verify, then report.** افتح الناتج نفسه: الملف، الإطارات، الأرقام. علّم كل ادعاء بأدنى شارة صادقة، وقل ما فُحص وما لم يُفحص. [verification.md](references/verification.md)
 
+## 1A. اختر قدرة حقيقية واعرف صلاحياتها — Capability runtime routing
+
+**المعرفة لا تكفي: شغّل موجّه القدرات.** أي مهمة صوت، رسم، موشن، كاتانا، تحليل مستودع، تطبيق، بحث أو مراجعة تبدأ بمطابقة الطلب مع قدرة مثبتة في الشفرة؛ شخّص البيئة والصلاحيات أولًا:
+
+    python3 $SKILL_DIR/scripts/capability_runtime_router.py --task "حلل فيديو مرجعي وأنتج مونتاج مشابه بأصولي" --json
+    python3 $SKILL_DIR/scripts/capability_runtime_router.py --doctor --json
+    python3 $SKILL_DIR/scripts/capability_runtime_router.py --id reference-edit-remix --json
+
+اقرأ دليل [Capability Operating Manual](references/capability-operating-manual.md) لخطوات التشغيل الفعلية: تحليل الفيديو وتوقيت القطعات، الصوت وتوقيته، إنشاء مشروع مونتاج، تحريك SVG، فحص Python/الحزم، اختبار جودة القرار، صلاحيات أجهزة المستخدم، والسماح بالتثبيت والرفع والتوليد المدفوع. النتائج تقول صراحة **source_present_not_executed** أو **missing_host_prerequisites** أو **external_not_integrated**؛ لا تعني إمكانية تشغيل نموذج خارجي، امتلاك مفتاح أو موافقة مستخدم. سجل الحقوق ورخص المصدر، وشغّل الأداة وحقق الناتج قبل إعلان الإنجاز. لا تنسخ Katana ولا تعامل وجود روابط GitHub على أنه دمج المكتبات أو تدريب Claude.
+
 ## 2. خريطة المجالات / domain map
 افتح فصل العائلة فقط حين تحتاجه؛ الفصول الكبيرة ابحث فيها: `powers.py search <كلمات>` · `powers.py show <ID>` · `powers.py family <family>` · `powers.py domains`.
 
