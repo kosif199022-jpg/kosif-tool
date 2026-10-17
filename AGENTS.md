@@ -10,3 +10,4 @@
 8. Preserve licenses, content rights, source attribution, secrets and platform terms.
 9. If a style appears as an external-only example, use its brief as a creative direction, not proof of an existing tested implementation.
 10. Catalog maintenance: `tools/sync_catalog.py` → `tools/import_briefs.py` (new briefs) → `tools/build.py` → `tools/validate.py`. Never store third-party prompt text in the repository.
+11. Superpowers: when a step needs a tool beyond `tools/`, read `.claude/skills/kosif-superpowers/SKILL.md`, run its `scripts/superpowers.py doctor` and promise only installed tools; inspect permitted reference media with `scripts/fetch_reference.py` (outputs stay in the git-ignored `.kosif-cache/`); credit every third-party tool by its license note from `references/repos.md`.

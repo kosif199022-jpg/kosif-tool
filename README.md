@@ -38,6 +38,16 @@ python3 tools/words_convert.py captions.srt ./my-film/words.json       # ترج�
 python3 tools/verify_video.py ./my-film/film.mp4 --aspect 9:16 --fps 30 --duration 20 --audio voice.mp3   # بوابة التسليم
 ```
 
+## القوى الخارقة (Superpowers)
+
+مهارة Claude Code في `.claude/skills/kosif-superpowers/`: اثنتا عشرة قوة إنتاجية (رصد المرجع، التحريك، الرندر، الفضاء ثلاثي الأبعاد، الرسم، البيانات، الصوت، النص العربي، الترجمات، التوليد، التنسيق، التصميم) مدعومة بفهرس موثّق من 100 مستودع مفتوح المصدر مع تراخيصه وطريقة استدعائه، وأمر `doctor` يبيّن ما هو مثبّت، وسكربت يجلب المرجع المسموح ويقيسه (المدة، القطعات، الألوان).
+
+```bash
+python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor          # ما المتوفر على هذا الجهاز
+python3 .claude/skills/kosif-superpowers/scripts/superpowers.py search مزامنة   # ابحث عن أداة بالعربية أو الإنجليزية
+python3 .claude/skills/kosif-superpowers/scripts/fetch_reference.py <رابط>       # اجلب المرجع المسموح وقِسه
+```
+
 ## صيانة الفهرس
 
 ```bash
@@ -65,6 +75,7 @@ A Claude-readable atlas of motion-graphics styles with a static website, origina
 | `starters/remotion/` | Minimal Remotion v4 project (title reveal, SVG chart, logo card, word-level captions). |
 | `tools/` | `kosif.py` CLI, `render_html.cjs` (Playwright + ffmpeg), `words_convert.py` (SRT/VTT/Whisper → words.json), `verify_video.py` (delivery gate with loudness), `sync_catalog.py`, `import_briefs.py`, `build.py`, `validate.py`, `check_originality.py`. |
 | `tests/` | Python `unittest` and Node `node:test` suites run by CI. |
+| `.claude/skills/kosif-superpowers/` | Claude Code skill: twelve production superpowers (observe, animate, render, space, draw, data, voice, arabic, captions, generate, orchestrate, design) backed by a credited catalog of 100 major open-source repositories, a tool `doctor`, and a permitted-reference fetcher that measures duration, cuts and palette. |
 
 ### Quick start
 
@@ -74,6 +85,10 @@ python3 tools/kosif.py prompt pm-ror-fly-9950f1 --lang en --aspect 1:1 --duratio
 python3 tools/kosif.py scaffold pm-ror-fly-9950f1 ./negroni --starter html-canvas
 node tools/render_html.cjs --in ./negroni/index.html --out ./negroni/film.mp4 --fps 30
 ```
+
+### Superpowers skill
+
+`.claude/skills/kosif-superpowers/` is a Claude Code skill that extends every playbook step with vetted open-source capabilities: a catalog of 100 major repositories (`repos.json` → `references/repos.md`, each with license, stars, invocation and the playbooks it strengthens), recipes per superpower (`references/capabilities.md`), `scripts/superpowers.py doctor` to report which tools are installed, and `scripts/fetch_reference.py` to fetch a permitted reference video into the git-ignored `.kosif-cache/` and measure it (probe, contact sheet, scene cuts, palette) for STYLE.md. Nothing third-party is vendored; the catalog links and credits.
 
 ### Website
 

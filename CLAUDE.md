@@ -9,3 +9,4 @@ Rules:
 - Scaffold with `python3 tools/kosif.py scaffold <id> <dir>`; preview with `node tools/render_html.cjs --preview` (or Remotion) before the final render; verify duration, fps and audio with `templates/TEST_REPORT.md`.
 - Do not copy third-party videos, prompts, code or media without a compatible license; link and credit instead.
 - After changing the catalog run `python3 tools/build.py` and `python3 tools/validate.py`.
+- For capabilities beyond `tools/` (inspecting a reference video, word-level alignment, 3D, generative assets, parallel scene builds) load `.claude/skills/kosif-superpowers/SKILL.md`; run `python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor` before promising any tool, and pick tools from its credited catalog of 100 repositories (`references/repos.md`).
