@@ -33,6 +33,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_scout.py' -v
       - name: Capacity and Python readiness regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_system_python.py' -v
+      - name: Reference Edit Engine Python and project generation tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_edit_engine.py' -v
       - name: Motion Lab execution and safety regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_*.py' -v
       - name: Motion engine JavaScript execution contract
