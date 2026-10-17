@@ -78,12 +78,12 @@ def scaffold(out, title, subtitle, duration, fps):
     (out/"README.md").write_text(
         "# KOSIF Motion Runtime — original Doodle Film\n\n"
         "Open film.html locally. For a rendered, independently verified movie use "
-        "the parent kosif-tool repository's renderer after checking dependencies.\n\n"
-        "    node tools/render_html.cjs --in /absolute/project/film.html --out /absolute/project/out.mp4 --width 1080 --height 1920 --fps 30 --offline\n\n"
+        "the bundled KOSIF renderer after checking dependencies.\n\n"
+        "    python3 $SKILL_DIR/scripts/motion_runtime.py render --in /absolute/project/film.html --out /absolute/project/out.mp4 --fps 30 --run\n\n"
         "Use --audio /absolute/voice.wav to keep the user's narration on the timeline. "
         "This template has a fixed 8-second drawing performance; for other durations, extend the storyboard and keyframes.\n"
         "For a preview use --preview and output preview.png. "
-        "Verify with tools/verify_video.py and inspect frames before saying delivered.\n",
+        "Verify with $SKILL_DIR/scripts/verify_video.py and inspect frames before saying delivered.\n",
         encoding="utf-8")
     return {"status":"scaffold_created_not_rendered","file":str(out/"film.html"),
             "project":str(out), "runtime":"seek_svg", "render_verified":False}
