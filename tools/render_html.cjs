@@ -292,6 +292,7 @@ class SeekDriver {
   async capture(file) {
     const { data } = await this.cdp.send('Page.captureScreenshot', {
       format: 'png', fromSurface: true, captureBeyondViewport: false,
+      optimizeForSpeed: true, // still lossless PNG, faster zlib level (~6x quicker capture)
     });
     fs.writeFileSync(file, Buffer.from(data, 'base64'));
   }
