@@ -2756,8 +2756,8 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_analyze.py",
-   "kosif-one/tools/kosif-mimic/scripts/mm_build.py"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py"
   ],
   "styles": [],
   "tags": [],
@@ -2774,7 +2774,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "100-superskills/skills/kosif-mimic/scripts/mm_build.py:31"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py"
   ],
   "styles": [],
   "tags": [],

@@ -10,8 +10,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1",
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -28,8 +27,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1",
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -46,8 +44,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1",
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -208,8 +205,8 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_analyze.py",
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -226,7 +223,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -243,7 +240,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -260,7 +257,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -277,7 +274,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -294,7 +291,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -311,7 +308,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -328,7 +325,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -345,7 +342,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -362,7 +359,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -379,7 +376,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -1563,8 +1560,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1",
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -1581,8 +1577,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1",
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -1599,8 +1594,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1",
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -1617,8 +1611,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1",
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -4458,7 +4451,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_transitions.py:1"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -4475,7 +4468,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:19"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -4492,7 +4485,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -4509,7 +4502,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -4526,7 +4519,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -4543,7 +4536,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "100-superskills/skills/kosif-mimic/scripts/mm_transitions.py:26"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
   "styles": [],
   "tags": [],
@@ -8721,5 +8714,36 @@
   ],
   "section": "إضافات v2 — v2 additions",
   "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+ },
+ {
+  "id": "TRANS-X13",
+  "family": "transitions-cuts",
+  "domain": "motion",
+  "name_ar": "تصنيف الانتقال بإعادة التركيب داخل المستودع",
+  "name_en": "Transition classification by re-synthesis, shipped in-repo",
+  "status": "proven",
+  "what": "لا تخمّن الانتقال من شكل منحنى الفرق؛ ارسم كل نوع مرشح (54 من xfade في FFmpeg + 11 من محررات الهاتف) من الإطارين النقيين قبل وبعد عند 25 قيمة تقدّم، واختر مسارًا رتيبًا بالبرمجة الديناميكية؛ الناتج نوع ومعاملات ومدى ومنحنى تقدّم مقاس يُعاد تشغيله حرفيًا في البناء. — Instead of guessing from the difference curve, render every candidate kind (54 FFmpeg xfade + 11 phone-editor kinds) from the pure frames before and after at 25 progress values and pick a monotone dynamic-programming path; the output is kind, params, exact span and a measured progress curve replayed verbatim in the build.",
+  "when": "rebuilding a reference edit exactly; identifying what CapCut/InShot/xfade transition a reference used",
+  "how": "`mm_analyze.analyze(ref, work)` → `spec.json: transitions[{type, params, ts, te, progress, confidence, alternatives}]`; replay with `mm_transitions.render(kind, A, B, p, **params)`. The xfade port is LGPL-2.1-or-later (notice at the top of `mm_transitions.py`); custom kinds need OpenCV or SciPy.",
+  "params": "score = colour error + gradient error + small complexity prior; 25 progress samples; span grown/trimmed with the same model",
+  "install": "pip install numpy pillow opencv-python-headless scipy; ffmpeg",
+  "license": "LGPL-2.1-or-later (xfade port) / owner (custom kinds)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "انتقال",
+   "xfade",
+   "re-synthesis",
+   "classification",
+   "capcut",
+   "mimic",
+   "محاكاة"
+  ],
+  "section": "إضافات v3 — v3 additions",
+  "source": ""
  }
 ]

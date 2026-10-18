@@ -21,6 +21,7 @@ _الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بال�
 - 📦 بأمر تثبيت: ENG-X05 … ENG-X05 (1)
 - إضافات من Cinematic Director PRO v5
 - إضافات v2 — v2 additions
+- إضافات v3 — v3 additions
 
 #### ENG-01 · عقد تركيب HyperFrames · HyperFrames composition contract · ✅ مُثبت هنا
 - **ماذا / what:** Every film is one index.html whose root div carries data-composition-id, data-width, data-height, data-duration and data-fps, with GSAP timelines registered in window.__timelines and the motion-kit shim so either engine can seek it.
@@ -2701,3 +2702,9 @@ _قدرات أُثبتت في هذه الجلسة: مطابقة الخطوط و�
 - **كيف / how:** `python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor [--json | --strict]`; the same CLI searches the 100-repository tool map: `list --capability voice`, `search محاذاة كلمات`, `show openai/whisper`, and keeps references/repos.md derived from repos.json with `build` / `check` (CI-safe). **أرقام / params:** 21 checks; exit 1 with --strict when a core render tool is missing.
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/superpowers.py` · `kosif-tool/.claude/skills/kosif-superpowers/repos.json` · `kosif-tool/.claude/skills/kosif-superpowers/references/repos.md` · `kosif-tool/tests/test_superpowers_catalog.py`
 
+#### ENG-X07 · محرك المحاكاة: إعادة بناء فيديو مرجعي بلقطات جديدة · Mimic engine: rebuild a reference video with new footage · ✅ مُثبت هنا / proven here
+- **ماذا / what:** خط أنابيب بايثون كامل داخل المهارة: تحليل المرجع (لقطات، انتقالات، طبقة نص بألفا حقيقية وظل بالمربعات الصغرى، مطابقة خط، مظهر لوني) ثم بناء بإطار واحد لكل إطار مرجعي: نقل لوني Reinhard كـLUT، كين بيرنز، الانتقال بمنحناه المقاس، تعتيم وحبيبات معايرة، والنص بالخط المطابَق وحركته المقاسة، والصوت الأصلي منسوخًا بلا إعادة ترميز. — A complete Python pipeline inside the skill: analyse the reference (shots, transitions, text layer with true alpha and least-squares shadow, font match, colour look) then rebuild frame for frame: Reinhard LUT grade, Ken Burns, the transition with its measured curve, solved vignette and calibrated grain, text in the matched font with its measured motion, and the original audio stream copied untouched.
+- **متى أستخدمها / when:** the user says 'make me this video but with my clips' (Pinterest-style dua reels, quote videos)
+- **كيف / how:** Read `references/mimic.md`. `mm_analyze.analyze('ref.mp4','work')` → review `work/analysis.md` and `work/sheets/` → fill `shots[].replacement.path` from the user's or licensed clips (never scraped) → `mm_build.build('work', preview=True)` then full → `tools/verify_video.py`. `placeholder=True` drafts without footage. **أرقام / params:** H.264 bt709 CRF 17, same w×h, fps and frame count as the reference; preview = half size; needs numpy, Pillow(raqm), ffmpeg; OpenCV/SciPy optional
+- **الرخصة / license:** owner (mm_transitions.py LGPL-2.1-or-later)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py` · `kosif-tool/.claude/skills/kosif-superpowers/references/mimic.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md`

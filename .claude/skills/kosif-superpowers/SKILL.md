@@ -9,8 +9,8 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 **الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,223 قدرة لكل منها وصفة ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=4230 families=47 domains=10 styles=288 watched=253 proven=694 ready=636 install=892 key=173 seen=609 documented=1155 idea=71 -->
-**الأرقام / counts:** 4,230 قدرة في 47 عائلة و10 مجالات — ✅ 694 · 🟢 636 · 📦 892 · 🔑 173 · 👁 609 · 📄 1,155 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=4233 families=47 domains=10 styles=288 watched=253 proven=697 ready=636 install=892 key=173 seen=609 documented=1155 idea=71 -->
+**الأرقام / counts:** 4,233 قدرة في 47 عائلة و10 مجالات — ✅ 697 · 🟢 636 · 📦 892 · 🔑 173 · 👁 609 · 📄 1,155 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.
@@ -241,6 +241,10 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 - The inspector refuses private network destinations, non-HTTP(S) HLS URIs, encrypted streams, unbounded downloads and remote ffmpeg protocols. Output is cached in `.kosif-cache/` and must never be committed.
 - `references/capabilities.md` holds one recipe section per tool-map superpower (observe, animate, render, space, draw, data, voice, arabic, captions, generate, orchestrate, design) with decision tables over `repos.json`; `python3 $SKILL_DIR/scripts/superpowers.py doctor` lists which of those tools exist on this machine before any plan promises them.
 - Font matching / مطابقة الخطوط: [font-matching.md](references/font-matching.md) — identify a reference's typeface by rendering open candidates through Chromium with `scripts/render_text.cjs` and deciding by letterform signatures; worked example and an OFL family built from Amiri + Bodoni Moda in `fonts/kosif-jumuah/` (repo root).
+
+## Mimic engine / محرك المحاكاة — rebuild a reference with new footage
+- When the user wants "this video but with my clips", read [mimic.md](references/mimic.md) and run `scripts/mimic/` (analyse → review `analysis.md` and sheets → set replacement clips → build → verify). The original audio is copied, never re-encoded; text, timing, transitions and look are measured, not guessed.
+- Prove the analyser on the synthetic ground truth first (`scripts/mimic/synthetic/run_synthetic.py`, proof in `proofs/mimic-synthetic/`, test `tests/test_mimic.py`); footage comes from the user or licensed sources only, no platform scraping; `mm_transitions.py` is LGPL-2.1-or-later (FFmpeg xfade port).
 
 ## Auto media acquisition & editing assets / التحميل لمهام المونتاج
 

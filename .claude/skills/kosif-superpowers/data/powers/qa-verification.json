@@ -2133,7 +2133,7 @@
   "install": "",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_sheets.py"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_sheets.py"
   ],
   "styles": [],
   "tags": [],
@@ -3496,7 +3496,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_analyze.py"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py"
   ],
   "styles": [],
   "tags": [],
@@ -3513,8 +3513,8 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "kosif-one/tools/kosif-mimic/tests/run_synthetic.py",
-   "kosif-one/tools/kosif-mimic/tests/make_reference.py"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/run_synthetic.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/make_reference.py"
   ],
   "styles": [],
   "tags": [],
@@ -3531,8 +3531,8 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "100-superskills/skills/kosif-mimic/scripts/mm_analyze.py:1",
-   "100-superskills/skills/kosif-mimic/SKILL.md"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/mimic.md"
   ],
   "styles": [],
   "tags": [],
@@ -3549,7 +3549,7 @@
   "install": "see arsenal-libraries.md",
   "license": "owner",
   "proof": [
-   "100-superskills/skills/kosif-mimic/tests/run_synthetic.py"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/run_synthetic.py"
   ],
   "styles": [],
   "tags": [],
@@ -6898,6 +6898,38 @@
    "ink coverage",
    "qa",
    "مقارنة"
+  ],
+  "section": "إضافات v3 — v3 additions",
+  "source": ""
+ },
+ {
+  "id": "QA-X09",
+  "family": "qa-verification",
+  "domain": "motion",
+  "name_ar": "بطاقة نتائج اصطناعية بحقيقة أرضية لخط أنابيب المحاكاة",
+  "name_en": "Synthetic ground-truth scorecard for the mimic pipeline",
+  "status": "proven",
+  "what": "ولّد مرجعًا اصطناعيًا تعرف حقيقته (لقطات، انتقالات، أحداث نص بخطوط معلومة)، حلّله بالخط نفسه الذي ستستخدمه على فيديو المستخدم، وقارن النوع والمدى والتوقيت والخط بالحقيقة قبل أن تثق بأي قياس على مرجع حقيقي. — Generate a synthetic reference whose truth you wrote (shots, transitions, text events in known fonts), analyse it with the same pipeline you will run on the user's video, and compare kind, span, timing and font against the truth before trusting any measurement on a real reference.",
+  "when": "before claiming a reference analysis is exact; after touching any analyser",
+  "how": "`cd $SKILL_DIR/scripts/mimic && python3 synthetic/make_reference.py $OUT/ref && python3 synthetic/run_synthetic.py $OUT/ref $OUT/work` prints the scorecard; `python3 -m unittest tests.test_mimic` from the repo root asserts it (skips without numpy/Pillow/ffmpeg).",
+  "params": "transitions 6/6 type and span ±1; text animation 5/5; fonts 5/5 of 18; timing ±2 frames 3/5 (blur exit −7, slide_up +4)",
+  "install": "pip install numpy pillow opencv-python-headless scipy; ffmpeg",
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/sheet.jpg",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/run_synthetic.py",
+   "kosif-tool/tests/test_mimic.py"
+  ],
+  "styles": [],
+  "tags": [
+   "اختبار",
+   "scorecard",
+   "ground truth",
+   "synthetic",
+   "mimic",
+   "qa",
+   "محاكاة"
   ],
   "section": "إضافات v3 — v3 additions",
   "source": ""

@@ -661,7 +661,7 @@
   "install": "",
   "license": "",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_color.py:134",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_color.py",
    "kosif-studio/motion/qa.py:383",
    "app/public/js/00_editor.js:1299"
   ],
@@ -715,9 +715,8 @@
   "install": "",
   "license": "",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_color.py",
-   "100-superskills/skills/kosif-mimic/scripts/mm_color.py:1",
-   "100-superskills/skills/kosif-mimic/scripts/mm_build.py:105"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_color.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py"
   ],
   "styles": [],
   "tags": [

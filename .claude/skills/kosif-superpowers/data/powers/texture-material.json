@@ -116,7 +116,7 @@
   "install": "",
   "license": "",
   "proof": [
-   "100-superskills/skills/kosif-mimic/scripts/mm_build.py:130"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py"
   ],
   "styles": [],
   "tags": [

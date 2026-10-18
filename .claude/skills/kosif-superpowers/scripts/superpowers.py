@@ -35,11 +35,12 @@ DATA = SKILL / "repos.json"
 REPOS_MD = SKILL / "references" / "repos.md"
 ARABIC = re.compile(r"[؀-ۿ]")
 
-CAP_ORDER = ["observe", "animate", "render", "space", "draw", "data", "voice", "arabic", "captions", "generate", "orchestrate", "design"]
+CAP_ORDER = ["observe", "animate", "render", "space", "draw", "data", "voice", "arabic", "captions", "generate", "orchestrate", "design", "mimic", "edit", "cinematic"]
 CAP_AR = {
     "observe": "رصد المرجع", "animate": "التحريك", "render": "الرندر", "space": "الفضاء ثلاثي الأبعاد",
     "draw": "الرسم", "data": "البيانات", "voice": "الصوت", "arabic": "النص العربي", "captions": "الترجمات",
     "generate": "التوليد", "orchestrate": "التنسيق", "design": "التصميم",
+    "mimic": "المحاكاة", "edit": "المونتاج", "cinematic": "الإخراج السينمائي",
 }
 LICENSE_NOTES = (
     "permissive",

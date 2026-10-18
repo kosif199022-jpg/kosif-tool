@@ -412,7 +412,7 @@
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md",
-   "kosif-one/tools/kosif-mimic/scripts/mm_build.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py",
    "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:146-148"
   ],
   "styles": [],

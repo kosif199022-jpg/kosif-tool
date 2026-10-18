@@ -158,7 +158,7 @@
   "install": "",
   "license": "",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_render_text.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_render_text.py",
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:212",
    "100-superskills/skills/kosif-montage-motion/references/mimic.md",
    "kosif-atlas/skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu/SKILL.md"
@@ -295,9 +295,8 @@
   "install": "",
   "license": "كلها OFL-1.1؛ ما يشبه Thmanyah أو Dubai أو Diwani في المراجع خطوط مملوكة — مرجع فقط / all OFL-1.1; Thmanyah-, Dubai- and Diwani-like faces seen in references are proprietary — reference only.",
   "proof": [
-   "100-superskills/skills/kosif-mimic/assets/fonts",
-   "kosif-one/tools/kosif-mimic/assets/fonts/fonts.json",
-   "100-superskills/skills/kosif-mimic/scripts/mm_fonts_lib.py:20",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_fonts_lib.py",
    "app/index.html:10"
   ],
   "styles": [
@@ -2293,8 +2292,8 @@
   "install": "",
   "license": "",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_text.py",
-   "kosif-one/tools/kosif-mimic/scripts/mm_render_text.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_text.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_render_text.py",
    "kosif-one/projects/mimic-jumuah/study/mimic.json",
    "100-superskills/skills/kosif-montage-motion/references/mimic.md"
   ],
@@ -2321,10 +2320,8 @@
   "install": "",
   "license": "",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_text.py",
-   "kosif-one/tools/kosif-mimic/scripts/mm_textfx.py",
-   "100-superskills/skills/kosif-mimic/scripts/mm_text.py:737",
-   "100-superskills/skills/kosif-mimic/scripts/mm_textfx.py:185"
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_text.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_textfx.py"
   ],
   "styles": [],
   "tags": [
@@ -2349,8 +2346,7 @@
   "install": "",
   "license": "",
   "proof": [
-   "kosif-one/tools/kosif-mimic/scripts/mm_fonts.py",
-   "100-superskills/skills/kosif-mimic/scripts/mm_fonts.py:1",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_fonts.py",
    "kosif-one/projects/mimic-jumuah/study/mimic.json"
   ],
   "styles": [],

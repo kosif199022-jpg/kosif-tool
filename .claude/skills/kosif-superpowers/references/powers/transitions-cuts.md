@@ -18,6 +18,7 @@ _الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بال�
 - 💡 فكرة: TRANS-443 … TRANS-460 (18)
 - 📄 موصوف: TRANS-X01 … TRANS-X12 (12)
 - إضافات v2 — v2 additions
+- إضافات v3 — v3 additions
 
 #### TRANS-01 · انتقال تطبيقات الموبايل: غمس للأسود · Phone-editor transition: dipblack · ✅ مُثبت هنا
 - **ماذا / what:** Custom transition modelling what CapCut/InShot do: dip to black.
@@ -2822,3 +2823,14 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner (no LICENSE file)
 - **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
 - **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`
+
+## إضافات v3 — v3 additions (2026-10-18)
+
+_قدرات أُثبتت في هذه الجلسة: خط أنابيب المحاكاة المدمج في `scripts/mimic/`. — Proven in this session: the in-repo mimic pipeline._
+
+#### TRANS-X13 · تصنيف الانتقال بإعادة التركيب داخل المستودع · Transition classification by re-synthesis, shipped in-repo · ✅ مُثبت هنا / proven here
+- **ماذا / what:** لا تخمّن الانتقال من شكل منحنى الفرق؛ ارسم كل نوع مرشح (54 من xfade في FFmpeg + 11 من محررات الهاتف) من الإطارين النقيين قبل وبعد عند 25 قيمة تقدّم، واختر مسارًا رتيبًا بالبرمجة الديناميكية؛ الناتج نوع ومعاملات ومدى ومنحنى تقدّم مقاس يُعاد تشغيله حرفيًا في البناء. — Instead of guessing from the difference curve, render every candidate kind (54 FFmpeg xfade + 11 phone-editor kinds) from the pure frames before and after at 25 progress values and pick a monotone dynamic-programming path; the output is kind, params, exact span and a measured progress curve replayed verbatim in the build.
+- **متى أستخدمها / when:** rebuilding a reference edit exactly; identifying what CapCut/InShot/xfade transition a reference used
+- **كيف / how:** `mm_analyze.analyze(ref, work)` → `spec.json: transitions[{type, params, ts, te, progress, confidence, alternatives}]`; replay with `mm_transitions.render(kind, A, B, p, **params)`. The xfade port is LGPL-2.1-or-later (notice at the top of `mm_transitions.py`); custom kinds need OpenCV or SciPy. **أرقام / params:** score = colour error + gradient error + small complexity prior; 25 progress samples; span grown/trimmed with the same model
+- **الرخصة / license:** LGPL-2.1-or-later (xfade port) / owner (custom kinds)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md`
