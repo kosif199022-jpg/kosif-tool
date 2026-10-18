@@ -239,3 +239,9 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 - For permissioned HTTP(S) media references use `scripts/fetch_reference.py` to inspect frame contact sheets, color palette, cuts and metadata, or `scripts/superpowers.py` to search the separate 100-repository tool map in `repos.json`.
 - Read [reference inspection rules](references/reference-inspection.md), [100-repository tool catalog](references/repos.md), and [capability recipes](references/capabilities.md); always honor source licensing and use `--list` to inspect before downloading.
 - The inspector refuses private network destinations, non-HTTP(S) HLS URIs, encrypted streams, unbounded downloads and remote ffmpeg protocols. Output is cached in `.kosif-cache/` and must never be committed.
+
+## Auto media acquisition & editing assets / التحميل لمهام المونتاج
+
+When the user asks to download or edit a video or obtain stock images/footage, consult [video download workflow](references/video-download.md) and [100 media source websites](references/stock-media-100.md). Use `scripts/media_sources.py` to discover sources, verify media-specific license/permission evidence, download via existing `scripts/fetch_video.py`, and record a SHA-256/rights manifest for the editing project. iPhone/a-Shell: `tools/a-shell/Cinema_C_V34_Studio_iPhone.sh`.
+
+Activate this capability on every applicable request; do not download content from arbitrary platforms without the user's ownership/license or relevant permission. Not every asset on an indexed site is copyright-free. Exclude NC/ND content from commercial edits and do not bypass DRM/access controls. If downloads are blocked, report the limitation and use authorized files supplied by the user.
