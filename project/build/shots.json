@@ -1,0 +1,345 @@
+{
+ "fps": 60,
+ "W": 1080,
+ "H": 1920,
+ "duration": 28.133,
+ "shots": [
+  {
+   "id": "S1",
+   "src": "assets/raw/mk_9998.mp4",
+   "in": 8.0,
+   "start": 0.0,
+   "end": 3.36,
+   "speed": 1.0,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.47
+    ],
+    "z0": 1.0,
+    "z1": 1.1,
+    "ease": "inOutSine"
+   },
+   "why": "Monday dawn over a mountain mosque: opening invocation, slow push toward the mosque",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
+  },
+  {
+   "id": "S2",
+   "src": "assets/raw/mk_34371.mp4",
+   "in": 0.3,
+   "start": 3.36,
+   "end": 6.3,
+   "speed": 0.85,
+   "cam": {
+    "type": "tilt-up",
+    "c0": [
+     0.62,
+     0.55
+    ],
+    "c1": [
+     0.6,
+     0.47
+    ],
+    "z0": 1.15,
+    "z1": 1.2,
+    "ease": "inOutSine"
+   },
+   "why": "sunburst opening through leaves = a door of joy opening",
+   "band": [
+    1712,
+    0,
+    1260,
+    2160
+   ]
+  },
+  {
+   "id": "S3",
+   "src": "assets/raw/mk_39179.mp4",
+   "in": 3.0,
+   "start": 6.3,
+   "end": 9.29,
+   "speed": 1.0,
+   "cam": {
+    "type": "drift",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.04,
+    "z1": 1.0,
+    "ease": "inOutSine"
+   },
+   "why": "countless hanging lamps = blessed provision beyond counting",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
+  },
+  {
+   "id": "S4",
+   "src": "assets/raw/mk_39184.mp4",
+   "in": 1.0,
+   "start": 9.29,
+   "end": 12.49,
+   "speed": 1.0,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.52
+    ],
+    "z0": 1.02,
+    "z1": 1.12,
+    "ease": "inOutSine"
+   },
+   "why": "empty prayer hall, slow push toward the mihrab: the supplication that is answered",
+   "band": [
+    417,
+    0,
+    444,
+    720
+   ]
+  },
+  {
+   "id": "S5",
+   "src": "assets/raw/mk_51106.mp4",
+   "in": 0.0,
+   "start": 12.49,
+   "end": 14.07,
+   "speed": 1.0,
+   "cam": {
+    "type": "tilt-up",
+    "c0": [
+     0.45,
+     0.6
+    ],
+    "c1": [
+     0.45,
+     0.4
+    ],
+    "z0": 1.25,
+    "z1": 1.25,
+    "ease": "inOutSine"
+   },
+   "why": "Ya Rabb: the eyes lift to the sky",
+   "band": [
+    1183,
+    0,
+    1088,
+    2160
+   ]
+  },
+  {
+   "id": "S6a",
+   "src": "assets/raw/cv_coverr-sun-shining-over-the-ocean-2178.mp4",
+   "in": 6.0,
+   "start": 14.07,
+   "end": 15.65,
+   "speed": 1.0,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.47,
+     0.4
+    ],
+    "c1": [
+     0.47,
+     0.4
+    ],
+    "z0": 1.25,
+    "z1": 1.32,
+    "ease": "inOutSine"
+   },
+   "why": "this day: the sun rising over open water",
+   "band": [
+    568,
+    0,
+    666,
+    1080
+   ]
+  },
+  {
+   "id": "S6b",
+   "src": "assets/raw/mk_34189.mp4",
+   "in": 0.4,
+   "start": 15.65,
+   "end": 18.73,
+   "speed": 1.0,
+   "cam": {
+    "type": "truck",
+    "c0": [
+     0.6,
+     0.5
+    ],
+    "c1": [
+     0.48,
+     0.5
+    ],
+    "z0": 1.05,
+    "z1": 1.08,
+    "ease": "inOutSine"
+   },
+   "why": "a beginning of healing: the Quran (shifa), slow truck across the verses",
+   "band": [
+    398,
+    0,
+    586,
+    720
+   ]
+  },
+  {
+   "id": "S7",
+   "src": "assets/raw/mk_25375.mp4",
+   "in": 5.0,
+   "start": 18.73,
+   "end": 21.4,
+   "speed": 0.8,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.55,
+     0.5
+    ],
+    "c1": [
+     0.58,
+     0.48
+    ],
+    "z0": 1.0,
+    "z1": 1.06,
+    "ease": "inOutSine"
+   },
+   "why": "provision for every needy one: rain falling in sunlight",
+   "band": [
+    477,
+    0,
+    492,
+    720
+   ]
+  },
+  {
+   "id": "S8",
+   "src": "assets/raw/mk_4312.mp4",
+   "in": 0.5,
+   "start": 21.4,
+   "end": 24.24,
+   "speed": 1.0,
+   "cam": {
+    "type": "pan-right",
+    "c0": [
+     0.45,
+     0.5
+    ],
+    "c1": [
+     0.62,
+     0.5
+    ],
+    "z0": 1.04,
+    "z1": 1.06,
+    "ease": "inOutSine"
+   },
+   "why": "mercy for every soul that has passed: a mosque glowing in the night fog, quiet pan",
+   "band": [
+    536,
+    0,
+    980,
+    1080
+   ]
+  },
+  {
+   "id": "S9",
+   "src": "assets/raw/mk_9805.mp4",
+   "in": 4.0,
+   "start": 24.24,
+   "end": 28.133,
+   "speed": 1.0,
+   "cam": {
+    "type": "pull-out",
+    "c0": [
+     0.5,
+     0.52
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.15,
+    "z1": 1.0,
+    "ease": "outSine"
+   },
+   "why": "By Your mercy: pull out to a sea of clouds at sunrise, light returns",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
+  }
+ ],
+ "transitions": [
+  {
+   "at": 3.36,
+   "type": "lightflash",
+   "dur": 0.55
+  },
+  {
+   "at": 6.3,
+   "type": "dissolve",
+   "dur": 0.45
+  },
+  {
+   "at": 9.29,
+   "type": "pushblur",
+   "dur": 0.4
+  },
+  {
+   "at": 12.49,
+   "type": "zoomblur",
+   "dur": 0.42
+  },
+  {
+   "at": 14.07,
+   "type": "lightflash",
+   "dur": 0.45
+  },
+  {
+   "at": 15.65,
+   "type": "dissolve",
+   "dur": 0.4
+  },
+  {
+   "at": 18.73,
+   "type": "blurdissolve",
+   "dur": 0.45
+  },
+  {
+   "at": 21.4,
+   "type": "dip",
+   "dur": 0.6
+  },
+  {
+   "at": 24.24,
+   "type": "zoomblur",
+   "dur": 0.48
+  }
+ ]
+}

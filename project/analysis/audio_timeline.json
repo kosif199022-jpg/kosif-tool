@@ -1,0 +1,176 @@
+{
+ "master": "audio/original_audio.m4a (AAC 44.1 kHz stereo, stream-copied into the final MP4)",
+ "duration": 28.119,
+ "method": "faster-whisper small (transcript) + torchaudio MMS_FA forced alignment on the corrected Arabic text",
+ "sentences": [
+  {
+   "id": 0,
+   "text": "اللهم اجعل لنا في صباح يوم الاثنين",
+   "start": 0.08,
+   "end": 2.582,
+   "words": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": 1,
+   "text": "بابًا إلى الفرح لا يُسد",
+   "start": 3.483,
+   "end": 5.184,
+   "words": [
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  {
+   "id": 2,
+   "text": "ورزقًا مباركًا لا يُعد",
+   "start": 6.425,
+   "end": 8.266,
+   "words": [
+    12,
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "id": 3,
+   "text": "ودعاءً مستجابًا لا يُرد",
+   "start": 9.407,
+   "end": 11.468,
+   "words": [
+    16,
+    17,
+    18,
+    19
+   ]
+  },
+  {
+   "id": 4,
+   "text": "يا رب",
+   "start": 12.609,
+   "end": 13.03,
+   "words": [
+    20,
+    21
+   ]
+  },
+  {
+   "id": 5,
+   "text": "اجعل هذا اليوم بدايةً لشفاء كل مريض",
+   "start": 14.191,
+   "end": 17.913,
+   "words": [
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ]
+  },
+  {
+   "id": 6,
+   "text": "ورزقًا لكل محتاج",
+   "start": 18.854,
+   "end": 20.455,
+   "words": [
+    29,
+    30,
+    31
+   ]
+  },
+  {
+   "id": 7,
+   "text": "ورحمةً لكل ميت",
+   "start": 21.516,
+   "end": 23.177,
+   "words": [
+    32,
+    33,
+    34
+   ]
+  },
+  {
+   "id": 8,
+   "text": "برحمتك يا أرحم الراحمين",
+   "start": 24.358,
+   "end": 27.68,
+   "words": [
+    35,
+    36,
+    37,
+    38
+   ]
+  }
+ ],
+ "cuts": [
+  3.36,
+  6.3,
+  9.29,
+  12.49,
+  14.07,
+  15.65,
+  18.73,
+  21.4,
+  24.24
+ ],
+ "transitions": [
+  {
+   "at": 3.36,
+   "type": "lightflash",
+   "dur": 0.55
+  },
+  {
+   "at": 6.3,
+   "type": "dissolve",
+   "dur": 0.45
+  },
+  {
+   "at": 9.29,
+   "type": "pushblur",
+   "dur": 0.4
+  },
+  {
+   "at": 12.49,
+   "type": "zoomblur",
+   "dur": 0.42
+  },
+  {
+   "at": 14.07,
+   "type": "lightflash",
+   "dur": 0.45
+  },
+  {
+   "at": 15.65,
+   "type": "dissolve",
+   "dur": 0.4
+  },
+  {
+   "at": 18.73,
+   "type": "blurdissolve",
+   "dur": 0.45
+  },
+  {
+   "at": 21.4,
+   "type": "dip",
+   "dur": 0.6
+  },
+  {
+   "at": 24.24,
+   "type": "zoomblur",
+   "dur": 0.48
+  }
+ ]
+}
