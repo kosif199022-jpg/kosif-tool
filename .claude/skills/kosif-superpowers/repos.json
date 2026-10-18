@@ -19,87 +19,87 @@
  "domains": [
   {
    "key": "web-animation",
+   "title": "Web animation engines and timelines",
    "quota": 10,
-   "cap": "animate",
-   "title": "Web animation engines and timelines"
+   "cap": "animate"
   },
   {
    "key": "programmatic-video",
+   "title": "Programmatic video, rendering and encoding",
    "quota": 9,
-   "cap": "render",
-   "title": "Programmatic video, rendering and encoding"
+   "cap": "render"
   },
   {
    "key": "three-d",
+   "title": "3D and WebGL",
    "quota": 7,
-   "cap": "space",
-   "title": "3D and WebGL"
+   "cap": "space"
   },
   {
    "key": "creative-coding-2d",
+   "title": "2D creative coding, SVG and Canvas",
    "quota": 6,
-   "cap": "draw",
-   "title": "2D creative coding, SVG and Canvas"
+   "cap": "draw"
   },
   {
    "key": "charts-maps",
+   "title": "Charts, maps and diagrams",
    "quota": 8,
-   "cap": "data",
-   "title": "Charts, maps and diagrams"
+   "cap": "data"
   },
   {
    "key": "speech-audio",
+   "title": "Speech, audio analysis and TTS",
    "quota": 9,
-   "cap": "voice",
-   "title": "Speech, audio analysis and TTS"
+   "cap": "voice"
   },
   {
    "key": "arabic-text",
+   "title": "Arabic / RTL text, fonts and NLP",
    "quota": 8,
-   "cap": "arabic",
-   "title": "Arabic / RTL text, fonts and NLP"
+   "cap": "arabic"
   },
   {
    "key": "captions-alignment",
+   "title": "Captions, subtitles and forced alignment",
    "quota": 5,
-   "cap": "captions",
-   "title": "Captions, subtitles and forced alignment"
+   "cap": "captions"
   },
   {
    "key": "video-analysis",
+   "title": "Video and image analysis for reference inspection",
    "quota": 8,
-   "cap": "observe",
-   "title": "Video and image analysis for reference inspection"
+   "cap": "observe"
   },
   {
    "key": "generative-media",
+   "title": "Generative AI media (images, video, 3D, talking heads)",
    "quota": 8,
-   "cap": "generate",
-   "title": "Generative AI media (images, video, 3D, talking heads)"
+   "cap": "generate"
   },
   {
    "key": "agent-workflows",
+   "title": "Claude Code skills, agent workflows and MCP",
    "quota": 7,
-   "cap": "orchestrate",
-   "title": "Claude Code skills, agent workflows and MCP"
+   "cap": "orchestrate"
   },
   {
    "key": "media-acquisition",
+   "title": "Media acquisition and inspection of reference videos (permitted content only)",
    "quota": 5,
-   "cap": "observe",
-   "title": "Media acquisition and inspection of reference videos (permitted content only)"
+   "cap": "observe"
   },
   {
    "key": "ui-motion-design",
+   "title": "UI motion, icons and design tokens",
    "quota": 5,
-   "cap": "design",
-   "title": "UI motion, icons and design tokens"
+   "cap": "design"
   },
   {
    "key": "math-color-morph",
+   "title": "Color, easing, noise, physics and shape morphing",
    "quota": 5,
-   "cap": "animate",
-   "title": "Color, easing, noise, physics and shape morphing"
+   "cap": "animate"
   }
  ],
  "repos": [
