@@ -21,7 +21,7 @@ except ImportError:  # CI installs no third-party packages; coverage checks then
 
 class KitFilesTest(unittest.TestCase):
     def test_files_present(self):
-        for rel in ["build_font.py", "OFL.txt", "README.md", "demo/jumuah.html"] + [f"KOSIFJumuah-{s}.{ext}" for s in STYLES for ext in ("ttf", "woff2")]:
+        for rel in ["build_font.py", "OFL.txt", "README.md", "demo/jumuah.html", "demo/compose_title.py", "demo/title-aljumuah.svg", "demo/preview.png"] + [f"KOSIFJumuah-{s}.{ext}" for s in STYLES for ext in ("ttf", "woff2")]:
             with self.subTest(file=rel):
                 self.assertTrue((KIT / rel).exists(), rel)
 
@@ -48,6 +48,18 @@ class KitFilesTest(unittest.TestCase):
             with self.subTest(url=url):
                 self.assertTrue((KIT / "demo" / url).resolve().exists(), url)
         self.assertTrue(ARABIC.search(html))
+
+    def test_composed_title_is_inlined_and_well_formed(self):
+        svg = (KIT / "demo" / "title-aljumuah.svg").read_text(encoding="utf-8")
+        self.assertIn('viewBox="0 0 ', svg)
+        self.assertGreaterEqual(svg.count("<path "), 9, "alef, lam, jeem, meem, ain, taa, kashidas and three marks")
+        self.assertIn('id="lettering"', svg)
+        self.assertNotIn('id="title"', svg, "must not collide with the demo's #title layer")
+        self.assertIn("Amiri", svg, "the OFL source must be credited in the file")
+        html = (KIT / "demo" / "jumuah.html").read_text(encoding="utf-8")
+        self.assertIn("title-svg:start", html)
+        self.assertIn('id="titlesvg"', html)
+        self.assertEqual(html.count('id="title"'), 1)
 
 
 @unittest.skipUnless(TTFont, "fontTools not installed (pip install fonttools)")

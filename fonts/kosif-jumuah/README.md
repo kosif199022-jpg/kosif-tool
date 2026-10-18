@@ -11,6 +11,7 @@ A matched typeface for the Friday-greeting typography observed in a vertical ref
 | `OFL.txt` | the license with both upstream notices |
 | `build_font.py` | reproducible build (download → subset → instance → scale → merge → rename) |
 | `demo/jumuah.html` | 1080×1920, 15.5 s, `window.__kosif.seek(t)` demo of the whole type system |
+| `demo/compose_title.py` → `demo/title-aljumuah.svg` | the «الجمعة» title as original SVG lettering composed from Amiri Bold outlines (tall stems, kashida, sheared cascade, hand-placed marks); the demo draws it on stroke by stroke |
 | `demo/preview.png` | 8-frame contact sheet rendered by `tools/render_html.cjs --preview` |
 
 ## 1. What was observed — ما لوحظ
@@ -19,7 +20,7 @@ Reference: 576×1024, 30 fps, 15.47 s, one hard cut at 1.7 s; measured on frames
 
 | role | text | observed | decision |
 |---|---|---|---|
-| title | «الجُمُعَة» | white, right edge at 0.88 W, ink 0.32 W × 0.05 H, centre y 0.215 H, Thuluth-style composition with diacritics | *assumed* hand-set Thuluth lettering; no open-licensed Thuluth exists, so the kit uses KOSIF Jumuah Bold (Amiri's stacked «الجمعة») as the stand-in |
+| title | «الجُمُعَة» | white, right edge at 0.88 W, ink 0.32 W × 0.05 H, centre y 0.215 H, Thuluth-style composition with diacritics | *assumed* hand-set Thuluth lettering; no open-licensed Thuluth exists, so the kit composes its own lettering from Amiri Bold outlines (`demo/compose_title.py`) — same gesture (tall «ال», cascading «جمعة», marks), Naskh pen |
 | date | «22.08.2025» | Didone figures with hairline serifs and ball terminals, "22" ≈ 1.4× the rest, right edge 0.885 W, centre y 0.28 H, ink 0.47 W × 0.033 H | Bodoni Moda, weight 400, optical size 11 (hairlines visible at phone size) |
 | gold line | «ليلة جمعة مبـــاركة» | #f5cc76, centred, 0.50 W wide, centre y 0.385 H, three tatweels in «مباركة», stacked «جم» | Amiri Bold |
 | body | «اللهم صل وسلم وبارك على / نبينا محمد ﷺ» … | #fcfbf9, centred, widest line 0.68 W, centre y 0.48–0.51 H, stacked «محمد», three-row ﷺ, soft dark shadow | Amiri Bold (the video's weight sits between Regular and Bold once compression blur is accounted for) |
@@ -34,6 +35,7 @@ Reference: 576×1024, 30 fps, 15.47 s, one hard cut at 1.7 s; measured on frames
 3. **Fingerprints.** Size-independent ratios between line widths and heights were compared with the video; they are only a tie-breaker here because the video elongates several words with kashida.
 4. **Signatures.** Side-by-side sheets settled it: the stacked «جم» in «جمعة», the stacked «محمد», the three-row ﷺ and the shapes of ك and ة appear only in Amiri among the candidates; Scheherazade and Noto set those words flat. For the date, Bodoni Moda's ball-terminal "2" and vertical-stress "0" match; Playfair's figures are old-style and Times is too plain.
 5. **Verification.** The merged font was rendered again over the same lines and compared with the video crops; the demo page was rendered to a contact sheet with the repository's own renderer.
+6. **The title.** Seventeen open display and calligraphic faces (Aref Ruqaa and Ruqaa Ink, Gulzar, Noto Nastaliq, Mirza, Katibeh, Rakkas, Lalezar, Vibes, Blaka, Ruwudu, Qahiri, Alkalami, Lateef, Scheherazade, Amiri, Amiri Quran) and the GPL Arabeyes "Khotot" set (ae_Tholoth, ae_Rasheeq, ae_Nice, ae_Khalid, ae_Mashq, …) were rendered against the title crop; none has the Thuluth structure (two tall verticals, a sweeping «ج», stacked «معة»). Silhouette overlap peaked at 0.23 IoU, which is noise. The composed lettering is therefore built, not matched: `compose_title.py` stretches alef and lam ×1.6, scales «ج» ×1.3 about its join, inserts kashida after «م» and «ع», shears the connected «لجمعة» group by tan 0.18 so its baseline descends to the left while stems stay vertical, and places the vowel marks by hand. Parameters are tunable with `--set key=value`.
 
 **بالعربية:** قياس الصناديق من الإطارات، ثم عرض السطور نفسها باثني عشر خطًا عربيًا وستة لاتينية عبر Chromium، ثم مقارنة النِّسب والبصمات البصرية: المركّبات المتراكبة في «جمعة» و«محمد» ورمز ﷺ لا تظهر إلا في أميري، وأرقام Bodoni Moda تطابق التاريخ. ثم أُعيد العرض بالخط المدمج للتحقق.
 
@@ -44,6 +46,8 @@ pip install fonttools brotli
 python3 fonts/kosif-jumuah/build_font.py            # downloads the sources into .kosif-cache/fonts-src, then builds
 python3 fonts/kosif-jumuah/build_font.py --no-download --src path/to/sources
 ```
+
+The title lettering is regenerated with `python3 fonts/kosif-jumuah/demo/compose_title.py` (writes `demo/title-aljumuah.svg`; the demo inlines it between the `title-svg` markers).
 
 Steps performed by the script: fetch Amiri and Bodoni Moda from the google/fonts repository → subset Amiri to the Arabic blocks (U+0600–06FF, 0750–077F, 08A0–08FF, FB50–FDFF, FE70–FEFF, joiners) keeping all OpenType features → instance Bodoni Moda at wght 400/opsz 11 (Regular) and wght 600/opsz 11 (Bold), subset to Basic Latin, Latin-1 and general punctuation without layout tables → scale the Latin master to 1000 UPM and copy the Arabic vertical metrics → merge with `fontTools.merge` → write the name table (family *KOSIF Jumuah*, both copyrights, OFL 1.1) → save TTF and WOFF2 → write `OFL.txt`.
 
@@ -78,9 +82,9 @@ KOSIF Jumuah is licensed under the SIL Open Font License 1.1 (`OFL.txt`). It is 
 
 ## 6. Limits — الحدود
 
-- The calligraphic title is a Thuluth composition that no open-licensed font reproduces; commission a calligrapher or license a Thuluth face for an exact match, and keep the kit's Bold as the consistent fallback.
+- The calligraphic title is a Thuluth composition that no open-licensed font reproduces (seventeen open faces and the GPL Arabeyes set were tested). The kit's composed SVG keeps the gesture with a Naskh pen. For an exact match: (a) a calligrapher draws «الجمعة» once as SVG and it replaces `title-aljumuah.svg`, or (b) you hold a licensed Thuluth font — point `compose_title.py --font` at it (or set it in CSS for `#title`) and keep that font outside the repository if its license is not OFL-compatible.
 - The reference's white text weight is read through compression blur; if a side-by-side at full size looks heavy, use Regular with the same shadow.
 - Latin letters in the kit are Didone (Bodoni Moda) to match the date; the reference's small handle is a Times-like serif.
 - Emoji (🤲 in the last line) come from the platform's colour emoji font, not from this family.
 
-**بالعربية:** عنوان الثلث لا يعيده خط مفتوح؛ وزن النص الأبيض مقدَّر عبر ضبابية الضغط؛ الحروف اللاتينية ديدون لمطابقة التاريخ؛ والرموز التعبيرية من خط النظام.
+**بالعربية:** عنوان الثلث لا يعيده خط مفتوح (جُرِّب 17 خطًا مفتوحًا ومجموعة Arabeyes)؛ العنوان المركّب يحفظ الإيماءة بقلم النسخ، وللمطابقة الحرفية يرسمه خطاط كملف SVG أو يُستخدم خط ثلث مرخّص عبر `compose_title.py --font`؛ وزن النص الأبيض مقدَّر عبر ضبابية الضغط؛ الحروف اللاتينية ديدون لمطابقة التاريخ؛ والرموز التعبيرية من خط النظام.
