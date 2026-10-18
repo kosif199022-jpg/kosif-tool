@@ -9,8 +9,8 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 **الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,223 قدرة لكل منها وصفة ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=4233 families=47 domains=10 styles=288 watched=253 proven=697 ready=636 install=892 key=173 seen=609 documented=1155 idea=71 -->
-**الأرقام / counts:** 4,233 قدرة في 47 عائلة و10 مجالات — ✅ 697 · 🟢 636 · 📦 892 · 🔑 173 · 👁 609 · 📄 1,155 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=4386 families=48 domains=10 styles=288 watched=253 proven=716 ready=636 install=940 key=173 seen=609 documented=1241 idea=71 -->
+**الأرقام / counts:** 4,386 قدرة في 48 عائلة و10 مجالات — ✅ 716 · 🟢 636 · 📦 940 · 🔑 173 · 👁 609 · 📄 1,241 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.
@@ -40,7 +40,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 |---|---|---|
 | العقل والتفكير / mind | [self-discovery](references/powers/self-discovery.md) SELF · [thinking-core](references/powers/thinking-core.md) THINK · [creativity-engine](references/powers/creativity-engine.md) IDEA · [verification-evals](references/powers/verification-evals.md) CHECK · [agent-orchestration](references/powers/agent-orchestration.md) AGENT | [thinking.md](references/thinking.md) · [ecc-harness.md](references/ecc-harness.md) |
 | الكتابة واللغة / writing & language | [writing-humanizer](references/powers/writing-humanizer.md) WRITE · [prompt-craft](references/powers/prompt-craft.md) PROMPT · [arabic-language](references/powers/arabic-language.md) ARL | [humanizer.md](references/humanizer.md) · [prompt-optimizer.md](references/prompt-optimizer.md) |
-| الهندسة والكود / code | [code-engineering](references/powers/code-engineering.md) CODE · [knowledge-graph](references/powers/knowledge-graph.md) GRAPH · [security-safety](references/powers/security-safety.md) SEC | [graphify.md](references/graphify.md) · [ecc-skills-index.md](references/ecc-skills-index.md) |
+| الهندسة والكود / code | [code-engineering](references/powers/code-engineering.md) CODE · [knowledge-graph](references/powers/knowledge-graph.md) GRAPH · [security-safety](references/powers/security-safety.md) SEC · [software-investigation](references/powers/software-investigation.md) REA | [graphify.md](references/graphify.md) · [ecc-skills-index.md](references/ecc-skills-index.md) |
 | البيانات / data | [data-analysis](references/powers/data-analysis.md) ANLY | [arsenal-general.md](references/arsenal-general.md) |
 | المستندات / documents | [documents-office](references/powers/documents-office.md) DOC | [proofs/general-docs](proofs/general-docs/README.md) |
 | البحث والويب / research | [web-research](references/powers/web-research.md) WEB | [method-packs.md](references/method-packs.md) |
@@ -73,7 +73,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 4. لا تعتبر `executed_not_verified` دليلًا على استنساخ الوظيفة. التحقق يتطلب أدلة ذات عناوين، ومقارنة سلوك مستقلة، واختبارات.
 5. إذا كان المطلوب صورة أو فيديو أو بحثًا عاديًا أو كان المصدر متاحًا، لا تستدعِ REA لمجرد ورود كلمة «تقليد» أو «عكس». لا تنفّذ كودًا خارجيًا مسترجعًا من المستودعات.
 
-مرجع المصدر: [morluto/rea](https://github.com/morluto/rea) (MIT لكوده الأصلي؛ تبعياته لها شروطها). المسار الجديد لا يزيد العدد الرسمي للقدرات قبل إضافتها إلى كتالوج البيانات واختبارها.
+مرجع المصدر: [morluto/rea](https://github.com/morluto/rea) (MIT لكوده الأصلي؛ تبعياته لها شروطها). أوامر REA v6.7.0 الـ153 كلها مسجّلة قدراتٍ في عائلة [software-investigation](references/powers/software-investigation.md) (REA-001…REA-153): 19 منها ✅ شُغّلت هنا فعلًا ([الدليل](proofs/rea-static-runs/README.md))، والباقي 📦 أو 📄 حسب المحرك الخارجي المطلوب؛ `python3 $SKILL_DIR/scripts/rea_bridge.py catalog <كلمة>` يسردها بلا تنفيذ.
 
 ## 4B. مصادر المجتمع الـ31 — Community source scout (opt-in research)
 عندما تكون المهمة تطوير KOSIF أو مقارنة أدوات الوكلاء أو التعلم البرمجي أو تصميم موشن متقدم، استخدم [دليل المصادر](references/community-source-atlas.md) وفهرسها القابل للبحث (data/community_sources.json) **كمراجع فقط**. ابدأ دائمًا بكتالوج KOSIF الأصلي؛ لا تبحث في المصادر الخارجية إلا لوجود فجوة مسماة أو بطلب المستخدم.

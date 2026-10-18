@@ -1,6 +1,6 @@
 # REA × KOSIF Superpowers — evidence-first software investigation
 
-**Status:** optional local integration, not proof REA is installed or executing.
+**Status:** optional local integration. On 2026-10-18 REA v6.7.0 was installed in a scratch folder and run here: 19 commands produced Evidence records, 11 refused correctly for missing engines — see [proofs/rea-static-runs](../proofs/rea-static-runs/README.md). All 153 CLI commands are registered as powers REA-001…REA-153 in [software-investigation](powers/software-investigation.md) (`python3 $SKILL_DIR/scripts/rea_bridge.py catalog <word>` lists them).
 
 **Upstream attribution:** morluto/rea — https://github.com/morluto/rea (MIT for REA-authored code, Copyright (c) 2026 morluto). Third-party binaries, Hopper, Ghidra, IDA, JEB and their assets retain separate terms; see https://github.com/morluto/rea/blob/main/THIRD_PARTY_NOTICES.md. This integration contains original KOSIF glue code, not copies of REA or decompiled third-party sources.
 
@@ -29,7 +29,23 @@ The SKILL can now route legal, consent-based software inspection, instead of con
 | REA-CRASH | Saved Linux crash/core registers | manual offline forensics |
 | REA-SIGNAL | Recorded logic signals and decoder annotations | manual sigrok-cli workflow |
 
-The first five are only *command plans* until REA is installed, configured, authorized and actually runs. The others are documented possibilities requiring explicit tools. These routes do not increment the official power catalog count until independently evaluated and registered in data/powers.
+Verified here (✅ in the catalog): analyze-javascript-application, inspect-analysis-view, trace-application-feature, inspect-go-binary, inspect-rust-binary, inspect-artifact, extract-artifact, inspect-electron-fuses, inspect-evm-interface, inspect-with-objdump, list-objdump-architectures, list-browser-targets, inspect-web-page, analyze-web-bundle, capture-web-screenshot, inspect-web-event-listeners, doctor, capabilities, providers. Everything else is 📦 (REA alone or a plain input) or 📄 (bring-your-own engine: Hopper, Ghidra 12.1, IDA MCP, Kuna, JEB, jadx-headless-mcp, apktool, adb device, Frida, Rizin/Cutter, GDB, WABT, tshark, Binwalk, sigrok, Wakaru, macOS toolchain). The badge is the lowest level that is true on this machine; a different machine with those engines configured raises it only after a real run.
+
+## Full inventory by requirement (REA 6.7.0: 153 CLI commands, 207 MCP tools, 6 prompts)
+
+| group | commands | needs | badge |
+|---|---|---|---|
+| JavaScript & web (static graph, feature trace, version compare, source-to-bundle, CDP page/bundle/screenshot/listeners/session/execution, WebMCP discovery, HAR/mitmproxy/SAZ/qlog captures, source-map traces) | 23 | REA; loopback CDP browser for observation; Wakaru for source recovery | ✅/📦 |
+| Evidence & core (inspect/extract artifact, EVM via evmole, evidence import/export/compare/bundle, reconstruction ledger and coverage, process capture and compare, capabilities, providers, doctor, setup, update, uninstall) | 21 | REA | ✅/📦 |
+| Native binaries (analyze, inspect, decompile, function, xrefs, trace, instructions, search, bytes, addresses, data types, load images, call targets, def-use, UI actions, annotations) | 18 | Hopper / Ghidra / IDA / Kuna | 📄 |
+| Android device, jadx and apktool (30 adb commands incl. pull/push/install/start/stop/logcat/bugreport, class/method/references, resource decoding) | 30 | adb-authorized device, jadx-headless-mcp JAR, apktool | 📄 |
+| Static APK parsing (inspect-android-package, identify-flutter-build, inspect-dart-aot) | 3 | an APK | 📦 |
+| Apple (Mach-O, signatures, plists, Swift demangle, asset catalogs, Interface Builder, keyed archives, dylib resolution, native UI/calls observation, Apple app graph) | 15 | macOS toolchain | 📄 |
+| Electron / Node runtime (targets, pages, scenarios, runtime observation and reconciliation) | 7 | consented local Inspector target | 📦 |
+| .NET managed (identity, members, P/Invoke boundaries, compare, verify, reconstruction import, app graph) | 7 | REA (rea-dotnet-static) | 📦 |
+| Others: Rizin/Cutter 4, JEB 4, pcap/tshark 4, Frida 3, WASM/WABT 2, sigrok 2, firmware/Binwalk 2, objdump 2 (✅), GDB 1, ELF layout/pwntools 1, PE resources 1, recorded crash 1, SQLite (Node 24.15+) 1, HarmonyOS 1 | 29 | as named | 📄/📦 |
+
+Prompts shipped by the MCP server: investigate_feature, compare_application_versions, verify_reconstruction, trace_crash, audit_residual_unknowns, prepare_bounded_process_capture. Use them through a connected client; the CLI covers the same catalog with `--format`, `--token-limit` and `--filter-output` to keep context small.
 
 ## Sequence and examples
 

@@ -1,0 +1,212 @@
+{
+ "rea_version": "6.7.0",
+ "node": "v22.22.0",
+ "host": "ubuntu 24.04 (claude.ai cloud container)",
+ "date": "2026-10-18",
+ "install": "npm install rea-agents@6.7.0 in an isolated scratch folder (not committed)",
+ "runs": [
+  {
+   "command": "doctor",
+   "target": "—",
+   "exit": 1,
+   "evidence_id": null,
+   "provider": null,
+   "output_sha256": "8e85c953c41edd5bb2fb53388b0a2bfc48274b3b5716a13db270da2769450432",
+   "output_bytes": 6927,
+   "note": "exit 1 = not healthy, reported honestly: node 22.22 / ubuntu 24.04; Hopper, Ghidra, IDA, jadx, Kuna absent → classified missing_analysis_engine"
+  },
+  {
+   "command": "capabilities",
+   "target": "—",
+   "exit": 0,
+   "evidence_id": null,
+   "provider": null,
+   "output_sha256": "d32b99d1f4affe22c4e6a5ed567d65df19ca019539300283857e7374684cbd8f",
+   "output_bytes": 30851,
+   "note": "4 providers advertised with effects: native-macos, rea-artifact-graph, rea-dotnet-static, sqlite"
+  },
+  {
+   "command": "providers",
+   "target": "—",
+   "exit": 0,
+   "evidence_id": null,
+   "provider": null,
+   "output_sha256": "37092ead3488c2caae5f34fa6befd9d2dd2b51dd48bdaae7a84a515d6557458f",
+   "output_bytes": 30851,
+   "note": "configured providers listed with side-effect groups"
+  },
+  {
+   "command": "analyze-javascript-application",
+   "target": "extracted Chrome MV3 extension (owner upload, 14 files)",
+   "exit": 0,
+   "evidence_id": "ev_9b0368f944c860b6dc2ec178f4334fbd089ffed95a91d35e29e37177f13051c9",
+   "provider": "rea-javascript-application",
+   "output_sha256": "30502cd2cb158a99660243598767bcd3d1160c608b3c84eb4d1dfe33fb3d2ecf",
+   "output_bytes": 1922969,
+   "note": "JavaScriptApplicationGraph: 14 nodes (4 endpoints, 4 artifacts, 2 modules, 2 renderers, 2 assets), 17 edges, semantic graph with 396 unknowns retained"
+  },
+  {
+   "command": "inspect-analysis-view",
+   "target": "inline evidence from the run above",
+   "exit": 0,
+   "evidence_id": "ev_e7afe862b2d8e9999e4aca8f7f9f140f078ac8442bfc1d53038ac11b9ab92aa7",
+   "provider": "rea-analysis-view",
+   "output_sha256": "efcc512dd271b5dd338936d8e71bfe2cf06e61b321f4706e52828f177c29a51d",
+   "output_bytes": 9455,
+   "note": "javascript-facts rows for manifest.json/background.js with available_property_keys; coverage exhausted 1/1"
+  },
+  {
+   "command": "trace-application-feature",
+   "target": "inline evidence, seed string 'download'",
+   "exit": 0,
+   "evidence_id": "ev_e8bc13c8c8392ab8125d72ef11d3d101daf7dedb1d6e80ef9fbb18726b7a7462",
+   "provider": "rea-javascript-application-workflows",
+   "output_sha256": "6c43acf7bef5de43f839cc1441794da7ff7186e11d80aad6bd501452a99d4ce0",
+   "output_bytes": 1873,
+   "note": "feature trace through the authenticated graph"
+  },
+  {
+   "command": "inspect-go-binary",
+   "target": "/usr/local/bin/gh",
+   "exit": 0,
+   "evidence_id": "ev_0de01367cb9baeef2e15de948ec327eaf7952118d10a00e8cdfe6e97de9b4998",
+   "provider": "go-build-info",
+   "output_sha256": "0684bf702e9d21290e832c42f33917e499c417c442dfbe84067aefea61d55f85",
+   "output_bytes": 64741,
+   "note": "go1.26.1, module github.com/cli/cli/v2 v2.89.0 with dependency list, limitations stated"
+  },
+  {
+   "command": "inspect-rust-binary",
+   "target": "/usr/bin/rg",
+   "exit": 0,
+   "evidence_id": "ev_1bbd230a32b45e6c1c379b26b53d6d3aedac50ae81736962f52aafceed86d2bb",
+   "provider": "rust-auditable",
+   "output_sha256": "e44ee978a28ecf31354beda752b27fa4c71bae3a7186d42a5ef2b18456865c8d",
+   "output_bytes": 2587,
+   "note": "ELF amd64; no cargo-auditable section → auditable_metadata null (honest absence)"
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "video-downloader.zip (owner upload)",
+   "exit": 0,
+   "evidence_id": "ev_229386bf2ab23af62b91cd5a7c0275259f6c4f80c390ca522e565adc7c557d2e",
+   "provider": "rea-artifact-graph",
+   "output_sha256": "787d68d9e81c64398fbdbdd1e75ba01c4c5f53e5352c06df524c61e9ea352958",
+   "output_bytes": 6827,
+   "note": "safe artifact graph: observations, hypotheses, next_probes, coverage"
+  },
+  {
+   "command": "extract-artifact",
+   "target": "video-downloader.zip",
+   "exit": 0,
+   "evidence_id": "ev_5db607f95c8a71f01322b366d2dc5be0bd0ad01fb2ba2cc34b86c7e0af9223a6",
+   "provider": "rea-artifact-graph",
+   "output_sha256": "613b37a441145df864b1fb40866ca4961ed83503c7de7b2b2d45e3cc9c9c1945",
+   "output_bytes": 2128,
+   "note": "safe extraction with per-file digests into an absent directory"
+  },
+  {
+   "command": "inspect-electron-fuses",
+   "target": "/usr/bin/rg (non-Electron ELF)",
+   "exit": 0,
+   "evidence_id": "ev_2998a0e2a05aaaed2eecbcd4fc14a9e672cf55c75ea56194839541ac79f25068",
+   "provider": "electron-fuses",
+   "output_sha256": "b8dce5f029906eb8ad92c6d8ab45cf39b918d28a66ec5f3dcfa7aa52b19f3536",
+   "output_bytes": 2068,
+   "note": "fuse slices absent → runtime_implications empty, no false claim"
+  },
+  {
+   "command": "inspect-evm-interface",
+   "target": "346-byte hex bytecode file",
+   "exit": 0,
+   "evidence_id": "ev_4076f832e18014088f1ffdff4fe2be4f7b29a65f5d01b033e303f5d65c07e03e",
+   "provider": "evmole-interface",
+   "output_sha256": "f11d6bfe1f81c113544fb930fa9e9bc606767d47c5d54376f990cb1524064504",
+   "output_bytes": 5234,
+   "note": "evmole@0.9.3 interface candidates, discovery_completeness reported"
+  },
+  {
+   "command": "inspect-with-objdump",
+   "target": "/usr/bin/rg file_headers",
+   "exit": 0,
+   "evidence_id": "ev_bd8cbcbf8a43b2548c5245eba5216bed64102efb45228a61456ae17c49dc2512",
+   "provider": "gnu.objdump",
+   "output_sha256": "3b8ed3c8af6df600e1443fc7ab842bf0c2ff6e2adefe1717e3576cba2c7fb54b",
+   "output_bytes": 1964,
+   "note": "GNU objdump raw output retained as Evidence"
+  },
+  {
+   "command": "list-objdump-architectures",
+   "target": "—",
+   "exit": 0,
+   "evidence_id": "ev_34927db745b8d30ac6c2d331fa2c39347d32922b53153e95256acccd73f58e45",
+   "provider": "gnu.objdump",
+   "output_sha256": "cabef0457d4c921ff86001da1933cb1e11a06086ad5e66e0f0874984262a2e53",
+   "output_bytes": 5827,
+   "note": "BFD targets of the installed objdump"
+  },
+  {
+   "command": "list-browser-targets",
+   "target": "headless Chromium 141 on 127.0.0.1:9333",
+   "exit": 0,
+   "evidence_id": "ev_7836c142ba344f4f0a4ec3b8194d547d6c5ac5bfdcbeb24b1916426d9f989dbf",
+   "provider": "rea-cdp-browser",
+   "output_sha256": "88b52a309072e559cdfe32a1074cd56552fc7e6ac027678d36c1a25c75d40d8f",
+   "output_bytes": 1715,
+   "note": "page target listed; file:// target excluded as unsupported_url"
+  },
+  {
+   "command": "inspect-web-page",
+   "target": "http://127.0.0.1:8765/index.html (repo web/ served locally)",
+   "exit": 0,
+   "evidence_id": "ev_2eb2c05ddabb42d703c886be9ea3264f56e0ac81ced7796040dbd6e046fa4c6e",
+   "provider": "rea-cdp-browser",
+   "output_sha256": "92778345142e62e827db7b4b1025b5ce93889a9d8a8f7699a1b7fa7c7210f6fe",
+   "output_bytes": 9421,
+   "note": "frames, dom, accessibility, scripts, resources, network, console, workers"
+  },
+  {
+   "command": "analyze-web-bundle",
+   "target": "same page",
+   "exit": 0,
+   "evidence_id": "ev_88f98cbee936e52c01ffccfb88f79b4a015027a2d3b18ead1533d562600a2fd7",
+   "provider": "rea-cdp-browser",
+   "output_sha256": "c5f0ec5c176ee3ba808399c554392941d66b3678fd3edb6c5fa172c8ef6c5730",
+   "output_bytes": 3075,
+   "note": "capture + static bundle analysis; completeness complete"
+  },
+  {
+   "command": "capture-web-screenshot",
+   "target": "same page",
+   "exit": 0,
+   "evidence_id": "ev_24cc576d76ab16ce0d1c404f32ce64d267d51849977d27ef2203af4620dfc770",
+   "provider": "rea-cdp-browser",
+   "output_sha256": "4361293d52cc8210af82b6bdbd3d8b8cad820d6877a12f8c599b6f1d7425509a",
+   "output_bytes": 21909,
+   "note": "self-verifying PNG artifact JSON"
+  },
+  {
+   "command": "inspect-web-event-listeners",
+   "target": "same page, selector body",
+   "exit": 0,
+   "evidence_id": "ev_0a2c53ff607172eb21434dcc36ae92a3fec58e44f0f68ad768d7e7c6d9c0ce74",
+   "provider": "rea-cdp-browser",
+   "output_sha256": "7e3c22d44af03a608fed63d640899f3a56793edf7e6cb365068677a7dae573bf",
+   "output_bytes": 3362,
+   "note": "native listener source locations"
+  }
+ ],
+ "refused_or_unavailable": {
+  "inspect-binary-layout": "needs REA_PWNTOOLS_PYTHON (pwntools 4.15 + pyelftools + Unicorn)",
+  "inspect-sqlite-database": "needs Node 24.15+ DatabaseSync.limits (this box runs Node 22)",
+  "inspect-wasm-artifact": "needs REA_WABT_BIN_DIRECTORY (WABT 1.0.42)",
+  "recover-javascript-sources": "needs REA_WAKARU_COMMAND (Wakaru 1.13+)",
+  "inspect-pcap-client": "needs tshark/capinfos (Wireshark 4.x)",
+  "inspect-firmware-regions": "needs REA_BINWALK_COMMAND",
+  "demangle-swift": "macOS toolchain only",
+  "inspect-plist": "macOS toolchain only",
+  "inspect-managed-artifact": "target was an ELF, not PE/CLI → capability_unavailable (correct refusal)",
+  "compare-application-versions": "input shape needs two complete Evidence records in left/right; not retried",
+  "export-web-scripts": "needs a saved page/scenario capture JSON, not a bundle analysis record"
+ }
+}

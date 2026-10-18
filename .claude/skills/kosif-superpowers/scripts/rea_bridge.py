@@ -18,15 +18,30 @@ import sys
 STATIC_COMMANDS = {
     "javascript": "analyze-javascript-application",
     "dotnet": "inspect-managed-artifact",
+    "dotnet-members": "inspect-managed-members",
+    "dotnet-boundaries": "inspect-managed-native-boundaries",
     "sqlite": "inspect-sqlite-database",
     "go": "inspect-go-binary",
     "rust": "inspect-rust-binary",
+    "artifact": "inspect-artifact",
+    "electron-fuses": "inspect-electron-fuses",
+    "android-package": "inspect-android-package",
+    "flutter": "identify-flutter-build",
+    "dart-aot": "inspect-dart-aot",
+    "pe-resources": "inspect-pe-resources",
+    "recorded-crash": "inspect-recorded-crash",
 }
+# Every REA command (153 in v6.7.0) is catalogued as a power record; `catalog` lists them with their status.
+CATALOG = Path(__file__).resolve().parent.parent / "data" / "powers" / "software-investigation.json"
 DOCUMENTED_ONLY = {
     "native": "docs/native-investigation.md", "apk": "docs/android-analysis.md",
     "website": "docs/browser-observation.md", "wasm": "docs/cli.md",
     "flutter": "docs/flutter-analysis.md", "firmware": "docs/firmware-analysis.md",
     "pcap": "docs/pcap-analysis.md", "android-device": "docs/adb-device-analysis.md",
+    "evm": "docs/evm-bytecode.md", "frida": "docs/frida-instrumentation.md", "jeb": "docs/jeb-analysis.md",
+    "apple": "docs/apple-application-analysis.md", "harmony": "docs/harmony-analysis.md",
+    "process": "docs/process-capture.md", "crash": "docs/recorded-crashes.md", "signal": "docs/signal-recordings.md",
+    "electron": "docs/electron-observation.md", "web-captures": "docs/web-network-captures.md",
 }
 SOURCE = "https://github.com/morluto/rea"
 
@@ -113,10 +128,26 @@ def run_static(kind, target, output, authorized):
             "result_bytes": len(proc.stdout), "next": "Independently validate findings against the target"}
 
 
+def catalog(query=""):
+    """Read-only listing of the registered REA command powers (no execution, no install)."""
+    try:
+        rows = json.loads(CATALOG.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {"status": "catalog_missing", "path": str(CATALOG), "analysis_executed": False, "verified": False}
+    q = query.lower().strip()
+    hits = [{"id": r["id"], "command": r["params"].split("`")[1][4:] if "`rea " in r["params"] else r["name_en"],
+             "status": r["status"], "section": r["section"], "needs": r["install"].split("; plus ")[-1] if "; plus " in r["install"] else "REA alone"}
+            for r in rows if not q or q in json.dumps(r, ensure_ascii=False).lower()]
+    return {"status": "catalog_only", "count": len(hits), "total": len(rows), "powers": hits,
+            "analysis_executed": False, "verified": False, "source": SOURCE}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="action", required=True)
     sub.add_parser("doctor")
+    cat = sub.add_parser("catalog", help="list the catalogued REA commands (status, requirement) without running anything")
+    cat.add_argument("query", nargs="?", default="")
     planned = sub.add_parser("plan")
     planned.add_argument("kind", choices=sorted(set(STATIC_COMMANDS) | set(DOCUMENTED_ONLY)))
     planned.add_argument("target")
@@ -128,6 +159,8 @@ def main():
     args = parser.parse_args()
     if args.action == "doctor":
         result = {"status": "environment_probe_only", **environment(), "source": SOURCE}
+    elif args.action == "catalog":
+        result = catalog(args.query)
     elif args.action == "plan":
         result = inspect_plan(args.kind, args.target)
     else:
