@@ -1,0 +1,56 @@
+{
+  "id": "dua",
+  "name": "الدعاء",
+  "name_ar": "الدعاء — ريل دعاء ليلة الجمعة",
+  "origin": "KOSIF original style",
+  "type": "Style",
+  "category": [
+    "kinetic-type",
+    "photos"
+  ],
+  "creator": "KOSIF (measured from an owner-supplied reel)",
+  "creator_url": null,
+  "page": "https://github.com/kosif199022-jpg/kosif-tool/tree/main/styles/dua",
+  "video": null,
+  "poster": null,
+  "aspect": {
+    "w": 1080,
+    "h": 1920
+  },
+  "aspect_label": "9:16",
+  "rank": null,
+  "published": null,
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": null,
+  "listed": true,
+  "skill": "styles/dua/SKILL.md",
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md"
+  ],
+  "summary_ar": "ريل عمودي 9:16 مدته نحو 15 ثانية: عبارة دعاء واحدة = لقطة واحدة = سطر واحد على الشاشة. لقطات دافئة منخفضة الإضاءة (مصحف، ورد، مبخرة، شموع) تتبدل على بداية كل عبارة بانتقالات ضبابية ومرآة وزوم، بينما يبقى فوقها عنوان «الجُمُعَة» بخط ثلث أبيض وتاريخ اليوم وسطر ذهبي «ليلة جمعة مبـــاركة» وسطر الدعاء الأبيض بهالة داكنة ضيقة.",
+  "summary_en": "A ~15 s vertical 9:16 reel: one spoken dua phrase = one shot = one on-screen line. Warm low-key shots (Quran, roses, incense, candles) cut on each phrase onset with blur, mirror and zoom transitions, under a persistent white Thuluth title «الجُمُعَة», the date, a gold subtitle and a white dua line with a tight dark halo.",
+  "keywords": [
+    "dua",
+    "دعاء",
+    "friday",
+    "جمعة",
+    "reel",
+    "vertical",
+    "arabic",
+    "thuluth",
+    "kinetic type",
+    "blur transition",
+    "voice sync",
+    "islamic"
+  ],
+  "difficulty": 3,
+  "duration_s": 15.4,
+  "stack": [
+    "HTML Canvas",
+    "CSS"
+  ],
+  "brief": "styles/dua/BRIEF.md"
+}

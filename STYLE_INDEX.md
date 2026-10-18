@@ -2,7 +2,7 @@
 
 Use IDs verbatim when addressing Claude. Each entry links its SKILL.md, the original reference and, when present, the KOSIF creative brief.
 
-Total: 288 styles · 243 PromptsMotion references · 45 KOSIF base styles · 44 with briefs.
+Total: 289 styles · 243 PromptsMotion references · 46 KOSIF base styles · 45 with briefs.
 
 ## Playbooks
 
@@ -313,9 +313,10 @@ Total: 288 styles · 243 PromptsMotion references · 45 KOSIF base styles · 44 
 - [pm-sudo-kiran-4f8b59](styles/pm-sudo-kiran-4f8b59/SKILL.md) — DistilBook product explainer — [reference](https://www.promptsmotion.com/sudo-kiran-4f8b59)
 - [pm-theparuchh-6e08c3](styles/pm-theparuchh-6e08c3/SKILL.md) — 38-second fictional game trailer built entirely in code — [reference](https://www.promptsmotion.com/theparuchh-6e08c3)
 
-## Kinetic type / تايبوغرافي متحرك (125)
+## Kinetic type / تايبوغرافي متحرك (126)
 
 - [brutalist](styles/brutalist/SKILL.md) — بروتالي — [reference](https://github.com/kosif199022-jpg/kosif-one)
+- [dua](styles/dua/SKILL.md) — الدعاء · الدعاء — ريل دعاء ليلة الجمعة — [reference](https://github.com/kosif199022-jpg/kosif-tool/tree/main/styles/dua) — [brief](styles/dua/BRIEF.md)
 - [editorial](styles/editorial/SKILL.md) — مونتاج تحريري — [reference](https://github.com/kosif199022-jpg/kosif-one)
 - [handwriting-reveal](styles/handwriting-reveal/SKILL.md) — كتابة يدوية — [reference](https://github.com/kosif199022-jpg/kosif-one)
 - [kinetic-arabic](styles/kinetic-arabic/SKILL.md) — تايبوغرافي عربي — [reference](https://github.com/kosif199022-jpg/kosif-one)
@@ -547,9 +548,10 @@ Total: 288 styles · 243 PromptsMotion references · 45 KOSIF base styles · 44 
 - [pm-anilraok-eff262](styles/pm-anilraok-eff262/SKILL.md) — Scrabble tile character story — [reference](https://www.promptsmotion.com/anilraok-eff262)
 - [pm-theparuchh-6e08c3](styles/pm-theparuchh-6e08c3/SKILL.md) — 38-second fictional game trailer built entirely in code — [reference](https://www.promptsmotion.com/theparuchh-6e08c3)
 
-## Photos / صور (34)
+## Photos / صور (35)
 
 - [documentary-map](styles/documentary-map/SKILL.md) — خريطة وثائقية — [reference](https://github.com/kosif199022-jpg/kosif-one)
+- [dua](styles/dua/SKILL.md) — الدعاء · الدعاء — ريل دعاء ليلة الجمعة — [reference](https://github.com/kosif199022-jpg/kosif-tool/tree/main/styles/dua) — [brief](styles/dua/BRIEF.md)
 - [editorial](styles/editorial/SKILL.md) — مونتاج تحريري — [reference](https://github.com/kosif199022-jpg/kosif-one)
 - [fake3d](styles/fake3d/SKILL.md) — عمق 2.5D — [reference](https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/fake3d)
 - [higgsfield-journey](styles/higgsfield-journey/SKILL.md) — جولة سينمائية — [reference](https://github.com/kosif199022-jpg/kosif-one)

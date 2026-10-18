@@ -93,6 +93,12 @@ def skill_md(r: dict, cats: dict, briefs: dict) -> str:
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack ({', '.join(b.get('stack') or []) or '—'}), suggested duration ({b.get('duration_s') if b.get('duration_s') is not None else 'per material'} s), aspect {b['aspect']}, difficulty {b['difficulty']}/5.
 """
+    kit_dir = ROOT / "styles" / r["id"] / "kit"
+    if (kit_dir / "README.md").is_file():
+        brief_block += f"""
+## Ready-made kit (عدة جاهزة)
+This style ships a measured spec and a working builder: read [kit/README.md](kit/README.md) first, then [ANALYSIS.md](ANALYSIS.md) and the machine-readable spec `{r['id']}.style.json`. Prefer the kit over rebuilding the look from scratch; it reproduces the measured timing, layout, colours and transitions with the user's own clips and voice.
+"""
     pb_block = "\n".join(f"- [{p}](../../{p})" for p in playbooks) or "- (no category playbook yet)"
     return f"""---
 name: {r['id']}

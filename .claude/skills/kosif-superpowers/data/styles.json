@@ -6783,5 +6783,35 @@
 "difficulty": 4,
 "watched": true,
 "brief_mismatch": false
+},
+{
+"id": "dua",
+"title_ar": "الدعاء — ريل دعاء ليلة الجمعة",
+"genre": "kinetic-type,photos",
+"proves_ar": "أسلوب مقاس من ريل حقيقي ومحفوظ كعدة تعمل: من لقطاتك وصوتك ونص الدعاء يُبنى ريل 9:16 بنفس التوقيت والأماكن والألوان والانتقالات، والصوت منسوخ دون تعديل.",
+"palette": [
+"#FEFEFD",
+"#FED27E",
+"#0C0805",
+"#402721",
+"#74351A",
+"#A46942"
+],
+"fonts": "Thuluth title «الجُمُعَة» (KOSIF Jumuah kit) · KOSIF Jumuah Bodoni digits for the date · Marhey 700 gold subtitle · Scheherazade New Bold dua line with kashida",
+"effects": [
+"tight dark halo #0C0805 (2–6 px), not an offset shadow",
+"day-number arc flight 0.1→1.1 s easeOutCubic",
+"opacity-only dua lines 0.17 s in / 0.15 s out",
+"blur_in, mirror_out_blur_in, zoom_out_cut, spin_zoom_blur on footage only",
+"warm low-key grade Lab L 28–42"
+],
+"stack": [
+"Chromium text layers (Playwright)",
+"numpy/OpenCV compositor",
+"ffmpeg H.264 with -c:a copy"
+],
+"difficulty": 3,
+"watched": true,
+"brief_mismatch": false
 }
 ]
