@@ -1,0 +1,34 @@
+meta {
+  name: create item
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/items
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {"name": "{{name}}", "price": {{price}}}
+}
+
+script:pre-request {
+  if (!bru.getVar("name")) { bru.setVar("name", "عنصر تجريبي"); bru.setVar("price", 5); }
+}
+
+script:post-response {
+  bru.setVar("createdId", res.body.id);
+}
+
+tests {
+  test("item is created with the sent name", function () {
+    expect(res.getStatus()).to.equal(201);
+    expect(res.getBody().name).to.equal(bru.interpolate("{{name}}"));
+  });
+}

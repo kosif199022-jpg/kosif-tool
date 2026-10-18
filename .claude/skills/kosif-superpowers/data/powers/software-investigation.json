@@ -1500,10 +1500,10 @@
   "domain": "code",
   "name_ar": "فحص عميل ADB",
   "name_en": "Inspect the caller-selected adb client without contacting devices",
-  "status": "documented",
+  "status": "proven",
   "what": "فحص عميل ADB: أمر `rea inspect-adb-client` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect the caller-selected adb client without contacting devices.",
   "when": "lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source",
-  "how": "`rea inspect-adb-client ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.",
+  "how": "`rea inspect-adb-client ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: adb 34.0.4 detected (read-only).",
   "params": "CLI `rea inspect-adb-client`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output",
   "install": "npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them",
   "requires": [
@@ -1513,9 +1513,11 @@
   ],
   "license": "MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)",
   "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
    "https://github.com/morluto/rea/blob/main/docs/android-analysis.md"
   ],
-  "proof_scope": "url",
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "REA",
@@ -1798,10 +1800,10 @@
   "domain": "code",
   "name_ar": "فحص عميل apktool",
   "name_en": "Inspect the caller-selected apktool launcher without decoding anything",
-  "status": "documented",
+  "status": "proven",
   "what": "فحص عميل apktool: أمر `rea inspect-apktool-client` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect the caller-selected apktool launcher without decoding anything.",
   "when": "lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source",
-  "how": "`rea inspect-apktool-client ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.",
+  "how": "`rea inspect-apktool-client ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: apktool 2.7.0 detected (read-only).",
   "params": "CLI `rea inspect-apktool-client`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output",
   "install": "npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them",
   "requires": [
@@ -1811,9 +1813,11 @@
   ],
   "license": "MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)",
   "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
    "https://github.com/morluto/rea/blob/main/docs/android-analysis.md"
   ],
-  "proof_scope": "url",
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "REA",
@@ -2537,10 +2541,10 @@
   "domain": "code",
   "name_ar": "فحص حقول الحزم",
   "name_en": "Search installed TShark protocol and field definitions",
-  "status": "documented",
+  "status": "proven",
   "what": "فحص حقول الحزم: أمر `rea inspect-packet-fields` من REA v6.7.0 (التقاط الحزم)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Search installed TShark protocol and field definitions.",
   "when": "lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source",
-  "how": "`rea inspect-packet-fields ` --json · options: --kind, --protocol, --query, --offset, --limit, --all. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.",
+  "how": "`rea inspect-packet-fields ` --json · options: --kind, --protocol, --query, --offset, --limit, --all. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: listed tcp protocol registrations (read-only).",
   "params": "CLI `rea inspect-packet-fields`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output",
   "install": "npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND)",
   "requires": [
@@ -2549,9 +2553,11 @@
   ],
   "license": "MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)",
   "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
    "https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md"
   ],
-  "proof_scope": "url",
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "REA",
@@ -2601,10 +2607,10 @@
   "domain": "code",
   "name_ar": "فحص عميل pcap",
   "name_en": "Inspect the caller-selected tshark and capinfos binaries without reading a capture",
-  "status": "documented",
+  "status": "proven",
   "what": "فحص عميل pcap: أمر `rea inspect-pcap-client` من REA v6.7.0 (التقاط الحزم)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect the caller-selected tshark and capinfos binaries without reading a capture.",
   "when": "lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source",
-  "how": "`rea inspect-pcap-client ` --json. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Tried here: needs tshark/capinfos (Wireshark 4.x). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.",
+  "how": "`rea inspect-pcap-client ` --json. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Tried here: needs tshark/capinfos (Wireshark 4.x). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: TShark 4.2.2 + capinfos detected (read-only).",
   "params": "CLI `rea inspect-pcap-client`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output",
   "install": "npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND)",
   "requires": [
@@ -2613,9 +2619,11 @@
   ],
   "license": "MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)",
   "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
    "https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md"
   ],
-  "proof_scope": "url",
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "REA",
@@ -2762,10 +2770,10 @@
   "domain": "code",
   "name_ar": "فحص مفككات إشارة",
   "name_en": "Search installed sigrok decoders or selected decoder help",
-  "status": "documented",
+  "status": "proven",
   "what": "فحص مفككات إشارة: أمر `rea inspect-signal-decoders` من REA v6.7.0 (تسجيلات الإشارة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Search installed sigrok decoders or selected decoder help.",
   "when": "lawful inspection of sigrok targets you have the right to analyse; the user asks how an app/binary/site works without its source",
-  "how": "`rea inspect-signal-decoders ` --json · options: --decoder, --query, --offset, --limit, --all. Needs: sigrok-cli with decoders. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.",
+  "how": "`rea inspect-signal-decoders ` --json · options: --decoder, --query, --offset, --limit, --all. Needs: sigrok-cli with decoders. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: found uart among 111 decoders (read-only).",
   "params": "CLI `rea inspect-signal-decoders`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output",
   "install": "npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus sigrok-cli with decoders",
   "requires": [
@@ -2774,9 +2782,11 @@
   ],
   "license": "MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)",
   "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
    "https://github.com/morluto/rea/blob/main/docs/signal-recordings.md"
   ],
-  "proof_scope": "url",
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "REA",
@@ -4972,5 +4982,2599 @@
   ],
   "section": "الثنائيات الأصلية — native binaries",
   "source": "https://github.com/morluto/rea"
+ },
+ {
+  "id": "REA-154",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: عنوان",
+  "name_en": "REA MCP tool `address_name`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve the primary analyzed name at a code or data address. Headless providers require an explicit address; GUI providers may default to their current cursor. Null means the provider has no primary n — MCP-only tool exposed by the REA server. Resolve the primary analyzed name at a code or data address. Headless providers require an explicit address; GUI providers may default to their current cursor. ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `address_name` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "requires": [
+   "chromium",
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "address"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-address_name"
+ },
+ {
+  "id": "REA-155",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: تعليق",
+  "name_en": "REA MCP tool `comment`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Read the regular analysis comment at an address, defaulting to the current cursor. This is read-only and returns null when no comment exists; use set_comment to persist a finding. — MCP-only tool exposed by the REA server. Read the regular analysis comment at an address, defaulting to the current cursor. This is read-only and returns null when no comment exists; use set_comment to",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `comment` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "comment"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-comment"
+ },
+ {
+  "id": "REA-156",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: عنوان",
+  "name_en": "REA MCP tool `current_address`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return Hopper's current cursor address for the selected document. Use only for interactive navigation state; prefer explicit addresses in reproducible investigations. — MCP-only tool exposed by the REA server. Return Hopper's current cursor address for the selected document. Use only for interactive navigation state; prefer explicit addresses in reproducible investiga",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `current_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "current"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-current_address"
+ },
+ {
+  "id": "REA-157",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `current_procedure`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the analyzed procedure containing Hopper's current cursor. This uses GUI cursor state and is not a procedure-name lookup. — MCP-only tool exposed by the REA server. Return the analyzed procedure containing Hopper's current cursor. This uses GUI cursor state and is not a procedure-name lookup.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `current_procedure` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "current"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-current_procedure"
+ },
+ {
+  "id": "REA-158",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `current_document`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the document currently selected by REA's Hopper bridge. — MCP-only tool exposed by the REA server. Return the document currently selected by REA's Hopper bridge.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `current_document` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "current"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-current_document"
+ },
+ {
+  "id": "REA-159",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: عنوان",
+  "name_en": "REA MCP tool `goto_address`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Move Hopper's GUI cursor to a mapped address and return the observed cursor address. Interior coordinates snap to the containing analyzed object's start. Unmapped destinations fail without moving the  — MCP-only tool exposed by the REA server. Move Hopper's GUI cursor to a mapped address and return the observed cursor address. Interior coordinates snap to the containing analyzed object's start. Unmapp",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `goto_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "goto"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-goto_address"
+ },
+ {
+  "id": "REA-160",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: تعليق",
+  "name_en": "REA MCP tool `inline_comment`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Read the inline instruction comment at an address, defaulting to the current cursor. Returns null when absent; use set_inline_comment to write one. — MCP-only tool exposed by the REA server. Read the inline instruction comment at an address, defaulting to the current cursor. Returns null when absent; use set_inline_comment to write one.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `inline_comment` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "inline"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-inline_comment"
+ },
+ {
+  "id": "REA-161",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: العلامات",
+  "name_en": "REA MCP tool `list_bookmarks`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every bookmark in the selected Hopper document as address and name pairs; unnamed bookmarks retain a null name. Use bookmarks as analyst-authored navigation aids; this does not discover code refe — MCP-only tool exposed by the REA server. List every bookmark in the selected Hopper document as address and name pairs; unnamed bookmarks retain a null name. Use bookmarks as analyst-authored navigatio",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_bookmarks` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "list"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-list_bookmarks"
+ },
+ {
+  "id": "REA-162",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `list_documents`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List provider program or document identities. Hopper may expose several documents; a Ghidra headless session contains exactly its one imported Program. — MCP-only tool exposed by the REA server. List provider program or document identities. Hopper may expose several documents; a Ghidra headless session contains exactly its one imported Program.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_documents` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "requires": [
+   "chromium",
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "list"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-list_documents"
+ },
+ {
+  "id": "REA-163",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `list_names`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every analyzed memory and external symbol as address/value pairs. Provider metadata distinguishes Ghidra primary, dynamic, external, type, and source facts when available. — MCP-only tool exposed by the REA server. List every analyzed memory and external symbol as address/value pairs. Provider metadata distinguishes Ghidra primary, dynamic, external, type, and source facts",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_names` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "list"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-list_names"
+ },
+ {
+  "id": "REA-164",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `list_procedures`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every analyzed procedure as address/value pairs after provider analysis. Ghidra metadata distinguishes thunks and external functions; use returned addresses in later function operations. — MCP-only tool exposed by the REA server. List every analyzed procedure as address/value pairs after provider analysis. Ghidra metadata distinguishes thunks and external functions; use returned addresse",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_procedures` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "list"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-list_procedures"
+ },
+ {
+  "id": "REA-165",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: المقاطع",
+  "name_en": "REA MCP tool `list_segments`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List segments or memory blocks using exclusive end addresses. Ghidra reports block permissions, address space, image base, initialization, and overlay facts; Hopper marks unavailable permissions expli — MCP-only tool exposed by the REA server. List segments or memory blocks using exclusive end addresses. Ghidra reports block permissions, address space, image base, initialization, and overlay facts; Ho",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_segments` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "list"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-list_segments"
+ },
+ {
+  "id": "REA-166",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: النصوص",
+  "name_en": "REA MCP tool `list_strings`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every provider-reported string object or candidate, or filter to one address, as address/value pairs with encoding, terminator status, and byte length when available. Hopper reads complete typed  — MCP-only tool exposed by the REA server. List every provider-reported string object or candidate, or filter to one address, as address/value pairs with encoding, terminator status, and byte length when",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_strings` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "list"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-list_strings"
+ },
+ {
+  "id": "REA-167",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: عنوان",
+  "name_en": "REA MCP tool `next_address`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the next analyzed object address after an explicit address or current cursor. This is a navigation primitive, not instruction-flow or CFG analysis. — MCP-only tool exposed by the REA server. Return the next analyzed object address after an explicit address or current cursor. This is a navigation primitive, not instruction-flow or CFG analysis.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `next_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "next"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-next_address"
+ },
+ {
+  "id": "REA-168",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: عنوان",
+  "name_en": "REA MCP tool `prev_address`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the previous analyzed object start before an explicit address or current cursor. This is a navigation primitive and may fail at document boundaries; data objects and instructions remain distinc — MCP-only tool exposed by the REA server. Return the previous analyzed object start before an explicit address or current cursor. This is a navigation primitive and may fail at document boundaries; data",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `prev_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "prev"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-prev_address"
+ },
+ {
+  "id": "REA-169",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `procedure_address`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve an unambiguous procedure symbol name or provider-normalized address to its canonical entry address. External address spaces remain explicit. — MCP-only tool exposed by the REA server. Resolve an unambiguous procedure symbol name or provider-normalized address to its canonical entry address. External address spaces remain explicit.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "procedure"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-procedure_address"
+ },
+ {
+  "id": "REA-170",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `procedure_assembly`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return assembly for one analyzed procedure identified by symbol or hexadecimal address. Use when pseudocode loses calling-convention or instruction-level detail; output is currently returned as one un — MCP-only tool exposed by the REA server. Return assembly for one analyzed procedure identified by symbol or hexadecimal address. Use when pseudocode loses calling-convention or instruction-level detail",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_assembly` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "procedure"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-procedure_assembly"
+ },
+ {
+  "id": "REA-171",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `procedure_callees`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the provider's resolved direct callees for one procedure identified by symbol or address. Unresolved indirect calls may be absent; use analyze_function and typed references to preserve availabl — MCP-only tool exposed by the REA server. Return the provider's resolved direct callees for one procedure identified by symbol or address. Unresolved indirect calls may be absent; use analyze_function a",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_callees` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "procedure"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-procedure_callees"
+ },
+ {
+  "id": "REA-172",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `procedure_callers`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the provider's resolved direct callers for one procedure identified by symbol or address. Results reflect completed static analysis and may omit unresolved indirect references. Ghidra terminal- — MCP-only tool exposed by the REA server. Return the provider's resolved direct callers for one procedure identified by symbol or address. Results reflect completed static analysis and may omit unresolv",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_callers` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "procedure"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-procedure_callers"
+ },
+ {
+  "id": "REA-173",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `procedure_info`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return provider metadata for one procedure identified by symbol or address: entrypoint, signature, locals, size, block count, and complete inclusive body ranges when observed. Extents reflect the prov — MCP-only tool exposed by the REA server. Return provider metadata for one procedure identified by symbol or address: entrypoint, signature, locals, size, block count, and complete inclusive body ranges",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_info` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "procedure"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-procedure_info"
+ },
+ {
+  "id": "REA-174",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `read_function_instructions`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return every raw instruction for one analyzed procedure. Instruction text and body extent are provider-specific. Ghidra terminal-call assumptions that may cut the analyzed body are reported in limitat — MCP-only tool exposed by the REA server. Return every raw instruction for one analyzed procedure. Instruction text and body extent are provider-specific. Ghidra terminal-call assumptions that may cut t",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `read_function_instructions` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "read"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-read_function_instructions"
+ },
+ {
+  "id": "REA-175",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `procedure_references`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return every raw incoming or outgoing reference edge for one procedure. Endpoint procedures are resolved only from provider containment. Ghidra preserves detailed reference flags. Hopper preserves nat — MCP-only tool exposed by the REA server. Return every raw incoming or outgoing reference edge for one procedure. Endpoint procedures are resolved only from provider containment. Ghidra preserves detail",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_references` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "procedure"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-procedure_references"
+ },
+ {
+  "id": "REA-176",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `procedure_pseudo_code`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Decompile one analyzed procedure by symbol name or provider-normalized address. Ghidra also accepts file-offset:0x... selectors and falls back to a unique source-file mapping when a 0x-prefixed number — MCP-only tool exposed by the REA server. Decompile one analyzed procedure by symbol name or provider-normalized address. Ghidra also accepts file-offset:0x... selectors and falls back to a unique sourc",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_pseudo_code` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "procedure"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-procedure_pseudo_code"
+ },
+ {
+  "id": "REA-177",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `resolve_containing_procedure`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve an arbitrary address, including an interior instruction or exact external entry, to its provider-analyzed containing procedure. A negative result distinguishes outside segments from not in a p — MCP-only tool exposed by the REA server. Resolve an arbitrary address, including an interior instruction or exact external entry, to its provider-analyzed containing procedure. A negative result distin",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `resolve_containing_procedure` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "resolve"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-resolve_containing_procedure"
+ },
+ {
+  "id": "REA-178",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `search_procedures`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Search every analyzed procedure name using literal matching by default or regex when requested. Results are deterministic and complete. Hopper regex mode uses ECMAScript Unicode syntax in a cancellabl — MCP-only tool exposed by the REA server. Search every analyzed procedure name using literal matching by default or regex when requested. Results are deterministic and complete. Hopper regex mode uses E",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `search_procedures` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "search"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-search_procedures"
+ },
+ {
+  "id": "REA-179",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: النصوص",
+  "name_en": "REA MCP tool `search_strings`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Search every provider-reported string object or candidate using literal matching by default or regex when requested. Results are deterministic and complete over that provider inventory, not every text — MCP-only tool exposed by the REA server. Search every provider-reported string object or candidate using literal matching by default or regex when requested. Results are deterministic and complete over",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `search_strings` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "search"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-search_strings"
+ },
+ {
+  "id": "REA-180",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: عنوان",
+  "name_en": "REA MCP tool `set_address_name`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Assign an analyst name to one mapped hexadecimal address and report whether the native edit succeeded and exact readback matched. Hopper rejects symbol names exceeding 1024 UTF-16 code units before mu — MCP-only tool exposed by the REA server. Assign an analyst name to one mapped hexadecimal address and report whether the native edit succeeded and exact readback matched. Hopper rejects symbol names ex",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_address_name` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "set"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-set_address_name"
+ },
+ {
+  "id": "REA-181",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `set_addresses_names`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Assign analyst names to multiple mapped addresses in one call and return per-address edit/readback success booleans. Hopper validates mapped destinations, native string representations, its 1024 UTF-1 — MCP-only tool exposed by the REA server. Assign analyst names to multiple mapped addresses in one call and return per-address edit/readback success booleans. Hopper validates mapped destinations, nativ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_addresses_names` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "set"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-set_addresses_names"
+ },
+ {
+  "id": "REA-182",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: علامة",
+  "name_en": "REA MCP tool `set_bookmark`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Create or replace a bookmark at a mapped hexadecimal address and report success. This mutates navigation metadata; bookmarks are analyst-authored navigation aids, not binary evidence. — MCP-only tool exposed by the REA server. Create or replace a bookmark at a mapped hexadecimal address and report success. This mutates navigation metadata; bookmarks are analyst-authored navigation aid",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_bookmark` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "set"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-set_bookmark"
+ },
+ {
+  "id": "REA-183",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: تعليق",
+  "name_en": "REA MCP tool `set_comment`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Write a regular analysis comment at a hexadecimal address and return whether readback matched. An empty comment clears it. This mutates the Hopper document; use comments to record evidence IDs or reas — MCP-only tool exposed by the REA server. Write a regular analysis comment at a hexadecimal address and return whether readback matched. An empty comment clears it. This mutates the Hopper document; use",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_comment` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "set"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-set_comment"
+ },
+ {
+  "id": "REA-184",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: تعليق",
+  "name_en": "REA MCP tool `set_inline_comment`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Write an inline instruction comment at a hexadecimal address and return whether readback matched. An empty comment clears it; Hopper may flatten newlines, producing false on exact readback. This mutat — MCP-only tool exposed by the REA server. Write an inline instruction comment at a hexadecimal address and return whether readback matched. An empty comment clears it; Hopper may flatten newlines, produ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_inline_comment` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "set"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-set_inline_comment"
+ },
+ {
+  "id": "REA-185",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: علامة",
+  "name_en": "REA MCP tool `unset_bookmark`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Remove the bookmark at a mapped hexadecimal address and return whether it is absent. Hopper also permits removing an existing legacy bookmark outside mapped memory. This mutates navigation metadata an — MCP-only tool exposed by the REA server. Remove the bookmark at a mapped hexadecimal address and return whether it is absent. Hopper also permits removing an existing legacy bookmark outside mapped mem",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `unset_bookmark` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "unset"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-unset_bookmark"
+ },
+ {
+  "id": "REA-186",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: أصناف Objective-C",
+  "name_en": "REA MCP tool `get_objc_classes`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Discover and deduplicate Objective-C class labels, optionally filtering by literal substring. — MCP-only tool exposed by the REA server. Discover and deduplicate Objective-C class labels, optionally filtering by literal substring.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_objc_classes` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "get"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-get_objc_classes"
+ },
+ {
+  "id": "REA-187",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: أصناف Objective-C",
+  "name_en": "REA MCP tool `get_objc_protocols`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Discover and deduplicate Objective-C and Swift protocol labels. — MCP-only tool exposed by the REA server. Discover and deduplicate Objective-C and Swift protocol labels.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_objc_protocols` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "get"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-get_objc_protocols"
+ },
+ {
+  "id": "REA-188",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `batch_decompile`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Decompile each explicit procedure symbol or address concurrently. Preserves each input selector in address and reports the observed canonical entry and entry label in procedure; identity or label fail — MCP-only tool exposed by the REA server. Decompile each explicit procedure symbol or address concurrently. Preserves each input selector in address and reports the observed canonical entry and entry la",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `batch_decompile` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "batch"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-batch_decompile"
+ },
+ {
+  "id": "REA-189",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الاستدعاء",
+  "name_en": "REA MCP tool `get_call_graph`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve one symbol or address to its canonical procedure entry, then traverse the bound provider's caller or callee relationships until the reachable graph is exhausted. Every node uses a canonical ad — MCP-only tool exposed by the REA server. Resolve one symbol or address to its canonical procedure entry, then traverse the bound provider's caller or callee relationships until the reachable graph is e",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_call_graph` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "get"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-get_call_graph"
+ },
+ {
+  "id": "REA-190",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: أنواع Swift",
+  "name_en": "REA MCP tool `analyze_swift_types`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Categorize analyzed Swift procedure names using their manglings or same-address Swift symbol aliases. Decodes legacy and literal modern nominal contexts into classes, structs, enums, protocols, and ex — MCP-only tool exposed by the REA server. Categorize analyzed Swift procedure names using their manglings or same-address Swift symbol aliases. Decodes legacy and literal modern nominal contexts into cl",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `analyze_swift_types` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "analyze"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-analyze_swift_types"
+ },
+ {
+  "id": "REA-191",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: المراجع المتقاطعة",
+  "name_en": "REA MCP tool `find_xrefs_to_name`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve an exact name against the bound provider's name inventory and return a resolved or unresolved result. Unresolved names use the stable name_not_found reason; this xref workflow returns address- — MCP-only tool exposed by the REA server. Resolve an exact name against the bound provider's name inventory and return a resolved or unresolved result. Unresolved names use the stable name_not_found rea",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `find_xrefs_to_name` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "find"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-find_xrefs_to_name"
+ },
+ {
+  "id": "REA-192",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الثنائي",
+  "name_en": "REA MCP tool `binary_overview`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the bound document and exhaustive procedure/string counts, plus every segment and segment_count when the provider supports segment enumeration. If segment fields are omitted, segment coverage i — MCP-only tool exposed by the REA server. Return the bound document and exhaustive procedure/string counts, plus every segment and segment_count when the provider supports segment enumeration. If segmen",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `binary_overview` tool through your client; it is not a CLI command. Needs: an open binary session with a provider. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an open binary session with a provider",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "binary"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-binary_overview"
+ },
+ {
+  "id": "REA-193",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: دالة",
+  "name_en": "REA MCP tool `analyze_function`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Build a dossier for one native function identified by symbol or provider-returned address. Returns identity with complete inclusive analyzed body ranges or explicit unknown, provider-specific pseudoco — MCP-only tool exposed by the REA server. Build a dossier for one native function identified by symbol or provider-returned address. Returns identity with complete inclusive analyzed body ranges or expl",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `analyze_function` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "analyze"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-analyze_function"
+ },
+ {
+  "id": "REA-194",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: ميزة",
+  "name_en": "REA MCP tool `trace_feature`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Trace the complete literal query, preserving spaces, through every matching string and procedure, their xrefs, and truthful containing-procedure resolution. Returns observations, operation count, and  — MCP-only tool exposed by the REA server. Trace the complete literal query, preserving spaces, through every matching string and procedure, their xrefs, and truthful containing-procedure resolution. Ret",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `trace_feature` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": false, \"open",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "trace"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-trace_feature"
+ },
+ {
+  "id": "REA-195",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الاستدعاء",
+  "name_en": "REA MCP tool `trace_call_path`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve start and optional goal symbols or addresses to canonical procedure entries, then trace direct callers or callees until the graph is exhausted or the goal is reached. Results use canonical add — MCP-only tool exposed by the REA server. Resolve start and optional goal symbols or addresses to canonical procedure entries, then trace direct callers or callees until the graph is exhausted or the go",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `trace_call_path` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": false, \"open",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "trace"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-trace_call_path"
+ },
+ {
+  "id": "REA-196",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Frida",
+  "name_en": "REA MCP tool `start_frida_session`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Attach Frida to one selected process or spawn one selected target. Spawned targets remain paused until resume_frida_session, allowing scripts to load before execution. Closing a session detaches instr — MCP-only tool exposed by the REA server. Attach Frida to one selected process or spawn one selected target. Spawned targets remain paused until resume_frida_session, allowing scripts to load before exe",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": false, \"open",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus runtime instrumentation of a consented process",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:frida"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "start"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-start_frida_session"
+ },
+ {
+  "id": "REA-197",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Frida",
+  "name_en": "REA MCP tool `load_frida_script`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Load caller-supplied JavaScript into a Frida session. Scripts can read or change target memory and behavior and can access the target process's capabilities. Messages and script errors are returned in — MCP-only tool exposed by the REA server. Load caller-supplied JavaScript into a Frida session. Scripts can read or change target memory and behavior and can access the target process's capabilities. Me",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `load_frida_script` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": false, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus runtime instrumentation of a consented process",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:frida"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "load"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-load_frida_script"
+ },
+ {
+  "id": "REA-198",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Frida",
+  "name_en": "REA MCP tool `resume_frida_session`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resume the process created by a paused Frida spawn session. Attached processes are already running and cannot be resumed through this operation. — MCP-only tool exposed by the REA server. Resume the process created by a paused Frida spawn session. Attached processes are already running and cannot be resumed through this operation.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `resume_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": false, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus runtime instrumentation of a consented process",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:frida"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "resume"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-resume_frida_session"
+ },
+ {
+  "id": "REA-199",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Frida",
+  "name_en": "REA MCP tool `unload_frida_script`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Unload one caller-selected Frida script from a live session. This removes that script's instrumentation from the target. — MCP-only tool exposed by the REA server. Unload one caller-selected Frida script from a live session. This removes that script's instrumentation from the target.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `unload_frida_script` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": false, \"open",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus runtime instrumentation of a consented process",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:frida"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "unload"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-unload_frida_script"
+ },
+ {
+  "id": "REA-200",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Frida",
+  "name_en": "REA MCP tool `frida_session_status`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return observed Frida session state and queued script messages. Message history is bounded by the provider capture budget and reports truncation. — MCP-only tool exposed by the REA server. Return observed Frida session state and queued script messages. Message history is bounded by the provider capture budget and reports truncation.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `frida_session_status` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus runtime instrumentation of a consented process",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:frida"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "frida"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-frida_session_status"
+ },
+ {
+  "id": "REA-201",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Frida",
+  "name_en": "REA MCP tool `close_frida_session`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Unload session scripts and detach REA's Frida session. If a spawned process is still paused, resume it before detaching so it is not left suspended. REA never kills the target; its final state is repo — MCP-only tool exposed by the REA server. Unload session scripts and detach REA's Frida session. If a spawned process is still paused, resume it before detaching so it is not left suspended. REA never k",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": false, \"open",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus runtime instrumentation of a consented process",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:frida"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "close"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-close_frida_session"
+ },
+ {
+  "id": "REA-202",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: GDB",
+  "name_en": "REA MCP tool `start_gdb_session`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Start a BYO GDB process in MI3 mode when available, suppress startup files, and disable auto-loading. Persistent GDB sessions are available only on Linux, where REA can verify live inferior output des — MCP-only tool exposed by the REA server. Start a BYO GDB process in MI3 mode when available, suppress startup files, and disable auto-loading. Persistent GDB sessions are available only on Linux, where",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_gdb_session` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": false, \"open",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus a BYO GDB debugger on a consented target",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:rizin"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "start"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-start_gdb_session"
+ },
+ {
+  "id": "REA-203",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: GDB",
+  "name_en": "REA MCP tool `gdb_console`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Run one unrestricted GDB CLI command through MI interpreter-exec console and return raw MI, console, target, and log records inline with Evidence. A command timeout preserves collected records with co — MCP-only tool exposed by the REA server. Run one unrestricted GDB CLI command through MI interpreter-exec console and return raw MI, console, target, and log records inline with Evidence. A command tim",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `gdb_console` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": false, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus a BYO GDB debugger on a consented target",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:rizin"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "gdb"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-gdb_console"
+ },
+ {
+  "id": "REA-204",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: GDB",
+  "name_en": "REA MCP tool `gdb_session_status`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the observed lifecycle state and bounded recent MI records and process diagnostics for one persistent REA GDB session; truncation and invalid-UTF-8 fields report discarded or lossy data. — MCP-only tool exposed by the REA server. Return the observed lifecycle state and bounded recent MI records and process diagnostics for one persistent REA GDB session; truncation and invalid-UTF-8 field",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `gdb_session_status` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": true, \"destructiveHint\": false, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus a BYO GDB debugger on a consented target",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:rizin"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "gdb"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-gdb_session_status"
+ },
+ {
+  "id": "REA-205",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: GDB",
+  "name_en": "REA MCP tool `close_gdb_session`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Close the owned GDB process after verifying the inferior state. When one live thread group has a verified durable output TTY, REA automatically detaches it, which may resume target execution; otherwis — MCP-only tool exposed by the REA server. Close the owned GDB process after verifying the inferior state. When one live thread group has a verified durable output TTY, REA automatically detaches it, whi",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_gdb_session` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": false, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus a BYO GDB debugger on a consented target",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:rizin"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "close"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-close_gdb_session"
+ },
+ {
+  "id": "REA-206",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Rizin",
+  "name_en": "REA MCP tool `start_rizin_debug_session`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Start a persistent Rizin debugger session using `-N` to suppress user settings and scripts while retaining plugins, `-0` for NUL framing, and `-d` with an optional caller-selected IO debugger backend. — MCP-only tool exposed by the REA server. Start a persistent Rizin debugger session using `-N` to suppress user settings and scripts while retaining plugins, `-0` for NUL framing, and `-d` with an optio",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_rizin_debug_session` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": false, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus a BYO Rizin debugger",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:rizin"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "start"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-start_rizin_debug_session"
+ },
+ {
+  "id": "REA-207",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Rizin",
+  "name_en": "REA MCP tool `rizin_debug_command`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Execute one unrestricted command in a persistent Rizin debugger session. Returns raw output inline with Evidence, including backend output interleaved before the completion marker. If the command exce — MCP-only tool exposed by the REA server. Execute one unrestricted command in a persistent Rizin debugger session. Returns raw output inline with Evidence, including backend output interleaved before th",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `rizin_debug_command` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": false, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus a BYO Rizin debugger",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:rizin"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "rizin"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-rizin_debug_command"
+ },
+ {
+  "id": "REA-208",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Rizin",
+  "name_en": "REA MCP tool `rizin_debug_session_status`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return observed lifecycle state and bounded recent NUL-framed output and process diagnostics for one Rizin debugger session; truncation fields report discarded data, and output_invalid_utf8 reports wh — MCP-only tool exposed by the REA server. Return observed lifecycle state and bounded recent NUL-framed output and process diagnostics for one Rizin debugger session; truncation fields report discarded ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `rizin_debug_session_status` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus a BYO Rizin debugger",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:rizin"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "rizin"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-rizin_debug_session_status"
+ },
+ {
+  "id": "REA-209",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: Rizin",
+  "name_en": "REA MCP tool `close_rizin_debug_session`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Close the REA-owned Rizin debugger only after verifying no inferior remains or detaching one with a verified caller-selected TTY output sink. A detached target may continue running and write to that T — MCP-only tool exposed by the REA server. Close the REA-owned Rizin debugger only after verifying no inferior remains or detaching one with a verified caller-selected TTY output sink. A detached target ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_rizin_debug_session` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus a BYO Rizin debugger",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea",
+   "engine:rizin"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "close"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-close_rizin_debug_session"
+ },
+ {
+  "id": "REA-210",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الثنائي",
+  "name_en": "REA MCP tool `open_binary`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Open a local executable, application bundle, archive, JavaScript, source map, plist, or analysis database after validation. format=dos-com explicitly interprets 1..65280 headerless bytes as a DOS COM  — MCP-only tool exposed by the REA server. Open a local executable, application bundle, archive, JavaScript, source map, plist, or analysis database after validation. format=dos-com explicitly interprets",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `open_binary` tool through your client; it is not a CLI command. Needs: an open binary session with a provider. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an open binary session with a provider",
+  "requires": [
+   "npm:rea",
+   "os:macos"
+  ],
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "open"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-open_binary"
+ },
+ {
+  "id": "REA-211",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الثنائي",
+  "name_en": "REA MCP tool `close_binary`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): When the investigation is finished, drain earlier provider requests, optionally write a provider-neutral analysis snapshot atomically to the caller-supplied path, then close the active target and ever — MCP-only tool exposed by the REA server. When the investigation is finished, drain earlier provider requests, optionally write a provider-neutral analysis snapshot atomically to the caller-supplied pat",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_binary` tool through your client; it is not a CLI command. Needs: an open binary session with a provider. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": false, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an open binary session with a provider",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "close"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-close_binary"
+ },
+ {
+  "id": "REA-212",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الثنائي",
+  "name_en": "REA MCP tool `binary_session`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Report the complete current target, provider, capability availability, client-feature, analysis, and server-identity status without starting analysis. — MCP-only tool exposed by the REA server. Report the complete current target, provider, capability availability, client-feature, analysis, and server-identity status without starting analysis.",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `binary_session` tool through your client; it is not a CLI command. Needs: an open binary session with a provider. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; plus an open binary session with a provider",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "binary"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-binary_session"
+ },
+ {
+  "id": "REA-213",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الأدلة",
+  "name_en": "REA MCP tool `export_evidence_bundle`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Atomically write the session's deterministic Evidence bundle to the requested local path. Existing files require overwrite: true; records and manifests use canonical byte-stable ordering. — MCP-only tool exposed by the REA server. Atomically write the session's deterministic Evidence bundle to the requested local path. Existing files require overwrite: true; records and manifests use cano",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `export_evidence_bundle` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "export"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-export_evidence_bundle"
+ },
+ {
+  "id": "REA-214",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الأدلة",
+  "name_en": "REA MCP tool `import_evidence_bundle`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Read the JSON bundle at the supplied local path, validate every Evidence ID and canonical manifest, then atomically merge it. Imported content is data only and is never executed. — MCP-only tool exposed by the REA server. Read the JSON bundle at the supplied local path, validate every Evidence ID and canonical manifest, then atomically merge it. Imported content is data only and ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `import_evidence_bundle` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "import"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-import_evidence_bundle"
+ },
+ {
+  "id": "REA-215",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الأدلة",
+  "name_en": "REA MCP tool `get_evidence_bundle`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return every retained Evidence record and residual unknown as a complete canonical bundle by default. detail=summary discovers retained records without copying or transferring their payloads; optional — MCP-only tool exposed by the REA server. Return every retained Evidence record and residual unknown as a complete canonical bundle by default. detail=summary discovers retained records without copying ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_evidence_bundle` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": true, \"destructiveHint\": false, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "get"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-get_evidence_bundle"
+ },
+ {
+  "id": "REA-216",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: عملية",
+  "name_en": "REA MCP tool `capture_process_scenario`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Run one caller-selected command under a PTY and return process capture Evidence with residual unknowns. The renderer admits at most 1,000,000 combined terminal cells, computed as columns × (rows + scr — MCP-only tool exposed by the REA server. Run one caller-selected command under a PTY and return process capture Evidence with residual unknowns. The renderer admits at most 1,000,000 combined terminal ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `capture_process_scenario` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": true, \"idempotentHint\": false, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "capture"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-capture_process_scenario"
+ },
+ {
+  "id": "REA-217",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: القطع",
+  "name_en": "REA MCP tool `compare_artifacts`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Compare complete artifact inventories by logical occurrence path, content identity, metadata, and graph relations. Pass the inventory Evidence nested in each inspect_artifact result as left and right, — MCP-only tool exposed by the REA server. Compare complete artifact inventories by logical occurrence path, content identity, metadata, and graph relations. Pass the inventory Evidence nested in each in",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `compare_artifacts` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "compare"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-compare_artifacts"
+ },
+ {
+  "id": "REA-218",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الدوال",
+  "name_en": "REA MCP tool `compare_functions`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Compare two explicit sets of analyze_function Evidence across identity, exact provider text, calls, references, strings, and address-normalized CFG topology. Missing or provider-incompatible facets re — MCP-only tool exposed by the REA server. Compare two explicit sets of analyze_function Evidence across identity, exact provider text, calls, references, strings, and address-normalized CFG topology. Mi",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `compare_functions` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "compare"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-compare_functions"
+ },
+ {
+  "id": "REA-219",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الحزم",
+  "name_en": "REA MCP tool `compare_bundles`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Compare two canonical Evidence bundles by exact record membership, explicit one-to-one observation pairs, and complete residual-unknown revision histories. Missing bundle members describe omission onl — MCP-only tool exposed by the REA server. Compare two canonical Evidence bundles by exact record membership, explicit one-to-one observation pairs, and complete residual-unknown revision histories. Miss",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `compare_bundles` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "compare"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-compare_bundles"
+ },
+ {
+  "id": "REA-220",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `find_changed_behavior`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Aggregate validated process and artifact comparison Evidence. Runtime observations remain distinct from static behavior candidates; missing or incomplete comparisons produce unresolved findings, never — MCP-only tool exposed by the REA server. Aggregate validated process and artifact comparison Evidence. Runtime observations remain distinct from static behavior candidates; missing or incomplete compar",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `find_changed_behavior` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "find"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-find_changed_behavior"
+ },
+ {
+  "id": "REA-221",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: الاستدعاء",
+  "name_en": "REA MCP tool `build_call_path`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Build every shortest direct-callee path inline from complete analyze_function Evidence records using exact canonical addresses. Missing dossiers and provider mixing remain unknown; every node and edge — MCP-only tool exposed by the REA server. Build every shortest direct-callee path inline from complete analyze_function Evidence records using exact canonical addresses. Missing dossiers and provider mi",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `build_call_path` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "build"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-build_call_path"
+ },
+ {
+  "id": "REA-222",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `correlate_static_and_runtime`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Evaluate every explicit caller-declared hypothesis between exact static comparison findings and runtime comparison dimensions. Similar names or paths are never auto-matched, consistent cochange never  — MCP-only tool exposed by the REA server. Evaluate every explicit caller-declared hypothesis between exact static comparison findings and runtime comparison dimensions. Similar names or paths are never ",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `correlate_static_and_runtime` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "correlate"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-correlate_static_and_runtime"
+ },
+ {
+  "id": "REA-223",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `verify_reconstruction`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Verify a finite typed behavioral and structural specification against a canonical Evidence bundle. Pass means every declared claim has complete comparable authority—not global source equivalence; chan — MCP-only tool exposed by the REA server. Verify a finite typed behavioral and structural specification against a canonical Evidence bundle. Pass means every declared claim has complete comparable autho",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `verify_reconstruction` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "verify"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-verify_reconstruction"
+ },
+ {
+  "id": "REA-224",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `list_unknowns`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List current residual-unknown heads in deterministic ID order, with optional exact status, severity, and domain filters. Results are complete inline by default; supply offset and limit to page the fil — MCP-only tool exposed by the REA server. List current residual-unknown heads in deterministic ID order, with optional exact status, severity, and domain filters. Results are complete inline by default;",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_unknowns` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": true, \"destructiveHint\": false, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "list"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-list_unknowns"
+ },
+ {
+  "id": "REA-225",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: المجهول",
+  "name_en": "REA MCP tool `record_unknown`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Create one deterministic residual unknown and immutable mutation evidence. Validates all evidence and relationship references, and rejects duplicate stable identity. — MCP-only tool exposed by the REA server. Create one deterministic residual unknown and immutable mutation evidence. Validates all evidence and relationship references, and rejects duplicate stable iden",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `record_unknown` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": false, \"open",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "record"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-record_unknown"
+ },
+ {
+  "id": "REA-226",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: المجهول",
+  "name_en": "REA MCP tool `update_unknown`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Append one immutable full-state revision and mutation evidence. Requires exact expected_revision; stale concurrent writers fail instead of overwriting newer analysis. — MCP-only tool exposed by the REA server. Append one immutable full-state revision and mutation evidence. Requires exact expected_revision; stale concurrent writers fail instead of overwriting newer ana",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `update_unknown` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": false, \"open",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "update"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-update_unknown"
+ },
+ {
+  "id": "REA-227",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: المجهول",
+  "name_en": "REA MCP tool `verify_unknown_resolution`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Revalidate the current residual-unknown head against live bundled evidence, exact authority/confidence/environment requirements, and revision integrity. Withdrawn and out-of-scope dispositions are not — MCP-only tool exposed by the REA server. Revalidate the current residual-unknown head against live bundled evidence, exact authority/confidence/environment requirements, and revision integrity. Withdra",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `verify_unknown_resolution` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": true, \"destructiveHint\": false, \"idempotentHint\": true, \"openWo",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "verify"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-verify_unknown_resolution"
+ },
+ {
+  "id": "REA-228",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP:",
+  "name_en": "REA MCP tool `get_navigation_context`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the selected document, current address, and containing/current procedure in one provider-neutral result. The result reflects sequential provider observations, not an atomic cursor snapshot; a c — MCP-only tool exposed by the REA server. Return the selected document, current address, and containing/current procedure in one provider-neutral result. The result reflects sequential provider observat",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_navigation_context` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "get"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-get_navigation_context"
+ },
+ {
+  "id": "REA-229",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA MCP: عنوان",
+  "name_en": "REA MCP tool `inspect_address_context`",
+  "status": "documented",
+  "what": "أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Inspect one explicit reproducible address for its analyzed name, containing procedure, regular and inline comments, and matching bookmarks. Each unsupported facet returns a typed unavailable outcome;  — MCP-only tool exposed by the REA server. Inspect one explicit reproducible address for its analyzed name, containing procedure, regular and inline comments, and matching bookmarks. Each unsupported fac",
+  "when": "lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)",
+  "how": "Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `inspect_address_context` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.",
+  "params": "MCP tool (one of REA's 207); annotations: {\"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openW",
+  "install": "npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone",
+  "license": "MIT (REA); bring-your-own engines keep their own terms",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "reverse engineering",
+   "هندسة عكسية",
+   "inspect"
+  ],
+  "section": "REA MCP tools (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-tool-inspect_address_context"
+ },
+ {
+  "id": "REA-230",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA موجّه: investigate_feature",
+  "name_en": "REA MCP prompt `investigate_feature`",
+  "status": "documented",
+  "what": "موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Trace a feature through relevant artifact, symbol, and function evidence while distinguishing observations, inferences, and residual unknowns. — A ready MCP prompt that drives a whole investigation workflow.",
+  "when": "starting a guided REA investigation of a target you may analyse",
+  "how": "Invoke the `investigate_feature` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.",
+  "params": "one of REA 6.7.0 six MCP prompts",
+  "install": "npm install -g rea-agents@6.7.0 connected as an MCP server",
+  "license": "MIT (REA)",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-prompts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "prompt",
+   "هندسة عكسية"
+  ],
+  "section": "REA MCP prompts (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-prompt-investigate_feature"
+ },
+ {
+  "id": "REA-231",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA موجّه: compare_application_versions",
+  "name_en": "REA MCP prompt `compare_application_versions`",
+  "status": "documented",
+  "what": "موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Compare two shipped application artifacts through complete inventory and optional static or runtime evidence without equating missing data with unchanged behavior. — A ready MCP prompt that drives a whole investigation workflow.",
+  "when": "starting a guided REA investigation of a target you may analyse",
+  "how": "Invoke the `compare_application_versions` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.",
+  "params": "one of REA 6.7.0 six MCP prompts",
+  "install": "npm install -g rea-agents@6.7.0 connected as an MCP server",
+  "license": "MIT (REA)",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-prompts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "prompt",
+   "هندسة عكسية"
+  ],
+  "section": "REA MCP prompts (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-prompt-compare_application_versions"
+ },
+ {
+  "id": "REA-232",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA موجّه: verify_reconstruction",
+  "name_en": "REA MCP prompt `verify_reconstruction`",
+  "status": "documented",
+  "what": "موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Evaluate a finite reconstruction specification against retained Evidence comparisons without broadening pass results into global equivalence claims. — A ready MCP prompt that drives a whole investigation workflow.",
+  "when": "starting a guided REA investigation of a target you may analyse",
+  "how": "Invoke the `verify_reconstruction` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.",
+  "params": "one of REA 6.7.0 six MCP prompts",
+  "install": "npm install -g rea-agents@6.7.0 connected as an MCP server",
+  "license": "MIT (REA)",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-prompts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "prompt",
+   "هندسة عكسية"
+  ],
+  "section": "REA MCP prompts (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-prompt-verify_reconstruction"
+ },
+ {
+  "id": "REA-233",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA موجّه: trace_crash",
+  "name_en": "REA MCP prompt `trace_crash`",
+  "status": "documented",
+  "what": "موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Correlate a crash symptom with static call and reference evidence plus optional process capture observations. — A ready MCP prompt that drives a whole investigation workflow.",
+  "when": "starting a guided REA investigation of a target you may analyse",
+  "how": "Invoke the `trace_crash` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.",
+  "params": "one of REA 6.7.0 six MCP prompts",
+  "install": "npm install -g rea-agents@6.7.0 connected as an MCP server",
+  "license": "MIT (REA)",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-prompts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "prompt",
+   "هندسة عكسية"
+  ],
+  "section": "REA MCP prompts (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-prompt-trace_crash"
+ },
+ {
+  "id": "REA-234",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA موجّه: audit_residual_unknowns",
+  "name_en": "REA MCP prompt `audit_residual_unknowns`",
+  "status": "documented",
+  "what": "موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Review current residual-unknown heads against retained evidence, revision integrity, and declared authority without silently closing unanswered questions. — A ready MCP prompt that drives a whole investigation workflow.",
+  "when": "starting a guided REA investigation of a target you may analyse",
+  "how": "Invoke the `audit_residual_unknowns` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.",
+  "params": "one of REA 6.7.0 six MCP prompts",
+  "install": "npm install -g rea-agents@6.7.0 connected as an MCP server",
+  "license": "MIT (REA)",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-prompts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "prompt",
+   "هندسة عكسية"
+  ],
+  "section": "REA MCP prompts (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-prompt-audit_residual_unknowns"
+ },
+ {
+  "id": "REA-235",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA موجّه: prepare_bounded_process_capture",
+  "name_en": "REA MCP prompt `prepare_bounded_process_capture`",
+  "status": "documented",
+  "what": "موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Choose a command, inputs, observations, and stopping conditions for a process capture that answers the behavioral question. — A ready MCP prompt that drives a whole investigation workflow.",
+  "when": "starting a guided REA investigation of a target you may analyse",
+  "how": "Invoke the `prepare_bounded_process_capture` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.",
+  "params": "one of REA 6.7.0 six MCP prompts",
+  "install": "npm install -g rea-agents@6.7.0 connected as an MCP server",
+  "license": "MIT (REA)",
+  "requires": [
+   "npm:rea"
+  ],
+  "proof": [
+   "https://github.com/morluto/rea/blob/main/docs/mcp-prompts.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "MCP",
+   "prompt",
+   "هندسة عكسية"
+  ],
+  "section": "REA MCP prompts (v6.7.0)",
+  "source": "https://github.com/morluto/rea#mcp-prompt-prepare_bounded_process_capture"
  }
 ]

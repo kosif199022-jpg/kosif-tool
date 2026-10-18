@@ -1,6 +1,6 @@
 # REA × KOSIF Superpowers — evidence-first software investigation
 
-**Status:** optional local integration. On 2026-10-18 REA v6.7.0 was installed in a scratch folder and run here: 19 commands produced Evidence records, 11 refused correctly for missing engines — see [proofs/rea-static-runs](../proofs/rea-static-runs/README.md). All 153 CLI commands are registered as powers REA-001…REA-153 in [software-investigation](powers/software-investigation.md) (`python3 $SKILL_DIR/scripts/rea_bridge.py catalog <word>` lists them).
+**Status:** optional local integration. On 2026-10-18 REA v6.7.0 was installed in a scratch folder and run here: 19 commands produced Evidence records, 11 refused correctly for missing engines — see [proofs/rea-static-runs](../proofs/rea-static-runs/README.md). All 153 CLI commands plus the 76 MCP-only tools and 6 MCP prompts are registered as powers REA-001…REA-235 in [software-investigation](powers/software-investigation.md) (`python3 $SKILL_DIR/scripts/rea_bridge.py catalog <word>` lists them).
 
 **Upstream attribution:** morluto/rea — https://github.com/morluto/rea (MIT for REA-authored code, Copyright (c) 2026 morluto). Third-party binaries, Hopper, Ghidra, IDA, JEB and their assets retain separate terms; see https://github.com/morluto/rea/blob/main/THIRD_PARTY_NOTICES.md. This integration contains original KOSIF glue code, not copies of REA or decompiled third-party sources.
 
@@ -30,6 +30,10 @@ The SKILL can now route legal, consent-based software inspection, instead of con
 | REA-SIGNAL | Recorded logic signals and decoder annotations | manual sigrok-cli workflow |
 
 Verified here (✅ in the catalog): analyze-javascript-application, inspect-analysis-view, trace-application-feature, inspect-go-binary, inspect-rust-binary, inspect-artifact, extract-artifact, inspect-electron-fuses, inspect-evm-interface, inspect-with-objdump, list-objdump-architectures, list-browser-targets, inspect-web-page, analyze-web-bundle, capture-web-screenshot, inspect-web-event-listeners, doctor, capabilities, providers. Everything else is 📦 (REA alone or a plain input) or 📄 (bring-your-own engine: Hopper, Ghidra 12.1, IDA MCP, Kuna, JEB, jadx-headless-mcp, apktool, adb device, Frida, Rizin/Cutter, GDB, WABT, tshark, Binwalk, sigrok, Wakaru, macOS toolchain). The badge is the lowest level that is true on this machine; a different machine with those engines configured raises it only after a real run.
+
+## Engines installed here (2026-10-18)
+
+gdb 15.1, WABT 1.0.34, TShark 4.2.2, sigrok-cli 0.7.2, apktool 2.7.0 and adb 34.0.4 were installed in this container, so five more read-only commands now pass (inspect-pcap-client, inspect-packet-fields, inspect-signal-decoders, inspect-apktool-client, inspect-adb-client — see proofs/rea-static-runs). REA pins exact engine versions: WABT 1.0.42 is required, so inspect-wasm-artifact stays unavailable with 1.0.34. Native disassembly still needs Ghidra, Hopper or IDA, which the proxy here cannot download.
 
 ## Full inventory by requirement (REA 6.7.0: 153 CLI commands, 207 MCP tools, 6 prompts)
 

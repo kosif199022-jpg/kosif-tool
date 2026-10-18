@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info: {title: KOSIF demo API, version: 1.0.0}
+servers: [{url: "http://127.0.0.1:8787"}]
+tags: [{name: system}, {name: auth}, {name: items}]
+paths:
+  /health:
+    get: {tags: [system], summary: Health check, responses: {"200": {description: ok}}}
+  /login:
+    post:
+      tags: [auth]
+      summary: Log in
+      requestBody: {content: {application/json: {schema: {type: object, properties: {user: {type: string}, password: {type: string}}}}}}
+      responses: {"200": {description: token}, "403": {description: bad credentials}}
+  /items:
+    get: {tags: [items], summary: List items, security: [{bearer: []}], responses: {"200": {description: list}}}
+    post:
+      tags: [items]
+      summary: Create item
+      security: [{bearer: []}]
+      requestBody: {content: {application/json: {schema: {type: object, properties: {name: {type: string}, price: {type: number}}}}}}
+      responses: {"201": {description: created}, "422": {description: invalid}}
+  /items/{id}:
+    get:
+      tags: [items]
+      summary: Get item
+      security: [{bearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: integer}}]
+      responses: {"200": {description: item}, "404": {description: not found}}
+components:
+  securitySchemes: {bearer: {type: http, scheme: bearer}}

@@ -1,0 +1,20 @@
+meta {
+  name: get item
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/items/{{createdId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+assert {
+  res.status: eq 200
+  res.body.id: eq {{createdId}}
+}
