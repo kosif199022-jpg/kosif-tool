@@ -1068,9 +1068,7 @@
   "how": "Last steps of build(): [defocus..] mid-scene, then Step('الكاميرا', [bloom, flare, chroma, filmic, vignette, grain]) and ROLLOFF = 1.0.",
   "params": "AI recipe: defocus(2); motion_blur(shape,6,104); bloom(.72,26,.5); flare((x,y),'#ffb070',110,380,.45); chroma(1.4); filmic(1.0,1.08,1.02); vignette(.55); grain(.018)",
   "install": "",
-  "requires": [
-   "pip:chromadb"
-  ],
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/references/drawing-guide.md:62",
@@ -3572,9 +3570,7 @@
   "how": "chroma(amount).",
   "params": "default 1.5; whale 1.1; AI recipe 1.4",
   "install": "see arsenal-libraries.md",
-  "requires": [
-   "pip:chromadb"
-  ],
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/render.py:756"

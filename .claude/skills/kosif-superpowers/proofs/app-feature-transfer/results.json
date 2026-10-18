@@ -1,0 +1,129 @@
+{
+ "date": "2026-10-18",
+ "host": "Windows AMD64",
+ "ffmpeg": "ffmpeg version 9.0.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg ",
+ "python": "3.13.14",
+ "passed": 17,
+ "total": 17,
+ "results": [
+  {
+   "id": "APPX-01",
+   "check": "speed curve by segments",
+   "ok": true,
+   "detail": "2s@1x + 2s@0.5x + 2s@2x → 7.07s (expected 7.00)",
+   "seconds": 3.56
+  },
+  {
+   "id": "APPX-02",
+   "check": "chroma key over new background",
+   "ok": true,
+   "detail": "green left in corner 0.00, subject red kept True",
+   "seconds": 2.39
+  },
+  {
+   "id": "APPX-03",
+   "check": "auto reframe to 9:16 following the subject",
+   "ok": true,
+   "detail": "404x720 crop keeps the subject at t=3s: True",
+   "seconds": 4.43
+  },
+  {
+   "id": "APPX-04",
+   "check": "scene edit detection",
+   "ok": true,
+   "detail": "cuts at [1.52, 3.04] (expected [1.5, 3.0])",
+   "seconds": 0.72
+  },
+  {
+   "id": "APPX-05",
+   "check": "loudness normalisation for social",
+   "ok": true,
+   "detail": "integrated loudness -14.0 LUFS (target -14 ±1)",
+   "seconds": 1.37
+  },
+  {
+   "id": "APPX-06",
+   "check": "colour look from a .cube LUT",
+   "ok": true,
+   "detail": "mean RGB after warm LUT [143.0, 128.0, 108.0] (R>G>B)",
+   "seconds": 1.24
+  },
+  {
+   "id": "APPX-07",
+   "check": "silence / pause removal",
+   "ok": true,
+   "detail": "pause found 1.00→2.50s; 3.50s tightened to 2.52s (1.5 s pause → 0.5 s breath)",
+   "seconds": 1.19
+  },
+  {
+   "id": "APPX-08",
+   "check": "beat markers from audio",
+   "ok": true,
+   "detail": "8 beats, tempo 120.2 BPM (expected 8, 120)",
+   "seconds": 0.18
+  },
+  {
+   "id": "APPX-09",
+   "check": "round camera bubble over a screen recording",
+   "ok": true,
+   "detail": "bubble centre orange True, square corner shows the screen True",
+   "seconds": 3.5
+  },
+  {
+   "id": "APPX-10",
+   "check": "keyframed zoom / punch-in",
+   "ok": true,
+   "detail": "subject area 11289 → 24383 px (×2.16; zoom 1.5 → ×2.25)",
+   "seconds": 4.31
+  },
+  {
+   "id": "APPX-11",
+   "check": "auto ducking of music under voice",
+   "ok": true,
+   "detail": "music bed -27.9 dB → -36.3 dB while the voice speaks",
+   "seconds": 1.32
+  },
+  {
+   "id": "APPX-12",
+   "check": "speech noise reduction",
+   "ok": true,
+   "detail": "noise above 3 kHz -27.3 dB → -35.0 dB",
+   "seconds": 1.06
+  },
+  {
+   "id": "APPX-13",
+   "check": "word-timed auto captions (SRT)",
+   "ok": true,
+   "detail": "7 timed words: 'hello world, this is a caption test.'; monotonic True",
+   "seconds": 12.06
+  },
+  {
+   "id": "APPX-14",
+   "check": "background removal on a still",
+   "ok": true,
+   "detail": "IoU with the true subject 0.931",
+   "seconds": 0.57
+  },
+  {
+   "id": "APPX-15",
+   "check": "EDL export and conform",
+   "ok": true,
+   "detail": "EDL with 2 events conformed to 2.50s (expected 2.50)",
+   "seconds": 2.79
+  },
+  {
+   "id": "APPX-16",
+   "check": "reverse and freeze frame",
+   "ok": true,
+   "detail": "2 s reversed + 1 s hold = 3.00s; first frame matches source end (mean diff 0.4)",
+   "seconds": 4.38
+  },
+  {
+   "id": "APPX-17",
+   "check": "automatic cover / thumbnail pick",
+   "ok": true,
+   "detail": "picked t=2.60s (score 552) as cover",
+   "seconds": 7.95
+  }
+ ]
+}

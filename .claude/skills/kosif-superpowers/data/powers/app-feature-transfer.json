@@ -1,0 +1,926 @@
+[
+ {
+  "id": "APPX-01",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "منحنى السرعة",
+  "name_en": "Speed curve (ramp)",
+  "status": "proven",
+  "what": "تغيير سرعة المقطع على أجزاء (1× ثم 0.5× ثم 2×) كما في منحنى السرعة في CapCut — piecewise speed ramp like CapCut's speed curve.",
+  "when": "ريلز رياضية، إبطاء قبل ضربة، تسريع مقطع ممل",
+  "how": "ffmpeg -filter_complex \"[0:v]trim=0:2,setpts=PTS-STARTPTS[a];[0:v]trim=2:4,setpts=2*(PTS-STARTPTS)[b];[0:v]trim=4:6,setpts=0.5*(PTS-STARTPTS)[c];[a][b][c]concat=n=3:v=1:a=0\"؛ للصوت atempo (0.5–2 لكل مرحلة).",
+  "params": "setpts factor = 1/speed",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "capcut",
+   "speed ramp",
+   "منحنى السرعة",
+   "slow motion",
+   "تسريع"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-02",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "مفتاح الكروما (الشاشة الخضراء)",
+  "name_en": "Chroma key",
+  "status": "proven",
+  "what": "إزالة خلفية خضراء ووضع خلفية جديدة — chroma key and composite, as in CapCut and Premiere Ultra Key.",
+  "when": "فيديو أمام شاشة خضراء، دمج شخص على خلفية",
+  "how": "[1:v]chromakey=0x00FF00:0.15:0.05[k];[0:v][k]overlay — ثم despill بـ colorchannelmixer إن ظهرت حواف خضراء.",
+  "params": "similarity 0.1–0.2, blend 0.05",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "chroma key",
+   "green screen",
+   "شاشة خضراء",
+   "كروما",
+   "capcut",
+   "premiere"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-03",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "إعادة التأطير التلقائي 9:16",
+  "name_en": "Auto reframe to 9:16",
+  "status": "proven",
+  "what": "قص 16:9 إلى 9:16 يتبع الموضوع المتحرك بتنعيم — like Premiere Auto Reframe and CapCut auto reframe.",
+  "when": "تحويل فيديو يوتيوب إلى ريلز وتيك توك",
+  "how": "OpenCV: مركز الكتلة لكل إطار (أو كاشف وجه لتتبع المتحدث) → متوسط متحرك 9 إطارات → قص كل إطار وتمريره خامًا إلى ffmpeg/libx264. تعبير قص لكل إطار داخل ffmpeg ينهار على المقاطع الطويلة.",
+  "params": "crop width even (404 for 720p)",
+  "install": "pip install opencv-python numpy; ffmpeg",
+  "requires": [
+   "ffmpeg",
+   "pip:numpy",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "auto reframe",
+   "9:16",
+   "reels",
+   "ريلز",
+   "تيك توك",
+   "premiere",
+   "capcut"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-04",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "كشف القطعات",
+  "name_en": "Scene edit detection",
+  "status": "proven",
+  "what": "العثور على نقاط القطع في فيديو مُمنتَج — Premiere Scene Edit Detection.",
+  "when": "تقطيع فيديو مرجعي، إعادة مونتاج، قياس إيقاع القطعات",
+  "how": "ffmpeg -vf \"select='gt(scene,0.3)',showinfo\" -f null - ثم اقرأ pts_time؛ للدقة الأعلى PySceneDetect.",
+  "params": "threshold 0.3 (0.2 for soft cuts)",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "scene detection",
+   "cuts",
+   "قطعات",
+   "premiere"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-05",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "توحيد علوّ الصوت للسوشيال",
+  "name_en": "Loudness normalisation (-14 LUFS)",
+  "status": "proven",
+  "what": "ضبط الصوت إلى −14 LUFS وقمة −1.5 dBTP كما في تصدير CapCut وPremiere للمنصات.",
+  "when": "أي تصدير لريلز أو يوتيوب أو بودكاست",
+  "how": "ffmpeg -af loudnorm=I=-14:TP=-1.5:LRA=11 (تمريرتان للدقة) ثم تحقق بـ ebur128.",
+  "params": "I -14 social, -16 podcast, -23 broadcast",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "loudness",
+   "lufs",
+   "علو الصوت",
+   "normalize"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-06",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "لون سينمائي من LUT",
+  "name_en": "Colour look from a .cube LUT",
+  "status": "proven",
+  "what": "تطبيق فلتر لوني بملف LUT ثلاثي الأبعاد — CapCut filters / Premiere Lumetri looks.",
+  "when": "تلوين موحّد لمقاطع ريل، مظهر دافئ أو بارد",
+  "how": "ffmpeg -vf lut3d=file=look.cube؛ يمكن توليد .cube بالكود (17³) لأي منحنى.",
+  "params": "LUT_3D_SIZE 17 or 33",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "lut",
+   "color grade",
+   "تلوين",
+   "فلتر",
+   "lumetri"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-07",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "حذف الوقفات والصمت",
+  "name_en": "Pause and silence removal",
+  "status": "proven",
+  "what": "اكتشاف الصمت وحذفه مع ترك نفَس طبيعي — CapCut remove pauses.",
+  "when": "فيديو كلام، بودكاست، شرح",
+  "how": "silencedetect=n=-40dB:d=0.5 للتقرير، ثم silenceremove=stop_periods=-1:stop_duration=0.5:stop_threshold=-40dB، أو قص الفيديو بالمواضع نفسها.",
+  "params": "n -35..-45 dB, d 0.4–0.7 s",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "silence",
+   "pauses",
+   "قص الصمت",
+   "capcut"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-08",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "علامات الإيقاع",
+  "name_en": "Beat markers from audio",
+  "status": "proven",
+  "what": "استخراج مواضع الضربات وسرعة BPM لقطع اللقطات عليها — CapCut auto beat.",
+  "when": "مونتاج على الإيقاع، تزامن القطعات",
+  "how": "طاقة كل 256 عينة → تدفق موجب → عتبة متوسط+2σ → قمم مفصولة 0.2 ث → BPM = 60/الوسيط. للموسيقى المعقدة انظر عائلة BEAT.",
+  "params": "hop 256, min gap 0.2 s",
+  "install": "numpy",
+  "requires": [
+   "pip:numpy"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "beat",
+   "bpm",
+   "إيقاع",
+   "beat sync",
+   "capcut"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-09",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "فقاعة الكاميرا فوق تسجيل الشاشة",
+  "name_en": "Round camera bubble over a screen recording",
+  "status": "proven",
+  "what": "وضع الكاميرا في دائرة فوق تسجيل الشاشة كما في وضع talking_head في استوديو التسجيل في Canva.",
+  "when": "شروحات ودروس وعروض منتجات",
+  "how": "[cam]format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='if(lte(hypot(X-R,Y-R),R-2),255,0)'[c];[screen][c]overlay=W-w-40:H-h-40 (أضف حدًا وظلًا عند الحاجة).",
+  "params": "R = cam/2, margin 40 px",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "talking head",
+   "camera bubble",
+   "تسجيل الشاشة",
+   "canva",
+   "overlay"
+  ],
+  "section": "استوديو التسجيل والواجهة — Canva (مستخرجة من app.asar) — Canva desktop, evidenced",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-10",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تكبير بإطارات مفتاحية",
+  "name_en": "Keyframed punch-in / Ken Burns",
+  "status": "proven",
+  "what": "تكبير وتحريك تدريجي بإطارات مفتاحية — keyframes in CapCut and Premiere.",
+  "when": "إبراز لحظة، تحريك الصور الثابتة",
+  "how": "zoompan=z='min(1+0.004*on,1.5)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=WxH:fps=30؛ للتنعيم السينمائي استخدم easing من عائلة EASE.",
+  "params": "zoom rate 0.002–0.006/frame",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "keyframes",
+   "zoom",
+   "ken burns",
+   "تكبير",
+   "إطارات مفتاحية"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-11",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "خفض الموسيقى تحت الصوت",
+  "name_en": "Auto ducking",
+  "status": "proven",
+  "what": "خفض الموسيقى تلقائيًا حين يتكلم الصوت — auto ducking in CapCut and Premiere Essential Sound.",
+  "when": "ريل بتعليق صوتي وموسيقى",
+  "how": "[voice]asplit[sc][v];[music][sc]sidechaincompress=threshold=0.02:ratio=12:attack=20:release=300[m];[m][v]amix=inputs=2:normalize=0",
+  "params": "ratio 8–12, release 250–400 ms",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "ducking",
+   "sidechain",
+   "موسيقى",
+   "تعليق صوتي"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-12",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تنقية الكلام من الضجيج",
+  "name_en": "Speech noise reduction",
+  "status": "proven",
+  "what": "تقليل الضجيج الثابت في التسجيل؛ بديل كلاسيكي لـ Enhance Speech وليس نموذج Adobe.",
+  "when": "تسجيل هاتف، ضجيج مروحة",
+  "how": "afftdn=nr=20:nf=-30,highpass=f=80 (و lowpass=f=12000)؛ للضجيج المتغير جرّب arnndn بنموذج RNNoise.",
+  "params": "nr 12–25 dB",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "noise reduction",
+   "denoise",
+   "تنقية الصوت",
+   "enhance speech"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-13",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "ترجمة تلقائية بتوقيت الكلمات",
+  "name_en": "Word-timed auto captions",
+  "status": "proven",
+  "what": "تفريغ الكلام إلى SRT بتوقيت كل كلمة — CapCut auto captions / Premiere Speech to Text.",
+  "when": "سبتايتل ريلز، كاريوكي، ترجمة",
+  "how": "faster_whisper.WhisperModel('small' أو 'large-v3' للعربية).transcribe(wav, word_timestamps=True) → SRT/ASS؛ للعربية حمّل خطًا عربيًا قبل الحرق.",
+  "params": "base.en for the test, large-v3 for Arabic",
+  "install": "pip install faster-whisper",
+  "requires": [
+   "pip:faster-whisper"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "captions",
+   "subtitles",
+   "ترجمة",
+   "سبتايتل",
+   "تفريغ",
+   "whisper"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-14",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "إزالة خلفية صورة",
+  "name_en": "Background removal on a still",
+  "status": "proven",
+  "what": "فصل الموضوع عن الخلفية بقناع شفاف (GrabCut كلاسيكي؛ نموذج تجزئة للحالات الصعبة) — background removal on a still.",
+  "when": "صور منتجات، أغلفة، ملصقات",
+  "how": "cv2.grabCut(img, mask, rect, bgd, fgd, 5, GC_INIT_WITH_RECT) → PNG بقناة ألفا؛ للشعر والحواف المعقدة انظر MEDIA-29 وFOOT-31 (نموذج تجزئة، 📦).",
+  "params": "5 iterations, rect around the subject",
+  "install": "pip install opencv-python",
+  "requires": [
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "background removal",
+   "إزالة الخلفية",
+   "cutout",
+   "canva",
+   "capcut"
+  ],
+  "section": "استوديو التسجيل والواجهة — Canva (مستخرجة من app.asar) — Canva desktop, evidenced",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-15",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تصدير EDL ومطابقته",
+  "name_en": "EDL interchange and conform",
+  "status": "proven",
+  "what": "كتابة قائمة قطع CMX3600 يفتحها Premiere وResolve، وإعادة بنائها بـ ffmpeg للتحقق.",
+  "when": "تسليم مونتاج لمحرر بشري، النقل بين البرامج",
+  "how": "اكتب أحداث 'NNN AX V C src_in src_out rec_in rec_out' بـ 30fps، ثم trim+concat لكل حدث وتحقق من المدة؛ لـ FCPXML/OTIO ثبّت opentimelineio (📦).",
+  "params": "FCM NON-DROP FRAME",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "edl",
+   "premiere",
+   "interchange",
+   "مونتاج",
+   "xml"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-16",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "عكس المقطع وتجميد الإطار",
+  "name_en": "Reverse and freeze frame",
+  "status": "proven",
+  "what": "تشغيل مقطع بالعكس ثم تثبيت آخر إطار — CapCut reverse and freeze.",
+  "when": "مؤثر ترجيع، لقطة توقف درامية",
+  "how": "-vf trim=0:2,reverse,tpad=stop_mode=clone:stop_duration=1 (reverse يحمّل المقطع كله في الذاكرة: قصّه أولًا).",
+  "params": "trim before reverse",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "reverse",
+   "freeze frame",
+   "تجميد",
+   "عكس"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-17",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "اختيار الغلاف تلقائيًا",
+  "name_en": "Automatic cover pick",
+  "status": "proven",
+  "what": "اختيار أوضح وأغنى إطار لونيًا ليكون غلافًا — CapCut and Canva cover suggestions.",
+  "when": "غلاف ريل أو يوتيوب",
+  "how": "خذ 8–16 إطارًا، الدرجة = تباين لابلاس + انحراف اللون، واحفظ الأعلى؛ ثم أضف العنوان بعائلتي BRAND وARAB.",
+  "params": "8 samples",
+  "install": "opencv",
+  "requires": [
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "thumbnail",
+   "cover",
+   "غلاف",
+   "صورة مصغرة"
+  ],
+  "section": "محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-18",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "منتقي الشاشة للتسجيل",
+  "name_en": "Display-media picker for screen recording",
+  "status": "documented",
+  "what": "تسجيل الشاشة أو نافذة بمنتقٍ خاص (صفحة display_media_picker ومراسي desktopCapturer في Canva) — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تطبيق تسجيل شروحات أو اجتماعات",
+  "how": "ويب: navigator.mediaDevices.getDisplayMedia + MediaRecorder؛ Electron: session.setDisplayMediaRequestHandler مع desktopCapturer.getSources لعرض منتقٍ مخصص.",
+  "params": "—",
+  "install": "electron or a browser",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "screen recording",
+   "تسجيل الشاشة",
+   "desktopCapturer",
+   "canva"
+  ],
+  "section": "استوديو التسجيل والواجهة — Canva (مستخرجة من app.asar) — Canva desktop, evidenced",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-19",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "غرفة تحكم التسجيل",
+  "name_en": "Recording mission-control and overlay windows",
+  "status": "documented",
+  "what": "نافذة تحكم صغيرة (mission_control) وطبقة overlay فوق الشاشة أثناء التسجيل، منفصلتان عن نافذة المحرر — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تطبيق تسجيل يحتاج أزرار إيقاف لا تظهر في الفيديو",
+  "how": "BrowserWindow بلا إطار alwaysOnTop مع setContentProtection(true) لإخفائها من الالتقاط؛ نافذة overlay شفافة مع setIgnoreMouseEvents(true).",
+  "params": "—",
+  "install": "electron",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "recording overlay",
+   "mission control",
+   "canva",
+   "electron"
+  ],
+  "section": "استوديو التسجيل والواجهة — Canva (مستخرجة من app.asar) — Canva desktop, evidenced",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-20",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "واجهة احتياطية بلا إنترنت",
+  "name_en": "Offline fallback renderer",
+  "status": "documented",
+  "what": "حزمة واجهة ثالثة desktop_offline_fallback تُعرض حين لا يصل التطبيق السحابي — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تطبيق سحابي داخل غلاف سطح مكتب",
+  "how": "حمّل الواجهة البعيدة بـ loadURL، وعند did-fail-load أو navigator.onLine=false حمّل صفحة محلية من الحزمة تشرح وتعيد المحاولة.",
+  "params": "—",
+  "install": "electron",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "offline",
+   "بلا إنترنت",
+   "fallback",
+   "canva"
+  ],
+  "section": "معمارية تطبيقات سطح المكتب — desktop app architecture patterns",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-21",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "واجهات RTL مبنية مسبقًا",
+  "name_en": "Prebuilt RTL bundles for Arabic",
+  "status": "documented",
+  "what": "كل صفحة تُشحن بنسختين .ltr و.rtl (CSS وHTML) بدل قلب الاتجاه وقت التشغيل — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "أي واجهة تدعم العربية",
+  "how": "اكتب CSS بخصائص منطقية (margin-inline-start) أو حوّله بـ rtlcss وقت البناء، واختر الملف حسب اللغة؛ اختبر الأرقام والأيقونات الاتجاهية.",
+  "params": "—",
+  "install": "npm install rtlcss",
+  "requires": [
+   "node"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "rtl",
+   "عربي",
+   "arabic ui",
+   "rtlcss",
+   "canva"
+  ],
+  "section": "معمارية تطبيقات سطح المكتب — desktop app architecture patterns",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-22",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "اقترانات الملفات",
+  "name_en": "File associations for media",
+  "status": "documented",
+  "what": "التطبيق يسجّل 16 امتدادًا يفتحها مباشرة: avi gif heic jpeg jpg key mkv mov mp4 mpeg numbers pages png svg webm webp — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "محرر يفتح ملفات المستخدم بالنقر المزدوج",
+  "how": "electron-builder: fileAssociations [{ext, mimeType}] مع قراءة process.argv وsecond-instance؛ HEIC يحتاج pillow-heif أو libheif للتحويل.",
+  "params": "—",
+  "install": "electron-builder",
+  "requires": [
+   "pip:pillow"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "file associations",
+   "heic",
+   "keynote",
+   "canva"
+  ],
+  "section": "معمارية تطبيقات سطح المكتب — desktop app architecture patterns",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-23",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "جسر واحد بقناة MessagePort",
+  "name_en": "Minimal context bridge over a MessagePort",
+  "status": "documented",
+  "what": "الـ preload يكشف واجهة واحدة ElectronBridge بعضوين فقط (onPageBuildIdentityReady, requestMessagePort)، والاتصال كله يمر عبر MessagePort — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تطبيق Electron آمن بسطح هجوم صغير",
+  "how": "contextBridge.exposeInMainWorld('bridge', {requestPort}) ثم ipcRenderer.postMessage مع MessageChannelMain في العملية الرئيسية؛ تحقّق من senderFrame.url لكل رسالة.",
+  "params": "—",
+  "install": "electron",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "contextBridge",
+   "messageport",
+   "electron security",
+   "canva"
+  ],
+  "section": "معمارية تطبيقات سطح المكتب — desktop app architecture patterns",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-24",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تقوية Electron بالـ fuses",
+  "name_en": "Electron fuse hardening",
+  "status": "proven",
+  "what": "قرأ REA في Canva.exe: RunAsNode وNodeOptions ووسائط inspect معطلة، وتشفير الكوكيز وسلامة ASAR والتحميل من ASAR فقط مفعلة — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "قبل شحن أي تطبيق Electron",
+  "how": "flipFuses من @electron/fuses في خطوة afterPack؛ ثم تحقق بعد البناء بـ `rea inspect-electron-fuses App.exe` (شُغّل هنا فعلًا).",
+  "params": "—",
+  "install": "npm install @electron/fuses",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "electron fuses",
+   "hardening",
+   "asar integrity",
+   "أمان"
+  ],
+  "section": "معمارية تطبيقات سطح المكتب — desktop app architecture patterns",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-25",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تحديث تلقائي",
+  "name_en": "Auto update channel",
+  "status": "documented",
+  "what": "electron-updater مع app-update.yml داخل resources، و77 مرساة autoUpdater في الحزمة الرئيسية — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تطبيق سطح مكتب يحدّث نفسه",
+  "how": "electron-updater مع latest.yml موقّع؛ اعرض التحديث للمستخدم ولا تثبّت بصمت أثناء تسجيل.",
+  "params": "—",
+  "install": "npm install electron-updater",
+  "requires": [
+   "node"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "auto update",
+   "تحديث",
+   "electron-updater"
+  ],
+  "section": "معمارية تطبيقات سطح المكتب — desktop app architecture patterns",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-26",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تقارير الأعطال",
+  "name_en": "Crash and error reporting",
+  "status": "documented",
+  "what": "crashReporter مع Sentry في العملية الرئيسية والواجهة — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تطبيق منشور لمستخدمين",
+  "how": "crashReporter.start مع @sentry/electron، وإخفاء البيانات الشخصية، وأخذ الموافقة.",
+  "params": "—",
+  "install": "npm install @sentry/electron",
+  "requires": [
+   "node"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "crash reporting",
+   "sentry",
+   "أعطال"
+  ],
+  "section": "معمارية تطبيقات سطح المكتب — desktop app architecture patterns",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-27",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تكامل النظام",
+  "name_en": "OS integration set",
+  "status": "documented",
+  "what": "safeStorage للأسرار، ومخطط canva:// للروابط العميقة، وprotocol.handle، وTray، وإشعارات، وnativeTheme، وقاموس إملائي — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تطبيق يشعر بأنه أصلي",
+  "how": "app.setAsDefaultProtocolClient('myapp') مع second-instance؛ safeStorage.encryptString للرموز؛ nativeTheme.shouldUseDarkColors؛ session.addWordToSpellCheckerDictionary.",
+  "params": "—",
+  "install": "electron",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "deep link",
+   "safeStorage",
+   "tray",
+   "notifications",
+   "dark mode"
+  ],
+  "section": "معمارية تطبيقات سطح المكتب — desktop app architecture patterns",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-28",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "مثبّت NSIS ثنائي المعمارية",
+  "name_en": "Dual-architecture NSIS payload",
+  "status": "documented",
+  "what": "مثبّت Canva يحمل app-64.7z وapp-32.7z ويختار حسب الجهاز — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "توزيع تطبيق لويندوز 32 و64 بملف واحد",
+  "how": "electron-builder بهدف nsis وarch [x64, ia32]؛ افحص الناتج بـ installer_triage.py scan وunpack.",
+  "params": "—",
+  "install": "electron-builder",
+  "requires": [
+   "python3",
+   "7zip"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "nsis",
+   "installer",
+   "مثبت",
+   "windows"
+  ],
+  "section": "معمارية المثبّتات — installer architecture",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-29",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "مثبّت تمهيدي عبر الإنترنت",
+  "name_en": "Online bootstrap installer",
+  "status": "documented",
+  "what": "CapCut: مثبّت 2.9 MB فيه shell_downloader (libcurl وBoringSSL وتثبيت مفتاح عام sha256//) وفحص MD5 ومدقق توقيع وعامل خلفية و23 لغة؛ Adobe: ملف إعداد Creative Cloud مضغوط بـ UPX — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "حين يكون التطبيق كبيرًا ويتغير كثيرًا",
+  "how": "مثبّت صغير ينزّل الحمولة عبر HTTPS مع تثبيت المفتاح، ويتحقق من SHA-256 وتوقيع Authenticode قبل التشغيل؛ ووفّر مثبّتًا كاملًا بلا إنترنت أيضًا.",
+  "params": "—",
+  "install": "NSIS + libcurl",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "bootstrapper",
+   "downloader",
+   "مثبت",
+   "capcut",
+   "adobe"
+  ],
+  "section": "معمارية المثبّتات — installer architecture",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-30",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "فرز المثبّت والتحقق من توقيعه",
+  "name_en": "Installer triage and signature check",
+  "status": "proven",
+  "what": "التحقق من توقيع Authenticode (الثلاثة صالحة: Adobe وCanva وBytedance) ثم كشف نوع المثبّت وفكّه بلا تشغيل — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "قبل تحليل أي برنامج أو تثبيته",
+  "how": "PowerShell Get-AuthenticodeSignature أو osslsigncode verify؛ ثم installer_triage.py scan وunpack --authorized؛ لا تشغّل المثبّت أبدًا.",
+  "params": "—",
+  "install": "7-Zip; PowerShell or osslsigncode",
+  "requires": [
+   "python3",
+   "7zip"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "authenticode",
+   "signature",
+   "توقيع",
+   "installer triage"
+  ],
+  "section": "معمارية المثبّتات — installer architecture",
+  "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ }
+]

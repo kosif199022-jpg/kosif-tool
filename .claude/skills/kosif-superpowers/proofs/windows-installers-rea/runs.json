@@ -1,0 +1,158 @@
+{
+ "date": "2026-10-18",
+ "host": "Windows 11 x64, Node 24.21.0, REA 6.7.0 (npm, scratch folder), 7-Zip 26.03",
+ "rea_doctor": "healthy=false: node/host ok; hopper, ghidra, ida, jadx, kuna missing",
+ "runs": [
+  {
+   "command": "inspect-artifact",
+   "target": "CapCut_…_installer.exe (NSIS, Bytedance-signed)",
+   "output_sha256": "f2d5222c0b25c1c180fdf4bddb1dda628c35edb7909655fe100b4c52989484c2",
+   "output_bytes": 6897,
+   "status": "evidence",
+   "evidence_id": "ev_094a97cf6f571a31f4a8decbcd03b7e60ed9814498f9d5befb77b90de93c63c7",
+   "provider": "rea-artifact-graph",
+   "target_sha256": "7e7c5beded462beb4711b04cd506ccc24673d0a637dd1cb80a562b3870e40a79",
+   "note": "root PE only: 'Artifact has no child container entries' — the installer payload is invisible"
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "CapCut_…_installer.exe (NSIS, Bytedance-signed)",
+   "output_sha256": "38fd0c8d37aa904d8e01b4442c6c9e832a5279ba982c36bd1c03cd2248c2c757",
+   "output_bytes": 6104,
+   "status": "evidence",
+   "evidence_id": "ev_835b720468dc1f0a06992649321d3730ffa21da13ebf1bd85c4b0a83dc0ad4b7",
+   "provider": "rea-pe-resources",
+   "target_sha256": "7e7c5beded462beb4711b04cd506ccc24673d0a637dd1cb80a562b3870e40a79",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-artifact",
+   "target": "CapCut_…_installer.exe (NSIS, Bytedance-signed)",
+   "output_sha256": "a076d3b447101f630fd048e85b6fc2153cdd3ec1e3b58529a1050553e463460f",
+   "output_bytes": 1898,
+   "status": "evidence",
+   "evidence_id": "ev_2802654b8f2110fa2bd55f9f0b3bef0be2d2004170f2d4bf9a6a65351b838f73",
+   "provider": "rea-dotnet-static",
+   "target_sha256": "7e7c5beded462beb4711b04cd506ccc24673d0a637dd1cb80a562b3870e40a79",
+   "note": "not-managed: no CLI directory"
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "adobe-premiere-pro-26-10.exe (UPX stub, Adobe-signed)",
+   "output_sha256": "cdff154ba6e8f99e19b27879397bc84430ba020f7200d8af6c947adde3f48e0f",
+   "output_bytes": 6849,
+   "status": "evidence",
+   "evidence_id": "ev_596c50fba174b091b0f07f19ba511805b8aea61e20843f8932d6d63ab184ee7f",
+   "provider": "rea-artifact-graph",
+   "target_sha256": "25565eeb1cca35eb873b3ac939b79d3535f8ede1049b049b1e8a271762f63297",
+   "note": "root PE only: 'Artifact has no child container entries' — the installer payload is invisible"
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "adobe-premiere-pro-26-10.exe (UPX stub, Adobe-signed)",
+   "output_sha256": "44bae74829d07985a4fdfdc8045673bc67ff4c2178aa7a61a0650edd3af4ca1a",
+   "output_bytes": 364,
+   "status": "refused",
+   "code": "invalid_request",
+   "reason": "PE section raw bytes overlap headers.",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-artifact",
+   "target": "adobe-premiere-pro-26-10.exe (UPX stub, Adobe-signed)",
+   "output_sha256": "b38b1921594b5f1f141926079525f0442b7f65ba63e6d09a55a0fab620ca2e28",
+   "output_bytes": 1862,
+   "status": "evidence",
+   "evidence_id": "ev_f6c92cbf7656b13d0eb90d339c8ecefd38290485dd4c66c382d09724abe33717",
+   "provider": "rea-dotnet-static",
+   "target_sha256": "25565eeb1cca35eb873b3ac939b79d3535f8ede1049b049b1e8a271762f63297",
+   "note": "not-managed: no CLI directory"
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "canva-1-126-1.exe (NSIS, Canva-signed)",
+   "output_sha256": "ef072c2174bc1178b9b5566ad669cce913efbd8dc7a2c1d16b998de592768605",
+   "output_bytes": 6809,
+   "status": "evidence",
+   "evidence_id": "ev_ca535bc827d7eba33dc4b32b6ab1f47d79ab58449a0ced9881f876750343cee7",
+   "provider": "rea-artifact-graph",
+   "target_sha256": "20530653cef67f160d623e0586f8955c2f9114538c35517007293173599caba6",
+   "note": "root PE only: 'Artifact has no child container entries' — the installer payload is invisible"
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "canva-1-126-1.exe (NSIS, Canva-signed)",
+   "output_sha256": "d102631e129861e9bf4cb7271fd1d94ec1e41e267731b0f7102b6ee313bf3c33",
+   "output_bytes": 28099,
+   "status": "evidence",
+   "evidence_id": "ev_d2d6419a8a3e7ee5e49750f89dea5c2ec276525fdcf9d20d3ab336a70737d331",
+   "provider": "rea-pe-resources",
+   "target_sha256": "20530653cef67f160d623e0586f8955c2f9114538c35517007293173599caba6",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-artifact",
+   "target": "canva-1-126-1.exe (NSIS, Canva-signed)",
+   "output_sha256": "0d3d276124c899de9142b1a7249f7228fc0ae8d551f3ca5167c4b51a835693cb",
+   "output_bytes": 632,
+   "status": "refused",
+   "code": "resource_constraint",
+   "reason": "Managed static inspection requires an eagerly retained PE snapshot within its input byte budget.",
+   "note": ""
+  },
+  {
+   "command": "inspect-electron-fuses",
+   "target": "Canva.exe (from app-64.7z, 238 MB)",
+   "output_sha256": "30659ae188a1e3c299eba07cb8ebb86ac28f6c239ce9e09b68426f99b092d03a",
+   "output_bytes": 3976,
+   "status": "evidence",
+   "evidence_id": "ev_91344b212e11d6574c591519ad578d9765c602b73be930eddd93e75e1d6b1893",
+   "provider": "electron-fuses",
+   "target_sha256": "e19545b8fe3695347ffd57217eaecd68c9c40d4814e8c301959edfd5c0e1ca57",
+   "note": "RunAsNode off, NodeOptions off, inspect args off; cookie encryption, ASAR integrity, only-load-from-ASAR, file-protocol privileges, WASM trap handlers on"
+  },
+  {
+   "command": "analyze-javascript-application --source-path dist/preload.js --source-path package.json",
+   "target": "app.asar (Canva 1.126.1, 998 files)",
+   "output_sha256": "9eb60f3f0a7e866b394a8f33bf47f66dc19bee98ee89f8ad94a194c661595711",
+   "output_bytes": 15955608,
+   "status": "evidence",
+   "evidence_id": "ev_b31c318785b38524cb4f4d6be30168d225c58d461335fcc7dda6ddb3206a608e",
+   "provider": "rea-javascript-application",
+   "target_sha256": "13bb2fea34726de1f7117615979278f0854c507ba9392eab17e3340cc30152a6",
+   "note": "contextBridge API 'ElectronBridge' with 2 members (onPageBuildIdentityReady, requestMessagePort); 1 dynamic ipc send"
+  },
+  {
+   "command": "analyze-javascript-application --source-path dist/main.js",
+   "target": "app.asar",
+   "output_sha256": "13180b8d85175e5be4d6008e0750dc424c52ec8cbe1507199d255c11b399ebc3",
+   "output_bytes": 67999415,
+   "status": "evidence",
+   "evidence_id": "ev_f0758c9dfec8cf479ecc6747063e7bf54e3d14152a042597cb69eca469e08107",
+   "provider": "rea-javascript-application",
+   "target_sha256": "13bb2fea34726de1f7117615979278f0854c507ba9392eab17e3340cc30152a6",
+   "note": "6.77 MB parsed, 2,199 modules, 906,298 AST nodes, 6,436 findings; per-file semantic cap 20,000 hit; 0 Electron API identities proven (minified aliases)"
+  },
+  {
+   "command": "analyze-javascript-application (whole asar, default limits)",
+   "target": "app.asar",
+   "output_sha256": "7e15f651b814a9d30188a1893415a3d3d6051c88fab581ab7ad678d552571747",
+   "output_bytes": 115338429,
+   "status": "refused",
+   "code": "provider_timeout",
+   "reason": "Analysis took too long. Try a smaller request, then run `rea doctor` if it continues.",
+   "note": "timed out at 300 s on a vendor chunk (368/804 files)"
+  }
+ ],
+ "bridge_receipt": {
+  "command": "rea_bridge.py run electron-fuses Canva.exe --authorized --output fuses.json",
+  "status": "executed_not_verified",
+  "launcher": "node + rea-agents/scripts/rea.mjs (no cmd.exe)",
+  "result_sha256": "dcee67438f7924797cdcfb4c1594ab555d58bb6b4e6932be90e91266cd162116"
+ },
+ "authenticode": {
+  "adobe-premiere-pro-26-10.exe": "Valid — CN=Adobe Inc.",
+  "canva-1-126-1.exe": "Valid — CN=Canva",
+  "CapCut_…_installer.exe": "Valid — CN=Bytedance Pte. Ltd."
+ }
+}

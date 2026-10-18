@@ -2423,8 +2423,7 @@
   "install": "",
   "requires": [
    "ffmpeg",
-   "pip:rembg",
-   "pip:chromadb"
+   "pip:rembg"
   ],
   "license": "",
   "proof": [

@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 4626
+   "count": 4662
   },
   {
    "id": "dom:motion",
@@ -266,6 +266,64 @@
    "label": "build"
   },
   {
+   "id": "fam:app-feature-transfer",
+   "kind": "family",
+   "label": "Analyzed app capabilities",
+   "ar": "قدرات التطبيقات المحللة",
+   "prefix": "APPX",
+   "count": 30,
+   "proven": 19,
+   "status": {
+    "proven": 19,
+    "documented": 11
+   }
+  },
+  {
+   "id": "req:pip:opencv",
+   "kind": "requirement",
+   "label": "pip:opencv",
+   "ar": "تحليل الفيديو: قطعات، تدفق بصري، تتبّع",
+   "en": "video analysis: cuts, optical flow, tracking",
+   "install": "pip install opencv-python-headless",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:pip:numpy",
+   "kind": "requirement",
+   "label": "pip:numpy",
+   "ar": "حسابات عددية على الإطارات والصوت",
+   "en": "numeric work on frames and audio",
+   "install": "pip install numpy",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:7zip",
+   "kind": "requirement",
+   "label": "7zip",
+   "ar": "فك المثبّتات والأرشيفات بلا تشغيلها",
+   "en": "unpack installers and archives without running them",
+   "install": "winget install 7zip.7zip | apt-get install -y 7zip | brew install sevenzip",
+   "req_kind": "bin"
+  },
+  {
+   "id": "req:pip:faster-whisper",
+   "kind": "requirement",
+   "label": "pip:faster-whisper",
+   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
+   "en": "speech-to-text with word timestamps (Arabic)",
+   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
+   "req_kind": "model"
+  },
+  {
+   "id": "req:pip:pillow",
+   "kind": "requirement",
+   "label": "pip:pillow",
+   "ar": "رسم الصور والنص العربي المشكَّل (raqm)",
+   "en": "image drawing and shaped Arabic text (raqm)",
+   "install": "pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))",
+   "req_kind": "pip"
+  },
+  {
    "id": "fam:apps-artifacts",
    "kind": "family",
    "label": "Apps & artifacts",
@@ -354,15 +412,6 @@
    "req_kind": "pip"
   },
   {
-   "id": "req:pip:pillow",
-   "kind": "requirement",
-   "label": "pip:pillow",
-   "ar": "رسم الصور والنص العربي المشكَّل (raqm)",
-   "en": "image drawing and shaped Arabic text (raqm)",
-   "install": "pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))",
-   "req_kind": "pip"
-  },
-  {
    "id": "req:pip:matplotlib",
    "kind": "requirement",
    "label": "pip:matplotlib",
@@ -401,15 +450,6 @@
     "install": 7,
     "seen": 5
    }
-  },
-  {
-   "id": "req:pip:faster-whisper",
-   "kind": "requirement",
-   "label": "pip:faster-whisper",
-   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
-   "en": "speech-to-text with word timestamps (Arabic)",
-   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
-   "req_kind": "model"
   },
   {
    "id": "req:network",
@@ -541,15 +581,6 @@
     "seen": 13,
     "idea": 1
    }
-  },
-  {
-   "id": "req:pip:numpy",
-   "kind": "requirement",
-   "label": "pip:numpy",
-   "ar": "حسابات عددية على الإطارات والصوت",
-   "en": "numeric work on frames and audio",
-   "install": "pip install numpy",
-   "req_kind": "pip"
   },
   {
    "id": "script:scripts/mimic/mm_color.py",
@@ -845,15 +876,6 @@
    }
   },
   {
-   "id": "req:pip:opencv",
-   "kind": "requirement",
-   "label": "pip:opencv",
-   "ar": "تحليل الفيديو: قطعات، تدفق بصري، تتبّع",
-   "en": "video analysis: cuts, optical flow, tracking",
-   "install": "pip install opencv-python-headless",
-   "req_kind": "pip"
-  },
-  {
    "id": "fam:maps-geo",
    "kind": "family",
    "label": "Maps & geo",
@@ -1011,15 +1033,6 @@
    }
   },
   {
-   "id": "req:pip:chromadb",
-   "kind": "requirement",
-   "label": "pip:chromadb",
-   "ar": "مخزن متجهات للاسترجاع",
-   "en": "vector store for RAG",
-   "install": "pip install chromadb",
-   "req_kind": "pip"
-  },
-  {
    "id": "fam:planning-execution",
    "kind": "family",
    "label": "Planning & execution",
@@ -1162,11 +1175,11 @@
    "label": "Software investigation (REA)",
    "ar": "فحص البرامج والهندسة العكسية",
    "prefix": "REA",
-   "count": 235,
-   "proven": 24,
+   "count": 241,
+   "proven": 30,
    "status": {
     "documented": 163,
-    "proven": 24,
+    "proven": 30,
     "install": 48
    }
   },
@@ -1225,13 +1238,9 @@
    "req_kind": "bin"
   },
   {
-   "id": "req:engine:frida",
-   "kind": "requirement",
-   "label": "engine:frida",
-   "ar": "تجهيز العمليات في وقت التشغيل",
-   "en": "runtime instrumentation",
-   "install": "pip install frida-tools (consented target process only)",
-   "req_kind": "bin"
+   "id": "script:scripts/rea_bridge.py",
+   "kind": "script",
+   "label": "scripts/rea_bridge.py"
   },
   {
    "id": "fam:story-direction-ideas",
@@ -1630,14 +1639,14 @@
    "label": "scripts/creative_quality_gate.py"
   },
   {
-   "id": "script:scripts/mimic/mm_img.py",
-   "kind": "script",
-   "label": "scripts/mimic/mm_img.py"
-  },
-  {
    "id": "script:scripts/mimic/mm_common.py",
    "kind": "script",
    "label": "scripts/mimic/mm_common.py"
+  },
+  {
+   "id": "script:scripts/mimic/mm_img.py",
+   "kind": "script",
+   "label": "scripts/mimic/mm_img.py"
   },
   {
    "id": "script:scripts/mimic/mm_video.py",
@@ -1659,6 +1668,11 @@
    "id": "script:scripts/python_package_probe.py",
    "kind": "script",
    "label": "scripts/python_package_probe.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_installer_triage.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_rea_routing.py",
@@ -1744,6 +1758,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_rea_bridge.py"
   }
  ],
  "edges": [
@@ -1950,6 +1969,66 @@
    "to": "req:key:unspecified",
    "rel": "needs",
    "w": 2
+  },
+  {
+   "from": "root",
+   "to": "dom:build",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:build",
+   "to": "fam:app-feature-transfer",
+   "rel": "has",
+   "w": 30
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:ffmpeg",
+   "rel": "needs",
+   "w": 13
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:pip:opencv",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:pip:numpy",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:7zip",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:pip:faster-whisper",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:pip:pillow",
+   "rel": "needs",
+   "w": 1
   },
   {
    "from": "root",
@@ -3609,13 +3688,13 @@
   },
   {
    "from": "fam:pixel-retro-stylized",
-   "to": "req:pip:chromadb",
+   "to": "req:npm:three",
    "rel": "needs",
    "w": 2
   },
   {
    "from": "fam:pixel-retro-stylized",
-   "to": "req:npm:three",
+   "to": "req:fonts:arabic",
    "rel": "needs",
    "w": 2
   },
@@ -3989,13 +4068,13 @@
    "from": "dom:code",
    "to": "fam:software-investigation",
    "rel": "has",
-   "w": 235
+   "w": 241
   },
   {
    "from": "fam:software-investigation",
    "to": "req:npm:rea",
    "rel": "needs",
-   "w": 235
+   "w": 241
   },
   {
    "from": "fam:software-investigation",
@@ -4035,9 +4114,15 @@
   },
   {
    "from": "fam:software-investigation",
-   "to": "req:engine:frida",
+   "to": "req:python3",
    "rel": "needs",
-   "w": 9
+   "w": 10
+  },
+  {
+   "from": "fam:software-investigation",
+   "to": "script:scripts/rea_bridge.py",
+   "rel": "runs",
+   "w": 1
   },
   {
    "from": "root",
@@ -4881,13 +4966,13 @@
   },
   {
    "from": "script:scripts/boot.py",
-   "to": "script:scripts/requirements.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/boot.py",
-   "to": "script:scripts/powers.py",
+   "to": "script:scripts/requirements.py",
    "rel": "imports",
    "w": 1
   },
@@ -4983,7 +5068,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -4995,7 +5080,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5007,42 +5092,18 @@
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_render_text.py",
    "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_render_text.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_textfx.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_render_text.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -5055,13 +5116,31 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_textfx.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_render_text.py",
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
   },
@@ -5079,12 +5158,24 @@
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_render_text.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_sheets.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -5092,12 +5183,6 @@
   {
    "from": "script:scripts/mimic/mm_sheets.py",
    "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_sheets.py",
-   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5109,6 +5194,12 @@
   },
   {
    "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
@@ -5122,12 +5213,6 @@
   {
    "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
@@ -5139,31 +5224,19 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_text.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
   },
@@ -5176,6 +5249,18 @@
   {
    "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_text.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
    "rel": "imports",
    "w": 1
   },
@@ -5214,6 +5299,12 @@
    "to": "script:scripts/check_skill.py",
    "rel": "graphify:indirect_call",
    "w": 0.85
+  },
+  {
+   "from": "script:scripts/powers.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
+   "rel": "tested_by",
+   "w": 1
   },
   {
    "from": "script:scripts/powers.py",
@@ -5362,6 +5453,12 @@
   {
    "from": "script:scripts/motion_reference_probe.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/rea_bridge.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
    "rel": "tested_by",
    "w": 1
   }

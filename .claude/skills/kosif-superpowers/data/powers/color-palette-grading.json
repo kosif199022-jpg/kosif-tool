@@ -2854,9 +2854,7 @@
   "how": "Measure in CIELAB: chroma per L* zone with edges [0, 15, 35, 55, 75, 100] (print the whole curve); median + MAD, not mean + std (skew inflated a mean ~2×, 36.9 vs 17.5); contrast = std(L*); background share = pixels below L* 10 as its own statistic; mask UI chrome (letterbox, status bar, icons) first. Generate neutral ('Colour: none. Render neutral.') and grade afterwards: in the source, three paid generations moved midtone a* only +1.9…+0.3 against a +24.9 target, while one measured pass hit chroma MAE 1.88. Apply: direct measurement beat a baked LUT (MAE 1.58); anchor tone instead of CDF matching when histograms differ (background kept 69 % vs 26 %); grade in batches of 6 frames (48 ran out of memory); never ship on MAE alone, check the background share too. One pack per genre.",
   "params": "L* zones 0/15/35/55/75/100; median+MAD; batch 6 frames",
   "install": "",
-  "requires": [
-   "pip:chromadb"
-  ],
+  "requires": [],
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/taste-distillation/SKILL.md",

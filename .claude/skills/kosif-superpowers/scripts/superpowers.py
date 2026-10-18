@@ -435,5 +435,6 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    signal.signal(signal.SIGPIPE, signal.SIG_DFL)  # quiet exit when piped into head
+    if hasattr(signal, "SIGPIPE"):  # absent on Windows
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)  # quiet exit when piped into head
     sys.exit(main())
