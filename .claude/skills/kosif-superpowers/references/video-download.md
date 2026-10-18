@@ -38,3 +38,7 @@ python3 scripts/fetch_video.py --update                         # عند تغي�
 - **V34:** جزء فقط من الفيديو (`--download-sections`)، ترجمة عربية/إنجليزية SRT مدمجة كـmov_text، `c --batch` مع حفظ الروابط الفاشلة، `c --history`.
 - **الاستوديو `c --studio`** بوصفات من الكتالوج: قص بلا فقد أو دقيق، ضغط لحجم 16/25/50MB بمحاولة ثانية عند التجاوز، ريلز 9:16 بخلفية مموهة (FMT: gblur ثم boxblur ثم تصغير/تكبير)، GIF بميزانية 15MB (FMT palettegen)، غلاف JPG، جهارة -14 LUFS بمرورين (BEAT-01)، قص الصمت (silencedetect + select)، كتم، صوت فقط.
 - **الاختبار:** في الحاوية بمحاكي ffmpeg يرفض libx264 وVideoToolbox، وyt-dlp وهمي لمسارات التحميل، ومكتبة yt-dlp الحقيقية لاختيار الصيغ. لم يُشغَّل على آيفون حقيقي.
+
+## 100-source licensed media discovery — NEW
+
+See [100 source websites and license checks](stock-media-100.md). Before acquiring stock for montage use `scripts/media_sources.py search` then `plan` and `download` with verified per-item `--rights` and `--evidence-url`. This builds an asset-level rights and SHA-256 manifest and reuses the current yt-dlp downloader. Never infer permissions merely because a site is indexed.
