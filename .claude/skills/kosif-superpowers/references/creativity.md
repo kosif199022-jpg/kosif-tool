@@ -149,3 +149,6 @@ Then build the chosen one as a thin slice (one scene rendered and checked) befor
 - Owner material: KOSIF SEE v1.7.5 product-strategy and finance-data packs (owner; rewritten); this catalog's own proofs `proofs/data-story` and `proofs/arabic-voice-kinetic`.
 - Graph confidence labels (parsed / inferred / ambiguous) follow [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) documentation (Apache-2.0 and MIT files present).
 - Session-2026-10-16 distillations used: thinking-methods §4, ecc-skills-a 2.13, ecc-skills-b 2.8 and 2.12, see-core §4.
+
+## KOSIF Inventive Engineering Lab
+Use `python3 scripts/invention_lab.py invent "precise problem" --count 20 --constraint "hard restriction"` for deterministic technique-by-lens candidates, explicit hypotheses, metrics and rejection criteria. Source atlas: [50 projects in font fidelity and innovation](font-innovation-50.md). The priority score is a sorting heuristic, not a validated novelty or quality finding. Select 2–3 candidates and test against baselines rather than generating hundreds of unsupported claims.
