@@ -1,0 +1,23 @@
+meta {
+  name: reject bad item
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/items
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {"name": "", "price": -1}
+}
+
+assert {
+  res.status: eq 422
+}

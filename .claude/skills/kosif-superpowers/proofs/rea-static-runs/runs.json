@@ -194,6 +194,46 @@
    "output_sha256": "7e3c22d44af03a608fed63d640899f3a56793edf7e6cb365068677a7dae573bf",
    "output_bytes": 3362,
    "note": "native listener source locations"
+  },
+  {
+   "command": "inspect-pcap-client",
+   "target": "tshark/capinfos on PATH",
+   "exit": 0,
+   "output_sha256": "d70d6ff3880c471e0ae5795e7dd6f39aa86bbc47e334fc1e05e0643bb34e922e",
+   "output_bytes": 886,
+   "note": "TShark 4.2.2 + capinfos detected (read-only)"
+  },
+  {
+   "command": "inspect-packet-fields",
+   "target": "Wireshark field DB",
+   "exit": 0,
+   "output_sha256": "31cb55d78065bfd632169bb39abc27a4e024e75c88d0c9d86d108d72df20591c",
+   "output_bytes": 4066,
+   "note": "listed tcp protocol registrations"
+  },
+  {
+   "command": "inspect-signal-decoders",
+   "target": "sigrok-cli 0.7.2",
+   "exit": 0,
+   "output_sha256": "f3c1fc4b257bd946f7857821b46f93ba033386e24617d6a8a563e75f7462d3d0",
+   "output_bytes": 4228,
+   "note": "found uart among 111 sigrok decoders"
+  },
+  {
+   "command": "inspect-apktool-client",
+   "target": "apktool on PATH",
+   "exit": 0,
+   "output_sha256": "a6f4410839f8360a65c0385198230ee22ba9f133322bad1ce655ab7624cb6868",
+   "output_bytes": 1003,
+   "note": "apktool 2.7.0 detected (no APK decoded)"
+  },
+  {
+   "command": "inspect-adb-client",
+   "target": "adb on PATH",
+   "exit": 0,
+   "output_sha256": "b313c89d4cd5f48290671a54a1585717bd740ecca962f2357ae77a18a3e65f9b",
+   "output_bytes": 703,
+   "note": "adb 34.0.4 detected; no device contacted"
   }
  ],
  "refused_or_unavailable": {
@@ -208,5 +248,14 @@
   "inspect-managed-artifact": "target was an ELF, not PE/CLI → capability_unavailable (correct refusal)",
   "compare-application-versions": "input shape needs two complete Evidence records in left/right; not retried",
   "export-web-scripts": "needs a saved page/scenario capture JSON, not a bundle analysis record"
+ },
+ "engines_installed_2026-10-18": {
+  "gdb": "15.1",
+  "wabt": "1.0.34 (REA pins 1.0.42)",
+  "tshark": "4.2.2",
+  "sigrok-cli": "0.7.2",
+  "apktool": "2.7.0",
+  "adb": "34.0.4",
+  "note": "benign read-only calls; native disassembly still needs Ghidra/Hopper/IDA"
  }
 }

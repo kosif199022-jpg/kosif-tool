@@ -1337,6 +1337,19 @@
    "\\bargostranslate\\b"
   ]
  },
+ "npm:bruno": {
+  "kind": "npm",
+  "detect": "@usebruno/cli",
+  "install": "npm i -g @usebruno/cli@4.2.1  (MIT; the desktop app is a separate optional download)",
+  "ar": "اختبار API بمجموعات نصية في git",
+  "en": "API testing with git-tracked collections (Bruno CLI)",
+  "patterns": [
+   "\\bbruno\\b",
+   "@usebruno",
+   "\\bbru run\\b",
+   "\\.bru\\b"
+  ]
+ },
  "7zip": {
   "kind": "bin",
   "detect": "7z",

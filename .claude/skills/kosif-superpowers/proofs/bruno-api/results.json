@@ -1,0 +1,76 @@
+{
+ "bruno_cli": "4.2.1",
+ "date": "2026-10-18",
+ "server": "proofs/bruno-api/server.py (stdlib, 127.0.0.1:8787)",
+ "full_run": {
+  "summary": {
+   "totalRequests": 6,
+   "passedRequests": 6,
+   "failedRequests": 0,
+   "totalAssertions": 8,
+   "passedAssertions": 8,
+   "totalTests": 3,
+   "passedTests": 3
+  },
+  "requests": [
+   [
+    "01-health.bru",
+    200
+   ],
+   [
+    "02-login.bru",
+    200
+   ],
+   [
+    "03-list-items.bru",
+    200
+   ],
+   [
+    "04-create-item.bru",
+    201
+   ],
+   [
+    "05-get-item.bru",
+    200
+   ],
+   [
+    "06-reject-bad-item.bru",
+    422
+   ]
+  ],
+  "reports": {
+   "json": "written",
+   "junit_testsuites": 6,
+   "html": "written"
+  }
+ },
+ "csv_run": {
+  "iterations": 3,
+  "created": [
+   [
+    "فيديو إعلان"
+   ],
+   [
+    "موشن شعار"
+   ],
+   [
+    "ريل دعاء"
+   ]
+  ]
+ },
+ "failure_gate": {
+  "case": "login with wrong password, --bail",
+  "exit_code": 1
+ },
+ "openapi_import": {
+  "source": "openapi.yaml",
+  "bru_files": 10,
+  "grouped_by": "tags (auth, items, system)"
+ },
+ "docs_generate": "standalone HTML written (all environments)",
+ "postman_converter": {
+  "package": "@usebruno/converters",
+  "issues": 0,
+  "translated": "pm.test/pm.response.to.have.status/pm.environment.set → test/expect(res.getStatus())/bru.setEnvVar"
+ }
+}

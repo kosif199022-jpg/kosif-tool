@@ -1,0 +1,29 @@
+meta {
+  name: list items
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/items
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+assert {
+  res.status: eq 200
+  res.body.count: gte 1
+}
+
+tests {
+  test("every item has id, name and a non-negative price", function () {
+    for (const it of res.getBody().items) {
+      expect(it).to.have.all.keys("id", "name", "price");
+      expect(it.price).to.be.at.least(0);
+    }
+  });
+}

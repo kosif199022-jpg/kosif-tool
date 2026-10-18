@@ -2872,6 +2872,26 @@
    "caveats_en": "English-centric tells; never let it alter caption timing, legal wording or quoted figures; credit the source in the brief.",
    "url": "https://github.com/blader/humanizer",
    "verified_from": "https://github.com/blader/humanizer (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "usebruno/bruno",
+   "url": "https://github.com/usebruno/bruno",
+   "name": "Bruno",
+   "stars_k": 47.7,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "Open-source API client and testing IDE: collections stored as plain-text Bru files in git, with a CLI that runs them as acceptance tests with assertions, Chai tests, data files and JSON/JUnit/HTML reports.",
+   "summary_ar": "عميل وبيئة اختبار API مفتوحة: المجموعات ملفات نصية في git، وأداة سطر أوامر تشغّلها كاختبارات قبول مع تأكيدات واختبارات Chai وبيانات وتقارير.",
+   "capability": "orchestrate",
+   "domain": "agent-workflows",
+   "kosif_use_en": "Verify any HTTP API the project exposes or depends on (render service, asset API) as git-reviewed acceptance tests in CI, with no account or cloud.",
+   "kosif_use_ar": "تحقق من أي واجهة HTTP يستخدمها المشروع كاختبارات قبول مُراجَعة في git وCI بلا حساب أو سحابة.",
+   "integration_en": "npm i -g @usebruno/cli; author <name>.bru files + bruno.json; bru run --env <env> --reporter-junit out.xml.",
+   "playbooks": [
+    "playbooks/code.md"
+   ],
+   "caveats_en": "gRPC/WebSocket/SOAP, mock servers, Bruno AI and Apps run in the desktop app, not the CLI; only test APIs you own or are permitted to test.",
+   "verified_from": "https://github.com/usebruno/bruno + bru CLI 4.2.1 run here 2026-10-18"
   }
  ]
 }

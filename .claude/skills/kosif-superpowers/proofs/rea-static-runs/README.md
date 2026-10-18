@@ -67,3 +67,8 @@ $R list-browser-targets http://127.0.0.1:9333 --json
 | `export-web-scripts` | needs a saved page/scenario capture JSON, not a bundle analysis record |
 
 **What it does not prove:** no functional cloning of any program, no native disassembly (needs a bring-your-own engine), and nothing about targets the user has no right to inspect. Raw outputs contain local paths and were not committed; `runs.json` keeps the evidence ids and output digests.
+
+
+## إضافة المحركات 2026-10-18 / engines addendum
+بعد تثبيت gdb وwabt وtshark وsigrok-cli وapktool وadb، نجحت خمسة أوامر قراءة فقط إضافية: inspect-pcap-client، inspect-packet-fields، inspect-signal-decoders، inspect-apktool-client، inspect-adb-client (الأرقام في runs.json). WABT المثبت 1.0.34 وREA يطلب 1.0.42 بالضبط، فبقي inspect-wasm-artifact غير متاح. التفكيك الأصلي ما زال يحتاج Ghidra/Hopper/IDA وهي غير قابلة للتنزيل عبر الوسيط هنا.
+After installing the engines, five more read-only commands succeeded (see runs.json). WABT here is 1.0.34 while REA pins 1.0.42, so inspect-wasm-artifact stays unavailable; native disassembly still needs Ghidra/Hopper/IDA, which cannot be downloaded through the proxy here.

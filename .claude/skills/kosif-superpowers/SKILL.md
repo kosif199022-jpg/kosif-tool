@@ -6,11 +6,11 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 # قواك الخارقة — KOSIF Superpowers
 
-**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,555 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,659 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=4555 families=51 domains=10 styles=288 watched=253 proven=768 ready=636 install=963 key=175 seen=609 documented=1333 idea=71 -->
-**الأرقام / counts:** 4,555 قدرة في 51 عائلة و10 مجالات — ✅ 768 · 🟢 636 · 📦 963 · 🔑 175 · 👁 609 · 📄 1,333 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=4659 families=52 domains=10 styles=288 watched=253 proven=788 ready=636 install=965 key=176 seen=609 documented=1414 idea=71 -->
+**الأرقام / counts:** 4,659 قدرة في 52 عائلة و10 مجالات — ✅ 788 · 🟢 636 · 📦 965 · 🔑 176 · 👁 609 · 📄 1,414 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.
@@ -77,7 +77,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 **مثبّتات Windows وتطبيقات سطح المكتب (جديد):** REA يرى مثبّت NSIS/Inno/UPX ملفًا واحدًا بلا محتوى، فابدأ بـ `python $SKILL_DIR/scripts/installer_triage.py scan <المجلد>` ثم `unpack <ملف> --to <مجلد جديد> --authorized` (7-Zip، بلا تشغيل) ثم `fingerprint <app.asar>` و`route <المجلد>` لتعرف أمر REA لكل ملف. على Windows استخدم `python` بدل `python3`، والجسر يشغّل REA عبر node بلا cmd.exe (`REA_BIN`، `--timeout`، `--source-path`). الدروس والدليل: [proofs/windows-installers-rea](proofs/windows-installers-rea/README.md).
 
-مرجع المصدر: [morluto/rea](https://github.com/morluto/rea) (MIT لكوده الأصلي؛ تبعياته لها شروطها). أوامر REA v6.7.0 الـ153 كلها مسجّلة قدراتٍ في عائلة [software-investigation](references/powers/software-investigation.md) (REA-001…REA-153)، ومعها 6 إضافات KOSIF لفرز مثبّتات Windows (REA-154…REA-159، ✅ شُغّلت على Windows 11): 19 منها ✅ شُغّلت هنا فعلًا ([الدليل](proofs/rea-static-runs/README.md))، والباقي 📦 أو 📄 حسب المحرك الخارجي المطلوب؛ `python3 $SKILL_DIR/scripts/rea_bridge.py catalog <كلمة>` يسردها بلا تنفيذ.
+مرجع المصدر: [morluto/rea](https://github.com/morluto/rea) (MIT لكوده الأصلي؛ تبعياته لها شروطها). أوامر REA v6.7.0 الـ153 كلها مسجّلة قدراتٍ في عائلة [software-investigation](references/powers/software-investigation.md) (REA-001…REA-153): 19 منها ✅ شُغّلت هنا فعلًا ([الدليل](proofs/rea-static-runs/README.md))، والباقي 📦 أو 📄 حسب المحرك الخارجي المطلوب؛ `python3 $SKILL_DIR/scripts/rea_bridge.py catalog <كلمة>` يسردها بلا تنفيذ. أدوات MCP وموجّهاته مسجّلة REA-154…REA-235، ومعها 6 إضافات KOSIF لفرز مثبّتات Windows (REA-236…REA-241، ✅ شُغّلت على Windows 11).
 
 ## 4B. مصادر المجتمع الـ31 — Community source scout (opt-in research)
 عندما تكون المهمة تطوير KOSIF أو مقارنة أدوات الوكلاء أو التعلم البرمجي أو تصميم موشن متقدم، استخدم [دليل المصادر](references/community-source-atlas.md) وفهرسها القابل للبحث (data/community_sources.json) **كمراجع فقط**. ابدأ دائمًا بكتالوج KOSIF الأصلي؛ لا تبحث في المصادر الخارجية إلا لوجود فجوة مسماة أو بطلب المستخدم.
@@ -218,6 +218,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 - **التفكير / thinking:** [cognition.md](references/cognition.md) يحوّل «فكّر جيدًا» إلى إجراءات: سلّم L0–L6، حلقة الخبير، عشر عادات للعبقرية، خط تطوير الفكرة بثماني مراحل، التخطيط، القرار، التفكير الشبيه بالبشر، المراقبة الذاتية. المحرك `scripts/think.py`: `ladder` · `frame` · `models` (63 نموذجًا ذهنيًا) · `plan` · `ideas` · `decide` (مع الحساسية) · `fermi` · `critic`. العائلتان الجديدتان: [mental-models](references/powers/mental-models.md) MODEL و[planning-execution](references/powers/planning-execution.md) PLAN.
 - **المستلزمات / requirements:** كل قدرة لها حقل `requires` من سجل [requirements.json](data/requirements.json) (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج). `requirements.py for <ID>` قائمة قدرة واحدة؛ `requirements.py plan "<المهمة>"` قائمة المهمة كلها مع ▶ لما يبدأ الآن؛ الفهرس المقلوب: [requirements.md](references/requirements.md).
 - **الخريطة المترابطة / graph:** [capability-graph.html](references/capability-graph.html) تربط المجالات ← العائلات ← المستلزمات والسكربتات والاختبارات؛ طبقة الكود من Graphify ([graphify_code_layer.json](data/graphify_code_layer.json)) ومراجعة محلية بالـAST. `python3 $SKILL_DIR/scripts/capability_graph.py build`.
+- **اختبار API / Bruno:** عائلة [api-testing](references/powers/api-testing.md) API تبني مجموعات طلبات كملفات git وتشغّلها كاختبارات قبول (تأكيدات، Chai، بيانات CSV، تقارير JUnit، بوابة فشل CI، استيراد OpenAPI، تحويل Postman) — 15 قدرة مُثبتة بتشغيل Bruno CLI 4.2.1 هنا: [bruno-api](proofs/bruno-api/README.md).
 - **حزام الأدوات الموسَّع / extended toolbelt:** 42 قدرة جديدة (رياضيات رمزية وبراهين، SQL وجداول سريعة، تعلم آلة وتنبؤ، تحسين وجدولة، جغرافيا وكيمياء وأحياء، زحف واستخراج، تحليل مستندات، شرائح ومخططات بالكود، تدوين موسيقي، رؤية حاسوبية، CAD، إمكانية الوصول، فحص أمني، اختبارات خصائص، ترجمة ومعالجة عربية، RAG وMCP)؛ 20 منها شُغّلت فعلًا: [toolbelt-smoke](proofs/toolbelt-smoke/README.md).
 
 ## 5. الموشن والمونتاج / motion & video procedure
@@ -250,7 +251,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 ## Reference-media inspector / فحص فيديو المرجع
 - For permissioned HTTP(S) media references use `scripts/fetch_reference.py` to inspect frame contact sheets, color palette, cuts and metadata, or `scripts/superpowers.py` to search the separate 100-repository tool map in `repos.json`.
-- Read [reference inspection rules](references/reference-inspection.md), [124-repository tool catalog](references/repos.md), and [capability recipes](references/capabilities.md); always honor source licensing and use `--list` to inspect before downloading.
+- Read [reference inspection rules](references/reference-inspection.md), [125-repository tool catalog](references/repos.md), and [capability recipes](references/capabilities.md); always honor source licensing and use `--list` to inspect before downloading.
 - The inspector refuses private network destinations, non-HTTP(S) HLS URIs, encrypted streams, unbounded downloads and remote ffmpeg protocols. Output is cached in `.kosif-cache/` and must never be committed.
 - `references/capabilities.md` holds one recipe section per tool-map superpower (observe, animate, render, space, draw, data, voice, arabic, captions, generate, orchestrate, design) with decision tables over `repos.json`; `python3 $SKILL_DIR/scripts/superpowers.py doctor` lists which of those tools exist on this machine before any plan promises them.
 - Font matching / مطابقة الخطوط: [font-matching.md](references/font-matching.md) — identify a reference's typeface by rendering open candidates through Chromium with `scripts/render_text.cjs` and deciding by letterform signatures; worked example and an OFL family built from Amiri + Bodoni Moda in `fonts/kosif-jumuah/` (repo root).

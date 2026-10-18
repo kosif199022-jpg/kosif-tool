@@ -10,7 +10,7 @@
 
 | الطبقة / layer | ما هي / what | من أين تبدأ / start |
 |---|---|---|
-| **المهارة العامة** `.claude/skills/kosif-superpowers/` | تعرّف Claude بقدراته الحقيقية في كل جلسة وبطرق التفكير والإبداع والتحقق، مع كتالوج 4,555 قدرة في 10 مجالات، لكل قدرة مستلزماتها (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها شارة دليل | [SKILL.md](.claude/skills/kosif-superpowers/SKILL.md) ثم [الخريطة الذهنية](.claude/skills/kosif-superpowers/references/capability-map.md) |
+| **المهارة العامة** `.claude/skills/kosif-superpowers/` | تعرّف Claude بقدراته الحقيقية في كل جلسة وبطرق التفكير والإبداع والتحقق، مع كتالوج 4,659 قدرة في 10 مجالات، لكل قدرة مستلزماتها (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها شارة دليل | [SKILL.md](.claude/skills/kosif-superpowers/SKILL.md) ثم [الخريطة الذهنية](.claude/skills/kosif-superpowers/references/capability-map.md) |
 | **أطلس الموشن** `styles/` `playbooks/` `catalog/` | 288 أسلوب موشن جرافيك، لكل منها SKILL.md وSTYLE.json وBRIEF.md، و17 دليل إنتاج | [STYLE_INDEX.md](STYLE_INDEX.md) · [AGENTS.md](AGENTS.md) |
 | **الأدوات** `tools/` `starters/` `templates/` | `kosif.py` (بحث وتجهيز مشروع)، `render_html.cjs` (رندر HTML إلى فيديو)، `verify_video.py` (فحص الناتج)، ومشروعا بداية html-canvas وRemotion | [tools/render_html.md](tools/render_html.md) |
 | **مهارة المونتاج التحريري** `.claude/skills/editorial-film-edit/` | مهارة مستقلة لمونتاج لقطات بأسلوب أرشيفي تحريري مع مراجع متصفح جاهزة | [SKILL.md](.claude/skills/editorial-film-edit/SKILL.md) |

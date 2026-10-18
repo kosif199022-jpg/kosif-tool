@@ -100,11 +100,11 @@ class CatalogTest(unittest.TestCase):
     def test_validator_finds_no_problems(self):
         self.assertEqual(self.sp.validate(self.data, REAL_ROOT), [])
 
-    def test_exactly_124_unique_github_repositories(self):
+    def test_exactly_125_unique_github_repositories(self):
         repos = self.data["repos"]
-        self.assertEqual(len(repos), 124)
+        self.assertEqual(len(repos), 125)
         keys = {r["owner_repo"].lower() for r in repos}
-        self.assertEqual(len(keys), 124)
+        self.assertEqual(len(keys), 125)
         for r in repos:
             self.assertEqual(r["url"], f"https://github.com/{r['owner_repo']}")
 
@@ -150,7 +150,7 @@ class CliTest(unittest.TestCase):
     def test_list_json_returns_all(self):
         proc = run_script("superpowers.py", "list", "--json")
         self.assertEqual(proc.returncode, 0, proc.stderr)
-        self.assertEqual(len(json.loads(proc.stdout)), 124)
+        self.assertEqual(len(json.loads(proc.stdout)), 125)
 
     def test_list_filters_by_capability(self):
         proc = run_script("superpowers.py", "list", "--capability", "voice", "--json")

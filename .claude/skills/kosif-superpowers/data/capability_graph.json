@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 4555
+   "count": 4659
   },
   {
    "id": "dom:motion",
@@ -230,6 +230,35 @@
    "en": "run the render tools and JavaScript libraries",
    "install": "https://nodejs.org (22+)  — apt-get install -y nodejs npm",
    "req_kind": "bin"
+  },
+  {
+   "id": "dom:code",
+   "kind": "domain",
+   "label": "code"
+  },
+  {
+   "id": "fam:api-testing",
+   "kind": "family",
+   "label": "API testing (Bruno)",
+   "ar": "اختبار واجهات API",
+   "prefix": "API",
+   "count": 22,
+   "proven": 15,
+   "status": {
+    "proven": 15,
+    "install": 2,
+    "key": 1,
+    "documented": 4
+   }
+  },
+  {
+   "id": "req:npm:bruno",
+   "kind": "requirement",
+   "label": "npm:bruno",
+   "ar": "اختبار API بمجموعات نصية في git",
+   "en": "API testing with git-tracked collections (Bruno CLI)",
+   "install": "npm i -g @usebruno/cli@4.2.1  (MIT; the desktop app is a separate optional download)",
+   "req_kind": "npm"
   },
   {
    "id": "dom:build",
@@ -521,11 +550,6 @@
     "idea": 1,
     "key": 2
    }
-  },
-  {
-   "id": "dom:code",
-   "kind": "domain",
-   "label": "code"
   },
   {
    "id": "fam:code-engineering",
@@ -1160,11 +1184,11 @@
    "label": "Software investigation (REA)",
    "ar": "فحص البرامج والهندسة العكسية",
    "prefix": "REA",
-   "count": 159,
-   "proven": 25,
+   "count": 241,
+   "proven": 30,
    "status": {
-    "documented": 86,
-    "proven": 25,
+    "documented": 163,
+    "proven": 30,
     "install": 48
    }
   },
@@ -1178,21 +1202,21 @@
    "req_kind": "npm"
   },
   {
-   "id": "req:engine:android",
-   "kind": "requirement",
-   "label": "engine:android",
-   "ar": "فحص تطبيقات وأجهزة أندرويد",
-   "en": "Android app and device inspection",
-   "install": "Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised",
-   "req_kind": "bin"
-  },
-  {
    "id": "req:engine:ghidra",
    "kind": "requirement",
    "label": "engine:ghidra",
    "ar": "تفكيك الثنائيات الأصلية",
    "en": "native binary disassembly/decompilation",
    "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
+   "req_kind": "bin"
+  },
+  {
+   "id": "req:engine:android",
+   "kind": "requirement",
+   "label": "engine:android",
+   "ar": "فحص تطبيقات وأجهزة أندرويد",
+   "en": "Android app and device inspection",
+   "install": "Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised",
    "req_kind": "bin"
   },
   {
@@ -1615,9 +1639,9 @@
    "label": "scripts/aspects.py"
   },
   {
-   "id": "script:scripts/mimic/mm_common.py",
+   "id": "script:scripts/mimic/mm_img.py",
    "kind": "script",
-   "label": "scripts/mimic/mm_common.py"
+   "label": "scripts/mimic/mm_img.py"
   },
   {
    "id": "script:scripts/mimic/mm_video.py",
@@ -1626,9 +1650,9 @@
    "executor_score": 2.7
   },
   {
-   "id": "script:scripts/mimic/mm_img.py",
+   "id": "script:scripts/mimic/mm_common.py",
    "kind": "script",
-   "label": "scripts/mimic/mm_img.py"
+   "label": "scripts/mimic/mm_common.py"
   },
   {
    "id": "script:scripts/mimic/synthetic/make_candidates.py",
@@ -1921,6 +1945,30 @@
    "to": "req:node",
    "rel": "needs",
    "w": 3
+  },
+  {
+   "from": "root",
+   "to": "dom:code",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:code",
+   "to": "fam:api-testing",
+   "rel": "has",
+   "w": 22
+  },
+  {
+   "from": "fam:api-testing",
+   "to": "req:npm:bruno",
+   "rel": "needs",
+   "w": 22
+  },
+  {
+   "from": "fam:api-testing",
+   "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 2
   },
   {
    "from": "root",
@@ -4014,31 +4062,31 @@
    "from": "dom:code",
    "to": "fam:software-investigation",
    "rel": "has",
-   "w": 159
+   "w": 241
   },
   {
    "from": "fam:software-investigation",
    "to": "req:npm:rea",
    "rel": "needs",
-   "w": 159
+   "w": 241
+  },
+  {
+   "from": "fam:software-investigation",
+   "to": "req:engine:ghidra",
+   "rel": "needs",
+   "w": 75
   },
   {
    "from": "fam:software-investigation",
    "to": "req:chromium",
    "rel": "needs",
-   "w": 54
+   "w": 56
   },
   {
    "from": "fam:software-investigation",
    "to": "req:engine:android",
    "rel": "needs",
    "w": 35
-  },
-  {
-   "from": "fam:software-investigation",
-   "to": "req:engine:ghidra",
-   "rel": "needs",
-   "w": 34
   },
   {
    "from": "fam:software-investigation",
@@ -4050,19 +4098,19 @@
    "from": "fam:software-investigation",
    "to": "req:os:macos",
    "rel": "needs",
-   "w": 17
+   "w": 18
+  },
+  {
+   "from": "fam:software-investigation",
+   "to": "req:engine:rizin",
+   "rel": "needs",
+   "w": 16
   },
   {
    "from": "fam:software-investigation",
    "to": "req:python3",
    "rel": "needs",
    "w": 10
-  },
-  {
-   "from": "fam:software-investigation",
-   "to": "req:engine:rizin",
-   "rel": "needs",
-   "w": 8
   },
   {
    "from": "fam:software-investigation",
@@ -4936,13 +4984,13 @@
   },
   {
    "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/build_chapters.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/powers.py",
+   "to": "script:scripts/build_chapters.py",
    "rel": "imports",
    "w": 1
   },
@@ -4960,13 +5008,13 @@
   },
   {
    "from": "script:scripts/motion_kit_bridge.py",
-   "to": "script:scripts/motion_director.py",
+   "to": "script:scripts/code_drawing_master.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/motion_kit_bridge.py",
-   "to": "script:scripts/code_drawing_master.py",
+   "to": "script:scripts/motion_director.py",
    "rel": "imports",
    "w": 1
   },
@@ -5014,13 +5062,25 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_color.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_transitions.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_text.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
   },
@@ -5038,25 +5098,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_text.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
@@ -5068,7 +5110,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_color.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5086,25 +5128,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_fonts_lib.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
@@ -5121,6 +5151,24 @@
    "w": 1
   },
   {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_fonts_lib.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/mimic/mm_fonts_lib.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
@@ -5128,13 +5176,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5146,18 +5194,12 @@
   },
   {
    "from": "script:scripts/mimic/mm_sheets.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_sheets.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -5165,12 +5207,6 @@
   {
    "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
@@ -5181,14 +5217,26 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_textfx.py",
+   "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_textfx.py",
    "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_textfx.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5224,7 +5272,7 @@
   },
   {
    "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_fonts.py",
    "rel": "imports",
    "w": 1
   },
@@ -5236,7 +5284,7 @@
   },
   {
    "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_analyze.py",
    "rel": "imports",
    "w": 1
   },
