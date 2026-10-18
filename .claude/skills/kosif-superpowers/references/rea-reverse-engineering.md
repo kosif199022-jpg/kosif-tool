@@ -61,3 +61,6 @@ Tests:
 The bridge tests establish only adapter logic and authorization gates. Proving real REA interoperability requires a separately authorized fixture and postcondition check.
 
 Source documentation: https://github.com/morluto/rea/blob/main/docs/cli.md and https://github.com/morluto/rea/blob/main/docs/installation.md
+
+## Refreshed upstream discovery (2026-10-18)
+Upstream REA 6.7.0 (package.json at inspection) exposes more than the five static CLI plans in the current bridge. Use `scripts/rea_family_router.py list` and `route <intent>` for 16 evidence/inspection families, and [current REA family matrix](rea-upstream-capabilities.md). The upstream skill moved to `.agents/skills/reverse-engineer-anything/SKILL.md`, with a package-matched runtime on installation. This **does not claim** 16 locally runnable categories. Existing `rea_bridge.py` remains canonical for authorized safe static subset.
