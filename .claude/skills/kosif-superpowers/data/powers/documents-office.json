@@ -16,6 +16,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "docx",
@@ -50,6 +51,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "xlsx",
@@ -80,6 +82,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "libreoffice",
@@ -109,6 +112,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pptx",
@@ -139,6 +143,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "weasyprint",
@@ -168,6 +173,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "chromium",
@@ -196,6 +202,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "reportlab",
@@ -224,6 +231,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "docx",
@@ -252,6 +260,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "libreoffice",
@@ -279,6 +288,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "fontconfig",
@@ -306,6 +316,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "xlsx",
@@ -333,6 +344,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pandoc",
@@ -361,6 +373,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pypdf",
@@ -389,6 +402,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pdf",
@@ -419,6 +433,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "lam alef",
@@ -447,6 +462,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "markitdown",
@@ -475,6 +491,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ocr",
@@ -503,6 +520,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pdf to png",
@@ -529,6 +547,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pymupdf",
@@ -556,6 +575,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pdfplumber",
@@ -581,6 +601,7 @@
   "install": "pip install docling | camelot-py | tabula-py",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "docling",
@@ -608,6 +629,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "bidi",
@@ -639,6 +661,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "arabic shaping",
@@ -664,6 +687,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "qa",
@@ -689,6 +713,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "skills",
@@ -715,6 +740,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "docs connector",
@@ -739,6 +765,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "claude.ai",
@@ -763,6 +790,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "google docs",

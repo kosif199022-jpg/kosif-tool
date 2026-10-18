@@ -14,6 +14,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
    "owner-upload:8cc9be77-c32.sh (Cinema C V32)"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",
@@ -42,6 +43,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",
@@ -70,6 +72,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",
@@ -99,6 +102,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
    "owner-upload:8cc9be77-c32.sh"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",
@@ -127,6 +131,7 @@
   "proof": [
    "owner-upload:8cc9be77-c32.sh"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "download",
@@ -156,6 +161,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
    "owner-upload:8cc9be77-c32.sh"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",
@@ -184,6 +190,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",
@@ -212,6 +219,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/video-download.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",
@@ -240,6 +248,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",
@@ -268,6 +277,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/video-download.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "download",

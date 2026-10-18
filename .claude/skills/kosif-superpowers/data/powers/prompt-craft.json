@@ -13,6 +13,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "optimize",
@@ -43,6 +44,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ledger",
@@ -69,6 +71,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "slots",
@@ -94,6 +97,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "assumptions",
@@ -118,6 +122,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "few-shot",
@@ -143,6 +148,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "claude",
@@ -169,6 +175,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "system prompt",
@@ -194,6 +201,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "subagent",
@@ -220,6 +228,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "openai",
@@ -245,6 +254,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "image prompt",
@@ -270,6 +280,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "video prompt",
@@ -295,6 +306,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "optimize",
@@ -320,6 +332,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "anti-patterns",
@@ -344,6 +357,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "rubric",
@@ -369,6 +383,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "eval",
@@ -393,6 +408,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "prompt injection",
@@ -418,6 +434,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "routing evals",
@@ -442,6 +459,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "arabic prompt",
@@ -468,6 +486,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "diagnosis",
@@ -493,6 +512,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "action verbs",
@@ -518,6 +538,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "freshness",
@@ -543,6 +564,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "skill authoring",

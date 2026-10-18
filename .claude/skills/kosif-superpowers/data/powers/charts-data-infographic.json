@@ -16,6 +16,7 @@
    "100-superskills/skills/data-in-motion/SKILL.md",
    "100-superskills/skills/dashboards-dataviz/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "اختيار المخطط",
@@ -38,6 +39,7 @@
   "proof": [
    "kosif-atlas/skills/2957-posthog/12277-choosing-trend-or-slope-view/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "slope",
@@ -61,6 +63,7 @@
    "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10330-statistical-and-uncertainty-visualizatio/references/distribution-and-summary-choices.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "histogram",
@@ -83,6 +86,7 @@
    "kosif-tool/playbooks/charts.md:11",
    "kosif-atlas/skills/3455-business-analytics/14161-data-storytelling/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "insight",
@@ -107,6 +111,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-data-infographics.md",
    "kosif-tool/styles/pm-ceowinkz-7c776b/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "baseline",
@@ -130,6 +135,7 @@
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/SKILL.md",
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/references/publication_guidelines.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "log",
@@ -155,6 +161,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/data-in-motion.md",
    "100-superskills/skills/trend-animation-styles/references/styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ممنوع",
@@ -178,6 +185,7 @@
    "kosif-tool/playbooks/charts.md:21",
    "kosif-tool/playbooks/charts.md:193"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pie",
@@ -200,6 +208,7 @@
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/SKILL.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10330-statistical-and-uncertainty-visualizatio/references/missingness-and-confidence.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "missing",
@@ -224,6 +233,7 @@
    "kosif-tool/playbooks/charts.md:23",
    "kosif-tool/playbooks/charts.md:25"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "source",
@@ -248,6 +258,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10335-visualization-strategy-and-critique/SKILL.md",
    "kosif-tool/playbooks/charts.md:23"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "labels",
@@ -269,6 +280,7 @@
   "proof": [
    "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "sort",
@@ -292,6 +304,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/data-in-motion.md",
    "style:infographic"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "infographic"
   ],
@@ -317,6 +330,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/particle-effects-and-flow.md",
    "kosif-tool/styles/pm-kloss-xyz-fe0c31/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "encoding",
@@ -341,6 +355,7 @@
    "kosif-tool/playbooks/charts.md:127",
    "kosif-tool/styles/pm-quickdesignio-dd93d0/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "scalar",
@@ -365,6 +380,7 @@
    "kosif-earth-ci-fork/docs/design/KOSIF-LUXE.md",
    "kosif-audit-studio/styles.css:718"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "RTL",
@@ -388,6 +404,7 @@
    "kosif-tool/playbooks/charts.md:22",
    "kosif-tool/playbooks/charts.md:26"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "sizes",
@@ -412,6 +429,7 @@
    "style:pm-kloss-xyz-15182a",
    "style:pm-kyonax-on-tech-aabc1d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kloss-xyz-15182a",
    "pm-kyonax-on-tech-aabc1d"
@@ -440,6 +458,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:227",
    "kosif-studio/motion/kit/motion-kit.js:227"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-alex-prompter-1ea044",
    "pm-sudeepsd-1a3485",
@@ -475,6 +494,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:42",
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:14"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "template",
@@ -500,6 +520,7 @@
    "style:pm-viktoroddy-98c1d8",
    "style:infographic"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-viktoroddy-98c1d8",
    "infographic",
@@ -533,6 +554,7 @@
    "style:pm-influencer-seo-ce8c33",
    "kosif-tool/playbooks/charts.md:36"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-adamdesgns-478d6d",
    "pm-influencer-seo-ce8c33"
@@ -560,6 +582,7 @@
    "kosif-one/vendor/hyperframes/registry/components/count-up/count-up.html",
    "kosif-tool/styles/pm-ajith-io-ea7f2d/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "punch",
@@ -584,6 +607,7 @@
    "kosif-one/vendor/hyperframes/registry/components/number-pop-in/number-pop-in.html",
    "style:pm-andginja-333d32"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-andginja-333d32"
   ],
@@ -611,6 +635,7 @@
    "kosif-atlas/skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu/SKILL.md",
    "kosif-tool/playbooks/charts.md:190"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "format",
@@ -635,6 +660,7 @@
    "style:pm-0xfemyn-e114d3",
    "style:pm-ceowinkz-7c776b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-0xfemyn-e114d3",
    "pm-ceowinkz-7c776b"
@@ -661,6 +687,7 @@
    "style:pm-bizibeast-10f264",
    "style:pm-thayto-dev-44b911"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-bizibeast-10f264",
    "pm-thayto-dev-44b911"
@@ -689,6 +716,7 @@
    "style:pm-emollick-8661a8",
    "kosif-tool/styles/pm-kloss-xyz-fe0c31/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "map-journey",
    "pm-deebeeeff-50fcd0",
@@ -720,6 +748,7 @@
    "kosif-studio/tests/test_studio.py:910",
    "100-superskills/skills/kosif-montage-motion/templates/directed.html:96"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "motif",
@@ -742,6 +771,7 @@
   "proof": [
    "style:pm-sachaarbonel-8f14f4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sachaarbonel-8f14f4"
   ],
@@ -766,6 +796,7 @@
    "style:pm-paulo-kombucha-96431c",
    "style:pm-jayscambler-3f8889"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-paulo-kombucha-96431c",
    "pm-jayscambler-3f8889"
@@ -794,6 +825,7 @@
    "style:infographic",
    "style:pm-polydao-7a572b"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-marklaunches-3b9492",
    "infographic",
@@ -822,6 +854,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:52",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:123"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-deifosv-04e4d3"
   ],
@@ -846,6 +879,7 @@
   "proof": [
    "style:pm-0xevinho-3777d8"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-0xevinho-3777d8"
   ],
@@ -872,6 +906,7 @@
    "app/public/js/00_editor.js:469",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-data-infographics.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-slvdev-64c45a",
    "pm-kyonax-on-tech-aabc1d",
@@ -901,6 +936,7 @@
    "kosif-tool/playbooks/charts.md:49-59",
    "style:pm-charlesmendez-73b6e4"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-charlesmendez-73b6e4",
    "pm-en-ra-81c6dd"
@@ -929,6 +965,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/bar-chart-race/bar-chart-race.html",
    "style:pm-ratheejaisal-1f4538"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ratheejaisal-1f4538",
    "pm-marklaunches-3b9492"
@@ -955,6 +992,7 @@
    "kosif-earth-ci-fork/ui/components/charts.js:52",
    "kosif-earth-ci-fork/ui/components/charts.js:26"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "stacked",
@@ -977,6 +1015,7 @@
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:124"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "waterfall",
@@ -1000,6 +1039,7 @@
    "style:infographic",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-data-infographics.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "infographic"
   ],
@@ -1024,6 +1064,7 @@
   "proof": [
    "style:infographic"
   ],
+  "proof_scope": "style",
   "styles": [
    "infographic"
   ],
@@ -1047,6 +1088,7 @@
   "proof": [
    "style:pm-henkvaness-0e06af"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-henkvaness-0e06af"
   ],
@@ -1074,6 +1116,7 @@
    "kosif-audit-pro/components/ui/progress.tsx",
    "kosif-audit-pro/tests/ui-components.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "meter",
@@ -1099,6 +1142,7 @@
    "style:pm-parkerrex-1a54fe",
    "style:pm-gigabit-million-16b3a0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-anthonyriera-9b1b2a",
    "pm-ibrahimwasim240-809370",
@@ -1133,6 +1177,7 @@
    "style:pm-polydao-7a572b",
    "style:pm-prasad-pilla-2c0cba"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-heyiammallik-e72d17",
    "pm-polydao-7a572b",
@@ -1160,6 +1205,7 @@
    "style:plotter",
    "style:pm-polydao-7a572b"
   ],
+  "proof_scope": "style",
   "styles": [
    "plotter",
    "pm-polydao-7a572b"
@@ -1188,6 +1234,7 @@
    "style:pm-palashbagchi11-0a4b6b",
    "style:pm-twoclipping-6dd14e"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-palashbagchi11-0a4b6b",
    "pm-twoclipping-6dd14e"
@@ -1214,6 +1261,7 @@
    "kosif-tool/styles/pm-marouanegazouzi-6071d5/BRIEF.md",
    "kosif-tool/styles/pm-monokern-ade5b6/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "radial",
@@ -1236,6 +1284,7 @@
    "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10330-statistical-and-uncertainty-visualizatio/references/distribution-and-summary-choices.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "small multiples",
@@ -1259,6 +1308,7 @@
    "kosif-tool/starters/html-canvas/index.html:157",
    "kosif-tool/playbooks/charts.md:37"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-rammanq-f5a90f",
    "pm-charlesmendez-73b6e4",
@@ -1291,6 +1341,7 @@
    "style:pm-sudeepsd-1a3485",
    "style:pm-viktoroddy-98c1d8"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-sudeepsd-1a3485",
    "pm-viktoroddy-98c1d8",
@@ -1319,6 +1370,7 @@
    "kosif-tool/starters/remotion/src/Film.tsx:266",
    "kosif-tool/starters/remotion/src/Film.tsx:281"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "Remotion",
@@ -1343,6 +1395,7 @@
    "style:pm-twoclipping-5cba86",
    "style:pm-parkerrex-1a54fe"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-steventey-0d20e4",
    "pm-twoclipping-5cba86",
@@ -1369,6 +1422,7 @@
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:89"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "line",
@@ -1394,6 +1448,7 @@
    "kosif-audit-studio/v5/continuous-dashboard.js:34",
    "kosif-atlas/skills/2690-build-web-data-visualization/10319-canvas2d-data-visualization/references/sparklines-and-microcharts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-ratheejaisal-1f4538"
   ],
@@ -1421,6 +1476,7 @@
    "style:pm-0xevinho-3777d8",
    "style:pm-rammanq-f5a90f"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-0xevinho-3777d8",
    "pm-rammanq-f5a90f"
@@ -1448,6 +1504,7 @@
    "style:pm-aistocksavvy-3fb9f5",
    "kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-dale-vaz-cc612a",
    "pm-aistocksavvy-3fb9f5"
@@ -1475,6 +1532,7 @@
    "kosif-atlas/skills/3455-business-analytics/14161-data-storytelling/references/details.md",
    "style:pm-kloss-xyz-fe0c31"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-kloss-xyz-fe0c31"
   ],
@@ -1502,6 +1560,7 @@
    "style:pm-rneayan-ea6129",
    "style:pm-ik-builds-b8bdcf"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-rneayan-ea6129",
    "pm-ik-builds-b8bdcf",
@@ -1530,6 +1589,7 @@
    "style:pm-nikolajankovic-ce4ff4",
    "style:pm-ik-builds-b8bdcf"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tak3sh8-be5012",
    "pm-nikolajankovic-ce4ff4",
@@ -1557,6 +1617,7 @@
    "style:pm-rammanq-f5a90f",
    "kosif-atlas/skills/2690-build-web-data-visualization/10330-statistical-and-uncertainty-visualizatio/references/missingness-and-confidence.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-rammanq-f5a90f"
   ],
@@ -1583,6 +1644,7 @@
    "style:pm-palashbagchi11-0a4b6b",
    "style:pm-ismailfahmi-557268"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-marouanegazouzi-6071d5",
    "pm-palashbagchi11-0a4b6b",
@@ -1610,6 +1672,7 @@
    "style:pm-linearuncle-5d2bae",
    "style:pm-chatgptastra-0d95c7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-linearuncle-5d2bae",
    "pm-chatgptastra-0d95c7"
@@ -1637,6 +1700,7 @@
    "style:pm-davidmarcus-a28a60",
    "style:pm-apoorvjain25-d24184"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-davidmarcus-a28a60",
    "pm-apoorvjain25-d24184"
@@ -1662,6 +1726,7 @@
    "style:pm-shinskinakamoto-20190b",
    "style:pm-eyishazyer-af035b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-shinskinakamoto-20190b",
    "pm-eyishazyer-af035b"
@@ -1686,6 +1751,7 @@
   "proof": [
    "style:pm-rammanq-f5a90f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rammanq-f5a90f"
   ],
@@ -1713,6 +1779,7 @@
    "kosif-audit-studio/dashboard-capabilities.css",
    "kosif-earth-ci-fork/ui/components/charts.js:218"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ring",
@@ -1736,6 +1803,7 @@
    "kosif-earth-ci-fork/ui/components/charts.js:223",
    "kosif-earth-ci-fork/ui/ds/components.css:322"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "donut",
@@ -1758,6 +1826,7 @@
   "proof": [
    "kosif-tool/playbooks/charts.md:38"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pie sweep",
@@ -1778,6 +1847,7 @@
   "proof": [
    "style:infographic"
   ],
+  "proof_scope": "style",
   "styles": [
    "infographic"
   ],
@@ -1805,6 +1875,7 @@
    "style:pm-sudeepsd-1a3485",
    "style:pm-gabrielbuzziv-4ff0c6"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-sudeepsd-1a3485",
    "pm-gabrielbuzziv-4ff0c6",
@@ -1836,6 +1907,7 @@
    "style:pm-himanshutwtxs-5f4b43",
    "style:pm-leonkohli-6dc01b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-himanshutwtxs-5f4b43",
    "pm-leonkohli-6dc01b"
@@ -1864,6 +1936,7 @@
    "style:pm-nikolajankovic-ce4ff4",
    "style:pm-cansincengiz-me-cf68dd"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-leadnotifi-e83f94",
    "pm-sarut0bisasuke-cefa43",
@@ -1894,6 +1967,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/stat-bars-and-fills.md",
    "kosif-tool/styles/pm-ceowinkz-7c776b/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "stars",
@@ -1918,6 +1992,7 @@
    "style:pm-blueoctopusai-dd17bd",
    "style:pm-marouanegazouzi-6071d5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-xelandre-363f00",
    "pm-blueoctopusai-dd17bd",
@@ -1944,6 +2019,7 @@
    "style:pm-triglyceee-bd5b08",
    "style:pm-jesscaroline7-1ff7cb"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-triglyceee-bd5b08",
    "pm-jesscaroline7-1ff7cb"
@@ -1972,6 +2048,7 @@
    "style:infographic",
    "style:pm-blushpetal795-0c85c2"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-palashbagchi11-0a4b6b",
    "infographic",
@@ -2001,6 +2078,7 @@
    "style:pm-jesscaroline7-1ff7cb",
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/particle-effects-and-flow.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-jesscaroline7-1ff7cb",
    "pm-itisrazak-3ad902"
@@ -2026,6 +2104,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-data-infographics.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "scale",
@@ -2050,6 +2129,7 @@
    "style:pm-astrodevil-3f2054",
    "style:pm-fionntobin-97b7af"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-astrodevil-3f2054",
    "pm-fionntobin-97b7af",
@@ -2078,6 +2158,7 @@
    "kosif-earth-ci-fork/ui/ds/tokens.css:48",
    "kosif-earth-ci-fork/ui/ds/luxe.css:168"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "risk matrix",
@@ -2099,6 +2180,7 @@
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:260"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "matrix",
@@ -2122,6 +2204,7 @@
    "kosif-audit-studio/app.js:1290",
    "kosif-audit-studio/styles.css:688"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Benford",
@@ -2145,6 +2228,7 @@
    "style:pm-linearuncle-5d2bae",
    "style:pm-palashbagchi11-0a4b6b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-linearuncle-5d2bae",
    "pm-palashbagchi11-0a4b6b"
@@ -2171,6 +2255,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-web-design/references/web-playbook.md",
    "kosif-tool/playbooks/charts.md:97"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "KPI",
@@ -2196,6 +2281,7 @@
    "style:pm-samuel-yostt-891f87",
    "style:pm-motiondsgnr-9dcfa6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-bizibeast-10f264",
    "pm-jasonzhou1993-8595e0",
@@ -2236,6 +2322,7 @@
    "style:pm-blushpetal795-0c85c2",
    "style:pm-madebyjmayala-b9204d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-henkvaness-0e06af",
    "pm-blushpetal795-0c85c2",
@@ -2268,6 +2355,7 @@
    "kosif-one/vendor/hyperframes/docs/catalog/components/count-up.mdx",
    "kosif-one/vendor/hyperframes/registry/examples/nyt-graph/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "HyperFrames",
@@ -2293,6 +2381,7 @@
    "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/asset-fusion/module.md",
    "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/stat/module.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "blueprint",
@@ -2317,6 +2406,7 @@
    "kosif-tool/styles/infographic/SKILL.md",
    "app/public/js/10_studio.js:701"
   ],
+  "proof_scope": "repo",
   "styles": [
    "infographic"
   ],
@@ -2342,6 +2432,7 @@
    "100-superskills/skills/trend-animation-styles/references/styles.md",
    "100-superskills/skills/data-in-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "style",
@@ -2367,6 +2458,7 @@
    "kosif-earth-ci-fork/ui/ds/tokens.css:111",
    "kosif-audit-pro/components/ui/chart.tsx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "palette",
@@ -2389,6 +2481,7 @@
   "proof": [
    "kosif-atlas/skills/3186-create-figure/13532-create-figure/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "tokens",
@@ -2412,6 +2505,7 @@
    "kosif-studio/motion/twin_dashboard.py:1",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/index.html:107"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "dashboard",
@@ -2436,6 +2530,7 @@
    "kosif-one/tools/kosif-omni/mcp-server/tests/test_office.py:56",
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/office_live.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Excel",
@@ -2460,6 +2555,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/SKILL.md",
    "kosif-tool/tools/render_html.cjs"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "d3",
@@ -2486,6 +2582,7 @@
    "app/public/js/00_editor.js:2007",
    "app/public/js/00_editor.js:1777"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Basma",
@@ -2508,6 +2605,7 @@
   "proof": [
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Gemini",
@@ -2529,6 +2627,7 @@
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "scrollytelling",
@@ -2550,6 +2649,7 @@
   "proof": [
    "kosif-atlas/skills/x4919-visual-gen/x20319-process-infographic/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "process",
@@ -2575,6 +2675,7 @@
    "style:pm-buildfastwithai-53234e",
    "style:pm-sachaarbonel-8f14f4"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-aschapmann-131210",
    "pm-buildfastwithai-53234e",
@@ -2605,6 +2706,7 @@
    "style:pm-madhav-xo-f97f20",
    "style:pm-bizibeast-10f264"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-madhav-xo-f97f20",
    "pm-ismailfahmi-557268",
@@ -2635,6 +2737,7 @@
    "100-superskills/skills/excel-financial-models/SKILL.md",
    "100-superskills/skills/forecasting-probability/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "SQL",
@@ -2659,6 +2762,7 @@
    "style:pm-reflex-cloud-72ffe5",
    "style:pm-madebyjmayala-b9204d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rneayan-474bcf",
    "pm-reflex-cloud-72ffe5",
@@ -2685,6 +2789,7 @@
   "proof": [
    "fastify-motion-bro/web/editorial.js:26"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "icon",

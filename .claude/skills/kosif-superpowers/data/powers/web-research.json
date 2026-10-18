@@ -15,6 +15,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "websearch",
@@ -44,6 +45,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "webfetch",
@@ -69,6 +71,7 @@
   "install": "pip install anthropic",
   "license": "MIT (SDK)",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "api",
@@ -97,6 +100,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "httpx",
@@ -125,6 +129,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "trafilatura",
@@ -153,6 +158,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "rss",
@@ -180,6 +186,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "playwright",
@@ -207,6 +214,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "huggingface",
@@ -231,6 +239,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "github",
@@ -256,6 +265,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "claim ledger",
@@ -283,6 +293,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "sources",
@@ -308,6 +319,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "retrieval",
@@ -332,6 +344,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "research ops",
@@ -356,6 +369,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "deep research",
@@ -383,6 +397,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "documentation",
@@ -411,6 +426,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "robots",
@@ -438,6 +454,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "proxy",
@@ -463,6 +480,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "prompt injection",
@@ -488,6 +506,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "license",
@@ -513,6 +532,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "monitoring",

@@ -16,6 +16,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/particles-to-arabic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "بذرة",
@@ -43,6 +44,7 @@
    "kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/particle-burst.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "صيغة مغلقة",
@@ -68,6 +70,7 @@
    "kosif-tool/playbooks/particles.md:9",
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/particle-effects-and-flow.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "معنى",
@@ -92,6 +95,7 @@
    "kosif-tool/playbooks/particles.md:15-18",
    "kosif-tool/playbooks/particles.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ميزانية",
@@ -115,6 +119,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تلامس",
@@ -139,6 +144,7 @@
    "kosif-tool/starters/html-canvas/index.html:118",
    "kosif-tool/playbooks/particles.md:52-66"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "انفجار",
@@ -163,6 +169,7 @@
   "proof": [
    "kosif-tool/playbooks/particles.md:38-40"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "كشف",
@@ -188,6 +195,7 @@
    "kosif-tool/styles/isometric",
    "kosif-tool/styles/pm-deebeeeff-50fcd0"
   ],
+  "proof_scope": "repo",
   "styles": [
    "isometric",
    "pm-deebeeeff-50fcd0",
@@ -220,6 +228,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/radial-burst-lines/scene.html",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/particle-burst.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "انفجار",
@@ -245,6 +254,7 @@
    "kosif-tool/styles/pm-kamstudiolabs-447565",
    "kosif-tool/styles/pm-nft-chen-5f8bb0"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-sudeepsd-1a3485",
    "pm-kamstudiolabs-447565",
@@ -274,6 +284,7 @@
    "kosif-tool/styles/pm-zaqailo-212ad3",
    "kosif-tool/styles/pm-kantamk-61f410"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-teslachartz-c58b32",
    "pm-zaqailo-212ad3",
@@ -302,6 +313,7 @@
    "kosif-tool/styles/pm-rossaxbt-3085b7",
    "kosif-tool/styles/pm-macrohou-33959d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-rossaxbt-3085b7",
    "pm-macrohou-33959d"
@@ -328,6 +340,7 @@
   "proof": [
    "kosif-tool/styles/pm-bthreeagency-b9b8d9"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-bthreeagency-b9b8d9"
   ],
@@ -354,6 +367,7 @@
    "kosif-atlas/skills/2460-pixel-art/9530-vfx",
    "kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "بكسل",
@@ -379,6 +393,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/particles-to-arabic/index.html",
    "kosif-tool/playbooks/particles.md:27"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-grace-sunnyy-29bc61",
    "pm-jasonzhou1993-8595e0",
@@ -411,6 +426,7 @@
    "kosif-tool/playbooks/particles.md:72",
    "kosif-one/vendor/hyperframes/registry/components/particle-text-dissolve/particle-text-dissolve.html"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ajith-io-4c248f",
    "pm-robvjourney-ce3e1a"
@@ -440,6 +456,7 @@
    "kosif-tool/styles/pm-madhav-xo-f97f20",
    "kosif-tool/styles/pm-robj3d3-b18fad"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-bogdandragomir-35e024",
    "pm-madhav-xo-f97f20",
@@ -470,6 +487,7 @@
    "kosif-tool/styles/pm-bogdandragomir-35e024",
    "kosif-tool/styles/pm-listudio-820c7b/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ismailfahmi-557268",
    "pm-bogdandragomir-35e024"
@@ -496,6 +514,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/particle-image-reveal/particle-image-reveal.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كشف صورة",
@@ -519,6 +538,7 @@
    "kosif-tool/styles/pm-tequilafunks-97f6c9",
    "kosif-tool/styles/pm-madebyjmayala-b9204d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-tequilafunks-97f6c9",
    "pm-madebyjmayala-b9204d"
@@ -546,6 +566,7 @@
    "kosif-studio/motion/qa.py:598",
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "التقاط حركة",
@@ -570,6 +591,7 @@
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
    "kosif-tool/playbooks/code.md:28"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ضوضاء",
@@ -594,6 +616,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/particles-to-arabic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-mandelduck-95fd08"
   ],
@@ -621,6 +644,7 @@
    "kosif-tool/playbooks/code.md:47",
    "kosif-tool/styles/pm-ismailfahmi-557268"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ismailfahmi-557268",
    "pm-vanshwtfff-db0466",
@@ -649,6 +673,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/bg-flow-field/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/gooey-metaball/scene.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تدفق",
@@ -673,6 +698,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/particle-effects-and-flow.md",
    "kosif-tool/playbooks/particles.md:46"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-sayan-shanky-f850d8"
   ],
@@ -698,6 +724,7 @@
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/deckgl-d3-geo-stack-selection.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "deck.gl",
@@ -722,6 +749,7 @@
    "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md",
    "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/references/thermal-finger-trail.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حراري",
@@ -749,6 +777,7 @@
    "kosif-tool/playbooks/particles.md:28",
    "kosif-atlas/skills/342-kernel/1223-frontend/motion/cursor-field.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-chatgptastra-0d95c7",
    "pm-himanshutwtxs-5f4b43"
@@ -777,6 +806,7 @@
    "kosif-tool/styles/pm-jasonzhou1993-8595e0",
    "kosif-tool/styles/pm-faroukzy-9ff23e"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-rneayan-ea6129",
    "pm-jasonzhou1993-8595e0",
@@ -804,6 +834,7 @@
   "proof": [
    "kosif-one/projects/egypt-2120-animation/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-kantamk-61f410",
    "pm-nft-chen-5f8bb0"
@@ -832,6 +863,7 @@
    "kosif-studio/motion/kit/motion-kit.js:265",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:265"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مطر",
@@ -856,6 +888,7 @@
    "kosif-studio/motion/kit/motion-kit.js:283",
    "kosif-one/projects/water-cycle-animation/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-itsolelehmann-e47532"
   ],
@@ -882,6 +915,7 @@
    "kosif-studio/motion/kit/motion-kit.js:300",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:66"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-hoyoyoda-3a5c08"
   ],
@@ -910,6 +944,7 @@
    "fastify-motion-bro/web/motion.js:11",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:157"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ceowinkz-7c776b"
   ],
@@ -935,6 +970,7 @@
   "proof": [
    "app/public/js/00_editor.js:234"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "basma",
@@ -961,6 +997,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:108",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/neon-glow/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-faroukzy-9ff23e",
    "pm-kamstudiolabs-0b0824"
@@ -989,6 +1026,7 @@
    "kosif-studio/scenes/whale_dragon.py:55",
    "kosif-studio/scenes/duck_dragon.py:24"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مطر",
@@ -1014,6 +1052,7 @@
    "kosif-tool/styles/doodle",
    "kosif-one/projects/water-cycle-animation/index.html"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kamstudiolabs-0b0824",
    "doodle"
@@ -1040,6 +1079,7 @@
   "proof": [
    "kosif-one/projects/thursday-dua-animation/source/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-itsolelehmann-e47532",
    "chalkboard"
@@ -1069,6 +1109,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/snow/snow.html",
    "kosif-one/vendor/hyperframes/registry/blocks/starfield/starfield.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ثلج",
@@ -1093,6 +1134,7 @@
    "kosif-earth-ci-fork/ui/art/crystal-world.js:65",
    "kosif-earth-ci-fork/ui/art/crystal-world.js:149"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ثلج",
@@ -1119,6 +1161,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:153",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/audio-reactive-spectrum/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ذرات",
@@ -1143,6 +1186,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html:128"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "هالة",
@@ -1166,6 +1210,7 @@
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حلقة",
@@ -1191,6 +1236,7 @@
    "kosif-tool/styles/pm-kloss-xyz-b9b3f6",
    "kosif-tool/styles/pm-crazyalphaaa-bc7e75"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ayushunleashed-ece3e3",
    "pm-kloss-xyz-b9b3f6",
@@ -1224,6 +1270,7 @@
    "kosif-tool/styles/pm-shneural-2abdfa",
    "kosif-tool/styles/pm-tolgayhickiran-e90799"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-shneural-2abdfa",
    "pm-tolgayhickiran-e90799",
@@ -1254,6 +1301,7 @@
    "kosif-tool/styles/pm-leonkohli-6dc01b",
    "kosif-tool/styles/pm-nolkeeg-bf062e"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-maxalexweber-67688b",
    "pm-leonkohli-6dc01b",
@@ -1286,6 +1334,7 @@
    "kosif-tool/styles/pm-codestackr-c071bf",
    "kosif-tool/styles/pm-dale-vaz-cc612a"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-roundtablespace-d3a1be",
    "pm-codestackr-c071bf",
@@ -1314,6 +1363,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/cinematic_3d.html:165",
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نقاط مضيئة",
@@ -1338,6 +1388,7 @@
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/examples/particle-system.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "GPU",
@@ -1364,6 +1415,7 @@
    "kosif-tool/styles/pm-ik-builds-b8bdcf",
    "kosif-tool/styles/pm-gorden-sun-041f56"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-3xtihor-0f6911",
    "pm-ik-builds-b8bdcf",
@@ -1393,6 +1445,7 @@
    "kosif-studio/scenes/whale_dragon.py:247",
    "kosif-one/projects/duck-vs-dragon/duck_dragon.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نار",
@@ -1418,6 +1471,7 @@
    "kosif-studio/scenes/dragon_girl.py:408",
    "kosif-studio/scenes/whale_dragon.py:282"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-theparuchh-6e08c3"
   ],
@@ -1445,6 +1499,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:56",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:93"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "شرر",
@@ -1469,6 +1524,7 @@
    "kosif-studio/scenes/dragon_girl.py:36",
    "kosif-studio/scenes/whale_dragon.py:257"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "غيوم",
@@ -1494,6 +1550,7 @@
    "kosif-studio/scenes/whale_dragon.py:65",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:205"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "رذاذ",
@@ -1520,6 +1577,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js",
    "kosif-studio/motion/kit/three-kit.js:506"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بحر",
@@ -1546,6 +1604,7 @@
    "kosif-one/projects/egypt-2120-animation/index.html",
    "kosif-one/projects/water-cycle-animation/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-demitiyageekzen-7770ad"
   ],
@@ -1575,6 +1634,7 @@
    "kosif-studio/motion/kit/three-kit.js:203",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:34"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "طقس",
@@ -1605,6 +1665,7 @@
    "kosif-studio/motion/kit/three-kit.js:591",
    "kosif-studio/motion/kit/three-kit.js:977"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كوي",
@@ -1631,6 +1692,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:107"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أضواء",
@@ -1655,6 +1717,7 @@
    "kosif-tool/styles/pm-ror-fly-9950f1",
    "kosif-tool/styles/pm-sarut0bisasuke-cefa43"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ror-fly-9950f1",
    "pm-sarut0bisasuke-cefa43"
@@ -1685,6 +1748,7 @@
    "kosif-tool/styles/pm-teslachartz-c58b32",
    "kosif-one/vendor/hyperframes/registry/blocks/vfx-liquid-background/vfx-liquid-background.html"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-lukasersil-0ed38e",
    "pm-sahildesigner23-ee3155",
@@ -1714,6 +1778,7 @@
    "kosif-tool/styles/pm-chrisjdimarco-f068db",
    "kosif-tool/styles/pm-ivanfioravanti-bd9261"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-konstantinsaifo-96fc89",
    "pm-chrisjdimarco-f068db",
@@ -1743,6 +1808,7 @@
    "kosif-tool/styles/pm-abderrahmen-g-9e8ed0",
    "kosif-tool/styles/pm-demitiyageekzen-7770ad"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-abderrahmen-g-9e8ed0",
    "pm-demitiyageekzen-7770ad"
@@ -1769,6 +1835,7 @@
   "proof": [
    "kosif-atlas/skills/228-mas-3d-games/708-houdini/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "هوديني",
@@ -1794,6 +1861,7 @@
    "kosif-tool/styles/pm-hbcoop-de365c",
    "kosif-tool/styles/pm-deifosv-04e4d3/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-hbcoop-de365c",
    "pm-web3wesley-7bb108"
@@ -1822,6 +1890,7 @@
    "kosif-tool/styles/pm-kantamk-61f410",
    "kosif-tool/styles/pm-kantamk-61f410/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kantamk-61f410"
   ],
@@ -1851,6 +1920,7 @@
    "kosif-tool/styles/pm-thilina-a-891c09",
    "kosif-tool/styles/pm-lester-tyy-f897f7"
   ],
+  "proof_scope": "repo",
   "styles": [
    "stickman",
    "pm-wozu-co-242285",
@@ -1883,6 +1953,7 @@
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
    "kosif-atlas/skills/2696-game-studio/10367-react-three-fiber-game/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "فيزياء",
@@ -1908,6 +1979,7 @@
    "kosif-one/vendor/hyperframes/registry/components/physical-exit/physical-exit.html",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/reactive-displacement.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بندول",
@@ -1932,6 +2004,7 @@
   "proof": [
    "kosif-tool/styles/pm-1littlecoder-9fef89"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-1littlecoder-9fef89"
   ],
@@ -1960,6 +2033,7 @@
    "kosif-tool/styles/pm-axtonliu-0b861d",
    "kosif-studio/motion/kit/three-kit.js:203"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-hbcoop-de365c",
    "pm-ajith-io-ea7f2d",
@@ -1987,6 +2061,7 @@
   "proof": [
    "kosif-tool/styles/pm-paulo-kombucha-96431c/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "رمية",
@@ -2011,6 +2086,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "code rain",

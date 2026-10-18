@@ -801,6 +801,104 @@ The design superpower gives a KOSIF film one visual vocabulary: a token source r
 - `playbooks/arabic-typography.md`: its mirroring rules decide which icons flip.
 - `playbooks/render-pipeline.md`: offline icon sets and one token build keep renders network-free.
 
+<a id="mimic"></a>
+
+## mimic — المحاكاة
+
+*measured remake of the user's own reference: shot rhythm, transitions, overlay text, fonts and look rebuilt with new footage and the original audio* — 4 repositories listed under *mimic* in [repos.md](repos.md).
+
+### What it adds / ما تضيفه
+
+The mimic superpower rebuilds a reference the user owns with new footage while copying what was measured, not guessed: shot boundaries, the transition kind and its progress curve, every overlay-text event with its alpha curve, the matched font and the colour look. The pipeline lives in `scripts/mimic/` ([mimic.md](mimic.md)); the catalog adds the engines under it: Pillow with libraqm for shaping, Tesseract and tessdata for an OCR draft of the overlay text, and gl-transitions as a licence-clean WebGL source when the remake must run in the browser.
+
+**بالعربية:** قوة المحاكاة تعيد بناء مرجع يملكه المستخدم بلقطات جديدة مع نسخ ما قيس لا ما خُمّن: حدود اللقطات، ونوع الانتقال ومنحناه، وكل حدث نصي بمنحنى شفافيته، والخط المطابق والمظهر اللوني. الخط في `scripts/mimic/` والكتالوج يضيف محركاته: Pillow مع libraqm للتشكيل، وTesseract وtessdata لمسودة النص، وgl-transitions مصدرًا نظيف الترخيص للانتقالات في المتصفح.
+
+### Decision table / جدول القرار
+
+| Need | Pick | Why |
+|---|---|---|
+| Arabic text in the rebuilt frames | Pillow + libraqm (`features.check('raqm')`) | the only Python path that shapes correctly; libass is the alternative inside ffmpeg |
+| Draft of the words seen in the reference | Tesseract + `ara.traineddata` | a draft the user corrects; never final copy |
+| Transitions in a browser remake | gl-transitions | MIT shaders with one signature; the NumPy xfade port is LGPL |
+| Transitions in the Python remake | `mm_transitions.py` | measured progress curve replayed exactly |
+
+### Recipes / وصفات
+
+1. Analyse: `mm_analyze.analyze('ref.mp4', 'work')` → `spec.json`, review sheets, original audio copied.
+2. OCR draft (optional): `tesseract line.png out -l ara --psm 7` on each line crop, then the user confirms the text.
+3. Replacement footage from the user or a licensed source via `scripts/media_sources.py`; never scraped.
+4. Build: `mm_build.build('work', preview=True)` then the full build; verify with `tools/verify_video.py`.
+
+### Pitfalls / مزالق
+
+- Pillow without raqm renders disconnected letters; the doctor must check the feature, not the package.
+- The reference's audio and text belong to its owner: mimic is for the user's own material or licensed references only.
+- Real footage lowers transition confidence and low-contrast timing versus the synthetic proof; say so.
+
+<a id="edit"></a>
+
+## edit — المونتاج
+
+*footage editing: EDL recuts, pause trimming, headless overlays and ffmpeg fallbacks for real-camera material* — 3 repositories listed under *edit* in [repos.md](repos.md).
+
+### What it adds / ما تضيفه
+
+The edit superpower handles real camera material before motion graphics are layered on it: automatic pause trimming with an editable timeline export (auto-editor), headless overlay drawing with proper shaping when no browser is available (skia-python), and an ffmpeg locator so the pipeline still runs on a host without ffmpeg on PATH (imageio-ffmpeg). It complements `scripts/reference_edit_engine.py` and the editorial-film-edit sibling skill.
+
+**بالعربية:** قوة المونتاج تعالج اللقطات الحقيقية قبل وضع الموشن فوقها: قص الوقفات تلقائيًا مع تصدير خط زمني قابل للتعديل (auto-editor)، ورسم الطبقات بلا متصفح بتشكيل صحيح (skia-python)، ومحدد ffmpeg كي يعمل الخط على مضيف يفتقر إليه (imageio-ffmpeg).
+
+### Decision table / جدول القرار
+
+| Need | Pick | Why |
+|---|---|---|
+| Trim a talking head's silences | auto-editor `--export premiere` | editable in the client's NLE; original audio kept |
+| Draw overlays per frame without Chromium | skia-python textlayout | HarfBuzz shaping for Arabic |
+| Host has no ffmpeg | imageio-ffmpeg `get_ffmpeg_exe()` | pip-installable binary; check libass before captions |
+
+### Recipes / وصفات
+
+1. `auto-editor talk.mp4 --edit audio:threshold=4% --margin 0.2s --export premiere` → import the XML, keep the user's audio untouched.
+2. Headless titles: `skia.textlayout` paragraph with the matched Arabic font → PNG sequence → ffmpeg overlay.
+3. Always re-verify fps, duration and audio with `tools/verify_video.py` after a recut.
+
+### Pitfalls / مزالق
+
+- auto-editor re-encodes unless you export a timeline; thresholds differ per microphone.
+- skia `drawString` does not shape Arabic; use the text layout API.
+- imageio-ffmpeg's bundled binary may lack libass or x265.
+
+<a id="cinematic"></a>
+
+## cinematic — الإخراج السينمائي
+
+*cinematic direction: engine-first routing, executed receipts, seekable-DOM renderers and reference skills behind the cinematic director* — 3 repositories listed under *cinematic* in [repos.md](repos.md).
+
+### What it adds / ما تضيفه
+
+The cinematic superpower is the director's preflight: classify every engine as available, missing, untested or needs_auth; choose the smallest engine that can carry the scene; and refuse "done" without an executed receipt. ECC supplies the receipt discipline that [ecc-harness.md](ecc-harness.md) distils, HyperFrames is the seekable-DOM renderer that can stand beside `tools/render_html.cjs`, and the HyperFrames community skills are recipes to read, not prompts to paste.
+
+**بالعربية:** قوة الإخراج السينمائي هي تحضير المخرج: صنّف كل محرك متاحًا أو مفقودًا أو غير مختبر أو يحتاج تفويضًا، واختر أصغر محرك يحمل المشهد، وارفض كلمة «تم» بلا إيصال تنفيذ. ECC يمدّ بانضباط الإيصالات، وHyperFrames مُصيِّر DOM قابل للبحث الزمني بجانب render_html.cjs، ومهارات مجتمعه وصفات للقراءة لا نصوصًا للّصق.
+
+### Decision table / جدول القرار
+
+| Need | Pick | Why |
+|---|---|---|
+| Deterministic HTML scene, offline | `tools/render_html.cjs` | repo standard; no CDN at render time |
+| Timeline components or grade presets | HyperFrames | Apache-2.0; check its CDN loads and RTL scoping |
+| Receipt and surface discipline | ECC patterns via `receipt_gate.py` | executed ≠ verified; nothing claimed without a run |
+
+### Recipes / وصفات
+
+1. `python3 $SKILL_DIR/scripts/probe_env.py` → engine ladder → pick the smallest that passes.
+2. Render a 2-second preview, run `tools/verify_video.py`, attach the receipt to PLAN.md.
+3. Only then the full render; the receipt names fps, duration, audio and the engine version.
+
+### Pitfalls / مزالق
+
+- HyperFrames components may fetch GSAP from a CDN (own licence) and have rendered black with `dir=rtl` on the root.
+- ECC is a prompt library: it cannot make a missing engine appear.
+- Loudness: the repo standard is −14 LUFS; cinematic kits that say −16 are overridden.
+
 ## Credits — الحقوق
 
 Every tool named above belongs to its authors under the license recorded in [repos.md](repos.md). KOSIF describes how to use them in its own words and never redistributes their code, prompts, media or weights.

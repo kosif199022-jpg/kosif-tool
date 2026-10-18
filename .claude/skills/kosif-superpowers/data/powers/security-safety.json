@@ -13,6 +13,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "prompt injection",
@@ -39,6 +40,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "zero-width",
@@ -66,6 +68,7 @@
   "install": "",
   "license": "Apache-2.0",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "prompt injection defense",
@@ -92,6 +95,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "lethal trifecta",
@@ -118,6 +122,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "secrets",
@@ -144,6 +149,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "secret scanning",
@@ -170,6 +176,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "incident",
@@ -196,6 +203,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "security review",
@@ -223,6 +231,7 @@
   "install": "npx ecc-agentshield@<pinned-version> scan --path .",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "agentshield",
@@ -249,6 +258,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "supply chain",
@@ -275,6 +285,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "repo trust",
@@ -301,6 +312,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "permissions",
@@ -327,6 +339,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "least privilege",
@@ -355,6 +368,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "sandbox",
@@ -381,6 +395,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "destructive",
@@ -407,6 +422,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "approval",

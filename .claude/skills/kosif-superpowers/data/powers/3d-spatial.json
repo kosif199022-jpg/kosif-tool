@@ -15,6 +15,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/when-3d-is-justified.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "3D decision",
@@ -41,6 +42,7 @@
    "kosif-tool/styles/fake3d/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "fake3d"
   ],
@@ -69,6 +71,7 @@
    "kosif-tool/styles/pm-koldo2k-5cff87",
    "kosif-atlas/skills/1526-gamegen/4175-game-world-building/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-koldo2k-5cff87"
   ],
@@ -96,6 +99,7 @@
    "kosif-tool/styles/fake3d",
    "kosif-tool/styles/fake3d/STYLE.json"
   ],
+  "proof_scope": "repo",
   "styles": [
    "fake3d"
   ],
@@ -125,6 +129,7 @@
    "app/public/js/10_studio.js:593",
    "kosif-tool/styles/isometric"
   ],
+  "proof_scope": "repo",
   "styles": [
    "isometric",
    "pm-fionntobin-97b7af",
@@ -156,6 +161,7 @@
    "kosif-tool/styles/pm-sudeepsd-1a3485",
    "kosif-tool/styles/pm-levabashidze-2d713a"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-tequilafunks-97f6c9",
    "pm-sudeepsd-1a3485",
@@ -191,6 +197,7 @@
    "kosif-tool/styles/pm-arjunsh1607-93005d",
    "kosif-tool/styles/pm-danilowm-d3720d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-listudio-820c7b",
    "pm-arjunsh1607-93005d",
@@ -225,6 +232,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/3d-card-flip/scene.html",
    "kosif-tool/styles/pm-twoclipping-6dd14e"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-twoclipping-6dd14e",
    "pm-brainextends-e19ac3",
@@ -257,6 +265,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/depth-scatter-assemble.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/orbit-3d-entry.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-agonaliu-466a8f",
    "pm-sudo-kiran-b055de"
@@ -285,6 +294,7 @@
    "kosif-tool/styles/plotter",
    "kosif-tool/styles/pm-pankajkumar-dev-0bee87"
   ],
+  "proof_scope": "repo",
   "styles": [
    "map-journey",
    "plotter",
@@ -317,6 +327,7 @@
    "kosif-audit-studio/studio.css:68",
    "kosif-audit-studio/cinema/cinemaTheme.css"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "orbit rings",
@@ -342,6 +353,7 @@
    "kosif-tool/styles/pm-itsuki-dev-10942d",
    "kosif-one/vendor/hyperframes/registry/blocks/gallery-tunnel/gallery-tunnel.html"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-crazyalphaaa-bc7e75",
    "pm-itsuki-dev-10942d"
@@ -371,6 +383,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/exploded-stack/exploded-stack.html",
    "kosif-one/vendor/hyperframes/registry/components/camera-rig-depth-stack/camera-rig-depth-stack.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "hyperframes",
@@ -398,6 +411,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md:85",
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:76"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "three-kit",
@@ -426,6 +440,7 @@
    "100-superskills/skills/claude-animation-studio/templates/scene-3d.html",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/three.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "three.js",
@@ -451,6 +466,7 @@
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/3d.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "remotion",
@@ -474,6 +490,7 @@
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "portal",
@@ -498,6 +515,7 @@
    "kosif-earth-ci-fork/ui/art/crystal-world.js",
    "kosif-earth-ci-fork/tools/crystal_world.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "WebGL",
@@ -524,6 +542,7 @@
    "kosif-tool/styles/pm-teslachartz-c58b32",
    "kosif-tool/styles/pm-gizakdag-b8c59e"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-grace-sunnyy-29bc61",
    "pm-teslachartz-c58b32",
@@ -557,6 +576,7 @@
    "kosif-tool/styles/pm-nolkeeg-bf062e",
    "kosif-tool/styles/pm-shinskinakamoto-20190b"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-jasonzhou1993-8595e0",
    "pm-ghinaiya-nirmal-5d8fec",
@@ -597,6 +617,7 @@
    "kosif-tool/styles/pm-rebutonepress-810f78",
    "kosif-atlas/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-zaqailo-212ad3",
    "pm-ndhabarde11-f155b4",
@@ -629,6 +650,7 @@
    "kosif-atlas/skills/2696-game-studio/10370-web-3d-asset-pipeline/SKILL.md",
    "kosif-atlas/skills/1526-gamegen/4161-blender-game-assets/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "GLB",
@@ -654,6 +676,7 @@
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md",
    "kosif-atlas/skills/228-mas-3d-games/706-cinema-4d/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "blender",
@@ -679,6 +702,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/TECHNIQUE.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "cesium",
@@ -705,6 +729,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:7",
    "kosif-one/projects/egypt-2120-animation/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-buildfastwithai-ed9447",
    "pm-ivanfioravanti-bd9261"
@@ -733,6 +758,7 @@
    "kosif-studio/motion/kit/three-kit.js:150",
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:174"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "forest",
@@ -758,6 +784,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:26",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:32"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "sky",
@@ -786,6 +813,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:58",
    "kosif-studio/scenes/whale_dragon_3d.html:86"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-axtonliu-0b861d"
   ],
@@ -813,6 +841,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
    "kosif-tool/styles/pm-nft-chen-5f8bb0"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-nft-chen-5f8bb0"
   ],
@@ -839,6 +868,7 @@
    "kosif-studio/motion/projects/koi_pond/src/main.js:1",
    "kosif-studio/motion/kit/three-kit.js:746"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "koi pond",
@@ -865,6 +895,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:178",
    "kosif-studio/motion/projects/blue_hour/src/main.js:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "scale cues",
@@ -889,6 +920,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:14"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "boat",
@@ -914,6 +946,7 @@
    "kosif-one/projects/egypt-2120-animation/index.html",
    "kosif-one/projects/egypt-2120-animation/README.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "future city",
@@ -940,6 +973,7 @@
    "kosif-tool/styles/pm-anilraok-eff262",
    "kosif-tool/styles/pm-gorden-sun-041f56"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-buildfastwithai-ed9447",
    "pm-anilraok-eff262",
@@ -972,6 +1006,7 @@
    "kosif-tool/styles/pm-nft-chen-5f8bb0",
    "kosif-tool/styles/pm-buildfastwithai-ed9447"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-nft-chen-5f8bb0",
    "pm-buildfastwithai-ed9447"
@@ -1001,6 +1036,7 @@
    "100-superskills/skills/cinematic-3d-scene/SKILL.md",
    "kosif-tool/playbooks/3d.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "lighting",
@@ -1026,6 +1062,7 @@
    "kosif-studio/scenes/whale_dragon_3d.html:60",
    "kosif-studio/scenes/whale_dragon_3d.html:1"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-zheke-38deff",
    "pm-samuel-spitz-974923",
@@ -1060,6 +1097,7 @@
    "100-superskills/skills/claude-animation-studio/templates/scene-3d.html",
    "kosif-studio/motion/templates/scene3d/src/main.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "bloom",
@@ -1085,6 +1123,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:194",
    "kosif-one/tools/kosif-studio/motion/kit/shape-kit.js:336"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "studio",
@@ -1111,6 +1150,7 @@
    "kosif-tool/styles/pm-eyishazyer-af035b",
    "kosif-tool/styles/pm-micheleharmonic-77628e"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-eyishazyer-af035b",
    "pm-micheleharmonic-77628e"
@@ -1140,6 +1180,7 @@
    "kosif-one/tools/kosif-studio/scenes/whale_dragon_3d.html",
    "kosif-studio/references/drawing-guide.md:99"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "cinematic still",
@@ -1166,6 +1207,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:21",
    "kosif-studio/motion/kit/shape-kit.js:183"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "SDF",
@@ -1193,6 +1235,7 @@
    "kosif-studio/motion/templates/scene3d/src/main.js",
    "kosif-tool/styles/pm-blueoctopusai-dd17bd"
   ],
+  "proof_scope": "repo",
   "styles": [
    "cinematic-3d",
    "pm-blueoctopusai-dd17bd",
@@ -1221,6 +1264,7 @@
   "proof": [
    "kosif-tool/playbooks/3d.md:35"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "turntable",
@@ -1246,6 +1290,7 @@
    "kosif-tool/styles/pm-mdaman010-e7226a",
    "kosif-tool/styles/pm-sayan-shanky-f850d8"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-mdaman010-e7226a",
    "pm-sayan-shanky-f850d8"
@@ -1274,6 +1319,7 @@
    "fastify-motion-bro/tests/production-profiles.test.mjs",
    "fastify-motion-bro/scripts/profiles/character-romance.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "car",
@@ -1299,6 +1345,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/cutaway-terrain-and-domain-scenes.md",
    "kosif-tool/styles/pm-konstantinsaifo-96fc89"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-konstantinsaifo-96fc89"
   ],
@@ -1325,6 +1372,7 @@
    "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/examples/cinematic/README.md",
    "kosif-tool/styles/pm-mdaman010-e7226a"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-mdaman010-e7226a"
   ],
@@ -1352,6 +1400,7 @@
    "kosif-tool/styles/pm-sahildesigner23-ee3155",
    "kosif-tool/styles/pm-itisrazak-3ad902/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ajith-io-4c248f",
    "pm-sahildesigner23-ee3155",
@@ -1382,6 +1431,7 @@
    "kosif-tool/styles/pm-cansincengiz-me-cf68dd",
    "kosif-tool/styles/pm-mandelduck-95fd08/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-spearwtf-3c1fd1",
    "pm-cansincengiz-me-cf68dd",
@@ -1409,6 +1459,7 @@
   "proof": [
    "kosif-studio/motion/projects/sound_ground/src/main.js:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "music visualizer",
@@ -1436,6 +1487,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-tool/styles/lowpoly-3d/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-mandelduck-95fd08",
    "scroll-world",

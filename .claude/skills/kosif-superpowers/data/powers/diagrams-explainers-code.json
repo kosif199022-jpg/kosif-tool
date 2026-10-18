@@ -15,6 +15,7 @@
    "kosif-atlas/skills/1098-akbun-presentation/2476-akbun-presentation-visual/SKILL.md",
    "kosif-atlas/skills/345-visuals/1242-html-diagram/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "diagram",
@@ -41,6 +42,7 @@
    "kosif-atlas/skills/345-visuals/1242-html-diagram/references/svg-primitives.md",
    "kosif-atlas/skills/2657-figures/10114-svg-primitives"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "nodes",
@@ -68,6 +70,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout/references/algorithm-selection.md",
    "100-superskills/skills/diagrams-mermaid-architecture/SKILL.md:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "diagram type",
@@ -96,6 +99,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/whiteboard-draw/README.md",
    "kosif-atlas/skills/2657-figures/10114-svg-primitives"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "build order",
@@ -121,6 +125,7 @@
    "kosif-tool/playbooks/diagrams.md:18",
    "kosif-tool/playbooks/diagrams.md:71"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "RTL",
@@ -146,6 +151,7 @@
    "kosif-atlas/skills/x4919-visual-gen/x20317-architecture-diagram/SKILL.md",
    "100-superskills/skills/diagrams-mermaid-architecture/SKILL.md:24"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "semantic colour",
@@ -169,6 +175,7 @@
   "proof": [
    "kosif-atlas/skills/1094-akbun-draw/2418-akbun-draw-learning-mono/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "mono",
@@ -192,6 +199,7 @@
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3811-closure-completion-cost/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "icons",
@@ -215,6 +223,7 @@
   "proof": [
    "kosif-atlas/skills/2657-figures/10115-transparent-icons"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "icons",
@@ -239,6 +248,7 @@
    "kosif-atlas/skills/2657-figures/10114-svg-primitives/SKILL.md",
    "kosif-atlas/skills/2657-figures/10113-svg-figure"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "svg",
@@ -265,6 +275,7 @@
    "kosif-atlas/skills/1245-mermaid-cli/2925-mermaid-cli",
    "100-superskills/skills/diagrams-mermaid-architecture/SKILL.md:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "mermaid",
@@ -288,6 +299,7 @@
   "proof": [
    "kosif-atlas/skills/2173-tools-plugin/7914-d2-diagrams"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "d2",
@@ -313,6 +325,7 @@
    "kosif-atlas/skills/2966-pwdev-excalidraw/12488-excalidraw",
    "kosif-atlas/skills/3013-obsidian-second-brain/12869-json-canvas"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "excalidraw",
@@ -337,6 +350,7 @@
    "kosif-atlas/skills/30-learning/39-forcegraph-exporter/SKILL.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout/references/algorithm-selection.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "force graph",
@@ -361,6 +375,7 @@
    "kosif-earth-ci-fork/ui/components/studio.js",
    "kosif-earth-ci-fork/ui/components/studio.css:25"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "node map",
@@ -386,6 +401,7 @@
    "kosif-tool/playbooks/diagrams.md:37",
    "kosif-tool/playbooks/diagrams.md:27"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "process",
@@ -413,6 +429,7 @@
    "kosif-tool/styles/plotter",
    "kosif-tool/styles/pm-blueoctopusai-dd17bd"
   ],
+  "proof_scope": "repo",
   "styles": [
    "isometric",
    "plotter",
@@ -448,6 +465,7 @@
    "kosif-one/projects/water-cycle-animation/index.html",
    "kosif-earth-ci-fork/ui/components/studio.css:25"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-mdaman010-e7226a"
   ],
@@ -477,6 +495,7 @@
    "kosif-tool/styles/pm-kmasiff-cc72cb",
    "kosif-tool/styles/pm-agonaliu-466a8f"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kmasiff-cc72cb",
    "pm-agonaliu-466a8f",
@@ -515,6 +534,7 @@
    "kosif-tool/styles/pm-kyonax-on-tech-aabc1d",
    "kosif-tool/styles/pm-elliot-garreffa-f334bc"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ceowinkz-7c776b",
    "pm-anthonyriera-9b1b2a",
@@ -550,6 +570,7 @@
    "kosif-tool/styles/pm-sudo-kiran-6609ed",
    "kosif-tool/playbooks/audio-sync.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-sudo-kiran-6609ed"
   ],
@@ -576,6 +597,7 @@
    "kosif-tool/playbooks/diagrams.md:48",
    "kosif-tool/playbooks/diagrams.md:52"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "zoom",
@@ -601,6 +623,7 @@
    "kosif-tool/styles/pm-kloss-xyz-fe0c31/BRIEF.md",
    "kosif-tool/styles/pm-lemomo-ai-0d9cff"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kloss-xyz-fe0c31",
    "pm-lemomo-ai-0d9cff"
@@ -629,6 +652,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/flowchart/flowchart.html",
    "kosif-tool/styles/pm-misbahsy-80eaec"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-misbahsy-80eaec",
    "pm-macrohou-33959d"
@@ -656,6 +680,7 @@
    "kosif-one/projects/water-cycle-animation/index.html",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "cycle",
@@ -681,6 +706,7 @@
    "kosif-audit-pro/app/globals.css:998",
    "kosif-audit-pro/app/globals.css:2191"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-alex-prompter-1ea044",
    "pm-ror-fly-9950f1",
@@ -711,6 +737,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
    "kosif-tool/styles/pm-chatgptastra-0d95c7"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-chatgptastra-0d95c7"
   ],
@@ -736,6 +763,7 @@
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "comparison",
@@ -762,6 +790,7 @@
    "kosif-tool/styles/pm-kyonax-on-tech-aabc1d",
    "kosif-tool/styles/pm-techyoutbe-945b56/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kyonax-on-tech-aabc1d",
    "pm-konstantinsaifo-96fc89",
@@ -792,6 +821,7 @@
   "proof": [
    "kosif-tool/styles/pm-ddryo-loos-300829"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ddryo-loos-300829"
   ],
@@ -818,6 +848,7 @@
    "kosif-tool/styles/pm-blueoctopusai-dd17bd",
    "kosif-tool/styles/infographic"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-blueoctopusai-dd17bd",
    "infographic"
@@ -845,6 +876,7 @@
    "kosif-tool/playbooks/code.md:15",
    "kosif-atlas/skills/1503-universal-design-principles/3825-legibility-contrast-and-spacing/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "code typography",
@@ -870,6 +902,7 @@
    "kosif-tool/playbooks/code.md:55",
    "kosif-tool/starters/html-canvas/timeline.js"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "typing",
@@ -896,6 +929,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
    "kosif-tool/styles/pm-madhav-xo-f97f20"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-madhav-xo-f97f20",
    "pm-iammxfschr-d68f90",
@@ -932,6 +966,7 @@
    "kosif-tool/playbooks/code.md:27",
    "kosif-tool/styles/pm-henkvaness-0e06af"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-henkvaness-0e06af",
    "pm-kamstudiolabs-c9bb28",
@@ -960,6 +995,7 @@
    "kosif-tool/playbooks/code.md:49",
    "kosif-tool/styles/pm-jake11moran-a269c4/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "diff",
@@ -983,6 +1019,7 @@
   "proof": [
    "kosif-atlas/skills/1094-akbun-draw/2426-akbun-generateimage-code/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "code window",
@@ -1007,6 +1044,7 @@
    "kosif-tool/styles/pm-ibrahimwasim240-809370",
    "kosif-tool/styles/plotter"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ibrahimwasim240-809370",
    "plotter"
@@ -1035,6 +1073,7 @@
    "kosif-tool/styles/pm-misbahsy-80eaec",
    "kosif-tool/styles/pm-techhalla-7acbc2"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kloss-xyz-15182a",
    "pm-misbahsy-80eaec",
@@ -1068,6 +1107,7 @@
    "kosif-one/vendor/hyperframes/registry/components/code-terminal-run/code-terminal-run.html",
    "kosif-one/vendor/hyperframes/registry/blocks/code-3d-extrude/code-3d-extrude.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "code blocks",
@@ -1094,6 +1134,7 @@
    "kosif-one/vendor/hyperframes/skills/faceless-explainer/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/pr-to-video/references/story-design.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "PR to video",
@@ -1119,6 +1160,7 @@
    "kosif-tool/styles/pm-jake11moran-a269c4/BRIEF.md",
    "kosif-tool/styles/pm-emollick-8661a8"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-emollick-8661a8"
   ],
@@ -1145,6 +1187,7 @@
   "proof": [
    "kosif-tool/styles/pm-danilowm-d3720d/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "folder tree",
@@ -1169,6 +1212,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
    "kosif-atlas/skills/994-write-math/2278-write-math/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "equation",
@@ -1194,6 +1238,7 @@
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md",
    "kosif-tool/styles/pm-linearuncle-5d2bae"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-linearuncle-5d2bae"
   ],
@@ -1220,6 +1265,7 @@
   "proof": [
    "kosif-tool/styles/pm-math-files-39c9d0"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-math-files-39c9d0"
   ],
@@ -1246,6 +1292,7 @@
   "proof": [
    "kosif-tool/styles/chalkboard"
   ],
+  "proof_scope": "repo",
   "styles": [
    "chalkboard"
   ],
@@ -1273,6 +1320,7 @@
    "kosif-tool/styles/pm-tak3sh8-be5012",
    "kosif-tool/styles/pm-tak3sh8-be5012/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kloss-xyz-fe0c31",
    "pm-tak3sh8-be5012"
@@ -1301,6 +1349,7 @@
    "kosif-tool/styles/pm-rebutonepress-810f78",
    "kosif-tool/styles/pm-adamdesgns-478d6d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-rebutonepress-810f78",
    "pm-adamdesgns-478d6d"
@@ -1331,6 +1380,7 @@
    "100-superskills/skills/kosif-montage-motion/references/STRUCTURAL_TWIN.md",
    "100-superskills/skills/kosif-montage-motion/scripts/twin_dashboard.py:763"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "truss",
@@ -1357,6 +1407,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:395",
    "kosif-studio/motion/references/STRUCTURAL_TWIN.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "truss film",
@@ -1382,6 +1433,7 @@
    "kosif-studio/motion/kit/lab-kit.js:135",
    "kosif-one/tools/kosif-studio/motion/kit/lab-kit.js:135"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "schematic",
@@ -1406,6 +1458,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/index.html:59",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:83"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "science",
@@ -1433,6 +1486,7 @@
    "kosif-studio/tests/test_studio.py:629",
    "100-superskills/skills/trend-animation-styles/references/styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "water cycle",
@@ -1459,6 +1513,7 @@
    "100-superskills/skills/explainer-edu-animation/SKILL.md",
    "100-superskills/skills/math-science-tutor/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "accuracy",
@@ -1484,6 +1539,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2458-davinciresolve-gfx-hyperframes/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "explainer cards",
@@ -1508,6 +1564,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2430-akbun-davinciresolve-article-overlay/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/news/module.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "source document",
@@ -1533,6 +1590,7 @@
    "app/public/js/00_editor.js:2007",
    "app/public/js/00_editor.js:1777"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "basma",
@@ -1558,6 +1616,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:58",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:267"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "metaphor",
@@ -1583,6 +1642,7 @@
    "kosif-tool/styles/pm-yunn260414-60d996",
    "kosif-tool/styles/pm-sarut0bisasuke-cefa43"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-0xnfrith-5be616",
    "pm-yunn260414-60d996",
@@ -1613,6 +1673,7 @@
    "kosif-tool/styles/pm-gabrielbuzziv-4ff0c6",
    "kosif-tool/styles/pm-nikolajankovic-ce4ff4"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-1stnoel-c20a89",
    "pm-jhylee95-e1152f",
@@ -1646,6 +1707,7 @@
    "kosif-tool/styles/tech-blueprint/STYLE.json",
    "kosif-tool/playbooks/diagrams.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "tech-blueprint"
   ],
@@ -1671,6 +1733,7 @@
   "proof": [
    "100-superskills/skills/storyboard-shotlist/SKILL.md:24"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "storyboard",
@@ -1694,6 +1757,7 @@
   "proof": [
    "kosif-audit-studio/cinema/evidenceGalaxy.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "evidence graph",
@@ -1719,6 +1783,7 @@
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/manim-video/SKILL.md"
   ],
+  "proof_scope": "url",
   "styles": [],
   "tags": [
    "manim",

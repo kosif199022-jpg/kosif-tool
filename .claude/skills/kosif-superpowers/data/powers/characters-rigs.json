@@ -15,6 +15,7 @@
    "kosif-atlas/skills/1094-akbun-draw/2427-akbun-mascot-whale/SKILL.md",
    "kosif-atlas/skills/1526-gamegen/4166-game-concept-art/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "model sheet",
@@ -40,6 +41,7 @@
    "kosif-studio/motion/references/shape-kit.md",
    "100-superskills/skills/kosif-montage-motion/references/shape-kit.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "cute",
@@ -67,6 +69,7 @@
    "100-superskills/skills/kosif-montage-motion/references/continuity-protocols.md",
    "kosif-atlas/skills/2976-pwdev-social-media/12595-visual-consistency"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "character lock",
@@ -91,6 +94,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/character-psychology.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "personality",
@@ -118,6 +122,7 @@
    "fastify-motion-bro/scripts/profiles/fitness.mjs",
    "fastify-motion-bro/tests/production-profiles.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "character bible",
@@ -145,6 +150,7 @@
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
    "kosif-atlas/skills/1511-homie/3889-art"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "consistency",
@@ -169,6 +175,7 @@
   "proof": [
    "kosif-atlas/skills/2696-game-studio/10368-sprite-pipeline"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "sprite strip",
@@ -193,6 +200,7 @@
    "kosif-atlas/skills/1446-marketing-skills/3531-video",
    "kosif-one/vendor/hyperframes/docs/guides/avatar-presenter.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "avatar",
@@ -218,6 +226,7 @@
   "proof": [
    "kosif-atlas/skills/2722-vercel/10522-ai-elements/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "persona",
@@ -244,6 +253,7 @@
    "kosif-tool/styles/character-rig/SKILL.md",
    "100-superskills/skills/character-animation-2d/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "character-rig"
   ],
@@ -273,6 +283,7 @@
    "kosif-tool/styles/stickman",
    "kosif-tool/styles/pm-axtonliu-0b861d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "stickman",
    "pm-axtonliu-0b861d"
@@ -301,6 +312,7 @@
   "proof": [
    "kosif-tool/styles/stickman"
   ],
+  "proof_scope": "repo",
   "styles": [
    "stickman"
   ],
@@ -330,6 +342,7 @@
    "kosif-tool/styles/stickman",
    "kosif-tool/styles/pm-jake11moran-a269c4"
   ],
+  "proof_scope": "repo",
   "styles": [
    "stickman",
    "pm-jake11moran-a269c4",
@@ -359,6 +372,7 @@
   "proof": [
    "kosif-tool/styles/doodle"
   ],
+  "proof_scope": "repo",
   "styles": [
    "doodle"
   ],
@@ -388,6 +402,7 @@
    "kosif-studio/scenes/dragon_girl.py:288",
    "kosif-studio/tests/test_studio.py:227"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "local coordinates",
@@ -414,6 +429,7 @@
    "kosif-studio/scenes/duck_dragon.py:34",
    "100-superskills/skills/pixel-studio-painter/scripts/scenes/dragon_girl.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "dragon",
@@ -441,6 +457,7 @@
    "app/public/js/10_studio.js:504",
    "kosif-tool/styles/stickman"
   ],
+  "proof_scope": "repo",
   "styles": [
    "stickman",
    "pm-devius-maximus-beab45",
@@ -470,6 +487,7 @@
   "proof": [
    "kosif-tool/styles/pm-topi-003-b0e12c"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-topi-003-b0e12c"
   ],
@@ -499,6 +517,7 @@
    "kosif-tool/styles/pm-anthonyriera-9b1b2a",
    "kosif-tool/styles/pm-anas0ra-e57aea"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-anilraok-eff262",
    "pm-gorden-sun-041f56",
@@ -529,6 +548,7 @@
    "kosif-tool/styles/pm-jake11moran-a269c4",
    "kosif-tool/styles/pm-jake11moran-a269c4/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-jake11moran-a269c4"
   ],
@@ -557,6 +577,7 @@
    "kosif-tool/styles/pm-kamstudiolabs-0b0824/BRIEF.md",
    "kosif-tool/styles/pm-utopyaszx-1b2f94"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kamstudiolabs-0b0824",
    "pm-utopyaszx-1b2f94",
@@ -586,6 +607,7 @@
    "kosif-tool/styles/pm-0xevinho-3777d8",
    "kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-lemomo-ai-0d9cff",
    "pm-0xevinho-3777d8"
@@ -614,6 +636,7 @@
    "kosif-tool/styles/pm-loicrambo-ad6830",
    "kosif-tool/styles/pm-allforbigfire-86ff3c"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-loicrambo-ad6830",
    "pm-allforbigfire-86ff3c"
@@ -643,6 +666,7 @@
    "kosif-atlas/skills/1526-gamegen/4162-game-animation/SKILL.md",
    "100-superskills/skills/character-animation-2d/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "walk cycle",
@@ -668,6 +692,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.html",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.mp4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "walk leg",
@@ -694,6 +719,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:59",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/midnight-cat.mp4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "pose state machine",
@@ -718,6 +744,7 @@
   "proof": [
    "kosif-atlas/skills/2460-pixel-art/9525-animate"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "sprite walk",
@@ -742,6 +769,7 @@
    "kosif-tool/playbooks/characters.md:24",
    "kosif-tool/styles/pm-chrisjdimarco-f068db"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-chrisjdimarco-f068db"
   ],
@@ -770,6 +798,7 @@
    "kosif-tool/styles/pm-abderrahmen-g-9e8ed0/BRIEF.md",
    "kosif-tool/styles/pm-paulo-kombucha-96431c/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "reaction",
@@ -795,6 +824,7 @@
    "kosif-tool/playbooks/characters.md:50",
    "app/public/js/00_editor.js:2007"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "point",
@@ -818,6 +848,7 @@
   "proof": [
    "kosif-tool/playbooks/characters.md:48"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "talking",
@@ -844,6 +875,7 @@
    "kosif-tool/styles/pm-paulo-kombucha-96431c",
    "kosif-tool/styles/pm-kangaroohere-b10f8d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-abderrahmen-g-9e8ed0",
    "pm-paulo-kombucha-96431c",
@@ -873,6 +905,7 @@
    "kosif-tool/styles/pm-cansincengiz-me-cf68dd",
    "kosif-tool/styles/pm-fionntobin-97b7af"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-axtonliu-0b861d",
    "pm-cansincengiz-me-cf68dd",
@@ -902,6 +935,7 @@
    "kosif-atlas/skills/1526-gamegen/4162-game-animation/SKILL.md",
    "100-superskills/skills/character-animation-2d/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "principles",
@@ -927,6 +961,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/character-rig/README.md",
    "kosif-tool/playbooks/characters.md:75"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "RTL",
@@ -953,6 +988,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:118",
    "kosif-tool/playbooks/characters.md:28"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "idle",
@@ -980,6 +1016,7 @@
    "100-superskills/skills/kosif-montage-motion/references/shape-kit.md",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "Verlet",
@@ -1008,6 +1045,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:107",
    "kosif-tool/styles/pm-kamstudiolabs-c9bb28"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kamstudiolabs-c9bb28"
   ],
@@ -1034,6 +1072,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:203"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "birds",
@@ -1059,6 +1098,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:40",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:29"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "bunny",
@@ -1085,6 +1125,7 @@
    "kosif-studio/motion/kit/shape-kit.js:311",
    "kosif-studio/motion/kit/lab-kit.js:56"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "eyes",
@@ -1111,6 +1152,7 @@
    "kosif-studio/motion/kit/lab-kit.js:101",
    "kosif-studio/motion/projects/lab_rabbit_lion/README.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "rabbit",
@@ -1137,6 +1179,7 @@
    "kosif-studio/motion/kit/three-kit.js:629",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:613"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "koi",
@@ -1162,6 +1205,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:96",
    "kosif-tool/styles/pm-ryzoft-4f85bd"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ryzoft-4f85bd"
   ],
@@ -1189,6 +1233,7 @@
    "kosif-studio/motion/kit/three-kit.js:1066",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1067"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "turntable",
@@ -1214,6 +1259,7 @@
    "kosif-studio/motion/motion.py",
    "100-superskills/skills/kosif-montage-motion/scripts/qa.py:605"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "mocap",
@@ -1239,6 +1285,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/lottie.md",
    "kosif-one/vendor/hyperframes/registry/blocks/lottie-character-walk/lottie-character-walk.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "lottie",
@@ -1265,6 +1312,7 @@
    "kosif-tool/styles/comics-panels/STYLE.json",
    "kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b"
   ],
+  "proof_scope": "repo",
   "styles": [
    "comics-panels"
   ],
@@ -1291,6 +1339,7 @@
    "kosif-tool/styles/anime-action/SKILL.md",
    "kosif-tool/styles/anime-action/STYLE.json"
   ],
+  "proof_scope": "repo",
   "styles": [
    "anime-action"
   ],
@@ -1318,6 +1367,7 @@
   "proof": [
    "kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "webtoon",
@@ -1344,6 +1394,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "character",

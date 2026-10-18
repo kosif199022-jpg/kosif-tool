@@ -15,6 +15,7 @@
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
    "100-superskills/skills/kosif-montage-motion/SKILL.md:201"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-01"
@@ -35,6 +36,7 @@
    "kosif-studio/motion/projects/bunny_twin/twin/cues.json",
    "kosif-one/tools/kosif-studio/motion/score.py:146"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-02"
@@ -55,6 +57,7 @@
    "kosif-one/tools/kosif-studio/motion/score.py:1",
    "kosif-one/tools/kosif-studio/motion/qa.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-03"
@@ -73,6 +76,7 @@
    "fastify-motion-bro/scripts/profiles/stickman.mjs:33-34,51",
    "fastify-motion-bro/skills/stickman/SKILL.md:13"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-04"
@@ -90,6 +94,7 @@
   "proof": [
    "fastify-motion-bro/scripts/profiles/car-exploded.mjs:58"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-05"
@@ -107,6 +112,7 @@
   "proof": [
    "fastify-motion-bro/scripts/profiles/food-flow.mjs:4-28,34-45"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-06"
@@ -126,6 +132,7 @@
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:43,115",
    "fastify-motion-bro/scripts/viral-editorial.mjs:70"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-07"
@@ -143,6 +150,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_songreel.py:27"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-08"
@@ -162,6 +170,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:88",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:54"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-09"
@@ -180,6 +189,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:74",
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:91"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-10"
@@ -197,6 +207,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_fetch_lab.py:48"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-11"
@@ -216,6 +227,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:104",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/sfx/LICENSE-SFX.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-12"
@@ -235,6 +247,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:60",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/media.mjs:6"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-13"
@@ -252,6 +265,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/qa.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-14"
@@ -269,6 +283,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:47"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-15"
@@ -286,6 +301,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:90"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-16"
@@ -304,6 +320,7 @@
    "kosif-studio/motion/reel.py:57",
    "kosif-studio/tests/test_studio.py:882"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-17"
@@ -322,6 +339,7 @@
    "kosif-studio/motion/montage.py:203",
    "kosif-studio/motion/motion.py:390"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-18"
@@ -340,6 +358,7 @@
    "kosif-studio/motion/qa.py:448",
    "kosif-studio/tests/test_studio.py:719"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-19"
@@ -358,6 +377,7 @@
    "kosif-studio/motion/qa.py:304",
    "kosif-studio/tests/test_studio.py:667"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-20"
@@ -377,6 +397,7 @@
    "kosif-studio/motion/score.py:221",
    "kosif-studio/tests/test_studio.py:667"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-21"
@@ -394,6 +415,7 @@
   "proof": [
    "kosif-studio/motion/score.py:70"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-22"
@@ -411,6 +433,7 @@
   "proof": [
    "kosif-studio/motion/score.py:299"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-23"
@@ -430,6 +453,7 @@
    "kosif-studio/motion/projects/lab_rabbit_lion/assets/score.json",
    "kosif-studio/motion/projects/sound_ground/assets/score.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-24"
@@ -448,6 +472,7 @@
    "kosif-studio/motion/ambience.py:73",
    "kosif-studio/tests/test_studio.py:572"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-25"
@@ -466,6 +491,7 @@
    "kosif-tool/tools/kosif.py:74",
    "kosif-tool/web/generator.js"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-26"
@@ -484,6 +510,7 @@
    "kosif-tool/tools/verify_video.py:33",
    "kosif-tool/templates/TEST_REPORT.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-27"
@@ -504,6 +531,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/qa.py:455",
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:804"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-28"
@@ -522,6 +550,7 @@
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/scripts/extract-audio-data.py",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/audio-reactive.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-29"
@@ -541,6 +570,7 @@
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/scripts/extract-audio-data.py",
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/references/effects.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-30"
@@ -559,6 +589,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/SKILL.md",
    "kosif-atlas/skills/1511-homie/3903-video/references/TRAILER.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-31"
@@ -577,6 +608,7 @@
    "kosif-atlas/skills/1511-homie/3903-video",
    "kosif-atlas/skills/1511-homie/3892-music/references/COMPOSITION.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-32"
@@ -595,6 +627,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/sfx-design.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-33"
@@ -614,6 +647,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound/references/TRAPS.md",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/mixing-and-loops.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-34"
@@ -632,6 +666,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound/references/SCORE.md",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-35"
@@ -650,6 +685,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/audio-reactive.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/dynamic-techniques.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-36"
@@ -667,6 +703,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-37"
@@ -685,6 +722,7 @@
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/references/effects.md",
    "kosif-atlas/skills/2760-charly-tools/10938-songsee/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-38"
@@ -702,6 +740,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3892-music"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-39"
@@ -719,6 +758,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3892-music"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-40"
@@ -737,6 +777,7 @@
    "kosif-audit-studio/app.js:2064",
    "kosif-audit-studio/styles.css:836"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-41"
@@ -755,6 +796,7 @@
    "kosif-earth-ci-fork/ui/audit/classic/voice.js:166",
    "kosif-earth-ci-fork/ui/audit/classic/voice.js:368"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-42"
@@ -772,6 +814,7 @@
   "proof": [
    "kosif-earth-ci-fork/ui/features/enterprise.js:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-43"
@@ -790,6 +833,7 @@
    "fastify-motion-bro/scripts/viral-editorial.mjs:69,90",
    "fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:40"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-44"
@@ -808,6 +852,7 @@
    "100-superskills/skills/hyperframes-animation-studio/scripts/score.py",
    "100-superskills/skills/hyperframes-animation-studio/scripts/ambience.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-45"
@@ -825,6 +870,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-46"
@@ -844,6 +890,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-47"
@@ -863,6 +910,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-48"
@@ -882,6 +930,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-49"
@@ -901,6 +950,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-50"
@@ -920,6 +970,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-51"
@@ -938,6 +989,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:90",
    "100-superskills/skills/kosif-montage-motion/scripts/motion.py:546"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-52"
@@ -956,6 +1008,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:97",
    "100-superskills/skills/kosif-montage-motion/scripts/qa.py:455"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-53"
@@ -975,6 +1028,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/sfx/LICENSE-SFX.md",
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:275"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-54"
@@ -994,6 +1048,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/twin/score.json:1",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/assets/score.json:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-55"
@@ -1013,6 +1068,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/assets/cues.json",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/assets/cues.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-56"
@@ -1032,6 +1088,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/channels.json",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:14"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-57"
@@ -1051,6 +1108,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/assets/score.wav",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/assets/score.wav"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-58"
@@ -1068,6 +1126,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/score.py:37"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-59"
@@ -1085,6 +1144,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/score.py:37"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-60"
@@ -1102,6 +1162,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/score.py:37"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-61"
@@ -1119,6 +1180,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/score.py:37"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-62"
@@ -1136,6 +1198,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/score.py:37"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-63"
@@ -1153,6 +1216,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/score.py:37"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-64"
@@ -1170,6 +1234,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/qa.py:311"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-65"
@@ -1187,6 +1252,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/montage.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-66"
@@ -1204,6 +1270,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/ambience.py:20"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-67"
@@ -1221,6 +1288,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/score.py:344"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-68"
@@ -1238,6 +1306,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/songreel.py:56"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-69"
@@ -1255,6 +1324,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:661"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-70"
@@ -1273,6 +1343,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:776",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:534"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-71"
@@ -1290,6 +1361,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/audio_analyze.py:165"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-72"
@@ -1309,6 +1381,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-73"
@@ -1326,6 +1399,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:90"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-74"
@@ -1344,6 +1418,7 @@
    "kosif-one/tools/kosif-studio/motion/score.py:1",
    "kosif-one/tools/kosif-studio/motion/score.py:340"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-75"
@@ -1362,6 +1437,7 @@
    "kosif-one/tools/kosif-studio/motion/ambience.py:1",
    "kosif-one/tools/kosif-studio/motion/ambience.py:178"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-76"
@@ -1380,6 +1456,7 @@
    "kosif-one/tools/kosif-studio/motion/montage.py:202",
    "kosif-one/tools/kosif-studio/motion/reel.py:152"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-77"
@@ -1398,6 +1475,7 @@
    "kosif-one/tools/kosif-studio/motion/montage.py:199",
    "kosif-one/tools/kosif-studio/motion/reel.py:150"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-78"
@@ -1416,6 +1494,7 @@
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md",
    "100-superskills/skills/pro-video-editor-ffmpeg/templates/edl.example.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-79"
@@ -1433,6 +1512,7 @@
   "proof": [
    "100-superskills/skills/audio-reactive-captions-studio/scripts/extract_audio_data.py:30"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-80"
@@ -1450,6 +1530,7 @@
   "proof": [
    "100-superskills/skills/audio-reactive-captions-studio/templates/audio-reactive.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-81"
@@ -1467,6 +1548,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:97"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-82"
@@ -1485,6 +1567,7 @@
    "kosif-studio/motion/motion.py:347",
    "kosif-studio/tests/test_studio.py:585"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-83"
@@ -1504,6 +1587,7 @@
    "kosif-studio/motion/reel.py:140",
    "kosif-studio/motion/motion.py:383"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-84"
@@ -1521,6 +1605,7 @@
   "proof": [
    "kosif-studio/motion/score.py:340"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-85"
@@ -1540,6 +1625,7 @@
    "kosif-studio/motion/direct.py:263",
    "kosif-studio/motion/verse.py:440"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-86"
@@ -1557,6 +1643,7 @@
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/audio-visualization.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-87"
@@ -1575,6 +1662,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound/references/SCORE.md",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-88"
@@ -1592,6 +1680,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-89"
@@ -1609,6 +1698,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/music-composition.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-90"
@@ -1626,6 +1716,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-91"
@@ -1644,6 +1735,7 @@
    "app/public/js/00_editor.js:1032",
    "app/public/js/00_editor.js:1038"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-92"
@@ -1661,6 +1753,7 @@
   "proof": [
    "app/public/js/00_editor.js:2320"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-93"
@@ -1680,6 +1773,7 @@
    "app/public/js/00_editor.js:2234",
    "app/public/js/10_studio.js:3895"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-94"
@@ -1697,6 +1791,7 @@
   "proof": [
    "app/public/js/10_studio.js:89"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-95"
@@ -1715,6 +1810,7 @@
    "app/public/js/10_studio.js:161",
    "app/public/js/10_studio.js:2110"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-96"
@@ -1732,6 +1828,7 @@
   "proof": [
    "app/public/js/10_studio.js:125"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-97"
@@ -1749,6 +1846,7 @@
   "proof": [
    "app/public/js/10_studio.js:967"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-98"
@@ -1766,6 +1864,7 @@
   "proof": [
    "app/public/js/10_studio.js:2105"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-99"
@@ -1784,6 +1883,7 @@
    "app/public/js/10_studio.js:3843",
    "app/public/js/10_studio.js:3861"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-100"
@@ -1801,6 +1901,7 @@
   "proof": [
    "app/public/js/10_studio.js:3895"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-101"
@@ -1818,6 +1919,7 @@
   "proof": [
    "app/public/js/00_editor.js:143"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-102"
@@ -1836,6 +1938,7 @@
    "app/public/js/00_editor.js:181",
    "app/public/js/00_editor.js:255"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-103"
@@ -1854,6 +1957,7 @@
    "app/public/js/00_editor.js:143",
    "app/public/js/00_editor.js:2789"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-104"
@@ -1872,6 +1976,7 @@
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-105"
@@ -1890,6 +1995,7 @@
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-106"
@@ -1907,6 +2013,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/docs/reference/audio-effects.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-107"
@@ -1924,6 +2031,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/docs/reference/audio-effects.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-108"
@@ -1941,6 +2049,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/docs/guides/music-to-video.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-109"
@@ -1960,6 +2069,7 @@
    "kosif-one/vendor/hyperframes/registry/components/beat-accent/beat-accent.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/beat-accent.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-110"
@@ -1979,6 +2089,7 @@
    "kosif-one/vendor/hyperframes/registry/components/beat-pulse-background/beat-pulse-background.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/beat-pulse-background.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-111"
@@ -1998,6 +2109,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/beat-freeze-cut/beat-freeze-cut.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/beat-freeze-cut.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-112"
@@ -2017,6 +2129,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/waveform/waveform.html",
    "kosif-one/vendor/hyperframes/registry/blocks/waveform/lib/shaders.THIRD-PARTY-LICENSES.txt"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-113"
@@ -2034,6 +2147,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-114"
@@ -2051,6 +2165,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-115"
@@ -2070,6 +2185,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/scripts/extract-audio-data.py",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/techniques.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-116"
@@ -2089,6 +2205,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/attributes.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/fx-registry.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-117"
@@ -2106,6 +2223,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/fx-registry.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-118"
@@ -2125,6 +2243,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/scripts/carve.mjs",
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/scripts/carve.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-119"
@@ -2142,6 +2261,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-120"
@@ -2160,6 +2280,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/attributes.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/presets.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-121"
@@ -2177,6 +2298,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/presets.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-122"
@@ -2194,6 +2316,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/presets.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-123"
@@ -2211,6 +2334,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/presets.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-124"
@@ -2229,6 +2353,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/beats.md",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands/beats.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-125"
@@ -2248,6 +2373,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/scripts/lib/duck.mjs",
    "kosif-one/vendor/hyperframes/skills/media-use/references/operations.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-126"
@@ -2267,6 +2393,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/audio/assets/sfx/CREDITS.md",
    "kosif-one/vendor/hyperframes/skills/media-use/audio/references/sfx.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-127"
@@ -2286,6 +2413,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/planning.md",
    "kosif-one/vendor/hyperframes/skills/music-to-video/scripts/validate-plan.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-128"
@@ -2304,6 +2432,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/scripts/analyze-beatgrid.py",
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/capability-menu.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-129"
@@ -2321,6 +2450,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-130"
@@ -2339,6 +2469,7 @@
    "kosif-one/vendor/hyperframes/skills/product-launch-video/scripts/lib/pad-frame-duration.test.mjs",
    "kosif-one/vendor/hyperframes/skills/product-launch-video/scripts/lib/bgm-volume.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-131"
@@ -2357,6 +2488,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-132"
@@ -2375,6 +2507,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:41",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/spectrum_height.png"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-133"
@@ -2393,6 +2526,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:61",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/assets/score.json:2"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-134"
@@ -2411,6 +2545,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:1",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:134"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-135"
@@ -2428,6 +2563,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:99"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-136"
@@ -2446,6 +2582,7 @@
    "100-superskills/skills/kosif-montage-motion/references/montage_grammar.md",
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-137"
@@ -2464,6 +2601,7 @@
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md",
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-138"
@@ -2482,6 +2620,7 @@
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md",
    "100-superskills/skills/kosif-montage-motion/scripts/ambience.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-139"
@@ -2500,6 +2639,7 @@
    "100-superskills/skills/kosif-montage-motion/references/operating-manual.md",
    "100-superskills/skills/kosif-montage-motion/scripts/score.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-140"
@@ -2517,6 +2657,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-141"
@@ -2535,6 +2676,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/beat_detector.py:42",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/beat_detector.py:106"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-142"
@@ -2554,6 +2696,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/smart_montage.py:210",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-143"
@@ -2571,6 +2714,7 @@
   "proof": [
    "kosif-one/projects/egypt-2120-animation/audio.py:1-123"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-144"
@@ -2589,6 +2733,7 @@
    "kosif-one/projects/egypt-2120-animation/audio.py:125-148",
    "kosif-one/projects/egypt-2120-animation/README.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-145"
@@ -2608,6 +2753,7 @@
    "kosif-one/projects/thursday-dua-animation/source/index.html:161",
    "kosif-one/projects/thursday-dua-animation/source/src/channels.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-146"
@@ -2626,6 +2772,7 @@
    "kosif-one/projects/thursday-dua-animation/source/src/channels.json",
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:94-107"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-147"
@@ -2644,6 +2791,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/assets/score.json",
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:49"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-148"
@@ -2661,6 +2809,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/assets/cues.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-149"
@@ -2678,6 +2827,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:89-93"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-150"
@@ -2695,6 +2845,7 @@
   "proof": [
    "100-superskills/skills/pro-video-editor-ffmpeg/scripts/beat_cuts.py:72"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-151"
@@ -2712,6 +2863,7 @@
   "proof": [
    "100-superskills/skills/video-editing-captions/SKILL.md:23"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-152"
@@ -2729,6 +2881,7 @@
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:862"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-153"
@@ -2746,6 +2899,7 @@
   "proof": [
    "kosif-studio/motion/templates/verse.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-154"
@@ -2764,6 +2918,7 @@
    "kosif-studio/motion/references/x-trend-2026.md",
    "kosif-studio/motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-155"
@@ -2782,6 +2937,7 @@
    "style:audio-wave",
    "kosif-tool/playbooks/music.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "audio-wave"
   ],
@@ -2803,6 +2959,7 @@
    "kosif-tool/catalog/categories.json",
    "kosif-tool/catalog/meta.json"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-157"
@@ -2821,6 +2978,7 @@
    "kosif-tool/playbooks/music.md:74",
    "kosif-tool/tools/verify_video.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-158"
@@ -2838,6 +2996,7 @@
   "proof": [
    "kosif-tool/playbooks/music.md:24"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-159"
@@ -2856,6 +3015,7 @@
    "kosif-tool/playbooks/music.md:26",
    "kosif-tool/playbooks/music.md:53-61"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-160"
@@ -2873,6 +3033,7 @@
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-161"
@@ -2890,6 +3051,7 @@
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/sfx.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-162"
@@ -2907,6 +3069,7 @@
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-163"
@@ -2925,6 +3088,7 @@
    "kosif-atlas/skills/1511-homie/3892-music",
    "kosif-atlas/skills/1511-homie/3892-music/references/COMPOSITION.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-164"
@@ -2942,6 +3106,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3892-music/references/COMPOSITION.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-165"
@@ -2959,6 +3124,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-166"
@@ -2976,6 +3142,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-167"
@@ -2993,6 +3160,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-168"
@@ -3010,6 +3178,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-169"
@@ -3027,6 +3196,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-170"
@@ -3044,6 +3214,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-171"
@@ -3061,6 +3232,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-172"
@@ -3078,6 +3250,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-173"
@@ -3095,6 +3268,7 @@
   "proof": [
    "kosif-atlas/skills/2475-songwriting/9607-suno"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-174"
@@ -3112,6 +3286,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3892-music"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-175"
@@ -3129,6 +3304,7 @@
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-176"
@@ -3146,6 +3322,7 @@
   "proof": [
    "app/public/js/00_editor.js:2645"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-177"
@@ -3164,6 +3341,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-audio/SKILL.md",
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/references/books-drive-ledger.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-178"
@@ -3181,6 +3359,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-audio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-179"
@@ -3198,6 +3377,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/tools/swarm_skillpacks.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-180"
@@ -3216,6 +3396,7 @@
    "style:pm-topi-003-b0e12c",
    "style:pm-zaqailo-212ad3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-topi-003-b0e12c",
    "pm-zaqailo-212ad3"
@@ -3236,6 +3417,7 @@
   "proof": [
    "style:chalkboard"
   ],
+  "proof_scope": "style",
   "styles": [
    "chalkboard"
   ],
@@ -3255,6 +3437,7 @@
   "proof": [
    "style:pm-0xfemyn-e114d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-0xfemyn-e114d3"
   ],
@@ -3274,6 +3457,7 @@
   "proof": [
    "style:pm-ajith-io-4c248f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-4c248f"
   ],
@@ -3293,6 +3477,7 @@
   "proof": [
    "style:pm-ajith-io-b5626e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-b5626e"
   ],
@@ -3312,6 +3497,7 @@
   "proof": [
    "style:pm-antonio-kodheli-490109"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-antonio-kodheli-490109"
   ],
@@ -3331,6 +3517,7 @@
   "proof": [
    "style:pm-fionntobin-97b7af"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-fionntobin-97b7af"
   ],
@@ -3350,6 +3537,7 @@
   "proof": [
    "style:pm-ghinaiya-nirmal-5d8fec"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ghinaiya-nirmal-5d8fec"
   ],
@@ -3369,6 +3557,7 @@
   "proof": [
    "style:pm-gorden-sun-041f56"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gorden-sun-041f56"
   ],
@@ -3388,6 +3577,7 @@
   "proof": [
    "style:pm-influencer-seo-ce8c33"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-influencer-seo-ce8c33"
   ],
@@ -3407,6 +3597,7 @@
   "proof": [
    "style:pm-jacksonfall-54b2ac"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jacksonfall-54b2ac"
   ],
@@ -3426,6 +3617,7 @@
   "proof": [
    "style:pm-kamstudiolabs-447565"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kamstudiolabs-447565"
   ],
@@ -3445,6 +3637,7 @@
   "proof": [
    "style:pm-kantamk-61f410"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kantamk-61f410"
   ],
@@ -3464,6 +3657,7 @@
   "proof": [
    "style:pm-kloss-xyz-15182a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kloss-xyz-15182a"
   ],
@@ -3483,6 +3677,7 @@
   "proof": [
    "style:pm-maxalexweber-67688b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-maxalexweber-67688b"
   ],
@@ -3502,6 +3697,7 @@
   "proof": [
    "style:pm-notdwd-7de38a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-notdwd-7de38a"
   ],
@@ -3521,6 +3717,7 @@
   "proof": [
    "style:pm-prasenx-8d9323"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-prasenx-8d9323"
   ],
@@ -3540,6 +3737,7 @@
   "proof": [
    "style:pm-prasenx-8d9323"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-prasenx-8d9323"
   ],
@@ -3559,6 +3757,7 @@
   "proof": [
    "style:pm-rames-jusso-589f80"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rames-jusso-589f80"
   ],
@@ -3578,6 +3777,7 @@
   "proof": [
    "style:pm-rossaxbt-3085b7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
@@ -3597,6 +3797,7 @@
   "proof": [
    "style:pm-roundtablespace-d3a1be"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-roundtablespace-d3a1be"
   ],
@@ -3616,6 +3817,7 @@
   "proof": [
    "style:pm-sahildesigner23-ee3155"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sahildesigner23-ee3155"
   ],
@@ -3635,6 +3837,7 @@
   "proof": [
    "style:pm-shneural-2abdfa"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-shneural-2abdfa"
   ],
@@ -3654,6 +3857,7 @@
   "proof": [
    "style:pm-sudiyasa-f48ac9"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sudiyasa-f48ac9"
   ],
@@ -3673,6 +3877,7 @@
   "proof": [
    "style:pm-tankazunori0914-0fc886"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tankazunori0914-0fc886"
   ],
@@ -3692,6 +3897,7 @@
   "proof": [
    "style:pm-techhalla-7acbc2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-techhalla-7acbc2"
   ],
@@ -3711,6 +3917,7 @@
   "proof": [
    "style:pm-tequilafunks-97f6c9"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tequilafunks-97f6c9"
   ],
@@ -3730,6 +3937,7 @@
   "proof": [
    "style:pm-tolgayhickiran-e90799"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tolgayhickiran-e90799"
   ],
@@ -3749,6 +3957,7 @@
   "proof": [
    "style:pm-topi-003-9ca6b5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-topi-003-9ca6b5"
   ],
@@ -3768,6 +3977,7 @@
   "proof": [
    "style:pm-umangratani-57f86a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-umangratani-57f86a"
   ],
@@ -3787,6 +3997,7 @@
   "proof": [
    "style:pm-zheke-38deff"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-zheke-38deff"
   ],
@@ -3806,6 +4017,7 @@
   "proof": [
    "style:whiteboard"
   ],
+  "proof_scope": "style",
   "styles": [
    "whiteboard"
   ],
@@ -3825,6 +4037,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/audio-reactive.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-213"
@@ -3842,6 +4055,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/dynamic-techniques.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-214"
@@ -3860,6 +4074,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/TRAILER.md",
    "kosif-atlas/skills/1511-homie/3903-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-215"
@@ -3877,6 +4092,7 @@
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/feedback-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-216"
@@ -3895,6 +4111,7 @@
    "kosif-atlas/skills/1511-homie/3903-video",
    "kosif-atlas/skills/1511-homie/3903-video/references/TRAILER.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-217"
@@ -3913,6 +4130,7 @@
    "kosif-atlas/skills/3067-youtube/13229-creator-visual-director/SKILL.md",
    "kosif-atlas/skills/3067-youtube/13224-creator-editor-brief/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-218"
@@ -3930,6 +4148,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-219"
@@ -3947,6 +4166,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/concept-and-music.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-220"
@@ -3964,6 +4184,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/concept-and-music.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-221"
@@ -3982,6 +4203,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-brand-identity.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-222"
@@ -4000,6 +4222,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-music-sports.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-223"
@@ -4018,6 +4241,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-music-sports.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-224"
@@ -4036,6 +4260,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-music-sports.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-225"
@@ -4053,6 +4278,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/concept-and-music.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-226"
@@ -4071,6 +4297,7 @@
    "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b/SKILL.md",
    "kosif-atlas/skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-227"
@@ -4089,6 +4316,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound/references/sound-design-reference.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-228"
@@ -4106,6 +4334,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-229"
@@ -4124,6 +4353,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound/SKILL.md",
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/gotchas.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-230"
@@ -4141,6 +4371,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/gotchas.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-231"
@@ -4158,6 +4389,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2431-akbun-davinciresolve-caption-template"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-232"
@@ -4176,6 +4408,7 @@
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/scripts/extract-audio-data.py",
    "kosif-atlas/skills/2760-charly-tools/10938-songsee"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-233"
@@ -4193,6 +4426,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/music-composition.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-234"
@@ -4210,6 +4444,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-235"
@@ -4227,6 +4462,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/sfx-design.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-236"
@@ -4244,6 +4480,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/sfx-design.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-237"
@@ -4262,6 +4499,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/sfx-design.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-238"
@@ -4280,6 +4518,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/sfx-design.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-239"
@@ -4298,6 +4537,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound",
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-240"
@@ -4315,6 +4555,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-241"
@@ -4332,6 +4573,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-242"
@@ -4350,6 +4592,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound",
    "kosif-atlas/skills/1511-homie/3903-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-243"
@@ -4368,6 +4611,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound",
    "kosif-atlas/skills/1511-homie/3901-sound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-244"
@@ -4385,6 +4629,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3901-sound/references/TRAPS.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-245"
@@ -4402,6 +4647,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/mixing-and-loops.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-246"
@@ -4419,6 +4665,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3901-sound/references/TRAPS.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-247"
@@ -4436,6 +4683,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/media-use/references/operations.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-248"
@@ -4453,6 +4701,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-249"
@@ -4470,6 +4719,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/montage_grammar.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-250"
@@ -4487,6 +4737,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/montage_grammar.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-251"
@@ -4505,6 +4756,7 @@
    "100-superskills/skills/kosif-montage-motion/references/montage_grammar.md",
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-252"
@@ -4522,6 +4774,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:33"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-253"
@@ -4539,6 +4792,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:92"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-254"
@@ -4556,6 +4810,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-255"
@@ -4573,6 +4828,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-audio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-256"
@@ -4590,6 +4846,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-audio/references/arabic-music.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-257"
@@ -4607,6 +4864,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-audio/references/arabic-music.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-258"
@@ -4624,6 +4882,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-audio/references/arabic-music.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-259"
@@ -4642,6 +4901,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-voice/SKILL.md",
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/tools_scripts.py:255"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-260"
@@ -4661,6 +4921,7 @@
    "100-superskills/skills/podcast-production/SKILL.md",
    "100-superskills/skills/audio-mastering-analysis/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-261"
@@ -4678,6 +4939,7 @@
   "proof": [
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-262"
@@ -4695,6 +4957,7 @@
   "proof": [
    "100-superskills/skills/audio-mastering-analysis/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-263"
@@ -4712,6 +4975,7 @@
   "proof": [
    "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-264"
@@ -4729,6 +4993,7 @@
   "proof": [
    "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-265"
@@ -4746,6 +5011,7 @@
   "proof": [
    "100-superskills/skills/video-editing-captions/SKILL.md:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-266"
@@ -4763,6 +5029,7 @@
   "proof": [
    "kosif-tool/playbooks/ads.md:83"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-267"
@@ -4781,6 +5048,7 @@
    "kosif-tool/playbooks/audio-sync.md:82",
    "kosif-tool/playbooks/music.md:74"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-268"
@@ -4798,6 +5066,7 @@
   "proof": [
    "kosif-tool/playbooks/audio-sync.md:84"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-269"
@@ -4815,6 +5084,7 @@
   "proof": [
    "kosif-tool/playbooks/code.md:79"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-270"
@@ -4832,6 +5102,7 @@
   "proof": [
    "kosif-tool/playbooks/hand-drawn.md:81"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-271"
@@ -4849,6 +5120,7 @@
   "proof": [
    "kosif-tool/playbooks/music.md:15-17"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-272"
@@ -4866,6 +5138,7 @@
   "proof": [
    "kosif-tool/playbooks/music.md:16"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-273"
@@ -4883,6 +5156,7 @@
   "proof": [
    "kosif-tool/playbooks/music.md:23"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-274"
@@ -4901,6 +5175,7 @@
    "kosif-tool/playbooks/music.md:27",
    "kosif-tool/playbooks/music.md:64"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-275"
@@ -4918,6 +5193,7 @@
   "proof": [
    "kosif-tool/playbooks/music.md:36-41"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-276"
@@ -4935,6 +5211,7 @@
   "proof": [
    "kosif-tool/playbooks/music.md:45"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-277"
@@ -4953,6 +5230,7 @@
    "kosif-tool/playbooks/music.md:3",
    "kosif-tool/playbooks/music.md:85"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-278"
@@ -4970,6 +5248,7 @@
   "proof": [
    "kosif-tool/playbooks/phone.md:204"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-279"
@@ -4987,6 +5266,7 @@
   "proof": [
    "kosif-tool/playbooks/product-ui.md:220-222"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "BEAT-280"
@@ -5005,6 +5285,7 @@
    "kosif-one/vendor/brag/skills/brag/assets/sfx/sfx-analysis.md",
    "kosif-one/vendor/brag/skills/brag/references/audio.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-281"
@@ -5023,6 +5304,7 @@
    "kosif-one/vendor/brag/skills/brag/assets/music/cues/happy-beats-business-moves-vol-1-by-ende-dot-app.music-cues.json",
    "kosif-one/vendor/brag/skills/brag/assets/music/README.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-282"
@@ -5042,6 +5324,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/captions.md",
    "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "BEAT-283"
@@ -5059,6 +5342,7 @@
   "proof": [
    "style:pm-abderrahmen-g-9e8ed0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-abderrahmen-g-9e8ed0"
   ],
@@ -5078,6 +5362,7 @@
   "proof": [
    "style:pm-aschapmann-131210"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aschapmann-131210"
   ],
@@ -5097,6 +5382,7 @@
   "proof": [
    "style:pm-davidshulmanfl-371638"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-davidshulmanfl-371638"
   ],
@@ -5116,6 +5402,7 @@
   "proof": [
    "style:pm-deifosv-04e4d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-deifosv-04e4d3"
   ],
@@ -5135,6 +5422,7 @@
   "proof": [
    "style:pm-itisrazak-3ad902"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-itisrazak-3ad902"
   ],
@@ -5154,6 +5442,7 @@
   "proof": [
    "style:pm-jake11moran-a269c4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jake11moran-a269c4"
   ],
@@ -5173,6 +5462,7 @@
   "proof": [
    "style:pm-kamstudiolabs-0b0824"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kamstudiolabs-0b0824"
   ],
@@ -5192,6 +5482,7 @@
   "proof": [
    "style:pm-kantamk-61f410"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kantamk-61f410"
   ],
@@ -5211,6 +5502,7 @@
   "proof": [
    "style:pm-reflex-cloud-72ffe5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-reflex-cloud-72ffe5"
   ],
@@ -5230,6 +5522,7 @@
   "proof": [
    "style:pm-samaote-5e2fc2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-samaote-5e2fc2"
   ],
@@ -5249,6 +5542,7 @@
   "proof": [
    "style:pm-xelandre-363f00"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-xelandre-363f00"
   ],
@@ -5270,6 +5564,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/render_continuous_line.py",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Continuous_Line_Logo_Story.wav"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "sfx",
@@ -5298,6 +5593,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/music_window.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "music window",
@@ -5329,6 +5625,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/music_window.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "snap",
@@ -5359,6 +5656,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/music_window.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "hit check",
@@ -5389,6 +5687,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/cut_audio.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "audio cut",
@@ -5420,6 +5719,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/sound_kit.py",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/sound_template.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "sound design",
@@ -5451,6 +5751,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "songwriting",
@@ -5481,6 +5782,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "arabic lyrics",
@@ -5512,6 +5814,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "suno",
@@ -5540,6 +5843,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "suno",
@@ -5568,6 +5872,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "song package",

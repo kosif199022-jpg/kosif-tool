@@ -14,6 +14,7 @@
    "kosif-tool/playbooks/photos.md:11",
    "kosif-atlas/skills/1096-akbun-editvideo/2451-davinciresolve-beats-devtalk/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ترخيص",
@@ -40,6 +41,7 @@
    "kosif-studio/motion/test_open_footage.py",
    "kosif-studio/motion/references/voice-open-footage-upgrade-2026-10-10.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لقطات مفتوحة",
@@ -65,6 +67,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_fetch_lab.py:66",
    "kosif-one/projects/KOSIF_Motion_Ghorba/tools/kosif_c_video_fetch.py:24-49"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تحميل",
@@ -91,6 +94,7 @@
    "100-superskills/skills/kosif-montage-motion/references/mimic.md",
    "kosif-tool/.claude/skills/kosif-superpowers/references/mimic.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "بحث لقطات",
@@ -115,6 +119,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:58",
    "100-superskills/skills/kosif-montage-motion/tests/test_web.py:145"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مكتبة وسائط",
@@ -137,6 +142,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2443-akbun-davinciresolve-timeline-chrono/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "متعدد الكاميرات",
@@ -159,6 +165,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2449-akbun-vlog-storyboard/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تسجيل شاشة",
@@ -182,6 +189,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:113",
    "kosif-studio/motion/decaption.py:63"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كشف اللقطات",
@@ -207,6 +215,7 @@
    "kosif-atlas/skills/101-video-skills/222-video-thumbnails/SKILL.md",
    "kosif-one/projects/ghorba-motion-v2/make_contact.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لوحة لقطات",
@@ -232,6 +241,7 @@
    "kosif-studio/motion/montage.py:42",
    "app/public/js/10_studio.js:1865"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "طاقة الحركة",
@@ -255,6 +265,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2454-davinciresolve-cut-travelflow/SKILL.md",
    "kosif-atlas/skills/3385-fiftyone/13900-fiftyone-find-duplicates/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تنظيف",
@@ -280,6 +291,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:120",
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:207"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تعريض",
@@ -305,6 +317,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_mimic.py",
    "100-superskills/skills/kosif-montage-motion/references/mimic.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "محاكاة",
@@ -329,6 +342,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/analyze.py",
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/references/books-drive-ledger.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تحليل",
@@ -353,6 +367,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12579-asset-upscale/SKILL.md",
    "kosif-tool/playbooks/photos.md:26"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "رفع الدقة",
@@ -378,6 +393,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:64",
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:896"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تايملاين",
@@ -404,6 +420,7 @@
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md",
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/ffmpeg.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قص",
@@ -428,6 +445,7 @@
    "kosif-studio/motion/tools.py:256",
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "دمج",
@@ -452,6 +470,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md",
    "kosif-one/vendor/hyperframes/docs/reference/speed-ramps.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "سرعة",
@@ -477,6 +496,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/media-use/scripts/transcript-cut.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صمت",
@@ -501,6 +521,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تجميد",
@@ -525,6 +546,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:13",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:528"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "محرر",
@@ -548,6 +570,7 @@
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/video-editing.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ريموشن",
@@ -571,6 +594,7 @@
    "kosif-studio/motion/tools.py:303",
    "kosif-atlas/skills/1096-akbun-editvideo/2454-davinciresolve-cut-travelflow/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تثبيت",
@@ -595,6 +619,7 @@
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
    "kosif-one/tools/kosif-studio/motion/reel.py:35"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تشويش",
@@ -621,6 +646,7 @@
    "kosif-studio/motion/decaption.py:99",
    "kosif-studio/tests/test_studio.py:850"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ترجمة محروقة",
@@ -646,6 +672,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:132",
    "kosif-atlas/skills/1096-akbun-editvideo/2456-davinciresolve-face-mosaic/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "خصوصية",
@@ -671,6 +698,7 @@
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
    "app/public/js/00_editor.js:2468"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كروما",
@@ -696,6 +724,7 @@
    "kosif-studio/edit_pack.py:226",
    "kosif-studio/tests/test_studio.py:410"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إعادة تلوين",
@@ -720,6 +749,7 @@
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen",
    "app/public/js/00_editor.js:2572"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "imagemagick",
@@ -747,6 +777,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/matte.cjs",
    "app/public/js/00_editor.js:2466"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عزل",
@@ -773,6 +804,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-tracking-compositing.md",
    "kosif-tool/playbooks/photos.md:18-19"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "نص خلف الشخص",
@@ -795,6 +827,7 @@
   "proof": [
    "style:pm-sab8a-364a5a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sab8a-364a5a"
   ],
@@ -820,6 +853,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-tracking-compositing.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تتبع",
@@ -844,6 +878,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-tracking-compositing.md",
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "منظور",
@@ -868,6 +903,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-tracking-compositing.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-music-sports.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تجميد",
@@ -890,6 +926,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/cinemagraph/cinemagraph.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "سينماغراف",
@@ -913,6 +950,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-product-ads.md",
    "style:pm-blueoctopusai-dd17bd"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-blueoctopusai-dd17bd"
   ],
@@ -939,6 +977,7 @@
    "kosif-tool/playbooks/photos.md:48-55",
    "100-superskills/skills/trend-animation-styles/references/styles.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "كين بيرنز",
@@ -966,6 +1005,7 @@
    "kosif-tool/playbooks/photos.md:22",
    "kosif-tool/styles/parallax-2d/STYLE.json"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "بارالاكس",
@@ -990,6 +1030,7 @@
    "kosif-tool/playbooks/photos.md:57-65",
    "kosif-tool/playbooks/photos.md:67-74"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "كشف",
@@ -1016,6 +1057,7 @@
    "kosif-atlas/skills/1503-universal-design-principles/3825-legibility-contrast-and-spacing/SKILL.md",
    "style:pm-deifosv-04e4d3"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-deifosv-04e4d3"
   ],
@@ -1043,6 +1085,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-cinematic-titles.md",
    "100-superskills/skills/trend-animation-styles/references/styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أرشيف",
@@ -1066,6 +1109,7 @@
   "proof": [
    "kosif-tool/playbooks/photos.md:193-199"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "عربي",
@@ -1091,6 +1135,7 @@
    "kosif-tool/styles/editorial/SKILL.md",
    "kosif-tool/playbooks/photos.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "سكافولد",
@@ -1116,6 +1161,7 @@
    "style:pm-twoclipping-6dd14e",
    "kosif-tool/styles/pm-abderrahmen-g-9e8ed0/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-oliahmed205-3e31c4",
    "pm-twoclipping-6dd14e"
@@ -1144,6 +1190,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:474",
    "100-superskills/skills/kosif-montage-motion/scripts/motion.py:548"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لقطات",
@@ -1168,6 +1215,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_fetch_lab.py:93",
    "kosif-atlas/skills/1511-homie/3903-video/references/DELIVERY.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "9:16",
@@ -1193,6 +1241,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:144",
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:140"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لوح",
@@ -1217,6 +1266,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/directed.html:44",
    "100-superskills/skills/kosif-montage-motion/scripts/direct.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مونتاج موجه",
@@ -1240,6 +1290,7 @@
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/media-contract.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بودكاست",
@@ -1264,6 +1315,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
    "app/public/js/00_editor.js:2443"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لوتي",
@@ -1287,6 +1339,7 @@
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.js",
    "kosif-earth-ci-fork/tools/brand_art.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مقدمة",
@@ -1312,6 +1365,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_fetch_lab.py:93",
    "kosif-studio/motion/montage.py:42"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مونتاج تلقائي",
@@ -1337,6 +1391,7 @@
    "kosif-studio/out/reel_test/IMG_9262_reel.reel.json",
    "100-superskills/skills/kosif-montage-motion/scripts/reel.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ريل",
@@ -1362,6 +1417,7 @@
    "app/public/js/10_studio.js:4039",
    "100-superskills/skills/reels-shorts-factory/references/sources.md:148"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ريلز",
@@ -1387,6 +1443,7 @@
    "app/public/js/50_autoedit.js:427",
    "100-superskills/skills/kosif-montage-motion/references/montage_grammar.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مونتاج ذكي",
@@ -1412,6 +1469,7 @@
    "app/public/js/10_studio.js:2069",
    "app/public/js/30_promontage.js:41"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بصمة",
@@ -1436,6 +1494,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tests/test_v3_edit.py",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Edited_Footage_Real.mp4"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "edl",
@@ -1466,6 +1525,7 @@
    "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md",
    "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/split-layout.js"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "footage",
@@ -1495,6 +1555,7 @@
   "proof": [
    "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "preflight",
@@ -1527,6 +1588,7 @@
    "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md",
    "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "trim",
@@ -1556,6 +1618,7 @@
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
   ],
+  "proof_scope": "url",
   "styles": [],
   "tags": [
    "editing pipeline",
@@ -1584,6 +1647,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "imitation",
@@ -1615,6 +1679,7 @@
    "kosif-tool/tests/test_reference_fetch_security.py",
    "kosif-tool/tests/test_superpowers_catalog.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "مرجع",

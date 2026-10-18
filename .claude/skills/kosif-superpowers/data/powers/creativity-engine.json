@@ -13,6 +13,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "divergent",
@@ -47,6 +48,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "first principles",
@@ -71,6 +73,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "inversion",
@@ -95,6 +98,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "premortem",
@@ -119,6 +123,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "fermi",
@@ -145,6 +150,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "scamper",
@@ -169,6 +175,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "morphological",
@@ -194,6 +201,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "analogy",
@@ -219,6 +227,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "constraints",
@@ -243,6 +252,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "constraint removal",
@@ -267,6 +277,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "exaggerate",
@@ -292,6 +303,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "perspective",
@@ -318,6 +330,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "bad ideas",
@@ -342,6 +355,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "random",
@@ -368,6 +382,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "ensemble",
@@ -393,6 +408,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "remix",
@@ -419,6 +435,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "cross-domain",
@@ -445,6 +462,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "style preview",
@@ -473,6 +491,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "cliché",
@@ -503,6 +522,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/data-story/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "combo",
@@ -533,6 +553,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "combo",
@@ -562,6 +583,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "combo",
@@ -590,6 +612,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "combo",
@@ -619,6 +642,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "combo",
@@ -648,6 +672,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "combo",

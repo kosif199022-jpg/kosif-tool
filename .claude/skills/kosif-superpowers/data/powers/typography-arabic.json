@@ -16,6 +16,7 @@
    "100-superskills/skills/kinetic-typography-arabic/SKILL.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-zheke-38deff"
   ],
@@ -47,6 +48,7 @@
    "kosif-studio/motion/qa.py:62",
    "kosif-studio/tests/test_studio.py:549"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "اتجاه",
@@ -76,6 +78,7 @@
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md",
    "kosif-one/tools/kosif-omni/skills/kosif-web-design/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "كشيدة",
@@ -105,6 +108,7 @@
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/local-fonts.md",
    "kosif-tool/playbooks/arabic-typography.md:15"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تحميل الخط",
@@ -133,6 +137,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md",
    "kosif-audit-pro/patch/kosif-v17.css"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تشكيل",
@@ -163,6 +168,7 @@
    "100-superskills/skills/kosif-montage-motion/references/mimic.md",
    "kosif-atlas/skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تشكيل",
@@ -195,6 +201,7 @@
    "kosif-studio/motion/kit/motion-kit.js:562",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:902"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كشف اللغة",
@@ -220,6 +227,7 @@
    "kosif-tool/tools/kosif.py:83",
    "kosif-tool/playbooks/arabic-typography.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "لغة المحتوى",
@@ -247,6 +255,7 @@
    "100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:56",
    "kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صورة مولدة",
@@ -273,6 +282,7 @@
   "proof": [
    "kosif-tool/playbooks/3d.md:74"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ثلاثي الأبعاد",
@@ -299,6 +309,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_fonts_lib.py",
    "app/index.html:10"
   ],
+  "proof_scope": "repo",
   "styles": [
    "whiteboard",
    "chalkboard",
@@ -343,6 +354,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/motion/title-card.html:9",
    "kosif-earth-ci-fork/ui/ds/fonts.css"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "cairo",
@@ -371,6 +383,7 @@
    "kosif-studio/motion/templates/directed.html",
    "kosif-tool/starters/remotion/src/Film.tsx:34"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "اكتشاف الخطوط",
@@ -399,6 +412,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:9",
    "kosif-tool/starters/html-canvas/index.html:8"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "google fonts",
@@ -425,6 +439,7 @@
    "kosif-tool/styles/pm-deifosv-04e4d3/BRIEF.md",
    "100-superskills/skills/brand-identity-logo/SKILL.md:24"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-deifosv-04e4d3"
   ],
@@ -455,6 +470,7 @@
    "kosif-tool/playbooks/kinetic-type.md",
    "kosif-atlas/skills/345-visuals/1242-html-diagram/references/svg-primitives.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "أحجام الخط",
@@ -483,6 +499,7 @@
    "kosif-audit-pro/app/globals.css:147",
    "kosif-earth-ci-fork/docs/design/SQC-IDENTITY-ar.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "واجهة",
@@ -510,6 +527,7 @@
    "100-superskills/skills/kinetic-typography-arabic/SKILL.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تايبوغرافي حركي",
@@ -537,6 +555,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/motion/title-card.html",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html:111"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قناع الكلمات",
@@ -567,6 +586,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:174-182",
    "style:infographic"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "infographic",
    "pm-paulo-kombucha-96431c"
@@ -598,6 +618,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md",
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "مسح",
@@ -626,6 +647,7 @@
    "kosif-tool/styles/handwriting-reveal/SKILL.md",
    "style:whiteboard"
   ],
+  "proof_scope": "repo",
   "styles": [
    "whiteboard",
    "chalkboard"
@@ -658,6 +680,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md",
    "kosif-tool/playbooks/hand-drawn.md:75"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "فرشاة",
@@ -685,6 +708,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:45",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "سطور",
@@ -709,6 +733,7 @@
   "proof": [
    "fastify-motion-bro/web/motion.js:3"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "canvas",
@@ -734,6 +759,7 @@
    "kosif-tool/starters/html-canvas/index.html:139",
    "kosif-tool/playbooks/arabic-typography.md:35-63"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "نابض",
@@ -760,6 +786,7 @@
    "kosif-tool/starters/remotion/src/Film.tsx:130",
    "kosif-tool/starters/remotion/src/Film.tsx:303"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "remotion",
@@ -784,6 +811,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:222"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عمق",
@@ -810,6 +838,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:193",
    "kosif-studio/motion/projects/showreel/index.html:74"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "product",
    "pm-mehul4795-4a7007",
@@ -840,6 +869,7 @@
    "style:product",
    "kosif-tool/styles/product"
   ],
+  "proof_scope": "repo",
   "styles": [
    "product"
   ],
@@ -866,6 +896,7 @@
   "proof": [
    "style:product"
   ],
+  "proof_scope": "style",
   "styles": [
    "product"
   ],
@@ -894,6 +925,7 @@
    "style:pm-samaote-5e2fc2",
    "kosif-tool/styles/pm-samaote-5e2fc2/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-demitiyageekzen-7770ad",
    "pm-samaote-5e2fc2"
@@ -923,6 +955,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-samaote-5e2fc2"
   ],
@@ -951,6 +984,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/directed.html:82",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:182"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ضربة",
@@ -977,6 +1011,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ارتطام",
@@ -1002,6 +1037,7 @@
    "style:plotter",
    "style:pm-chrisjdimarco-f068db"
   ],
+  "proof_scope": "style",
   "styles": [
    "plotter",
    "pm-chrisjdimarco-f068db"
@@ -1031,6 +1067,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-zheke-38deff"
   ],
@@ -1058,6 +1095,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صدى",
@@ -1085,6 +1123,7 @@
    "kosif-one/projects/egypt-2120-animation/index.html:8-29",
    "kosif-studio/motion/projects/premium_edit/index.html:8"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "product",
    "pm-gautam-mer1-2ae354"
@@ -1118,6 +1157,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:28-40",
    "kosif-studio/out/FINAL_EDIT/EDIT_NOTES.txt"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "plotter"
   ],
@@ -1147,6 +1187,7 @@
    "app/public/js/10_studio.js:57",
    "app/public/js/00_editor.js:345"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نجمة",
@@ -1172,6 +1213,7 @@
    "style:doodle",
    "kosif-tool/styles/doodle"
   ],
+  "proof_scope": "repo",
   "styles": [
    "doodle"
   ],
@@ -1199,6 +1241,7 @@
    "style:stickman",
    "style:pm-deifosv-04e4d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "stickman",
    "pm-deifosv-04e4d3"
@@ -1226,6 +1269,7 @@
   "proof": [
    "style:stickman"
   ],
+  "proof_scope": "style",
   "styles": [
    "stickman"
   ],
@@ -1252,6 +1296,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:39-40",
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:218-221"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "علامة استفهام",
@@ -1275,6 +1320,7 @@
   "proof": [
    "style:pm-buildfastwithai-53234e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-buildfastwithai-53234e"
   ],
@@ -1301,6 +1347,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/index.html:18",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/index.html:61"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "خط مضيء",
@@ -1324,6 +1371,7 @@
   "proof": [
    "style:pm-deifosv-04e4d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-deifosv-04e4d3"
   ],
@@ -1353,6 +1401,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:14",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:127"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قوالب",
@@ -1383,6 +1432,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:39",
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "شريط اسم",
@@ -1406,6 +1456,7 @@
   "proof": [
    "app/public/js/00_editor.js:318"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "خطاف",
@@ -1431,6 +1482,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صندوق عنوان",
@@ -1457,6 +1509,7 @@
    "kosif-one/projects/thursday-dua-animation/source/index.html:95-101",
    "kosif-one/projects/thursday-dua-animation/source/index.html:190-194"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "هجري",
@@ -1486,6 +1539,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:74-106",
    "style:isometric"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "isometric",
    "pm-mehul4795-4a7007"
@@ -1518,6 +1572,7 @@
    "kosif-tool/playbooks/arabic-typography.md",
    "style:doodle"
   ],
+  "proof_scope": "repo",
   "styles": [
    "doodle"
   ],
@@ -1544,6 +1599,7 @@
   "proof": [
    "style:pm-triglyceee-bd5b08"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-triglyceee-bd5b08"
   ],
@@ -1571,6 +1627,7 @@
    "kosif-audit-studio/styles.css:166",
    "kosif-audit-studio/continuous-review.css:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عنوان سينمائي",
@@ -1595,6 +1652,7 @@
   "proof": [
    "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:39-63"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ass",
@@ -1621,6 +1679,7 @@
    "kosif-studio/motion/tools.py:317",
    "100-superskills/skills/kosif-montage-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "غلاف",
@@ -1646,6 +1705,7 @@
    "100-superskills/skills/kosif-social/scripts/social.py:316",
    "100-superskills/skills/kosif-social/examples/carousel.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كاروسيل",
@@ -1671,6 +1731,7 @@
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md",
    "100-superskills/skills/kosif-montage-motion/references/mimic.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "خط زمني",
@@ -1697,6 +1758,7 @@
    "kosif-studio/tests/test_studio.py:765",
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كاريوكي",
@@ -1727,6 +1789,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "kosif-tool/playbooks/kinetic-type.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "زمن القراءة",
@@ -1754,6 +1817,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2464-davinciresolve-subtitle-devtalk/SKILL.md",
    "kosif-tool/styles/pm-jake11moran-a269c4/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "منطقة آمنة",
@@ -1782,6 +1846,7 @@
    "kosif-tool/playbooks/kinetic-type.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "doodle",
    "plotter",
@@ -1814,6 +1879,7 @@
    "kosif-one/tools/kosif-studio/motion/projects/verse_dua/verse.json",
    "100-superskills/skills/kosif-montage-motion/scripts/verse.py:199"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قصيدة",
@@ -1845,6 +1911,7 @@
    "kosif-studio/motion/verse.py:217",
    "kosif-studio/tests/test_studio.py:943"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تقسيم الأسطر",
@@ -1872,6 +1939,7 @@
    "kosif-studio/motion/verse.py:300",
    "kosif-studio/motion/direct.py:36"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كلمة مفتاحية",
@@ -1900,6 +1968,7 @@
    "kosif-studio/motion/verse.py:64",
    "kosif-one/tools/kosif-social/scripts/social.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "توحيد",
@@ -1926,6 +1995,7 @@
   "proof": [
    "kosif-one/projects/songreel-ghorba/lyrics.txt"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تشكيل",
@@ -1950,6 +2020,7 @@
   "proof": [
    "app/public/js/10_studio.js:551"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عاطفي",
@@ -1978,6 +2049,7 @@
    "kosif-atlas/skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu/SKILL.md",
    "kosif-tool/playbooks/code.md:73"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "عزل",
@@ -2007,6 +2079,7 @@
    "kosif-tool/starters/remotion/src/Film.tsx:303",
    "kosif-tool/playbooks/charts.md:190"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "أرقام هندية",
@@ -2033,6 +2106,7 @@
    "kosif-audit-pro/lib/kosif/format.mjs",
    "kosif-audit-pro/tests/kosif-engine.test.mjs:94"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عملة",
@@ -2059,6 +2133,7 @@
    "app/public/js/10_studio.js:33",
    "app/public/js/10_studio.js:34"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أرقام",
@@ -2087,6 +2162,7 @@
    "kosif-atlas/skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu/SKILL.md",
    "100-superskills/skills/translation-localization-ar/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "جمع",
@@ -2115,6 +2191,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md",
    "style:infographic"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "infographic"
   ],
@@ -2143,6 +2220,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-typography.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حوار",
@@ -2167,6 +2245,7 @@
   "proof": [
    "kosif-tool/playbooks/ads.md:77"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "دعوة",
@@ -2194,6 +2273,7 @@
    "kosif-atlas/skills/345-visuals/1242-html-diagram/references/svg-primitives.md",
    "style:isometric"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "isometric",
    "map-journey"
@@ -2223,6 +2303,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:77",
    "100-superskills/skills/kosif-montage-motion/tests/test_web.py:235"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ترميز",
@@ -2247,6 +2328,7 @@
   "proof": [
    "kosif-studio/motion/reel.py:163"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حقوق",
@@ -2271,6 +2353,7 @@
   "proof": [
    "kosif-studio/vectorize.py:105"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أسماء الألوان",
@@ -2297,6 +2380,7 @@
    "kosif-one/projects/mimic-jumuah/study/mimic.json",
    "100-superskills/skills/kosif-montage-motion/references/mimic.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "محاكاة",
@@ -2323,6 +2407,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_text.py",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_textfx.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "قياس الحركة",
@@ -2349,6 +2434,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_fonts.py",
    "kosif-one/projects/mimic-jumuah/study/mimic.json"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "مطابقة الخط",
@@ -2375,6 +2461,7 @@
    "app/public/js/10_studio.js:182",
    "100-superskills/skills/kosif-montage-motion/references/mimic.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ملاءمة",
@@ -2402,6 +2489,7 @@
    "kosif-studio/scenes/ad_whole_sheep.py:99",
    "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مشهد مرسوم",
@@ -2429,6 +2517,7 @@
    "app/public/js/00_editor.js:17",
    "kosif-tool/playbooks/arabic-typography.md:65"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "canvas",
@@ -2453,6 +2542,7 @@
   "proof": [
    "kosif-tool/styles/pm-zheke-38deff/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-zheke-38deff"
   ],
@@ -2481,6 +2571,7 @@
   "proof": [
    "owner-upload:film_project/film/film.js"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "arabic",
@@ -2511,6 +2602,7 @@
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md",
    "session-2026-10-16:see-atlas#11.7"
   ],
+  "proof_scope": "session",
   "styles": [],
   "tags": [
    "font matching",
@@ -2540,6 +2632,7 @@
    "session-2026-10-16:motion-leftovers#5",
    "owner-upload:kosif-tool-ultra/kosif-500-methods.json"
   ],
+  "proof_scope": "session",
   "styles": [],
   "tags": [
    "kashida",
@@ -2571,6 +2664,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/references/font-matching.md",
    "kosif-tool/fonts/kosif-jumuah/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "مطابقة الخط",
@@ -2602,6 +2696,7 @@
    "kosif-tool/fonts/kosif-jumuah/OFL.txt",
    "kosif-tool/tests/test_fonts.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "fonttools",
@@ -2633,6 +2728,7 @@
    "kosif-tool/fonts/kosif-jumuah/demo/title-aljumuah.svg",
    "kosif-tool/fonts/kosif-jumuah/demo/jumuah.html"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ثلث",

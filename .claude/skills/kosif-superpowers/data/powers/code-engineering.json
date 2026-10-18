@@ -13,6 +13,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "search first",
@@ -40,6 +41,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "documentation",
@@ -69,6 +71,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "venv",
@@ -96,6 +99,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "onboarding",
@@ -121,6 +125,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "change impact",
@@ -146,6 +151,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "gateguard",
@@ -172,6 +178,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "conventions",
@@ -197,6 +204,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "tdd",
@@ -223,6 +231,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "verification loop",
@@ -249,6 +258,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "checkpoint",
@@ -275,6 +285,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "debug",
@@ -302,6 +313,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "build error",
@@ -328,6 +340,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "silent failure",
@@ -354,6 +367,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "performance",
@@ -381,6 +395,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "errors",
@@ -408,6 +423,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "code review",
@@ -433,6 +449,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "pull request",
@@ -458,6 +475,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "refactor",
@@ -484,6 +502,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "adr",
@@ -509,6 +528,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "regex",
@@ -536,6 +556,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "cache",
@@ -562,6 +583,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "git",

@@ -13,6 +13,7 @@
    "kosif-studio/motion/kit/motion-kit.js:88",
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-01"
@@ -32,6 +33,7 @@
    "kosif-audit-pro/app/globals.css:2617",
    "kosif-audit-pro/tests/responsive.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-02"
@@ -50,6 +52,7 @@
    "kosif-audit-pro/app/globals.css",
    "kosif-audit-pro/app/layout.tsx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-03"
@@ -67,6 +70,7 @@
   "proof": [
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:101"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-04"
@@ -84,6 +88,7 @@
   "proof": [
    "fastify-motion-bro/scripts/profiles/stickman.mjs:31,36-37"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-05"
@@ -101,6 +106,7 @@
   "proof": [
    "fastify-motion-bro/scripts/profiles/character-romance.mjs:18"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-06"
@@ -118,6 +124,7 @@
   "proof": [
    "fastify-motion-bro/scripts/profiles/food-flow.mjs:32"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-07"
@@ -135,6 +142,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:414"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-08"
@@ -152,6 +160,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:124"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-09"
@@ -170,6 +179,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_directors.py:30",
    "100-superskills/skills/kosif-montage-motion/tests/test_core.py:54"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-10"
@@ -188,6 +198,7 @@
    "100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:24",
    "100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:40"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-11"
@@ -206,6 +217,7 @@
    "kosif-studio/motion/direct.py:108",
    "kosif-studio/tests/test_studio.py:910"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-12"
@@ -224,6 +236,7 @@
    "kosif-tool/starters/html-canvas/timeline.js:52",
    "kosif-tool/starters/html-canvas/index.html:106"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-13"
@@ -243,6 +256,7 @@
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:321",
    "kosif-studio/motion/kit/motion-kit.js:321"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-14"
@@ -263,6 +277,7 @@
    "kosif-one/tools/kosif-studio/motion/references/motion-craft.md",
    "kosif-studio/motion/kit/motion-kit.js:543"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-15"
@@ -282,6 +297,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:351-360",
    "kosif-studio/motion/kit/motion-kit.js:352"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-16"
@@ -300,6 +316,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:535",
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:535"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-17"
@@ -319,6 +336,7 @@
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:789",
    "kosif-one/tools/kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-18"
@@ -337,6 +355,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1070",
    "kosif-studio/motion/kit/three-kit.js:1072"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-19"
@@ -355,6 +374,7 @@
    "kosif-one/tools/kosif-studio/motion/kit/lab-kit.js:172",
    "kosif-studio/motion/kit/lab-kit.js:172"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-20"
@@ -373,6 +393,7 @@
    "kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md",
    "kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/scroll-animations.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-21"
@@ -391,6 +412,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-4-storyboard.md",
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-6-build.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-22"
@@ -409,6 +431,7 @@
    "kosif-earth-ci-fork/ui/features/sales-map.js:86",
    "kosif-earth-ci-fork/ui/features/sales-map.js:40"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-23"
@@ -427,6 +450,7 @@
    "kosif-earth-ci-fork/ui/art/crystal-world.js:179",
    "kosif-earth-ci-fork/ui/art/crystal-world.js:209"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-24"
@@ -445,6 +469,7 @@
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.css:6",
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.css:27"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-25"
@@ -463,6 +488,7 @@
    "kosif-earth-ci-fork/unlock.html:127",
    "kosif-earth-ci-fork/ui/art/brand/earth-office-door.css"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-26"
@@ -481,6 +507,7 @@
    "fastify-motion-bro/scripts/viral-editorial.mjs:68",
    "fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:23"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-27"
@@ -499,6 +526,7 @@
    "fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:17",
    "fastify-motion-bro/web/editorial.js:56,77"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-28"
@@ -518,6 +546,7 @@
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/references/layouts/pip.html",
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/references/DESIGN_INDEX.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-29"
@@ -536,6 +565,7 @@
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/references/frames/hairline.html",
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/references/frames/polaroid.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-30"
@@ -553,6 +583,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:311"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-31"
@@ -570,6 +601,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:316"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-32"
@@ -587,6 +619,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:352"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-33"
@@ -605,6 +638,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:387",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1089"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-34"
@@ -623,6 +657,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1038",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1086"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-35"
@@ -640,6 +675,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1047"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-36"
@@ -657,6 +693,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:172"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-37"
@@ -674,6 +711,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:899"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-38"
@@ -691,6 +729,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:316"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-39"
@@ -708,6 +747,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/tools.py:44"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-40"
@@ -726,6 +766,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:29",
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:59"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-41"
@@ -743,6 +784,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:72"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-42"
@@ -760,6 +802,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:124"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-43"
@@ -777,6 +820,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:124"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-44"
@@ -796,6 +840,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:114",
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:120"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-45"
@@ -813,6 +858,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/light_calc.py:52"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-46"
@@ -830,6 +876,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/light_calc.py:84"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-47"
@@ -848,6 +895,7 @@
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:311",
    "kosif-one/tools/kosif-studio/motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-48"
@@ -866,6 +914,7 @@
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:316",
    "kosif-one/tools/kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-49"
@@ -883,6 +932,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:378"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-50"
@@ -900,6 +950,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:414"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-51"
@@ -919,6 +970,7 @@
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:1092",
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:1210"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-52"
@@ -937,6 +989,7 @@
    "kosif-one/tools/kosif-studio/render.py:692",
    "kosif-one/tools/kosif-studio/render.py:707"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-53"
@@ -956,6 +1009,7 @@
    "kosif-studio/studio.py:55",
    "kosif-studio/scenes/whale_dragon.py:287"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-54"
@@ -974,6 +1028,7 @@
    "kosif-studio/scenes/whale_dragon.py:294",
    "kosif-studio/scenes/duck_dragon.py:17"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-55"
@@ -993,6 +1048,7 @@
    "kosif-studio/scenes/whale_dragon.py:93",
    "kosif-studio/references/drawing-guide.md:62"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-56"
@@ -1010,6 +1066,7 @@
   "proof": [
    "kosif-studio/motion/montage.py:136"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-57"
@@ -1029,6 +1086,7 @@
    "kosif-studio/motion/tools.py:186",
    "kosif-studio/motion/tools.py:219"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-58"
@@ -1046,6 +1104,7 @@
   "proof": [
    "kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-59"
@@ -1065,6 +1124,7 @@
    "kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/scroll-animations.md",
    "kosif-atlas/skills/880-superloopy/1941-superloopy-frontend/references/motion.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-60"
@@ -1082,6 +1142,7 @@
   "proof": [
    "kosif-atlas/skills/880-superloopy/1941-superloopy-frontend/references/motion.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-61"
@@ -1100,6 +1161,7 @@
    "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/examples/motion/scroll-story.ts",
    "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-62"
@@ -1117,6 +1179,7 @@
   "proof": [
    "kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-63"
@@ -1134,6 +1197,7 @@
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/post-processing.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-64"
@@ -1151,6 +1215,7 @@
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-65"
@@ -1168,6 +1233,7 @@
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-66"
@@ -1185,6 +1251,7 @@
   "proof": [
    "kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-67"
@@ -1203,6 +1270,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maplibre/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-68"
@@ -1221,6 +1289,7 @@
    "app/public/js/00_editor.js:191",
    "app/index.html:316"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-69"
@@ -1239,6 +1308,7 @@
    "app/public/js/10_studio.js:1087",
    "app/public/js/10_studio.js:1114"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-70"
@@ -1257,6 +1327,7 @@
    "app/public/js/10_studio.js:1129",
    "app/public/js/10_studio.js:1726"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-71"
@@ -1275,6 +1346,7 @@
    "app/public/js/10_studio.js:1144",
    "app/public/js/10_studio.js:1152"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-72"
@@ -1293,6 +1365,7 @@
    "app/public/js/00_editor.js:275",
    "app/public/js/00_editor.js:2769"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-73"
@@ -1310,6 +1383,7 @@
   "proof": [
    "app/public/js/00_editor.js:294"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-74"
@@ -1327,6 +1401,7 @@
   "proof": [
    "app/public/js/00_editor.js:305"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-75"
@@ -1344,6 +1419,7 @@
   "proof": [
    "app/public/js/10_studio.js:1402"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-76"
@@ -1363,6 +1439,7 @@
    "kosif-one/vendor/hyperframes/registry/components/camera-shake/camera-shake.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/camera-shake.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-77"
@@ -1382,6 +1459,7 @@
    "kosif-one/vendor/hyperframes/registry/components/cursor-zoom-follow/cursor-zoom-follow.html",
    "kosif-one/vendor/hyperframes/registry/components/cursor-zoom-follow/demo.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-78"
@@ -1401,6 +1479,7 @@
    "kosif-one/vendor/hyperframes/registry/components/drift-hold/drift-hold.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/drift-hold.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-79"
@@ -1420,6 +1499,7 @@
    "kosif-one/vendor/hyperframes/registry/components/focus-rack/focus-rack.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/focus-rack.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-80"
@@ -1439,6 +1519,7 @@
    "kosif-one/vendor/hyperframes/registry/components/pan-stations/pan-stations.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/pan-stations.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-81"
@@ -1458,6 +1539,7 @@
    "kosif-one/vendor/hyperframes/registry/components/parallax-device-dive/parallax-device-dive.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/parallax-device-dive.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-82"
@@ -1477,6 +1559,7 @@
    "kosif-one/vendor/hyperframes/registry/components/parallax-unzoom/parallax-unzoom.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/parallax-unzoom.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-83"
@@ -1496,6 +1579,7 @@
    "kosif-one/vendor/hyperframes/registry/components/parallax-zoom/parallax-zoom.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/parallax-zoom.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-84"
@@ -1515,6 +1599,7 @@
    "kosif-one/vendor/hyperframes/registry/components/pull-back-reveal/pull-back-reveal.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/pull-back-reveal.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-85"
@@ -1534,6 +1619,7 @@
    "kosif-one/vendor/hyperframes/registry/components/push-in/push-in.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/push-in.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-86"
@@ -1553,6 +1639,7 @@
    "kosif-one/vendor/hyperframes/registry/components/scroll-camera-story/scroll-camera-story.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/scroll-camera-story.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-87"
@@ -1572,6 +1659,7 @@
    "kosif-one/vendor/hyperframes/registry/components/ui-focus-zoom/ui-focus-zoom.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/ui-focus-zoom.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-88"
@@ -1591,6 +1679,7 @@
    "kosif-one/vendor/hyperframes/registry/components/yt-camera-move/yt-camera-move.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/yt-camera-move.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-89"
@@ -1610,6 +1699,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/camera-dolly-zoom/camera-dolly-zoom.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/camera-dolly-zoom.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-90"
@@ -1629,6 +1719,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/rack-focus/rack-focus.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/rack-focus.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-91"
@@ -1648,6 +1739,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-circle-2/registry-item.json",
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-circle-3/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-92"
@@ -1667,6 +1759,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-orbit-2/registry-item.json",
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-orbit-3/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-93"
@@ -1686,6 +1779,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-path-2/registry-item.json",
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-path-3/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-94"
@@ -1705,6 +1799,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-text-circle-2/registry-item.json",
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-text-circle-3/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-95"
@@ -1724,6 +1819,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-vision-2/registry-item.json",
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-vision-3/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-96"
@@ -1742,6 +1838,7 @@
    "kosif-one/vendor/hyperframes/registry/examples/swiss-grid/registry-item.json",
    "kosif-one/vendor/hyperframes/registry/examples/swiss-grid/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-97"
@@ -1759,6 +1856,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/frame-worker-core.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-98"
@@ -1776,6 +1874,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-99"
@@ -1793,6 +1892,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-100"
@@ -1810,6 +1910,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-101"
@@ -1828,6 +1929,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/full-screen-motion.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-102"
@@ -1846,6 +1948,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/coordinate-target-zoom.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-103"
@@ -1864,6 +1967,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/camera-cursor-tracking.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-104"
@@ -1882,6 +1986,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/multi-phase-camera.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-105"
@@ -1900,6 +2005,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/viewport-change.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-106"
@@ -1918,6 +2024,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/depth-of-field-blur.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-107"
@@ -1936,6 +2043,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/center-outward-expansion.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-108"
@@ -1954,6 +2062,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/split-tilt-cards.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-109"
@@ -1972,6 +2081,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/spatial-pan-stations.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-110"
@@ -1990,6 +2100,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/camera-journey.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-111"
@@ -2008,6 +2119,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/zoom-out-workspace-reveal.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-112"
@@ -2026,6 +2138,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/grid-card-assemble.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-113"
@@ -2044,6 +2157,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/comparison-split.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-114"
@@ -2061,6 +2175,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/video-composition.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-115"
@@ -2078,6 +2193,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/composition-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-116"
@@ -2095,6 +2211,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/composition-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-117"
@@ -2112,6 +2229,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-studio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-118"
@@ -2129,6 +2247,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/safe-zones.cjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-119"
@@ -2147,6 +2266,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/scene-types.md",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/layout-heuristics.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-120"
@@ -2166,6 +2286,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/themes/anchor.json",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/themes/README.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-121"
@@ -2183,6 +2304,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-122"
@@ -2201,6 +2323,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/screen-shake/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-123"
@@ -2219,6 +2342,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/dolly-zoom/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-124"
@@ -2237,6 +2361,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/crash-zoom-in/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-125"
@@ -2255,6 +2380,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/mosaic-pack/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-126"
@@ -2273,6 +2399,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/tile-mosaic/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-127"
@@ -2292,6 +2419,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-128"
@@ -2311,6 +2439,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-129"
@@ -2330,6 +2459,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-130"
@@ -2349,6 +2479,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-131"
@@ -2367,6 +2498,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-132"
@@ -2385,6 +2517,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-133"
@@ -2404,6 +2537,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md:113",
    "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-134"
@@ -2422,6 +2556,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/index.html:29",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/index.html:29"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-135"
@@ -2439,6 +2574,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:120"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-136"
@@ -2456,6 +2592,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:141"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-137"
@@ -2475,6 +2612,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:118",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:316"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-138"
@@ -2492,6 +2630,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:106"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-139"
@@ -2509,6 +2648,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-140"
@@ -2527,6 +2667,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:73",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:118"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-141"
@@ -2546,6 +2687,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:51",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/src/main.js:91"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-142"
@@ -2564,6 +2706,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:127",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:221"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-143"
@@ -2582,6 +2725,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:184",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/index.html:115"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-144"
@@ -2599,6 +2743,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-145"
@@ -2617,6 +2762,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/cinematic_3d.html:104",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/cinematic_3d.html:189"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-146"
@@ -2636,6 +2782,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/smart_montage.py:188",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/montage_spec.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-147"
@@ -2655,6 +2802,7 @@
    "kosif-one/projects/egypt-2120-animation/index.html:253",
    "kosif-one/projects/egypt-2120-animation/index.html:322-323"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-148"
@@ -2673,6 +2821,7 @@
    "kosif-one/projects/thursday-dua-animation/source/index.html:29-30",
    "kosif-one/projects/thursday-dua-animation/source/index.html:59-60"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-149"
@@ -2690,6 +2839,7 @@
   "proof": [
    "kosif-one/projects/thursday-dua-animation/source/index.html:222-226"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-150"
@@ -2707,6 +2857,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:121-135"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-151"
@@ -2724,6 +2875,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:140-143"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-152"
@@ -2741,6 +2893,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:310-324"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-153"
@@ -2759,6 +2912,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-154"
@@ -2776,6 +2930,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-155"
@@ -2794,6 +2949,7 @@
    "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md",
    "100-superskills/skills/pixel-studio-painter/scripts/render.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-156"
@@ -2812,6 +2968,7 @@
    "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md",
    "100-superskills/skills/pixel-studio-painter/scripts/render.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-157"
@@ -2829,6 +2986,7 @@
   "proof": [
    "100-superskills/skills/thumbnail-social-graphics/SKILL.md:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-158"
@@ -2846,6 +3004,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:311"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-159"
@@ -2864,6 +3023,7 @@
    "kosif-studio/motion/kit/motion-kit.js:316",
    "kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-160"
@@ -2881,6 +3041,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:535"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-161"
@@ -2898,6 +3059,7 @@
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:414"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-162"
@@ -2915,6 +3077,7 @@
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:789"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-163"
@@ -2933,6 +3096,7 @@
    "kosif-studio/motion/kit/three-kit.js:1038",
    "kosif-studio/motion/references/book-lessons.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-164"
@@ -2950,6 +3114,7 @@
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:1049"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-165"
@@ -2967,6 +3132,7 @@
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:1092"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-166"
@@ -2984,6 +3150,7 @@
   "proof": [
    "kosif-studio/motion/kit/shape-kit.js:336"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-167"
@@ -3001,6 +3168,7 @@
   "proof": [
    "kosif-studio/motion/kit/lab-kit.js:194"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-168"
@@ -3020,6 +3188,7 @@
    "kosif-studio/film.py:353",
    "kosif-studio/tests/test_studio.py:793"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-169"
@@ -3038,6 +3207,7 @@
    "kosif-studio/render.py:692",
    "kosif-studio/scenes/whale_dragon.py:128"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-170"
@@ -3056,6 +3226,7 @@
    "kosif-studio/render.py:707",
    "kosif-studio/scenes/whale_dragon.py:269"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-171"
@@ -3073,6 +3244,7 @@
   "proof": [
    "kosif-studio/render.py:756"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-172"
@@ -3090,6 +3262,7 @@
   "proof": [
    "kosif-studio/motion/projects/premium_edit/index.html:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-173"
@@ -3108,6 +3281,7 @@
    "kosif-studio/motion/direct.py:49",
    "kosif-studio/motion/direct.py:271"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-174"
@@ -3125,6 +3299,7 @@
   "proof": [
    "kosif-studio/motion/verse.py:350"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-175"
@@ -3143,6 +3318,7 @@
    "kosif-studio/motion/projects/blue_hour/index.html:1",
    "kosif-studio/motion/projects/water_cycle_3d/index.html:48"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-176"
@@ -3160,6 +3336,7 @@
   "proof": [
    "kosif-studio/motion/projects/lab_rabbit_lion/src/main.js:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-177"
@@ -3178,6 +3355,7 @@
    "style:higgsfield-journey",
    "kosif-tool/playbooks/3d.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "higgsfield-journey"
   ],
@@ -3197,6 +3375,7 @@
   "proof": [
    "kosif-tool/starters/remotion/src/Film.tsx:102"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-179"
@@ -3214,6 +3393,7 @@
   "proof": [
    "kosif-tool/playbooks/3d.md:24-25"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-180"
@@ -3232,6 +3412,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-flyover-architecture.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/assets/flight-path.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-181"
@@ -3250,6 +3431,7 @@
    "kosif-atlas/skills/1446-marketing-skills/3504-image",
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-182"
@@ -3269,6 +3451,7 @@
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
    "kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-183"
@@ -3286,6 +3469,7 @@
   "proof": [
    "kosif-atlas/skills/1874-klingai-pack/6067-klingai-camera-control"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-184"
@@ -3303,6 +3487,7 @@
   "proof": [
    "kosif-atlas/skills/259-quickdesign/865-quickdesign"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-185"
@@ -3322,6 +3507,7 @@
    "app/public/js/00_editor.js:2871",
    "app/public/js/00_editor.js:2899"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-186"
@@ -3340,6 +3526,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-187"
@@ -3358,6 +3545,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-188"
@@ -3376,6 +3564,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-189"
@@ -3394,6 +3583,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-190"
@@ -3412,6 +3602,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-191"
@@ -3430,6 +3621,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-192"
@@ -3448,6 +3640,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-193"
@@ -3465,6 +3658,7 @@
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-194"
@@ -3485,6 +3679,7 @@
    "style:pm-shneural-2abdfa",
    "style:pm-tequilafunks-97f6c9"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-marouanegazouzi-6071d5",
    "pm-motiondsgnr-9dcfa6",
@@ -3511,6 +3706,7 @@
    "style:pm-sudo-kiran-49176d",
    "style:pm-topi-003-9ca6b5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-codestackr-c071bf",
    "pm-mrtanviir-132457",
@@ -3535,6 +3731,7 @@
    "style:pm-kyonax-on-tech-aabc1d",
    "style:pm-sudeepsd-1a3485"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ayushunleashed-ece3e3",
    "pm-kyonax-on-tech-aabc1d",
@@ -3558,6 +3755,7 @@
    "style:pm-misbahsy-80eaec",
    "style:pm-stephanlivera-df17a2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-manuelogomigo-f33ca9",
    "pm-misbahsy-80eaec",
@@ -3580,6 +3778,7 @@
    "style:pm-arjunsh1607-93005d",
    "style:pm-sahildesigner23-ee3155"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-arjunsh1607-93005d",
    "pm-sahildesigner23-ee3155"
@@ -3601,6 +3800,7 @@
    "style:pm-crazyalphaaa-bc7e75",
    "style:pm-zaqailo-212ad3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-crazyalphaaa-bc7e75",
    "pm-zaqailo-212ad3"
@@ -3621,6 +3821,7 @@
   "proof": [
    "style:chalkboard"
   ],
+  "proof_scope": "style",
   "styles": [
    "chalkboard"
   ],
@@ -3640,6 +3841,7 @@
   "proof": [
    "style:doodle"
   ],
+  "proof_scope": "style",
   "styles": [
    "doodle"
   ],
@@ -3659,6 +3861,7 @@
   "proof": [
    "style:fake3d"
   ],
+  "proof_scope": "style",
   "styles": [
    "fake3d"
   ],
@@ -3678,6 +3881,7 @@
   "proof": [
    "style:isometric"
   ],
+  "proof_scope": "style",
   "styles": [
    "isometric"
   ],
@@ -3697,6 +3901,7 @@
   "proof": [
    "style:map-journey"
   ],
+  "proof_scope": "style",
   "styles": [
    "map-journey"
   ],
@@ -3716,6 +3921,7 @@
   "proof": [
    "style:pm-0xfemyn-e114d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-0xfemyn-e114d3"
   ],
@@ -3735,6 +3941,7 @@
   "proof": [
    "style:pm-1stnoel-c20a89"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-1stnoel-c20a89"
   ],
@@ -3754,6 +3961,7 @@
   "proof": [
    "style:pm-3xtihor-0f6911"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-3xtihor-0f6911"
   ],
@@ -3773,6 +3981,7 @@
   "proof": [
    "style:pm-abderrahmen-g-9e8ed0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-abderrahmen-g-9e8ed0"
   ],
@@ -3792,6 +4001,7 @@
   "proof": [
    "style:pm-agonaliu-466a8f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-agonaliu-466a8f"
   ],
@@ -3811,6 +4021,7 @@
   "proof": [
    "style:pm-ai-baymax-0ef9dd"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ai-baymax-0ef9dd"
   ],
@@ -3830,6 +4041,7 @@
   "proof": [
    "style:pm-ai-baymax-0ef9dd"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ai-baymax-0ef9dd"
   ],
@@ -3849,6 +4061,7 @@
   "proof": [
    "style:pm-aistocksavvy-3fb9f5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aistocksavvy-3fb9f5"
   ],
@@ -3868,6 +4081,7 @@
   "proof": [
    "style:pm-ajith-io-4c248f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-4c248f"
   ],
@@ -3887,6 +4101,7 @@
   "proof": [
    "style:pm-ajith-io-b5626e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-b5626e"
   ],
@@ -3906,6 +4121,7 @@
   "proof": [
    "style:pm-ajith-io-c52e09"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-c52e09"
   ],
@@ -3925,6 +4141,7 @@
   "proof": [
    "style:pm-anas0ra-e57aea"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-anas0ra-e57aea"
   ],
@@ -3944,6 +4161,7 @@
   "proof": [
    "style:pm-andginja-333d32"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-andginja-333d32"
   ],
@@ -3963,6 +4181,7 @@
   "proof": [
    "style:pm-anilraok-eff262"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-anilraok-eff262"
   ],
@@ -3982,6 +4201,7 @@
   "proof": [
    "style:pm-anthonyriera-9b1b2a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-anthonyriera-9b1b2a"
   ],
@@ -4001,6 +4221,7 @@
   "proof": [
    "style:pm-antonio-kodheli-490109"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-antonio-kodheli-490109"
   ],
@@ -4020,6 +4241,7 @@
   "proof": [
    "style:pm-aschapmann-131210"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aschapmann-131210"
   ],
@@ -4039,6 +4261,7 @@
   "proof": [
    "style:pm-axtonliu-0b861d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-axtonliu-0b861d"
   ],
@@ -4058,6 +4281,7 @@
   "proof": [
    "style:pm-bizibeast-10f264"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-bizibeast-10f264"
   ],
@@ -4077,6 +4301,7 @@
   "proof": [
    "style:pm-blue-clarity-ef56d0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-blue-clarity-ef56d0"
   ],
@@ -4096,6 +4321,7 @@
   "proof": [
    "style:pm-bogdandragomir-35e024"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-bogdandragomir-35e024"
   ],
@@ -4115,6 +4341,7 @@
   "proof": [
    "style:pm-brainextends-e19ac3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-brainextends-e19ac3"
   ],
@@ -4134,6 +4361,7 @@
   "proof": [
    "style:pm-bthreeagency-b9b8d9"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-bthreeagency-b9b8d9"
   ],
@@ -4153,6 +4381,7 @@
   "proof": [
    "style:pm-buildfastwithai-53234e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-buildfastwithai-53234e"
   ],
@@ -4172,6 +4401,7 @@
   "proof": [
    "style:pm-buildfastwithai-ed9447"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-buildfastwithai-ed9447"
   ],
@@ -4191,6 +4421,7 @@
   "proof": [
    "style:pm-charlesmendez-73b6e4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-charlesmendez-73b6e4"
   ],
@@ -4210,6 +4441,7 @@
   "proof": [
    "style:pm-dale-vaz-cc612a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-dale-vaz-cc612a"
   ],
@@ -4229,6 +4461,7 @@
   "proof": [
    "style:pm-daniel-haida-8691d4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-daniel-haida-8691d4"
   ],
@@ -4248,6 +4481,7 @@
   "proof": [
    "style:pm-danilowm-d3720d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-danilowm-d3720d"
   ],
@@ -4267,6 +4501,7 @@
   "proof": [
    "style:pm-davidmarcus-a28a60"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-davidmarcus-a28a60"
   ],
@@ -4286,6 +4521,7 @@
   "proof": [
    "style:pm-davidshulmanfl-371638"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-davidshulmanfl-371638"
   ],
@@ -4305,6 +4541,7 @@
   "proof": [
    "style:pm-ddryo-loos-300829"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ddryo-loos-300829"
   ],
@@ -4324,6 +4561,7 @@
   "proof": [
    "style:pm-ddryo-loos-300829"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ddryo-loos-300829"
   ],
@@ -4343,6 +4581,7 @@
   "proof": [
    "style:pm-demitiyageekzen-7770ad"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-demitiyageekzen-7770ad"
   ],
@@ -4362,6 +4601,7 @@
   "proof": [
    "style:pm-demonugc-4c5753"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-demonugc-4c5753"
   ],
@@ -4381,6 +4621,7 @@
   "proof": [
    "style:pm-elliot-garreffa-f334bc"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-elliot-garreffa-f334bc"
   ],
@@ -4400,6 +4641,7 @@
   "proof": [
    "style:pm-fionntobin-97b7af"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-fionntobin-97b7af"
   ],
@@ -4419,6 +4661,7 @@
   "proof": [
    "style:pm-fractadev-149adc"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-fractadev-149adc"
   ],
@@ -4438,6 +4681,7 @@
   "proof": [
    "style:pm-gautam-mer1-2ae354"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gautam-mer1-2ae354"
   ],
@@ -4457,6 +4701,7 @@
   "proof": [
    "style:pm-gigabit-million-16b3a0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gigabit-million-16b3a0"
   ],
@@ -4476,6 +4721,7 @@
   "proof": [
    "style:pm-gigabit-million-16b3a0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gigabit-million-16b3a0"
   ],
@@ -4495,6 +4741,7 @@
   "proof": [
    "style:pm-gizakdag-b8c59e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gizakdag-b8c59e"
   ],
@@ -4514,6 +4761,7 @@
   "proof": [
    "style:pm-gizakdag-cf4ae6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gizakdag-cf4ae6"
   ],
@@ -4533,6 +4781,7 @@
   "proof": [
    "style:pm-gizakdag-cf4ae6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gizakdag-cf4ae6"
   ],
@@ -4552,6 +4801,7 @@
   "proof": [
    "style:pm-gorden-sun-041f56"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gorden-sun-041f56"
   ],
@@ -4571,6 +4821,7 @@
   "proof": [
    "style:pm-grace-sunnyy-29bc61"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-grace-sunnyy-29bc61"
   ],
@@ -4590,6 +4841,7 @@
   "proof": [
    "style:pm-henkvaness-0e06af"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-henkvaness-0e06af"
   ],
@@ -4609,6 +4861,7 @@
   "proof": [
    "style:pm-heyiammallik-e72d17"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-heyiammallik-e72d17"
   ],
@@ -4628,6 +4881,7 @@
   "proof": [
    "style:pm-himanshutwtxs-5f4b43"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-himanshutwtxs-5f4b43"
   ],
@@ -4647,6 +4901,7 @@
   "proof": [
    "style:pm-ho-ba-f3f0e9"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ho-ba-f3f0e9"
   ],
@@ -4666,6 +4921,7 @@
   "proof": [
    "style:pm-hqmank-7c61f1"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-hqmank-7c61f1"
   ],
@@ -4685,6 +4941,7 @@
   "proof": [
    "style:pm-iammxfschr-d68f90"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-iammxfschr-d68f90"
   ],
@@ -4704,6 +4961,7 @@
   "proof": [
    "style:pm-ibrahimwasim240-809370"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ibrahimwasim240-809370"
   ],
@@ -4723,6 +4981,7 @@
   "proof": [
    "style:pm-influencer-seo-ce8c33"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-influencer-seo-ce8c33"
   ],
@@ -4742,6 +5001,7 @@
   "proof": [
    "style:pm-itsolelehmann-e47532"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-itsolelehmann-e47532"
   ],
@@ -4761,6 +5021,7 @@
   "proof": [
    "style:pm-itsolelehmann-e47532"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-itsolelehmann-e47532"
   ],
@@ -4780,6 +5041,7 @@
   "proof": [
    "style:pm-itsuki-dev-10942d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-itsuki-dev-10942d"
   ],
@@ -4799,6 +5061,7 @@
   "proof": [
    "style:pm-ivanfioravanti-bd9261"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ivanfioravanti-bd9261"
   ],
@@ -4818,6 +5081,7 @@
   "proof": [
    "style:pm-jake11moran-a269c4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jake11moran-a269c4"
   ],
@@ -4837,6 +5101,7 @@
   "proof": [
    "style:pm-jasonzhou1993-8595e0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jasonzhou1993-8595e0"
   ],
@@ -4856,6 +5121,7 @@
   "proof": [
    "style:pm-jesscaroline7-1ff7cb"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jesscaroline7-1ff7cb"
   ],
@@ -4875,6 +5141,7 @@
   "proof": [
    "style:pm-jhylee95-e1152f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jhylee95-e1152f"
   ],
@@ -4894,6 +5161,7 @@
   "proof": [
    "style:pm-jhylee95-e1152f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jhylee95-e1152f"
   ],
@@ -4913,6 +5181,7 @@
   "proof": [
    "style:pm-justincooperman-e7bbc4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-justincooperman-e7bbc4"
   ],
@@ -4932,6 +5201,7 @@
   "proof": [
    "style:pm-kamstudiolabs-447565"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kamstudiolabs-447565"
   ],
@@ -4951,6 +5221,7 @@
   "proof": [
    "style:pm-kamstudiolabs-c9bb28"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kamstudiolabs-c9bb28"
   ],
@@ -4970,6 +5241,7 @@
   "proof": [
    "style:pm-kangaroohere-b10f8d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kangaroohere-b10f8d"
   ],
@@ -4989,6 +5261,7 @@
   "proof": [
    "style:pm-kangaroohere-b10f8d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kangaroohere-b10f8d"
   ],
@@ -5008,6 +5281,7 @@
   "proof": [
    "style:pm-kikelopezdesign-7cc9e8"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kikelopezdesign-7cc9e8"
   ],
@@ -5027,6 +5301,7 @@
   "proof": [
    "style:pm-kloss-xyz-fe0c31"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kloss-xyz-fe0c31"
   ],
@@ -5046,6 +5321,7 @@
   "proof": [
    "style:pm-kmasiff-cc72cb"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kmasiff-cc72cb"
   ],
@@ -5065,6 +5341,7 @@
   "proof": [
    "style:pm-koldo2k-5cff87"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-koldo2k-5cff87"
   ],
@@ -5084,6 +5361,7 @@
   "proof": [
    "style:pm-konstantinsaifo-96fc89"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-konstantinsaifo-96fc89"
   ],
@@ -5103,6 +5381,7 @@
   "proof": [
    "style:pm-l3d1c-0e35a3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-l3d1c-0e35a3"
   ],
@@ -5122,6 +5401,7 @@
   "proof": [
    "style:pm-lemomo-ai-0d9cff"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-lemomo-ai-0d9cff"
   ],
@@ -5141,6 +5421,7 @@
   "proof": [
    "style:pm-lester-tyy-f897f7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-lester-tyy-f897f7"
   ],
@@ -5160,6 +5441,7 @@
   "proof": [
    "style:pm-levabashidze-2d713a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-levabashidze-2d713a"
   ],
@@ -5179,6 +5461,7 @@
   "proof": [
    "style:pm-linearuncle-5d2bae"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-linearuncle-5d2bae"
   ],
@@ -5198,6 +5481,7 @@
   "proof": [
    "style:pm-listudio-820c7b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-listudio-820c7b"
   ],
@@ -5217,6 +5501,7 @@
   "proof": [
    "style:pm-lukasersil-0ed38e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-lukasersil-0ed38e"
   ],
@@ -5236,6 +5521,7 @@
   "proof": [
    "style:pm-madhav-xo-f97f20"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-madhav-xo-f97f20"
   ],
@@ -5255,6 +5541,7 @@
   "proof": [
    "style:pm-majin-appsheet-2d3c1a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-majin-appsheet-2d3c1a"
   ],
@@ -5274,6 +5561,7 @@
   "proof": [
    "style:pm-majin-appsheet-2d3c1a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-majin-appsheet-2d3c1a"
   ],
@@ -5293,6 +5581,7 @@
   "proof": [
    "style:pm-majorbaguette-fb11d7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-majorbaguette-fb11d7"
   ],
@@ -5312,6 +5601,7 @@
   "proof": [
    "style:pm-mdaman010-e7226a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-mdaman010-e7226a"
   ],
@@ -5331,6 +5621,7 @@
   "proof": [
    "style:pm-micheleharmonic-77628e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-micheleharmonic-77628e"
   ],
@@ -5350,6 +5641,7 @@
   "proof": [
    "style:pm-monokern-ade5b6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-monokern-ade5b6"
   ],
@@ -5369,6 +5661,7 @@
   "proof": [
    "style:pm-ndhabarde11-f155b4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ndhabarde11-f155b4"
   ],
@@ -5388,6 +5681,7 @@
   "proof": [
    "style:pm-nft-chen-5f8bb0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-nft-chen-5f8bb0"
   ],
@@ -5407,6 +5701,7 @@
   "proof": [
    "style:pm-nikolajankovic-ce4ff4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-nikolajankovic-ce4ff4"
   ],
@@ -5426,6 +5721,7 @@
   "proof": [
    "style:pm-nolkeeg-bf062e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-nolkeeg-bf062e"
   ],
@@ -5445,6 +5741,7 @@
   "proof": [
    "style:pm-palashbagchi11-0a4b6b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-palashbagchi11-0a4b6b"
   ],
@@ -5464,6 +5761,7 @@
   "proof": [
    "style:pm-pankajkumar-dev-0bee87"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-pankajkumar-dev-0bee87"
   ],
@@ -5483,6 +5781,7 @@
   "proof": [
    "style:pm-paulo-kombucha-96431c"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-paulo-kombucha-96431c"
   ],
@@ -5502,6 +5801,7 @@
   "proof": [
    "style:pm-polydao-7a572b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-polydao-7a572b"
   ],
@@ -5521,6 +5821,7 @@
   "proof": [
    "style:pm-quickdesignio-dd93d0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-quickdesignio-dd93d0"
   ],
@@ -5540,6 +5841,7 @@
   "proof": [
    "style:pm-ratheejaisal-1f4538"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ratheejaisal-1f4538"
   ],
@@ -5559,6 +5861,7 @@
   "proof": [
    "style:pm-rebutonepress-810f78"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rebutonepress-810f78"
   ],
@@ -5578,6 +5881,7 @@
   "proof": [
    "style:pm-rendesr-86be44"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rendesr-86be44"
   ],
@@ -5597,6 +5901,7 @@
   "proof": [
    "style:pm-rneayan-ea6129"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rneayan-ea6129"
   ],
@@ -5616,6 +5921,7 @@
   "proof": [
    "style:pm-rossaxbt-3085b7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
@@ -5635,6 +5941,7 @@
   "proof": [
    "style:pm-rossaxbt-3085b7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
@@ -5654,6 +5961,7 @@
   "proof": [
    "style:pm-ryzoft-4f85bd"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ryzoft-4f85bd"
   ],
@@ -5673,6 +5981,7 @@
   "proof": [
    "style:pm-sab8a-364a5a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sab8a-364a5a"
   ],
@@ -5692,6 +6001,7 @@
   "proof": [
    "style:pm-samaote-5e2fc2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-samaote-5e2fc2"
   ],
@@ -5711,6 +6021,7 @@
   "proof": [
    "style:pm-samaote-5e2fc2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-samaote-5e2fc2"
   ],
@@ -5730,6 +6041,7 @@
   "proof": [
    "style:pm-samuel-spitz-974923"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-samuel-spitz-974923"
   ],
@@ -5749,6 +6061,7 @@
   "proof": [
    "style:pm-samuel-yostt-891f87"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-samuel-yostt-891f87"
   ],
@@ -5768,6 +6081,7 @@
   "proof": [
    "style:pm-sayan-shanky-f850d8"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sayan-shanky-f850d8"
   ],
@@ -5787,6 +6101,7 @@
   "proof": [
    "style:pm-shinskinakamoto-20190b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-shinskinakamoto-20190b"
   ],
@@ -5806,6 +6121,7 @@
   "proof": [
    "style:pm-shneural-2abdfa"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-shneural-2abdfa"
   ],
@@ -5825,6 +6141,7 @@
   "proof": [
    "style:pm-slvdev-64c45a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-slvdev-64c45a"
   ],
@@ -5844,6 +6161,7 @@
   "proof": [
    "style:pm-spearwtf-3c1fd1"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-spearwtf-3c1fd1"
   ],
@@ -5863,6 +6181,7 @@
   "proof": [
    "style:pm-sudo-kiran-4f8b59"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sudo-kiran-4f8b59"
   ],
@@ -5882,6 +6201,7 @@
   "proof": [
    "style:pm-tak3sh8-be5012"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tak3sh8-be5012"
   ],
@@ -5901,6 +6221,7 @@
   "proof": [
    "style:pm-techhalla-7acbc2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-techhalla-7acbc2"
   ],
@@ -5920,6 +6241,7 @@
   "proof": [
    "style:pm-techyoutbe-945b56"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-techyoutbe-945b56"
   ],
@@ -5939,6 +6261,7 @@
   "proof": [
    "style:pm-teslachartz-c58b32"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-teslachartz-c58b32"
   ],
@@ -5958,6 +6281,7 @@
   "proof": [
    "style:pm-theparuchh-6e08c3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-theparuchh-6e08c3"
   ],
@@ -5977,6 +6301,7 @@
   "proof": [
    "style:pm-theviableedge-9065be"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-theviableedge-9065be"
   ],
@@ -5996,6 +6321,7 @@
   "proof": [
    "style:pm-theviableedge-9065be"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-theviableedge-9065be"
   ],
@@ -6015,6 +6341,7 @@
   "proof": [
    "style:pm-thismacapital-dfba20"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-thismacapital-dfba20"
   ],
@@ -6034,6 +6361,7 @@
   "proof": [
    "style:pm-tolgayhickiran-e90799"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tolgayhickiran-e90799"
   ],
@@ -6053,6 +6381,7 @@
   "proof": [
    "style:pm-utopyaszx-1b2f94"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-utopyaszx-1b2f94"
   ],
@@ -6072,6 +6401,7 @@
   "proof": [
    "style:pm-vanshwtfff-db0466"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-vanshwtfff-db0466"
   ],
@@ -6091,6 +6421,7 @@
   "proof": [
    "style:pm-viktoroddy-98c1d8"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-viktoroddy-98c1d8"
   ],
@@ -6110,6 +6441,7 @@
   "proof": [
    "style:pm-wani-shola-16ca7a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-wani-shola-16ca7a"
   ],
@@ -6129,6 +6461,7 @@
   "proof": [
    "style:pm-web3wesley-7bb108"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-web3wesley-7bb108"
   ],
@@ -6148,6 +6481,7 @@
   "proof": [
    "style:pm-wozu-co-242285"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-wozu-co-242285"
   ],
@@ -6167,6 +6501,7 @@
   "proof": [
    "style:pm-x4b47x-9cc84f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-x4b47x-9cc84f"
   ],
@@ -6186,6 +6521,7 @@
   "proof": [
    "style:product"
   ],
+  "proof_scope": "style",
   "styles": [
    "product"
   ],
@@ -6205,6 +6541,7 @@
   "proof": [
    "style:stickman"
   ],
+  "proof_scope": "style",
   "styles": [
    "stickman"
   ],
@@ -6224,6 +6561,7 @@
   "proof": [
    "style:stickman"
   ],
+  "proof_scope": "style",
   "styles": [
    "stickman"
   ],
@@ -6243,6 +6581,7 @@
   "proof": [
    "style:whiteboard"
   ],
+  "proof_scope": "style",
   "styles": [
    "whiteboard"
   ],
@@ -6262,6 +6601,7 @@
   "proof": [
    "kosif-atlas/skills/101-video-skills/213-brand-grid-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-340"
@@ -6279,6 +6619,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-341"
@@ -6297,6 +6638,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/motion-principles.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/house-style.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-342"
@@ -6314,6 +6656,7 @@
   "proof": [
    "kosif-atlas/skills/2199-lvtd-skills/8088-game-smooth-curves-and-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-343"
@@ -6332,6 +6675,7 @@
    "kosif-atlas/skills/880-superloopy/1944-superloopy-slides/SKILL.md",
    "kosif-atlas/skills/345-visuals/1241-html-deck/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-344"
@@ -6349,6 +6693,7 @@
   "proof": [
    "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/references/layered-grid.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-345"
@@ -6366,6 +6711,7 @@
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14124-top-design"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-346"
@@ -6383,6 +6729,7 @@
   "proof": [
    "kosif-atlas/skills/166-demo-video/535-demo-video/references/scene-design-system.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-347"
@@ -6400,6 +6747,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2448-akbun-vlog-shotsketch/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-348"
@@ -6417,6 +6765,7 @@
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-349"
@@ -6434,6 +6783,7 @@
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-350"
@@ -6451,6 +6801,7 @@
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-351"
@@ -6469,6 +6820,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-352"
@@ -6487,6 +6839,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2446-akbun-vlog-prepared-devtalk/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2447-akbun-vlog-shootplan/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-353"
@@ -6505,6 +6858,7 @@
    "kosif-atlas/skills/1503-universal-design-principles/3816-figure-ground-cues/SKILL.md",
    "kosif-atlas/skills/1503-universal-design-principles/3818-figure-ground-relationship/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-354"
@@ -6522,6 +6876,7 @@
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3838-snr-decoration-removal/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-355"
@@ -6541,6 +6896,7 @@
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/gotchas.md",
    "kosif-atlas/skills/101-video-skills/213-brand-grid-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-356"
@@ -6558,6 +6914,7 @@
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-357"
@@ -6575,6 +6932,7 @@
   "proof": [
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-358"
@@ -6592,6 +6950,7 @@
   "proof": [
    "kosif-atlas/skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-359"
@@ -6610,6 +6969,7 @@
    "kosif-atlas/skills/1503-universal-design-principles/3813-color",
    "kosif-atlas/skills/1503-universal-design-principles/3819-gestalt-similarity"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-360"
@@ -6628,6 +6988,7 @@
    "kosif-atlas/skills/1503-universal-design-principles/3821-hierarchy-color-and-tone",
    "kosif-atlas/skills/1503-universal-design-principles/3840-snr-emphasis-economy"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-361"
@@ -6645,6 +7006,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2448-akbun-vlog-shotsketch"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-362"
@@ -6663,6 +7025,7 @@
    "kosif-atlas/skills/2354-power-platform/9080-report-visualization-design/SKILL.md",
    "kosif-atlas/skills/3455-business-analytics/14162-kpi-dashboard-design/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-363"
@@ -6681,6 +7044,7 @@
    "kosif-earth-ci-fork/docs/design/SQC-IDENTITY-ar.md",
    "kosif-earth-ci-fork/ui/ds/tokens.css:28"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-364"
@@ -6699,6 +7063,7 @@
    "kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md",
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.css:25"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-365"
@@ -6716,6 +7081,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-366"
@@ -6733,6 +7099,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/montage_grammar.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-367"
@@ -6750,6 +7117,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-368"
@@ -6767,6 +7135,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-369"
@@ -6784,6 +7153,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-370"
@@ -6801,6 +7171,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-371"
@@ -6818,6 +7189,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-372"
@@ -6835,6 +7207,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-373"
@@ -6852,6 +7225,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-374"
@@ -6869,6 +7243,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-375"
@@ -6886,6 +7261,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-376"
@@ -6903,6 +7279,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-377"
@@ -6920,6 +7297,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-378"
@@ -6937,6 +7315,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-379"
@@ -6954,6 +7333,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-380"
@@ -6971,6 +7351,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/seven-layer-anatomy.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-381"
@@ -6988,6 +7369,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/continuity-protocols.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-382"
@@ -7006,6 +7388,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/visual-catalog.md",
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-383"
@@ -7025,6 +7408,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-video/SKILL.md",
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-384"
@@ -7042,6 +7426,7 @@
   "proof": [
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-385"
@@ -7059,6 +7444,7 @@
   "proof": [
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-386"
@@ -7076,6 +7462,7 @@
   "proof": [
    "100-superskills/skills/motion-director-pro/references/motion-floor.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-387"
@@ -7094,6 +7481,7 @@
    "100-superskills/skills/motion-director-pro/SKILL.md",
    "100-superskills/skills/motion-director-pro/references/motion-floor.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-388"
@@ -7111,6 +7499,7 @@
   "proof": [
    "100-superskills/skills/cinema-director-7layers/references/sources.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-389"
@@ -7129,6 +7518,7 @@
    "kosif-studio/motion/references/craft-numbers.md",
    "kosif-studio/motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-390"
@@ -7147,6 +7537,7 @@
    "kosif-studio/references/drawing-guide.md:62",
    "kosif-studio/references/drawing-guide.md:82"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-391"
@@ -7165,6 +7556,7 @@
    "kosif-tool/templates/PLAN.md",
    "kosif-tool/templates/STYLE.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-392"
@@ -7183,6 +7575,7 @@
    "kosif-tool/playbooks/3d.md:18",
    "kosif-tool/playbooks/3d.md:58"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-393"
@@ -7200,6 +7593,7 @@
   "proof": [
    "kosif-tool/playbooks/3d.md:27"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-394"
@@ -7217,6 +7611,7 @@
   "proof": [
    "kosif-tool/playbooks/3d.md:29"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-395"
@@ -7234,6 +7629,7 @@
   "proof": [
    "kosif-tool/playbooks/charts.md:42"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-396"
@@ -7251,6 +7647,7 @@
   "proof": [
    "kosif-tool/playbooks/diagrams.md:30"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-397"
@@ -7268,6 +7665,7 @@
   "proof": [
    "kosif-tool/playbooks/phone.md:25"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-398"
@@ -7285,6 +7683,7 @@
   "proof": [
    "kosif-tool/playbooks/phone.md:27"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-399"
@@ -7302,6 +7701,7 @@
   "proof": [
    "kosif-tool/playbooks/phone.md:40"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-400"
@@ -7319,6 +7719,7 @@
   "proof": [
    "kosif-tool/playbooks/photos.md:17"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-401"
@@ -7336,6 +7737,7 @@
   "proof": [
    "kosif-tool/playbooks/photos.md:24-25"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-402"
@@ -7353,6 +7755,7 @@
   "proof": [
    "kosif-tool/playbooks/product-ui.md:21"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-403"
@@ -7370,6 +7773,7 @@
   "proof": [
    "kosif-tool/playbooks/product-ui.md:22"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "CAM-404"
@@ -7387,6 +7791,7 @@
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-405"
@@ -7404,6 +7809,7 @@
   "proof": [
    "kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:199"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "CAM-406"
@@ -7421,6 +7827,7 @@
   "proof": [
    "style:pm-0xevinho-3777d8"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-0xevinho-3777d8"
   ],
@@ -7440,6 +7847,7 @@
   "proof": [
    "style:pm-abderrahmen-g-9e8ed0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-abderrahmen-g-9e8ed0"
   ],
@@ -7459,6 +7867,7 @@
   "proof": [
    "style:pm-ajith-io-ea7f2d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-ea7f2d"
   ],
@@ -7478,6 +7887,7 @@
   "proof": [
    "style:pm-aschapmann-131210"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aschapmann-131210"
   ],
@@ -7497,6 +7907,7 @@
   "proof": [
    "style:pm-davidshulmanfl-371638"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-davidshulmanfl-371638"
   ],
@@ -7516,6 +7927,7 @@
   "proof": [
    "style:pm-deifosv-04e4d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-deifosv-04e4d3"
   ],
@@ -7535,6 +7947,7 @@
   "proof": [
    "style:pm-kamstudiolabs-0b0824"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kamstudiolabs-0b0824"
   ],
@@ -7554,6 +7967,7 @@
   "proof": [
    "style:pm-kantamk-61f410"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kantamk-61f410"
   ],
@@ -7573,6 +7987,7 @@
   "proof": [
    "style:pm-melvynx-6cde6c"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-melvynx-6cde6c"
   ],
@@ -7592,6 +8007,7 @@
   "proof": [
    "style:pm-micheleharmonic-77628e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-micheleharmonic-77628e"
   ],
@@ -7611,6 +8027,7 @@
   "proof": [
    "style:pm-monokern-ade5b6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-monokern-ade5b6"
   ],
@@ -7630,6 +8047,7 @@
   "proof": [
    "style:pm-mrtanviir-132457"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-mrtanviir-132457"
   ],
@@ -7649,6 +8067,7 @@
   "proof": [
    "style:pm-ratheejaisal-1f4538"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ratheejaisal-1f4538"
   ],
@@ -7668,6 +8087,7 @@
   "proof": [
    "style:pm-robvjourney-ce3e1a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-robvjourney-ce3e1a"
   ],
@@ -7687,6 +8107,7 @@
   "proof": [
    "style:pm-sarut0bisasuke-cefa43"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sarut0bisasuke-cefa43"
   ],
@@ -7709,6 +8130,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "virtual camera",
@@ -7738,6 +8160,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "motivated camera",
@@ -7766,6 +8189,7 @@
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "brand film",

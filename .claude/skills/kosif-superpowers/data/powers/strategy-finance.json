@@ -13,6 +13,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "decision",
@@ -42,6 +43,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "sensitivity",
@@ -71,6 +73,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "risk",
@@ -96,6 +99,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "premortem",
@@ -121,6 +125,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "council",
@@ -146,6 +151,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "decision log",
@@ -170,6 +176,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "rollout",
@@ -195,6 +202,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "prd",
@@ -221,6 +229,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "product",
@@ -248,6 +257,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "product mix",
@@ -274,6 +284,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pricing",
@@ -301,6 +312,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "accounting",
@@ -328,6 +340,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "reconciliation",
@@ -353,6 +366,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "financial model",
@@ -383,6 +397,7 @@
   "install": "pip install yfinance quantstats",
   "license": "Apache-2.0 (yfinance, quantstats); pandas-ta unknown",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "stocks",

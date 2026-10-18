@@ -53,6 +53,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 استخدم أدنى شارة صادقة دائمًا. Always claim the lowest badge that is true.
 ✅ شُغّل فعلًا في حاوية Claude ومعه مسار دليل · 🟢 كود جاهز هنا · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (موشن فقط) · 📄 طريقة موصوفة · 💡 فكرة.
 ✅ إيصال بتاريخ لا وعد دائم: البيئات تختلف، فأعد الفحص قبل الادعاء. `executed ≠ verified`: التشغيل وحده ليس تحققًا.
+لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (347 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
 
 ## 4. مراجع أخرى / other references
 - [environment.md](references/environment.md) — لقطة مؤرخة لهذه الحاوية من `probe_env.py`. أعد توليدها: `python3 $SKILL_DIR/scripts/probe_env.py --write $SKILL_DIR/references/environment.md`.
@@ -237,7 +238,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 ## Reference-media inspector / فحص فيديو المرجع
 - For permissioned HTTP(S) media references use `scripts/fetch_reference.py` to inspect frame contact sheets, color palette, cuts and metadata, or `scripts/superpowers.py` to search the separate 100-repository tool map in `repos.json`.
-- Read [reference inspection rules](references/reference-inspection.md), [100-repository tool catalog](references/repos.md), and [capability recipes](references/capabilities.md); always honor source licensing and use `--list` to inspect before downloading.
+- Read [reference inspection rules](references/reference-inspection.md), [124-repository tool catalog](references/repos.md), and [capability recipes](references/capabilities.md); always honor source licensing and use `--list` to inspect before downloading.
 - The inspector refuses private network destinations, non-HTTP(S) HLS URIs, encrypted streams, unbounded downloads and remote ffmpeg protocols. Output is cached in `.kosif-cache/` and must never be committed.
 - `references/capabilities.md` holds one recipe section per tool-map superpower (observe, animate, render, space, draw, data, voice, arabic, captions, generate, orchestrate, design) with decision tables over `repos.json`; `python3 $SKILL_DIR/scripts/superpowers.py doctor` lists which of those tools exist on this machine before any plan promises them.
 - Font matching / مطابقة الخطوط: [font-matching.md](references/font-matching.md) — identify a reference's typeface by rendering open candidates through Chromium with `scripts/render_text.cjs` and deciding by letterform signatures; worked example and an OFL family built from Amiri + Bodoni Moda in `fonts/kosif-jumuah/` (repo root).

@@ -13,6 +13,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "verification",
@@ -48,6 +49,7 @@
    "kosif-tool/tools/verify_video.py",
    "session-2026-10-16:see-atlas.md#15"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "postcondition",
@@ -81,6 +83,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/neon-glow/sheet.jpg",
    "session-2026-10-16:see-atlas.md#15"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "visual check",
@@ -109,6 +112,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "self evaluation",
@@ -135,6 +139,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "red team",
@@ -163,6 +168,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "code verification",
@@ -192,6 +198,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "stop rule",
@@ -220,6 +227,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "evidence ladder",
@@ -248,6 +256,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "receipt",
@@ -276,6 +285,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "status words",
@@ -304,6 +314,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "evals",
@@ -332,6 +343,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "pass@k",
@@ -359,6 +371,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "hard fail",
@@ -385,6 +398,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "llm judge",
@@ -413,6 +427,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "santa method",
@@ -439,6 +454,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "generator evaluator",
@@ -467,6 +483,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "adversarial",
@@ -494,6 +511,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "benchmark",
@@ -522,6 +540,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "loop design",
@@ -550,6 +569,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "mutation testing",
@@ -576,6 +596,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "trigger eval",
@@ -608,6 +629,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/powers.py",
    "kosif-tool/tools/validate.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "snapshot",
@@ -638,6 +660,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/verification.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "validator",
@@ -667,6 +690,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "self evolution",
@@ -695,6 +719,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "lessons",
@@ -723,6 +748,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "decision ledger",
@@ -749,6 +775,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "failure taxonomy",
@@ -777,6 +804,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "incident",
@@ -803,6 +831,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "self repair",

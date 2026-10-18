@@ -13,6 +13,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "thinking loop",
@@ -44,6 +45,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "frame",
@@ -73,6 +75,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "capability inventory",
@@ -105,6 +108,7 @@
    "session-2026-10-16:skill-audit.md#2",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/powers.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "catalog",
@@ -134,6 +138,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "explore",
@@ -162,6 +167,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "decide",
@@ -190,6 +196,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "build",
@@ -218,6 +225,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "think",
@@ -246,6 +254,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "report",
@@ -274,6 +283,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "stage-0",
@@ -302,6 +312,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "lenses",
@@ -330,6 +341,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "claim ledger",
@@ -358,6 +370,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "uncertainty",
@@ -386,6 +399,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "decomposition",
@@ -415,6 +429,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "effort",
@@ -443,6 +458,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "creative push",
@@ -471,6 +487,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "numeric lock",
@@ -499,6 +516,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "coverage",
@@ -527,6 +545,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "capability",
@@ -556,6 +575,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "capability truth",
@@ -584,6 +604,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "surface",
@@ -613,6 +634,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "search first",
@@ -641,6 +663,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "progressive disclosure",
@@ -669,6 +692,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "docs",
@@ -697,6 +721,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "ambiguity",
@@ -725,6 +750,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "acceptance criteria",
@@ -751,6 +777,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "subagents",
@@ -780,6 +807,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "council",
@@ -808,6 +836,7 @@
   "install": "",
   "license": "owner",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "options",
@@ -837,6 +866,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "change impact",
@@ -865,6 +895,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "retrieval",
@@ -893,6 +924,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "stuck",
@@ -921,6 +953,7 @@
   "install": "",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "context",
@@ -949,6 +982,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "anti-patterns",

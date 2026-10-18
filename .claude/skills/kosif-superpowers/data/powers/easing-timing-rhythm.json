@@ -16,6 +16,7 @@
    "kosif-studio/tests/test_studio.py:684",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/neon-glow/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "حتمية",
@@ -45,6 +46,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/workflow.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "إطارات",
@@ -72,6 +74,7 @@
    "fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md",
    "kosif-atlas/skills/2290-event-management/8759-build-run-of-show/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مدة",
@@ -98,6 +101,7 @@
    "fastify-motion-bro/scripts/planner.mjs",
    "fastify-motion-bro/tests/planner.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ستوريبورد",
@@ -124,6 +128,7 @@
    "fastify-motion-bro/scripts/profiles/vox-history.mjs",
    "fastify-motion-bro/tests/production-profiles.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "سرعة الكلام",
@@ -151,6 +156,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2465-davinciresolve-subtitle-travelnote/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/dynamic-content-sequencing.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "زمن القراءة",
@@ -176,6 +182,7 @@
    "app/public/js/10_studio.js:60",
    "app/public/js/10_studio.js:999"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "توقيت عربي",
@@ -201,6 +208,7 @@
    "kosif-tool/styles/whiteboard",
    "kosif-tool/styles/chalkboard"
   ],
+  "proof_scope": "repo",
   "styles": [
    "whiteboard",
    "chalkboard"
@@ -231,6 +239,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "app/public/js/00_editor.js:2309"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "منحنيات",
@@ -259,6 +268,7 @@
    "100-superskills/skills/motion-director-pro/SKILL.md",
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "slam",
@@ -287,6 +297,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/three-bloom-scene/index.html",
    "app/public/js/00_editor.js:8"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "easing",
@@ -316,6 +327,7 @@
    "kosif-earth-ci-fork/ui/ds/tokens.css:41",
    "kosif-audit-studio/studio.css:2"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "css tokens",
@@ -343,6 +355,7 @@
    "kosif-atlas/skills/1530-webcraft/4189-design-guide-authoring/SKILL.md",
    "kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "agency easing",
@@ -370,6 +383,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/animation_craft.md",
    "kosif-atlas/skills/345-visuals/1241-html-deck/references/animations.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "gsap ease",
@@ -400,6 +414,7 @@
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md",
    "kosif-tool/playbooks/kinetic-type.md:30"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ease-in",
@@ -426,6 +441,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:43",
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/timing.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "زووم",
@@ -452,6 +468,7 @@
    "kosif-tool/styles/pm-notdwd-7de38a",
    "kosif-tool/styles/pm-notdwd-c2037d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-notdwd-7de38a",
    "pm-notdwd-c2037d"
@@ -478,6 +495,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/nudge-curve.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "nudge",
@@ -502,6 +520,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js",
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "U-speed",
@@ -526,6 +545,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "transition presets",
@@ -553,6 +573,7 @@
    "kosif-tool/styles/pm-tequilafunks-97f6c9",
    "kosif-tool/styles/pm-vanshwtfff-db0466"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-prasenx-8d9323",
    "pm-roundtablespace-d3a1be",
@@ -590,6 +611,7 @@
    "kosif-studio/tests/test_studio.py:637",
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "spring",
@@ -616,6 +638,7 @@
    "kosif-studio/motion/kit/motion-kit.js:52",
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "spring ease",
@@ -642,6 +665,7 @@
    "kosif-studio/motion/references/x-trend-2026.md",
    "kosif-tool/styles/pm-twoclipping-5cba86"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-twoclipping-5cba86"
   ],
@@ -670,6 +694,7 @@
    "fastify-motion-bro/web/editorial.js",
    "kosif-one/projects/egypt-2120-animation/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "spring Hz",
@@ -697,6 +722,7 @@
    "kosif-tool/styles/pm-melvynx-6cde6c/BRIEF.md",
    "kosif-tool/styles/pm-aschapmann-131210/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "spring presets",
@@ -721,6 +747,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "springEase",
@@ -746,6 +773,7 @@
    "kosif-studio/motion/references/craft-numbers.md",
    "kosif-tool/playbooks/product-ui.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "overshoot",
@@ -771,6 +799,7 @@
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/timing.md",
    "kosif-tool/starters/remotion/src/Film.tsx:58"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "remotion",
@@ -798,6 +827,7 @@
    "kosif-tool/playbooks/kinetic-type.md:28",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/index.html"
   ],
+  "proof_scope": "repo",
   "styles": [
    "doodle"
   ],
@@ -825,6 +855,7 @@
    "kosif-tool/playbooks/3d.md:26",
    "kosif-tool/styles/pm-sarut0bisasuke-cefa43"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-sarut0bisasuke-cefa43"
   ],
@@ -853,6 +884,7 @@
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "stagger",
@@ -879,6 +911,7 @@
    "kosif-studio/motion/kit/motion-kit.js:557",
    "kosif-tool/styles/pm-gigabit-million-16b3a0"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-gigabit-million-16b3a0"
   ],
@@ -907,6 +940,7 @@
    "kosif-audit-pro/app/globals.css:600",
    "kosif-audit-studio/studio.css:114"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "css stagger",
@@ -931,6 +965,7 @@
    "kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md",
    "kosif-atlas/skills/3438-ux-design/14124-top-design"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "opening",
@@ -955,6 +990,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "overlap",
@@ -979,6 +1015,7 @@
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md",
    "kosif-studio/motion/qa.py:11"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "one third",
@@ -1002,6 +1039,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/motion-principles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "build breathe resolve",
@@ -1027,6 +1065,7 @@
    "kosif-tool/styles/pm-gautam-mer1-2ae354/BRIEF.md",
    "kosif-atlas/skills/2963-pwdev-code/12442-skill-frontend-design"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "speed",
@@ -1053,6 +1092,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:49",
    "kosif-atlas/skills/3529-ui-design/14308-interaction-design"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "durFor",
@@ -1078,6 +1118,7 @@
    "fastify-motion-bro/web/editorial.js",
    "fastify-motion-bro/skills/viral-editorial/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "editorial",
@@ -1103,6 +1144,7 @@
    "kosif-studio/motion/references/motion-craft.md",
    "kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/feedback-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "UI durations",
@@ -1128,6 +1170,7 @@
    "kosif-tool/playbooks/product-ui.md",
    "kosif-atlas/skills/1511-homie/3903-video/references/RECORD.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "product demo",
@@ -1153,6 +1196,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/frame-worker-core.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10335-visualization-strategy-and-critique/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "reveal",
@@ -1178,6 +1222,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-6-build.md",
    "app/public/js/00_editor.js:1568"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "alive",
@@ -1203,6 +1248,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/references/keyframe-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "keyframes",
@@ -1230,6 +1276,7 @@
    "kosif-one/vendor/hyperframes/docs/concepts/data-attributes.mdx",
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "gsap timeline",
@@ -1255,6 +1302,7 @@
    "kosif-studio/motion/kit/motion-kit.js:109",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "sampled keyframes",
@@ -1280,6 +1328,7 @@
    "kosif-tool/playbooks/shapes.md:26",
    "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "anticipation",
@@ -1304,6 +1353,7 @@
    "kosif-tool/styles/pm-gdgtify-287ddf",
    "kosif-tool/styles/pm-ror-fly-9950f1"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-gdgtify-287ddf",
    "pm-ror-fly-9950f1"
@@ -1332,6 +1382,7 @@
    "app/public/js/00_editor.js:2317",
    "kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "hit pulse",
@@ -1359,6 +1410,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "squash",
@@ -1384,6 +1436,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/index.html",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-chatgptastra-0d95c7",
    "pm-levabashidze-2d713a",
@@ -1418,6 +1471,7 @@
    "kosif-tool/styles/pm-ik-builds-b8bdcf",
    "kosif-tool/styles/pm-himanshutwtxs-5f4b43"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-chatgptastra-0d95c7",
    "pm-ik-builds-b8bdcf",
@@ -1454,6 +1508,7 @@
    "kosif-tool/styles/pm-anilraok-eff262",
    "kosif-tool/styles/stickman"
   ],
+  "proof_scope": "repo",
   "styles": [
    "isometric",
    "pm-anilraok-eff262",
@@ -1483,6 +1538,7 @@
    "kosif-tool/styles/pm-ceowinkz-7c776b",
    "kosif-tool/styles/pm-0xnfrith-5be616"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ceowinkz-7c776b",
    "pm-0xnfrith-5be616"
@@ -1511,6 +1567,7 @@
    "kosif-tool/styles/pm-kantamk-61f410",
    "kosif-tool/styles/pm-kamstudiolabs-447565"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kantamk-61f410",
    "pm-kamstudiolabs-447565"
@@ -1537,6 +1594,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "blur pop",
@@ -1561,6 +1619,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/index.html",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "wiggle",
@@ -1587,6 +1646,7 @@
    "kosif-studio/tests/test_studio.py:699",
    "kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "speed limit",
@@ -1613,6 +1673,7 @@
    "kosif-tool/styles/pm-notdwd-c2037d",
    "kosif-tool/styles/pm-jhylee95-e1152f"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-notdwd-c2037d",
    "pm-jhylee95-e1152f",
@@ -1644,6 +1705,7 @@
    "kosif-one/vendor/hyperframes/registry/components/motion-blur/motion-blur.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/motion-blur.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "shutter",
@@ -1669,6 +1731,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "app/public/js/00_editor.js:2024"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "pacing",
@@ -1695,6 +1758,7 @@
    "100-superskills/skills/kosif-montage-motion/references/montage_grammar.md",
    "kosif-atlas/skills/3067-youtube/13224-creator-editor-brief/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ASL",
@@ -1720,6 +1784,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12592-story-reels/SKILL.md",
    "kosif-atlas/skills/192-marketing-skills/617-video-content-strategist/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "reels",
@@ -1746,6 +1811,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/template-catalog.md",
    "kosif-tool/styles/pm-mrtanviir-132457"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-mrtanviir-132457",
    "pm-wozu-co-242285",
@@ -1778,6 +1844,7 @@
    "kosif-studio/motion/projects/showreel/index.html:61",
    "kosif-one/vendor/hyperframes/registry/components/beat-timeline/beat-timeline.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "beat clock",
@@ -1804,6 +1871,7 @@
    "kosif-atlas/skills/1511-homie/3903-video",
    "kosif-atlas/skills/1511-homie/3892-music"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "beat grid",
@@ -1829,6 +1897,7 @@
    "app/public/js/00_editor.js:166",
    "app/public/js/00_editor.js:573"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "cut list",
@@ -1853,6 +1922,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2453-davinciresolve-cut-devtalk/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "pause",
@@ -1880,6 +1950,7 @@
    "kosif-tool/styles/pm-teslachartz-c58b32",
    "kosif-tool/styles/pm-listudio-820c7b"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kloss-xyz-15182a",
    "pm-majin-appsheet-2d3c1a",
@@ -1914,6 +1985,7 @@
    "kosif-tool/styles/pm-iammxfschr-d68f90",
    "kosif-tool/styles/pm-emollick-8661a8"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-kloss-xyz-b9b3f6",
    "pm-iammxfschr-d68f90",
@@ -1945,6 +2017,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-music-sports.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-marklaunches-3b9492",
    "pm-topi-003-b0e12c",
@@ -1974,6 +2047,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html",
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.css"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-blushpetal795-0c85c2",
    "pm-charlesmendez-73b6e4",
@@ -2004,6 +2078,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py",
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "speed ramp",
@@ -2030,6 +2105,7 @@
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "minterpolate",
@@ -2057,6 +2133,7 @@
    "kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md",
    "kosif-tool/styles/pm-koldo2k-5cff87"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-koldo2k-5cff87",
    "pm-davidshulmanfl-371638",
@@ -2089,6 +2166,7 @@
    "kosif-tool/styles/pm-cansincengiz-me-cf68dd",
    "kosif-tool/styles/pm-kamstudiolabs-0b0824"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-cansincengiz-me-cf68dd",
    "pm-kamstudiolabs-0b0824",
@@ -2120,6 +2198,7 @@
   "proof": [
    "kosif-tool/styles/pm-itsolelehmann-e47532"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-itsolelehmann-e47532"
   ],
@@ -2147,6 +2226,7 @@
    "kosif-earth-ci-fork/ui/ds/components.css:38",
    "kosif-earth-ci-fork/ui/features/assistant.css:20"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "shimmer",
@@ -2174,6 +2254,7 @@
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/references/effects.md",
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "typewriter",
@@ -2199,6 +2280,7 @@
    "kosif-studio/studio.py:46",
    "kosif-studio/film.py:28"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "drawing time",
@@ -2224,6 +2306,7 @@
    "kosif-earth-ci-fork/ui/ds/luxe.css:367",
    "kosif-earth-ci-fork/ui/ds/tokens.css:99"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-demonugc-4c5753",
    "pm-kikelopezdesign-7cc9e8"
@@ -2253,6 +2336,7 @@
    "kosif-audit-pro/tests/motion-contract.test.mjs",
    "kosif-audit-pro/README.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "transform",
@@ -2279,6 +2363,7 @@
    "kosif-audit-studio/studio.css:140",
    "kosif-atlas/skills/1567-tonone/4430-form-tokens"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "reduced motion",
@@ -2304,6 +2389,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:75",
    "100-superskills/skills/kosif-montage-motion/tests/studio/model.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "layer animation",
@@ -2330,6 +2416,7 @@
    "kosif-tool/styles/pm-moguzbulbul-6311b6",
    "kosif-tool/styles/pm-ai-baymax-0ef9dd"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-moguzbulbul-6311b6",
    "pm-ai-baymax-0ef9dd"
@@ -2357,6 +2444,7 @@
   "proof": [
    "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "pointer trail",
@@ -2383,6 +2471,7 @@
    "kosif-tool/playbooks/kinetic-type.md:26",
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "photo timing",
@@ -2410,6 +2499,7 @@
    "kosif-one/vendor/hyperframes/registry/components/slit-scan-reveal/slit-scan-reveal.html",
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "hyperframes",
@@ -2435,6 +2525,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "animejs",
@@ -2464,6 +2555,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "speed graph",
@@ -2498,6 +2590,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "needle",
@@ -2530,6 +2623,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "relative speed",
@@ -2560,6 +2654,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "overlap",
@@ -2592,6 +2687,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "bezier",
@@ -2623,6 +2719,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "cubic-bezier",
@@ -2652,6 +2749,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/launch-film.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "entrance",
@@ -2683,6 +2781,7 @@
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/SKILL.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/activity.mjs"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "read time",
@@ -2715,6 +2814,7 @@
    "session-2026-10-16:motion-leftovers#3.2",
    "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/engine.js"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "spring",
@@ -2744,6 +2844,7 @@
   "proof": [
    "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "posterize",
@@ -2772,6 +2873,7 @@
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "impact",

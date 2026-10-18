@@ -16,6 +16,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "normalization",
@@ -48,6 +49,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "offsets",
@@ -77,6 +79,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "regex",
@@ -107,6 +110,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "arabic digits",
@@ -136,6 +140,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "dates",
@@ -167,6 +172,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "shaping",
@@ -195,6 +201,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "bidi",
@@ -224,6 +231,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "fonts",
@@ -250,6 +258,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "tashkeel",
@@ -280,6 +289,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "camel-tools",
@@ -309,6 +319,7 @@
   "proof": [
    "session-2026-10-16:general-arsenal.md#Full table"
   ],
+  "proof_scope": "session",
   "styles": [],
   "tags": [
    "camel-tools",
@@ -340,6 +351,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pyarabic",
@@ -368,6 +380,7 @@
   "proof": [
    "session-2026-10-16:general-arsenal.md#Full table"
   ],
+  "proof_scope": "session",
   "styles": [],
   "tags": [
    "farasa",
@@ -396,6 +409,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ocr",
@@ -425,6 +439,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ocr qa",
@@ -453,6 +468,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "encoding",
@@ -480,6 +496,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "dialect",
@@ -517,6 +534,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "transliteration",
@@ -545,6 +563,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "grammar",

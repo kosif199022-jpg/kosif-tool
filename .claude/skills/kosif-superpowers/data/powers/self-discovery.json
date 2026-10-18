@@ -15,6 +15,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "capability",
@@ -45,6 +46,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "badges",
@@ -76,6 +78,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "freshness",
@@ -105,6 +108,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "verify",
@@ -133,6 +137,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "tools",
@@ -162,6 +167,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "toolsearch",
@@ -190,6 +196,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "mcp",
@@ -221,6 +228,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "skills",
@@ -248,6 +256,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plugins",
@@ -274,6 +283,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "documentation",
@@ -301,6 +311,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "connector",
@@ -332,6 +343,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/probe_env.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "probe",
@@ -360,6 +372,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "shell",
@@ -390,6 +403,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "gpu",
@@ -418,6 +432,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "network",
@@ -447,6 +462,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "proxy",
@@ -476,6 +492,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "env",
@@ -505,6 +522,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "python",
@@ -533,6 +551,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "node",
@@ -562,6 +581,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "fonts",
@@ -591,6 +611,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "session-2026-10-16:env-probe.md#1. Hardware / OS"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "apt",
@@ -618,6 +639,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "docker",
@@ -644,6 +666,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "github",
@@ -673,6 +696,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pypi",
@@ -702,6 +726,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "python version",
@@ -730,6 +755,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "session-2026-10-16:general-arsenal.md#Method (reproducible)"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "venv",
@@ -760,6 +786,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "session-2026-10-16:general-arsenal.md#Method (reproducible)"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "npm",
@@ -788,6 +815,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "torch",
@@ -817,6 +845,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "license",
@@ -846,6 +875,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "search-first",
@@ -874,6 +904,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "skill-scout",
@@ -901,6 +932,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "documentation",
@@ -930,6 +962,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "session-2026-10-16:general-arsenal.md#Key lessons (surprises Claude must know — training-data APIs are stale)"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "api drift",
@@ -960,6 +993,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "audit",
@@ -989,6 +1023,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "surface",
@@ -1019,6 +1054,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "cloud",
@@ -1049,6 +1085,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "api",
@@ -1078,6 +1115,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "claude.ai",
@@ -1109,6 +1147,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "desktop",
@@ -1136,6 +1175,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "map",
@@ -1164,6 +1204,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "report",
@@ -1192,6 +1233,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "errors",
@@ -1220,6 +1262,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "paid",

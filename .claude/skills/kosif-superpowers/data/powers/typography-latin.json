@@ -16,6 +16,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12589-post-visual/SKILL.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/references/svg-polish-and-crispness.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "size",
@@ -46,6 +47,7 @@
    "kosif-atlas/skills/3438-ux-design/14126-web-typography/SKILL.md",
    "kosif-atlas/skills/1420-frontend-design-skills/3376-anthropic-frontend-design"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "words per screen",
@@ -75,6 +77,7 @@
    "kosif-tool/playbooks/kinetic-type.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/typography.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "timing",
@@ -104,6 +107,7 @@
    "kosif-atlas/skills/3438-ux-design/14124-top-design/references/typography.md",
    "kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:170"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "type scale",
@@ -135,6 +139,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/typography.md",
    "kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:152"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "pairing",
@@ -163,6 +168,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/typography.md",
    "kosif-studio/motion/kit/motion-kit.js:227"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "tabular",
@@ -191,6 +197,7 @@
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/measuring-text.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/determinism-rules.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "fit text",
@@ -216,6 +223,7 @@
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/references/svg-polish-and-crispness.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "svg",
@@ -245,6 +253,7 @@
    "kosif-studio/render.py:428",
    "kosif-atlas/skills/103-adobe-for-creativity/237-adobe-fonts/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "license",
@@ -273,6 +282,7 @@
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen",
    "kosif-atlas/skills/1446-marketing-skills/3504-image"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ai image",
@@ -301,6 +311,7 @@
    "kosif-earth-ci-fork/ui/ds/fonts.css",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "fonts",
@@ -330,6 +341,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/assets/fonts/char-widths.json",
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/assets/fonts/Virgil.woff2"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "base64",
@@ -357,6 +369,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:336",
    "kosif-atlas/skills/2722-vercel/10536-geist/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "google fonts",
@@ -385,6 +398,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:184",
    "kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-1littlecoder-9fef89",
    "pm-palashbagchi11-0a4b6b"
@@ -417,6 +431,7 @@
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:175",
    "kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "rise",
@@ -445,6 +460,7 @@
    "kosif-one/vendor/hyperframes/registry/components/per-word-rise/per-word-rise.html",
    "style:pm-samaote-5e2fc2"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-danilowm-d3720d",
    "pm-gabrielbuzziv-4ff0c6",
@@ -482,6 +498,7 @@
    "kosif-atlas/skills/100-ui-motion/210-scroll-blur-manifesto",
    "kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:341"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-prasad-pilla-2c0cba"
   ],
@@ -512,6 +529,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/kinetic-letter-in/scene.html",
    "style:pm-chatgptastra-0d95c7"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-amol909s-27533e",
    "pm-ceowinkz-7c776b",
@@ -550,6 +568,7 @@
    "style:pm-fionntobin-97b7af",
    "style:pm-1littlecoder-9fef89"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-1littlecoder-9fef89",
    "pm-fionntobin-97b7af",
@@ -589,6 +608,7 @@
    "kosif-tool/styles/pm-tolgayhickiran-e90799/BRIEF.md",
    "kosif-tool/styles/pm-mrtanviir-132457/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ajith-io-ea7f2d",
    "pm-mrtanviir-132457",
@@ -622,6 +642,7 @@
    "kosif-one/vendor/hyperframes/registry/components/line-by-line-slide/line-by-line-slide.html",
    "style:pm-hqmank-7c61f1"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-hqmank-7c61f1"
   ],
@@ -649,6 +670,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/waterfall-entry.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "waterfall",
@@ -674,6 +696,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/kinetic-center-build/kinetic-center-build.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "center build",
@@ -699,6 +722,7 @@
    "kosif-tool/playbooks/kinetic-type.md:51",
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "wipe",
@@ -724,6 +748,7 @@
   "proof": [
    "style:pm-lukasersil-0ed38e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-lukasersil-0ed38e"
   ],
@@ -750,6 +775,7 @@
    "style:pm-1littlecoder-9fef89",
    "style:pm-vanshwtfff-db0466"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-1littlecoder-9fef89",
    "pm-vanshwtfff-db0466"
@@ -778,6 +804,7 @@
   "proof": [
    "fastify-motion-bro/web/editorial.js:72-79"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "canvas",
@@ -805,6 +832,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/text-wave-distort/scene.html",
    "kosif-one/vendor/hyperframes/skills/motion-graphics/references/motion-vocabulary.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-ajith-io-4c248f"
   ],
@@ -833,6 +861,7 @@
    "kosif-one/vendor/hyperframes/skills/motion-graphics/references/motion-vocabulary.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/animate-text.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "vocabulary",
@@ -857,6 +886,7 @@
   "proof": [
    "kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "vanish",
@@ -885,6 +915,7 @@
    "kosif-tool/styles/typewriter/SKILL.md",
    "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-0xevinho-3777d8",
    "pm-0xfemyn-e114d3",
@@ -933,6 +964,7 @@
    "kosif-one/vendor/hyperframes/registry/components/caret-swap/caret-swap.html",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/typewriter-reveal.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-danilowm-d3720d",
    "pm-tdinh-me-815acb"
@@ -966,6 +998,7 @@
    "kosif-one/vendor/hyperframes/registry/components/matrix-decode/matrix-decode.html",
    "style:pm-ceowinkz-7c776b"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-agonaliu-466a8f",
    "pm-aistocksavvy-3fb9f5",
@@ -1000,6 +1033,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/hacker-flip-3d.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "flip",
@@ -1027,6 +1061,7 @@
    "style:pm-marouanegazouzi-6071d5",
    "kosif-atlas/skills/342-kernel/1223-frontend/motion/kinetic-type.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-marouanegazouzi-6071d5"
   ],
@@ -1057,6 +1092,7 @@
    "style:pm-melvynx-6cde6c",
    "kosif-tool/styles/pm-steventey-0d20e4/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "infographic",
    "pm-melvynx-6cde6c",
@@ -1090,6 +1126,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "style:pm-palashbagchi11-0a4b6b"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-codestackr-c071bf",
    "pm-palashbagchi11-0a4b6b",
@@ -1123,6 +1160,7 @@
    "style:pm-lester-tyy-f897f7",
    "style:pm-kentcdodds-6fa8cf"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-1littlecoder-9fef89",
    "pm-itisrazak-3ad902",
@@ -1157,6 +1195,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/fixed-anchor-cycle.md",
    "style:pm-samuel-yostt-891f87"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-davidmarcus-a28a60",
    "pm-kentcdodds-6fa8cf",
@@ -1188,6 +1227,7 @@
    "fastify-motion-bro/tests/production-profiles.test.mjs",
    "fastify-motion-bro/skills/kinetic-flow/SKILL.md:13"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "beat",
@@ -1218,6 +1258,7 @@
    "style:pm-micheleharmonic-77628e",
    "style:pm-ghinaiya-nirmal-5d8fec"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-cansincengiz-me-cf68dd",
    "pm-crazyalphaaa-bc7e75",
@@ -1258,6 +1299,7 @@
    "style:pm-pankajkumar-dev-0bee87",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/kinetic-beat-slam.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-pankajkumar-dev-0bee87",
    "pm-teslachartz-c58b32"
@@ -1289,6 +1331,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/templates/intro-kinetic-cascade/index.html",
    "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/kinetic-type/module.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "hook",
@@ -1317,6 +1360,7 @@
    "style:pm-polydao-7a572b",
    "style:pm-deebeeeff-50fcd0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-allforbigfire-86ff3c",
    "pm-deebeeeff-50fcd0",
@@ -1356,6 +1400,7 @@
    "style:pm-himanshutwtxs-5f4b43",
    "kosif-studio/motion/kit/motion-kit.js:372"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-adamdesgns-478d6d",
    "pm-himanshutwtxs-5f4b43",
@@ -1392,6 +1437,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/yt-prism-title/yt-prism-title.html",
    "style:pm-ayushunleashed-ece3e3"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-apoorvjain25-d24184",
    "pm-ayushunleashed-ece3e3",
@@ -1425,6 +1471,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/templates/held-text-strobe-burst/index.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/word-grid-burst/scene.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "music",
@@ -1453,6 +1500,7 @@
    "kosif-tool/styles/pm-davidshulmanfl-371638/BRIEF.md",
    "kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-0xevinho-3777d8",
    "pm-ceowinkz-7c776b",
@@ -1485,6 +1533,7 @@
    "style:pm-gigabit-million-16b3a0",
    "style:pm-thismacapital-dfba20"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-0xnfrith-5be616",
    "pm-antonio-kodheli-490109",
@@ -1530,6 +1579,7 @@
    "style:pm-sudo-kiran-6609ed",
    "kosif-tool/playbooks/kinetic-type.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-bizibeast-10f264",
    "pm-emollick-8661a8",
@@ -1563,6 +1613,7 @@
    "style:pm-mehul4795-4a7007",
    "style:pm-theviableedge-9065be"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-imthatcarlos-e04bfe",
    "pm-kmasiff-cc72cb",
@@ -1599,6 +1650,7 @@
    "style:pm-notdwd-7de38a",
    "kosif-tool/playbooks/kinetic-type.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-alex-prompter-1ea044",
    "pm-devius-maximus-beab45",
@@ -1647,6 +1699,7 @@
    "style:pm-agonaliu-466a8f",
    "style:pm-roundtablespace-d3a1be"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-agonaliu-466a8f",
    "pm-blushpetal795-0c85c2",
@@ -1692,6 +1745,7 @@
    "style:pm-iammxfschr-d68f90",
    "kosif-atlas/skills/1096-akbun-editvideo/2431-akbun-davinciresolve-caption-template/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-amitsingha89-150378",
    "pm-bogdandragomir-35e024",
@@ -1731,6 +1785,7 @@
    "style:pm-gautam-mer1-2ae354",
    "style:infographic"
   ],
+  "proof_scope": "style",
   "styles": [
    "infographic",
    "pm-adamdesgns-478d6d",
@@ -1764,6 +1819,7 @@
    "style:pm-leadnotifi-e83f94",
    "style:pm-shneural-2abdfa"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-leadnotifi-e83f94",
    "pm-shneural-2abdfa"
@@ -1793,6 +1849,7 @@
    "style:pm-samuel-yostt-891f87",
    "style:pm-aschapmann-131210"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aschapmann-131210",
    "pm-samuel-yostt-891f87"
@@ -1821,6 +1878,7 @@
    "style:pm-hanifproduktif-54bdee",
    "style:pm-zheke-38deff"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-hanifproduktif-54bdee",
    "pm-jhylee95-e1152f",
@@ -1852,6 +1910,7 @@
    "style:pm-heyiammallik-e72d17",
    "kosif-studio/motion/kit/motion-kit.js:557"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-arjunsh1607-93005d",
    "pm-davidmarcus-a28a60",
@@ -1886,6 +1945,7 @@
    "style:pm-chatgptastra-0d95c7",
    "style:pm-oliahmed205-3e31c4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-chatgptastra-0d95c7",
    "pm-hbcoop-de365c",
@@ -1920,6 +1980,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
    "style:pm-pankajkumar-dev-0bee87"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-hanifproduktif-54bdee",
    "pm-itisrazak-3ad902",
@@ -1958,6 +2019,7 @@
    "style:pm-henkvaness-0e06af",
    "style:pm-gigabit-million-16b3a0"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-blue-clarity-ef56d0",
    "pm-gigabit-million-16b3a0",
@@ -1997,6 +2059,7 @@
    "style:pm-marouanegazouzi-6071d5",
    "style:pm-tequilafunks-97f6c9"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-jasonzhou1993-8595e0",
    "pm-marouanegazouzi-6071d5",
@@ -2033,6 +2096,7 @@
    "style:pm-teslachartz-c58b32",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/3d-text-depth-layers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-davidshulmanfl-371638",
    "pm-gizakdag-b8c59e",
@@ -2072,6 +2136,7 @@
    "style:pm-shneural-2abdfa",
    "style:pm-raphaelaubryy-4b137e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-chatgptastra-0d95c7",
    "pm-codestackr-c071bf",
@@ -2110,6 +2175,7 @@
    "style:pm-sudo-kiran-6609ed",
    "style:pm-rneayan-474bcf"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-andginja-333d32",
    "pm-arjunsh1607-93005d",
@@ -2142,6 +2208,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/morph-text/morph-text.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "gooey",
@@ -2167,6 +2234,7 @@
   "proof": [
    "kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "physics",
@@ -2192,6 +2260,7 @@
   "proof": [
    "style:pm-vanshwtfff-db0466"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-vanshwtfff-db0466"
   ],
@@ -2220,6 +2289,7 @@
    "style:pm-robvjourney-ce3e1a",
    "style:pm-sudiyasa-f48ac9"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kyonax-on-tech-aabc1d",
    "pm-robvjourney-ce3e1a",
@@ -2251,6 +2321,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/typographic-moves.md",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/aesthetic-principles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "embedded",
@@ -2279,6 +2350,7 @@
    "style:pm-gizakdag-b8c59e",
    "kosif-tool/styles/pm-monokern-ade5b6/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ajith-io-4c248f",
    "pm-ajith-io-b5626e",
@@ -2320,6 +2392,7 @@
    "style:pm-motiondsgnr-9dcfa6",
    "style:pm-sudo-kiran-b055de"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-motiondsgnr-9dcfa6",
    "pm-sudo-kiran-b055de"
@@ -2350,6 +2423,7 @@
    "style:pm-ultimaxbt-bbebf5",
    "style:pm-ajith-io-4c248f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-3xtihor-0f6911",
    "pm-ajith-io-4c248f",
@@ -2382,6 +2456,7 @@
    "style:pm-kangaroohere-b10f8d",
    "kosif-tool/styles/pm-danilowm-d3720d/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-danilowm-d3720d",
    "pm-henkpoley-3d3407",
@@ -2419,6 +2494,7 @@
    "style:pm-robvjourney-ce3e1a",
    "style:pm-prasenx-8d9323"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-prasenx-8d9323",
    "pm-robvjourney-ce3e1a"
@@ -2447,6 +2523,7 @@
   "proof": [
    "kosif-tool/styles/pm-itisrazak-3ad902/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "text wall",
@@ -2473,6 +2550,7 @@
    "style:pm-gdgtify-287ddf",
    "kosif-tool/styles/pm-marouanegazouzi-6071d5/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-gdgtify-287ddf",
    "pm-marouanegazouzi-6071d5"
@@ -2504,6 +2582,7 @@
    "style:pm-kamstudiolabs-0b0824",
    "style:pm-axtonliu-0b861d"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-axtonliu-0b861d",
    "pm-kamstudiolabs-0b0824",
@@ -2536,6 +2615,7 @@
    "kosif-one/vendor/hyperframes/registry/components/titlecard-lockup/titlecard-lockup.html",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/titlecard-reveal.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "title card",
@@ -2564,6 +2644,7 @@
    "style:pm-nolkeeg-bf062e",
    "style:pm-rammanq-f5a90f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-blueoctopusai-dd17bd",
    "pm-mdaman010-e7226a",
@@ -2599,6 +2680,7 @@
    "style:pm-gorden-sun-041f56",
    "style:pm-nft-chen-5f8bb0"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-allforbigfire-86ff3c",
    "pm-chrisjdimarco-f068db",
@@ -2634,6 +2716,7 @@
    "style:pm-henkvaness-0e06af",
    "style:pm-samaote-5e2fc2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-fionntobin-97b7af",
    "pm-gdgtify-287ddf",
@@ -2669,6 +2752,7 @@
    "style:pm-sab8a-364a5a",
    "kosif-atlas/skills/1096-akbun-editvideo/2462-davinciresolve-style-project/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-sab8a-364a5a"
   ],
@@ -2697,6 +2781,7 @@
    "style:pm-gonzalomacagno-2de1a9",
    "style:pm-ddryo-loos-300829"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ddryo-loos-300829",
    "pm-gonzalomacagno-2de1a9"
@@ -2725,6 +2810,7 @@
   "proof": [
    "style:pm-nft-chen-5f8bb0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-nft-chen-5f8bb0"
   ],
@@ -2753,6 +2839,7 @@
    "style:pm-majin-appsheet-2d3c1a",
    "style:pm-itsuki-dev-10942d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-itsuki-dev-10942d",
    "pm-majin-appsheet-2d3c1a"
@@ -2781,6 +2868,7 @@
   "proof": [
    "style:pm-math-files-39c9d0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-math-files-39c9d0"
   ],
@@ -2811,6 +2899,7 @@
    "kosif-tool/styles/typewriter/SKILL.md",
    "kosif-tool/playbooks/kinetic-type.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "brutalist",
    "minimal",
@@ -2843,6 +2932,7 @@
    "kosif-one/vendor/hyperframes/registry/examples/vignelli/index.html",
    "kosif-one/vendor/hyperframes/registry/examples/kinetic-type/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "presets",
@@ -2871,6 +2961,7 @@
    "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "kinetic type",
@@ -2901,6 +2992,7 @@
    "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/fonts.js",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "font tokens",

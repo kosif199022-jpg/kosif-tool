@@ -18,6 +18,7 @@
    "100-superskills/skills/kosif-montage-motion/references/ai_video_models.md",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/ai_video_models.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "برومبت",
@@ -46,6 +47,7 @@
    "kosif-atlas/skills/2657-figures/10108-ai-full-figure",
    "100-superskills/skills/kosif-montage-motion/scripts/aiprompts.py:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قواعد",
@@ -74,6 +76,7 @@
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
    "kosif-atlas/skills/2976-pwdev-social-media/12590-prompt-craft"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "برومبت سلبي",
@@ -98,6 +101,7 @@
    "kosif-atlas/skills/1446-marketing-skills/3504-image",
    "kosif-atlas/skills/2976-pwdev-social-media/12590-prompt-craft"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صورة",
@@ -121,6 +125,7 @@
   "proof": [
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نانو بنانا",
@@ -147,6 +152,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:152",
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ميدجورني",
@@ -176,6 +182,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen",
    "kosif-studio/motion/references/book-lessons.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "فيديو",
@@ -201,6 +208,7 @@
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
    "kosif-atlas/skills/1874-klingai-pack/6081-klingai-pricing-basics"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بلا موسيقى",
@@ -226,6 +234,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen",
    "kosif-atlas/skills/1446-marketing-skills/3531-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حدود",
@@ -251,6 +260,7 @@
    "kosif-one/tools/kosif-omni/mcp-server/tests/test_server.py:233",
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مصنع البرومبت",
@@ -277,6 +287,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/references/books-drive-ledger.md",
    "kosif-atlas/skills/259-quickdesign/865-quickdesign"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Veo",
@@ -304,6 +315,7 @@
    "100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:102",
    "100-superskills/TESTS.md:12"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مواصفة صورة",
@@ -332,6 +344,7 @@
    "100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:63",
    "100-superskills/skills/video-prompt-director/SKILL.md:23"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قائمة لقطات",
@@ -361,6 +374,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/index.html:35",
    "100-superskills/skills/kosif-montage-motion/references/ai-video-shot-prompts.example.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "kmotion",
@@ -388,6 +402,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md:455",
    "100-superskills/skills/kosif-montage-motion/references/video-breakdown.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أومني",
@@ -413,6 +428,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/scripts/prompt_compiler.py",
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/scripts/prompt_compiler_self_test.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بصمة",
@@ -439,6 +455,7 @@
    "100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:61",
    "kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قفل الشخصية",
@@ -465,6 +482,7 @@
    "fastify-motion-bro/scripts/profiles/core.mjs:9-10",
    "fastify-motion-bro/tests/production-cli.test.mjs:11-42"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "fastify",
@@ -493,6 +511,7 @@
    "fastify-motion-bro/scripts/profiles/vox-history.mjs:3-56",
    "fastify-motion-bro/tests/production-profiles.test.mjs:10-16"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "stickman",
@@ -521,6 +540,7 @@
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:121-129",
    "fastify-motion-bro/tests/production-cli.test.mjs:28-41"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كينتك",
@@ -547,6 +567,7 @@
    "fastify-motion-bro/scripts/viral-editorial.mjs:58-72",
    "fastify-motion-bro/tests/viral-editorial.test.mjs:7"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تحريري",
@@ -572,6 +593,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/ultra_animator.py:119",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/projects/demo_hero/ai_prompts.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "scaffold",
@@ -596,6 +618,7 @@
    "kosif-studio/motion/proplan.py:37",
    "kosif-studio/motion/proplan.py:109"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "proplan",
@@ -622,6 +645,7 @@
    "100-superskills/skills/prompt-master-pro/SKILL.md",
    "100-superskills/skills/structured-output-json/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "LLM prompt",
@@ -647,6 +671,7 @@
    "kosif-one/projects/egypt-2120-animation/ai-video-prompts.json",
    "100-superskills/skills/kosif-montage-motion/references/ai-video-shot-prompts.example.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مصر 2120",
@@ -672,6 +697,7 @@
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md",
    "100-superskills/skills/ai-art-style-library/SKILL.md:16"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أساليب",
@@ -698,6 +724,7 @@
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md:33"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "preamble",
@@ -722,6 +749,7 @@
   "proof": [
    "100-superskills/skills/ai-art-style-library/SKILL.md:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "style lock",
@@ -746,6 +774,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md",
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عدسات",
@@ -773,6 +802,7 @@
    "kosif-atlas/skills/1446-marketing-skills/3531-video",
    "kosif-atlas/skills/1874-klingai-pack/6087-klingai-style-transfer"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تلوين",
@@ -797,6 +827,7 @@
   "proof": [
    "kosif-atlas/skills/1874-klingai-pack/6087-klingai-style-transfer"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Kling",
@@ -822,6 +853,7 @@
    "100-superskills/skills/image-critique-reverse-prompt/SKILL.md:25",
    "kosif-atlas/skills/2142-comfyui-plugin/7651-comfy-image-utils"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "برومبت عكسي",
@@ -848,6 +880,7 @@
    "kosif-studio/studio.py:856",
    "app/public/js/00_editor.js:1669"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "SVG",
@@ -874,6 +907,7 @@
    "kosif-studio/studio.py:156",
    "kosif-studio/tests/test_studio.py:433"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "extract code",
@@ -899,6 +933,7 @@
    "kosif-studio/ai_bridge.py:99",
    "kosif-studio/studio.py:799"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "AI bridge",
@@ -926,6 +961,7 @@
    "kosif-one/tools/kosif-studio/generate.py",
    "100-superskills/skills/pixel-studio-painter/scripts/generate.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "sd-turbo",
@@ -954,6 +990,7 @@
    "app/public/js/10_studio.js:4164",
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Gemini",
@@ -980,6 +1017,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/references/books-drive-ledger.md",
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge_v4_truth.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "character sheet",
@@ -1004,6 +1042,7 @@
   "proof": [
    "kosif-atlas/skills/3214-togetherai-skills/13594-together-images"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "FLUX",
@@ -1031,6 +1070,7 @@
    "kosif-atlas/skills/1869-ideogram-pack/5946-ideogram-core-workflow-a",
    "kosif-atlas/skills/1869-ideogram-pack/5947-ideogram-core-workflow-b"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "GPT Image",
@@ -1058,6 +1098,7 @@
    "kosif-one/projects/whatsapp-motion/assets/sources.json",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/pipeline.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Higgsfield",
@@ -1082,6 +1123,7 @@
    "kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md",
    "kosif-earth-ci-fork/AGENT_WORKLOG.md:744"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "هوية",
@@ -1108,6 +1150,7 @@
    "kosif-one/projects/whatsapp-motion/gen_images.py:19-37",
    "kosif-atlas/skills/2976-pwdev-social-media/12583-creative-concept/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "negative space",
@@ -1133,6 +1176,7 @@
    "kosif-atlas/skills/2696-game-studio/10368-sprite-pipeline",
    "kosif-atlas/skills/1526-gamegen/4171-game-sprites"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "icons",
@@ -1159,6 +1203,7 @@
    "kosif-atlas/skills/103-adobe-for-creativity/232-adobe-create-social-variations/SKILL.md",
    "kosif-atlas/skills/1119-cloudinary/2560-cloudinary-transformations/references/ai-transformations.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "outpaint",
@@ -1186,6 +1231,7 @@
    "kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing",
    "kosif-atlas/skills/2976-pwdev-social-media/12588-image-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "routing",
@@ -1211,6 +1257,7 @@
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
    "kosif-atlas/skills/2142-comfyui-plugin/7648-comfy-corpus-validation"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ComfyUI",
@@ -1236,6 +1283,7 @@
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
    "kosif-atlas/skills/1514-huggingface-skills/3937-huggingface-lora-space-builder"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "LoRA",
@@ -1262,6 +1310,7 @@
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
    "kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "routing",
@@ -1288,6 +1337,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen",
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "I2V",
@@ -1315,6 +1365,7 @@
    "kosif-one/projects/higgsfield/gen_reel_shot.py:14-23",
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.mp4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Seedance",
@@ -1342,6 +1393,7 @@
    "kosif-earth-ci-fork/ui/art/brand/door.mp4",
    "kosif-earth-ci-fork/ui/art/brand/dashboard.mp4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Kling",
@@ -1367,6 +1419,7 @@
    "kosif-atlas/skills/1874-klingai-pack/6075-klingai-image-to-video",
    "kosif-atlas/skills/1874-klingai-pack/6078-klingai-known-pitfalls"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "motion brush",
@@ -1392,6 +1445,7 @@
    "kosif-atlas/skills/1874-klingai-pack/6081-klingai-pricing-basics",
    "kosif-atlas/skills/1874-klingai-pack/6079-klingai-model-catalog"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "extend",
@@ -1418,6 +1472,7 @@
    "kosif-atlas/skills/1900-runway-pack/6669-runway-rate-limits",
    "kosif-atlas/skills/1900-runway-pack/6661-runway-cost-tuning"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Runway",
@@ -1442,6 +1497,7 @@
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Seedance",
@@ -1467,6 +1523,7 @@
    "kosif-atlas/skills/1511-homie/3903-video",
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "lip sync",
@@ -1491,6 +1548,7 @@
   "proof": [
    "kosif-atlas/skills/259-quickdesign/865-quickdesign"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "voice continuity",
@@ -1517,6 +1575,7 @@
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
    "kosif-atlas/skills/3214-togetherai-skills/13597-together-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Veo",
@@ -1544,6 +1603,7 @@
    "kosif-atlas/skills/3396-wavespeed-cli/13932-wavespeed-cli/SKILL.md",
    "kosif-atlas/skills/1514-huggingface-skills/3922-hf-mcp/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "fal",
@@ -1572,6 +1632,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/pipeline.md",
    "kosif-one/vendor/mcp-higgsfield-landing/PROMPTS.md:128"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "frame stitching",
@@ -1599,6 +1660,7 @@
    "kosif-atlas/skills/1514-huggingface-skills/3937-huggingface-lora-space-builder",
    "kosif-atlas/skills/3214-togetherai-skills/13597-together-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Wan",
@@ -1626,6 +1688,7 @@
    "fastify-motion-bro/docs/SOURCE_AUDIT.md:7",
    "kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "prompt only",
@@ -1651,6 +1714,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/audio/references/bgm.md",
    "kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/lyria-recipe.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Lyria",
@@ -1675,6 +1739,7 @@
   "proof": [
    "100-superskills/skills/music-song-brief/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Suno",
@@ -1702,6 +1767,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/references/resolve.md",
    "kosif-one/vendor/hyperframes/skills/media-use/references/setup-providers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "media resolve",
@@ -1728,6 +1794,7 @@
    "kosif-one/vendor/hyperframes/docs/guides/mcp.mdx",
    "kosif-atlas/skills/103-adobe-for-creativity/236-adobe-edit-quick-cut/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "avatar",
@@ -1756,6 +1823,7 @@
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md",
    "kosif-studio/motion/references/tools-catalog-2.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "3D",
@@ -1784,6 +1852,7 @@
    "kosif-one/tools/kosif-omni/.app.json",
    "kosif-studio/motion/references/tools-catalog-2.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "routing",
@@ -1811,6 +1880,7 @@
    "kosif-studio/motion/site_bridge.py:1",
    "kosif-studio/tests/bridge/test_site_bridge.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "KOSIF Think",
@@ -1836,6 +1906,7 @@
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/corpus.py",
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/source-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "corpus",
@@ -1860,6 +1931,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md",
    "kosif-atlas/skills/1511-homie/3903-video/scripts/drawover/look.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "draw-over",
@@ -1884,6 +1956,7 @@
   "proof": [
    "kosif-studio/motion/references/x-trend-2026.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "trace",
@@ -1910,6 +1983,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/ai-chat-reveal/ai-chat-reveal.html",
    "kosif-one/vendor/hyperframes/registry/components/segmentation-flood/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "streaming text",
@@ -1936,6 +2010,7 @@
    "style:pm-listudio-820c7b",
    "kosif-tool/styles/pm-listudio-820c7b"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-listudio-820c7b",
    "pm-justincooperman-e7bbc4"
@@ -1964,6 +2039,7 @@
    "style:pm-justincooperman-e7bbc4",
    "kosif-tool/styles/pm-justincooperman-e7bbc4"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-justincooperman-e7bbc4"
   ],
@@ -1991,6 +2067,7 @@
    "style:pm-influencer-seo-ce8c33",
    "kosif-tool/styles/pm-influencer-seo-ce8c33/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-influencer-seo-ce8c33"
   ],
@@ -2018,6 +2095,7 @@
    "style:pm-brainextends-e19ac3",
    "kosif-tool/styles/pm-brainextends-e19ac3"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-brainextends-e19ac3"
   ],
@@ -2046,6 +2124,7 @@
    "style:pm-davidshulmanfl-371638",
    "kosif-tool/styles/pm-davidshulmanfl-371638"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-davidshulmanfl-371638"
   ],
@@ -2073,6 +2152,7 @@
    "style:pm-imthatcarlos-e04bfe",
    "kosif-tool/styles/pm-imthatcarlos-e04bfe"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-imthatcarlos-e04bfe"
   ],
@@ -2100,6 +2180,7 @@
    "style:pm-koldo2k-5cff87",
    "kosif-tool/styles/pm-koldo2k-5cff87"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-koldo2k-5cff87"
   ],
@@ -2129,6 +2210,7 @@
    "app/public/js/00_editor.js:2007",
    "app/public/js/10_studio.js:4687"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "storyboard",
@@ -2156,6 +2238,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12583-creative-concept/SKILL.md",
    "kosif-atlas/skills/2976-pwdev-social-media/12588-image-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "triage",
@@ -2181,6 +2264,7 @@
    "kosif-atlas/skills/2306-generative-web-media/8850-brand-conditioned-generation",
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:121-129"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "overlay text",
@@ -2206,6 +2290,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12595-visual-consistency/SKILL.md",
    "kosif-atlas/skills/2306-generative-web-media/8850-brand-conditioned-generation"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "consistency",
@@ -2233,6 +2318,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12582-cost-control",
    "kosif-atlas/skills/2306-generative-web-media/8852-generation-budget-guard/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "budget",
@@ -2259,6 +2345,7 @@
    "kosif-atlas/skills/2248-brand-identity-studio/8558-brand-legal-and-licensing",
    "kosif-atlas/skills/1819-adobe-pack/4892-adobe-core-workflow-a"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "licence",
@@ -2285,6 +2372,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/HONESTY.md",
    "kosif-atlas/skills/2976-pwdev-social-media/12588-image-gen"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "disclosure",
@@ -2312,6 +2400,7 @@
    "fastify-motion-bro/scripts/viral-editorial.mjs:91",
    "fastify-motion-bro/scripts/profiles/food-flow.mjs:98"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "honesty",
@@ -2335,6 +2424,7 @@
   "proof": [
    "kosif-atlas/skills/932-vidseeds/2185-vidseeds-thumbnails/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "thumbnail",
@@ -2357,6 +2447,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/claude_api_review.py",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/API_MODE.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "claude api",
@@ -2383,6 +2474,7 @@
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "higgsfield",
@@ -2411,6 +2503,7 @@
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md"
   ],
+  "proof_scope": "url",
   "styles": [],
   "tags": [
    "generation",

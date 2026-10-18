@@ -16,6 +16,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/svg-path-draw.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-andginja-333d32",
    "pm-lexnlin-038035",
@@ -53,6 +54,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:204",
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "drawPath",
@@ -80,6 +82,7 @@
    "kosif-tool/styles/pm-tak3sh8-be5012/BRIEF.md",
    "kosif-tool/styles/plotter/SKILL.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-tak3sh8-be5012",
    "plotter"
@@ -110,6 +113,7 @@
    "kosif-tool/templates/STYLE.md",
    "kosif-tool/styles/fake3d"
   ],
+  "proof_scope": "repo",
   "styles": [
    "fake3d"
   ],
@@ -136,6 +140,7 @@
    "kosif-tool/playbooks/diagrams.md:28",
    "kosif-tool/starters/html-canvas/timeline.js"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "edge",
@@ -164,6 +169,7 @@
    "kosif-tool/styles/chalkboard",
    "kosif-tool/styles/pm-lemomo-ai-0d9cff"
   ],
+  "proof_scope": "repo",
   "styles": [
    "whiteboard",
    "chalkboard",
@@ -197,6 +203,7 @@
    "kosif-tool/styles/pm-marouanegazouzi-6071d5",
    "kosif-tool/styles/pm-ghinaiya-nirmal-5d8fec"
   ],
+  "proof_scope": "repo",
   "styles": [
    "plotter",
    "pm-marouanegazouzi-6071d5",
@@ -232,6 +239,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-explainer-architecture.md",
    "kosif-tool/styles/chalkboard"
   ],
+  "proof_scope": "repo",
   "styles": [
    "chalkboard"
   ],
@@ -257,6 +265,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/lint/src/rules/gsap.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "lint",
@@ -281,6 +290,7 @@
    "kosif-one/projects/water-cycle-animation/index.html",
    "kosif-studio/motion/kit/three-kit.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "river",
@@ -305,6 +315,7 @@
   "proof": [
    "kosif-one/projects/thursday-dua-animation/source/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "mihrab",
@@ -331,6 +342,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:198",
    "kosif-studio/out/FINAL_EDIT/EDIT_NOTES.txt"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "line art",
@@ -357,6 +369,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:258",
    "app/public/js/10_studio.js:245"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-kangaroohere-b10f8d",
    "pm-l3d1c-0e35a3"
@@ -386,6 +399,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:14",
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "logo reveal",
@@ -413,6 +427,7 @@
    "kosif-tool/playbooks/hand-drawn.md",
    "kosif-tool/styles/pm-deebeeeff-50fcd0"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-deebeeeff-50fcd0",
    "pm-ajith-io-ea7f2d",
@@ -444,6 +459,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/assets/strokefonts/HersheyScript1.svg",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/gen-stroke-path.py"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-ik-builds-b8bdcf",
    "pm-lemomo-ai-0d9cff"
@@ -472,6 +488,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2431-akbun-davinciresolve-caption-template/SKILL.md",
    "kosif-tool/styles/pm-himanshutwtxs-5f4b43"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-himanshutwtxs-5f4b43",
    "pm-chatgptastra-0d95c7"
@@ -500,6 +517,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/css-patterns.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-collage-textures.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-itisrazak-3ad902",
    "pm-ho-ba-f3f0e9",
@@ -535,6 +553,7 @@
    "kosif-tool/styles/pm-ik-builds-b8bdcf",
    "kosif-tool/styles/pm-sab8a-364a5a"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-0xnfrith-5be616",
    "pm-ik-builds-b8bdcf",
@@ -566,6 +585,7 @@
    "kosif-tool/styles/pm-chatgptastra-0d95c7",
    "kosif-tool/styles/pm-himanshutwtxs-5f4b43"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-chatgptastra-0d95c7",
    "pm-himanshutwtxs-5f4b43"
@@ -593,6 +613,7 @@
   "proof": [
    "kosif-tool/styles/pm-paulo-kombucha-96431c"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-paulo-kombucha-96431c"
   ],
@@ -619,6 +640,7 @@
    "kosif-tool/styles/pm-lemomo-ai-0d9cff",
    "kosif-one/vendor/hyperframes/registry/components/hw-box-label/hw-box-label.html"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-lemomo-ai-0d9cff"
   ],
@@ -644,6 +666,7 @@
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/text-highlights.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "rough notation",
@@ -668,6 +691,7 @@
    "kosif-audit-pro/app/globals.css:981",
    "kosif-audit-pro/app/globals.css:1082"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "journey line",
@@ -693,6 +717,7 @@
    "kosif-tool/styles/map-journey",
    "kosif-tool/styles/pm-hbcoop-de365c"
   ],
+  "proof_scope": "repo",
   "styles": [
    "map-journey",
    "pm-hbcoop-de365c",
@@ -726,6 +751,7 @@
    "kosif-tool/styles/pm-nikolajankovic-ce4ff4",
    "kosif-one/vendor/hyperframes/registry/components/hw-boil/hw-boil.html"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-nikolajankovic-ce4ff4",
    "doodle",
@@ -755,6 +781,7 @@
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md",
    "kosif-atlas/skills/2790-work/11181-draw-excalidraw"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "roughjs",
@@ -782,6 +809,7 @@
    "kosif-tool/styles/chalkboard",
    "kosif-tool/styles/doodle"
   ],
+  "proof_scope": "repo",
   "styles": [
    "whiteboard",
    "chalkboard",
@@ -812,6 +840,7 @@
    "app/public/js/10_studio.js:208",
    "app/public/js/10_studio.js:232"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ink",
@@ -838,6 +867,7 @@
    "kosif-atlas/skills/2414-animation/9357-rotoscope/SKILL.md",
    "kosif-atlas/skills/2414-animation/9357-rotoscope/reference/method.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ink brush",
@@ -863,6 +893,7 @@
    "kosif-atlas/skills/1094-akbun-draw/2419-akbun-draw-quiet-pencil/SKILL.md",
    "kosif-tool/playbooks/hand-drawn.md:50"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pencil texture",
@@ -887,6 +918,7 @@
   "proof": [
    "kosif-tool/styles/map-journey"
   ],
+  "proof_scope": "repo",
   "styles": [
    "map-journey"
   ],
@@ -915,6 +947,7 @@
    "kosif-tool/playbooks/hand-drawn.md:29",
    "app/public/js/10_studio.js:342"
   ],
+  "proof_scope": "repo",
   "styles": [
    "whiteboard",
    "pm-ajith-io-c52e09"
@@ -943,6 +976,7 @@
    "kosif-tool/styles/whiteboard-cinematic/SKILL.md",
    "kosif-tool/styles/whiteboard-cinematic/STYLE.json"
   ],
+  "proof_scope": "repo",
   "styles": [
    "whiteboard-cinematic"
   ],
@@ -968,6 +1002,7 @@
    "kosif-tool/styles/chalkboard/SKILL.md",
    "app/public/js/10_studio.js:471"
   ],
+  "proof_scope": "repo",
   "styles": [
    "chalkboard"
   ],
@@ -994,6 +1029,7 @@
    "kosif-tool/styles/doodle/SKILL.md",
    "app/public/js/10_studio.js:854"
   ],
+  "proof_scope": "repo",
   "styles": [
    "doodle"
   ],
@@ -1022,6 +1058,7 @@
    "app/public/js/10_studio.js:292",
    "kosif-tool/styles/plotter"
   ],
+  "proof_scope": "repo",
   "styles": [
    "plotter"
   ],
@@ -1049,6 +1086,7 @@
    "kosif-tool/styles/frame-by-frame/SKILL.md",
    "kosif-tool/styles/frame-by-frame/STYLE.json"
   ],
+  "proof_scope": "repo",
   "styles": [
    "frame-by-frame"
   ],
@@ -1074,6 +1112,7 @@
   "proof": [
    "kosif-atlas/skills/1094-akbun-draw/2421-akbun-draw-storytellingimage/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "graphic recording",
@@ -1097,6 +1136,7 @@
   "proof": [
    "kosif-atlas/skills/1094-akbun-draw/2419-akbun-draw-quiet-pencil/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "quiet pencil",
@@ -1122,6 +1162,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2449-akbun-vlog-storyboard/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2448-akbun-vlog-shotsketch/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "storyboard",
@@ -1145,6 +1186,7 @@
   "proof": [
    "kosif-atlas/skills/1094-akbun-draw/2422-akbun-draw-travel-blog/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "route map",
@@ -1169,6 +1211,7 @@
    "kosif-atlas/skills/2790-work/11181-draw-excalidraw/references/visual-patterns.md",
    "kosif-atlas/skills/2790-work/11181-draw-excalidraw/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "visual patterns",
@@ -1195,6 +1238,7 @@
    "kosif-tool/styles/pm-sarut0bisasuke-cefa43",
    "kosif-tool/styles/pm-robvjourney-ce3e1a/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-henkvaness-0e06af",
    "pm-abderrahmen-g-9e8ed0",
@@ -1227,6 +1271,7 @@
    "kosif-tool/styles/pm-abderrahmen-g-9e8ed0/BRIEF.md",
    "kosif-tool/styles/pm-tak3sh8-be5012/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-abderrahmen-g-9e8ed0",
    "pm-tak3sh8-be5012"
@@ -1255,6 +1300,7 @@
    "kosif-tool/styles/pm-mrtanviir-132457",
    "kosif-tool/styles/pm-umangratani-57f86a"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-mrtanviir-132457",
    "pm-umangratani-57f86a"
@@ -1283,6 +1329,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:19",
    "kosif-tool/styles/pm-tdinh-me-815acb"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-tdinh-me-815acb"
   ],
@@ -1311,6 +1358,7 @@
    "kosif-studio/tests/test_studio.py:93",
    "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "painter",
@@ -1337,6 +1385,7 @@
    "kosif-studio/tests/test_studio.py:305",
    "100-superskills/skills/pixel-studio-painter/scripts/film.py:229"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "drawing film",
@@ -1362,6 +1411,7 @@
    "kosif-studio/runner.py:39",
    "kosif-studio/tests/test_studio.py:331"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "PIL",
@@ -1389,6 +1439,7 @@
    "kosif-studio/tests/test_studio.py:157",
    "100-superskills/skills/pixel-studio-painter/scripts/exact.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "exact redraw",
@@ -1414,6 +1465,7 @@
    "kosif-studio/tests/test_studio.py:185",
    "100-superskills/skills/pixel-studio-painter/scripts/to_python.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "image to code",
@@ -1439,6 +1491,7 @@
    "kosif-studio/tests/test_studio.py:105",
    "100-superskills/skills/pixel-studio-painter/scripts/svg_import.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "svg import",
@@ -1464,6 +1517,7 @@
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/desktop.py:1032",
    "kosif-one/tools/kosif-omni/mcp-server/tests/test_desktop.py:259"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "svg sampler",
@@ -1488,6 +1542,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-mouse/SKILL.md",
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/replicate.py:1003"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "Paint",
@@ -1513,6 +1568,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/SKILL.md",
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "draw over",
@@ -1538,6 +1594,7 @@
    "kosif-atlas/skills/2414-animation/9357-rotoscope/reference/method.md",
    "kosif-atlas/skills/2414-animation/9355-learn-style/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "rotoscope",
@@ -1563,6 +1620,7 @@
    "kosif-earth-ci-fork/ui/art/valley-dusk.svg",
    "kosif-earth-ci-fork/docs/design/KOSIF-LUXE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "vector recreation",
@@ -1589,6 +1647,7 @@
    "kosif-one/vendor/hyperframes/registry/components/cursor-annotate/cursor-annotate.html",
    "kosif-one/vendor/hyperframes/registry/blocks/hw-scribble-transition/hw-scribble-transition.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "hyperframes",
@@ -1613,6 +1672,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "vivus",
@@ -1639,6 +1699,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/examples/Continuous_Line_Logo_Story.mp4",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/INTEGRATION_REPORT.json"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "continuous line",
@@ -1665,6 +1726,7 @@
   "proof": [
    "owner-upload:film_project/film/film.js"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "quill",

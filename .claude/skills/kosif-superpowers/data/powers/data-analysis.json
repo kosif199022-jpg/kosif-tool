@@ -16,6 +16,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pandas",
@@ -55,6 +56,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "duckdb",
@@ -86,6 +88,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "parquet",
@@ -114,6 +117,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "polars",
@@ -141,6 +145,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "csv",
@@ -171,6 +176,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "sympy",
@@ -200,6 +206,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "scipy",
@@ -229,6 +236,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "statsmodels",
@@ -256,6 +264,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "monte carlo",
@@ -285,6 +294,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "matplotlib",
@@ -315,6 +325,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "raqm",
@@ -345,6 +356,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "dataviz",
@@ -373,6 +385,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plotly",
@@ -399,6 +412,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "altair",
@@ -425,6 +439,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "seaborn",
@@ -451,6 +466,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "scikit-learn",
@@ -479,6 +495,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "xgboost",
@@ -505,6 +522,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "linear programming",
@@ -533,6 +551,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ortools",
@@ -561,6 +580,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pulp",
@@ -587,6 +607,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "cvxpy",
@@ -613,6 +634,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "z3",
@@ -641,6 +663,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "networkx",
@@ -668,6 +691,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "geopandas",
@@ -694,6 +718,7 @@
   "install": "pip install prophet",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "prophet",
@@ -721,6 +746,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "control totals",
@@ -754,6 +780,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "sql",
@@ -781,6 +808,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "synthetic data",
@@ -806,6 +834,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "financial model",

@@ -12,6 +12,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-01"
@@ -29,6 +30,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-02"
@@ -46,6 +48,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-03"
@@ -64,6 +67,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2441-akbun-davinciresolve-searchhook/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2441-akbun-davinciresolve-searchhook/scripts/searchhook.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-04"
@@ -82,6 +86,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2453-davinciresolve-cut-devtalk/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2460-davinciresolve-story-devtalk/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-05"
@@ -100,6 +105,7 @@
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/assets/marketing/render.py",
    "kosif-atlas/skills/1096-akbun-editvideo/2454-davinciresolve-cut-travelflow/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-06"
@@ -119,6 +125,7 @@
    "kosif-audit-pro/app/globals.css:595",
    "kosif-audit-pro/app/globals.css:637"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-07"
@@ -136,6 +143,7 @@
   "proof": [
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:4-20,115,118"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-08"
@@ -155,6 +163,7 @@
    "fastify-motion-bro/scripts/profiles/food-flow.mjs:95",
    "fastify-motion-bro/scripts/profiles/fitness.mjs:32"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-09"
@@ -173,6 +182,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:47",
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:64"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-10"
@@ -190,6 +200,7 @@
   "proof": [
    "kosif-one/projects/KOSIF_Motion_Ghorba/tools/render_ghorba_preview.py:140"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-11"
@@ -208,6 +219,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-12"
@@ -225,6 +237,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-13"
@@ -242,6 +255,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-14"
@@ -259,6 +273,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-15"
@@ -276,6 +291,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-16"
@@ -293,6 +309,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-17"
@@ -310,6 +327,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-18"
@@ -327,6 +345,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-19"
@@ -344,6 +363,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-20"
@@ -361,6 +381,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-21"
@@ -378,6 +399,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-22"
@@ -396,6 +418,7 @@
    "kosif-studio/motion/montage.py:81",
    "kosif-studio/tests/test_studio.py:765"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-23"
@@ -415,6 +438,7 @@
    "kosif-studio/motion/montage.py:115",
    "kosif-studio/tests/test_studio.py:765"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-24"
@@ -433,6 +457,7 @@
    "kosif-studio/motion/montage.py:148",
    "kosif-studio/out/montage_demo.montage.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-25"
@@ -452,6 +477,7 @@
    "kosif-studio/motion/montage.py:254",
    "kosif-studio/motion/test_voice_montage.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-26"
@@ -469,6 +495,7 @@
   "proof": [
    "kosif-tool/starters/html-canvas/index.html:106"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-27"
@@ -489,6 +516,7 @@
    "kosif-one/tools/kosif-studio/motion/tools.py:121",
    "kosif-studio/motion/tools.py:121"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-28"
@@ -507,6 +535,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-4-storyboard.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-29"
@@ -525,6 +554,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:334",
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:334"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-30"
@@ -543,6 +573,7 @@
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:342",
    "kosif-studio/motion/kit/motion-kit.js:342"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-31"
@@ -560,6 +591,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-4-storyboard.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-32"
@@ -579,6 +611,7 @@
    "kosif-atlas/skills/1434-react-skills/3419-vercel-react-view-transitions/references/css-recipes.md",
    "kosif-atlas/skills/1434-react-skills/3419-vercel-react-view-transitions/references/patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-33"
@@ -598,6 +631,7 @@
    "kosif-atlas/skills/342-kernel/1223-frontend/motion/one-surface.md",
    "kosif-atlas/skills/1434-react-skills/3419-vercel-react-view-transitions"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-34"
@@ -617,6 +651,7 @@
    "kosif-atlas/skills/3096-frontend-mobile-development/13267-tailwind-design-system/references/advanced-patterns.md",
    "kosif-atlas/skills/1483-tailwind/3674-tailwind-best-practices"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-35"
@@ -636,6 +671,7 @@
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion",
    "kosif-atlas/skills/3438-ux-design/14124-top-design"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-36"
@@ -653,6 +689,7 @@
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/756-losslesscut/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-37"
@@ -670,6 +707,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-light.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-38"
@@ -687,6 +725,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-light.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-39"
@@ -704,6 +743,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-light.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-40"
@@ -721,6 +761,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-destruction.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-41"
@@ -738,6 +779,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-distortion.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-42"
@@ -755,6 +797,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-distortion.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-43"
@@ -772,6 +815,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-distortion.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-44"
@@ -789,6 +833,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-3d.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-45"
@@ -806,6 +851,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-46"
@@ -824,6 +870,7 @@
    "kosif-audit-studio/styles.css:140",
    "kosif-audit-studio/styles.css:532"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-47"
@@ -841,6 +888,7 @@
   "proof": [
    "kosif-audit-studio/workspace-navigation.css"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-48"
@@ -859,6 +907,7 @@
    "kosif-audit-pro/app/globals.css:809",
    "kosif-audit-pro/app/globals.css:2144"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-49"
@@ -876,6 +925,7 @@
   "proof": [
    "kosif-audit-pro/app/globals.css:2912"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-50"
@@ -895,6 +945,7 @@
    "kosif-audit-pro/app/globals.css:1875",
    "kosif-audit-pro/app/globals.css:1897"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-51"
@@ -912,6 +963,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:342"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-52"
@@ -929,6 +981,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:362"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-53"
@@ -946,6 +999,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:378"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-54"
@@ -963,6 +1017,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:548"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-55"
@@ -980,6 +1035,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:916"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-56"
@@ -997,6 +1053,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1210"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-57"
@@ -1014,6 +1071,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-58"
@@ -1032,6 +1090,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:67",
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-59"
@@ -1049,6 +1108,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/mimic.py:49"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-60"
@@ -1066,6 +1126,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/tools.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-61"
@@ -1085,6 +1146,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-62"
@@ -1104,6 +1166,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-63"
@@ -1123,6 +1186,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-64"
@@ -1142,6 +1206,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-65"
@@ -1161,6 +1226,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-66"
@@ -1180,6 +1246,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-67"
@@ -1199,6 +1266,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-68"
@@ -1218,6 +1286,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-69"
@@ -1237,6 +1306,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-70"
@@ -1256,6 +1326,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-71"
@@ -1275,6 +1346,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-72"
@@ -1294,6 +1366,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-73"
@@ -1313,6 +1386,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-74"
@@ -1332,6 +1406,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-75"
@@ -1351,6 +1426,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-76"
@@ -1370,6 +1446,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:74",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-77"
@@ -1387,6 +1464,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:362"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-78"
@@ -1405,6 +1483,7 @@
    "kosif-one/tools/kosif-studio/motion/montage.py:1",
    "kosif-one/tools/kosif-studio/motion/montage.py:81"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-79"
@@ -1422,6 +1501,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/montage.py:136"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-80"
@@ -1439,6 +1519,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/tools.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-81"
@@ -1457,6 +1538,7 @@
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md",
    "100-superskills/skills/pro-video-editor-ffmpeg/scripts/edl_render.py:84"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-82"
@@ -1475,6 +1557,7 @@
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md",
    "100-superskills/skills/pro-video-editor-ffmpeg/templates/edl.example.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-83"
@@ -1492,6 +1575,7 @@
   "proof": [
    "kosif-studio/motion/montage.py:174"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-84"
@@ -1509,6 +1593,7 @@
   "proof": [
    "kosif-studio/motion/tools.py:279"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-85"
@@ -1527,6 +1612,7 @@
    "kosif-studio/motion/templates/directed.html",
    "100-superskills/skills/kosif-montage-motion/templates/directed.html:113"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-86"
@@ -1545,6 +1631,7 @@
    "kosif-studio/motion/templates/verse.html",
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:293"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-87"
@@ -1562,6 +1649,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-88"
@@ -1579,6 +1667,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-89"
@@ -1596,6 +1685,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-90"
@@ -1613,6 +1703,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-91"
@@ -1631,6 +1722,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions.md",
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-92"
@@ -1648,6 +1740,7 @@
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/transitions.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-93"
@@ -1666,6 +1759,7 @@
    "kosif-atlas/skills/1434-react-skills/3419-vercel-react-view-transitions/SKILL.md",
    "kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/animation-libraries.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-94"
@@ -1683,6 +1777,7 @@
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-95"
@@ -1700,6 +1795,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-4-storyboard.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-96"
@@ -1717,6 +1813,7 @@
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-97"
@@ -1734,6 +1831,7 @@
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-98"
@@ -1751,6 +1849,7 @@
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-99"
@@ -1768,6 +1867,7 @@
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-100"
@@ -1787,6 +1887,7 @@
    "app/public/js/00_editor.js:2337",
    "app/index.html:316"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-101"
@@ -1806,6 +1907,7 @@
    "app/public/js/00_editor.js:190",
    "app/public/js/10_studio.js:2442"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-102"
@@ -1824,6 +1926,7 @@
    "app/public/js/00_editor.js:226",
    "app/public/js/00_editor.js:230"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-103"
@@ -1841,6 +1944,7 @@
   "proof": [
    "app/public/js/00_editor.js:546"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-104"
@@ -1858,6 +1962,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-105"
@@ -1875,6 +1980,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-106"
@@ -1892,6 +1998,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-107"
@@ -1909,6 +2016,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-108"
@@ -1926,6 +2034,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-109"
@@ -1943,6 +2052,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-110"
@@ -1960,6 +2070,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-111"
@@ -1977,6 +2088,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-112"
@@ -1994,6 +2106,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-113"
@@ -2011,6 +2124,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-114"
@@ -2028,6 +2142,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-115"
@@ -2045,6 +2160,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-116"
@@ -2062,6 +2178,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-117"
@@ -2079,6 +2196,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-118"
@@ -2098,6 +2216,7 @@
    "kosif-one/vendor/hyperframes/registry/components/chromatic-aberration-wipe/chromatic-aberration-wipe.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/chromatic-aberration-wipe.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-119"
@@ -2117,6 +2236,7 @@
    "kosif-one/vendor/hyperframes/registry/components/curtain-reveal/curtain-reveal.html",
    "kosif-one/vendor/hyperframes/registry/components/curtain-reveal/demo.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-120"
@@ -2136,6 +2256,7 @@
    "kosif-one/vendor/hyperframes/registry/components/cut-the-curve/cut-the-curve.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/cut-the-curve.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-121"
@@ -2155,6 +2276,7 @@
    "kosif-one/vendor/hyperframes/registry/components/directional-wipe/directional-wipe.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/directional-wipe.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-122"
@@ -2174,6 +2296,7 @@
    "kosif-one/vendor/hyperframes/registry/components/fade-through/fade-through.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/fade-through.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-123"
@@ -2193,6 +2316,7 @@
    "kosif-one/vendor/hyperframes/registry/components/grid-pixelate-wipe/grid-pixelate-wipe.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/grid-pixelate-wipe.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-124"
@@ -2212,6 +2336,7 @@
    "kosif-one/vendor/hyperframes/registry/components/halftone-dissolve/halftone-dissolve.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/halftone-dissolve.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-125"
@@ -2231,6 +2356,7 @@
    "kosif-one/vendor/hyperframes/registry/components/iris-reveal/iris-reveal.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/iris-reveal.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-126"
@@ -2250,6 +2376,7 @@
    "kosif-one/vendor/hyperframes/registry/components/match-cut/match-cut.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/match-cut.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-127"
@@ -2269,6 +2396,7 @@
    "kosif-one/vendor/hyperframes/registry/components/morph-swap/morph-swap.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/morph-swap.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-128"
@@ -2288,6 +2416,7 @@
    "kosif-one/vendor/hyperframes/registry/components/page-slide/page-slide.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/page-slide.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-129"
@@ -2307,6 +2436,7 @@
    "kosif-one/vendor/hyperframes/registry/components/rubber-band-bumper/rubber-band-bumper.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/rubber-band-bumper.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-130"
@@ -2326,6 +2456,7 @@
    "kosif-one/vendor/hyperframes/registry/components/shared-axis-y/shared-axis-y.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/shared-axis-y.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-131"
@@ -2345,6 +2476,7 @@
    "kosif-one/vendor/hyperframes/registry/components/shared-axis-z/shared-axis-z.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/shared-axis-z.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-132"
@@ -2364,6 +2496,7 @@
    "kosif-one/vendor/hyperframes/registry/components/text-match-cut/text-match-cut.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/text-match-cut.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-133"
@@ -2383,6 +2516,7 @@
    "kosif-one/vendor/hyperframes/registry/components/type-match-cut/type-match-cut.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/type-match-cut.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-134"
@@ -2402,6 +2536,7 @@
    "kosif-one/vendor/hyperframes/registry/components/whip-pan-cut/whip-pan-cut.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/whip-pan-cut.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-135"
@@ -2421,6 +2556,7 @@
    "kosif-one/vendor/hyperframes/registry/components/zoom-through-transition/zoom-through-transition.html",
    "kosif-one/vendor/hyperframes/docs/catalog/components/zoom-through-transition.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-136"
@@ -2440,6 +2576,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/chromatic-radial-split/chromatic-radial-split.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/chromatic-radial-split.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-137"
@@ -2459,6 +2596,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/cinematic-zoom/cinematic-zoom.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/cinematic-zoom.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-138"
@@ -2478,6 +2616,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/cross-warp-morph/cross-warp-morph.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/cross-warp-morph.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-139"
@@ -2497,6 +2636,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/domain-warp-dissolve/domain-warp-dissolve.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/domain-warp-dissolve.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-140"
@@ -2516,6 +2656,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/flash-through-white/flash-through-white.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/flash-through-white.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-141"
@@ -2535,6 +2676,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/glitch/glitch.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/glitch.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-142"
@@ -2554,6 +2696,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/gravitational-lens/gravitational-lens.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/gravitational-lens.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-143"
@@ -2573,6 +2716,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/light-leak/light-leak.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/light-leak.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-144"
@@ -2592,6 +2736,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/mk-clone-wall-transition/mk-clone-wall-transition.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/mk-clone-wall-transition.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-145"
@@ -2611,6 +2756,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/ridged-burn/ridged-burn.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/ridged-burn.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-146"
@@ -2630,6 +2776,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/ripple-waves/ripple-waves.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/ripple-waves.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-147"
@@ -2649,6 +2796,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/sdf-iris/sdf-iris.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/sdf-iris.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-148"
@@ -2668,6 +2816,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/swirl-vortex/swirl-vortex.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/swirl-vortex.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-149"
@@ -2687,6 +2836,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/thermal-distortion/thermal-distortion.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/thermal-distortion.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-150"
@@ -2706,6 +2856,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-3d/transitions-3d.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-3d.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-151"
@@ -2725,6 +2876,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-blur/transitions-blur.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-blur.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-152"
@@ -2744,6 +2896,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-cover/transitions-cover.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-cover.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-153"
@@ -2763,6 +2916,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-destruction/transitions-destruction.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-destruction.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-154"
@@ -2782,6 +2936,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-dissolve/transitions-dissolve.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-dissolve.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-155"
@@ -2801,6 +2956,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-distortion/transitions-distortion.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-distortion.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-156"
@@ -2820,6 +2976,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-grid/transitions-grid.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-grid.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-157"
@@ -2839,6 +2996,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-light/transitions-light.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-light.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-158"
@@ -2858,6 +3016,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-mechanical/transitions-mechanical.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-mechanical.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-159"
@@ -2877,6 +3036,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-other/transitions-other.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-other.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-160"
@@ -2896,6 +3056,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-push/transitions-push.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-push.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-161"
@@ -2915,6 +3076,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-radial/transitions-radial.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-radial.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-162"
@@ -2934,6 +3096,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/transitions-scale/transitions-scale.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/transitions-scale.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-163"
@@ -2953,6 +3116,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/vfx-portal/vfx-portal.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/vfx-portal.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-164"
@@ -2972,6 +3136,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/vfx-shatter/vfx-shatter.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/vfx-shatter.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-165"
@@ -2991,6 +3156,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/whip-pan/whip-pan.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/whip-pan.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-166"
@@ -3010,6 +3176,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/glitch/glitch.html:331",
    "kosif-one/vendor/hyperframes/packages/shader-transitions"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-167"
@@ -3027,6 +3194,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-168"
@@ -3044,6 +3212,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-169"
@@ -3062,6 +3231,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/chromatic-glitch.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-170"
@@ -3080,6 +3250,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/scale-swap-transition.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-171"
@@ -3098,6 +3269,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/theme-crossfade-morph.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-172"
@@ -3116,6 +3288,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-push.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-173"
@@ -3134,6 +3307,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-push.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-174"
@@ -3152,6 +3326,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-push.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-175"
@@ -3170,6 +3345,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-push.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-176"
@@ -3188,6 +3364,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-radial.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-177"
@@ -3206,6 +3383,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-radial.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-178"
@@ -3224,6 +3402,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-radial.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-179"
@@ -3242,6 +3421,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-3d.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-180"
@@ -3260,6 +3440,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-scale.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-181"
@@ -3278,6 +3459,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-scale.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-182"
@@ -3296,6 +3478,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-dissolve.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-183"
@@ -3314,6 +3497,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-dissolve.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-184"
@@ -3332,6 +3516,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-dissolve.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-185"
@@ -3350,6 +3535,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-dissolve.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-186"
@@ -3368,6 +3554,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-cover.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-187"
@@ -3386,6 +3573,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-cover.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-188"
@@ -3404,6 +3592,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-cover.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-189"
@@ -3422,6 +3611,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-light.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-190"
@@ -3440,6 +3630,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-light.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-191"
@@ -3458,6 +3649,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-light.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-192"
@@ -3476,6 +3668,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-distortion.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-193"
@@ -3494,6 +3687,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-distortion.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-194"
@@ -3512,6 +3706,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-distortion.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-195"
@@ -3530,6 +3725,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-distortion.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-196"
@@ -3548,6 +3744,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-mechanical.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-197"
@@ -3566,6 +3763,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-mechanical.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-198"
@@ -3584,6 +3782,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-grid.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-199"
@@ -3602,6 +3801,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-other.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-200"
@@ -3620,6 +3820,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-other.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-201"
@@ -3638,6 +3839,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-blur.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-202"
@@ -3656,6 +3858,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-blur.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-203"
@@ -3674,6 +3877,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/css-destruction.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-204"
@@ -3692,6 +3896,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-205"
@@ -3710,6 +3915,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-206"
@@ -3728,6 +3934,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-207"
@@ -3746,6 +3953,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-208"
@@ -3764,6 +3972,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-209"
@@ -3782,6 +3991,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-210"
@@ -3800,6 +4010,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-211"
@@ -3818,6 +4029,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-212"
@@ -3836,6 +4048,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-213"
@@ -3854,6 +4067,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-214"
@@ -3872,6 +4086,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-215"
@@ -3890,6 +4105,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-216"
@@ -3908,6 +4124,7 @@
    "kosif-one/vendor/hyperframes/packages/shader-transitions/src/shaders/registry.ts",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-217"
@@ -3925,6 +4142,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-218"
@@ -3944,6 +4162,7 @@
    "kosif-one/vendor/hyperframes/skills/faceless-explainer/scripts/transitions.mjs",
    "kosif-one/vendor/hyperframes/skills/faceless-explainer/scripts/lib/transitions.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-219"
@@ -3961,6 +4180,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/techniques.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-220"
@@ -3979,6 +4199,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/hypercut-whip/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-221"
@@ -3997,6 +4218,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/mask-reveal/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-222"
@@ -4015,6 +4237,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/iris-open/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-223"
@@ -4033,6 +4256,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/blur-resolve/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-224"
@@ -4051,6 +4275,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/flash-cut/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-225"
@@ -4069,6 +4294,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/hard-cut/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-226"
@@ -4087,6 +4313,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/staggered-exit/scene.html",
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-227"
@@ -4105,6 +4332,7 @@
    "kosif-one/vendor/hyperframes/skills/faceless-explainer/references/cut-catalog.md",
    "kosif-one/vendor/hyperframes/skills/pr-to-video/references/cut-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-228"
@@ -4124,6 +4352,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-229"
@@ -4143,6 +4372,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-230"
@@ -4162,6 +4392,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-231"
@@ -4181,6 +4412,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-232"
@@ -4200,6 +4432,7 @@
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-233"
@@ -4218,6 +4451,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:247",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:132"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-234"
@@ -4236,6 +4470,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:83",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:325"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-235"
@@ -4254,6 +4489,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:110",
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:334"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-236"
@@ -4272,6 +4508,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:260",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:133"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-237"
@@ -4290,6 +4527,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:120",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:127"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-238"
@@ -4309,6 +4547,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/index.html:38",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/index.html:125"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-239"
@@ -4328,6 +4567,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/index.html:49",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/index.html:37"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-240"
@@ -4345,6 +4585,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:133"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-241"
@@ -4364,6 +4605,7 @@
    "kosif-one/projects/egypt-2120-animation/index.html:464-465",
    "kosif-one/projects/egypt-2120-animation/index.html:475"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-242"
@@ -4382,6 +4624,7 @@
    "kosif-one/projects/mimic-jumuah/جمعة-محاكاة.raw.timeline.json",
    "kosif-one/projects/mimic-jumuah/study/mimic.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-243"
@@ -4400,6 +4643,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:18-24",
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:267-277"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-244"
@@ -4419,6 +4663,7 @@
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:152-154",
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:285"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-245"
@@ -4436,6 +4681,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:332-350"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-246"
@@ -4453,6 +4699,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-247"
@@ -4470,6 +4717,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-248"
@@ -4487,6 +4735,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-249"
@@ -4504,6 +4753,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-250"
@@ -4521,6 +4771,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-251"
@@ -4538,6 +4789,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-252"
@@ -4555,6 +4807,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:325"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-253"
@@ -4572,6 +4825,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:334"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-254"
@@ -4589,6 +4843,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:362"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-255"
@@ -4606,6 +4861,7 @@
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:1210"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-256"
@@ -4625,6 +4881,7 @@
    "kosif-studio/motion/projects/showreel/index.html:120",
    "kosif-studio/motion/projects/showreel/index.html:127"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-257"
@@ -4643,6 +4900,7 @@
    "kosif-studio/motion/direct.py:185",
    "kosif-studio/motion/projects/premium_edit/index.html:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-258"
@@ -4660,6 +4918,7 @@
   "proof": [
    "kosif-tool/starters/remotion/src/Film.tsx:64"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-259"
@@ -4677,6 +4936,7 @@
   "proof": [
    "kosif-one/vendor/mcp-higgsfield-landing/src/scripts/world.ts:90"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-260"
@@ -4695,6 +4955,7 @@
    "kosif-atlas/skills/1874-klingai-pack/6075-klingai-image-to-video",
    "kosif-atlas/skills/3214-togetherai-skills/13597-together-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-261"
@@ -4712,6 +4973,7 @@
   "proof": [
    "style:doodle"
   ],
+  "proof_scope": "style",
   "styles": [
    "doodle"
   ],
@@ -4731,6 +4993,7 @@
   "proof": [
    "style:fake3d"
   ],
+  "proof_scope": "style",
   "styles": [
    "fake3d"
   ],
@@ -4750,6 +5013,7 @@
   "proof": [
    "style:map-journey"
   ],
+  "proof_scope": "style",
   "styles": [
    "map-journey"
   ],
@@ -4769,6 +5033,7 @@
   "proof": [
    "style:plotter"
   ],
+  "proof_scope": "style",
   "styles": [
    "plotter"
   ],
@@ -4788,6 +5053,7 @@
   "proof": [
    "style:pm-0xfemyn-e114d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-0xfemyn-e114d3"
   ],
@@ -4807,6 +5073,7 @@
   "proof": [
    "style:pm-0xfemyn-e114d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-0xfemyn-e114d3"
   ],
@@ -4826,6 +5093,7 @@
   "proof": [
    "style:pm-1littlecoder-9fef89"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-1littlecoder-9fef89"
   ],
@@ -4845,6 +5113,7 @@
   "proof": [
    "style:pm-3xtihor-0f6911"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-3xtihor-0f6911"
   ],
@@ -4864,6 +5133,7 @@
   "proof": [
    "style:pm-abderrahmen-g-9e8ed0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-abderrahmen-g-9e8ed0"
   ],
@@ -4883,6 +5153,7 @@
   "proof": [
    "style:pm-adamdesgns-478d6d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-adamdesgns-478d6d"
   ],
@@ -4902,6 +5173,7 @@
   "proof": [
    "style:pm-adamdesgns-478d6d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-adamdesgns-478d6d"
   ],
@@ -4921,6 +5193,7 @@
   "proof": [
    "style:pm-agonaliu-466a8f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-agonaliu-466a8f"
   ],
@@ -4940,6 +5213,7 @@
   "proof": [
    "style:pm-aisongman-71ffac"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aisongman-71ffac"
   ],
@@ -4959,6 +5233,7 @@
   "proof": [
    "style:pm-aistocksavvy-3fb9f5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aistocksavvy-3fb9f5"
   ],
@@ -4978,6 +5253,7 @@
   "proof": [
    "style:pm-ajith-io-4c248f"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-4c248f"
   ],
@@ -4997,6 +5273,7 @@
   "proof": [
    "style:pm-ajith-io-ea7f2d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-ea7f2d"
   ],
@@ -5016,6 +5293,7 @@
   "proof": [
    "style:pm-ajith-io-ea7f2d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-ea7f2d"
   ],
@@ -5035,6 +5313,7 @@
   "proof": [
    "style:pm-alex-prompter-1ea044"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-alex-prompter-1ea044"
   ],
@@ -5054,6 +5333,7 @@
   "proof": [
    "style:pm-amol909s-27533e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-amol909s-27533e"
   ],
@@ -5073,6 +5353,7 @@
   "proof": [
    "style:pm-anthonyriera-9b1b2a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-anthonyriera-9b1b2a"
   ],
@@ -5092,6 +5373,7 @@
   "proof": [
    "style:pm-antonio-kodheli-490109"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-antonio-kodheli-490109"
   ],
@@ -5111,6 +5393,7 @@
   "proof": [
    "style:pm-antonio-kodheli-490109"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-antonio-kodheli-490109"
   ],
@@ -5130,6 +5413,7 @@
   "proof": [
    "style:pm-arjunsh1607-93005d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-arjunsh1607-93005d"
   ],
@@ -5149,6 +5433,7 @@
   "proof": [
    "style:pm-astrodevil-3f2054"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-astrodevil-3f2054"
   ],
@@ -5168,6 +5453,7 @@
   "proof": [
    "style:pm-ayushunleashed-ece3e3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ayushunleashed-ece3e3"
   ],
@@ -5187,6 +5473,7 @@
   "proof": [
    "style:pm-blushpetal795-0c85c2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-blushpetal795-0c85c2"
   ],
@@ -5206,6 +5493,7 @@
   "proof": [
    "style:pm-bogdandragomir-35e024"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-bogdandragomir-35e024"
   ],
@@ -5225,6 +5513,7 @@
   "proof": [
    "style:pm-brainextends-e19ac3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-brainextends-e19ac3"
   ],
@@ -5244,6 +5533,7 @@
   "proof": [
    "style:pm-buildfastwithai-53234e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-buildfastwithai-53234e"
   ],
@@ -5263,6 +5553,7 @@
   "proof": [
    "style:pm-ceowinkz-7c776b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ceowinkz-7c776b"
   ],
@@ -5282,6 +5573,7 @@
   "proof": [
    "style:pm-ceowinkz-7c776b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ceowinkz-7c776b"
   ],
@@ -5301,6 +5593,7 @@
   "proof": [
    "style:pm-chatgptastra-0d95c7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-chatgptastra-0d95c7"
   ],
@@ -5320,6 +5613,7 @@
   "proof": [
    "style:pm-codestackr-c071bf"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-codestackr-c071bf"
   ],
@@ -5339,6 +5633,7 @@
   "proof": [
    "style:pm-davidmarcus-a28a60"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-davidmarcus-a28a60"
   ],
@@ -5358,6 +5653,7 @@
   "proof": [
    "style:pm-ddryo-loos-300829"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ddryo-loos-300829"
   ],
@@ -5377,6 +5673,7 @@
   "proof": [
    "style:pm-deebeeeff-50fcd0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-deebeeeff-50fcd0"
   ],
@@ -5396,6 +5693,7 @@
   "proof": [
    "style:pm-deifosv-04e4d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-deifosv-04e4d3"
   ],
@@ -5415,6 +5713,7 @@
   "proof": [
    "style:pm-demitiyageekzen-7770ad"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-demitiyageekzen-7770ad"
   ],
@@ -5434,6 +5733,7 @@
   "proof": [
    "style:pm-devius-maximus-beab45"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-devius-maximus-beab45"
   ],
@@ -5453,6 +5753,7 @@
   "proof": [
    "style:pm-elliot-garreffa-f334bc"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-elliot-garreffa-f334bc"
   ],
@@ -5472,6 +5773,7 @@
   "proof": [
    "style:pm-emollick-8661a8"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-emollick-8661a8"
   ],
@@ -5491,6 +5793,7 @@
   "proof": [
    "style:pm-gdgtify-287ddf"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gdgtify-287ddf"
   ],
@@ -5510,6 +5813,7 @@
   "proof": [
    "style:pm-gizakdag-b8c59e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gizakdag-b8c59e"
   ],
@@ -5529,6 +5833,7 @@
   "proof": [
    "style:pm-gizakdag-cf4ae6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gizakdag-cf4ae6"
   ],
@@ -5548,6 +5853,7 @@
   "proof": [
    "style:pm-gonzalomacagno-2de1a9"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gonzalomacagno-2de1a9"
   ],
@@ -5567,6 +5873,7 @@
   "proof": [
    "style:pm-grace-sunnyy-29bc61"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-grace-sunnyy-29bc61"
   ],
@@ -5586,6 +5893,7 @@
   "proof": [
    "style:pm-hanifproduktif-54bdee"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-hanifproduktif-54bdee"
   ],
@@ -5605,6 +5913,7 @@
   "proof": [
    "style:pm-hqmank-7c61f1"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-hqmank-7c61f1"
   ],
@@ -5624,6 +5933,7 @@
   "proof": [
    "style:pm-ibrahimwasim240-809370"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ibrahimwasim240-809370"
   ],
@@ -5643,6 +5953,7 @@
   "proof": [
    "style:pm-imthatcarlos-e04bfe"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-imthatcarlos-e04bfe"
   ],
@@ -5662,6 +5973,7 @@
   "proof": [
    "style:pm-itsolelehmann-e47532"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-itsolelehmann-e47532"
   ],
@@ -5681,6 +5993,7 @@
   "proof": [
    "style:pm-itsolelehmann-e47532"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-itsolelehmann-e47532"
   ],
@@ -5700,6 +6013,7 @@
   "proof": [
    "style:pm-jasonzhou1993-8595e0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jasonzhou1993-8595e0"
   ],
@@ -5719,6 +6033,7 @@
   "proof": [
    "style:pm-justincooperman-e7bbc4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-justincooperman-e7bbc4"
   ],
@@ -5738,6 +6053,7 @@
   "proof": [
    "style:pm-kamstudiolabs-0b0824"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kamstudiolabs-0b0824"
   ],
@@ -5757,6 +6073,7 @@
   "proof": [
    "style:pm-kikelopezdesign-7cc9e8"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kikelopezdesign-7cc9e8"
   ],
@@ -5776,6 +6093,7 @@
   "proof": [
    "style:pm-kloss-xyz-15182a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kloss-xyz-15182a"
   ],
@@ -5795,6 +6113,7 @@
   "proof": [
    "style:pm-kloss-xyz-b9b3f6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kloss-xyz-b9b3f6"
   ],
@@ -5814,6 +6133,7 @@
   "proof": [
    "style:pm-kmasiff-cc72cb"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kmasiff-cc72cb"
   ],
@@ -5833,6 +6153,7 @@
   "proof": [
    "style:pm-koldo2k-5cff87"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-koldo2k-5cff87"
   ],
@@ -5852,6 +6173,7 @@
   "proof": [
    "style:pm-kyonax-on-tech-aabc1d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kyonax-on-tech-aabc1d"
   ],
@@ -5871,6 +6193,7 @@
   "proof": [
    "style:pm-leonkohli-6dc01b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-leonkohli-6dc01b"
   ],
@@ -5890,6 +6213,7 @@
   "proof": [
    "style:pm-lexnlin-6161a6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-lexnlin-6161a6"
   ],
@@ -5909,6 +6233,7 @@
   "proof": [
    "style:pm-listudio-820c7b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-listudio-820c7b"
   ],
@@ -5928,6 +6253,7 @@
   "proof": [
    "style:pm-loicrambo-ad6830"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-loicrambo-ad6830"
   ],
@@ -5947,6 +6273,7 @@
   "proof": [
    "style:pm-macrohou-33959d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-macrohou-33959d"
   ],
@@ -5966,6 +6293,7 @@
   "proof": [
    "style:pm-majin-appsheet-2d3c1a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-majin-appsheet-2d3c1a"
   ],
@@ -5985,6 +6313,7 @@
   "proof": [
    "style:pm-majorbaguette-fb11d7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-majorbaguette-fb11d7"
   ],
@@ -6004,6 +6333,7 @@
   "proof": [
    "style:pm-maxalexweber-67688b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-maxalexweber-67688b"
   ],
@@ -6023,6 +6353,7 @@
   "proof": [
    "style:pm-micheleharmonic-77628e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-micheleharmonic-77628e"
   ],
@@ -6042,6 +6373,7 @@
   "proof": [
    "style:pm-monokern-ade5b6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-monokern-ade5b6"
   ],
@@ -6061,6 +6393,7 @@
   "proof": [
    "style:pm-motiondsgnr-9dcfa6"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-motiondsgnr-9dcfa6"
   ],
@@ -6080,6 +6413,7 @@
   "proof": [
    "style:pm-ndhabarde11-f155b4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ndhabarde11-f155b4"
   ],
@@ -6099,6 +6433,7 @@
   "proof": [
    "style:pm-nolkeeg-bf062e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-nolkeeg-bf062e"
   ],
@@ -6118,6 +6453,7 @@
   "proof": [
    "style:pm-notdwd-7de38a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-notdwd-7de38a"
   ],
@@ -6137,6 +6473,7 @@
   "proof": [
    "style:pm-notdwd-c2037d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-notdwd-c2037d"
   ],
@@ -6156,6 +6493,7 @@
   "proof": [
    "style:pm-palashbagchi11-0a4b6b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-palashbagchi11-0a4b6b"
   ],
@@ -6175,6 +6513,7 @@
   "proof": [
    "style:pm-paulo-kombucha-96431c"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-paulo-kombucha-96431c"
   ],
@@ -6194,6 +6533,7 @@
   "proof": [
    "style:pm-prasenx-8d9323"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-prasenx-8d9323"
   ],
@@ -6213,6 +6553,7 @@
   "proof": [
    "style:pm-quickdesignio-dd93d0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-quickdesignio-dd93d0"
   ],
@@ -6232,6 +6573,7 @@
   "proof": [
    "style:pm-quickdesignio-dd93d0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-quickdesignio-dd93d0"
   ],
@@ -6251,6 +6593,7 @@
   "proof": [
    "style:pm-rames-jusso-589f80"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rames-jusso-589f80"
   ],
@@ -6270,6 +6613,7 @@
   "proof": [
    "style:pm-rneayan-474bcf"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rneayan-474bcf"
   ],
@@ -6289,6 +6633,7 @@
   "proof": [
    "style:pm-rossaxbt-3085b7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
@@ -6308,6 +6653,7 @@
   "proof": [
    "style:pm-sachaarbonel-8f14f4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sachaarbonel-8f14f4"
   ],
@@ -6327,6 +6673,7 @@
   "proof": [
    "style:pm-sahildesigner23-ee3155"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sahildesigner23-ee3155"
   ],
@@ -6346,6 +6693,7 @@
   "proof": [
    "style:pm-sahildesigner23-ee3155"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sahildesigner23-ee3155"
   ],
@@ -6365,6 +6713,7 @@
   "proof": [
    "style:pm-samaote-5e2fc2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-samaote-5e2fc2"
   ],
@@ -6384,6 +6733,7 @@
   "proof": [
    "style:pm-samuel-yostt-891f87"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-samuel-yostt-891f87"
   ],
@@ -6403,6 +6753,7 @@
   "proof": [
    "style:pm-shinskinakamoto-20190b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-shinskinakamoto-20190b"
   ],
@@ -6422,6 +6773,7 @@
   "proof": [
    "style:pm-shneural-2abdfa"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-shneural-2abdfa"
   ],
@@ -6441,6 +6793,7 @@
   "proof": [
    "style:pm-souravbhar871-61f424"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-souravbhar871-61f424"
   ],
@@ -6460,6 +6813,7 @@
   "proof": [
    "style:pm-spearwtf-3c1fd1"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-spearwtf-3c1fd1"
   ],
@@ -6479,6 +6833,7 @@
   "proof": [
    "style:pm-stephanlivera-df17a2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-stephanlivera-df17a2"
   ],
@@ -6498,6 +6853,7 @@
   "proof": [
    "style:pm-steventey-0d20e4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-steventey-0d20e4"
   ],
@@ -6517,6 +6873,7 @@
   "proof": [
    "style:pm-sudeepsd-1a3485"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sudeepsd-1a3485"
   ],
@@ -6536,6 +6893,7 @@
   "proof": [
    "style:pm-sudo-kiran-49176d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sudo-kiran-49176d"
   ],
@@ -6555,6 +6913,7 @@
   "proof": [
    "style:pm-tak3sh8-be5012"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tak3sh8-be5012"
   ],
@@ -6574,6 +6933,7 @@
   "proof": [
    "style:pm-tequilafunks-97f6c9"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tequilafunks-97f6c9"
   ],
@@ -6593,6 +6953,7 @@
   "proof": [
    "style:pm-teslachartz-c58b32"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-teslachartz-c58b32"
   ],
@@ -6612,6 +6973,7 @@
   "proof": [
    "style:pm-thilina-a-891c09"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-thilina-a-891c09"
   ],
@@ -6631,6 +6993,7 @@
   "proof": [
    "style:pm-thismacapital-dfba20"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-thismacapital-dfba20"
   ],
@@ -6650,6 +7013,7 @@
   "proof": [
    "style:pm-thismacapital-dfba20"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-thismacapital-dfba20"
   ],
@@ -6669,6 +7033,7 @@
   "proof": [
    "style:pm-tolgayhickiran-e90799"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tolgayhickiran-e90799"
   ],
@@ -6688,6 +7053,7 @@
   "proof": [
    "style:pm-topi-003-9ca6b5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-topi-003-9ca6b5"
   ],
@@ -6707,6 +7073,7 @@
   "proof": [
    "style:pm-twoclipping-221cab"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-twoclipping-221cab"
   ],
@@ -6726,6 +7093,7 @@
   "proof": [
    "style:pm-twoclipping-5cba86"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-twoclipping-5cba86"
   ],
@@ -6745,6 +7113,7 @@
   "proof": [
    "style:pm-twoclipping-6dd14e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-twoclipping-6dd14e"
   ],
@@ -6764,6 +7133,7 @@
   "proof": [
    "style:pm-ultimaxbt-2ddf1e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ultimaxbt-2ddf1e"
   ],
@@ -6783,6 +7153,7 @@
   "proof": [
    "style:pm-ultimaxbt-bbebf5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ultimaxbt-bbebf5"
   ],
@@ -6802,6 +7173,7 @@
   "proof": [
    "style:pm-utopyaszx-1b2f94"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-utopyaszx-1b2f94"
   ],
@@ -6821,6 +7193,7 @@
   "proof": [
    "style:pm-vanshwtfff-db0466"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-vanshwtfff-db0466"
   ],
@@ -6840,6 +7213,7 @@
   "proof": [
    "style:pm-visheshbaghell-3aba37"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-visheshbaghell-3aba37"
   ],
@@ -6859,6 +7233,7 @@
   "proof": [
    "style:product"
   ],
+  "proof_scope": "style",
   "styles": [
    "product"
   ],
@@ -6879,6 +7254,7 @@
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md",
    "kosif-studio/motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-376"
@@ -6897,6 +7273,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-377"
@@ -6914,6 +7291,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-378"
@@ -6932,6 +7310,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/motion-principles.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-379"
@@ -6949,6 +7328,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-380"
@@ -6966,6 +7346,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-381"
@@ -6984,6 +7365,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-radial.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-382"
@@ -7002,6 +7384,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/css-distortion.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-383"
@@ -7020,6 +7403,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions/catalog.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transitions.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-384"
@@ -7038,6 +7422,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2453-davinciresolve-cut-devtalk/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-385"
@@ -7056,6 +7441,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-transitions.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-386"
@@ -7074,6 +7460,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-transitions.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-387"
@@ -7092,6 +7479,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-transitions.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-388"
@@ -7110,6 +7498,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-transitions.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-389"
@@ -7128,6 +7517,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-transitions.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-390"
@@ -7146,6 +7536,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-transitions.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-391"
@@ -7164,6 +7555,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-transitions.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-392"
@@ -7182,6 +7574,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-transitions.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-393"
@@ -7199,6 +7592,7 @@
   "proof": [
    "kosif-atlas/skills/932-vidseeds/2178-vidseeds/skills/vidseeds-local-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-394"
@@ -7217,6 +7611,7 @@
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/ffmpeg.md",
    "kosif-atlas/skills/235-mas-video-lab/756-losslesscut/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-395"
@@ -7235,6 +7630,7 @@
    "kosif-atlas/skills/235-mas-video-lab/756-losslesscut/SKILL.md",
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-396"
@@ -7252,6 +7648,7 @@
   "proof": [
    "kosif-atlas/skills/932-vidseeds/2181-vidseeds-local-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-397"
@@ -7269,6 +7666,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-398"
@@ -7286,6 +7684,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-399"
@@ -7303,6 +7702,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-400"
@@ -7320,6 +7720,7 @@
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-401"
@@ -7337,6 +7738,7 @@
   "proof": [
    "app/public/js/10_studio.js:8"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-402"
@@ -7354,6 +7756,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-403"
@@ -7372,6 +7775,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:40",
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:186"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-404"
@@ -7391,6 +7795,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/smart_montage.py:156"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-405"
@@ -7409,6 +7814,7 @@
    "kosif-one/tools/kosif-studio/motion/references/craft-numbers.md",
    "kosif-one/tools/kosif-studio/motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-406"
@@ -7427,6 +7833,7 @@
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md",
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-407"
@@ -7444,6 +7851,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-408"
@@ -7461,6 +7869,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-409"
@@ -7478,6 +7887,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-410"
@@ -7495,6 +7905,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-411"
@@ -7512,6 +7923,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-412"
@@ -7529,6 +7941,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-413"
@@ -7546,6 +7959,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-414"
@@ -7563,6 +7977,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-415"
@@ -7580,6 +7995,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-416"
@@ -7597,6 +8013,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-417"
@@ -7614,6 +8031,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-418"
@@ -7631,6 +8049,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-419"
@@ -7648,6 +8067,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/transitions-catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-420"
@@ -7665,6 +8085,7 @@
   "proof": [
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-421"
@@ -7682,6 +8103,7 @@
   "proof": [
    "100-superskills/skills/motion-director-pro/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-422"
@@ -7699,6 +8121,7 @@
   "proof": [
    "100-superskills/skills/video-editing-captions/SKILL.md:22"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-423"
@@ -7716,6 +8139,7 @@
   "proof": [
    "kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-424"
@@ -7733,6 +8157,7 @@
   "proof": [
    "kosif-tool/templates/PLAN.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-425"
@@ -7750,6 +8175,7 @@
   "proof": [
    "kosif-tool/templates/PLAN.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-426"
@@ -7767,6 +8193,7 @@
   "proof": [
    "kosif-tool/templates/PLAN.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-427"
@@ -7784,6 +8211,7 @@
   "proof": [
    "kosif-tool/templates/PLAN.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-428"
@@ -7801,6 +8229,7 @@
   "proof": [
    "kosif-tool/templates/PLAN.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-429"
@@ -7818,6 +8247,7 @@
   "proof": [
    "kosif-tool/templates/PLAN.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-430"
@@ -7835,6 +8265,7 @@
   "proof": [
    "kosif-tool/templates/PLAN.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-431"
@@ -7852,6 +8283,7 @@
   "proof": [
    "kosif-tool/playbooks/ads.md:50"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-432"
@@ -7869,6 +8301,7 @@
   "proof": [
    "kosif-tool/playbooks/hand-drawn.md:48"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-433"
@@ -7886,6 +8319,7 @@
   "proof": [
    "kosif-tool/playbooks/music.md:25"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-434"
@@ -7903,6 +8337,7 @@
   "proof": [
    "kosif-tool/playbooks/shapes.md:28"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-435"
@@ -7920,6 +8355,7 @@
   "proof": [
    "kosif-tool/playbooks/shapes.md:45"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-436"
@@ -7937,6 +8373,7 @@
   "proof": [
    "kosif-tool/playbooks/phone.md:37"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-437"
@@ -7955,6 +8392,7 @@
    "kosif-tool/playbooks/photos.md:38",
    "kosif-tool/playbooks/photos.md:187"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-438"
@@ -7973,6 +8411,7 @@
    "kosif-tool/playbooks/photos.md:42",
    "kosif-tool/playbooks/photos.md:77-84"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "TRANS-439"
@@ -7990,6 +8429,7 @@
   "proof": [
    "kosif-one/vendor/brag/skills/brag/references/tones.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-440"
@@ -8007,6 +8447,7 @@
   "proof": [
    "kosif-one/vendor/brag/skills/brag/references/tones.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-441"
@@ -8024,6 +8465,7 @@
   "proof": [
    "kosif-one/vendor/brag/skills/brag/references/tones.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-442"
@@ -8041,6 +8483,7 @@
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali/references/story-patterns-and-scene-contracts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "TRANS-443"
@@ -8058,6 +8501,7 @@
   "proof": [
    "style:pm-abderrahmen-g-9e8ed0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-abderrahmen-g-9e8ed0"
   ],
@@ -8077,6 +8521,7 @@
   "proof": [
    "style:pm-ajith-io-ea7f2d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ajith-io-ea7f2d"
   ],
@@ -8096,6 +8541,7 @@
   "proof": [
    "style:pm-deifosv-04e4d3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-deifosv-04e4d3"
   ],
@@ -8115,6 +8561,7 @@
   "proof": [
    "style:pm-gautam-mer1-2ae354"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gautam-mer1-2ae354"
   ],
@@ -8134,6 +8581,7 @@
   "proof": [
    "style:pm-itisrazak-3ad902"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-itisrazak-3ad902"
   ],
@@ -8153,6 +8601,7 @@
   "proof": [
    "style:pm-jasonzhou1993-8595e0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jasonzhou1993-8595e0"
   ],
@@ -8172,6 +8621,7 @@
   "proof": [
    "style:pm-jasonzhou1993-8595e0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jasonzhou1993-8595e0"
   ],
@@ -8191,6 +8641,7 @@
   "proof": [
    "style:pm-l3d1c-0e35a3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-l3d1c-0e35a3"
   ],
@@ -8210,6 +8661,7 @@
   "proof": [
    "style:pm-listudio-820c7b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-listudio-820c7b"
   ],
@@ -8229,6 +8681,7 @@
   "proof": [
    "style:pm-micheleharmonic-77628e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-micheleharmonic-77628e"
   ],
@@ -8248,6 +8701,7 @@
   "proof": [
    "style:pm-quickdesignio-dd93d0"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-quickdesignio-dd93d0"
   ],
@@ -8267,6 +8721,7 @@
   "proof": [
    "style:pm-reflex-cloud-72ffe5"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-reflex-cloud-72ffe5"
   ],
@@ -8286,6 +8741,7 @@
   "proof": [
    "style:pm-ror-fly-9950f1"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ror-fly-9950f1"
   ],
@@ -8305,6 +8761,7 @@
   "proof": [
    "style:pm-samuel-spitz-974923"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-samuel-spitz-974923"
   ],
@@ -8324,6 +8781,7 @@
   "proof": [
    "style:pm-stephanlivera-df17a2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-stephanlivera-df17a2"
   ],
@@ -8343,6 +8801,7 @@
   "proof": [
    "style:pm-steventey-0d20e4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-steventey-0d20e4"
   ],
@@ -8362,6 +8821,7 @@
   "proof": [
    "style:pm-techyoutbe-945b56"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-techyoutbe-945b56"
   ],
@@ -8385,6 +8845,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/SKILL.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "transition cause",
@@ -8413,6 +8874,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "needle zoom",
@@ -8442,6 +8904,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "fly-through",
@@ -8471,6 +8934,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "carry",
@@ -8500,6 +8964,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "whip",
@@ -8530,6 +8995,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "ui morph",
@@ -8559,6 +9025,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "flood",
@@ -8588,6 +9055,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "pour",
@@ -8617,6 +9085,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "iris",
@@ -8645,6 +9114,7 @@
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "glitch",
@@ -8674,6 +9144,7 @@
    "owner-upload:film_project/film/film.js",
    "owner-upload:film_project/film/README_AR.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "infinite zoom",
@@ -8704,6 +9175,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "anti-patterns",
@@ -8733,6 +9205,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "انتقال",

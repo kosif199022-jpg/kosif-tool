@@ -14,6 +14,7 @@
    "run here 2026-10-16: piper-tts 1.8.0 → ar.wav 7.43 s, -16.5 LUFS",
    "probe.md: piper-tts 1.8.0 installable, huggingface.co reachable"
   ],
+  "proof_scope": "receipt",
   "styles": [],
   "tags": [
    "بايبر",
@@ -42,6 +43,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/voice.py",
    "app/public/js/00_editor.js:2638"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نايف",
@@ -71,6 +73,7 @@
    "kosif-one/vendor/brag/skills/brag/SKILL.md",
    "probe.md: kokoro 0.7.16, kokoro-js 1.2.1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كوكورو",
@@ -96,6 +99,7 @@
    "kosif-audit-studio/voice.js:380",
    "kosif-earth-ci-fork/ui/features/assistant.js:281"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نطق المتصفح",
@@ -123,6 +127,7 @@
    "kosif-atlas/skills/1644-framecraft/4629-demo-video",
    "probe.md: speech.platform.bing.com 400"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-linearuncle-5d2bae"
   ],
@@ -151,6 +156,7 @@
    "kosif-atlas/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a",
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/voiceover.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
@@ -178,6 +184,7 @@
    "kosif-atlas/skills/1847-elevenlabs-pack/5522-elevenlabs-performance-tuning",
    "kosif-atlas/skills/1847-elevenlabs-pack/5516-elevenlabs-cost-tuning"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نموذج الصوت",
@@ -203,6 +210,7 @@
    "kosif-atlas/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a",
    "kosif-atlas/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تقسيم النص",
@@ -229,6 +237,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/heygen-voice.mjs",
    "kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/heygen-voice.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "استنساخ",
@@ -253,6 +262,7 @@
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تحويل الصوت",
@@ -278,6 +288,7 @@
    "app/public/js/10_studio.js:2198",
    "app/public/js/10_studio.js:2193"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "جيميني",
@@ -303,6 +314,7 @@
   "proof": [
    "app/public/js/10_studio.js:4112"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إخراج الصوت",
@@ -327,6 +339,7 @@
   "proof": [
    "app/public/js/50_autoedit.js:1191"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حوار",
@@ -353,6 +366,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/heygen-tts.test.mjs",
    "kosif-one/vendor/hyperframes/skills/media-use/audio/references/tts.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "طوابع الكلمات",
@@ -378,6 +392,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/audio.test.mjs",
    "kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/wait-bgm.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "محرك الصوت",
@@ -404,6 +419,7 @@
    "kosif-atlas/skills/3214-togetherai-skills/13585-together-audio",
    "kosif-atlas/skills/3214-togetherai-skills/13585-together-audio/references/tts-models.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "توغيذر",
@@ -427,6 +443,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-source-router/references/providers/voice-director-v10.4.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مخرج الصوت",
@@ -453,6 +470,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-audio/SKILL.md",
    "kosif-atlas/skills/166-demo-video/535-demo-video/references/scene-design-system.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كلمات في الثانية",
@@ -479,6 +497,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/tts.md",
    "kosif-atlas/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "سرعة الإلقاء",
@@ -505,6 +524,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/narration.md",
    "100-superskills/skills/voiceover-tts-direction/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نطق",
@@ -532,6 +552,7 @@
    "kosif-atlas/skills/2836-video-guide/11537-video-guide-creator/SKILL.md",
    "kosif-one/vendor/brag/skills/brag/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-1stnoel-c20a89"
   ],
@@ -558,6 +579,7 @@
    "100-superskills/skills/voiceover-tts-direction/SKILL.md",
    "kosif-one/tools/kosif-omni/skills/kosif-audio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ssml",
@@ -582,6 +604,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/script-format.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "سكربت مقفل",
@@ -604,6 +627,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-voice/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لهجات",
@@ -631,6 +655,7 @@
    "fastify-motion-bro/docs/QUESTIONS.md:6",
    "fastify-motion-bro/scripts/cli.mjs:14"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "اللهجة",
@@ -656,6 +681,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-voice/SKILL.md",
    "app/public/js/10_studio.js:4112"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مصري",
@@ -682,6 +708,7 @@
    "fastify-motion-bro/tests/production-profiles.test.mjs:41",
    "run here 2026-10-16: node --test tests/production-profiles.test.mjs → 10/10"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "راوي وثائقي",
@@ -707,6 +734,7 @@
    "fastify-motion-bro/scripts/profiles/fitness.mjs:16",
    "run here 2026-10-16: production-profiles tests 10/10"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مدرب",
@@ -731,6 +759,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-audio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تسجيل",
@@ -754,6 +783,7 @@
   "proof": [
    "100-superskills/skills/language-coach-arabic-english/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-1stnoel-c20a89"
   ],
@@ -781,6 +811,7 @@
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/voiceover.md",
    "kosif-atlas/skills/166-demo-video/535-demo-video/references/scene-design-system.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-1stnoel-c20a89"
   ],
@@ -809,6 +840,7 @@
    "kosif-tool/tools/words_convert.py",
    "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "توقيت الكلمات",
@@ -834,6 +866,7 @@
    "kosif-tool/playbooks/audio-sync.md:26",
    "kosif-tool/tools/words_convert.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "محاذاة",
@@ -860,6 +893,7 @@
    "style:pm-linearuncle-5d2bae",
    "kosif-tool/playbooks/audio-sync.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-1stnoel-c20a89",
    "doodle",
@@ -890,6 +924,7 @@
    "style:doodle",
    "kosif-tool/playbooks/audio-sync.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-1stnoel-c20a89",
    "doodle"
@@ -916,6 +951,7 @@
   "proof": [
    "style:pm-rossaxbt-3085b7"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
@@ -941,6 +977,7 @@
   "proof": [
    "style:pm-sudo-kiran-6609ed"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sudo-kiran-6609ed"
   ],
@@ -967,6 +1004,7 @@
    "style:pm-tak3sh8-be5012",
    "style:pm-lemomo-ai-0d9cff"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-tak3sh8-be5012",
    "pm-lemomo-ai-0d9cff",
@@ -999,6 +1037,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/reel.py:38",
    "run here 2026-10-16: chain + loudnorm → −15.9 LUFS"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تنظيف الصوت",
@@ -1026,6 +1065,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/presets.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إصلاح الصوت",
@@ -1052,6 +1092,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/presets.md",
    "run here 2026-10-16: tel.wav / mega.wav / reverb.wav rendered"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "هاتف",
@@ -1079,6 +1120,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md",
    "100-superskills/skills/kosif-montage-motion/references/operating-manual.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عزل الصوت",
@@ -1105,6 +1147,7 @@
    "kosif-one/tools/kosif-studio/motion/voice.py",
    "run here 2026-10-16: sidechaincompress −31.5 → −48.5 dB"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
@@ -1132,6 +1175,7 @@
    "run here 2026-10-16: verify_video 11/11 PASS",
    "kosif-studio/motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "جهارة",
@@ -1158,6 +1202,7 @@
    "kosif-atlas/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift",
    "kosif-atlas/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "وصل الصوت",
@@ -1183,6 +1228,7 @@
    "kosif-audit-studio/cloudflare/realtime-worker.js",
    "kosif-earth-ci-fork/ui/audit/classic/voice.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مساعد صوتي",
@@ -1208,6 +1254,7 @@
    "kosif-audit-studio/voice.js:204",
    "kosif-audit-studio/voice.js:351"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مقاطعة",
@@ -1232,6 +1279,7 @@
    "kosif-audit-studio/tests/voice.test.js",
    "run here 2026-10-16: voice.test.js 3/3"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نوايا",
@@ -1257,6 +1305,7 @@
    "kosif-audit-studio/styles.css:823",
    "kosif-audit-studio/app.js:2049"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-1stnoel-c20a89"
   ],
@@ -1284,6 +1333,7 @@
    "kosif-audit-studio/styles.css:810",
    "kosif-audit-studio/studio.css:118"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "زر الميكروفون",
@@ -1307,6 +1357,7 @@
   "proof": [
    "kosif-audit-studio/voice.js:259"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ميكروفون",
@@ -1330,6 +1381,7 @@
   "proof": [
    "kosif-audit-studio/audio-export.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تسجيل",
@@ -1354,6 +1406,7 @@
    "kosif-atlas/skills/1511-homie/3892-music/references/RIGHTS.md",
    "kosif-one/tools/kosif-omni/skills/kosif-voice/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أخلاقيات",
@@ -1379,6 +1432,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-voice/SKILL.md",
    "kosif-tool/tools/verify_video.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "إيصال",
@@ -1403,6 +1457,7 @@
    "kosif-atlas/skills/1847-elevenlabs-pack/5516-elevenlabs-cost-tuning",
    "kosif-atlas/skills/1847-elevenlabs-pack/5522-elevenlabs-performance-tuning"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تكلفة",

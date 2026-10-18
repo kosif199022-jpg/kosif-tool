@@ -556,7 +556,7 @@ def cmd_search(powers, _styles, a) -> int:
 
 
 SHOW_KEYS = ("id", "family", "domain", "name_ar", "name_en", "status", "what", "when", "how", "params", "install",
-             "license", "proof", "styles", "tags", "section", "source")
+             "license", "proof", "proof_scope", "styles", "tags", "section", "source")
 
 
 def cmd_show(powers, _styles, a) -> int:

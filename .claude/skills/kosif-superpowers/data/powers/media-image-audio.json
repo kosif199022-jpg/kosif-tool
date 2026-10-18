@@ -15,6 +15,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pillow",
@@ -45,6 +46,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "arabic_reshaper",
@@ -73,6 +75,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ocr",
@@ -101,6 +104,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ocr digits",
@@ -129,6 +133,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "deskew",
@@ -156,6 +161,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "preprocessing",
@@ -180,6 +186,7 @@
   "install": "pip install easyocr",
   "license": "Apache-2.0",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "easyocr",
@@ -207,6 +214,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "opencv",
@@ -234,6 +242,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "webp",
@@ -262,6 +271,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "palette",
@@ -290,6 +300,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "qr code",
@@ -318,6 +329,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
    "session-2026-10-16:env-probe.md#5-real-install-tests"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "imagemagick",
@@ -345,6 +357,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "svg",
@@ -373,6 +386,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "vision",
@@ -400,6 +414,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "test signal",
@@ -427,6 +442,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pitch",
@@ -454,6 +470,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "onset",
@@ -483,6 +500,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
    "session-2026-10-16:general-arsenal.md#full-table"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "lufs",
@@ -510,6 +528,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "loudnorm",
@@ -537,6 +556,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "silence",
@@ -565,6 +585,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "waveform",
@@ -593,6 +614,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pydub",
@@ -620,6 +642,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "transcode",
@@ -648,6 +671,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "pedalboard",
@@ -673,6 +697,7 @@
   "install": "pip install faster-whisper",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "whisper",
@@ -698,6 +723,7 @@
   "install": "pip install demucs",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "demucs",
@@ -722,6 +748,7 @@
   "install": "pip install rembg",
   "license": "MIT",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "rembg",
@@ -746,6 +773,7 @@
   "install": "apt-get install libimage-exiftool-perl",
   "license": "Artistic/GPL (exiftool)",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "exif",
@@ -771,6 +799,7 @@
   "install": "",
   "license": "",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "higgsfield",
@@ -797,6 +826,7 @@
   "install": "pip install pillow-heif",
   "license": "BSD-3-Clause",
   "proof": [],
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "heic",

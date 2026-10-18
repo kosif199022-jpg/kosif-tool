@@ -16,6 +16,7 @@
    "kosif-tool/styles/pixel-art/SKILL.md",
    "style:pm-hoyoyoda-3a5c08"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pixel-art",
    "pm-hoyoyoda-3a5c08",
@@ -46,6 +47,7 @@
    "kosif-atlas/skills/2460-pixel-art/9526-scene/SKILL.md",
    "kosif-atlas/skills/2460-pixel-art/9530-vfx/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "دثر",
@@ -73,6 +75,7 @@
    "100-superskills/skills/pixel-art-game-assets/SKILL.md:22",
    "style:pm-aisongman-71ffac"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-aisongman-71ffac"
   ],
@@ -100,6 +103,7 @@
    "100-superskills/skills/pixel-art-game-assets/SKILL.md:24",
    "style:pm-allforbigfire-86ff3c"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-allforbigfire-86ff3c"
   ],
@@ -128,6 +132,7 @@
    "kosif-atlas/skills/1526-gamegen/4172-game-tilesets/SKILL.md",
    "100-superskills/skills/pixel-art-game-assets/references/sources.md:9"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بلاطات",
@@ -154,6 +159,7 @@
    "kosif-tool/styles/pm-0xevinho-3777d8/BRIEF.md",
    "fastify-motion-bro/scripts/profiles/vox-history.mjs:11,50"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "على الاثنين",
@@ -179,6 +185,7 @@
    "style:pm-0xevinho-3777d8",
    "style:pm-pluginplay-3d4006"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-0xevinho-3777d8",
    "pm-pluginplay-3d4006"
@@ -210,6 +217,7 @@
    "style:pm-raphaelaubryy-4b137e",
    "style:pm-robvjourney-ce3e1a"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-emollick-8661a8",
    "pm-ivanfioravanti-bd9261",
@@ -240,6 +248,7 @@
   "proof": [
    "kosif-atlas/skills/2460-pixel-art/9526-scene/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "فاصل",
@@ -265,6 +274,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-collage-textures.md",
    "kosif-one/vendor/hyperframes/registry/blocks/halftone-field/halftone-field.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "هافتون",
@@ -293,6 +303,7 @@
    "style:pm-rneayan-474bcf",
    "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-rneayan-474bcf"
   ],
@@ -319,6 +330,7 @@
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-cinematic-titles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "شريط فيلم",
@@ -344,6 +356,7 @@
    "kosif-studio/vectorize.py:164",
    "kosif-studio/vectorize.py:188"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ملصق",
@@ -368,6 +381,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حفر",
@@ -393,6 +407,7 @@
    "style:pm-sab8a-364a5a",
    "style:pm-allforbigfire-86ff3c"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-sab8a-364a5a",
    "pm-allforbigfire-86ff3c"
@@ -422,6 +437,7 @@
    "kosif-atlas/skills/2981-designer-skill/12625-designer-skill/reference/aesthetic-systems.md",
    "style:pm-emollick-8661a8"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-emollick-8661a8"
   ],
@@ -450,6 +466,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/camcorder-hud/camcorder-hud.html",
    "kosif-one/vendor/hyperframes/registry/blocks/yt-lcd-background/yt-lcd-background.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "شاشة",
@@ -475,6 +492,7 @@
    "style:pm-spearwtf-3c1fd1",
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-spearwtf-3c1fd1"
   ],
@@ -500,6 +518,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/oscilloscope-trace/oscilloscope-trace.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أوسيلوسكوب",
@@ -525,6 +544,7 @@
    "kosif-tool/styles/retrowave/STYLE.json",
    "style:pm-rendesr-86be44"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-rendesr-86be44"
   ],
@@ -552,6 +572,7 @@
    "kosif-atlas/skills/2981-designer-skill/12625-designer-skill/reference/aesthetic-systems.md",
    "kosif-atlas/skills/342-kernel/1223-frontend/motion/haunted-machine.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تليمتري",
@@ -580,6 +601,7 @@
    "style:pm-rames-jusso-589f80",
    "style:pm-jacksonfall-54b2ac"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-rames-jusso-589f80",
    "pm-jacksonfall-54b2ac"
@@ -607,6 +629,7 @@
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
    "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/examples/webgl/halftone.frag"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "خلايا",
@@ -635,6 +658,7 @@
    "kosif-one/vendor/hyperframes/registry/components/ordered-dither-pass/ordered-dither-pass.html",
    "style:pm-anthonyriera-9b1b2a"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-anthonyriera-9b1b2a"
   ],
@@ -661,6 +685,7 @@
   "proof": [
    "style:pm-ayushunleashed-ece3e3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ayushunleashed-ece3e3"
   ],
@@ -689,6 +714,7 @@
    "kosif-studio/tests/test_studio.py:639",
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "غليتش",
@@ -713,6 +739,7 @@
    "kosif-studio/motion/kit/three-kit.js:916",
    "kosif-studio/motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "غليتش",
@@ -740,6 +767,7 @@
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitive-catalog.md",
    "kosif-one/vendor/hyperframes/registry/components/scan-band/scan-band.html"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-ghinaiya-nirmal-5d8fec"
   ],
@@ -769,6 +797,7 @@
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:20",
    "fastify-motion-bro/tests/production-profiles.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ثيم",
@@ -794,6 +823,7 @@
   "proof": [
    "100-superskills/skills/trend-animation-styles/references/styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لوفاي",
@@ -820,6 +850,7 @@
    "kosif-atlas/skills/3593-bespoke-design-system/14409-bespoke-design-system/source-design-systems/pacman/DESIGN.md",
    "kosif-atlas/skills/3593-bespoke-design-system/14409-bespoke-design-system/source-design-systems/neobrutalism/DESIGN.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ريترو",
@@ -847,6 +878,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "led",

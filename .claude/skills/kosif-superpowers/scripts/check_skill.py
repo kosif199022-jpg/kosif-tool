@@ -257,6 +257,11 @@ def check_records(r: Report, rows):
                 r.err("records", f"{rid}: 👁 seen is for motion powers only")
         if st == "proven" and not rec.get("proof"):
             r.err("records", f"{rid}: ✅ proven needs at least one proof entry")
+        scope = rec.get("proof_scope")
+        if scope is not None and scope not in PROOF_SCOPES:
+            r.err("records", f"{rid}: proof_scope {scope!r} must be one of {PROOF_SCOPES}")
+        if st == "proven" and scope in (None, "none", "missing"):
+            r.err("records", f"{rid}: ✅ proven needs proof_scope repo/session/archive/sibling/receipt (run scripts/relabel_proofs.py)")
         if rec.get("name_ar") and not re.search(r"[؀-ۿ]", rec["name_ar"]):
             bad["name_ar without Arabic letters"] += 1
         if rec.get("name_en") and not re.search(r"[A-Za-z]", rec["name_en"]):
@@ -269,6 +274,10 @@ def check_records(r: Report, rows):
 # ------------------------------------------------------------------ proofs
 
 PROOF_SKIP = ("style:", "owner-upload:", "session-", "http://", "https://")
+# proof_scope: where a record's best proof lives. repo = a file in this repository (verifiable here);
+# session = a dated run log; archive = an owner upload; sibling = a file in one of the owner's other repositories;
+# receipt = a free-text run receipt; style/url = reference only; none/missing = not a valid state for ✅.
+PROOF_SCOPES = ("repo", "session", "archive", "sibling", "receipt", "style", "url", "missing", "none")
 
 
 def resolve_proof(p: str):

@@ -15,6 +15,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/SKILL.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10335-visualization-strategy-and-critique/references/chart-selection-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "map or chart",
@@ -40,6 +41,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/adaptive-basemaps-and-layer-stacks.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "basemap",
@@ -67,6 +69,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/choropleths-symbols-and-flows.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "choropleth",
@@ -95,6 +98,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/projections-and-normalization.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/deckgl-d3-geo-stack-selection.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "projection",
@@ -122,6 +126,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/choropleths-symbols-and-flows.md",
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/references/color_palettes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "normalization",
@@ -147,6 +152,7 @@
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/point-overlap-strategies.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "cluster",
@@ -173,6 +179,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/multiscale-symbols-and-zoom-behavior.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/references/svg-polish-and-crispness.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "zoom",
@@ -199,6 +206,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/source-method-and-coordinate-ledger.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ledger",
@@ -227,6 +235,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/adaptive-basemaps-and-layer-stacks.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "sensitive",
@@ -253,6 +262,7 @@
    "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/maps/module.md",
    "kosif-one/vendor/hyperframes/skills/motion-graphics/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "signatures",
@@ -282,6 +292,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/slippy-map-and-product-stack-selection.md",
    "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/maps/module.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "engine",
@@ -308,6 +319,7 @@
   "proof": [
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/static-map/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "static map",
@@ -335,6 +347,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maplibre/TECHNIQUE.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/render-stability.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "maplibre",
@@ -363,6 +376,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/TECHNIQUE.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "shimmer",
@@ -389,6 +403,7 @@
    "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/maps/bake-basemap.mjs",
    "kosif-one/vendor/hyperframes/skills/motion-graphics/categories/maps/module.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "satellite",
@@ -416,6 +431,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "mapbox",
@@ -442,6 +458,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-explainer-architecture.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/assets/tokens.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "maptiler",
@@ -468,6 +485,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-flyover-architecture.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-troubleshooting.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "cesium",
@@ -494,6 +512,7 @@
   "proof": [
    "kosif-atlas/skills/368-amazon-location-service/1365-amazon-location-service/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "aws",
@@ -518,6 +537,7 @@
    "kosif-atlas/skills/2761-charly-versa/10958-versatiles-style/SKILL.md",
    "kosif-atlas/skills/2761-charly-versa/10956-versatiles-fonts/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "versatiles",
@@ -544,6 +564,7 @@
    "kosif-atlas/skills/2761-charly-versa/10956-versatiles-fonts/SKILL.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maplibre/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "sdf",
@@ -571,6 +592,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-geo-prep.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "declutter",
@@ -596,6 +618,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-data-sources.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "geojson",
@@ -621,6 +644,7 @@
    "kosif-atlas/skills/2307-geospatial-engineering/8857-serve-vector-tiles/SKILL.md",
    "kosif-atlas/skills/1650-portaljs/4640-portaljs-add-map/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "geojson",
@@ -646,6 +670,7 @@
    "kosif-atlas/skills/1650-portaljs/4639-portaljs-add-geo/SKILL.md",
    "kosif-atlas/skills/2761-charly-versa/10951-osm-tools-layer/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "pmtiles",
@@ -671,6 +696,7 @@
    "kosif-atlas/skills/1366-duckdb-skills/3111-spatial/SKILL.md",
    "kosif-atlas/skills/1366-duckdb-skills/3111-spatial/references/functions.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "duckdb",
@@ -696,6 +722,7 @@
    "kosif-atlas/skills/1366-duckdb-skills/3111-spatial/references/overture.md",
    "kosif-atlas/skills/1366-duckdb-skills/3111-spatial/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "overture",
@@ -722,6 +749,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-flyover-architecture.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/scripts/prep-geo.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "osm",
@@ -750,6 +778,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-flyover-architecture.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-troubleshooting.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "camera path",
@@ -777,6 +806,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-geo-prep.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/scripts/prep-geo.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "label placement",
@@ -803,6 +833,7 @@
    "kosif-earth-ci-fork/app/src/engine/fusion/sales/sales-geo-engine.ts:51",
    "kosif-earth-ci-fork/app/src/engine/fusion/sales/sales-geo-engine.test.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "arabic",
@@ -830,6 +861,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maplibre/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "great circle",
@@ -859,6 +891,7 @@
    "kosif-tool/styles/map-journey/STYLE.json",
    "style:map-journey"
   ],
+  "proof_scope": "repo",
   "styles": [
    "map-journey"
   ],
@@ -889,6 +922,7 @@
   "proof": [
    "style:map-journey"
   ],
+  "proof_scope": "style",
   "styles": [
    "map-journey"
   ],
@@ -916,6 +950,7 @@
    "style:map-journey",
    "app/public/js/10_studio.js:737"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "map-journey"
   ],
@@ -944,6 +979,7 @@
   "proof": [
    "style:map-journey"
   ],
+  "proof_scope": "style",
   "styles": [
    "map-journey"
   ],
@@ -972,6 +1008,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-data-infographics.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "timeline",
@@ -997,6 +1034,7 @@
   "proof": [
    "style:pm-ercankeskinx-ec2568"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ercankeskinx-ec2568"
   ],
@@ -1024,6 +1062,7 @@
   "proof": [
    "style:pm-marklaunches-3b9492"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-marklaunches-3b9492"
   ],
@@ -1052,6 +1091,7 @@
    "kosif-tool/styles/documentary-map/STYLE.json",
    "kosif-tool/playbooks/diagrams.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "documentary-map"
   ],
@@ -1081,6 +1121,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/nyc-paris-flight/nyc-paris-flight.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/nyc-paris-flight.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "flight",
@@ -1106,6 +1147,7 @@
   "proof": [
    "kosif-one/projects/egypt-2120-animation/index.html:185-201"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "arcs",
@@ -1133,6 +1175,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:255",
    "kosif-studio/motion/kit/three-kit.js:255"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "river",
@@ -1161,6 +1204,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/references/map-geo-prep.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maptiler/assets/tokens.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "river",
@@ -1189,6 +1233,7 @@
    "kosif-earth-ci-fork/app/src/engine/fusion/sales/sales-geo-engine.test.ts",
    "kosif-earth-ci-fork/ui/features/sales-map.js:49"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "saudi",
@@ -1218,6 +1263,7 @@
    "kosif-earth-ci-fork/ui/features/sales-map.js:39",
    "kosif-earth-ci-fork/app/src/engine/fusion/sales/sales-geo-engine.ts:87"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "palette",
@@ -1247,6 +1293,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/spain-map/spain-map.html",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/world-map.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "choropleth",
@@ -1274,6 +1321,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/us-map-bubble/us-map-bubble.html",
    "kosif-one/vendor/hyperframes/registry/blocks/us-map-bubble/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "bubble map",
@@ -1298,6 +1346,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/us-map-flow/us-map-flow.html",
    "kosif-one/vendor/hyperframes/registry/blocks/us-map-flow/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "flow map",
@@ -1324,6 +1373,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/us-map-hex/us-map-hex.html",
    "kosif-one/vendor/hyperframes/registry/blocks/us-map-hex/registry-item.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "hex map",
@@ -1349,6 +1399,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/north-korea-locked-down/registry-item.json",
    "kosif-one/vendor/hyperframes/docs/catalog/blocks/north-korea-locked-down.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "zoom",
@@ -1375,6 +1426,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/maplibre/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "markers",
@@ -1400,6 +1452,7 @@
   "proof": [
    "style:pm-danilowm-d3720d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-danilowm-d3720d"
   ],
@@ -1427,6 +1480,7 @@
   "proof": [
    "style:pm-blushpetal795-0c85c2"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-blushpetal795-0c85c2"
   ],
@@ -1454,6 +1508,7 @@
   "proof": [
    "style:pm-ratheejaisal-1f4538"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ratheejaisal-1f4538"
   ],
@@ -1480,6 +1535,7 @@
   "proof": [
    "style:pm-jesscaroline7-1ff7cb"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-jesscaroline7-1ff7cb"
   ],
@@ -1506,6 +1562,7 @@
    "fastify-motion-bro/scripts/profiles/vox-history.mjs:15-18",
    "fastify-motion-bro/tests/production-profiles.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "archival",
@@ -1532,6 +1589,7 @@
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/examples/earth-shader.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "earth",
@@ -1560,6 +1618,7 @@
   "proof": [
    "kosif-one/projects/egypt-2120-animation/index.html:168-202"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "night lights",
@@ -1590,6 +1649,7 @@
    "style:pm-hbcoop-de365c",
    "style:pm-steventey-0d20e4"
   ],
+  "proof_scope": "style",
   "styles": [
    "infographic",
    "pm-hbcoop-de365c",
@@ -1621,6 +1681,7 @@
    "style:pm-manuelogomigo-f33ca9",
    "style:pm-steventey-0d20e4"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-deifosv-04e4d3",
    "pm-manuelogomigo-f33ca9",
@@ -1651,6 +1712,7 @@
   "proof": [
    "style:pm-madhav-xo-f97f20"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-madhav-xo-f97f20"
   ],

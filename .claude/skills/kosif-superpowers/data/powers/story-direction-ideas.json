@@ -16,6 +16,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/pitch-round.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "استقبال",
@@ -44,6 +45,7 @@
    "app/public/js/10_studio.js:928",
    "fastify-motion-bro/docs/PROFILE_CATALOG.md:5-17"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "موجه",
@@ -72,6 +74,7 @@
    "kosif-studio/motion/proplan.py:84",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/ultra_animator.py:104"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "خطة",
@@ -100,6 +103,7 @@
    "kosif-tool/web/generator.js",
    "kosif-tool/tests/test_generator.mjs"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "طلب",
@@ -127,6 +131,7 @@
    "kosif-atlas/skills/1995-hypotyposis/7163-sketch",
    "kosif-tool/STYLE_INDEX.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "اتجاهات",
@@ -152,6 +157,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-studio/SKILL.md",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:883"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مراجعة",
@@ -176,6 +182,7 @@
    "kosif-one/tools/kosif-one/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/media-use/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قائمة فحص",
@@ -202,6 +209,7 @@
    "kosif-tool/tests/test_templates.py",
    "fastify-motion-bro/scripts/planner.mjs:25-35"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "خطة",
@@ -228,6 +236,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen/SKILL.md",
    "100-superskills/skills/kosif-montage-motion/references/video-breakdown.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عقد المشهد",
@@ -253,6 +262,7 @@
    "kosif-one/projects/water-cycle-animation/DESIGN.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/storyboard-recipe.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لوحات",
@@ -279,6 +289,7 @@
    "100-superskills/skills/storyboard-shotlist/SKILL.md:23",
    "kosif-atlas/skills/1096-akbun-editvideo/2449-akbun-vlog-storyboard"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "جدول نبضات",
@@ -303,6 +314,7 @@
    "kosif-studio/motion/references/motion-director.md",
    "100-superskills/skills/kosif-montage-motion/references/motion-director.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نوتة حركة",
@@ -329,6 +341,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-video/SKILL.md",
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "سينما",
@@ -356,6 +369,7 @@
    "fastify-motion-bro/tests/production-profiles.test.mjs",
    "fastify-motion-bro/docs/PRODUCTION-GATES.md:5"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قفل",
@@ -381,6 +395,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/scripts/recipe.mjs",
    "kosif-one/vendor/hyperframes/skills/media-use/references/memory.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ذاكرة",
@@ -408,6 +423,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md",
    "kosif-atlas/skills/1503-universal-design-principles/3791-expectation-effect-design-cues"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "خطاف",
@@ -435,6 +451,7 @@
    "kosif-one/vendor/hyperframes/skills/faceless-explainer/references/story-design.md",
    "kosif-atlas/skills/1520-digital-marketing-pro/4133-video-script/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "خطافات",
@@ -459,6 +476,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2441-akbun-davinciresolve-searchhook/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2441-akbun-davinciresolve-searchhook/references/hook-principles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "فلوج",
@@ -483,6 +501,7 @@
    "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director",
    "kosif-atlas/skills/2375-sales-engineering/9185-demo-design/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أول إطار",
@@ -511,6 +530,7 @@
    "style:pm-spearwtf-3c1fd1",
    "style:pm-gizakdag-b8c59e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-justincooperman-e7bbc4",
    "pm-kloss-xyz-b9b3f6",
@@ -543,6 +563,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-video/scripts/story_lint.py:32",
    "kosif-one/tools/kosif-omni/skills/kosif-video/references/story-conflict.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صراع",
@@ -571,6 +592,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/omni/story_lint.py:24",
    "kosif-atlas/skills/1213-story-skills/2883-scene-craft/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إطار سردي",
@@ -598,6 +620,7 @@
    "kosif-one/tools/kosif-studio/motion/references/motion-craft.md",
    "kosif-one/tools/kosif-omni/skills/kosif-video/references/story-conflict.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قوس",
@@ -623,6 +646,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:31",
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "5 ثوان",
@@ -651,6 +675,7 @@
    "style:pm-gonzalomacagno-2de1a9",
    "style:pm-techhalla-7acbc2"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-gonzalomacagno-2de1a9",
    "pm-techhalla-7acbc2"
@@ -683,6 +708,7 @@
    "style:pm-0xnfrith-5be616",
    "style:pm-ai-baymax-0ef9dd"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-0xnfrith-5be616",
    "pm-ai-baymax-0ef9dd"
@@ -713,6 +739,7 @@
    "style:pm-ajith-io-4c248f",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/overwhelm-surround.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-ajith-io-4c248f"
   ],
@@ -743,6 +770,7 @@
    "style:pm-tankazunori0914-0fc886",
    "style:pm-majorbaguette-fb11d7"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-blueoctopusai-dd17bd",
    "pm-tankazunori0914-0fc886",
@@ -774,6 +802,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2463-davinciresolve-style-reflection/SKILL.md",
    "kosif-atlas/skills/3067-youtube/13229-creator-visual-director"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "طول اللقطة",
@@ -802,6 +831,7 @@
    "kosif-atlas/skills/1520-digital-marketing-pro/4133-video-script/SKILL.md",
    "kosif-atlas/skills/1817-youtube-strategy/4867-yt-outline/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "يوتيوب",
@@ -829,6 +859,7 @@
    "style:pm-theparuchh-6e08c3",
    "style:pm-kamstudiolabs-0b0824"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-theparuchh-6e08c3",
    "pm-kamstudiolabs-0b0824"
@@ -859,6 +890,7 @@
    "kosif-atlas/skills/3455-business-analytics/14161-data-storytelling/references/details.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قصة بيانات",
@@ -884,6 +916,7 @@
    "100-superskills/skills/pitch-deck-investor/SKILL.md",
    "kosif-atlas/skills/198-product-skills/634-landing-page-generator"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عرض تقديمي",
@@ -910,6 +943,7 @@
    "style:pm-abderrahmen-g-9e8ed0",
    "style:pm-nikolajankovic-ce4ff4"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-abderrahmen-g-9e8ed0",
    "pm-nikolajankovic-ce4ff4"
@@ -938,6 +972,7 @@
    "kosif-studio/motion/references/motion-director.md",
    "kosif-atlas/skills/2976-pwdev-social-media/12583-creative-concept/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أطروحة",
@@ -964,6 +999,7 @@
    "kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/signature-moments.md",
    "kosif-atlas/skills/3067-youtube/13229-creator-visual-director/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "توقيع",
@@ -990,6 +1026,7 @@
    "kosif-atlas/skills/880-superloopy/1941-superloopy-frontend/references/anti-slop.md",
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ممنوعات",
@@ -1017,6 +1054,7 @@
    "kosif-atlas/skills/342-kernel/1223-frontend/motion/haunted-machine.md",
    "kosif-tool/tools/render_html.cjs"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "شخصية الحركة",
@@ -1044,6 +1082,7 @@
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
    "kosif-atlas/skills/1503-universal-design-principles/3731-archetypes-brand-voice"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "فخم",
@@ -1070,6 +1109,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/visual-styles.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/visual-styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أساليب",
@@ -1096,6 +1136,7 @@
    "kosif-atlas/skills/342-kernel/1223-frontend/variants/abyss.md",
    "kosif-atlas/skills/1394-stark/3329-web-design"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نظام جمالي",
@@ -1124,6 +1165,7 @@
    "fastify-motion-bro/AGENTS.md:13",
    "100-superskills/skills/motion-director-pro/references/motion-floor.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تصميم حركة",
@@ -1150,6 +1192,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/beat-direction.md",
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إخراج النبضة",
@@ -1175,6 +1218,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-visual-aesthetics-council/SKILL.md",
    "app/public/js/00_editor.js:2394"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نقد",
@@ -1202,6 +1246,7 @@
    "fastify-motion-bro/AGENTS.md:8",
    "kosif-atlas/skills/2690-build-web-data-visualization/10335-visualization-strategy-and-critique/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مرجع",
@@ -1229,6 +1274,7 @@
    "kosif-studio/tests/test_audio2motion.py:43",
    "app/public/js/10_studio.js:2787"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صدق",
@@ -1257,6 +1303,7 @@
    "style:pm-leonkohli-6dc01b",
    "style:pm-hbcoop-de365c"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-1littlecoder-9fef89",
    "pm-leonkohli-6dc01b",
@@ -1289,6 +1336,7 @@
    "kosif-studio/motion/verse.py:280",
    "kosif-studio/tests/test_studio.py:910"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ذروة",
@@ -1315,6 +1363,7 @@
    "kosif-studio/motion/verse.py:322",
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:103,110-111"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "رمز",
@@ -1344,6 +1393,7 @@
    "style:pm-nolkeeg-bf062e",
    "style:pm-shinskinakamoto-20190b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-codestackr-c071bf",
    "pm-elliot-garreffa-f334bc",
@@ -1381,6 +1431,7 @@
    "style:pm-levabashidze-2d713a",
    "style:pm-linearuncle-5d2bae"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gigabit-million-16b3a0",
    "pm-motiondsgnr-9dcfa6",
@@ -1415,6 +1466,7 @@
    "style:pm-web3wesley-7bb108",
    "kosif-tool/styles/pm-jake11moran-a269c4/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "pm-rebutonepress-810f78",
    "pm-pankajkumar-dev-0bee87",
@@ -1448,6 +1500,7 @@
    "style:pm-micheleharmonic-77628e",
    "style:pm-kantamk-61f410"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-lester-tyy-f897f7",
    "pm-marklaunches-3b9492",
@@ -1482,6 +1535,7 @@
    "kosif-earth-ci-fork/tools/crystal_world.test.mjs",
    "style:pm-emollick-8661a8"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-sudo-kiran-b055de",
    "pm-sachaarbonel-8f14f4",
@@ -1516,6 +1570,7 @@
    "style:pm-jake11moran-a269c4",
    "style:pm-robj3d3-b18fad"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-gorden-sun-041f56",
    "pm-0xevinho-3777d8",
@@ -1553,6 +1608,7 @@
    "style:plotter",
    "style:pm-parkerrex-1a54fe"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aschapmann-131210",
    "pm-henkvaness-0e06af",
@@ -1584,6 +1640,7 @@
    "style:fake3d",
    "kosif-tool/styles/pm-mandelduck-95fd08/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [
    "fake3d"
   ],
@@ -1613,6 +1670,7 @@
    "style:pm-rebutonepress-810f78",
    "style:pm-ibrahimwasim240-809370"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-koldo2k-5cff87",
    "pm-kamstudiolabs-447565",
@@ -1644,6 +1702,7 @@
    "kosif-studio/tests/test_studio.py:910",
    "100-superskills/skills/kosif-montage-motion/scripts/direct.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مونتاج مُخرج",
@@ -1670,6 +1729,7 @@
    "kosif-studio/out/FINAL_EDIT/EDIT_NOTES.txt",
    "100-superskills/skills/kosif-montage-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تحفيزي",
@@ -1697,6 +1757,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_launch.py",
    "kosif-one/vendor/brag/skills/brag/references/step-1-inspect.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إطلاق",
@@ -1723,6 +1784,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:38",
    "kosif-studio/out/kosif_motion_showreel.mp4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ريل عرض",
@@ -1748,6 +1810,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:40",
    "100-superskills/skills/kosif-montage-motion/references/STRUCTURAL_TWIN.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مختبر",
@@ -1773,6 +1836,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/README.txt:12",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:124"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بلا كلام",
@@ -1798,6 +1862,7 @@
    "fastify-motion-bro/scripts/profiles/stickman.mjs:9-17",
    "fastify-motion-bro/tests/production-profiles.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ستيكمان",
@@ -1822,6 +1887,7 @@
    "fastify-motion-bro/scripts/profiles/character-romance.mjs:10-29",
    "fastify-motion-bro/skills/character-romance/SKILL.md:12"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حب",
@@ -1846,6 +1912,7 @@
    "fastify-motion-bro/scripts/profiles/food-flow.mjs:62-80",
    "fastify-motion-bro/tests/production-profiles.test.mjs:48-55"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "طبخ",
@@ -1871,6 +1938,7 @@
    "fastify-motion-bro/tests/viral-editorial.test.mjs",
    "fastify-motion-bro/skills/viral-editorial/SKILL.md:7-13"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "فيرال",
@@ -1896,6 +1964,7 @@
    "kosif-one/projects/thursday-dua-animation/source/index.html",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "دعاء",
@@ -1922,6 +1991,7 @@
    "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:19-27",
    "kosif-one/projects/KOSIF_Motion_Ghorba/MONTAGE_REUSE_RUNBOOK_AR.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "غربة",
@@ -1947,6 +2017,7 @@
    "kosif-one/projects/egypt-2120-animation/index.html:448-453",
    "kosif-one/projects/egypt-2120-animation/index.html:218-221"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مصر",
@@ -1971,6 +2042,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نجاح",
@@ -1997,6 +2069,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2460-davinciresolve-story-devtalk/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2451-davinciresolve-beats-devtalk/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صانع محتوى",
@@ -2022,6 +2095,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2433-akbun-davinciresolve-cut-new-york/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2465-davinciresolve-subtitle-travelnote/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مدينة",
@@ -2048,6 +2122,7 @@
    "app/public/js/10_studio.js:913",
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:24"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "قوالب",
@@ -2073,6 +2148,7 @@
    "kosif-studio/scenes/whale_dragon.py:1",
    "kosif-studio/scenes/dragon_girl.py:129"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "لوحة",
@@ -2098,6 +2174,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/creative-worlds.md",
    "style:pm-allforbigfire-86ff3c"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-allforbigfire-86ff3c"
   ],
@@ -2127,6 +2204,7 @@
    "kosif-atlas/skills/1817-youtube-strategy/4866-yt-ideation/SKILL.md",
    "kosif-atlas/skills/1520-digital-marketing-pro/4132-video-packaging/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أفكار",
@@ -2152,6 +2230,7 @@
    "kosif-atlas/skills/1181-transcript-to-content-pipeline/2789-transcript-to-content-pipeline/instructions.md",
    "kosif-atlas/skills/1520-digital-marketing-pro/4122-story-mine/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نقاط",
@@ -2179,6 +2258,7 @@
    "kosif-atlas/skills/1817-youtube-strategy/4868-yt-packaging/SKILL.md",
    "100-superskills/skills/arabic-copywriting/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "عناوين",
@@ -2204,6 +2284,7 @@
    "kosif-atlas/skills/1520-digital-marketing-pro/4133-video-script/SKILL.md",
    "kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "دعوة",
@@ -2227,6 +2308,7 @@
   "proof": [
    "kosif-atlas/skills/1101-akbun-writing/2486-akbun-thumbnail-review/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "غلاف",
@@ -2252,6 +2334,7 @@
    "kosif-one/tools/kosif-social/examples/plan.json",
    "kosif-atlas/skills/192-marketing-skills/611-social-content/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أعمدة المحتوى",
@@ -2277,6 +2360,7 @@
    "kosif-studio/motion/references/x-trend-2026.md",
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ترند",
@@ -2304,6 +2388,7 @@
    "kosif-earth-ci-fork/docs/design/KOSIF-LUXE.md",
    "100-superskills/skills/red-team-premortem/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "وكلاء",
@@ -2329,6 +2414,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/style_gallery.html",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/GOOGLE_DOC_DISTILLATION.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "style presets",
@@ -2355,6 +2441,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/GOOGLE_DOC_DISTILLATION.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "brief",
@@ -2378,6 +2465,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/MOTION_TECHNIQUE_LEXICON.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "lexicon",
@@ -2405,6 +2493,7 @@
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/SKILL.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "scenario",
@@ -2435,6 +2524,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/client-taste.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "client taste",
@@ -2465,6 +2555,7 @@
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "versions",
@@ -2495,6 +2586,7 @@
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/launch-film.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "estimate",
@@ -2523,6 +2615,7 @@
    "owner-upload:film_project/film/README_AR.md",
    "owner-upload:film_project/film/film.js"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "metaphor",
@@ -2552,6 +2645,7 @@
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/frontend-slides/SKILL.md"
   ],
+  "proof_scope": "url",
   "styles": [],
   "tags": [
    "previews",

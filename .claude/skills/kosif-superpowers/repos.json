@@ -1,7 +1,7 @@
 {
- "version": 1,
- "generated": "2026-10-17",
- "note": "Credited catalog of major open-source repositories whose capabilities KOSIF films draw on. Links only: nothing is vendored. Stars are rounded thousands at generation time; licenses were read from each repository page.",
+ "version": 2,
+ "generated": "2026-10-18",
+ "note": "Credited catalog of 124 major open-source repositories whose capabilities KOSIF films draw on. Links only: nothing is vendored. Stars are rounded thousands at generation time; licenses were read from each repository page.",
  "capabilities": {
   "observe": "reference acquisition and inspection: fetching permitted media, sampling frames, palette extraction, scene-cut detection, motion/optical-flow analysis",
   "animate": "motion engines, timelines, easing, path/shape morphing, physics, particles",
@@ -14,13 +14,16 @@
   "captions": "subtitle/caption formats, word-timing conversion, karaoke-style captions",
   "generate": "AI-generated images, video, 3D, talking heads and voices used as original assets within their licenses",
   "orchestrate": "Claude Code skills, agent workflows, MCP servers and browser automation for inspection and QA",
-  "design": "UI motion patterns, icon sets, design tokens, scroll and parallax libraries"
+  "design": "UI motion patterns, icon sets, design tokens, scroll and parallax libraries",
+  "mimic": "measured remake of the user's own reference: shot rhythm, transitions, overlay text, fonts and look rebuilt with new footage and the original audio",
+  "edit": "footage editing: EDL recuts, pause trimming, headless overlays and ffmpeg fallbacks for real-camera material",
+  "cinematic": "cinematic direction: engine-first routing, executed receipts, seekable-DOM renderers and reference skills behind the cinematic director"
  },
  "domains": [
   {
    "key": "web-animation",
    "title": "Web animation engines and timelines",
-   "quota": 10,
+   "quota": 11,
    "cap": "animate"
   },
   {
@@ -32,25 +35,25 @@
   {
    "key": "three-d",
    "title": "3D and WebGL",
-   "quota": 7,
+   "quota": 8,
    "cap": "space"
   },
   {
    "key": "creative-coding-2d",
    "title": "2D creative coding, SVG and Canvas",
-   "quota": 6,
+   "quota": 8,
    "cap": "draw"
   },
   {
    "key": "charts-maps",
    "title": "Charts, maps and diagrams",
-   "quota": 8,
+   "quota": 9,
    "cap": "data"
   },
   {
    "key": "speech-audio",
    "title": "Speech, audio analysis and TTS",
-   "quota": 9,
+   "quota": 16,
    "cap": "voice"
   },
   {
@@ -68,31 +71,31 @@
   {
    "key": "video-analysis",
    "title": "Video and image analysis for reference inspection",
-   "quota": 8,
+   "quota": 9,
    "cap": "observe"
   },
   {
    "key": "generative-media",
    "title": "Generative AI media (images, video, 3D, talking heads)",
-   "quota": 8,
+   "quota": 7,
    "cap": "generate"
   },
   {
    "key": "agent-workflows",
    "title": "Claude Code skills, agent workflows and MCP",
-   "quota": 7,
+   "quota": 10,
    "cap": "orchestrate"
   },
   {
    "key": "media-acquisition",
    "title": "Media acquisition and inspection of reference videos (permitted content only)",
-   "quota": 5,
+   "quota": 2,
    "cap": "observe"
   },
   {
    "key": "ui-motion-design",
    "title": "UI motion, icons and design tokens",
-   "quota": 5,
+   "quota": 7,
    "cap": "design"
   },
   {
@@ -100,6 +103,24 @@
    "title": "Color, easing, noise, physics and shape morphing",
    "quota": 5,
    "cap": "animate"
+  },
+  {
+   "key": "mimic-remake",
+   "title": "Reference remake: analysis, OCR and transitions",
+   "quota": 4,
+   "cap": "mimic"
+  },
+  {
+   "key": "footage-edit",
+   "title": "Footage editing and headless compositing",
+   "quota": 3,
+   "cap": "edit"
+  },
+  {
+   "key": "cinematic-direction",
+   "title": "Cinematic direction engines and skills",
+   "quota": 3,
+   "cap": "cinematic"
   }
  ],
  "repos": [
@@ -2353,6 +2374,504 @@
    ],
    "caveats_en": "Repo moved from amzn to its own org; v4+ is ESM-only. Token JSON must follow its nesting convention; STYLE.json likely needs a small mapping step first.",
    "verified_from": "https://github.com/amzn/style-dictionary (redirects to https://github.com/style-dictionary/style-dictionary)"
+  },
+  {
+   "owner_repo": "Graphify-Labs/graphify",
+   "name": "Graphify",
+   "stars_k": 128.0,
+   "license": "Apache-2.0 (MIT notice for parts)",
+   "license_note": "permissive",
+   "summary_en": "CLI that parses a codebase with local AST analysis into a queryable knowledge graph (graph.json) of symbols, calls, imports and tests, with no vector store.",
+   "summary_ar": "أداة سطر أوامر تحلّل الكود محليًا إلى خريطة معرفة قابلة للاستعلام (graph.json) من الرموز والاستدعاءات والاستيرادات والاختبارات، دون مخزن متجهات.",
+   "capability": "orchestrate",
+   "domain": "agent-workflows",
+   "kosif_use_en": "Before touching tools/ or the skill scripts, build the graph locally and ask who calls render_html.cjs or verify_video.py so a change to the render pipeline names its impact set first.",
+   "kosif_use_ar": "قبل تعديل tools/ أو سكربتات المهارة، ابنِ الخريطة محليًا واسأل من يستدعي render_html.cjs أو verify_video.py كي يسمّي التعديل أثره قبل التنفيذ.",
+   "integration_en": "pip install graphify (or the hosted MCP already documented in references/graphify.md); graphify index . then query callers/impact; see scripts/graphify_impact_gate.py.",
+   "playbooks": [
+    "playbooks/code.md",
+    "playbooks/render-pipeline.md"
+   ],
+   "caveats_en": "Hosted MCP is a paid, keyed service with consent and spend rules; indexes lag the working tree; graph answers are evidence, not permission to skip tests.",
+   "url": "https://github.com/Graphify-Labs/graphify",
+   "verified_from": "https://github.com/Graphify-Labs/graphify (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "affaan-m/ECC",
+   "name": "ECC (Everything Claude Code)",
+   "stars_k": 283.0,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "Agent-harness optimisation system of skills, memory, security and research-first workflows for Claude Code and other coding agents, including a receipt-gated surface ladder.",
+   "summary_ar": "نظام تحسين لحزام الوكلاء: مهارات وذاكرة وأمان وسير عمل يبدأ بالبحث، لـ Claude Code وغيره، مع سلّم أسطح مُحاط بإيصالات تنفيذ.",
+   "capability": "cinematic",
+   "domain": "cinematic-direction",
+   "kosif_use_en": "At the cinematic preflight, borrow its receipt discipline: classify every engine available/missing/untested/needs_auth and refuse 'done' without an executed receipt, as references/ecc-harness.md distils.",
+   "kosif_use_ar": "في تحضير الإخراج السينمائي استعر انضباط الإيصالات: صنّف كل محرك متاحًا أو مفقودًا أو غير مختبر أو يحتاج تفويضًا، وارفض كلمة «تم» بلا إيصال تنفيذ، كما يلخّص ecc-harness.md.",
+   "integration_en": "Read its skills as reference only; KOSIF's own receipt_gate.py and creative_quality_gate.py implement the gate; credit ECC in the plan.",
+   "playbooks": [
+    "playbooks/render-pipeline.md",
+    "playbooks/code.md"
+   ],
+   "caveats_en": "Large, fast-moving collection; skills are prompts, not code to vendor; verify each claimed tool exists before promising it.",
+   "url": "https://github.com/affaan-m/ECC",
+   "verified_from": "https://github.com/affaan-m/ECC (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "heygen-com/hyperframes",
+   "name": "HyperFrames",
+   "stars_k": 66.3,
+   "license": "Apache-2.0",
+   "license_note": "permissive",
+   "summary_en": "Write HTML, render video: a seekable-DOM renderer built for agents, with timeline components, a grade model and a CLI that captures deterministic frames.",
+   "summary_ar": "اكتب HTML واحصل على فيديو: مُصيِّر DOM قابل للبحث الزمني مصمم للوكلاء، مع مكوّنات خط زمني ونموذج تلوين وأداة تلتقط إطارات حتمية.",
+   "capability": "cinematic",
+   "domain": "cinematic-direction",
+   "kosif_use_en": "Second engine beside tools/render_html.cjs when a scene needs its timeline components or grade presets; keep seek(t) purity and check Arabic shaping in its text components before committing.",
+   "kosif_use_ar": "محرك ثانٍ بجانب render_html.cjs حين يحتاج المشهد مكوناته الزمنية أو إعدادات التلوين؛ حافظ على نقاء seek(t) وافحص تشكيل العربية في مكوناته النصية قبل الاعتماد.",
+   "integration_en": "npx hyperframes init; author the scene as HTML with its timeline tags; hyperframes render scene.html --fps 30; verify with tools/verify_video.py.",
+   "playbooks": [
+    "playbooks/render-pipeline.md",
+    "playbooks/kinetic-type.md"
+   ],
+   "caveats_en": "Some components load GSAP from a CDN at render time (GSAP has its own licence); html dir=rtl on the root has rendered black in past tests, scope RTL to text nodes.",
+   "url": "https://github.com/heygen-com/hyperframes",
+   "verified_from": "https://github.com/heygen-com/hyperframes (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "heygen-com/hyperframes-community-skills",
+   "name": "HyperFrames Community Skills",
+   "stars_k": 0.2,
+   "license": "Apache-2.0",
+   "license_note": "permissive",
+   "summary_en": "Community-maintained Claude skills for specialised HyperFrames workflows (explainers, product shots, captions) layered on the renderer.",
+   "summary_ar": "مهارات Claude يحافظ عليها المجتمع لسير عمل متخصص فوق HyperFrames (شروحات، لقطات منتج، ترجمات).",
+   "capability": "cinematic",
+   "domain": "cinematic-direction",
+   "kosif_use_en": "Scan a skill's recipe for a scene type before writing one from scratch, then rewrite it in KOSIF's own words with Arabic-first rules; never paste its prompt text into styles/.",
+   "kosif_use_ar": "اطّلع على وصفة مهارة لنوع مشهد قبل كتابتها من الصفر، ثم أعد صياغتها بكلمات KOSIF وقواعد العربية أولًا؛ لا تلصق نصها في styles/.",
+   "integration_en": "git clone and read skills/<name>/SKILL.md as reference; install only the ones you run, after checking its licence header.",
+   "playbooks": [
+    "playbooks/render-pipeline.md",
+    "playbooks/product-ui.md"
+   ],
+   "caveats_en": "Young repository (~200 stars); quality varies per skill; each depends on a HyperFrames version.",
+   "url": "https://github.com/heygen-com/hyperframes-community-skills",
+   "verified_from": "https://github.com/heygen-com/hyperframes-community-skills (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "rhasspy/piper",
+   "name": "Piper",
+   "stars_k": 11.3,
+   "license": "MIT",
+   "license_note": "model/weights license: check commercial terms",
+   "summary_en": "Fast local neural text-to-speech with per-phoneme alignment output and community voices including Arabic (ar_JO), running on ONNX Runtime without a key.",
+   "summary_ar": "تحويل نص إلى كلام عصبي محلي وسريع يخرج محاذاة لكل فونيم، بأصوات مجتمعية منها العربية (ar_JO)، يعمل على ONNX Runtime بلا مفتاح.",
+   "capability": "voice",
+   "domain": "speech-audio",
+   "kosif_use_en": "Synthesise a scratch Arabic voice-over with alignments so word onsets drive kinetic type before the client's recording arrives; proofs/arabic-voice-kinetic used it as the timing oracle.",
+   "kosif_use_ar": "ولّد تعليقًا صوتيًا عربيًا مبدئيًا مع المحاذاة كي تقود بدايات الكلمات النص الحركي قبل وصول تسجيل العميل؛ استُخدم في proofs/arabic-voice-kinetic مرجعًا زمنيًا.",
+   "integration_en": "pip install piper-tts; download ar_JO voice .onnx+.json; PiperVoice.load(...).synthesize(text, include_alignments=True) → wav + phoneme times → words.json.",
+   "playbooks": [
+    "playbooks/audio-sync.md",
+    "playbooks/kinetic-type.md"
+   ],
+   "caveats_en": "piper-tts PyPI package is GPL-3 in some releases while the repo is MIT; voice models carry their own licences; Arabic needs diacritised input for correct vowels.",
+   "url": "https://github.com/rhasspy/piper",
+   "verified_from": "https://github.com/rhasspy/piper (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "microsoft/onnxruntime",
+   "name": "ONNX Runtime",
+   "stars_k": 22.1,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "Cross-platform inference runtime for ONNX models that Piper, Whisper exports and many vision models run on; CPU path works in sandboxes.",
+   "summary_ar": "محرك استدلال متعدد المنصات لنماذج ONNX تعمل عليه Piper وتصديرات Whisper ونماذج رؤية كثيرة؛ مسار المعالج يعمل في البيئات المعزولة.",
+   "capability": "voice",
+   "domain": "speech-audio",
+   "kosif_use_en": "The silent dependency under local TTS and alignment: pin its version in the doctor so a voice pipeline fails at preflight, not mid-render.",
+   "kosif_use_ar": "الاعتمادية الصامتة تحت TTS والمحاذاة المحلية: ثبّت إصدارها في فحص البيئة كي يفشل خط الصوت في التحضير لا في منتصف الرندر.",
+   "integration_en": "pip install onnxruntime; import onnxruntime as ort; ort.InferenceSession(model, providers=['CPUExecutionProvider']).",
+   "playbooks": [
+    "playbooks/audio-sync.md"
+   ],
+   "caveats_en": "GPU providers need matching CUDA builds; wheel size ~15 MB; model licences are separate from the runtime.",
+   "url": "https://github.com/microsoft/onnxruntime",
+   "verified_from": "https://github.com/microsoft/onnxruntime (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "kyamagu/skia-python",
+   "name": "skia-python",
+   "stars_k": 0.3,
+   "license": "BSD-3-Clause",
+   "license_note": "permissive",
+   "summary_en": "Python bindings to the Skia graphics library: anti-aliased paths, shaders, text with HarfBuzz shaping and image export without a browser.",
+   "summary_ar": "ربط بايثون لمكتبة Skia الرسومية: مسارات ناعمة الحواف ومظللات ونص بتشكيل HarfBuzz وتصدير صور دون متصفح.",
+   "capability": "edit",
+   "domain": "footage-edit",
+   "kosif_use_en": "Draw flat 2.5D overlays, boiling-ink titles and masks per frame in Python when the edit runs headless and Pillow's drawing is too coarse.",
+   "kosif_use_ar": "ارسم طبقات 2.5D وعناوين «حبر يغلي» وأقنعة لكل إطار في بايثون حين يعمل المونتاج بلا متصفح ويكون رسم Pillow خشنًا.",
+   "integration_en": "pip install skia-python; surface=skia.Surface(w,h); canvas.drawTextBlob(skia.TextBlob(text, skia.Font(tf, size)), x, y, paint); surface.makeImageSnapshot().save().",
+   "playbooks": [
+    "playbooks/hand-drawn.md",
+    "playbooks/arabic-typography.md"
+   ],
+   "caveats_en": "Arabic shaping needs the skia.textlayout/HarfBuzz path, not drawString; wheels are large; API tracks Skia milestones.",
+   "url": "https://github.com/kyamagu/skia-python",
+   "verified_from": "https://github.com/kyamagu/skia-python (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "python-pillow/Pillow",
+   "name": "Pillow",
+   "stars_k": 13.9,
+   "license": "MIT-CMU (HPND)",
+   "license_note": "permissive",
+   "summary_en": "The Python imaging library: decoding, compositing, filters and text rendering that shapes Arabic correctly when built with libraqm.",
+   "summary_ar": "مكتبة الصور في بايثون: فك ترميز وتركيب ومرشحات ورسم نص يشكّل العربية صحيحًا عند بنائها مع libraqm.",
+   "capability": "mimic",
+   "domain": "mimic-remake",
+   "kosif_use_en": "The shaping path of scripts/mimic render_line and the contact sheets; the doctor must assert features.check('raqm') before any Arabic overlay is promised.",
+   "kosif_use_ar": "مسار تشكيل النص في scripts/mimic ولوحات المراجعة؛ يجب أن يتحقق فحص البيئة من features.check('raqm') قبل الوعد بأي نص عربي.",
+   "integration_en": "pip install pillow; from PIL import features; assert features.check('raqm'); ImageDraw.text(xy, text, font=ImageFont.truetype(p, s), direction='rtl', features=['kern']).",
+   "playbooks": [
+    "playbooks/arabic-typography.md",
+    "playbooks/photos.md"
+   ],
+   "caveats_en": "Without raqm Arabic renders disconnected; bitmap fallback fonts break shaping; large images need explicit memory limits.",
+   "url": "https://github.com/python-pillow/Pillow",
+   "verified_from": "https://github.com/python-pillow/Pillow (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "tesseract-ocr/tesseract",
+   "name": "Tesseract OCR",
+   "stars_k": 77.1,
+   "license": "Apache-2.0",
+   "license_note": "permissive",
+   "summary_en": "Open-source OCR engine with LSTM models for 100+ scripts, usable as a CLI or via pytesseract for drafting the text seen in reference frames.",
+   "summary_ar": "محرك تعرف ضوئي مفتوح بنماذج LSTM لأكثر من 100 نظام كتابة، يُستخدم سطر أوامر أو عبر pytesseract لقراءة النص الظاهر في إطارات المرجع.",
+   "capability": "mimic",
+   "domain": "mimic-remake",
+   "kosif_use_en": "Draft the Arabic overlay text of each mimic event from the cleaned line crop so the user corrects words instead of typing them; always a draft, never final copy.",
+   "kosif_use_ar": "اقرأ مسودة النص العربي لكل حدث في المحاكاة من قصاصة السطر المنظفة ليصحح المستخدم الكلمات بدل كتابتها؛ مسودة دائمًا لا نسخة نهائية.",
+   "integration_en": "apt install tesseract-ocr; tesseract line.png out -l ara --psm 7; scripts/mimic/mm_text.ocr_line reads assets/tessdata/ara.traineddata when present.",
+   "playbooks": [
+    "playbooks/arabic-typography.md"
+   ],
+   "caveats_en": "Arabic accuracy drops on stylised/Thuluth fonts and coloured backgrounds; binarise and upscale the crop first; not installed in the cloud container.",
+   "url": "https://github.com/tesseract-ocr/tesseract",
+   "verified_from": "https://github.com/tesseract-ocr/tesseract (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "tesseract-ocr/tessdata",
+   "name": "tessdata",
+   "stars_k": 7.7,
+   "license": "Apache-2.0",
+   "license_note": "permissive",
+   "summary_en": "Trained Tesseract models (fast and best LSTM variants plus legacy) for every supported language, including ara.traineddata.",
+   "summary_ar": "نماذج Tesseract المدرّبة (سريعة وأفضل ضبطًا وقديمة) لكل لغة مدعومة، ومنها ara.traineddata للعربية.",
+   "capability": "mimic",
+   "domain": "mimic-remake",
+   "kosif_use_en": "Fetch ara.traineddata on demand into the skill's assets/tessdata cache for the OCR draft step; never commit the model file.",
+   "kosif_use_ar": "اجلب ara.traineddata عند الحاجة إلى مجلد assets/tessdata المؤقت لخطوة مسودة التعرف الضوئي؛ لا تلتزم ملف النموذج في المستودع.",
+   "integration_en": "curl -L -o assets/tessdata/ara.traineddata https://github.com/tesseract-ocr/tessdata/raw/main/ara.traineddata; TESSDATA_PREFIX=assets/tessdata.",
+   "playbooks": [
+    "playbooks/arabic-typography.md"
+   ],
+   "caveats_en": "Files are tens of MB; tessdata_best is slower but more accurate; keep out of git.",
+   "url": "https://github.com/tesseract-ocr/tessdata",
+   "verified_from": "https://github.com/tesseract-ocr/tessdata (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "gl-transitions/gl-transitions",
+   "name": "gl-transitions",
+   "stars_k": 2.2,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "Open collection of ~70 GLSL transition shaders with a shared signature (getFromColor/getToColor, progress) usable in WebGL, ffmpeg gl-transition and Remotion.",
+   "summary_ar": "مجموعة مفتوحة من نحو 70 انتقالًا بلغة GLSL بتوقيع موحد (getFromColor/getToColor، progress) تعمل في WebGL وffmpeg وRemotion.",
+   "capability": "mimic",
+   "domain": "mimic-remake",
+   "kosif_use_en": "A licence-clean WebGL source for transitions measured by the mimic analyser when the remake must run in the browser instead of the LGPL xfade port in mm_transitions.py.",
+   "kosif_use_ar": "مصدر نظيف الترخيص لانتقالات WebGL يقيسها محلل المحاكاة حين يجب أن تعمل النسخة في المتصفح بدل نقل xfade ذي ترخيص LGPL في mm_transitions.py.",
+   "integration_en": "npm install gl-transitions gl-transition; const t = require('gl-transitions').find(t=>t.name==='CrossZoom'); drawTransition(gl, t)(progress) per frame.",
+   "playbooks": [
+    "playbooks/render-pipeline.md",
+    "playbooks/shapes.md"
+   ],
+   "caveats_en": "Needs a WebGL context (headless Chromium OK); ffmpeg's gl-transition filter is a third-party build; parameters differ from xfade names.",
+   "url": "https://github.com/gl-transitions/gl-transitions",
+   "verified_from": "https://github.com/gl-transitions/gl-transitions (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "scipy/scipy",
+   "name": "SciPy",
+   "stars_k": 15.1,
+   "license": "BSD-3-Clause",
+   "license_note": "permissive",
+   "summary_en": "Scientific Python: signal filters (butter/sosfilt), optimisation, sparse solvers and image ops used by the procedural sound scripts and mimic's fallbacks.",
+   "summary_ar": "بايثون العلمية: مرشحات إشارة (butter/sosfilt) وتحسين وحلول متناثرة وعمليات صور تستخدمها سكربتات الصوت الإجرائي وبدائل المحاكاة.",
+   "capability": "voice",
+   "domain": "speech-audio",
+   "kosif_use_en": "Band-pass the procedural foley and score (proofs/*/sound.py) and solve the vignette/grain fits in mimic; name it in the doctor instead of assuming it is installed.",
+   "kosif_use_ar": "مرّر المؤثرات والموسيقى الإجرائية عبر مرشحات النطاق (proofs/*/sound.py) وحلّ تعتيم وحبيبات المحاكاة؛ سمّها في فحص البيئة بدل افتراض وجودها.",
+   "integration_en": "pip install scipy; from scipy.signal import butter, sosfilt; sos=butter(4,[200,4000],'bandpass',fs=48000,output='sos'); y=sosfilt(sos,x).",
+   "playbooks": [
+    "playbooks/music.md",
+    "playbooks/audio-sync.md"
+   ],
+   "caveats_en": "Heavy wheel; keep numpy versions aligned; not a substitute for ffmpeg loudnorm on the final mix.",
+   "url": "https://github.com/scipy/scipy",
+   "verified_from": "https://github.com/scipy/scipy (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "csteinmetz1/pyloudnorm",
+   "name": "pyloudnorm",
+   "stars_k": 0.8,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "ITU-R BS.1770-4 loudness meter in Python: integrated LUFS measurement and gain normalisation for delivery targets.",
+   "summary_ar": "مقياس علوّ صوتي بمعيار ITU-R BS.1770-4 في بايثون: قياس LUFS المتكامل وضبط الكسب لأهداف التسليم.",
+   "capability": "voice",
+   "domain": "speech-audio",
+   "kosif_use_en": "Land every generated score at −14 LUFS before muxing and write the measured number into TEST_REPORT.md, as the proof sound.py scripts do.",
+   "kosif_use_ar": "أوصل كل موسيقى مولّدة إلى ‎-14 LUFS قبل الدمج واكتب الرقم المقاس في TEST_REPORT.md كما تفعل سكربتات sound.py في الأدلة.",
+   "integration_en": "pip install pyloudnorm; meter=pyln.Meter(48000); lufs=meter.integrated_loudness(x); y=pyln.normalize.loudness(x, lufs, -14.0).",
+   "playbooks": [
+    "playbooks/music.md",
+    "playbooks/audio-sync.md"
+   ],
+   "caveats_en": "No true-peak limiter: pair with a limiter or ffmpeg loudnorm; short clips (<3 s) give unstable readings.",
+   "url": "https://github.com/csteinmetz1/pyloudnorm",
+   "verified_from": "https://github.com/csteinmetz1/pyloudnorm (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "bastibe/python-soundfile",
+   "name": "python-soundfile",
+   "stars_k": 0.9,
+   "license": "BSD-3-Clause",
+   "license_note": "permissive",
+   "summary_en": "WAV/FLAC/OGG read and write on libsndfile with NumPy arrays, the I/O layer of the feature extraction and sound synthesis scripts.",
+   "summary_ar": "قراءة وكتابة WAV/FLAC/OGG عبر libsndfile بمصفوفات NumPy؛ طبقة الإدخال والإخراج لسكربتات استخراج الميزات وتوليد الصوت.",
+   "capability": "voice",
+   "domain": "speech-audio",
+   "kosif_use_en": "Write the 48 kHz stereo master of a procedural score and read the user's voice track for onset analysis without touching its samples.",
+   "kosif_use_ar": "اكتب الماستر الستيريو 48 kHz للموسيقى الإجرائية واقرأ مسار صوت المستخدم لتحليل البدايات دون المساس بعيّناته.",
+   "integration_en": "pip install soundfile; x, sr = sf.read('vo.wav'); sf.write('master.wav', y, 48000, subtype='PCM_24').",
+   "playbooks": [
+    "playbooks/audio-sync.md",
+    "playbooks/music.md"
+   ],
+   "caveats_en": "No MP3/AAC decoding on older libsndfile builds: route compressed audio through ffmpeg first.",
+   "url": "https://github.com/bastibe/python-soundfile",
+   "verified_from": "https://github.com/bastibe/python-soundfile (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "spotify/pedalboard",
+   "name": "Pedalboard",
+   "stars_k": 6.4,
+   "license": "GPL-3.0",
+   "license_note": "copyleft: run as an external tool, do not vendor",
+   "summary_en": "Python audio-effects library (JUCE-based) with compressors, reverbs, EQ, VST3/AU hosting and fast file I/O.",
+   "summary_ar": "مكتبة مؤثرات صوتية في بايثون (مبنية على JUCE) فيها ضواغط وصدى ومعادلات واستضافة VST3/AU وقراءة ملفات سريعة.",
+   "capability": "voice",
+   "domain": "speech-audio",
+   "kosif_use_en": "Duck and polish a music bed under Arabic voice-over in a separate process step; keep it out of any distributed KOSIF package because of the GPL.",
+   "kosif_use_ar": "اخفض الموسيقى تحت التعليق العربي وصقلها في خطوة منفصلة؛ أبقها خارج أي حزمة KOSIF موزّعة بسبب ترخيص GPL.",
+   "integration_en": "pip install pedalboard; board=Pedalboard([Compressor(threshold_db=-18), Reverb(room_size=0.2)]); y=board(x, 48000).",
+   "playbooks": [
+    "playbooks/music.md"
+   ],
+   "caveats_en": "GPL-3: use as a tool, never import into shipped code; VST hosting needs the plugins installed locally.",
+   "url": "https://github.com/spotify/pedalboard",
+   "verified_from": "https://github.com/spotify/pedalboard (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "WyattBlue/auto-editor",
+   "name": "auto-editor",
+   "stars_k": 5.5,
+   "license": "Unlicense",
+   "license_note": "permissive",
+   "summary_en": "Command-line video editor that cuts silence or motionless stretches automatically and exports to Premiere, Resolve, Final Cut or a rendered file.",
+   "summary_ar": "محرر فيديو من سطر الأوامر يقص الصمت أو السكون تلقائيًا ويصدّر إلى Premiere وResolve وFinal Cut أو ملفًا مصيَّرًا.",
+   "capability": "edit",
+   "domain": "footage-edit",
+   "kosif_use_en": "Trim a talking-head's pauses before the kinetic captions are timed, exporting an EDL/XML so the cut stays editable in the client's NLE.",
+   "kosif_use_ar": "قصّ وقفات المتحدث قبل توقيت الترجمات الحركية، وصدّر EDL/XML كي يبقى القطع قابلًا للتعديل في برنامج العميل.",
+   "integration_en": "pip install auto-editor; auto-editor talk.mp4 --edit audio:threshold=4% --margin 0.2s --export premiere.",
+   "playbooks": [
+    "playbooks/audio-sync.md",
+    "playbooks/photos.md"
+   ],
+   "caveats_en": "Threshold tuning per recording; re-encodes unless exporting a timeline; keeps audio but may drop the original stream order.",
+   "url": "https://github.com/WyattBlue/auto-editor",
+   "verified_from": "https://github.com/WyattBlue/auto-editor (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "imageio/imageio-ffmpeg",
+   "name": "imageio-ffmpeg",
+   "stars_k": 0.3,
+   "license": "BSD-2-Clause",
+   "license_note": "permissive",
+   "summary_en": "Pip-installable ffmpeg binary locator and frame reader/writer generators for Python, used as a fallback when ffmpeg is not on PATH.",
+   "summary_ar": "محدد لثنائي ffmpeg قابل للتثبيت عبر pip ومولدات قراءة وكتابة الإطارات في بايثون، يُستخدم بديلًا حين لا يكون ffmpeg في PATH.",
+   "capability": "edit",
+   "domain": "footage-edit",
+   "kosif_use_en": "Fallback for scripts/mimic mm_common.probe and the frame pipes when the host lacks ffmpeg; still verify libass/harfbuzz are compiled in before caption burn-in.",
+   "kosif_use_ar": "بديل لـ mm_common.probe وأنابيب الإطارات في scripts/mimic حين يفتقر المضيف إلى ffmpeg؛ تحقق مع ذلك من وجود libass/harfbuzz قبل حرق الترجمات.",
+   "integration_en": "pip install imageio-ffmpeg; exe=imageio_ffmpeg.get_ffmpeg_exe(); subprocess.run([exe,'-i',src,...]).",
+   "playbooks": [
+    "playbooks/render-pipeline.md"
+   ],
+   "caveats_en": "Bundled ffmpeg build may lack libass, libx265 or drawtext fonts; the binary itself is GPL/LGPL per its build flags.",
+   "url": "https://github.com/imageio/imageio-ffmpeg",
+   "verified_from": "https://github.com/imageio/imageio-ffmpeg (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "visioncortex/vtracer",
+   "name": "VTracer",
+   "stars_k": 7.3,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "Raster-to-vector converter (Rust, CLI, WASM and Python bindings) that traces logos, sketches and photos into clean SVG paths.",
+   "summary_ar": "محوّل من الصور النقطية إلى المتجهات (Rust وسطر أوامر وWASM وبايثون) يتتبع الشعارات والرسومات والصور إلى مسارات SVG نظيفة.",
+   "capability": "draw",
+   "domain": "creative-coding-2d",
+   "kosif_use_en": "Turn a client's PNG logo or a hand sketch into SVG paths so the draw-on playbook can animate stroke-dashoffset instead of faking it with masks.",
+   "kosif_use_ar": "حوّل شعار العميل PNG أو رسمة يدوية إلى مسارات SVG كي يحرّك دليل الرسم stroke-dashoffset بدل تقليده بالأقنعة.",
+   "integration_en": "pip install vtracer; vtracer.convert_image_to_svg_py('logo.png','logo.svg', colormode='binary', mode='spline').",
+   "playbooks": [
+    "playbooks/hand-drawn.md",
+    "playbooks/shapes.md"
+   ],
+   "caveats_en": "Output paths are closed fills, not strokes: convert to centerlines (e.g. with autotrace) for pen-style draw-on; anti-aliased edges add nodes.",
+   "url": "https://github.com/visioncortex/vtracer",
+   "verified_from": "https://github.com/visioncortex/vtracer (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "foliojs/fontkit",
+   "name": "fontkit",
+   "stars_k": 1.7,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "Font engine for Node and the browser: parses TrueType/OpenType/WOFF, exposes metrics, glyph paths, OpenType features and Arabic shaping tables.",
+   "summary_ar": "محرك خطوط لـ Node والمتصفح: يقرأ TrueType/OpenType/WOFF ويكشف المقاييس ومسارات الحروف وميزات OpenType وجداول التشكيل العربي.",
+   "capability": "arabic",
+   "domain": "arabic-text",
+   "kosif_use_en": "Read cap height, ascender and the presence of init/medi/fina features of a candidate Arabic font in the font-matching step, and extract glyph outlines for SVG lettering.",
+   "kosif_use_ar": "اقرأ ارتفاع الحروف والصواعد ووجود ميزات init/medi/fina في خط عربي مرشح أثناء مطابقة الخطوط، واستخرج مخططات الحروف لرسم العناوين SVG.",
+   "integration_en": "npm install fontkit; const f=fontkit.openSync('Amiri-Bold.ttf'); f.layout('بسم', ['init','medi','fina']).glyphs.map(g=>g.path.toSVG()).",
+   "playbooks": [
+    "playbooks/arabic-typography.md",
+    "playbooks/kinetic-type.md"
+   ],
+   "caveats_en": "Licence lives in the README/package.json rather than a LICENSE file; shaping is simpler than HarfBuzz, so verify against the browser for final text.",
+   "url": "https://github.com/foliojs/fontkit",
+   "verified_from": "https://github.com/foliojs/fontkit (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "seek-oss/capsize",
+   "name": "Capsize",
+   "stars_k": 1.7,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "Font-metrics based CSS sizing: trims leading so text boxes match cap height, with a metrics package for hundreds of fonts.",
+   "summary_ar": "ضبط حجم النص في CSS بناءً على مقاييس الخط: يقص المسافة الزائدة حتى تطابق الصناديق ارتفاع الحروف، مع حزمة مقاييس لمئات الخطوط.",
+   "capability": "design",
+   "domain": "ui-motion-design",
+   "kosif_use_en": "Build the type-scale tokens of a style from real metrics so Arabic and Latin lines in the same scene share a baseline grid instead of eyeballed paddings.",
+   "kosif_use_ar": "ابنِ رموز سلّم الحجم لأسلوب ما من مقاييس حقيقية كي تشترك السطور العربية واللاتينية في المشهد نفسه بشبكة أساس واحدة بدل حشو تقديري.",
+   "integration_en": "npm install @capsizecss/core @capsizecss/metrics; createStyleObject({fontMetrics, capHeight: 48, lineGap: 12}).",
+   "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/product-ui.md"
+   ],
+   "caveats_en": "Metrics package covers Google Fonts; custom or Arabic display fonts need fromFile/fromBlob extraction first.",
+   "url": "https://github.com/seek-oss/capsize",
+   "verified_from": "https://github.com/seek-oss/capsize (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "LottieFiles/dotlottie-web",
+   "name": "dotlottie-web",
+   "stars_k": 0.9,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "High-performance Lottie and dotLottie web player (Rust + WASM) with React, Vue, Svelte, Solid and Web Component wrappers and frame-accurate control.",
+   "summary_ar": "مشغّل Lottie وdotLottie عالي الأداء للويب (Rust + WASM) بأغلفة React وVue وSvelte وSolid ومكوّنات ويب وتحكم دقيق بالإطارات.",
+   "capability": "animate",
+   "domain": "web-animation",
+   "kosif_use_en": "Scrub a bundled .lottie asset to the exact frame for t inside a seek(t) scene when lottie-web's SVG renderer is too slow for many instances.",
+   "kosif_use_ar": "حرّك ملف .lottie إلى الإطار الدقيق للزمن t داخل مشهد seek(t) حين يكون مُصيِّر SVG في lottie-web بطيئًا مع نسخ كثيرة.",
+   "integration_en": "npm install @lottiefiles/dotlottie-web; const p=new DotLottie({canvas, src:'a.lottie', autoplay:false}); p.setFrame(Math.round(t*fps)).",
+   "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/render-pipeline.md"
+   ],
+   "caveats_en": "Needs the WASM binary served locally for offline renders; feature parity with lottie-web is not total.",
+   "url": "https://github.com/LottieFiles/dotlottie-web",
+   "verified_from": "https://github.com/LottieFiles/dotlottie-web (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "dimforge/rapier",
+   "name": "Rapier",
+   "stars_k": 5.9,
+   "license": "Apache-2.0",
+   "license_note": "permissive",
+   "summary_en": "Deterministic 2D and 3D physics engines in Rust with JavaScript/WASM bindings: rigid bodies, joints, colliders and snapshots.",
+   "summary_ar": "محركا فيزياء ثنائي وثلاثي الأبعاد حتميان بلغة Rust مع ربط JavaScript/WASM: أجسام صلبة ومفاصل ومصادمات ولقطات حالة.",
+   "capability": "space",
+   "domain": "three-d",
+   "kosif_use_en": "Pre-simulate falling letters or product parts with a fixed timestep, cache the transforms per frame, then replay them inside seek(t) so the render stays a pure function of time.",
+   "kosif_use_ar": "حاكِ سقوط الحروف أو قطع المنتج مسبقًا بخطوة زمنية ثابتة، خزّن التحويلات لكل إطار، ثم أعد تشغيلها داخل seek(t) ليبقى الرندر دالة خالصة للزمن.",
+   "integration_en": "npm install @dimforge/rapier3d-compat; await RAPIER.init(); world.step() N times at 1/fps; store body.translation()/rotation() per frame.",
+   "playbooks": [
+    "playbooks/3d.md",
+    "playbooks/particles.md"
+   ],
+   "caveats_en": "Determinism holds only with the same build and fixed timestep; WASM init is async, so bake before capture starts.",
+   "url": "https://github.com/dimforge/rapier",
+   "verified_from": "https://github.com/dimforge/rapier (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "topojson/world-atlas",
+   "name": "world-atlas",
+   "stars_k": 1.2,
+   "license": "ISC",
+   "license_note": "permissive",
+   "summary_en": "Pre-built TopoJSON of Natural Earth countries and land at 50m/110m resolution for d3-geo maps.",
+   "summary_ar": "ملفات TopoJSON جاهزة لدول العالم واليابسة من Natural Earth بدقة 50m/110m لخرائط d3-geo.",
+   "capability": "data",
+   "domain": "charts-maps",
+   "kosif_use_en": "Vendor countries-110m.json next to a map scene so proofs/map-route and client maps render offline instead of loading jsdelivr at capture time.",
+   "kosif_use_ar": "ضع countries-110m.json بجانب مشهد الخريطة كي يُصيَّر proofs/map-route وخرائط العملاء دون اتصال بدل تحميلها من jsdelivr وقت الالتقاط.",
+   "integration_en": "npm install world-atlas; import land from 'world-atlas/land-110m.json'; topojson.feature(land, land.objects.land) then d3.geoPath(projection).",
+   "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/render-pipeline.md"
+   ],
+   "caveats_en": "Natural Earth boundaries are a political choice: check disputed borders for the client's market; Arabic labels need your own names table.",
+   "url": "https://github.com/topojson/world-atlas",
+   "verified_from": "https://github.com/topojson/world-atlas (LICENSE file and page read 2026-10-18)"
+  },
+  {
+   "owner_repo": "blader/humanizer",
+   "name": "Humanizer",
+   "stars_k": 58.0,
+   "license": "MIT",
+   "license_note": "permissive",
+   "summary_en": "Agent skill that catalogues the tells of AI-generated prose and rewrites text to remove them while keeping facts intact.",
+   "summary_ar": "مهارة وكيل تفهرس علامات النثر المولّد آليًا وتعيد كتابة النص لإزالتها مع الحفاظ على الحقائق.",
+   "capability": "orchestrate",
+   "domain": "agent-workflows",
+   "kosif_use_en": "Final pass on Arabic/English voice-over scripts, captions and client-facing briefs; the KOSIF humanizer.md adds the one-register Arabic rule and locks numbers and timings.",
+   "kosif_use_ar": "تمريرة أخيرة على نصوص التعليق الصوتي والترجمات والملخصات الموجهة للعميل بالعربية والإنجليزية؛ يضيف humanizer.md في KOSIF قاعدة السجل العربي الواحد ويقفل الأرقام والتوقيتات.",
+   "integration_en": "Read SKILL.md as reference; KOSIF's references/humanizer.md plus scripts tell_scan.py / anchor_gate.py implement the pass locally.",
+   "playbooks": [
+    "playbooks/kinetic-type.md"
+   ],
+   "caveats_en": "English-centric tells; never let it alter caption timing, legal wording or quoted figures; credit the source in the brief.",
+   "url": "https://github.com/blader/humanizer",
+   "verified_from": "https://github.com/blader/humanizer (LICENSE file and page read 2026-10-18)"
   }
  ]
 }

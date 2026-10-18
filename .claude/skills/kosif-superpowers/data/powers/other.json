@@ -16,6 +16,7 @@
    "kosif-tool/STYLE_INDEX.md",
    "kosif-tool/tests/test_cli.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "بحث",
@@ -43,6 +44,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-atlas/SKILL.md",
    "kosif-one/tools/kosif-omni/edge/atlas-api/README.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أطلس",
@@ -68,6 +70,7 @@
    "100-superskills/DEEP-INDEX.md",
    "100-superskills/tools/deep_index.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "فهرس",
@@ -93,6 +96,7 @@
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/skillengine.py:282",
    "kosif-one/tools/kosif-omni/skills/kosif-source-router/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "موجه",
@@ -118,6 +122,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:697",
    "100-superskills/skills/kosif-montage-motion/tests/test_web.py:205"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "mcp",
@@ -144,6 +149,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/claude_bridge.py:146",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:653"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "جسر",
@@ -169,6 +175,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:161",
    "kosif-one/tools/kosif-studio/motion/site_bridge.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مشروع",
@@ -194,6 +201,7 @@
    "fastify-motion-bro/GEMINI.md",
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/hubs-and-agents.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "وكلاء",
@@ -219,6 +227,7 @@
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/desktop.py:1",
    "kosif-one/tools/kosif-omni/skills/kosif-mouse/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ويندوز",
@@ -244,6 +253,7 @@
    "fastify-motion-bro/.gitignore:1-23",
    "kosif-tool/tests/test_superpowers.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "أمان",
@@ -269,6 +279,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-computer-use/scripts/action_gate.py",
    "kosif-one/tools/kosif-omni/mcp-server/tests/test_server.py:210"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بوابة",
@@ -295,6 +306,7 @@
    "kosif-studio/motion/references/sources-ar.md",
    "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ترخيص",
@@ -318,6 +330,7 @@
   "proof": [
    "kosif-studio/motion/motion.py:85"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تسمية",
@@ -342,6 +355,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-knowledge-atlas/scripts/knowledge_atlas.py",
    "kosif-one/tools/kosif-omni/skills/kosif-knowledge-atlas/scripts/knowledge_atlas_self_test.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مصادر",
@@ -366,6 +380,7 @@
    "kosif-studio/motion/references/KOSIF_SEE_INTEGRATION.md",
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "see",
@@ -389,6 +404,7 @@
   "proof": [
    "kosif-atlas/skills/1387-pdf-skills/3268-pdf-ocr-adding/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ocr",
@@ -412,6 +428,7 @@
   "proof": [
    "kosif-one/tools/kosif-social/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أفضل وقت",
@@ -436,6 +453,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أمثلة",
@@ -462,6 +480,7 @@
    "kosif-earth-ci-fork/FOUNDATION.md:226",
    "style:pm-henkpoley-3d3407"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-henkpoley-3d3407"
   ],
@@ -488,6 +507,7 @@
    "fastify-motion-bro/web/motion.js:20-21",
    "fastify-motion-bro/web/editorial.js:82-84"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "شريط تقدم",
@@ -513,6 +533,7 @@
    "100-superskills/skills/flashcards-quiz-exam-prep/SKILL.md",
    "kosif-one/tools/kosif-omni/THIRD_PARTY_NOTICES.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مهارات مساندة",
@@ -538,6 +559,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/ECC_DISTILLED_CORE.md",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/ECC_ROUTING_AND_EVAL.json"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "surface selection",
@@ -565,6 +587,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/KOSIF_SEE_CINEMATIC_ROUTER.md",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tests/test_ecc_upgrade.py"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "routing",
@@ -590,6 +613,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/ecc_contract_gate.py",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tests/test_ecc_upgrade.py"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "learning",
@@ -618,6 +642,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/catalog/CATALOG.json",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/catalog/index.html"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "catalog",
@@ -645,6 +670,7 @@
    "session-2026-10-16:motion-leftovers#5",
    "owner-upload:kosif-tool-ultra/kosif-500-methods.json"
   ],
+  "proof_scope": "session",
   "styles": [],
   "tags": [
    "css cards",
@@ -673,6 +699,7 @@
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "agents",

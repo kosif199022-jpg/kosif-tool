@@ -15,6 +15,7 @@
    "kosif-studio/motion/qa.py:173",
    "kosif-studio/tests/test_studio.py:739"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-01"
@@ -34,6 +35,7 @@
    "kosif-studio/tests/test_studio.py:739",
    "kosif-one/tools/kosif-studio/motion/qa.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-02"
@@ -53,6 +55,7 @@
    "kosif-tool/playbooks/audio-sync.md:86",
    "kosif-tool/tests/test_tools_extra.py:44"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-03"
@@ -71,6 +74,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/DELIVERY.md",
    "kosif-atlas/skills/1511-homie/3903-video/scripts/qa.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-04"
@@ -89,6 +93,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/RECORD.md",
    "kosif-atlas/skills/1511-homie/3903-video/references/DELIVERY.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-05"
@@ -107,6 +112,7 @@
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md",
    "kosif-atlas/skills/2451-knowledge/9503-video-digest/context/watch-pipeline.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-06"
@@ -124,6 +130,7 @@
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-07"
@@ -141,6 +148,7 @@
   "proof": [
    "kosif-atlas/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-08"
@@ -160,6 +168,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10318-accessibility-and-inclusive-visualizatio/references/color-contrast-and-redundant-encoding.md",
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-09"
@@ -177,6 +186,7 @@
   "proof": [
    "kosif-audit-pro/tests/palette.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-10"
@@ -195,6 +205,7 @@
    "kosif-audit-pro/app/globals.css:3177",
    "kosif-audit-pro/tests/motion-contract.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-11"
@@ -212,6 +223,7 @@
   "proof": [
    "kosif-audit-pro/tests/motion-contract.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-12"
@@ -229,6 +241,7 @@
   "proof": [
    "kosif-audit-pro/tests/responsive.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-13"
@@ -246,6 +259,7 @@
   "proof": [
    "kosif-audit-studio/scripts/check-static.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-14"
@@ -263,6 +277,7 @@
   "proof": [
    "kosif-audit-studio/tests/dashboard-theme.test.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-15"
@@ -282,6 +297,7 @@
    "app/public/motion-clone-runtime.js",
    "app/tests/motion-clone.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-16"
@@ -301,6 +317,7 @@
    "app/tests/motion-clone.test.mjs",
    "app/tests/test_media_cli.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-17"
@@ -320,6 +337,7 @@
    "kosif-earth-ci-fork/ui/art/crystal-world.js:13",
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.js"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-18"
@@ -338,6 +356,7 @@
    "kosif-earth-ci-fork/tools/identity_unity.test.mjs",
    "kosif-earth-ci-fork/tools/door_tokens.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-19"
@@ -356,6 +375,7 @@
    "kosif-earth-ci-fork/tools/identity_audit.mjs",
    "kosif-earth-ci-fork/tools/fixtures/identity-baseline.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-20"
@@ -373,6 +393,7 @@
   "proof": [
    "kosif-earth-ci-fork/tools/brand_art.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-21"
@@ -391,6 +412,7 @@
    "kosif-earth-ci-fork/tools/crystal_world.test.mjs",
    "kosif-earth-ci-fork/tools/motion.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-22"
@@ -409,6 +431,7 @@
    "fastify-motion-bro/scripts/planner.mjs:5-13",
    "fastify-motion-bro/tests/planner.test.mjs:2-4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-23"
@@ -428,6 +451,7 @@
    "fastify-motion-bro/scripts/viral-cli.mjs:14-22",
    "fastify-motion-bro/scripts/render.py:24-25"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-24"
@@ -447,6 +471,7 @@
    "fastify-motion-bro/tests/production-profiles.test.mjs",
    "fastify-motion-bro/tests/production-cli.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-25"
@@ -465,6 +490,7 @@
    "fastify-motion-bro/scripts/profiles/vox-history.mjs:53-55",
    "fastify-motion-bro/docs/PRODUCTION-GATES.md:13"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-26"
@@ -484,6 +510,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/index.html:34",
    "100-superskills/skills/kosif-montage-motion/tests/test_review.py:85"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-27"
@@ -502,6 +529,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_mimic.py:47",
    "100-superskills/skills/kosif-montage-motion/tests/test_mimic.py:76"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-28"
@@ -521,6 +549,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_space_truss.py:23",
    "100-superskills/skills/kosif-montage-motion/examples/illustrative-truss-report.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-29"
@@ -538,6 +567,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/test.cjs:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-30"
@@ -555,6 +585,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/player-test.cjs:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-31"
@@ -572,6 +603,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:54"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-32"
@@ -589,6 +621,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:48"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-33"
@@ -606,6 +639,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:154"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-34"
@@ -624,6 +658,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_review.py:59",
    "100-superskills/skills/kosif-montage-motion/tests/test_web.py:45"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-35"
@@ -642,6 +677,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_render_client.py:12",
    "100-superskills/skills/kosif-montage-motion/tests/bridge/test_site_bridge.py:19"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-36"
@@ -659,6 +695,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:80"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-37"
@@ -677,6 +714,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:31",
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:154"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-38"
@@ -696,6 +734,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:1029",
    "100-superskills/skills/kosif-montage-motion/tests/test_web.py:224"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-39"
@@ -715,6 +754,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:694",
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:697"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-40"
@@ -733,6 +773,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:13",
    "100-superskills/skills/kosif-montage-motion/tests/studio/model.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-41"
@@ -752,6 +793,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-secure-executor/scripts/scene_spec.py",
    "kosif-one/tools/kosif-omni/mcp-server/tests/test_server.py:269"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-42"
@@ -770,6 +812,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/scripts/prompt_lint.py",
    "kosif-one/tools/kosif-omni/mcp-server/tests/test_server.py:226"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-43"
@@ -789,6 +832,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/visual-execution-contract.md",
    "kosif-one/tools/kosif-omni/skills/kosif-think-pro/scripts/visual_reliability_self_test.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-44"
@@ -807,6 +851,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-web-design/scripts/web_audit.py",
    "kosif-one/tools/kosif-omni/mcp-server/tests/test_server.py:312"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-45"
@@ -826,6 +871,7 @@
    "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:94-133",
    "kosif-one/projects/KOSIF_Motion_Ghorba/tools/render_ghorba_preview.py:163-189"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-46"
@@ -844,6 +890,7 @@
    "kosif-one/tools/kosif-social/SKILL.md",
    "kosif-one/tools/kosif-social/examples/ab.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-47"
@@ -861,6 +908,7 @@
   "proof": [
    "100-superskills/skills/kosif-social/scripts/social.py:583"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-48"
@@ -878,6 +926,7 @@
   "proof": [
    "100-superskills/skills/kosif-social/scripts/social.py:633"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-49"
@@ -895,6 +944,7 @@
   "proof": [
    "100-superskills/skills/claude-animation-studio/scripts/qa.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-50"
@@ -913,6 +963,7 @@
    "100-superskills/skills/motion-director-pro/scripts/storyboard_gate.py",
    "100-superskills/skills/motion-director-pro/templates/scenes.example.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-51"
@@ -931,6 +982,7 @@
    "100-superskills/examples/demo2d/qa.json",
    "100-superskills/examples/demo2d/run.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-52"
@@ -949,6 +1001,7 @@
    "100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:30",
    "100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:38"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-53"
@@ -966,6 +1019,7 @@
   "proof": [
    "100-superskills/skills/video-prompt-director/SKILL.md:25"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-54"
@@ -985,6 +1039,7 @@
    "kosif-studio/studio.py:167",
    "kosif-studio/studio.py:1139"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-55"
@@ -1003,6 +1058,7 @@
    "kosif-studio/vectorize.py:158",
    "kosif-studio/tests/test_studio.py:149"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-56"
@@ -1022,6 +1078,7 @@
    "kosif-studio/motion/qa.py:75",
    "kosif-studio/tests/test_studio.py:684"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-57"
@@ -1040,6 +1097,7 @@
    "kosif-studio/motion/qa.py:106",
    "kosif-studio/tests/test_studio.py:699"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-58"
@@ -1059,6 +1117,7 @@
    "kosif-studio/motion/audio2motion.py:262",
    "kosif-studio/motion/transcribe.py:89"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-59"
@@ -1078,6 +1137,7 @@
    "kosif-studio/tests/test_audio2motion.py:1",
    "kosif-studio/tests/bridge/test_site_bridge.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-60"
@@ -1097,6 +1157,7 @@
    "kosif-studio/out/koi_pond.mp4",
    "kosif-studio/out/kosif_motion_showreel.mp4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-61"
@@ -1114,6 +1175,7 @@
   "proof": [
    "kosif-tool/tools/check_originality.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-62"
@@ -1132,6 +1194,7 @@
    "kosif-tool/tools/render_html.cjs:414",
    "kosif-tool/tools/render_html.cjs:515"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-63"
@@ -1150,6 +1213,7 @@
    "kosif-tool/tools/render_html.cjs:399",
    "kosif-tool/tools/render_html.cjs:580"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-64"
@@ -1167,6 +1231,7 @@
   "proof": [
    "kosif-tool/templates/TEST_REPORT.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-65"
@@ -1185,6 +1250,7 @@
    "kosif-tool/tools/kosif.py:606",
    "kosif-tool/tools/kosif.py:614"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-66"
@@ -1204,6 +1270,7 @@
    "kosif-tool/tests/test_tools_extra.py",
    "kosif-tool/package.json"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-67"
@@ -1222,6 +1289,7 @@
    "kosif-atlas/skills/1511-homie/3903-video",
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-68"
@@ -1241,6 +1309,7 @@
    "kosif-studio/motion/kit/three-kit.js:364",
    "kosif-studio/motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-69"
@@ -1259,6 +1328,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/qa.py:62",
    "kosif-one/tools/kosif-studio/motion/qa.py:58"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-70"
@@ -1278,6 +1348,7 @@
    "kosif-one/tools/kosif-studio/motion/references/craft-numbers.md",
    "kosif-studio/motion/motion.py:423"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-71"
@@ -1295,6 +1366,7 @@
   "proof": [
    "kosif-atlas/skills/3594-design-clone/14410-design-clone"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-72"
@@ -1312,6 +1384,7 @@
   "proof": [
    "kosif-atlas/skills/880-superloopy/1941-superloopy-frontend/scripts/visual-diff.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-73"
@@ -1329,6 +1402,7 @@
   "proof": [
    "kosif-atlas/skills/1530-webcraft/4196-ui-screenshots/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-74"
@@ -1347,6 +1421,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2430-akbun-davinciresolve-article-overlay/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2431-akbun-davinciresolve-caption-template/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-75"
@@ -1364,6 +1439,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-76"
@@ -1381,6 +1457,7 @@
   "proof": [
    "kosif-atlas/skills/2142-comfyui-plugin/7653-comfy-metadata"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-77"
@@ -1399,6 +1476,7 @@
    "kosif-earth-ci-fork/tools/identity_doc.py",
    "kosif-earth-ci-fork/docs/design/SQC-IDENTITY-ar.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-78"
@@ -1418,6 +1496,7 @@
    "kosif-earth-ci-fork/tools/phone_layout.mjs",
    "kosif-earth-ci-fork/tools/ui_smoke.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-79"
@@ -1437,6 +1516,7 @@
    "fastify-motion-bro/scripts/render.py:17",
    "fastify-motion-bro/README.md:32"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-80"
@@ -1454,6 +1534,7 @@
   "proof": [
    "fastify-motion-bro/scripts/qa.py:1-18"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-81"
@@ -1471,6 +1552,7 @@
   "proof": [
    "fastify-motion-bro/.github/workflows/ci.yml:55-67"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-82"
@@ -1488,6 +1570,7 @@
   "proof": [
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:114,118"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-83"
@@ -1506,6 +1589,7 @@
    "kosif-one/vendor/hyperframes/skills/motion-graphics/grounding/locate.mjs",
    "kosif-one/vendor/hyperframes/skills/motion-graphics/grounding/PROTOCOL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-84"
@@ -1525,6 +1609,7 @@
    "100-superskills/skills/hyperframes-animation-studio/scripts/motion.py",
    "100-superskills/skills/hyperframes-animation-studio/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-85"
@@ -1542,6 +1627,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-86"
@@ -1561,6 +1647,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-87"
@@ -1580,6 +1667,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-88"
@@ -1599,6 +1687,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-89"
@@ -1618,6 +1707,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-90"
@@ -1637,6 +1727,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-91"
@@ -1656,6 +1747,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-92"
@@ -1675,6 +1767,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-93"
@@ -1694,6 +1787,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-94"
@@ -1713,6 +1807,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-95"
@@ -1730,6 +1825,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:496"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-96"
@@ -1749,6 +1845,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/twin/report.json",
    "100-superskills/skills/kosif-montage-motion/examples/structural-twin-demo.html:6"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-97"
@@ -1766,6 +1863,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/qa.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-98"
@@ -1783,6 +1881,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/qa.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-99"
@@ -1800,6 +1899,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/review.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-100"
@@ -1817,6 +1917,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/env_check.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-101"
@@ -1835,6 +1936,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:257",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/app.js:27"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-102"
@@ -1852,6 +1954,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:573"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-103"
@@ -1869,6 +1972,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:637"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-104"
@@ -1887,6 +1991,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:986",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:441"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-105"
@@ -1904,6 +2009,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:146"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-106"
@@ -1922,6 +2028,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:78",
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:89"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-107"
@@ -1939,6 +2046,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:227"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-108"
@@ -1957,6 +2065,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/ultra_animator.py:239",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/qa_inspector.py:128"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-109"
@@ -1976,6 +2085,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/qa_inspector.py:73",
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-110"
@@ -1995,6 +2105,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-audio/scripts/audio_analyze.py:195",
    "kosif-one/tools/kosif-omni/skills/kosif-audio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-111"
@@ -2013,6 +2124,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-vision/scripts/image_analyze.py:120",
    "kosif-one/tools/kosif-omni/skills/kosif-vision/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-112"
@@ -2030,6 +2142,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-vision/scripts/image_analyze.py:227"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-113"
@@ -2048,6 +2161,7 @@
    "kosif-one/projects/KOSIF_Motion_Ghorba/tools/qa_contact.py",
    "kosif-one/projects/ghorba-motion-v2/make_contact.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-114"
@@ -2066,6 +2180,7 @@
    "kosif-one/tools/kosif-studio/motion/qa.py:1",
    "kosif-one/tools/kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-115"
@@ -2083,6 +2198,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/proplan.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-116"
@@ -2100,6 +2216,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/tools.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-117"
@@ -2118,6 +2235,7 @@
    "kosif-one/tools/kosif-studio/studio.py:49",
    "kosif-one/tools/kosif-studio/studio.py:167"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-118"
@@ -2135,6 +2253,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_sheets.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-119"
@@ -2153,6 +2272,7 @@
    "100-superskills/skills/pro-video-editor-ffmpeg/scripts/probe.py:53",
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-120"
@@ -2171,6 +2291,7 @@
    "100-superskills/skills/pixel-studio-painter/scripts/runner.py",
    "100-superskills/skills/pixel-studio-painter/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-121"
@@ -2188,6 +2309,7 @@
   "proof": [
    "100-superskills/skills/motion-director-pro/scripts/motion_energy.py:95"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-122"
@@ -2205,6 +2327,7 @@
   "proof": [
    "kosif-studio/motion/tools.py:54"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-123"
@@ -2223,6 +2346,7 @@
    "kosif-tool/starters/html-canvas/index.html:219",
    "kosif-tool/starters/html-canvas/index.html:232"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-124"
@@ -2240,6 +2364,7 @@
   "proof": [
    "kosif-tool/tools/check_originality.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-125"
@@ -2258,6 +2383,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/scripts/contrast-report.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-126"
@@ -2276,6 +2402,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md",
    "kosif-atlas/skills/2702-hyperframes/10379-hyperframes-cli/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-127"
@@ -2294,6 +2421,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/scripts/animation-map.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-128"
@@ -2311,6 +2439,7 @@
   "proof": [
    "kosif-atlas/skills/2414-animation/9355-learn-style/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-129"
@@ -2328,6 +2457,7 @@
   "proof": [
    "kosif-atlas/skills/1083-social-vision/2399-analyze-social/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-130"
@@ -2345,6 +2475,7 @@
   "proof": [
    "kosif-atlas/skills/2172-testing-plugin/7896-odiff-image-diffing/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-131"
@@ -2363,6 +2494,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-132"
@@ -2381,6 +2513,7 @@
    "kosif-atlas/skills/1083-social-vision/2399-analyze-social/SKILL.md",
    "kosif-atlas/skills/2451-knowledge/9503-video-digest/context/watch-pipeline.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-133"
@@ -2398,6 +2531,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-134"
@@ -2416,6 +2550,7 @@
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/device-loss.md",
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/limits-and-features.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-135"
@@ -2433,6 +2568,7 @@
   "proof": [
    "kosif-atlas/skills/2414-animation/9357-rotoscope"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-136"
@@ -2451,6 +2587,7 @@
    "kosif-atlas/skills/2307-geospatial-engineering/8858-spatial-data-quality/SKILL.md",
    "kosif-atlas/skills/1650-portaljs/4640-portaljs-add-map/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-137"
@@ -2468,6 +2605,7 @@
   "proof": [
    "app/public/js/10_studio.js:3848"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-138"
@@ -2485,6 +2623,7 @@
   "proof": [
    "app/public/js/00_editor.js:1299"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-139"
@@ -2504,6 +2643,7 @@
    "app/public/js/10_studio.js:1192",
    "app/public/js/10_studio.js:1203"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-140"
@@ -2523,6 +2663,7 @@
    "app/public/js/10_studio.js:1426",
    "app/public/js/10_studio.js:1439"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-141"
@@ -2542,6 +2683,7 @@
    "app/public/js/10_studio.js:3968",
    "app/public/js/10_studio.js:3994"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-142"
@@ -2559,6 +2701,7 @@
   "proof": [
    "app/public/js/00_editor.js:2751"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-143"
@@ -2576,6 +2719,7 @@
   "proof": [
    "app/public/js/00_editor.js:2110"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-144"
@@ -2595,6 +2739,7 @@
    "app/vite.config.ts:63",
    "app/public/js/10_studio.js:2389"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-145"
@@ -2613,6 +2758,7 @@
    "app/public/js/00_editor.js:843",
    "app/index.html:184"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-146"
@@ -2631,6 +2777,7 @@
    "fastify-motion-bro/scripts/render.py:27",
    "fastify-motion-bro/docs/CANVAS-STUDIO.md:4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-147"
@@ -2649,6 +2796,7 @@
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-148"
@@ -2667,6 +2815,7 @@
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-149"
@@ -2685,6 +2834,7 @@
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-150"
@@ -2703,6 +2853,7 @@
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-151"
@@ -2721,6 +2872,7 @@
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-152"
@@ -2738,6 +2890,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/docs/guides/performance.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-153"
@@ -2756,6 +2909,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/review-loop.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/storyboard-format.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-154"
@@ -2773,6 +2927,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-155"
@@ -2790,6 +2945,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/determinism-rules.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-156"
@@ -2807,6 +2963,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-157"
@@ -2825,6 +2982,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/tracks-and-clips.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-158"
@@ -2842,6 +3000,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/catalog.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-159"
@@ -2861,6 +3020,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/scripts/animation-map.test.mjs",
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/scripts/animation-map-sampling.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-160"
@@ -2879,6 +3039,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands/keyframes.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-161"
@@ -2896,6 +3057,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/design-adherence.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-162"
@@ -2914,6 +3076,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/scripts/contrast-report.mjs",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands/contrast-fg.test.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-163"
@@ -2932,6 +3095,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/lint-validate-inspect.md",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands/lint.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-164"
@@ -2950,6 +3114,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/lint-validate-inspect.md",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands/check.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-165"
@@ -2967,6 +3132,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/lint-validate-inspect.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-166"
@@ -2985,6 +3151,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/lint-validate-inspect.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-167"
@@ -3003,6 +3170,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/SKILL.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-168"
@@ -3021,6 +3189,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/compare-and-batch.md",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands/grade-compare.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-169"
@@ -3039,6 +3208,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/SKILL.md",
    "kosif-one/vendor/hyperframes/packages/cli/src/commands/history.ts"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-170"
@@ -3057,6 +3227,7 @@
    "kosif-one/vendor/hyperframes/skills/hyperframes-registry/references/component-quality-bar.md",
    "kosif-one/vendor/hyperframes/skills/hyperframes-registry/references/contributing.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-171"
@@ -3074,6 +3245,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/media-use/audio/references/captions/transcript-handling.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-172"
@@ -3091,6 +3263,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/embedded-captions/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-173"
@@ -3109,6 +3282,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/preview-frames.cjs",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/preview-frames.test.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-174"
@@ -3128,6 +3302,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/check-occlusion.cjs",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/check-overflow.cjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-175"
@@ -3146,6 +3321,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/failure-modes.md",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/anti-patterns.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-176"
@@ -3163,6 +3339,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/figma/scripts/verify-motion.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-177"
@@ -3181,6 +3358,7 @@
    "100-superskills/skills/kosif-montage-motion/SKILL.md:88",
    "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-178"
@@ -3199,6 +3377,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:118",
    "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/index.html:35"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-179"
@@ -3216,6 +3395,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/mimic.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-180"
@@ -3233,6 +3413,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/mimic.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-181"
@@ -3250,6 +3431,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/operating-manual.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-182"
@@ -3269,6 +3451,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/review.py",
    "100-superskills/skills/kosif-montage-motion/tests/test_review.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-183"
@@ -3287,6 +3470,7 @@
    "100-superskills/skills/kosif-montage-motion/references/operating-manual.md",
    "100-superskills/skills/kosif-montage-motion/scripts/qa.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-184"
@@ -3306,6 +3490,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/analyze.py",
    "100-superskills/skills/kosif-montage-motion/tests/test_analyze.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-185"
@@ -3323,6 +3508,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/video-breakdown.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-186"
@@ -3340,6 +3526,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/audio_analyze.py:270"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-187"
@@ -3359,6 +3546,7 @@
    "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:64-81",
    "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:172-212"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-188"
@@ -3377,6 +3565,7 @@
    "kosif-one/projects/egypt-2120-animation/dbg.py",
    "kosif-one/projects/egypt-2120-animation/dbg2.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-189"
@@ -3394,6 +3583,7 @@
   "proof": [
    "kosif-one/projects/mimic-jumuah/study/mimic.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-190"
@@ -3411,6 +3601,7 @@
   "proof": [
    "kosif-one/projects/mimic-jumuah/study/compare.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-191"
@@ -3428,6 +3619,7 @@
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:493-533"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-192"
@@ -3445,6 +3637,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/motion/motion.py:472"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-193"
@@ -3463,6 +3656,7 @@
    "kosif-one/tools/kosif-studio/motion/qa.py:283",
    "kosif-one/tools/kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-194"
@@ -3481,6 +3675,7 @@
    "kosif-one/tools/kosif-studio/judge.py",
    "kosif-one/tools/kosif-studio/references/drawing-guide.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-195"
@@ -3498,6 +3693,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-196"
@@ -3516,6 +3712,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/run_synthetic.py",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/make_reference.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-197"
@@ -3534,6 +3731,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
    "kosif-tool/.claude/skills/kosif-superpowers/references/mimic.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-198"
@@ -3551,6 +3749,7 @@
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/run_synthetic.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-199"
@@ -3569,6 +3768,7 @@
    "100-superskills/skills/pixel-studio-painter/scripts/judge.py",
    "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-200"
@@ -3586,6 +3786,7 @@
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:496"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-201"
@@ -3605,6 +3806,7 @@
    "kosif-studio/exact.py:193",
    "kosif-studio/tests/test_studio.py:271"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-202"
@@ -3624,6 +3826,7 @@
    "kosif-studio/exact.py:95",
    "kosif-studio/exact.py:124"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-203"
@@ -3643,6 +3846,7 @@
    "kosif-studio/studio.py:612",
    "kosif-studio/out/Untitled_exact.png"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-204"
@@ -3662,6 +3866,7 @@
    "kosif-studio/runner.py:116",
    "kosif-studio/runner.py:177"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-205"
@@ -3681,6 +3886,7 @@
    "kosif-studio/judge.py:33",
    "kosif-studio/judge.py:36"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-206"
@@ -3698,6 +3904,7 @@
   "proof": [
    "kosif-studio/references/drawing-guide.md:82"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-207"
@@ -3715,6 +3922,7 @@
   "proof": [
    "kosif-studio/tests/test_studio.py:1"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-208"
@@ -3732,6 +3940,7 @@
   "proof": [
    "kosif-studio/motion/motion.py:226"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-209"
@@ -3750,6 +3959,7 @@
    "kosif-studio/motion/qa.py:254",
    "kosif-studio/tests/test_studio.py:699"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-210"
@@ -3767,6 +3977,7 @@
   "proof": [
    "kosif-studio/motion/qa.py:357"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-211"
@@ -3785,6 +3996,7 @@
    "kosif-tool/tools/verify_video.py",
    "kosif-tool/templates/TEST_REPORT.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-212"
@@ -3802,6 +4014,7 @@
   "proof": [
    "kosif-one/vendor/brag/skills/brag/references/step-4-deliver.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-213"
@@ -3820,6 +4033,7 @@
    "kosif-atlas/skills/1420-frontend-design-skills/3377-openai-frontend-design",
    "kosif-atlas/skills/880-superloopy/1941-superloopy-frontend/scripts/visual-diff.mjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-214"
@@ -3837,6 +4051,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3892-music"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-215"
@@ -3854,6 +4069,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3892-music"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-216"
@@ -3872,6 +4088,7 @@
    "kosif-atlas/skills/2657-figures/10108-ai-full-figure",
    "kosif-atlas/skills/2657-figures/10115-transparent-icons"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-217"
@@ -3891,6 +4108,7 @@
    "app/public/js/10_studio.js:4941",
    "app/public/js/10_studio.js:5085"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-218"
@@ -3910,6 +4128,7 @@
    "app/public/js/10_studio.js:4631",
    "app/public/js/10_studio.js:4668"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-219"
@@ -3927,6 +4146,7 @@
   "proof": [
    "app/public/js/00_editor.js:1491"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-220"
@@ -3944,6 +4164,7 @@
   "proof": [
    "app/public/js/10_studio.js:3600"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-221"
@@ -3961,6 +4182,7 @@
   "proof": [
    "app/public/js/10_studio.js:4668"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-222"
@@ -3978,6 +4200,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-223"
@@ -3995,6 +4218,7 @@
   "proof": [
    "kosif-one/tools/kosif-studio/jev_client.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-224"
@@ -4013,6 +4237,7 @@
    "100-superskills/skills/davinci-resolve-pipeline/references/color-grading-order.md",
    "100-superskills/skills/davinci-resolve-pipeline/scripts/resolve_pipeline.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-225"
@@ -4031,6 +4256,7 @@
    "kosif-studio/jev_client.py:1",
    "kosif-studio/jev_client.py:24"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-226"
@@ -4048,6 +4274,7 @@
   "proof": [
    "kosif-one/vendor/mcp-higgsfield-landing/PROMPTS.md:100"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-227"
@@ -4065,6 +4292,7 @@
   "proof": [
    "style:pm-antonio-kodheli-490109"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-antonio-kodheli-490109"
   ],
@@ -4084,6 +4312,7 @@
   "proof": [
    "style:pm-notdwd-c2037d"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-notdwd-c2037d"
   ],
@@ -4103,6 +4332,7 @@
   "proof": [
    "style:pm-twoclipping-5cba86"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-twoclipping-5cba86"
   ],
@@ -4125,6 +4355,7 @@
    "kosif-studio/motion/references/motion-craft.md",
    "kosif-studio/motion/references/hyperframes-authoring.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-231"
@@ -4142,6 +4373,7 @@
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-232"
@@ -4160,6 +4392,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/DELIVERY.md",
    "kosif-atlas/skills/1511-homie/3903-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-233"
@@ -4178,6 +4411,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md",
    "kosif-atlas/skills/1511-homie/3903-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-234"
@@ -4195,6 +4429,7 @@
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/757-remotion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-235"
@@ -4213,6 +4448,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/DELIVERY.md",
    "kosif-atlas/skills/101-video-skills/215-feature-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-236"
@@ -4232,6 +4468,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/scripts/qa.mjs",
    "kosif-atlas/skills/166-demo-video/535-demo-video"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-237"
@@ -4251,6 +4488,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali",
    "kosif-atlas/skills/101-video-skills/219-ui-component-clip"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-238"
@@ -4270,6 +4508,7 @@
    "kosif-atlas/skills/3438-ux-design/14124-top-design",
    "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-239"
@@ -4289,6 +4528,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12589-post-visual/SKILL.md",
    "kosif-atlas/skills/2964-pwdev-copy/12454-copy-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-240"
@@ -4308,6 +4548,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen/SKILL.md",
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-241"
@@ -4326,6 +4567,7 @@
    "kosif-atlas/skills/2976-pwdev-social-media/12589-post-visual/SKILL.md",
    "kosif-atlas/skills/1567-tonone/4428-form-social/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-242"
@@ -4343,6 +4585,7 @@
   "proof": [
    "kosif-atlas/skills/1567-tonone/4428-form-social/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-243"
@@ -4361,6 +4604,7 @@
    "kosif-atlas/skills/1520-digital-marketing-pro/4019-creative-testing-framework/SKILL.md",
    "kosif-atlas/skills/192-marketing-skills/570-ad-creative/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-244"
@@ -4378,6 +4622,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2441-akbun-davinciresolve-searchhook/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-245"
@@ -4397,6 +4642,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/DELIVERY.md",
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-246"
@@ -4414,6 +4660,7 @@
   "proof": [
    "kosif-atlas/skills/3434-sales-influence/14100-made-to-stick/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-247"
@@ -4431,6 +4678,7 @@
   "proof": [
    "kosif-atlas/skills/1101-akbun-writing/2486-akbun-thumbnail-review/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-248"
@@ -4449,6 +4697,7 @@
    "kosif-atlas/skills/2451-knowledge/9503-video-digest/context/watch-pipeline.md",
    "kosif-atlas/skills/2451-knowledge/9503-video-digest/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-249"
@@ -4467,6 +4716,7 @@
    "kosif-atlas/skills/2211-majestic-marketing/8297-youtube-packaging/SKILL.md",
    "kosif-atlas/skills/2211-majestic-marketing/8297-youtube-packaging/references/data-currentness.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-250"
@@ -4484,6 +4734,7 @@
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/quality-and-editors.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-251"
@@ -4503,6 +4754,7 @@
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-product-ads.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-social-clips.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-252"
@@ -4520,6 +4772,7 @@
   "proof": [
    "kosif-atlas/skills/1530-webcraft/4196-ui-screenshots/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-253"
@@ -4537,6 +4790,7 @@
   "proof": [
    "kosif-atlas/skills/2976-pwdev-social-media/12578-asset-curation/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-254"
@@ -4554,6 +4808,7 @@
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3847-factor-of-safety-content-stress/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-255"
@@ -4572,6 +4827,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2450-davinciresolve-audio-delivery/SKILL.md",
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-256"
@@ -4589,6 +4845,7 @@
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-257"
@@ -4607,6 +4864,7 @@
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/gotchas.md",
    "kosif-atlas/skills/2976-pwdev-social-media/12592-story-reels/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-258"
@@ -4624,6 +4882,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2464-davinciresolve-subtitle-devtalk/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-259"
@@ -4642,6 +4901,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transcript-guide.md",
    "kosif-atlas/skills/886-intel/1994-transcribe/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-260"
@@ -4659,6 +4919,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow/references/look-scopes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-261"
@@ -4677,6 +4938,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2453-davinciresolve-cut-devtalk/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2465-davinciresolve-subtitle-travelnote/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-262"
@@ -4696,6 +4958,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2466-davinciresolve-youtube-shorts/SKILL.md",
    "kosif-atlas/skills/934-oh-my-cassette/2204-cassette-video-edit/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-263"
@@ -4714,6 +4977,7 @@
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md",
    "kosif-atlas/skills/101-video-skills/214-creator-video/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-264"
@@ -4731,6 +4995,7 @@
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transcript-guide.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-265"
@@ -4748,6 +5013,7 @@
   "proof": [
    "kosif-atlas/skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-266"
@@ -4766,6 +5032,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural/references/mixing-and-loops.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-267"
@@ -4783,6 +5050,7 @@
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-268"
@@ -4801,6 +5069,7 @@
    "kosif-atlas/skills/1511-homie/3901-sound/references/TRAPS.md",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-269"
@@ -4819,6 +5088,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound",
    "kosif-atlas/skills/1096-akbun-editvideo/2450-davinciresolve-audio-delivery"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-270"
@@ -4837,6 +5107,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound",
    "kosif-atlas/skills/1526-gamegen/4163-game-audio-procedural"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-271"
@@ -4854,6 +5125,7 @@
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/compute-shaders.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-272"
@@ -4872,6 +5144,7 @@
    "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md",
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-273"
@@ -4889,6 +5162,7 @@
   "proof": [
    "kosif-atlas/skills/228-mas-3d-games/705-blender/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-274"
@@ -4906,6 +5180,7 @@
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3825-legibility-contrast-and-spacing/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-275"
@@ -4924,6 +5199,7 @@
    "kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero/SKILL.md",
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/quality-and-editors.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-276"
@@ -4941,6 +5217,7 @@
   "proof": [
    "kosif-atlas/skills/2329-localization-i18n-engineering/8942-localization-qa-and-pseudo-loc/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-277"
@@ -4958,6 +5235,7 @@
   "proof": [
    "kosif-atlas/skills/3259-claude-math/13770-math-unicode/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-278"
@@ -4975,6 +5253,7 @@
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-279"
@@ -4993,6 +5272,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow",
    "kosif-atlas/skills/1096-akbun-editvideo/2434-akbun-davinciresolve-exposure"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-280"
@@ -5010,6 +5290,7 @@
   "proof": [
    "kosif-atlas/skills/2460-pixel-art/9525-animate"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-281"
@@ -5028,6 +5309,7 @@
    "kosif-atlas/skills/1526-gamegen/4171-game-sprites",
    "kosif-atlas/skills/2657-figures/10115-transparent-icons"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-282"
@@ -5046,6 +5328,7 @@
    "kosif-atlas/skills/2235-applied-statistics/8498-statistical-qa-of-metrics/SKILL.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10330-statistical-and-uncertainty-visualizatio/references/uncertainty-encodings.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-283"
@@ -5065,6 +5348,7 @@
    "kosif-atlas/skills/2657-figures/10110-figure-qa/references/figure-qa-procedure.md",
    "kosif-atlas/skills/2657-figures/10110-figure-qa/references/iterate-loop.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-284"
@@ -5083,6 +5367,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10331-testing-data-visualizations/references/visual-regression-and-image-testing.md",
    "kosif-atlas/skills/2690-build-web-data-visualization/10331-testing-data-visualizations/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-285"
@@ -5102,6 +5387,7 @@
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-flyover-architecture.md",
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-286"
@@ -5120,6 +5406,7 @@
    "kosif-atlas/skills/2622-city-report/9999-city-report/references/api-gotchas.md",
    "kosif-atlas/skills/2622-city-report/9999-city-report/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-287"
@@ -5139,6 +5426,7 @@
    "kosif-atlas/skills/2690-build-web-data-visualization/10318-accessibility-and-inclusive-visualizatio/references/color-contrast-and-redundant-encoding.md",
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-288"
@@ -5158,6 +5446,7 @@
    "kosif-atlas/skills/2248-brand-identity-studio/8558-brand-legal-and-licensing",
    "kosif-atlas/skills/259-quickdesign/865-quickdesign"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-289"
@@ -5175,6 +5464,7 @@
   "proof": [
    "kosif-audit-pro/patch/README.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-290"
@@ -5194,6 +5484,7 @@
    "kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md",
    "kosif-earth-ci-fork/AGENT_WORKLOG.md:1045"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-291"
@@ -5211,6 +5502,7 @@
   "proof": [
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.mp4"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-292"
@@ -5228,6 +5520,7 @@
   "proof": [
    "kosif-earth-ci-fork/docs/rebuild/COMPANY_FIRST_REBUILD_ar.md:41"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-293"
@@ -5247,6 +5540,7 @@
    "fastify-motion-bro/docs/PRODUCTION-GATES.md:8-14",
    "fastify-motion-bro/docs/ROADMAP.md:9"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-294"
@@ -5264,6 +5558,7 @@
   "proof": [
    "fastify-motion-bro/docs/REVIEW_CHECKLIST.md:1-11"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-295"
@@ -5281,6 +5576,7 @@
   "proof": [
    "fastify-motion-bro/.github/workflows/ci.yml:14-54"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-296"
@@ -5299,6 +5595,7 @@
    "fastify-motion-bro/AGENTS.md:17",
    "fastify-motion-bro/docs/REVIEW_CHECKLIST.md:8"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-297"
@@ -5316,6 +5613,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/docs/concepts/determinism.mdx"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-298"
@@ -5333,6 +5631,7 @@
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/diagnosis.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-299"
@@ -5351,6 +5650,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/SKILL.md:123"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-300"
@@ -5368,6 +5668,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-301"
@@ -5385,6 +5686,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-302"
@@ -5404,6 +5706,7 @@
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md",
    "100-superskills/skills/kosif-montage-motion/references/launch-video.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-303"
@@ -5421,6 +5724,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/examples/voice2motion/qa_report.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-304"
@@ -5439,6 +5743,7 @@
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md",
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-305"
@@ -5456,6 +5761,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-306"
@@ -5473,6 +5779,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-director.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-307"
@@ -5490,6 +5797,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:60"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-308"
@@ -5507,6 +5815,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:66"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-309"
@@ -5524,6 +5833,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:96"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-310"
@@ -5541,6 +5851,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:97"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-311"
@@ -5558,6 +5869,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:98"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-312"
@@ -5575,6 +5887,7 @@
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:99"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-313"
@@ -5593,6 +5906,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/check.mjs:1",
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/check.mjs:10"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-314"
@@ -5610,6 +5924,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-315"
@@ -5628,6 +5943,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-visual-aesthetics-council/SKILL.md",
    "kosif-one/tools/kosif-omni/skills/kosif-vision/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-316"
@@ -5646,6 +5962,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-computer-use/references/computer-playbook.md",
    "kosif-one/tools/kosif-omni/skills/kosif-computer-use/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-317"
@@ -5665,6 +5982,7 @@
    "kosif-one/tools/kosif-omni/skills/kosif-omni/SKILL.md",
    "kosif-one/tools/kosif-omni/skills/kosif-omni/references/live-verification.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-318"
@@ -5683,6 +6001,7 @@
    "kosif-one/projects/KOSIF_Motion_Ghorba/MONTAGE_REUSE_RUNBOOK_AR.md",
    "kosif-one/projects/KOSIF_Motion_Ghorba/pinterest_kmotion/fetch-credits.json"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-319"
@@ -5701,6 +6020,7 @@
    "kosif-one/tools/kosif-studio/motion/references/motion-craft.md",
    "kosif-one/tools/kosif-studio/motion/references/craft-numbers.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-320"
@@ -5718,6 +6038,7 @@
   "proof": [
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-321"
@@ -5735,6 +6056,7 @@
   "proof": [
    "100-superskills/skills/pro-video-editor-ffmpeg/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-322"
@@ -5752,6 +6074,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/color-grading-order.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-323"
@@ -5769,6 +6092,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/color-grading-order.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-324"
@@ -5786,6 +6110,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-325"
@@ -5803,6 +6128,7 @@
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/references/color-grading-order.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-326"
@@ -5821,6 +6147,7 @@
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md",
    "100-superskills/skills/claude-animation-studio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-327"
@@ -5838,6 +6165,7 @@
   "proof": [
    "100-superskills/skills/claude-animation-studio/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-328"
@@ -5855,6 +6183,7 @@
   "proof": [
    "100-superskills/skills/trend-animation-styles/references/styles.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-329"
@@ -5872,6 +6201,7 @@
   "proof": [
    "100-superskills/skills/motion-director-pro/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-330"
@@ -5889,6 +6219,7 @@
   "proof": [
    "100-superskills/skills/motion-director-pro/references/motion-floor.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-331"
@@ -5906,6 +6237,7 @@
   "proof": [
    "100-superskills/skills/accessibility-wcag/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-332"
@@ -5923,6 +6255,7 @@
   "proof": [
    "100-superskills/skills/fact-checker-verifier/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-333"
@@ -5940,6 +6273,7 @@
   "proof": [
    "100-superskills/skills/llm-judge-eval-lab/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-334"
@@ -5957,6 +6291,7 @@
   "proof": [
    "100-superskills/skills/llm-judge-evals/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-335"
@@ -5974,6 +6309,7 @@
   "proof": [
    "100-superskills/skills/testing-suite-complete/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-336"
@@ -5991,6 +6327,7 @@
   "proof": [
    "100-superskills/skills/storyboard-shotlist/SKILL.md:25"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-337"
@@ -6008,6 +6345,7 @@
   "proof": [
    "100-superskills/skills/thumbnail-social-graphics/SKILL.md:24"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-338"
@@ -6025,6 +6363,7 @@
   "proof": [
    "100-superskills/skills/image-critique-reverse-prompt/SKILL.md:21"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-339"
@@ -6042,6 +6381,7 @@
   "proof": [
    "100-superskills/skills/image-critique-reverse-prompt/SKILL.md:22"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-340"
@@ -6059,6 +6399,7 @@
   "proof": [
    "kosif-studio/motion/references/shape-kit.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-341"
@@ -6076,6 +6417,7 @@
   "proof": [
    "kosif-studio/motion/references/motion-craft.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-342"
@@ -6093,6 +6435,7 @@
   "proof": [
    "kosif-studio/motion/references/motion-director.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-343"
@@ -6110,6 +6453,7 @@
   "proof": [
    "kosif-studio/motion/references/motion-director.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-344"
@@ -6128,6 +6472,7 @@
    "kosif-studio/motion/references/hyperframes-authoring.md",
    "kosif-studio/motion/references/KOSIF_SEE_INTEGRATION.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-345"
@@ -6145,6 +6490,7 @@
   "proof": [
    "kosif-studio/motion/qa.py:133"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-346"
@@ -6162,6 +6508,7 @@
   "proof": [
    "kosif-studio/motion/qa.py:152"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-347"
@@ -6179,6 +6526,7 @@
   "proof": [
    "kosif-studio/motion/qa.py:159"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-348"
@@ -6196,6 +6544,7 @@
   "proof": [
    "kosif-tool/templates/PLAN.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-349"
@@ -6213,6 +6562,7 @@
   "proof": [
    "kosif-tool/playbooks/3d.md:86-99"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-350"
@@ -6231,6 +6581,7 @@
    "kosif-tool/playbooks/ads.md:89-98",
    "kosif-tool/playbooks/ads.md:102"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-351"
@@ -6249,6 +6600,7 @@
    "kosif-tool/playbooks/arabic-typography.md:85-94",
    "kosif-tool/playbooks/arabic-typography.md:98"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-352"
@@ -6267,6 +6619,7 @@
    "kosif-tool/playbooks/audio-sync.md:86",
    "kosif-tool/playbooks/kinetic-type.md:85"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-353"
@@ -6284,6 +6637,7 @@
   "proof": [
    "kosif-tool/playbooks/characters.md:87-100"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-354"
@@ -6302,6 +6656,7 @@
    "kosif-tool/playbooks/charts.md:229-241",
    "kosif-tool/playbooks/charts.md:214-223"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-355"
@@ -6319,6 +6674,7 @@
   "proof": [
    "kosif-tool/playbooks/code.md:85-98"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-356"
@@ -6336,6 +6692,7 @@
   "proof": [
    "kosif-tool/playbooks/kinetic-type.md:91-104"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-357"
@@ -6353,6 +6710,7 @@
   "proof": [
    "kosif-tool/playbooks/music.md:93"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-358"
@@ -6370,6 +6728,7 @@
   "proof": [
    "kosif-tool/playbooks/particles.md:84-97"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-359"
@@ -6387,6 +6746,7 @@
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:95-108"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-360"
@@ -6404,6 +6764,7 @@
   "proof": [
    "kosif-tool/playbooks/phone.md:211-237"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-361"
@@ -6421,6 +6782,7 @@
   "proof": [
    "kosif-tool/playbooks/photos.md:217-245"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-362"
@@ -6438,6 +6800,7 @@
   "proof": [
    "kosif-tool/playbooks/product-ui.md:243-257"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [],
   "id": "QA-363"
@@ -6455,6 +6818,7 @@
   "proof": [
    "kosif-one/vendor/brag/skills/brag/assets/sfx/sfx-analysis.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-364"
@@ -6472,6 +6836,7 @@
   "proof": [
    "kosif-one/vendor/brag/skills/brag/references/step-4-deliver.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-365"
@@ -6490,6 +6855,7 @@
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/pipeline.md:95"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-366"
@@ -6507,6 +6873,7 @@
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md:613"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [],
   "id": "QA-367"
@@ -6524,6 +6891,7 @@
   "proof": [
    "style:pm-aschapmann-131210"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-aschapmann-131210"
   ],
@@ -6543,6 +6911,7 @@
   "proof": [
    "style:pm-ceowinkz-7c776b"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-ceowinkz-7c776b"
   ],
@@ -6562,6 +6931,7 @@
   "proof": [
    "style:pm-kantamk-61f410"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-kantamk-61f410"
   ],
@@ -6581,6 +6951,7 @@
   "proof": [
    "style:pm-l3d1c-0e35a3"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-l3d1c-0e35a3"
   ],
@@ -6600,6 +6971,7 @@
   "proof": [
    "style:pm-micheleharmonic-77628e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-micheleharmonic-77628e"
   ],
@@ -6622,6 +6994,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tests/test_ecc_upgrade.py",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/integrations/kosif-see/ECC_DISTILLED_CORE.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "receipt",
@@ -6648,6 +7021,7 @@
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/references/GOOGLE_DOC_DISTILLATION.md",
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/.claude/skills/kosif-cinematic-director/SKILL.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "review loop",
@@ -6676,6 +7050,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/fdiff.swift"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "frame diff",
@@ -6709,6 +7084,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/activity.mjs"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "dead air",
@@ -6739,6 +7115,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/textcheck.mjs"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "contrast",
@@ -6771,6 +7148,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "zoom",
@@ -6800,6 +7178,7 @@
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "critic",
@@ -6829,6 +7208,7 @@
   "proof": [
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/resources/cinematic-kit/references/CINEGRAPH_CINECLAUDE_REVIEW.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "honesty",
@@ -6858,6 +7238,7 @@
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md",
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/KOSIF_SEE_CINEMATIC_ROUTER.md"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "status",
@@ -6889,6 +7270,7 @@
    "kosif-tool/fonts/kosif-jumuah/README.md",
    "kosif-tool/tools/render_html.cjs"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "مطابقة",
@@ -6921,6 +7303,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/run_synthetic.py",
    "kosif-tool/tests/test_mimic.py"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "اختبار",

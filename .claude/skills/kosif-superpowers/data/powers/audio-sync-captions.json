@@ -16,6 +16,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md",
    "kosif-tool/starters/remotion/src/Film.tsx:32"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "الصوت ساعة",
@@ -41,6 +42,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/words.json",
    "kosif-tool/starters/html-canvas/words.js"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "words.json",
@@ -65,6 +67,7 @@
    "kosif-tool/tools/words_convert.py:122",
    "kosif-tool/playbooks/audio-sync.md:27"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تحويل",
@@ -91,6 +94,7 @@
    "kosif-tool/templates/TEST_REPORT.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تسامح",
@@ -115,6 +119,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/sync_probe.cjs",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "قياس التزامن",
@@ -137,6 +142,7 @@
   "proof": [
    "kosif-studio/motion/transcribe.py:89"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تحقق",
@@ -162,6 +168,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/transcribe.py",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تفريغ",
@@ -188,6 +195,7 @@
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transcript-guide.md",
    "kosif-one/vendor/hyperframes/skills/media-use/audio/references/transcribe.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "whisper",
@@ -213,6 +221,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/align_words.py",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/make_voice.sh"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "piper",
@@ -238,6 +247,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_directors.py:42",
    "app/public/js/00_editor.js:2684"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "محاذاة",
@@ -264,6 +274,7 @@
    "kosif-studio/tests/test_studio.py:910",
    "kosif-tool/playbooks/audio-sync.md:76"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تصحيح",
@@ -287,6 +298,7 @@
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "بداية النطق",
@@ -309,6 +321,7 @@
   "proof": [
    "kosif-atlas/skills/1845-deepgram-pack/5468-deepgram-cost-tuning/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تجهيز الصوت",
@@ -333,6 +346,7 @@
    "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b",
    "app/public/js/00_editor.js:1525"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تفريغ سحابي",
@@ -357,6 +371,7 @@
    "kosif-one/vendor/hyperframes/skills/media-use/scripts/transcribe.mjs",
    "kosif-one/vendor/hyperframes/skills/media-use/references/operations.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "hyperframes",
@@ -380,6 +395,7 @@
    "kosif-atlas/skills/1096-akbun-editvideo/2451-davinciresolve-beats-devtalk/SKILL.md",
    "kosif-atlas/skills/1096-akbun-editvideo/2447-akbun-vlog-shootplan/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إعادات",
@@ -404,6 +420,7 @@
    "kosif-studio/motion/verse.py:145",
    "app/public/js/00_editor.js:1096"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تقدير",
@@ -427,6 +444,7 @@
    "kosif-studio/motion/montage.py:341",
    "kosif-studio/tests/test_studio.py:765"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "توزيع",
@@ -451,6 +469,7 @@
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
    "style:pm-linearuncle-5d2bae"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-linearuncle-5d2bae"
   ],
@@ -476,6 +495,7 @@
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:67-77",
    "fastify-motion-bro/tests/production-profiles.test.mjs:75-81"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "سكريبت",
@@ -500,6 +520,7 @@
    "kosif-atlas/skills/2712-remotion/10431-remotion-captions/display-captions.md",
    "app/public/js/00_editor.js:1510"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "تجميع",
@@ -524,6 +545,7 @@
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md",
    "app/public/js/00_editor.js:2906"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "منطقة آمنة",
@@ -549,6 +571,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/motion-vocabulary.md",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/typography-presets.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "نبرة",
@@ -574,6 +597,7 @@
    "app/public/js/00_editor.js:3007",
    "kosif-tool/playbooks/arabic-typography.md:46"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "وضوح",
@@ -599,6 +623,7 @@
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md",
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "حرفي",
@@ -625,6 +650,7 @@
    "app/public/js/00_editor.js:3032",
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/dynamic-techniques.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إبراز",
@@ -650,6 +676,7 @@
    "kosif-studio/motion/montage.py:381",
    "kosif-studio/tests/test_studio.py:765"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "كاريوكي",
@@ -676,6 +703,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:170",
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:13"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ستايلات",
@@ -701,6 +729,7 @@
    "100-superskills/skills/audio-reactive-captions-studio/scripts/captions_pages.py:95",
    "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صفحات",
@@ -726,6 +755,7 @@
    "kosif-studio/motion/references/voice-open-footage-upgrade-2026-10-10.md",
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "playres",
@@ -748,6 +778,7 @@
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/smart_montage.py:91"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "k karaoke",
@@ -771,6 +802,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/index.html",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "دخول الكلمة",
@@ -795,6 +827,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/audio-reactive-spectrum/index.html",
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/audio-reactive-spectrum/README.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "كاريوكي",
@@ -819,6 +852,7 @@
    "kosif-tool/starters/html-canvas/index.html:181",
    "kosif-tool/starters/html-canvas/timeline.js:82"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "كبسولة",
@@ -843,6 +877,7 @@
    "kosif-tool/starters/remotion/src/Captions.tsx:39",
    "kosif-tool/playbooks/kinetic-type.md:57-75"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ريموشن",
@@ -867,6 +902,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/directed.html:73",
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:156-205"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مقاطع",
@@ -892,6 +928,7 @@
    "style:doodle",
    "style:pm-1stnoel-c20a89"
   ],
+  "proof_scope": "style",
   "styles": [
    "plotter",
    "doodle",
@@ -919,6 +956,7 @@
    "style:pm-gautam-mer1-2ae354",
    "kosif-one/vendor/hyperframes/registry/components/caption-highlight/caption-highlight.html"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-gautam-mer1-2ae354"
   ],
@@ -944,6 +982,7 @@
    "style:pm-rossaxbt-3085b7",
    "style:pm-gizakdag-b8c59e"
   ],
+  "proof_scope": "style",
   "styles": [
    "pm-rossaxbt-3085b7",
    "pm-gizakdag-b8c59e"
@@ -969,6 +1008,7 @@
    "style:pm-sab8a-364a5a",
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/text-highlights.md"
   ],
+  "proof_scope": "sibling",
   "styles": [
    "pm-sab8a-364a5a"
   ],
@@ -995,6 +1035,7 @@
    "kosif-one/vendor/hyperframes/registry/components/caption-pill-karaoke/caption-pill-karaoke.html:153",
    "kosif-one/vendor/hyperframes/skills/hyperframes-registry/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "hyperframes",
@@ -1020,6 +1061,7 @@
    "kosif-one/vendor/hyperframes/skills/embedded-captions/CATALOG.md",
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/make-theme.cjs"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "مدمجة",
@@ -1044,6 +1086,7 @@
    "kosif-one/vendor/hyperframes/registry/blocks/lt-dark-card/lt-dark-card.html",
    "kosif-one/vendor/hyperframes/registry/blocks/news-ticker/news-ticker.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "شريط سفلي",
@@ -1068,6 +1111,7 @@
    "app/public/js/00_editor.js:2352",
    "app/public/js/50_autoedit.js:835"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "بصمة",
@@ -1093,6 +1137,7 @@
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:62",
    "kosif-studio/tests/test_studio.py:943"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "فيلم كلمات",
@@ -1119,6 +1164,7 @@
    "kosif-studio/motion/audio2motion.py:210",
    "kosif-studio/tests/test_audio2motion.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "voice2motion",
@@ -1143,6 +1189,7 @@
    "100-superskills/skills/kosif-montage-motion/tests/test_directors.py:10",
    "kosif-studio/motion/templates/directed.html"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "إخراج تلقائي",
@@ -1167,6 +1214,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/reel.py",
    "kosif-studio/motion/reel.py:92"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "ريل",
@@ -1191,6 +1239,7 @@
    "kosif-tool/playbooks/music.md:68",
    "kosif-one/projects/thursday-dua-animation/source/index.html:198-209"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "تلاوة",
@@ -1217,6 +1266,7 @@
    "kosif-tool/playbooks/music.md:43",
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "أغنية",
@@ -1240,6 +1290,7 @@
    "100-superskills/skills/kosif-montage-motion/scripts/songreel.py",
    "100-superskills/skills/kosif-montage-motion/tests/test_songreel.py"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "أغنية",
@@ -1265,6 +1316,7 @@
    "kosif-tool/playbooks/phone.md:198-205",
    "kosif-tool/playbooks/photos.md:205-211"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "دليل بصري",
@@ -1289,6 +1341,7 @@
    "100-superskills/skills/pro-video-editor-ffmpeg/scripts/silence_cut.py:19",
    "100-superskills/skills/kosif-montage-motion/scripts/omni/audio_analyze.py:147"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "صمت",
@@ -1312,6 +1365,7 @@
   "proof": [
    "kosif-atlas/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift/SKILL.md"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "انزياح",
@@ -1335,6 +1389,7 @@
    "style:product",
    "kosif-tool/playbooks/photos.md:205-211"
   ],
+  "proof_scope": "repo",
   "styles": [
    "product"
   ],
@@ -1361,6 +1416,7 @@
    "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:152-158",
    "fastify-motion-bro/scripts/render.py:15"
   ],
+  "proof_scope": "sibling",
   "styles": [],
   "tags": [
    "دمج",
@@ -1387,6 +1443,7 @@
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/audio-reactive-spectrum/README.md",
    "kosif-audit-studio/voice.js:166"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "غلاف",
@@ -1411,6 +1468,7 @@
    "100-superskills/skills/character-animation-2d/SKILL.md",
    "kosif-tool/styles/pm-davidshulmanfl-371638/BRIEF.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "مزامنة الفم",
@@ -1436,6 +1494,7 @@
    "owner-upload:film_project/film/analyze.py",
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md"
   ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "lyrics",
@@ -1465,6 +1524,7 @@
   "proof": [
    "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js"
   ],
+  "proof_scope": "archive",
   "styles": [],
   "tags": [
    "captions",

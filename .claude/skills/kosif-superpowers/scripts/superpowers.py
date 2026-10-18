@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """KOSIF superpowers catalog CLI — فهرس القوى: list, search, show, doctor, stats, build, check.
 
-The catalog (`repos.json` next to this skill) records 100 major open-source repositories
+The catalog (`repos.json` next to this skill) records 124 major open-source repositories
 whose capabilities a KOSIF film-maker can draw on, grouped into twelve superpowers.
 This tool reads it, regenerates `references/repos.md` from it and checks which of the
 tools are actually installed on this machine — so a plan never promises an integration
@@ -52,7 +52,7 @@ LICENSE_NOTES = (
 )
 REQUIRED = ("owner_repo", "url", "name", "stars_k", "license", "license_note", "summary_en", "summary_ar",
             "capability", "domain", "kosif_use_en", "kosif_use_ar", "integration_en", "playbooks", "caveats_en")
-EXPECTED_COUNT = 100
+EXPECTED_COUNT = 124
 
 
 class CliError(Exception):
