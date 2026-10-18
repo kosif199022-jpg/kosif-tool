@@ -1009,8 +1009,7 @@
   "install": "pip install opencv-python-headless",
   "requires": [
    "chromium",
-   "pip:opencv",
-   "pip:chromadb"
+   "pip:opencv"
   ],
   "license": "",
   "proof": [
@@ -1103,8 +1102,7 @@
   "params": "offset .002 at edges; makePost ca 1.2 (sound_ground 1.4); labPost .4",
   "install": "",
   "requires": [
-   "pip:opencv",
-   "pip:chromadb"
+   "pip:opencv"
   ],
   "license": "",
   "proof": [

@@ -1169,9 +1169,7 @@
   "how": "const g=K3.makeGlitchPass(); composer.addPass(g); g.userData.set({chroma, slice, negative, mono, warp, frame}).",
   "params": "24 bands, 28% displaced up to 12%; chroma 1.2%; mono tint (0.78,0.88,1.0); negative x0.8",
   "install": "",
-  "requires": [
-   "pip:chromadb"
-  ],
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:916"
@@ -2190,9 +2188,7 @@
   "how": "chroma(W,H,k): two offscreen canvases multiplied by #ff0000 / #00ffff, recomposed with 'lighter' at +-k px; glitchSlices: 7 bands, height 1.5-7.5% H, offset +-8% W*k, seed floor(t*30).",
   "params": "",
   "install": "see arsenal-libraries.md",
-  "requires": [
-   "pip:chromadb"
-  ],
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:226",

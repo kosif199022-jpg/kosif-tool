@@ -44,6 +44,9 @@ DOCUMENTED_ONLY = {
     "electron": "docs/electron-observation.md", "web-captures": "docs/web-network-captures.md",
 }
 SOURCE = "https://github.com/morluto/rea"
+# Windows installers are opaque PEs to REA (no child entries): triage and unpack them first.
+TRIAGE_FIRST = {"installer": "installer_triage.py"}
+DEFAULT_TIMEOUT = 600   # a 6.7 MB minified Electron main bundle took ~3 min on a laptop (2026-10-18)
 
 
 def node_ready(version):
@@ -54,9 +57,34 @@ def node_ready(version):
     return (major == 22 and minor >= 19) or (major == 24 and minor >= 11) or major >= 26
 
 
+def rea_launcher():
+    """argv prefix that runs REA without a shell.
+
+    REA_BIN (absolute path) wins, then `rea` on PATH. On Windows the npm package ships a
+    `rea.cmd` shim; batch files re-parse arguments through cmd.exe, so the shim is
+    replaced by `node <package>/scripts/rea.mjs` when that file sits beside it.
+    """
+    env = os.environ.get("REA_BIN")
+    found = env if env and Path(env).is_file() else shutil.which("rea")
+    if not found:
+        return None
+    path = Path(found)
+    if path.suffix.lower() in (".cmd", ".bat", ".ps1") or os.name == "nt":
+        node = shutil.which("node")
+        # global prefix: <prefix>/rea.cmd + <prefix>/node_modules/rea-agents; local: node_modules/.bin/rea.cmd
+        for mjs in (path.parent / "node_modules" / "rea-agents" / "scripts" / "rea.mjs",
+                    path.parent.parent / "rea-agents" / "scripts" / "rea.mjs"):
+            if mjs.is_file() and node:
+                return [node, str(mjs)]
+        if path.suffix.lower() in (".cmd", ".bat", ".ps1"):
+            return None   # refuse to pass target paths through cmd.exe
+    return [str(path)]
+
+
 def environment():
     node = shutil.which("node")
-    rea = shutil.which("rea")
+    launcher = rea_launcher()
+    rea = bool(launcher)
     version = "unknown"
     if node:
         try:
@@ -65,18 +93,24 @@ def environment():
             version = response.stdout.strip()[:40] if response.returncode == 0 else "unknown"
         except (OSError, subprocess.TimeoutExpired):
             pass
-    return {"rea_installed": bool(rea), "node_version": version,
+    return {"rea_installed": bool(rea), "rea_launcher": launcher, "node_version": version,
             "node_compatible": node_ready(version), "verified_analysis": False}
 
 
-def inspect_plan(kind, target):
+def inspect_plan(kind, target, source_paths=()):
+    if kind in TRIAGE_FIRST:
+        return {"status": "triage_first", "kind": kind,
+                "command": ["python", TRIAGE_FIRST[kind], "scan", str(Path(target).expanduser())],
+                "why": "REA reports an NSIS/Inno/UPX installer as one PE with no children; scan, unpack (authorized) and route its payload",
+                "analysis_executed": False, "verified": False}
     if kind in STATIC_COMMANDS:
         path = Path(target).expanduser().resolve()
         if not path.exists():
             return {"status": "target_missing", "kind": kind,
                     "analysis_executed": False, "verified": False}
         return {"status": "plan_only", "kind": kind, "target": str(path),
-                "command": ["rea", STATIC_COMMANDS[kind], str(path), "--json"],
+                "command": ["rea", STATIC_COMMANDS[kind], str(path)]
+                + [x for sp in (source_paths if kind == "javascript" else ()) for x in ("--source-path", sp)] + ["--json"],
                 "analysis_executed": False, "verified": False,
                 "required_evidence": ["command_exit_code", "structured_result", "result_file_sha256", "independent_validation"],
                 "source": SOURCE}
@@ -87,8 +121,8 @@ def inspect_plan(kind, target):
     return {"status": "unsupported_kind", "kind": kind, "analysis_executed": False, "verified": False}
 
 
-def run_static(kind, target, output, authorized):
-    plan = inspect_plan(kind, target)
+def run_static(kind, target, output, authorized, timeout=DEFAULT_TIMEOUT, source_paths=()):
+    plan = inspect_plan(kind, target, source_paths)
     if plan["status"] != "plan_only":
         return plan
     if not authorized:
@@ -105,10 +139,11 @@ def run_static(kind, target, output, authorized):
     if dst.resolve() == Path(target).expanduser().resolve():
         return {"status": "output_equals_target", "analysis_executed": False, "verified": False}
     try:
-        proc = subprocess.run(plan["command"], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                              stdin=subprocess.DEVNULL, timeout=120, check=False)
+        argv = (env.get("rea_launcher") or ["rea"]) + plan["command"][1:]
+        proc = subprocess.run(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                              stdin=subprocess.DEVNULL, timeout=timeout, check=False)
     except (OSError, subprocess.TimeoutExpired) as exc:
-        return {"status": type(exc).__name__, "analysis_executed": False, "verified": False}
+        return {"status": type(exc).__name__, "timeout_s": timeout, "analysis_executed": False, "verified": False}
     if proc.returncode != 0:
         return {"status": "command_failed", "exit_code": proc.returncode,
                 "analysis_executed": True, "verified": False}
@@ -149,22 +184,26 @@ def main():
     cat = sub.add_parser("catalog", help="list the catalogued REA commands (status, requirement) without running anything")
     cat.add_argument("query", nargs="?", default="")
     planned = sub.add_parser("plan")
-    planned.add_argument("kind", choices=sorted(set(STATIC_COMMANDS) | set(DOCUMENTED_ONLY)))
+    planned.add_argument("kind", choices=sorted(set(STATIC_COMMANDS) | set(DOCUMENTED_ONLY) | set(TRIAGE_FIRST)))
     planned.add_argument("target")
+    planned.add_argument("--source-path", action="append", default=[], help="javascript only: scope REA to these files")
     run = sub.add_parser("run")
     run.add_argument("kind", choices=sorted(STATIC_COMMANDS))
     run.add_argument("target")
     run.add_argument("--output")
     run.add_argument("--authorized", action="store_true")
+    run.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT, help="seconds (default %(default)s)")
+    run.add_argument("--source-path", action="append", default=[], help="javascript only: scope REA to these files")
     args = parser.parse_args()
     if args.action == "doctor":
         result = {"status": "environment_probe_only", **environment(), "source": SOURCE}
     elif args.action == "catalog":
         result = catalog(args.query)
     elif args.action == "plan":
-        result = inspect_plan(args.kind, args.target)
+        result = inspect_plan(args.kind, args.target, args.source_path)
     else:
-        result = run_static(args.kind, args.target, args.output, args.authorized)
+        result = run_static(args.kind, args.target, args.output, args.authorized, args.timeout, args.source_path)
+    sys.stdout.reconfigure(encoding="utf-8")
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result["status"] not in {"command_failed", "non_json_response", "output_write_failed"} else 1
 

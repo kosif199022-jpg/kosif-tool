@@ -1071,7 +1071,8 @@
   "ar": "مخزن متجهات للاسترجاع",
   "en": "vector store for RAG",
   "patterns": [
-   "\\bchroma(db)?\\b",
+   "\\bchromadb\\b",
+   "\\bChroma:? (?:index|vector|collection)",
    "\\bRAG\\b"
   ]
  },
@@ -1334,6 +1335,17 @@
   "patterns": [
    "\\bargos\\b",
    "\\bargostranslate\\b"
+  ]
+ },
+ "7zip": {
+  "kind": "bin",
+  "detect": "7z",
+  "install": "winget install 7zip.7zip | apt-get install -y 7zip | brew install sevenzip",
+  "ar": "فك المثبّتات والأرشيفات بلا تشغيلها",
+  "en": "unpack installers and archives without running them",
+  "patterns": [
+   "\\b7-?zip\\b",
+   "\\b7z[az]?\\b"
   ]
  }
 }

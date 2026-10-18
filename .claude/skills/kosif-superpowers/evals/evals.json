@@ -1007,6 +1007,110 @@
     "motion_output": false,
     "expect_domain": "code"
    }
+  },
+  {
+   "id": 44,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "استخدم اداة rea في تحليل البرامج الموجودة في المجلد",
+   "files": [],
+   "expected_behavior": [
+    "Runs installer_triage.py scan on the folder before any REA command, and never executes an installer",
+    "Asks for or confirms the right to inspect before unpack --authorized; extracts into a new folder only",
+    "Routes each unpacked artifact to the REA command route prints (fuses, scoped analyze-javascript-application, pe-resources)",
+    "Reports evidence ids, refusals and limits honestly; executed_not_verified is never called verified"
+   ],
+   "routing": {
+    "expect_any": [
+     "REA"
+    ],
+    "top_k": 8,
+    "expect_domain": "code"
+   }
+  },
+  {
+   "id": 45,
+   "lang": "en",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "analyze this setup.exe installer and tell me what app is inside",
+   "files": [],
+   "expected_behavior": [
+    "Identifies the installer family (NSIS/Inno/UPX/MSI) and whether it is an online bootstrapper",
+    "Unpacks without running it and names the payload (asar, exe, DLLs)"
+   ],
+   "routing": {
+    "expect_any": [
+     "REA"
+    ],
+    "top_k": 8,
+    "expect_domain": "code"
+   }
+  },
+  {
+   "id": 46,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل ترجمة تلقائية زي كاب كات للفيديو بتوقيت كل كلمة",
+   "files": [],
+   "expected_behavior": [
+    "Uses the APPX-13 recipe (faster-whisper word timestamps to SRT) or the SYNC family",
+    "Loads an Arabic font before burning captions and verifies timing on real frames"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX",
+     "SYNC"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 47,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "سوي فقاعة كاميرا دائرية فوق تسجيل الشاشة مثل كانفا",
+   "files": [],
+   "expected_behavior": [
+    "Uses APPX-09 (round geq alpha mask + overlay) and checks the centre/corner pixels of a rendered frame"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 48,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "auto reframe my landscape video to 9:16 like Premiere does",
+   "files": [],
+   "expected_behavior": [
+    "Tracks the subject (centroid or face), smooths the path and crops with an even width; checks the subject stays in frame"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX",
+     "FOOT"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }
