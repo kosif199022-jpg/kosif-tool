@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Glow — KOSIF proof</title>
+<style>
+  /* OFL fonts shipped next to the proofs (no network needed). */
+  @font-face { font-family: "NeonCairo"; src: url("../_shared/fonts/Cairo%5Bslnt,wght%5D.ttf") format("truetype"); font-weight: 200 1000; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  canvas { display: block; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px/1.3 system-ui, sans-serif; color: #9ab; direction: ltr; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><canvas id="out" width="1080" height="1920"></canvas></div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=4.5 opens at 4.5 s</div>
+<svg id="measure" width="0" height="0" style="position:absolute"></svg>
+<script src="schedule.js"></script>
+<script>
+(function () {
+  'use strict';
+  /* ================================================================ constants */
+  const W = 1080, H = 1920, FLOOR = 1290, DUR = 10, FPS = 30;
+  const S = window.NEON_SCHEDULE;
+  const SEED = 20261016;
+
+  /* Neon palette: tube = saturated emission colour, mid = inner band, core = white-hot centre,
+     glass/rim = the unlit tube (dark tinted glass with a top-left rim highlight). */
+  const PAL = {
+    pink:  { tube: '#ff2d95', mid: '#ff8fc8', core: '#fff1f8', glass: '#2a1820', rim: '#6a3a52' },
+    cyan:  { tube: '#17d9ff', mid: '#93f0ff', core: '#f0fdff', glass: '#13232a', rim: '#356571' },
+    amber: { tube: '#ff9a1a', mid: '#ffc77a', core: '#fff7e8', glass: '#2a1f14', rim: '#6b5232' },
+  };
+  /* Glow recipe: stacked blurs of the emission layer, composited with "lighter" (additive).
+     [blur radius in px at 1080 wide, alpha] — radii >= 26 px are computed at 1/2 or 1/4 resolution. */
+  const GLOW = [[3, 0.95], [10, 0.75], [26, 0.55], [64, 0.42], [140, 0.30]];
+  /* One tube diameter for the whole sign (~20 px): lighter weight for the big Arabic word, heavier for the small Latin. */
+  const AR_FONT = '420 270px "NeonCairo"', LAT_FONT = '640 100px "NeonCairo"';
+  const AMBIENT = '#1b1f30';          // night ambient light on the wall
+  const WALL_LIGHT = [[40, 1.0], [140, 1.0], [140, 0.95]]; // light the sign throws on the bricks
+
+  /* ================================================================ helpers */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const Ease = {
+    inOutSine: (x) => -(Math.cos(Math.PI * x) - 1) / 2,
+    outCubic: (x) => 1 - Math.pow(1 - x, 3),
+    inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+  };
+  const prog = (t, a, b, e = Ease.inOutCubic) => e(clamp01((t - a) / (b - a)));
+  function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let z = s; z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
+  const hash1 = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+  const noise1 = (x) => { const i = Math.floor(x), f = x - i, u = f * f * (3 - 2 * f); return lerp(hash1(i), hash1(i + 1), u); };
+  const hash2 = (x, y) => { const v = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return v - Math.floor(v); };
+  const noise2 = (x, y) => { const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi; const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+    return lerp(lerp(hash2(xi, yi), hash2(xi + 1, yi), u), lerp(hash2(xi, yi + 1), hash2(xi + 1, yi + 1), u), v); };
+  function mk(w, h) { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
+  const g2 = (c) => c.getContext('2d');
+
+  /* ================================================================ timing (pure functions of t) */
+  function segLevel(segs, t) {
+    for (let i = 0; i < segs.length; i++) {
+      const [a, b, v] = segs[i];
+      if (t >= a && t < b) return b >= 99 ? v * (0.78 + 0.22 * Ease.outCubic(clamp01((t - a) / S.warmup))) : v;
+    }
+    return 0;
+  }
+  const shift = (segs, s) => segs.map(([a, b, v]) => [a + s, b >= 99 ? 99 : b + s, v]);
+  const LATIN = 'OPEN LATE';
+  const latinLetters = [...LATIN].filter((c) => c !== ' ');
+  const latinSegs = latinLetters.map((c, i) => {
+    const s = S.latinStart + i * S.latinStep;
+    return i === S.faulty.index ? shift(S.faulty.pattern, s) : shift(S.latinPattern, s);
+  });
+  // electrical hum: a few % of slow shimmer + noise, different per tube
+  const hum = (t, k) => 1 - 0.035 * (0.5 + 0.5 * Math.sin(2 * Math.PI * (4.7 + 0.9 * k) * t + k * 1.3)) - 0.03 * noise1(t * 9 + k * 13.7);
+  function levels(t) {
+    const ar = segLevel(S.arabic, t) * hum(t, 0);
+    const lat = latinSegs.map((segs, i) => {
+      let v = segLevel(segs, t);
+      if (i === S.faulty.index) for (const [a, b, d] of S.faulty.dropouts) if (t >= a && t < b) v = d;
+      return v * hum(t, 1 + i * 0.37);
+    });
+    const C = S.cup;
+    const cup = { body: prog(t, C.body[0], C.body[1]), handle: prog(t, C.handle[0], C.handle[1]), saucer: prog(t, C.saucer[0], C.saucer[1]), hum: hum(t, 5) };
+    const st = S.steam, k = t < st.start ? -1 : Math.floor((t - st.start) / st.step) % st.states.length;
+    const steam = [0, 1, 2].map((i) => (k < 0 ? 0 : st.states[k][i] * hum(t, 6 + i)));
+    const sw = clamp01((t - S.sweep[0]) / (S.sweep[1] - S.sweep[0]));
+    const sweep = { on: t > S.sweep[0] && t < S.sweep[1], x: lerp(-450, 1530, Ease.inOutSine(sw)), a: Math.pow(Math.sin(Math.PI * sw), 0.8) };
+    return { ar, lat, cup, steam, sweep };
+  }
+
+  /* ================================================================ canvases */
+  const out = document.getElementById('out'), og = g2(out);
+  const scene = mk(W, H), sc = g2(scene);
+  const E = mk(W, H), eg = g2(E);                 // emission (what glows), coloured
+  const T = mk(W, FLOOR), tg = g2(T);             // the tubes as seen (glass + lit core)
+  const qW = W / 4, qH = H / 4, hW = W / 2, hH = H / 2;
+  const qE = mk(qW, qH), qEg = g2(qE);
+  const qB = [mk(qW, qH), mk(qW, qH), mk(qW, qH)];  // blurred copies at 1/4 res (10, 16, 35 px there)
+  const hE = mk(hW, hH), hEg = g2(hE), hB = mk(hW, hH);
+  const L = mk(qW, qH), lg = g2(L);               // light map (1/4 res)
+  const R = mk(W, H - FLOOR), rg = g2(R), R2 = mk(W, H - FLOOR), r2g = g2(R2), R3 = mk(W, H - FLOOR), r3g = g2(R3);
+  const hR = mk(W / 2, (H - FLOOR) / 2), hRg = g2(hR), hR2 = mk(W / 2, (H - FLOOR) / 2);
+  let albedo, wetSharp, wetFilm, vignette, grains = [], els = [], cupParts = {}, steamParts = [], drops = [], rain = [];
+
+  /* ================================================================ static assets (seeded) */
+  function buildAlbedo() {
+    const c = mk(W, H), g = g2(c), r = rng(SEED);
+    // ---- wall: mortar then running-bond bricks
+    g.fillStyle = '#6a645d'; g.fillRect(0, 0, W, FLOOR);
+    const bw = 172, bh = 62, m = 10;
+    for (let row = 0, y = -24; y < FLOOR; row++, y += bh + m) {
+      const off = (row % 2 ? -bw / 2 : 0) - 30;
+      for (let x = off; x < W + bw; x += bw + m) {
+        const hue = 8 + r() * 14, sat = 34 + r() * 22, lit = 36 + r() * 16;
+        const ww = bw - r() * 4, hh = bh - r() * 3;
+        g.fillStyle = `hsl(${hue},${sat}%,${lit}%)`; g.fillRect(x, y, ww, hh);
+        const gr = g.createLinearGradient(0, y, 0, y + hh);
+        gr.addColorStop(0, 'rgba(255,240,230,0.10)'); gr.addColorStop(0.15, 'rgba(255,255,255,0)'); gr.addColorStop(0.8, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,0.28)');
+        g.fillStyle = gr; g.fillRect(x, y, ww, hh);
+        if (r() < 0.45) { // stain
+          const sx = x + r() * ww, sy = y + r() * hh, sr = 14 + r() * 40, rg0 = g.createRadialGradient(sx, sy, 0, sx, sy, sr);
+          rg0.addColorStop(0, `rgba(20,10,8,${0.12 + r() * 0.18})`); rg0.addColorStop(1, 'rgba(20,10,8,0)'); g.fillStyle = rg0; g.fillRect(x, y, ww, hh);
+        }
+        if (r() < 0.18) { // chipped corner
+          g.fillStyle = 'rgba(30,22,20,0.55)'; const cx = r() < 0.5 ? x : x + ww, cy = r() < 0.5 ? y : y + hh, s = 6 + r() * 12;
+          g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + (cx === x ? s : -s), cy); g.lineTo(cx, cy + (cy === y ? s * 0.8 : -s * 0.8)); g.fill();
+        }
+        g.fillStyle = 'rgba(0,0,0,0.35)'; g.fillRect(x, y + hh - 3, ww, 3);         // shadow on lower edge
+        g.fillStyle = 'rgba(255,235,220,0.10)'; g.fillRect(x, y, ww, 2);           // lit upper edge
+      }
+    }
+    // ---- concrete plinth + sidewalk edge at the junction
+    g.fillStyle = '#55524e'; g.fillRect(0, FLOOR - 46, W, 46);
+    g.fillStyle = 'rgba(0,0,0,0.45)'; g.fillRect(0, FLOOR - 46, W, 4);
+    // ---- drain pipe on the left (cylindrical shading baked into albedo)
+    const px = 46, pw = 44, pg = g.createLinearGradient(px, 0, px + pw, 0);
+    pg.addColorStop(0, '#2c2e31'); pg.addColorStop(0.35, '#77797c'); pg.addColorStop(0.55, '#9a9c9f'); pg.addColorStop(1, '#2a2b2d');
+    g.fillStyle = 'rgba(0,0,0,0.35)'; g.fillRect(px + 10, 0, pw + 10, FLOOR - 46);
+    g.fillStyle = pg; g.fillRect(px, 0, pw, FLOOR - 46);
+    for (let y = 160; y < FLOOR - 60; y += 360) { g.fillStyle = '#3d3f42'; g.fillRect(px - 6, y, pw + 12, 16); }
+    // ---- transformer box + cable (the sign's power supply)
+    g.fillStyle = 'rgba(0,0,0,0.4)'; g.fillRect(838, 1176, 126, 78);
+    const bx = g.createLinearGradient(0, 1166, 0, 1236); bx.addColorStop(0, '#5d6066'); bx.addColorStop(1, '#2b2d31');
+    g.fillStyle = bx; g.fillRect(830, 1166, 118, 70);
+    g.fillStyle = '#1d1e21'; g.fillRect(842, 1180, 40, 6); g.fillRect(842, 1192, 40, 6);
+    g.strokeStyle = '#141414'; g.lineWidth = 6; g.lineCap = 'round';
+    g.beginPath(); g.moveTo(889, 1166); g.bezierCurveTo(892, 1120, 860, 1100, 820, 1098); g.stroke();
+    // ---- floor: asphalt
+    const fy = FLOOR;
+    g.fillStyle = '#3a3a3f'; g.fillRect(0, fy, W, H - fy);
+    // ---- per-pixel grain + low-frequency blotches (wall dirt, damp)
+    const img = g.getImageData(0, 0, W, H), d = img.data;
+    for (let y = 0; y < H; y++) {
+      const wall = y < FLOOR;
+      const damp = wall ? clamp01((y - (FLOOR - 320)) / 320) * 0.35 : 0;
+      for (let x = 0; x < W; x++) {
+        const i = (y * W + x) * 4;
+        const n = (r() - 0.5) * (wall ? 30 : 46);
+        const lf = wall ? (noise2(x / 140, y / 140) - 0.5) * 0.28 + (noise2(x / 34, y / 34) - 0.5) * 0.10 : (noise2(x / 60, y / 25) - 0.5) * 0.25;
+        const k = (1 + lf) * (1 - damp);
+        d[i] = Math.max(0, Math.min(255, d[i] * k + n)); d[i + 1] = Math.max(0, Math.min(255, d[i + 1] * k + n)); d[i + 2] = Math.max(0, Math.min(255, d[i + 2] * k + n));
+        if (!wall && r() < 0.012) { const s = 40 + r() * 50; d[i] += s; d[i + 1] += s; d[i + 2] += s; } // aggregate speckles
+      }
+    }
+    g.putImageData(img, 0, 0);
+    // ---- puddles: wet asphalt is darker
+    const pm = buildPuddles(r);
+    g.save(); g.globalCompositeOperation = 'multiply'; g.globalAlpha = 0.55; g.drawImage(pm.dark, 0, FLOOR); g.restore();
+    // ---- top of frame darker (less street light up high)
+    const tg0 = g.createLinearGradient(0, 0, 0, 520); tg0.addColorStop(0, 'rgba(0,0,0,0.45)'); tg0.addColorStop(1, 'rgba(0,0,0,0)');
+    g.fillStyle = tg0; g.fillRect(0, 0, W, 520);
+    albedo = c;
+    wetSharp = pm.sharp; wetFilm = pm.film;
+  }
+
+  function buildPuddles(r) {
+    const fh = H - FLOOR;
+    const p = mk(W, fh), pg = g2(p);
+    pg.filter = 'blur(14px)'; pg.fillStyle = '#fff';
+    for (let i = 0; i < 22; i++) {
+      const y = 30 + r() * (fh - 30), depth = y / fh;                    // depth 0 = near the wall (far away)
+      const rx = 90 + r() * 260 * (0.5 + depth), ry = rx * (0.10 + 0.22 * depth);
+      pg.beginPath(); pg.ellipse(r() * W, y, rx, ry, (r() - 0.5) * 0.15, 0, Math.PI * 2); pg.fill();
+    }
+    pg.filter = 'none';
+    // reflection masks: Fresnel fade (strong near the wall at grazing angle, weaker near the lens)
+    //   sharp = puddles (mirror-like), film = the rest of the wet asphalt (very blurred, streaky)
+    const fres = (g, top, mid, bot) => { const fg = g.createLinearGradient(0, 0, 0, fh); fg.addColorStop(0, `rgba(0,0,0,${top})`); fg.addColorStop(0.55, `rgba(0,0,0,${mid})`); fg.addColorStop(1, `rgba(0,0,0,${bot})`); g.globalCompositeOperation = 'destination-in'; g.fillStyle = fg; g.fillRect(0, 0, W, fh); };
+    const sharp = mk(W, fh), sg = g2(sharp); sg.drawImage(p, 0, 0); fres(sg, 0.9, 0.62, 0.38);
+    const film = mk(W, fh), fg2 = g2(film); fg2.fillStyle = 'rgba(255,255,255,0.75)'; fg2.fillRect(0, 0, W, fh); fg2.globalCompositeOperation = 'destination-out'; fg2.drawImage(p, 0, 0); fres(fg2, 0.85, 0.5, 0.25);
+    const dark = mk(W, fh), dg = g2(dark);
+    dg.fillStyle = '#fff'; dg.fillRect(0, 0, W, fh); dg.globalCompositeOperation = 'source-over'; dg.globalAlpha = 0.9; dg.filter = 'invert(1)'; dg.drawImage(p, 0, 0);
+    // rain-drop ripple sites inside puddles
+    const pd = pg.getImageData(0, 0, W, fh).data;
+    let guard = 0;
+    while (drops.length < 26 && guard++ < 4000) {
+      const x = 60 + r() * (W - 120), y = 20 + r() * (fh - 30);
+      if (pd[(Math.floor(y) * W + Math.floor(x)) * 4 + 3] > 140) drops.push({ x, y: y + FLOOR, period: 0.7 + r() * 0.9, phase: r(), size: 26 + r() * 30 });
+    }
+    return { sharp, film, dark };
+  }
+
+  function hexRgb(h) { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+  /* Tube profile by distance to the glyph edge: edge = tube colour → d1 px = mid → d2 px = white-hot core. */
+  function tubeShade(mask, p, d1, d2) {
+    const w = mask.width, h = mask.height, src = g2(mask).getImageData(0, 0, w, h).data;
+    const d = new Float32Array(w * h), BIG = 1e6, D2 = Math.SQRT2;
+    for (let i = 0; i < w * h; i++) d[i] = src[i * 4 + 3] > 127 ? BIG : 0;
+    for (let y = 1; y < h - 1; y++) for (let x = 1; x < w - 1; x++) { const i = y * w + x; if (d[i]) d[i] = Math.min(d[i], d[i - 1] + 1, d[i - w] + 1, d[i - w - 1] + D2, d[i - w + 1] + D2); }
+    for (let y = h - 2; y > 0; y--) for (let x = w - 2; x > 0; x--) { const i = y * w + x; if (d[i]) d[i] = Math.min(d[i], d[i + 1] + 1, d[i + w] + 1, d[i + w + 1] + D2, d[i + w - 1] + D2); }
+    const c = mk(w, h), g = g2(c), img = g.createImageData(w, h), o = img.data;
+    const A = hexRgb(p.tube), B = hexRgb(p.mid), C = hexRgb(p.core);
+    for (let i = 0; i < w * h; i++) {
+      const a = src[i * 4 + 3]; if (!a) continue;
+      const dd = d[i] || 0.5; let col;
+      if (dd < d1) { const k = dd / d1; col = [lerp(A[0], B[0], k), lerp(A[1], B[1], k), lerp(A[2], B[2], k)]; }
+      else { const k = clamp01((dd - d1) / (d2 - d1)), e = k * k * (3 - 2 * k); col = [lerp(B[0], C[0], e), lerp(B[1], C[1], e), lerp(B[2], C[2], e)]; }
+      o[i * 4] = col[0]; o[i * 4 + 1] = col[1]; o[i * 4 + 2] = col[2]; o[i * 4 + 3] = a;
+    }
+    g.putImageData(img, 0, 0); return c;
+  }
+
+  function textElement(text, font, color, ax, cy, dir, strokes) {
+    const mg = g2(mk(4, 4)); mg.font = font; mg.direction = dir; mg.textAlign = 'center';
+    const mt = mg.measureText(text), pad = 30;
+    const Lb = Math.ceil(mt.actualBoundingBoxLeft), Rb = Math.ceil(mt.actualBoundingBoxRight), A = Math.ceil(mt.actualBoundingBoxAscent), D = Math.ceil(mt.actualBoundingBoxDescent);
+    const w = Lb + Rb + 2 * pad, h = A + D + 2 * pad, x0 = pad + Lb, y0 = pad + A;
+    const layer = (fn) => { const c = mk(w, h), g = g2(c); g.font = font; g.direction = dir; g.textAlign = 'center'; g.textBaseline = 'alphabetic'; g.lineJoin = 'round'; fn(g); return c; };
+    const p = PAL[color];
+    const col = layer((g) => { g.fillStyle = p.tube; g.fillText(text, x0, y0); });
+    // white-hot core from a distance field of the glyph mask (no strokeText: variable-font outlines overlap,
+    // and stroking them would draw the internal contours as seams across joined Arabic letters)
+    const lit = tubeShade(col, p, strokes[0], strokes[1]);
+    const off = layer((g) => { g.fillStyle = p.rim; g.fillText(text, x0, y0); g.globalCompositeOperation = 'source-atop'; g.fillStyle = p.glass; g.fillText(text, x0 + 3, y0 + 3); });
+    const shadow = layer((g) => { g.fillStyle = '#000'; g.fillText(text, x0, y0); });
+    // anchor (ax, baseline) so that the ink box is vertically centred on cy
+    const base = cy + (A - D) / 2;
+    return { x: ax - x0, y: base - y0, col, lit, off, shadow, color };
+  }
+
+  function svgPath(d, ox, oy, s) {
+    const el = document.createElementNS('http://www.w3.org/2000/svg', 'path'); el.setAttribute('d', d);
+    document.getElementById('measure').appendChild(el);
+    const len = el.getTotalLength();
+    const p = new Path2D(); p.addPath(new Path2D(d), new DOMMatrix([s, 0, 0, s, ox, oy]));
+    return { el, len, path: p, ox, oy, s };
+  }
+
+  function buildSign() {
+    // Arabic word: whole word, shaped by the browser (HarfBuzz) — never split into letters.
+    els.push({ key: 'ar', ...textElement('قهوة', AR_FONT, 'pink', 540, 868, 'rtl', [5, 12]) });
+    // Latin word: one tube per letter (Latin letters are separate glyphs, so each can ignite on its own).
+    const font = LAT_FONT, tracking = 22, mg = g2(mk(4, 4)); mg.font = font;
+    const adv = [...LATIN].map((c) => mg.measureText(c).width);
+    const total = adv.reduce((a, b) => a + b, 0) + tracking * (LATIN.length - 1);
+    let x = 540 - total / 2, li = 0;
+    [...LATIN].forEach((c, i) => {
+      if (c !== ' ') els.push({ key: 'lat', i: li++, ...textElement(c, font, 'cyan', x + adv[i] / 2, 1126, 'ltr', [4, 9]) });
+      x += adv[i] + tracking;
+    });
+    // Coffee-cup emblem drawn as tube paths (local coords, centre 540,470).
+    const cx = 540, cy = 474, s = 1.05;
+    cupParts.body = svgPath('M -112 -46 L 112 -46 C 112 36 78 92 0 92 C -78 92 -112 36 -112 -46', cx, cy, s);
+    cupParts.handle = svgPath('M 110 -14 C 178 -22 180 58 98 50', cx, cy, s);
+    cupParts.saucer = svgPath('M -158 126 C -60 142 60 142 158 126', cx, cy, s);
+    steamParts = [-54, 0, 54].map((x0) => svgPath(`M ${x0} -76 C ${x0 + 26} -100 ${x0 - 26} -126 ${x0} -150 C ${x0 + 22} -172 ${x0 - 10} -190 ${x0 + 4} -206`, cx, cy, s));
+  }
+
+  function buildPost() {
+    vignette = mk(W, H); const vg = g2(vignette);
+    const gr = vg.createRadialGradient(W / 2, H * 0.46, H * 0.22, W / 2, H * 0.46, H * 0.72);
+    gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(1, 'rgba(70,70,80,1)');
+    vg.fillStyle = gr; vg.fillRect(0, 0, W, H);
+    const r = rng(SEED + 7);
+    for (let k = 0; k < 4; k++) {
+      const c = mk(W / 2, H / 2), g = g2(c), img = g.createImageData(W / 2, H / 2), d = img.data;
+      for (let i = 0; i < d.length; i += 4) { const v = 128 + (r() - 0.5) * 90; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+      g.putImageData(img, 0, 0); grains.push(c);
+    }
+    for (let i = 0; i < 90; i++) rain.push({ x: r() * (W + 200) - 100, ph: r(), sp: 1900 + r() * 900, len: 50 + r() * 70, w: 1 + r() * 1.6, a: 0.10 + r() * 0.16 });
+  }
+
+  /* ================================================================ per-frame drawing */
+  function strokeTube(g, part, p, color, I, mode) {
+    // p = drawn fraction (0..1), I = intensity. mode: 'off' | 'lit' | 'col'
+    const P = PAL[color];
+    g.save(); g.lineCap = 'round'; g.lineJoin = 'round';
+    const L = part.len * part.s;
+    if (mode === 'off') {
+      g.strokeStyle = P.rim; g.lineWidth = 15; g.stroke(part.path);
+      g.translate(2.5, 2.5); g.strokeStyle = P.glass; g.lineWidth = 11; g.stroke(part.path);
+    } else {
+      if (p <= 0 || I <= 0) { g.restore(); return; }
+      if (p < 1) g.setLineDash([L * p, L * 2]);
+      g.globalAlpha = I;
+      if (mode === 'col') { g.strokeStyle = P.tube; g.lineWidth = 15; g.stroke(part.path); }
+      else {
+        g.strokeStyle = P.tube; g.lineWidth = 15; g.stroke(part.path);
+        g.strokeStyle = P.mid; g.lineWidth = 9; g.stroke(part.path);
+        g.strokeStyle = P.core; g.lineWidth = 4; g.stroke(part.path);
+      }
+    }
+    g.restore();
+  }
+  function headPoint(part, p) { const q = part.el.getPointAtLength(part.len * p); return [part.ox + q.x * part.s, part.oy + q.y * part.s]; }
+
+  function blurInto(dst, src, px) { const g = g2(dst); g.globalCompositeOperation = 'copy'; g.filter = `blur(${px}px)`; g.drawImage(src, 0, 0); g.filter = 'none'; g.globalCompositeOperation = 'source-over'; }
+
+  function render(t) {
+    const lv = levels(t);
+    /* ---- 1. emission layer E and tube layer T */
+    eg.clearRect(0, 0, W, H); tg.clearRect(0, 0, W, FLOOR);
+    const intensityOf = (el) => (el.key === 'ar' ? lv.ar : lv.lat[el.i]);
+    for (const el of els) {
+      const I = intensityOf(el);
+      tg.globalAlpha = 1; tg.drawImage(el.off, el.x, el.y);
+      if (I > 0.002) { tg.globalAlpha = Math.min(1, I); tg.drawImage(el.lit, el.x, el.y); eg.globalAlpha = Math.min(1, I); eg.drawImage(el.col, el.x, el.y); }
+    }
+    tg.globalAlpha = 1; eg.globalAlpha = 1;
+    const cupI = lv.cup.hum;
+    for (const k of ['body', 'handle', 'saucer']) {
+      strokeTube(tg, cupParts[k], 1, 'amber', 1, 'off');
+      strokeTube(tg, cupParts[k], lv.cup[k], 'amber', cupI, 'lit');
+      strokeTube(eg, cupParts[k], lv.cup[k], 'amber', cupI, 'col');
+    }
+    steamParts.forEach((part, i) => {
+      strokeTube(tg, part, 1, 'amber', 1, 'off');
+      strokeTube(tg, part, 1, 'amber', lv.steam[i], 'lit');
+      strokeTube(eg, part, 1, 'amber', lv.steam[i], 'col');
+    });
+    // bright travelling head while the cup draws on
+    for (const k of ['body', 'handle', 'saucer']) {
+      const p = lv.cup[k];
+      if (p > 0 && p < 1) {
+        const [hx, hy] = headPoint(cupParts[k], p);
+        for (const [g, rad, a] of [[tg, 16, 1], [eg, 34, 1]]) {
+          const rg0 = g.createRadialGradient(hx, hy, 0, hx, hy, rad); rg0.addColorStop(0, `rgba(255,248,230,${a})`); rg0.addColorStop(1, 'rgba(255,190,90,0)');
+          g.fillStyle = rg0; g.beginPath(); g.arc(hx, hy, rad, 0, Math.PI * 2); g.fill();
+        }
+      }
+    }
+    // light sweep glint across the glass (only where tubes exist)
+    if (lv.sweep.on) {
+      tg.save(); tg.globalCompositeOperation = 'source-atop';
+      const x = lv.sweep.x, gr = tg.createLinearGradient(x - 170, 0, x + 170, 0); tg.translate(0, H * 0.45); tg.transform(1, 0, -0.32, 1, 0, 0); tg.translate(0, -H * 0.45);
+      gr.addColorStop(0, 'rgba(255,255,255,0)'); gr.addColorStop(0.5, `rgba(255,250,240,${0.7 * lv.sweep.a})`); gr.addColorStop(1, 'rgba(255,255,255,0)');
+      tg.fillStyle = gr; tg.fillRect(-W, 0, 3 * W, FLOOR); tg.restore();
+    }
+
+    /* ---- 2. blurred copies of the emission (shared by glow and wall light) */
+    qEg.globalCompositeOperation = 'copy'; qEg.drawImage(E, 0, 0, qW, qH);
+    hEg.globalCompositeOperation = 'copy'; hEg.drawImage(E, 0, 0, hW, hH);
+    blurInto(qB[0], qE, 10); blurInto(qB[1], qE, 16); blurInto(qB[2], qE, 35); blurInto(hB, hE, 13);
+
+    /* ---- 3. light map: ambient + sign light on the wall + spill on the floor + headlight sweep */
+    lg.globalCompositeOperation = 'copy'; lg.globalAlpha = 1; lg.fillStyle = AMBIENT; lg.fillRect(0, 0, qW, qH);
+    lg.globalCompositeOperation = 'lighter';
+    const sky = lg.createRadialGradient(qW * 0.85, -20, 0, qW * 0.85, -20, qH * 0.7); sky.addColorStop(0, 'rgba(70,80,120,0.55)'); sky.addColorStop(1, 'rgba(70,80,120,0)');
+    lg.fillStyle = sky; lg.fillRect(0, 0, qW, qH);
+    lg.globalAlpha = WALL_LIGHT[0][1]; lg.drawImage(qB[0], 0, 0);
+    lg.globalAlpha = WALL_LIGHT[1][1]; lg.drawImage(qB[2], 0, 0);
+    lg.globalAlpha = WALL_LIGHT[2][1]; lg.drawImage(qB[2], 0, 0);
+    // spill on the floor: the sign mirrored below the junction, very soft
+    lg.save(); lg.globalAlpha = 0.85; lg.translate(0, 2 * FLOOR / 4); lg.scale(1, -1); lg.drawImage(qB[2], 0, 0); lg.restore();
+    if (lv.sweep.on) {
+      // car headlight through the rain: a slanted soft-edged beam travelling left → right
+      lg.save(); lg.translate(lv.sweep.x / 4, qH * 0.45); lg.transform(1, 0, -0.32, 1, 0, 0);
+      const hb = lg.createLinearGradient(-60, 0, 60, 0), a = lv.sweep.a;
+      hb.addColorStop(0, 'rgba(255,232,200,0)'); hb.addColorStop(0.3, `rgba(255,232,200,${0.35 * a})`); hb.addColorStop(0.5, `rgba(255,242,222,${0.85 * a})`);
+      hb.addColorStop(0.7, `rgba(255,232,200,${0.35 * a})`); hb.addColorStop(1, 'rgba(255,232,200,0)');
+      lg.globalAlpha = 1; lg.fillStyle = hb; lg.fillRect(-60, -qH, 120, 2 * qH); lg.restore();
+    }
+    lg.globalAlpha = 1;
+
+    /* ---- 4. scene = light × albedo, then tubes, then additive glow stack */
+    sc.globalAlpha = 1; sc.filter = 'none';
+    sc.globalCompositeOperation = 'copy'; sc.drawImage(L, 0, 0, W, H);
+    sc.globalCompositeOperation = 'multiply'; sc.drawImage(albedo, 0, 0);
+    sc.globalCompositeOperation = 'source-over';
+    // tubes stand ~6 cm off the wall: soft contact shadow, visible mostly while unlit
+    const litSum = (lv.ar + lv.lat.reduce((a, b) => a + b, 0) / 8) / 2;
+    sc.globalAlpha = 0.55 * (1 - 0.6 * litSum); sc.filter = 'blur(5px)';
+    for (const el of els) sc.drawImage(el.shadow, el.x + 7, el.y + 11);
+    sc.filter = 'none'; sc.globalAlpha = 1;
+    sc.drawImage(T, 0, 0);
+    sc.globalCompositeOperation = 'lighter';
+    sc.filter = `blur(${GLOW[0][0]}px)`; sc.globalAlpha = GLOW[0][1]; sc.drawImage(E, 0, 0);
+    sc.filter = `blur(${GLOW[1][0]}px)`; sc.globalAlpha = GLOW[1][1]; sc.drawImage(E, 0, 0);
+    sc.filter = 'none';
+    sc.globalAlpha = GLOW[2][1]; sc.drawImage(hB, 0, 0, W, H);          // 26 px (13 at 1/2)
+    sc.globalAlpha = GLOW[3][1]; sc.drawImage(qB[1], 0, 0, W, H);       // 64 px (16 at 1/4)
+    sc.globalAlpha = GLOW[4][1]; sc.drawImage(qB[2], 0, 0, W, H);       // 140 px (35 at 1/4)
+    sc.globalAlpha = 1;
+
+    /* ---- 5. wet-floor reflection: mirrored strips with ripple, vertical smear, Fresnel × puddle mask */
+    const FH = H - FLOOR;
+    rg.globalCompositeOperation = 'copy';
+    for (let y = 0; y < FH; y += 3) {
+      const k = y / FH, amp = 1.2 + 11 * k;
+      const dx = amp * (Math.sin(y * 0.083 + t * 2.6) + 0.6 * Math.sin(y * 0.027 - t * 1.4 + 1.7) + 0.25 * Math.sin(y * 0.12 + t * 4.1));
+      rg.drawImage(scene, 0, FLOOR - y - 3, W, 3, dx, y, W, 3);
+      rg.globalCompositeOperation = 'source-over';
+    }
+    // sharp (puddles): 2 px blur + short downward streaks
+    r2g.globalCompositeOperation = 'copy'; r2g.filter = 'blur(3px)'; r2g.globalAlpha = 0.85; r2g.drawImage(R, 0, 0); r2g.filter = 'none';
+    r2g.globalCompositeOperation = 'lighter';
+    for (const [dy, a] of [[8, 0.26], [18, 0.15], [32, 0.09], [52, 0.05]]) { r2g.globalAlpha = a; r2g.drawImage(R, 0, dy); }
+    r2g.globalAlpha = 1; r2g.globalCompositeOperation = 'destination-in'; r2g.drawImage(wetSharp, 0, 0);
+    // film (wet asphalt): 16 px blur at half res + long streaks
+    hRg.globalCompositeOperation = 'copy'; hRg.drawImage(R, 0, 0, W / 2, FH / 2); blurInto(hR2, hR, 8);
+    r3g.globalCompositeOperation = 'copy'; r3g.globalAlpha = 0.7; r3g.drawImage(hR2, 0, 0, W, FH);
+    r3g.globalCompositeOperation = 'lighter';
+    for (const [dy, a] of [[24, 0.3], [56, 0.18], [96, 0.1]]) { r3g.globalAlpha = a; r3g.drawImage(hR2, 0, dy, W, FH); }
+    r3g.globalAlpha = 1; r3g.globalCompositeOperation = 'destination-in'; r3g.drawImage(wetFilm, 0, 0);
+    sc.globalCompositeOperation = 'lighter'; sc.drawImage(R2, 0, FLOOR); sc.drawImage(R3, 0, FLOOR);
+    // ripples from rain drops in the puddles
+    sc.lineWidth = 1.6;
+    for (const d of drops) {
+      const age = ((t / d.period + d.phase) % 1);
+      const rx = 3 + d.size * age, depth = (d.y - FLOOR) / FH;
+      sc.strokeStyle = `rgba(255,205,235,${0.16 * (1 - age) * (0.3 + 0.7 * litSum)})`;
+      sc.beginPath(); sc.ellipse(d.x, d.y, rx, rx * (0.16 + 0.22 * depth), 0, 0, Math.PI * 2); sc.stroke();
+    }
+    // junction ambient occlusion
+    sc.globalCompositeOperation = 'source-over';
+    const ao = sc.createLinearGradient(0, FLOOR - 4, 0, FLOOR + 26); ao.addColorStop(0, 'rgba(0,0,0,0.55)'); ao.addColorStop(1, 'rgba(0,0,0,0)');
+    sc.fillStyle = ao; sc.fillRect(0, FLOOR - 4, W, 30);
+
+    /* ---- 6. rain streaks lit by the sign */
+    sc.globalCompositeOperation = 'lighter'; sc.lineCap = 'round';
+    for (const q of rain) {
+      const y = ((q.ph * (H + 300) + t * q.sp) % (H + 300)) - 150, x = q.x + (y + 150) * 0.10;
+      const near = clamp01(1 - Math.hypot(x - 540, (y - 820) * 0.7) / 760);
+      const a = q.a * (0.25 + 0.75 * near * (0.3 + 0.7 * litSum));
+      sc.strokeStyle = `rgba(255,214,236,${a})`; sc.lineWidth = q.w;
+      sc.beginPath(); sc.moveTo(x, y); sc.lineTo(x - q.len * 0.1, y - q.len); sc.stroke();
+    }
+    sc.globalCompositeOperation = 'source-over';
+
+    /* ---- 7. camera (slow push-in + tiny handheld), vignette, grain, fade */
+    const push = Ease.inOutSine(clamp01(t / DUR));
+    const s = 1.0 + 0.075 * push, fx = 540, fy = 860;
+    const hx = 2.2 * Math.sin(t * 1.3) + 1.4 * Math.sin(t * 2.9 + 1), hy = 1.8 * Math.sin(t * 1.7 + 0.5) - 26 * push;
+    og.setTransform(1, 0, 0, 1, 0, 0); og.globalAlpha = 1; og.globalCompositeOperation = 'copy';
+    og.setTransform(s, 0, 0, s, fx - fx * s + hx, fy - fy * s + hy);
+    og.drawImage(scene, 0, 0);
+    og.setTransform(1, 0, 0, 1, 0, 0);
+    og.globalCompositeOperation = 'multiply'; og.drawImage(vignette, 0, 0);
+    og.globalCompositeOperation = 'overlay'; og.globalAlpha = 0.10; og.drawImage(grains[Math.round(t * FPS) % grains.length], 0, 0, W, H);
+    og.globalCompositeOperation = 'source-over'; og.globalAlpha = 1;
+    const fade = 0.85 * (1 - Ease.outCubic(clamp01(t / S.fadeIn)));
+    if (fade > 0) { og.fillStyle = `rgba(0,0,0,${fade})`; og.fillRect(0, 0, W, H); }
+  }
+
+  /* ================================================================ boot + renderer contract */
+  let T0 = 0, playing = false, last = 0;
+  function seek(t) { T0 = Math.max(0, Math.min(DUR, t)); render(T0); }
+  const ready = Promise.all([
+    document.fonts.load(AR_FONT, 'قهوة'),
+    document.fonts.load(LAT_FONT, 'OPEN LATE'),
+  ]).then(() => document.fonts.ready).then(() => {
+    buildAlbedo(); buildSign(); buildPost();
+    seek(parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0);
+    return true;
+  });
+  window.__kosif = { duration: DUR, fps: FPS, seek };
+  window.__kosifReady = ready;
+
+  // live preview conveniences (ignored by the renderer)
+  if (navigator.webdriver || window.__KOSIF_RENDER) document.body.classList.add('render');
+  function fit() { const k = Math.min(innerWidth / W, innerHeight / H); document.getElementById('fit').style.transform = `scale(${k})`; }
+  addEventListener('resize', fit); fit();
+  function loop(now) { if (!playing) return; const dt = (now - last) / 1000; last = now; let t = T0 + dt; if (t >= DUR) t = 0; seek(t); requestAnimationFrame(loop); }
+  addEventListener('keydown', (e) => {
+    if (e.code === 'Space') { e.preventDefault(); playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(loop); }
+    if (e.code === 'ArrowRight') seek(T0 + 1 / FPS);
+    if (e.code === 'ArrowLeft') seek(T0 - 1 / FPS);
+  });
+})();
+</script>
+</body>
+</html>

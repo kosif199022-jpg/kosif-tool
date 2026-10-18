@@ -1,0 +1,5 @@
+OUTLIER   frame   30  t= 1.000s  dAB 221.5 dBC 221.5 dAC 0.9
+JUMP      frame   50  t= 1.667s  mad 7.1 vs median 0.45
+FREEZE    frame   70  t= 2.333s  12 frames (70-81)
+DEAD AIR  frame   70  t= 2.333s  0.40 s (70-81)
+120 frames @ 30 fps; findings: 4

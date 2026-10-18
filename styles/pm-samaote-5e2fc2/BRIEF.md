@@ -1,11 +1,11 @@
-# فيديو كلمات أغنية متزامن مع الصوت — Synced lyrics motion video
+# فيديو كلمات أغنية تحكيه شمس: من الشروق إلى الكسوف — Synced lyrics motion video
 
-> كلمات الأغنية تظهر على نبرة المغني بالضبط بينما تتنفس الخلفية مع الإيقاع، بأسلوب يليق بعرض أعمال مصمم موشن.
+> فيديو كلمات أغنية مدته 30 ثانية تحكيه شمس: تشرق فوق أفق البحر، تشتعل وتملأ الإطار، تفقد ألوانها في لحظة «أوقف الزمن»، تصير نقطة حمراء مسطحة على ورق كريمي بشبكة، وتنتهي بكسوف وقوس ابتسامة أحمر متوهج. الخط يتغير بين الأقسام داخل إطار HUD دائم بعدّاد تنازلي وعدّاد مازورات ووسم الفصل.
 >
-> Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.
+> A 30-second lyric video told through a sun: it rises over a sea horizon, ignites and fills the frame, drains to grey on a 'stop time' beat, becomes a flat red dot on cream paper with a grid, and ends in an eclipse and a glowing red smile arc. Lyric type changes per section inside a persistent HUD with a countdown, bar counter and chapter label.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/samaote-5e2fc2
 - التصنيفات / Categories: charts, kinetic-type, music
@@ -13,46 +13,46 @@ Original KOSIF brief derived only from the reference title, tags and public desc
 - التقنية المقترحة / Stack: Remotion, Web Audio, SVG
 
 ## الفكرة
-الموضوع هو فيديو كلمات لأغنية يقدمها المستخدم، والهدف أن يشعر المشاهد بأن النص يُغنّى أمامه لا أنه يُعرض فحسب. تُبنى اللغة الحركية على ساعتين منفصلتين: ساعة الصوت البشري التي تحكم دخول كل كلمة، وساعة الإيقاع التي تحكم نبض الخلفية والأشكال والكاميرا. ما يميز الاتجاه المقترح أن كل حركة تُشتق من ملف توقيت الكلمات، فلا توجد مؤقتات يدوية، وأن التباين الطباعي يتبدل مع أقسام الأغنية (كوبليه، لازمة، كسر).
+الموضوع أغنية ثنائية عن ضوء أخير قبل النهاية، والصورة المركزية شمس واحدة تمر بفصول: شروق، اشتعال، توقف الزمن، تجريد على الورق، ثم كسوف. الكلمات تظهر على مقاطع الغناء نفسها بثلاثة أصوات طباعية: سيريف مائل خفيف للهمس، سيريف عرض ثقيل للصراخ، وخط أحادي صغير للـ HUD. إطار HUD ثابت يعدّ تنازلياً حتى «آخر ضوء» ويعرض رقم المازورة واسم الفصل، فيصبح الفيلم ساعة مرئية للأغنية.
 
 ## Concept
-The subject is a lyric video over a user-supplied track; the goal is that the viewer feels the words being sung rather than displayed. The motion language runs on two clocks: the vocal clock drives every word's entrance, and the beat clock drives the backdrop pulse, shapes and camera. The proposed direction derives every move from a word-timing file, with no hand-typed timers, and shifts the typographic contrast with the song's sections (verse, hook, breakdown).
+The subject is a duet about a last light before the end, and the central image is a single sun passing through chapters: sunrise, ignition, time stopping, abstraction on paper, then eclipse. Words appear on the sung syllables themselves in three typographic voices: a light italic serif for whispers, a heavy display serif for shouts and a small mono for the HUD. A fixed HUD counts down to 'last light' and shows the bar number and chapter name, so the film becomes a visible clock of the song.
 
 ## المشاهد المقترحة
-- 0-3 ث: افتتاحية على خلفية داكنة؛ حلقة موجة صوتية دائرية تتجمع ضربة بعد ضربة، ويظهر اسم الأغنية والفنان، ولا كلمات بعد.
-- 3-12 ث: الكوبليه. تظهر الكلمات واحدة تلو الأخرى عند بداية نطقها وتتراصّ في أسطر؛ كل سطر مكتمل ينجرف للأعلى ببطء بينما تنبض الأعمدة خلفه مع الطبلة.
-- 12-14 ث: ما قبل اللازمة. تدفع الكاميرا للداخل، وتنضغط الأسطر إلى كلمة واحدة كبيرة لكل نطق، وتضيق الأعمدة إلى شبكة مشدودة.
-- 14-24 ث: اللازمة. تملأ الكلمات الكادر من طرفه إلى طرفه؛ تنقلب الألوان على أول ضربة في المقطع، وكلمة اللازمة المتكررة تكبر بنابض في كل عودة.
-- 24-28 ث: الكسر. تتفكك الكلمات إلى جسيمات تتبعثر مع الإيقاع؛ تعود حلقة الموجة وتفقد الألوان إشباعها.
-- 28-30 ث: الخاتمة. تعود بطاقة العنوان بالألوان المقلوبة؛ تثبت آخر كلمة حتى الضربة الأخيرة ثم تنغلق الحلقة.
+- 0-6 ث: افتتاح هادئ على تدرج داكن دافئ بحبيبات فيلم: الشمس تشرق ببطء من أفق البحر في نحو 5 ثوانٍ بينما تظهر كلمات سيريف مائل خفيف على بدايات الغناء بسحب تركيز من الضبابية إلى الحدة.
+- 6-9 ث: الشمس تكبر لتملأ النصف الأيمن؛ كلمات الأغنية تُصفّ على مسار دائري حولها بينما تُرسم حلقة علامات وقوس.
+- 9-14 ث: الاشتعال: عبارة بسيريف عرض ثقيل ناعم تندفع بالتكبير لتملأ الإطار على الإيقاع؛ مدار بيضاوي منقط يُرسم حول الشمس، ثم عبور بالتكبير إلى حقل دخان برتقالي ناري.
+- 14-18 ث: مازورة «أوقف الزمن»: الإطار كله يقفز إلى الرمادي، كلمة متباعدة الحروف تُكشف حرفاً حرفاً بفارق نحو 80 مللي ثانية، ثم تعود الألوان.
+- 18-22.5 ث: ورق كريمي بحبيبات: خطوط شبكة تُرسم، كلمات تسقط في الخانات ونقطة حمراء مسطحة تنبثق؛ وذروة الحركة حول 20 ث.
+- 22.5-27 ث: قناع قزحية دائري يقلّص القرص الكريمي على أرضية داكنة؛ شاشة منقسمة كريمي وأسود بدائرة محيطية ونقطة حمراء ممتلئة تنزلقان نحو بعضهما ككسوف.
+- 27-29.7 ث: ختام شبه أسود: قوس أحمر يُرسم كابتسامة متوهجة تحت عنوان الأغنية المموه بينما يصل العدّاد التنازلي إلى الصفر.
 
 ## Proposed scenes
-- 0-3s: Cold open on a dark field; a circular waveform ring assembles beat by beat, the track title and artist fade in, no lyrics yet.
-- 3-12s: Verse. Words appear one at a time on their vocal onsets and stack into lines; each finished line drifts slowly upward while vertical bars behind it pulse on the kick.
-- 12-14s: Pre-hook. The camera pushes in, lines compress to a single large word per onset, bars narrow into a tight grid.
-- 14-24s: Hook. Words fill the frame edge to edge; the palette inverts on the section downbeat, and the repeated hook word scales with a spring every time it returns.
-- 24-28s: Breakdown. Words dissolve into particles that scatter on the beat; the waveform ring returns and the palette desaturates.
-- 28-30s: Outro. Title card returns in the inverted palette; the last word holds until the final beat, then the ring closes.
+- 0-6s: Calm opening on a warm dark gradient with film grain: the sun rises slowly from a sea horizon over about 5 s while light italic serif words reveal on vocal onsets with a blur-to-sharp focus pull.
+- 6-9s: The sun scales up to fill the right half; lyric words set along a circular path around it as a tick-mark ring and an arc draw on.
+- 9-14s: Ignition: a heavy soft display serif phrase scale-punches to fill the frame on the beat; a dotted elliptical orbit draws around the sun, then a scale-through into a fiery orange smoke field.
+- 14-18s: A 'stop time' bar: the whole frame snaps to greyscale, a wide letter-spaced word reveals letter by letter about 80 ms apart, then colour returns.
+- 18-22.5s: Cream paper with grain: grid lines draw on, words drop into cells and a flat red dot pops in; the motion energy peaks around 20 s.
+- 22.5-27s: A circular iris mask shrinks the cream disc onto a dark ground; a split screen of cream and black with an outline circle and a filled red dot sliding toward each other as an eclipse.
+- 27-29.7s: Near-black ending: a red arc draws on as a glowing smile under the blurred song title while the HUD countdown reaches zero.
 
 ## قواعد الحركة
-- تدخل كل كلمة خلال 40 ms من زمن بداية نطقها في ملف التوقيت؛ مدة الدخول 180 ms بمنحنى cubic-bezier(0.2, 0.9, 0.2, 1) (تكبير من 0.92 إلى 1 مع ظهور تدريجي).
-- يبقى السطر حتى أول نطق في السطر التالي، ثم يخرج خلال 240 ms بمنحنى cubic-bezier(0.6, 0, 0.9, 0.4)؛ لا يُخرج السطر أثناء كلمة.
-- العناصر المرتبطة بالإيقاع تنبض من 1.0 إلى 1.06 مع كل ضربة طبلة وتتلاشى أسيًا خلال 300 ms؛ لا شيء ينبض في كل إطار.
-- الكاميرا: دفع بطيء بنسبة 2 بالمئة كل أربع مازورات؛ القطع الحاد مسموح فقط على الضربة الأولى التي تفتح مقطعًا جديدًا.
-- الطباعة: خط sans ثقيل واحد للكلمات، بحد أقصى 6 كلمات ظاهرة؛ الكلمات العربية محاذاة لليمين مع تشكيل صحيح للحروف وتتحرك بالكلمة لا بالحرف.
-- اللون: لوحة من لونين لكل مقطع؛ الانقلاب اللوني يتم في إطار واحد على الضربة الأولى للمقطع دون انتقال تدريجي.
-- الصوت: مسار المستخدم يبقى كما هو؛ لا إعادة مزج ولا خفض ولا تمديد زمني.
-- ممنوع: ظهور الكلمات قبل غنائها، تأثير الآلة الكاتبة، الاهتزاز العشوائي، أكثر من خط واحد.
+- الكلمات تهبط على مقاطع الغناء: كل كلمة تظهر من ضبابية نحو 8 بكسل إلى صفر في قرابة 200 مللي ثانية مع ارتفاع خفيف؛ وقد تبقى الكلمة الأخيرة مموهة.
+- ثلاثة أصوات طباعية بتباين واضح: سيريف انتقالي مائل خفيف للأسطر الهادئة (نحو 5% من الارتفاع)، سيريف عرض ثقيل ناعم بأحرف صغيرة للضربات (20-25% من الارتفاع)، وأحادي صغير متباعد بأحرف كبيرة للـ HUD.
+- HUD دائم: أقواس زوايا، عنوان الأغنية أعلى اليسار، عدّاد تنازلي لآخر ضوء أعلى اليمين متزامن مع الأغنية، BAR n/13 بشرطات تقدم أسفل اليسار، ورقم الفصل واسمه أسفل اليمين.
+- الفصول تتبدل على ضربات بداية الأقسام (كل نحو 2.3 ثانية في المتوسط) بقطعات حادة وقفزة رمادية وقناع قزحية دائري ومسح منقسم وعبور بالتكبير داخل الشمس.
+- الخطوط تُرسم: حلقة العلامات والقوس حول الشمس، المدار المنقط، شبكة الورق وقوس الابتسامة الأخير.
+- اللوحة: شبه أسود #0a0904، بني #572d1a، نحاسي #9a5b37، أسمر فاتح #c19773، شمس شاحبة #fcfaca، ورق #d8c8b0، أحمر #e0482a ونص كريمي #ecdbab مع حبيبات فيلم دقيقة دائمة.
+- الكاميرا ثابتة غالباً مع تقريب بطيء على الشمس؛ الصوت هو مقطع المستخدم ويبقى دون تعديل.
 
 ## Motion rules
-- Every word enters within 40 ms of its onset timestamp from the word-timing file; entrance lasts 180 ms with cubic-bezier(0.2, 0.9, 0.2, 1) (scale 0.92 to 1 plus fade).
-- A line holds until the next line's first onset, then exits over 240 ms with cubic-bezier(0.6, 0, 0.9, 0.4); never exit mid-word.
-- Beat-driven elements pulse scale 1.0 to 1.06 on each kick and decay exponentially over 300 ms; nothing pulses on every frame.
-- Camera: a slow push of 2 percent per four bars; a hard cut is allowed only on the downbeat that opens a new section.
-- Typography: one heavy sans for lyrics, max 6 words visible at once; Arabic lyrics align right, keep proper shaping and animate by word, never by letter.
-- Colour: a two-tone palette per section; inversion happens in a single frame on the section downbeat, no tween.
-- Audio: the user's track is untouched; no re-mixing, ducking or time-stretching.
-- Banned: words appearing before they are sung, typewriter effects, random jitter, more than one typeface.
+- Words land on sung syllables: each word reveals with a blur of about 8 px to 0 over about 200 ms and a slight rise; the trailing word may still be blurred.
+- Three type voices with clear contrast: light italic transitional serif for soft lines (~5% height), very heavy soft display serif lowercase for punches (20-25% height), small tracked mono uppercase for HUD.
+- Persistent HUD: corner brackets, track title top-left, a 'last light in' countdown top-right synced to the song, BAR n/13 with progress dashes bottom-left, chapter number and name bottom-right.
+- Chapters change on section downbeats (about every 2.3 s on average) with hard cuts, a greyscale snap, a circular iris, a split-screen wipe and a scale-through into the sun.
+- Lines draw on: tick ring and arc around the sun, dotted orbit, paper grid and the final smile arc.
+- Palette: near-black #0a0904, brown #572d1a, copper #9a5b37, tan #c19773, pale sun #fcfaca, paper #d8c8b0, red #e0482a and cream text #ecdbab, with constant fine film grain.
+- Camera is mostly static with slow push-ins on the sun; audio is the user's track and must stay untouched.
 
 ## Facts stated by the source (rewritten in our words)
 - The piece is a lyric video driven by a music track the user attaches.
@@ -61,7 +61,7 @@ The subject is a lyric video over a user-supplied track; the goal is that the vi
 - No duration, resolution or stack is stated.
 
 ## Assumptions
-The 30 s length, the two-clock structure and the section breakdown are proposals; the source only states the sync requirement and the showreel ambition. Word timings are assumed to come from a transcription file supplied with the track.
+Observed from the watched video and motion analysis: the sun narrative, the three type voices, the HUD countdown and bar counter, the greyscale snap, paper grid, iris, eclipse and smile arc over about 29.7 s. Assumed: that words follow sung syllables (inferred from frames; audio not heard) and the exact chapter boundaries; there is no circular waveform ring or beat bars.
 
 ## Keywords
-lyrics video, kinetic typography, beat sync, word timing, showreel, كلمات أغنية, تزامن صوتي, طباعة حركية, إيقاع, waveform, remotion, موجة صوتية
+lyric video, word timing, beat sync, sun narrative, eclipse, focus pull, hud countdown, text on circle, greyscale snap, film grain, كلمات أغنية, تزامن صوتي, شمس, طباعة حركية

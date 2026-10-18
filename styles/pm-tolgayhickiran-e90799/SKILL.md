@@ -1,9 +1,9 @@
 ---
 name: pm-tolgayhickiran-e90799
-description: A 15-second résumé reel in which each animation principle is performed live by the very word and chart that name it.
+description: A 15-second HUD-framed reel: a circle with orbiting dots and radial ticks while 'HELLO, I_' types, scan lines, a glitched RGB-split MOTION, a grid of coloured shapes, a circle morphing to a star on lime, a spiral particle galaxy, orange pixel blocks, RHYTHM over equaliser bars, a wireframe torus and a CLAUDE signature inside a ring.
 ---
 
-# KOSIF TOOL — Motion design principles reel / ريل مبادئ الموشن: الحركة تشرح نفسها
+# KOSIF TOOL — Motion design principles reel / ريل موشن داكن بإطار HUD: عروض تقنية متتابعة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/tolgayhickiran-e90799
@@ -18,11 +18,11 @@ description: A 15-second résumé reel in which each animation principle is perf
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل 15 ثانية يعرض مبادئ التحريك كأمثلة حية، حيث تؤدي الكلمة والرسم البياني المبدأ الذي يسمّيانه.
+ريل مدته 15 ثانية داخل إطار HUD: دائرة بنقاط تدور وعلامات شعاعية مع «HELLO, I_» تُكتب، خطوط مسح، كلمة MOTION بتشويش وانفصال RGB، شبكة أشكال ملونة، دائرة تتحول إلى نجمة على الليموني، مجرة جسيمات حلزونية، كتل بكسل برتقالية، RHYTHM فوق أعمدة معادل صوت، حلقة سلكية ثلاثية الأبعاد، وتوقيع CLAUDE داخل حلقة.
 
-A 15-second résumé reel in which each animation principle is performed live by the very word and chart that name it.
+A 15-second HUD-framed reel: a circle with orbiting dots and radial ticks while 'HELLO, I_' types, scan lines, a glitched RGB-split MOTION, a grid of coloured shapes, a circle morphing to a star on lime, a spiral particle galaxy, orange pixel blocks, RHYTHM over equaliser bars, a wireframe torus and a CLAUDE signature inside a ring.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

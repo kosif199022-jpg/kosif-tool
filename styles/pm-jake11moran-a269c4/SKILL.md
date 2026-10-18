@@ -1,6 +1,6 @@
 ---
 name: pm-jake11moran-a269c4
-description: A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.
+description: A warm, ink-outlined cartoon of about 53 seconds in a single fixed office: the agent is an orange box character with dot eyes and stubby arms behind a desk with a brass plaque. It starts asleep at night, a push-in to the monitor types the session start, then user messages arrive as paper airplanes that unfold into handwritten notes; the agent reacts with expressions while the monitor shows code, an image, a progress bar or a green check, rewards pile up on its head and the window cycles from day to night.
 ---
 
 # KOSIF TOOL — Animated agent session story / حكاية جلسة الوكيل البرمجي
@@ -18,11 +18,11 @@ description: A short scored animated film that turns a real developer-and-agent 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيلم قصير مُلحَّن يحوّل سجل جلسة حقيقية بين مطوّر ووكيل برمجي إلى حكاية متحركة بشخصيتين وأحداث كود.
+فيلم كرتوني دافئ مدته نحو 53 ثانية في مكتب واحد ثابت: الوكيل شخصية صندوق برتقالي بعينين نقطيتين وذراعين قصيرتين خلف مكتب عليه لوحة نحاسية. يبدأ نائماً ليلاً، ثم تقريب إلى الشاشة التي تكتب بدء الجلسة، وتصل رسائل المستخدم كطائرات ورقية تنفتح إلى ملاحظات مكتوبة باليد؛ يتفاعل الوكيل بتعابير مختلفة والشاشة تعرض كوداً أو صورة أو شريط تقدم أو علامة صح، وتتراكم المكافآت على رأسه والنافذة تنتقل من النهار إلى الليل.
 
-A short scored animated film that turns a real developer-and-agent coding session log into a two-character story told through code events.
+A warm, ink-outlined cartoon of about 53 seconds in a single fixed office: the agent is an orange box character with dot eyes and stubby arms behind a desk with a brass plaque. It starts asleep at night, a push-in to the monitor types the session start, then user messages arrive as paper airplanes that unfold into handwritten notes; the agent reacts with expressions while the monitor shows code, an image, a progress bar or a green check, rewards pile up on its head and the window cycles from day to night.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (CSS, GSAP, Web Audio), suggested duration (45 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (CSS, GSAP, Web Audio), suggested duration (53 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Code / كود.

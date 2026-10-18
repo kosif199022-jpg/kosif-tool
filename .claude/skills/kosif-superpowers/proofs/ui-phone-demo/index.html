@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI Phone Demo — KOSIF proof</title>
+<style>
+  @font-face { font-family: "UCairo"; src: url("../_shared/fonts/Cairo%5Bslnt,wght%5D.ttf") format("truetype"); font-weight: 200 1000; }
+  :root {
+    --coffee: #6f3f25; --caramel: #f0a24e; --cream: #fff8f1; --surface: #ffffff; --ink: #2a1c15; --muted: #8b786c; --line: #efe3d7;
+    --ok: #2fa86a; --stage-a: #1a1324; --stage-b: #2b1a14;
+  }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "UCairo", sans-serif;
+    background: radial-gradient(900px 700px at 80% 12%, #5a3420 0, transparent 70%), radial-gradient(800px 800px at 10% 90%, #3a2350 0, transparent 70%), linear-gradient(160deg, var(--stage-a), var(--stage-b)); }
+  .glow { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .5; }
+  /* ---------- hardware (never mirrored) ---------- */
+  #phone { position: absolute; left: 150px; top: 150px; width: 780px; height: 1600px; transform-origin: 50% 50%; direction: ltr; }
+  #shadow { position: absolute; left: 40px; right: 40px; bottom: -40px; height: 120px; background: rgba(0,0,0,.55); filter: blur(40px); border-radius: 50%; }
+  #body { position: absolute; inset: 0; border-radius: 118px; background: linear-gradient(135deg, #3b3b42, #141418 40%, #26262c); box-shadow: inset 0 0 0 3px #4a4a52, inset 0 0 0 9px #0c0c0f, 0 40px 90px rgba(0,0,0,.5); }
+  .btn { position: absolute; width: 10px; background: linear-gradient(90deg, #2a2a30, #55555e); border-radius: 4px; }
+  #screen { position: absolute; left: 22px; top: 22px; right: 22px; bottom: 22px; border-radius: 98px; overflow: hidden; background: var(--cream); }
+  #island { position: absolute; left: 50%; top: 40px; width: 236px; height: 70px; margin-left: -118px; border-radius: 35px; background: #000; z-index: 50; overflow: hidden; color: #fff; }
+  #homebar { position: absolute; left: 50%; bottom: 18px; width: 260px; height: 10px; margin-left: -130px; border-radius: 5px; background: #2a1c15; z-index: 60; opacity: .8; }
+  /* ---------- app UI (RTL, mirrored) ---------- */
+  #app { position: absolute; inset: 0; direction: rtl; color: var(--ink); }
+  #status { position: absolute; top: 0; left: 0; right: 0; height: 130px; display: flex; justify-content: space-between; align-items: center; padding: 0 70px; font-weight: 700; font-size: 32px; z-index: 40; background: linear-gradient(var(--cream) 82%, rgba(255,248,241,0)); }
+  #status .icons { display: flex; gap: 12px; align-items: center; direction: ltr; }
+  .bars { display: flex; gap: 4px; align-items: flex-end; } .bars i { width: 7px; background: var(--ink); border-radius: 2px; display: block; }
+  .batt { width: 52px; height: 24px; border: 3px solid var(--ink); border-radius: 8px; padding: 3px; box-sizing: border-box; position: relative; } .batt b { display: block; height: 100%; width: 78%; background: var(--ink); border-radius: 3px; }
+  #content { position: absolute; top: 130px; left: 0; right: 0; padding: 0 48px; will-change: transform; }
+  .hello { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+  .hello h1 { margin: 0; font-size: 50px; font-weight: 800; line-height: 1.25; }
+  .hello p { margin: 4px 0 0; font-size: 30px; color: var(--muted); font-weight: 500; }
+  .avatar { width: 96px; height: 96px; border-radius: 50%; background: radial-gradient(circle at 50% 38%, #ffd9b8 0 22%, transparent 23%), radial-gradient(circle at 50% 100%, #f0a24e 0 46%, transparent 47%), #ffe9d4; box-shadow: 0 0 0 4px #fff, 0 6px 16px rgba(0,0,0,.12); }
+  .search { margin-top: 34px; height: 96px; border-radius: 30px; background: var(--surface); display: flex; align-items: center; gap: 18px; padding: 0 32px; font-size: 30px; color: var(--muted); box-shadow: 0 8px 24px rgba(111,63,37,.08); }
+  .lens { width: 30px; height: 30px; border: 5px solid var(--coffee); border-radius: 50%; position: relative; box-sizing: border-box; }
+  .lens::after { content: ""; position: absolute; width: 5px; height: 16px; background: var(--coffee); left: -6px; bottom: -14px; transform: rotate(45deg); border-radius: 3px; }
+  h2 { font-size: 36px; margin: 44px 0 20px; font-weight: 800; display: flex; justify-content: space-between; align-items: baseline; }
+  h2 small { font-size: 26px; color: var(--caramel); font-weight: 700; }
+  .row { display: flex; gap: 26px; margin-left: -48px; }
+  .card { position: relative; overflow: hidden; flex: 0 0 300px; height: 400px; border-radius: 44px; background: var(--surface); box-shadow: 0 14px 30px rgba(111,63,37,.10); padding: 24px; box-sizing: border-box; transform-origin: 50% 50%; }
+  .cup { height: 210px; border-radius: 32px; display: grid; place-items: center; }
+  .cup i { width: 150px; height: 150px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 14px #fff, 0 10px 18px rgba(0,0,0,.18); }
+  .card b { display: block; font-size: 32px; margin-top: 18px; font-weight: 800; }
+  .card span { display: flex; justify-content: space-between; font-size: 28px; color: var(--muted); margin-top: 6px; }
+  .card span em { font-style: normal; color: var(--coffee); font-weight: 800; }
+  .item { height: 150px; display: flex; align-items: center; gap: 26px; border-bottom: 2px solid var(--line); }
+  .item .thumb { width: 104px; height: 104px; border-radius: 30px; flex: 0 0 auto; display: grid; place-items: center; }
+  .item .thumb i { width: 64px; height: 64px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 8px #fff; }
+  .item div { flex: 1; } .item b { display: block; font-size: 32px; font-weight: 800; } .item small { font-size: 26px; color: var(--muted); }
+  .item .price { font-weight: 800; color: var(--coffee); font-size: 30px; }
+  .plus { width: 64px; height: 64px; border-radius: 22px; background: var(--coffee); color: #fff; font-size: 44px; line-height: 60px; text-align: center; font-weight: 700; }
+  #tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 170px; background: rgba(255,255,255,.94); display: flex; justify-content: space-around; padding: 22px 40px 0; box-sizing: border-box; box-shadow: 0 -10px 30px rgba(111,63,37,.08); z-index: 30; }
+  .tab { width: 120px; text-align: center; font-size: 24px; font-weight: 700; color: var(--muted); position: relative; }
+  .tab i { display: block; width: 46px; height: 46px; margin: 0 auto 6px; border-radius: 14px; border: 5px solid currentColor; box-sizing: border-box; }
+  .tab.on { color: var(--coffee); }
+  #badge { position: absolute; top: -8px; left: 22px; width: 40px; height: 40px; border-radius: 20px; background: #e5484d; color: #fff; font-size: 24px; line-height: 40px; font-weight: 800; transform: scale(0); }
+  #scrollbar { position: absolute; left: 10px; top: 160px; width: 8px; height: 180px; border-radius: 4px; background: rgba(42,28,21,.45); opacity: 0; z-index: 35; }
+  /* sheet */
+  #scrim { position: absolute; inset: 0; background: #1a0f0a; opacity: 0; z-index: 70; }
+  #sheet { position: absolute; left: 0; right: 0; bottom: 0; height: 1010px; background: var(--surface); border-radius: 64px 64px 0 0; z-index: 80; padding: 26px 56px 0; box-sizing: border-box; transform: translateY(1100px); }
+  .grab { width: 110px; height: 10px; border-radius: 5px; background: #dccfc3; margin: 0 auto 30px; }
+  .hero { height: 330px; border-radius: 44px; background: linear-gradient(135deg, #ffe2c4, #f6c08a); display: grid; place-items: center; }
+  .hero i { width: 230px; height: 230px; border-radius: 50%; display: block; background: radial-gradient(circle at 50% 50%, #fff4e6 0 16%, #c98a55 17% 40%, #7a4527 41% 62%, #fff 63% 70%, transparent 71%); box-shadow: 0 18px 30px rgba(0,0,0,.18); border-radius: 50%; }
+  .ptitle { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; }
+  .ptitle b { font-size: 46px; font-weight: 800; } .ptitle em { font-style: normal; font-size: 42px; font-weight: 800; color: var(--coffee); }
+  .desc { font-size: 28px; color: var(--muted); margin: 6px 0 26px; }
+  .seg { position: relative; display: flex; background: #f6eee6; border-radius: 30px; padding: 8px; height: 92px; box-sizing: border-box; }
+  .seg div { position: relative; overflow: hidden; border-radius: 24px; flex: 1; z-index: 2; text-align: center; font-size: 30px; font-weight: 800; line-height: 76px; color: var(--muted); }
+  .seg .knob { position: absolute; top: 8px; bottom: 8px; width: calc((100% - 16px) / 3); right: 8px; background: #fff; border-radius: 24px; box-shadow: 0 6px 14px rgba(111,63,37,.15); z-index: 1; }
+  #add { margin-top: 40px; height: 120px; border-radius: 40px; background: var(--coffee); color: #fff; font-size: 36px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 18px; position: relative; overflow: hidden; }
+  #add .done { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 16px; background: var(--ok); clip-path: circle(0px at 50% 50%); z-index: 95; }
+  .check { width: 44px; height: 24px; border-left: 7px solid #fff; border-bottom: 7px solid #fff; transform: rotate(-45deg) translate(2px, -4px); }
+  /* ripple + finger */
+  .ripple { position: absolute; border-radius: 50%; background: rgba(111,63,37,.28); pointer-events: none; z-index: 90; width: 10px; height: 10px; opacity: 0; }
+  #finger { position: absolute; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%; background: rgba(255,255,255,.38); border: 4px solid rgba(255,255,255,.95); box-shadow: 0 10px 26px rgba(0,0,0,.35); z-index: 200; opacity: 0; }
+  /* island notification content (RTL text inside the hardware cut-out) */
+  #note { position: absolute; inset: 0; direction: rtl; display: flex; align-items: center; gap: 22px; padding: 0 30px; opacity: 0; }
+  #note .ic { width: 96px; height: 96px; border-radius: 28px; background: linear-gradient(135deg, #f6b367, #c56f2e); flex: 0 0 auto; display: grid; place-items: center; }
+  #note .ic i { width: 50px; height: 50px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 7px #fff; background: #6f3f25; }
+  #note b { display: block; font-size: 32px; font-weight: 800; white-space: nowrap; } #note small { font-size: 25px; color: #c8b9ad; white-space: nowrap; }
+  #note .ring { margin-right: auto; width: 74px; height: 74px; flex: 0 0 auto; }
+  #mini { position: absolute; inset: 0; direction: rtl; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; opacity: 0; font-size: 26px; font-weight: 800; color: var(--caramel); }
+  #mini i { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #f6b367, #c56f2e); display: block; }
+  /* CTA */
+  #cta { position: absolute; left: 90px; right: 90px; bottom: 120px; height: 360px; border-radius: 56px; background: rgba(255,248,241,.96); direction: rtl; padding: 44px 56px; box-sizing: border-box; box-shadow: 0 30px 80px rgba(0,0,0,.45); transform: translateY(600px); }
+  #cta h3 { margin: 0; font-size: 54px; font-weight: 800; color: var(--ink); line-height: 1.3; }
+  #cta p { margin: 6px 0 0; font-size: 30px; color: var(--muted); font-weight: 600; }
+  #cta .go { position: absolute; left: 56px; bottom: 44px; height: 100px; padding: 0 54px; border-radius: 34px; background: var(--coffee); color: #fff; font-size: 34px; font-weight: 800; line-height: 100px; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px/1.3 system-ui, sans-serif; color: #9ab; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><div id="stage">
+  <div class="glow" style="left:620px;top:80px;width:420px;height:420px;background:#f0a24e"></div>
+  <div class="glow" style="left:-120px;top:1300px;width:520px;height:520px;background:#7b4bd0"></div>
+  <div id="phone">
+    <div id="shadow"></div>
+    <div id="body"></div>
+    <!-- hardware: volume on the left, power on the right, same in every locale -->
+    <div class="btn" style="left:-8px;top:330px;height:110px"></div>
+    <div class="btn" style="left:-8px;top:470px;height:110px"></div>
+    <div class="btn" style="right:-8px;top:400px;height:180px"></div>
+    <div id="screen">
+      <div id="app">
+        <div id="status"><span>٩:٤١</span><span class="icons"><span class="bars"><i style="height:10px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:25px"></i></span><span class="batt"><b></b></span></span></div>
+        <div id="content">
+          <div class="hello"><div><h1>صباح الخير، سارة</h1><p>ماذا نحضّر لك اليوم؟</p></div><div class="avatar"></div></div>
+          <div class="search"><span class="lens"></span>ابحث عن مشروبك</div>
+          <h2>المميّز اليوم <small>عرض الكل</small></h2>
+          <div class="row">
+            <div class="card" id="c1"><div class="cup" style="background:#ffe7cf"><i style="background:radial-gradient(#e9c49a 0 35%,#9a5a33 36%)"></i></div><b>لاتيه بالهيل</b><span>حار <em>١٨ ر.س</em></span></div>
+            <div class="card" id="c2"><div class="cup" style="background:#e5efe2"><i style="background:radial-gradient(#cfe4b5 0 40%,#6f9a4b 41%)"></i></div><b>ماتشا مثلّجة</b><span>بارد <em>٢١ ر.س</em></span></div>
+            <div class="card"><div class="cup" style="background:#f3e3f0"><i style="background:radial-gradient(#f6d5e8 0 40%,#b5568d 41%)"></i></div><b>موكا وردية</b><span>حار <em>٢٠ ر.س</em></span></div>
+          </div>
+          <h2>الأكثر طلبًا</h2>
+          <div id="list"></div>
+        </div>
+        <div id="scrollbar"></div>
+        <div id="tabbar">
+          <div class="tab on"><i></i>الرئيسية</div><div class="tab"><i style="border-radius:50%"></i>المفضلة</div>
+          <div class="tab" id="cartTab"><i></i>السلة<span id="badge">١</span></div><div class="tab"><i style="border-radius:50%"></i>حسابي</div>
+        </div>
+        <div id="scrim"></div>
+        <div id="sheet">
+          <div class="grab"></div>
+          <div class="hero"><i></i></div>
+          <div class="ptitle"><b>لاتيه بالهيل</b><em>١٨ ر.س</em></div>
+          <div class="desc">إسبريسو مزدوج، حليب مبخّر، ورشة هيل مطحون طازجًا</div>
+          <div class="seg" id="seg"><span class="knob" id="knob"></span><div id="s1">صغير</div><div id="s2">وسط</div><div id="s3">كبير</div></div>
+          <div id="add">أضف إلى السلة<div class="done"><span class="check"></span>تمت الإضافة</div></div>
+        </div>
+      </div>
+      <div id="homebar"></div>
+    </div>
+    <div id="island">
+      <div id="note"><div class="ic"><i></i></div><div><b>طلبك قيد التحضير</b><small>جاهز خلال ٤ دقائق · فرع العليا</small></div>
+        <svg class="ring" viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" fill="none" stroke="#3a2a20" stroke-width="8"/><circle id="ringArc" cx="37" cy="37" r="30" fill="none" stroke="#f0a24e" stroke-width="8" stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="188.5" transform="rotate(-90 37 37)"/></svg></div>
+      <div id="mini"><i></i><span>٤ د</span></div>
+    </div>
+  </div>
+  <div id="cta"><h3>قهوتك المفضلة بلمسة واحدة</h3><p>اطلب مسبقًا واستلم بلا انتظار</p><div class="go">حمّل التطبيق</div></div>
+  <div id="finger"></div>
+</div></div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=4.5</div>
+<script>
+(function () {
+  'use strict';
+  const W = 1080, H = 1920, FPS = 30, DUR = 10;
+  /* ---------------- motion tokens ---------------- */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const Ease = {
+    outCubic: (x) => 1 - Math.pow(1 - x, 3),
+    inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    inCubic: (x) => x * x * x,
+  };
+  // damped spring step response, x in seconds since start (stiffness k, damping c, unit mass)
+  function spring(x, k = 170, c = 18) { if (x <= 0) return 0; const w = Math.sqrt(k), z = c / (2 * w); const wd = w * Math.sqrt(1 - z * z); return 1 - Math.exp(-z * w * x) * (Math.cos(wd * x) + (z * w / wd) * Math.sin(wd * x)); }
+  const prog = (t, a, b, e = Ease.inOutCubic) => e(clamp01((t - a) / (b - a)));
+  const SPRING_SHEET = [190, 22], SPRING_ISLAND = [260, 22], SPRING_PHONE = [120, 16];
+  const TAU = 0.45;                 // scroll inertia time constant (s): v(t) = v0·e^(−t/τ)
+  // cue sheet (seconds)
+  const CUE = { phoneIn: 0.0, fingerIn: 1.2, tapCard: 2.3, sheetUp: 2.45, tapChip: 3.45, tapAdd: 4.35, sheetDown: 5.05,
+    dragStart: 5.75, dragEnd: 6.15, islandOpen: 7.25, islandMini: 8.45, outro: 8.8 };
+
+  const $ = (s) => document.querySelector(s);
+  const stage = $('#stage'), phone = $('#phone'), content = $('#content'), sheet = $('#sheet'), scrim = $('#scrim'), finger = $('#finger');
+  const knob = $('#knob'), add = $('#add'), done = add.querySelector('.done'), badge = $('#badge'), island = $('#island'), note = $('#note'), mini = $('#mini');
+  const ringArc = $('#ringArc'), scrollbar = $('#scrollbar'), cta = $('#cta'), screen = $('#screen');
+
+  // list items (data)
+  const ITEMS = [['قهوة عربية', 'بالزعفران', '١٢', '#f7e6cc', '#b07a3c'], ['كابتشينو', 'رغوة كثيفة', '١٦', '#ffe7cf', '#9a5a33'], ['فلات وايت', 'حليب ناعم', '١٧', '#f3e9df', '#8a5a3c'],
+    ['شاي كرك', 'بالهيل والزنجبيل', '٩', '#fbe3c8', '#c07a35'], ['كولد برو', 'منقوع ١٨ ساعة', '١٩', '#e2e7ef', '#4b5a70'], ['ليمون بالنعناع', 'منعش وبارد', '١٤', '#e5f2dc', '#5f9a3b'],
+    ['هوت شوكليت', 'كاكاو داكن', '١٨', '#f0e0d8', '#6a3a28'], ['إسبريسو', 'جرعة مزدوجة', '١١', '#efe2d6', '#4a2a1a'], ['كورتادو', 'نصف ونصف', '١٥', '#f6e8da', '#8b5532'],
+    ['تشاي لاتيه', 'بهارات دافئة', '١٧', '#f8e3d0', '#b86a3a']];
+  $('#list').innerHTML = ITEMS.map(([n, d, p, bg, c]) => `<div class="item"><span class="thumb" style="background:${bg}"><i style="background:${c}"></i></span><div><b>${n}</b><small>${d}</small></div><span class="price">${p} ر.س</span><span class="plus">+</span></div>`).join('');
+
+  // ripples (one element per tap)
+  const ripples = {};
+  // each ripple lives inside the element it belongs to (overflow: hidden clips it to the control's shape)
+  const RIPPLE_HOST = { tapCard: '#c1', tapChip: '#s2', tapAdd: '#add' };
+  for (const k in RIPPLE_HOST) { const r = document.createElement('div'); r.className = 'ripple'; $(RIPPLE_HOST[k]).appendChild(r); ripples[k] = r; }
+
+  /* ---------------- scroll with drag + inertia ---------------- */
+  const DRAG = 380;                                   // px moved by the finger during the drag
+  const V0 = 1.6 * DRAG / (CUE.dragEnd - CUE.dragStart); // release velocity (px/s); finger accelerates into the flick
+  function scrollAt(t) {
+    if (t < CUE.dragStart) return 0;
+    if (t < CUE.dragEnd) { const p = (t - CUE.dragStart) / (CUE.dragEnd - CUE.dragStart); return DRAG * (p * p * 0.6 + p * 0.4); }
+    const dt = t - CUE.dragEnd; return DRAG + V0 * TAU * (1 - Math.exp(-dt / TAU));
+  }
+
+  /* ---------------- finger path (stage px), filled after layout ---------------- */
+  let P = {};
+  function center(el) { const r = el.getBoundingClientRect(), s = stage.getBoundingClientRect(), k = s.width / W; return { x: (r.left + r.width / 2 - s.left) / k, y: (r.top + r.height / 2 - s.top) / k }; }
+  function fingerKeys() {
+    return [
+      { t: CUE.fingerIn - 0.3, x: 980, y: 1500, o: 0 },
+      { t: CUE.fingerIn, x: 860, y: 1300, o: 1 },
+      { t: CUE.tapCard - 0.12, x: P.card.x, y: P.card.y, o: 1 },
+      { t: CUE.tapCard + 0.35, x: P.card.x + 10, y: P.card.y + 30, o: 1 },
+      { t: CUE.tapChip - 0.12, x: P.chip.x, y: P.chip.y, o: 1 },
+      { t: CUE.tapAdd - 0.12, x: P.add.x, y: P.add.y, o: 1 },
+      { t: CUE.tapAdd + 0.45, x: P.add.x - 40, y: P.add.y + 60, o: 1 },
+      { t: CUE.dragStart - 0.1, x: 600, y: 1420, o: 1 },
+      { t: CUE.dragStart, x: 600, y: 1420, o: 1 },
+      { t: CUE.dragEnd, x: 610, y: 1420 - DRAG, o: 1, e: (p) => p * p * 0.6 + p * 0.4 },
+      { t: CUE.dragEnd + 0.35, x: 640, y: 900, o: 0 },
+    ];
+  }
+  let FK = [];
+  function fingerAt(t) {
+    if (t <= FK[0].t) return FK[0];
+    for (let i = 1; i < FK.length; i++) if (t <= FK[i].t) { const a = FK[i - 1], b = FK[i]; const p = (b.e || Ease.inOutCubic)(clamp01((t - a.t) / (b.t - a.t))); return { x: lerp(a.x, b.x, p), y: lerp(a.y, b.y, p), o: lerp(a.o, b.o, p) }; }
+    return FK[FK.length - 1];
+  }
+  const press = (t, t0) => { const d = t - t0; return d < -0.08 || d > 0.16 ? 0 : d < 0 ? (d + 0.08) / 0.08 : 1 - d / 0.16; }; // 80 ms down, 160 ms up
+
+  /* ---------------- frame ---------------- */
+  function render(t, measuring) {
+    // phone entrance (spring) and outro (shrink + rise)
+    const pin = spring(t - CUE.phoneIn, ...SPRING_PHONE), po = prog(t, CUE.outro, CUE.outro + 0.8, Ease.inOutCubic);
+    const py = lerp(260, 0, pin) - 250 * po, ps = lerp(0.9, 1, pin) * lerp(1, 0.72, po);
+    phone.style.transform = measuring ? 'none' : `translateY(${py}px) scale(${ps})`;
+    phone.style.opacity = clamp01(0.35 + (t - CUE.phoneIn) / 0.3);
+    // tap feedback on the card
+    $('#c1').style.transform = `scale(${1 - 0.04 * press(t, CUE.tapCard)})`;
+    // scroll
+    const sy = scrollAt(t); content.style.transform = `translateY(${-sy}px)`;
+    const sbo = t < CUE.dragStart ? 0 : t < CUE.dragEnd + 1.0 ? clamp01((t - CUE.dragStart) / 0.15) : 1 - clamp01((t - CUE.dragEnd - 1.0) / 0.3);
+    scrollbar.style.opacity = sbo; scrollbar.style.transform = `translateY(${sy * 0.62}px)`;
+    // sheet up (spring) / down (ease-in)
+    const up = spring(t - CUE.sheetUp, ...SPRING_SHEET), down = prog(t, CUE.sheetDown, CUE.sheetDown + 0.38, Ease.inCubic);
+    const open = measuring === 'sheet' ? 1 : up * (1 - down);
+    sheet.style.transform = `translateY(${(1 - open) * 1100}px)`;
+    scrim.style.opacity = 0.45 * clamp01(open);
+    // size chip: knob slides from صغير (right) to وسط
+    const kx = spring(t - CUE.tapChip, 300, 26); const segW = $('#seg').clientWidth - 16;
+    knob.style.transform = `translateX(${-kx * segW / 3}px)`;
+    $('#s1').style.color = kx < 0.5 ? 'var(--ink)' : 'var(--muted)'; $('#s2').style.color = kx >= 0.5 ? 'var(--ink)' : 'var(--muted)';
+    // add button → done
+    add.style.transform = `scale(${1 - 0.04 * press(t, CUE.tapAdd)})`;
+    // success state is revealed by a circular mask growing from the touch point (no cross-faded labels)
+    done.style.clipPath = `circle(${(360 * prog(t, CUE.tapAdd + 0.08, CUE.tapAdd + 0.42, Ease.outCubic)).toFixed(1)}px at 50% 50%)`;
+    const bp = spring(t - (CUE.tapAdd + 0.3), 320, 14); badge.style.transform = `scale(${bp})`;
+    // ripples: radius 0 → 220 px, alpha .55 → 0 over 450 ms
+    for (const k in ripples) {
+      const el = ripples[k], d = t - CUE[k];
+      if (d < 0 || d > 0.45 || measuring) { el.style.opacity = 0; continue; }
+      const host = el.parentElement, c = { x: host.clientWidth / 2, y: host.clientHeight / 2 }, r = 220 * Ease.outCubic(d / 0.45);
+      Object.assign(el.style, { left: `${c.x - r}px`, top: `${c.y - r}px`, width: `${2 * r}px`, height: `${2 * r}px`, opacity: 0.55 * (1 - d / 0.45) });
+    }
+    // dynamic island: pill → expanded notification → compact activity
+    const io = spring(t - CUE.islandOpen, ...SPRING_ISLAND), im = spring(t - CUE.islandMini, ...SPRING_ISLAND);
+    const iw = lerp(lerp(236, 700, io), 400, im), ih = lerp(lerp(70, 196, io), 70, im), ir = lerp(lerp(35, 64, io), 35, im);
+    Object.assign(island.style, { width: `${iw}px`, height: `${ih}px`, marginLeft: `${-iw / 2}px`, borderRadius: `${ir}px` });
+    note.style.opacity = clamp01((io - 0.6) / 0.3) * (1 - clamp01(im / 0.25));
+    mini.style.opacity = clamp01((im - 0.7) / 0.3);
+    ringArc.setAttribute('stroke-dashoffset', (188.5 * (1 - 0.35 * prog(t, CUE.islandOpen + 0.3, CUE.islandMini, Ease.outCubic))).toFixed(1));
+    // finger
+    if (!measuring) {
+      const f = fingerAt(t), pr = Math.max(press(t, CUE.tapCard), press(t, CUE.tapChip), press(t, CUE.tapAdd), t > CUE.dragStart && t < CUE.dragEnd ? 1 : 0);
+      Object.assign(finger.style, { left: `${f.x}px`, top: `${f.y}px`, opacity: f.o, transform: `scale(${1 - 0.18 * pr})`, background: `rgba(255,255,255,${0.38 + 0.25 * pr})` });
+    }
+    // CTA card
+    const cp = spring(t - (CUE.outro + 0.25), 150, 17);
+    cta.style.transform = `translateY(${(1 - cp) * 600}px)`;
+  }
+
+  function measure() {
+    render(1.8, true); P.card = center($('#c1'));
+    render(3.2, 'sheet'); P.chip = center($('#s2')); P.add = center(add);
+    FK = fingerKeys();
+  }
+
+  /* ---------------- contract ---------------- */
+  let T0 = 0, playing = false, last = 0;
+  function seek(t) { T0 = Math.max(0, Math.min(DUR, t)); render(T0); }
+  const ready = Promise.all([document.fonts.load('800 40px "UCairo"', 'قهوة'), document.fonts.load('500 30px "UCairo"', 'قهوة')])
+    .then(() => document.fonts.ready).then(() => { fit(); measure(); seek(parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0); return true; });
+  window.__kosif = { duration: DUR, fps: FPS, seek };
+  window.__kosifReady = ready;
+  if (navigator.webdriver) document.body.classList.add('render');
+  function fit() { const k = Math.min(innerWidth / W, innerHeight / H); document.getElementById('fit').style.transform = `scale(${k})`; }
+  addEventListener('resize', () => { fit(); measure(); seek(T0); }); fit();
+  function loop(now) { if (!playing) return; const dt = (now - last) / 1000; last = now; let t = T0 + dt; if (t >= DUR) t = 0; seek(t); requestAnimationFrame(loop); }
+  addEventListener('keydown', (e) => {
+    if (e.code === 'Space') { e.preventDefault(); playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(loop); }
+    if (e.code === 'ArrowRight') seek(T0 + 1 / FPS);
+    if (e.code === 'ArrowLeft') seek(T0 - 1 / FPS);
+  });
+})();
+</script>
+</body>
+</html>

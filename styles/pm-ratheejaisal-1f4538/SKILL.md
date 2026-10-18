@@ -1,6 +1,6 @@
 ---
 name: pm-ratheejaisal-1f4538
-description: A 20-second launch spot that races through the key features of a founder's personal page product at a breathless pace, locked to the brand system.
+description: A silent 20-second launch spot on a cool off-white ground: the logo reveals with a left-to-right mask, then a run of shots on one fixed layout (a bold two-line headline with a small mono kicker on the left, a white shadowed UI card on the right): claiming a handle, a profile card, a project list with Live pills, a revenue counter over a heatmap, a visitors counter with a sparkline, a revenue bar race, a founder directory on a dotted world map, a verified badge on a site and an end card with a CTA clicked by a cursor.
 ---
 
 # KOSIF TOOL — founder.page launch video / فيديو إطلاق founder.page السريع
@@ -18,9 +18,9 @@ description: A 20-second launch spot that races through the key features of a fo
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-إعلان إطلاق في 20 ثانية يستعرض الميزات الرئيسية لصفحة المؤسّس الشخصية بإيقاع لاهث وهوية بصرية ملتزمة بالعلامة.
+إعلان إطلاق مدته 20 ثانية بلا صوت على خلفية بيضاء مائلة للرمادي البارد: كشف الشعار بقناع من اليسار إلى اليمين، ثم لقطات على تخطيط ثابت (عنوان عريض من سطرين مع وسم أحادي صغير يساراً وبطاقة واجهة بيضاء بظل يميناً): حجز اسم المستخدم، بطاقة ملف شخصي، قائمة مشاريع بشارات «مباشر»، عدّاد إيرادات فوق خريطة حرارية، عدّاد زوار بخط صغير، سباق أعمدة إيرادات، دليل مؤسسين على خريطة عالم منقطة، شارة توثيق داخل موقع، وبطاقة ختام بزر ينقره المؤشر.
 
-A 20-second launch spot that races through the key features of a founder's personal page product at a breathless pace, locked to the brand system.
+A silent 20-second launch spot on a cool off-white ground: the logo reveals with a left-to-right mask, then a run of shots on one fixed layout (a bold two-line headline with a small mono kicker on the left, a white shadowed UI card on the right): claiming a handle, a profile card, a project list with Live pills, a revenue counter over a heatmap, a visitors counter with a sparkline, a revenue bar race, a founder directory on a dotted world map, a verified badge on a site and an end card with a CTA clicked by a cursor.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (20 s), aspect 16:9, difficulty 3/5.
 

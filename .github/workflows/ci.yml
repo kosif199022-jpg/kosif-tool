@@ -21,6 +21,40 @@ jobs:
         run: python3 tools/build.py --check
       - name: Python tests
         run: python3 -m unittest discover -s tests -v
+      - name: KOSIF Superpowers integrity + routing evaluations
+        run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
+      - name: Permission-aware capability routing and honest host discovery
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_capability_runtime_router.py' -v
+      - name: Creative audio-to-motion reasoning tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_intelligence.py' -v
+      - name: Safe repository capability transfer tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_repository_capability_packer.py' -v
+      - name: REA bridge and router safety regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_rea_*.py' -v
+      - name: Community source scout and safety regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_scout.py' -v
+      - name: Capacity and Python readiness regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_system_python.py' -v
+      - name: Evidence-backed creative quality and timeline logic gates
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_quality_gate.py' -v
+      - name: Measured music hypotheses and audio-reactive visuals tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_music_rhythm_engine.py' -v
+      - name: Reference visual observation and color-to-edit integration tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_visual*.py' -v
+      - name: Reference Edit Engine Python and project generation tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_edit_engine.py' -v
+      - name: Motion Lab execution and safety regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_*.py' -v
+      - name: Motion engine JavaScript execution contract
+        run: node --test .claude/skills/kosif-superpowers/evals/test_motion_engine.mjs
+      - name: Motion engine JavaScript syntax
+        run: node --check .claude/skills/kosif-superpowers/assets/motion_engine.js
+      - name: Portable KOSIF motion toolkit and SVG seek tests
+        run: node --test .claude/skills/kosif-superpowers/evals/test_motion_toolkit.mjs .claude/skills/kosif-superpowers/evals/test_motion_template.mjs
+      - name: KOSIF Code Drawing Master Python scene/actor tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
+      - name: KOSIF Code Drawing Master SVG and morph runtime tests
+        run: node --test .claude/skills/kosif-superpowers/evals/test_code_drawing_engine.mjs
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules

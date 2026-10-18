@@ -1,58 +1,60 @@
 # إطلاق مكتبة الأدلة المرئية: فيديو منتج SaaS — Visual guides library launch
 
-> فيديو إطلاق 30 ثانية بأسلوب منشورات إطلاق المنتجات على X: واجهة حقيقية في إطار جهاز، بطاقات ميزات، ومخطط يقيس الفائدة.
+> فيديو إطلاق مدته 40 ثانية لمكتبة أدلة مرئية تقنية: كلمة CI/CD. كبيرة على خلفية فاتحة، مخطط بنية يرسم نفسه على أزرق كوبالت، الشعار على كحلي، شريط دوّار من أغلفة كتب إلكترونية ملونة، غلاف أصفر بجانب طرفية تكتب، جدار وسوم متحرك على الأصفر، بطاقة منتج ينقرها المؤشر، ودعوة ختامية.
 >
-> A 30s X-style SaaS launch film: real product UI in a device frame, three feature cards, a benefit chart and a clean CTA.
+> A 40-second launch film for a library of visual tech guides: a big 'CI/CD.' on a light ground, an architecture diagram drawing itself on cobalt blue, the logo on navy, a carousel of colourful ebook covers, a yellow cover beside a typing terminal, a scrolling wall of topic pills on yellow, a product card clicked by a cursor and a closing CTA.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/techyoutbe-945b56
 - التصنيفات / Categories: product-ui, charts, photos
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 30 s · الصعوبة / Difficulty: 3/5
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 40 s · الصعوبة / Difficulty: 3/5
 - التقنية المقترحة / Stack: Remotion, React, SVG
 
 ## الفكرة
-الموضوع إطلاق ميزة «مكتبة الأدلة المرئية» (أدلة خطوة بخطوة مبنية من لقطات شاشة) داخل منتج SaaS معروف. الهدف أن يفهم المشاهد خلال ثلاثين ثانية ما تفعله الميزة ويراها تعمل فعلاً، بالصقل المعتاد في فيديوهات إطلاق المنتجات المستقلة. ما يميز اللغة الحركية أن الواجهة هي البطل: الكاميرا تتجول داخل واجهة حقيقية بقيادة المؤشر مع تقريبات ماكرو على الأزرار، والادعاءات تظهر كتسميات قصيرة ملتصقة بأجزاء الواجهة لا كشرائح منفصلة.
+الموضوع مكتبة أدلة تشرح موضوعات السحابة وDevOps والذكاء الاصطناعي بالرسوم. الحجة: القراءة عن الموضوع تستغرق وقتاً طويلاً، ورؤيته مرسوماً تستغرق دقائق. لغة الحركة لغة إطلاق منتج نظيفة: عنوان قصير أعلى اليسار لكل لحظة، حقول لونية مسطحة تتبدل بالمسح لا بالقطع (فاتح، كوبالت، كحلي، أصفر)، ورسوم تُبنى أمام العين: عقد تظهر وموصلات تُرسم ونقاط تجري عليها.
 
 ## Concept
-The subject is the launch of a 'visual guides library' feature (step-by-step guides built from screenshots) inside a well-known SaaS product. The goal is that a viewer understands in thirty seconds what the feature does and sees it working, with the polish typical of indie product-launch clips. The motion language makes the interface the hero: the camera travels inside a real UI led by the cursor, with macro push-ins on buttons, and claims appear as short labels attached to UI parts rather than as separate slides.
+The subject is a library of guides that explain cloud, DevOps and AI topics visually. The argument: reading about a topic takes ages, seeing it drawn takes minutes. The motion language is a clean product launch: one short headline top-left per beat, flat colour fields that swap by wipe rather than cut (light, cobalt, navy, yellow), and visuals that assemble on screen: nodes appear, connectors draw and dots travel along them.
 
 ## المشاهد المقترحة
-- 0-3ث: الخطاف: سطح مكتب مزدحم بلقطات شاشة وأسهم يهتز قليلاً، ثم ينطبق كل شيء في بطاقة واحدة مرتبة؛ شعار المنتج النصي يظهر تحتها.
-- 3-9ث: كشف المنتج: لقطة لصفحة المكتبة داخل إطار متصفح تتسع من 0.92 إلى 1.0 بينما يكبر ظل ناعم؛ المؤشر يمر فوق بطاقة دليل والكاميرا تدفع إلى 1.4x.
-- 9-18ث: ثلاث ميزات، 3 ثوانٍ لكل منها: تسجيل سير عمل (نقطة تسجيل تنبض والخطوات تظهر في قائمة)، لقطات شاشة تلقائية (إطارات تنزلق في كومة عمودية بشارات مرقمة)، مشاركة بنقرة (حبة رابط تُنسخ وإشعار يؤكد).
-- 18-23ث: مخطط الفائدة: أعمدة أفقية تقارن دقائق كتابة الدليل قبل وبعد؛ عمود «بعد» ينمو أخيراً وتسمية تعد نسبة الوقت الموفر.
-- 23-27ث: شريط آراء: ثلاث بطاقات اقتباس قصيرة تنزلق بانجراف أفقي بطيء؛ الصور الرمزية دوائر بديلة ما لم تتوفر صور مرخصة.
-- 27-30ث: الدعوة للفعل: الشعار النصي، سطر وصفي واحد، الرابط؛ الخلفية ثابتة ولا يتحرك سوى المؤشر الذي ينقر زر التجربة فيمتلئ الزر عند الضغط.
+- 0-3.3 ث: أرضية رمادية زرقاء فاتحة بأسطر نص باهتة خلفها؛ كلمة CI/CD. بخط عريض كبير في الوسط تمثل الموضوعات الكثيفة.
+- 3.3-10 ث: تبدّل اللون إلى الكوبالت: عنوان يقول إن الرؤية تستغرق دقائق؛ مخطط بنية يُبنى عقدة عقدة (المستخدمون، CDN، موزع الحمل، الخدمات، قاعدة البيانات، الذاكرة المؤقتة) والموصلات تُرسم ونقاط صفراء تجري عليها.
+- 10-13.3 ث: حقل كحلي: حلقتان صفراوان متشابكتان واسم العلامة مع سطر وصف يظهران بتلاشٍ.
+- 13.3-18 ث: أرضية فاتحة: عنوان عن مكتبة واحدة؛ شريط من ثمانية أغلفة كتب ملونة ينزلق من اليمين ويستقر في صف.
+- 18-26 ث: الكوبالت مجدداً: غلاف أصفر واحد يساراً، وسم أحادي وعنوان يميناً، ثم لوحة طرفية داكنة تنزلق وتكتب أمراً.
+- 26-33 ث: حقل أصفر: صفوف من وسوم الموضوعات (زرقاء وسوداء ومحددة) تتحرك في اتجاهات متعاكسة حول عنوان كبير في الوسط.
+- 33-36.7 ث: أرضية فاتحة: بطاقة منتج بشارة سعر وزر شراء أزرق؛ المؤشر ينقره ورسالة داكنة تؤكد الإضافة إلى المكتبة، بجانب عنوان تسعير قصير.
+- 36.7-40 ث: ختام كوبالت: الحلقتان الصفراوان، عنوان دعوة كبير، زر رابط أصفر بخط أحادي واسم العلامة صغيراً تحته.
 
 ## Proposed scenes
-- 0-3s: Hook: a cluttered desktop of screenshots and arrows shakes slightly, then everything snaps into one tidy card; the product wordmark fades in beneath it.
-- 3-9s: Product reveal: a browser-framed capture of the library home scales from 0.92 to 1.0 while a soft shadow grows; the cursor hovers a guide card and the camera pushes in to 1.4x.
-- 9-18s: Three features, 3s each: capture a workflow (a recording dot pulses, steps appear in a list), auto-generated screenshots (frames slot into a vertical stack with numbered badges), one-click sharing (a link pill copies and a toast confirms).
-- 18-23s: Benefit chart: a horizontal bar chart compares minutes spent writing a guide before and after; the 'after' bar grows last and a label counts the percentage saved.
-- 23-27s: Social proof strip: three short quote cards slide in on a slow horizontal drift; avatars are placeholder circles unless licensed photos exist.
-- 27-30s: CTA: wordmark, one-line tagline, URL; the background holds still and only the cursor moves, clicking a 'Try it' button that fills on press.
+- 0-3.3s: Light grey-blue ground with faint text lines behind; a heavy sans 'CI/CD.' sits large in the centre, standing for dense topics.
+- 3.3-10s: Colour swap to cobalt: a headline about seeing it taking minutes; an architecture diagram builds node by node (users, CDN, load balancer, services, database, cache) as connectors draw and yellow dots travel along them.
+- 10-13.3s: Navy field: two interlocked yellow rings and the brand wordmark with a one-line description fade up.
+- 13.3-18s: Light ground: a headline about one library; a carousel of eight colourful ebook covers slides in from the right and settles in a row.
+- 18-26s: Cobalt again: one yellow cover on the left, a mono label and headline on the right, then a dark terminal panel slides in and types a command.
+- 26-33s: Yellow field: rows of topic pills (blue, black and outlined) marquee in opposite directions around a big centred headline.
+- 33-36.7s: Light ground: a product card with a price chip and a blue buy button; a cursor clicks it and a dark toast confirms it was added to the library, beside a short pricing headline.
+- 36.7-40s: Cobalt close: the yellow rings, a large call-to-action headline, a yellow mono URL pill and the brand name small beneath.
 
 ## قواعد الحركة
-- لقطات الواجهة تُعاد بناؤها كمكونات برمجية أو تُؤخذ من لقطات مرخصة، ولا تُجلب أصول مجهولة الترخيص؛ اللقطات الحقيقية تُعرض داخل إطار جهاز SVG بدقتها الأصلية وتُكبر بالتحويل فقط.
-- دفعات الكاميرا نحو الواجهة بمنحنى cubic-bezier(0.22, 1, 0.36, 1) خلال 900ms؛ أقصى تقريب 1.6x؛ كل دفعة يتبعها ثبات 300ms قبل الحركة التالية.
-- المؤشر: سهم 24px يتحرك على منحنى بيزييه تربيعي خلال 350-450ms لكل رحلة، مع انضغاط نقرة إلى مقياس 0.9 لمدة 90ms؛ النقرات تقع على النبضات عند وجود موسيقى.
-- تسميات الميزات: 2-4 كلمات ملتصقة بعنصر الواجهة الذي تصفه عبر خط دليل بسمك 1px يُرسم خلال 250ms؛ النص يظهر بعد اكتمال الخط بـ150ms.
-- المخطط: الأعمدة تمتد خلال 700ms بمنحنى ease-out؛ عمود المقارنة ينتظر 400ms بعد الأول لإبراز الفرق؛ عداد النسبة يستمر 800ms وينتهي لحظة توقف العمود تماماً.
-- الانتقال بين الميزات: انزلاق 20px للأعلى مع تلاشٍ متقاطع خلال 400ms؛ لا مسحات ولا انقلابات ثلاثية الأبعاد ولا كليشيه الغوص عبر الشاشة.
-- اللون (مقترح): خلفية قريبة من الأبيض، لون العلامة على الأزرار وعمود «بعد» فقط، والنصوص بمحايد داكن؛ ظلال ناعمة (ضبابية 40px، عتامة 8%).
-- ممنوع: ضبابية حركة على النصوص، انتقالات الصفير الجاهزة، أكثر من خط واحد خارج واجهة المنتج، ونص Lorem ipsum.
+- بلا قطعات حادة: الحقول اللونية تتبدل بالمسح أو التلاشي، والكاميرا ثابتة.
+- العنوان أعلى اليسار بخط هندسي ضيق 800 بحالة الجملة ونقطة في آخره؛ يثبت بينما تتحرك منطقة المحتوى تحته.
+- المخططات تُبنى بترتيب سببي: صناديق العقد تظهر وترتفع بالترتيب، الموصلات تُرسم بـ stroke-dashoffset، ثم نقاط صغيرة تجري عليها في حلقة.
+- الشرائط الدوارة والمتحركة بسرعة ثابتة؛ صفوف الوسوم المتجاورة تجري في اتجاهين متعاكسين.
+- التفاعل يُعرض لا يُحكى: المؤشر يتحرك بمسار ease-in-out، الزر ينضغط عند النقر، ورسالة التأكيد تنزلق بعد 150-250 مللي ثانية.
+- اللوحة: فاتح #ecf1f7، كوبالت #2a3ff0، كحلي #0a112e، أصفر #f7d23e، رمادي مخضر #7da4a6 ونص شبه أسود #111111.
+- المرجع بلا مسار صوتي؛ أضف الصوت فقط إذا قدّمه المستخدم أو طلبه.
 
 ## Motion rules
-- UI captures are rebuilt as code components or taken from licensed screenshots, never scraped assets of unclear licence; real screenshots sit inside an SVG device frame at native resolution and are scaled with transform only.
-- Camera pushes into the UI use cubic-bezier(0.22, 1, 0.36, 1) over 900ms; max zoom 1.6x; every push is followed by a 300ms hold before the next move.
-- Cursor: a 24px pointer travelling on a quadratic bezier, 350-450ms per trip, with a 90ms click squash to 0.9 scale; clicks land on beats wherever music exists.
-- Feature labels: 2-4 words, attached to the UI element they describe by a 1px leader line that draws in 250ms; the label text fades in 150ms after the line completes.
-- Chart: bars extend with a 700ms ease-out; the comparison bar waits 400ms after the first for contrast; the percentage counter runs 800ms and ends exactly when the bar stops.
-- Transitions between features: a 20px upward slide with crossfade over 400ms; no wipes, no 3D flips, no zoom-through-the-screen cliche.
-- Colour (proposed): near-white canvas, the product's brand colour on buttons and the 'after' bar only, text in a dark neutral; soft shadows (blur 40px, 8% opacity).
-- Banned: motion blur on text, stock whoosh transitions, more than one typeface outside the product's own UI, Lorem ipsum placeholder copy.
+- No hard cuts: colour fields swap with wipes or crossfades; the camera stays static.
+- Headline top-left in a tight geometric sans 800, sentence case with a full stop; it holds while the content area below animates.
+- Diagrams build causally: node boxes fade and rise in order, connectors draw with stroke-dashoffset, then small dots travel along them on a loop.
+- Carousels and marquees move at constant speed; adjacent pill rows run in opposite directions.
+- Interaction is shown, not told: cursor moves on an ease-in-out path, the button depresses on click, a toast slides up after 150-250 ms.
+- Palette: light #ecf1f7, cobalt #2a3ff0, navy #0a112e, yellow #f7d23e, teal-grey #7da4a6 and near-black #111111 text.
+- The reference has no audio track; add sound only if the user supplies or requests it.
 
 ## Facts stated by the source (rewritten in our words)
 - The brief asks for a polished SaaS launch video modelled on the feature-and-benefit clips founders post on X when they ship something.
@@ -60,7 +62,7 @@ The subject is the launch of a 'visual guides library' feature (step-by-step gui
 - The page title names the subject as a visual guides library launch; tags are product UI, charts and photos; frame 1920x1080.
 
 ## Assumptions
-The 30s length, the three-feature structure, the comparison chart and the palette are my proposal; the specific SaaS is not named in the source, and I assume assets must be licensed or rebuilt as components rather than scraped.
+Observed from frames sampled every ~3.3 s: the beat order, the four colour fields, the diagram, cover carousel, terminal, pill wall, product card and CTA, the 40 s length and the lack of audio. Assumed: wipe directions, easing values and exact beat boundaries between samples.
 
 ## Keywords
-saas launch, إطلاق منتج, product demo, عرض واجهة, feature video, device frame, cursor animation, مؤشر الماوس, benefit chart, مقارنة قبل وبعد, twitter launch video, ui showcase, شرح ميزات
+saas launch, product promo, architecture diagram, connector draw, cover carousel, terminal typing, pill marquee, cursor click, colour fields, إطلاق منتج, مخطط بنية, أغلفة كتب, شريط وسوم, مؤشر الماوس

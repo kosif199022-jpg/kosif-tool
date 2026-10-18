@@ -1,0 +1,7 @@
+# KOSIF proof "arabic-voice-kinetic" — original line (written for this proof, free to reuse).
+# Line 1 = text sent to Piper (light tashkeel guides pronunciation).
+# Line 2 = text shown on screen, one entry per spoken word, separated by " | ".
+# Line 3 = indexes (0-based) of key words that receive the warm highlight.
+الضَّوْءُ لا يَسْتَعْجِلُ الفَجْر. يَمْشي بِهُدوءٍ حَتّى يَصيرَ نَهارًا. وَكَذلِكَ الصَّبْرُ، نورٌ يَكْبُرُ كُلَّ يَوْم.
+الضوء | لا | يستعجل | الفجر. | يمشي | بهدوءٍ | حتى | يصير | نهارًا. | وكذلك | الصبرُ، | نورٌ | يكبر | كل | يوم.
+0 3 8 10 11

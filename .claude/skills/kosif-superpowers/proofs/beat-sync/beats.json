@@ -1,0 +1,218 @@
+{
+ "bpm_detected": 119.68,
+ "beat_track_raw": [
+  0.5093,
+  1.0107,
+  1.5093,
+  2.0107,
+  2.5093,
+  3.0107,
+  3.5093,
+  4.0107,
+  4.5093,
+  5.0107,
+  5.5093,
+  6.0107,
+  6.5093,
+  7.0107,
+  7.5093,
+  8.0107
+ ],
+ "bpm_true": 120,
+ "sr": 48000,
+ "hop": 128,
+ "duration": 9.0,
+ "lead": 0.5,
+ "beats": [
+  0.504,
+  1.0027,
+  1.504,
+  2.0027,
+  2.504,
+  3.0027,
+  3.504,
+  4.0027,
+  4.504,
+  5.0027,
+  5.504,
+  6.0027,
+  6.504,
+  7.0027,
+  7.504,
+  8.0027
+ ],
+ "downbeats": [
+  0.504,
+  2.504,
+  4.504,
+  6.504
+ ],
+ "onsets": [
+  {
+   "t": 0.504,
+   "type": "kick",
+   "strength": 1.0
+  },
+  {
+   "t": 0.7547,
+   "type": "hat",
+   "strength": 0.292
+  },
+  {
+   "t": 1.0027,
+   "type": "snare",
+   "strength": 0.238
+  },
+  {
+   "t": 1.2587,
+   "type": "hat",
+   "strength": 0.126
+  },
+  {
+   "t": 1.504,
+   "type": "kick",
+   "strength": 0.684
+  },
+  {
+   "t": 1.7547,
+   "type": "hat",
+   "strength": 0.242
+  },
+  {
+   "t": 2.0027,
+   "type": "snare",
+   "strength": 0.252
+  },
+  {
+   "t": 2.2587,
+   "type": "hat",
+   "strength": 0.102
+  },
+  {
+   "t": 2.504,
+   "type": "kick",
+   "strength": 0.822
+  },
+  {
+   "t": 2.7547,
+   "type": "hat",
+   "strength": 0.27
+  },
+  {
+   "t": 3.0027,
+   "type": "snare",
+   "strength": 0.179
+  },
+  {
+   "t": 3.2587,
+   "type": "hat",
+   "strength": 0.122
+  },
+  {
+   "t": 3.504,
+   "type": "kick",
+   "strength": 0.697
+  },
+  {
+   "t": 3.7547,
+   "type": "hat",
+   "strength": 0.302
+  },
+  {
+   "t": 4.0027,
+   "type": "snare",
+   "strength": 0.233
+  },
+  {
+   "t": 4.2587,
+   "type": "hat",
+   "strength": 0.131
+  },
+  {
+   "t": 4.504,
+   "type": "kick",
+   "strength": 0.751
+  },
+  {
+   "t": 4.7547,
+   "type": "kick",
+   "strength": 0.321
+  },
+  {
+   "t": 5.0027,
+   "type": "snare",
+   "strength": 0.153
+  },
+  {
+   "t": 5.2613,
+   "type": "hat",
+   "strength": 0.114
+  },
+  {
+   "t": 5.504,
+   "type": "kick",
+   "strength": 0.818
+  },
+  {
+   "t": 5.7547,
+   "type": "hat",
+   "strength": 0.294
+  },
+  {
+   "t": 6.0027,
+   "type": "snare",
+   "strength": 0.172
+  },
+  {
+   "t": 6.2587,
+   "type": "hat",
+   "strength": 0.117
+  },
+  {
+   "t": 6.504,
+   "type": "kick",
+   "strength": 0.773
+  },
+  {
+   "t": 6.7547,
+   "type": "hat",
+   "strength": 0.313
+  },
+  {
+   "t": 7.0027,
+   "type": "snare",
+   "strength": 0.222
+  },
+  {
+   "t": 7.2587,
+   "type": "hat",
+   "strength": 0.106
+  },
+  {
+   "t": 7.504,
+   "type": "kick",
+   "strength": 0.816
+  },
+  {
+   "t": 7.7547,
+   "type": "hat",
+   "strength": 0.507
+  },
+  {
+   "t": 8.0027,
+   "type": "snare",
+   "strength": 0.154
+  },
+  {
+   "t": 8.2613,
+   "type": "hat",
+   "strength": 0.135
+  }
+ ],
+ "detector_error_ms": {
+  "mean": 5.19,
+  "max": 11.3,
+  "n": 32,
+  "n_truth": 32
+ }
+}

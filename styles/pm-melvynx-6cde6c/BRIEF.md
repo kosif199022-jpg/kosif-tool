@@ -1,63 +1,67 @@
 # ريل ترويجي لأداة بريد إلكتروني — Email tool promo reel
 
-> ريل مدته 15 ثانية يجعل واجهة أداة البريد هي البطل: نافذة إنشاء تتفتح، رسالة تنطلق، صندوق وارد يرتّب نفسه، ومنحنى معدل الفتح يصعد.
+> إعلان هادئ مدته نحو 45 ثانية على خلفية بيضاء دافئة لأداة بريد إلكتروني: كلمة Email ضخمة، عدّاد سنة يدور إلى 2018، معالج استيراد CSV، شبكة نقاط تُظهر أن 80% لا يفتحون الرسائل، فاتورة شهرية تتصاعد، ثم وكيل ذكاء اصطناعي يفشل في الوصول إلى الأداة القديمة وزر أحمر يربطه بالأداة الجديدة، وختام بالشعار والدعوة.
 >
-> A 15-second promo where the email tool's own interface is the hero: a composer unfolds, a message launches, the inbox sorts itself and an open-rate curve climbs.
+> A calm, roughly 45-second promo for an email tool on warm off-white: a giant 'Email' word, a year odometer rolling to 2018, a CSV import wizard, a dot grid showing 80% never open, a rising monthly bill, then an AI-agent terminal that cannot reach the old tool, a red button that connects agents, and a logo with call to action.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/melvynx-6cde6c
 - التصنيفات / Categories: product-ui, charts
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 3/5
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 45 s · الصعوبة / Difficulty: 3/5
 - التقنية المقترحة / Stack: Remotion, React, CSS
 
 ## الفكرة
-الموضوع أداة بريد إلكتروني (العنوان في المصدر عام وعنوان الموقع مُستبدَل بحافظ مكان، لذلك نفترض أداة لإرسال البريد ومتابعته). الهدف أن يفهم المشاهد في 15 ثانية ماذا تفعل الأداة ولماذا تبدو سريعة وموثوقة. اللغة الحركية تعتمد على تحريك مكونات الواجهة الحقيقية نفسها بدل الرسوم التجريدية: الأزرار تُضغط فعلاً، البطاقات تعيد ترتيبها بحركة FLIP، والرسوم البيانية تخرج من لوحة التحليلات لا من فراغ.
+الموضوع أداة بريد إلكتروني تُبنى لعصر الوكلاء البرمجيين. الحجة في جزأين: أولاً المشكلة بالأرقام (أدوات لم تتغير منذ سنوات، المعالج نفسه، معظم القرّاء لا يفتحون، فاتورة تكبر)، ثم الحل (فريقك يعمل بوكلاء الذكاء الاصطناعي والأداة القديمة لا تتحدث معهم، والأداة الجديدة تتصل بهم). لغة الحركة تحريرية هادئة: فكرة واحدة في الوسط لكل لحظة، تعليق بين قوسين مربعين بكلمة حمراء، بلا قطعات، والعناصر تتحول أو تتلاشى إلى التالية.
 
 ## Concept
-The subject is an email tool (the source title is generic and the site URL is a placeholder, so we assume a sending-and-tracking product). The goal is that in 15 seconds a viewer understands what the tool does and feels it is fast and dependable. The motion language animates the real interface components themselves instead of abstract graphics: buttons actually press, cards reorder with FLIP moves, and charts grow out of the analytics panel rather than from nowhere.
+The subject is an email tool built for the age of coding agents. The argument has two halves: first the problem in numbers (tools unchanged for years, the same wizard, most readers never open, a growing bill), then the fix (your team works with AI agents, the old tool cannot talk to them, the new one plugs into them). The motion language is calm and editorial: one centred idea per beat, a caption in square brackets with one red keyword, no cuts, every element morphing or crossfading into the next.
 
 ## المشاهد المقترحة
-- 0-2 ث: مؤشر كتابة يومض على سطح فارغ؛ تتفتح نافذة إنشاء الرسالة من هذا السطر الواحد، الترويسة أولاً ثم الجسم.
-- 2-6 ث: يُكتب سطر الموضوع تلقائياً، يُضغط زر الإرسال، وينطلق ظرف خارج الإطار ثم يتحول إلى شارة إشعار على أيقونة صندوق وارد صغيرة.
-- 6-10 ث: يتسع صندوق الوارد لعرض الشاشة؛ اثنتا عشرة بطاقة رسالة تتدفق بتدرج 45 ms، يتبدل تبويب تصفية فتعيد البطاقات ترتيبها في مكانها.
-- 10-13 ث: ينزلق درج تحليلات من الأسفل: خط معدل الفتح يرسم نفسه من اليسار إلى اليمين، ثلاثة عدّادات تصل إلى قيمها، وsparkline ينبض مرة واحدة.
-- 13-15 ث: تنطوي لوحات الواجهة إلى بلاطة مدورة واحدة تصبح الشعار؛ يستقر عنوان الموقع ودعوة إجراء قصيرة تحتها.
+- 0-3.7 ث: كلمة Email ضخمة داكنة بخط نيو غروتسك تملأ الإطار الأبيض الدافئ مع تظليل حواف ناعم، ثم تذوب.
+- 3.7-7.5 ث: تعليق بين قوسين مربعين عن أدوات البريد التي لم تتغير مع نسخ باهتة حوله؛ وتحته عدّاد سنة يدور رقماً رقماً ويستقر على 2018.
+- 7.5-11.2 ث: بطاقة استيراد جهات اتصال بقائمة من سبع خطوات وشريط تقدم 99%؛ موجة نقاط تتقوس فوقها وتعليق يذكر أن المعالج نفسه موجود منذ سنوات وتاريخه بالأحمر.
+- 11.2-15 ث: شبكة كاملة من نقاط ممتلئة وفارغة تمتلئ لتعرض نسبة، و80% بالأحمر في تعليق وسطي عن الرسائل غير المفتوحة.
+- 15-18.8 ث: عبارة حساب الفاتورة بجانب بكرة أسعار شهرية عمودية تمر بضبابية وتستقر على رقم سالب كبير بينما تبهت الأرقام المجاورة.
+- 18.8-26.3 ث: تعليق عن فرق تعمل بوكلاء الذكاء الاصطناعي؛ طرفية داكنة تكتب طلباً، وموصل منقط يمتد نحو نافذة أداة قديمة رمادية ثم يفشل بعلامة X حمراء وسطر خطأ.
+- 26.3-37.6 ث: زر تطبيق أحمر ينبض مع جسيمات مشعة؛ عنوان عن الربط بالوكيل الذي تستخدمه وخطوط وصل بنقاط متنقلة تربط شارتي وكيلين بالعلامة الحمراء؛ ثم طرفية باستعلام بجانب مصفوفة نقاط وسطر تسعير قصير.
+- 37.6-45 ث: الشعار بعلامة حمراء مستديرة واسم عريض فوق زر أحمر للبدء مجاناً، يثبت حتى النهاية.
 
 ## Proposed scenes
-- 0-2s: A caret blinks on an empty surface; a composer window unfolds from that single line, header first, body second.
-- 2-6s: A subject line types itself, the send button depresses, and an envelope streaks off-screen, morphing into a notification badge on a tiny inbox icon.
-- 6-10s: The inbox grows to full width; twelve message cards cascade in with a 45 ms stagger, a filter tab switches and the cards reorder in place.
-- 10-13s: An analytics drawer slides up from the bottom: an open-rate line draws left to right, three counters tick to their values, a sparkline pulses once.
-- 13-15s: The interface panels collapse into a single rounded tile that becomes the logo; the URL and a short call to action settle beneath it.
+- 0-3.7s: A huge dark neo-grotesk 'Email' fills the warm off-white frame with a soft vignette, then dissolves.
+- 3.7-7.5s: A bracketed caption about email tools not changing appears with faded copies around it; below, a year odometer rolls digit by digit and settles on 2018.
+- 7.5-11.2s: An import-contacts card with a seven-step checklist and a 99% progress bar; a wave of dots arcs above it and a caption notes the same wizard has existed for years, its date in red.
+- 11.2-15s: A full-frame grid of filled and hollow dots fills in to show a percentage, with '80%' in red in a centred caption about unopened email.
+- 15-18.8s: 'Calculating your bill' beside a vertical slot roll of monthly prices that blurs past and lands on one large negative figure while its neighbours fade.
+- 18.8-26.3s: Caption about teams shipping with AI agents; a dark terminal types a request, a dotted connector reaches toward a grey legacy tool window, then fails with a red X and an error line.
+- 26.3-37.6s: A red app button pulses with radiating particles; a headline about plugging into your agent appears and connector lines with travelling dots join two agent pills to the red mark; a terminal query beside a dot matrix and a short pricing line follow.
+- 37.6-45s: Logo lockup with a red rounded mark and bold wordmark above a red 'start free' pill button, holding to the end.
 
 ## قواعد الحركة
-- لوحات الواجهة تدخل بنابض (stiffness 170، damping 22، mass 1) وتستقر خلال 700 ms؛ لا يرتد أي عنصر أكثر من مرة.
-- عناصر القوائم تتدرج بفارق 40-60 ms؛ إعادة الترتيب عبر تحويلات FLIP بمدة 450 ms مع cubic-bezier(0.2, 0.8, 0.2, 1) بحيث تنزلق البطاقات ولا تختفي ثم تظهر.
-- المؤشر عنصر فعلي يتحرك على مسارات bezier بمدة 250-400 ms؛ النقرة انخفاض مقياس إلى 0.94 لمدة 90 ms على الهدف.
-- خطوط الرسوم ترسم عبر stroke-dashoffset خلال 900 ms بتباطؤ خروج؛ العدّادات تعمل بـeaseOutQuart خلال 800 ms وتستخدم أرقاماً جدولية.
-- الكاميرا parallax ثنائية ونصف فقط: تحريك جانبي ودفعة واحدة من 1.0 إلى 1.08 في لقطة التحليلات؛ الواجهة المسطحة لا تدور أكثر من 8 درجات في الفضاء الثلاثي.
-- الطباعة بخط واجهة واحد بأحجام منتج حقيقية (14، 16، 24، 40 px مع التحجيم)؛ النص يجب أن يكون نص منتج معقولاً، لا lorem ipsum.
-- اللون: أسطح رمادية محايدة مع لون علامة واحد على الأزرار الرئيسية والظرف المرسل وخط الرسم البياني؛ الأخضر والأحمر الحالتيان داخل البيانات فقط.
-- ممنوع: انتقالات معتمدة على blur، مؤشرات تحميل وهمية فوق 300 ms، نماذج واجهة بنص غير مقروء، تأثيرات glitch أو اهتزاز.
+- بلا قطعات حادة: كل لحظة تتحول أو تتلاشى في التالية مع كاميرا ثنائية الأبعاد ثابتة.
+- فكرة واحدة لكل لحظة في الوسط، مع تعليق بين قوسين مربعين فوقها أو تحتها فيه كلمة حمراء واحدة فقط.
+- الأرقام تتحرك ميكانيكياً: عدّاد دوّار للسنة (نحو 600 مللي ثانية) وبكرة آلة قمار بضبابية حركة وأرقام مجاورة باهتة للسعر.
+- حالات الواجهة تتغير بسبب ونتيجة: الطرفية تكتب، الموصل يُرسم، الفشل يظهر بعلامة X حمراء؛ النجاح يظهر بخطوط وصل تجري عليها نقطة.
+- إيقاع هادئ منخفض الطاقة بوقفات طويلة؛ الانفجار الوحيد نبضة جسيمات الزر الأحمر.
+- اللوحة: أبيض دافئ #f3f2ed، حبر #12100d، نص رمادي #9b9792، أحمر واحد #ef3b2d وبطاقات واجهة بيضاء #ffffff.
+- الخط: نيو غروتسك 700-800 بتباعد ضيق للعناوين وخط أحادي المسافة لأسطر الطرفية.
 
 ## Motion rules
-- UI panels enter with a spring (stiffness 170, damping 22, mass 1) and settle within 700 ms; nothing bounces more than once.
-- List items stagger 40-60 ms apart; reorders use FLIP transforms over 450 ms with cubic-bezier(0.2, 0.8, 0.2, 1) so cards slide, never fade and reappear.
-- The cursor is a real pointer element moving on bezier paths of 250-400 ms; a click is a 90 ms scale dip to 0.94 on the target.
-- Chart strokes draw via stroke-dashoffset over 900 ms ease-out; counters run easeOutQuart over 800 ms and use tabular figures.
-- Camera is 2.5D parallax only: pans and a single 1.0 to 1.08 push-in on the analytics beat; flat UI never rotates beyond 8 degrees in 3D.
-- Typography uses one UI sans at real product sizes (14, 16, 24, 40 px scaled); copy must be plausible product text, never lorem ipsum.
-- Colour: neutral grey surfaces with one brand accent on primary buttons, the sent envelope and the chart line; status greens and reds only inside the data.
-- Banned: blur-based transitions, fake loading spinners over 300 ms, mockups with unreadable text, glitch or shake effects.
+- No hard cuts: every beat morphs or crossfades into the next on a static 2D camera.
+- One idea per beat, centred, with a bracketed caption [ ... ] above or below and exactly one red keyword in it.
+- Numbers move mechanically: odometer digit roll for the year (about 600 ms), slot-machine roll with motion blur and fading neighbours for the price.
+- UI states change causally: terminal types, connector draws, failure shows a red X; success shows connector lines with a dot travelling along them.
+- Calm, low-energy pacing with long holds; the only burst is the red button's particle pulse.
+- Palette: warm off-white #f3f2ed, ink #12100d, grey text #9b9792, one red #ef3b2d and white UI cards #ffffff.
+- Type: neo-grotesk 700-800 with tight tracking for headlines, a monospace for terminal lines.
 
 ## Facts stated by the source (rewritten in our words)
 - The creator asked for a 15-second dynamic motion graphics video promoting a website whose URL was left as a placeholder.
 - The site lists it under product UI and charts, and titles it as an email tool promo.
 
 ## Assumptions
-Stated: 15 seconds, promo for a website, product-UI and charts tags, email-tool title. Assumed: the sending-and-analytics feature set, the composer-to-inbox-to-chart structure, all timings, easings and the neutral-plus-one-accent palette.
+Observed from frames sampled every ~3.8 s: the problem-then-agent structure, the absence of cuts, the bracket captions, the off-white and red palette and the 45 s length (longer than the 15 s the creator requested). Assumed: exact beat boundaries between samples, easing values and audio content.
 
 ## Keywords
-product ui, saas promo, inbox animation, واجهة منتج, بريد إلكتروني, flip animation, spring, open rate, analytics, ريل ترويجي, cursor, مؤشر, رسم خطي, composer
+product promo, email tool, odometer, slot roll, dot grid, terminal ui, ai agents, bracket captions, no cuts, بريد إلكتروني, عدّاد دوّار, شبكة نقاط, وكلاء الذكاء الاصطناعي, ريل ترويجي

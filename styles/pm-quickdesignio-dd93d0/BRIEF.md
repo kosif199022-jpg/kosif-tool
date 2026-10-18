@@ -1,11 +1,11 @@
 # ترويج علامة QuickDesign: السرعة كحجّة بصرية — QuickDesign brand promo
 
-> ترويج أفقي مدته 15 ثانية لأداة تصميم سريعة، يبني الشعار من أشكال أولية ثم يبرهن على توفير الوقت بمخططات وعدّادات متحركة.
+> إعلان مدته 15 ثانية لمولّد إعلانات بالذكاء الاصطناعي: سؤال يُكتب، حقل رابط بتوهج ليموني، جدار من اثني عشر إعلان منتج، صورة منتج قبل وبعد، فيديو UGC على هاتف، قطعات سريعة لكلمات الأدوات، منحنى نمو يُرسم، مسح بشبكة مربعات ليمونية، وختام بشعار بكسلي يُكتب.
 >
-> A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.
+> A 15-second promo for an AI ad generator: a typed question, a lime-glow URL input, a wall of twelve product ads, a before/after product shot, a UGC phone video, rapid cuts of toolkit words, a growth line chart drawing on, a lime tile-grid wipe and a pixel-logo typing lockup.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/quickdesignio-dd93d0
 - التصنيفات / Categories: charts
@@ -13,42 +13,46 @@ Original KOSIF brief derived only from the reference title, tags and public desc
 - التقنية المقترحة / Stack: Remotion, React, SVG
 
 ## الفكرة
-الموضوع علامة أداة تصميم تعد بالسرعة، والهدف مزدوج: إقناع المشاهد بقيمة الأداة وإظهار براعة حركية في الوقت نفسه. اللغة الحركية تجعل السرعة محسوسة بدل أن تُقال: أشكال أولية تلتقط مواضعها كالمغناطيس، لوحة تصميم تمتلئ تلقائيًا ببطاقات، ثم تتحول بيانات الوقت الموفّر إلى مخططات تنمو أمام العين. كل مشهد ينتهي بعنصر يصبح بذرة المشهد التالي كي لا يوجد انقطاع.
+الموضوع أداة تأخذ رابط متجر وتخرج منه مجموعة إعلانات كاملة: صور ثابتة وصور منتج وفيديو UGC وإعلانات ذكية. الفيلم يسأل «ماذا نصنع؟» ثم يجيب بالنتائج: موجز واحد يتحول إلى اثني عشر إعلاناً. لغة الحركة تحريرية سريعة: أسود في الأساس مع كريمي، ليموني صارخ يملأ الإطار أحياناً وبنفسجي لحقل واحد، نيو غروتسك مع كلمات سيريف مائلة، ودفعة قطعات سريعة في المنتصف.
 
 ## Concept
-The subject is the brand of a design tool that promises speed, and the goal is twofold: sell the tool and show off motion craft at once. The motion language makes speed felt rather than stated: primitive shapes snap into place like magnets, a design canvas auto-fills with cards, and the time-saved data becomes charts that grow on screen. Every scene ends with an element that seeds the next one so there is never a dead cut.
+The subject is a tool that takes a store link and produces a full set of ads: static ads, product shots, UGC video and smart ads. The film asks 'what are we making?' then answers with output: one brief becomes twelve ads. The motion language is editorial and fast: black as the base with cream, a loud lime that sometimes fills the frame and violet for one field, neo-grotesk with italic serif accent words and a burst of quick cuts in the middle.
 
 ## المشاهد المقترحة
-- 0-2ث: مستطيلات ودوائر ومثلثات تطير من حواف الإطار وتلتقط مواضعها داخل حروف الشعار النصي بزنبرك (تخميد 14)، كل شكل يصل بعد سابقه بـ50 مللي ثانية.
-- 2-5ث: يتقلص الشعار إلى زاوية وتنفتح لوحة الأداة؛ مؤشر يسحب إطارًا، فيمتلئ تلقائيًا باثنتي عشرة بطاقة بتأخير 80 مللي ثانية بينها بينما تظهر خطوط الشبكة بشفافية 30 بالمئة.
-- 5-9ث: قسم البرهان: مقارنة بعمودين (يدوي مقابل الأداة) تنمو من خط الأساس خلال 1000 مللي ثانية، مخطط خطي للإنتاج الأسبوعي يُرسم عبر stroke-dashoffset خلال 1200 مللي ثانية، وعدّاد يصل إلى الساعات الموفّرة.
-- 9-12ث: مجموعة بطاقات قوالب تنقلب بمنظور CSS ثلاثي الأبعاد، كل انقلاب 300 مللي ثانية بتأخير 90 مللي ثانية، كاشفة تخطيطات منشور اجتماعي وشريحة وملصق.
-- 12-15ث: تنطوي كل البطاقات إلى أشكال الشعار من المشهد الأول، يهبط الشعار النصي بكلمتين ويظهر عنوان الموقع بتلاشٍ خلال 400 مللي ثانية.
+- 0-2.5 ث: أسود: سؤال يُكتب بمؤشر وكلمته الأخيرة بسيريف مائل؛ حقل رابط بتوهج ليموني يظهر تحته مع أربعة وسوم لأنواع المخرجات.
+- 2.5-5 ث: جدار من اثني عشر إعلان منتج ملوناً ينجرف ويميل قليلاً؛ وتحته عنوان يجمع عبارة سيريف مائلة وأخرى عريضة بالليموني مع عدّاد 12/12.
+- 5-7.5 ث: كريمي: شريط قبل وبعد يمسح صورة منتج من لقطة هاتف رمادية إلى لقطة استوديو ليمونية؛ ثم بطاقة مرجع يمتد منها سهم إلى هاتف يعرض فيديو UGC بترجمة كلمات.
+- 7.5-10 ث: قطعات أدوات سريعة كل نحو 250 مللي ثانية: حقل ليموني كامل بكلمة داخل صندوق تحديد متقطع ومؤشر، حقل بنفسجي بكلمة بكسلية، وغيرها، نحو سبع قطعات في 1.5 ثانية.
+- 10-11.3 ث: أسود: عنوان من ثلاثة أسطر (عريض، رمادي، ليموني مائل) بجانب بطاقة لوحة بيانات داكنة يُرسم فيها منحنى ليموني متوهج حتى رقم مضاعف.
+- 11.3-12.5 ث: شبكة مربعات ليمونية تمسح الإطار بموجة متتابعة.
+- 12.5-15 ث: أسود مع ذرات طافية: علامة بكسلية تُبنى واسم العلامة يُكتب بخط أحادي مع مؤشر، ثم سطر سيريف مائل ورابط ليموني.
 
 ## Proposed scenes
-- 0-2s: Rectangles, circles and triangles fly in from the frame edges and snap into the wordmark letterforms with a spring (damping 14), each shape arriving 50 ms after the previous one.
-- 2-5s: The wordmark shrinks to a corner and a tool canvas unfolds; a cursor drags a frame, and an auto-layout fills it with twelve cards at 80 ms stagger while grid lines fade in at 30 percent.
-- 5-9s: Proof section: a two-bar comparison (manual vs tool) grows from the baseline over 1000 ms, a line chart of weekly output draws on via stroke-dashoffset over 1200 ms, and a counter rolls to the hours saved.
-- 9-12s: A deck of template cards flips in CSS 3D perspective, each flip 300 ms with 90 ms stagger, revealing social post, slide and poster layouts.
-- 12-15s: All cards collapse into the wordmark shapes from scene one, the tagline lands in two words and the URL fades up at 400 ms.
+- 0-2.5s: Black: a question types with a caret, its last word in italic serif; a URL input with a lime glow appears below with four output-type tags.
+- 2.5-5s: A wall of twelve colourful product ads drifts and tilts slightly; a headline below pairs an italic serif phrase with a bold one in lime and a 12/12 counter.
+- 5-7.5s: Cream: a before/after slider sweeps across a product photo from grey phone snapshot to lime studio shot; then a reference card arrows into a phone playing a UGC clip with word captions.
+- 7.5-10s: Rapid toolkit cuts every ~250 ms: a full lime field with a word inside a dashed selection box and cursor, a violet field with a pixel-styled word, and more, about seven cuts in 1.5 s.
+- 10-11.3s: Black: a three-line headline (bold, grey, italic lime) beside a dark dashboard card where a glowing lime line chart draws to a multiplier figure.
+- 11.3-12.5s: A lime tile grid wipes across the frame in a staggered wave.
+- 12.5-15s: Black with floating specks: a pixel logo mark builds and the wordmark types in mono with a caret, then an italic serif tagline and a lime URL.
 
 ## قواعد الحركة
-- التقاط الأشكال يستخدم زنبركًا بصلابة 220 وتخميد 14 (تجاوز واحد مرئي)؛ تدرّجات الواجهة تستخدم cubic-bezier(0.16, 1, 0.3, 1) بين 400 و600 مللي ثانية.
-- المخططات تبدأ دائمًا من الصفر في الإطار نفسه وتكتمل خلال 1200 مللي ثانية؛ العدّادات تستخدم easeOutExpo وتتوقف عند رقم مدوّر يطابق ارتفاع العمود.
-- الكاميرا: انجراف بطيء مستمر بنسبة 5 بالمئة على كامل العمل مع دفعة 10 بالمئة في قسم البرهان؛ لا اهتزاز يدوي.
-- الانتقالات تحوّلات: آخر عنصر في المشهد يتغير حجمه أو شكله ليصبح أول عنصر في المشهد التالي؛ القطع الحاد ممنوع.
-- الطباعة: خط sans هندسي، كلمات العنوان تدخل بتأخير 60 مللي ثانية وصعود 20 بكسل، لا حرفًا حرفًا؛ النسخة العربية تحتفظ بالتوقيتات نفسها باتجاه RTL.
-- اللون: خلفية لوحة فاتحة، لون علامة مشبع واحد على الأشكال والأعمدة، وواجهة رمادية محايدة؛ لون التمييز لا يغطي أكثر من 20 بالمئة من الإطار.
-- ممنوع: انفجارات الجسيمات، وهج العدسة، الشعارات المرتدّة، والإحصاءات غير الموسومة بأنها توضيحية.
+- إيقاع سريع مع دفعة كثيفة واحدة: نحو سبع قطعات بين 8.25 و9.75 ث، كل بطاقة كلمة تثبت نحو 250 مللي ثانية.
+- الخط يجمع نيو غروتسك 700 مع كلمات تأكيد بسيريف مائل؛ الشعار وحقل الرابط بخط أحادي.
+- الكتابة الآلية تُستخدم مرتين كإطار: السؤال الافتتاحي واسم العلامة الختامي، كلاهما بمؤشر ظاهر.
+- الليموني قد يملأ الإطار كله في بطاقات الأدوات والمسح بالمربعات؛ وفي غيرها يُحفظ للتوهج وخط المنحنى والكلمات المفتاحية.
+- الانتقالات: مسح بشبكة مربعات متتابعة، قطعات سريعة وتلاشٍ متقاطع؛ انجراف خفيف على جدار الإعلانات فقط.
+- اللوحة: أسود #090a08، ليموني #c3fe45، كريمي #f5eee3، بنفسجي #a78bfa ونص أبيض #ffffff.
+- تسميات HUD رفيعة وخط تقدم على حواف الإطار.
 
 ## Motion rules
-- Shape snaps use a spring with stiffness 220 and damping 14 (visible single overshoot); UI tweens use cubic-bezier(0.16, 1, 0.3, 1) at 400 to 600 ms.
-- Charts always start from zero on the same frame and finish within 1200 ms; counters use easeOutExpo and stop on a round number that matches the bar height.
-- Camera: one continuous 5 percent slow drift across the whole piece plus a 10 percent push on the proof section; no handheld shake.
-- Transitions are morphs: the last element of a scene scales or reshapes into the first element of the next; hard cuts are banned.
-- Typography: a geometric sans, headline words enter with 60 ms stagger and 20 px rise, never letter-by-letter; Arabic version keeps the same timings with RTL direction.
-- Colour: a light canvas background, one saturated brand accent on the shapes and bars, and neutral grey UI; the accent never covers more than 20 percent of the frame.
-- Banned: particle bursts, lens flares, bouncing logos, and stats that are not labelled as illustrative.
+- Fast pacing with one dense burst: about seven cuts between 8.25 and 9.75 s, each word card held about 250 ms.
+- Type pairs a neo-grotesk 700 with italic serif accent words; the logo and URL input use mono.
+- Typing is used twice as a bookend: the opening question and the closing wordmark, both with a visible caret.
+- Lime may fill the whole frame for toolkit cards and the tile wipe; elsewhere it is reserved for glows, the chart line and key words.
+- Transitions: a staggered tile-grid wipe, rapid cuts and crossfades; slight drift on the ad wall only.
+- Palette: black #090a08, lime #c3fe45, cream #f5eee3, violet #a78bfa and white #ffffff text.
+- Thin HUD labels and a progress rule run along the frame edges.
 
 ## Facts stated by the source (rewritten in our words)
 - The requested piece is a dynamic motion-graphics video of fifteen seconds.
@@ -56,7 +60,7 @@ The subject is the brand of a design tool that promises speed, and the goal is t
 - The listing tags it as charts and lists a 1920x1080 frame.
 
 ## Assumptions
-That QuickDesign is a fast template-driven design tool, and every scene, timing and chart type, are proposals; the source fixes only the 15 s length and the dual promo-plus-showreel intent.
+Observed from frames sampled every ~1.25 s: the beat order, the black/cream/lime/violet palette, the cut burst, the chart, the tile wipe and the pixel logo. Assumed: easing values and music sync; the product is an ad generator, not the template design tool the earlier brief guessed.
 
 ## Keywords
-ترويج علامة, أداة تصميم, أشكال أولية, لوحة تصميم, مخطط مقارنة, قوالب, brand promo, design tool, shape snap, auto layout, bar chart, card flip, counter, wordmark build
+brand promo, ai ad generator, typing caret, ad wall, before after slider, ugc phone, rapid word cuts, line chart glow, tile grid wipe, pixel logo, ترويج علامة, قطعات سريعة, منحنى نمو, مسح بالمربعات

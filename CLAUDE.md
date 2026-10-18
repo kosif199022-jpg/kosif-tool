@@ -1,5 +1,7 @@
 # Claude entry point
 
+First load `.claude/skills/kosif-superpowers/SKILL.md` and run its power-up protocol: it shows what you can really do in this session (tools, connectors, installable libraries), how to think, create and verify better, and a catalog of 4,200+ powers in 10 domains, motion and montage included, each with evidence and proof.
+
 Read AGENTS.md, then the selected style's `styles/<style-id>/SKILL.md`, `STYLE.json` and `BRIEF.md` (when present), then the playbooks that the SKILL.md lists (`playbooks/<category>.md`, plus `playbooks/arabic-typography.md` for Arabic text, `playbooks/audio-sync.md` when audio is supplied and `playbooks/render-pipeline.md` before rendering). Find IDs in `STYLE_INDEX.md` or with `python3 tools/kosif.py search <words>`.
 
 Rules:
@@ -9,4 +11,3 @@ Rules:
 - Scaffold with `python3 tools/kosif.py scaffold <id> <dir>`; preview with `node tools/render_html.cjs --preview` (or Remotion) before the final render; verify duration, fps and audio with `templates/TEST_REPORT.md`.
 - Do not copy third-party videos, prompts, code or media without a compatible license; link and credit instead.
 - After changing the catalog run `python3 tools/build.py` and `python3 tools/validate.py`.
-- For capabilities beyond `tools/` (inspecting a reference video, word-level alignment, 3D, generative assets, parallel scene builds) load `.claude/skills/kosif-superpowers/SKILL.md`; run `python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor` before promising any tool, and pick tools from its credited catalog of 100 repositories (`references/repos.md`).

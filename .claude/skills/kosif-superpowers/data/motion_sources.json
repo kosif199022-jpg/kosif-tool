@@ -1,0 +1,282 @@
+{
+  "schema": "kosif.motion-toolbox.v1",
+  "as_of": "2026-10-17",
+  "policy": "Reference implementations may be integrated through user-installed packages only. Local original KOSIF engine is executable without these packages. Third-party code not vendored; verify license for final distribution.",
+  "sources": [
+    {
+      "id": "MOTION-01",
+      "name": "Excalidraw",
+      "repo": "excalidraw/excalidraw",
+      "source": "https://github.com/excalidraw/excalidraw",
+      "role": "whiteboard",
+      "npm": "excalidraw",
+      "license_hint": "MIT",
+      "capability": "sketch diagrams, scene planning",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-02",
+      "name": "Three.js",
+      "repo": "mrdoob/three.js",
+      "source": "https://github.com/mrdoob/three.js",
+      "role": "3d",
+      "npm": "three",
+      "license_hint": "MIT",
+      "capability": "3D scenes, camera and materials",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-03",
+      "name": "Anime.js",
+      "repo": "juliangarnier/anime",
+      "source": "https://github.com/juliangarnier/anime",
+      "role": "animation",
+      "npm": "animejs",
+      "license_hint": "MIT",
+      "capability": "keyframe interpolations and SVG movement",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-04",
+      "name": "Remotion",
+      "repo": "remotion-dev/remotion",
+      "source": "https://github.com/remotion-dev/remotion",
+      "role": "video",
+      "npm": "remotion",
+      "license_hint": "special-license",
+      "capability": "React video rendering with separate commercial terms",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-05",
+      "name": "tldraw",
+      "repo": "tldraw/tldraw",
+      "source": "https://github.com/tldraw/tldraw",
+      "role": "whiteboard",
+      "npm": "tldraw",
+      "license_hint": "verify-license",
+      "capability": "editable infinite canvas",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-06",
+      "name": "PixiJS",
+      "repo": "pixijs/pixijs",
+      "source": "https://github.com/pixijs/pixijs",
+      "role": "2d",
+      "npm": "pixi.js",
+      "license_hint": "MIT",
+      "capability": "high-performance 2D sprites",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-07",
+      "name": "Manim",
+      "repo": "3b1b/manim",
+      "source": "https://github.com/3b1b/manim",
+      "role": "video",
+      "npm": "manim",
+      "license_hint": "MIT",
+      "capability": "Python math/explanation animations",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-08",
+      "name": "Motion",
+      "repo": "motiondivision/motion",
+      "source": "https://github.com/motiondivision/motion",
+      "role": "animation",
+      "npm": "motion",
+      "license_hint": "MIT",
+      "capability": "UI and React/JS motion",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-09",
+      "name": "React Three Fiber",
+      "repo": "pmndrs/react-three-fiber",
+      "source": "https://github.com/pmndrs/react-three-fiber",
+      "role": "3d",
+      "npm": "@react-three/fiber",
+      "license_hint": "MIT",
+      "capability": "React managed Three.js scenes",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-10",
+      "name": "Lottie Web",
+      "repo": "airbnb/lottie-web",
+      "source": "https://github.com/airbnb/lottie-web",
+      "role": "2d",
+      "npm": "lottie-web",
+      "license_hint": "MIT",
+      "capability": "playback authored Lottie compositions",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-11",
+      "name": "Fabric.js",
+      "repo": "fabricjs/fabric.js",
+      "source": "https://github.com/fabricjs/fabric.js",
+      "role": "drawing",
+      "npm": "fabric",
+      "license_hint": "MIT",
+      "capability": "Canvas editing and object manipulation",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-12",
+      "name": "GSAP",
+      "repo": "greensock/GSAP",
+      "source": "https://github.com/greensock/GSAP",
+      "role": "animation",
+      "npm": "gsap",
+      "license_hint": "standard-license",
+      "capability": "timeline, easings and coordinated effects",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-13",
+      "name": "p5.js",
+      "repo": "processing/p5.js",
+      "source": "https://github.com/processing/p5.js",
+      "role": "creative",
+      "npm": "p5",
+      "license_hint": "LGPL-2.1",
+      "capability": "generative sketches and frame loops",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-14",
+      "name": "Rough.js",
+      "repo": "rough-stuff/rough",
+      "source": "https://github.com/rough-stuff/rough",
+      "role": "whiteboard",
+      "npm": "roughjs",
+      "license_hint": "MIT",
+      "capability": "rough hand-drawn SVG strokes",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-15",
+      "name": "Motion Canvas",
+      "repo": "motion-canvas/motion-canvas",
+      "source": "https://github.com/motion-canvas/motion-canvas",
+      "role": "video",
+      "npm": "@motion-canvas/core",
+      "license_hint": "MIT",
+      "capability": "TypeScript generative presentation timelines",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-16",
+      "name": "Mo.js",
+      "repo": "mojs/mojs",
+      "source": "https://github.com/mojs/mojs",
+      "role": "animation",
+      "npm": "@mojs/core",
+      "license_hint": "MIT",
+      "capability": "motion bursts and shape effects",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-17",
+      "name": "Paper.js",
+      "repo": "paperjs/paper.js",
+      "source": "https://github.com/paperjs/paper.js",
+      "role": "drawing",
+      "npm": "paper",
+      "license_hint": "verify-license",
+      "capability": "vector path construction",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-18",
+      "name": "FFmpeg",
+      "repo": "FFmpeg/FFmpeg",
+      "source": "https://github.com/FFmpeg/FFmpeg",
+      "role": "video",
+      "npm": null,
+      "license_hint": "mixed-lgpl-gpl",
+      "capability": "transcode, mux and audio/video render",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-19",
+      "name": "Graphite",
+      "repo": "GraphiteEditor/Graphite",
+      "source": "https://github.com/GraphiteEditor/Graphite",
+      "role": "drawing",
+      "npm": null,
+      "license_hint": "Apache-2.0",
+      "capability": "node procedural vector design",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-20",
+      "name": "Blender",
+      "repo": "blender/blender",
+      "source": "https://github.com/blender/blender",
+      "role": "3d",
+      "npm": null,
+      "license_hint": "GPL-family",
+      "capability": "character rigs, scenes, grease pencil",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-21",
+      "name": "Vivus",
+      "repo": "maxwellito/vivus",
+      "source": "https://github.com/maxwellito/vivus",
+      "role": "whiteboard",
+      "npm": "vivus",
+      "license_hint": "MIT",
+      "capability": "SVG path stroke reveal",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-22",
+      "name": "Krita",
+      "repo": "KDE/krita",
+      "source": "https://github.com/KDE/krita",
+      "role": "drawing",
+      "npm": null,
+      "license_hint": "GPL-3.0",
+      "capability": "hand-painted frame drawing",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-23",
+      "name": "OpenToonz",
+      "repo": "opentoonz/opentoonz",
+      "source": "https://github.com/opentoonz/opentoonz",
+      "role": "2d",
+      "npm": null,
+      "license_hint": "verify-license",
+      "capability": "2D animation pipeline",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-24",
+      "name": "Synfig",
+      "repo": "synfig/synfig",
+      "source": "https://github.com/synfig/synfig",
+      "role": "2d",
+      "npm": null,
+      "license_hint": "GPL-3.0",
+      "capability": "2D vector tween animation",
+      "runtime_state": "not_probed"
+    },
+    {
+      "id": "MOTION-25",
+      "name": "Pencil2D",
+      "repo": "pencil2d/pencil",
+      "source": "https://github.com/pencil2d/pencil",
+      "role": "drawing",
+      "npm": null,
+      "license_hint": "GPL-2.0",
+      "capability": "frame-by-frame hand-drawn animation",
+      "runtime_state": "not_probed"
+    }
+  ]
+}

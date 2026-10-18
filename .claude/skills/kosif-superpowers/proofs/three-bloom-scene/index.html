@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three Bloom Scene — KOSIF proof</title>
+<style>
+  /* OFL fonts shipped next to the proofs. */
+  @font-face { font-family: "BKufi"; src: url("../_shared/fonts/ReemKufi%5Bwght%5D.ttf") format("truetype"); font-weight: 400 700; }
+  @font-face { font-family: "BGrotesk"; src: url("../_shared/fonts/space-grotesk-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+  @font-face { font-family: "BGrotesk"; src: url("../_shared/fonts/space-grotesk-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+  @font-face { font-family: "BMono"; src: url("../_shared/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+  html, body { margin: 0; height: 100%; background: #04050b; overflow: hidden; }
+  #stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; background: #04050b; }
+  #gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+  /* title card overlay (HTML, driven by seek(t) — no CSS transitions) */
+  #scrim { position: absolute; inset: 0; background: linear-gradient(270deg, rgba(4,5,11,.78) 0%, rgba(4,5,11,.45) 38%, rgba(4,5,11,0) 62%); opacity: 0; }
+  #card { position: absolute; right: 150px; top: 0; height: 1080px; width: 760px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; text-align: right; }
+  #ar { font-family: "BKufi"; font-weight: 700; font-size: 148px; line-height: 1.15; color: #fff6ea; direction: rtl; white-space: nowrap;
+        text-shadow: 0 0 28px rgba(255,170,90,.45), 0 0 80px rgba(255,90,170,.25); }
+  #rule { width: 560px; height: 3px; margin: 26px 0 26px; background: linear-gradient(270deg, #ffc56e, #ff5aa8 55%, rgba(80,200,255,0)); transform-origin: 100% 50%; transform: scaleX(0); }
+  #en { font-family: "BGrotesk"; font-weight: 700; font-size: 46px; color: #e8ecff; direction: ltr; white-space: nowrap; }
+  #meta { margin-top: 22px; font-family: "BMono"; font-weight: 500; font-size: 20px; letter-spacing: 3px; color: rgba(170,185,230,.7); direction: ltr; white-space: nowrap; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px/1.3 system-ui, sans-serif; color: #9ab; direction: ltr; z-index: 5; }
+  body.render #hud { display: none; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+} }
+</script>
+<script>
+  // Seek contract is declared synchronously so the renderer sees it at load; the module fills it in.
+  window.__kosifReady = new Promise((res, rej) => { window.__kosifResolve = res; window.__kosifReject = rej; });
+  window.__kosif = { duration: 9, fps: 30, seek: (t) => window.__kosifReady.then(() => window.__kosifSeek(t)) };
+</script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="1920" height="1080"></canvas>
+  <div id="scrim"></div>
+  <div id="card">
+    <div id="ar">بلّورة الضوء</div>
+    <div id="rule"></div>
+    <div id="en">THE LIGHT CRYSTAL</div>
+    <div id="meta">three.js r186 · physical glass · unreal bloom</div>
+  </div>
+</div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=6 opens at 6 s</div>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+try {
+  /* ============================================================ settings (edit me) */
+  const W = 1920, H = 1080, DUR = 9, FPS = 30, SEED = 20261016;
+  const BG = 0x04050b;
+  const BLOOM = { strength: 0.72, radius: 0.5, threshold: 0.9 };
+  const CAM = { r0: 14.5, r1: 11.2, a0: -38, a1: 34, y0: 2.8, y1: 0.9, fov: 36 };   // dolly + orbit (deg)
+  const TITLE = { in: 5.6, drawRule: [6.15, 6.85], en: [6.35, 7.15], meta: [6.7, 7.4] };
+  const ACCENT = { magenta: 0xff3d9a, cyan: 0x3de1ff, gold: 0xffb347 };
+
+  /* ============================================================ helpers */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const Ease = {
+    inOutSine: (x) => -(Math.cos(Math.PI * x) - 1) / 2,
+    outCubic: (x) => 1 - Math.pow(1 - x, 3),
+    inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    outExpo: (x) => (x >= 1 ? 1 : 1 - Math.pow(2, -10 * x)),
+  };
+  const prog = (t, a, b, e = Ease.inOutCubic) => e(clamp01((t - a) / (b - a)));
+  function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let z = s; z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
+  const R = rng(SEED);
+
+  /* ============================================================ renderer (headless-safe) */
+  const canvas = document.getElementById('gl');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(1);
+  renderer.setSize(W, H, false);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.0;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(BG);
+  scene.fog = new THREE.FogExp2(BG, 0.05);
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  scene.environmentIntensity = 0.55;
+
+  const camera = new THREE.PerspectiveCamera(CAM.fov, W / H, 0.1, 80);
+
+  /* ---------- the crystal: torus knot in physical glass ---------- */
+  const knotGeo = new THREE.TorusKnotGeometry(1.15, 0.36, 360, 56, 2, 3);
+  const glass = new THREE.MeshPhysicalMaterial({
+    color: 0xd8e6ff, metalness: 0, roughness: 0.05,
+    transmission: 1, thickness: 1.4, ior: 1.62, dispersion: 0.35,
+    attenuationColor: new THREE.Color(0x8a6cff), attenuationDistance: 2.6,
+    iridescence: 0.9, iridescenceIOR: 1.35, iridescenceThicknessRange: [180, 620],
+    clearcoat: 1, clearcoatRoughness: 0.04, specularIntensity: 1,
+    emissive: new THREE.Color(0x2a0f45), emissiveIntensity: 0.35,
+  });
+  const crystal = new THREE.Group();
+  const knot = new THREE.Mesh(knotGeo, glass);
+  crystal.add(knot);
+  // emissive accent: a thin hot filament following the same (2,3) knot curve, drawn on over time
+  class KnotCurve extends THREE.Curve {
+    getPoint(u, out = new THREE.Vector3()) {
+      const p = 2, q = 3, a = u * p * Math.PI * 2, cu = Math.cos(a), su = Math.sin(a), qp = q / p * a, cs = Math.cos(qp);
+      return out.set(1.15 * (2 + cs) * 0.5 * cu, 1.15 * (2 + cs) * su * 0.5, 1.15 * Math.sin(qp) * 0.5);
+    }
+  }
+  const FIL_SEG = 600, FIL_RAD = 8;
+  const filGeo = new THREE.TubeGeometry(new KnotCurve(), FIL_SEG, 0.022, FIL_RAD, true);
+  const filMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(ACCENT.magenta).multiplyScalar(4.0), toneMapped: false, fog: false });
+  const filament = new THREE.Mesh(filGeo, filMat);
+  crystal.add(filament);
+  scene.add(crystal);
+
+  /* ---------- orbit rings (emissive, bloom) ---------- */
+  const rings = [];
+  [[2.05, ACCENT.cyan, 0.9, 0.0], [2.35, ACCENT.gold, -1.1, 1.3], [2.7, ACCENT.magenta, 0.55, 2.4]].forEach(([r, col, tilt, ph]) => {
+    const m = new THREE.Mesh(new THREE.TorusGeometry(r, 0.012, 8, 220, Math.PI * 1.35),
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(col).multiplyScalar(3.2), toneMapped: false, transparent: true }));
+    m.userData = { tilt, ph };
+    rings.push(m); scene.add(m);
+  });
+
+  /* ---------- floor: dark satin disc + glowing halo ---------- */
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(18, 96),
+    new THREE.MeshStandardMaterial({ color: 0x020206, roughness: 0.3, metalness: 0.8, envMapIntensity: 0.02 }));
+  // own envMap: scene.environmentIntensity would otherwise override envMapIntensity and turn the floor grey
+  floor.material.envMap = scene.environment; floor.material.envMapIntensity = 0.06;
+  floor.rotation.x = -Math.PI / 2; floor.position.y = -2.3; scene.add(floor);
+  const halo = new THREE.Mesh(new THREE.RingGeometry(2.3, 2.34, 160),
+    new THREE.MeshBasicMaterial({ color: new THREE.Color(ACCENT.cyan).multiplyScalar(2.2), toneMapped: false, transparent: true, side: THREE.DoubleSide }));
+  halo.rotation.x = -Math.PI / 2; halo.position.y = -2.29; scene.add(halo);
+
+  /* ---------- lights ---------- */
+  scene.add(new THREE.AmbientLight(0x1a1d33, 0.6));
+  const key = new THREE.SpotLight(0xfff1e0, 45, 30, Math.PI / 10, 0.7, 1.6); key.position.set(3, 9, 4); scene.add(key); scene.add(key.target);
+  const pm = new THREE.PointLight(ACCENT.magenta, 40, 14, 1.8), pc = new THREE.PointLight(ACCENT.cyan, 40, 14, 1.8);
+  scene.add(pm, pc);
+  const bulbGeo = new THREE.SphereGeometry(0.06, 16, 12);
+  const bm = new THREE.Mesh(bulbGeo, new THREE.MeshBasicMaterial({ color: new THREE.Color(ACCENT.magenta).multiplyScalar(6), toneMapped: false }));
+  const bc = new THREE.Mesh(bulbGeo, new THREE.MeshBasicMaterial({ color: new THREE.Color(ACCENT.cyan).multiplyScalar(6), toneMapped: false }));
+  scene.add(bm, bc);
+
+  /* ---------- floating particles (seeded, pure function of t) ---------- */
+  const NP = 2600;
+  const pBase = new Float32Array(NP * 4);   // r, angle, y0, speed
+  const pPos = new Float32Array(NP * 3), pCol = new Float32Array(NP * 3);
+  const warm = new THREE.Color(0xffc68a), cool = new THREE.Color(0x8fd8ff), pink = new THREE.Color(0xff8fc8);
+  for (let i = 0; i < NP; i++) {
+    pBase[i * 4] = 1.8 + Math.pow(R(), 0.7) * 9.5;
+    pBase[i * 4 + 1] = R() * Math.PI * 2;
+    pBase[i * 4 + 2] = -2.2 + R() * 6.5;
+    pBase[i * 4 + 3] = 0.08 + R() * 0.22;
+    const c = R() < 0.45 ? warm : R() < 0.6 ? cool : pink, k = 0.5 + R() * 0.9;
+    pCol[i * 3] = c.r * k; pCol[i * 3 + 1] = c.g * k; pCol[i * 3 + 2] = c.b * k;
+  }
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+  pGeo.setAttribute('color', new THREE.BufferAttribute(pCol, 3));
+  const dot = document.createElement('canvas'); dot.width = dot.height = 64;
+  { const g = dot.getContext('2d'), gr = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.25, 'rgba(255,255,255,.55)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 64, 64); }
+  const dotTex = new THREE.CanvasTexture(dot); dotTex.colorSpace = THREE.SRGBColorSpace;
+  const pMat = new THREE.PointsMaterial({ size: 0.09, map: dotTex, vertexColors: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true });
+  const points = new THREE.Points(pGeo, pMat); scene.add(points);
+  const YSPAN = 6.5;
+  function updateParticles(t) {
+    for (let i = 0; i < NP; i++) {
+      const r = pBase[i * 4], a0 = pBase[i * 4 + 1], y0 = pBase[i * 4 + 2], sp = pBase[i * 4 + 3];
+      const a = a0 + t * sp * 0.35 / Math.max(1, r * 0.25);           // slow vortex, faster near the core
+      let y = y0 + 2.2 + t * sp; y = ((y % YSPAN) + YSPAN) % YSPAN - 2.2;  // rise and wrap (pure in t)
+      pPos[i * 3] = Math.cos(a) * r + Math.sin(t * 0.9 + a0 * 3) * 0.08;
+      pPos[i * 3 + 1] = y;
+      pPos[i * 3 + 2] = Math.sin(a) * r;
+    }
+    pGeo.attributes.position.needsUpdate = true;
+  }
+
+  /* ---------- post: MSAA render target → bloom → output (tone map + sRGB) ---------- */
+  const rt = new THREE.WebGLRenderTarget(W, H, { type: THREE.HalfFloatType, samples: 4 });
+  const composer = new EffectComposer(renderer, rt);
+  composer.setPixelRatio(1); composer.setSize(W, H);
+  composer.addPass(new RenderPass(scene, camera));
+  const bloom = new UnrealBloomPass(new THREE.Vector2(W, H), BLOOM.strength, BLOOM.radius, BLOOM.threshold);
+  composer.addPass(bloom);
+  composer.addPass(new OutputPass());
+
+  /* ---------- HTML overlay ---------- */
+  const $ = (id) => document.getElementById(id);
+  const elScrim = $('scrim'), elAr = $('ar'), elRule = $('rule'), elEn = $('en'), elMeta = $('meta');
+
+  /* ============================================================ the frame = f(t) */
+  const look = new THREE.Vector3();
+  function seek(t) {
+    t = Math.max(0, Math.min(DUR, t));
+    // exposure fade-in (never fully black) and a gentle breathing of the bloom
+    renderer.toneMappingExposure = lerp(0.35, 1.0, prog(t, 0, 1.2, Ease.outCubic));
+    bloom.strength = BLOOM.strength * (0.9 + 0.1 * Math.sin(t * 2.1)) + 0.35 * Math.exp(-Math.pow((t - 2.6) / 0.35, 2));  // pulse when the filament closes
+    // camera: dolly in + orbit (inOutSine over the whole film), then shift aim so the crystal sits left of the title
+    const p = Ease.inOutSine(t / DUR);
+    const ang = THREE.MathUtils.degToRad(lerp(CAM.a0, CAM.a1, p)), rad = lerp(CAM.r0, CAM.r1, p);
+    const shift = prog(t, 5.2, 7.0, Ease.inOutCubic);
+    camera.position.set(Math.sin(ang) * rad, lerp(CAM.y0, CAM.y1, p), Math.cos(ang) * rad);
+    look.set(0, 0.05, 0);
+    camera.lookAt(look);
+    camera.updateMatrixWorld();
+    // aim offset in camera space: move the target to the camera's right so the knot slides left on screen
+    const right = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0);
+    look.addScaledVector(right, 2.7 * shift);
+    camera.lookAt(look);
+    camera.fov = CAM.fov + 2 * (1 - p); camera.updateProjectionMatrix();
+    // crystal motion
+    crystal.rotation.set(0.35 * Math.sin(t * 0.45) + 0.25, t * 0.42, 0.15 * Math.cos(t * 0.33));
+    crystal.position.y = 0.12 * Math.sin(t * 1.1);
+    // filament draw-on 0.4 → 2.6 s (outCubic), then hold
+    const fp = prog(t, 0.4, 2.6, Ease.outCubic);
+    filGeo.setDrawRange(0, Math.floor(fp * FIL_SEG) * FIL_RAD * 6);
+    filament.visible = fp > 0.001;
+    filMat.color.setHex(ACCENT.magenta).lerp(new THREE.Color(ACCENT.gold), prog(t, 2.6, 4.0)).multiplyScalar(4.0 + 1.5 * Math.exp(-Math.pow((t - 2.6) / 0.3, 2)));
+    // rings: staggered scale-in (outExpo) then slow precession
+    rings.forEach((m, i) => {
+      const s = prog(t, 1.0 + i * 0.35, 2.2 + i * 0.35, Ease.outExpo);
+      m.scale.setScalar(0.4 + 0.6 * s); m.material.opacity = s;
+      m.rotation.set(Math.PI / 2 + m.userData.tilt * 0.6, m.userData.tilt + t * 0.12 * (i % 2 ? -1 : 1), t * (0.5 + i * 0.18) + m.userData.ph);
+    });
+    halo.material.opacity = 0.35 + 0.35 * prog(t, 0.5, 2.5);
+    halo.scale.setScalar(1 + 0.04 * Math.sin(t * 2.0));
+    // orbiting accent lights
+    const la = t * 0.8;
+    pm.position.set(Math.cos(la) * 3.2, 1.2 + 0.5 * Math.sin(t * 1.3), Math.sin(la) * 3.2); bm.position.copy(pm.position);
+    pc.position.set(Math.cos(la + Math.PI) * 3.0, 0.1 + 0.4 * Math.cos(t * 1.1), Math.sin(la + Math.PI) * 3.0); bc.position.copy(pc.position);
+    updateParticles(t);
+    // title card (RTL reveal: clip-path inset from the left edge shrinks, so the Arabic appears from the right)
+    const ta = prog(t, TITLE.in, TITLE.in + 0.9, Ease.outCubic);
+    elScrim.style.opacity = (0.95 * prog(t, 5.2, 6.4, Ease.inOutSine)).toFixed(3);
+    elAr.style.clipPath = `inset(-20% 0 -30% ${(100 * (1 - ta)).toFixed(2)}%)`;
+    elAr.style.opacity = Math.min(1, ta * 1.6).toFixed(3);
+    elAr.style.transform = `translateX(${(-40 * (1 - ta)).toFixed(1)}px)`;
+    elAr.style.filter = `blur(${(8 * (1 - ta)).toFixed(2)}px)`;
+    elRule.style.transform = `scaleX(${prog(t, TITLE.drawRule[0], TITLE.drawRule[1], Ease.outExpo).toFixed(4)})`;
+    const te = prog(t, TITLE.en[0], TITLE.en[1], Ease.outCubic);
+    elEn.style.opacity = te.toFixed(3);
+    elEn.style.letterSpacing = `${lerp(30, 12, te).toFixed(2)}px`;
+    elEn.style.transform = `translateY(${(16 * (1 - te)).toFixed(1)}px)`;
+    elMeta.style.opacity = (0.9 * prog(t, TITLE.meta[0], TITLE.meta[1])).toFixed(3);
+    composer.render();
+    renderer.getContext().finish();
+  }
+
+  window.__kosifSeek = seek;
+  // Wait for fonts AND the first real WebGL frame (shader compile happens here) before declaring ready.
+  await document.fonts.load('700 148px "BKufi"', 'بلّورة الضوء');
+  await document.fonts.load('700 46px "BGrotesk"', 'A');
+  await document.fonts.load('500 20px "BMono"', 'a');
+  await document.fonts.ready;
+  seek(0); seek(4.5); seek(0);
+  await new Promise((r) => requestAnimationFrame(() => r()));
+
+  // fit-to-window for live preview
+  function fit() { const s = Math.min(innerWidth / W, innerHeight / H), st = $('stage'); st.style.transform = `scale(${s})`; st.style.left = `${(innerWidth - W * s) / 2}px`; }
+  addEventListener('resize', fit); fit();
+  if (navigator.webdriver) document.body.classList.add('render');
+  else {
+    let cur = parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0, playing = false, last = 0;
+    seek(cur);
+    const step = (now) => { if (!playing) return; cur += (now - last) / 1000; last = now; if (cur > DUR) cur = 0; seek(cur); requestAnimationFrame(step); };
+    addEventListener('keydown', (e) => {
+      if (e.code === 'Space') { playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(step); }
+      if (e.code === 'ArrowRight') { playing = false; cur = Math.min(DUR, cur + 1 / FPS); seek(cur); }
+      if (e.code === 'ArrowLeft') { playing = false; cur = Math.max(0, cur - 1 / FPS); seek(cur); }
+    });
+  }
+  window.__kosifResolve(true);
+} catch (err) {
+  console.error(err);
+  window.__kosifReject(err);
+}
+</script>
+</body>
+</html>

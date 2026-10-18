@@ -1,0 +1,285 @@
+[
+ {
+  "id": "DL-01",
+  "family": "video-download",
+  "name_ar": "تحميل فيديو من أي رابط",
+  "name_en": "Download video from any URL",
+  "status": "proven",
+  "what": "yt-dlp يدعم مئات المواقع (YouTube, TikTok, Instagram, Facebook, X, Vimeo, archive.org…) — تعطيه رابطًا فيعطيك ملفًا جاهزًا للمونتاج.",
+  "how": "python3 scripts/fetch_video.py URL [URL…] -o clips/ --quality 1080 ؛ سلسلة بدائل: bv*+ba/b ← bv*+ba/b/best ← إعادة بمحاكاة متصفح (Safari/Chrome عبر curl_cffi). 8 أجزاء متوازية، 10 إعادات.",
+  "params": "--concurrent-fragments 8 · --retries 10 · --socket-timeout 30 · -o '%(title).120B [%(id)s].%(ext)s'",
+  "install": "pip install yt-dlp curl_cffi",
+  "license": "Unlicense (yt-dlp)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
+   "owner-upload:8cc9be77-c32.sh (Cinema C V32)"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-02",
+  "family": "video-download",
+  "name_ar": "قائمة روابط دفعة واحدة",
+  "name_en": "Batch of links from a file",
+  "status": "proven",
+  "what": "أرسل المستخدم روابط كثيرة؟ ضعها في ملف نصي وحمّلها كلها، مع manifest.json يسجل كل ملف.",
+  "how": "python3 scripts/fetch_video.py --urls links.txt -o clips/ ؛ سطور تبدأ بـ# تُتجاهل؛ الخروج غير صفري إن فشل رابط.",
+  "params": "manifest.json: url,file,duration,width,height,fps,vcodec,acodec,title,uploader,license",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-03",
+  "family": "video-download",
+  "name_ar": "جودة محددة أو صوت فقط",
+  "name_en": "Quality cap or audio-only",
+  "status": "proven",
+  "what": "اختر السقف: 2160/1080/720/480 أو best، أو استخرج الصوت m4a فقط (للتفريغ أو الموسيقى المرجعية).",
+  "how": "--quality 720 ← bv*[height<=720]+ba ؛ --quality audio ← -x --audio-format m4a",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-04",
+  "family": "video-download",
+  "name_ar": "نسخة آمنة للمونتاج",
+  "name_en": "Edit-safe H.264/AAC copy",
+  "status": "proven",
+  "what": "بعض الملفات (ogv/webm/vp9/av1/متغير الإطارات) تتعب المحررات؛ --safe يبني نسخة H.264+AAC+yuv420p+faststart مضمونة، ويحتفظ بالأصل.",
+  "how": "--safe ← ffmpeg -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart (أصل Cinema C Photos-SAFE)",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
+   "owner-upload:8cc9be77-c32.sh"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-05",
+  "family": "video-download",
+  "name_ar": "كوكيز للمحتوى الخاص",
+  "name_en": "Cookies for private / age-gated posts",
+  "status": "ready",
+  "what": "للمنشورات الخاصة أو المقيّدة بالعمر من حساب المستخدم نفسه: ملف cookies.txt بصيغة Netscape يصدّره المستخدم من متصفحه.",
+  "how": "--cookies cookies.txt ؛ لا تحفظ الكوكيز في المستودع ولا تطبعها ولا تُرسلها لأحد؛ تخص حساب المستخدم فقط.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "owner-upload:8cc9be77-c32.sh"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-06",
+  "family": "video-download",
+  "name_ar": "محاكاة متصفح عند الحظر",
+  "name_en": "Browser impersonation retry",
+  "status": "ready",
+  "what": "إن رفض الموقع الطلب العادي، يعيد المحاولة مرة واحدة كأنه Safari أو Chrome (يحتاج curl_cffi).",
+  "how": "--impersonate safari|chrome ؛ يُكتشف تلقائيًا من --list-impersonate-targets",
+  "params": "",
+  "install": "pip install curl_cffi",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
+   "owner-upload:8cc9be77-c32.sh"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-07",
+  "family": "video-download",
+  "name_ar": "تحديث yt-dlp عند تغيّر الموقع",
+  "name_en": "Update yt-dlp when a site breaks",
+  "status": "proven",
+  "what": "أغلب أخطاء TikTok/Instagram تُحل بتحديث yt-dlp.",
+  "how": "python3 scripts/fetch_video.py --update ؛ --doctor يفحص yt-dlp وffmpeg والمحاكاة",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-08",
+  "family": "video-download",
+  "name_ar": "حدود هذه الحاوية السحابية",
+  "name_en": "Limits of this cloud container",
+  "status": "documented",
+  "what": "جُرّب هنا: archive.org يعمل بالكامل؛ يوتيوب يعطي البيانات لكن 403 عند تحميل الفيديو (عنوان خادم سحابي)؛ Vimeo يطلب تسجيل دخول؛ ويكيميديا 403. على جهاز المستخدم أو بكوكيز تعمل المواقع الكبرى عادة.",
+  "how": "إن فشل الرابط هنا: اطلب من المستخدم رفع الملف، أو شغّل السكربت على جهازه ثم يرفع الناتج.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/video-download.md"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-09",
+  "family": "video-download",
+  "name_ar": "المصدر ثم الاستخدام: ترخيص وحقوق",
+  "name_en": "Rights check before editing",
+  "status": "documented",
+  "what": "manifest يسجّل حقل license إن كشفه الموقع (مثلًا Public Domain في archive.org). التحميل لمحتوى المستخدم أو المرخّص؛ لا إعادة نشر لمقاطع الغير بلا إذن؛ اذكر المصدر.",
+  "how": "اقرأ license وuploader من manifest.json، واذكرهما في STYLE.md وفي تسليم الفيلم.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ },
+ {
+  "id": "DL-10",
+  "family": "video-download",
+  "name_ar": "من الرابط إلى المونتاج",
+  "name_en": "Link → analyse → montage",
+  "status": "ready",
+  "what": "سلسلة كاملة: حمّل ← --safe ← قِس المدة والقطعات (scenedetect/ffmpeg scene) ← فرّغ الصوت (faster-whisper) ← قص على الإيقاع (librosa) ← انتقالات xfade وتلوين وترجمة عربية ← loudnorm -14 ← verify_video.",
+  "how": "انظر proofs/ffmpeg-montage وفصل FOOT وSYNC وTRANS.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/video-download.md"
+  ],
+  "styles": [],
+  "tags": [
+   "download",
+   "yt-dlp",
+   "تحميل",
+   "رابط",
+   "فيديو",
+   "youtube",
+   "tiktok",
+   "instagram",
+   "facebook",
+   "محتوى"
+  ]
+ }
+]

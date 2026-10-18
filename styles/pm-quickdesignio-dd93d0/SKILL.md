@@ -1,6 +1,6 @@
 ---
 name: pm-quickdesignio-dd93d0
-description: A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.
+description: A 15-second promo for an AI ad generator: a typed question, a lime-glow URL input, a wall of twelve product ads, a before/after product shot, a UGC phone video, rapid cuts of toolkit words, a growth line chart drawing on, a lime tile-grid wipe and a pixel-logo typing lockup.
 ---
 
 # KOSIF TOOL — QuickDesign brand promo / ترويج علامة QuickDesign: السرعة كحجّة بصرية
@@ -18,9 +18,9 @@ description: A 15 s landscape brand promo for a fast design tool: the wordmark a
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ترويج أفقي مدته 15 ثانية لأداة تصميم سريعة، يبني الشعار من أشكال أولية ثم يبرهن على توفير الوقت بمخططات وعدّادات متحركة.
+إعلان مدته 15 ثانية لمولّد إعلانات بالذكاء الاصطناعي: سؤال يُكتب، حقل رابط بتوهج ليموني، جدار من اثني عشر إعلان منتج، صورة منتج قبل وبعد، فيديو UGC على هاتف، قطعات سريعة لكلمات الأدوات، منحنى نمو يُرسم، مسح بشبكة مربعات ليمونية، وختام بشعار بكسلي يُكتب.
 
-A 15 s landscape brand promo for a fast design tool: the wordmark assembles from primitives, then animated charts and counters prove the time saved.
+A 15-second promo for an AI ad generator: a typed question, a lime-glow URL input, a wall of twelve product ads, a before/after product shot, a UGC phone video, rapid cuts of toolkit words, a growth line chart drawing on, a lime tile-grid wipe and a pixel-logo typing lockup.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 

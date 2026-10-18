@@ -1,0 +1,1 @@
+The caption tool reads the voice track, finds each word's start time, and places the Arabic word on screen when it is spoken. Before this, I synced captions by hand, which took about an hour for a one-minute reel. Now it takes a few seconds, though I still check the long words because the model sometimes splits them.

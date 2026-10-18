@@ -1,6 +1,6 @@
 ---
 name: pm-jasonzhou1993-8595e0
-description: A 15-second self-promotional showreel that chains kinetic type, animated charts and shape systems into one continuous portfolio piece.
+description: A 15-second self-showreel split into numbered chapters inside a HUD frame: an orange dot on a timeline, kinetic type TIMING / SPACING / EASING over orange and cream with outlined marquee rows and a code comment, a grid of rotating squares and circles, a particle burst that assembles FLOW, a 3D point-cloud sphere over a floor grid, vertical colour-stripe wipes into a data card, flowing line ribbons behind an italic serif phrase, and an end card.
 ---
 
 # KOSIF TOOL — Claude motion reel / ريل موشن ذاتي: عرض مهارات في 15 ثانية
@@ -18,11 +18,11 @@ description: A 15-second self-promotional showreel that chains kinetic type, ani
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-شوريل سريع مدته 15 ثانية يربط الطباعة الحركية والرسوم البيانية ومنظومات الأشكال في قطعة واحدة متصلة تعمل كبطاقة تعريف لمصمم موشن.
+ريل ذاتي مدته 15 ثانية مقسم إلى فصول مرقمة داخل إطار HUD: نقطة برتقالية على خط زمني، خط حركي TIMING وSPACING وEASING على البرتقالي والكريمي مع صفوف نصية محيطية متحركة وتعليق برمجي، شبكة مربعات ودوائر تدور، انفجار جسيمات يبني كلمة FLOW، كرة سحابة نقاط فوق أرضية شبكية، مسح بأشرطة لونية إلى بطاقة بيانات، موجات خطوط خلف عبارة سيريف مائلة، وبطاقة ختام.
 
-A 15-second self-promotional showreel that chains kinetic type, animated charts and shape systems into one continuous portfolio piece.
+A 15-second self-showreel split into numbered chapters inside a HUD frame: an orange dot on a timeline, kinetic type TIMING / SPACING / EASING over orange and cream with outlined marquee rows and a code comment, a grid of rotating squares and circles, a particle burst that assembles FLOW, a 3D point-cloud sphere over a floor grid, vertical colour-stripe wipes into a data card, flowing line ribbons behind an italic serif phrase, and an end card.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

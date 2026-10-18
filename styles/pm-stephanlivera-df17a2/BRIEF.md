@@ -1,54 +1,58 @@
 # ريل تعريفي لمصمم موشن بالذكاء الاصطناعي — Claude motion designer showreel
 
-> ريل ذاتي مدته 15 ثانية يستعرض مهارات المصمم عبر نص حركي ورسوم بيانية حية وانتقالات متصلة بلا قطع.
+> ريل تعريفي سريع مدته 15 ثانية من مقاطع منفصلة تتبدل بقطعات حادة وقلب ألوان: انفجار خطوط، كلمة CLAUDE ضخمة على أحمر، لوحة مقارنة ستة منحنيات تخفيف، نجمة على أزرق كهربائي، بلاط Truchet متموج، حلقة جسيمات ثلاثية الأبعاد وكلمة EASE.
 >
-> A 15-second self-portrait reel where the designer proves its craft through kinetic type, living charts and seamless morph transitions.
+> A fast 15-second self-promo reel of separate vignettes joined by hard cuts and colour flips: a line burst, a giant CLAUDE wordmark on red, a six-easing comparison board, a star pop on electric blue, rippling Truchet tiles, a 3D particle torus and a giant EASE.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/stephanlivera-df17a2
 - التصنيفات / Categories: charts, kinetic-type
 - النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 3/5
-- التقنية المقترحة / Stack: Remotion, React, SVG
+- التقنية المقترحة / Stack: Remotion, React, SVG, Three.js
 
 ## الفكرة
-الموضوع هو ريل تقديم شخصي: الذكاء الاصطناعي يقدم نفسه كمصمم موشن ويثبت ذلك بالفعل لا بالقول. الهدف التواصلي أن يخرج المشاهد مقتنعاً بالإتقان خلال 15 ثانية فقط. اللغة الحركية تعتمد على سلسلة مشاهد متولدة من بعضها: كل عنصر يتحول إلى العنصر التالي، والنص يُعامل كجسم فيزيائي له وزن وارتداد، والرسوم البيانية تُرسم كأنها تتنفس مع الإيقاع.
+الموضوع تعريف ذاتي لمصمم موشن يثبت مهارته بعرض الأدوات نفسها: منحنيات التخفيف، الأنماط التوليدية، العمق والخط الضخم. البنية ليست تحولاً متصلاً بل سلسلة لقطات قصيرة لكل منها لون حقل مسطح خاص (أسود، أحمر برتقالي، أزرق كهربائي، كريمي) تتبدل بقطعات حادة على الإيقاع. يربط بينها إطار واجهة HUD ثابت: زوايا رفيعة، عدّاد زمني وعلامة fps، بحيث يبدو الريل كشاشة عمل مصمم.
 
 ## Concept
-The subject is a self-introduction: the AI presents itself as a motion designer and proves it through doing rather than claiming. The goal is to leave the viewer convinced of craft within 15 seconds. The motion language chains scenes that grow out of each other, treats type as a physical body with weight and bounce, and draws charts that breathe with the rhythm.
+The subject is a motion designer's self-introduction that proves craft by demonstrating the tools themselves: easing curves, generative patterns, depth and oversized type. The structure is not one continuous morph but a chain of short shots, each on its own flat colour field (near-black, red-orange, electric blue, cream), swapped with hard cuts on the beat. A constant HUD frame ties them together: thin corner brackets, a running timecode and an fps label, so the reel reads like a designer's working monitor.
 
 ## المشاهد المقترحة
-- 0-2.5 ث: نقطة واحدة على خلفية فاتحة تنتفخ لتصبح اسم المصمم بخط عريض؛ تهبط الحروف واحداً تلو الآخر بتجاوز زنبركي 1.15 مع دفع كاميرا خفيف بنسبة 4%.
-- 2.5-5.5 ث: يتناثر الاسم إلى سحابة كلمات للمهارات (الطباعة، التسهيل، الأنظمة)؛ تدور الكلمات حول محور مشترك ثم تنقر إلى عمود محاذٍ لليسار بينما تُرسم خطوط قاعدية رفيعة.
-- 5.5-9 ث: يتحول الخط القاعدي إلى محور سيني لرسم أعمدة؛ ترتفع ستة أعمدة بتدرج 80 مللي ثانية، ويتجاوز خط بياني هدفه ثم يستقر، ويتدحرج عداد رقمي إلى رقم مستدير.
-- 9-12 ث: يمتد أطول عمود ليصبح كبسولة رأسية تتحول إلى إطار هاتف؛ تنزلق بداخله ثلاث بطاقات واجهة بعمق متوازي بينما تدور الكاميرا 6 درجات.
-- 12-15 ث: ينكمش الإطار إلى نقطة تطير إلى المركز ويظهر الترويسة الختامية (الاسم + الدور + 'متاح')؛ يطابق الإطار الأخير نقطة البداية ليُغلق الريل حلقة.
+- 0-1.3 ث: حقل شبه أسود بحلقة رمادية رفيعة؛ خطوط حمراء تنفجر شعاعياً من المركز في نحو 400 مللي ثانية ثم تنكمش إلى نقطة بيضاء واحدة.
+- 1.3-3.7 ث: قطع حاد إلى الأحمر البرتقالي؛ كلمة CLAUDE تصطدم بعرض نحو 80% من الإطار بخط غروتسك عريض فائق السماكة مع ضبابية حركة على الحروف، وتحتها عنوان فرعي مائل بخط سيريف.
+- 3.7-5 ث: قطع إلى الكريمي: عنوان سيريف مائل فوق ستة مسارات معنونة (linear، ease-in-out، expo-out، back-out، elastic، bounce)؛ نقطة تتسابق على كل مسار لتُقارن المنحنيات جنباً إلى جنب.
+- 5-7.5 ث: قطع إلى الأزرق الكهربائي: نقطة متوهجة تتضخم إلى نجمة بيضاء تنبثق مع خطوط إنشاء حمراء بينما تدور حولها حلقة نجوم صغيرة.
+- 7.5-10 ث: قطع إلى الأسود: نمط بلاط Truchet بأقواس بيضاء يملأ الإطار وتدور البلاطات في موجة من اليسار إلى اليمين مع صبغة حمراء ترافق الموجة.
+- 10-12.6 ث: حلقة جسيمات ثلاثية الأبعاد تدور على الأسود، ثم دفعة قطعات سريعة: كلمة EASE زرقاء ضخمة على الكريمي ومؤشر ينقر داخل حلقة نابضة على الأحمر.
+- 12.6-15 ث: ختام أحمر: علامة نجمية سوداء بجانب كلمة CLAUDE مع العنوان الفرعي المائل وسطر صغير من تسميات التواصل بخط أحادي المسافة.
 
 ## Proposed scenes
-- 0-2.5s: A single period on an off-white canvas inflates into the designer's name set in a heavy grotesque; letters land one by one with a 1.15 spring overshoot and a subtle camera push of 4%.
-- 2.5-5.5s: The name shatters into a word cloud of skills (typography, easing, systems); words orbit a shared pivot, then snap into a left-aligned stack while a thin baseline rules draw across.
-- 5.5-9s: The baseline becomes the x-axis of a bar chart; six bars rise in staggered 80 ms steps, a line series overshoots and settles, and a callout counter rolls to a round number.
-- 9-12s: The chart's tallest bar stretches into a vertical pill that becomes a phone-shaped frame; inside it, three UI cards slide in with parallax depth as the camera orbits 6 degrees.
-- 12-15s: The frame contracts to a dot, the dot flies to the center and the closing lockup (name + role + 'available') resolves; the final frame mirrors the opening dot so the reel loops.
+- 0-1.3s: Near-black field with a thin grey ring; red lines burst radially from the centre in about 400 ms, then collapse to a single white dot.
+- 1.3-3.7s: Hard cut to red-orange; the CLAUDE wordmark slams in at about 80% frame width in an ultra-black wide grotesk with motion-blurred letters, an italic serif 'motion designer' subtitle settles beneath.
+- 3.7-5s: Cut to cream: an italic serif headline over six labelled tracks (linear, ease-in-out, expo-out, back-out, elastic, bounce); a dot races each track so the curves can be compared side by side.
+- 5-7.5s: Cut to electric blue: a glowing dot swells into a white star that pops with red construction lines while a ring of small stars orbits it.
+- 7.5-10s: Cut to black: a white Truchet arc-tile pattern fills the frame and the tiles rotate in a wave from left to right, a red tint travelling with the wave.
+- 10-12.6s: A 3D particle torus rotates on black, then a burst of quick cuts: a giant blue EASE on cream and a cursor clicking inside a pulsing ring on red.
+- 12.6-15s: Red end lockup: a black asterisk mark beside the CLAUDE wordmark, italic subtitle and a row of tiny mono contact labels.
 
 ## قواعد الحركة
-- التسهيل الأساسي زنبرك بصلابة 180 وتخميد 18 وكتلة 1؛ انزلاقات الواجهة تستخدم cubic-bezier(0.2, 0.8, 0.2, 1) خلال 450 مللي ثانية.
-- لا قطع حاد: كل انتقال هو تحول شكلي أو مسح بقناع أو عبور بالتكبير؛ أطول ثبات ساكن 900 مللي ثانية.
-- الكاميرا منصة افتراضية واحدة متصلة: دفع للأمام 3-6%، دوران لا يتجاوز 8 درجات، ولا اهتزاز أبداً.
-- النص يتحرك حرفاً حرفاً بتدرج 40 مللي ثانية؛ الكلمات الخارجة والداخلة لا تتداخل على السطر نفسه.
-- أعمدة الرسم البياني تنمو من الصفر بالزنبرك؛ الخطوط تُرسم عبر stroke-dashoffset خلال 600 مللي ثانية وتتجاوز هدفها 8% ثم تستقر.
-- اللون: خلفية فاتحة واحدة، حبر داكن واحد، ولون تمييز واحد لا يشغل أكثر من 10% من الإطار.
-- ممنوع: وهج العدسة، انفجارات الجسيمات، ظلال أعمق من 2 بكسل، اللقطات الجاهزة، والتلاشي إلى الأسود بين المشاهد.
+- اقطع ولا تحوّل: نحو تسع قطعات حادة يقلب كل منها لون الخلفية المسطحة، مع دفعة قطعات أكثف حول 11-12.6 ث.
+- طبقة HUD ثابتة في كل لقطة: أقواس زوايا، عدّاد زمني متحرك، علامة fps وخط تقدم رفيع، كلها بخط أحادي صغير بنحو 1% من ارتفاع الإطار.
+- الكلمات الرئيسية تصطدم من حجم أكبر مع ضبابية حركة أفقية وتستقر خلال 200-300 مللي ثانية؛ العنوان الفرعي المائل يظهر بعد استقرار الكلمة.
+- لوحة التخفيف تعرض منحنيات حقيقية: الرحلة نفسها لمدة 1.2 ثانية بمنحنيات linear وease-in-out وexpo-out وback-out وelastic وbounce حتى يظهر الفرق.
+- الأنماط إجرائية: بلاطات Truchet تدور 90 درجة بتأخير لكل عمود لتصنع موجة متنقلة؛ الحلقة سحابة نقاط ثلاثية الأبعاد تدور.
+- اللوحة محصورة في شبه الأسود #0f0f11 والكريمي #f1eee5 والأزرق الكهربائي #302ff5 والأحمر البرتقالي نحو #f04a38 وبنفسجي ناعم #726de2 للتوهج.
+- التصيير بمعدل 60 إطاراً في الثانية لتبقى النقاط المتسابقة والكلمات المصطدمة حادة.
 
 ## Motion rules
-- Primary easing is a spring with stiffness 180, damping 18, mass 1; UI slides use cubic-bezier(0.2, 0.8, 0.2, 1) over 450 ms.
-- No hard cuts: every transition is a morph, a mask wipe or a scale-through; the longest static hold is 900 ms.
-- Camera is one continuous virtual rig: push-ins of 3-6%, orbits of at most 8 degrees, never a shake.
-- Type animates per glyph with a 40 ms stagger; outgoing and incoming words never overlap on the same baseline.
-- Chart bars grow from zero with the spring; line series draw with stroke-dashoffset over 600 ms and overshoot by 8% before settling.
-- Colour: one light canvas, one near-black ink and a single accent used on no more than 10% of the frame at any time.
-- Banned: lens flares, particle explosions, drop shadows deeper than 2 px, stock footage, and fade-to-black between scenes.
+- Cut, do not morph: about nine hard cuts, each flipping the flat background colour; a denser burst of cuts sits around 11-12.6 s.
+- Keep a constant HUD layer on every shot: corner brackets, running timecode, fps label and a thin progress rule, all in tiny mono at about 1% of frame height.
+- Hero words slam in from a larger scale with horizontal motion blur and settle in 200-300 ms; the italic serif subtitle fades up after the word lands.
+- The easing board must show real curves: the same 1.2 s travel driven by linear, ease-in-out, expo-out, back-out, elastic and bounce so the differences are visible.
+- Patterns are procedural: Truchet tiles rotate 90 degrees with a per-column delay to form a travelling wave; the torus is a rotating 3D point cloud.
+- Palette is limited to near-black #0f0f11, cream #f1eee5, electric blue #302ff5, red-orange about #f04a38 and a soft violet #726de2 for glows.
+- Render at 60 fps so the racing dots and slammed type stay crisp.
 
 ## Facts stated by the source (rewritten in our words)
 - The creator asked for a 15-second piece.
@@ -56,7 +60,7 @@ The subject is a self-introduction: the AI presents itself as a motion designer 
 - The public tags are charts and kinetic type.
 
 ## Assumptions
-The source gives only the length and the résumé-reel framing; the scene order, the off-white palette, the chart content and the looping ending are proposed directions, not observed facts.
+Observed from sampled frames: the vignette order, colour fields, HUD frame and roughly nine hard cuts. Assumed: that cuts land on music beats, exact spring values and the precise red hex, which were estimated from compressed frames.
 
 ## Keywords
-showreel, portfolio reel, kinetic typography, spring easing, bar chart animation, morph transition, ريل تعريفي, نص حركي, رسوم بيانية متحركة, انتقالات متصلة, سيرة ذاتية, self promo
+showreel, self promo, hard cuts, colour flip, easing curves, truchet pattern, particle torus, hud overlay, wide grotesk, ريل تعريفي, منحنيات التخفيف, قطع حاد, أنماط توليدية, نص ضخم

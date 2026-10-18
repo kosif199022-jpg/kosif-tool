@@ -1,9 +1,9 @@
 ---
 name: pm-paulo-kombucha-96431c
-description: A 15-second mascot-led motion spot explaining a referral programme: invite a friend, both of you win, and a growing chart proves it.
+description: A 15-second referral promo for a mascot studio: 'tell a friend' gets a pink scribble strike-through and is rewritten with a tilted orange sticker and a small mascot, an orange circle wipe leads to a prompt box that types a description and clicks create, revealing a 3D potato mascot in a pink circle, more mascots with name pills, a tilted translucent lifetime-commission card sweeps across, an earnings calculator where a cursor drags a slider from 50 to 500 while the payout ticks to $5,000, and an end card with a clicked affiliate button.
 ---
 
-# KOSIF TOOL — Mascot referral program promo / إعلان برنامج الإحالة بالتميمة
+# KOSIF TOOL — Mascot referral program promo / إعلان برنامج الإحالة لاستوديو التمائم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/paulo-kombucha-96431c
@@ -18,11 +18,11 @@ description: A 15-second mascot-led motion spot explaining a referral programme:
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-إعلان موشن جرافيك في 15 ثانية تقوده تميمة العلامة لشرح برنامج الإحالة: ادعُ صديقًا، يربح كلاكما، والرسم البياني يثبت ذلك.
+إعلان إحالة مدته 15 ثانية لاستوديو تمائم: عبارة «أخبر صديقاً» يُشطب عليها بخربشة وردية وتُعاد كتابتها مع ملصق برتقالي مائل وتميمة صغيرة، مسح دائري برتقالي إلى حقل أمر يُكتب فيه وصف ويُنقر زر الإنشاء فتظهر تميمة بطاطا ثلاثية الأبعاد في دائرة وردية، تمائم أخرى بشارات أسماء، بطاقة شفافة مائلة «20% مدى الحياة» تعبر الإطار، حاسبة أرباح يسحب فيها المؤشر شريطاً من 50 إلى 500 والعائد يصل إلى 5,000 دولار، وبطاقة ختام بزر يُنقر.
 
-A 15-second mascot-led motion spot explaining a referral programme: invite a friend, both of you win, and a growing chart proves it.
+A 15-second referral promo for a mascot studio: 'tell a friend' gets a pink scribble strike-through and is rewritten with a tilted orange sticker and a small mascot, an orange circle wipe leads to a prompt box that types a description and clicks create, revealing a 3D potato mascot in a pink circle, more mascots with name pills, a tilted translucent lifetime-commission card sweeps across, an earnings calculator where a cursor drags a slider from 50 to 500 while the payout ticks to $5,000, and an end card with a clicked affiliate button.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, React), suggested duration (15 s), aspect 16:9, difficulty 2/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية.

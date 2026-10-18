@@ -1,9 +1,9 @@
 ---
 name: pm-samaote-5e2fc2
-description: Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.
+description: A 30-second lyric video told through a sun: it rises over a sea horizon, ignites and fills the frame, drains to grey on a 'stop time' beat, becomes a flat red dot on cream paper with a grid, and ends in an eclipse and a glowing red smile arc. Lyric type changes per section inside a persistent HUD with a countdown, bar counter and chapter label.
 ---
 
-# KOSIF TOOL — Synced lyrics motion video / فيديو كلمات أغنية متزامن مع الصوت
+# KOSIF TOOL — Synced lyrics motion video / فيديو كلمات أغنية تحكيه شمس: من الشروق إلى الكسوف
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/samaote-5e2fc2
@@ -18,9 +18,9 @@ description: Lyric words land exactly on each vocal onset while the backdrop bre
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-كلمات الأغنية تظهر على نبرة المغني بالضبط بينما تتنفس الخلفية مع الإيقاع، بأسلوب يليق بعرض أعمال مصمم موشن.
+فيديو كلمات أغنية مدته 30 ثانية تحكيه شمس: تشرق فوق أفق البحر، تشتعل وتملأ الإطار، تفقد ألوانها في لحظة «أوقف الزمن»، تصير نقطة حمراء مسطحة على ورق كريمي بشبكة، وتنتهي بكسوف وقوس ابتسامة أحمر متوهج. الخط يتغير بين الأقسام داخل إطار HUD دائم بعدّاد تنازلي وعدّاد مازورات ووسم الفصل.
 
-Lyric words land exactly on each vocal onset while the backdrop breathes with the beat, built to read like a motion designer's showreel piece.
+A 30-second lyric video told through a sun: it rises over a sea horizon, ignites and fills the frame, drains to grey on a 'stop time' beat, becomes a flat red dot on cream paper with a grid, and ends in an eclipse and a glowing red smile arc. Lyric type changes per section inside a persistent HUD with a countdown, bar counter and chapter label.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, Web Audio, SVG), suggested duration (30 s), aspect 16:9, difficulty 4/5.
 

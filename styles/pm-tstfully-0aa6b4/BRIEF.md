@@ -1,54 +1,56 @@
 # إعلان منتج: من رابط يوتيوب إلى نص كامل — YouTube transcript product ad
 
-> إعلان أفقي مدته 15 ثانية يشرح أداة تحوّل رابط فيديو يوتيوب إلى نصّ مفرّغ كامل، مع عدّادات ومخططات تلخّص النتيجة.
+> إعلان منتج هادئ مدته 15 ثانية على خلفية داكنة بصبغة حمراء لأداة تفريغ نص فيديوهات يوتيوب: أيقونة تشغيل متوهجة، عناوين تظهر كلمة بكلمة مع كلمة سيريف مائلة حمراء، شريط رابط، أسطر نص يمر عليها خط مسح، بطاقات، موجة صوتية، لوحة استجابة JSON، أرقام إحصاء ودعوة ختامية.
 >
-> A 15 s landscape product ad for a tool that turns a pasted YouTube link into a full transcript, closing with counters and small charts that quantify the result.
+> A calm 15-second product ad on a dark, red-tinted background for a YouTube transcript tool: a glowing play icon, headlines revealing word by word with a red italic serif accent, a URL bar, transcript lines under a scan line, source cards, a waveform, a JSON response panel, stats and a CTA.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/tstfully-0aa6b4
 - التصنيفات / Categories: product-ui, charts
 - النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 2/5
-- التقنية المقترحة / Stack: Remotion, React, SVG
+- التقنية المقترحة / Stack: Remotion, React, CSS
 
 ## الفكرة
-الموضوع أداة تفريغ: يلصق المستخدم رابط فيديو فيحصل على كل كلمة قيلت فيه. الهدف إثبات أن العملية بثلاث خطوات (لصق، معالجة، تنزيل) وأن النص دقيق ومنظّم بطوابع زمنية. اللغة الحركية تتبع تدفق البيانات نفسه: الرابط يتحول إلى بطاقة فيديو، والموجة الصوتية تتحول إلى أسطر نص تتدفق بترتيب، ثم تتكثف الأسطر إلى أرقام ومخططات صغيرة تُقاس بها القيمة.
+الموضوع أداة تأخذ رابط فيديو يوتيوب وتعيد النص المنطوق كاملاً، حتى للفيديوهات بلا ترجمة، وبصيغة جاهزة لسير عمل الذكاء الاصطناعي. لغة الحركة هادئة جداً: عنوان واحد في كل لحظة يكشف كلماته بتلاشٍ وضبابية من الرمادي إلى الأبيض، وكلمة أخيرة بسيريف مائل أحمر، ثم لوحة واجهة واحدة تثبت الوعد. الخلفية شبه سوداء بتوهج أحمر شعاعي خافت.
 
 ## Concept
-The subject is a transcription tool: paste a video link, receive every spoken word. The goal is to prove a three-step flow (paste, process, download) and that the text is accurate and time-stamped. The motion language follows the data itself: the link morphs into a video card, the waveform turns into cascading text lines, and the lines condense into counters and small charts that measure the value.
+The subject is a tool that takes a YouTube link and returns the full spoken text, even for videos without captions, in a format ready for AI workflows. The motion language is very calm: one headline per beat revealing its words with a blur fade from grey to white, a final word in red italic serif, then one UI panel that proves the promise. The background is near-black with a faint radial red glow.
 
 ## المشاهد المقترحة
-- 0-2ث: حقل إدخال عريض على خلفية داكنة؛ يومض المؤشر كل 500 مللي ثانية، ثم ينزلق نص الرابط من أيقونة الحافظة خلال 300 مللي ثانية ويومض الحقل مرة واحدة.
-- 2-5ث: يتحوّل الحقل إلى بطاقة صورة مصغّرة للفيديو (تدرّج في نصف القطر والعرض خلال 450 مللي ثانية، easeInOutCubic)؛ شريط موجة صوتية يتدحرج تحته بسرعة 120 بكسل في الثانية.
-- 5-9ث: شلال النص: أسطر تسقط في عمود أيمن بتأخير 60 مللي ثانية، طوابع زمنية تتزايد على اليسار، وكلمة مميّزة واحدة تنتقل عبر النص بأسلوب الكاريوكي.
-- 9-12ث: لحظة الأرقام: عدّاد يصل إلى إجمالي الكلمات خلال 1400 مللي ثانية (easeOutExpo)، مخطط من أربعة أعمدة للكلمات في الدقيقة ينمو من خط الأساس، وحلقة دائرية تمتلئ بنسبة اللغة المكتشفة.
-- 12-15ث: أزرار التصدير (TXT وSRT ونسخ) تظهر بتأخير 80 مللي ثانية بينها، يهبط الشعار النصي بكلمتين، ويستقر الشعار أسفل اليمين.
+- 0-2.5 ث: أيقونة تشغيل حمراء تتوهج فوق عنوان عن لصق فيديو يوتيوب؛ الكلمات تظهر من الرمادي إلى الأبيض واحدة تلو الأخرى، ثم يهبط سطر ثانٍ تنتهي فيه كلمة word بسيريف مائل أحمر.
+- 2.5-5 ث: شريط رابط بزر أحمر للحصول على النص؛ تنفتح تحته لوحة نص بأسطر مؤقتة زمنياً ويمر عليها خط مسح أحمر نزولاً.
+- 5-7.5 ث: عنوان عن الفيديوهات والقنوات وقوائم التشغيل يُكشف كلمة كلمة والأخيرة بالأحمر المائل؛ ثلاث بطاقات داكنة بأيقونات ترتفع تحته.
+- 7.5-10 ث: «بلا ترجمة؟» ثم «لا مشكلة» بتأكيد أحمر مائل على اليسار؛ وعلى اليمين لوحة بموجة صوتية من أعمدة حمراء مع مؤشر تشغيل وأسطر مستعادة.
+- 10-12.5 ث: عنوان عن نصوص نظيفة جاهزة لسير عمل الذكاء الاصطناعي على اليسار؛ لوحة استجابة JSON بشارة حالة خضراء تكتب أسطرها على اليمين؛ ثلاثة أرقام تظهر تحتها (زمن الاستجابة، التوفر، الحجم).
+- 12.5-15 ث: شعار في الوسط بأيقونة تشغيل حمراء، عنوان عن الانضمام إلى آلاف المستخدمين والرقم بالأحمر المائل، زر بدء أحمر وسطر صغير بتفاصيل الخطة.
 
 ## Proposed scenes
-- 0-2s: A wide input field sits on a dark stage; a cursor blinks at 500 ms intervals, then a link string slides in from a clipboard icon over 300 ms and the field flashes once.
-- 2-5s: The field morphs into a video thumbnail card (border-radius and width tween, 450 ms, easeInOutCubic); a waveform strip scrolls beneath it at 120 px per second.
-- 5-9s: Transcript cascade: text lines fall into a right-hand column with 60 ms stagger, timestamps count up on the left, and a single highlighted word travels through the text karaoke-style.
-- 9-12s: Numbers moment: a counter rolls to the total word count over 1400 ms (easeOutExpo), a four-bar chart of words per minute grows from the baseline, and a doughnut ring fills to the detected language share.
-- 12-15s: Export buttons (TXT, SRT, copy) pop in with 80 ms stagger, the tagline lands in two words, and the logo settles bottom-right.
+- 0-2.5s: A red play-button icon glows above a headline about pasting a YouTube video; words fade in from grey to white one by one, then a second line lands with a red italic serif 'word.'
+- 2.5-5s: A URL bar with a red 'get transcript' button; a transcript panel opens below with timestamped lines and a red scan line sweeping down through them.
+- 5-7.5s: A headline about videos, channels and playlists reveals word by word, the last in red italic; three dark cards with icons rise beneath.
+- 7.5-10s: 'No captions?' then 'No problem.' with red italic accent on the left; on the right a panel shows a waveform of red bars with a playhead and recovered lines.
+- 10-12.5s: Headline about clean transcripts ready for AI workflows on the left; a JSON response panel with a green status chip types its lines on the right; three stats appear below (latency, uptime, volume).
+- 12.5-15s: Centred logo with a red play icon, a headline about joining many users with the number in red italic, a red start button and a tiny line of plan details.
 
 ## قواعد الحركة
-- تدرّجات الواجهة تستخدم cubic-bezier(0.22, 1, 0.36, 1) بين 300 و450 مللي ثانية؛ أسطر النص تدخل خلال 220 مللي ثانية بإزاحة عمودية 12 بكسل وتأخير 60 مللي ثانية، ولا أسرع من ذلك.
-- العدّادات وأعمدة المخطط تستخدم easeOutExpo خلال 1200 إلى 1400 مللي ثانية وتبدأ معًا في الإطار نفسه لتُقرأ الأرقام كحدث واحد.
-- الكاميرا: تأطير ثابت 1280×720 مع دفعة اقتراب واحدة 4 بالمئة أثناء شلال النص (5-9ث)؛ لا دوران ولا ثلاثي الأبعاد.
-- الانتقالات بين المشاهد تحوّلات للعنصر نفسه (حقل إلى بطاقة، بطاقة إلى عمود) لا قطعات؛ القطع مسموح فقط قبل الشعار الختامي.
-- الطباعة: أسطر النص المفرّغ بخط sans مقروء لا يقل عن 28 بكسل؛ الكلمة النشطة تغيّر لونها فقط ولا تغيّر حجمها.
-- اللون: قاعدة داكنة ونص فاتح ولون تمييز واحد محجوز للكلمة النشطة وتعبئة المخططات وزر الدعوة؛ الصور المصغّرة تبقى باهتة ليتقدّم تصميم الواجهة.
-- ممنوع: اهتزاز الغليتش، رجّ الشاشة، نسب دقة مختلقة تُعرض كحقائق، وأكثر من كلمة مميّزة واحدة في الوقت نفسه.
+- الكلمات تظهر واحدة تلو الأخرى بتلاشٍ من الضبابية إلى الحدة وتحول من الرمادي إلى الأبيض بفارق نحو 150 مللي ثانية.
+- كلمة تأكيد واحدة فقط بسيريف مائل أحمر في كل عنوان؛ والباقي نيو غروتسك 700 بالأبيض.
+- المشاهد تتصل بالتلاشي المتقاطع فقط؛ الكاميرا ثابتة وطاقة الحركة منخفضة جداً.
+- لوحات الواجهة تثبت كل ادعاء: شريط الرابط، النص مع خط المسح، أعمدة الموجة مع مؤشر التشغيل، وأسطر JSON تُكتب.
+- التخطيط يتناوب بين عنوان في الوسط وعنوان يساراً مع لوحة يميناً.
+- اللوحة: شبه أسود #18161b بصبغة شعاعية حمراء داكنة #241214، أحمر #e5282e ونص أبيض #ffffff.
+- تسميات أحادية صغيرة في الزوايا (رقم القسم، العدّاد الزمني) كـ HUD هادئ.
 
 ## Motion rules
-- UI tweens use cubic-bezier(0.22, 1, 0.36, 1) at 300 to 450 ms; text lines enter at 220 ms with a 12 px vertical offset and 60 ms stagger, never faster.
-- Counters and chart bars use easeOutExpo over 1200 to 1400 ms and start together on the same frame so the numbers read as one event.
-- Camera: static 1280x720 framing with one 4 percent push-in during the transcript cascade (5-9 s); no rotation, no 3D.
-- Scene transitions are morphs of the same element (field to card, card to column), not cuts; a cut is allowed only before the final logo.
-- Typography: transcript lines in a readable sans at 28 px minimum; the active karaoke word changes colour only, never size.
-- Colour: dark base, light text, one accent reserved for the active word, the chart fills and the CTA; thumbnails stay desaturated so the UI leads.
-- Banned: glitch jitter, screen shake, fake accuracy percentages presented as fact, and more than one highlighted word at a time.
+- Words reveal one at a time with a blur-to-sharp fade and grey-to-white colour shift, about 150 ms apart.
+- Exactly one red italic serif accent word per headline; the rest is neo-grotesk 700 in white.
+- Scenes join with crossfades only; the camera is static and motion energy stays very low.
+- UI panels prove each claim: URL bar, transcript with a scan line, waveform bars with a playhead, JSON lines typing in.
+- Layout alternates between a centred headline and headline-left with panel-right.
+- Palette: near-black #18161b with a dark red radial tint #241214, red #e5282e and white #ffffff text.
+- Tiny mono labels sit in the corners (section index, timecode) as a quiet HUD.
 
 ## Facts stated by the source (rewritten in our words)
 - The requested piece is a motion-graphics product advertisement of fifteen seconds.
@@ -56,7 +58,7 @@ The subject is a transcription tool: paste a video link, receive every spoken wo
 - The listing tags it as product UI plus charts and lists a 1280x720 frame.
 
 ## Assumptions
-The three-step structure, the karaoke highlight and the closing stats are proposed; the source states only the 15 s length and the paste-link-get-words promise.
+Observed from frames sampled every ~1.25 s: the six beats, the dark red-tinted palette, the per-word reveal with red italic accents and the UI panels. Assumed: exact stagger values and audio; no karaoke highlight or bar chart was seen, and the 1280x720 reference is read as 16:9.
 
 ## Keywords
-تفريغ صوتي, رابط فيديو, نص مفرّغ, طوابع زمنية, كاريوكي, عدّاد, transcript, youtube link, waveform, word highlight, counter, bar chart, export srt, product ad
+product ad, transcript, youtube link, word by word reveal, italic serif accent, scan line, waveform, json panel, stat counters, dark ui, تفريغ صوتي, نص مفرّغ, ظهور كلمة بكلمة, إعلان منتج

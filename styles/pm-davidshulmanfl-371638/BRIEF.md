@@ -1,11 +1,11 @@
 # فيديو موسيقي بأسلوب الصلصال المتحرّك بمراجع معاصرة — Clay-style music video
 
-> فيديو موسيقي لدقيقة واحدة بمظهر تحريك الصلصال الإيقافي مع أغنية أصلية بروح البوب الفني الثمانيني ورموز حياتنا الرقمية الحالية.
+> فيديو موسيقي مدته 60 ثانية بمظهر صلصال متحرك (يبدو أن لقطاته مولّدة بالذكاء الاصطناعي): رجل صلصال ببدلة يغني بين طائرات مسيّرة وسيارات لعبة وغيوم قطنية، شبكات شاشة منقسمة، أشياء بعيون متحركة، أفعوانية حول كرة أرضية، مدينة كرتونية، وختام على مسرح.
 >
-> A 60 s music video with a code-built stop-motion clay look, an original 1980s art-pop style song, and today's digital life as the cast of objects.
+> A 60-second music video with a claymation look (its shots appear to be AI-generated footage): a suited clay man sings among drones, toy cars and cotton clouds, split-screen grids, googly-eyed objects, a rollercoaster around a globe, a cardboard city and a stage finale.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/davidshulmanfl-371638
 - التصنيفات / Categories: music
@@ -13,44 +13,48 @@ Original KOSIF brief derived only from the reference title, tags and public desc
 - التقنية المقترحة / Stack: HTML Canvas, Remotion, Web Audio
 
 ## الفكرة
-الموضوع فيديو موسيقي يستحضر روح أفلام الصلصال الإيقافية في فيديوهات البوب الفني الثمانينية، لكن شخصياته وأشياءه من اليوم: هاتف، سمّاعات لاسلكية، درون توصيل، سكوتر مشترك، فقاعة محادثة ذكية. الهدف إمتاع المشاهد بإحساس يدوي محسوس يستحيل تمييزه عن العجينة الحقيقية رغم أنه مولّد بالكود. اللغة الحركية تقوم على الإطارات المتدرّجة (التحريك على اثنين وثلاثة)، واهتزاز موضعي طفيف، وأشكال كروية متكتلة تندمج كالصلصال، وتبديل أفواه الشخصية حسب مقاطع الكلمات؛ والأغنية أصلية تُؤلَّف بطبول مقفلة ومزامير نحاسية وجهير صاعد.
+الموضوع أغنية بوب فني عن الحياة الرقمية اليوم، تُروى بعالم صلصال ملموس: شخصية رجل ببدلة رمادية بعينين واسعتين وفم يغني، تحيط به رموز العصر (مسيّرات توصيل، حلقة إضاءة، أشياء يومية بعيون، منحنيات أسهم، هاتف). البنية بسيطة جداً: ثماني لقطات متساوية تقريباً بطول 7.5 ثانية، مقطوعة على الأغنية، لكل لقطة ديكور مشبع الألوان.
 
 ## Concept
-The subject is a music video that channels the hand-made stop-motion spirit of 1980s art-pop videos, recast with today's objects: a phone, wireless earbuds, a delivery drone, a shared scooter, an AI chat bubble. The goal is tactile delight, a clay feel so convincing it hides its code origin. The motion language rests on stepped frames (animating on twos and threes), seeded positional jitter, blobby metaball shapes that merge like clay, and mouth-tile replacement timed to lyric syllables; the song is original, built with gated drums, brass stabs and a sliding bass.
+The subject is an art-pop song about today's digital life, told in a tactile clay world: a grey-suited man with wide eyes and a singing mouth surrounded by symbols of the moment (delivery drones, a ring light, everyday objects with eyes, stock arrows, a phone). The structure is very simple: eight roughly equal shots of about 7.5 s cut to the song, each on a saturated set.
 
 ## المشاهد المقترحة
-- 0-6ث: رأس من الصلصال يتكوّن من ست كتل تتدحرج وتندمج (تحريك عتبة metaball على Canvas)؛ العينان ترمشان على ثلاثة إطارات؛ حروف العنوان تصعد كشرائط صلصال مترنّحة.
-- 6-18ث: المقطع الأول: هاتف وسمّاعات وكوب قهوة تدور حول الرأس، ويُستبدل كل منها بإطارات بديلة كل نبضتين؛ الفم يتنقل بين ست بلاطات صوتية متزامنة مع مقاطع الكلمات.
-- 18-30ث: اللازمة الأولى: كلمات الأغنية من شرائط صلصال تملأ الإطار وتنضغط عند كل ضربة إيقاع؛ موكب من أيقونات معاصرة صغيرة (سكوتر، درون، حقيبة توصيل) يسير عبر الثلث السفلي.
-- 30-42ث: المقطع الثاني: يُعاد بناء الرأس بثلاثة نماذج معاصرة (مُبثّ بحلقة إضاءة، لاعب بسمّاعة، عامل عن بُعد بحاسوب) عبر مسح تغيير المشهد كل 8 نبضات.
-- 42-54ث: اللازمة الثانية والجسر: يذوب كل شيء في كتلة واحدة دوّارة، ثم تسارع زمني للوحة السماء المرسومة تتغير ألوانها خلفها، مع بصمات أصابع ظاهرة على الصلصال.
-- 54-60ث: الخاتمة: تتقلص الكتلة إلى كرة واحدة، تعود بطاقة العنوان، وتهبط ضربة النحاس الأخيرة على قطع حاد إلى الأسود.
+- 0-7.5 ث: خلفية زرقاء سماوية: لقطة قريبة للمغني الصلصالي تحت عنوان أصفر ثلاثي الأبعاد ممتلئ بحد أحمر وفقاعات إشعارات صغيرة بأرقام.
+- 7.5-15 ث: غيوم من القطن على الأزرق: طائرات مسيّرة تحمل صناديق وسيارات لعبة حمراء تطير في أقواس حول المغني.
+- 15-22.5 ث: حلقة إضاءة بيضاء ضخمة تؤطر المغني أمام جدار من مربعات نوافذ متصفح وردية وفيروزية.
+- 22.5-30 ث: شبكة شاشة منقسمة من تسع إلى اثنتي عشرة لوحة بالأصفر والأزرق والوردي والأخضر، في كل منها المغني، حول سهم تحديث برتقالي كبير.
+- 30-37.5 ث: ديكور أصفر: المغني يرقص مع صف من الأشياء ذات العيون المتحركة (سماعات، كوب، أفوكادو، خبز، نظارة، هاتف) وأشكال علامات زرقاء.
+- 37.5-45 ث: أفعوانية كرتونية: المغني يركب عربة على مسار سهم أخضر حول كرات أرضية صلصالية بشموس وأسهم حمراء هابطة وجمهور يرفع الهواتف.
+- 45-52.5 ث: ديكور أسود بمدينة كرتونية: المغني يقف أمام هاتف ضخم وتحوم حوله مسيّرات وغيمة خادم.
+- 52.5-60 ث: مسرح بستائر حمراء تحت الأضواء: المغني مع شخصيات صلصالية لحلقة إضاءة وصندوق وسترة منفوخة وفقاعة كلام، وقصاصات ملونة تتساقط.
 
 ## Proposed scenes
-- 0-6s: A clay head assembles from six blobs that roll in and merge (metaball threshold animation on Canvas); eyes blink on threes; the title letters rise as clay strips with a wobble.
-- 6-18s: Verse 1: a phone, earbuds and a coffee cup orbit the head, each swapped by replacement frames every 2 beats; the mouth cycles through six phoneme tiles in sync with the lyric syllables.
-- 18-30s: Chorus 1: lyric words made of clay strips fill the frame and squash on every beat hit; a parade of small modern icons (scooter, drone, delivery bag) marches across the bottom third.
-- 30-42s: Verse 2: the head rebuilds as three modern archetypes (streamer with ring light, gamer with headset, remote worker with laptop) via set-change wipes every 8 beats.
-- 42-54s: Chorus 2 and bridge: everything melts into one rotating blob, then a time-lapse of the painted sky board changing colour behind it, with fingerprints visible in the clay.
-- 54-60s: Outro: the blob shrinks to a single sphere, the title card returns, and the final brass sting lands on a hard cut to black.
+- 0-7.5s: Sky-blue backdrop: close-up of the clay singer under a chunky yellow 3D title with a red outline and small notification bubbles with counts.
+- 7.5-15s: Cotton-wool clouds on blue: delivery drones carry boxes and red toy cars fly arcs around the singer.
+- 15-22.5s: A giant white ring light frames the singer against a wall of pink and teal browser-window tiles.
+- 22.5-30s: Split-screen grid of nine to twelve panels in yellow, blue, pink and green, each with the singer, around a big orange refresh arrow.
+- 30-37.5s: Yellow set: the singer dances with a row of googly-eyed objects (earbuds, cup, avocado, toast, headset, phone) and blue tick shapes.
+- 37.5-45s: Cardboard rollercoaster: the singer rides a cart along a green arrow track around clay globes with suns, red down arrows and a crowd holding phones.
+- 45-52.5s: Black set with a cardboard city: the singer stands in front of a giant phone while drones and a cloud server hover.
+- 52.5-60s: Red-curtained stage under spotlights: the singer with clay ring light, box, puffer vest and speech-bubble characters, confetti falling.
 
 ## قواعد الحركة
-- الخط الزمني بمعدل 24 إطارًا في الثانية لكن كل عنصر دمية يتحدّث فقط على إطارات محجوزة: استخدم Math.floor(frame / 2) للاثنين وMath.floor(frame / 3) للثلاثة؛ التدرّج الناعم لكل إطار على الدمى ممنوع.
-- كل إطار محجوز يأخذ اهتزازًا حتميًا ±1.5 بكسل و±0.6 درجة من ضجيج مبذور كي يتنفس المشهد كالتحريك الإيقافي الحقيقي.
-- حركة الدمى خطوات خطية بلا easing؛ الـ easing محجوز للكاميرا التي تؤدي اقترابًا واحدًا بنسبة 6 بالمئة في كل لازمة على كامل مدتها.
-- شبكة الإيقاع: اختر سرعة قريبة من 110 نبضة في الدقيقة (545 مللي ثانية للنبضة) واشتق منها كل ضربة وتبديل فم وتغيير مشهد؛ لا شيء يتحرك خارج الشبكة.
-- حروف الكلمات الصلصالية تنضغط إلى 0.85 على المحور الرأسي عند كل ضربة وتتعافى خلال ثلاثة إطارات محجوزة؛ الكلمات لا تتلاشى أبدًا بل تُوضع أو تُرفع.
-- اللون: ألوان أولية مشبعة على لوحة سماء مرسومة، طبقة ملمس بصمات بشفافية 12 بالمئة، وإضاءة رئيسية ناعمة من أعلى اليسار مدموجة في التظليل.
-- الانتقالات قطعات استبدال ومسح تغيير مشهد فقط؛ ممنوع: ضبابية الحركة، التوهّج، التدرّجات التي توحي بثلاثي أبعاد ناعم، وأي تلاشٍ متقاطع.
+- ثماني لقطات بطول نحو 7.5 ثانية لكل منها تتصل بقطعات حادة على الموسيقى؛ لا انتقالات ولا عناوين بعد البطاقة الافتتاحية.
+- المظهر صلصال يدوي: بصمات أصابع ظاهرة ولمعان ناعم، غيوم قطنية، ديكورات كرتون مضلع وأشكال غير كاملة قليلاً.
+- داخل كل لقطة الكاميرا ثابتة أو تتقدم ببطء؛ الحركة من فم المغني وإيماءاته والأشياء التي تطير في أقواس.
+- حافظ على شخصية ثابتة: بدلة رمادية، قميص أبيض، شعر رمادي وعينان واسعتان؛ وهو في وسط كل لقطة.
+- اللوحة: أزرق سماوي #3aa3d8، أصفر خردلي #d9bd23، وردي باهت #b66176، أحمر المسرح #e23a2a وإضاءات بيضاء #fdfffc.
+- النص يظهر مرة واحدة فقط: عنوان أصفر ثلاثي الأبعاد ممتلئ بحد أحمر في اللقطة الأولى.
+- حركة الشفاه تتبع جمل الغناء في أغنية المستخدم عند إعادة إنتاج الأسلوب.
 
 ## Motion rules
-- Timeline runs at 24 fps but every puppet element updates only on held frames: use Math.floor(frame / 2) for twos and Math.floor(frame / 3) for threes; smooth per-frame tweening on puppets is banned.
-- Each held frame gets a deterministic jitter of plus or minus 1.5 px and plus or minus 0.6 degrees from seeded noise so the set breathes like real stop-motion.
-- Puppet motion uses linear steps with no easing; easing is reserved for the camera, which performs one 6 percent dolly-in per chorus over its full length.
-- Beat grid: pick a tempo near 110 BPM (545 ms per beat) and derive every hit, mouth swap and set change from it; nothing moves on an off-grid time.
-- Lyric clay letters squash to 0.85 y-scale on each beat hit and recover over three held frames; words never fade, they are placed or removed.
-- Colour: saturated primaries on a painted sky board, a fingerprint texture overlay at 12 percent opacity, and a soft top-left key light baked into shading.
-- Transitions are replacement cuts and set-change wipes only; banned: motion blur, glow, gradients that imply smooth 3D, and any cross-dissolve.
+- Eight shots of about 7.5 s each, joined by hard cuts on the music; no transitions or titles after the opening card.
+- The look is handmade clay: visible fingerprints and soft specular highlights, cotton clouds, corrugated cardboard sets, slightly imperfect shapes.
+- Within each shot the camera is static or pushes in slowly; motion comes from the singer's mouth and gestures and props flying arcs.
+- Keep one consistent character: grey suit, white shirt, grey hair, wide eyes; he is centred in every shot.
+- Palette: sky blue #3aa3d8, mustard yellow #d9bd23, dusty pink #b66176, stage red #e23a2a and off-white #fdfffc highlights.
+- Typography appears only once: a chunky yellow 3D title with red outline in the first shot.
+- Lip movement should follow the vocal phrases of the user's song when reproducing the style.
 
 ## Facts stated by the source (rewritten in our words)
 - The requested length is sixty seconds.
@@ -59,7 +63,7 @@ The subject is a music video that channels the hand-made stop-motion spirit of 1
 - The listing tags it as music and lists a 1280x720 frame.
 
 ## Assumptions
-The specific modern objects, the 110 BPM grid, the six-part structure and the metaball technique are proposals; the source fixes only the duration, the clay stop-motion reference and the need for an original 1980s-flavoured song.
+Observed from frames sampled every 5 s: eight even shots of about 7.5 s, the clay character, the sets and props, the single title card and the palette. Assumed: that the footage is AI-generated rather than code-built (it reads as photographic clay renders); a code route would need sculpted 3D or illustrated clay assets, and the 1280x720 reference is read as 16:9.
 
 ## Keywords
-صلصال, تحريك إيقافي, فيديو موسيقي, أغنية أصلية, بوب فني, ثمانينات, stop motion, claymation, metaball, animate on twos, lyric sync, art pop, replacement animation, music video
+claymation, music video, clay character, stop motion look, split screen grid, googly eyes, cardboard set, art pop, صلصال, فيديو موسيقي, شخصية صلصال, شاشة منقسمة, ديكور كرتوني, تحريك إيقافي

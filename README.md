@@ -4,6 +4,22 @@
 **288** styles · **243** PromptsMotion references · **45** KOSIF base styles · **44** original briefs · **17** playbooks · **224** credited creators
 <!-- stats:end -->
 
+## ابدأ من هنا — خريطة المستودع / Start here
+
+مستودع واحد فيه ثلاث طبقات تعمل معًا. اقرأ هذه الخريطة مرة واحدة فتعرف أين كل شيء.
+
+| الطبقة / layer | ما هي / what | من أين تبدأ / start |
+|---|---|---|
+| **المهارة العامة** `.claude/skills/kosif-superpowers/` | تعرّف Claude بقدراته الحقيقية في كل جلسة وبطرق التفكير والإبداع والتحقق، مع كتالوج 4,223 قدرة في 10 مجالات (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها شارة دليل | [SKILL.md](.claude/skills/kosif-superpowers/SKILL.md) ثم [الخريطة الذهنية](.claude/skills/kosif-superpowers/references/capability-map.md) |
+| **أطلس الموشن** `styles/` `playbooks/` `catalog/` | 288 أسلوب موشن جرافيك، لكل منها SKILL.md وSTYLE.json وBRIEF.md، و17 دليل إنتاج | [STYLE_INDEX.md](STYLE_INDEX.md) · [AGENTS.md](AGENTS.md) |
+| **الأدوات** `tools/` `starters/` `templates/` | `kosif.py` (بحث وتجهيز مشروع)، `render_html.cjs` (رندر HTML إلى فيديو)، `verify_video.py` (فحص الناتج)، ومشروعا بداية html-canvas وRemotion | [tools/render_html.md](tools/render_html.md) |
+| **مهارة المونتاج التحريري** `.claude/skills/editorial-film-edit/` | مهارة مستقلة لمونتاج لقطات بأسلوب أرشيفي تحريري مع مراجع متصفح جاهزة | [SKILL.md](.claude/skills/editorial-film-edit/SKILL.md) |
+| **الموقع** `index.html` `web/` | واجهة تصفح الأساليب ومولّد الطلبات، تُنشر على GitHub Pages | https://kosif199022-jpg.github.io/kosif-tool/ |
+
+**لـ Claude:** حين تفتح هذا المستودع، حمّل `.claude/skills/kosif-superpowers/SKILL.md` ونفّذ بروتوكول التشغيل فيه قبل أن تبدأ، ثم اقرأ `AGENTS.md` إن كان الطلب موشن جرافيك. الفحص الكامل: `python3 tools/validate.py` و`python3 -m unittest discover -s tests`.
+**For Claude:** on entering this repo, load the superpowers SKILL.md first and run its power-up protocol; read AGENTS.md for motion work. Everything that was on separate branches is now merged here.
+
+
 **الموقع:** https://kosif199022-jpg.github.io/kosif-tool/ · **الفهرس:** [STYLE_INDEX.md](STYLE_INDEX.md) · **الدلائل:** [playbooks/](playbooks/)
 
 <div dir="rtl">
@@ -17,6 +33,14 @@
 - `styles/<id>/BRIEF.md` — ملف إبداعي أصلي (عربي/إنجليزي): الفكرة، المشاهد المقترحة، قواعد الحركة بالأرقام، التقنية والمدة والصعوبة.
 
 وفوق ذلك: دلائل تنفيذ لكل تصنيف في `playbooks/`، قوالب إنتاج في `templates/`، مشاريع بداية في `starters/`، وأدوات في `tools/`، وموقع ثابت يعمل على GitHub Pages من جذر المستودع.
+
+## مهارة القدرات الخارقة لـ Claude
+
+المجلد [`.claude/skills/kosif-superpowers/`](.claude/skills/kosif-superpowers/SKILL.md) مهارة تعرّف Claude بقدراته الحقيقية في كل جلسة: الأدوات والموصلات، والمكتبات التي يثبّتها بأمر واحد، وطرق التفكير والإبداع والتحقق، وكتالوج من 4,200+ قدرة في 10 مجالات (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها وصفة ودليل.
+
+- **في Claude Code:** تُحمَّل تلقائيًا من هذا المستودع، أو انسخ المجلد إلى `~/.claude/skills/`.
+- **في claude.ai:** `python3 .claude/skills/kosif-superpowers/scripts/package_skill.py` ثم ارفع ملف `.skill` الناتج.
+- **ابدأ بـ:** `python3 .claude/skills/kosif-superpowers/scripts/probe_env.py` ثم `powers.py suggest "<طلبك>"`. الخريطة الذهنية للقدرات: [capability-map.md](.claude/skills/kosif-superpowers/references/capability-map.md).
 
 ## الاستخدام السريع مع Claude Code
 
@@ -36,16 +60,6 @@ node tools/render_html.cjs --in ./my-film/index.html --out ./my-film/preview.png
 node tools/render_html.cjs --in ./my-film/index.html --out ./my-film/film.mp4 --audio voice.mp3
 python3 tools/words_convert.py captions.srt ./my-film/words.json       # ترجمة → توقيتات كلمات
 python3 tools/verify_video.py ./my-film/film.mp4 --aspect 9:16 --fps 30 --duration 20 --audio voice.mp3   # بوابة التسليم
-```
-
-## القوى الخارقة (Superpowers)
-
-مهارة Claude Code في `.claude/skills/kosif-superpowers/`: اثنتا عشرة قوة إنتاجية (رصد المرجع، التحريك، الرندر، الفضاء ثلاثي الأبعاد، الرسم، البيانات، الصوت، النص العربي، الترجمات، التوليد، التنسيق، التصميم) مدعومة بفهرس موثّق من 100 مستودع مفتوح المصدر مع تراخيصه وطريقة استدعائه، وأمر `doctor` يبيّن ما هو مثبّت، وسكربت يجلب المرجع المسموح ويقيسه (المدة، القطعات، الألوان).
-
-```bash
-python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor          # ما المتوفر على هذا الجهاز
-python3 .claude/skills/kosif-superpowers/scripts/superpowers.py search مزامنة   # ابحث عن أداة بالعربية أو الإنجليزية
-python3 .claude/skills/kosif-superpowers/scripts/fetch_reference.py <رابط>       # اجلب المرجع المسموح وقِسه
 ```
 
 ## صيانة الفهرس
@@ -75,7 +89,7 @@ A Claude-readable atlas of motion-graphics styles with a static website, origina
 | `starters/remotion/` | Minimal Remotion v4 project (title reveal, SVG chart, logo card, word-level captions). |
 | `tools/` | `kosif.py` CLI, `render_html.cjs` (Playwright + ffmpeg), `words_convert.py` (SRT/VTT/Whisper → words.json), `verify_video.py` (delivery gate with loudness), `sync_catalog.py`, `import_briefs.py`, `build.py`, `validate.py`, `check_originality.py`. |
 | `tests/` | Python `unittest` and Node `node:test` suites run by CI. |
-| `.claude/skills/kosif-superpowers/` | Claude Code skill: twelve production superpowers (observe, animate, render, space, draw, data, voice, arabic, captions, generate, orchestrate, design) backed by a credited catalog of 100 major open-source repositories, a tool `doctor`, and a permitted-reference fetcher that measures duration, cuts and palette. |
+| `.claude/skills/kosif-superpowers/` | Claude Code skill: a searchable catalog of 4,200+ powers in 10 domains with evidence badges and proofs, executable motion tools, a credited 100-repository tool map, a permissioned reference inspector and font matching. |
 | `fonts/kosif-jumuah/` | KOSIF Jumuah, an OFL type family matched to the Friday-greeting reference (Amiri Arabic with stacked ligatures + Bodoni Moda figures), with the reproducible build script, a seek-driven demo and the match report. |
 
 ### Quick start
@@ -87,10 +101,6 @@ python3 tools/kosif.py scaffold pm-ror-fly-9950f1 ./negroni --starter html-canva
 node tools/render_html.cjs --in ./negroni/index.html --out ./negroni/film.mp4 --fps 30
 ```
 
-### Superpowers skill
-
-`.claude/skills/kosif-superpowers/` is a Claude Code skill that extends every playbook step with vetted open-source capabilities: a catalog of 100 major repositories (`repos.json` → `references/repos.md`, each with license, stars, invocation and the playbooks it strengthens), recipes per superpower (`references/capabilities.md`), `scripts/superpowers.py doctor` to report which tools are installed, and `scripts/fetch_reference.py` to fetch a permitted reference video into the git-ignored `.kosif-cache/` and measure it (probe, contact sheet, scene cuts, palette) for STYLE.md. Nothing third-party is vendored; the catalog links and credits.
-
 ### Website
 
 The site is plain static files at the repository root and needs no build step. `.github/workflows/pages.yml` deploys it with GitHub Actions on every push to `main`; alternatively set Pages to "Deploy from a branch" (main, `/`), both work. `.github/workflows/sync.yml` opens a weekly pull request when the source library changes, and `ci.yml` validates the catalog, derived files and tests.
@@ -98,7 +108,7 @@ The site is plain static files at the repository root and needs no build step. `
 ## Attribution and source policy
 
 - Third-party video, posters, prompts, voice and music are never rehosted. Links point to the owners' pages; creators are credited on every entry.
-- `SKILL.md`, `BRIEF.md` and the playbooks are original KOSIF writing. Briefs are derived from an entry's title, categories and public description and were written without watching the videos; `tools/check_originality.py` guards against reused wording.
+- `SKILL.md`, `BRIEF.md` and the playbooks are original KOSIF writing. Briefs are derived from an entry's title, categories and public description and were written without watching the videos, except those whose note says they were revised against frames sampled from the reference video; `tools/check_originality.py` guards against reused wording.
 - An externally linked example is not a claim that the exact animation has been coded or validated here.
 - Source terms: https://www.promptsmotion.com/terms · Contact for removals: see the source site.
 

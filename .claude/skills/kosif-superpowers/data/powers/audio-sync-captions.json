@@ -1,0 +1,1480 @@
+[
+ {
+  "id": "SYNC-01",
+  "family": "audio-sync-captions",
+  "name_ar": "الصوت هو الساعة الرئيسية",
+  "name_en": "Audio is the master clock",
+  "status": "proven",
+  "what": "صوت المستخدم لا يُعاد أخذ عيناته ولا يُمط ولا يُعاد توقيته؛ الصورة تتبع الصوت ومدة الفيلم = مدة الصوت مقربة لإطار. / The user's audio is never resampled, stretched or retimed; picture follows sound and film length = audio length rounded to frames.",
+  "how": "durationInFrames = ceil(audioSeconds × fps) from ffprobe -v error -show_entries format=duration -of csv=p=0 voice.mp3. Mux with node tools/render_html.cjs --audio voice.wav (apad/-shortest; the stream is copied, not re-timed) or Remotion <Audio> at frame 0 with calculateMetadata/getAudioDurationInSeconds. Loudness changes go on a separate delivery copy only. Proven in both proof films: audio 11.500 s vs master 11.500 s, 13/13 checks.",
+  "params": "duration = ceil(sec × fps)",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/audio-sync.md:15-16",
+   "kosif-tool/tools/render_html.cjs:373",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md",
+   "kosif-tool/starters/remotion/src/Film.tsx:32"
+  ],
+  "styles": [],
+  "tags": [
+   "الصوت ساعة",
+   "master clock",
+   "untouched audio",
+   "duration",
+   "ffprobe"
+  ]
+ },
+ {
+  "id": "SYNC-02",
+  "family": "audio-sync-captions",
+  "name_ar": "ملف توقيت الكلمات kosif-words/1",
+  "name_en": "words.json master timing schema",
+  "status": "proven",
+  "what": "ملف واحد [{word,start,end}] بالثواني، مرتب بلا تداخل، مع emphasis وscene اختياريين واللغة والاتجاه ومدة الصوت. / One sorted, non-overlapping [{word,start,end}] file in seconds, with optional emphasis/scene plus language, direction and audio duration.",
+  "how": "Scaffold copies templates/words.example.json to words.json; for file:// pages emit words.js (window.KOSIF_WORDS) with tools/words_convert.py words.json words.js. Both proof films are driven from words.json/words.js.",
+  "params": "fields word/start/end (+emphasis, scene); seconds, ms precision",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/templates/words.example.json",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/words.json",
+   "kosif-tool/starters/html-canvas/words.js"
+  ],
+  "styles": [],
+  "tags": [
+   "words.json",
+   "توقيت الكلمات",
+   "timing file",
+   "KOSIF_WORDS"
+  ]
+ },
+ {
+  "id": "SYNC-03",
+  "family": "audio-sync-captions",
+  "name_ar": "محوّل الترجمات والتفريغ إلى words.json",
+  "name_en": "Subtitle/transcript → words.json converter",
+  "status": "proven",
+  "what": "يحوّل SRT وVTT وWhisper JSON والقوائم وCSV/TSV إلى توقيت كلمات مرتب غير متداخل، ويزيح الكل بإزاحة ويفرض فجوة دنيا. / Converts SRT, VTT, Whisper JSON, flat lists and CSV/TSV into sorted, non-overlapping word timings, with a global offset and a minimum gap.",
+  "how": "python3 tools/words_convert.py in.srt out.json [--format srt|vtt|json|csv|tsv] [--offset -0.08] [--min-gap 0.02]; SRT/VTT cues spread words by letter count (phrase-level timing only — per-word effects want real word stamps); strips <tags>, {ASS} tags, dashes and ♪; min word 20 ms. Ran here on an Arabic SRT: 6 words, offset −0.05 s applied, then words.js emitted.",
+  "params": "--offset −0.08; --min-gap 0.02; min word 20 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/tools/words_convert.py",
+   "kosif-tool/tools/words_convert.py:122",
+   "kosif-tool/playbooks/audio-sync.md:27"
+  ],
+  "styles": [],
+  "tags": [
+   "تحويل",
+   "srt",
+   "vtt",
+   "words_convert",
+   "offset"
+  ]
+ },
+ {
+  "id": "SYNC-04",
+  "family": "audio-sync-captions",
+  "name_ar": "حدود تسامح التزامن",
+  "name_en": "Sync tolerances",
+  "status": "proven",
+  "what": "الحركة تبدأ قبل الكلمة بـ 40–80 ms، والكلمة المفتاحية ≤ 100 ms، والباقي ≤ 150 ms، ولا قطع وسط كلمة، ولا حركة قبل أن تُسمع. / Motion starts 40–80 ms before the word; key words ≤ 100 ms, others ≤ 150 ms; never cut mid-word; never animate before it is heard.",
+  "how": "offset_ms = |word.start − motion_frame/fps| × 1000 ≤ 100 for emphasis words; visual lead ≤ 80 ms; pauses > 400 ms end a phrase, > 600 ms allow a scene change, > 1.5 s need ambient motion. Log it in templates/TEST_REPORT.md. Measured in the proof: max |Δ| 33 ms (one frame), 0 early words; the spectrum film filled every word ≤ 35 ms after its start.",
+  "params": "lead 40–80 ms; key ≤ 100 ms; others ≤ 150 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/audio-sync.md:29",
+   "kosif-tool/playbooks/audio-sync.md:34",
+   "kosif-tool/templates/TEST_REPORT.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "تسامح",
+   "tolerance",
+   "sync accuracy",
+   "lead",
+   "100 ms"
+  ]
+ },
+ {
+  "id": "SYNC-05",
+  "family": "audio-sync-captions",
+  "name_ar": "قياس التزامن إطارًا بإطار",
+  "name_en": "Frame-by-frame sync probe",
+  "status": "proven",
+  "what": "يبحث كل إطار في الصفحة ويسجل أول إطار تظهر فيه كل كلمة، ثم يقارنه بزمن نطقها. / Seeks every frame of the page and records when each word first becomes visible, then compares it with its spoken start.",
+  "how": "node proofs/arabic-voice-kinetic/sync_probe.cjs index.html 30 100 → 'SYNC OK words=15 max|delta|=33 ms early=0'. Requires a deterministic window.__kosif.seek(t). Re-run whenever words.json changes.",
+  "params": "fps 30; tolerance 100 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/sync_probe.cjs",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "قياس التزامن",
+   "sync probe",
+   "qa",
+   "word onset"
+  ]
+ },
+ {
+  "id": "SYNC-06",
+  "family": "audio-sync-captions",
+  "name_ar": "التحقق من توقيت جاهز",
+  "name_en": "Pre-timed transcript validation",
+  "status": "ready",
+  "what": "يقبل words.json خارجيًا فقط إذا كان محدودًا ومتصاعدًا، فيعمل الريل بلا Whisper لكن لا بتوقيت مخترع. / Accepts an external words.json only if bounded and monotonic, so reels can run without Whisper but never with invented timing.",
+  "how": "reel --transcript NAME.words.json → transcribe.load_transcript.",
+  "params": "≤ 10 MB; ≤ 20,000 segments; tolerance 0.02 s; end ≤ duration + 0.15 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/transcribe.py:89"
+  ],
+  "styles": [],
+  "tags": [
+   "تحقق",
+   "validation",
+   "words.json",
+   "monotonic"
+  ]
+ },
+ {
+  "id": "SYNC-07",
+  "family": "audio-sync-captions",
+  "name_ar": "تفريغ عربي محلي بتوقيت الكلمات",
+  "name_en": "Local Arabic word-timed transcription (faster-whisper)",
+  "status": "proven",
+  "what": "صوت إلى مقاطع وكلمات بزمن بداية ونهاية واحتمال، دون إنترنت بعد تنزيل النموذج. / Speech → segments and words with start/end/probability, offline once the model is cached.",
+  "how": "python transcribe.py SRC --model large-v3|small|auto --lang ar [--prompt '…'] → words.json + SRT (UTF-8 BOM) + captions.json; 16 kHz mono, CPU int8, beam 5, vad_filter, BatchedInferencePipeline batch 8 (≈ 3–4× faster). Ran here in the proof venv (small): 15/15 words matched the script, but starts were early by a median 135 ms and up to 670 ms after pauses → snap to onsets or prefer a forced aligner; human-voice error measured ~±150 ms (median 103, max 258).",
+  "params": "16 kHz mono; batch 8; error ~±150 ms",
+  "install": "pip install faster-whisper  # models from huggingface.co (reachable): small 466 MB, large-v3 3.1 GB",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/transcribe.py:36",
+   "100-superskills/skills/kosif-montage-motion/scripts/transcribe.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/transcribe.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "تفريغ",
+   "whisper",
+   "faster-whisper",
+   "asr",
+   "word timestamps",
+   "arabic"
+  ]
+ },
+ {
+  "id": "SYNC-08",
+  "family": "audio-sync-captions",
+  "name_ar": "فخ نماذج .en",
+  "name_en": "The .en model trap",
+  "status": "documented",
+  "what": "نماذج Whisper ذات اللاحقة .en تترجم الكلام غير الإنجليزي إلى الإنجليزية بصمت بدل تفريغه. / Whisper models ending in .en silently translate non-English speech into English instead of transcribing it.",
+  "how": "Always pass --model explicitly (the HyperFrames CLI defaults to small.en!) with --language ar. Ladder: tiny 75 MB (pipeline test), base 142 MB, small 466 MB (default), medium 1.5 GB (noisy/music, minimum for lyrics), large-v3 3.1 GB (production), turbo = speed/accuracy sweet spot. Parakeet covers 25 European languages only — Arabic goes through Whisper. Convert to 16 kHz WAV first.",
+  "params": "tiny 75 MB … large-v3 3.1 GB",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/captions.md",
+   "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/transcript-guide.md",
+   "kosif-one/vendor/hyperframes/skills/media-use/audio/references/transcribe.md"
+  ],
+  "styles": [],
+  "tags": [
+   "whisper",
+   "en model",
+   "language ar",
+   "model size",
+   "trap"
+  ]
+ },
+ {
+  "id": "SYNC-09",
+  "family": "audio-sync-captions",
+  "name_ar": "توقيت حقيقي من فونيمات Piper",
+  "name_en": "True word timing from Piper phonemes",
+  "status": "proven",
+  "what": "عند توليد الصوت بـ Piper تعطي مدة كل فونيم توقيت الكلمات الحقيقي بلا تفريغ. / When the voice is synthesised with Piper, phoneme durations give exact word timing without ASR.",
+  "how": "synth_voice.py (length_scale 0.95, 0.30 s between sentences) → align_words.py → words.json; Whisper stamps stay in asr_start for audit. Proof: max |Δ| 33 ms, 0 early. Piper noise is unseeded, so make_voice.sh regenerates voice and words.json together.",
+  "params": "length_scale 0.95; 0.30 s sentence gap",
+  "install": "pip install piper-tts",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/synth_voice.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/align_words.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/make_voice.sh"
+  ],
+  "styles": [],
+  "tags": [
+   "piper",
+   "فونيمات",
+   "phoneme alignment",
+   "tts timing"
+  ]
+ },
+ {
+  "id": "SYNC-10",
+  "family": "audio-sync-captions",
+  "name_ar": "محاذاة النص الصحيح على التفريغ",
+  "name_en": "True-text alignment onto ASR",
+  "status": "proven",
+  "what": "يضع كلمات الأغنية أو القصيدة أو الدعاء الصحيحة (بالتشكيل) على أزمنة كلمات التفريغ. / Puts the real lyrics/poem/dua words (with diacritics) onto recognised word times.",
+  "how": "verse.align(lines, asr) via difflib.SequenceMatcher on normalised words: equal or one-to-one blocks inherit times, uneven replacements share the span by length, missed words spread between timed neighbours; then verse.segment cuts lines before phrase openers, ≤ 7 words, never ending on a particle. Ran here: test_verse_reads_a_text_like_a_lyricist ok and tests.test_directors ok. Basma's bridge variant aligns with an LCS table and rejects matches below 40%.",
+  "params": "fill step ≥ 0.05 s; min word 0.05 s; ≤ 7 words/line",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/verse.py:83",
+   "kosif-studio/tests/test_studio.py:943",
+   "100-superskills/skills/kosif-montage-motion/tests/test_directors.py:42",
+   "app/public/js/00_editor.js:2684"
+  ],
+  "styles": [],
+  "tags": [
+   "محاذاة",
+   "نص صحيح",
+   "forced alignment",
+   "lyrics",
+   "dua",
+   "tashkeel"
+  ]
+ },
+ {
+  "id": "SYNC-11",
+  "family": "audio-sync-captions",
+  "name_ar": "تصحيح الكلمات مع حفظ التوقيت",
+  "name_en": "Transcript fixes that keep timing",
+  "status": "ready",
+  "what": "يستبدل العبارات المسموعة خطأ وينشر الكلمات الصحيحة على المدى الأصلي. / Replaces misheard phrases while spreading the right words over the original span.",
+  "how": "--fix \"ما حدش=محدش;بتعودش ضايع=متقعدش تضيّع\" (direct, verse); merge split clitics and attached punctuation into displayable words; for the Quran use the user's exact text, never the ASR.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/direct.py:205",
+   "kosif-studio/tests/test_studio.py:910",
+   "kosif-tool/playbooks/audio-sync.md:76"
+  ],
+  "styles": [],
+  "tags": [
+   "تصحيح",
+   "لهجة",
+   "transcript fix",
+   "clitics"
+  ]
+ },
+ {
+  "id": "SYNC-12",
+  "family": "audio-sync-captions",
+  "name_ar": "ضبط بداية الكلمة على النطق",
+  "name_en": "Onset snapping of word stamps",
+  "status": "documented",
+  "what": "طوابع النماذج تتأخر أو تتقدم عن بداية النطق المسموع؛ اربط كل كلمة بأقرب بداية صوتية. / Model stamps drift from the audible onset; snap each word to the nearest detected vocal onset.",
+  "how": "Spectral-flux / energy-derivative onset detection near each stamp (±120 ms), keep the original in 'stamp', render one frame per word onset on a sheet to verify. Reported lag 50–80 ms for sung vocals; our Whisper run was early instead (median 135 ms) — measure which way yours drifts before correcting.",
+  "params": "search ±120 ms; lag 50–80 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "بداية النطق",
+   "onset",
+   "snap",
+   "lyrics timing"
+  ]
+ },
+ {
+  "id": "SYNC-13",
+  "family": "audio-sync-captions",
+  "name_ar": "تجهيز الصوت للتفريغ وفخ التوقيت",
+  "name_en": "STT audio prep & its timing trap",
+  "status": "documented",
+  "what": "للتفريغ فقط: مرشح 200 Hz–3 kHz و16 kHz أحادي؛ لكن حذف الصمت أو تسريع الصوت يكسر التوقيت. / For transcription only: 200 Hz–3 kHz band and 16 kHz mono; silence removal or speed-up breaks the timeline.",
+  "how": "ffmpeg -af 'highpass=f=200,lowpass=f=3000' -ar 16000 -ac 1 -c:a pcm_s16le. Silence removal (0.5 s at −30 dB) saves 10–40% of billed minutes and atempo 1.25 another 20%, but never use those outputs for words.json — always transcribe or align against the untouched original.",
+  "params": "16 kHz mono; HPF 200 / LPF 3000",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1845-deepgram-pack/5468-deepgram-cost-tuning/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "تجهيز الصوت",
+   "stt prep",
+   "16 khz",
+   "timing trap"
+  ]
+ },
+ {
+  "id": "SYNC-14",
+  "family": "audio-sync-captions",
+  "name_ar": "تفريغ سحابي مع فصل المتحدثين",
+  "name_en": "Cloud STT with diarisation",
+  "status": "key",
+  "what": "عند الحاجة لأسماء المتحدثين أو سرعة عالية: خدمات تفريغ مستضافة بتوقيت كلمات. / When speaker labels or fast turnaround matter: hosted ASR with word timings.",
+  "how": "Deepgram nova-3 (smart_format, diarize, utterances), ElevenLabs scribe_v1 (diarize + word timestamps), AssemblyAI (speaker labels), Together whisper-large-v3 (80 MB upload / 4 h per request), Gemini verbatim segments of 3–8 words (≤ 18 MB inline). Normalise to [{text,start,end,speaker}] then words_convert. Each needs its own API key.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1845-deepgram-pack/5473-deepgram-hello-world/SKILL.md",
+   "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b",
+   "app/public/js/00_editor.js:1525"
+  ],
+  "styles": [],
+  "tags": [
+   "تفريغ سحابي",
+   "diarization",
+   "deepgram",
+   "elevenlabs",
+   "speakers"
+  ]
+ },
+ {
+  "id": "SYNC-15",
+  "family": "audio-sync-captions",
+  "name_ar": "تفريغ HyperFrames",
+  "name_en": "HyperFrames transcribe CLI",
+  "status": "install",
+  "what": "أمر واحد يفرّغ بـ Parakeet أو whisper.cpp ويخرج SRT/VTT أو كلمات. / One command transcribing via Parakeet or whisper.cpp to SRT/VTT or words.",
+  "how": "npx hyperframes transcribe talk.mp4 --engine whisper --model small --language ar [--to srt|vtt]; also normalises existing .srt/.vtt/openai.json into a word array. Never rely on the default model (small.en).",
+  "params": "",
+  "install": "npx hyperframes transcribe <file> --engine whisper --model small --language ar",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/media-use/scripts/transcribe.mjs",
+   "kosif-one/vendor/hyperframes/skills/media-use/references/operations.md"
+  ],
+  "styles": [],
+  "tags": [
+   "hyperframes",
+   "transcribe",
+   "parakeet",
+   "whisper.cpp"
+  ]
+ },
+ {
+  "id": "SYNC-16",
+  "family": "audio-sync-captions",
+  "name_ar": "كشف الإعادات وتجميع المونتاج من النص",
+  "name_en": "Retake detection & transcript-driven assembly",
+  "status": "documented",
+  "what": "الإعادات = مقاطع تبدأ بنفس الحروف العشرة خلال 60 ث، ويُحتفظ بالأخيرة؛ ثم يُبنى المونتاج من جدول نبضات بالنص. / Retakes = segments with the same first 10 characters within 60 s, keeping the last; then the edit is assembled from a transcript beat sheet.",
+  "how": "Inventory clips → beat sheet (beat | message | voice range | screen | length) for approval → assemble in beat order with a chapter marker per beat; keep an 'unused sentences' list; the first beat poses the question within 10 s. Never pick a non-default take without asking. Record narration at 48 kHz, ~1 s between sentences, clap once for multi-camera sync.",
+  "params": "prefix 10 chars; window 60 s; hook ≤ 10 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/1096-akbun-editvideo/2451-davinciresolve-beats-devtalk/SKILL.md",
+   "kosif-atlas/skills/1096-akbun-editvideo/2447-akbun-vlog-shootplan/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "إعادات",
+   "retakes",
+   "beat sheet",
+   "transcript edit"
+  ]
+ },
+ {
+  "id": "SYNC-17",
+  "family": "audio-sync-captions",
+  "name_ar": "توزيع النص على مقاطع الصوت",
+  "name_en": "Text over voiced spans (estimated)",
+  "status": "ready",
+  "what": "بلا تفريغ: يضع النص على الأجزاء المسموعة بالترتيب وحسب طول الكلمة، ويسمّي النتيجة تقديرًا. / Without ASR, lays the text over the voiced stretches in order and by word length, and labels it estimated.",
+  "how": "verse.voiced_spans + estimate: 50 ms frames, threshold max(−45 dB, p20+6 dB), merge gaps < 0.35 s, spans > 0.15 s. Browser variants: Basma syncToSpeech (new segment after 5 words or a > 0.3 s gap) and region detection (thr max(0.008, 0.22·p90), merge 0.28 s, min 0.18 s). Voice2Motion marks such timing estimated_from_text_length_NOT_ASR.",
+  "params": "frames 50 ms; merge < 0.35 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/verse.py:121",
+   "kosif-studio/motion/verse.py:145",
+   "app/public/js/00_editor.js:1096"
+  ],
+  "styles": [],
+  "tags": [
+   "تقدير",
+   "voiced spans",
+   "no asr",
+   "estimate"
+  ]
+ },
+ {
+  "id": "SYNC-18",
+  "family": "audio-sync-captions",
+  "name_ar": "توقيت الكلمات حسب الطول",
+  "name_en": "Word timing by length",
+  "status": "proven",
+  "what": "إذا كان للسطر زمن بلا أزمنة كلمات، يُقسم بين كلماته حسب عدد الحروف زائد ثابت. / When a caption line has no word times, its span is shared among words by letter count plus a constant.",
+  "how": "montage.word_times with weight = len(word) + 2. Covered by test_montage_cuts_on_the_beat_and_captions_shape_arabic (ran here, ok).",
+  "params": "weight = len + 2",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/montage.py:341",
+   "kosif-studio/tests/test_studio.py:765"
+  ],
+  "styles": [],
+  "tags": [
+   "توزيع",
+   "word timing",
+   "by length",
+   "srt"
+  ]
+ },
+ {
+  "id": "SYNC-19",
+  "family": "audio-sync-captions",
+  "name_ar": "ميزانية الكلمات حسب الزمن",
+  "name_en": "Narration word budgets",
+  "status": "documented",
+  "what": "حوّل المدة إلى عدد كلمات قبل كتابة التعليق كي لا تزدحم المشاهد. / Turn duration into a word budget before writing narration so scenes are not over-stuffed.",
+  "how": "~150 words/min long-form; short-form 80–150 words for 20–45 s; per scene: 3–4 s → 8–12 words, 5–6 s → 15–22, 7–8 s → 22–30. Generated talking segments: words/2 s (≈ 2 wps), minimum 4 s, split above 15 s at a sentence. For Arabic measure the real TTS duration and retime from words.json rather than trusting counts; or generate TTS per sentence and set each scene to its clip length.",
+  "params": "150 wpm; ≈ 2 words/s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/166-demo-video/535-demo-video/references/scene-design-system.md",
+   "kosif-atlas/skills/259-quickdesign/865-quickdesign",
+   "style:pm-linearuncle-5d2bae"
+  ],
+  "styles": [
+   "pm-linearuncle-5d2bae"
+  ],
+  "tags": [
+   "ميزانية الكلمات",
+   "word budget",
+   "pacing",
+   "script length"
+  ]
+ },
+ {
+  "id": "SYNC-20",
+  "family": "audio-sync-captions",
+  "name_ar": "سكريبت بتوقيت مكتوب",
+  "name_en": "Timestamped script parser",
+  "status": "proven",
+  "what": "يقبل أسطرًا مثل «0–3s: نص» ويوزع الكلمات على مقاطع 8/10 ث حسب البداية، ويرفض التوقيت الناقص أو المتداخل. / Accepts lines like '0–3s: text' and assigns words to 8/10 s clips by start time; rejects partial or overlapping stamps.",
+  "how": "parseTimestamps regex ^(\\d+(\\.\\d+)?)\\s*[–—-]\\s*(\\d+(\\.\\d+)?)s?\\s*:\\s*(.+)$; clip index floor(start/len). Ran here: node --test tests/production-profiles.test.mjs → pass 10, fail 0.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:67-77",
+   "fastify-motion-bro/tests/production-profiles.test.mjs:75-81"
+  ],
+  "styles": [],
+  "tags": [
+   "سكريبت",
+   "timestamps",
+   "parser",
+   "script timing"
+  ]
+ },
+ {
+  "id": "SYNC-21",
+  "family": "audio-sync-captions",
+  "name_ar": "تجميع الكلمات حسب الطاقة",
+  "name_en": "Word grouping by energy",
+  "status": "documented",
+  "what": "طاقة عالية 2–3 كلمات، حوار 3–5، هدوء 4–6؛ والانقسام عند نهاية الجملة أو وقفة ≥ 150 ms. / High energy 2–3 words, conversational 3–5, calm 4–6; break on sentence ends or pauses ≥ 150 ms.",
+  "how": "Pages of ~1200 ms (Remotion createTikTokStyleCaptions combineTokensWithinMilliseconds 1200); one group visible at a time; Claude splits 2–5 words at natural pauses without separating prepositions and stars one word per line. Arabic: ≤ 6 words per screen in reels.",
+  "params": "2–3 / 3–5 / 4–6 words; pause 150 ms; page 1200 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/captions.md",
+   "kosif-atlas/skills/2712-remotion/10431-remotion-captions/display-captions.md",
+   "app/public/js/00_editor.js:1510"
+  ],
+  "styles": [],
+  "tags": [
+   "تجميع",
+   "grouping",
+   "caption pages",
+   "words per line"
+  ]
+ },
+ {
+  "id": "SYNC-22",
+  "family": "audio-sync-captions",
+  "name_ar": "موضع آمن وضمان الاختفاء",
+  "name_en": "Safe placement & exit guarantee",
+  "status": "documented",
+  "what": "الترجمة في المنطقة الآمنة، لا تغطي الوجوه، ومجموعة واحدة ظاهرة، وكل مجموعة تُخفى قسرًا عند نهايتها. / Captions sit in safe zones, never over faces, one group at a time, each force-hidden at its end.",
+  "how": "16:9: 80–120 px from the bottom; 9:16: ~600–700 px from the bottom (keep ≥ 280 px clear of platform UI); full-width absolute container, overflow visible; exit tween 0.12 s then set opacity 0 + visibility hidden at group end; self-lint by seeking end + 0.01 s. fitTextFontSize maxWidth 1600/900, base 78, min 42, step 2. Basma 'auto' places captions in the third farthest from the tracked subject.",
+  "params": "16:9 bottom 80–120 px; 9:16 ~600–700 px; exit 0.12 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/captions.md",
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md",
+   "app/public/js/00_editor.js:2906"
+  ],
+  "styles": [],
+  "tags": [
+   "منطقة آمنة",
+   "safe zone",
+   "placement",
+   "exit",
+   "faces"
+  ]
+ },
+ {
+  "id": "SYNC-23",
+  "family": "audio-sync-captions",
+  "name_ar": "ستايل الترجمة حسب نبرة الكلام",
+  "name_en": "Caption style by tone",
+  "status": "documented",
+  "what": "اقرأ النص، حدد النبرة، ثم اختر الوزن والدخول واللون والحجم. / Read the transcript, detect tone, then pick weight, entrance, colour and size.",
+  "how": "Hype: 800–900 weight, scale-pop back.out(1.7) 0.1–0.2 s, 72–96 px. Corporate: 600–700, fade+slide power3.out 0.3 s, 56–72 px. Tutorial: mono 500–600, typewriter 0.4–0.5 s, 48–64 px. Story: serif 400–500, slow fade 0.5–0.6 s, 44–56 px. Social: rounded 700–800, elastic word-by-word, 56–80 px. Entry tones (stagger/hold): documentary 150/600 ms, conversational 80/400, energetic 50/300 pop, poetic 250/1200 etch. Soft = fade + 8 px drift; present = 6 px + 1.04 pop.",
+  "params": "44–96 px by tone",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/captions.md",
+   "kosif-one/vendor/hyperframes/skills/embedded-captions/references/motion-vocabulary.md",
+   "kosif-one/vendor/hyperframes/skills/embedded-captions/references/typography-presets.md"
+  ],
+  "styles": [],
+  "tags": [
+   "نبرة",
+   "tone",
+   "caption style",
+   "hype",
+   "documentary"
+  ]
+ },
+ {
+  "id": "SYNC-24",
+  "family": "audio-sync-captions",
+  "name_ar": "وضوح الترجمة العربية",
+  "name_en": "Arabic caption legibility",
+  "status": "documented",
+  "what": "الكلمة المنطوقة بلون مميز والباقي أبيض، حد أسود سميك وظل عميق، 5–7 كلمات، تباين ≥ 4.5:1. / Spoken word in a highlight colour, rest white; thick black outline and deep shadow; 5–7 words; contrast ≥ 4.5:1.",
+  "how": "Highlight #FFDE59 or #38BDF8; outline 6–8 px; Cairo, Noto Sans/Kufi/Naskh Arabic, Almarai; subtitles ≤ 42 chars/line, 1–2 lines, 1–7 s each. When there is no stroke, sample the caption band every 6th frame and add a dark/light plate only as strong as needed for 4.5:1 (max alpha 0.75). Bilingual block: Arabic on top RTL, English below LTR at 70% size, each with its own dir.",
+  "params": "≤ 42 chars; 1–7 s; ≥ 4.5:1",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md",
+   "app/public/js/00_editor.js:3007",
+   "kosif-tool/playbooks/arabic-typography.md:46"
+  ],
+  "styles": [],
+  "tags": [
+   "وضوح",
+   "تباين",
+   "legibility",
+   "contrast",
+   "bilingual"
+  ]
+ },
+ {
+  "id": "SYNC-25",
+  "family": "audio-sync-captions",
+  "name_ar": "لا تغيّر كلام المتحدث، والحرق عند الطلب",
+  "name_en": "Verbatim words; burn only when asked",
+  "status": "documented",
+  "what": "الترجمة تعيد كلام المتحدث حرفيًا، والترجمة المحروقة فقط عند الطلب وإلا SRT/VTT جانبي. / Captions reproduce the speaker's words exactly; burn only on request, otherwise ship SRT/VTT sidecars.",
+  "how": "Diff caption text vs words.json in QA. Default deliverables: .srt + .vtt; soft track inside MP4: -c:s mov_text -metadata:s:s:0 language=ara (ran here: stream tagged 'ara'). Accessibility package: speech + [sound] cues, audio-description notes for visual-only beats.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md",
+   "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md",
+   "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
+  ],
+  "styles": [],
+  "tags": [
+   "حرفي",
+   "verbatim",
+   "srt",
+   "sidecar",
+   "accessibility",
+   "mov_text"
+  ]
+ },
+ {
+  "id": "SYNC-26",
+  "family": "audio-sync-captions",
+  "name_ar": "إبراز تلقائي للكلمات المهمة",
+  "name_en": "Automatic emphasis words",
+  "status": "ready",
+  "what": "الأرقام والأسماء والكلمات العاطفية تُبرز، وفي السطر بلا إبراز تُختار الكلمة عند أعلى قمة صوت. / Numbers, brands and emotional words get emphasis; in lines without one, the word at the loudest local peak is starred.",
+  "how": "autoEm wraps any word with a digit in *…*; loudPeaks: 0.25 s smoothed dB envelope, local maxima ≥ 4 dB above the median within ±3 s, ≥ 1.2 s apart, 3–12 per clip; the starred word gets accent + bigger scale + overshoot. Karaoke intensity ladder: high energy = accent + glow + 15% pop; low = warm white + 3%.",
+  "params": "≥ 4 dB over median; spacing 1.2 s; pop 15% / 3%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "app/public/js/00_editor.js:1875",
+   "app/public/js/00_editor.js:3032",
+   "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/dynamic-techniques.md"
+  ],
+  "styles": [],
+  "tags": [
+   "إبراز",
+   "emphasis",
+   "keyword",
+   "loudness peak",
+   "numbers"
+  ]
+ },
+ {
+  "id": "SYNC-27",
+  "family": "audio-sync-captions",
+  "name_ar": "كاريوكي ASS عربي بحدث لكل كلمة",
+  "name_en": "Arabic ASS karaoke, one event per word",
+  "status": "proven",
+  "what": "ترجمة محروقة يتلون فيها المنطوق وينبض، بحدث ASS لكل كلمة فيبقى التشكيل والترتيب سليمين. / Burned captions where the spoken word changes colour and pops, one ASS event per word so shaping and order stay intact.",
+  "how": "python montage.py captions VIDEO --spec caps.json --style reels|cinema|punchy|tiktok|hormozi|boxed|minimal (also inside cut/voicecut/reel). One Dialogue per word: {\\1c<hi>\\fscx112\\fscy112\\t(0,120,\\fscx100\\fscy100)}word; Encoding −1 (auto paragraph direction), WrapStyle 2, side margins 6% W, ≤ 6 words on screen, sizes scale with the short side; burn ass=caps.ass with fontsdir= (no Arabic system fonts here), crf 17, audio copied. Ran here: test_montage_cuts_on_the_beat_and_captions_shape_arabic ok (see ARAB-62 for the order check).",
+  "params": "pop 112%→100% / 120 ms; ≤ 6 words; Encoding −1",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/montage.py:353",
+   "kosif-studio/motion/montage.py:381",
+   "kosif-studio/tests/test_studio.py:765"
+  ],
+  "styles": [],
+  "tags": [
+   "كاريوكي",
+   "ass",
+   "libass",
+   "burn",
+   "arabic captions",
+   "karaoke"
+  ]
+ },
+ {
+  "id": "SYNC-28",
+  "family": "audio-sync-captions",
+  "name_ar": "سبعة ستايلات ترجمة جاهزة",
+  "name_en": "Seven named caption styles",
+  "status": "proven",
+  "what": "reels وcinema وpunchy وtiktok وhormozi وboxed وminimal بخطوط Noto العربية وألوان وأحجام مضبوطة. / reels, cinema, punchy, tiktok, hormozi, boxed and minimal with Noto Arabic faces, colours and sizes tuned.",
+  "how": "montage.ass(spec, 1080, 1920, style); colours are ASS &HAABBGGRR; sizes per 1080 px of the short side, margins per 1920 of height. Ran here: tests.test_v6 StyleAndRegistryTests.test_caption_styles ok. Table below.",
+  "params": "see the style table",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/montage.py:308",
+   "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:170",
+   "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:13"
+  ],
+  "styles": [],
+  "tags": [
+   "ستايلات",
+   "reels",
+   "tiktok",
+   "hormozi",
+   "cinema",
+   "caption presets"
+  ]
+ },
+ {
+  "id": "SYNC-29",
+  "family": "audio-sync-captions",
+  "name_ar": "صفحات ترجمة + SRT/VTT/ASS",
+  "name_en": "Caption pages → JSON/SRT/VTT/ASS",
+  "status": "proven",
+  "what": "يحوّل كلمات Whisper أو SRT إلى صفحات ~1200 ms ويكتب JSON وSRT وVTT وASS كاريوكي. / Turns Whisper word stamps (or SRT) into ~1200 ms pages and writes JSON, SRT, VTT and ASS karaoke.",
+  "how": "python captions_pages.py words.json --page-ms 1200 --max-chars 42 --rtl --out captions. Ran here: 6 Arabic words → 2 pages, 4 files. Caveat found here: it expects [{text,start,end}] — a KOSIF words.json ({word,…}) raises KeyError 'text'; rename the key first. Its ASS uses \\k per page; for burned Arabic prefer one event per word (SYNC-27).",
+  "params": "42 chars, 2 lines, 1–7 s per page",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/audio-reactive-captions-studio/scripts/captions_pages.py:95",
+   "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"
+  ],
+  "styles": [],
+  "tags": [
+   "صفحات",
+   "srt",
+   "vtt",
+   "ass",
+   "caption pages",
+   "tiktok pages"
+  ]
+ },
+ {
+  "id": "SYNC-30",
+  "family": "audio-sync-captions",
+  "name_ar": "معايرة حجم ASS",
+  "name_en": "ASS PlayRes calibration",
+  "status": "documented",
+  "what": "دقة السكربت الافتراضية في SRT/libass تغيّر الحجم والهامش؛ عاير على إطارات 1080×1920 حقيقية. / libass's default script resolution rescales FontSize and MarginV; calibrate on real 1080×1920 frames.",
+  "how": "Set PlayResX/PlayResY = the frame; preview frames before the full burn; smaller white Arabic with black outline/shadow, bottom safe zone, no opaque box. Quick SRT burn: subtitles=captions.srt:force_style='FontName=Cairo,FontSize=22,Outline=2,MarginV=60' (sizes relative to the 384×288 default).",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/references/voice-open-footage-upgrade-2026-10-10.md",
+   "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
+  ],
+  "styles": [],
+  "tags": [
+   "playres",
+   "ass",
+   "calibration",
+   "font size"
+  ]
+ },
+ {
+  "id": "SYNC-31",
+  "family": "audio-sync-captions",
+  "name_ar": "كاريوكي \\k بشرائح متساوية",
+  "name_en": "Even-slice \\k karaoke (omni)",
+  "status": "ready",
+  "what": "ستايلات tiktok/cinema/punchy تقسم الزمن بالتساوي بين الكلمات — شكل كاريوكي لا تزامن حقيقي. / tiktok/cinema/punchy styles split time evenly between words — a karaoke look, not true sync.",
+  "how": "python scripts/smart_montage.py captions video.mp4 --spec captions.json --style tiktok (Cairo 68, outline 6, MarginV 280); \\k per word = max(10 cs, duration/len(words)). Feed words.json times for real sync; label even-split timing as estimated.",
+  "params": "\\k ≥ 10 cs",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/smart_montage.py:91"
+  ],
+  "styles": [],
+  "tags": [
+   "k karaoke",
+   "even split",
+   "omni",
+   "estimated timing"
+  ]
+ },
+ {
+  "id": "SYNC-32",
+  "family": "audio-sync-captions",
+  "name_ar": "دخول الكلمة على بداية نطقها",
+  "name_en": "Word enters on its spoken start",
+  "status": "proven",
+  "what": "كل كلمة تُكشف بقناع ناعم من اليمين مع صعود نابض وضباب يتلاشى، فتظهر في أول إطار بعد بداية نطقها. / Each word reveals through a soft right-to-left mask with a spring rise and de-blur, visible on the first frame at or after its start.",
+  "how": "Per word from words.json: mask wipe 0.42 s RTL over the whole word (never letters), spring rise 34 px (k = 180, c = 19), blur 9 → 0 px, opacity floor 12% so it shows on its first frame; key words turn gold #ffc56e with 28/70 px glow and an inOutCubic underline over the spoken length; finished sentences dim to 30% (keys 78%). Proof film: max |Δ| 33 ms, 0 early.",
+  "params": "mask 0.42 s; rise 34 px; spring 180/19",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/index.html",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "دخول الكلمة",
+   "word reveal",
+   "mask wipe",
+   "kinetic captions",
+   "rtl"
+  ]
+ },
+ {
+  "id": "SYNC-33",
+  "family": "audio-sync-captions",
+  "name_ar": "تعبئة كاريوكي من اليمين بقناع كامل الكلمة",
+  "name_en": "RTL karaoke fill with whole-word clip-path",
+  "status": "proven",
+  "what": "كل كلمة تمتلئ بالذهبي من اليمين إلى اليسار عبر clip-path يغطي الكلمة كلها فلا تنفصل الحروف. / Each word fills gold right-to-left through a whole-word clip-path so joined letters never split.",
+  "how": "Cairo 800 at 60 px; clip-path inset animates across the word's spoken duration; the old line leaves 0.02 s after its last word and the next arrives 0.2 s before its first word, so two lines never overlap. Measured: every fill starts ≤ 35 ms after the spoken start. Caveat: the reveal edge may pass mid-word (letters stay joined).",
+  "params": "line out +0.02 s; next in −0.2 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/audio-reactive-spectrum/index.html",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/audio-reactive-spectrum/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "كاريوكي",
+   "تعبئة",
+   "clip-path",
+   "rtl karaoke",
+   "fill"
+  ]
+ },
+ {
+  "id": "SYNC-34",
+  "family": "audio-sync-captions",
+  "name_ar": "كاريوكي الكبسولة في starter الكانفس",
+  "name_en": "Canvas karaoke pill (html-canvas starter)",
+  "status": "proven",
+  "what": "الجملة كاملة ظاهرة، والكلمة الحالية كبسولة فيروزية بنص داكن تنبض، والمنطوق أبيض والقادم باهت. / The whole phrase shows; the current word becomes a teal pill with dark text and a pop, past words white, future muted.",
+  "how": "phrases(words, 0.45) splits at pauses > 0.45 s; show from start − 0.15 to end + 0.5 with a 0.15/0.3 fade window; pop outBack 0.96 → 1.08 over 140 ms. Rendered in the scaffolded starter through render_html.cjs.",
+  "params": "64 px 700; pill r 22 pad 6×18; on #7ee8d2 text #0b1020; done #f3f7ff; upcoming #9fb0cc; bottom 210 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/starters/html-canvas/index.html:181",
+   "kosif-tool/starters/html-canvas/timeline.js:82"
+  ],
+  "styles": [],
+  "tags": [
+   "كبسولة",
+   "karaoke pill",
+   "canvas",
+   "starter"
+  ]
+ },
+ {
+  "id": "SYNC-35",
+  "family": "audio-sync-captions",
+  "name_ar": "ترجمة Remotion بالكلمة مع كشف الاتجاه",
+  "name_en": "Remotion word captions with bidi detection",
+  "status": "install",
+  "what": "يحمّل words.json ويجمعها في بطاقات (≤ 4 كلمات أو صمت > 0.6 ث)، يظهرها مبكرًا 0.15 ث، والكلمة النشطة تنبض 1.1×؛ الاتجاه من أول حرف قوي. / Loads words.json, groups cards (≤ 4 words or > 0.6 s silence), shows them 0.15 s early, springs the active word to 1.1×; direction from the first strong character.",
+  "how": "<Captions accent lang file maxWordsPerLine={4} gapSeconds={0.6} holdSeconds={0.35} leadSeconds={0.15}/>; spring damping 12, stiffness 220, mass .7; upcoming words 42% opacity. TikTok pages alternative: @remotion/captions createTikTokStyleCaptions (1200 ms) with the active token #39E508. SyncedLine: whole words spring in at start − 0.06 s.",
+  "params": "58 px 700 on rgba(8,10,16,.66) r 30; bottom 260 px",
+  "install": "cd kosif-tool/starters/remotion && npm install",
+  "license": "Remotion برخصة الشركة؛ @remotion/captions نفسها MIT / Remotion company license; @remotion/captions itself is MIT.",
+  "proof": [
+   "kosif-tool/starters/remotion/src/Captions.tsx:135",
+   "kosif-tool/starters/remotion/src/Captions.tsx:39",
+   "kosif-tool/playbooks/kinetic-type.md:57-75"
+  ],
+  "styles": [],
+  "tags": [
+   "ريموشن",
+   "remotion captions",
+   "bidi",
+   "tiktok pages"
+  ]
+ },
+ {
+  "id": "SYNC-36",
+  "family": "audio-sync-captions",
+  "name_ar": "كلمات على مقاطعها مع كلمات ذهبية",
+  "name_en": "Syllable-timed speech captions with gold keywords",
+  "status": "ready",
+  "what": "كل كلمة تصعد من ضبابية على زمنها، والكلمات المفتاحية بلون التمييز، والعبارة تخرج للأعلى قبل التالية. / Each word rises from blur on its own time, keywords in the accent colour, and the phrase exits upward before the next.",
+  "how": "speech(el, [[word, t], …], accentWords): each word in a .wm clip-path mask; fromTo y 18 → 0, blur 6 → 0, 0.28 s power3.out at t − 0.04; exit opacity 0, y −14 in 0.22 s power3.in. Hand-corrected variant: phrases with <b>keyword</b> in gold #f5c97a, yPercent 105 → 0 in 0.32 s, out at next start − 0.16 s.",
+  "params": "rise 18 px, blur 6 px, 0.28 s, lead 0.04 s; accent #E7B65A",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:171",
+   "100-superskills/skills/kosif-montage-motion/templates/directed.html:73",
+   "kosif-one/projects/whatsapp-motion/projects/success/index.html:156-205"
+  ],
+  "styles": [],
+  "tags": [
+   "مقاطع",
+   "syllable",
+   "speech captions",
+   "gold keyword",
+   "mask"
+  ]
+ },
+ {
+  "id": "SYNC-37",
+  "family": "audio-sync-captions",
+  "name_ar": "سطر شبحي يضيء كلمة بكلمة",
+  "name_en": "Ghost-to-lit line",
+  "status": "seen",
+  "what": "السطر كاملًا بشفافية 25% أو رمادي، وكل كلمة ترتفع إلى 100% أو تبيضّ عند زمنها. / The whole line at 25% opacity (or grey); each word lifts to 100% (or white) at its time.",
+  "how": "Grey #555 → white (emphasis orange #f27525) with a 120 ms fade; or 25% → 100% in 150–200 ms; ≤ 2 lines; never split letters. Peach rounded highlight box on the target word (80 ms colour transition, padding 2×6 px) for language-learning looks.",
+  "params": "fade 120–200 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:plotter",
+   "style:doodle",
+   "style:pm-1stnoel-c20a89"
+  ],
+  "styles": [
+   "plotter",
+   "doodle",
+   "pm-1stnoel-c20a89"
+  ],
+  "tags": [
+   "شبحي",
+   "ghost caption",
+   "lit words",
+   "whiteboard"
+  ]
+ },
+ {
+  "id": "SYNC-38",
+  "family": "audio-sync-captions",
+  "name_ar": "صندوق ينتقل للكلمة النشطة",
+  "name_en": "Word-hop highlight box",
+  "status": "seen",
+  "what": "صندوق مستدير بلون العلامة ينزلق إلى الكلمة المنطوقة. / A rounded brand-coloured box slides to the spoken word.",
+  "how": "Box padding 6 px, slide 80 ms from words.json; TikTok-style red box #ff1745 in 0.08–0.16 s (HyperFrames caption-highlight); colour-only variant for calm content.",
+  "params": "slide 80 ms; pad 6 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-gautam-mer1-2ae354",
+   "kosif-one/vendor/hyperframes/registry/components/caption-highlight/caption-highlight.html"
+  ],
+  "styles": [
+   "pm-gautam-mer1-2ae354"
+  ],
+  "tags": [
+   "صندوق",
+   "highlight box",
+   "word hop",
+   "tiktok"
+  ]
+ },
+ {
+  "id": "SYNC-39",
+  "family": "audio-sync-captions",
+  "name_ar": "ترجمة تُكتب لحظة النطق",
+  "name_en": "Voice-timed typewriter captions",
+  "status": "seen",
+  "what": "حروف كل كلمة تُكتب بدءًا من بداية نطقها وموزعة على مدتها، بمؤشر رفيع. / Each word's letters type from its spoken start, spread over its duration, with a thin caret.",
+  "how": "Letters ~30–50 ms each within [start, end]; caret 2 px; omit full stops; box variant: mono lowercase typed 35 ms/char into a solid orange/yellow box with an underscore cursor. For Arabic type by grapheme clusters (Intl.Segmenter), never by code unit.",
+  "params": "30–50 ms/letter",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-rossaxbt-3085b7",
+   "style:pm-gizakdag-b8c59e"
+  ],
+  "styles": [
+   "pm-rossaxbt-3085b7",
+   "pm-gizakdag-b8c59e"
+  ],
+  "tags": [
+   "آلة كاتبة",
+   "typewriter captions",
+   "voice timed"
+  ]
+ },
+ {
+  "id": "SYNC-40",
+  "family": "audio-sync-captions",
+  "name_ar": "عداد كلمة مفتاحية ودائرة على الكلمة",
+  "name_en": "Keyword counter & on-word annotations",
+  "status": "seen",
+  "what": "كل ظهور لكلمة مفتاحية يزيد عدادًا بنبضة، أو دائرة/خط يُرسم لحظة نطقها. / Each occurrence of a keyword bumps a counter with a pop, or a circle/underline draws at its spoken onset.",
+  "how": "Counter chip top-right, pop 1 → 1.25 → 1 in 200 ms at word.start; annotation: interpolate start frame = word.start × fps, draw 12–20 frames, hold to phrase end. Stressed-word variant: 1–3 words at a time, stressed word lime #d4ff3a at 1.4×.",
+  "params": "pop 200 ms; draw 12–20 frames",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:pm-sab8a-364a5a",
+   "kosif-atlas/skills/2712-remotion/10436-remotion-markup/text-highlights.md"
+  ],
+  "styles": [
+   "pm-sab8a-364a5a"
+  ],
+  "tags": [
+   "عداد",
+   "دائرة",
+   "keyword counter",
+   "annotation",
+   "underline"
+  ]
+ },
+ {
+  "id": "SYNC-41",
+  "family": "audio-sync-captions",
+  "name_ar": "مكوّنات ترجمة HyperFrames",
+  "name_en": "HyperFrames caption components",
+  "status": "install",
+  "what": "17 معالجة ترجمة جاهزة (كبسولة كاريوكي، صدمة كلمة، نيون، غليتش، تدرج، خامة، خلف الشخص…) تقبل مصفوفة كلمات. / 17 ready caption treatments (pill karaoke, kinetic slam, neon, glitch, gradient, texture, behind-subject…) that accept a word array.",
+  "how": "15 of 17 keep an inline TRANSCRIPT/WORDS array [{text,start,end}] — replace it with your words.json (keep data-duration = audio length, 30 fps). blend-difference and camera-follow use internal timing. Latin display fonts (Anton, Montserrat, Poppins…) — swap to Arabic faces and test shaping before use. Table below.",
+  "params": "",
+  "install": "npx hyperframes add caption-pill-karaoke",
+  "license": "HyperFrames Apache-2.0؛ تحمّل GSAP (رخصة GSAP القياسية، ليست MIT) وخطوط Google / HyperFrames Apache-2.0; loads GSAP (standard license, not MIT) and Google Fonts.",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/caption-pill-karaoke/caption-pill-karaoke.html:153",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-registry/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "hyperframes",
+   "caption components",
+   "karaoke",
+   "kinetic slam",
+   "neon captions"
+  ]
+ },
+ {
+  "id": "SYNC-42",
+  "family": "audio-sync-captions",
+  "name_ar": "ترجمة مدمجة: شريط وكلمة ذروة خلف المتحدث",
+  "name_en": "Embedded captions: rail + peak word behind the subject",
+  "status": "install",
+  "what": "مقطع متحدث كما هو: شريط حرفي في الأمام، وكلمة ذروة نادرة خلف المتحدث عبر قناع. / An untouched talking clip: a verbatim rail in front and a scarce peak word composited behind the subject via a matte.",
+  "how": "Decision gate → pick ONE of 35 identities (10 DNA + 25 themes; default 'anchor') → hyperframes init → prepare.sh (matte, transcribe, 50 ms audio envelope, safe zones) → theme.json or cinematic.json → preview-frames → render. ≤ 1 hero per thought block, ≥ 0.6 s air between heroes. Themes worth knowing: anchor (calm), stardust (poetic), chalkboard, dossier, neonsign, inkwater. Needs the HyperFrames toolchain + matte model.",
+  "params": "35 identities; hero gap ≥ 0.6 s",
+  "install": "npx hyperframes init && bash scripts/prepare.sh <project>",
+  "license": "HyperFrames Apache-2.0؛ تحمّل GSAP (رخصة GSAP القياسية، ليست MIT) وخطوط Google / HyperFrames Apache-2.0; loads GSAP (standard license, not MIT) and Google Fonts.",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/embedded-captions/SKILL.md",
+   "kosif-one/vendor/hyperframes/skills/embedded-captions/CATALOG.md",
+   "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/make-theme.cjs"
+  ],
+  "styles": [],
+  "tags": [
+   "مدمجة",
+   "embedded captions",
+   "behind subject",
+   "themes",
+   "podcast"
+  ]
+ },
+ {
+  "id": "SYNC-43",
+  "family": "audio-sync-captions",
+  "name_ar": "الأشرطة السفلية",
+  "name_en": "Lower thirds",
+  "status": "install",
+  "what": "13 شريطًا سفليًا جاهزًا للأسماء والألقاب (بطاقة داكنة، كتلة لون، خط جانبي، كبسولة، إطار نيون، شريط أخبار…). / 13 ready name/title lower thirds (dark card, colour block, side rule, pill, neon border, news ticker…).",
+  "how": "npx hyperframes add lt-dark-card (or lt-clean-bar, lt-side-rule, lt-soft-pill, lt-neon-border, news-ticker…), 4.8 s each at 1920×1080. Arabic: mirror the layout (accent bar on the right, text right-aligned) and swap Oswald/Montserrat for Arabic faces. Speaker-coloured subtitles: tiny caps name in the character colour above the line.",
+  "params": "4.8 s",
+  "install": "npx hyperframes add lt-dark-card",
+  "license": "HyperFrames Apache-2.0؛ تحمّل GSAP (رخصة GSAP القياسية، ليست MIT) وخطوط Google / HyperFrames Apache-2.0; loads GSAP (standard license, not MIT) and Google Fonts.",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/lt-dark-card/lt-dark-card.html",
+   "kosif-one/vendor/hyperframes/registry/blocks/news-ticker/news-ticker.html"
+  ],
+  "styles": [],
+  "tags": [
+   "شريط سفلي",
+   "lower third",
+   "name tag",
+   "news ticker"
+  ]
+ },
+ {
+  "id": "SYNC-44",
+  "family": "audio-sync-captions",
+  "name_ar": "ستايلات وحركات ترجمة بصمة",
+  "name_en": "Basma caption presets, animations & highlight modes",
+  "status": "install",
+  "what": "12 حركة لكل كلمة، 5 طرق إبراز، و7+5 ستايلات عربية جاهزة بأحجام نسبية. / 12 per-word animations, 5 highlight modes and 7 + 5 ready Arabic presets with relative sizes.",
+  "how": "Animations: pop, spring, stomp, mask, rise, karaoke, cascade, blur, wave, glitch, fade, slide. Highlights: box, color, underline, glow, none. Presets: ريلز (Noto Sans Arabic 7, chunk 6, #ffde59), سينما, قوي, تيك توك, كلمة واحدة, صندوق, هادئ; AutoEdit: cinema (Reem Kufi), trend (Lalezar, box), karaoke (Changa), neon (Rubik, glow), minimal (IBM Plex Sans Arabic). Sizes 5–14% of the short side; chunk 1–6; stroke 0–12.",
+  "params": "size 5–14% short side; chunk 1–6",
+  "install": "cd app && npm install",
+  "license": "",
+  "proof": [
+   "app/public/js/00_editor.js:347",
+   "app/public/js/00_editor.js:2352",
+   "app/public/js/50_autoedit.js:835"
+  ],
+  "styles": [],
+  "tags": [
+   "بصمة",
+   "basma",
+   "caption presets",
+   "arabic captions"
+  ]
+ },
+ {
+  "id": "SYNC-45",
+  "family": "audio-sync-captions",
+  "name_ar": "فيلم كلمات من صوت (أغنية، شعر، دعاء)",
+  "name_en": "Verse film from sound",
+  "status": "proven",
+  "what": "فيلم تايبوغرافي حركي من أغنية أو قصيدة أو دعاء: الكلمات على أزمنتها، كلمة مفتاحية لكل سطر، ذروة، وضوء يقوده الصوت. / A kinetic-typography film from a song, poem or dua: words on their sung times, one keyword per line, a payoff and light driven by the sound.",
+  "how": "python verse.py AUDIO --name NAME [--text lyrics.txt | --words X.words.json] [--title --mood night|dawn|gold|sea|ink --accent '#E7B65A' --images a.jpg … --music none --fix … --render]; sections at pauses ≥ 3 s, interludes ≥ 4.5 s with a breathing eight-point rosette; line size 124/104/88/74 px for ≤ 14/24/36/more chars; payoff ×1.22 held +2.2 s; words rise 30·k px from blur 9 in 0.42 s; keyword pulse 1.07 yoyo 0.18 s. Ran here: verse tests ok (test_studio + test_directors). Needs faster-whisper unless --words is given.",
+  "params": "moods night/dawn/gold/sea/ink; line ≤ 7 words",
+  "install": "pip install faster-whisper  # models from huggingface.co (reachable): small 466 MB, large-v3 3.1 GB",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/verse.py:246",
+   "kosif-studio/motion/verse.py:394",
+   "100-superskills/skills/kosif-montage-motion/templates/verse.html:62",
+   "kosif-studio/tests/test_studio.py:943"
+  ],
+  "styles": [],
+  "tags": [
+   "فيلم كلمات",
+   "دعاء",
+   "قصيدة",
+   "lyric video",
+   "verse",
+   "poem"
+  ]
+ },
+ {
+  "id": "SYNC-46",
+  "family": "audio-sync-captions",
+  "name_ar": "Voice2Motion: موشن بالمعنى من الصوت",
+  "name_en": "Voice2Motion semantic scenes",
+  "status": "proven",
+  "what": "كل جملة تُصنف (طقس، زحام، دعم، استرداد، عام) وتُرسم كمشهد متحرك خاص بها يتفاعل مع غلاف الصوت، والأرقام من نص الجملة. / Each sentence is classified (weather, traffic, support, refund, generic) and drawn as its own animated scene reacting to the voice envelope, numbers taken from the cue text.",
+  "how": "python audio2motion.py AUDIO --cues cues.json | --transcript t.txt [--out X.mp4 --fps 24 --size 540x960 --plan-only]; envelope 50 Hz from 8 kHz mono; 23 speech-energy bars; caption ease smoothstep 0.37 s; refuses empty transcripts and never claims ASR timing (estimated cues are labelled). Ran here: tests.test_audio2motion 8/8 ok. Owner's run: 29.4 s / 706 frames rendered in 10 s.",
+  "params": "fps 12–60; ≤ 1920×1080; palette cyan (64,222,232), gold (255,196,79)",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/audio2motion.py:80",
+   "kosif-studio/motion/audio2motion.py:210",
+   "kosif-studio/tests/test_audio2motion.py"
+  ],
+  "styles": [],
+  "tags": [
+   "voice2motion",
+   "صوت إلى موشن",
+   "voice note",
+   "semantic scenes",
+   "infographic"
+  ]
+ },
+ {
+  "id": "SYNC-47",
+  "family": "audio-sync-captions",
+  "name_ar": "إخراج تلقائي لمقطع متكلم",
+  "name_en": "Editor-style auto direction of a talking clip",
+  "status": "proven",
+  "what": "من توقيت الكلمات وصناديق الوجه يختار المخطط سطر الذروة، والكلمات المفتاحية بالتركيز الطرفي، وموتيف رقم متكرر، وكلمات الفصول، ومواضع آمنة من الوجه. / From word timings and face boxes the planner picks the payoff line, end-focus keywords, a number-ring motif, chapter words and face-safe placements.",
+  "how": "direct.plan(segs, shots, stress, W, H, dur) → {payoff, keys, motifs, captions, chapters}; never a filler, never the unit after a number; apply_fixes for dialect. kmotion direct CLIP --name … → edit.js → directed.html. Ran here: tests.test_directors ok.",
+  "params": "punch expo.out 0.14 s; caption 54 px; keyword 200 px; chapter 380 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/tests/test_directors.py:10",
+   "kosif-studio/motion/templates/directed.html"
+  ],
+  "styles": [],
+  "tags": [
+   "إخراج تلقائي",
+   "directed edit",
+   "talking clip",
+   "payoff",
+   "keywords"
+  ]
+ },
+ {
+  "id": "SYNC-48",
+  "family": "audio-sync-captions",
+  "name_ar": "الريل التلقائي من الكلام",
+  "name_en": "Automatic talking-clip reel",
+  "status": "ready",
+  "what": "كلمات ← مسح ترجمة ← ترميم 1080×1920 ← صوت ← موسيقى عند الحاجة ← كاريوكي ← −14 LUFS ← بوابة. / words → decaption → restore 1080×1920 → voice → music only if none → karaoke → −14 LUFS → gate.",
+  "how": "python scripts/kmotion.py reel CLIP.mp4 --out FINAL.mp4 [--transcript X.words.json --no-decaption --credit '@x' --model auto --style reels]. Without faster-whisper pass --transcript. See FOOT for the restoration chain.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/reel.py",
+   "kosif-studio/motion/reel.py:92"
+  ],
+  "styles": [],
+  "tags": [
+   "ريل",
+   "reel",
+   "auto captions",
+   "talking clip"
+  ]
+ },
+ {
+  "id": "SYNC-49",
+  "family": "audio-sync-captions",
+  "name_ar": "إيقاع التلاوة والدعاء",
+  "name_en": "Recitation & dua pacing",
+  "status": "documented",
+  "what": "آية أو سطر لكل شاشة، التغيير عند الوقف، انتقالات بطيئة، بلا ارتداد، ونتبع القارئ لا الإيقاع. / One verse/line per screen, change on waqf, slow crossfades, no bouncy effects; follow the reciter, not a beat grid.",
+  "how": "Crossfade 600–900 ms; words reveal through a rising mask (0.65 s, stagger 0.09) and leave upward (0.35 s, stagger 0.03); no music under Quran recitation unless the user asks; reference-matched loudness (e.g. −12.75 LUFS) when mimicking a reel; the user's exact text with tashkeel.",
+  "params": "crossfade 600–900 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/audio-sync.md:51",
+   "kosif-tool/playbooks/music.md:68",
+   "kosif-one/projects/thursday-dua-animation/source/index.html:198-209"
+  ],
+  "styles": [],
+  "tags": [
+   "تلاوة",
+   "قرآن",
+   "دعاء",
+   "recitation",
+   "waqf",
+   "no music"
+  ]
+ },
+ {
+  "id": "SYNC-50",
+  "family": "audio-sync-captions",
+  "name_ar": "توقيت سطر الأغنية",
+  "name_en": "Lyric line timing",
+  "status": "documented",
+  "what": "السطر يسبق الغناء، يبقى أثناءه، ويخرج بسرعة. / Lines lead the singing, hold while sung and exit quickly.",
+  "how": "Enter 80–120 ms early (recipe: −100 ms with a 350 ms mask wipe); exit ≤ 200 ms (150 ms after the last word); words enter ≤ 40 ms from onset with 180 ms cubic-bezier(0.2,0.9,0.2,1) scale 0.92 → 1. Plan on a grid of tempo, bars, sections and every sung word; characters on one side, words on the other.",
+  "params": "enter −80…−120 ms; exit ≤ 200 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/music.md:28",
+   "kosif-tool/playbooks/music.md:43",
+   "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md"
+  ],
+  "styles": [],
+  "tags": [
+   "أغنية",
+   "lyrics",
+   "line timing",
+   "lyric video"
+  ]
+ },
+ {
+  "id": "SYNC-51",
+  "family": "audio-sync-captions",
+  "name_ar": "ريل كلمات أغنية",
+  "name_en": "Songreel lyric reel",
+  "status": "install",
+  "what": "تحليل بنية الأغنية، أسئلة بحث وتلوين لكل قسم، مجمع لقطات، قص، وبناء بالكلمات. / Song structure analysis, per-section queries and grades, a clip pool, cutting and building with lyrics.",
+  "how": "songreel analyze SONG --name --lyrics; cut N --media; build N --model large-v3 --draft|--render (≈ 45 s typical; clips < 360p rejected). Needs faster-whisper and footage (yt-dlp for pools).",
+  "params": "~45 s; reject < 360p",
+  "install": "pip install faster-whisper  # models from huggingface.co (reachable): small 466 MB, large-v3 3.1 GB",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/songreel.py",
+   "100-superskills/skills/kosif-montage-motion/tests/test_songreel.py"
+  ],
+  "styles": [],
+  "tags": [
+   "أغنية",
+   "songreel",
+   "lyric reel",
+   "music video"
+  ]
+ },
+ {
+  "id": "SYNC-52",
+  "family": "audio-sync-captions",
+  "name_ar": "لكل جملة منطوقة دليل بصري",
+  "name_en": "One visual proof per spoken claim",
+  "status": "documented",
+  "what": "في الأفلام التي يقودها الصوت، كل سطر منطوق يقابله صورة واحدة تثبته، والفعل يحدث على الكلمة التي تسميه. / In voice-led films each spoken line gets exactly one picture that proves it, and actions happen on the word that names them.",
+  "how": "Beat table: spoken line | visual proof | entry/exit | on-screen text. Cross-family sync rules: counters finish on the word that says the number (start 700–1000 ms earlier, ±100 ms); diagram nodes pop on their names, camera moves only in pauses > 400 ms; phone taps at emphasis start − 40 ms; photo cuts 2 frames (≈ 67 ms) before the emphasis word; gestures land 2–4 frames before the stressed word; particle bursts within one frame of transients.",
+  "params": "±100 ms; cut −2 frames; gesture −2…−4 frames",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/101-video-skills/216-narrated-product-film/SKILL.md",
+   "kosif-tool/playbooks/charts.md:201-208",
+   "kosif-tool/playbooks/phone.md:198-205",
+   "kosif-tool/playbooks/photos.md:205-211"
+  ],
+  "styles": [],
+  "tags": [
+   "دليل بصري",
+   "narration",
+   "sync rules",
+   "explainer"
+  ]
+ },
+ {
+  "id": "SYNC-53",
+  "family": "audio-sync-captions",
+  "name_ar": "كشف الصمت الثابت والتكيفي",
+  "name_en": "Fixed & adaptive silence detection",
+  "status": "proven",
+  "what": "اعثر على الهواء الميت بعتبة ثابتة أو بعتبة البوابة المقاسة لكل تسجيل. / Find dead air with a fixed threshold or with each recording's own measured gating threshold.",
+  "how": "Fixed: -af silencedetect=n=-35dB:d=0.5..0.7 -f null - (ran here: a 1 s gap reported 1.000–2.000 s). Adaptive: loudnorm print_format=json → input_thresh → silencedetect=noise=${thresh}dB:d=0.5; merge gaps < 0.2 s. EDL writer: silence_cut.py in --db -35 --min 0.6 --pad 0.12 --out edl.json; Python analyser: −50 dBFS, ≥ 0.5 s over 50 ms RMS.",
+  "params": "−35 dB; d 0.5–0.7 s; pad 0.08–0.12 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2712-remotion/10436-remotion-markup/silence-detection.md",
+   "100-superskills/skills/pro-video-editor-ffmpeg/scripts/silence_cut.py:19",
+   "100-superskills/skills/kosif-montage-motion/scripts/omni/audio_analyze.py:147"
+  ],
+  "styles": [],
+  "tags": [
+   "صمت",
+   "silence",
+   "silencedetect",
+   "jump cut",
+   "edl"
+  ]
+ },
+ {
+  "id": "SYNC-54",
+  "family": "audio-sync-captions",
+  "name_ar": "إصلاح انزياح الصوت المدموج",
+  "name_en": "Joined-audio drift fix",
+  "status": "documented",
+  "what": "الدمج بالنسخ يبقي حشو كل قطعة فيتراكم الانزياح (~50 ms لكل وصلة)؛ فك وأعد الترميز مرة واحدة. / Copy-mode concat keeps each piece's encoder padding, so drift accumulates (~50 ms per join); decode and encode once.",
+  "how": "ffmpeg -f concat -safe 0 -i list.txt -c:a libmp3lame -b:a 64k -ar 24000 -ac 1 -write_xing 0 joined.mp3; verify joined duration vs the sum of parts (measured 2.51 s → 0.06 s over 181 pieces). Better: concatenate WAV/PCM and encode once at delivery.",
+  "params": "~50 ms/join; MP3 frame 1152/576 samples",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "انزياح",
+   "drift",
+   "concat audio",
+   "mp3 padding"
+  ]
+ },
+ {
+  "id": "SYNC-55",
+  "family": "audio-sync-captions",
+  "name_ar": "ذروة المؤثر على الحدث",
+  "name_en": "SFX peak-offset alignment",
+  "status": "seen",
+  "what": "خزّن زمن الذروة داخل كل ملف مؤثر وابدأ الصوت عند زمن الحدث ناقص الذروة؛ والصاعدات تنتهي على الحدث. / Store each SFX file's internal peak time and start it at event − peak; risers align to their end.",
+  "how": "PEAK table per file (measure with astats or numpy argmax of |x|); start = eventTime − peak; risers end on the event; whoosh ≤ −18 dBFS on a separate stem.",
+  "params": "PEAK per file",
+  "install": "",
+  "license": "",
+  "proof": [
+   "style:product",
+   "kosif-tool/playbooks/photos.md:205-211"
+  ],
+  "styles": [
+   "product"
+  ],
+  "tags": [
+   "مؤثرات",
+   "sfx",
+   "peak alignment",
+   "whoosh",
+   "transient"
+  ]
+ },
+ {
+  "id": "SYNC-56",
+  "family": "audio-sync-captions",
+  "name_ar": "دمج المشاهد مع الصوت الأصلي بلا تعديل",
+  "name_en": "Concat + untouched original audio mux",
+  "status": "ready",
+  "what": "يجمع المشاهد المرندرة بالترتيب ويضع أغنية المستخدم تحتها كما هي، مع بصمة sha256 للمصدر. / Joins rendered segments in order and lays the user's original song underneath untouched, recording the source sha256.",
+  "how": "ffmpeg -f concat -safe 0 -i concat.txt -i song.mp3 -map 0:v:0 -map 1:a:0 -t DUR -c:v copy -c:a aac -b:a 192k … ; only gentle edge fades (in 0.3 s, out 1.3 s) if asked; record sha256 of the source audio. Optional mux in fastify render.py: --audio path → -shortest (no loudness change).",
+  "params": "fade in 0.3 s / out 1.3 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:152-158",
+   "fastify-motion-bro/scripts/render.py:15"
+  ],
+  "styles": [],
+  "tags": [
+   "دمج",
+   "mux",
+   "original audio",
+   "sha256",
+   "song"
+  ]
+ },
+ {
+  "id": "SYNC-57",
+  "family": "audio-sync-captions",
+  "name_ar": "غلاف الجهارة وقنوات الصوت للحركة",
+  "name_en": "Loudness envelope & sound channels for motion",
+  "status": "ready",
+  "what": "غلاف RMS كل 50 ms وقنوات لكل إطار (bass/mid/high، ضربات، بدايات، صمت) تقود أي قيمة بصرية. / A 50 ms RMS envelope and per-frame channels (bass/mid/high, kicks, onsets, silence) drive any visual value.",
+  "how": "python motion.py channels TRACK.wav [--fps 30] → ch.json; in the page MOTION.channels(json): ch.v('bass',t), ch.kick(t), ch.onset(t), ch.silent(t). Verse halo R = 0.62·min(W,H)·(1 + 0.05·rms + 0.06·kick + 0.25·flare). Caption scale from RMS stays within 3–6% (proof: +4.5%). Browser mic meter: AnalyserNode fftSize 256, RMS × 4 clamped to 1.",
+  "params": "hop sr/fps; nfft 4096 Hann; caption ±3–6%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:97",
+   "kosif-one/tools/kosif-studio/motion/templates/verse.html:86",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/audio-reactive-spectrum/README.md",
+   "kosif-audit-studio/voice.js:166"
+  ],
+  "styles": [],
+  "tags": [
+   "غلاف",
+   "rms",
+   "channels",
+   "audio reactive",
+   "envelope"
+  ]
+ },
+ {
+  "id": "SYNC-58",
+  "family": "audio-sync-captions",
+  "name_ar": "مزامنة الفم بستة أشكال",
+  "name_en": "Six-shape lip sync",
+  "status": "documented",
+  "what": "الفم يختار بين مغلق وA وO وE وM وF من طاقة الصوت أو نص السكريبت. / The mouth picks among closed, A, O, E, M, F from audio energy or the script.",
+  "how": "Map RMS (and phonemes when available from Piper/aligner) to a viseme per frame; hold each shape ≥ 2 frames to avoid flicker; replacement tiles synced to syllables for lyric characters.",
+  "params": "6 visemes; hold ≥ 2 frames",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/character-animation-2d/SKILL.md",
+   "kosif-tool/styles/pm-davidshulmanfl-371638/BRIEF.md"
+  ],
+  "styles": [],
+  "tags": [
+   "مزامنة الفم",
+   "lip sync",
+   "visemes",
+   "mouth"
+  ]
+ },
+ {
+  "id": "SYNC-X01",
+  "family": "audio-sync-captions",
+  "domain": "motion",
+  "name_ar": "تحليل أغنية لفيلم كلمات",
+  "name_en": "Song analysis for a lyric film (bands, kicks, word times)",
+  "status": "documented",
+  "what": "من ملف الأغنية استخرج أغلفة طاقة لكل إطار (باس، صوت المغني، حدة)، والضربات، والإيقاع، وأزمنة تقديرية للكلمات داخل نوافذ أسطر يعطيها المستخدم، مع وسم صادق لجودة التوقيت. — From the song file derive per-frame band envelopes (low, vocal, high), kicks, tempo and estimated word times inside user-given line windows, with an honest timing-quality label.",
+  "when": "فيلم كلمات أغنية بلا تفريغ صوتي آلي متاح — a lyric film when no ASR alignment is available.",
+  "how": "Per video frame (hop = sr/fps) a Hann 2048 FFT: bands low 35–160 Hz, vocal 300–3200 Hz, high 4000–11000 Hz; RMS; spectral flux on log1p; normalise each by its 98th percentile, clip 1.2, light smoothing. Kicks = low-band rises > 0.18 that are local maxima (±2 frames). BPM by flux autocorrelation limited to 60–160 (beware half-time: a ~138 BPM feel read as 69.2). Word weights ∝ max(2, len(word)); span = 0.9 × line so the held last syllable keeps a tail; snap to vocal-band onsets within 0.22 s; min gap 0.12 s. Write words.json with timing_quality = 'line windows from user; edges from vocal energy; word times estimated (not ASR)'. The session distillation re-ran it: 56.92 s, bpm ~69.2, 25 kicks; line starts matched the shipped data except 2.033 vs 2.0 and 26.3 vs 26.333 — the edge refinement almost never moves a start. Prefer real alignment when audio-sync tools are available. Status note: the code is owner material that is not vendored in this skill; the numbers above are from one run on the owner's copy on 2026-10-16 and cannot be re-run from here, so this is 📄 documented, not ✅.",
+  "params": "bands 35–160 / 300–3200 / 4000–11000 Hz; kick rise > 0.18; snap ≤ 0.22 s; gap ≥ 0.12 s",
+  "install": "",
+  "license": "owner (song audio and lyrics are third-party; not included)",
+  "proof": [
+   "owner-upload:film_project/film/analyze.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md"
+  ],
+  "styles": [],
+  "tags": [
+   "lyrics",
+   "words.json",
+   "onset",
+   "kick",
+   "song film",
+   "كلمات الأغنية",
+   "توقيت الكلمات"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:film_project/film/analyze.py"
+ },
+ {
+  "id": "SYNC-X02",
+  "family": "audio-sync-captions",
+  "domain": "motion",
+  "name_ar": "قفل موضع مقطع الترجمة",
+  "name_en": "Caption chunk position lock",
+  "status": "documented",
+  "what": "الكلمات تظهر واحدة واحدة في مكانها النهائي، والمقطع يحتفظ بموضع واحد طوال عمره حتى لو قُطعت الصورة تحته. — Words appear one by one in their final place, and a caption chunk keeps one position for its whole life even when the picture cuts underneath.",
+  "when": "ترجمات كلمة بكلمة على متحدث أو مونتاج سريع — word-by-word captions on a speaker or a fast edit.",
+  "how": "Measure every word once with the real font on a canvas and justify lines across a shared width, so widths never depend on DOM timing; words arrive expo-out over 0.24 s with a small rise and blur; the block drifts up slowly; key words in an italic serif accent; validate the layout with visible word bounding boxes, not element boxes. For Arabic keep whole words and RTL order (ARAB rules).",
+  "params": "word in 0.24 s expo-out; one position per chunk",
+  "install": "",
+  "license": "unknown (reference only)",
+  "proof": [
+   "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js"
+  ],
+  "styles": [],
+  "tags": [
+   "captions",
+   "subtitles",
+   "word by word",
+   "layout",
+   "ترجمة",
+   "كلمة بكلمة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js"
+ }
+]

@@ -1,6 +1,6 @@
 ---
 name: pm-micheleharmonic-77628e
-description: A vertical anime-style hype edit that fuses a decentralised exchange with an original gravity-wielding fighter, cut hard to the beat with glitch accents.
+description: A roughly 38-second vertical hype edit for a decentralised exchange: the dot-ring logo draws as outlines then fills while a mono line types, the ring becomes a glowing blue iris inside an RGB-split eye, then a fast beat-cut run of huge words in black, white or violet over a rotating chrome 3D coin, a 24-dot ring with violet radial lines, white flash frames, inverted scenes, glitch-sliced violet kanji and a calm logo lock-up.
 ---
 
 # KOSIF TOOL — GravityDEX anime hype edit / مونتاج أنمي حماسي عمودي لمنصة GravityDEX
@@ -18,11 +18,11 @@ description: A vertical anime-style hype edit that fuses a decentralised exchang
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-مونتاج عمودي قصير بروح الأنمي يربط منصة تداول لامركزية بشخصية مقاتلة أصلية تتحكم بالجاذبية، بقطع على الإيقاع ولمسات glitch.
+مونتاج حماسي عمودي مدته نحو 38 ثانية لمنصة تداول لامركزية: حلقة الشعار النقطية تُرسم بخطوط ثم تمتلئ بينما يُكتب سطر أحادي، ثم تصير الحلقة قزحية زرقاء متوهجة داخل عين بانفصال RGB، تليها دفعة قطعات على الإيقاع لكلمات ضخمة بالأسود والأبيض والبنفسجي فوق عملة كروم ثلاثية الأبعاد تدور، حلقة من 24 نقطة بخطوط شعاعية بنفسجية، ومضات بيضاء، مشاهد معكوسة، رموز كانجي بنفسجية متشظية، وختام هادئ بالشعار.
 
-A vertical anime-style hype edit that fuses a decentralised exchange with an original gravity-wielding fighter, cut hard to the beat with glitch accents.
+A roughly 38-second vertical hype edit for a decentralised exchange: the dot-ring logo draws as outlines then fills while a mono line types, the ring becomes a glowing blue iris inside an RGB-split eye, then a fast beat-cut run of huge words in black, white or violet over a rotating chrome 3D coin, a 24-dot ring with violet radial lines, white flash frames, inverted scenes, glitch-sliced violet kanji and a calm logo lock-up.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, GSAP, HTML Canvas), suggested duration (15 s), aspect 9:16, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, Three.js, HTML Canvas), suggested duration (38 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: creative motion.

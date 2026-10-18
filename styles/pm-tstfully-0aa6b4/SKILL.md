@@ -1,6 +1,6 @@
 ---
 name: pm-tstfully-0aa6b4
-description: A 15 s landscape product ad for a tool that turns a pasted YouTube link into a full transcript, closing with counters and small charts that quantify the result.
+description: A calm 15-second product ad on a dark, red-tinted background for a YouTube transcript tool: a glowing play icon, headlines revealing word by word with a red italic serif accent, a URL bar, transcript lines under a scan line, source cards, a waveform, a JSON response panel, stats and a CTA.
 ---
 
 # KOSIF TOOL — YouTube transcript product ad / إعلان منتج: من رابط يوتيوب إلى نص كامل
@@ -18,11 +18,11 @@ description: A 15 s landscape product ad for a tool that turns a pasted YouTube 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-إعلان أفقي مدته 15 ثانية يشرح أداة تحوّل رابط فيديو يوتيوب إلى نصّ مفرّغ كامل، مع عدّادات ومخططات تلخّص النتيجة.
+إعلان منتج هادئ مدته 15 ثانية على خلفية داكنة بصبغة حمراء لأداة تفريغ نص فيديوهات يوتيوب: أيقونة تشغيل متوهجة، عناوين تظهر كلمة بكلمة مع كلمة سيريف مائلة حمراء، شريط رابط، أسطر نص يمر عليها خط مسح، بطاقات، موجة صوتية، لوحة استجابة JSON، أرقام إحصاء ودعوة ختامية.
 
-A 15 s landscape product ad for a tool that turns a pasted YouTube link into a full transcript, closing with counters and small charts that quantify the result.
+A calm 15-second product ad on a dark, red-tinted background for a YouTube transcript tool: a glowing play icon, headlines revealing word by word with a red italic serif accent, a URL bar, transcript lines under a scan line, source cards, a waveform, a JSON response panel, stats and a CTA.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 2/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.

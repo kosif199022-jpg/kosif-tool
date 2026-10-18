@@ -1,9 +1,9 @@
 ---
 name: pm-0xevinho-3777d8
-description: A pixel-art wizard conjures crypto coins and candlestick charts with one spell, animated in stepped 8-bit frames with a retro game feel.
+description: A fixed 20-second night pixel-art diorama by a lake (moon, pines, campfire, red banner, rippling reflections) where a hero faces a training dummy. The hero swaps classes every few seconds (blue wizard, red wizard, knight, hooded rogue) and casts spells whose names type into a top banner while damage numbers stack like a combat log. The final spell draws a green candlestick rally that crashes into red candles, the screen floods red, a huge negative figure and REKT appear and the dummy is left charred.
 ---
 
-# KOSIF TOOL — Pixel wizard crypto animation / ساحر بكسل يستحضر العملات الرقمية
+# KOSIF TOOL — Pixel wizard crypto animation / ساحر بكسل يضرب دمية التدريب حتى التصفية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/0xevinho-3777d8
@@ -18,11 +18,11 @@ description: A pixel-art wizard conjures crypto coins and candlestick charts wit
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-مقطع بكسل آرت لساحر صغير يستحضر عملات رقمية وشموع سعرية بتعويذة واحدة، بحركة إطارات مقطّعة على طريقة ألعاب الثمانينيات.
+مشهد بكسل آرت ليلي ثابت مدته 20 ثانية بجانب بحيرة (قمر، صنوبر، نار مخيم، راية حمراء، انعكاسات ماء متموجة) يواجه فيه بطل دمية تدريب. يبدل البطل فئته كل بضع ثوانٍ (ساحر أزرق، ساحر أحمر، فارس، لص بقلنسوة) ويلقي تعاويذ تُكتب أسماؤها في شريط علوي بينما تتكدس أرقام الضرر كسجل قتال. التعويذة الأخيرة ترسم شموع صعود خضراء تنهار إلى شموع حمراء، يغمر الأحمر الشاشة ويظهر رقم سالب ضخم وكلمة REKT.
 
-A pixel-art wizard conjures crypto coins and candlestick charts with one spell, animated in stepped 8-bit frames with a retro game feel.
+A fixed 20-second night pixel-art diorama by a lake (moon, pines, campfire, red banner, rippling reflections) where a hero faces a training dummy. The hero swaps classes every few seconds (blue wizard, red wizard, knight, hooded rogue) and casts spells whose names type into a top banner while damage numbers stack like a combat log. The final spell draws a green candlestick rally that crashes into red candles, the screen floods red, a huge negative figure and REKT appear and the dummy is left charred.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Remotion), suggested duration (10 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Remotion), suggested duration (20 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: creative motion.

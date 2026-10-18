@@ -1,0 +1,161 @@
+{
+ "workdir": "<workdir>/docs",
+ "checks": [
+  {
+   "name": "docx: write + read back Arabic heading/table",
+   "ok": true,
+   "detail": "37047 B"
+  },
+  {
+   "name": "docx: RTL markers present (w:bidi, w:rtl, w:bidiVisual)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "xlsx: openpyxl stores formulas as text, no cached value",
+   "ok": true,
+   "detail": "B6='=SUM(B2:B5)'; data_only -> None"
+  },
+  {
+   "name": "xlsx: sheet is RTL and has a native bar chart",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "xlsx: LibreOffice headless recalculates formulas",
+   "ok": true,
+   "detail": "total=3340, share(القاهرة)=0.359281437125749"
+  },
+  {
+   "name": "pptx: write + read back Arabic title/body",
+   "ok": true,
+   "detail": "2 slides, 35734 B"
+  },
+  {
+   "name": "pptx: native chart categories read back",
+   "ok": true,
+   "detail": "['القاهرة', 'الرياض', 'دبي', 'عمّان']"
+  },
+  {
+   "name": "pdf(weasyprint): pdfplumber/pdfminer return Arabic REVERSED (visual order) -> use pypdf or pdftotext",
+   "ok": true,
+   "detail": "'يعبرلا تاعيبملا ريرقت'"
+  },
+  {
+   "name": "pdf(weasyprint): Arabic recoverable with pypdf",
+   "ok": true,
+   "detail": "'تقرير المبيعات الربعي'"
+  },
+  {
+   "name": "pdf(weasyprint): Arabic recoverable with pdftotext",
+   "ok": true,
+   "detail": "'\\u202bتقرير المبيعات الربعي\\u202c'"
+  },
+  {
+   "name": "pdf(weasyprint): Arabic fonts embedded as subsets",
+   "ok": true,
+   "detail": "/ECFSSB+Amiri, /EPKRBL+Cairo-Ultra-Bold, /KPLIFR+Amiri-Bold, /VZOFRO+Cairo"
+  },
+  {
+   "name": "pdf(reportlab): shaped line written (reshaper+bidi needed)",
+   "ok": true,
+   "detail": "17909 B; extract='ﻲﻌﺑﺮﻟﺍ ﺕﺎﻌﻴﺒﻤﻟﺍ ﺮﻳﺮﻘﺗ'"
+  },
+  {
+   "name": "soffice .docx->pdf: file made and Arabic text recoverable",
+   "ok": true,
+   "detail": "28045 B"
+  },
+  {
+   "name": "soffice .pptx->pdf: file made and Arabic text recoverable",
+   "ok": true,
+   "detail": "33238 B"
+  },
+  {
+   "name": "soffice .xlsx->pdf: file made and Arabic text recoverable",
+   "ok": true,
+   "detail": "50150 B"
+  },
+  {
+   "name": "soffice docx->pdf: uses the requested Amiri font (private fontconfig works)",
+   "ok": true,
+   "detail": "BAAAAA+Amiri-Bold CAAAAA+Amiri-Regular DAAAAA+Caladea-Regular"
+  },
+  {
+   "name": "markitdown .docx -> md keeps Arabic",
+   "ok": true,
+   "detail": "230 chars in 0.23s"
+  },
+  {
+   "name": "markitdown .xlsx -> md keeps Arabic",
+   "ok": true,
+   "detail": "185 chars in 0.02s"
+  },
+  {
+   "name": "markitdown .pptx -> md keeps Arabic",
+   "ok": true,
+   "detail": "283 chars in 0.02s"
+  },
+  {
+   "name": "markitdown .pdf -> md: Arabic comes out REVERSED (pdfminer) -> prefer pypdf/pdftotext for RTL PDFs",
+   "ok": true,
+   "detail": "189 chars in 0.04s"
+  },
+  {
+   "name": "pandoc md->docx->md round-trip keeps Arabic table",
+   "ok": true,
+   "detail": "10237 B"
+  },
+  {
+   "name": "pypdf: merge 3 PDFs, rotate p1, AES-256 encrypt, reopen with password",
+   "ok": true,
+   "detail": "4 pages"
+  },
+  {
+   "name": "scanned page (300 dpi raster of the PDF) -> tesseract ara+eng recovers title + English line",
+   "ok": true,
+   "detail": "177 chars in 0.78 s"
+  },
+  {
+   "name": "contact.png written",
+   "ok": true,
+   "detail": "50396 B"
+  }
+ ],
+ "timings_s": {
+  "docx": 0.04,
+  "soffice_xlsx_recalc": 1.16,
+  "xlsx": 1.19,
+  "pptx": 0.03,
+  "weasyprint": 0.33,
+  "soffice_3_to_pdf": 1.61,
+  "ocr_page_300dpi": 0.78
+ },
+ "versions": {
+  "python-docx": "1.2.0",
+  "python-pptx": "1.0.2",
+  "openpyxl": "3.1.5",
+  "reportlab": "5.0.1",
+  "weasyprint": "70.0",
+  "pypdf": "6.21.0",
+  "pdfplumber": "0.11.10",
+  "pypdfium2": "5.14.0",
+  "markitdown": "0.1.8",
+  "arabic-reshaper": "3.0.1",
+  "python-bidi": "0.6.11",
+  "pytesseract": "0.3.13",
+  "tesseract": "5.3.4",
+  "soffice": "LibreOffice 24.2.7.2 420(Build:2)",
+  "pandoc": "pandoc 3.1.3"
+ },
+ "sizes_B": {
+  "report_ar.docx": 37047,
+  "sales_ar.xlsx": 6891,
+  "deck_ar.pptx": 35734,
+  "report_weasy.pdf": 17895,
+  "report_reportlab.pdf": 17909,
+  "note_pandoc.docx": 10237,
+  "bundle_locked.pdf": 74032
+ },
+ "summary": "24/24 checks passed"
+}

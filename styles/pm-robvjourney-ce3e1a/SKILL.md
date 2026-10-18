@@ -1,6 +1,6 @@
 ---
 name: pm-robvjourney-ce3e1a
-description: A 15-second brand promo for Nohandslabs where a pair of hands lets go and the work keeps running on its own, backed by reclaimed-time charts.
+description: A 15-second brand promo on black with lime accents for a studio building companies run by AI agents: a terminal prompt, lime scan lines, a headline beside a pixel-dot hand, a dot-matrix 95% that bursts into particles, an inverted white card with a tilted ticker tape, an agent runtime log switching to running with counters, a row of four portfolio cards, a particle vortex and the logo end card.
 ---
 
 # KOSIF TOOL — Nohandslabs brand promo / برومو Nohandslabs: العمل يمضي بلا أيدٍ
@@ -18,11 +18,11 @@ description: A 15-second brand promo for Nohandslabs where a pair of hands lets 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-برومو 15 ثانية لعلامة Nohandslabs يستعمل زوج أيدٍ يترك المهام فتكمل نفسها، مع رسوم بيانية للوقت المستعاد.
+برومو علامة مدته 15 ثانية على أسود بلمسات ليمونية لاستوديو يبني شركات تديرها وكلاء الذكاء الاصطناعي: سطر طرفية، خطوط مسح ليمونية، عنوان بجانب يد من نقاط بكسل، نسبة 95% بمصفوفة نقاط تنفجر إلى جسيمات، بطاقة بيضاء معكوسة مع شريط أخبار مائل، سجل وكلاء يتحول إلى «يعمل» مع عدادات، صف من أربع بطاقات مشاريع، دوامة جسيمات وختام بالشعار.
 
-A 15-second brand promo for Nohandslabs where a pair of hands lets go and the work keeps running on its own, backed by reclaimed-time charts.
+A 15-second brand promo on black with lime accents for a studio building companies run by AI agents: a terminal prompt, lime scan lines, a headline beside a pixel-dot hand, a dot-matrix 95% that bursts into particles, an inverted white card with a tilted ticker tape, an agent runtime log switching to running with counters, a row of four portfolio cards, a particle vortex and the logo end card.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية.

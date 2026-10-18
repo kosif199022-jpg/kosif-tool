@@ -1,6 +1,6 @@
 ---
 name: pm-thayto-dev-44b911
-description: A 15-second promo where a résumé reshapes itself to fit a job posting, then the Pro pricing card lands as the payoff.
+description: A calm 15-second promo for a CV-tailoring tool's Pro plan: a serif question about how many applications it takes beside a fanning stack of job cards that counts up, a per-job price list against a fixed Pro card, a feature grid, a dark cost-per-day slide, a payment card and a logo end on royal blue.
 ---
 
 # KOSIF TOOL — AjustaCV Pro pricing promo / ترويج خطة Pro لأداة ملاءمة السيرة الذاتية
@@ -18,11 +18,11 @@ description: A 15-second promo where a résumé reshapes itself to fit a job pos
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيلم ترويجي مدته 15 ثانية يظهر سيرة ذاتية تعيد تشكيل نفسها لتطابق وظيفة، ثم يكشف بطاقة تسعير الخطة الاحترافية.
+إعلان هادئ مدته 15 ثانية لخطة Pro في أداة تكييف السيرة الذاتية: سؤال بخط سيريف عن عدد الوظائف مع رزمة بطاقات وظائف تتفتح وتعدّ، ثم مقارنة سعر لكل وظيفة مقابل بطاقة Pro ثابتة، شبكة مزايا، شريحة تكلفة يومية داكنة، بطاقة دفع، وختام بالشعار على أزرق ملكي.
 
-A 15-second promo where a résumé reshapes itself to fit a job posting, then the Pro pricing card lands as the payoff.
+A calm 15-second promo for a CV-tailoring tool's Pro plan: a serif question about how many applications it takes beside a fanning stack of job cards that counts up, a per-job price list against a fixed Pro card, a feature grid, a dark cost-per-day slide, a payment card and a logo end on royal blue.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

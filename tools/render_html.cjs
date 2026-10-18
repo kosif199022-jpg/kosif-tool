@@ -85,6 +85,8 @@ KOSIF render_html — deterministic HTML -> MP4
   node tools/render_html.cjs --in <file.html|http URL> --out <out.mp4> [options]
 
 Options
+  --aspect <spec>     any frame: 9:16, 16:9, 4:5, 21:9, 2.35:1, 1920x816, reel, square, cinema
+                      (sets --width/--height; explicit --width/--height still win)
   --width <px>        viewport width in CSS px            (default ${DEFAULTS.width})
   --height <px>       viewport height in CSS px           (default ${DEFAULTS.height})
   --fps <n>           frames per second                   (default ${DEFAULTS.fps})
@@ -356,7 +358,7 @@ class VirtualDriver {
 
 // ------------------------------------------------------------------ encoding
 
-function encodeVideo({ framesDir, fps, out, crf, audio, start, width, height }) {
+function encodeVideo({ framesDir, fps, out, crf, audio, start, width, height, capWidth, capHeight }) {
   const args = ['-y', '-hide_banner', '-loglevel', 'error', '-nostats',
     '-framerate', String(fps), '-i', path.join(framesDir, 'frame_%06d.png')];
   if (audio) {
@@ -364,6 +366,7 @@ function encodeVideo({ framesDir, fps, out, crf, audio, start, width, height }) 
     args.push('-i', audio);
   }
   const vf = [];
+  if (capWidth && (capWidth !== width || capHeight !== height)) vf.push(`scale=${width}:${height}:flags=lanczos`);
   if (width % 2 || height % 2) {
     warn(`output size ${width}x${height} is odd; padding to even dimensions for yuv420p`);
     vf.push('pad=ceil(iw/2)*2:ceil(ih/2)*2:0:0:black');
@@ -443,14 +446,34 @@ function composeContactSheet({ framesDir, picks, out }) {
 
 // -------------------------------------------------------------------- main
 
+// Any aspect -> even pixel size; mirrors tools/aspects.py and web/generator.js resolveAspect().
+const ASPECT_PRESETS = { '9:16': [1080, 1920], '16:9': [1920, 1080], '1:1': [1080, 1080], '4:5': [1080, 1350] };
+const ASPECT_NAMES = { reel: '9:16', story: '9:16', tiktok: '9:16', shorts: '9:16', vertical: '9:16', youtube: '16:9', landscape: '16:9', horizontal: '16:9', square: '1:1', feed: '4:5', portrait: '4:5', instagram: '4:5', classic: '4:3', cinema: '2.39:1', scope: '2.39:1', ultrawide: '21:9', wide: '21:9', flat: '1.85:1' };
+function aspectSize(spec) {
+  const even = (n) => { n = Math.round(n); return n % 2 ? n + 1 : n; };
+  let s = spec.trim().toLowerCase();
+  s = ASPECT_NAMES[s] || s;
+  if (ASPECT_PRESETS[s]) return { w: ASPECT_PRESETS[s][0], h: ASPECT_PRESETS[s][1] };
+  let m = s.match(/^(\d{2,5})\s*[x×*]\s*(\d{2,5})$/);
+  if (m) return { w: even(+m[1]), h: even(+m[2]) };
+  m = s.match(/^(\d+(?:\.\d+)?)\s*[:/]\s*(\d+(?:\.\d+)?)$/);
+  if (!m) return null;
+  const r = +m[1] / +m[2];
+  if (!(r >= 0.2 && r <= 5)) return null;
+  if (r >= 9 / 16 && r <= 16 / 9) return r >= 1 ? { w: even(1080 * r), h: 1080 } : { w: 1080, h: even(1080 / r) };
+  return r > 1 ? { w: 1920, h: even(1920 / r) } : { w: even(1920 * r), h: 1920 };
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (args.help || args.h) { usage(); return 0; }
   if (!args.in || args.in === true) throw new UsageError('--in <file.html|http URL> is required');
   if (!args.out || args.out === true) throw new UsageError('--out <out.mp4> is required');
 
-  const width = numberOpt(args, 'width', DEFAULTS.width, { integer: true, min: 2 });
-  const height = numberOpt(args, 'height', DEFAULTS.height, { integer: true, min: 2 });
+  const fromAspect = args.aspect && args.aspect !== true ? aspectSize(String(args.aspect)) : null;
+  if (args.aspect && !fromAspect) throw new UsageError(`--aspect ${args.aspect} is not a readable ratio (W:H, WxH or a name)`);
+  const width = numberOpt(args, 'width', fromAspect ? fromAspect.w : DEFAULTS.width, { integer: true, min: 2 });
+  const height = numberOpt(args, 'height', fromAspect ? fromAspect.h : DEFAULTS.height, { integer: true, min: 2 });
   const fps = numberOpt(args, 'fps', DEFAULTS.fps, { min: 1 });
   const start = numberOpt(args, 'start', DEFAULTS.start, { min: 0 });
   const crf = numberOpt(args, 'crf', DEFAULTS.crf, { integer: true, min: 0 });
@@ -471,6 +494,8 @@ async function main() {
   const outPath = path.resolve(String(args.out));
   const outWidth = Math.round(width * scale);
   const outHeight = Math.round(height * scale);
+  // Chromium ignores a device scale below 1 for screenshots: capture at 1x and let ffmpeg downscale.
+  const capScale = Math.max(1, scale), capWidth = Math.round(width * capScale), capHeight = Math.round(height * capScale);
 
   const input = String(args.in);
   let url;
@@ -502,7 +527,7 @@ async function main() {
   }
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
 
-  const browserOpts = { isFile, width, height, scale, offline, seed, virtual: mode === 'virtual' };
+  const browserOpts = { isFile, width, height, scale: capScale, offline, seed, virtual: mode === 'virtual' };
   let session = await openBrowser(playwright, browserOpts);
   let exitCode = 0;
   try {
@@ -547,7 +572,7 @@ async function main() {
         await driver.goTo(t);
         const file = path.join(framesDir, `preview_raw_${String(k).padStart(2, '0')}.png`);
         await driver.capture(file);
-        if (k === 0) checkFrameSize(file, outWidth, outHeight);
+        if (k === 0) checkFrameSize(file, capWidth, capHeight);
         picks.push({ file, t, index: idx });
         log(`preview ${k + 1}/${indices.length}: frame ${idx} (t=${fmtTime(t)})`);
       }
@@ -562,14 +587,14 @@ async function main() {
         await driver.goTo(t);
         const file = path.join(framesDir, frameName(i));
         await driver.capture(file);
-        if (i === 0) checkFrameSize(file, outWidth, outHeight);
+        if (i === 0) checkFrameSize(file, capWidth, capHeight);
         if ((i + 1) % 30 === 0 || i + 1 === total) {
           const elapsed = (Date.now() - t0) / 1000;
           log(`frame ${i + 1}/${total} (t=${fmtTime(t)}) ${elapsed.toFixed(1)}s elapsed`);
         }
       }
       log(`encoding ${total} frames -> ${outPath}`);
-      encodeVideo({ framesDir, fps, out: outPath, crf, audio, start, width: outWidth, height: outHeight });
+      encodeVideo({ framesDir, fps, out: outPath, crf, audio, start, width: outWidth, height: outHeight, capWidth, capHeight });
       const probe = probeVideo(outPath);
       const want = { fps, frames: total, duration: total / fps, width: outWidth + (outWidth % 2), height: outHeight + (outHeight % 2), audio: !!audio };
       const problems = verifyProbe(probe, want);

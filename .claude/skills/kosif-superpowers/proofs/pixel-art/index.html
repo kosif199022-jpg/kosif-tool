@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Art — KOSIF proof</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  /* 160×160 logical pixels shown at ×6.75 = 1080 px, nearest-neighbour */
+  #px { display: block; width: 1080px; height: 1080px; image-rendering: pixelated; image-rendering: crisp-edges; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px/1.3 system-ui, sans-serif; color: #9ab; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><canvas id="px" width="160" height="160"></canvas></div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=4.5</div>
+<script>
+(function () {
+  'use strict';
+  const N = 160, FPS = 30, STEP = 8, DUR = 8;      // logical grid, output fps, animation fps (stepped), seconds
+  /* 16-colour palette (original) */
+  const PAL = ['#0b0a1a', '#1d1b3a', '#2e3a73', '#4f6bd8', '#9bd4ff', '#f4f1e1', '#ffd45e', '#ff9a3c',
+               '#d9483b', '#7a2e4a', '#3f8f4c', '#7fd36a', '#6b4a2f', '#a87b4f', '#5a5a74', '#b9b9cf'];
+  const C = { ink: 0, navy: 1, blue: 2, lblue: 3, ice: 4, white: 5, gold: 6, orange: 7, red: 8, plum: 9, green: 10, lgreen: 11, brown: 12, tan: 13, grey: 14, lgrey: 15 };
+  const g = document.getElementById('px').getContext('2d');
+  const px = (x, y, c, w = 1, h = 1) => { g.fillStyle = PAL[c]; g.fillRect(x | 0, y | 0, w, h); };
+  function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let z = s; z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
+  // sprite from strings; map chars → palette index ('.' = transparent)
+  function sprite(rows, map, x, y, flip) { rows.forEach((r, j) => { for (let i = 0; i < r.length; i++) { const ch = r[flip ? r.length - 1 - i : i]; if (ch !== '.' && map[ch] !== undefined) px(x + i, y + j, map[ch]); } }); }
+
+  /* ---------------- hand-made bitmap: نور (ن joined to و, ر stands alone — correct Arabic joining) ---------------- */
+  const WORD = [
+    '........................................',
+    '..................................##....',
+    '..................................##....',
+    '........................................',
+    '.................####...................',
+    '................##..##............##....',
+    '.......##......##....##...........##....',
+    '.......##......##....##...........##....',
+    '.......##......##....##...........##....',
+    '.......##......##....##...........##....',
+    '......###.......####################....',
+    '.....###.............###############....',
+    '...####..............##.................',
+    '#####..............###..................',
+    '...............#####....................',
+    '..........######........................',
+    '........................................',
+  ];
+
+  /* ---------------- walker: 4-frame cycle (contact, passing, contact, passing) ---------------- */
+  const TOP = [
+    '....kkkk....',
+    '...khhhhk...',
+    '..khhhhhhk..',
+    '..khhsssk...',
+    '..khssksk...',
+    '...ksssssk..',
+    '....kssk....',
+    '...krrrrkr..',
+    '..kbrrbbbkr.',
+    '..kbbbbbsk..',
+    '..kbbbbbk...',
+    '...kyyyk....',
+  ];
+  const LEGS = [
+    ['...kb.bk....', '..kb...bk...', '.kd.....bk..', '.kk.....kkk.'],
+    ['....kbk.....', '....kdbk....', '....kdbk....', '....kkkk....'],
+    ['...kd.bk....', '..kd...bk...', '.kb.....dk..', '.kkk....kk..'],
+    ['....kbk.....', '....kbdk....', '...kbdk.....', '...kkkk.....'],
+  ];
+  const WMAP = { k: C.ink, h: C.brown, s: C.tan, r: C.red, b: C.blue, d: C.navy, y: C.gold };
+  const CHEST = [
+    ['.kkkkkkkkkk.', 'kyccccccccyk', 'kcccccccccck', 'kyyyyyyyyyyk', 'kccccyycccck', 'kccccyycccck', 'kcccccccccck', 'kyccccccccyk', 'kkkkkkkkkkkk'],
+  ];
+  const CMAP = { k: C.ink, y: C.gold, c: C.brown, 'k': C.ink };
+  const COIN = [['.kkk.', 'kyyok', 'kyyok', 'kyyok', '.kkk.'], ['.kk.', 'kyok', 'kyok', 'kyok', '.kk.'], ['.k.', 'kyk', 'kyk', 'kyk', '.k.'], ['.kk.', 'koyk', 'koyk', 'koyk', '.kk.']];
+  const COMAP = { k: C.ink, y: C.gold, o: C.orange };
+
+  /* ---------------- static seeded data ---------------- */
+  const R = rng(1608);
+  const STARS = Array.from({ length: 34 }, () => ({ x: (R() * N) | 0, y: (R() * 70) | 0, p: (R() * 8) | 0, big: R() < 0.2 }));
+  const BURST = Array.from({ length: 12 }, (_, i) => ({ vx: (i % 2 ? 1 : -1) * (10 + R() * 34), vy: -70 - R() * 34, spin: (R() * 4) | 0 }));
+  const GROUND = 122, CHEST_X = 104, WS = 2;   // WS: the word bitmap is drawn pixel-doubled
+  const T = { walkEnd: 4.375, open: 5.0, word: 5.75 };
+  const WALK = { x0: -16, stride: 3 };   // 3 logical px per animation step (24 px/s at 8 fps)
+
+  /* ---------------- frame ---------------- */
+  function render(tReal) {
+    const s = Math.floor(tReal * STEP), t = s / STEP;      // stepped time: everything moves at 8 fps, no tweening
+    // sky: 5 bands with checker dither between them
+    const bands = [C.ink, C.navy, C.blue, C.plum];
+    for (let y = 0; y < GROUND; y++) {
+      const f = y / 112 * (bands.length - 1), b = Math.min(bands.length - 1, Math.floor(f)), fr = f - b;
+      for (let x = 0; x < N; x++) {
+        const dither = fr > 0.5 && ((x + y) & 1) && fr < 0.85 ? 1 : fr >= 0.85 ? 1 : 0;
+        px(x, y, bands[Math.min(bands.length - 1, b + dither)]);
+      }
+    }
+    // moon (crescent) + craters
+    for (let y = -9; y <= 9; y++) for (let x = -9; x <= 9; x++) { const d = x * x + y * y, d2 = (x + 4) * (x + 4) + (y - 2) * (y - 2); if (d <= 81 && d2 > 64) px(138 + x, 18 + y, C.white); }
+    px(141, 14, C.lgrey); px(143, 20, C.lgrey, 2, 1);
+    // twinkling stars: 4-state cycle, phase per star
+    for (const st of STARS) {
+      const k = (s + st.p) % 8; if (Math.hypot(st.x - 138, st.y - 18) < 13) continue;
+      if (st.big && k < 2) { px(st.x, st.y - 1, C.ice); px(st.x - 1, st.y, C.ice, 3, 1); px(st.x, st.y + 1, C.ice); px(st.x, st.y, C.white); }
+      else if (k < 5) px(st.x, st.y, k < 2 ? C.white : C.lgrey);
+      else if (k < 6) px(st.x, st.y, C.grey);
+    }
+    // shooting star at 2.0–2.75 s, 6 steps
+    if (t >= 2 && t < 2.75) { const k = Math.round((t - 2) * STEP); for (let i = 0; i < 6; i++) px(8 + k * 9 - i * 2, 8 + k * 3 - i, i ? C.lgrey : C.white); }
+    // dunes (far → near)
+    const dune = (y0, amp, f, ph, c) => { for (let x = 0; x < N; x++) { const h = Math.round(y0 + amp * Math.sin(x * f + ph)); px(x, h, c, 1, GROUND - h + 1); } };
+    dune(94, 6, 0.045, 1.2, C.plum); dune(104, 5, 0.06, 3.1, C.brown);
+    // palm tree (left)
+    for (let y = 0; y < 26; y++) px(18 + Math.round(Math.sin(y / 9) * 2), GROUND - 1 - y, y % 3 ? C.brown : C.tan, 2, 1);
+    const sway = s % 4 < 2 ? 0 : 1;   // fronds sway 1 px on a 2-step beat
+    [[-1, 0], [1, 0], [-1, 1], [1, 1]].forEach(([dx, low]) => { for (let i = 0; i < 9; i++) px(20 + dx * i + (low ? sway : 0), 101 + (low ? Math.floor(i * 0.6) : Math.floor(i * i / 14)) + (i > 6 ? 1 : 0), i % 2 ? C.green : C.lgreen, 1, 2); });
+    // ground with stones
+    px(0, GROUND, C.tan, N, N - GROUND); px(0, GROUND, C.orange, N, 1);
+    px(0, GROUND + 14, C.brown, N, 1); px(0, GROUND + 26, C.brown, N, 1);
+    for (let i = 0; i < 30; i++) { const x = (i * 37) % N, y = GROUND + 3 + ((i * 13) % 34); px(x, y, i % 3 ? C.brown : C.orange, 2, 1); }
+    // footprints left behind on every contact frame (cycle frames 0 and 2)
+    const steps = Math.min(s, Math.round(T.walkEnd * STEP));
+    for (let k = 0; k < steps; k += 2) { const fx = WALK.x0 + k * WALK.stride + (k % 4 ? 3 : 8); if (fx > 0) px(fx, GROUND + 2 + (k % 4 ? 1 : 0), C.brown, 2, 1); }
+    // chest: closed → open lid (2 states) + glow ring that pulses on the step grid
+    const open = t >= T.open;
+    if (open) {
+      const k = s % 4; const r = 10 + k;
+      for (let a = 0; a < 24; a++) { const x = CHEST_X + 6 + Math.round(Math.cos(a / 24 * Math.PI * 2) * r), y = GROUND - 8 + Math.round(Math.sin(a / 24 * Math.PI * 2) * r * 0.6); if (y < GROUND) px(x, y, k % 2 ? C.gold : C.orange); }
+    }
+    sprite(CHEST[0], CMAP, CHEST_X, GROUND - 9);
+    if (open) { px(CHEST_X + 1, GROUND - 13, C.ink, 10, 1); px(CHEST_X + 1, GROUND - 12, C.brown, 10, 3); px(CHEST_X + 2, GROUND - 10, C.gold, 8, 1); }
+    // walker: 2 px per step until the chest, then idle (frame 1) and a hop on opening
+    const walking = t < T.walkEnd;
+    const wx = WALK.x0 + Math.min(s, Math.round(T.walkEnd * STEP)) * WALK.stride;
+    const fr = walking ? s % 4 : 1;
+    const hop = t >= T.open && t < T.open + 0.5 ? [0, -3, -5, -3, 0][Math.min(4, Math.round((t - T.open) * STEP))] : 0;
+    const bob = fr % 2 ? -1 : 0;
+    sprite(TOP, WMAP, wx, GROUND - 16 + bob + hop);
+    sprite(LEGS[fr], WMAP, wx, GROUND - 4 + hop);
+    // coin burst: ballistic arcs evaluated on the step grid, 4-frame spin
+    if (open) {
+      const dt = t - T.open;
+      BURST.forEach((c, i) => {
+        const tt = dt - i * 0.03; if (tt < 0) return;
+        // ballistic flight (g = 140 px/s²); a coin that reaches the ground lies there, face up
+        const tl = (-c.vy + Math.sqrt(c.vy * c.vy + 2 * 140 * 7)) / 140, landed = tt >= tl, te = Math.min(tt, tl);
+        const x = CHEST_X + 4 + c.vx * te, y = GROUND - 12 + c.vy * te + 0.5 * 140 * te * te;
+        sprite(COIN[landed ? 0 : (s + c.spin) % 4], COMAP, Math.round(x), Math.round(y));
+      });
+      // sparkles: plus shapes that blink around the chest
+      for (let i = 0; i < 6; i++) { if ((s + i) % 3) continue; const sx = CHEST_X + 6 + ((i * 29) % 34) - 17, sy = GROUND - 26 - ((i * 17) % 22); px(sx, sy - 1, C.white); px(sx - 1, sy, C.white, 3, 1); px(sx, sy + 1, C.white); }
+    }
+    // the word نور: revealed right-to-left by a stepped column mask (whole word, letters stay joined)
+    if (t >= T.word) {
+      const cols = Math.min(40, Math.round((t - T.word) * STEP) * 5), x0 = 40, y0 = 30;
+      const shimmer = (s % 16) * 4 - 10;  // a 3-px light band crossing the word every 2 s
+      WORD.forEach((r, j) => { for (let i = 0; i < r.length; i++) { if (r[i] !== '#' || i < r.length - cols) continue; px(x0 + i * WS + 1, y0 + j * WS + 2, C.plum, WS, WS); } });
+      WORD.forEach((r, j) => { for (let i = 0; i < r.length; i++) { if (r[i] !== '#' || i < r.length - cols) continue; const band = Math.abs(i + j - shimmer) < 2; px(x0 + i * WS, y0 + j * WS, band ? C.white : j < 9 ? C.gold : C.orange, WS, WS); } });
+    }
+    // fade-in from black on the step grid (first 0.5 s)
+    if (t < 0.5) { g.globalAlpha = 0.75 * (1 - t / 0.5); px(0, 0, C.ink, N, N); g.globalAlpha = 1; }
+  }
+
+  /* ---------------- contract ---------------- */
+  let T0 = 0, playing = false, last = 0;
+  function seek(t) { T0 = Math.max(0, Math.min(DUR, t)); render(T0); }
+  window.__kosif = { duration: DUR, fps: FPS, seek };
+  window.__kosifReady = Promise.resolve(true).then(() => { seek(parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0); return true; });
+  if (navigator.webdriver) document.body.classList.add('render');
+  function fit() { const k = Math.min(innerWidth / 1080, innerHeight / 1080); document.getElementById('fit').style.transform = `scale(${k})`; }
+  addEventListener('resize', fit); fit();
+  function loop(now) { if (!playing) return; const dt = (now - last) / 1000; last = now; let t = T0 + dt; if (t >= DUR) t = 0; seek(t); requestAnimationFrame(loop); }
+  addEventListener('keydown', (e) => {
+    if (e.code === 'Space') { e.preventDefault(); playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(loop); }
+    if (e.code === 'ArrowRight') seek(T0 + 1 / FPS);
+    if (e.code === 'ArrowLeft') seek(T0 - 1 / FPS);
+  });
+})();
+</script>
+</body>
+</html>

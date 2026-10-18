@@ -1,11 +1,11 @@
 # ريل استعراضي لمنصة fal في 15 ثانية — fal motion design showreel
 
-> شريط استعراضي كثيف في 15 ثانية بأسلوب السيرة الذاتية للمصمم، يمزج الطباعة الحركية برسوم السرعة وأصولًا مولَّدة عبر fal API.
+> ريل استعراضي مدته 15 ثانية بالبنفسجي على الأسود لمنصة وسائط توليدية: طرفية تكتب استدعاء توليد فوق شبكة نقاط، قطع إلى لقطة ماكرو مولدة لبتلات بنفسجية بقطرات ماء، ثم كلمات ضخمة VIDEO وAUDIO و3D تمتلئ حروفها بلقطات مولدة مع أرقام فهرسة وأسماء نماذج وموجة صوتية، جدار مائل من الصور المصغرة، عدّاد يصل إلى 1,000+، رقم ضخم فوق صورة شخصية، بطاقة أمر بزر توليد، وختام بالشعار على الأبيض.
 >
-> A dense 15-second showreel in portfolio style that blends kinetic type with speed charts and assets generated live through the fal API.
+> A 15-second violet-on-black showreel for a generative media platform: a code terminal types a generate call over a dot grid, a cut to a generated macro of violet petals with water drops, then giant words VIDEO, AUDIO and 3D whose letters are filled with generated footage, with index numbers, model names and a waveform, a tilted wall of generated thumbnails, a counter rolling to 1,000+, a huge number over a portrait, a prompt card with a generate button, and the logo on white.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/influencer-seo-ce8c33
 - التصنيفات / Categories: charts, kinetic-type
@@ -13,44 +13,46 @@ Original KOSIF brief derived only from the reference title, tags and public desc
 - التقنية المقترحة / Stack: Remotion, React, WebGL
 
 ## الفكرة
-الموضوع منصة استدلال للوسائط التوليدية تقدَّم عبر شريط استعراضي يُفترض أنه يعرض مهارة المصمم نفسه بقدر ما يعرض المنتج. الهدف هو إبهار المشاهد في 15 ثانية بثلاث رسائل: تنوّع المخرجات، والسرعة الفائقة، وسهولة الاستدعاء من الكود. تتميّز لغة الحركة بأن الأصول البصرية ليست جاهزة بل تُولَّد فعلًا عبر fal API أثناء البناء، وبطباعة حركية تضرب الكلمة على النبضة، وسباق أعمدة للزمن بالمللي ثانية يتجاوز حدود الإطار، ونبضة ضوء تسافر على خط من مقتطف كود إلى عقدة النموذج.
+الموضوع منصة تشغّل نماذج توليد الصور والفيديو والصوت والأبعاد الثلاثة عبر واجهة برمجية، والريل مصنوع بأصول مولدة عبرها فعلاً. الفكرة أن كل إطار مولد: الكلمات نفسها أقنعة تُعرض داخلها لقطات مولدة، والأرقام تقيس حجم المكتبة، والخاتمة «أمر يدخل وبكسلات تخرج». اللغة داكنة فاخرة: أسود باذنجاني بتوهجات بنفسجية، غروتسك عريض للكلمات، سيريف للأرقام والشعارات، وخط آلة كاتبة للشيفرة.
 
 ## Concept
-The subject is a generative-media inference platform, pitched through a showreel that is meant to display the designer's own skill as much as the product. The goal is to impress in 15 seconds with three messages: range of outputs, extreme speed, and easy calls from code. The motion language is distinctive because the visuals are not stock but actually generated through the fal API during the build, paired with kinetic type that hits a word per beat, a latency bar race that overshoots the frame edge, and a light pulse travelling along a line from a code snippet to a model node.
+The subject is a platform that serves image, video, audio and 3D generation models through an API, and the reel is built from assets actually generated through it. The idea is that every frame is generated: the words themselves are masks showing generated footage, numbers measure the size of the model library, and the close is 'prompt in, pixels out'. The language is dark and premium: aubergine black with violet glows, a wide grotesk for words, a serif for numbers and taglines, and a typewriter mono for code.
 
 ## المشاهد المقترحة
-- 0-2 ث: سواد. يُكتب اسم العلامة خلال 200 مللي ثانية ثم يتناثر إلى 400 جسيم يعود تجمّعها خلال 600 مللي ثانية في شبكة 6×4 من صور مولَّدة.
-- 2-6 ث: طباعة حركية: أربع كلمات قدرة تنقضّ كلمة على كل نبضة من مقياس 1.4 إلى 1.0، وتكشف كل منها صورة مصغّرة مولَّدة خلفها؛ وتدفع الكلمة التالية سابقتها خارج الإطار.
-- 6-10 ث: رسم السرعة: سباق أعمدة أفقي لزمن الاستدلال بين أربعة منافسين؛ ينطلق عمود العلامة متجاوزًا الحافة اليمنى بينما تزحف البقية، ويتناقص عدّاد المللي ثانية.
-- 10-13 ث: لحظة الـ API: يُكتب طلب من ثلاثة أسطر في لوحة كود، وتسافر نبضة ضوء على خط طوله 1200 بكسل إلى عقدة النموذج، وتتفتّح الصورة الناتجة من العقدة خلال 400 مللي ثانية.
-- 13-15 ث: الختام: تتوسّع شبكة صور الافتتاح لتملأ الإطار ثم تقطع إلى لون العلامة مع الشعار وسطر بُني بواسطة.
+- 0-1.5 ث: شبه أسود بشبكة نقاط: طرفية تكتب استدعاء generate() بمؤشر مربع؛ ثم قطع خاطف.
+- 1.5-3 ث: لقطة ماكرو مولدة تملأ الإطار لبتلات بنفسجية بقطرات ماء تحت تقريب بطيء؛ مع قطعات سريعة.
+- 3-7 ث: كلمة VIDEO بأحرف كبيرة عريضة ثقيلة تعرض داخلها لقطات كروم سائل مولدة بحد بنفسجي رفيع، ورقم فهرسة واسم نموذج ينزلقان على خط؛ ثم AUDIO بحروف محيطية تمتلئ واحداً تلو الآخر فوق شريط موجة صوتية متحرك؛ ثم 3D مملوءة بحذاء رياضي مولد.
+- 7-9.5 ث: جدار مائل بمنظور من صور مصغرة مولدة ينجرف في الأبعاد الثلاثة بجانب شعار يجمع سيريف مائلاً وغروتسك عريضاً عن أن كل إطار مولد.
+- 9.5-11.5 ث: شاشة منقسمة بفاصل بنفسجي: عدّاد سيريف يتبعثر من 799 إلى 1,000+ بجانب راقصة بالحرير؛ ثم رقم شفاف ضخم فوق صورة شخصية باهتة الألوان.
+- 11.5-12.5 ث: بطاقة أمر تكتب نصها، المؤشر ينقر زر التوليد مع تموج، شريط تقدم يمتلئ وبلاطات بكسل تبدأ بالاتضاح بجانب عبارة «أمر يدخل وبكسلات تخرج».
+- 12.5-15 ث: قطع حاد إلى الأبيض: الشعار وسطر الشعار والرابط تظهر بتلاشٍ.
 
 ## Proposed scenes
-- 0-2s: Black. The brand name is typed in 200ms, then shatters into 400 particles that reassemble over 600ms into a 6x4 grid of generated images.
-- 2-6s: Kinetic type: four capability words slam in one per beat at 1.4 to 1.0 scale, each revealing a generated thumbnail behind it; the previous word is shoved off-frame by the next.
-- 6-10s: Speed chart: a horizontal bar race of inference latency across four competitors; the brand bar shoots past the right edge while others crawl, and the millisecond readout counts down.
-- 10-13s: API moment: a three-line request types in a code panel, a light pulse travels along a 1200px line to a model node, and the resulting image blooms from the node in 400ms.
-- 13-15s: Lockup: the image grid from the opening tiles outward to fill the frame, then cuts to the brand colour with the logo and a 'built with' credit.
+- 0-1.5s: Near-black with a dot grid: a terminal types a generate() call with a block cursor; whip cut.
+- 1.5-3s: Full-frame generated macro of violet petals with water drops under a slow push; quick cuts.
+- 3-7s: VIDEO in heavy wide caps with generated liquid-chrome footage playing inside the letters and a thin violet outline, an index number and model name sliding in on a rule; AUDIO in outline letters filling one by one with footage above an animated waveform strip; 3D filled with a generated sneaker.
+- 7-9.5s: A perspective-tilted wall of generated thumbnails drifts in 3D beside an italic serif plus bold sans tagline about every frame being generated.
+- 9.5-11.5s: Split screen with a violet divider: a serif counter scrambles from 799 to 1,000+ beside a dancer in silk; then a huge translucent number over a desaturated portrait.
+- 11.5-12.5s: A prompt card types its text, a cursor clicks generate with a ripple, a progress bar fills and pixel tiles start to resolve beside the 'prompt in, pixels out' line.
+- 12.5-15s: Hard cut to white: the logo, a tagline and URL fade up.
 
 ## قواعد الحركة
-- تُولَّد كل صورة ومصغّرة عبر fal API وقت البناء ببذور ثابتة وتُخزَّن مؤقتًا؛ ويجب ألا يحوي التصيير النهائي أي صورة مؤقتة.
-- تقع ضربات الطباعة الحركية على نبضات شبكة بسرعة 140 BPM؛ تدخل كل كلمة بمنحنى cubic-bezier(0.16, 1, 0.3, 1) خلال 220 مللي ثانية وتدفعها الكلمة التالية خلال 160 مللي ثانية.
-- يعمل تناثر الجسيمات وتجمّعها على طبقة GPU بنسخ متماثلة (400-800 جسيم) بتأخير عشوائي لكل جسيم حتى 150 مللي ثانية؛ وجسيمات DOM على المعالج ممنوعة.
-- تتسابق أعمدة الرسم بمنحنى ease-in-expo خلال 1200 مللي ثانية؛ يُسمح لعمود العلامة بتجاوز الإطار حتى 20% من العرض؛ وتبقى أعمدة المنافسين دون 60%.
-- تتحرك نبضة الـ API بسرعة ثابتة 2400 بكسل في الثانية على مسار SVG عبر stroke-dashoffset مع توهّج 40 بكسل؛ وتتدرّج صورة النتيجة من 0.6 إلى 1.0 بتجاوز 5%.
-- الكاميرا ثابتة باستثناء دفعة اقتراب واحدة بمقياس 1.10 عند لحظة تجاوز العمود، 200 مللي ثانية دخولًا و500 مللي ثانية خروجًا.
-- اللون: قاعدة شبه سوداء، ولون تمييز واحد للنصوص والعمود الفائز، وتُعرض الصور المولَّدة دون مرشّحات بكامل تشبّعها؛ لا تدرّجات على النص.
-- ممنوع: لقطات تتجاوز 2.5 ثانية، ولقطات مخزون، ونص lorem في لوحة الكود، وأي إحصاء لا يُذكر مع وحدته.
+- إيقاع كثيف: نحو سبع قطعات حادة (معظمها في أول 4 ثوانٍ وحول 9.7-10.7 ث) مع انتقالات خطف وضبابية بين الكلمات؛ لا شيء تقريباً يبقى ساكناً.
+- الصورة داخل النص: لقطات مولدة تُعرض داخل حروف عريضة ثقيلة بحد بنفسجي رفيع؛ وقد تمتلئ الحروف المحيطية واحداً تلو الآخر.
+- كل كلمة قدرة يرافقها رقم فهرسة واسم نموذج على خط تحتها ينزلقان بعد استقرار الكلمة.
+- العدادات تبعثر أرقامها قبل الاستقرار؛ وأرقام شفافة ضخمة تجلس فوق الصور.
+- استخدم أصولاً مولدة فعلاً عبر واجهة المنصة البرمجية للبتلات والكروم والحذاء والراقصة والصورة الشخصية.
+- اللوحة: أسود باذنجاني #0c0b10 و#1f132f، بنفسجي عميق #2e1c4e، بنفسجي #9a6cf0 و#5b2bd6، نص لافندري #efe9f7، موف #a08da5، وأبيض #ffffff لبطاقة الختام؛ مع حبيبات فيلم خفيفة.
+- الخط: غروتسك عريض ثقيل بأحرف كبيرة لكلمات القدرات، سيريف انتقالي للأرقام، سيريف مائل مع خط عريض للشعارات، آلة كاتبة أحادي للشيفرة، وأحادي بكسلي للفهارس.
 
 ## Motion rules
-- Generate every image and thumbnail through the fal API at build time with fixed seeds and cache them; the final render must contain zero placeholder art.
-- Kinetic type hits land on beats of a 140 BPM grid; each word enters with cubic-bezier(0.16, 1, 0.3, 1) over 220ms and is pushed out by the next in 160ms.
-- Particle shatter and reassembly run on a GPU instanced layer (400-800 particles) with per-particle random delay up to 150ms; CPU DOM particles are banned.
-- Chart bars race with ease-in-expo over 1200ms; the brand bar is allowed to exceed the frame by up to 20% of width; competitor bars stay within 60%.
-- The API pulse moves at a constant 2400px per second along an SVG path using stroke-dashoffset, with a 40px glow; the result image scales from 0.6 to 1.0 with a 5% overshoot.
-- Camera is static except one 1.10 push-in on the chart overshoot moment, 200ms in and 500ms out.
-- Colour: near-black base, one brand accent for type and the winning bar, generated images shown unfiltered at full saturation; no gradients on text.
-- Banned: shots longer than 2.5s, stock footage, lorem text in the code panel, and any statistic that is not labelled with its unit.
+- Dense pacing: about seven hard cuts (mostly in the first 4 s and around 9.7-10.7 s) plus whip and blur transitions between words; almost nothing is ever static.
+- Image-in-text: generated clips play inside heavy wide letters with a thin violet outline; outline letters may fill one by one.
+- Every capability word carries an index number and model name on a rule beneath it, sliding in after the word lands.
+- Counters scramble digits before settling; huge translucent numerals sit over imagery.
+- Use real generated assets from the platform's API for petals, chrome, sneaker, dancer and portrait.
+- Palette: aubergine black #0c0b10 and #1f132f, deep violet #2e1c4e, violet #9a6cf0 and #5b2bd6, lavender text #efe9f7, mauve #a08da5, and white #ffffff for the end card; subtle film grain.
+- Type: heavy wide grotesk uppercase for capability words, transitional serif for numbers, italic serif plus bold sans for taglines, typewriter mono for code, pixel mono for indexes.
 
 ## Facts stated by the source (rewritten in our words)
 - Fixed length of 15 seconds.
@@ -59,7 +61,7 @@ The subject is a generative-media inference platform, pitched through a showreel
 - Tagged under charts and kinetic type.
 
 ## Assumptions
-The source names the platform, the duration and the API requirement but no scenes; the particle opener, the latency bar race, the code-to-node pulse and the 140 BPM grid are the director's proposals. Competitor latency figures must come from real benchmarks before publishing.
+Observed from the watched video: the terminal opener, the generated macro, image-filled capability words with indexes, the thumbnail wall, the 1,000+ counter, the prompt card and the white end card over 15 s. Assumed: which models produced each asset and the music; there is no particle shatter, latency bar race or node pulse.
 
 ## Keywords
-showreel, generative media, fal api, kinetic typography, bar race, latency chart, particle text, portfolio reel, شريط استعراضي, وسائط توليدية, طباعة حركية, سباق أعمدة, جسيمات, واجهة برمجية
+showreel, generative media, image in text, terminal typing, model index, thumbnail wall, scramble counter, prompt card, violet glow, شريط استعراضي, وسائط توليدية, صورة داخل النص, عدّاد, واجهة برمجية

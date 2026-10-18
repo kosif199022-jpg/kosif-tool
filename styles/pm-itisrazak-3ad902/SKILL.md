@@ -1,6 +1,6 @@
 ---
 name: pm-itisrazak-3ad902
-description: A 40-second product showreel where the idea of condensing books becomes motion: text walls compress into headlines, summary cards flip and charts count saved time.
+description: A 40-second product reel for a tool that turns documents into hand-illustrated explainer videos: a paragraph with pastel highlights, a 3D book flipping pages, a water-cycle diagram drawing on inside a video player with word-by-word captions, a dark section cycling one sentence through many languages, a Stoicism mind-map, a 2,200+ counter and a logo end card.
 ---
 
 # KOSIF TOOL — Distilbook motion showreel / ريل ديستيل بوك: من كتاب كامل إلى خلاصة
@@ -18,9 +18,9 @@ description: A 40-second product showreel where the idea of condensing books bec
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل منتج مدته 40 ثانية يحوّل فكرة اختصار الكتب إلى لغة حركية: جدران نص تنضغط إلى عناوين، وبطاقات ملخّصات، ورسوم بيانية تعدّ الوقت الموفَّر.
+ريل منتج مدته 40 ثانية لأداة تحوّل المستندات إلى فيديو شرح مرسوم باليد: فقرة بتظليل باستيل، كتاب ثلاثي الأبعاد تتقلب صفحاته، مخطط دورة الماء يُرسم داخل مشغل فيديو بترجمة كلمة بكلمة، قسم داكن بجملة واحدة بلغات كثيرة، خريطة ذهنية عن الرواقية، عدّاد 2,200+ وختام بالشعار.
 
-A 40-second product showreel where the idea of condensing books becomes motion: text walls compress into headlines, summary cards flip and charts count saved time.
+A 40-second product reel for a tool that turns documents into hand-illustrated explainer videos: a paragraph with pastel highlights, a 3D book flipping pages, a water-cycle diagram drawing on inside a video player with word-by-word captions, a dark section cycling one sentence through many languages, a Stoicism mind-map, a 2,200+ counter and a logo end card.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (40 s), aspect 16:9, difficulty 4/5.
 

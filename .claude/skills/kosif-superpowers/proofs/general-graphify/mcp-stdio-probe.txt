@@ -1,0 +1,27 @@
+init: {'name': 'graphify', 'version': '0.9.91'} instructions: 
+TOOL query_graph | Search the knowledge graph using BFS or DFS. Returns relevant nodes and edges as text context. | args: ['question', 'mode', 'depth', 'token_budget', 'context_filter', 'project_path']
+TOOL get_node | Get full details for a specific node by label or ID. | args: ['label', 'node_id', 'project_path']
+TOOL get_neighbors | Get all direct neighbors of a node with edge details. | args: ['label', 'node_id', 'relation_filter', 'token_budget', 'project_path']
+TOOL get_community | Get all nodes in a community by community ID. | args: ['community_id', 'token_budget', 'project_path']
+TOOL god_nodes | Return the most connected nodes - the core abstractions of the knowledge graph. | args: ['top_n', 'exclude_hubs_percentile', 'project_path']
+TOOL graph_stats | Return summary statistics: node count, edge count, communities, confidence breakdown. | args: ['project_path']
+TOOL shortest_path | Find the shortest path between two concepts in the knowledge graph. Follows stored edge direction by default; set undirected=true to ignore it. | args: ['source', 'target', 'max_hops', 'undirected', 'project_path']
+TOOL list_prs | List open GitHub PRs with CI status, review state, and graph impact (which communities each PR touches, blast radius). Use this before starting work to check if | args: ['base', 'repo', 'project_path']
+TOOL get_pr_impact | Get detailed graph impact for a specific PR: which files it changes, which knowledge-graph communities are affected, and how many nodes are touched. Use this to | args: ['pr_number', 'repo', 'project_path']
+TOOL triage_prs | Return all actionable open PRs (correct base, not stale) with full graph impact data so you can reason about review priority, merge order, and conflict risk. Ca | args: ['base', 'repo', 'project_path']
+graph_stats: Nodes: 244
+Edges: 586
+Communities: 8
+EXTRACTED: 94%
+INFERRED: 6%
+AMBIGUOUS: 0%
+
+query_graph: Graph: $V/sample/graphify-out/graph.json (244 nodes) | Traversal: BFS depth=3 | Start: ['resolve()'] | Context: call (heuristic) | 43 nodes found
+
+[!] TRUNCATED: showing 17 of 43 nodes (~400-token budget). The answer may be among the 26 cut nodes — raise the token budget to 994 to get all 43 (CLI: --budget 994, MCP: token_budget=994) or narrow the query (e.g. context_filter=['call'], or get_node for a specific symbol).
+
+NODE resolve() [src=tools/aspects.py loc=L55 community=Community 5]
+NODE aspect_resolution() [src=tools/kosif.py loc=L448 community=Community 1]
+NODE is_valid() [src=tools/aspec
+resources: ['graphify://report', 'graphify://stats', 'graphify://god-nodes', 'graphify://surprises', 'graphify://audit', 'graphify://questions']
+elapsed 1.06

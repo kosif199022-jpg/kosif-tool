@@ -1,63 +1,67 @@
 # مونتاج أنمي حماسي عمودي لمنصة GravityDEX — GravityDEX anime hype edit
 
-> مونتاج عمودي قصير بروح الأنمي يربط منصة تداول لامركزية بشخصية مقاتلة أصلية تتحكم بالجاذبية، بقطع على الإيقاع ولمسات glitch.
+> مونتاج حماسي عمودي مدته نحو 38 ثانية لمنصة تداول لامركزية: حلقة الشعار النقطية تُرسم بخطوط ثم تمتلئ بينما يُكتب سطر أحادي، ثم تصير الحلقة قزحية زرقاء متوهجة داخل عين بانفصال RGB، تليها دفعة قطعات على الإيقاع لكلمات ضخمة بالأسود والأبيض والبنفسجي فوق عملة كروم ثلاثية الأبعاد تدور، حلقة من 24 نقطة بخطوط شعاعية بنفسجية، ومضات بيضاء، مشاهد معكوسة، رموز كانجي بنفسجية متشظية، وختام هادئ بالشعار.
 >
-> A vertical anime-style hype edit that fuses a decentralised exchange with an original gravity-wielding fighter, cut hard to the beat with glitch accents.
+> A roughly 38-second vertical hype edit for a decentralised exchange: the dot-ring logo draws as outlines then fills while a mono line types, the ring becomes a glowing blue iris inside an RGB-split eye, then a fast beat-cut run of huge words in black, white or violet over a rotating chrome 3D coin, a 24-dot ring with violet radial lines, white flash frames, inverted scenes, glitch-sliced violet kanji and a calm logo lock-up.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/micheleharmonic-77628e
 - التصنيفات / Categories: —
-- النسبة المقترحة / Aspect: 9:16 · المدة / Duration: 15 s · الصعوبة / Difficulty: 4/5
-- التقنية المقترحة / Stack: Remotion, GSAP, HTML Canvas
+- النسبة المقترحة / Aspect: 9:16 · المدة / Duration: 38 s · الصعوبة / Difficulty: 4/5
+- التقنية المقترحة / Stack: Remotion, Three.js, HTML Canvas
 
 ## الفكرة
-الموضوع منصة تداول لامركزية اسمها يحيل إلى الجاذبية، ويريد صاحب الطلب مونتاجًا يستلهم شخصية أنمي شهيرة قادرة على التحكم بالفراغ والجاذبية. بما أن تلك الشخصية ملكية فكرية لطرف ثالث، يعتمد هذا البريف شخصية أصلية بأسلوب الأنمي (ظل مقاتل بعصبة عين) تُرسم كخطوط وأشكال مسطّحة، وتُترجم فكرة الجاذبية إلى حركة: رموز العملات تُسحب إلى مدار حول الشعار، وخطوط الرسم البياني تنكسر وتنجذب نحو المركز. الهدف إثارة الحماس للمنصة في 15 ثانية بلغة حركة عنيفة الإيقاع: قطع على كل ضربة، دفعات تكبير سريعة، خطوط سرعة شعاعية، ولمعات بيضاء قصيرة جدًا.
+الموضوع منصة تداول لامركزية تُقدَّم بطاقة مونتاج أنمي، لكن الإشارة إلى الأنمي محصورة في عين واحدة متوهجة؛ لا شخصيات مقتبسة. البطل البصري هو رمز العلامة نفسه: حلقة نقاط تتحول إلى قزحية ثم إلى عملة كروم ثم إلى حلقة كبيرة. الحركة كلها ضربات كلمات: كلمة أو كلمتان في كل نبضة تملآن عرض الإطار ثم قطع حاد، مع انقلاب قطبية الأسود والأبيض وومضات على اللحظات القوية، داخل إطار HUD ثابت.
 
 ## Concept
-The subject is a decentralised exchange whose name evokes gravity, and the request is an edit inspired by a famous anime character who controls space and gravity. Because that character is third-party IP, this brief uses an original anime-style figure (a blindfolded fighter silhouette) drawn as flat shapes and lines, and translates the gravity idea into motion: token symbols are pulled into orbit around the logo, and chart lines bend and collapse toward the centre. The goal is to hype the exchange in 15 seconds with a hard-hitting motion language: a cut on every beat, fast punch-ins, radial speed lines and very short white flash frames.
+The subject is a decentralised exchange presented with anime-edit energy, but the anime nod is limited to one glowing eye; no borrowed characters. The visual hero is the brand mark itself: a ring of dots that becomes an iris, then a chrome coin, then a large ring. Motion is word punches: one or two words per beat filling the frame width, then a hard cut, with black/white polarity flips and flashes on impacts, inside a fixed HUD.
 
 ## المشاهد المقترحة
-- 0-1ث: إطار أسود مع ضربة باص واحدة؛ يقتحم الشعار النصي بمقياس 140% ثم يستقر على 100% بينما تنطلق خطوط سرعة شعاعية إلى الخارج.
-- 1-4ث: ثلاث قطعات سريعة على الإيقاع: ظل المقاتل جانبيًا، لقطة قريبة مشرّحة بأسلوب glitch لعصبة العين، ثم يد مرفوعة تحمل كرة صغيرة من الفراغ المشوّه.
-- 4-8ث: تتمدد الكرة إلى لوحة مبادلة: رمزا عملتين ينزلقان نحو بعضهما، وخط السعر يندفع عبر الشاشة وينحني كأن كتلة تجذبه.
-- 8-12ث: انفجار جاذبي: تنكمش الشاشة كلها نحو المركز، تدور حلقة من أيقونات العملات حول الشعار بسرعة متزايدة، ويقتحم عنوان حركي عن سرعة المبادلة كلمة كلمة.
-- 12-15ث: الختام: الشعار في المنتصف، يتجمّد المدار، يهدأ الانقسام اللوني، ويثبت سطر دعوة واحد مع معرّف المنصة حتى الضربة الأخيرة.
+- 0-3.2 ث: أسود: خطوط شيفرونات الشعار تُرسم في حلقة بينما يومض مؤشر مربع أسفل اليسار.
+- 3.2-6.3 ث: الحلقة تمتلئ بأشكال نقاط بيضاء وتنبض؛ وعبارة أحادية بأحرف كبيرة من سطرين تُكتب تحتها بمؤشر مربع.
+- 6.3-9.5 ث: الحلقة تتحول إلى قزحية زرقاء متوهجة بأشعة داخل حدود عين بعلامات رموش واهتزاز انفصال RGB؛ والحركة تنفجر عند نحو 7 ث.
+- 9.5-15.8 ث: ضربات كلمات مقطوعة على الإيقاع: كلمة بيضاء ضخمة فوق تظليل ضوئي داكن، ثم حلقة من 24 نقطة بخطوط سرعة بنفسجية شعاعية حول كلمة من سطرين؛ والقطعات تتجمع عدة في الثانية.
+- 15.8-22 ث: عملة كروم ثلاثية الأبعاد بجيوب الشعار تدور خلف كلمات ضخمة؛ ثم انقلاب إلى الأبيض مع رموز كانجي مشوشة بانفصال RGB.
+- 22-30 ث: مشاهد بيضاء معكوسة مع العملة تحت كلمات سوداء، ومضات بيضاء، ثم إطار محترق الإضاءة بكلمة بنفسجية على الضربة.
+- 30-34 ث: رموز كانجي بنفسجية ضخمة متشظية بإزاحات كتل أفقية في أكثف تجمع للقطعات.
+- 34-38 ث: ختام هادئ على الأسود: حلقة النقاط واسم العلامة مع سطر شعار من ثلاثة أسطر بأحرف كبيرة متباعدة وحسابات صغيرة.
 
 ## Proposed scenes
-- 0-1s: Black frame, a single bass hit; the wordmark smashes in at 140% scale and snaps to 100% while radial speed lines streak outward.
-- 1-4s: Three rapid cuts on the beat: the fighter silhouette in profile, a glitch-sliced close-up of the blindfold, then a hand raised with a small sphere of distorted space.
-- 4-8s: The sphere expands into a swap panel: two token symbols slide toward each other, a price line races across and bends as if pulled by mass.
-- 8-12s: Gravity burst: the whole screen warps toward the centre, a ring of token icons orbits the logo at increasing speed, and a kinetic headline about fast swaps slams in word by word.
-- 12-15s: Final lock-up: logo centred, orbit freezes, chromatic split settles, and a one-line call to action with the platform handle holds for the last beat.
+- 0-3.2s: Black: the logo's chevron outlines draw on in a ring while a block cursor blinks bottom-left.
+- 3.2-6.3s: The ring fills as white dot shapes and pulses; a two-line mono uppercase phrase types beneath with a block cursor.
+- 6.3-9.5s: The ring morphs into a glowing blue iris with radial rays inside an eye outline with lash ticks and RGB offset jitter; the motion explodes at about 7 s.
+- 9.5-15.8s: Beat-cut word punches: a huge white word over a dark spotlight vignette, then a 24-dot ring with violet radial speed lines around a two-line word; cuts cluster several per second.
+- 15.8-22s: A rotating chrome 3D coin with logo pockets tumbles behind huge words; a polarity flip to white with glitchy RGB kanji.
+- 22-30s: Inverted white scenes with the coin under black words, white flash frames, then a blown-out frame with a violet word on impact.
+- 30-34s: Giant violet kanji glitch-sliced with horizontal block offsets in the densest cut cluster.
+- 34-38s: Calm outro on black: the dot-ring mark and wordmark with a three-line tracked uppercase tagline and small handles.
 
 ## قواعد الحركة
-- قطع على كل ضربة أثناء مقاطع الذروة (مقترح 150 نبضة في الدقيقة أي 400 مللي ثانية لكل ضربة) وعلى كل ضربة ثانية فيما عداها؛ لا تتجاوز أي لقطة 1.2 ثانية.
-- تقفز دفعات التقريب من مقياس 1.00 إلى 1.15 في إطار واحد ثم تعود بمنحنى easeOutExpo خلال 350 مللي ثانية.
-- خطوط السرعة شعاعية تُرسم من حافة الإطار نحو المركز، 80-140 خطًا، يعيش كل منها 3-5 إطارات، وتتجدد عند كل ضربة.
-- لمسة glitch: إزاحة شرائح أفقية حتى 24 بكسل وانزياح قنوات RGB بمقدار 4-6 بكسل، لمدة 2-4 إطارات فقط بعد كل ضربة.
-- الطباعة: خط عريض مضغوط مائل للعناوين، يدخل بتجاوز لإطارين (من مقياس 1.3 إلى 1.0) ويخرج بقطع حاد لا بتلاشٍ أبدًا.
-- إطارات الومض بيضاء أو بلون تأكيد واحد، لا تتجاوز إطارين متتاليين، ولا تزيد على ثلاث ومضات في الثانية التزامًا بإرشادات الحساسية الضوئية.
-- اتجاه الألوان (مقترح): قاعدة كحلية داكنة وسوداء، لون كهربائي واحد لتأثير الجاذبية، ونص أبيض؛ لا تتجاوز اللوحة ثلاثة ألوان.
-- ممنوع: أي إطارات أو رسوم أو صوت من الأنمي نفسه، والتلاشي البطيء، وانزياحات Ken Burns، وطبقات lens flare الجاهزة.
+- بناء هادئ (0-6 ث)، انفجار قرب 7 ث، طاقة عالية مستمرة حتى نحو 34 ث، ثم ختام شبه ساكن؛ نحو 52 قطعة حادة إجمالاً تتجمع 3-10 في الثانية حول 7.5 ث و27-28.5 ث و30-33.5 ث.
+- ضربات الكلمات تتصغر من نحو 1.2 إلى 1.0 في 150-250 مللي ثانية، تتجاوز حافة الإطار، وتُقطع حاداً على النبضة التالية.
+- القطبية انتقال: انقلاب بين الأسود والأبيض المحترق مع تظليل حواف ثقيل، وومضات بيضاء مفردة على الضربات.
+- رمز العلامة هو العنصر البطل: رسم الحدود، الامتلاء، التحول إلى قزحية، العملة الكروم، وحلقة نقاط تكبر من 8 إلى نحو 24 نقطة.
+- لمسات تشويش: إزاحة قنوات RGB على العين والكلمات، وإزاحة شرائح أفقية على الكانجي.
+- HUD دائم بخط أحادي صغير: رابط الموقع أعلى اليسار، وسم المنصة أعلى اليمين، علامة اللانهاية أسفل اليسار، وعدّاد زمني أسفل اليمين.
+- اللوحة: أسود #030303، أبيض #ffffff، غرافيت #2c2c30، رمادي #959299، بنفسجي #8a6cff، ليلكي #d9a6ff وقزحية سماوية #5cc8ff؛ الخط نيو غروتسك ثقيل 800-900 بأحرف كبيرة مع أحادي عريض.
 
 ## Motion rules
-- Cut on every beat during drops (proposed 150 BPM, so 400 ms per beat) and on every second beat elsewhere; no shot longer than 1.2 s.
-- Punch-ins jump from scale 1.00 to 1.15 in a single frame and relax back with easeOutExpo over 350 ms.
-- Speed lines are radial strokes drawn from the frame edge toward centre, 80-140 lines, living 3-5 frames each, regenerated on every hit.
-- Glitch accent: horizontal slice displacement of up to 24 px and RGB channel offset of 4-6 px, active only for 2-4 frames after a hit.
-- Typography: heavy condensed italic for headlines, entering with a 2-frame overshoot (scale 1.3 to 1.0) and leaving by a hard cut, never a fade.
-- Flash frames are white or a single accent colour, never more than 2 consecutive frames, and never more than three flashes per second to stay within photosensitivity guidance.
-- Colour direction (proposed): deep navy and black base, one electric accent for the gravity effect, white type; the palette never exceeds three hues.
-- Banned: any frames, artwork or audio from the anime itself, slow crossfades, Ken Burns drifts and stock lens-flare overlays.
+- Calm build (0-6 s), explosion near 7 s, sustained high energy to about 34 s, near-still outro; about 52 hard cuts in total, clustering 3-10 per second around 7.5 s, 27-28.5 s and 30-33.5 s.
+- Word punches scale from about 1.2 to 1.0 in 150-250 ms, overflow the frame edge and hard-cut on the next beat.
+- Polarity is a transition: flip between black and blown-out white with a heavy vignette, plus single white flash frames on impacts.
+- The brand mark is the hero object: outline draw-on, fill, iris morph, chrome coin and a dot ring that grows from 8 to about 24 dots.
+- Glitch accents: RGB channel offset on the eye and words, horizontal slice displacement on the kanji.
+- Persistent HUD in tiny mono: site URL top-left, platform label top-right, a limitless mark bottom-left and running timecode bottom-right.
+- Palette: black #030303, white #ffffff, graphite #2c2c30, grey #959299, violet #8a6cff, lilac #d9a6ff and cyan iris #5cc8ff; type is heavy neo-grotesk 800-900 uppercase plus bold mono.
 
 ## Facts stated by the source (rewritten in our words)
 - The creator wanted an intense crossover edit between the GravityDEX brand and a well-known anime character.
 - No duration, stack, tags or structure are given; the page's frame size is vertical (1080 by 1920).
 
 ## Assumptions
-Only the brand, the anime crossover idea and the vertical format are stated; the 15-second length, the original substitute character, the beat grid and all effects are my proposed direction, chosen so that no third-party anime assets are reproduced.
+Observed from frames sampled every ~3.2 s plus cut detection: the logo draw-on and typewriter opening, the eye morph, the word punches, chrome coin, dot ring, white inversions, glitched kanji, HUD and the 38 s length. Assumed: the music (not heard) and exact word order; no fighter silhouette or swap panel appears.
 
 ## Keywords
-مونتاج حماسي, أنمي, تداول لامركزي, عملات رقمية, قطع على الإيقاع, خطوط سرعة, جاذبية, anime edit, dex, crypto, beat cut, glitch, speed lines, vertical
+hype edit, anime edit, beat cut, word punches, chrome coin, dot ring logo, polarity flip, glitch, hud frame, vertical, مونتاج حماسي, قطع على الإيقاع, عملة كروم, تداول لامركزي

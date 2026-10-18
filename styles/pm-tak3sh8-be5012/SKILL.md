@@ -1,6 +1,6 @@
 ---
 name: pm-tak3sh8-be5012
-description: A narrated whiteboard explainer where strokes are drawn live, walking from a frustrated spin glass to Parisi's hierarchical overlap matrix.
+description: A long whiteboard explainer (about 5 min 8 s) inside a framed board on a dark slate wall, where a visible marker writes each section title and then draws: an all-to-all spin network with red and blue couplings, a frustrated triangle and a rugged energy curve, boxed replicas with coupling arcs, an overlap matrix with a red-circled wrong result, hatched nested block matrices, then an ultrametric tree and a P(q) plot. An eraser wipes the board between chapters, narration-synced subtitles sit below, and it ends on a colour-coded five-point recap.
 ---
 
 # KOSIF TOOL — Replica symmetry breaking whiteboard / سبورة مرسومة باليد تشرح كسر تناظر النسخ في نموذج SK
@@ -18,11 +18,11 @@ description: A narrated whiteboard explainer where strokes are drawn live, walki
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-شرح بأسلوب السبورة البيضاء، تُرسم فيه الخطوط أمام المشاهد مع تعليق صوتي، لفكرة كسر تناظر النسخ في نموذج شيرينغتون-كيركباتريك للزجاج المغزلي.
+شرح سبورة طويل (نحو 5 دقائق و8 ثوانٍ) داخل إطار سبورة على جدار رمادي داكن، يكتب فيه قلم ظاهر عنوان كل قسم ثم يرسم: شبكة مغازل متصلة كلها بأزواج حمراء وزرقاء، مثلث محبط ومنحنى طاقة وعر، نسخ في صناديق بأقواس اقتران، مصفوفة تداخل بنتيجة خاطئة محاطة بالأحمر، مصفوفات كتل متداخلة مظللة، ثم شجرة فوق مترية ومخطط P(q). ممحاة تمسح السبورة بين الفصول، وترجمة متزامنة مع التعليق أسفلها، وينتهي بملخص من خمس نقاط ملونة.
 
-A narrated whiteboard explainer where strokes are drawn live, walking from a frustrated spin glass to Parisi's hierarchical overlap matrix.
+A long whiteboard explainer (about 5 min 8 s) inside a framed board on a dark slate wall, where a visible marker writes each section title and then draws: an all-to-all spin network with red and blue couplings, a frustrated triangle and a rugged energy curve, boxed replicas with coupling arcs, an overlap matrix with a red-circled wrong result, hatched nested block matrices, then an ultrametric tree and a P(q) plot. An eraser wipes the board between chapters, narration-synced subtitles sit below, and it ends on a colour-coded five-point recap.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, Remotion, Web Audio), suggested duration (60 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, Remotion, Web Audio), suggested duration (308 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات.

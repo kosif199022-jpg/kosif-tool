@@ -1,0 +1,2466 @@
+[
+ {
+  "id": "SHAPE-01",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحويل المسار بإعادة العينات",
+  "name_en": "Seek-safe path morph (MOTION.morphPath)",
+  "status": "proven",
+  "what": "يأخذ عينات متساوية من المسارين (120 نقطة) ويستوفي بينهما عبر وكيل في خط GSAP، فيصير أي شكل أي شكل بلا إضافة. / Samples both SVG paths to N points and interpolates through a proxy on a GSAP timeline — any shape into any shape, no plugin, seekable.",
+  "how": "MOTION.morphPath(tl, pathEl, fromD, toD, at, {points, dur, ease, open}); getPointAtLength sampling, writes \"M…L…Z\" each tick via modifiers, immediateRender false. Rendered here: circle→star at 0.2 s, star→square at 1.3 s on a paused timeline driven by seek(t). Start both paths at the same angle (top-centre) to avoid a twist.",
+  "params": "N 120 points, dur .66 s, ease E.inOut; closes with Z unless open",
+  "install": "",
+  "license": "GSAP المضمّن برخصة GSAP القياسية «بلا مقابل» — ليست MIT / vendored GSAP, standard no-charge license.",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:255",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:255",
+   "kosif-studio/motion/projects/kit_v3_demo/index.html",
+   "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js"
+  ],
+  "styles": [],
+  "tags": [
+   "تحويل",
+   "مورف",
+   "morph",
+   "path",
+   "svg",
+   "shape",
+   "seek"
+  ]
+ },
+ {
+  "id": "SHAPE-02",
+  "family": "shapes-morph-geometry",
+  "name_ar": "قانون التحويل: نقاط متساوية واتجاه واحد",
+  "name_en": "Morph law: equal points, same winding",
+  "status": "documented",
+  "what": "لا تحوّل إلا مسارين بنفس عدد النقاط ونفس اتجاه اللف؛ أعد العينات أولًا بـ flubber أو نقاط محسوبة مسبقًا. / Only morph equal-point, same-winding paths; resample first (flubber or precomputed points).",
+  "how": "Remotion: lerp [x,y] arrays with Easing.inOut(Easing.cubic); browser: flubber.interpolate(a,b,{maxSegmentLength:4}); align start points by rotating the array to the topmost vertex; reverse one path if signed areas differ.",
+  "params": "500–800 ms cubic-bezier(.65,0,.35,1); 64–128 points (200 for detailed shapes)",
+  "install": "npm i flubber",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/shapes.md:24",
+   "kosif-tool/playbooks/shapes.md:53-64"
+  ],
+  "styles": [
+   "pm-blue-clarity-ef56d0"
+  ],
+  "tags": [
+   "تحويل",
+   "flubber",
+   "resample",
+   "winding",
+   "morph rule"
+  ]
+ },
+ {
+  "id": "SHAPE-03",
+  "family": "shapes-morph-geometry",
+  "name_ar": "فائق الإهليلج بحلقات صدى",
+  "name_en": "Superellipse morph with echo rings",
+  "status": "proven",
+  "what": "الشكل يمر عبر |x|ⁿ+|y|ⁿ=1 بأس متحرك (دائرة→مربع ناعم)، وحوله حلقات كنتور متأخرة كصدى. / Morph through |x|^n+|y|^n=1 with animated n (circle → squircle), surrounded by offset contour rings that lag behind.",
+  "how": "x = sign(cosθ)|cosθ|^(2/n)·R, y likewise; n tween 2→4.2; 5–7 rings at +12 px offsets each delayed 60 ms and fading; rendered here (Canvas lab). Can continue to a 3D cube or star.",
+  "params": "n 2→4.2 in 400 ms; 5–7 rings, 12 px apart, 60 ms lag each",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-levabashidze-2d713a"
+  ],
+  "styles": [
+   "pm-levabashidze-2d713a"
+  ],
+  "tags": [
+   "فائق الإهليلج",
+   "squircle",
+   "superellipse",
+   "echo",
+   "morph"
+  ]
+ },
+ {
+  "id": "SHAPE-04",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحويل بدالة قطبية",
+  "name_en": "Polar-function shape morph",
+  "status": "proven",
+  "what": "الشكل = r(θ) = a + b·|cos(kθ/2)|^p؛ استوفِ a وb وk وp بين أشكال مسماة (زهرة، نجمة، squircle) مع شبكة قطبية ومعادلة حية. / Shape as r(θ)=a+b·|cos(kθ/2)|^p; interpolate a, b, k, p between named forms, optionally with a polar grid and a live formula label.",
+  "how": "Sample 120–240 θ steps, fill; tween k 4→8, p .5→2 with easeInOutCubic 600 ms; flower variant r = R(1 + .12 sin(8θ + t)) with design handles and a dimension tag. Rendered here (lab).",
+  "params": "k 4→8, 120–240 samples, 600 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-ayushunleashed-ece3e3",
+   "kosif-tool/styles/pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "styles": [
+   "pm-ayushunleashed-ece3e3",
+   "pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "tags": [
+   "قطبي",
+   "polar",
+   "formula",
+   "flower",
+   "morph",
+   "math"
+  ]
+ },
+ {
+  "id": "SHAPE-05",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحويل المضلعات وأشكال باوهاوس",
+  "name_en": "Polygon / Bauhaus primitive morph",
+  "status": "seen",
+  "what": "مربع أحمر → خماسي أصفر → مثلث، أو مثلث → سداسي، باستيفاء رؤوس المضلعات. / Red square → yellow pentagon → triangle (or triangle → hexagon) by vertex interpolation.",
+  "how": "Resample both polygons to the LCM vertex count (or 60 points), interpolate, recolour in step; 400 ms with outElastic or back.out.",
+  "params": "400 ms; outElastic",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-lukasersil-0ed38e",
+   "kosif-tool/styles/pm-itsuki-dev-10942d"
+  ],
+  "styles": [
+   "pm-lukasersil-0ed38e",
+   "pm-itsuki-dev-10942d"
+  ],
+  "tags": [
+   "مضلع",
+   "باوهاوس",
+   "polygon",
+   "bauhaus",
+   "morph"
+  ]
+ },
+ {
+  "id": "SHAPE-06",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحويل بنابض ونجوم تدور",
+  "name_en": "Spring shape morph with orbiting stars",
+  "status": "seen",
+  "what": "دائرة→مربع→نجمة خماسية بمنحنى نابض، وحولها حلقة نجوم صغيرة تدور. / Circle → square → 5-point star with spring easing, a ring of small stars rotating around.",
+  "how": "200-point resample; spring stiffness 180 damping 14 drives the mix; satellites on a circle rotate 1 rev/s.",
+  "params": "200 pts, stiffness 180, damping 14",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-roundtablespace-d3a1be",
+   "kosif-tool/styles/pm-stephanlivera-df17a2"
+  ],
+  "styles": [
+   "pm-roundtablespace-d3a1be",
+   "pm-stephanlivera-df17a2"
+  ],
+  "tags": [
+   "نابض",
+   "نجمة",
+   "spring",
+   "morph",
+   "star"
+  ]
+ },
+ {
+  "id": "SHAPE-07",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحويل بصدى ملون أو أثر ضبابي",
+  "name_en": "Morph with coloured echo / blur trail",
+  "status": "seen",
+  "what": "الشكل يتحول ويدور، وخلفه نسختان ملونتان متأخرتان أو صدى ضبابي حركي، مع مدار نقطي. / Morph while rotating with two lagged coloured stroke copies or a motion-blur echo, plus a dotted orbit.",
+  "how": "Draw copies at t−40 ms and t−80 ms in accent colours (stroke only) or 3–5 fading copies for blur; 600–800 ms easeInOutCubic; 3 orbit dots.",
+  "params": "600–800 ms; echoes at 40/80 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-tolgayhickiran-e90799",
+   "kosif-tool/styles/pm-motiondsgnr-9dcfa6"
+  ],
+  "styles": [
+   "pm-tolgayhickiran-e90799",
+   "pm-motiondsgnr-9dcfa6"
+  ],
+  "tags": [
+   "صدى",
+   "echo",
+   "blur trail",
+   "morph",
+   "orbit"
+  ]
+ },
+ {
+  "id": "SHAPE-08",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحويل داخل صندوق أداة تصميم",
+  "name_en": "Design-tool gizmo morph",
+  "status": "seen",
+  "what": "الشكل يتحول (دائرة، صدفة، نجمة) داخل صندوق تحديد رفيع بمقابض مربعة يدور، مع قراءة حية «ROT 340.9°». / Morph between shapes inside a thin rotating bounding box with square handles and a live mono readout.",
+  "how": "Box stroke 1 px #aaa, 8 px square handles, Bezier handle dots; label in mono updates from the actual angle; morph 600 ms.",
+  "params": "morph 600 ms; box 1 px #aaa",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-leadnotifi-e83f94",
+   "kosif-tool/styles/pm-ghinaiya-nirmal-5d8fec"
+  ],
+  "styles": [
+   "pm-leadnotifi-e83f94"
+  ],
+  "tags": [
+   "أداة تصميم",
+   "gizmo",
+   "handles",
+   "figma",
+   "morph"
+  ]
+ },
+ {
+  "id": "SHAPE-09",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحويل سحابة نقاط إلى أيقونة أو شبكة",
+  "name_en": "Dot-cloud morph (scatter → grid / icon)",
+  "status": "seen",
+  "what": "نقاط تبدأ عشوائية داخل شكل المصدر وتنتقل كل منها إلى موقعها في الشبكة أو الأيقونة الهدف بتأخير قطري ونابض. / N dots start scattered inside the source shape and travel to their grid cell or sampled icon point with diagonal stagger and spring easing.",
+  "how": "Sample target shape into N points (alpha > 128 on an offscreen canvas or getPointAtLength), match by sorting both sets by angle, delay = (row+col)·25 ms; ~400 dots 0.8 s easeInOutCubic.",
+  "params": "10×10, 25 ms diagonal; ~400 dots, 0.8 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/infographic",
+   "kosif-tool/styles/pm-manuelogomigo-f33ca9"
+  ],
+  "styles": [
+   "infographic",
+   "pm-manuelogomigo-f33ca9"
+  ],
+  "tags": [
+   "نقاط",
+   "dot morph",
+   "scatter",
+   "grid",
+   "icon",
+   "infographic"
+  ]
+ },
+ {
+  "id": "SHAPE-10",
+  "family": "shapes-morph-geometry",
+  "name_ar": "شريط ينثني فيصير حلقة",
+  "name_en": "Bar bends into a ring",
+  "status": "seen",
+  "what": "شريط مستقيم يُرسم كقوس ثابت الطول يقل نصف قطره من اللانهاية إلى L/2π فيصير حلقة، ثم تنقسم الحلقة إلى شرائح. / Draw the bar as a constant-length arc whose radius goes from huge to L/(2π) so it curls into a ring, then split it with cumulative dash offsets.",
+  "how": "Log-interpolate r; keep the arc anchored by shifting its centre; stroke width = bar height; ~1 s.",
+  "params": "~1 s; stroke = bar height",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/infographic"
+  ],
+  "styles": [
+   "infographic"
+  ],
+  "tags": [
+   "شريط",
+   "حلقة",
+   "bar to ring",
+   "donut",
+   "data"
+  ]
+ },
+ {
+  "id": "SHAPE-11",
+  "family": "shapes-morph-geometry",
+  "name_ar": "رسم يدوي يصير نظيفًا",
+  "name_en": "Sketch-to-clean morph",
+  "status": "seen",
+  "what": "خط مرتجف يُستوفى إلى مسار ناعم عند زر «تنظيف». / A jittered polyline interpolates to its smoothed path when a “clean up” button is pressed.",
+  "how": "Keep the same samples; target = Catmull-Rom of the clean control points; 500 ms.",
+  "params": "500 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-adamdesgns-478d6d"
+  ],
+  "styles": [
+   "pm-adamdesgns-478d6d"
+  ],
+  "tags": [
+   "رسم",
+   "تنظيف",
+   "sketch",
+   "clean up",
+   "before after"
+  ]
+ },
+ {
+  "id": "SHAPE-12",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحول متعدد الأوجه",
+  "name_en": "Facet morph (36 low-poly triangles)",
+  "status": "install",
+  "what": "كتلة لوبولي من 36 مثلثًا تتحول بين ثلاثة أشكال (كتلة، علامة، شارة) بتظليل مسطح لكل وجه. / A 36-triangle low-poly mass morphs between three silhouettes with per-facet flat shading lit from the upper left.",
+  "how": "npx hyperframes add facet-morph; vars forms=\"blob,mark,badge\", hold_last, accent, exit none|fade|up; mount on a class=\"clip\" div.",
+  "params": "",
+  "install": "npx hyperframes add facet-morph",
+  "license": "Apache-2.0.",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/facet-morph/facet-morph.html"
+  ],
+  "styles": [],
+  "tags": [
+   "لوبولي",
+   "low poly",
+   "facet",
+   "morph",
+   "hyperframes"
+  ]
+ },
+ {
+  "id": "SHAPE-13",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تحويل SVG بإضافة MorphSVG",
+  "name_en": "MorphSVG plugin morph (HyperFrames rule)",
+  "status": "documented",
+  "what": "قاعدة HyperFrames: حوّل الأشكال الأولية إلى مسارات وقسّم الصور الظلية المعقدة، وفضّل MorphSVGPlugin ثم تحقق بلقطة مفتاحية. / HyperFrames rule: convert primitives to paths, split complex silhouettes, prefer MorphSVGPlugin, verify with a keyframe shot.",
+  "how": "gsap.registerPlugin(MorphSVGPlugin); tl.to(a,{morphSVG:b}); hyperframes keyframes --shot to check in-betweens. Outside HyperFrames prefer SHAPE-01.",
+  "params": "",
+  "install": "",
+  "license": "GSAP standard no-charge license.",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "MorphSVG",
+   "gsap",
+   "morph",
+   "hyperframes"
+  ]
+ },
+ {
+  "id": "SHAPE-14",
+  "family": "shapes-morph-geometry",
+  "name_ar": "أسلوب الأشكال السائلة",
+  "name_en": "Liquid-morph style",
+  "status": "documented",
+  "what": "كتل سائلة تندمج وتنقسم: تحويل مسارات بنقاط متساوية أو فلتر لزوجة، ورؤوس تحركها ضوضاء. / Blobby fluid shapes merging and splitting via equal-point path morph or a gooey filter, vertices driven by noise.",
+  "how": "Scaffold: python3 tools/kosif.py scaffold liquid-morph <dir>; morph 500–800 ms at 64–128 points or SHAPE-27; beat-anchored variant: HyperFrames liquid-morph primitive (phrase/transition anchors, best span 1.0–2.5 s).",
+  "params": "morph 500–800 ms; 64–128 pts",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/liquid-morph/SKILL.md",
+   "kosif-tool/styles/liquid-morph/STYLE.json",
+   "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/liquid-morph/scene.html"
+  ],
+  "styles": [],
+  "tags": [
+   "سائل",
+   "liquid",
+   "blob",
+   "style",
+   "morph"
+  ]
+ },
+ {
+  "id": "SHAPE-15",
+  "family": "shapes-morph-geometry",
+  "name_ar": "العنصر المشترك (FLIP)",
+  "name_en": "FLIP / shared-element continuity",
+  "status": "documented",
+  "what": "أبقِ عنصرًا واحدًا حيًا وهو يغير صندوقه أو مكانه بين حالتين، فتبقى هويته متصلة بدل التلاشي المتقاطع. / Keep one element alive while it changes box or hierarchy, so identity is continuous instead of a crossfade.",
+  "how": "First/Last/Invert/Play: measure both boxes, apply the inverse transform, tween to identity in one continuous transform; split x/y/scale into eased keys only for deliberate beats.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/references/keyframe-patterns.md"
+  ],
+  "styles": [],
+  "tags": [
+   "FLIP",
+   "shared element",
+   "continuity",
+   "ui",
+   "transition"
+  ]
+ },
+ {
+  "id": "SHAPE-16",
+  "family": "shapes-morph-geometry",
+  "name_ar": "البطاقة كمرساة انتقال",
+  "name_en": "Card-morph anchor handoff",
+  "status": "documented",
+  "what": "حاوية تغير حجمها الظاهري (scale موحد) وزواياها وخلفيتها وظلها بين لقطتين ثم تتلاشى لتكشف الهدف الحقيقي. / A container morphs apparent size (uniform scale), radius, background and shadow between two shots, then fades to reveal the real target.",
+  "how": "One paused GSAP timeline, fromTo explicit states; MORPH_DUR power2.inOut; fades power1.in/out by fraction; transforms/opacity only.",
+  "params": "power2.inOut",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/card-morph-anchor.md"
+  ],
+  "styles": [],
+  "tags": [
+   "بطاقة",
+   "card morph",
+   "handoff",
+   "ui"
+  ]
+ },
+ {
+  "id": "SHAPE-17",
+  "family": "shapes-morph-geometry",
+  "name_ar": "سلسلة: نقطة → زر → شريط تقدم",
+  "name_en": "Morph chain: dot → button → progress bar → full stop",
+  "status": "ready",
+  "what": "نقطة حمراء واحدة هي الخيط البصري: تسقط، تصير زرًا يُضغط، تنبسط إلى شريط تقدم، ثم تصير نقطة نهاية. / One red dot is the through-line: it falls, becomes a pill button, is pressed, flattens into a progress bar, then a full stop.",
+  "how": "pill from scaleX 44/400, scaleY .44 → 1,1 in .42 s E.inOut on beat 4; after press scaleX 2.0, scaleY .24 in .34 s, swap to #bar; #fill 0→800 linear 1.1 s; counter 0→900.",
+  "params": "120 BPM grid; .42 s / .34 s / 1.1 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:66"
+  ],
+  "styles": [],
+  "tags": [
+   "نقطة",
+   "زر",
+   "شريط تقدم",
+   "morph chain",
+   "button",
+   "progress"
+  ]
+ },
+ {
+  "id": "SHAPE-18",
+  "family": "shapes-morph-geometry",
+  "name_ar": "جزيرة ديناميكية وزر ينفتح نافذة",
+  "name_en": "Dynamic-island / button-to-window morph",
+  "status": "seen",
+  "what": "حاوية واحدة تغير عرضها وارتفاعها ونصف قطرها بين الحالات بنابض: كبسولة→نافذة، بطاقة→كبسولة، دائرة→كبسولة. / One container animates width/height/radius between states on a spring: pill→window, card→pill, circle→pill with squash on settle.",
+  "how": "Spring stiffness 200 damping 22; radius 16 px → 999 px; content fades in only after 70% of the size change; ~600–800 ms easeInOutQuint if not spring.",
+  "params": "stiffness 200, damping 22; 600–800 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-jazzen-chen-4542ae",
+   "kosif-tool/styles/pm-twoclipping-221cab",
+   "kosif-tool/styles/pm-elliot-garreffa-f334bc",
+   "kosif-tool/styles/pm-ultimaxbt-bbebf5"
+  ],
+  "styles": [
+   "pm-jazzen-chen-4542ae",
+   "pm-twoclipping-221cab",
+   "pm-elliot-garreffa-f334bc"
+  ],
+  "tags": [
+   "جزيرة",
+   "كبسولة",
+   "dynamic island",
+   "pill",
+   "container morph",
+   "spring"
+  ]
+ },
+ {
+  "id": "SHAPE-19",
+  "family": "shapes-morph-geometry",
+  "name_ar": "مؤشر مطاطي بحافتين",
+  "name_en": "Two-edge stretchy indicator",
+  "status": "seen",
+  "what": "الحافة الأمامية والخلفية لمؤشر التبويب تتبع نابضين مختلفين، فيتمدد أثناء الحركة ويستقر. / Leading and trailing edges of a tab indicator follow separate springs (leading stiffer), so it stretches in travel and settles.",
+  "how": "Two springs on left/right edges; stiffness ratio ~1.6:1; draw a rounded rect between them.",
+  "params": "stiffness ratio ~1.6:1",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-twoclipping-5cba86"
+  ],
+  "styles": [
+   "pm-twoclipping-5cba86"
+  ],
+  "tags": [
+   "مؤشر",
+   "tab indicator",
+   "stretchy",
+   "spring",
+   "ui"
+  ]
+ },
+ {
+  "id": "SHAPE-20",
+  "family": "shapes-morph-geometry",
+  "name_ar": "أيقونة القائمة تصير إغلاقًا",
+  "name_en": "Hamburger-to-close morph",
+  "status": "documented",
+  "what": "ثلاثة خطوط تصير X: العلوي والسفلي يدوران ±45° والأوسط ينطوي. / Three bars become an X: top/bottom rotate ±45°, the middle collapses.",
+  "how": "Transforms on three spans; middle opacity 0 + scaleX 0; 0.2 s.",
+  "params": "±45°, 0.2 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/microinteraction-patterns.md"
+  ],
+  "styles": [],
+  "tags": [
+   "قائمة",
+   "hamburger",
+   "close",
+   "icon morph",
+   "ui"
+  ]
+ },
+ {
+  "id": "SHAPE-21",
+  "family": "shapes-morph-geometry",
+  "name_ar": "التحول عبر حالات الواجهة",
+  "name_en": "Morph through UI states",
+  "status": "documented",
+  "what": "زر → مفتاح → بطاقة → شاشة كاملة، كل خطوة 600 ms ووقفة 900 ms للقراءة. / Button → toggle → card → full screen, 600 ms per step with 900 ms holds.",
+  "how": "Each step is a SHAPE-15 on the same element; hold 900 ms so the eye reads the state.",
+  "params": "600 ms per step; 900 ms holds",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/shapes.md:49"
+  ],
+  "styles": [],
+  "tags": [
+   "حالات",
+   "ui states",
+   "morph",
+   "flow"
+  ]
+ },
+ {
+  "id": "SHAPE-22",
+  "family": "shapes-morph-geometry",
+  "name_ar": "نقطة تتفتح إلى واجهة أو نظام",
+  "name_en": "Dot-to-interface / dot-to-system bloom",
+  "status": "seen",
+  "what": "نقطة متوهجة 8px تكبر إلى إطار مستطيل في 1.2 ث (expo) ثم يظهر المحتوى، أو تطلق حلقات وأقمارًا متتابعة. / A glowing 8 px dot scales to a rectangular frame in 1.2 s (expo) then content fades in — or emits rings and satellite dots with 50 ms stagger.",
+  "how": "Animate width/height/radius from the dot; content opacity after 80%; system variant: rings scale from the dot and satellites scatter with 50 ms stagger over ~1 s.",
+  "params": "8 px → frame, 1.2 s expo; satellites 50 ms stagger",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-dale-vaz-cc612a",
+   "kosif-tool/styles/pm-xelandre-363f00"
+  ],
+  "styles": [
+   "pm-dale-vaz-cc612a",
+   "pm-xelandre-363f00"
+  ],
+  "tags": [
+   "نقطة",
+   "تفتح",
+   "dot bloom",
+   "interface",
+   "reveal"
+  ]
+ },
+ {
+  "id": "SHAPE-23",
+  "family": "shapes-morph-geometry",
+  "name_ar": "حلقة → قزحية → غمر لوني",
+  "name_en": "Ring → iris → colour flood",
+  "status": "ready",
+  "what": "حلقة مرسومة تنكمش وتسمك إلى نقطة قزحية، ثم تنفتح دائرة قص من تلك النقطة لتغمر الإطار بلون العلامة. / A drawn ring shrinks and thickens into an iris point, then a circular clip opens from it to flood the frame with the brand colour.",
+  "how": "tl.to(ring,{scale:.14, strokeWidth:60, duration:.45, ease:E.in}, 3.65); M.iris(tl, brand, 4.05, {x:540, y:930, r0:60, r:2300, dur:.5}) with log-space ease + M.flash peak .6.",
+  "params": ".45 s shrink; iris r 60→2300 in .5 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:80",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:334"
+  ],
+  "styles": [],
+  "tags": [
+   "قزحية",
+   "iris",
+   "flood",
+   "ring",
+   "brand",
+   "transition"
+  ]
+ },
+ {
+  "id": "SHAPE-24",
+  "family": "shapes-morph-geometry",
+  "name_ar": "الشعار يصير بؤبؤ عين",
+  "name_en": "Logo-to-iris / eye opening",
+  "status": "seen",
+  "what": "حلقة الشعار تكبر إلى قرص قزحية بتدرج شعاعي، ويُرسم حولها جفن لوزي برموش، أو عين تنفتح من خط. / The logo ring scales into an iris disc with a radial ray gradient inside an almond eye outline with lash ticks; or an eye opens from a line.",
+  "how": "Almond path height 0→full 800 ms ease-out with iris scale; iris glow blur 30–40 px #5cc8ff; concentric outlines behind.",
+  "params": "~600–800 ms; glow 30–40 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-micheleharmonic-77628e",
+   "kosif-tool/styles/pm-monokern-ade5b6"
+  ],
+  "styles": [
+   "pm-micheleharmonic-77628e",
+   "pm-monokern-ade5b6"
+  ],
+  "tags": [
+   "عين",
+   "قزحية",
+   "eye",
+   "iris",
+   "logo morph"
+  ]
+ },
+ {
+  "id": "SHAPE-25",
+  "family": "shapes-morph-geometry",
+  "name_ar": "نقرة وتحول لعلامة صح",
+  "name_en": "Tap ripple + circle-to-check morph",
+  "status": "idea",
+  "what": "نقرة تطلق تموجًا، والدائرة تتحول إلى علامة صح. / A tap ripple triggers success; the circle morphs into a checkmark.",
+  "how": "Untested idea from a brief: SHAPE-01 circle→check (open path) + ripple circle scale 1→1.9 fading .9→0 in .9 s; ~400 ms.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-cansincengiz-me-cf68dd/BRIEF.md"
+  ],
+  "styles": [],
+  "tags": [
+   "صح",
+   "check",
+   "success",
+   "ripple",
+   "morph"
+  ]
+ },
+ {
+  "id": "SHAPE-26",
+  "family": "shapes-morph-geometry",
+  "name_ar": "ظرف يتحول لشارة / تجمع إلى شعار",
+  "name_en": "Envelope→badge, converge→monogram, collapse→dot",
+  "status": "idea",
+  "what": "أفكار من البريفات: ظرف مُرسل ينطلق ويصير شارة إشعار؛ خطوط تتجمع إلى مربع يدور 90° فيصير مونوغرام؛ كل العناصر تنكمش إلى نقطة تنفتح شعارًا. / Brief ideas: a sent envelope streaks off and becomes a badge; lanes converge into a tile that rotates 90° into a monogram; everything collapses to a dot that opens into the logo.",
+  "how": "Untested: transform interpolation + SHAPE-01; hold the final logo 2 s.",
+  "params": "90° turn; hold 2 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-melvynx-6cde6c/BRIEF.md",
+   "kosif-tool/styles/pm-danilowm-d3720d/BRIEF.md",
+   "kosif-tool/styles/pm-itisrazak-3ad902/BRIEF.md"
+  ],
+  "styles": [],
+  "tags": [
+   "شعار",
+   "outro",
+   "monogram",
+   "badge",
+   "converge"
+  ]
+ },
+ {
+  "id": "SHAPE-27",
+  "family": "shapes-morph-geometry",
+  "name_ar": "فلتر اللزوجة",
+  "name_en": "SVG goo / metaball filter",
+  "status": "proven",
+  "what": "كرات تندمج كالسائل: تمويه ثم شحذ قناة الألفا بمصفوفة لون. / Blobs merge like liquid: blur then sharpen alpha with a colour matrix.",
+  "how": "<filter><feGaussianBlur stdDeviation=10/><feColorMatrix values=\"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7\"/></filter> on a <g> of circles moved in seek(t). Rendered here (4 orbiting circles). Keep text outside the filter. Canvas alternative: sum r²/d² field and threshold.",
+  "params": "stdDeviation 10; alpha row 18 −7",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero",
+   "kosif-tool/styles/pm-raphaelaubryy-4b137e"
+  ],
+  "styles": [
+   "pm-raphaelaubryy-4b137e"
+  ],
+  "tags": [
+   "لزوجة",
+   "goo",
+   "metaball",
+   "blob",
+   "svg filter",
+   "liquid"
+  ]
+ },
+ {
+  "id": "SHAPE-28",
+  "family": "shapes-morph-geometry",
+  "name_ar": "الانقسام اللزج والكتلة الناعمة",
+  "name_en": "Gooey split & soft blob touch (HyperFrames)",
+  "status": "install",
+  "what": "نقطة تنقسم إلى قائمة ثلاث نقاط عبر عنق لزج ثم تدور وتلتحم؛ وكتلة محببة تنتفخ نحو نقطة لمس وتعود بنابض يحفظ السرعة. / A dot splits into a three-dot menu through a metaball neck, spins and re-merges; a grainy blob bulges toward a touch and recovers on a velocity-preserving spring.",
+  "how": "npx hyperframes add gooey-split (4.7 s, SVG blur+threshold, GSAP paused timeline) | soft-blob-touch (touch_x 8–92, touch_y 8–92, touch_at .9–10 s, grain fine|coarse).",
+  "params": "gooey-split 4.7 s; touch_at 1.6 s default",
+  "install": "npx hyperframes add gooey-split",
+  "license": "Apache-2.0 (+ GSAP standard license inside).",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/gooey-split/gooey-split.html",
+   "kosif-one/vendor/hyperframes/registry/components/soft-blob-touch/soft-blob-touch.html"
+  ],
+  "styles": [],
+  "tags": [
+   "لزج",
+   "gooey",
+   "blob",
+   "touch",
+   "hyperframes"
+  ]
+ },
+ {
+  "id": "SHAPE-29",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تجمع الصلصال بالكرات",
+  "name_en": "Metaball clay assembly",
+  "status": "idea",
+  "what": "ست كتل تتدحرج وتلتحم بعتبة الكرات المعدنية. / Six blobs roll in and merge via a metaball threshold.",
+  "how": "Untested idea from a brief: Canvas field sum Σr²/d² + threshold (or SHAPE-27); roll = translate + rotate of a texture inside each blob.",
+  "params": "6 blobs",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-davidshulmanfl-371638/BRIEF.md"
+  ],
+  "styles": [],
+  "tags": [
+   "صلصال",
+   "metaball",
+   "clay",
+   "merge"
+  ]
+ },
+ {
+  "id": "SHAPE-30",
+  "family": "shapes-morph-geometry",
+  "name_ar": "كتلة عضوية بضوضاء الرؤوس",
+  "name_en": "Noise-displaced 3D blob",
+  "status": "install",
+  "what": "كرة تُدفع رؤوسها على العموديات بضوضاء متحركة فتصير كتلة حية. / Sphere vertices pushed along normals by animated noise — a living blob.",
+  "how": "three.js ShaderMaterial vertex: disp = pnoise(position·1.5 + t·.5); newPos = position + normal·disp·intensity; t = seek time (never clock). Or use the bundled three-kit noise on CPU for small meshes.",
+  "params": "freq 1.5, speed .5, intensity .1–.3",
+  "install": "npm i three",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "كتلة",
+   "blob",
+   "noise",
+   "vertex shader",
+   "three.js"
+  ]
+ },
+ {
+  "id": "SHAPE-31",
+  "family": "shapes-morph-geometry",
+  "name_ar": "أشكال بدوال المسافة",
+  "name_en": "2D signed-distance shapes (union, morph, glow)",
+  "status": "documented",
+  "what": "صف الأشكال كدوال مسافة: دمج ناعم، تحويل بالمزج بين دالتين، حدود وتوهج من المسافة نفسها. / Shapes as distance functions for smooth unions, morphs (mix two SDFs), outlines and glows.",
+  "how": "GLSL or numpy: circle length(p)−r, box, smooth-min union with k; morph = mix(d1, d2, t); outline = abs(d) < w; glow = exp(−d·k); debug with isolines. Inverse-transform the point, never the shape.",
+  "params": "smin k .1–.3",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling/SKILL.md",
+   "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "دوال المسافة",
+   "SDF",
+   "smooth min",
+   "glow",
+   "shader"
+  ]
+ },
+ {
+  "id": "SHAPE-32",
+  "family": "shapes-morph-geometry",
+  "name_ar": "نحت بحقول المسافة إلى مجسم مغلق",
+  "name_en": "SDF sculpting to a watertight mesh",
+  "status": "proven",
+  "what": "شخصيات وأجسام تُنحت من أوليات مسافة (كرة، إهليلج، كبسولة، صندوق، طارة) بدمج ونحت ناعم، وتُشبَّك إلى هندسة مغلقة دقيقة. / Characters and props sculpted from SDF primitives with smooth union/subtract and meshed by surface nets into closed, accurate geometry.",
+  "how": "K3S.sculpt().color(hex).sphere(c,r,o).ellipsoid(c,[rx,ry,rz],o).capsule(a,b,r1,r2,o).box(c,[hx,hy,hz],round,o).torus(c,R,r,o).mesh({cells}); o = {k, op, color, rot}. Coarse-to-fine evaluation skips empty space. test_shape_kit passed here 4/4.",
+  "params": "sphere volume ±2%, area ±3%, radius error < 1e−3, 0 open edges; evals < 60% of full grid; 136-cell body ~1.5 s; bunny 274k tris ~4 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:21",
+   "100-superskills/skills/kosif-montage-motion/tests/js/shape_kit_check.cjs:31",
+   "kosif-studio/motion/kit/shape-kit.js:44",
+   "kosif-studio/motion/references/shape-kit.md"
+  ],
+  "styles": [],
+  "tags": [
+   "نحت",
+   "SDF",
+   "sculpt",
+   "mesh",
+   "surface nets",
+   "character",
+   "3d"
+  ]
+ },
+ {
+  "id": "SHAPE-33",
+  "family": "shapes-morph-geometry",
+  "name_ar": "دمج ونحت وتقاطع ناعم",
+  "name_en": "Smooth CSG (add / sub / and)",
+  "status": "proven",
+  "what": "دمج وطرح وتقاطع ناعم بنصف قطر k بالمتر، والألوان تمتزج بنفس الأوزان، والطرح الملون يلون التجويف. / Smooth union, subtraction and intersection with blend radius k in metres; colours blend with the same weights; a coloured subtraction tints the cavity.",
+  "how": "Pass {op:\"add\"|\"sub\"|\"and\", k, color} to any primitive; h = clamp(.5 ± .5·(d2−d1)/k); d = mix − k·h·(1−h). Tested here (tint red 1.0 inside the carve, 0 on the plain side).",
+  "params": "k 10–30 mm for plush (e.g. .012 m)",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:104",
+   "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:31",
+   "kosif-studio/motion/kit/shape-kit.js:100"
+  ],
+  "styles": [],
+  "tags": [
+   "دمج ناعم",
+   "CSG",
+   "smooth union",
+   "subtract",
+   "sdf"
+  ]
+ },
+ {
+  "id": "SHAPE-34",
+  "family": "shapes-morph-geometry",
+  "name_ar": "استعلام الحقل لتثبيت العناصر",
+  "name_en": "Field queries for placement",
+  "status": "ready",
+  "what": "اسأل الحقل عن المسافة واللون، أسقط نقطة على السطح، أو اطلق شعاعًا — مثلًا لتثبيت العيون حيث يلتقي شعاع أمامي بالوجه. / Query distance/colour, project points onto the surface or raycast it — e.g. seat eyes where a frontal ray meets the face.",
+  "how": "S.dist(x,y,z), S.colorAt(...), S.project(p), S.hit(from, dir) → {point, normal}; orient the accessory to the returned normal.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/shape-kit.js:104",
+   "kosif-studio/motion/references/shape-kit.md"
+  ],
+  "styles": [],
+  "tags": [
+   "استعلام",
+   "raycast",
+   "placement",
+   "sdf",
+   "eyes"
+  ]
+ },
+ {
+  "id": "SHAPE-35",
+  "family": "shapes-morph-geometry",
+  "name_ar": "حقل كتل وبقعة زاوية",
+  "name_en": "Drifting blob field & corner blob",
+  "status": "ready",
+  "what": "5–8 أشكال كبيرة مستديرة تنجرف مموهة خلف المحتوى، أو بقعة إهليلجية كبيرة تنزف من الزاوية العليا اليمنى. / 5–8 large rounded shapes drifting with blur behind content, or one large tinted ellipse bleeding off the top-right corner.",
+  "how": "Corner blob: ellipse centre (.93w,.14h), radii .35w×.13h, rotation π/5, alpha .65 (fastify editorial). Field: periods 10/12/16 s so shapes never move in lockstep, drift 12–30 px, rotate 5–8°.",
+  "params": "corner ellipse .35w×.13h @ .65; drift 12–30 px, periods 10/12/16 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/web/editorial.js:50-51",
+   "kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md",
+   "kosif-tool/styles/pm-slvdev-64c45a"
+  ],
+  "styles": [
+   "pm-slvdev-64c45a"
+  ],
+  "tags": [
+   "كتل",
+   "blob",
+   "background",
+   "drift",
+   "ambient"
+  ]
+ },
+ {
+  "id": "SHAPE-36",
+  "family": "shapes-morph-geometry",
+  "name_ar": "كتلة متدرجة أو متحولة خلف النص",
+  "name_en": "Gradient / morphing blob behind text",
+  "status": "seen",
+  "what": "كتلة SVG تتحول بالضوضاء بتدرج ليموني→أزرق والنص فوقها بمزج multiply، أو مربع يصير كتلة بحد فوق نقاط هالفتون. / Noise-morphing SVG blob with a lime→blue gradient and multiplied text, or a square morphing to a blob with an outline over halftone dots.",
+  "how": "Path from 12–16 polar points with radius = R(1 + .15·noise(θ, t)); Catmull-Rom closed; 600 ms morph for the square variant.",
+  "params": "600 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-sudo-kiran-49176d",
+   "kosif-tool/styles/pm-hanifproduktif-54bdee"
+  ],
+  "styles": [
+   "pm-sudo-kiran-49176d",
+   "pm-hanifproduktif-54bdee"
+  ],
+  "tags": [
+   "كتلة",
+   "نص",
+   "blob",
+   "text",
+   "gradient"
+  ]
+ },
+ {
+  "id": "SHAPE-37",
+  "family": "shapes-morph-geometry",
+  "name_ar": "إطار مطاطي وقناع قضمة",
+  "name_en": "Rubber-frame strain & bite mask",
+  "status": "seen",
+  "what": "حد الإطار مسار من ~40 نقطة ينبعج حيث يضغط المحتوى؛ وقناع «قضمة» من اتحاد ثلاث دوائر يُطرح من حافة الجسم مع فتات. / The frame border as a ~40-point path bulging where content pushes; a scalloped three-circle “bite” subtracted from an edge with crumbs.",
+  "how": "Displace border points by noise/sine where touched, amp 0→12 px, 3–4 waves per edge; bite: mask radius 0→r in 200 ms + 4–6 crumb particles.",
+  "params": "amp 0→12 px; bite 200 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-pankajkumar-dev-0bee87",
+   "kosif-tool/styles/pm-thilina-a-891c09"
+  ],
+  "styles": [
+   "pm-pankajkumar-dev-0bee87",
+   "pm-thilina-a-891c09"
+  ],
+  "tags": [
+   "مطاطي",
+   "قضمة",
+   "rubber",
+   "bite",
+   "mask"
+  ]
+ },
+ {
+  "id": "SHAPE-38",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تموج ضغطة بحرارة",
+  "name_en": "Press ripple with heat bloom",
+  "status": "documented",
+  "what": "حلقة تتسع وتدفع الإحداثيات للخارج وتضيف «حرارة» لونية. / An expanding ring that shoves coordinates outward and adds heat.",
+  "how": "Ring radius grows over .9 s; displacement .18 in a shader or canvas warp; heat .55 added as warm bloom on the ring.",
+  "params": "ripple .18, heat .55, .9 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md"
+  ],
+  "styles": [],
+  "tags": [
+   "تموج",
+   "ripple",
+   "press",
+   "heat",
+   "touch"
+  ]
+ },
+ {
+  "id": "SHAPE-39",
+  "family": "shapes-morph-geometry",
+  "name_ar": "الحركة على مسار SVG",
+  "name_en": "Motion along an SVG path",
+  "status": "install",
+  "what": "عنصر (طائرة، سهم، مذنب، نص) يتحرك على مسار ويدور مع مماسه. / Move an element (plane, arrow, comet, label) along a path with auto-rotation to the tangent.",
+  "how": "gsap.registerPlugin(MotionPathPlugin); tl.to(el,{motionPath:{path:\"#route\", align:\"#route\", autoRotate:true}, duration:2, ease:\"power1.inOut\"}); pair with a dashoffset draw of the same path. Plugin-free: sample SVGPathElement.getPointAtLength(L·p) and atan2 of a nearby point. Text: SVG <textPath> shapes Arabic correctly in Chromium.",
+  "params": "1.5–2 s power2.out / power1.inOut",
+  "install": "npm i gsap",
+  "license": "GSAP standard no-charge license (not MIT).",
+  "proof": [
+   "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/techniques.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/motion-typography.md"
+  ],
+  "styles": [
+   "pm-thismacapital-dfba20"
+  ],
+  "tags": [
+   "مسار",
+   "motion path",
+   "autoRotate",
+   "textPath",
+   "route",
+   "gsap"
+  ]
+ },
+ {
+  "id": "SHAPE-40",
+  "family": "shapes-morph-geometry",
+  "name_ar": "اختيار المنحنى وسرعة ثابتة",
+  "name_en": "Spline choice + arc-length constant speed",
+  "status": "documented",
+  "what": "Catmull-Rom ليمر بالنقاط، Hermite لمماسات معروفة، Bezier للمقابض؛ استهدف استمرارية C1 وجدول طول قوس لسرعة ثابتة. / Catmull-Rom through waypoints, Hermite with known tangents, Bezier for handles; target C1 and use an arc-length table for constant speed.",
+  "how": "Sample the curve, build cumulative length, map distance→t by binary search; keep authoring points separate from baked samples; never one high-degree polynomial through many points.",
+  "params": "C0 position, C1 tangent, C2 curvature",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/2199-lvtd-skills/8088-game-smooth-curves-and-motion"
+  ],
+  "styles": [],
+  "tags": [
+   "منحنى",
+   "spline",
+   "catmull-rom",
+   "arc length",
+   "constant speed"
+  ]
+ },
+ {
+  "id": "SHAPE-41",
+  "family": "shapes-morph-geometry",
+  "name_ar": "محلل لغة مسارات SVG كاملة",
+  "name_en": "Full SVG path parser (Studio)",
+  "status": "proven",
+  "what": "يحلل M L H V C S Q T A Z مطلقة ونسبية مع الانعكاسات وأعلام الأقواس الملتصقة إلى مضلعات. / Parses M L H V C S Q T A Z (absolute/relative, smooth reflections, glued arc flags) into polygons, arcs by SVG centre parameterisation.",
+  "how": "render.path(\"M … Z\", n=14) → one polygon per subpath; arcs sample max(4, |dθ|/2π·64) points. test_path_arcs_and_smooth_curves_end_where_they_should passed here.",
+  "params": "14 samples per Bezier segment",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:87",
+   "kosif-studio/render.py:192",
+   "kosif-studio/tests/test_studio.py:55"
+  ],
+  "styles": [],
+  "tags": [
+   "مسار",
+   "svg path",
+   "parser",
+   "arc",
+   "studio"
+  ]
+ },
+ {
+  "id": "SHAPE-42",
+  "family": "shapes-morph-geometry",
+  "name_ar": "أشكال مركبة بثقوب",
+  "name_en": "Even-odd compound shapes & holes",
+  "status": "proven",
+  "what": "حلقات وحروف بفراغات وشعارات مقصوصة: مسارات فرعية مجسورة بمرساة واحدة فيلغي ملء even-odd الجسور، أو مضلعات Hole تمحو. / Rings, letters with counters, logo cut-outs: subpaths bridged to one anchor so even-odd fill cancels the bridges, or Hole polygons that erase.",
+  "how": "render.compound(polys); render.Hole([...]) drawn after the shape it cuts; to_python._bridge for Pillow programs. In 2.5D extrusion, a reversed inner subpath shows the hole walls automatically. Tests test_holes_cut_out + test_even_odd_compound passed here.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:25",
+   "kosif-studio/render.py:229",
+   "kosif-studio/to_python.py:80",
+   "kosif-studio/tests/test_studio.py:42"
+  ],
+  "styles": [
+   "fake3d"
+  ],
+  "tags": [
+   "ثقوب",
+   "even-odd",
+   "compound",
+   "hole",
+   "logo"
+  ]
+ },
+ {
+  "id": "SHAPE-43",
+  "family": "shapes-morph-geometry",
+  "name_ar": "عدة الأشكال الأساسية ولغة المشهد",
+  "name_en": "Basic shape kit & Step scene language",
+  "status": "proven",
+  "what": "الصورة برنامج من خطوات: rect, ellipse(rot), poly, path, compound/Hole, tube, dots, stroke, catmull, translate, union مع تدرجات وضوء، تُرسم بأي حجم. / A picture as an ordered program of Steps over vector primitives, gradients and light, re-rendered at any size on a 1200×800 sheet.",
+  "how": "def build(): return [Step(name, [ops…], order, origin=…)]; ellipse 48 segments; supersampling ss=3; reveal orders sweep/grow/rise/down/left/right/sparkle (tested as permutations). Renderer + Svg tests 10/10 here.",
+  "params": "sheet 1200×800; ss 3; ellipse 48 segs; dots 10/20 segs",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:259",
+   "kosif-studio/render.py:278",
+   "kosif-studio/tests/test_studio.py:106",
+   "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md"
+  ],
+  "styles": [],
+  "tags": [
+   "أشكال",
+   "primitives",
+   "scene language",
+   "studio",
+   "vector"
+  ]
+ },
+ {
+  "id": "SHAPE-44",
+  "family": "shapes-morph-geometry",
+  "name_ar": "منحنيات كاتمول-روم",
+  "name_en": "Catmull-Rom smooth curves",
+  "status": "ready",
+  "what": "نقاط قليلة تصير منحنى ناعمًا يمر بها، مفتوحًا أو مغلقًا — أساس الأنابيب وملامح الحوت والخطوط العضوية. / A few control points become a smooth curve through them, open or closed — base for tubes and organic outlines.",
+  "how": "render.catmull(points, n=10, closed=False).",
+  "params": "n samples per segment (default 10)",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:57"
+  ],
+  "styles": [],
+  "tags": [
+   "كاتمول-روم",
+   "catmull-rom",
+   "curve",
+   "organic"
+  ]
+ },
+ {
+  "id": "SHAPE-45",
+  "family": "shapes-morph-geometry",
+  "name_ar": "أنبوب بنصف قطر متغير",
+  "name_en": "Variable-radius tube (limbs, tails, flames, hair)",
+  "status": "ready",
+  "what": "ضربة عضوية على عمود فقري ناعم بنصف قطر لكل نقطة، كاتحاد أرباع وأقراص فلا تنثقب المنعطفات الحادة. / Organic stroke along a smooth spine with per-point radius, built as quads + discs so tight bends never punch holes.",
+  "how": "render.tube(spine, radii, n=8) (discs every n//2 samples where r > .6); 3D: K3S.tube(points, r, color, {segments}) Catmull-Rom TubeGeometry 32 segments × 8 radial, roughness .6. Outlines: render.stroke(polys, width) with round caps.",
+  "params": "2D n 8; 3D 32×8 segments",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/render.py:286",
+   "kosif-studio/render.py:241",
+   "kosif-studio/scenes/dragon_girl.py:229",
+   "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:329"
+  ],
+  "styles": [],
+  "tags": [
+   "أنبوب",
+   "tube",
+   "stroke",
+   "limbs",
+   "tail"
+  ]
+ },
+ {
+  "id": "SHAPE-46",
+  "family": "shapes-morph-geometry",
+  "name_ar": "سلاسل جبال بالإزاحة",
+  "name_en": "Midpoint-displacement mountain ridges",
+  "status": "ready",
+  "what": "صور ظلية لجبال متعددة الطبقات بالإزاحة العشوائية للنقطة الوسطى مع قمم منحوتة، مملوءة حتى أسفل الصفحة. / Layered mountain silhouettes by recursive midpoint displacement with optional carved peaks.",
+  "how": "scenes/dragon_girl.ridge(seed, base, amp, rough=.55, peaks=[(x, height, width)]); 7 rounds, amplitude × rough per round; stack 3–4 layers lighter with distance.",
+  "params": "7 rounds; rough .55",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/scenes/dragon_girl.py:20"
+  ],
+  "styles": [],
+  "tags": [
+   "جبال",
+   "mountains",
+   "midpoint displacement",
+   "landscape",
+   "parallax"
+  ]
+ },
+ {
+  "id": "SHAPE-47",
+  "family": "shapes-morph-geometry",
+  "name_ar": "صندوق أيزومتري بثلاث درجات",
+  "name_en": "Three-tone isometric box",
+  "status": "seen",
+  "what": "ثلاثة مضلعات من لون واحد (أعلى أفتح، يسار متوسط، يمين أغمق) مع حافة علوية بيضاء شفافة وظل أرضي ناعم. / Three polygons of one hue (top lightest, left mid, right darkest) plus a thin translucent white top edge and soft ground shadow.",
+  "how": "Lightness steps ~+12 / 0 / −12%; 30° projection; shadow ellipse blur 20 px at 20%.",
+  "params": "+12/0/−12% lightness",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/isometric"
+  ],
+  "styles": [
+   "isometric"
+  ],
+  "tags": [
+   "أيزومتري",
+   "isometric",
+   "box",
+   "2.5d"
+  ]
+ },
+ {
+  "id": "SHAPE-48",
+  "family": "shapes-morph-geometry",
+  "name_ar": "بناء نقطة ثم خط ثم مستوى",
+  "name_en": "Point → line → plane build",
+  "status": "seen",
+  "what": "يبدأ من نقطة تقاطع بإحداثياتها، تمتد إلى مسطرة بعلامات، ثم تنبثق إلى مستوى مائل يحمل النص. / Start from a crosshair point with a coordinate label, stretch to a ruler line with ticks, then extrude/skew into a plane carrying text.",
+  "how": "Each stage ~1.2 s easeInOutExpo; skew −25° for the plane.",
+  "params": "1.2 s per stage; skew −25°",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-ayushunleashed-ece3e3"
+  ],
+  "styles": [
+   "pm-ayushunleashed-ece3e3"
+  ],
+  "tags": [
+   "نقطة",
+   "خط",
+   "مستوى",
+   "construction",
+   "build"
+  ]
+ },
+ {
+  "id": "SHAPE-49",
+  "family": "shapes-morph-geometry",
+  "name_ar": "خطوط متدفقة ومسارات مخططة",
+  "name_en": "Flowing dashes, striped tubes, dotted trails",
+  "status": "seen",
+  "what": "قناة ماء بشرطات بيضاء تنزلق، أنبوب مخطط من ثلاث ضربات متناقصة، أثر نقطي لقوس رمي، خط نبض قلب، وحبل يتدلى بوزن الكلمة. / A water channel with sliding white dashes, a striped tube of three decreasing strokes, a dotted throw arc, an ECG spike line, a rope sagging under a word.",
+  "how": "strokeDashoffset flow: dash 20/60 px at ~40 px/s (MOTION.flowDash(tl, path, at, dur, {pattern:\"28 22\", cycles:6})); stripes = same path stroked 3× red/white/blue; throw = Bezier with dots every 8 px fading; rope = quadratic with control y += sag 30–60 px on a spring.",
+  "params": "dash 20/60 px @ 40 px/s; sag 30–60 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/kit/motion-kit.js:247",
+   "kosif-tool/styles/doodle",
+   "kosif-tool/styles/pm-ajith-io-b5626e",
+   "kosif-tool/styles/pm-gdgtify-287ddf"
+  ],
+  "styles": [
+   "doodle",
+   "pm-ajith-io-b5626e",
+   "pm-pluginplay-3d4006",
+   "pm-loicrambo-ad6830",
+   "pm-gdgtify-287ddf"
+  ],
+  "tags": [
+   "شرطات",
+   "تدفق",
+   "dash flow",
+   "stripes",
+   "rope",
+   "ecg",
+   "trail"
+  ]
+ },
+ {
+  "id": "SHAPE-50",
+  "family": "shapes-morph-geometry",
+  "name_ar": "خيوط موجية وأشرطة متلوية",
+  "name_en": "Sine strands & ribbon loops",
+  "status": "ready",
+  "what": "ثلاث موجات جيبية ملونة تعبر النصف السفلي وتكبر سعتها مع تقدم المشهد، أو أشرطة متدرجة سميكة بنقاط تحكم تتحرك ببطء. / Three coloured sine waves crossing the lower half, growing in amplitude as the scene progresses; or thick gradient ribbon loops with slowly moving control points.",
+  "how": "y = h(.55 + .07·line) + sin(x/w·3π + 2·phase + 1.9·line)·(10 + 12p), step 4 px, colours #d3f66a #6ad8d1 #e995ff alpha .42; ribbons: 2–3 cubic paths, stroke ~6% of frame, gradient strokes, round caps, opacity .35 under text; 7-band rainbow ribbon y = sin(xk + t).",
+  "params": "3 waves, amplitude 10→22 px; ribbons 6% stroke",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/web/motion.js:16",
+   "kosif-tool/styles/pm-gonzalomacagno-2de1a9",
+   "kosif-tool/styles/pm-hoyoyoda-3a5c08"
+  ],
+  "styles": [
+   "pm-gonzalomacagno-2de1a9",
+   "pm-hoyoyoda-3a5c08",
+   "pm-reflex-cloud-72ffe5"
+  ],
+  "tags": [
+   "موجة",
+   "جيب",
+   "sine",
+   "ribbon",
+   "strands",
+   "background"
+  ]
+ },
+ {
+  "id": "SHAPE-51",
+  "family": "shapes-morph-geometry",
+  "name_ar": "خطان قطريان فقط",
+  "name_en": "Exactly two drifting diagonal lines",
+  "status": "ready",
+  "what": "توقيع: خطان منحنيان شفافان خلف كل شيء ينجرفان باستمرار ولا يتوقفان — أبدًا ثلاثة. / Signature motif: two translucent curved diagonals behind everything, drifting continuously — never three.",
+  "how": "For k in 0..1: ox = sin(.20·phase + 2.3k)·.035w, oy = cos(.16·phase + k)·.02h; quadratic from (−.2w + .63w·k, .93h) via (.30w + .41w·k, .43h) to (.65w + .5w·k, −.10h); stroke 50% alpha, 1.6·scale. The storyboard test asserts exact_background_lines = 2 (fastify tests 24/24 passed here).",
+  "params": "2 lines; drift ±3.5% w, ±2% h",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/web/editorial.js:47-49",
+   "fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:18",
+   "fastify-motion-bro/tests/viral-editorial.test.mjs:8"
+  ],
+  "styles": [],
+  "tags": [
+   "خطان",
+   "two lines",
+   "editorial",
+   "signature",
+   "background"
+  ]
+ },
+ {
+  "id": "SHAPE-52",
+  "family": "shapes-morph-geometry",
+  "name_ar": "شبكة بلاطات باوهاوس",
+  "name_en": "Bauhaus tile grid (glyph swap on a distance wave)",
+  "status": "proven",
+  "what": "كل خلية ترسم واحدًا من {ربع دائرة، مثلث، شريط، دائرة} بلوحة 4–5 ألوان، وتبدّل شكلها ولونها بدوران متتابع حسب المسافة. / Each cell draws one of {quarter circle, triangle, bar, circle} in a 4–5 colour palette and swaps glyph/colour with rotation staggered by distance.",
+  "how": "step = floor(max(0, t·4 − d·.3)) with d = x+y (diagonal) or distance from centre; rotate step·90°; palette red #d6341f, yellow #e9c634, blue #2135bc, black on cream #f3ead8. Rendered here (6×6 lab). On beat: advance one step per beat.",
+  "params": "8×5 to 16×9 cells; stagger 15–40 ms; swap every 200–250 ms or 1 beat; back.inOut(1.7)",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-leonkohli-6dc01b",
+   "kosif-tool/styles/pm-prasenx-8d9323",
+   "kosif-tool/styles/pm-samuel-spitz-974923",
+   "kosif-tool/styles/pm-zaqailo-212ad3"
+  ],
+  "styles": [
+   "pm-leonkohli-6dc01b",
+   "pm-prasenx-8d9323",
+   "pm-samuel-spitz-974923",
+   "pm-web3wesley-7bb108",
+   "pm-zaqailo-212ad3",
+   "pm-tequilafunks-97f6c9"
+  ],
+  "tags": [
+   "باوهاوس",
+   "bauhaus",
+   "tile grid",
+   "quarter circle",
+   "geometric",
+   "beat"
+  ]
+ },
+ {
+  "id": "SHAPE-53",
+  "family": "shapes-morph-geometry",
+  "name_ar": "بلاطات تروشيه بموجة تلوين",
+  "name_en": "Truchet tiles with a recolour wave",
+  "status": "proven",
+  "what": "بلاطات بأرباع دوائر بدوران عشوائي، وموجة شعاعية تديرها 90° وتلونها بالأحمر مع اضمحلال. / Quarter-arc Truchet tiles at random rotations; a radial wave front rotates them 90° and tints them red with falloff.",
+  "how": "Per tile two quarter arcs at opposite corners, stroke 14–18 px round caps; p = clamp(t·speed − d·k), rotation += ease(p)·90°, colour accent while 0<p<1. Rendered here (lab).",
+  "params": "tile 60–80 px, stroke 14–18 px, delay 20–40 ms per tile, wave 600 px/s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-levabashidze-2d713a",
+   "kosif-tool/styles/pm-roundtablespace-d3a1be",
+   "kosif-tool/styles/pm-stephanlivera-df17a2"
+  ],
+  "styles": [
+   "pm-levabashidze-2d713a",
+   "pm-roundtablespace-d3a1be",
+   "pm-stephanlivera-df17a2"
+  ],
+  "tags": [
+   "تروشيه",
+   "truchet",
+   "tiles",
+   "generative",
+   "wave"
+  ]
+ },
+ {
+  "id": "SHAPE-54",
+  "family": "shapes-morph-geometry",
+  "name_ar": "موجة في شبكة أشكال",
+  "name_en": "Distance-delayed grid wave (rotate / scale / morph)",
+  "status": "seen",
+  "what": "شبكة مربعات أو نقاط أو معينات: كل خلية تدور 45–90° أو تتحول مربعًا→دائرة أو تكبر حسب sin(المسافة − t). / Grid of squares/dots/diamonds: each cell rotates 45–90°, morphs square→circle (border-radius) or scales by sin(distance − t).",
+  "how": "delay = (x+y)·25 ms or distance·30–40 ms; border-radius 0→50%; 4×4 grid: 40 ms per cell, 400 ms each; ripple variant swaps shape/colour with a 200 ms scale pop; spring ripple stiffness 220 damping 12 at 900 px/s.",
+  "params": "cell 30 px gap 40 px; 25–40 ms per cell; 400–600 ms each",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/shapes.md:47",
+   "kosif-tool/styles/pm-jasonzhou1993-8595e0",
+   "kosif-tool/styles/pm-teslachartz-c58b32",
+   "kosif-tool/styles/pm-ndhabarde11-f155b4"
+  ],
+  "styles": [
+   "pm-jasonzhou1993-8595e0",
+   "pm-teslachartz-c58b32",
+   "pm-ndhabarde11-f155b4",
+   "pm-3xtihor-0f6911",
+   "pm-m1n9-k7-ff9ab9",
+   "pm-crazyalphaaa-bc7e75",
+   "pm-sudo-kiran-49176d",
+   "pm-codestackr-c071bf",
+   "pm-mrtanviir-132457"
+  ],
+  "tags": [
+   "شبكة",
+   "موجة",
+   "grid wave",
+   "ripple",
+   "stagger",
+   "distance delay"
+  ]
+ },
+ {
+  "id": "SHAPE-55",
+  "family": "shapes-morph-geometry",
+  "name_ar": "بلاطات تنقلب وشريط لا ينتهي",
+  "name_en": "Tile flips & endless strip loops (MG-116/117)",
+  "status": "documented",
+  "what": "شبكة بلاطات تنقلب صفًا صفًا إلى لون ثانٍ وتعود؛ وصف صور ينزلق وطرفه يلاقي بدايته. / A tile grid flips row by row to a second colour and back; a row of images scrolls with its end meeting its start.",
+  "how": "MG-116: 0–4 s flip, 4–8 s return, scaleX or 2.5D rotate with row delay, no harsh flashing. MG-117: move exactly one repeat-unit width (gaps included) in 10 s using two identical copies, linear — a miscounted gap causes a jump.",
+  "params": "8 s / 10 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md"
+  ],
+  "styles": [],
+  "tags": [
+   "بلاطات",
+   "شريط",
+   "loop",
+   "tile flip",
+   "marquee"
+  ]
+ },
+ {
+  "id": "SHAPE-56",
+  "family": "shapes-morph-geometry",
+  "name_ar": "زهرة النقاط الذهبية",
+  "name_en": "Phyllotaxis dot flower (137.5°)",
+  "status": "proven",
+  "what": "n نقطة بزاوية i·137.5° ونصف قطر c·√i تكوّن زهرة عباد شمس تدور ببطء. / n dots at angle i·137.5°, radius c·√i — a sunflower that rotates slowly.",
+  "how": "Rendered here (400 dots, hue ramp, rotation .4 rad/s). Same law places N items around a centre without geometry data: r = R√((i+.6)/n), a = i·2.39996 rad (earth sales-geo engine, R = min(58, 20+3n)).",
+  "params": "n ≈ 400; 137.5° (2.39996 rad); r = c√i",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-earth-ci-fork/app/src/engine/fusion/sales/sales-geo-engine.ts:83",
+   "kosif-tool/styles/pm-ajith-io-b5626e",
+   "kosif-tool/styles/pm-mrtanviir-132457"
+  ],
+  "styles": [
+   "pm-ajith-io-b5626e",
+   "pm-mrtanviir-132457",
+   "pm-umangratani-57f86a"
+  ],
+  "tags": [
+   "زهرة",
+   "زاوية ذهبية",
+   "phyllotaxis",
+   "golden angle",
+   "sunflower",
+   "generative"
+  ]
+ },
+ {
+  "id": "SHAPE-57",
+  "family": "shapes-morph-geometry",
+  "name_ar": "منحنيات ليساجو",
+  "name_en": "Lissajous curves & tangles",
+  "status": "seen",
+  "what": "x = A sin(at+δ)، y = B sin(bt) بنسب 3:2 و5:4، عشرون نسخة بانجراف بطيء لـ δ ومزج جمعي. / x = A sin(at+δ), y = B sin(bt) at 3:2, 5:4; 20 copies with drifting δ, additive low alpha, glow.",
+  "how": "δ drift .2 rad/s; neon stroke with glow (GLOW); 3D variant (sin 3t, sin 2t, sin 5t).",
+  "params": "δ .2 rad/s; 20 copies",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-rneayan-ea6129",
+   "kosif-tool/styles/pm-math-files-39c9d0"
+  ],
+  "styles": [
+   "pm-rneayan-ea6129",
+   "pm-math-files-39c9d0"
+  ],
+  "tags": [
+   "ليساجو",
+   "lissajous",
+   "oscilloscope",
+   "math",
+   "curves"
+  ]
+ },
+ {
+  "id": "SHAPE-58",
+  "family": "shapes-morph-geometry",
+  "name_ar": "خطوط توليدية بأسلوب Joy Division",
+  "name_en": "Ridge-line generative waves",
+  "status": "seen",
+  "what": "40–60 خطًا أفقيًا تزاح بالضوضاء قرب المركز مع أشرطة ملونة تنزلق. / 40–60 horizontal polylines displaced by noise near the centre, with coloured bars sliding across.",
+  "how": "Amplitude ramp 0→60 px toward the centre (Gaussian window); fill each line with background to occlude the ones behind; gradient red→blue by row.",
+  "params": "40–60 lines; amp 0→60 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-motiondsgnr-9dcfa6"
+  ],
+  "styles": [
+   "pm-motiondsgnr-9dcfa6"
+  ],
+  "tags": [
+   "خطوط",
+   "ridgeline",
+   "joy division",
+   "generative",
+   "noise"
+  ]
+ },
+ {
+  "id": "SHAPE-59",
+  "family": "shapes-morph-geometry",
+  "name_ar": "كسيريات وزخارف رياضية",
+  "name_en": "Fractals, kolam, golden spiral, kaleidoscope",
+  "status": "seen",
+  "what": "سيربنسكي يُبنى عمقًا عمقًا، كولام يلف حول شبكة نقاط بنقطة متوهجة تقوده، حلزون ذهبي فوق مربعات فيبوناتشي، جوليا بالشيدر، وتماثل كاليدوسكوبي. / Sierpinski depth by depth, a kolam loop weaving around a dot grid led by a glowing dot, a golden spiral over Fibonacci tiles, a Julia shader, kaleidoscope symmetry.",
+  "how": "Sierpinski 4–6 levels × 200 ms; kolam 7×5 dots one closed path drawn by dashoffset; Fibonacci tiles #c8b8f0→#e6dcf8 then quarter-arc chain 1.5–2 s; Julia z²+c purple→orange; kaleidoscope = polar fold n = 6–12 of a rotating texture (wedge 10°/s).",
+  "params": "Sierpinski 4–6 × 200 ms; kaleidoscope 6–12 folds",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-buildfastwithai-53234e",
+   "kosif-tool/styles/pm-ddryo-loos-300829",
+   "kosif-tool/styles/pm-math-files-39c9d0",
+   "kosif-tool/styles/pm-monokern-ade5b6"
+  ],
+  "styles": [
+   "pm-buildfastwithai-53234e",
+   "pm-ddryo-loos-300829",
+   "pm-math-files-39c9d0",
+   "pm-monokern-ade5b6"
+  ],
+  "tags": [
+   "كسيري",
+   "fractal",
+   "kolam",
+   "fibonacci",
+   "kaleidoscope",
+   "julia"
+  ]
+ },
+ {
+  "id": "SHAPE-60",
+  "family": "shapes-morph-geometry",
+  "name_ar": "جدار أيقونات مائل",
+  "name_en": "Tilted icon wall",
+  "status": "seen",
+  "what": "شبكة بلاطات مستديرة بأيقونات خطية، مائلة −12° وتنجرف قطريًا، وبلاطة واحدة أسطع. / Grid of rounded tiles with line icons rotated ~−12° drifting diagonally, one tile highlighted.",
+  "how": "Tile 90 px, radius 18 px, opacity .25–.4, drift 20 px/s; highlight = full opacity + accent border.",
+  "params": "90 px, r 18, drift 20 px/s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-gabrielbuzziv-4ff0c6"
+  ],
+  "styles": [
+   "pm-gabrielbuzziv-4ff0c6"
+  ],
+  "tags": [
+   "أيقونات",
+   "icon wall",
+   "integrations",
+   "grid"
+  ]
+ },
+ {
+  "id": "SHAPE-61",
+  "family": "shapes-morph-geometry",
+  "name_ar": "كتل أنماط شيدرية وشبكة متحركة",
+  "name_en": "HyperFrames pattern shaders & dynamic grid",
+  "status": "install",
+  "what": "حلقات متموجة، حلزون أوب آرت، خطوط قطرية، خلايا فورونوي (WebGPU)، وشبكة متحركة بمتغيرات CSS. / Ripples, op-art spiral, sliding stripes, Voronoi cells (WebGPU shaders) and a CSS-variable dynamic grid.",
+  "how": "npx hyperframes add ripples | spiral | stripes | voronoi (data-shader, data-requires-webgpu — WebGPU not verified here) | dynamic-grid (density fine|standard|coarse, weight hairline|standard|bold).",
+  "params": "2 s plates, 1920×1080",
+  "install": "npx hyperframes add dynamic-grid",
+  "license": "Apache-2.0 (+ MIT shaders library).",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/blocks/voronoi/voronoi.html",
+   "kosif-one/vendor/hyperframes/registry/components/dynamic-grid/dynamic-grid.html"
+  ],
+  "styles": [],
+  "tags": [
+   "شيدر",
+   "voronoi",
+   "spiral",
+   "stripes",
+   "ripples",
+   "grid",
+   "hyperframes"
+  ]
+ },
+ {
+  "id": "SHAPE-62",
+  "family": "shapes-morph-geometry",
+  "name_ar": "حلقات دوران بنسب صحيحة",
+  "name_en": "Integer-ratio rotation loops (MG-112/115)",
+  "status": "documented",
+  "what": "نقاط تدور حول مركز بعيدًا عن النص، أو قوسان بسرعتين مترابطتين حول مركز واحد — نسب دورات صحيحة تضمن حلقة بلا قفزة. / Dots orbit a centre away from the text, or two arcs rotate at related speeds — integer turn ratios guarantee a seamless loop.",
+  "how": "MG-112: exactly one turn in 6 s, linear, evenly spaced angles. MG-115: arc A 1 turn, arc B 2 turns per 6 s around a shared centre; never export the first frame twice at the seam (render t ∈ [0, T)).",
+  "params": "6 s; ratio 1:2",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md",
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/ideas-index.md"
+  ],
+  "styles": [],
+  "tags": [
+   "حلقة",
+   "loop",
+   "seamless",
+   "rotation",
+   "orbit"
+  ]
+ },
+ {
+  "id": "SHAPE-63",
+  "family": "shapes-morph-geometry",
+  "name_ar": "حلقات متحدة المركز بفجوات",
+  "name_en": "Rotating gapped concentric rings",
+  "status": "proven",
+  "what": "N قوسًا متحد المركز لكل منها فجوة، تدور بسرعات متناوبة الاتجاه. / N concentric arcs each with a gap, rotating at alternating-sign speeds.",
+  "how": "arc from gapStart+gap to gapStart+2π; gapStart_i += ω_i·dt with alternating sign; equal spacing; round caps. Rendered here (12 rings). Collapse variant: 6 rings 90–360°/s scale to a centre dot in 500 ms easeIn.",
+  "params": "N 12, stroke 6–8 px, spacing ~13–14 px, ω .3–1.2 rad/s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-kantamk-61f410",
+   "kosif-tool/styles/pm-leonkohli-6dc01b"
+  ],
+  "styles": [
+   "pm-kantamk-61f410",
+   "pm-leonkohli-6dc01b"
+  ],
+  "tags": [
+   "حلقات",
+   "concentric rings",
+   "gap",
+   "loader",
+   "rotation"
+  ]
+ },
+ {
+  "id": "SHAPE-64",
+  "family": "shapes-morph-geometry",
+  "name_ar": "عنقود أقواس مدارية ونواة نابضة",
+  "name_en": "Orbiting arc cluster + pulsing donut core",
+  "status": "ready",
+  "what": "ستة أقواس 270° تدور حول مركز بمسافات متغيرة بلونين، ونواة دائرية ليمونية تتنفس في الوسط. / Six 270° arcs orbit a centre at varying distance in teal/lime with pulsing opacity; a breathing lime donut core in the middle.",
+  "how": "Arc k: angle = .5·phase + kπ/3, dist = w(.15 + .055 sin), radius w(.04 + .016 sin), sweep 1.5π, #89d6ce / #d5f375, alpha .24 + .25 sin²; core r = w(.12 + .025 sin(1.25 phase)) #c9f96d with inner #0a1724 at .58r.",
+  "params": "6 arcs, 270°; core 12% ± 2.5% w",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/web/motion.js:13-14",
+   "fastify-motion-bro/web/motion.js:15"
+  ],
+  "styles": [],
+  "tags": [
+   "مدار",
+   "أقواس",
+   "orbit",
+   "arcs",
+   "core",
+   "pulse"
+  ]
+ },
+ {
+  "id": "SHAPE-65",
+  "family": "shapes-morph-geometry",
+  "name_ar": "حلقات مدارية إهليلجية",
+  "name_en": "Orbital ellipse rings & accents",
+  "status": "ready",
+  "what": "ثلاث حلقات إهليلجية مائلة تدور ببطء حول مركز التوهج، أو حلقة رفيعة تدور حول البطل، أو نجمة رباعية دوارة. / Three tilted concentric ellipses rotating slowly around the glow centre, a thin orbit ring around the hero, or a spinning four-spoke starburst.",
+  "how": "ctx.rotate(.1·t); radii r(.66 + .18i) × r(.2 + .11i), tilt .3 + .65i rad, line .002·min(w,h); hero ring ellipse (.5w,.405h) .283w × .157h, rotation sin(.1 phase)·.12; starburst translate(.82w,.273h), rotate(.21 phase), spokes 10→24 px; satellites on a dashed ellipse tilted 20°.",
+  "params": "3 rings at .1 rad/s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:68",
+   "fastify-motion-bro/web/editorial.js:67-70",
+   "kosif-tool/styles/pm-samuel-spitz-974923"
+  ],
+  "styles": [
+   "pm-samuel-spitz-974923"
+  ],
+  "tags": [
+   "مدار",
+   "إهليلج",
+   "orbit ring",
+   "ellipse",
+   "starburst"
+  ]
+ },
+ {
+  "id": "SHAPE-66",
+  "family": "shapes-morph-geometry",
+  "name_ar": "انفجار خطوط شعاعي",
+  "name_en": "Radial line burst",
+  "status": "proven",
+  "what": "12–60 خطًا تنطلق من المركز بأطوال وألوان متفاوتة بـ expo.out مع تتابع 20 ms، ثم تخبو. / 12–60 lines shoot from the centre with varied length/colour, expo.out, 20 ms stagger, then fade.",
+  "how": "r0 = 20 + 30b, r1 = 40 + 120b with b = 1 − (1−p)^5; alternate accent/primary; fade over the second half. Rendered here (14 lines). Basma TEMPLATES.shapes: 14 lines from m(.1 + .25k) to m(.16 + .42k)·jitter + ring .42m·k in .6–1 s.",
+  "params": "400–600 ms expo.out; 12–60 rays; stagger 20 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "app/public/js/00_editor.js:518",
+   "kosif-tool/styles/pm-teslachartz-c58b32",
+   "kosif-tool/styles/pm-shinskinakamoto-20190b",
+   "kosif-tool/styles/pm-stephanlivera-df17a2"
+  ],
+  "styles": [
+   "pm-teslachartz-c58b32",
+   "pm-shinskinakamoto-20190b",
+   "pm-stephanlivera-df17a2",
+   "pm-sudo-kiran-49176d",
+   "pm-mandelduck-95fd08"
+  ],
+  "tags": [
+   "انفجار",
+   "خطوط شعاعية",
+   "burst",
+   "rays",
+   "emphasis",
+   "beat"
+  ]
+ },
+ {
+  "id": "SHAPE-67",
+  "family": "shapes-morph-geometry",
+  "name_ar": "حلقة صدمة أرضية ونبض قلب",
+  "name_en": "Shockwave ring & heartbeat ripple",
+  "status": "proven",
+  "what": "حلقة إهليلجية مسطحة (y×0.25) تتسع 0→300px في 500ms وتخبو؛ أو حلقة ثانية تكبر 1→1.9 وتخبو على نبضتين. / Flattened ellipse ring (y×.25) expanding 0→300 px in 500 ms with fade; or a second ring scaling 1→1.9 and fading on beats.",
+  "how": "Rendered here (shockwave under the burst). Heartbeat: circle r150 #f5c97a 5 px drawn 1.1 s, ring2 scale 1→1.9, opacity .9→0 in .9 s E.out at the beat times.",
+  "params": "0→300 px / 500 ms; heartbeat 1→1.9 in .9 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/projects/whatsapp-motion/projects/success/index.html",
+   "kosif-tool/styles/pm-chrisjdimarco-f068db"
+  ],
+  "styles": [
+   "pm-chrisjdimarco-f068db"
+  ],
+  "tags": [
+   "صدمة",
+   "نبض",
+   "shockwave",
+   "heartbeat",
+   "ring",
+   "impact"
+  ]
+ },
+ {
+  "id": "SHAPE-68",
+  "family": "shapes-morph-geometry",
+  "name_ar": "أشعة شمسية دوارة",
+  "name_en": "Rotating sunburst ground",
+  "status": "proven",
+  "what": "24–36 إسفينًا متناوبًا بلونين متقاربين يدور ببطء خلف العنوان مع تعتيم شعاعي. / 24–36 alternating wedge rays in two close tones rotating slowly behind the title, with radial vignette.",
+  "how": "conic-gradient repeating wedges or canvas arcs; tone delta ~8% lightness; rotation 3–10°/s. Rendered here (28 wedges, .12 rad/s).",
+  "params": "24–36 rays; 3–10°/s; Δ lightness ~8%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-deebeeeff-50fcd0",
+   "kosif-tool/styles/pm-majin-appsheet-2d3c1a",
+   "kosif-tool/styles/pm-allforbigfire-86ff3c"
+  ],
+  "styles": [
+   "pm-deebeeeff-50fcd0",
+   "pm-majin-appsheet-2d3c1a",
+   "pm-allforbigfire-86ff3c"
+  ],
+  "tags": [
+   "أشعة",
+   "sunburst",
+   "rays",
+   "background",
+   "retro"
+  ]
+ },
+ {
+  "id": "SHAPE-69",
+  "family": "shapes-morph-geometry",
+  "name_ar": "حلقة نقاط تتسع بخطوط شعاعية",
+  "name_en": "Expanding dot ring with radial lines",
+  "status": "seen",
+  "what": "نقاط الشعار تتضاعف حول دائرة أكبر (8→24) وخطوط بنفسجية رفيعة تشع خلفها نحو أطراف الكادر. / Logo dots duplicate around a larger circle (8 → 24) while thin violet lines radiate behind toward the frame edges.",
+  "how": "Ring radius 40% width; lines 1.5 px #8a6cff; satellites stagger 30 ms.",
+  "params": "8 → 24 dots; ring 40% w",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-micheleharmonic-77628e"
+  ],
+  "styles": [
+   "pm-micheleharmonic-77628e"
+  ],
+  "tags": [
+   "نقاط",
+   "حلقة",
+   "dot ring",
+   "radial lines",
+   "logo"
+  ]
+ },
+ {
+  "id": "SHAPE-70",
+  "family": "shapes-morph-geometry",
+  "name_ar": "نفق مربعات حلزوني",
+  "name_en": "Spiral square tunnel & nested squares",
+  "status": "seen",
+  "what": "مربعات متداخلة كل منها ×0.9 ومدار 8° بلونين متناوبين، أو 8 مربعات تدور بتأخير 50ms، أو نفق من نسخ الشعار. / Nested squares each ×.9 and rotated 8° in alternating colours, 8 squares rotating with 50 ms delay, or a tunnel of logo outlines.",
+  "how": "Loop: scale every copy by 1/.9 per period and wrap; tunnel of outlines with a ticking counter for speed ramps.",
+  "params": "×.9, 8° per level; delay 50 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-zheke-38deff",
+   "kosif-tool/styles/pm-safarkhanshuvo-ffd52d",
+   "kosif-tool/styles/pm-jasonzhou1993-8595e0/BRIEF.md"
+  ],
+  "styles": [
+   "pm-zheke-38deff",
+   "pm-safarkhanshuvo-ffd52d"
+  ],
+  "tags": [
+   "نفق",
+   "مربعات",
+   "tunnel",
+   "spiral",
+   "nested"
+  ]
+ },
+ {
+  "id": "SHAPE-71",
+  "family": "shapes-morph-geometry",
+  "name_ar": "مربع يصير دائرة مع أقمار",
+  "name_en": "Square→circle with satellites & star pop",
+  "status": "seen",
+  "what": "border-radius 0→50% مع دوران وثلاث نقاط تدور على حلقة رفيعة، أو نجمة تقفز بـ outBack ونجوم صغيرة حولها. / border-radius 0→50% with rotation while three dots orbit on a thin ring; or a star popping with outBack and small orbiting stars.",
+  "how": "Morph 500 ms; orbit 1 rev/s; background polka grid pulses.",
+  "params": "500 ms; 1 rev/s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-shinskinakamoto-20190b",
+   "kosif-tool/styles/pm-stephanlivera-df17a2"
+  ],
+  "styles": [
+   "pm-shinskinakamoto-20190b",
+   "pm-stephanlivera-df17a2"
+  ],
+  "tags": [
+   "أقمار",
+   "satellites",
+   "star pop",
+   "border-radius"
+  ]
+ },
+ {
+  "id": "SHAPE-72",
+  "family": "shapes-morph-geometry",
+  "name_ar": "بوابة دوامية ومصباح فرينل",
+  "name_en": "Swirl portal & Fresnel lamp room",
+  "status": "seen",
+  "what": "حلقة طارة متوهجة حول قرص ضوضاء ملتوٍ قطبيًا؛ أو شبكة معينات فوق أسطوانة متوهجة بعدسة حلقات تشتعل في 400ms. / Glowing torus ring around a polar-twisted noise disc; or a diamond-pane lattice over a glowing cylinder with a concentric-ellipse lens igniting in ~400 ms.",
+  "how": "Twist: θ += k/(r+ε) before sampling noise; lattice 40 px cells, glow blur 30–60 px, bloom spike on ignition.",
+  "params": "ignite 400 ms; lattice 40 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-ryzoft-4f85bd",
+   "kosif-tool/styles/pm-kamstudiolabs-0b0824"
+  ],
+  "styles": [
+   "pm-ryzoft-4f85bd",
+   "pm-kamstudiolabs-0b0824"
+  ],
+  "tags": [
+   "بوابة",
+   "portal",
+   "swirl",
+   "fresnel",
+   "lighthouse"
+  ]
+ },
+ {
+  "id": "SHAPE-73",
+  "family": "shapes-morph-geometry",
+  "name_ar": "الزخرفة الثمانية من الكود",
+  "name_en": "Islamic eight-point rosette builder",
+  "status": "ready",
+  "what": "نجمة ثمانية من مربعين مدارين 45° + نجمة 16 رأسًا + دائرة + نجمة داخلية، يُرسم كل جزء بالتتابع وتدور الوردة كلها ببطء. / An eight-point star from two squares at 0/45°, a 16-vertex star, a circle and an inner star, each drawn in sequence while the rosette slowly turns.",
+  "how": "sq(78,0), sq(78,π/4), star8(120,92), circle r48, star8(30,14); M.drawPath each at .4 + .18i s for 1.3 s, opacity .85; rotate 0→45° over the film; stroke #f6d27a width 3→5 on the key word.",
+  "params": "draw 1.3 s, stagger .18 s; stroke #f6d27a 3→5",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/projects/thursday-dua-animation/source/index.html"
+  ],
+  "styles": [],
+  "tags": [
+   "زخرفة",
+   "نجمة ثمانية",
+   "خاتم",
+   "islamic",
+   "rosette",
+   "khatam",
+   "geometry"
+  ]
+ },
+ {
+  "id": "SHAPE-74",
+  "family": "shapes-morph-geometry",
+  "name_ar": "وردة الفواصل الموسيقية",
+  "name_en": "Interlude rosette (verse template)",
+  "status": "ready",
+  "what": "في الوقفات الطويلة (≥ 4.5 ث) تُرسم وردة ثمانية تتنفس على الإيقاع ثم تنسحب. / During long pauses (≥ 4.5 s) an eight-point rosette is drawn, breathes on the beat, then withdraws.",
+  "how": "verse.py writes interludes into verse.json (start = end + .8 s, end = next − .5 s, ≥ 1.5 s); verse.html ROSETTES: two squares at 0/45° + circle .42R #F7F2E8 .7, R 150k, stroke 2.2k accent, rotate 9°/s, beat scale +7%, draw 1.1 s stagger .12.",
+  "params": "pause ≥ 4.5 s; 9°/s; beat +7%",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-studio/motion/templates/verse.html",
+   "kosif-studio/motion/verse.py:258",
+   "100-superskills/skills/kosif-montage-motion/templates/verse.html:298"
+  ],
+  "styles": [],
+  "tags": [
+   "وردة",
+   "فاصل",
+   "interlude",
+   "rosette",
+   "verse",
+   "beat"
+  ]
+ },
+ {
+  "id": "SHAPE-75",
+  "family": "shapes-morph-geometry",
+  "name_ar": "فوانيس ومسجد ونوافذ",
+  "name_en": "Swaying lanterns & mosque silhouette",
+  "status": "ready",
+  "what": "فانوسان من أشكال SVG يتأرجحان كالبندول بتوهج يتنفس، وصورة ظلية لقبة ومئذنتين بنوافذ مقوسة ترتعش. / Two SVG lanterns swinging like pendulums with breathing glow; a dome-and-two-minarets silhouette with softly flickering arched windows.",
+  "how": "Lantern: chain line, radial glow r120, cap, hexagon body #ffcf72 .92 stroke #c48a2c, ribs #b07a22; rotation ±3.5° yoyo 2.2/2.5 s (svgOrigin 0 0); glow .7→1 yoyo .96 s. Mosque paths #1d0f2c, ground #140920; 8 windows #ffc768 .55→1 yoyo .9–1.7 s at random offsets (seeded).",
+  "params": "±3.5°, 2.2/2.5 s; windows .55→1",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/projects/thursday-dua-animation/source/index.html"
+  ],
+  "styles": [],
+  "tags": [
+   "فانوس",
+   "مسجد",
+   "رمضان",
+   "lantern",
+   "mosque",
+   "islamic"
+  ]
+ },
+ {
+  "id": "SHAPE-76",
+  "family": "shapes-morph-geometry",
+  "name_ar": "غيمة من دوائر تكبر وتعتم",
+  "name_en": "Circle-cluster cloud that grows and darkens",
+  "status": "ready",
+  "what": "غيوم من خمس دوائر وقاعدة مستديرة تكبر فوق البحر وتنجرف وتعتم قبل المطر ثم تصفو. / Clouds of five circles and a rounded base grow, drift and darken before rain, then lighten.",
+  "how": "circles (0,0,62) (−75,18,46) (78,18,50) (−32,−34,52) (38,−40,58) + rect 248×58 rx29; scale .2→1 (3.8–5.0 s), drift 4.9–6.2 s; #FFFFFF→#A6B9CC, base #DCE8F2→#8FA3B8 for dark 6.0–6.5 s, back after 8.3 s.",
+  "params": "5 circles + base; scale .2→1",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/projects/water-cycle-animation/index.html"
+  ],
+  "styles": [],
+  "tags": [
+   "غيمة",
+   "cloud",
+   "weather",
+   "water cycle",
+   "explainer"
+  ]
+ },
+ {
+  "id": "SHAPE-77",
+  "family": "shapes-morph-geometry",
+  "name_ar": "مكتبة 16 أيقونة متجهة",
+  "name_en": "16-icon vector hero library",
+  "status": "ready",
+  "what": "أيقونات Canvas مرسومة بالكود تصلح أبطالًا: عين، دماغ، محفظة، نقود، شاشة، ساعة رملية، مصباح، صاروخ، ساعة، مؤشر، رسم بياني، درج، دومينو، كتاب، أشخاص، شطرنج + نجمة. / Hand-coded Canvas icons usable as hero objects (eye, brain, wallet, money, screen, hourglass, bulb, rocket, clock, cursor, chart, stairs, domino, book, people, chess + star).",
+  "how": "icon(ctx, name, r, accent, ink) with round joins, stroke .08r; choose via scene.hero.",
+  "params": "16 named + default",
+  "install": "",
+  "license": "",
+  "proof": [
+   "fastify-motion-bro/web/editorial.js:12-34"
+  ],
+  "styles": [],
+  "tags": [
+   "أيقونات",
+   "icons",
+   "canvas",
+   "hero",
+   "library"
+  ]
+ },
+ {
+  "id": "SHAPE-78",
+  "family": "shapes-morph-geometry",
+  "name_ar": "أيقونات SVG حية",
+  "name_en": "Living SVG icons",
+  "status": "documented",
+  "what": "حرّك أجزاء الأيقونة الداخلية: عقارب ساعة، ريش مروحة، نقاط نابضة، خطوط تدفق — بدوران حول مركز دقيق. / Animate inner SVG parts (clock hands, fan blades, pulsing dots, dash-flow lines) with rotate(deg cx cy) for exact centres.",
+  "how": "setAttribute(\"transform\", `rotate(${d} ${cx} ${cy})`); ease none for linear rotation; one paused timeline, fromTo explicit states.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/svg-icon-enrichment.md"
+  ],
+  "styles": [],
+  "tags": [
+   "أيقونة حية",
+   "living icon",
+   "svg",
+   "rotate",
+   "clock"
+  ]
+ },
+ {
+  "id": "SHAPE-79",
+  "family": "shapes-morph-geometry",
+  "name_ar": "قواعد الأيقونة: شبكة 24 والإغلاق",
+  "name_en": "Icon rules: 24 px grid & closure",
+  "status": "documented",
+  "what": "شبكة 24px، خط 2px، نهايات دائرية، viewBox مربع، بلا نص، < 4KB؛ والإيحاء بالشكل بفجوات ونهايات متحاذية — اختبرها في 8–16px. / 24 px grid, 2 px stroke, round caps, square viewBox, no text, < 4 KB; imply forms with gaps and aligned terminals (closure) — test at 8–16 px.",
+  "how": "Test at 16/24/48/192 px; draw-on works especially well with closure because the eye completes the form early.",
+  "params": "24 px / 2 px; test 8–16 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/svg-illustration-icons/SKILL.md:21",
+   "kosif-atlas/skills/1503-universal-design-principles/3812-closure-implied-shapes"
+  ],
+  "styles": [],
+  "tags": [
+   "أيقونة",
+   "icon grid",
+   "closure",
+   "rules"
+  ]
+ },
+ {
+  "id": "SHAPE-80",
+  "family": "shapes-morph-geometry",
+  "name_ar": "طبقات أشكال وملصقات منبثقة",
+  "name_en": "Shape layers & sticker/emoji pop-ups",
+  "status": "install",
+  "what": "دائرة أو شريط مستدير كخط تحت النص في محرر الاستوديو؛ وإيموجي ونص وملصقات تنبثق بنابض وتمايل في Basma. / Studio overlay shapes (circle or rounded underline bar); Basma emoji/text/sticker pop-ups springing in with a slight wobble.",
+  "how": "Studio: overlay.type=\"shape\", \"circle\" (arc size/2) or \"rectangle\" (roundRect h .24·size, r max(2,.06·size)), default 16% #52dbc6. Basma drawOverlays(): spring(z .4, w 17) scale, rotate sin(3l)·.03, .2 s fade-out; positions top 30%, centre 47%, bottom 64%, corner (78%,16%); emoji 17% m; text Lalezar 6.5% on an accent pill.",
+  "params": "spring z .4 ω 17; size 16%",
+  "install": "cd app && npm install",
+  "license": "",
+  "proof": [
+   "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:76",
+   "app/public/js/00_editor.js:412"
+  ],
+  "styles": [],
+  "tags": [
+   "ملصقات",
+   "إيموجي",
+   "stickers",
+   "emoji",
+   "overlay",
+   "pop"
+  ]
+ },
+ {
+  "id": "SHAPE-81",
+  "family": "shapes-morph-geometry",
+  "name_ar": "ملصقات زخرفية وكبسولات وسوم",
+  "name_en": "Decor stickers, hazard tape & floating tag pills",
+  "status": "seen",
+  "what": "نجوم مضلعة وشرائط تحذير مخططة في الزوايا تتمايل، وكبسولات وسوم بيضاء تطفو حول العنوان بدوران عشوائي. / Starburst polygons and striped hazard tapes wobbling in corners; white tag pills floating around the headline at random tilts.",
+  "how": "Stickers rotate ±6° over 2 s yoyo, colours rotate per scene; 6 pills radius 999, 1 px #c4d8e5 border, ±6° tilt, pop-in stagger 120 ms, idle bob 4 px period 3–4 s, avoid the centre.",
+  "params": "±6°/2 s; pills stagger 120 ms, bob 4 px",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-0xnfrith-5be616",
+   "kosif-tool/styles/pm-alex-prompter-1ea044"
+  ],
+  "styles": [
+   "pm-0xnfrith-5be616",
+   "pm-alex-prompter-1ea044"
+  ],
+  "tags": [
+   "ملصقات",
+   "كبسولات",
+   "stickers",
+   "tags",
+   "pills",
+   "decor"
+  ]
+ },
+ {
+  "id": "SHAPE-82",
+  "family": "shapes-morph-geometry",
+  "name_ar": "مروحة بطاقات وصور",
+  "name_en": "Card / photo / swatch fan-out",
+  "status": "seen",
+  "what": "نسخ البطاقة خلفها تنفتح كمروحة حول محور مشترك بإزاحة ودوران متدرج، مع ألسنة مرقمة أو عداد. / Duplicates behind a card fan out around a shared pivot with offset and stepped rotation, with numbered tabs or a count label.",
+  "how": "6 cards offset x +18 px and +2..+6° (or ±12–25° around a pivot for photos), stagger 70–80 ms, 400–500 ms easeOutBack(1.2).",
+  "params": "5–8 items, stagger 70–80 ms, 400–500 ms back.out",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-bogdandragomir-35e024",
+   "kosif-tool/styles/pm-lester-tyy-f897f7",
+   "kosif-tool/styles/pm-ercankeskinx-ec2568"
+  ],
+  "styles": [
+   "pm-bogdandragomir-35e024",
+   "pm-lester-tyy-f897f7",
+   "pm-ercankeskinx-ec2568",
+   "pm-thayto-dev-44b911"
+  ],
+  "tags": [
+   "مروحة",
+   "بطاقات",
+   "fan",
+   "cards",
+   "stack",
+   "swatches"
+  ]
+ },
+ {
+  "id": "SHAPE-83",
+  "family": "shapes-morph-geometry",
+  "name_ar": "شريط تظليل مائل خلف النص",
+  "name_en": "Slanted highlighter bar wipe",
+  "status": "seen",
+  "what": "مستطيل مائل يكبر أفقيًا من 0 إلى 1 خلف سطر نص، أكبر قليلًا من صندوقه. / A skewed rectangle scales X from 0 to 1 behind a text line, slightly larger than the text box.",
+  "how": "skewX −8°, 180–250 ms easeOutCubic; for Arabic grow from the right (transform-origin right).",
+  "params": "skewX −8°, 180–250 ms",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-deifosv-04e4d3"
+  ],
+  "styles": [
+   "pm-deifosv-04e4d3"
+  ],
+  "tags": [
+   "تظليل",
+   "highlighter",
+   "bar",
+   "emphasis",
+   "text"
+  ]
+ },
+ {
+  "id": "SHAPE-84",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تغيير لون الكلمة داخل الكرة",
+  "name_en": "Clip-path colour flip over a moving lens",
+  "status": "seen",
+  "what": "صف كلمات مرسوم مرتين: نسخة داكنة، ونسخة بيضاء مقصوصة بدائرة الكرة، والصف ينزلق فتتلون كل كلمة حين تعبرها. / Render a word row twice — dark copy, and a white copy clipped with clip-path: circle() at the orb — and slide the row so each word flips inside the orb.",
+  "how": "orb r ~70 px; row speed ~1 word / .8 s; for Arabic slide left→right so words enter from the right.",
+  "params": "orb r 70 px; 0.8 s per word",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/product"
+  ],
+  "styles": [
+   "product"
+  ],
+  "tags": [
+   "قص",
+   "clip-path",
+   "lens",
+   "colour flip",
+   "words"
+  ]
+ },
+ {
+  "id": "SHAPE-85",
+  "family": "shapes-morph-geometry",
+  "name_ar": "تجميع من شظايا أو قطع",
+  "name_en": "Shard / piece assembly along a path",
+  "status": "seen",
+  "what": "مثلثات تبدأ خارج الشاشة مدارة وتنزلق إلى أماكنها، أو قطع هيكل تسافر على قوس منقط وتلتحم بتجاوز بسيط. / Triangles start off-screen rotated and ease into slots; or skeleton pieces travel along a dotted arc and snap together with slight overshoot.",
+  "how": "Per piece: start = random off-screen pose (seeded), path = quadratic arc, 600 ms ease-out, stagger 40 ms, total ~1.2 s.",
+  "params": "stagger 40 ms; 600 ms each",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-tdinh-me-815acb",
+   "kosif-tool/styles/pm-gigabit-million-16b3a0"
+  ],
+  "styles": [
+   "pm-tdinh-me-815acb",
+   "pm-gigabit-million-16b3a0"
+  ],
+  "tags": [
+   "شظايا",
+   "تجميع",
+   "shards",
+   "assemble",
+   "snap"
+  ]
+ },
+ {
+  "id": "SHAPE-86",
+  "family": "shapes-morph-geometry",
+  "name_ar": "شاشة مقسومة واستعارة الكسوف",
+  "name_en": "Split-screen eclipse metaphor",
+  "status": "seen",
+  "what": "نصف كريمي ونصف أسود: دائرة مفرغة في جهة ونقطة حمراء في الأخرى تنزلقان وتتداخلان ككسوف. / Half cream / half black; an outline circle and a filled red dot slide toward each other and overlap into an eclipse.",
+  "how": "~1.5 s ease-in-out; difference blend at the overlap.",
+  "params": "~1.5 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-samaote-5e2fc2"
+  ],
+  "styles": [
+   "pm-samaote-5e2fc2"
+  ],
+  "tags": [
+   "كسوف",
+   "eclipse",
+   "split screen",
+   "metaphor"
+  ]
+ },
+ {
+  "id": "SHAPE-87",
+  "family": "shapes-morph-geometry",
+  "name_ar": "بحر خطوط مع شخصية رمزية",
+  "name_en": "Line-art sea with mascot",
+  "status": "seen",
+  "what": "4–6 مسارات جيبية أفقية بانجراف طور وسرعات بارالاكس، وشخصية مسطحة صغيرة تتمايل وتعبر. / 4–6 horizontal SVG sine paths with slow phase drift at parallax speeds; a small flat mascot bobs (±4°) and crosses.",
+  "how": "Wave amplitude 4–10 px, period 6 s; bob 1.5 s; a passing train/vehicle strip with 30 px motion blur for fast occlusion.",
+  "params": "amp 4–10 px, 6 s; bob ±4°/1.5 s",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-aschapmann-131210",
+   "kosif-tool/styles/pm-itsolelehmann-e47532"
+  ],
+  "styles": [
+   "pm-aschapmann-131210",
+   "pm-itsolelehmann-e47532"
+  ],
+  "tags": [
+   "بحر",
+   "خطوط",
+   "sea",
+   "mascot",
+   "line art"
+  ]
+ },
+ {
+  "id": "SHAPE-88",
+  "family": "shapes-morph-geometry",
+  "name_ar": "فاصل بشعرة",
+  "name_en": "Hairline separator (HyperFrames)",
+  "status": "install",
+  "what": "فاصل 1px أفقي أو عمودي بكشف تقدمي آمن للبحث. / 1-pixel structural separator with a seek-safe progress reveal.",
+  "how": "npx hyperframes add separator; orientation horizontal|vertical; thickness hairline|medium|bold; tone neutral|accent|warning.",
+  "params": "",
+  "install": "npx hyperframes add separator",
+  "license": "Apache-2.0.",
+  "proof": [
+   "kosif-one/vendor/hyperframes/registry/components/separator/separator.html"
+  ],
+  "styles": [],
+  "tags": [
+   "فاصل",
+   "separator",
+   "hairline",
+   "layout"
+  ]
+ },
+ {
+  "id": "SHAPE-89",
+  "family": "shapes-morph-geometry",
+  "name_ar": "وحدة 24 وشبكة أعمدة",
+  "name_en": "Base-unit grid system",
+  "status": "documented",
+  "what": "كل المقاسات مضاعفات وحدة أساس على شبكة أعمدة، والإطار الأخير يستقر على الشبكة تمامًا. / All sizes multiples of a base unit on a column grid; final frames land exactly on grid.",
+  "how": "unit 24 px; 8 or 12 columns; snap end states, not in-betweens.",
+  "params": "24 px; 8/12 columns",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/shapes.md:15",
+   "kosif-tool/playbooks/shapes.md:29"
+  ],
+  "styles": [],
+  "tags": [
+   "شبكة",
+   "وحدة",
+   "grid",
+   "unit",
+   "system"
+  ]
+ },
+ {
+  "id": "SHAPE-90",
+  "family": "shapes-morph-geometry",
+  "name_ar": "سلالم الأقطار والخطوط والفراغ",
+  "name_en": "Primitive, radius & stroke scales",
+  "status": "documented",
+  "what": "ثلاثة أشكال أولية كحد أقصى، لونان + خلفية، أقطار 0/8/24/50%، خطوط 2/4/8، وفراغ سلبي ≥ 30%. / Max three primitives, two colours + background, radii 0/8/24/50%, strokes 2/4/8, ≥ 30% negative space.",
+  "how": "Nested radius: inner = outer − gap when gap < 32 px and result > 2 (16 px outer, 8 px gap → 8 px).",
+  "params": "radii 0/8/24/50%; strokes 2/4/8; ≥ 30% empty",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/shapes.md:16-18",
+   "kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:225"
+  ],
+  "styles": [],
+  "tags": [
+   "سلالم",
+   "radius",
+   "stroke",
+   "negative space",
+   "rules"
+  ]
+ },
+ {
+  "id": "SHAPE-91",
+  "family": "shapes-morph-geometry",
+  "name_ar": "انضغاط وتمدد بحفظ المساحة",
+  "name_en": "Area-preserving squash & stretch",
+  "status": "ready",
+  "what": "عند الاصطدام ينضغط الشكل (0.7/1.3) 80ms حول نقطة التلامس ثم يعود بنابض. / On impact squash (scaleY .7 / scaleX 1.3) for 80 ms around the contact point, then spring back.",
+  "how": "Canvas: ctx.scale(1 + .3s, 1 − .3s) about the contact; s = KOSIF.window01(t, hit, hit + .08, .02, .06) in the html-canvas starter; spring {damping 10, stiffness 220}.",
+  "params": ".7/1.3 for 80 ms; spring d10 k220",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/playbooks/shapes.md:25",
+   "kosif-tool/playbooks/shapes.md:66",
+   "kosif-tool/starters/html-canvas/index.html"
+  ],
+  "styles": [],
+  "tags": [
+   "انضغاط",
+   "squash",
+   "stretch",
+   "impact",
+   "spring"
+  ]
+ },
+ {
+  "id": "SHAPE-92",
+  "family": "shapes-morph-geometry",
+  "name_ar": "التصاق مغناطيسي وكل شيء من المركز",
+  "name_en": "Magnet snap spring & centre-origin rule",
+  "status": "idea",
+  "what": "الأشكال تلتصق في أماكنها بتجاوز واحد؛ وفي بعض الأساليب كل التحويلات حول مركز الإطار وكل دخول منه. / Primitives snap into place with one overshoot; in some styles every transform pivots on the frame centre and every entrance starts there.",
+  "how": "Untested brief ideas: Remotion spring stiffness 220 damping 14, or UI cubic-bezier(.16,1,.3,1) 400–600 ms; transform-origin 960px 540px.",
+  "params": "k 220 d 14; origin (960,540)",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/styles/pm-quickdesignio-dd93d0/BRIEF.md",
+   "kosif-tool/styles/pm-marouanegazouzi-6071d5/BRIEF.md"
+  ],
+  "styles": [],
+  "tags": [
+   "مغناطيس",
+   "snap",
+   "spring",
+   "centre origin",
+   "rule"
+  ]
+ },
+ {
+  "id": "SHAPE-93",
+  "family": "shapes-morph-geometry",
+  "name_ar": "أسلوب المرح الهندسي (S07)",
+  "name_en": "Playful geometric style (S07)",
+  "status": "documented",
+  "what": "لوحة محدودة جريئة، دوائر وبطاقات وأيقونات، قفزات صغيرة وتبديل أشكال وإيقاع متنوع — حي من أصول بسيطة. / Limited bold palette, circles, cards and icons; small bounces, shape swaps, varied rhythm.",
+  "how": "SVG primitives + overshoot easings + staggered entrances, rendered with render_html.cjs; over-bouncing distracts — one overshoot per entrance.",
+  "params": "ideas MG-008 MG-029 MG-061 MG-081 MG-083 MG-108 MG-115",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md",
+   "kosif-tool/playbooks/shapes.md"
+  ],
+  "styles": [],
+  "tags": [
+   "مرح",
+   "هندسي",
+   "playful",
+   "geometric",
+   "style"
+  ]
+ },
+ {
+  "id": "SHAPE-X01",
+  "family": "shapes-morph-geometry",
+  "domain": "motion",
+  "name_ar": "تحوّل هندسي بلا مزج",
+  "name_en": "Geometric morph without a crossfade (letter → planet)",
+  "status": "documented",
+  "what": "حوّل شكلًا إلى آخر عبر سلسلة أشكال وسيطة تحمل النقاط نفسها، لا بمزج صورتين. — Turn one shape into another through a chain of intermediate shapes carrying the same points, never by crossfading two images.",
+  "when": "حرف من الشعار يصبح كوكبًا أو كرة أو أيقونة — a logo letter becoming a planet, sphere or icon.",
+  "how": "Letter O → ellipse → 3D ring → 6 meridian copies → wire sphere → dotted Earth: map source points onto each stage, depth-sort, draw the back half at α 0.3.",
+  "params": "6 meridians; back half α 0.3",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+  ],
+  "styles": [],
+  "tags": [
+   "morph",
+   "letter",
+   "sphere",
+   "points",
+   "تحوّل",
+   "كرة",
+   "نقاط"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+ },
+ {
+  "id": "SHAPE-X02",
+  "family": "shapes-morph-geometry",
+  "domain": "motion",
+  "name_ar": "لقطة متصلة من عناصر مشتركة",
+  "name_en": "One continuous shot from shared elements",
+  "status": "documented",
+  "what": "العناصر نفسها تعيد ترتيب نفسها من شكل إلى آخر (مروحة ثم رسم بياني ثم حلقة) فتصنع فيلمًا بلا قطع. — The same elements rearrange from one formation to the next (fan, then graph, then ring), making a film with no cuts.",
+  "when": "فيلم بيانات أو منتج بلا قطع — a data or product film without cuts.",
+  "how": "28 tiles with pose functions fan → graph → ring; greedy nearest assignment between formations; ring slots sorted by angle so paths never cross; stagger 0.014–0.02 s; pinhole projection f 1500.",
+  "params": "28 tiles; stagger 0.014–0.02 s; f 1500",
+  "install": "",
+  "license": "owner (no LICENSE file)",
+  "proof": [
+   "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+  ],
+  "styles": [],
+  "tags": [
+   "formation",
+   "continuous shot",
+   "tiles",
+   "assignment",
+   "تشكيل",
+   "لقطة متصلة"
+  ],
+  "section": "إضافات v2 — v2 additions",
+  "source": "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
+ }
+]

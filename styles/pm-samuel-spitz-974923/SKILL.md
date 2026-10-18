@@ -1,6 +1,6 @@
 ---
 name: pm-samuel-spitz-974923
-description: A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.
+description: A 15-second chaptered reel with a HUD frame: a red ring, a MOTION wordmark with an underline drawing on, a Bauhaus shape grid that recolours, a tilted 3D panel with a chrome sphere and italic 'depth', a large chrome sphere on dark silk with an orbiting red ellipse, 'TYPE.' on red, chrome-filled 'TIME.' and a REEL '26 end card with a flowing red line.
 ---
 
 # KOSIF TOOL — Motion design showreel / ريل عرض القدرات: فصول الحركة الأربعة
@@ -18,11 +18,11 @@ description: A 20s range reel in four chapters (type, data, form, rhythm) tied t
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-ريل 20 ثانية يستعرض أربعة فصول متتابعة (الخط، البيانات، الشكل، الإيقاع) بخيط طباعي واحد يربطها دون قطع.
+ريل فصول مدته 15 ثانية بإطار HUD: حلقة حمراء، كلمة MOTION بخط سفلي يُرسم، شبكة أشكال باوهاوس تتبدل ألوانها، لوح ثلاثي الأبعاد مائل مع كرة كروم وكلمة depth مائلة، كرة كروم كبيرة على حرير داكن يدور حولها مدار أحمر، TYPE. على الأحمر، TIME. بملمس كروم، وختام REEL '26 بخط أحمر منساب.
 
-A 20s range reel in four chapters (type, data, form, rhythm) tied together by one typographic thread and zero hard cuts.
+A 15-second chaptered reel with a HUD frame: a red ring, a MOTION wordmark with an underline drawing on, a Bauhaus shape grid that recolours, a tilted 3D panel with a chrome sphere and italic 'depth', a large chrome sphere on dark silk with an orbiting red ellipse, 'TYPE.' on red, chrome-filled 'TIME.' and a REEL '26 end card with a flowing red line.
 
-Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

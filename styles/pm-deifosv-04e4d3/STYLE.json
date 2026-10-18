@@ -32,29 +32,30 @@
     "playbooks/phone.md",
     "playbooks/music.md"
   ],
-  "summary_ar": "فيديو إطلاق عالي الطاقة للعبة تنس على الويب يعرض إحصاءات حية من الموقع واللعب على الحاسوب والهاتف وتبديل السمات على الإيقاع.",
-  "summary_en": "A high-energy launch film for a web tennis game, pulling live stats from the site and showing desktop and mobile play plus theme switching, all cut to music.",
+  "summary_ar": "فيلم إطلاق مدته 30 ثانية للعبة تنس ثلاثية الأبعاد في المتصفح: لقطات لعب علوية معتمة تحت عناوين مكثفة ضخمة، تبدأ بعدادات إحصاء حية (مباريات لُعبت، ساعات على الملعب) مع شارة LIVE، ثم «بلا تنزيل، بلا تثبيت، بلا تسجيل» على أشرطة تظليل مائلة، هاتف يشغّل اللعبة مع شارات الأجهزة، استعراض الملاعب بأسماء المدن، كرة أرضية سلكية بنقاط لاعبين وأقواس، وبطاقة ختام بالأيقونة والرابط.",
+  "summary_en": "A 30-second launch trailer for a browser 3D tennis game: dimmed top-down gameplay under huge condensed headlines, opening with live stat counters (games played, hours on court) and a LIVE pill, then 'no download, no install, no sign-up' on slanted highlighter bars, a phone mock-up running the game with device chips, a court roll call with city names, a wireframe globe with player dots and arcs, and an end card with app icon and URL pill.",
   "keywords": [
-    "tennis game",
     "game launch",
+    "tennis game",
     "live stats",
-    "responsive play",
-    "theme switch",
-    "beat sync",
-    "suno prompt",
-    "sports motion",
-    "لعبة تنس",
+    "gameplay footage",
+    "highlighter bar",
+    "phone mockup",
+    "court roll call",
+    "wireframe globe",
+    "beat cuts",
     "إطلاق لعبة",
+    "لعبة تنس",
     "إحصاءات حية",
-    "هاتف وحاسوب",
-    "تبديل السمات",
-    "مزامنة إيقاع"
+    "قطع على الإيقاع",
+    "كرة أرضية"
   ],
   "difficulty": 4,
   "duration_s": 30,
   "stack": [
     "Remotion",
     "React",
+    "Three.js",
     "Web Audio"
   ],
   "brief": "styles/pm-deifosv-04e4d3/BRIEF.md"

@@ -1,0 +1,10 @@
+whisperx
+demucs
+easyocr
+diffusers<0.36
+transformers
+accelerate
+camel-tools
+docling
+piper-tts
+bpy

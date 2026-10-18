@@ -1,0 +1,776 @@
+[
+ {
+  "id": "DOC-01",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "مستند Word عربي من اليمين",
+  "name_en": "RTL Arabic DOCX with python-docx",
+  "status": "proven",
+  "what": "أنشئ ملف Word بعناوين وفقرات وجداول عربية من اليمين إلى اليسار، ثم اقرأه مرة أخرى للتحقق. — Create a Word file with right-to-left Arabic headings, paragraphs and tables, then read it back to verify.",
+  "when": "reports, letters, contracts or forms the user wants as .docx",
+  "how": "python-docx has no RTL switch: add OxmlElement('w:bidi') to each paragraph's pPr; on each run add w:rtl, set w:rFonts w:cs='Amiri' (Arabic uses the complex-script font) and w:szCs; add w:bidiVisual to the table's tblPr so column 1 sits on the right. Read back with docx.Document(path) and check the XML for <w:bidi/>.",
+  "params": "font size via both w:sz and w:szCs; heading level 1 = 20 pt in proof",
+  "install": "pip install python-docx",
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "docx",
+   "word",
+   "python-docx",
+   "rtl",
+   "arabic",
+   "وورد",
+   "مستند",
+   "تقرير",
+   "sales report",
+   "تقرير المبيعات",
+   "طلعلي تقرير"
+  ],
+  "section": "إنشاء المستندات — Create documents",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-02",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "جدول Excel عربي بمعادلات ورسم",
+  "name_en": "Arabic XLSX with formulas and a native chart",
+  "status": "proven",
+  "what": "أنشئ مصنف Excel باتجاه ورقة من اليمين ومعادلات وتنسيقات أرقام ورسم بياني أصلي. — Build an Excel workbook with a right-to-left sheet, live formulas, number formats and a native chart.",
+  "when": "the deliverable is a spreadsheet the user will keep editing",
+  "how": "openpyxl: ws.sheet_view.rightToLeft=True; Alignment(horizontal='right', readingOrder=2); formulas as strings ('=SUM(B2:B5)'); number_format '#,##0' / '0.0%'; BarChart + Reference(..., titles_from_data=True); ws.add_chart(ch,'E2'). Proof: 6.9 KB workbook, chart read back.",
+  "params": "",
+  "install": "pip install openpyxl",
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "xlsx",
+   "excel",
+   "openpyxl",
+   "formulas",
+   "chart",
+   "اكسل",
+   "جدول",
+   "معادلات"
+  ],
+  "section": "إنشاء المستندات — Create documents",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-03",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "إعادة حساب معادلات Excel بـ LibreOffice",
+  "name_en": "Recalculate XLSX formulas headless",
+  "status": "proven",
+  "what": "openpyxl يكتب المعادلات ولا يحسبها؛ أعِد الحساب بتحويل LibreOffice ثم اقرأ القيم. — openpyxl writes formulas but never computes them; recalculate with a LibreOffice round trip, then read the values.",
+  "when": "before quoting any number from a workbook you generated; before sending it to someone without Excel",
+  "how": "soffice --headless --norestore --convert-to xlsx --outdir recalc book.xlsx (1.2 s), then openpyxl.load_workbook('recalc/book.xlsx', data_only=True). Before recalculation data_only returns None; after it the proof read 3340 and 0.3593.",
+  "params": "",
+  "install": "apt-get install libreoffice-calc (present in the cloud image 2026-10-16)",
+  "license": "MPL-2.0 (LibreOffice)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "libreoffice",
+   "soffice",
+   "recalculate",
+   "formulas",
+   "openpyxl",
+   "حساب المعادلات"
+  ],
+  "section": "إنشاء المستندات — Create documents",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-04",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "عرض PowerPoint عربي برسم أصلي",
+  "name_en": "RTL Arabic PPTX with a native chart",
+  "status": "proven",
+  "what": "أنشئ عرضًا بمقاس 16:9 بعناوين ونقاط عربية من اليمين ورسم بياني قابل للتعديل. — Build a 16:9 deck with right-to-left Arabic titles and bullets and an editable chart.",
+  "when": "the user asks for a .pptx file (for a deck without a named format, prefer the host's slides type if it exists)",
+  "how": "prs.slide_width, prs.slide_height = Inches(13.333), Inches(7.5); per paragraph pPr.set('rtl','1'), pPr.set('algn','r'); per run rPr.set('lang','ar-SA') and add a:latin + a:cs typeface='Cairo'; chart: CategoryChartData + shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED, ...). Read back the categories from chart.plots[0].categories.",
+  "params": "title 36-40 pt, body 24 pt in proof",
+  "install": "pip install python-pptx",
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "pptx",
+   "powerpoint",
+   "python-pptx",
+   "slides",
+   "rtl",
+   "عرض تقديمي",
+   "شرائح"
+  ],
+  "section": "إنشاء المستندات — Create documents",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-05",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "PDF عربي من HTML وCSS",
+  "name_en": "Arabic PDF from HTML/CSS (weasyprint)",
+  "status": "proven",
+  "what": "صمّم التقرير بـ HTML وCSS مع خطوط عربية مضمّنة، واطبعه PDF بحروف متصلة صحيحة. — Design the report in HTML/CSS with embedded Arabic fonts and print a PDF with correctly joined letters.",
+  "when": "polished PDF reports, invoices or certificates; anything where CSS layout beats word-processor layout",
+  "how": "<html lang=ar dir=rtl>; @font-face { font-family: Amiri; src: url(file:///.../Amiri-Regular.ttf) }; @page { size: A4; margin: 16mm }; isolate English with a direction:ltr class; weasyprint.HTML(string=html, base_url=dir).write_pdf(out). Proof: 0.33 s, 17.9 KB, fonts embedded as subsets.",
+  "params": "",
+  "install": "pip install weasyprint (needs pango; present in the cloud image)",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "weasyprint",
+   "pdf",
+   "html to pdf",
+   "css",
+   "arabic",
+   "تقرير PDF",
+   "طباعة"
+  ],
+  "section": "إنشاء المستندات — Create documents",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-06",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "PDF من المتصفح الخفي",
+  "name_en": "HTML to PDF with headless Chromium",
+  "status": "proven",
+  "what": "اطبع أي صفحة HTML (حتى المعتمدة على JavaScript) إلى PDF عبر Chromium الخفي. — Print any HTML page, including JavaScript-driven ones, to PDF through headless Chromium.",
+  "when": "the page uses JS charts or modern CSS that weasyprint does not support",
+  "how": "Playwright: page.goto(file URL); await document.fonts.ready; page.pdf({path, format:'A4', printBackground:true}). Proof snap.cjs printed the RTL dashboard; pdffonts shows Tajawal-Bold embedded.",
+  "params": "",
+  "install": "npm i playwright && npx playwright install chromium (bundled at /opt/pw-browsers in the cloud image)",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "chromium",
+   "playwright",
+   "pdf",
+   "print",
+   "طباعة"
+  ],
+  "section": "إنشاء المستندات — Create documents",
+  "source": "proofs/general-data/snap.cjs"
+ },
+ {
+  "id": "DOC-07",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "PDF برمجي بـ reportlab",
+  "name_en": "Programmatic PDF with reportlab (shape Arabic yourself)",
+  "status": "proven",
+  "what": "رسم PDF بالإحداثيات؛ reportlab لا يشكّل العربية فيجب تمريرها عبر reshaper وbidi. — Draw PDFs by coordinates; reportlab does not shape Arabic, so pass it through reshaper + bidi.",
+  "when": "pixel-exact forms, labels or certificates; when HTML is overkill",
+  "how": "pdfmetrics.registerFont(TTFont('Amiri', path)); c.setFont('Amiri',22); c.drawRightString(x,y,get_display(arabic_reshaper.reshape(text))). The raw string draws unjoined and reversed (see contact.png, last tile).",
+  "params": "",
+  "install": "pip install reportlab arabic-reshaper python-bidi",
+  "license": "BSD / MIT / LGPL-3.0 (python-bidi)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "reportlab",
+   "pdf",
+   "arabic_reshaper",
+   "bidi",
+   "شهادة",
+   "نموذج"
+  ],
+  "section": "إنشاء المستندات — Create documents",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-08",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "مكتبات JavaScript للمستندات",
+  "name_en": "JS document libraries (docx, pptxgenjs, exceljs, pdf-lib)",
+  "status": "proven",
+  "what": "إنشاء docx وpptx وxlsx وPDF من Node دون Python. — Create docx, pptx, xlsx and PDF from Node without Python.",
+  "when": "a Node/TS project or an in-browser export button",
+  "how": "npm i docx pptxgenjs exceljs pdf-lib; Packer.toBuffer(doc); pptx.writeFile(); workbook.xlsx.writeFile(); PDFDocument.create(). All four produced files in the arsenal snapshot (Latin text only; RTL not tested).",
+  "params": "",
+  "install": "npm i docx pptxgenjs exceljs pdf-lib",
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
+  ],
+  "styles": [],
+  "tags": [
+   "docx",
+   "pptxgenjs",
+   "exceljs",
+   "pdf-lib",
+   "node",
+   "javascript"
+  ],
+  "section": "إنشاء المستندات — Create documents",
+  "source": "session-2026-10-16:general-arsenal.md"
+ },
+ {
+  "id": "DOC-09",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "تحويل Office إلى PDF دفعة واحدة",
+  "name_en": "Batch Office to PDF with LibreOffice",
+  "status": "proven",
+  "what": "حوّل docx وpptx وxlsx إلى PDF في أمر واحد دون واجهة. — Convert docx, pptx and xlsx to PDF in one headless command.",
+  "when": "the user needs a PDF of an office file; visual QA of a generated office file",
+  "how": "soffice --headless --norestore --convert-to pdf --outdir out a.docx b.pptx c.xlsx (1.6 s for three files). For sheets set fitToPage first (DOC-11). Then render the pages to PNG and look at them (DOC-18).",
+  "params": "",
+  "install": "apt-get install libreoffice (present in the cloud image)",
+  "license": "MPL-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "libreoffice",
+   "soffice",
+   "docx to pdf",
+   "convert",
+   "تحويل"
+  ],
+  "section": "التحويل والطباعة — Convert & print",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-10",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "خطوط خاصة لـ LibreOffice دون تثبيت",
+  "name_en": "Private fontconfig for LibreOffice and pango",
+  "status": "proven",
+  "what": "وجّه LibreOffice وweasyprint إلى خطوط المشروع بملف fonts.conf خاص بدل تثبيتها في النظام. — Point LibreOffice and weasyprint at project fonts through a private fonts.conf instead of installing them.",
+  "when": "Arabic falls back to DejaVu/FreeSerif in converted PDFs; you must not modify the system",
+  "how": "Write fonts.conf: <include>/etc/fonts/fonts.conf</include><dir>/path/to/fonts</dir><cachedir>/tmp/fc</cachedir>; run soffice with env FONTCONFIG_FILE=that file (also set os.environ for weasyprint). Proof: pdffonts lists Amiri-Regular/Amiri-Bold in the LibreOffice PDF.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "fontconfig",
+   "fonts",
+   "libreoffice",
+   "arabic font",
+   "خطوط"
+  ],
+  "section": "التحويل والطباعة — Convert & print",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-11",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "ملاءمة الورقة عند تحويل Excel",
+  "name_en": "Fit-to-page before XLSX to PDF",
+  "status": "proven",
+  "what": "بدون ضبط الملاءمة يقسم LibreOffice الرسم على صفحتين في الأوراق من اليمين. — Without fit-to-page, LibreOffice splits the chart of an RTL sheet across two pages.",
+  "when": "any xlsx -> pdf conversion",
+  "how": "ws.page_setup.orientation='landscape'; ws.page_setup.fitToWidth=ws.page_setup.fitToHeight=1; ws.sheet_properties.pageSetUpPr.fitToPage=True. The first run produced 2 pages; after the fix, 1 page.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "xlsx",
+   "pdf",
+   "page setup",
+   "print",
+   "طباعة"
+  ],
+  "section": "التحويل والطباعة — Convert & print",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-12",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "Markdown ↔ Word بـ pandoc",
+  "name_en": "Markdown <-> DOCX with pandoc (RTL)",
+  "status": "proven",
+  "what": "اكتب بـ Markdown وأخرج Word عربيًا، أو حوّل Word إلى Markdown للقراءة. — Write in Markdown and output Arabic Word, or turn Word into Markdown for reading.",
+  "when": "long text drafted in Markdown; reading a .docx into context",
+  "how": "front matter 'dir: rtl' and 'lang: ar'; pandoc note.md -o note.docx; pandoc note.docx -t gfm. Proof: the Arabic table survived md -> docx -> md. Use --reference-doc=style.docx for house styles (not tested).",
+  "params": "",
+  "install": "apt-get install pandoc (3.1.3 present)",
+  "license": "GPL-2.0-or-later (pandoc CLI)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "pandoc",
+   "markdown",
+   "docx",
+   "convert",
+   "تحويل"
+  ],
+  "section": "التحويل والطباعة — Convert & print",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-13",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "دمج وتدوير وتشفير PDF",
+  "name_en": "Merge, rotate and encrypt PDFs (pypdf)",
+  "status": "proven",
+  "what": "ادمج ملفات PDF ودوّر الصفحات واحمها بكلمة مرور AES-256. — Merge PDFs, rotate pages and protect them with an AES-256 password.",
+  "when": "assembling a packet, fixing orientation, sharing a protected file",
+  "how": "w=pypdf.PdfWriter(); w.append(f) per file; w.pages[0].rotate(90); w.encrypt(user_password=pw, algorithm='AES-256'); w.write(out); reopen: r.is_encrypted, r.decrypt(pw). Proof: 3 files -> 4 pages, /Rotate 90, the password works.",
+  "params": "",
+  "install": "pip install pypdf",
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "pypdf",
+   "merge",
+   "encrypt",
+   "rotate",
+   "دمج",
+   "تشفير"
+  ],
+  "section": "التحويل والطباعة — Convert & print",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-14",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "استخراج النص العربي من PDF بالطريقة الصحيحة",
+  "name_en": "Extract Arabic from PDFs correctly",
+  "status": "proven",
+  "what": "pypdf وpdftotext يعيدان العربية بالترتيب المنطقي، أما pdfplumber وpdfminer وmarkitdown فيعكسونها. — pypdf and pdftotext return Arabic in logical order; pdfplumber, pdfminer and markitdown return it reversed.",
+  "when": "reading any Arabic or mixed PDF; building a search index; quoting a PDF",
+  "how": "Use pypdf.PdfReader(p).pages[i].extract_text() or `pdftotext -layout p -`; NFKC-normalise (undoes presentation forms) and strip U+202A..U+202E. Compare with a known phrase. Proof: pypdf and pdftotext gave 'تقرير المبيعات الربعي'; pdfplumber gave 'يعبرلا تاعيبملا ريرقت'.",
+  "params": "",
+  "install": "pip install pypdf; apt-get install poppler-utils",
+  "license": "BSD-3-Clause / GPL (poppler)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "pdf",
+   "extract text",
+   "arabic",
+   "pypdf",
+   "pdftotext",
+   "pdfplumber",
+   "استخراج",
+   "عكس النص"
+  ],
+  "section": "القراءة والاستخراج — Read & extract",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-15",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "انتبه لربطة لا عند الاستخراج",
+  "name_en": "Lam-alef ligature extraction artefact",
+  "status": "proven",
+  "what": "قد يعيد pdftotext ربطة «لا» معكوسة («للاختبار» صارت «لالختبار») في ملفات Chromium. — pdftotext may reorder the lam-alef ligature in Chromium PDFs ('للاختبار' became 'لالختبار').",
+  "when": "checking extracted Arabic against a source; searching inside PDFs",
+  "how": "After extraction, diff against the source text with lam-alef-aware normalisation, or prefer the source HTML/DOCX when you have it. Seen on the dashboard PDF in the data proof.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "lam alef",
+   "ligature",
+   "pdf",
+   "arabic",
+   "ربطة لا"
+  ],
+  "section": "القراءة والاستخراج — Read & extract",
+  "source": "proofs/general-data/README.md"
+ },
+ {
+  "id": "DOC-16",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "تحويل أي مستند إلى Markdown",
+  "name_en": "Any office file to Markdown (markitdown)",
+  "status": "proven",
+  "what": "حوّل docx وxlsx وpptx إلى Markdown لقراءتها في السياق؛ الحزمة تحتاج الإضافات. — Turn docx, xlsx and pptx into Markdown to read them into context; the package needs its extras.",
+  "when": "the user uploads an office file and asks about its contents",
+  "how": "pip install \"markitdown[docx,pdf,xlsx,pptx]\" (a bare install fails on docx with MissingDependencyException); MarkItDown().convert(path).text_content. Arabic is kept for docx/xlsx/pptx; for PDFs it comes out reversed (use DOC-14).",
+  "params": "",
+  "install": "pip install \"markitdown[docx,pdf,xlsx,pptx]\"",
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "session-2026-10-16:general-arsenal.md#full-table"
+  ],
+  "styles": [],
+  "tags": [
+   "markitdown",
+   "markdown",
+   "docx",
+   "xlsx",
+   "pptx",
+   "قراءة الملفات"
+  ],
+  "section": "القراءة والاستخراج — Read & extract",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-17",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "OCR لصفحات PDF الممسوحة",
+  "name_en": "OCR for scanned PDF pages",
+  "status": "proven",
+  "what": "حوّل صفحة PDF بلا طبقة نص إلى صورة 300 نقطة واقرأها بـ tesseract العربي. — Rasterise a PDF page with no text layer at 300 dpi and read it with Arabic tesseract.",
+  "when": "scans, photographed pages, PDFs where text extraction returns nothing",
+  "how": "img=pypdfium2.PdfDocument(p)[i].render(scale=300/72).to_pil().convert('L'); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 4'). Proof: title and English line recovered in 0.78 s. Validate digits (see MEDIA OCR findings).",
+  "params": "",
+  "install": "apt-get install tesseract-ocr tesseract-ocr-ara; pip install pytesseract pypdfium2",
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "ocr",
+   "scanned pdf",
+   "tesseract",
+   "arabic ocr",
+   "مسح ضوئي",
+   "تعرف ضوئي"
+  ],
+  "section": "القراءة والاستخراج — Read & extract",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-18",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "تصيير صفحات PDF للمراجعة البصرية",
+  "name_en": "Render PDF pages to PNG for visual QA",
+  "status": "proven",
+  "what": "حوّل كل صفحة إلى صورة وقصّها حول الحبر واجمعها في ورقة اتصال، ثم انظر إليها قبل التسليم. — Render each page to an image, crop to the ink, tile a contact sheet, and look at it before delivery.",
+  "when": "after generating or converting any document; Arabic shaping, overflow or missing-font checks",
+  "how": "pypdfium2: page.render(scale=2).to_pil(); crop with ImageChops.difference against white .getbbox(); tile with Pillow; quantize(128) to keep it < 300 KB; then open it with the Read tool and look. Proof contact.png: 50 KB, six documents.",
+  "params": "",
+  "install": "pip install pypdfium2 pillow",
+  "license": "Apache-2.0 / BSD-3-Clause (pypdfium2)",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "pdf to png",
+   "contact sheet",
+   "visual qa",
+   "مراجعة بصرية"
+  ],
+  "section": "القراءة والاستخراج — Read & extract",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-19",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "pymupdf للنص والتصيير السريع",
+  "name_en": "pymupdf fast text and render (AGPL)",
+  "status": "proven",
+  "what": "مكتبة سريعة لاستخراج النص وتصيير الصفحات وتعديل PDF؛ رخصتها AGPL. — A fast library for PDF text, page rendering and edits; licensed AGPL.",
+  "when": "large PDFs, or when you need edits/annotations; only as a tool, never vendored into closed code",
+  "how": "import pymupdf (not `import fitz`, which is deprecated); doc[0].get_text(); doc[0].get_pixmap().save('p.png'). Arabic order not tested; check it like DOC-14.",
+  "params": "",
+  "install": "pip install pymupdf",
+  "license": "AGPL-3.0 or commercial",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
+  ],
+  "styles": [],
+  "tags": [
+   "pymupdf",
+   "fitz",
+   "pdf",
+   "agpl"
+  ],
+  "section": "القراءة والاستخراج — Read & extract",
+  "source": "session-2026-10-16:general-arsenal.md"
+ },
+ {
+  "id": "DOC-20",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "جداول PDF بالمواقع (LTR)",
+  "name_en": "PDF tables with positions (pdfplumber)",
+  "status": "install",
+  "what": "pdfplumber يعطي إحداثيات الكلمات والجداول؛ ممتاز للإنجليزية ولكنه يعكس العربية. — pdfplumber gives word and table coordinates; excellent for English, but it reverses Arabic.",
+  "when": "extracting tables from left-to-right PDFs (statements, invoices)",
+  "how": "page.extract_tables(); page.extract_words() for x/y. For Arabic cells reverse the string or re-read the region with pypdf/pdftotext -layout -x -y -W -H. Not run here: only pdfplumber extract_text was exercised (it returned Arabic reversed); extract_tables and extract_words are untested in this skill.",
+  "params": "",
+  "install": "pip install pdfplumber",
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
+  ],
+  "styles": [],
+  "tags": [
+   "pdfplumber",
+   "tables",
+   "pdf",
+   "invoice",
+   "جداول"
+  ],
+  "section": "القراءة والاستخراج — Read & extract",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-21",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "تحليل PDF بالتخطيط (ثقيل)",
+  "name_en": "Layout-aware PDF parsing (docling, camelot, tabula)",
+  "status": "install",
+  "what": "أدوات أثقل لاستخراج التخطيط والجداول المعقدة. — Heavier tools for layout and complex tables.",
+  "when": "multi-column scientific PDFs or messy tables, after the simple tools fail",
+  "how": "docling pulls torch and models; camelot needs ghostscript/opencv; tabula needs Java. None of them was installed or run here.",
+  "params": "",
+  "install": "pip install docling | camelot-py | tabula-py",
+  "license": "MIT",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "docling",
+   "camelot",
+   "tabula",
+   "layout",
+   "tables"
+  ],
+  "section": "القراءة والاستخراج — Read & extract",
+  "source": "session-2026-10-16:general-arsenal.md (metadata only)"
+ },
+ {
+  "id": "DOC-22",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "اتجاه النص المختلط في المستندات",
+  "name_en": "Mixed-direction text hygiene",
+  "status": "proven",
+  "what": "اعزل المقاطع اللاتينية والأرقام داخل النص العربي حتى لا تنقلب علامات الترقيم والأقواس. — Isolate Latin runs and numbers inside Arabic text so punctuation and brackets do not flip.",
+  "when": "Arabic text containing English names, codes, URLs, versions or percentages",
+  "how": "HTML: <span dir=ltr> or <bdi>, or a class with direction:ltr; DOCX: keep LTR runs without w:rtl; PPTX: separate runs. Choose one numeral system per document (Arabic-Indic ٠-٩ or Western 0-9) and keep it. The proof PDF holds an LTR English line inside an RTL page.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "bidi",
+   "rtl",
+   "ltr",
+   "mixed text",
+   "numerals",
+   "اتجاه النص",
+   "أرقام هندية"
+  ],
+  "section": "العربية في المستندات — Arabic in documents",
+  "source": "proofs/general-docs/make_docs.py"
+ },
+ {
+  "id": "DOC-23",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "من يشكّل العربية بنفسه ومن يحتاج تشكيلًا يدويًا",
+  "name_en": "Which engines need manual Arabic shaping",
+  "status": "proven",
+  "what": "weasyprint وLibreOffice وWord وPowerPoint وChromium وPillow 12 وmatplotlib 3.11 تشكّل بنفسها؛ reportlab وحده يحتاج reshaper وbidi. — weasyprint, LibreOffice, Word/PowerPoint XML, Chromium, Pillow 12 and matplotlib 3.11 shape Arabic themselves; only reportlab needs reshaper + bidi.",
+  "when": "choosing a rendering path for Arabic",
+  "how": "Default to raw logical strings. Add arabic_reshaper.reshape + bidi.get_display only for engines without a shaper (reportlab, old PIL/matplotlib without raqm). Doing both reverses the text. All of these were exercised across the docs, data and media proofs.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
+  ],
+  "styles": [],
+  "tags": [
+   "arabic shaping",
+   "raqm",
+   "harfbuzz",
+   "reshaper",
+   "تشكيل الحروف"
+  ],
+  "section": "العربية في المستندات — Arabic in documents",
+  "source": "proofs/general-*/README.md"
+ },
+ {
+  "id": "DOC-24",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "مراجعة المستند قبل التسليم",
+  "name_en": "Document delivery gate",
+  "status": "documented",
+  "what": "لا تسلّم مستندًا قبل قراءته آليًا والنظر إلى صفحاته والتأكد من تطابق أرقامه. — Never deliver a document before reading it back, looking at its pages and reconciling its numbers.",
+  "when": "every generated docx/xlsx/pptx/pdf",
+  "how": "Checklist: 1) read back text with the format's own library; 2) recalc spreadsheets; 3) render pages to PNG and look (Arabic joined, right-aligned, nothing cut); 4) numbers come from the frozen results file (ANLY compute-freeze); 5) file size and page count are sensible; 6) state anything you could not verify (e.g., not opened in MS Office).",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "qa",
+   "delivery",
+   "checklist",
+   "مراجعة",
+   "تسليم"
+  ],
+  "section": "العربية في المستندات — Arabic in documents",
+  "source": "synthesis of proofs/general-docs lessons"
+ },
+ {
+  "id": "DOC-25",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "مهارات المستندات المدمجة في المضيف",
+  "name_en": "Host document skills (docx/xlsx/pptx/pdf)",
+  "status": "key",
+  "what": "في بعض الحسابات تظهر مهارات جاهزة للمستندات؛ حمّلها قبل العمل إن وُجدت. — Some accounts list ready-made document skills; load them before working when they exist.",
+  "when": "the session's skill list shows docx/xlsx/pptx/pdf skills (e.g. anthropic-skills:docx)",
+  "how": "Read the skill listing; invoke the matching skill first. It carries tested recipes, such as tracked changes and templates. They require the account feature; this session listed them (2026-10-16) and they were not invoked here.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "skills",
+   "docx skill",
+   "xlsx skill",
+   "pptx skill",
+   "pdf skill",
+   "مهارات"
+  ],
+  "section": "أدوات المضيف والموصلات — Host skills & connectors",
+  "source": "session-2026-10-16:claude-surfaces.md#4"
+ },
+ {
+  "id": "DOC-26",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "موصل المستندات الحية",
+  "name_en": "Living-docs connector (Claude Docs)",
+  "status": "key",
+  "what": "مستندات مشتركة قابلة للتعليق والتصدير إلى Word وPDF عبر موصل الطرف الأول عند وجوده. — Shared, commentable documents that export to Word/PDF through the first-party connector, when present.",
+  "when": "the user wants a document to share or edit together, and the host exposes the connector",
+  "how": "Follow the connector's own guide (create the skeleton first, then fill the sections). Only a host-designated first-party connector counts. Not exercised in this proof.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "docs connector",
+   "collaboration",
+   "export",
+   "مستند مشترك"
+  ],
+  "section": "أدوات المضيف والموصلات — Host skills & connectors",
+  "source": "session-2026-10-16:claude-surfaces.md#2"
+ },
+ {
+  "id": "DOC-27",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "إنشاء الملفات في claude.ai",
+  "name_en": "claude.ai file creation sandbox",
+  "status": "key",
+  "what": "في تطبيق claude.ai يمكن إنشاء docx وxlsx وpptx وpdf داخل بيئة تنفيذ؛ الشبكة يحددها المسؤول. — In the claude.ai app, docx/xlsx/pptx/pdf can be created in a code-execution sandbox; network access is set by the admin.",
+  "when": "working in the claude.ai chat surface rather than Claude Code",
+  "how": "Assume no apt and maybe no network: use preinstalled libraries and bundled fonts; verify with a quick import before promising. Per the help article (fetched 2026-10-16); not run from here.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "claude.ai",
+   "file creation",
+   "sandbox",
+   "إنشاء ملفات"
+  ],
+  "section": "أدوات المضيف والموصلات — Host skills & connectors",
+  "source": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude"
+ },
+ {
+  "id": "DOC-28",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "ملفات Google عبر الموصل",
+  "name_en": "Google Docs/Sheets/Slides via connector",
+  "status": "key",
+  "what": "تعديل ملفات Google Drive يمر عبر موصل وحساب المستخدم. — Editing Google Drive files goes through a connector and the user's account.",
+  "when": "the user names Google Docs/Sheets/Slides or pastes a docs.google.com link",
+  "how": "Load the host's google-workspace skill if listed, and use the connector's tools. Without a connector, export the file locally (DOC-01..05) and say so.",
+  "params": "",
+  "install": "",
+  "license": "",
+  "proof": [],
+  "styles": [],
+  "tags": [
+   "google docs",
+   "google sheets",
+   "drive",
+   "connector"
+  ],
+  "section": "أدوات المضيف والموصلات — Host skills & connectors",
+  "source": "host skill listing 2026-10-16"
+ }
+]

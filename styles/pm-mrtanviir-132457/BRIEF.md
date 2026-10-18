@@ -1,56 +1,60 @@
 # ريل مهارات موشن: أربعة فصول على إيقاع واحد — Claude motion designer showreel
 
-> ريل ترويج ذاتي في 15 ثانية يثبت أربع مهارات متتابعة: حروف حركية، مخططات تُبنى من الصفر، أشكال تتحول، وبطاقة توقيع ختامية.
+> ريل مهارات موشن سريع مدته 15 ثانية مقطوع على شبكة 120 نبضة في الدقيقة: نقاط، حرف داخل دائرة، كلمات ضخمة على الأحمر، مربع أزرق مستدير بمقابض تحويل، زهرة نقاط فيلوتاكسية، شبكة نقاط بموجة، سحابة جسيمات ثلاثية الأبعاد، شريط مخطط يرسم منحنى على الأصفر، نص على مسارات دائرية، وختام Claude.
 >
-> A 15-second self-promo reel proving four motion skills in sequence: kinetic type, charts built from zero, morphing shapes, and a signature end card.
+> A fast 15-second motion-skills reel cut on a 120 BPM grid: dots, a letter in a circle, giant uppercase words on red, a blue rounded square with transform handles, a phyllotaxis dot flower, a waving dot grid, a 3D particle cloud, a striped ribbon drawing a curve on yellow, text on circular paths and a closing serif signature.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/mrtanviir-132457
 - التصنيفات / Categories: charts, kinetic-type
 - النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 15 s · الصعوبة / Difficulty: 3/5
-- التقنية المقترحة / Stack: Remotion, React, SVG
+- التقنية المقترحة / Stack: Remotion, React, SVG, Three.js
 
 ## الفكرة
-الموضوع ريل تعريفي قصير يقدّم المصمم كما تقدّم السيرة الذاتية صاحبها، لكن بالحركة بدل الكلمات. الهدف إقناع المشاهد خلال 15 ثانية بأن من صنعه يتقن الحروف والبيانات والإيقاع معاً. تتميز لغة الحركة بتقسيم الزمن إلى فصول قصيرة، لكل فصل مهارة واحدة، مع قطع حاد على شبكة إيقاعية ثابتة بحيث يدخل كل عنصر بتجاوز طفيف ويخرج بقفزة سريعة.
+الموضوع ريل يقوم مقام السيرة الذاتية لمصمم موشن. كل لقطة مهارة واحدة على حقل لوني مسطح خاص (أسود، أحمر، أبيض دافئ، أزرق كهربائي، أصفر): خط ضخم، تحويل شكل بمقابض محرر، أنماط توليدية، جسيمات ثلاثية الأبعاد، رسم مسار، ونص دائري. يربطها إطار HUD ثابت يعرض الإيقاع والعدّاد الزمني، والقطع يقع على الإيقاع.
 
 ## Concept
-The subject is a short self-introduction reel that presents the designer the way a CV would, but through movement instead of bullet points. The goal is to convince a viewer within 15 seconds that the author handles type, data and rhythm together. The motion language splits time into short chapters, one skill per chapter, with hard cuts on a fixed beat grid so every element enters with a slight overshoot and leaves with a fast snap.
+The subject is a reel that stands in for a motion designer's CV. Each shot shows one skill on its own flat colour field (black, red, warm white, electric blue, yellow): giant type, a shape transform with editor handles, generative patterns, 3D particles, a path draw and circular text. A constant HUD frame shows BPM and timecode, and cuts land on the beat.
 
 ## المشاهد المقترحة
-- 0-1.5 ث: إطار أسود؛ كلمة عنوان واحدة تندفع حرفاً حرفاً بتأخير 60ms بين الحروف مع وميض أبيض لإطار واحد عند آخر حرف.
-- 1.5-5 ث: فصل الحروف الحركية: ثلاث عبارات قصيرة (مقترح: Type / Data / Rhythm) تدور حول محور عمودي، وكل كلمة تتقلص من 140% إلى 100% بينما يرتفع خط قاعدتها 12px.
-- 5-9 ث: فصل المخططات: ستة أعمدة تنمو من الصفر (400ms لكل عمود مع تأخير 80ms)، وخط بياني يُرسم عبر stroke-dashoffset خلال 1.2 ثانية، وعدّاد يتصاعد من 0 إلى 98%.
-- 9-12.5 ث: فصل الأشكال: دائرة تتحول إلى مربع مستدير ثم مثلث عبر استيفاء مسارات SVG؛ تنقلب ألوان الخلفية مع كل تحول.
-- 12.5-15 ث: بطاقة الختام: الاسم والدور وسطر التواصل تستقر بمنحنى ease-out خلال 600ms؛ ثبات تام لثانية واحدة.
+- 0-1.3 ث: حقل شبه أسود داخل إطار HUD؛ نقطتان حمراوان تظهران وتنجرفان نحو بعضهما.
+- 1.3-2.5 ث: قرص أحمر بحلقة بيضاء يحتضن حرف E كبيراً ينزلق ويملؤه.
+- 2.5-3.8 ث: قطع إلى الأحمر: كلمات سوداء ضخمة بأحرف كبيرة يقصّها الإطار تصطدم على سطرين وقوس مؤشر يؤطر الكلمة التالية.
+- 3.8-5 ث: أسود: مربع أزرق مستدير داخل مقابض تحويل مع قراءة للدوران يتكبر ويدور كعرض محرر.
+- 5-7.5 ث: أبيض دافئ: زهرة نقاط فيلوتاكسية سوداء تدور وتتفتح، ثم شبكة نقاط كاملة تمر بها موجة جيبية تلوّن النقاط بالأحمر.
+- 7.5-8.8 ث: أزرق كهربائي: سحابة ثلاثية الأبعاد من جسيمات بيضاء تدور بشكل قطرة.
+- 8.8-11.3 ث: أصفر: شريط مخطط بالأحمر والأبيض والأزرق يدخل من اليسار ويرسم منحنى عريضاً عبر الإطار.
+- 11.3-15 ث: أسود: حلقات متحدة المركز من كلمات المهارات تدور بعكس بعضها على مسارات دائرية؛ ثم نقطة حمراء على الأبيض الدافئ تكبر إلى توقيع ختامي بخط سيريف ونقطة حمراء وسطر الدور بأحرف كبيرة متباعدة.
 
 ## Proposed scenes
-- 0-1.5s: Black frame; one headline word slams in letter by letter with a 60ms stagger and a one-frame white flash on the last letter.
-- 1.5-5s: Kinetic-type chapter: three short claims (proposed: Type / Data / Rhythm) rotate on a vertical axis, each word scaling from 140% to 100% while its baseline shifts up 12px.
-- 5-9s: Chart chapter: six bars grow from zero (400ms each, 80ms stagger), a line draws via stroke-dashoffset over 1.2s, and a counter eases from 0 to 98%.
-- 9-12.5s: Shape chapter: a circle morphs into a rounded square then a triangle through SVG path interpolation; the background inverts on each morph.
-- 12.5-15s: End card: name, role and a contact line settle with a 600ms ease-out; 1s static hold.
+- 0-1.3s: Near-black field inside a HUD frame; two red dots appear and drift toward each other.
+- 1.3-2.5s: A red disc with a white ring holds a large E that slides in and fills it.
+- 2.5-3.8s: Cut to red: giant black uppercase words cropped by the frame slam in on two lines, a bracket cursor framing the next word.
+- 3.8-5s: Black: a blue rounded square inside transform handles with a rotation readout scales and rotates like an editor demo.
+- 5-7.5s: Warm white: a black phyllotaxis dot flower spins and blooms, then a full dot grid where a sine wave sweeps red through the dots.
+- 7.5-8.8s: Electric blue: a 3D cloud of white particles rotates as a teardrop form.
+- 8.8-11.3s: Yellow: a red, white and blue striped ribbon enters from the left and draws a sweeping curve across the frame.
+- 11.3-15s: Black: concentric rings of skill words counter-rotate on circular paths; then a red dot on warm white grows into the closing serif wordmark with a red full stop and a spaced caps role line.
 
 ## قواعد الحركة
-- شبكة إيقاعية بسرعة 120 BPM: كل قطع أو دخول يقع على مضاعفات 250ms أو 500ms.
-- الدخول بمنحنى cubic-bezier(0.22, 1, 0.36, 1) خلال 450ms؛ الخروج بمنحنى cubic-bezier(0.64, 0, 0.78, 0) خلال 220ms، فالخروج أسرع من الدخول دائماً.
-- تأخير الحروف 60ms ولا يتحرك أكثر من 12 حرفاً في اللحظة نفسها.
-- أعمدة المخطط تتمدد على محور Y من نقطة ارتكاز سفلية؛ العدّادات تتسارع بمنحنى ease-out ولا تكون خطية أبداً.
-- الكاميرا ثابتة باستثناء دفعتين للأمام بنسبة 4% تستغرق كل منهما ثانيتين؛ لا اهتزاز يدوي.
-- اللوحة ثنائية اللون (أرضية داكنة ولون تمييز واحد)؛ يُسمح بالانقلاب الكامل فقط أثناء تحول الأشكال.
-- عائلة خط grotesque واحدة بوزنين؛ تباعد الحروف يضيق من +8 إلى 0 عند استقرار كل كلمة.
-- ممنوع: التلاشي المتقاطع، الظلال الساقطة، انفجارات الجسيمات الجاهزة، وأكثر من ثلاثة عناصر متحركة معاً.
+- القطع على شبكة 120 نبضة في الدقيقة: تغيير لقطة كل مازورة أو نصف مازورة (نحو 1.25-1.9 ثانية) مع تبديل لون الخلفية في كل قطعة.
+- HUD ثابت: أقواس زوايا، عدّاد مازورات، وسم BPM وعدّاد زمني بخط أحادي صغير على حواف الإطار.
+- كل لقطة تعرض تقنية واحدة: اصطدام الخط، مقابض التحويل، دوران فيلوتاكسي، موجة جيبية على شبكة النقاط، سحابة نقاط ثلاثية الأبعاد، رسم مسار الشريط، ونص على دائرة.
+- الأنماط التوليدية محسوبة لا مرسومة: تباعد بالزاوية الذهبية للزهرة، وموجة جيبية بإزاحة طور عبر الشبكة.
+- الكلمات الضخمة يقصها الإطار وتصطدم خلال 150-250 مللي ثانية؛ التوقيع السيريف يستقر بهدوء في النهاية.
+- اللوحة: شبه أسود #111113، أزرق كهربائي #343df3، أحمر #ef4136، أصفر #f2c744 وأبيض دافئ #f1ede8.
+- الخط: هندسي 900 بأحرف كبيرة للاصطدامات، سيريف عرض للتوقيع، وأحادي صغير للـ HUD.
 
 ## Motion rules
-- Beat grid at 120 BPM: every cut and entry lands on a multiple of 250ms or 500ms.
-- Entries use cubic-bezier(0.22, 1, 0.36, 1) over 450ms; exits use cubic-bezier(0.64, 0, 0.78, 0) over 220ms, so exits are always faster than entries.
-- Letter stagger is 60ms and no more than 12 glyphs animate at the same time.
-- Chart bars scale on Y from a bottom transform-origin; counters tween with ease-out, never linear.
-- Camera stays static except two 4% push-ins lasting 2s each; no handheld shake.
-- Palette is two-tone (dark ground plus one accent); a full inversion is allowed only during shape morphs.
-- One grotesque family in two weights; tracking tightens from +8 to 0 as each word settles.
-- Banned: crossfades, drop shadows, stock particle bursts, and more than three elements moving at once.
+- Cut on a 120 BPM grid: a shot change every bar or half bar (about 1.25-1.9 s), each cut swapping the background colour.
+- Constant HUD: corner brackets, bar counter, BPM label and timecode in tiny mono at the frame edges.
+- Each shot demonstrates one technique only: type slam, transform handles, phyllotaxis rotation, dot-grid sine sweep, 3D point cloud, ribbon path draw, text on a circle.
+- Generative patterns are computed, not drawn: golden-angle spacing for the flower, a phase-shifted sine across the grid.
+- Giant words are cropped by the frame and slam in within 150-250 ms; the serif signature resolves calmly at the end.
+- Palette: near-black #111113, electric blue #343df3, red #ef4136, yellow #f2c744 and warm white #f1ede8.
+- Type: geometric sans 900 uppercase for slams, a serif display for the signature, tiny mono for HUD.
 
 ## Facts stated by the source (rewritten in our words)
 - Length is fixed at 15 seconds.
@@ -58,7 +62,7 @@ The subject is a short self-introduction reel that presents the designer the way
 - Tagged on the site as charts and kinetic type; no stack, colours or scene order are given.
 
 ## Assumptions
-The source only fixes the length and the résumé-reel purpose; the chapter structure, 120 BPM grid, two-tone palette and all timings are proposed. The 1280x720 frame is read as 16:9.
+Observed from frames sampled every ~1.26 s: the shot list, colour fields, HUD with a 120 BPM label and the closing signature. Assumed: exact cut positions between samples and the music; the 1280x720 reference is read as 16:9.
 
 ## Keywords
-showreel, ريل مصمم, سيرة ذاتية متحركة, kinetic typography, bar chart animation, shape morph, beat grid, حروف حركية, مخطط متحرك, تحول الأشكال, self promo, remotion reel, قطع حاد
+showreel, self promo, beat cuts, 120 bpm, phyllotaxis, dot grid wave, particle cloud, ribbon draw, circular text, hud overlay, ريل مصمم, قطع على الإيقاع, أنماط توليدية, نص دائري

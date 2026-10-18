@@ -1,0 +1,13 @@
+anthropic
+mcp
+graphifyy[mcp,video]==0.9.91
+fastapi
+streamlit
+together
+fal-client
+google-genai
+higgsfield-client
+python-dotenv
+langgraph
+dspy
+pydantic-ai-slim

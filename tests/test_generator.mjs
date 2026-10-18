@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { buildRequest, cliCommand, defaultsFor, RESOLUTIONS } from '../web/generator.js';
+import { buildRequest, cliCommand, defaultsFor, RESOLUTIONS, resolveAspect } from '../web/generator.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = JSON.parse(readFileSync(join(ROOT, 'catalog/styles.json'), 'utf8'));
@@ -22,7 +22,7 @@ test('every record builds a request with no unfilled placeholders in both langua
       assert.ok(text.includes(r.id), `${r.id} missing in ${lang}`);
       assert.ok(text.includes(r.page), `${r.id} page missing`);
       assert.equal(text.match(/\{\w+\}/), null, `${r.id} has placeholder in ${lang}`);
-      assert.ok(text.includes(RESOLUTIONS[defaultsFor(r, null).aspect]), `${r.id} resolution missing`);
+      assert.ok((() => { const a = resolveAspect(defaultsFor(r, null).aspect); return text.includes(`${a.w}x${a.h}`); })(), `${r.id} resolution missing`);
     }
   }
 });

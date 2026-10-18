@@ -1,6 +1,6 @@
 ---
 name: pm-sarut0bisasuke-cefa43
-description: A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.
+description: A silent 30-second recipe explainer on a split screen: a cream paper panel on the left with a wobbly hand-drawn rocks glass and an oz ruler, and a beige sidebar on the right with a handwritten title and an ingredient checklist. Ice drops, two bottles and a cream jug tilt in and pour while the liquid rises, a fraction counter ticks and a 5-step progress bar fills; cream diffuses as clouds into the dark layer, a stirrer swirls, and it ends on a handwritten sign-off with ink splatter.
 ---
 
 # KOSIF TOOL — White Russian recipe animation / وصفة الوايت روشن من الكأس الفارغة إلى الكوكتيل
@@ -19,9 +19,9 @@ description: A 30-second single-shot explainer that builds a White Russian layer
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
 ## Creative brief (الملف الإبداعي)
-فيلم شرح من لقطة واحدة متصلة يبني كوكتيل الوايت روشن مكوّنًا بعد مكوّن مع إظهار الكمية ومستوى الامتلاء في الكأس خلال 30 ثانية.
+شرح وصفة مدته 30 ثانية بلا صوت على شاشة منقسمة: لوح ورقي كريمي يساراً بكأس مرسوم بخط مرتعش ومسطرة أونصات، وشريط جانبي بيج يميناً بعنوان مكتوب باليد وقائمة مكونات. تسقط مكعبات الثلج، ثم تميل زجاجتان وإبريق قشدة وتسكب بينما يرتفع السائل ويعدّ عدّاد كسور وشريط من خمس خطوات يمتلئ؛ تنتشر القشدة كغيوم في الطبقة الداكنة، ويدور المحرّك، وينتهي بعبارة مكتوبة باليد مع رذاذ حبر.
 
-A 30-second single-shot explainer that builds a White Russian layer by layer, showing each pour, its measurement and the rising fill level in the glass.
+A silent 30-second recipe explainer on a split screen: a cream paper panel on the left with a wobbly hand-drawn rocks glass and an oz ruler, and a beige sidebar on the right with a handwritten title and an ingredient checklist. Ice drops, two bottles and a cream jug tilt in and pour while the liquid rises, a fraction counter ticks and a 5-step progress bar fills; cream diffuses as clouds into the dark layer, a stirrer swirls, and it ends on a handwritten sign-off with ink splatter.
 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, SVG, CSS), suggested duration (30 s), aspect 16:9, difficulty 3/5.
 

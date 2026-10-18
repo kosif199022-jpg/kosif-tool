@@ -1,58 +1,58 @@
 # فيلم صامت قصير عن حارس المنارة — Lighthouse keeper silent short
 
-> خمس وأربعون ثانية بلا حوار: حارس منارة يعيد إشعال المصباح في عاصفة، والصوت وحده يروي نصف القصة.
+> فيلم قصير بلا حوار مدته نحو 46 ثانية بإطار 2.35:1: عنوان سيريف متباعد الحروف، ثم منارة على صخرة في المطر والضباب ينطفئ مصباحها؛ في الداخل يغفو الحارس على كرسي هزاز بجانب موقد وساعة بندول وفانوس، تظلم الغرفة فيصعد درجاً حلزونياً بالفانوس إلى غرفة المصباح، يعيد إشعال العدسة، تمسح الأشعة البحر من جديد وهو يمشي على الشرفة، وينتهي بمنارة بعيدة في الظلام.
 >
-> Forty-five dialogue-free seconds: a lighthouse keeper relights a dead lamp in a storm, and the sound design carries half of the story.
+> A dialogue-free short of about 46 seconds in a 2.35:1 frame: a wide-tracked serif title, then a lighthouse on a rock in rain and fog whose lamp goes out; inside, the keeper dozes in a rocking chair beside a stove, pendulum clock and lantern, the room darkens, he climbs a spiral stair with the lantern to the lamp room, relights the lens, the beams sweep the sea again while he walks the gallery, and it fades to a distant lighthouse in darkness.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/kamstudiolabs-0b0824
 - التصنيفات / Categories: characters, music
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 45 s · الصعوبة / Difficulty: 4/5
+- النسبة المقترحة / Aspect: 2.35:1 · المدة / Duration: 46 s · الصعوبة / Difficulty: 4/5
 - التقنية المقترحة / Stack: Remotion, SVG, Web Audio
 
 ## الفكرة
-الموضوع فيلم قصير صامت مدته 45 ثانية، لا حوار فيه، ويُطلب فيه ابتكار القصة. القصة المقترحة: حارس منارة عجوز يصعد البرج كل ليلة؛ في ليلة عاصفة ينطفئ المصباح الكبير، فيصعد بفانوسه اليدوي ويرفعه نحو البحر، فيجيبه بوق سفينة من الضباب. الهدف أن يفهم المشاهد كل شيء من الصورة والصوت فقط. ما يميز اللغة الحركية أن كل حدث بصري له حدث صوتي مقابل، وأن الصمت نفسه يُستخدم كذروة درامية.
+الموضوع حارس منارة يعيد الضوء بعد أن ينطفئ في ليلة عاصفة، والقصة كلها بلا كلمات بعد بطاقة العنوان. الإضاءة هي التي تروي: نافذة الكوخ وحدها مضيئة بعد انطفاء المصباح، دفء الموقد في الداخل، بركة ضوء الفانوس على الدرج، ثم انفجار ضوء العدسة. لغة سينمائية بطيئة: لقطات عريضة بمساحات ظلام واسعة، شخصيات ظلية، تلاشٍ إلى الأسود ومنه، وصمت محسوب على اللحظات المظلمة يترك للصوت نصف الحكاية.
 
 ## Concept
-The subject is a 45-second silent short with no dialogue, where the story is to be invented. Proposed story: an old keeper climbs the tower every night; in a storm the great lamp dies, so he climbs with a hand lantern and raises it toward the sea, and a ship's horn answers from the fog. The goal is total legibility from picture and sound alone. The distinctive move is that every visual event has an audio counterpart, and silence itself is used as the dramatic peak.
+The subject is a lighthouse keeper restoring the light after it dies on a stormy night, told without words after the title card. Light does the storytelling: only the cottage window stays lit after the lamp fails, the warm stove inside, the lantern's pool on the stair, then the burst of the lens. The language is slow and cinematic: wide shots with large areas of darkness, silhouette characters, fades to and from black, and deliberate near-silence on the dark beats so sound carries half the story.
 
 ## المشاهد المقترحة
-- 0-6 ث: لقطة تأسيسية عريضة بنسبة 2.35:1: منارة على جرف عند الغسق، وثلاث طبقات أمواج بتوازي حركي؛ ريح وموج مع دفع كاميرا بطيء مدته 6 ث.
-- 6-14 ث: الداخل. يد ظلية تدير آلية الساعة؛ يبدأ الشعاع بالدوران على تكة منتظمة؛ ويظهر ضوء ثانٍ بعيدًا في البحر.
-- 14-24 ث: تشتد العاصفة. خطوط المطر تميل مع الريح، يمسح الشعاع الأفق، رعد على قطع حاد، وضوء السفينة البعيد يترنح.
-- 24-32 ث: يرتجف المصباح ثلاث مرات ثم ينطفئ. صمت شبه تام لا يكسره إلا نبض قلب بطيء؛ يصعد الحارس الدرج الحلزوني بفانوس، وكل درجة تصرّ.
-- 32-40 ث: يرفع الفانوس عند سور الشرفة؛ توهج كهرماني ضعيف؛ يجيبه البوق من الضباب؛ ويعود المصباح الكبير للاشتعال برجفة.
-- 40-45 ث: الفجر. تدفأ الألوان خلال 4 ث، تمر السفينة بسلام، ويجلس الحارس؛ بطاقة عنوان واحدة تختم الفيلم.
+- 0-3.5 ث: أسود: العنوان بخط سيريف كلاسيكي خفيف بأحرف كبيرة متباعدة جداً يظهر بتلاشٍ مع خط قصير رفيع تحته ثم يختفي.
+- 3.5-12 ث: لقطة خارجية عريضة: منارة على صخرة في الثلث الأيمن تحت سماء ليلية رمادية زرقاء بأشرطة ضباب ومطر مائل؛ عند نحو 9.5 ث يخفت توهج غرفة المصباح في نحو ثانية ولا يبقى مضيئاً إلا نافذة الكوخ.
+- 12-20 ث: داخل خشبي دافئ: الحارس يغفو على كرسي هزاز يتمايل بجانب موقد وساعة بندول تتأرجح وفانوس؛ الغرفة تظلم ببطء نحو السواد.
+- 20-28 ث: درج حجري مظلم: ظل الحارس يصعد درجاً حلزونياً والفانوس يهتز مع كل خطوة ويضيء الجدران؛ ثم يخفت الفانوس إلى جمرة واحدة في ظلام شبه تام ويثبت ثانيتين إلى ثلاث.
+- 28-33 ث: غرفة المصباح بزجاج معيني: يمد يده نحو عدسة فريسنل فتشتعل بومضة وتوهج متحد المركز.
+- 33-42 ث: لقطة خارجية عريضة مجدداً: أشعة على شكل أسافين تدور حول غرفة المصباح عبر المطر والبحر بينما يمشي الحارس على حاجز الشرفة.
+- 42-45.7 ث: تلاشٍ ختامي إلى الأسود على صورة ظلية باهتة لمنارة بعيدة.
 
 ## Proposed scenes
-- 0-6s: Establishing wide in a 2.35:1 letterbox: a lighthouse on a cliff at dusk, three parallax wave layers; wind and surf under a slow 6 s dolly-in.
-- 6-14s: Interior. A silhouette hand winds the clockwork; the beam begins turning on a metronomic tick; a second light appears far out at sea.
-- 14-24s: The storm builds. Rain streaks angle with the wind, the beam sweeps, thunder on a hard cut, the distant ship light wavers.
-- 24-32s: The lamp sputters three times and dies. Near-total silence, only a slow heartbeat; the keeper climbs the spiral stairs with a lantern, each step creaking.
-- 32-40s: He raises the lantern at the gallery rail; a weak amber glow; the horn answers from the fog; the great lamp flickers back on.
-- 40-45s: Dawn. The palette warms over 4 s, the ship passes safely, the keeper sits; a single title card closes the film.
+- 0-3.5s: Black: the title in light classical serif uppercase with very wide tracking fades in with a thin short rule beneath, then fades out.
+- 3.5-12s: Wide exterior: a lighthouse on a rock in the right third under a blue-grey night sky with fog bands and angled rain; at about 9.5 s the lamp-room glow fades out over about 1 s, leaving only the cottage window lit.
+- 12-20s: Warm wooden interior: the keeper dozes in a rocking chair that sways beside a stove, a pendulum clock swinging and a lantern; the room slowly dims toward black.
+- 20-28s: Dark stone stairwell: the keeper's silhouette climbs a spiral stair, the lantern bobbing with each step and lighting the walls; the lantern dims to a single ember in near-total dark and holds for 2-3 s.
+- 28-33s: The diamond-paned lamp room: he reaches toward the Fresnel lens and it ignites with a flash and concentric flare.
+- 33-42s: Wide exterior again: beam wedges rotate around the lamp room across the rain and sea while the keeper walks the gallery rail.
+- 42-45.7s: Closing fade to black on a distant, dim lighthouse silhouette.
 
 ## قواعد الحركة
-- الكادر: شريط 2.35:1 داخل 16:9؛ حركات الكاميرا دفع فقط وبحد أقصى 2 بالمئة تكبير في الثانية بمنحنى ease-in-out sine؛ لا كاميرا محمولة.
-- الشعاع: دورة كاملة كل 6 ث بسرعة ثابتة، يُرسم كمخروط شعاعي بمزج جمعي؛ العطل عبارة عن رجفة 400 ms من ثلاث نبضات ثم قطع في إطار واحد إلى الظلام.
-- الشخصيات ظلال مسطحة بمفصلين أو ثلاثة؛ دورة المشي 12 إطارًا لكل خطوة بإيقاع 24 fps حتى لو كان التصدير 30.
-- الطقس: 300-500 جسيم مطر بسقوط 1.2 ث بميل 15 درجة بفعل الريح؛ الأمواج ثلاثة مسارات جيبية متراكبة بنسب توازي 1 : 0.6 : 0.3.
-- الانتقالات: القطع يقع على أحداث صوتية (رعد، بوق، تكة)؛ لا مسح؛ تلاشٍ واحد للأسود مدته 1 ث قبل مشهد الفجر.
-- اللون: ليل كحلي باهت، وضوء المصباح كهرماني دافئ فقط؛ تحول الفجر يعيد تدريج اللوحة كلها خلال 4 ث.
-- قاعدة الصوت أولًا: لكل ضربة بصرية ضربة صوتية مقابلة؛ يجب الاحتفاظ بالصمت لمدة 2 ث على الأقل مرة واحدة؛ الصوت البشري والحوار والتعليق ممنوعة.
-- ممنوع: لقطات مخزنة، مزامنة شفاه، قطع أقصر من 1 ث، نص على الشاشة قبل بطاقة العنوان الأخيرة.
+- لوحة أصلية بنسبة 2.35:1 (1920×816 في المرجع): ركّب اللقطات لها مباشرة؛ ولا تضع أشرطة سوداء داخل 16:9 إلا إذا تطلبت المنصة ملفاً بتلك النسبة.
+- لا نص بعد بطاقة العنوان الافتتاحية؛ القصة تحملها تغيرات الضوء والصوت.
+- إيقاع سينمائي بطيء: نحو ثماني أو تسع لقطات تتصل غالباً بتلاشٍ من الأسود وإليه لمدة 1-3 ثوانٍ مع قطعات حادة قليلة بين الأماكن؛ اترك الصمت على اللحظات المظلمة.
+- حركة ثانوية متكررة: جسيمات مطر مائلة في كل لقطة خارجية، كرسي هزاز وبندول بدورة نحو ثانية، واهتزاز الفانوس متزامن مع دورة الصعود.
+- الضوء هو الحركة الأساسية: خفوت المصباح في نحو ثانية، إظلام الغرفة، بركة الفانوس تكشف الدرج، ومضة اشتعال العدسة وأسافين الأشعة الدوارة.
+- اللوحة: أسود #060505، ليل #111516، رمادي الضباب #384042 و#636864، بنيات الخشب #2a170e و#180e08، كهرماني #f2b25a، أبيض دافئ #fff1cf وكريمي العنوان #e9e4da.
+- الكاميرا ثابتة أو تنزلق ببطء شديد في كل لقطة؛ تكوين جانبي ثنائي الأبعاد بطبقات ضباب للعمق؛ والتصميم الصوتي (مطر، ريح، صرير، ساعة، اشتعال) يُخطط مع كل لقطة.
 
 ## Motion rules
-- Frame: 2.35:1 letterbox inside 16:9; camera moves are dollies only, at most 2 percent scale per second, ease-in-out sine; no handheld.
-- Beam: one revolution every 6 s at constant speed, drawn as an additive radial cone; the failure is a 400 ms flicker of three pulses then a one-frame cut to dark.
-- Characters are flat silhouettes with two or three joints; walk cycle of 12 frames per step at a 24 fps cadence even if rendered at 30.
-- Weather: 300-500 rain particles with a 1.2 s fall, angled 15 degrees by wind; waves as three layered sine paths at parallax ratios 1 : 0.6 : 0.3.
-- Transitions: cuts land on sound events (thunder, horn, click); no wipes; one 1 s fade to black before the dawn scene.
-- Colour: desaturated navy night, warm amber lamp light only; the dawn shift re-grades the whole palette over 4 s.
-- Sound-first rule: every visual beat has a matching audio beat; silence must be held for at least 2 s once; voice, dialogue and narration are banned.
-- Banned: stock footage, lip sync, cuts shorter than 1 s, on-screen text before the final title card.
+- Native 2.35:1 canvas (1920x816 in the reference): compose for it directly; only letterbox inside 16:9 when a platform demands a 16:9 file.
+- No text after the opening title card; story is carried by light changes and sound.
+- Slow cinematic pacing: about eight or nine shots, joined mostly by 1-3 s fades to and from black plus a few hard cuts between locations; hold silences on dark beats.
+- Looping secondary motion: angled rain particles everywhere outside, rocking chair and pendulum on about a 1 s period, lantern bob synced to the climb cycle.
+- Light is the key animation: lamp fade-out over about 1 s, room dimming, lantern pool revealing the stair, lens ignition flash, rotating beam wedges.
+- Palette: black #060505, night #111516, fog grey #384042 and #636864, wood browns #2a170e and #180e08, amber #f2b25a, warm white #fff1cf and title cream #e9e4da.
+- Camera static or very slow dolly per shot; side-on 2D staging with fog layers for depth; sound design (rain, wind, creaks, clock, ignition) is planned with each shot.
 
 ## Facts stated by the source (rewritten in our words)
 - Runtime is fixed at 45 seconds.
@@ -61,7 +61,7 @@ The subject is a 45-second silent short with no dialogue, where the story is to 
 - No stack or resolution is stated; the listed video is 1920x816, a wide cinematic ratio.
 
 ## Assumptions
-The plot, the sound events and the scene timings are proposals; only the 45 s length, the no-dialogue rule and the lighthouse theme are given. The 16:9 delivery with a 2.35:1 letterbox is inferred from the 1920x816 video size.
+Observed from the watched video: the title card, the lamp dying, the interior with chair, stove and clock, the stair climb, the lens relighting, the rotating beams and the closing fade, in a native 1920x816 frame of about 45.7 s. The brief keeps aspect 16:9 only because the catalogue tooling accepts 16:9, 9:16, 1:1 and 4:5; build the frame at 2.35:1 as the motion rules say. Assumed: the sound events, which were not heard.
 
 ## Keywords
-silent film, sound design, lighthouse, storm, silhouette characters, short film, فيلم صامت, تصميم صوت, منارة, عاصفة, شخصيات ظلية, letterbox, cinematic
+silent film, short film, lighthouse, storm, silhouette characters, sound design, light storytelling, 2.35:1, fade to black, فيلم صامت, منارة, عاصفة, شخصيات ظلية, تصميم صوت

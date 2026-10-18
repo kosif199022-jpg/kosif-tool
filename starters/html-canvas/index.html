@@ -8,10 +8,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap">
 <style>
   :root { --bg: #0b1020; --ink: #f3f7ff; --muted: #9fb0cc; --accent: #7ee8d2; --accent-2: #ffb86b; --font: "Cairo", "Noto Naskh Arabic", "DejaVu Sans", system-ui, sans-serif; }
-  html, body { margin: 0; background: #000; height: 100%; overflow: hidden; font-family: var(--font); }
-  /* The stage is always 1080×1920 CSS px; #fit scales it to the window for live preview. When the renderer opens the page at exactly 1080×1920 the scale is 1. */
+  html, body { margin: 0; background: radial-gradient(ellipse at 50% 20%, #182446 0, var(--bg) 55%); height: 100%; overflow: hidden; font-family: var(--font); }
+  /* The design stage is 1080×1920 CSS px. #fit scales it to ANY window/viewport and centres it, so the
+     same film renders at any aspect (render_html.cjs --aspect 16:9 | 1:1 | 2.35:1 | 1920x816 …): the
+     composition stays whole and the background fills the rest of the frame. For a true re-layout per
+     aspect, change W/H below and re-place the elements. At exactly 1080×1920 the scale is 1. */
   #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
-  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: radial-gradient(ellipse at 50% 20%, #182446 0, var(--bg) 55%); color: var(--ink); }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: transparent; color: var(--ink); }
   #world { position: absolute; inset: 0; transform-origin: 0 0; will-change: transform; }
   #grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 90px 90px; opacity: .6; }
   #fx { position: absolute; inset: 0; width: 1080px; height: 1920px; }
@@ -214,7 +217,7 @@
   });
 
   /* ----- fit to window for live preview ----- */
-  function fit() { const s = Math.min(innerWidth / W, innerHeight / H); $('#fit').style.transform = `scale(${s})`; }
+  function fit() { const s = Math.min(innerWidth / W, innerHeight / H); const x = (innerWidth - W * s) / 2, y = (innerHeight - H * s) / 2; $('#fit').style.transform = `translate(${x}px, ${y}px) scale(${s})`; }
   addEventListener('resize', fit); fit();
 
   /* ----- live controls ----- */

@@ -1,0 +1,126 @@
+{
+ "workdir": "<workdir>/data",
+ "checks": [
+  {
+   "name": "csv: expected row count",
+   "ok": true,
+   "detail": "180 rows"
+  },
+  {
+   "name": "pandas: groupby + pivot built",
+   "ok": true,
+   "detail": "top region القاهرة = 872,392"
+  },
+  {
+   "name": "duckdb: CTE + LAG + RANK window query on raw CSV",
+   "ok": true,
+   "detail": "month-winners {'القاهرة': 10, 'عمّان': 1, 'الرياض': 1}"
+  },
+  {
+   "name": "duckdb: COPY to Parquet and count back",
+   "ok": true,
+   "detail": "180 rows, 3590 B"
+  },
+  {
+   "name": "control total: csv module == pandas == duckdb",
+   "ok": true,
+   "detail": "3,281,841"
+  },
+  {
+   "name": "control total: region subtotals add back to grand total",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "scipy.stats.linregress: monthly trend",
+   "ok": true,
+   "detail": "slope 8,018/month, r^2 0.706"
+  },
+  {
+   "name": "scipy.stats.ttest_ind (Welch) between two regions",
+   "ok": true,
+   "detail": "t=3.60, p=2.22e-03"
+  },
+  {
+   "name": "scipy.optimize.linprog (HiGHS) product mix",
+   "ok": true,
+   "detail": "x=[20.0, 20.0], profit=1400"
+  },
+  {
+   "name": "sympy: break-even units solved exactly",
+   "ok": true,
+   "detail": "Q = [6000]"
+  },
+  {
+   "name": "sympy: profit-max price via derivative, 2nd derivative < 0",
+   "ok": true,
+   "detail": "p* = [60], profit* = 16000, f'' = -20"
+  },
+  {
+   "name": "sympy: exact Gaussian integral",
+   "ok": true,
+   "detail": "sqrt(pi)"
+  },
+  {
+   "name": "sympy cross-checks scipy LP vertex exactly",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "matplotlib: bundles libraqm -> raw Arabic strings shape correctly (reshaper+bidi would now REVERSE them)",
+   "ok": true,
+   "detail": "libraqm 0.10.5"
+  },
+  {
+   "name": "matplotlib: Arabic chart saved < 300 KB",
+   "ok": true,
+   "detail": "78619 B"
+  },
+  {
+   "name": "Monte Carlo (100k seeded draws): probability of loss and P5/P50/P95 profit",
+   "ok": true,
+   "detail": "P(loss)=0.356, P5=-33,252, P50=10,570, P95=61,457"
+  },
+  {
+   "name": "dashboard.html written (RTL, tokens, dark mode, inline SVG, table view)",
+   "ok": true,
+   "detail": "3847 B"
+  }
+ ],
+ "numbers": {
+  "total_revenue": 3281841,
+  "total_margin": 1153223,
+  "top_region": "القاهرة",
+  "margin_pct": 35.14,
+  "trend_slope": 8017.7,
+  "trend_r2": 0.7056,
+  "welch_p": 0.002222,
+  "lp_x": [
+   20.0,
+   20.0
+  ],
+  "lp_profit": 1400.0,
+  "break_even": 6000,
+  "p_star": 60,
+  "profit_star": 16000,
+  "mc_p_loss": 0.3557,
+  "mc_p5": -33252,
+  "mc_p50": 10570,
+  "mc_p95": 61457
+ },
+ "timings_s": {
+  "pandas": 0.012,
+  "duckdb": 0.052
+ },
+ "versions": {
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "duckdb": "1.5.6",
+  "scipy": "1.18.1",
+  "sympy": "1.14.0",
+  "matplotlib": "3.11.2",
+  "arabic-reshaper": "3.0.1",
+  "python-bidi": "0.6.11"
+ },
+ "summary": "17/17 checks passed"
+}

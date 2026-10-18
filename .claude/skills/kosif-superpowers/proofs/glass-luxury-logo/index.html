@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glass Luxury Logo — KOSIF proof</title>
+<style>
+  @font-face { font-family: "LuxAmiri"; src: url("../_shared/fonts/Amiri-Bold.ttf") format("truetype"); font-weight: 700; }
+  @font-face { font-family: "LuxAmiri"; src: url("../_shared/fonts/Amiri-Regular.ttf") format("truetype"); font-weight: 400; }
+  @font-face { font-family: "LuxGrotesk"; src: url("../_shared/fonts/space-grotesk-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+  @font-face { font-family: "LuxGrotesk"; src: url("../_shared/fonts/space-grotesk-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+
+  :root {
+    /* gold palette */
+    --gold-900: #4a3110; --gold-700: #8a6424; --gold-500: #c9a24a; --gold-300: #e8cf8a; --gold-100: #fff4d6; --champagne: #f3e6c4;
+    --ink: #07060b;
+    --gold-metal: linear-gradient(180deg, #fff4d6 0%, #f0d793 16%, #c9a24a 40%, #8a6424 56%, #b88d3a 68%, #f2dc9c 86%, #fff4d6 100%);
+    /* glass */
+    --glass-fill: linear-gradient(140deg, rgba(255,255,255,.16), rgba(255,255,255,.035) 60%, rgba(255,255,255,.07));
+    --glass-blur: 22px;
+  }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #fit { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--ink); }
+  #bg, #fx, #grain { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+  #grain { mix-blend-mode: overlay; opacity: .09; }
+  #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 70% at 50% 48%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }
+  #world { position: absolute; inset: 0; transform-origin: 960px 520px; }
+
+  /* ---------------- glass cards: backdrop blur + 1 px inner highlight + soft shadow */
+  .card { position: absolute; left: 0; top: 0; border-radius: 30px; background: var(--glass-fill);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(150%); backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 0 0 1px rgba(255,255,255,.13), inset 0 -1px 0 rgba(255,255,255,.05),
+                0 40px 80px -30px rgba(0,0,0,.7), 0 12px 24px -8px rgba(0,0,0,.35);
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 34px; box-sizing: border-box; will-change: transform, opacity, filter; }
+  .card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    background: radial-gradient(120% 80% at 15% 0%, rgba(255,255,255,.18), rgba(255,255,255,0) 55%); }
+  .card .ar { font: 700 64px/1.2 "LuxAmiri"; color: var(--champagne); direction: rtl; text-align: right; }
+  .card .en { font: 500 15px/1 "LuxGrotesk"; letter-spacing: .38em; color: var(--gold-300); opacity: .8; text-align: right; margin-top: 10px; }
+  .card .rule { position: absolute; left: 34px; top: 34px; width: 54px; height: 1px; background: linear-gradient(90deg, var(--gold-300), rgba(232,207,138,0)); }
+  .card .no { position: absolute; left: 34px; top: 46px; font: 500 14px/1 "LuxGrotesk"; letter-spacing: .2em; color: rgba(243,230,196,.55); }
+
+  /* ---------------- logo */
+  #logo { position: absolute; left: 0; right: 0; top: 0; height: 1080px; pointer-events: none; }
+  #emblem { position: absolute; left: 960px; top: 296px; width: 230px; height: 230px; margin: -115px 0 0 -115px; overflow: visible; }
+  .wordbox { position: absolute; left: 0; right: 0; top: 388px; height: 290px; display: flex; justify-content: center; }
+  .word { position: absolute; top: 0; font: 700 210px/1.32 "LuxAmiri"; direction: rtl; white-space: nowrap; padding: 0 40px; }
+  #wordGold { background: var(--gold-metal); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  #wordEdge { color: var(--gold-900); transform: translateY(4px); }
+  #wordGlow { color: var(--gold-500); filter: blur(26px); opacity: .0; }
+  #wordShine { background: linear-gradient(180deg, #fffaf0, #ffe9b8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  #latin { position: absolute; left: 0; right: 0; top: 688px; text-align: center; font: 700 30px/1 "LuxGrotesk"; color: var(--gold-300); white-space: nowrap; }
+  .hair { position: absolute; top: 703px; height: 1px; width: 170px; background: linear-gradient(90deg, rgba(232,207,138,0), var(--gold-300)); }
+  #hairL { right: 1180px; transform-origin: 100% 50%; }
+  #hairR { left: 1180px; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--gold-300), rgba(232,207,138,0)); }
+  #tag { position: absolute; left: 0; right: 0; top: 752px; display: flex; justify-content: center; gap: 0 18px; direction: rtl; font: 400 50px/1.5 "LuxAmiri"; color: var(--champagne); }
+  #tag span { display: inline-block; will-change: transform, opacity, filter; }
+  #tagEn { position: absolute; left: 0; right: 0; top: 850px; text-align: center; font: 500 17px/1 "LuxGrotesk"; letter-spacing: .5em; color: var(--gold-500); text-indent: .5em; }
+  #hud { position: fixed; left: 10px; bottom: 10px; font: 13px system-ui, sans-serif; color: #9ab; direction: ltr; }
+  body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="fit"><div id="stage">
+  <canvas id="bg" width="1920" height="1080"></canvas>
+  <div id="world">
+    <div class="card" id="c3" data-depth="0.45"><div class="rule"></div><div class="no">N° 03</div><div class="ar">فخامة</div><div class="en">LUXURY</div></div>
+    <div class="card" id="c4" data-depth="0.45"><div class="rule"></div><div class="no">EST.</div><div class="ar">٢٠٢٦</div><div class="en">SINCE</div></div>
+    <div class="card" id="c2" data-depth="0.7"><div class="rule"></div><div class="no">N° 02</div><div class="ar">إتقان</div><div class="en">CRAFT</div></div>
+    <div class="card" id="c1" data-depth="1"><div class="rule"></div><div class="no">N° 01</div><div class="ar">أصالة</div><div class="en">HERITAGE</div></div>
+    <div id="logo">
+      <svg id="emblem" viewBox="-115 -115 230 230">
+        <defs>
+          <linearGradient id="gStroke" x1="0" y1="-1" x2="0" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff4d6"/><stop offset=".35" stop-color="#e8cf8a"/><stop offset=".6" stop-color="#c9a24a"/><stop offset=".8" stop-color="#8a6424"/><stop offset="1" stop-color="#e8cf8a"/>
+          </linearGradient>
+          <linearGradient id="gFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0d793"/><stop offset="1" stop-color="#8a6424"/></linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#gStroke)" stroke-linecap="round" stroke-linejoin="round">
+          <path id="eStarFill" d="M -62 -62 H 62 V 62 H -62 Z" fill="url(#gFill)" stroke="none" opacity="0"/>
+          <path id="eStarFill2" d="M 0 -87.7 L 87.7 0 L 0 87.7 L -87.7 0 Z" fill="url(#gFill)" stroke="none" opacity="0"/>
+          <path class="draw" data-t="4.0,4.95" d="M 0 -104 A 104 104 0 1 1 -0.01 -104" stroke-width="2.6" pathLength="1"/>
+          <path class="draw" data-t="4.15,5.05" d="M 0 -96 A 96 96 0 1 0 0.01 -96" stroke-width="1.2" pathLength="1"/>
+          <path class="draw" data-t="4.3,5.25" d="M -62 -62 H 62 V 62 H -62 Z" stroke-width="3" pathLength="1"/>
+          <path class="draw" data-t="4.45,5.4" d="M 0 -87.7 L 87.7 0 L 0 87.7 L -87.7 0 Z" stroke-width="3" pathLength="1"/>
+          <path class="draw" data-t="4.75,5.55" d="M 0 -28 A 28 28 0 1 1 -0.01 -28" stroke-width="2" pathLength="1"/>
+          <path class="draw" data-t="5.0,5.6" d="M 0 -12 L 12 0 L 0 12 L -12 0 Z" stroke-width="2" pathLength="1"/>
+        </g>
+      </svg>
+      <div class="wordbox">
+        <div class="word" id="wordGlow">نفيس</div>
+        <div class="word" id="wordEdge">نفيس</div>
+        <div class="word" id="wordGold">نفيس</div>
+        <div class="word" id="wordShine">نفيس</div>
+      </div>
+      <div class="hair" id="hairL"></div><div class="hair" id="hairR"></div>
+      <div id="latin">NAFEES</div>
+      <div id="tag"><span>ما</span><span>يبقى</span><span>يُصنع</span><span>بعناية</span></div>
+      <div id="tagEn">CRAFTED TO LAST</div>
+    </div>
+  </div>
+  <canvas id="fx" width="1920" height="1080"></canvas>
+  <div id="vignette"></div>
+  <canvas id="grain" width="960" height="540"></canvas>
+</div></div>
+<div id="hud">space = play/pause · ←/→ = ±1 frame · ?t=6 opens at 6 s</div>
+<script>
+(function () {
+  'use strict';
+  const W = 1920, H = 1080, DUR = 10, FPS = 30, SEED = 7022026;
+  const $ = (s) => document.querySelector(s);
+
+  /* ================================================================ easing tokens (same curves as CSS cubic-bezier) */
+  function bezier(x1, y1, x2, y2) {
+    const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx, cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+    const sx = (u) => ((ax * u + bx) * u + cx) * u, sy = (u) => ((ay * u + by) * u + cy) * u, dx = (u) => (3 * ax * u + 2 * bx) * u + cx;
+    return (x) => {
+      if (x <= 0) return 0; if (x >= 1) return 1;
+      let u = x; for (let i = 0; i < 8; i++) { const e = sx(u) - x, d = dx(u); if (Math.abs(e) < 1e-6 || Math.abs(d) < 1e-6) break; u -= e / d; }
+      let lo = 0, hi = 1; if (Math.abs(sx(u) - x) > 1e-5) { u = x; for (let i = 0; i < 30; i++) { const v = sx(u); if (Math.abs(v - x) < 1e-6) break; if (v < x) lo = u; else hi = u; u = (lo + hi) / 2; } }
+      return sy(u);
+    };
+  }
+  const EASE = {
+    luxe:   bezier(0.16, 1, 0.3, 1),     // long, silky deceleration (entrances)
+    glide:  bezier(0.65, 0, 0.35, 1),    // symmetric in-out (moves, draw-on, shimmer)
+    settle: bezier(0.22, 1.2, 0.36, 1),  // soft 2–3 % overshoot (logo settle)
+  };
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const prog = (t, a, b, e = EASE.glide) => e(clamp01((t - a) / (b - a)));
+  function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let z = s; z = Math.imul(z ^ (z >>> 15), z | 1); z ^= z + Math.imul(z ^ (z >>> 7), z | 61); return ((z ^ (z >>> 14)) >>> 0) / 4294967296; }; }
+  const hex = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+
+  /* ================================================================ background: animated gradient mesh + gold lattice + bokeh */
+  const bg = $('#bg'), bgc = bg.getContext('2d');
+  const MW = 192, MH = 108, mesh = document.createElement('canvas'); mesh.width = MW; mesh.height = MH;
+  const mctx = mesh.getContext('2d'), mimg = mctx.createImageData(MW, MH);
+  // control points: colour, rest position (0..1), orbit radius, speed, phase
+  const MESH = [
+    { c: '#170c27', x: 0.18, y: 0.22, r: 0.10, s: 0.21, p: 0.0 },
+    { c: '#2e0b20', x: 0.82, y: 0.18, r: 0.12, s: 0.17, p: 1.7 },
+    { c: '#08212a', x: 0.12, y: 0.86, r: 0.09, s: 0.23, p: 3.1 },
+    { c: '#251307', x: 0.86, y: 0.84, r: 0.11, s: 0.19, p: 4.4 },
+    { c: '#07060b', x: 0.50, y: 0.50, r: 0.06, s: 0.15, p: 2.2 },
+    { c: '#14102a', x: 0.50, y: 0.02, r: 0.08, s: 0.25, p: 5.0 },
+  ].map((m) => ({ ...m, rgb: hex(m.c) }));
+  const WARM = hex('#5a3a12');
+  const R0 = rng(SEED);
+  const bokeh = Array.from({ length: 34 }, () => ({ x: R0() * W, y: R0() * H, r: 6 + R0() * 34, a: 0.04 + R0() * 0.13, d: 0.2 + R0() * 0.8, sp: 6 + R0() * 16, ph: R0() * 6.28 }));
+  function drawMesh(t, warm) {
+    const pts = MESH.map((m) => [m.x + m.r * Math.cos(t * m.s * 2 + m.p), m.y + m.r * Math.sin(t * m.s * 1.6 + m.p * 1.3), m.rgb]);
+    const d = mimg.data, sig = 0.11;
+    for (let y = 0; y < MH; y++) for (let x = 0; x < MW; x++) {
+      const u = x / (MW - 1), v = y / (MH - 1);
+      let r = 0, g = 0, b = 0, ws = 0;
+      for (const [px, py, c] of pts) { const dx = (u - px) * 1.78, dy = v - py, w = Math.exp(-(dx * dx + dy * dy) / sig); r += c[0] * w; g += c[1] * w; b += c[2] * w; ws += w; }
+      r /= ws; g /= ws; b /= ws;
+      // warm key light behind the logo grows during the reveal
+      const cx = (u - 0.5) * 1.78, cy = v - 0.45, wl = Math.exp(-(cx * cx + cy * cy) / 0.09) * warm;
+      const i = (y * MW + x) * 4;
+      d[i] = r + WARM[0] * wl; d[i + 1] = g + WARM[1] * wl; d[i + 2] = b + WARM[2] * wl; d[i + 3] = 255;
+    }
+    mctx.putImageData(mimg, 0, 0);
+    bgc.imageSmoothingEnabled = true; bgc.imageSmoothingQuality = 'high';
+    bgc.globalCompositeOperation = 'copy'; bgc.drawImage(mesh, 0, 0, W, H); bgc.globalCompositeOperation = 'source-over';
+  }
+  // 8-point star lattice (fine gold lines) – gives the glass something to frost
+  function starPath(g, cx, cy, s) {
+    g.moveTo(cx - s, cy - s); g.lineTo(cx + s, cy - s); g.lineTo(cx + s, cy + s); g.lineTo(cx - s, cy + s); g.closePath();
+    const k = s * Math.SQRT2; g.moveTo(cx, cy - k); g.lineTo(cx + k, cy); g.lineTo(cx, cy + k); g.lineTo(cx - k, cy); g.closePath();
+  }
+  function drawLattice(t, cam) {
+    const step = 170, s = 44, ox = -cam.x * 0.25 + t * 6, oy = -cam.y * 0.25;
+    bgc.save(); bgc.strokeStyle = 'rgba(201,162,74,0.10)'; bgc.lineWidth = 1.2; bgc.beginPath();
+    for (let y = -step; y < H + step; y += step) for (let x = -step; x < W + step; x += step) {
+      const sx = x + (((ox % step) + step) % step), sy = y + (((oy % step) + step) % step) + ((Math.round(x / step) % 2) ? step / 2 : 0);
+      starPath(bgc, sx, sy, s);
+    }
+    bgc.stroke(); bgc.restore();
+  }
+  function drawBokeh(t, cam) {
+    bgc.save(); bgc.globalCompositeOperation = 'lighter';
+    for (const b of bokeh) {
+      const x = ((b.x - cam.x * b.d + Math.sin(t * 0.5 + b.ph) * 18) % (W + 100) + W + 100) % (W + 100) - 50;
+      const y = ((b.y - t * b.sp - cam.y * b.d) % (H + 100) + H + 100) % (H + 100) - 50;
+      const g = bgc.createRadialGradient(x, y, 0, x, y, b.r);
+      g.addColorStop(0, `rgba(240,215,147,${b.a})`); g.addColorStop(0.7, `rgba(201,162,74,${b.a * 0.5})`); g.addColorStop(1, 'rgba(201,162,74,0)');
+      bgc.fillStyle = g; bgc.fillRect(x - b.r, y - b.r, b.r * 2, b.r * 2);
+    }
+    bgc.restore();
+  }
+
+  /* ================================================================ glass cards: two key poses + parallax */
+  // p1 = collage pose (after entrance), p2 = framing pose (after they part for the logo); from = entrance offset
+  const CARDS = [
+    { el: $('#c1'), w: 440, h: 270, p1: [660, 600], p2: [290, 852], from: [-1100, 120], rot: [-5, -2.5], t0: 0.30, s2: 1.08 },
+    { el: $('#c2'), w: 380, h: 240, p1: [1270, 470], p2: [1585, 240], from: [1000, -80], rot: [4, 2], t0: 0.48, s2: 1.04 },
+    { el: $('#c3'), w: 320, h: 205, p1: [920, 300], p2: [330, 190], from: [-700, -420], rot: [-3, -1.5], t0: 0.66, s2: 0.98 },
+    { el: $('#c4'), w: 330, h: 210, p1: [1330, 760], p2: [1580, 868], from: [800, 420], rot: [3, 1.5], t0: 0.84, s2: 0.98 },
+  ];
+  CARDS.forEach((c) => { c.d = parseFloat(c.el.dataset.depth); c.el.style.width = c.w + 'px'; c.el.style.height = c.h + 'px'; });
+  const PART = [3.25, 4.55];  // cards part to frame the logo
+
+  function cardsAt(t, cam) {
+    for (const c of CARDS) {
+      const pin = prog(t, c.t0, c.t0 + 1.5, EASE.luxe);
+      const ppart = prog(t, PART[0] + (1 - c.d) * 0.12, PART[1] + (1 - c.d) * 0.12, EASE.glide);
+      let x = lerp(c.p1[0], c.p2[0], ppart), y = lerp(c.p1[1], c.p2[1], ppart);
+      x += c.from[0] * (1 - pin); y += c.from[1] * (1 - pin);
+      // parallax: camera offset scaled by depth, plus a slow float
+      x += -cam.x * c.d + Math.sin(t * 0.6 + c.d * 4) * 6 * c.d; y += -cam.y * c.d + Math.cos(t * 0.5 + c.d * 3) * 5 * c.d;
+      const rot = lerp(c.rot[0], c.rot[1], ppart) + (1 - pin) * c.rot[0] * 2;
+      const ry = (1 - pin) * (c.from[0] < 0 ? 24 : -24);
+      const s = lerp(1, c.s2, ppart) * lerp(0.92, 1, pin);
+      const el = c.el;
+      el.style.transform = `translate(${(x - c.w / 2).toFixed(2)}px, ${(y - c.h / 2).toFixed(2)}px) perspective(1400px) rotateY(${ry.toFixed(2)}deg) rotate(${rot.toFixed(2)}deg) scale(${s.toFixed(4)})`;
+      el.style.opacity = Math.min(1, pin * 1.6).toFixed(3);
+      // depth of field once the logo owns the frame: far cards defocus more
+      const dof = ppart * (1.6 + (1 - c.d) * 3.2);
+      el.style.filter = dof > 0.05 ? `blur(${dof.toFixed(2)}px)` : 'none';
+      el.querySelector('.ar').style.opacity = lerp(1, 0.55, ppart).toFixed(3);
+    }
+  }
+
+  /* ================================================================ logo */
+  const draws = [...document.querySelectorAll('#emblem .draw')].map((el) => { const [a, b] = el.dataset.t.split(',').map(Number); el.style.strokeDasharray = '1 1'; return { el, a, b }; });
+  const wordEls = ['#wordGlow', '#wordEdge', '#wordGold', '#wordShine'].map($);
+  const tagWords = [...document.querySelectorAll('#tag span')];
+  const T_WORD = [4.9, 6.25], T_SHINE = [[6.45, 7.65, 1], [8.85, 9.75, 0.55]];
+  function logoAt(t) {
+    // emblem: draw-on strokes, then a soft gold fill
+    for (const d of draws) d.el.style.strokeDashoffset = (1 - prog(t, d.a, d.b, EASE.glide)).toFixed(4);
+    const fillA = prog(t, 5.3, 6.1, EASE.luxe) * 0.16;
+    $('#eStarFill').setAttribute('opacity', fillA.toFixed(3)); $('#eStarFill2').setAttribute('opacity', fillA.toFixed(3));
+    const es = lerp(0.9, 1, prog(t, 4.0, 5.6, EASE.luxe)) * (1 + 0.012 * Math.sin(t * 1.3));
+    $('#emblem').style.transform = `scale(${es.toFixed(4)}) rotate(${lerp(-12, 0, prog(t, 4.0, 5.8, EASE.luxe)).toFixed(2)}deg)`;
+
+    // logotype: soft right→left mask reveal (RTL), blur→sharp, settle
+    const p = prog(t, T_WORD[0], T_WORD[1], EASE.luxe);
+    const edge = lerp(-25, 125, p);
+    const reveal = `linear-gradient(to left, #000 ${(edge - 25).toFixed(2)}%, transparent ${edge.toFixed(2)}%)`;
+    const settle = prog(t, T_WORD[0], T_WORD[0] + 1.6, EASE.settle);
+    const blur = lerp(10, 0, clamp01(p * 1.4));
+    for (const el of wordEls) {
+      el.style.webkitMaskImage = el.style.maskImage = el.id === 'wordShine' ? '' : reveal;
+      el.style.transform = `translateY(${lerp(18, 0, settle).toFixed(2)}px) scale(${lerp(1.035, 1, settle).toFixed(4)})` + (el.id === 'wordEdge' ? ' translateY(4px)' : '');
+      const bl = blur > 0.05 ? `blur(${blur.toFixed(2)}px)` : '';
+      if (el.id === 'wordShine') el.style.filter = `${bl} drop-shadow(0 0 10px rgba(255,240,200,.85))`;   // the streak blooms
+      else if (el.id !== 'wordGlow') el.style.filter = bl || 'none';
+    }
+    $('#wordGlow').style.opacity = (0.42 * p * (1 + 0.08 * Math.sin(t * 2.1))).toFixed(3);
+    // metallic shimmer: a bright copy of the word seen through a moving diagonal gradient mask
+    let shine = 0, x = -30;
+    for (const [a, b, k] of T_SHINE) if (t >= a && t <= b) { const q = prog(t, a, b, EASE.glide); x = lerp(-30, 130, q); shine = k; }
+    // two streaks: a broad main band and a thin trailing glint (classic polished-metal pass)
+    const sm = `linear-gradient(105deg, transparent ${(x - 22).toFixed(2)}%, rgba(0,0,0,${(0.55 * shine).toFixed(3)}) ${(x - 17).toFixed(2)}%, transparent ${(x - 13).toFixed(2)}%, transparent ${(x - 9).toFixed(2)}%, rgba(0,0,0,${shine}) ${x.toFixed(2)}%, transparent ${(x + 9).toFixed(2)}%)`;
+    const sh = $('#wordShine'); sh.style.webkitMaskImage = sh.style.maskImage = shine > 0 ? sm : 'linear-gradient(transparent, transparent)';
+
+    // latin wordmark: tracking tightens 1.1em → .55em while it fades in, hairlines draw outward
+    const pl = prog(t, 5.9, 7.1, EASE.luxe);
+    const lat = $('#latin'); lat.style.letterSpacing = lerp(1.1, 0.55, pl).toFixed(3) + 'em'; lat.style.textIndent = lerp(1.1, 0.55, pl).toFixed(3) + 'em'; lat.style.opacity = pl.toFixed(3);
+    const ph = prog(t, 6.2, 7.2, EASE.luxe);
+    $('#hairL').style.transform = `scaleX(${ph.toFixed(4)})`; $('#hairR').style.transform = `scaleX(${ph.toFixed(4)})`;
+    // tagline: per-word timing, right → left (reading order), rise + unblur
+    tagWords.forEach((w, i) => {
+      const q = prog(t, 7.0 + i * 0.17, 7.75 + i * 0.17, EASE.luxe);
+      w.style.opacity = q.toFixed(3); w.style.transform = `translateY(${lerp(16, 0, q).toFixed(2)}px)`;
+      w.style.filter = q < 0.98 ? `blur(${lerp(6, 0, q).toFixed(2)}px)` : 'none';
+    });
+    const pe = prog(t, 7.9, 8.8, EASE.luxe); const te = $('#tagEn'); te.style.opacity = (pe * 0.9).toFixed(3); te.style.letterSpacing = lerp(0.8, 0.5, pe).toFixed(3) + 'em';
+  }
+
+  /* ================================================================ fx canvas: emblem sparkle + gold dust burst */
+  const fx = $('#fx'), fxc = fx.getContext('2d');
+  const R1 = rng(SEED + 1);
+  const dust = Array.from({ length: 70 }, () => ({ a: R1() * Math.PI * 2, sp: 120 + R1() * 360, r: 1 + R1() * 2.4, life: 0.8 + R1() * 0.9, tw: R1() * 6.28 }));
+  function sparkle(x, y, k, size) {
+    if (k <= 0) return;
+    fxc.save(); fxc.globalCompositeOperation = 'lighter'; fxc.translate(x, y);
+    const g = fxc.createRadialGradient(0, 0, 0, 0, 0, size * 0.6); g.addColorStop(0, `rgba(255,246,220,${0.9 * k})`); g.addColorStop(1, 'rgba(255,220,150,0)');
+    fxc.fillStyle = g; fxc.beginPath(); fxc.arc(0, 0, size * 0.6, 0, Math.PI * 2); fxc.fill();
+    for (const [len, wdt, rot] of [[size, 2.2, 0], [size, 2.2, Math.PI / 2], [size * 0.5, 1.2, Math.PI / 4], [size * 0.5, 1.2, -Math.PI / 4]]) {
+      fxc.save(); fxc.rotate(rot); const lg = fxc.createLinearGradient(-len, 0, len, 0);
+      lg.addColorStop(0, 'rgba(255,240,200,0)'); lg.addColorStop(0.5, `rgba(255,252,240,${k})`); lg.addColorStop(1, 'rgba(255,240,200,0)');
+      fxc.fillStyle = lg; fxc.fillRect(-len, -wdt / 2, len * 2, wdt); fxc.restore();
+    }
+    fxc.restore();
+  }
+  function fxAt(t, worldScale) {
+    fxc.clearRect(0, 0, W, H);
+    const ex = 960, ey = 296 * worldScale + 520 * (1 - worldScale);
+    const t0 = 5.45;
+    if (t > t0 && t < t0 + 2) {
+      fxc.save(); fxc.globalCompositeOperation = 'lighter';
+      for (const q of dust) {
+        const lt = (t - t0) / q.life; if (lt >= 1) continue;
+        const e = EASE.luxe(lt), dd = q.sp * e;
+        const x = ex + Math.cos(q.a) * dd, y = ey + Math.sin(q.a) * dd * 0.8 + 40 * lt * lt;
+        const al = (1 - lt) * (0.55 + 0.45 * Math.sin(t * 20 + q.tw));
+        fxc.fillStyle = `rgba(255,226,160,${al.toFixed(3)})`; fxc.beginPath(); fxc.arc(x, y, q.r, 0, Math.PI * 2); fxc.fill();
+      }
+      fxc.restore();
+    }
+    // star-point glints: top of the emblem as it completes, then the logotype edge after the shimmer
+    const k1 = Math.sin(Math.PI * clamp01((t - 5.35) / 0.7)); sparkle(ex, ey - 104 * worldScale, k1, 70);
+    const k2 = Math.sin(Math.PI * clamp01((t - 7.45) / 0.6)); sparkle(1166, 470, k2 * 0.8, 54);
+  }
+
+  /* ================================================================ grain */
+  const grain = $('#grain'), gctx = grain.getContext('2d');
+  const R2 = rng(SEED + 2), tiles = [];
+  for (let k = 0; k < 4; k++) { const im = gctx.createImageData(960, 540); for (let i = 0; i < im.data.length; i += 4) { const v = 128 + (R2() - 0.5) * 120; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; } tiles.push(im); }
+
+  /* ================================================================ frame */
+  const world = $('#world');
+  function render(t) {
+    // camera: slow drift for parallax, then a gentle push-in while the logo resolves
+    const cam = { x: 40 * Math.sin(t * 0.42) - lerp(0, 30, prog(t, 0, 4, EASE.glide)), y: 18 * Math.sin(t * 0.33 + 1) };
+    const push = lerp(1, 1.035, prog(t, 4.0, 10, EASE.glide));
+    drawMesh(t, prog(t, 4.2, 6.6, EASE.glide) * 0.55);
+    drawLattice(t, cam); drawBokeh(t, cam);
+    world.style.transform = `scale(${push.toFixed(4)})`;
+    cardsAt(t, cam);
+    logoAt(t);
+    fxAt(t, push);
+    gctx.putImageData(tiles[Math.round(t * FPS) % tiles.length], 0, 0);
+    const fade = 1 - prog(t, 0, 0.7, EASE.luxe);
+    $('#stage').style.filter = fade > 0.01 ? `brightness(${(1 - 0.65 * fade).toFixed(3)})` : 'none';
+  }
+
+  /* ================================================================ contract + live preview */
+  let T0 = 0, playing = false, last = 0;
+  function seek(t) { T0 = Math.max(0, Math.min(DUR, t)); render(T0); }
+  window.__kosif = { duration: DUR, fps: FPS, seek };
+  window.__kosifReady = Promise.all([
+    document.fonts.load('700 210px "LuxAmiri"', 'نفيس'), document.fonts.load('400 50px "LuxAmiri"', 'بعناية'),
+    document.fonts.load('500 17px "LuxGrotesk"', 'A'), document.fonts.load('700 30px "LuxGrotesk"', 'A'),
+  ]).then(() => document.fonts.ready).then(() => { seek(parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0); return true; });
+  if (navigator.webdriver || window.__KOSIF_RENDER) document.body.classList.add('render');
+  function fit() { const k = Math.min(innerWidth / W, innerHeight / H); $('#fit').style.transform = `scale(${k})`; }
+  addEventListener('resize', fit); fit();
+  function loop(now) { if (!playing) return; const dt = (now - last) / 1000; last = now; let t = T0 + dt; if (t >= DUR) t = 0; seek(t); requestAnimationFrame(loop); }
+  addEventListener('keydown', (e) => {
+    if (e.code === 'Space') { e.preventDefault(); playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(loop); }
+    if (e.code === 'ArrowRight') seek(T0 + 1 / FPS);
+    if (e.code === 'ArrowLeft') seek(T0 - 1 / FPS);
+  });
+})();
+</script>
+</body>
+</html>

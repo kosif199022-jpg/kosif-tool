@@ -30,6 +30,8 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import html as htmlmod
+import ipaddress
+import socket
 import json
 import re
 import shutil
@@ -86,18 +88,40 @@ def slug_for(url: str) -> str:
     return f"{host}-{tail}" if tail else host
 
 
+def _validate_public_url(url: str) -> None:
+    parts = urllib.parse.urlsplit(url)
+    if parts.scheme not in ("http", "https") or not parts.hostname or parts.username or parts.password:
+        raise RefuseError("only public HTTP(S) media URLs without embedded credentials are accepted")
+    try:
+        addrs = socket.getaddrinfo(parts.hostname, parts.port or (443 if parts.scheme == "https" else 80), type=socket.SOCK_STREAM)
+    except (OSError, ValueError) as exc:
+        raise NetError(f"unable to resolve public media host: {exc}") from exc
+    if not addrs or any(not ipaddress.ip_address(addr[4][0]).is_global for addr in addrs):
+        raise RefuseError("private, loopback, link-local or reserved media hosts are not allowed")
+
+
+class _PublicRedirects(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        _validate_public_url(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def _request(url: str, timeout: int = 30):
+    _validate_public_url(url)
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
-    return urllib.request.urlopen(req, timeout=timeout)
+    return urllib.request.build_opener(_PublicRedirects).open(req, timeout=timeout)
 
 
-def fetch_bytes(url: str, retries: int = 3, timeout: int = 30) -> tuple[bytes, str]:
+def fetch_bytes(url: str, retries: int = 3, timeout: int = 30, max_bytes: int = 16 * 1048576) -> tuple[bytes, str]:
     last: Exception | None = None
     for attempt in range(retries):
         try:
             with _request(url, timeout) as resp:
                 ctype = (resp.headers.get("Content-Type") or "").lower()
-                return resp.read(), ctype
+                data = resp.read(max_bytes + 1)
+                if len(data) > max_bytes:
+                    raise RefuseError("remote page or segment exceeds the per-response byte limit")
+                return data, ctype
         except (urllib.error.URLError, TimeoutError, OSError) as exc:  # pragma: no cover - network
             last = exc
             time.sleep(1.0 * (attempt + 1))
@@ -152,7 +176,7 @@ def find_media_urls(page: str, base: str) -> list[str]:
 
 # -- HLS playlists -------------------------------------------------------------
 def attr(line: str, name: str) -> str | None:
-    m = re.search(name + r'=(?:"([^"]*)"|([^,]*))', line)
+    m = re.search(r'(?:^|[,:])\s*' + re.escape(name) + r'=(?:"([^"]*)"|([^,]*))', line)
     if not m:
         return None
     return m.group(1) if m.group(1) is not None else m.group(2)
@@ -205,11 +229,15 @@ def parse_media(text: str, base: str) -> dict:
 def _download_segments(media: dict, dest: Path, max_bytes: int, workers: int = 6) -> Path:
     urls = ([media["init"]] if media["init"] else []) + media["segments"]
     total = 0
-    with dest.open("wb") as fh, concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
-        for i, (data, _ctype) in enumerate(pool.map(fetch_bytes, urls)):
+    # Sequential, bounded requests: pool.map previously downloaded the entire
+    # stream before the size check, bypassing --max-mb and exhausting memory.
+    with dest.open("wb") as fh:
+        for i, url in enumerate(urls):
+            budget = max_bytes - total
+            if budget <= 0:
+                raise RefuseError("stream exceeds the configured total size limit")
+            data, _ctype = fetch_bytes(url, max_bytes=min(16 * 1048576, budget))
             total += len(data)
-            if total > max_bytes:
-                raise RefuseError(f"stream exceeds the size cap ({max_bytes // 1048576} MB); raise --max-mb if you really need it")
             fh.write(data)
             if i % 20 == 0:
                 log(f"  segments {i + 1}/{len(urls)} · {total / 1048576:.1f} MB")
@@ -239,7 +267,7 @@ def download_hls(url: str, dest_dir: Path, name: str, max_bytes: int, workers: i
     if audio_url:
         amedia = parse_media(fetch_text(audio_url), audio_url)
         if not amedia["encrypted"] and amedia["segments"]:
-            audio = _download_segments(amedia, dest_dir / f"{name}-audio.{'mp4' if amedia['init'] else 'ts'}", max_bytes, workers)
+            audio = _download_segments(amedia, dest_dir / f"{name}-audio.{'mp4' if amedia['init'] else 'ts'}", max_bytes - video.stat().st_size, workers)
     return video, audio
 
 
@@ -276,7 +304,17 @@ def have_ffmpeg() -> bool:
 
 
 def run(cmd: list[str]) -> subprocess.CompletedProcess:
-    return subprocess.run(cmd, capture_output=True, text=True)
+    if not cmd or cmd[0] not in ("ffmpeg", "ffprobe"):
+        raise RefuseError("only the local ffmpeg and ffprobe tools are permitted")
+    if cmd[0] == "ffprobe":
+        safe = cmd[:1] + ["-protocol_whitelist", "file,pipe"] + cmd[1:]
+    else:
+        safe = []
+        for arg in cmd:
+            if arg == "-i":
+                safe += ["-protocol_whitelist", "file,pipe"]
+            safe.append(arg)
+    return subprocess.run(safe, capture_output=True, text=True, timeout=900)
 
 
 def remux(video: Path, audio: Path | None, out: Path) -> Path:
@@ -342,7 +380,7 @@ def scene_cuts(path: Path, threshold: float = 0.3) -> list[float]:
 
 def palette(path: Path, colors: int = 8) -> list[str]:
     vf = f"fps=2,scale=160:-2,palettegen=max_colors={colors + 1}:reserve_transparent=0:stats_mode=full"
-    proc = subprocess.run(["ffmpeg", "-v", "error", "-i", str(path), "-vf", vf, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True)
+    proc = subprocess.run(["ffmpeg", "-v", "error", "-protocol_whitelist", "file,pipe", "-i", str(path), "-vf", vf, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True, timeout=900)
     raw = proc.stdout
     out: list[str] = []
     for i in range(0, min(len(raw), 256 * 3) - 2, 3):
@@ -443,6 +481,9 @@ def main(argv: list[str] | None = None) -> int:
                 if kind == "unknown":
                     kind = "direct"
             else:
+                if args.list:
+                    log("--list requires a discoverable HTML page or a recognized direct media URL")
+                    return 1
                 kind = "direct"
         elif args.list:
             print(json.dumps([url], ensure_ascii=False) if args.json else url)

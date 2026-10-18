@@ -1,7 +1,7 @@
 {
   "id": "pm-ajith-io-ea7f2d",
   "name": "Distilbook motion showreel",
-  "name_ar": "ديستيل بوك: ريل ثلاثين ثانية على شبكة قاسية",
+  "name_ar": "ديستيل بوك: رحلة ملوّنة من الورق إلى الفضاء",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -30,30 +30,30 @@
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
-  "summary_ar": "ريل منتج بارد الإيقاع مدته 30 ثانية يعرض Distilbook في ثلاث حركات: صدمة رقمية، جولة بطاقات، ثم برهان بالأرقام، على شبكة ثابتة بلون تمييز واحد.",
-  "summary_en": "A cold, tight 30-second product reel presenting Distilbook in three acts: a numeric hook, a card tour, then proof by numbers, on a persistent grid with one accent colour.",
+  "summary_ar": "ريل منتج مدته 32 ثانية يبدأ بمستند مرسوم بخط اليد بجانب زهرة برتقالية على ورق، ثم يغوص عبر خطوط سرعة إلى انفجار شعاعي، أشرطة قوس قزح، شريط بطاقات ملونة في فضاء بنفسجي، سرب حروف، كرة متوهجة تصير خيط ضوء ينبت بطاقة فوق كوكب، جدار بطاقات، ثم عودة إلى الورق بعبارة مكتوبة باليد والشعار.",
+  "summary_en": "A 32-second product reel that opens on a doodled document beside an orange flower on paper, dives through speed lines into a radial burst, rainbow stripes, a ribbon of coloured cards in purple space, a flock of letters, a glowing orb that becomes a light thread growing a sprout card over a planet, a wall of cards, then back to paper with a handwritten line and the logo.",
   "keywords": [
     "product reel",
-    "grid system",
-    "hard cut",
-    "شبكة",
-    "قطع على الإيقاع",
-    "book summary",
-    "تلخيص",
-    "monospace",
-    "stat tiles",
-    "sparkline",
+    "zoom through",
+    "speed lines",
+    "rainbow wipe",
+    "card ribbon",
+    "boids flock",
+    "light thread",
+    "paper texture",
+    "handwritten",
     "ريل منتج",
-    "نص حركي",
-    "counter",
-    "distilbook",
-    "tracking animation"
+    "رحلة بصرية",
+    "سرب حروف",
+    "خيط ضوء",
+    "ملمس ورق"
   ],
   "difficulty": 4,
-  "duration_s": 30,
+  "duration_s": 32,
   "stack": [
     "Remotion",
     "React",
+    "Three.js",
     "SVG"
   ],
   "brief": "styles/pm-ajith-io-ea7f2d/BRIEF.md"

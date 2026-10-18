@@ -1,62 +1,64 @@
 # خط زمني متحرك لأبرز محطات الذكاء الاصطناعي — History of AI timeline
 
-> فيلم خط زمني مدته 45 ثانية يسافر على مسار واحد عبر محطات الذكاء الاصطناعي الكبرى من اختبار تورنغ إلى نماذج اللغة الحديثة.
+> فيلم وثائقي داكن طويل (نحو 172 ثانية) عن تاريخ الذكاء الاصطناعي مقسّم إلى فصول مرقّمة: مخطط عصبون منطقي، عنوان دارتموث، طرفية ELIZA، منحنى شتاءات الذكاء الاصطناعي، شبكة التفاف تقرأ الرقم 7، فسيفساء ImageNet، لوح Go ثلاثي الأبعاد، أقواس الانتباه، كلمة تولد من الضجيج، وختام بمجرّة جسيمات.
 >
-> A 45-second timeline film that rides a single track through the big AI milestones, from the Turing test to modern language models.
+> A long, dark documentary film (about 172 s) on the history of AI split into numbered chapters: a logic-neuron diagram, the Dartmouth title, an ELIZA terminal, the AI-winter curve, a convolution net reading a 7, an ImageNet mosaic, a 3D Go board, attention arcs, a word forming from noise and a closing particle galaxy.
 
-ملف تعريفي أصلي من إعداد KOSIF، مشتق من عنوان المرجع وتصنيفاته ووصفه العام فقط؛ لم تتم مشاهدة الفيديو عند كتابته، فتحقّق من المرجع قبل الإنتاج.
-Original KOSIF brief derived only from the reference title, tags and public description; the video was not watched when it was written, so verify against the reference before production.
+ملف تعريفي أصلي من إعداد KOSIF، رُوجع وصُحّح مقابل إطارات مأخوذة من فيديو المرجع (2026-10-16)؛ التوقيتات والألوان قراءات تقريبية من تلك الإطارات، فراجع المرجع للتفاصيل الدقيقة.
+Original KOSIF brief, revised against frames sampled from the reference video (2026-10-16); timings and colours are approximate readings from those frames, so check the reference for fine detail.
 
 - المرجع / Reference: https://www.promptsmotion.com/kloss-xyz-fe0c31
 - التصنيفات / Categories: —
-- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 45 s · الصعوبة / Difficulty: 3/5
-- التقنية المقترحة / Stack: Remotion, React, SVG
+- النسبة المقترحة / Aspect: 16:9 · المدة / Duration: 172 s · الصعوبة / Difficulty: 4/5
+- التقنية المقترحة / Stack: Remotion, React, SVG, Three.js
 
 ## الفكرة
-الموضوع تاريخ الذكاء الاصطناعي عبر لحظاته المفصلية، والهدف أن يخرج المشاهد بخريطة ذهنية واضحة للترتيب والسببية: ما الذي مهد لماذا. اللغة الحركية مبنية على مسار زمني واحد متصل تسير عليه الكاميرا جانبياً بلا قطع، وتتفرع منه بطاقات محطات تنبثق من علامات التاريخ، وتتغير كثافة المسار لتعكس 'شتاء' الذكاء الاصطناعي وانفجاره اللاحق، مع عداد سنوات يتسارع ويتباطأ حسب كثافة الأحداث.
+الموضوع تاريخ الذكاء الاصطناعي من عصبون منطقي إلى نماذج الانتشار، يُروى فصلاً فصلاً لا على مسار واحد. كل فصل لوحة مستقلة على خلفية فحمية بشبكة خافتة: رقم الفصل وعنوانه أعلى اليسار، مؤشر خط زمني أعلى اليمين، وسطر ترجمة أسفل الوسط يحمل الجملة الأساسية. لغة الحركة وثائقية بطيئة: رسومات خطية تُرسم، طرفية تكتب، منحنى يُرسم وتظلَّل عليه فترات الشتاء، ولكل فصل وسيلة مرئية واحدة تشرح الفكرة.
 
 ## Concept
-The subject is the history of AI through its turning points, and the goal is to leave the viewer with a clear mental map of order and causality: what paved the way for what. The motion language is one continuous timeline track the camera travels sideways along without cuts; milestone cards sprout from date markers, the track thins and thickens to reflect the AI winters and the later explosion, and a year counter speeds up and slows down with event density.
+The subject is the history of AI from a logic neuron to diffusion models, told chapter by chapter rather than on a single track. Each chapter is its own plate on a charcoal background with a faint grid: chapter number and name top-left, a timeline marker top-right, and a subtitle line bottom-centre carrying the key sentence. The motion language is slow and documentary: line diagrams draw on, a terminal types, a curve draws with winter bands shaded, and each chapter has exactly one visual device that explains its idea.
 
 ## المشاهد المقترحة
-- 0-4 ث: يُرسم مسار أفقي من اليسار؛ يدور عداد السنوات من 1940 إلى 1950 وترتفع البطاقة الأولى: اختبار تورنغ، مع علامة استفهام تتحول إلى مؤشر طرفية.
-- 4-12 ث: تتحرك الكاميرا يميناً عبر 1956 (بطاقة ورشة عمل تتجمع فيها دائرة كراسٍ) و1966 (بطاقة روبوت محادثة مبكر تظهر فيها أسطر مكتوبة وترد)؛ ينخفض المسار ويفقد تشبعه مع شتاء الذكاء الاصطناعي الأول.
-- 12-20 ث: يسطع المسار عند 1997 (رقعة شطرنج تنزلق فيها قطعة واحدة إلى كش مات) و2011 (بطاقة برنامج مسابقات يضيء فيها زر الإجابة).
-- 20-30 ث: تزداد الكثافة: 2012 التعرف على الصور بالتعلم العميق (شبكة صور مصغرة تسمي نفسها)، 2016 الانتصار في لعبة اللوح (أحجار سوداء وبيضاء تملأ اللوح حلزونياً)، 2017 بنية الانتباه (خطوط تربط الكلمات بالكلمات).
-- 30-40 ث: يتسع المسار إلى مستوى: تصل نماذج اللغة الكبيرة 2020-2022 كفقاعة محادثة تكتب فقرة خلال ثانيتين، وبطاقة توليد صور ترسم نفسها من الضجيج إلى الصورة.
-- 40-45 ث: تتراجع الكاميرا لتكشف الخط الزمني كله كخط واحد بكل علاماته مضاءة؛ يهبط عداد السنوات على 'اليوم' ويثبت العنوان الختامي ثانية واحدة.
+- 0-14 ث: افتتاح على شبه الأسود بشبكة خافتة؛ مخطط دائري باهت يظهر ويُبنى إطار الفصل (الوسم، خط الزمن، سطر الترجمة).
+- 14-43 ث: فصول المؤسسين: مخطط عصبون يرسم مدخلاته وأوزانه وعقدة الجمع بجانب عنوان برتقالي مكثف؛ ثم لوحة دارتموث حيث تُكتب كلمتا ARTIFICIAL INTELLIGENCE كبيرتين بخط سفلي برتقالي وأسماء بخط أحادي حولهما.
+- 43-71 ث: ELIZA: شعار كلمة برونزي بجانب لوحة طرفية تكتب حواراً بمؤشر مربع؛ ثم الشتاءات: منحنى أبيض يُرسم عبر العقود، شريطان مظللان يحددان فترتي التراجع وتهبط كلمة AGAIN. زرقاء كبيرة.
+- 71-100 ث: تعلّم الرؤية: رقم 7 بالبكسل يتحول بالالتفاف إلى خريطة سمات برتقالية مع مربع نواة منزلق؛ ثم فسيفساء من آلاف المربعات الملونة تدور مع عدادات للصور والفئات.
+- 100-128 ث: الحركة 37: لوح Go مائل ثلاثي الأبعاد بحجارته بجانب عنوان MOVE 37 برتقالي وسطر النتيجة؛ ثم الانتباه: خطوط تتقوس بين كلمات جملة وأقوى قوس بالبرتقالي.
+- 128-158 ث: الانتشار: جسيمات ضجيج برتقالية تتكثف إلى كلمة؛ ثم سنة ضخمة بخط محيطي تمر كلحظة استعادة عبر العقود.
+- 158-172 ث: الختام: مجرة حلزونية من الجسيمات تدور ببطء على الأسود ثم تتلاشى.
 
 ## Proposed scenes
-- 0-4s: A horizontal track draws from the left; the year counter spins from 1940 to 1950 and the first card rises: the Turing test, with a question mark morphing into a terminal cursor.
-- 4-12s: The camera tracks right through 1956 (a workshop card with a circle of chairs assembling) and 1966 (an early chatbot card where typed lines appear and reply); the track dips and desaturates for the first AI winter.
-- 12-20s: The track brightens for 1997 (a chessboard where a single piece slides to checkmate) and 2011 (a quiz-show card with a buzzer lighting up).
-- 20-30s: Density increases: 2012 deep-learning image recognition (a grid of thumbnails labels itself), 2016 the board-game victory (black and white stones fill a board in a spiral), 2017 the attention architecture (lines connect words to words).
-- 30-40s: The track widens into a plane: 2020-2022 large language models arrive as a chat bubble that types a paragraph in 2 s, and an image-generation card paints itself from noise to picture.
-- 40-45s: The camera pulls back to reveal the whole timeline as one line with all markers lit; the year counter lands on 'today' and the closing title holds 1 s.
+- 0-14s: Cold open on near-black with a faint grid; a dim circular diagram fades up and the chapter frame (label, timeline rule, subtitle line) assembles.
+- 14-43s: Chapters on the founders: a neuron diagram draws its inputs, weights and summing node beside a condensed orange headline; then a Dartmouth plate where the words ARTIFICIAL INTELLIGENCE set large with an orange underline and names in mono around it.
+- 43-71s: ELIZA: a bronze outline wordmark beside a terminal panel that types a dialogue with a block cursor; then the winters: a white line chart draws across the decades, two shaded bands mark the downturns and a large blue AGAIN. lands.
+- 71-100s: Learning to see: a pixel 7 is convolved into an orange feature map with a sliding kernel box; then a mosaic of thousands of coloured tiles swirls with counters for images and categories.
+- 100-128s: Move 37: a tilted 3D Go board with stones beside an orange MOVE 37 headline and score line; then attention: lines arc between the words of a sentence, the strongest arc in orange.
+- 128-158s: Diffusion: orange noise particles condense into a word; a giant outline year sweeps past as a recap beat across the decades.
+- 158-172s: Finale: a spiral galaxy of particles spins slowly on black and fades out.
 
 ## قواعد الحركة
-- الكاميرا حركة جانبية واحدة متصلة على المسار، مسهّلة لكل مقطع بمنحنى cubic-bezier(0.4, 0, 0.2, 1)؛ تبطئ إلى 30% من سرعتها حول التجمعات الكثيفة ولا تعود للخلف حتى السحبة النهائية.
-- ترتفع بطاقات المحطات من علامة تاريخها خلال 400 مللي ثانية (translateY من 40 بكسل إلى صفر، تخميد زنبركي 20)؛ رسم كل بطاقة SVG يكمل حركته الدقيقة خلال 1-1.5 ثانية قبل مغادرة الكاميرا.
-- عداد السنوات رقم متدحرج مرتبط بموضع الكاميرا لا بزمن الساعة، فتُقرأ تغيرات الإيقاع كسفر.
-- سماكة خط المسار وتشبعه يرمزان للنشاط: 2 بكسل و40% تشبع أثناء فترات الشتاء، و6 بكسل ولون كامل من عقد 2010 فصاعداً.
-- الطباعة: السنة برقم جدولي كبير، عنوان المحطة بخط sans عريض، وشرح من سطر واحد بوزن أخف؛ لا يتجاوز الشرح 8 كلمات.
-- اللون: خلفية كحلية عميقة، نص فاتح، ولون دافئ واحد للمسار والعلامة النشطة؛ لون بارد ثانوي واحد لمقاطع الشتاء فقط.
-- ممنوع: القطع الحاد بين الحقب، صور الأشخاص الحقيقيين، كليشيهات الروبوتات، تأثيرات الخلل، وتلاشي النص دخولاً وخروجاً بلا حركة.
+- فصول لا مسار: لكل فكرة لوحة خاصة تُربط باللوحات الأخرى بتلاشٍ بطيء أو تلاشٍ عبر الأسود (نحو خمس انتقالات ظاهرة في العينات).
+- إطار فصل ثابت في كل لوحة: رقم الفصل واسمه أعلى اليسار بخط أحادي صغير، علامة خط زمني برتقالية أعلى اليمين، وجملة ترجمة بيضاء أسفل الوسط.
+- وسيلة شرح واحدة لكل فصل: رسم خطي للمخططات، آلة كاتبة للطرفية، رسم المنحنى، مسح الالتفاف، دوران الفسيفساء، ميل اللوح ثلاثي الأبعاد، رسم الأقواس، ونزع الضجيج حتى تظهر الكلمة.
+- إيقاع وثائقي بطيء: وقفات طويلة (نسبة السكون نحو 0.4) ودخول بين 600 و1000 مللي ثانية بلا اصطدامات حادة.
+- الكاميرا ثابتة غالباً مع انجراف لطيف؛ الأبعاد الثلاثة الحقيقية محصورة في ميل لوح Go ومجرة الختام.
+- اللوحة: شبه أسود #0d0d0e، رمادي الشبكة #2e2e2e، برتقالي للتأكيد نحو #ff6a1a، برونزي #705b4d، أبيض دافئ نحو #e8e4dc وأزرق بارد نحو #9cc3e6 لفترات الشتاء.
+- الخط: غروتسك مكثف عريض بأحرف كبيرة لعناوين الفصول، أحادي المسافة للتسميات والشيفرة، خط صغير بلا زوائد للترجمة، وأرقام محيطية للسنوات.
 
 ## Motion rules
-- The camera is one continuous lateral dolly along the track, eased per segment with cubic-bezier(0.4, 0, 0.2, 1); it slows to 30% speed around dense clusters and never reverses until the final pull-back.
-- Milestone cards rise from their date marker in 400 ms (translateY 40 px to 0, spring damping 20); each card's illustration is an SVG that completes its own 1-1.5 s micro-animation before the camera leaves.
-- The year counter is a rolling numeral tied to camera position, not to wall-clock time, so pacing changes read as travel.
-- Track stroke width and saturation encode activity: 2 px and 40% saturation during the winters, 6 px and full colour from the 2010s onward.
-- Typography: year in a large tabular numeral, milestone title in a bold sans, a one-line caption in a lighter weight; captions never exceed 8 words.
-- Colour: a deep navy canvas, light text and a single warm accent for the track and active marker; one secondary cool accent for the winter segments only.
-- Banned: hard cuts between eras, photographs of real people, robot clichés, glitch effects and fading text in and out without movement.
+- Chapters, not a track: each idea gets its own plate and the plates are joined by slow crossfades or fades through black (about five visible transitions in samples).
+- Fixed chapter frame on every plate: chapter number and name top-left in tiny mono, an orange timeline tick top-right, a white subtitle sentence bottom-centre.
+- One explanatory device per chapter: line draw-on for diagrams, typewriter for the terminal, stroke draw for the chart, convolution sweep, tile swirl, 3D board tilt, arc draw, denoise-to-word.
+- Slow documentary pacing: long holds (static ratio around 0.4), entrances of 600-1000 ms, no punchy slams.
+- Camera mostly static with gentle drift; true 3D is reserved for the Go board tilt and the closing galaxy.
+- Palette: near-black #0d0d0e, grid grey #2e2e2e, orange accent about #ff6a1a, bronze #705b4d, warm white about #e8e4dc and a cold blue about #9cc3e6 for the winters.
+- Type: condensed bold uppercase grotesk for chapter titles, mono for labels and code, a small sans for subtitles, outline numerals for years.
 
 ## Facts stated by the source (rewritten in our words)
 - The creator asked for a video that highlights the key moments in AI history; no duration, stack or structure is specified.
 
 ## Assumptions
-The milestone list, the 45-second length, the navy palette and the single-track camera are all my proposal; the source gives only the subject in one sentence.
+Observed from frames sampled every ~14 s: the chapter structure, the subtitle and timeline frame, the devices listed per chapter and the orange-on-charcoal palette. Assumed: exact chapter boundaries between samples, whether narration or music carries the audio, and easing values.
 
 ## Keywords
-timeline, history explainer, milestones, lateral dolly, year counter, turing test, deep learning, ai winter, خط زمني, تاريخ الذكاء الاصطناعي, محطات, فيلم تعليمي, كاميرا جانبية, بطاقات معلومات
+history explainer, documentary, chapter plates, ai history, neuron diagram, terminal typewriter, ai winter chart, attention arcs, diffusion denoise, particle galaxy, تاريخ الذكاء الاصطناعي, فيلم وثائقي, فصول مرقمة, مخططات خطية

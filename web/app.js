@@ -337,7 +337,9 @@ async function viewGenerator(query) {
   const lang = select('lang', [['ar', t('gen.lang.ar')], ['en', t('gen.lang.en')], ['both', t('gen.lang.both')]]);
   const source = select('source', [['none', t('gen.source.none')], ['audio', t('gen.source.audio')], ['video', t('gen.source.video')], ['text', t('gen.source.text')]]);
   const detail = input('detail', { type: 'text', placeholder: 'voice.mp3 / clip.mp4 / …' });
-  const aspectSel = select('aspect', Object.keys(RESOLUTIONS).map(a => [a, `${a} (${RESOLUTIONS[a]})`]));
+  const aspectSel = input('aspect', { type: 'text', list: 'aspect-presets', placeholder: '9:16 · 21:9 · 2.35:1 · 1920x816 · reel' });
+  const aspectList = el('datalist', { id: 'aspect-presets' }, ...Object.keys(RESOLUTIONS).map(a => el('option', { value: a }, `${a} (${RESOLUTIONS[a]})`)));
+  document.getElementById('aspect-presets')?.remove(); document.body.append(aspectList);
   const durationIn = input('duration', { type: 'number', min: 3, max: 600, step: 1 });
   const fps = select('fps', [['30', '30'], ['24', '24'], ['25', '25'], ['60', '60']]);
   const stack = select('stack', [['auto', t('gen.stack.auto')], ['remotion', 'Remotion / React'], ['canvas', 'HTML Canvas'], ['svg', 'SVG + GSAP'], ['three', 'Three.js']]);
