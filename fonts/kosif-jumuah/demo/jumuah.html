@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOSIF Jumuah — عرض الخط / font demo</title>
+<style>
+  @font-face { font-family: "KOSIF Jumuah"; font-weight: 400; src: url("../KOSIFJumuah-Regular.woff2") format("woff2"), url("../KOSIFJumuah-Regular.ttf") format("truetype"); }
+  @font-face { font-family: "KOSIF Jumuah"; font-weight: 700; src: url("../KOSIFJumuah-Bold.woff2") format("woff2"), url("../KOSIFJumuah-Bold.ttf") format("truetype"); }
+  :root { --gold: #f5cc76; --ink: #fcfbf9; --w: 1080px; --h: 1920px; }
+  html, body { margin: 0; background: #0e0908; }
+  #stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; font-family: "KOSIF Jumuah", "Noto Color Emoji", serif; color: var(--ink);
+           background: radial-gradient(120% 90% at 50% 38%, #3a2a22 0%, #22160f 45%, #0e0908 100%); }
+  .bokeh { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(245,204,118,.28) 0%, rgba(245,204,118,0) 70%); will-change: transform; }
+  .layer { position: absolute; white-space: nowrap; text-shadow: 0 .012em .06em rgba(0,0,0,.55); }
+  #title { right: 11.7%; top: 17.5%; font-weight: 700; line-height: 1; transform-origin: 100% 60%; }
+  #date  { right: 11.5%; top: 25.4%; font-weight: 400; direction: ltr; line-height: 1; letter-spacing: .01em; }
+  #date .big { font-size: 1.42em; vertical-align: baseline; display: inline-block; }
+  #gold  { left: 50%; top: 36.5%; transform: translateX(-50%); font-weight: 700; color: var(--gold); line-height: 1.1;
+           background: linear-gradient(100deg, #e4b85e 0%, #ffe6a8 50%, #e4b85e 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+           text-shadow: none; filter: drop-shadow(0 3px 6px rgba(0,0,0,.55)); }
+  #body  { left: 0; right: 0; top: 45%; text-align: center; font-weight: 700; line-height: 1.55; }
+  #body .line { position: absolute; left: 0; right: 0; }
+  #body .inner { display: inline-block; white-space: nowrap; }
+  #body .w { display: inline-block; }
+  #handle { left: 50%; top: 59.4%; transform: translateX(-50%); font-weight: 400; direction: ltr; letter-spacing: .02em; opacity: .92; }
+  #hint { position: absolute; left: 12px; bottom: 12px; font: 12px/1.4 system-ui, sans-serif; color: #9a8a7a; direction: ltr; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bokeh"></div>
+  <div id="title" class="layer">الجمعة</div>
+  <div id="date" class="layer"><span class="big">22</span>.08.2025</div>
+  <div id="gold" class="layer">ليلة جمعة مبـــاركة</div>
+  <div id="body" class="layer"></div>
+  <div id="handle" class="layer">@your.handle</div>
+  <div id="hint">KOSIF Jumuah demo · seek-driven · 1080×1920 · 15.5 s</div>
+</div>
+<script>
+(() => {
+  const DURATION = 15.5, FPS = 30;
+  const stage = document.getElementById('stage');
+  const W = () => stage.clientWidth, H = () => stage.clientHeight;
+  // Measured on the 576×1024 reference: widths as fractions of the frame width.
+  const FIT = { title: 0.323, date: 0.474, gold: 0.502, body: 0.682 };
+  // Scene plan: each entry is [start, end, lines]; words of the common Friday prayer, not copied media.
+  const SCENES = [
+    [0.0, 1.7, ['اللَّهُمَّ في ليلة الجمعة']],
+    [1.7, 5.6, ['اللهم صل وسلم وبارك على', 'نبينا محمد ﷺ']],
+    [5.6, 7.0, ['صلاة تغفر بها ذنوبنا']],
+    [7.0, 8.5, ['وتهدي بها قلوبنـــا']],
+    [8.5, 10.3, ['وتفرج بها همومنا']],
+    [10.3, 11.6, ['وتصلح بها أعمالنـــا']],
+    [11.6, 14.0, ['وترزقنا ببركتها دعوة مستجابة لنا']],
+    [14.0, 15.5, ['اللَّهُمَّ آمين 🤲']],
+  ];
+  const IN = 0.45, OUT = 0.30, STAGGER = 0.06;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const easeOutCubic = x => 1 - Math.pow(1 - x, 3);
+  const easeInCubic = x => x * x * x;
+  // seeded pseudo-random (mulberry32) so every render is identical
+  const rng = (seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; })(20250822);
+
+  // bokeh field
+  const bokeh = [];
+  const bokehRoot = document.getElementById('bokeh');
+  for (let i = 0; i < 7; i++) {
+    const el = document.createElement('div'); el.className = 'bokeh';
+    const size = 14 + rng() * 22; el.style.width = el.style.height = size + '%';
+    bokehRoot.appendChild(el);
+    bokeh.push({ el, x: rng() * 100, y: 55 + rng() * 45, dx: (rng() - .5) * 6, dy: -(2 + rng() * 4), phase: rng() * 6.28 });
+  }
+
+  // body lines
+  const body = document.getElementById('body');
+  const scenes = SCENES.map(([start, end, lines]) => {
+    const els = lines.map((text, li) => {
+      const line = document.createElement('div'); line.className = 'line';
+      line.style.top = (li * 1.55) + 'em';
+      const inner = document.createElement('span'); inner.className = 'inner';
+      text.split(' ').forEach((word, wi) => {
+        const w = document.createElement('span'); w.className = 'w'; w.textContent = word; inner.appendChild(w);
+        if (wi < text.split(' ').length - 1) inner.appendChild(document.createTextNode(' '));
+      });
+      line.appendChild(inner);
+      body.appendChild(line); return line;
+    });
+    return { start, end, els };
+  });
+
+  function fitWidth(el, fraction, measure = el) {
+    // scale el's font-size until the ink run (measure) spans the target fraction of the stage width
+    const target = W() * fraction;
+    let size = parseFloat(getComputedStyle(el).fontSize) || 40;
+    for (let i = 0; i < 3; i++) {
+      el.style.fontSize = size + 'px';
+      const w = measure.getBoundingClientRect().width;
+      if (!w) break;
+      size = size * target / w;
+    }
+    el.style.fontSize = size + 'px';
+    return size;
+  }
+  function layout() {
+    fitWidth(document.getElementById('title'), FIT.title);
+    fitWidth(document.getElementById('date'), FIT.date);
+    fitWidth(document.getElementById('gold'), FIT.gold);
+    // body size comes from the widest reference line, then applies to every scene
+    const probe = scenes[1].els[0];
+    scenes.forEach(s => s.els.forEach(e => { e.style.opacity = 1; }));
+    const size = fitWidth(probe, FIT.body, probe.querySelector('.inner'));
+    body.style.fontSize = size + 'px';
+    scenes.forEach(s => s.els.forEach(e => { e.style.fontSize = ''; }));
+    document.getElementById('handle').style.fontSize = (H() * 0.0165) + 'px';
+  }
+
+  function seek(t) {
+    t = clamp(t, 0, DURATION);
+    // backdrop
+    bokeh.forEach(b => { const x = b.x + b.dx * t, y = b.y + b.dy * t; const s = 1 + 0.08 * Math.sin(t * 0.7 + b.phase);
+      b.el.style.transform = `translate(${x}vw, ${y}vh) scale(${s})`; });
+    // title: enter 0–0.6 s, then breathe
+    const title = document.getElementById('title');
+    const ti = easeOutCubic(clamp(t / 0.6, 0, 1));
+    title.style.opacity = ti;
+    title.style.transform = `scale(${0.96 + 0.04 * ti + 0.01 * Math.sin(2 * Math.PI * t / 6)})`;
+    // date: ".08.2025" first, the big 22 drops in
+    const date = document.getElementById('date');
+    const di = easeOutCubic(clamp((t - 0.2) / 0.6, 0, 1));
+    date.style.opacity = di;
+    date.querySelector('.big').style.transform = `translateY(${(1 - easeOutCubic(clamp((t - 0.45) / 0.7, 0, 1))) * 0.9}em)`;
+    // gold: fade in then a slow shimmer sweep
+    const gold = document.getElementById('gold');
+    const gi = easeOutCubic(clamp((t - 0.5) / 0.6, 0, 1));
+    gold.style.opacity = gi;
+    gold.style.backgroundPosition = `${100 - ((t * 18) % 200)}% 0`;
+    gold.style.transform = `translateX(-50%) translateY(${(1 - gi) * 0.4}em)`;
+    // body scenes
+    scenes.forEach(s => {
+      const active = t >= s.start - 0.01 && t < s.end + OUT;
+      s.els.forEach((line, li) => {
+        if (!active) { line.style.opacity = 0; return; }
+        const words = line.querySelectorAll('.w');
+        const outP = t > s.end ? easeInCubic(clamp((t - s.end) / OUT, 0, 1)) : 0;
+        line.style.opacity = 1;
+        words.forEach((w, wi) => {
+          const inP = easeOutCubic(clamp((t - s.start - li * 0.12 - wi * STAGGER) / IN, 0, 1));
+          const op = inP * (1 - outP);
+          w.style.opacity = op;
+          w.style.transform = `translateY(${(1 - inP) * 0.35 - outP * 0.2}em)`;
+        });
+      });
+    });
+    const handle = document.getElementById('handle');
+    handle.style.opacity = 0.92 * easeOutCubic(clamp((t - 0.8) / 0.6, 0, 1));
+  }
+
+  window.__kosif = { duration: DURATION, fps: FPS, seek: t => { seek(t); } };
+  window.__kosifReady = document.fonts.ready.then(() => { layout(); seek(0); });
+  window.addEventListener('resize', () => { layout(); });
+  if (!navigator.webdriver) {
+    // live preview outside the renderer
+    window.__kosifReady.then(() => {
+      const t0 = performance.now();
+      (function loop() { seek(((performance.now() - t0) / 1000) % DURATION); requestAnimationFrame(loop); })();
+    });
+  }
+})();
+</script>
+</body>
+</html>

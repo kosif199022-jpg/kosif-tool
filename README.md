@@ -76,6 +76,7 @@ A Claude-readable atlas of motion-graphics styles with a static website, origina
 | `tools/` | `kosif.py` CLI, `render_html.cjs` (Playwright + ffmpeg), `words_convert.py` (SRT/VTT/Whisper → words.json), `verify_video.py` (delivery gate with loudness), `sync_catalog.py`, `import_briefs.py`, `build.py`, `validate.py`, `check_originality.py`. |
 | `tests/` | Python `unittest` and Node `node:test` suites run by CI. |
 | `.claude/skills/kosif-superpowers/` | Claude Code skill: twelve production superpowers (observe, animate, render, space, draw, data, voice, arabic, captions, generate, orchestrate, design) backed by a credited catalog of 100 major open-source repositories, a tool `doctor`, and a permitted-reference fetcher that measures duration, cuts and palette. |
+| `fonts/kosif-jumuah/` | KOSIF Jumuah, an OFL type family matched to the Friday-greeting reference (Amiri Arabic with stacked ligatures + Bodoni Moda figures), with the reproducible build script, a seek-driven demo and the match report. |
 
 ### Quick start
 

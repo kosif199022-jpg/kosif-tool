@@ -50,7 +50,7 @@ Reading order for a newcomer: `AGENTS.md` → `tools/kosif.py` (Atlas, scaffold)
 | `draw` | الرسم | SVG/Canvas drawing, sketchy looks, draw-on strokes, creative coding | p5.js, Rough.js, Paper.js, Fabric.js, Excalidraw | [capabilities.md#draw](references/capabilities.md#draw) |
 | `data` | البيانات | charts, maps, diagrams, data-driven motion | D3, ECharts, Vega, Plotly, MapLibre, Mermaid | [capabilities.md#data](references/capabilities.md#data) |
 | `voice` | الصوت | word timestamps, forced alignment, TTS, beat and loudness analysis | faster-whisper / WhisperX (install first), librosa, `tools/words_convert.py` | [capabilities.md#voice](references/capabilities.md#voice) |
-| `arabic` | النص العربي | RTL shaping, bidi, fonts, diacritics, Arabic NLP | HarfBuzz (browsers, harfbuzzjs), arabic-reshaper + python-bidi, Google Fonts (Noto, Amiri, Cairo) | [capabilities.md#arabic](references/capabilities.md#arabic), `playbooks/arabic-typography.md` |
+| `arabic` | النص العربي | RTL shaping, bidi, fonts, diacritics, Arabic NLP | HarfBuzz (browsers, harfbuzzjs), arabic-reshaper + python-bidi, Google Fonts (Noto, Amiri, Cairo); font matching with `scripts/render_text.cjs` and the `fonts/kosif-jumuah` kit | [capabilities.md#arabic](references/capabilities.md#arabic), [font-matching.md](references/font-matching.md), `playbooks/arabic-typography.md` |
 | `captions` | الترجمات | subtitle formats, word-timing conversion, karaoke captions | `tools/words_convert.py`, pysubs2, ffsubsync | [capabilities.md#captions](references/capabilities.md#captions) |
 | `generate` | التوليد | AI images, video, 3D, talking heads, voices as original assets | ComfyUI / diffusers pipelines run elsewhere; weights licenses checked | [capabilities.md#generate](references/capabilities.md#generate) |
 | `orchestrate` | التنسيق | Claude Code skills, subagents, worktrees, MCP, browser automation for QA | process checklist below; Playwright MCP, chrome-devtools-mcp | [capabilities.md#orchestrate](references/capabilities.md#orchestrate) |
@@ -92,8 +92,10 @@ Every repository in the catalog carries: GitHub URL, stars, license and a licens
 | `references/repos.md` | the catalog rendered as tables (generated — run `scripts/superpowers.py build`) |
 | `references/capabilities.md` | one section per superpower: what it adds, decision table, recipes, pitfalls, playbooks extended |
 | `references/reference-inspection.md` | the observe superpower in depth: permission, three routes to the media, what to measure, limits |
+| `references/font-matching.md` | identify a reference's typeface, render open candidates, decide by signatures, assemble a matched OFL family (worked example: `fonts/kosif-jumuah/`) |
 | `scripts/superpowers.py` | `list · search · show · doctor · stats · build · check` |
 | `scripts/fetch_reference.py` | page / direct / HLS → `reference.mp4` + probe, contact sheet, cuts, palette, report |
+| `scripts/render_text.cjs` | render text in candidate fonts through Chromium for side-by-side font matching |
 | `../../../tests/test_superpowers.py` | tests for all of the above (run with `npm test` or `python3 -m unittest tests.test_superpowers`) |
 
 ## 7. Commands — الأوامر

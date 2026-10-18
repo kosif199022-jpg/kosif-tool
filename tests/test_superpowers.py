@@ -23,8 +23,10 @@ SKILL_FILES = (
     "references/capabilities.md",
     "references/repos.md",
     "references/reference-inspection.md",
+    "references/font-matching.md",
     "scripts/superpowers.py",
     "scripts/fetch_reference.py",
+    "scripts/render_text.cjs",
 )
 
 
