@@ -42,7 +42,7 @@ def route(intent):
         return {"status":"not_an_rea_target","verified":False,
                 "instruction":"Use ordinary source search, KOSIF motion/typography tools or ask for artifact type"}
     profile=FAMILIES[family]
-    return {"status":"route_only_not_executed","family":family,**profile,
+    return {**profile,"availability":profile["status"],"status":"route_only_not_executed","family":family,
             "requires":["authorized target","compatible installed REA version","exposed current CLI or MCP tool"],
             "verified":False,"executed":False,"provider_version":"unknown"}
 
