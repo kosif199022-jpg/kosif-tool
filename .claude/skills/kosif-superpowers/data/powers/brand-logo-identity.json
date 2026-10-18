@@ -9,6 +9,7 @@
   "how": "Brief block: Brand, ONE THING, For, Surface, Personality (3–5 adjectives), Must / Must-not feel, colour constraints; confirm before sketching. Mark type: wordmark for short phonetic names, lettermark for long names, combination mark as default for new products, pictorial/abstract only with recognition budget. Concept operators (one, max two): monogram + meaning, product action, metaphor fusion, negative space, construction geometry. Anti-slop constraints: positive (\"identifiable in one flat colour\", \"reads at 16 px\", mark works without wordmark), negative (\"no gradient mesh\", \"no swoosh/globe\", \"avoid default SaaS blue\"), reference-anchored (\"like X’s restraint but warmer\"); generate many, human curates — the curated vector is the deliverable. Three radical SVG directions, readable at 24 px, no gradients in the mono version.",
   "params": "3–5 adjectives · 16–24 px test · ≤2 operators",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1567-tonone/4425-form-logo",
@@ -37,6 +38,10 @@
   "how": "Map adjectives to fonts: technical → Geist / Space Grotesk; warm → Nunito Sans / Rubik / Manrope; authority → IBM Plex Sans / Public Sans; pair each with an Arabic face (IBM Plex Sans Arabic, Tajawal, Cairo, Readex Pro — ARAB-11). Sharp vs rounded shape language sets radii; light/dark from one sentence about where it is watched. HyperFrames design ask has three states: use the user’s frame.md/design.md, open 2–3 preset showcases so they pick by eye, or let the design step decide.",
   "params": "≤4 questions · 2–3 presets shown",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3454-brand-landingpage/14160-brand-landingpage/references/interview-framework.md",
@@ -63,6 +68,9 @@
   "how": "Derive values from real tokens and record each source; keep one constants module (CSS :root or JS config) consumed by every composition; compare exports side by side for drift (colour, type, timing, loudness). KOSIF identity gate: claude-animation-studio new_scene.py writes a mandatory DESIGN.md (3–5 role colours, Arabic + Latin font, motion rules, do-not list; default bg #0F1A2B, ink #F4F7FF, accent #F6C76B, second #2B86E0). Brand kit pages: cover, square post, story, card + brand.md + tokens.json.",
   "params": "roles bg / surface / text / accent",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/221-video-brand-system/SKILL.md",
@@ -91,6 +99,10 @@
   "how": "Author W3C DTCG JSON ($value/$type); for video, a theme.json passed as Remotion props or read by GSAP scenes re-brands every scene ({brandA, brandB} × {light, dark} = 4 semantic maps). Typography tokens: --font-display, --font-text, --scale-ratio, --lh-display. Style Dictionary transforms to CSS vars (npm i -D style-dictionary).",
   "params": "brands × modes",
   "install": "",
+  "requires": [
+   "npm:gsap",
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2278-design-systems-engineering/8697-design-token-architecture",
@@ -117,6 +129,10 @@
   "how": "Open frame-presets/<name>/frame-showcase.html in Chromium, adopt FRAME.md as frame.md (resolution order frame.md → design.md → DESIGN.md). Presets: Biennale Yellow (paper #E9E5DB, sun #F1EE2E, ink #1B2566, ember #E26B4A; Instrument Serif + Archivo), BlockFrame (neo-brutalist 4 px black borders, #FFFDF5, pink #FE90E8, blue #C0F7FE), Blue Professional (#fdfae7, cobalt #1e2bfa; Space Grotesk + Inter), Bold Poster (Shrikhand + Libre Baskerville, red #D8000F), Broadside (fire-orange #E85D26 on cream #F0ECE5), Capsule (Bodoni Moda, coral #E85D4E, lime #C4D94E, grain), Cartesian (warm stone #EDE8E0, Playfair), Cobalt Grid (ink #1F2BE0 on #F0EBDE), Code Editorial (cream #FAF9F5, coral #CC785…), Coral (#E85D5D, Bebas Neue, 45° hatch), Creative Mode (cream #EFE9D9, four accents), Daisy Days (Fredoka, 3 px outlines, 6/4 px hard shadows), Editorial Forest (green #2e4a2a, pink #e89cb1). Swap the Latin display face for an Arabic partner. Remix tokens onto a preset with `node scripts/build-frame.mjs --preset <name> --hyperframes .` (tested upstream; needs npm install).",
   "params": "14 presets · type in cqw",
   "install": "",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0 (HyperFrames).",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/frame-presets/biennale-yellow/FRAME.md",
@@ -145,6 +161,9 @@
   "how": "Build as a living HTML hub reading the token file, not a static PDF; colours in HEX/RGB/OKLCH with WCAG pairs. Voice: 3–5 attributes, tone-shift rules, do/don’t-say, glossary, messaging hierarchy; brand archetype aligns palette temperature, type, music and VO tone.",
   "params": "10 parts · 3–5 voice attributes",
   "install": "",
+  "requires": [
+   "npm:axe"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2248-brand-identity-studio/8557-brand-book-assembly",
@@ -170,6 +189,9 @@
   "how": "Prefer OFL faces (Google Fonts, Noto, Cairo, Tajawal, IBM Plex Sans Arabic, Amiri — proofs/_shared/fonts are OFL); list licences in the project credits; keep a curation-and-authorship log next to the project.",
   "params": "",
   "install": "",
+  "requires": [
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2248-brand-identity-studio/8558-brand-legal-and-licensing",
@@ -197,6 +219,9 @@
   "how": "launch.to_hex: \"#abc\" → #aabbcc, \"rgb(255 0 0 / 50%)\" → #ff0000, \"hsl(120,100%,50%)\" → #00ff00, \"oklch(100% 0 0)\" → #ffffff, \"oklch(0.5 0 0)\" → #636363, invalid → None; launch.init(site, \"polished\", \"vertical\", 18, out) → material.json {palette, fonts, ctas, lang} + brag-plan.md (1080×1920, «ما هو، في جملة واحدة؟») — tested here (test_launch.Material). Live pages: Playwright getComputedStyle over all elements → radii (≥9999 = pill), shadows grouped by blur into elevation levels, transition durations micro/normal/macro, breakpoints 1440 → 768 → 390; full-height screenshots at 1920×1080 with ~30% overlap; summarise 5–7 colours, fonts, sections, CTAs and a vibe sentence. Use as mood input — never clone a brand you do not own.",
   "params": "oklch → hex · 5–7 colours · 30% overlap",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:22",
@@ -225,6 +250,9 @@
   "how": "BRAND.importFiles: JSZip 3.10.1, logo by name /logo|شعار|mark|icon|brand/ or first SVG; fonts by extension, weight guessed from the file name (black/heavy 900, extrabold 800, bold 700, semibold 600, medium 500, light/thin 300, variable \"100 900\"); BRAND.fromText finds #hex near primary/accent/background/text keywords (Arabic too) and 24 known fonts; PDFs via pdf.js (12 pages). colorsFromImage: 64×64 sample, skip alpha <128, near-black and near-grey, 4096 buckets weighted 1+2×saturation, distinct colours (L1 > 90), accent fallback = primary lightened 45%, bg #0d0d10 or primary×0.15. Watermark at (0.84, 0.07) width 16% on 9:16 or (0.9, 0.1) 12% otherwise, opacity 0.88; end card \"brandend\" 2.6 s when duration > 6 s (logo 34% pop, name, accent tagline, handle at 0.35/0.6/0.85 s). Free picture layers: pop/rise/fade/float, wheel resize ×1.06.",
   "params": "end card 2.6 s · watermark 0.88",
   "install": "cd app && npm install",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "app/public/js/10_studio.js:2632",
@@ -252,6 +280,10 @@
   "how": "`npx hyperframes media-use resolve --type logo --intent \"stripe\" --project .` (needs network providers). Use real marks only with permission and never as if the user owns them; in Fastify profiles only a user-owned wordmark may appear.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/media-use/references/resolve.md",
@@ -277,6 +309,10 @@
   "how": "figma/SKILL.md routing: five phases (assets, tokens, components, Motion via MCP → GSAP, shaders); a SECTION of frames reads as motion states; separate scoped credentials for REST and MCP. Canva MCP is catalogued only (proprietary).",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:gsap",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/figma/SKILL.md",
@@ -302,6 +338,10 @@
   "how": "Outline fonts to paths for wordmarks (fonttools is a pip install; opentype.js an npm install); preserveAspectRatio xMidYMid; acid test: identifiable in flat black-and-white; 32 px legibility; clear space in mark units (e.g. cap height); do/don’t gallery (stretch, recolour, respace, drop shadow). Deterministic generator idea (brand-forge): wordmark, rounded-square monogram and 64×64 favicon SVG from palette + heading font — a short template here. Arabic wordmarks: shape with HarfBuzz/browser first, then outline (never per-letter paths from an unshaped font).",
   "params": "32 px test · favicon 64×64",
   "install": "",
+  "requires": [
+   "node",
+   "pip:fonttools"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1567-tonone/4425-form-logo",
@@ -329,6 +369,9 @@
   "how": "vectorize.trace(path) → {layers[{color, name, area, centre, polys[{hole, pts}]}], silhouette}; CLI `python vectorize.py img` or `studio.py --trace img`; up 8× cubic, simplify 0.85 px, grow 2 px, ≤16 colours, merge distance 30. Verified here: aghnam_logo.png → 8 exact layers. vector_scene.build() turns the trace into a sign-painter reveal (radial backdrop #3d3648 → #121016, shadow offset 12 / alpha .45 / blur 18, largest layer first, each growing from its centroid; test_scenes_and_loading passed). If you only need a wrapper, embed the PNG in an SVG <image> (not real vectorisation); Potrace only for monochrome marks.",
   "params": "up 8× · simplify 0.85 · ≤16 colours",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/vectorize.py:1",
@@ -357,6 +400,10 @@
   "how": "26-family catalogue (Lucide, Phosphor, Tabler, Radix 15×15, Carbon 16/20/24/32, Heroicons, Iconoir, Remix, Fluent…) — local SVG, no icon fonts, verify each licence. Owner recipes (tested: earth identity_unity 5/5, brand_art 5/5): app icon = radialGradient cx .28 cy .18 r 1.05 (#3a2f27 → #1d1814 → #110e0b), rx 112, inset white sheen .16 → 0 at mid-height, mark scale 1.4; `python3 tools/brand/make_marks.py` writes the SVGs and rasterises 192/512/180 with headless Chromium. Audit-studio sprite: 29 stroke symbols via <use href=\"#i-…\">, stroke currentColor 1.8. Kawaii icon set (observed): thick 4 px outline, two dot eyes, small smile, one palette.",
   "params": "32 · 180 · 192 · 512 (safe 409) · stroke 1.8",
   "install": "",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/art/sqc-icon.svg",
@@ -385,6 +432,7 @@
   "how": "SQC (viewBox 300×110): S stroke 19, hex Q 150,16 183,35 183,73 150,92 117,73 117,35 with facets stroke 5 at .55, audit tick M164 80 l13 13 28-33 stroke 17, C arc, 12 px diamond at 45°; ledger gradient #f6c39b → #f2732d → #a53e07. K favicon 32 px: rect rx 8 #2F1B68, white K stroke 3, teal dot r3 #2EA6A6. Studio app icon 512: gradient #6366f1 → #8b5cf6 → #ec4899, emerald check badge r54. Ram emblem: horn strokes 50/34 px, browns #5b3519/#7a4a24/#9a6632 on #f4ead8. Cloud: viewBox 96×64, stroke 6.5, #f2a36b → #d9530e. Ornament 28×14 diamond + dots. Wordmarks: KOSIF EARTH in Montserrat 800 tracked .09em with amber #e8bd76.",
   "params": "SQC stroke 19 · icon rx 112",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/art/sqc-mark.svg",
@@ -413,6 +461,9 @@
   "how": "Upload 3–10 on-brand references as a style, generate SVG, overlay the exact brand hex afterwards, animate strokes/morphs. Prompt template: minimal modern logo mark for [brand], [symbol idea], flat vector, [2 HEX], balanced negative space, centred on white, no extra text — generators garble text, so wordmarks are set in real type. Painted covers: use a real frame as the reference (1600×900, <400 KB) and describe what is on screen, not the title.",
   "params": "3–10 style refs · 2 HEX",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2306-generative-web-media/8850-brand-conditioned-generation",
@@ -439,6 +490,7 @@
   "how": "Easing tokens luxe cubic-bezier(.16,1,.3,1), glide (.65,0,.35,1), settle (.22,1.2,.36,1). Gold ramp #4a3110 #8a6424 #c9a24a #e8cf8a #fff4d6, champagne #f3e6c4; metal gradient 180° with stops at 0/16/40/56/68/86/100%. Logotype = glow (#c9a24a blur 26 px .42) + engraved edge (#4a3110 +4 px) + background-clip gold + shine copy through a 105° mask (main streak ±9%, follower .55). Timing: emblem draws 4.0–5.6 s, word reveals 4.9–6.25 s RTL with blur 10 → 0, shimmer 6.45–7.65 s then 8.85–9.75 s at 55%, tagline word by word from 7.0 s every 0.17 s. Glass: backdrop blur 22 px saturate 150%, radius 30 px. Rendered here 1920×1080 30 fps, 13/13 checks, −14.0 LUFS. Arabic never tracked — only the Latin NAFEES tightens 1.1em → 0.55em.",
   "params": "10 s · 13/13 · luxe/glide/settle",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/glass-luxury-logo/README.md",
@@ -467,6 +519,9 @@
   "how": "Template (tested): `python3 scripts/mtemplates.py new NAME --template logo-reveal --set name=… --set tagline=… --set path=\"M…\"` → pen draws the path (viewBox 120×136, default hexagon-in-hexagon) in 1.25 s, fill springs at 1.5 s with flash and sparkles, name + tagline reveal, slow push; 6 s, accent #E7B65A, bg #0f1a2b → #06101c. MG-021: draw 0–2 s, fill 2–2.6 s, hold to 4 s via stroke-dasharray/dashoffset + crossfade to the filled copy; simplify the reveal path for complex marks. Canvas starter closing card: spring 160/17 up 120 px, scale .94 → 1, monogram path dashoffset inOutCubic 0.4–1.2 s. Observed: chevrons draw ~1.5 s then fill 300 ms with glow; draw 700 ms + radial bloom fill; cyan ring 700 ms / 14 px / glow 30 px around a black disc.",
   "params": "draw 1.25–2 s · fill 0.3–0.6 s",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/motion/logo-reveal.html",
@@ -500,6 +555,7 @@
   "how": "MG-022: prep 0–0.6, assemble 0.6–1.8, hold to 3 s, respect proportions. MG-025: grid 0–1, travel 1–2.8, merge 2.8–4 s — sample targets with SVGPathElement.getPointAtLength. Dot-to-logo: drop 0–400 ms ease-in quad, squash 400–480, spring 10/220 to 800, morph 800–1500, wordmark 1500–1900 ease-out quint. Crowd-to-logo: drift 1.5 s, gather 1.2 s, crossfade 300 ms. Observed: 4 rounded tiles scale in 100 ms apart and one recolours; isometric extruded tiles (12 px) assemble in 600 ms back-out; pixel squares then mono typing. Morph: resample paths to 64–128 points, 500–800 ms.",
   "params": "MG-022 3 s · MG-025 4 s · morph 64–128 pts",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-brand-identity.md",
@@ -531,6 +587,7 @@
   "how": "MG-023 shadow: floor 0–1, pass 1–2.8, hold to 4 s (masks + inner shadow + fake gradient light — say it is a 2D simulation). MG-030 fog: 0–1 fog, 1–3 reveal, hold to 5 s; SVG feTurbulence mask; don’t let glow erase contrast. MG-024 stamp: drop 0–0.6, print 0.6–1, hold to 2.5 s with a grunge luma matte; keep a clean version for small sizes. Seal stamp after the last verse: red square #c0302a, scale 1.2 → 1 in 150 ms, multiply. MG-027 negative space: shapes approach 0–1.4, hole forms 1.4–2, hold to 3 s via SVG mask with the logo as hole; test light and dark versions.",
   "params": "2.5–5 s each · stamp 150 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-brand-identity.md",
@@ -561,6 +618,7 @@
   "how": "Shift 400 ms + mask 500–600 ms easeOutExpo; for Arabic the mark slides right and the word reveals right-to-left (mirror the Latin recipe). Variants: wordmark container max-width 0 → auto pushes the icon (spring damping ~12, unfold 0.5 s) with a giant faint backdrop word at 6–8%; asterisk mark spins in then slides (~1.5 s ease-out cubic); covers converge to centre and scale down behind the growing icon (800 ms, lockup gap 0.3em).",
   "params": "shift 400 ms · mask 500–600 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-gabrielbuzziv-4ff0c6",
@@ -598,6 +656,7 @@
   "how": "fromTo letterSpacing 0.22em → −0.03em, opacity .4 → 1, blur 8 → 0 px in 0.8 s E.out; dot tween to its slot, scale .42; camera push 1 → 1.045 over 2.6 s; 132 px/700 wordmark, 44 px subline. Arabic companions must reveal by mask instead — never animate letter-spacing on Arabic (ARAB-03); in the luxury proof only NAFEES tracks while «نفيس» masks.",
   "params": "0.22em → −0.03em · 0.8 s · push 1.045",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:133",
@@ -624,6 +683,7 @@
   "how": "Orbit r ≈ 216 px (≈1.2× icon), squares 92 px, lock in ~14 frames (~0.5 s), icon shrinks ease-out, then squares slide into a row; colours blue/cyan/mint/white. Spark burst: icon spins in, 40 radial lines shoot out and fade in 400 ms. Asterisk: 12 spokes (6 px, coral #f04a35) scale from 0 with 25–35 ms stagger backOut inside a thin circle. Ring pulse: icon spring 0 → 1 with an expanding ring fading. Orbit decoration: ellipse orbit + satellite dots; text on a circle path rotating around the logo.",
   "params": "orbit 216 px · lock ~0.5 s · 40 lines / 400 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-notdwd-7de38a",
@@ -661,6 +721,7 @@
   "how": "Slot: 3 reels, stop stagger 250 ms, ease-out with a tiny overshoot. Horizon: line scaleX 0 → 1, glow arc above (GLOW), logo slides up from behind it.",
   "params": "3 reels · 250 ms stagger",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-spearwtf-3c1fd1",
@@ -689,6 +750,10 @@
   "how": "`npx hyperframes add logo-sting | wordmark-tiles | extruded-logo | logo-outro | yt-logo-intro | logo-brand-close`; music template logo-split-lockup-pulse (2–4 s; >4.5 s reads stretched) grows a centre lockup per onset. wordmark-tiles columns 12 (8–14), wave stagger 40 ms; extruded-logo Three.js bevelled letters (chrome/gold/matte), 5 s; logo-outro 6 s with glow bloom + URL pill. Blueprint logo-assemble-lockup 4.4–11 s; category logo-reveal 3–5 s often as alpha overlay (FMT alpha). Latin defaults — feed Arabic as whole shaped words.",
   "params": "sting · tiles 40 ms · outro 6 s",
   "install": "npm i -D hyperframes@0.8.164",
+  "requires": [
+   "npm:three",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0 registry; GSAP inside uses its standard licence.",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/logo-sting/logo-sting.html",
@@ -717,6 +782,9 @@
   "how": "Card spring damping 14 stiffness 90 mass 1.1; ring progress(8, 40, inOutCubic); mark spring from frame 18 damping 11 stiffness 160; text progress(34, 18); card 760 px radius 48, paper@.06 bg, paper@.12 border, mark stroke 34.",
   "params": "spring 14/90 · ring frames 8–48",
   "install": "cd kosif-tool/starters/remotion && npm install",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "Remotion company licence for teams above its free tier.",
   "proof": [
    "kosif-tool/starters/remotion/src/Film.tsx:449"
@@ -740,6 +808,7 @@
   "how": "In the thermal-finger-trail shader replace the blob with texture2D(textTex, fuv); render the Arabic word to a CanvasTexture first (ARAB-10).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md"
@@ -764,6 +833,7 @@
   "how": "Sizes (observed): icon 100 px, name 60 px, tagline 30 px, stagger 120–200 ms fade-up, hold 3–6 s, fade 500–600 ms; URL pill white/black with arrow and soft shadow 0 12 24 rgba(0,0,0,.15); row of outline chips or 3 value props separated by dots; blurred/darkened last scene behind; glowing app icon with purple radial glow (~40% width) on black; scrolling column of real preview tiles on the right (~60 px/s). Keep everything inside safe margins and one action only.",
   "params": "stagger 120–200 ms · hold 3–6 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-alex-prompter-1ea044",
@@ -804,6 +874,7 @@
   "how": "Cursor path 500–600 ms easeOut, click scale 0.96 for 120 ms, ripple 0 → 60 px radius in 400 ms; CTA can pulse twice before the end freeze; never pretend a fake button is tappable in ads (FMT). Blueprint cta-morph-press: a resting mark condenses into a brighter CTA and a human-aimed click lands (4–6 s).",
   "params": "cursor 500–600 ms · 0.96 / 120 ms · ripple 400 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-0xfemyn-e114d3",
@@ -838,6 +909,7 @@
   "how": "Dot = x-height × 0.45, scale 0 → 1.2 → 1 in 180–250 ms, 1–2 frames after the word lands; drop variant: stretched while falling 400 ms, squash 0.7 on impact, 2 bounces between two thin rules; red #e0262b with orbit ring; glow radius 300 px α .35 behind; kinetic cuts every 0.5 s always ending in a yellow square stop. For Arabic place the dot at the visual end on the left of the word and do not attach it inside the shaped run.",
   "params": "dot 0.45 x-height · 180–250 ms · squash 0.7",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-jhylee95-e1152f",
@@ -877,6 +949,9 @@
   "how": "Version gradient #1f7bf2 → #7b5cf5, fade/scale 500 ms; accent rule draws 400 ms under the number; \"OUT NOW\" tracked 0.2em (Latin); terminal box types at 40 ms/char, cursor blink 500 ms; minimal glyph + product name + small grey \"Out now\" typed, hold 2 s while music fades on a dB curve.",
   "params": "type 40 ms/char · blink 500 ms · rule 400 ms",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "style:pm-ddryo-loos-300829",
@@ -910,6 +985,7 @@
   "how": "Type 40 ms/char (Arabic name: reveal per word, ARAB-29), pills stagger 60 ms; chrome card: extended uppercase name with vertical metallic gradient, role line between hairlines, italic serif tagline with one accent word fading per word 120 ms; handle lock-up: vertical accent bar left of the handle, letters rise 60 ms stagger, underline wipes 400 ms; pendulum dot swinging to rest (~1.5 s damping) while the name types.",
   "params": "pills 60 ms · per word 120 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-blushpetal795-0c85c2",
@@ -943,6 +1019,7 @@
   "how": "theme.endcard appended when i == n−1 and brand is set; the wordmark sits in a top-centre strip and the end card; every prompt states \"no logos/watermarks\" otherwise — no fake logos, no AI-added labels. Tested (production-profiles 10/10 here).",
   "params": "17 end cards · last clip only",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:4-20,115",
@@ -969,6 +1046,9 @@
   "how": "`npx hyperframes add cta-close | cta-lockup | social-proof-card | testimonial-card | testimonial-proof-card | trust-strip`; overrides via data-variable-values; extra duration becomes hold, never time-stretch. Use only real quotes, ratings and partner logos the user can show; observed alternatives: two rows of example cards drifting opposite (20 px/s, 10% edge fade) with a grey logo marquee; three marquee rows, centre bright, edges dim.",
   "params": "one overshoot · then stillness",
   "install": "npm i -D hyperframes@0.8.164",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0 registry; GSAP inside uses its standard licence.",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/cta-close/cta-close.html",
@@ -999,6 +1079,7 @@
   "how": "Inset 4% each side; mono 11–12 px @1080p uppercase tracked 0.15em (Latin); only the centre content changes. verse.js V.brand: 26×k px weight 600, tracking .32em (Latin), #F7EBD0, line 70×k px rgba(231,182,90,.9), opacity .92. HUD brand bar (structural twin): 76 px frosted bar, 2 px border rgba(157,255,180,.28), radius 26, glowing 18 px lime dot, two-tone wordmark, pill flag. Arabic chrome: right-aligned, no tracking.",
   "params": "inset 4% · signature at 0.4 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-elliot-garreffa-f334bc",
@@ -1027,6 +1108,9 @@
   "how": "five_sec: radial gold gradient; \"KOSIF Motion\" Space Grotesk 150 px/700; «نسخة ٥٫٢» Cairo 78 px/800; revealWords at 4.15 s (0.6 s, stagger .06) and 4.35 s. Progression brief: 4 px line → pills → 100% in the last 2 s.",
   "params": "iris → flood · reveal 0.6 s / .06",
   "install": "",
+  "requires": [
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:84",
@@ -1052,6 +1136,10 @@
   "how": "`python3 scripts/kmotion.py template list`; `template new NAME --template logo-reveal --set title=… --set accent=#E7B65A`; every template generates and lints (tested here). Pass the brand tokens as --set values so all eight share one palette (ARAB-49).",
   "params": "8 templates · accent #E7B65A",
   "install": "",
+  "requires": [
+   "python3",
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/mtemplates.py:35",
@@ -1079,6 +1167,9 @@
   "how": "2×2 for 16:9/1:1, vertical stack for 9:16; each cell its own clock; avoid simultaneous flashes; check first/last frame of each clip for blanks. Case-study variant: each case gets its own full-frame palette. Designed sleeves: flat colour squares with bold 2-line uppercase title and a motif (rings or bars).",
   "params": "2×2 / stacked",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/213-brand-grid-video",
@@ -1108,6 +1199,7 @@
   "how": "8 params × 6 values = 1,679,616 combinations (caption the total), row stagger 120 ms; build in SVG with the generator function so the shown cells really produce the mark.",
   "params": "8 × 6 · 120 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-fionntobin-97b7af"
@@ -1134,6 +1226,7 @@
   "how": "Neo-brutalist: 3 px black border, hard shadow 6px 6px 0 #111, pastel fills pink #f47fe0, cyan #c8f8f8, green #9bf08a, yellow #f0cf4a, radius 0–6 px. Seal: ~24-point star rim, inner circle with number + label, rotate −30° → 0, wobble ±3°. Pill: rounded-full outline, 11–13 px 700 tracked (Latin), 1 px border, pulsing red dot. Date banner: 4 bars ~6 px each scaleX 0 → 1 in 300 ms then label, width 88%. Title band: crimson #cd002f rotated −12°, slams in 150 ms. Logo card spring k=200 d=14, later shrinks to 0.6 in 500 ms for re-layout.",
   "params": "shadow 6/6/0 · seal ±3° · band 150 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-0xnfrith-5be616",
@@ -1170,6 +1263,7 @@
   "how": "Glow: hard cut to black, text-shadow 0 0 30px rgba(255,255,255,.5) + subtle radial lift, hold ~2 s. Gradient: teal → yellow over residual particles. Per-letter colour (Latin): 60 ms stagger, primitives bob 6 px / 2 s — for Arabic colour per word, never per letter. Giant footer word bleeding off the bottom, sliding up. Serif + heavy tracked sans pairing (tracking 0.3em on Latin labels only). Spaced-caps title on black, 0.5em tracking, per-letter fade 60 ms, hold 6–8 s (Latin only).",
   "params": "glow 30 px · stagger 60 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-notdwd-c2037d",
@@ -1207,6 +1301,9 @@
   "how": "`python studio.py ad_whole_sheep`; badge #a8c13a/#ffffff/#e3161d, headline #f6e3b6 → #c49c5c, pill #ead6b0 → #cfb085, table #2a1010, band #c91a1f; helpers rrect(), badge(), meat(), lines(); coordinates remapped by P()/M(). Text shaped by Pillow RAQM here.",
   "params": "headline gold #f6e3b6 → #c49c5c",
   "install": "",
+  "requires": [
+   "pip:pillow"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/scenes/ad_whole_sheep.py:1",
@@ -1233,6 +1330,9 @@
   "how": "paper #fbf8f3/#161310, paper-2 #f3ece2/#1f1b17, card #fffdf9/#1c1814, ink #1d1814/#f5ede3, ink-2 #4b4139, ink-3 #7b6f64, rule #e0d5c8, accent #d9530e/#f2732d, good #2c7a4b. Manifest title-card canvas (pure in t): bg #11171b, accent radial glow at (.28w, .25h) r .8w, faint grid every unit/12, three slowly rotating accent ellipses, rising Arabic title, mono \"KOSIF / MOTION\" mark, scene counter.",
   "params": "accent #d9530e · bg #11171b",
   "install": "",
+  "requires": [
+   "pip:faster-whisper"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-web/docs/04-design-system.md",

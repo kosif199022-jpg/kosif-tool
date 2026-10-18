@@ -1,0 +1,25 @@
+{
+ "_note": "Code layer captured from the Graphify MCP index of kosif199022-jpg/kosif-tool. Refresh: in a session with the Graphify connector, call graph_stats, graphify_file_neighbors on the files below and graphify_rank_files with the question, then update this file. scripts/capability_graph.py merges it with a local AST pass, which stays authoritative for files newer than the index.",
+ "source": "graphify MCP",
+ "repository": "kosif199022-jpg/kosif-tool",
+ "commit": "3a9224b",
+ "indexed_at": "2026-10-18T12:38:45Z",
+ "graph": {"nodes": 6156, "edges": 5598, "communities": 2944},
+ "file_edges": [
+  {"from": "scripts/build_chapters.py", "to": "scripts/powers.py", "rel": "imports", "conf": 1.0},
+  {"from": "scripts/check_skill.py", "to": "scripts/powers.py", "rel": "imports", "conf": 1.0},
+  {"from": "scripts/check_skill.py", "to": "scripts/build_chapters.py", "rel": "imports", "conf": 1.0},
+  {"from": "evals/test_source_scout.py", "to": "scripts/powers.py", "rel": "indirect_call", "conf": 0.85},
+  {"from": "scripts/python_package_probe.py", "to": "scripts/check_skill.py", "rel": "indirect_call", "conf": 0.85}
+ ],
+ "symbols": {"scripts/powers.py": 48, "scripts/check_skill.py": 32, "scripts/capability_runtime_router.py": 7},
+ "executors_question": "Which scripts in the kosif-superpowers skill execute capabilities (render, analyse video, audio, reverse engineering, mimic) rather than only describing them?",
+ "executors_ranked": [
+  {"file": "scripts/mimic/mm_video.py", "score": 2.70, "top": ["FrameWriter", ".read_or_last()"]},
+  {"file": "scripts/mimic/mm_render_text.py", "score": 1.95, "top": ["render_line()", "render_line_ass()"]},
+  {"file": "scripts/mimic/synthetic/make_reference.py", "score": 1.58, "top": ["render_clips()"]},
+  {"file": "scripts/motion_kit_bridge.py", "score": 1.21, "top": ["demo_timings()"]},
+  {"file": "scripts/motion_director.py", "score": 1.19, "top": ["compile_spec()"]},
+  {"file": "scripts/mimic/mm_build.py", "score": 0.65, "top": [".close()"]}
+ ]
+}

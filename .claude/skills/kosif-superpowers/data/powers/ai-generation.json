@@ -11,6 +11,7 @@
   "how": "Layers: Location · Subject · Wardrobe/materials · Lighting (source + direction + Kelvin) · Camera (body, lens, f-stop, size, move) · Atmosphere (physics: haze, dust, steam) · Technical (aspect, fps, resolution). One-line order: `[STYLE], [COMPOSITION RULE], [CAMERA+LENS+f-stop], [LIGHTING+Kelvin+direction], [SUBJECT texture], [WARDROBE fabric], [ENVIRONMENT layers], [ATMOSPHERE physics], mood: [EMOTION] --ar X:Y`. Example light: soft window key camera-left 3800K, fill −2 stops, cool rim behind; camera: Alexa Mini LF 50 mm f/1.4, eye level, MCU, slow push-in. Kelvin anchors: 1900K lantern, 3200K tungsten, 4100K moonlight, 6500K day.",
   "params": "7 layers; 3200K/3800K/6500K; 35mm anamorphic, 50mm f/1.4, 85mm portrait; 24/60 fps; 9:16|16:9",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/seven-layer-anatomy.md",
@@ -40,6 +41,9 @@
   "how": "Never open with 'a photo of'. Delete 4K/8K/masterpiece/ultra-detailed/award-winning/trending/best quality/beautiful/hyperrealistic — they add noise, not quality. Replace with physical cues: volumetric light, subsurface scattering, chiaroscuro, Rembrandt triangle, anamorphic flare, film grain, atmospheric perspective, tungsten practicals. Coherent style tokens (soft watercolor, line-art, isometric 3D, flat 2D, vintage scientific illustration) keep a set together. Locks must be reused verbatim — a paraphrase is flagged. Ran here: `prompt_forge.py` returned `missing ['lens','style']: prompts will be weaker` for a spec without them.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:75",
@@ -69,6 +73,9 @@
   "how": "Baseline negatives (SDXL, Kling negative_prompt): blurry, deformed hands, extra fingers, watermark, text overlay, low quality, bad anatomy, floating objects, duplicate limbs, disfigured, cropped, jpeg artifacts + scene anachronisms. For Gemini/Flux/Runway rewrite positively: 'no blur'→'tack-sharp focus', 'no people'→'empty, deserted', 'no text'→'clean, text-free surfaces'. Runway inverts or ignores negatives — the forge strips them. Flux has no negative field; Wan keeps negatives short.",
   "params": "Flux negative ≈ no effect; SDXL long negatives OK; Runway: none",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/seven-layer-anatomy.md",
@@ -96,6 +103,7 @@
   "how": "40–80 words, 5–8 distinct descriptors; state the aspect ratio twice (in the text and in the API parameter); append brand palette words for campaign work.",
   "params": "40–80 words; 5–8 descriptors; ratio ×2",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1446-marketing-skills/3504-image",
@@ -121,6 +129,9 @@
   "how": "1–3 short paragraphs; name body/lens/stock when photographic (85 mm f/1.4, Kodak Portra 400); weight ≈ Subject 30 % · Style 25 % · Context 15 %; end with 'ultra-realistic, high resolution' instead of tag stuffing.",
   "params": "30/25/15 %",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen"
@@ -145,6 +156,9 @@
   "how": "ChatGPT/GPT-image: natural sentences, constraints first, ratio in words. Midjourney V7: params at end `--ar 16:9 --style raw --s 150 --v 7 --no text,watermark`; character ref `--oref URL --ow 100` (`--cref/--cw` are V6 only), `--sref URL`, `--stylize 50–250`, `--seed N` for a series; no official API → hand the user the prompt and import the chosen still back. Flux: prose, no negative field, guidance 3–4. SDXL: comma tags, `(term:1.2)` weights, separate negative, ~1 MP canvas. Ideogram: exact on-image text first, in quotes. Translation: `--ar`→aspect parameter; drop `--v/--style raw`; `--chaos 50`→'unexpected, surreal composition'; `(word:1.5)`→'prominently featuring word'; delete '8K, masterpiece'; keep camera names.",
   "params": "MJ --s 150–250, --ow 100; Flux guidance 3–4; SDXL ~1 MP",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/prompt-library.md",
@@ -175,6 +189,9 @@
   "how": "50–100 words (Runway best <100). Always state the camera move or 'static' — it is the parameter that changes results most and is most often forgotten. One scene per clip, never a scene change inside a clip, never request on-screen text. Generate 3–4 variations, then iterate on the best. Most-used camera words: wide, close-up, low angle, tracking, handheld, slow motion, establishing, crane, pan, dutch, bird's-eye, dolly zoom, rack focus; 2.35:1 reads as cinema.",
   "params": "50–100 words; 1 camera move; 3–4 variations; shot 5–10 s",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/video-prompt-director/SKILL.md:23",
@@ -203,6 +220,9 @@
   "how": "Append exactly `No music score. No subtitles or on-screen text.` to every segment prompt; if a reference image contains signage add 'Only the text that exists in @Image1 itself'; do not list ambient sounds. Kling/Seedance: prefer generate_audio false and add sound in post (Kling audio ≈ 5× credits).",
   "params": "",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
@@ -229,6 +249,9 @@
   "how": "Plan cuts, not continuity; keep 1–2 subjects; compose text in the edit; build long pieces as a montage of 4–15 s clips; no subject that must stay identical across >3 shots without reference-to-video.",
   "params": "clips 4–15 s",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2976-pwdev-social-media/12594-video-gen",
@@ -254,6 +277,11 @@
   "how": "`echo '<spec json>' | python3 -I kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py` (or MCP `kosif_prompt_forge`). Spec keys: mode, subject, action, environment, time, shot, angle, lens, lighting, palette, style, quality[], aspect, negative[], text, locks{}, camera_move, duration, motion, fps, dialogue, audio, platforms[]. Output keys: prompts, warnings, variations {subtle, dramatic, technical}, quality_rubric, next. SDXL canvas map 1:1 1024², 16:9 1344×768, 9:16 768×1344, 4:5 896×1152, 3:2 1216×832, 2.39:1 1536×640; SDXL CFG 5–7, 30–40 steps. Ran here on 2026-10-16 with a 9-platform video spec: valid JSON, per-platform notes, warnings returned.",
   "params": "9 platforms; variations subtle/dramatic/technical; SDXL CFG 5–7, 30–40 steps",
   "install": "",
+  "requires": [
+   "python3",
+   "key:openai",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:97",
@@ -281,6 +309,10 @@
   "how": "Veo: separate 'Audio:' sentence for ambience/SFX, dialogue as `Character says: \"…\"` (no subtitles), 4/6/8 s clips, last frame → next first frame. Runway Gen-4: one action per shot, sequential 'X, then Y', positive phrasing only, ≤ ~300 words, start from an approved keyframe, ≤3 refs, 2–10 s. Kling: start/end frames + motion brush, 5–10 s, negative prompt allowed. Sora: one continuous shot, plausible physics, 4/8/12 s, prompt ≤4000 chars. Printed in the `notes` field when the forge ran here.",
   "params": "Veo 4/6/8 s; Kling 5–10 s; Runway 2–10 s ≤3 refs; Sora 4/8/12 s",
   "install": "",
+  "requires": [
+   "key:openai",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:183",
@@ -309,6 +341,10 @@
   "how": "`python3 100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py spec.json --out prompts.md`; required: subject, environment, shot, lighting, style, aspect. Builders: MJ comma core + `--ar --s 200 --v 7 --no …`; Flux prose + 'Avoid:' clause; SDXL `(subject:1.3)` + JSON {steps 30, cfg 6.0, 1344×768 for 16:9, 768×1344 for 9:16, 896×1120 for 4:5}; ChatGPT 'Create one single image. Aspect ratio X. Do not include …' first; Ideogram quoted text first + `--ar` (best route for in-image text, still overlay Arabic yourself); NanoBanana 'Generate a single photorealistic-quality image… Exclude: …'. Ran here: all six blocks emitted, lint `PASS`.",
   "params": "MJ --s 200 --v 7; SDXL 30 steps cfg 6.0; 12 MJ aspects",
   "install": "",
+  "requires": [
+   "python3",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:77",
@@ -338,6 +374,11 @@
   "how": "`python3 100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py shots.json --platforms veo,sora,kling,runway,luma,pika,hailuo`. Limits: Veo 8, Sora 20, Kling 10, Runway 10, Luma 9, Pika 10, Hailuo 10 s. Lint: BLOCK on named real people, REVISE when no character/style lock, flags >1 camera word per shot. Put `aspect` and `fps` at the TOP level of shots.json (ran here: a per-shot aspect was ignored and 16:9 was used; a 12 s shot was clamped to 8 s for Veo).",
   "params": "max s: veo 8, sora 20, kling 10, runway 10, luma 9, pika 10, hailuo 10; fps 24 default",
   "install": "",
+  "requires": [
+   "python3",
+   "key:openai",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:23",
@@ -367,6 +408,11 @@
   "how": "`python3 scripts/kmotion.py aiprompts SHOTS.json|reel.json|PROJECT --out ai-video-prompts.json`; `aiprompts.build(shots, title)` → shots[{layers, prompts{veo,sora,kling,runway}, warnings}]; Runway ≤1000 chars, Kling ≤2500 + negative_prompt; warning when lighting lacks direction or Kelvin; variations subtle/dramatic/technical; rubric 5×20. Example lock: 'photoreal 35mm film look, cool 4100K moonlight vs warm 1900K lantern'. Ran here: `AIPromptTests.test_seven_layers_per_platform` OK.",
   "params": "Runway ≤1000 chars; Kling ≤2500; rubric 5×20",
   "install": "",
+  "requires": [
+   "python3",
+   "key:openai",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/aiprompts.py:21",
@@ -395,6 +441,9 @@
   "how": "1) `python3 scripts/kmotion.py analyze VIDEO --out NAME.breakdown [--transcribe]` (beats from cuts/dissolves/entrances, per-beat hex, energy, LUFS/BPM, 3 stills per beat, brief.json; `--batch` → library.json/csv). 2) Fill the brief (you or the user). 3) `kmotion omniprompt brief.json [--overrides changes.json] [--markdown b.md]` → one block STYLE / SPECS / TIMELINE / ADD / BRAND MARK / TYPOGRAPHY LOCK / SOUND / FINAL FRAME / EXCLUDE, ≥1080 short side, compressed to 10 s (×0.83 for 12 s); overrides {palette:{old:new}, aspect, duration, tone, add[], remove[]}; refuses to remove what scenes are built on; an unfilled brief exits. Ran here: `Breakdown.test_omniprompt` OK (11.7 s).",
   "params": "10 s native; ≥1080 short side; ×0.83 for 12 s",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omniprompt.py",
@@ -423,6 +472,9 @@
   "how": "`prompt_compiler.compile_prompt(scene)` → {prompt, negative_prompt, scene_digest, scene_spec}; 11 required fields: subject, environment, action, camera, lighting, color_grade, materials, atmosphere_vfx, composition_story, negative_constraints, aspect_ratio (W:H). Digest = sha256 over sorted compact JSON. Ran here: `prompt_compiler_self_test.py` → PASS.",
   "params": "11 fields; sha256(sorted compact JSON)",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-image-studio/scripts/prompt_compiler.py",
@@ -449,6 +501,7 @@
   "how": "In spec.json: `locks.character` appended to the subject, `locks.style` to the style, `locks.location` at the end. One canonical sentence per character (age, skin, hair, glasses, garment fabric), never paraphrased. Both forges emit it; the video forge flags REVISE when no lock exists.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/image-prompt-forge/SKILL.md:22",
@@ -476,6 +529,9 @@
   "how": "`cd fastify-motion-bro && npm run profile -- list | start <mode> | answer <mode> <text|JSON> | status | reset | clean-plate kinetic-flow <n>`; state in projects/profiles/<mode>/session.json; on completion writes prompts.txt + artifacts.json (schema fmb.profile.v1). Ran here: `node --test tests/viral-editorial.test.mjs tests/production-profiles.test.mjs tests/production-cli.test.mjs` → 19/19 pass.",
   "params": "schema fmb.profile.v1; 7 modes",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/profiles-cli.mjs:1-40",
@@ -503,6 +559,9 @@
   "how": "Each is started with `npm run profile -- start <mode>` and answered stage by stage; outputs are prompts, never media (see the honesty rule). | | mode | first answer | output | numbers | |---|---|---|---| | stickman | `{\"image\":\"no\",\"background\":\"paper\",\"genre\":4,\"direction\":\"coffee shop\"}` | 5 × (IMAGE PROMPT + Flow MOTION PROMPT) | 7 s each = 35 s; wide → medium → OTS ¾ → low → close-up; clip 5 very slow push-in | | fitness | `Chest` (or 1–10) | 5 image-to-video prompts, one gym bay, one coach line each | 5 × 6 s = 30 s; breath/equipment SFX | | car-exploded | `Toyota` → `Corolla` → `{\"year\":\"2024\",\"trim\":\"LE\",\"color\":\"white\"}` | exactly 3: hero still, exploded still, animation | 3 prompts | | vox-history | `6` → topic → `10` | N × 10 s archival-collage prompts, flagged needsFactCheck | N 5–120; phases origins / first signal / people / turning point / public response / legacy | | food-flow | `2` → `4` | N × 10 s single-action prompts, locked scene, synced foley, tasting shot last | N × 10 s + join order |",
   "params": "",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/profiles/stickman.mjs:19-55",
@@ -534,6 +593,10 @@
   "how": "`npm run profile -- start kinetic-flow`; `answer kinetic-flow '{\"theme\":\"C\",\"ratio\":\"9:16\",\"length\":10,\"brand\":\"\",\"pace\":\"fast\",\"audio\":\"none\"}'`; `answer kinetic-flow '<script>'`. Then `clean-plate kinetic-flow <n>` rewrites clip n to forbid all on-screen text/wordmarks and returns {order, words, hero, masked reveal} so you set the exact (Arabic) words in HTML/Remotion over the plate.",
   "params": "clip 8 s (Veo) / 10 s (Flow); 9:16|16:9|1:1; audio none|sfx",
   "install": "",
+  "requires": [
+   "npm:remotion",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:85-120",
@@ -561,6 +624,7 @@
   "how": "`makePosters(state)` after palette lock: fine grid, two background lines, exactly one 3D-looking hero cutout with halftone edge, ≤2 vector accents (starburst + dotted orbit), 1–4 word type pairing bold sans + italic serif, 10 % side margin, 80/20 colour. `makeMotionPrompts(state)`: style, backgroundMotion, timeline{base, entrance, hold, exit}, camera 4 % push, easeOutCubic with 7 % overshoot, 0.6° wobble, SFX cues, music=false, voiceover=false.",
   "params": "9:16; 6 s; 4 % push; 7 % overshoot; 0.6° wobble; 80/20",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/viral-editorial.mjs:52-57",
@@ -588,6 +652,7 @@
   "how": "`ultra_animator new …` writes ai_prompts.json with style_lock + shots[].veo2_prompt / sora_prompt / kling_prompt / runway_gen3_prompt at 0–30 % shot times; then refine with kosif_prompt_forge and lint with kosif_image_prompt_lint. Replace the seed lock's '8k, octane render' hype words before use (iron rules).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/ultra_animator.py:119",
@@ -613,6 +678,11 @@
   "how": "`python3 kosif-studio/motion/proplan.py --task 'prompt for veo …'` → inserts 'model_prompt_with_continuity' locking speaker identity, font family, palette and direction of motion.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "key:openai",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/proplan.py:37",
@@ -638,6 +708,9 @@
   "how": "Formula `<role> <context> <task> <inputs> <constraints> <output_format> <edge_cases> <quality_bar>`; lint via `python3 kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/llm_prompt_lint.py` or MCP `kosif_llm_prompt_lint {prompt, kind, contract, untrusted_inputs}` → exit 0/1/3. Companion instruction-only skills: prompt-master-pro (blind-spot questions before a motion job), structured-output-json, system-prompt-architect, prompt-architect-reasoning-models.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/llm_prompt_lint.py",
@@ -666,6 +739,10 @@
   "how": "Shots: orbit dive, Giza solar mirrors, Nile train, Cairo lotus tower, Alexandria Pharos; 9:16, 30 fps; lenses 24/35/28/24/35 mm; durations 3/4/4/4/3 s; palette gold / warm white / cyan on near-black; negatives: text artifacts, logos, watermarks, real people, distorted pyramids, dystopia, smog, flags. Kling gets an explicit negative; Runway none; Veo notes last-frame chaining.",
   "params": "5 shots; 9:16 30 fps; 3/4/4/4/3 s",
   "install": "",
+  "requires": [
+   "key:video-gen",
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-one/projects/egypt-2120-animation/ai-video-prompts.json",
@@ -691,6 +768,7 @@
   "how": "Pick one look, paste its descriptor into the style layer, then lock it (style lock). Describe traits, never a living artist's name. The library names more looks than it defines: Steampunk, Pixel Art, Low/High-poly 3D, Minimalist, Abstract, Pop Art, Fantasy, Sci-Fi, Romantic, Experimental, isometric, film look, photorealistic editorial — write their lock yourself. | | look | descriptor core | |---|---| | Cinematic Masterpiece | ARRI Alexa 65, anamorphic flare, grain, ACES | | Photorealistic | RAW, sharp, subsurface scattering, Hasselblad | | Anime | Ghibli-like watercolour backgrounds, cel shading | | 3D Render | Pixar-like stylised 3D, AO, GI | | Dark Fantasy | gothic, volumetric fog, chiaroscuro | | Product Commercial | hyper-real studio product | | Cyberpunk Neon | neon, holograms, rain reflections, teal + magenta | | Film Noir | B&W, venetian blinds, smoke, 1940s | | Vintage Film | Portra-400 grain, warm, light leak | | Watercolour | wet-on-wet, bleeding edges, paper | | Surrealism | impossible physics, melting | | Documentary | photojournalistic, available light | | Baroque Oil | Rembrandt chiaroscuro, impasto | | Gothic Horror | candlelight, fog, stone | | Symmetric pastel (Wes-Anderson-like) | symmetry, pastel, centred | | Solarpunk | living architecture, bioluminescence | | Claymation | stop-motion, fingerprints | | Comic Book | outlines, halftone | | Vaporwave / Synthwave | pink-purple-cyan, glitch, 80s | | Ukiyo-e | woodblock, flat planes |",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/visual-catalog.md",
@@ -720,6 +798,7 @@
   "how": "Prefix every still prompt with the preamble; inject `[BG_HEX]` and `[PALETTE]`; always end with a 'no text' tail. | | preamble | core words | |---|---| | clay diorama | isometric low-poly floating island, matte clay, tilt-shift, soft contact shadow | | flat papercraft | layered cardstock, die-cut | | glossy toy | vinyl toy, rim light | | claymation | plasticine thumbprints, softbox | | photoreal architectural | golden hour, magazine-interior look, full-bleed, no knockout |",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT (vendor scroll-world)",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md:33"
@@ -745,6 +824,7 @@
   "how": "Write style-lock.txt (traits, not studio/artist names; per-style negatives) → feed as `locks.style` to image_prompt_forge; test on 2 different subjects; if both hold, freeze it.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/ai-art-style-library/SKILL.md:21"
@@ -768,6 +848,7 @@
   "how": "Cinema: ARRI Alexa 65 / RED V-Raptor, Cooke S7/i or anamorphic primes, Kodak Vision3 500T/250D. Product: polished marble or gradient sweep, 100 mm macro, softbox + strip rims, 45° hero or flat lay, focus-stacked 1:1. Portrait: 85/105/135 mm, f/1.4–f/5.6, Rembrandt, 4:5. Food: overhead window light, 50 mm, 4:5. Landscape: 16 mm, leading lines, foreground/mid/background layers, blue or golden hour, haze, 16:9. Bodies: Alexa 65/Mini LF, RED V-Raptor/Komodo, Venice 2, IMAX 70 mm, Hasselblad X2D, URSA 12K, Ronin 4D, iPhone/Pixel Pro, GoPro/FPV, VHS.",
   "params": "85mm f/1.4; 100mm macro; 16mm; Vision3 500T",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen",
@@ -796,6 +877,7 @@
   "how": "Looks: teal & orange, desaturated cold, warm vintage, high-contrast noir. Stocks: Kodak Vision3 500T (tungsten night), Vision3 250D (daylight), Fuji Eterna Vivid, Kodak Portra. Packs — Cinematic: cinematic grading, anamorphic flare, shallow DOF, film grain, 35 mm. Documentary: handheld, natural light, candid. Commercial: clean even light, bright and airy. Social: vertical 9:16, high contrast, saturated. Then grade the result for real in post (COLOR family) — prompt words only get you close.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/347-legends-seo-dungeon/1261-seo-image-gen/references/prompt-engineering.md",
@@ -823,6 +905,9 @@
   "how": "Lower cfg for realism (model freedom), higher for strongly stylised looks. | | style | keywords | cfg_scale | |---|---|---| | photoreal | — | 0.4–0.5 | | cinematic | anamorphic lens, film grain, 35mm | 0.5–0.6 | | neon cyberpunk | neon, rain reflections | 0.5–0.6 | | anime | cel-shaded, clean lines | 0.6–0.7 | | vintage 8 mm | light leaks | 0.6–0.7 | | watercolor / oil | wet edges / impasto | 0.7–0.8 | | pixel art | 16-bit limited palette | 0.8–0.9 |",
   "params": "cfg 0.4–0.9",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1874-klingai-pack/6087-klingai-style-transfer"
@@ -847,6 +932,10 @@
   "how": "Measure first, then: الخلاصة، التكوين، الكاميرا، الإضاءة، الألوان، العناصر، الجودة التقنية، مؤشرات التوليد، الدرجات /10، الإصلاحات، برومبت إعادة الإنشاء (lint it). Commands /compare, /ocr (Arabic RTL, [؟] for unreadable), /critique, /reverse, /score. No face identification. Automated captioners (Florence-2 PromptGen, WD14, BLIP) need ComfyUI; Ideogram describe returns a structured JSON prompt. Only on images the user owns or may use.",
   "params": "",
   "install": "",
+  "requires": [
+   "tesseract",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-vision/SKILL.md",
@@ -874,6 +963,10 @@
   "how": "Format routing: SVG 1200×800 viewBox drawn back-to-front with no filters; PIL for raster textures; Three.js page with a `render(t)` contract (three@0.170.0 from cdn.jsdelivr.net). Sticker: 512×512, thick white outline, 2–4 palette colours, no text. SVG background: full-frame viewBox, dark ground dominant, ≤3 gradients, calm empty centre. Always sanitise: strip script, foreignObject, image, iframe, a, style, animate, set, on* attributes, external href/url() and javascript:. Studio extract_code pulls the runnable block from a reply.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:pillow",
+   "npm:three"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/studio.py:55",
@@ -902,6 +995,10 @@
   "how": "`studio.extract_code(text)`: regex over fenced blocks; falls back to stripping lone fences; bare code returned as is. Ran here directly: prose + ```python block → 'import io\\nx=1'. (Its unittest file also imports cv2: `pip install opencv-python-headless` to run the full suite.)",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium",
+   "pip:opencv"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/studio.py:156",
@@ -927,6 +1024,9 @@
   "how": "`python3 kosif-studio/ai_bridge.py [prompt]`; settings.json backend auto|cli|api|none; prompts ≥28 000 chars go via stdin; CLI readiness cached 10 min; defaults model <mid-tier Claude model>, max_tokens 8000, timeout 240 s. Edit flow (Ctrl+E): reply must contain IMAGE_B64 and `# EDITS START`; result drawn original-first then edit; Ctrl+Z undo. With backend none it always works (manual package).",
   "params": "≥28000 chars → stdin; 10 min cache; 240 s timeout",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/ai_bridge.py:56",
@@ -954,6 +1054,10 @@
   "how": "`python3 kosif-studio/generate.py \"prompt\" --out out/photo.png --backend local --size 1344x768 --seed 7 [--negative …] [--code]`. Local: 4 steps, guidance 0, dims multiple of 8, ~2 GB weights from huggingface.co (reachable here); CPU only (4 cores, 15 GB RAM) — expect minutes, not seconds. Online backend: model flux, nologo, enhance false, 180 s timeout — pollinations is not in the verified-hosts list, ask before sending any prompt off-machine. `--code` also writes a Python program for the result.",
   "params": "4 steps; guidance 0; ÷8 dims; seed 7",
   "install": "pip install diffusers torch transformers accelerate",
+  "requires": [
+   "pip:torch",
+   "network"
+  ],
   "license": "sd-turbo weights: Stability AI community licence (check commercial terms); Pollinations: service terms",
   "proof": [
    "kosif-studio/generate.py:24",
@@ -983,6 +1087,10 @@
   "how": "REST: `POST https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key=$GEMINI_API_KEY` with responseModalities IMAGE (or TEXT+IMAGE), imageConfig.aspectRatio, imageSize uppercase '512'|'1K'|'2K'|'4K'; decode base64 inlineData to PNG; ≤5 reference images as extra parts. Models: gemini-3.1-flash-image (default), gemini-2.5-flash-image (fixed 1K), gemini-3-pro-image. App route (basma): Claude first rewrites the request through an image formula and the film LOOK (doodle = thick friendly outlines, flat pastel; chalkboard = white chalk on dark green; product = dramatic studio light, glossy); sticker vs photo prompt; always 'no text/watermark'.",
   "params": "14 ratios incl. 1:8, 8:1, 21:9; ~$0.02/0.04/0.08/0.16 per 512/1K/2K/4K; free ≈10 RPM",
   "install": "pip install google-genai (optional SDK)",
+  "requires": [
+   "python3",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1481-llm-tools/3666-gemini-image",
@@ -1011,6 +1119,9 @@
   "how": "Label refs @Image1…(≈5 in the API, up to 14 in the app); prompt only the change: 'Edit @Image1: change pose to …; keep face, hair, lighting'; 2K default, 4K for fine product text. Recipes: decade re-style, multi-image composite, character sheet from one image (same person from back/left/right), 'retain the look' style ref, staging 'retain structure and composition', outfit swap, storyboard marker style. Forge v4 marks version-sensitive syntax unverified unless the provider is confirmed current.",
   "params": "image ≈12 credits vs clip 250–500",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
@@ -1038,6 +1149,10 @@
   "how": "`client.images.generate(model, prompt, width, height, steps, seed)` with TOGETHER_API_KEY; sizes 1024², 1344×768, 768×1344, 1248×832, 1184×864; schnell 4 steps; guidance 3.5 default (1–5 creative, 8–10 faithful). Kontext: model black-forest-labs/FLUX.1-kontext-pro (or -max), image_url = previous result, 'replace the car colour with blue', 28 steps; save both versions. FLUX.2 dev: ≤2 image_loras at scale 0.3–1.2 + reference_images. Cost = MP × price/MP × steps/default.",
   "params": "schnell 4 steps; Kontext 28; LoRA ≤2 @0.3–1.2",
   "install": "pip install together",
+  "requires": [
+   "python3",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3214-togetherai-skills/13594-together-images"
@@ -1063,6 +1178,10 @@
   "how": "GPT Image (gpt-image-1/2) via OpenAI Images API (OPENAI_API_KEY) or Codex `image_gen`; transparent background for icons; quality high when text is requested; may rewrite prompts. Ideogram V4: multipart POST https://api.ideogram.ai/v1/ideogram-v4/generate (or /async + poll), header Api-Key; JSON prompting disables magic prompt; check is_image_safe; download at once (URLs expire). Tools: mask edit, remix, describe → structured JSON (boxes 0–1000 [y_min,x_min,y_max,x_max]), bg remove/replace, reframe, upscale, text layerization; inputs ≤25 MB. Arabic: still overlay real type yourself.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:openai",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1446-marketing-skills/3504-image",
@@ -1091,6 +1210,9 @@
   "how": "`subscribe('marketing-studio/image', {prompt: shot + STYLE, aspect_ratio: '9:16', resolution: '2k'})` or 'higgsfield-ai/soul/v2/standard' for a credential check; ThreadPoolExecutor(6); skip files that exist; save sources.json URL map. CLI alt: `higgsfield generate create gpt_image_2 --aspect_ratio 3:2 --resolution 2k --quality high --wait` (3–8 min each; run detached). HF_KEY='key-id:key-secret' in .env.local (gitignored).",
   "params": "9:16 2k; 6 workers; 3–8 min/still",
   "install": "pip install higgsfield-client python-dotenv",
+  "requires": [
+   "pip:higgsfield"
+  ],
   "license": "",
   "proof": [
    "kosif-one/projects/higgsfield/image.py",
@@ -1118,6 +1240,9 @@
   "how": "Gold identity: ground #0B1F3A, metal #C9A227, 'luxury annual report' mood. Ice variant: 'ice-blue brushed metal and faceted clear crystal on a deep cobalt-night background #0B1030, cool cyan rim light #19C3D9'. Suffix: 'No text, no letters, no numbers, no logos, no people'. Higgsfield Image 2.0, quality high, 2k; post: hflip for RTL space, WebP q80 (1600 w heroes, 720×480 sectors, 1200 audit, 900 cover). Measured spend: ~$0.21/image fixed ratio, 15 images + 2 clips = $3.79.",
   "params": "#0B1F3A / #C9A227; ice #0B1030 / #19C3D9; WebP q80",
   "install": "",
+  "requires": [
+   "pip:higgsfield"
+  ],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md",
@@ -1145,6 +1270,9 @@
   "how": "Shared STYLE suffix: editorial cinematic photography, shallow depth of field, anamorphic look, grain, empty upper/lower thirds, no text, letters, logos or watermark. Example set of six plates (s1_question … s6_paths) at 9:16 2k. Then place type in the empty third with the ARAB/TYPE families.",
   "params": "6 plates; 9:16 2k",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-one/projects/whatsapp-motion/gen_images.py:19-37",
@@ -1170,6 +1298,11 @@
   "how": "Icons: generate_icon.py via Codex image_gen, OpenAI Images or a flux-schnell host, --size 1024; theme {palette, stroke weight, style/negative tokens}; fallback near-white threshold or rembg. Sprites: image-edit API from the seed frame; prompt invariants: same character, facing, palette, silhouette, transparent bg, exact frame count; then Pillow normalise to one shared scale and a bottom-centre anchor.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:pillow",
+   "pip:rembg",
+   "key:openai"
+  ],
   "license": "icons skill BSD-3-Clause; sprite skills MIT",
   "proof": [
    "kosif-atlas/skills/2657-figures/10115-transparent-icons",
@@ -1197,6 +1330,10 @@
   "how": "Local here: `rembg i in.png out.png` for cut-outs → parallax layers; reframing without generation = blurred-background pad in ffmpeg. External: Adobe image_generative_expand into tall (9:16/4:5) and wide (2:1/16:9) masters then crop each platform (preview 1:1, 4:5, wide first); Cloudinary URL effects e_background_removal, b_gen_fill, e_gen_replace, e_gen_remove, e_gen_background_replace (seed_), e_upscale (credit costs 230/120/100/75/50 tx); FLUX.2 Pro Outpaint; realesrgan-ncnn-vulkan ×4 (not installed).",
   "params": "",
   "install": "pip install rembg",
+  "requires": [
+   "ffmpeg",
+   "pip:rembg"
+  ],
   "license": "rembg MIT; model weights per their cards",
   "proof": [
    "kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing",
@@ -1225,6 +1362,9 @@
   "how": "Text in image: Ideogram 3/4 → Gemini → GPT Image. Set consistency: Flux multi-reference, Nano Banana Pro, Recraft. Edit existing: Gemini, Flux Kontext, ChatGPT Images. Vector/SVG: Recraft V3/V4 (or draw it yourself). Max aesthetics: Flux 1.1 Pro, Midjourney v7 (manual). Volume: Flux Schnell, Gemini Flash, self-hosted SD. Never FLUX.1-dev on client work (non-commercial weights).",
   "params": "",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1446-marketing-skills/3504-image",
@@ -1252,6 +1392,7 @@
   "how": "SD1.5/SDXL: dpmpp_2m + karras, 25 steps, cfg 7–8. Flux: euler + sgm_uniform/simple, ~20 steps, cfg 1–3.5. Krea: euler + simple, 20 steps (8 turbo), cfg 1. Denoise 1.0 txt2img, 0.3–0.7 img2img. Measured (high/mid/low of 20 steps): simple 3/8/9, beta57 3/6/11 (detail finishes), linear_quadratic 17/3/0 (layout exploration). No GPU and no ComfyUI in this container.",
   "params": "SDXL 25 steps cfg 7–8; Flux 20 steps cfg 1–3.5",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
@@ -1278,6 +1419,7 @@
   "how": "LoraLoader between checkpoint and sampler: style 0.6–0.9, concept 0.4–0.6; honour trigger words. ControlNetApplyAdvanced: 0.3–0.5 loose, 0.5–0.8 balanced, 0.8–1.0 strict; start 0.0 / end 0.8 leaves detail free; stack OpenPose+Depth or Canny+Depth (preprocessors Canny, DepthAnything, DWPose, LineArt, Scribble, SoftEdge, Normal, SAM, Tile). Inpaint: white mask = regenerate; VAEEncode + SetLatentNoiseMask, denoise 0.6–0.85; RMBG/SAM nodes for cut-outs; outpaint by padding.",
   "params": "LoRA 0.4–0.9; ControlNet 0.3–1.0 end 0.8; denoise 0.6–0.85",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
@@ -1304,6 +1446,10 @@
   "how": "Quality + audio: Veo 3, Sora 2. Cheap volume: Kling, Seedance. Character consistency: Hailuo/MiniMax, Seedance R2V with references. Self-hosted: Wan 2.x, HunyuanVideo, LTX. Storyboard-to-video: Runway, LTX Studio. Spoken multi-segment UGC: Seedance 2.0 R2V. Drafts: Flux Schnell / Gemini Flash 512 stills, Kling standard, Seedance 480p; finals: Veo/Runway, Kling professional, 1080p. Image-to-video from an approved frame saves credits.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:openai",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1446-marketing-skills/3531-video",
@@ -1331,6 +1477,7 @@
   "how": "image-prompt-forge → curate → I2V with --dur 5 and a vertical ratio like 720:1280. Motion prompt shape: `[subject action], [camera move: static/pan/dolly/orbital], [pace], [duration]` — do not re-describe what the image already shows. Price clips separately from stills; redo off-style keyframes (cents) before clips (dollars).",
   "params": "test clip 5 s; 720:1280",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/video-prompt-director/SKILL.md:24",
@@ -1358,6 +1505,10 @@
   "how": "`higgsfield_client.subscribe('bytedance/seedance-2.5/text-to-video', arguments={prompt, duration, resolution, aspect_ratio, generate_audio}, on_enqueue, on_queue_update)`; status from the last Status class (Queued, InProgress, Completed, Failed, NSFW, Cancelled); offline tests `python test_higgsfield.py`. Real outputs already in the owner repos: earth-intro (Seedance 2.5 I2V, 1280×720, 24 fps, 5.056 s, AAC 32 kHz) and the flag slow-motion insert (6 s, 1080p, 9:16, no audio: low angle, golden sunset over desert and canal, 35 mm grain, warm amber, backlit dust, no text, no people).",
   "params": "5 s 720p 16:9 demo; 6 s 1080p 9:16 reel shot",
   "install": "pip install higgsfield-client python-dotenv",
+  "requires": [
+   "pip:higgsfield",
+   "key:video-gen"
+  ],
   "license": "Higgsfield SDK / service terms; billable",
   "proof": [
    "kosif-studio/main.py:20",
@@ -1386,6 +1537,9 @@
   "how": "`POST https://api.klingai.com/v1/videos/text2video` with a Bearer JWT (HS256 from access/secret key, exp 30 min, regenerate per request); body model_name (kling-v2-6, v2-5-turbo, v2-master, v1-6), prompt ≤2500 chars, negative_prompt, duration as STRING '5'|'10', aspect_ratio, mode standard|professional, cfg_scale 0–1, callback_url; poll until succeed/failed. image2video adds image + image_tail XOR camera_control XOR masks. Kling 3 via fal: 3–15 s, explicit camera verbs. Brand loops: Kling 3.0 Standard T2V 5 s → mirrored, graded, H.264 1280 crf 27 faststart (measured 1280×720, 24 fps, 5.04 s, 2.0 / 0.94 Mbps).",
   "params": "duration '5'|'10'; v2.6 1080p 30–48 fps; 8 ratios",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1874-klingai-pack/6089-klingai-text-to-video",
@@ -1414,6 +1568,9 @@
   "how": "image2video with dynamic_masks [{mask: white-region PNG, trajectories:[{x,y,t} normalised 0–1]}] — ≤6 paths on v2.6 — plus static_mask for regions that must not move. Cannot combine with camera_control or image_tail.",
   "params": "≤6 trajectories; coords 0–1",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1874-klingai-pack/6075-klingai-image-to-video",
@@ -1439,6 +1596,9 @@
   "how": "`POST /v1/videos/video-extend {task_id, prompt (next story beat), duration '5', mode}`; the new task_id feeds the next step. Credits: standard 10/20 for 5/10 s, professional 35/70, with audio 50/100 and 100/200; API ≈ $0.07–0.14/s. Generate 5 s and extend rather than 10 s; add audio in post. Extras: /v1/videos/effects (hug, kiss, heart, expand, squish), /v1/images/kolors (≤2048², 1 credit) → image2video as a cheap style-first route, /v1/videos/lip-sync.",
   "params": "+5 s/step; std 10/20, pro 35/70; audio ×5",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1874-klingai-pack/6092-klingai-video-extension",
@@ -1466,6 +1626,9 @@
   "how": "gen4.5 takes text or image, gen4_turbo needs an image, gen3a_turbo legacy. Server-side secret + X-Runway-Version header; submit, store the task id at once, poll with the SDK wait helper; states PENDING, RUNNING, THROTTLED (queued, not failed), SUCCEEDED, FAILED, CANCELLED. Local media → ephemeral upload → runway:// URI valid 24 h. Model Router dryRun estimates cost. Per-model semaphore below tier (5 concurrent → admit 4, reserve 1); never resubmit after a disconnect — resume from the stored id; pause on 429 daily-quota.",
   "params": "runway:// 24 h; 5 s smoke test",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1900-runway-pack/6659-runway-core-workflow-a",
@@ -1492,6 +1655,10 @@
   "how": "Pass each photo as a separate reference in order; prompt like '@Image2 in @Image3, holds @Image1 toward camera. The person says: \"…\"'; never re-describe what references show (it causes drift). Integer duration 4–15 s; 480p/720p/1080p; 9:16, 16:9, 1:1, 4:3, 3:4, 21:9; native audio on by default (turn off when your own track will play). Hosts: fal, QuickDesign, Higgsfield.",
   "params": "4–15 s integer; ≈40 credits/s at 1080p",
   "install": "",
+  "requires": [
+   "pip:higgsfield",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/259-quickdesign/865-quickdesign",
@@ -1518,6 +1685,10 @@
   "how": "Slice the song to the shot with ffmpeg (48 kHz PCM, whole-second duration); Seedance 2.5 R2V on fal; prompt: style of @Image1, the singer from @Image2 sings @Audio1 with precise lip sync, mouth closed when @Audio1 is silent, static camera, no text, one continuous shot. 480p/720p when a draw-over follows (1080p ≈ 2× cost). Picture-only shots use I2V with generate_audio false. Your master audio stays untouched; the slice is only a reference.",
   "params": "48 kHz slice; integer s; 480–720p",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "key:video-gen"
+  ],
   "license": "Apache-2.0 (skill)",
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video",
@@ -1544,6 +1715,10 @@
   "how": "Render segment 1 → `ffmpeg -i s1.mp4 -vn -acodec libmp3lame -q:a 2 ref.mp3` → pass as --reference-audio (≤3 clips, 2–15 s each, ≤15 MB) to segments 2..N → concat with `-c copy`. Avoid clone + TTS + lipsync chains (length drift, ~2× cost).",
   "params": "ref 2–15 s, ≤3 clips, ≤15 MB",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/259-quickdesign/865-quickdesign"
@@ -1568,6 +1743,10 @@
   "how": "Veo: `POST models/{veo}:predictLongRunning {instances:[{prompt}], parameters:{aspectRatio: '9:16'|'16:9'}}`, poll every 8 s, abort after 8 min or 6 network failures; models veo-3.1-generate-preview, -fast-, -lite-; background mode appends 'slow, calm, loopable, no people, no text'; Veo prose + an 'Audio:' line, 4/6/8 s, ≤2.5 Arabic words/s of speech. Sora 2: 4, 8 or 12 s only, prompt ≤4000 chars, describe subject/setting fully (the image is a hint), fresh voice per call; Together exposes sora-2 / sora-2-pro at 8 s 1280×720.",
   "params": "poll 8 s; timeout 8 min; Veo 4/6/8 s; Sora 4/8/12 s",
   "install": "",
+  "requires": [
+   "key:openai",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "app/public/js/00_editor.js:1935",
@@ -1596,6 +1775,10 @@
   "how": "fal: FAL_KEY (`Authorization: Key …`), queue https://queue.fal.run, price via https://api.fal.ai/v1/models/pricing?endpoint_id=…, upload `@file:` inputs first, hosted MCP search_models / get_model_schema / get_pricing. Together video: seconds, fps 15–60 (24), steps 10–50, guidance 6–10 (avoid >12), negative_prompt, frame_images [{input_image, frame:'first'|'last'}]; Veo 3.0 8 s up to 1920×1080, Hailuo 02 10 s 25 fps. WaveSpeed CLI: `wavespeed models --type …` → `run <model> -h` → `--json`. HF MCP: space_search → dynamic_space(view_parameters) → invoke (bg removal, Whisper, FLUX.1-schnell). Vertex: Gemini video understanding (≈2 h default, 6 h low-res), Imagen 4, Lyria. Download results at once — signed URLs expire.",
   "params": "fps 15–60; steps 10–50; guidance 6–10",
   "install": "pip install fal-client together",
+  "requires": [
+   "pip:faster-whisper",
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video",
@@ -1625,6 +1808,10 @@
   "how": "Chunks ~5 s (Veo 4/6/8): define start state, action, end state, camera move; last frame of n → first frame of n+1 (`ffmpeg -sseof -0.05 -i n.mp4 -frames:v 1 last.png`); repeat locks, light direction and Kelvin; keep the 180° rule, same fps/aspect; cut on motion or hard match; compare adjacent first/last frames (brightness, CCT, framing). Seam-holding models: seedance_2_0 (1080p, dive 8 s, connectors 5 s), kling3_0 (720p, --sound off), seedance_2_0_mini draft 720p; N=6 1080p chain ≈ $27. Photo-to-photo POV walk: real venue photos as first/last frames, MiniMax H3, 8 s 2K → 1080p, no cuts/fades (6 clips ≈ $5).",
   "params": "~5 s chunks; N=6 ≈ $27",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "key:video-gen"
+  ],
   "license": "scroll-world MIT; mcp-higgsfield-landing has no licence — read only, never copy its prompts",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/continuity-protocols.md",
@@ -1654,6 +1841,9 @@
   "how": "Wan (ComfyUI): WanVideoModelLoader → TextEncode/ImageEncode → Sampler → VAEDecode → VHS_VideoCombine; 33–81 frames, 832×480, 20–30 steps, cfg 5–7, shift 5–8, brief negatives. LTX (diffusers): LTXPipeline / LTXImageToVideoPipeline / LTXConditionPipeline (keyframes), 30–50 steps (8–12 distilled), 121 frames @24 fps, enable_vae_tiling >768 px. AnimateDiff (SD1.5): context_length 16, overlap 4, mm_sd_v15_v2, 16 frames @8 fps = 2 s loops. This container has no GPU — diffusers installs, but do not promise a render here.",
   "params": "Wan 832×480 33–81 f; LTX 121 f @24; AnimateDiff 16 f @8 fps",
   "install": "",
+  "requires": [
+   "pip:torch"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
@@ -1682,6 +1872,9 @@
   "how": "Write shot cards + platform prompts (forges above), mark each 'prompt only — none has been rendered'; Fastify keeps HF_CREDENTIALS as a placeholder and requires explicit cost approval; the linked landing example has no verified licence and must not be copied.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:higgsfield"
+  ],
   "license": "",
   "proof": [
    "fastify-motion-bro/docs/ENGINE_ROUTER.md:6",
@@ -1708,6 +1901,11 @@
   "how": "Basma: `POST v1beta/interactions` model lyria-3-clip-preview (30 s) or lyria-3.5 (full song); detects free-tier 'limit: 0' and falls back to the local composer. HyperFrames: `resolve --type bgm --intent …` → catalogue first, then `scripts/lyria-recipe.py --output --duration --prompt [--bpm]` detached + `wait-bgm.mjs`. BPM by industry: crypto 100, finance 92, creative 115, SaaS 108; feature cascade +10, demo loop −8. Then duck under voice and normalise (BEAT/SYNC families).",
   "params": "BPM 92–115; seed ≤28–30 s",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "HyperFrames Apache-2.0; Lyria / MusicGen output per provider/model terms",
   "proof": [
    "app/public/js/10_studio.js:2554",
@@ -1735,6 +1933,9 @@
   "how": "Write lyrics.md + music-brief.md; include a short reel cut (hook + chorus); the user runs Suno/Udio and returns the track, which you then treat as untouched master audio.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/music-song-brief/SKILL.md"
@@ -1761,6 +1962,10 @@
   "how": "`npx hyperframes media-use resolve --type <bgm|sfx|image|icon|logo|voice|grade|lut|video> --intent '<description>' --project <dir> [--candidates] [--from file --adopt] [--json]`; catalogues 10k+ tracks, 75k+ vectors, 19 bundled SFX (catalogue access goes through the vendor service); on a catalogue miss images fall back to local FLUX via mflux (Apple Silicon) or Codex image_gen.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/media-use/SKILL.md",
@@ -1788,6 +1993,10 @@
   "how": "HeyGen CLI: `heygen video create`, `heygen lipsync`, `heygen video-translate`; hosted HyperFrames MCP connector renders without the local CLI; Adobe Quick Cut picks highlights into 15/45/90 s reels (run ×3, user picks). Upscale `realesrgan-ncnn-vulkan -i in.png -o out.png -s 4` (not installed). Always disclose synthetic humans/voices; never a real person without consent.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/media-use/references/operations.md",
@@ -1817,6 +2026,11 @@
   "how": "External paid APIs or MCPs (Meshy MCP, Tripo MCP); check commercial licence; then load the GLB in the 3D family's pipeline (three / @react-three/fiber are npm-installable here).",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:three",
+   "npm:react",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2306-generative-web-media/8854-prompt-to-asset-routing",
@@ -1845,6 +2059,11 @@
   "how": "routeLanes(task) regexes: image /(image|photo|poster|graphic|illustration|صورة|بوستر|رسم|جرافيك|تصوير)/, video /(video|animation|avatar|motion|reel|فيديو|تحريك|أفاتار|موشن)/, design, presentation. Priorities: Figma 100, Adobe Express 98, Adobe 90, Canva 88, Runway 88, Higgsfield 86, OpenArt 84, HeyGen 82, Gamma 82, Descript 80, Genspark 78. A registered app is not proof of a connection — check the session's tools first.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:higgsfield",
+   "key:video-gen",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/think-mcp/worker.js:156",
@@ -1873,6 +2092,11 @@
   "how": "KOSIF Think (Cloudflare Worker): kosif_full_pro_start/execute/status, kosif_secure_image_execute, kosif_verify_evidence; tests in test/*.mjs. Jev: kosif_jev_decide (stability true). Workbench: `python3 kosif-studio/motion/site_bridge.py health|templates|plan|validate|compile|project --allow-remote` with KOSIF_SITE_TOKEN, exact HTTPS origin, no redirects, 1 MiB limit, 20 s timeout, credential echo refused, exclusive file creation.",
   "params": "",
   "install": "",
+  "requires": [
+   "node",
+   "python3",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-think-live/HANDOFF-README.md",
@@ -1901,6 +2125,7 @@
   "how": "kosif_corpus_configure path=<folder> → kosif_corpus_index (repeat until done) → kosif_corpus_search query=… → kosif_corpus_read file offset length (200–30000 bytes; 8 hits, 3 per file). The corpus folder is not in any repo here — ask for it.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/corpus.py",
@@ -1926,6 +2151,10 @@
   "how": "shots.json per shot: at, dur, base frames, baseStart, focus 0..1, type big|quiet|none, side; film.js renderAt(t); headless Chrome photographs every frame. 480p/720p bases suffice under a draw-over. The generated base needs a key; the draw-over look itself is pure code you can write and run here on any footage (Playwright Chromium is installed).",
   "params": "boil 12/s; bases 480–720p",
   "install": "",
+  "requires": [
+   "chromium",
+   "key:unspecified"
+  ],
   "license": "Apache-2.0 (skill) — write your own look, do not paste look.js",
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video/references/METHOD.md",
@@ -1952,6 +2181,12 @@
   "how": "AI clip as reference only → extract frames (`ffmpeg -i base.mp4 -vf fps=12 f_%04d.png`) → trace key poses as SVG paths or vectorise (`pip install vtracer`) → animate with GSAP/Remotion at the reference timing.",
   "params": "",
   "install": "pip install vtracer",
+  "requires": [
+   "ffmpeg",
+   "pip:vtracer",
+   "npm:gsap",
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/references/x-trend-2026.md"
@@ -1976,6 +2211,9 @@
   "how": "`npx -y hyperframes@0.8.164 add <id>` → mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index, overrides as JSON in data-variable-values; colours/fonts from the 18 theme tokens; `npx hyperframes preview` / `render`. Re-skin every chat UI to a neutral or the client's own brand — never ship a look-alike of a real assistant's product. | | id | kind | what it does | key numbers | |---|---|---|---| | streaming-text | component | words arrive in uneven token bursts, land grey, ink to full colour | size 27 (18–64); tone dark-on-light / light-on-dark | | typed-prompt | component | prompt types in human cadence behind a caret, optional backspace-retype of last word | glyph `>`; cadence uniform/human; caret blink/solid | | segmentation-flood | component | translucent masks flood a subject in scanline steps, bracket + mono label per region, 2-frame HUD flicker | flood_at 0.8 s; accent green/blue/violet | | ai-answer-rank | block | question types, assistant lists 3 picks, re-ranks so the promoted brand slides in | 1080×1080, 9 s; #16a34a / #18181b / #fcfcfb | | ai-chat-reveal | block | keyboard rises, question sent, answer streams with thinking dot and bullets | 1080×1920, 19.3 s | | chatgpt-exchange | block | prompt, streamed answer, comparison table, scroll back (re-skin!) | 1080×1920, 14.9 s | | claude-exchange | block | prompt, search/reasoning steps, streamed answer with citations (re-skin!) | 1080×1920, 21.4 s; EB Garamond + Inter |",
   "params": "",
   "install": "npx -y hyperframes@0.8.164 add streaming-text",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; blocks run on GSAP 3.14.2 (GSAP standard 'no charge' licence)",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/streaming-text/registry-item.json",
@@ -2005,6 +2243,7 @@
   "how": "Build: 4 cards, radius 16 px, placeholder #13181d; per card `filter: blur(40px) brightness(0.4)` → `blur(0) brightness(1)` over 1 s, ease power2.out, stagger 300 ms (RTL: right to left for Arabic UI); button label pulses opacity 0.6↔1 at 1.2 s period until the last tile lands. Palette from the reference: #070709 ground, #f2f2f2 text, neo-grotesk 600 + italic serif emphasis word. Optional skeleton shimmer (see the cream demo): 110° white gradient at 25 % opacity sweeping 1.2 s.",
   "params": "blur 40→0 px / 1 s; stagger 300 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-listudio-820c7b",
@@ -2034,6 +2273,7 @@
   "how": "Chat panel types the request → cursor clicks send → skeleton shimmer card → crossfade to the photo (300 ms) → camera glides to the email preview where the image drops in with a star sparkle. Reference: warm cream #f7f4ed / #fcfbf9, ink #1e1e1e, greens #4f7a52 / #8fc78f, Inter-like 500–600, 30 fps, 30 s. Photo: warm autumn grade, a fictional product mark (never a real brand).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-justincooperman-e7bbc4",
@@ -2062,6 +2302,7 @@
   "how": "Generate 6–12 assets at build time with fixed seeds and cache (no placeholders) — keyed step; then in code: terminal types the generate call over a dot grid → macro hero → giant uppercase words (VIDEO / AUDIO / 3D) with `background-clip: text` over the clip → tilted 3D thumbnail wall → counter to 1,000+ → 'prompt in. pixels out.' card. Reference palette #0c0b10 / #1f132f / #2e1c4e / #9a6cf0 / #5b2bd6 / #efe9f7, heavy wide grotesk + italic serif numbers, 60 fps, 15 s.",
   "params": "1 palette; fixed seeds; 6–12 assets",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-influencer-seo-ce8c33",
@@ -2090,6 +2331,7 @@
   "how": "Shader route (no key): domain-warped fbm — q = fbm(p), r = fbm(p + 4q + 0.15t), v = fbm(p + 4r) — mapped through a 5-stop thin-film ramp (lavender → cyan → blush → gold → mint) with a fresnel-like rim = pow(1 − |v − 0.5|·2, 3) added as white highlight; animate t slowly (0.05–0.1 /s). Reference stage: near-black #0d0e10 rounded rectangle over green gradient, accent #1ed760, 30 fps, 18 s.",
   "params": "5-colour thin-film ramp; t 0.05–0.1/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-brainextends-e19ac3",
@@ -2119,6 +2361,9 @@
   "how": "Per 7.5 s clip: plasticine stop-motion, thumbprints, soft studio softbox, saturated sets (#3aa3d8 sky, #d9bd23 yellow, #b66176, #e23a2a red stage); 24 fps; cut on the song's bar lines; add a 12 fps step (`ffmpeg -vf fps=12,fps=24`) for stop-motion cadence. Generated footage needs a key; disclose it as AI.",
   "params": "7.5 s clips; 24 fps; 12 fps step",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "style:pm-davidshulmanfl-371638",
@@ -2147,6 +2392,7 @@
   "how": "Generate textless plates in one style lock (keyed) or paint them in code; Ken Burns: scale 1.00 → 1.06 and 1–2 % pan over the whole hold, linear or sine.inOut; caption bottom-left (bottom-right for Arabic) at 80 px safe area. Reference palette #0a0a0a / #f4f5ef / #3ee08a / #538843 / #132216, neutral grotesk 600, 30 fps.",
   "params": "scale 1.00→1.06; 1–2 % pan",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-imthatcarlos-e04bfe",
@@ -2175,6 +2421,11 @@
   "how": "Cutouts from generated (or public-domain) images: generate the character/object on pure green #00B140, key it per frame (`ffmpeg -vf chromakey=0x00B140:0.12:0.05`) or `rembg`, ping-pong a short loop for idle motion. Zoom: scale = base^t (exponential), each world nested at the portal's centre at 1/base scale so the cut is invisible; parallax depth 0.6–1.0 per layer. Reference palette #221d17 / #332b22 / #6b746d / #a09b89 / #c4c2b3, no on-screen text, 30 fps, 10 s.",
   "params": "key #00B140; exponential zoom; parallax 0.6–1.0",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:rembg",
+   "pip:chromadb"
+  ],
   "license": "",
   "proof": [
    "style:pm-koldo2k-5cff87",
@@ -2203,6 +2454,9 @@
   "how": "genFilm(brief, dur, cat) → JSON {title, palette, scenes[{name,dur,category,brief}], voiceover, images[≤3]}; durations rescaled to D (2–120 s); 11 categories: type, ui, phone, charts, diagrams, shapes, particles, characters, photos, music (+1). Scene contract `(ctx,t,d,W,H,P,u)` at 30 fps; compileScene shadows window/document/fetch/localStorage/XMLHttpRequest/WebSocket/navigator/Function, 'use strict', ≤300 000 loop iterations per frame; test renders at t = 0, 0.3d, 0.6d, 0.99d on 360×640. Pasted gallery prompts (≤6000 chars) are adapted to Canvas scenes with Arabic text; templates can be studied (cuts, rhythm, palette measured) and 2–4 mixed.",
   "params": "3–6 scenes; 30 fps; 300000 iters/frame; tests at 0/.3/.6/.99",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "app/public/js/00_editor.js:530",
@@ -2232,6 +2486,7 @@
   "how": "Table: asset | type | source (compose / use-existing / photograph / generate) | decision; report how many generations were eliminated. Generated images must reserve a clean area for text. Typography always in HTML/SVG — critical for Arabic.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2976-pwdev-social-media/12582-cost-control",
@@ -2259,6 +2514,9 @@
   "how": "Generate textless plates ('clean, text-free surfaces'); set Arabic in the HTML/Remotion layer with proper shaping (ARAB family); brand-conditioning = 3–10 on-brand reference images + post-overlay of exact hex and real type, not a pinned seed.",
   "params": "3–10 refs",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2306-generative-web-media/8850-brand-conditioned-generation",
@@ -2285,6 +2543,7 @@
   "how": "Manifest JSON per asset {model, version, seed, base, variable, file}; render a contact sheet as an HTML grid and review side by side on palette, light direction/temperature, framing distance, texture/grain, era. One outlier → regenerate it; ≥3 → fix the base and regenerate all; after 3 failed rounds generate only backgrounds and compose the rest.",
   "params": "1 outlier → regen; ≥3 → fix base",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2976-pwdev-social-media/12595-visual-consistency/SKILL.md",
@@ -2311,6 +2570,7 @@
   "how": "Quote → user-approved cap → dry run → single call with --yes → receipt line → on re-run poll the stored request id. Riskiest shot first as a pilot. 2 variations in round 1; change one axis per round (subject, composition, light, style or palette); yield <30 % = weak prompt; >3 rounds on one asset = switch to composition. Estimate in calls with user-supplied unit prices, never invented currency; a budget log exits non-zero over the cap.",
   "params": "2 variations; <30 % yield; >3 rounds alarm",
   "install": "",
+  "requires": [],
   "license": "Apache-2.0 / MIT",
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video",
@@ -2339,6 +2599,9 @@
   "how": "Tag every brief commercial / non-commercial / override; set indemnity_required for resold assets; audit media folders for non-commercial outputs before delivery. Firefly: OAuth server-to-server with enterprise entitlement, x-api-key + bearer, follow the returned statusUrl with jittered polling and a hard time limit, keep content-credential metadata.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2306-generative-web-media/8853-license-and-provenance-ledger",
@@ -2366,6 +2629,7 @@
   "how": "Keep a manifest of which shots are generated; add an on-screen disclosure line or end-card note when generated humans/voices appear; EU audiences: C2PA signing (some generators add SynthID); UGC-style ads still need ad disclosure; never present generated footage as a real recording; for public-sector pieces avoid AI depictions of services, staff or beneficiaries; describe qualities instead of names.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1520-digital-marketing-pro/3975-ad-creative/SKILL.md",
@@ -2394,6 +2658,9 @@
   "how": "Profiles end with explicit disclaimers; the compiled editorial storyboard carries a caveat field. In your own replies: name exactly what exists on disk (path + ffprobe numbers) versus what is only a prompt.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "fastify-motion-bro/docs/PRODUCTION-GATES.md:8",
@@ -2420,6 +2687,10 @@
   "how": "Personal access token + paid plan; poll jobs every ~3 s (70–100 s typical); seeds per image ≈ Gemini 7, OpenAI 11, Grok 3; YouTube allows ~100 custom thumbnail uploads per channel per 24 h. For Arabic covers prefer local HTML composition (`kmotion poster` / frame grab + type).",
   "params": "poll 3 s; 70–100 s/job",
   "install": "",
+  "requires": [
+   "key:openai",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/932-vidseeds/2185-vidseeds-thumbnails/SKILL.md"
@@ -2442,6 +2713,11 @@
   "how": "python3 tools/claude_api_review.py brief.md --model <ID from your account> --send --ack-billing --output out/review.txt. Refuses without both flags, without ANTHROPIC_API_KEY in the environment, without the anthropic SDK, for briefs > 120 KB, or for --max-tokens outside 128–4096; writes nothing if the reply has no text. It is a text plan review only — it does not render, speed up ffmpeg or unlock tools. Normal work never needs it: Claude Code itself is the director. Not run here (no key, no paid call).",
   "params": "--max-tokens 128–4096 (default 1200) · brief ≤120 KB",
   "install": "pip install anthropic",
+  "requires": [
+   "ffmpeg",
+   "pip:anthropic",
+   "key:unspecified"
+  ],
   "license": "owner package (own work)",
   "proof": [
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/claude_api_review.py",
@@ -2470,6 +2746,10 @@
   "how": "Stills at 2k–4k for references; video at 1080p, high bitrate, generate_audio off, 4–30 s, delivered as 24 fps HEVC; in the owner's films ≈ 12 credits per second at 1080p, ≤ 12 jobs per batch, 3–6 min per 5 s clip, plus a ~30 % reshoot reserve. Skeleton: REFERENCE DEFINITIONS / SCENE / CHARACTERS / WORLD / ACTING TASK (motive, goal, obstacle, tactic) / SHOTS with timecodes / CAMERA AND LOOK / AUDIO / CONSTRAINTS; one continuous shot with one motivated move; open mid-motion with the money moment 1–3 s in. Model names and prices drift: list the connector's current models and quote cost before generating; never spend without explicit approval.",
   "params": "1080p; 4–30 s; ≈ 12 credits/s; reserve 30 %; ≤ 12 per batch",
   "install": "",
+  "requires": [
+   "pip:higgsfield",
+   "key:unspecified"
+  ],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
@@ -2499,6 +2779,7 @@
   "how": "Plan the takes from the reference's cut rhythm; prompt the continuous take so any 0.8 s window stands as its own shot; cutting one generation reached 77 % usable footage versus 21 % for one generation per shot (3 calls gave 13 s). Sample shot lengths from the reference distribution, not its mean; when supplementing footage use its detected shot boundaries; crop the capture app's UI from borrowed screen recordings (temporal-variance masks keep animated chrome). Re-encode the cuts (FOOT-X03).",
   "params": "any 0.8 s window = a shot; 77 % vs 21 % usable",
   "install": "",
+  "requires": [],
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md"

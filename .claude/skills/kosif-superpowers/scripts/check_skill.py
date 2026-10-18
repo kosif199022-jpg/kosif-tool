@@ -257,6 +257,14 @@ def check_records(r: Report, rows):
                 r.err("records", f"{rid}: 👁 seen is for motion powers only")
         if st == "proven" and not rec.get("proof"):
             r.err("records", f"{rid}: ✅ proven needs at least one proof entry")
+        req = rec.get("requires")
+        if req is not None:
+            if not isinstance(req, list):
+                r.err("records", f"{rid}: requires must be a list")
+            else:
+                for k in req:
+                    if k not in REQ_KEYS:
+                        r.err("records", f"{rid}: requires names unknown requirement {k!r} (add it to data/requirements.json)")
         scope = rec.get("proof_scope")
         if scope is not None and scope not in PROOF_SCOPES:
             r.err("records", f"{rid}: proof_scope {scope!r} must be one of {PROOF_SCOPES}")
@@ -277,6 +285,7 @@ PROOF_SKIP = ("style:", "owner-upload:", "session-", "http://", "https://")
 # proof_scope: where a record's best proof lives. repo = a file in this repository (verifiable here);
 # session = a dated run log; archive = an owner upload; sibling = a file in one of the owner's other repositories;
 # receipt = a free-text run receipt; style/url = reference only; none/missing = not a valid state for ✅.
+REQ_KEYS = {k for k in json.loads((SK / "data" / "requirements.json").read_text(encoding="utf-8")) if not k.startswith("_")} if (SK / "data" / "requirements.json").exists() else set()
 PROOF_SCOPES = ("repo", "session", "archive", "sibling", "receipt", "style", "url", "missing", "none")
 
 

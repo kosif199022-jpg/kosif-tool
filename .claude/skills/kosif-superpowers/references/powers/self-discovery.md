@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `SELF` · **البيانات / data:** `data/powers/self-discovery.json` · **بحث / search:** `python3 scripts/powers.py family self-discovery`
-**مراجع ذات صلة / related references:** [arsenal-general.md](../arsenal-general.md) · [arsenal-libraries.md](../arsenal-libraries.md) · [self-discovery.md](../self-discovery.md) · [surfaces.md](../surfaces.md)
+**مراجع ذات صلة / related references:** [arsenal-general.md](../arsenal-general.md) · [arsenal-libraries.md](../arsenal-libraries.md) · [requirements.md](../requirements.md) · [self-discovery.md](../self-discovery.md) · [surfaces.md](../surfaces.md)
 
 ## الفهرس / contents
 
@@ -28,6 +28,7 @@
 - **ماذا / what:** لا تقل «لا أستطيع» قبل أن تفحص خريطة القدرات وأدواتك وسجل الحزم، وتحاول التثبيت. — Never answer "I can't" until you have checked the capability map, your tool list, the package registry and an install attempt.
 - **متى أستخدمها / when:** any request that sounds outside chat: render a video, OCR a scan, read a repo, build a PDF, call an API, use a library you think is missing; أي طلب يبدو مستحيلًا أو خارج المحادثة
 - **كيف / how:** 1) `python3 scripts/powers.py search <words>` in this skill; 2) scan your tool list and ToolSearch for deferred tools (SELF-05, SELF-06); 3) probe: `command -v X`, `python3 -c 'import X'`; 4) registry: `pip index versions X` or `npm view X version license`; 5) install into a venv or scratch folder and run the smallest example (SELF-26, SELF-27); 6) only then answer: done, needs a key (name it), or blocked (name the gate) plus the best keyless alternative. **أرقام / params:** max 6 steps before answering; a proxy 403/407 is a policy block: report it, never route around it
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`python3`](../requirements.md#req-python3) · [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** owner KOSIF SEE v1.7.5 registry rule (distill see-core §6, §19A); ECC search-first, MIT https://github.com/affaan-m/ECC
@@ -36,6 +37,7 @@
 - **ماذا / what:** لكل قدرة حالة واحدة صادقة من فكرة إلى مُتحقَّق منها؛ أبلغ دائمًا بأدنى حالة صحيحة. — Every capability sits on one rung from idea to verified; always report the lowest rung that is true.
 - **متى أستخدمها / when:** before you claim anything works, before giving a badge, when writing a final report
 - **كيف / how:** IDEA 💡 (no source) → DOCUMENTED 📄 (a file describes it with numbers) → INSTALLABLE 📦 (registry resolves through the proxy) → NEEDS-KEY 🔑 (name the key, account or connector) → PRESENT 🟢 (`command -v`, import or tool listed in this session) → EXECUTED (exit code and output path known) → VERIFIED ✅ (postcondition checked: ffprobe numbers, tests pass, file reopens, frame viewed). BLOCKED = named gate + next step. Never merge two rungs into a yes/no. **أرقام / params:** badges ✅🟢📦🔑👁📄💡 · report lowest true
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** owner KOSIF SEE v1.7.5 capability-truth states (distill see-core §5)
@@ -44,6 +46,7 @@
 - **ماذا / what:** الإثبات من جلسة أو حاوية أخرى تاريخي فقط؛ أعد الفحص إن تغيّر المكان أو اليوم. — A proof from another session or container is history; re-probe when the container, surface or day differs.
 - **متى أستخدمها / when:** you read ✅ in this skill, in a README or in memory and are about to rely on it
 - **كيف / how:** Read the proof's date and surface. If either differs from now, run the probe (import, `command -v`, a one-line smoke test) before promising. A failed re-probe lowers the badge for this answer only, without editing history. Live examples (P6, P19): `faster_whisper` is marked as run in the motion arsenal but is not importable in a fresh container; tesseract went from missing to present within one day. **أرقام / params:** stamp every ✅ with date + surface
+- **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** owner KOSIF SEE freshness rule (distill see-core §5); observed drift in proofs/general-discovery P19
@@ -52,6 +55,7 @@
 - **ماذا / what:** رسالة النجاح ليست دليلًا؛ افحص الشرط اللاحق على الناتج نفسه. — A success message is not evidence; check the postcondition on the artifact itself.
 - **متى أستخدمها / when:** after any render, install, conversion, deploy or file write, before saying done
 - **كيف / how:** Pick the check by artifact. Video: `ffprobe -v error -show_entries format=duration:stream=codec_type,r_frame_rate`, then look at frames. Document: reopen it or convert it (`soffice --headless --convert-to pdf`). Code: run the tests. Web page: take a screenshot. Install: import it and print the version. Only an output from that check upgrades EXECUTED to VERIFIED.
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`chromium`](../requirements.md#req-chromium) · [`libreoffice`](../requirements.md#req-libreoffice)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** owner KOSIF SEE (distill see-core §5, §19B); ECC verification-loop, MIT https://github.com/affaan-m/ECC
@@ -62,6 +66,7 @@
 - **ماذا / what:** قائمة أدواتك في رسالة النظام هي جرد قدراتك الفعلي: أدوات محمّلة، وأسماء مؤجلة، وخوادم MCP. — The tool list in your system prompt is your real inventory: loaded tools, deferred names and MCP servers.
 - **متى أستخدمها / when:** start of any non-trivial task; whenever you are about to say a tool is missing
 - **كيف / how:** Scan five places: (a) loaded tools that already have schemas; (b) the deferred-tools name list; (c) every `mcp__<server>__` prefix, each of which is one MCP server; (d) the skills listing; (e) the environment block (cwd, platform, scratchpad, proxy notes). Write a 5-line inventory before planning. Proof P1 saw Higgsfield (100+ tools), github, graphify, Claude_Docs and claude-code-remote servers. **أرقام / params:** 5 places · inventory in ≤5 lines
+- **يحتاج / needs:** [`pip:higgsfield`](../requirements.md#req-pip-higgsfield) · [`key:graphify`](../requirements.md#req-key-graphify)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill claude-surfaces §4-5; run in proofs/general-discovery P1
 
@@ -69,6 +74,7 @@
 - **ماذا / what:** كثير من الأدوات تظهر أسماءً فقط؛ ToolSearch يحمّل مخططها فتصبح قابلة للاستدعاء. — Many tools appear only as names; ToolSearch loads their schemas so you can call them.
 - **متى أستخدمها / when:** a needed tool is named in the deferred list, or you suspect one exists (web, browser, schedule, notebook, image, video)
 - **كيف / how:** Exact: `select:WebFetch,WebSearch`. By keyword: `image video generate`, `schedule`, `browser`, `notebook`. Name-required: `+slack send`. Calling a deferred tool before loading it fails with an input-validation error. Load only what the task needs, because each schema costs context. **أرقام / params:** max_results 3-5 · one select call can load several tools
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** Claude Code tools reference https://code.claude.com/docs/en/tools-reference (fetched 2026-10-16); run P2
 
@@ -76,6 +82,7 @@
 - **ماذا / what:** كل بادئة mcp__ خادم مستقل؛ صنّفه: قراءة فقط، أو له أثر جانبي، أو مدفوع. — Each mcp__ prefix is a server; classify it as read-only, side-effecting or paid.
 - **متى أستخدمها / when:** planning which tool does the work; before any generation, publish, push or send call
 - **كيف / how:** List the prefixes. For each, note read-only (search, list, get), side-effecting (create, push, publish, send, deploy) or paid (credits: generate_*, upscale, dubbing). Paid or side-effecting calls need explicit user intent. Prefer a working MCP tool over a blocked CLI: in P13, `gh search repos` returned 403 while `mcp__github__search_repositories` returned 139 hits. **أرقام / params:** classes: read / side-effect / paid
+- **يحتاج / needs:** [`pip:higgsfield`](../requirements.md#req-pip-higgsfield) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill claude-surfaces §4; run P1, P13
 
@@ -83,6 +90,7 @@
 - **ماذا / what:** المهارات المتاحة تظهر بسطر واحد؛ اعرضها وابحث عنها واستدعِ المطابقة قبل أن تبدأ. — Skills show as one line each; list them, search them and invoke the matching one before you start.
 - **متى أستخدمها / when:** any domain task (docs, slides, sheets, PDF, charts, design, motion) or 'what can you do'
 - **كيف / how:** 1) Read the skills listing in the system prompt. 2) `ListSkills` (P3: 13 account skills). 3) On disk: `ls ~/.claude/skills .claude/skills */.claude/skills`; plugin skills appear as `plugin:skill`. 4) SearchSkills / SuggestSkills, when present, find skills the user does not have. 5) Invoke the match with the Skill tool BEFORE writing output. **أرقام / params:** invoke first, then act
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** https://code.claude.com/docs/en/skills (fetched 2026-10-16 per distill claude-surfaces §1.4); run P3
 
@@ -104,6 +112,7 @@
 - **ماذا / what:** إن لم تجد أداة للخدمة فقد تكون موصلًا غير مربوط أو مفتاحًا ناقصًا؛ سمِّ المطلوب بالضبط. — If no tool covers a service, it may be an unconnected connector or a missing key; name exactly what is needed.
 - **متى أستخدمها / when:** the task needs Slack, Drive, Gmail, a paid model API, a database or any account-bound service
 - **كيف / how:** 1) ToolSearch the service name. 2) If present, use ListConnectors / SuggestConnectors / SearchMcpRegistry. 3) Otherwise tell the user to connect it in claude.ai Settings → Connectors, or to add a key as an environment secret (`read_documentation environment.secrets`). 4) Never ask for a secret in chat unless the host has a secure input. 5) Meanwhile offer the best keyless route.
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** distill claude-surfaces §2, §5; ECC documentation-lookup (Context7 is MCP/key-dependent), MIT https://github.com/affaan-m/ECC
 
@@ -113,6 +122,7 @@
 - **ماذا / what:** سكربت probe_env.py يفحص النظام والأدوات والخطوط والشبكة ويطبع بطاقة قدرات بالشارات. — scripts/probe_env.py checks system, binaries, fonts and network and prints a badge capability card.
 - **متى أستخدمها / when:** first non-trivial task in a new session or container; before promising renders, installs or downloads
 - **كيف / how:** `python3 scripts/probe_env.py` gives the Markdown card; `--json` gives capabilities.json. It uses the standard library only, works without root, has a short global time budget, is read-only and prints env names, never values. Optional tools (MCP, skills) are invisible to scripts, so combine it with SELF-05. P21 (2026-10-16): 1.7 s, host claude-code-cloud with 4 evidence items, network full, GPU none, docker daemon down, a 120-line card with a domain table and one-line fixes. **أرقام / params:** stdlib only · bounded time · exit 0 with partial results
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`docker`](../requirements.md#req-docker)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/probe_env.py`
 - **المصدر / source:** design in distill env-probe §7; script written in this skill
 
@@ -120,6 +130,7 @@
 - **ماذا / what:** أوامر قليلة تكشف النظام والمعالج والذاكرة والقرص والأدوات وإصداراتها. — A handful of commands reveal OS, CPU, RAM, disk and which tools exist at which versions.
 - **متى أستخدمها / when:** no probe script available, or you need one specific fact fast
 - **كيف / how:** `uname -sr; nproc; free -g; df -h .; id -u` then `for b in python3 node npm uv ffmpeg convert soffice pandoc git gh rg docker playwright blender tesseract dot; do printf '%s ' $b; command -v $b || echo MISSING; done` and `<tool> --version | head -1` for the few that matter. P5 found 4 vCPU, 15 GiB and ffmpeg 6.1.1 but no blender and no `dot` (snapshot 2026-10-16; re-run scripts/probe_env.py). **أرقام / params:** ≤20 binaries · versions only for key tools
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`docker`](../requirements.md#req-docker) · [`tesseract`](../requirements.md#req-tesseract) · [`blender`](../requirements.md#req-blender) · [`pandoc`](../requirements.md#req-pandoc) · [`libreoffice`](../requirements.md#req-libreoffice) · [`npm:p5`](../requirements.md#req-npm-p5)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill env-probe §1-3; run P5
 
@@ -127,6 +138,7 @@
 - **ماذا / what:** افحص وجود GPU قبل أن تَعِد بنماذج ثقيلة؛ بدونه ارندر برمجيًا واستخدم نماذج صغيرة أو موصلًا. — Check for a GPU before promising heavy models; without one, render in software and use small models or a connector.
 - **متى أستخدمها / when:** local diffusion, video generation, big LLMs, speech models, WebGL renders
 - **كيف / how:** `command -v nvidia-smi && nvidia-smi -L; ls /dev/dri`. None (P5): use ffmpeg libx264 and headless Chromium software GL, whisper tiny/base/small on CPU and the CPU torch wheel (SELF-28), and route image or video generation to a 🔑 connector such as Higgsfield only with user consent.
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`chromium`](../requirements.md#req-chromium) · [`pip:faster-whisper`](../requirements.md#req-pip-faster-whisper) · [`pip:torch`](../requirements.md#req-pip-torch) · [`pip:higgsfield`](../requirements.md#req-pip-higgsfield) · [`npm:p5`](../requirements.md#req-npm-p5) · [`gpu`](../requirements.md#req-gpu) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill env-probe §1, §6; run P5
 
@@ -134,6 +146,7 @@
 - **ماذا / what:** اختبر مضيفين أو أكثر لتعرف مستوى الشبكة: كاملة، أو سجلات فقط، أو لا شيء. — Test a few hosts to learn the network level: full, registries only, or none.
 - **متى أستخدمها / when:** before promising installs, downloads, web fetches or API calls
 - **كيف / how:** `curl -sS -o /dev/null -m 8 -w '%{http_code} %{time_total}\n' https://pypi.org/simple/` plus registry.npmjs.org, api.github.com, huggingface.co and a non-registry host (example.com). 200/200 means full egress; registry 200 with other hosts 403 means an allowlist; DNS failures or timeouts mean no network (API sandbox). In a cloud session also run `curl "$HTTPS_PROXY/__agentproxy/status"`. P8: all 7 hosts returned 200. **أرقام / params:** timeout 8 s per host · classify ok / policy-blocked (403, 407, CONNECT 502) / offline
+- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill claude-surfaces §5.6, env-probe §4; run P8
 
@@ -148,6 +161,7 @@
 - **ماذا / what:** اعرف أي مفاتيح موجودة من أسماء المتغيرات دون طباعة قيمها أبدًا. — Learn which keys exist from variable names, never printing values.
 - **متى أستخدمها / when:** deciding whether a 🔑 power is usable now
 - **كيف / how:** `env | cut -d= -f1 | grep -iE 'key|token|secret|pass'` and `[ -n "$ANTHROPIC_API_KEY" ] && echo set || echo unset`. Never `echo $VAR`, never paste values into files, logs or URLs. For `.env*` files read key names only: `grep -o '^[A-Z_]*=' .env`. P10: 13 names found; the API key was unset. **أرقام / params:** names only, values never
+- **يحتاج / needs:** [`pip:anthropic`](../requirements.md#req-pip-anthropic) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** ECC workspace-surface-audit, MIT https://github.com/affaan-m/ECC; run P10
 
@@ -155,6 +169,7 @@
 - **ماذا / what:** تحقق من المكتبات المتاحة فعلًا قبل كتابة كود يعتمد عليها. — Check which Python libraries are really importable before writing code that needs them.
 - **متى أستخدمها / when:** before using pandas, matplotlib, cv2, torch, whisper, librosa, duckdb or any third-party module
 - **كيف / how:** `python3 -I -c "import importlib.util as u; print({m: bool(u.find_spec(m)) for m in ['numpy','matplotlib','cv2','torch','librosa']})"`; count with `importlib.metadata.distributions()`. Missing → SELF-26. P6: numpy, pandas, PIL, docx, openpyxl, reportlab and pypdf were present; matplotlib, scipy, cv2, torch and librosa were not (snapshot 2026-10-16; re-run scripts/probe_env.py). **أرقام / params:** find_spec, no import side effects
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv) · [`pip:scipy`](../requirements.md#req-pip-scipy) · [`pip:pandas`](../requirements.md#req-pip-pandas) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:torch`](../requirements.md#req-pip-torch) · [`pip:librosa`](../requirements.md#req-pip-librosa) · [`pip:office`](../requirements.md#req-pip-office)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill see-core §5 demo; run P6
 
@@ -163,6 +178,7 @@
 - **متى أستخدمها / when:** HTML→video, screenshots, PDF printing, scraping, mermaid rendering
 - **كيف / how:** `ls $(npm root -g)`; `echo $PLAYWRIGHT_BROWSERS_PATH; ls /opt/pw-browsers ~/.cache/ms-playwright 2>/dev/null`; `npx playwright --version`. P5/P9 found the global Playwright CLI and chromium-1194 under /opt/pw-browsers. Otherwise use `npx playwright install chromium` (about 150 MB, needs network).
 - **تثبيت / install:** `npx playwright install chromium`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:p5`](../requirements.md#req-npm-p5)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill env-probe §2-3; run P5
@@ -172,6 +188,7 @@
 - **متى أستخدمها / when:** any Arabic text in images, PDFs, video or HTML renders
 - **كيف / how:** `fc-list :lang=ar family | sort -u`. P7 found only DejaVu, FreeMono/FreeSerif and Unifont. Use OFL fonts from `proofs/_shared/fonts` (Amiri, Cairo, Reem Kufi, Aref Ruqaa, Tajawal, Lalezar), or `apt-get install fonts-noto-core fonts-kacst`, and load the font before the first frame.
 - **تثبيت / install:** `apt-get install -y fonts-noto-core fonts-kacst`
+- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** distill env-probe §3; run P7
 
@@ -187,6 +204,7 @@
 - **ماذا / what:** وجود أمر docker لا يعني أن الخدمة تعمل؛ افحص docker info قبل أي وعد بالحاويات. — A docker binary does not mean a running daemon; check `docker info` before promising containers.
 - **متى أستخدمها / when:** you plan to run services, databases or toolchains in containers
 - **كيف / how:** `timeout 8 docker info --format '{{.ServerVersion}}'`. P12: the client was present but the daemon was not running (no /var/run/docker.sock), even though the cloud-environment docs list Docker. Fall back to venvs, apt packages or local processes (e.g. `redis-server &`). **أرقام / params:** timeout 8 s
+- **يحتاج / needs:** [`docker`](../requirements.md#req-docker)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** docs https://code.claude.com/docs/en/cloud-environments (distill claude-surfaces §1.7) vs run P12
 
@@ -194,6 +212,7 @@
 - **ماذا / what:** القراءة العامة عبر git تعمل، لكن واجهة GitHub API مقيدة بالمستودعات المربوطة؛ استخدم أداة MCP أو add_repo. — Public git reads work, but the GitHub API is limited to attached repos; use the MCP tool or add_repo.
 - **متى أستخدمها / when:** cloning, reading releases or licenses, searching repos, opening PRs from a cloud session
 - **كيف / how:** Public clone: `git clone --depth 1 https://github.com/<o>/<r>` (P13 `git ls-remote` worked), or raw files from raw.githubusercontent.com. `gh api repos/...` and `gh search repos` returned 403 for unattached repos. Use `mcp__github__search_repositories` / `get_file_contents`, or call `add_repo` (access read or push) for API work.
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** run P13
 
@@ -203,6 +222,7 @@
 - **ماذا / what:** سؤال PyPI أو npm يكشف في ثوانٍ هل المكتبة موجودة وما إصدارها ورخصتها. — Asking PyPI or npm tells you within seconds whether a library exists, its version and its license.
 - **متى أستخدمها / when:** you are unsure a library exists or remember an old version
 - **كيف / how:** Python: `pip index versions <pkg>` (resolves for this interpreter), `pip download --no-deps -d /tmp/x <pkg>` or `curl -s https://pypi.org/pypi/<pkg>/json` for version and license_expression. JS: `npm view <pkg> version license --json`. P14: humanize 4.16.0, tabulate 0.10.0 wheel, left-pad 1.3.0 (WTFPL). An E404 means not in the registry (e.g. `@hyperframes/cli`). **أرقام / params:** ≤5 s per lookup
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:hyperframes`](../requirements.md#req-npm-hyperframes) · [`network`](../requirements.md#req-network)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** ECC search-first, MIT https://github.com/affaan-m/ECC; run P14
 
@@ -211,6 +231,7 @@
 - **متى أستخدمها / when:** pip picks an old version, says 'no matching distribution', or a model library targets older Python
 - **كيف / how:** `curl -s https://pypi.org/pypi/<pkg>/json | python3 -c "import json,sys; i=json.load(sys.stdin)['info']; print(i['version'], i['requires_python'])"` and compare with `pip index versions <pkg>`. P14 on Python 3.13: kokoro resolves to 0.7.16 (latest 0.9.4 needs below 3.13); `TTS` resolves to nothing (needs below 3.12), but the maintained fork `coqui-tts` 0.27.5 resolves. Fixes: use the fork, an older pin, or `uv venv --python 3.12`.
 - **تثبيت / install:** `uv venv --python 3.12 .venv312`
+- **يحتاج / needs:** [`pip:kokoro`](../requirements.md#req-pip-kokoro) · [`network`](../requirements.md#req-network)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** run P14
 
@@ -219,6 +240,7 @@
 - **متى أستخدمها / when:** a needed Python library is missing (SELF-18)
 - **كيف / how:** `python3 -m venv .venv && .venv/bin/pip install -q <pkg> && .venv/bin/python -I -c 'import <mod>; print(<mod>.__version__)'`, or faster `uv pip install --python .venv/bin/python <pkg>`. Then one real operation (e.g. `duckdb.sql('select 42*2')`). P15: venv+pip+import took 3.7 s, uv took 0.3 s. Prefer `--only-binary=:all:` to avoid slow builds. **أرقام / params:** venv per task · smoke test = one real call
 - **تثبيت / install:** `python3 -m venv .venv && .venv/bin/pip install <pkg>`
+- **يحتاج / needs:** [`pip:duckdb`](../requirements.md#req-pip-duckdb)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md` · `session-2026-10-16:general-arsenal.md#Method (reproducible)`
 - **المصدر / source:** owner KOSIF SEE install rule (distill see-core §6); run P15; general-arsenal 69/69 wheel installs
 
@@ -227,6 +249,7 @@
 - **متى أستخدمها / when:** you need a JS library (Remotion, d3, three, docx, pptxgenjs, culori) and are unsure it works here
 - **كيف / how:** `mkdir -p /tmp/try && cd /tmp/try && npm init -y >/dev/null && npm i <pkg>@<exact> && node -e "import('<pkg>').then(m=>console.log(Object.keys(m).slice(0,5)))"`. Pin exact versions. P15: culori 4.0.2 install+import took 1.3 s. Earlier the same day docx, pptxgenjs, exceljs and pdf-lib each produced a real file. **أرقام / params:** pin exact version
 - **تثبيت / install:** `npm i <pkg>@<version>`
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`pip:office`](../requirements.md#req-pip-office)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md` · `session-2026-10-16:general-arsenal.md#Method (reproducible)`
 - **المصدر / source:** run P15; distill general-arsenal
 
@@ -235,6 +258,7 @@
 - **متى أستخدمها / when:** speech-to-text, embeddings, OCR with easyocr, small classifiers, ONNX models
 - **كيف / how:** `pip install torch --index-url https://download.pytorch.org/whl/cpu` (default pip pulls GBs of CUDA). Earlier on 2026-10-16: 21 s, 769 MB, tensor inverse ran. HF: config.json in 0.49 s and a 540 KB weight in 1.0 s although cdn-lfs.huggingface.co was blocked (redirects use another CDN). Keep models small (30 GB disk, 4 CPUs, no GPU in that snapshot). **أرقام / params:** CPU wheel index · small models only
 - **تثبيت / install:** `pip install torch --index-url https://download.pytorch.org/whl/cpu`
+- **يحتاج / needs:** [`pip:faster-whisper`](../requirements.md#req-pip-faster-whisper) · [`pip:torch`](../requirements.md#req-pip-torch) · [`gpu`](../requirements.md#req-gpu) · [`network`](../requirements.md#req-network)
 - **الرخصة / license:** BSD-3-Clause (torch; compound expression on PyPI)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** distill general-arsenal (method), env-probe §5
@@ -243,6 +267,7 @@
 - **ماذا / what:** اقرأ رخصة الحزمة من السجل أو ملف LICENSE قبل اعتمادها، وانتبه لـAGPL وGPL و«انظر الرخصة». — Read the license from the registry or LICENSE file before adopting; watch for AGPL, GPL and 'SEE LICENSE'.
 - **متى أستخدمها / when:** choosing a library to bundle, vendor or ship; copying code or assets
 - **كيف / how:** npm: `npm view <pkg> license`. PyPI JSON: `license_expression`, else `license`, else the classifiers. GitHub: `curl -s https://raw.githubusercontent.com/<o>/<r>/HEAD/LICENSE | head -3`. Red flags: AGPL (pymupdf, ultralytics), GPL (piper-tts, pedalboard, bpy, typed.js, ffmpeg-static), 'SEE LICENSE IN …' (remotion, @anthropic-ai/claude-agent-sdk), UNLICENSED, or blank. Using a tool to produce output differs from redistributing its code.
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`blender`](../requirements.md#req-blender) · [`pip:piper`](../requirements.md#req-pip-piper) · [`npm:remotion`](../requirements.md#req-npm-remotion) · [`network`](../requirements.md#req-network) · [`pip:ultralytics`](../requirements.md#req-pip-ultralytics)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** ECC search-first scoring (license), MIT https://github.com/affaan-m/ECC; run P17
 
@@ -268,6 +293,7 @@
 - **ماذا / what:** لأسئلة المكتبات والواجهات اقرأ التوثيق الرسمي الحالي واذكر الإصدار، ولا تعتمد على ذاكرة التدريب. — For library and API questions read the current official docs and cite the version; do not rely on training memory.
 - **متى أستخدمها / when:** writing code against a library, API parameters, CLI flags, product limits or prices
 - **كيف / how:** Use a docs MCP (e.g. Context7) if connected. Otherwise WebFetch the official page, run `npm view <pkg> version`, `pip show <pkg>` and `<cli> --help`. Use at most 3 lookups per question, then state uncertainty. Cite the version and date. Redact secrets from queries. P18 fetched the official code-execution page to get the sandbox limits instead of recalling them. **أرقام / params:** ≤3 lookups per question · cite version + date
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`claude:tools`](../requirements.md#req-claude-tools)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md`
 - **المصدر / source:** ECC documentation-lookup, MIT https://github.com/affaan-m/ECC; run P18
 
@@ -275,6 +301,7 @@
 - **ماذا / what:** كثير من المكتبات غيّرت واجهاتها؛ افحص الإصدار وجرّب سطرًا قبل كتابة كود من الذاكرة. — Many libraries changed their APIs; check the version and try one line before writing code from memory.
 - **متى أستخدمها / when:** any import or call you remember rather than just read
 - **كيف / how:** Re-run P16 traps: pulp 4 drops `LpVariable(...)` and `PULP_CBC_CMD` (use `m.add_variable` + `pulp.HiGHS`); mcp 2.x moves FastMCP to `from mcp.server import MCPServer`; markitdown needs extras `[docx,pdf,xlsx,pptx]`; pymupdf prefers `import pymupdf` over `fitz`; openpyxl stores formulas but never computes them (recalculate with LibreOffice headless); plotly `write_html` inlines 4.8 MB unless `include_plotlyjs='cdn'`. Major bumps seen: pandas 3, numpy 2.5, polars 2, opencv 5, transformers 5.
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`libreoffice`](../requirements.md#req-libreoffice) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv) · [`pip:pandas`](../requirements.md#req-pip-pandas) · [`pip:plotly`](../requirements.md#req-pip-plotly) · [`pip:torch`](../requirements.md#req-pip-torch) · [`pip:office`](../requirements.md#req-pip-office) · [`pip:polars`](../requirements.md#req-pip-polars) · [`pip:pulp`](../requirements.md#req-pip-pulp)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md` · `session-2026-10-16:general-arsenal.md#Key lessons (surprises Claude must know — training-data APIs are stale)`
 - **المصدر / source:** distill general-arsenal key lessons; re-run P16
 
@@ -282,6 +309,7 @@
 - **ماذا / what:** جرد للقراءة فقط لما يستطيعه هذا المستودع وهذه الآلة الآن، مع الفجوات وأفضل خطوات تالية. — A read-only inventory of what this repo and machine can do now, with gaps and the best next moves.
 - **متى أستخدمها / when:** new repo, 'what can you do here', before proposing automation, hooks or agents
 - **كيف / how:** Read the markers: package.json and lockfiles, `.mcp.json`, `.claude/settings*.json`, AGENTS.md/CLAUDE.md, hooks, `.claude/agents`, `.claude/skills`, `.env*` (key names only). Output 5 parts: usable now; parity; primitives with no workflow wrapped around them; missing integrations; top 3-5 next moves. Map each gap to a shape: repeatable workflow → skill, enforcement → hook, delegated role → agent, external bridge → MCP or connector. **أرقام / params:** ≤2 recommendations per category
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** ECC workspace-surface-audit, MIT (c) 2026 Affaan Mustafa https://github.com/affaan-m/ECC
@@ -292,6 +320,7 @@
 - **ماذا / what:** القدرات تختلف بين Claude Code وclaude.ai وواجهة API؛ استنتج أين أنت من الأدلة قبل الوعد. — Capabilities differ between Claude Code, claude.ai and the API; infer where you are from evidence before promising.
 - **متى أستخدمها / when:** start of a session; before promising network, installs, file delivery or long jobs
 - **كيف / how:** Evidence: `/root/.ccr` or `CLAUDE_CODE_REMOTE` or `mcp__claude-code-remote__*` → Claude Code cloud session; `CLAUDECODE=1` without those → local Claude Code; a code-execution tool with no network and Python 3.11 → API sandbox; `/mnt/user-data` or `/home/claude` with egress depending on admin → claude.ai sandbox (unconfirmed heuristic); `CI` or `GITHUB_ACTIONS` → CI. Then open references/surfaces.md for that surface's table.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md`
 - **المصدر / source:** distill claude-surfaces §5.8, env-probe §7.1
 
@@ -299,6 +328,7 @@
 - **ماذا / what:** جلسة السحابة حاوية Linux فيها نحو 4 أنوية و16 غيغابايت ذاكرة، وشبكتها حسب إعداد البيئة؛ قِس قبل أن تعتمد. — A cloud session is a Linux container with about 4 vCPU, 16 GB and network per the environment setting; measure before relying on it.
 - **متى أستخدمها / when:** planning long renders, big installs, downloads or services in a web or cloud session
 - **كيف / how:** Documented: 4 vCPU, 16 GB RAM, 30 GB disk; network None, Trusted (default: registries, GitHub, cloud SDKs), Full or Custom; setup script cached; network secrets injected by the proxy. Measured in P5/P8 on 2026-10-16: 4 vCPU, 15 GiB, 24-30 GB free, every tested host reachable, Docker daemon NOT running. Re-run scripts/probe_env.py; read `read_documentation session.resources` when limits hit. **أرقام / params:** 4 vCPU · 16 GB · 30 GB (docs, 2026-10-16)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`docker`](../requirements.md#req-docker) · [`npm:p5`](../requirements.md#req-npm-p5)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md`
 - **المصدر / source:** https://code.claude.com/docs/en/cloud-environments (fetched 2026-10-16, distill claude-surfaces §1.7); run P5, P8, P12
 
@@ -306,6 +336,7 @@
 - **ماذا / what:** في API يعمل الكود في حاوية بلا إنترنت ولا تثبيت حزم؛ اعمل بالمكتبات المثبتة مسبقًا فقط. — In the API, code runs in a container with no internet and no package installs; work with the preinstalled libraries only.
 - **متى أستخدمها / when:** you are called through the API with the code-execution tool, or the network probe fails instantly
 - **كيف / how:** Per the official page (fetched 2026-10-16): Python 3.11, 1 CPU, 5 GiB RAM, 5 GiB disk, no outbound network; containers reusable by id and expire after 30 days. Preinstalled: pandas, numpy, scipy, scikit-learn, statsmodels, matplotlib, seaborn, openpyxl, xlsxwriter, python-docx, python-pptx, pypdf, pdfplumber, reportlab, pillow, sympy, plus rg, fd and sqlite. Inline assets; do not promise ffmpeg or downloads. **أرقام / params:** 1 CPU · 5 GiB RAM · 5 GiB disk · no network
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:scipy`](../requirements.md#req-pip-scipy) · [`pip:pandas`](../requirements.md#req-pip-pandas) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:sympy`](../requirements.md#req-pip-sympy) · [`pip:office`](../requirements.md#req-pip-office) · [`pip:sklearn`](../requirements.md#req-pip-sklearn)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md`
 - **المصدر / source:** https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool (fetched 2026-10-16, P18)
 
@@ -313,6 +344,7 @@
 - **ماذا / what:** في claude.ai يصنع Claude ملفات Word وExcel وPowerPoint وPDF داخل صندوق، وتعتمد الشبكة على إعداد الخطة أو المشرف. — In claude.ai, Claude creates docx/xlsx/pptx/pdf files in a sandbox, and the network depends on the plan or admin setting.
 - **متى أستخدمها / when:** the session is a claude.ai chat (web, desktop or mobile) with code execution
 - **كيف / how:** Per the help article (fetched 2026-10-16): Free/Pro/Max have one 'Allow network egress' toggle; Team/Enterprise owners pick Off, Package managers only (npm, PyPI, crates, Ubuntu, Yarn, GitHub), Package managers + domains, or All domains. Max 30 MB per file. Custom skills upload as a zip with SKILL.md (help article: description up to 200 chars). Probe the network (SELF-15) before promising installs. **أرقام / params:** 30 MB per file · 4 admin network levels
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`pip:office`](../requirements.md#req-pip-office)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md`
 - **المصدر / source:** https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude ; https://support.claude.com/en/articles/12512198-creating-custom-skills (fetched 2026-10-16)
 
@@ -320,6 +352,7 @@
 - **ماذا / what:** تطبيق سطح المكتب يضيف بيئات محلية وسحابية وSSH، ولوحة متصفح، والتحكم بالحاسوب، وموصلات بزر. — The desktop app adds local, cloud and SSH environments, a browser pane, computer use and one-click connectors.
 - **متى أستخدمها / when:** the user is on Claude Desktop, or a cloud session is linked to their computer
 - **كيف / how:** Per the docs (fetched 2026-10-16): environments Local, Cloud, SSH and WSL; parallel sessions with worktrees; visual diff; browser pane (per-site approval); computer use on macOS/Windows for Pro/Max (preview); connectors and plugins via the + button; Dispatch from phone. Cloud sessions have no file editor, no plugin browser and no connector button. Look for `mcp__Claude_Browser__*`, `mcp__computer-use__*` or `enable__…` tools and load the matching skill first.
+- **يحتاج / needs:** [`os:macos`](../requirements.md#req-os-macos) · [`claude:browser`](../requirements.md#req-claude-browser) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md`
 - **المصدر / source:** https://code.claude.com/docs/en/desktop (fetched 2026-10-16, P18)
 
@@ -327,6 +360,7 @@
 - **ماذا / what:** جدول يحوّل كل أداة تجدها إلى القوى التي تفتحها، حتى لا تنسى قدرة متاحة. — A table that turns each tool you find into the powers it unlocks, so no available capability is forgotten.
 - **متى أستخدمها / when:** right after the inventory (SELF-05) and before planning
 - **كيف / how:** Open references/surfaces.md § 'Tool present → powers'. Examples: Bash + network → pip/npm/apt installs, git clone, API calls; Read on images or PDFs → look at your own renders; Agent/Workflow → parallel research and review; Monitor or background Bash → long renders with progress; Artifact → shareable pages; scheduling tools → recurring work; mcp__github__* → PRs, CI logs and code search; mcp__Higgsfield__* → paid AI image/video/audio.
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`git`](../requirements.md#req-git)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md`
 - **المصدر / source:** distill claude-surfaces §5 table, extended
 
@@ -336,6 +370,7 @@
 - **ماذا / what:** أبلغ بما وجدت في بطاقة قصيرة، وبعد كل فعل مؤثر أعط إيصالًا بالدليل. — Report findings as a short card, and after each consequential action give a receipt with evidence.
 - **متى أستخدمها / when:** end of discovery; after renders, installs, publishes or pushes; final answer
 - **كيف / how:** Card: surface · CPU/RAM/disk · GPU yes/no · network level · key tools present · gaps with one-line fixes · tools that are paid or side-effecting. Receipt: status (success/warning/error), one-line summary, tool used, evidence items (command output, file path, ffprobe line), artifacts, next actions, retry safe?, verified?. 'Done' means verified with evidence. **أرقام / params:** card ≤10 lines
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** owner KOSIF SEE ECC receipts (distill see-core §11, §19G); env-probe §7.3
@@ -344,6 +379,7 @@
 - **ماذا / what:** سمِّ العطل ثم طبّق أصغر إصلاح له، ولا تكرر الطلب نفسه بلا تغيير. — Name the failure, apply its smallest fix, and never resend an identical failing call.
 - **متى أستخدمها / when:** a tool call, install, probe or subagent fails
 - **كيف / how:** STALE_STATE → re-probe. BAD_TOOL_ARGS → read the schema, fix once, never resend identical arguments. PROBE_ABORT → run independent probes separately. MISSING_DEP → install in isolation, then verify import and version. NEEDS_AUTH → name the key or connector. POLICY_BLOCK (403/407) → report it, no workaround. SUPPLY_CHAIN_RISK → read the source, do not run unknown installers or hooks. REGRESSION → roll back. **أرقام / params:** retry a failed piece once, narrower
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** owner KOSIF SEE repair signatures rewritten (distill see-core §6)
@@ -352,6 +388,7 @@
 - **ماذا / what:** لا تستدعِ أداة تصرف رصيدًا أو تنشر أو ترسل أو تدفع دون نية واضحة من المستخدم. — Never call a tool that spends credits, publishes, sends or pushes without clear user intent.
 - **متى أستخدمها / when:** generation tools with credits, publishing, posting, emails or messages, git push, deploys, deletes
 - **كيف / how:** Before the call, state what it will do, the cost if known (quote or balance tools first), and whether it can be undone. Get a yes, or rely on intent the user already stated. Browsing a catalog is not permission to generate. Prefer a free local route (ffmpeg, Canvas, Piper) when it meets the brief. Log the receipt afterwards.
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:piper`](../requirements.md#req-pip-piper)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md`
 - **المصدر / source:** distill claude-surfaces §4 (Higgsfield credits); owner KOSIF SEE side-effect rules (distill see-core §10-11)

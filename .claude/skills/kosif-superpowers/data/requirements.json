@@ -1,0 +1,1339 @@
+{
+ "_note": "Requirement registry used by scripts/requirements.py. key → how to detect it on this machine, how to install it, what it unlocks. kind: bin (executable on PATH), pip (python package), npm (node package), apt (system package), key (API key or account), service (hosted service/connector), os (platform), font (font file), model (downloaded model weights). Edit here, then run: python3 scripts/requirements.py derive && python3 scripts/requirements.py index",
+ "ffmpeg": {
+  "kind": "bin",
+  "detect": "ffmpeg",
+  "install": "apt-get install -y ffmpeg  (or: conda install ffmpeg)",
+  "ar": "قص ودمج وترميز وضبط علوّ الصوت وحرق الترجمات واستخراج الإطارات",
+  "en": "cut, concat, transcode, loudnorm, burn captions, extract frames/audio",
+  "patterns": [
+   "\\bffmpeg\\b",
+   "\\bffprobe\\b",
+   "\\bxfade\\b",
+   "\\bloudnorm\\b",
+   "\\blibass\\b"
+  ]
+ },
+ "node": {
+  "kind": "bin",
+  "detect": "node",
+  "install": "https://nodejs.org (22+)  — apt-get install -y nodejs npm",
+  "ar": "تشغيل أدوات الرندر والمكتبات JavaScript",
+  "en": "run the render tools and JavaScript libraries",
+  "patterns": [
+   "\\bnpm\\b",
+   "\\bnpx\\b",
+   "\\.cjs\\b",
+   "\\.mjs\\b",
+   "\\bnode:test\\b",
+   "\\bnode (--|-e|tools/|scripts/|\\S+\\.js)",
+   "\\bNode(\\.js)? ?(18|20|22|24|26)\\b",
+   "\\bNode\\.js\\b"
+  ]
+ },
+ "python3": {
+  "kind": "bin",
+  "detect": "python3",
+  "install": "apt-get install -y python3 python3-pip python3-venv",
+  "ar": "تشغيل سكربتات المهارة",
+  "en": "run the skill's scripts",
+  "patterns": [
+   "\\bpython3?\\b",
+   "\\bpip install\\b",
+   "\\.py\\b"
+  ]
+ },
+ "chromium": {
+  "kind": "bin",
+  "detect": "playwright-chromium",
+  "install": "npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)",
+  "ar": "رندر مشاهد HTML بالتقاط الإطارات ومراقبة الصفحات",
+  "en": "capture HTML scenes frame by frame; observe pages",
+  "patterns": [
+   "\\bchromium\\b",
+   "\\bplaywright\\b",
+   "\\bpuppeteer\\b",
+   "render_html\\.cjs",
+   "\\bheadless\\b",
+   "\\bCDP\\b"
+  ]
+ },
+ "git": {
+  "kind": "bin",
+  "detect": "git",
+  "install": "apt-get install -y git",
+  "ar": "إدارة الإصدارات",
+  "en": "version control",
+  "patterns": [
+   "\\bgit (clone|fetch|push|commit|log|diff|worktree)\\b",
+   "\\bworktree\\b"
+  ]
+ },
+ "gh": {
+  "kind": "bin",
+  "detect": "gh",
+  "install": "https://cli.github.com  (cloud sessions: use the GitHub MCP tools instead)",
+  "ar": "GitHub من سطر الأوامر",
+  "en": "GitHub from the shell",
+  "patterns": [
+   "\\bgh (pr|issue|repo|api|run)\\b"
+  ]
+ },
+ "docker": {
+  "kind": "bin",
+  "detect": "docker",
+  "install": "https://docs.docker.com/get-docker (daemon needed; cloud containers have the client only)",
+  "ar": "حاويات معزولة",
+  "en": "isolated containers",
+  "patterns": [
+   "\\bdocker\\b"
+  ]
+ },
+ "imagemagick": {
+  "kind": "bin",
+  "detect": "convert",
+  "install": "apt-get install -y imagemagick",
+  "ar": "تحويل الصور ولوحات الاتصال من الصدفة",
+  "en": "image conversion and contact sheets from the shell",
+  "patterns": [
+   "\\bimagemagick\\b",
+   "\\bmagick\\b",
+   "\\bmontage\\b"
+  ]
+ },
+ "tesseract": {
+  "kind": "apt",
+  "detect": "tesseract",
+  "install": "apt-get install -y tesseract-ocr tesseract-ocr-ara  (+ pip install pytesseract)",
+  "ar": "تعرّف ضوئي على النص العربي في الإطارات والمستندات",
+  "en": "OCR of Arabic text in frames and documents",
+  "patterns": [
+   "\\btesseract\\b",
+   "\\bpytesseract\\b",
+   "\\bOCR\\b",
+   "traineddata"
+  ]
+ },
+ "blender": {
+  "kind": "apt",
+  "detect": "blender",
+  "install": "apt-get install -y blender  (or the official tarball)",
+  "ar": "ثلاثي الأبعاد: نمذجة ورندر بالكود",
+  "en": "3D modelling and scripted renders",
+  "patterns": [
+   "\\bblender\\b",
+   "\\bbpy\\b"
+  ]
+ },
+ "graphviz": {
+  "kind": "apt",
+  "detect": "dot",
+  "install": "apt-get install -y graphviz",
+  "ar": "رسم المخططات من نص",
+  "en": "diagrams from text",
+  "patterns": [
+   "\\bgraphviz\\b",
+   "\\bdot -T",
+   "\\bdot language\\b"
+  ]
+ },
+ "latex": {
+  "kind": "apt",
+  "detect": "xelatex",
+  "install": "apt-get install -y texlive-xetex texlive-lang-arabic",
+  "ar": "معادلات ومستندات LaTeX بالعربية",
+  "en": "LaTeX equations and Arabic documents",
+  "patterns": [
+   "\\blatex\\b",
+   "\\bxelatex\\b",
+   "\\btexlive\\b"
+  ]
+ },
+ "pandoc": {
+  "kind": "bin",
+  "detect": "pandoc",
+  "install": "apt-get install -y pandoc",
+  "ar": "تحويل المستندات بين الصيغ",
+  "en": "convert documents between formats",
+  "patterns": [
+   "\\bpandoc\\b"
+  ]
+ },
+ "libreoffice": {
+  "kind": "bin",
+  "detect": "soffice",
+  "install": "apt-get install -y libreoffice-core libreoffice-writer libreoffice-impress",
+  "ar": "تحويل Office إلى PDF وعرض المستندات",
+  "en": "Office → PDF conversion and document rendering",
+  "patterns": [
+   "\\bsoffice\\b",
+   "\\blibreoffice\\b"
+  ]
+ },
+ "yt-dlp": {
+  "kind": "pip",
+  "detect": "yt_dlp",
+  "install": "pip install yt-dlp",
+  "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
+  "en": "download licensed or owned media from links",
+  "patterns": [
+   "\\byt-dlp\\b",
+   "\\byt_dlp\\b",
+   "fetch_video\\.py"
+  ]
+ },
+ "pip:numpy": {
+  "kind": "pip",
+  "detect": "numpy",
+  "install": "pip install numpy",
+  "ar": "حسابات عددية على الإطارات والصوت",
+  "en": "numeric work on frames and audio",
+  "patterns": [
+   "\\bnumpy\\b",
+   "\\bnp\\.\\w+"
+  ]
+ },
+ "pip:pillow": {
+  "kind": "pip",
+  "detect": "PIL",
+  "install": "pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))",
+  "ar": "رسم الصور والنص العربي المشكَّل (raqm)",
+  "en": "image drawing and shaped Arabic text (raqm)",
+  "patterns": [
+   "\\bpillow\\b",
+   "\\bPIL\\b",
+   "\\braqm\\b",
+   "ImageDraw",
+   "ImageFont"
+  ]
+ },
+ "pip:opencv": {
+  "kind": "pip",
+  "detect": "cv2",
+  "install": "pip install opencv-python-headless",
+  "ar": "تحليل الفيديو: قطعات، تدفق بصري، تتبّع",
+  "en": "video analysis: cuts, optical flow, tracking",
+  "patterns": [
+   "\\bopencv\\b",
+   "\\bcv2\\b"
+  ]
+ },
+ "pip:scipy": {
+  "kind": "pip",
+  "detect": "scipy",
+  "install": "pip install scipy",
+  "ar": "مرشحات الإشارة والتحسين",
+  "en": "signal filters and optimisation",
+  "patterns": [
+   "\\bscipy\\b",
+   "\\bsosfilt\\b"
+  ]
+ },
+ "pip:pandas": {
+  "kind": "pip",
+  "detect": "pandas",
+  "install": "pip install pandas",
+  "ar": "جداول وتحليل بيانات",
+  "en": "tables and data analysis",
+  "patterns": [
+   "\\bpandas\\b",
+   "\\bpd\\.(read|DataFrame)"
+  ]
+ },
+ "pip:matplotlib": {
+  "kind": "pip",
+  "detect": "matplotlib",
+  "install": "pip install matplotlib",
+  "ar": "رسوم بيانية ثابتة",
+  "en": "static charts",
+  "patterns": [
+   "\\bmatplotlib\\b",
+   "\\bplt\\."
+  ]
+ },
+ "pip:plotly": {
+  "kind": "pip",
+  "detect": "plotly",
+  "install": "pip install plotly kaleido",
+  "ar": "رسوم تفاعلية وتصدير صور",
+  "en": "interactive charts and image export",
+  "patterns": [
+   "\\bplotly\\b"
+  ]
+ },
+ "pip:sympy": {
+  "kind": "pip",
+  "detect": "sympy",
+  "install": "pip install sympy",
+  "ar": "رياضيات رمزية",
+  "en": "symbolic maths",
+  "patterns": [
+   "\\bsympy\\b"
+  ]
+ },
+ "pip:faster-whisper": {
+  "kind": "model",
+  "detect": "faster_whisper",
+  "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
+  "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
+  "en": "speech-to-text with word timestamps (Arabic)",
+  "patterns": [
+   "\\bfaster[- ]whisper\\b",
+   "\\bwhisper\\b",
+   "\\bwhisperx\\b"
+  ]
+ },
+ "pip:piper": {
+  "kind": "model",
+  "detect": "piper",
+  "install": "pip install piper-tts  + an ar_JO voice (.onnx + .json) from huggingface.co/rhasspy/piper-voices",
+  "ar": "توليد صوت عربي محلي بلا مفتاح مع محاذاة الفونيمات",
+  "en": "local Arabic TTS without a key, with phoneme alignment",
+  "patterns": [
+   "\\bpiper\\b"
+  ]
+ },
+ "pip:kokoro": {
+  "kind": "model",
+  "detect": "kokoro",
+  "install": "pip install kokoro soundfile  (weights from huggingface.co)",
+  "ar": "توليد صوت محلي (إنجليزي وأخرى)",
+  "en": "local TTS (English and others)",
+  "patterns": [
+   "\\bkokoro\\b"
+  ]
+ },
+ "pip:onnxruntime": {
+  "kind": "pip",
+  "detect": "onnxruntime",
+  "install": "pip install onnxruntime",
+  "ar": "تشغيل النماذج المحلية على المعالج",
+  "en": "run local models on CPU",
+  "patterns": [
+   "\\bonnxruntime\\b",
+   "\\bonnx\\b"
+  ]
+ },
+ "pip:torch": {
+  "kind": "pip",
+  "detect": "torch",
+  "install": "pip install torch --index-url https://download.pytorch.org/whl/cpu  (CPU build ≈ 200 MB)",
+  "ar": "نماذج التعلم العميق محليًا",
+  "en": "deep-learning models locally",
+  "patterns": [
+   "\\btorch\\b",
+   "\\bpytorch\\b",
+   "\\btransformers\\b",
+   "\\bdiffusers\\b"
+  ]
+ },
+ "pip:librosa": {
+  "kind": "pip",
+  "detect": "librosa",
+  "install": "pip install librosa soundfile",
+  "ar": "تحليل الإيقاع والبدايات والطاقة الصوتية",
+  "en": "beat, onset and energy analysis",
+  "patterns": [
+   "\\blibrosa\\b"
+  ]
+ },
+ "pip:soundfile": {
+  "kind": "pip",
+  "detect": "soundfile",
+  "install": "pip install soundfile",
+  "ar": "قراءة وكتابة WAV/FLAC",
+  "en": "read/write WAV/FLAC",
+  "patterns": [
+   "\\bsoundfile\\b",
+   "\\bsf\\.(read|write)"
+  ]
+ },
+ "pip:pyloudnorm": {
+  "kind": "pip",
+  "detect": "pyloudnorm",
+  "install": "pip install pyloudnorm",
+  "ar": "قياس العلوّ LUFS",
+  "en": "LUFS loudness metering",
+  "patterns": [
+   "\\bpyloudnorm\\b",
+   "\\bpyln\\b"
+  ]
+ },
+ "pip:fonttools": {
+  "kind": "pip",
+  "detect": "fontTools",
+  "install": "pip install fonttools brotli",
+  "ar": "فحص الخطوط وتقطيعها ودمجها",
+  "en": "inspect, subset and merge fonts",
+  "patterns": [
+   "\\bfonttools\\b",
+   "\\bfontTools\\b",
+   "\\bpyftsubset\\b"
+  ]
+ },
+ "pip:rembg": {
+  "kind": "model",
+  "detect": "rembg",
+  "install": "pip install rembg  (u2net weights download on first run)",
+  "ar": "إزالة الخلفية من الصور",
+  "en": "background removal",
+  "patterns": [
+   "\\brembg\\b"
+  ]
+ },
+ "pip:vtracer": {
+  "kind": "pip",
+  "detect": "vtracer",
+  "install": "pip install vtracer",
+  "ar": "تحويل الصور النقطية إلى SVG",
+  "en": "raster → SVG tracing",
+  "patterns": [
+   "\\bvtracer\\b"
+  ]
+ },
+ "pip:camel-tools": {
+  "kind": "model",
+  "detect": "camel_tools",
+  "install": "pip install camel-tools  (+ camel_data -i light)",
+  "ar": "معالجة اللغة العربية: تشكيل، تقطيع، تحليل صرفي",
+  "en": "Arabic NLP: diacritisation, tokenisation, morphology",
+  "patterns": [
+   "\\bcamel[- ]tools\\b",
+   "\\bfarasa\\b",
+   "\\bmishkal\\b"
+  ]
+ },
+ "pip:office": {
+  "kind": "pip",
+  "detect": "docx",
+  "install": "pip install python-docx openpyxl python-pptx reportlab pypdf",
+  "ar": "إنشاء وقراءة Word وExcel وPowerPoint وPDF",
+  "en": "create and read Word, Excel, PowerPoint and PDF",
+  "patterns": [
+   "\\bpython-docx\\b",
+   "\\bopenpyxl\\b",
+   "\\bpython-pptx\\b",
+   "\\breportlab\\b",
+   "\\bpypdf\\b",
+   "\\bdocx\\b",
+   "\\bpptx\\b",
+   "\\bxlsx\\b"
+  ]
+ },
+ "pip:anthropic": {
+  "kind": "pip",
+  "detect": "anthropic",
+  "install": "pip install anthropic  (needs ANTHROPIC_API_KEY)",
+  "ar": "استدعاء Claude من الكود",
+  "en": "call Claude from code",
+  "patterns": [
+   "\\bpip install anthropic\\b",
+   "\\bimport anthropic\\b",
+   "\\bANTHROPIC_API_KEY\\b"
+  ]
+ },
+ "pip:higgsfield": {
+  "kind": "key",
+  "detect": "HIGGSFIELD_API_KEY",
+  "install": "pip install higgsfield-client python-dotenv  + HIGGSFIELD_API_KEY (paid credits) or the Higgsfield MCP connector",
+  "ar": "توليد صور وفيديو وصوت مدفوع",
+  "en": "paid image, video and voice generation",
+  "patterns": [
+   "\\bhiggsfield\\b",
+   "\\bkatana\\b"
+  ]
+ },
+ "npm:three": {
+  "kind": "npm",
+  "detect": "three",
+  "install": "npm i three@0.186.1 esbuild",
+  "ar": "مشاهد WebGL ثلاثية الأبعاد ونص عربي ثلاثي الأبعاد",
+  "en": "WebGL 3D scenes and 3D Arabic text",
+  "patterns": [
+   "three\\.js",
+   "\\bthree@",
+   "\\bTHREE\\.",
+   "\\bWebGL\\b",
+   "\\bUnrealBloom\\b",
+   "@react-three",
+   "\\bnpm i three\\b",
+   "\\bimport \\* as THREE\\b"
+  ]
+ },
+ "npm:gsap": {
+  "kind": "npm",
+  "detect": "gsap",
+  "install": "npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)",
+  "ar": "خطوط زمنية وتسارعات احترافية",
+  "en": "timelines and easing",
+  "patterns": [
+   "\\bgsap\\b",
+   "\\bScrollTrigger\\b"
+  ]
+ },
+ "npm:remotion": {
+  "kind": "npm",
+  "detect": "remotion",
+  "install": "npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3 people)",
+  "ar": "فيديو برمجي بـ React",
+  "en": "programmatic video in React",
+  "patterns": [
+   "\\bremotion\\b"
+  ]
+ },
+ "npm:hyperframes": {
+  "kind": "npm",
+  "detect": "hyperframes",
+  "install": "npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)",
+  "ar": "مُصيِّر HTML قابل للبحث الزمني مع مكونات",
+  "en": "seekable-DOM HTML renderer with components",
+  "patterns": [
+   "\\bhyperframes\\b"
+  ]
+ },
+ "npm:d3": {
+  "kind": "npm",
+  "detect": "d3",
+  "install": "npm i d3@7.9.0 topojson-client world-atlas",
+  "ar": "رسوم بيانية وخرائط مدفوعة بالبيانات",
+  "en": "data-driven charts and maps",
+  "patterns": [
+   "\\bd3(\\.js|@|-geo|\\b)",
+   "\\btopojson\\b"
+  ]
+ },
+ "npm:maplibre": {
+  "kind": "npm",
+  "detect": "maplibre-gl",
+  "install": "npm i maplibre-gl@6.14.0  (+ tiles: self-hosted PMTiles or a keyed provider)",
+  "ar": "خرائط تفاعلية متجهة",
+  "en": "vector interactive maps",
+  "patterns": [
+   "\\bmaplibre\\b",
+   "\\bmapbox\\b",
+   "\\bleaflet\\b"
+  ]
+ },
+ "npm:lottie": {
+  "kind": "npm",
+  "detect": "lottie-web",
+  "install": "npm i lottie-web @lottiefiles/dotlottie-web",
+  "ar": "تشغيل رسوم Lottie إطارًا إطارًا",
+  "en": "frame-accurate Lottie playback",
+  "patterns": [
+   "\\blottie\\b"
+  ]
+ },
+ "npm:animejs": {
+  "kind": "npm",
+  "detect": "animejs",
+  "install": "npm i animejs motion",
+  "ar": "محركات تحريك خفيفة",
+  "en": "lightweight animation engines",
+  "patterns": [
+   "\\banime\\.?js\\b",
+   "\\bmotion one\\b",
+   "\\bframer[- ]motion\\b"
+  ]
+ },
+ "npm:p5": {
+  "kind": "npm",
+  "detect": "p5",
+  "install": "npm i p5  (LGPL: load as a script, do not bundle into proprietary code)",
+  "ar": "برمجة إبداعية ثنائية الأبعاد",
+  "en": "2D creative coding",
+  "patterns": [
+   "\\bp5(\\.js)?\\b",
+   "\\bpaper\\.js\\b",
+   "\\btwo\\.js\\b",
+   "\\bpixi(\\.js)?\\b"
+  ]
+ },
+ "npm:matter": {
+  "kind": "npm",
+  "detect": "matter-js",
+  "install": "npm i matter-js  (or @dimforge/rapier2d-compat)",
+  "ar": "فيزياء ثنائية الأبعاد حتمية",
+  "en": "deterministic 2D physics",
+  "patterns": [
+   "\\bmatter(\\.js|-js)\\b",
+   "\\brapier\\b",
+   "\\bcannon(-es)?\\b"
+  ]
+ },
+ "npm:sharp": {
+  "kind": "npm",
+  "detect": "sharp",
+  "install": "npm i sharp",
+  "ar": "معالجة صور سريعة في Node",
+  "en": "fast image processing in Node",
+  "patterns": [
+   "\\bnpm i sharp\\b",
+   "\\bsharp\\(",
+   "\\bsharp\\b.*resize"
+  ]
+ },
+ "npm:satori": {
+  "kind": "npm",
+  "detect": "satori",
+  "install": "npm i satori @resvg/resvg-js  (MPL-2.0)",
+  "ar": "HTML/CSS إلى SVG/PNG بلا متصفح",
+  "en": "HTML/CSS → SVG/PNG without a browser",
+  "patterns": [
+   "\\bsatori\\b",
+   "\\bresvg\\b"
+  ]
+ },
+ "npm:mermaid": {
+  "kind": "npm",
+  "detect": "@mermaid-js/mermaid-cli",
+  "install": "npm i -g @mermaid-js/mermaid-cli",
+  "ar": "رسم مخططات Mermaid إلى صور",
+  "en": "render Mermaid diagrams to images",
+  "patterns": [
+   "\\bmermaid\\b",
+   "\\bmmdc\\b"
+  ]
+ },
+ "npm:esbuild": {
+  "kind": "npm",
+  "detect": "esbuild",
+  "install": "npm i esbuild vite",
+  "ar": "تجميع JavaScript للمشاهد",
+  "en": "bundle JavaScript for scenes",
+  "patterns": [
+   "\\besbuild\\b",
+   "\\bvite\\b",
+   "\\bwebpack\\b"
+  ]
+ },
+ "npm:react": {
+  "kind": "npm",
+  "detect": "react",
+  "install": "npm i react react-dom  (or next, svelte, vue)",
+  "ar": "واجهات وتطبيقات ويب",
+  "en": "web UIs and apps",
+  "patterns": [
+   "\\breact\\b",
+   "\\bnext\\.?js\\b",
+   "\\bsvelte\\b",
+   "\\bvue\\b",
+   "\\btailwind\\b",
+   "\\bshadcn\\b"
+  ]
+ },
+ "npm:rea": {
+  "kind": "npm",
+  "detect": "rea",
+  "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
+  "ar": "فحص البرامج والهندسة العكسية القانونية",
+  "en": "lawful software inspection (REA)",
+  "patterns": [
+   "\\brea-agents\\b",
+   "\\brea (analyze|inspect|trace|capture|compare|list|decode|decompile|doctor|setup)\\b",
+   "\\bREA\\b"
+  ]
+ },
+ "engine:ghidra": {
+  "kind": "bin",
+  "detect": "GHIDRA_INSTALL_DIR",
+  "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
+  "ar": "تفكيك الثنائيات الأصلية",
+  "en": "native binary disassembly/decompilation",
+  "patterns": [
+   "\\bghidra\\b",
+   "\\bhopper\\b",
+   "\\bIDA (Pro|MCP)\\b",
+   "\\bkuna\\b",
+   "deep-analysis provider"
+  ]
+ },
+ "engine:android": {
+  "kind": "bin",
+  "detect": "adb",
+  "install": "Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised",
+  "ar": "فحص تطبيقات وأجهزة أندرويد",
+  "en": "Android app and device inspection",
+  "patterns": [
+   "\\badb\\b",
+   "\\bjadx\\b",
+   "\\bapktool\\b",
+   "\\bAPK\\b"
+  ]
+ },
+ "engine:frida": {
+  "kind": "bin",
+  "detect": "frida",
+  "install": "pip install frida-tools (consented target process only)",
+  "ar": "تجهيز العمليات في وقت التشغيل",
+  "en": "runtime instrumentation",
+  "patterns": [
+   "\\bfrida\\b"
+  ]
+ },
+ "engine:rizin": {
+  "kind": "bin",
+  "detect": "rizin",
+  "install": "rizin / Cutter / GDB from your distro",
+  "ar": "تنقيح وتحليل بالأدوات الحرة",
+  "en": "free debugging and analysis tools",
+  "patterns": [
+   "\\brizin\\b",
+   "\\bcutter\\b",
+   "\\bgdb\\b",
+   "\\bobjdump\\b"
+  ]
+ },
+ "engine:wireshark": {
+  "kind": "bin",
+  "detect": "tshark",
+  "install": "apt-get install -y tshark  (Wireshark 4.x)",
+  "ar": "تحليل التقاطات الشبكة",
+  "en": "packet capture analysis",
+  "patterns": [
+   "\\btshark\\b",
+   "\\bpcap\\b",
+   "\\bcapinfos\\b"
+  ]
+ },
+ "engine:wabt": {
+  "kind": "bin",
+  "detect": "wasm-objdump",
+  "install": "WABT 1.0.42 + REA_WABT_BIN_DIRECTORY",
+  "ar": "فحص WebAssembly",
+  "en": "WebAssembly inspection",
+  "patterns": [
+   "\\bWABT\\b",
+   "\\bwasm-objdump\\b",
+   "\\binspect-wasm\\b",
+   "\\bwasm2wat\\b"
+  ]
+ },
+ "engine:binwalk": {
+  "kind": "bin",
+  "detect": "binwalk",
+  "install": "pip install binwalk (or unblob) + REA_BINWALK_COMMAND",
+  "ar": "تحليل الفيرموير",
+  "en": "firmware analysis",
+  "patterns": [
+   "\\bbinwalk\\b",
+   "\\bunblob\\b",
+   "\\bfirmware\\b"
+  ]
+ },
+ "engine:sigrok": {
+  "kind": "bin",
+  "detect": "sigrok-cli",
+  "install": "apt-get install -y sigrok-cli",
+  "ar": "فك تسجيلات الإشارات المنطقية",
+  "en": "logic-signal decoding",
+  "patterns": [
+   "\\bsigrok\\b"
+  ]
+ },
+ "engine:jeb": {
+  "kind": "service",
+  "detect": "JEB",
+  "install": "JEB Pro (commercial) with its MCP client",
+  "ar": "تفكيك متقدم (تجاري)",
+  "en": "commercial decompiler",
+  "patterns": [
+   "\\bJEB\\b"
+  ]
+ },
+ "engine:wakaru": {
+  "kind": "bin",
+  "detect": "wakaru",
+  "install": "Wakaru 1.13+ binary + REA_WAKARU_COMMAND",
+  "ar": "استعادة مصادر JavaScript المقروءة",
+  "en": "readable JavaScript source recovery",
+  "patterns": [
+   "\\bwakaru\\b"
+  ]
+ },
+ "os:macos": {
+  "kind": "os",
+  "detect": "darwin",
+  "install": "a macOS machine with Xcode command-line tools",
+  "ar": "أدوات Apple (Mach-O، plist، Swift)",
+  "en": "Apple toolchain (Mach-O, plist, Swift)",
+  "patterns": [
+   "\\bmacOS\\b",
+   "\\bMach-O\\b",
+   "\\bXcode\\b",
+   "\\bplist\\b",
+   "\\bdemangle[- ]swift\\b",
+   "\\bLLDB\\b"
+  ]
+ },
+ "gpu": {
+  "kind": "os",
+  "detect": "nvidia-smi",
+  "install": "a machine with an NVIDIA/Apple GPU (cloud containers have none; plan CPU paths)",
+  "ar": "تسريع النماذج والرندر الثقيل",
+  "en": "accelerate models and heavy renders",
+  "patterns": [
+   "\\bCUDA\\b",
+   "\\bneeds? (a )?GPU\\b",
+   "\\bGPU (required|recommended|only)\\b",
+   "\\bnvidia\\b"
+  ]
+ },
+ "key:elevenlabs": {
+  "kind": "key",
+  "detect": "ELEVENLABS_API_KEY",
+  "install": "ELEVENLABS_API_KEY (paid)",
+  "ar": "أصوات عربية عالية الجودة مدفوعة",
+  "en": "paid high-quality Arabic voices",
+  "patterns": [
+   "\\belevenlabs\\b",
+   "\\bplay\\.ht\\b",
+   "\\bmurf\\b"
+  ]
+ },
+ "key:openai": {
+  "kind": "key",
+  "detect": "OPENAI_API_KEY",
+  "install": "OPENAI_API_KEY (paid)",
+  "ar": "نماذج OpenAI",
+  "en": "OpenAI models",
+  "patterns": [
+   "\\bOPENAI_API_KEY\\b",
+   "\\bopenai\\b",
+   "\\bsora\\b"
+  ]
+ },
+ "key:video-gen": {
+  "kind": "service",
+  "detect": "",
+  "install": "an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits",
+  "ar": "توليد فيديو بالذكاء الاصطناعي (مدفوع)",
+  "en": "AI video generation (paid)",
+  "patterns": [
+   "\\brunway\\b",
+   "\\bkling\\b",
+   "\\bveo ?\\d?\\b",
+   "\\bpika\\b",
+   "\\bLuma (AI|Dream|Ray)\\b",
+   "\\bmidjourney\\b",
+   "\\bideogram\\b",
+   "\\bsuno\\b",
+   "\\budio\\b",
+   "\\bflux (pro|dev|schnell)\\b",
+   "\\bnano ?banana\\b",
+   "\\bseedance\\b",
+   "\\bhailuo\\b"
+  ]
+ },
+ "key:graphify": {
+  "kind": "service",
+  "detect": "",
+  "install": "Graphify hosted MCP connector (paid, consent + spend rules) or pip install graphify for local graphs",
+  "ar": "خريطة معرفة الكود",
+  "en": "code knowledge graph",
+  "patterns": [
+   "\\bgraphify\\b"
+  ]
+ },
+ "mcp:github": {
+  "kind": "service",
+  "detect": "",
+  "install": "GitHub connector in claude.ai (Settings → Connectors) or gh on your machine",
+  "ar": "قراءة وكتابة GitHub",
+  "en": "read/write GitHub",
+  "patterns": [
+   "\\bmcp__github\\b",
+   "\\bGitHub MCP\\b",
+   "\\bpull request\\b"
+  ]
+ },
+ "claude:tools": {
+  "kind": "service",
+  "detect": "",
+  "install": "Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch",
+  "ar": "أدوات Claude Code: وكلاء، سير عمل، منشورات، ويب",
+  "en": "Claude Code tools: agents, workflows, artifacts, web",
+  "patterns": [
+   "\\bAgent tool\\b",
+   "\\bWorkflow tool\\b",
+   "\\bArtifact tool\\b",
+   "\\bclaude\\.ai artifact\\b",
+   "\\bWebFetch\\b",
+   "\\bWebSearch\\b",
+   "\\bToolSearch\\b",
+   "\\bsubagents?\\b",
+   "\\bsend_later\\b",
+   "\\bscheduled tasks?\\b",
+   "\\bSkill tool\\b",
+   "\\bTaskCreate\\b"
+  ]
+ },
+ "claude:browser": {
+  "kind": "service",
+  "detect": "",
+  "install": "Claude in Chrome extension or the desktop app's built-in browser / computer use",
+  "ar": "تصفّح وتحكم في جهاز المستخدم بموافقته",
+  "en": "browse and control the user's machine with consent",
+  "patterns": [
+   "\\bcomputer use\\b",
+   "\\bClaude in Chrome\\b",
+   "\\bbuilt-in browser\\b"
+  ]
+ },
+ "fonts:arabic": {
+  "kind": "font",
+  "detect": "proofs/_shared/fonts",
+  "install": "OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more from fonts.google.com",
+  "ar": "خطوط عربية مرخّصة للرندر",
+  "en": "licensed Arabic fonts for rendering",
+  "patterns": [
+   "\\bAmiri\\b",
+   "\\bCairo\\b",
+   "\\bTajawal\\b",
+   "\\bReem Kufi\\b",
+   "\\bAref Ruqaa\\b",
+   "\\bLalezar\\b",
+   "\\bNoto Naskh\\b",
+   "\\bOFL\\b"
+  ]
+ },
+ "network": {
+  "kind": "os",
+  "detect": "network",
+  "install": "outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)",
+  "ar": "اتصال بالشبكة للتثبيت والتحميل",
+  "en": "outbound network for installs and downloads",
+  "patterns": [
+   "\\bhuggingface\\b",
+   "\\bcurl -[LsSO]",
+   "\\bwget\\b",
+   "\\bmodel (download|weights)\\b",
+   "\\bfrom (pypi|npm|github) at run time\\b"
+  ]
+ },
+ "key:unspecified": {
+  "kind": "key",
+  "detect": "",
+  "install": "an account, API key or connector named in the power's install/how text (ask the user; never guess a value)",
+  "ar": "حساب أو مفتاح أو موصل خارجي يذكره سجل القدرة",
+  "en": "an account, key or connector named by the power",
+  "patterns": [
+   "\\bAPI[_ ]KEY\\b",
+   "\\bapi key\\b",
+   "\\baccess token\\b",
+   "\\bOAuth\\b",
+   "\\bconnector\\b"
+  ]
+ },
+ "pip:z3": {
+  "kind": "pip",
+  "detect": "z3",
+  "install": "pip install z3-solver",
+  "ar": "إثبات القيود وخصائص البرامج (SMT)",
+  "en": "SMT proving and counterexamples",
+  "patterns": [
+   "\\bz3\\b",
+   "z3-solver"
+  ]
+ },
+ "lean": {
+  "kind": "bin",
+  "detect": "lean",
+  "install": "elan installer: curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y",
+  "ar": "البراهين الرياضية الصورية",
+  "en": "formal proofs",
+  "patterns": [
+   "\\blean ?4?\\b",
+   "\\bmathlib\\b",
+   "\\belan\\b"
+  ]
+ },
+ "pip:duckdb": {
+  "kind": "pip",
+  "detect": "duckdb",
+  "install": "pip install duckdb",
+  "ar": "SQL على ملفات ضخمة",
+  "en": "SQL over large files",
+  "patterns": [
+   "\\bduckdb\\b"
+  ]
+ },
+ "pip:polars": {
+  "kind": "pip",
+  "detect": "polars",
+  "install": "pip install polars",
+  "ar": "جداول بيانات سريعة",
+  "en": "fast dataframes",
+  "patterns": [
+   "\\bpolars\\b"
+  ]
+ },
+ "pip:sklearn": {
+  "kind": "pip",
+  "detect": "sklearn",
+  "install": "pip install scikit-learn",
+  "ar": "تعلم الآلة على بيانات جدولية",
+  "en": "machine learning on tables",
+  "patterns": [
+   "\\bscikit-learn\\b",
+   "\\bsklearn\\b"
+  ]
+ },
+ "pip:statsforecast": {
+  "kind": "pip",
+  "detect": "statsforecast",
+  "install": "pip install statsforecast",
+  "ar": "التنبؤ بالسلاسل الزمنية",
+  "en": "time-series forecasting",
+  "patterns": [
+   "\\bstatsforecast\\b",
+   "\\bAutoARIMA\\b"
+  ]
+ },
+ "pip:geopandas": {
+  "kind": "pip",
+  "detect": "geopandas",
+  "install": "pip install geopandas",
+  "ar": "التحليل الجغرافي",
+  "en": "geospatial analysis",
+  "patterns": [
+   "\\bgeopandas\\b"
+  ]
+ },
+ "pip:biopython": {
+  "kind": "pip",
+  "detect": "Bio",
+  "install": "pip install biopython",
+  "ar": "المعلوماتية الحيوية",
+  "en": "bioinformatics",
+  "patterns": [
+   "\\bbiopython\\b"
+  ]
+ },
+ "pip:rdkit": {
+  "kind": "pip",
+  "detect": "rdkit",
+  "install": "pip install rdkit",
+  "ar": "الكيمياء الحاسوبية",
+  "en": "cheminformatics",
+  "patterns": [
+   "\\brdkit\\b",
+   "\\bSMILES\\b"
+  ]
+ },
+ "pip:ortools": {
+  "kind": "pip",
+  "detect": "ortools",
+  "install": "pip install ortools",
+  "ar": "الجدولة والتحسين الأمثل",
+  "en": "scheduling and optimisation",
+  "patterns": [
+   "\\bor-tools\\b",
+   "\\bortools\\b",
+   "\\bCP-SAT\\b"
+  ]
+ },
+ "pip:pulp": {
+  "kind": "pip",
+  "detect": "pulp",
+  "install": "pip install pulp ortools",
+  "ar": "البرمجة الخطية",
+  "en": "linear programming",
+  "patterns": [
+   "\\bpulp\\b"
+  ]
+ },
+ "pip:mujoco": {
+  "kind": "pip",
+  "detect": "mujoco",
+  "install": "pip install mujoco",
+  "ar": "المحاكاة الفيزيائية",
+  "en": "physics simulation",
+  "patterns": [
+   "\\bmujoco\\b"
+  ]
+ },
+ "pip:llama-cpp": {
+  "kind": "model",
+  "detect": "llama_cpp",
+  "install": "pip install llama-cpp-python + GGUF model",
+  "ar": "نموذج لغوي محلي",
+  "en": "local LLM",
+  "patterns": [
+   "\\bllama[.-]cpp\\b",
+   "\\bGGUF\\b"
+  ]
+ },
+ "pip:chromadb": {
+  "kind": "pip",
+  "detect": "chromadb",
+  "install": "pip install chromadb",
+  "ar": "مخزن متجهات للاسترجاع",
+  "en": "vector store for RAG",
+  "patterns": [
+   "\\bchroma(db)?\\b",
+   "\\bRAG\\b"
+  ]
+ },
+ "npm:mcp-servers": {
+  "kind": "npm",
+  "detect": "@modelcontextprotocol/server-filesystem",
+  "install": "npx -y @modelcontextprotocol/server-<name>",
+  "ar": "خوادم MCP مرجعية",
+  "en": "reference MCP servers",
+  "patterns": [
+   "@modelcontextprotocol/server",
+   "\\bMCP reference servers\\b"
+  ]
+ },
+ "pip:scrapy": {
+  "kind": "pip",
+  "detect": "scrapy",
+  "install": "pip install scrapy",
+  "ar": "الزحف المهذب على المواقع",
+  "en": "polite crawling",
+  "patterns": [
+   "\\bscrapy\\b"
+  ]
+ },
+ "pip:crawl4ai": {
+  "kind": "pip",
+  "detect": "crawl4ai",
+  "install": "pip install crawl4ai && crawl4ai-setup",
+  "ar": "تحويل الصفحات إلى Markdown",
+  "en": "pages to Markdown",
+  "patterns": [
+   "\\bcrawl4ai\\b"
+  ]
+ },
+ "pip:trafilatura": {
+  "kind": "pip",
+  "detect": "trafilatura",
+  "install": "pip install trafilatura",
+  "ar": "استخراج نص المقالات",
+  "en": "article text extraction",
+  "patterns": [
+   "\\btrafilatura\\b"
+  ]
+ },
+ "pip:browser-use": {
+  "kind": "key",
+  "detect": "OPENAI_API_KEY",
+  "install": "pip install browser-use + an LLM API key",
+  "ar": "وكيل متصفح بهدف لغوي",
+  "en": "goal-driven browser agent",
+  "patterns": [
+   "\\bbrowser-use\\b"
+  ]
+ },
+ "pip:docling": {
+  "kind": "model",
+  "detect": "docling",
+  "install": "pip install docling",
+  "ar": "تحليل المستندات مع الجداول",
+  "en": "layout-aware document parsing",
+  "patterns": [
+   "\\bdocling\\b"
+  ]
+ },
+ "pip:marker": {
+  "kind": "model",
+  "detect": "marker",
+  "install": "pip install marker-pdf",
+  "ar": "PDF إلى Markdown مع المعادلات",
+  "en": "PDF to Markdown with equations",
+  "patterns": [
+   "\\bmarker-pdf\\b",
+   "datalab-to/marker"
+  ]
+ },
+ "npm:slidev": {
+  "kind": "npm",
+  "detect": "@slidev/cli",
+  "install": "npm i -D @slidev/cli playwright-chromium",
+  "ar": "عروض تقديمية بـMarkdown",
+  "en": "Markdown slide decks",
+  "patterns": [
+   "\\bslidev\\b"
+  ]
+ },
+ "npm:marp": {
+  "kind": "npm",
+  "detect": "@marp-team/marp-cli",
+  "install": "npm i -g @marp-team/marp-cli",
+  "ar": "شرائح من Markdown",
+  "en": "slides from Markdown",
+  "patterns": [
+   "\\bmarp\\b"
+  ]
+ },
+ "plantuml": {
+  "kind": "apt",
+  "detect": "plantuml",
+  "install": "apt-get install -y plantuml",
+  "ar": "مخططات UML من نص",
+  "en": "UML from text",
+  "patterns": [
+   "\\bplantuml\\b"
+  ]
+ },
+ "pip:music21": {
+  "kind": "pip",
+  "detect": "music21",
+  "install": "pip install music21",
+  "ar": "التدوين الموسيقي وتحليله",
+  "en": "music notation and analysis",
+  "patterns": [
+   "\\bmusic21\\b",
+   "\\bMusicXML\\b"
+  ]
+ },
+ "pip:mediapipe": {
+  "kind": "model",
+  "detect": "mediapipe",
+  "install": "pip install mediapipe + .task models",
+  "ar": "تتبع الوجه واليد والجسم",
+  "en": "face, hand and pose tracking",
+  "patterns": [
+   "\\bmediapipe\\b"
+  ]
+ },
+ "pip:ultralytics": {
+  "kind": "model",
+  "detect": "ultralytics",
+  "install": "pip install ultralytics (AGPL; run as tool)",
+  "ar": "كشف الأجسام وتتبعها",
+  "en": "object detection and tracking",
+  "patterns": [
+   "\\bultralytics\\b",
+   "\\bYOLO\\b"
+  ]
+ },
+ "pip:pyannote": {
+  "kind": "key",
+  "detect": "HF_TOKEN",
+  "install": "pip install pyannote.audio + Hugging Face token",
+  "ar": "تمييز المتحدثين",
+  "en": "speaker diarization",
+  "patterns": [
+   "\\bpyannote\\b",
+   "\\bdiarization\\b"
+  ]
+ },
+ "pip:cadquery": {
+  "kind": "pip",
+  "detect": "cadquery",
+  "install": "pip install cadquery",
+  "ar": "تصميم هندسي بارامتري",
+  "en": "parametric CAD",
+  "patterns": [
+   "\\bcadquery\\b",
+   "\\bSTEP/STL\\b"
+  ]
+ },
+ "openscad": {
+  "kind": "apt",
+  "detect": "openscad",
+  "install": "apt-get install -y openscad",
+  "ar": "نماذج ‎.scad",
+  "en": "OpenSCAD models",
+  "patterns": [
+   "\\bopenscad\\b"
+  ]
+ },
+ "npm:axe": {
+  "kind": "npm",
+  "detect": "axe-core",
+  "install": "npm i -D axe-core @axe-core/playwright",
+  "ar": "فحص إمكانية الوصول",
+  "en": "accessibility checks",
+  "patterns": [
+   "\\baxe-core\\b",
+   "\\bWCAG\\b"
+  ]
+ },
+ "npm:pa11y": {
+  "kind": "npm",
+  "detect": "pa11y",
+  "install": "npm i -g pa11y",
+  "ar": "تدقيق إمكانية الوصول",
+  "en": "accessibility audit",
+  "patterns": [
+   "\\bpa11y\\b"
+  ]
+ },
+ "pip:semgrep": {
+  "kind": "pip",
+  "detect": "semgrep",
+  "install": "pip install semgrep",
+  "ar": "تحليل ثابت للكود",
+  "en": "static code analysis",
+  "patterns": [
+   "\\bsemgrep\\b",
+   "\\bSAST\\b"
+  ]
+ },
+ "gitleaks": {
+  "kind": "bin",
+  "detect": "gitleaks",
+  "install": "gitleaks release binary",
+  "ar": "كشف الأسرار في git",
+  "en": "secret detection",
+  "patterns": [
+   "\\bgitleaks\\b"
+  ]
+ },
+ "trivy": {
+  "kind": "bin",
+  "detect": "trivy",
+  "install": "trivy install script",
+  "ar": "فحص الثغرات",
+  "en": "vulnerability scanning",
+  "patterns": [
+   "\\btrivy\\b"
+  ]
+ },
+ "pip:hypothesis": {
+  "kind": "pip",
+  "detect": "hypothesis",
+  "install": "pip install hypothesis",
+  "ar": "اختبارات الخصائص",
+  "en": "property-based tests",
+  "patterns": [
+   "\\bhypothesis(works)?\\b.*\\b(test|given|strateg)",
+   "\\bpip install hypothesis\\b",
+   "HypothesisWorks"
+  ]
+ },
+ "pip:pandera": {
+  "kind": "pip",
+  "detect": "pandera",
+  "install": "pip install pandera",
+  "ar": "عقود البيانات",
+  "en": "data contracts",
+  "patterns": [
+   "\\bpandera\\b"
+  ]
+ },
+ "pip:spacy": {
+  "kind": "pip",
+  "detect": "spacy",
+  "install": "pip install spacy",
+  "ar": "معالجة اللغة",
+  "en": "NLP pipelines",
+  "patterns": [
+   "\\bspacy\\b"
+  ]
+ },
+ "pip:argos": {
+  "kind": "model",
+  "detect": "argostranslate",
+  "install": "pip install argostranslate + language package",
+  "ar": "ترجمة دون اتصال",
+  "en": "offline translation",
+  "patterns": [
+   "\\bargos\\b",
+   "\\bargostranslate\\b"
+  ]
+ }
+}

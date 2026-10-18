@@ -9,6 +9,12 @@
   "how": "Expose window.__kosif = {duration, fps, seek} and window.__kosifReady (fonts loaded); compute every value from t (prog/lerp/spring of t), never accumulate per frame; seeded mulberry32 rng(seed); GSAP only as a paused timeline that the renderer seeks; discrete state (typed text, counters) via modifiers, not callbacks. kosif-studio qa.py lint errors on Math.random / new THREE.Clock / Date.now (test passed here). All five proof films in proofs/ follow this contract and rendered through render_html.cjs.",
   "params": "rng mulberry32; seek(t) pure; render_html.cjs virtual time",
   "install": "",
+  "requires": [
+   "python3",
+   "chromium",
+   "npm:three",
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/timeline.js",
@@ -39,6 +45,10 @@
   "how": "Plan in seconds, convert once; cut lands on frame round(end×fps); for 29.97/23.976 never invent drop-frame timecode. After render, ffprobe nb_frames must equal round(duration × fps): verify_video.py checks it (proof films: 300 frames = 10.000 s, audio length = master).",
   "params": "frame=round(s·fps); 0–3 s@30 → 0–89, cut at 90",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/tools/verify_video.py",
@@ -68,6 +78,7 @@
   "how": "Compute totals in code and print them (stickman seconds sum, vox n×10, viral shots×6); keep a run-of-show table (one row per segment: clock, duration, cue in/out, SFX, music dip, caption style) and assert sum(durations) == total before rendering.",
   "params": "5×6=30; 5×7=35; N×10",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/docs/PRODUCTION-GATES.md",
@@ -96,6 +107,7 @@
   "how": "makeStoryboard(): beats = 3 if d ≤ 12 s, 5 if d ≤ 35 s, else min(12, ceil(d/6)); start/end rounded to ms, last end = duration; names افتتاحية/الفكرة/التوضيح/التحول/النتيجة/الخاتمة; visuals cycle kinetic-typography → dynamic-infographic → hand-drawn-shapes; fps 30. planner tests passed here.",
   "params": "3 / 5 / ≤12 beats; ~6 s per beat for long films",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/planner.mjs",
@@ -122,6 +134,7 @@
   "how": "total = words / wps (fast 2.5, relaxed 1.8) or user duration; n = ceil(total/len) with len 8 or 10 s; words split evenly. Collage map: 0–2 two cutouts snap in, 2–4 two more strike into new planes, 4–6 string/sticker link, 6–8 torn detail, 8–10 fresh element + hold; ≥4–6 elements; neighbouring clips start with different pairs. Profile tests (15/15) passed here.",
   "params": "2.5 / 1.8 w/s; ≤120 clips; 0–2/2–4/4–6/6–8/8–10 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs",
@@ -149,6 +162,7 @@
   "how": "Pick one: hold ≥ max(1.2 s, words/3 s) (~180 wpm); or hold ≥ 0.3 s + 0.06 s × characters after the last word lands; captions on screen max(chars × 0.15 s, 2 s) capped at 6 s, start 0.5 s after a cut, end 0.3 s before the next, 8-frame fades, shots < 2.8 s share or skip captions; content-driven sequencing: item time = base + chars × secPerChar + hold, reduced once into absolute windows. Verify on the target size.",
   "params": "~3 words/s; 0.3 s + 0.06 s/char; captions 2–6 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/kinetic-type.md:31",
@@ -177,6 +191,7 @@
   "how": "MK.speedTimings(lines, wps=2.2, gap=0.8, lead=0.5, tail=1.0): word dur = (1/wps) × clamp(len/5, 0.6, 1.6), word ends at 92%; a line stays ≥ 0.3 s/word + 0.6 s; a requested film length stretches pace (never below 1.2 wps) and gaps up to 2.2 s.",
   "params": "wps 2.2 (1.9–2.2); gap 0.8 s; lead 0.5; tail 1.0",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "app/public/js/10_studio.js:60",
@@ -203,6 +218,7 @@
   "how": "Write timings as steps (k × TS); continuous 'living' loops (sun rotation 10°/s, rain translateY modulo 1.2 s, vapour rise, dash-offset river flow) are independent of TS so slowing the lesson never slows the weather.",
   "params": "TS ≈ 1.0–1.4; rain 1.2 s period; sun 10°/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/whiteboard",
@@ -232,6 +248,9 @@
   "how": "Load gsap.min.js + motion-kit.js (window.MOTION) and pass MOTION.E.<role>; bezier() solves x→t with 8 Newton steps. Roles: out(.16,1,.3,1) arrivals; outSoft(.22,1,.36,1); in(.7,0,.84,0) implosions; exit(.55,.055,.675,.19) into a cut (~×1.14/frame over the last 10–24 f); inOut(.87,0,.13,1) whips/morphs; smooth(.65,0,.35,1) fades 10–14 f; ui(.4,0,.2,1); cam(.48,.1,0,.9) push, peak ~27%; glide(.47,.2,.15,1) 150–350 px; rest(.45,0,.1,1); contact(.55,0,.9,.55); whip(.6,0,.15,1); dolly(.35,0,.65,1); type(.5,1,.89,1); iris(.4,0,.7,.92); shutter(.2,.7,.2,1); hop(.35,0,.7,.85). Measured here: E.out(0.2)=0.752 (75% of travel in the first fifth), E.exit(0.5)=0.145. Basma's U.E carries nine of the same curves.",
   "params": "17 roles; Newton 8 steps",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:22",
@@ -261,6 +280,7 @@
   "how": "MOTION.ease.slam = expo.out, snap = back.out(1.3), drive = power4.inOut, settle = power4.out, linear = none; define once in the composition config and forbid ad-hoc cubic-beziers; back/elastic never touches an official logo.",
   "params": "overshoot ≤ 6%",
   "install": "",
+  "requires": [],
   "license": "GSAP standard no-charge license (vendored gsap.min.js)",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:12",
@@ -290,6 +310,10 @@
   "how": "KOSIF.Ease from starters/html-canvas/timeline.js: outCubic 1−(1−x)³ (default of prog), inOutCubic (camera default, draw-on), outExpo 1−2^(−10x) (bursts), outQuint (counters), outBack/inBack s=1.70158 (pops / exits; outBack overshoot measured 10%), spring(x,k,d). prog(t,t0,t1,ease) = eased progress in a window; window01(t,t0,t1,tin=.4,tout=.4) = entrance and exit in one value. Same set exists as easing.ts in the Remotion starter, as smoothstep/lerp/easeOutCubic in the montage studio pages and as basma's easeOut/easeInOut/easeBack. The proof films use exactly these (outCubic, inOutCubic, inOutSine, outExpo, spring). (code snippet in references/powers/easing-timing-rhythm.md)",
   "params": "outBack 1.70158 → 10% overshoot",
   "install": "",
+  "requires": [
+   "imagemagick",
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/timeline.js:12",
@@ -320,6 +344,7 @@
   "how": "audit-pro: --motion-instant 120 / fast 160 / medium 260 / slow 420 ms (3.6/4.8/7.8/12.6 frames at 30 fps), --ease-cinematic cubic-bezier(.22,.8,.26,1) for scene entries and colour sweeps, --ease-spring (.34,1.35,.64,1) for pops. earth: --sk-ease (.2,.8,.2,1), expo-like out (.16,1,.3,1), in (.55,0,1,.45), spring (.34,1.56,.64,1); fast 160, panel 210, enter 420, stagger 45, feedback within 100 ms. Studio ease (.2,.8,.2,1). Both test suites passed here.",
   "params": "120/160/260/420 ms; 160/210/420/45 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-pro/app/globals.css:64",
@@ -348,6 +373,7 @@
   "how": "Agency set: out-expo (.16,1,.3,1), out-quart (.25,1,.5,1), out-quint (.22,1,.36,1), out-circ (0,.55,.45,1), in-expo (.7,0,.84,0), in-quart (.5,0,.75,0), inOut-quint (.83,0,.17,1), inOut-expo (.87,0,.13,1), out-back (.34,1.56,.64,1), elastic-ish (.68,−.6,.32,1.6), strong UI (.23,1,.32,1), drawer (.32,.72,0,1), fluid (.32,.72,0,1) 700–1000 ms; durations 150/300/500/800/1200. Catalog STYLE.md: Entrance (.22,1,.36,1) 250–600 ms; Exit (.55,0,1,.45) 200–400; Accent overshoot (.34,1.56,.64,1) 120–300; Transition (.65,0,.35,1) 300–800; Path draw linear→ease-out 400–1200. Write a dedicated motion spec only when motion is the brand; otherwise just honour reduced motion.",
   "params": "see curve list",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/templates/STYLE.md",
@@ -376,6 +402,9 @@
   "how": "Timeline defaults {duration:0.6, ease:'power3.out'}; reveals power2.out; premium expo.out; calm/loops sine.inOut; hero transitions expo.inOut; playful back.out(1.4–1.7) (N ≤ 2); magnetic snap-back elastic.out(1,0.3–0.5) 0.5–0.6 s; cursor blink steps(1); scrubbed/camera/mechanical 'none'. Character taxonomy: Snap (fast in, soft settle: text, key cards), Drive (gradual acceleration then launch: vehicles, big transforms), Heavy Spring (slow massive oscillation: luxury), Elastic (stickers, icons). Feeling map for slides: dramatic slow fades 1–1.5 s + scale 0.9→1; corporate 200–300 ms; calm very slow fades; editorial staggered text.",
   "params": "power3.out 0.6 s; back.out(1.7); elastic.out(1,0.3)",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "GSAP standard no-charge license",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md",
@@ -407,6 +436,9 @@
   "how": ".out entering, .in leaving, .inOut between positions; card in 0.4 s / out 0.25 s; exit 150 ms ease-in then enter 210 ms ease-out delayed 150 ms; linear only for drift, data fills, light/luminance and constant path travel; punches expo.out 0.12–0.18 s; drifts power2.inOut; later entrances fromTo with immediateRender:false; never the same ease on more than two tweens per scene nor the same entrance direction for everything; seams between shots are velocity-matched cuts. kosif-studio qa.py lint warns on violations.",
   "params": "exit 0.65–0.75× entrance; exits 0.2–0.25 s E.exit",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/qa.py:65",
@@ -435,6 +467,9 @@
   "how": "MOTION.lmix(a,b,t) = exp(log a + (log b − log a)·t) (measured here: lmix(1,4,.5) = 2); MOTION.logEase(a,b,E.cam) wraps an ease so a linear scale tween moves through log space; zoomTrack(t, keys) for multi-target zooms; cap ~5% scale change per frame. Remotion: interpolate output 'perceptual-scale'.",
   "params": "push 1→2.4× feels constant; ≤5%/frame",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:44",
@@ -462,6 +497,9 @@
   "how": "HyperFrames component extended-keyframe (exits along the same vector with shutter blur). Without installing: per-frame chase x += (target − x)·k with k 0.12–0.19 at 30 fps, written seek-safe as x(f) = target − (target − x0)(1 − k)^f; exits ease-in into the cut (style:pm-notdwd-7de38a).",
   "params": "k ≈ 0.15/frame; 80% in 20%",
   "install": "npx hyperframes add extended-keyframe",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/extended-keyframe/extended-keyframe.html",
@@ -491,6 +529,7 @@
   "how": "distance 10% / 65% / 25%, time ~20% / 18% / 62%, tail ≥ 3× ramp-in; one paused timeline, fromTo explicit states, transforms only.",
   "params": "10/65/25 % distance; 20/18/62 % time",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/nudge-curve.md"
@@ -514,6 +553,9 @@
   "how": "MOTION.shot(tl, el, at, {enter:.45, exit:.3, cut, dir:'x', dist:220, cruise:1.2, exitDist, fade}): enter E.out from 220 px at 40% opacity, cruise linear 1.2 px/frame (1.5–8 px/f allowed), exit E.exit over 1.4× dist ending on the cut.",
   "params": "enter 0.45 s / 220 px; cruise 1.2 px/f; exit 0.3 s",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:393",
@@ -541,6 +583,7 @@
   "how": "snappy 0.2 s power4.inOut; smooth 0.4 s power2.inOut; gentle 0.6 s sine.inOut; dramatic 0.5 s power3.in→out; instant 0.15 s expo.inOut; luxe 0.7 s power1.inOut. Pair with TRANS powers for the visual.",
   "params": "0.15–0.7 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/transitions/overview.md"
@@ -566,6 +609,7 @@
   "how": "Grid on dark ground, S-curve stroke 2–3 px (#e25f2f or off-white), handle lines + endpoints, label 'cubic-bezier(x1,y1,x2,y2)'; dot #e8503c with 12 px glow synced to a playhead on a ruler (~1.2 s). Board: rows index/name/mini-curve 60×40 px/track A→B, one ball (r 14 px) per row, same distance and duration (0.94–1.2 s) with linear, inOutCubic, outExpo, outBack(1.7), elastic, bounce. Spring variant: plot x(t) for k180 d12 and label the peak %.",
   "params": "1.2 s; 6 rows; dot glow 12 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-prasenx-8d9323",
@@ -605,6 +649,7 @@
   "how": "MOTION.springStep(t, MOTION.SPR.<name>) → 0..1 (cfg.clamp caps overshoot). Measured here with node (overshoot / 1% settle): snap d18 k260 m.7 → 6.0% / 0.34 s; pop d11 k180 m.6 → 14.1% / 0.50 s; land d14.5 k200 m1 → 15.3% / 0.62 s; micro d30 k500 m.6 → 0.4% / 0.16 s; firm d24 k140 m1 → 0% / 0.58 s; soft d26 k120 → 0% / 0.83 s; heavy d30 k90 m1.4 → 0% / 1.34 s. Default firm/soft/heavy; snap/pop/land only for surface landings, max two per film. (code snippet in references/powers/easing-timing-rhythm.md)",
   "params": "see measured table",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:65",
@@ -633,6 +678,9 @@
   "how": "ease: MOTION.spring('snappy'|'default'|'heavy'|'playful') or spring({zeta, omega}). Measured here: snappy ζ.62 ω20 → 8.4% overshoot; default ζ.74 ω17 → 3.2%; heavy ζ1 ω13 → 0%; playful ζ.45 ω18 → 20.5% (the docs' '~3%/1%' figures are lower than measured — trust the measurement). Settle ~0.5 s.",
   "params": "8.4 / 3.2 / 0 / 20.5 %",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:52",
@@ -659,6 +707,7 @@
   "how": "MOTION.track(t, [[time,value],...], SPR.firm | 'default', settle=0.6) — keys are move START times; zoomTrack does it in log space. Measured: track(1.0, [[0,0],[0.2,100]], SPR.firm) = 99.89.",
   "params": "settle 0.6 s default",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:77",
@@ -687,6 +736,7 @@
   "how": "spring(t,t0,f,ζ) = 1 − e^(−ζωx)(cos ω_d x + ζω/ω_d sin ω_d x), ω = 2πf, ω_d = ω√(1−ζ²): default f 3.2 Hz ζ .32 (one overshoot); pops f 4.2 ζ .38; flop f 1.5 ζ .42; recovery f 1.6 ζ .5. Variants: basma spring z .42 ω 16 rad/s; fastify hero min(1.07, 1 − e^(−7t)cos 10t) over 3 s (7% cap); closed-form overlay k300 c30 (ζ≈.87) with opacity = clamp(1.4·s)·(1−out), translateY (1−s)·70, scale .92+.08 s; reference look ω≈2π·2.2, ζ≈.75.",
   "params": "3.2 Hz ζ.32; 4.2/.38; 1.5/.42",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:12",
@@ -715,6 +765,10 @@
   "how": "default 170/26, gentle 120/14, wobbly 180/12, stiff 210/20, slow 280/60, molasses 280/120 (mass 1); 'premium' 300/30/1 ≈1.05× overshoot landing in 400–700 ms (GSAP elastic.out(1,0.5) ~0.6 s; CSS fallback cubic-bezier(.34,1.56,.64,1)); tap 400/17; layout/tabs 500/30; UI panels 170/22 (≤1 bounce, settle ≤700 ms); brief primaries 170–200 / 12–16, 180/18. Overshoot exists when c < 2√(k·m); approx bounce = 1 − c/(2√k). Starter Ease.spring measured here: 170/18 → 5.0%, 170/16 → 8.7%, 150/14 → 11.2%.",
   "params": "see table",
   "install": "",
+  "requires": [
+   "npm:gsap",
+   "npm:animejs"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/animation-libraries.md",
@@ -743,6 +797,9 @@
   "how": "springEase({response, dampingFraction}): ζ 1.0 no overshoot (house), 0.80–0.85 ≈1–1.5% (iOS feel), 0.60–0.70 ≈5–10% playful, < 0.55 forbidden; response 0.25–0.35 → 0.37–0.51 s, 0.35–0.5 → 0.51–0.74 s, 0.5–0.7 → 0.74–1.03 s; overshoot on transforms only, never opacity.",
   "params": "EPS 0.001; 4800 scan steps",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-easing-and-stagger.md"
@@ -767,6 +824,7 @@
   "how": "premium 0%; feedback 2–5%; success 5–10%; celebration 15–25%; more than half of top launch films use 0%, the rest 1–4%; ≤2 snap/pop/land springs per film; one bouncy spring per scene (damping < 16 once); never back/elastic on an official logo or brand mark.",
   "params": "0 / 2–5 / 5–10 / 15–25 %",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/references/motion-craft.md",
@@ -794,6 +852,9 @@
   "how": "easing: Easing.spring({damping:200}) for a no-bounce push; output:'perceptual-scale' on scale interpolations; posterize:3 samples every 3rd frame; spring({frame, fps, config:{damping, stiffness, mass}}) for entrances; the KOSIF Remotion starter derives scene lengths from total frames (sceneLayout: s1 = round(.34T), s2 = round(.40T), rest) so the film rescales when the duration follows the audio.",
   "params": "damping 200; posterize 3; 34%/40%/rest",
   "install": "cd kosif-tool/starters/remotion && npm i",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "Remotion company license (free for individuals/small teams; check terms)",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/timing.md",
@@ -820,6 +881,10 @@
   "how": "Canvas: prog(t, a, a+0.55, x => Ease.spring(x,170,16)) for scale and y (starter title; proof film arabic-voice-kinetic). Tables: prop pop 0→1.08→1 300–400 ms damping ~12; node pop scale .85→1 k160 d14 ~300 ms + 150 ms fade; label pills k120 d14, exits 200–300 ms ease-in cubic; price card k180 d14 (CTA readable ≥2 s); emphasis 1→1.12→1 over 280 ms k180 d12 landing on the stressed syllable; GSAP fromTo {scale:0,opacity:0}→{scale:1,ease:'power3.out'} with group stagger ≤0.5 s; HyperFrames spring-pop fromScale 0.9 overshoot 1.7.",
   "params": "0.55 s @170/16; .85→1 @160/14; 1→1.12→1 280 ms",
   "install": "",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/index.html:145",
@@ -850,6 +915,7 @@
   "how": "y from ease-in quad over 0.4 s then damped spring (damping 12); staggered falls (ice cubes) ~450 ms easeInQuad + 120 ms settle, stagger ~300 ms; shadow scales with height.",
   "params": "0.4 s ease-in; damping 12; stagger 300 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/3d.md:26",
@@ -878,6 +944,9 @@
   "how": "Latin chars 20–30 ms (arc stagger 40 ms along a sine), words 50 ms (Arabic whole words 60–160 ms — never per letter, see ARAB-01), nav items 50 ms, lines/cards 100 ms, feature cards 110 ms, max ~0.2 s per item; items × stagger ≤ 0.5 s regardless of count (gsap stagger {amount:0.3}); from:'center'/'edges' or by distance for grids; same easing family across the cascade.",
   "params": "20–40 / 50–100 / 100–200 ms; total < 500 ms",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md",
@@ -906,6 +975,7 @@
   "how": "MOTION.stagger(tl, els, at, {gap:.07, dur:.55, from:{y:28, opacity:0, scale:.96}, ease:E.out}) → end time for chaining; for narration-paced bullets put each row on its spoken word (~2 s apart, fade-up 12 px 300 ms, numbered accent badge).",
   "params": "gap 0.07 s; dur 0.55 s; y 28 px; scale .96",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:557",
@@ -933,6 +1003,7 @@
   "how": "style='--i:n'; animation: scene-in .55s var(--ease) both; animation-delay: calc(var(--i)*45ms). audit-pro panel groups 30/80/130/180 ms, 420 ms, 8 px rise; earth SK.motion: first 10 blocks, 420 ms, 45 ms stagger, (.16,1,.3,1), vertical only, data re-renders never replay; studio cards 12 px rise .55 s @45 ms, council seats .5 s @40 ms. Earth motion test 4/4 passed here.",
   "params": "45 ms/step; 420 ms; ≤10 blocks",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/core/motion.js",
@@ -960,6 +1031,9 @@
   "how": "structure 0–200 ms; title words 200–600; subtitle 400–800; nav 600–900; support 800–1200; GSAP: eyebrow 0.6 s, h1 0.8 s ('-=0.3'), subtitle 0.6 s ('-=0.5'), CTA 0.5 s ('-=0.3'), hint 0.4 s ('-=0.2'); start y:30 opacity:0 set with gsap.set() before the timeline to avoid a flash of the final layout.",
   "params": "whole entrance ≈1.5 s",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md",
@@ -985,6 +1059,7 @@
   "how": "secondary at 55–75% so both settle within 2 f; shape settles 6 f before position; act proportions 10–20% / 30–50% / 10–20% / 20–30% + 100–200 ms breathing.",
   "params": "55–75 %; 6 f; 10–20/30–50/10–20/20–30 %",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
@@ -1010,6 +1085,7 @@
   "how": ">1/3 frame travel needs an intermediate key; ≤1/3 of elements move at once; a new event every 2–4 s; no hold > 1.5 beats; nothing frozen > 1.2 s in product demos.",
   "params": "1/3 frame; 2–4 s; 1.5 beats",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md",
@@ -1035,6 +1111,7 @@
   "how": "0–30 / 30–70 / 70–100 %; the editorial 6 s scene is the tested instance (EASE-41).",
   "params": "0–30/30–70/70–100 %",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/motion-principles.md"
@@ -1058,6 +1135,7 @@
   "how": "fast 0.15–0.3 s urgency/energy; medium 0.3–0.5 s professional; slow 0.5–0.8 s gravity/luxury; very slow 0.8–2.0 s cinematic; large moves never faster than 900 ms (900–1400 ms with one easing); enterprise/dashboard: 150 ms micro, 200–250 ms transitions, quart-out, no spring.",
   "params": "0.15–0.3 / 0.3–0.5 / 0.5–0.8 / 0.8–2.0 s; ratio 3×",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/motion-principles.md",
@@ -1086,6 +1164,7 @@
   "how": "MOTION.durFor(px, camera) = 0.35 s + 1.35 ms/px; camera clamped 0.6–2.4 s. Measured here: durFor(600) = 1.16 s; camera durFor(100) = 0.6, durFor(3000) = 2.4. UI scale: 8–16 px 100–150 ms, 50–100 px 150–250 ms, full screen 250–350 ms (1.8–2× of a 100 px move).",
   "params": "0.35 s + 0.00135 s/px; camera 0.6–2.4 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:49",
@@ -1112,6 +1191,7 @@
   "how": "0–0.5 s base (grid + lines only); 0.5–3.5 s entrance (spring, stagger 6–9 frames, word-masked reveal); 3.5–4.7 s hold (sine float, 0.6° wobble, 4% push-in); 4.7–6.0 s exit (masked vertical wipe, tracking expansion on Latin only, easeOutCubic 1.3 s drop).",
   "params": "0 / 0.5 / 3.5 / 4.7 / 6.0 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/viral-editorial.mjs",
@@ -1138,6 +1218,7 @@
   "how": "feedback 100–150 ms, state/toggles 200–300, layout/modals 300–500, entrances/choreography 500–800+; element table: micro 80–120, button 120–180, icon 150–250, card 200–350, modal 300–400, page 400–600, dramatic reveal 600–1200, ambient 2–20 s; <100 ms imperceptible, >400 ms sluggish for UI; video uses the long end of each band; exit = 0.75× enter, ease-in only for exits.",
   "params": "100/300/500 ladder",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2981-designer-skill/12625-designer-skill/reference/motion-and-interaction.md",
@@ -1165,6 +1246,7 @@
   "how": "cursor 380–700 ms over 200–900 px cubic-bezier(.2,.8,.2,1) on a 2–4% arc, settle 80–120; hover 120–160; press 80 down / 140 up spring k300 d20 (button .96, cursor .88); ripple 320–400 ms 0→48 px; modal backdrop 200, panel 280–320 spring k170 d18 from scale .96 y 12; close 160–200; dropdown 180–220 expo-out; dwell 1.2–2.0 s (reels 0.8 s); nothing < 80 ms; scripted typing ~70 ms/key.",
   "params": "cursor 380–700 ms; dwell 1.2–2.0 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md",
@@ -1191,6 +1273,7 @@
   "how": "Map every script line to a timeline phase cued on its voiceover word (words.json); silent frames cue on the beat; avoid > ~25% front-load; first frame already readable; animate between meaningful states only and name each move with one verb (reveal, flow, accumulate, compare, transition, pulse, highlight, decay, orbit, slice, scrub); the final frame must still prove the claim without motion.",
   "params": "front-load ≤ 25%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/frame-worker-core.md",
@@ -1217,6 +1300,7 @@
   "how": "stat counts from 0; screenshot slow zoom 1→1.03 or pan; logos shimmer sweep or gentle scale pulse; persistent element float y ±4–6 px sine yoyo; with music a bass pulse of 3–4% on the logo; holds creep ~4% scale/s.",
   "params": "zoom 1→1.03; float ±4–6 px; pulse 3–4%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-6-build.md",
@@ -1243,6 +1327,7 @@
   "how": "tl.to('.s', {keyframes:[{x:0,duration:.2},{x:120,duration:.4,ease:'power2.out'},{x:100,duration:.2,ease:'power2.inOut'}], ease:'none'}); labels for semantic states; immediateRender:false on later from/fromTo. Contract: name the subject, the poses (incl. final), keep identity, crossfade only for replacement, never reset to rest or end on black unless asked. Mechanism: box change → FLIP; route → path travel; trace → stroke draw; shape change → morph; reveal boundary → clip/mask; many → stagger; text → line/word subdivision (whole words for Arabic).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "GSAP standard no-charge license",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-keyframes/SKILL.md",
@@ -1269,6 +1354,10 @@
   "how": "const tl = gsap.timeline({paused:true, defaults:{duration:.5, ease:'power2.out'}}); window.__timelines[id] = tl; positions 0 (absolute), '<' (same start), '>' (after end), '<0.2', '+=0.5', '-=0.2'; tl.addLabel('intro',0) and 'intro+=0.3'; nest with master.add(child, t) (child scene timelines added to the root are not paused); in sub-compositions prefer fromTo; transforms/opacity only, no top/left/width tweens; load fonts before measuring. HyperFrames adds data-start=\"intro + 0.5\". The kit composition template and mtemplates scaffold this contract.",
   "params": "one paused timeline",
   "install": "",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "GSAP standard no-charge license (vendored)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/composition.html",
@@ -1297,6 +1386,9 @@
   "how": "tl.to(el, {keyframes: MOTION.sampled(fn, t0, t1, 60)}) (measured: 1 s → 61 keys, ease 'none'); path riding: sampled(t → path.getPointAtLength(L·E.out((t−b)/1.15)), b, b+1.15, 60); never onUpdate callbacks.",
   "params": "60 samples/s",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:109",
@@ -1322,6 +1414,7 @@
   "how": "anticipation 4–8 frames, or 8–12% of the move for 120–180 ms opposite to travel; follow-through lag 2–4 frames with 5–10% overshoot; fast moves on arcs 250–400 ms ease-in-out quint; constant path travel uses ease none; final lockups hold longer.",
   "params": "4–8 f; 8–12% / 120–180 ms; lag 2–4 f",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/characters.md:25",
@@ -1348,6 +1441,7 @@
   "how": "word: rotate 4°, y −30 → 0 with a spring over 400 ms; prop: rotate from −60° at a corner, hold, exit.",
   "params": "4°; 400 ms; −60° prop",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-gdgtify-287ddf",
@@ -1376,6 +1470,7 @@
   "how": "MOTION.hitPulse(t, attack=2, tau=5) with t in s and attack/tau in 60 fps frames: sin rise over attack then exp(−(u−attack)/tau), zero after attack + 6·tau. Measured here: peak 1.0 at 33 ms, zero after 533 ms. channels.kick uses attack 1 tau 5, onset 1/4, beat 1/6; basma u.hit attack 33 ms tau 83 ms. Align bursts to the real contact/apex frame (from word timestamps or onsets), never the clip start; respect flash limits. (code snippet in references/powers/easing-timing-rhythm.md)",
   "params": "attack 2 f, tau 5 f @60 fps",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:47",
@@ -1404,6 +1499,7 @@
   "how": "MOTION.squash(tl, el, at, {edge:'bottom'|'top'|'left'|'right', across:.08, along:.10, dur:.13}) → scaleX 1.08 / scaleY 0.90 → 1 in 0.13 s (8 f) E.outSoft; volume-preserving version: sq = 1 − .16·kick, stretch = 1/√sq; landing wobble e^(−7x)·sin(30x)·.05.",
   "params": "+8% / −10% over 8 f",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:372",
@@ -1431,6 +1527,7 @@
   "how": "Three hops 0.42 s apart: y 0 → −90 with scaleY 1.08 in 0.2 s E.out; y 0 scaleY .86 in 0.18 s E.contact; scaleY 1 in 0.12 s. Bunny hop: sin(π·u)·.026 over .42 s. Classic ball: scaleY .6–.8 / scaleX 1.2–1.4 at impact for 2–3 frames, stretch 1.2–1.3 at max speed along velocity, preserve area.",
   "params": "hop 90 px; squash .86; stretch 1.08",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html",
@@ -1464,6 +1561,9 @@
   "how": "Sample the same seek(t) at t − i·Δ: 6–12 ghosts every 2–3 frames, 1–1.5 px outline at 40% (or filled at 0.1–0.4), dotted arc path, optional frame ruler and playhead; physics ball with restitution 0.6 and ghost every 3 f. HyperFrames echo-trail: echoes 4, delta 0.09 s, path sweep|rise|arc. Fast-move smear: 3–4 echoes at low opacity along velocity.",
   "params": "6–12 ghosts; every 2–3 f; 40%",
   "install": "npx hyperframes add echo-trail",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/echo-trail/echo-trail.html",
@@ -1502,6 +1602,7 @@
   "how": "lerp xy start→end, z = h·4t(1−t) (h ≈ 1.5 units, 400 ms); on landing parent to the carrier. Grid hop: each tile arcs to its cell (arc 0.6 tile, 450 ms, stagger 180 ms, easeOutBack landing). Vehicle: position(t) as segments (wait, reverse, exit, stop at light, continue); when heading flips add a 120 ms hop + squash scaleY .9, hop 6 px to hide the sprite swap. Stickman card: lerp to hand, scaleX 1→−1 flip at mid swaps the face (250 ms), parabolic throw 500 ms with 2–3 ghosts (.3/.15), box squash, counter +1.",
   "params": "z = h·4t(1−t); 400–500 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/isometric",
@@ -1533,6 +1634,7 @@
   "how": "scale 1.6→1 in 180–250 ms back.out, rotation −8°, 2-frame overshoot/shake; underlying card switches to hatched grey (rejected) or the stamp is outlined green (paid); pair with a hitPulse and a short SFX.",
   "params": "180–250 ms; −8°; shake 2 f",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-ceowinkz-7c776b",
@@ -1562,6 +1664,7 @@
   "how": "ring radius 6→22 px, alpha .8→0 over ~250 ms ease-out, 1 px stroke; key: full accent, dip 4 px, spring k300 d18, glow exponential decay 300 ms.",
   "params": "250 ms; dip 4 px; k300 d18",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-kantamk-61f410",
@@ -1590,6 +1693,7 @@
   "how": "in: scale .4, opacity 0, blur 16 px → 1, 1, 0 in 0.55 s back.out(1.3); out: scale 1.12, opacity 0, blur 10 px in 0.25 s E.in. Blur only on short words, never a long Arabic line.",
   "params": "in 0.55 s; out 0.25 s; blur 16/10 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html"
@@ -1614,6 +1718,7 @@
   "how": "wiggle rotation −4°→4°, 0.12 s yoyo, repeat 7, sine.inOut. MG-118 sway: pivots at branch bases, 0–4 s tilt, 4–8 s return, never all in phase; MG-119 pendulum 0–1.5/1.5–4.5/4.5–6 s sinusoidal limited rotation, shadow scale tied to tilt (2D cannot show unseen sides); MG-120 border tracer: one 6 s lap, trim-path offset with constant arc length.",
   "params": "±4°, 0.12 s ×7; 8 s / 6 s / 6 s loops",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html",
@@ -1640,6 +1745,9 @@
   "how": "kosif-studio motion.py speed / sheet measures px/frame and frame-difference energy on a render (test_sheet_and_speed_measure_a_film passed here); norms: motion-energy median ≈1.4, p90 ≈6.0, ≤12 px/f without blur, idea felt by 1 s, scale change ≤5%/frame, ≤2 uses of any transition.",
   "params": "≤3 / 12–20 / 80 px/f",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/qa.py:407",
@@ -1667,6 +1775,7 @@
   "how": "MOTION.speedBlur(tl, el, at, dur, {px:12, axis:'x'|'y'}): SVG feGaussianBlur stdDeviation 'px 0' bell (45% rise E.in, 55% clear E.out). Velocity-matched: radius = |v|·c, c ≈ 0.25 px per px/frame, cap 24 px. Whip entrance: ~40% of frame width in 4–6 frames (150–250 ms easeOutExpo) with 30–60 px blur, hard stop; type punch blur 40→0 over 250 ms; list rows from x +100%, 80 ms stagger, blur 10→0; starburst spin with blur settling into the logo ~600 ms.",
   "params": "12 px bell; c 0.25, cap 24 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:378",
@@ -1700,6 +1809,10 @@
   "how": "HyperFrames motion-blur: shutterAngle 720, shutterPhase −360, 16 samples/frame, window [t−1/fps, t+1/fps] (translate, scale, rotate, 3D, skew). Remotion: @remotion/motion-blur (CameraMotionBlur / Trail). In plain canvas: render seek(t + k·δ) for k = 0..N−1 into an accumulation buffer at 1/N alpha (cost ×N).",
   "params": "720°; 16 samples",
   "install": "npx hyperframes add motion-blur",
+  "requires": [
+   "npm:remotion",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/motion-blur/motion-blur.html",
@@ -1725,6 +1838,9 @@
   "how": "median shot 1.46 s (1.1–2.8); picture change every ~0.7 s (dense 0.33); first visible change 0.10 s; first readable word 0.4 s, premise by 2 s; one designed hold 1.0–1.6 s; lull 1–4 s at ~65%; last energy peak at 82%; calm outro 8–20%; end card ~2.2 s (assemble 1.0–1.3, hold 0.6–1.3); 3–4 words per card ~0.4 s/word, ≥0.5 s/card; scene lengths in whole beats when BPM is known. Check with motion.py measure / study.",
   "params": "1.46 s; 0.7 s; 0.4 s; 82%; 2.2 s",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/references/craft-numbers.md",
@@ -1752,6 +1868,7 @@
   "how": "explainer/essay ASL 3.3 s (2.5–4), 20 cuts in the first 60 s (15–25), same picture ≤8 s, cards 30–50%; build vlog ASL 8 s (5–12), 3 cuts first minute, same screen ≤40 s; reflection ASL 3.8 s (3–5); alternate 0.5–1.5 s fast shots with 2.5–4.0 s breathing shots; long videos: tightest first 3 min, +5–10% breathing after the cold open, verdict lines held 1–2 s, never > 30–45 s off the presenter. Never delete meaningful pauses to hit numbers.",
   "params": "ASL 3.3 / 8 / 3.8 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md",
@@ -1779,6 +1896,7 @@
   "how": "0–1 / 1–3 / 3+ s; or 0–3 hook, 3–10 problem/promise, 10–25 proof, 25+ close; 60 s template 0–3 / 3–15 / 15–50 / 50–60 CTA; one idea per video, hook in the first frame before any title card, captions always on, ≤30 s retains best; each story card must survive alone. Map words.json segments into these windows and flag overflow.",
   "params": "≤30 s; hook ≤1–3 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2976-pwdev-social-media/12592-story-reels/SKILL.md",
@@ -1805,6 +1923,7 @@
   "how": "beat = 60/BPM (120 → 0.500 s, 100 → 0.600, 85 → 0.705); scene change / B-roll / impact on the downbeat; punch-zoom, quick camera, caption keyword on the off-beat; cut every 4 beats (2 s at 120) or one value per 1–1.2 s beat; even cadence on musical phrases (7.5 s); checklist words light up on each beat (250–300 ms) and stay lit; split at the next downbeat when a template runs long (frames > ~6 s need 2+ groups).",
   "params": "120 BPM = 0.5 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md",
@@ -1838,6 +1957,10 @@
   "how": "const B = MOTION.beats(120); tl.to(x, {...}, B.at(4)); or beats(json from motion.py beats) with downbeats every 4th; channels(json): ch.kick(t), ch.onset(t), ch.v('bass', t), ch.tape(t) drive visuals from the soundtrack frame by frame. HyperFrames beat-timeline pins N rows to evenly spaced labels (beatCount 4, interval 0.6 s).",
   "params": "beat n at n × 60/BPM",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js",
@@ -1866,6 +1989,7 @@
   "how": "grid.json holds tempo, beats, bar lines, sections, words; cuts on bar lines (beats in fast sections); snap each word to the strongest vocal-band onset within −100..+40 ms; characters on one side of frame, words on the other.",
   "params": "snap window −100..+40 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video",
@@ -1892,6 +2016,7 @@
   "how": "cutList(): interval (every 0.6–8 s), beat (beats ≥ max(0.45, 0.8·every) apart), pattern (planCuts), speech (voiced starts after ≥0.3 s pause, ≥ max(0.8, every/2) apart), ai, shots (measured boundaries); snapTime(t, w) snaps to captions, scenes, cuts, shot cuts and beats within 7 px.",
   "params": "interval|beat|pattern|speech|ai|shots; 7 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "app/public/js/00_editor.js:166",
@@ -1918,6 +2043,10 @@
   "how": "From word timestamps (whisper word_timestamps / words.json) build segments; keep only the last take of a retake group; reassemble with ffmpeg trim+concat; trim V1 by the same length as A1; the user's audio stays untouched outside the cut points.",
   "params": "gap > 0.7; breath 0.4; keep 0.8–2.0; min 0.15 s",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:faster-whisper"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2453-davinciresolve-cut-devtalk/SKILL.md"
@@ -1943,6 +2072,9 @@
   "how": "full-bleed single-word cards held 3–10 frames (20+ cuts in 6 s at 30 fps), alternating grounds (coral/black) or colour flips per beat; climax strobe: cut every 250 ms for 2 s (8 cuts); triptych montage: 3 vertical photos swapped every 0.5 s with one centred serif-italic category word (120 px); slogan split into words on black ~1.6 s each with scale 1.05→1; keep flashes under 3 Hz of full-frame luminance change.",
   "params": "250 ms cuts; 3–10 f holds",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-kloss-xyz-15182a",
@@ -1979,6 +2111,7 @@
   "how": "slow burn: motion energy < 0.01 for 6–7 s then a spike + cut to a full-weight title; calm: each ~5 s beat = 400–600 ms of motion (10–15%) + 3–5 s hold; mirrored script: first half of each sentence said on the way down, second half on the way back up.",
   "params": "energy < 0.01 then spike; motion 10–15% of each beat",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-kloss-xyz-b9b3f6",
@@ -2010,6 +2143,10 @@
   "how": "python scripts/mtemplates.py new NAME --template countdown --set from=5 go=انطلق accent=#FF6B6B → projects/NAME/index.html (+ fonts, gsap, motion-kit); D = from + 1.6 s (from ≤ 10); number 26u scale 1.9→1 in 0.32 s; shake amp 5; bg #1a1a2e→#0b0b14. Every template generated and linted here (TemplateTests). Variants: 3-2-1 with hold keys then an expanding mask at 3–4 s; mm:ss.cc pressure timer to 00:00.00 then 'FINAL'; numbers on beats with silhouettes; time-lapse clock (52 min in ~3 s) with rows completing at matching stamps.",
   "params": "1.9→1 / 0.32 s; shake 5; D = from + 1.6 s",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/motion/countdown.html",
@@ -2042,6 +2179,7 @@
   "how": "width = (t/DURATION)·100% at the bottom edge, z-index above content: 2–3 px accent line (earth intro #e8bd76 over exactly 5.06 s linear, snaps full on completion), or 12 px gradient #f59e0b→#ef4444 (omni kinetic_2d); chapter bars fill per chapter with a top-left label; a rotating corner badge 'STEP n/10' (90°/s) increments per beat.",
   "params": "2–12 px; linear",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html",
@@ -2072,6 +2210,9 @@
   "how": "timeline clip \"ramp\": [[0,1.0],[1.5,0.25],[3,1.0]] (speed 0.1–10) compiles to setpts with log() (RampTests 2/2 passed here); audio is dropped under a ramp, constant speed is pitch-preserved: setpts=PTS/F + atempo=F (0.5–2 per instance, chain for more) or rubberband=tempo=F; Remotion: playbackRate per Sequence.",
   "params": "speed 0.1–10; atempo 0.5–2",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:36",
@@ -2099,6 +2240,10 @@
   "how": "ffmpeg (installed): minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:vsbmc=1,setpts=2.0*PTS; RIFE (×2, fast_mode, ensemble) or FILM for large motion need a GPU workflow (not here) — minterpolate is the local fallback; inspect for warping on edges and text.",
   "params": "fps 60, mci; ×2",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "gpu"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md",
@@ -2126,6 +2271,9 @@
   "how": "tq = Math.floor(t * 12) / 12 for drawings (on twos at 24 fps = 12 drawings/s; cutouts at 15 fps inside a 30 fps film); camera on ones; sprite loops at fixed low fps with no tweening (idle 4, walk 8 with a 4-frame cycle, spell 12): index = floor(frame·fps_target/30) % n; 2-frame boil and sparkles living 2–3 frames; the 1s/2s/3s hold mix is a style fingerprint. HyperFrames stop-motion-cadence (fps 8|10|12, boil on|off).",
   "params": "12 drawings/s; 8–12 fps",
   "install": "npx hyperframes add stop-motion-cadence",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/stop-motion-cadence/stop-motion-cadence.html",
@@ -2159,6 +2307,7 @@
   "how": "scale amp 0.008–0.015 (0.02–0.04 for isolated kinetic objects); product bob y ±6 px period 2.5 s with the shadow scaling inversely; pendulum ±18° per 1 s, rocking ±4° per 2 s, phase offsets so nothing moves in unison; character breath 0.3 Hz 2 px; pulse 1 + 0.06·sin(2π·2t) and nothing above 3 Hz; settle amplitude to zero in the last ~20% for idles > 6 s; MOTION.breathe in the kit.",
   "params": "amp .008–.015; ±6 px / 2.5 s; ≤3 Hz",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/sine-wave-loop.md",
@@ -2194,6 +2343,7 @@
   "how": "period = duration (or an integer fraction); every sine uses 2π·k·t/D with integer k; noise sampled on a circle (cos, sin of 2πt/D); verify by diffing frame 0 against frame N (should match frame N−1 → 0 continuity).",
   "params": "period = duration",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-itsolelehmann-e47532"
@@ -2220,6 +2370,7 @@
   "how": "shimmer linear-gradient(90deg, s2, s3, s2) at 200% size, background-position → −200% in 1.2 s linear infinite, bars 14 px radius 7; alert pulse opacity 1→.35→1 1.6 s ease-in-out; recording ring box-shadow 0 0 0 6px at 50% over 1 s; typing dots opacity .25 translateY(−3 px) at 50%, 1 s, delays 0/.15/.3 s; spinner 34 px ring, border 4 px, one side transparent, .8 s linear; calm enter opacity .65→1, y 4 px, 180 ms. In a render use finite repeats tied to t.",
   "params": "1.2 s / 1.6 s / 1 s / .8 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/ds/shell.css:217",
@@ -2248,6 +2399,7 @@
   "how": "3–5 cps dramatic, 8–12 natural, 15–20 tech/code, 30+ bulk fill; caret opacity yoyo with steps(1), block 11×22 px; kit MOTION.typeOn drives the count through a modifier (seek-safe) with E.type (.5,1,.89,1) for an eased count; Arabic text types by whole words or a mask wipe, not characters (ARAB-01).",
   "params": "3–5 / 8–12 / 15–20 / 30+ cps",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js",
@@ -2275,6 +2427,7 @@
   "how": "dur = SPEEDS[speed] · step.weight · √(n/area); pixels revealed linearly in time; speeds slow 5.0, normal 1.8, fast 0.55, instant 0 (seconds per full-sheet step); the film renderer uses the same formula per frame.",
   "params": "5.0 / 1.8 / 0.55 / 0 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/studio.py:46",
@@ -2300,6 +2453,7 @@
   "how": ".btn:active scale(.985) 180 ms ease-out; card hover box-shadow 220 ms (no movement); gate lift −2 px .18 s; dialog translateY(8 px) 300 ms spring (no scale so 44 px targets stay full size); menu 220 ms ease-out; toast translateY(12 px) scale(.96) 340 ms spring; dropdown y −4 px scale .98 .2 s; popover .14 s; toggle knob translateX + colour swap 250 ms spring; comment bubble 0.9→1 200 ms easeOutBack, hold ~1.5 s; theme cross-fade on bg/colour/border/shadow 220 ms (.2,.8,.2,1).",
   "params": "180 / 220 / 300 / 340 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/ds/luxe.css:373",
@@ -2331,6 +2485,7 @@
   "how": "explicit property lists in transitions; GPU-friendly transforms; numbers that carry legal/financial meaning appear final, never counted; the motion-contract test asserts it for buttons, progress and tabs (5/5 passed here).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-pro/tests/motion-contract.test.mjs",
@@ -2357,6 +2512,7 @@
   "how": "documentElement.dataset.motion = 'quiet'|'full'; :root[data-motion=quiet] * {animation:none; transition:none}; waveform level fixed at .08; @media (prefers-reduced-motion: reduce) overrides tokens (instant 0, fast 100, normal 200, slow 300, slower 500 ms); the rendered video itself is unaffected.",
   "params": "wave level .08 when quiet",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/studio.js:23",
@@ -2383,6 +2539,9 @@
   "how": "animationProgress(o,t) = min(1, (t−start)/min(0.6, d/3), (end−t)/min(0.4, d/3)), 0 outside; ease = 1 − (1 − clamp((t−start)/0.65))³; rise y offset (1−ease)·0.07·h; zoom scale 0.65 + 0.35·ease; none = full opacity. model.test.mjs passed here.",
   "params": "in 0.6 s, out 0.4 s, each ≤ d/3; 0.65 s ease",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:12",
@@ -2411,6 +2570,7 @@
   "how": "FLIP: measure first/last rects, animate the inverse to identity over 600 ms cubic-bezier(.65,0,.35,1); collapse a detail list into one chip row. Headline: out y −12 px + fade, in from +12 px, 500 ms easeInOut, overlap 200 ms.",
   "params": "600 ms (.65,0,.35,1); ±12 px, 200 ms overlap",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-moguzbulbul-6311b6",
@@ -2440,6 +2600,7 @@
   "how": "head += (target − head)·0.3 per frame; push a point when distance > 0.01 field units; drop points older than 1.6 s; 24 points; for a seek-safe render compute the head from a sampled path (EASE-48) rather than accumulating.",
   "params": "follow 0.3/f; spacing 0.01; life 1.6 s; 24 pts",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail"
@@ -2464,6 +2625,9 @@
   "how": "photo in 400 ms opacity + scale 1.04→1 (.22,1,.36,1); out 250–300 ms (.55,0,1,.45); next starts 2 frames early; stagger 80–120 ms (60 for ≥6); ≤6 photos at once; holds 2.5–5 s with narration, 1.2–2 s montage, ≥8 frames. Feature beat: enter 300–450 ms ease-out quint, hold until read, exit 200 ms, cut on music. Word entrance 300–450 ms, rise 40–70 px, opacity in the first 60%; word stagger 70–120 ms (or word start − 60 ms with audio); decaying slide 80/60/50/25/12 px per successive word.",
   "params": "400 / 250–300 ms; holds 2.5–5 s",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/photos.md:40",
@@ -2492,6 +2656,9 @@
   "how": "npx hyperframes add <name> copies compositions/components/<name>.html; mount on a class=\"clip\" div with data-composition-src + data-start/data-duration/data-track-index and JSON overrides in data-variable-values; colours/fonts from the 18 theme tokens; preview/render with npx hyperframes preview|render. Timing set: arc-motion-path (MotionPath autoRotate); beat-timeline (beatCount 4, 0.6 s); echo-trail (4 echoes, 0.09 s); extended-keyframe; keyframe-scrub-stack; motion-blur (720°, 16 samples); offset-path-traveler (SVG path, tangent rotation); shutter-slam (one word through six single-property beats under shutter blur); slit-scan-reveal (rows|cols, spread .45, resolve 2.2 s); spring-pop (fromScale .9, overshoot 1.7); stagger-cascade (6 items, 60 ms); stagger-lattice; stop-motion-cadence (8|10|12 fps); velocity-throw-snap (5-shot rail, hero index 2); talking-head recut cards with 13 data-anim kinds quantised to 1/fps.",
   "params": "15 components",
   "install": "npx hyperframes add spring-pop",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0 (components use GSAP: standard no-charge license)",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/shutter-slam/registry-item.json",
@@ -2521,6 +2688,11 @@
   "how": "animejs 4.5 (stagger utilities, MIT), motion 14 (springs, MIT), @theatre/core 0.7 (keyframe sequencing; studio is AGPL — keep it out of shipped bundles), lottie-web 5.13 (play AE exports, seek by frame), @motion-canvas/core 3.17 (generator timelines). Render any of them through render_html.cjs only after wiring seek(t) to the library's own seek/goToAndStop — never real time.",
   "params": "seek-wired only",
   "install": "npm i animejs motion @theatre/core lottie-web",
+  "requires": [
+   "chromium",
+   "npm:lottie",
+   "npm:animejs"
+  ],
   "license": "Theatre.js studio AGPL-3.0; others MIT/Apache",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
@@ -2549,6 +2721,7 @@
   "how": "Model an After Effects temporal ease as a cubic Bézier in (time, value): P0=(t1,v1), P1=(t1+i1·D, v1+s1·i1·D), P2=(t2−i2·D, v2−s2·i2·D), P3=(t2,v2) with influence i and key speed s. With zero key speeds and the same influence a on both keys the peak is r = 1/(1−a): Easy Ease 33.33 is exactly smoothstep (peak 1.5×, speed 0 at the keys, the amateur mistake on an event); 90 → 10×; 95 → 20× (the needle). Cusp for a UI-morph joint: outer keys (0, a), joint key (r·mean, b); no overshoot while 1/(1−a) ≤ r ≤ 1/b. Relay: start the next bell ≈0.45 into the current one so the summed speed never reaches 0 (EASE-X04). Ran here (external-skills.md V1): a numeric Bézier gives 1.500 / 10.00 / 20.00, matching 1/(1−a).",
   "params": "r_peak = 1/(1−a); a 33.33 → 1.5×, 90 → 10×, 95 → 20×; relay start 0.45",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
@@ -2584,6 +2757,7 @@
   "how": "Keys at cut − 0.2 s and cut + 0.2 s − 1 frame, both influence 95 (CSS ≈ cubic-bezier(.95,0,.05,1)); put the curve midpoint at cut − ½ frame so ONE peak frame-step ends on the cut. Print the per-frame speed list and read it: a list that touches 0 mid-move means a pause; a peak one frame off means move the keys, not the influence. Ran here (V1): 100 → 135 in 0.4 s @60 with 95/95 gives steps … 46 64 95 161 581 581 161 95 64 … units/s: the midpoint sat on a frame boundary, so the peak split into two equal steps; shift the keys half a frame to get one. Frame-averaged peak ≈ 6.6× mean even though the instantaneous peak is 20×.",
   "params": "influence 95/95; keys cut−0.2 s / cut+0.2 s−1 f; midpoint cut−½ f",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
@@ -2617,6 +2791,7 @@
   "how": "r2 = r1 · p/(1+p) · (1−q)/q · D2/D1, where p and q are the fractional size changes on each side and D the durations; then the incoming end influence = min(86, 100·(1−1/r2)). Worked example (ran here, V1): r1 = 9, p = q = 0.18, equal durations → r2 = 6.254, influence 84. The source's own self-test gave rho 3.74/s vs 3.80/s (ratio 1.017). Pair with EASE-X05 so the slopes also match.",
   "params": "r2 = r1·p/(1+p)·(1−q)/q·D2/D1; influence = min(86, 100(1−1/r2))",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
@@ -2648,6 +2823,7 @@
   "how": "Acceptance: closest approach to B ≥ 5 % of |AB| and minimum speed clearly above 0; sequential Easy Eases give 0 % and a full stop; the source rejected a hybrid at 3.9–4.3 %. Ran here (V1) on a 90° turn with equal legs and Easy Ease on both moves: sequential → 0 % / 0 % of peak speed; next starts at 0.5 D → 22.1 % / 60 %; at 0.45 D → 26.2 % / 57 %. Stack the two moves as summed deltas on one parent instead of keying one layer twice.",
   "params": "overlap 0.45; closest approach ≥ 5 % |AB|; min speed > 0",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
@@ -2680,6 +2856,7 @@
   "how": "expoIn cubic-bezier(.7,0,.84,0) ends with slope 6.25 and expoOut (.16,1,.3,1) starts with slope 6.25 (ran here, V1: 6.250 / 6.250). In code films in(k) = p^k ends with slope k and out(k) starts with slope k, so speed at the cut = k·Δ/T: a mirrored whip −700 px in(2) 0.45 s then +700 px out(2) 0.45 s has identical speed on both sides.",
   "params": "expoIn (.7,0,.84,0) ↔ expoOut (.16,1,.3,1): slope 6.25; speed = k·Δ/T",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
@@ -2714,6 +2891,7 @@
   "how": "AE → CSS: needle 95/95 ≈ (.95,0,.05,1); scroll-into ≈ (.5,0,.85,.625); settle after a cut ≈ (.2,.7,.05,1); UI morph out/in ≈ (.66,0,.9,.1) / (.07,.44,.16,1); entrance width ≈ (.75,0,.25,1); Easy Ease (.333,0,.667,1). By intent: camera push/pull (.76,0,.24,1); follow (.55,0,.25,1); soft drift (.37,0,.63,1); snap pull-back (.25,.1,0,1); whip (.83,0,.17,1); suck into a landing (.62,0,.92,.42). Never tween a fill between distant hues through RGB (magenta → lime passes salmon and mustard); interpolate in a perceptual space.",
   "params": "push (.76,0,.24,1) · follow (.55,0,.25,1) · drift (.37,0,.63,1) · whip (.83,0,.17,1)",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md",
@@ -2744,6 +2922,7 @@
   "how": "Entrances 0.45–0.7 s on (.16,1,.3,1), scale from ≥ 0.9, travel ≤ 40–70 px, overshoot ≤ 2–4 %; staggers 50–80 ms (letters 30–60 ms); text = opacity ×1.8 speed + rise 24 px + blur 12 → 0 px (optional chromatic text-shadow 14–18 px → 0); cursor 0.6–0.9 s per move on a 5–15 % arc, click squash 0.92 in 0.12 s, release 0.2 s; typing ≤ 50–60 chars/s; anything that must be read stays ≥ 0.8 s; nothing appears in < 0.2 s outside a blurred transition. Strong in(3)/out(3) curves belong to transitions only.",
   "params": "entrance 0.45–0.7 s; overshoot ≤ 2–4 %; stagger 50–80 ms; read ≥ 0.8 s",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md",
@@ -2776,6 +2955,7 @@
   "how": "Allowed stills: status line 1.0 s · name + ✓ 0.6–0.7 s · three numbers 1.2 s · one list item 0.8 s · end lockup 2 s; anything else longer than ≈ 0.5–0.6 s needs a trigger, a camera follow or a cut. Read time for a line = max(1.0 s, 0.35 s × words + 0.5 s) × k (count characters for CJK/Thai). Measure the result with the dead-air meter (QA-X02) instead of guessing.",
   "params": "reads 1.0 / 0.65 / 1.2 / 0.8 / 2.0 s; readTime = max(1, 0.35·w + 0.5)",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/SKILL.md",
@@ -2807,6 +2987,9 @@
   "how": "spring(k) = 1 − e^(−6k)·cos(7.5k)·(1−k). Measured: max 1.0736 at k ≈ 0.315 (≈ 7.4 % overshoot) and exactly 1.0000 at k = 1 (re-run here in Python, V1; the session distillation also ran the original JS). Tracks are [[t, value, ease]] where the ease on a key shapes the segment ARRIVING at it: sample([[0,0],[1,10,'expoOut'],[2,[1,2]]], 0.5) → 9.6875. An exit shorthand starts from whatever the property is doing at out.t, not from the rest value, so an interrupted entrance never snaps.",
   "params": "spring peak 1.0736 @ k 0.315; settles at k = 1",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "unknown (reference only)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
@@ -2840,6 +3023,7 @@
   "how": "t_layer = floor(t·fps_step)/fps_step for that layer only; never quantise the grain or the camera with it (they reveal the trick). Keep discrete events (a stamp, a click) on the quantised clock so they land on a stepped frame.",
   "params": "step fps 8–12 on one layer; film stays 24–30 fps",
   "install": "",
+  "requires": [],
   "license": "unknown (reference only)",
   "proof": [
    "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/typeLayers.js"
@@ -2869,6 +3053,7 @@
   "how": "0.4 s anticipation dip → accelerating push + rack focus → snap; shake at ~11/17 Hz with decay tau ≈ 0.13 s (2 Hz reads as sway, not impact); a flash blooms from the action point, at most one big flash per second; text edits remove words in 0.2–0.3 s and relay the survivors with a 2-frame stagger in non-crossing order; finish fading masked text before an iris starts. Accessibility: ≤ 3 flashes/s, a full white flash ≤ 2 frames.",
   "params": "dip 0.4 s; shake 11/17 Hz, tau 0.13 s; ≤ 1 big flash/s",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"

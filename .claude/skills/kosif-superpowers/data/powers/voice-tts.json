@@ -9,6 +9,12 @@
   "how": "Install piper-tts in a venv, download the voice model (.onnx + .onnx.json) from huggingface.co/rhasspy/piper-voices (ar/ar_JO/kareem/medium, 63 MB), pipe the text in. Output is 22.05 kHz mono; resample to 48 kHz and loudnorm before muxing (VOICE-44). One sentence per line so --sentence-silence places breaths. Ran here: a 10-word Arabic line → 7.43 s WAV at -16.5 LUFS integrated; with --length-scale 1.15 and --sentence-silence 0.35 two sentences → 7.13 s. (code snippet in references/powers/voice-tts.md)",
   "params": "voice ar_JO-kareem-medium (1 speaker, 22050 Hz); inference noise_scale 0.667, noise_w 0.8, length_scale 1.0 (1.1–1.2 = slower, calmer); --sentence-silence 0.2–0.5 s; --volume 1.0",
   "install": "python3 -m venv .venv && .venv/bin/pip install piper-tts && curl -L -O https://huggingface.co/rhasspy/piper-voices/resolve/main/ar/ar_JO/kareem/medium/ar_JO-kareem-medium.onnx{,.json}",
+  "requires": [
+   "ffmpeg",
+   "pip:piper",
+   "pip:onnxruntime",
+   "network"
+  ],
   "license": "piper-tts is GPL-3.0-or-later (call it as a CLI, do not vendor its code); the kareem dataset licence is 'see URL' on the model card — check before commercial delivery.",
   "proof": [
    "run here 2026-10-16: piper-tts 1.8.0 → ar.wav 7.43 s, -16.5 LUFS",
@@ -36,6 +42,9 @@
   "how": "PowerShell + SSML prosody under the hood. `python voice.py --list`; `voice.py out.wav --text '…' --voice Naayf --rate -5%`; or `--script lines.json [--seconds 15]` → out.wav + out.json [{t,end,text}] for captions and ducking. Trims silence (|x|>0.004) keeping 20 ms head / 80 ms tail, resamples to 48 kHz stereo, peak 0.89. In a composition mark it `<audio data-role=\"voice\">` so the mux ducks other clips and normalises to -14 LUFS. The Basma editor calls the same voices through the local bridge (GET /api/voices, POST /api/voice {lines:[{t,text}],voice:'Naayf',seconds}). Owner code, but it needs powershell.exe + OneCore → it does NOT run in this Linux container; use VOICE-01 here.",
   "params": "default rate −4 % (CLI examples −5 %), pitch +0 %; 48 kHz stereo; peak 0.89; head 20 ms / tail 80 ms",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/voice.py:82",
@@ -66,6 +75,12 @@
   "how": "Prefixes a/b/e/f/h/i/j/p/z = en-US/en-GB/es/fr/hi/it/ja/pt-BR/zh; good voices af_heart, af_nova, am_adam, bf_emma. Python: `pip install kokoro soundfile` (~311 MB model from huggingface.co; non-English needs espeak-ng, not installed here). JS: `npm i kokoro-js` (1.2.1). The HyperFrames wrapper `npx hyperframes tts` is NOT installable here (@hyperframes/cli 404 on npm).",
   "params": "speed 0.7–0.8 tutorial · 1.0 natural · 1.1–1.2 upbeat; 24 kHz output",
   "install": "pip install kokoro soundfile   # or: npm i kokoro-js",
+  "requires": [
+   "pip:kokoro",
+   "pip:soundfile",
+   "npm:hyperframes",
+   "network"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/tts.md",
@@ -94,6 +109,9 @@
   "how": "Strip bullets/asterisks first (`text.replace(/[•*]/g,'')`), `speechSynthesis.cancel()` then speak a `SpeechSynthesisUtterance` with `lang='ar-SA'`; onstart/onend toggle the speaking state (drives VOICE-49). Voice quality depends on the viewer's OS and is not capturable by a headless render — never use it for an MP4. (code snippet in references/powers/voice-tts.md)",
   "params": "lang ar-SA; default rate/pitch (owner code sets none)",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-audit-studio/voice.js:380",
@@ -120,6 +138,12 @@
   "how": "video-guide-creator: YAML (title-card, bullet-points, outro or screencast steps with CSS selectors) → Docker → MP4; brand presets hold colours, voice, language, logo (default en-US-AriaNeural — switch to an ar-* voice). framecraft: scenes.json → Playwright frames → Edge TTS → FFmpeg 1920x1080 with --auto-duration. Here: `pip install edge-tts` works but speech.platform.bing.com answered 400 in the probe, the Docker image is not built and uv/framecraft are external → treat as documented. Transferable idea: a KOSIF YAML → HTML scene generator feeding VOICE-01.",
   "params": "default en-US-AriaNeural; Arabic voices exist for ar-EG and ar-SA",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium",
+   "docker"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2836-video-guide/11537-video-guide-creator/SKILL.md",
@@ -151,6 +175,10 @@
   "how": "POST /v1/text-to-speech/{voiceId} (or @elevenlabs/elevenlabs-js textToSpeech.convert) with model_id eleven_multilingual_v2 and voice_settings; key in env ELEVENLABS_API_KEY. Then size each scene to its file (VOICE-31: Remotion calculateMetadata sums durations). Presets: narration stability 0.5 / similarity 0.75 / style 0–0.3; conversational 0.4 / 0.6 / 0.3; cloned voice similarity 0.85. 5000 chars per request.",
   "params": "stability 0–1, similarity_boost 0–1, style 0–1, speed 0.7–1.2; ≤5000 chars/request",
   "install": "",
+  "requires": [
+   "npm:remotion",
+   "key:elevenlabs"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a",
@@ -179,6 +207,9 @@
   "how": "flash (~75 ms TTFB) for realtime, turbo (~150 ms), multilingual_v2 (~300 ms) for narration, v3 (~500 ms, 70+ languages incl. Arabic) for maximum expression. flash/turbo cost 0.5 credit/char, v2/v3 1.0. Format: pcm_44100 for editing, mp3_44100_128 (~16 KB/s) for delivery, mp3_22050_32 only for streaming previews.",
   "params": "TTFB flash 75 / turbo 150 / v2 300 / v3 500 ms; credits 0.5 vs 1.0 per char",
   "install": "",
+  "requires": [
+   "key:elevenlabs"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5522-elevenlabs-performance-tuning",
@@ -205,6 +236,9 @@
   "how": "Split on sentence ends below 5000 chars; send previous_text / next_text with each chunk; decode every chunk to WAV and concat the WAVs (or concat with re-encode) — never `-c copy` MP3s, whose frame padding drifts word timings by tens of ms per join (see VOICE-45).",
   "params": "chunk < 5000 chars; joins in PCM",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a",
@@ -231,6 +265,10 @@
   "how": "ElevenLabs: client.voices.add({name,files}) with 1–25 files, ≥30 s total clean speech, no music; then similarity 0.85. HeyGen: heygen-voice.mjs clone uploads base64 mp3/wav, polls until complete (gives up at 120 s), prints the voice id; list/delete supported. Its 14 mocked tests ran green here, the real call needs HEYGEN_ACCESS_TOKEN. Consent first (VOICE-53).",
   "params": "min 30 s clean speech; 1–25 samples; mp3 or wav only; 120 s clone deadline",
   "install": "",
+  "requires": [
+   "node",
+   "key:elevenlabs"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a",
@@ -258,6 +296,9 @@
   "how": "speechToSpeech.convert(voiceId,{audio, model_id:'eleven_english_sts_v2', remove_background_noise:true}); input 1 s–5 min. Because the timing survives, the words.json you already built on the guide take stays valid.",
   "params": "input 1 s–5 min; remove_background_noise true",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5515-elevenlabs-core-workflow-b"
@@ -282,6 +323,9 @@
   "how": "responseModalities AUDIO + prebuiltVoiceConfig; L16 PCM at 24 kHz wrapped with a 44-byte WAV header; models gemini-3.8-flash-tts (default), 3.8-flash-lite-tts, 2.5-flash-preview-tts; captions re-sync from the voice's voiced stretches. Needs a Gemini API key.",
   "params": "30 voices: Kore, Puck, Charon, Zephyr, Fenrir, Leda, Orus, Aoede, Callirrhoe, Autonoe, Enceladus, Iapetus, Umbriel, Algieba, Despina, Erinome, Algenib, Rasalgethi, Laomedeia, Achernar, Alnilam, Schedar, Gacrux, Pulcherrima, Achird, Zubenelgenubi, Vindemiatrix, Sadachbia, Sadaltager, Sulafat; 24 kHz PCM; temperature ~0.85, top-p ~0.95 for persona reads",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "app/public/js/00_editor.js:1927",
@@ -310,6 +354,11 @@
   "how": "VOICE.direct(text) → {note ≤60 words, voice, pace 2–4 wps, energy 1–10, pitch low|mid|high, stress[]}; the Gemini wrapper prefixes Cairo-colloquial pronunciation rules (ج hard g, ق glottal stop, ث → s/t, ذ → z/d). The direction half needs no key — apply the same JSON to Piper (length_scale from pace) or any engine. (code snippet in references/powers/voice-tts.md)",
   "params": "pace 2–4 words/s; energy 1–10; note ≤ 60 words",
   "install": "",
+  "requires": [
+   "pip:piper",
+   "fonts:arabic",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "app/public/js/10_studio.js:4112"
@@ -335,6 +384,10 @@
   "how": "fromIdea(): Claude JSON {title, logline, speakers[{name,voice,persona}], lines[{speaker,text,delivery,beat}]} with a hook within 2 s and an arc hook → build → peak → turn → resolve; Gemini may critique; per-line TTS from female pools (Kore, Zephyr, Leda, Aoede…) and male pools (Puck, Charon, Fenrir, Orus…); concatenated mix; then the smart montage runs.",
   "params": "hook ≤ 2 s; 5-beat arc; one voice per speaker locked for the whole piece",
   "install": "",
+  "requires": [
+   "imagemagick",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "app/public/js/50_autoedit.js:1191"
@@ -360,6 +413,11 @@
   "how": "node heygen-tts.mjs …; provider order in the vendor engine: HeyGen Starfish (timestamps) → ElevenLabs (none) → Kokoro-82M; Gemini as an explicit alternative. Speed is validated before any TTS runs (0, 5, −1 and text are refused). Ran here: 24/26 mocked tests pass (the 2 failures are bundled-SFX path tests, not TTS). Real calls need HEYGEN_ACCESS_TOKEN.",
   "params": "speed must be a positive number in range; docs narrator ref. 145–155 wpm, music bed ~−31 LUFS under it",
   "install": "",
+  "requires": [
+   "node",
+   "pip:kokoro",
+   "key:elevenlabs"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/heygen-tts.mjs",
@@ -386,6 +444,10 @@
   "how": "node audio.mjs --script SCRIPT.md --storyboard STORYBOARD.md --hyperframes . --out audio_meta.json --voice <id> (run in background); wait-bgm.mjs before render when BGM is still generating. The pattern (one manifest = master clock) is reusable with VOICE-01 + VOICE-32 locally; the script itself needs provider keys.",
   "params": "outputs: voice wav, bgm, sfx, audio_meta.json",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/media-use/audio/scripts/audio.mjs",
@@ -414,6 +476,10 @@
   "how": "together>=2.0: client.audio.speech.create(model, input, voice, response_format) then write_to_file(). Key required.",
   "params": "Kokoro $4 / 1M chars · Orpheus $15 / 1M · Sonic-2 $65 / 1M",
   "install": "",
+  "requires": [
+   "pip:kokoro",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3214-togetherai-skills/13585-together-audio",
@@ -439,6 +505,7 @@
   "how": "Stable casting across episodes; re-render only the changed turn; report backend config errors verbatim; songs go to song generation, never to TTS.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-source-router/references/providers/voice-director-v10.4.md"
@@ -463,6 +530,9 @@
   "how": "English narration 2.5 wps (15 s ≈ 37 words, 30 s ≈ 75, 60 s ≈ 150); direction spec 2.3–2.7 wps with total within ±5 % of target. By genre: ads 150–170 wpm, narration 130–150, meditation 100–120. Scene fill: 3–4 s → 8–12 words (~70 %), 5–6 s → 15–22 (~75 %), 7–8 s → 22–30 (~80 %). Arabic carries fewer words per second than English (longer words, more syllables) — budget ~15–20 % fewer words and measure with the real voice (the Piper test line ran at ~1.35 wps).",
   "params": "2.3–2.7 wps; ±5 % total; ads 150–170 / narration 130–150 / meditation 100–120 wpm",
   "install": "",
+  "requires": [
+   "pip:piper"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/narration.md",
@@ -491,6 +561,9 @@
   "how": "Speed 0.7–0.8 tutorial · 1.0 natural · 1.1–1.2 upbeat; avoid ≥1.5. Piper's knob is the inverse (length_scale 1.15 = slower). Ran here: same two Arabic sentences with --length-scale 1.15 --sentence-silence 0.35 → 7.13 s; re-generation keeps formants natural where atempo/rubberband stretching smears consonants.",
   "params": "speed 0.7–1.2 (avoid ≥1.5); Piper length_scale ≈ 1/speed",
   "install": "",
+  "requires": [
+   "pip:piper"
+  ],
   "license": "",
   "proof": [
    "run here 2026-10-16: piper --length-scale 1.15 → 7.13 s",
@@ -518,6 +591,7 @@
   "how": "Keep two files per scene: `say.txt` (to TTS) and `show.txt` (to captions). Pronunciation map per project: '.com' → 'دوت كوم', 'API' → 'إيه بي آي', '$1.9T' → 'قرابة تريليوني دولار', '٢٠٢٦' → 'ألفين وستة وعشرين'. Add tashkeel only on ambiguous words (عَلِم/عِلْم). Then align captions to the spoken words but display show.txt (ARAB captions family). (code snippet in references/powers/voice-tts.md)",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2836-video-guide/11537-video-guide-creator/references/pronunciation.md",
@@ -546,6 +620,7 @@
   "how": "If a sentence needs 'and' (و) it is two scenes. Contrast in counts: '24 تبويبًا. نقرة واحدة. 5 مجموعات.' Narrate an action ~0.3–0.5 s before it appears so the eye arrives with the ear. Strong first line (hook within 2 s). Each scene's narration in its own text file feeding TTS and caption timing. The script complements the visuals; it never reads the on-screen text aloud.",
   "params": "1 idea / scene; action narrated 0.3–0.5 s early; hook ≤ 2 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/166-demo-video/535-demo-video/SKILL.md",
@@ -574,6 +649,10 @@
   "how": "Write vo-script.md (profile: gender, age, tone, dialect, pace) + ssml.xml. Inline markup: [pause 0.5s], *emphasis*, (emotion). Map to engines: SSML <break time='500ms'/> and <prosody rate='-5%'> for Windows/Edge; sentence-silence and length_scale for Piper; voice_settings for ElevenLabs. After generation measure duration, level, peaks and mispronounced words.",
   "params": "duration within ±5 %; pauses 0.3–0.8 s",
   "install": "",
+  "requires": [
+   "pip:piper",
+   "key:elevenlabs"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/voiceover-tts-direction/SKILL.md",
@@ -600,6 +679,7 @@
   "how": "Blocks `## Line N — label (Frame N)` with Time guide, Delivery note and the indented spoken text fed to TTS. Real timing comes from TTS word timestamps (VOICE-32), never from the Time guide.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/script-format.md"
@@ -623,6 +703,7 @@
   "how": "Brief → rewrite for the ear (short sentences, breath points) → pronunciation memory table (written → spoken; phonetic spelling fixes slang) → per-block direction (emotion, energy 1–5, pace, pauses, emphasis) → render only if a provider is exposed (preview first; no paid credits without approval) → measure (kosif_audio_analyze). Never mix dialects inside one block.",
   "params": "energy 1–5; one dialect per block",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-voice/SKILL.md"
@@ -650,6 +731,9 @@
   "how": "brief.language in the fastify-motion-bro CLI; the voice engine and pronunciation map are then chosen from it (ar-SA → Piper/Naayf; ar-EG → Gemini persona VOICE-26).",
   "params": "default ar-EG",
   "install": "",
+  "requires": [
+   "pip:piper"
+  ],
   "license": "",
   "proof": [
    "fastify-motion-bro/docs/QUESTIONS.md:6",
@@ -676,6 +760,7 @@
   "how": "Fillers sparingly (يا جماعة، بصوا بقى، تمام؟، زي ما انتم شايفين); ج as hard g; ق as glottal stop; ث → s/t; ذ → z/d; natural breaths. Numbers: 11 حداشر, 12 اتناشر, 15 خمستاشر, 100 مية, 1000 ألف; جنيه = geneh. Gemini temperature ~0.85, top-p ~0.95.",
   "params": "≤1 filler per 3 sentences; temperature 0.85; top-p 0.95",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-voice/SKILL.md",
@@ -702,6 +787,7 @@
   "how": "VOICE constant + narrate(topic,i,n) truncated to 19 words, plus projector hum and paper snaps. Locking the description prevents voice drift between generated clips. Ran here: production-profiles test 10/10 pass, asserting <20 words and the VOICE string in every 10 s clip prompt.",
   "params": "< 20 words per 10 s clip; same voice string in every prompt",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/profiles/vox-history.mjs:12",
@@ -729,6 +815,7 @@
   "how": "COACH array (5 generic) + per-muscle arrays for Abs, Chest, Back (15 lines); one cue per rep phase; keep them ≤ 6 words so they land inside a 2 s movement. Profile tests ran here (10/10).",
   "params": "5 generic + 15 muscle-specific lines; ≤ 6 words each",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/scripts/profiles/fitness.mjs:16",
@@ -755,6 +842,7 @@
   "how": "Cardioid mic at 10–15 cm with a pop filter; peaks ≈ −12 dBFS; 48 kHz / 24-bit WAV; podcast noise floor < −60 dBFS; record room tone 5 s first (feeds afftdn). Then VOICE-39 cleanup, never re-timing.",
   "params": "10–15 cm; peaks −12 dBFS; 48 kHz/24-bit; noise floor < −60 dBFS",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-audio/SKILL.md"
@@ -779,6 +867,7 @@
   "how": "Load language-coach-arabic-english (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/language-coach-arabic-english/SKILL.md"
@@ -804,6 +893,10 @@
   "how": "Per scene: dur = ffprobe(vo_n) + 0.3–1.5 s buffer (1.5 s for demo scenes with UI to read). Remotion: calculateMetadata sums the scene durations; HTML: write the start times into the timeline JSON. Ran here: Arabic VO (loudnorm −14) muxed over a 1080x1920/30 fps plate of exactly ffprobe length → verify_video 11/11 PASS, delivered audio 7.430 s vs master 7.430 s. (code snippet in references/powers/voice-tts.md)",
   "params": "buffer 0.3–1.5 s; audio vs master ±50 ms",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "run here 2026-10-16: vo.mp4 verify_video 11/11, 7.430 vs 7.430 s",
@@ -833,6 +926,10 @@
   "how": "pip install faster-whisper; resample to 16 kHz mono f32 and pass the numpy array (in this venv PyAV 19 rejects faster-whisper's open() kwargs, so do not pass a path); WhisperModel('small', device='cpu', compute_type='int8'), language='ar', word_timestamps=True; dump segments → `python3 kosif-tool/tools/words_convert.py ar.whisper.json words.json`. Ran in an earlier session's venv (2026-10-16; not installed in the current container, so install first): 10 words, 0.00 → 7.26 s. Lesson: Whisper split «محليًا» into «محل» + «ين» — always re-attach to the known script (VOICE-33). (code snippet in references/powers/voice-tts.md)",
   "params": "16 kHz mono; model small int8 on CPU (large-v3 for final); key words ≤ 100 ms, others ≤ 150 ms",
   "install": "pip install faster-whisper",
+  "requires": [
+   "pip:numpy",
+   "pip:faster-whisper"
+  ],
   "license": "",
   "proof": [
    "earlier session 2026-10-16 (venv; not installed in the current container, pip install faster-whisper): faster-whisper 1.2.1 small → words.json 10 words",
@@ -861,6 +958,9 @@
   "how": "Normalise both sides (strip tashkeel, unify أ/إ/آ → ا, ة → ه, ى → ي); walk script words and greedily consume Whisper tokens until the normalised concatenation matches (handles splits like محل+ين and merges); start = first token start, end = last token end. If drift persists use WhisperX forced alignment (pip install whisperx). Never edit timings by hand, only text.",
   "params": "match on normalised text; fall back to WhisperX",
   "install": "",
+  "requires": [
+   "pip:faster-whisper"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/audio-sync.md:26",
@@ -886,6 +986,7 @@
   "how": "Generate TTS first; one idea per sentence; key-word sync ≤ 100 ms; camera drifts during pauses so the frame never dies (pauses > 1.5 s need movement). Seen: the 60 s cream-paper explainer (~5 s per idea, static ratio ~0.65), the Fusha doodle parable (camera moves in pauses), a 457 s Chinese edge-tts Manim explainer (visuals step per sentence).",
   "params": "~4–6 s per idea; key word ≤ 100 ms; pause > 1.5 s → ambient motion",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-1stnoel-c20a89",
@@ -918,6 +1019,7 @@
   "how": "From words.json: all words at ink #8a7b70 (or 25 % opacity ghosts as in the doodle reel), at word.start − 60 ms tween to #1f1b17 over 120 ms; a peach box #f6cf9a slides behind the current word (x/width tween 140 ms outBack). Arabic: whole words only, RTL container (ARAB-01). Doodle variant: key word recoloured orange with a wiggling squiggle underline.",
   "params": "lead 60 ms; 120 ms colour tween; ghosts 25 % opacity; box #f6cf9a on #f4eee0",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-1stnoel-c20a89",
@@ -947,6 +1049,9 @@
   "how": "Seen in a 22 s 1:1 launch film with an ElevenLabs VO over music ducked at the drop: captions typed at the voice word table inside a glass pill, no full stops, key word filled #f06aa8 → #8a6cf5 → #5d8cf7 with a faint glow, slow camera push 1.0 → 1.04 per scene. Build: per word, reveal at word.start, caret blink 530 ms; Arabic types per word not per letter.",
   "params": "reveal at word.start; caret blink 530 ms; push 1.0 → 1.04",
   "install": "",
+  "requires": [
+   "key:elevenlabs"
+  ],
   "license": "",
   "proof": [
    "style:pm-rossaxbt-3085b7"
@@ -973,6 +1078,9 @@
   "how": "Pre-compute peaks: `ffmpeg -i vo.wav -ac 1 -ar 100 -f f32le -` → 100 values/s → abs → bars 3 px wide / 2 px gap, height = peak × 60 px, rounded caps, played bars #3b69f3, unplayed #5c5c6f at 30 %; playhead x = t/dur × width. Seen in a 30 s SaaS explainer on #f8f5ec with a photosynthesis diagram synced to the waveform.",
   "params": "100 peaks/s; bar 3 px + gap 2 px; #3b69f3 / #5c5c6f",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "style:pm-sudo-kiran-6609ed"
@@ -999,6 +1107,7 @@
   "how": "Per narration sentence: one draw-on element (seconds per element = sentence length), marker icon rides the stroke tip and changes cap colour with ink (#1c1c1c, #c42d3f, #2b4a9b, #2f8a5b); eraser wipe between chapters; subtitles 1–2 centred lines. Seen in a 308 s lecture (static ratio 0.945 — narration carries it) and a bilingual-subtitle whiteboard walk-through.",
   "params": "1 element per sentence; subtitle swap per sentence; eraser wipe between chapters",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-tak3sh8-be5012",
@@ -1030,6 +1139,11 @@
   "how": "Owner chain in reel.py (identical in kosif-studio, kosif-one and kosif-montage-motion). Ran here on a test signal + loudnorm → −15.9 LUFS integrated, 48 kHz. (code snippet in references/powers/voice-tts.md)",
   "params": "HPF 70 Hz; afftdn nr 6 nf −42; +1.2 dB @220 Hz; +2.2 dB @3.2 kHz (w 1.4); −1 dB @9 kHz; deesser i 0.35; comp thr 0.12 ratio 2.5 att 10 ms rel 160 ms makeup 1.6",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/reel.py:38",
@@ -1060,6 +1174,10 @@
   "how": "Vendor presets voice-clean (rumble → mud → even loudness → clarity → peak ceiling), voice-broadcast (+ boxiness, air, warmth), voice-warm (+ weight); singles rumble-cut, room-gate, boom-tame, harsh-tame. The HyperFrames fx-chain is not installable here, so apply the same numbers as ffmpeg `equalizer=f=…:t=q:w=Q:g=…`.",
   "params": "boom 200 Hz −4 dB Q1.4; mud 250 Hz −3 dB Q1.2; boxiness 400 Hz −3 dB Q1.4; clarity 3 kHz +2.5 dB Q1; harshness 3.2 kHz −3 dB Q1.6; rumble HPF 80 Hz",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/presets.md",
@@ -1087,6 +1205,10 @@
   "how": "Vendor names 7 presets (telephone, radio-am, megaphone, lofi-tape, pa-system, intercom, doofus-worble) for its fx-chain; the ffmpeg equivalents below rendered here on the Piper Arabic line (telephone 7.43 s, megaphone 7.47 s, room 7.57 s). (code snippet in references/powers/voice-tts.md)",
   "params": "telephone HPF 300 / LPF 3400 + comp 4:1; megaphone HPF 500 / LPF 4000 + acrusher 10-bit mix 0.25 + 40 ms slap; room aecho 60|140 ms",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:piper"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-audio/references/presets.md",
@@ -1114,6 +1236,9 @@
   "how": "`python scripts/kmotion.py audiolab FILE --mode voice|music|both|novoice|nomusic [--strong]`; centre-cancel works on stereo only; bass below 140 Hz restored after phase cancel. Measured speech/pause contrast 11.2 → 40.9 dB.",
   "params": "modes voice|music|both|novoice|nomusic; --strong; bass restore < 140 Hz; contrast 11.2 → 40.9 dB",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/audiolab.py",
@@ -1141,6 +1266,9 @@
   "how": "Owner convention: mark `<audio data-role=\"voice\">` and the mux ducks the other clips. Raw ffmpeg: sidechaincompress with the voice as key. Ran here: music bed 220 Hz −31.5 dB before the voice → −48.5 dB under it (≈ 17 dB duck), then loudnorm → −14.8 LUFS. For a gentler bed use ratio 4 (≈ −8 to −12 dB). (code snippet in references/powers/voice-tts.md)",
   "params": "threshold 0.03; ratio 4–8; attack 20 ms; release 400 ms; bed ~ −31 LUFS under VO",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/references/hyperframes-authoring.md",
@@ -1169,6 +1297,10 @@
   "how": "loudnorm=I=-14:TP=-1.5:LRA=11 (−16 for podcasts), 48 kHz stereo, AAC 192k, then `python3 kosif-tool/tools/verify_video.py film.mp4 --audio vo.wav --lufs -14`. Ran here: 11/11 PASS, −14.8 LUFS, TP −4.3 dBFS.",
   "params": "I −14 ±1.5 LUFS; TP ≤ −1 dBFS; ≥ 44.1 kHz; audio vs master ±50 ms",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/tools/verify_video.py",
@@ -1197,6 +1329,7 @@
   "how": "Decode each chunk to 48 kHz PCM, concat with the concat filter (or concat demuxer on WAVs), then transcribe the JOINED file once — never add per-chunk transcripts with offsets.",
   "params": "MP3 encoder delay ≈ 1105 samples per chunk",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift",
@@ -1222,6 +1355,9 @@
   "how": "voice.js createVoiceAssistant().start(); worker POST /api/realtime/session → realtime calls with model gpt-realtime, input transcription gpt-4o-mini-transcribe (language ar), server_vad turn detection, output voice 'marin'; session.update injects file context (≤ 14000 chars); fallback = deterministic router VOICE-48. Needs OPENAI_API_KEY as a Worker secret.",
   "params": "Content-Type application/sdp; SDP ≤ 200000 bytes; data channel 'oai-events'; context ≤ 14000 chars",
   "install": "",
+  "requires": [
+   "key:openai"
+  ],
   "license": "",
   "proof": [
    "kosif-audit-studio/voice.js:254",
@@ -1249,6 +1385,9 @@
   "how": "On event input_audio_buffer.speech_started while state = speaking → emit 'interrupted'; interrupt() sends {type:'response.cancel'} over the data channel.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-audit-studio/voice.js:204",
@@ -1273,6 +1412,9 @@
   "how": "routeIntent(transcript, context, api) with VIEW_WORDS (18 views) and has() keyword checks; unknown → guidance reply. Ran here: node --test tests/voice.test.js → 3/3 pass (navigation, status, unknown).",
   "params": "18 view vocabularies; 3 tests",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "kosif-audit-studio/voice.js:45",
@@ -1300,6 +1442,7 @@
   "how": "Set data-state on #voiceOrb (idle|listening|thinking|speaking); keyframes orb-pulse, orb-spin, orb-breathe. (code snippet in references/powers/voice-tts.md)",
   "params": "idle radial at 35% 35% #c4b5fd → #6d28d9 60% → #1e1b4b; listening #99f6e4 → #0f766e → #042f2e + 8 px halo rgba(15,118,110,.18), rings 1.8 s ease-out scale .6 → 1.9 delays 0/.6/1.2 s; thinking conic #a78bfa,#6d28d9,#0f766e spin 1.2 s linear; speaking scale 1.1 breathe 1 s + 10 px halo",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/styles.css:823",
@@ -1328,6 +1471,7 @@
   "how": ".voice-fab.live .voice-fab-ring { animation: voice-ring 1.6s ease-out infinite }.",
   "params": "FAB 60 px (KOSIF4 50 px); gradient 140deg #6d28d9 → #0f766e (KOSIF4 135deg #453556 → #395744); ring scale 1 → 1.7, opacity .8 → 0; hover −2 px, scale 1.03",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/styles.css:810",
@@ -1353,6 +1497,7 @@
   "how": "navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true, noiseSuppression:true, autoGainControl:true}}). For a VO take meant for the film, turn autoGainControl OFF (it pumps) and clean later with VOICE-39.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/voice.js:259"
@@ -1377,6 +1522,9 @@
   "how": "createAudioRecorder(stream) → {start, stop(): Promise<Blob>}; downloadAudioBlob(blob, 'kosif-response.webm') revokes the object URL after 1000 ms. Convert to WAV with ffmpeg before sync work.",
   "params": "default mime audio/webm; revoke delay 1000 ms",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-audit-studio/audio-export.js"
@@ -1401,6 +1549,7 @@
   "how": "Describe timbre in words instead (deep, warm, slightly raspy, mid-40s, measured). Keep the consent record next to any cloned voice id.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1511-homie/3892-music/references/RIGHTS.md",
@@ -1427,6 +1576,9 @@
   "how": "Report: path, ffprobe duration, integrated LUFS, true peak, and words.json count. Style observations that say 'not listened to' stay labelled that way.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-voice/SKILL.md",
@@ -1452,6 +1604,7 @@
   "how": "Pre-clean text; cache key sha256(voice:model:settings:text); re-render only changed lines (the Voice Director's selective re-render follows the same idea).",
   "params": "saves 5–15 % characters; 80–95 % cache hits on iterations",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1847-elevenlabs-pack/5516-elevenlabs-cost-tuning",

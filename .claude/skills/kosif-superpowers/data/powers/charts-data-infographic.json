@@ -9,6 +9,7 @@
   "how": "Lookup: trend → line (area only if cumulative); compare categories → vertical bars, many categories → horizontal bars or lollipop; ranking → sorted horizontal bars; two periods → slope; part-to-whole → stacked bar / waffle / (pie ≤5); composition over time → stacked area; distribution → histogram/strip; correlation → scatter; flow → sankey/arrows; target → bullet/progress. Video rule: comparison = bars, trend = line, share = stacked bar (data-in-motion skill).",
   "params": "≤6–8 categorical hues; pie <6 slices (video: ≤3–5)",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md",
@@ -35,6 +36,7 @@
   "how": "Journey (dips, spikes, when) → draw the line left→right; net change or rank flips → slope chart: two vertical axes, one segment per series, signed change labelled at the right end; draw segments with 60–80 ms stagger, highlight one in accent, grey the rest.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2957-posthog/12277-choosing-trend-or-slope-view/SKILL.md"
@@ -58,6 +60,7 @@
   "how": "One group: histogram ≈30 bins with white edges + dashed mean/median lines; several groups: box/violin/strip; many distributions: small multiples not stacking; never a mean-only bar when spread is the story. Animate bins rising left→right 30–40 ms stagger, then draw the median line.",
   "params": "bins=30; mean/median dashed 1.5 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md",
@@ -81,6 +84,7 @@
   "how": "PLAN.md gets one sentence per chart ('sales doubled after March'); three questions = three charts, never overlays. Map arc stages to chart states: baseline chart → highlighted delta → annotated climax. If nobody would act differently after the number, show the sentence instead.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:11",
@@ -105,6 +109,7 @@
   "how": "Anchor bars at the baseline (transform-origin bottom, scaleY 0→1); x spacing proportional to real time with gaps visible (MG-042); same y-limits across panels; unit printed on the axis or beside the number (٪, ر.س, k), never left to narration.",
   "params": "bars from 0; MG-041 7 s: 0–1 axis, 1–3 grow, 3–7 read",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:17-18",
@@ -130,6 +135,7 @@
   "how": "r = sqrt(value)·k, never linear radius; label log base and zero handling; name the interval (SD/SE/CI) and n; disclose smoothing window and bin edges; never compare length with area without converting (MG-050).",
   "params": "r ∝ √value",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/SKILL.md",
@@ -154,6 +160,7 @@
   "how": "Reject: 3D bars/pies; pie/donut beyond 3–5 slices (use bars); dual axis unless both labelled and not engineered to fake correlation (prefer two aligned panels); stacked bars with many middle segments (small multiples); 6-panel dashboards, gridline forests, detached legends, raw chart-library default output; no animated pie (data-in-motion style).",
   "params": "pie ≤3 slices for video; bars baseline 0",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md",
@@ -180,6 +187,7 @@
   "how": "Sort by size; slices within 5 points of each other → stacked bar (the eye cannot rank close angles); only use a ring when there is a fixed whole (MG-047).",
   "params": "≤5 slices; within 5 pts → stacked bar",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:21",
@@ -203,6 +211,7 @@
   "how": "Break the path at missing points (separate M commands), or draw interpolated stretches dashed and labelled; no-data cells in neutral #777777; state exclusions in the source note; empty source → empty-state text, never sample numbers.",
   "params": "missing colour #777777",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/SKILL.md",
@@ -226,6 +235,7 @@
   "how": "Source line in the corner (mono 18–22 px, 60% ink); MG-044 counter stops then shows unit and source; empty-state copy: 'لا توجد بيانات مسجلة لهذه الفترة بعد.'; AI-generated infographics (DATA-98) are unverified until every number is re-set in code.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/docs/design/KOSIF-LUXE.md",
@@ -252,6 +262,7 @@
   "how": "Label in series colour next to the mark; one accent + grey rest so the focal series needs no key; if unavoidable embed the key inside the plot near the data; selective labels (endpoint, extreme, the one figure), never a number on every mark.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/SKILL.md",
@@ -276,6 +287,7 @@
   "how": "Descending sort (barh: largest on top); months/stages keep natural order; time-series plot area 2:1–3:1; comparisons squarer; same axis range across compared panels.",
   "params": "time-series aspect 2:1–3:1",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md"
@@ -298,6 +310,7 @@
   "how": "Hero numbers 80–120 px (1080p) counting from 0; build bars/counters by hand in SVG/CSS + a timeline (no chart-library output, tables or small legends); morph the previous stat's shape into the next instead of cutting (style:infographic does this for 28 s with no cuts).",
   "params": "numbers 80–120 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/data-in-motion.md",
@@ -324,6 +337,7 @@
   "how": "Never encode quantity with speed alone; emission rate may encode volume only if capped and documented; trail length = recency; opacity decay = one meaning (age OR uncertainty); stroke width/saturation may encode era activity (2 px / 40% sat quiet → 6 px / full busy, kloss brief); always a static fallback frame.",
   "params": "stroke 2→6 px, saturation 40%→100%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/webgl-2d-animation-patterns.md",
@@ -349,6 +363,7 @@
   "how": "shown = value·p(t); width = shown/max·track; counter text = format(shown). No springs/backOut on data marks (springs are for pills and chrome only). Synchronised set: all charts start on the same frame and finish ≤1200 ms, counters land on the exact figure (quickdesignio brief). (code snippet in references/powers/charts-data-infographic.md)",
   "params": "bars 600–800 ms cubic-bezier(.22,1,.36,1); set lands ≤1200 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:32",
@@ -374,6 +389,7 @@
   "how": "SVG text with dir='rtl' + unicode-bidi:isolate; one digit system per film (toLocaleString('ar-EG') → ٠–٩, 'ar-u-nu-latn' or 'en-US' → 0–9); ٪ and ر.س follow the number; arrows start right; two-line labels lh ≥1.6; record the choice in STYLE.md; meters anchored inline-end in RTL UIs.",
   "params": "lh ≥ 1.6",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:189-195",
@@ -399,6 +415,7 @@
   "how": "At 1080 px width: labels ≥28 px, ticks ≥24 px, counters 72–160 px; portrait 9:16 chart ≤920 px wide and ≤45% of frame height, title above, one-line caption below; chrome at 20–30% contrast, data at full contrast; font-variant-numeric: tabular-nums everywhere.",
   "params": "labels ≥28 px; ticks ≥24 px; counters 72–160 px; portrait ≤920 px × 45%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:22",
@@ -423,6 +440,7 @@
   "how": "Dim others to 35% over 300 ms; pulse key once 300 ms up / 500 ms down; hold 1200 ms before the next highlight; every final state holds ≥1500 ms; variants seen: verdict stamp slam scale 1.6→1, rot −8°, slight shake over the bars (style:pm-kloss-xyz-15182a); record bar solid amber among grey #555 bars (style:pm-kyonax-on-tech-aabc1d).",
   "params": "dim 35% / 300 ms; pulse 300+500 ms; hold ≥1500 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:41",
@@ -451,6 +469,11 @@
   "how": "Canvas/HTML starter: n = round(lerp(0,128, prog(local,0.2,2.6,outQuint))) at 200 px Cairo 900 #ffb86b, direction ltr — rendered here with tools/render_html.cjs --preview (frames 45→103→122→127→128). Owner kit: MOTION.counter(tl, el, from, to, at, dur, {decimals, sep, prefix, suffix, ease}) sets tabular-nums, seek-safe, dur 1.0 s E.out; start near the final value for long numbers. Seen styles: 1.5 s easeOutCubic (alex-prompter), 0→1,284,302 in 900–1200 ms easeOutExpo (sudeepsd). (code snippet in references/powers/charts-data-infographic.md)",
   "params": "counters 700–1000 ms ease-out cubic (playbook); 80–160 px; tabular-nums",
   "install": "",
+  "requires": [
+   "node",
+   "chromium",
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/index.html:163",
@@ -488,6 +511,10 @@
   "how": "python scripts/mtemplates.py new NAME --template stat-counter --set value=1250 --set label='عميل يثق بنا' --set suffix=+ [--seconds 6 --size 1080x1920 --fps 30] → projects/NAME/index.html; preview in browser; render with motion.py render. Count runs 1.0–2.2 s (35% of D).",
   "params": "6 s; value 1250; suffix '+'; decimals 0; accent #5BD1A5; bg #10233a→#071321; number 15u Cairo 800",
   "install": "",
+  "requires": [
+   "python3",
+   "fonts:arabic"
+  ],
   "license": "GSAP standard no-charge license (not OSI) for the vendored gsap.min.js",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/motion/stat-counter.html",
@@ -513,6 +540,9 @@
   "how": "Masked column per digit; translateY = −(digit + 10·extraTurns)·lineH, extraTurns grows toward the rightmost digit; filter blur 0→8 px vertical proportional to velocity; leading zeros at 30% opacity; final number gets gradient fill + glow. Scoreboard flip: per-digit flip with 90 ms stagger. Ready-made: HyperFrames number-wheel (spin single|double|triple) and slot-machine-roll (result 'A7K', up|down). (code snippet in references/powers/charts-data-infographic.md)",
   "params": "0→1,000,000 in 4 s expo.out; digit lag 40 ms; blur 0–8 px; roll 1.2–3 s; size ~14vh",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add number-wheel",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/number-wheel/number-wheel.html",
@@ -548,6 +578,7 @@
   "how": "Seeded PRNG (never Math.random in renders) picks digits each frame; lock digit k at t0 + 40·k ms; slight vertical blur on unlocked digits; playbook cap: flicker ≤150 ms if the style is calm.",
   "params": "lock 40 ms per digit; ~1 s total; flicker ≤150 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-adamdesgns-478d6d",
@@ -575,6 +606,9 @@
   "how": "Two tweens, same start and same ease: value proxy onUpdate writes Math.round(v).toLocaleString(), and scale START_SCALE→1; landing punch scale 1.04 for 60 ms then back; beat variant counting-punch anchors roll → downbeat (best span 1.0–2.5 s); BPM variant: numeral ticks 0→130 in ~1 s while beat-energy bars grow with 40 ms stagger, current beat bar red, later bars grey (style:pm-ayushunleashed-ece3e3).",
   "params": "700 ms easeOutExpo + 60 ms punch to 1.04",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add count-up",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/counting-dynamic-scale.md",
@@ -601,6 +635,9 @@
   "how": "Pop-in scale .4 + blur 16 px → 1 / 0 px while counting via a seek-safe proxy tween; finish with textShadow 0 0 80px rgba(245,201,122,.75); HyperFrames number-pop-in (value 5.7, unit k, lift close|standard|far).",
   "params": "0→1000 in 0.7 s; $0→25,000,000 in 0.9 s; 0→600 in 0.75 s at 330 px",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add number-pop-in",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:226",
@@ -628,6 +665,7 @@
   "how": "|v|≥1e9 → v/1e9 1 decimal + B (مليار); ≥1e6 → M (مليون); ≥1e3 → K (ألف); else thousands separators; percent 1 decimal. Intl.NumberFormat('ar-EG') gives ٠١٢, 'ar-u-nu-latn' keeps 0–9; keep tnum so counting width is stable. (code snippet in references/powers/charts-data-infographic.md)",
   "params": "1 decimal; thresholds 1e3/1e6/1e9",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1180-token-activity-graph/2788-token-activity-graph/graph.js",
@@ -655,6 +693,7 @@
   "how": "easeInExpo for escalation (not ease-out); colour from threshold stops; falling-price variant: card counts 34.99 → 24.99 over ~2 s with a red '9% AND FALLING' delta while competitor pins pop (scale 0→1, 120 ms).",
   "params": "1 → 5000 over ~3 s; numeral 25% frame height; pins 12–20",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-0xfemyn-e114d3",
@@ -682,6 +721,7 @@
   "how": "Card stagger 120 ms with motion blur on drop; counter tweens 300 ms per step; list variant appends a row every 150 ms beside a fixed plan card.",
   "params": "card stagger 120 ms; 300 ms per step",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-bizibeast-10f264",
@@ -709,6 +749,7 @@
   "how": "Year roll 2006→2026 in 800 ms easeOut; year = f(cameraX) for position-tied clocks; map-journey: real km by haversine between stops distributed along arc length, toLocaleString, 7 progress dots filling per stop; depth badge flips up on dive, down on return (~15% frame height).",
   "params": "2006→2026 / 800 ms; 7 dots",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:map-journey",
@@ -742,6 +783,7 @@
   "how": "direct.plan emits motifs [{type:'ring', cx, cy, r, text, t, end}]; cx = free side, cy = eye line; ring drawn 0.9 s power2.inOut via MOTION.drawPath, ticks stagger 0.03 s, accent hand 360° over the span, number 0.95r.",
   "params": "r 150 px; 1.4 s; stroke 2.4·k",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/direct.py:177",
@@ -767,6 +809,7 @@
   "how": "Strike line scaleX 0→1 over 200 ms from the reading start side (right in Arabic), old value to 40% opacity, new value fades/rises 200 ms.",
   "params": "strike 200 ms; new value 200 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-sachaarbonel-8f14f4"
@@ -791,6 +834,7 @@
   "how": "progress p drives thumb x, N = round(p·Nmax), amount = rate·N formatted; drag ~2 s easeInOutCubic; currency conversion variant: value → arrow → counter 0.8 s easeOut.",
   "params": "drag ~2 s; $50 × N",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-paulo-kombucha-96431c",
@@ -818,6 +862,7 @@
   "how": "background: linear-gradient(135deg,#312e81,#6d28d9); background-clip:text; -webkit-text-fill-color:transparent; weight 900; card min-height 124 px with radial corner glow 110 px rgba(99,102,241,.13). Neon variant: extended font, text-shadow 0 0 30px lime, count 2 s ease-out. Keynote variant: vertical gradient #C9F4FF→#64D2FF→#1AA7EC, % smaller at right.",
   "params": "clamp(24px,3vw,36px) UI; line-height 1",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/dashboard-capabilities.css:3",
@@ -848,6 +893,7 @@
   "how": "Dim footage 45%; count ~1.2 s easeOutExpo with separators; metrics card: .metric 44 px/600 LTR + 26 px RTL Arabic subline #9aa29d, x 40→0, opacity .4→1, .4 s E.out, stagger .12 s, scramble on '60 fps'.",
   "params": "dim 45%; 1.2 s; stagger 120 ms",
   "install": "",
+  "requires": [],
   "license": "GSAP standard no-charge license (not OSI) for the vendored gsap.min.js",
   "proof": [
    "style:pm-deifosv-04e4d3",
@@ -875,6 +921,7 @@
   "how": "New hit every 150–250 ms; 4 visible rows; pop scale 1.3→1 in 2 frames; colour by category; total counter rides below.",
   "params": "150–250 ms per hit; 4 rows",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-0xevinho-3777d8"
@@ -899,6 +946,10 @@
   "how": "Remotion Bars component in the playbook: interpolate with easeOutQuint ≈ cubic-bezier(.22,1,.36,1), step = min(80, 700/n) ms, RTL bars grow leftwards, value text toLocaleString('ar-EG') counting with the bar. HTML: transform-origin bottom, GSAP scaleY 0→1 only, heights authored in CSS (bar 48 px, gap 14 px, height 280 px); last bar accent. Story-integrated variant: ≤3 bars 700 ms, numbers settle +100 ms, axis draws 300 ms; character-tally variant: characters stand on pencil-textured columns. Seen styles often use springs/backOut (stiffness 170, damping 22) — KOSIF keeps data bars spring-free (one-scalar rule).",
   "params": "600–800 ms; stagger min(80,700/n) ms; row 72 px; bar 34 px rx 6; font 26",
   "install": "npm i remotion@4.0.536 @remotion/cli@4.0.536",
+  "requires": [
+   "npm:gsap",
+   "npm:remotion"
+  ],
   "license": "Remotion company license (free for individuals and small teams; companies above the threshold need a paid license)",
   "proof": [
    "kosif-tool/playbooks/charts.md:107-145",
@@ -930,6 +981,7 @@
   "how": "SKCharts.hbars({rows:[{label,value,sub,color}],sort,fmt}) → width = |v|/max·100% (min .8%), grid 34%/1fr/auto, track 12 px r4; animate width with one scalar. Recipe A: title 0–350 ms (24 px slide), bars 200–1000 ms 80 ms stagger, dim/pulse 1200–1500, hold + 2% push to 3200, exit 3200–3500.",
   "params": "track 12 px r 4 px; recipe 3.5 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:113",
@@ -958,6 +1010,10 @@
   "how": "Values linear between periods; rank = sort at each t, y eased with 500 ms in-out swaps (FLIP in HTML); axis max rescales ease-out 600 ms; period label crossfades 120 ms; ≤10 bars; freeze, losers dim to 40%, winner settles on its exact figure. Expose window.__kosif={duration,seek(t)} and render with tools/render_html.cjs. Ready block: HyperFrames bar-chart-race (periods 2019–2024, 'Name: v1, v2…', 12 s). Variants seen: avatar initials per row, row h 20 px, reorder 300 ms, ticks every 250 ms with a faint date watermark; vertical race columns with avatar tiles, checker finish line and a glowing 'You'. (code snippet in references/powers/charts-data-infographic.md)",
   "params": "period 800–1200 ms (recipe 1000); ≤10 bars; bar ≤24 px, gap ~10 px",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add bar-chart-race",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-tool/playbooks/charts.md:73-83",
@@ -987,6 +1043,7 @@
   "how": "SKCharts.bars({labels, series:[{name,color,values}], line, stacked, height, width, fmt}); nice() rounds to 1/2/2.5/5/10×10ⁿ; 4 gridlines; padding l46 r8 t12 b30; data-end corner r=min(4,w/2,h); empty-state text when all zero. For video, wrap each rect in a scaleY tween from the baseline.",
   "params": "default 720×260",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:52",
@@ -1011,6 +1068,9 @@
   "how": "SKCharts.waterfall({steps:[{label,value,total}]}); up = c1, down = c8, total = ink-2; bar width min(40, band·.62); connectors between steps. In motion reveal step by step (300–400 ms each), connector draws before the next bar.",
   "params": "720×260; padding l52 b44",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:124"
@@ -1034,6 +1094,7 @@
   "how": "Rounded pill, height ~6% frame, radius full; segment boundaries lerp from 0 to cumulative shares; big % above/below each; check parts sum to the total and print remainder/rounding (MG-048: 0–1 total, 1–4 split, 4–8 read).",
   "params": "height ~6% frame; MG-048 8 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:infographic",
@@ -1060,6 +1121,7 @@
   "how": "max(t) = exp(lerp(ln a, ln b, e(t))); recompute every segment's x/width per frame (never scale the group) so radius stays round; announce the zoom on screen. (code snippet in references/powers/charts-data-infographic.md)",
   "params": "~1.2 s ease-in-out",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:infographic"
@@ -1084,6 +1146,7 @@
   "how": "Serif labels left; grow 800 ms easeOutCubic, stagger 200 ms; whisker draws after the bar; italic annotation; palette paper #eee8dc, ink #2b2622, red #c9463d, green #1f7a4f.",
   "params": "800 ms; stagger 200 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-henkvaness-0e06af"
@@ -1109,6 +1172,7 @@
   "how": "Rows: grid minmax(80px,1fr) 2.5fr 42px, fill = round(n/max·100)%; track 9 px #f1f5f9; fills 90deg critical #f43f5e→#ef4444, high #f59e0b→#f97316, medium #06b6d4→#6366f1, low #10b981→#14b8a6. Meter: width transition .5s ease, data-verdict approaching → warning, material → danger, anchored inline-end. Progress: translateX(-(100-value)%) height 8 px, 500 ms ease-out, aria-valuetext.",
   "params": "500 ms ease; track 9 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/v5/continuous-dashboard.js:31",
@@ -1135,6 +1199,7 @@
   "how": "Cells light left→right (right→left in Arabic) 30–50 ms each, rows stagger 120 ms, end tag 'MAX' or '[x] Ready'; bucket: 10 rounded slots, blue #5aa8ff, partial top slot as thin bar, stroke red #f85149 at zero; lease bars drain linearly over 10 s, refill on check-in, 'EXPIRED' sticker at 0; trading-card variant: 3 labelled bars 600 ms ease-out stagger 150 ms.",
   "params": "16–20 cells; 30–50 ms per cell; 0→98% in 1 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-anthonyriera-9b1b2a",
@@ -1170,6 +1235,7 @@
   "how": "ease-in-expo on the brand bar to ≤120% width (breaking the frame is the joke), others ≤60%; timer counters per bar; before/after: two segmented timelines, the 'after' shorter in green.",
   "params": "1–1.2 s; brand ≤120% width; others ≤60%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-influencer-seo-ce8c33/BRIEF.md",
@@ -1200,6 +1266,7 @@
   "how": "Bars grow 400 ms staggered 80 ms; values like 0.55/0.21/0.11/0.01; chosen bar accent + arrow; then typewriter with cursor; same pattern for prediction-market probability bars (600 ms easeOut, values count).",
   "params": "400 ms; stagger 80 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:plotter",
@@ -1227,6 +1294,7 @@
   "how": "MG-049: 0–2 s period one, 2–5 s reorder, 5–8 s period two; fixed slot positions per rank, paths that cross least, identity colour kept (FLIP). Tiles→list: opacity/translateY 30→0 then rows translateX 40→0 stagger .08 s; ranked rows 80–120 ms stagger with right-aligned scores and status pills (bg #fbe3e3, text #a8484a).",
   "params": "MG-049 8 s; rows 80–120 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-data-infographics.md",
@@ -1256,6 +1324,7 @@
   "how": "SVG arcs from −90°; each 300–500 ms cubic-bezier(0.33,1,0.68,1), 60 ms stagger, label +100–150 ms; length from the inner radius (area grows faster than value — say so or use constant-width wedges).",
   "params": "300–500 ms/segment; stagger 60 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-marouanegazouzi-6071d5/BRIEF.md",
@@ -1279,6 +1348,7 @@
   "how": "Grid columns = min(3, n), shared x and y, empty cells hidden; one neutral hue + accent; reveal panels in reading order (right-to-left rows in Arabic) with 60–100 ms stagger.",
   "params": "cols=min(3,n); stagger 60–100 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/317-data/942-data-visualization/SKILL.md",
@@ -1302,6 +1372,7 @@
   "how": "series → path d; line.strokeDashoffset = 1 − prog(local,0.2,2.4,inOutCubic); dot r = 12·prog(draw, i/(n−1), +0.08, outBack); area gradient #7ee8d2 .35→0. Rendered here (preview frames 3.8–7.0 s: line, dots and counter 45→128). Honest note: in the starter the area gradient leads the pen slightly — reveal the area with a clip that follows the pen if that matters.",
   "params": "viewBox 900×620; stroke #7ee8d2 14 px round; dots #ffb86b r12; 2.2 s draw",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/index.html:88",
@@ -1334,6 +1405,7 @@
   "how": "Canvas drawFrame(t): axes alpha 0.2–0.6 s; head = ease((t−0.6)/1.2)·(n−1); tip value = lerp between neighbours; counter Noto Kufi Arabic 600 72 px; stroke #19c37d 6 px; axis #5a5a5a. Recipe B: axes 0–400, draw 400–1700, area to 18% 1700–2000, caption 2000–2400, hold to 4000 ms. Leading dot rides the tip, glow 6 px; tooltip pops at the max.",
   "params": "1000–1400 ms per 1000 px ease-out cubic; dots spring {14,160,0.8} ≈250 ms; area 300 ms → 18%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:151-181",
@@ -1364,6 +1436,9 @@
   "how": "makeSeries('kosif-chart') via remotion random(); smoothPath() with handles at 1/3; DRAW_START 12, DRAW_LENGTH 66 frames; dot spring damping 10 stiffness 180; counter 124 px 800 easeOutExpo Intl.NumberFormat('ar-EG').",
   "params": "920×620 viewBox; pad 60/40/50/70; stroke 10; grid 0/.25/.5/.75/1 dash '6 10'",
   "install": "npm i remotion@4.0.536 @remotion/cli@4.0.536",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "Remotion company license (free for individuals and small teams; companies above the threshold need a paid license)",
   "proof": [
    "kosif-tool/starters/remotion/src/Film.tsx:253",
@@ -1388,6 +1463,9 @@
   "how": "Scrub 1.5–3 s, ≥0.8 s hold after; peak stop power3.out; series B lights up 0.25 s power2.out when crossed; tooltip pill snaps to the nearest point. Step-chart variant: state history as a step line up to t, vertical playhead, event ticks below coloured by outcome, dashed max line.",
   "params": "SCRUB_DUR 1.5–3 s; hold ≥0.8 s",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add mk-line-graph",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/chart-scrub-readout.md",
@@ -1418,6 +1496,7 @@
   "how": "SKCharts.line({labels, series, area, endLabels, height, width}); label step = ceil(n / max(3, floor(iw/56))); end labels when ≤4 series (pr 70); point r 4; line 2 px.",
   "params": "720×240",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:89"
@@ -1441,6 +1520,9 @@
   "how": "PRESS primitives (Python → SVG string): sparkline 300×68, 2 px round-cap line, end dot r≥4 with 2 px paper ring, hairline grid; dual_sparkline for two series; SKCharts.spark(values,{w,h,color,accent}) 90×28 stroke 1.8 end r 3; trendSvg: x(i)=p+i(w−2p)/(n−1), evidence #6366f1 vs issues #ec4899 3 px. Animate by revealing the path then pulsing the end dot.",
   "params": "300×68 px; end r≥4 + 2 px ring; draw 800 ms; area α .15",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2622-city-report/9999-city-report/scripts/charts.py",
@@ -1469,6 +1551,9 @@
   "how": "drawPath(chartUp, 15.5 s, 2.8 s) stroke #7fd0ff 7 px; chartDown #ff5a5a 9 px drawn in 0.45 s at 19.64 s (on the spoken word); both fade at 23.6 s. HyperFrames decline-chart counts 82 → 34 while drawing down. Pixel variant: 12 green candles every 80–120 ms then 6 red ones and a falling line (style:pm-0xevinho-3777d8); crash comparison end labels −20% vs −28%.",
   "params": "up 2.8 s; crash 0.45 s",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add decline-chart",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:234-237",
@@ -1498,6 +1583,7 @@
   "how": "Candles 20 ms stagger, green #2ee6a6 / red #e5486b; price pill ticks every 100 ms with tabular nums; ticker tape rotated strip with mono symbols at 200 px/s; price-target scale: axis from→target with a green glowing marker; payoff curve: trapezoid green above zero, pink below.",
   "params": "20 ms/candle; ticker 200 px/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-dale-vaz-cc612a",
@@ -1526,6 +1612,7 @@
   "how": "Separate layer above marks: arrow callout label → point; shaded span ~20% alpha for a period (era bands); dashed grey target line with value label; short straight or gently elbowed leaders 0.75–1.25 px; label halo 2–3 px background stroke (paint-order stroke). Draw annotations after the data lands (+200 ms).",
   "params": "span α ~0.2; halo 2–3 px; leader 0.75–1.25 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/SKILL.md",
@@ -1553,6 +1640,9 @@
   "how": "Recipe D: axes fade 1600–1800 ms, labels detach 12 px; bend 1800–2700 cubic-bezier(.65,0,.35,1) keeping colour+label; centre total counts 2700–3000. Resample both paths to equal point counts (flubber or own resampler) then lerp; waveform morph between flat/sine/gaussian/square in 800 ms easeInOutCubic; ceiling → logistic S-curve 800 ms after a 250 ms strike scribble. Morph only between views of the same data.",
   "params": "800–1000 ms in-out; old axis out 200 ms before, new in 200 ms after",
   "install": "npm i flubber@0.4.2",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:85-95",
@@ -1583,6 +1673,7 @@
   "how": "Axes draw 300 ms each; curve 1.5–2.5 s; wobble jitter 1 px per frame for sketch feel (seeded); 'now $X' label updates with the pen; can use roughjs for the sketchy stroke.",
   "params": "curve 1.5–2.5 s; jitter 1 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-tak3sh8-be5012",
@@ -1612,6 +1703,7 @@
   "how": "Seeded random walks on Canvas (lighter alpha 0.1), draw over 1.5 s; median bold; shade the 5th–95th band; label the interval and n (scale honesty).",
   "params": "1000 paths; α 0.1; 1.5 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-rammanq-f5a90f",
@@ -1638,6 +1730,7 @@
   "how": "N=500, dot 4 px, 20–40 ms stagger, mono counter; curve draw 600 ms; bright marker rises 400 ms ease-out; stacked-dot variant sorted descending with long tail in black (dot 6 px, 1.2 s); particle histogram with labelled spike.",
   "params": "N=500; dot 4 px; curve 600 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-marouanegazouzi-6071d5",
@@ -1667,6 +1760,9 @@
   "how": "x from −2 to 2 over 8–10 s linear; tangent ~1.2 units; slope label 2 decimals; progressive value table rows fade in with shift up; easing-graph variant: position vs time axes, cubic-bezier(.65,0,.35,1) with handles, playhead sweeping 1.5 s while a box moves with the same easing. manim is installable for this genre (pip install manim).",
   "params": "8–10 s sweep; 2-decimal slope",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "style:pm-linearuncle-5d2bae",
@@ -1694,6 +1790,7 @@
   "how": "pos = path.getPointAtLength(p·L); angle from a second sample 1 px ahead; 1800 ms ease-in-out; chips spring 180/14/1 ≤600 ms; ring pulse at arrival; journey bar: dot on a line between labelled endpoints.",
   "params": "1800 ms; spring 180/14/1",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-utopyaszx-1b2f94/BRIEF.md",
@@ -1721,6 +1818,7 @@
   "how": "Each row: fill below the polyline with the background to occlude rows beneath; noise amplitude × gaussian centre bump; animate noise time 0.5; colour by row index.",
   "params": "amp centre 60 px; speed 0.5; 30–40 rows",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-shinskinakamoto-20190b",
@@ -1747,6 +1845,7 @@
   "how": "Dots scale 0→1 with 10 ms stagger (order by x for reading flow); curve stroke-dashoffset after the last dot; best point ring pulse + label.",
   "params": "stagger 10 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-rammanq-f5a90f"
@@ -1772,6 +1871,7 @@
   "how": "el.style.setProperty('--progress', pct·3.6+'deg'); background: conic-gradient(colour var(--progress), track 0); ::after inner disc inset 13 px (v4: 4 px). Variants: quality dial conic-gradient(#6366f1 calc(var(--score)*1%), #e0e7ff 0) 110 px value 30 px #4338ca; SKCharts.ring 56 px (48 px phones) with ok/warn/bad classes. Animate the variable from one scalar (register it with @property for smooth CSS interpolation).",
   "params": "legacy 190 px #72dbc4 / inner #351848 / 38 px; KOSIF4 210 px #d9f3c7 / 43 px weight 500",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/styles.css:177",
@@ -1798,6 +1898,7 @@
   "how": "SKCharts.donut(segs,{center,sub}): viewBox 42, stroke-width 6, dasharray (p−.6) (100−p+.6), dashoffset −cumulative; centre total + caption; entrance .dn-seg 0.75 s from opacity 0 scale(.84) rotate(−12°), delay i·50 ms; hover dims others to .26. (code snippet in references/powers/charts-data-infographic.md)",
   "params": "gap .6; 0.75 s; 50 ms stagger",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:223",
@@ -1822,6 +1923,7 @@
   "how": "A(t) = 360·e(t); slice k visible arc = clamp(A − start_k, 0, size_k); labels appear 120 ms after their slice completes; sorted from 12 o'clock clockwise.",
   "params": "900 ms cubic-bezier(.65,0,.35,1); labels +120 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/charts.md:38"
@@ -1843,6 +1945,7 @@
   "how": "strokeDasharray=[len, C] with cumulative offset; glow copy width ×2 opacity 0.3; highlighted legend rows white, others #86868b; bg #000 with navy radial glow #0d2944; bar bends into this ring with no cut.",
   "params": "8 categories; glow ×2 / 0.3",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:infographic"
@@ -1868,6 +1971,9 @@
   "how": "Basma ring: easeInOut over max(0.7, 0.55·d) s, arc from −90°, line width 0.2R, round caps, Rubik 900 %, label after 0.3 s, spring scale 0.7→1. Score ring 65→92 in 600 ms; amber→green when full (1.2 s); overage gauge: 60 outer ticks, stroke 10 px, colour lerps to red after 100%; stopwatch: arc + mm:ss counter 1.2 s; gauge arc cubic-bezier(0.22,1,0.36,1) 900 ms with the numeral on the same curve; at 100% swap to a check and burst 30 confetti pieces.",
   "params": "600–1200 ms; stroke 10–14 px",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add mk-usage-arc",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/mk-usage-arc/mk-usage-arc.html",
@@ -1902,6 +2008,7 @@
   "how": "Arc 2 px white, ring 60 ticks; diamonds fill blue in sequence; centre dot; % counter below. Segmented ring: stroke 14 px, ticks every 30°, marker dot rides the ring, last digit rolls 300 ms easeInOut.",
   "params": "60 ticks; stroke 2–14 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-himanshutwtxs-5f4b43",
@@ -1929,6 +2036,7 @@
   "how": "Liquid: fill 1.2 s, wave amplitude 6 px, lime; pour 1.5–2.5 s easeInOutSine with a ruler arrow following the surface y and ticks appearing as the level passes; thermometer: hatched 45° 6 px fill, user threshold blue line, red dashed danger line with handwritten labels (range 100–260%); battery fill with % count ~600 ms; gradient bar green→red with threshold ticks.",
   "params": "fill 1.2 s; wave 6 px; pour 1.5–2.5 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-leadnotifi-e83f94",
@@ -1961,6 +2069,9 @@
   "how": "Clip a filled star row to width = rating/count·100%; 600 ms; proof tiles flip in rotateX 90→0 400 ms with 120 ms stagger (star meter, % ring, count).",
   "params": "rating 4.8 / 5; star fill 600 ms",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add star-rating-fill",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/star-rating-fill/star-rating-fill.html",
@@ -1986,6 +2097,7 @@
   "how": "4 rings 1 px; conic-gradient wedge 6–8 s/rev (or 1 rev/2 s for urgency); dot pulse 300 ms when |angle − sweep| < 3°; orbital variant: ellipse ry = 0.4 rx with tags (STEADY/RISING) and a growing green line chart beside it.",
   "params": "6–8 s/rev; pulse 300 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-xelandre-363f00",
@@ -2014,6 +2126,7 @@
   "how": "Place seats row by row on arcs (outer rows more seats), sort by party angle; fill in order with 5–10 ms stagger; dot ring: 4500 dots scattered in an annulus, category by cumulative angle.",
   "params": "4500 dots",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-triglyceee-bd5b08",
@@ -2041,6 +2154,7 @@
   "how": "MG-043: 0–1 s grid, 1–3 s colouring with computed delay, 3–6 s explanation; state the unit ('كل نقطة = 1٪'); explain rounding; fill order right-to-left rows for Arabic (or random seeded order); 172-dot variant: dot 14 px gap 8 px, fill 1.5 s, salmon #e07b78 on grey #d9d9d9, outliers black; pictogram variant: 10×10 people icons, 10 ms stagger; isometric variant: 100 iso tiles, chosen ones extrude 50 ms stagger. (code snippet in references/powers/charts-data-infographic.md)",
   "params": "10×10 = 100 cells; colouring 1.5–2 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-data-infographics.md",
@@ -2073,6 +2187,7 @@
   "how": "Canvas for >500 dots; state the unit; highlight subset with a 5–10 ms stagger or a sweep; can later become particles that fly into a bar (DATA-14 rules: particle = entity).",
   "params": "40×30 = 1200 dots",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-jesscaroline7-1ff7cb",
@@ -2099,6 +2214,7 @@
   "how": "MG-050: 0–1 s value, 1–4 s units form, 4–7 s comparison; write 'تقريبًا' when rounding; never compare length with area without converting; icon size by area if sized (DATA-06).",
   "params": "7 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-data-infographics.md",
@@ -2123,6 +2239,7 @@
   "how": "Build week arrays from the first date; row = (weekday+6)%7 (Monday first); squares 10 px with 2 px gaps, left gutter 24 px, top 14 px for months; sequential ramp; animate fill by week column or random seeded order 40 ms stagger; Arabic month labels; serif-counter variant: 12×8 grid fill accelerating easeInExpo ~1.8 s with a big numeral in sync.",
   "params": "CELL 10, GAP 2, LEFT 24, TOP 14",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1180-token-activity-graph/2788-token-activity-graph/graph.js",
@@ -2152,6 +2269,7 @@
   "how": "SKCharts.heatmap(grid,{sel}): score ≥6 h4, ≥4 h3, ≥3 h2 else h1; cells ≥52 px, 700 16 px Latin digits; labels منخفض/متوسط/مرتفع, axes الأثر/الاحتمالية; hover scale 1.04; for video light cells in score order 60 ms stagger.",
   "params": "light #cfe8d6 #f3e2a6 #f1b98a #e98a86; dark #1f5a3b #6b5a17 #7a4219 #7f2626",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:232",
@@ -2176,6 +2294,7 @@
   "how": "SKCharts.matrix({rows, cols, values, fmt}); --a = max(.08, v/max); class hi (white text) when a > .55; reveal column by column.",
   "params": "min α .08; highlight > .55",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:260"
@@ -2198,6 +2317,7 @@
   "how": "benfordAnalysis(amounts) → template-string SVG: per digit a rect bar, a short expected line, an axis text; classes .bar/.hot/.expected/.axis. Animate bars rising, then expected ticks draw, then hot digits pulse.",
   "params": "viewBox 420×186; bar 26 / pitch 44 / rx 5; expected 30.1/17.6/12.5/9.7/7.9/6.7/5.8/5.1/4.6%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/analytics.js:160",
@@ -2223,6 +2343,7 @@
   "how": "Row height ~6% H; each row fades in with shift up 12–20 px; header coloured like its series; ranked variant: rows slide up 120 ms stagger, right-aligned values, dead row tinted pink, pills #fbe3e3/#a8484a; end with an arrow note. Keep ≤6 rows on screen (no web tables).",
   "params": "row stagger 120 ms; ≤6 rows",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-linearuncle-5d2bae",
@@ -2249,6 +2370,7 @@
   "how": "Three layers: Number (right units, minimal decimals) · Meaning (target or prior period + signed gap with arrow) · Context (sparkline or tiny breakdown, only if useful). Neutral colour on target, deep red only when off. Tile = value + unit + delta + period + source. ≤3 tiles per frame, spring 14-120 pop, counters offset 600 ms, one highlighted at the end.",
   "params": "≤3–4 tiles/frame; counters offset 600 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3455-business-analytics/14162-kpi-dashboard-design/SKILL.md",
@@ -2274,6 +2396,7 @@
   "how": "Count 800 ms easeOutExpo, line dashoffset 1.2 s; stats row: 3 columns split by 1 px rules drawing downward, count 600–800 ms, mono source tag; stacked cards slide 400 ms ease-out stagger 250 ms, number counts 600 ms as it lands; analytics card: header 'Views last 30 days', big number, green delta chip, line 700 ms, endpoint pops; card radius 16 px, stagger 120 ms; inspector panel slides x 100%→0 400 ms with +35%→+50% metric; analytics drawer slides up while the line draws 900 ms ease-out and counters tick 800 ms easeOutQuart.",
   "params": "800 ms count; 1.2 s line; stagger 120–250 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-bizibeast-10f264",
@@ -2316,6 +2439,7 @@
   "how": "Number 18–25% of frame height; tracked caption below; source pills pop (spring); italic byline; counter 600 ms easeOut; supporting graphic on the other side; metric-pair variant: two big numbers in columns beside a screenshot.",
   "params": "number 18–25% H; count 600 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-henkvaness-0e06af",
@@ -2348,6 +2472,10 @@
   "how": "npx hyperframes add <name> copies into compositions/; mount on a class=\"clip\" div with data-composition-src + data-start/data-duration/data-track-index; overrides as JSON in data-variable-values; one paused GSAP timeline, fromTo explicit states, transforms/opacity only. See the table below for every item and its variables. Chip-grid variant (5×N rounded chips coloured by category, 40 ms stagger) fits the same mount pattern.",
   "params": "",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add chart-story",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/chart-story/chart-story.html",
@@ -2374,6 +2502,9 @@
   "how": "Pick by role from blueprints-index.md and cite the blueprint id per beat: dataviz-countup (4–12 s: ring/number → trend chart → tilted stat grid → land on hero metric); constellation-hub (5–8 s, end card ~2.5 s); category stat (~4–6 s hero count + ring); charts (one chart one message); asset-fusion (~5–8 s: straw → gauge, liquid → pie).",
   "params": "4–12 s per blueprint",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/dataviz-countup.md",
@@ -2400,6 +2531,9 @@
   "how": "Palette #000000 bg, glow #0d2944/#021422, accents #4b89d1 #1239a0 #5b5be0, highlight #64d2ff, text #f5f5f7 / grey #86868b; IBM Plex Sans Arabic 300/500/700 (eyebrow grey ~2.5% H over bold white headline ~5%, hero number ~12–15% H with vertical cyan→blue gradient); lines rise from a mask translateY 70%→0 with blur clearing; counters 700–1000 ms ease-out cubic; one highlight 100%, others 35–45%; sfx whoosh/tick/drop; 16:9 ~28 s; scaffold python3 tools/kosif.py scaffold infographic <dir>.",
   "params": "28 s; 30 fps; 2.0 wps",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "style:infographic",
@@ -2427,6 +2561,7 @@
   "how": "bg #0D1B2A; series #3B82F6 #F59E0B #10B981 #EF4444 #A855F7; stagger 60 ms; tabular-nums; IBM Plex Sans Arabic 700; no animated pie, no 3D; values computed in code from clean CSV; source in the corner.",
   "params": "stagger 60 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/trend-animation-styles/references/styles.md",
@@ -2451,6 +2586,9 @@
   "how": "See the palette table below. Series colours bound to semantic anchors with a uniqueness test (passed in this container: node --test kosif-audit-pro/tests/palette.test.mjs → fail 0). 8-slot set worst adjacent ΔE 9.1 light / 8.4 dark; slots in identity order; kosif looks override c1/c2 with brand colours. Theme-aware series: shadcn ChartContainer injects per-series CSS vars with separate light/dark values (Recharts; recharts itself was not probed in this container).",
   "params": "≤4 hues per chart (playbook); ≤6–8 total",
   "install": "",
+  "requires": [
+   "npm:react"
+  ],
   "license": "",
   "proof": [
    "kosif-audit-pro/tests/palette.test.mjs",
@@ -2477,6 +2615,7 @@
   "how": "CSS custom properties; Arabic pairs with IBM Plex Sans Arabic; page #e8ecf2, panel border #cdd5e1, ink #1d2632, muted #5d6a7a / #98a3b3, accents #1f6fe5 #e2640f #15a05a #2f6fe0 #dc2b3e.",
   "params": "#e8ecf2 #cdd5e1 #1d2632 …",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3186-create-figure/13532-create-figure/SKILL.md"
@@ -2499,6 +2638,9 @@
   "how": "python twin_dashboard.py report.json --out lab.html; embedded JSON; SVG 660×400 projected from node bounds; load .10–4.00× step .05; colour(u): u≥1 #ff907a (dashed 12/9), ≥.72 #ffe083, ≥.35 #b4ed88, else #8cffc0; HUD peak text same thresholds; grid 1.85fr/1fr collapses under 850 px; prefers-reduced-motion respected; bg #081213, lime #D0FF6A, mint #9DFFB4.",
   "params": "thresholds .35/.72/1.0",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/examples/structural-twin-demo.html:1",
@@ -2524,6 +2666,9 @@
   "how": "kosif_sheet_build sheets=[{name, headers, rows, sort, formats{money|percent|date|integer|code}, totals, chart{type:bar|column|line|pie, labels, values[], title}, rtl:true}] (openpyxl); kosif_db exports a SELECT to xlsx/csv with chart. Live Excel automation (kosif_excel, COM) works only on Windows with Excel open — not here.",
   "params": "chart 18×9 cm beside the table; TableStyleMedium2",
   "install": "",
+  "requires": [
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/office.py:226",
@@ -2549,6 +2694,10 @@
   "how": "Set animation:false (Chart.js/ECharts) and redraw from data(t) inside window.__kosif.seek(t); D3: compute layouts (d3-hierarchy treemap, d3-sankey, d3-geo) and interpolate attributes yourself; never ship default library styling (restyle: no legends, direct labels, palette DATA-92); render with node tools/render_html.cjs.",
   "params": "",
   "install": "npm i d3@7.9.0   # or: echarts@6.1.0 | chart.js@4.5.1 | vega@6.4.0 vega-lite@6.5.0",
+  "requires": [
+   "chromium",
+   "npm:d3"
+  ],
   "license": "d3 ISC; echarts Apache-2.0; chart.js MIT; vega/vega-lite BSD-3-Clause",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md",
@@ -2575,6 +2724,10 @@
   "how": "TEMPLATES.counter (lerp easeOut over max(0.6, 0.6d) s, Rubik 900 at 20% of min side), TEMPLATES.bars (2–5 bars, spring z .6 w 12, stagger 0.12 s from 0.25 s, IBM Plex Sans Arabic 700 labels), TEMPLATES.ring, TEMPLATES.list (0.32 s stagger, drawn tick). Film templates: data-story 12 s, bar-race 12 s, report-card (tiles + ring + sparkline), price-move (candle/line follow cam), survey (100-dot grid wave), plus milestone, dashboard-reveal, compare, math; rule: never invent figures. Coded film scenes call the Anthropic API (needs a key); the app itself needs its npm install.",
   "params": "",
   "install": "",
+  "requires": [
+   "node",
+   "key:unspecified"
+  ],
   "license": "owner code; scenes generated via the Anthropic API",
   "proof": [
    "app/public/js/00_editor.js:458",
@@ -2601,6 +2754,9 @@
   "how": "Prompt in three parts: what to search, what to extract/analyse, how to render (chart type, theme). Treat every number as unverified: re-set exact figures in code (DATA-10) before publishing; never ship the raster as the chart.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "needs a Google Gemini API key (paid service)",
   "proof": [
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen"
@@ -2623,6 +2779,7 @@
   "how": "Techniques: graphic sequence, animated transition, pan-and-zoom, sticky side-by-side, parallax depth. For video replace scroll progress with timeline time: progress = (t − scene.start)/scene.dur; keep a reduced-motion/static fallback frame per scene.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali/SKILL.md"
@@ -2645,6 +2802,7 @@
   "how": "Step = 2–5 word title + <15-word description; 3–4 steps grid, 5–6 vertical timeline, 7–9 vertical with phases, 10+ compact; height 630 + 135 per step above 4 (cap 1500) at 1200 px; numbered circle markers 36 px on a 2 px rail. Rebuild from these ideas — do not copy the source code.",
   "params": "1200 × (630…1500); marker 36 px; rail 2 px",
   "install": "",
+  "requires": [],
   "license": "source package declared copyleft/WTFPL-like (x4919): use the ideas only, write your own code",
   "proof": [
    "kosif-atlas/skills/x4919-visual-gen/x20319-process-infographic/SKILL.md"
@@ -2668,6 +2826,9 @@
   "how": "Gantt only when the data has real start/end dates (task grid left, time right, milestones distinct from spans, restrained dependencies, today/deadline line only when it answers a question), else a milestone timeline; MG-042: 0–1 axes, 1–5 draw, 5–8 milestone, x proportional to real time; connectors stroke-dashoffset 600 ms with a 30% blurred duplicate glow; scrubber: 1 px line with ticks, red dot ease inOut 0.8 s, year label bottom-left; execution trace bars grow 200 ms stagger 120 ms, retry in amber; commit timeline: line 900 ms, nodes scale 0→1 150 ms; Arabic timeline with coloured year tags (time axis stays LTR).",
   "params": "connector 600 ms; dot hop 0.8 s; bars 200 ms",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10323-gantt-chart-visualization/references/gantt-chart-design-and-use-cases.md",
@@ -2699,6 +2860,9 @@
   "how": "Hub scale 0.8→1 back.out, avatars 0→1 back.out with stagger, lines draw after (avatarCount 6–16, label '50k builders'); bracket: lines draw 500 ms, pulses ~600 px/s leaf → final, final node flares with bloom; calendar fan-out: one event chip sends 4 curved Béziers (2 px, 100 ms stagger) to channel badges; week-in-merges: avatar bounces across its row at speed ∝ merged PRs (speed encodes value only with labels — DATA-14).",
   "params": "avatars 6–16; pulse ~600 px/s",
   "install": "npm i -D hyperframes@0.8.164 && npx hyperframes add avatar-cloud",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0; its runtime uses GSAP (GSAP standard no-charge license, not OSI)",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/avatar-cloud-network.md",
@@ -2730,6 +2894,9 @@
   "how": "Load the matching SKILL.md (sql-data-analysis, notebooks-python-analysis, excel-financial-models, forecasting-probability) and follow its steps; output a clean CSV/JSON that the chart scene reads at the top of the composition (data arrays first, so values are easy to swap).",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/sql-data-analysis/SKILL.md",
@@ -2756,6 +2923,7 @@
   "how": "Venn: mix-blend-mode multiply, 700 ms ease, overlap label appears after contact; spectrum: 20 gradient segments, marker slides with the one-scalar rule and a value label.",
   "params": "700 ms; 20 segments",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-rneayan-474bcf",
@@ -2785,6 +2953,7 @@
   "how": "icon(ctx,'chart',r,…) bars height r·(.26 + .35·i); if numbers are shown next to it, replace it with a real chart.",
   "params": "4 bars",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "fastify-motion-bro/web/editorial.js:26"

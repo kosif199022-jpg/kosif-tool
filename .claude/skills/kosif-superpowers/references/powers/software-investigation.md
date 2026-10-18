@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `REA` · **البيانات / data:** `data/powers/software-investigation.json` · **بحث / search:** `python3 scripts/powers.py family software-investigation`
-**مراجع ذات صلة / related references:** [rea-reverse-engineering.md](../rea-reverse-engineering.md)
+**مراجع ذات صلة / related references:** [rea-reverse-engineering.md](../rea-reverse-engineering.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
@@ -44,6 +44,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea address-to-file-offset <path> <address>` --json · options: --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea address-to-file-offset`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -53,6 +54,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea analyze <path>` --json · options: --snapshot, --target-format, --architecture, --entry-point, --provider, --integrityPolicy, --sourcePath. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea analyze`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -62,6 +64,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea annotate-native-function <path> <procedure>` --json · options: --name, --comment, --inline-comment, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea annotate-native-function`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -71,6 +74,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea decompile <path> [address]` --json · options: --procedure, --file-offset, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea decompile`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -80,6 +84,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea function <path> [address]` --json · options: --procedure, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea function`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -89,6 +94,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect <path>` --json · options: --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -98,6 +104,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-native-api <path> <address>` --json · options: --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-native-api`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -107,6 +114,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-native-data-type <path>` --json · options: --type, --address, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-native-data-type`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -116,6 +124,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-native-instruction <path> <address>` --json · options: --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-native-instruction`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -125,6 +134,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-native-load-image <path>` --json · options: --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-native-load-image`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -134,6 +144,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea instructions <path> [address]` --json · options: --procedure, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea instructions`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -143,6 +154,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea read-bytes <path> <address>` --json · options: --length, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea read-bytes`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -152,6 +164,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea resolve-native-call-targets <path> <address>` --json · options: --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea resolve-native-call-targets`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -161,6 +174,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea search <path> [pattern]` --json · options: --pattern, --kind, --mode, --caseSensitive, --snapshot, --target-format, --architecture, --entry-point. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea search`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -170,6 +184,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea search-bytes <path> <pattern>` --json · options: --mask, --start, --end, --cursor, --limit, --target-format, --architecture, --entry-point. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea search-bytes`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -179,6 +194,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace <path> [query]` --json · options: --query, --caseSensitive, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -188,6 +204,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace-native-values <path> <procedure>` --json · options: --maxDepth, --maxFunctions, --maxCallSites, --maxNodes, --maxEdges, --offset, --limit, --target-format. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace-native-values`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -197,6 +214,7 @@
 - **متى أستخدمها / when:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea xrefs <path> [address]` --json · options: --address, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea xrefs`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -208,6 +226,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea analyze-javascript-application <path>` --json · options: --maxSemanticNodes, --maxSemanticNodesPerFile, --maxSemanticUnknowns, --maxSemanticUnknownsPerFile, --sourcePath, --maxHeapMb, --analysisTimeoutMs, --artifactFormat. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on extracted Chrome MV3 extension (owner upload, 14 files): JavaScriptApplicationGraph: 14 nodes (4 endpoints, 4 artifacts, 2 modules, 2 renderers, 2 assets), 17 edges, semantic graph with 396 unknowns retained. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea analyze-javascript-application`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -217,6 +236,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea analyze-web-bundle <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs, --fetchSourceMaps. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on same page: capture + static bundle analysis; completeness complete. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea analyze-web-bundle`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -226,6 +246,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea capture-browser-scenario <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea capture-browser-scenario`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -235,6 +256,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea capture-web-screenshot <endpoint> <targetId>` --json · options: --allowedOrigins. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on same page: self-verifying PNG artifact JSON. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea capture-web-screenshot`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -244,6 +266,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare-application-versions <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Tried here: input shape needs two complete Evidence records in left/right; not retried. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare-application-versions`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -253,6 +276,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare-javascript-export-shapes <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare-javascript-export-shapes`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -262,6 +286,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare-source-to-bundle <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare-source-to-bundle`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -271,6 +296,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare-web-captures <beforeJson> <afterJson>` --json · options: --normalizationJson. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare-web-captures`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -280,6 +306,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare-web-screenshots <beforeJson> <afterJson>` --json · options: --channelThreshold. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare-web-screenshots`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -289,6 +316,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea discover-webmcp-tools <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea discover-webmcp-tools`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -298,6 +326,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea export-web-scripts <capturePath> <outputDirectory>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Tried here: needs a saved page/scenario capture JSON, not a bundle analysis record. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea export-web-scripts`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -307,6 +336,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea import-reference-source <root>` --json · options: --detail, --outlineDepth. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea import-reference-source`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -316,6 +346,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-web-event-listeners <endpoint> <targetId> <selector>` --json · options: --allowedOrigins. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on same page, selector body: native listener source locations. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-web-event-listeners`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -325,6 +356,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-web-network-capture <capturePath> <format>` --json · options: --record, --sensitiveValue. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-web-network-capture`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -334,6 +366,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-web-page <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs, --includeAccessibilityText, --includeConsoleText, --includeJsonBodyShapes, --includeWebsocketShapes, --includeScriptSources, --includeStorageKeys. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on http://127.0.0.1:8765/index.html (repo web/ served locally): frames, dom, accessibility, scripts, resources, network, console, workers. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-web-page`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -343,6 +376,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-browser-targets <endpoint>` --json · options: --allowedOrigins. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on headless Chromium 141 on 127.0.0.1:9333: page target listed; file:// target excluded as unsupported_url. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-browser-targets`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -352,6 +386,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea observe-web-execution <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea observe-web-execution`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -361,6 +396,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea observe-web-session <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea observe-web-session`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -370,6 +406,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea recover-javascript-sources <path> <outputDirectory>` --json · options: --additionalPath, --extractionMode, --rewriteLevel. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Tried here: needs REA_WAKARU_COMMAND (Wakaru 1.13+). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea recover-javascript-sources`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -379,6 +416,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace-application-feature <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on inline evidence, seed string 'download': feature trace through the authenticated graph. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace-application-feature`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -388,6 +426,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace-javascript-semantics <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace-javascript-semantics`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -397,6 +436,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace-web-module-imports <manifestPath> <scriptIndex>` --json · options: --importerUrl, --importMapPath, --importMapBaseUrl. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace-web-module-imports`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -406,6 +446,7 @@
 - **متى أستخدمها / when:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace-web-source-location <manifestPath> <scriptIndex> <sourceMapPath> <sourceMapUrl> <line> <column>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace-web-source-location`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wakaru`](../requirements.md#req-engine-wakaru)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -417,6 +458,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea build-reconstruction-obligation-ledger <inputJson>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea build-reconstruction-obligation-ledger`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -426,6 +468,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea capabilities ` --json. Needs: REA alone. Verified here on —: 4 providers advertised with effects: native-macos, rea-artifact-graph, rea-dotnet-static, sqlite. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea capabilities`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -435,6 +478,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea capture-process <scenario>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea capture-process`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -444,6 +488,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare <left> <right>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -453,6 +498,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare-process-captures <left> <right> [traceSpec]` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare-process-captures`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -462,6 +508,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea doctor ` --json · options: --target, --client, --provider, --skill. Needs: REA alone. Verified here on —: exit 1 = not healthy, reported honestly: node 22.22 / ubuntu 24.04; Hopper, Ghidra, IDA, jadx, Kuna absent → classified missing_analysis_engine. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea doctor`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -471,6 +518,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea evaluate-reconstruction-coverage <inputJson>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea evaluate-reconstruction-coverage`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -480,6 +528,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea evidence-export <source> <output>` --json · options: --overwrite. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea evidence-export`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -489,6 +538,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea evidence-import <path>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea evidence-import`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -498,6 +548,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea extract-artifact <path>` --json · options: --integrityPolicy. Needs: REA alone. Verified here on video-downloader.zip: safe extraction with per-file digests into an absent directory. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea extract-artifact`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -507,6 +558,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-analysis-view <inputJson>` --json. Needs: REA alone. Verified here on inline evidence from the run above: javascript-facts rows for manifest.json/background.js with available_property_keys; coverage exhausted 1/1. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-analysis-view`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wireshark`](../requirements.md#req-engine-wireshark) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/cli.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -516,6 +568,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-artifact <path>` --json · options: --integrityPolicy. Needs: REA alone. Verified here on video-downloader.zip (owner upload): safe artifact graph: observations, hypotheses, next_probes, coverage. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-artifact`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -525,6 +578,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-evidence-bundle <inputJson>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-evidence-bundle`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -534,6 +588,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-evm-interface <path> <encoding>` --json. Needs: REA alone. Verified here on 346-byte hex bytecode file: evmole@0.9.3 interface candidates, discovery_completeness reported. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-evm-interface`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -543,6 +598,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-go-binary <path>` --json. Needs: REA alone. Verified here on /usr/local/bin/gh: go1.26.1, module github.com/cli/cli/v2 v2.89.0 with dependency list, limitations stated. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-go-binary`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/cli.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -552,6 +608,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-rust-binary <path>` --json. Needs: REA alone. Verified here on /usr/bin/rg: ELF amd64; no cargo-auditable section → auditable_metadata null (honest absence). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-rust-binary`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/cli.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -561,6 +618,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea project-android-application-graph <inputJson>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea project-android-application-graph`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/cli.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -570,6 +628,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea providers ` --json. Needs: REA alone. Verified here on —: configured providers listed with side-effect groups. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea providers`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -579,6 +638,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea setup ` --json · options: --yes, --installHopper, --client, --skillClient, --allDetected, --skill, --dryRun, --accessible. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea setup`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -588,6 +648,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea uninstall ` --json · options: --purgeData. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea uninstall`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -597,6 +658,7 @@
 - **متى أستخدمها / when:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea update ` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea update`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -608,6 +670,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea capture-adb-screen <serial>` --json · options: --output-directory. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea capture-adb-screen`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -617,6 +680,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea collect-adb-bugreport <serial>` --json · options: --output-directory. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea collect-adb-bugreport`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -626,6 +690,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea decode-android-resources <path>` --json · options: --locale, --locales, --strings. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea decode-android-resources`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -635,6 +700,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-adb-client ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-adb-client`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -644,6 +710,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-adb-device <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-adb-device`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -653,6 +720,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-adb-display <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-adb-display`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -662,6 +730,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-adb-package <serial> <package>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-adb-package`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -671,6 +740,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-adb-window <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-adb-window`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -680,6 +750,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-android-class <path> <className>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-android-class`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -689,6 +760,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-android-method <path> <className> <methodName>` --json · options: --overloadIndex. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-android-method`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -698,6 +770,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-apktool-client ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-apktool-client`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -707,6 +780,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea install-adb-package <serial> <apk-path>` --json · options: --replace. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea install-adb-package`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -716,6 +790,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-adb-devices ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-adb-devices`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -725,6 +800,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-adb-directory <serial> <device-path>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-adb-directory`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -734,6 +810,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-adb-features <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-adb-features`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -743,6 +820,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-adb-packages <serial>` --json · options: --scope. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-adb-packages`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -752,6 +830,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-adb-processes <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-adb-processes`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -761,6 +840,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-adb-services <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-adb-services`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -770,6 +850,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea pull-adb-file <serial> <device-path>` --json · options: --output-directory. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea pull-adb-file`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -779,6 +860,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea pull-adb-package <serial> <package>` --json · options: --output-directory. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea pull-adb-package`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -788,6 +870,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea push-adb-file <serial> <local-path> <device-path>` --json · options: --overwrite. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea push-adb-file`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -797,6 +880,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea read-adb-logcat <serial>` --json · options: --count, --buffer, --pid. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea read-adb-logcat`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -806,6 +890,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea read-adb-setting <serial> <namespace> <key>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea read-adb-setting`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -815,6 +900,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea resolve-adb-packages <serial> <query>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea resolve-adb-packages`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -824,6 +910,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea search-android-classes <path> <query>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea search-android-classes`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -833,6 +920,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea start-adb-activity <serial> <action>` --json · options: --data-uri, --component, --extra. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea start-adb-activity`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -842,6 +930,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea start-adb-app <serial> <package>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea start-adb-app`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -851,6 +940,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea stop-adb-app <serial> <package>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea stop-adb-app`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -860,6 +950,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace-android-references <path> <className>` --json · options: --methodName, --overloadIndex. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace-android-references`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -869,6 +960,7 @@
 - **متى أستخدمها / when:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea uninstall-adb-package <serial> <package>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea uninstall-adb-package`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/android-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -880,6 +972,7 @@
 - **متى أستخدمها / when:** lawful inspection of Electron وNode في وقت التشغيل targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea capture-electron-scenario <inputJson>` --json. Needs: a running Electron/Node V8 Inspector target on loopback (consented). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea capture-electron-scenario`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a running Electron/Node V8 Inspector target on loopback (consented)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/electron-observation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -889,6 +982,7 @@
 - **متى أستخدمها / when:** lawful inspection of Electron وNode في وقت التشغيل targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-electron-fuses <path>` --json. Needs: a running Electron/Node V8 Inspector target on loopback (consented). Verified here on /usr/bin/rg (non-Electron ELF): fuse slices absent → runtime_implications empty, no false claim. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-electron-fuses`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a running Electron/Node V8 Inspector target on loopback (consented)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/electron-observation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -898,6 +992,7 @@
 - **متى أستخدمها / when:** lawful inspection of Electron وNode في وقت التشغيل targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-electron-page <endpoint> <targetId>` --json · options: --observationMs, --includeScriptSources. Needs: a running Electron/Node V8 Inspector target on loopback (consented). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-electron-page`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a running Electron/Node V8 Inspector target on loopback (consented)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/electron-observation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -907,6 +1002,7 @@
 - **متى أستخدمها / when:** lawful inspection of Electron وNode في وقت التشغيل targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-electron-targets <endpoint>` --json. Needs: a running Electron/Node V8 Inspector target on loopback (consented). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-electron-targets`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a running Electron/Node V8 Inspector target on loopback (consented)`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/electron-observation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -916,6 +1012,7 @@
 - **متى أستخدمها / when:** lawful inspection of Electron وNode في وقت التشغيل targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-javascript-runtime-targets <endpoint>` --json. Needs: a running Electron/Node V8 Inspector target on loopback (consented). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-javascript-runtime-targets`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a running Electron/Node V8 Inspector target on loopback (consented)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/electron-observation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -925,6 +1022,7 @@
 - **متى أستخدمها / when:** lawful inspection of Electron وNode في وقت التشغيل targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea observe-javascript-runtime <endpoint> <targetId>` --json · options: --runtimeKind, --observationMs. Needs: a running Electron/Node V8 Inspector target on loopback (consented). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea observe-javascript-runtime`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a running Electron/Node V8 Inspector target on loopback (consented)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/electron-observation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -934,6 +1032,7 @@
 - **متى أستخدمها / when:** lawful inspection of Electron وNode في وقت التشغيل targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea reconcile-javascript-runtime <inputJson>` --json. Needs: a running Electron/Node V8 Inspector target on loopback (consented). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea reconcile-javascript-runtime`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a running Electron/Node V8 Inspector target on loopback (consented)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/electron-observation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -945,6 +1044,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea capture-native-ui-scenario <path>` --json · options: --pid, --windowId, --screenshot, --accessibility, --maxNodes, --steps. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea capture-native-ui-scenario`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -954,6 +1054,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea decode-interface-builder <path>` --json · options: --maxDocuments, --maxObjects, --maxConnections. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea decode-interface-builder`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -963,6 +1064,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea demangle-swift <path> <symbols>` --json. Needs: macOS with Xcode command-line tools (Hopper optional). Tried here: macOS toolchain only. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea demangle-swift`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -972,6 +1074,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-asset-catalog <path>` --json · options: --offset, --limit. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-asset-catalog`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -981,6 +1084,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-keyed-archive <path> [archive]` --json · options: --root, --offset, --limit. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-keyed-archive`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -990,6 +1094,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-macho <path>` --json. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-macho`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -999,6 +1104,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-native-dispatch-metadata <path>` --json · options: --maxRecords, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-native-dispatch-metadata`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1008,6 +1114,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-plist <path>` --json · options: --relativePath. Needs: macOS with Xcode command-line tools (Hopper optional). Tried here: macOS toolchain only. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-plist`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1017,6 +1124,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-signature <path>` --json. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-signature`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1026,6 +1134,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-architectures <path>` --json. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-architectures`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1035,6 +1144,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea observe-native-calls <path> <inputJson>` --json. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea observe-native-calls`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1044,6 +1154,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea observe-native-ui <path>` --json · options: --pid, --windowId, --screenshot, --accessibility, --maxNodes. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea observe-native-ui`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1053,6 +1164,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea project-apple-application-graph <inputJson>` --json. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea project-apple-application-graph`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1062,6 +1174,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace-dylib-resolution <path>` --json · options: --root, --architecture. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace-dylib-resolution`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1071,6 +1184,7 @@
 - **متى أستخدمها / when:** lawful inspection of Mach-O ومنصة macOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea trace-native-ui-action <path> <action>` --json · options: --maxDepth, --maxNodes, --maxEdges, --target-format, --architecture, --entry-point, --provider. Needs: macOS with Xcode command-line tools (Hopper optional). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea trace-native-ui-action`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus macOS with Xcode command-line tools (Hopper optional)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1082,6 +1196,7 @@
 - **متى أستخدمها / when:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare-managed-members <leftPath> <rightPath>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare-managed-members`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a PE/CLI assembly; built-in rea-dotnet-static provider`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1091,6 +1206,7 @@
 - **متى أستخدمها / when:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea import-managed-reconstruction <inputJson>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea import-managed-reconstruction`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a PE/CLI assembly; built-in rea-dotnet-static provider`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1100,6 +1216,7 @@
 - **متى أستخدمها / when:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-managed-artifact <path>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Tried here: target was an ELF, not PE/CLI → capability_unavailable (correct refusal). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-managed-artifact`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a PE/CLI assembly; built-in rea-dotnet-static provider`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1109,6 +1226,7 @@
 - **متى أستخدمها / when:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-managed-members <path>` --json · options: --type. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-managed-members`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a PE/CLI assembly; built-in rea-dotnet-static provider`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1118,6 +1236,7 @@
 - **متى أستخدمها / when:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-managed-native-boundaries <path>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-managed-native-boundaries`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a PE/CLI assembly; built-in rea-dotnet-static provider`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1127,6 +1246,7 @@
 - **متى أستخدمها / when:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea project-managed-application-graph <inputJson>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea project-managed-application-graph`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a PE/CLI assembly; built-in rea-dotnet-static provider`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1136,6 +1256,7 @@
 - **متى أستخدمها / when:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea verify-managed-native-boundaries <inputJson>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea verify-managed-native-boundaries`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a PE/CLI assembly; built-in rea-dotnet-static provider`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1147,6 +1268,7 @@
 - **متى أستخدمها / when:** lawful inspection of WebAssembly targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea compare-wasm-interfaces <input>` --json. Needs: WABT 1.0.42 (REA_WABT_BIN_DIRECTORY). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea compare-wasm-interfaces`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus WABT 1.0.42 (REA_WABT_BIN_DIRECTORY)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wabt`](../requirements.md#req-engine-wabt)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/wasm-artifacts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1156,6 +1278,7 @@
 - **متى أستخدمها / when:** lawful inspection of WebAssembly targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-wasm-artifact <path>` --json · options: --glue_paths, --candidate_paths. Needs: WABT 1.0.42 (REA_WABT_BIN_DIRECTORY). Tried here: needs REA_WABT_BIN_DIRECTORY (WABT 1.0.42). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-wasm-artifact`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus WABT 1.0.42 (REA_WABT_BIN_DIRECTORY)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wabt`](../requirements.md#req-engine-wabt)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/wasm-artifacts.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1167,6 +1290,7 @@
 - **متى أستخدمها / when:** lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea cutter-command <sessionId> <expectedGeneration> <command>` --json · options: --jsonOutput, --json. Needs: Rizin or a live Cutter with the REA Python plugin bridge. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea cutter-command`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Rizin or a live Cutter with the REA Python plugin bridge`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:rizin`](../requirements.md#req-engine-rizin)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1176,6 +1300,7 @@
 - **متى أستخدمها / when:** lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea debug-with-rizin <path> <command>` --json · options: --inferiorTty, --backend. Needs: Rizin or a live Cutter with the REA Python plugin bridge. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea debug-with-rizin`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Rizin or a live Cutter with the REA Python plugin bridge`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:rizin`](../requirements.md#req-engine-rizin)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1185,6 +1310,7 @@
 - **متى أستخدمها / when:** lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea execute-rizin-command <path> <command>` --json. Needs: Rizin or a live Cutter with the REA Python plugin bridge. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea execute-rizin-command`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Rizin or a live Cutter with the REA Python plugin bridge`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:rizin`](../requirements.md#req-engine-rizin)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1194,6 +1320,7 @@
 - **متى أستخدمها / when:** lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-cutter-sessions ` --json. Needs: Rizin or a live Cutter with the REA Python plugin bridge. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-cutter-sessions`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Rizin or a live Cutter with the REA Python plugin bridge`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:rizin`](../requirements.md#req-engine-rizin)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1205,6 +1332,7 @@
 - **متى أستخدمها / when:** lawful inspection of GDB targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea debug-with-gdb <command>` --json · options: --inferiorTty. Needs: GDB with MI; a live target needs an inferior TTY. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea debug-with-gdb`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus GDB with MI; a live target needs an inferior TTY`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:rizin`](../requirements.md#req-engine-rizin)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1216,6 +1344,7 @@
 - **متى أستخدمها / when:** lawful inspection of sigrok targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea decode-signal-recording <path>` --json · options: --decoders, --input_format, --annotations, --line_offset, --line_limit, --all_lines. Needs: sigrok-cli with decoders. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea decode-signal-recording`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus sigrok-cli with decoders`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:sigrok`](../requirements.md#req-engine-sigrok)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/signal-recordings.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1225,6 +1354,7 @@
 - **متى أستخدمها / when:** lawful inspection of sigrok targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-signal-decoders ` --json · options: --decoder, --query, --offset, --limit, --all. Needs: sigrok-cli with decoders. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-signal-decoders`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus sigrok-cli with decoders`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:sigrok`](../requirements.md#req-engine-sigrok)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/signal-recordings.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1236,6 +1366,7 @@
 - **متى أستخدمها / when:** lawful inspection of التفكيك targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea decompile-jeb-item <item-address> <item-kind>` --json · options: --unit-path. Needs: JEB Pro with its MCP client. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea decompile-jeb-item`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus JEB Pro with its MCP client`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:jeb`](../requirements.md#req-engine-jeb)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/jeb-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1245,6 +1376,7 @@
 - **متى أستخدمها / when:** lawful inspection of التفكيك targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-jeb-client ` --json. Needs: JEB Pro with its MCP client. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-jeb-client`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus JEB Pro with its MCP client`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:jeb`](../requirements.md#req-engine-jeb)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/jeb-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1254,6 +1386,7 @@
 - **متى أستخدمها / when:** lawful inspection of التفكيك targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-jeb-units ` --json · options: --filter, --parent-unit-path, --index, --count. Needs: JEB Pro with its MCP client. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-jeb-units`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus JEB Pro with its MCP client`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:jeb`](../requirements.md#req-engine-jeb)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/jeb-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1263,6 +1396,7 @@
 - **متى أستخدمها / when:** lawful inspection of التفكيك targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea open-jeb-project <path>` --json. Needs: JEB Pro with its MCP client. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea open-jeb-project`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus JEB Pro with its MCP client`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:jeb`](../requirements.md#req-engine-jeb)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/jeb-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1274,6 +1408,7 @@
 - **متى أستخدمها / when:** lawful inspection of firmware targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea extract-firmware <path> <outputDirectory>` --json · options: --offset, --length, --maxDepth, --maxOutputBytes, --maxOutputFiles. Needs: Linux + REA_BINWALK_COMMAND (Binwalk) or Unblob. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea extract-firmware`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Linux + REA_BINWALK_COMMAND (Binwalk) or Unblob`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:binwalk`](../requirements.md#req-engine-binwalk)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1283,6 +1418,7 @@
 - **متى أستخدمها / when:** lawful inspection of firmware targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-firmware-regions <path>` --json. Needs: Linux + REA_BINWALK_COMMAND (Binwalk) or Unblob. Tried here: needs REA_BINWALK_COMMAND. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-firmware-regions`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Linux + REA_BINWALK_COMMAND (Binwalk) or Unblob`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:binwalk`](../requirements.md#req-engine-binwalk)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1294,6 +1430,7 @@
 - **متى أستخدمها / when:** lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea identify-flutter-build <path>` --json. Needs: a standalone APK; pure parsing, no engine. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea identify-flutter-build`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a standalone APK; pure parsing, no engine`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1303,6 +1440,7 @@
 - **متى أستخدمها / when:** lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-android-package <path>` --json. Needs: a standalone APK; pure parsing, no engine. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-android-package`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a standalone APK; pure parsing, no engine`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1312,6 +1450,7 @@
 - **متى أستخدمها / when:** lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-dart-aot <path>` --json · options: --abi. Needs: a standalone APK; pure parsing, no engine. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-dart-aot`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a standalone APK; pure parsing, no engine`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:android`](../requirements.md#req-engine-android)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1323,6 +1462,7 @@
 - **متى أستخدمها / when:** lawful inspection of offline layout targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-binary-layout <path>` --json. Needs: REA_PWNTOOLS_PYTHON with pwntools 4.15.0, pyelftools 0.33, Unicorn 2.1.2. Tried here: needs REA_PWNTOOLS_PYTHON (pwntools 4.15 + pyelftools + Unicorn). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-binary-layout`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus REA_PWNTOOLS_PYTHON with pwntools 4.15.0, pyelftools 0.33, Unicorn 2.1.2`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/binary-diagnostics.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1334,6 +1474,7 @@
 - **متى أستخدمها / when:** lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-packet-capture <path>` --json · options: --fields, --display_filter, --decode_as, --packet_limit, --two_pass, --match_offset, --match_limit, --all_matches. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-packet-capture`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wireshark`](../requirements.md#req-engine-wireshark)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1343,6 +1484,7 @@
 - **متى أستخدمها / when:** lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-packet-fields ` --json · options: --kind, --protocol, --query, --offset, --limit, --all. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-packet-fields`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wireshark`](../requirements.md#req-engine-wireshark)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1352,6 +1494,7 @@
 - **متى أستخدمها / when:** lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-pcap-capture <path>` --json. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-pcap-capture`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wireshark`](../requirements.md#req-engine-wireshark)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1361,6 +1504,7 @@
 - **متى أستخدمها / when:** lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-pcap-client ` --json. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Tried here: needs tshark/capinfos (Wireshark 4.x). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-pcap-client`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:wireshark`](../requirements.md#req-engine-wireshark)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1372,6 +1516,7 @@
 - **متى أستخدمها / when:** lawful inspection of موارد PE targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-pe-resources <path>` --json · options: --maxFileBytes, --maxEntries. Needs: a Windows PE file. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-pe-resources`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a Windows PE file`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/cli.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1383,6 +1528,7 @@
 - **متى أستخدمها / when:** lawful inspection of recorded crashes targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-recorded-crash <path>` --json · options: --debuggerContext. Needs: a saved Linux ELF64 core; optional BYO GDB/pwndbg. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-recorded-crash`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus a saved Linux ELF64 core; optional BYO GDB/pwndbg`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:rizin`](../requirements.md#req-engine-rizin)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/recorded-crashes.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1394,6 +1540,7 @@
 - **متى أستخدمها / when:** lawful inspection of SQLite targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-sqlite-database <path>` --json · options: --table, --column, --schemaScope, --rowLimit. Needs: Node 24.15+ or 26+ (native DatabaseSync.limits). Tried here: needs Node 24.15+ DatabaseSync.limits (this box runs Node 22). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-sqlite-database`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Node 24.15+ or 26+ (native DatabaseSync.limits)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/cli.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1405,6 +1552,7 @@
 - **متى أستخدمها / when:** lawful inspection of GNU objdump targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea inspect-with-objdump <path> <operation>` --json · options: --followDebugLinks. Needs: GNU binutils objdump on PATH. Verified here on /usr/bin/rg file_headers: GNU objdump raw output retained as Evidence. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea inspect-with-objdump`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus GNU binutils objdump on PATH`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:rizin`](../requirements.md#req-engine-rizin)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1414,6 +1562,7 @@
 - **متى أستخدمها / when:** lawful inspection of GNU objdump targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-objdump-architectures ` --json. Needs: GNU binutils objdump on PATH. Verified here on —: BFD targets of the installed objdump. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-objdump-architectures`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus GNU binutils objdump on PATH`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:rizin`](../requirements.md#req-engine-rizin)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json` · `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1425,6 +1574,7 @@
 - **متى أستخدمها / when:** lawful inspection of تجهيز العمليات targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea instrument-with-frida <mode> <target>` --json · options: --remoteAddress, --token, --certificate, --origin, --keepaliveInterval, --deviceId, --script, --scriptFile. Needs: Frida 17 host tools + consented target process. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea instrument-with-frida`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Frida 17 host tools + consented target process`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:frida`](../requirements.md#req-engine-frida)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1434,6 +1584,7 @@
 - **متى أستخدمها / when:** lawful inspection of تجهيز العمليات targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-frida-devices ` --json · options: --remoteAddress, --token, --certificate, --origin, --keepaliveInterval. Needs: Frida 17 host tools + consented target process. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-frida-devices`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Frida 17 host tools + consented target process`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:frida`](../requirements.md#req-engine-frida)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1443,6 +1594,7 @@
 - **متى أستخدمها / when:** lawful inspection of تجهيز العمليات targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea list-frida-processes ` --json · options: --remoteAddress, --token, --certificate, --origin, --keepaliveInterval, --deviceId. Needs: Frida 17 host tools + consented target process. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea list-frida-processes`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus Frida 17 host tools + consented target process`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:frida`](../requirements.md#req-engine-frida)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea
@@ -1454,6 +1606,7 @@
 - **متى أستخدمها / when:** lawful inspection of HarmonyOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 - **كيف / how:** `rea project-harmony-application-graph <inputJson>` --json. Needs: HAP/HSP/App Pack inventory Evidence. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. **أرقام / params:** CLI `rea project-harmony-application-graph`; MCP tool of the same catalog (207 tools, 6 prompts in 6.7.0); --format toon|json|yaml|md|jsonl, --token-limit, --filter-output
 - **تثبيت / install:** `npm install -g rea-agents@6.7.0 (Node 22.19+, 24.11+ or 26+); or npx -y rea-agents@latest <command>; plus HAP/HSP/App Pack inventory Evidence`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md)
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md`
 - **المصدر / source:** https://github.com/morluto/rea

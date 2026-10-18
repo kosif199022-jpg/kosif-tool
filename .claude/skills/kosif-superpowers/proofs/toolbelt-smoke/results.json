@@ -1,0 +1,165 @@
+{
+ "python": "3.13.16",
+ "results": [
+  {
+   "check": "sympy: solve and integrate exactly",
+   "module": "sympy",
+   "status": "pass",
+   "detail": "roots [2, 3], ∫sin²=π/2, LaTeX \\frac{\\pi}{2}",
+   "version": "1.14.0",
+   "seconds": 0.35
+  },
+  {
+   "check": "z3: prove a property and find a counterexample",
+   "module": "z3",
+   "status": "pass",
+   "detail": "a+b=b+a proved (unsat negation); a²=49 ∧ a<0 → a=-7",
+   "version": "",
+   "seconds": 0.06
+  },
+  {
+   "check": "duckdb: SQL over an in-memory table",
+   "module": "duckdb",
+   "status": "pass",
+   "detail": "group-by over 100k rows → 7 groups",
+   "version": "1.5.6",
+   "seconds": 0.11
+  },
+  {
+   "check": "polars: lazy aggregation",
+   "module": "polars",
+   "status": "pass",
+   "detail": "lazy group_by sum a=4 b=7 c=4",
+   "version": "2.0.0",
+   "seconds": 0.12
+  },
+  {
+   "check": "scikit-learn: train and cross-validate",
+   "module": "sklearn",
+   "status": "pass",
+   "detail": "iris RandomForest 5-fold accuracy 0.960",
+   "version": "1.9.1",
+   "seconds": 1.72
+  },
+  {
+   "check": "statsforecast: AutoETS forecast with intervals",
+   "module": "statsforecast",
+   "status": "pass",
+   "detail": "6-month forecast, first 196.0 with 80% interval",
+   "version": "2.1.1",
+   "seconds": 0.48
+  },
+  {
+   "check": "trafilatura: extract article text from HTML",
+   "module": "trafilatura",
+   "status": "pass",
+   "detail": "kept 465 chars of Arabic article, dropped nav/footer",
+   "version": "2.3.1",
+   "seconds": 0.08
+  },
+  {
+   "check": "hypothesis: property test finds the shrunk counterexample",
+   "module": "hypothesis",
+   "status": "pass",
+   "detail": "falsified 'short or small' list property and shrank the input",
+   "version": "6.170.1",
+   "seconds": 0.52
+  },
+  {
+   "check": "pandera: schema rejects bad rows",
+   "module": "pandera",
+   "status": "pass",
+   "detail": "fps column contract: 29 rejected, 30/60 accepted",
+   "version": "0.34.1",
+   "seconds": 0.34
+  },
+  {
+   "check": "music21: build a melody and analyse its key",
+   "module": "music21",
+   "status": "pass",
+   "detail": "10-note line analysed as C major",
+   "version": "10.5.0",
+   "seconds": 0.26
+  },
+  {
+   "check": "OR-Tools CP-SAT: schedule without overlaps",
+   "module": "ortools",
+   "status": "pass",
+   "detail": "4 jobs on one machine, optimal makespan 10",
+   "version": "9.15.6755",
+   "seconds": 0.09
+  },
+  {
+   "check": "PuLP: linear program (budget split)",
+   "module": "pulp",
+   "status": "pass",
+   "detail": "max 3a+2b s.t. a+b≤100, a≤60 → 260 (a=60, b=40) via CPSAT",
+   "version": "4.0.1",
+   "seconds": 0.13
+  },
+  {
+   "check": "geopandas: buffer and area in a metric CRS",
+   "module": "geopandas",
+   "status": "pass",
+   "detail": "1 km buffer around Cairo in UTM 36N → 3.1413 km² (π expected); lon span 0.0207°",
+   "version": "1.2.0",
+   "seconds": 0.01
+  },
+  {
+   "check": "biopython: translate and GC content",
+   "module": "Bio",
+   "status": "pass",
+   "detail": "protein MAIVMGR, GC 0.56",
+   "version": "1.88",
+   "seconds": 0.05
+  },
+  {
+   "check": "rdkit: parse SMILES and compute descriptors",
+   "module": "rdkit",
+   "status": "pass",
+   "detail": "aspirin MW 180.16, 13 heavy atoms",
+   "version": "2026.09.1",
+   "seconds": 0.1
+  },
+  {
+   "check": "spaCy: blank Arabic tokenizer + rule matcher",
+   "module": "spacy",
+   "status": "pass",
+   "detail": "8 Arabic tokens; matched 'يوم الجمعة'",
+   "version": "3.8.16",
+   "seconds": 2.61
+  },
+  {
+   "check": "chromadb: in-memory collection with given embeddings",
+   "module": "chromadb",
+   "status": "pass",
+   "detail": "nearest-neighbour query returned the two reel vectors",
+   "version": "1.5.9",
+   "seconds": 0.9
+  },
+  {
+   "check": "mediapipe: library loads (task models download on demand)",
+   "module": "mediapipe",
+   "status": "pass",
+   "detail": "mediapipe 1.1.1 import OK; face/pose tasks need a .task model file",
+   "version": "1.1.1",
+   "seconds": 1.23
+  },
+  {
+   "check": "argos-translate: library loads (language packages ~100 MB on demand)",
+   "module": "argostranslate",
+   "status": "pass",
+   "detail": "import OK; install ar↔en package before translating",
+   "version": "",
+   "seconds": 0.4
+  },
+  {
+   "check": "semgrep: CLI present",
+   "module": "semgrep",
+   "status": "pass",
+   "detail": "semgrep 1.181.0; rule packs are fetched from the registry when scanning",
+   "version": "",
+   "seconds": 1.75
+  }
+ ]
+}

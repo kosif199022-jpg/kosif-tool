@@ -11,6 +11,11 @@
   "how": "1) `python3 scripts/powers.py search <words>` in this skill; 2) scan your tool list and ToolSearch for deferred tools (SELF-05, SELF-06); 3) probe: `command -v X`, `python3 -c 'import X'`; 4) registry: `pip index versions X` or `npm view X version license`; 5) install into a venv or scratch folder and run the smallest example (SELF-26, SELF-27); 6) only then answer: done, needs a key (name it), or blocked (name the gate) plus the best keyless alternative.",
   "params": "max 6 steps before answering; a proxy 403/407 is a policy block: report it, never route around it",
   "install": "",
+  "requires": [
+   "node",
+   "python3",
+   "claude:tools"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
@@ -42,6 +47,10 @@
   "how": "IDEA 💡 (no source) → DOCUMENTED 📄 (a file describes it with numbers) → INSTALLABLE 📦 (registry resolves through the proxy) → NEEDS-KEY 🔑 (name the key, account or connector) → PRESENT 🟢 (`command -v`, import or tool listed in this session) → EXECUTED (exit code and output path known) → VERIFIED ✅ (postcondition checked: ffprobe numbers, tests pass, file reopens, frame viewed). BLOCKED = named gate + next step. Never merge two rungs into a yes/no.",
   "params": "badges ✅🟢📦🔑👁📄💡 · report lowest true",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
@@ -73,6 +82,9 @@
   "how": "Read the proof's date and surface. If either differs from now, run the probe (import, `command -v`, a one-line smoke test) before promising. A failed re-probe lowers the badge for this answer only, without editing history. Live examples (P6, P19): `faster_whisper` is marked as run in the motion arsenal but is not importable in a fresh container; tesseract went from missing to present within one day.",
   "params": "stamp every ✅ with date + surface",
   "install": "",
+  "requires": [
+   "tesseract"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md",
@@ -104,6 +116,11 @@
   "how": "Pick the check by artifact. Video: `ffprobe -v error -show_entries format=duration:stream=codec_type,r_frame_rate`, then look at frames. Document: reopen it or convert it (`soffice --headless --convert-to pdf`). Code: run the tests. Web page: take a screenshot. Install: import it and print the version. Only an output from that check upgrades EXECUTED to VERIFIED.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "libreoffice"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
@@ -133,6 +150,10 @@
   "how": "Scan five places: (a) loaded tools that already have schemas; (b) the deferred-tools name list; (c) every `mcp__<server>__` prefix, each of which is one MCP server; (d) the skills listing; (e) the environment block (cwd, platform, scratchpad, proxy notes). Write a 5-line inventory before planning. Proof P1 saw Higgsfield (100+ tools), github, graphify, Claude_Docs and claude-code-remote servers.",
   "params": "5 places · inventory in ≤5 lines",
   "install": "",
+  "requires": [
+   "pip:higgsfield",
+   "key:graphify"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -163,6 +184,9 @@
   "how": "Exact: `select:WebFetch,WebSearch`. By keyword: `image video generate`, `schedule`, `browser`, `notebook`. Name-required: `+slack send`. Calling a deferred tool before loading it fails with an input-validation error. Load only what the task needs, because each schema costs context.",
   "params": "max_results 3-5 · one select call can load several tools",
   "install": "",
+  "requires": [
+   "claude:tools"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -192,6 +216,10 @@
   "how": "List the prefixes. For each, note read-only (search, list, get), side-effecting (create, push, publish, send, deploy) or paid (credits: generate_*, upscale, dubbing). Paid or side-effecting calls need explicit user intent. Prefer a working MCP tool over a blocked CLI: in P13, `gh search repos` returned 403 while `mcp__github__search_repositories` returned 139 hits.",
   "params": "classes: read / side-effect / paid",
   "install": "",
+  "requires": [
+   "pip:higgsfield",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -224,6 +252,9 @@
   "how": "1) Read the skills listing in the system prompt. 2) `ListSkills` (P3: 13 account skills). 3) On disk: `ls ~/.claude/skills .claude/skills */.claude/skills`; plugin skills appear as `plugin:skill`. 4) SearchSkills / SuggestSkills, when present, find skills the user does not have. 5) Invoke the match with the Skill tool BEFORE writing output.",
   "params": "invoke first, then act",
   "install": "",
+  "requires": [
+   "claude:tools"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -252,6 +283,7 @@
   "how": "`ListPlugins` lists account plugins (P3 returned none). `SearchPlugins` searches the marketplace. `SuggestPluginInstall` shows an install card when present. In a terminal session use `/plugin`. Never install a plugin silently: suggest it, then let the user approve.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -279,6 +311,7 @@
   "how": "Call `read_documentation` with no topic to get the index (P4: 10 pages), then call it with a topic such as `environment.network`, `environment.dependencies`, `environment.secrets`, `github.access` or `session.resources`. Quote what the page says the user can change; do not guess settings paths from memory.",
   "params": "10 topics (2026-10-16)",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -309,6 +342,10 @@
   "how": "1) ToolSearch the service name. 2) If present, use ListConnectors / SuggestConnectors / SearchMcpRegistry. 3) Otherwise tell the user to connect it in claude.ai Settings → Connectors, or to add a key as an environment secret (`read_documentation environment.secrets`). 4) Never ask for a secret in chat unless the host has a secure input. 5) Meanwhile offer the best keyless route.",
   "params": "",
   "install": "",
+  "requires": [
+   "claude:tools",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -338,6 +375,10 @@
   "how": "`python3 scripts/probe_env.py` gives the Markdown card; `--json` gives capabilities.json. It uses the standard library only, works without root, has a short global time budget, is read-only and prints env names, never values. Optional tools (MCP, skills) are invisible to scripts, so combine it with SELF-05. P21 (2026-10-16): 1.7 s, host claude-code-cloud with 4 evidence items, network full, GPU none, docker daemon down, a 120-line card with a domain table and one-line fixes.",
   "params": "stdlib only · bounded time · exit 0 with partial results",
   "install": "",
+  "requires": [
+   "python3",
+   "docker"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -368,6 +409,17 @@
   "how": "`uname -sr; nproc; free -g; df -h .; id -u` then `for b in python3 node npm uv ffmpeg convert soffice pandoc git gh rg docker playwright blender tesseract dot; do printf '%s ' $b; command -v $b || echo MISSING; done` and `<tool> --version | head -1` for the few that matter. P5 found 4 vCPU, 15 GiB and ffmpeg 6.1.1 but no blender and no `dot` (snapshot 2026-10-16; re-run scripts/probe_env.py).",
   "params": "≤20 binaries · versions only for key tools",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium",
+   "docker",
+   "tesseract",
+   "blender",
+   "pandoc",
+   "libreoffice",
+   "npm:p5"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -399,6 +451,16 @@
   "how": "`command -v nvidia-smi && nvidia-smi -L; ls /dev/dri`. None (P5): use ffmpeg libx264 and headless Chromium software GL, whisper tiny/base/small on CPU and the CPU torch wheel (SELF-28), and route image or video generation to a 🔑 connector such as Higgsfield only with user consent.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "pip:faster-whisper",
+   "pip:torch",
+   "pip:higgsfield",
+   "npm:p5",
+   "gpu",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -428,6 +490,9 @@
   "how": "`curl -sS -o /dev/null -m 8 -w '%{http_code} %{time_total}\\n' https://pypi.org/simple/` plus registry.npmjs.org, api.github.com, huggingface.co and a non-registry host (example.com). 200/200 means full egress; registry 200 with other hosts 403 means an allowlist; DNS failures or timeouts mean no network (API sandbox). In a cloud session also run `curl \"$HTTPS_PROXY/__agentproxy/status\"`. P8: all 7 hosts returned 200.",
   "params": "timeout 8 s per host · classify ok / policy-blocked (403, 407, CONNECT 502) / offline",
   "install": "",
+  "requires": [
+   "network"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -458,6 +523,7 @@
   "how": "Read the container's proxy README if present and its status endpoint. Point clients at the CA bundle (`SSL_CERT_FILE`, `REQUESTS_CA_BUNDLE`, `NODE_EXTRA_CA_CERTS`). Node fetch: try `NODE_USE_ENV_PROXY=1` (P9: plain and env-proxy fetch both returned 200 here). aiohttp needs `trust_env=True`. Plain HTTP_PROXY is unsupported. Report 403/407 to the user; do not retry or route around them.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -488,6 +554,10 @@
   "how": "`env | cut -d= -f1 | grep -iE 'key|token|secret|pass'` and `[ -n \"$ANTHROPIC_API_KEY\" ] && echo set || echo unset`. Never `echo $VAR`, never paste values into files, logs or URLs. For `.env*` files read key names only: `grep -o '^[A-Z_]*=' .env`. P10: 13 names found; the API key was unset.",
   "params": "names only, values never",
   "install": "",
+  "requires": [
+   "pip:anthropic",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -518,6 +588,17 @@
   "how": "`python3 -I -c \"import importlib.util as u; print({m: bool(u.find_spec(m)) for m in ['numpy','matplotlib','cv2','torch','librosa']})\"`; count with `importlib.metadata.distributions()`. Missing → SELF-26. P6: numpy, pandas, PIL, docx, openpyxl, reportlab and pypdf were present; matplotlib, scipy, cv2, torch and librosa were not (snapshot 2026-10-16; re-run scripts/probe_env.py).",
   "params": "find_spec, no import side effects",
   "install": "",
+  "requires": [
+   "pip:numpy",
+   "pip:pillow",
+   "pip:opencv",
+   "pip:scipy",
+   "pip:pandas",
+   "pip:matplotlib",
+   "pip:torch",
+   "pip:librosa",
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -547,6 +628,10 @@
   "how": "`ls $(npm root -g)`; `echo $PLAYWRIGHT_BROWSERS_PATH; ls /opt/pw-browsers ~/.cache/ms-playwright 2>/dev/null`; `npx playwright --version`. P5/P9 found the global Playwright CLI and chromium-1194 under /opt/pw-browsers. Otherwise use `npx playwright install chromium` (about 150 MB, needs network).",
   "params": "",
   "install": "npx playwright install chromium",
+  "requires": [
+   "chromium",
+   "npm:p5"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -577,6 +662,9 @@
   "how": "`fc-list :lang=ar family | sort -u`. P7 found only DejaVu, FreeMono/FreeSerif and Unifont. Use OFL fonts from `proofs/_shared/fonts` (Amiri, Cairo, Reem Kufi, Aref Ruqaa, Tajawal, Lalezar), or `apt-get install fonts-noto-core fonts-kacst`, and load the font before the first frame.",
   "params": "",
   "install": "apt-get install -y fonts-noto-core fonts-kacst",
+  "requires": [
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -606,6 +694,7 @@
   "how": "`id -u; sudo -n true && echo sudo-ok; apt-get -s install <pkg> | tail -1` (simulation, no change). Then `apt-get update && apt-get install -y <pkg>` and verify with `<bin> --version`. P11: sudo was OK and the simulation resolved; earlier the same day `cowsay` installed and ran in 7.8 s.",
   "params": "simulate first with -s",
   "install": "apt-get install -y <pkg>",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -635,6 +724,9 @@
   "how": "`timeout 8 docker info --format '{{.ServerVersion}}'`. P12: the client was present but the daemon was not running (no /var/run/docker.sock), even though the cloud-environment docs list Docker. Fall back to venvs, apt packages or local processes (e.g. `redis-server &`).",
   "params": "timeout 8 s",
   "install": "",
+  "requires": [
+   "docker"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -662,6 +754,10 @@
   "how": "Public clone: `git clone --depth 1 https://github.com/<o>/<r>` (P13 `git ls-remote` worked), or raw files from raw.githubusercontent.com. `gh api repos/...` and `gh search repos` returned 403 for unattached repos. Use `mcp__github__search_repositories` / `get_file_contents`, or call `add_repo` (access read or push) for API work.",
   "params": "",
   "install": "",
+  "requires": [
+   "git",
+   "gh"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -692,6 +788,11 @@
   "how": "Python: `pip index versions <pkg>` (resolves for this interpreter), `pip download --no-deps -d /tmp/x <pkg>` or `curl -s https://pypi.org/pypi/<pkg>/json` for version and license_expression. JS: `npm view <pkg> version license --json`. P14: humanize 4.16.0, tabulate 0.10.0 wheel, left-pad 1.3.0 (WTFPL). An E404 means not in the registry (e.g. `@hyperframes/cli`).",
   "params": "≤5 s per lookup",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:hyperframes",
+   "network"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -722,6 +823,10 @@
   "how": "`curl -s https://pypi.org/pypi/<pkg>/json | python3 -c \"import json,sys; i=json.load(sys.stdin)['info']; print(i['version'], i['requires_python'])\"` and compare with `pip index versions <pkg>`. P14 on Python 3.13: kokoro resolves to 0.7.16 (latest 0.9.4 needs below 3.13); `TTS` resolves to nothing (needs below 3.12), but the maintained fork `coqui-tts` 0.27.5 resolves. Fixes: use the fork, an older pin, or `uv venv --python 3.12`.",
   "params": "",
   "install": "uv venv --python 3.12 .venv312",
+  "requires": [
+   "pip:kokoro",
+   "network"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -750,6 +855,9 @@
   "how": "`python3 -m venv .venv && .venv/bin/pip install -q <pkg> && .venv/bin/python -I -c 'import <mod>; print(<mod>.__version__)'`, or faster `uv pip install --python .venv/bin/python <pkg>`. Then one real operation (e.g. `duckdb.sql('select 42*2')`). P15: venv+pip+import took 3.7 s, uv took 0.3 s. Prefer `--only-binary=:all:` to avoid slow builds.",
   "params": "venv per task · smoke test = one real call",
   "install": "python3 -m venv .venv && .venv/bin/pip install <pkg>",
+  "requires": [
+   "pip:duckdb"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -781,6 +889,10 @@
   "how": "`mkdir -p /tmp/try && cd /tmp/try && npm init -y >/dev/null && npm i <pkg>@<exact> && node -e \"import('<pkg>').then(m=>console.log(Object.keys(m).slice(0,5)))\"`. Pin exact versions. P15: culori 4.0.2 install+import took 1.3 s. Earlier the same day docx, pptxgenjs, exceljs and pdf-lib each produced a real file.",
   "params": "pin exact version",
   "install": "npm i <pkg>@<version>",
+  "requires": [
+   "node",
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -810,6 +922,12 @@
   "how": "`pip install torch --index-url https://download.pytorch.org/whl/cpu` (default pip pulls GBs of CUDA). Earlier on 2026-10-16: 21 s, 769 MB, tensor inverse ran. HF: config.json in 0.49 s and a 540 KB weight in 1.0 s although cdn-lfs.huggingface.co was blocked (redirects use another CDN). Keep models small (30 GB disk, 4 CPUs, no GPU in that snapshot).",
   "params": "CPU wheel index · small models only",
   "install": "pip install torch --index-url https://download.pytorch.org/whl/cpu",
+  "requires": [
+   "pip:faster-whisper",
+   "pip:torch",
+   "gpu",
+   "network"
+  ],
   "license": "BSD-3-Clause (torch; compound expression on PyPI)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md",
@@ -841,6 +959,14 @@
   "how": "npm: `npm view <pkg> license`. PyPI JSON: `license_expression`, else `license`, else the classifiers. GitHub: `curl -s https://raw.githubusercontent.com/<o>/<r>/HEAD/LICENSE | head -3`. Red flags: AGPL (pymupdf, ultralytics), GPL (piper-tts, pedalboard, bpy, typed.js, ffmpeg-static), 'SEE LICENSE IN …' (remotion, @anthropic-ai/claude-agent-sdk), UNLICENSED, or blank. Using a tool to produce output differs from redistributing its code.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "blender",
+   "pip:piper",
+   "npm:remotion",
+   "network",
+   "pip:ultralytics"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -871,6 +997,7 @@
   "how": "Search in parallel: this repo, then package registries, then MCP tools and skills, then GitHub templates. Score each candidate on fit, maintenance, docs, license and dependencies. Exact maintained match with a permissive license → Adopt. Partial match → Extend with a thin wrapper. Several weak matches → Compose 2-3 small packages. Nothing → Build, informed by what you found. Say which channels you skipped.",
   "params": "matrix: adopt / extend / compose / build",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
@@ -900,6 +1027,7 @@
   "how": "1) Intent + 3-5 bilingual keywords. 2) Local: `find ~/.claude/skills .claude/skills -name SKILL.md | xargs grep -il <kw>`. 3) Account: ListSkills / SearchSkills / SearchPlugins. 4) Remote: GitHub search (in cloud sessions use `mcp__github__search_repositories`, since `gh search` is blocked, P13), plus at most 3 web queries. 5) Vet: unexpected shell, network, credential handling or installs; maintenance; license. 6) Rank (name match > description > local > maintained GitHub > web), cap 10, then offer use, fork, or create.",
   "params": "5-12 candidates · read top 1-3 · cap 10 ranked",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
@@ -928,6 +1056,10 @@
   "how": "Use a docs MCP (e.g. Context7) if connected. Otherwise WebFetch the official page, run `npm view <pkg> version`, `pip show <pkg>` and `<cli> --help`. Use at most 3 lookups per question, then state uncertainty. Cite the version and date. Redact secrets from queries. P18 fetched the official code-execution page to get the sandbox limits instead of recalling them.",
   "params": "≤3 lookups per question · cite version + date",
   "install": "",
+  "requires": [
+   "node",
+   "claude:tools"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
@@ -957,6 +1089,18 @@
   "how": "Re-run P16 traps: pulp 4 drops `LpVariable(...)` and `PULP_CBC_CMD` (use `m.add_variable` + `pulp.HiGHS`); mcp 2.x moves FastMCP to `from mcp.server import MCPServer`; markitdown needs extras `[docx,pdf,xlsx,pptx]`; pymupdf prefers `import pymupdf` over `fitz`; openpyxl stores formulas but never computes them (recalculate with LibreOffice headless); plotly `write_html` inlines 4.8 MB unless `include_plotlyjs='cdn'`. Major bumps seen: pandas 3, numpy 2.5, polars 2, opencv 5, transformers 5.",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium",
+   "libreoffice",
+   "pip:numpy",
+   "pip:opencv",
+   "pip:pandas",
+   "pip:plotly",
+   "pip:torch",
+   "pip:office",
+   "pip:polars",
+   "pip:pulp"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -989,6 +1133,9 @@
   "how": "Read the markers: package.json and lockfiles, `.mcp.json`, `.claude/settings*.json`, AGENTS.md/CLAUDE.md, hooks, `.claude/agents`, `.claude/skills`, `.env*` (key names only). Output 5 parts: usable now; parity; primitives with no workflow wrapped around them; missing integrations; top 3-5 next moves. Map each gap to a shape: repeatable workflow → skill, enforcement → hook, delegated role → agent, external bridge → MCP or connector.",
   "params": "≤2 recommendations per category",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
@@ -1019,6 +1166,9 @@
   "how": "Evidence: `/root/.ccr` or `CLAUDE_CODE_REMOTE` or `mcp__claude-code-remote__*` → Claude Code cloud session; `CLAUDECODE=1` without those → local Claude Code; a code-execution tool with no network and Python 3.11 → API sandbox; `/mnt/user-data` or `/home/claude` with egress depending on admin → claude.ai sandbox (unconfirmed heuristic); `CI` or `GITHUB_ACTIONS` → CI. Then open references/surfaces.md for that surface's table.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md"
@@ -1049,6 +1199,11 @@
   "how": "Documented: 4 vCPU, 16 GB RAM, 30 GB disk; network None, Trusted (default: registries, GitHub, cloud SDKs), Full or Custom; setup script cached; network secrets injected by the proxy. Measured in P5/P8 on 2026-10-16: 4 vCPU, 15 GiB, 24-30 GB free, every tested host reachable, Docker daemon NOT running. Re-run scripts/probe_env.py; read `read_documentation session.resources` when limits hit.",
   "params": "4 vCPU · 16 GB · 30 GB (docs, 2026-10-16)",
   "install": "",
+  "requires": [
+   "python3",
+   "docker",
+   "npm:p5"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -1080,6 +1235,17 @@
   "how": "Per the official page (fetched 2026-10-16): Python 3.11, 1 CPU, 5 GiB RAM, 5 GiB disk, no outbound network; containers reusable by id and expire after 30 days. Preinstalled: pandas, numpy, scipy, scikit-learn, statsmodels, matplotlib, seaborn, openpyxl, xlsxwriter, python-docx, python-pptx, pypdf, pdfplumber, reportlab, pillow, sympy, plus rg, fd and sqlite. Inline assets; do not promise ffmpeg or downloads.",
   "params": "1 CPU · 5 GiB RAM · 5 GiB disk · no network",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:numpy",
+   "pip:pillow",
+   "pip:scipy",
+   "pip:pandas",
+   "pip:matplotlib",
+   "pip:sympy",
+   "pip:office",
+   "pip:sklearn"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -1110,6 +1276,10 @@
   "how": "Per the help article (fetched 2026-10-16): Free/Pro/Max have one 'Allow network egress' toggle; Team/Enterprise owners pick Off, Package managers only (npm, PyPI, crates, Ubuntu, Yarn, GitHub), Package managers + domains, or All domains. Max 30 MB per file. Custom skills upload as a zip with SKILL.md (help article: description up to 200 chars). Probe the network (SELF-15) before promising installs.",
   "params": "30 MB per file · 4 admin network levels",
   "install": "",
+  "requires": [
+   "node",
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -1142,6 +1312,11 @@
   "how": "Per the docs (fetched 2026-10-16): environments Local, Cloud, SSH and WSL; parallel sessions with worktrees; visual diff; browser pane (per-site approval); computer use on macOS/Windows for Pro/Max (preview); connectors and plugins via the + button; Dispatch from phone. Cloud sessions have no file editor, no plugin browser and no connector button. Look for `mcp__Claude_Browser__*`, `mcp__computer-use__*` or `enable__…` tools and load the matching skill first.",
   "params": "",
   "install": "",
+  "requires": [
+   "os:macos",
+   "claude:browser",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md",
@@ -1171,6 +1346,10 @@
   "how": "Open references/surfaces.md § 'Tool present → powers'. Examples: Bash + network → pip/npm/apt installs, git clone, API calls; Read on images or PDFs → look at your own renders; Agent/Workflow → parallel research and review; Monitor or background Bash → long renders with progress; Artifact → shareable pages; scheduling tools → recurring work; mcp__github__* → PRs, CI logs and code search; mcp__Higgsfield__* → paid AI image/video/audio.",
   "params": "",
   "install": "",
+  "requires": [
+   "node",
+   "git"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md"
@@ -1200,6 +1379,9 @@
   "how": "Card: surface · CPU/RAM/disk · GPU yes/no · network level · key tools present · gaps with one-line fixes · tools that are paid or side-effecting. Receipt: status (success/warning/error), one-line summary, tool used, evidence items (command output, file path, ffprobe line), artifacts, next actions, retry safe?, verified?. 'Done' means verified with evidence.",
   "params": "card ≤10 lines",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
@@ -1229,6 +1411,9 @@
   "how": "STALE_STATE → re-probe. BAD_TOOL_ARGS → read the schema, fix once, never resend identical arguments. PROBE_ABORT → run independent probes separately. MISSING_DEP → install in isolation, then verify import and version. NEEDS_AUTH → name the key or connector. POLICY_BLOCK (403/407) → report it, no workaround. SUPPLY_CHAIN_RISK → read the source, do not run unknown installers or hooks. REGRESSION → roll back.",
   "params": "retry a failed piece once, narrower",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"
@@ -1258,6 +1443,10 @@
   "how": "Before the call, state what it will do, the cost if known (quote or balance tools first), and whether it can be undone. Get a yes, or rely on intent the user already stated. Browsing a catalog is not permission to generate. Prefer a free local route (ffmpeg, Canvas, Piper) when it meets the brief. Log the receipt afterwards.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:piper"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/self-discovery.md"

@@ -176,6 +176,8 @@ def render(stem: str, rows) -> str:
                 L.append(f"- **كيف / how:** {how}" + (f" **أرقام / params:** {params}" if params else ""))
             if r.get("install"):
                 L.append(f"- **تثبيت / install:** `{str(r['install']).strip()}`")
+            if r.get("requires"):
+                L.append("- **يحتاج / needs:** " + " · ".join(f"[`{k}`](../requirements.md#req-{re.sub(r'[^a-z0-9]+', '-', k.lower())})" for k in r["requires"]))
             if r.get("license"):
                 L.append(f"- **الرخصة / license:** {clean(r.get('license'))}")
             proof = [str(p) for p in (r.get("proof") or [])]

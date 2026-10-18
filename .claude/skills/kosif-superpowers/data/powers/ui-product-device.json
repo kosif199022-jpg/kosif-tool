@@ -9,6 +9,7 @@
   "how": "Storyboard five columns: time · screen state · pointer action · camera focus · text. Frame 1 must already be legible. The camera moves toward the current action, then settles before the next one; one subject per beat; clear old props before the next beat. Animate from time only (deterministic). Before the full export render stills at: frame 0, each action, every transition midpoint, last frame — and watch it once muted.",
   "params": "stills: first · per action · transition midpoints · last",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/217-silent-product-demo/SKILL.md",
@@ -36,6 +37,7 @@
   "how": "Response starts 60–120 ms after the press frame. 0 ms reads as a slideshow, more than 200 ms reads as a bug. Never animate success before the action completes. Direct-manipulation feedback lands within 100 ms; UI animations stay under 500 ms and look interruptible.",
   "params": "latency 60–120 ms; >200 ms = bug; feedback <100 ms; anim <500 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:29",
@@ -61,6 +63,7 @@
   "how": "Write the strings first (Arabic UI labels ≥ 28 px at 1080 wide, line-height 1.6–1.8, letter-spacing 0). Use disposable test data when capturing a real app. Prices, countdowns and claims must be confirmed by the user — a fake price or countdown is forbidden. Saudi/Gulf money: SAR with tabular digits from one numeral system.",
   "params": "Arabic UI text ≥ 28 px; lh 1.6–1.8",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:19",
@@ -87,6 +90,7 @@
   "how": "Rebuild the UI as live DOM/SVG/Canvas with real strings at 2× density; keep a flattened screenshot only as the reference to match. If zoom makes a screenshot unreadable, re-capture at higher resolution or rebuild it as DOM. Depth comes from elevation tiers and overlap, plus 2–4% chrome/content parallax — not from tilt or glass.",
   "params": "2× density; parallax 2–4%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:17",
@@ -113,6 +117,10 @@
   "how": "Playwright element screenshots with omitBackground:true for transparent parts (Playwright + Chromium are installed here). Split the official SVG mark into layers and re-stack them; a PIL difference check must stay ≤ 1/255. Watch aspect: rendering 1200×800 parts into a 224×160 slot stretches 7%.",
   "params": "parts ≥ 1600 px; capture 3–5×; layer diff ≤ 1/255",
   "install": "",
+  "requires": [
+   "chromium",
+   "pip:pillow"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md"
@@ -137,6 +145,7 @@
   "how": "Use dir=rtl on the UI container only (not <html> in renders) with logical CSS (margin-inline-start, inset-inline-end). The cursor starts bottom-right; forward navigation pushes the new screen in from the left; toasts enter top-left (top-end). Phones: back chevron on the right, toggles 'on' at the left, tab order RTL; the island, camera and hardware buttons are NOT mirrored; hero copy sits right of the device with positive yaw. Phone numbers and times get unicode-bidi:plaintext. Cut typed text at graphemes with Intl.Segmenter. Narrow tab rows: 44 px fade on the inline-start edge plus proximity scroll-snap.",
   "params": "Arabic compact rows +10% line height; tab fade 44 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:209-214",
@@ -164,6 +173,7 @@
   "how": "One focal view + subordinate context; 5–7 KPIs max (4–6 for an executive summary); legends next to the evidence; no wall of equal tiles. Animate the headline tile first, then the rest. Operations scenes show live/stale states explicitly (status dot with halo, see UI-45).",
   "params": "5–7 KPIs; headline first",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3455-business-analytics/14162-kpi-dashboard-design/SKILL.md",
@@ -188,6 +198,7 @@
   "how": "Storyboard each UI beat as trigger → visible change → settled state, and score it with an 8-row checklist (score = passed/8 × 10). Physical metaphors stay shortened: drawers slide from their side, modals rise like cards, momentum scroll settles on a spring. Standard ranges: 150 ms micro, 250–300 ms transitions, 400–500 ms larger moves; whole-UI motion ≤ 700 ms, ≤ 3 flashes per second.",
   "params": "150 / 250–300 / 400–500 ms; ≤ 700 ms; ≤ 3 flashes/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14121-microinteractions",
@@ -213,6 +224,7 @@
   "how": "Use the component's real size, colours, shadows and timing; fit whole periodic cycles into the duration; one-shot actions return via a plausible reverse. Locked camera or one subtle push. Compare the first and last frames and watch several repeats for jumps or double triggers.",
   "params": "3–6 s; one action; first frame == last frame",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/219-ui-component-clip/SKILL.md"
@@ -236,6 +248,7 @@
   "how": "Open with the payoff, then explain steps over the action. One short line per decision; the pointer reaches the exact target and holds through the press; keep menus and overlays where the app places them.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/220-ui-tutorial-video/SKILL.md"
@@ -260,6 +273,10 @@
   "how": "c = M.cursor(stage,{size:30}); M.moveCursor(tl, c, [{t,x,y},…], {hold:[t…]}) samples the path at 60 fps into keyframes; M.press(tl, c, at, {target, down:.97}); M.typeOn(tl, el, text, at, {cps:46, hold:.6}). Rendered here: kit_v3_demo through render_html.cjs (6 s, 180 frames, VERIFY OK) after adding one bridge line, because the kit exposes window.__kosifSeek, not window.__kosif. (code snippet in references/powers/ui-product-device.md)",
   "params": "size 28–34 px (h ×1.22), drop-shadow 0 6px 8px rgba(0,0,0,.28); travel 36–48 f, arc 15–25% of the path; press 0.88 over 4 f, recover 8 f; target 0.97",
   "install": "",
+  "requires": [
+   "node",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:403",
@@ -289,6 +306,10 @@
   "how": "Copy the playbook block into starters/html-canvas and render: node tools/render_html.cjs --in index.html --out film.mp4 --width 1080 --height 1920 --fps 30 --mode seek. Rendered here: 120 frames, VERIFY OK. Lesson from the frames: the 23 px arrow is tiny at 1080 wide — scale the cursor ×1.5–2 for phone-sized output.",
   "params": "bg #0b0d12, panel #161a23, cards #1f2430, button #19c37d; push 1.00→1.05 over 4 s; screen rise 48 px in 0.52 s expoOut",
   "install": "",
+  "requires": [
+   "node",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:163-203",
@@ -316,6 +337,7 @@
   "how": "Plan waypoints per beat; interpolate with Catmull-Rom + arc-length so speed is constant; the tip (not the arrow's centre) lands on the hit target; hold through the pressed state; the UI response is visible before the cursor moves on. First appearance glides in from a short offset (−140, +90 px). Check tip-on-target in stills. Arrow for desktop scenes, translucent tap circle on phones — never an arrow on a phone.",
   "params": "glide ~450 ms per hop (380–700 ms cubic-bezier(.2,.8,.2,1)); dwell 200–400 ms; arrow 22–26 px with 1.5 px outline; tap circle 40–48 px at 25–35% opacity",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/217-silent-product-demo",
@@ -343,6 +365,7 @@
   "how": "Inject a fixed-position div so the ring is captured in frames; element.animate keyframes scale 0.45→1.25, opacity 1→0, 420 ms ease-out. The ripple element exists in the DOM from t=0 at opacity 0 (no creation mid-render). Product-UI style: ripple 0→48 px in 320–400 ms; phone tap ripple 0→64 px, opacity 0.6→0 over 300 ms.",
   "params": "ring 0.45→1.25 / 420 ms; ripple 48 px desktop, 64 px phone",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video/scripts/record-page.mjs",
@@ -370,6 +393,9 @@
   "how": "Rotation lerps toward atan2(vy, vx); decelerating glide; hover scale 1.55; press −15% for 3 frames; 32×39 px arrow with soft shadow. The 'oversized cursor' variant draws a 3.5× macOS arrow that lands, clicks and settles below the control.",
   "params": "hover ×1.55; press −15% / 3 f; arrow 32×39 px",
   "install": "",
+  "requires": [
+   "os:macos"
+  ],
   "license": "",
   "proof": [
    "style:pm-notdwd-7de38a",
@@ -398,6 +424,7 @@
   "how": "Every frame read the target's transformed rect and steer toward it (no stale coordinates). Halo #f0442c at 40% alpha, 36 px; on click it shrinks and pulses 150 ms while the target shows its pressed state.",
   "params": "halo 36 px 40% alpha; pulse 150 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-antonio-kodheli-490109"
@@ -423,6 +450,10 @@
   "how": "HyperFrames component magnetic-cursor (vars visits '0,3', press 2, accent #3b82f6, tone light|dark). Hand-built rule: element offset = (cursor − centre) × factor, tween 0.3 s power2.out; leave → elastic.out(1,0.5) 0.5 s. Drive it from the scripted cursor path, never from a real mouse.",
   "params": "buttons factor 0.3, cards 0.1; return 0.5 s elastic.out(1,0.5)",
   "install": "npx hyperframes add magnetic-cursor",
+  "requires": [
+   "npm:hyperframes",
+   "lean"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/magnetic-cursor/magnetic-cursor.html",
@@ -447,6 +478,9 @@
   "how": "Grab = press dip + lift; the ghost travels on tweens matched to the cursor (same position, duration, ease; immediateRender:false); drop = snap with selection chrome. Variants: fill-handle and corner-resize. HyperFrames component cursor-drag-drop (card_label, accent #0a84ff, tone light|dark).",
   "params": "matched tweens; drop settle spring",
   "install": "npx hyperframes add cursor-drag-drop",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/cursor-drag.md",
@@ -471,6 +505,9 @@
   "how": "HyperFrames components: cursor-text-select (title, text, phrase, accent), cursor-marquee-select (start/end x,y in %, each touched tile rings and checks while a pill counts), cursor-context-menu (items list, pick index, the menu blooms from the cursor tip). For Arabic text select by whole words, never split letters.",
   "params": "positions in % of frame",
   "install": "npx hyperframes add cursor-text-select",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/cursor-text-select/cursor-text-select.html",
@@ -496,6 +533,9 @@
   "how": "Partition the canvas into zones so paths never cross; actions on alternating beats (~1.2 / 2.6 / 4.0 s); legs power2.inOut; press scale 0.88 for 0.07 s yoyo; one payoff at a time. Name tags are pills (radius 999) in each user's colour. Components: multiplayer-cursors (cursorCount 2–6, labels).",
   "params": "beats 1.2/2.6/4.0 s; press 0.88 / 0.07 s",
   "install": "npx hyperframes add multiplayer-cursors",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/multi-cursor-choreography.md",
@@ -525,6 +565,9 @@
   "how": "Component agent-cursor: agent_name, steps 'Reading the page,Opening Settings,…', targets 'x,y;x,y' in %, accent #0a84ff; extra duration becomes hold, never time-stretch. Render with npx hyperframes render — tested here: rendering its demo.html with render_html --mode virtual gives a frozen frame, because the paused window.__timelines and data-composition-src need the HyperFrames runtime.",
   "params": "targets as % pairs",
   "install": "npx hyperframes add agent-cursor",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/agent-cursor/agent-cursor.html",
@@ -549,6 +592,9 @@
   "how": "Cue 60 ms before the press; press 90 ms cubic-bezier(0.4,0,1,1) with device 0.96 and button 0.92; release spring {stiffness 240, damping 14}; ripple 0→64 px, 0.6→0 opacity over 300 ms. Components: touch-indicator (gesture tap|swipe, polarity), gesture-tap (Follow → Following), swipe-rail (momentum carry, snap), pull-to-refresh (rubber band, pullDistance 120).",
   "params": "circle 40–48 px; press 90 ms; ripple 64 px / 300 ms",
   "install": "npx hyperframes add touch-indicator",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-tool/playbooks/phone.md:36",
@@ -576,6 +622,7 @@
   "how": "Each key: translateY 3 px + shadow shrink for 120 ms, 80 ms gap; last key fill accent then cut. Pair with a command palette (UI-30).",
   "params": "120 ms per key; 80 ms gap",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-agonaliu-466a8f"
@@ -601,6 +648,7 @@
   "how": "Readout tween and target transform share one label, duration and ease (tl.addLabel('edit1'), shared SCRUB_DUR/SCRUB_EASE). While dragging, the control value is derived from cursor x; on release it springs to rest. Seen variants: settings sliders that move when the narration names them (knob 500 ms ease-in-out, inactive label 40% grey) and an accent swatch ring hopping every 350 ms while the whole UI recolours.",
   "params": "knob 500 ms; swatch hop 350 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/control-target-sync.md",
@@ -631,6 +679,7 @@
   "how": "reveal = text.slice(0, floor(t·cps)) with a 1-frame hold every 2–3 chars from a seeded pattern (no Math.random in renders). Caret blink 500–530 ms (2 Hz), always visible while typing. Speeds: prompts 35–50 ms/char, terminals 35–45, human forms 70 ms ±20, search ~12 cps. Arabic: cut at grapheme clusters with Intl.Segmenter. motion-kit typeOn (cps 46) is rendered and proven in UI-11. (code snippet in references/powers/ui-product-device.md)",
   "params": "35–50 ms/char prompts; 70 ±20 ms forms; caret 500–530 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:193",
@@ -662,6 +711,7 @@
   "how": "Blueprint prompt-type-submit-generate (5.2–12 s). Type ~35–50 ms/char with caret, send = button scale 0.9 + accent ring pulse 300 ms, then a thin progress bar fills ~1 s while a tile grid resolves tile by tile, or the result fades/scales in full-frame. Seen: centred 600×48 px pill on a dark frame; gradient-rim glowing search pill (1.5 px conic pink→violet→blue border + blurred copy below, blur 24 px at 0.35).",
   "params": "blueprint 5.2–12 s; ring 300 ms; progress ~1 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/prompt-type-submit-generate.md",
@@ -694,6 +744,9 @@
   "how": "Rows (mono 11–13 px, 'namespace · function') appear 250–600 ms apart; each spinner becomes a green check #2bb673 with a 0.6→1 scale pop; footer counters tick; optional terminal pane types output alongside. Status words can swap first (Queued → Reading → Drafting → Done) with HyperFrames state-chip-rail. Blueprint agent-progress-theater (4.2–11.6 s).",
   "params": "ticks 250–600 ms apart; check pop 250 ms",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/agent-progress-theater.md",
@@ -728,6 +781,9 @@
   "how": "Components chat-thread (messages 'recv:…|sent:…|card:title~domain|emoji:…', beat 1.7 s), chat-message (entry scale 0.75 in 0.12 s from the sender corner), typing-indicator (three dots, vanish when the message lands). Hand-built: bubbles slide y+12 and fade, alternate sides, stagger 500 ms; Q&A answer bubble 300 ms back.out. Arabic: received bubbles on the left, sent on the right in RTL apps — mirror the tail.",
   "params": "beat 1.7 s; bubble 0.12 s from 0.75",
   "install": "npx hyperframes add chat-thread",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/chat-thread/chat-thread.html",
@@ -758,6 +814,10 @@
   "how": "24 ready ~11–12 s blocks: VS Code (12 themes: dark-plus, light-plus, dark-modern, monokai, solarized-light…) with per-char typing and a pytest terminal, or macOS Terminal.app (12 profiles). Edit codeLines. Hand-built: 35–45 ms/char, block cursor in the accent colour, blink 500 ms. Diff rows: old line struck through grey (strike draw 250 ms), new line types in orange, rows 1.2 s apart.",
   "params": "24 themes; 35–45 ms/char",
   "install": "npx hyperframes add code-snippet-dark-modern",
+  "requires": [
+   "npm:hyperframes",
+   "os:macos"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/code-snippet-dark-modern",
@@ -789,6 +849,7 @@
   "how": "~70 ms per char (or one char per beat subdivision on music); rows fade/slide 12 px in 250 ms; non-matching rows fade to 30% and collapse in 400 ms; matches move up with a yellow keyword highlight and a '1 result' label.",
   "params": "70 ms/char; filter 400 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-twoclipping-5cba86",
@@ -821,6 +882,7 @@
   "how": "Bullet lines every ~120 ms after the question bubble. Live log: dark card radius 16 px, green live dot, mono endpoint rows with ✓ and '200' appended every ~120 ms; verb tags OBSERVE/CLICK/SCROLL. Skeleton reply: 3 grey bars (30 px high, 40–70% wide) grow to imply loading.",
   "params": "lines ~120 ms; card radius 16 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-wani-shola-16ca7a",
@@ -853,6 +915,9 @@
   "how": "Component notes-typing (lines 'a|b|c', speed 0.5–2) and the 24.85 s 1080×1920 block notes-reveal (Courier Prime + Permanent Marker). Arabic version: swap the fonts for Arabic faces and type by grapheme.",
   "params": "speed 0.5–2; block 24.85 s 9:16",
   "install": "npx hyperframes add notes-reveal",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/notes-typing/notes-typing.html",
@@ -877,6 +942,7 @@
   "how": "CSS transitions or WAAPI; the error shake is keyframes on x. Animate only transform and opacity (plus colour), never width/height in renders.",
   "params": "press scale 0.97–0.98 in 50–100 ms; hover 1.02; toggle 150–250 ms; expand 200–300 ms; fade 150–300 ms; drawer in 300 / out 250; modal 250 ms .95→1 (out 200); skeleton→content 200–400 ms; check draw 300–500 ms; shake x [0,−10,10,−10,10,0] 0.4 s; arrival bounce spring 200–400 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/feedback-patterns.md",
@@ -905,6 +971,7 @@
   "how": "active: translateY(1px) scale(.985), svg scale(.92); hover (only under @media (hover:hover) and (pointer:fine)): translateY(−1px); inline-end icon translateX(−3px), inline-start 2px; icon action rotate(−7deg) scale(1.06); metric cards lift −2px with icon rotate(−4deg). Transition only colour, background, border, shadow, transform, opacity at 150 ms ease-out. Touch targets ≥ 44 px.",
   "params": "150 ms ease-out; press .985; touch ≥ 44 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-pro/app/globals.css:215",
@@ -931,6 +998,7 @@
   "how": "Press linear scale 1 → PRESS_SCALE (~0.9) power1.in while the cursor compresses with it; release back.out(BOUNCE). Product-UI tokens: press 80 ms, release 140 ms spring k300 d20; the showreel pill flattens into a progress bar (scaleX 2.0 / scaleY .24 in .34 s) that fills linearly 1.1 s while a counter climbs.",
   "params": "press 80 ms; release 140 ms spring 300/20",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/press-release-spring.md",
@@ -957,6 +1025,9 @@
   "how": "Component toggle-flip (direction on|off, label, size 20–70). Theme switch: segmented thumb slides 300 ms easeOutCubic then the whole palette crosses cream → chocolate; sun/moon icon orbits in from 75° at .72 scale over 260 ms spring. Gag variant: 'FULL BODY MODE ON' toggle 250 ms while the frame zooms out 400 ms.",
   "params": "thumb 300 ms; icon orbit 260 ms from 75°",
   "install": "npx hyperframes add toggle-flip",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/toggle-flip/toggle-flip.html",
@@ -987,6 +1058,9 @@
   "how": "Arc rotation 0.8 s → collapse → stroke-dashoffset check draw 250 ms (300–500 ms for hero checks). Component success-check (tint, ring subtle|standard|bold, spin). Pair with a toast or a 'Saved' label swap.",
   "params": "spinner 0.8 s; check 250–500 ms",
   "install": "npx hyperframes add success-check",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/success-check/success-check.html",
@@ -1014,6 +1088,9 @@
   "how": "Form recipe: focus ring, type 16 chars at 70 ms ±20, tick 240 ms, focus jumps on spring 170/20, submit, spinner crossfade 120 ms, toast spring 200/22 held ~2 s. Component input-feedback (status valid|error). Suggestion flow: type 45 ms/char, cursor clicks the pill, border colour change 200 ms.",
   "params": "shake 0.4 s; tick 240 ms; toast hold ~2 s",
   "install": "npx hyperframes add input-feedback",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/input-feedback/input-feedback.html",
@@ -1042,6 +1119,9 @@
   "how": "Shimmer = moving linear-gradient 30% wide, 1.2–1.5 s loop; reveal crossfade + slight scale-in 200–400 ms per block. Loading ladder by wait: < 0.3 s nothing; 0.3–1 s inline spinner; 1–5 s skeleton; 5–30 s determinate bar; > 30 s bar + % + ETA; a blank 600–800 ms reads as broken. Component skeleton-reveal.",
   "params": "shimmer 1.2–1.5 s; reveal 200–400 ms",
   "install": "npx hyperframes add skeleton-reveal",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/skeleton-reveal/skeleton-reveal.html",
@@ -1070,6 +1150,10 @@
   "how": "Island: 120×36 → 300×80 on spring {stiffness 180, damping 16} ≈ 260 ms; content from 180 ms with 60 ms stagger; hold to 2.4 s; collapse 300 ms. Components native-notification-pop (os ios|macos, at 0.3 s), notification-stack (1–5 cards, newest on top, one grows as focus), notification-pileup (count 4–10, speed), badge-pop (elastic count). Blocks notification-cascade (14 s, 9:16) and slack-notification-ad (12 s).",
   "params": "island 260 ms spring 180/16; hold 2.4 s",
   "install": "npx hyperframes add native-notification-pop",
+  "requires": [
+   "npm:hyperframes",
+   "os:macos"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-tool/playbooks/phone.md:41",
@@ -1099,6 +1183,9 @@
   "how": "Measure both layouts, animate transform (never width/height in renders), counter-scale children, crossfade content in 150 ms. Component modal-morph (expand_at 1.2 s, register calm|snappy), card-resize, panel-reveal, menu-morph (hamburger → menu). Single-element morph chain: one container whose width/height/radius/fill are springs retargeted every beat (stiffness ~300, damping ratio ~0.8). Edge-pinned growth uses mask + sheet slide or proxy scaleY with inverse counter-scale.",
   "params": "400–700 ms easeInOutCubic; spring ~300 / ζ 0.8",
   "install": "npx hyperframes add modal-morph",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/modal-morph/modal-morph.html",
@@ -1131,6 +1218,7 @@
   "how": "FLIP 450 ms cubic-bezier(0.2,0.8,0.2,1), stagger 40–60 ms (45 ms cascade). Lines: spring 160/20 with 50 ms offsets; highlight wipe 180 ms with the colour switch at 50%.",
   "params": "450 ms; stagger 40–60 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-melvynx-6cde6c/BRIEF.md",
@@ -1158,6 +1246,7 @@
   "how": "Rail: ::after 3 px bar scaleY(0.2)→1 on a 260 ms spring, opacity 160 ms; mobile bottom nav uses a top bar scaleX .25→1; icon lifts translateY(−2px) scale(1.06). Component tabs-slide-indicator (labels, shape pill|rounded|square).",
   "params": "spring 260 ms; opacity 160 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-pro/app/globals.css:527",
@@ -1183,6 +1272,7 @@
   "how": "Film progress bar in the tested starter: #progress width = t/DURATION × 100%, 14 px, #7ee8d2 (rendered in every proof film). Stepper: 5 circles (18 px) on a 3 px line that fills accent node to node, each node pops into a filled check ~150 ms; mono labels under each. Ring: SVG stroke-dashoffset 1200 ms with Arabic status labels crossfading 150 ms (expand 400 ms easeOutQuint). Segmented step bar: N thin 3 px rounded bars, active one fills linearly. Chips: Mono 21 px/700, radius 14, done = mint text, on = lime #d0ff6a with 34 px glow, bad = coral #ff907a.",
   "params": "bar 14 px #7ee8d2; node pop ~150 ms; ring 1200 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/index.html:46",
@@ -1215,6 +1305,7 @@
   "how": "::before circle + box-shadow 0 0 0 4px <soft colour>; studio green #54d89c with rgba(84,216,156,.12) halo; verified teal, attention amber, default muted. Live pill: pale-green pill with dot pulse 1.2 s loop.",
   "params": "dot 8–9 px; halo 4 px; pulse 1.2 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-pro/app/globals.css:855",
@@ -1243,6 +1334,7 @@
   "how": "One or two per product, always skippable; removal test: if nobody misses it, it is decoration. Build with seeded canvas particles (see PART) — canvas-confetti/tsparticles are installable but use your own seeded burst in renders.",
   "params": "1–2 per product",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14121-microinteractions/references/signature-moments.md"
@@ -1267,6 +1359,7 @@
   "how": "Screen 390×844 (19.5:9); screen radius 12–14% of width; bezel 2–3%; frame radius = screen radius + bezel; island 120×36 at 12 px from top; notch 210×34 r 20. The screen is clipped live DOM/SVG/Canvas at 2× density; island and home indicator painted after the UI; in-screen text ≥ 30 px, callouts ≥ 36 px; message text lives outside the device.",
   "params": "390×844; radius 12–14% W; bezel 2–3%; island 120×36",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/phone.md:17",
@@ -1294,6 +1387,7 @@
   "how": "perspective 1200–1600 px (~1.3× width); yaw ±28°, pitch ±8°; rest yaw −6° to −10°. Rotation ≤ 40°/s for reveals, ≤ 4°/s idle; settle overshoot 1–2°; idle hover 6·sin(2πt/3.2) px (≤ 6 px, period ≥ 3.2 s).",
   "params": "yaw ±28°; pitch ±8°; ≤ 40°/s; hover ≤ 6 px / 3.2 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/phone.md:21",
@@ -1319,6 +1413,9 @@
   "how": "Entrance 700–900 ms: rise 120–160 px, yaw −22°→−8°, opacity done by 250 ms; Remotion spring {damping 18, stiffness 90, mass 1.1} or cubic-bezier(0.16,1,0.3,1). Hero recipe (ms): 0–900 rise 140 px; 350–1550 reflection pass; 600–1300 UI rows 70 ms apart; 1200–1800 headline spring 14/120; 900–4000 push to 1.04 with yaw drift ±1.5°. Seen variants: rise from 40% below on black in 600 ms ease-out cubic; overshoot 1.08 in 700 ms with a 2 px squash land.",
   "params": "700–900 ms; rise 120–160 px; yaw −22→−8°",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/phone.md:33",
@@ -1348,6 +1445,7 @@
   "how": "ctx.transform(cos(rad), sin(rad)·0.12, 0, 1, 0, 0); roundRect clip; drawImage(screenCanvas); glare as a moving linear gradient. Valid below 28° yaw; above that use CSS 3D or a GLTF model.",
   "params": "PHONE 420×900 r 60 bezel 12; shadowBlur 90; yaw < 28°",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/phone.md:146-179",
@@ -1373,6 +1471,10 @@
   "how": "Inside CameraRig; uses easing.ts progress / easeOutExpo; perspective 1400; rotateX 4deg; glare progress over frames 10–36; R 52, BEZEL 12, frame #15171c.",
   "params": "perspective 1400; glare f10–36",
   "install": "cd kosif-tool/starters/remotion && npm install",
+  "requires": [
+   "npm:remotion",
+   "npm:react"
+  ],
   "license": "Remotion برخصة الشركة: مجانية للأفراد والفرق الصغيرة، وتحتاج ترخيصًا للشركات الأكبر / Remotion company license — free for individuals and small teams, paid above that.",
   "proof": [
    "kosif-tool/playbooks/phone.md:106-143",
@@ -1397,6 +1499,7 @@
   "how": "A yaw −8°→+28° and slide 220 px; B +30°→+8°, scale 0.9→1 over 1400 ms cubic-bezier(0.65,0,0.35,1); specular pass 500–700 ms; shared element 700–1000 ms; settle with a 1.5° overshoot spring 16/100. Browser→phone morph alternative: one tween of width/height/radius in 600 ms with content reflowing, not scaling.",
   "params": "1400 ms; shared element 700–1000 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/phone.md:79-87",
@@ -1421,6 +1524,9 @@
   "how": "Window radius 12 px, shadow 0 20–30px 60px rgba(0,0,0,.12), slide up 20 px + fade 500 ms; inner grid scrolls 600 px over 3 s ease-in-out. macOS frame: black bezel band, navy menu bar ~60 px on a 1080 stage, three coloured dots, date/time. Component browser-device-stage (chrome browser|window|phone, screen slot with skeleton default, optional crossfade to a second screen at swap_at).",
   "params": "radius 12 px; slide 20 px / 500 ms",
   "install": "",
+  "requires": [
+   "os:macos"
+  ],
   "license": "",
   "proof": [
    "style:pm-ai-baymax-0ef9dd",
@@ -1452,6 +1558,9 @@
   "how": "Fan-out: duplicate into 5 phones translating outward with rotation ±6°/±12°, outer ones slightly lower and smaller, soft shadow, 600 ms spring, 40 ms stagger from the centre. Components multi-device-splay and device-frame-stage (phone|tablet, cutout none|island|notch, body graphite|silver, idle float).",
   "params": "rotate ±6/±12°; 600 ms; 40 ms stagger",
   "install": "npx hyperframes add multi-device-splay",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/multi-device-splay/multi-device-splay.html",
@@ -1480,6 +1589,13 @@
   "how": "Blocks vfx-iphone-device (15 s), ios26-liquid-glass (15 s home screen with liquid-glass icons), macos-tahoe-liquid-glass (15 s). Engine: Three.js 0.147 from CDN + HTML-in-Canvas (canvas layoutsubtree + ctx.drawElementImage — an experimental Chromium API: verify it in this Chromium before promising) + GSAP paused timeline.",
   "params": "15 s; 1920×1080",
   "install": "npx hyperframes add vfx-iphone-device",
+  "requires": [
+   "chromium",
+   "npm:three",
+   "npm:gsap",
+   "npm:hyperframes",
+   "os:macos"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT). Apple-style device models are look-alikes — never imply Apple endorsement.",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/vfx-iphone-device/vfx-iphone-device.html",
@@ -1507,6 +1623,9 @@
   "how": "Playwright page.screenshot with deviceScaleFactor 2 (Playwright + Chromium installed here). The KOSIF approved mockups (iMac dashboard, four iPhones on a stone plinth, audit laptop, 1448×1086 WebP) are the visual reference for Arabic RTL product composites: navy rail, white cards, blue/green bars.",
   "params": "2× DPR; reference 1448×1086",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/product-photo-mockups/SKILL.md:24",
@@ -1533,6 +1652,7 @@
   "how": "CSS 3D rotateY 700 ms; swap content exactly at the 90° frame (backface hidden); keep tilt ≤ ±8° on the other axis.",
   "params": "700 ms; swap at 90°",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-cansincengiz-me-cf68dd/BRIEF.md"
@@ -1556,6 +1676,7 @@
   "how": "Scroll −720 px in 800 ms cubic-bezier(0.45,0,0.15,1), bg parallax −24 px; callouts appear only after the scroll ends (+150 ms). Phone version: card-per-beat steps of 450 ms ≈ 62% of the screen height, hold ≥ 600 ms, device counter-rotates 2°, ≤ 5 cards, never linear scroll over 2 s.",
   "params": "−720 px / 800 ms; hold ≥ 600 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:91-102",
@@ -1583,6 +1704,7 @@
   "how": "Rows 60–90 ms stagger; callout +120 ms; leader 260 ms cubic-bezier(0.16,1,0.3,1); mono caps labels; dotted variant dash 2/4 drawn in 400 ms, 120 ms stagger from input chips into the phone UI.",
   "params": "leader 260 ms; stagger 60–90 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/phone.md:39",
@@ -1612,6 +1734,7 @@
   "how": "Push cubic-bezier(0.22,1,0.36,1) 900 ms, max 1.6×, 300 ms hold; focus zoom up to 1.4× needs a 2× render of the UI (1→1.3 in the modal recipe). Cursor 24 px quad-bezier 350–450 ms, click squash 0.9 in 90 ms.",
   "params": "900 ms; ≤ 1.6×; render 2× for zoom",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-techyoutbe-945b56/BRIEF.md",
@@ -1638,6 +1761,9 @@
   "how": "Times (ms): 0 / 560 / 700 / 780 / 860 / 880 / 1000 / 1600 / 2200. Remotion CursorPress: travel 17 frames, pressAt 21, ripple 48 px, accent #19c37d; modal at pressAt+5; focus 1→1.3. Arrival recipe before it: 0–520 rise, chrome 400–900 with 60 ms stagger, 6 cards 700–1300 at 50 ms, push 1.05 over 4 s.",
   "params": "press at 700–780 ms; modal +5 frames",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:77-89",
@@ -1663,6 +1789,9 @@
   "how": "perspective + rotateX/rotateY; radius 24 px; shadow 40px 30px 80px rgba(0,0,0,.45); one paused GSAP timeline with fromTo explicit states, transforms/opacity only. Pan variant: rotateX 20° rotateY −15°, translate the parent across in 3 s ease-in-out. Use as a contrast moment, not the main idea — tilt cards are a tired default.",
   "params": "rotateX 20° / rotateY −15°; 3 s pan",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/3d-page-scroll.md",
@@ -1692,6 +1821,7 @@
   "how": "perspective 1200 px; 3–5 columns of skeleton post cards; blur 0–8 px by |z − focus|; dolly 2 s. Wall-of-thumbnails variant: dim all but the chosen to 0.3 opacity and scale it 1.05.",
   "params": "perspective 1200; blur 0–8 px; dolly 2 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-robj3d3-b18fad",
@@ -1721,6 +1851,7 @@
   "how": "0–1 s product, 1–4 s lens pass, 4–6 s detail hold. Enlarged copy inside clip-path:circle() whose centre follows the lens path, with compensating background-position. Never present invented detail as real photography.",
   "params": "6 s; lens pass 3 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-product-ads.md"
@@ -1745,6 +1876,7 @@
   "how": "Pulse 1 s loop; tooltip pop 200 ms with Back/Next buttons. Split variant: chat bubbles on the left (40%) drive the product UI on the right (60%), bubble stagger ~600 ms. Component onboarding-stepper-flow (milestone rail + step card).",
   "params": "pulse 1 s; pop 200 ms; split 40/60",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-jhylee95-e1152f",
@@ -1772,6 +1904,9 @@
   "how": "clip-path: inset() on the top layer, divider x 0→100% ease-in-out 1.2 s, rest at 50%. Components before-after-wipe (rest_split, wipe_at 0.25 s, labels) and comparison-split (muted before vs vivid after, horizontal|vertical). Arabic: the 'after' enters from the right.",
   "params": "wipe 1.2 s; rest 50%",
   "install": "npx hyperframes add before-after-wipe",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/before-after-wipe/before-after-wipe.html",
@@ -1799,6 +1934,9 @@
   "how": "Advance on cues with a velocity-matched throw and long-tail catch; caption swaps with each stop. Seen: covers sliding x with 80 ms stagger and slight 3D tilt; cropped-edge strip moving ~120 px/s; slot-reel portrait scroller decelerating onto one card in 1.0 s (blur 0→30→0 px, overshoot 1.1). Components screen-flow-carousel, sticky-mock-swap; block app-showcase (three floating phone screens, 5.5 s).",
   "params": "strip ~120 px/s; slot reel 1.0 s",
   "install": "npx hyperframes add screen-flow-carousel",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/screen-flow-carousel/screen-flow-carousel.html",
@@ -1829,6 +1967,7 @@
   "how": "Stagger 80–100 ms, radius 20 px. Design-system bento: 12-column grid, 24 px gutter; modules = frame counter 'f 047/900' with progress, palette swatches, 'Aa' type specimen, easing plots (expo.out, power3.inOut, back.out(1.7)), BPM meter.",
   "params": "stagger 80–100 ms; radius 20 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-sudo-kiran-4f8b59",
@@ -1858,6 +1997,7 @@
   "how": "H = K3.hud(root, W, H, {title, subtitle, panels, accent, ink, paper, font, seed}); H.addCallout({anchor, label, title, text, side, measure}); H.update(t, camera, {stage, side, duration}) — call camera.updateMatrixWorld() first. Floor: K3S.stageDisc({radius .32, color #9dffb4}) with grid, rings, 36 ticks and a uScan sweep. Lighter version: component telemetry-hud (mono label:value lines, corner brackets).",
   "params": "lime #a8ff3c, ink #0f1512, paper #f4f2ec; IBM Plex Mono; top 8.5% H, bottom 20% H",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/lab-kit.js:207",
@@ -1885,6 +2025,9 @@
   "how": "Tracking box: #facc15, corners 48×48 px with 6 px border, confidence 95–99% (seeded), box derived from the target each frame. Scanner: corners 14 px stroke r12 snap in 250 ms back-out, green glowing line sweeps 900 ms, then lavender line highlights #c9cdf5 @0.6 with 70 ms stagger. Beat lock: an outlined box with 0 0 24px #e8501f glow hops cards per beat, overshoots, locks, dims the rest to 30%. Component camera-scan-gate ends on 'Verified'.",
   "params": "corners 48 px / 6 px; sweep 900 ms",
   "install": "",
+  "requires": [
+   "tesseract"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/ai-tracking-box.md",
@@ -1916,6 +2059,7 @@
   "how": "Dot grid 24 px on #e8e7e3; file chip top-right, zoom % badge bottom-left; move a container (scale + translate) instead of cutting. Selection: 1.5 px accent rect, 4 (or 8) square handles, filled tag below, appear 120–150 ms. Blueprint overlay: duplicate the UI as 1 px cyan #3fb6d2 strokes with 8% fill and crossfade 400 ms. Component vector-editor-rig (pen path, anchors, bezier handles).",
   "params": "dot grid 24 px; handles appear 120–150 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-kikelopezdesign-7cc9e8",
@@ -1947,6 +2091,10 @@
   "how": "Write your own Playwright script (Playwright + Chromium are installed here) mirroring the step grammar: wait, waitFor selector/text/js, click, tap, drag (hold), hover, held keys, type, wheel scroll over time, goto, caption → captions.vtt. Frames the page did not repaint are held and counted, never interpolated; warn under 20 fps. The atlas record-page.mjs is reference only (needs puppeteer-core; do not run unreviewed). Prep: native resolution, enlarged cursor, editor font ≥ 16 pt, notifications off, disposable data, lead-in and lead-out.",
   "params": "settle 1.5 s; glide 450 ms; type 70 ms/key; caption 3 s; step timeout 20 s; max 600 s; phone = 360×640 at 3×",
   "install": "",
+  "requires": [
+   "node",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video/references/RECORD.md",
@@ -1973,6 +2121,11 @@
   "how": "npx hyperframes capture https://site -o ./capture --json [--skip-vision] [--max-screenshots 12] [--timeout 60000]; gate on ok:true and no capture/BLOCKED.md — a failed capture is a hard stop, never invent a page. Then capture → design → script → storyboard → voice → build → validate (product-launch-video skill, 30–90 s sweet spot, up to ~3 min). Tone mixes: high impact = per-word type + velocity cuts + counters; premium = variable font + Lottie + slow cuts. Vision captions need an external service.",
   "params": "sweet spot 30–90 s",
   "install": "npx hyperframes capture <url> -o ./capture --json",
+  "requires": [
+   "chromium",
+   "npm:hyperframes",
+   "npm:lottie"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/packages/cli/src/commands/capture.ts",
@@ -1999,6 +2152,9 @@
   "how": "kmotion brag init DIR|URL → plan → build → deliver (scripts/launch.py, covered by tests/test_launch.py). Basma studio alternative: AGENT.TOOLS.launch_film {product, pitch, duration} writes hook → pain → reveal → 3 features → CTA and cuts uploaded recordings on the beat under big kinetic titles (needs the app's AI service).",
   "params": "story: hook · pain · reveal · 3 features · CTA",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/launch.py",
@@ -2024,6 +2180,11 @@
   "how": "Leave a little time before/after the action; cut waits only where it does not misrepresent the experience; one visual focus at a time; words only when the picture can't say it. Capture with Playwright recordVideo, edit/reframe with ffmpeg, overlays with render_html.cjs. Deliver 16:9, 4:5, 9:16 and 1:1.",
   "params": "formats 16:9 · 4:5 · 9:16 · 1:1",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/215-feature-video/SKILL.md"
@@ -2047,6 +2208,9 @@
   "how": "File key after /design/ or /file/; node-id 123-456 == 123:456; auto-layout → flexbox; RGBA floats 0–1 → hex; REST /v1/images/:key?ids=…&format=png&scale=2. Needs a Figma token or the Figma MCP (external service).",
   "params": "PNG export scale 2; variables per light/dark",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1381-figma/3252-figma-implementing",
@@ -2071,6 +2235,11 @@
   "how": "agent-browser record start demo.webm --cursor --contact-sheet --fps 60 (needs the agent-browser install + ffmpeg). Default 30 fps; 60 for motion studies; 1–15 for long timelines. In this container prefer your own Playwright script (UI-72); desktop recorders (wf-recorder on Wayland, OBS, x11grab) are not usable headless here.",
   "params": "30 fps default; 60 motion; 1–15 long",
   "install": "npm i -g agent-browser",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1412-agent-browser/3350-agent-browser/references/video-recording.md"
@@ -2094,6 +2263,9 @@
   "how": "docker compose run video-guide-creator validate|generate guides/<slug>.yml (Edge TTS voices; edge-tts looks blocked from this container). Rule worth keeping: narration describes the action before it happens; brand presets hold colours, voice and logo.",
   "params": "",
   "install": "",
+  "requires": [
+   "docker"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2836-video-guide/11537-video-guide-creator/SKILL.md"
@@ -2117,6 +2289,7 @@
   "how": "Write them into STYLE.md first. Spacing 4, 8, 16, 24, 32, 48, 64; type 12–36 on a ~1.2 scale (hero 36 px lh 1.1, body 16 px lh 1.75); measure 45–75ch. Shadows: sm 0 1px 2px .05 · md 0 4px 6px .1 · lg 0 10px 15px .1 · xl 0 20px 25px .15; product tiers 0 2px 8px rgba(0,0,0,.12) → 0 24px 64px rgba(0,0,0,.35).",
   "params": "8 px grid; radii 8/16/24; 4 shadow tiers",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:18",
@@ -2142,6 +2315,10 @@
   "how": "backdrop-filter blur(22–28px) saturate(150%) (40 px for modals); fill rgba(255,255,255,.05–.08); 1 px border gradient .12→.02 plus a 1 px inner highlight; box-shadow 0 24px 80px rgba(0,0,0,.25). Dark backgrounds only, max 3 cards, cards rise y 40→0 and unblur 12→0 with 80 ms stagger. Proven here: four glass cards on three parallax depths in the glass-luxury-logo film (13/13 checks). Needs Chromium's backdrop-filter. HyperFrames liquid-glass blocks need WebGPU/HTML-in-Canvas — unverified here.",
   "params": "blur 22–28 px (40 modals); fill 5–8%; shadow 0 24px 80px .25",
   "install": "",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/glass-luxury-logo/README.md",
@@ -2169,6 +2346,7 @@
   "how": "html[data-look] × [data-theme] × [data-brand]; looks: kosif, cobalt, navygold, najd, heritage, executive, audit, midnight, notebook, aurora, vivid, oasis, graphite, onyx (+ night pairs, auto); radii sharp 4/6/8 or round 12/16/22; --sk-zoom; data-contrast; screens never hard-code colour. KPI tile: white on mist, soft shadow, 4 px tone edge on the reading side, radius 18 px.",
   "params": "14 looks; radii 4/6/8 or 12/16/22",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/layouts/shell.js:29",
@@ -2196,6 +2374,7 @@
   "how": "16:9, 2.2 words/s, Readex Pro; bg #05050A, light #F8F7FF, ink #F5F3FF, grey #8B88A6, violet #A88BFF/#6C3BFF, blue #2F5BFF, pink #D946EF, orange #FF6A1A. Modes cycle big → prompt → orb → capsule → end; typing + click SFX on prompt lines, impact on the end card. Typewriter with a 3 px purple caret at ~18 chars/s while the parent scales 2.5→1 from the first character (camera pull-back synced to typing).",
   "params": "2.2 wps; ~18 cps; pull-back 2.5→1",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "app/public/js/10_studio.js:794",
@@ -2223,6 +2402,7 @@
   "how": "4–6 px outline #2a1711, radius 24–40 px, same-hue shadow offset y 6 px; brutalist variant: 2 px black border, header strip, mono label.",
   "params": "outline 4–6 px; shadow offset 6 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-thilina-a-891c09",
@@ -2250,6 +2430,9 @@
   "how": "npx hyperframes add <name> copies compositions/components/<name>.html; mount on a class='clip' div with data-composition-src + data-start/data-duration/data-track-index; overrides as JSON in data-variable-values; colours come from 18 theme tokens (accent green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch. Preview npx hyperframes preview, render npx hyperframes render. The vendored copies are readable locally for study. Table below.",
   "params": "",
   "install": "npx hyperframes add <component>",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "مكوّنات HyperFrames برخصة Apache-2.0، لكنها تحمّل GSAP 3.14 من CDN — GSAP برخصة «بلا مقابل» القياسية، ليست MIT / HyperFrames components are Apache-2.0 but load GSAP 3.14 from a CDN under GSAP's standard no-charge license (not MIT).",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/agent-cursor/registry-item.json",
@@ -2275,6 +2458,7 @@
   "how": "Pick from blueprints-index.md by role: cursor-ui-demo (4.0–12.9 s), device-surface-showcase (5–11.3 s), prompt-type-submit-generate (5.2–12 s), agent-progress-theater (4.2–11.6 s), panel-edit-live-sync (5.3–11.9 s), transcript-scroll-artifact-reveal (5–11.8 s), zoom-out-workspace-reveal, cta-morph-press. 13 runnable 1920×1080 examples (hook-counter-burst 3.5 s … demo-page-scroll-spotlight 9 s) are the ground truth.",
   "params": "durations 3.5–12.9 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/cursor-ui-demo.md",
@@ -2300,6 +2484,9 @@
   "how": "python3 tools/kosif.py scaffold saas-demo <dir> (or ui-micro, glass-ui); python3 tools/kosif.py list --category product-ui (82 entries) / --category phone (8). saas-demo: cursor 380–700 ms cubic-bezier(.2,.8,.2,1), press 80/140 ms, 8 px grid. ui-micro: hover 120–160 ms, press 0.96, ripple 0→48 px in 320–400 ms, focus zoom ≤ 1.4× with a 2× render.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/styles/saas-demo/STYLE.json",
@@ -2329,6 +2516,9 @@
   "how": "build.cjs templates an Arabic RTL page; rAF advances by min(dt, 0.1 s) and auto-stops at the end; window.render(t) clamps; window.setPlaying(bool); ?capture hides the chrome for rendering. Ran here: node player-test.cjs → PASS (initialisation, reduced motion, seek, deterministic frame, play/pause, restart, automatic stop, bounds).",
   "params": "theme #060d17/#08121c, focus ring #ffb769, accent #71e5d2",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/build.cjs:6",
@@ -2354,6 +2544,7 @@
   "how": "Edits stored as '<id>.@box' = [x,y,w,h] in % (one decimal), 14 px corner grab radius, uniform scale ≥ 0.1. Keys bound to ev.code (KeyE, KeyN, BracketLeft/Right) so they survive the Arabic layout: Space play, ←/→ one frame, Shift+←/→ one second, [ ] scene, E edit, N note; speeds ½×/1×/2×; studio app keeps 60-step undo/redo.",
   "params": "box in % of frame; undo depth 60",
   "install": "",
+  "requires": [],
   "license": "MIT (Motion OS)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:600",
@@ -2380,6 +2571,7 @@
   "how": "Hero (≤ 10-word outcome headline, one CTA, product in use) → social proof → 3–6 benefits → 3 steps → offer → FAQ → final CTA; container max 72rem; H1 clamp(28px,5vw,44px); breakpoints 360/768/1024/1280; 375 px without sideways scroll. Budget: LCP ≤ 2.5 s, CLS ≤ 0.1, INP ≤ 200 ms, JS ≤ 170 KB gz. @media (hover:hover) and (pointer:fine) for hover lifts; touch targets ≥ 44 px; respect prefers-reduced-motion.",
   "params": "LCP ≤ 2.5 s; CLS ≤ 0.1; INP ≤ 200 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-web-design/references/web-playbook.md",
@@ -2408,6 +2600,9 @@
   "how": "Size 128–176 px at 1920 wide; hover 150–250 ms; press 1 → 0.96 → 1; state change 2 frames after the click; drag = lift + arc + target highlight + shrink into the slot; touch indicator 56–72 px. Headless browser recordings do not draw the pointer (seen here, QA-X02), so draw the cursor as its own layer.",
   "params": "128–176 px; hover 150–250 ms; press 0.96; +2 frames to state change",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md",
@@ -2439,6 +2634,7 @@
   "how": "Exploded layers at z = k·(70 + 150·i); stagger in-plane movement only, 0.03 s per layer; keep text layers frontal (counter-transform) so they stay readable.",
   "params": "z = k·(70 + 150 i); 0.03 s per layer",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
@@ -2469,6 +2665,11 @@
   "how": "newContext({recordVideo: {dir, size: {width: 1280, height: 720}}}); drive the page (mouse.move with steps, down/up, typing); close the context to flush the file; `ffmpeg -i demo.webm -c:v libx264 -pix_fmt yuv420p -r 30 demo.mp4`. Ran here (V9) with the preinstalled Node Playwright and its bundled Chromium: VP8 1280×720, 25 fps, 2.2 s. Limits: real-time capture (not seek(t), so not deterministic) and no pointer drawn — draw a cursor layer (UI-X01) or use the seek(t) capture pipeline for films.",
   "params": "1280×720 VP8 25 fps; convert to H.264 30 fps",
   "install": "npm i -D playwright && npx playwright install chromium",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "chromium"
+  ],
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa); Playwright Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
@@ -2499,6 +2700,10 @@
   "how": "Import from motion/react; durations from a motionTokens object (instant / fast / normal / slow / crawl); springs from five presets (snappy, gentle, bouncy, instant, release); `initial` equals the server-rendered state; reduced motion → opacity only; never animate width/height/top/left/margin/padding. Polish: enter = opacity + small translateY (+ blur), exit shorter (~150 ms); press scale 0.96; icon swap = crossfade with scale and blur; never `transition: all`; tabular-nums for counters and timers; text-wrap: balance on headings; concentric radii (outer = inner + padding); hit areas ≥ 40–44 px.",
   "params": "exit ~150 ms; press 0.96; hit area ≥ 44 px",
   "install": "npm i motion",
+  "requires": [
+   "npm:animejs",
+   "npm:react"
+  ],
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa); motion library MIT",
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/motion-foundations/SKILL.md",

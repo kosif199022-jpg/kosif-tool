@@ -11,6 +11,10 @@
   "how": "f=ImageFont.truetype(path,64,layout_engine=ImageFont.Layout.RAQM); draw.text((right_x,y), text, font=f, direction='rtl', language='ar', anchor='ra'). Check PIL.features.check('raqm') first (True, raqm 0.10.5, on 2026-10-16). Use bundled OFL fonts (Amiri, Cairo, Tajawal) because system Arabic fonts are poor.",
   "params": "anchor 'ra' = right edge, ascender line; 'la' for LTR",
   "install": "pip install pillow",
+  "requires": [
+   "pip:pillow",
+   "fonts:arabic"
+  ],
   "license": "MIT-CMU",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -41,6 +45,12 @@
   "how": "Rule: raw string for raqm/HarfBuzz engines (Pillow 12, matplotlib 3.11, browsers, LibreOffice, weasyprint); reshape + bidi only for reportlab or builds without raqm. Contact panel 4 shows both lines side by side.",
   "params": "",
   "install": "",
+  "requires": [
+   "libreoffice",
+   "pip:pillow",
+   "pip:matplotlib",
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
@@ -70,6 +80,10 @@
   "how": "apt-get install -y tesseract-ocr tesseract-ocr-ara (6 s); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 6'). Proof: clean naskh, sans and English lines read at similarity 0.99 in 0.41 s; mean word confidence 90.6. Strip U+200E/U+200F marks from the output.",
   "params": "--psm 6 block, 7 single line, 4 columns; 300 dpi for scans",
   "install": "apt-get install tesseract-ocr tesseract-ocr-ara && pip install pytesseract",
+  "requires": [
+   "python3",
+   "tesseract"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
@@ -100,6 +114,10 @@
   "how": "Measured (56 px, psm 7): Arabic-Indic digits 0.51-0.84 similarity (a phone number came back as garbage); the same line with Western digits 1.0; Reem Kufi merged two words. Mitigations: -l ara for pure Arabic lines (ara+eng can emit Latin junk); range/checksum checks; ask the user to confirm numbers; try tessdata_best (untested).",
   "params": "",
   "install": "",
+  "requires": [
+   "tesseract",
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -129,6 +147,11 @@
   "how": "median 3 -> Otsu (inverted) -> morph open 2x2 -> dilate with a 60x5 kernel -> contours > 5000 px -> cv2.minAreaRect angles (subtract 90 when w<h) -> median -> warpAffine back. Proof: true 12°, estimated 12.07°, OCR 0.598 -> 0.912.",
   "params": "",
   "install": "pip install opencv-python-headless",
+  "requires": [
+   "chromium",
+   "tesseract",
+   "pip:opencv"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -157,6 +180,9 @@
   "how": "Score each variant against ground truth (difflib ratio on NFKC text). Proof: grayscale deskew 0.912, the same plus adaptiveThreshold(31, C=15) 0.814. Tesseract's LSTM engine works on grayscale; binarise only if a measurement shows it helps.",
   "params": "",
   "install": "",
+  "requires": [
+   "tesseract"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -184,6 +210,11 @@
   "how": "pip install torch --index-url https://download.pytorch.org/whl/cpu (21 s, 769 MB in the arsenal run) then pip install easyocr; reader=easyocr.Reader(['ar','en']). Model download and accuracy not tested here.",
   "params": "",
   "install": "pip install easyocr",
+  "requires": [
+   "tesseract",
+   "pip:torch",
+   "network"
+  ],
   "license": "Apache-2.0",
   "proof": [],
   "proof_scope": "none",
@@ -209,6 +240,10 @@
   "how": "cv2.Canny(gray,80,160); cv2.threshold(..., THRESH_OTSU); cv2.getRotationMatrix2D + warpAffine(borderValue=255); cv2.findContours. Note: opencv-python-headless is version 5.0 (major bump), so check the API before writing code.",
   "params": "",
   "install": "pip install opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:opencv"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
@@ -238,6 +273,11 @@
   "how": "Pillow save: PNG optimize, WebP quality 80, AVIF quality 50, JPEG 85; measure with cv2.PSNR and skimage structural_similarity(channel_axis=2). Proof (640x480 synthetic): 12.0 / 5.5 / 3.3 / 15.8 KB; WebP PSNR 39.7 dB, SSIM 0.982.",
   "params": "",
   "install": "pip install pillow scikit-image opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:pillow",
+   "pip:opencv"
+  ],
   "license": "MIT-CMU / BSD-3-Clause / Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -267,6 +307,11 @@
   "how": "Z=img.reshape(-1,3).astype(np.float32); cv2.kmeans(Z, k, None, (EPS+MAX_ITER,30,0.5), 4, cv2.KMEANS_PP_CENTERS); sort centres by cluster size. Proof: k=4 recovered three disc colours within 0.9-2.3 RGB units. Gradients need a larger k or a LAB colour space.",
   "params": "",
   "install": "pip install opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:numpy",
+   "pip:opencv"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -295,6 +340,10 @@
   "how": "qrcode.make(payload, box_size=8, border=4).save(p); cv2.QRCodeDetector().detectAndDecode(cv2.imread(p)) must equal the payload. Barcode: barcode.get('ean13', digits, writer=ImageWriter()).save('bc').",
   "params": "",
   "install": "pip install qrcode python-barcode opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:opencv"
+  ],
   "license": "BSD / MIT / Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
@@ -324,6 +373,9 @@
   "how": "convert in.png -resize 50% -colorspace Gray -unsharp 0x1 out.png; identify -format '%w %h %[colorspace]' out.png -> 750 235 Gray (proof). Use mogrify for in-place batches on copies only.",
   "params": "",
   "install": "apt-get install imagemagick (6.9.12 present)",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "ImageMagick License (Apache-2.0-style)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
@@ -353,6 +405,10 @@
   "how": "cairosvg.svg2png(bytestring=svg, write_to='o.png', output_width=1024). For Arabic text inside SVG prefer Chromium rendering (APP-05 snap) because it has full shaping; Arabic in cairosvg was not tested.",
   "params": "",
   "install": "pip install cairosvg",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
   "license": "LGPL-3.0-or-later",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
@@ -380,6 +436,10 @@
   "how": "Build a contact sheet (Pillow tiles, quantize to stay under 300 KB), Read it, and check Arabic joining, direction, cropping and overlaps. In this session, looking caught a reversed matplotlib title, a chart split over two pages, and a wrong filter name.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:pillow",
+   "pip:matplotlib"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
@@ -410,6 +470,10 @@
   "how": "numpy: 0.2*sin(2*pi*440*t) for 2 s, zeros for 1 s, decaying 1 kHz clicks every 0.5 s (120 BPM); soundfile.write(p, sig, 48000, subtype='PCM_16').",
   "params": "",
   "install": "pip install numpy soundfile",
+  "requires": [
+   "pip:numpy",
+   "pip:soundfile"
+  ],
   "license": "BSD-3-Clause",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -437,6 +501,10 @@
   "how": "f0=librosa.yin(y, fmin=100, fmax=1000, sr=sr); np.median(f0). Proof: 440 Hz tone -> 440.6 Hz. librosa is 1.0 now; check the API before writing from memory. librosa ran in an earlier session's venv (2026-10-16) and is not installed in the current container: `pip install librosa` first.",
   "params": "",
   "install": "pip install librosa",
+  "requires": [
+   "pip:numpy",
+   "pip:librosa"
+  ],
   "license": "ISC",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
@@ -466,6 +534,9 @@
   "how": "librosa.onset.onset_detect(y=seg, sr=sr, units='time'); tempo = 60/median(diff). Start the window about 0.1 s before the first hit, because an onset at sample 0 is missed (first run found 5 of 6). Proof: 6 onsets, 0.501 s spacing (119.7 BPM). librosa ran in an earlier session's venv (2026-10-16) and is not installed in the current container: `pip install librosa` first.",
   "params": "",
   "install": "pip install librosa",
+  "requires": [
+   "pip:librosa"
+  ],
   "license": "ISC",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -495,6 +566,10 @@
   "how": "pyln.Meter(sr).integrated_loudness(x); ffmpeg -i f -af ebur128=peak=true -f null - (read the last 'I:'). Proof: -13.96 vs -13.9 LUFS on the normalised file.",
   "params": "",
   "install": "pip install pyloudnorm",
+  "requires": [
+   "ffmpeg",
+   "pip:pyloudnorm"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md",
@@ -524,6 +599,9 @@
   "how": "Pass 1: loudnorm=I=-14:TP=-1:LRA=11:print_format=json -f null. Pass 2: the measured_* values + offset + linear=true + print_format=json, and LRA set above the measured LRA (max(11, input_lra+1)); assert normalization_type == 'linear'. Proof: -18.05 -> -13.96 LUFS, linear. With LRA=11 and a measured LRA of 17.8 the mode went dynamic.",
   "params": "I -14, TP -1 dBTP; streaming platforms vary (-14 to -16)",
   "install": "ffmpeg (6.1.1 present)",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "LGPL/GPL (ffmpeg build)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -552,6 +630,9 @@
   "how": "ffmpeg -i f -af silencedetect=noise=-50dB:d=0.5 -f null - ; parse silence_start / silence_end. Proof: 2.0 -> 3.0 s found exactly. Tune noise to the room tone (-35 to -50 dB).",
   "params": "",
   "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "LGPL/GPL",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -581,6 +662,9 @@
   "how": "ffmpeg -i f -filter_complex showwavespic=s=1200x200:colors=#2a78d6 -frames:v 1 w.png ; ffmpeg -i f -lavfi showspectrumpic=s=1200x300:legend=0 s.png. The filter is showwavespic; there is no 'showwavespng' (the first run failed on that name).",
   "params": "",
   "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "LGPL/GPL",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -610,6 +694,10 @@
   "how": "pip install pydub audioop-lts (without it: ModuleNotFoundError 'pyaudioop'); AudioSegment.from_wav(p)[:2000].fade_in(200).fade_out(400).export('o.mp3', format='mp3', bitrate='128k'). Proof: ffprobe 2.040 s (the MP3 encoder adds padding).",
   "params": "",
   "install": "pip install pydub audioop-lts",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "MIT / PSF",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -638,6 +726,9 @@
   "how": "ffmpeg -i in.wav -c:a aac -b:a 96k out.m4a; ffprobe -v error -show_entries format=duration -of csv=p=0 out.m4a. Proof: 6.000 s for a 6.0 s source, 34 KB (MP3 via pydub: 2.040 s for 2.0 s, encoder padding). Never overwrite the user's original.",
   "params": "",
   "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "LGPL/GPL",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
@@ -667,6 +758,9 @@
   "how": "Pedalboard([Compressor(), Reverb()])(audio, sr) (arsenal run). Keep the original and render a copy.",
   "params": "",
   "install": "pip install pedalboard",
+  "requires": [
+   "python3"
+  ],
   "license": "GPL-3.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
@@ -695,6 +789,10 @@
   "how": "pip install faster-whisper; WhisperModel('small', device='cpu', compute_type='int8').transcribe(p, language='ar', word_timestamps=True). Models download from huggingface.co (reachable on 2026-10-16). Not run in this proof; see the motion audio-sync family for the caption pipeline.",
   "params": "",
   "install": "pip install faster-whisper",
+  "requires": [
+   "pip:faster-whisper",
+   "network"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -721,6 +819,9 @@
   "how": "pip install demucs (needs torch); demucs --two-stems=vocals in.wav. Expect minutes per track without a GPU. Not run here.",
   "params": "",
   "install": "pip install demucs",
+  "requires": [
+   "pip:torch"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -746,6 +847,9 @@
   "how": "pip install rembg; rembg i in.png out.png. The model downloads on first use; not tested here. The paid service alternative is MEDIA-29.",
   "params": "",
   "install": "pip install rembg",
+  "requires": [
+   "pip:rembg"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -771,6 +875,9 @@
   "how": "Pillow: Image.open(p).getexif(); strip by re-saving without exif. Full tool: apt-get install libimage-exiftool-perl; exiftool -all= copy.jpg. Not run here.",
   "params": "",
   "install": "apt-get install libimage-exiftool-perl",
+  "requires": [
+   "pip:pillow"
+  ],
   "license": "Artistic/GPL (exiftool)",
   "proof": [],
   "proof_scope": "none",
@@ -797,6 +904,10 @@
   "how": "Check the tool list for mcp__<server>__generate_image / upscale_image / remove_background / dubbing; read the connector's own instructions; quote the cost first; never call paid tools without the user's intent. No GPU locally, so local diffusion is impractical.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:higgsfield",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -824,6 +935,9 @@
   "how": "pip install pillow-heif; from pillow_heif import register_heif_opener; register_heif_opener(); then Image.open('x.heic'). AVIF works natively in Pillow 12 (proven in MEDIA-09); HEIC was not tested.",
   "params": "",
   "install": "pip install pillow-heif",
+  "requires": [
+   "pip:pillow"
+  ],
   "license": "BSD-3-Clause",
   "proof": [],
   "proof_scope": "none",
@@ -837,5 +951,121 @@
   ],
   "section": "خدمات وأدوات ثقيلة — Services & heavy tools",
   "source": "session-2026-10-16:general-arsenal.md (metadata)"
+ },
+ {
+  "id": "MEDIA-31",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "music21: بناء المدونات الموسيقية وقراءتها وتحليل المقامات والأوتار",
+  "name_en": "music21: Build, parse and analyse scores (MIDI/MusicXML): keys, chords, voice leading",
+  "status": "proven",
+  "what": "بناء المدونات الموسيقية وقراءتها وتحليل المقامات والأوتار. — Build, parse and analyse scores (MIDI/MusicXML): keys, chords, voice leading. (music21, ★2.6k, BSD-3-Clause).",
+  "when": "music notation tasks the user has the right to run",
+  "how": "`pip install music21`. Verified here 2026-10-18: 10-note line analysed as C major (music21 10.5.0). Licence note: permissive.",
+  "params": "",
+  "install": "pip install music21",
+  "requires": [
+   "pip:music21"
+  ],
+  "license": "BSD-3-Clause",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "Music notation",
+   "music21",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/cuthbertLab/music21"
+ },
+ {
+  "id": "MEDIA-32",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "MediaPipe: تتبع الوجوه واليدين ووضعية الجسم لإعادة التأطير",
+  "name_en": "MediaPipe: Track faces, hands and pose in footage for auto-reframing and overlays",
+  "status": "install",
+  "what": "تتبع الوجوه واليدين ووضعية الجسم لإعادة التأطير والإضافات. — Track faces, hands and pose in footage for auto-reframing and overlays. (MediaPipe, ★37.3k, Apache-2.0).",
+  "when": "computer vision tasks the user has the right to run",
+  "how": "`pip install mediapipe  (+ .task model files, MBs)`. Verified here 2026-10-18: mediapipe 1.1.1 import OK; face/pose tasks need a .task model file (mediapipe 1.1.1). Licence note: permissive.",
+  "params": "",
+  "install": "pip install mediapipe  (+ .task model files, MBs)",
+  "requires": [
+   "pip:mediapipe"
+  ],
+  "license": "Apache-2.0",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Computer vision",
+   "MediaPipe",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/google-ai-edge/mediapipe"
+ },
+ {
+  "id": "MEDIA-33",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "Ultralytics YOLO: كشف الأجسام وتقسيمها وتتبعها في الصور والفيديو",
+  "name_en": "Ultralytics YOLO: Detect, segment and track objects in images and video",
+  "status": "install",
+  "what": "كشف الأجسام وتقسيمها وتتبعها في الصور والفيديو. — Detect, segment and track objects in images and video. (Ultralytics YOLO, ★62.6k, AGPL-3.0).",
+  "when": "computer vision tasks the user has the right to run",
+  "how": "`pip install ultralytics  (nano models ~6 MB)`. Licence note: copyleft: run as an external tool, do not vendor.",
+  "params": "",
+  "install": "pip install ultralytics  (nano models ~6 MB)",
+  "requires": [
+   "pip:ultralytics"
+  ],
+  "license": "AGPL-3.0",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Computer vision",
+   "Ultralytics YOLO",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/ultralytics/ultralytics"
+ },
+ {
+  "id": "MEDIA-34",
+  "family": "media-image-audio",
+  "domain": "media",
+  "name_ar": "pyannote.audio: تحديد من تحدث ومتى لبناء ترجمة لكل",
+  "name_en": "pyannote.audio: Label who spoke when, for per-speaker captions",
+  "status": "key",
+  "what": "تحديد من تحدث ومتى لبناء ترجمة لكل متحدث. — Label who spoke when, for per-speaker captions. (pyannote.audio, ★10.7k, MIT).",
+  "when": "diarization tasks the user has the right to run",
+  "how": "`pip install pyannote.audio  + Hugging Face token (gated model terms)`. Licence note: permissive.",
+  "params": "",
+  "install": "pip install pyannote.audio  + Hugging Face token (gated model terms)",
+  "requires": [
+   "pip:pyannote"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Diarization",
+   "pyannote.audio",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/pyannote/pyannote-audio"
  }
 ]

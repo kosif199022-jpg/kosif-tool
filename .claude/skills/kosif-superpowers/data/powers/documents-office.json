@@ -11,6 +11,10 @@
   "how": "python-docx has no RTL switch: add OxmlElement('w:bidi') to each paragraph's pPr; on each run add w:rtl, set w:rFonts w:cs='Amiri' (Arabic uses the complex-script font) and w:szCs; add w:bidiVisual to the table's tblPr so column 1 sits on the right. Read back with docx.Document(path) and check the XML for <w:bidi/>.",
   "params": "font size via both w:sz and w:szCs; heading level 1 = 20 pt in proof",
   "install": "pip install python-docx",
+  "requires": [
+   "pip:office",
+   "fonts:arabic"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -46,6 +50,9 @@
   "how": "openpyxl: ws.sheet_view.rightToLeft=True; Alignment(horizontal='right', readingOrder=2); formulas as strings ('=SUM(B2:B5)'); number_format '#,##0' / '0.0%'; BarChart + Reference(..., titles_from_data=True); ws.add_chart(ch,'E2'). Proof: 6.9 KB workbook, chart read back.",
   "params": "",
   "install": "pip install openpyxl",
+  "requires": [
+   "pip:office"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -78,6 +85,11 @@
   "how": "soffice --headless --norestore --convert-to xlsx --outdir recalc book.xlsx (1.2 s), then openpyxl.load_workbook('recalc/book.xlsx', data_only=True). Before recalculation data_only returns None; after it the proof read 3340 and 0.3593.",
   "params": "",
   "install": "apt-get install libreoffice-calc (present in the cloud image 2026-10-16)",
+  "requires": [
+   "chromium",
+   "libreoffice",
+   "pip:office"
+  ],
   "license": "MPL-2.0 (LibreOffice)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -107,6 +119,10 @@
   "how": "prs.slide_width, prs.slide_height = Inches(13.333), Inches(7.5); per paragraph pPr.set('rtl','1'), pPr.set('algn','r'); per run rPr.set('lang','ar-SA') and add a:latin + a:cs typeface='Cairo'; chart: CategoryChartData + shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED, ...). Read back the categories from chart.plots[0].categories.",
   "params": "title 36-40 pt, body 24 pt in proof",
   "install": "pip install python-pptx",
+  "requires": [
+   "pip:office",
+   "fonts:arabic"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -138,6 +154,10 @@
   "how": "<html lang=ar dir=rtl>; @font-face { font-family: Amiri; src: url(file:///.../Amiri-Regular.ttf) }; @page { size: A4; margin: 16mm }; isolate English with a direction:ltr class; weasyprint.HTML(string=html, base_url=dir).write_pdf(out). Proof: 0.33 s, 17.9 KB, fonts embedded as subsets.",
   "params": "",
   "install": "pip install weasyprint (needs pango; present in the cloud image)",
+  "requires": [
+   "python3",
+   "fonts:arabic"
+  ],
   "license": "BSD-3-Clause",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -169,6 +189,11 @@
   "how": "Playwright: page.goto(file URL); await document.fonts.ready; page.pdf({path, format:'A4', printBackground:true}). Proof snap.cjs printed the RTL dashboard; pdffonts shows Tajawal-Bold embedded.",
   "params": "",
   "install": "npm i playwright && npx playwright install chromium (bundled at /opt/pw-browsers in the cloud image)",
+  "requires": [
+   "node",
+   "chromium",
+   "fonts:arabic"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
@@ -197,6 +222,10 @@
   "how": "pdfmetrics.registerFont(TTFont('Amiri', path)); c.setFont('Amiri',22); c.drawRightString(x,y,get_display(arabic_reshaper.reshape(text))). The raw string draws unjoined and reversed (see contact.png, last tile).",
   "params": "",
   "install": "pip install reportlab arabic-reshaper python-bidi",
+  "requires": [
+   "pip:office",
+   "fonts:arabic"
+  ],
   "license": "BSD / MIT / LGPL-3.0 (python-bidi)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -227,6 +256,10 @@
   "how": "npm i docx pptxgenjs exceljs pdf-lib; Packer.toBuffer(doc); pptx.writeFile(); workbook.xlsx.writeFile(); PDFDocument.create(). All four produced files in the arsenal snapshot (Latin text only; RTL not tested).",
   "params": "",
   "install": "npm i docx pptxgenjs exceljs pdf-lib",
+  "requires": [
+   "node",
+   "pip:office"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
@@ -256,6 +289,11 @@
   "how": "soffice --headless --norestore --convert-to pdf --outdir out a.docx b.pptx c.xlsx (1.6 s for three files). For sheets set fitToPage first (DOC-11). Then render the pages to PNG and look at them (DOC-18).",
   "params": "",
   "install": "apt-get install libreoffice (present in the cloud image)",
+  "requires": [
+   "chromium",
+   "libreoffice",
+   "pip:office"
+  ],
   "license": "MPL-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -284,6 +322,10 @@
   "how": "Write fonts.conf: <include>/etc/fonts/fonts.conf</include><dir>/path/to/fonts</dir><cachedir>/tmp/fc</cachedir>; run soffice with env FONTCONFIG_FILE=that file (also set os.environ for weasyprint). Proof: pdffonts lists Amiri-Regular/Amiri-Bold in the LibreOffice PDF.",
   "params": "",
   "install": "",
+  "requires": [
+   "libreoffice",
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -312,6 +354,10 @@
   "how": "ws.page_setup.orientation='landscape'; ws.page_setup.fitToWidth=ws.page_setup.fitToHeight=1; ws.sheet_properties.pageSetUpPr.fitToPage=True. The first run produced 2 pages; after the fix, 1 page.",
   "params": "",
   "install": "",
+  "requires": [
+   "libreoffice",
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -340,6 +386,10 @@
   "how": "front matter 'dir: rtl' and 'lang: ar'; pandoc note.md -o note.docx; pandoc note.docx -t gfm. Proof: the Arabic table survived md -> docx -> md. Use --reference-doc=style.docx for house styles (not tested).",
   "params": "",
   "install": "apt-get install pandoc (3.1.3 present)",
+  "requires": [
+   "pandoc",
+   "pip:office"
+  ],
   "license": "GPL-2.0-or-later (pandoc CLI)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -368,6 +418,9 @@
   "how": "w=pypdf.PdfWriter(); w.append(f) per file; w.pages[0].rotate(90); w.encrypt(user_password=pw, algorithm='AES-256'); w.write(out); reopen: r.is_encrypted, r.decrypt(pw). Proof: 3 files -> 4 pages, /Rotate 90, the password works.",
   "params": "",
   "install": "pip install pypdf",
+  "requires": [
+   "pip:office"
+  ],
   "license": "BSD-3-Clause",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -398,6 +451,9 @@
   "how": "Use pypdf.PdfReader(p).pages[i].extract_text() or `pdftotext -layout p -`; NFKC-normalise (undoes presentation forms) and strip U+202A..U+202E. Compare with a known phrase. Proof: pypdf and pdftotext gave 'تقرير المبيعات الربعي'; pdfplumber gave 'يعبرلا تاعيبملا ريرقت'.",
   "params": "",
   "install": "pip install pypdf; apt-get install poppler-utils",
+  "requires": [
+   "pip:office"
+  ],
   "license": "BSD-3-Clause / GPL (poppler)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -429,6 +485,10 @@
   "how": "After extraction, diff against the source text with lam-alef-aware normalisation, or prefer the source HTML/DOCX when you have it. Seen on the dashboard PDF in the data proof.",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium",
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
@@ -457,6 +517,9 @@
   "how": "pip install \"markitdown[docx,pdf,xlsx,pptx]\" (a bare install fails on docx with MissingDependencyException); MarkItDown().convert(path).text_content. Arabic is kept for docx/xlsx/pptx; for PDFs it comes out reversed (use DOC-14).",
   "params": "",
   "install": "pip install \"markitdown[docx,pdf,xlsx,pptx]\"",
+  "requires": [
+   "pip:office"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -487,6 +550,10 @@
   "how": "img=pypdfium2.PdfDocument(p)[i].render(scale=300/72).to_pil().convert('L'); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 4'). Proof: title and English line recovered in 0.78 s. Validate digits (see MEDIA OCR findings).",
   "params": "",
   "install": "apt-get install tesseract-ocr tesseract-ocr-ara; pip install pytesseract pypdfium2",
+  "requires": [
+   "python3",
+   "tesseract"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -516,6 +583,9 @@
   "how": "pypdfium2: page.render(scale=2).to_pil(); crop with ImageChops.difference against white .getbbox(); tile with Pillow; quantize(128) to keep it < 300 KB; then open it with the Read tool and look. Proof contact.png: 50 KB, six documents.",
   "params": "",
   "install": "pip install pypdfium2 pillow",
+  "requires": [
+   "pip:pillow"
+  ],
   "license": "Apache-2.0 / BSD-3-Clause (pypdfium2)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -543,6 +613,9 @@
   "how": "import pymupdf (not `import fitz`, which is deprecated); doc[0].get_text(); doc[0].get_pixmap().save('p.png'). Arabic order not tested; check it like DOC-14.",
   "params": "",
   "install": "pip install pymupdf",
+  "requires": [
+   "python3"
+  ],
   "license": "AGPL-3.0 or commercial",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
@@ -570,6 +643,9 @@
   "how": "page.extract_tables(); page.extract_words() for x/y. For Arabic cells reverse the string or re-read the region with pypdf/pdftotext -layout -x -y -W -H. Not run here: only pdfplumber extract_text was exercised (it returned Arabic reversed); extract_tables and extract_words are untested in this skill.",
   "params": "",
   "install": "pip install pdfplumber",
+  "requires": [
+   "pip:office"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -599,6 +675,11 @@
   "how": "docling pulls torch and models; camelot needs ghostscript/opencv; tabula needs Java. None of them was installed or run here.",
   "params": "",
   "install": "pip install docling | camelot-py | tabula-py",
+  "requires": [
+   "pip:opencv",
+   "pip:torch",
+   "pip:docling"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -625,6 +706,9 @@
   "how": "HTML: <span dir=ltr> or <bdi>, or a class with direction:ltr; DOCX: keep LTR runs without w:rtl; PPTX: separate runs. Choose one numeral system per document (Arabic-Indic ٠-٩ or Western 0-9) and keep it. The proof PDF holds an LTR English line inside an RTL page.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
@@ -655,6 +739,13 @@
   "how": "Default to raw logical strings. Add arabic_reshaper.reshape + bidi.get_display only for engines without a shaper (reportlab, old PIL/matplotlib without raqm). Doing both reverses the text. All of these were exercised across the docs, data and media proofs.",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium",
+   "libreoffice",
+   "pip:pillow",
+   "pip:matplotlib",
+   "pip:office"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
@@ -685,6 +776,7 @@
   "how": "Checklist: 1) read back text with the format's own library; 2) recalc spreadsheets; 3) render pages to PNG and look (Arabic joined, right-aligned, nothing cut); 4) numbers come from the frozen results file (ANLY compute-freeze); 5) file size and page count are sensible; 6) state anything you could not verify (e.g., not opened in MS Office).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -711,6 +803,10 @@
   "how": "Read the skill listing; invoke the matching skill first. It carries tested recipes, such as tracked changes and templates. They require the account feature; this session listed them (2026-10-16) and they were not invoked here.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:office",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -738,6 +834,9 @@
   "how": "Follow the connector's own guide (create the skeleton first, then fill the sections). Only a host-designated first-party connector counts. Not exercised in this proof.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -763,6 +862,10 @@
   "how": "Assume no apt and maybe no network: use preinstalled libraries and bundled fonts; verify with a quick import before promising. Per the help article (fetched 2026-10-16); not run from here.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:office",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -788,6 +891,9 @@
   "how": "Load the host's google-workspace skill if listed, and use the connector's tools. Without a connector, export the file locally (DOC-01..05) and say so.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -800,5 +906,178 @@
   ],
   "section": "أدوات المضيف والموصلات — Host skills & connectors",
   "source": "host skill listing 2026-10-16"
+ },
+ {
+  "id": "DOC-29",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "Docling: تحويل PDF وDOCX وPPTX إلى Markdown أو",
+  "name_en": "Docling: Convert PDF/DOCX/PPTX to structured Markdown/JSON with tables kept",
+  "status": "install",
+  "what": "تحويل PDF وDOCX وPPTX إلى Markdown أو JSON منظم مع الحفاظ على الجداول. — Convert PDF/DOCX/PPTX to structured Markdown/JSON with tables kept. (Docling, ★69.1k, MIT).",
+  "when": "document parsing tasks the user has the right to run",
+  "how": "`pip install docling  (layout/table models download, a few hundred MB)`. Licence note: permissive.",
+  "params": "",
+  "install": "pip install docling  (layout/table models download, a few hundred MB)",
+  "requires": [
+   "pip:office",
+   "pip:docling"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Document parsing",
+   "Docling",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/docling-project/docling"
+ },
+ {
+  "id": "DOC-30",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "Marker: تحويل ملفات PDF الأكاديمية أو الممسوحة إلى",
+  "name_en": "Marker: Turn scanned or academic PDFs into Markdown with equations in LaTeX",
+  "status": "install",
+  "what": "تحويل ملفات PDF الأكاديمية أو الممسوحة إلى Markdown مع المعادلات LaTeX. — Turn scanned or academic PDFs into Markdown with equations in LaTeX. (Marker, ★40.5k, Apache-2.0 code; model weights separate terms).",
+  "when": "document parsing tasks the user has the right to run",
+  "how": "`pip install marker-pdf  (models ~1–2 GB)`. Licence note: custom: read before use.",
+  "params": "",
+  "install": "pip install marker-pdf  (models ~1–2 GB)",
+  "requires": [
+   "latex",
+   "network",
+   "pip:marker"
+  ],
+  "license": "Apache-2.0 code; model weights separate terms",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Document parsing",
+   "Marker",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/datalab-to/marker"
+ },
+ {
+  "id": "DOC-31",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "Slidev: كتابة عرض تقديمي بـMarkdown وتصديره PDF أو",
+  "name_en": "Slidev: Author a Markdown deck and export PDF/PNG",
+  "status": "install",
+  "what": "كتابة عرض تقديمي بـMarkdown وتصديره PDF أو PNG. — Author a Markdown deck and export PDF/PNG. (Slidev, ★49.1k, MIT).",
+  "when": "slides as code tasks the user has the right to run",
+  "how": "`npm i -D @slidev/cli playwright-chromium`. Licence note: permissive.",
+  "params": "",
+  "install": "npm i -D @slidev/cli playwright-chromium",
+  "requires": [
+   "chromium",
+   "npm:slidev"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Slides as code",
+   "Slidev",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/slidevjs/slidev"
+ },
+ {
+  "id": "DOC-32",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "Marp CLI: تحويل Markdown إلى شرائح PDF أو PPTX",
+  "name_en": "Marp CLI: Markdown to PDF/PPTX/HTML decks in one command",
+  "status": "install",
+  "what": "تحويل Markdown إلى شرائح PDF أو PPTX أو HTML بأمر واحد. — Markdown to PDF/PPTX/HTML decks in one command. (Marp CLI, ★3.9k, MIT).",
+  "when": "slides as code tasks the user has the right to run",
+  "how": "`npm i -g @marp-team/marp-cli`. Licence note: permissive.",
+  "params": "",
+  "install": "npm i -g @marp-team/marp-cli",
+  "requires": [
+   "pip:office",
+   "npm:marp"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Slides as code",
+   "Marp CLI",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/marp-team/marp-cli"
+ },
+ {
+  "id": "DOC-33",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "Mermaid: رسم مخططات انسيابية وتسلسلية وجانت من نص",
+  "name_en": "Mermaid: Render flowcharts, sequence and Gantt diagrams from text to SVG/PNG",
+  "status": "install",
+  "what": "رسم مخططات انسيابية وتسلسلية وجانت من نص إلى SVG أو PNG. — Render flowcharts, sequence and Gantt diagrams from text to SVG/PNG. (Mermaid, ★90.7k, MIT).",
+  "when": "diagrams as code tasks the user has the right to run",
+  "how": "`npm i -g @mermaid-js/mermaid-cli`. Licence note: permissive.",
+  "params": "",
+  "install": "npm i -g @mermaid-js/mermaid-cli",
+  "requires": [
+   "npm:mermaid"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Diagrams as code",
+   "Mermaid",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/mermaid-js/mermaid"
+ },
+ {
+  "id": "DOC-34",
+  "family": "documents-office",
+  "domain": "docs",
+  "name_ar": "PlantUML: توليد مخططات UML من نص",
+  "name_en": "PlantUML: Generate UML class/sequence/component diagrams from text",
+  "status": "install",
+  "what": "توليد مخططات UML من نص. — Generate UML class/sequence/component diagrams from text. (PlantUML, ★13.4k, LGPL-3.0 (other editions exist)).",
+  "when": "diagrams as code tasks the user has the right to run",
+  "how": "`apt-get install -y plantuml`. Licence note: weak copyleft.",
+  "params": "",
+  "install": "apt-get install -y plantuml",
+  "requires": [
+   "plantuml"
+  ],
+  "license": "LGPL-3.0 (other editions exist)",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Diagrams as code",
+   "PlantUML",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/plantuml/plantuml"
  }
 ]

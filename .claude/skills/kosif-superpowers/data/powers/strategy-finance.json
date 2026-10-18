@@ -11,6 +11,7 @@
   "how": "Frame first: the decision, who it affects, the outcome wanted, constraints, horizon. Then options A/B/C + do-nothing in a table: cost, benefit, reversibility, time to signal, main risk. Options that are the same idea in three sizes do not count.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -39,6 +40,9 @@
   "how": "List the assumptions; for each, solve for the value at which the preferred option stops winning (sympy.solve of profit_A = profit_B, or break-even = 0). Compare the threshold with the evidence. Related run: break-even Q = 6000 and p* = 60 were solved exactly with sympy (proofs/general-data), but no A-vs-B flipping threshold has been computed here yet, so this method is 📄.",
   "params": "",
   "install": "pip install sympy",
+  "requires": [
+   "pip:sympy"
+  ],
   "license": "BSD-3-Clause",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
@@ -69,6 +73,10 @@
   "how": "See ANLY Monte Carlo: seeded 100k draws over the uncertain inputs. Proof: P(loss) 0.356, P5 -33,252, P50 10,570, P95 61,457. State the distributions you assumed next to the result.",
   "params": "",
   "install": "pip install numpy",
+  "requires": [
+   "pip:numpy",
+   "npm:p5"
+  ],
   "license": "BSD-3-Clause",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
@@ -97,6 +105,7 @@
   "how": "Write 5-10 failure stories (market, execution, team, tech, legal, timing); score likelihood x impact; turn the top 3 into mitigations or early warning signs; check second-order effects and dependencies.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -123,6 +132,9 @@
   "how": "Reduce to one question; my position + 3 reasons + main risk BEFORE reading others; voices: architect (long-term correctness), skeptic (challenge the premise), pragmatist (speed, user impact), critic (failure modes); synthesise and keep the dissent visible.",
   "params": "",
   "install": "",
+  "requires": [
+   "claude:tools"
+  ],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -149,6 +161,7 @@
   "how": "Append JSONL {date, decision, options, evidence, mark, review_if}. Repeating confidence is not approval; default to a dry run for risky moves. Lead every summary with the decision.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -174,6 +187,7 @@
   "how": "Stage | goal | metric + threshold | date | kill/review rule | owner. Prefer reversible first steps. Kill rules are numeric ('CAC > 2x LTV for 6 weeks -> stop').",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -200,6 +214,7 @@
   "how": "Quick capture: goal, in/out of scope, assumptions, 3-7 acceptance criteria, blockers. No vague words ('fast' -> 'p95 < 300 ms'). Block only for security, data loss, irreversible migration, API breakage, real cost or destructive actions; otherwise record and proceed. Mark revised criteria [revised].",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -227,6 +242,7 @@
   "how": "ICE = impact x confidence / effort, each 1-5; compute and sort in code; show the inputs so people can argue with them, not with the total.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -253,6 +269,11 @@
   "how": "scipy.optimize.linprog(method='highs') (see ANLY LP); for integer quantities use OR-Tools MIP. Proof: max 40x+30y with x+y<=40, 2x+y<=60 gave x=y=20, profit 1,400, cross-checked with sympy.",
   "params": "",
   "install": "pip install scipy",
+  "requires": [
+   "pip:scipy",
+   "pip:sympy",
+   "pip:ortools"
+  ],
   "license": "BSD-3-Clause",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
@@ -280,6 +301,9 @@
   "how": "profit=(p-c)*(a-b*p); sp.solve(sp.diff(profit,p),p) and check the second derivative is negative; break-even Q = F/(p-v) via sp.solve. Proof: p*=60, profit 16,000; Q=6,000 for F=120,000, p=50, v=30. The demand curve is an assumption; say so.",
   "params": "",
   "install": "pip install sympy",
+  "requires": [
+   "pip:sympy"
+  ],
   "license": "BSD-3-Clause",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
@@ -310,6 +334,7 @@
   "how": "For each entry: date, accounts, Dr, Cr, rule cited, and the impact on P&L / balance sheet / cash. Assert sum(Dr) == sum(Cr) in code. Standards change, so fetch the current IFRS text (WEB-02) before citing it.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -338,6 +363,7 @@
   "how": "Match on keys (date, amount, reference); list unmatched items on both sides; classify timing vs error vs missing; the residual must be zero or explicitly reported. Same discipline as ANLY control totals.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -364,6 +390,9 @@
   "how": "Inputs sheet (with sources and units) -> drivers -> P&L -> cash -> balance sheet; checks: balance = 0, cash bridge = 0; scenario overrides on the inputs only; recompute in code or with a LibreOffice recalc before quoting; no exact optimum taken from prose.",
   "params": "",
   "install": "",
+  "requires": [
+   "libreoffice"
+  ],
   "license": "",
   "proof": [],
   "proof_scope": "none",
@@ -395,6 +424,9 @@
   "how": "yfinance (scrapes Yahoo, subject to its terms), pandas-ta (beta, no license field on PyPI), quantstats (Apache-2.0). Metadata only; none of them ran here. Prefer official data from exchanges or regulators for anything published.",
   "params": "",
   "install": "pip install yfinance quantstats",
+  "requires": [
+   "pip:pandas"
+  ],
   "license": "Apache-2.0 (yfinance, quantstats); pandas-ta unknown",
   "proof": [],
   "proof_scope": "none",
@@ -409,5 +441,98 @@
   ],
   "section": "المال والمحاسبة — Finance & accounting",
   "source": "session-2026-10-16:general-arsenal.md (metadata)"
+ },
+ {
+  "id": "PROD-16",
+  "family": "strategy-finance",
+  "domain": "strategy",
+  "name_ar": "OR-Tools: حل مسائل الجدولة والتوجيه والتعيين بأمثلية عبر",
+  "name_en": "OR-Tools: Solve scheduling, routing and assignment problems optimally with CP-SAT",
+  "status": "proven",
+  "what": "حل مسائل الجدولة والتوجيه والتعيين بأمثلية عبر CP-SAT. — Solve scheduling, routing and assignment problems optimally with CP-SAT. (OR-Tools, ★14.2k, Apache-2.0).",
+  "when": "optimisation tasks the user has the right to run",
+  "how": "`pip install ortools`. Verified here 2026-10-18: 4 jobs on one machine, optimal makespan 10 (ortools 9.15.6755). Licence note: permissive.",
+  "params": "",
+  "install": "pip install ortools",
+  "requires": [
+   "pip:ortools"
+  ],
+  "license": "Apache-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "Optimisation",
+   "OR-Tools",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/google/or-tools"
+ },
+ {
+  "id": "PROD-17",
+  "family": "strategy-finance",
+  "domain": "strategy",
+  "name_ar": "PuLP: نمذجة مسائل البرمجة الخطية والصحيحة كتوزيع الميزانيات",
+  "name_en": "PuLP: Model linear and integer programs such as budget splits and blends",
+  "status": "proven",
+  "what": "نمذجة مسائل البرمجة الخطية والصحيحة كتوزيع الميزانيات. — Model linear and integer programs such as budget splits and blends. (PuLP, ★2.5k, BSD-style).",
+  "when": "optimisation tasks the user has the right to run",
+  "how": "`pip install pulp ortools  (PuLP ≥4 ships no CBC; CP-SAT needs integer, bounded variables)`. Verified here 2026-10-18: max 3a+2b s.t. a+b≤100, a≤60 → 260 (a=60, b=40) via CPSAT (pulp 4.0.1). Licence note: permissive.",
+  "params": "",
+  "install": "pip install pulp ortools  (PuLP ≥4 ships no CBC; CP-SAT needs integer, bounded variables)",
+  "requires": [
+   "pip:ortools",
+   "pip:pulp"
+  ],
+  "license": "BSD-style",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "Optimisation",
+   "PuLP",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/coin-or/pulp"
+ },
+ {
+  "id": "PROD-18",
+  "family": "strategy-finance",
+  "domain": "strategy",
+  "name_ar": "MuJoCo: محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات",
+  "name_en": "MuJoCo: Simulate rigid-body and robot dynamics and log trajectories",
+  "status": "install",
+  "what": "محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات. — Simulate rigid-body and robot dynamics and log trajectories. (MuJoCo, ★15.7k, Apache-2.0).",
+  "when": "simulation tasks the user has the right to run",
+  "how": "`pip install mujoco`. Licence note: permissive.",
+  "params": "",
+  "install": "pip install mujoco",
+  "requires": [
+   "pip:mujoco"
+  ],
+  "license": "Apache-2.0",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "Simulation",
+   "MuJoCo",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/google-deepmind/mujoco"
  }
 ]

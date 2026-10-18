@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** تحميل البيانات وتنظيفها وتحليلها واختبار الفرضيات وتلخيصها برسوم صادقة. — Load, clean, analyse and test data, then summarise it with honest charts.
 > **أقوى دليل / strongest evidence:** **ANLY-01** pandas groupby / pivot analysis (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`) · **ANLY-02** DuckDB SQL straight on CSV/Parquet (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`)
-> **29 powers follow** — ✅ 27 · 🟢 0 · 📦 1 · 🔑 0 · 👁 0 · 📄 1 · 💡 0.
+> **39 powers follow** — ✅ 36 · 🟢 0 · 📦 2 · 🔑 0 · 👁 0 · 📄 1 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** البيانات — Data & analysis · **البادئة / prefix:** `ANLY` · **البيانات / data:** `data/powers/data-analysis.json` · **بحث / search:** `python3 scripts/powers.py family data-analysis`
-**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [method-packs.md](../method-packs.md)
+**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [method-packs.md](../method-packs.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
@@ -18,6 +18,7 @@
 - **الرسوم البيانية — Charts** — ANLY-10 … ANLY-15 (6)
 - **التعلم الآلي والتحسين — ML & optimisation** — ANLY-16 … ANLY-25 (10)
 - **انضباط الأرقام — Number discipline** — ANLY-26 … ANLY-29 (4)
+- **Extended toolbelt (2026-10-18)** — ANLY-30 … ANLY-39 (10)
 - المصادر والرخص / sources & licences
 
 ## الجداول والاستعلام — Tables & SQL
@@ -27,6 +28,7 @@
 - **متى أستخدمها / when:** any table question: totals per group, shares, top-N, month-by-channel pivots; user uploads a CSV/XLSX
 - **كيف / how:** pd.read_csv(path, encoding='utf-8-sig') -> df.groupby(key, sort=False)[cols].sum().sort_values(...) ; df.pivot_table(index, columns, values, aggfunc='sum'). Check shape against expectations (proof: 180 rows, pivot 12x3). pandas 3.x is current: check the installed version before you write code from memory. **أرقام / params:** encoding utf-8-sig for Arabic CSVs from Excel; keep money as integer minor units
 - **تثبيت / install:** `pip install pandas`
+- **يحتاج / needs:** [`pip:pandas`](../requirements.md#req-pip-pandas)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -36,6 +38,7 @@
 - **متى أستخدمها / when:** joins, window functions (LAG, RANK, running totals), month-over-month, files bigger than comfortable pandas memory
 - **كيف / how:** con=duckdb.connect(); con.sql("WITH m AS (SELECT month, region, SUM(revenue) rev FROM read_csv('f.csv', header=true) GROUP BY 1,2) SELECT *, rev-LAG(rev) OVER (PARTITION BY region ORDER BY month) mom, RANK() OVER (PARTITION BY month ORDER BY rev DESC) rk FROM m").df(). Proof ran a CTE + LAG + RANK + NULLIF query on the raw CSV in 0.05 s. **أرقام / params:** explicit column lists; NULLIF(x,0) guards; ORDER BY inside every window
 - **تثبيت / install:** `pip install duckdb`
+- **يحتاج / needs:** [`pip:duckdb`](../requirements.md#req-pip-duckdb)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -45,6 +48,7 @@
 - **متى أستخدمها / when:** handing data to another tool or session; repeated queries on the same data; keeping types stable
 - **كيف / how:** duckdb: COPY (SELECT cols FROM read_csv('f.csv', header=true)) TO 'f.parquet' (FORMAT parquet); then SELECT COUNT(*) FROM 'f.parquet'. pyarrow alternative: pq.write_table / pq.read_table. Proof: 180 rows -> 3,590 B -> 180 rows.
 - **تثبيت / install:** `pip install duckdb (or pyarrow)`
+- **يحتاج / needs:** [`pip:duckdb`](../requirements.md#req-pip-duckdb)
 - **الرخصة / license:** MIT / Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -54,6 +58,7 @@
 - **متى أستخدمها / when:** multi-million-row files, memory pressure, or when a lazy query plan helps
 - **كيف / how:** pl.scan_csv(path).group_by('k').agg(pl.col('v').sum()).collect(). Before writing code from memory, check `python -c 'import polars;print(polars.__version__)'`: the 2026-10-16 snapshot had 2.0.0 and its API differs from 1.x.
 - **تثبيت / install:** `pip install polars`
+- **يحتاج / needs:** [`pip:polars`](../requirements.md#req-pip-polars)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -72,6 +77,7 @@
 - **متى أستخدمها / when:** break-even, optimum price, closed-form answers, checking a numeric optimiser, any 'exact' number
 - **كيف / how:** Q,p=sp.symbols('Q p',positive=True); sp.solve(sp.Eq(50*Q-30*Q-120000,0),Q) -> [6000]; sp.solve(sp.diff((p-20)*(1000-10*p),p),p) -> [60] and diff twice = -20 < 0 confirms a maximum; sp.integrate(sp.exp(-x**2),(x,-sp.oo,sp.oo)) -> sqrt(pi).
 - **تثبيت / install:** `pip install sympy`
+- **يحتاج / needs:** [`pip:sympy`](../requirements.md#req-pip-sympy)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -81,6 +87,7 @@
 - **متى أستخدمها / when:** 'is this growing?', 'is A different from B?', before claiming a difference in a report
 - **كيف / how:** r=stats.linregress(x,y) -> slope, r^2=r.rvalue**2; stats.ttest_ind(a,b,equal_var=False). Proof: slope +8,018/month, r^2 0.706; Welch t=3.60, p=2.2e-3 on synthetic data. Report the slope or difference with units, not just p. **أرقام / params:** Welch by default (unequal variances); n small -> say so
 - **تثبيت / install:** `pip install scipy`
+- **يحتاج / needs:** [`pip:scipy`](../requirements.md#req-pip-scipy)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -90,6 +97,7 @@
 - **متى أستخدمها / when:** you need standard errors, confidence intervals and diagnostics, not just a slope
 - **كيف / how:** sm.OLS(y, sm.add_constant(X)).fit().summary(). The arsenal smoke test recovered slope 2.0 on y=2x+1.
 - **تثبيت / install:** `pip install statsmodels`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -99,6 +107,7 @@
 - **متى أستخدمها / when:** plans, budgets and forecasts that rest on guessed inputs; 'how risky is this?'
 - **كيف / how:** rng=np.random.default_rng(seed); draw demand ~N, price ~triangular, cost ~U (100k draws); profit=units*(price-cost)-fixed; report (profit<0).mean() and np.percentile(profit,[5,50,95]). Proof: P(loss)=0.356, P5 -33,252, P50 10,570, P95 61,457. **أرقام / params:** N=100,000, fixed seed, state the distributions in the output
 - **تثبيت / install:** `pip install numpy`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`npm:p5`](../requirements.md#req-npm-p5)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -110,6 +119,7 @@
 - **متى أستخدمها / when:** report figures, charts for docx/pptx/pdf, social images of data
 - **كيف / how:** font_manager.fontManager.addfont('Tajawal-Bold.ttf'); rcParams['font.family']=['Tajawal','DejaVu Sans']; title with loc='right' for RTL; label bars directly; spines top/right off; muted grid. Then open the PNG and look. Proof chart.png: 78 KB. **أرقام / params:** dpi 110-150; one series = one hue (#2a78d6); text in ink colours, not series colour
 - **تثبيت / install:** `pip install matplotlib`
+- **يحتاج / needs:** [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الرخصة / license:** PSF-style (matplotlib)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -118,6 +128,7 @@
 - **ماذا / what:** matplotlib 3.11 وPillow 12 يشكّلان العربية بأنفسهما؛ إضافة reshaper+bidi فوقهما تعكس النص. — matplotlib 3.11 and Pillow 12 shape Arabic themselves; adding reshaper+bidi on top reverses the text.
 - **متى أستخدمها / when:** before drawing any Arabic in matplotlib or Pillow; when you see reversed or unjoined Arabic
 - **كيف / how:** RAQM=getattr(matplotlib.ft2font,'__libraqm_version__',None); text = s if RAQM else get_display(arabic_reshaper.reshape(s)). For Pillow: PIL.features.check('raqm'). Proof: libraqm 0.10.5 in both wheels; mpl_arabic_modes.png shows raw (correct) vs reshaped (reversed).
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-data/mpl_arabic_modes.png
 
@@ -125,6 +136,7 @@
 - **ماذا / what:** شغّل مدقق ألوان مهارة dataviz (التباين، شريط الإضاءة، عمى الألوان) بدل الحكم بالعين. — Run the dataviz skill's palette validator (contrast, lightness band, colour-blind separation) instead of eyeballing.
 - **متى أستخدمها / when:** any chart with colour; always before multi-series categorical palettes
 - **كيف / how:** Load the dataviz skill if the host lists it, then `node <skill>/scripts/validate_palette.js "#hex,#hex" --mode light` and again `--mode dark`. Fix every FAIL. Proof: #2a78d6 (light) and #3987e5 (dark) PASS all checks. **أرقام / params:** CVD dE >= 8 target; contrast >= 3:1 on surface; max 3 series for scatter-like forms
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** host skill
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** host skill dataviz (listed in this session)
@@ -134,6 +146,7 @@
 - **متى أستخدمها / when:** an exploratory chart someone will open in a browser; not for print
 - **كيف / how:** px.bar(df,x,y).write_html('c.html', include_plotlyjs='cdn') to avoid inlining the library. The arsenal run inlined it and got 4.8 MB; the 'cdn' variant was not timed. PNG export needs kaleido + Chrome.
 - **تثبيت / install:** `pip install plotly`
+- **يحتاج / needs:** [`pip:plotly`](../requirements.md#req-pip-plotly)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -143,6 +156,7 @@
 - **متى أستخدمها / when:** you want a portable chart spec rather than pixels
 - **كيف / how:** alt.Chart(df).mark_bar().encode(x='k', y='v').to_json(). The arsenal run produced the JSON.
 - **تثبيت / install:** `pip install altair`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -152,6 +166,7 @@
 - **متى أستخدمها / when:** histograms, box/violin plots, pair plots in exploratory analysis
 - **كيف / how:** sns.histplot(data); sns.boxplot(x=,y=,data=). Then apply the same Arabic/font rules as matplotlib.
 - **تثبيت / install:** `pip install seaborn`
+- **يحتاج / needs:** [`pip:matplotlib`](../requirements.md#req-pip-matplotlib)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -163,6 +178,7 @@
 - **متى أستخدمها / when:** tabular prediction, clustering customers, baseline models before anything heavier
 - **كيف / how:** Pipeline([('scale',StandardScaler()),('m',RandomForestClassifier(random_state=0))]); evaluate with cross_val_score, never with the training score. The arsenal smoke test fitted iris; its training score of 1.0 shows the API works and says nothing about accuracy.
 - **تثبيت / install:** `pip install scikit-learn`
+- **يحتاج / needs:** [`pip:sklearn`](../requirements.md#req-pip-sklearn)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -172,6 +188,7 @@
 - **متى أستخدمها / when:** tabular prediction where a random forest plateaus
 - **كيف / how:** xgb.XGBRegressor(n_estimators=...).fit(X,y); lgb.LGBMRegressor(verbose=-1). Use early stopping on a validation split. Both ran fit/predict in the arsenal snapshot.
 - **تثبيت / install:** `pip install xgboost lightgbm`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** Apache-2.0 / MIT (lightgbm's PyPI field is blank; upstream is MIT)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -181,6 +198,7 @@
 - **متى أستخدمها / when:** allocation, product mix, schedules, budgets with limits
 - **كيف / how:** optimize.linprog(c=[-40,-30], A_ub=[[1,1],[2,1]], b_ub=[40,60], bounds=[(0,None)]*2, method='highs') (negate to maximise) -> x=y=20, profit 1,400; confirm with sympy.solve on the two binding constraints.
 - **تثبيت / install:** `pip install scipy`
+- **يحتاج / needs:** [`pip:scipy`](../requirements.md#req-pip-scipy) · [`pip:sympy`](../requirements.md#req-pip-sympy)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -190,6 +208,7 @@
 - **متى أستخدمها / when:** integer decisions, scheduling, vehicle routing, assignment
 - **كيف / how:** pywraplp.Solver.CreateSolver('GLOP') for LP, 'SCIP'/'CBC' for MIP; cp_model.CpModel() for CP-SAT. The arsenal GLOP run maximised 3x on [0,10] to 10.0. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 - **تثبيت / install:** `pip install ortools`
+- **يحتاج / needs:** [`pip:ortools`](../requirements.md#req-pip-ortools) · [`pip:pulp`](../requirements.md#req-pip-pulp)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -199,6 +218,7 @@
 - **متى أستخدمها / when:** any code you remember from PuLP 2.x/3.x
 - **كيف / how:** x=m.add_variable('x',0,4); m.solve(pulp.HiGHS(msg=False)); pulp.listSolvers(onlyAvailable=True) -> ['HiGHS']. If you need OR-Tools instead, run it in a separate process or venv. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 - **تثبيت / install:** `pip install pulp`
+- **يحتاج / needs:** [`pip:ortools`](../requirements.md#req-pip-ortools) · [`pip:pulp`](../requirements.md#req-pip-pulp)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -208,6 +228,7 @@
 - **متى أستخدمها / when:** portfolio weights, least squares with constraints, regularised fits
 - **كيف / how:** x=cp.Variable(); cp.Problem(cp.Minimize((x-2)**2)).solve() -> 2.0 (arsenal run).
 - **تثبيت / install:** `pip install cvxpy`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -217,6 +238,7 @@
 - **متى أستخدمها / when:** 'is there any assignment that…', configuration checks, puzzles
 - **كيف / how:** a,b=z3.Ints('a b'); s=z3.Solver(); s.add(a+b==10,a-b==4); s.check(); s.model() -> a=7,b=3 (arsenal run). unsat is itself a proof of impossibility.
 - **تثبيت / install:** `pip install z3-solver`
+- **يحتاج / needs:** [`pip:z3`](../requirements.md#req-pip-z3)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -226,6 +248,7 @@
 - **متى أستخدمها / when:** dependencies, org charts, routes, social graphs
 - **كيف / how:** nx.shortest_path(G,a,b); nx.pagerank(G); nx.community.louvain_communities(G). The arsenal run returned the shortest path on path_graph(5).
 - **تثبيت / install:** `pip install networkx`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -235,6 +258,7 @@
 - **متى أستخدمها / when:** per-city/area aggregation, distances, buffers; data feeding maps
 - **كيف / how:** gdf.to_crs(3857) before measuring metres; Transformer.from_crs(4326,3857,always_xy=True). The arsenal run gave Cairo lon 31.2 -> x 3,473,168 m.
 - **تثبيت / install:** `pip install geopandas shapely pyproj`
+- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:geopandas`](../requirements.md#req-pip-geopandas)
 - **الرخصة / license:** BSD-3-Clause / MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -244,6 +268,7 @@
 - **متى أستخدمها / when:** weekly/daily business series with seasonality
 - **كيف / how:** Prophet().fit(df[['ds','y']]).predict(future). It pulls cmdstan (heavy), so try statsmodels first. Not installed or run here.
 - **تثبيت / install:** `pip install prophet`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (metadata only)
@@ -254,6 +279,7 @@
 - **ماذا / what:** كل رقم دقيق يأتي من كود، ويُطابَق بطريقتين مستقلتين، ويُجمَّد في ملف، ثم يُكتب النص من الملف. — Every exact figure comes from code, is reconciled two independent ways, frozen to a file, and the prose is written from that file.
 - **متى أستخدمها / when:** any answer, report, dashboard or slide that contains numbers
 - **كيف / how:** 1) compute; 2) control totals: plain csv sum == pandas == SQL, and subtotals add back to the total; 3) write results.json; 4) generate text/HTML from results.json, never by retyping; 5) if something does not reconcile, report the gap and never plug it. Proof: 3,281,841 matched three ways and the dashboard reads the frozen numbers. **أرقام / params:** integer money units; expected row count asserted
+- **يحتاج / needs:** [`pip:pandas`](../requirements.md#req-pip-pandas)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words); implemented in proofs/general-data/make_data.py
 
@@ -269,6 +295,7 @@
 - **متى أستخدمها / when:** demos, tests, proofs, examples without real data
 - **كيف / how:** np.random.default_rng(7); write the seed in the output. faker('ar_EG').name() returned a Latin name in the arsenal run, so hand-write Arabic name lists. Proof chart and dashboard both say 'synthetic (seed 7)'.
 - **تثبيت / install:** `pip install numpy (faker optional)`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy)
 - **الرخصة / license:** BSD-3-Clause / MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -277,12 +304,115 @@
 - **ماذا / what:** فصل المدخلات عن الحسابات عن المخرجات، دون أرقام مثبّتة داخل المعادلات، مع خلايا فحص تساوي صفرًا. — Separate inputs, calculations and outputs; no hard-coded numbers inside formulas; check cells that must equal zero.
 - **متى أستخدمها / when:** building or reviewing an Excel/Sheets model
 - **كيف / how:** Sheets: Inputs (blue font, units, source), Calc (formulas only), Outputs (links only), Checks (balance - assets + liabilities = 0; sum of shares = 100%). Scenario overrides live on Inputs. Recalculate with LibreOffice (DOC-03) before you quote anything.
+- **يحتاج / needs:** [`libreoffice`](../requirements.md#req-libreoffice)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words)
 
+## Extended toolbelt (2026-10-18)
+
+#### ANLY-30 · SymPy: حل المعادلات وتبسيطها واشتقاقها وتكاملها بدقة رمزية · SymPy: Solve, simplify, differentiate and integrate exactly; export LaTeX · ✅ مُثبت هنا / proven here
+- **ماذا / what:** حل المعادلات وتبسيطها واشتقاقها وتكاملها بدقة رمزية وتصديرها LaTeX. — Solve, simplify, differentiate and integrate exactly; export LaTeX. (SymPy, ★15.0k, BSD-3-Clause).
+- **متى أستخدمها / when:** symbolic math tasks the user has the right to run
+- **كيف / how:** `pip install sympy`. Verified here 2026-10-18: roots [2, 3], ∫sin²=π/2, LaTeX \frac{\pi}{2} (sympy 1.14.0). Licence note: permissive.
+- **تثبيت / install:** `pip install sympy`
+- **يحتاج / needs:** [`latex`](../requirements.md#req-latex) · [`pip:sympy`](../requirements.md#req-pip-sympy)
+- **الرخصة / license:** BSD-3-Clause
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/sympy/sympy
+
+#### ANLY-31 · Z3 SMT solver: صياغة القيود وخصائص البرامج كمسائل SMT وإثباتها · Z3 SMT solver: Encode constraints or program properties as SMT and prove them or get a counterexample · ✅ مُثبت هنا / proven here
+- **ماذا / what:** صياغة القيود وخصائص البرامج كمسائل SMT وإثباتها أو إيجاد مثال مضاد. — Encode constraints or program properties as SMT and prove them or get a counterexample. (Z3 SMT solver, ★12.8k, MIT).
+- **متى أستخدمها / when:** formal proof tasks the user has the right to run
+- **كيف / how:** `pip install z3-solver`. Verified here 2026-10-18: a+b=b+a proved (unsat negation); a²=49 ∧ a<0 → a=-7 (z3 ). Licence note: permissive.
+- **تثبيت / install:** `pip install z3-solver`
+- **يحتاج / needs:** [`pip:z3`](../requirements.md#req-pip-z3)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/Z3Prover/z3
+
+#### ANLY-32 · Lean 4: كتابة براهين رياضية صورية والتحقق منها آليًا · Lean 4: Write and machine-check formal proofs of theorems · 📦 بأمر تثبيت / one install
+- **ماذا / what:** كتابة براهين رياضية صورية والتحقق منها آليًا. — Write and machine-check formal proofs of theorems. (Lean 4, ★9.6k, Apache-2.0).
+- **متى أستخدمها / when:** formal proof tasks the user has the right to run
+- **كيف / how:** `curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y  (Mathlib cache ~1–2 GB)`. Licence note: permissive.
+- **تثبيت / install:** `curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y  (Mathlib cache ~1–2 GB)`
+- **يحتاج / needs:** [`network`](../requirements.md#req-network) · [`lean`](../requirements.md#req-lean)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/leanprover/lean4
+
+#### ANLY-33 · DuckDB: تنفيذ SQL مباشرة على ملفات CSV وParquet · DuckDB: Run SQL directly over multi-GB CSV/Parquet/JSON files in-process · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تنفيذ SQL مباشرة على ملفات CSV وParquet وJSON ضخمة داخل العملية. — Run SQL directly over multi-GB CSV/Parquet/JSON files in-process. (DuckDB, ★42.2k, MIT).
+- **متى أستخدمها / when:** sql engines tasks the user has the right to run
+- **كيف / how:** `pip install duckdb`. Verified here 2026-10-18: group-by over 100k rows → 7 groups (duckdb 1.5.6). Licence note: permissive.
+- **تثبيت / install:** `pip install duckdb`
+- **يحتاج / needs:** [`pip:duckdb`](../requirements.md#req-pip-duckdb)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/duckdb/duckdb
+
+#### ANLY-34 · Polars: تنظيف وتجميع جداول كبيرة بإطارات بيانات كسولة · Polars: Clean and aggregate large tables with lazy, multi-threaded dataframes · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تنظيف وتجميع جداول كبيرة بإطارات بيانات كسولة متعددة الخيوط. — Clean and aggregate large tables with lazy, multi-threaded dataframes. (Polars, ★40.1k, MIT).
+- **متى أستخدمها / when:** dataframes tasks the user has the right to run
+- **كيف / how:** `pip install polars`. Verified here 2026-10-18: lazy group_by sum a=4 b=7 c=4 (polars 2.0.0). Licence note: permissive.
+- **تثبيت / install:** `pip install polars`
+- **يحتاج / needs:** [`pip:polars`](../requirements.md#req-pip-polars)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/pola-rs/polars
+
+#### ANLY-35 · scikit-learn: تدريب نماذج التصنيف والانحدار على بيانات جدولية · scikit-learn: Train, cross-validate and explain classifiers and regressors on tabular data · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تدريب نماذج التصنيف والانحدار على بيانات جدولية وتقييمها بالتحقق المتقاطع. — Train, cross-validate and explain classifiers and regressors on tabular data. (scikit-learn, ★67.7k, BSD-3-Clause).
+- **متى أستخدمها / when:** machine learning tasks the user has the right to run
+- **كيف / how:** `pip install scikit-learn`. Verified here 2026-10-18: iris RandomForest 5-fold accuracy 0.960 (sklearn 1.9.1). Licence note: permissive.
+- **تثبيت / install:** `pip install scikit-learn`
+- **يحتاج / needs:** [`pip:sklearn`](../requirements.md#req-pip-sklearn)
+- **الرخصة / license:** BSD-3-Clause
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/scikit-learn/scikit-learn
+
+#### ANLY-36 · StatsForecast: بناء توقعات AutoARIMA وETS مع فترات ثقة · StatsForecast: Fit AutoARIMA/ETS forecasts with prediction intervals on many series · ✅ مُثبت هنا / proven here
+- **ماذا / what:** بناء توقعات AutoARIMA وETS مع فترات ثقة لسلاسل زمنية كثيرة. — Fit AutoARIMA/ETS forecasts with prediction intervals on many series. (StatsForecast, ★4.9k, Apache-2.0).
+- **متى أستخدمها / when:** forecasting tasks the user has the right to run
+- **كيف / how:** `pip install statsforecast`. Verified here 2026-10-18: 6-month forecast, first 196.0 with 80% interval (statsforecast 2.1.1). Licence note: permissive.
+- **تثبيت / install:** `pip install statsforecast`
+- **يحتاج / needs:** [`pip:statsforecast`](../requirements.md#req-pip-statsforecast)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/Nixtla/statsforecast
+
+#### ANLY-37 · GeoPandas: ربط البيانات الجغرافية وإعادة إسقاطها بإحداثيات مترية · GeoPandas: Join, buffer and reproject vector geodata in true metric CRSs and export GeoJSON · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ربط البيانات الجغرافية وإعادة إسقاطها بإحداثيات مترية حقيقية وتصديرها GeoJSON. — Join, buffer and reproject vector geodata in true metric CRSs and export GeoJSON. (GeoPandas, ★5.3k, BSD-3-Clause).
+- **متى أستخدمها / when:** geospatial tasks the user has the right to run
+- **كيف / how:** `pip install geopandas`. Verified here 2026-10-18: 1 km buffer around Cairo in UTM 36N → 3.1413 km² (π expected); lon span 0.0207° (geopandas 1.2.0). Licence note: permissive.
+- **تثبيت / install:** `pip install geopandas`
+- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:geopandas`](../requirements.md#req-pip-geopandas)
+- **الرخصة / license:** BSD-3-Clause
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/geopandas/geopandas
+
+#### ANLY-38 · Biopython: قراءة FASTA وGenBank وترجمة التسلسلات ومحاذاتها · Biopython: Parse FASTA/GenBank, translate and align sequences · ✅ مُثبت هنا / proven here
+- **ماذا / what:** قراءة FASTA وGenBank وترجمة التسلسلات ومحاذاتها. — Parse FASTA/GenBank, translate and align sequences. (Biopython, ★5.2k, Biopython License / BSD-3-Clause).
+- **متى أستخدمها / when:** bioinformatics tasks the user has the right to run
+- **كيف / how:** `pip install biopython`. Verified here 2026-10-18: protein MAIVMGR, GC 0.56 (Bio 1.88). Licence note: permissive.
+- **تثبيت / install:** `pip install biopython`
+- **يحتاج / needs:** [`pip:biopython`](../requirements.md#req-pip-biopython)
+- **الرخصة / license:** Biopython License / BSD-3-Clause
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/biopython/biopython
+
+#### ANLY-39 · RDKit: قراءة صيغ SMILES وحساب الواصفات الجزيئية ورسم · RDKit: Parse SMILES, compute molecular descriptors and draw molecules · ✅ مُثبت هنا / proven here
+- **ماذا / what:** قراءة صيغ SMILES وحساب الواصفات الجزيئية ورسم الجزيئات. — Parse SMILES, compute molecular descriptors and draw molecules. (RDKit, ★3.6k, BSD-3-Clause).
+- **متى أستخدمها / when:** chemistry tasks the user has the right to run
+- **كيف / how:** `pip install rdkit`. Verified here 2026-10-18: aspirin MW 180.16, 13 heavy atoms (rdkit 2026.09.1). Licence note: permissive.
+- **تثبيت / install:** `pip install rdkit`
+- **يحتاج / needs:** [`pip:rdkit`](../requirements.md#req-pip-rdkit)
+- **الرخصة / license:** BSD-3-Clause
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/rdkit/rdkit
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: BSD-3-Clause (10) · MIT (6) · — (5) · Apache-2.0 (2) · BSD-3-Clause / MIT (2) · Apache-2.0 / MIT (lightgbm's PyPI field is blank; upstream is MIT) (1) · MIT / Apache-2.0 (1) · PSF-style (matplotlib) (1) · host skill (1)
+- الرخص / licences: BSD-3-Clause (14) · MIT (9) · — (5) · Apache-2.0 (4) · BSD-3-Clause / MIT (2) · Apache-2.0 / MIT (lightgbm's PyPI field is blank; upstream is MIT) (1) · Biopython License / BSD-3-Clause (1) · MIT / Apache-2.0 (1) · PSF-style (matplotlib) (1) · host skill (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

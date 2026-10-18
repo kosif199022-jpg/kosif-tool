@@ -1,20 +1,21 @@
 ---
 name: kosif-superpowers
-description: Capability self-awareness and thinking upgrade for Claude. Shows what Claude can actually do in the current session (tools, connectors, installable libraries, product surfaces), how to verify it, and how to think, create and check work better, plus a searchable catalog of 4,200+ powers in 10 domains (thinking, writing and Arabic, code, data, documents, research, apps, image and audio, product and finance, motion graphics and video) with evidence badges and real proofs. Use at the start of any substantial or creative task, when asked what Claude can do, told to use its superpowers, or given this skill's repository link; and for motion graphics, montage, captions, reels or video edits, plus lawful software inspection and reverse-engineering investigation. Arabic triggers - قدراتك، القدرات الخارقة، تقدر تعمل ايه، فكّر بعمق، خريطة ذهنية، موشن جرافيك، مونتاج، ريلز.
+description: Capability self-awareness and thinking upgrade for Claude. Shows what Claude can actually do in the current session (tools, connectors, installable libraries, product surfaces), how to verify it, and how to think, create and check work better, plus a searchable catalog of 4,500+ powers in 10 domains (thinking, writing and Arabic, code, data, documents, research, apps, image and audio, product and finance, motion graphics and video), each with what it needs to run, an evidence badge and real proofs. Use at the start of any substantial or creative task, when asked what Claude can do, told to use its superpowers, or given this skill's repository link; and for motion graphics, montage, captions, reels or video edits, plus lawful software inspection and reverse-engineering investigation. Arabic triggers - قدراتك، القدرات الخارقة، تقدر تعمل ايه، فكّر بعمق، خريطة ذهنية، موشن جرافيك، مونتاج، ريلز.
 claude_ai_description: "Shows Claude its real powers in this session and how to think, create and verify better; 4,200+ powers incl. motion graphics and video. قدراتك، موشن جرافيك، مونتاج"
 ---
 
 # قواك الخارقة — KOSIF Superpowers
 
-**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,223 قدرة لكل منها وصفة ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,519 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=4386 families=48 domains=10 styles=288 watched=253 proven=716 ready=636 install=940 key=173 seen=609 documented=1241 idea=71 -->
-**الأرقام / counts:** 4,386 قدرة في 48 عائلة و10 مجالات — ✅ 716 · 🟢 636 · 📦 940 · 🔑 173 · 👁 609 · 📄 1,241 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=4519 families=50 domains=10 styles=288 watched=253 proven=743 ready=636 install=963 key=175 seen=609 documented=1322 idea=71 -->
+**الأرقام / counts:** 4,519 قدرة في 50 عائلة و10 مجالات — ✅ 743 · 🟢 636 · 📦 963 · 🔑 175 · 👁 609 · 📄 1,322 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.
 
+0. **أقلع / boot.** `python3 $SKILL_DIR/scripts/boot.py` (أقل من ثانية): الجهاز، الأرقام، كم قدرة جاهزة الآن، وأكبر تثبيت يفتح قدرات أكثر، ثم الخطوات الأربع التالية. بلا shell؟ اقرأ `CAPABILITIES.md` في جذر المستودع. — One command self-briefing; without a shell read the repo-root CAPABILITIES.md.
 1. **اعرف أين أنت / know your surface.** اقرأ قائمة أدواتك. ابحث عن الأدوات المؤجلة بـToolSearch، وعن الموصلات (MCP) والمهارات المتاحة. إن كان عندك shell شغّل `python3 $SKILL_DIR/scripts/probe_env.py` (ثانيتان، بلا تثبيت) لترى المعالج والذاكرة والشبكة والأدوات المثبتة وما يفتحه كل منها. التفاصيل: [self-discovery.md](references/self-discovery.md) و[surfaces.md](references/surfaces.md).
 2. **تذكّر قواك / recall powers.** `python3 $SKILL_DIR/scripts/powers.py suggest "<الطلب بكلمات المستخدم>"` يقترح العائلات والقدرات من كل المجالات. للصورة الكاملة افتح [capability-map.md](references/capability-map.md) (خريطة ذهنية).
 3. **لا تقل «لا أستطيع» قبل الفحص / registry before no.** ما ليس مثبتًا غالبًا على بعد أمر: pip أو npm أو apt. ثبّت في بيئة معزولة، شغّل اختبارًا صغيرًا، ثم ادّعِ القدرة. ما يحتاج مفتاحًا أو موصلًا (🔑) قل ذلك واقترح البديل.
@@ -207,6 +208,12 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
     python3 $SKILL_DIR/scripts/reference_edit_engine.py --probe ./cuts.json --visual ./visual.json --out ./new-remotion
 
 النتيجة تقرير يقيس لقطات مصغرة 64×36 بمعدل 2 إطار/ثانية وبصمة الإضاءة والألوان والتغيرات المرئية، ثم مشروع Remotion جديد بألوان مشاهد مستقاة من القياسات. لا ينسخ صور المرجع ولا الصوت؛ ولا يصنّف حركة الكاميرا تصنيفًا مؤكدًا أو يفهم القصة دون تحليل إضافي. يتحقق من مصدر الفيديو ومدة التقرير وقيم الألوان قبل أي إنتاج. **أداة داخل المهارة ≠ ffmpeg مثبت ≠ فيديو مُنتج ومُراجع**. ثبّت أي تبعيات خارجية بموافقة، ولا تعتبر كود Katana الملكي متاحًا لمجرد وجود Higgsfield Skills.
+
+## 4L. العقل الفائق والمستلزمات والخريطة — Cognition, requirements, graph
+- **التفكير / thinking:** [cognition.md](references/cognition.md) يحوّل «فكّر جيدًا» إلى إجراءات: سلّم L0–L6، حلقة الخبير، عشر عادات للعبقرية، خط تطوير الفكرة بثماني مراحل، التخطيط، القرار، التفكير الشبيه بالبشر، المراقبة الذاتية. المحرك `scripts/think.py`: `ladder` · `frame` · `models` (63 نموذجًا ذهنيًا) · `plan` · `ideas` · `decide` (مع الحساسية) · `fermi` · `critic`. العائلتان الجديدتان: [mental-models](references/powers/mental-models.md) MODEL و[planning-execution](references/powers/planning-execution.md) PLAN.
+- **المستلزمات / requirements:** كل قدرة لها حقل `requires` من سجل [requirements.json](data/requirements.json) (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج). `requirements.py for <ID>` قائمة قدرة واحدة؛ `requirements.py plan "<المهمة>"` قائمة المهمة كلها مع ▶ لما يبدأ الآن؛ الفهرس المقلوب: [requirements.md](references/requirements.md).
+- **الخريطة المترابطة / graph:** [capability-graph.html](references/capability-graph.html) تربط المجالات ← العائلات ← المستلزمات والسكربتات والاختبارات؛ طبقة الكود من Graphify ([graphify_code_layer.json](data/graphify_code_layer.json)) ومراجعة محلية بالـAST. `python3 $SKILL_DIR/scripts/capability_graph.py build`.
+- **حزام الأدوات الموسَّع / extended toolbelt:** 42 قدرة جديدة (رياضيات رمزية وبراهين، SQL وجداول سريعة، تعلم آلة وتنبؤ، تحسين وجدولة، جغرافيا وكيمياء وأحياء، زحف واستخراج، تحليل مستندات، شرائح ومخططات بالكود، تدوين موسيقي، رؤية حاسوبية، CAD، إمكانية الوصول، فحص أمني، اختبارات خصائص، ترجمة ومعالجة عربية، RAG وMCP)؛ 20 منها شُغّلت فعلًا: [toolbelt-smoke](proofs/toolbelt-smoke/README.md).
 
 ## 5. الموشن والمونتاج / motion & video procedure
 1. **افهم المادة:** صوت؟ قِس المدة وفرّغ بتوقيت الكلمات. موسيقى؟ BPM والضربات. فيديو؟ القطعات والوجوه والجهارة. نص؟ سيناريو بتوقيتات.

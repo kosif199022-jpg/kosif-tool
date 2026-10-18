@@ -9,6 +9,9 @@
   "how": "Reels/TikTok/Shorts/Snapchat/WhatsApp status → 9:16 1080×1920; YouTube/site/desktop → 16:9 1920×1080; feed reach → 4:5 1080×1350; square feed → 1:1 1080×1080; link preview → 1.91:1 1200×630; Pinterest → 2:3 1000×1500; cinema → 2.39:1. Fastify planner sets 9:16 by default and render.py forces even widths (width=round(h*ratio)); beware `--height 1920` on 16:9 gives 3413×1920, so pass `--height 1080`. KOSIF scaffolds declare the target per composition.",
   "params": "9:16 1080×1920 · 16:9 1920×1080 · 4:5 1080×1350 · 1:1 1080×1080 · 1.91:1 1200×630 · 2:3 1000×1500",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/brief-contract.md",
@@ -40,6 +43,9 @@
   "how": "`kosif.py scaffold <id> <dir>` and `verify_video.py --aspect`; kosif-studio RATIOS add 4:3 1440×1080 and 21:9 2520×1080; claude-animation-studio `new_scene.py --ratio 9:16 --dur 10 --fps 30 --kind 2d|3d`; studio forms offer fps 24/25/30/50/60. Basma editor works at 720p (9:16 720×1280, 1:1 900×900, 16:9 1280×720, 4:5 864×1080) and exports with short side 1080; it auto-picks the aspect from the source ratio (>1.2 → 16:9, <0.7 → 9:16, <0.9 → 4:5, else 1:1). Verified here: verify_video passed 11/12 on a 9:16 platform file (loudness check failed on a sine tone, as expected).",
   "params": "4:3 1440×1080 · 21:9 2520×1080 · Basma 720p working size, 1080 export",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/tools/kosif.py:35",
@@ -69,6 +75,7 @@
   "how": "Bar height = (H − W/2.39)/2 → 138 px at 1080p, 92 px at 720p (≈12–12.5% each). Burn with two drawbox fills; place subtitles inside the lower bar. Animated reveal (scene3d template): #letterbox-top/bottom from 70 px → 0 over 2.2 s power4.inOut, starting at min(2.4 s, 15% of D). Compose subjects on thirds with wide negative space. Verified here with drawbox on 1920×1080. (code snippet in references/powers/formats-platforms.md)",
   "params": "bars 138 px @1080p · 92 px @720p · reveal 70→0 px / 2.2 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/scene3d/index.html:36",
@@ -102,6 +109,7 @@
   "how": ".stage{width:1920px;height:1080px;transform:scale(min(vw/1920, vh/1080))} with letter/pillarbox; keep all chrome inside the stage; switch slides with opacity/visibility not display; no breakpoints inside the stage. For video renders this equals fixed px layout per data-width/height on #root.",
   "params": "stage 1920×1080; scale = min(vw/1920, vh/1080)",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/880-superloopy/1944-superloopy-slides/viewport-base.css",
@@ -129,6 +137,7 @@
   "how": "Size tokens per aspect, or clamp()/vw against the composition width (not the browser). Minimums at 1080 wide: body/caption ≥ 48–64 px on 9:16, smallest legible 36 px; split content rather than shrinking it.",
   "params": "captions ≥48–64 px @1080 w; floor 36 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14126-web-typography/references/responsive-typography.md",
@@ -154,6 +163,7 @@
   "how": "9:16: fewer markers, shorter labels, stacked small multiples, legend below, 3–5 ticks. 16:9: side-by-side panels, 4–7 ticks. Map plates 3840×2160 for 16:9 and ≈2700×3840 for 9:16. Inspect rendered pixels at every ratio (see DATA, MAP families).",
   "params": "ticks 3–5 vertical · 4–7 horizontal · map plate 3840×2160 / 2700×3840",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/SKILL.md",
@@ -180,6 +190,9 @@
   "how": "Round W/H to ÷8 (SD), ÷16 (Wan, Krea 2), ÷32 (LTX); LTX common 768×512, 1216×704, 704×480 with 121/161/257 frames; frames = round_to_8k+1(duration×fps). Then upscale/reframe to the delivery canvas, never stretch. AI clip slot lengths used by Fastify profiles: 6 s (fitness, viral), 7 s (stickman), 8 s Veo / 10 s Flow (kinetic), 10 s (vox, food) — re-verify model availability.",
   "params": "÷8/÷16/÷32 · frames 8k+1 · clips 6/7/8/10 s",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2142-comfyui-plugin/7651-comfy-image-utils",
@@ -208,6 +221,7 @@
   "how": "Conservative margins: top 250, bottom 320, right 120, left 60 px (IG story/reel covers: avoid 250 top / 400 bottom; rule of thumb: UI covers bottom 20% and right 12%). Owner variants: kosif-tool starter safe overlay inset 120/60/220 px (checkbox #safe, verified in the canvas starter), Basma review rule top 14% / bottom 18% (25–35% in its director KB) / sides 6% with captions ≈70% down; tool-briefs use 120 px top/bottom. Values drift with app updates — draw guides first, screenshot-check.",
   "params": "T250 B320 R120 L60 · trusted ≈900×1350 · starter inset 120/60/220",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/index.html:47",
@@ -239,6 +253,7 @@
   "how": "LinkedIn post 1200×627 (100 px) · X card 1200×675 (80 px) · IG square 1080×1080 (108 px = 10%) · IG landscape 1080×566 (80 px) · FB post 1200×630 (100 px) · YouTube thumbnail 1280×720 (72 px) · channel art 2560×1440 (safe 1546×423 centred) · LinkedIn cover 1584×396 · X header 1500×500 · GitHub preview 1280×640 ≤1 MB · display 300×250, 728×90, 160×600. Keep key content 10–15% from edges.",
   "params": "see table; general 10–15% margin",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1567-tonone/4428-form-social/SKILL.md",
@@ -267,6 +282,7 @@
   "how": "5% margins; on 9:16 keep out of bottom ≈20% and right ≈12%; position ≈70% down; ≤2 lines; contrast ≥4.5:1 (≥7:1 for small mobile text).",
   "params": "2 lines · 5% margins · contrast ≥4.5:1",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-typography/references/quality-and-editors.md",
@@ -292,6 +308,9 @@
   "how": "kosif-tool STYLE.md §6 + TEST_REPORT: sides 5%, top/bottom 12% on 9:16; Basma wraps every agent run on 9:16 so caption.size < 9 becomes 9.5 and missing stroke becomes 6; montage-motion readable() rule passes its test (`test_launch.Rules.test_readable`).",
   "params": "min 36 px @1080 · preview 360 px · Basma caption ≥9.5, stroke 6",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/templates/STYLE.md",
@@ -319,6 +338,7 @@
   "how": "Ask: narrated or silent? Speaker-led: 1–3 bullets; reading-first: 4–8 bullets or 4–6 cards. Social autoplays muted, so burn the key words or ship captions.vtt.",
   "params": "speaker-led 1–3 · read-first 4–8 bullets / 4–6 cards",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/880-superloopy/1944-superloopy-slides",
@@ -344,6 +364,10 @@
   "how": "`python3 scripts/kmotion.py aspect CLIP --to 9:16|16:9|1:1|4:5 --mode smart|crop|blur --out v.mp4` (same tool in kosif-studio `motion/tools.py aspect`, studio recipe \"aspect\", MCP kosif_run). Blur mode: gblur sigma 40, brightness −0.12, saturation 0.85. Verified here: 1920×1080 → 4:5 smart gave 1080×1350. Heavier subject tracking (YOLO/mediapipe) is an install away; Resolve Smart Reframe needs Resolve Studio.",
   "params": "modes smart|crop|blur · blur σ40, −0.12 brightness, 0.85 sat",
   "install": "",
+  "requires": [
+   "pip:mediapipe",
+   "pip:ultralytics"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md",
@@ -372,6 +396,9 @@
   "how": "Verified here on 1920×1080 → 1080×1920. Variants: gblur sigma 30 instead of boxblur; HyperFrames yt-vertical-fill block does the reverse (portrait inside 16:9 with blurred/mirror/copy side fills, grid texture, contrast lift; `npx hyperframes add yt-vertical-fill`). (code snippet in references/powers/formats-platforms.md)",
   "params": "boxblur 20 · brightness −0.15 · fg 1080 wide",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1511-homie/3903-video/references/TRAILER.md",
@@ -398,6 +425,7 @@
   "how": "Pad: scale=W:H:force_original_aspect_ratio=decrease,pad=W:H:(ow-iw)/2:(oh-ih)/2. Centre crop: crop=ih*9/16:ih,scale=1080:1920 (pro-video-editor edl_render `--ratios 9:16,1:1`). Never pad with plain black for social — prefer the blurred fill.",
   "params": "targets 1080×1920 · 1080×1350 · 1080×1080 · 1920×1080",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
@@ -424,6 +452,7 @@
   "how": "Timeline JSON `clips[].fit = cover|contain|blur`; mimic `shots[i].replacement.fit` → mm_build._fit_filter / prep_shot. Found-footage normaliser (Ghorba): -ss 0 -t DUR -an, scale=W:H:force_original_aspect_ratio=increase:flags=bicubic,crop=W:H,setsar=1,fps=24,<grade>,format=yuv420p, libx264 crf 24 -threads 2, -stream_loop -1 for clips shorter than the slot.",
   "params": "Ghorba 540×960 or 720×1280 @24 · crf 24 · threads 2",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md",
@@ -452,6 +481,9 @@
   "how": "Feasibility: a 60 s short with two 15 s handles needs ≥90 s of source. Local path: per candidate ffmpeg trim + kmotion aspect --mode smart (or blur), inspect frames; never pad black or silently shorten. Resolve path: duplicate timeline, custom 2160×3840 before switching to portrait, Smart Reframe per clip (Resolve Studio scripting), verify the render really is 2160×3840 — API success ≠ good framing.",
   "params": "20 candidates · 60 s + 2×15 s handles · 2160×3840",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2466-davinciresolve-youtube-shorts/SKILL.md"
@@ -477,6 +509,7 @@
   "how": "For HTML motion, re-render each ratio from the same composition with ratio-specific layout tokens (text blocks, legends) instead of cropping pixels; for product/feature videos reframe each ratio against the real UI and make one poster per ratio. Native portrait renders of every AI clip cost ≈2× (scroll-world clipMobile chain, 720 w, -g 4); a focus-x % per stop can steer a cheaper 16:9→9:16 crop.",
   "params": "16:9 · 4:5 · 9:16 · 1:1; native portrait ≈2× cost",
   "install": "",
+  "requires": [],
   "license": "mcp-higgsfield-landing has no licence file — read for ideas, do not copy code.",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:57",
@@ -504,6 +537,9 @@
   "how": "Adobe Firefly connector: image_crop_and_resize / video_resize (video is resize only, no auto-reframe), focus subject|face|upper_body|{prompt}|{x,y}. Local equivalent: saliency/face box → crop, or blurred/mirrored fill.",
   "params": "3-crop preview · focus modes",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/103-adobe-for-creativity/232-adobe-create-social-variations/SKILL.md",
@@ -530,6 +566,10 @@
   "how": "Verified here: bt709 tags read back by ffprobe and moov before mdat. Owner encoders: kosif-studio film.Encoder pipes RGB into libx264 and raises if ffmpeg exits non-zero (draft ultrafast/crf 23, delivery medium/crf 18, GOP 2×fps); fastify render.py CRF 19; kosif-tool render-pipeline H.264 High CRF 18–20; kosif-studio tools gate: even dimensions, AAC 48 kHz 192–256k. (code snippet in references/powers/formats-platforms.md)",
   "params": "crf 17–18 final / 23 web · AAC 160–320k 48 kHz · GOP 2×fps",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
@@ -559,6 +599,11 @@
   "how": "ffmpeg -c:v libx264 -b:v 45M -maxrate 50M -bufsize 90M; if the NLE lacks AAC, render PCM then -c:v copy -c:a aac -b:a 320k; verify frame count within 1 frame of the timeline; −14 LUFS ±1, TP ≤ −1 dBTP. Vector scenes can be re-rendered at 4K (HyperFrames `--resolution landscape-4k` via deviceScaleFactor; kosif-studio `studio.py SCENE --render out.png --scale 3.2` = 3840×2560, raster results enlarged by integer Lanczos with unsharp 1.35/−0.35).",
   "params": "45/68 Mbps · AAC 320k · frame count ±1",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2450-davinciresolve-audio-delivery/SKILL.md",
@@ -587,6 +632,10 @@
   "how": "Verified here: VP9 yuva420p reports alpha_mode=1; prores_ks -profile:v 4444 writes yuva444p12le. Remotion: --image-format=png --pixel-format=yuva444p10le --codec=prores --prores-profile=4444, or yuva420p + vp9. HyperFrames: render --format webm|mov|png-sequence. The page background must be transparent. (code snippet in references/powers/formats-platforms.md)",
   "params": "yuva420p (web) · yuva444p10le (NLE)",
   "install": "",
+  "requires": [
+   "npm:remotion",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10438-remotion-render/transparent-videos.md",
@@ -614,6 +663,10 @@
   "how": "HyperFrames render --hdr (auto when sources are HDR; not combinable with --resolution); verify transfer/primaries with ffprobe. Social defaults stay SDR BT.709.",
   "params": "",
   "install": "npm i -D hyperframes@0.8.164",
+  "requires": [
+   "ffmpeg",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/guides/hdr.mdx"
@@ -639,6 +692,9 @@
   "how": "Verified here: 3 variant playlists + master.m3u8 with 3 STREAM-INF. Gotcha found here: with var_stream_map each rendition needs its own audio map (-map 0:a three times), otherwise ffmpeg fails with \"Invalid argument\". Choose HLS (widest), DASH, CMAF (one set for both) or LL-HLS/WebRTC for live; DRM and CDN are external. (code snippet in references/powers/formats-platforms.md)",
   "params": "5000/2800/1400k · GOP 60 @30 fps · 4 s segments",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
@@ -667,6 +723,10 @@
   "how": "-c:v h264_nvenc -preset p7 -tune hq -rc vbr -cq 19; HyperFrames --gpu. This container has no GPU — use libx264.",
   "params": "cq 19 · preset p7",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "gpu"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
@@ -691,6 +751,9 @@
   "how": "Web/YouTube/Spotify/Apple −14 LUFS ±1, TP ≤ −1 dBTP; calm pieces −16 to −18; podcast −16 (mono −19); broadcast EBU R128 −23; club −9 to −6 (script −8); music bed under SFX −18 to −20. Two-pass loudnorm I=-14:TP=-1:LRA=11, then confirm with ebur128=peak=true on the encoded file; kosif-tool verify_video prints LUFS and TP (the proof films measured −14.0 LUFS / −2.1 dBFS). Preserve user audio untouched unless asked.",
   "params": "−14 LUFS · TP −1 dBTP · podcast −16 · R128 −23",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-audio/scripts/audio_analyze.py:30",
@@ -719,6 +782,10 @@
   "how": "ffmpeg -c:a libopus or pcm_s16le; browsers need Web Audio buffer loop. ElevenLabs free plan has no commercial licence and needs \"Eleven Music\" credit; paid plan licence counts at render time — store plan/rights in the receipt.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "key:elevenlabs"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1511-homie/3901-sound/references/TRAPS.md",
@@ -745,6 +812,9 @@
   "how": "H.264 10–12 Mbps up to 30 fps (or ProRes 422 HQ), stereo AAC 256 kbps at 44.1/48 kHz, .mov/.m4v/.mp4, autoplays muted; average watch 4–6.5 s. Google Play takes a YouTube URL. ffmpeg -c:v libx264 -b:v 11M -maxrate 12M -r 30 -c:a aac -b:a 256k -ar 48000 -ac 2; verify with ffprobe.",
   "params": "15–30 s · 10–12 Mbps · ≤30 fps · AAC 256k",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1446-marketing-skills/3488-aso/references/apple-specs.md",
@@ -770,6 +840,7 @@
   "how": "Poster via -frames:v 1 is the LCP image; explicit width/height or aspect-ratio; stills as <picture> AVIF → WebP → JPEG at 3–5 widths; fetchpriority high on 1–2 hero images. Owner light profile (earth): WebP q80 at 1600/1200/900 widths, silent H.264 1280 w crf 27 -an +faststart (~1.8 MB of brand art, tested).",
   "params": "LCP ≤2.5 s · CLS <0.1 · INP <200 ms · WebP q80 · crf 27",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2306-generative-web-media/8855-web-optimization-pipeline/SKILL.md",
@@ -798,6 +869,10 @@
   "how": "Playwright video:{mode:\"on\", size:{width:1280,height:820}} (Playwright + Chromium installed here); ffmpeg -vf scale=1280:-2 -c:v libx264 -pix_fmt yuv420p -crf 26 -preset veryfast -movflags +faststart -an; GIF fps=12,scale=960:-1:flags=lanczos,palettegen → paletteuse.",
   "params": "crf 26 · GIF 12 fps / 960 w",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1530-webcraft/4196-ui-screenshots/references/clips.md"
@@ -822,6 +897,9 @@
   "how": "`python3 scripts/kmotion.py platforms FILM.mp4 --out deliver --platforms tiktok,reels,shorts,youtube,x,whatsapp,linkedin,snapchat --mode smart|crop|blur --title …` → FILM_<platform>.mp4 + FILM.platforms.json (libx264 high, CRF 20, maxrate, faststart, AAC 48k). Verified here on a 6 s clip (tiktok/whatsapp/youtube + JSON with warnings) and by test_platforms_table. Limits are \"as commonly published; verify at use\".",
   "params": "tiktok 9:16 1080×1920 ≤600 s ≤287 MB 12000k/192k · reels ≤180 s ≤250 MB · shorts ≤180 s ≤256 MB · youtube 16:9 ≤2000 MB 16000k/256k · x 1280×720 ≤140 s ≤512 MB 8000k/160k · whatsapp 720×1280 ≤30 s ≤16 MB 2200k/96k · linkedin 1:1 1080 ≤600 s ≤200 MB 8000k · snapchat ≤60 s ≤32 MB 6000k/128k",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/platforms.py:28",
@@ -850,6 +928,9 @@
   "how": "`python3 scripts/kmotion.py export FILM.mp4 --out deliver --aspects 9:16,1:1,16:9 --title \"…\" --gif --webp` (kosif-studio `tools.py export … --poster 2.0 --mode smart --parallel 2`). Verified here: produced _9x16.mp4, _1x1.mp4, _poster.jpg, .gif and .export.json.",
   "params": "GIF 12 fps / 480 px / 160 colours / bayer scale 4 / 8 s · WebP 15 fps / 540 px / q70 / 8 s",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md",
@@ -877,6 +958,9 @@
   "how": "`python3 social.py pack FILM.mp4 --platforms tiktok,reels,shorts --topic \"…\" --out X.post.json` then `social.py check X.post.json` (exit 0 = ready). Lints: X weighted length (emoji 2, URL 23), YT title ≤100 (warn >70), hashtag caps (IG 5, YT >60 voids all, Threads 1), Arabic-normalised duplicate tags, hook before \"more\", dead links, CTA, alt text. Verified here: pack + check ran on a TikTok file (it flagged items as not ready — a draft to fill, not a final caption). Basma has the in-app version (5 Arabic hook titles ≤6 words, postPack JSON, POST_LIMITS) — needs its key-backed agent.",
   "params": "X 280 weighted · YT title ≤100 · IG 5 tags · Threads 1",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-social/scripts/social.py:165",
@@ -905,6 +989,9 @@
   "how": "`python3 social.py limits [--platform tiktok|reels|instagram|shorts|youtube|facebook|x|linkedin|threads]` (ran here; WhatsApp is not in this table — use platforms.py). Default posting slots (heuristic local time): tiktok 21:00, reels 20:00, instagram 13:00, shorts 18:00, youtube 17:00, facebook 19:00, x 12:00, linkedin 09:00, threads 12:00 — overridden by besttime.",
   "params": "tiktok 4000 chars/600 s/35 photos · reels 2200/5 tags/125 visible/180 s · IG 4:5 carousel 20 · FB 63206 · X 280/140 s/4 images · LinkedIn 3000/210 visible",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-social/scripts/social.py:39",
@@ -931,6 +1018,7 @@
   "how": "Hook = number / result / question / contradiction that the first 2 s of video actually show; one CTA (save / share / comment word / follow); one punchy non-corporate share line for X/LinkedIn/Discord drafted in planning, finalised at delivery (brag).",
   "params": "max 5 tags · 1 CTA",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-social/references/copy-guide.md",
@@ -957,6 +1045,7 @@
   "how": "Scene JSON with string keys → per-locale renders; lock brand names in a glossary; validate placeholders/ICU before import; translation memory fuzzy 75–100% via XLIFF; re-fit text after translation (Arabic vs English length differs); pair with ARAB-08 content-language switch.",
   "params": "TM fuzzy 75–100%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2329-localization-i18n-engineering/8941-l10n-pipeline-and-tms/SKILL.md",
@@ -983,6 +1072,10 @@
   "how": "`npx hyperframes render --batch rows.json --output \"renders/{name}.mp4\"` (cloud/lambda variants take JSONL); KOSIF equivalent: loop mtemplates.py `--set key=value` per row and render each.",
   "params": "",
   "install": "npm i -D hyperframes@0.8.164",
+  "requires": [
+   "python3",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/compare-and-batch.md",
@@ -1010,6 +1103,12 @@
   "how": "npx hyperframes render [--quality draft|looks|delivery] [--fps 24|30|60] [--format mp4|webm|mov|gif|png-sequence|hls] [--crf 0-51 | --video-bitrate 10M] [--workers auto] [--docker] [--strict]. Defaults 30 fps; looks = CRF 16; GIF ≤30 fps (15 preferred); HLS 4 s; ≈256 MB RAM per worker. For KOSIF HTML pages the in-repo path is `node tools/render_html.cjs` (proven by the proof films).",
   "params": "looks CRF 16 · GIF 15 fps · worker ≈256 MB",
   "install": "npm i -D hyperframes@0.8.164",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "docker",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/preview-render.md",
@@ -1037,6 +1136,9 @@
   "how": "Basma share(): navigator.share({files,title,text}); links tiktok.com/upload, youtube.com/upload, instagram.com, facebook.com/reels/create.",
   "params": "",
   "install": "cd app && npm install",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "app/public/js/50_autoedit.js:1336"
@@ -1061,6 +1163,10 @@
   "how": "kosif-audit-studio/whatsapp-container-v2: `npm install` then routes /connect (QR link), /status, /send, /send-media, /send-bundle; mimetype prefix picks message type; audio goes with ptt false. Needs the owner to scan the link QR — a personal account, not an API key.",
   "params": "max media 25 MB · ptt false",
   "install": "",
+  "requires": [
+   "node",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-audit-studio/whatsapp-container-v2/server.mjs:9",
@@ -1086,6 +1192,11 @@
   "how": "`npx hyperframes publish [dir]` (hosted, republish updates the same link). Cloudinary: so_/eo_/du_ trim, ac_none for autoplay, c_limit,h_720, fps_, fl_splice, f_auto:animated previews — e.g. du_5/vc_auto/f_auto:video/q_auto. Both need accounts; locally use ffmpeg and the claude.ai artifact (FMT studio cloud) instead.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "npm:hyperframes",
+   "claude:tools"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/preview-render.md",
@@ -1111,6 +1222,10 @@
   "how": "`python3 scripts/web/build_studio_cloud.py --out studio-cloud.html --home-url URL`: modules wrapped in IIFEs, imports rewritten, mp4-muxer@5.2.1 from cdn.jsdelivr.net, download() → window.claude.use(\"downloads\").save(); save errors mapped (declined, too_large, rate_limited, rejected_extension). Verified here: built a 78,544-byte page.",
   "params": "≈78.5 KB page · mp4-muxer 5.2.1",
   "install": "",
+  "requires": [
+   "python3",
+   "claude:tools"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/build_studio_cloud.py:1",
@@ -1136,6 +1251,7 @@
   "how": "Paste chatgpt/custom-gpt/instructions.md (3,999/8,000 chars), upload knowledge/*.md, import openapi.json with a Bearer token (29 action tools; MCP 65); Claude Project uses claude/project-instructions.md. JSON envelope only when the app parses JSON: {title, analysis, confidence, sources, json:{tool_output,prompts,imageSpecs}, nextSteps, qualityScore{…}} with per-platform {platform, prompt, negativePrompt, params{aspect}, audioDirection}.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/chatgpt/custom-gpt/SETUP.md",
@@ -1161,6 +1277,9 @@
   "how": "`python3 scripts/poster.py FILM --at 3.2 --bake` or poster.pick → extract → bake; brag recipe: overlay on the first frame only, -c:a copy (1/30 s at 30 fps). Verified by test_poster_pick_and_bake here.",
   "params": "1 frame · audio copied · frame count unchanged",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:89",
@@ -1188,6 +1307,10 @@
   "how": "ffmpeg -vf \"select='gt(scene,0.3)',scale=640:-1\" -vsync vfr, or thumbnail=n=100; score with numpy Laplacian variance (sharpness), face presence, contrast, placement; tile a contact sheet; when the piece is a composition, render the chosen moment natively. Animated cover = gentle loop with matching ends. YouTube bulk custom thumbnails ≲100 per channel per 24 h.",
   "params": "scene > 0.3 · thumbnail n=100 · ≤~100 uploads/24 h",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:numpy"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/222-video-thumbnails/SKILL.md",
@@ -1213,6 +1336,10 @@
   "how": "`python3 scripts/kmotion.py thumb FILM --at 2 --text \"…\" --out cover.jpg` (studio recipe \"thumb\"); text is shaped by Pillow RAQM here. For designed thumbnails compose HTML/CSS and screenshot with Playwright at 1280×720.",
   "params": "--at seconds · 1280×720 for YouTube",
   "install": "",
+  "requires": [
+   "chromium",
+   "pip:pillow"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:90"
@@ -1237,6 +1364,7 @@
   "how": "Shooting notes: slightly below eye level, medium close-up, one off-axis key light. Generate backgrounds without text (prompt template: subject with exaggerated emotion, high contrast, bold rim light, clean background, space on the right for title, 16:9) and composite the real face and the Arabic title as layers. A/B: vary one element, judge after 48 h by CTR vs channel average.",
   "params": "3 concepts · 1280×720 · 48 h test",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/3067-youtube/13228-creator-thumbnail-agent/SKILL.md",
@@ -1262,6 +1390,7 @@
   "how": "Must read in under 1 s at 150–200 px width; for Arabic count words not letters, heavy weights, no tracking. Title ≤60 chars with the key words in the first ~40; check overlap with a set intersection; produce 3 pairs at different angles (curiosity / benefit / identity). Basma cover text 2–4 words.",
   "params": "1–3 words · title ≤60 chars · 0 shared words",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1520-digital-marketing-pro/4132-video-packaging/SKILL.md",
@@ -1287,6 +1416,9 @@
   "how": "Playwright screenshot of a fixed-size body with overflow hidden; direction by topic (technical = dark + accent gradients, tutorial = light and structured, conceptual = centred gradient type). Same approach yields 1280×720 thumbnails and 1080×1350 posts.",
   "params": "1200×630 · ≤40 chars · ≤2 fonts",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "WTFPL folder in the atlas x* area — permissive, idea only.",
   "proof": [
    "kosif-atlas/skills/x4919-visual-gen/x20318-cover-image/SKILL.md"
@@ -1311,6 +1443,10 @@
   "how": "favicon.svg (dark via media query), favicon.ico 16/32/48, apple-touch 180×180, PWA 192/512, OG 1200×630, X 1200×675; render with headless Chromium or Pillow. Owner examples: earth tools/brand/make_marks.py renders icons from the SVG mark with theme_color #1d1814 (identity_unity test); audit-studio Arabic RTL manifest (lang ar, dir rtl, standalone, SVG any/maskable icons, theme #24113f).",
   "params": "16/32/48 · 180 · 192/512 · 1200×630 · 1200×675",
   "install": "",
+  "requires": [
+   "chromium",
+   "pip:pillow"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2248-brand-identity-studio/8557-brand-book-assembly",
@@ -1339,6 +1475,7 @@
   "how": "exportFig(fig, fmt): resolve CSS var colours with getComputedStyle, serialise SVG, draw into a canvas at k=2, canvas.toBlob(\"image/png\"); fall back to SVG on error; PRINT_CSS hides tools.",
   "params": "scale 2×",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/charts.js:184",
@@ -1364,6 +1501,9 @@
   "how": "Toolbar التصدير: 💾 PNG (Ctrl+S), ⤢ high-res (3840×2560, scale 3.2, ss=2), 📤 image code, 🎬 film (30 fps H.264); vectorize.to_svg(data, path, scale) writes one even-odd path per colour (scale 2 from the window, 4 from --trace).",
   "params": "3840×2560 · SVG scale 2/4 · MP4 30 fps",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/studio.py:1275",
@@ -1391,6 +1531,9 @@
   "how": "@media print: hide topbar/rails, panels break-inside:avoid, no shadows, body 11pt/1.6; earth print lock: ink #2b1a0f, brand #8a5a2b, Amiri / Noto Naskh / Aref Ruqaa. Paper preview: .paper bg #fcfbf7, padding 64px clamp(28px,6vw,78px), shadow 0 22px 60px #0008, brand header 800 weight / 3px tracking (Latin only) #5b376d. Receipts: qrcode.js with CorrectLevel.M, TLV invoice data.",
   "params": "11pt/1.6 · 80 mm receipt · 60×40 mm label · QR ECC M",
   "install": "",
+  "requires": [
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/ds/tokens.css:446",
@@ -1419,6 +1562,9 @@
   "how": "earth SK.output present(): slidesOf(doc) splits at headings; title slide linear-gradient(135deg,#0b1030 0%,#2a3fae 60%,#2340c4 100%); title clamp(22px,4vw,44px) 800. HyperFrames slideshow skill adds fragments, hotspots, branching sequences and presenter notes (npm install needed).",
   "params": "padding clamp(12px,3vw,40px) clamp(12px,4vw,56px)",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/core/output.js:228",
@@ -1444,6 +1590,7 @@
   "how": "Template each length as a fixed timeline grid (markers at 2 s, 5 s, end card) and verify message placement on rendered stills at those times. Platform pacing (kosif-tool ads playbook): TikTok/Reels 9:16 15–30 s with cuts every 1–2 s; YouTube pre-roll key message before 5 s; feeds 1:1/4:5; ad structure hook 0–1.5 s, features 2–3 s each, CTA 2–3 s, logo 1–1.5 s.",
   "params": "6 / 15 / 30 s · markers 2 s, 5 s · cuts 1–2 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1520-digital-marketing-pro/4133-video-script/SKILL.md",
@@ -1470,6 +1617,7 @@
   "how": "Timeline/storyboard JSON beats with priority; regenerate 30 s and 15 s by dropping optional beats and re-timing to the same audio grid; re-check each version’s hook and CTA.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1520-digital-marketing-pro/4133-video-script/SKILL.md"
@@ -1494,6 +1642,7 @@
   "how": "Blog→video: H2s → chapters, stats/quotes → pull-quote overlays on B-roll, steps → tutorial segments, conclusion → short. Every derivative passes the standalone test (own hook and payoff, no \"as discussed…\"); list what was cut and why; channel specs: short video = 80–150 spoken words for 20–45 s, 3–5 beats each with an on-screen text cue, one CTA; YouTube description 200–500 words, first ~100 chars above the fold.",
   "params": "3–5 clips per long piece · 80–150 words / 20–45 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1520-digital-marketing-pro/4013-content-repurpose/SKILL.md",
@@ -1519,6 +1668,7 @@
   "how": "X/Bluesky/Mastodon 30–45 s 16:9 1080p60, hook within 2 s; YouTube 30–90 s; Shorts/TikTok/Reels 15–45 s native 9:16 with a big subject; README/Discord GIF loops 4–8 s at 640 px, 20 fps, <15 MB; store pages 60–120 s. Render native 9:16 rather than cropping when possible.",
   "params": "30–45 · 30–90 · 15–45 s · GIF 4–8 s 640 w 20 fps <15 MB",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/concept-and-music.md"
@@ -1543,6 +1693,9 @@
   "how": "Write the \"mm:ss Name\" list (hh:mm:ss past 60 min) for the description; mood words belong in captions, not chapters. To embed: ffmetadata [CHAPTER] blocks (TIMEBASE=1/1000, START, END, title=…) then ffmpeg -i in -i ch.txt -map_metadata 1 -map_chapters 1 -c copy. Verified here with Arabic titles read back by ffprobe -show_chapters.",
   "params": "≥3 chapters · ≥10 s apart · first 00:00",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2465-davinciresolve-subtitle-travelnote/SKILL.md",
@@ -1568,6 +1721,9 @@
   "how": "Instagram 5 min / 8–10 ideal, LinkedIn PDF 7–12, Facebook 5–8, all 1080×1350; title ≤8 words, body ≤30 words; reserve 80 px outer edge for pager; one progress signal (counter, bar or colour progression); one slide component with variants (cover, content, data, contrast, closing). Render with the Arabic carousel tool (ARAB-60: `social.py carousel spec.json --out DIR` → PNG + PDF + contact sheet). The same slide system animates into a 9:16 reel, one slide per beat.",
   "params": "1080×1350 · title ≤8 w · body ≤30 w · 80 px edge",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2976-pwdev-social-media/12581-carousel-builder/SKILL.md",
@@ -1594,6 +1750,7 @@
   "how": "MG-061: cards 0–0.9 / 0.9–1.8 / 1.8–2.7 s, topic 2.7–4 s, mask reveal per word. MG-062: question 0–1.5, split 1.5–2.5, answer 2.5–5 s (two masked frame copies move vertically). MG-063: tips 0–4/4–8/8–12 s, corner number, real progress bar. MG-066: result 0–2, shrink 2–3, steps 3–8, back 8–10 s. MG-067: labels 0–1, compare 1–6, summary 6–8 s with equal area, light and speed. MG-070: last shot shrinks 0–1 s, one CTA 1–4 s, never a fake tappable button.",
   "params": "4 · 5 · 12 · 10 · 8 · 4 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-social-clips.md",
@@ -1621,6 +1778,9 @@
   "how": "Author a timeline where t=D equals t=0 and export frames 0..N−1 only; check with ffmpeg -stream_loop and a frame diff (brief: first/last identical, final hold only a 2% opacity breathe). Cross-fade variant: xfade=fade:duration=0.4:offset=D−0.8. GIF: palettegen=stats_mode=diff:max_colors=192, paletteuse=dither=sierra2_4a:diff_mode=rectangle, -loop 0; over budget → width 480 → fps 15 → 128 colours → shorter. Verified here: 6 s, 480 px, 15 fps, 128 colours ≈1.0 MB.",
   "params": "≈6 s · <15 MB (X/Discord) · 128–192 colours",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md",
@@ -1650,6 +1810,10 @@
   "how": "`python3 scripts/mtemplates.py new NAME --template end-card --set cta=\"تابعنا للمزيد\" --set handle=@kosif [--seconds 6 --size 1080x1920]` → projects/NAME/index.html (+fonts, gsap, motion-kit); render with motion.py. Verified by test_every_template_generates_and_lints.",
   "params": "6 s · accent #E7B65A · bg #1b2a49 → #0d1b2a · bar linear over D−0.4 s",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:gsap"
+  ],
   "license": "Uses GSAP — standard \"no charge\" licence, not MIT.",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/motion/end-card.html",
@@ -1677,6 +1841,9 @@
   "how": "Seen in style:pm-mehul4795-4a7007 (9:16, pale lavender #eceffa, CTA pill radius 24 px, features separated by red dots, small \"BY …\" credit). Registry block: `npx hyperframes add store-badge-lockup`, mount on a .clip div with data-composition-src/data-start/data-duration and data-variable-values (headline, showApple, showGoogle); extra duration becomes hold, never time-stretch. Square muted app ad brief: icon + name fully visible by 300 ms, last 500 ms frozen for the thumbnail, 80 px margin, text ≥48 px, headline ≥96 px.",
   "params": "pill r 24 px · visible by 300 ms · hold last 500 ms",
   "install": "npm i -D hyperframes@0.8.164",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "style:pm-mehul4795-4a7007",
@@ -1707,6 +1874,11 @@
   "how": "`npx hyperframes add tiktok-follow | instagram-follow | x-follow-card | x-post | reddit-post | yt-comment-card | yt-lower-third | macos-notification | spotify-card` → compositions/<name>.html (inline SVG + paused GSAP 3.14.2 timeline). Sizes: follow cards 1080×1920 4.5 s, posts/notification 1920×1080 5 s, comments 8 s, lower third elastic.out(1,0.4) 4.5 s. Swap DM Sans/Inter for an Arabic face (ARAB-11) and set text direction per element. Use fictional handles or the user’s own — never impersonate real accounts.",
   "params": "4.5–8 s · 1080×1920 / 1920×1080",
   "install": "npm i -D hyperframes@0.8.164",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes",
+   "os:macos"
+  ],
   "license": "Apache-2.0 registry; GSAP inside uses its standard licence.",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/tiktok-follow/tiktok-follow.html",
@@ -1736,6 +1908,7 @@
   "how": "Question in the top 12–20% of 9:16; counter as tabular digits updated on event times (ARAB-73); \"sound on\" pill fades at 3 s; vertical ad variant puts the headline in the top third.",
   "params": "top 12–20% · pill 0–3 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-kantamk-61f410",
@@ -1764,6 +1937,9 @@
   "how": "1080×1080 (or 720×720 draft), captions top, text block top-left (top-right for Arabic), 80 px margins, product/hero bottom two-thirds; e-commerce ad structure: hook 0–1.5 s, promise, 2–4 feature beats 2–3 s, price card spring (damping 14, stiffness 180), CTA 2–3 s, logo 1–1.5 s, product ≥40% of frame height (`kosif.py scaffold ecommerce-ad <dir>`).",
   "params": "1080×1080 · 80 px · product ≥40% height",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "style:pm-cansincengiz-me-cf68dd",
@@ -1797,6 +1973,9 @@
   "how": "Copy into project/brief.json and run `npm run plan`; deliverable = H.264 yuv420p +faststart CRF 19 MP4 + editable source, brief, storyboard and QA receipt (AGENTS.md step 9).",
   "params": "",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "fastify-motion-bro/examples/demo-9x16.json",
@@ -1824,6 +2003,7 @@
   "how": "Load the skill (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/ecommerce-store-listings/SKILL.md",
@@ -1852,6 +2032,7 @@
   "how": "Launch films: 1920×1080 30 fps H.264 with sub-frame motion blur + a _nosound master (the final sound is often made by a human in an editor). Brand masters: 1920×1080 24 fps H.264 High, BT.709, 20–30 Mbps, AAC 256k. Loudness target −14 LUFS / −1.2 dBTP, and the payoff line must stand clearly above the music (a −21 LUFS master with the payoff only +2.7 dB over music was not client-ready).",
   "params": "H.264 High BT.709 20–30 Mbps; AAC 256k; −14 LUFS / −1.2 dBTP",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/launch-film.md",

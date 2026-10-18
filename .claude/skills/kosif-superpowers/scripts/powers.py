@@ -62,6 +62,12 @@ FAMILY_META = {
     "thinking-core": ("THINK", "mind", "نواة التفكير", "Thinking core",
                       "إجراءات تفكير تجعل الاستدلال أدق: التفكيك والفرضيات واختبار الافتراضات ثم القرار.",
                       "Reasoning procedures that sharpen answers: decompose, hypothesise, test assumptions, decide."),
+    "mental-models": ("MODEL", "mind", "النماذج الذهنية", "Mental models",
+                      "63 نموذجًا ذهنيًا للتفكير والقرار والتخطيط والإبداع، لكل منها سؤال وخطوات ومخرَج وفخ؛ think.py models يختار المناسب.",
+                      "63 mental models for reasoning, deciding, planning and creating, each with a question, steps, output and pitfall; think.py models picks the right ones."),
+    "planning-execution": ("PLAN", "mind", "التخطيط والتنفيذ", "Planning & execution",
+                           "من الهدف إلى خطة قابلة للتنفيذ: تخطيط عكسي، تفكيك، مسار حرج، بوابة المستلزمات، تشريح مسبق، معايير إيقاف.",
+                           "From goal to executable plan: backcasting, breakdown, critical path, requirements gate, pre-mortem, kill criteria."),
     "creativity-engine": ("IDEA", "mind", "محرك الإبداع", "Creativity engine",
                           "توليد خيارات كثيرة متنوعة ثم اختيار الأقوى منها بمعايير واضحة.",
                           "Generate many varied options, then pick the strongest with explicit criteria."),
@@ -137,6 +143,35 @@ INTENT = {
     "بودكاست": ["podcast", "captions", "waveform", "talking-head", "~motion"],
     "مونتاج": ["montage", "cuts", "transitions", "ffmpeg", "grade", "~motion"],
     "ريلز": ["9:16", "reel", "captions", "hook", "~motion"],
+    "تنبؤ": ["forecast", "statsforecast", "time-series", "@ANLY"], "توقع": ["forecast", "@ANLY"], "سلسلة زمنية": ["forecast", "time-series", "@ANLY"],
+    "معادلة": ["sympy", "solve", "symbolic", "@ANLY"], "معادلات": ["sympy", "solve", "@ANLY"], "رياضيات": ["sympy", "math", "@ANLY"],
+    "برهان": ["proof", "z3", "lean", "@ANLY"], "اثبات": ["proof", "z3", "@ANLY"], "إثبات": ["proof", "z3", "@ANLY"],
+    "تعلم الآلة": ["scikit-learn", "machine learning", "@ANLY"], "تعلم الالة": ["scikit-learn", "@ANLY"], "نموذج تنبؤي": ["scikit-learn", "@ANLY"],
+    "جدولة": ["or-tools", "schedule", "optimisation", "@PROD"], "تحسين": ["optimisation", "or-tools", "pulp"], "ميزانية": ["pulp", "budget", "@PROD"],
+    "جغرافي": ["geopandas", "geospatial", "@ANLY", "@MAP"], "خريطة": ["map", "geopandas", "@MAP"],
+    "جزيء": ["rdkit", "chemistry", "@ANLY"], "كيمياء": ["rdkit", "@ANLY"], "جينات": ["biopython", "@ANLY"], "تسلسل جيني": ["biopython", "@ANLY"],
+    "زحف": ["scrapy", "crawl", "@WEB"], "استخراج مقال": ["trafilatura", "@WEB"], "سكرابينج": ["scrapy", "crawl", "@WEB"],
+    "شرائح": ["slides", "marp", "slidev", "@DOC"], "عرض تقديمي": ["slides", "marp", "slidev", "pptx", "@DOC"], "مخطط": ["diagram", "mermaid", "@DOC", "@EXPL"],
+    "نوتة": ["music21", "notation", "@MEDIA"], "تدوين موسيقي": ["music21", "@MEDIA"], "متحدثين": ["pyannote", "diarization", "@MEDIA"],
+    "تتبع الوجه": ["mediapipe", "@MEDIA"], "كشف الأجسام": ["yolo", "ultralytics", "@MEDIA"],
+    "طباعة ثلاثية": ["cadquery", "openscad", "stl", "@APP"], "قطعة": ["cadquery", "@APP"], "إمكانية الوصول": ["axe-core", "wcag", "@APP"], "وصولية": ["axe-core", "wcag", "@APP"],
+    "ثغرات": ["semgrep", "trivy", "@SEC"], "أسرار": ["gitleaks", "@SEC"], "اسرار": ["gitleaks", "@SEC"],
+    "اختبار خصائص": ["hypothesis", "@CODE"], "عقد بيانات": ["pandera", "@CODE"],
+    "ترجمة دون اتصال": ["argos", "offline translation", "@ARL"], "تشكيل": ["camel-tools", "diacritise", "@ARL"], "صرف": ["camel-tools", "morphology", "@ARL"],
+    "نموذج محلي": ["llama.cpp", "local llm", "@AGENT"], "استرجاع": ["chroma", "rag", "@AGENT"], "rag": ["chroma", "@AGENT"], "mcp": ["mcp", "@AGENT"],
+    "خطة": ["plan", "planning", "@PLAN", "!plan"], "خطه": ["plan", "@PLAN"], "تخطيط": ["planning", "@PLAN", "!plan"], "plan": ["@PLAN"], "roadmap": ["@PLAN"],
+    "فكر": ["thinking", "@THINK", "@MODEL", "!think"], "تفكير": ["thinking", "@THINK", "@MODEL", "!think"], "ذكاء": ["thinking", "@THINK", "@MODEL"],
+    "عبقري": ["genius", "creativity", "@THINK", "@IDEA"], "عبقرية": ["genius", "@THINK", "@IDEA"], "genius": ["@THINK", "@IDEA"],
+    "قرار": ["decide", "decision matrix", "@THINK", "@MODEL"], "اختيار": ["choose", "decision", "@THINK"], "decide": ["@THINK", "@MODEL"],
+    "نموذج ذهني": ["mental model", "@MODEL"], "mental model": ["@MODEL"], "استراتيجية": ["strategy", "@MODEL", "@PROD"],
+    "افكار": ["ideas", "@IDEA"], "أفكار": ["ideas", "@IDEA"], "فكرة": ["idea", "@IDEA"], "تطوير الفكرة": ["idea development", "@IDEA"], "طور فكرتي": ["idea development", "@IDEA", "@IDEA"], "طوّر فكرتي": ["idea development", "@IDEA", "@IDEA"], "فكرتي": ["idea", "@IDEA"], "مبتكر": ["creative", "novel", "@IDEA"], "ابتكار": ["creative", "@IDEA"], "ابداعي": ["creative", "@IDEA"], "إبداعي": ["creative", "@IDEA"],
+    "ريل": ["9:16", "reel", "captions", "hook", "~motion"], "ريلز انستجرام": ["9:16", "reel", "~motion"],
+    "ترجمة متزامنة": ["captions", "word timing", "karaoke", "subtitles", "@SYNC", "~motion"],
+    "ترجمه متزامنه": ["captions", "word timing", "karaoke", "subtitles", "@SYNC", "~motion"],
+    "كابشن": ["captions", "subtitles", "@SYNC", "~motion"], "كابشنز": ["captions", "subtitles", "@SYNC", "~motion"],
+    "مزامنة": ["sync", "word timing", "beat", "@SYNC"], "متزامنة": ["sync", "word timing", "@SYNC"],
+    "تفريغ": ["transcribe", "whisper", "word timestamps", "@SYNC", "@VOICE"],
+    "تعليق": ["voice", "narration", "@VOICE"], "فويس": ["voice", "narration", "tts", "@VOICE"],
     "توهج": ["glow", "bloom", "neon", "~motion"],
     "نيون": ["neon", "glow", "~motion"],
     "خط": ["typography", "font"],
@@ -273,6 +308,8 @@ _AR_SUFFIXES = ("", "ي", "ات", "ين", "ون", "وط", "ها", "هم")
 HINTS = {
     "self": "self-map: python3 scripts/powers.py domains · python3 scripts/powers.py mindmap --html map.html · python3 scripts/powers.py env",
     "mindmap": "mind map: python3 scripts/powers.py mindmap --html mindmap.html draws this catalog; for the user's topic write a Mermaid `mindmap` the same way",
+    "plan": "plan: python3 scripts/think.py plan \"<goal>\" --weeks N, then python3 scripts/requirements.py plan \"<goal>\" for what must be installed first",
+    "think": "think: python3 scripts/think.py ladder \"<task>\" picks the depth; think.py models \"<problem>\" picks mental models; references/cognition.md",
 }
 
 
@@ -395,6 +432,11 @@ def intent_of(terms: list):
     return fam, dom, hints
 
 
+# Cross-cutting method families: thinking, ideas, planning and mental models apply in every domain,
+# so an explicit intent can surface them even when the brief is a motion brief (capped at 2 picks there).
+METHOD_PREFIXES = {"THINK", "IDEA", "PLAN", "MODEL"}
+
+
 def rank(powers: list, terms: list, inject: bool):
     """Score every power: text match + family/domain intent boosts.
 
@@ -408,7 +450,7 @@ def rank(powers: list, terms: list, inject: bool):
         bonus = 0.0
         hit = min(fam.get(prefix_of(p), 0), 3)
         if hit:
-            if not inject or (motion_ctx and p.get("domain") != "motion"):
+            if not inject or (motion_ctx and p.get("domain") != "motion" and prefix_of(p) not in METHOD_PREFIXES):
                 bonus = 1.0 * hit if base > 0 else 0.0
             else:
                 bonus = 3.0 * hit
@@ -607,6 +649,8 @@ def suggest(powers, styles, brief: str, limit: int = 18, domain: str = None) -> 
         if len(picked) >= limit:
             break
         cap = 5 if (general_intent and not dom_i.get("motion") and prefix_of(p) in fam_i) else 3
+        if dom_i.get("motion") and prefix_of(p) in METHOD_PREFIXES:
+            cap = 2
         if fams[p.get("family")] >= cap:  # spread across families
             continue
         fams[p.get("family")] += 1

@@ -9,6 +9,7 @@
   "how": "≤7 nodes visible at once (bigger systems in chapters with camera moves); density ~4/10 — more than ~9 nodes means two diagrams; circled step numbers only when order matters; neutral lines for normal flow; accent on ≤2 nodes; reuse one fixed layout JSON across scenes and animate only highlight changes; if a table says it better, use the table.",
   "params": "3–7 nodes; ≤5 steps; ≤2 accents",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:16",
@@ -36,6 +37,9 @@
   "how": "radius 16–24 px; stroke 3–4 px; arrowheads 14–18 px (SVG marker orient=\"auto\", refX near the tip, ~3–4× stroke); node labels 32–44 px, edge labels 24–28 px at 1080 width; right-angle rounded elbows, no diagonals; 6–10 px gap between an arrow label and its line; ≥12 px between attach points on one edge; no connector behind a non-endpoint box; 4 px grid; editorial palette paper #f5f5f5, ink #2d3142, muted #4f5d75, soft #7a8399, accent #eb6c36, link #2e5aa8.",
   "params": "stroke 3–4; heads 14–18; labels 32–44 / 24–28 px",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:15",
@@ -64,6 +68,9 @@
   "how": "branching decisions → flowchart; messages over time → sequence; components + links → architecture; dated events → timeline; parent–child → tree; cross-team handoffs → swimlane; two-axis positioning → quadrant; reinforcing cycle → loop; data → ER. Layouts: rooted trees → tidy tree (Reingold–Tilford/Buchheim); flows/state machines → layered Sugiyama (+ orthogonal routing for ports/ERDs); undirected networks → stress / Kamada–Kawai / Fruchterman–Reingold; distance from root → radial; cycles → circular; prefer stable layouts when animating revisions. Patterns: fan-out, convergence, cycle, assembly line chaos → order, side-by-side, gap (DRAW-43).",
   "params": "8 types; ≤12 nodes in Mermaid",
   "install": "",
+  "requires": [
+   "npm:mermaid"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/345-visuals/1242-html-diagram/SKILL.md",
@@ -92,6 +99,7 @@
   "how": "paint order background → connectors → boxes → labels (lines pass under shapes) in named <g> layers, animated in the same order; node stagger 0.08–0.15 s; reading order RTL for Arabic; front-load nothing — reveal each node on its spoken word (EXPL-21). The whiteboard-draw proof film (verified 13/13) builds a cause → effect diagram this way: sun and water drop, then two causal arrows, then the plant and the circled result.",
   "params": "stagger 0.08–0.15 s; visited 70%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:19",
@@ -120,6 +128,7 @@
   "how": "mirror x positions (x' = W − x) or lay out with direction rtl; flip arrow marker paths; flows read right → left and top → bottom; Latin/code labels wrapped in dir=\"ltr\" + unicode-bidi:isolate; stage-tracker pills ordered right → left (EXPL-26).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:18",
@@ -146,6 +155,9 @@
   "how": "dark theme: frontend cyan #22d3ee, backend emerald #34d399, data violet #a78bfa, cloud amber #fbbf24, security rose #fb7185, message bus orange #fb923c, external slate #94a3b8; regions dashed 8,4 amber rx 12, security groups dashed 4,4; light/print theme via plain divs. Role colours (source / processing / storage / external) via Mermaid classDef with measured contrast. Ideas only from a copyleft-declared folder — re-author, do not copy files.",
   "params": "dash 8,4 / 4,4; rx 12",
   "install": "",
+  "requires": [
+   "npm:mermaid"
+  ],
   "license": "source folder declares WTFPL (copyleft-flagged in the atlas) — use the idea, not the files",
   "proof": [
    "kosif-atlas/skills/x4919-visual-gen/x20317-architecture-diagram/SKILL.md",
@@ -171,6 +183,7 @@
   "how": "white ground, title #111111 (≤40 chars), body #333333, annotations #767676, unfilled 1–2 px boxes, dashed grey grouping, thin arrows with small triangular heads and 2–4-word labels, accent #D93025 (second accent #1A73E8 only when needed), margins 5–7%, 3–5 points; build natively in SVG/HTML so text is exact; arrows and labels draw on with stagger; narration carries the long explanation.",
   "params": "accent < 5%; margin 5–7%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1094-akbun-draw/2418-akbun-draw-learning-mono/SKILL.md"
@@ -195,6 +208,7 @@
   "how": "pair minimal icons with labels, make critical marks explicit, render a contact sheet at the final 9:16 scale and inspect at phone size.",
   "params": "< ~24 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3811-closure-completion-cost/SKILL.md"
@@ -219,6 +233,12 @@
   "how": "request a transparent background from the image model (key needed) with a template 'a flat icon of a {item}', 1024 px square; if it returns opaque, remove near-white by threshold in Pillow or use rembg (BiRefNet, pip install rembg onnxruntime); prefer drawing simple icons as SVG strokes (DRAW-13) when possible.",
   "params": "1024 px; threshold or BiRefNet",
   "install": "",
+  "requires": [
+   "pip:pillow",
+   "pip:onnxruntime",
+   "pip:rembg",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2657-figures/10115-transparent-icons"
@@ -243,6 +263,9 @@
   "how": "width/height in mm with an equal viewBox so coordinates and font-size are mm (font pt × 25.4/72, 7 pt = 2.47 mm); LabeledBox = measured text bbox + 2 mm padding (fontTools advances, or canvas measureText — browser measuring for Arabic shaping); Arrow.connect snaps to box edges, modes straight / cubic with perpendicular bow / orthogonal / waypoints, marker orient=auto; layers registered in paint order; save SVG (+ PNG via cairosvg); the same ideas are short to hand-write in JS for animation.",
   "params": "padding 2 mm; marker 3 mm; 7 pt",
   "install": "",
+  "requires": [
+   "pip:fonttools"
+  ],
   "license": "BSD-3-Clause (atlas source)",
   "proof": [
    "kosif-atlas/skills/2657-figures/10114-svg-primitives/SKILL.md",
@@ -270,6 +293,9 @@
   "how": "mmdc -i x.mmd -o x.svg -t dark|forest|neutral -b transparent; one direction (TB or LR, RL for Arabic), ≤12 nodes, every arrow labelled, readable in B/W; then animate the SVG nodes in reading order (stagger opacity, draw-on edges with DRAW-01); fall back to hand SVG when mmdc is absent.",
   "params": "≤12 nodes; themes default/dark/forest/neutral",
   "install": "npm i -g @mermaid-js/mermaid-cli",
+  "requires": [
+   "npm:mermaid"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1245-mermaid-cli/2925-mermaid-cli",
@@ -295,6 +321,9 @@
   "how": "d2 --theme N --layout elk in.d2 out.svg (tala layout is paid); the d2 binary is not installed here and its installer host is unverified — prefer Mermaid or hand SVG unless the user supplies d2.",
   "params": "layouts dagre / elk / tala (paid)",
   "install": "",
+  "requires": [
+   "npm:mermaid"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2173-tools-plugin/7914-d2-diagrams"
@@ -319,6 +348,10 @@
   "how": "write elements per schema (rectangles, ellipses, diamonds, arrows, lines, text; roughness 1, fontFamily 1 hand / 3 mono); render through @excalidraw/excalidraw exportToSvg in headless Chromium, then draw strokes on (DRAW-01/27); large diagrams section by section. JSON Canvas: nodes {text|file|link|group, x, y, width, height} and edges {fromSide, toSide, arrows} → a script turns them into animated SVG with camera moves.",
   "params": "roughness 1; fontFamily 1/3",
   "install": "npm i @excalidraw/excalidraw",
+  "requires": [
+   "node",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2790-work/11181-draw-excalidraw",
@@ -345,6 +378,9 @@
   "how": "convert the JSON outline to nodes/links; run d3-force OFFLINE for N ticks (seeded) and store positions per tick, then animate nodes settling from the centre in branch order by indexing the stored ticks with t (never a live simulation during render); colour per top-level branch; depth ≤6.",
   "params": "depth ≤6; seeded ticks",
   "install": "npm i d3-force",
+  "requires": [
+   "npm:d3"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/30-learning/39-forcegraph-exporter/SKILL.md",
@@ -370,6 +406,7 @@
   "how": "SK.studio.mount(root, spec) → {paint, focus, focused}; nodes 150 px × ≥80 px positioned translate(−50%, −50%), hover scale 1.025; edges as SVG lines classed in / draft / out / note; inputs dasharray 7 6 (warn colour), drafts 3 5 (violet), outputs solid; @keyframes flow to stroke-dashoffset −26 over 1.6 s linear; vector-effect non-scaling-stroke; dot grid radial-gradient 1 px every 24 px.",
   "params": "dash 7/6, 3/5; 1.6 s; grid 24 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/components/studio.js",
@@ -396,6 +433,7 @@
   "how": "nodes pop at 0 / 900 / 1800 ms (scale .85 → 1, spring damping 14 stiffness 160, ~300 ms + 150 ms fade); edges draw 300–900 and 1200–1800 ms at 900–1200 px/s ease-in-out cubic with the arrowhead in the last 80 ms (DRAW-05); hold 2100–3600 ms with a data pulse; previous nodes dim to 70%.",
   "params": "0/900/1800 ms; spring 14/160",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:37",
@@ -422,6 +460,7 @@
   "how": "dot 10–14 px at getPointAtLength(p·L), 600–900 ms in-out, 400 ms gaps; variants: 3–5 glowing dots offset along a dashed quadratic arc (dash 4/6, r 4, ~1.5 s); orange dot on the active orthogonal wire with an orange ✗ on an invalid route (draw 500 ms, travel 800 ms); sine-wave segments scrolling 60 px/s between boxes for signal chains; glowing route to the chosen target (600 ms).",
   "params": "dot 10–14 px; 600–900 ms; gaps 400 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:29",
@@ -459,6 +498,7 @@
   "how": "MOTION.flowDash(tl, path, at, dur, {pattern:'28 22', cycles:6}) linear; seek-safe CSS/JS: dashoffset = −speed·t; water-cycle heat arrows #FF9E2C 7 px dasharray '20 18' dashoffset −140t with fade windows, sun rays rotating 18°/s and pulsing 1 + .06·sin(4πt); colour-code power / data / heat.",
   "params": "'28 22' × 6; '20 18' at −140 px/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:247",
@@ -488,6 +528,9 @@
   "how": "lines draw from centre outward 300–600 ms with 50–150 ms stagger, then nodes fade in and count; hub glow blur 30–40 px; travelling dots on dashed spokes; gooey arms (6–7, stagger 80 ms); hero card centre with ~10 satellites on an ellipse and tag pills on the lines; reverse version: labels on a top arc stroke to the centre, then the hub logo pops with a ring. HyperFrames components: constellation-hub (nodes light in narration order), radial-surround (chips converge inward), locked-nucleus-orbit (3–6 satellites).",
   "params": "draw 300–600 ms; stagger 50–150 ms",
   "install": "npx hyperframes add constellation-hub",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/constellation-hub/constellation-hub.html",
@@ -527,6 +570,7 @@
   "how": "bezier curves draw 400–500 ms with 150 ms stagger to stacked cards, travelling light dots (700 ms) and signal-bar meters filling; N = 5 avatars spring out along straight lines (120 ms stagger, overshoot 1.1); AST cascade: indented boxed nodes (document > heading > paragraph > codeBlock) appear every 120 ms with elbow connectors and key:value mono metadata; hand-drawn branches from an address chip to N boxes (0.8 s each) with the focus box circled in yellow.",
   "params": "400–500 ms; stagger 120–150 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-ceowinkz-7c776b",
@@ -565,6 +609,9 @@
   "how": "map each diagram element to a keyword in words.json (faster-whisper word timestamps); start its draw-on 60 ms before the word; never front-load more than ~25% (EASE-44); hold the full diagram for a final 1–2 s read.",
   "params": "word − 60 ms",
   "install": "",
+  "requires": [
+   "pip:faster-whisper"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-sudo-kiran-6609ed",
@@ -592,6 +639,9 @@
   "how": "2 s hold; scale 1.5 (zoom ≤1.8) in 900 ms then a 300 ms crossfade into the sub-diagram; camera pans 700–1000 ms cubic-bezier(.65,0,.35,1); before/after: duplicate the diagram and redraw only changed edges in the accent.",
   "params": "hold 2 s; ×1.5 / 900 ms; xfade 300 ms",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:48",
@@ -617,6 +667,7 @@
   "how": "axis draws 600 ms; marker pop 200 ms; label +120 ms; current era band; one continuous lateral camera along the track slowing to 30% speed near dense clusters (cubic-bezier(.4,0,.2,1) per segment); milestone cards rise 400 ms / 40 px on a spring (damping 20) with a 1–1.5 s micro-animation; process timeline with doodle icons popping 200 ms back.out.",
   "params": "axis 600 / pop 200 / label +120 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:31",
@@ -646,6 +697,9 @@
   "how": "MG-087: 0–2 s question, 2–5 branches, 5–8 example path, 8–10 result, chosen branch highlighted (high-stakes advice needs expert review); failover: request pill → diamond, red failed branch then green success branch draws in 400 ms; faded options with a line to the highlighted pill. HyperFrames blocks flowchart (12 s, 1920×1080) and flowchart-vertical (1440×2560) with sticky-note nodes and typing correction.",
   "params": "10 s; branch draw 400 ms",
   "install": "npx hyperframes add flowchart",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
@@ -675,6 +729,7 @@
   "how": "MG-081: 0–1 s title, 1–7 stages, 7–10 full cycle (direction readable muted); MG-083: ball on a Bezier with stops, colour change only when it means something; water-cycle recap: big orange loop pathLength=1 drawn 8.9–9.8 s eased, marker-end attached only when progress > .98, #FF7A00 9 px.",
   "params": "10 s; loop 8.9–9.8 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/water-cycle-animation/index.html",
@@ -700,6 +755,7 @@
   "how": "water cycle: 4 pills 260×70 rx 35 at y 968, x = 1395 − i·290, fill mix(#FFFFFF, #FF7A00, on), text mix(#0B2545, #FFFFFF, on), all light together in the recap; audit-pro journey: 5 nodes 36 px pop 260 ms spring (translate 7 px + scale .88 → 1) with delays 180–360 ms (45 ms step) after the line starts — done = teal + check, current = violet with 4 px halo; trace chain cards 260 ms at 50 ms steps with 8×2 px connectors scaling from the right; numbered step cards (yellow badge, outline icon) 1.2–1.5 s apart; 4-segment top bar filling with big mono 01–04.",
   "params": "pills 260×70; pop 260 ms; 45–50 ms steps",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/water-cycle-animation/index.html",
@@ -732,6 +788,7 @@
   "how": "MG-084: 0–2 s example, 2–3 alert, 3–6 fix, 6–8 summary (freeze frame, masks, sequential comparison; illustrate dangerous actions instead of filming them); strike: red line draws over the wrong rule in 250 ms, then the right one with a drawn check in 300 ms (DRAW-19/21).",
   "params": "8 s; strike 250 / check 300 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
@@ -759,6 +816,7 @@
   "how": "MG-088: 0–1 s conditions, 1–6 motion, 6–8 result; identical paths and fixed distances with on-screen timers; performance bars racing for code (EXPL-42).",
   "params": "8 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md"
@@ -783,6 +841,7 @@
   "how": "2D: thin amber elbow lines from page points to mono labels at the frame sides, draw-on 300 ms each, stagger 80 ms, small square end-cap; feature labels: 1 px line 250 ms, text +150 ms, 2–4 words, shadow blur 40 px at 8%. 3D: h.addCallout({anchor, label:'THE EAR · الأذن', title, text, side, radius, measure: t → '0.42 m'}) projects a dashed ring (4.5% H) to screen with a leader (dx 9% W, dy −14% H) and a card 14–22% W; callout.show 0..1 per frame. Corner crop brackets (L-marks, arm 12 px, 300 ms ease-out) and dimension arrows with tiny mono labels.",
   "params": "draw 250–300 ms; stagger 80 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/lab-kit.js",
@@ -817,6 +876,7 @@
   "how": "CSS transform rotateX(55deg) rotateZ(−45deg), 6–7 plates offset 18 px, light → solid blue #1f7bf2 with a glow below; top plate lifted with a dashed outline; leader lines draw right then mono labels fade in.",
   "params": "6–7 plates; offset 18 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-ddryo-loos-300829"
@@ -843,6 +903,7 @@
   "how": "scale ×5–10 with a teal 40% tint and the label 'shown ×N' plus callout tags; spheres sized by sqrt(value) with a minimum clamp for tiny values, staggered pop-in right → left (250 ms) with arrows and % captions — always state the exaggeration on screen.",
   "params": "×5–10; sqrt sizing; stagger 250 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-blueoctopusai-dd17bd",
@@ -871,6 +932,7 @@
   "how": "mono 28–40 px at 1080 width, ≤14 lines, line-height 1.6, tinted background; JetBrains Mono / Geist Mono / IBM Plex Mono; code is always LTR, even inside an Arabic film (wrap in dir=\"ltr\"); render with pre-tokenised spans so text is exact (never an image model).",
   "params": "28–40 px; ≤14 lines; lh 1.6",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/code.md:15",
@@ -896,6 +958,9 @@
   "how": "per-char delay = (1/cps)·(0.8 + random(`k${i}`)·0.4) + 0.3 s after [.,;:]; 25–45 cps (default 35); caret ▍ 530 ms; long code pasted as a block with a 200 ms fade; Arabic never per letter — whole words or a mask (ARAB-01). Remotion Typed component in the playbook; the canvas port below needs nothing installed. (code snippet in references/powers/diagrams-explainers-code.md)",
   "params": "35 cps ±20%; +250–400 ms punctuation; caret 530 ms",
   "install": "cd kosif-tool/starters/remotion && npm i",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "Remotion company license",
   "proof": [
    "kosif-tool/playbooks/code.md:25",
@@ -923,6 +988,7 @@
   "how": "0–300 ms scale from 0.96; 300–1300 ms type at 35 cps; 1300–1600 ms caret/enter flash; 1600–2400 ms 3 output blocks; 2400–3000 ms success highlight + 3% push. Openers: '$ command' typed 30–50 ms/char with a block cursor on black; compile rows whose block bars fill (300 ms each, rows 150 ms apart); log lines every 120 ms with the last one green; colour-coded event log (6 rows, fixed char widths, new rows push old up); terminal left 60% + definition card right. Real sessions can be captured as an asciinema .cast and replayed (external tools).",
   "params": "0/300/1300/1600/2400/3000 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/code.md:35",
@@ -960,6 +1026,7 @@
   "how": "highlight band 250 ms ease-out cubic, others to 50%; scroll 200–300 ms per line ease-in-out (never fractional lines); error: red band scaleX 0 → 1 + squiggle draw 0.6 s; prompt card: cream mono typed ~30 ms/char, then red rectangles wipe behind faulty words (250 ms each, 300 ms apart) and the text turns light; file tree: a highlight bar steps rows.",
   "params": "250 ms; 50% dim; 200–300 ms/line",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/code.md:26",
@@ -990,6 +1057,7 @@
   "how": "removed 250 ms, added 300 ms, staggered; exactly 2 states; variant: green wipe over a red diff, test dots fill one by one, bracket burst on pass.",
   "params": "250 / 300 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/code.md:49",
@@ -1015,6 +1083,7 @@
   "how": "window #2A2622 with three traffic-light dots; keys #E06C9F, strings #E5A86B, numbers #A78BFA, punctuation light grey; highlights as green outline boxes #7EE787 with yellow curved arrows to callouts; 4:3, 4–12 lines, 60/35 split; animate window in → lines reveal → box draws → arrow draws → callout pops; Prism/highlight.js from a CDN or pre-tokenised spans.",
   "params": "≤3 callouts; 4–12 lines",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1094-akbun-draw/2426-akbun-generateimage-code/SKILL.md"
@@ -1039,6 +1108,7 @@
   "how": "~25 chars/s, caret blink 500 ms; the result pane reads the same t (the sprite jumps when the jump() line completes); test checklist ticks below; triptych variant: framed canvas with ruler and red playhead + mono code with orange literals + serif formula, the playhead time ('t = 1.97 s') drives both the shapes and the highlighted code line.",
   "params": "~25 cps; caret 500 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-ibrahimwasim240-809370",
@@ -1067,6 +1137,7 @@
   "how": "rows of rounded rects in syntax colours with bracket glyphs; tokens as pastel mono chips (radius 8 px) with grey ids beneath, stagger 90 ms, scale .8 → 1 back-out; 20–30 mono pills drifting 4–8 px sine at .4–.9 opacity around hero text; lime-bordered JSON card with a pink filename tab typed ~30 chars/s and chips drifting 10 px; JSON response lines + '200 OK' pill.",
   "params": "chips stagger 90 ms; drift 4–8 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-kloss-xyz-15182a",
@@ -1100,6 +1171,11 @@
   "how": "npx hyperframes add <name>, fill __TOKENS states / __BLOCK params: code-typing (5 s, caret tracks the frontier), code-diff (6 s, 2 states), code-morph (7 s, Shiki-Magic-Move-style token glide), code-highlight (5 s, line 0-based), code-scroll (6 s, line 1-based), code-3d-extrude (8 s WebGL slab), code-particle-assemble (8 s GPU points to glyph pixels), code-shader-dissolve (7 s), code-snippet-apple-terminal-pro (12 s), code-snippet-dark-2026 / dark-modern (11 s VS Code workbench), code-terminal-run (cadence uniform|human), terminal-simulator, grid-card-assemble (capability cards). All 1920×1080, GSAP paused timeline (WebGL ones load three 0.147 from a CDN).",
   "params": "13 blocks; 5–12 s",
   "install": "npx hyperframes add code-morph",
+  "requires": [
+   "npm:three",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0 (GSAP standard no-charge license inside)",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
@@ -1128,6 +1204,10 @@
   "how": "PR: node fetch-pr.mjs --pr <ref> (gh) → ingest.mjs (tokens/text/people) → fetch-people-avatars.mjs → frames hook, problem, change, diff, before_after, mechanism, impact, evidence (+N/−M, passing test, benchmark), credits, cta in code-editorial treatments. Faceless: build-frame.mjs --preset → storyboard + SCRIPT.md → audio.mjs (voice; Kokoro local or HeyGen key) → frame-packets → captions → assemble → transitions inject/verify → lint/check/snapshot → render. Arabic voice and captions need the KOSIF voice and caption powers instead of the defaults.",
   "params": "sweet spot 30–90 s; ≤~3 min",
   "install": "npm i -g hyperframes",
+  "requires": [
+   "pip:kokoro",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/pr-to-video/SKILL.md",
@@ -1154,6 +1234,10 @@
   "how": "retry/backoff: fire → 500 → growing wait → retry → 200; cache lanes: cold DB vs cached racing; serial lane reshaping into parallel lanes; race bug then fixed flow; performance bars racing; tangled call graph untangling; build as invented SVG/GSAP diagrams; agent tool events (read/search/edit/test/error) as cards snapping on beats (enter (.22,1,.36,1) 420 ms, exit (.4,0,1,1) 260 ms, ≥900 ms on screen, ≤3 stacked) and a call-stack breadcrumb HUD of mono chips (push 200 ms).",
   "params": "cards ≥900 ms; ≤3 stacked",
   "install": "",
+  "requires": [
+   "npm:gsap",
+   "claude:tools"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/pr-to-video/references/code-vocabulary.md",
@@ -1183,6 +1267,7 @@
   "how": "count lines per folder from the real repo (cloc or wc -l), draw the tree, then extrude each row into a bar counting up in 600 ms; numbers must come from the repo, never invented.",
   "params": "count 600 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-danilowm-d3720d/BRIEF.md"
@@ -1207,6 +1292,9 @@
   "how": "MG-090: 0–2 s givens, 2–5 operation, 5–8 result, 8–10 read; render with KaTeX (renderToString → HTML/SVG) or pre-rendered SVG; wrap formulas in an LTR isolate (dir=\"ltr\", unicode-bidi:isolate) inside RTL captions; reveal terms by opacity/colour keys with constant spacing between separate layers; define each symbol before use.",
   "params": "10 s",
   "install": "npm i katex",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
@@ -1233,6 +1321,9 @@
   "how": "MathTex with isolated substrings, cancelling terms red, result green, TransformMatchingTex between lines (line spacing ~12% H, Write ~1.5 s per line); ValueTracker dt 2 → 1 → 0.1 → 0.01 → 0.001 (each ~2–3 s, smooth) with always_redraw secant and DecimalNumber slope readout; SurroundingRectangle around numerator/denominator (stroke 2 px, buff .08) with captions in the matching colour (Create ~0.6 s); render with -qh at the target fps and mux the user's audio separately; Arabic text via Text() with an Arabic font, never inside MathTex.",
   "params": "Write 1.5 s; dt → 0.001",
   "install": "pip install manim",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md",
@@ -1261,6 +1352,7 @@
   "how": "sample the target path to N points, DFT → (freq, amp, phase) sorted by amplitude, at time t chain vectors amp·e^{i(freq·2πt/T + phase)} and draw the tip's trail (fading); unit circle: point (cos ωt, sin ωt) with a projection line to a sine scrolling right; all from t, no accumulation.",
   "params": "N terms; period T",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-math-files-39c9d0"
@@ -1288,6 +1380,7 @@
   "how": "lerp source → target cell centre, rotate to the hypotenuse angle, hop = h·sin(πu); 25 cells, stagger ~120 ms, hop 20 px; counter = arrived count; glow square at the end.",
   "params": "25 cells; 120 ms; hop 20 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/chalkboard"
@@ -1314,6 +1407,7 @@
   "how": "convolution: pixel digit, kernel square scanning, heatmap output; attention: arcs from one word to others, stroke width = weight; hatched square → 2×2 blocks with cross-hatched diagonal → nested sub-blocks (3 stages, hatch ~8 px); N = 7–8 nodes on a circle with ±-signed edges drawing 80 ms apart; binary tree root-down with dashed coloured level lines and leaf dots last; camera 800 ms easeInOutQuad, ≤5 moves.",
   "params": "edge stagger 80 ms; ≤5 camera moves",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-kloss-xyz-fe0c31",
@@ -1344,6 +1438,7 @@
   "how": "amber labels #e0a060, white right-aligned tabular values (2 decimals), 1 px rule; values computed from the same t as the picture; switch to ∞ / 'lost' at a horizon; wireframe isometric box with a highlighted vector and a side panel of values computing to a result counter.",
   "params": "2 decimals; tabular-nums",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-rebutonepress-810f78",
@@ -1373,6 +1468,9 @@
   "how": "python structural_twin.py --sample|--model m.json [--swap AB --area 0.0002 --young E --strength S --fracture-scale 2 --out r.json] (or kmotion.py structural); schema kosif.structural-twin.v0.1, ≤400 nodes / ≤1600 members; run here: sample triangle A(0,0) B(1,1) C(2,0) under 12 kN → first_failure_multiplier 2.946; tests 17/17 passed; twin_dashboard.py / kmotion twinview r.json --out twin.html gives an offline dashboard (baseline, swap, load slider; checked at 1365 and 390 px). Illustrative only — axial, no buckling/bending/fatigue, never for safety decisions (the output says so).",
   "params": "≤400 nodes; sample 2.946×",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/structural_twin.py:128",
@@ -1401,6 +1499,9 @@
   "how": "build_truss.py lays the truss on anatomy (ground contacts pinned, pelvis/chest four-node rings cross-braced, skull nodes with 4-nearest-neighbour bracing, ear triangles; areas 1.2e-4 body, 4.0e-5 ear roots; plush E 8 MPa, strength 2 MPa; loads crown −1.9 N) → model.json (35 nodes, 109 members, 5 supports); K3S.trussOverlay(model, {nodeParts, radius .0015–.0022, jointRadius .0032–.0042}) rides rig parts, members coloured by utilisation (0 (.35,1,.72) → .5 (.75,1,.45) → .8 (1,.86,.35) → 1 (1,.36,.28)), flash on the weak member; load arrows (cylinder r .0032 + cone .011×.022) grow and shift hue yellow → red; six beats SHAPE → JOINT → LOAD → BREAK → SWAP → RANK; baseline first limit 2.38× (earL_out–crown, tension), break at 3.0× → mechanism, ×2.6 area swap → 3.77×.",
   "params": "35 nodes / 109 members; 2.38× → 3.77×",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/twin/build_truss.py:46",
@@ -1428,6 +1529,7 @@
   "how": "const s = K3.schematic(root, {color:'#a8ff3c', ghost:'#f7f8f2', lineOpacity:.42, angle}); s.set(k, camera) (solids fade to 8%, ghost .55), s.explode(k) (×1.1 radial), s.joints(k) (camera-facing dashed rings .1–.125).",
   "params": "lines ≤.42; explode ×1.1",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/lab-kit.js:135",
@@ -1453,6 +1555,7 @@
   "how": "labels revealWords/hideWords: ١ 3.3–6.1 s, ٢ 6.9–9.3 s, ٣ 10.1–12.5 s, ٤ 13.1–15.1 s aligned with world states (vapour 2.6–7.2, clouds 5.8–9.4, storm 9.5–13.4, river 12.6–14.4); end title 15.7 s; 17 s 1920×1080 30 fps.",
   "params": "17 s; 4 stages",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/water_cycle_3d/index.html:59",
@@ -1479,6 +1582,9 @@
   "how": "kosif-one: single SVG + render(t), Cairo 700/800, 1920×1080 30 fps 300 frames, stages 1.5–4.0 / 4.0–6.1 / 6.1–8.0 / 8.0–8.9 / recap 8.9–10 s; kosif-studio water_cycle (17 s): M.drawPath ×9, flowDash, vapour, rain, flash, camera push, grain, vignette; beats 0–2.7 / 2.8–6.4 / 6.2–9.4 / 9.5–12.8 / 12.4–15.1 / 15.2–17 s; palette #FFD166 #FFE8C2 #7FD4FF #5EC8FF #2A6F97 #0D1B2A. The studio composition passes the static rules here (test run).",
   "params": "10 s / 17 s; 1 motion per stage",
   "install": "",
+  "requires": [
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-one/projects/water-cycle-animation/index.html",
@@ -1507,6 +1613,7 @@
   "how": "vapour rises from the sea, clouds form by cooling, rain falls on land, water returns to the sea; narration ~2.5 words/s with on-screen text shorter than spoken; fixed camera, one mover per stage, stage bar at the bottom; fact-check every claim; test the script on an imaginary student; supporting planning skills: math-science-tutor, software-architecture-adr.",
   "params": "≥40 px; ≥4.5:1; 2.5 w/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/water-cycle-animation/DESIGN.md",
@@ -1534,6 +1641,10 @@
   "how": "chapter card: pastel #EFE6F7, #FFD400 heavy type outlined #1A1A1A at 6% of glyph height, glyphs 14% of frame height, 3–4 s, 1–2 stickers; principle card: white, labels 3.5% H #1A1A1A, the spoken element turns #E53935 0.3 s after it is said; table: rows × 2 s; keyword pop #FFD400 + outline, 1–3 words, 6% H, 0.8–2 s; numbered title 8% H, 2–3 s; author each card as HTML in the kosif scaffold and render with render_html.cjs.",
   "params": "14/8/6/3.5% H; +0.3 s highlight",
   "install": "",
+  "requires": [
+   "node",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2461-davinciresolve-style-essay/SKILL.md",
@@ -1559,6 +1670,7 @@
   "how": "highlighter: semi-transparent yellow rect (multiply) growing along the line timed to words.json, right → left for Arabic, held 3–5 s; excerpt: paper panel #FAFAF6 with #171717 text, 75–90% width, ≥5% margins, body 3–4% H, in 0.15–0.3 s, hold to read, out 0.15–0.25 s; optional red underline #D92D20 (0.25–0.4% H), ellipse callout 20–35% padding; news module: article slides up at readable size, keyword highlighted in place + source card.",
   "params": "hold 3–5 s; panel 75–90% W",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2430-akbun-davinciresolve-article-overlay/SKILL.md",
@@ -1585,6 +1697,7 @@
   "how": "FILM_CATS 'diagrams' and 'code' with templates concept, what-is, timeline, how-to, code-explain, dev-tool; code is LTR monospace with palette syntax colours.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "app/public/js/00_editor.js:2007",
@@ -1611,6 +1724,7 @@
   "how": "SVG groups #clock #dream #scale #car #timebar #endring, each drawn/animated only inside its speech() window; numbers count (94 → 76 kg) with tabular digits; time bar drains right → left; drawing details in DRAW-12.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:58",
@@ -1636,6 +1750,7 @@
   "how": "trade-off: coloured headers, rows stagger 120 ms with green check / black cross boxes, rotated summary stickers, cost note below; analogy: 3 bordered cards each with its accent, icon + title + caption, active one glows; checklist: rows of circle + amount + name, upcoming at 45%, an arrow glyph slides to the active row (300 ms easeOutCubic), check drawn inside the circle (~250 ms).",
   "params": "rows 120 ms; tick 250 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-0xnfrith-5be616",
@@ -1666,6 +1781,7 @@
   "how": "text as rounded rects of word widths filling dark row by row (120–200 ms/row, bar 8 px r 4) with the unknown word in accent; dashed 4/4 selection rect + 12 px backdrop blur in 300 ms; corner-bracket boxes on photo items, 'identifying' status, thumbnails fly 500 ms into 4 labelled buckets with counts; ~9 named hand-drawn ellipses + 12 empty blobs joined by dotted paths with a tiny boat traversing; paper chips rotated ±6° straighten into a vertical chain inside a dashed 'one transaction' box (0.6 s stagger); clock-face grid duplicates a scene to show monotony.",
   "params": "120–200 ms/row; blur 12 px; fly 500 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-1stnoel-c20a89",
@@ -1701,6 +1817,9 @@
   "how": "python3 tools/kosif.py scaffold tech-blueprint <dir>; SVG paths on a 24 px grid; draw-on 900–1200 px/s; nodes pop spring d14 s160; camera pans 700–1000 ms cubic-bezier(.65,0,.35,1); stroke 3–4 px, arrowheads 14–18 px, zoom ≤1.8.",
   "params": "grid 24 px; 900–1200 px/s",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/styles/tech-blueprint/SKILL.md",
@@ -1729,6 +1848,7 @@
   "how": "write thumbs.svg with one 16:9 or 9:16 frame per shot (subject boxes, text zones, arrows for camera moves) and show it before building.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/storyboard-shotlist/SKILL.md:24"
@@ -1753,6 +1873,7 @@
   "how": "data object with nodes[] and links[] plus traceEvidence(id); render with EXPL-19/17 (hub + data pulses) when needed.",
   "params": "4 nodes, 3 links",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-audit-studio/cinema/evidenceGalaxy.js"
@@ -1779,6 +1900,13 @@
   "how": "Outline before code; smoke-render with `manim -ql`; motion explains a state change, reveal progressively; polish typography and pacing; hand off to ffmpeg or Remotion only if it adds value. Deliver a 16:9 MP4, a thumbnail readable at social size and the storyboard. Needs ffmpeg; LaTeX only for TeX formulas; system cairo/pango may need apt packages.",
   "params": "3–6 scenes; -ql smoke render",
   "install": "pip install manim",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "latex",
+   "npm:remotion",
+   "fonts:arabic"
+  ],
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa); Manim Community MIT",
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/manim-video/SKILL.md"

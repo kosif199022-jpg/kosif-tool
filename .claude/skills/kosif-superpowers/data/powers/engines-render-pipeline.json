@@ -8,6 +8,11 @@
   "how": "python motion.py new NAME; author a paused gsap.timeline, register window.__timelines['root']=tl, call MOTION.shim('root', seconds); everything must be a function of t.",
   "params": "root attrs data-composition-id/width/height/duration/fps; default 1920x1080, 8 s, 30 fps",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:18",
@@ -29,6 +34,10 @@
   "how": "window.DURATION; window.renderFrame(t) -> Promise; Playwright loop: for f in 0..N: await page.evaluate(t=>renderFrame(t), f/fps); screenshot canvas; then ffmpeg -framerate fps -i %05d.png -c:v libx264 -pix_fmt yuv420p. Works here with installed playwright + ffmpeg.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2414-animation/9356-produce/SKILL.md",
@@ -49,6 +58,9 @@
   "how": "[k:v]trim=start_frame=S:end_frame=S+N,setpts=PTS-STARTPTS,format=yuv420p ; [k:a]atrim=..,asetpts=PTS-STARTPTS,aresample=48000,volume=XdB ; concat ; amix=inputs=2:duration=first:normalize=0 ; intermediate CRF 8 + PCM 24-bit, final libx264 high CRF 17 -g 60",
   "params": "SFX ≈ -8 dB under music cue",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md",
@@ -69,6 +81,9 @@
   "how": "KHR_parallel_shader_compile COMPLETION_STATUS polling each frame, 12 s give-up; if LINK_STATUS read takes >1.5 s set localStorage sqc_world_slow; dpr cap 1 (phone) / 1.5; IntersectionObserver + visibilitychange pause; WEBGL_lose_context on destroy; returns null without WebGL; page paints first then canvas fades in 1.4-1.6s.",
   "params": "timeouts 12000ms / 1500ms; dpr 1 / 1.5",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/ui/art/crystal-world.js:71",
@@ -89,6 +104,7 @@
   "how": "door/dash <video preload=none data-src> swapped in by script; sw.js passes video and Range requests to network.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/tools/brand_art.test.mjs",
@@ -109,6 +125,9 @@
   "how": "npm run viral -- compile (writes projects/viral-editorial/{storyboard,posters,motion-prompts}.json) or preview-project (also project/storyboard.json).",
   "params": "5 x 6 s = 30 s; fps 30",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/viral-editorial.mjs:84-92",
@@ -128,6 +147,10 @@
   "how": "scripts/ffprobe_shim.py installed to ~/kosif-motion/bin",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
@@ -146,6 +169,10 @@
   "how": "python scripts/kmotion.py timeline edit.json --out film.mp4 --inspect [--dry-run]; timeline --example; transitions",
   "params": "57 xfade; demo 1080x1920 7.67 s −14.6 LUFS",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:pillow"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md"
@@ -164,6 +191,10 @@
   "how": "python scripts/kmotion.py workbench 'task' --aspect 9:16 --titles 'a|b' --out film.mp4",
   "params": "9:16 6 s 180 frames verified",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:pillow"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md"
@@ -182,6 +213,9 @@
   "how": "Register tl in window.__timelines['root'] then MOTION.shim('root', duration). Renderer calls render(t) and waits for __ready (two rAFs after videos sought).",
   "params": "video seek timeout 4 s; load timeout 15 s; waits for document.fonts.ready",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:466",
@@ -201,6 +235,7 @@
   "how": "const post=K3.makePost(renderer, scene, camera, W, H, {bloom, bloomThreshold, aperture, maxblur, vignette, ca, grain, clampMax}); post.sunOnScreen(sunDir).",
   "params": "bloom .22 radius .6 threshold .9; clamp 48; bokeh focus 900 aperture .00004 maxblur .0035; vignette .42; CA 1.2; grain .16",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:361"
@@ -219,6 +254,11 @@
   "how": "<script src='assets/three-kit.bundle.js'> -> window.K3 (also K3.POST classes for custom stacks). Rebuild with python motion.py kit-bundle (needs npm three@0.186.1 + esbuild).",
   "params": "904,567 bytes; 69 exports; three REVISION 186 (verified under Node)",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:three",
+   "npm:esbuild"
+  ],
   "license": "MIT",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.bundle.js",
@@ -239,6 +279,7 @@
   "how": "Write helpers rect/path/line/neon that emit SVG strings; precompute static layers (skyline, architecture, props) once; sceneSVG(t) composes parallax groups, character, rain, vignette and titles; index.html sets root.innerHTML=sceneSVG(t) inside window.render.",
   "params": "1280×720, 24 fps, 12 s = 288 frames; deterministic rnd(i)=fract(sin(i·127.1+311.7)·43758.5453)",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:124",
@@ -258,6 +299,10 @@
   "how": "python scripts/kmotion.py sync projects/NAME → motion.sync_assets(d) copies kit files referenced by index.html and the woff2 files matched by assets/fonts/*.woff2.",
   "params": "fonts copied only if named; lab-kit/three-kit/shape-kit only if referenced",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:228",
@@ -277,6 +322,7 @@
   "how": "shard.plan(project_dir, n) → {frames, shards:[{i0,i1}]}; test asserts first i0=0, last i1=frames, each i1 == next i0 (run on night_boat with 7 shards).",
   "params": "7 shards over night_boat (5 s × 30 fps)",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_analyze.py:87"
@@ -295,6 +341,7 @@
   "how": "kmotion web --port 8766; /api/plan (12 s × 30 fps → 360 frames), /api/validate, /api/compile (kosif.motion.manifest.v1 + project_html with window.render), /api/render/jobs (X-Job-Token), /api/recipes, /mcp tools motion_plan, motion_validate, motion_compile, motion_templates, kosif_run, kosif_job, kosif_project_write, kosif_timeline_check.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_web.py:71",
@@ -314,6 +361,9 @@
   "how": "offline.mjs framePlan(8, 30) → 240 frames, timestampUs(30)=1e6; audioPlan(project); pickVideoCodec(VE, 1280, 720, 30) → 'avc1.42…'; encodeOffline({width, height, fps, frames, renderFrame, VideoEncoder, VideoFrame, Mp4Muxer}); model.mjs caps projects at 60 s, sanitises colours/enums/URLs.",
   "params": "",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/studio/offline.test.mjs:6",
@@ -334,6 +384,10 @@
   "how": "python scripts/kmotion.py web --port 8766 (or python scripts/web/server.py --host 127.0.0.1 --port 8766 --workers 2 --open). Routes defined in create_app(); static UI at /, Studio at /studio/, examples at /examples/, project previews at /projects/NAME/index.html.",
   "params": "default host 127.0.0.1, port 8766, recipe workers 2, JSON body cap 4 MB, upload cap 4 GB per file, server VERSION 6.2 (health reports contract 5.3)",
   "install": "",
+  "requires": [
+   "python3",
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:1",
@@ -354,6 +408,9 @@
   "how": "recipes.GROUPS → catalogue(); build_args() puts options first, then '--', then positionals; unknown fields raise; field kinds file/files/save/dir/text/number/choice/bool/set; 'set' is shlex-split; values with NUL or newline refused. POST /api/jobs {recipe,args,note}.",
   "params": "groups: auto(reel,direct,verse,audio2motion,montage) · v6(timeline,studio-import,scenes,privacy,template) · films(new,frames,preview,render,lint) · tools(silence,aspect,grade,captions,transcribe,decaption,stabilize,trim,export,platforms,thumb,score) · qa(inspect,sheet,probe,doctor,transitions)",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:19",
@@ -374,6 +431,9 @@
   "how": "jobs.Runner(root, cwd, workers) → submit(); Job.run() streams stdout; GET /api/jobs/ID/log (SSE, 'event: end' carries the final job), /log.txt, POST /cancel; _collect_outputs() regex-matches printed paths (mp4/mov/webm/gif/webp/png/jpg/wav/mp3/json/srt/ass/html/md/txt) and keeps ≤ 20 existing files; history of 60 jobs reloaded from meta.json.",
   "params": "SSE poll 0.3 s; default workers 2; outputs ≤ 20; history 60; job id = YYYYmmdd-HHMMSS-hex6",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/jobs.py:1",
@@ -394,6 +454,7 @@
   "how": "POST /api/projects {name, kind:new|template|manifest, seconds, fps, size, title, three_d, canvas, lab, template, params}; GET/POST /api/projects/NAME/file {path, content} (text files ≤ 4 MB inside the project only); buttons map to recipes frames(--times 1,3,5), preview, render(--engine studio --blur 4 --workers 0), lint.",
   "params": "sizes 1080x1920 · 1920x1080 · 1080x1080 · 1080x1350; default seconds 8 (UI 6), fps 30; editable text extensions .html .htm .js .json .css .txt .md .svg .srt .ass .vtt .csv",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:402",
@@ -414,6 +475,7 @@
   "how": "POST /api/compile {plan} or MCP motion_compile → compile_plan() → project_html(manifest) embedding manifest-player.js; create a project from it with POST /api/projects {kind:'manifest'}.",
   "params": "page sets data-width/height/duration/fps, window.__duration, window.__ready; default scene titles: فكرة تبدأ · تفاصيل تتضح · من زاوية أخرى · لحظة الأثر · المشهد التالي; subtitles = first 85 chars of the task",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:122",
@@ -433,6 +495,10 @@
   "how": "POST /api/render/jobs {manifest} → 202 {job_id, job_token}; poll GET /api/render/jobs/ID with X-Job-Token; GET …/video when succeeded (409 before). wbcompat.render_manifest(): ffmpeg -f rawvideo -pixel_format rgb24 -i pipe:0 -an -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -movflags +faststart.",
   "params": "frame look: vertical accent gradient (accent*.14 + 17*.86), grid #202a2d every unit/12, three breathing ellipses r=unit*(.17+k*.045)*(.7+.3*ease) drifting sin(t*.4)*unit*.025, accent dot r .026 unit, title unit*.066 #f2f4f3, subtitle unit*.03 #bbc7c9; progress 0→0.95 during frames",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:pillow"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:243",
@@ -453,6 +519,7 @@
   "how": "RenderEngine.lookup() with hmac.compare_digest on the X-Job-Token header; DELETE cancels; failed or cancelled jobs delete their folder.",
   "params": "id token_urlsafe(18), token token_urlsafe(32); 404 wrong token, 409 not ready",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:151",
@@ -472,6 +539,7 @@
   "how": "canvas.captureStream(24) + WebAudio MediaStreamDestination track; MediaRecorder(mimeType first supported of video/webm;codecs=vp8,opus · vp9,opus · webm · mp4; videoBitsPerSecond 5,000,000; audioBitsPerSecond 128,000), timeslice 250 ms; download .webm or .mp4.",
   "params": "24 fps, 5 Mbps video, 128 kbps audio; aborted if the tab is hidden",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:92",
@@ -492,6 +560,7 @@
   "how": "encodeOffline({width,height,fps,frames,source:canvas,renderFrame,audioBuffer}); VideoEncoder latencyMode 'quality', keyframe every 2 s, encode queue ≤ 8; Mp4Muxer ArrayBufferTarget fastStart 'in-memory', firstTimestampBehavior 'offset'.",
   "params": "30 fps (framePlan); bitrate = min(16 Mbps, w·h·fps·0.15); GOP fps·2 frames",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/offline.mjs:140",
@@ -512,6 +581,7 @@
   "how": "pickVideoCodec(): avc1.6400LL → avc1.4D40LL → avc1.42E0LL → avc1.42E01F where LL = 2A if w·h > 1280·720 or fps > 30 else 1F; isConfigSupported at 8 Mbps.",
   "params": "levels 1F (3.1) / 2A (4.2)",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/offline.mjs:96"
@@ -530,6 +600,7 @@
   "how": "pickAudioCodec(): ['mp4a.40.2','aac'] then ['opus','opus'] at 192 kbps; AudioData f32-planar blocks of 4096 frames.",
   "params": "192 kbps, stereo, 48 kHz",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/offline.mjs:108"
@@ -548,6 +619,9 @@
   "how": "seekMedia/flushPendingSeek/stableSeek in media.mjs; tolerance 0.025 s.",
   "params": "timeout 8000 ms; tolerance 25 ms",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/media.mjs:1",
@@ -567,6 +641,9 @@
   "how": "python mcp-server/run.py (stdio) | --http --token T --workspace DIR [--corpus DIR] | --console | --list-tools | --print-openapi --profile chatgpt|full; tests: python -m unittest discover -s mcp-server/tests.",
   "params": "default port 8765; ChatGPT profile 29 read-only ops; version 11.11.0",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/__main__.py",
@@ -587,6 +664,9 @@
   "how": "out=[]; a=out.append; write <defs> (linearGradient/radialGradient/pattern/filter feGaussianBlur), then layers back-to-front; random.seed(7) for debris/embers; Path(argv[1]).write_text(...). Verified: re-running reproduces the committed SVG byte for byte.",
   "params": "W,H 1600x900; random.seed(7)",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/projects/duck-vs-dragon/duck_dragon.py:5-10",
@@ -607,6 +687,9 @@
   "how": "MOTION.shim(rootId, duration) after registering timelines (MOTION.register / window.__timelines); exposes window.render, window.seek, window.__ready.",
   "params": "video seek wait up to 4 s, load wait 15 s; waits for document.fonts.ready",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:466",
@@ -626,6 +709,10 @@
   "how": "plan.py STEP_SKILLS; references/catalog.md.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-one/scripts/plan.py:188",
@@ -645,6 +732,7 @@
   "how": "const r = MOTION.rng(seed); r(); MOTION.hash(i,j) for stateless per-cell noise.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:119",
@@ -664,6 +752,9 @@
   "how": "Ctx.mask(shape, box) draws polygons into an L image scaled by scale*ss, then Image.reduce(ss); fill() multiplies coverage with paint and blends.",
   "params": "ss=3 default; Hole polygons fill 0; bbox padded by 3*blur+2 px",
   "install": "",
+  "requires": [
+   "pip:pillow"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/render.py:316",
@@ -684,6 +775,7 @@
   "how": "svg_import.load_svg(text, max_steps=160) -> (title, steps); fits the viewBox into the sheet with 20 px margin; big elements (>45% of the view) sweep, others grow.",
   "params": "units % / em,rem x16 / pt x1.333; rgb()/rgba()/hsl()/hsla()/currentColor; ~95 CSS named colours; gradient href chain <= 8; not drawn: filter, mask, clipPath, pattern, image",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/svg_import.py:1",
@@ -704,6 +796,11 @@
   "how": "python motion.py new NAME [--3d|--canvas|--lab] --seconds S --fps F --size WxH --title T; 3D without npm rewrites imports to window.K3 and copies three-kit.bundle.js + shape-kit.js.",
   "params": "--seconds 8 --fps 30 --size 1920x1080 defaults; names must match ^[\\w\\u0600-\\u06FF][\\w\\u0600-\\u06FF-]{0,63}$",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:three",
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:126",
@@ -724,6 +821,10 @@
   "how": "python kmotion.py (menu) | kmotion.py help | kmotion.py COMMAND args",
   "params": "47 commands incl. new, render, preview, score, ambience, voice, beats, channels, direct, verse, audio2motion, reel, montage, grade, captions, transcribe, decaption, footage, mocap, silence, aspect, trim, concat, loop, stabilize, export, thumb, probe, batch, fonts, lint, sheet, speed, study, measure,…",
   "install": "",
+  "requires": [
+   "python3",
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kmotion.py:30",
@@ -743,6 +844,10 @@
   "how": "python3 tools/kosif.py scaffold <id> <dir> --starter html-canvas|remotion|none.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/kosif.py",
@@ -762,6 +867,11 @@
   "how": "kosif.py search/show -> kosif.py prompt or scaffold <id> <dir> --starter html-canvas|remotion -> words_convert.py transcript -> words.js/public/words.json -> edit scenes -> render_html.cjs --preview -> user approval -> render_html.cjs --audio voice -> verify_video.py --aspect --fps --duration --audio -> fill TEST_REPORT.md",
   "params": "default deliverable 1080x1920, 30 fps, 15 s (scaffold) / 12 s (starters), H.264 yuv420p + AAC 192k",
   "install": "",
+  "requires": [
+   "python3",
+   "chromium",
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/kosif.py:101",
@@ -782,6 +892,10 @@
   "how": "node tools/render_html.cjs --in film.html --out out.mp4 [--mode seek]; seek(t) may be sync or return a promise; duration defaults to window.__kosif.duration",
   "params": "frame t = start + i/fps; total = round(duration*fps)",
   "install": "",
+  "requires": [
+   "node",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:283",
@@ -802,6 +916,10 @@
   "how": "auto-selected when no window.__kosif hook (browser relaunches with --enable-begin-frame-control etc.) or --mode virtual; needs --duration; cannot seek backwards",
   "params": "Date.now epoch fixed at 1767225600 (2026-01-01T00:00Z); beginFrame timeout 30000 ms; up to 3 retries if no damage",
   "install": "",
+  "requires": [
+   "chromium",
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:298",
@@ -822,6 +940,9 @@
   "how": "omit --mode; log line 'no window.__kosif hook found, switching to virtual mode'",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:483"
@@ -840,6 +961,9 @@
   "how": "--offline (context.route abort blockedbyclient)",
   "params": "",
   "install": "",
+  "requires": [
+   "fonts:arabic"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:230"
@@ -858,6 +982,7 @@
   "how": "--audio voice.mp3 [--crf 18] ; with --start the audio is also offset by -ss start",
   "params": "libx264 preset medium, crf 18, -pix_fmt yuv420p, -movflags +faststart, AAC 192k",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:356"
@@ -876,6 +1001,7 @@
   "how": "--start 4 --duration 3",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.md"
@@ -894,6 +1020,7 @@
   "how": "--frames-dir out/frames or --keep-frames",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:170",
@@ -913,6 +1040,9 @@
   "how": "set KOSIF_PLAYWRIGHT if needed",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:138",
@@ -932,6 +1062,7 @@
   "how": "new KOSIF.Timeline({duration,fps,scenes,always,onFrame}); tl.seek(t); window.__kosif={duration,fps,seek:t=>tl.seek(t)}",
   "params": "sample: 12 s, 30 fps, 4 scenes 0-3.4, 3.4-7.2, 7.2-10.4, 10.4-12 s",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/starters/html-canvas/timeline.js:95",
@@ -951,6 +1082,10 @@
   "how": "python3 tools/kosif.py scaffold <id> <dir> [--starter html-canvas|remotion|none] [--force] [+prompt options]",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/kosif.py:540"
@@ -969,6 +1104,10 @@
   "how": "--stack auto",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:three",
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/kosif.py:43",
@@ -988,6 +1127,7 @@
   "how": "--stack canvas",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/kosif.py:43",
@@ -1007,6 +1147,9 @@
   "how": "--stack svg",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/kosif.py:43",
@@ -1026,6 +1169,10 @@
   "how": "python scripts/env_check.py; route C delivers self-playing HTML + synthesized WAV + exact commands",
   "params": "Route A=browser+ffmpeg, B=ffmpeg, C=none",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:37",
@@ -1045,6 +1192,9 @@
   "how": "python tools.py batch jobs.json --parallel 2 → jobs.report.json",
   "params": "parallel 2; KOSIF_WORKERS=1 per job",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/tools.py:417",
@@ -1064,6 +1214,7 @@
   "how": "const render=K3.makeFrameLoop(renderer, post, W, H, update); renderer sets window.__blur=k, __fps, __shutter.",
   "params": "shutter 0.5 (180 deg) default; half-float accumulation; grain fixed per output frame",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:423",
@@ -1085,6 +1236,10 @@
   "how": "Same discipline makes HTML motion compositions portable to the renderer; checker html_validator.py is stdlib-only (review before running).",
   "params": "breakpoints 900px and 580px; hero H1 68-82px/800; H2 52-62px; body 17-19px; eyebrow 13px tracking 0.2em; card hover translateY(-6px) 0.3s",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/196-landing/621-landing",
@@ -1105,6 +1260,11 @@
   "how": "Playwright page.screenshot (installed); then PIL: bg = pixel(2,2); mask = |img-bg| > thresh; crop bbox; pad margin x scale. Run render and trim as separate steps. The atlas render.sh hardcodes the macOS Chrome path, so reimplement with Playwright.",
   "params": "scale 2; margin 16 CSS px (32 device px)",
   "install": "",
+  "requires": [
+   "chromium",
+   "pip:pillow",
+   "os:macos"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3186-create-figure/13532-create-figure/SKILL.md",
@@ -1125,6 +1285,10 @@
   "how": "Python ElementTree writing resources/format/asset + spine clips + markers; Compressor CLI for batch export on macOS",
   "params": "rational durations",
   "install": "",
+  "requires": [
+   "python3",
+   "os:macos"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/755-final-cut-pro/SKILL.md"
@@ -1143,6 +1307,9 @@
   "how": "lottie-web loadAnimation({renderer:'svg',autoplay:false}) and goToAndStop per frame; dotlottie-player 2.7.12 from jsdelivr.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:lottie"
+  ],
   "license": "unknown",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
@@ -1161,6 +1328,7 @@
   "how": "Size backing store = CSS size x pixelRatio (clamp max 3); layers for static marks / active marks / overlay; HTML for text; redraw from state on every frame t (perfect for seek-based rendering).",
   "params": "max pixelRatio 3",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10319-canvas2d-data-visualization/references/rendering-architecture.md",
@@ -1180,6 +1348,10 @@
   "how": "DNA.bundle/markdown/python; script args --clips --out --music --srt --mode style|clone --duration --aspect 9:16|16:9|1:1|4:5 (1080x1920...) --fps 30 --res 720|1080 --keep-audio --seed 7 --dry-run; per-shot ffmpeg scale/crop/rotate expressions for camera moves, eq/colorbalance grade, libx264 veryfast crf 18 yuv420p, aac 160k 48 kHz, concat demuxer, music mix (amix 0.3 with clip audio) aac 192k, SRT burn with force_style alignment from the measured band; pure-Python beat tracker (11025 Hz, hop 256…",
   "params": "crf 18; aac 160k/192k",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:1451",
@@ -1200,6 +1372,9 @@
   "how": "web/motion.js: find scene where start<=t<end, local progress p, phase=t*1.3; layer gradient, particles, orbit arcs, core ring, waves, Arabic title, footer, progress bar. Verified here: 6 sample times gave 6 distinct frames at 540x960 and 960x540 in headless Chromium.",
   "params": "phase speed 1.3 rad/s; canvas 540x960 / 960x540 / 720x720 preview",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/web/motion.js:4-23",
@@ -1219,6 +1394,9 @@
   "how": "npm run preview -> open http://127.0.0.1:4173; player.js fetches project/storyboard.json, sizes canvas by aspect, rAF tick with dt capped at 0.08 s.",
   "params": "canvas 540x960 (9:16), 960x540 (16:9), 720x720 (1:1); dt cap 80 ms",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/web/index.html:1",
@@ -1239,6 +1417,9 @@
   "how": "player.js draw(t): profile check -> drawEditorialFrame or drawFrame; window.renderFrame=draw; fmbReady=true after init.",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/web/player.js:6-13,23-25"
@@ -1257,6 +1438,9 @@
   "how": "node scripts/serve.mjs (PORT env, default 4173).",
   "params": "port 4173; whitelist web|project|assets|examples",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/serve.mjs:1-19"
@@ -1275,6 +1459,9 @@
   "how": "Generate with npm run plan or npm run viral -- preview-project, then hand-edit scene text/timing.",
   "params": "fps 30; ids scene-01..; times in seconds (ms precision)",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/project/storyboard.json",
@@ -1295,6 +1482,7 @@
   "how": "drawEditorialFrame(canvas, story, t) in web/editorial.js; scale=w/540; per-scene local time 0–6 s; phase=t*1.06.",
   "params": "scene 6 s; entrance from .5 s; exit from 4.7 s",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/web/editorial.js:35-86",
@@ -1314,6 +1502,9 @@
   "how": "No CSS animations/requestAnimationFrame state; seed randomness; compute particles/shake/persistence as pure functions of t; register paused timelines on window.__timelines; data-timeline-locked on caption roots.",
   "params": "e.g. stop-motion floor(t*fps)/fps; phosphor exp(-age/tau); shake value-noise channels",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/camera-shake/camera-shake.html:594",
@@ -1334,6 +1525,11 @@
   "how": "python3 scripts/kmotion.py [help]; python3 scripts/motion.py new NAME --seconds N --fps 30 --size 1920x1080 [--3d].",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "imagemagick",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/hyperframes-animation-studio/scripts/kmotion.py",
@@ -1353,6 +1549,9 @@
   "how": "python scripts/kmotion.py help",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:50",
@@ -1372,6 +1571,7 @@
   "how": "Open index.html",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:125"
@@ -1390,6 +1590,10 @@
   "how": "python scripts/kmotion.py studio-import P.kosif.json --out edit.json --media DIR [--render film.mp4]",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md"
@@ -1408,6 +1612,9 @@
   "how": "python scripts/build_package.py --claude-ai --out x.zip",
   "params": "179 files 3.3 MB",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
@@ -1426,6 +1633,9 @@
   "how": "MOTION.sampled(fn, t0, t1, fps) -> keyframes array of {duration:1/fps, ease:'none', ...fn(t)}; feed tl.to(el,{keyframes}).",
   "params": "60 keyframes per second default",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:109"
@@ -1444,6 +1654,7 @@
   "how": "MOTION.rng(seed)() and MOTION.hash(i,j); the 3D kit exports the same rng.",
   "params": "mulberry32 constant 0x6D2B79F5",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:119",
@@ -1464,6 +1675,9 @@
   "how": "K3.makeRenderer(canvas, W, H, {tone:'aces'|'agx'|'neutral', exposure}); lab-kit wraps it to honour window.__draftScale.",
   "params": "tone aces default (agx keeps highlight hue: fire/neon/sunsets; neutral for products); exposure 0.6; PCFShadowMap",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:76",
@@ -1483,6 +1697,7 @@
   "how": "K3S.makeLitePost(renderer, scene, camera, W, H, {bloom, radius, threshold, vignette, grain}).",
   "params": "bloom .55 radius .5 threshold .82; vignette .38; grain .025",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/shape-kit.js:365"
@@ -1501,6 +1716,7 @@
   "how": "K3.labPost(renderer, scene, camera, W, H, {bloom, grain, vignette, dof}).",
   "params": "bloom .08 threshold .95; grain .05; vignette .18; CA .4; warm .25",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:272"
@@ -1519,6 +1735,9 @@
   "how": "Automatic once lab-kit.js wraps K3.makeRenderer.",
   "params": "pixel ratio = __draftScale",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:291"
@@ -1537,6 +1756,9 @@
   "how": "python motion.py new NAME --canvas ...; edit SCENES; render with motion.py render --engine studio (per sub-frame for --blur).",
   "params": "spring k 170 d 26 (title uses 220/24); out = 1-2^(-10p); exit = p^2.8; BPM 120",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/canvas.html",
@@ -1556,6 +1778,9 @@
   "how": "workbench_cli.py 'task' --seconds 12 --aspect 9:16 --titles 'a|b|c' --accents '#E7B65A,#5BD1A5'",
   "params": "fps 24/25/30/50/60",
   "install": "",
+  "requires": [
+   "pip:pillow"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/workbench_cli.py"
@@ -1574,6 +1799,10 @@
   "how": "timeline.py SPEC --out f.mp4 [--dry-run --inspect]; --example",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py"
@@ -1592,6 +1821,9 @@
   "how": "studio_import.py project.json --out edit.json --render f.mp4",
   "params": "presets aurora #0b2a3a sunset #3a1a12 grid #101828",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/studio_import.py:29"
@@ -1610,6 +1842,7 @@
   "how": "server._project_info(): regex on index.html; motion.duration_of(); lists template.json/edit.json/verse.json/cues.json, the newest 6 MP4 outputs and up to 12 review frames.",
   "params": "kinds: 3d | canvas | manifest | 2d",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:402"
@@ -1628,6 +1861,7 @@
   "how": "app.js wbPlan/wbValidate/wbCompile/wbRender/wbProject handlers; canvas preview with a 0.033 s slider; render polls every 700 ms with the job token and plays the video inline.",
   "params": "fps choices 24/25/30/50/60; aspects 16:9/9:16/1:1/4:5; default task 'مقدمة عربية أنيقة عن قوة الأفكار…' 12 s",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/index.html",
@@ -1647,6 +1881,7 @@
   "how": "Pages set body data-composition-id, data-width, data-height, data-duration, data-fps; render(t) is pure in t; kmotion render drives it.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cat.html",
@@ -1667,6 +1902,7 @@
   "how": "Author the page with window.render = function(t){...} that sets every transform/opacity/camera value from t only (no requestAnimationFrame, Date.now or unseeded Math.random), set window.__ready = true, then drive t = i/fps from the capturer.",
   "params": "t step = 1/fps (0.0333 s at 30 fps); frame 150 = t 5.00 s; ready wait 60 s",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/animation_craft.md",
@@ -1687,6 +1923,10 @@
   "how": "python scripts/ultra_animator.py new <name> --type 2d|3d --ratio 9:16|16:9|1:1|WxH --seconds 10 --fps 30 --title 'عنوان'; replaces {{TITLE}} {{WIDTH}} {{HEIGHT}} {{DURATION}} {{FPS}} in the template, writes index.html, project.json, STORYBOARD.md, ai_prompts.json, frames/, assets/ (copies three.min.js).",
   "params": "9:16=1080x1920, 16:9=1920x1080, 1:1=1080x1080, custom 'WxH' (e.g. 3840x2160)",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/ultra_animator.py:29",
@@ -1707,6 +1947,10 @@
   "how": "python scripts/ultra_animator.py encode <project> --fps 30 --crf 17 [--audio file] [--out f.mp4]; ffmpeg -framerate fps -i frames/f_%04d.png [-i audio -c:a aac -b:a 256k -shortest | -an] -c:v libx264 -preset slow -crf 17 -pix_fmt yuv420p; default audio = assets/soundtrack.wav if present.",
   "params": "libx264 preset slow, CRF 17, yuv420p, AAC 256 kb/s, -shortest",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/ultra_animator.py:200"
@@ -1725,6 +1969,9 @@
   "how": "MOTION.sampled(fn, t0, t1, fps=60) -> keyframes array for tl.to(el,{keyframes}).",
   "params": "60 keyframes/s",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:109"
@@ -1743,6 +1990,7 @@
   "how": "MOTION.rng(seed)() or MOTION.hash(i,j); Math.random is a lint error.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:119",
@@ -1762,6 +2010,9 @@
   "how": "Automatic from MOTION.shim when not under a renderer (navigator.webdriver, ?render, HyperFrames).",
   "params": "bar 48 px, play button #E7B65A",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:496"
@@ -1780,6 +2031,9 @@
   "how": "makeFrameLoop(renderer, post, W, H, update); motion.py render --blur K --shutter S --stack average|lighten sets window.__blur/__shutter/__stack.",
   "params": "shutter 0.5 frame (180 deg); --blur 4 ~ +30% render time; long exposure e.g. --blur 16 --shutter 30 --stack lighten",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:423",
@@ -1799,6 +2053,12 @@
   "how": "python motion.py new NAME [--seconds 8] [--fps 30] [--size 1920x1080] [--title ...] [--3d|--canvas|--lab] (or kmotion new).",
   "params": "templates: composition.html, scene3d/, canvas.html, lab/, directed.html, verse.html",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:three",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/motion.py:1",
@@ -1819,6 +2079,11 @@
   "how": "python motion/env_check.py (JSON + Arabic summary); motion.py doctor.",
   "params": "Route A full studio (browser+FFmpeg); B footage only (FFmpeg); C preview only (HTML + WAV)",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "pip:faster-whisper"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/env_check.py"
@@ -1837,6 +2102,10 @@
   "how": "python motion/kmotion.py (menu) | help | COMMAND args.",
   "params": "48 commands: new bundle kit-bundle frames check render preview sync doctor score ambience voice beats channels direct verse audio2motion reel montage grade captions transcribe decaption footage mocap silence aspect trim concat loop stabilize export thumb probe batch fonts lint sheet speed study meas…",
   "install": "",
+  "requires": [
+   "python3",
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kmotion.py"
@@ -1855,6 +2124,7 @@
   "how": "svg_import.load_svg(text) / paste in the studio code panel.",
   "params": "not drawn: filters, masks, clip paths, patterns, embedded images",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/svg_import.py"
@@ -1873,6 +2143,10 @@
   "how": "python runner.py CODE_FILE OUT_DIR [--scale 1.0] [--export PNG].",
   "params": "120 s limit in a scratch folder; consecutive PIL commands grouped (360 lines -> 18 strokes)",
   "install": "",
+  "requires": [
+   "pip:pillow",
+   "pip:matplotlib"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/runner.py",
@@ -1892,6 +2166,10 @@
   "how": "python3 edl_render.py edl.json --out final.mp4 [--dry-run] [--ratios 9:16,1:1] [--copy]",
   "params": "fps 30, size [1080,1920] in example",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/pro-video-editor-ffmpeg/scripts/edl_render.py",
@@ -1911,6 +2189,10 @@
   "how": "python encode.py --frames frames --fps 30 --out x.mp4 --audio a.wav --crf 18 --sheet 12 --gif p.gif",
   "params": "crf 18; sheet 12 frames 4 cols; pattern f_%04d.png",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/claude-animation-studio/scripts/encode.py"
@@ -1929,6 +2211,7 @@
   "how": "rng(seed) mulberry32-style with 0x6D2B79F5; R=rng(7).",
   "params": "seed 7",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/claude-animation-studio/templates/scene-2d.html:54"
@@ -1947,6 +2230,7 @@
   "how": "render writes FILM.mp4.kosif.json {fingerprint, params}; --force overrides.",
   "params": "params hashed: engine, fps, size, scale, blur, shutter, stack, capture, preset, crf, quality, v=4",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:278",
@@ -1966,6 +2250,7 @@
   "how": "export KOSIF_MOTION_HOME=$PWD/work",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:48",
@@ -1985,6 +2270,9 @@
   "how": "COMMON_FLAGS applied in openBrowser; reducedMotion no-preference",
   "params": "--font-render-hinting=none --disable-lcd-text --force-color-profile=srgb --hide-scrollbars --disable-partial-raster --disable-skia-runtime-opts --autoplay-policy=no-user-gesture-required",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:55",
@@ -2004,6 +2292,7 @@
   "how": "--seed <int>; injected with page.addInitScript",
   "params": "mulberry32 constant 0x6D2B79F5",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:243"
@@ -2022,6 +2311,7 @@
   "how": "--timeout <ms> (default 60000) --settle <ms> (default 0)",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:261"
@@ -2040,6 +2330,9 @@
   "how": "KOSIF.rng(seed) (mulberry32-style), Remotion random(seed), render_html --seed.",
   "params": "budget < 50 ms/frame",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/code.md:24",
@@ -2060,6 +2353,10 @@
   "how": "node tools/render_html.cjs --in film.html --out film.mp4 [--fps 30 --audio voice.mp3 --start --duration --width --height --crf 18 --scale --seed --offline]",
   "params": "defaults 1080×1920, 30 fps, CRF 18",
   "install": "",
+  "requires": [
+   "node",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:29",
@@ -2079,6 +2376,10 @@
   "how": "--mode virtual; or pause document.getAnimations() and set currentTime=t·1000 inside seek.",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium",
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:30",
@@ -2098,6 +2399,7 @@
   "how": "See starters/html-canvas/index.html.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:77",
@@ -2117,6 +2419,7 @@
   "how": "fetch -> URL.createObjectURL -> video.src.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
@@ -2136,6 +2439,7 @@
   "how": "mountScrollWorld(container,{sections,connectors,diveScroll:1.3,connScroll:0.9,crossfade:0.12})",
   "params": "copy opacity smoothstep; scale 1.03+0.14*local",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/scrub-engine.js:66"
@@ -2154,6 +2458,9 @@
   "how": "Load gsap (pin version e.g. 3.14.x via npm or a local copy) in an HTML composition; gsap.from() for entrances so CSS holds the final layout; camelCase props; transform aliases x/y/scale/rotation/xPercent instead of raw transform strings; autoAlpha instead of opacity (hides at 0).",
   "params": "default duration 0.5s; default ease power1.out",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md"
@@ -2172,6 +2479,9 @@
   "how": "rotation:'360_cw' / '-170_short' / '90_ccw'; x:'+=20', scale:'*=2'; gsap.to(el,{'--hue':180}); gsap.to('.wordmark',{'--wght':300,'--opsz':72}) with font-variation-settings bound to the vars.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md",
@@ -2191,6 +2501,9 @@
   "how": "let xTo=gsap.quickTo('#dot','x',{duration:0.4,ease:'power3'}); gsap.matchMedia().add({isDesktop:'(min-width:800px)', reduceMotion:'(prefers-reduced-motion: reduce)'}, ctx=>{...duration: reduceMotion?0:2}). Mostly for interactive web pieces, not rendered video.",
   "params": "quickTo duration 0.4",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10377-gsap/SKILL.md"
@@ -2209,6 +2522,9 @@
   "how": "var p={time:0}; tl.to(p,{time:5,duration:5,ease:'none',onUpdate:()=>drawFrame(p.time)},0); drawFrame uses a deterministic integer hash (no Math.random).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md"
@@ -2227,6 +2543,12 @@
   "how": "Root div with data-composition-id, data-width/height (1920x1080 or 1080x1920), data-duration; clips get id, data-start, data-duration, data-track-index (track index is not z-order); timelines created {paused:true} and registered synchronously; npx hyperframes init/lint/inspect/preview/render. Requires Node>=22 + FFmpeg + npm package download.",
   "params": "fps 24/30/60; quality draft|standard|high; workers 1-8",
   "install": "npx hyperframes init/lint/inspect/preview/render",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md",
@@ -2246,6 +2568,7 @@
   "how": "Sub-file wraps content in <template>; root loads <div data-composition-id data-composition-src='compositions/x.html' data-start data-duration data-track-index>; video always muted playsinline plus a separate <audio> element; animate a wrapper not the <video>.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md"
@@ -2264,6 +2587,10 @@
   "how": "npx hyperframes render --fps 60 --quality high; --format webm for transparency; --docker for byte-identical output; --workers auto; templates: blank, warm-grain, play-mode, swiss-grid, vignelli, decision-tree, kinetic-type, product-promo, nyt-graph.",
   "params": "fps 30 default; 60 doubles render time",
   "install": "npx hyperframes render --fps 60 --quality high",
+  "requires": [
+   "docker",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10379-hyperframes-cli/SKILL.md"
@@ -2282,6 +2609,10 @@
   "how": "interpolate(frame,[0,0.3*fps],[0,1],{extrapolateLeft:'clamp', extrapolateRight:'clamp', easing:Easing.bezier(0.16,1,0.3,1)}); multi-keyframe arrays with n-1 easings; npx remotion studio/render/still. Needs npm install of remotion packages.",
   "params": "bezier(0.16,1,0.3,1)",
   "install": "npx remotion studio/render/still",
+  "requires": [
+   "npm:remotion",
+   "npm:react"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/SKILL.md",
@@ -2302,6 +2633,7 @@
   "how": "<Sequence from={30} durationInFrames={60} layout='none' premountFor={1*fps}>; <Series><Series.Sequence durationInFrames={45}/>...</Series> with negative offset for overlaps; trimBefore shifts a child's internal clock.",
   "params": "premount 1s",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/sequencing.md",
@@ -2321,6 +2653,11 @@
   "how": "Remotion: @remotion/lottie <Lottie animationData/> with delayRender/continueRender while fetching JSON. HTML/GSAP: dotlottie-player or lottie.loadAnimation({autoplay:false}) and set frame from timeline; entrance scale 0.3->1 back.out(1.6) 0.35s.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:remotion",
+   "npm:lottie"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/lottie.md",
@@ -2340,6 +2677,7 @@
   "how": "<Interactive.Div name='Title' style={{scale: interpolate(...), translate: interpolate(frame,[0,100],['0px 0px','100px 100px']), rotate: ...}}>; inline fixed text; avoid transform strings unless skew/perspective needed; editable clips are separate JSX nodes, not .map().",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10434-remotion-interactivity/SKILL.md",
@@ -2360,6 +2698,9 @@
   "how": "<HtmlInCanvas width height onPaint> with ctx.drawElementImage; needs Chrome 149+ with canvas-draw-element flag; nested only in Chrome 152+; enable --gl=angle.",
   "params": "Chrome 149+",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/html-in-canvas.md"
@@ -2378,6 +2719,11 @@
   "how": "<motion.div layoutId='tab' transition={{type:'spring', stiffness:500, damping:30}}/>; whileHover {scale:1.02,y:-4}; keyframe arrays scale [1,1.05,1]. Real-time (rAF) by default - for video use Remotion instead or drive via manual control; good for interactive artifacts.",
   "params": "500/30; 400/17",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:remotion",
+   "npm:animejs",
+   "npm:react"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3529-ui-design/14308-interaction-design/references/animation-libraries.md",
@@ -2397,6 +2743,9 @@
   "how": "npx hyperframes render -c compositions/title-02.html -o renders/title-02.mp4 --fps 30; card kinds: chapter title, principle, tradeoff, opinion, before/after table.",
   "params": "",
   "install": "npx hyperframes render -c compositions/title-02",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2458-davinciresolve-gfx-hyperframes/SKILL.md"
@@ -2415,6 +2764,7 @@
   "how": ".stage{isolation:isolate;overflow:hidden} .shader{position:absolute;inset:0;z-index:0;pointer-events:none} .ui{position:relative;z-index:1}; lazy import, pause offscreen, bounded pixel count.",
   "params": "Paper Shaders verified 0.0.81 Apache-2.0; DPR cap 2",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/references/shader-backed-ui.md"
@@ -2433,6 +2783,9 @@
   "how": "new Lenis({duration:1.2, easing:t=>Math.min(1,1.001-2**(-10*t))}); lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(t=>lenis.raf(t*1000)); lagSmoothing(0). For rendering, set scroll position from frame time.",
   "params": "duration 1.2; expo easing",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md",
@@ -2452,6 +2805,9 @@
   "how": "npx create-video@latest (needs network install; kosif-tool has a remotion starter); pin all remotion packages to one exact version; premountFor on Sequences; random(seed) not Math.random.",
   "params": "fps 30; 1920x1080; overlays: stage badge, elapsed timer, escalation ladder, status, result badge, lower third",
   "install": "npx create-video@latest (needs network install",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/3198-remotion/13555-remotion-video-builder",
@@ -2471,6 +2827,10 @@
   "how": "Reuse the schema shape for our own Playwright + HTML renderer; the original runs in a Docker container (needs install).",
   "params": "resolution [1920,1080]; default voice en-US-AriaNeural",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "chromium",
+   "docker"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2836-video-guide/11537-video-guide-creator/references/yaml-schema.md",
@@ -2490,6 +2850,11 @@
   "how": "npm install per project (network); copy-paste kits are snippets not deps.",
   "params": "motion (ex-framer) MIT; anime.js v4 MIT; auto-animate MIT; lenis MIT; tailwindcss-animate MIT; GSAP custom no-charge (not OSI); open-props easings MIT; paper-shaders Apache-2.0; shadergradient MIT; tsparticles MIT; cobe 5KB globe MIT; r3f+drei MIT; vanta MIT (dated look); magicui MIT; motion-primiti…",
   "install": "npm install per project (network)",
+  "requires": [
+   "npm:gsap",
+   "npm:animejs",
+   "npm:react"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/342-kernel/1223-frontend/reference/component-sources.md"
@@ -2508,6 +2873,10 @@
   "how": "Scaffold with npx create-video@latest (blank), pin every remotion/@remotion package to the exact same version, default 30 fps 1920x1080, AbsoluteFill layering, staticFile for public assets, spring with high damping and clamped interpolate, random(seed) instead of Math.random; share logic across landscape and vertical outputs.",
   "params": "30 fps; 1920x1080; exact version pins",
   "install": "npx create-video@latest (blank), pin every remotion/@remotion package to the exact same version, default 30 fps 1920x1080, AbsoluteFill layering, staticFile for public assets, spring with high damping and clamped interpolate, random(seed) instead of Math",
+  "requires": [
+   "npm:remotion",
+   "npm:react"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/3198-remotion/13555-remotion-video-builder/SKILL.md"
@@ -2526,6 +2895,9 @@
   "how": "Needs npm install of @slidev/cli; record or export frames, then cut to narration; ideas transfer to the kosif HTML engine (rough marks via rough-notation, code morph via shiki-magic-move).",
   "params": "magicMoveDuration (ms); forward delay e.g. 500 ms",
   "install": "npm install of @slidev/cli",
+  "requires": [
+   "npm:slidev"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2938-slidev/12191-slidev/references/core-animations.md",
@@ -2546,6 +2918,9 @@
   "how": "Resolve Python API: GetMediaPool, CreateEmptyTimeline/DuplicateTimeline, AppendToTimeline with startFrame/endFrame; scripts offer --dry-run/--reset",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow/SKILL.md",
@@ -2565,6 +2940,9 @@
   "how": "@remotion/media Video trimBefore/trimAfter (non-destructive), @remotion/transitions fade()/slide()/wipe() with linearTiming({durationInFrames:15}); needs npm install",
   "params": "transition 15 f",
   "install": "npm install transition 15 f",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/video-editing.md",
@@ -2585,6 +2963,11 @@
   "how": "npx hyperframes render -c comp.html -o out.mp4 --fps 24|30|60 --quality draft|standard|high --format mp4|webm --workers auto ; doctor checks Chrome/FFmpeg/Node",
   "params": "fps 30 default",
   "install": "npx hyperframes render -c comp",
+  "requires": [
+   "ffmpeg",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10379-hyperframes-cli/SKILL.md",
@@ -2604,6 +2987,11 @@
   "how": "Three.js 'three/webgpu' + 'three/tsl'; new WebGPURenderer(); await renderer.init(); MeshStandardNodeMaterial with colorNode/roughnessNode/positionNode; render headless via Puppeteer/Chromium frame capture to ffmpeg.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "npm:three"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/SKILL.md",
@@ -2623,6 +3011,7 @@
   "how": "RenderPipeline(renderer) (renamed from PostProcessing in r183); pass(scene,camera).getTextureNode('output'); renderPipeline.render() instead of renderer.render().",
   "params": "r183 rename",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/post-processing.md"
@@ -2641,6 +3030,7 @@
   "how": "ao(depth,normal,camera) multiply; ssr(color,depth,normal,camera); outline(scene,camera,objs,{edgeStrength:3,edgeThickness:1}); fxaa()/smaa().",
   "params": "outline edgeStrength 3.0, thickness 1.0",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/post-processing.md"
@@ -2659,6 +3049,7 @@
   "how": "wgslFn() per docs/wgsl-integration.md.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/wgsl-integration.md"
@@ -2677,6 +3068,10 @@
   "how": "@react-three/fiber Canvas; <planeGeometry args={[2,2,32,32]}>; uniforms in useMemo; useFrame sets u_time=clock.elapsedTime. For video use deterministic time = frame/fps.",
   "params": "plane 32x32 segments",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three",
+   "npm:react"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
@@ -2695,6 +3090,11 @@
   "how": "blender --background --python script.py; scene.render.engine='CYCLES'; samples 64 + denoise; 1920x1080; prefer bpy.data over bpy.ops; frame range: blender -b f.blend -o //frame_#### -F PNG -s 1 -e 120 -a.",
   "params": "Area light 400W; roughness 0.35; cam (4.5,-4.5,3.2) rot 65°/45°",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "chromium",
+   "blender"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/228-mas-3d-games/705-blender/SKILL.md"
@@ -2713,6 +3113,9 @@
   "how": "Pick per scene type.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/SKILL.md"
@@ -2731,6 +3134,9 @@
   "how": "fonttools pyftsubset --unicodes or --text-file; keep Arabic presentation features (--layout-features='*').",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:fonttools"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14126-web-typography/references/css-implementation.md",
@@ -2750,6 +3156,12 @@
   "how": "Remotion @remotion/lottie with delayRender/continueRender; in GSAP/HyperFrames scale-in back.out(1.6). Check each Lottie's license.",
   "params": "back.out(1.6), 0.35s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:remotion",
+   "npm:hyperframes",
+   "npm:lottie"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/lottie.md",
@@ -2769,6 +3181,10 @@
   "how": "interactive:false, fadeDuration:0, attributionControl handled explicitly, canvasContextAttributes.preserveDrawingBuffer:true; hold the first frame until sources/layers are added and the map fires 'idle'; per frame: setData/setPaintProperty -> once('idle') -> triggerRepaint; do not call map.remove() in cleanup; drive everything from the frame number, never CSS transitions or timers; render with --gl=angle and concurrency 1 while validating.",
   "params": "--gl=angle; --concurrency=1; fadeDuration 0",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three",
+   "npm:maplibre"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md",
@@ -2789,6 +3205,10 @@
   "how": "Object-oriented API, layout='constrained' (do not also call tight_layout), style context per figure, savefig PNG at exact pixel size (figsize*dpi) for frames or SVG with text kept as <text>; presentation preset: font 14, labels 16, titles 18, ticks 12, lines 2.5, markers 8, no top/right spines. Frame-by-frame animation by re-plotting per t is slow; prefer HTML/SVG for motion and Python for analysis/static plates.",
   "params": "presentation: 14/16/18/12 pt, lines 2.5; savefig dpi 300",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "pip:matplotlib"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/SKILL.md",
@@ -2809,6 +3229,10 @@
   "how": "Use while the spec stays readable; leave for D3/Canvas when custom layout, choreographed motion or many marks are needed. For video: render each state to SVG and tween in our page, or export static plates; vl-convert/node needed for headless export.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "chromium",
+   "npm:d3"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10325-grammar-of-graphics-and-declarative-visu/SKILL.md",
@@ -2829,6 +3253,9 @@
   "how": "Modules: d3-array, d3-scale, d3-axis, d3-shape cover most charts; d3-force/d3-hierarchy/d3-geo only when the data needs them; stable keys in joins; separate parsing, scales, derived geometry, rendering, state. For deterministic video compute every frame from t (no d3.transition timers) or use transitions only under the virtual-time renderer.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:d3"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10320-d3-data-visualization/SKILL.md",
@@ -2849,6 +3276,11 @@
   "how": "ECharts has built-in transitions and effectScatter ripples; Recharts for React; Plotly for interactive HTML (needs kaleido for static export). In video use them only with animation disabled and state set per frame, or with the virtual-time renderer.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:plotly",
+   "npm:three",
+   "npm:react"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10333-typescript-data-visualization-engineerin/references/library-selection-for-builders.md",
@@ -2869,6 +3301,9 @@
   "how": "Discover nodes with GET /object_info/{class} and models with GET /models/{folder} before wiring; basic T2I: CheckpointLoaderSimple → CLIPTextEncode ×2 → EmptyLatentImage → KSampler → VAEDecode → SaveImage; GGUF: UnetLoaderGGUF + CLIPLoaderGGUF + VAELoader.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:llama-cpp"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2819-comfyui/11445-comfyui-workflow-design",
@@ -2888,6 +3323,7 @@
   "how": "POST /prompt {prompt, client_id} → prompt_id/node_errors; GET /history/{id} until status success; outputs via GET /view?filename&subfolder&type (preview 'webp;50'); ws://host/ws?clientId=uuid4 for progress; POST /upload/image; POST /free {unload_models, free_memory} on OOM; GET /system_stats, /queue; POST /interrupt.",
   "params": "default port 8188",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2819-comfyui/11439-comfyui-api",
@@ -2907,6 +3343,7 @@
   "how": "Subgraphs need frontend ≥1.24.3, blueprints ≥1.27.7, App Mode ≥1.41.13; blueprint instances are snapshots — editing the master does not update placed copies.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2142-comfyui-plugin/7656-comfy-subgraphs-app-mode"
@@ -2925,6 +3362,9 @@
   "how": "mixAudio(D): OfflineAudioContext(2 ch, 48 kHz), BufferSource per track with loop/in-point, gain automation; reports files whose audio could not be decoded.",
   "params": "48000 Hz stereo",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:2234",
@@ -2944,6 +3384,7 @@
   "how": "KIT.build({style,script|lines,title,duration,voiceFile|voice,speed}): parse -> speedTimings (or align to voice) -> scene type 'motionkit' with params {style,lines,title,pal,fonts,seed} cached per signature -> KIT.sfxEvents stem -> SND.music bed; KIT.ORDER = lyric, plotter, doodle, whiteboard, chalkboard, stickman, isometric, fake3d, infographic, mapjourney, product; brand colours/fonts remap style roles (KIT.brandPal/brandFonts); reference DNA can recolour (KIT.palFromDNA).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT-derived (motion-starter-kit)",
   "proof": [
    "app/public/js/10_studio.js:903",
@@ -2964,6 +3405,10 @@
   "how": "HUB.ROLES: video main/clip/ref/bg; audio music/voice/sfx; image clip/logo/asset/layer/bg; pdf doc/brand; text doc/script/brand; captions; font; zip; json; link ref. Role guessed from file names (ref/مرجع, logo/شعار, voice/تعليق, music/أغنية). PDF via pdf.js 3.11.174 (<= 40 pages, refuses image-only PDFs with an OCR hint); DOCX via mammoth 1.6.0.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "tesseract",
+   "pip:office"
+  ],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:2692",
@@ -2984,6 +3429,7 @@
   "how": "canvas.captureStream(30) + MediaStreamDestination audio; MIME priority video/mp4 avc1.42E01E+mp4a.40.2 -> video/mp4 -> webm vp9/opus -> vp8/opus -> webm; 8 Mbps video, 160 kbps audio; chunks every 250 ms; render takes real time.",
   "params": "30 fps; 8 Mbps; 160 kbps",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:1725",
@@ -3003,6 +3449,7 @@
   "how": "renderHQ (studio copy replaces editor copy): VideoEncoder H.264 avc1.640028 (<= 720p30) or avc1.64002A (1080p or 60 fps), fallback 60->30 fps / avc1.640029; bitrate 10 Mbps (<= 1 MP), 16 Mbps (> 1 MP), 20 Mbps (> 1 MP at 60 fps); keyframe every 2 s; encode queue <= 6; AudioEncoder mp4a.40.2 48 kHz stereo 160 kbps in 4800-sample chunks; Mp4Muxer 5.1.3 (cdn.jsdelivr) fastStart in-memory; falls back to the fast render when unsupported or audio missing; saved to 'My videos'.",
   "params": "720p/1080p; 30/60 fps",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner (mp4-muxer MIT via CDN)",
   "proof": [
    "app/public/js/00_editor.js:2249",
@@ -3023,6 +3470,7 @@
   "how": "projectData v4 / handoff v3; autosave < 1.5 MB to localStorage basma.autosave; loadProject marks external code scenes untrusted; Ctrl/Cmd+Z, Space play, arrows +-1 s (Shift +-5 s).",
   "params": "autosave 6 s; undo 25",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:2134",
@@ -3043,6 +3491,7 @@
   "how": "VLIB.add(blob) in 'basma-videos'; UI.videos dialog; WebM files keep .webm extension.",
   "params": "last 30",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:4575",
@@ -3063,6 +3512,9 @@
   "how": "routes /api/gemini/*, /api/anthropic/* (180 s, 300 s for long-running/streams), /api/basma-health, /api/gemini-status, /api/basma-echo, /api/basma-media, /api/basma-stock, /api/basma-templates (6 h cache), /api/basma-page, proxy /api/ping|media|search|file -> 127.0.0.1:8771; blockedHost covers localhost, 10/8, 192.168/16, 172.16/12, 169.254/16, 100.64/10, IPv6 literals, .local/.internal, numeric hosts; max 6 redirects; errors returned as 200 + x-basma-status.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:esbuild"
+  ],
   "license": "owner",
   "proof": [
    "app/vite.config.ts:16",
@@ -3082,6 +3534,10 @@
   "how": "Only after installing Remotion and validating it; otherwise use Native Canvas.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:remotion",
+   "npm:react"
+  ],
   "license": "MIT",
   "proof": [
    "fastify-motion-bro/docs/ENGINE_ROUTER.md:3",
@@ -3101,6 +3557,9 @@
   "how": "Install separately, check Node version, verify render before use.",
   "params": "Node >= 22",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "fastify-motion-bro/docs/ENGINE_ROUTER.md:4",
@@ -3120,6 +3579,11 @@
   "how": "python scripts/render.py --smoke|--approved --height H --fps F --output path [--audio file]; Playwright launches chromium (--disable-gpu --no-sandbox), injects window.__FMB_STORYBOARD__, intercepts http://fmb.local/** to serve repo files offline, then ffmpeg -f image2pipe -vcodec png -framerate F -i pipe:0 -c:v libx264 -pix_fmt yuv420p -preset veryfast -crf 19 -movflags +faststart.",
   "params": "height even 144–3840; fps 1–60; CRF 19; preset veryfast; yuv420p; width=h*9/16|16/9|1",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/render.py:1-77",
@@ -3139,6 +3603,9 @@
   "how": "page.route('http://fmb.local/**') -> resolve under ROOT, 403 outside web/ or project/, guess MIME.",
   "params": "allowed prefixes web/, project/",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/render.py:49-59",
@@ -3158,6 +3625,9 @@
   "how": "Write index.html with root <div data-composition-id data-width=1920 data-height=1080>; children get data-start/data-duration/data-track-index; render with hyperframes render.",
   "params": "root 1920x1080 default; clips need class=clip",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/concepts/compositions.mdx"
@@ -3176,6 +3646,7 @@
   "how": "<div data-composition-id=x data-composition-src=compositions/x.html data-start data-duration data-playback-start>; register window.__timelines['x'].",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/concepts/compositions.mdx"
@@ -3194,6 +3665,9 @@
   "how": "Keep GSAP timelines paused and registered; avoid Date/Math.random/rAF (lint non_deterministic_code, requestanimationframe_in_composition).",
   "params": "t=frame/fps",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/concepts/determinism.mdx",
@@ -3213,6 +3687,13 @@
   "how": "createGSAPFrameAdapter({fps:30,timeline}) from @hyperframes/core; adapter must support random/backward seeks.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three",
+   "npm:gsap",
+   "npm:hyperframes",
+   "npm:lottie",
+   "npm:animejs"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/concepts/frame-adapters.mdx"
@@ -3231,6 +3712,11 @@
   "how": "npx hyperframes init ... (or bun packages/cli); add --json for agent output.",
   "params": "Scaffold a project; --example, --resolution landscape|portrait|landscape-4k|portrait-4k|square|square-4k, --video/--audio (auto Whisper captions), --tailwind, --non-interactive, --skip-transcribe, --model, --language.",
   "install": "npx hyperframes init",
+  "requires": [
+   "pip:faster-whisper",
+   "npm:hyperframes",
+   "npm:react"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3250,6 +3736,10 @@
   "how": "npx hyperframes render ... (or bun packages/cli); add --json for agent output.",
   "params": "Render to mp4|webm|mov|gif|png-sequence|hls; --fps 1-240 or 30000/1001; --quality draft|looks(CRF16)|standard|high|delivery; --crf 0-51, --video-bitrate, --workers 1-24 (~256MB each), --gpu (NVENC/VideoToolbox/AMF/VAAPI/QSV), --docker, --hdr/--sdr, --resolution supersample, --gif-loop, --hls-segment…",
   "install": "npx hyperframes render",
+  "requires": [
+   "docker",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3269,6 +3759,9 @@
   "how": "npx hyperframes preview ... (or bun packages/cli); add --json for agent output.",
   "params": "Studio preview server on port 3002; --background, --proxy transcodes HEVC/ProRes/AV1, --browser-gpu.",
   "install": "npx hyperframes preview",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3288,6 +3781,9 @@
   "how": "npx hyperframes capture ... (or bun packages/cli); add --json for agent output.",
   "params": "Capture a website into assets/screenshots (max 21) with AI image captioning, --video download mode.",
   "install": "npx hyperframes capture",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3307,6 +3803,9 @@
   "how": "npx hyperframes catalog ... (or bun packages/cli); add --json for agent output.",
   "params": "List/search registry blocks & components (--type block|component, --tag, --query, --on-device) and paste one into a project.",
   "install": "npx hyperframes catalog",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3326,6 +3825,9 @@
   "how": "npx hyperframes present ... (or bun packages/cli); add --json for agent output.",
   "params": "Present or play a composition; publish to hosted project (--public, --space).",
   "install": "npx hyperframes present",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3345,6 +3847,9 @@
   "how": "npx hyperframes doctor ... (or bun packages/cli); add --json for agent output.",
   "params": "Environment diagnosis, project info, benchmarks, cache cleanup, Chrome management.",
   "install": "npx hyperframes doctor",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3364,6 +3869,9 @@
   "how": "npx hyperframes cloud ... (or bun packages/cli); add --json for agent output.",
   "params": "Hosted render (cloud render/list/get/delete) and self-hosted AWS Lambda / GCP Cloud Run deployment commands.",
   "install": "npx hyperframes cloud",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3383,6 +3891,9 @@
   "how": "npx hyperframes figma ... (or bun packages/cli); add --json for agent output.",
   "params": "Figma import and Claude Design handoff commands.",
   "install": "npx hyperframes figma",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/packages/cli.mdx",
@@ -3402,6 +3913,11 @@
   "how": "@hyperframes/producer createRenderJob/executeRenderJob; env HF_SEGMENTED_CAPTURE, HF_SEGMENT_FRAMES=3000, PRODUCER_ENABLE_STREAMING_ENCODE.",
   "params": "workers 1-24; low-memory at <=8GB",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/packages/producer/src/index.ts",
@@ -3421,6 +3937,10 @@
   "how": "hyperframes preview; browser agent uses studio_inspect/studio_frame.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes",
+   "npm:react"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/guides/webmcp.mdx",
@@ -3440,6 +3960,9 @@
   "how": "@hyperframes/sdk.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/sdk"
@@ -3458,6 +3981,9 @@
   "how": "<div class=\"clip\" data-composition-src=\"compositions/components/<name>.html\" data-start=\"2\" data-duration=\"4\" data-track-index=\"1\" data-variable-values='{\"text\":\"...\"}'></div>; variables declared in data-composition-variables on <html>; cues = comma seconds from mount start; exit defaults to none (primitives hold last frame, frame root owns transitions); units fill the host box via container queries.",
   "params": "variable roles content|style|timing|layout; accent enum green|blue|violet; exit none|fade|up; IN/HOLD/OUT envelope, hold is elastic",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/CATALOG.md",
@@ -3477,6 +4003,10 @@
   "how": "`npx hyperframes catalog --query \"<words>\" --on-device` fetches local-vectors.json/.bin (384-dim bge-small-en-v1.5 quantised ONNX, rows embedded from title+description+tags in batches of 16); media-vectors index the bundled SFX manifest.",
   "params": "384 dims; Float32 row-major; revision sha256 = registry.json catalogArtifact.revision 973eda0e...",
   "install": "npx hyperframes catalog --query \"<words>\" --on-device` fetches local-vectors",
+  "requires": [
+   "pip:onnxruntime",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/catalog-artifact/README.md",
@@ -3497,6 +4027,10 @@
   "how": "<canvas layoutsubtree> wraps the HTML; script checks typeof ctx.drawElementImage === \"function\" and calls ctx.drawElementImage(el, 0, 0, w, h) then uploads to a Three.js texture; requires a Chromium build with the experimental HTML-in-Canvas API enabled.",
   "params": "phone 390x844, laptop 1440x900 screen buffers (ios26-liquid-glass)",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "chromium",
+   "npm:three"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/ios26-liquid-glass/ios26-liquid-glass.html:839",
@@ -3517,6 +4051,12 @@
   "how": "Write index.html with a root <div data-composition-id data-width data-height data-duration>, timed children with class=\"clip\" + data-start/data-duration/data-track-index, one paused GSAP timeline on window.__timelines[id]; preview with `npx hyperframes preview`, render with `npx hyperframes render`.",
   "params": "Node.js >=22 + FFmpeg; canvases 1920x1080 / 1080x1920 / 1080x1080; GSAP 3.14.2 CDN in templates",
   "install": "npx hyperframes preview`, render with `npx hyperframes render`",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/README.md",
@@ -3537,6 +4077,7 @@
   "how": "production-loop.md; fire every external generation concurrently/in background; batch visual checks into one contact sheet (images re-price context).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/production-loop.md"
@@ -3555,6 +4096,9 @@
   "how": "subagent-dispatch.md concurrency cap -> batching; frame-worker-core.md contract: <template>-wrapped root, one paused timeline at window.__timelines[frame_id], ids prefixed with frame_id, self-check codes.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "claude:tools"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/subagent-dispatch.md",
@@ -3574,6 +4118,9 @@
   "how": "Open preview before delivery render (`npx hyperframes preview --background`); after render mention the desktop-app line; run `npx hyperframes catch-up [dir]` when the user returns.",
   "params": "",
   "install": "npx hyperframes preview --background`)",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/SKILL.md",
@@ -3593,6 +4140,7 @@
   "how": "Write per minimal-composition.md; never hardcode 1920px on #root; length comes from root data-duration not timeline length.",
   "params": "data-fps optional; render length fixed at compile time",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/data-attributes.md",
@@ -3613,6 +4161,7 @@
   "how": "Author clips per data-attributes.md and tracks-and-clips.md; extend root duration when a clip ends past it (lint clip_ends_past_root_duration).",
   "params": "img default 3s; volume max 3.98 (+12 dB)",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/data-attributes.md",
@@ -3632,6 +4181,7 @@
   "how": "Host: <div data-composition-id=x data-composition-src=compositions/x.html data-start data-duration>; per-instance data-variable-values JSON; host duration = visible window.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/sub-compositions.md",
@@ -3651,6 +4201,7 @@
   "how": "variables-and-media.md: declare array of {id,type,default}; per-instance data-variable-values; batch render via CSV (see CLI).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/variables-and-media.md",
@@ -3670,6 +4221,9 @@
   "how": "tailwind.md: v4 runtime rules, composition pattern, guardrails, validate frame 0 in render.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:react"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/tailwind.md"
@@ -3688,6 +4242,9 @@
   "how": "adapters/gsap-transforms-and-perf.md.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/gsap-transforms-and-perf.md",
@@ -3707,6 +4264,9 @@
   "how": "adapters/animejs.md loading v4, timeline pattern, determinism.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:animejs"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/animejs.md"
@@ -3725,6 +4285,7 @@
   "how": "adapters/css-animations.md basic + stagger patterns.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/css-animations.md"
@@ -3743,6 +4304,9 @@
   "how": "adapters/waapi.md.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/adapters/waapi.md"
@@ -3761,6 +4325,10 @@
   "how": "npx hyperframes init <p>; npx hyperframes lint; npx hyperframes check; npx hyperframes preview --background; npx hyperframes render --quality looks --output out.mp4; test -s out.mp4; ffprobe -v error -show_format -show_streams out.mp4.",
   "params": "",
   "install": "npx hyperframes init <p>",
+  "requires": [
+   "ffmpeg",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/SKILL.md"
@@ -3779,6 +4347,11 @@
   "how": "npx hyperframes init my-video [--example warm-grain|play-mode|swiss-grid|vignelli|decision-tree|kinetic-type|product-promo|nyt-graph] [--resolution portrait] [--video clip.mp4] [--audio track.mp3] [--tailwind] [--skip-transcribe] [--model --language].",
   "params": "resolutions landscape 1920x1080, portrait 1080x1920, square 1080x1080, -4k variants",
   "install": "npx hyperframes init my-video [--example warm-grain|play-mode|swiss-grid|vignelli|decision-tree|kinetic-type|product-promo|nyt-graph] [--resolution portrait] [--video clip",
+  "requires": [
+   "pip:faster-whisper",
+   "npm:hyperframes",
+   "npm:react"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/init-and-scaffold.md",
@@ -3798,6 +4371,10 @@
   "how": "npx hyperframes doctor --json | jq -e '.ok'; npx hyperframes browser ensure|path|clear.",
   "params": "",
   "install": "npx hyperframes doctor --json | jq -e '",
+  "requires": [
+   "ffmpeg",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/doctor-browser.md",
@@ -3817,6 +4394,10 @@
   "how": "npx hyperframes catalog --query 'reveal ...' [--json]; optional ~33 MB bge-small-en-v1.5 ONNX download cached in ~/.hyperframes/; npx hyperframes feedback --search-miss.",
   "params": "~33 MB model",
   "install": "npx hyperframes catalog --query 'reveal",
+  "requires": [
+   "pip:onnxruntime",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/SKILL.md",
@@ -3836,6 +4417,9 @@
   "how": "npx hyperframes info --json; upgrade --check --json; compositions; docs; benchmark; clean --dry-run.",
   "params": "",
   "install": "npx hyperframes info --json",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/upgrade-info-misc.md"
@@ -3854,6 +4438,9 @@
   "how": "hyperframes-studio SKILL §1-3.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-studio/SKILL.md"
@@ -3872,6 +4459,9 @@
   "how": "npx hyperframes add <name|tag> [--dir .] [--json] [--no-clipboard]; blocks -> compositions/<name>.html wired via data-composition-src; components -> compositions/components/<name>.html pasted into host.",
   "params": "registry.json: 170 blocks, 222 components, 8 examples (folders: 210 blocks, 236 components)",
   "install": "npx hyperframes add <name|tag> [--dir",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-registry/SKILL.md",
@@ -3892,6 +4482,10 @@
   "how": "bash scripts/render-and-composite.sh <project>.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/render-and-composite.sh"
@@ -3910,6 +4504,9 @@
   "how": "node assemble-index.mjs --storyboard STORYBOARD.md --hyperframes .; node transitions.mjs inject|verify.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/faceless-explainer/scripts/assemble-index.mjs",
@@ -3930,6 +4527,12 @@
   "how": "python lint_source.py <remotion-src> [--json]; API map: <Composition> -> root data-*; <Sequence from durationInFrames> -> sub-comp host data-start=F/fps; interpolate -> fromTo ease none; spring -> back.out(N); Easing.bezier -> CustomEase; scripts/render_diff.sh, frame_strip.sh; 4-tier test corpus.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "npm:remotion",
+   "npm:hyperframes",
+   "npm:react"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/remotion-to-hyperframes/SKILL.md",
@@ -3950,6 +4553,10 @@
   "how": "python scripts/cloud_setup.py --install [--browser]; all calls via kmotion.py",
   "params": "uploads /mnt/user-data/uploads, outputs /mnt/user-data/outputs",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:16",
@@ -3969,6 +4576,9 @@
   "how": "Write index.html per contract; npx hyperframes check/snapshot/render or kmotion studio engine",
   "params": "render -q draft|looks(CRF16)|delivery; --resolution 4k",
   "install": "npx hyperframes check/snapshot/render or kmotion studio engine render -q draft|looks(CRF16)|delivery",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/hyperframes-authoring.md"
@@ -3987,6 +4597,10 @@
   "how": "python scripts/kmotion.py new NAME --seconds 10 [--fps --size --title]",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:84"
@@ -4005,6 +4619,9 @@
   "how": "python scripts/kmotion.py new NAME --canvas --seconds 10",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:86"
@@ -4023,6 +4640,9 @@
   "how": "python scripts/kmotion.py preview projects/NAME (render --draft)",
   "params": "0.5 scale, 15 fps; 6 s demo 11 s vs 34 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:53",
@@ -4042,6 +4662,9 @@
   "how": "python scripts/kmotion.py render projects/NAME --engine studio --workers N --capture png|jpeg --preset --crf --force",
   "params": "auto ≥20 frames/page, ≤6 pages, cores/2 on software GL; KOSIF_WORKERS",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:289",
@@ -4061,6 +4684,11 @@
   "how": "automatic in film.py/html_render; KOSIF_GPU=0|1 override",
   "params": "v3.4 96 s → v4 34 s (1 browser), 22 s (2)",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
@@ -4079,6 +4707,7 @@
   "how": "automatic; --force to redo",
   "params": "96 s → 0.05 s",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/CHANGELOG.md"
@@ -4097,6 +4726,9 @@
   "how": "python scripts/kmotion.py render --blur 4",
   "params": "blur 2–16 subframes",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
@@ -4116,6 +4748,9 @@
   "how": "python scripts/kmotion.py final PROJECT [--blur N]",
   "params": "5 s 3D boat 1080p: draft 28 s, final 173 s with 4x blur",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:465"
@@ -4134,6 +4769,9 @@
   "how": "python scripts/kmotion.py web; claude mcp add --transport http kosif-web http://127.0.0.1:8766/mcp",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:349",
@@ -4153,6 +4791,11 @@
   "how": "/studio/ «تصدير MP4 دقيق»; build_studio_cloud.py for claude.ai artifact",
   "params": "caps 60 s / 24 scenes; hard cuts only",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "imagemagick",
+   "claude:tools"
+  ],
   "license": "owner (mp4-muxer MIT)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:398",
@@ -4172,6 +4815,10 @@
   "how": "Write <div id=root data-composition-id=root data-width data-height data-start=0 data-duration data-fps>; build gsap.timeline({paused:true}); assign window.__timelines['root']=tl; call MOTION.shim('root', seconds) which exposes window.render(t)/window.__kosifSeek; renderers (kmotion render --engine studio, HyperFrames) seek t and wait for window.__ready.",
   "params": "data-fps 24/30/60; tl.set({}, {}, 5) pins the end; double requestAnimationFrame before __ready=true",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:33",
@@ -4192,6 +4839,9 @@
   "how": "src/main.js exports build(canvas,W,H) returning {render(t), ready:Promise}; index.html sets window.render=(t)=>{seek(t); three.render(t); 2×rAF → __ready}; Promise.all([document.fonts.ready, three.ready]) before frame 0.",
   "params": "canvas 1920×1080 or 1080×1920; ready waits for spectrogram image upload in sound_ground",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/index.html:41",
@@ -4212,6 +4862,11 @@
   "how": "node build.cjs → svg/0000.svg…0287.svg and a self-contained HTML player; rasterise; ffmpeg -framerate 24 -i frames/%04d.png -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -movflags +faststart.",
   "params": "288 frames, crf 18, yuv420p, faststart",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "fonts:arabic"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/build.cjs:3",
@@ -4231,6 +4886,7 @@
   "how": "<audio data-start data-duration data-volume data-role=voice|music data-fade-out>; <video data-start data-duration muted playsinline> (prepared all-intra with kmotion footage); shim hides a video outside its span and waits for 'seeked'.",
   "params": "premium_edit: voice 1.0 + music 0.5 fade 0.4 s; night_boat ambience 1.0 fade 0.6 s; showreel pond.mp4 from 7.9 s for 4.9 s",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:42",
@@ -4251,6 +4907,10 @@
   "how": "npm install three@0.186.1 esbuild in scripts/; kmotion bundle projects/NAME (entry src/main.js → assets/main.bundle.js); kmotion kit-bundle after editing three-kit.js.",
   "params": "three 0.186.1, iife, es2020",
   "install": "npm install three@0",
+  "requires": [
+   "npm:three",
+   "npm:esbuild"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:4",
@@ -4271,6 +4931,9 @@
   "how": "makeFrameLoop(renderer, post, W, H, update) sets window.__nativeBlur; render with kmotion render --blur N --shutter S --stack lighten; trailLength(v) stretches a light by speed·(shutter/fps)/k so dots overlap into a continuous streak.",
   "params": "blue_hour: --blur 16 --shutter 30 --stack lighten; star pole 0.011 rad/s ≈ 0.6°/s; cars 22–27 m/s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:6",
@@ -4291,6 +4954,7 @@
   "how": "film.film_animate(page, out, fps=30, seconds=2, size, workers=2); film.auto_workers(frames) → 1 for 10 frames, ≤6 for 600.",
   "params": "test: 60 frames, luminance monotonic across the join",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_fast_render.py:29",
@@ -4310,6 +4974,7 @@
   "how": "kmotion new NAME --lab --seconds 20 --fps 24 --size 960x540 --title …; kmotion score out.wav --spec score.json --cues cues.json; kmotion frames projects/NAME --times 1,4.5,8,11,14.5,17,19.5; kmotion render … --engine studio --workers 2; kmotion inspect out.mp4.",
   "params": "≈2 s/frame on software GL; ≈8 min with 2 workers (per SKILL.md)",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/README.md:3"
@@ -4328,6 +4993,10 @@
   "how": "kmotion setup (writable home, ffmpeg via imageio-ffmpeg, ffprobe stand-in, examples incl. midnight_cat) then kmotion workbench 'TOPIC' --aspect 9:16 --seconds 2 --fps 24 --titles 'أ|ب|ج|د|هـ' --out wb.mp4 → 1080×1920, 48 frames.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "pip:pillow"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_cloud.py:65"
@@ -4346,6 +5015,11 @@
   "how": "motion.py lint",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
@@ -4364,6 +5038,9 @@
   "how": "python scripts/cloud_setup.py --install",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/operating-manual.md",
@@ -4384,6 +5061,7 @@
   "how": "kmotion new NAME [--3d] | template; kmotion frames",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/operating-manual.md",
@@ -4403,6 +5081,9 @@
   "how": "python scripts/kmotion.py web --port 8766",
   "params": "9 offline tests",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/web-studio.md",
@@ -4422,6 +5103,7 @@
   "how": "claude mcp add --transport http kosif-web http://127.0.0.1:8766/mcp; kosif_project_write, kosif_run, kosif_job, kosif_render_manifest, kosif_timeline_check",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/web-studio.md"
@@ -4440,6 +5122,9 @@
   "how": "/studio/; POST /api/studio/import; build_studio_cloud.py --out studio-cloud.html",
   "params": "mp4-muxer@5.2.1",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/web-studio.md",
@@ -4459,6 +5144,9 @@
   "how": "scripts/shard.py plan | render --shard i --of N | join",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/render-farm.md",
@@ -4479,6 +5167,9 @@
   "how": "kmotion timeline SPEC.json --out film.mp4 [--dry-run] [--example]",
   "params": "ratios 9:16,16:9,1:1,4:5,4:3,21:9",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md",
@@ -4499,6 +5190,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4517,6 +5211,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4535,6 +5232,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4553,6 +5253,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4571,6 +5274,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4589,6 +5295,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4607,6 +5316,10 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:remotion",
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4625,6 +5338,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4643,6 +5359,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4661,6 +5380,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4679,6 +5401,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4697,6 +5422,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4715,6 +5443,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4733,6 +5464,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4751,6 +5485,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4769,6 +5506,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4787,6 +5527,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4805,6 +5548,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4823,6 +5569,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4841,6 +5590,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4859,6 +5611,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4877,6 +5632,9 @@
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4895,6 +5653,13 @@
   "how": "load via CDN in page",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes",
+   "npm:d3",
+   "npm:animejs",
+   "npm:p5"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog.md"
@@ -4913,6 +5678,9 @@
   "how": "see official setup",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "source-available",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
@@ -4931,6 +5699,9 @@
   "how": "see official setup",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
@@ -4949,6 +5720,7 @@
   "how": "see official setup",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
@@ -4967,6 +5739,11 @@
   "how": "motion.py new|frames|check|render --engine auto --blur 4 --shutter 0.5 --stack lighten --draft",
   "params": "draft = half size 15fps",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/motion.py"
@@ -4985,6 +5762,10 @@
   "how": "html_render.py page out --size 1920x1080 --t 2",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/html_render.py"
@@ -5003,6 +5784,9 @@
   "how": "shard.py plan|render --shard i --of 6|join",
   "params": "libx264 slow CRF 16",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/shard.py"
@@ -5021,6 +5805,10 @@
   "how": "python scripts/ultra_animator.py capture <project> --fps 30 [--limit N]; uses playwright.sync_api chromium.launch(channel='msedge', headless=True) with GPU flags, viewport = project width x height, device_scale_factor 1, saves frames/f_%04d.png, logs page errors.",
   "params": "flags --ignore-gpu-blocklist --use-angle=d3d11 --enable-zero-copy; viewport 1080x1920 default; frames = round(duration*fps); progress every 30 frames",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/scripts/ultra_animator.py:141",
@@ -5040,6 +5828,11 @@
   "how": "In page: ?capture=1 disables the RAF loop and scaling; Playwright (Edge channel, --ignore-gpu-blocklist --use-angle=d3d11) viewport 1080x1920, wait_for_function('window.__ready===true'), loop page.evaluate('window.render(t)') + screenshot clip; --only 0.5,3.5 for QA stills; collect pageerror/console errors; then ffmpeg -framerate 30 -i f_%04d.png.",
   "params": "fps 30, dur 18, device_scale_factor 1, preserveDrawingBuffer true",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/projects/egypt-2120-animation/index.html:457-477",
@@ -5060,6 +5853,7 @@
   "how": "timeline.json {size,fps,background,clips[{src,in,out,speed,fit:'cover',mute,match,transition:{type:'fadeblack',dur}}],overlays[{type:'text',font,size,color,stroke,shadow,anim,fade_in,fade_out,x:'0.5000*W-w/2',y:'0.4750*H-h/2',nowrap}|{type:'image',src}],audio{voice{src,start},keep_clip_audio:false,duck:'none',lufs}}; raw output records actual transitions and workers 4.",
   "params": "1080x1920, 30 fps, 28.234 s raw; text 135 px; fade_in .45 first then .383; fade_out .383",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/mimic-jumuah/study/mimic.timeline.json",
@@ -5079,6 +5873,10 @@
   "how": "<div id=root data-composition-id=root data-width=1080 data-height=1920 data-start=0 data-duration=T data-fps=30>; <audio data-start data-duration data-volume data-role>; const tl=gsap.timeline({paused:true}); window.__timelines.root=tl; M.shim('root',T).",
   "params": "1080x1920, 30 fps; durations 24.7 s / 47.0 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/projects/thursday-dua-animation/source/index.html:35-36",
@@ -5099,6 +5897,7 @@
   "how": "seg(t,a,b)=clamp((t-a)/(b-a)); ease = easeInOutCubic; fadeWin(t,a,b,f=.25)=min(seg(t,a,a+f),1-seg(t,b-f,b)); mix(c1,c2,p) hex lerp; ?capture adds body.capture fixed 1920x1080; window.__ready after document.fonts.ready.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/water-cycle-animation/index.html:93-102",
@@ -5118,6 +5917,11 @@
   "how": "Playwright Edge channel, viewport 1920x1080, wait for __ready, document.fonts.check('700 54px Cairo'), loop render(i/30) + locator('#stage').screenshot; ffmpeg -framerate 30 -i f_%04d.png -c:v libx264 -pix_fmt yuv420p -crf 18 -preset slow -movflags +faststart.",
   "params": "300 frames, CRF 18, preset slow",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "fonts:arabic"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/projects/water-cycle-animation/capture.py"
@@ -5136,6 +5940,7 @@
   "how": "M.rng(seed) mulberry32; M.hash(i,j) integer hash -> [0,1).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:119-123",
@@ -5155,6 +5960,9 @@
   "how": "M.shim(rootId,duration): window.render, window.seek, window.__kosifSeek, window.__duration; waits for fonts and video loadeddata (15 s timeout), seek timeout 4 s.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:465-492"
@@ -5173,6 +5981,12 @@
   "how": "python motion.py render PROJECT [--engine auto|hyperframes|studio] [--workers 0] [--draft] [--blur K --shutter S --stack average|lighten] [--capture jpeg] [--preset --crf]; preview = render --draft.",
   "params": "default 1080p30 'looks' quality; workers up to 4; draft = half size, 15 fps, ultrafast, JPEG; mix -14 LUFS / -1 dBTP",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/motion.py:474",
@@ -5192,6 +6006,10 @@
   "how": "python motion.py bundle PROJECT [--entry src/main.js --out assets/main.bundle.js]; kit-bundle rebuilds three-kit.bundle.js.",
   "params": "es2020, minified; loaders .glb .gltf .hdr .png .jpg .jpeg .webp .wav .bin=dataurl",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "npm:esbuild"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/motion.py:194",
@@ -5212,6 +6030,9 @@
   "how": "python studio.py --image-code photo.jpg [--data-only]; to_python.image_to_python.",
   "params": "verified on a 900x900 ad: 3,394 polygons, 0 differing pixels",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:pillow"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/to_python.py",
@@ -5231,6 +6052,10 @@
   "how": "mm_build.build('work', preview=True) then full",
   "params": "crf 17 preset medium",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py"
@@ -5249,6 +6074,9 @@
   "how": "Write index.html from templates/scene-2d.html; no Date.now/performance.now/unseeded Math.random; capture.py calls render(t) per frame.",
   "params": "30 fps default; first motion at 0.1-0.3 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md",
@@ -5268,6 +6096,10 @@
   "how": "python capture.py --html index.html [--w --h --fps --dur --only 1,4,7 --selector #stage]",
   "params": "demo: 180 frames 1080x1920 in 64.7 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/claude-animation-studio/scripts/capture.py",
@@ -5287,6 +6119,10 @@
   "how": "Same principles in React: useCurrentFrame as only clock, interpolate with clamp, spring(), Sequence per scene, npx remotion render.",
   "params": "extrapolateRight clamp",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:remotion",
+   "npm:react"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md"
@@ -5305,6 +6141,11 @@
   "how": "See SKILL.md steps 4-26; covered in detail by another scope.",
   "params": "-14 LUFS, peak <=-1",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "imagemagick",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/hyperframes-animation-studio/SKILL.md"
@@ -5323,6 +6164,9 @@
   "how": "ffmpeg-commands.sh",
   "params": "-c:v libx264 -pix_fmt yuv420p",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/video-editing-captions/SKILL.md:25"
@@ -5341,6 +6185,9 @@
   "how": "Register tl on window.__timelines['root'] literally, then MOTION.shim('root', seconds); MOTION.register(id, tl) helper.",
   "params": "waits fonts + video loadeddata (15 s cap) + seeked (4 s cap), two rAFs before __ready",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:466",
@@ -5360,6 +6207,9 @@
   "how": "const render = K3.makeFrameLoop(renderer, post, W, H, update); renderer sets window.__blur, __shutter, __fps, __stack ('lighten').",
   "params": "shutter .5 default; motion.py render --blur 4; long exposure --blur 16 --shutter 30 --stack lighten (1 s per frame at 30 fps)",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:423",
@@ -5380,6 +6230,11 @@
   "how": "<script src='assets/three-kit.bundle.js'> then shape-kit.js / lab-kit.js; rebuild with python kmotion.py kit-bundle (needs three@0.186.1 + esbuild).",
   "params": "bundle 904,567 bytes",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "npm:three",
+   "npm:esbuild"
+  ],
   "license": "owner+MIT(three.js)",
   "proof": [
    "kosif-studio/motion/kit/k3-entry.js",
@@ -5399,6 +6254,9 @@
   "how": "film.py --draft sets __draftScale; lab-kit wraps K3.makeRenderer.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/lab-kit.js:291"
@@ -5417,6 +6275,9 @@
   "how": "python3 motion.py new NAME --canvas (fills {{W}} {{H}} {{SECONDS}} {{FPS}} {{TITLE}}); render with motion.py render --engine studio [--blur 4].",
   "params": "spring k 170 d 26; out = 1-2^-10p; exit p^2.8; bg #111312; title 700 150px Segoe UI rtl; accent bar #e4342f",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/templates/canvas.html",
@@ -5436,6 +6297,11 @@
   "how": "python3 motion.py new NAME; edit timeline; npx hyperframes check/render or motion.py render.",
   "params": "bg gradient #1b2a49 -> #0d1b2a; title 110 px/800 Segoe UI; house rules: one carrier object, entrances from ≥ .35 stage width, ≤ 8 words, 2-3 camera moves",
   "install": "npx hyperframes check/render or motion",
+  "requires": [
+   "python3",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/templates/composition.html",
@@ -5455,6 +6321,9 @@
   "how": "npx hyperframes check DIR; snapshot DIR; render DIR -o out.mp4 -q draft|looks|delivery -f 30; --resolution 4k; doctor.",
   "params": "looks = CRF 16; env HYPERFRAMES_SKIP_SKILLS=1, PRODUCER_LOW_MEMORY_MODE=1 (8 GB), PUPPETEER_EXECUTABLE_PATH; call node node_modules/hyperframes/bin directly on non-ASCII paths",
   "install": "npx hyperframes check DIR",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-studio/motion/references/hyperframes-authoring.md"
@@ -5473,6 +6342,12 @@
   "how": "Vendor locally (no CDN at render), keep seekable.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes",
+   "npm:d3",
+   "npm:animejs",
+   "npm:p5"
+  ],
   "license": "mixed",
   "proof": [
    "kosif-studio/motion/references/tools-catalog.md"
@@ -5491,6 +6366,10 @@
   "how": "Write a scene file with TITLE, optional ROLLOFF and def build() -> [Step(label, [ops], order, origin, weight)]; all render.py names are injected without import. Render headless: python studio.py <scene> --render out.png --scale 3.2, or R.render_image(steps, scale, ss, rolloff).",
   "params": "sheet 1200x800 scene units; scale 1.0=1200x800, 3.2=3840x2560; supersample ss=3 (ss=2 when scale>2); default paper #000000 (studio paper #f3eee4)",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/render.py:1",
@@ -5511,6 +6390,9 @@
   "how": "python studio.py [scene] [--speed slow|normal|fast|instant]; producers: produce() for scenes, produce_exact() for images, produce_code() for runner subprocess; queue maxsize 6.",
   "params": "window bg #16141c; paper #f3eee4; brush ring 14 px white + 10 px dark; status in Segoe UI 11",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/studio.py:276",
@@ -5531,6 +6413,9 @@
   "how": "set_native(w,h) builds an index map; refresh_native uses cv2 INTER_AREA (<1x), INTER_NEAREST (>=2x) or INTER_CUBIC; >4 MP pictures use nearest view while drawing.",
   "params": "integer zoom when fit factor >= 2; 4,000,000 px threshold; transparent pixels show paper #f3eee4",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:opencv"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/studio.py:458",
@@ -5551,6 +6436,10 @@
   "how": "python runner.py CODE_FILE OUT_DIR [--scale s] [--export PNG]; kind_of() -> image|html|svg|scene|python; writes job_####.npz/json, canvas.json, final.png, done.json or error.txt.",
   "params": "jobs written atomically (tmp + os.replace); scene ROLLOFF default 0.82; export at --scale 3.2 for 4K",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:pillow",
+   "pip:matplotlib"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/runner.py:1",
@@ -5571,6 +6460,9 @@
   "how": "run_python(): plt.show patched to collect figures, savefig dpi 110 bbox tight; turtle mainloop/done/exitonclick no-oped, ImageGrab of the canvas.",
   "params": "dpi 110; turtle window appears briefly (documented limit)",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:matplotlib"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/runner.py:359",
@@ -5591,6 +6483,11 @@
   "how": "python html_render.py page.html out.png [--size 1920x1080] [--t 2.5] [--scale 1]; Playwright path waits for window.__ready and calls window.render(t); fallback is the browser's --screenshot with --virtual-time-budget=30000 (no seek).",
   "params": "default 1920x1080; studio uses 1200x800; timeout 90 s; Windows GPU flags --use-angle=d3d11; elsewhere SwiftShader; measured 142 ms (GPU) vs 4335 ms (SwiftShader) per 1080p raymarch frame",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "chromium",
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/html_render.py:1",
@@ -5611,6 +6508,11 @@
   "how": "python film.py animate page.html --out x.mp4 [--fps 30] [--seconds s] [--workers n] [--capture png|jpeg] [--preset] [--crf]; contract window.__ready, window.render(t) or window.seek(t), window.__duration.",
   "params": "default size 1280x720, fps 30, duration from __duration (fallback 4 s), page budget KOSIF_PAGE_TIMEOUT 600 s, 4 retries per frame",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/film.py:148",
@@ -5631,6 +6533,11 @@
   "how": "film.py _chunk subprocesses + ffmpeg -f concat -c copy; worker count from cores, frames and free memory; KOSIF_WORKERS overrides.",
   "params": "at most 6 workers, >= 20 frames per worker, 1 page per 2 cores on SwiftShader, memory budget 0.45 GB + 0.25 GB per megapixel with 2 GB headroom",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/film.py:186",
@@ -5651,6 +6558,11 @@
   "how": "_grabber(pg, capture) with fallback to Playwright screenshot; _decode uses cv2.imdecode; direct path uses ffmpeg image2pipe.",
   "params": "PNG lossless or JPEG quality 95 (about 2x faster)",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "pip:opencv"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/film.py:154",
@@ -5671,6 +6583,9 @@
   "how": "film.py animate scene.py: imports the module, renders R.render_image(build_t(i/fps)) per frame into the Encoder.",
   "params": "DURATION default 4.0 s; 1200x800 frames",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/film.py:408"
@@ -5689,6 +6604,10 @@
   "how": "python studio.py <scene> --render out.png --scale 3.2 | --trace IMG [--name --title] | --image-code IMG [--data-only] | --code FILE | --image IMG | --speed slow|normal|fast|instant",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/studio.py:1349"
@@ -5707,6 +6626,9 @@
   "how": "Calls motion/motion.py (new, bundle, frames, render --engine studio --blur, lint, sheet, speed, beats, study) and motion/kmotion.py (reel, decaption, transcribe) in threads or consoles.",
   "params": "blur 1..8 sub-frames (4 = cinematic); default new project 8 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/studio.py:333",
@@ -5727,6 +6649,7 @@
   "how": "Implement in the page; html_render.render_html and film.film_animate wait on __ready after every seek.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner (contract idea credited to HyperFrames, Apache-2.0)",
   "proof": [
    "kosif-studio/html_render.py:1",
@@ -5747,6 +6670,11 @@
   "how": "python motion.py render PROJECT --engine auto|hyperframes|studio [--quality looks] [--fps N] [--out X.mp4]; auto picks HyperFrames when node_modules/hyperframes exists.",
   "params": "env HYPERFRAMES_SKIP_SKILLS=1, PRODUCER_LOW_MEMORY_MODE=1; studio defaults capture png, libx264 preset medium crf 18",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:292",
@@ -5766,6 +6694,9 @@
   "how": "python motion.py preview PROJECT (= render --draft) → out/NAME.draft.mp4",
   "params": "scale 0.5, fps 15, preset ultrafast, crf 23, capture jpeg, blur 1",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:304",
@@ -5785,6 +6716,9 @@
   "how": "python motion.py render P --engine studio --blur 8 --shutter 0.5 [--stack lighten]; blue_hour uses --blur 16 --shutter 30 --stack lighten for a 1 s exposure at 30 fps.",
   "params": "--blur 1..16 (sub-frames), --shutter 0.5 = 180°, 30 = 1 s at 30 fps; --stack average|lighten; speed check suggests up to 8 samples",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:476",
@@ -5805,6 +6739,9 @@
   "how": "render --workers N (0 = one per core, capped at 4); batch jobs set KOSIF_WORKERS=1.",
   "params": "workers 0..4",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:479",
@@ -5824,6 +6761,11 @@
   "how": "python motion.py bundle PROJECT [--entry src/main.js --out assets/main.bundle.js]; motion.py kit-bundle rebuilds kit/three-kit.bundle.js (window.K3).",
   "params": "--bundle --format=iife --minify --target=es2020; dataurl loaders .glb .gltf .hdr .png .jpg .jpeg .webp .wav .bin; json loader",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3",
+   "npm:three",
+   "npm:esbuild"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/motion.py:185",
@@ -5844,6 +6786,11 @@
   "how": "node tools/render_html.cjs --in film.html --out film.mp4 [--preview for 8-frame contact sheet]; Playwright + ffmpeg.",
   "params": "libx264 yuv420p crf 18 preset slow +faststart; AAC 48kHz 192k",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs",
@@ -5864,6 +6811,7 @@
   "how": "Seeded RNG, no Math.random/Date.now, fonts ready via window.__kosifReady, no network at render.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md",
@@ -5883,6 +6831,10 @@
   "how": "cd starters/remotion && npm install && npm run preview|render|still|typecheck; npx remotion render KosifFilm out/film.mp4 --props=./props.example.json",
   "params": "remotion 4.0.535, react 19.3.1, jpeg frames, overwrite on",
   "install": "npm install && npm run preview|render|still|typecheck",
+  "requires": [
+   "npm:remotion",
+   "npm:react"
+  ],
   "license": "owner (MIT); Remotion itself has its own company license",
   "proof": [
    "kosif-tool/starters/remotion/src/Root.tsx",
@@ -5903,6 +6855,10 @@
   "how": "Config.setBrowserExecutable(found); or --browser-executable=…",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "chromium",
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/starters/remotion/remotion.config.ts"
@@ -5921,6 +6877,9 @@
   "how": "--stack remotion",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/kosif.py:43",
@@ -5940,6 +6899,10 @@
   "how": "WebGLRenderer({antialias:true, preserveDrawingBuffer:true}); no rAF loop; window.__kosif={duration,seek(t){...renderer.render()}}; render with render_html.cjs seek mode.",
   "params": "1080×1920 canvas; sample 6 s 90° orbit radius 4, height 1.5, ease-in-out sine; box rotation 0.2 rad/s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "chromium",
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/3d.md:28",
@@ -5959,6 +6922,9 @@
   "how": "import {ThreeCanvas} from '@remotion/three'.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/3d.md:70"
@@ -5977,6 +6943,9 @@
   "how": "npx remotion still KosifFilm out/still.png --frame=60; npx remotion render KosifFilm out/film.mp4 --props=props.json",
   "params": "",
   "install": "npx remotion still KosifFilm out/still",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:31",
@@ -5996,6 +6965,9 @@
   "how": "Write composition-brief.md; load hyperframes-core/animation/creative/keyframes/cli.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/brag/skills/brag/references/step-3-compose.md"
@@ -6014,6 +6986,9 @@
   "how": "npx hyperframes render --quality draft|high --output ../brag.mp4",
   "params": "",
   "install": "npx hyperframes render --quality draft|high --output",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/brag/skills/brag/references/step-4-deliver.md"
@@ -6032,6 +7007,9 @@
   "how": "ScrollTrigger span onUpdate render().",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "none",
   "proof": [
    "kosif-one/vendor/mcp-higgsfield-landing/src/scripts/world.ts:79"
@@ -6050,6 +7028,7 @@
   "how": "Load clips one at a time sorted by distance to scroll, ahead-first; whole blob; skip on reduced-motion/saveData; iOS play()/pause() prime.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "none",
   "proof": [
    "kosif-one/vendor/mcp-higgsfield-landing/src/scripts/world.ts:113",
@@ -6069,6 +7048,10 @@
   "how": "hyperframes lambda deploy; lambda render --concurrency=8 --memory=10240 --wait; lambda progress.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/deploy/aws-lambda.mdx",
@@ -6090,6 +7073,10 @@
   "how": "@remotion/renderer for SSR; @remotion/lambda (deploy function per Remotion version, redeploy site on source change, creds in env REMOTION_AWS_*); local: npx remotion render <id> out.mp4 --props='{...}' and still for golden frames.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:remotion",
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10439-remotion-saas/rendering.md",
@@ -6109,6 +7096,9 @@
   "how": "app.beginUndoGroup; proj.items.addComp(name,1920,1080,1.0,5.0,30); layers.addSolid/addText; property('Position').expression = 'ease(time,0,0.6,-200,420)'; renderQueue.items.add + outputModule.applyTemplate in try/catch; export .mogrt for Premiere.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/751-adobe-after-effects/SKILL.md"
@@ -6127,6 +7117,10 @@
   "how": "None of these apps is installed here; produce scripts or interchange files (FCPXML/EDL, marker CSV) for the user to run, and keep the local render path in HTML+ffmpeg.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/751-adobe-after-effects/SKILL.md",
@@ -6147,6 +7141,9 @@
   "how": "Requires the Adobe apps (paid, desktop) — not available here; generate JSX/XML files for the user to run",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/752-adobe-premiere-pro/SKILL.md",
@@ -6166,6 +7163,10 @@
   "how": "import DaVinciResolveScript as dvr; resolve=dvr.scriptapp('Resolve'); env RESOLVE_SCRIPT_API, RESOLVE_SCRIPT_LIB, PYTHONPATH += Modules; Linux module path /opt/resolve/Developer/Scripting/Modules; project.SetCurrentRenderFormatAndCodec('mp4','H264'), AddRenderJob",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/753-davinci-resolve/SKILL.md",
@@ -6185,6 +7186,9 @@
   "how": "Plan edits as segment lists and rebuild timelines; verify fonts via fc-list before placing titles",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow/SKILL.md",
@@ -6204,6 +7208,9 @@
   "how": "cassette_ingest_media -> cassette_run_job(message verbatim) -> cassette_review_completion(decision, reason) ; requires Cassette account/back-end",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/934-oh-my-cassette/2204-cassette-video-edit/SKILL.md"
@@ -6222,6 +7229,9 @@
   "how": "list_toolsets -> describe_toolset -> call_tool; save before/after bulk edits; wait for shader compile; stop PIE. Movie Render Queue for frames.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1372-unreal-engine-skills-for-claude-code/3185-unreal-mcp/SKILL.md",
@@ -6241,6 +7251,12 @@
   "how": "useDefaultRenderLoop=false; call viewer.render() (never scene.render()) per frame; contextOptions.webgl.preserveDrawingBuffer=true; gate init and each frame with delayRender (60-120 s) and settle until globe/tileset tilesLoaded is stable ~8 ticks (cap ~600); skyAtmosphere on; unrestricted MapTiler key; --gl=angle --concurrency=1 --timeout=180000.",
   "params": "settle 8 stable ticks, cap 600; delayRender 60000-120000 ms",
   "install": "",
+  "requires": [
+   "chromium",
+   "npm:three",
+   "npm:remotion",
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-troubleshooting.md",
@@ -6261,6 +7277,9 @@
   "how": "AIR.TASKS: code/film/imitate -> <top-tier Claude model> effort high (20000/14000/12000 tokens); plan/agent/script/vision/review/highlights -> <mid-tier Claude model> medium; quick/post/captions -> <small fast Claude model> low; adaptive thinking for high/max; 400 -> retry without effort; 404 -> sonnet. Gemini: gfetch free route then user key; gemChain [chosen, gemini-3.6-flash, gemini-3.5-flash-lite] skipping sick models (3 min); hedge starts the next model if the first fails or is silent.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:2179",
@@ -6281,6 +7300,10 @@
   "how": "AGENT.plan -> {reply,title,steps,next}; tools: inputs, transcribe, verify_transcript, enhance_audio, reels, smart_captions, analyze_reference, imitate, montage, motion_film, launch_film, template, template_mix, stock, edit, camera, images, voice, music, brand, preset, review, compare, fill_gaps, export_fingerprint, post, jev_ideas, render, answer; render only if the user asked; critical tools inputs/montage/motion_film/launch_film/reels/imitate stop the chain on failure; film intent enforced.",
   "params": "",
   "install": "",
+  "requires": [
+   "imagemagick",
+   "claude:tools"
+  ],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:3180",
@@ -6301,6 +7324,10 @@
   "how": "hyperframes cloudrun ...; examples/gcp-cloud-run.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/deploy/gcp-cloud-run.mdx",
@@ -6320,6 +7347,9 @@
   "how": "examples/k8s-jobs.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/examples/k8s-jobs/README.md"
@@ -6338,6 +7368,10 @@
   "how": "npx hyperframes auth login [--api-key]; npx hyperframes cloud render [--quality high --fps 60] [--dry-run --json].",
   "params": "200 MB upload limit",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/cloud.md"
@@ -6356,6 +7390,10 @@
   "how": "npx hyperframes cloudrun deploy --project P --region us-central1; cloudrun render ... --wait; render-batch; progress; destroy.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-cli/references/cloudrun.md",
@@ -6375,6 +7413,10 @@
   "how": "claude plugin marketplace add heygen-com/hyperframes; claude plugin install hyperframes@hyperframes; npx hyperframes skills update <workflow>.",
   "params": "21 published skills",
   "install": "",
+  "requires": [
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/README.md",
@@ -6395,6 +7437,10 @@
   "how": "python scripts/kmotion.py bridge …; kmotion remote",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:327",
@@ -6414,6 +7460,10 @@
   "how": "python scripts/render_client.py status | render --plan plan.json --out NEW.mp4 --allow-remote",
   "params": "1-30 s; 24/25/30 fps; long edge <=1280; min 128; <=100 MiB; 3 jobs/h public",
   "install": "",
+  "requires": [
+   "python3",
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/python-render.md",
@@ -6434,6 +7484,10 @@
   "how": "python scripts/site_bridge.py plan --task ... --seconds 12 --fps 30 --aspect 9:16 --mode pro --allow-remote",
   "params": "seconds 2-600; fps 24/25/30/50/60; aspects 9:16,16:9,1:1,4:5; 20 s timeout; 1 MiB",
   "install": "",
+  "requires": [
+   "python3",
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/site-bridge.md",
@@ -6453,6 +7507,9 @@
   "how": "gh workflow run kosif-render.yml --repo kosif199022-jpg/kosif-render-lab -f project=night_boat -f shards=6 -f blur=4",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/render-farm.md"
@@ -6471,6 +7528,10 @@
   "how": "see official setup",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:lottie",
+   "key:unspecified"
+  ],
   "license": "unknown",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
@@ -6489,6 +7550,9 @@
   "how": "see official setup",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "proprietary",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/tools-catalog-2.md"
@@ -6507,6 +7571,11 @@
   "how": "kosif_atlas_read skill_id=<id> (third-party data, never run its scripts without review).",
   "params": "remotion 757, video 3531, remotion-maps 10435, ffmpeg 754, final-cut-pro 755 (FCPXML), remotion-captions 10431, remotion-markup 10436, transcoding-and-abr-ladder 9243",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "npm:remotion",
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/tools/kosif-omni/agents/kosif-video-producer.md",
@@ -6526,6 +7595,11 @@
   "how": "python3 resolve_pipeline.py {doctor|clips|duplicate|tracks|marker|render|verify} --timeline --frame --color Blue --format mp4 --codec H264",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/scripts/resolve_pipeline.py:83"
@@ -6544,6 +7618,15 @@
   "how": "Consult when the user's team uses another stack; KOSIF itself uses HyperFrames + GSAP + FFmpeg + Playwright + numpy.",
   "params": "source catalog: 500 tools (22 direct, 254 adjacent, 224 complementary), reviewed 2026-10-06",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "pip:numpy",
+   "npm:gsap",
+   "npm:remotion",
+   "npm:hyperframes",
+   "key:unspecified"
+  ],
   "license": "mixed (see notes)",
   "proof": [
    "kosif-studio/motion/references/tools-catalog.md"
@@ -6562,6 +7645,9 @@
   "how": "Same endpoint with VRES.",
   "params": "480p -> 1080p",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/prompts.md"
@@ -6580,6 +7666,9 @@
   "how": "render 4 sub-frames per output frame by seeking t+k/(4·fps) and average with ffmpeg tmix (frames=4) for natural motion blur at 60 fps",
   "params": "tmix=frames=4",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner-description",
   "proof": [
    "style:pm-twoclipping-5cba86",
@@ -6602,6 +7691,10 @@
   "how": "import product React components into Remotion scenes",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:remotion",
+   "npm:react"
+  ],
   "license": "owner-description",
   "proof": [
    "style:pm-fractadev-149adc"
@@ -6622,6 +7715,7 @@
   "how": "GLSL SDF/ray-sphere intersection, Blinn-Phong specular, soft shadow on ground plane computed analytically",
   "params": "albedo #111, spec power 64, shadow blur wide",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-hbcoop-de365c"
@@ -6642,6 +7736,9 @@
   "how": "Render each frame as a pure function of frame number using keyframe tables with interpolation, no timers or Math.random; capture with headless browser per frame and encode",
   "params": "Playwright screenshots, H.264 yuv420p",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner-description",
   "proof": [
    "style:pm-notdwd-7de38a"
@@ -6662,6 +7759,7 @@
   "how": "write every keyframe as (frame, x, y, scale, blur, opacity) from a frame-counted reference; cuts placed a fixed 2 frames before beat k = offset + k*60/BPM",
   "params": "29.97 fps spec, 59.94 master",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-notdwd-c2037d"
@@ -6682,6 +7780,7 @@
   "how": "Precompute the event list with a seeded schedule; render(t) replays events <= t to derive state, so any frame can be screenshotted independently",
   "params": "canvas 1080x1080; 30fps; no RNG at render time",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-parkerrex-1a54fe"
@@ -6702,6 +7801,9 @@
   "how": "Render frames offline, generate/mix audio, burn subtitles and mux with ffmpeg; keep only final file",
   "params": "60 fps × 300 s = 18000 frames",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner-description",
   "proof": [
    "style:pm-rebutonepress-810f78"
@@ -6722,6 +7824,7 @@
   "how": "no downloaded models/textures/audio: procedural geometry nodes, shader noise, synthesised audio, system fonts",
   "params": "document CONCEPT.md + STORYBOARD.md shots with timecodes",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-theparuchh-6e08c3"
@@ -6742,6 +7845,11 @@
   "how": "CSS/WAAPI, Motion, GSAP, SVG, Three/R3F, HyperFrames, Remotion selected by need.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:gsap",
+   "npm:remotion",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-director.md",
@@ -6762,6 +7870,9 @@
   "how": "Replace Math.random with a seeded PRNG (mulberry32); repeat: Math.ceil(duration/cycle)-1 instead of -1; never build timelines in setTimeout/await; use tl.set at a time instead of onComplete for state flips so rewind works; never animate visibility/display directly in GSAP.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md",
@@ -6781,6 +7892,7 @@
   "how": "translateY 30px->0 0.6s out-expo; scale 0.9->1; translateX -50px; blur(10px)->0 0.8s; WAAPI el.animate(keyframes,{duration:300, easing:'cubic-bezier(0.16,1,0.3,1)', fill:'forwards'}). For frame-exact rendering, pause all animations and set currentTime per frame (document.getAnimations().forEach(a=>{a.pause(); a.currentTime=t})).",
   "params": "30px/0.6s; blur 10px/0.8s",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/880-superloopy/1944-superloopy-slides/animation-patterns.md",
@@ -6800,6 +7912,11 @@
   "how": "Here: render scenes with kosif-tool render_html.cjs (Playwright Chromium at /opt/pw-browsers + ffmpeg, both present) (motion, not stills), voice from user audio or a TTS available; edge-tts is an online unofficial service (needs install+network).",
   "params": "scene transition crossfade 0.3-0.5s; auto duration = TTS + 1.5s; checklist: audio stream present, 1920x1080, no black frames, first 3s hook, end card URL+CTA",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "chromium"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/166-demo-video/535-demo-video",
@@ -6819,6 +7936,7 @@
   "how": "Even in frame-stepped rendering these keep frames cheap and avoid paint artifacts.",
   "params": "DPR cap 2 (1.25 for full-bleed shaders); Lighthouse 90+; LCP < 2.5s; CLS ~0",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali/references/implementation-and-performance.md",
@@ -6839,6 +7957,9 @@
   "how": "Measure with ffmpeg -af ebur128=peak=true -f null -; check fps/size/duration with ffprobe; never copy example numbers into reports without measuring; normalize the full mix, not individual SFX.",
   "params": "45/30 Mbps (<=30 fps); 68/45 Mbps (60 fps); -14 LUFS +/-1; TP <= -1 dBTP",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2450-davinciresolve-audio-delivery/SKILL.md",
@@ -6858,6 +7979,7 @@
   "how": "Mirror this in the kosif timeline JSON (layers + markers) so captions, cards and sound passes can re-sync after any cut change; markers are re-placed when cuts change.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2460-davinciresolve-story-devtalk/SKILL.md",
@@ -6877,6 +7999,9 @@
   "how": "Intermediate at CRF 8 + PCM 24-bit; pass 1 loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json then apply measured values; GIF: xfade 0.4 s, palettegen=stats_mode=diff:max_colors=192 + paletteuse; if over 15 MB reduce width to 480, fps to 15, colors to 128, or shorten, in that order.",
   "params": "CRF 17; -g 60; AAC 192k; loudnorm I=-14 TP=-1.5 LRA=11; GIF 192 colors",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md",
@@ -6896,6 +8021,10 @@
   "how": "Here: Playwright for frames (present), ffmpeg xfade/concat (present), TTS needs an install or the user's recorded audio; quality checks: audio stream exists, 1920x1080, no black frames between scenes, first 3 s grab attention, end card has URL and CTA.",
   "params": "1920x1080; crossfade 0.3-0.5 s",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/166-demo-video/535-demo-video/SKILL.md"
@@ -6914,6 +8043,7 @@
   "how": "Implement in the kosif HTML engine: a global scenes array [{name,dur,desc}], cue lookup by name, animate({from,to,start,end,ease})(T) helpers, hard cuts as explicit Shot ranges; build the first 5-8 s, render, inspect a contact sheet, then continue.",
   "params": "gate after first 5-8 s",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md"
@@ -6932,6 +8062,7 @@
   "how": "Density modes: speaker-led (one idea, 1-3 bullets) vs reading-first (4-8 bullets or 4-6 cards); nothing below 24 px at stage size; split instead of shrinking; draft outline with seconds per slide vs the time budget; show three real title-slide previews (restrained, expressive, wildcard) instead of asking taste questions; verify every slide in a browser at 1280x720 and phone size.",
   "params": "1920x1080; min 24 px; 1-3 vs 4-8 bullets",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/345-visuals/1241-html-deck/SKILL.md",
@@ -6951,6 +8082,11 @@
   "how": "If the user has no editor, Claude renders itself: KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg); ffmpeg for cuts/grades; Remotion only after npm install.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "npm:remotion"
+  ],
   "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/quality-and-editors.md"
@@ -6969,6 +8105,9 @@
   "how": "For Claude's own pipeline: lock the timeline JSON, then apply grade/LUT and audio mix, then render master + platform variants and verify with kosif-tool verify_video.py / TEST_REPORT.md.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2293-film-video-production/8775-sequence-the-post-pipeline/SKILL.md",
@@ -6989,6 +8128,9 @@
   "how": "ffmpeg -i in.mkv -c copy -movflags +faststart out.mp4 ; for corrupted DTS add -fflags +genpts before -i and -avoid_negative_ts make_zero",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
@@ -7008,6 +8150,10 @@
   "how": "ffmpeg -encoders | grep nvenc ; GPU: -hwaccel cuda -c:v h264_nvenc -preset p6/p7 -tune hq -rc vbr -cq 19-20 ; CPU fallback libx264 -crf 18. Container here has libx264, libx265, libsvtav1, libaom, libvpx (no GPU).",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "gpu"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
@@ -7027,6 +8173,11 @@
   "how": "Resolve AddTrack + SetTrackName; same idea in Remotion/HyperFrames layer naming and ffmpeg filter labels",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "npm:remotion",
+   "npm:hyperframes"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2445-akbun-davinciresolve-workflow/SKILL.md",
@@ -7046,6 +8197,7 @@
   "how": "Editorial -> VFX -> colour -> sound -> conform -> deliver, gated by picture lock; define deliverables (masters, versions, captions, metadata, QC) before finishing. In practice: cut -> colour -> privacy mosaic -> captions -> audio checks before render; any recut requires re-timing captions, cards, ch…",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2293-film-video-production/8775-sequence-the-post-pipeline/SKILL.md",
@@ -7066,6 +8218,9 @@
   "how": "ffmpeg -c:v prores_ks -profile:v 0 or -c:v dnxhd -profile:v dnxhr_lb -vf scale=-2:540 ; Resolve 'Prefer Proxies'",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/753-davinci-resolve/SKILL.md",
@@ -7085,6 +8240,9 @@
   "how": "for f<totalFrames: tl.call(draw(frames[f]),[],f/fps). Same in Remotion via useCurrentFrame index.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/audio-reactive.md"
@@ -7103,6 +8261,9 @@
   "how": "Always ffprobe duration/channels after render; adelay=500|500; gte(t,1); exp(-max(0,t-a)*k).",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/1511-homie/3901-sound/references/TRAPS.md"
@@ -7121,6 +8282,7 @@
   "how": "AudioWorklet; buffer 64-128 for live.",
   "params": "64-128 samples",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2238-audio-dsp-engineering/8508-choose-audio-dsp-architecture",
@@ -7140,6 +8302,10 @@
   "how": "uniform uTime = frame/fps; capture canvas via Puppeteer/Playwright -> PNG sequence -> ffmpeg -c:v libx264 -pix_fmt yuv420p.",
   "params": "fps 30/60",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/SKILL.md",
@@ -7159,6 +8325,9 @@
   "how": "Self-host woff2 with font-display:block, preload critical files, await document.fonts.ready before first frame; never rely on Google Fonts @import at render time.",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14126-web-typography/references/css-implementation.md",
@@ -7178,6 +8347,9 @@
   "how": "convert (IM6 here) e.g. convert in.png -filter point -resize 800% out.png for crisp pixel upscale; montage for sheets.",
   "params": "-filter point for pixel art",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2173-tools-plugin/7919-imagemagick-conversion"
@@ -7196,6 +8368,9 @@
   "how": "SVG/DOM: labels, exact values, moderate marks (crisp vector export). Canvas2D: dense flat marks, many sparklines, frequent redraws. WebGL (Three.js, PixiJS, regl, deck.gl, Sigma.js): 1e5-1e6+ marks, particles, blending, shaders, true 3D. Keep labels/axes in SVG/HTML even when marks are WebGL; one scene clock; typed arrays; rebuild buffers only on data change; clamp devicePixelRatio for heavy scenes.",
   "params": "WebGL when ~1e5-1e6+ marks",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/webgl-2d-animation-patterns.md",
@@ -7216,6 +8391,9 @@
   "how": "Remotion: useCurrentFrame() + interpolate with clamp and easing; KOSIF HTML: seek(t) recomputes the whole scene; one scene clock per visualization; pause nothing because nothing runs on its own.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md",
@@ -7236,6 +8414,10 @@
   "how": "Generate clean clips with 'No subtitles or on-screen text', then composite brand type, callouts and transitions in code; Hyperframes is Apache-2.0 HTML frames, Remotion needs a company license for commercial use by companies.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:remotion",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0 / MIT",
   "proof": [
    "kosif-atlas/skills/1446-marketing-skills/3531-video",
@@ -7256,6 +8438,9 @@
   "how": "ffmpeg -vf scale=3840:2160:flags=lanczos,unsharp=... (exact unsharp values not recorded) -> H.264; record provenance as upscale.",
   "params": "measured: 3840x2160, 24 fps, 5.056 s, ~8.5 Mbps video + AAC 129 kbps, 5.44 MB",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009-4k.mp4",
@@ -7275,6 +8460,11 @@
   "how": "Read docs/ENGINE_ROUTER.md, verify the target tool is installed and usable, explain trade-offs before switching, fall back to Native Canvas and tell the user.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:higgsfield",
+   "npm:remotion",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/docs/ENGINE_ROUTER.md:1-12",
@@ -7294,6 +8484,9 @@
   "how": "Discover tools in kosif-one and kosif-studio, run their alignment and read their report before claiming word sync.",
   "params": "",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/docs/ENGINE_ROUTER.md:5",
@@ -7314,6 +8507,9 @@
   "how": "ffmpeg -y -i in.mp4 -c:v libx264 -crf 18 -g 30 -keyint_min 30 ... (match 24/25/60 fps).",
   "params": "crf 18, -g = fps",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md"
@@ -7332,6 +8528,9 @@
   "how": "window.render(t)+window.__ready, or paused GSAP timeline registered literally in window.__timelines['root']; MOTION.shim(root,seconds)",
   "params": "frame 150 at 5.00 s identical every render",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/animation_craft.md",
@@ -7351,6 +8550,9 @@
   "how": "scripts/shard.py; references/render-farm.md",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:468"
@@ -7369,6 +8571,7 @@
   "how": "--use-angle=d3d11 --ignore-gpu-blocklist",
   "params": "claimed 30x vs software; 1.0–1.5 s per 1080p 3D frame on Iris Xe; CRF 17",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/animation_craft.md",
@@ -7388,6 +8591,10 @@
   "how": "python scripts/ffprobe_shim.py -v error -show_entries stream=…:format=… -of json FILE; parity test vs real ffprobe.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_cloud.py:31"
@@ -7406,6 +8613,7 @@
   "how": "One seekable clock; seeded randomness; preload; sample first/peak/boundary/final frames, seek both ways.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-director.md",
@@ -7425,6 +8633,7 @@
   "how": "preview 28 s; render --blur 1 --capture jpeg 87 s (SSIM 0.990); PNG 117 s; final --blur 4 173 s",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/render-farm.md"
@@ -7443,6 +8652,10 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): index.html window.seek(t), Playwright per frame, FFmpeg.",
   "params": "index.html window.seek(t), Playwright per frame, FFmpeg",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7461,6 +8674,7 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): sum of springs per change.",
   "params": "sum of springs per change",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7479,6 +8693,7 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): --blur 4.",
   "params": "--blur 4",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7497,6 +8712,7 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): beat grid, hits on contact frames, -14 LUFS.",
   "params": "beat grid, hits on contact frames, -14 LUFS",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7515,6 +8731,7 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): contact sheets, phone-width, 6-8 criteria, >=3 rounds.",
   "params": "contact sheets, phone-width, 6-8 criteria, >=3 rounds",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7533,6 +8750,7 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): median 20 min short, 4 h celebrated, $10 median tokens.",
   "params": "median 20 min short, 4 h celebrated, $10 median tokens",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7551,6 +8769,7 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): video model base shots redrawn in JS.",
   "params": "video model base shots redrawn in JS",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7569,6 +8788,9 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): per-frame audio channels, tape clock, spectrogram magma ground, glitch pass; motion.py channels, loopcheck.",
   "params": "per-frame audio channels, tape clock, spectrogram magma ground, glitch pass; motion.py channels, loopcheck",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7587,6 +8809,9 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): motion.py mocap -> particle body, loadModel GLB.",
   "params": "motion.py mocap -> particle body, loadModel GLB",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7605,6 +8830,7 @@
   "how": "Observed Opus motion wave technique (Sept-Oct 2026): MOTION.revealWords masks, dir on text not html, karaoke per word.",
   "params": "MOTION.revealWords masks, dir on text not html, karaoke per word",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/x-trend-2026.md"
@@ -7623,6 +8849,9 @@
   "how": "From the studio: recipe 'timeline' (form in the الوصفات tab, POST /api/jobs {recipe:'timeline', args} or MCP kosif_run); equivalent CLI `python scripts/kmotion.py timeline …`.",
   "params": "spec (file); --out out/film.mp4; --workers 0 (auto); --inspect 1",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:39"
@@ -7641,6 +8870,9 @@
   "how": "From the studio: recipe 'new' (form in the الوصفات tab, POST /api/jobs {recipe:'new', args} or MCP kosif_run); equivalent CLI `python scripts/kmotion.py new …`.",
   "params": "name film1; --seconds 8; --size 1080x1920|1920x1080|1080x1080|1080x1350; --title; --3d; --lab",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:57"
@@ -7659,6 +8891,9 @@
   "how": "From the studio: recipe 'preview' (form in the الوصفات tab, POST /api/jobs {recipe:'preview', args} or MCP kosif_run); equivalent CLI `python scripts/kmotion.py preview …`.",
   "params": "project (dir); half size; 15 fps",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:62"
@@ -7677,6 +8912,10 @@
   "how": "From the studio: recipe 'render' (form in the الوصفات tab, POST /api/jobs {recipe:'render', args} or MCP kosif_run); equivalent CLI `python scripts/kmotion.py render …`.",
   "params": "project; --engine studio|auto (default studio); --blur 4 (motion-blur samples); --workers 0 (auto); --out; --force",
   "install": "",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:63"
@@ -7695,6 +8934,7 @@
   "how": "reel.json 'live': 'bundle.js' → window.MotionOSLive(el) providing ref.current with seekTo(frame), getCurrentFrame(), isPlaying(), play(), pause(), setRate(), setBoxes(); liveVideo() wraps it.",
   "params": "frame = round(t × fps)",
   "install": "",
+  "requires": [],
   "license": "MIT (Motion OS, Jason Lee 2026)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:508",
@@ -7714,6 +8954,7 @@
   "how": "POST /review/NAME/export {over, boxes} → job `kmotion review export NAME --props review/export-props.json`; GET polls {state, pct, line, out}; shown only when reel.export.cmd exists.",
   "params": "poll every 1 s; pct from the last 'n/N' in the log, capped at 99 until done",
   "install": "",
+  "requires": [],
   "license": "owner + MIT (Motion OS, Jason Lee 2026)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/review/index.html:922",
@@ -7733,6 +8974,11 @@
   "how": "templates/montage_spec.json documents the intended schema; no script in the repo consumes it yet, so Claude must translate it into ffmpeg filtergraphs (or a Remotion/HTML timeline) by hand.",
   "params": "1080x1920, 30 fps, 15 s, -14 LUFS, music 112 BPM at -12 dB duck -18 dB; zoom punches {2.6 s x1.12 1.2 s},{6.0 x1.10 1.0},{9.5 x1.15 1.5}; B-roll 6.0-9.5 s crossfade 0.3 s",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "imagemagick",
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/montage_spec.json"
@@ -7751,6 +8997,11 @@
   "how": "Read references/tools-catalog.md and tools-catalog-2.md when the house engine is not enough.",
   "params": "22 direct, 254 adjacent, 224 complementary",
   "install": "",
+  "requires": [
+   "blender",
+   "npm:remotion",
+   "npm:lottie"
+  ],
   "license": "unknown",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/references/tools-catalog.md",
@@ -7770,6 +9021,7 @@
   "how": "Web libx264 crf 18-23 slow yuv420p +faststart aac 192k; libx265 crf 24 -tag:v hvc1; h264_nvenc preset p6 cq 20; HLS -g 60 -keyint_min 60 -sc_threshold 0 -hls_time 4; -framerate 30 -i f_%04d.png; GIF fps=12,scale=360:-1 palettegen/paletteuse.",
   "params": "see how",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
@@ -7788,6 +9040,7 @@
   "how": "Timeline.DuplicateTimeline(name) (v19+); idempotent track naming.",
   "params": "4V+4A",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/davinci-resolve-pipeline/SKILL.md",
@@ -7807,6 +9060,11 @@
   "how": "motion.py new/frames/check/render/measure (motion/ dir not present here)",
   "params": "8-second gate",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md"
@@ -7825,6 +9083,7 @@
   "how": "Load skill automation-scripts-cli (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
   "proof": [
    "100-superskills/skills/automation-scripts-cli/SKILL.md"
@@ -7843,6 +9102,9 @@
   "how": "Load skill browser-automation-playwright (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
   "proof": [
    "100-superskills/skills/browser-automation-playwright/SKILL.md"
@@ -7861,6 +9123,9 @@
   "how": "Load skill docker-ci-devops (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [
+   "docker"
+  ],
   "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
   "proof": [
    "100-superskills/skills/docker-ci-devops/SKILL.md"
@@ -7879,6 +9144,9 @@
   "how": "Load skill game-dev-web (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
   "proof": [
    "100-superskills/skills/game-dev-web/SKILL.md"
@@ -7897,6 +9165,7 @@
   "how": "Load skill performance-optimization (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
   "proof": [
    "100-superskills/skills/performance-optimization/SKILL.md"
@@ -7915,6 +9184,9 @@
   "how": "Load skill python-pro (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
   "proof": [
    "100-superskills/skills/python-pro/SKILL.md"
@@ -7933,6 +9205,7 @@
   "how": "Load skill typescript-node-pro (SKILL.md + references/sources.md) and follow its numbered steps; instruction-only, no scripts.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner (MIT repo; synthesised from MIT/Apache atlas sources)",
   "proof": [
    "100-superskills/skills/typescript-node-pro/SKILL.md"
@@ -7951,6 +9224,10 @@
   "how": "Hardware encode recipe and loudnorm/subtitle filtergraphs.",
   "params": "-hwaccel cuda -c:v h264_nvenc -preset p7 -tune hq -rc vbr -cq 19",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "gpu"
+  ],
   "license": "MIT",
   "proof": [
    "100-superskills/skills/video-editing-captions/references/sources.md:118"
@@ -7969,6 +9246,11 @@
   "how": "Use GSAP tweens, CSS animations (seeked via getAnimations), Lottie, Three.js adapters; MOTION.rng; drawPath uses set + immediateRender:false.",
   "params": "banned: setTimeout, requestAnimationFrame state, Math.random, network at render, getBoundingClientRect at tween time, will-change on camera-scaled nodes, tweening visibility/display on .clip, width/height/top/left tweens; repeat:-1 only under a finite duration",
   "install": "",
+  "requires": [
+   "npm:three",
+   "npm:gsap",
+   "npm:lottie"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/references/hyperframes-authoring.md",
@@ -7988,6 +9270,11 @@
   "how": "page_flags(page) greps the HTML for webgl/three/K3/main.bundle/babylon/pixi; env HTML_RENDER_SOFTWARE=1, KOSIF_GPU=0/1, KOSIF_BROWSER; browser_path searches Edge/Chrome/Chromium and Playwright caches incl. /opt/pw-browsers.",
   "params": "flags --headless=new --hide-scrollbars --ignore-gpu-blocklist --autoplay-policy=no-user-gesture-required --allow-file-access-from-files",
   "install": "",
+  "requires": [
+   "chromium",
+   "npm:three",
+   "npm:p5"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/html_render.py:26",
@@ -8008,6 +9295,7 @@
   "how": "--scale 2",
   "params": "default 1; min 0.1",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/render_html.cjs:99"
@@ -8026,6 +9314,9 @@
   "how": "--stack three",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/tools/kosif.py:43",
@@ -8045,6 +9336,7 @@
   "how": "render_html --preview (8 labelled frames); half-res 2–4 s clip.",
   "params": "8 frames; clip 2–4 s at half resolution (540×960)",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:9",
@@ -8064,6 +9356,7 @@
   "how": "Screen capture drops frames and is not reproducible.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:34"
@@ -8082,6 +9375,7 @@
   "how": "frame=f(t), seeded randomness, fonts loaded before frame 0 (window.__kosifReady), no network assets at render, fixed viewport/DPR.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:36",
@@ -8101,6 +9395,10 @@
   "how": "/opt/node-tools/node_modules/playwright; /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium",
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:38"
@@ -8119,6 +9417,7 @@
   "how": "Commands in render-pipeline recipe A.",
   "params": "check clip --start 4 --duration 3 --width 540 --height 960",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:44-53"
@@ -8137,6 +9436,9 @@
   "how": "ffmpeg -framerate 30 -i frames/frame_%06d.png -i voice.mp3 -c:v libx264 -pix_fmt yuv420p -crf 18 -preset slow -movflags +faststart -c:a aac -b:a 192k -shortest out/film.mp4",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/render-pipeline.md:71-75"
@@ -8155,6 +9457,7 @@
   "how": "Follow slim.md; work/ subfolder for intermediates.",
   "params": "1920x1080 / 1080x1920 / 1080x1080, 30fps, ~20s",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/brag/skills/brag/slim.md",
@@ -8174,6 +9477,9 @@
   "how": "ffmpeg -an -vf unsharp=5:5:0.8:5:5:0.0 -c:v libx264 -preset slow -crf 20 -g 8 -keyint_min 8 -sc_threshold 0 -movflags +faststart",
   "params": "~8 MB per 8 s vs 25 MB all-intra",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/references/pipeline.md:126",
@@ -8193,6 +9499,10 @@
   "how": "Puppeteer/Playwright frame stepping; seeded random; no rAF/CSS transitions.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "style:pm-xelandre-363f00"
@@ -8214,6 +9524,10 @@
   "how": "Element types text/line/box/ring/bars; easings linear, ease_out_cubic, spring_pop (1−e^(−7t)·cos 12t). Each element animates over the first third of its life: progress = ease(min(1, 3·(t−start)/duration)); text scales from 0.5× and rises 35 px; ring draws an arc −90°→+270°; bars grow in a stagger (progress·n − k). Arabic text gets direction=\"rtl\" through Pillow RAQM. The validator rejects odd sizes, >3840 px, fps outside 1–60, >10,800 frames, >100 elements, text >300 chars and non-normalised x/y. ffmpeg: -f rawvideo -pix_fmt rgb24 -i - -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p +faststart; optional --audio muxes AAC 160k with -shortest. Re-ran here: 480×854, 24 fps, 4.000 s in 1.7 s wall time. Honest limits seen on the decoded frame at 2.5 s: the BARS block grows up into the second title (layout bug in the sample spec) and only DejaVu is found here (no Noto Sans Arabic), yet the words joined correctly. Full-frame renderer only — no alpha overlay over footage. Status note: the code is owner material that is not vendored in this skill; the numbers above are from one run on the owner's copy on 2026-10-16 and cannot be re-run from here, so this is 📄 documented, not ✅.",
   "params": "480×854 · 24 fps · 4 s · crf 23 · bounds 96–3840 px, ≤10,800 frames, ≤100 elements",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:pillow"
+  ],
   "license": "owner package (own work)",
   "proof": [
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/kosif_scene_graph.py",
@@ -8247,6 +9561,7 @@
   "how": "180° shutter centred: sub-frame k of N at t = (n + 0.5·((k+0.5)/N − 0.5))/fps (N = 4 → offsets −0.1875, −0.0625, +0.0625, +0.1875 frame). Adaptive: luma difference between t−½ and t+½ frame at ¼ resolution; n = 1 if diff < 0.5, else clamp(3 + 1.6·diff, 5, 14), rounded up; ≥ 6 for rolling objects. Clamp sub-frames at hard cuts (the film publishes its hard-cut times); quantise discrete events. Four fixed sub-frames look cheap; masters with 8 sub-frames and shutter 0.5 cost about 20 s of render per film second. Extends ENG-349.",
   "params": "n = 1 | clamp(3 + 1.6·diff, 5, 14); ≥ 6 rolling; no straddled cuts",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
@@ -8276,6 +9591,7 @@
   "how": "Worker i renders frames i, i+N, i+2N… (--from i/fps --every N) so heavy scenes are shared evenly: 3:09 versus 5:18 for contiguous chunks on the same film. Before encoding, check the frame sequence is complete (no gaps) and stop otherwise. Bitrate 24–30 Mbps for 1080p30 (15 s ≈ 45–57 MB). Serialize heavy renders and kill only your own browser processes.",
   "params": "interleave by N; 24–30 Mbps @1080p30",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/scripts/code/render_film.sh",
@@ -8306,6 +9622,10 @@
   "how": "One DevTools port per parallel capture (shared ports mixed scenes); document.fonts.ready resolves before unused faces load → force-load every face (7–20 px layout drift otherwise); measuring a display:none element returns 0; browser profiles fill the disk (ENOSPC) → clean temp profiles; ProcessPool code needs an `if __name__ == '__main__'` guard; relative output paths silently lose the MP4; file:// taints canvas → `--allow-file-access-from-files`; a grain tile in a pooled canvas is cleared on reuse; SDF squash without rescaling distance becomes a blob; clip-path: inset() cuts glyph tops → negative insets −20…−60 %; Pillow floodfill on an array-backed image is a no-op → .copy() first; set globalAlpha by multiplying, not assigning. For offline determinism vendor fonts and libraries instead of loading them from a CDN.",
   "params": "negative clip insets −20…−60 %; one port per worker",
   "install": "",
+  "requires": [
+   "chromium",
+   "pip:pillow"
+  ],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md",
@@ -8336,6 +9656,11 @@
   "how": "Playwright evaluates seek(t); canvas.toDataURL('image/jpeg', 0.9) for each frame (wait for window.FILM_READY); pipe MJPEG into `ffmpeg -c:v libx264 -crf 16 -pix_fmt yuv420p`; N worker chunks joined with the concat demuxer (-c copy); mux the song with `-c:a aac -b:a 256k -ar 48000 -shortest -movflags +faststart`. Test frames first (`render.py frames 3,10.5`) and a 4-column contact sheet. Lesson: contiguous chunks are unbalanced, interleave instead (ENG-X02). The owner's film: 1080×1920, 30 fps, 56.92 s, 8 scenes.",
   "params": "JPEG q 0.9 → crf 16; AAC 256k 48 kHz",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium"
+  ],
   "license": "owner (song audio and lyrics are third-party; not included)",
   "proof": [
    "owner-upload:film_project/film/render.py",
@@ -8367,6 +9692,11 @@
   "how": "Rule topics: compositions, sequencing, timing (spring/easing), animations, text animations, transitions, trimming, videos, audio, assets, fonts, gifs, lottie, charts, 3D via React Three Fiber, tailwind, measuring text (fit and overflow), calculate-metadata, media helpers (can-decode, extract frames, audio/video duration and dimensions), display captions (pages with word highlight), import SRT, transcribe captions. Check Remotion's licence: some companies need a paid licence.",
   "params": "",
   "install": "npx create-video@latest",
+  "requires": [
+   "npm:remotion",
+   "npm:lottie",
+   "npm:react"
+  ],
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa); Remotion has its own licence",
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation/SKILL.md"
@@ -8395,6 +9725,19 @@
   "how": "`python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor [--json | --strict]`; the same CLI searches the 100-repository tool map: `list --capability voice`, `search محاذاة كلمات`, `show openai/whisper`, and keeps references/repos.md derived from repos.json with `build` / `check` (CI-safe).",
   "params": "21 checks; exit 1 with --strict when a core render tool is missing",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "imagemagick",
+   "blender",
+   "yt-dlp",
+   "pip:numpy",
+   "pip:pillow",
+   "pip:opencv",
+   "pip:faster-whisper",
+   "npm:remotion",
+   "key:openai"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/superpowers.py",
@@ -8428,6 +9771,14 @@
   "how": "Read `references/mimic.md`. `mm_analyze.analyze('ref.mp4','work')` → review `work/analysis.md` and `work/sheets/` → fill `shots[].replacement.path` from the user's or licensed clips (never scraped) → `mm_build.build('work', preview=True)` then full → `tools/verify_video.py`. `placeholder=True` drafts without footage.",
   "params": "H.264 bt709 CRF 17, same w×h, fps and frame count as the reference; preview = half size; needs numpy, Pillow(raqm), ffmpeg; OpenCV/SciPy optional",
   "install": "pip install numpy pillow opencv-python-headless scipy; ffmpeg",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "pip:numpy",
+   "pip:pillow",
+   "pip:opencv",
+   "pip:scipy"
+  ],
   "license": "owner (mm_transitions.py LGPL-2.1-or-later)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py",

@@ -1,0 +1,68 @@
+# KOSIF TOOL — Claude superpowers and Arabic-first motion-graphics atlas
+
+> A Claude Code skill that tells Claude what it can really do: 4,519 powers in 50 families and 10 domains, each with an evidence badge (743 proven by real runs), the requirements to run it, executable thinking tools, and a 288-style motion-graphics atlas.
+
+Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`.
+
+## Start
+- [CAPABILITIES.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/CAPABILITIES.md): generated self-model for Claude
+- [SKILL.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SKILL.md): the skill and its power-up protocol
+- [cognition.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/cognition.md): how to think, plan, decide and create
+- [requirements.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/requirements.md): what each power needs and what each install unlocks
+
+## Families
+- [3d-spatial](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/3d-spatial.md)
+- [agent-orchestration](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)
+- [ai-generation](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/ai-generation.md)
+- [apps-artifacts](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md)
+- [arabic-language](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/arabic-language.md)
+- [audio-sync-captions](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/audio-sync-captions.md)
+- [brand-logo-identity](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/brand-logo-identity.md)
+- [camera-composition-layout](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/camera-composition-layout.md)
+- [characters-rigs](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/characters-rigs.md)
+- [charts-data-infographic](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/charts-data-infographic.md)
+- [code-engineering](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/code-engineering.md)
+- [color-palette-grading](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/color-palette-grading.md)
+- [creativity-engine](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/creativity-engine.md)
+- [data-analysis](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/data-analysis.md)
+- [diagrams-explainers-code](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/diagrams-explainers-code.md)
+- [documents-office](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/documents-office.md)
+- [easing-timing-rhythm](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/easing-timing-rhythm.md)
+- [engines-render-pipeline](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/engines-render-pipeline.md)
+- [formats-platforms](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/formats-platforms.md)
+- [hand-drawn-draw-on](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/hand-drawn-draw-on.md)
+- [knowledge-graph](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/knowledge-graph.md)
+- [light-glow-bloom](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/light-glow-bloom.md)
+- [maps-geo](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/maps-geo.md)
+- [media-image-audio](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/media-image-audio.md)
+- [mental-models](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/mental-models.md)
+- [music-beat-sound](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/music-beat-sound.md)
+- [other](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/other.md)
+- [particles-fluids-physics](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/particles-fluids-physics.md)
+- [photo-video-footage](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/photo-video-footage.md)
+- [pixel-retro-stylized](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/pixel-retro-stylized.md)
+- [planning-execution](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/planning-execution.md)
+- [prompt-craft](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/prompt-craft.md)
+- [qa-verification](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/qa-verification.md)
+- [security-safety](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/security-safety.md)
+- [self-discovery](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/self-discovery.md)
+- [shapes-morph-geometry](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/shapes-morph-geometry.md)
+- [software-investigation](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/software-investigation.md)
+- [story-direction-ideas](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/story-direction-ideas.md)
+- [strategy-finance](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/strategy-finance.md)
+- [texture-material](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/texture-material.md)
+- [thinking-core](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/thinking-core.md)
+- [transitions-cuts](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/transitions-cuts.md)
+- [typography-arabic](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md)
+- [typography-latin](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/typography-latin.md)
+- [ui-product-device](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/ui-product-device.md)
+- [verification-evals](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md)
+- [video-download](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/video-download.md)
+- [voice-tts](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/voice-tts.md)
+- [web-research](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/web-research.md)
+- [writing-humanizer](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/writing-humanizer.md)
+
+## Optional
+- [repos.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/repos.md): 124 credited open-source tools
+- [AGENTS.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/AGENTS.md): motion-graphics production rules
+- [STYLE_INDEX.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/STYLE_INDEX.md): 288 styles

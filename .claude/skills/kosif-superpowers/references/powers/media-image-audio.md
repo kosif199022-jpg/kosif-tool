@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** معالجة الصور والصوت: التحويل والقص وقراءة النص من الصور والتفريغ والتوليد. — Process images and audio: convert, crop, OCR, transcribe and generate.
 > **أقوى دليل / strongest evidence:** **MEDIA-01** Arabic text on images with Pillow (raqm) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`) · **MEDIA-02** Never double-shape Arabic (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`)
-> **30 powers follow** — ✅ 23 · 🟢 0 · 📦 6 · 🔑 1 · 👁 0 · 📄 0 · 💡 0.
+> **34 powers follow** — ✅ 24 · 🟢 0 · 📦 8 · 🔑 2 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الصور والصوت — Image & audio · **البادئة / prefix:** `MEDIA` · **البيانات / data:** `data/powers/media-image-audio.json` · **بحث / search:** `python3 scripts/powers.py family media-image-audio`
-**مراجع ذات صلة / related references:** [creativity.md](../creativity.md)
+**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
@@ -18,6 +18,7 @@
 - **معالجة الصور — Image processing** — MEDIA-08 … MEDIA-14 (7)
 - **الصوت — Audio** — MEDIA-15 … MEDIA-24 (10)
 - **خدمات وأدوات ثقيلة — Services & heavy tools** — MEDIA-25 … MEDIA-30 (6)
+- **Extended toolbelt (2026-10-18)** — MEDIA-31 … MEDIA-34 (4)
 - المصادر والرخص / sources & licences
 
 ## النص العربي على الصور — Arabic text on images
@@ -27,6 +28,7 @@
 - **متى أستخدمها / when:** thumbnails, social cards, certificates, OCR test images, labels on frames
 - **كيف / how:** f=ImageFont.truetype(path,64,layout_engine=ImageFont.Layout.RAQM); draw.text((right_x,y), text, font=f, direction='rtl', language='ar', anchor='ra'). Check PIL.features.check('raqm') first (True, raqm 0.10.5, on 2026-10-16). Use bundled OFL fonts (Amiri, Cairo, Tajawal) because system Arabic fonts are poor. **أرقام / params:** anchor 'ra' = right edge, ascender line; 'la' for LTR
 - **تثبيت / install:** `pip install pillow`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الرخصة / license:** MIT-CMU
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -35,6 +37,7 @@
 - **ماذا / what:** إضافة arabic_reshaper وpython-bidi فوق محرك يشكّل بنفسه تقلب الكلمات وتفصل الحروف. — Adding arabic_reshaper + python-bidi on top of an engine that already shapes reverses the words and breaks the letters.
 - **متى أستخدمها / when:** old snippets with get_display(reshape(s)); text appears reversed
 - **كيف / how:** Rule: raw string for raqm/HarfBuzz engines (Pillow 12, matplotlib 3.11, browsers, LibreOffice, weasyprint); reshape + bidi only for reportlab or builds without raqm. Contact panel 4 shows both lines side by side.
+- **يحتاج / needs:** [`libreoffice`](../requirements.md#req-libreoffice) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:office`](../requirements.md#req-pip-office)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-media/contact.png
 
@@ -45,6 +48,7 @@
 - **متى أستخدمها / when:** screenshots, scans, photos of documents, images inside PDFs
 - **كيف / how:** apt-get install -y tesseract-ocr tesseract-ocr-ara (6 s); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 6'). Proof: clean naskh, sans and English lines read at similarity 0.99 in 0.41 s; mean word confidence 90.6. Strip U+200E/U+200F marks from the output. **أرقام / params:** --psm 6 block, 7 single line, 4 columns; 300 dpi for scans
 - **تثبيت / install:** `apt-get install tesseract-ocr tesseract-ocr-ara && pip install pytesseract`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`tesseract`](../requirements.md#req-tesseract)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -53,6 +57,7 @@
 - **ماذا / what:** نموذج ara الافتراضي يخطئ في الأرقام الهندية العربية والخطوط الكوفية والعرضية؛ تحقق من كل رقم. — The stock ara model misreads Arabic-Indic digits and Kufi/display fonts; validate every number.
 - **متى أستخدمها / when:** invoices, phone numbers, dates, prices read by OCR
 - **كيف / how:** Measured (56 px, psm 7): Arabic-Indic digits 0.51-0.84 similarity (a phone number came back as garbage); the same line with Western digits 1.0; Reem Kufi merged two words. Mitigations: -l ara for pure Arabic lines (ara+eng can emit Latin junk); range/checksum checks; ask the user to confirm numbers; try tessdata_best (untested).
+- **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/results.json#findings
 
@@ -61,6 +66,7 @@
 - **متى أستخدمها / when:** photographed or scanned pages that are visibly tilted
 - **كيف / how:** median 3 -> Otsu (inverted) -> morph open 2x2 -> dilate with a 60x5 kernel -> contours > 5000 px -> cv2.minAreaRect angles (subtract 90 when w<h) -> median -> warpAffine back. Proof: true 12°, estimated 12.07°, OCR 0.598 -> 0.912.
 - **تثبيت / install:** `pip install opencv-python-headless`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`tesseract`](../requirements.md#req-tesseract) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -69,6 +75,7 @@
 - **ماذا / what:** التحويل إلى أبيض وأسود بعتبة تكيفية خفّض دقة tesseract 5 بعد التقويم؛ كل خطوة تُقاس. — Adaptive-threshold binarisation lowered tesseract 5 accuracy after deskew; measure every step.
 - **متى أستخدمها / when:** building any OCR or image pipeline
 - **كيف / how:** Score each variant against ground truth (difflib ratio on NFKC text). Proof: grayscale deskew 0.912, the same plus adaptiveThreshold(31, C=15) 0.814. Tesseract's LSTM engine works on grayscale; binarise only if a measurement shows it helps.
+- **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/results.json#findings
 
@@ -77,6 +84,7 @@
 - **متى أستخدمها / when:** hosts without apt/root
 - **كيف / how:** pip install torch --index-url https://download.pytorch.org/whl/cpu (21 s, 769 MB in the arsenal run) then pip install easyocr; reader=easyocr.Reader(['ar','en']). Model download and accuracy not tested here.
 - **تثبيت / install:** `pip install easyocr`
+- **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract) · [`pip:torch`](../requirements.md#req-pip-torch) · [`network`](../requirements.md#req-network)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (metadata)
@@ -88,6 +96,7 @@
 - **متى أستخدمها / when:** cleanup, measurement, masks, document straightening
 - **كيف / how:** cv2.Canny(gray,80,160); cv2.threshold(..., THRESH_OTSU); cv2.getRotationMatrix2D + warpAffine(borderValue=255); cv2.findContours. Note: opencv-python-headless is version 5.0 (major bump), so check the API before writing code.
 - **تثبيت / install:** `pip install opencv-python-headless`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -97,6 +106,7 @@
 - **متى أستخدمها / when:** web images, thumbnails, artifacts under size limits
 - **كيف / how:** Pillow save: PNG optimize, WebP quality 80, AVIF quality 50, JPEG 85; measure with cv2.PSNR and skimage structural_similarity(channel_axis=2). Proof (640x480 synthetic): 12.0 / 5.5 / 3.3 / 15.8 KB; WebP PSNR 39.7 dB, SSIM 0.982.
 - **تثبيت / install:** `pip install pillow scikit-image opencv-python-headless`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** MIT-CMU / BSD-3-Clause / Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -106,6 +116,7 @@
 - **متى أستخدمها / when:** brand matching, palette from a photo, colour grading references
 - **كيف / how:** Z=img.reshape(-1,3).astype(np.float32); cv2.kmeans(Z, k, None, (EPS+MAX_ITER,30,0.5), 4, cv2.KMEANS_PP_CENTERS); sort centres by cluster size. Proof: k=4 recovered three disc colours within 0.9-2.3 RGB units. Gradients need a larger k or a LAB colour space.
 - **تثبيت / install:** `pip install opencv-python-headless`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -115,6 +126,7 @@
 - **متى أستخدمها / when:** menus, posters, invoices, packaging, end cards
 - **كيف / how:** qrcode.make(payload, box_size=8, border=4).save(p); cv2.QRCodeDetector().detectAndDecode(cv2.imread(p)) must equal the payload. Barcode: barcode.get('ean13', digits, writer=ImageWriter()).save('bc').
 - **تثبيت / install:** `pip install qrcode python-barcode opencv-python-headless`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** BSD / MIT / Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -124,6 +136,7 @@
 - **متى أستخدمها / when:** batch resize, format conversion, montage, quick fixes
 - **كيف / how:** convert in.png -resize 50% -colorspace Gray -unsharp 0x1 out.png; identify -format '%w %h %[colorspace]' out.png -> 750 235 Gray (proof). Use mogrify for in-place batches on copies only.
 - **تثبيت / install:** `apt-get install imagemagick (6.9.12 present)`
+- **يحتاج / needs:** [`imagemagick`](../requirements.md#req-imagemagick)
 - **الرخصة / license:** ImageMagick License (Apache-2.0-style)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `session-2026-10-16:env-probe.md#5-real-install-tests`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -133,6 +146,7 @@
 - **متى أستخدمها / when:** icons, logos, diagrams drawn as SVG
 - **كيف / how:** cairosvg.svg2png(bytestring=svg, write_to='o.png', output_width=1024). For Arabic text inside SVG prefer Chromium rendering (APP-05 snap) because it has full shaping; Arabic in cairosvg was not tested.
 - **تثبيت / install:** `pip install cairosvg`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** LGPL-3.0-or-later
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -141,6 +155,7 @@
 - **ماذا / what:** افتح الصور وصفحات PDF التي أنتجتها بأداة القراءة وانظر إليها فعلًا قبل الادعاء بأنها صحيحة. — Open the images and PDF pages I produced with the Read tool and actually look before claiming they are right.
 - **متى أستخدمها / when:** after every render, chart, document or OCR test image
 - **كيف / how:** Build a contact sheet (Pillow tiles, quantize to stay under 300 KB), Read it, and check Arabic joining, direction, cropping and overlaps. In this session, looking caught a reversed matplotlib title, a chart split over two pages, and a wrong filter name.
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-*/contact.png
 
@@ -151,6 +166,7 @@
 - **متى أستخدمها / when:** before trusting a beat, pitch, loudness or silence detector on real audio
 - **كيف / how:** numpy: 0.2*sin(2*pi*440*t) for 2 s, zeros for 1 s, decaying 1 kHz clicks every 0.5 s (120 BPM); soundfile.write(p, sig, 48000, subtype='PCM_16').
 - **تثبيت / install:** `pip install numpy soundfile`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:soundfile`](../requirements.md#req-pip-soundfile)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -160,6 +176,7 @@
 - **متى أستخدمها / when:** tuning checks, voice analysis, verifying generated tones
 - **كيف / how:** f0=librosa.yin(y, fmin=100, fmax=1000, sr=sr); np.median(f0). Proof: 440 Hz tone -> 440.6 Hz. librosa is 1.0 now; check the API before writing from memory. librosa ran in an earlier session's venv (2026-10-16) and is not installed in the current container: `pip install librosa` first.
 - **تثبيت / install:** `pip install librosa`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:librosa`](../requirements.md#req-pip-librosa)
 - **الرخصة / license:** ISC
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -169,6 +186,7 @@
 - **متى أستخدمها / when:** cutting to the beat, syncing captions, rhythm checks
 - **كيف / how:** librosa.onset.onset_detect(y=seg, sr=sr, units='time'); tempo = 60/median(diff). Start the window about 0.1 s before the first hit, because an onset at sample 0 is missed (first run found 5 of 6). Proof: 6 onsets, 0.501 s spacing (119.7 BPM). librosa ran in an earlier session's venv (2026-10-16) and is not installed in the current container: `pip install librosa` first.
 - **تثبيت / install:** `pip install librosa`
+- **يحتاج / needs:** [`pip:librosa`](../requirements.md#req-pip-librosa)
 - **الرخصة / license:** ISC
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -178,6 +196,7 @@
 - **متى أستخدمها / when:** delivering voice-overs, podcasts, reels, music beds
 - **كيف / how:** pyln.Meter(sr).integrated_loudness(x); ffmpeg -i f -af ebur128=peak=true -f null - (read the last 'I:'). Proof: -13.96 vs -13.9 LUFS on the normalised file.
 - **تثبيت / install:** `pip install pyloudnorm`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:pyloudnorm`](../requirements.md#req-pip-pyloudnorm)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -187,6 +206,7 @@
 - **متى أستخدمها / when:** final audio for any delivery; preserving the user's audio character
 - **كيف / how:** Pass 1: loudnorm=I=-14:TP=-1:LRA=11:print_format=json -f null. Pass 2: the measured_* values + offset + linear=true + print_format=json, and LRA set above the measured LRA (max(11, input_lra+1)); assert normalization_type == 'linear'. Proof: -18.05 -> -13.96 LUFS, linear. With LRA=11 and a measured LRA of 17.8 the mode went dynamic. **أرقام / params:** I -14, TP -1 dBTP; streaming platforms vary (-14 to -16)
 - **تثبيت / install:** `ffmpeg (6.1.1 present)`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
 - **الرخصة / license:** LGPL/GPL (ffmpeg build)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -196,6 +216,7 @@
 - **متى أستخدمها / when:** podcast cleanup, splitting takes, jump cuts
 - **كيف / how:** ffmpeg -i f -af silencedetect=noise=-50dB:d=0.5 -f null - ; parse silence_start / silence_end. Proof: 2.0 -> 3.0 s found exactly. Tune noise to the room tone (-35 to -50 dB).
 - **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
 - **الرخصة / license:** LGPL/GPL
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -205,6 +226,7 @@
 - **متى أستخدمها / when:** podcast covers, QA of edits, explaining audio
 - **كيف / how:** ffmpeg -i f -filter_complex showwavespic=s=1200x200:colors=#2a78d6 -frames:v 1 w.png ; ffmpeg -i f -lavfi showspectrumpic=s=1200x300:legend=0 s.png. The filter is showwavespic; there is no 'showwavespng' (the first run failed on that name).
 - **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
 - **الرخصة / license:** LGPL/GPL
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -214,6 +236,7 @@
 - **متى أستخدمها / when:** trimming intros, fades, joining clips, exporting MP3
 - **كيف / how:** pip install pydub audioop-lts (without it: ModuleNotFoundError 'pyaudioop'); AudioSegment.from_wav(p)[:2000].fade_in(200).fade_out(400).export('o.mp3', format='mp3', bitrate='128k'). Proof: ffprobe 2.040 s (the MP3 encoder adds padding).
 - **تثبيت / install:** `pip install pydub audioop-lts`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** MIT / PSF
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -223,6 +246,7 @@
 - **متى أستخدمها / when:** delivering audio for web, messaging or video
 - **كيف / how:** ffmpeg -i in.wav -c:a aac -b:a 96k out.m4a; ffprobe -v error -show_entries format=duration -of csv=p=0 out.m4a. Proof: 6.000 s for a 6.0 s source, 34 KB (MP3 via pydub: 2.040 s for 2.0 s, encoder padding). Never overwrite the user's original.
 - **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
 - **الرخصة / license:** LGPL/GPL
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-media/make_media.py
@@ -232,6 +256,7 @@
 - **متى أستخدمها / when:** polishing a voice-over or music bed (use as a tool, do not vendor it)
 - **كيف / how:** Pedalboard([Compressor(), Reverb()])(audio, sr) (arsenal run). Keep the original and render a copy.
 - **تثبيت / install:** `pip install pedalboard`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** GPL-3.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md
@@ -243,6 +268,7 @@
 - **متى أستخدمها / when:** captions, words.json for sync, meeting notes
 - **كيف / how:** pip install faster-whisper; WhisperModel('small', device='cpu', compute_type='int8').transcribe(p, language='ar', word_timestamps=True). Models download from huggingface.co (reachable on 2026-10-16). Not run in this proof; see the motion audio-sync family for the caption pipeline.
 - **تثبيت / install:** `pip install faster-whisper`
+- **يحتاج / needs:** [`pip:faster-whisper`](../requirements.md#req-pip-faster-whisper) · [`network`](../requirements.md#req-network)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (metadata)
@@ -252,6 +278,7 @@
 - **متى أستخدمها / when:** remove music under speech, karaoke, remix
 - **كيف / how:** pip install demucs (needs torch); demucs --two-stems=vocals in.wav. Expect minutes per track without a GPU. Not run here.
 - **تثبيت / install:** `pip install demucs`
+- **يحتاج / needs:** [`pip:torch`](../requirements.md#req-pip-torch)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (metadata)
@@ -261,6 +288,7 @@
 - **متى أستخدمها / when:** product shots, thumbnails, stickers
 - **كيف / how:** pip install rembg; rembg i in.png out.png. The model downloads on first use; not tested here. The paid service alternative is MEDIA-29.
 - **تثبيت / install:** `pip install rembg`
+- **يحتاج / needs:** [`pip:rembg`](../requirements.md#req-pip-rembg)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (metadata)
@@ -270,6 +298,7 @@
 - **متى أستخدمها / when:** privacy before sharing photos; checking capture dates
 - **كيف / how:** Pillow: Image.open(p).getexif(); strip by re-saving without exif. Full tool: apt-get install libimage-exiftool-perl; exiftool -all= copy.jpg. Not run here.
 - **تثبيت / install:** `apt-get install libimage-exiftool-perl`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
 - **الرخصة / license:** Artistic/GPL (exiftool)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:env-probe.md#3 (exiftool missing, apt available)
@@ -278,6 +307,7 @@
 - **ماذا / what:** عند وجود موصل مثل Higgsfield: توليد صور وصوت، وتكبير، وإزالة خلفية، ودبلجة — بأرصدة مدفوعة وبطلب صريح. — With a connector such as Higgsfield: image and audio generation, upscaling, background removal, dubbing; it costs credits, so only on explicit request.
 - **متى أستخدمها / when:** the user explicitly asks for generated or upscaled media and the connector is attached
 - **كيف / how:** Check the tool list for mcp__<server>__generate_image / upscale_image / remove_background / dubbing; read the connector's own instructions; quote the cost first; never call paid tools without the user's intent. No GPU locally, so local diffusion is impractical.
+- **يحتاج / needs:** [`pip:higgsfield`](../requirements.md#req-pip-higgsfield) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:claude-surfaces.md#4
 
@@ -286,13 +316,56 @@
 - **متى أستخدمها / when:** the user uploads .heic files
 - **كيف / how:** pip install pillow-heif; from pillow_heif import register_heif_opener; register_heif_opener(); then Image.open('x.heic'). AVIF works natively in Pillow 12 (proven in MEDIA-09); HEIC was not tested.
 - **تثبيت / install:** `pip install pillow-heif`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (metadata)
 
+## Extended toolbelt (2026-10-18)
+
+#### MEDIA-31 · music21: بناء المدونات الموسيقية وقراءتها وتحليل المقامات والأوتار · music21: Build, parse and analyse scores (MIDI/MusicXML): keys, chords, voice leading · ✅ مُثبت هنا / proven here
+- **ماذا / what:** بناء المدونات الموسيقية وقراءتها وتحليل المقامات والأوتار. — Build, parse and analyse scores (MIDI/MusicXML): keys, chords, voice leading. (music21, ★2.6k, BSD-3-Clause).
+- **متى أستخدمها / when:** music notation tasks the user has the right to run
+- **كيف / how:** `pip install music21`. Verified here 2026-10-18: 10-note line analysed as C major (music21 10.5.0). Licence note: permissive.
+- **تثبيت / install:** `pip install music21`
+- **يحتاج / needs:** [`pip:music21`](../requirements.md#req-pip-music21)
+- **الرخصة / license:** BSD-3-Clause
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/cuthbertLab/music21
+
+#### MEDIA-32 · MediaPipe: تتبع الوجوه واليدين ووضعية الجسم لإعادة التأطير · MediaPipe: Track faces, hands and pose in footage for auto-reframing and overlays · 📦 بأمر تثبيت / one install
+- **ماذا / what:** تتبع الوجوه واليدين ووضعية الجسم لإعادة التأطير والإضافات. — Track faces, hands and pose in footage for auto-reframing and overlays. (MediaPipe, ★37.3k, Apache-2.0).
+- **متى أستخدمها / when:** computer vision tasks the user has the right to run
+- **كيف / how:** `pip install mediapipe  (+ .task model files, MBs)`. Verified here 2026-10-18: mediapipe 1.1.1 import OK; face/pose tasks need a .task model file (mediapipe 1.1.1). Licence note: permissive.
+- **تثبيت / install:** `pip install mediapipe  (+ .task model files, MBs)`
+- **يحتاج / needs:** [`pip:mediapipe`](../requirements.md#req-pip-mediapipe)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/google-ai-edge/mediapipe
+
+#### MEDIA-33 · Ultralytics YOLO: كشف الأجسام وتقسيمها وتتبعها في الصور والفيديو · Ultralytics YOLO: Detect, segment and track objects in images and video · 📦 بأمر تثبيت / one install
+- **ماذا / what:** كشف الأجسام وتقسيمها وتتبعها في الصور والفيديو. — Detect, segment and track objects in images and video. (Ultralytics YOLO, ★62.6k, AGPL-3.0).
+- **متى أستخدمها / when:** computer vision tasks the user has the right to run
+- **كيف / how:** `pip install ultralytics  (nano models ~6 MB)`. Licence note: copyleft: run as an external tool, do not vendor.
+- **تثبيت / install:** `pip install ultralytics  (nano models ~6 MB)`
+- **يحتاج / needs:** [`pip:ultralytics`](../requirements.md#req-pip-ultralytics)
+- **الرخصة / license:** AGPL-3.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/ultralytics/ultralytics
+
+#### MEDIA-34 · pyannote.audio: تحديد من تحدث ومتى لبناء ترجمة لكل · pyannote.audio: Label who spoke when, for per-speaker captions · 🔑 مفتاح أو خدمة / needs key or service
+- **ماذا / what:** تحديد من تحدث ومتى لبناء ترجمة لكل متحدث. — Label who spoke when, for per-speaker captions. (pyannote.audio, ★10.7k, MIT).
+- **متى أستخدمها / when:** diarization tasks the user has the right to run
+- **كيف / how:** `pip install pyannote.audio  + Hugging Face token (gated model terms)`. Licence note: permissive.
+- **تثبيت / install:** `pip install pyannote.audio  + Hugging Face token (gated model terms)`
+- **يحتاج / needs:** [`pip:pyannote`](../requirements.md#req-pip-pyannote)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/pyannote/pyannote-audio
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: Apache-2.0 (5) · — (5) · MIT (4) · LGPL/GPL (3) · BSD-3-Clause (2) · ISC (2) · Artistic/GPL (exiftool) (1) · BSD / MIT / Apache-2.0 (1) · GPL-3.0 (1) · ImageMagick License (Apache-2.0-style) (1) · LGPL-3.0-or-later (1) · LGPL/GPL (ffmpeg build) (1) · MIT / PSF (1) · MIT-CMU (1) · MIT-CMU / BSD-3-Clause / Apache-2.0 (1)
+- الرخص / licences: Apache-2.0 (6) · MIT (5) · — (5) · BSD-3-Clause (3) · LGPL/GPL (3) · ISC (2) · AGPL-3.0 (1) · Artistic/GPL (exiftool) (1) · BSD / MIT / Apache-2.0 (1) · GPL-3.0 (1) · ImageMagick License (Apache-2.0-style) (1) · LGPL-3.0-or-later (1) · LGPL/GPL (ffmpeg build) (1) · MIT / PSF (1) · MIT-CMU (1) · MIT-CMU / BSD-3-Clause / Apache-2.0 (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

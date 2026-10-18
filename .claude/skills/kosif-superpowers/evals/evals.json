@@ -864,6 +864,149 @@
     ]
    },
    "origin": "review routing finding 2026-10-16"
+  },
+  {
+   "id": 38,
+   "lang": "ar",
+   "domain": "mind",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل لي خطة كاملة لإطلاق كورس أونلاين خلال 6 أسابيع",
+   "files": [],
+   "expected_behavior": [
+    "Runs think.py plan and requirements.py plan",
+    "Gives milestones with done-tests, a pre-mortem and kill criteria",
+    "States what must be installed before the schedule depends on it"
+   ],
+   "routing": {
+    "expect_any": [
+     "PLAN",
+     "THINK"
+    ],
+    "top_k": 8,
+    "motion_output": false,
+    "expect_domain": "mind"
+   }
+  },
+  {
+   "id": 39,
+   "lang": "ar",
+   "domain": "mind",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "فكّر بعمق: أيهما أفضل لي نموذج اشتراك ولا بيع مرة واحدة؟",
+   "files": [],
+   "expected_behavior": [
+    "Runs think.py ladder (L5) and think.py models",
+    "Builds a weighted matrix with think.py decide and reports whether the winner flips",
+    "Gives a recommendation and the one fact that would change it"
+   ],
+   "routing": {
+    "expect_any": [
+     "MODEL",
+     "THINK",
+     "PROD"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 40,
+   "lang": "ar",
+   "domain": "data",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "تنبؤ بالمبيعات للستة شهور القادمة من ملف csv",
+   "files": [],
+   "expected_behavior": [
+    "Reads the CSV and states its range",
+    "Uses StatsForecast or a comparable method with intervals",
+    "Reports the forecast as a range, not one number"
+   ],
+   "routing": {
+    "expect_any": [
+     "ANLY"
+    ],
+    "top_k": 8,
+    "motion_output": false,
+    "expect_domain": "data"
+   }
+  },
+  {
+   "id": 41,
+   "lang": "en",
+   "domain": "data",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "prove this scheduling constraint can never double-book a room",
+   "files": [],
+   "expected_behavior": [
+    "Encodes the constraint in Z3 or OR-Tools",
+    "Reports proof (unsat) or a concrete counterexample",
+    "Does not claim a proof that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "ANLY",
+     "PROD"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 42,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "طوّر فكرتي: ريل دعاء يوم الجمعة يكون مبتكر جدًا",
+   "files": [],
+   "expected_behavior": [
+    "Runs think.py ideas to expand the seed",
+    "Scores ideas by novelty and feasibility from requirements",
+    "Pitches the top three with a first slice each"
+   ],
+   "routing": {
+    "expect_any": [
+     "IDEA",
+     "STORY"
+    ],
+    "top_k": 8,
+    "motion_output": true,
+    "expect_all": [
+     "IDEA"
+    ]
+   }
+  },
+  {
+   "id": 43,
+   "lang": "en",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "scan this repository for leaked secrets and vulnerable dependencies",
+   "files": [],
+   "expected_behavior": [
+    "Uses gitleaks and trivy or semgrep after checking requirements",
+    "Reports findings with file and line",
+    "Never prints secret values"
+   ],
+   "routing": {
+    "expect_any": [
+     "SEC"
+    ],
+    "top_k": 8,
+    "motion_output": false,
+    "expect_domain": "code"
+   }
   }
  ]
 }

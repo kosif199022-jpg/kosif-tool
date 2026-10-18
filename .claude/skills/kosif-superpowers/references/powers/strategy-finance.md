@@ -3,19 +3,20 @@
 
 > **قوتك هنا / what this gives you:** خطط المنتجات والتسعير والاستراتيجية والنماذج المالية بأرقام قابلة للتحقق. — Product plans, pricing, strategy and financial models with checkable numbers.
 > **أقوى دليل / strongest evidence:** **PROD-03** Risk as a distribution (Monte Carlo) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`) · **PROD-10** Optimal product mix (LP) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`)
-> **15 powers follow** — ✅ 3 · 🟢 0 · 📦 1 · 🔑 0 · 👁 0 · 📄 11 · 💡 0.
+> **18 powers follow** — ✅ 5 · 🟢 0 · 📦 2 · 🔑 0 · 👁 0 · 📄 11 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المنتج والمال — Product & finance · **البادئة / prefix:** `PROD` · **البيانات / data:** `data/powers/strategy-finance.json` · **بحث / search:** `python3 scripts/powers.py family strategy-finance`
-**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [method-packs.md](../method-packs.md)
+**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [method-packs.md](../method-packs.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
 - **القرار — Deciding** — PROD-01 … PROD-06 (6)
 - **المنتج والتنفيذ — Product & execution** — PROD-07 … PROD-10 (4)
 - **المال والمحاسبة — Finance & accounting** — PROD-11 … PROD-15 (5)
+- **Extended toolbelt (2026-10-18)** — PROD-16 … PROD-18 (3)
 - المصادر والرخص / sources & licences
 
 ## القرار — Deciding
@@ -32,6 +33,7 @@
 - **متى أستخدمها / when:** any plan resting on estimates (demand, price, cost, conversion)
 - **كيف / how:** List the assumptions; for each, solve for the value at which the preferred option stops winning (sympy.solve of profit_A = profit_B, or break-even = 0). Compare the threshold with the evidence. Related run: break-even Q = 6000 and p* = 60 were solved exactly with sympy (proofs/general-data), but no A-vs-B flipping threshold has been computed here yet, so this method is 📄.
 - **تثبيت / install:** `pip install sympy`
+- **يحتاج / needs:** [`pip:sympy`](../requirements.md#req-pip-sympy)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-product-strategy (paraphrased in own words); proofs/general-data/make_data.py
@@ -41,6 +43,7 @@
 - **متى أستخدمها / when:** business cases, budgets, launch plans
 - **كيف / how:** See ANLY Monte Carlo: seeded 100k draws over the uncertain inputs. Proof: P(loss) 0.356, P5 -33,252, P50 10,570, P95 61,457. State the distributions you assumed next to the result.
 - **تثبيت / install:** `pip install numpy`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`npm:p5`](../requirements.md#req-npm-p5)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -56,6 +59,7 @@
 - **ماذا / what:** لأسئلة الاتجاه الغامضة: اكتب رأيك أولًا ثم اطلب ثلاثة آراء مستقلة بلا سياق المحادثة، واجمعها مع إبراز الخلاف. — For ambiguous direction questions: write my own view first, then ask three independent voices without the conversation history, and merge them with dissent shown.
 - **متى أستخدمها / when:** multi-path choices with little guidance (not facts, not code review); sub-agents available
 - **كيف / how:** Reduce to one question; my position + 3 reasons + main risk BEFORE reading others; voices: architect (long-term correctness), skeptic (challenge the premise), pragmatist (speed, user impact), critic (failure modes); synthesise and keep the dissent visible.
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** github.com/affaan-m/ECC skills/council (MIT (c) 2026 Affaan Mustafa), paraphrased
 
@@ -94,6 +98,7 @@
 - **متى أستخدمها / when:** capacity, budget or time limits shared by several products
 - **كيف / how:** scipy.optimize.linprog(method='highs') (see ANLY LP); for integer quantities use OR-Tools MIP. Proof: max 40x+30y with x+y<=40, 2x+y<=60 gave x=y=20, profit 1,400, cross-checked with sympy.
 - **تثبيت / install:** `pip install scipy`
+- **يحتاج / needs:** [`pip:scipy`](../requirements.md#req-pip-scipy) · [`pip:sympy`](../requirements.md#req-pip-sympy) · [`pip:ortools`](../requirements.md#req-pip-ortools)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -105,6 +110,7 @@
 - **متى أستخدمها / when:** pricing questions, unit economics, 'how many must we sell?'
 - **كيف / how:** profit=(p-c)*(a-b*p); sp.solve(sp.diff(profit,p),p) and check the second derivative is negative; break-even Q = F/(p-v) via sp.solve. Proof: p*=60, profit 16,000; Q=6,000 for F=120,000, p=50, v=30. The demand curve is an assumption; say so.
 - **تثبيت / install:** `pip install sympy`
+- **يحتاج / needs:** [`pip:sympy`](../requirements.md#req-pip-sympy)
 - **الرخصة / license:** BSD-3-Clause
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -127,6 +133,7 @@
 - **ماذا / what:** ابنِ النموذج على محركات طبيعية (عملاء × سعر × احتفاظ) مع فصل الافتراضات عن الحسابات وفحوص توازن تساوي صفرًا. — Build the model on natural drivers (customers x price x retention), with assumptions separated from mechanics and balance checks that equal zero.
 - **متى أستخدمها / when:** forecasts, business plans, DCFs
 - **كيف / how:** Inputs sheet (with sources and units) -> drivers -> P&L -> cash -> balance sheet; checks: balance = 0, cash bridge = 0; scenario overrides on the inputs only; recompute in code or with a LibreOffice recalc before quoting; no exact optimum taken from prose.
+- **يحتاج / needs:** [`libreoffice`](../requirements.md#req-libreoffice)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words)
 
@@ -135,13 +142,46 @@
 - **متى أستخدمها / when:** quick market exploration (never as an official source)
 - **كيف / how:** yfinance (scrapes Yahoo, subject to its terms), pandas-ta (beta, no license field on PyPI), quantstats (Apache-2.0). Metadata only; none of them ran here. Prefer official data from exchanges or regulators for anything published.
 - **تثبيت / install:** `pip install yfinance quantstats`
+- **يحتاج / needs:** [`pip:pandas`](../requirements.md#req-pip-pandas)
 - **الرخصة / license:** Apache-2.0 (yfinance, quantstats); pandas-ta unknown
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (metadata)
 
+## Extended toolbelt (2026-10-18)
+
+#### PROD-16 · OR-Tools: حل مسائل الجدولة والتوجيه والتعيين بأمثلية عبر · OR-Tools: Solve scheduling, routing and assignment problems optimally with CP-SAT · ✅ مُثبت هنا / proven here
+- **ماذا / what:** حل مسائل الجدولة والتوجيه والتعيين بأمثلية عبر CP-SAT. — Solve scheduling, routing and assignment problems optimally with CP-SAT. (OR-Tools, ★14.2k, Apache-2.0).
+- **متى أستخدمها / when:** optimisation tasks the user has the right to run
+- **كيف / how:** `pip install ortools`. Verified here 2026-10-18: 4 jobs on one machine, optimal makespan 10 (ortools 9.15.6755). Licence note: permissive.
+- **تثبيت / install:** `pip install ortools`
+- **يحتاج / needs:** [`pip:ortools`](../requirements.md#req-pip-ortools)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/google/or-tools
+
+#### PROD-17 · PuLP: نمذجة مسائل البرمجة الخطية والصحيحة كتوزيع الميزانيات · PuLP: Model linear and integer programs such as budget splits and blends · ✅ مُثبت هنا / proven here
+- **ماذا / what:** نمذجة مسائل البرمجة الخطية والصحيحة كتوزيع الميزانيات. — Model linear and integer programs such as budget splits and blends. (PuLP, ★2.5k, BSD-style).
+- **متى أستخدمها / when:** optimisation tasks the user has the right to run
+- **كيف / how:** `pip install pulp ortools  (PuLP ≥4 ships no CBC; CP-SAT needs integer, bounded variables)`. Verified here 2026-10-18: max 3a+2b s.t. a+b≤100, a≤60 → 260 (a=60, b=40) via CPSAT (pulp 4.0.1). Licence note: permissive.
+- **تثبيت / install:** `pip install pulp ortools  (PuLP ≥4 ships no CBC; CP-SAT needs integer, bounded variables)`
+- **يحتاج / needs:** [`pip:ortools`](../requirements.md#req-pip-ortools) · [`pip:pulp`](../requirements.md#req-pip-pulp)
+- **الرخصة / license:** BSD-style
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/coin-or/pulp
+
+#### PROD-18 · MuJoCo: محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات · MuJoCo: Simulate rigid-body and robot dynamics and log trajectories · 📦 بأمر تثبيت / one install
+- **ماذا / what:** محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات. — Simulate rigid-body and robot dynamics and log trajectories. (MuJoCo, ★15.7k, Apache-2.0).
+- **متى أستخدمها / when:** simulation tasks the user has the right to run
+- **كيف / how:** `pip install mujoco`. Licence note: permissive.
+- **تثبيت / install:** `pip install mujoco`
+- **يحتاج / needs:** [`pip:mujoco`](../requirements.md#req-pip-mujoco)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/google-deepmind/mujoco
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (10) · BSD-3-Clause (4) · Apache-2.0 (yfinance, quantstats); pandas-ta unknown (1)
+- الرخص / licences: — (10) · BSD-3-Clause (4) · Apache-2.0 (2) · Apache-2.0 (yfinance, quantstats); pandas-ta unknown (1) · BSD-style (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

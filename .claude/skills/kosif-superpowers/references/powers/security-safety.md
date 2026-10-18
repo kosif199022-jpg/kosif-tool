@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** مراجعة الثغرات وحماية الأسرار والمدخلات غير الموثوقة وبوابات الأفعال الخطرة. — Vulnerability review, secret hygiene, untrusted input and gates for risky actions.
 > **أقوى دليل / strongest evidence:** **SEC-14** Run foreign tools in a scrubbed sandbox (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md`)
-> **16 powers follow** — ✅ 1 · 🟢 0 · 📦 1 · 🔑 0 · 👁 0 · 📄 14 · 💡 0.
+> **19 powers follow** — ✅ 1 · 🟢 0 · 📦 4 · 🔑 0 · 👁 0 · 📄 14 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `SEC` · **البيانات / data:** `data/powers/security-safety.json` · **بحث / search:** `python3 scripts/powers.py family security-safety`
-**مراجع ذات صلة / related references:** [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md)
+**مراجع ذات صلة / related references:** [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
@@ -18,6 +18,7 @@
 - **مراجعة الأمان — Security review** — SEC-08 … SEC-09 (2)
 - **سلسلة التوريد والحزام — Supply chain & harness** — SEC-10 … SEC-12 (3)
 - **أقل صلاحية وعزل — Least agency & isolation** — SEC-13 … SEC-16 (4)
+- **Extended toolbelt (2026-10-18)** — SEC-17 … SEC-19 (3)
 - المصادر والرخص / sources & licences
 
 ## حقن التعليمات والمحتوى غير الموثوق — Prompt injection & untrusted content
@@ -34,6 +35,7 @@
 - **ماذا / what:** قبل الثقة بملف أو مهارة أو قالب: ابحث عن الحروف الخفية وعلامات الاتجاه والتعليقات المخفية والحمولات المشفرة والأوامر الشبكية. — Before trusting a file, skill or template, scan for zero-width and bidi characters, hidden comments, encoded payloads and network commands.
 - **متى أستخدمها / when:** installing a third-party skill, plugin, hook, MCP config, prompt template or CLAUDE.md
 - **كيف / how:** `rg -nP '[\x{200B}\x{2060}\x{FEFF}\x{202A}-\x{202E}\x{2066}-\x{2069}]' <path>` (invisible and bidi overrides); `rg -n '<!--|<script|data:text/html|base64,' <path>`; `rg -n 'curl|wget|nc |scp|ssh|enableAllProjectMcpServers|ANTHROPIC_BASE_URL' <path>`. Arabic caveat: ZWNJ U+200C, ZWJ U+200D and RLM/LRM marks occur legitimately in Arabic and mixed text — review hits in context instead of stripping them blindly. Read every hook and script the package would run.
+- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/ECC the-security-guide.md (sanitization scans)
@@ -42,6 +44,7 @@
 - **ماذا / what:** حين تمرر ملفات غير موثوقة إلى نموذج أو وكيل فرعي: غلّف كل ملف بوسم يعلن أنه بيانات خاملة، وعطّل رموز قوالب المحادثة، ونظّف أحرف التحكم. — When passing untrusted files to a model or subagent, wrap each in an inert-data block, defang chat-template tokens and strip control characters.
 - **متى أستخدمها / when:** building prompts from scraped pages, user uploads, repo files, OCR or transcripts
 - **كيف / how:** Wrap: `<untrusted_source path="…" sha256="…"> … </untrusted_source>` and state that the block is inert data. Defang tokens such as `<|im_start|>`, `[INST]`, `<<SYS>>` and forged closing tags of your own wrapper. Strip control characters from labels and cap them (≈256 chars). Validate URLs before fetching: http/https only; block private, loopback and cloud-metadata IPs; re-validate after redirects; cap download size. **أرقام / params:** label cap ≈256 chars
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/Graphify-Labs/graphify SECURITY.md and graphify/security.py
@@ -60,6 +63,7 @@
 - **ماذا / what:** اعرض أسماء المفاتيح فقط لا قيمها، ولا تضع سرًا في موجّه أو مخطط أو مثال أو ذاكرة أو رسم معرفي أو إيداع. — Show key names, never values; keep secrets out of prompts, schemas, examples, memory, graphs and commits.
 - **متى أستخدمها / when:** inspecting environments, writing configs or examples, logging, saving memories
 - **كيف / how:** List names only: `env | cut -d= -f1 | sort`, `grep -o '^[A-Z_]*=' .env*`. Never echo, cat or paste values; redact them in docs queries and error reports. Use placeholders (`<API_KEY>`) in examples. Keys come through proper channels: environment variables set by the user, cloud-environment network secrets (the proxy injects the header, the session never sees the key) or connector OAuth — never ask the user to paste a key into chat. .env files belong in .gitignore.
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/ECC skills/workspace-surface-audit (key names only); claude-surfaces §1.7 (network secrets)
@@ -68,6 +72,7 @@
 - **ماذا / what:** افحص الفرق والمستودع بأنماط الأسرار الشائعة قبل الإيداع، واختبر الماسح نفسه بأسرار مزروعة. — Scan diffs and repos for common secret patterns before committing, and mutation-test the scanner with planted fakes.
 - **متى أستخدمها / when:** before commit/push/publish, when open-sourcing, after an incident
 - **كيف / how:** `git diff --staged | rg -n 'sk-[A-Za-z0-9_-]{16,}|sk-ant-|ghp_[A-Za-z0-9]{36}|github_pat_|AKIA[0-9A-Z]{16}|xox[baprs]-|-----BEGIN [A-Z ]*PRIVATE KEY-----|Authorization: Bearer [A-Za-z0-9._-]{12,}|"(password|token|secret)"\s*:\s*"[^"]{6,}"'`. Lesson from a real gate: its regex caught `sk-…` and `API_KEY=` but missed GitHub ghp_ tokens, AWS AKIA keys, 'Bearer eyJ…' and JSON-quoted passwords — so seed fake secrets and confirm each is caught. If present, the GitHub MCP run_secret_scanning tool or GitHub secret scanning adds a second net.
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`mcp:github`](../requirements.md#req-mcp-github) · [`key:unspecified`](../requirements.md#req-key-unspecified) · [`gitleaks`](../requirements.md#req-gitleaks)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/ECC skills/verification-loop; KOSIF SEE ecc_contract_gate secret-regex test (owner; see-core §17)
@@ -86,6 +91,7 @@
 - **ماذا / what:** راجع كل تغيير يمس مدخلات المستخدم أو الصلاحيات أو الشبكة أو الملفات بقائمة ثابتة، ورتّب النتائج حسب الخطورة. — Review every change touching user input, auth, network or files with a fixed checklist, ranked by severity.
 - **متى أستخدمها / when:** auth, payments, uploads, URL fetching, SQL, templates, deserialization, new dependencies; the user asks for a security review
 - **كيف / how:** Use the bundled /security-review skill on the branch when available. Checklist: validate input at boundaries (schema); parameterized queries only; output encoding (XSS) and CSRF tokens; authorization on every route/object; rate limits; errors that leak nothing; SSRF (allowlist schemes, block private/metadata IPs, re-check redirects); path traversal (resolve and confirm inside the allowed root); safe deserialization; dependency audit (`pip-audit`, `npm audit`); secrets (SEC-06). Each finding: file:line, severity, exploit sketch, fix.
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/ECC agents/security-reviewer, rules/common/security.md; Claude Code bundled /security-review skill
@@ -95,6 +101,7 @@
 - **متى أستخدمها / when:** before trusting a repo's .claude folder, after installing plugins, in CI for agent configs
 - **كيف / how:** Run from a reviewed, pinned version (its README warns against unversioned one-shot downloads): `npx ecc-agentshield@<pinned-version> scan --path .` (`--format text|json|markdown|html`; `--fix` applies only safe fixes; `agentshield init` writes a hardened config). Five areas: secrets, permissions, hook injection, MCP server risk, agent config. Grades A–F; exit code 2 on critical, usable as a CI gate (GitHub Action affaan-m/agentshield@v1). With ECC installed: /security-scan. Not run in this session. **أرقام / params:** exit 2 on critical
 - **تثبيت / install:** `npx ecc-agentshield@<pinned-version> scan --path .`
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/agentshield; https://github.com/affaan-m/ECC commands/security-scan.md
@@ -121,6 +128,7 @@
 - **ماذا / what:** أضف بموافقة المستخدم قواعد منع تحمي مجلدات المفاتيح وملفات البيئة وتمنع أوامر التنزيل والتنفيذ والاتصال البعيد. — With consent, add deny rules that protect key folders and env files and block pipe-to-shell and remote-shell commands.
 - **متى أستخدمها / when:** hardening a machine or project where Claude runs with broad permissions
 - **كيف / how:** Through the update-config skill, add to permissions.deny: `Read(~/.ssh/**)`, `Read(~/.aws/**)`, `Read(**/.env*)`, the same for Edit/Write, `Bash(curl * | bash)`, `Bash(wget * | sh)`, `Bash(ssh *)`, `Bash(scp *)`, `Bash(nc *)`. Explain each rule; keep a narrow allowlist instead of broad bypass modes.
+- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/ECC the-security-guide.md (deny baseline); https://code.claude.com/docs/en/settings
@@ -139,6 +147,7 @@
 - **ماذا / what:** شغّل أي أداة أو كود منزّل في مجلد مستقل وبيئة متغيرات فارغة، حتى لا يقرأ مفاتيحك أو يستدعي خدمات مدفوعة. — Run downloaded tools or code in their own folder with an empty environment so they cannot read your keys or call paid services.
 - **متى أستخدمها / when:** testing a new CLI or package, analysing an untrusted repo, running code from an archive
 - **كيف / how:** Put each download in its own new directory; keep your own scripts elsewhere; pass paths as arguments; run Python with `-I` so a planted json.py next to the script cannot hijack imports. Use `env -i PATH=$V/bin:/usr/bin:/bin HOME=$V/home TOOL_FLAGS…` so cloud credentials, API keys and a `claude` binary on PATH are invisible (Graphify, for example, would otherwise auto-select a paid backend). Work on a copy when the tool writes into the scanned folder. For heavier isolation: a container with `--network=none`, `--cap-drop=ALL`, `--security-opt no-new-privileges`, a non-root user. Verified here: graphify ran under env -i with HOME in the venv; no files appeared in the real HOME and the repo stayed unchanged.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`key:graphify`](../requirements.md#req-key-graphify)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md`
 - **المصدر / source:** Claude Code environment guidance on untrusted downloads; graphify distillation §3 (scrubbed env); https://github.com/affaan-m/ECC the-security-guide.md
 
@@ -158,9 +167,41 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/ECC skills/operator-approval-loop, skills/loop-design-check
 
+## Extended toolbelt (2026-10-18)
+
+#### SEC-17 · Semgrep CE: تشغيل قواعد تحليل ثابت على مستودع وفرز · Semgrep CE: Run pattern-based SAST rules over a repo and triage findings · 📦 بأمر تثبيت / one install
+- **ماذا / what:** تشغيل قواعد تحليل ثابت على مستودع وفرز النتائج. — Run pattern-based SAST rules over a repo and triage findings. (Semgrep CE, ★17.1k, LGPL-2.1).
+- **متى أستخدمها / when:** sast tasks the user has the right to run
+- **كيف / how:** `pip install semgrep`. Verified here 2026-10-18: semgrep 1.181.0; rule packs are fetched from the registry when scanning (semgrep ). Licence note: weak copyleft.
+- **تثبيت / install:** `pip install semgrep`
+- **يحتاج / needs:** [`pip:semgrep`](../requirements.md#req-pip-semgrep)
+- **الرخصة / license:** LGPL-2.1
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/semgrep/semgrep
+
+#### SEC-18 · Gitleaks: كشف الأسرار المسرّبة في تاريخ git · Gitleaks: Detect committed secrets across git history · 📦 بأمر تثبيت / one install
+- **ماذا / what:** كشف الأسرار المسرّبة في تاريخ git. — Detect committed secrets across git history. (Gitleaks, ★30.1k, MIT).
+- **متى أستخدمها / when:** secrets tasks the user has the right to run
+- **كيف / how:** `download the linux release binary from github.com/gitleaks/gitleaks/releases`. Licence note: permissive.
+- **تثبيت / install:** `download the linux release binary from github.com/gitleaks/gitleaks/releases`
+- **يحتاج / needs:** [`gitleaks`](../requirements.md#req-gitleaks)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/gitleaks/gitleaks
+
+#### SEC-19 · Trivy: فحص ملفات القفل والحاويات والبنية ككود بحثًا · Trivy: Scan lockfiles, containers and IaC for CVEs and misconfigurations · 📦 بأمر تثبيت / one install
+- **ماذا / what:** فحص ملفات القفل والحاويات والبنية ككود بحثًا عن ثغرات. — Scan lockfiles, containers and IaC for CVEs and misconfigurations. (Trivy, ★38.5k, Apache-2.0).
+- **متى أستخدمها / when:** dependencies tasks the user has the right to run
+- **كيف / how:** `install script from aquasecurity/trivy contrib/install.sh (vuln DB ~50 MB)`. Licence note: permissive.
+- **تثبيت / install:** `install script from aquasecurity/trivy contrib/install.sh (vuln DB ~50 MB)`
+- **يحتاج / needs:** [`trivy`](../requirements.md#req-trivy)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/aquasecurity/trivy
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: MIT (14) · Apache-2.0 (1) · — (1)
+- الرخص / licences: MIT (15) · Apache-2.0 (2) · LGPL-2.1 (1) · — (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

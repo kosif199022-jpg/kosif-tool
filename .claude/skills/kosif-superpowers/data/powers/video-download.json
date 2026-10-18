@@ -9,6 +9,10 @@
   "how": "python3 scripts/fetch_video.py URL [URL…] -o clips/ --quality 1080 ؛ سلسلة بدائل: bv*+ba/b ← bv*+ba/b/best ← إعادة بمحاكاة متصفح (Safari/Chrome عبر curl_cffi). 8 أجزاء متوازية، 10 إعادات.",
   "params": "--concurrent-fragments 8 · --retries 10 · --socket-timeout 30 · -o '%(title).120B [%(id)s].%(ext)s'",
   "install": "pip install yt-dlp curl_cffi",
+  "requires": [
+   "python3",
+   "yt-dlp"
+  ],
   "license": "Unlicense (yt-dlp)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
@@ -39,6 +43,10 @@
   "how": "python3 scripts/fetch_video.py --urls links.txt -o clips/ ؛ سطور تبدأ بـ# تُتجاهل؛ الخروج غير صفري إن فشل رابط.",
   "params": "manifest.json: url,file,duration,width,height,fps,vcodec,acodec,title,uploader,license",
   "install": "",
+  "requires": [
+   "python3",
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
@@ -68,6 +76,9 @@
   "how": "--quality 720 ← bv*[height<=720]+ba ؛ --quality audio ← -x --audio-format m4a",
   "params": "",
   "install": "",
+  "requires": [
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
@@ -97,6 +108,10 @@
   "how": "--safe ← ffmpeg -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart (أصل Cinema C Photos-SAFE)",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
@@ -127,6 +142,9 @@
   "how": "--cookies cookies.txt ؛ لا تحفظ الكوكيز في المستودع ولا تطبعها ولا تُرسلها لأحد؛ تخص حساب المستخدم فقط.",
   "params": "",
   "install": "",
+  "requires": [
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "owner-upload:8cc9be77-c32.sh"
@@ -156,6 +174,10 @@
   "how": "--impersonate safari|chrome ؛ يُكتشف تلقائيًا من --list-impersonate-targets",
   "params": "",
   "install": "pip install curl_cffi",
+  "requires": [
+   "python3",
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py",
@@ -186,6 +208,10 @@
   "how": "python3 scripts/fetch_video.py --update ؛ --doctor يفحص yt-dlp وffmpeg والمحاكاة",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
@@ -215,6 +241,9 @@
   "how": "إن فشل الرابط هنا: اطلب من المستخدم رفع الملف، أو شغّل السكربت على جهازه ثم يرفع الناتج.",
   "params": "",
   "install": "",
+  "requires": [
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/video-download.md"
@@ -244,6 +273,9 @@
   "how": "اقرأ license وuploader من manifest.json، واذكرهما في STYLE.md وفي تسليم الفيلم.",
   "params": "",
   "install": "",
+  "requires": [
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
@@ -273,6 +305,13 @@
   "how": "انظر proofs/ffmpeg-montage وفصل FOOT وSYNC وTRANS.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "imagemagick",
+   "yt-dlp",
+   "pip:faster-whisper",
+   "pip:librosa"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/video-download.md"

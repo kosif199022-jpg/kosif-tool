@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الكتابة واللغة — Writing & language · **البادئة / prefix:** `PROMPT` · **البيانات / data:** `data/powers/prompt-craft.json` · **بحث / search:** `python3 scripts/powers.py family prompt-craft`
-**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [prompt-optimizer.md](../prompt-optimizer.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [prompt-optimizer.md](../prompt-optimizer.md) · [requirements.md](../requirements.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 
@@ -25,6 +25,7 @@
 - **ماذا / what:** قرر أولًا: هل يريد المستخدم برومبت أفضل (لا تنفّذه)، أم إنجاز المهمة (لا تعرض برومبت)، أم الاثنين، أم أن Claude نفسه يكتب برومبت لغيره؟ — Decide the mode first: better prompt only, do the task, both, or Claude writing a prompt for someone else.
 - **متى أستخدمها / when:** Any request that mentions a prompt, and every time Claude writes a brief, a system prompt or a generator call.
 - **كيف / how:** a /optimize, optimize:, "improve this prompt", حسّن البرومبت، ظبطلي البرومبت → return the prompt, execute nothing. b normal task → clarify internally, no visible rewrite, never change scope, priority or authorization. c "improve and run" → short improved version, then run only the authorized part. d Claude-authored (subagent brief, scheduled task, app system prompt, image/video call, another model's API call) → apply the whole method silently. Then pick the target: Claude chat/API, system prompt, Claude Code task, other LLM, image, video, music.
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner); https://github.com/Hashaam101/prompt-optimizer (no license: ideas paraphrased, link only); references/prompt-optimizer.md §2
 
@@ -32,6 +33,7 @@
 - **ماذا / what:** قبل تحسين أي برومبت جمّد كل رقم ومسار ورابط وحساب واسم واقتباس، ثم افحص النسخة المحسنة آليًا. — Freeze every number, path, URL, handle, name and quote before improving, then check the improved prompt mechanically.
 - **متى أستخدمها / when:** Every /optimize request and every rewrite of a user's brief into a structured prompt.
 - **كيف / how:** Ledger: goal verb; numbers, units, durations, ratios, dates; paths, URLs, @handles, names, brands; quoted strings and examples; exclusions; audience; language and dialect; output medium; stated constraints. Check: python3 -I scripts/anchor_gate.py --before raw.txt --after optimized.txt --mode prompt --text → drops fail (exit 2), additions are listed (each must be a stated assumption). Language, dialect and medium are checked by eye. Tested on an Egyptian reel request: the short rewrite lost 30, @kosif, src/brand/logo.svg and the URL → REVIEW; the sectioned brief → PASS. **أرقام / params:** exit 0 PASS / 2 REVIEW / 64 usage
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** original (this skill)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py`
 - **المصدر / source:** scripts/anchor_gate.py --mode prompt; owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (preservation list)
@@ -114,6 +116,7 @@
 - **ماذا / what:** اكتب التكليف لزميل قدير بلا سياق: الهدف وسببه، المسارات، النمط المتبع، ما لا يُمس، الفحص المطلوب، ماذا يفعل إن تعطل، وشكل التسليم وطوله. — Write the brief for a capable colleague with zero context.
 - **متى أستخدمها / when:** Delegating to a subagent, a scheduled task, a parallel session or a workflow step.
 - **كيف / how:** Goal + why; exact paths, symbols, URLs; the pattern file to copy; do-not-touch list; ask before destructive or external actions; the command to run and what "done" means; "if blocked, stop and report, do not work around it"; return format and size (e.g. at most 10 bullets with file:line). Research subagents: tight scope, condensed findings with sources. Reviewers: report only correctness and requirement gaps. Explore → plan → implement → verify for multi-file work; skip the plan when the diff fits in one sentence. Template in §8.3.
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://code.claude.com/docs/en/best-practices (paraphrased); references/prompt-optimizer.md §7.3
 
@@ -121,6 +124,7 @@
 - **ماذا / what:** الهوية ثم التعليمات ثم الأمثلة ثم السياق؛ النماذج المفكرة تأخذ أهدافًا ومعايير، وغيرها تأخذ خطوات وصيغة صريحة. — Identity, instructions, examples, context; reasoning models get goals and criteria, others get explicit steps and format.
 - **متى أستخدمها / when:** Writing prompts for a non-Claude model or API.
 - **كيف / how:** Developer or system role holds the rules; use the platform's structured-output feature; diverse few-shot examples; reusable content first for caching; pin the model version and re-run evals on upgrade; prefill or partial completion only where that API supports it; temperature and sampling tuned on your own evals.
+- **يحتاج / needs:** [`key:openai`](../requirements.md#req-key-openai)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://developers.openai.com/api/docs/guides/prompt-engineering (paraphrased, link only)
 
@@ -128,6 +132,7 @@
 - **ماذا / what:** فقرة واحدة بترتيب الخانات: الموضوع، الفعل، المكان، اللقطة والعدسة، الضوء ومصدره واتجاهه، اللوحة والأسلوب والخامات، المقاس؛ عدسة واحدة وضوء رئيسي واحد. — One paragraph in slot order with one lens idea and one key light.
 - **متى أستخدمها / when:** Any still-image generation request, or Claude calling an image tool.
 - **كيف / how:** Subject → action → environment → shot and lens → light source and direction → palette, style, materials → aspect. On-image text in quotes with placement (keep Arabic text exact). Locks repeated word for word across a series. Style by visible properties, not living-artist imitation. No hype tokens (8k, masterpiece, ultra-detailed, trending). Negatives in the platform's negative field or as positive replacements ("empty room"). Variants change one dimension. Platform syntax and tested forges: GEN-06, GEN-10, GEN-12.
+- **يحتاج / needs:** [`key:video-gen`](../requirements.md#req-key-video-gen)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (VISUAL_PROMPT_CORE); references/powers/ai-generation.md GEN-01…GEN-06
 
@@ -165,6 +170,7 @@
 - **ماذا / what:** قوائم طلبات يجب أن تفعّل وضع التحسين وأخرى يجب أن تنفّذ مباشرة، مثل "نفّذ إصلاح برنامج المحاسبة". — Lists of requests that must route to optimize-only and requests that must simply be done.
 - **متى أستخدمها / when:** Editing the skill description or the optimize triggers.
 - **كيف / how:** Optimize-only: /optimize, optimize:, improve this prompt, rewrite my system prompt, حسّن البرومبت ده، ظبطلي البرومبت، اكتب لي برومبت لـ Midjourney، "/optimize أصلح زر المراجعة" (execute: false). Just do it: نفّذ الفيديو، لخّص الملف، احسب الفاتورة، fix the login bug، اعمل ريل عن القهوة، "نفّذ إصلاح برنامج المحاسبة" (executes if authorized). Both: "improve this prompt and run it". Music lyrics go to the music family first. A description that fires too often needs more specific trigger words.
+- **يحتاج / needs:** [`key:video-gen`](../requirements.md#req-key-video-gen)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (SELF_EVOLUTION_EVAL optimize_* cases)
 
@@ -172,6 +178,7 @@
 - **ماذا / what:** سلوك النماذج يتغير مع كل إصدار؛ لا تجمّد ادعاءات خاصة بنموذج، وأعد قراءة صفحة المزوّد وأرّخ ملاحظتك. — Model behaviour changes each release; re-read the vendor page and date your note instead of freezing per-model claims.
 - **متى أستخدمها / when:** Before relying on a model-specific trick (prefill, thinking controls, effort defaults, formatting defaults).
 - **كيف / how:** Check the vendor's current prompting and effort pages; when docs and older blog posts disagree, the live docs win (for example on prefill). Write "as of <date>" next to any per-model note. Machine facts (installed tools, versions) go in the environment snapshot: python3 scripts/probe_env.py.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (read 2026-10-16, paraphrased); references/prompt-optimizer.md §13
 

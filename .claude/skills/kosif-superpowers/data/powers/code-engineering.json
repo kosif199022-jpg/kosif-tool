@@ -11,6 +11,10 @@
   "how": "Step 0 — check which search channels work and say which you skipped: `rg --files`, `python3 -m pip --version`, `npm --version`, `gh auth status`, the MCP/deferred tool list, `ls ~/.claude/skills .claude/skills`. Then search in order: this repo → package registries (`pip index versions X`, `npm view X version`) → MCP servers and skills → GitHub (`gh search repos <kw> --sort stars`) → web. Score candidates on fit, maintenance, community, docs, licence, dependencies. Decide: exact maintained MIT/Apache match → Adopt; partial → Extend with a thin wrapper; several weak matches → Compose 2–3 small packages; none → Build, informed by what you read.",
   "params": "",
   "install": "",
+  "requires": [
+   "node",
+   "python3"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -39,6 +43,10 @@
   "how": "With the Context7 MCP (🔑 if connected): resolve-library-id with the full question → pick by exact name, reputation and the user's version → query-docs; at most 3 calls per question. Without it: WebFetch the official docs (many sites serve /llms.txt), `pip show X`, `npm view X version`, `<tool> --help`, read the installed source. Cite the version you read. Redact secrets from queries. If still unsure, say so.",
   "params": "≤3 doc calls per question",
   "install": "",
+  "requires": [
+   "node",
+   "claude:tools"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -67,6 +75,9 @@
   "how": "1) `python3 -m venv $SCRATCH/venvs/<name>` (or `uv venv`); 2) `$V/bin/pip install -q \"<pkg>==<exact version>\"` — pin it; 3) run the smallest real command with a scrubbed environment (`env -i PATH=$V/bin:/usr/bin:/bin HOME=$V/home`) so it cannot read keys or call paid backends; 4) record the command, exit code, timing and output path; 5) only then call it present/verified. Example in this skill: graphifyy 0.9.91 + [mcp] installed in 15.8 s and mapped 13 files in 1.49 s.",
   "params": "pin exact versions; scrubbed env",
   "install": "python3 -m venv V && V/bin/pip install \"<pkg>==<ver>\"",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md"
@@ -97,6 +108,9 @@
   "how": "Read in this order: README / CLAUDE.md / AGENTS.md → manifests (package.json, pyproject, go.mod) and lockfiles → entry points (main, CLI, routes) → test layout and how to run it → CI config → `git log --oneline -20` and `git log --stat -5` for what changes often. Then map the code (GRAPH-16: build a graph, read god nodes and communities). Output: a one-page onboarding note (purpose, layers, entry points, commands, conventions, risky areas) and, with consent, a starter CLAUDE.md.",
   "params": "",
   "install": "",
+  "requires": [
+   "git"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -123,6 +137,7 @@
   "how": "Answer in order: Code (entry points, callers, consumers, generated artifacts); Data (schemas, caches, serialization); Interfaces (APIs, file formats, CLIs and who uses them); Tests (which ones prove success); Docs; Release (order, compatibility window, rollback, irreversible effects). Evidence only from real imports, routes, `git grep -n`, graph `affected` (GRAPH-04) and tests; mark unknowns 'unverified'. After the change: did it solve the original issue, did the diff exceed scope, does the evidence cover the criteria (not just 'the command ran'), are docs synced, is temporary code gone.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -149,6 +164,7 @@
   "how": "Edit: list importers (`git grep -n \"from x import\\|require('x')\"` or GRAPH-04), affected public functions, field names/structure/date format of any data file (use synthetic values), and quote the instruction. New file: who will call it, proof that no existing file already does the job, its schema. Destructive command (rm, forced checkout, find -exec): what exactly is removed and how to undo. 'Are you sure?' always answers yes; concrete facts force real investigation. Can be enforced by a PreToolUse hook (GateGuard).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -176,6 +192,7 @@
   "how": "Sample 3–5 sibling files: naming, error handling, logging, tests, file layout, imports, comments, language of messages (this repo: bilingual Arabic/English help texts). Where files disagree, pick one rule per conflict and say why. When adding an integration, copy the closest existing one's structure exactly (config keys, error type, test style). Optionally record the rules in a short style file.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -202,6 +219,7 @@
   "how": "RED: a test that states the behaviour and fails for the right reason. GREEN: the smallest change that passes. REFACTOR: improve structure with tests green. Bugs: reproduce as a failing regression test first, fix to green, keep the test. Changed requirements: update the tests to the new spec first, then the code. Coverage target ~80% where meaningful (ECC default) — coverage is evidence, not truth; never delete or weaken a test to go green.",
   "params": "coverage ≈80% target",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -229,6 +247,12 @@
   "how": "`set -o pipefail`. 1) build — stop if it fails; 2) types (`tsc --noEmit`, `pyright`/`mypy`); 3) lint (`ruff check`, `npm run lint`); pipe long output through `sed -n '1,30p'` rather than `head` so success is not killed by SIGPIPE; 4) tests with coverage; 5) secret and debug grep (`sk-`, `api_key`, `console.log`, `debugger`); 6) `git diff --stat` and read the diff. Report: Build / Types / Lint / Tests / Security / Diff, then READY or NOT READY with the issues. For video work the same loop is build → preview → ffprobe duration/fps/audio → sampled frames → diff.",
   "params": "6 phases; rerun ≈ every 15 min of edits",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "git",
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -256,6 +280,7 @@
   "how": "Checkpoint: verify clean state → commit or stash → log `date | name | sha` (e.g. .claude/checkpoints.log). Regression eval: baseline SHA, X/Y checks passed, compare after the change. Capability eval: checklist of new behaviours. Graders: code (test, grep, build = PASS/FAIL), model (1–5 rubric), human (risk LOW/MED/HIGH). pass@k = at least one of k runs succeeds (70% → 91% at k=3); pass^k = all k succeed (70% → 34% at k=3) — use pass^k for critical paths and regressions (target 100%). Keep a REGRESSION.md of each module's consumers and its acceptance command.",
   "params": "pass@3 >90% for capability; pass^3 = 100% for critical paths",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -283,6 +308,9 @@
   "how": "1) Reproduce with the smallest reliable case; capture environment and the exact failure. 2) Diff working vs broken; one hypothesis per experiment. 3) Fix the root cause with the smallest reversible change. 4) Add a regression test that fails before and passes after. 5) Review correctness and edge cases before style. 6) Verify the requested postcondition (observe the behaviour). Never retry blindly after an uncertain, half-applied risky change: inspect the actual state first.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:hypothesis"
+  ],
   "license": "owner",
   "proof": [],
   "proof_scope": "none",
@@ -311,6 +339,7 @@
   "how": "Detect the build system; run it; group errors by class; fix the first root error (later ones often cascade); rebuild after each group. Do not touch architecture, rename things or 'improve' unrelated code. Never weaken linter/formatter/tsconfig rules to get green (ECC blocks such edits with a config-protection hook). Record what each fix was for.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -338,6 +367,7 @@
   "how": "Silent failures: grep for empty catch/except, `except Exception: pass`, defaults that hide errors, missing error propagation, ignored return codes. Click-path: for each interactive action, list its handler's calls in order and, for each call, the state it reads/writes/resets; build a map `action → {sets, resets}`; check whether a later call resets what an earlier one set, whether the final state matches the label, and async races. The same idea applies to animation timelines: a later tween can silently override an earlier property.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -365,6 +395,7 @@
   "how": "Prerequisites: operation, correctness gate, metric (wall time, p95, rows/s, cost/run, memory), baseline, budget (max variants, time, spend). Loop: measure baseline → find the bottleneck from evidence → variants that each test ONE hypothesis → same input shape → reject incorrect, unsafe or irreproducible ones → promote the fastest safe one → codify it in a script/config → rerun baseline vs winner. Keep a table: variant | hypothesis | command | time | correct? | notes. Stop when within noise, correctness fails or budget is spent.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -393,6 +424,7 @@
   "how": "Typed error classes carrying cause and context; user-facing messages that leak nothing sensitive. Retry only transient errors (timeouts, 429, 5xx) with exponential backoff + jitter and a cap; never retry validation or auth errors. Circuit breaker after N consecutive failures. Make writes idempotent (keys, temp file + rename). Log once at the boundary. No blind retry of a half-applied operation: check state first.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -421,6 +453,7 @@
   "how": "Order: logic and edge cases → error handling → security (inputs, authz, injection, secrets) → performance → tests (do they test behaviour?) → readability. Each finding: file:line, severity CRITICAL/HIGH/MEDIUM/LOW, evidence, suggested fix; group by file. Built-in skills in Claude Code: /code-review (effort low…max; --comment posts inline PR comments; --fix applies findings) and /simplify for reuse/simplification. Report what you did not review.",
   "params": "4 severity levels",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -447,6 +480,11 @@
   "how": "Fetch the diff (`gh pr diff <n>` or the GitHub MCP pull_request_read). In one message run: code-reviewer, comment-analyzer (comment rot), pr-test-analyzer (behavioural coverage), silent-failure-hunter, type-design-analyzer. Merge, dedupe, verify each serious finding (AGENT-14). Post with the GitHub MCP review flow: create a pending review → add_comment_to_pending_review per finding → submit. Needs the GitHub connector or `gh auth`.",
   "params": "",
   "install": "",
+  "requires": [
+   "gh",
+   "mcp:github",
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -473,6 +511,9 @@
   "how": "1) Confirm tests are green (add characterization tests if coverage is thin). 2) Small behaviour-preserving steps, each followed by tests. 3) Dead code: find candidates with tools (knip, ts-prune, vulture, `graphify affected` showing no dependents), remove one group at a time, rebuild and test after each. 4) Focus on recently modified code unless asked for more. 5) Commit per step so rollback is trivial.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:graphify"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -500,6 +541,7 @@
   "how": "File docs/adr/NNNN-<slug>.md (numbered, never edited after acceptance; supersede instead). Fields: context; decision drivers; options considered; trade-offs; failure modes; decision; consequences; kill/review criteria. Claims about the architecture must come from the code and live constraints, not imagined topology. Keep a CONTEXT.md glossary for domain terms separate from ADRs.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -526,6 +568,7 @@
   "how": "Pipeline: regex/parser → cleaner → confidence score per item. Confidence ≥0.95 → output directly; below → a model validates or fixes that item only. Typical regex coverage 95–98% of items. Exact numbers (sums, timings, allocations) are computed by code and then frozen; prose arithmetic is never final.",
   "params": "use when >90% of inputs follow a pattern; confidence cut 0.95",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -554,6 +597,9 @@
   "how": "key = sha256(file bytes + tool version + prompt/config version); store results by key; write the manifest only after a successful run (a crash must not corrupt the next diff); refuse to overwrite a larger output with a much smaller one without --force (shrink guard). Example: skip re-rendering unchanged scenes; graphify uses this for its AST and semantic caches.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:graphify"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -581,6 +627,9 @@
   "how": "Read `git log --oneline -15` to match the message style (Conventional Commits if the repo uses them). Review `git diff --staged`: no secrets, no debug prints, no stray files. Commit only when the user asked; never force-push or rewrite shared history without explicit approval; branch first if on the default branch. Report with: inspected · changed locally · verified locally · committed · pushed · blocked.",
   "params": "",
   "install": "",
+  "requires": [
+   "git"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -595,5 +644,71 @@
   ],
   "section": "التصميم والقرارات — Design & decisions",
   "source": "https://github.com/affaan-m/ECC agents/commit-reviewer, skills/terminal-ops, rules/common/git-workflow.md"
+ },
+ {
+  "id": "CODE-23",
+  "family": "code-engineering",
+  "domain": "code",
+  "name_ar": "Hypothesis: اختبارات قائمة على الخصائص تولّد مدخلات فاشلة",
+  "name_en": "Hypothesis: Property-based tests that generate and shrink failing inputs",
+  "status": "proven",
+  "what": "اختبارات قائمة على الخصائص تولّد مدخلات فاشلة وتختزلها. — Property-based tests that generate and shrink failing inputs. (Hypothesis, ★9.1k, MPL-2.0).",
+  "when": "testing tasks the user has the right to run",
+  "how": "`pip install hypothesis`. Verified here 2026-10-18: falsified 'short or small' list property and shrank the input (hypothesis 6.170.1). Licence note: weak copyleft.",
+  "params": "",
+  "install": "pip install hypothesis",
+  "requires": [
+   "pip:hypothesis"
+  ],
+  "license": "MPL-2.0",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "Testing",
+   "Hypothesis",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/HypothesisWorks/hypothesis"
+ },
+ {
+  "id": "CODE-24",
+  "family": "code-engineering",
+  "domain": "code",
+  "name_ar": "Pandera: تعريف عقود بيانات لإطارات pandas وPolars وفرضها",
+  "name_en": "Pandera: Declare and enforce schemas on pandas/Polars dataframes (data contracts)",
+  "status": "proven",
+  "what": "تعريف عقود بيانات لإطارات pandas وPolars وفرضها. — Declare and enforce schemas on pandas/Polars dataframes (data contracts). (Pandera, ★4.5k, MIT).",
+  "when": "data contracts tasks the user has the right to run",
+  "how": "`pip install pandera`. Verified here 2026-10-18: fps column contract: 29 rejected, 30/60 accepted (pandera 0.34.1). Licence note: permissive.",
+  "params": "",
+  "install": "pip install pandera",
+  "requires": [
+   "pip:pandas",
+   "pip:polars",
+   "pip:pandera"
+  ],
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "Data contracts",
+   "Pandera",
+   "toolbelt",
+   "توسعة"
+  ],
+  "section": "Extended toolbelt (2026-10-18)",
+  "source": "https://github.com/unionai-oss/pandera"
  }
 ]

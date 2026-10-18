@@ -9,6 +9,7 @@
   "how": "One ASSETS.md row per file (source, licence, author, URL). Editorial-only images never go in ads; people need model releases; AI images only when asked and declared. Faceless channels: any clip showing the speaker's face even for one frame is audio-only; sample 1 frame/s through face detection.",
   "params": "one ASSETS.md row per file",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/photos.md:11",
@@ -35,6 +36,9 @@
   "how": "python motion.py openclip URL --out clip.mp4 [--license-note '…'] (open_footage.py). Here: commons.wikimedia.org and archive.org are reachable; pexels.com, pixabay.com and NASA images answer 403 from this container — ask the user for files instead.",
   "params": "hosts *.wikimedia.org, *.pexels.com; https only; 64 KiB–500 MiB; timeout 120 s; SHA-256 sidecar .source.json (kosif-open-footage-v1)",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/open_footage.py",
@@ -61,6 +65,10 @@
   "how": "python scripts/kmotion.py fetch URL… --max 30 --only video|image [--list] [--cookies]; edit copy H.264 yuv420p CFR ≤ 60 fps + AAC 48 kHz; fetch-credits.json; duplicates skipped. The test skips here because yt-dlp is not installed. Safe single-URL variant: https only, global IPs only, ≤ 150 MB, ≤ 900 s, ≤ 720p, sha256 receipt. TikTok needs an impersonation backend (curl_cffi) — otherwise ask for the file. Downloaded media keeps its source licence: reference ≠ permission.",
   "params": "--max 30; edit copy ≤ 60 fps",
   "install": "pip install yt-dlp",
+  "requires": [
+   "python3",
+   "yt-dlp"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/fetch.py",
@@ -88,6 +96,7 @@
   "how": "shots[].query e.g. ['incense burner smoke aesthetic', 'bakhoor mabkhara']; 2–3 candidates per shot, clip ≥ shot length (or ≥ 0.67× when slowed), ≥ 720p, no watermark or burned text; credit every pin. When the host is unreachable publish an intermediary page with key frames and search buttons for the user to fetch.",
   "params": "2–3 candidates/shot; ≥ 720p",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/mimic-jumuah/study/mimic.json",
@@ -114,6 +123,7 @@
   "how": "POST /api/media (multipart, 1 MB chunks), GET/DELETE /api/media/NAME; index in workbench/media/.index.json. Accepts mp4 mov mkv webm avi m4v mp3 wav m4a aac flac ogg png jpg webp gif json txt srt; ≤ 4 GB per file.",
   "params": "≤ 4 GB/file; names ≤ 150 chars",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:58",
@@ -138,6 +148,9 @@
   "how": "Read creation_time via ffprobe (or exiftool); measure one offset per camera from a pair of clips of the same moment (--offset prefix=seconds); timeline fps = the most common clip fps; dry-run table: file, time, camera, resolution, fps, gamma.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2443-akbun-davinciresolve-timeline-chrono/SKILL.md"
@@ -161,6 +174,7 @@
   "how": "Native resolution (e.g. 3840×2160), 30 fps matching the timeline, per-window capture, enlarged cursor, mic and system audio on separate tracks, H.264/H.265 CQP 18–20, editor font ≥ 16 pt (terminal 18), notifications off, history cleared.",
   "params": "3840×2160; 30 fps; CQP 18–20",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2449-akbun-vlog-storyboard/SKILL.md"
@@ -183,6 +197,9 @@
   "how": "python scripts/kmotion.py scenes CLIP.mp4 --sheet shots.png --timeline edit.json [--split DIR --transition fade]; API scenes.detect(clip, threshold=10, min_len=.5). Ran here: tests.test_v6 ScenesTests ok (3 shots found at 2.0 s and 4.0 s ±0.15). Robust variant in decaption.analyse: 90×160 grey diff, threshold max(12, 6×median), > 4× local median over ±15 frames, cuts ≥ 5 frames apart (codecs that smear a cut over two frames).",
   "params": "threshold 10 (0–100); min 0.5 s",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/scenes.py",
@@ -210,6 +227,9 @@
   "how": "ffmpeg -i in.mp4 -vf \"fps=2,scale=320:-1,tile=3x2\" -frames:v 1 sheet.png, or select='gt(scene,0.3)' for change-driven sheets. Skip transition, blurred, first and last frames; shortlist distinct candidates with timestamps; for composed films render the chosen moment straight from the composition at each target size; animated covers loop with a ~0.4 s crossfade; check at phone size. تحققتُ منه في هذه الحاوية (ffmpeg 6.1.1، 2026-10-16) / verified in this container (ffmpeg 6.1.1, 2026-10-16).",
   "params": "scene ~0.3; loop crossfade ~0.4 s",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/101-video-skills/222-video-thumbnails/SKILL.md",
@@ -235,6 +255,9 @@
   "how": "montage.energy(clip, fps=6) + montage.pick(…); rank segments by measured motion, never guess. Basma's probe samples every clamp(D/30, 0.5, 2) s for motion, sharpness and brightness and treats motion > 45 as an internal cut.",
   "params": "energy at 6 fps",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/montage.py:105",
@@ -260,6 +283,11 @@
   "how": "Compare the first 2 s with a 2–5 s reference window: trim until mean luma is within ±20% and focus (Laplacian variance, cv2 is installed here) recovers; skip clips < 5 s; gimbal cameras need no trim. Duplicates: shot within 2 min and middle-frame luma histograms correlate ≥ 0.9 → keep the sharpest after the user confirms. Large pools: perceptual hash (dHash) with PIL + numpy.",
   "params": "±20% luma; Δt ≤ 2 min; corr ≥ 0.9",
   "install": "",
+  "requires": [
+   "pip:numpy",
+   "pip:pillow",
+   "pip:opencv"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2454-davinciresolve-cut-travelflow/SKILL.md",
@@ -286,6 +314,9 @@
   "how": "python3 scripts/omni/image_analyze.py IMAGE [--summary]; EXIF-transposed, ≤ 1600 px, Rec.709 luma. Advice triggers: clipped > 2%, crushed > 10%, range < 120, soft, noisy, colour cast, subject off the thirds grid.",
   "params": "clip ≥ 250; crushed ≤ 5; over if mean > 185 or clipped > 5%; under if mean < 60 or crushed > 15%",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:120",
@@ -311,6 +342,9 @@
   "how": "python scripts/kmotion.py mimic study REF.mp4 --out PROJECT/study → shots.jpg, strip.jpg (frame/0.5 s), text/shot_XX.png, mimic.json. Then mimic layer DIR --erase x0,y0,x1,y1 lifts the fixed design layer as overlay.png (creator handles erased, badges snapped by HSV). Ran here: tests.test_mimic all ok (frame-exact cuts, dissolve place/length, dip, exposure fades inside a shot not counted as cuts). Measure the reference — never copy its media.",
   "params": "boundaries cut/dissolve/fadeblack/fadewhite/slide*",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/mimic.py",
@@ -337,6 +371,7 @@
   "how": "kmotion analyze VIDEO --max-beat 3.0 [--transcribe] [--batch DIR]. For a scene-by-scene recreation schema sample ~12 evenly spaced frames ≤ 1024 px and describe shot type, camera motion, lighting and mood per scene, with scene N's end frame = scene N+1's start.",
   "params": "beats ≤ 3 s; 12 samples ≤ 1024 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/analyze.py",
@@ -362,6 +397,9 @@
   "how": "Jagged edges from low resolution → upscale; uniform focus blur → no; JPEG blocks or ISO noise → partial; pixelated logo → fetch the SVG. Save as name_upN.png, never overwrite the source. Modest scaling with ffmpeg scale flags=lanczos; AI upscalers (Real-ESRGAN, Topaz) need install or keys and run once on the final concat, not per segment. Source rule: long side ≥ 1.5× displayed size at max scale (1080×1920 at 1.12 → ~2400 px).",
   "params": "long side ≥ 1.5× display",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2976-pwdev-social-media/12579-asset-upscale/SKILL.md",
@@ -387,6 +425,9 @@
   "how": "kmotion timeline --example edit.json, then timeline.build(spec, out, workers, inspect) → report {seconds, transitions, audio, gate{lufs}}. Ramps [[t, speed]…] → setpts with log(); atempo chain (0.25 → atempo=0.5,atempo=0.5); ratio '1:1' → 1080×1080; overlays: text anim 'rise' with box #00000080, lower-third, logo upper-right ×.5, progress #E7B65A 4 px, captions style 'tiktok'; music ducked under clip audio at −14 LUFS. Ran here: test_v6 TimelineTests (build_film, validation, text_png) and RampTests ok.",
   "params": "example: 9:16, 30 fps, bg #0d1b2a; clip zoom 1.0→1.08 grade teal_orange, circleopen 0.6 s; ramp [[0,1],[2,.3],[4,1]]",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:34",
@@ -414,6 +455,10 @@
   "how": "python tools.py trim CLIP --from 3.2 --to 9.8 --out part.mp4 (crf 18 yuv420p, AAC 192k 48 kHz). Raw: ffmpeg -ss T -i in -to D -c:v libx264 -crf 18 -preset slow -c:a aac -b:a 192k -pix_fmt yuv420p -movflags +faststart. -c copy only when the in-point is an I-frame, otherwise 2–5 s of frozen picture; inside compositions prefer non-destructive trim props (data-media-start, trimBefore).",
   "params": "crf 18; AAC 192k",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/tools.py:247",
@@ -440,6 +485,9 @@
   "how": "python tools.py concat A.mp4 B.mp4 --out all.mp4 [--size 1080x1920 --fps 30] (pad black, anullsrc 48 kHz stereo). Same-codec clips: concat demuxer (-f concat -safe 0 -i list.txt -c copy). Mixed: per input fps=30,scale=W:H:force_original_aspect_ratio=increase,crop=W:H,setsar=1 then concat=n=N:v=1:a=1.",
   "params": "48 kHz stereo silence fill",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/tools.py:256",
@@ -464,6 +512,9 @@
   "how": "Timeline ramp [[t, speed]…] (RampTests ok here) maps time with setpts and chains atempo (each factor 0.5–2). Quick check here: setpts='if(lt(T,1),PTS,PTS*2)' runs. HyperFrames: data-playback-rate 0.1–10 (consumed source = timeline × rate) or a 'rate' lane in data-automation; later starts shift by old/rate. Slow-mo below 0.5× from 30 fps footage stutters — ask for 60/120 fps sources.",
   "params": "atempo 0.5–2 per stage; rate 0.1–10",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:64",
@@ -491,6 +542,10 @@
   "how": "python scripts/kmotion.py silence CLIP.mp4 --out cut.mp4 --threshold -35 --min 0.45 --pad 0.08. Transcript-driven alternative (HyperFrames transcript-cut.mjs): remove ranges, filler words and silences ≥ 0.8 s from word timestamps. Keep 80 ms pads so words never clip.",
   "params": "−35 dB; min 0.45 s; pad 0.08 s",
   "install": "",
+  "requires": [
+   "python3",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md",
@@ -516,6 +571,10 @@
   "how": "Freeze: extract the frame (ffmpeg -ss T -frames:v 1) and place it as an <img> clip (data-start, data-duration), deciding audio continue/trim/silence explicitly. Loop: kmotion loop --seconds 30. Dress the freeze with paper/tape/flash (HyperFrames freeze-frame-dressing, 4 s).",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md",
@@ -540,6 +599,10 @@
   "how": "Serve the site and open /studio/. Limits: 60 s project, 24 clips, 24 overlays, 48 assets, 200 MB per file, canvas 1280×720 / 720×1280 / 720×720. Projects import into the FFmpeg timeline: POST /api/studio/import → studio_import.convert() (StudioImportTests ok here).",
   "params": "60 s; 24 clips; 200 MB/file",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:1",
@@ -566,6 +629,10 @@
   "how": "Independent: each <Video> with from/trimBefore/durationInFrames. Ripple: <TransitionSeries> of <TransitionSeries.Sequence durationInFrames> wrapping <Video trimBefore>. Remotion bundles ffmpeg via npx remotion ffmpeg/ffprobe.",
   "params": "",
   "install": "cd kosif-tool/starters/remotion && npm install",
+  "requires": [
+   "ffmpeg",
+   "npm:remotion"
+  ],
   "license": "Remotion برخصة الشركة؛ @remotion/transitions غير مرخصة MIT / Remotion company license; @remotion/transitions is UNLICENSED on npm.",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10436-remotion-markup/video-editing.md"
@@ -589,6 +656,9 @@
   "how": "python tools.py stabilize CLIP --out steady.mp4 [--strength 10]: vidstabdetect shakiness=min(10,s) accuracy=15 → vidstabtransform smoothing=2 s optzoom=1 + unsharp 5:5:0.5; fallback deshake rx=ry=32. Ran here on a test clip: method 'vidstab (2-pass)', duration preserved. Prefer similarity mode and keep crop ≤ 10%; if edges bend, lower strength.",
   "params": "strength 10; crop ≤ 10%",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/tools.py:303",
@@ -614,6 +684,10 @@
   "how": "Fast: hqdn3d=4:3:6:4.5,unsharp=5:5:0.6; better/slower: nlmeans=s=3..5; archival chroma: chromanr. Reel chain: hqdn3d=1.2:1.2:3:3, Lanczos reframe, eq=contrast=1.12:brightness=-0.015:saturation=1.07:gamma=0.97, curves, colorbalance, cas=0.3. تحققتُ منه في هذه الحاوية (ffmpeg 6.1.1، 2026-10-16) / verified in this container (ffmpeg 6.1.1, 2026-10-16).",
   "params": "hqdn3d 4:3:6:4.5; nlmeans s 3–5; cas 0.3",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:chromadb"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
@@ -640,6 +714,9 @@
   "how": "python decaption.py VIDEO --out CLEAN.mp4 [--band 0.45:0.56] [--keep-credit] [--report]. Ran here: test_decaption_erases_a_burned_caption ok.",
   "params": "white V>205 S<55; yellow H 16–38 S>110 V>150; dark outline V<70 within 9 px; masks ±3 frames; Telea inpaint r 9; output crf 12",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/decaption.py:38",
@@ -665,6 +742,12 @@
   "how": "python scripts/kmotion.py privacy CLIP.mp4 --out safe.mp4 --mode pixelate|blur|box [--strength 18 --pad 0.25 --every 2 --hold 0.6] [--region x,y,w,h[,from,to]]. Detectors YuNet > Haar > skin. Here cv2 5.0 is present but has no Haar data, the YuNet ONNX is not shipped, and the skin fallback needs scipy — the test errors on that import. Manual regions work. Rules: faces ≥ 40 px tall at 4K are identifiable; one soft window over the whole path (softness ≥ 30%); mosaic block ≈ face height/4. ffmpeg crop→pixelize→overlay is verified here.",
   "params": "block = face/4; softness ≥ 30%; strength 18",
   "install": "pip install scipy  # or put face_detection_yunet_2023mar.onnx in scripts/kit/models/",
+  "requires": [
+   "ffmpeg",
+   "pip:opencv",
+   "pip:scipy",
+   "pip:onnxruntime"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/privacy.py",
@@ -693,6 +776,10 @@
   "how": "[fg]chromakey=0x00FF00:similarity=0.10..0.18:blend=0.05..0.1,despill=type=green[k];[bg][k]overlay (YUV sources chromakey, RGB colorkey). تحققتُ منه في هذه الحاوية (ffmpeg 6.1.1، 2026-10-16) / verified in this container (ffmpeg 6.1.1, 2026-10-16). Browser variant (Basma chromaMask): YCbCr chroma distance with a luma term, smoothstep soft edge between 0.55·tol and tol, mask blur W/360; auto key from four 8×8 corner patches.",
   "params": "similarity 0.10–0.18; blend 0.05–0.1; Basma key #00b140 tol 0.22",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:chromadb"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
@@ -718,6 +805,9 @@
   "how": "python edit_pack.py photo.jpg 'make the shirt red'; recolor(img, src_hex, dst_hex, tolerance=40, region, keep_shading=True) scales HSV saturation/value; also adjust, tint, paint, write, erase (blur-fill), flip. 18 Arabic colour names (ذهبي #d4a53a، كحلي #1f2d6b، عنابي #7b1e2b …). The original is kept as a <<KOSIF:ORIGINAL:sha>> key so any AI edits a program, not the bytes. Ran here: local-edit and colour-request tests ok.",
   "params": "tolerance 34–42; HSV match ≤ .6",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/edit_pack.py:36",
@@ -744,6 +834,9 @@
   "how": "Here the binary is 'convert' (ImageMagick 6), not 'magick'. Fill-crop: -resize WxH^ -gravity center -extent WxH; white→alpha: -fuzz 10% -transparent white, then -channel A -blur 0x1 -level 50%,100%; -trim +repage; WebP -quality 85; warm -modulate 100,110,105; -contrast-stretch 2%x1%. Single-colour logo backdrop alternative (Basma removeImgBG): corner colours must agree (spread ≤ 70), edge flood fill, anti-aliased alpha.",
   "params": "fuzz 10–15%; q 85",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/881-codex-seo/1954-seo-image-gen",
@@ -770,6 +863,12 @@
   "how": "npx hyperframes remove-background presenter.mp4 -o presenter.webm [--background-output plate.mp4] [--quality fast|balanced|best (crf 30/18/12)] [--device auto|cpu]; u2net human seg at 320×320, ~9 fps on CoreML (slower on CPU here). Alternatives: pip install rembg (stills/frames), MediaPipe selfie segmentation in the browser (CDN), Transformers.js image-segmentation / depth-estimation in Node (models from Hugging Face, reachable).",
   "params": "320×320 matte; quality crf 30/18/12",
   "install": "npx hyperframes remove-background in.mp4 -o out.webm",
+  "requires": [
+   "pip:torch",
+   "pip:rembg",
+   "npm:hyperframes",
+   "pip:mediapipe"
+  ],
   "license": "HyperFrames Apache-2.0؛ مكتبة u2net وأوزانها تُنزَّل عند أول تشغيل / HyperFrames is Apache-2.0; u2net weights download on first run.",
   "proof": [
    "kosif-one/vendor/hyperframes/docs/guides/remove-background.mdx",
@@ -798,6 +897,9 @@
   "how": "Three layers in lockstep with the same data-start: z1 full mp4 base, z2 headline, z3 alpha webm cut-out. Timing 0–1 s shot, 1–2 s title reveal, 2–5 s hold. Check hair and hands; never cover eyes or mouth. Photo version: title sandwiched between background and cut-out subject (≤ 3 layers).",
   "params": "5 s; 3 layers",
   "install": "",
+  "requires": [
+   "pip:z3"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/composition-patterns.md",
@@ -823,6 +925,7 @@
   "how": "Matte per frame (FOOT-31), add a 6–8 px white outline and a 20 px soft shadow, swap the backdrop on sentence boundaries from words.json.",
   "params": "outline 6–8 px; shadow 20 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-sab8a-364a5a"
@@ -848,6 +951,9 @@
   "how": "Track to a null with an OpenCV point tracker (cv2 5.0 is importable here) or manual keys every few frames + interpolation; draw the overlay in HTML at the tracked coordinates. Hide the label when the target is occluded or leaves frame; never cover the evidence. Timing: 0–1 intro, 1–2 line appears, 2–6 track.",
   "params": "6 s / 5 s beats",
   "install": "",
+  "requires": [
+   "pip:opencv"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-tracking-compositing.md",
@@ -873,6 +979,10 @@
   "how": "Four-corner keyframes (manual or an OpenCV homography) → CSS matrix3d per frame, or ffmpeg perspective=x0:y0:x1:y1:x2:y2:x3:y3 (تحققتُ منه في هذه الحاوية (ffmpeg 6.1.1، 2026-10-16) / verified in this container (ffmpeg 6.1.1, 2026-10-16).). Add matching grain and blur; finger masks + their shadow stay on top. No fake certificates or ads.",
   "params": "6 s each",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:opencv"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-tracking-compositing.md",
@@ -898,6 +1008,7 @@
   "how": "0–1 s motion, 1–3 s subject frozen, 3–4 s return: frozen frame of the person + matte overlaid on the running plate; a clean plate where the original body ghosts through. Chronophotography variant: 3 frozen, spaced poses with an opacity/colour gradient, then motion resumes — copies are time markers, not extra people.",
   "params": "4 s; 3 ghost poses in 5 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-tracking-compositing.md",
@@ -922,6 +1033,9 @@
   "how": "Driven only by seek time; period divides the clip length. HyperFrames block cinemagraph (10 s, swap the placeholder for your still + masked looping video).",
   "params": "10 s; period | duration",
   "install": "npx hyperframes add cinemagraph",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "HyperFrames Apache-2.0؛ مكتبة u2net وأوزانها تُنزَّل عند أول تشغيل / HyperFrames is Apache-2.0; u2net weights download on first run.",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/cinemagraph/cinemagraph.html"
@@ -945,6 +1059,9 @@
   "how": "0–1 s define both, 1–4 s divider moves, 4–6 s stop; linear mask + 2 px divider + date/condition label. Never change light or lens between the sides. Local: HTML clip-path inset, or ffmpeg overlay with an animated crop. Matte-vs-composite split (key pass left, final right) is a strong compositing reveal.",
   "params": "6 s; divider 2 px; wipe 600 ms–1.2 s",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-product-ads.md",
@@ -971,6 +1088,9 @@
   "how": "1.00→1.06 over 4–6 s (1–1.5%/s), ceiling 1.12, pan < 6% of width; linear or cubic-bezier(0.37,0,0.63,1) before a cut. ffmpeg: zoompan=z='min(1+0.0004*on,1.06)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=150:s=1080x1920:fps=30 (تحققتُ منه في هذه الحاوية (ffmpeg 6.1.1، 2026-10-16) / verified in this container (ffmpeg 6.1.1, 2026-10-16). — feed a source ≥ 1.5× the output to avoid zoompan jitter). Documentary hold: push 1.055 + pan 4% over 4.5 s, lower third enters 600–1100 ms.",
   "params": "1.00→1.06 / 4–6 s; max 1.12",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/photos.md:32",
@@ -997,6 +1117,9 @@
   "how": "x = 6·sin(2πt/7) + 4·sin(2πt/11), y periods 9 s / 13 s; one camera function (pan + drift + linear zoom) × depth in both Remotion and the Canvas seek version (ParallaxPhoto, 1080×1920, 5 s). Skip parallax when the long side < 1600 px or the subject can't be separated. Oversize each layer by 2× max travel + 4% and put a 1.3× copy blurred 24 px behind to hide edges; depth blur ~1 px per 100 px of distance (bg 3, mid 1), never on the subject.",
   "params": "bg 0.15 · mid 0.45 · subject 1.0 · occluder 1.4; zoom ≤ 1.10; drift ≤ 12 px; pans 30–60 px/s",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/photos.md:34",
@@ -1025,6 +1148,7 @@
   "how": "Reveal: bg scale 1.15, mid 1.06; subject 200–800 ms spring 14/120; pan 400–2600 ms; title 900–1400 ms; push 1.5%/s. Collage: 2×3 grid enters from the top-right (RTL) with 60 ms stagger over 400 ms, drifts 20 px, exits 250 ms with 40 ms stagger, hero pushes 1.06.",
   "params": "subject spring 14/120; grid stagger 60 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/photos.md:57-65",
@@ -1050,6 +1174,9 @@
   "how": "Gradient 0.6→0 over 35% of frame height, contrast ≥ 4.5:1, text ≥ 36 px; or a 40–60% black scrim, a solid pill, or stroke/shadow. Verify luminance in the caption band with ffmpeg signalstats YAVG per frame (تحققتُ منه في هذه الحاوية (ffmpeg 6.1.1، 2026-10-16) / verified in this container (ffmpeg 6.1.1, 2026-10-16).). Dark product plates: navy multiply overlay 40–55% + vignette so oversized type reads.",
   "params": "scrim 0.6→0 / 35% H; contrast ≥ 4.5:1",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/photos.md:23",
@@ -1080,6 +1207,9 @@
   "how": "0–2 s photo, 2–5 s match (perspective corner pin + scale), 5–8 s modern scene with a tuned dissolve; show the photo date; never imply a false location match; sound moves from old to modern ambience. Documentary style: warm dark #15130F, ivory #EFE6D8, red #C0392B; Amiri 700 + IBM Plex Sans Arabic 500; Ken Burns 1.0→1.08 over 6 s.",
   "params": "8 s",
   "install": "",
+  "requires": [
+   "fonts:arabic"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-cinematic-titles.md",
@@ -1105,6 +1235,7 @@
   "how": "Margins 5% / 12%; pills inherit their layer's transform; fixed depth order background → mid → cut-out subject → graphics.",
   "params": "margins 5%/12%",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/photos.md:193-199"
@@ -1128,6 +1259,10 @@
   "how": "python3 tools/kosif.py scaffold parallax-2d|viral-mixed-media|editorial <dir>; list --category photos (34 entries). Viral mixed media: beat-cut every 1–2 s, cut-outs with contact shadow, ≤ 7 words of kinetic type, grain 2–4%. Editorial: photo rig + type grid, masks and wipes 350–500 ms, one grade, grain, vignette 10–15%.",
   "params": "",
   "install": "",
+  "requires": [
+   "python3",
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/styles/parallax-2d/SKILL.md",
@@ -1155,6 +1290,7 @@
   "how": "Columns reveal with 80 ms stagger and labels below; tile wall at varied offsets drifting 10–40 px/s; collage flash variant: scanned detail crops hard-cut every 300 ms with a click per hit.",
   "params": "stagger 80 ms; flash 300 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "style:pm-oliahmed205-3e31c4",
@@ -1184,6 +1320,9 @@
   "how": "python motion.py footage CLIP --out projects/X/assets/clip.mp4 [--from 0 --dur 5 --width 1280 --fps 30] (libx264 -g 1 crf 16, Lanczos, muted, yuv420p, +faststart). In the page: <video data-start data-duration muted>; the motion-kit shim seeks currentTime = t − start, hides it outside its span and waits for 'seeked' (0.5 ms tolerance). Ran here: a 3 s test clip came out with all 90 frames as keyframes and the ready tag.",
   "params": "-g 1; crf 16; width 1280; 30 fps",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/motion.py:496",
@@ -1210,6 +1349,10 @@
   "how": "split → scale+crop to 1080×1920 + boxblur=40:2 → overlay the 1080-wide foreground centred (تحققتُ منه في هذه الحاوية (ffmpeg 6.1.1، 2026-10-16) / verified in this container (ffmpeg 6.1.1, 2026-10-16).). The montage tool picks this chain automatically (_fit_chain, MixedMontage test ok here). Screenshots never appear raw: rounded 12–16 px corners, shadow and a designed background or device frame.",
   "params": "1080×1920; boxblur 40:2; radius 12–16 px",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_fetch_lab.py:93",
@@ -1235,6 +1378,7 @@
   "how": "<div id=cam><video id=plate data-start=0 data-duration=… muted></div> + layers (#bloom, #rays, #scrim 52%→.74, #vig, #dim, #particles) + SVG + type; prepare the plate with FOOT-47. Opening: plate starts saturate(.55) brightness(.92) and blooms to full colour in 0.6 s power3.out as the hook word lands, dim overlay 0.42→0 in 0.55 s. Under kinetic type: alternate push 1.04→1.10 / 1.10→1.04 per shot (smoothstep), kick +1.8%, payoff brightness +22%.",
   "params": "1080×1920, 30 fps; push 1.04↔1.10",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:45",
@@ -1261,6 +1405,9 @@
   "how": "kmotion direct CLIP → edit.js (window.EDIT: shots, punches, captions, keys, motifs, chapters, payoff, credit, palette) → directed.html builds the GSAP timeline; sizes designed at 1080 px wide.",
   "params": "punch expo.out 0.14 s then −60% over 0.6 s; hook dim .38→0 in .55 s; ivory #F5F0E6; accent #E7B65A",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "GSAP مدمج برخصة GSAP القياسية — ليست MIT / vendored GSAP under its standard license (not MIT).",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/directed.html:44",
@@ -1285,6 +1432,10 @@
   "how": "ffprobe + audio → hyperframes transcribe → corrected transcript → storyboard.json (schemaVersion 3; layout, themeId, seed; cards[zone, startSec]) → per-card HTML → one paused master timeline → render. Footage stays untouched; the wrapper tweens between layouts.",
   "params": "",
   "install": "npx hyperframes transcribe talk.mp4",
+  "requires": [
+   "ffmpeg",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0 + MIT (مقتبس من vtake-skills)",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md",
@@ -1310,6 +1461,9 @@
   "how": "Seek video.currentTime and lottie goToAndStop(frame) from t (autoplay false). Frame example 680×840 r16; Lottie pop 0.3→1 in 0.35 s back.out(1.6). Backdrops (Basma drawBG): cover fit, blur, 5% breathing zoom on stills, dim 0–0.8.",
   "params": "lottie pop 0.35 s back.out(1.6)",
   "install": "npm i lottie-web",
+  "requires": [
+   "npm:lottie"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
@@ -1334,6 +1488,9 @@
   "how": "4K only if width ≥ 1100 px, effectiveType not 2g/3g and no saveData; on error retry 720p once; poster fallback; failsafe close 14 s; close 950 ms after 'ended'; skip when seen this session, deep link, reduced motion, saveData or deviceMemory ≤ 2; muted autoplay + sound toggle; focus trap; Escape skips. Ran here: node tools/brand_art.test.mjs → pass 5, fail 0.",
   "params": "breakpoint 1100 px; failsafe 14 s; end hold 950 ms",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.js",
@@ -1359,6 +1516,9 @@
   "how": "kmotion montage MEDIA --music track --ratio 9:16 [--grade] [--voice] [--captions]; montage.cut([dir], music, out, ratio='9:16', punch=False). Ran here: MixedMontage folder-photos-and-fit test ok. Grammar: quick ~1 s and breathing ~3 s shots, breathing shots end on downbeats, zoom punches on downbeats (2× supersampled), grades teal_orange, golden_hour, cyberpunk, vintage_film, matrix_tech, clean_commercial, magma_night, blue_hour, sodium_night; sidechain ducking; −14 LUFS / −1 dBTP.",
   "params": "quick ~1 s / breathing ~3 s; −14 LUFS",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/montage.py",
@@ -1385,6 +1545,9 @@
   "how": "python reel.py CLIP.mp4 --out FINAL.mp4 [--size 1080x1920 --model large-v3|small --music auto|none|bed.wav --style reels|tiktok|hormozi|boxed|minimal|cinema|punchy --credit '…' --transcript words.json]. Owner's recorded run IMG_9262: gate ok, −14.5 LUFS, TP −2.7, caption band 598–706. Needs faster-whisper for transcription (see SYNC).",
   "params": "intermediate crf 12; final crf 16; −14 LUFS",
   "install": "",
+  "requires": [
+   "pip:faster-whisper"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/reel.py:92",
@@ -1411,6 +1574,9 @@
   "how": "REELS.find({count, length}): count 5 (> 600 s), 3 (> 180 s) else 2, max 8; length 15–75 s (default 40); an AI picks from a timed transcript (≤ 24,000 chars). Local fallback REELS.local scores windows by words/second snapped to sentences (break on . ! ؟ ? … or > 9 s) — usable without a key. Shorts handles: 60 s + 2×15 s pre/post needs 90 s of source.",
   "params": "1–8 reels; 15–75 s",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "app/public/js/10_studio.js:4017",
@@ -1437,6 +1603,10 @@
   "how": "window.BasmaAutoEdit.run (9:16, pace med, 2 caption words); sources Openverse/Wikimedia (+ Pexels/Pixabay with keys — blocked from this container), motion-graphics inserts, SFX, VFX plan (grade, particles, grain, leak, vignette, letterbox, ≤ 4 crash-zoom accents). Needs the Basma app and its AI keys. Rule: cover silences and abstract explanation with real footage, one mood and one light across the pool.",
   "params": "",
   "install": "",
+  "requires": [
+   "imagemagick",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "app/public/js/50_autoedit.js:4",
@@ -1463,6 +1633,10 @@
   "how": "MON.run: probe in parallel batches of 3; 4-column numbered sheet; AI decides order, hook title, 0–6 lines, pace and grade; lengths snapped to beats within 0.4 s; bestWindow picks lively, sharp, well-lit windows away from cuts. Pro variant (PROMONT) adds template motion inserts.",
   "params": "≤ 24 clips; 4–180 s; snap ≤ 0.4 s",
   "install": "",
+  "requires": [
+   "imagemagick",
+   "key:unspecified"
+  ],
   "license": "",
   "proof": [
    "app/public/js/10_studio.js:1865",
@@ -1488,6 +1662,9 @@
   "how": "ffprobe first; each range must be finite, 0 ≤ a < b ≤ duration+0.03 and ≥ 0.10 s; at most 30 cuts; refuses output == input. Per cut: trim + setpts, scale=W:H:force_original_aspect_ratio=decrease, pad centred, fps, setsar=1, yuv420p; audio atrim + asetpts + aresample=48000 (+ afftdn=nf=-25 with --denoise); concat=n:v=1:a=1; --normalize appends loudnorm=I=-16:TP=-1.5:LRA=11. No-audio sources get -an. Prints a JSON receipt (duration, streams, cuts, denoised). Re-ran here on the bundled 4 s test clip with --cut 0:1.2 --cut 2:3.4 --denoise --normalize → 2.625 s, h264 480×854 24 fps + AAC. Note: loudnorm here targets −16 LUFS; the superpowers delivery target is −14 LUFS, so pass the final mix through your own loudnorm step. Status note: the code is owner material that is not vendored in this skill; the numbers above are from one run on the owner's copy on 2026-10-16 and cannot be re-run from here, so this is 📄 documented, not ✅.",
   "params": "≤30 cuts · ≥0.1 s each · afftdn nf=-25 · loudnorm I=-16 TP=-1.5 LRA=11 · crf 21 · default 480×854@24",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner package (own work)",
   "proof": [
    "owner-upload:KOSIF_SEE_ECC_Cinematic_v5/tools/video_edit.py",
@@ -1520,6 +1697,7 @@
   "how": "Transcript + time map; account for cuts already baked into the source (never reveal stray frames of an adjacent take when returning from B-roll); when shifting a shot boundary keep the absolute timing of spoken words; choose fps from the actual source; do not upscale without reason; long videos get fewer inserts and more reading time; no presenter → no splits or presenter captions. Names, numbers, interfaces and quotes must match the source; ask about an unintelligible phrase rather than inventing it. Presenter splits: a restrained push entry only for horizontal splits with one presenter; the insert keeps its final crop through the slide; the presenter is re-cropped, never squeezed (crop aspect = card aspect).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "unknown (reference only)",
   "proof": [
    "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md",
@@ -1551,6 +1729,7 @@
   "how": "If something is missing say exactly what and the smallest way forward; never present HTML, code or a plan as a finished video; work on a copy (an installed skill directory may be read-only). Short tests: light and dark B-roll, B&W, typography, one split, one mask. Keep layers clean (source, inserts, text, masks, sound) and the previous version. Rights: a Pinterest find does not establish usage rights; generation is optional and needs an agreed budget; generated imagery is never presented as historical evidence. Deliver the MP4, an editable project, a dependency list and sources; if music was added, also a version without it. 'Contact sheets and numbers do not replace watching and listening'; never report an unperformed check as passed.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "unknown (reference only)",
   "proof": [
    "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md"
@@ -1581,6 +1760,9 @@
   "how": "Ran here (V8) on a 10 s 30 fps clip with a keyframe every 60 frames, asking for 1.3–3.3 s (60 frames from frame 39): output seeking with -c copy started at the next keyframe (frame 60) → 41 frames, 1.367 s; input seeking with -c copy kept 62 frames / 2.167 s; re-encoding (`ffmpeg -ss 1.3 -to 3.3 -i in.mp4 -c:v libx264 …`) gave exactly 60 frames, 2.000 s, starting at frame 39. Use -c copy only for rough, keyframe-aligned trims; use proxies (scale=960:-2, ultrafast, crf 28) for previews.",
   "params": "copy: 41 or 62 frames vs requested 60; re-encode: 60",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
@@ -1614,6 +1796,10 @@
   "how": "The model's job is structure: transcript, topics, dead sections, the EDL and scaffolded ffmpeg commands. Checkpoint the project before and after editor or audio-workstation changes; an API read-back is not proof it was saved; keep rendered media, the editable project and the approval as separate states; audition generated music for silence.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "npm:remotion"
+  ],
   "license": "MIT (ECC, (c) 2026 Affaan Mustafa)",
   "proof": [
    "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
@@ -1643,6 +1829,10 @@
   "how": "1 inspect (ffprobe; originals read-only; timestamped deterministic frame samples) → 2 analyse (separate scene cuts from camera motion; classify cut/fade/wipe/slide/zoom-blur with measured ranges; keep uncertainty explicit) → 3 Arabic overlay (region geometry, in/out spans, font candidates not identities ARAB-X02, HarfBuzz shaping, mixed script and digits) → 4 audio (original when authorised; no invented word precision) → 5 assets (Pinterest = mood only; licensed media; never copy watermarks) → 6 render only with an exposed executor, else return the plan marked EXECUTOR_NOT_EXPOSED → 7 QA gates (MP4 exists, codec/duration/fps, non-frozen motion, safe zones, Arabic legibility, overlay timing, licence manifest, before/after storyboard; any failure blocks an 'exact match' claim) → 8 deliver MP4 + editable JSON shot plan + storyboard + font-candidate report + discrepancy summary. Not this route: a still image with the same font, Suno lyrics, motion from audio without a reference video, imitating email wording, or only downloading a link.",
   "params": "8 steps; failed gate → no 'exact match'",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "key:video-gen"
+  ],
   "license": "owner",
   "proof": [
    "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md"
@@ -1672,6 +1862,9 @@
   "how": "`python3 .claude/skills/kosif-superpowers/scripts/fetch_reference.py <page-or-media-url> [--list | --pick N] [--frames 8 --scene 0.3 --max-mb 400]`; outputs reference.mp4, probe.json, contact.png, cuts.json, palette.json, REPORT.md; blob: players need the browser's network panel first (references/reference-inspection.md). Measured values go to STYLE.md *Observed*; nothing fetched is committed.",
   "params": "--max-mb 400; --scene 0.3; 8 frames; sequential bounded HLS segments",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_reference.py",

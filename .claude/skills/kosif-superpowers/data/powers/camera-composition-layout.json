@@ -8,6 +8,7 @@
   "how": "MOTION.zoomTrack(t, [[t,scale],...], preset).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:88",
@@ -27,6 +28,7 @@
   "how": "grid-template-columns 196px | 1fr | 300px; breakpoints 1550/1280/1024/768/480; 100dvh with @supports fallback.",
   "params": "topbar 72px (64px mobile) blur 12px; rails 184-196px & 300px; bottom nav min-height calc(68px + env(safe-area-inset-bottom)); padding 24/16/12px",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-audit-pro/app/globals.css:308",
@@ -47,6 +49,7 @@
   "how": "inset-inline-*, inset-block-*, padding-inline, margin-block, border-inline-start; html lang=ar dir=rtl.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-audit-pro/app/globals.css",
@@ -66,6 +69,7 @@
   "how": "makePrompts style string switch on c.ratio.",
   "params": "margins 10%; negative space 40–50%",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:101"
@@ -84,6 +88,9 @@
   "how": "shots[] in stickman.mjs mapped to clips 1–5; video prompt camera 'steady with subtle horizontal follow', final clip 'very slow push-in'; 9:16 with a defined floor line.",
   "params": "5 shot sizes; push-in on clip 5",
   "install": "",
+  "requires": [
+   "node"
+  ],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/profiles/stickman.mjs:31,36-37"
@@ -102,6 +109,7 @@
   "how": "character-romance image prompt j=0 -> 35 mm wide, j=1 -> 85 mm close-up, both 9:16.",
   "params": "35 mm wide; 85 mm close-up",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/profiles/character-romance.mjs:18"
@@ -120,6 +128,7 @@
   "how": "camera constant in food-flow prompts; identical in every clip.",
   "params": "45°; 50 mm; shallow DOF",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/profiles/food-flow.mjs:32"
@@ -138,6 +147,7 @@
   "how": "const camAt=K3.cameraKeys([[t,x,y,z,lx,ly,lz],...]); const [p,l]=camAt(t); camera.position.copy(p); camera.lookAt(l).",
   "params": "keys: [t, camX, camY, camZ, lookX, lookY, lookZ]",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:414"
@@ -156,6 +166,7 @@
   "how": "cam = lerp(0, 630, smooth(t/12)); zoom = 1 + .10·smooth(t/12) around (640,500); moon ×.035, far skyline ×.19, mid buildings ×.68, street & hero ×1.0, foreground ×1.38; letterbox bars 36 px.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:124"
@@ -174,6 +185,7 @@
   "how": "direct.plan(segs, shots[{box, cx, cy}], stress, 1080, 1920, dur): every key with t in the face shot has y > (box.y+box.h)·1920; captions y ≤ 0.80·1920; proplan safe_area text_top_pct 15.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/tests/test_directors.py:30",
@@ -193,6 +205,7 @@
   "how": "video_prompt_forge lint multi_camera",
   "params": "1 move per shot",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:24",
@@ -212,6 +225,7 @@
   "how": "direct.plan layout",
   "params": "keyY = clip(face bottom + 1.5 % H, 0.50 H, 0.66 H); capY = clip(keyY + 13.5 % H, 0.64 H, 0.80 H); motif x 0.20 W or 0.80 W opposite the face",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/direct.py:108",
@@ -231,6 +245,7 @@
   "how": "applyCamera(world, cameraAt(camKeys,t), 1080, 1920)",
   "params": "sample punches: 1.0->1.08 at 3.4 s, y -40 & 1.04 at 7.2 s, 1.12 & rot -1.5deg at 10.4 s, settle 1.02 at 12 s",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/starters/html-canvas/timeline.js:52",
@@ -250,6 +265,7 @@
   "how": "MOTION.breathe(tl, cam, at, dur, {creep, drift}).",
   "params": "creep 0.04 scale/s default (templates use .012-.02); drift px per frame x60",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:321",
@@ -270,6 +286,7 @@
   "how": "MOTION.parallax(tl, [{el, depth}], at, dur, {dx, dy, scale, ease}).",
   "params": "offset = dx*depth, scale 1+scale*depth; ease none",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:543",
@@ -291,6 +308,7 @@
   "how": "MOTION.rackFocus(tl, el, at, {blur, dur, to:'sharp'|'blur'}).",
   "params": "blur 18 px, dur 0.3 s, E.smooth",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:352",
@@ -311,6 +329,7 @@
   "how": "MOTION.shake(tl, el, at, {amp, dur, hz, rot, seed}).",
   "params": "amp 14 px (y x0.7); dur 0.5 s; 28 Hz; rot 0.6 deg; decay (1-i/n)^1.8; settle 0.12 s",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:535",
@@ -330,6 +349,7 @@
   "how": "const path=K3.cameraPath(keys); [pos, look]=path(t).",
   "params": "ease mix: 35% smoothstep + 65% linear",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:789",
@@ -350,6 +370,7 @@
   "how": "K3.shot('dolly_zoom', {from, to, fov}).",
   "params": "to defaults 0.45x the start distance; fov recomputed each frame",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1070",
@@ -369,6 +390,7 @@
   "how": "K3.orbitWalk(camera, [{t, angle, dist, height, look, hold}], {drift}).",
   "params": "drift 0.012",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/lab-kit.js:172",
@@ -388,6 +410,7 @@
   "how": "IntersectionObserver(rootMargin '0px 0px -100px 0px', threshold 0.1) adds .is-visible; CSS transitions. In video, trigger by timeline time instead.",
   "params": "y 60->0, 0.8s ease-out-expo; children y 40, 0.6s, delays 0.1/0.2/0.3s",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md",
@@ -407,6 +430,9 @@
   "how": "CSS transform scale/translate over beat duration with linear or sine ease; or ffmpeg zoompan.",
   "params": "zoom 1 -> 1.04 over the beat; 70% overlay for background photos",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/step-4-storyboard.md",
@@ -426,6 +452,7 @@
   "how": "animateTo(target): requestAnimationFrame loop, k=(now-t0)/520, eased e=1-(1-k)^3, vb_i = from_i + (target_i-from_i)*e; target box = bbox of points + pad 90 (region) / 70 (city), aspect-fitted to 1000:820.",
   "params": "520ms; ease-out cubic; pad 90/70",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/ui/features/sales-map.js:86",
@@ -445,6 +472,7 @@
   "how": "eye=(px*1.6+sin(t*.11)*.6, .4+py+cos(t*.09)*.4, 6.5-scroll*4); lookAt (px*.4, py*.3-scroll*1.5, -8); pointer lerp .06; scroll normalised over min(page,900px).",
   "params": "lerp .06; dolly 4 units",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/ui/art/crystal-world.js:179",
@@ -464,6 +492,7 @@
   "how": "desktop: linear-gradient(90deg,rgba(4,9,17,.78),rgba(4,9,17,.18) 58%,rgba(4,9,17,.24)), linear-gradient(0deg,rgba(4,9,17,.85),transparent 57%); phone (<=700px): 0deg .92 -> .2 at 76% and object-position 83% center.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/ui/art/brand/earth-intro-20261009.css:6",
@@ -483,6 +512,7 @@
   "how": ".gate.has-art::after width 30% background var(--art) cover; mask-image linear-gradient(to right, ink 35%, transparent); filter grayscale sepia; EARTH door: width 25% opacity .58 saturate(.86) contrast(.92).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/unlock.html:127",
@@ -502,6 +532,7 @@
   "how": "State in motion prompt; in Canvas approximate with depth scale breathing.",
   "params": "push 4%; no shake",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/scripts/viral-editorial.mjs:68",
@@ -521,6 +552,7 @@
   "how": "Place hero at ~40% height, headline ~73%, footer ~91%; maxWidth 84% of width.",
   "params": "1080x1920; margins 10%",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "fastify-motion-bro/docs/VIRAL-EDITORIAL-DNA.md:17",
@@ -540,6 +572,7 @@
   "how": "references/layouts/<key>.html give videoBounds + cardBounds; tween #video-wrap per card window.",
   "params": "see what",
   "install": "",
+  "requires": [],
   "license": "Apache-2.0 + MIT (vtake-skills)",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/references/layouts/split.html",
@@ -560,6 +593,7 @@
   "how": "Add references/frames/<key>.html as sibling of #video-wrap; skip hairline/polaroid over overlay layout.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "Apache-2.0 + MIT (vtake-skills)",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/references/frames/hairline.html",
@@ -579,6 +613,7 @@
   "how": "Wrap content in #cam; MOTION.camera(tl, cam, at, {x, y, scale, rotation, dur, ease, origin}).",
   "params": "dur 1.4 s; ease E.cam(.48,.1,0,.9)",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:311"
@@ -597,6 +632,7 @@
   "how": "MOTION.push(tl, cam, at, from, to, dur, {ease, origin}); dur defaults from durFor.",
   "params": "typical 1.0 -> 1.04..1.08 over the hold; peak ~5% scale/frame",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:316"
@@ -615,6 +651,7 @@
   "how": "MOTION.rackFocus(tl, el, at, {blur, dur, to:'sharp'|'blur'}).",
   "params": "blur 18 px; dur 0.3 s; ease E.smooth",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:352"
@@ -633,6 +670,7 @@
   "how": "post.bokeh.uniforms.focus.value = distance; aperture/maxblur options.",
   "params": "focus 900; aperture 0.00004; maxblur 0.0035",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:387",
@@ -652,6 +690,7 @@
   "how": "const cam=K3.shot(kind,{subject, size, t0, t1, fov, azimuth, distance, degrees, roll, velocity, handheld, low, high, dutch}); K3.applyShot(camera, cam(t), post).",
   "params": "kinds: establishing(6% frame height) wide(25%) medium(55%) closeup(160%) extreme_closeup(400%) low_angle high_angle birds_eye dutch(12 deg) tracking(1.2 m/s) crane_up crane_down push_in pull_back orbit(360) arc(60) handheld dolly_zoom whip_pan(90) turntable; fov 35; azimuth -20",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1038",
@@ -671,6 +710,7 @@
   "how": "K3.shot(kind, {handheld:true, shake}) or kind 'handheld'.",
   "params": "amplitude 0.012 x distance x shake; frequencies 1.3/1.1/0.9 Hz with 2.17x and 4.9x harmonics",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:1047"
@@ -689,6 +729,7 @@
   "how": "const walk=K3.orbitWalk(camera,[{t, angle, dist, height, look:[x,y,z]|Object3D, fov, hold}], {drift, fov}); walk(t); walk.lookPoint for DOF.",
   "params": "drift .012; fov 32 default; smoothstep between stops",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js:172"
@@ -707,6 +748,7 @@
   "how": "timeline clip 'zoom':{'from':1.0,'to':1.08}",
   "params": "1.0→1.08",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:899"
@@ -725,6 +767,7 @@
   "how": "timeline 'fit'; blur = gblur sigma 40 + brightness -0.12 sat .85",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/timeline.py:316"
@@ -743,6 +786,9 @@
   "how": "tools.py aspect CLIP --to 9:16 --mode smart",
   "params": "ratios 9:16,16:9,1:1,4:5,4:3,21:9",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/tools.py:44"
@@ -761,6 +807,7 @@
   "how": "Set scene.camera / shot.camera_move to one of the names; validate_manifest() rejects anything else.",
   "params": "2D: fast_reveal, slow_push, match_cut, focus_lift, still_hold · 3D: dolly_in, orbit, side_track, push_in, locked",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:29",
@@ -780,6 +827,7 @@
   "how": "fitImage(): scale = max(w/iw, h/ih) for cover or min(...) for contain; centred drawImage.",
   "params": "default cover; background default #07111e",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:72"
@@ -798,6 +846,7 @@
   "how": "cam = lerp(0, 630, smoothstep(t/12)); zoom 1 → 1.10 (smoothstep) about (640,500); translate far ×0.19, moon ×0.035, mid ×0.68, ground ×1.0, foreground ×1.38.",
   "params": "track 630 px over 12 s; zoom +10%",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:124"
@@ -816,6 +865,7 @@
   "how": "36 px bars #020711 top and bottom; vignette linearGradient #020611 .8 → 0 (17%) … 0 (80%) → .75; labels 9–10 px letter-spacing 3; title 43 px weight 300 spacing 10 with an accent rule #ed9f64.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:124"
@@ -834,6 +884,7 @@
   "how": "Gradient magnitude above max(p99, 0.3·max) as saliency; distance to the four thirds points; symmetry = 1 − mean|I − mirror(I)|/255; nearest_ratio() over 12 ratios.",
   "params": "thirds if distance < 0.08, centred if < 0.08 from centre; ratios 1:1, 4:5, 3:4, 2:3, 9:16, 5:4, 4:3, 3:2, 16:9, 1.85:1, 2:1, 2.39:1",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:24",
@@ -854,6 +905,9 @@
   "how": "echo JSON | python3 scripts/omni/light_calc.py (one op or a list) — {op:'equivalent', aperture, shutter, iso, new_aperture, new_iso} → matching shutter + handheld warning",
   "params": "f/2.8 1/125 → f/1.4 = 1/500 s; warns slower than 1/60 s",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/light_calc.py:52"
@@ -872,6 +926,9 @@
   "how": "echo JSON | python3 scripts/omni/light_calc.py (one op or a list) — {op:'shutter_angle', fps, angle} → angle/360/fps",
   "params": "24 fps 180° → 1/48 s",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/omni/light_calc.py:84"
@@ -890,6 +947,7 @@
   "how": "MOTION.camera(tl, stage, at, {x, y, scale, rotation, dur, ease, origin}).",
   "params": "dur 1.4 s, ease E.cam",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:311",
@@ -909,6 +967,7 @@
   "how": "MOTION.push(tl, stage, at, from, to, dur, {ease, origin}); default duration from durFor.",
   "params": "pushes 1.5-3.1x over 30-70 f; peak ~5% scale/frame",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:316",
@@ -928,6 +987,7 @@
   "how": "MOTION.speedBlur(tl, el, at, dur, {px, axis}).",
   "params": "12 px peak at 45% of the move (E.in up, E.out down)",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:378"
@@ -946,6 +1006,7 @@
   "how": "const cam = cameraKeys([[t,x,y,z,lx,ly,lz],...]); [pos, look] = cam(t).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:414"
@@ -964,6 +1025,9 @@
   "how": "shot(kind, {subject, size, t0, t1, fov, azimuth, degrees, ...}); shotFromWords('low angle tracking shot'); sequence([{at, shot}]) hard cuts; applyShot(camera, s, post) sets DOF focus.",
   "params": "kinds: establishing(0.06 frame), wide(0.25), medium(0.55), closeup(1.6), extreme_closeup(4.0), low_angle, high_angle, birds_eye, dutch(12 deg), tracking, crane_up, crane_down, push_in, pull_back, orbit(360), arc(60), handheld(~1.3 Hz 3 octaves), dolly_zoom(to 0.45 d), whip_pan(90), turntable",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/motion/kit/three-kit.js:1038",
@@ -984,6 +1048,7 @@
   "how": "defocus(radius, shape=None, soft=30); motion_blur(shape, length, angle=90, mix=1).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-studio/render.py:692",
@@ -1003,6 +1068,9 @@
   "how": "Last steps of build(): [defocus..] mid-scene, then Step('الكاميرا', [bloom, flare, chroma, filmic, vignette, grain]) and ROLLOFF = 1.0.",
   "params": "AI recipe: defocus(2); motion_blur(shape,6,104); bloom(.72,26,.5); flare((x,y),'#ffb070',110,380,.45); chroma(1.4); filmic(1.0,1.08,1.02); vignette(.55); grain(.018)",
   "install": "",
+  "requires": [
+   "pip:chromadb"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/references/drawing-guide.md:62",
@@ -1023,6 +1091,7 @@
   "how": "Final Step with fill(rect(0,0,1200,TOP),'#000000') and fill(rect(0,BOTTOM,1200,800-BOTTOM),'#000000').",
   "params": "TOP 62, BOTTOM 738",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/scenes/whale_dragon.py:294",
@@ -1042,6 +1111,7 @@
   "how": "fill(rect(...), colour, .2-.3, blur=26-34, mode='screen') between depth layers.",
   "params": "dragon fog #a86484 .26 blur 26 and #5c3550 .30 blur 30; whale horizon #54637a .2 blur 34",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/scenes/dragon_girl.py:195",
@@ -1062,6 +1132,9 @@
   "how": "montage._segment with punches; disable with --no-punch",
   "params": "0.09·exp(−(t−p)/0.32)·[t≥p]; render 2W×2H then lanczos down; crf 17",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/montage.py:136"
@@ -1080,6 +1153,9 @@
   "how": "python tools.py aspect CLIP --to 9:16 --mode smart|crop|blur --out v.mp4 [--size WxH]",
   "params": "Haar frontal face scale 1.15 minNeighbors 5 minSize 28 on 24 samples at 480 px; motion centroid 160 px; blur bg gblur σ 40, brightness −0.12, saturation 0.85",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/tools.py:158",
@@ -1100,6 +1176,9 @@
   "how": "Normalize pointer to -1..1; gsap.to(layer,{x:x*k,y:y*k2,duration:0.8}). For video, replace pointer with a scripted path or slow Lissajous so it renders deterministically.",
   "params": "back 45/22px; mid 22/11px; content 8/5px; lag 0.8s (0.3 too reactive, 1.2+ laggy); disable when (hover: none)",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md"
@@ -1118,6 +1197,9 @@
   "how": "GSAP ScrollTrigger: bg yPercent -30 with scrub:true from 'top bottom' to 'bottom top'; pin section with end '+=200%' scrub 1; horizontal track xPercent -100*(n-1) pinned. For video renders, tween window.scrollTo deterministically per frame instead of real scrolling.",
   "params": "yPercent -30; pin end +=200%; scrub 1; horizontal end = track width",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14124-top-design/references/animation-patterns.md",
@@ -1138,6 +1220,9 @@
   "how": "ScrollTrigger pin each card except the last (pinSpacing false) and scrub scale/opacity as the next card travels from bottom to top; gate inside gsap.matchMedia for wide screens and motion allowed.",
   "params": "covered card scale 0.92, opacity 0.55; cards min-height 70dvh; breakpoint example 1024px",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/880-superloopy/1941-superloopy-frontend/references/motion.md"
@@ -1156,6 +1241,9 @@
   "how": "ScrollTrigger per step start 'top 58%' end 'bottom 42%' calling show(index); pin visual from 'top top+=96'; frames autoAlpha with slight scale. Default CSS shows all steps stacked (fallback).",
   "params": "frame scale 0.985->1; step trigger top 58% / bottom 42%; pin offset 96px",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/examples/motion/scroll-story.ts",
@@ -1175,6 +1263,9 @@
   "how": "gsap.set cards {opacity:0,y:55,rotateX:18}; ScrollTrigger.batch start 'top 80%' -> to {opacity:1,y:0,rotateX:0}.",
   "params": "rotateX 18deg (8 invisible, 30+ gimmicky); stagger 0.11; 0.8s power2.out",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/196-landing/621-landing/references/gsap_animation_patterns.md"
@@ -1193,6 +1284,7 @@
   "how": "dof(colorNode, viewZNode, focusDistance, focalLength, bokehScale); animate focusDistance for rack focus.",
   "params": "e.g. 5.0, 25.0, 1.0; API reimplemented in r181 (old options object broken)",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/post-processing.md"
@@ -1211,6 +1303,10 @@
   "how": "GSAP timeline progress -> uniform uVelocity bending planes.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three",
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md"
@@ -1229,6 +1325,9 @@
   "how": "Store {position,target,fov} keyframes; GSAP tween camera + controls.target; slerp for globes.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/SKILL.md"
@@ -1247,6 +1346,9 @@
   "how": "Static Matter.js bodies for overlay rectangles; letters collide around them.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:matter"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero/SKILL.md"
@@ -1265,6 +1367,9 @@
   "how": "Keep route progress and camera progress separate. Mapbox: jumpTo({center: point along route, zoom, bearing, pitch}) with keyframes zoom 7 -> 2.4 -> 8, bearing -20 -> 35, pitch 25 -> 55 -> 55 -> 30, all on bezier(0.645,0.045,0.355,1). MapLibre: calculateCameraOptionsFromTo(cameraLngLat, altitude, targetLngLat) with a separate camera route; altitude 180 km -> 2,200 km -> 180 km and latitude offset 1.1 -> 8 -> 1.1 deg at timeline points 0, .28, .74, 1.",
   "params": "zoom 7/2.4/8; bearing -20..35; pitch 25/55/55/30; altitude 180000/2200000/180000 m",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:maplibre"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/mapbox/TECHNIQUE.md",
@@ -1284,6 +1389,7 @@
   "how": "zoomState(): punch alternates 1 and 1+amount each cut (ease-out 0.18 s, 0.5 s in calm mode); kenburns linear 1->1+amount over the shot; drift scale 1+0.7a with lateral travel +-0.3a W alternating direction; pulse 1+a*exp(-t/0.32) after each cut; none.",
   "params": "amount 0-0.3; every 0.6-8 s",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:191",
@@ -1303,6 +1409,7 @@
   "how": "CAM.MOVES {z:[from,to], x/y travel as share of zoom room, r degrees, blur px@1080, shake, ease, snap}: push_in z1->1.15 sine; pull_out 1.2->1; slow_zoom 1->1.06 linear; punch_in 1->1.18 cubic snap 0.16 s shake .05; whip_pan z1.12 x 1->-1 expo blur 10; pan z1.15 x .8->-.8; tilt y .8->-.8; truck z1.2 x -.9->.9 linear; dolly_zoom 1->1.3 quad blur 0->1.5; orbit 1.12->1.18 x +-.5 r -3->3; crane_up 1.2->1.05 y .7->-.6 cubic; handheld 1.06 shake .3; locked_off; rack_focus 1->1.03 blur 8->0; dutch_tilt …",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:1087",
@@ -1322,6 +1429,9 @@
   "how": "CAM.at: need = |cos r| + q*|sin r|*0.56 with q = long/short side; z = max(z, need). Same formula in the Python fingerprint camera_chain.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:1129",
@@ -1341,6 +1451,7 @@
   "how": "CAM.plan({mood}): pools talk/music/hype/cinematic/photo/screen (long shots >1.6 s vs short); first shot push_in (photo: ken_burns) + punch accent 0.55; last shot pull_out; music/hype punch every 2nd cut; cinematic rack_focus on 35% of long shots; loud peaks get punch_in (max ~1 per 4 s, >= 2.5 s apart, not within 0.35 s of a cut); score>9 in music/hype -> crash_zoom at most once per 12 s; never the same move twice in a row.",
   "params": "moods: talk|music|hype|cinematic|photo|screen",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:1144",
@@ -1360,6 +1471,7 @@
   "how": "frame 'fit': background copy blur 4.5% W, brightness .88, saturate .85, scale 1.14; foreground contain-fit times zoom; coach suggests fit when cover crops > 40%.",
   "params": "cover|fit",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:275",
@@ -1379,6 +1491,7 @@
   "how": "fx.letterbox: bar height 10.5% H in landscape, 7% in portrait; captions move up to 72% H.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:294"
@@ -1397,6 +1510,7 @@
   "how": "drawPips(): width 42% short side, aspect clamped 0.56-1.4, x = W-w-5% m, y = 9% H, spring(l) scale-in, accent 5 px frame, shadow 3% m, 0.2 s fade out.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:305"
@@ -1415,6 +1529,7 @@
   "how": "DNA.cameraFor(dna,cuts,D): cycles reference moves per shot; accents every 1/rate s (min 1.5 s gap); if < 3 measured moves, plans by mood and keeps the dominant move.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "app/public/js/10_studio.js:1402"
@@ -1433,6 +1548,10 @@
   "how": "Install with `npx hyperframes add camera-shake` (copies to compositions/components/camera-shake.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fram…",
   "params": "9 profiles: handheld-normal-mild|handheld-normal-strong|handheld-normal-extreme|handheld-wideangle-mild|handheld-wideangle-strong|handheld-tele-mild|handheld-tele-strong|rig-6d-shake|rig-6d-wobble; mild octave rot amps 7/5 deg @0.15/0.1 Hz, 4/2 @0.8/0.75, 1/0.8 @1.2/1.5; intensity 0-3, frequency 0.1…",
   "install": "npx hyperframes add camera-shake` (copies to compositions/components/camera-shake",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/camera-shake/registry-item.json",
@@ -1453,6 +1572,10 @@
   "how": "Install with `npx hyperframes add cursor-zoom-follow` (copies to compositions/components/cursor-zoom-follow.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless C…",
   "params": "zoom 1.8; three click points in %; vars: image=; zoom=1.8(1.2..2.6); click1_x=68.5(0..100); click1_y=7.5(0..100); click2_x=50(0..100); click2_y=48.5(0..100); click3_x=90.5(0..100); click3_y=7.5(0..100); accent=#0a84ff",
   "install": "npx hyperframes add cursor-zoom-follow` (copies to compositions/components/cursor-zoom-follow",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/cursor-zoom-follow/registry-item.json",
@@ -1473,6 +1596,11 @@
   "how": "Install with `npx hyperframes add drift-hold` (copies to compositions/components/drift-hold.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame ca…",
   "params": "intensity whisper|standard; vars: text=Always alive; intensity=standard[whisper|standard]",
   "install": "npx hyperframes add drift-hold` (copies to compositions/components/drift-hold",
+  "requires": [
+   "chromium",
+   "pip:faster-whisper",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/drift-hold/registry-item.json",
@@ -1493,6 +1621,10 @@
   "how": "Install with `npx hyperframes add focus-rack` (copies to compositions/components/focus-rack.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame ca…",
   "params": "labels Draft/Published; vars: label_a=Draft; label_b=Published; accent=blue[green|blue|violet]",
   "install": "npx hyperframes add focus-rack` (copies to compositions/components/focus-rack",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/focus-rack/registry-item.json",
@@ -1513,6 +1645,10 @@
   "how": "Install with `npx hyperframes add pan-stations` (copies to compositions/components/pan-stations.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fram…",
   "params": "stationCount 4; dwell 0.6 s; widths in cqw; vars: stationCount=4(3..6); labels=Capture,Edit,Render,Share; dwell=0.6(0.2..2)",
   "install": "npx hyperframes add pan-stations` (copies to compositions/components/pan-stations",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/pan-stations/registry-item.json",
@@ -1533,6 +1669,9 @@
   "how": "Install with `npx hyperframes add parallax-device-dive` (copies to compositions/components/parallax-device-dive.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headle…",
   "params": "vars: accent=blue[green|blue|violet]; app_title=Dashboard",
   "install": "npx hyperframes add parallax-device-dive` (copies to compositions/components/parallax-device-dive",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/parallax-device-dive/registry-item.json",
@@ -1553,6 +1692,10 @@
   "how": "Install with `npx hyperframes add parallax-unzoom` (copies to compositions/components/parallax-unzoom.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromiu…",
   "params": "",
   "install": "npx hyperframes add parallax-unzoom` (copies to compositions/components/parallax-unzoom",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/parallax-unzoom/registry-item.json",
@@ -1573,6 +1716,10 @@
   "how": "Install with `npx hyperframes add parallax-zoom` (copies to compositions/components/parallax-zoom.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fr…",
   "params": "",
   "install": "npx hyperframes add parallax-zoom` (copies to compositions/components/parallax-zoom",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/parallax-zoom/registry-item.json",
@@ -1593,6 +1740,10 @@
   "how": "Install with `npx hyperframes add pull-back-reveal` (copies to compositions/components/pull-back-reveal.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chrom…",
   "params": "vars: detail_text=+312%; headline=Growth compounds; accent=green[green|blue|violet]",
   "install": "npx hyperframes add pull-back-reveal` (copies to compositions/components/pull-back-reveal",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/pull-back-reveal/registry-item.json",
@@ -1613,6 +1764,10 @@
   "how": "Install with `npx hyperframes add push-in` (copies to compositions/components/push-in.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium frame capture …",
   "params": "intensity subtle|standard|bold; vars: text=Focus; intensity=standard[subtle|standard|bold]",
   "install": "npx hyperframes add push-in` (copies to compositions/components/push-in",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/push-in/registry-item.json",
@@ -1633,6 +1788,10 @@
   "how": "Install with `npx hyperframes add scroll-camera-story` (copies to compositions/components/scroll-camera-story.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless…",
   "params": "sections 3; travel 220; vars: sections=3(2..4); travel=220(100..400); cues=; accent=green[green|blue|violet]; exit=none[none|fade|up]",
   "install": "npx hyperframes add scroll-camera-story` (copies to compositions/components/scroll-camera-story",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/scroll-camera-story/registry-item.json",
@@ -1653,6 +1812,10 @@
   "how": "Install with `npx hyperframes add ui-focus-zoom` (copies to compositions/components/ui-focus-zoom.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium fr…",
   "params": "anchor 64,36 %; zoom 1.6; zoom_at 1.4 s; vars: anchor_x=64(0..100); anchor_y=36(0..100); zoom=1.6(1..3); zoom_at=1.4(0..30); halo=show[show|hide]; accent=green[green|blue|violet]; exit=none[none|fade|up]",
   "install": "npx hyperframes add ui-focus-zoom` (copies to compositions/components/ui-focus-zoom",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/ui-focus-zoom/registry-item.json",
@@ -1673,6 +1836,10 @@
   "how": "Install with `npx hyperframes add yt-camera-move` (copies to compositions/components/yt-camera-move.html); mount on a `class=\"clip\"` div via data-composition-src + data-start/data-duration/data-track-index and pass overrides as JSON in data-variable-values; colours/fonts come from the 18 theme tokens (accent enum green=--brand, blue=--accent, violet=--accent-2); extra duration becomes hold, never time-stretch; preview `npx hyperframes preview`, render `npx hyperframes render` (headless Chromium …",
   "params": "",
   "install": "npx hyperframes add yt-camera-move` (copies to compositions/components/yt-camera-move",
+  "requires": [
+   "chromium",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/yt-camera-move/registry-item.json",
@@ -1693,6 +1860,10 @@
   "how": "Install with `npx hyperframes add camera-dolly-zoom` (copies the full composition to compositions/camera-dolly-zoom.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: GSAP 3.14.2 paused timeline (window.__timelines).",
   "params": "direction out|in; strength 2; subjectDistance 1400; easing none|sine.inOut|power1.inOut|power2.inOut|power3.inOut; vars: direction=out[out|in]; strength=2(1.1..4); subjectDistance=1400(600..3000); easing=power2.inOut[none|sine.inOut|power1.inOut|power2.inOut|power3.inOut]; 1920x1080; duration 4 s",
   "install": "npx hyperframes add camera-dolly-zoom` (copies the full composition to compositions/camera-dolly-zoom",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/camera-dolly-zoom/registry-item.json",
@@ -1713,6 +1884,11 @@
   "how": "Install with `npx hyperframes add rack-focus` (copies the full composition to compositions/rack-focus.html plus its assets); reference it from index.html with data-composition-src or open it standalone; edit inline constants/variables; preview `npx hyperframes preview`, render `npx hyperframes render`. Engine: WebGL fragment shader, GSAP 3.14.2 paused timeline (window.__timelines).",
   "params": "nearfocus 1.2; farfocus 80; focallength 85; aperture 1.8; blades 6; catseye 0.62; pullstart 1.2; pullduration 3.2; power2.inOut; vars: nearfocus=1.2(0.2..100); farfocus=80(0.3..400); focallength=85(12..300); aperture=1.8(0.95..22); blades=6(3..14); catseye=0.62(0..1); pullstart=1.2(0..30); pulldurat…",
   "install": "npx hyperframes add rack-focus` (copies the full composition to compositions/rack-focus",
+  "requires": [
+   "npm:three",
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/rack-focus/registry-item.json",
@@ -1733,6 +1909,10 @@
   "how": "Install `npx hyperframes add carousel-circle-<1..5>`; replace image1..imageN variables with your own image paths (the shipped sample photos are absent locally); 1920x1080, ~6 s; GSAP-driven 3D transforms.",
   "params": "carousel-circle-1: 12 slots; carousel-circle-2: 12 slots; carousel-circle-3: 12 slots; carousel-circle-4: 12 slots; carousel-circle-5: 12 slots; duration 6 s",
   "install": "npx hyperframes add carousel-circle-<1",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-circle-1/registry-item.json",
@@ -1753,6 +1933,10 @@
   "how": "Install `npx hyperframes add carousel-orbit-<1..5>`; replace image1..imageN variables with your own image paths (the shipped sample photos are absent locally); 1920x1080, ~6 s; GSAP-driven 3D transforms.",
   "params": "carousel-orbit-1: 24 slots; carousel-orbit-2: 24 slots; carousel-orbit-3: 24 slots; carousel-orbit-4: 24 slots; carousel-orbit-5: 24 slots; duration 6 s",
   "install": "npx hyperframes add carousel-orbit-<1",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-orbit-1/registry-item.json",
@@ -1773,6 +1957,10 @@
   "how": "Install `npx hyperframes add carousel-path-<1..5>`; replace image1..imageN variables with your own image paths (the shipped sample photos are absent locally); 1920x1080, ~6 s; GSAP-driven 3D transforms.",
   "params": "carousel-path-1: 24 slots; carousel-path-2: 12 slots; carousel-path-3: 12 slots; carousel-path-4: 24 slots; carousel-path-5: 24 slots; duration 6 s",
   "install": "npx hyperframes add carousel-path-<1",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-path-1/registry-item.json",
@@ -1793,6 +1981,10 @@
   "how": "Install `npx hyperframes add carousel-text-circle-<1..5>`; replace image1..imageN variables with your own image paths (the shipped sample photos are absent locally); 1920x1080, ~6 s; GSAP-driven 3D transforms.",
   "params": "carousel-text-circle-1: 12 slots; carousel-text-circle-2: 12 slots; carousel-text-circle-3: 12 slots; carousel-text-circle-4: 12 slots; carousel-text-circle-5: 12 slots; duration 5 s",
   "install": "npx hyperframes add carousel-text-circle-<1",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-text-circle-1/registry-item.json",
@@ -1813,6 +2005,10 @@
   "how": "Install `npx hyperframes add carousel-vision-<1..5>`; replace image1..imageN variables with your own image paths (the shipped sample photos are absent locally); 1920x1080, ~6 s; GSAP-driven 3D transforms.",
   "params": "carousel-vision-1: 12 slots; carousel-vision-2: 12 slots; carousel-vision-3: 12 slots; carousel-vision-4: 12 slots; carousel-vision-5: 12 slots; duration 6 s",
   "install": "npx hyperframes add carousel-vision-<1",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/carousel-vision-1/registry-item.json",
@@ -1833,6 +2029,9 @@
   "how": "Starter project: `npx hyperframes init --example swiss-grid` style scaffold (index.html mounts sub-compositions via data-composition-src); reuse its palette/type as a style reference.",
   "params": "1920x1080; 10 s",
   "install": "npx hyperframes init --example swiss-grid` style scaffold (index",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/examples/swiss-grid/registry-item.json",
@@ -1852,6 +2051,7 @@
   "how": "Compute cutoff y <= 0.83 x height (<=900 px on 1080 tall, <=1600 px on 1920 tall); anchor the portrait hero at 0.2-0.35 x height; landscape centers near 0.42 x height.",
   "params": "0.83 x H; 900px@1080; 1600px@1920",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes/references/frame-worker-core.md"
@@ -1870,6 +2070,7 @@
   "how": "tl.to('#clip .inner',{scale:1.35,xPercent:-8,duration:0.18},1).",
   "params": "scale 1.35, 0.18 s",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
@@ -1888,6 +2089,7 @@
   "how": "tl.fromTo('#clip .inner',{scale:1.05,xPercent:0},{scale:1.2,xPercent:-12,duration:4,ease:'none'},0).",
   "params": "scale 1.05->1.2, xPercent 0->-12, 4 s linear",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
@@ -1906,6 +2108,7 @@
   "how": "tl.to('#clip .inner',{clipPath:'inset(8% 12% 6% 10%)',xPercent:-4,duration:1},2).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
@@ -1924,6 +2127,7 @@
   "how": "full-screen-motion.md pattern + rules; on shader/HDR layered-composite path put fills on a full-bleed child, not the root.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/full-screen-motion.md",
@@ -1943,6 +2147,10 @@
   "how": "Read hyperframes-animation/rules/coordinate-target-zoom.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
   "params": "await document.fonts.ready before measuring; keep target <= ~88% of canvas at peak",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/coordinate-target-zoom.md",
@@ -1962,6 +2170,10 @@
   "how": "Read hyperframes-animation/rules/camera-cursor-tracking.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
   "params": "track ease power2.inOut; blink ease steps(1) yoyo; VIEWPORT_PAD_LEFT 0-~10% must match CSS padding",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/camera-cursor-tracking.md",
@@ -1981,6 +2193,10 @@
   "how": "Read hyperframes-animation/rules/multi-phase-camera.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
   "params": "off-center transform-origin creates phase drift; drift tween ease none over TOTAL_DURATION",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/multi-phase-camera.md",
@@ -2000,6 +2216,10 @@
   "how": "Read hyperframes-animation/rules/viewport-change.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
   "params": "<5% scale imperceptible; 10-15% comfortable; >30% dramatic; product feel 1.05-1.15x over 2-3 s; ease power3.inOut",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/viewport-change.md",
@@ -2019,6 +2239,10 @@
   "how": "Read hyperframes-animation/rules/depth-of-field-blur.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
   "params": "filter: blur(var(--dof)); FOCUS_DUR window",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/depth-of-field-blur.md",
@@ -2038,6 +2262,10 @@
   "how": "Read hyperframes-animation/rules/center-outward-expansion.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
   "params": "xPercent/yPercent -50 bakes centering; data-target-x/y per element",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/center-outward-expansion.md",
@@ -2057,6 +2285,10 @@
   "how": "Read hyperframes-animation/rules/split-tilt-cards.md; build on ONE paused GSAP timeline with fromTo explicit states, transforms/opacity only, deterministic hashes, inside a class=clip scene.",
   "params": "SCENE_PERSPECTIVE 1000-2400 px; entry power3.out; float sine.inOut yoyo; PI phase offset",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap",
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/split-tilt-cards.md",
@@ -2076,6 +2308,9 @@
   "how": "Pick from hyperframes-animation/blueprints-index.md by role, then read hyperframes-animation/blueprints/spatial-pan-stations.md for the multi-phase recipe; cite blueprint id per beat in the storyboard.",
   "params": "duration 7-10 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/spatial-pan-stations.md",
@@ -2095,6 +2330,9 @@
   "how": "Pick from hyperframes-animation/blueprints-index.md by role, then read hyperframes-animation/blueprints/camera-journey.md for the multi-phase recipe; cite blueprint id per beat in the storyboard.",
   "params": "duration 5.6-11.1 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/camera-journey.md",
@@ -2114,6 +2352,9 @@
   "how": "Pick from hyperframes-animation/blueprints-index.md by role, then read hyperframes-animation/blueprints/zoom-out-workspace-reveal.md for the multi-phase recipe; cite blueprint id per beat in the storyboard.",
   "params": "duration 6.8-11 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/zoom-out-workspace-reveal.md",
@@ -2133,6 +2374,9 @@
   "how": "Pick from hyperframes-animation/blueprints-index.md by role, then read hyperframes-animation/blueprints/grid-card-assemble.md for the multi-phase recipe; cite blueprint id per beat in the storyboard.",
   "params": "duration 3.0-10.5 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/grid-card-assemble.md",
@@ -2152,6 +2396,9 @@
   "how": "Pick from hyperframes-animation/blueprints-index.md by role, then read hyperframes-animation/blueprints/comparison-split.md for the multi-phase recipe; cite blueprint id per beat in the storyboard.",
   "params": "duration 4-6 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-animation/blueprints/comparison-split.md",
@@ -2171,6 +2418,7 @@
   "how": "references/video-composition.md tables; plan background/midground/foreground roles.",
   "params": "headline 64-120px; body 28-42px",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/video-composition.md"
@@ -2189,6 +2437,7 @@
   "how": "references/composition-patterns.md § Picture-in-Picture.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/composition-patterns.md"
@@ -2207,6 +2456,7 @@
   "how": "references/composition-patterns.md.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-creative/references/composition-patterns.md"
@@ -2225,6 +2475,9 @@
   "how": "hyperframes-studio SKILL §4.",
   "params": "action 5% / title 10% inset",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-studio/SKILL.md"
@@ -2243,6 +2496,9 @@
   "how": "node scripts/safe-zones.cjs <project> -> safe-zones.json; read before authoring.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "node"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/embedded-captions/scripts/safe-zones.cjs"
@@ -2261,6 +2517,7 @@
   "how": "references/scene-types.md + layout-heuristics.md (sample 3 frames, find clean zone, choose side, place crown, validate).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/embedded-captions/references/scene-types.md",
@@ -2280,6 +2537,7 @@
   "how": "theme.json plate {dim, charge, punch, punchDecay, punchOffset, shakeAmpX/Y, shakeHz, pushIn, grain, scrim}.",
   "params": "e.g. stomp punch 0.05, shake 8x5 px at 12 Hz; anchor dim 0.16 pushIn 0.012 grain 5",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/embedded-captions/themes/stomp.json",
@@ -2300,6 +2558,7 @@
   "how": "Declare card.zone in storyboard.json; resolve to pixels in the card-host style.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/talking-head-recut/SKILL.md"
@@ -2318,6 +2577,9 @@
   "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/screen-shake/scene.html (runnable with vendored gsap); anchor to audiomap events.",
   "params": "anchor: drop / crash / kick; best span 0.1-0.5 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/screen-shake/scene.html",
@@ -2337,6 +2599,9 @@
   "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/dolly-zoom/scene.html (runnable with vendored gsap); anchor to audiomap events.",
   "params": "anchor: phrase / build; best span 1.2-2.5 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/dolly-zoom/scene.html",
@@ -2356,6 +2621,9 @@
   "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/crash-zoom-in/scene.html (runnable with vendored gsap); anchor to audiomap events.",
   "params": "anchor: drop / surge; best span 0.2-0.8 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/crash-zoom-in/scene.html",
@@ -2375,6 +2643,9 @@
   "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/mosaic-pack/scene.html (runnable with vendored gsap); anchor to audiomap events.",
   "params": "anchor: beat / build; best span 1.5-3.5 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/mosaic-pack/scene.html",
@@ -2394,6 +2665,9 @@
   "how": "Read music-to-video/references/motion-primitive-catalog.md and copy references/motion-primitives/tile-mosaic/scene.html (runnable with vendored gsap); anchor to audiomap events.",
   "params": "anchor: build / reveal; best span 1.5-3.5 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/tile-mosaic/scene.html",
@@ -2413,6 +2687,7 @@
   "how": "motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits",
   "params": "MOTION.lmix, MOTION.push, zoomTrack",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:95",
@@ -2433,6 +2708,7 @@
   "how": "motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits",
   "params": "MOTION.shake",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:95",
@@ -2453,6 +2729,7 @@
   "how": "motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits",
   "params": "MOTION.parallax",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:95",
@@ -2473,6 +2750,7 @@
   "how": "motion-kit.js window.MOTION inside a flat project; kmotion sync PROJECT after kit edits",
   "params": "creep ~4%/s or drift 0.3–2.5 px/f; MOTION.breathe",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:95",
@@ -2493,6 +2771,9 @@
   "how": "three-kit.js (window.K3) in a --3d project; render --engine studio",
   "params": "dolly_zoom fov=2·atan(h/2d); handheld 3-octave seeded sway",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "owner (three.js MIT)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
@@ -2512,6 +2793,7 @@
   "how": "three-kit.js (window.K3) in a --3d project; render --engine studio",
   "params": "centripetal Catmull-Rom",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner (three.js MIT)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
@@ -2531,6 +2813,7 @@
   "how": "shape-kit.js / lab-kit.js in a 3D project; read references/shape-kit.md",
   "params": "orbitWalk(camera,stops)",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:101",
@@ -2551,6 +2834,7 @@
   "how": "#shade linear-gradient(180deg, rgba(5,10,18,.55) 0% → .25 55% → 0 100%) height 48%; opacity 0→1 at 0.3 s (0.8 s), back to 0 before the action; koi end title uses radial #endshade ellipse 46%×30%.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/index.html:29",
@@ -2570,6 +2854,7 @@
   "how": "#cam transform-origin 705px 700px, start scale 1.10; to 1.035 (0.55 s expo.out) on hook release; 1.07 (1.7 s power2.inOut); x ±10–18 drifts; punches 1.12/1.16/1.19 in 0.12–0.14 s expo.out on محدش يقدر … إطلاقاً; build 1.22 power2.in then 1.30/1.35 punches; final 1.38 over 2 s.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:120"
@@ -2588,6 +2873,7 @@
   "how": "tl.set(cam, {x, y}) at 10.90 + d for [(0,6,−4), (1/30,−5,3), (2/30,3,−2), (3/30,0,0)] plus #dim .22 flash.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:141"
@@ -2606,6 +2892,7 @@
   "how": "M.push(tl, stage, at, from, to, dur, {ease:E.dolly}) → logEase; five_sec 1.0→1.09 over 2.4 s plus ring rotation 8° linear; M.breathe(tl, card, at, 2.6, {creep:.012}); showreel end push 1→1.045 over 2.6 s.",
   "params": "breathe default creep 4%/s",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/five_sec/index.html:74",
@@ -2626,6 +2913,7 @@
   "how": "ang = lerp(.42, −.3, easeInOut(t/5)) + .06·sin(.9t); push = smooth(load, brk+.1)·(1−smooth(swap+.3, rank+.4)); dist 1.95→1.8 (+.14 end pull); shake = exp(−9(t−T_BREAK))·.006 at sin(93t), cos(71t); fov 30.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:106"
@@ -2644,6 +2932,7 @@
   "how": "orbitWalk(camera, [{t, angle°, dist, height, look:[x,y,z]|joint, fov, hold}]): 0 s 28°/6.4 m/30°; 3 s −35°/2.3 m head hold 1.2; 6.5 s −5°/1.0 m eye fov 26; 9.5 s lion head; 13 s 175°/4.2 m; 16 s 300°/1.6 m tail; 18 s 388°/6.0 m.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/lab_rabbit_lion/src/main.js:21"
@@ -2662,6 +2951,7 @@
   "how": "KEYS [t, angle, dist, height, lookX, lookY] ×14; tangents (k2−k0)/(t2−t0)·h; camera.fov = 36 + 3.5·kick − 2.5·smooth(STOP, FREEZE)·(1−smooth(START, HOME)); shake .05·kick seeded per frame; rotateZ(.026·kick·±1) after 7.9 s.",
   "params": "STOP 6.0, FREEZE 6.75, START 7.2, HOME 7.85",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:73",
@@ -2681,6 +2971,7 @@
   "how": "cameraPath([[0, 4.5,.42,2.3, −2.6,−.12,−1.6], [3.4,…], [6.6,…], [10,…]]); cameraKeys 7 keys over 17 s; fov 38 − 4·smooth(9.5,12.8) + 4·smooth(12.8,15.2); focus = |p−l|·0.9.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:93",
@@ -2701,6 +2992,9 @@
   "how": "blue_hour camAt(t): position (6.4−1.0e, 1.5+0.2e, 16−7e), look (−8, 26, −420), e = smooth(0,8,t), fov 32; night_boat: angle 132°−12°·e, radius 19−5.5r, height 1.55+.35e, fov 30.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:127",
@@ -2720,6 +3014,7 @@
   "how": "camera.updateMatrixWorld(true); proj.copy(mid).project(camera); sx = (x·.5+.5)·W, sy = (−y·.5+.5)·H; tag translate(sx, sy); leader 150 px at −45°, box Mono 22 px; colour by state (broken #ff907a, fixed #9dffb4, ≥72% #ffe083).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:184",
@@ -2739,6 +3034,7 @@
   "how": "clips[].zoom {from,to} 1-3",
   "params": "e.g. 1.0->1.08",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/timeline-schema.md"
@@ -2757,6 +3053,7 @@
   "how": "cinematic_3d render(t): n=t/DUR; angle = n*PI*0.5 + 0.3; dist = 9.5 - 2.2n; x = sin(angle)*dist; z = cos(angle)*dist; y = sin(n*PI)*1.5 + 0.5; camera.lookAt(0,0,0); PerspectiveCamera FOV 45.",
   "params": "FOV 45 deg, distance 9.5 -> 7.3, orbit 90 deg over the clip, height bob 1.5",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/cinematic_3d.html:104",
@@ -2776,6 +3073,9 @@
   "how": "Design rule 1.0x <-> 1.10-1.15x every 2.5-4 s on speech. smart_montage auto applies ffmpeg zoompan z=1.10 for 1.2 s on every 4th beat — but its expression uses 't' which zoompan does not define; replace with 'it' (in_time) or use crop+scale with enable='between(t,..)'.",
   "params": "scale 1.10-1.15, hold 1.0-1.5 s, every 2.5-4 s; code: every 4th beat, 1.2 s, output forced to 1080x1920@30",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/references/montage_grammar.md",
@@ -2796,6 +3096,7 @@
   "how": "cam.position = lerp(from,to,ease(seg(t,a,b))) or CatmullRomCurve3(points).getPoint(u); cam.lookAt(...); cam.rotation.z += lerp(roll0,roll1,u).",
   "params": "FOV 40-52; roll .25 -> 0 (dive), .12 -> -.08 (flythrough); Giza push from (158,7,-44) to (122,14,-26)",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/egypt-2120-animation/index.html:192-201",
@@ -2816,6 +3117,7 @@
   "how": "#glass 860x500 border-radius 50% radial rgba(25,8,40,.55) -> .32 at 45% -> 0 at 72%; SVG path fill-rule evenodd (full frame minus arch) #12062a op .38 -> .22.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/thursday-dua-animation/source/index.html:29-30",
@@ -2835,6 +3137,7 @@
   "how": "#cam transform-origin 50% 52%: scale 1 -> 1.035 over 10.9 s linear; 1.075 y -18 in 1.6 s E.cam at 10.99; 1.06 y 0 over 9.5 s; 1.09 y -10 in 1.7 s at 22.95.",
   "params": "max scale 1.09",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/thursday-dua-animation/source/index.html:222-226"
@@ -2853,6 +3156,7 @@
   "how": "plate(id,t0,t1,{from,to,x0,x1,y0,y1}): visibility on/off at cut times, img scale from -> to over the whole hold with E.dolly; plates inset -4% to allow movement.",
   "params": "examples 1.0 -> 1.22 (+40 px y), 1.18 -> 1.02, 1.05 -> 1.25, 1.25 -> 1.06, 1.02 -> 1.3, 1.35 -> 1.0",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:121-135"
@@ -2871,6 +3175,7 @@
   "how": "cam scale 1 -> 1.09 in 0.25 s E.out, back to 1.0 over 0.9 s E.rest; x ±8 px yoyo 0.05 s repeat 7; reset at +0.46 s.",
   "params": "punch 9%, shake 8 px, 8 half-cycles",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:140-143"
@@ -2889,6 +3194,7 @@
   "how": "M.camera(tl,stage,at,{x,y,scale,rotation,dur:1.4,ease:E.cam}); M.push(tl,stage,at,from,to,dur) with logEase (peak ~5% scale per frame); M.breathe(tl,stage,at,dur,{creep:.04,drift}).",
   "params": "creep 4%/s; drift 0.3-2.5 px/frame",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js:310-324"
@@ -2907,6 +3213,7 @@
   "how": "mm_analyze._kenburns_guess; mm_build applies per frame.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py",
@@ -2926,6 +3233,7 @@
   "how": "mm_build fit param; kenburns=True",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py"
@@ -2944,6 +3252,7 @@
   "how": "defocus(radius) after background, before hero",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md",
@@ -2963,6 +3272,7 @@
   "how": "motion_blur(shape,length,angle) for rain/spray",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/pixel-studio-painter/references/drawing-guide.md",
@@ -2982,6 +3292,9 @@
   "how": "HTML/CSS + Playwright screenshot",
   "params": "1280x720, 1080x1080, 1080x1920; readable at 160px width; max 3 main colours",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "chromium"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/thumbnail-social-graphics/SKILL.md:21"
@@ -3000,6 +3313,7 @@
   "how": "MOTION.camera(tl, stageEl, at, {x, y, scale, rotation, dur, ease, origin}).",
   "params": "dur 1.4 s, ease E.cam",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:311"
@@ -3018,6 +3332,7 @@
   "how": "MOTION.push(tl, stage, at, from, to, dur, {ease, origin}); duration defaults to durFor(|Δ|·600, camera).",
   "params": "rule: peak ~5% scale/frame; pushes 1.5-3.1× over 30-70 f",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:316",
@@ -3037,6 +3352,7 @@
   "how": "MOTION.shake(tl, el, at, {amp, dur, hz, rot, seed}).",
   "params": "amp 14 px, .5 s, 28 Hz steps, rot .6°, decay (1-i/n)^1.8, settle .12 s",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:535"
@@ -3055,6 +3371,7 @@
   "how": "const camAt = K3.cameraKeys([[t,cx,cy,cz,lx,ly,lz],...]); const [p,l] = camAt(t).",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:414"
@@ -3073,6 +3390,7 @@
   "how": "const path = K3.cameraPath([[t,x,y,z,lx,ly,lz],...]); const [pos, look] = path(t).",
   "params": "time ease = 0.35·smoothstep + 0.65·linear",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:789"
@@ -3091,6 +3409,9 @@
   "how": "const cam = K3.shot(kind, {subject, size, t0, t1, fov, azimuth, distance, degrees, velocity, seed}); K3.applyShot(camera, cam(t), post).",
   "params": "kinds: establishing .06 frame height, wide .25, medium .55, closeup 1.6, extreme_closeup 4.0, low_angle, high_angle, birds_eye, dutch (12°), tracking (1.2 m/s), crane_up, crane_down, push_in (1.8->1.0 d), pull_back, orbit (360°), arc (60°), handheld, dolly_zoom, whip_pan (90°), turntable; fov 35, az…",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:1038",
@@ -3110,6 +3431,7 @@
   "how": "K3.shot(kind, {handheld:true, shake, seed}) or shotFromWords('handheld ...').",
   "params": "base 1.3/1.1/0.9 Hz, octaves ×2.17 and ×4.9, amp .012·distance",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:1049"
@@ -3128,6 +3450,7 @@
   "how": "K3.shotFromWords(text, opts); K3.SHOT_WORDS (25 phrase->kind pairs).",
   "params": "phrases: dolly zoom, vertigo, whip, turntable, 360, orbit, arc shot, crane up/down, push, pull back, tracking, bird, top down, low/high angle, dutch, extreme close, close-up, establishing, wide, medium, handheld",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:1092"
@@ -3146,6 +3469,7 @@
   "how": "scene.background = K3S.studioBackdrop({inner, mid, outer, cy}).",
   "params": "inner #1e4a44, mid #0c2224, outer #050c0d, centre y .42",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/shape-kit.js:336"
@@ -3164,6 +3488,7 @@
   "how": "K3.studio(scene, {bg, grid}).",
   "params": "bg #f1efe8; shadow .22; grid 16 m/32 #c9d8c2 .35; key 2.6 @ (3,6,4); fill #dfe8ff .9; rim 1.4; hemi .9",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/kit/lab-kit.js:194"
@@ -3182,6 +3507,9 @@
   "how": "film_animate(blur=k, shutter=frames, stack='average'|'lighten'); pages that set window.__nativeBlur accumulate on the GPU instead; exposed on the CLI via motion.py render --blur/--shutter/--stack (film.py's own CLI lacks --blur).",
   "params": "shutter 0.5 frame = 180 degrees; shutter 30 at 30 fps = 1 s exposure; samples at t + s/fps*((j+.5)/k - .5); averaged in float, quantised once",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/film.py:273",
@@ -3202,6 +3530,7 @@
   "how": "defocus(radius, shape=None, soft=30).",
   "params": "whale background 2.2, far wing 1.2; AI recipe 2",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/render.py:692",
@@ -3221,6 +3550,9 @@
   "how": "motion_blur(shape, length, angle=90, mix=1) with a line kernel via cv2.filter2D.",
   "params": "rain 6 px at 104 deg mix .35; spray 7 px at 112 deg mix .7",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:opencv"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/render.py:707",
@@ -3240,6 +3572,9 @@
   "how": "chroma(amount).",
   "params": "default 1.5; whale 1.1; AI recipe 1.4",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:chromadb"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/render.py:756"
@@ -3258,6 +3593,9 @@
   "how": "GSAP on a #cam wrapper with transformOrigin on the subject",
   "params": "start 1.10 → 1.035 expo.out 0.55 s; pushes 1.07-1.095 power2.inOut 1.7-2.2 s; punches 1.12/1.16/1.19 in 0.12-0.18 s expo.out; shake (6,−4),(−5,3),(3,−2),(0,0) per frame; reveal 1.42 → 1.10 in 0.6 s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/projects/premium_edit/index.html:1"
@@ -3276,6 +3614,9 @@
   "how": "direct.subject_box + shots[{from,to,cx,cy}]",
   "params": "skin YCrCb Cr 133-178 Cb 80-130 Y>60, area >1.2 %; push 1.03→1.09, small subject (<20 % H) 1.12→1.22; keyword punch 0.035, payoff punch 0.05",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "python3"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/direct.py:49",
@@ -3295,6 +3636,7 @@
   "how": "verse.text_band(image, W, H)",
   "params": "skin ≥0.4 % of frame; head height ≤22 % H; returns 0.70 H or 0.26 H",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/verse.py:350"
@@ -3313,6 +3655,9 @@
   "how": "GSAP height tween on #letterbox-top/bottom",
   "params": "70 px → 0 over 2.2 s, ease drive, starts at min(2.4, 0.15·S)",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/projects/blue_hour/index.html:1",
@@ -3332,6 +3677,7 @@
   "how": "lab-kit orbitWalk(camera, [{t, angle, dist, height, look, fov, hold}])",
   "params": "e.g. t0 angle 28 dist 6.4 h 2.1 fov 30; t3 −35/2.3/1.75 hold 1.2; t6.5 eye extreme close dist 1.0 fov 26",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/projects/lab_rabbit_lion/src/main.js:1"
@@ -3350,6 +3696,9 @@
   "how": "3D/2.5D world with single continuous spline camera; no cuts; transitions via camera travel. Scaffold: python3 tools/kosif.py scaffold higgsfield-journey <dir>.",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "pip:higgsfield"
+  ],
   "license": "owner",
   "proof": [
    "style:higgsfield-journey",
@@ -3371,6 +3720,7 @@
   "how": "interpolate(frame, [0,s1,s1+s2,T], …, {easing: easeInOutCubic, clamp})",
   "params": "",
   "install": "see arsenal-libraries.md",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/starters/remotion/src/Film.tsx:102"
@@ -3389,6 +3739,9 @@
   "how": "THREE.CatmullRomCurve3 sampled at eased p(t) inside seek(t).",
   "params": "duration 2–5 s; dolly 0.3–1.2 units/s; orbit 10–25°/s",
   "install": "see arsenal-libraries.md",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/3d.md:24-25"
@@ -3407,6 +3760,9 @@
   "how": "Chaikin corner-cutting 3 passes (4 softer, 2 tighter); walk by arc length; heading = bearing to a point LOOK_AHEAD km further; pitch constant (Cesium pitch = -(90 - pitchFromNadir)); roll = clamp(dHeading*gain, +/-max) measured between aim and 2x look-ahead. Speed = travel km / seconds; slow cameras also render faster (tiles stay cached).",
   "params": "travel 13 km / 24 s = 0.54 km/s; look-ahead 1.5 km; pitch-from-nadir 76 deg (-14); bank gain 0.6, max 0.13 rad; altitude 4600->4300 m; vertical exaggeration 1.1; path km >= travel + 2*look-ahead",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-flyover-architecture.md",
@@ -3426,6 +3782,9 @@
   "how": "Add phrases like 'subject on the right third, generous empty space on the left for text overlay' or 'no text, space for logo on left third'; verify the empty zone before animating type into it.",
   "params": "LinkedIn banner example 1584x396 with left-third space",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1446-marketing-skills/3504-image",
@@ -3445,6 +3804,9 @@
   "how": "Pick one move per clip and phrase it plainly ('camera slowly pushes in'); Kling and Runway follow explicit verbs well, Seedance R2V tends to ignore or randomise camera verbs, so describe a first-frame framing there instead.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "Apache-2.0 / MIT",
   "proof": [
    "kosif-atlas/skills/1446-marketing-skills/3531-video",
@@ -3465,6 +3827,9 @@
   "how": "camera_control {type:'simple', config:{horizontal, vertical, zoom, roll, pan, tilt}} each -10..10 with exactly ONE non-zero: horizontal 5 = slow pan right, zoom 7 = dramatic push, vertical 8 = tilt-up reveal, tilt 5 = dolly forward, zoom -5 = slow pull-out on a photo.",
   "params": "range -10..10; one non-zero axis",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1874-klingai-pack/6067-klingai-camera-control"
@@ -3483,6 +3848,9 @@
   "how": "Default: all segments 'medium shot chest-up, eye level'; cinematic progression only on request (wide → medium close-up → face close-up); use character action lines ('turns toward camera') instead of lens moves.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/259-quickdesign/865-quickdesign"
@@ -3501,6 +3869,10 @@
   "how": "watchMain posts {threshold:10,min:0.5,subject:true}; smoothSubject: samples every 0.4 s, confidence>0.3, two-way exponential smoothing weight 0.3*conf (~1.3 s), still shots (<0.08 travel) use the median, sub-second weak shots not reframed; subjectPan clamps to picture edges.",
   "params": "",
   "install": "",
+  "requires": [
+   "pip:opencv",
+   "key:unspecified"
+  ],
   "license": "owner",
   "proof": [
    "app/public/js/00_editor.js:2854",
@@ -3521,6 +3893,9 @@
   "how": "Add to leg prompt from move library.",
   "params": "slow half-orbit around hero object",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
@@ -3540,6 +3915,9 @@
   "how": "Add to leg prompt from move library.",
   "params": "steadicam glide through doorways, crane-up in atria",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
@@ -3559,6 +3937,9 @@
   "how": "Add to leg prompt from move library.",
   "params": "low lateral track with foreground parallax",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
@@ -3578,6 +3959,9 @@
   "how": "Add to leg prompt from move library.",
   "params": "drone rise-and-reveal then descending swoop",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
@@ -3597,6 +3981,9 @@
   "how": "Add to leg prompt from move library.",
   "params": "push in to craft moment, ease back",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
@@ -3616,6 +4003,9 @@
   "how": "Add to leg prompt from move library.",
   "params": "dives + aerial hops",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
@@ -3635,6 +4025,9 @@
   "how": "Locked-iso clause in every leg prompt; reroll if view rotates.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md",
@@ -3654,6 +4047,9 @@
   "how": "Choose at intake CAMERA.",
   "params": "",
   "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md"
@@ -3672,6 +4068,7 @@
   "how": "Overlay layer on top of every scene: 4 L-shaped corner brackets (~40 px arms, 1.5 px white 60%), top-left title/subtitle/REC dot, top-right running timecode HH:MM:SS:FF + spec line, bottom-left scene label with segmented progress, bottom-right URL with thin progress bar and 'SAMPLE DATA' boxed tag; mid-edge tick marks",
   "params": "mono 12-14 px, letter-spacing 0.12em, update label at each scene start",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-marouanegazouzi-6071d5",
@@ -3699,6 +4096,7 @@
   "how": "corner brackets, mono timecode TC and frame counter F 0263/0900",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-codestackr-c071bf",
@@ -3725,6 +4123,7 @@
   "how": "Overlay layer with corner brackets, mono labels, live timecode TC hh:mm:ss:ff, chapter 'NN/07 NAME', and 4 beat squares filling per beat",
   "params": "brackets 24px, mono 13px, margin 4% safe",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ayushunleashed-ece3e3",
@@ -3749,6 +4148,7 @@
   "how": "corner tick marks, timecode, bottom progress line",
   "params": "1 px, 40% opacity",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-manuelogomigo-f33ca9",
@@ -3773,6 +4173,7 @@
   "how": "corner L-brackets at 3% inset; mono labels in all four corners; running timecode TC hh:mm:ss:ff from frame number; bottom progress line width = t/duration",
   "params": "mono 11 px, tracking +10%, blue square bullet #0645e2",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-arjunsh1607-93005d",
@@ -3795,6 +4196,7 @@
   "how": "Corner brackets, mono chapter label 'NN NAME', timecode, progress bar persistent over all scenes",
   "params": "mono 10–12 px",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-crazyalphaaa-bc7e75",
@@ -3817,6 +4219,7 @@
   "how": "key camera (x, y, zoom) to each element as it is drawn, ease-in-out between, final pull-out revealing the full board composition",
   "params": "zoom 1.0-2.2, moves ~1 s",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:chalkboard"
@@ -3837,6 +4240,7 @@
   "how": "build one long world strip; zones blend by ground colour and prop density; animate camera x/y/zoom keyframes with inOut cubic, moving only in sentence pauses",
   "params": "wide 0.85-0.95, medium 1.15-1.3, close 1.5-1.6; moves 0.8-1.5 s",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:doodle"
@@ -3857,6 +4261,7 @@
   "how": "fixed yaw/pitch camera, wall/floor/frame as 3D polygons projected point by point; draw door before wall-with-opening to occlude swing; key inside lock clipped in its own coordinates",
   "params": "yaw ~20deg, pitch ~10deg",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:fake3d"
@@ -3877,6 +4282,7 @@
   "how": "keyframes [t, x, y, z, zoom] interpolated with easeInOut; follow weight w(t) blends target to the van position; project target to centre the viewport",
   "params": "glide ~1.5-2 s between zones",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:isometric"
@@ -3897,6 +4303,7 @@
   "how": "camera centre = lerp(head, point slightly ahead on route); zoom = base - k*sin(pi*legProgress) so it widens mid-leg and tightens on arrival",
   "params": "zoom range ~1.0-1.8",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:map-journey"
@@ -3917,6 +4324,7 @@
   "how": "40-60 mono pill badges with coloured status dot, random rotateZ ±8 deg and translateZ, spawned progressively and drifting slowly; density increases with counter",
   "params": "spawn every 60-100 ms, drift 10-20 px/s, depth blur on far layer",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-0xfemyn-e114d3"
@@ -3937,6 +4345,7 @@
   "how": "Mono pill tabs '01 Read · 02 Tap · 03 Listen · 04 Speak'; active one inverts (dark fill, light text) as the section changes",
   "params": "invert 200 ms",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-1stnoel-c20a89"
@@ -3957,6 +4366,7 @@
   "how": "corner brackets + mono timecode 9 px",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-3xtihor-0f6911"
@@ -3977,6 +4387,7 @@
   "how": "Pastel alternating rays from centre rotating slowly; every character sticker arranged on an ellipse around a centred two-line handwritten title; small stars twinkle",
   "params": "16-24 rays, rotation 4°/s",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-abderrahmen-g-9e8ed0"
@@ -3997,6 +4408,7 @@
   "how": "corner brackets, top-left project label, top-right '0N / 06 - SECTION', bottom timecode, resolution tag and a progress line",
   "params": "mono 11 px uppercase, 40 px margins",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-agonaliu-466a8f"
@@ -4017,6 +4429,7 @@
   "how": "Left column: numbered pill + feature name, 2-line headline, grey body, 3 tag chips; right: browser window at 60% width with large soft shadow",
   "params": "left 35% / right 60%; margins 6%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ai-baymax-0ef9dd"
@@ -4037,6 +4450,7 @@
   "how": "Scale the screenshot inside the window 1.0->1.25 and pan to the region being explained",
   "params": "3-4s easeInOut",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ai-baymax-0ef9dd"
@@ -4057,6 +4471,7 @@
   "how": "section names highlighted per chapter",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-aistocksavvy-3fb9f5"
@@ -4077,6 +4492,7 @@
   "how": "hundreds of small thumbnail planes on a curved ground with warm glow; camera dolly forward and tilt; bold statement overlaid centre",
   "params": "300-600 cards, DOF blur, 4-5 s",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ajith-io-4c248f"
@@ -4097,6 +4513,7 @@
   "how": "corner crop marks, BPM/bar counter, timecode",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ajith-io-b5626e"
@@ -4117,6 +4534,7 @@
   "how": "left 40% headline, right card with shadow",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ajith-io-c52e09"
@@ -4137,6 +4555,7 @@
   "how": "dolly from wide to mascot close-up with DOF",
   "params": "3 s ease-in-out",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-anas0ra-e57aea"
@@ -4157,6 +4576,7 @@
   "how": "corner brackets + coordinates + section labels",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-andginja-333d32"
@@ -4177,6 +4597,7 @@
   "how": "lerp camera from low 3/4 to overhead over 2 s easeInOutCubic; overlay HTML tagline and logo with fade 500 ms",
   "params": "final FOV 35",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-anilraok-eff262"
@@ -4197,6 +4618,7 @@
   "how": "short 1-2 line headline centred, ~6% height, accent word/icon in brand colour, everything else black",
   "params": "accent #f03c0a",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-anthonyriera-9b1b2a"
@@ -4217,6 +4639,7 @@
   "how": "lay out the whole UI once in world coordinates; animate a camera with focusX, focusY and log(scale) keyframes, interpolate in log space so zooms feel uniform; never animate two camera moves at once",
   "params": "ease-in-out cubic 0.6-1.2 s per move, zoom range 1x-6x",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-antonio-kodheli-490109"
@@ -4237,6 +4660,7 @@
   "how": "Grid of real-looking content cards on a plane rotated (rotateX 20 deg, rotateZ -10 deg), blurred 4-8 px and darkened, drifting slowly behind a sharp headline",
   "params": "drift 15 px/s, blur 6 px, opacity 50%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-aschapmann-131210"
@@ -4257,6 +4681,7 @@
   "how": "repeat railing posts along pier; track camera at rider speed so foreground posts sweep past faster than background",
   "params": "post spacing 2 m; rider speed 4 m/s",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-axtonliu-0b861d"
@@ -4277,6 +4702,7 @@
   "how": "Feature tiles of varied sizes/colours spring into a 4x3 grid, each tile a mini feature label",
   "params": "spring stiffness 180 damping 14, stagger 80 ms",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-bizibeast-10f264"
@@ -4297,6 +4723,7 @@
   "how": "3x3 colour cards each looping a mini demo",
   "params": "stagger 60ms",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-blue-clarity-ef56d0"
@@ -4317,6 +4744,7 @@
   "how": "Four thin L-shaped ticks framing the UI panel like print registration marks",
   "params": "1 px lines, 16 px arms, 30% opacity",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-bogdandragomir-35e024"
@@ -4337,6 +4765,7 @@
   "how": "Full-frame brand-colour gradient (bright top-left → dark bottom), centred near-black rounded rectangle ~80%x75% slightly below centre with soft shadow; all action inside the stage",
   "params": "radius 48px, shadow 0 30px 80px rgba(0,0,0,.6)",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-brainextends-e19ac3"
@@ -4357,6 +4786,7 @@
   "how": "scale phone 1->1.8 around badge, hold, return",
   "params": "1 s easeInOut",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-bthreeagency-b9b8d9"
@@ -4377,6 +4807,7 @@
   "how": "mono 10px plate number, chapter code, colour-key dots at left edge",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-buildfastwithai-53234e"
@@ -4397,6 +4828,7 @@
   "how": "camera orbits 30-60°/s around model on textured ground with soft shadow",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-buildfastwithai-ed9447"
@@ -4417,6 +4849,7 @@
   "how": "40/60 split, headline 2 lines with green key word",
   "params": "margins 6%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-charlesmendez-73b6e4"
@@ -4437,6 +4870,7 @@
   "how": "scale 1→3 on a region over 2s ease-in-out with slight blur",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-dale-vaz-cc612a"
@@ -4457,6 +4891,7 @@
   "how": "Back cards opacity .3 blur 4px",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-daniel-haida-8691d4"
@@ -4477,6 +4912,7 @@
   "how": "Mono 'NN/06 SECTION' bottom-left + progress line, spec text bottom-right",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-danilowm-d3720d"
@@ -4497,6 +4933,7 @@
   "how": "brand left, tagline right, section label over rule",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-davidmarcus-a28a60"
@@ -4517,6 +4954,7 @@
   "how": "3x3 grid of clips on coloured panels",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-davidshulmanfl-371638"
@@ -4537,6 +4975,7 @@
   "how": "top-left at 5% margin: tiny grey mono index ('04') + bold 700 sans title; fade/blur in 300 ms at chapter start, blur out at end",
   "params": "index 1.5% h, title 4% h, colour #111113 on #f2f2f2",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ddryo-loos-300829"
@@ -4557,6 +4996,7 @@
   "how": "full-frame black card with centred white title; scale to 0.9 with rounded corners revealing grey surround, then cross to next UI content",
   "params": "~600 ms, ease-in-out, motion blur on text",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ddryo-loos-300829"
@@ -4577,6 +5017,7 @@
   "how": "Continuous lateral truck with parallax (far skyline slower, near tree line faster) bringing the landmark from frame edge to centre",
   "params": "~3 s move easeInOutSine; parallax ratio 0.3/0.6/1.0",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-demitiyageekzen-7770ad"
@@ -4597,6 +5038,7 @@
   "how": "one element on flat warm grey, soft shadow 0 8px 24px rgba(0,0,0,.08)",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-demonugc-4c5753"
@@ -4617,6 +5059,7 @@
   "how": "Start cards at random positions with ±8-12° rotation; spring them to an aligned row while a search pill appears above and branches connect to each",
   "params": "spring stiffness ~120 damping ~16; 80 ms stagger",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-elliot-garreffa-f334bc"
@@ -4637,6 +5080,7 @@
   "how": "Show 'frame / total' and 'chapter / total' counters in corners, ticking every frame, to celebrate the code-rendered nature",
   "params": "mono 11 px, total 900 frames at 60 fps",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-fionntobin-97b7af"
@@ -4657,6 +5101,7 @@
   "how": "blur inactive UI, sharpen focus region",
   "params": "blur 6px",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-fractadev-149adc"
@@ -4677,6 +5122,7 @@
   "how": "White rounded cards on light grey, each with title and mini demo, staggered rise",
   "params": "gap 16 px",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-gautam-mer1-2ae354"
@@ -4697,6 +5143,9 @@
   "how": "one React/HTML component fed by data rows (title, tagline, bullets, stats, accent colour, illustration); left text column + right framed visual; reuse for every item",
   "params": "segment 8 s, 6 items, 55/40 split",
   "install": "",
+  "requires": [
+   "npm:react"
+  ],
   "license": "owner-description",
   "proof": [
    "style:pm-gigabit-million-16b3a0"
@@ -4717,6 +5166,7 @@
   "how": "N short dashes in the header; past ones grey, current one fills with accent colour as the segment plays",
   "params": "6 dashes 28x3 px",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-gigabit-million-16b3a0"
@@ -4737,6 +5187,7 @@
   "how": "corner brackets, mono labels top (title/reel, TC hh:mm:ss:ff) and bottom (counter, red REC dot blinking 1 Hz)",
   "params": "inset 5%, 70% opacity",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-gizakdag-b8c59e"
@@ -4757,6 +5208,7 @@
   "how": "corner marks, TC counter, REC dot",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-gizakdag-cf4ae6"
@@ -4777,6 +5229,7 @@
   "how": "layered PNGs scale at different rates",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-gizakdag-cf4ae6"
@@ -4797,6 +5250,7 @@
   "how": "camera.position lerps toward ball + offset(2,3,5) each frame, lookAt smoothed target",
   "params": "lerp 0.06/frame, offset rotates slowly",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-gorden-sun-041f56"
@@ -4817,6 +5271,7 @@
   "how": "Top line shows a mono code comment describing the current technique (e.g. '// per-letter rise + rotate · stagger 22ms · circ.out') and right side 'NN / SECTION'; bottom shows scene id, BPM, bar number with 4 beat diamonds that fill per beat, and a full-width timeline whose diamond keyframes turn red as playback passes",
   "params": "mono 12 px, letter-spacing .1em, red #e93e24 progress",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-grace-sunnyy-29bc61"
@@ -4837,6 +5292,7 @@
   "how": "two columns, each with a kicker dot (red 'what people typed', green 'type this instead'), prompt card above and reply card below; paraphrased replies use a dashed border, verbatim replies a solid one",
   "params": "column gap ~4% width",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-henkvaness-0e06af"
@@ -4857,6 +5313,7 @@
   "how": "04/10 index top-right, labels uppercase mono",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-heyiammallik-e72d17"
@@ -4877,6 +5334,7 @@
   "how": "bottom bar with diamond keyframes, playhead moving with real time, handwritten section label at playhead; timecode top-right in HH:MM:SS:FF",
   "params": "1px line, 6 diamonds",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-himanshutwtxs-5f4b43"
@@ -4897,6 +5355,7 @@
   "how": "rotateX ~10deg, translateZ push 3s",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ho-ba-f3f0e9"
@@ -4917,6 +5376,7 @@
   "how": "corner brackets + tiny mono timecode labels on cream ground",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-hqmank-7c61f1"
@@ -4937,6 +5397,7 @@
   "how": "Left: headline + one-line subline; right: dark UI card with large soft shadow sliding in",
   "params": "text column 35%, card 50%, margins 6%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-iammxfschr-d68f90"
@@ -4957,6 +5418,7 @@
   "how": "Top bar with player name, zero-padded score counter, hearts and level; bottom bar with section label, countdown TIME and a thin progress bar that grows across the full duration",
   "params": "score pad 7 digits; timer 0.1s steps; bar 4px lime",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ibrahimwasim240-809370"
@@ -4977,6 +5439,7 @@
   "how": "thin violet rule under the hero word, pixel-mono index number (01-04) in violet and the model identifier in typewriter mono beside it",
   "params": "slide in 250 ms, index 2x label size",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-influencer-seo-ce8c33"
@@ -4997,6 +5460,7 @@
   "how": "Clip a landscape to a window rect; draw 4-5 tiled layers (sky, mountains, hills+buildings, trees, foreground fence/poles) scrolling horizontally at increasing speeds; wrap tiles seamlessly",
   "params": "speeds 10/30/80/200/600 px/s at 1080p",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-itsolelehmann-e47532"
@@ -5017,6 +5481,7 @@
   "how": "Centre every element on the vertical axis, mirror props left/right, pastel pink + deep purple + gold, flat frontal perspective, ornamental medallion at top centre",
   "params": "palette rose #c8909a, purple #402151, gold #d4a645",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-itsolelehmann-e47532"
@@ -5037,6 +5502,7 @@
   "how": "'03/08 KINETIC TYPE' label + progress segment",
   "params": "mono 10px",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-itsuki-dev-10942d"
@@ -5057,6 +5523,7 @@
   "how": "lerp camera behind target, roll proportional to lateral velocity",
   "params": "lerp 0.1, roll max 25deg",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ivanfioravanti-bd9261"
@@ -5077,6 +5544,7 @@
   "how": "Scale the whole scene ~2.5x toward monitor, type a green mono line with block cursor, then pull back",
   "params": "push 700 ms easeInOut, 40 ms/char",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-jake11moran-a269c4"
@@ -5097,6 +5565,7 @@
   "how": "Persistent overlay: 4 corner brackets (20 px arms), mono title top-left, timecode top-right, chapter label bottom-left, 'frame / total' with thin progress line bottom-right, all ~12 px mono at 60% opacity",
   "params": "margin 32 px, update every frame",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-jasonzhou1993-8595e0"
@@ -5117,6 +5586,7 @@
   "how": "Four L corners + brand tag + footer date",
   "params": "safe 40px",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-jesscaroline7-1ff7cb"
@@ -5137,6 +5607,7 @@
   "how": "short lowercase line at top centre ('as a demo.', 'or a video.') with a browser/app window sliding up below it and a cursor performing one action",
   "params": "window slide 400 ms easeOutQuint",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-jhylee95-e1152f"
@@ -5157,6 +5628,7 @@
   "how": "tracked uppercase section kicker top-left, contextual line icon top-right, brand logo bubble bottom-left kept across every cut to unify rapid scenes",
   "params": "kicker ~1.5% height, logo 7% height",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-jhylee95-e1152f"
@@ -5177,6 +5649,7 @@
   "how": "Lay out the full product UI on a large canvas and animate a transform (translate/scale) to frame each step instead of cutting",
   "params": "moves 1-1.5 s easeInOutCubic; zoom 1.0-1.8",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-justincooperman-e7bbc4"
@@ -5197,6 +5670,7 @@
   "how": "Horizontal rails at 25/55/90% height, each a row of labelled bars with note names below; colour-code each instrument family",
   "params": "bar width ∝ 1/pitch, mono 9 px labels",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-kamstudiolabs-447565"
@@ -5217,6 +5691,7 @@
   "how": "scale camera from room to monitor content and back",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-kamstudiolabs-c9bb28"
@@ -5237,6 +5712,7 @@
   "how": "3 equal vertical colour panels slide up staggered 120 ms, each with icon + serif label",
   "params": "blue/black/yellow",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-kangaroohere-b10f8d"
@@ -5257,6 +5733,7 @@
   "how": "Rotated 90° uppercase word on left edge in accent blue framing a card",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-kangaroohere-b10f8d"
@@ -5277,6 +5754,7 @@
   "how": "Start tight on a single tile (logo) and scale the canvas container from ~4x to ~0.5x with motion blur so the whole body of work appears at once",
   "params": "1.2-1.5 s easeInOut, blur proportional to speed",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-kikelopezdesign-7cc9e8"
@@ -5297,6 +5775,7 @@
   "how": "'05 / ELIZA' top-left, tick ruler top-right with orange marker",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-kloss-xyz-fe0c31"
@@ -5317,6 +5796,7 @@
   "how": "persistent top pill nav; a dark active pill slides to next tab, scene content (headline left, window right) swaps with blur crossfade",
   "params": "slide 300 ms ease-in-out",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-kmasiff-cc72cb"
@@ -5337,6 +5817,7 @@
   "how": "scale = base^(t/T); zoom toward a fixed anchor; each segment duration proportional to log(zoom ratio) so perceived speed is constant",
   "params": "zoom ratio per world ~8-20x, ~3-5 s per world",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-koldo2k-5cff87"
@@ -5357,6 +5838,7 @@
   "how": "OrbitControls tween target and distance",
   "params": "4 s ease",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-konstantinsaifo-96fc89"
@@ -5377,6 +5859,7 @@
   "how": "mono '01 · UPLOAD' + bold caption under UI",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-l3d1c-0e35a3"
@@ -5397,6 +5880,7 @@
   "how": "lay all steps on one large canvas (~4x frame); animate a camera transform (translate/scale) between step regions; finish with a pull-back to show the whole map",
   "params": "pan 0.8-1.2 s ease-in-out, final scale ~0.3",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-lemomo-ai-0d9cff"
@@ -5417,6 +5901,7 @@
   "how": "Scale and translate the whole UI layer so a target element (button) fills a corner, then return",
   "params": "scale 1->2.5, 800 ms easeInOutCubic",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-lester-tyy-f897f7"
@@ -5437,6 +5922,7 @@
   "how": "Corner crop marks, mono labels in four corners (name/role, project/year, chapter 'NN — NAME', running timecode) and a segmented progress bar at bottom centre",
   "params": "inset 3%, mono 11 px uppercase, segments = chapter count",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-levabashidze-2d713a"
@@ -5457,6 +5943,7 @@
   "how": "draw a circle + handle; inside, render the function rescaled around a focus point by factor k so curvature vanishes; caption 'magnification ×100'",
   "params": "circle r ~35% H; k = 1→100 animated; compare smooth vs corner (|x|)",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-linearuncle-5d2bae"
@@ -5477,6 +5964,7 @@
   "how": "When focusing on a detail panel, keep the previous scene (gallery) behind it blurred 12-20 px and dimmed 50%, panel slides in from the right with shadow",
   "params": "blur 16 px, dim 0.5",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-listudio-820c7b"
@@ -5497,6 +5985,7 @@
   "how": "corner brackets, chapter index, timecode, bpm in mono",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-lukasersil-0ed38e"
@@ -5517,6 +6006,7 @@
   "how": "Black bars animate from top and bottom until only a thin strip of the name card remains, then cut to black",
   "params": "~500 ms easeInCubic",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-madhav-xo-f97f20"
@@ -5537,6 +6027,7 @@
   "how": "large glyph horizontal plus a vertical stack of smaller glyphs, separated by thin 1-2 px L-shaped rule lines",
   "params": "rule 1.5px #f4f4eb at 60%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-majin-appsheet-2d3c1a"
@@ -5557,6 +6048,7 @@
   "how": "tiny wide-tracked condensed caps labels top-left (with red underline) and bottom-right (year/version)",
   "params": "tracking .3em, size ~2%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-majin-appsheet-2d3c1a"
@@ -5577,6 +6069,7 @@
   "how": "Top-centre label: small accent-filled square with two-digit number in dark mono + uppercase tracked mono step name; swap on each step",
   "params": "chip 28 px, label letter-spacing .15em",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-majorbaguette-fb11d7"
@@ -5597,6 +6090,7 @@
   "how": "lerp camera pos/target over 3 s easeInOutCubic",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-mdaman010-e7226a"
@@ -5617,6 +6111,7 @@
   "how": "four small mono labels pinned to safe-area corners (URL, network, slogan, live timecode mm:ss.cs) that persist across cuts and stay readable on both black and white",
   "params": "~1.5% height, 60-70% opacity grey",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-micheleharmonic-77628e"
@@ -5637,6 +6132,7 @@
   "how": "repeating rings of instances scaled exponentially, wrap-around",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-monokern-ade5b6"
@@ -5657,6 +6153,7 @@
   "how": "corner brackets, 0N/07 chapter label, timecode, ruler progress",
   "params": "mono 24 px at 1080w",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ndhabarde11-f155b4"
@@ -5677,6 +6174,7 @@
   "how": "Camera target = plane position + offset behind/above in plane space, smoothed with a critically damped spring; inherit a fraction of plane roll so the horizon tilts",
   "params": "offset (0, 2, -8), spring 4 Hz, roll inherit 0.6-1.0",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-nft-chen-5f8bb0"
@@ -5697,6 +6195,7 @@
   "how": "Dashed vertical divider, labels at top, one icon per side (key = ownership, pencil = action) and a red caveat line with crash arrow",
   "params": "divider dash 8/6",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-nikolajankovic-ce4ff4"
@@ -5717,6 +6216,7 @@
   "how": "Corner crop brackets, top labels and timecode, bottom elapsed bar with tick marks and moving playhead; everything ~40% opacity tiny mono",
   "params": "margins 4%; ticks every 0.1s",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-nolkeeg-bf062e"
@@ -5737,6 +6237,7 @@
   "how": "2 px black line at the very bottom edge grows linearly from left over the whole duration, signalling story progress",
   "params": "width = t/duration * 100%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-palashbagchi11-0a4b6b"
@@ -5757,6 +6258,7 @@
   "how": "four corner mono labels (title, chapter 'NN / NAME', grid spec, running timecode) that update per act",
   "params": "mono 10-12 px uppercase, tracking +8%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-pankajkumar-dev-0bee87"
@@ -5777,6 +6279,7 @@
   "how": "rounded card with controls on a light half and the result number in brand orange on a black half; a mascot overlaps the corner",
   "params": "radius 16 px, shadow 0 20 40 rgba(0,0,0,.1)",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-paulo-kombucha-96431c"
@@ -5797,6 +6300,7 @@
   "how": "top '04 / 07 TITLE' strip",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-polydao-7a572b"
@@ -5817,6 +6321,7 @@
   "how": "4x3 cards slight rotation drift",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-quickdesignio-dd93d0"
@@ -5837,6 +6342,7 @@
   "how": "Left column: mono kicker with dot, 2-line bold headline (line 2 in brand colour); right column: white rounded card with large soft shadow; keep layout fixed and swap content per feature",
   "params": "card radius 16px, shadow 0 20px 60px rgba(30,40,80,.12), split 40/60",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ratheejaisal-1f4538"
@@ -5857,6 +6363,7 @@
   "how": "Exponential ease of camera distance over minutes so object size grows steadily; slight inclination change for reveal",
   "params": "distance 200 r_s -> 6 r_s over ~120 s, log-space interpolation",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-rebutonepress-810f78"
@@ -5877,6 +6384,7 @@
   "how": "corner brackets, chapter n/8, mono label, progress line bottom",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-rendesr-86be44"
@@ -5897,6 +6405,7 @@
   "how": "four corner labels in small uppercase sans; bottom-left 'CH1 2.0V/div 110BPM T+ss.ss' updated per frame; top-right chapter word swaps per section",
   "params": "font 11-13px at 720p, 70% opacity",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-rneayan-ea6129"
@@ -5917,6 +6426,7 @@
   "how": "9 images start off-frame with random rotation/scale and ease into a 3x3 grid with small gaps, staggered",
   "params": "stagger 50 ms, 600 ms expo-out, start rot ±25 deg",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-rossaxbt-3085b7"
@@ -5937,6 +6447,7 @@
   "how": "Each scene scales 1.00->1.04; next scene starts at the previous end scale so zoom never snaps; all appearances use >=0.3 s eased fades",
   "params": "scale +0.04 per scene",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-rossaxbt-3085b7"
@@ -5957,6 +6468,7 @@
   "how": "black bars to 2.39:1, shot list with varied lens",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-ryzoft-4f85bd"
@@ -5977,6 +6489,7 @@
   "how": "Blur last footage frame as backdrop, left: big CTA question in white + lime, right: 3x3 grid of segment stills each with white border and numbered lime circle, staggered pop",
   "params": "stagger 60 ms, card tilt 0-2 deg",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-sab8a-364a5a"
@@ -5997,6 +6510,7 @@
   "how": "corner brackets 24px inset; mono uppercase labels: title/artist top-left, countdown top-right, 'BAR n / N' + dash progress bottom-left, 'NN — CHAPTER' bottom-right; all at ~60% opacity cream",
   "params": "font mono 11-13px @1080p, tracking 0.15em, inset 40px",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-samaote-5e2fc2"
@@ -6017,6 +6531,7 @@
   "how": "cream grainy paper, black 2px grid lines draw on, each word snaps into a cell on its onset, key word coloured red, red dot pops (scale 0->1.1->1)",
   "params": "3x3 grid; red #e0482a",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-samaote-5e2fc2"
@@ -6037,6 +6552,7 @@
   "how": "01 Geometry / 02 Depth corner labels + timecode",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-samuel-spitz-974923"
@@ -6057,6 +6573,7 @@
   "how": "Grid of rounded video thumbnails rotated ~20 deg occupying right half, translated diagonally continuously to suggest infinite content; text on left",
   "params": "rotate 20deg, speed ~80 px/s, radius 18 px",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-samuel-yostt-891f87"
@@ -6077,6 +6594,7 @@
   "how": "colored rule + 'n of 11' + condensed headline + 3-line body, crossfade on chapter",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-sayan-shanky-f850d8"
@@ -6097,6 +6615,7 @@
   "how": "Corner brackets, reel ID, running timecode and 'NN / 08 CHAPTER' label with progress dots updated on each section",
   "params": "mono 11px; 40% opacity; margin 3%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-shinskinakamoto-20190b"
@@ -6117,6 +6636,7 @@
   "how": "left headline in heavy caps (second line lime), mono subline, rotating chrome/lime blob on right, pagination top-right",
   "params": "headline ~12% frame height per line",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-shneural-2abdfa"
@@ -6137,6 +6657,7 @@
   "how": "zoom out to show all previous scenes as tiled cards dimmed",
   "params": "scale 1→0.3",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-slvdev-64c45a"
@@ -6157,6 +6678,7 @@
   "how": "Camera tracks over a column of form sheets under a spotlight; a red stamp slams onto one",
   "params": "dolly 2 s, stamp scale 1.4->1 in 120 ms",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-spearwtf-3c1fd1"
@@ -6177,6 +6699,7 @@
   "how": "big gradient numeral 01 + 2-line title left, UI window right sliding in",
   "params": "window slides x+60 ->0 500 ms",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-sudo-kiran-4f8b59"
@@ -6197,6 +6720,7 @@
   "how": "off-white rounded rect with faint smudge noise, 8 px light-grey frame, tray bar under it with drop shadow, dark slate wall with radial vignette; subtitles live on the wall below",
   "params": "board ~85% width, wall #2f3a3e",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-tak3sh8-be5012"
@@ -6217,6 +6741,7 @@
   "how": "Corner brackets, bottom-left spec string (ID, BPM, resolution, fps), bottom-right elapsed time + beat counter, left vertical ruler ticks",
   "params": "mono 11px olive",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-techhalla-7acbc2"
@@ -6237,6 +6762,7 @@
   "how": "headline top-left 64px, visual proof fills lower 70%",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-techyoutbe-945b56"
@@ -6257,6 +6783,7 @@
   "how": "Corner ticks; top-left reel title; top-right 'NN/06 — CHAPTER'; per-scene caption 'FIG.0n — NAME' with a short line of technical specs (e.g. '9x5 grid · radial ripple · eases'); bottom: timecode, centre progress bar, 'WxH · 60P · 120 BPM' with 4 beat squares",
   "params": "mono 11 px, colour adapts to scene ground",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-teslachartz-c58b32"
@@ -6277,6 +6804,7 @@
   "how": "place a tiny red-cloaked character centre-low facing a huge emissive object; only saturated colour in frame",
   "params": "figure ~5% frame height",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-theparuchh-6e08c3"
@@ -6297,6 +6825,7 @@
   "how": "4 colored dots on line with labels, active fills",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-theviableedge-9065be"
@@ -6317,6 +6846,7 @@
   "how": "rotated small cards drift slightly",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-theviableedge-9065be"
@@ -6337,6 +6867,7 @@
   "how": "3 rounded photo cards on dark navy rise 40 px + fade with 100 ms stagger, labels bottom-left",
   "params": "radius 12px, gap 2%",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-thismacapital-dfba20"
@@ -6357,6 +6888,7 @@
   "how": "Scene code, ruler scrubber with moving marker, spec text 1920x1080/30fps, corner brackets",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-tolgayhickiran-e90799"
@@ -6377,6 +6909,7 @@
   "how": "italic serif 01/02/03 + bold label top-left",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-utopyaszx-1b2f94"
@@ -6397,6 +6930,7 @@
   "how": "bottom ruler with ticks and diamond chapter markers; a red playhead moves with the video; label shows current frame + chapter name in serif italic",
   "params": "y = 95% height, ticks every 10 frames",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-vanshwtfff-db0466"
@@ -6417,6 +6951,7 @@
   "how": "grid of rounded screenshots inside a container rotated ~-15° with rotateX tilt; translate diagonally with motion blur; scale down to reveal",
   "params": "rotate -15°, gap 24 px, radius 12 px, sweep 3-4 s",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-viktoroddy-98c1d8"
@@ -6437,6 +6972,7 @@
   "how": "2 cards with ±5° rotation, overlap, spring in",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-wani-shola-16ca7a"
@@ -6457,6 +6993,7 @@
   "how": "show easing name + timecode in corners",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-web3wesley-7bb108"
@@ -6477,6 +7014,7 @@
   "how": "Show a full desktop window, then scale+translate the group to crop on the area of interest while headline stays pinned",
   "params": "scale 1 -> 2.2 over ~1 s easeInOutCubic",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-wozu-co-242285"
@@ -6497,6 +7035,7 @@
   "how": "red curtain sides + valance overlay",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:pm-x4b47x-9cc84f"
@@ -6517,6 +7056,7 @@
   "how": "each card has fixed translateZ and xy; global cameraZ added to all; opacity fades as card z approaches camera; trigger whoosh at computed pass time (inverse of easing)",
   "params": "8-10 cards, z spread 2000px, 3 s dolly",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:product"
@@ -6537,6 +7077,7 @@
   "how": "add noise2D(seed, t*freq) offsets to camera x/y with an exponentially decaying amplitude after each impact",
   "params": "amp 12 px, decay 250 ms, freq 25",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:stickman"
@@ -6557,6 +7098,7 @@
   "how": "single floor line, props spaced left-to-right as story stations (cause -> problem -> solution box), wall props for context, title top-centre",
   "params": "floor at 78% height",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:stickman"
@@ -6577,6 +7119,7 @@
   "how": "keyframes (x, y, zoom) with Easing.inOut(cubic) applied as one CSS transform to both the SVG drawing layer and the HTML text layer so they stay locked",
   "params": "zoom 1-2",
   "install": "",
+  "requires": [],
   "license": "owner-description",
   "proof": [
    "style:whiteboard"
@@ -6597,6 +7140,9 @@
   "how": "2x2 grid for wide/square, vertical stack for 9:16, designed separately per ratio; each cell animates on its own clock but cuts are staggered so there is one dominant place to look; avoid simultaneous flashes, repeated footage, or several dark cells landing together; check every cell for blank frames at opening, each cut and closing.",
   "params": "2x2 (16:9/1:1); vertical stack (9:16)",
   "install": "",
+  "requires": [
+   "imagemagick"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/101-video-skills/213-brand-grid-video/SKILL.md"
@@ -6615,6 +7161,7 @@
   "how": "Scene container: width/height 100%, padding, flex column, gap, box-sizing border-box; absolute positioning only for decoratives; no <br> in running text (use max-width); then tl.from for entrances.",
   "params": "padding e.g. 120px 160px; gap 24px",
   "install": "",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/SKILL.md"
@@ -6633,6 +7180,7 @@
   "how": "Hero text 60-80% of frame width; layers = background treatment + foreground + accents; radial glows/ghost type/hairlines instead of empty #000; structural lines scaleX from 0.",
   "params": "hero 60-80% width; >=3 layers; >=2 focal points",
   "install": "",
+  "requires": [],
   "license": "Apache-2.0",
   "proof": [
    "kosif-atlas/skills/2702-hyperframes/10378-hyperframes/references/motion-principles.md",
@@ -6652,6 +7200,7 @@
   "how": "Catmull-Rom to pass through waypoints, cubic Hermite when tangents known, Bezier when handles are the authoring tool; target C1 for smooth direction, C2 for smooth curvature; build cumulative-distance lookup table, map distance->t; never move a camera at constant t.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2199-lvtd-skills/8088-game-smooth-curves-and-motion/SKILL.md"
@@ -6670,6 +7219,7 @@
   "how": "viewport wrapper + transform scale(min(vw/1920, vh/1080)); nothing below 24px at stage size; split content instead of shrinking.",
   "params": "1920x1080; min 24px",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/880-superloopy/1944-superloopy-slides/SKILL.md",
@@ -6689,6 +7239,7 @@
   "how": "Apply as tokens in the HTML stage (1920x1080). Inspect computed styles before rendering.",
   "params": "spacing 8,16,24,32,40,48,64,80,96; outer 24 + inset 8 -> inner 16; outer 24 + inset 24 -> square; editorial hero 12/16/64px at 400/500/600; mobile display ~40px",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/97-frontend-design-director/206-frontend-design-director/references/layered-grid.md"
@@ -6707,6 +7258,7 @@
   "how": "e.g. margin-left 8.33% with margin-right -5vw on media; alternate full-bleed immersion beats with contained reading beats.",
   "params": "offset 8.33% (1/12 column); bleed -5vw",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/3438-ux-design/14124-top-design"
@@ -6725,6 +7277,7 @@
   "how": "HTML scene with three blocks; screenshots get 12px radius and shadow on a dark glow background.",
   "params": "title top 15%; hero 65%; footer 20%; title 48-72px/800; subtitle 24-32px/400; bullets 18-22px/600 pills",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/166-demo-video/535-demo-video/references/scene-design-system.md"
@@ -6743,6 +7296,7 @@
   "how": "Use in shot lists; check a 10 s test recording for faces reflected in monitors or windows; every shot states its story role.",
   "params": "60-80 cm; 1 m/+10 cm/15 deg; 30-50 cm; 50 cm/+20 cm",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2448-akbun-vlog-shotsketch/SKILL.md"
@@ -6761,6 +7315,7 @@
   "how": "One accent token in the KOSIF scene CSS, eased entrances, hard scene switches, holds sized to reading time.",
   "params": "cost low; e.g. MG-012 MG-016 MG-023 MG-044 MG-070 MG-120",
   "install": "",
+  "requires": [],
   "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
@@ -6779,6 +7334,11 @@
   "how": "Layered plates with parallax depth, fog/light layers in screen blend, slow push; KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg)",
   "params": "cost medium-high; MG-007 MG-030 MG-056 MG-071 MG-072 MG-073 MG-079 MG-080",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "chromium"
+  ],
   "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
@@ -6797,6 +7357,11 @@
   "how": "CSS grid columns, overflow-hidden line reveals, serif/sans pairing (Arabic: Naskh-style body + display headline); KOSIF render_html.cjs (/home/user/kosif-tool/tools/render_html.cjs: HTML/SVG + CSS/WAAPI or window.__kosif.seek(t) -> Playwright frame capture -> ffmpeg)",
   "params": "cost low-medium; MG-012 MG-016 MG-020 MG-067 MG-068 MG-076 MG-089 MG-110",
   "install": "",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "chromium"
+  ],
   "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/styles.md"
@@ -6815,6 +7380,7 @@
   "how": "0-2 whole, 2-4 approach, 4-7 detail, 7-9 return; nested precomps/scale with a small position box (scaled clone with a rectangle indicator).",
   "params": "9 s",
   "install": "",
+  "requires": [],
   "license": "owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner)",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-explainers.md",
@@ -6834,6 +7400,7 @@
   "how": "Tag each storyboard row with shot size and purpose; drop rows without a purpose.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2446-akbun-vlog-prepared-devtalk/SKILL.md",
@@ -6853,6 +7420,9 @@
   "how": "CSS rgba scrims, backdrop-filter/blur and box-shadow in KOSIF scenes; ffmpeg boxblur/eq on the plate.",
   "params": "scrim 10-20/40-60/70%+; opacity 50-70%; shadow 2-4/8-12 px",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3816-figure-ground-cues/SKILL.md",
@@ -6872,6 +7442,7 @@
   "how": "Review pass on storyboard frames before animating.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3838-snr-decoration-removal/SKILL.md"
@@ -6890,6 +7461,10 @@
   "how": "In HyperFrames/Remotion: separate composition 1080x1920 with its own layout; in game engines zoom canvas ~1.78x and expand aspect.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:remotion",
+   "npm:hyperframes"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md",
@@ -6910,6 +7485,7 @@
   "how": "overlay=W-w-40:H-h-40 with scaled+rounded (geq alpha or pre-made mask) PiP; hstack/vstack/xstack for comparisons; watermark overlay with format=rgba,colorchannelmixer=aa=0.6",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md"
@@ -6928,6 +7504,7 @@
   "how": "Storyboard check: count text layers per frame ≤1 (excluding captions).",
   "params": "≤1",
   "install": "",
+  "requires": [],
   "license": "unknown",
   "proof": [
    "kosif-atlas/skills/2681-emulo/10272-video/SKILL.md"
@@ -6946,6 +7523,7 @@
   "how": "Text boxes sized to 150% of source length; auto-fit font size with min floor.",
   "params": "30-50%",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu/SKILL.md"
@@ -6964,6 +7542,7 @@
   "how": "Colour only the one element the narration is about; keep others neutral.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3813-color",
@@ -6983,6 +7562,7 @@
   "how": "Squint test on a frame; reduce competing accents.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1503-universal-design-principles/3821-hierarchy-color-and-tone",
@@ -7002,6 +7582,7 @@
   "how": "Use as composition presets for B-roll briefs or for virtual cameras in 3D/2D scenes.",
   "params": "see distances",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/1096-akbun-editvideo/2448-akbun-vlog-shotsketch"
@@ -7020,6 +7601,7 @@
   "how": "Place the 3-second answer in the first reading position (top-left for Latin, top-right for Arabic RTL), group 3-5 breakdown visuals in the middle, push detail tables to the end or cut them. Lay out on an 8-px grid; Power BI default canvas 1664x936.",
   "params": "3 s / 30 s / 300 s; 3-5 breakdowns; 8 px grid; 1664x936",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2354-power-platform/9080-report-visualization-design/SKILL.md",
@@ -7039,6 +7621,7 @@
   "how": "Tokens --sk-1..7; outer 18px -> 8px padding -> inner 10px; card 12px; pill 999px; focus 3px solid offset 2px.",
   "params": "4/8/12/16/24/32/48 px; radii 10/12/18/999",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/docs/design/SQC-IDENTITY-ar.md",
@@ -7058,6 +7641,9 @@
   "how": "hflip in ffmpeg / mirror before export; prompt 'leave space for title'; object-position 83% center on narrow screens.",
   "params": "",
   "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "owner",
   "proof": [
    "kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md",
@@ -7077,6 +7663,7 @@
   "how": "Apply as defaults while authoring; verify with kmotion measure/speed/sheet",
   "params": "push 1.5–3.1x over 30–70 f, peak ~5%/frame; 2–5x close-up per interaction",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md"
@@ -7095,6 +7682,7 @@
   "how": "timeline clip zoom or punch on off-beat",
   "params": "every 2.5-4 s; 1.10-1.15x",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/montage_grammar.md"
@@ -7113,6 +7701,7 @@
   "how": "Hero leads; one origin per group; counter-motion 20-30%; parallax speeds.",
   "params": "counter 20-30%; fg 1x, mid 0.5x, bg 0.2x",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
@@ -7131,6 +7720,7 @@
   "how": "One transform on one container, one move at a time, still between events.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
@@ -7149,6 +7739,7 @@
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
@@ -7167,6 +7758,7 @@
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
@@ -7185,6 +7777,7 @@
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
@@ -7203,6 +7796,7 @@
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
@@ -7221,6 +7815,7 @@
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
@@ -7239,6 +7834,7 @@
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
@@ -7257,6 +7853,7 @@
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
@@ -7275,6 +7872,7 @@
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/seven-layer-anatomy.md"
@@ -7293,6 +7891,7 @@
   "how": "14mm to 200mm + anamorphic 40mm.",
   "params": "14, 24 f/1.4, 35 f/1.4, 50 f/1.2, 85 f/1.4, 100 macro, 135 f/2, 200 f/2.8",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md"
@@ -7311,6 +7910,7 @@
   "how": "ECU..insert; eye/low/high/drone/Dutch/worm/bird/POV.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md"
@@ -7329,6 +7929,7 @@
   "how": "static, pan, tilt, dolly, truck, pedestal, zoom, orbit, handheld, Steadicam, prose motion for models.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md"
@@ -7347,6 +7948,7 @@
   "how": "Choose one: rule of thirds, golden ratio/spiral, centred symmetry (Wes Anderson), leading lines, negative space, frame within frame, low-angle hero / high-angle vulnerability, depth stacking (foreground/mid/background).",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/seven-layer-anatomy.md"
@@ -7365,6 +7967,7 @@
   "how": "Same lock text; same light direction and Kelvin; wardrobe damage persists; same time of day; props in the same hand; screen direction (180-degree rule); same aspect and frame rate.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/continuity-protocols.md"
@@ -7383,6 +7986,7 @@
   "how": "Wide = more environment and distortion; long = compression and isolation.",
   "params": "14mm; 24mm f/1.4; 35mm f/1.4; 50mm f/1.2; 85mm f/1.4; 100mm macro; 135mm f/2; 200mm f/2.8; anamorphic 40mm (oval bokeh, horizontal flare); 300mm+ wildlife",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/visual-catalog.md",
@@ -7402,6 +8006,7 @@
   "how": "Pick size + angle + move per shot in the shot list.",
   "params": "Sizes ECU, CU, MCU, MS, full, wide, extreme wide, POV, OTS, two-shot, insert. Angles eye level, low (hero), high (vulnerable), drone top-down, Dutch (unease), worm's-eye, bird's-eye. Moves static/locked-off, pan, tilt, dolly in/out, truck, pedestal, zoom, orbit/arc (hero), crane up/down (scale), han…",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/kosif-cinema-director/references/visual-catalog.md",
@@ -7422,6 +8027,7 @@
   "how": "Apply in DESIGN.md before motion.",
   "params": "title 60-80% width; text 40px+ at 1080p; tracking -0.03em; weights 300 vs 900",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md"
@@ -7440,6 +8046,9 @@
   "how": "Build hero frame per scene, then gsap.from entrance and .to exit.",
   "params": "",
   "install": "",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/claude-animation-studio/references/motion-rules.md"
@@ -7458,6 +8067,7 @@
   "how": "Hero entrances combine position, rotation, blur and scale and start >=0.35 stage width away; distances as fractions of width.",
   "params": "0.35 W",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/motion-director-pro/references/motion-floor.md"
@@ -7476,6 +8086,7 @@
   "how": "2-3 named timed camera moves; hold between; no constant drift/orbit; budget 60% object transforms, 20% surface/light, 20% camera; fill every camera lock with acting object.",
   "params": "60/20/20",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/motion-director-pro/SKILL.md",
@@ -7495,6 +8106,9 @@
   "how": "read references/sources.md",
   "params": "",
   "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
   "license": "MIT",
   "proof": [
    "100-superskills/skills/cinema-director-7layers/references/sources.md"
@@ -7513,6 +8127,7 @@
   "how": "MOTION.breathe/push/camera; one transform on one container.",
   "params": "no handheld shake in 2D; holds creep ~4%/s or drift .3-2.5 px/f; pushes 1.5-3.1× over 30-70 f, peak ~5%/frame; every interaction gets a 2-5× close-up; one move at a time; still between events; 3D: one continuous camera, DOF on look target, one tilted object per act",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/references/craft-numbers.md",
@@ -7532,6 +8147,7 @@
   "how": "Plan the scene back-to-front (sky, clouds, far, mid, hero, effects, atmosphere) then check.",
   "params": "far edges blur 1-3",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-studio/references/drawing-guide.md:62",
@@ -7551,6 +8167,7 @@
   "how": "PLAN.md scene table Camera column",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/templates/PLAN.md",
@@ -7570,6 +8187,9 @@
   "how": "PerspectiveCamera(fov,...)",
   "params": "35–50 mm ≈ fov 40–55°; 85 mm ≈ fov 24° for product close-up; sample fov 45, near 0.1, far 100",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/3d.md:18",
@@ -7589,6 +8209,7 @@
   "how": "offset_layer = camera_offset × factor.",
   "params": "foreground 1.0, mid 0.5, background 0.15",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/3d.md:27"
@@ -7607,6 +8228,7 @@
   "how": "CSS/Canvas filter blur on background plate.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/3d.md:29"
@@ -7625,6 +8247,7 @@
   "how": "Gentle camera on tabular info.",
   "params": "push ≤ 4% per scene (~0.5%/s); pan ≤ 40 px/s; rotation ±0.5°; no shake",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/charts.md:42"
@@ -7643,6 +8266,7 @@
   "how": "Pan between chapters; zoom limits; hold after moves.",
   "params": "700–1000 ms cubic-bezier(0.65,0,0.35,1); zoom 1.0→1.4, max 1.8; hold 1.5 s",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/diagrams.md:30"
@@ -7661,6 +8285,7 @@
   "how": "Device frame share by aspect ratio.",
   "params": "9:16 55–70% height; 16:9 75–85% on a third line; 1:1 70%",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/phone.md:25"
@@ -7679,6 +8304,7 @@
   "how": "Text margins; never crop through island/camera/home indicator; keep one vertical edge in push-ins.",
   "params": "5% sides; 12% top/bottom; bleed bottom only if lower 20% of screen non-essential",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/phone.md:27"
@@ -7697,6 +8323,7 @@
   "how": "Slow push during holds; dolly toward tapped element.",
   "params": "push 1.00→1.06 over 3–4 s sine; dolly 1.00→1.12 in 600 ms, back over 900 ms",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/phone.md:40"
@@ -7715,6 +8342,7 @@
   "how": "All photos in a scene share one rig transform so cuts feel like one operator.",
   "params": "rotate ≤ 1°",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/photos.md:17"
@@ -7733,6 +8361,7 @@
   "how": "Eyes in top third; limited push into faces; 9:16 subject on vertical third.",
   "params": "face push ≤ 1.08×; pan ≤ 6% width; push ≤ 12%",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/photos.md:24-25"
@@ -7751,6 +8380,7 @@
   "how": "Device-free screen width share, arrival rotation; vertical travel on 9:16; callouts outside screen.",
   "params": "16:9 72–84% width; ≤ 6° rotation on arrival only",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:21"
@@ -7769,6 +8399,9 @@
   "how": "starters/remotion CameraRig or one ctx.setTransform; render --scale 2.",
   "params": "zoom > 1.4× → 2×",
   "install": "",
+  "requires": [
+   "npm:remotion"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/product-ui.md:22"
@@ -7787,6 +8420,7 @@
   "how": "Verbatim clauses in leg prompts.",
   "params": "final ~1 s",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/scroll-world/skills/scroll-world/SKILL.md"
@@ -7805,6 +8439,7 @@
   "how": "Only 0,2,4,8,12,16,24,32,40,48,64,80,96 px; buttons 8x12 px.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "MIT",
   "proof": [
    "kosif-one/vendor/ai-design-skills/skills/landing-page-design/SKILL.md:199"
@@ -7823,6 +8458,7 @@
   "how": "Translate stage by ±2 px for 3 frames.",
   "params": "2 px, 3 frames, once",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-0xevinho-3777d8"
@@ -7843,6 +8479,7 @@
   "how": "scale 1.0→1.05 per beat; offset 4*sin(2π·0.5·t).",
   "params": "±4 px @0.5 Hz",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-abderrahmen-g-9e8ed0"
@@ -7863,6 +8500,7 @@
   "how": "Background grid layer; snap rest positions.",
   "params": "24 px cells @1080p, 8% opacity",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-ajith-io-ea7f2d"
@@ -7883,6 +8521,7 @@
   "how": "Stage transform.",
   "params": "3-5% scale/scene or <80 px pan",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-aschapmann-131210"
@@ -7903,6 +8542,7 @@
   "how": "eased scale.",
   "params": "6% per chorus",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-davidshulmanfl-371638"
@@ -7923,6 +8563,7 @@
   "how": "Lagged follow + bezier recentre.",
   "params": "120 ms lag; 15% overshoot; (0.2,0.9,0.3,1)",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-deifosv-04e4d3"
@@ -7943,6 +8584,7 @@
   "how": "Black bars.",
   "params": "≤2%/s scale, ease-in-out sine",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-kamstudiolabs-0b0824"
@@ -7963,6 +8605,7 @@
   "how": "Zoom when 3 rings remain, decaying shake per hit.",
   "params": "1.0→1.25 over 3 s; 2 px shake 100 ms",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-kantamk-61f410"
@@ -7983,6 +8626,7 @@
   "how": "Pans and one push; flat UI rotates ≤8° in 3D.",
   "params": "push 1.0→1.08; ≤8°; UI sizes 14/16/24/40 px",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-melvynx-6cde6c"
@@ -8003,6 +8647,7 @@
   "how": "Set scale 1.15 at hit frame, interpolate back easeOutExpo.",
   "params": "1.00->1.15 in 1 frame; relax 350 ms easeOutExpo",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-micheleharmonic-77628e"
@@ -8023,6 +8668,7 @@
   "how": "scale=2^(t/2.5); ease only start/end.",
   "params": "doubles every 2.5 s; 600 ms ease-in-out ends",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-monokern-ade5b6"
@@ -8043,6 +8689,7 @@
   "how": "Only two small push-ins.",
   "params": "4% push, 2 s each",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-mrtanviir-132457"
@@ -8063,6 +8710,7 @@
   "how": "scale 0.92->1.00 plus 24 px drop shadow.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-ratheejaisal-1f4538"
@@ -8083,6 +8731,7 @@
   "how": "background grid at 0.5 speed; grid scale 0.92->1",
   "params": "accent <=25%",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-robvjourney-ce3e1a"
@@ -8103,6 +8752,7 @@
   "how": "scale 1.00->1.06 over 30 s",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "owner",
   "proof": [
    "style:pm-sarut0bisasuke-cefa43"
@@ -8126,6 +8776,7 @@
   "how": "Orbits ry ≤ 2.5°, rx ≤ 1.6°; pushes ×1.02–1.09; key the camera as summed deltas on stacked nulls; counter-transform HUD chrome so it stays flat; open on a tilted pose {s 1.12, rx 14, ry −11, rz −1.5} and settle frontal over 1.4 s with bezier(.3,.3,.15,1). Depth of field on DOM layers: blur = min(18, k·|1 − D/depth|) with k 6–10; camera-move blur via feGaussianBlur = half-frame travel × 0.32, max 44 px.",
   "params": "orbit ≤ 2.5°/1.6°; push ×1.02–1.09; DOF blur ≤ 18 px; move blur ≤ 44 px",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md"
@@ -8155,6 +8806,7 @@
   "how": "Follow the caret: +290 px with rx 11°; crane back: distance +1450 with rx 20°; pull out on export: D × 1.62; on a burst of results: D × 2.5. Always counter-transform the HUD; never move the camera at peak velocity while text is animating.",
   "params": "follow +290 px rx 11°; crane +1450 rx 20°; export ×1.62; burst ×2.5",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md",
@@ -8185,6 +8837,7 @@
   "how": "One dominant verb (push, orbit or travel); every push ≥ 1.14× (smaller reads static); no peak camera velocity while text animates; end on a slow push toward the brand; a one-to-many carousel uses about 13 cards ~28° apart turning ~200°. Depth comes from a motivated camera over flat designed layouts, not from tilting UI into 3D.",
   "params": "push ≥ 1.14×; carousel 13 cards × 28°, ~200° turn",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"

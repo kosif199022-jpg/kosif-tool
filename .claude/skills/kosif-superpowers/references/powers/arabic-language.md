@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** عربية صحيحة: الإملاء والنحو والأسلوب والتشكيل واتجاه النص. — Correct Arabic: spelling, grammar, style, diacritics and text direction.
 > **أقوى دليل / strongest evidence:** **ARL-01** Normalize Arabic for search and matching (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md`) · **ARL-02** Match normalized, report in the original spelling (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md`)
-> **19 powers follow** — ✅ 13 · 🟢 0 · 📦 2 · 🔑 0 · 👁 0 · 📄 4 · 💡 0.
+> **22 powers follow** — ✅ 14 · 🟢 0 · 📦 4 · 🔑 0 · 👁 0 · 📄 4 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الكتابة واللغة — Writing & language · **البادئة / prefix:** `ARL` · **البيانات / data:** `data/powers/arabic-language.json` · **بحث / search:** `python3 scripts/powers.py family arabic-language`
-**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [humanizer.md](../humanizer.md)
+**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [humanizer.md](../humanizer.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
@@ -18,6 +18,7 @@
 - **مكتبات ورخص — Libraries and licenses** — ARL-10 … ARL-13 (4)
 - **التعرف الضوئي — OCR** — ARL-14 … ARL-15 (2)
 - **اللهجات والسجل والنحو — Dialects, register and grammar** — ARL-17 … ARL-19 (3)
+- **Extended toolbelt (2026-10-18)** — ARL-20 … ARL-22 (3)
 - المصادر والرخص / sources & licences
 
 ## معالجة النص العربي — Arabic text processing
@@ -26,6 +27,7 @@
 - **ماذا / what:** نسخة مطبّعة للمطابقة فقط: بلا تشكيل ولا تطويل، ألف واحدة، ى→ي، ة→ه، وأرقام لاتينية؛ والنص الأصلي لا يُمس. — A matching-only copy without tashkeel or tatweel, one alef, ى→ي, ة→ه and ASCII digits; the original text is never changed.
 - **متى أستخدمها / when:** Searching, deduplicating, comparing or regex-matching Arabic text; before diffing two Arabic versions.
 - **كيف / how:** Python stdlib: unicodedata.normalize("NFKC", s); remove [\u064B-\u0652\u0670\u0640]; translate "أإآٱىة"→"اااايه"; translate ٠-٩ and ۰-۹ to 0-9. Ready code: tell_scan.norm_ar and anchor_gate.clean (scripts/). Tested: "ختامًا إلى مُستشفى المدينةِ" equals "ختاما الي مستشفي المدينه". Folding ة→ه and ى→ي is lossy: use it for keys, never for output. Motion-side alignment variant: ARAB-69.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** original (this skill)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py`
 - **المصدر / source:** scripts/tell_scan.py; scripts/anchor_gate.py
@@ -42,6 +44,7 @@
 - **ماذا / what:** في بايثون \b و\w تعدّ الحروف العربية حروف كلمة، فيضيع "و٥" و"٢٠٢٤م" و"بالمصري"؛ استخدم حدودًا عربية صريحة مع سوابق اختيارية. — Python \b and \w treat Arabic letters as word chars, so clitic-glued forms are missed; use explicit Arabic boundaries with optional proclitics.
 - **متى أستخدمها / when:** Writing any regex over Arabic: keyword lists, number extraction, name matching.
 - **كيف / how:** Word: (?<![\u0621-\u064A])(?:[وفبلك]?(?:ال)?|لل)(?:WORD)(?![\u0621-\u064A]). Numbers: (?<![\d.,])\d+… with no letter lookarounds, so و٥ / بـ١٠٠ / ٢٠٢٤م are found. Names: not preceded or followed by a letter or digit, optional proclitic (so علي does not match inside عليها, but وأحمد matches أحمد). Tested: و٥→و٩ and ٢٠٢٤م→٢٠٢٥م flagged; يمارس is not the month مارس.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** original (this skill)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py`
 - **المصدر / source:** scripts/anchor_gate.py; scripts/tell_scan.py
@@ -66,6 +69,7 @@
 - **ماذا / what:** احذف التشكيل للمطابقة، واحفظه كما هو في القرآن والحديث والشعر، وأضفه فقط حيث يرفع لبسًا. — Strip harakat for matching, keep them untouched in sacred text and poetry, add them only to resolve ambiguity.
 - **متى أستخدمها / when:** Cleaning, searching, displaying or generating vowelled Arabic.
 - **كيف / how:** Matching: strip (ARL-01). Display: never "fix" or strip the diacritics of Quran, hadith or poetry; render full tashkeel with a font and engine that support it (Amiri + RAQM or a browser; leave headroom, ARAB-05). Writing: partial tashkeel only on words a reader could misread (عَلِم/عُلِم); random partial tashkeel on common words is a style tell. Automatic diacritization needs morphological models (ARL-11); review every result by eye and never auto-vowel sacred text. For speech alignment prefer vowelled source text over ASR output (ARAB-70).
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** references/humanizer.md §7.3, §7.5; references/powers/typography-arabic.md
 
@@ -73,6 +77,7 @@
 - **ماذا / what:** "Ø³Ù„Ø§Ù…" نص UTF-8 قُرئ على أنه cp1252، ويُصلح بعكس الخطوة؛ والملفات القديمة بترميز Windows-1256 تُفك به. — UTF-8 read as cp1252 is reversed by re-encoding; legacy Windows-1256 files decode with cp1256.
 - **متى أستخدمها / when:** CSV, subtitles, emails or database dumps where Arabic shows as Ø³Ù„… or as "???".
 - **كيف / how:** Python: garbled.encode("cp1252").decode("utf-8") (tested: "Ø³Ù„Ø§Ù… Ø¹Ù„ÙŠÙƒÙ…" → "سلام عليكم"). If bytes fail as UTF-8, try cp1256 (tested: d3e1c7e3 → "سلام"). Write CSV for spreadsheet apps as UTF-8 with BOM (encoding="utf-8-sig") so Arabic opens correctly. "???" means the text was already destroyed; go back to the source. File-name mojibake: ARAB-81.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** original (this skill)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py`
 - **المصدر / source:** proofs/general-writing/arabic_probe.py
@@ -84,6 +89,7 @@
 - **متى أستخدمها / when:** Drawing Arabic into images, charts, PDFs or video frames outside a browser.
 - **كيف / how:** Check: PIL.features.check("raqm") (True here, Pillow 12.3.0) → ImageFont.truetype(font, size, layout_engine=ImageFont.Layout.RAQM) and draw raw logical text with direction="rtl". matplotlib 3.11 also bundles libraqm (check matplotlib.ft2font.__libraqm_version__): pass raw text there too; adding reshaper+bidi on top reverses it (proofs/general-data, mpl_arabic_modes.png). Only for reportlab, or a Pillow/matplotlib build without raqm: arabic_reshaper.reshape(t) then bidi.get_display(), with a font that has Presentation Forms-B (Amiri, Noto Naskh). Tested: reshaper gives U+FEB3 U+FEFC U+FEE1 for "سلام"; RAQM shaped "سلام" in Amiri at 82 px width. Full routing and failure modes: ARAB-06.
 - **تثبيت / install:** `pip install arabic-reshaper python-bidi`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:office`](../requirements.md#req-pip-office) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الرخصة / license:** arabic-reshaper MIT; python-bidi LGPL
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** session run 2026-10-16; references/powers/typography-arabic.md ARAB-06
@@ -92,6 +98,7 @@
 - **ماذا / what:** علامات الاتجاه الخفية تُحذف قبل المعالجة وتُضاف عزلات الاتجاه عند العرض حول الكلمات اللاتينية والأرقام. — Strip invisible direction marks before processing; add direction isolates around Latin words and numbers when displaying.
 - **متى أستخدمها / when:** Mixed Arabic/English UI strings, chat messages, CSV exports, captions with brand names or prices.
 - **كيف / how:** Processing: remove LRM U+200E, RLM U+200F, ALM U+061C, embeddings U+202A–202E, isolates U+2066–2069 and BOM before matching (anchor_gate does this; tested on OCR output). Display: wrap embedded runs in FSI U+2068 … PDI U+2069 (or <bdi> / dir="auto" in HTML), keep % and currency with their number, never reverse strings by hand. Renderer-specific isolation for motion: ARAB-72.
+- **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** scripts/anchor_gate.py (mark stripping); references/powers/typography-arabic.md ARAB-72
 
@@ -100,6 +107,7 @@
 - **متى أستخدمها / when:** Before rendering any Arabic text to an image, PDF, chart or video.
 - **كيف / how:** Check system coverage: fc-list :lang=ar family (here: only DejaVu, FreeSerif, FreeMono, Unifont). Use the bundled fonts in proofs/_shared/fonts (Amiri for Naskh and full tashkeel, Cairo/Tajawal for UI, Reem Kufi and Lalezar for display, Aref Ruqaa for calligraphic titles). System-wide install when root is available: apt-get install fonts-noto-core fonts-kacst fonts-arabeyes (from the environment probe; not run here). Font choice and fallback chains: ARAB-11, ARAB-13.
 - **تثبيت / install:** `apt-get install -y fonts-noto-core fonts-kacst fonts-arabeyes (optional)`
+- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الرخصة / license:** OFL-1.1 (bundled fonts)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py`
 - **المصدر / source:** proofs/_shared/fonts; session-2026-10-16:env-probe.md (font list)
@@ -111,6 +119,7 @@
 - **متى أستخدمها / when:** Lossless ASCII transliteration for NLP pipelines, or reliable normalization helpers, on a machine without heavy ML packages.
 - **كيف / how:** pip install --no-deps camel-tools emoji (emoji is imported by camel_tools.utils.charsets). Then: CharMapper.builtin_mapper("ar2bw")(s) and "bw2ar" (round trip exact on "مُحَمَّدٌ يَقْرَأُ القُرْآنَ" → "muHama~dN yaqora>u Alquro|na"), also ar2safebw and ar2hsb; camel_tools.utils.dediac.dediac_ar; normalize_alef_ar, normalize_alef_maksura_ar, normalize_teh_marbuta_ar. A plain pip install pulls transformers and torch.
 - **تثبيت / install:** `pip install --no-deps camel-tools emoji`
+- **يحتاج / needs:** [`pip:torch`](../requirements.md#req-pip-torch) · [`pip:camel-tools`](../requirements.md#req-pip-camel-tools)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py`
 - **المصدر / source:** session run 2026-10-16 (camel-tools 1.6.0)
@@ -120,6 +129,7 @@
 - **متى أستخدمها / when:** Lemmatizing, segmenting clitics, tagging parts of speech, detecting the dialect of a corpus, extracting names and places.
 - **كيف / how:** pip install camel-tools (pulls transformers and torch; CPU torch installs in about 21 s, 769 MB here per the arsenal run), then download the data packages the task needs with the data tool camel-tools provides (list them first; sizes vary). Not run in this session: verify on the target machine and record the run before claiming it. For light character work use ARL-10 instead.
 - **تثبيت / install:** `pip install camel-tools  (+ its data packages)`
+- **يحتاج / needs:** [`pip:torch`](../requirements.md#req-pip-torch) · [`pip:camel-tools`](../requirements.md#req-pip-camel-tools)
 - **الرخصة / license:** MIT (code); data packages carry their own terms
 - **الدليل / proof:** `session-2026-10-16:general-arsenal.md#Full table`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (camel-tools 1.6.0, MIT, data packages)
@@ -129,6 +139,7 @@
 - **متى أستخدمها / when:** Quick Arabic cleanup scripts where GPL is acceptable.
 - **كيف / how:** pip install pyarabic; import pyarabic.araby as araby; araby.strip_tashkeel("مُحَمَّدٌ") → "محمد"; araby.strip_tatweel("عـــربي") → "عربي"; araby.tokenize(...) glues punctuation runs (":«", "»،"), so post-split punctuation if you count words. For MIT-only stacks use ARL-01 or ARL-10.
 - **تثبيت / install:** `pip install pyarabic`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** GPL
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py`
 - **المصدر / source:** session run 2026-10-16 (pyarabic 0.6.15); session-2026-10-16:general-arsenal.md (license)
@@ -138,6 +149,7 @@
 - **متى أستخدمها / when:** Clitic segmentation or POS tagging when camel-tools is not an option.
 - **كيف / how:** pip install farasapy; needs a Java runtime (apt-get install default-jre if missing). Not run in this session. Compare its segmentation with camel-tools on a sample before choosing.
 - **تثبيت / install:** `pip install farasapy  (+ Java runtime)`
+- **يحتاج / needs:** [`pip:camel-tools`](../requirements.md#req-pip-camel-tools)
 - **الدليل / proof:** `session-2026-10-16:general-arsenal.md#Full table`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md (farasapy 0.1.1, license blank, needs Java)
 
@@ -148,6 +160,7 @@
 - **متى أستخدمها / when:** Extracting Arabic text from scans, screenshots, posters or video frames.
 - **كيف / how:** apt-get install -y tesseract-ocr tesseract-ocr-ara (root), then tesseract img.png out -l ara --psm 6 (add +eng for mixed text); Python: pytesseract (Apache-2.0). Tested on rendered lines: words right ("ارتفعت المبيعات … مارس", Cairo read الخميس, Amiri lost it), but ٢٥٪ → "ه5./" or "10", ٢٠٢٤ → "٠١74", 12 → ١١, and with Western digits the second line vanished; ×2 upscaling did not fix digits; output carries LRM/RLM marks. Always verify numbers (ARL-15) and look at the image. Scanned PDF pages: DOC-17. Pure-pip alternative: easyocr (Apache-2.0, needs torch, not run). **أرقام / params:** psm 3/4/6 gave identical text on single-column lines
 - **تثبيت / install:** `apt-get install -y tesseract-ocr tesseract-ocr-ara && pip install pytesseract`
+- **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract) · [`pip:torch`](../requirements.md#req-pip-torch) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الرخصة / license:** tesseract Apache-2.0; pytesseract Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py`
 - **المصدر / source:** session run 2026-10-16 (tesseract 5.3.4, ara)
@@ -156,6 +169,7 @@
 - **ماذا / what:** قارن ناتج OCR بنص مرجعي أو بقراءة ثانية عبر anchor_gate.py فيظهر كل رقم أو تاريخ أو نسبة قُرئت خطأ. — Diff OCR output against a reference or a second reading with anchor_gate.py to expose every misread number, date or percent.
 - **متى أستخدمها / when:** Any OCR of invoices, tables, statistics or dates in Arabic.
 - **كيف / how:** python3 -I scripts/anchor_gate.py --before truth_or_second_read.txt --after ocr.txt --text. Invisible bidi marks in OCR output are stripped, digit systems are equated. Tested: OCR of "٢٥٪ … ٢٠٢٤ … ١٢ مارس" → REVIEW_REQUIRED, dropped 12, 2024, 25%. With no reference, OCR twice (two fonts/scales or two engines) and diff the readings; disagreement marks the cells to check by eye.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`tesseract`](../requirements.md#req-tesseract)
 - **الرخصة / license:** original (this skill)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py`
 - **المصدر / source:** scripts/anchor_gate.py; proofs/general-writing/arabic_probe.py
@@ -166,6 +180,7 @@
 - **ماذا / what:** حدد السجل قبل الكتابة (فصحى رسمية، فصحى مبسطة، مصرية، خليجية، شامية، حجازية، مغاربية) والتزم به، ولا تعامل اللهجات كلهجة واحدة. — Choose the register before writing and keep it; do not treat Arabic dialects as one.
 - **متى أستخدمها / when:** Any Arabic output: captions, posts, scripts, UI text, replies to a user who writes in dialect.
 - **كيف / how:** Reply in the user's register unless asked otherwise. Egyptian markers: مش، هـ/حـ (future)، اللي، ده/دي/دول، إزاي، دلوقتي. Levantine: شو، هلّق، كتير، منيح. Gulf: وايد، شلون، زين. Maghrebi: برشا، بزاف. Do not Egyptianize other dialects or judge them by MSA rules; keep one spelling convention; no fake dialect sprinkles. Automatic dialect ID exists in full camel-tools (ARL-11, not run here). Rewriting between registers: WRITE-19.
+- **يحتاج / needs:** [`pip:camel-tools`](../requirements.md#req-pip-camel-tools)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** references/humanizer.md §7.2; owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5 (register choice, owner)
 
@@ -174,6 +189,7 @@
 - **متى أستخدمها / when:** Storing Arabic in ASCII-only systems, building NLP features, writing Arabic names in English text, reading Arabizi chat.
 - **كيف / how:** Lossless: camel-tools ar2bw / bw2ar (round trip exact, ARL-10). Readers: use the spelling the person, brand or publication already uses; never "correct" a name's romanization; keep it in the anchor keep list (WRITE-08). Arabizi (Franco) chat uses digits for letters (3 for ع, 7 for ح, 2 for ء, 5 for خ); conventions vary by region, so confirm with the user and never auto-convert names.
 - **تثبيت / install:** `pip install --no-deps camel-tools emoji`
+- **يحتاج / needs:** [`pip:camel-tools`](../requirements.md#req-pip-camel-tools)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py`
 - **المصدر / source:** session run 2026-10-16 (camel-tools 1.6.0)
@@ -185,9 +201,41 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** references/humanizer.md §7.6; references/powers/typography-arabic.md ARAB-76
 
+## Extended toolbelt (2026-10-18)
+
+#### ARL-20 · CAMeL Tools: تقطيع النص العربي واستخراج الجذور والتشكيل وتحديد · CAMeL Tools: Tokenise, lemmatise, diacritise and dialect-identify Arabic text · 📦 بأمر تثبيت / one install
+- **ماذا / what:** تقطيع النص العربي واستخراج الجذور والتشكيل وتحديد اللهجة. — Tokenise, lemmatise, diacritise and dialect-identify Arabic text. (CAMeL Tools, ★0.6k, MIT).
+- **متى أستخدمها / when:** arabic nlp tasks the user has the right to run
+- **كيف / how:** `pip install camel-tools && camel_data -i light`. Licence note: permissive.
+- **تثبيت / install:** `pip install camel-tools && camel_data -i light`
+- **يحتاج / needs:** [`pip:camel-tools`](../requirements.md#req-pip-camel-tools)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/CAMeL-Lab/camel_tools
+
+#### ARL-21 · spaCy: تقطيع العربية ومطابقة القواعد؛ واستخراج الكيانات مع · spaCy: Tokenise Arabic and match rules (blank 'ar'); NER with downloaded models · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تقطيع العربية ومطابقة القواعد؛ واستخراج الكيانات مع النماذج. — Tokenise Arabic and match rules (blank 'ar'); NER with downloaded models. (spaCy, ★34.0k, MIT).
+- **متى أستخدمها / when:** nlp tasks the user has the right to run
+- **كيف / how:** `pip install spacy`. Verified here 2026-10-18: 8 Arabic tokens; matched 'يوم الجمعة' (spacy 3.8.16). Licence note: permissive.
+- **تثبيت / install:** `pip install spacy`
+- **يحتاج / needs:** [`pip:spacy`](../requirements.md#req-pip-spacy)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json`
+- **المصدر / source:** https://github.com/explosion/spaCy
+
+#### ARL-22 · Argos Translate: ترجمة عربي-إنجليزي دون اتصال تمامًا · Argos Translate: Translate Arabic↔English fully offline · 📦 بأمر تثبيت / one install
+- **ماذا / what:** ترجمة عربي-إنجليزي دون اتصال تمامًا. — Translate Arabic↔English fully offline. (Argos Translate, ★6.6k, MIT).
+- **متى أستخدمها / when:** translation tasks the user has the right to run
+- **كيف / how:** `pip install argostranslate  (+ ar↔en package ~100 MB)`. Verified here 2026-10-18: import OK; install ar↔en package before translating (argostranslate ). Licence note: permissive.
+- **تثبيت / install:** `pip install argostranslate  (+ ar↔en package ~100 MB)`
+- **يحتاج / needs:** [`pip:argos`](../requirements.md#req-pip-argos)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/argosopentech/argos-translate
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: original (this skill) (7) · — (5) · MIT (2) · GPL (1) · MIT (code); data packages carry their own terms (1) · OFL-1.1 (bundled fonts) (1) · arabic-reshaper MIT; python-bidi LGPL (1) · tesseract Apache-2.0; pytesseract Apache-2.0 (1)
+- الرخص / licences: original (this skill) (7) · MIT (5) · — (5) · GPL (1) · MIT (code); data packages carry their own terms (1) · OFL-1.1 (bundled fonts) (1) · arabic-reshaper MIT; python-bidi LGPL (1) · tesseract Apache-2.0; pytesseract Apache-2.0 (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

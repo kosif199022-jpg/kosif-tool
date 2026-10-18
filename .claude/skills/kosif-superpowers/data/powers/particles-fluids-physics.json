@@ -9,6 +9,7 @@
   "how": "rnd(i) = fract(sin(i·127.1 + 311.7)·43758.5453) for per-index values; KOSIF.rng(seed) = mulberry32 for sequences; motion-kit MOTION.rng(seed); flicker = hash(i, floor(t·10)). Everything in the lab and the proof films uses this (seed 20261016/20261015). (code snippet in references/powers/particles-fluids-physics.md)",
   "params": "e.g. 200 points, brightness = hash(i, floor(t·10))",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/timeline.js:40",
@@ -38,6 +39,9 @@
   "how": "Ballistic: p = p0 + v·τ + ½g·τ²; drag: p = p0 + v·(1 − e^(−kτ))/k; wrap: y = (y0 + v·t) mod H; stateful fields (curl advection) integrated once at 60 Hz with RK2 and stored, seek = linear interpolation between stored steps (particles-to-arabic). Bake Blender/Houdini sims to sequences — GLB does not carry them.",
   "params": "RK2 @ 60 Hz pre-baked; drag k 2.4/s",
   "install": "",
+  "requires": [
+   "blender"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/particles-to-arabic/README.md",
@@ -65,6 +69,7 @@
   "how": "State the unit on screen or in VO; cap counts; sample instead of drawing every edge; pair with static width/labels for quantity; end on a static frame; avoid for aggregated or uncertain human harm.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/particles.md:9",
@@ -90,6 +95,9 @@
   "how": "Burst speeds 400–1300 px/s, gravity 60–150 px/s², flow-field noise scale .0025; go GPU (instanced/FBO) beyond ~5k.",
   "params": "4/8/14 px; 150–600 Canvas; ≤ 20k WebGL",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/particles.md:15-18",
@@ -115,6 +123,7 @@
   "how": "One event list drives both audio and particles (e.g. SOUND.kicks, makeSparks event times); respect reduced-motion and flashing limits.",
   "params": "",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx"
@@ -139,6 +148,10 @@
   "how": "rng(20261015): angle, speed 400–1300 px (420–1320 in the starter), size 4–14, 70% #7ee8d2 / 30% #ffb86b; d = outExpo(life)·sp; alpha = 1 − inOutCubic(life); y += life·120; r shrinks 60%. Rendered here twice: the lab panel and the html-canvas starter itself (render_html.cjs, 7–10.5 s, burst + ring around «الفكرة»).",
   "params": "160 parts; 400–1300 px/s; gravity 60–150 px/s²; life .7–1.0",
   "install": "",
+  "requires": [
+   "node",
+   "chromium"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/starters/html-canvas/index.html:118",
@@ -165,6 +178,7 @@
   "how": "Word 0–250 ms spring (damping 14, stiffness 150); 160 particles 50–3000 ms; ring 100–1100 ms outExpo (SHAPE shockwave).",
   "params": "word 250 ms; ring 1 s outExpo",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/particles.md:38-40"
@@ -189,6 +203,9 @@
   "how": "Per piece: x = x0 + vx·t + sin(3t + ph)·20, y = y0 + vy·t + ½g·t², rotate spin·t, scale(1, cos(8t + ph)); 20–300 pieces, g 600–900 px/s², life 1–2.5 s. Rendered here (70 pieces, closed form). HyperFrames confetti component is the seeded drop-in.",
   "params": "40–150 pcs; g 600–900 px/s²; sway 20 px; life 1.5–2.5 s",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/confetti/confetti.html",
@@ -222,6 +239,9 @@
   "how": "Copy music-to-video/references/motion-primitives/particle-burst/scene.html or radial-burst-lines/scene.html; anchor to audiomap events; best span .2–1.2 s / .2–.8 s.",
   "params": "≤ ~40 particles; chips radius 2 px",
   "install": "npm i -D hyperframes",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0 (+ GSAP standard license).",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/particle-burst/scene.html",
@@ -248,6 +268,7 @@
   "how": "White 70% / yellow 20% / red 10%; life 600–900 ms; impact lines life 200 ms at 200 px/s; tracer variant: bursts of 6–10 additive streaks at ~3000 u/s, life .3 s, #fff2d0.",
   "params": "80–150 dashes, 600–900 ms; impact 4–6 lines, 200 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-sudeepsd-1a3485",
@@ -278,6 +299,7 @@
   "how": "300–600 squares, 600 ms, R/B offset 4–8 px + motion blur; shards 600 ms easeOutExpo with spin; ring: 24 shards 400–600 px/s fading 500 ms, or ~60 glowing dots sampled on the ring drifting 40–120 px/s for 2 s.",
   "params": "300–600 squares; 24 ring shards",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-teslachartz-c58b32",
@@ -308,6 +330,7 @@
   "how": "Burst 700 ms expo-out then drift 10 px/s; soft shadows; slight rotation; depth blur by scale.",
   "params": "~120 cards; 700 ms; drift 10 px/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-rossaxbt-3085b7",
@@ -336,6 +359,7 @@
   "how": "Gravity .05 per frame-unit, colours #e3b75a / #fff; star sprite 4-point sparkle.",
   "params": "80 stars; fade 2 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-bthreeagency-b9b8d9"
@@ -362,6 +386,9 @@
   "how": "Procedural draw(frame) in Pillow; hold the impact frame 2–3 frames; ramp 4–6 colours; shrink-to-die: 24 particles, 3–5 frame life.",
   "params": "ramp 4–6 colours; hold 2–3 frames",
   "install": "",
+  "requires": [
+   "pip:pillow"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2460-pixel-art/9530-vfx",
@@ -387,6 +414,7 @@
   "how": "Render the word once with the shaper on a hidden canvas, take alpha > 150 pixels on a 2 px step, Fisher–Yates shuffle with the seed; start_i = 2.2 + 1.1·(.72·(1−u) + .28·rand) s (u = x position, right first), duration 1.75 s inOutCubic, curved path ±.18–.50; then breathe, light sweep, and explode (drag k 2.4/s, buoyancy −46τ²). Proven in proofs/particles-to-arabic (13/13).",
   "params": "N 6000; seed 20261016; step 2 px; travel 1.75 s; shockwave 3200 px/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/particles-to-arabic/README.md",
@@ -420,6 +448,9 @@
   "how": "Arabic: sample the whole shaped word and keep it readable ≥ 1 s first; drift 200 px over 1.5 s; ember variant 20–60k points (GPU), release sweep 1.2 s (for Arabic sweep right→left), curl velocity, additive, life 2 s. HyperFrames particle-text-dissolve does in/out with one painter (no per-particle tweens).",
   "params": "drift 200 px / 1.5 s; hold ≥ 1 s; sweep 1.2 s",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/particles.md:44",
@@ -450,6 +481,7 @@
   "how": "300–6000 points, spring stiffness 120 damping 18 (~600 ms), additive + bloom 1.5; X-glyph variant: 80–150 glyph particles scatter .6 s then converge .8 s and crossfade to the real logo; pixel-logo variant eases to bitmap grid cells over 1.5 s.",
   "params": "300–6000 pts; spring 120/18; ~600 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-bogdandragomir-35e024",
@@ -481,6 +513,7 @@
   "how": "Targets from chart geometry; 1.2 s easeInOut; grid pitch ~24 px, 600 ms easeInOutCubic stagger 0–300 ms by distance; prompt→particles→chart morph 700 ms (idea).",
   "params": "1.2 s; grid 24 px; stagger ≤ 300 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-ismailfahmi-557268",
@@ -510,6 +543,9 @@
   "how": "npx hyperframes add particle-image-reveal; density low|med|high; direction ltr|center (use center or mirror for Arabic layouts).",
   "params": "",
   "install": "npx hyperframes add particle-image-reveal",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0.",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/particle-image-reveal/particle-image-reveal.html"
@@ -533,6 +569,7 @@
   "how": "N 5–10k, morph 1.5 s, slow y-rotation; pair targets by sorting both sets by (θ, φ) to avoid crossing chaos.",
   "params": "5–10k pts; 1.5 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-tequilafunks-97f6c9",
@@ -561,6 +598,9 @@
   "how": "python motion.py mocap VIDEO --out body.json [--fps 30 --points 1200 --from 0 --dur D] → makeParticleBody.",
   "params": "480 px; threshold 28; Gaussian 5×5; open/close 5×5; 30× candidates seed 7; coords 0–1000",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/qa.py:598",
@@ -586,6 +626,7 @@
   "how": "GLSL noise in shaders or JS (three-kit K3.fbm, simplex-noise); fBm 4–6 octaves; drive time uniform from frame/fps, never clock.elapsedTime. Analytic fallback: 3–4 summed prime-frequency sines scrolled .1–.3 units/s.",
   "params": "fBm 5 oct; freq 1.5; speed .5",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
@@ -612,6 +653,7 @@
   "how": "Wavelengths 260–1020 px, speeds 38–84 px/s, +18 px/s updraft; integrate RK2 at 60 Hz and pre-store (see PART-02). Proven in proofs/particles-to-arabic.",
   "params": "7 waves; λ 260–1020 px; RK2 60 Hz",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/particles-to-arabic/README.md"
@@ -638,6 +680,7 @@
   "how": "angle = noise(x·.0025, y·.0025, t·.2)·2π, speed 40–120 px/s; draw 14-step polylines at alpha .25 with \"lighter\". Rendered here (500 seeds). Carpet variant: grid of 24×5 px segments rotated to noise(x,y,t)·2π (scale .004); backdrop at 15% opacity, .2 units/s behind titles.",
   "params": "noise scale .0025–.004; 40–120 px/s; alpha .1–.25",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/playbooks/particles.md:26",
@@ -668,6 +711,9 @@
   "how": "Copy motion-primitives/bg-flow-field/scene.html (best span 4–12 s) or gooey-metaball/scene.html (1.5–3 s); anchor to audiomap events.",
   "params": "",
   "install": "npm i -D hyperframes",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0.",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/music-to-video/references/motion-primitives/bg-flow-field/scene.html",
@@ -693,6 +739,9 @@
   "how": "Precompute paths; each particle phase + speed; pos = pointAt((t·speed + phase) % 1); trail = last 8–20 samples with decaying opacity; never all edges at once — filter to the focus neighbourhood. Canvas for a few hundred, Pixi ParticleContainer/three Points for many. Playbook: 600 ms per traversal.",
   "params": "trail 8–20 samples; 600 ms per traversal",
   "install": "",
+  "requires": [
+   "npm:p5"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10332-threejs-data-visualization/references/particle-effects-and-flow.md",
@@ -720,6 +769,9 @@
   "how": "TripsLayer currentTime = frame time; ArcLayer (state geodesic vs schematic); HexagonLayer for density; over MapLibre.",
   "params": "",
   "install": "npm i deck.gl maplibre-gl",
+  "requires": [
+   "npm:maplibre"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio/references/deckgl-d3-geo-stack-selection.md"
@@ -744,6 +796,7 @@
   "how": "Single WebGL1 fragment shader; 24 trail points (pos, velocity, age; life 1.6 s) as uniforms; disp += vel·smoothstep(r,0,d)·age; uv += disp·9. In video, script the finger as a Catmull-Rom path. Atlas reference HTML (needs a CDN panel) not rendered here.",
   "params": "fbm 5 oct; ramp 0/.12/.30/.45/.60/.78/1; smudge 9 (>14 tears); radius .17; ripple .18, bloom .55, .9 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/100-ui-motion/211-thermal-finger-trail/SKILL.md",
@@ -770,6 +823,7 @@
   "how": "grid 24–28 px, falloff radius 160–200 px, spring back to rest; chain 15 balls lagging 2 frames each; inverse-square attraction (clamped) for hero pulls.",
   "params": "grid 24–28 px; radius 160–200 px; chain lag 2 frames",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-chatgptastra-0d95c7",
@@ -800,6 +854,7 @@
   "how": "Trace: amp 20–60 px, 200 points, alpha .25; ribbons: lineWidth .6, alpha .3, 3–4 bands; parallax wave layers 1 : .6 : .3, amp 10–30 px.",
   "params": "15 traces; 100–200 ribbons",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-rneayan-ea6129",
@@ -830,6 +885,7 @@
   "how": "for k < K: position at t − k·dt; head size 3.4–4.2, tail 2.2–2.6·(1 − k/K), alpha .55–.7·(1 − k/K); egypt-2120: 36 drones × 16 samples (dt .045), 9 lanes × 30 taxis × 14 (dt .03); tapered trail ~.3 s, width 6→0 px; ribbons: last 60 wingtip positions, alpha .8→0.",
   "params": "K 12–16; dt .03–.045 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/egypt-2120-animation/index.html"
@@ -858,6 +914,7 @@
   "how": "MOTION.rain(tl, container, {n, x0..y1, fall, len, angle, color, at, dur, seed}). Rendered here. Gotcha found here: each drop starts at at − dur + delay, so use at ≥ fall (~.6 s) or the first drops sit above the frame.",
   "params": "n 240; fall .55 s; len 46 px (×.6–1.4); width 1–2.6 px; angle −8°; rgba(220,235,255,.75); fade .6/.8 s",
   "install": "",
+  "requires": [],
   "license": "GSAP standard no-charge license (vendored).",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:265",
@@ -883,6 +940,7 @@
   "how": "MOTION.vapour(tl, svgGroup, {n, r, rise, height, drift, spread, color, at, dur, x0, x1, y0, seed}); rendered here over #2b3a55. Wisp variant: 9-point polylines x + 14 sin(y/60 + 5t + x) rising 420 px, opacity sin(πp)·.9; coffee curls: 3 thin bezier strokes rising 40 px/s fading .4→0, loop 3 s.",
   "params": "n 70; r 18 px; rise 2.6 s; height 320 px; drift 120 px; scale .5→1.4",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:283",
@@ -910,6 +968,7 @@
   "how": "MOTION.sparkle(tl, group, {n, x0..y1, color, at, seed}); rendered here (#ffe9b8). Canvas variant: alpha = .5 + .5 sin(t·(3 + .2f) + f), cross sparkles for the brightest, washed out near the moon.",
   "params": "n 40; r 1–3.2 px; opacity .15↔1 over .6–1.8 s; 40 repeats; sine.inOut",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/motion-kit.js:300",
@@ -937,6 +996,7 @@
   "how": "Proof: 110 dust motes in proofs/arabic-voice-kinetic. Recipes: studio 38 motes x = (137.3i + t·(5 + i%3)) mod w, y = (sin(2.71i + .18t)·.42 + .5)·h; fastify 26 golden-ratio dots (k·.618 mod 1) ±15/±20 px; depth: 40–80 dots, size 2–6 px, 5–15 px/s, varied blur; over footage: warm radial dots screen-blended, rising and fading in 1.6 s.",
   "params": "26–110 motes; 5–15 px/s; alpha .07–.48",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md",
@@ -966,6 +1026,9 @@
   "how": "drawParticles(): dust 54 dots rising 1.8%/s twinkle .18–.48; bokeh 16 screen discs 3–10% m alpha .08–.15; sparks 54 accent dots rising 12%/s \"lighter\"; snow 54 falling 6%/s; confetti 46 flips falling 16%/s; rnd(i) = frac(sin(127.1i + 311.7)·43758.5453).",
   "params": "dust|bokeh|sparks|confetti|snow",
   "install": "cd app && npm install",
+  "requires": [
+   "node"
+  ],
   "license": "",
   "proof": [
    "app/public/js/00_editor.js:234"
@@ -991,6 +1054,7 @@
   "how": "far 152 drops 340–600 px/s, 11–25 px, #86b7c9 .8 px α .13, parallax .03; near 32 drops 630 px/s 37 px #95d6df 1.3 px α .17 parallax .1; wrap 1450×850; 20 ripples rx 5→29 ry 1→5; 11 droplets/event vx ±105, vy −45…−129, g 145 px/s², life .63 s. midnight_cat frame rendered here via window.seek; proofs/neon-glow adds 90 streaks + puddle rings.",
   "params": "152 + 32 drops; 11 droplets × .63 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:108",
@@ -1021,6 +1085,7 @@
   "how": "rain(seed, n, x0, x1, y0, y1, length, width, slant=−.25) → stroke(); colours #a8bbd4/.15, #cddcef/.2, fire-lit #ffb066 add; then motion_blur.",
   "params": "520 + 150 + 160 streaks; lengths 24/60/36",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/scenes/whale_dragon.py:55",
@@ -1046,6 +1111,7 @@
   "how": "Streak alpha .25–.4, length 12–24 px; doodle: 40–60 streaks, fall 600–900 ms, ring 300 ms; loop 38 drops at 950 px/s below the cloud base (water-cycle).",
   "params": "300–500 streaks; fog 2–3 bands",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-kamstudiolabs-0b0824",
@@ -1075,6 +1141,7 @@
   "how": "22 petals from M.rng(11): period 7–12 s, y = −60 + 2050·((t/dur + ph) % 1), x += drift·u (±170) + sin(1.3t + 9ph)·(20–50), rotate ±300–700°·u, #e8436a/#f27b93 .9; seasonal: 60–150 particles, vx −100…−300 px/s, sway 10 px; chalk dust: dots from the drawing tip fall with g ~400 px/s² fading .5 s.",
   "params": "22 petals; 7–12 s periods",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/thursday-dua-animation/source/index.html"
@@ -1104,6 +1171,9 @@
   "how": "npx hyperframes add snow (density sparse|dense, speed calm|gust, 6 s) | starfield (tone warm|cool|white, speed slow|fast).",
   "params": "",
   "install": "npx hyperframes add snow",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0.",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/snow/snow.html",
@@ -1129,6 +1199,9 @@
   "how": "Vertex: y = mod(y − t·(.25 + .15 size), 16) − 8; x += .25 sin(.6t + 3.1z + 7 size); pointSize = (1.5 + 3.5 size)·dpr·clamp(10/d, .2, 2.5); alpha clamp(1.2 − d/22, .05, .8); fragment round sprite, smoothstep; blend ONE,ONE, depthMask false. Pass t from the frame.",
   "params": "160 (phone) / 360 (desktop); field 24×16×(2..20)",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "",
   "proof": [
    "kosif-earth-ci-fork/ui/art/crystal-world.js:65",
@@ -1156,6 +1229,7 @@
   "how": "verse.html draw(t) with SOUND.kicks; \"lighter\"; motes r 2–9 px, speed .006–.026/s; ring radius (.16 + .42·dt)·min(W,H), alpha .22·(1 − dt/1.3)². Audio-driven variant proven in proofs/audio-reactive-spectrum (90 seeded particles, onset shockwaves .7 s).",
   "params": "72 motes; ring 1.3 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/templates/verse.html:153",
@@ -1182,6 +1256,7 @@
   "how": "createRadialGradient(W/2,H/2,50,W/2,H/2,.7W) amber .15 / sky .08 / transparent; 60 particles y = (y0 − 40·speed·t) mod H at alpha .4; seed the RNG (mulberry32) — the template uses Math.random as shipped.",
   "params": "60 particles r 2–6 px, 40–120 px/s, #f59e0b / #38bdf8",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/kinetic_2d.html:128"
@@ -1206,6 +1281,7 @@
   "how": "8 s / 8 s / 10 s loops; every speck cycle must divide the loop length; t mod period; tiny dither noise against banding; test gradients for banding after compression.",
   "params": "8 / 8 / 10 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-atlas/skills/motion-graphics-ar/motion-style-director/references/motion-loops-backgrounds.md"
@@ -1230,6 +1306,7 @@
   "how": "y = 1 − 2(i+.5)/N, r = √(1−y²), θ = 2.39996·i; rotate in y; f = 2.6/(3.2 − z); alpha .25 + .6·(z+1)/2. Rendered here (900 points). Gather/collapse: radius 0→R ease-out 1.5 s, R→0 ease-in .6 s into an origin dot; chips can pop at projected points.",
   "params": "N 600–3000; FOV ~42°; alpha by depth",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-ayushunleashed-ece3e3",
@@ -1264,6 +1341,9 @@
   "how": "arm = i % 3, d = rand^.6, a = arm·2.094 + 4d + jitter; angle += t·.9/(d + .15); y squashed .55; additive. Rendered here (2500 points). HyperFrames spiral-galaxy: 20,000 GPU sprites, 3 arms, rate .25, glow 1.9, core #ffa575, rim #311599.",
   "params": "2.5k–20k points; 2–3 arms; ω ∝ 1/r",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/blocks/spiral-galaxy/spiral-galaxy.html",
@@ -1295,6 +1375,7 @@
   "how": "Speed 2→30 units/frame; stroke 1 px #9db4ff α .6 (cap line width ~2.5 px); rendered here. Tunnel variant: 3000 points on a cylinder moving to camera as streaks with a dark centre; warp-star transition between scenes .8 s, streak 50–200 px.",
   "params": "~600 stars; speed 2→30",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-maxalexweber-67688b",
@@ -1328,6 +1409,7 @@
   "how": "Torus R 1, r .35, 2000 points, red accent subset; constellation: connect pairs with d < 90 px, line alpha ∝ 1 − d/90.",
   "params": "2000 pts; link < 90 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-roundtablespace-d3a1be",
@@ -1358,6 +1440,9 @@
   "how": "cinematic_3d: 400 positions in a 20×25×20 box; PointsMaterial #38bdf8 size .08 opacity .75 AdditiveBlending; rotation.y = .08t. Shader version: s = pow(1 − distance(gl_PointCoord, .5), 3), depthWrite false, 5000 points ±2.",
   "params": "400–5000 points; falloff power 3",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "",
   "proof": [
    "kosif-one/tools/kosif-omni/skills/ultra-motion-montage/templates/cinematic_3d.html:165",
@@ -1383,6 +1468,9 @@
   "how": "DataTexture RGBA float → SimulationMaterial → WebGLRenderTarget (two, ping-pong) → points read uPositions; TSL: instancedArray(N,\"vec3\"), Fn(…)().compute(N), renderer.compute(update). Seed initial positions; for video advance exactly one step per frame. WebGPU unverified here — FBO on WebGL is the safe path.",
   "params": "N 100k; gravity −9.8, bounce .7, friction .98",
   "install": "npm i three",
+  "requires": [
+   "npm:three"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
@@ -1409,6 +1497,7 @@
   "how": "Suck-in 300–500 ms easeInCubic, rotation 90–180°, radial scribble lines; shards ~40 instanced, .5 rad/s, size for depth of field.",
   "params": "3k pts; suck 300–500 ms; 40 shards",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-3xtihor-0f6911",
@@ -1439,6 +1528,9 @@
   "how": "Studio: flame(seed, a, b, r0, r1, wob, bend) — 7 red #ff3d0a (.5, blur 3), 5 orange #ff9326 (.65, 2.4), 3 yellow #ffe7a2 (.85), 1 white (.75), all mode \"add\", radius tapers t^.75·(1 − .55t^6). SVG (duck_dragon.py): outer #dc2626 + blur20 #f97316, mid #f97316, core #fde68a, hot #fffbeb blur 8, 12 tongues, splash fan every 20°.",
   "params": "16 tubes in 4 colours; splash ±80° every 20°",
   "install": "",
+  "requires": [
+   "python3"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/scenes/dragon_girl.py:108",
@@ -1465,6 +1557,7 @@
   "how": "duck_dragon: 110 embers r ∈ {1.2…3.8}, #fde047 #fbbf24 #fb923c #f97316 .55–1; 9 smoke ellipses rx 120–260 ry 18–40 .16 blur 20; vignette r 950 to black .6. Studio: dots(emb) #ffd27a .9 add + halos ×3 #ff7a2a .45 blur 2.4, order \"sparkle\"; Gaussian σ 36–44 px along the path, lift ≤ 100.",
   "params": "110–440 embers; smoke .16 blur 20",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/duck-vs-dragon/duck_dragon.py",
@@ -1493,6 +1586,12 @@
   "how": "K3.makeSparks([{t,x,y,z}], {per, speed, gravity, drift, color, size, seed}); userData.set(t, tapeFn). sound_ground: per 90, speed 6.5, gravity 7, drift 15 m/s, 2400 slow embers 0xff9a5a. Break variant: 26 sparks ballistic from a midpoint + torus flash ring red→green on repair. The demo project loads assets/main.bundle.js, which is not built in this checkout (koi_pond threw a load error here) — install esbuild and bundle first; the kit functions themselves ship in the prebuilt three-kit.bundle.js.",
   "params": "per 60; speed 5; gravity 6; life .5–1.6 s; #ffa040",
   "install": "cd 100-superskills/skills/kosif-montage-motion/scripts && npm install three@0.186.1 esbuild && python3 motion.py bundle sound_ground",
+  "requires": [
+   "python3",
+   "imagemagick",
+   "npm:three",
+   "npm:esbuild"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:886",
@@ -1519,6 +1618,7 @@
   "how": "cloud(cx, cy, w, h, n, seed) + fill(blur 12–20) + translated fill(mode \"screen\"|\"add\"); steam: #d6dde6 .45 blur 12 screen + noise .5 cell 20 + translate 14 #ff8a3a .32 add + glow #fff0c0 26 .7 + 6 tongues.",
   "params": "ellipse w .07–.16, h .3–.6; blur 13–17",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/scenes/dragon_girl.py:36",
@@ -1545,6 +1645,7 @@
   "how": "spray(seed, cx, cy, n, sx, sy, up, sizes) + foam(seed, y, amp, n) + motion_blur; 3D fish jump: 60 spray points y = .05 + vy·u − 4.9u² (u ≤ .7 s) + two additive rings .9·e^(−.9u), scale .6 + 3.4u, second .35 s later.",
   "params": "460 dots σ 160×70; 5 foam rows",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-studio/scenes/whale_dragon.py:65",
@@ -1571,6 +1672,9 @@
   "how": "K3.makeSea({size 30000, res 768, color #0e4a63, distortion 2.4, waveSize 3}) — night_boat frames rendered here (moon glitter, fish-jump rings). K3.makeShallowWater({width 30, depth 30, seg 256, ripples 24, amp .012, clarity .62, deep #0d3b3a, shallow #2f6f62, skyTop #6f9cc8, horizon #f2d6b0, bank #26301c}); w.userData.ripple(x,z,t0,amp); addCaustics scale ≈5.5.",
   "params": "sea res 768; shallow 256 seg, 24 rings, life 3.5 s, front .34 m/s",
   "install": "",
+  "requires": [
+   "npm:three"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:245",
@@ -1599,6 +1703,7 @@
   "how": "fres = pow(1 − N·V, 4); spec = pow(R·L, 400)·14 + pow(R·L, 24)·.5; sparkle step(.9965, hash(floor(xz·1.6) + floor(9t))); fog 1 − exp(−(d·den)²). Flat: y = 790 + 9 sin(2πx/180 + 2.2t), gradient #2B86E0→#1559A8, foam #CFE9FF 5 px .8.",
   "params": "Nile deep #0A3A66 sky #7FB2E0 amp .12; flat amp 9 px λ 180 px",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-one/projects/egypt-2120-animation/index.html",
@@ -1627,6 +1732,12 @@
   "how": "K3.makeVapour({n 1400, life 6–10 s, additive, alpha ×.16}); K3.makeCloudSlab({size [7000,520,4200], centre [0,1240,−900]}) 36 view steps × 3 light taps, powder term; K3.makeRain({n 9000, 900–1400 u/s, slant 120}); K3.makeFlock({n 16–18, path, t0, t1, flap sin 9t}); all driven by userData.set(t, …) ramps (water_cycle_3d). The demo project loads assets/main.bundle.js, which is not built in this checkout (koi_pond threw a load error here) — install esbuild and bundle first; the kit functions themselves ship in the prebuilt three-kit.bundle.js.",
   "params": "vapour 1400; rain 9000; cloud 36×3 steps",
   "install": "cd 100-superskills/skills/kosif-montage-motion/scripts && npm install three@0.186.1 esbuild && python3 motion.py bundle water_cycle_3d",
+  "requires": [
+   "python3",
+   "imagemagick",
+   "npm:three",
+   "npm:esbuild"
+  ],
   "license": "",
   "proof": [
    "kosif-studio/motion/kit/three-kit.js:273",
@@ -1658,6 +1769,12 @@
   "how": "makeKoi({length .62–.92, amp .10–.14}); x = cx + ax sin(dir·w·t + ph), z = cz + az sin(2·dir·w·t + ph2), depth −.22…−.52; K3.makePetals({n 120–170, fall 2.4–4.6 s, ripple amp .0016–.0024}); makeBlades 2200 (tall .95, amp .07, 1.2 Hz) + 6000 (tall .22, amp .25, 1.7 Hz); K3.addSway(mat, {amp .06, freq 1.3 Hz}) bend ∝ height²; flags K3.addWave(amp .08, 2.4 Hz, λ .9). The demo project loads assets/main.bundle.js, which is not built in this checkout (koi_pond threw a load error here) — install esbuild and bundle first; the kit functions themselves ship in the prebuilt three-kit.bundle.js.",
   "params": "7 koi; 170 petals; 8200 blades",
   "install": "cd 100-superskills/skills/kosif-montage-motion/scripts && npm install three@0.186.1 esbuild && python3 motion.py bundle koi_pond",
+  "requires": [
+   "python3",
+   "imagemagick",
+   "npm:three",
+   "npm:esbuild"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/koi_pond/src/main.js:50",
@@ -1688,6 +1805,12 @@
   "how": "18 cars, 22–27 m/s, wrap 1560 m; tail 0xff1e1e ×6, head 0xfff1d8 ×6 spheres r .16; scale.z = 1 + trailLength(v)/(2·.16)·1.2, offset forward so the streak never sits inside the body. Studio also has a long-exposure \"lighten\" pass for light trails; its test errored in this container, so treat that path as unverified. The demo project loads assets/main.bundle.js, which is not built in this checkout (koi_pond threw a load error here) — install esbuild and bundle first; the kit functions themselves ship in the prebuilt three-kit.bundle.js.",
   "params": "18 cars; ×6 emissive",
   "install": "cd 100-superskills/skills/kosif-montage-motion/scripts && npm install three@0.186.1 esbuild && python3 motion.py bundle blue_hour",
+  "requires": [
+   "python3",
+   "imagemagick",
+   "npm:three",
+   "npm:esbuild"
+  ],
   "license": "",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/blue_hour/src/main.js:107"
@@ -1712,6 +1835,7 @@
   "how": "Enter 500 ms easeOutBack, rotate ~−45° about the neck, 4–6 px stream grows then retracts, exit 400 ms; level cubic-bezier(.33,0,.2,1) 2.5–3 s, wobble 2–4 px @ 1.5 Hz damped 600 ms; cream: 6–10 blobs blur 12–20 px drifting with noise, clipped to the liquid, ~3 s; ice cubes easeOutBounce 700 ms, 12 px bounce, 180 ms stagger.",
   "params": "pour 2.5–3 s; wobble 2–4 px @ 1.5 Hz",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-ror-fly-9950f1",
@@ -1741,6 +1865,9 @@
   "how": "Chrome: smooth k .4, orbit .5 Hz, env-map; contours: sum of 7 radial fields, 4–6 iso levels; HyperFrames vfx-liquid-background (vertex displacement plane, 12 s) is the installable option.",
   "params": "k .4; 7 balls; 4–6 contours",
   "install": "",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-lukasersil-0ed38e",
@@ -1772,6 +1899,7 @@
   "how": "Emitter as closed form: particle i born at floor(t·rate) with hash-seeded velocity, age = t − birth, colour ramp by age, \"lighter\"; cube exhaust: emissive cubes ~1 s life, 40/s; heat streaks: red line sprites rising and fading.",
   "params": "30–60 / frame; life ~1 s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-konstantinsaifo-96fc89",
@@ -1803,6 +1931,7 @@
   "how": "Bob 10 px @ .4 Hz; bubbles 20–40 px/s with wobble; lanterns 8–15, flicker .85–1.0 @ 3–6 Hz, drift 5–10 px/s.",
   "params": "bob 10 px/.4 Hz; 8–15 lanterns",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-abderrahmen-g-9e8ed0",
@@ -1831,6 +1960,10 @@
   "how": "hython headless baking; VEX: @v = lerp(@v, noise·speed, blend); orient to velocity; @pscale shrinks from 70% of life. Not available here — use PART-23 / PART-51 instead.",
   "params": "",
   "install": "",
+  "requires": [
+   "chromium",
+   "key:unspecified"
+  ],
   "license": "Houdini تجاري (SideFX) / commercial SideFX licence.",
   "proof": [
    "kosif-atlas/skills/228-mas-3d-games/708-houdini/SKILL.md"
@@ -1856,6 +1989,7 @@
   "how": "Fixed dt = 1/60 replayed from frame 0 inside seek (deterministic); e .75–.85; g 900 px/s²; dot 4 px #c9452c every 2–4 frames. Rendered here. Add squash 20% on impact and stretch 10% in flight (SHAPE squash).",
   "params": "e .75–.85; dt 1/60; dot every 2–4 frames",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-hbcoop-de365c",
@@ -1885,6 +2019,7 @@
   "how": "Fixed sub-steps (120 Hz at 60 fps or 4/frame); when |p − c| ≥ R − r: v −= 2(v·n)n, restitution 1; gap test via atan2 within the rotating window (gap 28–40°); rings ω .3 + .08i alternating; tapered trail .3 s.",
   "params": "12 rings; gap 28–40°; speed ~600 px/s",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-kantamk-61f410",
@@ -1913,6 +2048,7 @@
   "how": "Each item as phases of t: drop ~300 ms easeOutBounce (stagger 400 ms), shared sway growing to 6°, topple about base, settle; icons 500 ms easeInQuad + 15% bounce, ±15°; jar g ~2500 px/s², restitution .3, 1 item / 120 ms; posters 40–60, ±30°, stagger 30 ms (or pre-baked rigid bodies).",
   "params": "drop 300 ms; restitution .3; 1 item / 120 ms",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/stickman",
@@ -1948,6 +2084,11 @@
   "how": "Step a fixed dt = 1/fps per frame from a seeded initial state and bake positions to JSON, then render frames from the bake (never real-time). @react-three/rapier for R3F; matter-js for 2D.",
   "params": "dt 1/fps; bake first",
   "install": "npm i @dimforge/rapier3d-compat matter-js cannon-es",
+  "requires": [
+   "npm:three",
+   "npm:matter",
+   "npm:react"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
@@ -1973,6 +2114,9 @@
   "how": "npx hyperframes add pendulum-swing (pivot top-center|left|right, amplitude gentle|standard|wide) | physical-exit (mode toss|drop|slide) | spring-stack-shuffle (cues \"0.9, 1.7, 1.95\"). Reactive displacement rule: the intruder tween drives the victim, victim durations 40–50% of the intruder.",
   "params": "",
   "install": "npx hyperframes add pendulum-swing",
+  "requires": [
+   "npm:hyperframes"
+  ],
   "license": "Apache-2.0.",
   "proof": [
    "kosif-one/vendor/hyperframes/registry/components/pendulum-swing/pendulum-swing.html",
@@ -2000,6 +2144,7 @@
   "how": "offset = A·e^(−6t)·sin(30t), A ≈ 4% of height, 400 ms.",
   "params": "A 4% h; e^(−6t) sin 30t",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-1littlecoder-9fef89"
@@ -2026,6 +2171,7 @@
   "how": "three-kit makeFlock n 18 (ready, see PART-60); boids: precompute on CPU with fixed dt and bake, draw 1–2 px dots with a soft projected shadow; gulls 3–5 flapping 3 Hz on slow paths. For Arabic letter flocks fly whole words, not letters.",
   "params": "n 18 / 8192; flap 3 Hz",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-hbcoop-de365c",
@@ -2057,6 +2203,7 @@
   "how": "Untested brief idea: sample the arc at 12 earlier times (PART-31), 900 ms total, trail fade 200 ms.",
   "params": "900 ms; 12 ghosts",
   "install": "",
+  "requires": [],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-paulo-kombucha-96431c/BRIEF.md"
@@ -2082,6 +2229,7 @@
   "how": "Use a glyph atlas per (font, size, colour, weight) for thousands of glyphs. Rain: per-column 80–420 px/s, length 4–30, head glyph changes at 16 Hz, trail at 2.5 Hz, alpha (1 − j/L)^1.5 · 0.8, glyphs ≥ 30 px at α 0.8 on dark to survive the lens pass. Streams: ~38 glyphs along quadratic Béziers over 0.72 s. Shockwave rings of 56/40 glyphs, r 240 → 1250 px. Crash beat: freeze + dim the rain to 0.4, resume at 1.3×, 36 px tear bands, a red modal with back(.16), shake 16 px at 5 Hz decaying at 9, CRT collapse scaleY → 0.015.",
   "params": "rain 80–420 px/s; head 16 Hz; trail 2.5 Hz; glyph ≥ 30 px",
   "install": "",
+  "requires": [],
   "license": "owner (no LICENSE file)",
   "proof": [
    "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md"
