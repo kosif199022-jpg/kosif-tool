@@ -1,0 +1,511 @@
+{
+  "schema": "kosif.external.innovation.font.v1",
+  "as_of": "2026-10-18",
+  "source_count": 50,
+  "fonts": 26,
+  "innovation": 24,
+  "purpose": "research reference and candidate capability atlas, NOT code vendoring or auto-install",
+  "validation": "GitHub search and upstream initial read; activity/reliability/license not vetted for all 50",
+  "projects": [
+    {
+      "id": "F01",
+      "repository": "fontforge/fontforge",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/fontforge/fontforge",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F02",
+      "repository": "fonttools/fonttools",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/fonttools/fonttools",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F03",
+      "repository": "harfbuzz/harfbuzz",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/harfbuzz/harfbuzz",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F04",
+      "repository": "fontra/fontra",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/fontra/fontra",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F05",
+      "repository": "linebender/runebender",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/linebender/runebender",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F06",
+      "repository": "johanmattssonm/birdfont",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/johanmattssonm/birdfont",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F07",
+      "repository": "trufont/trufont",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/trufont/trufont",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F08",
+      "repository": "microsoft/OpenType-SVG-Font-Editor",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/microsoft/OpenType-SVG-Font-Editor",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F09",
+      "repository": "r-lib/textshaping",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/r-lib/textshaping",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F10",
+      "repository": "go-text/typesetting",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/go-text/typesetting",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F11",
+      "repository": "dfrg/swash",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/dfrg/swash",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F12",
+      "repository": "harfbuzz/harfbuzz_rs",
+      "category": "font",
+      "candidate_use": "font creation, shaping, or tooling",
+      "url": "https://github.com/harfbuzz/harfbuzz_rs",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F13",
+      "repository": "Chuhanxx/FontAdaptor",
+      "category": "font",
+      "candidate_use": "font recognition, matching, classification, or inspection",
+      "url": "https://github.com/Chuhanxx/FontAdaptor",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F14",
+      "repository": "adrg/sysfont",
+      "category": "font",
+      "candidate_use": "font recognition, matching, classification, or inspection",
+      "url": "https://github.com/adrg/sysfont",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F15",
+      "repository": "max333/FixedFontOCR",
+      "category": "font",
+      "candidate_use": "font recognition, matching, classification, or inspection",
+      "url": "https://github.com/max333/FixedFontOCR",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F16",
+      "repository": "coldwired/fontdiff",
+      "category": "font",
+      "candidate_use": "font recognition, matching, classification, or inspection",
+      "url": "https://github.com/coldwired/fontdiff",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F17",
+      "repository": "assetgraph/font-snapper",
+      "category": "font",
+      "candidate_use": "font recognition, matching, classification, or inspection",
+      "url": "https://github.com/assetgraph/font-snapper",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F18",
+      "repository": "welloutloud/font-classifier-template-match",
+      "category": "font",
+      "candidate_use": "font recognition, matching, classification, or inspection",
+      "url": "https://github.com/welloutloud/font-classifier-template-match",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F19",
+      "repository": "robinreni96/Font_Recognition-DeepFont",
+      "category": "font",
+      "candidate_use": "font recognition, matching, classification, or inspection",
+      "url": "https://github.com/robinreni96/Font_Recognition-DeepFont",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F20",
+      "repository": "FlyEgle/chinese_font_recognition",
+      "category": "font",
+      "candidate_use": "font recognition, matching, classification, or inspection",
+      "url": "https://github.com/FlyEgle/chinese_font_recognition",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F21",
+      "repository": "ARBML/Calliar",
+      "category": "font",
+      "candidate_use": "Arabic calligraphy or Arabic font analysis",
+      "url": "https://github.com/ARBML/Calliar",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F22",
+      "repository": "ARBML/rasm",
+      "category": "font",
+      "candidate_use": "Arabic calligraphy or Arabic font analysis",
+      "url": "https://github.com/ARBML/rasm",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F23",
+      "repository": "HebaAliNassif/Arabic_Calligraphy_Font_Identification",
+      "category": "font",
+      "candidate_use": "Arabic calligraphy or Arabic font analysis",
+      "url": "https://github.com/HebaAliNassif/Arabic_Calligraphy_Font_Identification",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F24",
+      "repository": "fatmaebrahim/Arabic-Font-Recognition",
+      "category": "font",
+      "candidate_use": "Arabic calligraphy or Arabic font analysis",
+      "url": "https://github.com/fatmaebrahim/Arabic-Font-Recognition",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F25",
+      "repository": "Abdelrhmanfdl/Arabic-Calligraphy-Recognition",
+      "category": "font",
+      "candidate_use": "Arabic calligraphy or Arabic font analysis",
+      "url": "https://github.com/Abdelrhmanfdl/Arabic-Calligraphy-Recognition",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "F26",
+      "repository": "Light-House-AI/ACFI",
+      "category": "font",
+      "candidate_use": "Arabic calligraphy or Arabic font analysis",
+      "url": "https://github.com/Light-House-AI/ACFI",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I01",
+      "repository": "Research-Equality/RE-idea-generation",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/Research-Equality/RE-idea-generation",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I02",
+      "repository": "Cappe6969/triz-innovation-skill",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/Cappe6969/triz-innovation-skill",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I03",
+      "repository": "ironyjk/triz-agents",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/ironyjk/triz-agents",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I04",
+      "repository": "heshenxian1/awesome-triz",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/heshenxian1/awesome-triz",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I05",
+      "repository": "jenson500/triz-prompt-engineering",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/jenson500/triz-prompt-engineering",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I06",
+      "repository": "trizchina/triz",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/trizchina/triz",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I07",
+      "repository": "Antropocosmist/triz-engineering-solver",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/Antropocosmist/triz-engineering-solver",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I08",
+      "repository": "smixs/creative-director-skill",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/smixs/creative-director-skill",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I09",
+      "repository": "kamil-szczepanik/TRIZ-Agents",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/kamil-szczepanik/TRIZ-Agents",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I10",
+      "repository": "NickScherbakov/Heinrich-The-Inventing-Machine",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/NickScherbakov/Heinrich-The-Inventing-Machine",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I11",
+      "repository": "Robert-Adunka/triz-skills",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/Robert-Adunka/triz-skills",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I12",
+      "repository": "joriewong/Altshuler-Matrix",
+      "category": "invention",
+      "candidate_use": "TRIZ, inventive principles or systematic ideation",
+      "url": "https://github.com/joriewong/Altshuler-Matrix",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I13",
+      "repository": "mxgmn/WaveFunctionCollapse",
+      "category": "invention",
+      "candidate_use": "structured creative exploration or research ideation",
+      "url": "https://github.com/mxgmn/WaveFunctionCollapse",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I14",
+      "repository": "zazaalaza/awesome-ideation-tools",
+      "category": "invention",
+      "candidate_use": "structured creative exploration or research ideation",
+      "url": "https://github.com/zazaalaza/awesome-ideation-tools",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I15",
+      "repository": "OpenNSWM-Lab/FAROS",
+      "category": "invention",
+      "candidate_use": "structured creative exploration or research ideation",
+      "url": "https://github.com/OpenNSWM-Lab/FAROS",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I16",
+      "repository": "EagleW/PaperRobot",
+      "category": "invention",
+      "candidate_use": "structured creative exploration or research ideation",
+      "url": "https://github.com/EagleW/PaperRobot",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I17",
+      "repository": "declare-lab/IDEAgent",
+      "category": "invention",
+      "candidate_use": "structured creative exploration or research ideation",
+      "url": "https://github.com/declare-lab/IDEAgent",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I18",
+      "repository": "Anikethh/IRIS-Interactive-Research-Ideation-System",
+      "category": "invention",
+      "candidate_use": "structured creative exploration or research ideation",
+      "url": "https://github.com/Anikethh/IRIS-Interactive-Research-Ideation-System",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I19",
+      "repository": "CL-ML/open-collider",
+      "category": "invention",
+      "candidate_use": "structured creative exploration or research ideation",
+      "url": "https://github.com/CL-ML/open-collider",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I20",
+      "repository": "yisuanwang/Idea23D",
+      "category": "invention",
+      "candidate_use": "generative design, lateral thought or visual creativity",
+      "url": "https://github.com/yisuanwang/Idea23D",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I21",
+      "repository": "zyang-ur/idea2img",
+      "category": "invention",
+      "candidate_use": "generative design, lateral thought or visual creativity",
+      "url": "https://github.com/zyang-ur/idea2img",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I22",
+      "repository": "danium/lateral-thinking",
+      "category": "invention",
+      "candidate_use": "generative design, lateral thought or visual creativity",
+      "url": "https://github.com/danium/lateral-thinking",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I23",
+      "repository": "raestrada/storycraftr",
+      "category": "invention",
+      "candidate_use": "generative design, lateral thought or visual creativity",
+      "url": "https://github.com/raestrada/storycraftr",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    },
+    {
+      "id": "I24",
+      "repository": "josephwilk/musical-creativity",
+      "category": "invention",
+      "candidate_use": "generative design, lateral thought or visual creativity",
+      "url": "https://github.com/josephwilk/musical-creativity",
+      "presence": "found via GitHub repository search or direct GitHub lookup on 2026-10-18",
+      "license": "inspect before any source reuse",
+      "integration": "reference only; no third-party runtime installed"
+    }
+  ]
+}
