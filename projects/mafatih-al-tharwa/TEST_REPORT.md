@@ -4,7 +4,7 @@
 | Item | Master | Social copy |
 |---|---|---|
 | Path | `out/mafatih-al-tharwa_master.mp4` | `out/mafatih-al-tharwa_social-14LUFS.mp4` |
-| Size | 604.1 MB | 161.7 MB |
+| Size | 679.5 MB | 186.9 MB |
 | Video | H.264 yuv420p, CRF 18 | H.264 yuv420p, CRF 24 |
 | Audio | AAC 44.1 kHz mono, **stream-copied from the user's file** | AAC 48 kHz 192 kb/s, loudnorm −14 LUFS / −1.5 dBTP |
 | Editable source | `src/` (overlay.html/js, build_broll.py, render_film.cjs, prep_words.py) | same |
@@ -15,8 +15,8 @@
 |---|---|---|---|---|
 | 1 | Duration | 640.29 s ± 1 frame | 640.300 s (both) | PASS |
 | 2 | Frame rate | 30 fps constant | 30.000 | PASS |
-| 3 | Frame count | 19,209 | 19,209 (b-roll, each chunk 4802/4802/4802/4803, final) | PASS |
-| 4 | Resolution | 1080×1920 (9:16) | 1080×1920 | PASS |
+| 3 | Frame count | 19,209 | 19,209 (b-roll, each chunk 4802/4802/4802/4803, both finals) | PASS |
+| 4 | Resolution | 1080×1920 (9:16), footage full-bleed | 1080×1920 both files; every clip fills the frame (no card/letterbox) | PASS |
 | 5 | Audio present | AAC | AAC (master 44.1 kHz, social 48 kHz) | PASS |
 | 6 | Voice untouched | same length/timing | master: original stream copied, 640.243 vs 640.290 s (−47 ms, encoder priming) ; social: 640.300 s | PASS |
 | 7 | Loudness | −14 LUFS ±1.5, TP ≤ −1 dBTP | master −22.4 LUFS / −2.3 dBTP (as recorded, intentionally untouched) · social −14.9 LUFS / −1.4 dBTP | master: by design FAIL on LUFS · social PASS |
@@ -24,12 +24,13 @@
 | 9 | RTL shaping | joined letters, correct order | whole words only, clip-path wipes, numbers in `<bdi>`; order bug on "+100 عام" found and fixed in preview | PASS |
 | 10 | Key-word sync ≤ 100 ms | motion starts at word onset | heroes keyed to words.json starts (−100…0 ms lead); spot checks at 6.6, 70.5, 158.25, 189.6, 235.1, 399.9, 504.8, 594.0 s all show the element mid-entrance 0.1–0.3 s after onset | PASS |
 | 11 | Motion in every scene | no static slides | every b-roll clip moves (push/pull/pan); 43 heroes animated; gold dust always drifting | PASS |
-| 12 | Safe margins | 12% top/bottom | card and captions inside; header logo (y 96–210) and progress bar (y 1812) are decorative and may sit under platform UI | PASS with note |
+| 12 | Safe margins | 12% top/bottom | hero graphics and captions inside; header logo (y 96–210) and progress bar (y 1812) are decorative and may sit under platform UI | PASS with note |
 | 13 | Contrast | ≥ 4.5:1 | cream/gold text on ≥ 80% dark scrims and bottom gradient | PASS (visual) |
-| 14 | First / last frame | intentional | 0.00 s archival coins in the gold card; 640.25 s end card | PASS |
+| 14 | First / last frame | intentional | 0.00 s full-frame archival coins; 640.25 s end card | PASS |
 | 15 | Assets | original or licensed | archive.org Public Domain films (RIGHTS.md with SHA-256), OFL fonts, original graphics | PASS |
 | 16 | Preview before final render | approved | User pre-authorised the full production in the request; previews were self-reviewed and fixed | PASS (pre-authorised) |
 | 17 | Chunk seams | invisible | frames 160.033 / 160.067 s continuous; deterministic seek(t) | PASS |
+| 18 | No source titles / fades on screen | none | v1 had ST0 credits, a «STEEL» super and fades from DY/UB17; v2 removes them (pool changes + `scan_shots.py` trims) and start/middle/end frames of all 168 rendered clips were reviewed | PASS |
 
 ## 3. Commands
 ```bash

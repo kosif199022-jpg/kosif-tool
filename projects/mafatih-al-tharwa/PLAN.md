@@ -14,8 +14,8 @@
 
 ## 2. Layers (every frame)
 
-1. **B-roll** — 167 graded clips (mean 3.8 s) cut on caption boundaries; each has a push-in, pull-out or pan. Sepia-gold monochrome, film grain, vignette. Sharp 960×720 film card over a blurred copy.
-2. **Scrim** — darkens the card only while a hero graphic is on (footage keeps ghosting through).
+1. **B-roll** — 168 graded clips (mean 3.8 s) cut on caption boundaries, **full-bleed 9:16**: each 640×480 shot is upscaled to 2560×1920 and a 1080×1920 window is cropped, with a push-in, pull-out or sliding pan. Sepia-gold monochrome, light sharpening, film grain, vignette. Shots are trimmed to their fade-free part (`src/scan_shots.py` → `data/shot_trims.json`), and every rendered clip was checked at start/middle/end.
+2. **Scrim** — a full-frame radial darkening while a hero graphic is on (footage keeps ghosting through).
 3. **Hero graphics** — table below.
 4. **Captions** — phrase-level (≤ 6 words, break on pauses > 0.45 s), each word lights gold 60 ms before its spoken onset, key words (names, numbers, debt/goal…) keep a gold underline that sweeps right→left across the word's duration.
 5. **Chrome** — key logo + chapter label (wipes in on each chapter), chapter progress bar, archive tag, drifting gold dust, a soft light flash on every b-roll cut.
@@ -84,7 +84,7 @@
 | 42 | 619.10 | 633.10 | hero | simple, Sharia-compliant, Arab mindset | custom SVG draw-on / counters / 3D |
 | 43 | 633.10 | 640.29 | hero | end card | custom SVG draw-on / counters / 3D |
 
-Between heroes the archival card plays clean with captions, so the film alternates footage and graphics roughly every 5–15 s.
+Between heroes the full-frame footage plays clean with captions, so the film alternates footage and graphics roughly every 5–15 s.
 
 ## 5. Transitions used
 
@@ -97,4 +97,5 @@ Between heroes the archival card plays clean with captions, so the film alternat
 1. `python3 src/prep_words.py <work> .` → words.json + src/captions.js
 2. `python3 src/build_broll.py footage shots.json src/captions.js build` → build/broll.mp4 (19,209 frames) + cuts.json/cuts.js
 3. `node src/render_film.cjs --broll build/broll.mp4 --stills 6.8,24,72 --out stills` (preview)
+3b. `python3 src/scan_shots.py footage data/shots.json data/shot_trims.json` (fade/dissolve trims, run before step 2)
 4. 4 parallel `--from/--to` chunks → concat → mux the original AAC stream untouched → `tools/verify_video.py`.

@@ -1,6 +1,6 @@
 # مفاتيح الثروة — Keys to Wealth (motion film)
 
-A 10:40 vertical (1080×1920, 30 fps) archival-documentary motion film edited to Coach Abu Faisal's voice note.
+A 10:40 vertical 9:16 (1080×1920, 30 fps, footage full-bleed) archival-documentary motion film edited to Coach Abu Faisal's voice note.
 
 | File | What it is |
 |---|---|
@@ -15,8 +15,9 @@ A 10:40 vertical (1080×1920, 30 fps) archival-documentary motion film edited to
 ```bash
 # 1. transcript → words.json + src/captions.js (edit the FIX list in prep_words.py to change caption text)
 python3 src/prep_words.py data .            # expects data/whisper.json and data/fill.json
-# 2. re-download footage (archive.org public domain, see RIGHTS.md) into footage/, then build the b-roll track
-python3 src/build_broll.py footage data/shots.json src/captions.js build && cp build/cuts.js src/
+# 2. re-download footage (archive.org public domain, see RIGHTS.md) into footage/, trim fades, then build the b-roll track
+python3 src/scan_shots.py footage data/shots.json data/shot_trims.json
+python3 src/build_broll.py footage data/shots.json src/captions.js build && cp build/cuts.js src/ && cp build/cuts.json data/
 # 3. preview any frames (edit hero graphics in src/overlay.js — every hero is keyed to word times)
 node src/render_film.cjs --broll build/broll.mp4 --stills 6.8,72,189.6 --out stills
 # 4. full render in 4 parallel chunks, then concat and mux the voice untouched

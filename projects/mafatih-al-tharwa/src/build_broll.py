@@ -2,8 +2,8 @@
 
 Shots come from public-domain archive.org films (see RIGHTS.md). Each story beat has a
 pool of hand-picked shots; clips are cut on caption boundaries where possible, graded to
-a warm sepia monochrome, framed as a 960x720 "film card" over a blurred copy of itself,
-then concatenated with exact frame counts so the track lines up with the voice.
+a warm sepia monochrome, upscaled and cropped to fill the full 9:16 frame with a slow
+push-in, pull-out or pan, then concatenated with exact frame counts so the track lines up with the voice.
 
 usage: python3 build_broll.py <footage_dir> <shots.json> <captions.js> <out_dir> [--only N]
 """
@@ -12,12 +12,13 @@ from concurrent.futures import ThreadPoolExecutor
 
 FPS = 30
 DURATION = 640.29
-CARD = (60, 300, 960, 720)  # x, y, w, h — must match overlay.html
+W, H = 1080, 1920
+UP_W = 2560  # 640x480 sources are upscaled to 2560x1920; a 1080-wide window is cropped from it
 
 # (beat start in seconds, shot ids). Ids are <film code><index> from the contact sheets.
 BEATS = [
     (0.0,   ["WM20", "UB13", "UB12", "WM24"]),                                   # intro: wealth, vaults
-    (14.5,  ["ST0", "CU1", "CU2", "ST3", "ST6", "CU16", "ST37", "ST40"]),        # Carnegie: mines and iron
+    (14.5,  ["ST6", "CU1", "CU2", "ST17", "ST18", "CU16", "ST37", "ST40", "ST20"]),        # Carnegie: mines and iron
     (28.0,  ["UB18", "SU25", "UB20", "SU31", "UB23"]),                           # the wealthy, dying with wisdom
     (37.4,  ["MB14", "SU8", "MB12", "MB11", "MB17"]),                                    # next generation, a young man
     (56.8,  ["SU24", "SU31", "SU48", "UB21", "SU25", "UB24", "SU45", "UB20", "UB23", "SU33", "SU40"]),   # Hill meets 500 millionaires
@@ -30,7 +31,7 @@ BEATS = [
     (226.7, ["MB57", "DY29", "WM7", "DY23", "DY24", "DY31"]),                     # reading, listening in the car
     (253.9, ["UB6", "WM30", "UB26", "UB28"]),                                    # income goal
     (266.0, ["SU20", "UB19", "SU15", "WM29", "SU22", "UB25", "UB30", "SU14", "UB35", "UB37", "WM8", "UB3", "UB9"]),                    # thinking about debt
-    (309.0, ["DY17", "DY22", "ST7", "DY1", "DY13", "DY37", "DY12", "DY16", "DY5"]),                      # thinking about success
+    (309.0, ["DY17", "DY24", "ST7", "DY1", "DY13", "DY37", "DY12", "DY16", "DY5"]),                      # thinking about success
     (336.0, ["DY9", "DY2", "SU5", "SU6", "SU4", "DY3"]),                          # walking, the sign, cleaning
     (380.0, ["DY37", "DY38", "DY42", "DY43", "DY44", "SU45", "SU46", "SU38"]),    # the company grows
     (402.0, ["MB65", "MB64", "MB71", "WM44", "WM45", "SU23", "SU31"]),            # people bought the book
@@ -39,10 +40,13 @@ BEATS = [
     (473.6, ["UB17", "UB24", "UB19", "SU24", "SU26", "UB22"]),                    # Nightingale-Conant interview
     (512.0, ["UB6", "SU36", "SU38", "SU45"]),                                    # sales up, the secret
     (526.0, ["MB0", "MB57", "MB59", "MB65", "MB71"]),                            # his book
-    (536.0, ["SU31", "SU48", "SU23", "DY22", "DY17"]),                            # teaching people
+    (536.0, ["SU31", "SU48", "SU23", "DY13", "DY17"]),                            # teaching people
     (560.0, ["SU45", "SU46", "SU38", "DY23", "ST2", "DY12", "SU47"]),                      # the new program
-    (606.0, ["DY1", "DY22", "DY24", "DY17", "ST7", "DY5", "DY16"]),                              # the coach
+    (606.0, ["DY1", "DY24", "DY17", "ST7", "DY5", "DY16", "DY13"]),                              # the coach
 ]
+
+# Manual (start, end) overrides; the automatic fade/dissolve trims live in data/shot_trims.json.
+SHOT_TRIM = {}
 
 SEPIA = "colorchannelmixer=rr=.393:rg=.769:rb=.189:gr=.349:gg=.686:gb=.168:br=.272:bg=.534:bb=.131"
 
@@ -109,16 +113,16 @@ def plan(shots, caps):
     return clips
 
 
-def zoom_expr(move, n):
-    # 0 push-in, 1 pull-out, 2 pan to the right, 3 pan to the left (all on a 2x upscaled source)
-    p = f"(on/{max(n - 1, 1)})"
-    if move == 0:
-        return f"z='1.0+0.07*{p}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2'"
-    if move == 1:
-        return f"z='1.07-0.07*{p}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2'"
-    if move == 2:
-        return f"z='1.08':x='(iw-iw/zoom)*{p}':y='ih/2-ih/zoom/2'"
-    return f"z='1.08':x='(iw-iw/zoom)*(1-{p})':y='ih/2-ih/zoom/2'"
+def move_filters(move, n):
+    # 0 push-in, 1 pull-out (centre window + zoompan), 2 pan to the right, 3 pan to the left (sliding window)
+    k = max(n - 1, 1)
+    mid, span = (UP_W - W) / 2, 220
+    if move in (0, 1):
+        z = f"1.0+0.07*on/{k}" if move == 0 else f"1.07-0.07*on/{k}"
+        return [f"crop={W}:{H}:x={mid:.0f}:y=0",
+                f"zoompan=z='{z}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=1:s={W}x{H}:fps={FPS}"]
+    a, b = (mid - span / 2, mid + span / 2) if move == 2 else (mid + span / 2, mid - span / 2)
+    return [f"crop={W}:{H}:x='{a:.0f}+({b - a:.0f})*n/{k}':y=0"]
 
 
 def render_clip(args):
@@ -127,14 +131,12 @@ def render_clip(args):
     path = os.path.join(out, f"clip_{c['i']:03d}.mp4")
     if os.path.exists(path):
         return path
-    x, y, w, h = CARD
-    fg = (f"[0:v]fps={FPS},setsar=1,hue=s=0,{SEPIA},eq=contrast=1.12:brightness=-0.03:gamma=0.95,"
-          f"tpad=stop_mode=clone:stop_duration=2,split=2[a][b];"
-          f"[a]scale=1440:1920,crop=1080:1920,gblur=sigma=30,eq=brightness=-0.20:saturation=0.85[bg];"
-          f"[b]scale=1920:1440:flags=lanczos,zoompan={zoom_expr(c['move'], n)}:d=1:s={w}x{h}:fps={FPS}[card];"
-          f"[bg][card]overlay={x}:{y},vignette=angle=PI/4.5,noise=alls=7:allf=t+u,format=yuv420p")
+    fg = ",".join([f"fps={FPS}", "setsar=1", "hue=s=0", SEPIA, "eq=contrast=1.12:brightness=-0.07:gamma=0.95",
+                   "tpad=stop_mode=clone:stop_duration=2", f"scale={UP_W}:{H}:flags=lanczos",
+                   *move_filters(c["move"], n), "unsharp=5:5:0.45", "vignette=angle=PI/4.5",
+                   "noise=alls=8:allf=t+u", "format=yuv420p"])
     cmd = ["ffmpeg", "-v", "error", "-y", "-ss", str(c["src"]), "-i", os.path.join(footage, c["film"] + ".mp4"),
-           "-filter_complex", fg, "-frames:v", str(n), "-an", "-c:v", "libx264", "-preset", "veryfast",
+           "-vf", fg, "-frames:v", str(n), "-an", "-c:v", "libx264", "-preset", "veryfast",
            "-crf", "15", "-g", "60", "-pix_fmt", "yuv420p", "-r", str(FPS), path]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode:
@@ -146,6 +148,10 @@ def main():
     footage, shots_p, caps_p, out = sys.argv[1:5]
     only = int(sys.argv[sys.argv.index("--only") + 1]) if "--only" in sys.argv else None
     shots = json.load(open(shots_p))
+    trims_p = os.path.join(os.path.dirname(shots_p), "shot_trims.json")  # from scan_shots.py
+    auto = json.load(open(trims_p)) if os.path.exists(trims_p) else {}
+    for k, (a, b) in {**auto, **SHOT_TRIM}.items():
+        shots[k] = {**shots[k], "start": a, "end": b}
     clips = plan(shots, load_captions(caps_p))
     for i, c in enumerate(clips):
         c["i"] = i

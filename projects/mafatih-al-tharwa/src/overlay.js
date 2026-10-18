@@ -59,7 +59,7 @@
   /* reusable hero types */
   function nameCard(t0, t1, name, sub, subT, chips = []) {
     return hero(t0, t1, 0, (r) => {
-      const panel = text(r, '', '', { left: '0', top: '470px', width: '960px', height: '250px', background: 'linear-gradient(rgba(8,6,4,0), rgba(8,6,4,.88) 45%)' });
+      const panel = text(r, '', '', { left: '-60px', top: '430px', width: '1080px', height: '330px', background: 'linear-gradient(rgba(8,6,4,0), rgba(8,6,4,.85) 40%, rgba(8,6,4,.6))' });
       const bar = text(r, '', '', { right: '44px', top: '548px', width: '10px', height: '150px', background: 'var(--gold)', transformOrigin: '50% 100%' });
       const n = text(r, name, 'kufi', { right: '76px', top: '532px', fontSize: '92px', lineHeight: '1.25', color: 'var(--cream)', whiteSpace: 'nowrap' });
       const s = text(r, sub, '', { right: '80px', top: '650px', font: '700 38px/1.2 var(--sans)', color: 'var(--gold)', whiteSpace: 'nowrap' });
@@ -386,7 +386,7 @@
     const debts = col([['كيف أسدّدهم؟', 279.5], ['كيف أهرب منهم؟', 281.6], ['من وين أجيب؟', 286.4], ['الخوف من الناس', 293.3], ['خوف', 305.39], ['قلق', 305.79], ['توتر', 306.3]], 500, true);
     const goals = col([['النجاح', 313.42], ['الوفرة', 315.46], ['الخروج من الدين', 317.1], ['كيف أحقق؟', 318.8], ['إيش أسوي؟', 324.1], ['تفكير إيجابي', 326.6]], 20, false);
     const ban = text(r, 'لا تفكّر في الدَّين…<br>فكّر كيف تنجح', 'center kufi goldText', { top: '220px', fontSize: '96px', lineHeight: '1.45' });
-    const banBg = text(r, '', '', { left: '0', top: '0', width: '960px', height: '720px', background: 'rgba(8,6,4,.9)' });
+    const banBg = text(r, '', '', { left: '-60px', top: '-300px', width: '1080px', height: '1920px', background: 'radial-gradient(ellipse at 50% 34%, rgba(8,6,4,.9), rgba(8,6,4,.6) 70%)' });
     r.appendChild(ban);
     return (t) => {
       wipe(ttl, P(t, 269.2, 0.7));

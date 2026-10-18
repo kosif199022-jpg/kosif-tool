@@ -18,7 +18,7 @@
 ## 3. Assumed
 | Assumption | Reason | Impact if wrong |
 |---|---|---|
-| Vertical 9:16 for phones | Voice-note source, KOSIF default | Re-render at 16:9 needs a layout pass (card, caption box) |
+| Vertical 9:16 for phones, footage full-bleed | User asked for 9:16 with every video fitted to it | 4:3 sources lose their sides and are upscaled ~4×; grain hides the softness |
 | Dialect kept in captions, only mishearings and names corrected | Captions should match what is heard | User may prefer MSA captions — edit `src/prep_words.py` FIX list |
 | "21 سنة" (Bob's age) and "واحد وثمانين" shown only as spoken | Facts not verified; no hero graphic asserts an unspoken date except "1981" on the timeline, which the speaker says | If the speaker misspoke, change words/timeline text |
 | Spelling of names: كارنيجي، نابليون هيل، بوب بروكتر، راي ستانفورد، إيرل نايتنجيل، لويد كونانت، ساندي | Common Arabic spellings | Cosmetic |
@@ -33,7 +33,7 @@
 | cream | #F4EAD6 | primary text |
 | muted | rgba(244,234,214,.55) | secondary text, upcoming words |
 | red | #D9573F | debt, "مستحيل" stamps, failure |
-| footage grade | hue s=0 → sepia matrix → contrast 1.12, gamma .95; bg copy gblur σ30, −0.20 brightness; vignette π/4.5; grain 7 | archival unity |
+| footage grade | hue s=0 → sepia matrix → contrast 1.12, brightness −0.07, gamma .95; lanczos 2560×1920 → 1080×1920 crop; unsharp 0.45; vignette π/4.5; grain 8 | archival unity, full-bleed 9:16 |
 
 ### 4.2 Type (all OFL, bundled in src/fonts)
 | Role | Family | Weight | Size @1080 | Direction |
@@ -54,6 +54,6 @@
 | Pills | 0.4–0.45 s pop | back (s=1.6) |
 | Counters | 0.9–10 s count | out-quint |
 | Stamps | 0.32 s scale 2.4→1 + damped shake | out-quint |
-| B-roll | push-in 1.00→1.07 / pull-out / pan per clip | linear |
+| B-roll | push-in 1.00→1.07 / pull-out / 220 px sliding pan per clip | linear |
 
 Arabic words are never split into letters; no letter-spacing on Arabic.
