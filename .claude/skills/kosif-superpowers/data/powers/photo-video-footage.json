@@ -685,8 +685,7 @@
   "params": "hqdn3d 4:3:6:4.5; nlmeans s 3–5; cas 0.3",
   "install": "",
   "requires": [
-   "ffmpeg",
-   "pip:chromadb"
+   "ffmpeg"
   ],
   "license": "",
   "proof": [
@@ -777,8 +776,7 @@
   "params": "similarity 0.10–0.18; blend 0.05–0.1; Basma key #00b140 tol 0.22",
   "install": "",
   "requires": [
-   "ffmpeg",
-   "pip:chromadb"
+   "ffmpeg"
   ],
   "license": "",
   "proof": [

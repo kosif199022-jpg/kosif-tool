@@ -6,11 +6,11 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 # قواك الخارقة — KOSIF Superpowers
 
-**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,519 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,659 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=4623 families=51 domains=10 styles=288 watched=253 proven=763 ready=636 install=965 key=176 seen=609 documented=1403 idea=71 -->
-**الأرقام / counts:** 4,623 قدرة في 51 عائلة و10 مجالات — ✅ 763 · 🟢 636 · 📦 965 · 🔑 176 · 👁 609 · 📄 1,403 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=4659 families=52 domains=10 styles=288 watched=253 proven=788 ready=636 install=965 key=176 seen=609 documented=1414 idea=71 -->
+**الأرقام / counts:** 4,659 قدرة في 52 عائلة و10 مجالات — ✅ 788 · 🟢 636 · 📦 965 · 🔑 176 · 👁 609 · 📄 1,414 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.
@@ -45,7 +45,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 | البيانات / data | [data-analysis](references/powers/data-analysis.md) ANLY | [arsenal-general.md](references/arsenal-general.md) |
 | المستندات / documents | [documents-office](references/powers/documents-office.md) DOC | [proofs/general-docs](proofs/general-docs/README.md) |
 | البحث والويب / research | [web-research](references/powers/web-research.md) WEB | [method-packs.md](references/method-packs.md) |
-| التطبيقات والواجهات / apps | [apps-artifacts](references/powers/apps-artifacts.md) APP | [surfaces.md](references/surfaces.md) |
+| التطبيقات والواجهات / apps | [apps-artifacts](references/powers/apps-artifacts.md) APP · [app-feature-transfer](references/powers/app-feature-transfer.md) APPX | [surfaces.md](references/surfaces.md) |
 | الصور والصوت / image & audio | [media-image-audio](references/powers/media-image-audio.md) MEDIA | [proofs/general-media](proofs/general-media/README.md) |
 | المنتج والمال / product & finance | [strategy-finance](references/powers/strategy-finance.md) PROD | [method-packs.md](references/method-packs.md) |
 | الموشن والمونتاج / motion & video | 30 عائلة: ARAB TYPE COLOR GLOW DATA MAP VOICE GEN TEX SHAPE PART TRANS CAM EASE DRAW CHAR EXPL 3D UI FOOT SYNC BEAT ENG QA FMT STORY RETRO BRAND MISC DL — الفصول في `references/powers/` | القسم 5 أدناه · [styles-atlas.md](references/styles-atlas.md) |
@@ -75,7 +75,9 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 4. لا تعتبر `executed_not_verified` دليلًا على استنساخ الوظيفة. التحقق يتطلب أدلة ذات عناوين، ومقارنة سلوك مستقلة، واختبارات.
 5. إذا كان المطلوب صورة أو فيديو أو بحثًا عاديًا أو كان المصدر متاحًا، لا تستدعِ REA لمجرد ورود كلمة «تقليد» أو «عكس». لا تنفّذ كودًا خارجيًا مسترجعًا من المستودعات.
 
-مرجع المصدر: [morluto/rea](https://github.com/morluto/rea) (MIT لكوده الأصلي؛ تبعياته لها شروطها). أوامر REA v6.7.0 الـ153 كلها مسجّلة قدراتٍ في عائلة [software-investigation](references/powers/software-investigation.md) (REA-001…REA-153): 19 منها ✅ شُغّلت هنا فعلًا ([الدليل](proofs/rea-static-runs/README.md))، والباقي 📦 أو 📄 حسب المحرك الخارجي المطلوب؛ `python3 $SKILL_DIR/scripts/rea_bridge.py catalog <كلمة>` يسردها بلا تنفيذ.
+**مثبّتات Windows وتطبيقات سطح المكتب (جديد):** REA يرى مثبّت NSIS/Inno/UPX ملفًا واحدًا بلا محتوى، فابدأ بـ `python $SKILL_DIR/scripts/installer_triage.py scan <المجلد>` ثم `unpack <ملف> --to <مجلد جديد> --authorized` (7-Zip، بلا تشغيل) ثم `fingerprint <app.asar>` و`route <المجلد>` لتعرف أمر REA لكل ملف. على Windows استخدم `python` بدل `python3`، والجسر يشغّل REA عبر node بلا cmd.exe (`REA_BIN`، `--timeout`، `--source-path`). الدروس والدليل: [proofs/windows-installers-rea](proofs/windows-installers-rea/README.md).
+
+مرجع المصدر: [morluto/rea](https://github.com/morluto/rea) (MIT لكوده الأصلي؛ تبعياته لها شروطها). أوامر REA v6.7.0 الـ153 كلها مسجّلة قدراتٍ في عائلة [software-investigation](references/powers/software-investigation.md) (REA-001…REA-153): 19 منها ✅ شُغّلت هنا فعلًا ([الدليل](proofs/rea-static-runs/README.md))، والباقي 📦 أو 📄 حسب المحرك الخارجي المطلوب؛ `python3 $SKILL_DIR/scripts/rea_bridge.py catalog <كلمة>` يسردها بلا تنفيذ. أدوات MCP وموجّهاته مسجّلة REA-154…REA-235، ومعها 6 إضافات KOSIF لفرز مثبّتات Windows (REA-236…REA-241، ✅ شُغّلت على Windows 11).
 
 ## 4B. مصادر المجتمع الـ31 — Community source scout (opt-in research)
 عندما تكون المهمة تطوير KOSIF أو مقارنة أدوات الوكلاء أو التعلم البرمجي أو تصميم موشن متقدم، استخدم [دليل المصادر](references/community-source-atlas.md) وفهرسها القابل للبحث (data/community_sources.json) **كمراجع فقط**. ابدأ دائمًا بكتالوج KOSIF الأصلي؛ لا تبحث في المصادر الخارجية إلا لوجود فجوة مسماة أو بطلب المستخدم.
@@ -208,6 +210,9 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
     python3 $SKILL_DIR/scripts/reference_edit_engine.py --probe ./cuts.json --visual ./visual.json --out ./new-remotion
 
 النتيجة تقرير يقيس لقطات مصغرة 64×36 بمعدل 2 إطار/ثانية وبصمة الإضاءة والألوان والتغيرات المرئية، ثم مشروع Remotion جديد بألوان مشاهد مستقاة من القياسات. لا ينسخ صور المرجع ولا الصوت؛ ولا يصنّف حركة الكاميرا تصنيفًا مؤكدًا أو يفهم القصة دون تحليل إضافي. يتحقق من مصدر الفيديو ومدة التقرير وقيم الألوان قبل أي إنتاج. **أداة داخل المهارة ≠ ffmpeg مثبت ≠ فيديو مُنتج ومُراجع**. ثبّت أي تبعيات خارجية بموافقة، ولا تعتبر كود Katana الملكي متاحًا لمجرد وجود Higgsfield Skills.
+
+## 4M. قدرات التطبيقات المحللة — Analyzed app capabilities (APPX)
+حين يطلب المستخدم ميزة «مثل CapCut أو Canva أو Premiere» (منحنى سرعة، كروما، إعادة تأطير 9:16، ترجمة تلقائية، خفض الموسيقى، فقاعة كاميرا فوق تسجيل الشاشة، LUT، EDL…) أو يبني تطبيق سطح مكتب ويريد أنماط هذه التطبيقات، افتح [app-feature-transfer.md](references/app-feature-transfer.md) وعائلة [APPX](references/powers/app-feature-transfer.md). المزايا اكتُشفت بتحليل مثبّتاتها بـ REA؛ 17 وصفة تحرير ✅ مثبتة بأدوات مفتوحة (`proofs/app-feature-transfer/smoke.py`، 17/17)، و13 نمطًا معماريًا من Canva والمثبّتات (2 منها ✅ والباقي 📄). نستلهم ولا ننسخ كود أي تطبيق؛ ولتطبيق جديد: triage → unpack → fingerprint → REA → سجلات APPX جديدة بأدنى شارة صادقة.
 
 ## 4L. العقل الفائق والمستلزمات والخريطة — Cognition, requirements, graph
 - **التفكير / thinking:** [cognition.md](references/cognition.md) يحوّل «فكّر جيدًا» إلى إجراءات: سلّم L0–L6، حلقة الخبير، عشر عادات للعبقرية، خط تطوير الفكرة بثماني مراحل، التخطيط، القرار، التفكير الشبيه بالبشر، المراقبة الذاتية. المحرك `scripts/think.py`: `ladder` · `frame` · `models` (63 نموذجًا ذهنيًا) · `plan` · `ideas` · `decide` (مع الحساسية) · `fermi` · `critic`. العائلتان الجديدتان: [mental-models](references/powers/mental-models.md) MODEL و[planning-execution](references/powers/planning-execution.md) PLAN.

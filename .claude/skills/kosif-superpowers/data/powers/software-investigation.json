@@ -7576,5 +7576,210 @@
   ],
   "section": "REA MCP prompts (v6.7.0)",
   "source": "https://github.com/morluto/rea#mcp-prompt-prepare_bounded_process_capture"
+ },
+ {
+  "family": "software-investigation",
+  "domain": "code",
+  "params": "python scripts/installer_triage.py … (standard library only; JSON on stdout; verified is always false)",
+  "license": "owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "when": "lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE",
+  "section": "فرز مثبّتات Windows — Windows installer triage (KOSIF addition)",
+  "source": "https://github.com/morluto/rea",
+  "id": "REA-236",
+  "name_ar": "فرز المثبّت قبل REA",
+  "name_en": "Installer triage scan",
+  "status": "proven",
+  "what": "يكشف NSIS وInno وUPX و7z/ZIP SFX وMSI وWiX Burn وSquirrel وElectron و.NET وخانة التوقيع ومعلومات الإصدار، ويقترح أوامر REA المناسبة — Installer triage scan.",
+  "how": "`installer_triage.py scan <file|folder>` Evidence first; never executes the target.",
+  "install": "python 3.9+ (standard library only); REA itself only for the commands it proposes",
+  "requires": [
+   "python3",
+   "npm:rea"
+  ],
+  "tags": [
+   "REA",
+   "installer",
+   "مثبت",
+   "windows",
+   "nsis",
+   "electron",
+   "هندسة عكسية"
+  ]
+ },
+ {
+  "family": "software-investigation",
+  "domain": "code",
+  "params": "python scripts/installer_triage.py … (standard library only; JSON on stdout; verified is always false)",
+  "license": "owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "when": "lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE",
+  "section": "فرز مثبّتات Windows — Windows installer triage (KOSIF addition)",
+  "source": "https://github.com/morluto/rea",
+  "id": "REA-237",
+  "name_ar": "فك حمولة المثبّت بلا تشغيل",
+  "name_en": "Unpack an installer payload without running it",
+  "status": "proven",
+  "what": "يستخرج حمولة NSIS ثم الأرشيفات الداخلية (app-64.7z وres.zip وnupkg) بـ 7-Zip إلى مجلد غير موجود، ويرفض بلا --authorized، ويكشف إضافات التنزيل (مثبّت تمهيدي) — Unpack an installer payload without running it.",
+  "how": "`installer_triage.py unpack <file> --to <new-dir> --authorized` Evidence first; never executes the target.",
+  "install": "python 3.9+; 7-Zip for unpack (winget install 7zip.7zip | apt-get install 7zip)",
+  "requires": [
+   "python3",
+   "npm:rea",
+   "7zip"
+  ],
+  "tags": [
+   "REA",
+   "installer",
+   "مثبت",
+   "windows",
+   "nsis",
+   "electron",
+   "هندسة عكسية"
+  ]
+ },
+ {
+  "family": "software-investigation",
+  "domain": "code",
+  "params": "python scripts/installer_triage.py … (standard library only; JSON on stdout; verified is always false)",
+  "license": "owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "when": "lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE",
+  "section": "فرز مثبّتات Windows — Windows installer triage (KOSIF addition)",
+  "source": "https://github.com/morluto/rea",
+  "id": "REA-238",
+  "name_ar": "قراءة أرشيف asar",
+  "name_en": "List an Electron app.asar",
+  "status": "proven",
+  "what": "يسرد ملفات app.asar وpackage.json والنوافذ بلا أدوات npm، ويقرأ مدخلًا نصيًا واحدًا عند الطلب — List an Electron app.asar.",
+  "how": "`installer_triage.py asar <app.asar> [package.json]` Evidence first; never executes the target.",
+  "install": "python 3.9+ (standard library only); REA itself only for the commands it proposes",
+  "requires": [
+   "python3",
+   "npm:rea"
+  ],
+  "tags": [
+   "REA",
+   "installer",
+   "مثبت",
+   "windows",
+   "nsis",
+   "electron",
+   "هندسة عكسية"
+  ]
+ },
+ {
+  "family": "software-investigation",
+  "domain": "code",
+  "params": "python scripts/installer_triage.py … (standard library only; JSON on stdout; verified is always false)",
+  "license": "owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "when": "lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE",
+  "section": "فرز مثبّتات Windows — Windows installer triage (KOSIF addition)",
+  "source": "https://github.com/morluto/rea",
+  "id": "REA-239",
+  "name_ar": "بصمة قدرات Electron",
+  "name_en": "Electron capability fingerprint",
+  "status": "proven",
+  "what": "يعدّ مراسي واجهات Electron في main وpreload (تسجيل الشاشة، التحديث، الأعطال، التخزين الآمن، الروابط العميقة…) واقترانات الملفات وصفحات الواجهة وRTL؛ يكمل REA حين تخفي الأسماء المصغرة هويات Electron — Electron capability fingerprint.",
+  "how": "`installer_triage.py fingerprint <app.asar>` Evidence first; never executes the target.",
+  "install": "python 3.9+ (standard library only); REA itself only for the commands it proposes",
+  "requires": [
+   "python3",
+   "npm:rea"
+  ],
+  "tags": [
+   "REA",
+   "installer",
+   "مثبت",
+   "windows",
+   "nsis",
+   "electron",
+   "هندسة عكسية"
+  ]
+ },
+ {
+  "family": "software-investigation",
+  "domain": "code",
+  "params": "python scripts/installer_triage.py … (standard library only; JSON on stdout; verified is always false)",
+  "license": "owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "when": "lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE",
+  "section": "فرز مثبّتات Windows — Windows installer triage (KOSIF addition)",
+  "source": "https://github.com/morluto/rea",
+  "id": "REA-240",
+  "name_ar": "توجيه المستخرجات إلى أوامر REA",
+  "name_en": "Route unpacked artifacts to REA",
+  "status": "proven",
+  "what": "لكل ملف مستخرج يقترح الأمر المناسب: asar إلى analyze-javascript-application بنطاق main، وexe إلى inspect-electron-fuses وpe-resources، وDLL مُدار إلى inspect-managed-members، وsqlite إلى inspect-sqlite-database — Route unpacked artifacts to REA.",
+  "how": "`installer_triage.py route <unpacked-dir>` Evidence first; never executes the target.",
+  "install": "python 3.9+ (standard library only); REA itself only for the commands it proposes",
+  "requires": [
+   "python3",
+   "npm:rea"
+  ],
+  "tags": [
+   "REA",
+   "installer",
+   "مثبت",
+   "windows",
+   "nsis",
+   "electron",
+   "هندسة عكسية"
+  ]
+ },
+ {
+  "family": "software-investigation",
+  "domain": "code",
+  "params": "python scripts/installer_triage.py … (standard library only; JSON on stdout; verified is always false)",
+  "license": "owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "when": "lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE",
+  "section": "فرز مثبّتات Windows — Windows installer triage (KOSIF addition)",
+  "source": "https://github.com/morluto/rea",
+  "id": "REA-241",
+  "name_ar": "تشغيل REA على Windows بلا shell",
+  "name_en": "Run REA on Windows without cmd.exe",
+  "status": "proven",
+  "what": "الجسر يستبدل rea.cmd بـ node rea-agents/scripts/rea.mjs (عبر REA_BIN أو PATH)، مع --timeout (600 ث افتراضيًا) و--source-path للتحليل المحدود — Run REA on Windows without cmd.exe.",
+  "how": "`REA_BIN=…/rea.cmd python scripts/rea_bridge.py run electron-fuses App.exe --authorized --output fuses.json` Evidence first; never executes the target.",
+  "install": "python 3.9+ (standard library only); REA itself only for the commands it proposes",
+  "requires": [
+   "python3",
+   "npm:rea"
+  ],
+  "tags": [
+   "REA",
+   "installer",
+   "مثبت",
+   "windows",
+   "nsis",
+   "electron",
+   "هندسة عكسية"
+  ]
  }
 ]

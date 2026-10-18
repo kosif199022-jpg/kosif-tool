@@ -471,8 +471,7 @@
   "install": "",
   "requires": [
    "ffmpeg",
-   "npm:hyperframes",
-   "pip:chromadb"
+   "npm:hyperframes"
   ],
   "license": "",
   "proof": [
@@ -803,8 +802,7 @@
   "params": "24 bands · ±0.06 on 28% · chroma 1.2%",
   "install": "",
   "requires": [
-   "npm:three",
-   "pip:chromadb"
+   "npm:three"
   ],
   "license": "",
   "proof": [

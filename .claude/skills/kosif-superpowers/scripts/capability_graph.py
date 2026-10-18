@@ -58,7 +58,7 @@ def ast_imports():
 
 
 def rel(p: Path) -> str:
-    return str(p.relative_to(SKILL))
+    return p.relative_to(SKILL).as_posix()  # forward slashes on Windows too
 
 
 def tests_for_scripts():
@@ -73,7 +73,7 @@ def tests_for_scripts():
             continue
         for s in scripts:
             if s.name in txt:
-                out[rel(s)].add(str(t.relative_to(REPO)) if REPO in t.parents else t.name)
+                out[rel(s)].add(t.relative_to(REPO).as_posix() if REPO in t.parents else t.name)
     return out
 
 

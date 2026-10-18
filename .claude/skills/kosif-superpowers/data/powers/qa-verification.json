@@ -5588,8 +5588,7 @@
   "install": "",
   "requires": [
    "ffmpeg",
-   "pip:numpy",
-   "pip:chromadb"
+   "pip:numpy"
   ],
   "license": "MIT",
   "proof": [
@@ -5978,8 +5977,7 @@
   "install": "",
   "requires": [
    "ffmpeg",
-   "pip:numpy",
-   "pip:chromadb"
+   "pip:numpy"
   ],
   "license": "MIT",
   "proof": [

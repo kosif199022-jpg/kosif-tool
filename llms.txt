@@ -1,6 +1,6 @@
 # KOSIF TOOL — Claude superpowers and Arabic-first motion-graphics atlas
 
-> A Claude Code skill that tells Claude what it can really do: 4,623 powers in 51 families and 10 domains, each with an evidence badge (763 proven by real runs), the requirements to run it, executable thinking tools, and a 288-style motion-graphics atlas.
+> A Claude Code skill that tells Claude what it can really do: 4,659 powers in 52 families and 10 domains, each with an evidence badge (788 proven by real runs), the requirements to run it, executable thinking tools, and a 288-style motion-graphics atlas.
 
 Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`.
 
@@ -15,6 +15,7 @@ Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `p
 - [agent-orchestration](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)
 - [ai-generation](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/ai-generation.md)
 - [api-testing](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/api-testing.md)
+- [app-feature-transfer](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)
 - [apps-artifacts](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md)
 - [arabic-language](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/arabic-language.md)
 - [audio-sync-captions](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/audio-sync-captions.md)

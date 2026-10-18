@@ -2787,9 +2787,7 @@
   "how": "three-kit.js (window.K3) in a --3d project; render --engine studio",
   "params": "makeSpectrumGround, makeGlitchPass, makeSparks, spectrumOnTape",
   "install": "see arsenal-libraries.md",
-  "requires": [
-   "pip:chromadb"
-  ],
+  "requires": [],
   "license": "owner (three.js MIT)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
@@ -2849,9 +2847,7 @@
   "how": "makeGlitchPass() inserted before OutputPass; userData.set({chroma: .35·on + .6·kick + .5·clamp(dsp/2) + tear, slice: .35·clamp(dsp/2) + .9·tear, negative: tear ? .9 : 0, mono: clamp((.25−speed)/.25), warp: (1−speed)·.6, frame}); dsp = |speed(t+1/60) − speed(t−1/60)|·30.",
   "params": "",
   "install": "see arsenal-libraries.md",
-  "requires": [
-   "pip:chromadb"
-  ],
+  "requires": [],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/sound_ground/src/main.js:1",

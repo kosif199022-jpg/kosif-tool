@@ -4,6 +4,15 @@
 
 **Upstream attribution:** morluto/rea — https://github.com/morluto/rea (MIT for REA-authored code, Copyright (c) 2026 morluto). Third-party binaries, Hopper, Ghidra, IDA, JEB and their assets retain separate terms; see https://github.com/morluto/rea/blob/main/THIRD_PARTY_NOTICES.md. This integration contains original KOSIF glue code, not copies of REA or decompiled third-party sources.
 
+## Contents
+- [Added abilities: evidence-backed routes](#added-abilities-evidence-backed-routes)
+- [Full inventory by requirement (REA 6.7.0: 153 CLI commands, 207 MCP tools, 6 prompts)](#full-inventory-by-requirement-rea-670-153-cli-commands-207-mcp-tools-6-prompts)
+- [Sequence and examples](#sequence-and-examples)
+- [Route collision / negative tests](#route-collision--negative-tests)
+- [Evidence contract](#evidence-contract)
+- [Refreshed upstream discovery (2026-10-18)](#refreshed-upstream-discovery-2026-10-18)
+- [Windows installers and desktop apps (added 2026-10-18, run on Windows 11)](#windows-installers-and-desktop-apps-added-2026-10-18-run-on-windows-11)
+
 ## Added abilities: evidence-backed routes
 
 The SKILL can now route legal, consent-based software inspection, instead of confusing it with ordinary code review or internet research. The REA adapter supports a non-executing readiness check, scoped investigation plans, and an explicitly authorized local static CLI run with a SHA-256 evidence receipt. It does not fetch or install packages, probe protected sites, execute arbitrary target binaries, defeat DRM or claim verified equivalence from pseudocode.
@@ -84,3 +93,26 @@ Source documentation: https://github.com/morluto/rea/blob/main/docs/cli.md and h
 
 ## Refreshed upstream discovery (2026-10-18)
 Upstream REA 6.7.0 (package.json at inspection) exposes more than the five static CLI plans in the current bridge. Use `scripts/rea_family_router.py list` and `route <intent>` for 16 evidence/inspection families, and [current REA family matrix](rea-upstream-capabilities.md). The upstream skill moved to `.agents/skills/reverse-engineer-anything/SKILL.md`, with a package-matched runtime on installation. This **does not claim** 16 locally runnable categories. Existing `rea_bridge.py` remains canonical for authorized safe static subset.
+
+## Windows installers and desktop apps (added 2026-10-18, run on Windows 11)
+
+REA's artifact graph reports an NSIS, Inno or UPX installer as **one PE with no child entries**, so the app inside is never reached. Run the triage first ([proof](../proofs/windows-installers-rea/README.md)):
+
+    python $SKILL_DIR/scripts/installer_triage.py scan "<folder or setup.exe>"           # NSIS/Inno/UPX/7z/MSI/Burn/Squirrel, Electron, .NET, signature slot, version info
+    python $SKILL_DIR/scripts/installer_triage.py unpack setup.exe --to ./unpacked --authorized   # 7-Zip into an ABSENT folder; never runs the target
+    python $SKILL_DIR/scripts/installer_triage.py fingerprint ./unpacked/.../resources/app.asar  # Electron capability anchors, file associations, windows, RTL
+    python $SKILL_DIR/scripts/installer_triage.py route ./unpacked/...                    # the REA command for each artifact
+
+Lessons from Canva 1.126.1, CapCut and the Adobe Premiere Pro setup:
+
+| Symptom | Cause | Do this |
+|---|---|---|
+| `inspect-pe-resources`: "PE section raw bytes overlap headers" | UPX-packed stub | unpack a copy with `upx -d`, or skip resources |
+| `inspect-managed-artifact`: `resource_constraint` | 213 MB file > 128 MiB snapshot budget | inspect the extracted DLLs, not the installer |
+| `analyze-javascript-application`: `provider_timeout` at 300 s | one huge vendor chunk | `--source-path <main> --source-path <preload>` first |
+| 0 Electron APIs in a 6.8 MB main bundle | minified aliases hide `require('electron')`; per-file cap 20,000 semantic nodes | `installer_triage.py fingerprint` for anchor counts; raise `--max-semantic-nodes-per-file` if needed |
+| small signed setup with downloader DLLs | online bootstrapper | the product is not in the file; analyse the installed folder instead |
+
+**Windows notes:** use `python` (or `py -3`) where this guide says `python3`. `rea_bridge.py` now runs `node <rea-agents>/scripts/rea.mjs` instead of the `rea.cmd` shim (no cmd.exe argument re-parsing); point `REA_BIN` at a local install, raise `--timeout` (default 600 s) for big bundles, and pass `--source-path` to scope a JavaScript run. Verify Authenticode before anything else: `Get-AuthenticodeSignature <file>`.
+
+What the three apps can do became powers: [app-feature-transfer](app-feature-transfer.md) (APPX-01…30).
