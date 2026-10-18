@@ -7941,5 +7941,37 @@
   ],
   "section": "إضافات v2 — v2 additions",
   "source": "https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation/SKILL.md"
+ },
+ {
+  "id": "ENG-X06",
+  "family": "engines-render-pipeline",
+  "domain": "motion",
+  "name_ar": "فحص خريطة الأدوات قبل الوعد بأي حزمة",
+  "name_en": "Tool-map doctor before promising a stack",
+  "status": "proven",
+  "what": "أمر واحد يبيّن أيّ أدوات خريطة الأدوات مثبّتة هنا (node، ffmpeg/ffprobe، Playwright وChromium، Remotion، git، yt-dlp، whisper وأصنافه، OpenCV، PySceneDetect، Pillow، numpy، arabic-reshaper، ImageMagick، Blender، GPU) مع تلميح التثبيت؛ الخطة لا تعِد إلا بما هو ✓. — One command lists which catalog tools exist on this machine with install hints; a plan promises only what is marked present.",
+  "when": "before writing 'install first' or promising Remotion/Whisper/OpenCV in a plan",
+  "how": "`python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor [--json | --strict]`; the same CLI searches the 100-repository tool map: `list --capability voice`, `search محاذاة كلمات`, `show openai/whisper`, and keeps references/repos.md derived from repos.json with `build` / `check` (CI-safe).",
+  "params": "21 checks; exit 1 with --strict when a core render tool is missing",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/superpowers.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/repos.json",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/repos.md",
+   "kosif-tool/tests/test_superpowers_catalog.py"
+  ],
+  "styles": [],
+  "tags": [
+   "doctor",
+   "فحص",
+   "tools",
+   "catalog",
+   "repos",
+   "installed",
+   "خريطة الأدوات"
+  ],
+  "section": "إضافات v3 — v3 additions",
+  "source": ""
  }
 ]

@@ -9,8 +9,8 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 **الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,223 قدرة لكل منها وصفة ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=4223 families=47 domains=10 styles=288 watched=253 proven=687 ready=636 install=892 key=173 seen=609 documented=1155 idea=71 -->
-**الأرقام / counts:** 4,223 قدرة في 47 عائلة و10 مجالات — ✅ 687 · 🟢 636 · 📦 892 · 🔑 173 · 👁 609 · 📄 1,155 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=4230 families=47 domains=10 styles=288 watched=253 proven=694 ready=636 install=892 key=173 seen=609 documented=1155 idea=71 -->
+**الأرقام / counts:** 4,230 قدرة في 47 عائلة و10 مجالات — ✅ 694 · 🟢 636 · 📦 892 · 🔑 173 · 👁 609 · 📄 1,155 · 💡 71 · 288 أسلوبًا مرجعيًا (253 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.

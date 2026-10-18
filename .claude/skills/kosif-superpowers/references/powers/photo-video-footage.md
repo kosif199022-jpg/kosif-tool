@@ -20,6 +20,7 @@
 - **المونتاج التلقائي — Auto-edit workflows** — FOOT-54 … FOOT-58 (5)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 - **إضافات v2 — v2 additions** — FOOT-X01 … FOOT-X05 (5)
+- **إضافات v3 — v3 additions** — FOOT-X06 … FOOT-X06 (1)
 
 ## جلب الوسائط وحقوقها — Sourcing, ingest & rights
 
@@ -412,6 +413,16 @@ _من مجلد لقطات أو مقطع كلام إلى فيلم كامل بأم
 - **متى أستخدمها / when:** داخل تطبيق بصمة — inside the Basma app.
 - **كيف / how:** MON.run: probe in parallel batches of 3; 4-column numbered sheet; AI decides order, hook title, 0–6 lines, pace and grade; lengths snapped to beats within 0.4 s; bestWindow picks lively, sharp, well-lit windows away from cuts. Pro variant (PROMONT) adds template motion inserts. **أرقام / params:** ≤ 24 clips; 4–180 s; snap ≤ 0.4 s
 - **الدليل / proof:** `app/public/js/10_studio.js:1865` · `app/public/js/10_studio.js:2069` · `app/public/js/30_promontage.js:41`
+
+## إضافات v3 — v3 additions (2026-10-18)
+
+_قدرات أُثبتت في هذه الجلسة: مطابقة الخطوط وتجميعها، فاحص المرجع، فحص الأدوات، فحص المطابقة المرئي. — Proven in this session._
+
+#### FOOT-X06 · فاحص المرجع المرخّص: صفحة أو ملف أو HLS ← قياسات · Permissioned reference inspector: page / direct / HLS → measurements · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يكتشف روابط الوسائط في الصفحة (video/source، Open Graph، JSON-LD، النصوص البرمجية)، يجلب الملف المباشر أو بث HLS غير المشفّر (أعلى جودة، مع مسار صوت منفصل)، يرفض DRM والمضيفين الخاصين والأحجام الكبيرة، يعيد التغليف ثم يقيس: probe وcontact sheet وقطعات المشاهد ولوحة ألوان وتقرير ثنائي اللغة في .kosif-cache. — Discovers media URLs on a page, fetches direct or unencrypted HLS media (top variant, separate audio), refuses DRM/private hosts/oversize, remuxes and measures: probe, contact sheet, scene cuts, palette, bilingual REPORT.md in .kosif-cache.
+- **متى أستخدمها / when:** AGENTS.md rule 3: observe the reference before implementing, lawfully
+- **كيف / how:** `python3 .claude/skills/kosif-superpowers/scripts/fetch_reference.py <page-or-media-url> [--list | --pick N] [--frames 8 --scene 0.3 --max-mb 400]`; outputs reference.mp4, probe.json, contact.png, cuts.json, palette.json, REPORT.md; blob: players need the browser's network panel first (references/reference-inspection.md). Measured values go to STYLE.md *Observed*; nothing fetched is committed. **أرقام / params:** --max-mb 400; --scene 0.3; 8 frames; sequential bounded HLS segments.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_reference.py` · `kosif-tool/.claude/skills/kosif-superpowers/references/reference-inspection.md` · `kosif-tool/tests/test_reference_fetch_security.py` · `kosif-tool/tests/test_superpowers_catalog.py`
 
 ## توليفات قوية / power combos
 

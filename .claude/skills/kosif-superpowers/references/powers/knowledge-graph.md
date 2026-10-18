@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** حوّل الكود والمستندات والأفكار إلى رسوم معرفية وخرائط ذهنية يمكن الاستعلام عنها. — Turn code, documents and ideas into queryable knowledge graphs and mind maps.
 > **أقوى دليل / strongest evidence:** **GRAPH-01** Install Graphify locally (venv) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md`) · **GRAPH-02** Map a codebase offline (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md`)
-> **20 powers follow** — ✅ 10 · 🟢 0 · 📦 0 · 🔑 5 · 👁 0 · 📄 4 · 💡 1.
+> **21 powers follow** — ✅ 11 · 🟢 0 · 📦 0 · 🔑 5 · 👁 0 · 📄 4 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -14,7 +14,7 @@
 ## الفهرس / contents
 
 - **Graphify محليًا: سطر الأوامر — Local Graphify CLI** — GRAPH-01 … GRAPH-10 (10)
-- **Graphify المستضاف عبر MCP — Hosted Graphify MCP** — GRAPH-11 … GRAPH-15 (5)
+- **Graphify المستضاف عبر MCP — Hosted Graphify MCP** — GRAPH-11 … GRAPH-21 (6)
 - **التفكير بالخرائط — Map-first thinking** — GRAPH-16 … GRAPH-20 (5)
 - المصادر والرخص / sources & licences
 
@@ -142,6 +142,13 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** KOSIF SEE Graphify bridge (owner; see-atlas §4); observed hosted responses in this session
 
+#### GRAPH-21 · مصالحة فرع متباعد بالفهرس المستضاف · Reconcile a diverged branch with the hosted index · ✅ مُثبت هنا / proven here
+- **ماذا / what:** حين يكون commit الفهرس المستضاف أحدث من نسختك، تكشف rank_files وfile_neighbors ملفات لا تملكها محليًا: اجلب الفرع الرئيسي وادمجه ثم أعد الاستعلام؛ واحفظ القرارات بـ remember() لمراجعة الفريق. — When the hosted index is ahead of your checkout, rank_files/file_neighbors surface files you do not have: fetch main, merge, re-query; store decisions with remember() for team review.
+- **متى أستخدمها / when:** the hosted index and your checkout disagree about which files exist
+- **كيف / how:** Check `freshness.commit` in any Graphify answer against `git log -1`; if ahead: `git fetch origin main && git merge-base HEAD origin/main`, merge, resolve, re-run the full CI matrix, then query again (`graphify_rank_files`, `graphify_file_neighbors(file, symbols_only=true)`, `query_graph(question, skeleton=true)` for cheap outlines). `remember(text, tags)` stores a candidate note that an authorized member accepts under Memory → Needs review. Done here on 2026-10-18: the index at 6c77418 exposed 228 commits of main before fetching. **أرقام / params:** freshness.commit vs HEAD; symbols_only=true; skeleton=true
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/graphify.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md` · `kosif-tool/tests/test_superpowers_catalog.py`
+- **المصدر / source:** this session (hosted MCP) + references/graphify.md
+
 ## التفكير بالخرائط — Map-first thinking
 
 #### GRAPH-16 · فهم أي مستودع أو مجموعة مهارات بسرعة · Understand any codebase or skill set fast · 📄 موصوف / documented only
@@ -183,7 +190,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: Apache-2.0 (12) · — (7) · owner (1)
+- الرخص / licences: Apache-2.0 (12) · — (8) · owner (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

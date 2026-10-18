@@ -2690,3 +2690,14 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa); Remotion has its own licence
 - **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation/SKILL.md`
 - **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation/SKILL.md`
+
+## إضافات v3 — v3 additions (2026-10-18)
+
+_قدرات أُثبتت في هذه الجلسة: مطابقة الخطوط وتجميعها، فاحص المرجع، فحص الأدوات، فحص المطابقة المرئي. — Proven in this session._
+
+#### ENG-X06 · فحص خريطة الأدوات قبل الوعد بأي حزمة · Tool-map doctor before promising a stack · ✅ مُثبت هنا / proven here
+- **ماذا / what:** أمر واحد يبيّن أيّ أدوات خريطة الأدوات مثبّتة هنا (node، ffmpeg/ffprobe، Playwright وChromium، Remotion، git، yt-dlp، whisper وأصنافه، OpenCV، PySceneDetect، Pillow، numpy، arabic-reshaper، ImageMagick، Blender، GPU) مع تلميح التثبيت؛ الخطة لا تعِد إلا بما هو ✓. — One command lists which catalog tools exist on this machine with install hints; a plan promises only what is marked present.
+- **متى أستخدمها / when:** before writing 'install first' or promising Remotion/Whisper/OpenCV in a plan
+- **كيف / how:** `python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor [--json | --strict]`; the same CLI searches the 100-repository tool map: `list --capability voice`, `search محاذاة كلمات`, `show openai/whisper`, and keeps references/repos.md derived from repos.json with `build` / `check` (CI-safe). **أرقام / params:** 21 checks; exit 1 with --strict when a core render tool is missing.
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/superpowers.py` · `kosif-tool/.claude/skills/kosif-superpowers/repos.json` · `kosif-tool/.claude/skills/kosif-superpowers/references/repos.md` · `kosif-tool/tests/test_superpowers_catalog.py`
+

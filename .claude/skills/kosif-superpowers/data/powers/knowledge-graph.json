@@ -562,5 +562,36 @@
   ],
   "section": "التفكير بالخرائط — Map-first thinking",
   "source": "graphify distillation §6 (motion hooks)"
+ },
+ {
+  "id": "GRAPH-21",
+  "family": "knowledge-graph",
+  "domain": "code",
+  "name_ar": "مصالحة فرع متباعد بالفهرس المستضاف",
+  "name_en": "Reconcile a diverged branch with the hosted index",
+  "status": "proven",
+  "what": "حين يكون commit الفهرس المستضاف أحدث من نسختك، تكشف rank_files وfile_neighbors ملفات لا تملكها محليًا: اجلب الفرع الرئيسي وادمجه ثم أعد الاستعلام؛ واحفظ القرارات بـ remember() لمراجعة الفريق. — When the hosted index is ahead of your checkout, rank_files/file_neighbors surface files you do not have: fetch main, merge, re-query; store decisions with remember() for team review.",
+  "when": "the hosted index and your checkout disagree about which files exist",
+  "how": "Check `freshness.commit` in any Graphify answer against `git log -1`; if ahead: `git fetch origin main && git merge-base HEAD origin/main`, merge, resolve, re-run the full CI matrix, then query again (`graphify_rank_files`, `graphify_file_neighbors(file, symbols_only=true)`, `query_graph(question, skeleton=true)` for cheap outlines). `remember(text, tags)` stores a candidate note that an authorized member accepts under Memory → Needs review. Done here on 2026-10-18: the index at 6c77418 exposed 228 commits of main before fetching.",
+  "params": "freshness.commit vs HEAD; symbols_only=true; skeleton=true",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/graphify.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md",
+   "kosif-tool/tests/test_superpowers_catalog.py"
+  ],
+  "styles": [],
+  "tags": [
+   "graphify",
+   "mcp",
+   "freshness",
+   "merge",
+   "remember",
+   "فهرس",
+   "دمج"
+  ],
+  "source": "this session (hosted MCP) + references/graphify.md",
+  "section": "Graphify المستضاف عبر MCP — Hosted Graphify MCP"
  }
 ]

@@ -2226,3 +2226,14 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner
 - **المصدر / source:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/KOSIF_SEE_CINEMATIC_ROUTER.md`
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md` · `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/KOSIF_SEE_CINEMATIC_ROUTER.md`
+
+## إضافات v3 — v3 additions (2026-10-18)
+
+_قدرات أُثبتت في هذه الجلسة: مطابقة الخطوط وتجميعها، فاحص المرجع، فحص الأدوات، فحص المطابقة المرئي. — Proven in this session._
+
+#### QA-X08 · فحص المطابقة المرئي: الرندر مقابل إطارات المرجع · Fidelity check: composite the render against the reference frames · ✅ مُثبت هنا / proven here
+- **ماذا / what:** اقتطع المناطق نفسها من إطارات المرجع ومن لوحة إطارات الرندر، وحّد الارتفاع وضعها جنبًا إلى جنب (مع تكبير لمنطقة العنوان والتاريخ)، واحكم بعينك؛ قارن وزن الضربة بنسبة تغطية الحبر عند عرض متساوٍ بدل التخمين. — Crop the same regions from the reference frames and the render's contact-sheet tiles, equalise heights, place them side by side (plus a zoom), judge by eye; compare stroke weight by ink coverage at equal width.
+- **متى أستخدمها / when:** claiming a render matches a reference
+- **كيف / how:** `node tools/render_html.cjs --in film.html --out out/preview.png --preview` → tiles; Pillow: crop → resize to equal height → paste pairs; ink coverage = mask.mean() of white/gold masks at equal width (video 0.134 ≈ Amiri Bold 0.134 in the Friday study). Record what matched and what did not in README/STYLE.md; the user sees the composite before any 'done'. **أرقام / params:** tiles 4×2; equal-height pairs; coverage masks R,G,B ≥ 200.
+- **الدليل / proof:** `kosif-tool/fonts/kosif-jumuah/demo/preview.png` · `kosif-tool/fonts/kosif-jumuah/README.md` · `kosif-tool/tools/render_html.cjs`
+

@@ -6870,5 +6870,36 @@
   ],
   "section": "إضافات v2 — v2 additions",
   "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/KOSIF_SEE_CINEMATIC_ROUTER.md"
+ },
+ {
+  "id": "QA-X08",
+  "family": "qa-verification",
+  "domain": "motion",
+  "name_ar": "فحص المطابقة المرئي: الرندر مقابل إطارات المرجع",
+  "name_en": "Fidelity check: composite the render against the reference frames",
+  "status": "proven",
+  "what": "اقتطع المناطق نفسها من إطارات المرجع ومن لوحة إطارات الرندر، وحّد الارتفاع وضعها جنبًا إلى جنب (مع تكبير لمنطقة العنوان والتاريخ)، واحكم بعينك؛ قارن وزن الضربة بنسبة تغطية الحبر عند عرض متساوٍ بدل التخمين. — Crop the same regions from the reference frames and the render's contact-sheet tiles, equalise heights, place them side by side (plus a zoom), judge by eye; compare stroke weight by ink coverage at equal width.",
+  "when": "claiming a render matches a reference",
+  "how": "`node tools/render_html.cjs --in film.html --out out/preview.png --preview` → tiles; Pillow: crop → resize to equal height → paste pairs; ink coverage = mask.mean() of white/gold masks at equal width (video 0.134 ≈ Amiri Bold 0.134 in the Friday study). Record what matched and what did not in README/STYLE.md; the user sees the composite before any 'done'.",
+  "params": "tiles 4×2; equal-height pairs; coverage masks R,G,B ≥ 200",
+  "install": "",
+  "license": "",
+  "proof": [
+   "kosif-tool/fonts/kosif-jumuah/demo/preview.png",
+   "kosif-tool/fonts/kosif-jumuah/README.md",
+   "kosif-tool/tools/render_html.cjs"
+  ],
+  "styles": [],
+  "tags": [
+   "مطابقة",
+   "fidelity",
+   "contact sheet",
+   "compare",
+   "ink coverage",
+   "qa",
+   "مقارنة"
+  ],
+  "section": "إضافات v3 — v3 additions",
+  "source": ""
  }
 ]

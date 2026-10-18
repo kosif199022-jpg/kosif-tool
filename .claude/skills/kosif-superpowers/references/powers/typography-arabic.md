@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تحرّك العربية كما تُقرأ — كلمات كاملة متصلة الحروف، من اليمين، بخطوط مفتوحة محمّلة قبل الإطار الأول، بمحرك تشكيل واحد، ومتزامنة مع الكلمة المنطوقة. 11 منشورًا فقط من 3,984 منشور موشن رصدناها كانت عربية (`kosif-studio/motion/references/x-trend-2026.md`) — العربية المتحركة الصحيحة هي ميزتك.
 > **أقوى دليل:** كاريوكي ASS عربي بحدث لكل كلمة ومرّ اختباره (`kosif-studio/tests/test_studio.py:765`) وأعدتُ رسمه في هذه الحاوية بترتيب كلمات صحيح، وقوالب الموشن المختبرة (`mtemplates.py`)، و`style:whiteboard` حيث كتبتَ عنوانًا عربيًا بقناع ناعم ورأس ماركر.
-> **You can:** shape, place, reveal, punch and caption Arabic correctly in HTML, Remotion, Pillow and libass. **93 powers follow** — ✅ 19 · 🟢 36 · 📦 6 · 🔑 0 · 👁 11 · 📄 20 · 💡 1.
+> **You can:** shape, place, reveal, punch and caption Arabic correctly in HTML, Remotion, Pillow and libass. **96 powers follow** — ✅ 22 · 🟢 36 · 📦 6 · 🔑 0 · 👁 11 · 📄 20 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -20,6 +20,7 @@
 - **المحاكاة والمطابقة ومحركات الرسم — Mimic, matching & raster engines** — ARAB-84 … ARAB-90 (7)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 - **إضافات v2 — v2 additions** — ARAB-X01 … ARAB-X03 (3)
+- **إضافات v3 — v3 additions** — ARAB-X04 … ARAB-X06 (3)
 
 ## قوانين التشكيل والاتجاه — Shaping & direction laws
 
@@ -725,6 +726,28 @@ _حين يُطلب «مثل هذا المرجع» أو يُرسم النص خا�
 - **متى أستخدمها / when:** شوريلات التايبوغرافي وانتقالات بين الأفكار — type showreels and idea transitions.
 - **كيف / how:** Untested idea from a brief: rotate the block (never single letters) 90° with a band of background at 60% to hide the turn; lay the next line out on the rotated axis; keep each word whole. **أرقام / params:** 90°; band = bg at 60%.
 - **الدليل / proof:** `kosif-tool/styles/pm-zheke-38deff/BRIEF.md`
+
+## إضافات v3 — v3 additions (2026-10-18)
+
+_قدرات أُثبتت في هذه الجلسة: مطابقة الخطوط وتجميعها، فاحص المرجع، فحص الأدوات، فحص المطابقة المرئي. — Proven in this session._
+
+#### ARAB-X04 · مطابقة الخط عبر محرك تشكيل حقيقي · Font matching through a real shaper (Chromium/HarfBuzz) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** اعرض سطور المرجع نفسها بكل خط مفتوح مرشّح عبر Chromium (الخط مضمّن كـ data URL) وقارنها بقصاصات الفيديو جنبًا إلى جنب؛ القرار بالبصمات (المركّبات المتراكبة «جم» و«محمد»، شكل ﷺ، الكاف والتاء المربوطة) لا بتقاطع الظلال. — Render the reference lines in every open candidate through headless Chromium and compare side-by-side sheets; decide by letterform signatures (stacked جم/محمد, the ﷺ form, kaf/taa-marbuta), not by silhouette IoU.
+- **متى أستخدمها / when:** a reference uses an unknown Arabic face and you must pick the closest open font honestly
+- **كيف / how:** `node .claude/skills/kosif-superpowers/scripts/render_text.cjs spec.json out/` with spec items {text, font, weight, size, variation}; build sheets with Pillow (video crop on top, candidates below at equal width); width ratios between lines are tie-breakers only because kashida and shadows distort them. Method and pitfalls in references/font-matching.md. Verified on the Friday-greeting reference: Amiri Bold matched; Scheherazade/Noto set the ligatures flat. **أرقام / params:** size 48–120 px; fonts as data URLs (file:// fails under setContent).
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/render_text.cjs` · `kosif-tool/.claude/skills/kosif-superpowers/references/font-matching.md` · `kosif-tool/fonts/kosif-jumuah/README.md`
+
+#### ARAB-X05 · تجميع عائلة خط مطابقة من مصدرين OFL · Assemble a matched OFL family from two masters · ✅ مُثبت هنا / proven here
+- **ماذا / what:** حين تأتي العربية والأرقام من تصميمين مختلفين: اقتطع كل مصدر إلى نطاقات يونيكود منفصلة، ثبّت الأوزان من الخط المتغيّر، وحّد وحدات القياس والمقاييس الرأسية، ادمج بـ fontTools، وسمِّ العائلة باسم جديد لأن OFL تحجز الأسماء الأصلية. — Subset two OFL masters to disjoint ranges, instance the variable one, unify UPM and vertical metrics, merge with fontTools and rename (Reserved Font Names are never reused).
+- **متى أستخدمها / when:** one open face cannot cover both the Arabic text and the figures/Latin of a reference
+- **كيف / how:** `pip install fonttools brotli && python3 fonts/kosif-jumuah/build_font.py` → KOSIFJumuah-Regular/Bold .ttf + .woff2 from Amiri (Arabic, GSUB kept) and Bodoni Moda instanced at wght 400/600, opsz 11 (Latin figures); OFL.txt carries both notices; tests check family names, code points (letters, tatweel, ﷺ, digits), GSUB survival and fsType 0. **أرقام / params:** UPM 1000; Latin wght 400/600 opsz 11; Arabic blocks 0600–06FF, 0750–077F, 08A0–08FF, FB50–FDFF, FE70–FEFF.
+- **الدليل / proof:** `kosif-tool/fonts/kosif-jumuah/build_font.py` · `kosif-tool/fonts/kosif-jumuah/OFL.txt` · `kosif-tool/tests/test_fonts.py`
+
+#### ARAB-X06 · عنوان خطي مركّب من حدود حروف مفتوحة · Composed calligraphic title from OFL outlines · ✅ مُثبت هنا / proven here
+- **ماذا / what:** لا يوجد خط ثلث مفتوح الرخصة؛ ابنِ إيماءة العنوان من حدود حروف Amiri Bold: مطّ الألف واللام، تكبير الجيم حول مفصلها، كشيدة بعد الميم والعين، إمالة مجموعة «لجمعة» المتصلة لينحدر السطر مع بقاء الأعمدة رأسية، وتشكيل يوضع يدويًا؛ مسار لكل حرف ليُرسم تدريجيًا. — No open Thuluth exists; build the title's gesture from Amiri Bold outlines (stretched stems, scaled ج, kashida, a sheared connected group, hand-placed marks), one path per glyph for draw-on.
+- **متى أستخدمها / when:** a reference title is hand-set calligraphy that no open font reproduces
+- **كيف / how:** `python3 fonts/kosif-jumuah/demo/compose_title.py --set shear=0.18 --set alef_sy=1.6 --set jeem_s=1.3` → title-aljumuah.svg, inlined in demo/jumuah.html and drawn on with strokeDasharray/Dashoffset per path. Honest limit: Naskh pen, not Thuluth; for an exact match a calligrapher's SVG replaces the file or a licensed Thuluth font goes in via --font (kept outside the repo if not OFL-compatible). Keep the SVG group id distinct from the page's #title (transform-origin rules leak into SVG). **أرقام / params:** stems ×1.6; ج ×1.3; shear tan 0.18; marks damma/damma/fatha.
+- **الدليل / proof:** `kosif-tool/fonts/kosif-jumuah/demo/compose_title.py` · `kosif-tool/fonts/kosif-jumuah/demo/title-aljumuah.svg` · `kosif-tool/fonts/kosif-jumuah/demo/jumuah.html`
 
 ## توليفات قوية / power combos
 
