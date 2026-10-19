@@ -19,6 +19,16 @@ installed, python scripts/blender_bridge.py render --scene templates/blender-dem
 Supports .blend, .glb, .png; renders are NOT verified if Blender is not installed.
 See [Blender integration](references/blender-integration.md). No commercial source
 code is transferred into KOSIF.
+## Built-in native 3D rendering without Blender
+
+Read the [Blender public API evidence](references/blender-public-api-research.md). Use [KOSIF Native 3D](references/native-3d-runtime.md) for simple
+cube/sphere/cylinder objects, location/rotation keyframes, orthographic
+camera, PNG and MP4 exports without installing Blender. Check
+python scripts/native_3d.py doctor and render templates/native-3d-demo.json
+with scripts/native_3d.py render --scene ... --output demo.mp4.
+This is an independent bounded software renderer (Pillow and FFmpeg);
+it is not Blender feature parity. Advanced 3D still uses the optional
+Blender bridge. Native 3D acceptance produced 120 H264 frames/5 seconds.
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](references/capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
