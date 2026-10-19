@@ -2,7 +2,7 @@
 
 **Primary / canonical skill:** KOSIF Superpowers (`kosif-superpowers`).
 **Complementary process-methods source:** [obra/superpowers](https://github.com/obra/superpowers), release **v7.0.0**, pinned commit `bb92a77741419a4ab5f06e711a283343f1ada0c3`.
-**License:** MIT, original copyright preserved in [vendor/obra-superpowers-v7/LICENSE](../vendor/obra-superpowers-v7/LICENSE). The vendor skills are retained as independent documents with their support files and references, rather than flattening or dropping content.
+**License:** MIT, original copyright preserved in [vendor/obra-superpowers-v7/LICENSE](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/vendor/obra-superpowers-v7/LICENSE). The vendor skills are retained as independent documents with their support files and references, rather than flattening or dropping content.
 
 ## What was integrated?
 
@@ -36,6 +36,8 @@ python .claude/skills/kosif-superpowers/scripts/superpowers_unified.py plan "Bui
 python .claude/skills/kosif-superpowers/scripts/superpowers_unified.py list
 python -m unittest discover -s tests -p "test_superpowers_unified.py" -v
 ```
+
+**Portable Claude.ai packaging note:** Claude single-skill upload expects exactly one `SKILL.md`; its `.skill` archive therefore excludes the embedded third-party `vendor/` directory. The **full 16-skill unified suite is included in this GitHub repository** and installed through the installer below for Claude Code. For Claude.ai, import KOSIF's portable `.skill` and install the additional original process skills separately if your account supports multi-skill uploads. Do not claim the `.skill` file alone includes all 15 original process skills.
 
 **Opt-in user-wide installation (backs up any existing CLAUDE.md, preserves unrelated skills):**
 

@@ -54,6 +54,15 @@ class UnificationTests(unittest.TestCase):
             self.assertEqual(again["instructions"], "already_present")
             self.assertEqual((claude / "CLAUDE.md").read_text(encoding="utf-8").count(m.GLOBAL_START), 1)
 
+    def test_portable_package_excludes_nested_skills(self):
+        package_path = SRC.with_name("package_skill.py")
+        pkg_spec = importlib.util.spec_from_file_location("kosif_package_skill", package_path)
+        package = importlib.util.module_from_spec(pkg_spec)
+        pkg_spec.loader.exec_module(package)
+        files, _ = package.collect(lite=True, with_evals=True)
+        self.assertTrue(any(str(f).replace("\\\\", "/") == "SKILL.md" for f in files))
+        self.assertFalse(any(f.parts[0] == "vendor" for f in files))
+
     def test_collision_requires_force(self):
         with tempfile.TemporaryDirectory() as t:
             home = Path(t)
