@@ -374,7 +374,7 @@ For a Claude task requiring a drawn person to walk, run, wave, smile, blink or n
 
 ## REA Creative Research Atlas — 2,000 public sources (2026-10-19)
 
-For filmmaking, editing, imagery, animation, audio-sync, font/VFX or media-research requests, consult [evidence-bound creative discovery report](../../../docs/REA_CREATIVE_DISCOVERY_2000_20261019.md). Search the **1,000 public GitHub repository metadata records and 1,000 curated creative website records** using:
+For filmmaking, editing, imagery, animation, audio-sync, font/VFX or media-research requests, consult [evidence-bound creative discovery report](references/REA_CREATIVE_DISCOVERY_2000_20261019.md). Search the **1,000 public GitHub repository metadata records and 1,000 curated creative website records** using:
 
 ```bash
 python scripts/creative_external_search.py stats
