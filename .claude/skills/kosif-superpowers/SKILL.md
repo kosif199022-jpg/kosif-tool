@@ -11,6 +11,20 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 **Do NOT require git clone before using this skill.** If Claude Code Auto Mode denies 'Code from External', do not bypass the permission classifier. Run the already-installed local script: python scripts/local_first.py doctor and python scripts/local_first.py search silhouette --scope powers from this skill's root (or use the full relative path under the repo root). A complete local checkout also supports --scope styles; standalone skills honestly report that the full style index is unavailable. If the skill isn't installed and access is blocked, request explicit user authorization or a supplied package instead of using an alternative tool to secretly clone. Read [the auto-mode recovery guide](references/claude-auto-local-first.md) and [evidence audit](references/rea-ghidra-catalog-audit-20261019.md). For catalog health, run python scripts/catalog_evidence_audit.py: all 4,730 records are assessed for local link coverage but NOT executed.
 
+## KOSIF local computer MCP (verified prototype)
+
+For user-approved local computer work, use the self-contained **KOSIF Remote Commander** MCP server. It offers 11 workspace-scoped tools for files, search, metadata, and strictly allowlisted read-only commands. It runs **locally over stdio**, not on a cloud relay; it is not full remote desktop control. By default it **cannot write files or execute commands**.
+
+From this skill directory:
+
+~~~powershell
+python scripts/kosif_remote_superpowers.py doctor
+python scripts/kosif_remote_superpowers.py demo
+python -m unittest discover -s scripts -p test_kosif_remote_superpowers.py -v
+~~~
+
+In a local MCP client, launch python with arguments `scripts/kosif_remote_superpowers.py serve` and set `KOSIF_REMOTE_ROOT` to the explicitly approved workspace. Only after separate user permission may `KOSIF_ALLOW_WRITES=1` be set for file changes or `KOSIF_ALLOW_EXEC=1` for a limited list of read-only commands. Do not connect this service directly to the internet or advertise cloud, UI, camera, or multi-device capabilities. See [Remote Commander operating guide and evidence](references/remote-commander-mcp.md). The standalone test suite exercised 7 functional cases in an isolated workspace; it did not test actual remote device pairing.
+
 ## Blender independent headless bridge
 
 For original 3D scenes and keyframe animation, use the optional local Blender
