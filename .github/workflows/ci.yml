@@ -71,6 +71,10 @@ jobs:
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_smart_draw.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_local_project_audit.py' -v
+      - name: Verify browser URL policy and 26 public source targets
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_browser_scout.py' -v
+      - name: Validate external Atlas metadata audit behavior
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_atlas_metadata_audit.py' -v
       - name: KOSIF Code Drawing Master Python scene/actor tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
       - name: KOSIF Code Drawing Master SVG and morph runtime tests

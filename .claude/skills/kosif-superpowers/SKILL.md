@@ -37,6 +37,19 @@ scripts/smart_draw.py for independent sketch shape assist and layered PNG/SVG.
 See templates/smart-draw-demo.json and
 references/blender-smartdraw-research-20261019.md.
 Do not claim AutoDraw trained ML or Canva proprietary features are imported.
+## Web apps and browser isolation research
+
+For public app-feature research (Photopea, AutoDraw, Canva, SVG-Edit,
+p5.js, browsers, Codex, Claude, Maya, Houdini, Unreal and other targets),
+read [Integration target matrix](references/cloud-browser-and-app-capability-matrix.md).
+Run python scripts/browser_scout.py doctor and python scripts/browser_scout.py
+inspect autodraw. Optional read-only capture runs fresh Playwright contexts.
+This prototype is not a deployed cloud browser; browser binaries are
+separate from the Python package. Do not copy commercial application code.
+See data/integration-target-atlas.json for 26 scoped targets.
+For external KOSIF Atlas metadata audit (14,793 catalog records),
+run python scripts/atlas_metadata_audit.py --index INDEX.json --copyleft INDEX_COPY.json.
+This does NOT execute or validate any third-party skill.
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](references/capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
