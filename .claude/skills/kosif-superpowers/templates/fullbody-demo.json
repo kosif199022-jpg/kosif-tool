@@ -1,0 +1,23 @@
+﻿{
+  "schema": "kosif.fullbody.v1",
+  "width": 480,
+  "height": 480,
+  "duration": 3,
+  "background": "#F4F0E6",
+  "character": {
+    "origin": [220, 213],
+    "scale": 0.92,
+    "skin": "#E8BD98",
+    "clothes": "#355B47",
+    "pants": "#344B60",
+    "hair": "#25312D"
+  },
+  "actions": [
+    {"time":0, "kind":"walk", "duration":1.0, "speed":30},
+    {"word":"hello", "kind":"wave", "duration":0.9},
+    {"time":1.15, "kind":"smile", "duration":0.85},
+    {"time":1.2, "kind":"run", "duration":1.2, "speed":48},
+    {"time":2.5, "kind":"blink", "duration":0.2},
+    {"time":2.7, "kind":"nod", "duration":0.25}
+  ]
+}
