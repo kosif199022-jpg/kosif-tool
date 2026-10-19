@@ -274,3 +274,19 @@ When asked to invent, brainstorm or design a new capability, consult [50 reposit
 When asked to **match, imitate, identify or create typography** (including Arabic calligraphy in a user-supplied image/video), use `scripts/font_fidelity_lab.py` with **user-authorized font files**, inspect GSUB/GPOS/cmap/axes, render shaped Arabic with libraqm, rank visual candidates against a tightly cropped reference, and independently compare multiple phrases. Read [font fidelity workflow](references/font-innovation-50.md). Exact font identification requires evidence; do not assert it from pixel similarity alone. For the uploaded KOSIF Jumuah kit, inspect its OFL and Amiri/Bodoni Moda derivative sources; never commit its font binaries blindly.
 
 For authorized reverse engineering, keep the existing `scripts/rea_bridge.py` security gates and use `scripts/rea_family_router.py` and [upstream REA v6.7 capability families](references/rea-upstream-capabilities.md) to discover supported routes. Read the **installed version-matched upstream REA skill** before exercising the executable. Do not auto-install, run native providers, attach to browsers/devices or claim successful agent investigations without authorization and real evidence.
+
+
+## KOSIF Superpowers Ultimate — integrated obra/superpowers v7 process layer (2026-10-19)
+
+**KOSIF remains the canonical master and full capability map.** We additionally bundle all 15 original MIT-licensed obra/superpowers v7.0.0 process skills as *methods*, not alternative capability inventories. A process skill determines **how to work**; KOSIF determines **what can actually be executed** with verified tools in this session. Preserve all existing KOSIF families, badges, media editors, source catalogs, and execution rules.
+
+**Mandatory discovery when the task is substantial:** initialize KOSIF with `boot.py`, `probe_env.py` and `powers.py suggest "<task>"`, then run:
+```bash
+python $SKILL_DIR/scripts/superpowers_unified.py doctor
+python $SKILL_DIR/scripts/superpowers_unified.py plan "<user task, verbatim>"
+```
+Read the suggested original process skill's `SKILL.md` from `vendor/obra-superpowers-v7/skills/<skill-name>/SKILL.md` and follow its methodology when applicable. Use `brainstorming` for new designs, `writing-plans` for implementation plans, `systematic-debugging` for failures, `test-driven-development` for coding, `requesting-code-review` for appropriate reviews and `verification-before-completion` before reporting successful completion. Keep the KOSIF capability router and original user permissions in force.
+
+The bundled 15 process skills are installed alongside the KOSIF main skill for Claude Code discovery via an explicitly invoked `superpowers_unified.py install`. Existing unrelated user skills are preserved; name conflicts are skipped unless separately authorized and backed up. Details, provenance, commands and rollback: [Superpowers unification](references/superpowers-unification.md).
+
+**Do not confuse vendor source presence with actual installation, invocation, or proven task execution. No paid tools, outside publication, system-wide installs or external media uploads without authorization.**
