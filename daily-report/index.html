@@ -1,4 +1,4 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>التقرير اليومي الموحد</title>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>التقرير اليومي الموحد</title><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>التقرير اليومي الموحد</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -709,7 +709,7 @@ async function boot() {
     await openDay(start);
   }
 }
-if (location.hash !== "#print") boot();
+if (!location.hash.startsWith("#print")) boot();
 
 /* ---------- Excel export (ExcelJS, same palette) ---------- */
 let excelReady = null;
@@ -1550,8 +1550,8 @@ function showPreview(pages, mobile) {
       el("a", {href: "report-mobile.pdf", target: "_blank", rel: "noopener", class: "btn", text: "فتح نسخة الجوال"}),
       el("a", {href: "report-a4.pdf", target: "_blank", rel: "noopener", class: "btn", text: "فتح نسخة A4"}));
   }
-  const pa = el("a", {href: $("btnPrint").href, target: "_blank", rel: "noopener", class: "btn primary", text: "طباعة"});
-  pa.addEventListener("click", () => { try { localStorage.setItem("print-job", JSON.stringify(serialize())); } catch (e) {} });
+  const pa = el("a", {href: $("btnPrint").href, target: "_blank", rel: "noopener", class: "btn primary", text: "فتح صفحة الطباعة"});
+  pa.addEventListener("click", () => { try { localStorage.setItem("print-job", JSON.stringify(serialize())); } catch (e) {} if (framed) pa.href = STANDALONE + "#print=" + b64(JSON.stringify(serialize())); });
   links.prepend(pa);
   ov.hidden = false; document.body.style.overflow = "hidden"; $("pvClose").focus();
 }
@@ -1567,12 +1567,17 @@ function directSave(name, blob) {  // standalone hosting only (outside the Claud
   setTimeout(() => URL.revokeObjectURL(url), 4000);
 }
 /* ---------- printing: the viewer frame blocks print(), so printing runs in its own tab ---------- */
+const STANDALONE = "https://kosif199022-jpg.github.io/kosif-tool/daily-report/";
+const b64 = str => { const by = new TextEncoder().encode(str); let bin = ""; for (let i = 0; i < by.length; i += 8192) bin += String.fromCharCode.apply(null, by.subarray(i, i + 8192)); return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""); };
+const unb64 = s => { s = s.replace(/-/g, "+").replace(/_/g, "/"); while (s.length % 4) s += "="; const bin = atob(s); const by = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) by[i] = bin.charCodeAt(i); return new TextDecoder().decode(by); };
 const framed = (() => { try { return window.top !== window.self; } catch (e) { return true; } })();
 (() => {
   const a = $("btnPrint");
-  try { a.href = location.origin + location.pathname + "#print"; } catch (e) {}
+  try { a.href = framed ? STANDALONE + "#print" : location.origin + location.pathname + "#print"; } catch (e) {}
   a.addEventListener("click", e => {
     try { localStorage.setItem("print-job", JSON.stringify(serialize())); } catch (err) {}
+    // the Claude frame cannot print: hand the day's data to the standalone copy in the URL fragment (never sent to the server)
+    if (framed) { try { a.href = STANDALONE + "#print=" + b64(JSON.stringify(serialize())); } catch (err) {} }
     if (!framed) { e.preventDefault(); startPrint(); return; }
     // inside the Claude frame a new tab may be refused; if focus never leaves, show the in-page fallback
     setTimeout(async () => {
@@ -1580,7 +1585,7 @@ const framed = (() => { try { return window.top !== window.self; } catch (e) { r
         const {pages} = await renderPdf(false);
         showPreview(pages, false);
         $("pvTitle").textContent = "الطباعة غير متاحة داخل Claude";
-        $("pvTitle").nextElementSibling.textContent = "إطار Claude يمنع نافذة الطباعة. اطبع من النسخة المستقلة للتطبيق، أو احفظ الصفحات من هنا (ضغط مطوّل على الجوال، أو زر الفأرة الأيمن ← حفظ الصورة).";
+        $("pvTitle").nextElementSibling.textContent = "إطار Claude يمنع نافذة الطباعة. اضغط «فتح صفحة الطباعة» لفتح التقرير نفسه في صفحة مستقلة تطبع مباشرة، أو احفظ الصفحات من هنا.";
       }
     }, 1500);
   });
@@ -1588,7 +1593,8 @@ const framed = (() => { try { return window.top !== window.self; } catch (e) { r
 async function startPrint() {
   document.body.classList.add("printing");
   let job = null;
-  try { job = JSON.parse(localStorage.getItem("print-job") || "null"); } catch (e) {}
+  if (location.hash.startsWith("#print=")) { try { job = JSON.parse(unb64(location.hash.slice(7))); history.replaceState(null, "", location.pathname + "#print"); } catch (e) {} }
+  if (!job) { try { job = JSON.parse(localStorage.getItem("print-job") || "null"); } catch (e) {} }
   S = fromDoc(job || SNAPSHOT || emptyDay(todayISO()));
   try { await Promise.all(["400", "500", "600", "700", "800"].map(w => document.fonts.load(`${w} 12px Cairo`, "عربي"))); } catch (e) {}
   const logoImg = await new Promise(res => { const im = new Image(); im.onload = () => res(im); im.onerror = () => res(null); im.src = LOGO; });
@@ -1601,7 +1607,7 @@ async function startPrint() {
   go.onclick = () => window.print();
   setTimeout(() => window.print(), 300);
 }
-if (location.hash === "#print") startPrint();
+if (location.hash.startsWith("#print")) startPrint();
 })();
 </script>
 </body></html>
