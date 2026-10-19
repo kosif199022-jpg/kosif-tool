@@ -46,8 +46,11 @@ For each substantial task, discover relevant skills and begin with the installed
 ~/.claude/skills/kosif-superpowers/SKILL.md and its boot/capability-router guidance.
 KOSIF is the master capability registry and executor. obra/superpowers v7 skills
 are separate process-method specialists, NOT a replacement for KOSIF.
-Before implementing, choose relevant process skills with:
+Before implementing, use the live capability Atlas and process-skill router:
+python ~/.claude/skills/kosif-superpowers/scripts/capability_atlas.py plan "<task>" --json
 python ~/.claude/skills/kosif-superpowers/scripts/superpowers_unified.py plan "<task>"
+Read only the selected capability IDs, requirements and matching process SKILL.md.
+Do not claim recorded proofs establish live tool or model execution.
 Read the selected process skill's SKILL.md when applicable. Use brainstorming
 before major design, systematic-debugging for bugs, TDD when coding, and
 verification-before-completion before claiming success.
