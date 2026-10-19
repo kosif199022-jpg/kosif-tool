@@ -32,3 +32,7 @@ This creates an independent bridge from KOSIF rather than transplanting code.
 Other Adobe/Lightroom REA results are read-only static research, not a license
 to copy third-party algorithms, binary fragments, UI assets or codecs.
 External skill catalog entries are claims until runtime evidence establishes them.
+
+## Verified five-second cat rescue
+
+Original procedural demo: examples/blender_cat_rescue_5s.py, built with 70 Blender objects and 120 frames in vertical 480x854. Execute with locally installed Blender 5.2.2 headless using --background --factory-startup --disable-autoexec --python-exit-code 7 --python examples/blender_cat_rescue_5s.py. This saves a .blend scene and numbered PNG frames to KOSIF_RESEARCH_PRIVATE_20261019 under the user's home. Encode frames at 24 fps using FFmpeg to MP4. Verified movie at proofs/blender-cat-rescue-advanced-20261019/KOSIF_CAT_RESCUE_5_SECONDS.mp4. This remains simplified geometry, no audio, no realistic human model and no motion capture. For Blender-free rendering, use scripts/native_3d.py and its limited primitive mesh API.
