@@ -1,0 +1,5 @@
+work/*.pb
+work/*.wav
+work/sep/
+work/demucs.log
+out/

@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>ما فرّق البحر بيننا</title>
+<style>
+  @font-face { font-family: "Aref Ruqaa"; src: url(assets/fonts/ArefRuqaa-Bold.ttf); font-weight: 700; }
+  @font-face { font-family: "Cairo"; src: url(assets/fonts/Cairo.ttf); font-weight: 200 1000; }
+  @font-face { font-family: "Amiri"; src: url(assets/fonts/Amiri-Bold.ttf); font-weight: 700; }
+  @font-face { font-family: "Reem Kufi"; src: url(assets/fonts/ReemKufi.ttf); font-weight: 400 700; }
+  :root { --gold: #ffd36b; --gold2: #f6b93b; --ink: #fff; }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+  #cv { position: absolute; inset: 0; }
+  #scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 760px; pointer-events: none;
+    background: linear-gradient(to top, rgba(0,0,0,.72) 0, rgba(0,0,0,.45) 38%, rgba(0,0,0,0) 100%); }
+  .bar { position: absolute; left: 0; right: 0; height: 240px; background: #000; z-index: 6; }
+  #barT { top: 0; transform: translateY(-100%); } #barB { bottom: 0; transform: translateY(100%); }
+
+  /* ---------- lyric captions ---------- */
+  #caps { position: absolute; left: 70px; right: 70px; bottom: 300px; height: 330px; z-index: 4; }
+  .line { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; justify-content: center;
+    align-items: baseline; gap: 4px 22px; text-align: center; opacity: 0; will-change: transform, opacity, clip-path; }
+  .line .w { display: inline-block; white-space: nowrap; will-change: transform, color; }
+  .v { font: 800 70px/1.45 "Cairo", sans-serif; color: rgba(255,255,255,.62);
+    text-shadow: 0 4px 18px rgba(0,0,0,.65), 0 1px 2px rgba(0,0,0,.8); }
+  .ch { font: 700 96px/1.4 "Aref Ruqaa", serif; color: rgba(255,255,255,.58);
+    text-shadow: 0 6px 24px rgba(0,0,0,.7), 0 1px 2px rgba(0,0,0,.9); }
+  .am { font: 700 82px/1.5 "Amiri", serif; color: rgba(255,255,255,.62);
+    text-shadow: 0 5px 22px rgba(0,0,0,.7); }
+  .tag { position: absolute; left: 0; right: 0; bottom: 100%; margin-bottom: 18px; text-align: center;
+    font: 600 30px "Reem Kufi", sans-serif; color: var(--gold); letter-spacing: 0; opacity: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,.7); }
+
+  /* ---------- overlays ---------- */
+  .ov { position: absolute; inset: 0; pointer-events: none; z-index: 5; opacity: 0; }
+  #title { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 330px; }
+  #title .t1 { font: 700 150px/1.25 "Aref Ruqaa", serif; color: transparent; padding: 0 40px;
+    background: linear-gradient(100deg, #b8862b 0%, #ffe9a8 22%, #f2c14e 40%, #fff6d6 50%, #d99a2b 62%, #ffe08a 80%, #a8741f 100%);
+    background-size: 260% 100%; -webkit-background-clip: text; background-clip: text;
+    filter: drop-shadow(0 8px 26px rgba(0,0,0,.65)); }
+  #title .t2 { font: 700 46px "Cairo", sans-serif; color: #fff; margin-top: 6px; display: flex; gap: 26px; align-items: center;
+    text-shadow: 0 3px 14px rgba(0,0,0,.8); }
+  #title .chip { width: 64px; height: 40px; border-radius: 6px; overflow: hidden; display: inline-flex; flex-direction: column; box-shadow: 0 3px 12px rgba(0,0,0,.6); }
+  #title svg { width: 760px; height: 60px; margin-top: 8px; overflow: visible; }
+  #map svg, #icons svg, #wave svg, #endcard svg { overflow: visible; }
+  #map { background: radial-gradient(ellipse at 50% 45%, rgba(4,16,30,.62), rgba(0,0,0,.9)); }
+  #map .head { position: absolute; left: 0; right: 0; top: 330px; text-align: center;
+    font: 700 108px/1.3 "Aref Ruqaa", serif; color: var(--gold); text-shadow: 0 6px 28px rgba(0,0,0,.8); }
+  #map .city { font: 800 54px "Cairo", sans-serif; fill: #fff; paint-order: stroke; stroke: rgba(0,0,0,.6); stroke-width: 8px; }
+  #map .sea { font: 600 36px "Reem Kufi", sans-serif; fill: #9fd8ff; }
+  #icons { z-index: 5; }
+  #icons svg { position: absolute; left: 50%; top: 1060px; width: 210px; height: 175px; margin-left: -105px; opacity: 0;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,.7)); }
+  #wave svg { position: absolute; left: 0; top: 1610px; width: 1080px; height: 80px; }
+  #endcard { background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,.55), rgba(0,0,0,.82)); display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 120px; }
+  #endcard .e1, #endcard .e2 { font: 700 132px/1.35 "Aref Ruqaa", serif; color: transparent;
+    background: linear-gradient(100deg, #e9b54a 0%, #ffefb8 25%, #f7cd5e 45%, #fffbe8 52%, #f0b443 65%, #ffe59a 85%, #e3a83c 100%);
+    background-size: 260% 100%; -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 8px 26px rgba(0,0,0,.7)); }
+  #endcard .rib { display: flex; gap: 0; margin: 26px 0 18px; }
+  #endcard .rib div { height: 12px; }
+  #endcard .e3 { font: 600 40px "Reem Kufi", sans-serif; color: rgba(255,255,255,.85); margin-top: 20px; }
+  #black { position: absolute; inset: 0; background: #000; z-index: 9; opacity: 0; pointer-events: none; }
+  #flash { position: absolute; inset: 0; z-index: 7; opacity: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 30% 25%, #fff7e0, #ffd98a 55%, #ffb347); mix-blend-mode: screen; }
+  #controls { position: fixed; left: 10px; top: 10px; z-index: 20; direction: ltr; font: 14px system-ui; color: #fff; display: flex; gap: 8px; align-items: center; }
+  #controls input { width: 600px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="cv" width="1080" height="1920"></canvas>
+  <div id="scrim"></div>
+
+  <div id="title" class="ov">
+    <div class="t1">ما فرّق البحر بيننا</div>
+    <svg viewBox="0 0 760 60"><g fill="none" stroke="#f2c14e" stroke-width="3" stroke-linecap="round">
+      <path class="draw" pathLength="1" d="M380 30 H640 M660 30 l14 -12 l14 12 l-14 12 z M700 30 H752"/>
+      <path class="draw" pathLength="1" d="M380 30 H120 M100 30 l-14 -12 l-14 12 l14 12 z M60 30 H8"/>
+      <circle cx="380" cy="30" r="7" fill="#f2c14e" stroke="none" class="pop"/></g></svg>
+    <div class="t2">
+      <span class="chip"><i style="flex:1;background:#ce1126"></i><i style="flex:1;background:#fff"></i><i style="flex:1;background:#000"></i></span>
+      <span>مصر</span><span style="color:var(--gold)">✦</span><span>السعودية</span>
+      <span class="chip" style="background:#006c35"></span>
+    </div>
+  </div>
+
+  <div id="map" class="ov">
+    <div class="head">ما فرّق البحر بيننا</div>
+    <svg viewBox="0 0 1080 1920" width="1080" height="1920">
+      <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <linearGradient id="arcG" x1="0" x2="1"><stop offset="0" stop-color="#ce1126"/><stop offset=".5" stop-color="#ffd36b"/><stop offset="1" stop-color="#1aa35a"/></linearGradient>
+      </defs>
+      <path id="seaBand" d="M304 716 L377 804 L504 1004 L613 1222 L700 1346" fill="none" stroke="#2b8fd6" stroke-opacity=".38" stroke-width="64" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+      <path id="seaLine" d="M304 716 L377 804 L504 1004 L613 1222 L700 1346" fill="none" stroke="#9fd8ff" stroke-width="3" stroke-dasharray="10 14" stroke-linecap="round"/>
+      <text class="sea" x="0" y="0" transform="translate(560 1130) rotate(62)" text-anchor="middle">البحر الأحمر</text>
+      <path id="arc" d="M256 713 Q 520 430 821 906" fill="none" stroke="url(#arcG)" stroke-width="9" stroke-linecap="round" pathLength="1" filter="url(#glow)"/>
+      <circle id="spark" r="13" fill="#fff6d6" filter="url(#glow)"/>
+      <g id="cairo" transform="translate(256 713)"><circle r="40" fill="none" stroke="#ce1126" stroke-width="4" class="ring"/><circle r="17" fill="#ce1126" stroke="#fff" stroke-width="5"/><text class="city" x="0" y="-62" text-anchor="middle">القاهرة</text></g>
+      <g id="riyadh" transform="translate(821 906)"><circle r="40" fill="none" stroke="#1aa35a" stroke-width="4" class="ring"/><circle r="17" fill="#006c35" stroke="#fff" stroke-width="5"/><text class="city" x="0" y="82" text-anchor="middle">الرياض</text></g>
+    </svg>
+  </div>
+
+  <div id="icons" class="ov" style="opacity:1">
+    <svg id="ic-ship" viewBox="0 0 120 100"><g fill="none" stroke="#ffd36b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <path pathLength="1" d="M8 66 H112 L98 88 H24 Z"/><path pathLength="1" d="M30 66 V46 H86 V66 M44 46 V30 H70 V46"/>
+      <path pathLength="1" d="M78 30 V16 M84 12 q8 -4 14 0 q6 4 12 0"/><path pathLength="1" d="M4 96 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/></g></svg>
+    <svg id="ic-wheat" viewBox="0 0 120 100"><g fill="none" stroke="#ffd36b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <path pathLength="1" d="M60 98 V18"/><path pathLength="1" d="M60 30 q-14 -4 -16 -16 q14 2 16 16 M60 30 q14 -4 16 -16 q-14 2 -16 16"/>
+      <path pathLength="1" d="M60 50 q-16 -4 -18 -18 q16 2 18 18 M60 50 q16 -4 18 -18 q-16 2 -18 18"/>
+      <path pathLength="1" d="M60 70 q-16 -4 -18 -18 q16 2 18 18 M60 70 q16 -4 18 -18 q-16 2 -18 18"/><path pathLength="1" d="M60 18 V6"/></g></svg>
+    <svg id="ic-shield" viewBox="0 0 120 108"><g fill="none" stroke="#ffd36b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <path pathLength="1" d="M60 6 L104 22 V50 C104 76 86 94 60 104 C34 94 16 76 16 50 V22 Z"/>
+      <path pathLength="1" d="M60 20 L90 31 V52 C90 70 78 82 60 89 C42 82 30 70 30 52 V31 Z"/><path pathLength="1" d="M45 54 L56 65 L77 42"/></g></svg>
+    <svg id="ic-heart" viewBox="0 0 120 100"><defs><clipPath id="hl"><rect x="0" y="0" width="60" height="100"/></clipPath><clipPath id="hr"><rect x="60" y="0" width="60" height="100"/></clipPath></defs>
+      <g class="fill" opacity="0"><path clip-path="url(#hl)" fill="#ce1126" d="M60 94 C22 66 6 46 16 27 C27 7 50 10 60 29 C70 10 93 7 104 27 C114 46 98 66 60 94 Z"/>
+      <path clip-path="url(#hr)" fill="#006c35" d="M60 94 C22 66 6 46 16 27 C27 7 50 10 60 29 C70 10 93 7 104 27 C114 46 98 66 60 94 Z"/></g>
+      <path pathLength="1" fill="none" stroke="#ffd36b" stroke-width="4.5" stroke-linejoin="round" d="M60 94 C22 66 6 46 16 27 C27 7 50 10 60 29 C70 10 93 7 104 27 C114 46 98 66 60 94 Z"/></svg>
+  </div>
+
+  <div id="wave" class="ov"><svg viewBox="0 0 1080 80"><path id="wavePath" pathLength="1" fill="none" stroke="#ffd36b" stroke-width="4" stroke-linecap="round"
+    d="M1040 40 q-30 -26 -60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0 t-60 0"/></svg></div>
+
+  <div id="caps"></div>
+
+  <div id="endcard" class="ov">
+    <div class="e1">الله يحفظ مصر</div>
+    <div class="rib"><div style="background:#ce1126"></div><div style="background:#fff"></div><div style="background:#000"></div><div style="background:#ffd36b;width:18px"></div><div style="background:#006c35"></div></div>
+    <div class="e2">ويحفظ المملكة</div>
+    <div class="e3">ما فرّق البحر بيننا</div>
+  </div>
+
+  <div class="bar" id="barT"></div><div class="bar" id="barB"></div>
+  <div id="flash"></div>
+  <div id="black"></div>
+</div>
+<div id="controls"><button id="play">▶</button><input id="scrub" type="range" min="0" max="196.8" step="0.01" value="0"><span id="tv">0</span></div>
+<audio id="aud" src="assets/song.mp3" preload="auto"></audio>
+
+<script src="lines.js"></script>
+<script src="env.js"></script>
+<script>
+(function () {
+  'use strict';
+  const W = 1080, H = 1920, IW = 941, IH = 1672, FPS = 30, DUR = 196.82, FLAG_H = 620;
+  const LINES = window.KOSIF_LINES, ENV = window.KOSIF_ENV;
+  const $ = (s) => document.querySelector(s);
+  const cv = $('#cv'), ctx = cv.getContext('2d');
+
+  /* ---------- math ---------- */
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const E = {
+    linear: (x) => x,
+    inOutSine: (x) => -(Math.cos(Math.PI * x) - 1) / 2,
+    inOutCubic: (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+    outCubic: (x) => 1 - Math.pow(1 - x, 3),
+    outQuart: (x) => 1 - Math.pow(1 - x, 4),
+    outExpo: (x) => (x >= 1 ? 1 : 1 - Math.pow(2, -10 * x)),
+    outBack: (x) => 1 + 2.70158 * Math.pow(x - 1, 3) + 1.70158 * Math.pow(x - 1, 2),
+  };
+  const prog = (t, a, b, e = E.outCubic) => e(clamp01((t - a) / Math.max(1e-6, b - a)));
+  function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let x = s; x = Math.imul(x ^ (x >>> 15), x | 1); x ^= x + Math.imul(x ^ (x >>> 7), x | 61); return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; }
+  const envAt = (arr, t) => arr[Math.max(0, Math.min(arr.length - 1, Math.round(t * ENV.fps)))] || 0;
+
+  /* ---------- timing helpers (from aligned words) ---------- */
+  const LS = (i) => LINES[i].start;
+  const WS = (i, j) => LINES[i].words[j].start;
+  const cut = (i, j = 0) => WS(i, j) - 0.06;
+  const wordIdx = (i, txt) => LINES[i].words.findIndex((w) => w.word.includes(txt));
+
+  /* ---------- framings (image px, zoom) ---------- */
+  const F = {
+    wide: [470, 836, 1.08], two: [470, 780, 1.38], egF: [292, 690, 2.3], saF: [688, 655, 2.3],
+    egS: [205, 672, 2.1], saS: [560, 690, 2.0], eagle: [262, 335, 3.0], shah: [735, 300, 2.5], top: [470, 560, 1.5], low: [470, 1250, 1.6],
+  };
+
+  /* ---------- shot list: every lyric line gets its own camera move ---------- */
+  const SH = [
+    { t: 0,          a: [470, 520, 1.55], b: [470, 700, 1.42], ease: 'inOutSine', foc: [0, 3, 0, 1], grade: 'dawn', tin: 'black' },
+    { t: 6.2,        a: [300, 500, 1.75], b: [640, 500, 1.75], ease: 'inOutSine', grade: 'dawn', tin: 'dissolve' },
+    { t: 13.2,       a: [470, 836, 1.1],  b: [470, 770, 1.38], ease: 'inOutSine', grade: 'warm', tin: 'dissolve' },
+    // verse 1 — proud
+    { t: cut(1),     a: F.low, b: [470, 800, 1.32], ease: 'inOutCubic', grade: 'warm', tin: 'flash' },
+    { t: cut(2),     a: [200, 690, 1.85], b: [210, 672, 2.25], foc: [3, 0, 4, 0], tin: 'cut' },
+    { t: cut(3),     a: [690, 700, 1.95], b: [688, 652, 2.35], foc: [4, 0, 5, 0], tin: 'whip', dir: -1 },
+    { t: cut(4),     a: [480, 700, 1.8],  b: [470, 800, 1.22], tin: 'cut' },
+    // chorus 1
+    { t: cut(5),     a: [275, 560, 1.55], b: [265, 500, 1.8], tin: 'flash', grade: 'gold', kick: 1 },
+    { t: cut(5, 1),  a: [292, 700, 2.0],  b: [292, 688, 2.3], foc: [4, 0, 4, 0], tin: 'cut', grade: 'gold', kick: 1 },
+    { t: cut(6),     a: [585, 700, 1.85], b: [560, 685, 2.1], foc: [3, 0, 3, 0], tin: 'whip', dir: 1, grade: 'gold', kick: 1 },
+    { t: cut(6, 3),  a: [688, 670, 2.1],  b: [688, 650, 2.45], foc: [4, 0, 5, 0], tin: 'cut', grade: 'gold', kick: 1 },
+    { t: cut(7),     a: [620, 680, 1.9],  b: [350, 680, 1.9], rot: [-1.5, 1.5], tin: 'whip', dir: -1, grade: 'gold', kick: 1 },
+    { t: cut(7, 3),  a: [262, 345, 2.6],  b: [262, 335, 3.1], foc: [0, 6, 0, 6], tin: 'flash', grade: 'gold', kick: 1 },
+    { t: cut(8),     a: F.top, b: [470, 836, 1.1], ease: 'inOutCubic', tin: 'cut', grade: 'gold', kick: 1, wave: 1 },
+    // verse 2 — warm
+    { t: cut(9),     a: [300, 760, 1.6],  b: [290, 700, 2.0], foc: [2, 0, 4, 0], tin: 'dip', grade: 'warm2' },
+    { t: cut(10),    glide: 1, b: [735, 470, 1.9], foc: [4, 0, 0, 3], ease: 'inOutCubic', grade: 'warm2' },
+    { t: cut(11),    a: [690, 710, 1.75], b: [688, 660, 2.1], foc: [3, 0, 5, 0], tin: 'cut', grade: 'warm2' },
+    { t: cut(12),    a: [600, 760, 1.6],  b: [400, 760, 1.6], rot: [1, -1], tin: 'dissolve', grade: 'warm2' },
+    // chorus 2
+    { t: cut(13),    a: [735, 470, 1.8],  b: [735, 430, 2.15], tin: 'flash', grade: 'gold', kick: 1 },
+    { t: cut(13, 1), a: [292, 700, 2.0],  b: [292, 688, 2.3], foc: [4, 0, 4, 0], tin: 'cut', grade: 'gold', kick: 1 },
+    { t: cut(14),    a: [200, 690, 1.9],  b: [210, 672, 2.2], foc: [3, 0, 4, 0], tin: 'whip', dir: 1, grade: 'gold', kick: 1 },
+    { t: cut(14, 3), a: [560, 700, 1.9],  b: [560, 685, 2.15], foc: [3, 0, 3, 0], tin: 'cut', grade: 'gold', kick: 1 },
+    { t: cut(15),    a: [470, 1200, 1.6], b: [470, 760, 1.4], ease: 'inOutCubic', tin: 'whip', dir: -1, grade: 'gold', kick: 1 },
+    { t: cut(15, 3), a: [262, 345, 2.6],  b: [262, 335, 3.1], foc: [0, 6, 0, 6], tin: 'flash', grade: 'gold', kick: 1 },
+    { t: cut(16),    a: F.top, b: [470, 836, 1.1], ease: 'inOutCubic', tin: 'cut', grade: 'gold', kick: 1, wave: 1 },
+    // instrumental — the map: the sea between Cairo and Riyadh
+    { t: 94.5,       a: [470, 836, 1.12], b: [470, 800, 1.25], foc: [7, 7, 9, 9], grade: 'night', tin: 'dissolve', ease: 'linear' },
+    { t: 100.9,      a: [262, 470, 1.8],  b: [700, 470, 1.8], ease: 'inOutSine', grade: 'night', tin: 'dissolve', shake: 0.25 },
+    // verse 3 — drums, intensity
+    { t: cut(17),    a: [720, 480, 1.8],  b: [720, 440, 2.25], tin: 'flash', grade: 'storm', shake: 0.7, kick: 1 },
+    { t: cut(18),    a: [688, 660, 2.25], b: [688, 650, 2.6], foc: [5, 0, 6, 0], tin: 'cut', grade: 'storm', shake: 0.6, kick: 1 },
+    { t: cut(19),    a: [292, 700, 2.0],  b: [292, 690, 2.45], foc: [4, 0, 5, 0], tin: 'whip', dir: -1, grade: 'storm', shake: 0.6, kick: 1 },
+    { t: cut(20),    a: [205, 680, 2.0],  b: [440, 760, 1.5], ease: 'inOutCubic', tin: 'cut', grade: 'storm', shake: 0.5, kick: 1 },
+    // verse 4 — steady, firm
+    { t: cut(21),    a: [470, 780, 1.38], b: [470, 745, 1.58], tin: 'flash', grade: 'warm', ease: 'linear' },
+    { t: cut(22),    a: [735, 430, 2.0],  b: [730, 400, 2.35], foc: [0, 4, 0, 4], tin: 'cut', grade: 'warm', ease: 'linear' },
+    { t: cut(23),    a: [270, 520, 1.7],  b: [300, 560, 1.95], tin: 'cut', grade: 'warm', ease: 'linear' },
+    { t: cut(24),    a: F.low, b: [470, 820, 1.25], ease: 'inOutCubic', tin: 'cut', grade: 'warm' },
+    // bridge — oud, emotional
+    { t: cut(25),    a: [270, 560, 1.6],  b: [700, 560, 1.6], ease: 'inOutSine', grade: 'soft', tin: 'dip', bars: 1 },
+    { t: cut(27),    a: [480, 720, 1.5],  b: [480, 690, 1.95], foc: [2, 0, 6, 0], ease: 'inOutSine', grade: 'soft', tin: 'dissolve', bars: 1 },
+    // final chorus — key change, full energy
+    { t: cut(29),    a: [262, 400, 2.3],  b: [262, 350, 2.8], tin: 'flash', grade: 'gold2', kick: 1, confetti: 1 },
+    { t: cut(29, 1), a: [292, 700, 2.0],  b: [292, 686, 2.35], foc: [4, 0, 4, 0], tin: 'cut', grade: 'gold2', kick: 1, confetti: 1 },
+    { t: cut(30),    a: [585, 700, 1.85], b: [560, 685, 2.15], foc: [3, 0, 3, 0], tin: 'whip', dir: 1, grade: 'gold2', kick: 1, confetti: 1 },
+    { t: cut(30, 3), a: [688, 670, 2.1],  b: [688, 650, 2.5], foc: [4, 0, 5, 0], tin: 'cut', grade: 'gold2', kick: 1, confetti: 1 },
+    { t: cut(31),    a: [620, 680, 1.9],  b: [350, 680, 1.9], rot: [1.5, -1.5], tin: 'whip', dir: -1, grade: 'gold2', kick: 1, confetti: 1 },
+    { t: cut(31, 3), a: [735, 330, 2.3],  b: [735, 300, 2.7], foc: [0, 5, 0, 5], tin: 'flash', grade: 'gold2', kick: 1, confetti: 1 },
+    { t: cut(32),    a: F.top, b: [470, 836, 1.1], ease: 'inOutCubic', tin: 'cut', grade: 'gold2', kick: 1, wave: 1, confetti: 1 },
+    // outro
+    { t: cut(33),    a: [400, 690, 1.8],  b: [440, 720, 1.45], tin: 'flash', grade: 'gold', kick: 1 },
+    { t: cut(34),    glide: 1, b: [470, 836, 1.14], ease: 'inOutCubic', grade: 'gold', kick: 1 },
+    { t: 188.6,      a: [470, 836, 1.14], b: [470, 836, 1.08], foc: [0, 0, 6, 5], ease: 'inOutSine', grade: 'warm', tin: 'none' },
+  ];
+  SH.forEach((s, i) => { s.t1 = i + 1 < SH.length ? SH[i + 1].t : DUR; s.prev = SH[i - 1]; });
+
+  /* ---------- grades: CSS filter on the canvas + colour wash ---------- */
+  const G = {
+    dawn:  { sat: .92, con: 1.06, bri: .96, sep: .12, wash: [255, 150, 60, .10], leak: .55 },
+    warm:  { sat: 1.06, con: 1.06, bri: 1.0, sep: .04, wash: [255, 170, 90, .05], leak: .35 },
+    warm2: { sat: .96, con: 1.05, bri: 1.0, sep: .16, wash: [255, 160, 80, .08], leak: .45 },
+    gold:  { sat: 1.14, con: 1.10, bri: 1.03, sep: .05, wash: [255, 200, 90, .07], leak: .5 },
+    gold2: { sat: 1.2, con: 1.12, bri: 1.05, sep: .04, wash: [255, 205, 100, .09], leak: .6 },
+    night: { sat: .72, con: 1.14, bri: .74, sep: 0, wash: [20, 60, 120, .18], leak: .1 },
+    storm: { sat: .86, con: 1.24, bri: .86, sep: 0, wash: [30, 90, 110, .10], leak: .15 },
+    soft:  { sat: .82, con: .96, bri: 1.02, sep: .22, wash: [255, 170, 110, .10], leak: .65 },
+  };
+  const gradeKeys = ['sat', 'con', 'bri', 'sep', 'leak'];
+
+  /* ---------- assets ---------- */
+  const load = (src) => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
+  const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+  let fgC, plateC, flagOnlyC, flagWarpC, tmpC, prevC, grain = [], vignette, R = 2;
+
+  async function prepare() {
+    const [photo, fga, bgp, fmask] = await Promise.all([load('assets/photo@2x.jpg'), load('assets/fg.png'), load('assets/plate@2x.jpg'), load('assets/flagfill@2x.png')]);
+    const PW = photo.width, PH = photo.height; R = PW / IW;
+    // foreground (people) = upscaled photo masked by segmentation alpha
+    fgC = mk(PW, PH); let c = fgC.getContext('2d');
+    c.drawImage(photo, 0, 0); c.globalCompositeOperation = 'destination-in'; c.drawImage(fga, 0, 0, PW, PH);
+    plateC = bgp;
+    // flags-only layer (pixels to be displaced by the wind)
+    const fh = Math.round(FLAG_H * R);
+    // flags extended behind the heads (so parallax never reveals a hole)
+    flagOnlyC = mk(PW, fh); c = flagOnlyC.getContext('2d'); c.drawImage(fmask, 0, 0, PW, fh, 0, 0, PW, fh);
+    flagWarpC = mk(PW, fh);
+    tmpC = mk(W, H); prevC = mk(W, H);
+    // film grain tiles (seeded)
+    const r = rng(7);
+    for (let g = 0; g < 4; g++) {
+      const gc = mk(540, 960), gx = gc.getContext('2d'), im = gx.createImageData(540, 960);
+      for (let k = 0; k < im.data.length; k += 4) { const v = 128 + (r() - 0.5) * 120; im.data[k] = im.data[k + 1] = im.data[k + 2] = v; im.data[k + 3] = 255; }
+      gx.putImageData(im, 0, 0); grain.push(gc);
+    }
+    vignette = mk(W, H); c = vignette.getContext('2d');
+    const vg = c.createRadialGradient(W / 2, H * 0.46, H * 0.28, W / 2, H * 0.5, H * 0.72);
+    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.62)'); c.fillStyle = vg; c.fillRect(0, 0, W, H);
+  }
+
+  /* ---------- wind on the flags: vertical strip displacement + fold shading ---------- */
+  const FLAGS = [{ x0: 42, len: 448 }, { x0: 500, len: 441 }];
+  function warpFlags(t) {
+    const c = flagWarpC.getContext('2d'), fw = flagWarpC.width, fh = flagWarpC.height, sw = 3;
+    c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'source-over'; c.clearRect(0, 0, fw, fh);
+    const gust = 0.8 + 0.25 * Math.sin(t * 0.21) + 0.12 * Math.sin(t * 0.67 + 1);
+    const shade = [];
+    for (let px = 0; px < fw; px += sw) {
+      const x = px / R; let dy = 0, sh = 0;
+      for (let f = 0; f < 2; f++) {
+        const fl = FLAGS[f], u = (x - fl.x0) / fl.len;
+        if (u > 0 && u <= 1.04) {
+          const amp = 7.5 * gust * Math.pow(Math.min(u, 1), 1.15);
+          const ph = 2 * Math.PI * (u * 1.55 - t * 0.62) + f * 1.7;
+          dy = amp * Math.sin(ph) + 2.2 * gust * u * Math.sin(2 * Math.PI * (u * 3.1 - t * 1.1) + f);
+          sh = 0.17 * Math.min(u * 1.6, 1) * Math.cos(ph);
+        }
+      }
+      c.drawImage(flagOnlyC, px, 0, sw, fh, px, dy * R, sw, fh);
+      shade.push(sh);
+    }
+    c.globalCompositeOperation = 'source-atop';
+    for (let k = 0; k < shade.length; k++) {
+      const s = shade[k]; if (Math.abs(s) < 0.01) continue;
+      c.fillStyle = s > 0 ? `rgba(255,248,230,${s * 0.9})` : `rgba(0,0,0,${-s})`;
+      c.fillRect(k * sw, 0, sw, fh);
+    }
+    c.globalCompositeOperation = 'source-over';
+  }
+
+  /* ---------- camera ---------- */
+  function clampView(cx, cy, z, rotDeg) {
+    const r = Math.abs(rotDeg) * Math.PI / 180, co = Math.cos(r), si = Math.sin(r);
+    const hw0 = IW / 2, hh0 = (H * IW) / (2 * W);
+    const zmin = Math.max((hw0 * co + hh0 * si) / (IW / 2), (hw0 * si + hh0 * co) / (IH / 2), 1.0);
+    z = Math.max(z, zmin * 1.002);
+    const hw = (hw0 * co + hh0 * si) / z, hh = (hw0 * si + hh0 * co) / z;
+    return [Math.min(Math.max(cx, hw), IW - hw), Math.min(Math.max(cy, hh), IH - hh), z];
+  }
+  const noise = (t, s) => Math.sin(t * 1.73 + s) * 0.55 + Math.sin(t * 2.97 + s * 2.1) * 0.3 + Math.sin(t * 5.31 + s * 3.7) * 0.15;
+  const KICKS = ENV.kicks;
+  function kickPulse(t) {
+    let v = 0;
+    for (let i = 0; i < KICKS.length; i++) { const d = t - KICKS[i]; if (d < 0) break; if (d < 0.5) v = Math.max(v, Math.exp(-d * 9)); }
+    return v;
+  }
+  function shotAt(t) { let i = 0; while (i + 1 < SH.length && SH[i + 1].t <= t) i++; return SH[i]; }
+  function endState(s) { return { x: s.b[0], y: s.b[1], z: s.b[2], rot: s.rot ? s.rot[1] : 0 }; }
+  function startState(s) { return s.glide ? endState(s.prev) : { x: s.a[0], y: s.a[1], z: s.a[2], rot: s.rot ? s.rot[0] : 0 }; }
+  function camState(s, t) {
+    const p = clamp01((t - s.t) / (s.t1 - s.t)), e = (E[s.ease] || E.outCubic)(p);
+    const A = startState(s), B = endState(s);
+    let x = lerp(A.x, B.x, e), y = lerp(A.y, B.y, e), z = lerp(A.z, B.z, e), rot = lerp(A.rot, B.rot, e);
+    const foc = s.foc || [0, 0, 0, 0];
+    let bgBlur = lerp(foc[0], foc[2], E.inOutSine(p)), fgBlur = lerp(foc[1], foc[3], E.inOutSine(p));
+    if (s.glide && s.prev.foc) { const k = prog(t, s.t, s.t + 0.9, E.inOutSine); const pf = s.prev.foc; bgBlur = lerp(pf[2], bgBlur, k); fgBlur = lerp(pf[3], fgBlur, k); }
+    // handheld + drums
+    const sk = (s.shake || 0.12) * (1 + envAt(ENV.low, t) * 0.6);
+    x += noise(t, 1) * 6 * sk; y += noise(t, 7) * 6 * sk; rot += noise(t, 3) * 0.35 * sk;
+    // whip in
+    if (s.tin === 'whip') { const k = 1 - prog(t, s.t, s.t + 0.22, E.outCubic); x -= s.dir * 160 / z * k; }
+    const nx = SH[SH.indexOf(s) + 1];
+    if (nx && nx.tin === 'whip') { const k = prog(t, nx.t - 0.16, nx.t, (q) => q * q); x += nx.dir * 160 / z * k; }
+    // beat punch
+    if (s.kick) z *= 1 + 0.022 * kickPulse(t);
+    return { x, y, z, rot, bgBlur, fgBlur };
+  }
+  function whipAmount(t) {
+    const s = shotAt(t), nx = SH[SH.indexOf(s) + 1];
+    let a = 0;
+    if (s.tin === 'whip') a = Math.max(a, 1 - prog(t, s.t, s.t + 0.2, E.outCubic));
+    if (nx && nx.tin === 'whip') a = Math.max(a, prog(t, nx.t - 0.16, nx.t, (q) => q * q));
+    return a;
+  }
+
+  function drawLayer(c, img, sw, sh, cx, cy, z, rot, blur, dh) {
+    c.save();
+    if (blur > 0.3) c.filter = `blur(${blur.toFixed(1)}px)`;
+    c.translate(W / 2, H / 2); c.rotate(rot * Math.PI / 180);
+    const s = (W / IW) * z; c.scale(s, s); c.translate(-cx, -cy);
+    c.drawImage(img, 0, 0, sw, sh, 0, 0, IW, dh);
+    c.restore();
+  }
+  function drawWorld(c, st, t) {
+    // parallax: the background travels and zooms less than the people
+    const P = [470, 836], drift = [Math.sin(t * 0.23) * 7 + Math.sin(t * 0.11) * 4, Math.sin(t * 0.31 + 1) * 4];
+    const breath = 1 + 0.0035 * Math.sin(2 * Math.PI * t / 4.6);
+    const zb = 1 + (st.z - 1) * 0.9;
+    const bgv = clampView(P[0] + (st.x - P[0]) * 0.88 + drift[0] * 0.3, P[1] + (st.y - P[1]) * 0.9 + drift[1] * 0.3, zb, st.rot * 0.8);
+    const fgv = clampView(st.x + drift[0], st.y + drift[1], st.z * breath, st.rot);
+    c.fillStyle = '#000'; c.fillRect(0, 0, W, H);
+    drawLayer(c, plateC, plateC.width, plateC.height, bgv[0], bgv[1], bgv[2], st.rot * 0.8, st.bgBlur, IH);
+    drawLayer(c, flagWarpC, flagWarpC.width, flagWarpC.height, bgv[0], bgv[1], bgv[2], st.rot * 0.8, st.bgBlur, FLAG_H);
+    drawLayer(c, fgC, fgC.width, fgC.height, fgv[0], fgv[1], fgv[2], st.rot, st.fgBlur, IH);
+    return { bgv, fgv };
+  }
+
+  /* ---------- atmosphere: dust, bokeh, confetti, light ---------- */
+  const rd = rng(20261018);
+  const DUST = Array.from({ length: 90 }, () => ({ x: rd() * W, y: rd() * H, vx: 6 + rd() * 16, vy: -4 - rd() * 12, r: 1 + rd() * 2.6, d: 0.3 + rd() * 0.9, ph: rd() * 6.28, a: 0.25 + rd() * 0.5 }));
+  const BOKEH = Array.from({ length: 16 }, () => ({ x: rd() * W, y: rd() * H * 0.7, r: 26 + rd() * 60, vx: 4 + rd() * 10, ph: rd() * 6.28, a: 0.05 + rd() * 0.09, d: 1.2 + rd() }));
+  const CONF = Array.from({ length: 140 }, () => ({ x: rd() * W, off: rd(), sp: 140 + rd() * 220, w: 8 + rd() * 12, h: 4 + rd() * 6, sw: rd() * 6.28, spin: 2 + rd() * 6, hue: rd() }));
+  const wrap = (v, m) => ((v % m) + m) % m;
+  function atmosphere(c, t, st, g) {
+    const px = (st.x - 470) * st.z, py = (st.y - 836) * st.z;
+    c.save(); c.globalCompositeOperation = 'screen';
+    // light leak drifting from top-left
+    const lx = 120 + Math.sin(t * 0.17) * 160, ly = 260 + Math.sin(t * 0.13 + 2) * 120;
+    const lg = c.createRadialGradient(lx, ly, 0, lx, ly, 900);
+    lg.addColorStop(0, `rgba(255,190,110,${0.38 * g.leak})`); lg.addColorStop(0.45, `rgba(255,140,60,${0.16 * g.leak})`); lg.addColorStop(1, 'rgba(0,0,0,0)');
+    c.fillStyle = lg; c.fillRect(0, 0, W, H);
+    // god rays
+    c.translate(-160, -260);
+    for (let k = 0; k < 7; k++) {
+      const ang = 0.55 + k * 0.13 + Math.sin(t * 0.09 + k) * 0.03, wdt = 0.035 + 0.02 * Math.sin(k * 2.3);
+      const a = (0.05 + 0.04 * Math.sin(t * 0.4 + k * 1.7)) * g.leak;
+      const gr = c.createLinearGradient(0, 0, Math.cos(ang) * 2400, Math.sin(ang) * 2400);
+      gr.addColorStop(0, `rgba(255,220,160,${a})`); gr.addColorStop(1, 'rgba(255,220,160,0)');
+      c.fillStyle = gr; c.beginPath(); c.moveTo(0, 0);
+      c.lineTo(Math.cos(ang - wdt) * 2600, Math.sin(ang - wdt) * 2600); c.lineTo(Math.cos(ang + wdt) * 2600, Math.sin(ang + wdt) * 2600); c.fill();
+    }
+    c.setTransform(1, 0, 0, 1, 0, 0);
+    // bokeh
+    for (const b of BOKEH) {
+      const x = wrap(b.x + b.vx * t - px * 0.08 * b.d, W + 200) - 100, y = b.y + Math.sin(t * 0.3 + b.ph) * 30 - py * 0.05 * b.d;
+      const bg = c.createRadialGradient(x, y, 0, x, y, b.r);
+      bg.addColorStop(0, `rgba(255,214,150,${b.a * (0.6 + g.leak)})`); bg.addColorStop(0.7, `rgba(255,200,130,${b.a * 0.6})`); bg.addColorStop(1, 'rgba(255,200,130,0)');
+      c.fillStyle = bg; c.beginPath(); c.arc(x, y, b.r, 0, 6.283); c.fill();
+    }
+    // dust motes catching the sun
+    for (const d of DUST) {
+      const x = wrap(d.x + d.vx * t + Math.sin(t * 0.7 + d.ph) * 12 - px * 0.12 * d.d, W), y = wrap(d.y + d.vy * t - py * 0.12 * d.d, H);
+      c.fillStyle = `rgba(255,236,200,${d.a * (0.5 + 0.5 * Math.sin(t * 1.3 + d.ph))})`;
+      c.beginPath(); c.arc(x, y, d.r, 0, 6.283); c.fill();
+    }
+    c.restore();
+  }
+  function confetti(c, t, amt) {
+    if (amt <= 0) return;
+    c.save(); c.globalAlpha = amt;
+    const cols = ['#ffd36b', '#f6b93b', '#fff1c1', '#e7a614', '#1aa35a', '#ce1126'];
+    for (const p of CONF) {
+      const y = wrap(p.off * (H + 200) + p.sp * t, H + 200) - 100, x = p.x + Math.sin(t * 1.4 + p.sw) * 40;
+      c.save(); c.translate(x, y); c.rotate(t * p.spin + p.sw); c.scale(1, Math.abs(Math.sin(t * p.spin * 0.8 + p.sw)) + 0.15);
+      c.fillStyle = cols[Math.floor(p.hue * (p.hue < 0.85 ? 4 : 6))]; c.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); c.restore();
+    }
+    c.restore();
+  }
+
+  /* ---------- captions (whole words only — Arabic letters stay joined) ---------- */
+  const STYLE_OF = (sec) => /Chorus|Outro/.test(sec) ? 'ch' : /Intro|Bridge/.test(sec) ? 'am' : 'v';
+  const TAG_OF = { 'Intro': '', 'Verse 1': '', 'Chorus': '', 'Final Chorus': '' };
+  const caps = $('#caps');
+  const capEls = LINES.map((L, i) => {
+    const d = document.createElement('div'); d.className = 'line ' + STYLE_OF(L.section);
+    L.words.forEach((w) => { const s = document.createElement('span'); s.className = 'w'; s.textContent = w.word.replace(/[.:،,]+$/, '').replace(/\.\.\.$/, '…'); d.append(s); });
+    caps.append(d);
+    const next = LINES[i + 1];
+    const show = L.start - 0.22;
+    const hide = Math.min(next ? next.start - 0.14 : 999, L.end + (i === 0 ? 1.2 : 1.6));
+    return { el: d, spans: [...d.children], L, show, hide, style: STYLE_OF(L.section) };
+  });
+  const ACTIVE = { v: '#ffc94a', ch: '#ffd36b', am: '#ffd98a' }, DONE = { v: '#ffffff', ch: '#fff0c4', am: '#fff3d6' }, TODO = { v: 'rgba(255,255,255,.62)', ch: 'rgba(255,255,255,.58)', am: 'rgba(255,255,255,.62)' };
+  function captions(t) {
+    for (const c of capEls) {
+      if (t < c.show - 0.05 || t > c.hide + 0.4) { if (c.el.style.opacity !== '0') c.el.style.opacity = '0'; continue; }
+      const pin = prog(t, c.show, c.show + 0.42, E.outQuart), pout = prog(t, c.hide, c.hide + 0.3, E.inOutSine);
+      const op = Math.min(pin, 1 - pout);
+      c.el.style.opacity = op.toFixed(3);
+      c.el.style.clipPath = `inset(-40px 0 -40px ${((1 - pin) * 100).toFixed(2)}%)`; // wipe right → left
+      c.el.style.transform = `translateY(${((1 - pin) * 26 - pout * 22).toFixed(1)}px)`;
+      c.el.style.filter = pout > 0 ? `blur(${(pout * 8).toFixed(1)}px)` : 'none';
+      c.L.words.forEach((w, j) => {
+        const s = c.spans[j], on = t >= w.start - 0.05, k = prog(t, w.start - 0.05, w.start + 0.22, E.outBack);
+        const nextStart = j + 1 < c.L.words.length ? c.L.words[j + 1].start - 0.05 : c.L.end + 0.25;
+        const active = on && t < nextStart;
+        s.style.color = !on ? TODO[c.style] : active ? ACTIVE[c.style] : DONE[c.style];
+        const sc = active ? 1 + 0.1 * k - 0.04 * prog(t, w.start + 0.22, w.start + 0.5) : 1;
+        s.style.transform = `translateY(${active ? (-7 * k).toFixed(1) : 0}px) scale(${sc.toFixed(3)})`;
+        s.style.textShadow = active ? '0 0 26px rgba(255,200,80,.75), 0 4px 18px rgba(0,0,0,.7)' : '';
+      });
+    }
+  }
+
+  /* ---------- motion-graphics overlays ---------- */
+  const title = $('#title'), map = $('#map'), endc = $('#endcard'), waveEl = $('#wave'), flash = $('#flash'), black = $('#black');
+  const titleT1 = title.querySelector('.t1'), titleT2 = title.querySelector('.t2'), titleDraw = title.querySelectorAll('.draw'), titlePop = title.querySelector('.pop');
+  const seaBand = $('#seaBand'), seaLine = $('#seaLine'), arc = $('#arc'), spark = $('#spark'), cairo = $('#cairo'), riyadh = $('#riyadh'), mapHead = map.querySelector('.head'), seaTxt = map.querySelector('.sea');
+  const arcLen = arc.getTotalLength();
+  const wavePath = $('#wavePath');
+  const ICONS = [
+    { el: $('#ic-ship'), t: WS(10, wordIdx(10, 'البواخر')) - 0.1, end: WS(10, wordIdx(10, 'قمح')) - 0.12 },
+    { el: $('#ic-wheat'), t: WS(10, wordIdx(10, 'قمح')) - 0.1, end: LINES[10].end + 0.3 },
+    { el: $('#ic-shield'), t: WS(22, wordIdx(22, 'درع')) - 0.1, end: LINES[22].end + 0.3 },
+    { el: $('#ic-heart'), t: WS(28, wordIdx(28, 'قلب')) - 0.1, end: LINES[28].end + 1.2 },
+  ];
+  ICONS.forEach((ic) => { ic.paths = [...ic.el.querySelectorAll('path[pathLength]')]; ic.fill = ic.el.querySelector('.fill'); ic.paths.forEach((p) => { p.style.strokeDasharray = '1 1'; }); });
+  [...titleDraw, seaBand, arc, wavePath].forEach((p) => { p.style.strokeDasharray = '1 1'; });
+  const WAVES = [8, 16, 32].map((i) => ({ t: WS(i, wordIdx(i, 'البحر')) - 0.3, end: LINES[i].end + 0.6 }));
+
+  function overlays(t) {
+    // title lock-up 6.6 → 15.6
+    const tin = 6.6, tout = 15.2;
+    const tv = t > tin - 0.1 && t < tout + 1;
+    title.style.opacity = tv ? (1 - prog(t, tout, tout + 0.7, E.inOutSine)).toFixed(3) : '0';
+    if (tv) {
+      const w = prog(t, tin, tin + 1.5, E.outQuart);
+      titleT1.style.clipPath = `inset(-30px 0 -30px ${((1 - w) * 100).toFixed(1)}%)`;
+      titleT1.style.transform = `translateY(${((1 - w) * 30).toFixed(1)}px) scale(${(1.06 - 0.06 * w + 0.03 * prog(t, tin, tout + 0.7, E.linear)).toFixed(4)})`;
+      titleT1.style.backgroundPosition = `${(100 - prog(t, tin + 1.0, tin + 3.4, E.inOutSine) * 100).toFixed(1)}% 0`;
+      titleDraw.forEach((p) => { p.style.strokeDashoffset = (1 - prog(t, tin + 0.9, tin + 2.2, E.inOutCubic)).toFixed(3); });
+      titlePop.setAttribute('r', (7 * prog(t, tin + 0.8, tin + 1.2, E.outBack)).toFixed(2));
+      const s2 = prog(t, tin + 1.6, tin + 2.3, E.outCubic);
+      titleT2.style.opacity = s2.toFixed(3); titleT2.style.transform = `translateY(${((1 - s2) * 20).toFixed(1)}px)`;
+    }
+    // map 94.6 → 105.4
+    const m0 = 94.6, m1 = 104.9;
+    const mv = t > m0 && t < m1 + 1;
+    map.style.opacity = mv ? Math.min(prog(t, m0, m0 + 0.8, E.inOutSine), 1 - prog(t, m1, m1 + 0.8, E.inOutSine)).toFixed(3) : '0';
+    if (mv) {
+      seaBand.style.strokeDashoffset = (1 - prog(t, m0 + 0.4, m0 + 1.8, E.inOutCubic)).toFixed(3);
+      seaLine.style.strokeDashoffset = (-t * 40).toFixed(1); seaLine.style.opacity = prog(t, m0 + 1.2, m0 + 1.8).toFixed(3);
+      seaTxt.style.opacity = prog(t, m0 + 1.6, m0 + 2.2).toFixed(3);
+      const pc = prog(t, m0 + 1.6, m0 + 2.1, E.outBack), pr = prog(t, m0 + 2.0, m0 + 2.5, E.outBack);
+      cairo.setAttribute('transform', `translate(256 713) scale(${pc.toFixed(3)})`); riyadh.setAttribute('transform', `translate(821 906) scale(${pr.toFixed(3)})`);
+      [cairo, riyadh].forEach((g, k) => { const ring = g.querySelector('.ring'), ph = ((t - m0 + k * 0.6) % 1.6) / 1.6; ring.setAttribute('r', (20 + ph * 50).toFixed(1)); ring.style.opacity = (1 - ph).toFixed(3); });
+      const pa = prog(t, m0 + 2.6, m0 + 4.4, E.inOutCubic);
+      arc.style.strokeDashoffset = (1 - pa).toFixed(3);
+      const sp = pa < 1 ? pa : ((t - (m0 + 4.4)) % 2.2) / 2.2;
+      const pt = arc.getPointAtLength(E.inOutSine(sp) * arcLen); spark.setAttribute('cx', pt.x.toFixed(1)); spark.setAttribute('cy', pt.y.toFixed(1));
+      spark.style.opacity = prog(t, m0 + 2.6, m0 + 2.8).toFixed(3);
+      const ph = prog(t, m0 + 4.2, m0 + 5.4, E.outQuart);
+      mapHead.style.opacity = ph.toFixed(3); mapHead.style.clipPath = `inset(-30px 0 -30px ${((1 - ph) * 100).toFixed(1)}%)`;
+    }
+    // icons drawn on key words
+    for (const ic of ICONS) {
+      const vis = t > ic.t - 0.05 && t < ic.end + 0.5;
+      ic.el.style.opacity = vis ? Math.min(prog(t, ic.t, ic.t + 0.25), 1 - prog(t, ic.end, ic.end + 0.4)).toFixed(3) : '0';
+      if (!vis) continue;
+      ic.paths.forEach((p, k) => { p.style.strokeDashoffset = (1 - prog(t, ic.t + k * 0.12, ic.t + 0.7 + k * 0.12, E.inOutCubic)).toFixed(3); });
+      const sc = 0.85 + 0.15 * prog(t, ic.t, ic.t + 0.5, E.outBack);
+      ic.el.style.transform = `translateY(${(Math.sin((t - ic.t) * 2.2) * 6).toFixed(1)}px) scale(${sc.toFixed(3)})`;
+      if (ic.fill) ic.fill.setAttribute('opacity', prog(t, ic.t + 0.8, ic.t + 1.3).toFixed(3));
+    }
+    // sea wave under "ما فرّق البحر بيننا"
+    let wo = 0;
+    for (const w of WAVES) if (t > w.t && t < w.end + 0.6) { wo = Math.min(prog(t, w.t, w.t + 0.2), 1 - prog(t, w.end, w.end + 0.5)); wavePath.style.strokeDashoffset = (1 - prog(t, w.t, w.t + 1.6, E.inOutCubic)).toFixed(3); waveEl.style.transform = `translateX(${(Math.sin(t * 2) * 10).toFixed(1)}px)`; }
+    waveEl.style.opacity = wo.toFixed(3);
+    // end card
+    const e0 = 188.9;
+    const ev = t > e0;
+    endc.style.opacity = ev ? prog(t, e0, e0 + 0.6).toFixed(3) : '0';
+    if (ev) {
+      const e1 = endc.querySelector('.e1'), e2 = endc.querySelector('.e2'), e3 = endc.querySelector('.e3'), rib = endc.querySelectorAll('.rib div');
+      const a1 = prog(t, e0, e0 + 1.3, E.outQuart), a2 = prog(t, e0 + 1.2, e0 + 2.5, E.outQuart);
+      e1.style.clipPath = `inset(-30px 0 -30px ${((1 - a1) * 100).toFixed(1)}%)`; e2.style.clipPath = `inset(-30px 0 -30px ${((1 - a2) * 100).toFixed(1)}%)`;
+      e1.style.backgroundPosition = e2.style.backgroundPosition = `${(100 - prog(t, e0 + 2.2, e0 + 4.6, E.inOutSine) * 100).toFixed(1)}% 0`;
+      const wr = prog(t, e0 + 0.7, e0 + 1.7, E.inOutCubic), widths = [90, 90, 90, 18, 270];
+      rib.forEach((d, k) => { d.style.width = (widths[k] * wr).toFixed(1) + 'px'; });
+      e3.style.opacity = prog(t, e0 + 2.6, e0 + 3.4).toFixed(3);
+      const sc = 1 + 0.03 * prog(t, e0, DUR, E.linear); endc.style.transform = `scale(${sc.toFixed(4)})`;
+    }
+  }
+
+  /* ---------- letterbox, flashes, dips ---------- */
+  function bars(t, s) {
+    let k = 0;
+    if (t < 20.6) k = 1 - prog(t, 19.6, 20.5, E.inOutCubic);
+    if (s.bars) k = Math.max(k, Math.min(prog(t, LS(25) - 0.4, LS(25) + 0.6, E.inOutCubic), 1 - prog(t, LS(29) - 0.6, LS(29) - 0.1, E.inOutCubic)));
+    if (t > 188.6) k = prog(t, 188.6, 189.8, E.inOutCubic);
+    const y = (1 - k) * 100;
+    $('#barT').style.transform = `translateY(-${y.toFixed(2)}%)`; $('#barB').style.transform = `translateY(${y.toFixed(2)}%)`;
+  }
+  function transitions(t, s) {
+    let fl = 0, bl = 0;
+    if (s.tin === 'flash') fl = 0.75 * Math.exp(-(t - s.t) * 7);
+    if (s.kick) fl = Math.max(fl, 0.07 * kickPulse(t));
+    if (s.tin === 'black') bl = 1 - prog(t, 0.2, 2.6, E.inOutSine);
+    if (s.tin === 'dip') bl = Math.max(bl, 1 - prog(t, s.t, s.t + 0.5, E.inOutSine));
+    const nx = SH[SH.indexOf(s) + 1];
+    if (nx && nx.tin === 'dip') bl = Math.max(bl, prog(t, nx.t - 0.45, nx.t, E.inOutSine));
+    bl = Math.max(bl, prog(t, DUR - 2.2, DUR - 0.25, E.inOutSine));
+    flash.style.opacity = fl.toFixed(3); black.style.opacity = bl.toFixed(3);
+  }
+  function gradeAt(t, s) {
+    const cur = G[s.grade || (s.prev && s.prev.grade) || 'warm'];
+    let g = cur;
+    let pg = s.prev ? G[s.prev.grade || 'warm'] : cur;
+    const k = prog(t, s.t, s.t + (s.tin === 'cut' || s.tin === 'whip' || s.tin === 'flash' ? 0.01 : 0.7), E.inOutSine);
+    g = {}; gradeKeys.forEach((key) => { g[key] = lerp(pg[key], cur[key], k); });
+    g.wash = cur.wash.map((v, i) => lerp(pg.wash[i], v, k));
+    return g;
+  }
+
+  /* ---------- frame ---------- */
+  let frameNo = 0;
+  function render(t) {
+    t = Math.max(0, Math.min(DUR, t));
+    const s = shotAt(t);
+    const st = camState(s, t);
+    warpFlags(t);
+    drawWorld(ctx, st, t);
+    // dissolve: blend the continuing previous shot
+    if (s.tin === 'dissolve' && s.prev && t < s.t + 0.9) {
+      const k = prog(t, s.t, s.t + 0.9, E.inOutSine);
+      const pc = prevC.getContext('2d'); drawWorld(pc, camState(s.prev, t), t);
+      ctx.globalAlpha = 1 - k; ctx.drawImage(prevC, 0, 0); ctx.globalAlpha = 1;
+    }
+    // whip-pan motion blur
+    const wa = whipAmount(t);
+    if (wa > 0.02) {
+      const tc = tmpC.getContext('2d'); tc.drawImage(cv, 0, 0);
+      const n = 9, span = 150 * wa;
+      for (let k = 1; k < n; k++) { ctx.globalAlpha = 1 / (k + 1); ctx.drawImage(tmpC, (k / (n - 1) - 0.5) * span * 2, 0); }
+      ctx.globalAlpha = 1;
+    }
+    const g = gradeAt(t, s);
+    ctx.save(); ctx.globalCompositeOperation = 'soft-light'; ctx.fillStyle = `rgba(${g.wash[0] | 0},${g.wash[1] | 0},${g.wash[2] | 0},${(g.wash[3] * 3).toFixed(3)})`; ctx.fillRect(0, 0, W, H); ctx.restore();
+    atmosphere(ctx, t, st, g);
+    confetti(ctx, t, s.confetti ? prog(t, s.t, s.t + 0.5) : (s.prev && s.prev.confetti && t < s.t + 0.6 ? 1 - prog(t, s.t, s.t + 0.6) : 0));
+    ctx.drawImage(vignette, 0, 0);
+    ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.07; ctx.drawImage(grain[Math.floor(t * FPS) % 4], 0, 0, W, H); ctx.restore();
+    cv.style.filter = `saturate(${g.sat.toFixed(3)}) contrast(${g.con.toFixed(3)}) brightness(${g.bri.toFixed(3)}) sepia(${g.sep.toFixed(3)})`;
+    captions(t); overlays(t); bars(t, s); transitions(t, s);
+    frameNo++;
+  }
+
+  const ready = (async () => {
+    await Promise.all(['700 96px "Aref Ruqaa"', '800 70px Cairo', '700 82px Amiri', '600 30px "Reem Kufi"'].map((f) => document.fonts.load(f, 'مصر')));
+    await document.fonts.ready;
+    await prepare();
+    render(0);
+  })();
+  window.__kosifReady = ready;
+  window.__kosif = { duration: DUR, fps: FPS, seek: async (t) => { await ready; render(t); } };
+
+  /* ---------- live preview controls (not used by the renderer) ---------- */
+  const aud = $('#aud'), scrub = $('#scrub'), tv = $('#tv');
+  if (navigator.webdriver) $('#controls').style.display = 'none';
+  let playing = false;
+  $('#play').onclick = () => { playing = !playing; if (playing) { aud.currentTime = +scrub.value; aud.play(); loop(); } else aud.pause(); };
+  scrub.oninput = () => { aud.currentTime = +scrub.value; ready.then(() => render(+scrub.value)); tv.textContent = (+scrub.value).toFixed(2); };
+  function loop() { if (!playing) return; const t = aud.currentTime; scrub.value = t; tv.textContent = t.toFixed(2); render(t); requestAnimationFrame(loop); }
+})();
+</script>
+</body>
+</html>
