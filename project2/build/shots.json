@@ -29,7 +29,13 @@
     "exp": 0.82,
     "gam": 1.25
    },
-   "why": "Tuesday dawn: mosque above the clouds"
+   "why": "Tuesday dawn: mosque above the clouds",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
   },
   {
    "id": "S2",
@@ -56,7 +62,13 @@
     "exp": 0.9,
     "gam": 1.15
    },
-   "why": "glad tidings: sun breaking over the field"
+   "why": "glad tidings: sun breaking over the field",
+   "band": [
+    424,
+    0,
+    432,
+    720
+   ]
   },
   {
    "id": "S3",
@@ -83,7 +95,13 @@
     "exp": 0.88,
     "gam": 1.2
    },
-   "why": "joy and peace of mind: blossoms in the breeze"
+   "why": "joy and peace of mind: blossoms in the breeze",
+   "band": [
+    0,
+    0,
+    1080,
+    1920
+   ]
   },
   {
    "id": "S4",
@@ -110,7 +128,13 @@
     "exp": 0.72,
     "gam": 1.35
    },
-   "why": "remove all illness: the Quran, healing"
+   "why": "remove all illness: the Quran, healing",
+   "band": [
+    424,
+    0,
+    560,
+    720
+   ]
   },
   {
    "id": "S5",
@@ -137,7 +161,13 @@
     "exp": 0.85,
     "gam": 1.15
    },
-   "why": "worry and grief: rain softly rippling a lake"
+   "why": "worry and grief: rain softly rippling a lake",
+   "band": [
+    619,
+    0,
+    680,
+    1080
+   ]
   },
   {
    "id": "S6",
@@ -164,7 +194,13 @@
     "exp": 0.85,
     "gam": 1.2
    },
-   "why": "the most abundant good: golden wheat"
+   "why": "the most abundant good: golden wheat",
+   "band": [
+    317,
+    0,
+    618,
+    720
+   ]
   },
   {
    "id": "S7",
@@ -191,7 +227,13 @@
     "exp": 0.9,
     "gam": 1.1
    },
-   "why": "the purest provision: honey"
+   "why": "the purest provision: honey",
+   "band": [
+    1431,
+    0,
+    1360,
+    2160
+   ]
   },
   {
    "id": "S8",
@@ -218,7 +260,13 @@
     "exp": 1.0,
     "gam": 1.0
    },
-   "why": "the most beautiful destiny: red sunset over a lake"
+   "why": "the most beautiful destiny: red sunset over a lake",
+   "band": [
+    1067,
+    0,
+    1704,
+    2160
+   ]
   },
   {
    "id": "S9",
@@ -245,7 +293,13 @@
     "exp": 0.92,
     "gam": 1.05
    },
-   "why": "days filled with blessing: countless lamps"
+   "why": "days filled with blessing: countless lamps",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
   },
   {
    "id": "S10",
@@ -272,7 +326,13 @@
     "exp": 0.9,
     "gam": 1.1
    },
-   "why": "wellbeing and good news: sunlight through leaves"
+   "why": "wellbeing and good news: sunlight through leaves",
+   "band": [
+    1712,
+    0,
+    1182,
+    2160
+   ]
   },
   {
    "id": "S11",
@@ -284,12 +344,12 @@
    "cam": {
     "type": "tilt-up",
     "c0": [
-     0.62,
+     0.7,
      0.56
     ],
     "c1": [
-     0.62,
-     0.46
+     0.7,
+     0.44
     ],
     "z0": 1.25,
     "z1": 1.25,
@@ -299,7 +359,13 @@
     "exp": 1.05,
     "gam": 1.0
    },
-   "why": "protect us, Lord of the worlds: minaret at night, tilt up"
+   "why": "protect us, Lord of the worlds: minaret at night, tilt up",
+   "band": [
+    1071,
+    0,
+    544,
+    1080
+   ]
   },
   {
    "id": "S12",
@@ -326,7 +392,13 @@
     "exp": 1.1,
     "gam": 0.95
    },
-   "why": "with Your eye that never sleeps: the night sky"
+   "why": "with Your eye that never sleeps: the night sky",
+   "band": [
+    1239,
+    0,
+    1360,
+    2160
+   ]
   },
   {
    "id": "S13",
@@ -353,7 +425,13 @@
     "exp": 0.95,
     "gam": 1.15
    },
-   "why": "Ameen: pull out over a sea of clouds at sunrise"
+   "why": "Ameen: pull out over a sea of clouds at sunrise",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
   }
  ],
  "transitions": [
