@@ -1,0 +1,151 @@
+{
+ "date": "2026-10-19",
+ "host": "Windows AMD64",
+ "python": "3.13.14",
+ "opencv": "5.0.0",
+ "numpy": "2.5.2",
+ "passed": 20,
+ "total": 20,
+ "results": [
+  {
+   "id": "APPX-31",
+   "check": "dehaze (ClearView-style) by dark channel prior",
+   "ok": true,
+   "detail": "PSNR vs haze-free 12.5 → 16.5 dB; contrast σ 28.3 → 70.1",
+   "seconds": 0.12
+  },
+  {
+   "id": "APPX-32",
+   "check": "tiered noise reduction",
+   "ok": true,
+   "detail": "PSNR noisy 23.2 → bilateral 30.3 → NL-means 29.8 dB (AI tier = 📦 model)",
+   "seconds": 0.72
+  },
+  {
+   "id": "APPX-33",
+   "check": "automatic keystone / perspective correction",
+   "ok": true,
+   "detail": "corner error 1.0px; restored PSNR 32.4 dB",
+   "seconds": 0.02
+  },
+  {
+   "id": "APPX-34",
+   "check": "lens distortion correction",
+   "ok": true,
+   "detail": "PSNR distorted 21.4 → corrected 34.5 dB (k1=0.35)",
+   "seconds": 0.04
+  },
+  {
+   "id": "APPX-35",
+   "check": "lateral chromatic aberration removal",
+   "ok": true,
+   "detail": "R×0.988 B×1.013 found (true 1/1.012, 1/0.988); PSNR 26.2 → 36.1 dB",
+   "seconds": 0.52
+  },
+  {
+   "id": "APPX-36",
+   "check": "white balance + tone curve + HSL develop",
+   "ok": true,
+   "detail": "channel-mean spread 43.9 → 0.00 after grey-world WB; S-curve σ 59.1 → 73.1",
+   "seconds": 0.05
+  },
+  {
+   "id": "APPX-37",
+   "check": "film grain + vignette look",
+   "ok": true,
+   "detail": "corner ×0.59, centre ×1.00, grain σ 7.0",
+   "seconds": 0.05
+  },
+  {
+   "id": "APPX-38",
+   "check": "watermark with exact opacity",
+   "ok": true,
+   "detail": "40% mark pixel error 0.2, outside the mark unchanged",
+   "seconds": 0.06
+  },
+  {
+   "id": "APPX-39",
+   "check": "perceptual JPEG recompression (JPEGmini-style)",
+   "ok": true,
+   "detail": "q95 50 KB → q77 18 KB (64% smaller) at SSIM 0.9849 (target 0.9848)",
+   "seconds": 0.38
+  },
+  {
+   "id": "APPX-40",
+   "check": "contact sheet / print template to PDF",
+   "ok": true,
+   "detail": "14 images → 2 pages of 4×3, PDF 118 KB",
+   "seconds": 0.08
+  },
+  {
+   "id": "APPX-41",
+   "check": "versioned preset / style files",
+   "ok": true,
+   "detail": "preset file applies deterministically; schema-1 file migrates to the same result",
+   "seconds": 0.07
+  },
+  {
+   "id": "APPX-42",
+   "check": "XMP sidecar: rating, label, keywords",
+   "ok": true,
+   "detail": "sidecar IMG_0001.xmp: rating 4, label Green, keywords ['مدينة', 'city', 'sunset']",
+   "seconds": 0.02
+  },
+  {
+   "id": "APPX-43",
+   "check": "auto horizon straighten",
+   "ok": true,
+   "detail": "horizon tilt found -3.49° (true ±3.5°), residual 0.00°",
+   "seconds": 0.03
+  },
+  {
+   "id": "APPX-44",
+   "check": "build a font with kerning (FontLab-style)",
+   "ok": true,
+   "detail": "TTF built: 4 glyphs, kern A/V -80 in GPOS, 888 bytes",
+   "seconds": 0.21
+  },
+  {
+   "id": "APPX-45",
+   "check": "vector boolean operations to SVG",
+   "ok": true,
+   "detail": "circle − box = 3927 (half disc 3927); union/intersection areas consistent; SVG written",
+   "seconds": 0.05
+  },
+  {
+   "id": "APPX-46",
+   "check": "motion channel ops: lag, noise, cycle, envelope",
+   "ok": true,
+   "detail": "lag reaches 63% in 0.23s (τ 0.25); noise max step 0.049; cycle loops seamlessly; envelope peak 0.95",
+   "seconds": 0.0
+  },
+  {
+   "id": "APPX-47",
+   "check": "task graph with dependency order and caching (PDG-style)",
+   "ok": true,
+   "detail": "first run ['fetch', 'denoise', 'grade', 'thumb', 'sheet']; rerun cached []; after a grade change only ['grade', 'sheet']",
+   "seconds": 0.0
+  },
+  {
+   "id": "APPX-48",
+   "check": "segmented, resumable download (IDM-style)",
+   "ok": true,
+   "detail": "3000000 bytes in 6 ranged parts, part 2 resumed after a cut at 100000 bytes, SHA-256 match True",
+   "seconds": 0.66
+  },
+  {
+   "id": "APPX-49",
+   "check": "eased tween, onion skin, sprite sheet (Animate-style)",
+   "ok": true,
+   "detail": "24 tween frames hit both keys, eased (speed 1.8 → 20.7 → 1.8 px/frame); onion skin + 6×4 sprite sheet + JSON",
+   "seconds": 0.02
+  },
+  {
+   "id": "APPX-50",
+   "check": "exposure fusion / selective tonal control",
+   "ok": true,
+   "detail": "clipped highlights 65.3% → 2.4%, crushed shadows 0.0% → 0.0%",
+   "seconds": 0.12
+  }
+ ]
+}

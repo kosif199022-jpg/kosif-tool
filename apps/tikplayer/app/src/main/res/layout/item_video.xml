@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="fit"
+        app:shutter_background_color="@color/black"
+        app:surface_type="texture_view"
+        app:use_controller="false" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/dim_white"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/pauseIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:alpha="0.6"
+        android:contentDescription="play"
+        android:src="@drawable/ic_play"
+        android:visibility="gone" />
+
+    <!-- قلب النقر المزدوج -->
+    <ImageView
+        android:id="@+id/bigHeart"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:contentDescription="like"
+        android:src="@drawable/ic_heart"
+        android:visibility="invisible"
+        app:tint="@color/tik_red" />
+
+    <!-- أزرار الجانب -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="90dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/bg_avatar"
+            android:contentDescription="avatar"
+            android:padding="9dp"
+            android:src="@drawable/ic_person" />
+
+        <ImageView
+            android:id="@+id/likeBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="like"
+            android:src="@drawable/ic_heart" />
+        <TextView
+            android:id="@+id/likeCount"
+            style="@style/SideCount" />
+
+        <ImageView
+            android:id="@+id/commentBtn"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="14dp"
+            android:contentDescription="comments"
+            android:src="@drawable/ic_comment" />
+        <TextView
+            android:id="@+id/commentCount"
+            style="@style/SideCount" />
+
+        <ImageView
+            android:id="@+id/shareBtn"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="14dp"
+            android:contentDescription="share"
+            android:src="@drawable/ic_share" />
+        <TextView
+            android:id="@+id/shareCount"
+            style="@style/SideCount" />
+
+        <FrameLayout
+            android:id="@+id/disc"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_disc">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:contentDescription="music"
+                android:src="@drawable/ic_music" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- النصوص أسفل الشاشة -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="26dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/author"
+            style="@style/OverlayText"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/caption"
+            style="@style/OverlayText"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="14sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="music"
+                android:src="@drawable/ic_music" />
+            <TextView
+                android:id="@+id/music"
+                style="@style/OverlayText"
+                android:layout_marginStart="6dp"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seek"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_gravity="bottom"
+        android:max="1000"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progressDrawable="@drawable/thin_seek_progress"
+        android:splitTrack="false"
+        android:thumb="@drawable/seek_thumb" />
+</FrameLayout>

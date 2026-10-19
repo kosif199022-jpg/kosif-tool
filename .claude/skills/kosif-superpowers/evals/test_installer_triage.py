@@ -160,8 +160,110 @@ class InstallerTriageTests(unittest.TestCase):
         self.assertNotIn("shell=True", body)
         for mod in ("urllib", "socket", "requests", "http.client"):
             self.assertIsNone(re.search(r"^\s*(import|from)\s+" + re.escape(mod), body, re.M), mod)
-        # the only subprocess call is 7-Zip extraction
+        # the only subprocess call is the extractor (7-Zip, or innoextract for Inno Setup)
         self.assertEqual(body.count("subprocess.run("), 1)
+
+
+def rsrc_with_payload(magic, rid=5100, lang=1033, rtype=10, size=0x100):
+    """A .rsrc section body (VA 0x2000) holding one resource type→id→language whose data starts with `magic`."""
+    b = bytearray(0x200)
+
+    def dir_at(off, ident, target):
+        struct.pack_into("<HH", b, off + 12, 0, 1)
+        struct.pack_into("<II", b, off + 16, ident, target)
+    dir_at(0x00, rtype, 0x80000000 | 0x18)
+    dir_at(0x18, rid, 0x80000000 | 0x30)
+    dir_at(0x30, lang, 0x48)
+    struct.pack_into("<IIII", b, 0x48, 0x2000 + 0x60, size, 0, 0)
+    b[0x60:0x60 + len(magic)] = magic
+    return bytes(b)
+
+
+class PayloadDetectionTests(unittest.TestCase):
+    """Second batch (2026-10-19): payloads REA could not see in Capture One, FontLab, DxO and the RAR archives."""
+
+    def setUp(self):
+        self.min_embedded = tri.MIN_EMBEDDED
+        tri.MIN_EMBEDDED = 0x80
+
+    def tearDown(self):
+        tri.MIN_EMBEDDED = self.min_embedded
+
+    def test_inno_by_loader_string_and_zlb_overlay(self):
+        with tempfile.TemporaryDirectory() as root:
+            p = Path(root) / "Setup.exe"
+            p.write_bytes(fake_pe(body=b"..Inno Setup Setup Data (6.0.5)..", overlay=b"zlb\x1a" + b"\0" * 64))
+            r = tri.classify(p)
+            self.assertIn(("installer", "inno"), {(f["kind"], f["value"]) for f in r["findings"]})
+            self.assertEqual(r["routes"][0]["command"], "innoextract -l Setup.exe")
+            self.assertNotIn("overlay", {f["kind"] for f in r["findings"]})
+
+    def test_msi_inside_pe_resources(self):
+        with tempfile.TemporaryDirectory() as root:
+            p = Path(root) / "Setup.exe"
+            p.write_bytes(fake_pe(sections=(".text", ".rsrc"), body=b"\0" * 0x200 + rsrc_with_payload(tri.SIG["msi_ole"])))
+            r = tri.classify(p)
+            emb = [f for f in r["findings"] if f["kind"] == "embedded"]
+            self.assertEqual(len(emb), 1)
+            self.assertEqual(emb[0]["value"], "msi_ole")
+            self.assertEqual(emb[0]["resource"], ".rsrc\\1033\\RCDATA\\5100")
+            self.assertIn("unpack", [x["step"] for x in r["routes"]])
+
+    def test_small_resources_are_not_payloads(self):
+        tri.MIN_EMBEDDED = 1 << 20
+        with tempfile.TemporaryDirectory() as root:
+            p = Path(root) / "a.exe"
+            p.write_bytes(fake_pe(sections=(".text", ".rsrc"), body=b"\0" * 0x200 + rsrc_with_payload(tri.SIG["cab"])))
+            self.assertFalse([f for f in tri.classify(p)["findings"] if f["kind"] == "embedded"])
+
+    def test_corrupt_resource_tree_fails_closed(self):
+        with tempfile.TemporaryDirectory() as root:
+            p = Path(root) / "bad.exe"
+            junk = bytearray(rsrc_with_payload(b"MZ"))
+            struct.pack_into("<II", junk, 16, 10, 0x80000000 | 0x7FFFFFF0)   # subdirectory far outside the section
+            p.write_bytes(fake_pe(sections=(".text", ".rsrc"), body=b"\0" * 0x200 + bytes(junk)))
+            r = tri.classify(p)
+            self.assertEqual(r["format"], "pe")
+            self.assertFalse([f for f in r["findings"] if f["kind"] == "embedded"])
+
+    def test_encrypted_rar_headers(self):
+        sig = tri.SIG["rar5"]
+        enc = sig + b"\0\0\0\0" + bytes([0x0C, 0x04]) + b"\0" * 32
+        plain = sig + b"\0\0\0\0" + bytes([0x0C, 0x01]) + b"\0" * 32
+        rar4 = tri.SIG["rar4"] + b"\0\0" + bytes([0x73]) + struct.pack("<H", 0x0080) + b"\0" * 16
+        with tempfile.TemporaryDirectory() as root:
+            for name, data, locked in (("a.rar", enc, True), ("b.rar", plain, False), ("c.rar", rar4, True)):
+                p = Path(root) / name
+                p.write_bytes(data)
+                r = tri.classify(p)
+                self.assertEqual(r["format"], "rar")
+                self.assertEqual(r["rar"]["headers_encrypted"], locked, name)
+                if locked:
+                    self.assertEqual(tri.unpack(p, Path(root) / (name + ".out"), True)["status"],
+                                     "password_required" if tri.seven_zip() else "seven_zip_missing")
+
+    def test_adobe_offline_package(self):
+        with tempfile.TemporaryDirectory() as root:
+            prod = Path(root) / "products" / "FLPR"
+            prod.mkdir(parents=True)
+            (prod / "AdobeAnimate24.0-en_US.zip").write_bytes(b"PK\x03\x04")
+            (prod / "AdobeAnimate24.0-ar_AE.zip").write_bytes(b"PK\x03\x04")
+            (Path(root) / "products" / "driver.xml").write_text(
+                "<DriverInfo><ProductInfo><Name>Adobe Animate 2024</Name><SAPCode>FLPR</SAPCode><CodexVersion>24.0</CodexVersion>"
+                "<Platform>win64</Platform><Dependencies><Dependency><SAPCode>ACR</SAPCode><BaseVersion>9.6</BaseVersion></Dependency>"
+                "</Dependencies></ProductInfo></DriverInfo>", encoding="utf-8")
+            pkg = tri.scan(root)["package"]
+            self.assertEqual((pkg["product"], pkg["sap"], pkg["version"]), ("Adobe Animate 2024", "FLPR", "24.0"))
+            self.assertEqual(pkg["dependencies"], [{"sap": "ACR", "base_version": "9.6"}])
+            self.assertEqual(pkg["languages"], ["ar_AE", "en_US"])
+
+    def test_msi_routes_list_then_unpack(self):
+        with tempfile.TemporaryDirectory() as root:
+            p = Path(root) / "app.msi"
+            p.write_bytes(tri.SIG["msi_ole"] + b"\0" * 64)
+            r = tri.classify(p)
+            self.assertEqual(r["format"], "msi_ole")
+            self.assertEqual([x["step"] for x in r["routes"]][:2], ["list", "unpack"])
 
 
 class AppxRoutingTests(unittest.TestCase):
@@ -178,6 +280,12 @@ class AppxRoutingTests(unittest.TestCase):
         for q in ("حلل المثبت ده", "analyze this setup.exe installer", "unpack the app.asar of an electron app"):
             with self.subTest(q=q):
                 self.assertIn("REA", self.fams(q))
+
+    def test_second_batch_apps_reach_appx(self):
+        for q in ("إزالة الضباب زي DxO", "ضغط الصور زي jpegmini", "تصميم خط مثل fontlab", "استئناف التحميل زي idm",
+                  "houdini lag noise for camera", "onion skin sprite sheet like animate"):
+            with self.subTest(q=q):
+                self.assertIn("APPX", self.fams(q))
 
     def test_translation_and_training_do_not_hit_rea(self):
         for q in ("ترجم هذا النص للإنجليزية", "اعمل لي برنامج تدريب رياضي", "remove the background from this photo"):

@@ -762,7 +762,8 @@
   "install": "pip install geopandas shapely pyproj",
   "requires": [
    "fonts:arabic",
-   "pip:geopandas"
+   "pip:geopandas",
+   "pip:shapely"
   ],
   "license": "BSD-3-Clause / MIT",
   "proof": [

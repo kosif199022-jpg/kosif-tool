@@ -4,7 +4,7 @@
 
 **من أين جاءت:** في 2026-10-18 حُللت ثلاثة مثبّتات وضعها المالك في مجلد العمل بأداة REA v6.7.0 وأداة `scripts/installer_triage.py`، بلا تشغيل أي منها: CapCut وCanva 1.126.1 وAdobe Premiere Pro. السجل الكامل في [proofs/windows-installers-rea](../proofs/windows-installers-rea/README.md). كل ميزة وجدناها صارت قدرة في عائلة [app-feature-transfer](powers/app-feature-transfer.md) (APPX-01…APPX-30)، ومعها وصفة مفتوحة تبنيها أنت.
 
-**القاعدة:** نستلهم الميزة ولا ننسخ الكود. لا يدخل هذا المستودع أي سطر من كود Canva أو CapCut أو Adobe؛ نسجّل الحقيقة البنيوية (اسم نافذة، مرساة API، امتداد ملف) ثم نكتب تنفيذًا أصليًا بأدوات مفتوحة ونثبته باختبار قابل للقياس.
+**القاعدة:** نستلهم الميزة ولا ننسخ الكود. لا يدخل هذا المستودع أي سطر من كود Canva أو CapCut أو Adobe أو DxO أو Phase One أو غيرها؛ ولا تُشغَّل أو تُفتح أدوات الكسر (Crack وPatch وKeyGen) أبدًا؛ نسجّل الحقيقة البنيوية (اسم نافذة، مرساة API، امتداد ملف) ثم نكتب تنفيذًا أصليًا بأدوات مفتوحة ونثبته باختبار قابل للقياس.
 
 </div>
 
@@ -62,5 +62,24 @@ From `installer_triage.py fingerprint`, REA `inspect-electron-fuses` and REA `an
 1. `python scripts/powers.py suggest "<طلبك>"` — names like CapCut/كاب كات, Canva/كانفا, Premiere/بريمير route here.
 2. Open the record (`powers.py show APPX-13`) and run its `how` line; `proofs/app-feature-transfer/smoke.py` holds a working version of every ✅ recipe.
 3. For a new app: `installer_triage.py scan` → `unpack --authorized` → `fingerprint` → REA (`route` prints the commands) → add what you found as new APPX records with the lowest honest badge, and a proof before ✅.
+
+## 6. Second batch (2026-10-19): photo developers, type, vector, procedural, download
+
+Analysed with REA 6.7.0 + `installer_triage.py`, nothing executed, no crack/patch/keygen opened ([BATCH_2026-10-19.md](../proofs/windows-installers-rea/BATCH_2026-10-19.md)).
+
+| App | Evidence (names only) | Powers |
+|---|---|---|
+| DxO PhotoLab 4 | MSI hidden in PE resources → 45+ `DxO.PhotoLab.Correction.*` assemblies; REA read `NoiseRemovalMethod {High, Prime, DeepPrime}`, `KeystoningAutoMode`, `Compatibility.V7…V15` | APPX-31…36, 38, 43, 50 ✅ · APPX-51, 52 📄 |
+| Capture One 21 | Inno payload: ~1,200 camera `.icm`, Presets60, Styles, StyleBrushes, PrintTemplates, AutoCrop | APPX-36, 37, 40, 41, 43 ✅ · APPX-53, 54 📄 |
+| JPEGmini Pro 3.2 | .NET WPF MSI, SmartAssembly-obfuscated | APPX-39 ✅ |
+| FontLab 7 | Inno payload: PythonQt, FreeType, HarfBuzz, kerning-pair frequency data | APPX-44 ✅ · APPX-55 📄 |
+| Affinity Designer 1.10 | libgeometry, libocio, libpsd, libxmp, lens data | APPX-34, 42, 45 ✅ |
+| Houdini 18.5 | VEX, PDG, KineFX, HDA/OTL CHOPs | APPX-45…47 ✅ · APPX-56 📄 |
+| IDM 6.43 | signed Tonec installer, browser-integration DLL | APPX-48 ✅ |
+| Adobe Animate 2024 | offline package (FLPR + 6 deps): FLCreateJS, SVGExport, GLTFExporter, TexturePacker, FlashIK | APPX-49 ✅ · APPX-58 📄 |
+| Owner's projects | `virtualcam` (OBS virtual camera), `TikPlayer` (Android) → `apps/` | APPX-59, 60 📄 |
+| ACDSee, Dreamweaver, Lightroom | RAR5 with encrypted headers: not opened (password not guessed) | APPX-42 from public docs |
+
+Triage gained: Inno Setup detection (+ `innoextract`), payloads inside PE resources, encrypted RAR, MSI routes and Adobe offline packages (APPX-57 ✅, 22 unit tests).
 
 **Limits:** anchor counts prove code presence, not that a feature runs; minified aliases can hide APIs (REA proved 0 Electron identities in Canva's 6.8 MB main bundle for exactly that reason). Vendor-documented features are listed as context; only the open recipes carry ✅.

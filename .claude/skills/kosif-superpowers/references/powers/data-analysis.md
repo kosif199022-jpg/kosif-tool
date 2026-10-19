@@ -258,7 +258,7 @@
 - **متى أستخدمها / when:** per-city/area aggregation, distances, buffers; data feeding maps
 - **كيف / how:** gdf.to_crs(3857) before measuring metres; Transformer.from_crs(4326,3857,always_xy=True). The arsenal run gave Cairo lon 31.2 -> x 3,473,168 m.
 - **تثبيت / install:** `pip install geopandas shapely pyproj`
-- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:geopandas`](../requirements.md#req-pip-geopandas)
+- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:geopandas`](../requirements.md#req-pip-geopandas) · [`pip:shapely`](../requirements.md#req-pip-shapely)
 - **الرخصة / license:** BSD-3-Clause / MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md

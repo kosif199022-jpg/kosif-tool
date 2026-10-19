@@ -27,8 +27,8 @@
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**4,659** قدرة · **52** عائلة · **10** مجالات · ✅ 788 مُثبتة بتشغيل فعلي · 🟢 636 جاهزة · 📦 965 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1414 طريقة موصوفة · 💡 71 فكرة.
-المستلزمات المسجّلة: **117** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **124** مستودعًا موثّق الترخيص.
+**4,689** قدرة · **52** عائلة · **10** مجالات · ✅ 809 مُثبتة بتشغيل فعلي · 🟢 636 جاهزة · 📦 965 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1423 طريقة موصوفة · 💡 71 فكرة.
+المستلزمات المسجّلة: **119** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **124** مستودعًا موثّق الترخيص.
 
 <a id="domains"></a>
 ## 3. المجالات والعائلات / domains and families
@@ -90,6 +90,13 @@
 | [التحقق والتقييم — Verification & evals](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md) | CHECK | 29 | 4 | CHECK-02 Postcondition gate on the delivered file (ffpr; CHECK-03 Look at the output: contact sheets, frames, sc; CHECK-22 Catalog snapshot: powers.py stats + repo valid |
 | [التخطيط والتنفيذ — Planning & execution](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/planning-execution.md) | PLAN | 12 | 2 | PLAN-01 Full plan scaffold from a goal; PLAN-05 Requirements gate before scheduling; PLAN-02 Backcasting from the end state |
 
+### التطبيقات والواجهات / build — 83 powers · ✅ 46
+
+| family | prefix | powers | ✅ | examples (proven first) |
+|---|---|---|---|---|
+| [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 60 | 40 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
+| [التطبيقات والواجهات — Apps & artifacts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md) | APP | 23 | 6 | APP-04 Dependency-free RTL dashboard page; APP-05 Phone-viewport screenshot + overflow check; APP-06 HTML to MP4 renderer (repo tool) |
+
 ### الكتابة واللغة / craft — 72 powers · ✅ 26
 
 | family | prefix | powers | ✅ | examples (proven first) |
@@ -97,13 +104,6 @@
 | [الكتابة الطبيعية — Writing & humanizer](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/writing-humanizer.md) | WRITE | 28 | 11 | WRITE-02 English tell scan (H1–H25 + X1); WRITE-03 Arabic MSA and Egyptian tell scan (AR1–AR26); WRITE-04 Evidence-weighted verdict ladder |
 | [اللغة العربية — Arabic language](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/arabic-language.md) | ARL | 22 | 14 | ARL-01 Normalize Arabic for search and matching; ARL-02 Match normalized, report in the original spell; ARL-03 Clitic-aware Arabic word boundaries |
 | [صناعة البرومبت — Prompt craft](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/prompt-craft.md) | PROMPT | 22 | 1 | PROMPT-02 Preservation ledger with an automatic check; PROMPT-01 Route the request: optimize-only, do, both, or; PROMPT-03 Eight core slots |
-
-### التطبيقات والواجهات / build — 53 powers · ✅ 25
-
-| family | prefix | powers | ✅ | examples (proven first) |
-|---|---|---|---|---|
-| [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 30 | 19 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
-| [التطبيقات والواجهات — Apps & artifacts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md) | APP | 23 | 6 | APP-04 Dependency-free RTL dashboard page; APP-05 Phone-viewport screenshot + overflow check; APP-06 HTML to MP4 renderer (repo tool) |
 
 ### البيانات / data — 39 powers · ✅ 36
 
@@ -142,24 +142,24 @@
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 564 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 569 | `apt-get install -y python3 python3-pip python3-venv` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
-| `ffmpeg` | bin | 393 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
-| `chromium` | bin | 285 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
-| `npm:rea` | npm | 242 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
-| `npm:gsap` | npm | 234 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
-| `npm:three` | npm | 168 | `npm i three@0.186.1 esbuild` |
+| `ffmpeg` | bin | 397 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
+| `chromium` | bin | 295 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
+| `npm:rea` | npm | 244 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
+| `npm:gsap` | npm | 235 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
+| `npm:three` | npm | 170 | `npm i three@0.186.1 esbuild` |
 | `key:unspecified` | key | 153 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
 | `node` | bin | 148 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
 | `npm:remotion` | npm | 112 | `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3` |
 | `fonts:arabic` | font | 88 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |
-| `pip:pillow` | pip | 81 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
-| `pip:numpy` | pip | 81 | `pip install numpy` |
+| `pip:numpy` | pip | 87 | `pip install numpy` |
+| `pip:pillow` | pip | 86 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
 | `imagemagick` | bin | 78 | `apt-get install -y imagemagick` |
 | `engine:ghidra` | bin | 75 | `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP` |
 | `key:video-gen` | service | 62 | `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits` |
 | `claude:tools` | service | 58 | `Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch` |
-| `pip:opencv` | pip | 43 | `pip install opencv-python-headless` |
+| `pip:opencv` | pip | 54 | `pip install opencv-python-headless` |
 | `pip:faster-whisper` | model | 43 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
 | `npm:react` | npm | 40 | `npm i react react-dom  (or next, svelte, vue)` |
 | `engine:android` | bin | 35 | `Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised` |

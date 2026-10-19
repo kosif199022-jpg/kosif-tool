@@ -1360,5 +1360,25 @@
    "\\b7-?zip\\b",
    "\\b7z[az]?\\b"
   ]
+ },
+ "pip:shapely": {
+  "kind": "pip",
+  "detect": "shapely",
+  "install": "pip install shapely",
+  "ar": "هندسة متجهة: اتحاد وطرح وتقاطع",
+  "en": "vector geometry: union, difference, intersection",
+  "patterns": [
+   "\\bshapely\\b"
+  ]
+ },
+ "innoextract": {
+  "kind": "bin",
+  "detect": "innoextract",
+  "install": "scoop install innoextract | apt-get install -y innoextract | brew install innoextract",
+  "ar": "قراءة مثبّتات Inno Setup بلا تشغيلها",
+  "en": "list and unpack Inno Setup installers without running them",
+  "patterns": [
+   "\\binnoextract\\b"
+  ]
  }
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:padding="24dp"
+        android:text="@string/empty_mine"
+        android:textColor="@color/dim_white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <!-- الشريط العلوي: تبويبات + زر الإضافة -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/tabForYou"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="14dp">
+                <TextView
+                    android:id="@+id/tabForYouText"
+                    style="@style/TabText"
+                    android:text="@string/tab_foryou" />
+                <View
+                    android:id="@+id/tabForYouLine"
+                    style="@style/TabLine" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tabMine"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="14dp">
+                <TextView
+                    android:id="@+id/tabMineText"
+                    style="@style/TabText"
+                    android:text="@string/tab_mine" />
+                <View
+                    android:id="@+id/tabMineLine"
+                    style="@style/TabLine" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/addBtn"
+            android:layout_width="38dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_add_btn"
+            android:contentDescription="add"
+            android:padding="3dp"
+            android:src="@drawable/ic_add" />
+    </FrameLayout>
+</FrameLayout>

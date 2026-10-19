@@ -922,5 +922,994 @@
   ],
   "section": "معمارية المثبّتات — installer architecture",
   "source": "analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)"
+ },
+ {
+  "id": "APPX-31",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "إزالة الضباب",
+  "name_en": "Dehaze (ClearView-style)",
+  "status": "proven",
+  "what": "إزالة الضباب واستعادة التباين كما في وحدة DxO.PhotoLab.Correction.ClearView — dehaze like DxO ClearView, rebuilt with the dark-channel prior.",
+  "when": "صور مدن ضبابية، مناظر بعيدة، لقطات من نافذة طائرة",
+  "how": "OpenCV: قناة داكنة = erode(min(R,G,B), 15×15)؛ A من أعلى 0.1% من القناة الداكنة؛ t = 1 − 0.95·dark(I/A) ثم تنعيم؛ J = (I − A)/max(t,0.1) + A.",
+  "params": "patch 15, ω 0.95, t₀ 0.1",
+  "install": "pip install opencv-python-headless numpy",
+  "requires": [
+   "chromium",
+   "pip:numpy",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "clearview",
+   "dehaze",
+   "إزالة الضباب",
+   "haze"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-32",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تقليل الضوضاء بمستويات",
+  "name_en": "Tiered noise reduction",
+  "status": "proven",
+  "what": "مستويات إزالة ضوضاء كما في تعداد NoiseRemovalMethod {High, Prime, DeepPrime} داخل DxO Noise — bilateral (سريع) ثم NL-means (أقوى)؛ مستوى الذكاء الاصطناعي نموذج 📦.",
+  "when": "صور ليلية وISO مرتفع، فيديو مظلم قبل التلوين",
+  "how": "cv2.bilateralFilter(img,7,40,7) للمعاينة؛ cv2.fastNlMeansDenoisingColored(img,None,12,12,7,21) للتصدير؛ للفيديو ffmpeg -vf hqdn3d أو nlmeans.",
+  "params": "h 10–15 حسب الضوضاء",
+  "install": "pip install opencv-python-headless",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "deepprime",
+   "denoise",
+   "noise",
+   "تقليل الضوضاء",
+   "تشويش"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-33",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تصحيح المنظور تلقائيًا",
+  "name_en": "Auto keystone / perspective",
+  "status": "proven",
+  "what": "تقويم المباني المائلة بأربع أو ثماني نقاط مع وضع آلي (KeystoningAutoMode وoctaPoints في DxO Perspective/ViewPoint).",
+  "when": "تصوير مبانٍ ومستندات ولوحات من زاوية",
+  "how": "اكتشف الرباعي بـ findContours + approxPolyDP، رتّب الزوايا (مجموع/فرق الإحداثيات)، ثم cv2.getPerspectiveTransform + warpPerspective.",
+  "params": "دقة الزوايا < 3 px",
+  "install": "pip install opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "viewpoint",
+   "perspective",
+   "keystone",
+   "منظور",
+   "تقويم"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-34",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تصحيح تشوّه العدسة",
+  "name_en": "Lens distortion correction",
+  "status": "proven",
+  "what": "إزالة التشوّه البرميلي/الوسادي (DxO Distortion؛ ملف lens_correction_data.dat في Affinity) بنموذج Brown الشعاعي.",
+  "when": "عدسات واسعة، كاميرات أكشن، درون",
+  "how": "cv2.undistort(img, K, [k1,k2,p1,p2,k3])؛ احسب K والمعاملات من لوحة شطرنج بـ cv2.calibrateCamera أو من قاعدة lensfun.",
+  "params": "k1 موجب = برميلي",
+  "install": "pip install opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "lens",
+   "distortion",
+   "عدسة",
+   "تشوه",
+   "fisheye"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-35",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "إزالة الزيغ اللوني",
+  "name_en": "Lateral chromatic aberration removal",
+  "status": "proven",
+  "what": "إزالة الحواف الملونة الجانبية (DxO ChromaticAberration) بتسجيل قناتي الأحمر والأزرق على الأخضر بمقياس شعاعي.",
+  "when": "حواف أرجوانية/خضراء في زوايا الصورة",
+  "how": "ابحث عن مقياس s لكل قناة في [0.97,1.03] يقلل الفرق مع G، ثم warpAffine(getRotationMatrix2D(center,0,s)).",
+  "params": "خطوة 0.001",
+  "install": "pip install opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "chromatic aberration",
+   "زيغ لوني",
+   "fringing"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-36",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "توازن الأبيض ومنحنى الدرجات وHSL",
+  "name_en": "White balance + tone curve + HSL",
+  "status": "proven",
+  "what": "تطوير أساسي كما في وحدات DxO WhiteBalance/ToneCurve/HSL وإعدادات Capture One (Curve وColor Balance): عالم رمادي ثم منحنى S ثم تشبع.",
+  "when": "تصحيح لون صورة أو إطار فيديو قبل الإخراج",
+  "how": "gains = mean(all)/mean(channel)؛ LUT من np.interp لنقاط المنحنى؛ HSV وضرب S. للفيديو: ffmpeg curves/colorbalance/eq.",
+  "params": "منحنى S: (64→50, 192→210)",
+  "install": "pip install opencv-python-headless numpy",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "pip:numpy",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "capture one",
+   "white balance",
+   "tone curve",
+   "hsl",
+   "توازن الأبيض",
+   "منحنى"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-37",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "حبيبات فيلم وتعتيم أطراف",
+  "name_en": "Film grain + vignette",
+  "status": "proven",
+  "what": "مظهر فيلمي (إعدادات Capture One «Film Grain» ووحدتا DxO Grain وCreativeVignetting).",
+  "when": "صور وفيديو بطابع سينمائي أو قديم",
+  "how": "حبيبات = ضوضاء غاوسية منعّمة σ≈0.8 بقوة 6–10؛ تعتيم = 1 − a·max(r−0.4,0)^1.5. فيديو: ffmpeg noise=alls=8:allf=t + vignette.",
+  "params": "a 0.45، قوة الحبيبات 8",
+  "install": "pip install numpy opencv-python-headless",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "pip:numpy",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "capture one",
+   "dxo",
+   "film grain",
+   "vignette",
+   "حبيبات",
+   "سينمائي"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-38",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "علامة مائية بشفافية دقيقة",
+  "name_en": "Watermark with exact opacity",
+  "status": "proven",
+  "what": "علامة مائية نصية أو شعار (DxO Correction.Watermark) بدمج ألفا دقيق.",
+  "when": "حماية صور العملاء والتصدير الجماعي",
+  "how": "Pillow Image.alpha_composite مع طبقة RGBA؛ النص العربي بخط يدعم التشكيل (raqm)؛ فيديو: ffmpeg overlay=format=auto مع colorchannelmixer=aa=0.4.",
+  "params": "شفافية 30–45%",
+  "install": "pip install pillow",
+  "requires": [
+   "ffmpeg",
+   "pip:pillow"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "watermark",
+   "علامة مائية",
+   "logo"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-39",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "ضغط JPEG إدراكي",
+  "name_en": "Perceptual JPEG recompression (JPEGmini-style)",
+  "status": "proven",
+  "what": "أصغر جودة JPEG تبقى مطابقة بصريًا للأصل، كفكرة JPEGmini: بحث ثنائي على الجودة بشرط SSIM.",
+  "when": "تصغير صور المتجر والموقع وألبومات العملاء دون فرق مرئي",
+  "how": "Pillow save(quality=q, optimize=True, progressive=True)؛ بحث ثنائي q∈[30,95] حتى SSIM ≥ SSIM(q95) − 0.01.",
+  "params": "هامش SSIM 0.01",
+  "install": "pip install pillow opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:pillow",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "jpegmini",
+   "jpeg",
+   "compress",
+   "ضغط الصور",
+   "تصغير حجم الصور",
+   "ssim"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-40",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "ورقة تواصل وقوالب طباعة",
+  "name_en": "Contact sheet / print templates",
+  "status": "proven",
+  "what": "شبكة صور مصغرة مرقمة إلى صفحات PDF (قوالب Capture One PrintTemplates وWebContactSheet).",
+  "when": "مراجعة جلسة تصوير مع عميل، طباعة بروفات",
+  "how": "Pillow: thumbnail لكل صورة، لصق على صفحة A4 بشبكة أعمدة×صفوف، اسم الملف تحتها، ثم save(pdf, save_all=True).",
+  "params": "4×3 لكل صفحة",
+  "install": "pip install pillow",
+  "requires": [
+   "pip:pillow"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "capture one",
+   "contact sheet",
+   "print",
+   "طباعة",
+   "pdf"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-41",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "ملفات إعدادات مسبقة بإصدارات",
+  "name_en": "Versioned preset / style files",
+  "status": "proven",
+  "what": "أنماط وإعدادات مسبقة كملفات (Capture One Styles وPresets60؛ DxO مع سلسلة Compatibility.V7…V15) تبقى قديمها قابلًا للفتح.",
+  "when": "نظام فلاتر لتطبيقك أو لمونتاج KOSIF",
+  "how": "JSON فيه schema وقائمة ops؛ دالة migrate لكل إصدار قديم ثم apply حتمية.",
+  "params": "schema رقم صحيح متزايد",
+  "install": "python",
+  "requires": [
+   "python3"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "capture one",
+   "dxo",
+   "preset",
+   "style",
+   "فلتر",
+   "إعدادات مسبقة"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-42",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "ملف XMP جانبي: تقييم ووسوم",
+  "name_en": "XMP sidecar: rating, label, keywords",
+  "status": "proven",
+  "what": "تقييم بالنجوم وتسمية لونية وكلمات مفتاحية في ملف .xmp بجوار الصورة (Lightroom وACDSee وDxO Search.Metadata وlibxmp في Affinity).",
+  "when": "أرشفة الصور والبحث فيها بين البرامج",
+  "how": "xml.etree: x:xmpmeta/rdf:Description مع xmp:Rating وxmp:Label وdc:subject/rdf:Bag؛ أو exiftool -XMP:Rating=4.",
+  "params": "Rating 0–5",
+  "install": "python (stdlib)",
+  "requires": [
+   "python3"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "lightroom",
+   "acdsee",
+   "xmp",
+   "metadata",
+   "keywords",
+   "تقييم",
+   "وسوم"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-43",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تعديل الأفق تلقائيًا",
+  "name_en": "Auto horizon straighten",
+  "status": "proven",
+  "what": "تقويم الأفق المائل والقص (DxO Horizon وAutoCropManagedWrapper في Capture One).",
+  "when": "صور بحر وسماء، لقطات يد مائلة",
+  "how": "Canny → HoughLinesP؛ وسيط زوايا الخطوط الطويلة (<20°)؛ warpAffine بالزاوية المعاكسة ثم قص المستطيل الداخلي.",
+  "params": "دقة < 0.4°",
+  "install": "pip install opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "capture one",
+   "horizon",
+   "straighten",
+   "الأفق",
+   "تقويم"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-44",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "بناء خط بتقنين الأزواج",
+  "name_en": "Build a font with kerning",
+  "status": "proven",
+  "what": "بناء خط TTF بمحارف وتقنين أزواج GPOS كما يفعل FontLab 7 (حزمته: FreeType وHarfBuzz وجدول تكرار أزواج التقنين وstandard.nam وسكربتات Python).",
+  "when": "خط عربي لعلامة تجارية، شعار نصي، خط من رسم يدوي",
+  "how": "fontTools FontBuilder: setupGlyphOrder/CharacterMap/Glyf/HorizontalMetrics ثم feaLib (feature kern) ثم save؛ للعربية أضف init/medi/fina/liga.",
+  "params": "UPM 1000",
+  "install": "pip install fonttools",
+  "requires": [
+   "pip:fonttools"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "fontlab",
+   "font",
+   "kerning",
+   "خط",
+   "تصميم خط",
+   "ttf",
+   "otf"
+  ],
+  "section": "التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-45",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "عمليات بوليانية للأشكال المتجهة",
+  "name_en": "Vector boolean operations",
+  "status": "proven",
+  "what": "اتحاد وطرح وتقاطع أشكال متجهة إلى SVG (libgeometry في Affinity Designer، he_boolean في Houdini Engine).",
+  "when": "شعارات، أيقونات، أقنعة موشن",
+  "how": "shapely: a.union(b) / a.difference(b) / a.intersection(b) ثم .svg() داخل <svg>.",
+  "params": "buffer quad_segs 64 للدوائر",
+  "install": "pip install shapely",
+  "requires": [
+   "pip:shapely"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "affinity",
+   "houdini",
+   "boolean",
+   "vector",
+   "svg",
+   "متجه",
+   "شعار"
+  ],
+  "section": "التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-46",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "عمليات القنوات للحركة",
+  "name_en": "Motion channel ops (CHOP-style)",
+  "status": "proven",
+  "what": "تأخير ناعم وضوضاء ناعمة ودورة وغلاف لمنحنيات الحركة كما في Houdini CHOPs (LagBasic وNoiseBasic وCycle وEnvelope).",
+  "when": "كاميرا يدوية واقعية، اهتزاز، تتبع متأخر في موشن KOSIF",
+  "how": "lag: y += a(x − y)، a = 1 − e^(−1/(τ·fps))؛ noise: استيفاء قيم عشوائية مبذورة؛ cycle: tile؛ envelope: متوسط متحرك لـ |x|.",
+  "params": "τ 0.25 s",
+  "install": "pip install numpy",
+  "requires": [
+   "pip:numpy"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "houdini",
+   "chop",
+   "lag",
+   "noise",
+   "camera shake",
+   "حركة",
+   "اهتزاز"
+  ],
+  "section": "التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-47",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "مخطط مهام بتخزين مؤقت",
+  "name_en": "Task graph with caching (PDG-style)",
+  "status": "proven",
+  "what": "تشغيل خطوات إنتاج بترتيب الاعتماديات وإعادة ما تغيّر فقط (Houdini PDG/TOPs).",
+  "when": "مونتاج دفعات، تصدير مئات الصور، خطوط إنتاج KOSIF",
+  "how": "DFS طوبولوجي؛ مفتاح كل عقدة = sha256(الاسم + معاملاتها + مفاتيح اعتمادياتها)؛ تُعاد العقدة فقط إذا تغير مفتاحها.",
+  "params": "—",
+  "install": "python (stdlib)",
+  "requires": [
+   "python3"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "houdini",
+   "pdg",
+   "pipeline",
+   "cache",
+   "دفعات",
+   "خط إنتاج"
+  ],
+  "section": "التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-48",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تنزيل مجزأ قابل للاستئناف",
+  "name_en": "Segmented, resumable download (IDM-style)",
+  "status": "proven",
+  "what": "تنزيل الملف بعدة أجزاء متوازية بطلبات Range واستئناف الجزء المقطوع والتحقق بـ SHA-256 (فكرة Internet Download Manager).",
+  "when": "ملفات فيديو كبيرة، شبكات متقطعة",
+  "how": "HEAD لمعرفة الحجم وAccept-Ranges؛ N خيوط كل منها Range: bytes=s+have-e وتلحق بملف .part؛ ثم دمج وفحص sha256. البديل الجاهز: aria2c -x8 -c.",
+  "params": "N = 4–8",
+  "install": "python (stdlib) or aria2",
+  "requires": [
+   "python3"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "idm",
+   "download",
+   "resume",
+   "تحميل",
+   "تنزيل",
+   "استئناف"
+  ],
+  "section": "التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-49",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "حركة متوسطة وقشرة البصل وورقة رسوم",
+  "name_en": "Eased tween, onion skin, sprite sheet",
+  "status": "proven",
+  "what": "استيفاء حركة بين مفتاحين بتسهيل، وعرض الإطارات المجاورة شفافة، وتصدير ورقة رسوم مع JSON (Animate: FLCreateJS وTexturePacker وFlashIK).",
+  "when": "رسوم 2D للويب والألعاب وشخصيات متحركة",
+  "how": "smoothstep u²(3−2u) بين المفاتيح؛ alpha_composite لثلاثة إطارات بشفافيات 60/120/255؛ لصق الإطارات على شبكة وكتابة إحداثياتها JSON.",
+  "params": "24 fps",
+  "install": "pip install pillow numpy",
+  "requires": [
+   "pip:numpy",
+   "pip:pillow"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "animate",
+   "tween",
+   "onion skin",
+   "sprite sheet",
+   "رسوم متحركة",
+   "انيميشن"
+  ],
+  "section": "التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-50",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "دمج التعريضات والتحكم بالدرجات",
+  "name_en": "Exposure fusion / selective tonal control",
+  "status": "proven",
+  "what": "استعادة الإضاءات المحروقة والظلال (DxO SelectiveTonalControl وSmart Lighting) بدمج عدة تعريضات.",
+  "when": "مشاهد داخلية مع نافذة، غروب، HDR بلا هالات",
+  "how": "cv2.createMergeMertens().process([u8_dark, u8_mid, u8_bright]) → float 0..1؛ لصورة واحدة: CLAHE على قناة L.",
+  "params": "3 تعريضات (−1.5، 0، +1.2 EV)",
+  "install": "pip install opencv-python-headless",
+  "requires": [
+   "chromium",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "hdr",
+   "exposure fusion",
+   "highlights",
+   "ظلال",
+   "تعريض"
+  ],
+  "section": "مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-51",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "وحدة مستقلة لكل تصحيح",
+  "name_en": "One plugin assembly per correction",
+  "status": "documented",
+  "what": "كل تصحيح في DxO PhotoLab مكتبة مستقلة (أكثر من 45: ClearView وNoise وPerspective وHSL…) ولكل منها Correction وPalette (واجهة) وViewModel وValidator وPlugin — كما أظهرته أداة REA inspect-managed-members — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "محرر صور أو فيديو قابل للتوسعة",
+  "how": "واجهة IPlugin {id, params, validate(settings), render(img, params)} وسجل يحمّل الوحدات من مجلد plugins؛ كل وحدة لها مدقّق مستقل.",
+  "params": "—",
+  "install": "any language",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "plugin",
+   "architecture",
+   "إضافات",
+   "معمارية"
+  ],
+  "section": "معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-52",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "سلسلة توافق للإعدادات القديمة",
+  "name_en": "Settings compatibility chain",
+  "status": "documented",
+  "what": "مكتبات DxO.PhotoLab.Compatibility.V7…V15 تحوّل ملفات كل إصدار قديم إلى التالي؛ الوصفة المصغرة مثبتة في APPX-41 — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "حين يتغير شكل ملف مشروعك",
+  "how": "دالة migrate_vN→vN+1 لكل إصدار وتطبيقها بالتسلسل عند الفتح؛ لا تكسر الملفات القديمة أبدًا.",
+  "params": "—",
+  "install": "any language",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "dxo",
+   "migration",
+   "compatibility",
+   "توافق"
+  ],
+  "section": "معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-53",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "ملف لون لكل كاميرا",
+  "name_en": "Per-camera colour profiles",
+  "status": "documented",
+  "what": "Capture One يشحن نحو 1,200 ملف .icm مصنفة لكل طراز كاميرا (Generic وProStandard وFlash وTungsten) — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "توحيد ألوان صور من كاميرات مختلفة في مشروع واحد",
+  "how": "Pillow ImageCms.profileToProfile(img, camera.icc, sRGB) أو LittleCMS؛ ابنِ ملفًا لكاميرتك من لوحة ألوان بـ dcamprof/ArgyllCMS.",
+  "params": "—",
+  "install": "pip install pillow",
+  "requires": [
+   "pip:pillow"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "capture one",
+   "icc",
+   "color profile",
+   "ملف لون"
+  ],
+  "section": "معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-54",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "فرش التعديل المحلي كإعدادات",
+  "name_en": "Local-adjustment brushes as presets",
+  "status": "documented",
+  "what": "مجلدات StyleBrushes في Capture One (Light & Contrast وEnhancements وColor) وDxO Correction.Local: تعديل يطبق داخل قناع مرسوم فقط — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تفتيح وجه، تشبع سماء، تنعيم بشرة في منطقة",
+  "how": "قناع float (فرشاة ناعمة أو تدرج خطي/شعاعي) ثم out = img·(1−m) + adjust(img)·m؛ احفظ الإعداد مع شكل القناع.",
+  "params": "—",
+  "install": "numpy/opencv",
+  "requires": [
+   "pip:numpy",
+   "pip:opencv"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "capture one",
+   "dxo",
+   "mask",
+   "local adjustment",
+   "قناع"
+  ],
+  "section": "معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-55",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "حزمة هندسة الخطوط",
+  "name_en": "Font engineering stack",
+  "status": "documented",
+  "what": "FontLab 7 = Qt5 + PythonQt (سكربتات) + FreeType + HarfBuzz + kernpairfreqval.dat + standard.nam + tessdata + podofo (PDF) — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "أداة خطوط عربية داخل KOSIF",
+  "how": "fontTools (بناء/تحرير) + uharfbuzz (تشكيل وفحص) + glyphsLib/ufoLib2 (مصادر) + أزواج تقنين من نص عربي حقيقي.",
+  "params": "—",
+  "install": "pip install fonttools uharfbuzz",
+  "requires": [
+   "pip:fonttools"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "fontlab",
+   "harfbuzz",
+   "font engineering",
+   "خطوط عربية"
+  ],
+  "section": "معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-56",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "أصول إجرائية بمعاملات",
+  "name_en": "Procedural digital assets",
+  "status": "documented",
+  "what": "Houdini يشحن HDA/OTL (أكثر من 60) وVEX وPDG وKineFX وSideFX Labs وجسور Unreal/Maya: أصل واحد بمعاملات يولّد أشكالًا كثيرة — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "خلفيات وجسيمات ومدن مولّدة لموشن KOSIF",
+  "how": "دالة build(params, seed) → هندسة (three.js/Blender bpy) مع معاملات مكشوفة في JSON ونسخة مخزنة لكل مجموعة معاملات (APPX-47).",
+  "params": "—",
+  "install": "blender or three.js",
+  "requires": [
+   "blender",
+   "npm:three"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "houdini",
+   "procedural",
+   "hda",
+   "إجرائي",
+   "توليدي"
+  ],
+  "section": "معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-57",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "كشف حمولات المثبّتات الخفية",
+  "name_en": "Hidden installer payload detection",
+  "status": "proven",
+  "what": "installer_triage.py صار يكشف Inno Setup (Capture One وFontLab)، وMSI/CAB مخزنة داخل موارد PE (DxO: 288 MB MSI في .rsrc/1033/BIN/5100)، وRAR بعناوين مشفرة، وحزم Adobe دون اتصال (driver.xml)؛ حيث يقول REA «unsupported binary format» أو «resource_constraint».",
+  "when": "قبل تحليل أي مثبّت كبير بـ REA",
+  "how": "python scripts/installer_triage.py scan <file|dir> ثم unpack --authorized (innoextract لـ Inno، و7-Zip للباقي بما فيه موارد PE) ثم route.",
+  "params": "حد الحمولة المضمنة 1 MiB",
+  "install": "7-Zip, innoextract",
+  "requires": [
+   "python3",
+   "npm:rea",
+   "7zip",
+   "innoextract"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_installer_triage.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "installer",
+   "inno",
+   "msi",
+   "rar",
+   "triage",
+   "مثبت"
+  ],
+  "section": "معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-58",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "خط تصدير الرسوم المتحركة",
+  "name_en": "Animation export pipeline",
+  "status": "documented",
+  "what": "حزمة Animate 2024 تكشف: FLCreateJS (HTML5 Canvas)، SVGExport، GLTFExporterPlugin، TexturePacker، FlashIK (عظام)، AIR — مسارات التصدير نفسها متاحة بأدوات مفتوحة — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)",
+  "when": "تصدير موشن KOSIF إلى الويب أو الألعاب",
+  "how": "Canvas/GSAP للويب، Lottie (bodymovin) أو SVG متحرك، glTF عبر three.js GLTFExporter، ورقة رسوم بـ APPX-49.",
+  "params": "—",
+  "install": "npm i three gsap lottie-web",
+  "requires": [
+   "npm:three",
+   "npm:gsap",
+   "npm:lottie"
+  ],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "animate",
+   "createjs",
+   "gltf",
+   "svg",
+   "lottie",
+   "تصدير"
+  ],
+  "section": "معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-59",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "كاميرا افتراضية من فيديو",
+  "name_en": "Virtual camera from a video file",
+  "status": "documented",
+  "what": "مشروع المالك virtualcam: يكتب ملف مشهد OBS بمصدر ffmpeg_source متكرر ويشغّل OBS بـ --startvirtualcam فيرى Zoom والمتصفح وTikTok Live Studio الفيديو كاميرا. منقول إلى apps/virtualcam.",
+  "when": "بث مباشر أو اجتماع بفيديو مسجل",
+  "how": "powershell -File apps/virtualcam/start-virtualcam.ps1 <video.mp4> (يحتاج OBS Studio 28+ ويغلق OBS المفتوح قبل التشغيل).",
+  "params": "1280×720@30",
+  "install": "OBS Studio",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/apps/virtualcam/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "virtual camera",
+   "obs",
+   "كاميرا افتراضية",
+   "بث"
+  ],
+  "section": "مشاريع المالك في مجلد العمل — owner's own projects",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
+ },
+ {
+  "id": "APPX-60",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "مشغل فيديو عمودي بالسحب",
+  "name_en": "Vertical swipe video player (Android)",
+  "status": "documented",
+  "what": "مشروع المالك TikPlayer (Kotlin): ViewPager2 عمودي + Media3 ExoPlayer + فيديوهات الجهاز من MediaStore وإيماءات (نقرتان للإعجاب، شريط تقدم رفيع). منقول إلى apps/tikplayer.",
+  "when": "معاينة ريلز KOSIF على الهاتف كما ستظهر",
+  "how": "افتح apps/tikplayer في Android Studio أو gradle assembleDebug (JDK 17 وAndroid SDK)؛ لم يُبنَ في هذه الجلسة.",
+  "params": "minSdk حسب build.gradle.kts",
+  "install": "Android SDK, JDK 17",
+  "requires": [],
+  "license": "recipe: owner (KOSIF); the tools keep their own licenses",
+  "proof": [
+   "kosif-tool/apps/tikplayer/README.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "android",
+   "tiktok",
+   "player",
+   "exoplayer",
+   "مشغل",
+   "ريلز"
+  ],
+  "section": "مشاريع المالك في مجلد العمل — owner's own projects",
+  "source": "analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)"
  }
 ]
