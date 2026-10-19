@@ -129,6 +129,7 @@ jobs:
                   "evals/test_catalog_evidence_audit.py",
                   "references/claude-auto-local-first.md",
                   "references/rea-ghidra-catalog-audit-20261019.md",
+                  "references/REA_CREATIVE_DISCOVERY_2000_20261019.md",
                   "scripts/character_fullbody.py",
                   "templates/fullbody-demo.json",
                   "templates/fullbody-demo-words.json",
