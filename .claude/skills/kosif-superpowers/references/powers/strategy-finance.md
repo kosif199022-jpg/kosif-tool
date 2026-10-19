@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المنتج والمال — Product & finance · **البادئة / prefix:** `PROD` · **البيانات / data:** `data/powers/strategy-finance.json` · **بحث / search:** `python3 scripts/powers.py family strategy-finance`
-**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [method-packs.md](../method-packs.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [creativity.md](../creativity.md) · [method-packs.md](../method-packs.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
