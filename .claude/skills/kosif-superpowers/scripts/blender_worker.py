@@ -55,6 +55,7 @@ bpy.ops.object.light_add(type="AREA", location=(3, -4, 8))
 bpy.context.object.data.energy = 1000
 bpy.context.object.data.shape = "DISK"
 bpy.context.object.data.size = 6
+stage.world = bpy.data.worlds.new("KOSIF_World")
 stage.world.color = (0.15, 0.15, 0.15)
 if output.suffix.lower() == ".png":
     stage.render.filepath = str(output)
