@@ -17,6 +17,7 @@
 5. [How to use this family](#5-how-to-use-this-family)
 6. [Second batch: photo developers, type, vector, procedural, download](#6-second-batch-2026-10-19-photo-developers-type-vector-procedural-download)
 7. [App Studio — run every feature on the user's own files (requirements)](#7-app-studio--run-every-feature-on-the-users-own-files)
+9. [Global video platforms and two original workflow adapters](#9-global-video-platforms-and-two-original-workflow-adapters-2026-10-19)
 
 ## 1. What each installer really is
 
@@ -192,3 +193,7 @@ python $SKILL_DIR/scripts/app_studio.py batch jpegmini ./shop -o ./shop_small --
 **Honesty rules:** `verified` is true only when the op measured its own postcondition (SSIM for `jpegmini`, keyword round-trip for `xmp`, SHA-256 for `download`, minimum distance for `scatter`, reach error for `ik`). These are open, classical methods, not the vendors' algorithms (DeepPRIME, ClearView Plus, Lightroom's AI masks).
 
 **Limits:** anchor counts prove code presence, not that a feature runs; minified aliases can hide APIs (REA proved 0 Electron identities in Canva's 6.8 MB main bundle for exactly that reason). Vendor-documented features are listed as context; only the open recipes carry ✅.
+
+## 9. Global video platforms and two original workflow adapters (2026-10-19)
+
+See [Global video platform capability atlas](global-video-platforms-2026-10-19.md) for vendor-attributed features, clean-room routes, and verified vs unavailable capabilities. scripts/video_workflow_bridge.py adds tested text-selected video-only paper-edit manifests inspired by Descript/Premiere and timecode/position-accurate review markers inspired by Frame.io. It is a non-destructive manifest generator, not an imported vendor editor. Its use never licenses proprietary models or third-party videos.
