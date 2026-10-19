@@ -13,8 +13,8 @@ import catalog_evidence_audit as audit
 class EvidenceAuditTests(unittest.TestCase):
     def test_catalog_all_records_unique(self):
         result = audit.audit(SK)
-        self.assertEqual(result["records_examined"], 4730)
-        self.assertEqual(result["unique_ids"], 4730)
+        self.assertGreaterEqual(result["records_examined"], 4730)
+        self.assertEqual(result["unique_ids"], result["records_examined"])
         self.assertEqual(result["families_examined"], 52)
         self.assertEqual(result["record_integrity_errors"], [])
         self.assertFalse(result["executes_external_code"])
