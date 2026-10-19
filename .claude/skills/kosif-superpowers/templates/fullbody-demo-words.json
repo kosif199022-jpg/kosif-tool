@@ -1,0 +1,4 @@
+﻿{
+  "note":"Synthetic timestamps for demo tests only; not actual audio alignment.",
+  "words":[{"word":"hello","start":0.5,"end":0.7},{"word":"there","start":0.9,"end":1.15}]
+}

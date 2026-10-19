@@ -32,6 +32,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_paint.py' -v
       - name: Test deterministic IK character motion and packet-preserved audio
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_character_ik.py' -v
+      - name: Test full body movement and export before packaging
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_character_fullbody.py' -v
       - name: Test new Code Drawing Master before packaging
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
@@ -73,6 +75,11 @@ jobs:
                   "scripts/motion_director.py",
                   "scripts/code_drawing_master.py",
                   "scripts/creative_paint.py",
+                  "scripts/character_fullbody.py",
+                  "templates/fullbody-demo.json",
+                  "templates/fullbody-demo-words.json",
+                  "references/fullbody-character-motion.md",
+                  "evals/test_character_fullbody.py",
                   "scripts/character_ik.py",
                   "templates/ik-wave-demo.json",
                   "templates/ik-wave-words.json",
