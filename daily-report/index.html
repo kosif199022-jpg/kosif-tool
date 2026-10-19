@@ -1088,7 +1088,8 @@ function pdfPages(logoImg) {
     });
   }
   // top customers / suppliers
-  const c2y = c1y + c1h + 10, c2h = 156;
+  const hasTop = C.topC.length || C.topS.length;
+  const c2y = c1y + c1h + 10, c2h = 50 + Math.max(1, Math.min(5, Math.max(C.topC.length, C.topS.length))) * 23;
   const topCard = (x, list, title, who, color) => {
     pRR(g, x, c2y, half, c2h, 9, "#FFFFFF", P.line);
     const t5 = list.slice(0, 5), pos = list.reduce((a, [, o]) => a + o.v, 0) || 1;
@@ -1104,10 +1105,12 @@ function pdfPages(logoImg) {
       pT(g, fmt(o.v), x + 12, ly, {size: 9, weight: 700, dir: "ltr", align: "left"});
     });
   };
-  topCard(PR - half, C.topC, "أكبر العملاء اليوم", "المبيعات", P.ink);
-  topCard(PL, C.topS, "أكبر الموردين اليوم", "المشتريات", P.red);
+  if (hasTop) {
+    topCard(PR - half, C.topC, "أكبر العملاء اليوم", "المبيعات", P.ink);
+    topCard(PL, C.topS, "أكبر الموردين اليوم", "المشتريات", P.red);
+  }
   // status cards
-  const s3y = c2y + c2h + 10, sw = (PCW - 16) / 3, sh = 92;
+  const s3y = hasTop ? c2y + c2h + 10 : c2y, sw = (PCW - 16) / 3, sh = 84;
   const diff = r2(C.T.crec - C.cashSales), bad = C.checks.map((c, i) => [c, S.t.crec[i]]).filter(([c]) => c.state === "bad");
   const mt = r2(C.meth.reduce((a, m) => a + m.v, 0));
   const ts = S.t.sales.filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount)[0], tp = S.t.purch.filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount)[0];
@@ -1139,14 +1142,27 @@ function pdfPages(logoImg) {
     pRR(g, PR - 28, y, 28, 28, 7, P.red); pT(g, no, PR - 14, y + 14.5, {size: 15, weight: 800, color: "#FFFFFF", align: "center"});
     pT(g, title, PR - 37, y + 9, {size: 15, weight: 800, color: P.ink});
     pT(g, sub, PR - 37, y + 25, {size: 8.2, color: P.muted});
-    return y + 40;
+    return y + 36;
+  };
+  const startSection = (no, title, sub, need) => { if (y + 36 + need > PBOTTOM) { g = page(); y = miniHead(g); } else y += 6; y = sectionHead(g, y, no, title, sub); };
+  let empties = [];
+  const flushEmpties = () => {
+    if (!empties.length) return;
+    const txt = "لا توجد عمليات اليوم في: " + empties.join("، ");
+    if (y + 24 > PBOTTOM) { g = page(); y = miniHead(g); }
+    pRR(g, PL, y, PCW, 22, 6, "#F7F8FB", P.line, .7);
+    g.fillStyle = P.slate; g.fillRect(PR - 3, y + 4, 3, 14);
+    pT(g, txt, PR - 12, y + 11.5, {size: 8.4, weight: 600, color: P.muted, maxW: PCW - 110});
+    pT(g, "الإجمالي 0.00", PL + 12, y + 11.5, {size: 8.2, weight: 700, color: P.muted, align: "left"});
+    y += 30; empties = [];
   };
   const OPSCOLS = [["رقم المستند", 82, "doc"], [null, 160, "name"], ["طريقة الدفع", 66, "method"], ["المبلغ", 92, "amount"], [null, PCW - 400, "note"]];
   const CASHCOLS = [["رقم المستند", 82, "doc"], ["الاسم / العميل أو المورد", 178, "name"], ["المبلغ", 92, "amount"], ["الملاحظات", 92, "note"], ["التحقق مع المبيعات", PCW - 444, "chk"]];
   let y;
   const drawTable = (key, cols, labels, checks) => {
     const rows = S.t[key], cfg = TABLES[key], total = C.T[key];
-    const TH = 22, HH = 17, RH = 15.2, FH = 21;
+    if (!rows.length) { empties.push(cfg.title); return; }
+    const TH = 20, HH = 16, RH = 14.6, FH = 19;
     let segTop;
     const header = (cont) => {
       g.fillStyle = "#FFFFFF"; g.fillRect(PL, y, PCW, TH);
@@ -1191,18 +1207,19 @@ function pdfPages(logoImg) {
     pT(g, "المجموع", PR - 12, y + FH / 2 + .5, {size: 9.5, weight: 800, color: P.ink});
     const amtRight = PR - cols.slice(0, cols.findIndex(c => c[2] === "amount") + 1).reduce((a, c) => a + c[1], 0);
     pT(g, fmt(total), amtRight + 10, y + FH / 2 + .5, {size: 9.5, weight: 800, color: P.red, dir: "ltr", align: "left"});
-    y += FH; closeSeg(); y += 12;
+    y += FH; closeSeg(); y += 9;
   };
-  g = page(); y = miniHead(g);
-  y = sectionHead(g, y, "1", "العمليات اليومية", "المبيعات والمشتريات والمصروفات والسندات");
+  y = s3y + sh + 12;
+  startSection("1", "العمليات اليومية", "المبيعات والمشتريات والمصروفات والسندات", 90);
   for (const k of OPS) drawTable(k, OPSCOLS, [null, TABLES[k].cols[1], null, null, TABLES[k].cols[4]], []);
+  flushEmpties();
 
   /* ===== cash disclosure ===== */
-  g = page(); y = miniHead(g);
-  y = sectionHead(g, y, "2", "إفصاح الصندوق النقدي", "المقبوضات والمدفوعات النقدية ورصيد الصندوق مع التحقق الآلي مقابل المبيعات");
+  startSection("2", "إفصاح الصندوق النقدي", "المقبوضات والمدفوعات النقدية ورصيد الصندوق مع التحقق الآلي مقابل المبيعات", (S.t.crec.length || S.t.cpay.length) ? 90 : 170);
   drawTable("crec", CASHCOLS, [], C.checks);
   drawTable("cpay", CASHCOLS.slice(0, 4).concat([["", PCW - 444, "none"]]), [], []);
-  if (y + 150 > PBOTTOM) { g = page(); y = miniHead(g); }
+  flushEmpties();
+  if (y + 165 > PBOTTOM) { g = page(); y = miniHead(g); }
   const bw5 = (PCW - 32) / 5, boxes = [["رصيد سابق", C.prev, P.ink], ["+ المقبوضات النقدية", C.T.crec, P.green], ["− المدفوعات النقدية", C.T.cpay, P.orange], ["= صافي اليوم", C.net, P.red], ["الرصيد الحالي (ر.س)", C.cur, "#FFFFFF"]];
   boxes.forEach(([lab, v, col], i) => {
     const x = PR - (i + 1) * bw5 - i * 8, cur = i === 4;
@@ -1214,7 +1231,7 @@ function pdfPages(logoImg) {
   pRR(g, PL, y, PCW, 30, 7, "#F7F8FB"); g.fillStyle = P.gold; g.fillRect(PR - 3, y, 3, 30);
   pT(g, "ملاحظات", PR - 12, y + 15, {size: 8.5, weight: 800, color: P.ink});
   pT(g, "المبيعات والمشتريات والمصروفات قيم موجبة ومردوداتها قيم سالبة · المبالغ مدرجة مع الضريبة · الصندوق يُطابق آليًا مع فواتير المبيعات.", PR - 60, y + 15, {size: 7.6, color: P.muted, maxW: PCW - 72});
-  y += 70;
+  y += 54;
   const sgw = (PCW - 60) / 3;
   ["أمين الصندوق", "المحاسب", "مدير الفرع"].forEach((lab, i) => { const x = PR - (i + 1) * sgw - i * 30; g.fillStyle = "#B8C0CE"; g.fillRect(x, y, sgw, 1.2); pT(g, lab, x + sgw / 2, y + 12, {size: 8, weight: 600, color: P.muted, align: "center"}); });
 
@@ -1424,8 +1441,17 @@ function pdfPagesMobile(logoImg) {
   }
 
   /* section + list tables */
+  let mEmpty = [];
+  const mFlush = () => {
+    if (!mEmpty.length) return;
+    const lines = pWrap(g, "لا توجد عمليات اليوم في: " + mEmpty.join("، "), MCW - 30, 10, 600), h = 18 + lines.length * 16;
+    need(h + 10);
+    pRR(g, ML, y, MCW, h, 10, "#FFFFFF", P.line); g.fillStyle = P.slate; g.fillRect(MR - 4, y + 6, 4, h - 12);
+    lines.forEach((l, i) => pT(g, l, MR - 14, y + 17 + i * 16, {size: 10, weight: 600, color: P.muted}));
+    y += h + 12; mEmpty = [];
+  };
   const section = (no, title, sub) => {
-    newPage();
+    if (y + 48 + 120 > MBOTTOM) newPage(); else y += 6;
     pRR(g, MR - 34, y, 34, 34, 9, P.red); pT(g, no, MR - 17, y + 17.5, {size: 18, weight: 800, color: "#FFFFFF", align: "center"});
     pT(g, title, MR - 44, y + 11, {size: 18, weight: 800, color: P.ink});
     pT(g, sub, MR - 44, y + 29, {size: 9.5, color: P.muted, maxW: MCW - 50});
@@ -1433,6 +1459,7 @@ function pdfPagesMobile(logoImg) {
   };
   const listTable = (key, checks) => {
     const rows = S.t[key], cfg = TABLES[key], total = C.T[key], TH = 36, RH = 40, FH = 36;
+    if (!rows.length) { mEmpty.push(cfg.title); return; }
     let segTop;
     const head = cont => {
       g.beginPath(); g.roundRect(ML, y, MCW, TH, [10, 10, 0, 0]); g.fillStyle = P.ink; g.fill();
@@ -1471,9 +1498,11 @@ function pdfPagesMobile(logoImg) {
   };
   section("1", "العمليات اليومية", "المبيعات والمشتريات والمصروفات والسندات");
   for (const k of OPS) listTable(k, null);
+  mFlush();
   section("2", "إفصاح الصندوق النقدي", "المقبوضات والمدفوعات ورصيد الصندوق مع المطابقة الآلية");
   listTable("crec", C.checks);
   listTable("cpay", null);
+  mFlush();
 
   /* balance */
   need(180);
