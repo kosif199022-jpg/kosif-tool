@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">تيك بلاير</string>
+    <string name="tab_foryou">لك</string>
+    <string name="tab_mine">فيديوهاتي</string>
+    <string name="empty_mine">لا توجد فيديوهات بعد\nاضغط + لإضافة فيديوهات من جهازك</string>
+    <string name="comments">التعليقات</string>
+    <string name="add_comment">أضف تعليقاً…</string>
+    <string name="send">إرسال</string>
+    <string name="share_via">مشاركة عبر</string>
+</resources>

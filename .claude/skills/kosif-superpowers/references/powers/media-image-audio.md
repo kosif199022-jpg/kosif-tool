@@ -37,7 +37,7 @@
 - **ماذا / what:** إضافة arabic_reshaper وpython-bidi فوق محرك يشكّل بنفسه تقلب الكلمات وتفصل الحروف. — Adding arabic_reshaper + python-bidi on top of an engine that already shapes reverses the words and breaks the letters.
 - **متى أستخدمها / when:** old snippets with get_display(reshape(s)); text appears reversed
 - **كيف / how:** Rule: raw string for raqm/HarfBuzz engines (Pillow 12, matplotlib 3.11, browsers, LibreOffice, weasyprint); reshape + bidi only for reportlab or builds without raqm. Contact panel 4 shows both lines side by side.
-- **يحتاج / needs:** [`libreoffice`](../requirements.md#req-libreoffice) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:office`](../requirements.md#req-pip-office)
+- **يحتاج / needs:** [`libreoffice`](../requirements.md#req-libreoffice) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:office`](../requirements.md#req-pip-office) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-media/contact.png
 

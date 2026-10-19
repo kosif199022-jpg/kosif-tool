@@ -178,7 +178,8 @@
    "pip:pillow",
    "npm:remotion",
    "npm:hyperframes",
-   "fonts:arabic"
+   "fonts:arabic",
+   "pip:arabic-reshaper"
   ],
   "license": "",
   "proof": [
@@ -1803,7 +1804,8 @@
   "params": "title 8.5% short side; gradient 0.78·t²; q93",
   "install": "",
   "requires": [
-   "pip:pillow"
+   "pip:pillow",
+   "pip:arabic-reshaper"
   ],
   "license": "",
   "proof": [

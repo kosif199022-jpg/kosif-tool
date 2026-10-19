@@ -1,0 +1,271 @@
+{
+ "date": "2026-10-19",
+ "host": "Windows 11 x64, Node 24.21.0, REA 6.7.0 (npm, scratch folder), 7-Zip 26.03, innoextract 1.9",
+ "policy": "no installer, crack, patch or keygen was executed or opened; only byte reading, listing and extraction of installer payloads into scratch folders",
+ "runs": [
+  {
+   "command": "inspect-artifact",
+   "target": "Adobe Animate 2024 Set-up.exe (offline package stub)",
+   "output_sha256": "c4c00f426c765a87a942fff136a52341f9f6c044369940e0c8238d8c336290fb",
+   "output_bytes": 6889,
+   "status": "evidence",
+   "evidence_id": "ev_282ffb916c53da3eeb5ac7a37baa19c8c2539349ac44d72b2946da0b93fc8ed0",
+   "provider": "REA safe artifact graph provider",
+   "target_sha256": "37bafe751e9307c119b84d7247f7c1d6b5c63810f4ad67dfc8c1a6d1479bf4b2",
+   "note": ""
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "Adobe Animate 2024 Set-up.exe (offline package stub)",
+   "output_sha256": "f01966a3dc38aa8a77fc552aa7557e7d1e84bf94e2fab49c283b2b5018f28999",
+   "output_bytes": 49701,
+   "status": "evidence",
+   "evidence_id": "ev_fbce945ccf5b2be15bfb98888884dd1ee71509fac4d77d69c9d779ee3bcebca7",
+   "provider": "REA PE resource parser",
+   "target_sha256": "37bafe751e9307c119b84d7247f7c1d6b5c63810f4ad67dfc8c1a6d1479bf4b2",
+   "note": ""
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "Capture One 21 Setup.exe (Inno Setup)",
+   "output_sha256": "e19045e95a5ac5becfdb5c3a92d5a0841e1d131a4d9f26568a308eaa7385a1b6",
+   "output_bytes": 6885,
+   "status": "evidence",
+   "evidence_id": "ev_9143a452a7e7cc97368e845a7343f3e5022f31c7118aab24be06bc4918526eea",
+   "provider": "REA safe artifact graph provider",
+   "target_sha256": "54ff4714ecf952c20259e31bb096a5483c5f2c4711f3c7ee0f6d295b1fbb96cd",
+   "note": ""
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "Capture One 21 Setup.exe (Inno Setup)",
+   "output_sha256": "e831d289ed22fcb3aaeb9dbc8a80c7fd6f0056b5a38bba1cd96a8dd98db69cc2",
+   "output_bytes": 718,
+   "status": "resource_constraint",
+   "evidence_id": null,
+   "provider": null,
+   "target_sha256": null,
+   "note": "resource_constraint: file exceeds REA's 64 MiB PE budget; Inno payload invisible (triage: innoextract -l lists 6,164 files)"
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "DxO PhotoLab 4 Setup.exe (MSI+CAB in PE resources)",
+   "output_sha256": "c7e1b9154c0808a86065d7a3f504ee09920f73d33b8619440052af7aa47e6db4",
+   "output_bytes": 6955,
+   "status": "evidence",
+   "evidence_id": "ev_fabffc4beba73c733f3639f2012f38fc6d08c633abccccd9e7c294655dc95183",
+   "provider": "REA safe artifact graph provider",
+   "target_sha256": "061fe11d2738248011a76b2ee7c76a09a5e48f7b536d40e7f003e822c1f51ae0",
+   "note": ""
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "DxO PhotoLab 4 Setup.exe (MSI+CAB in PE resources)",
+   "output_sha256": "c133e8b038602acb51328c31370ea4c6b70ebf11af0f29c55f09c86bb4c2631b",
+   "output_bytes": 760,
+   "status": "resource_constraint",
+   "evidence_id": null,
+   "provider": null,
+   "target_sha256": null,
+   "note": "resource_constraint; payload is a 288 MB MSI + 211 MB CAB stored as .rsrc/1033/BIN/5100 and 5200 (found by the new resource walk)"
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "FontLab 7 installer (Inno Setup)",
+   "output_sha256": "77317f05847d38e087b169ded32adcc0280b0ba1a28d00d33741ddc66495c94f",
+   "output_bytes": 6947,
+   "status": "evidence",
+   "evidence_id": "ev_b7888389221885ffd011f4e819a1133c99770a91fcd09d33beddbe6a355018be",
+   "provider": "REA safe artifact graph provider",
+   "target_sha256": "adcbdf56b023286e24112ab68c1f477e849fed2fb8f82a3761a187a7ec6e058f",
+   "note": ""
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "FontLab 7 installer (Inno Setup)",
+   "output_sha256": "a26f6561c7def1d39234f85f1a51fc2ea5abc85388895edf8b7f6c62e31424f0",
+   "output_bytes": 740,
+   "status": "resource_constraint",
+   "evidence_id": null,
+   "provider": null,
+   "target_sha256": null,
+   "note": "resource_constraint; Inno payload (629 files: Qt5, PythonQt, FreeType, HarfBuzz)"
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "JPEGmini Pro.msi",
+   "output_sha256": "e47d7b07afbdf3827518f66a6f568d35db7f78a0666b57aea451b0e3e481f181",
+   "output_bytes": 491,
+   "status": "target_unavailable",
+   "evidence_id": null,
+   "provider": null,
+   "target_sha256": null,
+   "note": "unsupported_target: REA has no MSI/OLE reader; 7-Zip lists 69 files (.NET WPF app)"
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "JPEGmini Pro.msi",
+   "output_sha256": "996385b548aaaf9f4b16674ee02df079581000a58847938e0f37ce95f052ccb7",
+   "output_bytes": 351,
+   "status": "invalid_request",
+   "evidence_id": null,
+   "provider": null,
+   "target_sha256": null,
+   "note": "invalid_request: not a PE"
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "IDM 6.43 installer",
+   "output_sha256": "64c1e005db38aa95bea337939a6e76665fe0422c4693f3cc082410678f3a0768",
+   "output_bytes": 6815,
+   "status": "evidence",
+   "evidence_id": "ev_27a256451922308994942b5b25412579cce2c0ce7e1874171266800199fe3b04",
+   "provider": "REA safe artifact graph provider",
+   "target_sha256": "a902e77169a3e4d8a88ee2ccaab11d3d43ab209483625a3602438ed4a22bbfd9",
+   "note": ""
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "IDM 6.43 installer",
+   "output_sha256": "d71193395f65c52e0ed3dc41e5faf03c14f53d05d05e593cf126df24893c009a",
+   "output_bytes": 7740,
+   "status": "evidence",
+   "evidence_id": "ev_c91db68105690e9f1b511a18694f451bb130e6a8a56e2a0360744b13c0654b03",
+   "provider": "REA PE resource parser",
+   "target_sha256": "a902e77169a3e4d8a88ee2ccaab11d3d43ab209483625a3602438ed4a22bbfd9",
+   "note": ""
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "Affinity Designer 1.10 installer",
+   "output_sha256": "39c94ef698c65f9e06d34c6ad5f31568225a23628f7de34142eb86465b793c78",
+   "output_bytes": 6975,
+   "status": "evidence",
+   "evidence_id": "ev_9efc2699b6c99868c0bbb18c75e8642503128084689a63a984b09c44c5ca1464",
+   "provider": "REA safe artifact graph provider",
+   "target_sha256": "00c83a04703b0c9dd8c47b92df2cda7db25713122b50a48a1973dfcce509c94f",
+   "note": ""
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "Affinity Designer 1.10 installer",
+   "output_sha256": "c8c8f8625f0c87abc8ee14f1ba74e3efab471e01c43b7188b635622b17169c7b",
+   "output_bytes": 770,
+   "status": "resource_constraint",
+   "evidence_id": null,
+   "provider": null,
+   "target_sha256": null,
+   "note": "resource_constraint (546 MB); 7-Zip lists 4,489 files incl. libgeometry, libocio, libpsd, lens_correction_data.dat"
+  },
+  {
+   "command": "inspect-artifact",
+   "target": "Houdini 18.5 installer (NSIS, 1.88 GB)",
+   "output_sha256": "64644981cd47666d538cd228b2b46c5eba5c1df2f192654b157666898c5bde7a",
+   "output_bytes": 6975,
+   "status": "evidence",
+   "evidence_id": "ev_e597905cd52cec01275363ee17b4a5870254dc16c11f1b371be47b31e89a6134",
+   "provider": "REA safe artifact graph provider",
+   "target_sha256": "a9a380148688902bc6b193e7a7785b47f3fef26e9af7fdce1aa0707be48c664e",
+   "note": ""
+  },
+  {
+   "command": "inspect-pe-resources",
+   "target": "Houdini 18.5 installer (NSIS, 1.88 GB)",
+   "output_sha256": "04eb46381f4cec6812894f0b53bae2d83934960cc1c2783438504851fbd9c83a",
+   "output_bytes": 760,
+   "status": "resource_constraint",
+   "evidence_id": null,
+   "provider": null,
+   "target_sha256": null,
+   "note": "resource_constraint; 7-Zip lists 85,183 files (VEX, PDG, KineFX, HDA/OTL, Unreal/Maya engines)"
+  },
+  {
+   "command": "inspect-managed-artifact",
+   "target": "DxO.PhotoLab.Correction.ClearView.dll (extracted from its MSI, structure only)",
+   "output_sha256": "7707cadafe75595ff63ada517a53d35b20545ff74bc3cf5f4080283d0bfe1cac",
+   "output_bytes": 36919,
+   "status": "evidence",
+   "evidence_id": "ev_4d70f56b5dabc757fd3fd6e1dd42a7f1f121b25d1a64613c7a2b6135474e2efe",
+   "provider": "REA managed static analysis provider",
+   "target_sha256": "eb4359f2dd9ba6eb716ab7edaa71562588613c50e8df59b8e020055eb05a9e1f",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-members",
+   "target": "DxO.PhotoLab.Correction.ClearView.dll (extracted from its MSI, structure only)",
+   "output_sha256": "87d166f9eb1cea9d9c19b0954bd4aa3d924e2c224ec702276e71aec029102bfa",
+   "output_bytes": 243149,
+   "status": "evidence",
+   "evidence_id": "ev_bd3a945ffa18eea70e249120c746de29ba5f485d4ce808715a07fc26cae6610b",
+   "provider": "REA managed static analysis provider",
+   "target_sha256": "eb4359f2dd9ba6eb716ab7edaa71562588613c50e8df59b8e020055eb05a9e1f",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-artifact",
+   "target": "DxO.PhotoLab.Correction.Noise.dll (extracted from its MSI, structure only)",
+   "output_sha256": "12d1ad6f90498736a1c6cc863fb9280ae87b4ae2ad2e0d636e68f2ad6e6e3b86",
+   "output_bytes": 129410,
+   "status": "evidence",
+   "evidence_id": "ev_7b5f03e7ee80cea9b3a5a49a9bfbdc7038afb392e6e595b95b5e2635b1b84157",
+   "provider": "REA managed static analysis provider",
+   "target_sha256": "ee539c65768e2f881dedfa2d76ecd013816c2f3da07415651a9817183de841ba",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-members",
+   "target": "DxO.PhotoLab.Correction.Noise.dll (extracted from its MSI, structure only)",
+   "output_sha256": "b50c84078bb3b740aa5b575b02c2ef086cb2cb246536e86dd7d958038d6956bc",
+   "output_bytes": 1812262,
+   "status": "evidence",
+   "evidence_id": "ev_c519ece1532f13b9df5d08ee5c143aaa51a76320e9aaed62c31b398ebe29aff4",
+   "provider": "REA managed static analysis provider",
+   "target_sha256": "ee539c65768e2f881dedfa2d76ecd013816c2f3da07415651a9817183de841ba",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-artifact",
+   "target": "DxO.PhotoLab.Correction.Perspective.dll (extracted from its MSI, structure only)",
+   "output_sha256": "06f3763120f39e62a41743c44853fcb53c1bd4e9987df6c0dfd96196412592e4",
+   "output_bytes": 131383,
+   "status": "evidence",
+   "evidence_id": "ev_ad8521b5f9d26e4cd415d4a248f6b4ade8e08dcadc156b111fd72c74945451a1",
+   "provider": "REA managed static analysis provider",
+   "target_sha256": "0fec2ff0a805d07eff52156064a728e1626436a880c216a0226437094c61ca8e",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-members",
+   "target": "DxO.PhotoLab.Correction.Perspective.dll (extracted from its MSI, structure only)",
+   "output_sha256": "b1eaeca987dd1d9f15fc35e78d1fc490adacc1d6f55412c2d8838cc2a30023a8",
+   "output_bytes": 2116477,
+   "status": "evidence",
+   "evidence_id": "ev_40f5ba71fdfc257b20459cf18ed9e46443f3fdc6d134abfc6253979f25fc5738",
+   "provider": "REA managed static analysis provider",
+   "target_sha256": "0fec2ff0a805d07eff52156064a728e1626436a880c216a0226437094c61ca8e",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-artifact",
+   "target": "JPEGminiPro.exe (extracted from its MSI, structure only)",
+   "output_sha256": "5589b8ae953e44d19efbc4fe9c46df12cdcc4e99bfca7c12bc8ed2dede94f8dd",
+   "output_bytes": 581161,
+   "status": "evidence",
+   "evidence_id": "ev_63279b2d28404521694d49a84a23fcaabe6f163bb8693fbc263c548e8df6afc5",
+   "provider": "REA managed static analysis provider",
+   "target_sha256": "2d0576d3c6044d4d7b83e9ae009536d85ceac56ae8e4585f354933bdbac2e7ff",
+   "note": ""
+  },
+  {
+   "command": "inspect-managed-members",
+   "target": "JPEGminiPro.exe (extracted from its MSI, structure only)",
+   "output_sha256": "43e7156a949e1d210c398c1cb6d341fae3ec17241df4e92773033ed0c4c943a2",
+   "output_bytes": 20859135,
+   "status": "evidence",
+   "evidence_id": "ev_ee638088445160c4befc69a348ec275d0b785c03c1d900c2740f1c1d8111dc78",
+   "provider": "REA managed static analysis provider",
+   "target_sha256": "2d0576d3c6044d4d7b83e9ae009536d85ceac56ae8e4585f354933bdbac2e7ff",
+   "note": ""
+  }
+ ]
+}

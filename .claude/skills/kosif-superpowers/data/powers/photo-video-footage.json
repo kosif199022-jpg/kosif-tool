@@ -745,7 +745,8 @@
    "ffmpeg",
    "pip:opencv",
    "pip:scipy",
-   "pip:onnxruntime"
+   "pip:onnxruntime",
+   "model:yunet"
   ],
   "license": "",
   "proof": [

@@ -1111,6 +1111,236 @@
     ],
     "top_k": 8
    }
+  },
+  {
+   "id": 49,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عندي صورة مدينة فيها ضباب، شيله زي DxO ClearView",
+   "files": [],
+   "expected_behavior": [
+    "Uses the dark-channel dehaze recipe (APPX-31) and reports a measurable contrast or PSNR change"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 50,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "صغّر حجم صور المتجر زي JPEGmini من غير ما الجودة تبان",
+   "files": [],
+   "expected_behavior": [
+    "Binary-searches JPEG quality under an SSIM bound (APPX-39) and reports size saved and SSIM"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 51,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "build a small Arabic brand font with kerning like FontLab does",
+   "files": [],
+   "expected_behavior": [
+    "Builds the font with fontTools FontBuilder + feaLib kern (APPX-44), checks GPOS in the saved file"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 52,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حمّل ملف فيديو كبير على أجزاء ويكمل لو النت قطع زي IDM",
+   "files": [],
+   "expected_behavior": [
+    "Uses ranged parts with resume and a SHA-256 check (APPX-48) or aria2c -c"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 53,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "this Setup.exe is Inno Setup and REA sees nothing inside, what do I do",
+   "files": [],
+   "expected_behavior": [
+    "Runs installer_triage.py scan, then innoextract -l / unpack --authorized, then REA on the extracted files; never runs the installer"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX",
+     "REA"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 54,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عايز حركة كاميرا يدوية متأخرة شوية زي Lag في هوديني للموشن",
+   "files": [],
+   "expected_behavior": [
+    "Uses the CHOP-style lag/noise channel ops (APPX-46) with a time constant in seconds"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX",
+     "CAM"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 55,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "شيل احمرار العين من صورة الفرح دي",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py redeye (APPX-66) and reports pixels fixed"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 56,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عايز أشيل سلك من السما في الصورة زي Lightroom Remove",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py repair with a mask or box (APPX-67)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 57,
+   "lang": "en",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "find duplicate and near-duplicate photos in my folder like ACDSee",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py dedupe (dHash, APPX-75) and lists the groups"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 58,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حوّل الشعار ده من صورة لمتجه SVG",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py trace (k-means + contours, APPX-79)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 59,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "export a small Lottie animation of a ball moving with ease in-out",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py lottie (APPX-86) and checks the JSON frames"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 60,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل فهرس لمكتبة الصور وأبحث عن الصور اللي تقييمها 5 نجوم",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py catalog then search with min_rating (APPX-78)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

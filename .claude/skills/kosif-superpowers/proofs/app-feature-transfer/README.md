@@ -29,3 +29,38 @@
 | APPX-15 | EDL interchange + conform (Premiere) | 2 events conformed to 2.50 s |
 | APPX-16 | reverse + freeze frame (CapCut) | 3.0 s, first frame = source end |
 | APPX-17 | automatic cover pick (CapCut, Canva) | sharpest/most colourful frame saved |
+
+## Second batch — photo, type, vector, procedural, download (2026-10-19)
+
+<div dir="rtl">
+
+**ماذا يثبت:** `smoke_studio.py` يعيد بناء 20 ميزة من برامج الدفعة الثانية (DxO PhotoLab وCapture One وJPEGmini وFontLab وAffinity وHoudini وIDM وAnimate) بأدوات مفتوحة، ولكل ميزة شرط قابل للقياس: PSNR أو SSIM أو خطأ الزوايا بالبكسل أو قيمة التقنين في GPOS أو SHA-256 للتنزيل أو ترتيب المهام. النتيجة 20/20 (`results_studio.json`). أول تشغيل نجح فيه 16، وكانت الإخفاقات الأربعة أخطاء في الاختبارات نفسها: شكل مصفوفة HoughLinesP في OpenCV 4.12، وقيمة غير متسقة في الإعداد المسبق، وإدخال float إلى Mertens بدل 8-bit، وعتبة SSIM مطلقة على نسيج ضوضاء. أُصلحت كلها قبل منح ✅.
+
+**ما لا يثبته:** هذه ليست خوارزميات DxO (DeepPRIME وClearView Plus) ولا مقياس JPEGmini، بل طرق كلاسيكية منشورة (القناة الداكنة وNL-means وSSIM وHomography) تصل إلى نتيجة مقيسة مماثلة على بيانات اصطناعية.
+
+</div>
+
+| id | feature (seen in) | postcondition checked |
+|---|---|---|
+| APPX-31 | dehaze (DxO ClearView) | PSNR vs haze-free +4 dB, contrast ×2.5 |
+| APPX-32 | tiered denoise (DxO `NoiseRemovalMethod`) | PSNR noisy 23.2 → 30 dB |
+| APPX-33 | auto keystone (DxO Perspective `KeystoningAutoMode`) | corner error 1 px, restored PSNR 32 dB |
+| APPX-34 | lens distortion (DxO Distortion, Affinity lens data) | PSNR 21 → 34.5 dB |
+| APPX-35 | lateral CA (DxO ChromaticAberration) | channel scales recovered, PSNR 26 → 36 dB |
+| APPX-36 | WB + tone curve + HSL (DxO, Capture One presets) | channel-mean spread 43.9 → 0 |
+| APPX-37 | film grain + vignette (Capture One Presets60, DxO) | corner ×0.59, grain σ 7 |
+| APPX-38 | watermark (DxO Watermark) | 40% opacity within 0.2 levels |
+| APPX-39 | perceptual JPEG (JPEGmini) | 64% smaller within 0.01 SSIM of q95 |
+| APPX-40 | contact sheet (Capture One PrintTemplates) | 14 images → 2 PDF pages |
+| APPX-41 | versioned presets (Capture One Styles, DxO Compatibility.V*) | old schema migrates to the same pixels |
+| APPX-42 | XMP sidecar (Lightroom, ACDSee, DxO, Affinity libxmp) | rating, label, Arabic keyword read back |
+| APPX-43 | auto horizon (DxO Horizon, Capture One AutoCrop) | 3.49° found for 3.5°, residual 0.00° |
+| APPX-44 | font with kerning (FontLab) | TTF saved, GPOS kern A/V −80 |
+| APPX-45 | vector booleans (Affinity libgeometry, Houdini he_boolean) | areas exact, SVG written |
+| APPX-46 | CHOP-style channels (Houdini Lag/Noise/Cycle/Envelope) | lag reaches 63% at τ |
+| APPX-47 | task graph with cache (Houdini PDG) | rerun 0 tasks; one change reruns 2 |
+| APPX-48 | segmented resumable download (IDM) | 6 ranged parts, resume, SHA-256 match |
+| APPX-49 | tween, onion skin, sprite sheet (Animate) | keys hit, eased speed, 6×4 sheet + JSON |
+| APPX-50 | exposure fusion (DxO Smart Lighting) | clipped highlights 65% → 2.4% |
+
+Rerun: `python smoke_studio.py` (numpy, opencv-python, pillow, fontTools, shapely; the download check runs a local HTTP server on 127.0.0.1 only).

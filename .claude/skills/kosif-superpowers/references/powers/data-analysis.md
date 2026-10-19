@@ -128,7 +128,7 @@
 - **ماذا / what:** matplotlib 3.11 وPillow 12 يشكّلان العربية بأنفسهما؛ إضافة reshaper+bidi فوقهما تعكس النص. — matplotlib 3.11 and Pillow 12 shape Arabic themselves; adding reshaper+bidi on top reverses the text.
 - **متى أستخدمها / when:** before drawing any Arabic in matplotlib or Pillow; when you see reversed or unjoined Arabic
 - **كيف / how:** RAQM=getattr(matplotlib.ft2font,'__libraqm_version__',None); text = s if RAQM else get_display(arabic_reshaper.reshape(s)). For Pillow: PIL.features.check('raqm'). Proof: libraqm 0.10.5 in both wheels; mpl_arabic_modes.png shows raw (correct) vs reshaped (reversed).
-- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib)
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-data/mpl_arabic_modes.png
 
@@ -258,7 +258,7 @@
 - **متى أستخدمها / when:** per-city/area aggregation, distances, buffers; data feeding maps
 - **كيف / how:** gdf.to_crs(3857) before measuring metres; Transformer.from_crs(4326,3857,always_xy=True). The arsenal run gave Cairo lon 31.2 -> x 3,473,168 m.
 - **تثبيت / install:** `pip install geopandas shapely pyproj`
-- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:geopandas`](../requirements.md#req-pip-geopandas)
+- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:geopandas`](../requirements.md#req-pip-geopandas) · [`pip:shapely`](../requirements.md#req-pip-shapely)
 - **الرخصة / license:** BSD-3-Clause / MIT
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md`
 - **المصدر / source:** session-2026-10-16:general-arsenal.md

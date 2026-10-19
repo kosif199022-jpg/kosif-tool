@@ -45,3 +45,5 @@ REA_BIN=/path/to/node_modules/.bin/rea.cmd python scripts/rea_bridge.py run elec
 ```
 
 **What it does not prove:** runtime behaviour (all of this is static), or anything about the editors inside the two bootstrappers. Feature claims for CapCut and Premiere come from the vendors' own documentation; the open-tool recipes that rebuild them are proved separately in [../app-feature-transfer](../app-feature-transfer/README.md).
+
+**Second batch (2026-10-19):** DxO PhotoLab 4, Capture One 21, JPEGmini Pro, FontLab 7, Affinity Designer, Houdini 18.5, IDM and the Adobe Animate 2024 package: Inno Setup, MSI/CAB inside PE resources, encrypted RAR and Adobe offline-package detection added to `installer_triage.py`. See [BATCH_2026-10-19.md](BATCH_2026-10-19.md) and `runs_2026-10-19.json`.
