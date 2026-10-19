@@ -741,21 +741,14 @@ async function boot() {
 }
 if (!location.hash.startsWith("#print")) boot();
 
-/* ---------- Excel export (ExcelJS, same palette) ---------- */
-let excelReady = null;
-function loadExcel() {
-  if (window.ExcelJS) return Promise.resolve();
-  if (!excelReady) excelReady = new Promise((res, rej) => { const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"; s.onload = res; s.onerror = () => { excelReady = null; rej(); }; document.head.append(s); });
-  return excelReady;
-}
+/* ---------- Excel export (styled workbook built in-page, see XBook) ---------- */
 async function exportXlsx() {
   const btn = $("btnXlsx"); btn.disabled = true; const old = btn.textContent; btn.textContent = "جارٍ التجهيز…";
   try {
-    await loadExcel();
-    const buf = await buildWorkbook();
+    const buf = await exportStyledXlsx();
     const dl = window.claude && window.claude.use ? await window.claude.use("downloads").catch(() => null) : null;
-    if (!dl) { if (!framed) { directSave(`Daily-Report-${S.date}.xlsx`, new Blob([buf])); flash("تم تنزيل ملف Excel ✓"); } else flash("التنزيل غير متاح في هذا العرض. سجّل الدخول في Claude أو استخدم النسخة المستقلة."); return; }
-    await dl.save({filename: `التقرير اليومي الموحد ${dmy(S.date).replace(/\//g, "-")}.xlsx`, data: new Blob([buf])});
+    if (!dl) { if (!framed) { directSave(`Daily-Report-${S.date}.xlsx`, new Blob([buf], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})); flash("تم تنزيل ملف Excel ✓"); } else flash("التنزيل غير متاح في هذا العرض. سجّل الدخول في Claude أو استخدم النسخة المستقلة."); return; }
+    await dl.save({filename: `التقرير اليومي الموحد ${dmy(S.date).replace(/\//g, "-")}.xlsx`, data: new Blob([buf], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})});
     flash("تم تجهيز ملف Excel ✓");
   } catch (e) {
     if (e && e.code === "declined") flash("أُلغي التنزيل");
@@ -764,245 +757,6 @@ async function exportXlsx() {
   } finally { btn.disabled = false; btn.textContent = old; }
 }
 function flash(t) { $("toastText").textContent = t; $("toastBtn").hidden = true; $("toast").hidden = false; clearTimeout(flash.t); flash.t = setTimeout(() => { $("toast").hidden = true; $("toastBtn").hidden = false; }, 3500); }
-
-async function buildWorkbook() {
-  const C = calc();
-  const X = ExcelJS, wb = new X.Workbook(); wb.creator = "التقرير اليومي الموحد"; wb.calcProperties.fullCalcOnLoad = true;
-  const A = h => ({argb: "FF" + h.replace("#", "")});
-  const FONT = "Cairo";
-  const font = (size = 10, bold = false, color = "1A1F2B") => ({name: FONT, size, bold, color: A(color)});
-  const fill = h => ({type: "pattern", pattern: "solid", fgColor: A(h)});
-  const al = (h = "center", extra = {}) => ({horizontal: h, vertical: "middle", readingOrder: "rtl", ...extra});
-  const thin = h => ({style: "thin", color: A(h)});
-  const NUM = '#,##0.00;[Red]-#,##0.00;"-"';
-  const OPSN = "'العمليات اليومية'", CASHN = "'الصندوق النقدي'";
-  const logoId = wb.addImage({base64: LOGO, extension: "png"});
-  const view = {rightToLeft: true, showGridLines: false, zoomScale: 100};
-  const dash = wb.addWorksheet("ملخص اليوم", {views: [view], properties: {tabColor: A("C1121F")}, pageSetup: {paperSize: 9, orientation: "portrait", fitToPage: true, fitToWidth: 1, fitToHeight: 1}});
-  const ops = wb.addWorksheet("العمليات اليومية", {views: [view], properties: {tabColor: A("14213D")}, pageSetup: {paperSize: 9, fitToPage: true, fitToWidth: 1, fitToHeight: 0}});
-  const cash = wb.addWorksheet("الصندوق النقدي", {views: [view], properties: {tabColor: A("E9A100")}, pageSetup: {paperSize: 9, fitToPage: true, fitToWidth: 1, fitToHeight: 1}});
-  const set = (ws, ref, value, st = {}) => { const c = ws.getCell(ref); c.value = value; if (st.font) c.font = st.font; if (st.fill) c.fill = st.fill; c.alignment = st.al || al(); if (st.num) c.numFmt = st.num; if (st.border) c.border = st.border; return c; };
-  const paint = (ws, r1, c1, r2, c2, f) => { for (let r = r1; r <= r2; r++) for (let c = c1; c <= c2; c++) ws.getCell(r, c).fill = f; };
-  const colL = n => String.fromCharCode(64 + n);
-  const methodFill = {"اجل": ["E3E6ED", "14213D"], "شبكة": ["DCEEF1", "2A7F8F"], "نقدا": ["FDF0CC", "8A6100"], "تحويل": ["E8E5FC", "5B4BD6"], "على الحساب": ["FCE3E5", "C1121F"]};
-  const mini = (ws, lastCol, sub) => {
-    ws.getRow(2).height = 34; paint(ws, 2, 2, 2, lastCol, fill("14213D"));
-    ws.mergeCells(2, 2, 2, 4); set(ws, "B2", "شركة الشبح المتقدمة للتجارة", {font: font(13, true, "FFFFFF"), al: al("right", {indent: 1})});
-    set(ws, colL(lastCol - 1) + "2", sub, {font: font(9, false, "C9D3E8"), al: al("left")});
-    ws.getCell(2, lastCol).fill = fill("FFFFFF");
-    ws.addImage(logoId, {tl: {col: lastCol - 1 + 0.15, row: 1.12}, ext: {width: 96, height: 40}});
-    ws.getRow(3).height = 10; ws.getRow(4).height = 34;
-  };
-  const section = (ws, row, no, title, sub, lastCol) => {
-    set(ws, "A" + row, no, {font: font(15, true, "FFFFFF"), fill: fill("C1121F")});
-    ws.mergeCells(row, 2, row, lastCol); set(ws, "B" + row, title, {font: font(17, true, "14213D"), al: al("right", {indent: 1})});
-    ws.mergeCells(row + 1, 2, row + 1, lastCol); set(ws, "B" + (row + 1), sub, {font: font(9, false, "5B6474"), al: al("right", {indent: 1})});
-  };
-
-  /* ----- operations ----- */
-  ops.columns = [{width: 5}, {width: 18}, {width: 28}, {width: 14}, {width: 17}, {width: 19}, {width: 3}];
-  mini(ops, 6, `التقرير اليومي الموحّد · ${dmy(S.date)}`);
-  section(ops, 4, 1, "العمليات اليومية", "المبيعات والمشتريات والمصروفات والسندات · عمود طريقة الدفع قائمة منسدلة", 6);
-  let r = 7; const R = {};
-  for (const k of OPS) {
-    const cfg = TABLES[k], rows = S.t[k];
-    ops.getRow(r).height = 26; paint(ops, r, 2, r, 6, fill("14213D"));
-    ops.mergeCells(r, 2, r, 4); set(ops, "B" + r, cfg.title, {font: font(12, true, "FFFFFF"), al: al("right", {indent: 1})});
-    ops.mergeCells(r, 5, r, 6); r++;
-    const titleRow = r - 1;
-    ops.getRow(r).height = 22;
-    ["رقم المستند", cfg.cols[1], "طريقة الدفع", "المبلغ", cfg.cols[4]].forEach((h, i) => set(ops, colL(2 + i) + r, h, {font: font(9, true, "33415C"), fill: fill("EEF2F8")}));
-    r++;
-    const a = r;
-    const all = [...rows, ...Array(4).fill(null)];
-    all.forEach((x, i) => {
-      const z = fill(x && x.amount < 0 ? "FDEEEE" : (i % 2 ? "FAFBFD" : "FFFFFF"));
-      const b = {bottom: thin("F0F2F6")};
-      set(ops, "B" + r, x ? x.doc : null, {font: font(9.5, true, "33415C"), fill: z, border: b});
-      set(ops, "C" + r, x ? x.name : null, {font: font(10), fill: z, border: b, al: al("right", {indent: 1})});
-      const mf = x && methodFill[x.method];
-      set(ops, "D" + r, x ? x.method : null, {font: mf ? font(9, true, mf[1]) : font(9), fill: mf ? fill(mf[0]) : z, border: b});
-      ops.getCell("D" + r).dataValidation = {type: "list", allowBlank: true, formulae: ['"اجل,شبكة,نقدا,تحويل,على الحساب"']};
-      set(ops, "E" + r, x ? x.amount : null, {font: font(10, true, x && x.amount < 0 ? "C1121F" : "1A1F2B"), fill: z, border: b, num: NUM, al: al("left", {indent: 1})});
-      set(ops, "F" + r, x ? x.note : null, {font: font(9, false, "5B6474"), fill: z, border: b});
-      r++;
-    });
-    const b2 = r - 1;
-    ops.getRow(r).height = 24;
-    paint(ops, r, 2, r, 6, fill("FFF6DC"));
-    for (let c = 2; c <= 6; c++) ops.getCell(r, c).border = {top: {style: "medium", color: A("14213D")}};
-    ops.mergeCells(r, 2, r, 4); set(ops, "B" + r, "المجموع", {font: font(11, true, "14213D"), fill: fill("FFF6DC"), al: al("right", {indent: 1}), border: {top: {style: "medium", color: A("14213D")}}});
-    set(ops, "E" + r, {formula: `SUM(E${a}:E${b2})`, result: C.T[k]}, {font: font(11, true, "C1121F"), fill: fill("FFF6DC"), num: NUM, al: al("left", {indent: 1}), border: {top: {style: "medium", color: A("14213D")}}});
-    set(ops, "E" + titleRow, {formula: `COUNT(E${a}:E${b2})&" عملية · الإجمالي "&TEXT(E${r},"#,##0.00")`, result: `${rows.length} عملية · الإجمالي ${fmt(C.T[k])}`}, {font: font(9, false, "C9D3E8"), fill: fill("14213D"), al: al("left", {indent: 1})});
-    R[k] = {a, b: b2, tot: `${OPSN}!$E$${r}`, amt: `${OPSN}!$E$${a}:$E$${b2}`, meth: `${OPSN}!$D$${a}:$D$${b2}`, ids: `${OPSN}!$B$${a}:$B$${b2}`, names: `${OPSN}!$C$${a}:$C$${b2}`};
-    r += 2;
-  }
-
-  /* ----- cash ----- */
-  cash.columns = [{width: 5}, {width: 17}, {width: 30}, {width: 16}, {width: 20}, {width: 20}, {width: 3}];
-  mini(cash, 6, `إفصاح الصندوق · ${dmy(S.date)}`);
-  section(cash, 4, 2, "إفصاح الصندوق النقدي", "المقبوضات والمدفوعات النقدية ورصيد الصندوق مع التحقق الآلي مقابل المبيعات", 6);
-  r = 7; const CR = {};
-  for (const k of CASH) {
-    const cfg = TABLES[k], rows = S.t[k];
-    cash.getRow(r).height = 26; paint(cash, r, 2, r, 6, fill("14213D"));
-    cash.mergeCells(r, 2, r, 4); set(cash, "B" + r, cfg.title, {font: font(12, true, "FFFFFF"), al: al("right", {indent: 1})});
-    const titleRow = r; cash.mergeCells(r, 5, r, 6); r++;
-    ["رقم المستند", "الاسم / العميل أو المورد", "المبلغ", "الملاحظات", k === "crec" ? "التحقق مع المبيعات" : ""].forEach((h, i) => set(cash, colL(2 + i) + r, h, {font: font(9, true, "33415C"), fill: fill("EEF2F8")}));
-    r++;
-    const a = r, all = [...rows, ...Array(3).fill(null)];
-    all.forEach((x, i) => {
-      const z = fill(i % 2 ? "FAFBFD" : "FFFFFF"), b = {bottom: thin("F0F2F6")};
-      set(cash, "B" + r, x ? x.doc : null, {font: font(9.5, true, "33415C"), fill: z, border: b});
-      set(cash, "C" + r, x ? x.name : null, {font: font(10), fill: z, border: b, al: al("right", {indent: 1})});
-      set(cash, "D" + r, x ? x.amount : null, {font: font(10, true), fill: z, border: b, num: NUM, al: al("left", {indent: 1})});
-      set(cash, "E" + r, x ? x.note : null, {font: font(9, false, "5B6474"), fill: z, border: b});
-      if (k === "crec") {
-        const ck = x ? C.checks[i] : null;
-        const res = !x ? "" : ck.state === "ok" ? "✓ مطابق" : ck.state === "bad" ? "⚠ فرق " + ck.d.toFixed(2) : "—";
-        const f = `IF(OR(B${r}="",D${r}=""),"",IFERROR(IF(ABS(D${r}-INDEX(${R.sales.amt},MATCH(B${r},${R.sales.ids},0)))<0.005,"✓ مطابق","⚠ فرق "&TEXT(D${r}-INDEX(${R.sales.amt},MATCH(B${r},${R.sales.ids},0)),"0.00")),"—"))`;
-        const good = res.startsWith("✓"), badc = res.startsWith("⚠");
-        set(cash, "F" + r, {formula: f, result: res}, {font: font(9, true, good ? "1E7B45" : badc ? "C1121F" : "A9B1C0"), fill: good ? fill("ECF8F1") : badc ? fill("FDEEEE") : z, border: b});
-      } else set(cash, "F" + r, null, {fill: z, border: b});
-      r++;
-    });
-    const b2 = r - 1; cash.getRow(r).height = 24; paint(cash, r, 2, r, 6, fill("FFF6DC"));
-    for (let c = 2; c <= 6; c++) cash.getCell(r, c).border = {top: {style: "medium", color: A("14213D")}};
-    cash.mergeCells(r, 2, r, 3); set(cash, "B" + r, "المجموع", {font: font(11, true, "14213D"), fill: fill("FFF6DC"), al: al("right", {indent: 1}), border: {top: {style: "medium", color: A("14213D")}}});
-    set(cash, "D" + r, {formula: `SUM(D${a}:D${b2})`, result: C.T[k]}, {font: font(11, true, "C1121F"), fill: fill("FFF6DC"), num: NUM, al: al("left", {indent: 1}), border: {top: {style: "medium", color: A("14213D")}}});
-    set(cash, "E" + titleRow, {formula: `COUNT(D${a}:D${b2})&" عملية · الإجمالي "&TEXT(D${r},"#,##0.00")`, result: `${rows.length} عملية · الإجمالي ${fmt(C.T[k])}`}, {font: font(9, false, "C9D3E8"), fill: fill("14213D"), al: al("left", {indent: 1})});
-    CR[k] = {tot: `$D$${r}`, a, b: b2}; r += 2;
-  }
-  // balance boxes
-  const bl = r, bv = r + 1;
-  cash.getRow(bl).height = 20; cash.getRow(bv).height = 30;
-  const boxes = [["B", "رصيد سابق", C.prev, null, "14213D"], ["C", "+ المقبوضات النقدية", `${CR.crec.tot}`, C.T.crec, "1E7B45"], ["D", "− المدفوعات النقدية", `${CR.cpay.tot}`, C.T.cpay, "D9822B"], ["E", "= صافي اليوم", `C${bv}-D${bv}`, C.net, "C1121F"], ["F", "الرصيد الحالي (ر.س)", `B${bv}+E${bv}`, C.cur, "FFFFFF"]];
-  for (const [c, lab, f, res, col] of boxes) {
-    const curBox = c === "F", bg = curBox ? "14213D" : "FFFFFF", bd = {top: thin("E3E7EF"), bottom: thin("E3E7EF"), left: thin("E3E7EF"), right: thin("E3E7EF")};
-    set(cash, c + bl, lab, {font: font(9, true, curBox ? "C9D3E8" : "5B6474"), fill: fill(bg), border: bd});
-    set(cash, c + bv, res === null ? f : {formula: f, result: res}, {font: font(curBox ? 14 : 12, true, col), fill: fill(c === "B" ? "FFF6DC" : bg), num: NUM, border: bd});
-  }
-  cash.getCell("B" + bv).note = "رصيد إفصاح اليوم السابق — يُكتب يدويًا";
-  r = bv + 2;
-  cash.mergeCells(r, 2, r, 6); set(cash, "B" + r, "ملاحظات · المبالغ مدرجة مع الضريبة · عمود «التحقق مع المبيعات» يقارن كل مقبوض نقدي بفاتورته تلقائيًا · خانة الرصيد السابق (المظللة) تُكتب يدويًا.", {font: font(9, false, "5B6474"), fill: fill("F7F8FB"), al: al("right", {indent: 1, wrapText: true}), border: {right: {style: "thick", color: A("E9A100")}}});
-  cash.getRow(r).height = 30;
-  r += 3; [["B", "أمين الصندوق"], ["D", "المحاسب"], ["F", "مدير الفرع"]].forEach(([c, l]) => { set(cash, c + r, l, {font: font(9, true, "5B6474")}); cash.getCell(c + (r - 1)).border = {bottom: {style: "thin", color: A("B8C0CE")}}; });
-  const CASHREF = {rec: `${CASHN}!${CR.crec.tot}`, pay: `${CASHN}!${CR.cpay.tot}`, prev: `${CASHN}!$B$${bv}`, net: `${CASHN}!$E$${bv}`, cur: `${CASHN}!$F$${bv}`, chk: `${CASHN}!$F$${CR.crec.a}:$F$${CR.crec.b}`};
-
-  /* ----- dashboard ----- */
-  dash.columns = [{width: 2}, ...Array(10).fill({width: 12.6}), {width: 2}];
-  for (let rr = 1; rr <= 42; rr++) { dash.getRow(rr).height = 19; for (let c = 1; c <= 12; c++) dash.getCell(rr, c).fill = fill("F3F5F9"); }
-  const box = (c1, r1, c2, r2, bg = "FFFFFF", line = "E3E7EF", top = null) => {
-    for (let rr = r1; rr <= r2; rr++) for (let c = c1; c <= c2; c++) {
-      const cell = dash.getCell(rr, c); cell.fill = fill(bg);
-      cell.border = {top: rr === r1 ? (top ? {style: "thick", color: A(top)} : thin(line)) : undefined, bottom: rr === r2 ? thin(line) : undefined, right: c === c1 ? thin(line) : undefined, left: c === c2 ? thin(line) : undefined};
-    }
-  };
-  // hero
-  for (let rr = 2; rr <= 4; rr++) paint(dash, rr, 2, rr, 11, fill("14213D"));
-  dash.getRow(2).height = 40; dash.getRow(3).height = 22; dash.getRow(4).height = 30;
-  dash.mergeCells("B2:H2"); set(dash, "B2", "شركة الشبح المتقدمة للتجارة", {font: font(20, true, "FFFFFF"), fill: fill("14213D"), al: al("right", {indent: 1})});
-  dash.mergeCells("B3:H3"); set(dash, "B3", "التقرير اليومي الموحّد · العمليات وإفصاح الصندوق النقدي", {font: font(10, false, "C9D3E8"), fill: fill("14213D"), al: al("right", {indent: 1})});
-  paint(dash, 2, 9, 3, 11, fill("FFFFFF"));
-  dash.addImage(logoId, {tl: {col: 8.35, row: 1.15}, ext: {width: 150, height: 66}});
-  const chipL = (ref, t) => set(dash, ref, t, {font: font(9, true, "E9A100"), fill: fill("14213D"), al: al("left", {indent: 1})});
-  const chipV = (ref, v, num) => set(dash, ref, v, {font: font(9, true, "FFFFFF"), fill: fill("14213D"), al: al("right"), num});
-  const [yy, mm, dd] = S.date.split("-").map(Number);
-  chipL("B4", "التاريخ"); chipV("C4", new Date(Date.UTC(yy, mm - 1, dd)), "dd/mm/yyyy");
-  chipL("D4", "اليوم"); chipV("E4", {formula: 'CHOOSE(WEEKDAY(C4),"الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت")', result: dayName(S.date)});
-  chipL("F4", "الفرع"); chipV("G4", "الرياض"); chipL("H4", "العملة"); dash.mergeCells("I4:K4"); chipV("I4", "ريال سعودي شامل الضريبة");
-  dash.getRow(5).height = 5; for (let c = 2; c <= 11; c++) dash.getCell(5, c).fill = fill(c < 5 ? "E9A100" : c < 9 ? "C1121F" : "14213D");
-  dash.getRow(6).height = 10;
-  // KPIs
-  const KP = [["المبيعات", "sales", "14213D"], ["المشتريات", "purch", "C1121F"], ["المصروفات", "exp", "E9A100"], ["سندات التحصيل", "rec", "2A7F8F"], ["سندات الدفع", "pay", "8D99AE"]];
-  const grandF = KP.map(([, k]) => R[k].tot).join("+");
-  KP.forEach(([lab, k, col], i) => {
-    const c1 = 2 + 2 * i, c2 = c1 + 1, L1 = colL(c1), L2 = colL(c2);
-    box(c1, 7, c2, 10, "FFFFFF", "E3E7EF", col);
-    set(dash, L1 + 7, lab, {font: font(9, true, "5B6474"), al: al("right", {indent: 1})});
-    const n = S.t[k].filter(x => typeof x.amount === "number").length, share = C.grand ? C.T[k] / C.grand : 0;
-    set(dash, L2 + 7, {formula: `COUNT(${R[k].amt})&" عملية"`, result: `${n} عملية`}, {font: font(8, true, "5B6474"), al: al("left", {indent: 1})});
-    dash.mergeCells(8, c1, 8, c2); set(dash, L1 + 8, {formula: R[k].tot, result: C.T[k]}, {font: font(15, true, "14213D"), num: NUM, al: al("right", {indent: 1})});
-    dash.mergeCells(9, c1, 9, c2); set(dash, L1 + 9, {formula: `REPT("▬",MAX(1,ROUND(IF(($I$12)=0,0,${R[k].tot}/$I$12)*22,0)))`, result: "▬".repeat(Math.max(1, Math.round(share * 22)))}, {font: font(9, true, col), al: al("right", {indent: 1})});
-    dash.mergeCells(10, c1, 10, c2); set(dash, L1 + 10, {formula: `TEXT(IF($I$12=0,0,${R[k].tot}/$I$12),"0.00%")&" من المجموع"`, result: (share * 100).toFixed(2) + "% من المجموع"}, {font: font(8, false, "5B6474"), al: al("right", {indent: 1})});
-  });
-  dash.getRow(8).height = 30; dash.getRow(9).height = 12; dash.getRow(11).height = 8;
-  box(2, 12, 11, 12, "FFF6DC", "F2DFA6"); dash.getRow(12).height = 32;
-  const cnt = OPS.reduce((a, k) => a + S.t[k].filter(x => typeof x.amount === "number").length, 0);
-  dash.mergeCells("B12:E12"); set(dash, "B12", {formula: `"مجموع العمليات · "&(${KP.map(([, k]) => `COUNT(${R[k].amt})`).join("+")})&" عملية"`, result: `مجموع العمليات · ${cnt} عملية`}, {font: font(11, true, "14213D"), fill: fill("FFF6DC"), al: al("right", {indent: 1})});
-  dash.mergeCells("I12:K12"); set(dash, "I12", {formula: grandF, result: C.grand}, {font: font(16, true, "C1121F"), fill: fill("FFF6DC"), num: NUM, al: al("left", {indent: 1})});
-  dash.getRow(13).height = 10;
-  const cardTitle = (c1, c2, row, title, sub, subRes) => {
-    const split = c2 - 1;
-    dash.mergeCells(row, c1, row, split - 1);
-    dash.getCell(row, c1).value = {richText: [{text: "▍ ", font: {name: FONT, size: 13, bold: true, color: A("C1121F")}}, {text: title, font: {name: FONT, size: 11, bold: true, color: A("14213D")}}]};
-    dash.getCell(row, c1).alignment = al("right", {indent: 1});
-    dash.mergeCells(row, split, row, c2);
-    set(dash, colL(split) + row, sub ? {formula: sub, result: subRes} : subRes, {font: font(8, false, "5B6474"), al: al("left", {indent: 1})});
-    dash.getRow(row).height = 26;
-  };
-  // payment methods card
-  box(2, 14, 6, 21); cardTitle(2, 6, 14, "المبيعات حسب طريقة الدفع", `"صافي "&TEXT(${R.sales.tot},"#,##0.00")`, "صافي " + fmt(C.T.sales));
-  C.meth.forEach((m, i) => {
-    const rr = 15 + i; dash.getRow(rr).height = 21;
-    dash.getCell("B" + rr).value = {richText: [{text: "● ", font: {name: FONT, size: 11, bold: true, color: A(m.color)}}, {text: m.label, font: {name: FONT, size: 10, bold: true, color: A("1A1F2B")}}]};
-    dash.getCell("B" + rr).alignment = al("right", {indent: 1});
-    set(dash, "C" + rr, {formula: `COUNTIF(${R.sales.meth},"${m.key}")&" فاتورة"`, result: `${m.n} فاتورة`}, {font: font(8, false, "5B6474"), al: al("right")});
-    set(dash, "D" + rr, {formula: `SUMIF(${R.sales.meth},"${m.key}",${R.sales.amt})`, result: m.v}, {font: font(10, true, m.v < 0 ? "C1121F" : "1A1F2B"), num: NUM, al: al("left", {indent: 1})});
-    set(dash, "E" + rr, {formula: `REPT("▬",MAX(0,ROUND(IF(${R.sales.tot}=0,0,D${rr}/${R.sales.tot})*12,0)))`, result: "▬".repeat(Math.max(0, Math.round((C.T.sales ? m.v / C.T.sales : 0) * 12)))}, {font: font(9, true, m.color.replace("#", "")), al: al("right")});
-    set(dash, "F" + rr, {formula: `IF(${R.sales.tot}=0,0,D${rr}/${R.sales.tot})`, result: C.T.sales ? m.v / C.T.sales : 0}, {font: font(8, false, "5B6474"), num: '0.0%'});
-  });
-  // cash card
-  box(7, 14, 11, 21); cardTitle(7, 11, 14, "حركة الصندوق النقدي", `"صافي اليوم "&TEXT(${CASHREF.net},"#,##0.00")`, "صافي اليوم " + fmt(C.net));
-  const cm = [["G", "رصيد سابق", CASHREF.prev, C.prev, "14213D"], ["H", "+ المقبوضات", CASHREF.rec, C.T.crec, "1E7B45"], ["I", "− المدفوعات", CASHREF.pay, C.T.cpay, "D9822B"]];
-  dash.getRow(16).height = 20; dash.getRow(17).height = 28;
-  for (const [c, l, f, v, col] of cm) { set(dash, c + 16, l, {font: font(8, true, "5B6474")}); set(dash, c + 17, {formula: f, result: v}, {font: font(11, true, col), num: NUM}); }
-  paint(dash, 16, 10, 17, 11, fill("14213D"));
-  dash.mergeCells("J16:K16"); set(dash, "J16", "الرصيد الحالي", {font: font(8, true, "C9D3E8"), fill: fill("14213D")});
-  dash.mergeCells("J17:K17"); set(dash, "J17", {formula: CASHREF.cur, result: C.cur}, {font: font(13, true, "FFFFFF"), fill: fill("14213D"), num: NUM});
-  set(dash, "G19", "= صافي اليوم", {font: font(8, true, "5B6474")}); set(dash, "H19", {formula: CASHREF.net, result: C.net}, {font: font(11, true, "C1121F"), num: NUM});
-  // top lists (snapshot of the day at export time)
-  const topCard = (c1, c2, list, title, who, color, total) => {
-    box(c1, 23, c2, 29);
-    const t5 = list.slice(0, 5), pos = list.reduce((a, [, o]) => a + o.v, 0) || 1, m = t5.length ? t5[0][1].v : 1;
-    cardTitle(c1, c2, 23, title, null, t5.length ? `أعلى ${t5.length} = ${Math.round(t5.reduce((a, [, o]) => a + o.v, 0) / pos * 100)}% من ${who}` : "");
-    t5.forEach(([name, o], i) => {
-      const rr = 24 + i; dash.getRow(rr).height = 21;
-      dash.mergeCells(rr, c1, rr, c1 + 1); set(dash, colL(c1) + rr, `${name}  (${o.n})`, {font: font(9.5, true), al: al("right", {indent: 1})});
-      set(dash, colL(c1 + 2) + rr, "▬".repeat(Math.max(1, Math.round(o.v / m * 11))), {font: font(9, true, i === 0 ? color : "B9C2D3"), al: al("right")});
-      dash.mergeCells(rr, c1 + 3, rr, c2); set(dash, colL(c1 + 3) + rr, r2(o.v), {font: font(10, true), num: NUM, al: al("left", {indent: 1})});
-    });
-  };
-  dash.getRow(22).height = 10;
-  topCard(2, 6, C.topC, "أكبر العملاء اليوم", "المبيعات", "14213D");
-  topCard(7, 11, C.topS, "أكبر الموردين اليوم", "المشتريات", "C1121F");
-  // status cards (live formulas)
-  dash.getRow(30).height = 10;
-  const diffF = `(${CASHREF.rec}-SUMIF(${R.sales.meth},"نقدا",${R.sales.amt}))`, diffV = r2(C.T.crec - C.cashSales);
-  const ok1 = Math.abs(diffV) < 0.005;
-  box(2, 31, 4, 35, ok1 ? "ECF8F1" : "FDEEEE", ok1 ? "BFE3CD" : "F2C4C4");
-  dash.mergeCells("B31:D31"); set(dash, "B31", {formula: `IF(ABS${diffF}<0.005,"✓  الصندوق مطابق للمبيعات النقدية","!  فرق في مطابقة الصندوق: "&TEXT(${diffF},"0.00"))`, result: ok1 ? "✓  الصندوق مطابق للمبيعات النقدية" : "!  فرق في مطابقة الصندوق: " + diffV.toFixed(2)}, {font: font(10, true, ok1 ? "175C35" : "8A1C12"), al: al("right", {indent: 1})});
-  const firstBad = C.checks.findIndex(c => c.state === "bad");
-  const st1 = [["مبيعات نقدية (التقرير)", `SUMIF(${R.sales.meth},"نقدا",${R.sales.amt})`, C.cashSales, NUM], ["مقبوضات الصندوق", CASHREF.rec, C.T.crec, NUM],
-    ["فاتورة بها فرق", `IFERROR(INDEX(${CASHN}!$B$${CR.crec.a}:$B$${CR.crec.b},MATCH("⚠*",${CASHREF.chk},0)),"لا يوجد")`, firstBad >= 0 ? S.t.crec[firstBad].doc : "لا يوجد", null],
-    ["عدد الفروقات", `COUNTIF(${CASHREF.chk},"⚠*")`, C.checks.filter(c => c.state === "bad").length, null]];
-  st1.forEach(([l, f, v, num], i) => { const rr = 32 + i; dash.mergeCells(rr, 2, rr, 3); set(dash, "B" + rr, l, {font: font(9, false, "5B6474"), al: al("right", {indent: 1})}); set(dash, "D" + rr, {formula: f, result: v}, {font: font(9, true), num}); });
-  const mt = r2(C.meth.reduce((a, m) => a + m.v, 0)), msF = "(" + METHODS.map(([k]) => `SUMIF(${R.sales.meth},"${k}",${R.sales.amt})`).join("+") + ")", ok2 = Math.abs(mt - C.T.sales) < 0.005;
-  box(5, 31, 7, 34, ok2 ? "ECF8F1" : "FDEEEE", ok2 ? "BFE3CD" : "F2C4C4");
-  dash.mergeCells("E31:G31"); set(dash, "E31", {formula: `IF(ABS(${msF}-${R.sales.tot})<0.005,"✓  طرق الدفع مكتملة","!  مبيعات بدون طريقة دفع")`, result: ok2 ? "✓  طرق الدفع مكتملة" : "!  مبيعات بدون طريقة دفع"}, {font: font(10, true, ok2 ? "175C35" : "8A1C12"), al: al("right", {indent: 1})});
-  [["مجموع الطرق", msF.slice(1, -1), mt], ["إجمالي المبيعات", R.sales.tot, C.T.sales], ["الفرق", "G32-G33", r2(mt - C.T.sales)]].forEach(([l, f, v], i) => { const rr = 32 + i; dash.mergeCells(rr, 5, rr, 6); set(dash, "E" + rr, l, {font: font(9, false, "5B6474"), al: al("right", {indent: 1})}); set(dash, "G" + rr, {formula: f, result: v}, {font: font(9, true), num: NUM}); });
-  box(8, 31, 11, 35, "F4F6FB", "DCE2EE");
-  dash.mergeCells("H31:K31"); set(dash, "H31", "i  مؤشرات سريعة", {font: font(10, true, "14213D"), al: al("right", {indent: 1})});
-  const ts = S.t.sales.filter(x => x.amount > 0).sort((a, b) => b.amount - a.amount)[0], tp = S.t.purch.filter(x => x.amount > 0).sort((a, b) => b.amount - a.amount)[0];
-  const st3 = [["نسبة المبيعات الآجلة", `IF(${R.sales.tot}=0,0,SUMIF(${R.sales.meth},"اجل",${R.sales.amt})/${R.sales.tot})`, C.T.sales ? C.meth[0].v / C.T.sales : 0, "0.0%"],
-    ["أكبر فاتورة بيع · " + (ts ? ts.name : "—"), `MAX(${R.sales.amt})`, ts ? ts.amount : 0, NUM], ["أكبر فاتورة شراء · " + (tp ? tp.name : "—"), `MAX(${R.purch.amt})`, tp ? tp.amount : 0, NUM],
-    ["عدد العملاء المختلفين", null, C.topC.length, null]];
-  st3.forEach(([l, f, v, num], i) => { const rr = 32 + i; dash.mergeCells(rr, 8, rr, 10); set(dash, "H" + rr, l, {font: font(9, false, "5B6474"), al: al("right", {indent: 1})}); set(dash, "K" + rr, f ? {formula: f, result: v} : v, {font: font(9, true), num}); });
-  dash.getRow(31).height = 26;
-  dash.mergeCells("B37:K37"); set(dash, "B37", "•  التاريخ والأرقام في هذه الورقة مرتبطة بورقتي «العمليات اليومية» و«الصندوق النقدي» وتتحدث تلقائيًا عند تعديلهما.", {font: font(8, false, "5B6474"), al: al("right", {indent: 1})});
-  ops.getCell("A1").value = null;
-  return wb.xlsx.writeBuffer();
-}
 
 /* ---------- PDF export: pages drawn on canvas (browser shapes the Arabic), packed into an A4 PDF ---------- */
 const PW = 595.28, PH = 841.89, PL = 28, PR = PW - 28, PCW = PR - PL, PSC = 2.6, PBOTTOM = PH - 40;
@@ -1853,7 +1607,250 @@ $("btnTpl").addEventListener("click", downloadTemplate);
 $("tplFile").addEventListener("change", e => onTemplateFile(e.target.files[0]));
 $("impApply").addEventListener("click", applyImport);
 $("impCancel").addEventListener("click", () => { $("imp").hidden = true; pendingImport = null; });
-window.__tpl = {buildTemplate, readXlsx, parseTemplate};
+window.__tpl = {buildTemplate, readXlsx, parseTemplate, exportStyledXlsx: () => exportStyledXlsx()};
+
+
+/* ---------- styled Excel export (own writer: no external library) ---------- */
+function XBook() {
+  const fonts = [], fills = ['<fill><patternFill patternType="none"/></fill>', '<fill><patternFill patternType="gray125"/></fill>'], borders = ['<border><left/><right/><top/><bottom/><diagonal/></border>'], xfs = [];
+  const fK = {}, flK = {}, bK = {}, xK = {};
+  const font = ({b = false, sz = 10, color = "1A1F2B"} = {}) => { const k = `${b}|${sz}|${color}`; if (fK[k] == null) { fK[k] = fonts.length; fonts.push(`<font>${b ? "<b/>" : ""}<sz val="${sz}"/><color rgb="FF${color}"/><name val="Segoe UI"/><family val="2"/></font>`); } return fK[k]; };
+  const fill = c => { if (!c) return 0; if (flK[c] == null) { flK[c] = fills.length; fills.push(`<fill><patternFill patternType="solid"><fgColor rgb="FF${c}"/><bgColor indexed="64"/></patternFill></fill>`); } return flK[c]; };
+  const side = (k, v) => v ? `<${k} style="${v[0]}"><color rgb="FF${v[1]}"/></${k}>` : `<${k}/>`;
+  const border = (bd = {}) => { const k = JSON.stringify(bd); if (bK[k] == null) { bK[k] = borders.length; borders.push(`<border>${side("left", bd.l)}${side("right", bd.r)}${side("top", bd.t)}${side("bottom", bd.b)}<diagonal/></border>`); } return bK[k]; };
+  const NUMF = {num: 164, pct: 165, text: 49};
+  font();
+  const style = (o = {}) => {
+    const k = JSON.stringify(o); if (xK[k] != null) return xK[k];
+    const fi = font(o.font), fl = fill(o.fill), bo = border(o.border), nf = o.num ? NUMF[o.num] : 0;
+    const al = `<alignment horizontal="${o.align || "right"}" vertical="center"${o.indent ? ` indent="${o.indent}"` : ""}${o.wrap ? ' wrapText="1"' : ""} readingOrder="2"/>`;
+    xK[k] = xfs.length; xfs.push(`<xf numFmtId="${nf}" fontId="${fi}" fillId="${fl}" borderId="${bo}" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"${nf ? ' applyNumberFormat="1"' : ""}>${al}</xf>`);
+    return xK[k];
+  };
+  style();
+  const sheets = [], media = [];
+  const book = {
+    style,
+    sheet(name, opt = {}) {
+      const sh = {name, rows: {}, heights: {}, merges: [], widths: opt.widths || [], images: [], valid: [], breaks: [], landscape: !!opt.landscape, gridlines: !!opt.gridlines, tab: opt.tab};
+      sh.set = (r, c, v, s, f) => { (sh.rows[r] = sh.rows[r] || {})[c] = {v, s, f}; return sh; };
+      sh.merge = (r1, c1, r2, c2) => sh.merges.push([r1, c1, r2, c2]);
+      sh.h = (r, h) => { sh.heights[r] = h; };
+      sh.img = (data, ext, col, row, wpx, hpx, offX = 0, offY = 0) => { media.push({data, ext}); sh.images.push({id: media.length, col, row, wpx, hpx, offX, offY, ext}); };
+      sheets.push(sh); return sh;
+    },
+    build() {
+      const C = i => { let s = ""; i++; while (i) { const m = (i - 1) % 26; s = String.fromCharCode(65 + m) + s; i = Math.floor((i - 1) / 26); } return s; };
+      const files = [], E = 9525;
+      const sheetXml = (sh, i) => {
+        const rowNums = Object.keys(sh.rows).map(Number).concat(Object.keys(sh.heights).map(Number)).filter((v, j, a) => a.indexOf(v) === j).sort((a, b) => a - b);
+        const rows = rowNums.map(r => {
+          const cells = sh.rows[r] || {};
+          const cs = Object.keys(cells).map(Number).sort((a, b) => a - b).map(c => {
+            const {v, s, f} = cells[c], ref = C(c) + (r + 1), st = s ? ` s="${s}"` : "";
+            if (f) return typeof v === "number" ? `<c r="${ref}"${st}><f>${xesc(f)}</f><v>${v}</v></c>` : `<c r="${ref}"${st} t="str"><f>${xesc(f)}</f><v>${xesc(v ?? "")}</v></c>`;
+            if (v === null || v === undefined || v === "") return `<c r="${ref}"${st}/>`;
+            if (typeof v === "number") return `<c r="${ref}"${st}><v>${v}</v></c>`;
+            return `<c r="${ref}"${st} t="inlineStr"><is><t xml:space="preserve">${xesc(v)}</t></is></c>`;
+          }).join("");
+          const h = sh.heights[r];
+          return `<row r="${r + 1}"${h ? ` ht="${h}" customHeight="1"` : ""}>${cs}</row>`;
+        }).join("");
+        const cols = sh.widths.length ? `<cols>${sh.widths.map((w, j) => `<col min="${j + 1}" max="${j + 1}" width="${w}" customWidth="1"/>`).join("")}</cols>` : "";
+        const merges = sh.merges.length ? `<mergeCells count="${sh.merges.length}">${sh.merges.map(([a, b, c, d]) => `<mergeCell ref="${C(b)}${a + 1}:${C(d)}${c + 1}"/>`).join("")}</mergeCells>` : "";
+        const dv = sh.valid.length ? `<dataValidations count="${sh.valid.length}">${sh.valid.map(([ref, list]) => `<dataValidation type="list" allowBlank="1" sqref="${ref}"><formula1>"${xesc(list)}"</formula1></dataValidation>`).join("")}</dataValidations>` : "";
+        return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheetPr>${sh.tab ? `<tabColor rgb="FF${sh.tab}"/>` : ""}<pageSetUpPr fitToPage="1"/></sheetPr><sheetViews><sheetView rightToLeft="1"${sh.gridlines ? "" : ' showGridLines="0"'}${i === 0 ? ' tabSelected="1"' : ""} workbookViewId="0"/></sheetViews><sheetFormatPr defaultRowHeight="18"/>${cols}<sheetData>${rows}</sheetData>${merges}${dv}<printOptions horizontalCentered="1"/><pageMargins left="0.3" right="0.3" top="0.4" bottom="0.4" header="0.2" footer="0.2"/><pageSetup paperSize="9" orientation="${sh.landscape ? "landscape" : "portrait"}" fitToWidth="1" fitToHeight="0"/>${sh.breaks.length ? `<rowBreaks count="${sh.breaks.length}" manualBreakCount="${sh.breaks.length}">${sh.breaks.map(b => `<brk id="${b}" max="16383" man="1"/>`).join("")}</rowBreaks>` : ""}${sh.images.length ? '<drawing r:id="rId1"/>' : ""}</worksheet>`;
+      };
+      sheets.forEach((sh, i) => {
+        files.push({name: `xl/worksheets/sheet${i + 1}.xml`, data: sheetXml(sh, i)});
+        if (sh.images.length) {
+          files.push({name: `xl/worksheets/_rels/sheet${i + 1}.xml.rels`, data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing" Target="../drawings/drawing${i + 1}.xml"/></Relationships>`});
+          files.push({name: `xl/drawings/drawing${i + 1}.xml`, data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xdr:wsDr xmlns:xdr="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">${sh.images.map((im, j) => `<xdr:oneCellAnchor><xdr:from><xdr:col>${im.col}</xdr:col><xdr:colOff>${Math.round(im.offX * E)}</xdr:colOff><xdr:row>${im.row}</xdr:row><xdr:rowOff>${Math.round(im.offY * E)}</xdr:rowOff></xdr:from><xdr:ext cx="${Math.round(im.wpx * E)}" cy="${Math.round(im.hpx * E)}"/><xdr:pic><xdr:nvPicPr><xdr:cNvPr id="${j + 2}" name="Picture ${j + 1}"/><xdr:cNvPicPr><a:picLocks noChangeAspect="1"/></xdr:cNvPicPr></xdr:nvPicPr><xdr:blipFill><a:blip r:embed="rId${j + 1}"/><a:stretch><a:fillRect/></a:stretch></xdr:blipFill><xdr:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${Math.round(im.wpx * E)}" cy="${Math.round(im.hpx * E)}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></xdr:spPr></xdr:pic><xdr:clientData/></xdr:oneCellAnchor>`).join("")}</xdr:wsDr>`});
+          files.push({name: `xl/drawings/_rels/drawing${i + 1}.xml.rels`, data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${sh.images.map((im, j) => `<Relationship Id="rId${j + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="../media/image${im.id}.${im.ext}"/>`).join("")}</Relationships>`});
+        }
+      });
+      media.forEach((m, i) => files.push({name: `xl/media/image${i + 1}.${m.ext}`, data: m.data}));
+      const head = [
+        {name: "[Content_Types].xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="png" ContentType="image/png"/><Default Extension="jpeg" ContentType="image/jpeg"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${sheets.map((_, i) => `<Override PartName="/xl/worksheets/sheet${i + 1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join("")}${sheets.map((sh, i) => sh.images.length ? `<Override PartName="/xl/drawings/drawing${i + 1}.xml" ContentType="application/vnd.openxmlformats-officedocument.drawing+xml"/>` : "").join("")}</Types>`},
+        {name: "_rels/.rels", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`},
+        {name: "xl/workbook.xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><bookViews><workbookView/></bookViews><sheets>${sheets.map((sh, i) => `<sheet name="${xesc(sh.name)}" sheetId="${i + 1}" r:id="rId${i + 1}"/>`).join("")}</sheets><calcPr calcId="191029" fullCalcOnLoad="1"/></workbook>`},
+        {name: "xl/_rels/workbook.xml.rels", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${sheets.map((_, i) => `<Relationship Id="rId${i + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i + 1}.xml"/>`).join("")}<Relationship Id="rId${sheets.length + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`},
+        {name: "xl/styles.xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><numFmts count="2"><numFmt numFmtId="164" formatCode="#,##0.00;[Red]\\-#,##0.00;&quot;-&quot;"/><numFmt numFmtId="165" formatCode="0.0%"/></numFmts><fonts count="${fonts.length}">${fonts.join("")}</fonts><fills count="${fills.length}">${fills.join("")}</fills><borders count="${borders.length}">${borders.join("")}</borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="${xfs.length}">${xfs.join("")}</cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`},
+      ];
+      return zipStore([...head, ...files]);
+    },
+  };
+  return book;
+}
+const dataUrlBytes = u => { const b = atob(u.split(",")[1]); const a = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) a[i] = b.charCodeAt(i); return a; };
+async function canvasJpegBytes(c, w) {
+  const k = document.createElement("canvas"); k.width = w; k.height = Math.round(c.height * w / c.width);
+  const g = k.getContext("2d"); g.imageSmoothingQuality = "high"; g.drawImage(c, 0, 0, k.width, k.height);
+  const bl = await new Promise(r => k.toBlob(r, "image/jpeg", 0.9)); return {data: new Uint8Array(await bl.arrayBuffer()), w: k.width, h: k.height};
+}
+
+async function buildStyledXlsx() {
+  const C = calc(), date = dmy(S.date), day = dayName(S.date);
+  try { await Promise.all(["400", "500", "600", "700", "800"].map(w => document.fonts.load(`${w} 12px Cairo`, "عربي"))); } catch (e) {}
+  const logoImg = await new Promise(res => { const im = new Image(); im.onload = () => res(im); im.onerror = () => res(null); im.src = LOGO; });
+  const pages = pdfPages(logoImg);
+  const X = XBook(), st = X.style, logoPng = dataUrlBytes(LOGO);
+  const INK = "14213D", INK2 = "33415C", RED = "C1121F", GOLD = "E9A100", MUT = "5B6474", LINE = "E3E7EF", HEAD = "EEF2F8", ZEB = "FAFBFD", CREAM = "FFF6DC", SOFT = "F7F8FB";
+  const S_ = {
+    title: st({font: {b: true, sz: 16, color: INK}}), sub: st({font: {sz: 9.5, color: MUT}}),
+    th: st({font: {b: true, sz: 11.5, color: "FFFFFF"}, fill: INK, indent: 1}), thL: st({font: {sz: 9.5, color: "C9D3E8"}, fill: INK, align: "left", indent: 1}),
+    head: st({font: {b: true, sz: 9.5, color: INK2}, fill: HEAD, align: "center", border: {b: ["thin", INK]}}),
+    tot: st({font: {b: true, sz: 11, color: INK}, fill: CREAM, border: {t: ["medium", INK]}, indent: 1}), totN: st({font: {b: true, sz: 11, color: RED}, fill: CREAM, border: {t: ["medium", INK]}, num: "num", align: "left", indent: 1}), totE: st({fill: CREAM, border: {t: ["medium", INK]}}),
+    empty: st({font: {b: true, sz: 10, color: MUT}, fill: SOFT, border: {r: ["thick", "8D99AE"]}, indent: 1}),
+    sec: st({font: {b: true, sz: 13, color: INK}, border: {b: ["medium", RED]}}),
+    lab: st({font: {b: true, sz: 10}, indent: 1}), labZ: st({font: {b: true, sz: 10}, fill: ZEB, indent: 1}),
+    cnt: st({font: {sz: 10, color: MUT}, align: "center"}), cntZ: st({font: {sz: 10, color: MUT}, align: "center", fill: ZEB}),
+    pct: st({font: {sz: 10, color: MUT}, num: "pct", align: "center"}), pctZ: st({font: {sz: 10, color: MUT}, num: "pct", align: "center", fill: ZEB}),
+    boxL: st({font: {b: true, sz: 9, color: MUT}, fill: SOFT, border: {t: ["thin", LINE], l: ["thin", LINE], r: ["thin", LINE]}, align: "center"}),
+    curL: st({font: {b: true, sz: 9, color: "C9D3E8"}, fill: INK, align: "center"}), curV: st({font: {b: true, sz: 15, color: "FFFFFF"}, fill: INK, num: "num", align: "center"}),
+    sig: st({font: {b: true, sz: 9.5, color: MUT}, border: {t: ["thin", "9AA3B2"]}, align: "center"}),
+    note: st({font: {sz: 9.5, color: MUT}, fill: SOFT, border: {r: ["thick", GOLD]}, indent: 1, wrap: true}),
+  };
+  const row = (z, o) => st(Object.assign({}, o, z ? {fill: o.fill || ZEB} : {}, {border: Object.assign({b: ["hair", "D8DDE6"]}, o.border || {})}));
+  const boxV = col => st({font: {b: true, sz: 13, color: col}, border: {b: ["thin", LINE], l: ["thin", LINE], r: ["thin", LINE]}, num: "num", align: "center"});
+  const CHIPX = {"اجل": ["E3E6ED", INK, "آجل"], "شبكة": ["DCEEF1", "2A7F8F", "شبكة"], "نقدا": ["FDF0CC", "8A6100", "نقدًا"], "تحويل": ["E8E5FC", "5B4BD6", "تحويل"], "على الحساب": ["FCE3E5", RED, "على الحساب"]};
+  const chipS = m => { const c = CHIPX[m]; return c ? st({font: {b: true, sz: 9.5, color: c[1]}, fill: c[0], align: "center", border: {b: ["hair", "D8DDE6"], t: ["thin", "FFFFFF"], l: ["medium", "FFFFFF"], r: ["medium", "FFFFFF"]}}) : row(false, {align: "center"}); };
+  const stripe = (sh, r, n) => { sh.h(r, 4); for (let c = 0; c < n; c++) sh.set(r, c, null, st({fill: c < n / 3 ? GOLD : c < 2 * n / 3 ? RED : INK})); };
+  const top = (sh, n, label, logoCol) => {
+    sh.h(0, 34); sh.h(1, 20);
+    sh.merge(0, 0, 0, n - 2); sh.set(0, 0, "شركة الشبح المتقدمة للتجارة", S_.title);
+    sh.merge(1, 0, 1, n - 2); sh.set(1, 0, `التقرير اليومي الموحّد · ${label} · ${date} (${day}) · فرع الرياض · ريال سعودي شامل الضريبة`, S_.sub);
+    sh.img(logoPng, "png", logoCol, 0, 120, 53, 4, 2);
+    stripe(sh, 2, n); sh.h(3, 10);
+  };
+  const OPSN = "'العمليات اليومية'", CASHN = "'الصندوق النقدي'";
+
+  /* sheet 1: the designed report itself (same pages as the PDF) */
+  const rep = X.sheet("التقرير", {widths: Array(12).fill(9.5), tab: RED});
+  let rr = 0;
+  for (const c of pages) { const j = await canvasJpegBytes(c, 1240); rep.img(j.data, "jpeg", 1, rr, 794, Math.round(794 * j.h / j.w), 0, 6); rr += Math.ceil(794 * j.h / j.w / 24) + 2; rep.breaks.push(rr); }
+  rep.breaks.pop();
+
+  const sm = X.sheet("الملخص", {widths: [28, 12, 19, 13], tab: "2A7F8F"});
+  /* operations (filled before the summary so the summary can reference it) */
+  const ops = X.sheet("العمليات اليومية", {widths: [18, 32, 14, 17, 24], tab: INK});
+  top(ops, 5, "العمليات اليومية", 4);
+  let r = 4; const R = {}; const emptyOps = [];
+  for (const k of OPS) {
+    const cfg = TABLES[k], rows = S.t[k];
+    if (!rows.length) { emptyOps.push(cfg.title); R[k] = null; continue; }
+    ops.h(r, 26); ops.merge(r, 0, r, 2); ops.set(r, 0, cfg.title, S_.th); ops.set(r, 1, null, S_.th); ops.set(r, 2, null, S_.th);
+    ops.merge(r, 3, r, 4); ops.set(r, 3, `${rows.length} عملية`, S_.thL); ops.set(r, 4, null, S_.thL); r++;
+    ops.h(r, 22); ["رقم المستند", cfg.cols[1], "طريقة الدفع", "المبلغ", cfg.cols[4]].forEach((h, i) => ops.set(r, i, h, S_.head)); r++;
+    const a = r;
+    rows.forEach((x, i) => {
+      const z = i % 2 === 1, neg = typeof x.amount === "number" && x.amount < 0, base = neg ? {fill: "FDEEEE"} : {};
+      ops.set(r, 0, x.doc, row(z, Object.assign({font: {b: true, sz: 10, color: INK2}, align: "center", num: "text"}, base)));
+      ops.set(r, 1, x.name, row(z, Object.assign({font: {sz: 10.5}, indent: 1}, base)));
+      ops.set(r, 2, CHIPX[x.method] ? CHIPX[x.method][2] : x.method, chipS(x.method));
+      ops.set(r, 3, typeof x.amount === "number" ? x.amount : null, row(z, Object.assign({font: {b: true, sz: 10.5, color: neg ? RED : "1A1F2B"}, num: "num", align: "left", indent: 1}, base)));
+      ops.set(r, 4, x.note, row(z, Object.assign({font: {sz: 9.5, color: neg ? RED : MUT}, align: "center"}, base)));
+      r++;
+    });
+    const b = r - 1;
+    ops.h(r, 24); ops.merge(r, 0, r, 2); ops.set(r, 0, "المجموع", S_.tot); ops.set(r, 1, null, S_.tot); ops.set(r, 2, null, S_.tot);
+    ops.set(r, 3, C.T[k], S_.totN, `SUM(D${a + 1}:D${b + 1})`); ops.set(r, 4, null, S_.totE);
+    R[k] = {tot: `${OPSN}!$D$${r + 1}`, amt: `${OPSN}!$D$${a + 1}:$D$${b + 1}`, meth: `${OPSN}!$C$${a + 1}:$C$${b + 1}`, ids: `${OPSN}!$A$${a + 1}:$A$${b + 1}`, cnt: rows.length};
+    r += 2;
+  }
+  if (emptyOps.length) { ops.h(r, 24); ops.merge(r, 0, r, 4); ops.set(r, 0, "لا توجد عمليات اليوم في: " + emptyOps.join("، "), S_.empty); for (let c = 1; c < 5; c++) ops.set(r, c, null, S_.empty); r += 2; }
+  ops.valid.push([`C6:C${r + 50}`, "آجل,شبكة,نقدًا,تحويل,على الحساب"]);
+
+  /* sheet 4: cash box */
+  const cash = X.sheet("الصندوق النقدي", {widths: [18, 34, 17, 22, 20], tab: GOLD});
+  top(cash, 5, "إفصاح الصندوق النقدي", 4);
+  r = 4; const CR = {}; const emptyCash = [];
+  for (const k of CASH) {
+    const cfg = TABLES[k], rows = S.t[k];
+    if (!rows.length) { emptyCash.push(cfg.title); continue; }
+    cash.h(r, 26); cash.merge(r, 0, r, 2); cash.set(r, 0, cfg.title, S_.th); cash.set(r, 1, null, S_.th); cash.set(r, 2, null, S_.th);
+    cash.merge(r, 3, r, 4); cash.set(r, 3, `${rows.length} عملية`, S_.thL); cash.set(r, 4, null, S_.thL); r++;
+    cash.h(r, 22); ["رقم المستند", "الاسم / العميل أو المورد", "المبلغ", "الملاحظات", k === "crec" ? "التحقق مع المبيعات" : ""].forEach((h, i) => cash.set(r, i, h, S_.head)); r++;
+    const a = r;
+    rows.forEach((x, i) => {
+      const z = i % 2 === 1;
+      cash.set(r, 0, x.doc, row(z, {font: {b: true, sz: 10, color: INK2}, align: "center", num: "text"}));
+      cash.set(r, 1, x.name, row(z, {font: {sz: 10.5}, indent: 1}));
+      cash.set(r, 2, x.amount, row(z, {font: {b: true, sz: 10.5}, num: "num", align: "left", indent: 1}));
+      cash.set(r, 3, x.note, row(z, {font: {sz: 9.5, color: MUT}, align: "center"}));
+      if (k === "crec") {
+        const ck = C.checks[i], txt = ck.state === "ok" ? "✓ مطابق" : ck.state === "bad" ? "فرق " + fmt(ck.d) : "—";
+        cash.set(r, 4, txt, st({font: {b: true, sz: 10, color: ck.state === "ok" ? "1E7B45" : ck.state === "bad" ? RED : "A9B1C0"}, fill: ck.state === "ok" ? "ECF8F1" : ck.state === "bad" ? "FDEEEE" : (z ? ZEB : null), align: "center", border: {b: ["hair", "D8DDE6"]}}));
+      } else cash.set(r, 4, null, row(z, {}));
+      r++;
+    });
+    const b = r - 1;
+    cash.h(r, 24); cash.merge(r, 0, r, 1); cash.set(r, 0, "المجموع", S_.tot); cash.set(r, 1, null, S_.tot);
+    cash.set(r, 2, C.T[k], S_.totN, `SUM(C${a + 1}:C${b + 1})`); cash.set(r, 3, null, S_.totE); cash.set(r, 4, null, S_.totE);
+    CR[k] = `C${r + 1}`; r += 2;
+  }
+  if (emptyCash.length) { cash.h(r, 24); cash.merge(r, 0, r, 4); cash.set(r, 0, "لا توجد عمليات اليوم في: " + emptyCash.join("، "), S_.empty); for (let c = 1; c < 5; c++) cash.set(r, c, null, S_.empty); r += 2; }
+  const bl = r, bv = r + 1; cash.h(bl, 20); cash.h(bv, 32);
+  const fRec = CR.crec ? `${CR.crec}` : null, fPay = CR.cpay ? `${CR.cpay}` : null;
+  [["رصيد سابق", C.prev, null, INK], ["+ المقبوضات النقدية", C.T.crec, fRec, "1E7B45"], ["− المدفوعات النقدية", C.T.cpay, fPay, "D9822B"], ["= صافي اليوم", C.net, `B${bv + 1}-C${bv + 1}`, RED], ["الرصيد الحالي (ر.س)", C.cur, `A${bv + 1}+D${bv + 1}`, null]].forEach(([lab, v, f, col], i) => {
+    const cur = i === 4; cash.set(bl, i, lab, cur ? S_.curL : S_.boxL); cash.set(bv, i, v, cur ? S_.curV : boxV(col), f || undefined);
+  });
+  r = bv + 2; cash.h(r, 34); cash.merge(r, 0, r, 4);
+  cash.set(r, 0, "ملاحظات · المبيعات والمشتريات والمصروفات قيم موجبة ومردوداتها قيم سالبة · المبالغ مدرجة مع الضريبة · عمود «التحقق مع المبيعات» يطابق كل مقبوض نقدي مع فاتورته.", S_.note);
+  for (let c = 1; c < 5; c++) cash.set(r, c, null, S_.note);
+  r += 3; cash.h(r - 1, 30); [[0, "أمين الصندوق"], [2, "المحاسب"], [4, "مدير الفرع"]].forEach(([c, t]) => cash.set(r, c, t, S_.sig));
+
+  /* sheet 2: summary (formulas point at the data sheets) */
+  top(sm, 4, "ملخص اليوم", 3);
+  r = 4;
+  const secT = (t) => { sm.h(r, 26); sm.merge(r, 0, r, 3); sm.set(r, 0, t, S_.sec); for (let c = 1; c < 4; c++) sm.set(r, c, null, S_.sec); r++; };
+  const hdr = cols => { sm.h(r, 22); cols.forEach((h, i) => sm.set(r, i, h, S_.head)); r++; };
+  secT("ملخص العمليات اليومية"); hdr(["البند", "العدد", "المبلغ (ر.س)", "النسبة"]);
+  const K = [["المبيعات", "sales"], ["المشتريات", "purch"], ["المصروفات", "exp"], ["سندات التحصيل", "rec"], ["سندات الدفع", "pay"]];
+  const s0 = r;
+  K.forEach(([l, k], i) => {
+    const z = i % 2 === 1;
+    sm.set(r, 0, l, z ? S_.labZ : S_.lab); sm.set(r, 1, S.t[k].length, z ? S_.cntZ : S_.cnt);
+    sm.set(r, 2, C.T[k], row(z, {font: {b: true, sz: 10.5, color: RED}, num: "num", align: "left", indent: 1}), R[k] ? R[k].tot : undefined);
+    sm.set(r, 3, C.grand ? C.T[k] / C.grand : 0, z ? S_.pctZ : S_.pct, `IF($C$${s0 + 6}=0,0,C${r + 1}/$C$${s0 + 6})`); r++;
+  });
+  sm.h(r, 24); sm.set(r, 0, "مجموع العمليات", S_.tot); sm.set(r, 1, K.reduce((a, [, k]) => a + S.t[k].length, 0), st({font: {b: true, sz: 11, color: INK}, fill: CREAM, border: {t: ["medium", INK]}, align: "center"}), `SUM(B${s0 + 1}:B${r})`);
+  sm.set(r, 2, C.grand, S_.totN, `SUM(C${s0 + 1}:C${r})`); sm.set(r, 3, 1, st({font: {b: true, sz: 10, color: RED}, fill: CREAM, border: {t: ["medium", INK]}, num: "pct", align: "center"})); r += 2;
+  secT("المبيعات حسب طريقة الدفع"); hdr(["طريقة الدفع", "العدد", "المبلغ (ر.س)", "النسبة"]);
+  C.meth.forEach((m, i) => {
+    const z = i % 2 === 1, key = m.key;
+    sm.set(r, 0, m.label, chipS(key)); sm.set(r, 1, m.n, z ? S_.cntZ : S_.cnt);
+    const lab = CHIPX[key] ? CHIPX[key][2] : key;
+    sm.set(r, 2, m.v, row(z, {font: {b: true, sz: 10.5, color: m.v < 0 ? RED : "1A1F2B"}, num: "num", align: "left", indent: 1}), R.sales ? `SUMIF(${R.sales.meth},"${lab}",${R.sales.amt})` : undefined);
+    sm.set(r, 3, C.T.sales ? m.v / C.T.sales : 0, z ? S_.pctZ : S_.pct); r++;
+  });
+  r++;
+  secT("الصندوق النقدي"); hdr(["البند", "", "المبلغ (ر.س)", ""]);
+  [["رصيد سابق", C.prev], ["+ المقبوضات النقدية", C.T.crec], ["− المدفوعات النقدية", C.T.cpay], ["= صافي اليوم", C.net]].forEach(([l, v], i) => {
+    const z = i % 2 === 1; sm.set(r, 0, l, z ? S_.labZ : S_.lab); sm.set(r, 1, null, row(z, {})); sm.set(r, 2, v, row(z, {font: {b: true, sz: 10.5, color: i === 3 ? RED : "1A1F2B"}, num: "num", align: "left", indent: 1})); sm.set(r, 3, null, row(z, {})); r++;
+  });
+  sm.h(r, 28); sm.merge(r, 0, r, 1); sm.set(r, 0, "الرصيد الحالي", st({font: {b: true, sz: 12, color: "FFFFFF"}, fill: INK, indent: 1})); sm.set(r, 1, null, st({fill: INK}));
+  sm.set(r, 2, C.cur, S_.curV); sm.set(r, 3, "ر.س", st({font: {b: true, sz: 9, color: "C9D3E8"}, fill: INK, align: "center"})); r += 2;
+  secT("المطابقة والمؤشرات");
+  const diff = r2(C.T.crec - C.cashSales), okc = Math.abs(diff) < .005 && !C.checks.some(c => c.state === "bad");
+  const badRows = C.checks.map((c, i) => [c, S.t.crec[i]]).filter(([c]) => c.state === "bad");
+  const ind = [["المبيعات النقدية (التقرير)", fmt(C.cashSales)], ["مقبوضات الصندوق", fmt(C.T.crec)], ["الحالة", okc ? "✓ مطابق" : "⚠ يوجد فرق " + fmt(diff)],
+    ...badRows.map(([c, x]) => ["فاتورة بها فرق", `${x.doc} (الصندوق ${fmt(x.amount)} / المبيعات ${fmt(c.sale)})`]),
+    ["نسبة المبيعات الآجلة", (C.T.sales ? C.meth[0].v / C.T.sales * 100 : 0).toFixed(1) + "%"],
+    ...(C.topC[0] ? [["أكبر عميل اليوم", `${C.topC[0][0]} · ${fmt(C.topC[0][1].v)}`]] : []), ...(C.topS[0] ? [["أكبر مورد اليوم", `${C.topS[0][0]} · ${fmt(C.topS[0][1].v)}`]] : [])];
+  ind.forEach(([l, v], i) => {
+    const z = i % 2 === 1, isState = l === "الحالة";
+    sm.set(r, 0, l, z ? S_.labZ : S_.lab); sm.merge(r, 1, r, 3);
+    sm.set(r, 1, v, isState ? st({font: {b: true, sz: 10.5, color: okc ? "1E7B45" : RED}, fill: okc ? "ECF8F1" : "FDEEEE", indent: 1}) : row(z, {font: {sz: 10.5}, indent: 1}));
+    sm.set(r, 2, null, row(z, {})); sm.set(r, 3, null, row(z, {})); r++;
+  });
+  r++; sm.merge(r, 0, r, 3); sm.set(r, 0, "ورقة «التقرير» تعرض التقرير بنفس تصميم ملف PDF، وأوراق الجداول قابلة للتعديل ومجاميعها معادلات.", st({font: {sz: 9, color: MUT}, wrap: true}));
+
+  // order: التقرير, الملخص, العمليات, الصندوق
+  return X;
+}
+async function exportStyledXlsx() { return (await buildStyledXlsx()).build(); }
 
 /* ---------- printing: the viewer frame blocks print(), so printing runs in its own tab ---------- */
 const STANDALONE = "https://kosif199022-jpg.github.io/kosif-tool/daily-report/";
