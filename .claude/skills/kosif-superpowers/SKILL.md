@@ -294,3 +294,11 @@ Read the suggested original process skill's `SKILL.md` from `vendor/obra-superpo
 The bundled 15 process skills are installed alongside the KOSIF main skill for Claude Code discovery via an explicitly invoked `superpowers_unified.py install`. Existing unrelated user skills are preserved; name conflicts are skipped unless separately authorized and backed up. Details, provenance, commands and rollback: [Superpowers unification](references/superpowers-unification.md).
 
 **Do not confuse vendor source presence with actual installation, invocation, or proven task execution. No paid tools, outside publication, system-wide installs or external media uploads without authorization.**
+
+## REA-backed cinematic editor capability study and footage-first EDL (2026-10-19)
+
+For user requests involving video editors, animation apps, online motion-design services, or application feature discovery, consult [REA editor capability study](../../../../docs/REA_FILM_EDIT_CAPABILITY_STUDY_20261019.md). This study distinguishes REA static artifact evidence from official product capability descriptions and from KOSIF implementations. It documents inspection limitations and prioritizes original, compatible implementations; it is **not** authority to launch untrusted installers, copy commercial code, defeat licenses, or capture unauthorized app traffic.
+
+For tasks with original word-aligned audio and a reviewed real-footage manifest, use the **original footage-first edit decision planner** `scripts/cinematic_cut_planner.py` to produce a timecoded 9:16 shot plan, mandatory provenance gates, word cue markers and deterministic camera metadata. Execute `python scripts/cinematic_cut_planner.py --help` for its exact CLI. This is a **planner only**, not a downloader, detector, or renderer. It fails closed when assets are unlicensed, missing review flags, or insufficient in duration. Connect to the existing media-download, audio, text, rendering and verification playbooks to produce any final MP4.
+
+REA CLI v6.7.0 was successfully invoked on Windows, but an REA MCP registration with Claude Code was **not verified**. Distinguish these states. Consult the studio's original first-party code and published vendor docs for feature design; do not import copyrighted editor binaries or proprietary implementation details.
