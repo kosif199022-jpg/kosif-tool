@@ -1,0 +1,24 @@
+name: KOSIF Remote MCP Smoke
+on:
+  push:
+    paths:
+      - '.github/workflows/kosif-remote-mcp-smoke.yml'
+      - '.claude/skills/kosif-superpowers/scripts/kosif_remote_superpowers.py'
+      - '.claude/skills/kosif-superpowers/scripts/test_kosif_remote_superpowers.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Run isolated demo and assertions
+        run: |
+          python .claude/skills/kosif-superpowers/scripts/kosif_remote_superpowers.py doctor
+          python .claude/skills/kosif-superpowers/scripts/kosif_remote_superpowers.py demo
+          python -m unittest discover -s .claude/skills/kosif-superpowers/scripts -p 'test_kosif_remote_superpowers.py' -v
