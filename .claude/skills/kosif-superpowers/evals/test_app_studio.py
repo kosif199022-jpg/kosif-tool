@@ -3,11 +3,14 @@ postcondition. This is the proof behind the ✅ on APPX-31…50 and APPX-61…87
 import http.server
 import importlib.util
 import json
+import importlib.util as _iu  # noqa
 import math
+import shutil
 from pathlib import Path
 import tempfile
 import threading
 import unittest
+import warnings
 
 import numpy as np
 import cv2
@@ -358,6 +361,145 @@ class AppStudioTests(unittest.TestCase):
             self.assertEqual((self.d / "got.bin").read_bytes(), payload)
         finally:
             srv.shutdown()
+
+    # --- Canva (APPX-88…98, remove-bg = APPX-14)
+    def test_design_template_arabic_and_effects(self):
+        photo = self.put("portrait.png", self.clean)
+        spec = {"size": "instagram-post", "background": {"gradient": ["#0f172a", "#1f6feb"], "angle": 120},
+                "elements": [
+                    {"type": "image", "src": photo.name, "box": [90, 120, 360, 360], "mask": "circle", "filter": "duotone"},
+                    {"type": "rect", "box": [520, 160, 470, 300], "fill": "#ffffff", "opacity": 0.12, "radius": 32},
+                    {"type": "text", "text": "عرض خاص لمدة أسبوع فقط", "box": [540, 180, 430, 260], "font": "cairo",
+                     "color": "#ffd166", "effect": "shadow"},
+                    {"type": "text", "text": "KOSIF STUDIO", "box": [90, 860, 900, 120], "font": "lalezar", "color": "#ffffff",
+                     "effect": "outline", "align": "center"},
+                    {"type": "line", "box": [90, 820, 900, 0], "fill": "#ffd166", "width": 6}]}
+        j = self.d / "post.json"
+        j.write_text(json.dumps(spec, ensure_ascii=False), encoding="utf-8")
+        r = self.run_op("design", [j], "post.png")
+        self.assertTrue(r["verified"], r["metrics"])               # every text block fits its box
+        self.assertEqual(r["metrics"]["size"], [1080, 1080])
+        ar = r["metrics"]["texts"][0]
+        self.assertIn(ar["shaping"], ("raqm", "arabic-reshaper+bidi"))
+        o = st.read(r["output"])
+        box = o[180:440, 540:970]
+        self.assertGreater(((box[..., 2] > 200) & (box[..., 1] > 170) & (box[..., 0] < 140)).sum(), 500)   # yellow text drawn
+        self.assertLess(np.abs(o[120 + 5, 90 + 5].astype(int) - o[5, 5]).max(), 60)                         # circle mask corner = background
+
+    def test_resize_design_all_platforms(self):
+        r = self.run_op("resize-design", [self.src], "sizes", sizes="instagram-post,story,youtube-thumbnail,facebook-cover")
+        self.assertTrue(r["verified"])
+        self.assertEqual(len(r["metrics"]["files"]), 4)
+        self.assertEqual(st.read(r["metrics"]["files"]["story"]).shape[:2], (1920, 1080))
+
+    def test_remove_bg_transparent_png(self):
+        h, w = 320, 480
+        bg = (np.random.default_rng(4).integers(0, 255, (h, w, 3))).astype(np.uint8)
+        bg = cv2.GaussianBlur(bg, (0, 0), 6)
+        cv2.circle(bg, (240, 160), 90, (30, 40, 220), -1)
+        r = self.run_op("remove-bg", [self.put("subj.png", bg)], "cut.png", box="130,50,220,220")
+        rgba = cv2.imdecode(np.fromfile(r["output"], np.uint8), cv2.IMREAD_UNCHANGED)
+        self.assertEqual(rgba.shape[2], 4)
+        truth = np.zeros((h, w), bool); cv2.circle(truth.view(np.uint8), (240, 160), 90, 1, -1)
+        got = rgba[..., 3] > 127
+        self.assertGreater((got & truth).sum() / (got | truth).sum(), 0.85)
+
+    def test_duotone(self):
+        r = self.run_op("duotone", [self.src], "duo.png", dark="#1b1464", light="#ff6f61")
+        o = cv2.imdecode(np.fromfile(r["output"], np.uint8), cv2.IMREAD_COLOR).reshape(-1, 3).astype(float)
+        d, l = np.array([0x64, 0x14, 0x1b], float), np.array([0x61, 0x6f, 0xff], float)   # BGR
+        t = ((o - d) @ (l - d)) / ((l - d) @ (l - d))
+        off_line = np.linalg.norm(o - (d + np.clip(t, 0, 1)[:, None] * (l - d)), axis=1)
+        self.assertLess(off_line.max(), 3)
+
+    def test_collage_layouts(self):
+        ims = [self.put(f"c{i}.png", np.roll(self.clean, i * 50, axis=1)) for i in range(4)]
+        r = self.run_op("collage", ims, "hero.jpg", layout="hero", gap=10, radius=20)
+        self.assertEqual(r["metrics"]["size"], [1080, 1080])
+        self.assertEqual(len(r["metrics"]["cells"]), 4)
+        self.assertEqual(self.run_op("collage", ims, "grid.png", layout="grid", size="800x800")["metrics"]["size"], [800, 800])
+
+    def test_mockup_auto_surface(self):
+        scene_ = np.full((400, 600, 3), 40, np.uint8)
+        quad = np.int32([[180, 80], [430, 100], [420, 330], [170, 300]])
+        cv2.fillConvexPoly(scene_, quad, (235, 235, 235))
+        des = np.zeros((300, 400, 3), np.uint8); des[:] = (40, 40, 220)
+        r = self.run_op("mockup", [self.put("des.png", des), self.put("scene.png", scene_)], "mock.png")
+        self.assertLess(np.abs(np.float32(r["metrics"]["quad"]) - quad).max(), 6)
+        o = st.read(r["output"])
+        self.assertGreater(o[200, 300, 2], 150)                  # design red inside the surface
+        self.assertLess(o[200, 300, 0], 90)
+        self.assertEqual(o[20, 20].tolist(), [40, 40, 40])     # scene untouched outside
+
+    @unittest.skipUnless(importlib.util.find_spec("segno"), "pip install segno")
+    def test_qr_decodes_back(self):
+        url = "https://github.com/kosif199022-jpg/kosif-tool"
+        self.assertTrue(self.run_op("qr", [url], "qr.png", dark="#0f172a")["verified"])
+        logo = np.zeros((60, 60, 4), np.uint8); logo[..., 2] = 220; logo[..., 3] = 255
+        lp = self.d / "qlogo.png"; cv2.imencode(".png", logo)[1].tofile(str(lp))
+        r = self.run_op("qr", [url], "qr_logo.png", logo=str(lp))
+        self.assertEqual(r["metrics"]["error"], "H")
+        self.assertTrue(r["verified"])
+        self.assertTrue(self.run_op("qr", ["كوسيف"], "qr.svg")["verified"])
+
+    def test_palette_finds_brand_colours(self):
+        img = np.zeros((200, 300, 3), np.uint8)
+        img[:, :150] = (0x8c, 0x5a, 0x1e); img[:, 150:250] = (0x66, 0xd1, 0xff); img[:, 250:] = (255, 255, 255)
+        r = self.run_op("palette", [self.put("brand.png", img)], "brand", colors=3)
+        hexes = [c["hex"] for c in r["metrics"]["palette"]]
+        self.assertEqual(hexes[0], "#1e5a8c")
+        self.assertIn("#ffd166", hexes)
+        self.assertTrue(Path(r["metrics"]["swatch"]).is_file())
+
+    @unittest.skipUnless(importlib.util.find_spec("matplotlib"), "pip install matplotlib")
+    def test_chart_arabic_labels(self):
+        j = self.d / "sales.json"
+        j.write_text(json.dumps({"labels": ["يناير", "فبراير", "مارس"], "values": [12, 19, 7]}, ensure_ascii=False), encoding="utf-8")
+        for kind in ("bar", "line", "donut"):
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", UserWarning)   # a missing Arabic glyph is a failure, not a warning
+                r = self.run_op("chart", [j], f"chart_{kind}.png", kind=kind, title="المبيعات")
+            self.assertGreater(st.read(r["output"]).std(), 10, kind)
+            self.assertIn(r["metrics"]["arabic_shaping"], ("matplotlib-native", "arabic-reshaper+bidi"))
+        csv = self.d / "s.csv"
+        csv.write_text("month,value\nA,1\nB,2\n", encoding="utf-8")
+        self.assertEqual(self.run_op("chart", [csv], "c.svg")["metrics"]["points"], 2)
+
+    @unittest.skipUnless(importlib.util.find_spec("pptx"), "pip install python-pptx")
+    def test_pptx_from_images_and_design(self):
+        s1 = self.put("s1.png", self.clean)
+        dj = self.d / "s2.json"
+        dj.write_text(json.dumps({"background": "#101828", "elements": [{"type": "text", "text": "شكرًا لكم", "box": [200, 400, 1520, 280], "color": "#ffffff"}]},
+                                 ensure_ascii=False), encoding="utf-8")
+        notes = self.d / "notes.txt"
+        notes.write_text("مقدمة\nختام\n", encoding="utf-8")
+        r = self.run_op("pptx", [s1, dj], "deck.pptx", notes=notes)
+        self.assertTrue(r["verified"])
+        self.assertEqual(r["metrics"]["slides"], 2)
+
+    def test_print_pdf_bleed_marks_cmyk(self):
+        r = self.run_op("print-pdf", [self.src], "card.pdf", width_mm=90, height_mm=50, bleed_mm=3, dpi=300)
+        m = r["metrics"]
+        mm = lambda v: round(v / 25.4 * 300)
+        self.assertEqual(m["trim_px"], [mm(90), mm(50)])
+        self.assertEqual(m["bleed_px"], mm(3))
+        self.assertEqual(m["page_px"], [mm(90) + 2 * mm(3) + 2 * mm(10), mm(50) + 2 * mm(3) + 2 * mm(10)])
+        self.assertEqual(m["mode"], "CMYK")
+        self.assertTrue(Path(r["output"]).read_bytes().startswith(b"%PDF"))
+
+    def test_text_anim_gif_and_mp4(self):
+        r = self.run_op("text-anim", [], "t.gif", text="رمضان كريم", style="typewriter", size="480x270", seconds=1, fps=12)
+        from PIL import Image
+        gif = Image.open(r["output"])
+        total = 0
+        for i in range(gif.n_frames):   # Pillow merges identical frames and adds up their durations
+            gif.seek(i)
+            total += gif.info.get("duration", 0)
+        self.assertAlmostEqual(total, 1000, delta=60)
+        self.assertGreater(gif.n_frames, 1)
+        if shutil.which("ffmpeg"):
+            r2 = self.run_op("text-anim", [], "t.mp4", text="KOSIF", style="pop", size="320x320", seconds=1, fps=10)
+            self.assertGreater(Path(r2["output"]).stat().st_size, 1000)
 
     # --- cli
     def test_cli_doctor_and_every_op_is_covered(self):

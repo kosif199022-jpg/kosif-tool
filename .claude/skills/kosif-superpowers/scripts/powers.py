@@ -275,6 +275,16 @@ INTENT.update({
     "lottie": ["lottie", "@APPX"], "لوتي": ["lottie", "@APPX"], "عظام": ["ik", "bones", "@APPX"], "inverse kinematics": ["ik", "@APPX"],
     "hsl": ["hsl", "@APPX"], "أبيض وأسود": ["black and white", "@APPX"], "black and white": ["@APPX"], "split tone": ["split tone", "@APPX"],
     "clarity": ["clarity", "@APPX"], "auto tone": ["auto tone", "@APPX"], "ضبط تلقائي": ["auto tone", "@APPX"],
+    # Canva design ops in app_studio.py (APPX-88…98)
+    "magic resize": ["magic resize", "@APPX"], "كل المقاسات": ["magic resize", "@APPX"], "مقاسات المنصات": ["magic resize", "@APPX"],
+    "mockup": ["mockup", "@APPX"], "موك اب": ["mockup", "@APPX"], "موكاب": ["mockup", "@APPX"],
+    "qr": ["qr", "@APPX"], "كيو ار": ["qr", "@APPX"], "باركود": ["qr", "@APPX"], "collage": ["collage", "@APPX"], "كولاج": ["collage", "@APPX"],
+    "duotone": ["duotone", "@APPX"], "palette": ["palette", "@APPX"], "brand kit": ["palette", "@APPX"], "لوحة ألوان": ["palette", "@APPX"],
+    "ألوان الهوية": ["palette", "@APPX"], "رسم بياني": ["chart", "@APPX"], "bleed": ["print", "@APPX"], "crop marks": ["print", "@APPX"],
+    "للمطبعة": ["print", "@APPX"], "جاهز للطباعة": ["print", "@APPX"], "text animation": ["text animation", "@APPX"],
+    "تحريك النص": ["text animation", "@APPX"], "نص متحرك": ["text animation", "@APPX"], "تصميم بوست": ["design", "template", "@APPX"],
+    "قالب تصميم": ["design", "template", "@APPX"], "بانر": ["design", "@APPX"], "فلاير": ["design", "print", "@APPX"],
+    "business card": ["print", "design", "@APPX"], "كرت شخصي": ["print", "design", "@APPX"],
     # writing, prompts, ideas, Arabic language
     "اكتب": ["write", "@WRITE"], "مقال": ["article", "@WRITE"], "صياغة": ["rewrite", "@WRITE"],
     "كتابة": ["write", "@WRITE"], "write": ["@WRITE"], "article": ["@WRITE"], "essay": ["@WRITE"],

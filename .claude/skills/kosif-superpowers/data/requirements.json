@@ -1401,5 +1401,15 @@
   "patterns": [
    "\\byunet\\b"
   ]
+ },
+ "pip:segno": {
+  "kind": "pip",
+  "detect": "segno",
+  "install": "pip install segno",
+  "ar": "إنشاء رموز QR (PNG/SVG)",
+  "en": "QR code generation (PNG/SVG)",
+  "patterns": [
+   "\\bsegno\\b"
+  ]
  }
 }

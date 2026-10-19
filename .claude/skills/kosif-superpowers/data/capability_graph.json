@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 4719
+   "count": 4730
   },
   {
    "id": "dom:motion",
@@ -271,10 +271,10 @@
    "label": "Analyzed app capabilities",
    "ar": "قدرات التطبيقات المحللة",
    "prefix": "APPX",
-   "count": 87,
-   "proven": 67,
+   "count": 98,
+   "proven": 78,
    "status": {
-    "proven": 67,
+    "proven": 78,
     "documented": 19,
     "install": 1
    }
@@ -1659,10 +1659,9 @@
    "label": "scripts/aspects.py"
   },
   {
-   "id": "script:scripts/mimic/mm_video.py",
+   "id": "script:scripts/mimic/mm_common.py",
    "kind": "script",
-   "label": "scripts/mimic/mm_video.py",
-   "executor_score": 2.7
+   "label": "scripts/mimic/mm_common.py"
   },
   {
    "id": "script:scripts/mimic/mm_img.py",
@@ -1670,9 +1669,10 @@
    "label": "scripts/mimic/mm_img.py"
   },
   {
-   "id": "script:scripts/mimic/mm_common.py",
+   "id": "script:scripts/mimic/mm_video.py",
    "kind": "script",
-   "label": "scripts/mimic/mm_common.py"
+   "label": "scripts/mimic/mm_video.py",
+   "executor_score": 2.7
   },
   {
    "id": "script:scripts/mimic/synthetic/make_candidates.py",
@@ -2005,37 +2005,37 @@
    "from": "dom:build",
    "to": "fam:app-feature-transfer",
    "rel": "has",
-   "w": 87
+   "w": 98
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:pip:opencv",
    "rel": "needs",
-   "w": 33
-  },
-  {
-   "from": "fam:app-feature-transfer",
-   "to": "req:chromium",
-   "rel": "needs",
-   "w": 28
+   "w": 37
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:pip:pillow",
    "rel": "needs",
-   "w": 27
+   "w": 34
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 32
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:pip:numpy",
    "rel": "needs",
-   "w": 26
+   "w": 31
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 17
+   "w": 18
   },
   {
    "from": "fam:app-feature-transfer",
@@ -2059,7 +2059,7 @@
    "from": "fam:app-feature-transfer",
    "to": "script:scripts/app_studio.py",
    "rel": "runs",
-   "w": 101
+   "w": 124
   },
   {
    "from": "fam:app-feature-transfer",
@@ -5105,19 +5105,19 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_transitions.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_video.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_sheets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_text.py",
    "rel": "imports",
    "w": 1
   },
@@ -5135,25 +5135,37 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_text.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_transitions.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_video.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_transitions.py",
    "rel": "imports",
    "w": 1
   },
@@ -5170,13 +5182,7 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -5201,18 +5207,18 @@
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_render_text.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_fonts_lib.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_render_text.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -5230,12 +5236,6 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
    "from": "script:scripts/mimic/mm_sheets.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
@@ -5243,6 +5243,12 @@
   },
   {
    "from": "script:scripts/mimic/mm_sheets.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -5266,14 +5272,8 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
    "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5285,7 +5285,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
