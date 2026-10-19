@@ -1,0 +1,52 @@
+{
+  "schema": "kosif.native3d.v1",
+  "width": 160,
+  "height": 160,
+  "fps": 10,
+  "frames": 20,
+  "background": "#142231",
+  "render_mode": "zbuffer",
+  "camera": {
+    "position": [
+      0,
+      -6,
+      2
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "ortho_scale": 4.5
+  },
+  "objects": [
+    {
+      "shape": "cube",
+      "color": "#E04646",
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "location": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "shape": "cube",
+      "color": "#46B079",
+      "scale": [
+        2,
+        2,
+        2
+      ],
+      "location": [
+        0,
+        3,
+        0
+      ]
+    }
+  ]
+}
