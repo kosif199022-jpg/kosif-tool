@@ -43,6 +43,10 @@ jobs:
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_blender_bridge.py' -v
       - name: Verify native 3D without Blender before packaging
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_native_3d.py' -v
+      - name: Verify independent Smart Draw and Blender AST audit
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_smart_draw.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_local_project_audit.py' -v
       - name: Test new Code Drawing Master before packaging
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
@@ -93,6 +97,13 @@ jobs:
                   "references/blender-public-api-research.md",
                   "examples/blender_cat_rescue_5s.py",
                   "evals/test_blender_cat_rescue_demo.py",
+                  "scripts/blender_api_audit.py",
+                  "scripts/smart_draw.py",
+                  "scripts/local_project_audit.py",
+                  "templates/smart-draw-demo.json",
+                  "references/blender-smartdraw-research-20261019.md",
+                  "evals/test_smart_draw.py",
+                  "evals/test_local_project_audit.py",
                   "scripts/blender_bridge.py",
                   "scripts/blender_worker.py",
                   "templates/blender-demo.json",
