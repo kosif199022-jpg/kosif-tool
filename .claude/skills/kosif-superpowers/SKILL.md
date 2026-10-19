@@ -74,6 +74,10 @@ Run python scripts/ai_tool_discovery.py "تحريك شخصيات فيديو" --t
 The algorithm retains proof/requirements caveats and never treats catalog status
 as actual runtime verification. No third-party ranking algorithm is copied.
 See [REA website investigation](references/taaft-rea-discovery-audit.md).
+## Blender-free 3D GLB exporter (bounded, original)
+
+When asked to export a simple animated 3D scene without installing or running Blender, read [native-glb-no-blender.md](references/native-glb-no-blender.md) and run scripts/native_glb.py with templates/blender-demo.json and a new .glb destination. Supported in this native exporter: cube/sphere meshes, colors and translation keyframes, using only Python standard library. For actual native image/video rasterization consult scripts/native_3d.py instead. Neither is a complete Blender replacement; never claim that all Blender functions were recovered by REA/Ghidra.
+
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](references/capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
