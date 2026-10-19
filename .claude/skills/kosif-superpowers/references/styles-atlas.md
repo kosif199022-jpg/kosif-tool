@@ -1,6 +1,6 @@
-# أطلس الأساليب — 288 دليلًا على ما صنعتَه / Styles atlas
+# أطلس الأساليب — 289 دليلًا على ما صنعتَه / Styles atlas
 
-كل فيديو مرجعي شوهد عبر لوحات إطارات وقياس ألوان (253 فيديو). العمود الأخير: ماذا يثبت. Every reference video was watched via frame sheets + measured palettes.
+كل فيديو مرجعي شوهد عبر لوحات إطارات وقياس ألوان (254 فيديو). العمود الأخير: ماذا يثبت. Every reference video was watched via frame sheets + measured palettes.
 
 | id | العنوان | النوع | يثبت أنك تستطيع | ألوان | تقنية |
 |---|---|---|---|---|---|
@@ -292,6 +292,7 @@
 | pm-gonzalomacagno-2de1a9 | ريل إعلان قائمة مهرجان | event promo / ad / kinetic type | هذا يثبت أن Claude يستطيع تحويل قائمة معلومات خام إلى ريل إعلاني مدته 10 ثوانٍ بتسلسل هرمي طباعي واضح وانتقالات أنيقة. | #c4a4ed #f3daed #8a8cf0 #f0965a | HTML/CSS + GSAP or Remotion (guess), SVG paths for ribbons |
 | pm-theparuchh-6e08c3 | مقطع دعائي للعبة مبني بالكود | game trailer / cinematic 3D | هذا يثبت أن نموذجًا يستطيع إنتاج مقطع دعائي سينمائي ثلاثي الأبعاد كامل من الكود فقط (هندسة وإضاءة وجسيمات وموسيقى) بهيكل قصصي احترافي. | #000000 #06100d #131d18 #3a3a33 | Blender headless (bpy) with EEVEE, procedural geometry/shader nodes (requested), numpy/scipy synthesised audio, ffmpeg grade, grain, letterbox |
 | pm-gizakdag-b8c59e | ريل فرط التفكير المخدّر بصريًا | showreel / kinetic type / collage art | هذا يثبت أن Claude يستطيع صنع ريل تجريبي جريء يجسد مفهومًا نفسيًا عبر طباعة حركية وكولاج وتأثيرات ما بعد المعالجة بإيقاع سريع. | #0e0e27 #142670 #f5d417 #e8792c | HTML Canvas/WebGL with supplied collage images (page says 'inspired by the attached graphics'), CSS/JS text transforms, post-process chromatic aberration shader |
+| dua | الدعاء — ريل دعاء ليلة الجمعة | kinetic-type,photos | أسلوب مقاس من ريل حقيقي ومحفوظ كعدة تعمل (styles/dua/kit): لقطاتك وصوتك ونص الدعاء → ريل 9:16 بنفس التوقيت والأماكن والألوان والانتقالات، والصوت منسوخ دون تعديل. | `#FEFEFD` `#FED27E` `#0C0805` `#402721` | Chromium text layers, numpy/OpenCV compositor, ffmpeg -c:a copy |
 
 ## الفهرس / contents
 - [بريفات تخالف الفيديو (38) — Briefs that contradict their video](#بريفات-تخالف-الفيديو-38--briefs-that-contradict-their-video)

@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 4689
+   "count": 4692
   },
   {
    "id": "dom:motion",
@@ -1004,25 +1004,16 @@
    "label": "Photos & footage",
    "ar": "الصور والفيديو الخام",
    "prefix": "FOOT",
-   "count": 65,
-   "proven": 17,
+   "count": 68,
+   "proven": 20,
    "status": {
     "documented": 19,
     "ready": 17,
     "install": 7,
-    "proven": 17,
+    "proven": 20,
     "seen": 2,
     "key": 3
    }
-  },
-  {
-   "id": "req:yt-dlp",
-   "kind": "requirement",
-   "label": "yt-dlp",
-   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
-   "en": "download licensed or owned media from links",
-   "install": "pip install yt-dlp",
-   "req_kind": "pip"
   },
   {
    "id": "script:scripts/fetch_reference.py",
@@ -1471,6 +1462,15 @@
    }
   },
   {
+   "id": "req:yt-dlp",
+   "kind": "requirement",
+   "label": "yt-dlp",
+   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
+   "en": "download licensed or owned media from links",
+   "install": "pip install yt-dlp",
+   "req_kind": "pip"
+  },
+  {
    "id": "req:pip:librosa",
    "kind": "requirement",
    "label": "pip:librosa",
@@ -1578,15 +1578,15 @@
    "label": "scripts/creative_reasoning_bridge.py"
   },
   {
-   "id": "script:scripts/audio_cue_mapper.py",
-   "kind": "script",
-   "label": "scripts/audio_cue_mapper.py"
-  },
-  {
    "id": "script:scripts/motion_director.py",
    "kind": "script",
    "label": "scripts/motion_director.py",
    "executor_score": 1.19
+  },
+  {
+   "id": "script:scripts/audio_cue_mapper.py",
+   "kind": "script",
+   "label": "scripts/audio_cue_mapper.py"
   },
   {
    "id": "script:scripts/motion_kit_bridge.py",
@@ -3578,19 +3578,19 @@
    "from": "dom:motion",
    "to": "fam:photo-video-footage",
    "rel": "has",
-   "w": 65
+   "w": 68
   },
   {
    "from": "fam:photo-video-footage",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 21
+   "w": 22
   },
   {
    "from": "fam:photo-video-footage",
    "to": "req:python3",
    "rel": "needs",
-   "w": 14
+   "w": 16
   },
   {
    "from": "fam:photo-video-footage",
@@ -3624,15 +3624,21 @@
   },
   {
    "from": "fam:photo-video-footage",
-   "to": "req:yt-dlp",
+   "to": "req:pip:numpy",
    "rel": "needs",
-   "w": 1
+   "w": 2
   },
   {
    "from": "fam:photo-video-footage",
    "to": "script:scripts/fetch_reference.py",
    "rel": "runs",
    "w": 2
+  },
+  {
+   "from": "fam:photo-video-footage",
+   "to": "script:scripts/mimic/mm_analyze.py",
+   "rel": "runs",
+   "w": 1
   },
   {
    "from": "root",
@@ -4962,13 +4968,13 @@
   },
   {
    "from": "script:scripts/boot.py",
-   "to": "script:scripts/powers.py",
+   "to": "script:scripts/requirements.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/boot.py",
-   "to": "script:scripts/requirements.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
@@ -4998,13 +5004,13 @@
   },
   {
    "from": "script:scripts/creative_reasoning_bridge.py",
-   "to": "script:scripts/audio_cue_mapper.py",
+   "to": "script:scripts/motion_director.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/creative_reasoning_bridge.py",
-   "to": "script:scripts/motion_director.py",
+   "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
    "w": 1
   },
@@ -5076,7 +5082,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_transitions.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
    "rel": "imports",
    "w": 1
   },
@@ -5088,19 +5100,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
+   "to": "script:scripts/mimic/mm_transitions.py",
    "rel": "imports",
    "w": 1
   },
@@ -5112,7 +5118,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_video.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5124,7 +5136,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_video.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5135,8 +5147,14 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
    "rel": "imports",
    "w": 1
   },
@@ -5148,25 +5166,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_fonts_lib.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
+   "to": "script:scripts/mimic/mm_fonts_lib.py",
    "rel": "imports",
    "w": 1
   },
@@ -5178,13 +5184,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_color.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5209,12 +5215,6 @@
   {
    "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5227,6 +5227,12 @@
   {
    "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5274,12 +5280,6 @@
   },
   {
    "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "script:scripts/mimic/mm_fonts.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
    "to": "script:scripts/mimic/mm_analyze.py",
    "rel": "imports",
    "w": 1
@@ -5287,6 +5287,12 @@
   {
    "from": "script:scripts/mimic/synthetic/run_synthetic.py",
    "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
+   "to": "script:scripts/mimic/mm_fonts.py",
    "rel": "imports",
    "w": 1
   },

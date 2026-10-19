@@ -1686,12 +1686,10 @@
  {
   "id": "FOOT-X01",
   "family": "photo-video-footage",
-  "domain": "motion",
   "name_ar": "انضباط مونتاج المادة الحقيقية",
   "name_en": "Real-footage edit discipline (source-to-programme map)",
   "status": "documented",
   "what": "المادة الأصلية هي الأساس: احفظ مدتها وترتيبها وكلامها ووقفاتها ونسبتها وصوتها، وابنِ خريطة زمن من المصدر إلى البرنامج قبل أي إضافة. — The source is the base: keep its duration, order, speech, pauses, aspect and sound, and build a source-to-programme time map before adding anything.",
-  "when": "مونتاج متحدث أو مقابلة أو فيديو أرسله المستخدم — editing a talking head, interview or user video.",
   "how": "Transcript + time map; account for cuts already baked into the source (never reveal stray frames of an adjacent take when returning from B-roll); when shifting a shot boundary keep the absolute timing of spoken words; choose fps from the actual source; do not upscale without reason; long videos get fewer inserts and more reading time; no presenter → no splits or presenter captions. Names, numbers, interfaces and quotes must match the source; ask about an unintelligible phrase rather than inventing it. Presenter splits: a restrained push entry only for horizontal splits with one presenter; the insert keeps its final crop through the slide; the presenter is re-cropped, never squeezed (crop aspect = card aspect).",
   "params": "",
   "install": "",
@@ -1712,18 +1710,18 @@
    "مادة حقيقية",
    "متحدث"
   ],
+  "domain": "motion",
+  "when": "مونتاج متحدث أو مقابلة أو فيديو أرسله المستخدم — editing a talking head, interview or user video.",
   "section": "إضافات v2 — v2 additions",
   "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md"
  },
  {
   "id": "FOOT-X02",
   "family": "photo-video-footage",
-  "domain": "motion",
   "name_ar": "فحص القدرة واختبارات قصيرة قبل التصدير",
   "name_en": "Capability preflight and short tests before an expensive export",
   "status": "documented",
   "what": "قبل وعد بملف MP4 تأكد من الوصول إلى المصدر وفك الصورة والصوت وأدوات التصدير والخطوط والأقنعة، واصنع اختبارات قصيرة أولًا. — Before promising an MP4 confirm access to the source, picture and audio decode, export tools, fonts and masks, and make short tests first.",
-  "when": "بداية أي مونتاج على مادة المستخدم — the start of any edit on user footage.",
   "how": "If something is missing say exactly what and the smallest way forward; never present HTML, code or a plan as a finished video; work on a copy (an installed skill directory may be read-only). Short tests: light and dark B-roll, B&W, typography, one split, one mask. Keep layers clean (source, inserts, text, masks, sound) and the previous version. Rights: a Pinterest find does not establish usage rights; generation is optional and needs an agreed budget; generated imagery is never presented as historical evidence. Deliver the MP4, an editable project, a dependency list and sources; if music was added, also a version without it. 'Contact sheets and numbers do not replace watching and listening'; never report an unperformed check as passed.",
   "params": "",
   "install": "",
@@ -1743,18 +1741,18 @@
    "حقوق",
    "تسليم"
   ],
+  "domain": "motion",
+  "when": "بداية أي مونتاج على مادة المستخدم — the start of any edit on user footage.",
   "section": "إضافات v2 — v2 additions",
   "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/SKILL.md"
  },
  {
   "id": "FOOT-X03",
   "family": "photo-video-footage",
-  "domain": "motion",
   "name_ar": "القص الدقيق بالإطار يحتاج إعادة ترميز",
   "name_en": "Frame-accurate trims need a re-encode",
   "status": "proven",
   "what": "القص بنسخ التدفق دون ترميز يلتصق بالإطارات المفتاحية؛ للقص الدقيق أعد الترميز. — Stream-copy trims snap to keyframes; re-encode for frame-accurate cuts.",
-  "when": "قص لقطات على ضربات أو كلمات بدقة إطار — cutting shots on beats or words to the frame.",
   "how": "Ran here (V8) on a 10 s 30 fps clip with a keyframe every 60 frames, asking for 1.3–3.3 s (60 frames from frame 39): output seeking with -c copy started at the next keyframe (frame 60) → 41 frames, 1.367 s; input seeking with -c copy kept 62 frames / 2.167 s; re-encoding (`ffmpeg -ss 1.3 -to 3.3 -i in.mp4 -c:v libx264 …`) gave exactly 60 frames, 2.000 s, starting at frame 39. Use -c copy only for rough, keyframe-aligned trims; use proxies (scale=960:-2, ultrafast, crf 28) for previews.",
   "params": "copy: 41 or 62 frames vs requested 60; re-encode: 60",
   "install": "",
@@ -1779,18 +1777,18 @@
    "قص",
    "إطار مفتاحي"
   ],
+  "domain": "motion",
+  "when": "قص لقطات على ضربات أو كلمات بدقة إطار — cutting shots on beats or words to the frame.",
   "section": "إضافات v2 — v2 additions",
   "source": "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md"
  },
  {
   "id": "FOOT-X04",
   "family": "photo-video-footage",
-  "domain": "motion",
   "name_ar": "طبقات أدوات المونتاج وحالات المشروع",
   "name_en": "Footage editing layers and project-state hygiene",
   "status": "documented",
   "what": "لا تجعل أداة واحدة تفعل كل شيء: التقاط، ثم بنية بالذكاء (نص، مواضيع، مقاطع ميتة، قائمة قص)، ثم ffmpeg، ثم Remotion، ثم صوت أو صورة مولدة، ثم برنامج مونتاج للتشطيب. — Do not make one tool do everything: capture, then AI structure (transcript, topics, dead sections, edit list), then ffmpeg, then Remotion, then generated audio/visuals, then an editor for finishing.",
-  "when": "مشروع مونتاج طويل أو متعدد الأدوات — a long or multi-tool edit project.",
   "how": "The model's job is structure: transcript, topics, dead sections, the EDL and scaffolded ffmpeg commands. Checkpoint the project before and after editor or audio-workstation changes; an API read-back is not proof it was saved; keep rendered media, the editable project and the approval as separate states; audition generated music for silence.",
   "params": "",
   "install": "",
@@ -1812,18 +1810,18 @@
    "مونتاج",
    "خط عمل"
   ],
+  "domain": "motion",
+  "when": "مشروع مونتاج طويل أو متعدد الأدوات — a long or multi-tool edit project.",
   "section": "إضافات v2 — v2 additions",
   "source": "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
  },
  {
   "id": "FOOT-X05",
   "family": "photo-video-footage",
-  "domain": "motion",
   "name_ar": "عقد محاكاة فيديو مرجعي",
   "name_en": "Reference-video imitation contract (8 steps)",
   "status": "documented",
   "what": "لتقليد مونتاج فيديو أرسله المستخدم: افحص، حلّل، طابق النص العربي، احفظ الصوت، استخدم مادة مرخصة، ارندر فقط بأداة متاحة، افحص، ثم سلّم مع تقرير الفروقات. — To imitate a user's reference edit: inspect, analyse, match the Arabic overlay, keep the audio, use licensed assets, render only with an available executor, QA, and deliver with a discrepancy report.",
-  "when": "«اعمل مثل هذا الفيديو» أو «نفس المونتاج» — 'make it like this video' or 'the same edit'.",
   "how": "1 inspect (ffprobe; originals read-only; timestamped deterministic frame samples) → 2 analyse (separate scene cuts from camera motion; classify cut/fade/wipe/slide/zoom-blur with measured ranges; keep uncertainty explicit) → 3 Arabic overlay (region geometry, in/out spans, font candidates not identities ARAB-X02, HarfBuzz shaping, mixed script and digits) → 4 audio (original when authorised; no invented word precision) → 5 assets (Pinterest = mood only; licensed media; never copy watermarks) → 6 render only with an exposed executor, else return the plan marked EXECUTOR_NOT_EXPOSED → 7 QA gates (MP4 exists, codec/duration/fps, non-frozen motion, safe zones, Arabic legibility, overlay timing, licence manifest, before/after storyboard; any failure blocks an 'exact match' claim) → 8 deliver MP4 + editable JSON shot plan + storyboard + font-candidate report + discrepancy summary. Not this route: a still image with the same font, Suno lyrics, motion from audio without a reference video, imitating email wording, or only downloading a link.",
   "params": "8 steps; failed gate → no 'exact match'",
   "install": "",
@@ -1845,18 +1843,18 @@
    "نفس المونتاج",
    "فيديو مرجعي"
   ],
+  "domain": "motion",
+  "when": "«اعمل مثل هذا الفيديو» أو «نفس المونتاج» — 'make it like this video' or 'the same edit'.",
   "section": "إضافات v2 — v2 additions",
   "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md"
  },
  {
   "id": "FOOT-X06",
   "family": "photo-video-footage",
-  "domain": "motion",
   "name_ar": "فاحص المرجع المرخّص: صفحة أو ملف أو HLS ← قياسات",
   "name_en": "Permissioned reference inspector: page / direct / HLS → measurements",
   "status": "proven",
   "what": "يكتشف روابط الوسائط في الصفحة (video/source، Open Graph، JSON-LD، النصوص البرمجية)، يجلب الملف المباشر أو بث HLS غير المشفّر (أعلى جودة، مع مسار صوت منفصل)، يرفض DRM والمضيفين الخاصين والأحجام الكبيرة، يعيد التغليف ثم يقيس: probe وcontact sheet وقطعات المشاهد ولوحة ألوان وتقرير ثنائي اللغة في .kosif-cache. — Discovers media URLs on a page, fetches direct or unencrypted HLS media (top variant, separate audio), refuses DRM/private hosts/oversize, remuxes and measures: probe, contact sheet, scene cuts, palette, bilingual REPORT.md in .kosif-cache.",
-  "when": "AGENTS.md rule 3: observe the reference before implementing, lawfully",
   "how": "`python3 .claude/skills/kosif-superpowers/scripts/fetch_reference.py <page-or-media-url> [--list | --pick N] [--frames 8 --scene 0.3 --max-mb 400]`; outputs reference.mp4, probe.json, contact.png, cuts.json, palette.json, REPORT.md; blob: players need the browser's network panel first (references/reference-inspection.md). Measured values go to STYLE.md *Observed*; nothing fetched is committed.",
   "params": "--max-mb 400; --scene 0.3; 8 frames; sequential bounded HLS segments",
   "install": "",
@@ -1882,7 +1880,119 @@
    "scene cuts",
    "rights"
   ],
+  "domain": "motion",
+  "when": "AGENTS.md rule 3: observe the reference before implementing, lawfully",
   "section": "إضافات v3 — v3 additions",
+  "source": ""
+ },
+ {
+  "id": "FOOT-D01",
+  "family": "photo-video-footage",
+  "name_ar": "ريل «الدعاء» من لقطاتك وصوتك",
+  "name_en": "«الدعاء» Friday dua reel kit",
+  "status": "proven",
+  "what": "أسلوب «الدعاء» المقاس محفوظ كعدة: عبارة = لقطة = سطر، عنوان «الجُمُعَة» ثلث، تاريخ برقم يوم يطير، سطر ذهبي، سطر دعاء أبيض بهالة داكنة، وانتقالات ضبابية/مرآة/زوم، والصوت منسوخ دون تعديل. / The measured «الدعاء» style saved as a kit: phrase = shot = line, Thuluth «الجُمُعَة» title, date with a flying day number, gold subtitle, white dua line with a tight dark halo, blur/mirror/zoom transitions, voice stream-copied untouched.",
+  "how": "Fill project.json (clips, lines with start/end or an asr.json, date, audio) from styles/dua/kit/example, then python3 styles/dua/kit/build_dua.py project.json --preview, then --out reel.mp4. Measured spec in styles/dua/dua.style.json. Proof: 15.4 s, 462 frames, 13/13 verify checks, 665/665 audio packets byte-identical.",
+  "params": "1080×1920 · 30 fps · CRF 18 · cut on phrase onset · line in +0.2 s / out −0.3 s · fades 0.17/0.15 s · day flight 0.1→1.1 s easeOutCubic",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "kit code: repo licence; fonts: SIL OFL 1.1",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/dua-style/README.md",
+   "kosif-tool/styles/dua/kit/build_dua.py",
+   "kosif-tool/styles/dua/dua.style.json",
+   "kosif-tool/styles/dua/ANALYSIS.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [
+   "dua"
+  ],
+  "tags": [
+   "الدعاء",
+   "دعاء",
+   "ليلة الجمعة",
+   "dua",
+   "friday reel",
+   "islamic reel",
+   "style kit",
+   "thuluth title"
+  ],
+  "section": "أسلوب «الدعاء» — «الدعاء» style kit",
+  "source": ""
+ },
+ {
+  "id": "FOOT-D02",
+  "family": "photo-video-footage",
+  "name_ar": "انتقالات كاب كات على الصورة فقط",
+  "name_en": "CapCut-style transitions under fixed text",
+  "status": "proven",
+  "what": "أربعة انتقالات مقاسة تطبق على اللقطات تحت طبقة نص لا تتأثر: دخول ضبابي، مرآة ثم ضبابية، زوم قطع، ضبابية دوّارة. / Four measured transitions applied to footage below an untouched text layer: blur_in, mirror_out_blur_in, zoom_out_cut, spin_zoom_blur.",
+  "how": "apply_transition() in styles/dua/kit/build_dua.py: blur_in starts at ~28 px motion blur and clears in 0.17–0.35 s easeOutCubic; mirror reflects the lower half 0.3 s before the cut; zoom pushes 6 % in 0.1 s; spin grows a radial blur over 0.45 s. Text layers are composited after the transition so they never blur.",
+  "params": "blur 28 px → 0 · mirror pre 0.3 s · push 6 %/0.1 s · spin 0.45 s",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "kit code: repo licence; fonts: SIL OFL 1.1",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/dua-style/README.md",
+   "kosif-tool/styles/dua/kit/build_dua.py",
+   "kosif-tool/styles/dua/dua.style.json",
+   "kosif-tool/styles/dua/ANALYSIS.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [
+   "dua"
+  ],
+  "tags": [
+   "انتقالات",
+   "ضبابية",
+   "مرآة",
+   "blur transition",
+   "mirror transition",
+   "zoom blur",
+   "capcut"
+  ],
+  "section": "أسلوب «الدعاء» — «الدعاء» style kit",
+  "source": ""
+ },
+ {
+  "id": "FOOT-D03",
+  "family": "photo-video-footage",
+  "name_ar": "قياس أسلوب ريل من الإطارات",
+  "name_en": "Measure a reel's style from its frames",
+  "status": "proven",
+  "what": "تحويل ريل مرجعي إلى مواصفة قابلة للتنفيذ: القطعات وتطابقها مع العبارات، ألوان النص بأقنعة، صناديق الطبقات، الهالة، تلوين اللقطات بـLab، الانتقالات، والصوت (LUFS وتفريغ). / Turn a reference reel into an executable spec: cuts vs phrase onsets, text colours via masks, layer boxes, halo profile, per-shot Lab grade, transitions and audio (LUFS, ASR).",
+  "how": "Run scripts/mimic/mm_analyze.py for shots and transitions, then measure text colour from white/gold masks rather than its auto colour (it can latch onto the shadow), radial luma rings for the halo, ffmpeg ebur128 for loudness and faster-whisper on a numpy array for phrase onsets. Write the result as <id>.style.json + ANALYSIS.md (measured vs assumed) as in styles/dua.",
+  "params": "cut tolerance ≤ 0.18 s · colour masks over ≥ 6 frames · halo rings 1–12 px",
+  "install": "",
+  "requires": [
+   "ffmpeg",
+   "pip:numpy",
+   "pip:faster-whisper"
+  ],
+  "license": "kit code: repo licence; fonts: SIL OFL 1.1",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/dua-style/README.md",
+   "kosif-tool/styles/dua/kit/build_dua.py",
+   "kosif-tool/styles/dua/dua.style.json",
+   "kosif-tool/styles/dua/ANALYSIS.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [
+   "dua"
+  ],
+  "tags": [
+   "تحليل أسلوب",
+   "قياس",
+   "style analysis",
+   "reference measurement",
+   "mimic",
+   "color mask"
+  ],
+  "section": "أسلوب «الدعاء» — «الدعاء» style kit",
   "source": ""
  }
 ]

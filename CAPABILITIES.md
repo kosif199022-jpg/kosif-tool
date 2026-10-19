@@ -27,13 +27,13 @@
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**4,689** قدرة · **52** عائلة · **10** مجالات · ✅ 809 مُثبتة بتشغيل فعلي · 🟢 636 جاهزة · 📦 965 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1423 طريقة موصوفة · 💡 71 فكرة.
+**4,692** قدرة · **52** عائلة · **10** مجالات · ✅ 812 مُثبتة بتشغيل فعلي · 🟢 636 جاهزة · 📦 965 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1423 طريقة موصوفة · 💡 71 فكرة.
 المستلزمات المسجّلة: **119** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **124** مستودعًا موثّق الترخيص.
 
 <a id="domains"></a>
 ## 3. المجالات والعائلات / domains and families
 
-### الموشن والمونتاج / motion — 3,798 powers · ✅ 539
+### الموشن والمونتاج / motion — 3,801 powers · ✅ 542
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
@@ -55,8 +55,8 @@
 | [التوهج والإضاءة — Glow, light & bloom](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/light-glow-bloom.md) | GLOW | 87 | 29 | GLOW-01 Living Arabic neon sign (ignition · wall light; GLOW-02 Ignition & faulty-tube flicker schedule; GLOW-03 SVG neon tube (4-stroke stack) |
 | [الجسيمات والسوائل والفيزياء — Particles, fluids & physics](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/particles-fluids-physics.md) | PART | 76 | 17 | PART-01 Deterministic hash / seeded RNG; PART-02 Closed-form particles (state-free seek); PART-06 Seeded analytic burst |
 | [المقاسات والمنصات — Formats & platforms](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/formats-platforms.md) | FMT | 70 | 17 | FMT-02 Aspect presets across the owner tools; FMT-03 Cinematic 2.35/2.39:1 and letterbox bars; FMT-08 9:16 UI safe zone |
+| [الصور والفيديو الخام — Photos & footage](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/photo-video-footage.md) | FOOT | 68 | 20 | FOOT-08 Scene/shot detection → timeline; FOOT-09 Contact sheet & cover-frame mining; FOOT-13 Reference-reel study (mimic) |
 | [المخططات والشرح والكود — Diagrams, explainers & code](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/diagrams-explainers-code.md) | EXPL | 65 | 2 | EXPL-50 Structural twin truss solver; EXPL-54 Flat educational water cycle; EXPL-01 Explainer diagram composition |
-| [الصور والفيديو الخام — Photos & footage](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/photo-video-footage.md) | FOOT | 65 | 17 | FOOT-08 Scene/shot detection → timeline; FOOT-09 Contact sheet & cover-frame mining; FOOT-13 Reference-reel study (mimic) |
 | [الرسم اليدوي والرسم الحي — Hand-drawn & draw-on](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/hand-drawn-draw-on.md) | DRAW | 62 | 17 | DRAW-01 SVG stroke draw-on; DRAW-03 Pen speed & lifts; DRAW-04 Human draw order & draw-and-label |
 | [الخرائط — Maps & geo](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/maps-geo.md) | MAP | 62 | 4 | MAP-29 Camera corridor path preparation; MAP-31 Arabic place-name normalisation; MAP-45 Schematic Saudi Arabia map — 13 regions, drill |
 | [التزامن مع الكلام والترجمة — Audio sync & captions](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/audio-sync-captions.md) | SYNC | 60 | 20 | SYNC-01 Audio is the master clock; SYNC-02 words.json master timing schema; SYNC-03 Subtitle/transcript → words.json converter |
@@ -142,9 +142,9 @@
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 569 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 571 | `apt-get install -y python3 python3-pip python3-venv` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
-| `ffmpeg` | bin | 397 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
+| `ffmpeg` | bin | 398 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
 | `chromium` | bin | 295 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
 | `npm:rea` | npm | 244 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
 | `npm:gsap` | npm | 235 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
@@ -153,14 +153,14 @@
 | `node` | bin | 148 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
 | `npm:remotion` | npm | 112 | `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3` |
 | `fonts:arabic` | font | 88 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |
-| `pip:numpy` | pip | 87 | `pip install numpy` |
+| `pip:numpy` | pip | 88 | `pip install numpy` |
 | `pip:pillow` | pip | 86 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
 | `imagemagick` | bin | 78 | `apt-get install -y imagemagick` |
 | `engine:ghidra` | bin | 75 | `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP` |
 | `key:video-gen` | service | 62 | `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits` |
 | `claude:tools` | service | 58 | `Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch` |
 | `pip:opencv` | pip | 54 | `pip install opencv-python-headless` |
-| `pip:faster-whisper` | model | 43 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
+| `pip:faster-whisper` | model | 44 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
 | `npm:react` | npm | 40 | `npm i react react-dom  (or next, svelte, vue)` |
 | `engine:android` | bin | 35 | `Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised` |
 | `pip:office` | pip | 32 | `pip install python-docx openpyxl python-pptx reportlab pypdf` |

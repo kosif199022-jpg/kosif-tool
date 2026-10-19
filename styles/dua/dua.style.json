@@ -1,0 +1,595 @@
+{
+ "id": "dua",
+ "name_ar": "الدعاء",
+ "name_en": "Friday dua reel",
+ "version": 1,
+ "measured_on": "2026-10-18",
+ "reference": {
+  "note": "owner-supplied 15.43 s vertical reel; watermark @alrihanii (third-party creator, credited, never rehosted)",
+  "w": 1080,
+  "h": 1920,
+  "fps": 60,
+  "duration_s": 15.43,
+  "frames": 926,
+  "audio": {
+   "codec": "aac",
+   "sample_rate": 44100,
+   "channels": 2,
+   "integrated_lufs": -12.9,
+   "lra_lu": 1.6,
+   "true_peak_dbfs": -2.3,
+   "spectral_centroid_hz": 1422,
+   "content": "recited dua (voice-dominant), transcribed with faster-whisper small"
+  }
+ },
+ "output": {
+  "w": 1080,
+  "h": 1920,
+  "fps": 30,
+  "codec": "h264",
+  "crf": 18,
+  "pix_fmt": "yuv420p",
+  "audio": "copy the user's track untouched (-c:a copy); never re-encode or normalise unless asked"
+ },
+ "structure": {
+  "grammar": "one spoken phrase = one shot = one on-screen dua line",
+  "shots": 8,
+  "shot_duration_s": {
+   "min": 1.25,
+   "median": 1.73,
+   "max": 2.96,
+   "rule": "shot length = phrase length; long phrases (≥5 words) get the longest shots"
+  },
+  "cut_rule": "cut on the phrase onset; measured mean |offset| 0.10 s (max 0.18 s)",
+  "text_rule": {
+   "in_after_cut_s": 0.2,
+   "out_before_next_cut_s": 0.3,
+   "gap_between_lines_s": 0.45
+  }
+ },
+ "timeline_reference": [
+  {
+   "phrase_start": 0.0,
+   "phrase_end": 1.68,
+   "asr": "اللهم في ليلة الجمع"
+  },
+  {
+   "phrase_start": 1.68,
+   "phrase_end": 4.62,
+   "asr": "اللهم صل وسل مبارك على نبينا محمد"
+  },
+  {
+   "phrase_start": 4.62,
+   "phrase_end": 6.46,
+   "asr": "صلاة تغفر بها ذنوبنا"
+  },
+  {
+   "phrase_start": 6.46,
+   "phrase_end": 7.94,
+   "asr": "وتهدي بها قلوبنا"
+  },
+  {
+   "phrase_start": 7.94,
+   "phrase_end": 9.64,
+   "asr": "وتفرج بها همومنا"
+  },
+  {
+   "phrase_start": 9.64,
+   "phrase_end": 11.16,
+   "asr": "وتصلح بها أعمالنا"
+  },
+  {
+   "phrase_start": 11.16,
+   "phrase_end": 14.0,
+   "asr": "وترزقنا ببركتها دعوة مستجابة لنا"
+  },
+  {
+   "phrase_start": 14.0,
+   "phrase_end": 15.36,
+   "asr": "اللهم أمير"
+  }
+ ],
+ "cuts_s": [
+  1.67,
+  4.52,
+  6.3,
+  8.02,
+  9.76,
+  11.22,
+  14.18
+ ],
+ "dua_lines_reference": [
+  {
+   "text": "اللَّهُمَّ في ليلة الجمعة",
+   "in": 0.23,
+   "out": 1.45
+  },
+  {
+   "text": "اللهم صل وسلم وبارك على\nنبينا محمد ﷺ",
+   "in": 1.87,
+   "out": 4.3,
+   "lines": 2
+  },
+  {
+   "text": "صلاة تغفر بها ذنوبنـــا",
+   "in": 4.75,
+   "out": 6.05
+  },
+  {
+   "text": "وتهدي بها قلوبنـــا",
+   "in": 6.5,
+   "out": 7.77
+  },
+  {
+   "text": "وتفرج بها همومنـــا",
+   "in": 8.22,
+   "out": 9.48
+  },
+  {
+   "text": "وتصلح بها أعمالنـــا",
+   "in": 9.92,
+   "out": 10.97
+  },
+  {
+   "text": "وترزقنا ببركتها دعوة مستجابة لنا",
+   "in": 11.4,
+   "out": 13.98
+  },
+  {
+   "text": "اللَّهُمَّ آمين 🤲",
+   "in": 14.37,
+   "out": 15.22
+  }
+ ],
+ "layers": {
+  "title": {
+   "text": "الجُمُعَة",
+   "source": "fonts/kosif-jumuah/demo/title-aljumuah.svg (composed Thuluth from Amiri Bold outlines, OFL)",
+   "fill": "#FEFEFD",
+   "bbox_px": [
+    603,
+    280,
+    955,
+    440
+   ],
+   "align": "right",
+   "right_margin_px": 124,
+   "persistent": true
+  },
+  "date": {
+   "text": "22.08.2025",
+   "font": "KOSIF Jumuah (Latin digits from Bodoni Moda, OFL)",
+   "fill": "#FEFEFD",
+   "bbox_px": [
+    443,
+    450,
+    957,
+    570
+   ],
+   "align": "right",
+   "right_margin_px": 123,
+   "split": "day number '22' is its own layer and animates; '.08.2025' stays",
+   "persistent": true
+  },
+  "subtitle_gold": {
+   "text": "ليلة جمعة مبـــاركة",
+   "font": "Marhey 700 (closest OFL; original is a rounded handwritten app font with a hooked kaf)",
+   "fill": "#FED27E",
+   "gradient": false,
+   "outline": "dark halo 2–4 px #140C08",
+   "bbox_px": [
+    274,
+    665,
+    817,
+    789
+   ],
+   "align": "center",
+   "word_spacing_em": -0.12,
+   "persistent": true
+  },
+  "dua": {
+   "font": "Scheherazade New Bold (weight) — Amiri Bold as fallback (letterforms); manual kashida on final words",
+   "fill": "#FEFEFD",
+   "align": "center",
+   "box_px": [
+    110,
+    850,
+    990,
+    1100
+   ],
+   "single_line_y_center": 985,
+   "two_line_y_center": 975,
+   "max_width_px": 880,
+   "size_px": 76,
+   "ink_height_single_px": 105,
+   "calibration_note": "ink-height target 105 px gives a median width ratio of 1.00 against 7 reference lines (Scheherazade New Bold); the original's longest line reaches the 880 px max width"
+  },
+  "watermark": {
+   "note": "the reference shows a creator handle at y≈1129–1170; do NOT reproduce it. Put the user's own handle there only if asked."
+  }
+ },
+ "shadow": {
+  "type": "tight dark halo (not an offset drop shadow)",
+  "color": "#0C0805",
+  "ring_luma_by_px": [
+   75.6,
+   13.5,
+   22.8,
+   35.5,
+   48.0,
+   53.3,
+   55.2,
+   56.0,
+   56.9,
+   57.9,
+   59.0,
+   59.9
+  ],
+  "css": "0 0 2px rgba(12,8,5,.95), 0 0 4px rgba(12,8,5,.85), 0 0 8px rgba(12,8,5,.45), -2px 0 6px rgba(12,8,5,.35)",
+  "note": "luma falls from background ~57 to ~13 at 2 px and recovers by 6 px; darkest side slightly left (-6 px)"
+ },
+ "palette": {
+  "text": {
+   "white": "#FEFEFD",
+   "gold": "#FED27E",
+   "halo": "#0C0805"
+  },
+  "footage_global": [
+   [
+    "#402721",
+    0.201
+   ],
+   [
+    "#5C4C45",
+    0.16
+   ],
+   [
+    "#140C08",
+    0.154
+   ],
+   [
+    "#9E8B80",
+    0.142
+   ],
+   [
+    "#776B69",
+    0.129
+   ],
+   [
+    "#74351A",
+    0.089
+   ],
+   [
+    "#A46942",
+    0.076
+   ],
+   [
+    "#C5B8AE",
+    0.049
+   ]
+  ],
+  "footage_lab_mean": {
+   "L": 35.9,
+   "a": 8.7,
+   "b": 11.5
+  },
+  "grade": "warm low-key: L 28–42, a +4…+13, b +4…+23, saturation 0.27–0.62, soft contrast (L std 14–30); no added vignette (corner/centre 1.065)"
+ },
+ "shots_reference": [
+  {
+   "n": 1,
+   "t0": 0,
+   "t1": 1.67,
+   "dur": 1.67,
+   "subject_ar": "مبخرة ومصحف ووردة",
+   "L": 40.0,
+   "a": 4.6,
+   "b": 3.9,
+   "sat": 0.339,
+   "contrast_L_std": 29.9,
+   "palette": [
+    "#1B1317",
+    "#5A4C48",
+    "#BDAFA2",
+    "#DED2CA",
+    "#948172"
+   ],
+   "pan_px_s": [
+    -0.2,
+    -1.2
+   ],
+   "jitter_px": 0.3
+  },
+  {
+   "n": 2,
+   "t0": 1.67,
+   "t1": 4.52,
+   "dur": 2.85,
+   "subject_ar": "ورد وزهرية ومبخرة مزخرفة",
+   "L": 41.7,
+   "a": 10.6,
+   "b": 13.2,
+   "sat": 0.415,
+   "contrast_L_std": 18.1,
+   "palette": [
+    "#815645",
+    "#9D7A67",
+    "#5A3828",
+    "#A59691",
+    "#191006"
+   ],
+   "pan_px_s": [
+    -1.1,
+    0.2
+   ],
+   "jitter_px": 0.4
+  },
+  {
+   "n": 3,
+   "t0": 4.52,
+   "t1": 6.3,
+   "dur": 1.78,
+   "subject_ar": "مصحف ومكتبة",
+   "L": 37.8,
+   "a": 8.0,
+   "b": 10.7,
+   "sat": 0.369,
+   "contrast_L_std": 14.4,
+   "palette": [
+    "#4C2B1A",
+    "#604E43",
+    "#756E6E",
+    "#9B999E",
+    "#966B44"
+   ],
+   "pan_px_s": [
+    0.4,
+    -1.8
+   ],
+   "jitter_px": 0.4
+  },
+  {
+   "n": 4,
+   "t0": 6.3,
+   "t1": 8.02,
+   "dur": 1.72,
+   "subject_ar": "مصحف ومبخرة سوداء",
+   "L": 27.6,
+   "a": 6.8,
+   "b": 11.7,
+   "sat": 0.562,
+   "contrast_L_std": 20.6,
+   "palette": [
+    "#150A04",
+    "#3D2411",
+    "#897061",
+    "#614730",
+    "#9D8575"
+   ],
+   "pan_px_s": [
+    -1.5,
+    -2.2
+   ],
+   "jitter_px": 0.6
+  },
+  {
+   "n": 5,
+   "t0": 8.02,
+   "t1": 9.76,
+   "dur": 1.74,
+   "subject_ar": "قهوة وماء وشمعة",
+   "L": 35.5,
+   "a": 4.1,
+   "b": 6.8,
+   "sat": 0.265,
+   "contrast_L_std": 17.9,
+   "palette": [
+    "#685B51",
+    "#221913",
+    "#483C33",
+    "#8C7B6F",
+    "#A69795"
+   ],
+   "pan_px_s": [
+    0.2,
+    -2.1
+   ],
+   "jitter_px": 0.3
+  },
+  {
+   "n": 6,
+   "t0": 9.76,
+   "t1": 11.22,
+   "dur": 1.46,
+   "subject_ar": "مصحف مزخرف وأباجورة",
+   "L": 35.1,
+   "a": 12.9,
+   "b": 19.9,
+   "sat": 0.622,
+   "contrast_L_std": 19.0,
+   "palette": [
+    "#B46D3B",
+    "#683B1D",
+    "#1D1109",
+    "#5C6976",
+    "#8096AA"
+   ],
+   "pan_px_s": [
+    3.0,
+    -0.9
+   ],
+   "jitter_px": 0.4
+  },
+  {
+   "n": 7,
+   "t0": 11.22,
+   "t1": 14.18,
+   "dur": 2.96,
+   "subject_ar": "مبخرة كريستال وورد أحمر",
+   "L": 30.8,
+   "a": 11.5,
+   "b": 3.3,
+   "sat": 0.366,
+   "contrast_L_std": 14.7,
+   "palette": [
+    "#561D20",
+    "#353134",
+    "#594E57",
+    "#83736D",
+    "#92939F"
+   ],
+   "pan_px_s": [
+    -0.3,
+    -0.9
+   ],
+   "jitter_px": 0.1
+  },
+  {
+   "n": 8,
+   "t0": 14.18,
+   "t1": 15.43,
+   "dur": 1.25,
+   "subject_ar": "أباجورة ومصحف ونبتة",
+   "L": 38.6,
+   "a": 11.0,
+   "b": 22.6,
+   "sat": 0.613,
+   "contrast_L_std": 23.5,
+   "palette": [
+    "#BFA386",
+    "#864413",
+    "#0D0902",
+    "#907353",
+    "#592C0B"
+   ],
+   "pan_px_s": [
+    -8.7,
+    10.4
+   ],
+   "jitter_px": 4.7
+  }
+ ],
+ "animations": {
+  "intro": {
+   "global_fade_from_black_s": [
+    0.0,
+    0.6
+   ],
+   "text_fade_s": [
+    0.05,
+    0.6
+   ],
+   "day_number_flight": {
+    "layer": "date.day",
+    "from": "centre, ~y 1020 (just above the first dua line)",
+    "path": "rises in a soft arc past the gold line to its slot left of '.08.2025'",
+    "t": [
+     0.1,
+     1.1
+    ],
+    "ease": "easeOutCubic",
+    "note": "a single element flies; everything else only fades"
+   }
+  },
+  "dua_line": {
+   "in": {
+    "type": "opacity",
+    "dur_s": 0.17,
+    "ease": "easeOutQuad"
+   },
+   "hold": "static, no scale or drift",
+   "out": {
+    "type": "opacity",
+    "dur_s": 0.15,
+    "ease": "easeInQuad"
+   }
+  },
+  "outro": {
+   "amen_line_in": 14.37,
+   "day_number_drift": {
+    "t": [
+     14.7,
+     15.05
+    ],
+    "dx_px": -40,
+    "ease": "easeInOutSine"
+   },
+   "overlay_fade_out_s": [
+    15.05,
+    15.38
+   ],
+   "footage_continues": true
+  }
+ },
+ "transitions": {
+  "family": "CapCut-style blur / mirror / zoom-blur; text layer is above and never blurred",
+  "kinds": {
+   "blur_in": {
+    "desc": "hard cut; the incoming shot starts motion-blurred and clears",
+    "dur_s": [
+     0.17,
+     0.35
+    ],
+    "blur_px_start": 28,
+    "ease": "easeOutCubic",
+    "used_at": [
+     1.67,
+     6.3
+    ]
+   },
+   "mirror_out_blur_in": {
+    "desc": "~0.3 s before the cut the lower half of the outgoing shot reflects (mirror at frame middle), then cut into a blur_in",
+    "pre_s": 0.3,
+    "used_at": [
+     4.52,
+     8.02,
+     9.76
+    ]
+   },
+   "zoom_out_cut": {
+    "desc": "outgoing pushes in ~6 % over 0.1 s, cut into a light blur_in",
+    "used_at": [
+     11.22
+    ]
+   },
+   "spin_zoom_blur": {
+    "desc": "outgoing gets a growing radial/spin blur for ~0.45 s, cut into a strong radial blur that clears in ~0.17 s",
+    "used_at": [
+     14.18
+    ]
+   }
+  },
+  "sequence_reference": [
+   "blur_in",
+   "mirror_out_blur_in",
+   "blur_in",
+   "mirror_out_blur_in",
+   "mirror_out_blur_in",
+   "zoom_out_cut",
+   "spin_zoom_blur"
+  ]
+ },
+ "camera": {
+  "in_shot": "near-static, slow drift ≤ 3 px/s (handheld last shot ~10 px/s)",
+  "template": "add a 3 % slow push-in per shot (Ken Burns) when using still photos"
+ },
+ "footage_brief": {
+  "subjects": [
+   "مصحف مفتوح",
+   "ورد أحمر أو وردي",
+   "مبخرة وبخور متصاعد",
+   "قهوة/ماء وشمعة",
+   "أباجورة دافئة",
+   "سبحة",
+   "مزهرية خزفية"
+  ],
+  "light": "warm practical light (lamps, candles), shallow depth of field, soft bokeh",
+  "avoid": [
+   "faces",
+   "logos",
+   "harsh daylight",
+   "busy text in frame behind the title area (top-right)"
+  ]
+ },
+ "rights": "Use your own or licensed footage and voice. The reference reel, its footage, audio and the creator's handle are not reused."
+}
