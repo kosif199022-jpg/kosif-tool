@@ -38,6 +38,7 @@ jobs:
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_local_first.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_catalog_evidence_audit.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_blender_bridge.py' -v
       - name: Test new Code Drawing Master before packaging
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
@@ -81,6 +82,11 @@ jobs:
                   "scripts/creative_paint.py",
                   "scripts/local_first.py",
                   "scripts/catalog_evidence_audit.py",
+                  "scripts/blender_bridge.py",
+                  "scripts/blender_worker.py",
+                  "templates/blender-demo.json",
+                  "references/blender-integration.md",
+                  "evals/test_blender_bridge.py",
                   "evals/test_local_first.py",
                   "evals/test_catalog_evidence_audit.py",
                   "references/claude-auto-local-first.md",
