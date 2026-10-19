@@ -308,3 +308,19 @@ REA CLI v6.7.0 was successfully invoked on Windows, but an REA MCP registration 
 For a film request with immutable original audio and approved real footage, read [KOSIF deep editor study](../../../docs/KOSIF_MEDIA_EDITOR_DEEP_RESEARCH_20261019.md) and use `scripts/cinematic_cut_planner.py` to produce the EDL, followed by **`scripts/cinematic_broll_render.py`** to produce an actual camera-animated, frame-verified B-roll video with original audio stream copied unchanged into a compatible container. The render program requires a local asset manifest with independently verified footage licenses, frame review, SHA256 hashes, and a complete contiguous EDL; it refuses missing or mismatched sources and will not overwrite an output. Test with `python -m unittest discover -s tests -p test_cinematic_broll_render.py -v` in the repository root.
 
 This is a **real intermediate video render**, not yet a final motion-graphics film: word-synced Arabic kinetic captions, advanced compositing, source acquisition and final social loudness export require separate verified modules. Do not claim those are implemented by this component. Reference editors provide feature ideas only; do not import proprietary code/assets.
+
+## REA Creative Research Atlas — 2,000 public sources (2026-10-19)
+
+For filmmaking, editing, imagery, animation, audio-sync, font/VFX or media-research requests, consult [evidence-bound creative discovery report](../../../docs/REA_CREATIVE_DISCOVERY_2000_20261019.md). Search the **1,000 public GitHub repository metadata records and 1,000 curated creative website records** using:
+
+```bash
+python scripts/creative_external_search.py stats
+python scripts/creative_external_search.py search "cinematic Arabic kinetic typography and real-footage editing" --top 20
+python scripts/creative_external_search.py search "image restoration masking upscaling" --kind repo --top 20
+```
+
+The search tool is an external-source discovery registry, NOT a claim of 2,000 REA inspections or 2,000 usable components. Entries contain provenance and explicitly unverified capability status. Continue to use `scripts/capability_atlas.py plan` and the core KOSIF execution tests to determine **actual** installed working capabilities.
+
+**Verified REA scope:** first-party source static inspection has analyzed nine accessible owned JavaScript/TypeScript repositories; five selected public creative sites received scoped passive CDP observations. Remaining owner repositories were inspected through GitHub tree metadata only. Keep private repository metadata, cloned source and full REA Evidence JSON **off public branches**; never copy private code/secrets into the external discovery indexes. REA analysis is read-only and bounded; never run arbitrary installer, untrusted repo code, or hidden-service intrusions. Use `scripts/rea_owned_repo_batch.py` only with an explicitly specified local private evidence directory and permitted targets.
+
+Candidate techniques from competing products must be implemented independently and tested; never copy proprietary internal source or inflate KOSIF's proven capability count from metadata-only research.
