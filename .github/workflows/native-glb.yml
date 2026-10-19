@@ -1,0 +1,27 @@
+name: Native Blender-free GLB
+
+on:
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-superpowers/scripts/native_glb.py'
+      - '.claude/skills/kosif-superpowers/evals/test_native_glb.py'
+      - '.claude/skills/kosif-superpowers/templates/blender-demo.json'
+      - '.github/workflows/native-glb.yml'
+  push:
+    branches: [main]
+    paths:
+      - '.claude/skills/kosif-superpowers/scripts/native_glb.py'
+      - '.claude/skills/kosif-superpowers/evals/test_native_glb.py'
+      - '.github/workflows/native-glb.yml'
+permissions:
+  contents: read
+jobs:
+  verify-native-glb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check independent native GLB exporter without Blender
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_native_glb.py' -v
