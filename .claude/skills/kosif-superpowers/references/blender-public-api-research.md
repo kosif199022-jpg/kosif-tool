@@ -30,3 +30,4 @@ A read-only bpy namespace/type introspection on the installed Blender returned:
 2. Enhance the independent native core with proper z-buffer, mesh IO, scene graph, shading, IK, skinning, materials and compositing, in isolated reviewed commits.
 3. For every added feature, require a real scene file, deterministic render output and pixel/frame assertions rather than a paper catalog badge.
 4. Review every dependency's license; Blender's GPL does not grant a license to transplant arbitrary source into KOSIF under a different incompatible license.
+REA/Ghidra 12.1.4 verified 2026-10-19 on official Blender 5.2.2 x64 launcher (335320 bytes, SHA256 4eaf39014f25c60619fbaef4e8b8a1d6d9d016badd3b2951ce101c8c8224edf3). PE x86_64 load image and byte mappings recorded locally at KOSIF_RESEARCH_PRIVATE_20261019/REA_GHIDRA_BLENDER_LAUNCHER_20261019.json. LAUNCHER ONLY, not a complete Blender engine reconstruction. No binaries changed.
