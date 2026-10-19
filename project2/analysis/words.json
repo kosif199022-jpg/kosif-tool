@@ -1,0 +1,418 @@
+[
+ {
+  "i": 0,
+  "word": "اللهم",
+  "start": 0.1,
+  "end": 0.62,
+  "confidence": 0.975,
+  "sentence": 0
+ },
+ {
+  "i": 1,
+  "word": "في",
+  "start": 0.76,
+  "end": 0.86,
+  "confidence": 0.995,
+  "sentence": 0
+ },
+ {
+  "i": 2,
+  "word": "يوم",
+  "start": 0.941,
+  "end": 1.161,
+  "confidence": 0.997,
+  "sentence": 0
+ },
+ {
+  "i": 3,
+  "word": "الثلاثاء",
+  "start": 1.261,
+  "end": 1.881,
+  "confidence": 0.856,
+  "sentence": 0
+ },
+ {
+  "i": 4,
+  "word": "اللهم",
+  "start": 2.261,
+  "end": 2.682,
+  "confidence": 0.95,
+  "sentence": 1
+ },
+ {
+  "i": 5,
+  "word": "بشرنا",
+  "start": 2.782,
+  "end": 3.242,
+  "confidence": 0.987,
+  "sentence": 1
+ },
+ {
+  "i": 6,
+  "word": "في",
+  "start": 3.322,
+  "end": 3.422,
+  "confidence": 0.997,
+  "sentence": 1
+ },
+ {
+  "i": 7,
+  "word": "هذا",
+  "start": 3.522,
+  "end": 3.782,
+  "confidence": 0.919,
+  "sentence": 1
+ },
+ {
+  "i": 8,
+  "word": "اليوم",
+  "start": 3.822,
+  "end": 4.082,
+  "confidence": 0.998,
+  "sentence": 1
+ },
+ {
+  "i": 9,
+  "word": "المبارك",
+  "start": 4.162,
+  "end": 4.743,
+  "confidence": 0.987,
+  "sentence": 1
+ },
+ {
+  "i": 10,
+  "word": "بالفرح",
+  "start": 5.023,
+  "end": 5.443,
+  "confidence": 0.995,
+  "sentence": 2
+ },
+ {
+  "i": 11,
+  "word": "والسعادة",
+  "start": 5.563,
+  "end": 6.163,
+  "confidence": 0.994,
+  "sentence": 2
+ },
+ {
+  "i": 12,
+  "word": "وراحة",
+  "start": 6.324,
+  "end": 6.664,
+  "confidence": 0.969,
+  "sentence": 2
+ },
+ {
+  "i": 13,
+  "word": "البال",
+  "start": 6.804,
+  "end": 7.144,
+  "confidence": 0.936,
+  "sentence": 2
+ },
+ {
+  "i": 14,
+  "word": "اللهم",
+  "start": 7.464,
+  "end": 7.884,
+  "confidence": 0.952,
+  "sentence": 3
+ },
+ {
+  "i": 15,
+  "word": "أبعد",
+  "start": 8.005,
+  "end": 8.285,
+  "confidence": 0.996,
+  "sentence": 3
+ },
+ {
+  "i": 16,
+  "word": "عن",
+  "start": 8.345,
+  "end": 8.465,
+  "confidence": 0.996,
+  "sentence": 3
+ },
+ {
+  "i": 17,
+  "word": "أجسادنا",
+  "start": 8.525,
+  "end": 9.145,
+  "confidence": 0.993,
+  "sentence": 3
+ },
+ {
+  "i": 18,
+  "word": "كل",
+  "start": 9.265,
+  "end": 9.445,
+  "confidence": 0.998,
+  "sentence": 3
+ },
+ {
+  "i": 19,
+  "word": "مرض",
+  "start": 9.565,
+  "end": 9.826,
+  "confidence": 0.997,
+  "sentence": 3
+ },
+ {
+  "i": 20,
+  "word": "وعن",
+  "start": 10.066,
+  "end": 10.306,
+  "confidence": 0.967,
+  "sentence": 4
+ },
+ {
+  "i": 21,
+  "word": "قلوبنا",
+  "start": 10.366,
+  "end": 10.886,
+  "confidence": 0.993,
+  "sentence": 4
+ },
+ {
+  "i": 22,
+  "word": "كل",
+  "start": 11.006,
+  "end": 11.166,
+  "confidence": 0.997,
+  "sentence": 4
+ },
+ {
+  "i": 23,
+  "word": "هم",
+  "start": 11.286,
+  "end": 11.506,
+  "confidence": 0.992,
+  "sentence": 4
+ },
+ {
+  "i": 24,
+  "word": "وحزن",
+  "start": 11.667,
+  "end": 12.067,
+  "confidence": 0.976,
+  "sentence": 4
+ },
+ {
+  "i": 25,
+  "word": "وارزقنا",
+  "start": 12.547,
+  "end": 13.027,
+  "confidence": 0.922,
+  "sentence": 5
+ },
+ {
+  "i": 26,
+  "word": "من",
+  "start": 13.107,
+  "end": 13.227,
+  "confidence": 0.998,
+  "sentence": 5
+ },
+ {
+  "i": 27,
+  "word": "الخير",
+  "start": 13.267,
+  "end": 13.648,
+  "confidence": 0.958,
+  "sentence": 5
+ },
+ {
+  "i": 28,
+  "word": "أوفره",
+  "start": 13.788,
+  "end": 14.228,
+  "confidence": 0.964,
+  "sentence": 5
+ },
+ {
+  "i": 29,
+  "word": "ومن",
+  "start": 14.508,
+  "end": 14.728,
+  "confidence": 0.995,
+  "sentence": 6
+ },
+ {
+  "i": 30,
+  "word": "الرزق",
+  "start": 14.768,
+  "end": 15.129,
+  "confidence": 0.785,
+  "sentence": 6
+ },
+ {
+  "i": 31,
+  "word": "أطيبه",
+  "start": 15.269,
+  "end": 15.749,
+  "confidence": 0.883,
+  "sentence": 6
+ },
+ {
+  "i": 32,
+  "word": "ومن",
+  "start": 15.989,
+  "end": 16.209,
+  "confidence": 0.996,
+  "sentence": 7
+ },
+ {
+  "i": 33,
+  "word": "القدر",
+  "start": 16.269,
+  "end": 16.649,
+  "confidence": 0.994,
+  "sentence": 7
+ },
+ {
+  "i": 34,
+  "word": "أجمله",
+  "start": 16.789,
+  "end": 17.19,
+  "confidence": 0.834,
+  "sentence": 7
+ },
+ {
+  "i": 35,
+  "word": "واجعل",
+  "start": 17.37,
+  "end": 17.69,
+  "confidence": 0.8,
+  "sentence": 8
+ },
+ {
+  "i": 36,
+  "word": "أيامنا",
+  "start": 17.75,
+  "end": 18.27,
+  "confidence": 0.951,
+  "sentence": 8
+ },
+ {
+  "i": 37,
+  "word": "مملوءة",
+  "start": 18.35,
+  "end": 18.811,
+  "confidence": 0.835,
+  "sentence": 8
+ },
+ {
+  "i": 38,
+  "word": "بالبركة",
+  "start": 19.051,
+  "end": 19.551,
+  "confidence": 0.992,
+  "sentence": 8
+ },
+ {
+  "i": 39,
+  "word": "والعافية",
+  "start": 19.751,
+  "end": 20.351,
+  "confidence": 0.997,
+  "sentence": 9
+ },
+ {
+  "i": 40,
+  "word": "والبشائر",
+  "start": 20.532,
+  "end": 21.172,
+  "confidence": 0.936,
+  "sentence": 9
+ },
+ {
+  "i": 41,
+  "word": "السارة",
+  "start": 21.252,
+  "end": 21.672,
+  "confidence": 0.798,
+  "sentence": 9
+ },
+ {
+  "i": 42,
+  "word": "واحفظنا",
+  "start": 22.052,
+  "end": 22.633,
+  "confidence": 0.935,
+  "sentence": 10
+ },
+ {
+  "i": 43,
+  "word": "يا",
+  "start": 22.753,
+  "end": 22.853,
+  "confidence": 0.995,
+  "sentence": 10
+ },
+ {
+  "i": 44,
+  "word": "رب",
+  "start": 22.953,
+  "end": 23.133,
+  "confidence": 0.998,
+  "sentence": 10
+ },
+ {
+  "i": 45,
+  "word": "العالمين",
+  "start": 23.213,
+  "end": 23.833,
+  "confidence": 0.996,
+  "sentence": 10
+ },
+ {
+  "i": 46,
+  "word": "بعينك",
+  "start": 23.934,
+  "end": 24.394,
+  "confidence": 0.997,
+  "sentence": 11
+ },
+ {
+  "i": 47,
+  "word": "التي",
+  "start": 24.494,
+  "end": 24.794,
+  "confidence": 0.991,
+  "sentence": 11
+ },
+ {
+  "i": 48,
+  "word": "لا",
+  "start": 24.894,
+  "end": 24.974,
+  "confidence": 0.991,
+  "sentence": 11
+ },
+ {
+  "i": 49,
+  "word": "تنام",
+  "start": 25.074,
+  "end": 25.434,
+  "confidence": 0.983,
+  "sentence": 11
+ },
+ {
+  "i": 50,
+  "word": "اللهم",
+  "start": 25.935,
+  "end": 26.515,
+  "confidence": 0.988,
+  "sentence": 12
+ },
+ {
+  "i": 51,
+  "word": "آمين",
+  "start": 26.715,
+  "end": 27.215,
+  "confidence": 0.916,
+  "sentence": 12
+ }
+]
