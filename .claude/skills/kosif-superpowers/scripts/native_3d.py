@@ -13,7 +13,7 @@ import tempfile
 from PIL import Image, ImageDraw
 
 SCHEMA = "kosif.native3d.v1"
-SHAPES = {"cube", "sphere", "cylinder"}
+SHAPES = {"cube", "sphere", "cylinder", "cone", "torus"}
 def vec(raw, max_abs=100.0):
     if not isinstance(raw,list) or len(raw)!=3 or any(type(v) not in (int,float) or
           not math.isfinite(v) or abs(v)>max_abs for v in raw):
@@ -116,7 +116,45 @@ def cylinder(steps=12):
         j=(i+1)%steps
         f.extend([(i,j,steps+j),(i,steps+j,steps+i),(2*steps,j,i),(2*steps+1,steps+i,steps+j)])
     return v,f
-MESHES={"cube":cube(),"sphere":sphere(),"cylinder":cylinder()}
+def cone(steps=16):
+    """Independent cone with closed base; vertices are in a unit cube."""
+    v=[(.5*math.cos(2*math.pi*i/steps),
+        .5*math.sin(2*math.pi*i/steps),-.5) for i in range(steps)]
+    v.extend([(0,0,.5),(0,0,-.5)])
+    tip,base=steps,steps+1
+    faces=[]
+    for i in range(steps):
+        j=(i+1)%steps
+        faces.extend([(i,j,tip),(base,j,i)])
+    return v,faces
+
+
+def torus(steps=20,tube_steps=10):
+    """Independent triangulated torus; ring and tube radii total 0.5."""
+    major,minor=.34,.16
+    v=[]
+    for i in range(steps):
+        u=2*math.pi*i/steps
+        for j in range(tube_steps):
+            q=2*math.pi*j/tube_steps
+            radial=major+minor*math.cos(q)
+            v.append((radial*math.cos(u),radial*math.sin(u),
+                      minor*math.sin(q)))
+    faces=[]
+    for i in range(steps):
+        ni=(i+1)%steps
+        for j in range(tube_steps):
+            nj=(j+1)%tube_steps
+            a=i*tube_steps+j
+            b=ni*tube_steps+j
+            c=i*tube_steps+nj
+            d=ni*tube_steps+nj
+            faces.extend([(a,b,d),(a,d,c)])
+    return v,faces
+
+
+MESHES={"cube":cube(),"sphere":sphere(),"cylinder":cylinder(),
+        "cone":cone(),"torus":torus()}
 def pose(obj,frame):
     loc=vec(obj.get("location",[0,0,0]))
     yaw=float(obj.get("yaw",0))

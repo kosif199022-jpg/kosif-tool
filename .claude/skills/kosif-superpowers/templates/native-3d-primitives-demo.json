@@ -1,0 +1,12 @@
+﻿{
+  "schema":"kosif.native3d.v1",
+  "width":256, "height":160, "fps":12, "frames":60,
+  "render_mode":"zbuffer", "background":"#263448",
+  "camera":{"position":[5,-8,5],"target":[0,0,0],"ortho_scale":5},
+  "objects":[
+    {"shape":"torus","color":"#EABF79","location":[-0.9,0,0.4],"scale":[1.8,1.8,1.8],
+     "keyframes":[{"frame":60,"yaw":180}]},
+    {"shape":"cone","color":"#51BDA1","location":[1.1,0,0],"scale":[1.8,1.8,1.8],
+     "keyframes":[{"frame":60,"location":[1.1,1,0],"yaw":270}]}
+  ]
+}

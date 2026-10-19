@@ -53,6 +53,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_atlas_metadata_audit.py' -v
       - name: Verify Blender-free native Z-buffer rasterizer
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_native_zbuffer.py' -v
+      - name: Verify independent cone and torus rendering
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_native_primitives.py' -v
       - name: Test new Code Drawing Master before packaging
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
@@ -95,12 +97,18 @@ jobs:
                   "scripts/code_drawing_master.py",
                   "scripts/creative_paint.py",
                   "scripts/native_3d.py",
+                  "templates/native-3d-primitives-demo.json",
+                  "references/native-primitives-and-research-v2.md",
+                  "evals/test_native_primitives.py",
                   "templates/native-zbuffer-demo.json",
                   "references/native-zbuffer-rasterizer.md",
                   "evals/test_native_zbuffer.py",
                   "scripts/local_first.py",
                   "scripts/catalog_evidence_audit.py",
                   "scripts/native_3d.py",
+                  "templates/native-3d-primitives-demo.json",
+                  "references/native-primitives-and-research-v2.md",
+                  "evals/test_native_primitives.py",
                   "templates/native-3d-demo.json",
                   "evals/test_native_3d.py",
                   "references/native-3d-runtime.md",

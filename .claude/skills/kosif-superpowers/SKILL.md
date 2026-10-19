@@ -59,6 +59,13 @@ depth for each pixel, can export actual PNG/H.264 MP4 without Blender, and
 preserves the legacy painter mode. It is an original minimal renderer, not
 Cycles/EEVEE/Blender full-featured source replacement.
 
+## Blender-free KOSIF native 3D extensions
+
+For original cone, torus, cube, sphere, cylinder use scripts/native_3d.py;
+see templates/native-3d-primitives-demo.json and references/native-primitives-and-research-v2.md.
+CPU z-buffer renders and FFmpeg exports are testable without Blender.
+REA, public site surveys, Jev-compatible Laya and Atlas metadata are NOT
+proof that KOSIF possesses their implementation or execution environment.
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](references/capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
