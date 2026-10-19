@@ -1,0 +1,383 @@
+{
+ "assets": [
+  {
+   "shot": "S1",
+   "file": "assets/raw/mk_9998.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/mosque-in-the-mountain-at-dawn-9998/",
+   "download_url": "https://assets.mixkit.co/videos/9998/9998-720.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 1280,
+   "height": 720,
+   "fps": "30/1",
+   "duration": 36.0,
+   "source_in": 8.0,
+   "timeline": [
+    0.0,
+    3.36
+   ],
+   "speed": 1.0,
+   "camera": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.47
+    ],
+    "z0": 1.0,
+    "z1": 1.1,
+    "ease": "inOutSine"
+   },
+   "why": "Monday dawn over a mountain mosque: opening invocation, slow push toward the mosque",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S2",
+   "file": "assets/raw/mk_34371.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/sunlight-passing-through-the-leaves-of-a-tree-34371/",
+   "download_url": "https://assets.mixkit.co/videos/34371/34371-2160.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 3840,
+   "height": 2160,
+   "fps": "24000/1001",
+   "duration": 7.01,
+   "source_in": 0.3,
+   "timeline": [
+    3.36,
+    6.3
+   ],
+   "speed": 0.85,
+   "camera": {
+    "type": "tilt-up",
+    "c0": [
+     0.62,
+     0.55
+    ],
+    "c1": [
+     0.6,
+     0.47
+    ],
+    "z0": 1.15,
+    "z1": 1.2,
+    "ease": "inOutSine"
+   },
+   "why": "sunburst opening through leaves = a door of joy opening",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S3",
+   "file": "assets/raw/mk_39179.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/elegant-living-room-inside-a-mosque-39179/",
+   "download_url": "https://assets.mixkit.co/videos/39179/39179-720.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 1280,
+   "height": 720,
+   "fps": "25/1",
+   "duration": 30.52,
+   "source_in": 3.0,
+   "timeline": [
+    6.3,
+    9.29
+   ],
+   "speed": 1.0,
+   "camera": {
+    "type": "drift",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.04,
+    "z1": 1.0,
+    "ease": "inOutSine"
+   },
+   "why": "countless hanging lamps = blessed provision beyond counting",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S4",
+   "file": "assets/raw/mk_39184.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/elegant-room-with-chandeliers-inside-a-mosque-39184/",
+   "download_url": "https://assets.mixkit.co/videos/39184/39184-720.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 1280,
+   "height": 720,
+   "fps": "25/1",
+   "duration": 12.8,
+   "source_in": 1.0,
+   "timeline": [
+    9.29,
+    12.49
+   ],
+   "speed": 1.0,
+   "camera": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.52
+    ],
+    "z0": 1.02,
+    "z1": 1.12,
+    "ease": "inOutSine"
+   },
+   "why": "empty prayer hall, slow push toward the mihrab: the supplication that is answered",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S5",
+   "file": "assets/raw/mk_51106.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/rays-of-the-sun-passing-through-the-branches-of-a-51106/",
+   "download_url": "https://assets.mixkit.co/videos/51106/51106-2160.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 3840,
+   "height": 2160,
+   "fps": "15/1",
+   "duration": 10.93,
+   "source_in": 0.0,
+   "timeline": [
+    12.49,
+    14.07
+   ],
+   "speed": 1.0,
+   "camera": {
+    "type": "tilt-up",
+    "c0": [
+     0.45,
+     0.6
+    ],
+    "c1": [
+     0.45,
+     0.4
+    ],
+    "z0": 1.25,
+    "z1": 1.25,
+    "ease": "inOutSine"
+   },
+   "why": "Ya Rabb: the eyes lift to the sky",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S6a",
+   "file": "assets/raw/cv_coverr-sun-shining-over-the-ocean-2178.mp4",
+   "provider": "Coverr",
+   "page": "https://coverr.co/videos/coverr-sun-shining-over-the-ocean-2178",
+   "download_url": "https://cdn.coverr.co/videos/coverr-sun-shining-over-the-ocean-2178/1080p.mp4",
+   "license": "Coverr License (free for commercial use, no attribution required)",
+   "license_url": "https://coverr.co/license",
+   "width": 1920,
+   "height": 1080,
+   "fps": "24000/1001",
+   "duration": 52.68,
+   "source_in": 6.0,
+   "timeline": [
+    14.07,
+    15.65
+   ],
+   "speed": 1.0,
+   "camera": {
+    "type": "push-in",
+    "c0": [
+     0.47,
+     0.4
+    ],
+    "c1": [
+     0.47,
+     0.4
+    ],
+    "z0": 1.25,
+    "z1": 1.32,
+    "ease": "inOutSine"
+   },
+   "why": "this day: the sun rising over open water",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S6b",
+   "file": "assets/raw/mk_34189.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/the-book-of-the-quran-close-up-view-34189/",
+   "download_url": "https://assets.mixkit.co/videos/34189/34189-720.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 1280,
+   "height": 720,
+   "fps": "24000/1001",
+   "duration": 21.02,
+   "source_in": 0.4,
+   "timeline": [
+    15.65,
+    18.73
+   ],
+   "speed": 1.0,
+   "camera": {
+    "type": "truck",
+    "c0": [
+     0.6,
+     0.5
+    ],
+    "c1": [
+     0.48,
+     0.5
+    ],
+    "z0": 1.05,
+    "z1": 1.08,
+    "ease": "inOutSine"
+   },
+   "why": "a beginning of healing: the Quran (shifa), slow truck across the verses",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S7",
+   "file": "assets/raw/mk_25375.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/soft-rain-and-sun-shine-25375/",
+   "download_url": "https://assets.mixkit.co/videos/25375/25375-720.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 1280,
+   "height": 720,
+   "fps": "24/1",
+   "duration": 48.0,
+   "source_in": 5.0,
+   "timeline": [
+    18.73,
+    21.4
+   ],
+   "speed": 0.8,
+   "camera": {
+    "type": "push-in",
+    "c0": [
+     0.55,
+     0.5
+    ],
+    "c1": [
+     0.58,
+     0.48
+    ],
+    "z0": 1.0,
+    "z1": 1.06,
+    "ease": "inOutSine"
+   },
+   "why": "provision for every needy one: rain falling in sunlight",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S8",
+   "file": "assets/raw/mk_4312.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/mosque-during-the-night-4312/",
+   "download_url": "https://assets.mixkit.co/videos/4312/4312-1080.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 1920,
+   "height": 1080,
+   "fps": "30/1",
+   "duration": 7.8,
+   "source_in": 0.5,
+   "timeline": [
+    21.4,
+    24.24
+   ],
+   "speed": 1.0,
+   "camera": {
+    "type": "pan-right",
+    "c0": [
+     0.45,
+     0.5
+    ],
+    "c1": [
+     0.62,
+     0.5
+    ],
+    "z0": 1.04,
+    "z1": 1.06,
+    "ease": "inOutSine"
+   },
+   "why": "mercy for every soul that has passed: a mosque glowing in the night fog, quiet pan",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  },
+  {
+   "shot": "S9",
+   "file": "assets/raw/mk_9805.mp4",
+   "provider": "Mixkit",
+   "page": "https://mixkit.co/free-stock-video/religious-ambiance-of-the-mosque-in-the-mountain-9805/",
+   "download_url": "https://assets.mixkit.co/videos/9805/9805-720.mp4",
+   "license": "Mixkit Stock Video Free License (commercial use, no attribution required)",
+   "license_url": "https://mixkit.co/license/#videoFree",
+   "width": 1280,
+   "height": 720,
+   "fps": "60/1",
+   "duration": 22.03,
+   "source_in": 4.0,
+   "timeline": [
+    24.24,
+    28.133
+   ],
+   "speed": 1.0,
+   "camera": {
+    "type": "pull-out",
+    "c0": [
+     0.5,
+     0.52
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.15,
+    "z1": 1.0,
+    "ease": "outSine"
+   },
+   "why": "By Your mercy: pull out to a sea of clouds at sunrise, light returns",
+   "content_check": "frames reviewed: no embedded captions/watermarks/logos; no women or girls visible in used range"
+  }
+ ],
+ "rejected": [
+  {
+   "file": "mk_46427",
+   "reason": "Christian rosary with cross and a visible face"
+  },
+  {
+   "file": "cv_coverr-pouring-coffee-into-a-mug-1176",
+   "reason": "hand with rings/nails, likely female"
+  },
+  {
+   "file": "mk_33534",
+   "reason": "rudraksha (Hindu) beads, wrong meaning"
+  },
+  {
+   "file": "mk_34223",
+   "reason": "background figure whose gender could not be verified"
+  },
+  {
+   "file": "cv_coverr-a-beautiful-sunrise-in-lisbon-4121",
+   "reason": "generic residential street"
+  },
+  {
+   "file": "cv_coverr-a-mosque-at-night-8927 / 6699",
+   "reason": "tiny distant mosque, unusable in a 9:16 crop"
+  }
+ ],
+ "not_found": [
+  "Masjid al-Haram / Kaaba / Masjid an-Nabawi: no free-licence clips reachable (Pexels/Pixabay blocked, Wikimedia rate-limited); crowd shots there would also be hard to clear of women"
+ ]
+}

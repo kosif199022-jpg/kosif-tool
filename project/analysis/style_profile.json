@@ -1,0 +1,64 @@
+{
+ "measured": {
+  "duration_s": 28.133,
+  "size": "720x1280",
+  "fps": 30,
+  "video": "HEVC",
+  "audio": "AAC 44.1k stereo",
+  "loudness_mean_db": -25.8,
+  "peak_db": -9.3,
+  "scene_cuts_s": [
+   3.43,
+   11.97,
+   12.4,
+   21.73,
+   24.43
+  ],
+  "layout_px_1080x1920": {
+   "title": [
+    525,
+    292,
+    907,
+    487
+   ],
+   "date": [
+    480,
+    517,
+    907,
+    592
+   ],
+   "date_rule_y": 612,
+   "hijri": [
+    135,
+    322,
+    420,
+    382
+   ],
+   "roundel": [
+    205,
+    412,
+    345,
+    547
+   ],
+   "caption_center_y": 985,
+   "caption_ink_h": 75
+  }
+ },
+ "inferred": {
+  "genre": "Monday-morning dua reel, warm home rituals",
+  "type": "Thuluth-style title, Didone date, Diwani-style Hijri month with roundel, bold Naskh white captions with tight dark halo",
+  "transitions": "radial zoom-blur whips between most shots",
+  "camera": "handheld phone, gentle drift",
+  "grade": "warm, slightly low-key, soft contrast",
+  "handle": "@ROOUF44 (not reproduced)"
+ },
+ "this_film": {
+  "fonts": {
+   "title/hijri/numeral": "KOSIF Jumuah Bold (Amiri, OFL)",
+   "date": "Bodoni Moda (OFL)",
+   "captions": "Scheherazade New Bold (OFL)"
+  },
+  "fps": 60,
+  "transitions": "softer: light flashes, dissolves, push-blur, two zoom-blurs at يا رب and the final line"
+ }
+}

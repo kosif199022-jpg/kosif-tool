@@ -1,0 +1,71 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/*FONTS*/
+html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden}
+:root{--w:#FEFEFD;--halo:0 0 2px rgba(12,8,5,.95),0 0 4px rgba(12,8,5,.8),0 0 9px rgba(12,8,5,.45),0 2px 14px rgba(12,8,5,.35)}
+.abs{position:absolute}
+#title{right:168px;top:268px;height:230px;direction:rtl;font-family:"Jumuah";font-weight:700;color:var(--w);font-size:150px;line-height:1;white-space:nowrap;text-shadow:var(--halo)}
+#title span{display:inline-block;transform-origin:50% 82%}
+#title .tall{transform:scaleY(1.42)}
+#date{right:168px;top:520px;font-family:"Bodoni";font-weight:700;font-size:86px;color:var(--w);direction:ltr;line-height:1;text-shadow:var(--halo);letter-spacing:1px}
+#uline{left:472px;top:622px;width:440px;height:4px;background:var(--w);box-shadow:0 0 4px rgba(12,8,5,.8);transform-origin:100% 50%}
+#hijri{left:118px;top:318px;width:320px;text-align:center;font-family:"Jumuah";font-weight:700;font-size:62px;color:var(--w);direction:rtl;text-shadow:var(--halo);line-height:1.3}
+#hrule{left:138px;top:404px;width:280px;height:3px;background:var(--w);box-shadow:0 0 4px rgba(12,8,5,.8);transform-origin:50% 50%}
+#roundel{left:198px;top:410px;width:160px;height:160px;filter:drop-shadow(0 0 2px rgba(12,8,5,.9)) drop-shadow(0 0 6px rgba(12,8,5,.5))}
+#roundel path,#roundel circle{fill:none;stroke:var(--w);stroke-linecap:round}
+#num{left:198px;top:440px;width:160px;text-align:center;font-family:"Jumuah";font-weight:700;font-size:82px;color:var(--w);line-height:1;text-shadow:var(--halo)}
+.cap{left:60px;width:960px;text-align:center;direction:rtl;font-family:"Sch";font-weight:700;font-size:76px;line-height:1.45;color:var(--w);top:0;opacity:0}
+.cap .w{display:inline-block;will-change:opacity}
+</style></head><body>
+<div id="title" class="abs"><span class="tall p1">ا</span><span class="tall p2">لإِ</span><span class="p3">ثْنَيْن</span></div>
+<div id="date" class="abs">19.10.2026</div>
+<div id="uline" class="abs"></div>
+<div id="hijri" class="abs">جُمَادَى الأُولَى</div>
+<div id="hrule" class="abs"></div>
+<svg id="roundel" class="abs" viewBox="0 0 160 160">
+ <circle id="rc1" cx="80" cy="80" r="56" stroke-width="3"/>
+ <circle id="rc2" cx="80" cy="80" r="48" stroke-width="1.4"/>
+ <path id="rf1" stroke-width="2.4" d="M80 24 C70 14 58 16 60 26 C62 33 72 30 70 24 M80 24 C90 14 102 16 100 26 C98 33 88 30 90 24 M80 24 L80 14"/>
+ <path id="rf2" stroke-width="2.4" d="M80 136 C70 146 58 144 60 134 C62 127 72 130 70 136 M80 136 C90 146 102 144 100 134 C98 127 88 130 90 136 M80 136 L80 146"/>
+</svg>
+<div id="num" class="abs">٨</div>
+<div id="caps"></div>
+<script>
+const DATA=/*DATA*/;
+const cl=(x)=>Math.max(0,Math.min(1,x));
+const E={outCubic:t=>1-Math.pow(1-t,3),inOutSine:t=>-(Math.cos(Math.PI*t)-1)/2,outBack:t=>{const c=1.4;return 1+(c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2)},inQuad:t=>t*t};
+const prog=(t,a,b,e='outCubic')=>E[e](cl((t-a)/(b-a)));
+// build captions
+const capsEl=document.getElementById('caps');
+DATA.caps.forEach((c,i)=>{const d=document.createElement('div');d.className='cap abs';d.id='cap'+i;
+  d.innerHTML=c.words.map((w,j)=>(c.br===j?'<br>':'')+`<span class="w" data-s="${w.s}">${w.t}</span>`).join(' ');
+  d.style.fontSize=(c.size||76)+'px';capsEl.appendChild(d);});
+// vertically centre caption blocks on y=c.y
+DATA.caps.forEach((c,i)=>{const d=document.getElementById('cap'+i);d.style.top=(c.y-d.offsetHeight/2)+'px'});
+const rlen={};['rc1','rc2','rf1','rf2'].forEach(id=>{const el=document.getElementById(id);const L=el.getTotalLength();rlen[id]=L;el.style.strokeDasharray=L;el.style.strokeDashoffset=L});
+function seek(t){
+  const end=DATA.end, gOut=1-prog(t,end-0.42,end-0.08,'inQuad');
+  // title: reveal pieces right→left (writing direction) with blur clearing
+  ['p1','p2','p3'].forEach((p,k)=>{const el=document.querySelector('#title .'+p);const a=0.15+k*0.16;const q=prog(t,a,a+0.55);
+    el.style.opacity=q*gOut;el.style.filter=`blur(${(1-q)*10}px)`;
+    const base=el.classList.contains('tall')?'scaleY(1.42) ':'';el.style.transform=base+`translateY(${(1-q)*26}px)`;});
+  const dq=prog(t,0.45,1.0);const dt=document.getElementById('date');dt.style.opacity=dq*gOut;dt.style.transform=`translateY(${(1-dq)*22}px)`;dt.style.filter=`blur(${(1-dq)*6}px)`;
+  const uq=prog(t,0.6,1.25,'inOutSine');const ul=document.getElementById('uline');ul.style.transform=`scaleX(${uq})`;ul.style.opacity=gOut;
+  const hq=prog(t,0.5,1.05);const hj=document.getElementById('hijri');hj.style.opacity=hq*gOut;hj.style.filter=`blur(${(1-hq)*6}px)`;
+  const rq=prog(t,0.55,1.15,'inOutSine');const hr=document.getElementById('hrule');hr.style.transform=`scaleX(${rq})`;hr.style.opacity=gOut;
+  [['rc1',0.65,1.45],['rc2',0.75,1.5],['rf1',1.05,1.55],['rf2',1.05,1.55]].forEach(([id,a,b])=>{const el=document.getElementById(id);el.style.strokeDashoffset=rlen[id]*(1-prog(t,a,b,'inOutSine'));el.style.opacity=gOut});
+  const nq=prog(t,1.05,1.55,'outBack');const nm=document.getElementById('num');nm.style.opacity=cl((t-1.05)/0.3)*gOut;nm.style.transform=`scale(${0.6+0.4*nq})`;
+  // captions: phrase ghost + word glow
+  DATA.caps.forEach((c,i)=>{const d=document.getElementById('cap'+i);
+    const vin=prog(t,c.in,c.in+0.32), vout=1-prog(t,c.out-0.28,c.out,'inQuad');const v=Math.min(vin,vout)*gOut;
+    d.style.opacity=v; d.style.display=v<=0.001?'none':'block';
+    d.style.transform=`translateY(${(1-vin)*14}px)`; d.style.filter=vin<1?`blur(${(1-vin)*5}px)`:'none';
+    if(v<=0.001)return;
+    d.querySelectorAll('.w').forEach(w=>{const s=+w.dataset.s;const q=prog(t,s-0.06,s+0.16);const g=Math.max(0,q-prog(t,s+0.16,s+0.9))*1;
+      w.style.opacity=0.66+0.34*q;
+      w.style.transform=`scale(${1+0.045*g})`;
+      w.style.textShadow=`var(--halo-a), 0 0 ${18*g}px rgba(255,214,150,${0.75*g}), 0 0 ${36*g}px rgba(255,200,120,${0.35*g})`.replace('var(--halo-a), ', '0 0 2px rgba(12,8,5,.95),0 0 4px rgba(12,8,5,.8),0 0 9px rgba(12,8,5,.45),0 2px 14px rgba(12,8,5,.35),');
+      w.style.color=q>0.5? `rgb(255,${250-12*g|0},${245-40*g|0})` : 'var(--w)';});
+  });
+}
+window.seek=seek;seek(0);
+</script></body></html>
