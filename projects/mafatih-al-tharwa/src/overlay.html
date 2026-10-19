@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مفاتيح الثروة — motion overlay</title>
+<style>
+  @font-face { font-family: "Reem Kufi"; src: url("fonts/ReemKufi.ttf"); font-weight: 400 700; }
+  @font-face { font-family: "Cairo"; src: url("fonts/Cairo.ttf"); font-weight: 200 1000; }
+  @font-face { font-family: "Amiri"; src: url("fonts/Amiri-Bold.ttf"); font-weight: 700; }
+  :root {
+    --gold: #e2b65c; --gold-hi: #f6dc9a; --gold-lo: #9a7432; --cream: #f4ead6; --ink: #0b0906;
+    --red: #d9573f; --muted: rgba(244, 234, 214, .55);
+    --kufi: "Reem Kufi", "Cairo", sans-serif; --sans: "Cairo", sans-serif; --naskh: "Amiri", serif;
+  }
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+  body.dev { background: #1a1510; }
+  #stage { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; color: var(--cream); font-family: var(--sans); }
+  .abs { position: absolute; }
+  .card { left: 60px; top: 300px; width: 960px; height: 720px; }
+  .full { left: 0; top: 0; width: 1080px; height: 1920px; }
+  #shadeTop { left: 0; top: 0; width: 1080px; height: 360px; background: linear-gradient(rgba(8,6,4,.8), rgba(8,6,4,0)); }
+  #shadeBot { left: 0; top: 960px; width: 1080px; height: 960px; background: linear-gradient(rgba(8,6,4,0), rgba(8,6,4,.62) 30%, rgba(8,6,4,.78)); }
+  #scrim { background: radial-gradient(ellipse at 50% 34%, rgba(20,15,9,.74), rgba(6,5,3,.88) 70%); opacity: 0; }
+  #flash { background: radial-gradient(ellipse at 50% 34%, rgba(255,236,190,.75), rgba(226,182,92,.2) 45%, rgba(0,0,0,0) 70%); opacity: 0; mix-blend-mode: screen; }
+  #archiveTag { right: 90px; top: 1762px; font: 600 22px var(--sans); color: rgba(244,234,214,.42); letter-spacing: 0; }
+  /* header */
+  #header { left: 0; top: 96px; width: 1080px; height: 170px; }
+  #brand { right: 90px; top: 0; display: flex; align-items: center; gap: 22px; }
+  #brand svg { width: 78px; height: 78px; }
+  #brandText { font: 700 58px/1 var(--kufi); color: var(--gold); text-shadow: 0 0 30px rgba(226,182,92,.35); }
+  #chapter { right: 92px; top: 100px; font: 700 34px/1.2 var(--sans); color: var(--muted); white-space: nowrap; }
+  #chapter b { color: var(--gold); font-weight: 800; margin-left: 14px; direction: ltr; unicode-bidi: isolate; }
+  /* captions */
+  #captions { left: 70px; top: 1130px; width: 940px; height: 380px; display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 4px 20px; font: 800 70px/1.55 var(--sans); text-align: center; }
+  #captions span { position: relative; display: inline-block; color: rgba(244,234,214,.38); }
+  #captions span.done { color: var(--cream); }
+  #captions span.on { color: var(--gold-hi); text-shadow: 0 0 24px rgba(226,182,92,.55); }
+  #captions span.key.done { color: var(--gold); }
+  #captions span i { position: absolute; right: 0; left: 0; bottom: 6px; height: 7px; border-radius: 4px; background: var(--gold); transform-origin: 100% 50%; transform: scaleX(0); }
+  /* progress */
+  #progress { left: 90px; top: 1812px; width: 900px; height: 6px; border-radius: 3px; background: rgba(244,234,214,.13); }
+  #progressFill { right: 0; top: 0; height: 6px; border-radius: 3px; background: linear-gradient(270deg, var(--gold-hi), var(--gold)); width: 0; }
+  .tick { top: -5px; width: 4px; height: 16px; border-radius: 2px; background: rgba(244,234,214,.3); }
+  .tick.past { background: var(--gold); }
+  #fx { left: 0; top: 0; }
+  /* hero primitives */
+  .hero { opacity: 0; }
+  .center { left: 0; width: 960px; text-align: center; }
+  .kufi { font-family: var(--kufi); font-weight: 700; }
+  .naskh { font-family: var(--naskh); font-weight: 700; }
+  .goldText { background: linear-gradient(180deg, #fff1c8 0%, #f0cc7a 38%, #c8973f 62%, #f3d58c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .pill { display: inline-block; padding: 8px 34px 14px; border-radius: 60px; border: 3px solid var(--gold); color: var(--cream); font: 800 48px/1.3 var(--sans); background: rgba(10,8,5,.6); white-space: nowrap; }
+  .pill.red { border-color: var(--red); color: #ffd9cf; }
+  .pill.solid { background: var(--gold); color: var(--ink); }
+  .num { direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; font-family: var(--sans); font-weight: 900; }
+  .lt { position: absolute; left: 0; width: 960px; }
+  svg .draw { fill: none; stroke: var(--gold); stroke-linecap: round; stroke-linejoin: round; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="shadeTop" class="abs"></div>
+  <div id="shadeBot" class="abs"></div>
+  <div id="scrim" class="abs full"></div>
+  <div id="flash" class="abs full"></div>
+  <div id="archiveTag" class="abs">لقطات أرشيفية · ملكية عامة</div>
+  <canvas id="fx" class="abs" width="1080" height="1920"></canvas>
+  <div id="heroes"></div>
+  <div id="header" class="abs">
+    <div id="brand" class="abs">
+      <svg viewBox="0 0 80 80"><g fill="none" stroke="#e2b65c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="40" r="15"/><circle cx="24" cy="40" r="5" stroke-width="4"/><path d="M39 40 H72 M62 40 V52 M70 40 V49"/></g></svg>
+      <div id="brandText">مفاتيح الثروة</div>
+    </div>
+    <div id="chapter" class="abs"></div>
+  </div>
+  <div id="captions" class="abs"></div>
+  <div id="progress" class="abs"><div id="progressFill" class="abs"></div></div>
+</div>
+<script src="captions.js"></script>
+<script src="cuts.js"></script>
+<script src="overlay.js"></script>
+</body>
+</html>

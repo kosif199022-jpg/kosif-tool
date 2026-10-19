@@ -1,0 +1,2272 @@
+{
+ "ST0": {
+  "film": "SteelASy1936",
+  "start": 33.5,
+  "end": 49.08
+ },
+ "ST1": {
+  "film": "SteelASy1936",
+  "start": 50.78,
+  "end": 54.62
+ },
+ "ST2": {
+  "film": "SteelASy1936",
+  "start": 58.12,
+  "end": 67.37
+ },
+ "ST3": {
+  "film": "SteelASy1936",
+  "start": 67.37,
+  "end": 74.61
+ },
+ "ST4": {
+  "film": "SteelASy1936",
+  "start": 75.11,
+  "end": 81.78
+ },
+ "ST5": {
+  "film": "SteelASy1936",
+  "start": 81.78,
+  "end": 88.66
+ },
+ "ST6": {
+  "film": "SteelASy1936",
+  "start": 88.66,
+  "end": 92.99
+ },
+ "ST7": {
+  "film": "SteelASy1936",
+  "start": 92.99,
+  "end": 100.33
+ },
+ "ST8": {
+  "film": "SteelASy1936",
+  "start": 100.33,
+  "end": 106.41
+ },
+ "ST9": {
+  "film": "SteelASy1936",
+  "start": 106.44,
+  "end": 112.48
+ },
+ "ST10": {
+  "film": "SteelASy1936",
+  "start": 112.48,
+  "end": 118.85
+ },
+ "ST11": {
+  "film": "SteelASy1936",
+  "start": 118.85,
+  "end": 128.86
+ },
+ "ST12": {
+  "film": "SteelASy1936",
+  "start": 128.86,
+  "end": 131.83
+ },
+ "ST13": {
+  "film": "SteelASy1936",
+  "start": 131.83,
+  "end": 137.77
+ },
+ "ST14": {
+  "film": "SteelASy1936",
+  "start": 137.77,
+  "end": 143.28
+ },
+ "ST15": {
+  "film": "SteelASy1936",
+  "start": 143.34,
+  "end": 147.68
+ },
+ "ST16": {
+  "film": "SteelASy1936",
+  "start": 147.68,
+  "end": 151.49
+ },
+ "ST17": {
+  "film": "SteelASy1936",
+  "start": 151.49,
+  "end": 161.16
+ },
+ "ST18": {
+  "film": "SteelASy1936",
+  "start": 161.16,
+  "end": 177.98
+ },
+ "ST19": {
+  "film": "SteelASy1936",
+  "start": 177.98,
+  "end": 183.32
+ },
+ "ST20": {
+  "film": "SteelASy1936",
+  "start": 183.32,
+  "end": 192.32
+ },
+ "ST21": {
+  "film": "SteelASy1936",
+  "start": 192.36,
+  "end": 199.5
+ },
+ "ST22": {
+  "film": "SteelASy1936",
+  "start": 199.5,
+  "end": 204.4
+ },
+ "ST23": {
+  "film": "SteelASy1936",
+  "start": 204.4,
+  "end": 209.88
+ },
+ "ST24": {
+  "film": "SteelASy1936",
+  "start": 220.05,
+  "end": 223.42
+ },
+ "ST25": {
+  "film": "SteelASy1936",
+  "start": 223.42,
+  "end": 234.7
+ },
+ "ST26": {
+  "film": "SteelASy1936",
+  "start": 234.7,
+  "end": 237.47
+ },
+ "ST27": {
+  "film": "SteelASy1936",
+  "start": 237.47,
+  "end": 244.11
+ },
+ "ST28": {
+  "film": "SteelASy1936",
+  "start": 244.11,
+  "end": 248.38
+ },
+ "ST29": {
+  "film": "SteelASy1936",
+  "start": 248.38,
+  "end": 253.62
+ },
+ "ST30": {
+  "film": "SteelASy1936",
+  "start": 253.62,
+  "end": 261.06
+ },
+ "ST31": {
+  "film": "SteelASy1936",
+  "start": 261.06,
+  "end": 266.17
+ },
+ "ST32": {
+  "film": "SteelASy1936",
+  "start": 266.17,
+  "end": 268.94
+ },
+ "ST33": {
+  "film": "SteelASy1936",
+  "start": 270.6,
+  "end": 278.64
+ },
+ "ST34": {
+  "film": "SteelASy1936",
+  "start": 280.85,
+  "end": 283.48
+ },
+ "ST35": {
+  "film": "SteelASy1936",
+  "start": 285.62,
+  "end": 291.02
+ },
+ "ST36": {
+  "film": "SteelASy1936",
+  "start": 293.13,
+  "end": 297.26
+ },
+ "ST37": {
+  "film": "SteelASy1936",
+  "start": 297.26,
+  "end": 305.61
+ },
+ "ST38": {
+  "film": "SteelASy1936",
+  "start": 305.61,
+  "end": 314.81
+ },
+ "ST39": {
+  "film": "SteelASy1936",
+  "start": 314.81,
+  "end": 324.86
+ },
+ "ST40": {
+  "film": "SteelASy1936",
+  "start": 324.86,
+  "end": 330.96
+ },
+ "ST41": {
+  "film": "SteelASy1936",
+  "start": 331.0,
+  "end": 336.5
+ },
+ "ST42": {
+  "film": "SteelASy1936",
+  "start": 336.5,
+  "end": 343.71
+ },
+ "ST43": {
+  "film": "SteelASy1936",
+  "start": 343.71,
+  "end": 347.85
+ },
+ "ST44": {
+  "film": "SteelASy1936",
+  "start": 349.55,
+  "end": 355.36
+ },
+ "ST45": {
+  "film": "SteelASy1936",
+  "start": 355.36,
+  "end": 358.32
+ },
+ "ST46": {
+  "film": "SteelASy1936",
+  "start": 358.32,
+  "end": 365.06
+ },
+ "ST47": {
+  "film": "SteelASy1936",
+  "start": 365.06,
+  "end": 374.74
+ },
+ "ST48": {
+  "film": "SteelASy1936",
+  "start": 374.74,
+  "end": 383.95
+ },
+ "ST49": {
+  "film": "SteelASy1936",
+  "start": 383.95,
+  "end": 386.75
+ },
+ "ST50": {
+  "film": "SteelASy1936",
+  "start": 386.75,
+  "end": 395.6
+ },
+ "ST51": {
+  "film": "SteelASy1936",
+  "start": 395.6,
+  "end": 403.8
+ },
+ "ST52": {
+  "film": "SteelASy1936",
+  "start": 403.8,
+  "end": 416.75
+ },
+ "ST53": {
+  "film": "SteelASy1936",
+  "start": 416.75,
+  "end": 432.63
+ },
+ "ST54": {
+  "film": "SteelASy1936",
+  "start": 432.63,
+  "end": 440.11
+ },
+ "ST55": {
+  "film": "SteelASy1936",
+  "start": 440.11,
+  "end": 451.32
+ },
+ "ST56": {
+  "film": "SteelASy1936",
+  "start": 451.32,
+  "end": 484.15
+ },
+ "ST57": {
+  "film": "SteelASy1936",
+  "start": 484.15,
+  "end": 503.17
+ },
+ "ST58": {
+  "film": "SteelASy1936",
+  "start": 503.17,
+  "end": 519.72
+ },
+ "ST59": {
+  "film": "SteelASy1936",
+  "start": 521.55,
+  "end": 532.6
+ },
+ "ST60": {
+  "film": "SteelASy1936",
+  "start": 532.6,
+  "end": 540.11
+ },
+ "ST61": {
+  "film": "SteelASy1936",
+  "start": 540.11,
+  "end": 549.12
+ },
+ "ST62": {
+  "film": "SteelASy1936",
+  "start": 551.08,
+  "end": 554.05
+ },
+ "ST63": {
+  "film": "SteelASy1936",
+  "start": 556.46,
+  "end": 559.09
+ },
+ "ST64": {
+  "film": "SteelASy1936",
+  "start": 561.56,
+  "end": 568.23
+ },
+ "ST65": {
+  "film": "SteelASy1936",
+  "start": 568.23,
+  "end": 571.37
+ },
+ "ST66": {
+  "film": "SteelASy1936",
+  "start": 573.21,
+  "end": 576.11
+ },
+ "ST67": {
+  "film": "SteelASy1936",
+  "start": 576.11,
+  "end": 579.38
+ },
+ "ST68": {
+  "film": "SteelASy1936",
+  "start": 579.38,
+  "end": 584.65
+ },
+ "ST69": {
+  "film": "SteelASy1936",
+  "start": 584.65,
+  "end": 590.82
+ },
+ "ST70": {
+  "film": "SteelASy1936",
+  "start": 590.82,
+  "end": 596.66
+ },
+ "ST71": {
+  "film": "SteelASy1936",
+  "start": 596.66,
+  "end": 603.74
+ },
+ "ST72": {
+  "film": "SteelASy1936",
+  "start": 605.5,
+  "end": 609.74
+ },
+ "ST73": {
+  "film": "SteelASy1936",
+  "start": 609.74,
+  "end": 624.92
+ },
+ "ST74": {
+  "film": "SteelASy1936",
+  "start": 624.92,
+  "end": 629.7
+ },
+ "ST75": {
+  "film": "SteelASy1936",
+  "start": 629.7,
+  "end": 634.1
+ },
+ "ST76": {
+  "film": "SteelASy1936",
+  "start": 634.1,
+  "end": 637.0
+ },
+ "ST77": {
+  "film": "SteelASy1936",
+  "start": 637.0,
+  "end": 646.11
+ },
+ "ST78": {
+  "film": "SteelASy1936",
+  "start": 647.35,
+  "end": 657.22
+ },
+ "ST79": {
+  "film": "SteelASy1936",
+  "start": 657.22,
+  "end": 666.17
+ },
+ "ST80": {
+  "film": "SteelASy1936",
+  "start": 666.17,
+  "end": 671.07
+ },
+ "ST81": {
+  "film": "SteelASy1936",
+  "start": 671.07,
+  "end": 674.64
+ },
+ "ST82": {
+  "film": "SteelASy1936",
+  "start": 674.64,
+  "end": 678.48
+ },
+ "ST83": {
+  "film": "SteelASy1936",
+  "start": 678.48,
+  "end": 686.32
+ },
+ "ST84": {
+  "film": "SteelASy1936",
+  "start": 686.32,
+  "end": 689.05
+ },
+ "ST85": {
+  "film": "SteelASy1936",
+  "start": 689.05,
+  "end": 698.7
+ },
+ "ST86": {
+  "film": "SteelASy1936",
+  "start": 698.7,
+  "end": 706.74
+ },
+ "ST87": {
+  "film": "SteelASy1936",
+  "start": 708.44,
+  "end": 713.01
+ },
+ "ST88": {
+  "film": "SteelASy1936",
+  "start": 713.01,
+  "end": 720.29
+ },
+ "ST89": {
+  "film": "SteelASy1936",
+  "start": 722.19,
+  "end": 726.69
+ },
+ "ST90": {
+  "film": "SteelASy1936",
+  "start": 726.69,
+  "end": 736.13
+ },
+ "ST91": {
+  "film": "SteelASy1936",
+  "start": 736.13,
+  "end": 743.44
+ },
+ "ST92": {
+  "film": "SteelASy1936",
+  "start": 743.44,
+  "end": 759.59
+ },
+ "ST93": {
+  "film": "SteelASy1936",
+  "start": 759.59,
+  "end": 767.97
+ },
+ "ST94": {
+  "film": "SteelASy1936",
+  "start": 767.97,
+  "end": 776.34
+ },
+ "ST95": {
+  "film": "SteelASy1936",
+  "start": 776.34,
+  "end": 790.16
+ },
+ "ST96": {
+  "film": "SteelASy1936",
+  "start": 790.16,
+  "end": 796.36
+ },
+ "ST97": {
+  "film": "SteelASy1936",
+  "start": 796.6,
+  "end": 802.0
+ },
+ "ST98": {
+  "film": "SteelASy1936",
+  "start": 802.0,
+  "end": 805.94
+ },
+ "ST99": {
+  "film": "SteelASy1936",
+  "start": 809.68,
+  "end": 814.05
+ },
+ "ST100": {
+  "film": "SteelASy1936",
+  "start": 814.05,
+  "end": 816.85
+ },
+ "ST101": {
+  "film": "SteelASy1936",
+  "start": 816.85,
+  "end": 825.96
+ },
+ "ST102": {
+  "film": "SteelASy1936",
+  "start": 825.96,
+  "end": 856.92
+ },
+ "ST103": {
+  "film": "SteelASy1936",
+  "start": 856.92,
+  "end": 868.03
+ },
+ "ST104": {
+  "film": "SteelASy1936",
+  "start": 870.24,
+  "end": 881.38
+ },
+ "ST105": {
+  "film": "SteelASy1936",
+  "start": 881.38,
+  "end": 884.12
+ },
+ "ST106": {
+  "film": "SteelASy1936",
+  "start": 884.12,
+  "end": 888.25
+ },
+ "ST107": {
+  "film": "SteelASy1936",
+  "start": 888.25,
+  "end": 890.96
+ },
+ "ST108": {
+  "film": "SteelASy1936",
+  "start": 890.96,
+  "end": 904.14
+ },
+ "ST109": {
+  "film": "SteelASy1936",
+  "start": 904.14,
+  "end": 909.11
+ },
+ "ST110": {
+  "film": "SteelASy1936",
+  "start": 909.11,
+  "end": 923.05
+ },
+ "ST111": {
+  "film": "SteelASy1936",
+  "start": 923.05,
+  "end": 930.9
+ },
+ "ST112": {
+  "film": "SteelASy1936",
+  "start": 930.9,
+  "end": 935.13
+ },
+ "ST113": {
+  "film": "SteelASy1936",
+  "start": 935.13,
+  "end": 944.28
+ },
+ "ST114": {
+  "film": "SteelASy1936",
+  "start": 944.28,
+  "end": 951.95
+ },
+ "ST115": {
+  "film": "SteelASy1936",
+  "start": 951.95,
+  "end": 974.97
+ },
+ "ST116": {
+  "film": "SteelASy1936",
+  "start": 976.64,
+  "end": 982.35
+ },
+ "ST117": {
+  "film": "SteelASy1936",
+  "start": 984.28,
+  "end": 990.66
+ },
+ "ST118": {
+  "film": "SteelASy1936",
+  "start": 990.66,
+  "end": 1000.67
+ },
+ "ST119": {
+  "film": "SteelASy1936",
+  "start": 1002.53,
+  "end": 1007.57
+ },
+ "ST120": {
+  "film": "SteelASy1936",
+  "start": 1009.74,
+  "end": 1023.32
+ },
+ "ST121": {
+  "film": "SteelASy1936",
+  "start": 1024.56,
+  "end": 1031.5
+ },
+ "ST122": {
+  "film": "SteelASy1936",
+  "start": 1032.66,
+  "end": 1044.34
+ },
+ "ST123": {
+  "film": "SteelASy1936",
+  "start": 1046.08,
+  "end": 1053.12
+ },
+ "ST124": {
+  "film": "SteelASy1936",
+  "start": 1053.12,
+  "end": 1093.29
+ },
+ "ST125": {
+  "film": "SteelASy1936",
+  "start": 1093.29,
+  "end": 1108.11
+ },
+ "DY0": {
+  "film": "DynamicA1956",
+  "start": 116.65,
+  "end": 268.24
+ },
+ "DY1": {
+  "film": "DynamicA1956",
+  "start": 268.24,
+  "end": 283.12
+ },
+ "DY2": {
+  "film": "DynamicA1956",
+  "start": 283.12,
+  "end": 288.99
+ },
+ "DY3": {
+  "film": "DynamicA1956",
+  "start": 288.99,
+  "end": 302.7
+ },
+ "DY4": {
+  "film": "DynamicA1956",
+  "start": 302.7,
+  "end": 318.85
+ },
+ "DY5": {
+  "film": "DynamicA1956",
+  "start": 318.85,
+  "end": 328.5
+ },
+ "DY6": {
+  "film": "DynamicA1956",
+  "start": 328.5,
+  "end": 336.7
+ },
+ "DY7": {
+  "film": "DynamicA1956",
+  "start": 336.7,
+  "end": 343.54
+ },
+ "DY8": {
+  "film": "DynamicA1956",
+  "start": 343.54,
+  "end": 363.56
+ },
+ "DY9": {
+  "film": "DynamicA1956",
+  "start": 363.56,
+  "end": 373.91
+ },
+ "DY10": {
+  "film": "DynamicA1956",
+  "start": 373.91,
+  "end": 378.18
+ },
+ "DY11": {
+  "film": "DynamicA1956",
+  "start": 378.18,
+  "end": 414.61
+ },
+ "DY12": {
+  "film": "DynamicA1956",
+  "start": 414.61,
+  "end": 419.65
+ },
+ "DY13": {
+  "film": "DynamicA1956",
+  "start": 419.65,
+  "end": 446.65
+ },
+ "DY14": {
+  "film": "DynamicA1956",
+  "start": 446.65,
+  "end": 451.48
+ },
+ "DY15": {
+  "film": "DynamicA1956",
+  "start": 451.48,
+  "end": 466.37
+ },
+ "DY16": {
+  "film": "DynamicA1956",
+  "start": 466.37,
+  "end": 494.79
+ },
+ "DY17": {
+  "film": "DynamicA1956",
+  "start": 494.79,
+  "end": 530.33
+ },
+ "DY18": {
+  "film": "DynamicA1956",
+  "start": 530.33,
+  "end": 569.03
+ },
+ "DY19": {
+  "film": "DynamicA1956",
+  "start": 569.03,
+  "end": 575.81
+ },
+ "DY20": {
+  "film": "DynamicA1956",
+  "start": 575.81,
+  "end": 579.58
+ },
+ "DY21": {
+  "film": "DynamicA1956",
+  "start": 579.58,
+  "end": 584.98
+ },
+ "DY22": {
+  "film": "DynamicA1956",
+  "start": 584.98,
+  "end": 620.35
+ },
+ "DY23": {
+  "film": "DynamicA1956",
+  "start": 620.42,
+  "end": 624.86
+ },
+ "DY24": {
+  "film": "DynamicA1956",
+  "start": 624.86,
+  "end": 647.11
+ },
+ "DY25": {
+  "film": "DynamicA1956",
+  "start": 648.95,
+  "end": 654.65
+ },
+ "DY26": {
+  "film": "DynamicA1956",
+  "start": 654.65,
+  "end": 659.29
+ },
+ "DY27": {
+  "film": "DynamicA1956",
+  "start": 659.29,
+  "end": 668.13
+ },
+ "DY28": {
+  "film": "DynamicA1956",
+  "start": 668.13,
+  "end": 710.68
+ },
+ "DY29": {
+  "film": "DynamicA1956",
+  "start": 710.68,
+  "end": 722.55
+ },
+ "DY30": {
+  "film": "DynamicA1956",
+  "start": 722.55,
+  "end": 727.69
+ },
+ "DY31": {
+  "film": "DynamicA1956",
+  "start": 727.69,
+  "end": 731.93
+ },
+ "DY32": {
+  "film": "DynamicA1956",
+  "start": 731.93,
+  "end": 739.3
+ },
+ "DY33": {
+  "film": "DynamicA1956",
+  "start": 739.37,
+  "end": 742.54
+ },
+ "DY34": {
+  "film": "DynamicA1956",
+  "start": 742.54,
+  "end": 747.58
+ },
+ "DY35": {
+  "film": "DynamicA1956",
+  "start": 748.05,
+  "end": 752.88
+ },
+ "DY36": {
+  "film": "DynamicA1956",
+  "start": 752.88,
+  "end": 756.42
+ },
+ "DY37": {
+  "film": "DynamicA1956",
+  "start": 756.42,
+  "end": 764.93
+ },
+ "DY38": {
+  "film": "DynamicA1956",
+  "start": 764.93,
+  "end": 769.94
+ },
+ "DY39": {
+  "film": "DynamicA1956",
+  "start": 769.94,
+  "end": 782.91
+ },
+ "DY40": {
+  "film": "DynamicA1956",
+  "start": 782.91,
+  "end": 796.33
+ },
+ "DY41": {
+  "film": "DynamicA1956",
+  "start": 796.33,
+  "end": 801.3
+ },
+ "DY42": {
+  "film": "DynamicA1956",
+  "start": 801.3,
+  "end": 807.67
+ },
+ "DY43": {
+  "film": "DynamicA1956",
+  "start": 807.67,
+  "end": 818.15
+ },
+ "DY44": {
+  "film": "DynamicA1956",
+  "start": 818.15,
+  "end": 824.22
+ },
+ "DY45": {
+  "film": "DynamicA1956",
+  "start": 824.22,
+  "end": 852.88
+ },
+ "MB0": {
+  "film": "MakingBo1947",
+  "start": 32.8,
+  "end": 54.65
+ },
+ "MB1": {
+  "film": "MakingBo1947",
+  "start": 54.65,
+  "end": 59.16
+ },
+ "MB2": {
+  "film": "MakingBo1947",
+  "start": 59.16,
+  "end": 62.86
+ },
+ "MB3": {
+  "film": "MakingBo1947",
+  "start": 62.86,
+  "end": 65.57
+ },
+ "MB4": {
+  "film": "MakingBo1947",
+  "start": 65.57,
+  "end": 70.24
+ },
+ "MB5": {
+  "film": "MakingBo1947",
+  "start": 70.24,
+  "end": 73.17
+ },
+ "MB6": {
+  "film": "MakingBo1947",
+  "start": 74.91,
+  "end": 83.38
+ },
+ "MB7": {
+  "film": "MakingBo1947",
+  "start": 83.38,
+  "end": 88.09
+ },
+ "MB8": {
+  "film": "MakingBo1947",
+  "start": 88.09,
+  "end": 94.56
+ },
+ "MB9": {
+  "film": "MakingBo1947",
+  "start": 94.56,
+  "end": 97.76
+ },
+ "MB10": {
+  "film": "MakingBo1947",
+  "start": 97.76,
+  "end": 105.27
+ },
+ "MB11": {
+  "film": "MakingBo1947",
+  "start": 105.27,
+  "end": 112.81
+ },
+ "MB12": {
+  "film": "MakingBo1947",
+  "start": 112.81,
+  "end": 115.38
+ },
+ "MB13": {
+  "film": "MakingBo1947",
+  "start": 115.38,
+  "end": 125.39
+ },
+ "MB14": {
+  "film": "MakingBo1947",
+  "start": 125.39,
+  "end": 128.76
+ },
+ "MB15": {
+  "film": "MakingBo1947",
+  "start": 128.76,
+  "end": 141.41
+ },
+ "MB16": {
+  "film": "MakingBo1947",
+  "start": 141.41,
+  "end": 147.95
+ },
+ "MB17": {
+  "film": "MakingBo1947",
+  "start": 147.95,
+  "end": 160.09
+ },
+ "MB18": {
+  "film": "MakingBo1947",
+  "start": 162.46,
+  "end": 170.34
+ },
+ "MB19": {
+  "film": "MakingBo1947",
+  "start": 172.21,
+  "end": 175.01
+ },
+ "MB20": {
+  "film": "MakingBo1947",
+  "start": 175.01,
+  "end": 179.11
+ },
+ "MB21": {
+  "film": "MakingBo1947",
+  "start": 179.11,
+  "end": 182.55
+ },
+ "MB22": {
+  "film": "MakingBo1947",
+  "start": 182.55,
+  "end": 186.82
+ },
+ "MB23": {
+  "film": "MakingBo1947",
+  "start": 186.82,
+  "end": 191.02
+ },
+ "MB24": {
+  "film": "MakingBo1947",
+  "start": 191.02,
+  "end": 195.36
+ },
+ "MB25": {
+  "film": "MakingBo1947",
+  "start": 195.36,
+  "end": 198.66
+ },
+ "MB26": {
+  "film": "MakingBo1947",
+  "start": 198.66,
+  "end": 206.17
+ },
+ "MB27": {
+  "film": "MakingBo1947",
+  "start": 206.17,
+  "end": 219.65
+ },
+ "MB28": {
+  "film": "MakingBo1947",
+  "start": 219.65,
+  "end": 223.69
+ },
+ "MB29": {
+  "film": "MakingBo1947",
+  "start": 223.69,
+  "end": 229.26
+ },
+ "MB30": {
+  "film": "MakingBo1947",
+  "start": 229.26,
+  "end": 232.83
+ },
+ "MB31": {
+  "film": "MakingBo1947",
+  "start": 232.83,
+  "end": 240.34
+ },
+ "MB32": {
+  "film": "MakingBo1947",
+  "start": 240.34,
+  "end": 246.25
+ },
+ "MB33": {
+  "film": "MakingBo1947",
+  "start": 246.25,
+  "end": 257.46
+ },
+ "MB34": {
+  "film": "MakingBo1947",
+  "start": 257.46,
+  "end": 260.23
+ },
+ "MB35": {
+  "film": "MakingBo1947",
+  "start": 260.23,
+  "end": 268.97
+ },
+ "MB36": {
+  "film": "MakingBo1947",
+  "start": 268.97,
+  "end": 274.81
+ },
+ "MB37": {
+  "film": "MakingBo1947",
+  "start": 274.81,
+  "end": 278.88
+ },
+ "MB38": {
+  "film": "MakingBo1947",
+  "start": 281.08,
+  "end": 289.29
+ },
+ "MB39": {
+  "film": "MakingBo1947",
+  "start": 289.29,
+  "end": 296.9
+ },
+ "MB40": {
+  "film": "MakingBo1947",
+  "start": 296.9,
+  "end": 302.67
+ },
+ "MB41": {
+  "film": "MakingBo1947",
+  "start": 302.67,
+  "end": 316.32
+ },
+ "MB42": {
+  "film": "MakingBo1947",
+  "start": 316.32,
+  "end": 320.95
+ },
+ "MB43": {
+  "film": "MakingBo1947",
+  "start": 320.95,
+  "end": 325.36
+ },
+ "MB44": {
+  "film": "MakingBo1947",
+  "start": 325.36,
+  "end": 327.96
+ },
+ "MB45": {
+  "film": "MakingBo1947",
+  "start": 327.96,
+  "end": 336.8
+ },
+ "MB46": {
+  "film": "MakingBo1947",
+  "start": 336.8,
+  "end": 347.45
+ },
+ "MB47": {
+  "film": "MakingBo1947",
+  "start": 347.45,
+  "end": 351.22
+ },
+ "MB48": {
+  "film": "MakingBo1947",
+  "start": 351.22,
+  "end": 357.22
+ },
+ "MB49": {
+  "film": "MakingBo1947",
+  "start": 357.22,
+  "end": 361.96
+ },
+ "MB50": {
+  "film": "MakingBo1947",
+  "start": 361.96,
+  "end": 367.3
+ },
+ "MB51": {
+  "film": "MakingBo1947",
+  "start": 367.3,
+  "end": 380.41
+ },
+ "MB52": {
+  "film": "MakingBo1947",
+  "start": 380.41,
+  "end": 384.65
+ },
+ "MB53": {
+  "film": "MakingBo1947",
+  "start": 384.65,
+  "end": 389.56
+ },
+ "MB54": {
+  "film": "MakingBo1947",
+  "start": 389.56,
+  "end": 408.94
+ },
+ "MB55": {
+  "film": "MakingBo1947",
+  "start": 408.94,
+  "end": 422.96
+ },
+ "MB56": {
+  "film": "MakingBo1947",
+  "start": 422.96,
+  "end": 433.53
+ },
+ "MB57": {
+  "film": "MakingBo1947",
+  "start": 435.13,
+  "end": 440.91
+ },
+ "MB58": {
+  "film": "MakingBo1947",
+  "start": 441.71,
+  "end": 445.08
+ },
+ "MB59": {
+  "film": "MakingBo1947",
+  "start": 445.41,
+  "end": 454.09
+ },
+ "MB60": {
+  "film": "MakingBo1947",
+  "start": 454.09,
+  "end": 462.39
+ },
+ "MB61": {
+  "film": "MakingBo1947",
+  "start": 462.39,
+  "end": 469.57
+ },
+ "MB62": {
+  "film": "MakingBo1947",
+  "start": 469.57,
+  "end": 476.44
+ },
+ "MB63": {
+  "film": "MakingBo1947",
+  "start": 476.44,
+  "end": 493.76
+ },
+ "MB64": {
+  "film": "MakingBo1947",
+  "start": 493.76,
+  "end": 501.1
+ },
+ "MB65": {
+  "film": "MakingBo1947",
+  "start": 501.1,
+  "end": 505.37
+ },
+ "MB66": {
+  "film": "MakingBo1947",
+  "start": 505.37,
+  "end": 512.68
+ },
+ "MB67": {
+  "film": "MakingBo1947",
+  "start": 512.68,
+  "end": 517.62
+ },
+ "MB68": {
+  "film": "MakingBo1947",
+  "start": 517.62,
+  "end": 525.96
+ },
+ "MB69": {
+  "film": "MakingBo1947",
+  "start": 525.96,
+  "end": 530.63
+ },
+ "MB70": {
+  "film": "MakingBo1947",
+  "start": 530.63,
+  "end": 539.84
+ },
+ "MB71": {
+  "film": "MakingBo1947",
+  "start": 539.84,
+  "end": 546.81
+ },
+ "MB72": {
+  "film": "MakingBo1947",
+  "start": 546.81,
+  "end": 558.02
+ },
+ "MB73": {
+  "film": "MakingBo1947",
+  "start": 558.02,
+  "end": 564.73
+ },
+ "MB74": {
+  "film": "MakingBo1947",
+  "start": 564.73,
+  "end": 576.18
+ },
+ "MB75": {
+  "film": "MakingBo1947",
+  "start": 576.18,
+  "end": 585.68
+ },
+ "MB76": {
+  "film": "MakingBo1947",
+  "start": 585.68,
+  "end": 593.76
+ },
+ "MB77": {
+  "film": "MakingBo1947",
+  "start": 593.76,
+  "end": 607.54
+ },
+ "MB78": {
+  "film": "MakingBo1947",
+  "start": 607.54,
+  "end": 617.98
+ },
+ "MB79": {
+  "film": "MakingBo1947",
+  "start": 617.98,
+  "end": 628.76
+ },
+ "SU0": {
+  "film": "Successi1928",
+  "start": 8.41,
+  "end": 17.98
+ },
+ "SU1": {
+  "film": "Successi1928",
+  "start": 17.98,
+  "end": 21.79
+ },
+ "SU2": {
+  "film": "Successi1928",
+  "start": 21.79,
+  "end": 30.8
+ },
+ "SU3": {
+  "film": "Successi1928",
+  "start": 30.8,
+  "end": 35.2
+ },
+ "SU4": {
+  "film": "Successi1928",
+  "start": 37.24,
+  "end": 42.38
+ },
+ "SU5": {
+  "film": "Successi1928",
+  "start": 42.38,
+  "end": 47.31
+ },
+ "SU6": {
+  "film": "Successi1928",
+  "start": 47.31,
+  "end": 52.02
+ },
+ "SU7": {
+  "film": "Successi1928",
+  "start": 52.02,
+  "end": 80.81
+ },
+ "SU8": {
+  "film": "Successi1928",
+  "start": 80.81,
+  "end": 110.54
+ },
+ "SU9": {
+  "film": "Successi1928",
+  "start": 110.54,
+  "end": 121.15
+ },
+ "SU10": {
+  "film": "Successi1928",
+  "start": 121.15,
+  "end": 143.28
+ },
+ "SU11": {
+  "film": "Successi1928",
+  "start": 143.28,
+  "end": 175.64
+ },
+ "SU12": {
+  "film": "Successi1928",
+  "start": 175.64,
+  "end": 180.05
+ },
+ "SU13": {
+  "film": "Successi1928",
+  "start": 181.48,
+  "end": 189.19
+ },
+ "SU14": {
+  "film": "Successi1928",
+  "start": 191.62,
+  "end": 196.53
+ },
+ "SU15": {
+  "film": "Successi1928",
+  "start": 199.0,
+  "end": 202.8
+ },
+ "SU16": {
+  "film": "Successi1928",
+  "start": 202.8,
+  "end": 205.6
+ },
+ "SU17": {
+  "film": "Successi1928",
+  "start": 205.6,
+  "end": 215.62
+ },
+ "SU18": {
+  "film": "Successi1928",
+  "start": 215.62,
+  "end": 233.73
+ },
+ "SU19": {
+  "film": "Successi1928",
+  "start": 233.73,
+  "end": 241.34
+ },
+ "SU20": {
+  "film": "Successi1928",
+  "start": 241.34,
+  "end": 244.04
+ },
+ "SU21": {
+  "film": "Successi1928",
+  "start": 244.04,
+  "end": 254.39
+ },
+ "SU22": {
+  "film": "Successi1928",
+  "start": 254.39,
+  "end": 257.92
+ },
+ "SU23": {
+  "film": "Successi1928",
+  "start": 257.92,
+  "end": 290.79
+ },
+ "SU24": {
+  "film": "Successi1928",
+  "start": 290.96,
+  "end": 305.54
+ },
+ "SU25": {
+  "film": "Successi1928",
+  "start": 305.7,
+  "end": 319.62
+ },
+ "SU26": {
+  "film": "Successi1928",
+  "start": 319.62,
+  "end": 322.92
+ },
+ "SU27": {
+  "film": "Successi1928",
+  "start": 322.92,
+  "end": 333.17
+ },
+ "SU28": {
+  "film": "Successi1928",
+  "start": 333.17,
+  "end": 402.2
+ },
+ "SU29": {
+  "film": "Successi1928",
+  "start": 402.2,
+  "end": 407.21
+ },
+ "SU30": {
+  "film": "Successi1928",
+  "start": 407.21,
+  "end": 427.03
+ },
+ "SU31": {
+  "film": "Successi1928",
+  "start": 427.03,
+  "end": 438.2
+ },
+ "SU32": {
+  "film": "Successi1928",
+  "start": 438.2,
+  "end": 442.34
+ },
+ "SU33": {
+  "film": "Successi1928",
+  "start": 442.34,
+  "end": 462.23
+ },
+ "SU34": {
+  "film": "Successi1928",
+  "start": 462.23,
+  "end": 481.05
+ },
+ "SU35": {
+  "film": "Successi1928",
+  "start": 483.48,
+  "end": 488.36
+ },
+ "SU36": {
+  "film": "Successi1928",
+  "start": 488.36,
+  "end": 499.5
+ },
+ "SU37": {
+  "film": "Successi1928",
+  "start": 499.5,
+  "end": 510.01
+ },
+ "SU38": {
+  "film": "Successi1928",
+  "start": 510.01,
+  "end": 528.73
+ },
+ "SU39": {
+  "film": "Successi1928",
+  "start": 528.73,
+  "end": 572.17
+ },
+ "SU40": {
+  "film": "Successi1928",
+  "start": 572.17,
+  "end": 576.18
+ },
+ "SU41": {
+  "film": "Successi1928",
+  "start": 576.18,
+  "end": 583.18
+ },
+ "SU42": {
+  "film": "Successi1928",
+  "start": 583.18,
+  "end": 589.02
+ },
+ "SU43": {
+  "film": "Successi1928",
+  "start": 589.02,
+  "end": 595.13
+ },
+ "SU44": {
+  "film": "Successi1928",
+  "start": 595.13,
+  "end": 621.49
+ },
+ "SU45": {
+  "film": "Successi1928",
+  "start": 621.49,
+  "end": 634.5
+ },
+ "SU46": {
+  "film": "Successi1928",
+  "start": 634.5,
+  "end": 639.07
+ },
+ "SU47": {
+  "film": "Successi1928",
+  "start": 639.07,
+  "end": 643.01
+ },
+ "SU48": {
+  "film": "Successi1928",
+  "start": 643.01,
+  "end": 649.28
+ },
+ "UB0": {
+  "film": "Usingthe1947",
+  "start": 27.63,
+  "end": 33.3
+ },
+ "UB1": {
+  "film": "Usingthe1947",
+  "start": 33.3,
+  "end": 40.74
+ },
+ "UB2": {
+  "film": "Usingthe1947",
+  "start": 40.74,
+  "end": 52.89
+ },
+ "UB3": {
+  "film": "Usingthe1947",
+  "start": 52.89,
+  "end": 60.83
+ },
+ "UB4": {
+  "film": "Usingthe1947",
+  "start": 60.83,
+  "end": 65.27
+ },
+ "UB5": {
+  "film": "Usingthe1947",
+  "start": 65.27,
+  "end": 80.71
+ },
+ "UB6": {
+  "film": "Usingthe1947",
+  "start": 80.71,
+  "end": 117.92
+ },
+ "UB7": {
+  "film": "Usingthe1947",
+  "start": 117.92,
+  "end": 130.1
+ },
+ "UB8": {
+  "film": "Usingthe1947",
+  "start": 130.1,
+  "end": 138.24
+ },
+ "UB9": {
+  "film": "Usingthe1947",
+  "start": 138.24,
+  "end": 143.08
+ },
+ "UB10": {
+  "film": "Usingthe1947",
+  "start": 143.08,
+  "end": 149.02
+ },
+ "UB11": {
+  "film": "Usingthe1947",
+  "start": 149.02,
+  "end": 155.32
+ },
+ "UB12": {
+  "film": "Usingthe1947",
+  "start": 155.32,
+  "end": 160.03
+ },
+ "UB13": {
+  "film": "Usingthe1947",
+  "start": 160.03,
+  "end": 179.65
+ },
+ "UB14": {
+  "film": "Usingthe1947",
+  "start": 179.65,
+  "end": 194.66
+ },
+ "UB15": {
+  "film": "Usingthe1947",
+  "start": 194.66,
+  "end": 197.33
+ },
+ "UB16": {
+  "film": "Usingthe1947",
+  "start": 197.33,
+  "end": 204.14
+ },
+ "UB17": {
+  "film": "Usingthe1947",
+  "start": 206.34,
+  "end": 228.73
+ },
+ "UB18": {
+  "film": "Usingthe1947",
+  "start": 228.73,
+  "end": 239.07
+ },
+ "UB19": {
+  "film": "Usingthe1947",
+  "start": 239.07,
+  "end": 250.85
+ },
+ "UB20": {
+  "film": "Usingthe1947",
+  "start": 250.85,
+  "end": 273.47
+ },
+ "UB21": {
+  "film": "Usingthe1947",
+  "start": 273.47,
+  "end": 287.82
+ },
+ "UB22": {
+  "film": "Usingthe1947",
+  "start": 287.82,
+  "end": 301.94
+ },
+ "UB23": {
+  "film": "Usingthe1947",
+  "start": 301.94,
+  "end": 333.1
+ },
+ "UB24": {
+  "film": "Usingthe1947",
+  "start": 333.1,
+  "end": 346.65
+ },
+ "UB25": {
+  "film": "Usingthe1947",
+  "start": 346.65,
+  "end": 353.19
+ },
+ "UB26": {
+  "film": "Usingthe1947",
+  "start": 353.19,
+  "end": 382.15
+ },
+ "UB27": {
+  "film": "Usingthe1947",
+  "start": 382.15,
+  "end": 399.06
+ },
+ "UB28": {
+  "film": "Usingthe1947",
+  "start": 399.06,
+  "end": 404.54
+ },
+ "UB29": {
+  "film": "Usingthe1947",
+  "start": 404.54,
+  "end": 435.1
+ },
+ "UB30": {
+  "film": "Usingthe1947",
+  "start": 435.1,
+  "end": 455.99
+ },
+ "UB31": {
+  "film": "Usingthe1947",
+  "start": 457.09,
+  "end": 462.16
+ },
+ "UB32": {
+  "film": "Usingthe1947",
+  "start": 462.16,
+  "end": 470.47
+ },
+ "UB33": {
+  "film": "Usingthe1947",
+  "start": 470.47,
+  "end": 475.64
+ },
+ "UB34": {
+  "film": "Usingthe1947",
+  "start": 475.64,
+  "end": 478.48
+ },
+ "UB35": {
+  "film": "Usingthe1947",
+  "start": 478.48,
+  "end": 484.62
+ },
+ "UB36": {
+  "film": "Usingthe1947",
+  "start": 484.62,
+  "end": 494.43
+ },
+ "UB37": {
+  "film": "Usingthe1947",
+  "start": 494.43,
+  "end": 501.5
+ },
+ "UB38": {
+  "film": "Usingthe1947",
+  "start": 501.5,
+  "end": 505.84
+ },
+ "UB39": {
+  "film": "Usingthe1947",
+  "start": 505.84,
+  "end": 511.64
+ },
+ "UB40": {
+  "film": "Usingthe1947",
+  "start": 511.64,
+  "end": 516.01
+ },
+ "UB41": {
+  "film": "Usingthe1947",
+  "start": 516.01,
+  "end": 522.96
+ },
+ "UB42": {
+  "film": "Usingthe1947",
+  "start": 522.96,
+  "end": 528.86
+ },
+ "UB43": {
+  "film": "Usingthe1947",
+  "start": 528.86,
+  "end": 545.41
+ },
+ "UB44": {
+  "film": "Usingthe1947",
+  "start": 545.41,
+  "end": 566.37
+ },
+ "UB45": {
+  "film": "Usingthe1947",
+  "start": 566.37,
+  "end": 572.77
+ },
+ "UB46": {
+  "film": "Usingthe1947",
+  "start": 572.77,
+  "end": 578.58
+ },
+ "UB47": {
+  "film": "Usingthe1947",
+  "start": 578.58,
+  "end": 602.9
+ },
+ "UB48": {
+  "film": "Usingthe1947",
+  "start": 602.9,
+  "end": 612.14
+ },
+ "WM0": {
+  "film": "WhatIsMo1947",
+  "start": 29.13,
+  "end": 35.47
+ },
+ "WM1": {
+  "film": "WhatIsMo1947",
+  "start": 35.47,
+  "end": 44.44
+ },
+ "WM2": {
+  "film": "WhatIsMo1947",
+  "start": 44.44,
+  "end": 56.62
+ },
+ "WM3": {
+  "film": "WhatIsMo1947",
+  "start": 56.62,
+  "end": 61.13
+ },
+ "WM4": {
+  "film": "WhatIsMo1947",
+  "start": 61.13,
+  "end": 80.98
+ },
+ "WM5": {
+  "film": "WhatIsMo1947",
+  "start": 80.98,
+  "end": 91.32
+ },
+ "WM6": {
+  "film": "WhatIsMo1947",
+  "start": 91.32,
+  "end": 96.13
+ },
+ "WM7": {
+  "film": "WhatIsMo1947",
+  "start": 96.13,
+  "end": 119.39
+ },
+ "WM8": {
+  "film": "WhatIsMo1947",
+  "start": 119.39,
+  "end": 153.79
+ },
+ "WM9": {
+  "film": "WhatIsMo1947",
+  "start": 153.79,
+  "end": 160.63
+ },
+ "WM10": {
+  "film": "WhatIsMo1947",
+  "start": 160.63,
+  "end": 175.04
+ },
+ "WM11": {
+  "film": "WhatIsMo1947",
+  "start": 175.04,
+  "end": 189.26
+ },
+ "WM12": {
+  "film": "WhatIsMo1947",
+  "start": 189.26,
+  "end": 193.43
+ },
+ "WM13": {
+  "film": "WhatIsMo1947",
+  "start": 193.43,
+  "end": 207.34
+ },
+ "WM14": {
+  "film": "WhatIsMo1947",
+  "start": 207.34,
+  "end": 210.14
+ },
+ "WM15": {
+  "film": "WhatIsMo1947",
+  "start": 210.14,
+  "end": 224.82
+ },
+ "WM16": {
+  "film": "WhatIsMo1947",
+  "start": 224.82,
+  "end": 230.36
+ },
+ "WM17": {
+  "film": "WhatIsMo1947",
+  "start": 230.36,
+  "end": 236.0
+ },
+ "WM18": {
+  "film": "WhatIsMo1947",
+  "start": 236.0,
+  "end": 241.68
+ },
+ "WM19": {
+  "film": "WhatIsMo1947",
+  "start": 241.68,
+  "end": 249.95
+ },
+ "WM20": {
+  "film": "WhatIsMo1947",
+  "start": 249.95,
+  "end": 281.75
+ },
+ "WM21": {
+  "film": "WhatIsMo1947",
+  "start": 281.75,
+  "end": 289.42
+ },
+ "WM22": {
+  "film": "WhatIsMo1947",
+  "start": 289.42,
+  "end": 293.59
+ },
+ "WM23": {
+  "film": "WhatIsMo1947",
+  "start": 293.59,
+  "end": 298.67
+ },
+ "WM24": {
+  "film": "WhatIsMo1947",
+  "start": 298.67,
+  "end": 310.71
+ },
+ "WM25": {
+  "film": "WhatIsMo1947",
+  "start": 310.71,
+  "end": 336.37
+ },
+ "WM26": {
+  "film": "WhatIsMo1947",
+  "start": 338.61,
+  "end": 341.64
+ },
+ "WM27": {
+  "film": "WhatIsMo1947",
+  "start": 341.64,
+  "end": 345.11
+ },
+ "WM28": {
+  "film": "WhatIsMo1947",
+  "start": 345.11,
+  "end": 351.15
+ },
+ "WM29": {
+  "film": "WhatIsMo1947",
+  "start": 353.45,
+  "end": 358.89
+ },
+ "WM30": {
+  "film": "WhatIsMo1947",
+  "start": 358.89,
+  "end": 372.4
+ },
+ "WM31": {
+  "film": "WhatIsMo1947",
+  "start": 372.4,
+  "end": 381.98
+ },
+ "WM32": {
+  "film": "WhatIsMo1947",
+  "start": 381.98,
+  "end": 405.54
+ },
+ "WM33": {
+  "film": "WhatIsMo1947",
+  "start": 405.54,
+  "end": 412.21
+ },
+ "WM34": {
+  "film": "WhatIsMo1947",
+  "start": 412.21,
+  "end": 417.65
+ },
+ "WM35": {
+  "film": "WhatIsMo1947",
+  "start": 417.65,
+  "end": 426.96
+ },
+ "WM36": {
+  "film": "WhatIsMo1947",
+  "start": 426.96,
+  "end": 430.03
+ },
+ "WM37": {
+  "film": "WhatIsMo1947",
+  "start": 430.03,
+  "end": 441.37
+ },
+ "WM38": {
+  "film": "WhatIsMo1947",
+  "start": 441.37,
+  "end": 463.33
+ },
+ "WM39": {
+  "film": "WhatIsMo1947",
+  "start": 463.33,
+  "end": 472.11
+ },
+ "WM40": {
+  "film": "WhatIsMo1947",
+  "start": 472.11,
+  "end": 477.51
+ },
+ "WM41": {
+  "film": "WhatIsMo1947",
+  "start": 477.51,
+  "end": 481.55
+ },
+ "WM42": {
+  "film": "WhatIsMo1947",
+  "start": 481.55,
+  "end": 488.92
+ },
+ "WM43": {
+  "film": "WhatIsMo1947",
+  "start": 488.92,
+  "end": 493.53
+ },
+ "WM44": {
+  "film": "WhatIsMo1947",
+  "start": 493.53,
+  "end": 501.47
+ },
+ "WM45": {
+  "film": "WhatIsMo1947",
+  "start": 501.47,
+  "end": 520.82
+ },
+ "WM46": {
+  "film": "WhatIsMo1947",
+  "start": 520.82,
+  "end": 539.64
+ },
+ "WM47": {
+  "film": "WhatIsMo1947",
+  "start": 539.64,
+  "end": 564.5
+ },
+ "CU0": {
+  "film": "copper_mining_and_smelting",
+  "start": 63.6,
+  "end": 66.13
+ },
+ "CU1": {
+  "film": "copper_mining_and_smelting",
+  "start": 66.13,
+  "end": 70.27
+ },
+ "CU2": {
+  "film": "copper_mining_and_smelting",
+  "start": 70.27,
+  "end": 74.61
+ },
+ "CU3": {
+  "film": "copper_mining_and_smelting",
+  "start": 74.61,
+  "end": 77.11
+ },
+ "CU4": {
+  "film": "copper_mining_and_smelting",
+  "start": 77.11,
+  "end": 80.15
+ },
+ "CU5": {
+  "film": "copper_mining_and_smelting",
+  "start": 89.96,
+  "end": 93.89
+ },
+ "CU6": {
+  "film": "copper_mining_and_smelting",
+  "start": 93.89,
+  "end": 99.8
+ },
+ "CU7": {
+  "film": "copper_mining_and_smelting",
+  "start": 102.07,
+  "end": 111.84
+ },
+ "CU8": {
+  "film": "copper_mining_and_smelting",
+  "start": 111.84,
+  "end": 114.41
+ },
+ "CU9": {
+  "film": "copper_mining_and_smelting",
+  "start": 115.31,
+  "end": 121.15
+ },
+ "CU10": {
+  "film": "copper_mining_and_smelting",
+  "start": 121.15,
+  "end": 124.86
+ },
+ "CU11": {
+  "film": "copper_mining_and_smelting",
+  "start": 127.16,
+  "end": 130.66
+ },
+ "CU12": {
+  "film": "copper_mining_and_smelting",
+  "start": 137.1,
+  "end": 141.17
+ },
+ "CU13": {
+  "film": "copper_mining_and_smelting",
+  "start": 141.34,
+  "end": 145.71
+ },
+ "CU14": {
+  "film": "copper_mining_and_smelting",
+  "start": 147.91,
+  "end": 155.12
+ },
+ "CU15": {
+  "film": "copper_mining_and_smelting",
+  "start": 155.12,
+  "end": 172.54
+ },
+ "CU16": {
+  "film": "copper_mining_and_smelting",
+  "start": 174.11,
+  "end": 183.98
+ },
+ "CU17": {
+  "film": "copper_mining_and_smelting",
+  "start": 183.98,
+  "end": 188.62
+ },
+ "CU18": {
+  "film": "copper_mining_and_smelting",
+  "start": 188.62,
+  "end": 194.29
+ },
+ "CU19": {
+  "film": "copper_mining_and_smelting",
+  "start": 194.29,
+  "end": 197.93
+ },
+ "CU20": {
+  "film": "copper_mining_and_smelting",
+  "start": 197.93,
+  "end": 211.01
+ },
+ "CU21": {
+  "film": "copper_mining_and_smelting",
+  "start": 211.01,
+  "end": 213.75
+ },
+ "CU22": {
+  "film": "copper_mining_and_smelting",
+  "start": 213.75,
+  "end": 218.12
+ },
+ "CU23": {
+  "film": "copper_mining_and_smelting",
+  "start": 219.45,
+  "end": 233.87
+ },
+ "CU24": {
+  "film": "copper_mining_and_smelting",
+  "start": 233.87,
+  "end": 236.97
+ },
+ "CU25": {
+  "film": "copper_mining_and_smelting",
+  "start": 236.97,
+  "end": 241.21
+ },
+ "CU26": {
+  "film": "copper_mining_and_smelting",
+  "start": 241.21,
+  "end": 244.21
+ },
+ "CU27": {
+  "film": "copper_mining_and_smelting",
+  "start": 244.21,
+  "end": 247.55
+ },
+ "CU28": {
+  "film": "copper_mining_and_smelting",
+  "start": 247.55,
+  "end": 255.16
+ },
+ "CU29": {
+  "film": "copper_mining_and_smelting",
+  "start": 255.16,
+  "end": 261.73
+ },
+ "CU30": {
+  "film": "copper_mining_and_smelting",
+  "start": 261.73,
+  "end": 264.83
+ },
+ "CU31": {
+  "film": "copper_mining_and_smelting",
+  "start": 264.83,
+  "end": 283.88
+ },
+ "CU32": {
+  "film": "copper_mining_and_smelting",
+  "start": 283.88,
+  "end": 288.09
+ },
+ "CU33": {
+  "film": "copper_mining_and_smelting",
+  "start": 288.09,
+  "end": 302.7
+ },
+ "CU34": {
+  "film": "copper_mining_and_smelting",
+  "start": 302.7,
+  "end": 306.07
+ },
+ "CU35": {
+  "film": "copper_mining_and_smelting",
+  "start": 306.07,
+  "end": 308.71
+ },
+ "CU36": {
+  "film": "copper_mining_and_smelting",
+  "start": 308.71,
+  "end": 311.34
+ },
+ "CU37": {
+  "film": "copper_mining_and_smelting",
+  "start": 311.34,
+  "end": 316.55
+ },
+ "CU38": {
+  "film": "copper_mining_and_smelting",
+  "start": 316.55,
+  "end": 319.39
+ },
+ "CU39": {
+  "film": "copper_mining_and_smelting",
+  "start": 319.39,
+  "end": 323.59
+ },
+ "CU40": {
+  "film": "copper_mining_and_smelting",
+  "start": 323.59,
+  "end": 368.63
+ },
+ "CU41": {
+  "film": "copper_mining_and_smelting",
+  "start": 368.63,
+  "end": 381.25
+ },
+ "CU42": {
+  "film": "copper_mining_and_smelting",
+  "start": 381.25,
+  "end": 390.16
+ },
+ "CU43": {
+  "film": "copper_mining_and_smelting",
+  "start": 390.16,
+  "end": 393.86
+ },
+ "CU44": {
+  "film": "copper_mining_and_smelting",
+  "start": 393.86,
+  "end": 397.5
+ },
+ "CU45": {
+  "film": "copper_mining_and_smelting",
+  "start": 397.5,
+  "end": 401.7
+ },
+ "CU46": {
+  "film": "copper_mining_and_smelting",
+  "start": 401.7,
+  "end": 430.7
+ },
+ "CU47": {
+  "film": "copper_mining_and_smelting",
+  "start": 430.7,
+  "end": 442.21
+ },
+ "CU48": {
+  "film": "copper_mining_and_smelting",
+  "start": 442.21,
+  "end": 444.88
+ },
+ "CU49": {
+  "film": "copper_mining_and_smelting",
+  "start": 444.88,
+  "end": 448.05
+ },
+ "CU50": {
+  "film": "copper_mining_and_smelting",
+  "start": 448.05,
+  "end": 484.85
+ },
+ "CU51": {
+  "film": "copper_mining_and_smelting",
+  "start": 484.85,
+  "end": 493.63
+ },
+ "CU52": {
+  "film": "copper_mining_and_smelting",
+  "start": 493.63,
+  "end": 507.14
+ },
+ "CU53": {
+  "film": "copper_mining_and_smelting",
+  "start": 507.14,
+  "end": 518.15
+ },
+ "CU54": {
+  "film": "copper_mining_and_smelting",
+  "start": 518.15,
+  "end": 587.39
+ },
+ "CU55": {
+  "film": "copper_mining_and_smelting",
+  "start": 587.39,
+  "end": 593.19
+ }
+}
