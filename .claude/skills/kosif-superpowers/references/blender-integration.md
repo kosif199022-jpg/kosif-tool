@@ -36,3 +36,7 @@ External skill catalog entries are claims until runtime evidence establishes the
 ## Verified five-second cat rescue
 
 Original procedural demo: examples/blender_cat_rescue_5s.py, built with 70 Blender objects and 120 frames in vertical 480x854. Execute with locally installed Blender 5.2.2 headless using --background --factory-startup --disable-autoexec --python-exit-code 7 --python examples/blender_cat_rescue_5s.py. This saves a .blend scene and numbered PNG frames to KOSIF_RESEARCH_PRIVATE_20261019 under the user's home. Encode frames at 24 fps using FFmpeg to MP4. Verified movie at proofs/blender-cat-rescue-advanced-20261019/KOSIF_CAT_RESCUE_5_SECONDS.mp4. This remains simplified geometry, no audio, no realistic human model and no motion capture. For Blender-free rendering, use scripts/native_3d.py and its limited primitive mesh API.
+
+## Separate Blender-free GLB exporter
+
+KOSIF also includes a fully independent original 3D GLB exporter: [native-glb-no-blender.md](native-glb-no-blender.md), implemented in scripts/native_glb.py. It generates cube/sphere geometry, PBR colors and position-keyframe animations as glTF 2.0 binary using Python standard library only. It requires **no Blender installation**. This complements scripts/native_3d.py (the separate Blender-free primitive rasterizer and MP4 renderer) and does not claim to replace Blender's full feature set.
