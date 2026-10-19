@@ -26,6 +26,10 @@ jobs:
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_*.py' -v
           node --test .claude/skills/kosif-superpowers/evals/test_motion_engine.mjs
+      - name: Install Creative Paint image dependency
+        run: python3 -m pip install --disable-pip-version-check 'Pillow==12.3.0'
+      - name: Test Creative Paint image and video exports before packaging
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_paint.py' -v
       - name: Test new Code Drawing Master before packaging
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
@@ -66,6 +70,10 @@ jobs:
                   "evals/test_capability_runtime_router.py",
                   "scripts/motion_director.py",
                   "scripts/code_drawing_master.py",
+                  "scripts/creative_paint.py",
+                  "templates/creative-paint-demo.json",
+                  "references/creative-paint-runtime.md",
+                  "evals/test_creative_paint.py",
                   "references/code-drawing-master.md",
                   "evals/test_code_drawing_master.py",
                   "evals/test_code_drawing_engine.mjs",
