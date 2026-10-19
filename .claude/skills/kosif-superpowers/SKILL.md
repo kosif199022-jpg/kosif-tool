@@ -7,6 +7,10 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 # قواك الخارقة — KOSIF Superpowers
 
 **الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 4,730 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+## Claude Code permission-aware local-first bootstrap
+
+**Do NOT require git clone before using this skill.** If Claude Code Auto Mode denies 'Code from External', do not bypass the permission classifier. Run the already-installed local script: python scripts/local_first.py doctor and python scripts/local_first.py search silhouette --scope powers from this skill's root (or use the full relative path under the repo root). A complete local checkout also supports --scope styles; standalone skills honestly report that the full style index is unavailable. If the skill isn't installed and access is blocked, request explicit user authorization or a supplied package instead of using an alternative tool to secretly clone. Read [the auto-mode recovery guide](references/claude-auto-local-first.md) and [evidence audit](references/rea-ghidra-catalog-audit-20261019.md). For catalog health, run python scripts/catalog_evidence_audit.py: all 4,730 records are assessed for local link coverage but NOT executed.
+
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](references/capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
