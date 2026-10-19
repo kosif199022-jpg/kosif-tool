@@ -362,3 +362,19 @@ For a request to **move a drawn character's arm, solve elbow/hand joints, animat
 ## Original full-body character animation (2026-10-19)
 
 For a Claude task requiring a drawn person to walk, run, wave, smile, blink or nod using time cues or verified word timings, use [KOSIF Full Body Animator](references/fullbody-character-motion.md). Run scripts/character_fullbody.py doctor, inspect templates/fullbody-demo.json, and supply templates/fullbody-demo-words.json only for the synthetic example. Produces layered SVG, PNG, GIF and MP4, optionally stream-copying AAC narration with packet hash verification. This is original 2D IK and drawing code, not 3D mocap or Adobe/CapCut clone; no automatic transcription or lip sync. Local Windows tests 14/14 successful.
+
+## REA Creative Research Atlas — 2,000 public sources (2026-10-19)
+
+For filmmaking, editing, imagery, animation, audio-sync, font/VFX or media-research requests, consult [evidence-bound creative discovery report](../../../docs/REA_CREATIVE_DISCOVERY_2000_20261019.md). Search the **1,000 public GitHub repository metadata records and 1,000 curated creative website records** using:
+
+```bash
+python scripts/creative_external_search.py stats
+python scripts/creative_external_search.py search "cinematic Arabic kinetic typography and real-footage editing" --top 20
+python scripts/creative_external_search.py search "image restoration masking upscaling" --kind repo --top 20
+```
+
+The search tool is an external-source discovery registry, NOT a claim of 2,000 REA inspections or 2,000 usable components. Entries contain provenance and explicitly unverified capability status. Continue to use `scripts/capability_atlas.py plan` and the core KOSIF execution tests to determine **actual** installed working capabilities.
+
+**Verified REA scope:** first-party source static inspection has analyzed nine accessible owned JavaScript/TypeScript repositories; five selected public creative sites received scoped passive CDP observations. Remaining owner repositories were inspected through GitHub tree metadata only. Keep private repository metadata, cloned source and full REA Evidence JSON **off public branches**; never copy private code/secrets into the external discovery indexes. REA analysis is read-only and bounded; never run arbitrary installer, untrusted repo code, or hidden-service intrusions. Use `scripts/rea_owned_repo_batch.py` only with an explicitly specified local private evidence directory and permitted targets.
+
+Candidate techniques from competing products must be implemented independently and tested; never copy proprietary internal source or inflate KOSIF's proven capability count from metadata-only research.
