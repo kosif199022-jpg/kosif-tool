@@ -158,7 +158,19 @@ body.printing #app,body.printing .toast,body.printing .pv{display:none!important
 body.printing #printView{display:block;max-width:860px;margin:0 auto;padding-block:16px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .ptools{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-bottom:14px;flex-wrap:wrap}
 .ptools b{color:var(--ink)} .ptools p{margin:0;color:var(--muted);font-size:13px}
-.ppages{display:grid;gap:14px}
+.ppages{display:grid;gap:18px}
+label.btn{cursor:pointer}
+.impbody p{margin:8px 0;color:var(--text)} .imp-warn{color:var(--red);font-weight:700}
+table.imp{min-width:0;width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:6px}
+table.imp td,table.imp th{padding:6px 10px;border-bottom:1px solid var(--line2);text-align:right}
+table.imp td.n{text-align:left;font-weight:700}
+.imp-list{margin-top:10px;background:var(--badbg);border:1px solid var(--badline);border-radius:8px;padding:8px 12px;color:var(--badtext);font-size:13px;max-height:180px;overflow:auto}
+.pbtns{display:flex;gap:8px;flex-wrap:wrap}
+.ptools{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;box-shadow:0 4px 14px rgba(20,33,61,.08)}
+body.printing{background:#E6E9EF}
+.ppage{display:grid;gap:6px;justify-items:center}
+.ppage span{font-size:12px;color:var(--muted);font-weight:600}
+@media print{.ppage span{display:none}.ppage{display:block}}
 .ppages img{width:100%;display:block;box-shadow:0 4px 16px rgba(20,33,61,.18);background:#fff}
 @media print{
   @page{size:A4;margin:0}
@@ -189,6 +201,9 @@ body.printing #printView{display:block;max-width:860px;margin:0 auto;padding-blo
     <span class="save" id="save"><i></i><span id="saveText">جارٍ الاتصال…</span></span>
     <span class="sp"></span>
     <button class="btn" id="btnNew" type="button">يوم جديد</button>
+    <button class="btn" id="btnTpl" type="button" title="ملف Excel بجداول اليوم لتعبئته ثم رفعه">تنزيل القالب</button>
+    <label class="btn" for="tplFile" title="ارفع القالب بعد تعبئته فيتحدث التقرير">رفع القالب</label>
+    <input type="file" id="tplFile" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden>
     <a class="btn" id="btnPrint" href="#print" target="_blank" rel="noopener">طباعة</a>
     <button class="btn" id="btnPdfM" type="button">PDF للجوال</button>
     <button class="btn" id="btnPdf" type="button">PDF للطباعة A4</button>
@@ -235,8 +250,18 @@ body.printing #printView{display:block;max-width:860px;margin:0 auto;padding-blo
   <div class="pvpages" id="pvPages"></div>
 </div>
 <div id="printView" aria-live="polite">
-  <div class="ptools"><div><b>التقرير اليومي الموحّد · نسخة الطباعة</b><p id="pMsg">جارٍ تجهيز الصفحات…</p></div><button class="btn primary" id="pGo" type="button" disabled>طباعة</button></div>
+  <div class="ptools">
+    <div><b>معاينة قبل الطباعة</b><p id="pMsg">جارٍ تجهيز الصفحات…</p></div>
+    <div class="pbtns"><button class="btn" id="pBack" type="button">رجوع للتطبيق</button><button class="btn" id="pDl" type="button" disabled>تنزيل PDF</button><button class="btn primary" id="pGo" type="button" disabled>طباعة</button></div>
+  </div>
   <div class="ppages" id="pPages"></div>
+</div>
+<div class="pv" id="imp" hidden role="dialog" aria-modal="true" aria-labelledby="impTitle">
+  <div class="pvbar" style="display:block;max-width:560px">
+    <b id="impTitle">مراجعة القالب قبل التحديث</b>
+    <div id="impBody" class="impbody"></div>
+    <div class="pbtns" style="margin-top:12px;justify-content:flex-start"><button class="btn primary" id="impApply" type="button">تحديث التقرير</button><button class="btn" id="impCancel" type="button">إلغاء</button></div>
+  </div>
 </div>
 <div class="toast" id="toast" hidden><span id="toastText"></span><button type="button" id="toastBtn">تراجع</button></div>
 
@@ -652,6 +677,7 @@ async function openDay(date) {
   renderAll();
   if (mode === "db") {
     let first = true;
+    let loaded; const ready = new Promise(r => { loaded = r; setTimeout(r, 6000); });
     unsub = db.doc("reports/" + date).onSnapshot(async snap => {
       if (snap.metadata.hasPendingWrites) return;
       const d = snap.exists ? snap.data() : null;
@@ -661,7 +687,9 @@ async function openDay(date) {
       first = false;
       if (d) { S = fromDoc(d); lastRev = d.rev; renderAll(); setSave("ok", "محفوظ للفريق ✓"); }
       else { await startFresh(date); }
-    }, e => setSave("err", "انقطع الاتصال بالبيانات — أعد فتح الصفحة"));
+      loaded();
+    }, e => { setSave("err", "انقطع الاتصال بالبيانات — أعد فتح الصفحة"); loaded(); });
+    await ready;
   } else {
     let d = null; try { d = JSON.parse(localStorage.getItem("report:" + date) || "null"); } catch (e) {}
     if (d) { S = fromDoc(d); renderAll(); setSave("ok", "بدون تسجيل دخول · التعديلات محفوظة على هذا الجهاز فقط"); }
@@ -687,7 +715,9 @@ $("btnNew").addEventListener("click", async () => {
 $("btnXlsx").addEventListener("click", exportXlsx);
 
 /* ---------- boot ---------- */
+let booted = false;
 async function boot() {
+  booted = true;
   renderAll(); setSave("busy", "جارٍ تحميل التقرير…");
   const cl = window.claude;
   db = cl && cl.use ? await cl.use("db").catch(() => null) : null;
@@ -1598,6 +1628,233 @@ function directSave(name, blob) {  // standalone hosting only (outside the Claud
   a.href = url; a.download = name; document.body.append(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 4000);
 }
+
+/* ---------- Excel template: download, edit in Excel, upload to replace the day (no external libraries) ---------- */
+const TPL_SHEETS = [["sales", "المبيعات"], ["purch", "المشتريات"], ["exp", "المصروفات"], ["rec", "سندات التحصيل"], ["pay", "سندات الدفع"], ["crec", "المقبوضات النقدية"], ["cpay", "المدفوعات النقدية"]];
+const TPL_INFO = "بيانات اليوم";
+const CRC = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+const crc32 = b => { let c = 0xFFFFFFFF; for (let i = 0; i < b.length; i++) c = CRC[(c ^ b[i]) & 0xFF] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+function zipStore(files) {
+  const enc = new TextEncoder(), parts = [], cent = []; let off = 0;
+  const u16 = v => [v & 255, (v >>> 8) & 255], u32 = v => [v & 255, (v >>> 8) & 255, (v >>> 16) & 255, (v >>> 24) & 255];
+  for (const f of files) {
+    const name = enc.encode(f.name), data = typeof f.data === "string" ? enc.encode(f.data) : f.data, crc = crc32(data);
+    const head = [...u32(0x04034b50), ...u16(20), ...u16(0x0800), ...u16(0), ...u16(0), ...u16(0x21), ...u32(crc), ...u32(data.length), ...u32(data.length), ...u16(name.length), ...u16(0)];
+    parts.push(new Uint8Array(head), name, data);
+    cent.push(new Uint8Array([...u32(0x02014b50), ...u16(20), ...u16(20), ...u16(0x0800), ...u16(0), ...u16(0), ...u16(0x21), ...u32(crc), ...u32(data.length), ...u32(data.length), ...u16(name.length), ...u16(0), ...u16(0), ...u16(0), ...u16(0), ...u32(0), ...u32(off)]), name);
+    off += head.length + name.length + data.length;
+  }
+  const cdSize = cent.reduce((a, b) => a + b.length, 0);
+  const end = new Uint8Array([...u32(0x06054b50), ...u16(0), ...u16(0), ...u16(files.length), ...u16(files.length), ...u32(cdSize), ...u32(off), ...u16(0)]);
+  const all = [...parts, ...cent, end], out = new Uint8Array(all.reduce((a, b) => a + b.length, 0)); let o = 0;
+  for (const p of all) { out.set(p, o); o += p.length; }
+  return out;
+}
+const xesc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const colL2 = i => String.fromCharCode(65 + i);
+function buildTemplate() {
+  const sheets = [];
+  const cell = (r, c, v, style) => {
+    const ref = colL2(c) + r;
+    if (v === null || v === undefined || v === "") return style ? `<c r="${ref}" s="${style}"/>` : "";
+    if (typeof v === "number") return `<c r="${ref}" s="${style || 3}"><v>${v}</v></c>`;
+    return `<c r="${ref}" t="inlineStr"${style ? ` s="${style}"` : ""}><is><t xml:space="preserve">${xesc(v)}</t></is></c>`;
+  };
+  const sheetXml = (rows, widths, validation, freeze = true) => `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView rightToLeft="1" workbookViewId="0">${freeze ? '<pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/>' : ""}</sheetView></sheetViews><sheetFormatPr defaultRowHeight="18"/><cols>${widths.map((w, i) => `<col min="${i + 1}" max="${i + 1}" width="${w}" customWidth="1"/>`).join("")}</cols><sheetData>${rows.map((r, i) => `<row r="${i + 1}"${i === 0 && freeze ? ' ht="24" customHeight="1"' : ""}>${r}</row>`).join("")}</sheetData>${validation || ""}</worksheet>`;
+  // info sheet
+  const info = [
+    cell(1, 0, "البند", 1) + cell(1, 1, "القيمة", 1),
+    cell(2, 0, "التاريخ (YYYY-MM-DD)", 4) + cell(2, 1, S.date, 5),
+    cell(3, 0, "الرصيد السابق للصندوق", 4) + cell(3, 1, Number(S.prev) || 0, 3),
+    cell(5, 0, "طريقة الاستخدام", 6),
+    cell(6, 0, "١. اكتب العمليات في أوراق الجداول، كل عملية في صف، دون تغيير عناوين الصف الأول."),
+    cell(7, 0, "٢. طريقة الدفع تُختار من القائمة: اجل، شبكة، نقدا، تحويل، على الحساب (للمردود)."),
+    cell(8, 0, "٣. المبالغ أرقام موجبة، والمردودات بالسالب. المبالغ شاملة الضريبة."),
+    cell(9, 0, "٤. احفظ الملف ثم ارفعه من زر «رفع القالب» في التطبيق، فيتحدث التقرير فورًا لهذا التاريخ."),
+    cell(10, 0, "٥. المبيعات النقدية تُضاف تلقائيًا إلى المقبوضات النقدية إن لم تكتبها."),
+  ];
+  sheets.push([TPL_INFO, sheetXml(info, [34, 70], "", false)]);
+  for (const [k, title] of TPL_SHEETS) {
+    const cfg = TABLES[k], hasM = !cfg.cash;
+    const heads = hasM ? ["رقم المستند", cfg.cols[1], "طريقة الدفع", "المبلغ", cfg.cols[4]] : ["رقم المستند", cfg.cols[1], "المبلغ", "الملاحظات"];
+    const rows = [heads.map((h, i) => cell(1, i, h, 1)).join("")];
+    S.t[k].forEach((r, i) => {
+      const n = i + 2, vals = hasM ? [r.doc, r.name, r.method, r.amount, r.note] : [r.doc, r.name, r.amount, r.note];
+      rows.push(vals.map((v, j) => cell(n, j, v, typeof v === "number" ? 3 : (j === 0 ? 5 : 0))).join(""));
+    });
+    const dv = hasM ? `<dataValidations count="1"><dataValidation type="list" allowBlank="1" showErrorMessage="1" errorTitle="طريقة الدفع" error="اختر من القائمة" sqref="C2:C1000"><formula1>"اجل,شبكة,نقدا,تحويل,على الحساب"</formula1></dataValidation></dataValidations>` : "";
+    sheets.push([title, sheetXml(rows, hasM ? [18, 30, 14, 15, 22] : [18, 32, 15, 22], dv)]);
+  }
+  const files = [
+    {name: "[Content_Types].xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${sheets.map((_, i) => `<Override PartName="/xl/worksheets/sheet${i + 1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join("")}</Types>`},
+    {name: "_rels/.rels", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`},
+    {name: "xl/workbook.xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><bookViews><workbookView activeTab="1"/></bookViews><sheets>${sheets.map(([n], i) => `<sheet name="${xesc(n)}" sheetId="${i + 1}" r:id="rId${i + 1}"/>`).join("")}</sheets></workbook>`},
+    {name: "xl/_rels/workbook.xml.rels", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${sheets.map((_, i) => `<Relationship Id="rId${i + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i + 1}.xml"/>`).join("")}<Relationship Id="rId${sheets.length + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`},
+    {name: "xl/styles.xml", data: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><numFmts count="1"><numFmt numFmtId="164" formatCode="#,##0.00;[Red]-#,##0.00"/></numFmts><fonts count="4"><font><sz val="11"/><name val="Arial"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Arial"/></font><font><b/><sz val="11"/><color rgb="FF14213D"/><name val="Arial"/></font><font><b/><sz val="12"/><color rgb="FFC1121F"/><name val="Arial"/></font></fonts><fills count="4"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF14213D"/><bgColor indexed="64"/></patternFill></fill><fill><patternFill patternType="solid"><fgColor rgb="FFFFF6DC"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="7"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment horizontal="center" vertical="center"/></xf><xf numFmtId="0" fontId="2" fillId="0" borderId="0" xfId="0" applyFont="1"/><xf numFmtId="164" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1"/><xf numFmtId="0" fontId="2" fillId="3" borderId="0" xfId="0" applyFont="1" applyFill="1"/><xf numFmtId="49" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1"/><xf numFmtId="0" fontId="3" fillId="0" borderId="0" xfId="0" applyFont="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`},
+    ...sheets.map(([, xml], i) => ({name: `xl/worksheets/sheet${i + 1}.xml`, data: xml})),
+  ];
+  return zipStore(files);
+}
+
+/* reading an uploaded .xlsx (stored or deflated entries) */
+async function unzipEntries(buf) {
+  const b = new Uint8Array(buf), dv = new DataView(buf);
+  let e = b.length - 22; while (e >= 0 && dv.getUint32(e, true) !== 0x06054b50) e--;
+  if (e < 0) throw new Error("not a zip");
+  const count = dv.getUint16(e + 10, true); let p = dv.getUint32(e + 16, true);
+  const out = {}, dec = new TextDecoder();
+  for (let i = 0; i < count; i++) {
+    const method = dv.getUint16(p + 10, true), csize = dv.getUint32(p + 20, true), nlen = dv.getUint16(p + 28, true), xlen = dv.getUint16(p + 30, true), clen = dv.getUint16(p + 32, true), loff = dv.getUint32(p + 42, true);
+    const name = dec.decode(b.subarray(p + 46, p + 46 + nlen));
+    const start = loff + 30 + dv.getUint16(loff + 26, true) + dv.getUint16(loff + 28, true);
+    out[name] = {method, data: b.subarray(start, start + csize)};
+    p += 46 + nlen + xlen + clen;
+  }
+  return {
+    names: Object.keys(out),
+    async text(name) {
+      const f = out[name]; if (!f) return null;
+      if (f.method === 0) return dec.decode(f.data);
+      const ds = new Blob([f.data]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+      return await new Response(ds).text();
+    },
+  };
+}
+async function readXlsx(buf) {
+  const z = await unzipEntries(buf), P = new DOMParser();
+  const xml = async n => { const t = await z.text(n); return t ? P.parseFromString(t, "application/xml") : null; };
+  const all = (d, tag) => Array.from(d.getElementsByTagNameNS("*", tag));
+  const wb = await xml("xl/workbook.xml"), rels = await xml("xl/_rels/workbook.xml.rels");
+  const target = {}; for (const r of all(rels, "Relationship")) target[r.getAttribute("Id")] = r.getAttribute("Target");
+  const sst = []; const ss = await xml("xl/sharedStrings.xml");
+  if (ss) for (const si of all(ss, "si")) sst.push(all(si, "t").map(t => t.textContent).join(""));
+  const sheets = {};
+  for (const sh of all(wb, "sheet")) {
+    const rid = sh.getAttributeNS("http://schemas.openxmlformats.org/officeDocument/2006/relationships", "id") || sh.getAttribute("r:id");
+    let t = target[rid] || ""; t = t.replace(/^\/?xl\//, "").replace(/^\//, "");
+    const d = await xml("xl/" + t); if (!d) continue;
+    const rows = [];
+    for (const row of all(d, "row")) {
+      const vals = [];
+      for (const c of all(row, "c")) {
+        const ref = c.getAttribute("r") || "", col = ref.replace(/\d+/g, "").split("").reduce((a, ch) => a * 26 + ch.charCodeAt(0) - 64, 0) - 1;
+        const type = c.getAttribute("t"), v = all(c, "v")[0];
+        let val = null;
+        if (type === "s") val = sst[Number(v && v.textContent)] ?? "";
+        else if (type === "inlineStr") val = all(c, "t").map(t => t.textContent).join("");
+        else if (type === "str" || type === "e") val = v ? v.textContent : "";
+        else if (type === "b") val = v ? v.textContent === "1" : null;
+        else if (v) val = Number(v.textContent);
+        if (col >= 0) vals[col] = val;
+      }
+      rows[Number(row.getAttribute("r")) - 1] = vals;
+    }
+    sheets[sh.getAttribute("name").trim()] = rows.filter(Boolean);
+  }
+  return sheets;
+}
+const normM = s => {
+  const t = String(s ?? "").replace(/[ً-ْـ]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").trim();
+  if (!t) return "";
+  if (/^(اجل|اجله|ذمم|credit)$/i.test(t)) return "اجل";
+  if (/(نقد|كاش|cash)/i.test(t)) return "نقدا";
+  if (/(شبكه|شبكة|مدي|مدى|بطاقه|بطاقة|فيزا|card|mada)/i.test(t)) return "شبكة";
+  if (/(تحويل|حواله|حوالة|بنك|transfer)/i.test(t)) return "تحويل";
+  if (/(مردود|علي الحساب|على الحساب|return)/i.test(t)) return "على الحساب";
+  return null;
+};
+const toNum = v => typeof v === "number" ? v : parseNum(v);
+const toISO = v => {
+  if (typeof v === "number" && v > 20000) { const d = new Date(Date.UTC(1899, 11, 30) + Math.round(v) * 86400000); return d.toISOString().slice(0, 10); }
+  const s = String(v ?? "").trim().replace(/[٠-٩]/g, d => "٠١٢٣٤٥٦٧٨٩".indexOf(d));
+  let m = /^(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})/.exec(s); if (m) return `${m[1]}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}`;
+  m = /^(\d{1,2})[-/.](\d{1,2})[-/.](\d{4})/.exec(s); if (m) return `${m[3]}-${m[2].padStart(2, "0")}-${m[1].padStart(2, "0")}`;
+  return null;
+};
+function parseTemplate(sheets) {
+  const warn = [], day = {date: S.date, prev: Number(S.prev) || 0, t: {}};
+  const info = sheets[TPL_INFO];
+  if (info) for (const r of info) {
+    const k = String(r[0] ?? "");
+    if (k.includes("التاريخ")) { const d = toISO(r[1]); if (d) day.date = d; else if (r[1] != null) warn.push("تاريخ غير مفهوم في ورقة «بيانات اليوم»؛ استُخدم تاريخ اليوم المفتوح."); }
+    if (k.includes("الرصيد")) { const n = toNum(r[1]); if (n != null) day.prev = n; }
+  }
+  let found = 0;
+  for (const [k, title] of TPL_SHEETS) {
+    const rows = sheets[title]; day.t[k] = [];
+    if (!rows) { warn.push(`ورقة «${title}» غير موجودة — اعتُبر الجدول فارغًا.`); continue; }
+    found++;
+    const head = (rows[0] || []).map(h => String(h ?? ""));
+    const idx = f => head.findIndex(h => f(h));
+    const ci = {doc: idx(h => h.includes("رقم المستند") || h.includes("رقم القيد") || h.includes("رقم السند") || (h.includes("رقم") && !h.includes("الفاتورة"))),
+      name: idx(h => /الاسم|العميل|المورد|البيان/.test(h)), method: idx(h => h.includes("طريقة")), amount: idx(h => h.includes("المبلغ")),
+      note: idx(h => /ملاحظ|الفاتورة/.test(h))};
+    rows.slice(1).forEach((r, i) => {
+      if (!r || r.every(v => v == null || v === "")) return;
+      const get = c => ci[c] >= 0 ? r[ci[c]] : null;
+      const amount = toNum(get("amount")), name = String(get("name") ?? "").trim(), doc = String(get("doc") ?? "").trim();
+      if (amount == null) { if (name || doc) warn.push(`«${title}» صف ${i + 2}: المبلغ غير صالح — تم تجاهل الصف.`); return; }
+      const row = {id: uid(), doc, name, amount: r2(amount), note: String(get("note") ?? "").trim()};
+      if (!TABLES[k].cash) {
+        const raw = get("method"), m = normM(raw);
+        if (m === null) warn.push(`«${title}» صف ${i + 2}: طريقة الدفع «${raw}» غير معروفة — سُجّلت «${TABLES[k].defMethod === "اجل" ? "آجل" : TABLES[k].defMethod}».`);
+        row.method = m || (k === "sales" && amount < 0 ? "على الحساب" : TABLES[k].defMethod);
+      }
+      day.t[k].push(row);
+    });
+  }
+  if (!found) throw new Error("هذا الملف ليس قالب التقرير اليومي (لم تُوجد أوراق الجداول).");
+  // link cash receipts to cash sales by document number
+  const cashSales = new Map(day.t.sales.filter(s => s.method === "نقدا" && s.amount > 0).map(s => [s.doc, s]));
+  for (const c of day.t.crec) { const s = c.doc && cashSales.get(c.doc); if (s) { c.link = s.id; c.auto = true; if (Math.abs(s.amount - c.amount) > .004) c.manual = true; } }
+  return {day, warn};
+}
+async function downloadTemplate() {
+  const bytes = buildTemplate(), blob = new Blob([bytes], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+  const dl = window.claude && window.claude.use ? await window.claude.use("downloads").catch(() => null) : null;
+  try {
+    if (dl) await dl.save({filename: `قالب التقرير اليومي ${dmy(S.date).replace(/\//g, "-")}.xlsx`, data: blob});
+    else if (!framed) directSave(`Daily-Report-Template-${S.date}.xlsx`, blob);
+    else { flash("التنزيل غير متاح هنا. استخدم النسخة المستقلة أو سجّل الدخول."); return; }
+    flash("تم تنزيل القالب ✓");
+  } catch (e) { if (!(e && e.code === "declined")) flash("تعذّر تنزيل القالب"); }
+}
+let pendingImport = null;
+async function onTemplateFile(file) {
+  if (!file) return;
+  try {
+    const {day, warn} = parseTemplate(await readXlsx(await file.arrayBuffer()));
+    pendingImport = day;
+    const cnt = k => day.t[k].length, tot = k => r2(day.t[k].reduce((a, r) => a + r.amount, 0));
+    const box = $("impBody"); box.replaceChildren(
+      el("p", {}, "التاريخ: ", el("b", {class: "n", text: dmy(day.date)}), ` (${dayName(day.date)})`, day.date !== S.date ? el("span", {class: "imp-warn", text: " · سيُفتح هذا اليوم ويُستبدل محتواه"}) : " · سيُستبدل محتوى اليوم المفتوح"),
+      el("table", {class: "imp"}, el("thead", {}, el("tr", {}, el("th", {text: "الجدول"}), el("th", {text: "العمليات"}), el("th", {text: "الإجمالي"}))),
+        el("tbody", {}, ...TPL_SHEETS.map(([k, t]) => el("tr", {}, el("td", {text: t}), el("td", {class: "n", text: String(cnt(k))}), el("td", {class: "n", text: fmt(tot(k))}))),
+          el("tr", {}, el("td", {text: "الرصيد السابق"}), el("td"), el("td", {class: "n", text: fmt(day.prev)})))),
+      ...(warn.length ? [el("div", {class: "imp-list"}, el("b", {text: `ملاحظات (${warn.length})`}), ...warn.slice(0, 12).map(w => el("div", {text: "• " + w})), ...(warn.length > 12 ? [el("div", {text: `… و${warn.length - 12} ملاحظة أخرى`})] : []))] : []));
+    $("imp").hidden = false; $("impApply").focus();
+  } catch (e) {
+    flash(e && e.message && /قالب/.test(e.message) ? e.message : "تعذّرت قراءة الملف. ارفع ملف Excel ‎.xlsx‎ من القالب.");
+  } finally { $("tplFile").value = ""; }
+}
+async function applyImport() {
+  const day = pendingImport; if (!day) return;
+  $("imp").hidden = true; pendingImport = null;
+  if (day.date !== S.date) await openDay(day.date);
+  S.prev = day.prev; prevAuto = null;
+  for (const k of [...OPS, ...CASH]) S.t[k] = day.t[k];
+  syncCash();
+  renderAll(); scheduleSave();
+  const n = OPS.reduce((a, k) => a + S.t[k].length, 0);
+  flash(`تم تحديث تقرير ${dmy(S.date)} من القالب · ${n} عملية ✓`);
+}
+$("btnTpl").addEventListener("click", downloadTemplate);
+$("tplFile").addEventListener("change", e => onTemplateFile(e.target.files[0]));
+$("impApply").addEventListener("click", applyImport);
+$("impCancel").addEventListener("click", () => { $("imp").hidden = true; pendingImport = null; });
+window.__tpl = {buildTemplate, readXlsx, parseTemplate};
+
 /* ---------- printing: the viewer frame blocks print(), so printing runs in its own tab ---------- */
 const STANDALONE = "https://kosif199022-jpg.github.io/kosif-tool/daily-report/";
 const b64 = str => { const by = new TextEncoder().encode(str); let bin = ""; for (let i = 0; i < by.length; i += 8192) bin += String.fromCharCode.apply(null, by.subarray(i, i + 8192)); return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""); };
@@ -1632,14 +1889,32 @@ async function startPrint() {
   const logoImg = await new Promise(res => { const im = new Image(); im.onload = () => res(im); im.onerror = () => res(null); im.src = LOGO; });
   const pages = pdfPages(logoImg);
   const imgs = pages.map((c, i) => el("img", {src: c.toDataURL("image/jpeg", 0.92), alt: `صفحة ${i + 1}`}));
-  $("pPages").replaceChildren(...imgs);
+  $("pPages").replaceChildren(...imgs.map((im, i) => el("div", {class: "ppage"}, el("span", {text: `صفحة ${i + 1} من ${pages.length}`}), im)));
   await Promise.all(imgs.map(im => im.decode ? im.decode().catch(() => {}) : null));
-  $("pMsg").textContent = `تقرير يوم ${dmy(S.date)} · ${pages.length} صفحات بمقاس A4. إذا لم تظهر نافذة الطباعة اضغط «طباعة».`;
-  const go = $("pGo"); go.disabled = false;
-  go.onclick = () => window.print();
-  setTimeout(() => window.print(), 300);
+  const n = S.t ? OPS.concat(CASH).reduce((a, k) => a + S.t[k].length, 0) : 0;
+  $("pMsg").textContent = `تقرير يوم ${dmy(S.date)} (${dayName(S.date)}) · ${pages.length} ${pages.length > 2 ? "صفحات" : "صفحة"} بمقاس A4 · ${n} عملية. راجع الصفحات ثم اضغط «طباعة».`;
+  const go = $("pGo"); go.disabled = false; go.onclick = () => window.print(); go.focus();
+  const dl = $("pDl"); dl.disabled = false;
+  dl.onclick = async () => {
+    dl.disabled = true;
+    try {
+      const jp = [];
+      for (const c of pages) { const bl = await new Promise(r => c.toBlob(r, "image/jpeg", 0.9)); jp.push({data: new Uint8Array(await bl.arrayBuffer()), w: c.width, h: c.height}); }
+      const bytes = pdfFromJpegs(jp, "التقرير اليومي الموحد " + dmy(S.date)), blob = new Blob([bytes], {type: "application/pdf"});
+      const d = window.claude && window.claude.use ? await window.claude.use("downloads").catch(() => null) : null;
+      if (d) await d.save({filename: `التقرير اليومي الموحد ${dmy(S.date).replace(/\//g, "-")}.pdf`, data: blob}); else directSave(`Daily-Report-${S.date}-A4.pdf`, blob);
+    } catch (e) {} finally { dl.disabled = false; }
+  };
 }
+function exitPrint() {
+  document.body.classList.remove("printing");
+  if (location.hash.startsWith("#print")) history.replaceState(null, "", location.pathname);
+  if (!booted) boot(); else renderAll();
+  window.scrollTo(0, 0);
+}
+$("pBack").addEventListener("click", exitPrint);
 if (location.hash.startsWith("#print")) startPrint();
+window.addEventListener("hashchange", () => { if (location.hash.startsWith("#print") && !document.body.classList.contains("printing")) startPrint(); });
 })();
 </script>
 </body></html>
