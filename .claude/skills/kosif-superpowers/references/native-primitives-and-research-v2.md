@@ -29,3 +29,15 @@ Latest prior local static audit: 2,109 readable files in Desktop Tajriba,
 plus owner GitHub repo metadata counts 24 and 2. Neither is a line-by-line
 audit of source/binaries. Atlas 14,793 indexed external records are metadata
 until source/license/runtime gates establish genuine skill execution.
+
+## REA + Ghidra fresh bounded runtime result (2026-10-20)
+
+REA v6.7.0 ran a successful read-only Ghidra 12.1.4 inspection of the
+official Blender 5.2.2 Windows BlendThumb.dll (SHA256
+7230681cc83424fbdcd67438019a5af64068f073d98c15b3a58e37d0717d2fc4).
+The summary recorded 9 defined image segments, 557 Ghidra-defined procedures,
+and 237 defined strings. Local private evidence is retained at
+KOSIF_RESEARCH_PRIVATE_20261019/REA_GHIDRA_BLENDER_THUMB_20261020.json.
+This is the Windows thumbnail helper, NOT Blender's renderer, IK, geometry
+node engine, GPU pipeline, or a complete source-code reconstruction.
+These binary inventory numbers are not counts of user-facing features.
