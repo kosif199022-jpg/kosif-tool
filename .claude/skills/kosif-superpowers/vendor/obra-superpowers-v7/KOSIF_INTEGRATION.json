@@ -1,0 +1,13 @@
+{
+  "name": "KOSIF Superpowers Ultimate",
+  "master_skill": "kosif-superpowers",
+  "upstream": "https://github.com/obra/superpowers",
+  "upstream_tag": "v7.0.0",
+  "upstream_commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+  "upstream_license": "MIT",
+  "upstream_original_copyright": "Copyright (c) 2025 Jesse Vincent",
+  "integration_mode": "vendor process skills + KOSIF canonical routing",
+  "source_skills_count": 15,
+  "automatic_paid_api_calls": false,
+  "skill_directory_collision_policy": "skip by default; explicit force with backup"
+}

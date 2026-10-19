@@ -32,7 +32,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SK = HERE.parent
 NAME = SK.name
-EXCLUDE_DIRS = {"dist", "__pycache__", "node_modules", ".git"}
+EXCLUDE_DIRS = {"dist", "__pycache__", "node_modules", ".git", "vendor"}
 EXCLUDE_FILES = {".DS_Store", "Thumbs.db", ".gitignore", ".gitattributes"}
 EXCLUDE_EXT = {".pyc", ".pyo", ".skill", ".zip"}
 DESC_MAX = 200

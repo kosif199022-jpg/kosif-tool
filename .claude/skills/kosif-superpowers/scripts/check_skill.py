@@ -51,7 +51,7 @@ SK = P.ROOT
 REPO = SK.parents[2] if len(SK.parents) >= 3 else SK
 BASE = REPO.parent  # proof paths are relative to this folder (/home/user)
 IN_REPO = (REPO / ".claude" / "skills" / SK.name).resolve() == SK.resolve() and (REPO / "tools").is_dir()
-SKIP_DIRS = {"dist", "__pycache__", "node_modules", ".git"}
+SKIP_DIRS = {"dist", "__pycache__", "node_modules", ".git", "vendor"}  # Licensed third-party skills are separate packages, not nested KOSIF SKILL.md files.
 UPLOAD_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
 PACKAGE_ONLY_KEYS = {"claude_ai_description"}  # stripped by package_skill.py
 BASE_KEYS = ("id", "family", "name_ar", "name_en", "status", "what", "how", "params", "install", "license",
