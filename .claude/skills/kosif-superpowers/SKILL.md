@@ -66,6 +66,14 @@ see templates/native-3d-primitives-demo.json and references/native-primitives-an
 CPU z-buffer renders and FFmpeg exports are testable without Blender.
 REA, public site surveys, Jev-compatible Laya and Atlas metadata are NOT
 proof that KOSIF possesses their implementation or execution environment.
+## Original bilingual task-to-capability finder
+
+For a task like "تحريك شخصيات فيديو" or "video animation", the local-only
+discovery algorithm scripts/ai_tool_discovery.py ranks existing KOSIF capabilities.
+Run python scripts/ai_tool_discovery.py "تحريك شخصيات فيديو" --top 8.
+The algorithm retains proof/requirements caveats and never treats catalog status
+as actual runtime verification. No third-party ranking algorithm is copied.
+See [REA website investigation](references/taaft-rea-discovery-audit.md).
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](references/capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.

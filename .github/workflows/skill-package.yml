@@ -36,6 +36,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_character_fullbody.py' -v
       - name: Verify original five-second Blender scene evidence
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_blender_cat_rescue_demo.py' -v
+      - name: Test original local AI tool discovery
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_ai_tool_discovery.py' -v
       - name: Test offline Claude startup and catalog evidence audit before packaging
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_local_first.py' -v
@@ -103,6 +105,9 @@ jobs:
                   "templates/native-zbuffer-demo.json",
                   "references/native-zbuffer-rasterizer.md",
                   "evals/test_native_zbuffer.py",
+                  "scripts/ai_tool_discovery.py",
+                  "evals/test_ai_tool_discovery.py",
+                  "references/taaft-rea-discovery-audit.md",
                   "scripts/local_first.py",
                   "scripts/catalog_evidence_audit.py",
                   "scripts/native_3d.py",
