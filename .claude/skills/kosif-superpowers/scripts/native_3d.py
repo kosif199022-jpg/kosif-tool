@@ -47,6 +47,8 @@ def validate(scene):
     h=integer(scene.get("height",360),128,1280)
     fps=integer(scene.get("fps",24),1,60)
     frames=integer(scene.get("frames",120),1,240)
+    if scene.get("render_mode", "painter") not in ("painter", "zbuffer"):
+        raise ValueError("render mode must be painter or zbuffer")
     rgb(scene.get("background","#253543"))
     cam=scene.get("camera",{})
     if not isinstance(cam,dict):raise ValueError("camera must be an object")
@@ -174,9 +176,37 @@ def render(scene,frame):
                 pp.append((w/2+dot(rel,right)*zoom,h/2-dot(rel,up)*zoom))
             center=tuple((a[n]+b[n]+c[n])/3 for n in range(3))
             depth=dot(sub(center,pos),view)
-            tris.append((depth,pp,col))
-    for _,points,col in sorted(tris,key=lambda q:q[0],reverse=True):
-        pen.polygon(points,fill=col)
+            tris.append((depth,pp,col,tuple(dot(sub(pt,pos),view) for pt in (a,b,c))))
+    if scene.get("render_mode", "painter") == "zbuffer":
+        # Original CPU triangle rasterizer: per-pixel interpolated camera depth
+        # fixes overlap errors of centroid-depth painter sorting, no Blender.
+        buf=[float("inf")]*(w*h)
+        pixels=canvas.load()
+        for _, tri, col, depths in tris:
+            (x0,y0),(x1,y1),(x2,y2)=tri
+            denominator=(y1-y2)*(x0-x2)+(x2-x1)*(y0-y2)
+            if abs(denominator)<1e-12:
+                continue
+            left=max(0,math.floor(min(x0,x1,x2)))
+            top=max(0,math.floor(min(y0,y1,y2)))
+            right_px=min(w-1,math.ceil(max(x0,x1,x2)))
+            bottom_px=min(h-1,math.ceil(max(y0,y1,y2)))
+            for yy in range(top,bottom_px+1):
+                for xx in range(left,right_px+1):
+                    px,py=xx+.5,yy+.5
+                    a=((y1-y2)*(px-x2)+(x2-x1)*(py-y2))/denominator
+                    b=((y2-y0)*(px-x2)+(x0-x2)*(py-y2))/denominator
+                    c=1-a-b
+                    if min(a,b,c)<-1e-10:
+                        continue
+                    depth=a*depths[0]+b*depths[1]+c*depths[2]
+                    index=yy*w+xx
+                    if depth<buf[index]:
+                        buf[index]=depth
+                        pixels[xx,yy]=col
+    else:
+        for _,points,col,_ in sorted(tris,key=lambda q:q[0],reverse=True):
+            pen.polygon(points,fill=col)
     return canvas
 def export(scene,dest,frame=1):
     validate(scene)
@@ -227,7 +257,7 @@ def main():
     try:
         if args.cmd=="doctor":
             print(json.dumps({"schema":SCHEMA,"blender_required":False,"pillow":True,
-                              "ffmpeg":bool(shutil.which("ffmpeg")),"shapes":sorted(SHAPES)}))
+                              "ffmpeg":bool(shutil.which("ffmpeg")),"shapes":sorted(SHAPES),"render_modes":["painter","zbuffer"]}))
         else:
             scene=json.loads(Path(args.scene).read_text(encoding="utf-8-sig"))
             print(json.dumps(export(scene,args.output,args.frame)))

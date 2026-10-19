@@ -51,6 +51,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_browser_scout.py' -v
       - name: Validate external Atlas metadata audit behavior
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_atlas_metadata_audit.py' -v
+      - name: Verify Blender-free native Z-buffer rasterizer
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_native_zbuffer.py' -v
       - name: Test new Code Drawing Master before packaging
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
@@ -92,6 +94,10 @@ jobs:
                   "scripts/motion_director.py",
                   "scripts/code_drawing_master.py",
                   "scripts/creative_paint.py",
+                  "scripts/native_3d.py",
+                  "templates/native-zbuffer-demo.json",
+                  "references/native-zbuffer-rasterizer.md",
+                  "evals/test_native_zbuffer.py",
                   "scripts/local_first.py",
                   "scripts/catalog_evidence_audit.py",
                   "scripts/native_3d.py",
