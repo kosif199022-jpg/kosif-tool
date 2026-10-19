@@ -29,6 +29,14 @@ with scripts/native_3d.py render --scene ... --output demo.mp4.
 This is an independent bounded software renderer (Pillow and FFmpeg);
 it is not Blender feature parity. Advanced 3D still uses the optional
 Blender bridge. Native 3D acceptance produced 120 H264 frames/5 seconds.
+## Blender-source review and original Smart Draw
+
+Use scripts/blender_api_audit.py to statically inspect Blender Python AST;
+scripts/local_project_audit.py for read-only folder inventory;
+scripts/smart_draw.py for independent sketch shape assist and layered PNG/SVG.
+See templates/smart-draw-demo.json and
+references/blender-smartdraw-research-20261019.md.
+Do not claim AutoDraw trained ML or Canva proprietary features are imported.
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](references/capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
