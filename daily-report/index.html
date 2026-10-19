@@ -1,0 +1,1607 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>التقرير اليومي الموحد</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one 1080px column — report hero, KPI row, two-up cards, then numbered sections of editable ledger tables. Single light theme on purpose: it mirrors the printed daily report. */
+:root{
+  --ink:#14213D; --ink2:#33415C; --red:#C1121F; --gold:#E9A100; --teal:#2A7F8F; --purple:#6C5CE7;
+  --green:#1E7B45; --orange:#D9822B; --slate:#8D99AE;
+  --muted:#5B6474; --line:#E3E7EF; --line2:#F0F2F6; --bg:#F3F5F9; --card:#FFFFFF; --zebra:#FAFBFD;
+  --head:#EEF2F8; --cream:#FFF6DC; --cream-line:#F2DFA6; --okbg:#ECF8F1; --okline:#BFE3CD; --oktext:#175C35;
+  --badbg:#FDEEEE; --badline:#F2C4C4; --badtext:#8A1C12; --infobg:#F4F6FB; --infoline:#DCE2EE; --hero2:#24386A; --herosub:#C9D3E8;
+  --text:#1A1F2B; --on-ink:#FFFFFF;
+  --f-ui:'Cairo',"Segoe UI",Tahoma,"Noto Sans Arabic",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--f-ui);font-size:14px;line-height:1.55;direction:rtl;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-block:18px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+.n{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* toolbar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);padding-block:8px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.bar .sp{flex:1}
+.save{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.save i{width:8px;height:8px;border-radius:50%;background:var(--slate);display:inline-block}
+.save.ok i{background:var(--green)} .save.busy i{background:var(--gold)} .save.err i{background:var(--red)}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 14px;font-weight:700;cursor:pointer;color:var(--ink)}
+.btn:hover{border-color:var(--ink2)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.btn.primary:hover{background:var(--ink2)}
+.btn[disabled]{opacity:.5;cursor:default}
+
+/* hero */
+.hero{background:linear-gradient(120deg,var(--ink) 0%,#1D2D52 62%,var(--hero2) 100%);color:var(--on-ink);border-radius:12px;padding:18px 22px 16px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(233,161,0,.22),transparent 65%);pointer-events:none}
+.hero .r1{display:flex;justify-content:space-between;align-items:center;gap:14px;position:relative;z-index:1;flex-wrap:wrap}
+.hero h1{margin:0;font-size:clamp(22px,3.4vw,30px);font-weight:800;line-height:1.25;text-wrap:balance}
+.hero .sub{color:var(--herosub);font-weight:500}
+.hero .logo{background:var(--card);border-radius:9px;padding:7px 12px}
+.hero .logo img{height:44px;display:block}
+.chips{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:3px 13px;font-weight:600;font-size:13px;display:flex;align-items:center;gap:6px}
+.chip b{color:var(--gold);font-weight:700}
+.chip input[type=date]{background:transparent;border:0;color:var(--on-ink);font-weight:700;color-scheme:dark;padding:0;width:auto}
+.stripe{height:5px;border-radius:3px;background:linear-gradient(90deg,var(--gold) 0 33%,var(--red) 33% 66%,var(--ink) 66%);margin-top:-6px}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px 10px;border-top:4px solid var(--c)}
+.kpi .k{display:flex;justify-content:space-between;align-items:center;gap:6px;color:var(--muted);font-size:12.5px;font-weight:700;white-space:nowrap}
+.kpi .k i{font-style:normal;background:var(--head);border-radius:10px;padding:0 8px;font-size:11.5px}
+.kpi .v{font-size:21px;font-weight:800;color:var(--ink);margin-top:2px;text-align:right}
+.kpi .bar2{height:6px;background:var(--line2);border-radius:3px;overflow:hidden;margin-top:6px}
+.kpi .bar2 i{display:block;height:100%;border-radius:3px;background:var(--c);transition:width .4s}
+.kpi .p{font-size:11.5px;color:var(--muted);margin-top:3px}
+.total{display:flex;justify-content:space-between;align-items:center;border-radius:10px;padding:10px 16px;background:linear-gradient(90deg,var(--cream),#FFFBF0);border:1px solid var(--cream-line);font-weight:700;color:var(--ink);font-size:15px;gap:10px;flex-wrap:wrap}
+.total .n{color:var(--red);font-size:23px;font-weight:800}
+
+/* cards */
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:11px;overflow:hidden;min-width:0}
+.card .hd{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line2)}
+.card .hd b{font-size:15px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:8px}
+.card .hd b::before{content:"";width:4px;height:15px;background:var(--red);border-radius:2px}
+.card .hd span{color:var(--muted);font-size:12px}
+.card .bd{padding:12px 14px}
+.pill{display:flex;height:18px;border-radius:9px;overflow:hidden;background:var(--line2)}
+.pill i{display:block;height:100%;transition:width .4s}
+.lg{display:grid;grid-template-columns:12px minmax(0,1fr) auto 56px;gap:8px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--line2)}
+.lg:last-child{border:0}
+.lg .dot{width:11px;height:11px;border-radius:3px}
+.lg small{color:var(--muted)}
+.lg .val{font-weight:700}
+.lg .pc{color:var(--muted);text-align:left;font-size:12px}
+.wf svg{width:100%;height:auto;display:block}
+.hb{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr) auto;gap:9px;align-items:center;margin:8px 0}
+.hb .lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.hb .lb small{color:var(--muted);font-weight:400}
+.hb .tr{height:10px;background:var(--line2);border-radius:5px;overflow:hidden}
+.hb .tr i{display:block;height:100%;border-radius:5px}
+.hb .vl{font-weight:700;text-align:left}
+.empty{color:var(--muted);font-size:13px;padding:6px 0}
+
+.status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.st{border-radius:11px;padding:11px 14px;font-size:13px;border:1px solid}
+.st h4{margin:0 0 4px;font-size:14.5px;font-weight:800;display:flex;gap:7px;align-items:center}
+.st h4 em{font-style:normal;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--on-ink);font-size:12px;flex:none}
+.st .ln{display:flex;justify-content:space-between;gap:8px}
+.st.ok{background:var(--okbg);border-color:var(--okline);color:var(--oktext)} .st.ok em{background:var(--green)}
+.st.bad{background:var(--badbg);border-color:var(--badline);color:var(--badtext)} .st.bad em{background:var(--red)}
+.st.info{background:var(--infobg);border-color:var(--infoline);color:var(--ink)} .st.info em{background:var(--ink)}
+
+/* sections + tables */
+.sect{display:flex;align-items:center;gap:12px;margin-top:14px}
+.sect .no{background:var(--red);color:var(--on-ink);width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex:none}
+.sect h2{margin:0;font-size:22px;font-weight:800;color:var(--ink);line-height:1.3}
+.sect p{margin:0;color:var(--muted);font-size:13px}
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.tbl .th{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--ink);color:var(--on-ink);padding:9px 14px;flex-wrap:wrap}
+.tbl .th b{font-size:16px;font-weight:800}
+.tbl .th span{font-size:12.5px;color:var(--herosub)}
+.tbl .th span .n{color:var(--on-ink);font-weight:700;font-size:14px}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:640px}
+thead th{background:var(--head);color:var(--ink2);font-size:12.5px;font-weight:700;padding:7px 8px;text-align:center;white-space:nowrap}
+tbody td{padding:2px 6px;border-bottom:1px solid var(--line2);text-align:center}
+tbody tr:nth-child(even) td{background:var(--zebra)}
+tbody tr.neg td{background:var(--badbg)}
+tbody tr.ghost td{background:var(--card)}
+tbody tr.ghost input,tbody tr.ghost select{opacity:.75}
+tbody tr.ghost td:first-child{position:relative}
+td input,td select{width:100%;border:1px solid transparent;background:transparent;border-radius:6px;padding:4px 7px;text-align:inherit;min-width:0}
+td input:hover,td select:hover{border-color:var(--line)}
+td input:focus,td select:focus{border-color:var(--gold);background:var(--card);outline:none;box-shadow:0 0 0 3px rgba(233,161,0,.15)}
+td input::placeholder{color:#A9B1C0}
+td.doc input{direction:ltr;text-align:center;color:var(--ink2);font-weight:600}
+td.nm input{text-align:right}
+td.amt input{direction:ltr;text-align:left;font-weight:700;font-variant-numeric:tabular-nums}
+tr.neg td.amt input{color:var(--red)}
+td.note input{color:var(--muted);font-size:12.5px}
+td.x{width:34px}
+td.x button{border:0;background:transparent;color:#A9B1C0;cursor:pointer;font-size:17px;line-height:1;padding:4px 6px;border-radius:6px}
+td.x button:hover{color:var(--red);background:var(--badbg)}
+select.m{appearance:none;-webkit-appearance:none;text-align:center;text-align-last:center;font-weight:700;font-size:12.5px;border-radius:12px;padding:2px 10px;cursor:pointer}
+select.m.c-ink{background:#E3E6ED;color:var(--ink)} select.m.c-teal{background:#DCEEF1;color:var(--teal)}
+select.m.c-gold{background:#FDF0CC;color:#8A6100} select.m.c-purple{background:#E8E5FC;color:#5B4BD6}
+select.m.c-red{background:#FCE3E5;color:var(--red)} select.m.c-none{background:var(--line2);color:var(--muted)}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:8px;padding:0 7px;line-height:18px}
+.tag.auto{background:#FDF0CC;color:#8A6100}
+.chk{font-size:12.5px;font-weight:700;white-space:nowrap}
+.chk.ok{color:var(--green)} .chk.bad{color:var(--red);background:var(--badbg);border-radius:8px;padding:1px 8px} .chk.na{color:#A9B1C0;font-weight:500}
+tfoot td{background:var(--cream);border-top:2px solid var(--ink);padding:8px 10px;font-weight:800;color:var(--ink);font-size:14.5px}
+tfoot td.amt{color:var(--red);text-align:left;direction:ltr}
+.hint{color:var(--muted);font-size:12px;padding:6px 14px;border-top:1px solid var(--line2);background:var(--zebra)}
+
+.bal{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.bx{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 13px}
+.bx .k{color:var(--muted);font-size:12.5px;font-weight:600}
+.bx .v{font-size:19px;font-weight:800;color:var(--ink);text-align:right}
+.bx input{width:100%;border:1px dashed var(--line);border-radius:7px;padding:2px 8px;font-size:18px;font-weight:800;color:var(--ink);direction:ltr;text-align:left;background:var(--zebra)}
+.bx input:focus{border-style:solid;border-color:var(--gold);outline:none;background:var(--card)}
+.bx small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.bx.cur{background:var(--ink);border-color:var(--ink)} .bx.cur .k{color:var(--herosub)} .bx.cur .v{color:var(--on-ink)}
+.notes{background:var(--card);border-radius:10px;padding:10px 16px;color:var(--muted);font-size:13px;border:1px solid var(--line);border-right:4px solid var(--gold)}
+.notes b{color:var(--ink)}
+.toast{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--on-ink);border-radius:10px;padding:9px 16px;display:flex;gap:14px;align-items:center;z-index:40;box-shadow:0 8px 24px rgba(20,33,61,.25);font-weight:600}
+.toast button{background:transparent;border:1px solid rgba(255,255,255,.35);color:var(--gold);border-radius:7px;padding:2px 10px;font-weight:700;cursor:pointer}
+.toast[hidden]{display:none}
+a.btn{text-decoration:none;display:inline-block}
+#printView{display:none}
+body.printing #app,body.printing .toast,body.printing .pv{display:none!important}
+body.printing #printView{display:block;max-width:860px;margin:0 auto;padding-block:16px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.ptools{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-bottom:14px;flex-wrap:wrap}
+.ptools b{color:var(--ink)} .ptools p{margin:0;color:var(--muted);font-size:13px}
+.ppages{display:grid;gap:14px}
+.ppages img{width:100%;display:block;box-shadow:0 4px 16px rgba(20,33,61,.18);background:#fff}
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff!important}
+  body.printing #printView{max-width:none;padding:0;margin:0}
+  .ptools{display:none!important}
+  .ppages{display:block}
+  .ppages img{width:210mm;height:297mm;box-shadow:none;break-after:page;page-break-after:always}
+  .ppages img:last-child{break-after:auto;page-break-after:auto}
+}
+.pv{position:fixed;inset:0;z-index:50;background:rgba(20,33,61,.92);overflow-y:auto;padding-block:calc(12px + env(safe-area-inset-top,0px)) 30px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+.pv[hidden]{display:none}
+.pvbar{max-width:820px;margin:0 auto 12px;background:var(--card);border-radius:12px;padding:12px 16px;display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+.pvbar b{color:var(--ink);font-size:16px}.pvbar p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.pvlinks{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;font-size:13px;color:var(--ink)}
+.pvlinks a{text-decoration:none}
+.pvpages{max-width:820px;margin:0 auto;display:grid;gap:12px;justify-items:center}
+.pvpages img{width:100%;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.35);background:#fff}
+.pvpages img.m{max-width:430px}
+.ro td input,.ro td select,.ro .bx input{pointer-events:none}
+
+@media (max-width:900px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.bal{grid-template-columns:repeat(2,minmax(0,1fr))}.bx.cur{grid-column:1/-1}}
+@media (max-width:700px){.g2,.status{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi:last-child{grid-column:1/-1}.hero .logo img{height:34px}}
+</style>
+
+<div class="wrap" id="app">
+  <div class="bar">
+    <span class="save" id="save"><i></i><span id="saveText">جارٍ الاتصال…</span></span>
+    <span class="sp"></span>
+    <button class="btn" id="btnNew" type="button">يوم جديد</button>
+    <a class="btn" id="btnPrint" href="#print" target="_blank" rel="noopener">طباعة</a>
+    <button class="btn" id="btnPdfM" type="button">PDF للجوال</button>
+    <button class="btn" id="btnPdf" type="button">PDF للطباعة A4</button>
+    <button class="btn primary" id="btnXlsx" type="button">تنزيل Excel</button>
+  </div>
+
+  <header class="hero">
+    <div class="r1">
+      <div><h1>شركة الشبح المتقدمة للتجارة</h1><div class="sub">التقرير اليومي الموحّد · العمليات وإفصاح الصندوق النقدي</div></div>
+      <div class="logo"><img id="logo" alt="شعار ADVANCE PHANTOM"></div>
+    </div>
+    <div class="chips">
+      <label class="chip" for="date"><b>التاريخ</b><input type="date" id="date"></label>
+      <span class="chip"><b>اليوم</b><span id="dayName">—</span></span>
+      <span class="chip"><b>الفرع</b>الرياض</span>
+      <span class="chip"><b>العملة</b>ريال سعودي شامل الضريبة</span>
+    </div>
+  </header>
+  <div class="stripe"></div>
+
+  <section class="kpis" id="kpis"></section>
+  <div class="total"><span id="totalLbl">مجموع العمليات</span><span class="n" id="totalVal">0.00</span></div>
+
+  <div class="g2">
+    <div class="card"><div class="hd"><b>المبيعات حسب طريقة الدفع</b><span id="payNet"></span></div><div class="bd"><div class="pill" id="pill"></div><div id="legend" style="margin-top:9px"></div></div></div>
+    <div class="card wf"><div class="hd"><b>حركة الصندوق النقدي</b><span id="cashNet"></span></div><div class="bd" id="wf" style="padding:6px 12px 4px"></div></div>
+  </div>
+  <div class="g2">
+    <div class="card"><div class="hd"><b>أكبر العملاء اليوم</b><span id="topCSub"></span></div><div class="bd" id="topC"></div></div>
+    <div class="card"><div class="hd"><b>أكبر الموردين اليوم</b><span id="topSSub"></span></div><div class="bd" id="topS"></div></div>
+  </div>
+  <div class="status" id="status"></div>
+
+  <div class="sect"><div class="no">1</div><div><h2>العمليات اليومية</h2><p>اكتب في الصف الأخير فيُضاف صف جديد تلقائيًا، ورقم المستند يتسلسل وحده.</p></div></div>
+  <div id="opsTables" style="display:grid;gap:14px"></div>
+
+  <div class="sect"><div class="no">2</div><div><h2>إفصاح الصندوق النقدي</h2><p>كل بيع «نقدًا» يُضاف إلى المقبوضات تلقائيًا، ويُطابق مع فاتورته.</p></div></div>
+  <div id="cashTables" style="display:grid;gap:14px"></div>
+  <div class="bal" id="bal"></div>
+  <div class="notes"><b>ملاحظات</b> · المبيعات والمشتريات والمصروفات قيم موجبة، ومردوداتها قيم سالبة (المبلغ السالب في المبيعات يُسجَّل مردودًا تلقائيًا) · المبالغ مدرجة مع الضريبة · يُحفظ كل تعديل تلقائيًا.</div>
+</div>
+<div class="pv" id="pv" hidden role="dialog" aria-modal="true" aria-labelledby="pvTitle">
+  <div class="pvbar"><div><b id="pvTitle">معاينة التقرير</b><p>التنزيل المباشر يحتاج تسجيل الدخول في Claude. على الجوال اضغط مطولًا على أي صفحة لحفظها أو مشاركتها، أو التقط لقطة شاشة.</p><div class="pvlinks" id="pvLinks"></div></div><button class="btn primary" id="pvClose" type="button">إغلاق</button></div>
+  <div class="pvpages" id="pvPages"></div>
+</div>
+<div id="printView" aria-live="polite">
+  <div class="ptools"><div><b>التقرير اليومي الموحّد · نسخة الطباعة</b><p id="pMsg">جارٍ تجهيز الصفحات…</p></div><button class="btn primary" id="pGo" type="button" disabled>طباعة</button></div>
+  <div class="ppages" id="pPages"></div>
+</div>
+<div class="toast" id="toast" hidden><span id="toastText"></span><button type="button" id="toastBtn">تراجع</button></div>
+
+<script>
+(() => {
+const LOGO = "data:image/png;base64,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";
+const SNAPSHOT = null;
+document.getElementById("logo").src = LOGO;
+
+/* ---------- config ---------- */
+const METHODS = [["اجل","آجل","ink"],["شبكة","شبكة","teal"],["نقدا","نقدًا","gold"],["تحويل","تحويل","purple"],["على الحساب","مردود","red"]];
+const MCOL = {ink:"#14213D",teal:"#2A7F8F",gold:"#E9A100",purple:"#6C5CE7",red:"#C1121F"};
+const TABLES = {
+  sales:{title:"المبيعات", cols:["رقم المستند","العميل","طريقة الدفع","المبلغ","ملاحظات"], note:"مبيعات", method:true, defMethod:"اجل"},
+  purch:{title:"المشتريات", cols:["رقم المستند","المورد","طريقة الدفع","المبلغ","ملاحظات"], note:"مشتريات", method:true, defMethod:"اجل"},
+  exp:{title:"المصروفات", cols:["رقم القيد","البيان","طريقة الدفع","المبلغ","رقم الفاتورة"], note:"", method:true, defMethod:"شبكة"},
+  rec:{title:"سندات التحصيل", cols:["رقم المستند","العميل","طريقة الدفع","المبلغ","ملاحظات"], note:"سداد من الحساب", method:true, defMethod:"تحويل"},
+  pay:{title:"سندات الدفع", cols:["رقم المستند","المورد","طريقة الدفع","المبلغ","ملاحظات"], note:"سداد من الحساب", method:true, defMethod:"شبكة"},
+  crec:{title:"المقبوضات النقدية", cols:["رقم المستند","الاسم / العميل أو المورد","المبلغ","الملاحظات","التحقق مع المبيعات"], note:"مبيعات نقدية", cash:true},
+  cpay:{title:"المدفوعات النقدية", cols:["رقم المستند","الاسم / العميل أو المورد","المبلغ","الملاحظات"], note:"", cash:true},
+};
+const OPS = ["sales","purch","exp","rec","pay"], CASH = ["crec","cpay"];
+const DAYS = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+
+/* ---------- helpers ---------- */
+const $ = id => document.getElementById(id);
+const uid = () => Math.random().toString(36).slice(2, 12);
+const r2 = v => Math.round((v + Number.EPSILON) * 100) / 100;
+const fmt = (v, d = 2) => (v < 0 ? "-" : "") + Math.abs(v || 0).toLocaleString("en-US", {minimumFractionDigits:d, maximumFractionDigits:d});
+const parseNum = s => {
+  if (s == null) return null;
+  s = String(s).replace(/[٠-٩]/g, d => "٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/[٫]/g, ".").replace(/[,،\s]/g, "");
+  if (s === "" || s === "-") return null;
+  const v = Number(s); return isFinite(v) ? v : null;
+};
+const todayISO = () => { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };
+const dayName = iso => { const [y, m, d] = iso.split("-").map(Number); return DAYS[new Date(Date.UTC(y, m - 1, d)).getUTCDay()]; };
+const dmy = iso => iso.split("-").reverse().join("/");
+const el = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "class") e.className = v; else if (k === "text") e.textContent = v; else if (k.startsWith("on")) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); } kids.forEach(k => k != null && e.append(k)); return e; };
+const sum = rows => r2(rows.reduce((a, r) => a + (typeof r.amount === "number" ? r.amount : 0), 0));
+const emptyDay = (date, prev = 0) => ({date, prev, t: Object.fromEntries([...OPS, ...CASH].map(k => [k, []]))});
+
+/* ---------- state ---------- */
+let S = emptyDay(todayISO());
+let db = null, canWrite = true, mode = "loading"; // loading | db | local
+let unsub = null, dirty = false, saving = false, saveTimer = null, lastRev = null, prevAuto = null;
+
+/* ---------- smart behaviour ---------- */
+function nextDoc(key) {
+  const rows = S.t[key];
+  let best = null;
+  for (const r of rows) { const m = /^(.*?)(\d+)$/.exec(r.doc || ""); if (m && (!best || Number(m[2]) >= Number(best[2]))) best = m; }
+  if (!best) return "";
+  return best[1] + String(Number(best[2]) + 1).padStart(best[2].length, "0");
+}
+function lastMethod(key) { const rows = S.t[key].filter(r => r.method && r.method !== "على الحساب"); return rows.length ? rows[rows.length - 1].method : TABLES[key].defMethod; }
+function syncCash() {
+  // every cash sale gets a linked cash receipt; edited receipts keep the user's numbers
+  let changed = false;
+  const sales = S.t.sales, crec = S.t.crec;
+  for (const s of sales) {
+    if (s.method !== "نقدا" || !(s.amount > 0)) continue;
+    let c = crec.find(x => x.link === s.id);
+    if (!c) { crec.push({id: uid(), doc: s.doc, name: s.name, amount: s.amount, note: "مبيعات نقدية", link: s.id, auto: true}); changed = true; }
+    else if (!c.manual && (c.doc !== s.doc || c.name !== s.name || c.amount !== s.amount)) { Object.assign(c, {doc: s.doc, name: s.name, amount: s.amount}); changed = true; }
+  }
+  for (let i = crec.length - 1; i >= 0; i--) {
+    const c = crec[i]; if (!c.link || c.manual) continue;
+    const s = sales.find(x => x.id === c.link);
+    if (!s || s.method !== "نقدا" || !(s.amount > 0)) { crec.splice(i, 1); changed = true; }
+  }
+  return changed;
+}
+
+/* ---------- calculations ---------- */
+function calc() {
+  const T = {}; for (const k of [...OPS, ...CASH]) T[k] = sum(S.t[k]);
+  const grand = r2(OPS.reduce((a, k) => a + T[k], 0));
+  const meth = METHODS.map(([key, label, c]) => { const rs = S.t.sales.filter(r => r.method === key && typeof r.amount === "number"); return {key, label, color: MCOL[c], n: rs.length, v: sum(rs)}; });
+  const cashSales = meth.find(m => m.key === "نقدا").v;
+  const net = r2(T.crec - T.cpay), prev = Number(S.prev) || 0, cur = r2(prev + net);
+  const byDoc = new Map(S.t.sales.map(r => [r.doc, r]));
+  const checks = S.t.crec.map(c => {
+    const s = c.link ? S.t.sales.find(x => x.id === c.link) : byDoc.get(c.doc);
+    if (!s || typeof c.amount !== "number") return {state: "na"};
+    const d = r2(c.amount - (s.amount || 0));
+    return Math.abs(d) < 0.005 ? {state: "ok"} : {state: "bad", d, sale: s.amount, doc: c.doc};
+  });
+  const top = (rows) => { const m = new Map(); for (const r of rows) if (r.amount > 0 && r.name) { const o = m.get(r.name) || {v: 0, n: 0}; o.v += r.amount; o.n++; m.set(r.name, o); } return [...m.entries()].sort((a, b) => b[1].v - a[1].v); };
+  return {T, grand, meth, cashSales, net, prev, cur, checks, topC: top(S.t.sales), topS: top(S.t.purch)};
+}
+
+/* ---------- dashboard render ---------- */
+function renderDash() {
+  const C = calc();
+  $("dayName").textContent = dayName(S.date);
+  const K = [["المبيعات","sales","#14213D"],["المشتريات","purch","#C1121F"],["المصروفات","exp","#E9A100"],["سندات التحصيل","rec","#2A7F8F"],["سندات الدفع","pay","#8D99AE"]];
+  const kp = $("kpis"); kp.replaceChildren();
+  for (const [l, k, c] of K) {
+    const share = C.grand ? C.T[k] / C.grand * 100 : 0;
+    const n = S.t[k].filter(r => typeof r.amount === "number").length;
+    const card = el("div", {class: "kpi", style: `--c:${c}`},
+      el("div", {class: "k"}, el("span", {text: l}), el("i", {text: `${n} عملية`})),
+      el("div", {class: "v n", text: fmt(C.T[k])}),
+      el("div", {class: "bar2"}, el("i", {style: `width:${Math.max(share, 1.2).toFixed(1)}%`})),
+      el("div", {class: "p"}, el("span", {class: "n", text: share.toFixed(2) + "%"}), " من المجموع"));
+    kp.append(card);
+  }
+  const cnt = OPS.reduce((a, k) => a + S.t[k].filter(r => typeof r.amount === "number").length, 0);
+  $("totalLbl").textContent = `مجموع العمليات · ${cnt} عملية`;
+  $("totalVal").textContent = fmt(C.grand);
+
+  // payment methods
+  const gross = C.meth.filter(m => m.v > 0).reduce((a, m) => a + m.v, 0);
+  $("payNet").replaceChildren("صافي ", el("span", {class: "n", text: fmt(C.T.sales)}));
+  $("pill").replaceChildren(...C.meth.filter(m => m.v > 0).map(m => el("i", {style: `width:${(m.v / gross * 100).toFixed(2)}%;background:${m.color}`, title: m.label})));
+  $("legend").replaceChildren(...C.meth.map(m => el("div", {class: "lg"},
+    el("span", {class: "dot", style: `background:${m.color}`}),
+    el("span", {}, m.label, " ", el("small", {text: `· ${m.n} فاتورة`})),
+    el("span", {class: "val n", style: m.v < 0 ? "color:var(--red)" : "", text: fmt(m.v)}),
+    el("span", {class: "pc n", text: (C.T.sales ? m.v / C.T.sales * 100 : 0).toFixed(1) + "%"}))));
+
+  // cash waterfall
+  $("cashNet").replaceChildren("صافي اليوم ", el("span", {class: "n", style: "color:var(--red);font-weight:700", text: fmt(C.net)}));
+  $("wf").innerHTML = waterfall(C.prev, C.T.crec, C.T.cpay, C.cur);
+
+  // top lists
+  const tops = (box, sub, list, total, color, who) => {
+    const t5 = list.slice(0, 5);
+    if (!t5.length) { $(box).replaceChildren(el("div", {class: "empty", text: "لا توجد بيانات بعد لهذا اليوم."})); $(sub).textContent = ""; return; }
+    const m = t5[0][1].v, pos = list.reduce((a, [, o]) => a + o.v, 0);
+    $(sub).textContent = `أعلى ${t5.length} = ${Math.round(t5.reduce((a, [, o]) => a + o.v, 0) / pos * 100)}% من ${who}`;
+    $(box).replaceChildren(...t5.map(([name, o], i) => el("div", {class: "hb"},
+      el("div", {class: "lb", title: name}, name, " ", el("small", {text: `(${o.n})`})),
+      el("div", {class: "tr"}, el("i", {style: `width:${(o.v / m * 100).toFixed(1)}%;background:${i === 0 ? color : "#B9C2D3"}`})),
+      el("div", {class: "vl n", text: fmt(o.v)}))));
+  };
+  tops("topC", "topCSub", C.topC, C.T.sales, "#14213D", "المبيعات");
+  tops("topS", "topSSub", C.topS, C.T.purch, "#C1121F", "المشتريات");
+
+  // status
+  const diff = r2(C.T.crec - C.cashSales);
+  const bad = C.checks.filter(c => c.state === "bad");
+  const s1 = Math.abs(diff) < 0.005 && !bad.length
+    ? st("ok", "✓", "الصندوق مطابق للمبيعات النقدية", [["المبيعات النقدية", fmt(C.cashSales)], ["مقبوضات الصندوق", fmt(C.T.crec)]])
+    : st("bad", "!", `فرق في مطابقة الصندوق: ${fmt(diff)}`, bad.length ? bad.flatMap(b => [["الفاتورة", b.doc], ["في الصندوق", fmt(b.sale + b.d)], ["في المبيعات", fmt(b.sale)]]) : [["المبيعات النقدية", fmt(C.cashSales)], ["مقبوضات الصندوق", fmt(C.T.crec)]]);
+  const mt = r2(C.meth.reduce((a, m) => a + m.v, 0));
+  const s2 = Math.abs(mt - C.T.sales) < 0.005
+    ? st("ok", "✓", "طرق الدفع مكتملة", [["مجموع الطرق", fmt(mt)], ["إجمالي المبيعات", fmt(C.T.sales)]])
+    : st("bad", "!", "مبيعات بدون طريقة دفع", [["غير مصنّف", fmt(r2(C.T.sales - mt))]]);
+  const ts = S.t.sales.filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount)[0];
+  const tp = S.t.purch.filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount)[0];
+  const credit = C.T.sales ? C.meth[0].v / C.T.sales * 100 : 0;
+  const s3 = st("info", "i", "مؤشرات سريعة", [["نسبة المبيعات الآجلة", credit.toFixed(1) + "%"],
+    ["أكبر فاتورة بيع · " + (ts ? ts.name : "—"), ts ? fmt(ts.amount) : "—"], ["أكبر فاتورة شراء · " + (tp ? tp.name : "—"), tp ? fmt(tp.amount) : "—"]]);
+  $("status").replaceChildren(s1, s2, s3);
+
+  // balance boxes
+  renderBal(C);
+  // table headers / footers
+  for (const k of [...OPS, ...CASH]) {
+    const h = document.querySelector(`[data-sum="${k}"]`); if (h) h.textContent = fmt(C.T[k]);
+    const f = document.querySelector(`[data-foot="${k}"]`); if (f) f.textContent = fmt(C.T[k]);
+    const c = document.querySelector(`[data-count="${k}"]`); if (c) c.textContent = S.t[k].filter(r => typeof r.amount === "number").length;
+  }
+  // check column
+  S.t.crec.forEach((r, i) => { const cell = document.querySelector(`[data-chk="${r.id}"]`); if (cell) cell.replaceChildren(chkEl(C.checks[i])); });
+}
+function st(kind, icon, title, lines) {
+  return el("div", {class: "st " + kind}, el("h4", {}, el("em", {text: icon}), title),
+    ...lines.map(([a, b]) => el("div", {class: "ln"}, el("span", {text: a}), el("span", {class: "n", text: b}))));
+}
+function chkEl(c) {
+  if (!c || c.state === "na") return el("span", {class: "chk na", text: "—"});
+  if (c.state === "ok") return el("span", {class: "chk ok", text: "✓ مطابق"});
+  return el("span", {class: "chk bad"}, "فرق ", el("span", {class: "n", text: fmt(c.d)}));
+}
+function waterfall(prev, rec, pay, cur) {
+  const W = 440, H = 190, BASE = 160, TOP = 24, bw = 70, PAD = 12;
+  const lo = Math.min(prev, cur, prev + rec - pay) - Math.max(rec, pay, 1) * 1.6, hi = Math.max(prev + rec, prev, cur) + Math.max(rec, pay, 1) * 0.35;
+  const y = v => BASE - (v - lo) / ((hi - lo) || 1) * (BASE - TOP);
+  const gap = (W - 2 * PAD - 4 * bw) / 3;
+  const steps = [["رصيد سابق", 0, prev, "#14213D", fmt(prev)], ["المقبوضات", prev, prev + rec, "#1E7B45", "+" + fmt(rec)], ["المدفوعات", prev + rec - pay, prev + rec, "#D9822B", "-" + fmt(pay)], ["الرصيد الحالي", 0, cur, "#C1121F", fmt(cur)]];
+  let s = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="حركة الصندوق"><line x1="${PAD}" x2="${W - PAD}" y1="${BASE}" y2="${BASE}" stroke="#DDE2EB"/>`;
+  steps.forEach(([lab, a, b, col, txt], i) => {
+    const x = W - PAD - bw - i * (bw + gap);
+    const top = y(i === 0 || i === 3 ? b : Math.max(a, b)), bot = i === 0 || i === 3 ? BASE : y(Math.min(a, b));
+    s += `<rect x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${bw}" height="${Math.max(bot - top, 2).toFixed(1)}" rx="5" fill="${col}"/>`;
+    if (i < 3) { const ly = y(i === 0 ? b : (i === 1 ? b : a)); s += `<line x1="${(x - gap).toFixed(1)}" x2="${x.toFixed(1)}" y1="${ly.toFixed(1)}" y2="${ly.toFixed(1)}" stroke="#9AA3B2" stroke-dasharray="3 3"/>`; }
+    s += `<text x="${(x + bw / 2).toFixed(1)}" y="${(top - 6).toFixed(1)}" text-anchor="middle" font-size="11.5" font-weight="800" fill="#14213D" font-family="Cairo,sans-serif" direction="ltr">${txt}</text>`;
+    s += `<text x="${(x + bw / 2).toFixed(1)}" y="${BASE + 18}" text-anchor="middle" font-size="12" font-weight="600" fill="#5B6474" font-family="Cairo,sans-serif">${lab}</text>`;
+  });
+  return s + "</svg>";
+}
+function renderBal(C) {
+  const bal = $("bal");
+  let inp = $("prevInput");
+  if (!inp) {
+    inp = el("input", {id: "prevInput", inputmode: "decimal", "aria-label": "رصيد سابق"});
+    inp.addEventListener("focus", () => { inp.value = S.prev ?? ""; });
+    inp.addEventListener("input", () => { S.prev = parseNum(inp.value) ?? 0; prevAuto = null; changed(false); });
+    inp.addEventListener("blur", () => { inp.value = fmt(S.prev); });
+    bal.replaceChildren(
+      el("div", {class: "bx"}, el("div", {class: "k", text: "رصيد سابق"}), inp, el("small", {id: "prevHint"})),
+      el("div", {class: "bx"}, el("div", {class: "k", text: "+ المقبوضات النقدية"}), el("div", {class: "v n", id: "bRec", style: "color:var(--green)"})),
+      el("div", {class: "bx"}, el("div", {class: "k", text: "− المدفوعات النقدية"}), el("div", {class: "v n", id: "bPay", style: "color:var(--orange)"})),
+      el("div", {class: "bx"}, el("div", {class: "k", text: "= صافي اليوم"}), el("div", {class: "v n", id: "bNet", style: "color:var(--red)"})),
+      el("div", {class: "bx cur"}, el("div", {class: "k", text: "الرصيد الحالي (ر.س)"}), el("div", {class: "v n", id: "bCur"})));
+  }
+  if (document.activeElement !== inp) inp.value = fmt(C.prev);
+  $("prevHint").textContent = prevAuto ? `تلقائيًا من رصيد يوم ${dmy(prevAuto)}` : "يُكتب يدويًا أو يُنقل من اليوم السابق";
+  $("bRec").textContent = fmt(C.T.crec); $("bPay").textContent = fmt(C.T.cpay); $("bNet").textContent = fmt(C.net); $("bCur").textContent = fmt(C.cur);
+}
+
+/* ---------- tables ---------- */
+function renderTable(key, focus) {
+  const cfg = TABLES[key], host = $(OPS.includes(key) ? "opsTables" : "cashTables");
+  let box = host.querySelector(`[data-table="${key}"]`);
+  if (!box) { box = el("div", {class: "tbl", "data-table": key}); host.append(box); }
+  const rows = S.t[key];
+  const th = el("div", {class: "th"}, el("b", {text: cfg.title}),
+    el("span", {}, el("span", {"data-count": key, text: String(rows.length)}), " عملية · الإجمالي ", el("span", {class: "n", "data-sum": key, text: "0.00"})));
+  const thead = el("thead", {}, el("tr", {}, ...cfg.cols.map(c => el("th", {text: c})), el("th", {"aria-label": "حذف"})));
+  const tbody = el("tbody");
+  rows.forEach(r => tbody.append(rowEl(key, r, false)));
+  tbody.append(rowEl(key, {id: "ghost", doc: "", name: "", method: "", amount: null, note: ""}, true));
+  const span = cfg.cash ? cfg.cols.length - 2 : 3;
+  const tfoot = el("tfoot", {}, el("tr", {},
+    el("td", {colspan: String(cfg.cash ? 2 : 3), style: "text-align:right;padding-right:16px", text: "المجموع"}),
+    el("td", {class: "amt n", "data-foot": key, text: "0.00"}),
+    el("td", {colspan: String(cfg.cols.length - (cfg.cash ? 3 : 4) + 1)})));
+  const hint = key === "crec" ? el("div", {class: "hint", text: "الصفوف المعلَّمة «تلقائي» أُضيفت من المبيعات النقدية؛ إذا عدّلت مبلغها تبقى مرتبطة بفاتورتها ويظهر الفرق في عمود التحقق."}) : null;
+  box.replaceChildren(th, el("div", {class: "scroll"}, el("table", {}, thead, tbody, tfoot)), ...(hint ? [hint] : []));
+  if (focus) restoreFocus(focus);
+}
+function rowEl(key, r, ghost) {
+  const cfg = TABLES[key];
+  const tr = el("tr", {"data-row": r.id, class: (ghost ? "ghost" : "") + (r.amount < 0 ? " neg" : "")});
+  const ph = ghost ? nextDoc(key) : "";
+  const docI = inputEl(key, r, "doc", {placeholder: ph || "رقم المستند", dir: "ltr"});
+  const nameI = inputEl(key, r, "name", {placeholder: ghost ? "اكتب هنا لإضافة صف…" : "", list: "names"});
+  const amtI = inputEl(key, r, "amount", {inputmode: "decimal", placeholder: ghost ? "0.00" : ""});
+  const noteI = inputEl(key, r, "note", {placeholder: ghost ? cfg.note : ""});
+  const del = ghost ? el("td", {class: "x"}) : el("td", {class: "x"}, el("button", {type: "button", title: "حذف الصف", "aria-label": "حذف الصف", text: "×", onclick: () => removeRow(key, r.id)}));
+  if (cfg.cash) {
+    const nameTd = el("td", {class: "nm"}, nameI);
+    if (r.auto) nameTd.prepend(el("span", {class: "tag auto", text: "تلقائي", style: "float:left;margin-top:6px"}));
+    tr.append(el("td", {class: "doc"}, docI), nameTd, el("td", {class: "amt"}, amtI), el("td", {class: "note"}, noteI));
+    if (key === "crec") tr.append(el("td", {"data-chk": r.id}));
+  } else {
+    const sel = el("select", {class: "m c-" + methodColor(ghost ? "" : r.method), "data-f": "method", "aria-label": "طريقة الدفع"});
+    sel.append(el("option", {value: "", text: ghost ? "—" : "اختر"}), ...METHODS.map(([v, l]) => { const o = el("option", {value: v, text: l}); if (v === r.method) o.selected = true; return o; }));
+    sel.addEventListener("change", () => edit(key, r.id, "method", sel.value, sel));
+    tr.append(el("td", {class: "doc"}, docI), el("td", {class: "nm"}, nameI), el("td", {}, sel), el("td", {class: "amt"}, amtI), el("td", {class: "note"}, noteI));
+  }
+  tr.append(del);
+  tr.addEventListener("focusout", e => { if (!ghost && !tr.contains(e.relatedTarget)) setTimeout(() => pruneRow(key, r.id), 0); });
+  return tr;
+}
+const methodColor = m => (METHODS.find(x => x[0] === m) || [0, 0, "none"])[2];
+function inputEl(key, r, f, attrs) {
+  const isAmt = f === "amount";
+  const v = isAmt ? (typeof r.amount === "number" ? fmt(r.amount) : "") : (r[f] ?? "");
+  const i = el("input", {"data-f": f, value: v, autocomplete: "off", "aria-label": f, ...attrs});
+  if (isAmt) {
+    i.addEventListener("focus", () => { if (typeof r.amount === "number") i.value = String(r.amount); i.select(); });
+    i.addEventListener("blur", () => { const row = S.t[key].find(x => x.id === r.id); if (row && typeof row.amount === "number") i.value = fmt(row.amount); });
+  }
+  i.addEventListener("input", () => edit(key, r.id, f, isAmt ? parseNum(i.value) : i.value, i));
+  i.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); moveDown(i); } });
+  return i;
+}
+function moveDown(i) {
+  const tr = i.closest("tr"), f = i.dataset.f, next = tr.nextElementSibling;
+  const t = next && next.querySelector(`[data-f="${f}"]`); if (t) t.focus();
+}
+function edit(key, id, f, val, src) {
+  const cfg = TABLES[key];
+  if (id === "ghost") {
+    if (val === "" || val == null) return;
+    const row = {id: uid(), doc: nextDoc(key), name: "", amount: null, note: cfg.note};
+    if (cfg.method) row.method = lastMethod(key);
+    row[f] = val;
+    if (f === "doc") row.doc = val;
+    applySmart(key, row, f);
+    S.t[key].push(row);
+    const pos = src.selectionStart ?? null;
+    const focus = {key, id: row.id, f, pos};
+    changed(true, key, focus);
+    return;
+  }
+  const row = S.t[key].find(r => r.id === id); if (!row) return;
+  row[f] = val;
+  if (key === "crec" && row.link && f !== "note") row.manual = true;
+  const before = row.method;
+  applySmart(key, row, f);
+  if (f === "method" || row.method !== before) { const s = src.closest("tr").querySelector("select"); if (s) { s.value = row.method; s.className = "m c-" + methodColor(row.method); } }
+  if (f === "amount" && key === "sales" && row.note === "مردود مبيعات") { const n = src.closest("tr").querySelector('[data-f="note"]'); if (n && document.activeElement !== n) n.value = row.note; }
+  if (f === "amount") src.closest("tr").classList.toggle("neg", val < 0);
+  changed(false, key);
+}
+function applySmart(key, row, f) {
+  if (key === "sales" && f === "amount" && typeof row.amount === "number") {
+    if (row.amount < 0) { row.method = "على الحساب"; row.note = "مردود مبيعات"; }
+    else if (row.method === "على الحساب") { row.method = lastMethod("sales"); row.note = TABLES.sales.note; }
+  }
+}
+function pruneRow(key, id) {
+  const rows = S.t[key], i = rows.findIndex(r => r.id === id); if (i < 0) return;
+  const r = rows[i];
+  if (!r.name && r.amount == null && !(key === "crec" && r.link)) { rows.splice(i, 1); changed(true, key, captureFocus()); }
+}
+let undo = null;
+function removeRow(key, id) {
+  const rows = S.t[key], i = rows.findIndex(r => r.id === id); if (i < 0) return;
+  const [r] = rows.splice(i, 1);
+  undo = {key, i, r};
+  changed(true, key, captureFocus());
+  $("toastText").textContent = "حُذف الصف"; $("toast").hidden = false;
+  clearTimeout(removeRow.t); removeRow.t = setTimeout(() => { $("toast").hidden = true; undo = null; }, 6000);
+}
+$("toastBtn").addEventListener("click", () => { if (!undo) return; S.t[undo.key].splice(undo.i, 0, undo.r); const k = undo.key; undo = null; $("toast").hidden = true; changed(true, k, captureFocus()); });
+
+function captureFocus() {
+  const a = document.activeElement; if (!a || !a.dataset || !a.dataset.f) return null;
+  const tr = a.closest("tr"), tb = a.closest("[data-table]"); if (!tr || !tb) return null;
+  return {key: tb.dataset.table, id: tr.dataset.row, f: a.dataset.f, pos: a.selectionStart ?? null};
+}
+function restoreFocus(fc) {
+  const tr = document.querySelector(`[data-table="${fc.key}"] tr[data-row="${fc.id}"]`);
+  const i = tr && tr.querySelector(`[data-f="${fc.f}"]`); if (!i) return;
+  i.focus({preventScroll: true});
+  if (fc.pos != null && i.setSelectionRange && i.type !== "date") { try { const p = fc.f === "amount" ? i.value.length : fc.pos; i.setSelectionRange(p, p); } catch (e) {} }
+}
+function changed(structural, key, focus) {
+  const fc = focus === undefined ? captureFocus() : focus;
+  let cashChanged = false;
+  if (key === "sales") cashChanged = syncCash();
+  if (structural && key) renderTable(key, fc);
+  if (cashChanged && key !== "crec") renderTable("crec", null);
+  refreshNames();
+  renderDash();
+  scheduleSave();
+}
+function renderAll() {
+  const fc = captureFocus();
+  $("opsTables").replaceChildren(); $("cashTables").replaceChildren();
+  for (const k of [...OPS, ...CASH]) renderTable(k, null);
+  $("date").value = S.date;
+  refreshNames(); renderDash();
+  if (fc) restoreFocus(fc);
+  document.getElementById("app").classList.toggle("ro", !canWrite);
+  document.querySelectorAll("#app td input, #app td select, #prevInput").forEach(x => x.disabled = !canWrite);
+}
+let knownNames = new Set();
+function refreshNames() {
+  let dl = $("names"); if (!dl) { dl = el("datalist", {id: "names"}); document.body.append(dl); }
+  const all = new Set(knownNames); for (const k of [...OPS, ...CASH]) for (const r of S.t[k]) if (r.name) all.add(r.name);
+  if (all.size === dl.childElementCount) return;
+  dl.replaceChildren(...[...all].sort().map(n => el("option", {value: n})));
+}
+
+/* ---------- persistence ---------- */
+function setSave(cls, text) { const s = $("save"); s.className = "save " + cls; $("saveText").textContent = text; }
+function serialize() {
+  const C = calc();
+  const clean = rows => rows.map(r => { const o = {id: r.id, doc: r.doc || "", name: r.name || "", amount: typeof r.amount === "number" ? r.amount : null, note: r.note || ""}; if (r.method !== undefined) o.method = r.method || ""; if (r.link) { o.link = r.link; o.auto = true; if (r.manual) o.manual = true; } return o; });
+  lastRev = uid();
+  return {date: S.date, prev: Number(S.prev) || 0, closing: C.cur, rev: lastRev, updatedAt: Date.now(), t: Object.fromEntries([...OPS, ...CASH].map(k => [k, clean(S.t[k])]))};
+}
+function scheduleSave() {
+  if (!canWrite) return;
+  dirty = true; setSave("busy", "تعديلات غير محفوظة…");
+  clearTimeout(saveTimer); saveTimer = setTimeout(save, 900);
+}
+async function save() {
+  if (saving) { saveTimer = setTimeout(save, 400); return; }
+  if (!dirty) return;
+  saving = true; dirty = false;
+  const body = serialize();
+  try {
+    if (mode === "db") { await db.doc("reports/" + S.date).set(body); setSave("ok", "محفوظ للفريق ✓"); }
+    else { localStorage.setItem("report:" + S.date, JSON.stringify(body)); setSave("ok", "غير متصل بالسجل المشترك · محفوظ على هذا الجهاز فقط"); }
+  } catch (e) {
+    if (e && e.code === "invalid_argument" && mode === "db") { canWrite = false; setSave("err", "عرض فقط — لا تملك صلاحية التعديل"); renderAll(); }
+    else if (e && e.code === "quota_exceeded") setSave("err", "امتلأت مساحة الحفظ — احذف أيامًا قديمة");
+    else { dirty = true; setSave("err", "تعذّر الحفظ — سنعيد المحاولة"); saveTimer = setTimeout(save, 2500); }
+  } finally { saving = false; }
+}
+function fromDoc(d) {
+  const day = emptyDay(d.date, d.prev || 0);
+  for (const k of [...OPS, ...CASH]) day.t[k] = (d.t && d.t[k] || []).map(r => ({...r}));
+  return day;
+}
+async function previousClosing(date) {
+  try {
+    if (mode === "db") {
+      const q = await db.collection("reports").where("date", "<", date).orderBy("date", "desc").limit(1).get();
+      if (!q.empty) { const d = q.docs[0].data(); return {date: d.date, v: d.closing}; }
+    } else {
+      let best = null;
+      for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k.startsWith("report:") && k.slice(7) < date && (!best || k.slice(7) > best)) best = k.slice(7); }
+      if (best) { const d = JSON.parse(localStorage.getItem("report:" + best)); return {date: d.date, v: d.closing}; }
+    }
+  } catch (e) {}
+  return null;
+}
+async function openDay(date) {
+  if (dirty) { clearTimeout(saveTimer); await save(); }
+  if (unsub) { unsub(); unsub = null; }
+  prevAuto = null;
+  S = emptyDay(date);
+  renderAll();
+  if (mode === "db") {
+    let first = true;
+    unsub = db.doc("reports/" + date).onSnapshot(async snap => {
+      if (snap.metadata.hasPendingWrites) return;
+      const d = snap.exists ? snap.data() : null;
+      if (d && d.rev === lastRev && !first) return;
+      if (dirty && !first) return;          // our newer edit will win
+      if (!d && !first) return;
+      first = false;
+      if (d) { S = fromDoc(d); lastRev = d.rev; renderAll(); setSave("ok", "محفوظ للفريق ✓"); }
+      else { await startFresh(date); }
+    }, e => setSave("err", "انقطع الاتصال بالبيانات — أعد فتح الصفحة"));
+  } else {
+    let d = null; try { d = JSON.parse(localStorage.getItem("report:" + date) || "null"); } catch (e) {}
+    if (d) { S = fromDoc(d); renderAll(); setSave("ok", "بدون تسجيل دخول · التعديلات محفوظة على هذا الجهاز فقط"); }
+    else if (SNAPSHOT && date === SNAPSHOT.date) { S = fromDoc(SNAPSHOT); renderAll(); setSave("ok", "النسخة العامة المنشورة · سجّل الدخول لرؤية آخر تحديثات الفريق"); }
+    else await startFresh(date);
+  }
+}
+async function startFresh(date) {
+  S = emptyDay(date);
+  const pc = await previousClosing(date);
+  if (pc) { S.prev = pc.v; prevAuto = pc.date; }
+  renderAll();
+  setSave("", pc ? `يوم جديد · الرصيد السابق منقول من ${dmy(pc.date)}` : "يوم جديد — ابدأ بإدخال العمليات");
+}
+
+/* ---------- toolbar ---------- */
+$("date").addEventListener("change", e => { if (e.target.value) openDay(e.target.value); });
+$("btnNew").addEventListener("click", async () => {
+  const [y, m, d] = S.date.split("-").map(Number);
+  const nx = new Date(Date.UTC(y, m - 1, d + 1)).toISOString().slice(0, 10);
+  openDay(nx);
+});
+$("btnXlsx").addEventListener("click", exportXlsx);
+
+/* ---------- boot ---------- */
+async function boot() {
+  renderAll(); setSave("busy", "جارٍ تحميل التقرير…");
+  const cl = window.claude;
+  db = cl && cl.use ? await cl.use("db").catch(() => null) : null;
+  if (db) {
+    mode = "db";
+    try { const u = await cl.use("user"); const w = u && u.can ? await u.can("data.write") : null; if (w === false) canWrite = false; } catch (e) {}
+    let start = todayISO();
+    try {
+      const q = await db.collection("reports").orderBy("date", "desc").limit(60).get();
+      q.docs.forEach(s => { const d = s.data(); for (const k of [...OPS, ...CASH]) (d.t && d.t[k] || []).forEach(r => r.name && knownNames.add(r.name)); });
+      if (!q.empty && !q.docs.some(s => s.data().date === start)) start = q.docs[0].data().date;
+    } catch (e) {}
+    await openDay(start);
+    if (!canWrite) setSave("", "عرض فقط");
+  } else {
+    mode = "local";
+    let start = SNAPSHOT ? SNAPSHOT.date : todayISO();
+    try { const ks = []; for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k.startsWith("report:")) ks.push(k.slice(7)); } ks.sort(); if (ks.length && !ks.includes(start)) start = ks[ks.length - 1]; } catch (e) {}
+    await openDay(start);
+  }
+}
+if (location.hash !== "#print") boot();
+
+/* ---------- Excel export (ExcelJS, same palette) ---------- */
+let excelReady = null;
+function loadExcel() {
+  if (window.ExcelJS) return Promise.resolve();
+  if (!excelReady) excelReady = new Promise((res, rej) => { const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"; s.onload = res; s.onerror = () => { excelReady = null; rej(); }; document.head.append(s); });
+  return excelReady;
+}
+async function exportXlsx() {
+  const btn = $("btnXlsx"); btn.disabled = true; const old = btn.textContent; btn.textContent = "جارٍ التجهيز…";
+  try {
+    await loadExcel();
+    const buf = await buildWorkbook();
+    const dl = window.claude && window.claude.use ? await window.claude.use("downloads").catch(() => null) : null;
+    if (!dl) { if (!framed) { directSave(`Daily-Report-${S.date}.xlsx`, new Blob([buf])); flash("تم تنزيل ملف Excel ✓"); } else flash("التنزيل غير متاح في هذا العرض. سجّل الدخول في Claude أو استخدم النسخة المستقلة."); return; }
+    await dl.save({filename: `التقرير اليومي الموحد ${dmy(S.date).replace(/\//g, "-")}.xlsx`, data: new Blob([buf])});
+    flash("تم تجهيز ملف Excel ✓");
+  } catch (e) {
+    if (e && e.code === "declined") flash("أُلغي التنزيل");
+    else if (e && e.code === "rate_limited") flash("هناك تنزيل مفتوح بالفعل، انتظر لحظة");
+    else flash("تعذّر تجهيز ملف Excel، حاول مرة أخرى");
+  } finally { btn.disabled = false; btn.textContent = old; }
+}
+function flash(t) { $("toastText").textContent = t; $("toastBtn").hidden = true; $("toast").hidden = false; clearTimeout(flash.t); flash.t = setTimeout(() => { $("toast").hidden = true; $("toastBtn").hidden = false; }, 3500); }
+
+async function buildWorkbook() {
+  const C = calc();
+  const X = ExcelJS, wb = new X.Workbook(); wb.creator = "التقرير اليومي الموحد"; wb.calcProperties.fullCalcOnLoad = true;
+  const A = h => ({argb: "FF" + h.replace("#", "")});
+  const FONT = "Cairo";
+  const font = (size = 10, bold = false, color = "1A1F2B") => ({name: FONT, size, bold, color: A(color)});
+  const fill = h => ({type: "pattern", pattern: "solid", fgColor: A(h)});
+  const al = (h = "center", extra = {}) => ({horizontal: h, vertical: "middle", readingOrder: "rtl", ...extra});
+  const thin = h => ({style: "thin", color: A(h)});
+  const NUM = '#,##0.00;[Red]-#,##0.00;"-"';
+  const OPSN = "'العمليات اليومية'", CASHN = "'الصندوق النقدي'";
+  const logoId = wb.addImage({base64: LOGO, extension: "png"});
+  const view = {rightToLeft: true, showGridLines: false, zoomScale: 100};
+  const dash = wb.addWorksheet("ملخص اليوم", {views: [view], properties: {tabColor: A("C1121F")}, pageSetup: {paperSize: 9, orientation: "portrait", fitToPage: true, fitToWidth: 1, fitToHeight: 1}});
+  const ops = wb.addWorksheet("العمليات اليومية", {views: [view], properties: {tabColor: A("14213D")}, pageSetup: {paperSize: 9, fitToPage: true, fitToWidth: 1, fitToHeight: 0}});
+  const cash = wb.addWorksheet("الصندوق النقدي", {views: [view], properties: {tabColor: A("E9A100")}, pageSetup: {paperSize: 9, fitToPage: true, fitToWidth: 1, fitToHeight: 1}});
+  const set = (ws, ref, value, st = {}) => { const c = ws.getCell(ref); c.value = value; if (st.font) c.font = st.font; if (st.fill) c.fill = st.fill; c.alignment = st.al || al(); if (st.num) c.numFmt = st.num; if (st.border) c.border = st.border; return c; };
+  const paint = (ws, r1, c1, r2, c2, f) => { for (let r = r1; r <= r2; r++) for (let c = c1; c <= c2; c++) ws.getCell(r, c).fill = f; };
+  const colL = n => String.fromCharCode(64 + n);
+  const methodFill = {"اجل": ["E3E6ED", "14213D"], "شبكة": ["DCEEF1", "2A7F8F"], "نقدا": ["FDF0CC", "8A6100"], "تحويل": ["E8E5FC", "5B4BD6"], "على الحساب": ["FCE3E5", "C1121F"]};
+  const mini = (ws, lastCol, sub) => {
+    ws.getRow(2).height = 34; paint(ws, 2, 2, 2, lastCol, fill("14213D"));
+    ws.mergeCells(2, 2, 2, 4); set(ws, "B2", "شركة الشبح المتقدمة للتجارة", {font: font(13, true, "FFFFFF"), al: al("right", {indent: 1})});
+    set(ws, colL(lastCol - 1) + "2", sub, {font: font(9, false, "C9D3E8"), al: al("left")});
+    ws.getCell(2, lastCol).fill = fill("FFFFFF");
+    ws.addImage(logoId, {tl: {col: lastCol - 1 + 0.15, row: 1.12}, ext: {width: 96, height: 40}});
+    ws.getRow(3).height = 10; ws.getRow(4).height = 34;
+  };
+  const section = (ws, row, no, title, sub, lastCol) => {
+    set(ws, "A" + row, no, {font: font(15, true, "FFFFFF"), fill: fill("C1121F")});
+    ws.mergeCells(row, 2, row, lastCol); set(ws, "B" + row, title, {font: font(17, true, "14213D"), al: al("right", {indent: 1})});
+    ws.mergeCells(row + 1, 2, row + 1, lastCol); set(ws, "B" + (row + 1), sub, {font: font(9, false, "5B6474"), al: al("right", {indent: 1})});
+  };
+
+  /* ----- operations ----- */
+  ops.columns = [{width: 5}, {width: 18}, {width: 28}, {width: 14}, {width: 17}, {width: 19}, {width: 3}];
+  mini(ops, 6, `التقرير اليومي الموحّد · ${dmy(S.date)}`);
+  section(ops, 4, 1, "العمليات اليومية", "المبيعات والمشتريات والمصروفات والسندات · عمود طريقة الدفع قائمة منسدلة", 6);
+  let r = 7; const R = {};
+  for (const k of OPS) {
+    const cfg = TABLES[k], rows = S.t[k];
+    ops.getRow(r).height = 26; paint(ops, r, 2, r, 6, fill("14213D"));
+    ops.mergeCells(r, 2, r, 4); set(ops, "B" + r, cfg.title, {font: font(12, true, "FFFFFF"), al: al("right", {indent: 1})});
+    ops.mergeCells(r, 5, r, 6); r++;
+    const titleRow = r - 1;
+    ops.getRow(r).height = 22;
+    ["رقم المستند", cfg.cols[1], "طريقة الدفع", "المبلغ", cfg.cols[4]].forEach((h, i) => set(ops, colL(2 + i) + r, h, {font: font(9, true, "33415C"), fill: fill("EEF2F8")}));
+    r++;
+    const a = r;
+    const all = [...rows, ...Array(4).fill(null)];
+    all.forEach((x, i) => {
+      const z = fill(x && x.amount < 0 ? "FDEEEE" : (i % 2 ? "FAFBFD" : "FFFFFF"));
+      const b = {bottom: thin("F0F2F6")};
+      set(ops, "B" + r, x ? x.doc : null, {font: font(9.5, true, "33415C"), fill: z, border: b});
+      set(ops, "C" + r, x ? x.name : null, {font: font(10), fill: z, border: b, al: al("right", {indent: 1})});
+      const mf = x && methodFill[x.method];
+      set(ops, "D" + r, x ? x.method : null, {font: mf ? font(9, true, mf[1]) : font(9), fill: mf ? fill(mf[0]) : z, border: b});
+      ops.getCell("D" + r).dataValidation = {type: "list", allowBlank: true, formulae: ['"اجل,شبكة,نقدا,تحويل,على الحساب"']};
+      set(ops, "E" + r, x ? x.amount : null, {font: font(10, true, x && x.amount < 0 ? "C1121F" : "1A1F2B"), fill: z, border: b, num: NUM, al: al("left", {indent: 1})});
+      set(ops, "F" + r, x ? x.note : null, {font: font(9, false, "5B6474"), fill: z, border: b});
+      r++;
+    });
+    const b2 = r - 1;
+    ops.getRow(r).height = 24;
+    paint(ops, r, 2, r, 6, fill("FFF6DC"));
+    for (let c = 2; c <= 6; c++) ops.getCell(r, c).border = {top: {style: "medium", color: A("14213D")}};
+    ops.mergeCells(r, 2, r, 4); set(ops, "B" + r, "المجموع", {font: font(11, true, "14213D"), fill: fill("FFF6DC"), al: al("right", {indent: 1}), border: {top: {style: "medium", color: A("14213D")}}});
+    set(ops, "E" + r, {formula: `SUM(E${a}:E${b2})`, result: C.T[k]}, {font: font(11, true, "C1121F"), fill: fill("FFF6DC"), num: NUM, al: al("left", {indent: 1}), border: {top: {style: "medium", color: A("14213D")}}});
+    set(ops, "E" + titleRow, {formula: `COUNT(E${a}:E${b2})&" عملية · الإجمالي "&TEXT(E${r},"#,##0.00")`, result: `${rows.length} عملية · الإجمالي ${fmt(C.T[k])}`}, {font: font(9, false, "C9D3E8"), fill: fill("14213D"), al: al("left", {indent: 1})});
+    R[k] = {a, b: b2, tot: `${OPSN}!$E$${r}`, amt: `${OPSN}!$E$${a}:$E$${b2}`, meth: `${OPSN}!$D$${a}:$D$${b2}`, ids: `${OPSN}!$B$${a}:$B$${b2}`, names: `${OPSN}!$C$${a}:$C$${b2}`};
+    r += 2;
+  }
+
+  /* ----- cash ----- */
+  cash.columns = [{width: 5}, {width: 17}, {width: 30}, {width: 16}, {width: 20}, {width: 20}, {width: 3}];
+  mini(cash, 6, `إفصاح الصندوق · ${dmy(S.date)}`);
+  section(cash, 4, 2, "إفصاح الصندوق النقدي", "المقبوضات والمدفوعات النقدية ورصيد الصندوق مع التحقق الآلي مقابل المبيعات", 6);
+  r = 7; const CR = {};
+  for (const k of CASH) {
+    const cfg = TABLES[k], rows = S.t[k];
+    cash.getRow(r).height = 26; paint(cash, r, 2, r, 6, fill("14213D"));
+    cash.mergeCells(r, 2, r, 4); set(cash, "B" + r, cfg.title, {font: font(12, true, "FFFFFF"), al: al("right", {indent: 1})});
+    const titleRow = r; cash.mergeCells(r, 5, r, 6); r++;
+    ["رقم المستند", "الاسم / العميل أو المورد", "المبلغ", "الملاحظات", k === "crec" ? "التحقق مع المبيعات" : ""].forEach((h, i) => set(cash, colL(2 + i) + r, h, {font: font(9, true, "33415C"), fill: fill("EEF2F8")}));
+    r++;
+    const a = r, all = [...rows, ...Array(3).fill(null)];
+    all.forEach((x, i) => {
+      const z = fill(i % 2 ? "FAFBFD" : "FFFFFF"), b = {bottom: thin("F0F2F6")};
+      set(cash, "B" + r, x ? x.doc : null, {font: font(9.5, true, "33415C"), fill: z, border: b});
+      set(cash, "C" + r, x ? x.name : null, {font: font(10), fill: z, border: b, al: al("right", {indent: 1})});
+      set(cash, "D" + r, x ? x.amount : null, {font: font(10, true), fill: z, border: b, num: NUM, al: al("left", {indent: 1})});
+      set(cash, "E" + r, x ? x.note : null, {font: font(9, false, "5B6474"), fill: z, border: b});
+      if (k === "crec") {
+        const ck = x ? C.checks[i] : null;
+        const res = !x ? "" : ck.state === "ok" ? "✓ مطابق" : ck.state === "bad" ? "⚠ فرق " + ck.d.toFixed(2) : "—";
+        const f = `IF(OR(B${r}="",D${r}=""),"",IFERROR(IF(ABS(D${r}-INDEX(${R.sales.amt},MATCH(B${r},${R.sales.ids},0)))<0.005,"✓ مطابق","⚠ فرق "&TEXT(D${r}-INDEX(${R.sales.amt},MATCH(B${r},${R.sales.ids},0)),"0.00")),"—"))`;
+        const good = res.startsWith("✓"), badc = res.startsWith("⚠");
+        set(cash, "F" + r, {formula: f, result: res}, {font: font(9, true, good ? "1E7B45" : badc ? "C1121F" : "A9B1C0"), fill: good ? fill("ECF8F1") : badc ? fill("FDEEEE") : z, border: b});
+      } else set(cash, "F" + r, null, {fill: z, border: b});
+      r++;
+    });
+    const b2 = r - 1; cash.getRow(r).height = 24; paint(cash, r, 2, r, 6, fill("FFF6DC"));
+    for (let c = 2; c <= 6; c++) cash.getCell(r, c).border = {top: {style: "medium", color: A("14213D")}};
+    cash.mergeCells(r, 2, r, 3); set(cash, "B" + r, "المجموع", {font: font(11, true, "14213D"), fill: fill("FFF6DC"), al: al("right", {indent: 1}), border: {top: {style: "medium", color: A("14213D")}}});
+    set(cash, "D" + r, {formula: `SUM(D${a}:D${b2})`, result: C.T[k]}, {font: font(11, true, "C1121F"), fill: fill("FFF6DC"), num: NUM, al: al("left", {indent: 1}), border: {top: {style: "medium", color: A("14213D")}}});
+    set(cash, "E" + titleRow, {formula: `COUNT(D${a}:D${b2})&" عملية · الإجمالي "&TEXT(D${r},"#,##0.00")`, result: `${rows.length} عملية · الإجمالي ${fmt(C.T[k])}`}, {font: font(9, false, "C9D3E8"), fill: fill("14213D"), al: al("left", {indent: 1})});
+    CR[k] = {tot: `$D$${r}`, a, b: b2}; r += 2;
+  }
+  // balance boxes
+  const bl = r, bv = r + 1;
+  cash.getRow(bl).height = 20; cash.getRow(bv).height = 30;
+  const boxes = [["B", "رصيد سابق", C.prev, null, "14213D"], ["C", "+ المقبوضات النقدية", `${CR.crec.tot}`, C.T.crec, "1E7B45"], ["D", "− المدفوعات النقدية", `${CR.cpay.tot}`, C.T.cpay, "D9822B"], ["E", "= صافي اليوم", `C${bv}-D${bv}`, C.net, "C1121F"], ["F", "الرصيد الحالي (ر.س)", `B${bv}+E${bv}`, C.cur, "FFFFFF"]];
+  for (const [c, lab, f, res, col] of boxes) {
+    const curBox = c === "F", bg = curBox ? "14213D" : "FFFFFF", bd = {top: thin("E3E7EF"), bottom: thin("E3E7EF"), left: thin("E3E7EF"), right: thin("E3E7EF")};
+    set(cash, c + bl, lab, {font: font(9, true, curBox ? "C9D3E8" : "5B6474"), fill: fill(bg), border: bd});
+    set(cash, c + bv, res === null ? f : {formula: f, result: res}, {font: font(curBox ? 14 : 12, true, col), fill: fill(c === "B" ? "FFF6DC" : bg), num: NUM, border: bd});
+  }
+  cash.getCell("B" + bv).note = "رصيد إفصاح اليوم السابق — يُكتب يدويًا";
+  r = bv + 2;
+  cash.mergeCells(r, 2, r, 6); set(cash, "B" + r, "ملاحظات · المبالغ مدرجة مع الضريبة · عمود «التحقق مع المبيعات» يقارن كل مقبوض نقدي بفاتورته تلقائيًا · خانة الرصيد السابق (المظللة) تُكتب يدويًا.", {font: font(9, false, "5B6474"), fill: fill("F7F8FB"), al: al("right", {indent: 1, wrapText: true}), border: {right: {style: "thick", color: A("E9A100")}}});
+  cash.getRow(r).height = 30;
+  r += 3; [["B", "أمين الصندوق"], ["D", "المحاسب"], ["F", "مدير الفرع"]].forEach(([c, l]) => { set(cash, c + r, l, {font: font(9, true, "5B6474")}); cash.getCell(c + (r - 1)).border = {bottom: {style: "thin", color: A("B8C0CE")}}; });
+  const CASHREF = {rec: `${CASHN}!${CR.crec.tot}`, pay: `${CASHN}!${CR.cpay.tot}`, prev: `${CASHN}!$B$${bv}`, net: `${CASHN}!$E$${bv}`, cur: `${CASHN}!$F$${bv}`, chk: `${CASHN}!$F$${CR.crec.a}:$F$${CR.crec.b}`};
+
+  /* ----- dashboard ----- */
+  dash.columns = [{width: 2}, ...Array(10).fill({width: 12.6}), {width: 2}];
+  for (let rr = 1; rr <= 42; rr++) { dash.getRow(rr).height = 19; for (let c = 1; c <= 12; c++) dash.getCell(rr, c).fill = fill("F3F5F9"); }
+  const box = (c1, r1, c2, r2, bg = "FFFFFF", line = "E3E7EF", top = null) => {
+    for (let rr = r1; rr <= r2; rr++) for (let c = c1; c <= c2; c++) {
+      const cell = dash.getCell(rr, c); cell.fill = fill(bg);
+      cell.border = {top: rr === r1 ? (top ? {style: "thick", color: A(top)} : thin(line)) : undefined, bottom: rr === r2 ? thin(line) : undefined, right: c === c1 ? thin(line) : undefined, left: c === c2 ? thin(line) : undefined};
+    }
+  };
+  // hero
+  for (let rr = 2; rr <= 4; rr++) paint(dash, rr, 2, rr, 11, fill("14213D"));
+  dash.getRow(2).height = 40; dash.getRow(3).height = 22; dash.getRow(4).height = 30;
+  dash.mergeCells("B2:H2"); set(dash, "B2", "شركة الشبح المتقدمة للتجارة", {font: font(20, true, "FFFFFF"), fill: fill("14213D"), al: al("right", {indent: 1})});
+  dash.mergeCells("B3:H3"); set(dash, "B3", "التقرير اليومي الموحّد · العمليات وإفصاح الصندوق النقدي", {font: font(10, false, "C9D3E8"), fill: fill("14213D"), al: al("right", {indent: 1})});
+  paint(dash, 2, 9, 3, 11, fill("FFFFFF"));
+  dash.addImage(logoId, {tl: {col: 8.35, row: 1.15}, ext: {width: 150, height: 66}});
+  const chipL = (ref, t) => set(dash, ref, t, {font: font(9, true, "E9A100"), fill: fill("14213D"), al: al("left", {indent: 1})});
+  const chipV = (ref, v, num) => set(dash, ref, v, {font: font(9, true, "FFFFFF"), fill: fill("14213D"), al: al("right"), num});
+  const [yy, mm, dd] = S.date.split("-").map(Number);
+  chipL("B4", "التاريخ"); chipV("C4", new Date(Date.UTC(yy, mm - 1, dd)), "dd/mm/yyyy");
+  chipL("D4", "اليوم"); chipV("E4", {formula: 'CHOOSE(WEEKDAY(C4),"الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت")', result: dayName(S.date)});
+  chipL("F4", "الفرع"); chipV("G4", "الرياض"); chipL("H4", "العملة"); dash.mergeCells("I4:K4"); chipV("I4", "ريال سعودي شامل الضريبة");
+  dash.getRow(5).height = 5; for (let c = 2; c <= 11; c++) dash.getCell(5, c).fill = fill(c < 5 ? "E9A100" : c < 9 ? "C1121F" : "14213D");
+  dash.getRow(6).height = 10;
+  // KPIs
+  const KP = [["المبيعات", "sales", "14213D"], ["المشتريات", "purch", "C1121F"], ["المصروفات", "exp", "E9A100"], ["سندات التحصيل", "rec", "2A7F8F"], ["سندات الدفع", "pay", "8D99AE"]];
+  const grandF = KP.map(([, k]) => R[k].tot).join("+");
+  KP.forEach(([lab, k, col], i) => {
+    const c1 = 2 + 2 * i, c2 = c1 + 1, L1 = colL(c1), L2 = colL(c2);
+    box(c1, 7, c2, 10, "FFFFFF", "E3E7EF", col);
+    set(dash, L1 + 7, lab, {font: font(9, true, "5B6474"), al: al("right", {indent: 1})});
+    const n = S.t[k].filter(x => typeof x.amount === "number").length, share = C.grand ? C.T[k] / C.grand : 0;
+    set(dash, L2 + 7, {formula: `COUNT(${R[k].amt})&" عملية"`, result: `${n} عملية`}, {font: font(8, true, "5B6474"), al: al("left", {indent: 1})});
+    dash.mergeCells(8, c1, 8, c2); set(dash, L1 + 8, {formula: R[k].tot, result: C.T[k]}, {font: font(15, true, "14213D"), num: NUM, al: al("right", {indent: 1})});
+    dash.mergeCells(9, c1, 9, c2); set(dash, L1 + 9, {formula: `REPT("▬",MAX(1,ROUND(IF(($I$12)=0,0,${R[k].tot}/$I$12)*22,0)))`, result: "▬".repeat(Math.max(1, Math.round(share * 22)))}, {font: font(9, true, col), al: al("right", {indent: 1})});
+    dash.mergeCells(10, c1, 10, c2); set(dash, L1 + 10, {formula: `TEXT(IF($I$12=0,0,${R[k].tot}/$I$12),"0.00%")&" من المجموع"`, result: (share * 100).toFixed(2) + "% من المجموع"}, {font: font(8, false, "5B6474"), al: al("right", {indent: 1})});
+  });
+  dash.getRow(8).height = 30; dash.getRow(9).height = 12; dash.getRow(11).height = 8;
+  box(2, 12, 11, 12, "FFF6DC", "F2DFA6"); dash.getRow(12).height = 32;
+  const cnt = OPS.reduce((a, k) => a + S.t[k].filter(x => typeof x.amount === "number").length, 0);
+  dash.mergeCells("B12:E12"); set(dash, "B12", {formula: `"مجموع العمليات · "&(${KP.map(([, k]) => `COUNT(${R[k].amt})`).join("+")})&" عملية"`, result: `مجموع العمليات · ${cnt} عملية`}, {font: font(11, true, "14213D"), fill: fill("FFF6DC"), al: al("right", {indent: 1})});
+  dash.mergeCells("I12:K12"); set(dash, "I12", {formula: grandF, result: C.grand}, {font: font(16, true, "C1121F"), fill: fill("FFF6DC"), num: NUM, al: al("left", {indent: 1})});
+  dash.getRow(13).height = 10;
+  const cardTitle = (c1, c2, row, title, sub, subRes) => {
+    const split = c2 - 1;
+    dash.mergeCells(row, c1, row, split - 1);
+    dash.getCell(row, c1).value = {richText: [{text: "▍ ", font: {name: FONT, size: 13, bold: true, color: A("C1121F")}}, {text: title, font: {name: FONT, size: 11, bold: true, color: A("14213D")}}]};
+    dash.getCell(row, c1).alignment = al("right", {indent: 1});
+    dash.mergeCells(row, split, row, c2);
+    set(dash, colL(split) + row, sub ? {formula: sub, result: subRes} : subRes, {font: font(8, false, "5B6474"), al: al("left", {indent: 1})});
+    dash.getRow(row).height = 26;
+  };
+  // payment methods card
+  box(2, 14, 6, 21); cardTitle(2, 6, 14, "المبيعات حسب طريقة الدفع", `"صافي "&TEXT(${R.sales.tot},"#,##0.00")`, "صافي " + fmt(C.T.sales));
+  C.meth.forEach((m, i) => {
+    const rr = 15 + i; dash.getRow(rr).height = 21;
+    dash.getCell("B" + rr).value = {richText: [{text: "● ", font: {name: FONT, size: 11, bold: true, color: A(m.color)}}, {text: m.label, font: {name: FONT, size: 10, bold: true, color: A("1A1F2B")}}]};
+    dash.getCell("B" + rr).alignment = al("right", {indent: 1});
+    set(dash, "C" + rr, {formula: `COUNTIF(${R.sales.meth},"${m.key}")&" فاتورة"`, result: `${m.n} فاتورة`}, {font: font(8, false, "5B6474"), al: al("right")});
+    set(dash, "D" + rr, {formula: `SUMIF(${R.sales.meth},"${m.key}",${R.sales.amt})`, result: m.v}, {font: font(10, true, m.v < 0 ? "C1121F" : "1A1F2B"), num: NUM, al: al("left", {indent: 1})});
+    set(dash, "E" + rr, {formula: `REPT("▬",MAX(0,ROUND(IF(${R.sales.tot}=0,0,D${rr}/${R.sales.tot})*12,0)))`, result: "▬".repeat(Math.max(0, Math.round((C.T.sales ? m.v / C.T.sales : 0) * 12)))}, {font: font(9, true, m.color.replace("#", "")), al: al("right")});
+    set(dash, "F" + rr, {formula: `IF(${R.sales.tot}=0,0,D${rr}/${R.sales.tot})`, result: C.T.sales ? m.v / C.T.sales : 0}, {font: font(8, false, "5B6474"), num: '0.0%'});
+  });
+  // cash card
+  box(7, 14, 11, 21); cardTitle(7, 11, 14, "حركة الصندوق النقدي", `"صافي اليوم "&TEXT(${CASHREF.net},"#,##0.00")`, "صافي اليوم " + fmt(C.net));
+  const cm = [["G", "رصيد سابق", CASHREF.prev, C.prev, "14213D"], ["H", "+ المقبوضات", CASHREF.rec, C.T.crec, "1E7B45"], ["I", "− المدفوعات", CASHREF.pay, C.T.cpay, "D9822B"]];
+  dash.getRow(16).height = 20; dash.getRow(17).height = 28;
+  for (const [c, l, f, v, col] of cm) { set(dash, c + 16, l, {font: font(8, true, "5B6474")}); set(dash, c + 17, {formula: f, result: v}, {font: font(11, true, col), num: NUM}); }
+  paint(dash, 16, 10, 17, 11, fill("14213D"));
+  dash.mergeCells("J16:K16"); set(dash, "J16", "الرصيد الحالي", {font: font(8, true, "C9D3E8"), fill: fill("14213D")});
+  dash.mergeCells("J17:K17"); set(dash, "J17", {formula: CASHREF.cur, result: C.cur}, {font: font(13, true, "FFFFFF"), fill: fill("14213D"), num: NUM});
+  set(dash, "G19", "= صافي اليوم", {font: font(8, true, "5B6474")}); set(dash, "H19", {formula: CASHREF.net, result: C.net}, {font: font(11, true, "C1121F"), num: NUM});
+  // top lists (snapshot of the day at export time)
+  const topCard = (c1, c2, list, title, who, color, total) => {
+    box(c1, 23, c2, 29);
+    const t5 = list.slice(0, 5), pos = list.reduce((a, [, o]) => a + o.v, 0) || 1, m = t5.length ? t5[0][1].v : 1;
+    cardTitle(c1, c2, 23, title, null, t5.length ? `أعلى ${t5.length} = ${Math.round(t5.reduce((a, [, o]) => a + o.v, 0) / pos * 100)}% من ${who}` : "");
+    t5.forEach(([name, o], i) => {
+      const rr = 24 + i; dash.getRow(rr).height = 21;
+      dash.mergeCells(rr, c1, rr, c1 + 1); set(dash, colL(c1) + rr, `${name}  (${o.n})`, {font: font(9.5, true), al: al("right", {indent: 1})});
+      set(dash, colL(c1 + 2) + rr, "▬".repeat(Math.max(1, Math.round(o.v / m * 11))), {font: font(9, true, i === 0 ? color : "B9C2D3"), al: al("right")});
+      dash.mergeCells(rr, c1 + 3, rr, c2); set(dash, colL(c1 + 3) + rr, r2(o.v), {font: font(10, true), num: NUM, al: al("left", {indent: 1})});
+    });
+  };
+  dash.getRow(22).height = 10;
+  topCard(2, 6, C.topC, "أكبر العملاء اليوم", "المبيعات", "14213D");
+  topCard(7, 11, C.topS, "أكبر الموردين اليوم", "المشتريات", "C1121F");
+  // status cards (live formulas)
+  dash.getRow(30).height = 10;
+  const diffF = `(${CASHREF.rec}-SUMIF(${R.sales.meth},"نقدا",${R.sales.amt}))`, diffV = r2(C.T.crec - C.cashSales);
+  const ok1 = Math.abs(diffV) < 0.005;
+  box(2, 31, 4, 35, ok1 ? "ECF8F1" : "FDEEEE", ok1 ? "BFE3CD" : "F2C4C4");
+  dash.mergeCells("B31:D31"); set(dash, "B31", {formula: `IF(ABS${diffF}<0.005,"✓  الصندوق مطابق للمبيعات النقدية","!  فرق في مطابقة الصندوق: "&TEXT(${diffF},"0.00"))`, result: ok1 ? "✓  الصندوق مطابق للمبيعات النقدية" : "!  فرق في مطابقة الصندوق: " + diffV.toFixed(2)}, {font: font(10, true, ok1 ? "175C35" : "8A1C12"), al: al("right", {indent: 1})});
+  const firstBad = C.checks.findIndex(c => c.state === "bad");
+  const st1 = [["مبيعات نقدية (التقرير)", `SUMIF(${R.sales.meth},"نقدا",${R.sales.amt})`, C.cashSales, NUM], ["مقبوضات الصندوق", CASHREF.rec, C.T.crec, NUM],
+    ["فاتورة بها فرق", `IFERROR(INDEX(${CASHN}!$B$${CR.crec.a}:$B$${CR.crec.b},MATCH("⚠*",${CASHREF.chk},0)),"لا يوجد")`, firstBad >= 0 ? S.t.crec[firstBad].doc : "لا يوجد", null],
+    ["عدد الفروقات", `COUNTIF(${CASHREF.chk},"⚠*")`, C.checks.filter(c => c.state === "bad").length, null]];
+  st1.forEach(([l, f, v, num], i) => { const rr = 32 + i; dash.mergeCells(rr, 2, rr, 3); set(dash, "B" + rr, l, {font: font(9, false, "5B6474"), al: al("right", {indent: 1})}); set(dash, "D" + rr, {formula: f, result: v}, {font: font(9, true), num}); });
+  const mt = r2(C.meth.reduce((a, m) => a + m.v, 0)), msF = "(" + METHODS.map(([k]) => `SUMIF(${R.sales.meth},"${k}",${R.sales.amt})`).join("+") + ")", ok2 = Math.abs(mt - C.T.sales) < 0.005;
+  box(5, 31, 7, 34, ok2 ? "ECF8F1" : "FDEEEE", ok2 ? "BFE3CD" : "F2C4C4");
+  dash.mergeCells("E31:G31"); set(dash, "E31", {formula: `IF(ABS(${msF}-${R.sales.tot})<0.005,"✓  طرق الدفع مكتملة","!  مبيعات بدون طريقة دفع")`, result: ok2 ? "✓  طرق الدفع مكتملة" : "!  مبيعات بدون طريقة دفع"}, {font: font(10, true, ok2 ? "175C35" : "8A1C12"), al: al("right", {indent: 1})});
+  [["مجموع الطرق", msF.slice(1, -1), mt], ["إجمالي المبيعات", R.sales.tot, C.T.sales], ["الفرق", "G32-G33", r2(mt - C.T.sales)]].forEach(([l, f, v], i) => { const rr = 32 + i; dash.mergeCells(rr, 5, rr, 6); set(dash, "E" + rr, l, {font: font(9, false, "5B6474"), al: al("right", {indent: 1})}); set(dash, "G" + rr, {formula: f, result: v}, {font: font(9, true), num: NUM}); });
+  box(8, 31, 11, 35, "F4F6FB", "DCE2EE");
+  dash.mergeCells("H31:K31"); set(dash, "H31", "i  مؤشرات سريعة", {font: font(10, true, "14213D"), al: al("right", {indent: 1})});
+  const ts = S.t.sales.filter(x => x.amount > 0).sort((a, b) => b.amount - a.amount)[0], tp = S.t.purch.filter(x => x.amount > 0).sort((a, b) => b.amount - a.amount)[0];
+  const st3 = [["نسبة المبيعات الآجلة", `IF(${R.sales.tot}=0,0,SUMIF(${R.sales.meth},"اجل",${R.sales.amt})/${R.sales.tot})`, C.T.sales ? C.meth[0].v / C.T.sales : 0, "0.0%"],
+    ["أكبر فاتورة بيع · " + (ts ? ts.name : "—"), `MAX(${R.sales.amt})`, ts ? ts.amount : 0, NUM], ["أكبر فاتورة شراء · " + (tp ? tp.name : "—"), `MAX(${R.purch.amt})`, tp ? tp.amount : 0, NUM],
+    ["عدد العملاء المختلفين", null, C.topC.length, null]];
+  st3.forEach(([l, f, v, num], i) => { const rr = 32 + i; dash.mergeCells(rr, 8, rr, 10); set(dash, "H" + rr, l, {font: font(9, false, "5B6474"), al: al("right", {indent: 1})}); set(dash, "K" + rr, f ? {formula: f, result: v} : v, {font: font(9, true), num}); });
+  dash.getRow(31).height = 26;
+  dash.mergeCells("B37:K37"); set(dash, "B37", "•  التاريخ والأرقام في هذه الورقة مرتبطة بورقتي «العمليات اليومية» و«الصندوق النقدي» وتتحدث تلقائيًا عند تعديلهما.", {font: font(8, false, "5B6474"), al: al("right", {indent: 1})});
+  ops.getCell("A1").value = null;
+  return wb.xlsx.writeBuffer();
+}
+
+/* ---------- PDF export: pages drawn on canvas (browser shapes the Arabic), packed into an A4 PDF ---------- */
+const PW = 595.28, PH = 841.89, PL = 28, PR = PW - 28, PCW = PR - PL, PSC = 2.6, PBOTTOM = PH - 40;
+const P = {ink: "#14213D", ink2: "#33415C", red: "#C1121F", gold: "#E9A100", teal: "#2A7F8F", green: "#1E7B45", orange: "#D9822B", slate: "#8D99AE",
+  muted: "#5B6474", line: "#E3E7EF", line2: "#F0F2F6", head: "#EEF2F8", zebra: "#FAFBFD", cream: "#FFF6DC", creamLine: "#F2DFA6", herosub: "#C9D3E8", text: "#1A1F2B"};
+const CHIP = {"اجل": ["#E3E6ED", "#14213D", "آجل"], "شبكة": ["#DCEEF1", "#2A7F8F", "شبكة"], "نقدا": ["#FDF0CC", "#8A6100", "نقدًا"], "تحويل": ["#E8E5FC", "#5B4BD6", "تحويل"], "على الحساب": ["#FCE3E5", "#C1121F", "مردود"]};
+const FF = '"Cairo","Segoe UI",Tahoma,sans-serif';
+
+function pRR(g, x, y, w, h, r, fill, stroke, lw = 0.8) {
+  g.beginPath(); g.roundRect ? g.roundRect(x, y, w, h, r) : g.rect(x, y, w, h);
+  if (fill) { g.fillStyle = fill; g.fill(); }
+  if (stroke) { g.strokeStyle = stroke; g.lineWidth = lw; g.stroke(); }
+}
+function pRRTop(g, x, y, w, h, r, fill) { g.beginPath(); g.roundRect ? g.roundRect(x, y, w, h, [r, r, 0, 0]) : g.rect(x, y, w, h); g.fillStyle = fill; g.fill(); }
+function pT(g, s, x, y, o = {}) {
+  const {size = 9, weight = 400, color = P.text, align = "right", dir = "rtl", maxW = 0} = o;
+  s = String(s ?? "");
+  g.font = `${weight} ${size}px ${FF}`; g.direction = dir; g.textAlign = align; g.textBaseline = "middle"; g.fillStyle = color;
+  if (maxW && g.measureText(s).width > maxW) { while (s.length > 1 && g.measureText(s + "…").width > maxW) s = s.slice(0, -1); s += "…"; }
+  g.fillText(s, x, y);
+  return g.measureText(s).width;
+}
+function pW(g, s, size, weight) { g.font = `${weight} ${size}px ${FF}`; return g.measureText(String(s)).width; }
+
+function pdfPages(logoImg) {
+  const C = calc(), pages = [];
+  const page = () => { const c = document.createElement("canvas"); c.width = Math.round(PW * PSC); c.height = Math.round(PH * PSC); const g = c.getContext("2d"); g.scale(PSC, PSC); g.fillStyle = "#FFFFFF"; g.fillRect(0, 0, PW, PH); pages.push(c); return g; };
+  const logo = (g, x, y, w, h) => { if (!logoImg) return; const r = Math.min(w / logoImg.width, h / logoImg.height); const lw = logoImg.width * r, lh = logoImg.height * r; g.drawImage(logoImg, x + (w - lw) / 2, y + (h - lh) / 2, lw, lh); };
+  const date = dmy(S.date);
+
+  /* ===== page 1: dashboard ===== */
+  let g = page();
+  // hero
+  const hy = 28, hh = 96;
+  g.save(); pRR(g, PL, hy, PCW, hh, 10); g.clip();
+  const lg = g.createLinearGradient(PL, 0, PR, 0); lg.addColorStop(0, "#24386A"); lg.addColorStop(.4, "#1D2D52"); lg.addColorStop(1, P.ink); g.fillStyle = lg; g.fillRect(PL, hy, PCW, hh);
+  const rg = g.createRadialGradient(PL + 20, hy + 10, 0, PL + 20, hy + 10, 120); rg.addColorStop(0, "rgba(233,161,0,.25)"); rg.addColorStop(1, "rgba(233,161,0,0)"); g.fillStyle = rg; g.fillRect(PL, hy, 200, hh);
+  g.restore();
+  pT(g, "شركة الشبح المتقدمة للتجارة", PR - 16, hy + 26, {size: 20, weight: 800, color: "#FFFFFF"});
+  pT(g, "التقرير اليومي الموحّد · العمليات وإفصاح الصندوق النقدي", PR - 16, hy + 49, {size: 9.5, weight: 500, color: P.herosub});
+  pRR(g, PL + 14, hy + 12, 104, 48, 8, "#FFFFFF"); logo(g, PL + 20, hy + 16, 92, 40);
+  let cx = PR - 16;
+  for (const [lab, val, ltr] of [["التاريخ", date, true], ["اليوم", dayName(S.date)], ["الفرع", "الرياض"], ["العملة", "ريال سعودي شامل الضريبة"]]) {
+    const w1 = pW(g, lab, 8.5, 700), w2 = pW(g, val, 8.5, 600), w = w1 + w2 + 26;
+    pRR(g, cx - w, hy + 66, w, 18, 9, "rgba(255,255,255,.10)", "rgba(255,255,255,.22)", .7);
+    pT(g, lab, cx - 10, hy + 75, {size: 8.5, weight: 700, color: P.gold});
+    pT(g, val, cx - 15 - w1, hy + 75, {size: 8.5, weight: 600, color: "#FFFFFF", dir: ltr ? "ltr" : "rtl", align: "right"});
+    cx -= w + 7;
+  }
+  // stripe
+  const sy = hy + hh + 6; [[P.gold, 0, 1 / 3], [P.red, 1 / 3, 2 / 3], [P.ink, 2 / 3, 1]].forEach(([c, a, b]) => { g.fillStyle = c; g.fillRect(PL + PCW * a, sy, PCW * (b - a), 4); });
+  // KPI cards
+  const K = [["المبيعات", "sales", P.ink], ["المشتريات", "purch", P.red], ["المصروفات", "exp", P.gold], ["سندات التحصيل", "rec", P.teal], ["سندات الدفع", "pay", P.slate]];
+  const ky = sy + 12, kh = 66, kg = 8, kw = (PCW - 4 * kg) / 5;
+  K.forEach(([lab, k, col], i) => {
+    const x = PR - (i + 1) * kw - i * kg, n = S.t[k].filter(r => typeof r.amount === "number").length, share = C.grand ? C.T[k] / C.grand : 0;
+    pRR(g, x, ky, kw, kh, 7, "#FFFFFF", P.line);
+    g.save(); pRR(g, x, ky, kw, kh, 7); g.clip(); g.fillStyle = col; g.fillRect(x, ky, kw, 3.2); g.restore();
+    pT(g, lab, x + kw - 9, ky + 13, {size: 7.8, weight: 700, color: P.muted});
+    const ct = `${n} عملية`, cw = pW(g, ct, 7, 700) + 10; pRR(g, x + 7, ky + 7, cw, 12, 6, "#F1F3F8"); pT(g, ct, x + 7 + cw / 2, ky + 13.2, {size: 7, weight: 700, color: P.muted, align: "center"});
+    pT(g, fmt(C.T[k]), x + kw - 9, ky + 33, {size: 13.5, weight: 800, color: P.ink, dir: "ltr"});
+    pRR(g, x + 9, ky + 45, kw - 18, 4.5, 2.25, "#EEF1F6");
+    const bw = Math.max((kw - 18) * share, 2); pRR(g, x + kw - 9 - bw, ky + 45, bw, 4.5, 2.25, col);
+    pT(g, (share * 100).toFixed(2) + "% من المجموع", x + kw - 9, ky + 57, {size: 7.2, color: P.muted});
+  });
+  // grand total
+  const ty = ky + kh + 8;
+  const tg = g.createLinearGradient(PR, 0, PL, 0); tg.addColorStop(0, "#FFF6DC"); tg.addColorStop(1, "#FFFBF0");
+  pRR(g, PL, ty, PCW, 34, 8, tg, P.creamLine);
+  const cnt = OPS.reduce((a, k) => a + S.t[k].filter(r => typeof r.amount === "number").length, 0);
+  pT(g, `مجموع العمليات · ${cnt} عملية`, PR - 14, ty + 17, {size: 10.5, weight: 700, color: P.ink});
+  pT(g, fmt(C.grand), PL + 14, ty + 17, {size: 16, weight: 800, color: P.red, dir: "ltr", align: "left"});
+  // cards row 1
+  const half = (PCW - 10) / 2, c1y = ty + 44, c1h = 196;
+  const cardHead = (x, y, w, title, sub, subColor) => {
+    pRR(g, x, y, w, 0, 0); pRR(g, x + w - 15, y + 10, 3.2, 12, 1.6, P.red);
+    pT(g, title, x + w - 23, y + 16.5, {size: 10, weight: 800, color: P.ink});
+    if (sub) pT(g, sub, x + 12, y + 16.5, {size: 7.8, color: subColor || P.muted, align: "left", dir: "rtl"});
+    g.fillStyle = "#EEF1F6"; g.fillRect(x + 1, y + 31, w - 2, 1);
+  };
+  // payment methods (right)
+  let x = PR - half; pRR(g, x, c1y, half, c1h, 9, "#FFFFFF", P.line);
+  cardHead(x, c1y, half, "المبيعات حسب طريقة الدفع", "صافي " + fmt(C.T.sales));
+  const gross = C.meth.filter(m => m.v > 0).reduce((a, m) => a + m.v, 0) || 1;
+  const px = x + 12, pw = half - 24, py = c1y + 44;
+  g.save(); pRR(g, px, py, pw, 13, 6.5, "#EEF1F6"); g.clip();
+  let xr = px + pw; for (const m of C.meth) if (m.v > 0) { const sw = m.v / gross * pw; g.fillStyle = m.color; g.fillRect(xr - sw, py, sw, 13); xr -= sw; }
+  g.restore();
+  C.meth.forEach((m, i) => {
+    const ly = py + 32 + i * 25;
+    pRR(g, x + half - 22, ly - 4.5, 9, 9, 2.5, m.color);
+    const lw = pT(g, m.label, x + half - 28, ly, {size: 9.5, weight: 700});
+    pT(g, `· ${m.n} فاتورة`, x + half - 33 - lw, ly, {size: 7.5, color: P.muted});
+    pT(g, fmt(m.v), x + 118, ly, {size: 9.5, weight: 700, color: m.v < 0 ? P.red : P.text, dir: "ltr", align: "right"});
+    pT(g, (C.T.sales ? m.v / C.T.sales * 100 : 0).toFixed(1) + "%", x + 14, ly, {size: 7.8, color: P.muted, dir: "ltr", align: "left"});
+    if (i < 4) { g.strokeStyle = "#EEF1F6"; g.setLineDash([2, 2]); g.beginPath(); g.moveTo(x + 12, ly + 12.5); g.lineTo(x + half - 12, ly + 12.5); g.stroke(); g.setLineDash([]); }
+  });
+  // cash waterfall (left)
+  x = PL; pRR(g, x, c1y, half, c1h, 9, "#FFFFFF", P.line);
+  cardHead(x, c1y, half, "حركة الصندوق النقدي", "صافي اليوم " + fmt(C.net), P.red);
+  {
+    const prev = C.prev, rec = C.T.crec, pay = C.T.cpay, cur = C.cur;
+    const BASE = c1y + c1h - 26, TOP = c1y + 58, bw = 46, ax = x + 16, aw = half - 32, gap = (aw - 4 * bw) / 3;
+    const lo = Math.min(prev, cur, prev + rec - pay) - Math.max(rec, pay, 1) * 1.6, hi = Math.max(prev + rec, prev, cur) + Math.max(rec, pay, 1) * .35;
+    const Y = v => BASE - (v - lo) / ((hi - lo) || 1) * (BASE - TOP);
+    g.fillStyle = "#DDE2EB"; g.fillRect(ax, BASE, aw, .8);
+    const steps = [["رصيد سابق", null, prev, P.ink, fmt(prev)], ["المقبوضات", prev, prev + rec, P.green, "+" + fmt(rec)], ["المدفوعات", prev + rec - pay, prev + rec, P.orange, "-" + fmt(pay)], ["الرصيد الحالي", null, cur, P.red, fmt(cur)]];
+    steps.forEach(([lab, a, b, col, tx], i) => {
+      const bx = ax + aw - bw - i * (bw + gap);
+      const top = Y(a == null ? b : Math.max(a, b)), bot = a == null ? BASE : Y(Math.min(a, b));
+      pRR(g, bx, top, bw, Math.max(bot - top, 2), 4, col);
+      if (i < 3) { const ly = i === 2 ? Y(prev + rec - pay) : (i === 0 ? Y(prev) : Y(prev + rec)); g.strokeStyle = "#9AA3B2"; g.setLineDash([2.5, 2.5]); g.beginPath(); g.moveTo(bx - gap, ly); g.lineTo(bx, ly); g.stroke(); g.setLineDash([]); }
+      pT(g, tx, bx + bw / 2, top - 7, {size: 8.2, weight: 800, color: P.ink, dir: "ltr", align: "center"});
+      pT(g, lab, bx + bw / 2, BASE + 11, {size: 8, weight: 600, color: P.muted, align: "center"});
+    });
+  }
+  // top customers / suppliers
+  const c2y = c1y + c1h + 10, c2h = 156;
+  const topCard = (x, list, title, who, color) => {
+    pRR(g, x, c2y, half, c2h, 9, "#FFFFFF", P.line);
+    const t5 = list.slice(0, 5), pos = list.reduce((a, [, o]) => a + o.v, 0) || 1;
+    cardHead(x, c2y, half, title, t5.length ? `أعلى ${t5.length} = ${Math.round(t5.reduce((a, [, o]) => a + o.v, 0) / pos * 100)}% من ${who}` : "");
+    if (!t5.length) { pT(g, "لا توجد بيانات لهذا اليوم", x + half - 14, c2y + 52, {size: 8.5, color: P.muted}); return; }
+    const m = t5[0][1].v, bx1 = x + 86, bx2 = x + half - 124;
+    t5.forEach(([name, o], i) => {
+      const ly = c2y + 50 + i * 23;
+      const nw = pT(g, name, x + half - 12, ly, {size: 9, weight: 700, maxW: 88});
+      pT(g, `(${o.n})`, x + half - 16 - nw, ly, {size: 7.2, color: P.muted});
+      pRR(g, bx1, ly - 3.5, bx2 - bx1, 7, 3.5, "#F1F3F8");
+      const bw = Math.max((bx2 - bx1) * o.v / m, 3); pRR(g, bx2 - bw, ly - 3.5, bw, 7, 3.5, i === 0 ? color : "#B9C2D3");
+      pT(g, fmt(o.v), x + 12, ly, {size: 9, weight: 700, dir: "ltr", align: "left"});
+    });
+  };
+  topCard(PR - half, C.topC, "أكبر العملاء اليوم", "المبيعات", P.ink);
+  topCard(PL, C.topS, "أكبر الموردين اليوم", "المشتريات", P.red);
+  // status cards
+  const s3y = c2y + c2h + 10, sw = (PCW - 16) / 3, sh = 92;
+  const diff = r2(C.T.crec - C.cashSales), bad = C.checks.map((c, i) => [c, S.t.crec[i]]).filter(([c]) => c.state === "bad");
+  const mt = r2(C.meth.reduce((a, m) => a + m.v, 0));
+  const ts = S.t.sales.filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount)[0], tp = S.t.purch.filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount)[0];
+  const cards = [
+    Math.abs(diff) < .005 && !bad.length ? ["ok", "✓", "الصندوق مطابق للمبيعات النقدية", [["المبيعات النقدية", fmt(C.cashSales)], ["مقبوضات الصندوق", fmt(C.T.crec)]]]
+      : ["bad", "!", "فرق في مطابقة الصندوق: " + fmt(diff), bad.length ? bad.slice(0, 1).flatMap(([c, r]) => [["الفاتورة", r.doc], ["في الصندوق", fmt(r.amount)], ["في المبيعات", fmt(c.sale)]]) : [["المبيعات النقدية", fmt(C.cashSales)], ["مقبوضات الصندوق", fmt(C.T.crec)]]],
+    Math.abs(mt - C.T.sales) < .005 ? ["ok", "✓", "طرق الدفع مكتملة", [["مجموع الطرق", fmt(mt)], ["إجمالي المبيعات", fmt(C.T.sales)]]] : ["bad", "!", "مبيعات بدون طريقة دفع", [["غير مصنّف", fmt(r2(C.T.sales - mt))]]],
+    ["info", "i", "مؤشرات سريعة", [["نسبة المبيعات الآجلة", (C.T.sales ? C.meth[0].v / C.T.sales * 100 : 0).toFixed(1) + "%"], ["أكبر فاتورة بيع · " + (ts ? ts.name : "—"), ts ? fmt(ts.amount) : "—"], ["أكبر فاتورة شراء · " + (tp ? tp.name : "—"), tp ? fmt(tp.amount) : "—"]]],
+  ];
+  const tone = {ok: ["#ECF8F1", "#BFE3CD", "#175C35", P.green], bad: ["#FDEEEE", "#F2C4C4", "#8A1C12", P.red], info: ["#F4F6FB", "#DCE2EE", P.ink, P.ink]};
+  cards.forEach(([kind, ic, title, lines], i) => {
+    const x = PR - (i + 1) * sw - i * 8, [bg, bd, fg, icb] = tone[kind];
+    pRR(g, x, s3y, sw, sh, 9, bg, bd);
+    g.beginPath(); g.arc(x + sw - 18, s3y + 17, 7, 0, Math.PI * 2); g.fillStyle = icb; g.fill();
+    pT(g, ic, x + sw - 18, s3y + 17.3, {size: 8, weight: 800, color: "#FFFFFF", align: "center"});
+    pT(g, title, x + sw - 30, s3y + 17, {size: 8.8, weight: 800, color: fg, maxW: sw - 40});
+    lines.forEach(([a, b], j) => { const ly = s3y + 36 + j * 15; pT(g, a, x + sw - 12, ly, {size: 7.8, color: fg, maxW: sw - 80}); pT(g, b, x + 12, ly, {size: 7.8, weight: 700, color: fg, dir: "ltr", align: "left"}); });
+  });
+
+  /* ===== pages 2+: tables ===== */
+  const miniHead = g => {
+    pRR(g, PL, 28, PCW, 30, 7, P.ink);
+    pT(g, "شركة الشبح المتقدمة للتجارة", PR - 12, 43, {size: 11, weight: 800, color: "#FFFFFF"});
+    pT(g, "التقرير اليومي الموحّد · " + date, PL + 86, 43, {size: 8.3, color: P.herosub, align: "left"});
+    pRR(g, PL + 6, 32, 70, 22, 5, "#FFFFFF"); logo(g, PL + 9, 33.5, 64, 19);
+    return 70;
+  };
+  const sectionHead = (g, y, no, title, sub) => {
+    pRR(g, PR - 28, y, 28, 28, 7, P.red); pT(g, no, PR - 14, y + 14.5, {size: 15, weight: 800, color: "#FFFFFF", align: "center"});
+    pT(g, title, PR - 37, y + 9, {size: 15, weight: 800, color: P.ink});
+    pT(g, sub, PR - 37, y + 25, {size: 8.2, color: P.muted});
+    return y + 40;
+  };
+  const OPSCOLS = [["رقم المستند", 82, "doc"], [null, 160, "name"], ["طريقة الدفع", 66, "method"], ["المبلغ", 92, "amount"], [null, PCW - 400, "note"]];
+  const CASHCOLS = [["رقم المستند", 82, "doc"], ["الاسم / العميل أو المورد", 178, "name"], ["المبلغ", 92, "amount"], ["الملاحظات", 92, "note"], ["التحقق مع المبيعات", PCW - 444, "chk"]];
+  let y;
+  const drawTable = (key, cols, labels, checks) => {
+    const rows = S.t[key], cfg = TABLES[key], total = C.T[key];
+    const TH = 22, HH = 17, RH = 15.2, FH = 21;
+    let segTop;
+    const header = (cont) => {
+      pRRTop(g, PL, y, PCW, TH, 7, P.ink);
+      pT(g, cfg.title + (cont ? " (تابع)" : ""), PR - 12, y + TH / 2, {size: 10.5, weight: 800, color: "#FFFFFF"});
+      const t2 = "الإجمالي " + fmt(total), w2 = pW(g, t2, 8, 700);
+      pT(g, t2, PL + 12, y + TH / 2, {size: 8, weight: 700, color: "#FFFFFF", align: "left", dir: "rtl"});
+      pT(g, `${rows.length} عملية · `, PL + 14 + w2, y + TH / 2, {size: 7.8, color: P.herosub, align: "left"});
+      segTop = y; y += TH;
+      g.fillStyle = P.head; g.fillRect(PL, y, PCW, HH);
+      let cx = PR; cols.forEach(([lab, w], i) => { pT(g, lab || labels[i], cx - w / 2, y + HH / 2, {size: 7.6, weight: 700, color: P.ink2, align: "center"}); cx -= w; });
+      y += HH;
+    };
+    const closeSeg = () => { pRR(g, PL, segTop, PCW, y - segTop, 7, null, P.line, .8); };
+    if (y + TH + HH + RH * 3 > PBOTTOM) { g = page(); y = miniHead(g); }
+    header(false);
+    rows.forEach((r, i) => {
+      if (y + RH > PBOTTOM) { closeSeg(); g = page(); y = miniHead(g); header(true); }
+      const neg = typeof r.amount === "number" && r.amount < 0;
+      g.fillStyle = neg ? "#FDEEEE" : (i % 2 ? P.zebra : "#FFFFFF"); g.fillRect(PL + .5, y, PCW - 1, RH);
+      g.fillStyle = P.line2; g.fillRect(PL + .5, y + RH - .6, PCW - 1, .6);
+      let cx = PR; const my = y + RH / 2 + .3;
+      cols.forEach(([, w, f]) => {
+        if (f === "doc") pT(g, r.doc, cx - w / 2, my, {size: 7.8, weight: 600, color: P.ink2, dir: "ltr", align: "center", maxW: w - 6});
+        else if (f === "name") pT(g, r.name, cx - 8, my, {size: 8.2, maxW: w - 14});
+        else if (f === "method") { const ch = CHIP[r.method]; if (ch) { pRR(g, cx - w / 2 - 22, my - 5.6, 44, 11.2, 5.6, ch[0]); pT(g, ch[2], cx - w / 2, my + .2, {size: 7, weight: 700, color: ch[1], align: "center"}); } }
+        else if (f === "amount") pT(g, typeof r.amount === "number" ? fmt(r.amount) : "", cx - w + 10, my, {size: 8.4, weight: 700, color: neg ? P.red : P.text, dir: "ltr", align: "left"});
+        else if (f === "note") pT(g, r.note, cx - w / 2, my, {size: 7.4, color: neg ? P.red : P.muted, align: "center", maxW: w - 8});
+        else if (f === "chk") {
+          const c = checks[i];
+          if (c.state === "ok") pT(g, "✓ مطابق", cx - w / 2, my, {size: 7.8, weight: 700, color: P.green, align: "center"});
+          else if (c.state === "bad") { pRR(g, cx - w / 2 - 28, my - 6, 56, 12, 6, "#FDEEEE"); pT(g, "فرق " + fmt(c.d), cx - w / 2, my, {size: 7.6, weight: 700, color: P.red, align: "center"}); }
+          else pT(g, "—", cx - w / 2, my, {size: 7.8, color: "#A9B1C0", align: "center"});
+        }
+        cx -= w;
+      });
+      y += RH;
+    });
+    if (y + FH > PBOTTOM) { closeSeg(); g = page(); y = miniHead(g); header(true); }
+    g.fillStyle = P.cream; g.fillRect(PL + .5, y, PCW - 1, FH); g.fillStyle = P.ink; g.fillRect(PL + .5, y, PCW - 1, 1.4);
+    pT(g, "المجموع", PR - 12, y + FH / 2 + .5, {size: 9.5, weight: 800, color: P.ink});
+    const amtRight = PR - cols.slice(0, cols.findIndex(c => c[2] === "amount") + 1).reduce((a, c) => a + c[1], 0);
+    pT(g, fmt(total), amtRight + 10, y + FH / 2 + .5, {size: 9.5, weight: 800, color: P.red, dir: "ltr", align: "left"});
+    y += FH; closeSeg(); y += 12;
+  };
+  g = page(); y = miniHead(g);
+  y = sectionHead(g, y, "1", "العمليات اليومية", "المبيعات والمشتريات والمصروفات والسندات");
+  for (const k of OPS) drawTable(k, OPSCOLS, [null, TABLES[k].cols[1], null, null, TABLES[k].cols[4]], []);
+
+  /* ===== cash disclosure ===== */
+  g = page(); y = miniHead(g);
+  y = sectionHead(g, y, "2", "إفصاح الصندوق النقدي", "المقبوضات والمدفوعات النقدية ورصيد الصندوق مع التحقق الآلي مقابل المبيعات");
+  drawTable("crec", CASHCOLS, [], C.checks);
+  drawTable("cpay", CASHCOLS.slice(0, 4).concat([["", PCW - 444, "none"]]), [], []);
+  if (y + 150 > PBOTTOM) { g = page(); y = miniHead(g); }
+  const bw5 = (PCW - 32) / 5, boxes = [["رصيد سابق", C.prev, P.ink], ["+ المقبوضات النقدية", C.T.crec, P.green], ["− المدفوعات النقدية", C.T.cpay, P.orange], ["= صافي اليوم", C.net, P.red], ["الرصيد الحالي (ر.س)", C.cur, "#FFFFFF"]];
+  boxes.forEach(([lab, v, col], i) => {
+    const x = PR - (i + 1) * bw5 - i * 8, cur = i === 4;
+    pRR(g, x, y, bw5, 46, 8, cur ? P.ink : "#FFFFFF", cur ? P.ink : P.line);
+    pT(g, lab, x + bw5 - 9, y + 13, {size: 7.6, weight: 600, color: cur ? P.herosub : P.muted});
+    pT(g, fmt(v), x + bw5 - 9, y + 31, {size: cur ? 13 : 12, weight: 800, color: col, dir: "ltr"});
+  });
+  y += 58;
+  pRR(g, PL, y, PCW, 30, 7, "#F7F8FB"); g.fillStyle = P.gold; g.fillRect(PR - 3, y, 3, 30);
+  pT(g, "ملاحظات", PR - 12, y + 15, {size: 8.5, weight: 800, color: P.ink});
+  pT(g, "المبيعات والمشتريات والمصروفات قيم موجبة ومردوداتها قيم سالبة · المبالغ مدرجة مع الضريبة · الصندوق يُطابق آليًا مع فواتير المبيعات.", PR - 60, y + 15, {size: 7.6, color: P.muted, maxW: PCW - 72});
+  y += 70;
+  const sgw = (PCW - 60) / 3;
+  ["أمين الصندوق", "المحاسب", "مدير الفرع"].forEach((lab, i) => { const x = PR - (i + 1) * sgw - i * 30; g.fillStyle = "#B8C0CE"; g.fillRect(x, y, sgw, 1.2); pT(g, lab, x + sgw / 2, y + 12, {size: 8, weight: 600, color: P.muted, align: "center"}); });
+
+  // footers
+  pages.forEach((c, i) => { const gg = c.getContext("2d"); pT(gg, `التقرير اليومي الموحّد · ${date} · صفحة ${i + 1} من ${pages.length}`, PW / 2, PH - 18, {size: 7.2, color: "#8A93A3", align: "center"}); });
+  return pages;
+}
+
+function pdfFromJpegs(imgs, title, btn) {
+  const enc = new TextEncoder(), chunks = [], offs = []; let off = 0;
+  const push = x => { const b = typeof x === "string" ? enc.encode(x) : x; chunks.push(b); off += b.length; };
+  const obj = (id, fn) => { offs[id] = off; push(`${id} 0 obj\n`); fn(); push("\nendobj\n"); };
+  const hex16 = s => "<FEFF" + [...s].map(ch => { const c = ch.codePointAt(0); if (c > 0xFFFF) { const v = c - 0x10000; return ((0xD800 + (v >> 10)).toString(16) + (0xDC00 + (v & 0x3FF)).toString(16)).toUpperCase(); } return c.toString(16).padStart(4, "0").toUpperCase(); }).join("") + ">";
+  push(new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2D, 0x31, 0x2E, 0x34, 0x0A, 0x25, 0xE2, 0xE3, 0xCF, 0xD3, 0x0A]));
+  const n = imgs.length, infoId = 3 + 3 * n, annId = infoId + 1, apId = infoId + 2, bImgId = infoId + 3;
+  obj(1, () => push(`<< /Type /Catalog /Pages 2 0 R /Lang (ar-SA) /ViewerPreferences << /Direction /R2L /DisplayDocTitle true >>${btn ? ` /AcroForm << /Fields [${annId} 0 R] >>` : ""} >>`));
+  obj(2, () => push(`<< /Type /Pages /Kids [${imgs.map((_, i) => `${3 + 3 * i} 0 R`).join(" ")}] /Count ${n} >>`));
+  imgs.forEach((im, i) => {
+    const pw = im.pw || PW, ph = im.ph || PH, p = 3 + 3 * i, cs = `q ${pw} 0 0 ${ph} 0 0 cm /Im0 Do Q`;
+    obj(p, () => push(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pw} ${ph}] /Resources << /XObject << /Im0 ${p + 2} 0 R >> >> /Contents ${p + 1} 0 R${btn && i === 0 ? ` /Annots [${annId} 0 R]` : ""} >>`));
+    obj(p + 1, () => { push(`<< /Length ${cs.length} >>\nstream\n`); push(cs); push("\nendstream"); });
+    obj(p + 2, () => { push(`<< /Type /XObject /Subtype /Image /Width ${im.w} /Height ${im.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${im.data.length} >>\nstream\n`); push(im.data); push("\nendstream"); });
+  });
+  obj(infoId, () => push(`<< /Title ${hex16(title)} /Producer (Daily Report App) >>`));
+  let size = infoId + 1;
+  if (btn) {
+    const ph0 = imgs[0].ph || PH, x1 = btn.x, y1 = ph0 - btn.y - btn.h, x2 = btn.x + btn.w, y2 = ph0 - btn.y;
+    const js = "this.print({bUI:true,bSilent:false,bShrinkToFit:true});";
+    // /F 0 = shown on screen, never printed
+    obj(annId, () => push(`<< /Type /Annot /Subtype /Widget /FT /Btn /Ff 65536 /T (print) /TU ${hex16("طباعة التقرير")} /F 0 /P 3 0 R /Rect [${x1} ${y1} ${x2} ${y2}] /H /P /MK << >> /AP << /N ${apId} 0 R >> /A << /S /JavaScript /JS (${js.replace(/[()\\]/g, m => "\\" + m)}) >> >>`));
+    const ap = `q ${btn.w} 0 0 ${btn.h} 0 0 cm /B Do Q`;
+    obj(apId, () => { push(`<< /Type /XObject /Subtype /Form /BBox [0 0 ${btn.w} ${btn.h}] /Resources << /XObject << /B ${bImgId} 0 R >> >> /Length ${ap.length} >>\nstream\n`); push(ap); push("\nendstream"); });
+    obj(bImgId, () => { push(`<< /Type /XObject /Subtype /Image /Width ${btn.img.w} /Height ${btn.img.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${btn.img.data.length} >>\nstream\n`); push(btn.img.data); push("\nendstream"); });
+    size = bImgId + 1;
+  }
+  const xref = off;
+  push(`xref\n0 ${size}\n0000000000 65535 f \n`);
+  for (let i = 1; i < size; i++) push(String(offs[i]).padStart(10, "0") + " 00000 n \n");
+  push(`trailer\n<< /Size ${size} /Root 1 0 R /Info ${infoId} 0 R >>\nstartxref\n${xref}\n%%EOF`);
+  const out = new Uint8Array(off); let o = 0; for (const c of chunks) { out.set(c, o); o += c.length; }
+  return out;
+}
+
+
+/* ---------- phone PDF: tall narrow pages, one column, large type ---------- */
+const MW = 390, MH = 844, ML = 16, MR = MW - 16, MCW = MR - ML, MSC = 3, MBOTTOM = MH - 34;
+function pWrap(g, s, maxW, size, weight) {
+  const words = String(s).split(" "), lines = []; let cur = "";
+  for (const w of words) { const t = cur ? cur + " " + w : w; if (pW(g, t, size, weight) > maxW && cur) { lines.push(cur); cur = w; } else cur = t; }
+  if (cur) lines.push(cur); return lines;
+}
+function pdfPagesMobile(logoImg) {
+  const C = calc(), pages = [], date = dmy(S.date);
+  const logo = (g, x, y, w, h) => { if (!logoImg) return; const r = Math.min(w / logoImg.width, h / logoImg.height); const lw = logoImg.width * r, lh = logoImg.height * r; g.drawImage(logoImg, x + (w - lw) / 2, y + (h - lh) / 2, lw, lh); };
+  let g, y;
+  const page = () => { const c = document.createElement("canvas"); c.width = MW * MSC; c.height = MH * MSC; g = c.getContext("2d"); g.scale(MSC, MSC); g.fillStyle = "#F3F5F9"; g.fillRect(0, 0, MW, MH); pages.push(c); };
+  const miniHead = () => {
+    pRR(g, ML, 14, MCW, 40, 9, P.ink);
+    pT(g, "شركة الشبح المتقدمة للتجارة", MR - 12, 28, {size: 11.5, weight: 800, color: "#FFFFFF"});
+    pT(g, "التقرير اليومي · " + date, MR - 12, 43, {size: 8.8, color: P.herosub});
+    pRR(g, ML + 6, 20, 66, 28, 6, "#FFFFFF"); logo(g, ML + 9, 22, 60, 24);
+    y = 66;
+  };
+  const newPage = () => { page(); miniHead(); };
+  const need = h => { if (y + h > MBOTTOM) { newPage(); return true; } return false; };
+  const card = (h, title, sub, subColor) => {
+    pRR(g, ML, y, MCW, h, 11, "#FFFFFF", P.line);
+    pRR(g, MR - 16, y + 13, 3.6, 15, 1.8, P.red);
+    pT(g, title, MR - 25, y + 21, {size: 13, weight: 800, color: P.ink});
+    if (sub) pT(g, sub, ML + 12, y + 21, {size: 9.5, color: subColor || P.muted, align: "left", maxW: 140});
+    g.fillStyle = "#EEF1F6"; g.fillRect(ML + 1, y + 40, MCW - 2, 1);
+  };
+
+  /* hero */
+  page();
+  y = 16;
+  g.save(); pRR(g, ML, y, MCW, 158, 14); g.clip();
+  const lg = g.createLinearGradient(ML, 0, MR, 0); lg.addColorStop(0, "#24386A"); lg.addColorStop(.45, "#1D2D52"); lg.addColorStop(1, P.ink); g.fillStyle = lg; g.fillRect(ML, y, MCW, 158);
+  const rg = g.createRadialGradient(ML + 10, y + 10, 0, ML + 10, y + 10, 140); rg.addColorStop(0, "rgba(233,161,0,.25)"); rg.addColorStop(1, "rgba(233,161,0,0)"); g.fillStyle = rg; g.fillRect(ML, y, 200, 158);
+  g.restore();
+  pRR(g, ML + 14, y + 14, 90, 42, 8, "#FFFFFF"); logo(g, ML + 19, y + 17, 80, 36);
+  pT(g, "شركة الشبح", MR - 14, y + 26, {size: 19, weight: 800, color: "#FFFFFF"});
+  pT(g, "المتقدمة للتجارة", MR - 14, y + 50, {size: 19, weight: 800, color: "#FFFFFF"});
+  pT(g, "التقرير اليومي الموحّد · العمليات وإفصاح الصندوق", MR - 14, y + 76, {size: 10, weight: 500, color: P.herosub});
+  let cx = MR - 14, cy = y + 96;
+  for (const [lab, val, ltr] of [["التاريخ", date, true], ["اليوم", dayName(S.date)], ["الفرع", "الرياض"], ["العملة", "ريال سعودي شامل الضريبة"]]) {
+    const w1 = pW(g, lab, 9.5, 700), w2 = pW(g, val, 9.5, 600), w = w1 + w2 + 26;
+    if (cx - w < ML + 12) { cx = MR - 14; cy += 26; }
+    pRR(g, cx - w, cy, w, 21, 10.5, "rgba(255,255,255,.10)", "rgba(255,255,255,.22)", .7);
+    pT(g, lab, cx - 10, cy + 10.5, {size: 9.5, weight: 700, color: P.gold});
+    pT(g, val, cx - 15 - w1, cy + 10.5, {size: 9.5, weight: 600, color: "#FFFFFF", dir: ltr ? "ltr" : "rtl"});
+    cx -= w + 6;
+  }
+  y += 164;
+  [[P.gold, 0, 1 / 3], [P.red, 1 / 3, 2 / 3], [P.ink, 2 / 3, 1]].forEach(([c, a, b]) => { g.fillStyle = c; g.fillRect(ML + MCW * a, y, MCW * (b - a), 4); });
+  y += 12;
+
+  /* KPI grid */
+  const K = [["المبيعات", "sales", P.ink], ["المشتريات", "purch", P.red], ["المصروفات", "exp", P.gold], ["سندات التحصيل", "rec", P.teal], ["سندات الدفع", "pay", P.slate]];
+  const kw = (MCW - 10) / 2, kh = 82;
+  K.forEach(([lab, k, col], i) => {
+    const full = i === 4, w = full ? MCW : kw, x = full ? ML : (i % 2 === 0 ? MR - kw : ML), yy = y + Math.floor(i / 2) * (kh + 10);
+    const n = S.t[k].filter(r => typeof r.amount === "number").length, share = C.grand ? C.T[k] / C.grand : 0;
+    pRR(g, x, yy, w, kh, 10, "#FFFFFF", P.line);
+    g.save(); pRR(g, x, yy, w, kh, 10); g.clip(); g.fillStyle = col; g.fillRect(x, yy, w, 4); g.restore();
+    pT(g, lab, x + w - 11, yy + 19, {size: 10.5, weight: 700, color: P.muted});
+    const ct = `${n} عملية`, cw = pW(g, ct, 8.5, 700) + 12; pRR(g, x + 9, yy + 11, cw, 15, 7.5, "#F1F3F8"); pT(g, ct, x + 9 + cw / 2, yy + 18.8, {size: 8.5, weight: 700, color: P.muted, align: "center"});
+    pT(g, fmt(C.T[k]), x + w - 11, yy + 43, {size: 17, weight: 800, color: P.ink, dir: "ltr"});
+    pRR(g, x + 11, yy + 58, w - 22, 5, 2.5, "#EEF1F6");
+    const bw = Math.max((w - 22) * share, 3); pRR(g, x + w - 11 - bw, yy + 58, bw, 5, 2.5, col);
+    pT(g, (share * 100).toFixed(2) + "% من المجموع", x + w - 11, yy + 72, {size: 8.8, color: P.muted});
+  });
+  y += 3 * (kh + 10);
+  const tg = g.createLinearGradient(MR, 0, ML, 0); tg.addColorStop(0, "#FFF6DC"); tg.addColorStop(1, "#FFFBF0");
+  pRR(g, ML, y, MCW, 50, 10, tg, P.creamLine);
+  const cnt = OPS.reduce((a, k) => a + S.t[k].filter(r => typeof r.amount === "number").length, 0);
+  pT(g, "مجموع العمليات", MR - 14, y + 18, {size: 11.5, weight: 800, color: P.ink});
+  pT(g, `${cnt} عملية`, MR - 14, y + 35, {size: 9.5, color: P.muted});
+  pT(g, fmt(C.grand), ML + 14, y + 25, {size: 20, weight: 800, color: P.red, dir: "ltr", align: "left"});
+  y += 60;
+
+  /* payment methods */
+  need(222);
+  card(212, "المبيعات حسب طريقة الدفع", "صافي " + fmt(C.T.sales));
+  {
+    const gross = C.meth.filter(m => m.v > 0).reduce((a, m) => a + m.v, 0) || 1, px = ML + 14, pw = MCW - 28, py = y + 54;
+    g.save(); pRR(g, px, py, pw, 15, 7.5, "#EEF1F6"); g.clip();
+    let xr = px + pw; for (const m of C.meth) if (m.v > 0) { const sw = m.v / gross * pw; g.fillStyle = m.color; g.fillRect(xr - sw, py, sw, 15); xr -= sw; }
+    g.restore();
+    C.meth.forEach((m, i) => {
+      const ly = py + 37 + i * 27;
+      pRR(g, MR - 26, ly - 5.5, 11, 11, 3, m.color);
+      const lw = pT(g, m.label, MR - 33, ly, {size: 11.5, weight: 700});
+      pT(g, `· ${m.n} فاتورة`, MR - 38 - lw, ly, {size: 9, color: P.muted});
+      pT(g, fmt(m.v), ML + 150, ly, {size: 11.5, weight: 800, color: m.v < 0 ? P.red : P.text, dir: "ltr"});
+      pT(g, (C.T.sales ? m.v / C.T.sales * 100 : 0).toFixed(1) + "%", ML + 14, ly, {size: 9.5, color: P.muted, dir: "ltr", align: "left"});
+      if (i < 4) { g.strokeStyle = "#EEF1F6"; g.setLineDash([2, 2]); g.beginPath(); g.moveTo(ML + 14, ly + 13.5); g.lineTo(MR - 14, ly + 13.5); g.stroke(); g.setLineDash([]); }
+    });
+  }
+  y += 222;
+
+  /* cash waterfall */
+  need(236);
+  card(226, "حركة الصندوق النقدي", "صافي اليوم " + fmt(C.net), P.red);
+  {
+    const prev = C.prev, rec = C.T.crec, pay = C.T.cpay, cur = C.cur;
+    const BASE = y + 198, TOP = y + 70, bw = 62, ax = ML + 18, aw = MCW - 36, gap = (aw - 4 * bw) / 3;
+    const lo = Math.min(prev, cur, prev + rec - pay) - Math.max(rec, pay, 1) * 1.6, hi = Math.max(prev + rec, prev, cur) + Math.max(rec, pay, 1) * .35;
+    const Y = v => BASE - (v - lo) / ((hi - lo) || 1) * (BASE - TOP);
+    g.fillStyle = "#DDE2EB"; g.fillRect(ax, BASE, aw, 1);
+    [["رصيد سابق", null, prev, P.ink, fmt(prev)], ["المقبوضات", prev, prev + rec, P.green, "+" + fmt(rec)], ["المدفوعات", prev + rec - pay, prev + rec, P.orange, "-" + fmt(pay)], ["الرصيد الحالي", null, cur, P.red, fmt(cur)]].forEach(([lab, a, b, col, tx], i) => {
+      const bx = ax + aw - bw - i * (bw + gap), top = Y(a == null ? b : Math.max(a, b)), bot = a == null ? BASE : Y(Math.min(a, b));
+      pRR(g, bx, top, bw, Math.max(bot - top, 2), 5, col);
+      if (i < 3) { const ly = i === 2 ? Y(prev + rec - pay) : (i === 0 ? Y(prev) : Y(prev + rec)); g.strokeStyle = "#9AA3B2"; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(bx - gap, ly); g.lineTo(bx, ly); g.stroke(); g.setLineDash([]); }
+      pT(g, tx, bx + bw / 2, top - 9, {size: 9.5, weight: 800, color: P.ink, dir: "ltr", align: "center"});
+      pT(g, lab, bx + bw / 2, BASE + 14, {size: 9.5, weight: 600, color: P.muted, align: "center"});
+    });
+  }
+  y += 236;
+
+  /* top lists */
+  const topCard = (list, title, who, color) => {
+    const t5 = list.slice(0, 5), h = 52 + Math.max(t5.length, 1) * 28;
+    need(h + 10);
+    const pos = list.reduce((a, [, o]) => a + o.v, 0) || 1;
+    card(h, title, t5.length ? `أعلى ${t5.length} = ${Math.round(t5.reduce((a, [, o]) => a + o.v, 0) / pos * 100)}% من ${who}` : "");
+    if (!t5.length) pT(g, "لا توجد بيانات لهذا اليوم", MR - 14, y + 62, {size: 10, color: P.muted});
+    const m = t5.length ? t5[0][1].v : 1;
+    t5.forEach(([name, o], i) => {
+      const ly = y + 58 + i * 28;
+      const nw = pT(g, name, MR - 14, ly, {size: 11, weight: 700, maxW: 140});
+      pT(g, `(${o.n})`, MR - 19 - nw, ly, {size: 8.5, color: P.muted});
+      pT(g, fmt(o.v), ML + 14, ly, {size: 11, weight: 800, dir: "ltr", align: "left"});
+      const bx1 = ML + 14, bx2 = MR - 14; pRR(g, bx1, ly + 9, bx2 - bx1, 4, 2, "#F1F3F8");
+      const bw = Math.max((bx2 - bx1) * o.v / m, 3); pRR(g, bx2 - bw, ly + 9, bw, 4, 2, i === 0 ? color : "#B9C2D3");
+    });
+    y += h + 10;
+  };
+  topCard(C.topC, "أكبر العملاء اليوم", "المبيعات", P.ink);
+  topCard(C.topS, "أكبر الموردين اليوم", "المشتريات", P.red);
+
+  /* status */
+  const diff = r2(C.T.crec - C.cashSales), bad = C.checks.map((c, i) => [c, S.t.crec[i]]).filter(([c]) => c.state === "bad");
+  const mt = r2(C.meth.reduce((a, m) => a + m.v, 0));
+  const ts = S.t.sales.filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount)[0], tp = S.t.purch.filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount)[0];
+  const cards = [
+    Math.abs(diff) < .005 && !bad.length ? ["ok", "✓", "الصندوق مطابق للمبيعات النقدية", [["المبيعات النقدية", fmt(C.cashSales)], ["مقبوضات الصندوق", fmt(C.T.crec)]]]
+      : ["bad", "!", "فرق في مطابقة الصندوق: " + fmt(diff), bad.length ? bad.flatMap(([c, r]) => [["الفاتورة", r.doc], ["في الصندوق", fmt(r.amount)], ["في المبيعات", fmt(c.sale)]]) : [["المبيعات النقدية", fmt(C.cashSales)], ["مقبوضات الصندوق", fmt(C.T.crec)]]],
+    Math.abs(mt - C.T.sales) < .005 ? ["ok", "✓", "طرق الدفع مكتملة", [["مجموع الطرق", fmt(mt)], ["إجمالي المبيعات", fmt(C.T.sales)]]] : ["bad", "!", "مبيعات بدون طريقة دفع", [["غير مصنّف", fmt(r2(C.T.sales - mt))]]],
+    ["info", "i", "مؤشرات سريعة", [["نسبة المبيعات الآجلة", (C.T.sales ? C.meth[0].v / C.T.sales * 100 : 0).toFixed(1) + "%"], ["أكبر فاتورة بيع · " + (ts ? ts.name : "—"), ts ? fmt(ts.amount) : "—"], ["أكبر فاتورة شراء · " + (tp ? tp.name : "—"), tp ? fmt(tp.amount) : "—"]]],
+  ];
+  const tone = {ok: ["#ECF8F1", "#BFE3CD", "#175C35", P.green], bad: ["#FDEEEE", "#F2C4C4", "#8A1C12", P.red], info: ["#F4F6FB", "#DCE2EE", P.ink, P.ink]};
+  for (const [kind, ic, title, lines] of cards) {
+    const h = 40 + lines.length * 19 + 6; need(h + 10);
+    const [bg, bd, fg, icb] = tone[kind];
+    pRR(g, ML, y, MCW, h, 11, bg, bd);
+    g.beginPath(); g.arc(MR - 22, y + 20, 9, 0, Math.PI * 2); g.fillStyle = icb; g.fill();
+    pT(g, ic, MR - 22, y + 20.5, {size: 10, weight: 800, color: "#FFFFFF", align: "center"});
+    pT(g, title, MR - 38, y + 20, {size: 11.5, weight: 800, color: fg, maxW: MCW - 56});
+    lines.forEach(([a, b], j) => { const ly = y + 44 + j * 19; pT(g, a, MR - 16, ly, {size: 10, color: fg, maxW: MCW - 130}); pT(g, b, ML + 14, ly, {size: 10.5, weight: 800, color: fg, dir: "ltr", align: "left"}); });
+    y += h + 10;
+  }
+
+  /* section + list tables */
+  const section = (no, title, sub) => {
+    newPage();
+    pRR(g, MR - 34, y, 34, 34, 9, P.red); pT(g, no, MR - 17, y + 17.5, {size: 18, weight: 800, color: "#FFFFFF", align: "center"});
+    pT(g, title, MR - 44, y + 11, {size: 18, weight: 800, color: P.ink});
+    pT(g, sub, MR - 44, y + 29, {size: 9.5, color: P.muted, maxW: MCW - 50});
+    y += 48;
+  };
+  const listTable = (key, checks) => {
+    const rows = S.t[key], cfg = TABLES[key], total = C.T[key], TH = 36, RH = 40, FH = 36;
+    let segTop;
+    const head = cont => {
+      g.beginPath(); g.roundRect(ML, y, MCW, TH, [10, 10, 0, 0]); g.fillStyle = P.ink; g.fill();
+      pT(g, cfg.title + (cont ? " (تابع)" : ""), MR - 14, y + 13, {size: 13.5, weight: 800, color: "#FFFFFF"});
+      pT(g, `${rows.length} عملية`, MR - 14, y + 28, {size: 9, color: P.herosub});
+      pT(g, fmt(total), ML + 14, y + 18, {size: 12.5, weight: 800, color: "#FFFFFF", dir: "ltr", align: "left"});
+      segTop = y; y += TH;
+    };
+    const close = () => pRR(g, ML, segTop, MCW, y - segTop, 10, null, P.line, .9);
+    if (y + TH + RH * 2 > MBOTTOM) newPage();
+    head(false);
+    rows.forEach((r, i) => {
+      if (y + RH > MBOTTOM) { close(); newPage(); head(true); }
+      const neg = typeof r.amount === "number" && r.amount < 0;
+      g.fillStyle = neg ? "#FDEEEE" : (i % 2 ? "#FAFBFD" : "#FFFFFF"); g.fillRect(ML + .5, y, MCW - 1, RH);
+      g.fillStyle = P.line2; g.fillRect(ML + .5, y + RH - .7, MCW - 1, .7);
+      pT(g, r.name || "—", MR - 12, y + 14, {size: 11.5, weight: 700, maxW: MCW - 140});
+      pT(g, typeof r.amount === "number" ? fmt(r.amount) : "", ML + 12, y + 14, {size: 12, weight: 800, color: neg ? P.red : P.text, dir: "ltr", align: "left"});
+      const dw = pT(g, r.doc, MR - 12, y + 30, {size: 9, weight: 600, color: P.ink2, dir: "ltr", align: "right"});
+      let lx = MR - 12 - dw - 8;
+      const ch = CHIP[r.method];
+      if (ch) { const cw = pW(g, ch[2], 8.5, 700) + 16; pRR(g, lx - cw, y + 23.5, cw, 13, 6.5, ch[0]); pT(g, ch[2], lx - cw / 2, y + 30.2, {size: 8.5, weight: 700, color: ch[1], align: "center"}); lx -= cw + 8; }
+      if (checks) {
+        const c = checks[i];
+        if (r.note) pT(g, r.note, lx, y + 30, {size: 8.8, color: P.muted, maxW: lx - ML - 90});
+        if (c.state === "ok") pT(g, "✓ مطابق", ML + 12, y + 30, {size: 9, weight: 700, color: P.green, align: "left"});
+        else if (c.state === "bad") { const t = "فرق " + fmt(c.d), tw = pW(g, t, 9, 700) + 14; pRR(g, ML + 10, y + 23, tw, 14, 7, "#FCE3E5"); pT(g, t, ML + 10 + tw / 2, y + 30.2, {size: 9, weight: 700, color: P.red, align: "center"}); }
+      } else if (r.note) pT(g, r.note, ML + 12, y + 30, {size: 8.8, color: neg ? P.red : P.muted, align: "left", maxW: Math.max(lx - ML - 20, 40)});
+      y += RH;
+    });
+    if (y + FH > MBOTTOM) { close(); newPage(); head(true); }
+    g.fillStyle = "#FFF6DC"; g.fillRect(ML + .5, y, MCW - 1, FH); g.fillStyle = P.ink; g.fillRect(ML + .5, y, MCW - 1, 1.6);
+    pT(g, "المجموع", MR - 14, y + FH / 2 + .5, {size: 12, weight: 800, color: P.ink});
+    pT(g, fmt(total), ML + 12, y + FH / 2 + .5, {size: 13, weight: 800, color: P.red, dir: "ltr", align: "left"});
+    y += FH; close(); y += 14;
+  };
+  section("1", "العمليات اليومية", "المبيعات والمشتريات والمصروفات والسندات");
+  for (const k of OPS) listTable(k, null);
+  section("2", "إفصاح الصندوق النقدي", "المقبوضات والمدفوعات ورصيد الصندوق مع المطابقة الآلية");
+  listTable("crec", C.checks);
+  listTable("cpay", null);
+
+  /* balance */
+  need(180);
+  const bw2 = (MCW - 10) / 2;
+  [["رصيد سابق", C.prev, P.ink], ["= صافي اليوم", C.net, P.red], ["+ المقبوضات النقدية", C.T.crec, P.green], ["− المدفوعات النقدية", C.T.cpay, P.orange]].forEach(([lab, v, col], i) => {
+    const x = i % 2 === 0 ? MR - bw2 : ML, yy = y + Math.floor(i / 2) * 56;
+    pRR(g, x, yy, bw2, 50, 10, "#FFFFFF", P.line);
+    pT(g, lab, x + bw2 - 11, yy + 15, {size: 9.5, weight: 600, color: P.muted});
+    pT(g, fmt(v), x + bw2 - 11, yy + 34, {size: 15, weight: 800, color: col, dir: "ltr"});
+  });
+  y += 112;
+  pRR(g, ML, y, MCW, 56, 11, P.ink);
+  pT(g, "الرصيد الحالي", MR - 14, y + 20, {size: 12, weight: 700, color: P.herosub});
+  pT(g, "ريال سعودي", MR - 14, y + 38, {size: 9, color: P.herosub});
+  pT(g, fmt(C.cur), ML + 14, y + 29, {size: 22, weight: 800, color: "#FFFFFF", dir: "ltr", align: "left"});
+  y += 64;
+  const note = "المبيعات والمشتريات والمصروفات قيم موجبة ومردوداتها قيم سالبة · المبالغ مدرجة مع الضريبة · الصندوق يُطابق آليًا مع فواتير المبيعات.";
+  const lines = pWrap(g, note, MCW - 32, 9.5, 400), nh = 30 + lines.length * 16;
+  need(nh + 44);
+  pRR(g, ML, y, MCW, nh, 10, "#FFFFFF", P.line); g.fillStyle = P.gold; g.fillRect(MR - 4, y + 6, 4, nh - 12);
+  pT(g, "ملاحظات", MR - 14, y + 16, {size: 10.5, weight: 800, color: P.ink});
+  lines.forEach((l, i) => pT(g, l, MR - 14, y + 35 + i * 16, {size: 9.5, color: P.muted}));
+  y += nh + 24;
+  const sgw = (MCW - 30) / 3;
+  ["أمين الصندوق", "المحاسب", "مدير الفرع"].forEach((lab, i) => { const x = MR - (i + 1) * sgw - i * 15; g.fillStyle = "#B8C0CE"; g.fillRect(x, y, sgw, 1.3); pT(g, lab, x + sgw / 2, y + 14, {size: 9.5, weight: 600, color: P.muted, align: "center"}); });
+
+  pages.forEach((c, i) => { const gg = c.getContext("2d"); pT(gg, `صفحة ${i + 1} من ${pages.length} · ${date}`, MW / 2, MH - 15, {size: 8.5, color: "#8A93A3", align: "center"}); });
+  return pages;
+}
+
+
+async function printButtonJpeg(b, src, sc) {
+  const k = 4, c = document.createElement("canvas"); c.width = b.w * k; c.height = b.h * k;
+  const g = c.getContext("2d"); g.scale(k, k);
+  g.drawImage(src, b.x * sc, b.y * sc, b.w * sc, b.h * sc, 0, 0, b.w, b.h);
+  pRR(g, .5, .5, b.w - 1, b.h - 1, b.h / 2, P.gold);
+  // printer glyph
+  const ix = b.w - 15, iy = b.h / 2;
+  g.fillStyle = P.ink; g.fillRect(ix - 5, iy - 5.5, 8, 3); pRR(g, ix - 7, iy - 2.5, 12, 6, 1.2, P.ink); g.fillStyle = "#FFFFFF"; g.fillRect(ix - 4, iy + 1.5, 6, 3.5);
+  pT(g, "طباعة التقرير", b.w - 24, iy + .5, {size: b.h * .5, weight: 800, color: P.ink});
+  const blob = await new Promise(r => c.toBlob(r, "image/jpeg", 0.95));
+  return {data: new Uint8Array(await blob.arrayBuffer()), w: c.width, h: c.height};
+}
+async function renderPdf(mobile) {
+  try { await Promise.all(["400", "500", "600", "700", "800"].map(w => document.fonts.load(`${w} 12px Cairo`, "عربي"))); } catch (e) {}
+  const logoImg = await new Promise(res => { const im = new Image(); im.onload = () => res(im); im.onerror = () => res(null); im.src = LOGO; });
+  const pages = mobile ? pdfPagesMobile(logoImg) : pdfPages(logoImg), imgs = [];
+  for (const c of pages) {
+    const blob = await new Promise(res => c.toBlob(res, "image/jpeg", 0.9));
+    imgs.push({data: new Uint8Array(await blob.arrayBuffer()), w: c.width, h: c.height, pw: mobile ? MW : PW, ph: mobile ? MH : PH});
+  }
+  const btn = mobile ? {x: 30, y: 74, w: 82, h: 18, bg: "#1D2D52"} : {x: 42, y: 94, w: 98, h: 20, bg: "#24386A"};
+  btn.img = await printButtonJpeg(btn, pages[0], mobile ? MSC : PSC);
+  return {pages, bytes: pdfFromJpegs(imgs, "التقرير اليومي الموحد " + dmy(S.date), btn)};
+}
+async function buildPdfBytes(mobile) { return (await renderPdf(mobile)).bytes; }
+async function exportPdf(mobile) {
+  const btn = $(mobile ? "btnPdfM" : "btnPdf"); btn.disabled = true; const old = btn.textContent; btn.textContent = "جارٍ التجهيز…";
+  try {
+    const {pages, bytes} = await renderPdf(mobile);
+    const dl = window.claude && window.claude.use ? await window.claude.use("downloads").catch(() => null) : null;
+    if (!dl) { if (!framed) { directSave(`Daily-Report-${S.date}${mobile ? "-mobile" : "-A4"}.pdf`, new Blob([bytes], {type: "application/pdf"})); flash("تم تنزيل ملف PDF ✓"); return; } showPreview(pages, mobile); return; }
+    try { await dl.save({filename: `التقرير اليومي الموحد ${dmy(S.date).replace(/\//g, "-")}${mobile ? " - جوال" : ""}.pdf`, data: new Blob([bytes], {type: "application/pdf"})}); }
+    catch (e) { if (e && (e.code === "declined" || e.code === "rate_limited")) throw e; showPreview(pages, mobile); return; }
+    flash("تم تجهيز ملف PDF ✓");
+  } catch (e) {
+    if (e && e.code === "declined") flash("أُلغي التنزيل");
+    else if (e && e.code === "rate_limited") flash("هناك تنزيل مفتوح بالفعل، انتظر لحظة");
+    else flash("تعذّر تجهيز ملف PDF، حاول مرة أخرى");
+  } finally { btn.disabled = false; btn.textContent = old; }
+}
+
+function showPreview(pages, mobile) {
+  const ov = $("pv"), list = $("pvPages");
+  list.replaceChildren(...pages.map((c, i) => el("img", {src: c.toDataURL("image/jpeg", 0.88), alt: `صفحة ${i + 1}`, class: mobile ? "m" : ""})));
+  const links = $("pvLinks"); links.replaceChildren();
+  if (SNAPSHOT && S.date === SNAPSHOT.date) {
+    links.append(el("span", {text: `ملف PDF جاهز ليوم ${dmy(SNAPSHOT.date)}:`}),
+      el("a", {href: "report-mobile.pdf", target: "_blank", rel: "noopener", class: "btn", text: "فتح نسخة الجوال"}),
+      el("a", {href: "report-a4.pdf", target: "_blank", rel: "noopener", class: "btn", text: "فتح نسخة A4"}));
+  }
+  const pa = el("a", {href: $("btnPrint").href, target: "_blank", rel: "noopener", class: "btn primary", text: "طباعة"});
+  pa.addEventListener("click", () => { try { localStorage.setItem("print-job", JSON.stringify(serialize())); } catch (e) {} });
+  links.prepend(pa);
+  ov.hidden = false; document.body.style.overflow = "hidden"; $("pvClose").focus();
+}
+$("pvClose").addEventListener("click", () => { $("pv").hidden = true; document.body.style.overflow = ""; });
+$("btnPdf").addEventListener("click", () => exportPdf(false));
+$("btnPdfM").addEventListener("click", () => exportPdf(true));
+window.__buildPdfBytes = buildPdfBytes;
+
+
+function directSave(name, blob) {  // standalone hosting only (outside the Claude frame)
+  const url = URL.createObjectURL(blob), a = document.createElement("a");
+  a.href = url; a.download = name; document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+}
+/* ---------- printing: the viewer frame blocks print(), so printing runs in its own tab ---------- */
+const framed = (() => { try { return window.top !== window.self; } catch (e) { return true; } })();
+(() => {
+  const a = $("btnPrint");
+  try { a.href = location.origin + location.pathname + "#print"; } catch (e) {}
+  a.addEventListener("click", e => {
+    try { localStorage.setItem("print-job", JSON.stringify(serialize())); } catch (err) {}
+    if (!framed) { e.preventDefault(); startPrint(); return; }
+    // inside the Claude frame a new tab may be refused; if focus never leaves, show the in-page fallback
+    setTimeout(async () => {
+      if (document.hasFocus() && !document.hidden) {
+        const {pages} = await renderPdf(false);
+        showPreview(pages, false);
+        $("pvTitle").textContent = "الطباعة غير متاحة داخل Claude";
+        $("pvTitle").nextElementSibling.textContent = "إطار Claude يمنع نافذة الطباعة. اطبع من النسخة المستقلة للتطبيق، أو احفظ الصفحات من هنا (ضغط مطوّل على الجوال، أو زر الفأرة الأيمن ← حفظ الصورة).";
+      }
+    }, 1500);
+  });
+})();
+async function startPrint() {
+  document.body.classList.add("printing");
+  let job = null;
+  try { job = JSON.parse(localStorage.getItem("print-job") || "null"); } catch (e) {}
+  S = fromDoc(job || SNAPSHOT || emptyDay(todayISO()));
+  try { await Promise.all(["400", "500", "600", "700", "800"].map(w => document.fonts.load(`${w} 12px Cairo`, "عربي"))); } catch (e) {}
+  const logoImg = await new Promise(res => { const im = new Image(); im.onload = () => res(im); im.onerror = () => res(null); im.src = LOGO; });
+  const pages = pdfPages(logoImg);
+  const imgs = pages.map((c, i) => el("img", {src: c.toDataURL("image/jpeg", 0.92), alt: `صفحة ${i + 1}`}));
+  $("pPages").replaceChildren(...imgs);
+  await Promise.all(imgs.map(im => im.decode ? im.decode().catch(() => {}) : null));
+  $("pMsg").textContent = `تقرير يوم ${dmy(S.date)} · ${pages.length} صفحات بمقاس A4. إذا لم تظهر نافذة الطباعة اضغط «طباعة».`;
+  const go = $("pGo"); go.disabled = false;
+  go.onclick = () => window.print();
+  setTimeout(() => window.print(), 300);
+}
+if (location.hash === "#print") startPrint();
+})();
+</script>
+</body></html>

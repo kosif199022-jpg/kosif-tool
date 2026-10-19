@@ -24,7 +24,7 @@ jobs:
       - name: Build static bundle (repo root is the site)
         run: |
           mkdir -p _site
-          cp -r index.html sitemap.xml robots.txt web catalog templates playbooks styles _site/
+          cp -r index.html sitemap.xml robots.txt web catalog templates playbooks styles daily-report _site/
           cp .nojekyll _site/
           ls -la _site
       - uses: actions/upload-pages-artifact@v3
