@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """KOSIF App Studio: the photo, design, type, procedural and download features of the analysed desktop apps
 (DxO PhotoLab, Capture One, Lightroom/ACDSee, JPEGmini, Affinity Designer, Xara, FontLab, Houdini, Adobe Animate,
-IDM) as one command line that works on the user's real files. Original code on open libraries; no vendor code.
+IDM, Canva) as one command line that works on the user's real files. Original code on open libraries; no vendor code.
 
     python scripts/app_studio.py doctor                 # what runs here, what is missing, the install line for it
     python scripts/app_studio.py ops [word]             # every operation with its app, APPX id and requirements
@@ -15,6 +15,8 @@ Examples:
     app_studio.py watermark a.jpg -o b.jpg --set text="© KOSIF" opacity=0.4 pos=br
     app_studio.py font-build glyphs_dir -o Brand.ttf --set family="KOSIF Brand" kern="A V -80"
     app_studio.py catalog photos/ -o photos.db ; app_studio.py search photos.db --set q=sunset
+    app_studio.py design post.json -o post.png          # Canva-style template: Arabic text, images, shapes, effects
+    app_studio.py resize-design post.png -o sizes/ --set sizes=all   # Magic Resize to every platform
 
 Every result prints one JSON line: {"op", "output", "metrics", "verified"}. "verified" is true only when the
 operation measured its own postcondition (e.g. SSIM for jpegmini); it never claims more than it measured.
@@ -41,6 +43,9 @@ REQ = {  # requirement id (data/requirements.json) → (python module, pip insta
     "pip:pillow": ("PIL", "pip install pillow"),
     "pip:fonttools": ("fontTools", "pip install fonttools"),
     "pip:shapely": ("shapely", "pip install shapely"),
+    "pip:segno": ("segno", "pip install segno"),
+    "pip:matplotlib": ("matplotlib", "pip install matplotlib"),
+    "pip:office": ("pptx", "pip install python-pptx"),
 }
 BASE = ["pip:numpy", "pip:opencv"]
 OPS = {}
@@ -1047,15 +1052,16 @@ def font_build(inp, out, p):
 @op("font-inspect", "FontLab font info / Glyphs panel", "APPX-84", ["pip:fonttools"], "فحص خط", "names, glyph count, scripts (Arabic coverage), features, kerning pairs")
 def font_inspect(inp, out, p):
     from fontTools.ttLib import TTFont
-    ft = TTFont(inp[0], lazy=True)
-    cmap = ft.getBestCmap() or {}
-    arabic = [c for c in range(0x0621, 0x064B) if 0x0621 <= c <= 0x064A]
-    feats = sorted({fr.FeatureTag for fr in ft["GSUB"].table.FeatureList.FeatureRecord}) if "GSUB" in ft else []
-    gpos = sorted({fr.FeatureTag for fr in ft["GPOS"].table.FeatureList.FeatureRecord}) if "GPOS" in ft else []
-    name = ft["name"].getDebugName
-    return res("font-inspect", None, {"family": name(1), "style": name(2), "glyphs": ft["maxp"].numGlyphs, "codepoints": len(cmap),
-                                      "arabic_letters": f"{sum(c in cmap for c in arabic)}/{len(arabic)}", "gsub": feats, "gpos": gpos,
-                                      "variable": "fvar" in ft}, verified=True)
+    arabic = list(range(0x0621, 0x064B))
+    with TTFont(inp[0], lazy=True) as ft:   # closed afterwards: Windows keeps an open font file locked
+        cmap = ft.getBestCmap() or {}
+        feats = sorted({fr.FeatureTag for fr in ft["GSUB"].table.FeatureList.FeatureRecord}) if "GSUB" in ft else []
+        gpos = sorted({fr.FeatureTag for fr in ft["GPOS"].table.FeatureList.FeatureRecord}) if "GPOS" in ft else []
+        name = ft["name"].getDebugName
+        info = {"family": name(1), "style": name(2), "glyphs": ft["maxp"].numGlyphs, "codepoints": len(cmap),
+                "arabic_letters": f"{sum(c in cmap for c in arabic)}/{len(arabic)}", "gsub": feats, "gpos": gpos,
+                "variable": "fvar" in ft}
+    return res("font-inspect", None, info, verified=True)
 
 
 @op("font-subset", "FontLab export / web fonts", "APPX-85", ["pip:fonttools"], "تقليص خط للويب", "text= or unicodes=, flavor=woff2|woff")
@@ -1070,6 +1076,7 @@ def font_subset(inp, out, p):
     s.populate(text=p.get("text", ""), unicodes=[int(u, 16) for u in p.get("unicodes", "").split(",") if u])
     s.subset(ft)
     subset.save_font(ft, out, opts)
+    ft.close()   # release the source file (Windows locks open files)
     return res("font-subset", str(out), {"bytes_in": Path(inp[0]).stat().st_size, "bytes_out": Path(out).stat().st_size})
 
 
@@ -1196,6 +1203,657 @@ def download(inp, out, p):
     got = h.hexdigest()
     ok = (outp.stat().st_size == size if ranged else True) and (got == p["sha256"].lower() if p.get("sha256") else True)
     return res("download", str(outp), {"bytes": outp.stat().st_size, "parts": n, "ranged": ranged, "sha256": got}, verified=ok)
+
+
+# ------------------------------------------------------------------ design: Canva (evidence: app.asar of Canva 1.126.1)
+FONT_DIR = Path(__file__).resolve().parents[1] / "proofs" / "_shared" / "fonts"
+FONTS = {"amiri": "Amiri-Regular.ttf", "amiri-bold": "Amiri-Bold.ttf", "cairo": "Cairo[slnt,wght].ttf", "tajawal": "Tajawal-Bold.ttf",
+         "reemkufi": "ReemKufi[wght].ttf", "lalezar": "Lalezar-Regular.ttf", "ruqaa": "ArefRuqaa-Regular.ttf", "ruqaa-bold": "ArefRuqaa-Bold.ttf"}
+SIZES = {"instagram-post": (1080, 1080), "instagram-portrait": (1080, 1350), "story": (1080, 1920), "reel": (1080, 1920),
+         "tiktok": (1080, 1920), "youtube-thumbnail": (1280, 720), "youtube-banner": (2560, 1440), "facebook-post": (1200, 630),
+         "facebook-cover": (820, 312), "x-post": (1600, 900), "x-header": (1500, 500), "linkedin-post": (1200, 627),
+         "pinterest": (1000, 1500), "whatsapp-status": (1080, 1920), "a4-300dpi": (2480, 3508), "presentation": (1920, 1080)}
+AR_RE = re.compile(r"[\u0600-\u06FF]")
+
+
+def font_path(name):
+    if name and Path(name).is_file():
+        return str(Path(name))
+    f_ = FONTS.get((name or "cairo").lower())
+    if f_ and (FONT_DIR / f_).is_file():
+        return str(FONT_DIR / f_)
+    for c in (r"C:\Windows\Fonts\arial.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"):
+        if Path(c).is_file():
+            return c
+    return None
+
+
+def shape_text(text, force=False):
+    """Return (text to draw, how it was shaped). Pillow+raqm shapes by itself; else arabic-reshaper + bidi.
+    force=True reshapes even with raqm (for renderers that never shape, such as matplotlib)."""
+    from PIL import features
+    if not AR_RE.search(text) or (features.check("raqm") and not force):
+        return text, ("raqm" if AR_RE.search(text) else None)
+    try:
+        import arabic_reshaper
+        from bidi.algorithm import get_display
+        return "\n".join(get_display(arabic_reshaper.reshape(line)) for line in text.split("\n")), "arabic-reshaper+bidi"
+    except ImportError:
+        return text, "none: letters will not join (pip install arabic-reshaper python-bidi)"
+
+
+_CMAPS = {}
+
+
+def cover_text(text, fp):
+    """Make text drawable in font fp: a missing isolated presentation form becomes its base letter (same shape).
+    Returns (text, still_missing)."""
+    import unicodedata
+    if not fp:
+        return text, False
+    if fp not in _CMAPS:
+        from fontTools.ttLib import TTFont
+        try:
+            with TTFont(fp, lazy=True, fontNumber=0) as ft:
+                _CMAPS[fp] = set(ft.getBestCmap() or {})
+        except Exception:
+            _CMAPS[fp] = None
+    cmap = _CMAPS[fp]
+    if cmap is None:
+        return text, False
+    out, missing = [], False
+    for ch in text:
+        if ord(ch) in cmap or ch in " \n\t":
+            out.append(ch)
+            continue
+        dec = unicodedata.decomposition(ch)
+        if dec.startswith("<isolated>") and int(dec.split()[1], 16) in cmap:
+            out.append(chr(int(dec.split()[1], 16)))
+            continue
+        missing = True
+        out.append(ch)
+    return "".join(out), missing
+
+
+def pick_font(text, name):
+    """Font path that can draw `text` after shaping; falls back to the bundled Amiri when the chosen font lacks glyphs."""
+    fp = font_path(name)
+    shaped = shape_text(text)[0]
+    _, miss = cover_text(shaped, fp)
+    if miss and AR_RE.search(text):
+        alt = str(FONT_DIR / FONTS["amiri-bold" if "bold" in str(name).lower() else "amiri"])
+        if Path(alt).is_file() and not cover_text(shaped, alt)[1]:
+            return alt, True
+    return fp, False
+
+
+def load_font(name, size):
+    from PIL import ImageFont, features
+    fp = font_path(name)
+    if not fp:
+        return ImageFont.load_default()
+    kw = {"layout_engine": ImageFont.Layout.RAQM} if features.check("raqm") else {}
+    return ImageFont.truetype(fp, int(size), **kw)
+
+
+def hex_rgba(c, alpha=255):
+    c = (c or "#000000").lstrip("#")
+    if len(c) == 3:
+        c = "".join(ch * 2 for ch in c)
+    return tuple(int(c[i:i + 2], 16) for i in (0, 2, 4)) + ((int(c[6:8], 16),) if len(c) == 8 else (alpha,))
+
+
+def draw_text_block(canvas, el):
+    """Text box with wrap, auto-fit, alignment and Canva-style effects: shadow, outline (hollow), glow (neon), echo, lift."""
+    from PIL import Image, ImageDraw, ImageFilter
+    x, y, w, h = (int(v) for v in el["box"])
+    raw = str(el.get("text", ""))
+    rtl = bool(AR_RE.search(raw))
+    size = int(el.get("size", 0)) or int(h * 0.8)
+    fpath, fell_back = pick_font(raw, el.get("font"))
+    def layout(sz):
+        font = load_font(fpath, sz)
+        d = ImageDraw.Draw(Image.new("L", (1, 1)))
+        lines = []
+        for para in raw.split("\n"):
+            words, cur = para.split(" "), ""
+            for wd in words:
+                trial = (cur + " " + wd).strip()
+                if d.textlength(shape_text(trial)[0], font=font) <= w or not cur:
+                    cur = trial
+                else:
+                    lines.append(cur); cur = wd
+            lines.append(cur)
+        lh = int(sz * float(el.get("line_height", 1.25)))
+        return font, lines, lh, max(d.textlength(shape_text(l)[0], font=font) for l in lines), lh * len(lines)
+    while True:   # auto-fit: shrink until the block fits its box
+        font, lines, lh, tw, th = layout(size)
+        if (tw <= w and th <= h) or size <= 8:
+            break
+        size = int(size * 0.92)
+    layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    color = hex_rgba(el.get("color", "#111111"))
+    align = el.get("align", "right" if rtl else "left")
+    ty = y + {"top": 0, "middle": (h - th) // 2, "bottom": h - th}[el.get("valign", "middle")]
+    how = None
+    pos = []
+    for i, line in enumerate(lines):
+        txt, how = shape_text(line)
+        txt = cover_text(txt, fpath)[0]
+        lw = d.textlength(txt, font=font)
+        tx = {"left": x, "center": x + (w - lw) / 2, "right": x + w - lw}[align]
+        pos.append((tx, ty + i * lh, txt))
+    fx = el.get("effect", "none")
+    def stamp(dx, dy, fill, stroke=0, stroke_fill=None):
+        for tx, ty_, txt in pos:
+            d.text((tx + dx, ty_ + dy), txt, font=font, fill=fill, stroke_width=stroke, stroke_fill=stroke_fill)
+    if fx in ("shadow", "lift"):
+        sh = Image.new("RGBA", canvas.size, (0, 0, 0, 0)); sd = ImageDraw.Draw(sh)
+        off = max(2, size // 18)
+        for tx, ty_, txt in pos:
+            sd.text((tx + (off if fx == "shadow" else 0), ty_ + off), txt, font=font, fill=(0, 0, 0, 150 if fx == "shadow" else 110))
+        layer = Image.alpha_composite(layer, sh.filter(ImageFilter.GaussianBlur(off if fx == "lift" else off / 2)))
+        d = ImageDraw.Draw(layer)
+    if fx in ("glow", "neon"):
+        gl = Image.new("RGBA", canvas.size, (0, 0, 0, 0)); gd = ImageDraw.Draw(gl)
+        for tx, ty_, txt in pos:
+            gd.text((tx, ty_), txt, font=font, fill=color[:3] + (255,), stroke_width=max(2, size // 20), stroke_fill=color[:3] + (255,))
+        layer = Image.alpha_composite(layer, gl.filter(ImageFilter.GaussianBlur(size / 6)))
+        d = ImageDraw.Draw(layer)
+    if fx == "echo":
+        for k, a in ((3, 60), (2, 110)):
+            stamp(k * size / 25, k * size / 25, color[:3] + (a,))
+    if fx == "outline":
+        stamp(0, 0, (0, 0, 0, 0), max(2, size // 25), color)
+    elif fx == "neon":
+        stamp(0, 0, (255, 255, 255, 255), max(1, size // 40), color)
+    else:
+        stamp(0, 0, color, int(el.get("stroke", 0)), hex_rgba(el.get("stroke_color", "#000000")))
+    canvas.alpha_composite(layer)
+    return {"font_size": size, "lines": len(lines), "shaping": how, "fits": tw <= w and th <= h,
+            "font": Path(fpath).name if fpath else None, "font_fallback": fell_back}
+
+
+def fit_image(path, w, h, fit="cover"):
+    from PIL import Image, ImageOps
+    im = Image.open(path).convert("RGBA")
+    if fit == "contain":
+        im = ImageOps.contain(im, (w, h))
+        bg = Image.new("RGBA", (w, h), (0, 0, 0, 0)); bg.paste(im, ((w - im.width) // 2, (h - im.height) // 2)); return bg
+    return ImageOps.fit(im, (w, h), Image.LANCZOS)
+
+
+def rounded_mask(w, h, r, shape="rect"):
+    from PIL import Image, ImageDraw
+    m = Image.new("L", (w, h), 0)
+    dr = ImageDraw.Draw(m)
+    if shape in ("circle", "ellipse"):
+        dr.ellipse([0, 0, w - 1, h - 1], fill=255)
+    else:
+        dr.rounded_rectangle([0, 0, w - 1, h - 1], radius=int(r), fill=255)
+    return m
+
+
+def gradient(w, h, c1, c2, angle=90):
+    np, _ = np_cv()
+    from PIL import Image
+    a = math.radians(float(angle))
+    yy, xx = np.indices((h, w), np.float32)
+    t = ((xx - w / 2) * math.cos(a) + (yy - h / 2) * math.sin(a))
+    t = (t - t.min()) / (t.max() - t.min() + 1e-6)
+    c1, c2 = np.array(hex_rgba(c1), np.float32), np.array(hex_rgba(c2), np.float32)
+    return Image.fromarray((c1 * (1 - t[..., None]) + c2 * t[..., None]).astype(np.uint8), "RGBA")
+
+
+def render_design(spec, base_dir):
+    from PIL import Image, ImageDraw
+    W, H = SIZES.get(spec.get("size"), None) or (int(spec.get("width", 1080)), int(spec.get("height", 1080)))
+    bg = spec.get("background", "#ffffff")
+    if isinstance(bg, dict) and bg.get("gradient"):
+        canvas = gradient(W, H, *bg["gradient"][:2], bg.get("angle", 90))
+    elif isinstance(bg, dict) and bg.get("image"):
+        canvas = fit_image(base_dir / bg["image"], W, H)
+    else:
+        canvas = Image.new("RGBA", (W, H), hex_rgba(bg))
+    report = []
+    for el in spec.get("elements", []):
+        t = el.get("type")
+        x, y, w, h = (int(v) for v in el.get("box", [0, 0, W, H]))
+        if t == "text":
+            report.append({"type": "text", **draw_text_block(canvas, el)})
+        elif t == "image":
+            im = fit_image(base_dir / el["src"], w, h, el.get("fit", "cover"))
+            if el.get("filter") == "duotone":
+                im = duotone_pil(im, el.get("dark", "#1b1464"), el.get("light", "#ff6f61"))
+            m = rounded_mask(w, h, el.get("radius", 0), el.get("mask", "rect"))
+            canvas.paste(im, (x, y), Image.composite(im.getchannel("A"), Image.new("L", (w, h), 0), m))
+            report.append({"type": "image", "src": el["src"]})
+        elif t in ("rect", "ellipse", "line"):
+            layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+            d = ImageDraw.Draw(layer)
+            fill = hex_rgba(el.get("fill", "#000000"), int(255 * float(el.get("opacity", 1))))
+            if t == "rect":
+                d.rounded_rectangle([x, y, x + w, y + h], radius=int(el.get("radius", 0)), fill=fill,
+                                    outline=hex_rgba(el["stroke"]) if el.get("stroke") else None, width=int(el.get("stroke_width", 0)))
+            elif t == "ellipse":
+                d.ellipse([x, y, x + w, y + h], fill=fill)
+            else:
+                d.line([x, y, x + w, y + h], fill=fill, width=int(el.get("width", 4)))
+            canvas.alpha_composite(layer)
+            report.append({"type": t})
+    return canvas, report
+
+
+@op("design", "Canva editor (templates, text effects, frames, gradients)", "APPX-88", ["pip:pillow", "pip:numpy"],
+    "تصميم من قالب JSON (نصوص عربية وصور وأشكال)", "IN = design.json {size|width,height, background, elements:[text|image|rect|ellipse|line]} → PNG/JPG/PDF")
+def design(inp, out, p):
+    spec_path = Path(inp[0])
+    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    canvas, report = render_design(spec, spec_path.parent)
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    if str(out).lower().endswith((".jpg", ".jpeg", ".pdf")):
+        canvas.convert("RGB").save(out, quality=95, resolution=float(spec.get("dpi", 150)))
+    else:
+        canvas.save(out)
+    texts = [r for r in report if r["type"] == "text"]
+    return res("design", str(out), {"size": list(canvas.size), "elements": len(report), "texts": texts},
+               verified=all(t["fits"] for t in texts))
+
+
+@op("resize-design", "Canva Magic Resize", "APPX-89", BASE, "مقاسات متعددة لكل المنصات من تصميم واحد",
+    "sizes=instagram-post,story,youtube-thumbnail,… (or all) ; mode=smart|pad-blur|pad-color ; color=#hex → OUT_DIR")
+def resize_design(inp, out, p):
+    np, cv2 = np_cv()
+    img = read(inp[0])
+    names = list(SIZES) if p.get("sizes", "all") == "all" else [s.strip() for s in p["sizes"].split(",")]
+    outdir = Path(out)
+    outdir.mkdir(parents=True, exist_ok=True)
+    made = {}
+    h, w = img.shape[:2]
+    g = cv2.GaussianBlur(np.abs(cv2.Laplacian(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), cv2.CV_32F)), (0, 0), 15)
+    ys, xs = np.indices(g.shape)
+    cx, cy = float((g * xs).sum() / g.sum()), float((g * ys).sum() / g.sum())
+    for n in names:
+        W, H = SIZES[n]
+        mode = p.get("mode", "smart")
+        if mode == "smart" and abs((W / H) / (w / h) - 1) > 0.35:
+            mode = "pad-blur"     # very different shape: cropping would cut the design, pad instead
+        if mode == "smart":
+            s = max(W / w, H / h)
+            r = cv2.resize(img, (round(w * s), round(h * s)), interpolation=cv2.INTER_AREA)
+            x0 = int(min(max(cx * s - W / 2, 0), r.shape[1] - W)); y0 = int(min(max(cy * s - H / 2, 0), r.shape[0] - H))
+            o = r[y0:y0 + H, x0:x0 + W]
+        else:
+            s = min(W / w, H / h)
+            fg = cv2.resize(img, (round(w * s), round(h * s)), interpolation=cv2.INTER_AREA)
+            if mode == "pad-color":
+                o = np.full((H, W, 3), hex_rgba(p.get("color", "#ffffff"))[2::-1][:3], np.uint8)
+            else:
+                o = cv2.GaussianBlur(cv2.resize(img, (W, H)), (0, 0), 25)
+                o = (o * 0.7).astype(np.uint8)
+            yy, xx = (H - fg.shape[0]) // 2, (W - fg.shape[1]) // 2
+            o[yy:yy + fg.shape[0], xx:xx + fg.shape[1]] = fg
+        made[n] = write(outdir / f"{Path(inp[0]).stem}_{n}.jpg", o)
+    ok = all(read(v).shape[1::-1] == SIZES[k] for k, v in made.items())
+    return res("resize-design", str(outdir), {"files": made}, verified=ok)
+
+
+@op("remove-bg", "Canva Background Remover, CapCut", "APPX-14", BASE, "إزالة الخلفية إلى PNG شفاف",
+    "box=x,y,w,h around the subject (default: centre 70%) ; feather px → transparent PNG")
+def remove_bg(inp, out, p):
+    np, cv2 = np_cv()
+    img = read(inp[0])
+    h, w = img.shape[:2]
+    rect = tuple(int(v) for v in p["box"].split(",")) if p.get("box") else (int(w * .15), int(h * .08), int(w * .7), int(h * .88))
+    mask = np.zeros((h, w), np.uint8)
+    cv2.grabCut(img, mask, rect, np.zeros((1, 65)), np.zeros((1, 65)), int(f(p, "iters", 5)), cv2.GC_INIT_WITH_RECT)
+    a = np.isin(mask, (1, 3)).astype(np.uint8) * 255
+    n, lab, stats, _ = cv2.connectedComponentsWithStats(a)
+    if n > 1:   # keep the largest region only
+        a = (lab == 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))).astype(np.uint8) * 255
+    fe = f(p, "feather", 2.0)
+    if fe > 0:
+        a = cv2.GaussianBlur(a, (0, 0), fe)
+    o = np.dstack([img, a])
+    if not str(out).lower().endswith(".png"):
+        out = str(Path(out).with_suffix(".png"))
+    write(out, o)
+    return res("remove-bg", str(out), {"subject_pct": round(float((a > 127).mean() * 100), 1)})
+
+
+def duotone_pil(im, dark, light):
+    np, _ = np_cv()
+    from PIL import Image
+    arr = np.asarray(im.convert("RGBA")).astype(np.float32)
+    y = (arr[..., 0] * .299 + arr[..., 1] * .587 + arr[..., 2] * .114)[..., None] / 255
+    d, l = np.array(hex_rgba(dark)[:3], np.float32), np.array(hex_rgba(light)[:3], np.float32)
+    rgb = d * (1 - y) + l * y
+    return Image.fromarray(np.dstack([rgb, arr[..., 3:]]).astype(np.uint8), "RGBA")
+
+
+@op("duotone", "Canva Duotone filter (DUOTONE in app.asar)", "APPX-90", ["pip:pillow", "pip:numpy"], "تأثير اللونين (Duotone)", "dark=#hex light=#hex")
+def duotone(inp, out, p):
+    from PIL import Image
+    o = duotone_pil(Image.open(inp[0]), p.get("dark", "#1b1464"), p.get("light", "#ff6f61"))
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    (o if str(out).lower().endswith(".png") else o.convert("RGB")).save(out)
+    return res("duotone", str(out), {"dark": p.get("dark", "#1b1464"), "light": p.get("light", "#ff6f61")})
+
+
+@op("collage", "Canva grids / Collage", "APPX-91", ["pip:pillow"], "كولاج وشبكات صور",
+    "IN = images or folder ; layout=grid|hero|strip ; cols ; size=instagram-post|WxH ; gap ; radius ; bg")
+def collage(inp, out, p):
+    from PIL import Image
+    files = expand(inp)
+    if not files:
+        raise ValueError("no images")
+    sz = p.get("size", "instagram-post")
+    W, H = SIZES[sz] if sz in SIZES else tuple(int(v) for v in sz.lower().split("x"))
+    gap, rad = int(f(p, "gap", 12)), int(f(p, "radius", 0))
+    canvas = Image.new("RGBA", (W, H), hex_rgba(p.get("bg", "#ffffff")))
+    lay = p.get("layout", "grid")
+    cells = []
+    if lay == "hero" and len(files) > 1:   # one big image on top, the rest in a row under it
+        top = int((H - 3 * gap) * 0.62)
+        cells.append((gap, gap, W - 2 * gap, top))
+        k = len(files) - 1
+        cw = (W - gap * (k + 1)) / k
+        cells += [(int(gap + i * (cw + gap)), 2 * gap + top, int(cw), H - 3 * gap - top) for i in range(k)]
+    elif lay == "strip":
+        k = len(files)
+        cw = (W - gap * (k + 1)) / k
+        cells = [(int(gap + i * (cw + gap)), gap, int(cw), H - 2 * gap) for i in range(k)]
+    else:
+        cols = int(f(p, "cols", math.ceil(math.sqrt(len(files)))))
+        rows = math.ceil(len(files) / cols)
+        cw, ch = (W - gap * (cols + 1)) / cols, (H - gap * (rows + 1)) / rows
+        cells = [(int(gap + (i % cols) * (cw + gap)), int(gap + (i // cols) * (ch + gap)), int(cw), int(ch)) for i in range(len(files))]
+    for fpath, (x, y, w, h) in zip(files, cells):
+        im = fit_image(fpath, w, h)
+        canvas.paste(im, (x, y), rounded_mask(w, h, rad))
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    (canvas if str(out).lower().endswith(".png") else canvas.convert("RGB")).save(out, quality=95)
+    return res("collage", str(out), {"images": len(files), "cells": [list(c) for c in cells[:len(files)]], "size": [W, H]})
+
+
+@op("mockup", "Canva Mockups (PHOTO_TO_MOCKUP, MockupBundle in app.asar)", "APPX-92", BASE, "وضع التصميم داخل صورة واقعية (موك أب)",
+    "IN = design, scene photo ; quad=x,y;x,y;x,y;x,y (TL;TR;BR;BL) or auto (largest bright quad) ; shade=0..1")
+def mockup(inp, out, p):
+    np, cv2 = np_cv()
+    des, scene_ = read(inp[0]), read(inp[1])
+    H, W = scene_.shape[:2]
+    if p.get("quad"):
+        q = np.float32([[float(v) for v in xy.split(",")] for xy in p["quad"].split(";")])
+    else:   # the screen / poster / paper: largest bright 4-sided region
+        g = cv2.cvtColor(scene_, cv2.COLOR_BGR2GRAY)
+        _, th = cv2.threshold(g, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        cnts, _ = cv2.findContours(th, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        q = None
+        for c in sorted(cnts, key=cv2.contourArea, reverse=True)[:5]:
+            a = cv2.approxPolyDP(c, 0.02 * cv2.arcLength(c, True), True)
+            if len(a) == 4 and cv2.contourArea(a) > 0.03 * W * H:
+                q = a.reshape(4, 2).astype(np.float32); break
+        if q is None:
+            raise ValueError("no target surface found: pass --set quad=x,y;x,y;x,y;x,y")
+    q = order_quad(q)
+    h, w = des.shape[:2]
+    M = cv2.getPerspectiveTransform(np.float32([[0, 0], [w, 0], [w, h], [0, h]]), q)
+    warped = cv2.warpPerspective(des, M, (W, H))
+    m = cv2.warpPerspective(np.full((h, w), 255, np.uint8), M, (W, H)).astype(np.float32)[..., None] / 255
+    shade = f(p, "shade", 0.35)   # keep the scene's light and folds on the design
+    lum = cv2.GaussianBlur(cv2.cvtColor(scene_, cv2.COLOR_BGR2GRAY).astype(np.float32), (0, 0), 3)[..., None]
+    region = lum[m[..., 0] > 0.5]
+    norm = lum / (float(np.median(region)) if region.size else 255.0)
+    lit = (warped.astype(np.float32) * ((1 - shade) + shade * norm)).clip(0, 255)
+    o = (scene_ * (1 - m) + lit * m).astype(np.uint8)
+    return res("mockup", write(out, o), {"quad": q.round(1).tolist()})
+
+
+@op("qr", "Canva QR code app (vendor QR library in app.asar)", "APPX-93", ["pip:segno", "pip:opencv"], "رمز QR بألوان وشعار",
+    "IN = text/URL ; dark=#hex light=#hex scale border logo=path ; error=h when a logo is used → PNG/SVG (decoded back to verify)")
+def qr(inp, out, p):
+    import segno
+    np, cv2 = np_cv()
+    data = inp[0]
+    err = p.get("error", "h" if p.get("logo") else "m")
+    code = segno.make(data, error=err, micro=False)
+    kw = {"scale": int(f(p, "scale", 12)), "border": int(f(p, "border", 4)), "dark": p.get("dark", "#000000"), "light": p.get("light", "#ffffff")}
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    if str(out).lower().endswith(".svg"):
+        code.save(out, **kw)
+        tmp = Path(out).with_suffix(".check.png"); code.save(str(tmp), **kw)
+        check_path = tmp
+    else:
+        code.save(out, **kw)
+        check_path = Path(out)
+        if p.get("logo"):
+            from PIL import Image
+            im = Image.open(out).convert("RGBA")
+            lg = Image.open(p["logo"]).convert("RGBA")
+            s = int(im.width * 0.22)
+            lg.thumbnail((s, s))
+            pad = Image.new("RGBA", (lg.width + 16, lg.height + 16), hex_rgba(kw["light"]))
+            pad.paste(lg, (8, 8), lg)
+            im.paste(pad, ((im.width - pad.width) // 2, (im.height - pad.height) // 2))
+            im.save(out)
+    decoded, _, _ = cv2.QRCodeDetector().detectAndDecode(read(check_path))
+    if check_path != Path(out):
+        check_path.unlink(missing_ok=True)
+    return res("qr", str(out), {"version": code.version, "error": code.error, "decoded": decoded}, verified=decoded == data)
+
+
+def wcag(c1, c2):
+    def lum(c):
+        v = [x / 255 for x in c[:3]]
+        v = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in v]
+        return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]
+    a, b = sorted((lum(c1), lum(c2)), reverse=True)
+    return (a + 0.05) / (b + 0.05)
+
+
+@op("palette", "Canva Brand Kit / colour palette from photo", "APPX-94", BASE + ["pip:pillow"], "لوحة ألوان الهوية من شعار أو صورة",
+    "colors=5 → JSON (hex, share, best text colour + WCAG contrast) + swatch PNG")
+def palette(inp, out, p):
+    np, cv2 = np_cv()
+    from PIL import Image, ImageDraw
+    img = read(inp[0])
+    small = cv2.resize(img, (200, int(200 * img.shape[0] / img.shape[1])))
+    k = int(f(p, "colors", 5))
+    Z = small.reshape(-1, 3).astype(np.float32)
+    _, lab, cen = cv2.kmeans(Z, k, None, (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.5), 4, cv2.KMEANS_PP_CENTERS)
+    share = np.bincount(lab.ravel(), minlength=k) / lab.size
+    cols = []
+    for i in np.argsort(-share):
+        rgb = tuple(int(v) for v in cen[i][::-1])
+        on_white, on_black = wcag(rgb, (255, 255, 255)), wcag(rgb, (0, 0, 0))
+        cols.append({"hex": "#%02x%02x%02x" % rgb, "share": round(float(share[i]), 3),
+                     "text_on_it": "#ffffff" if on_white >= on_black else "#000000",
+                     "contrast": round(max(on_white, on_black), 2), "aa_body_text": max(on_white, on_black) >= 4.5})
+    sw = Image.new("RGB", (120 * k, 160), "white")
+    d = ImageDraw.Draw(sw)
+    for i, c in enumerate(cols):
+        d.rectangle([i * 120, 0, i * 120 + 119, 119], fill=c["hex"])
+        d.text((i * 120 + 8, 128), c["hex"], fill="black")
+    outp = Path(out)
+    outp.parent.mkdir(parents=True, exist_ok=True)
+    sw.save(outp.with_suffix(".png"))
+    outp.with_suffix(".json").write_text(json.dumps(cols, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res("palette", str(outp.with_suffix(".json")), {"palette": cols, "swatch": str(outp.with_suffix(".png"))}, verified=True)
+
+
+@op("chart", "Canva Charts", "APPX-95", ["pip:matplotlib"], "رسم بياني بعناوين عربية",
+    "IN = data.json {labels:[…], values:[…]} or CSV label,value ; kind=bar|line|pie|donut ; title ; color ; font → PNG/SVG")
+def chart(inp, out, p):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib import font_manager
+    src = Path(inp[0])
+    if src.suffix.lower() == ".json":
+        dj = json.loads(src.read_text(encoding="utf-8")); labels, values = dj["labels"], [float(v) for v in dj["values"]]
+    else:
+        rows = [l.split(",") for l in src.read_text(encoding="utf-8").splitlines() if l.strip()]
+        if rows and not re.match(r"^-?[\d.]+$", rows[0][1].strip()):
+            rows = rows[1:]
+        labels, values = [r[0].strip() for r in rows], [float(r[1]) for r in rows]
+    fp, _ = pick_font(" ".join(map(str, labels)) + " " + p.get("title", ""), p.get("font", "cairo"))
+    prop = font_manager.FontProperties(fname=fp) if fp else None
+    native = tuple(int(x) for x in re.findall(r"\d+", matplotlib.__version__)[:2]) >= (3, 11)   # 3.11+ shapes Arabic itself
+    sh = (lambda s: str(s)) if native else (lambda s: cover_text(shape_text(str(s), force=True)[0], fp)[0])
+    L = [sh(x) for x in labels]
+    fig, ax = plt.subplots(figsize=(float(f(p, "w", 8.0)), float(f(p, "h", 5.0))), dpi=int(f(p, "dpi", 150)))
+    color = p.get("color", "#1f6feb")
+    kind = p.get("kind", "bar")
+    if kind in ("pie", "donut"):
+        wedges, texts = ax.pie(values, labels=L, startangle=90, counterclock=False,
+                               wedgeprops={"width": 0.45} if kind == "donut" else None, textprops={"fontproperties": prop})
+        ax.axis("equal")
+    else:
+        (ax.bar if kind == "bar" else ax.plot)(range(len(values)), values, color=color, **({"marker": "o", "linewidth": 2.5} if kind == "line" else {}))
+        ax.set_xticks(range(len(values)))
+        ax.set_xticklabels(L, fontproperties=prop)
+        for s_ in ("top", "right"):
+            ax.spines[s_].set_visible(False)
+        if kind == "bar":
+            for i, v in enumerate(values):
+                ax.text(i, v, f"{v:g}", ha="center", va="bottom", fontproperties=prop)
+    if p.get("title"):
+        ax.set_title(sh(p["title"]), fontproperties=prop, fontsize=16)
+    fig.tight_layout()
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out)
+    plt.close(fig)
+    return res("chart", str(out), {"kind": kind, "points": len(values),
+                                   "arabic_shaping": ("matplotlib-native" if native else "arabic-reshaper+bidi")
+                                   if AR_RE.search(" ".join(map(str, labels)) + p.get("title", "")) else None})
+
+
+@op("pptx", "Canva Presentations (presentationml export in app.asar)", "APPX-96", ["pip:office", "pip:pillow"], "عرض تقديمي PowerPoint",
+    "IN = slide images/designs (PNG/JPG or design.json) in order ; notes=file.txt (one line per slide) → .pptx 16:9")
+def pptx(inp, out, p):
+    from pptx import Presentation
+    from pptx.util import Emu
+    files = []
+    for x in inp:
+        q = Path(x)
+        files += sorted(q.glob("*")) if q.is_dir() else [q]
+    prs = Presentation()
+    prs.slide_width, prs.slide_height = Emu(12192000), Emu(6858000)
+    notes = Path(p["notes"]).read_text(encoding="utf-8").splitlines() if p.get("notes") else []
+    tmpdir = Path(out).with_suffix(".slides")
+    n = 0
+    for fp in files:
+        if fp.suffix.lower() == ".json":
+            tmpdir.mkdir(exist_ok=True)
+            spec = json.loads(fp.read_text(encoding="utf-8"))
+            spec.setdefault("size", "presentation")
+            canvas, _ = render_design(spec, fp.parent)
+            img = tmpdir / (fp.stem + ".png"); canvas.save(img)
+        elif fp.suffix.lower() in IMG_EXT:
+            img = fp
+        else:
+            continue
+        s = prs.slides.add_slide(prs.slide_layouts[6])
+        s.shapes.add_picture(str(img), 0, 0, width=prs.slide_width, height=prs.slide_height)
+        if n < len(notes):
+            s.notes_slide.notes_text_frame.text = notes[n]
+        n += 1
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    prs.save(out)
+    shutil.rmtree(tmpdir, ignore_errors=True)
+    back = len(Presentation(out).slides)
+    return res("pptx", str(out), {"slides": back}, verified=back == n)
+
+
+@op("print-pdf", "Canva Print PDF (bleed, crop marks, CMYK in app.asar)", "APPX-97", ["pip:pillow"], "PDF جاهز للمطبعة: نزيف وعلامات قص وCMYK",
+    "IN = design image ; width_mm height_mm (trim) ; bleed_mm=3 ; marks=1 ; cmyk=1 ; dpi=300 ; profile=CMYK.icc (optional, accurate)")
+def print_pdf(inp, out, p):
+    from PIL import Image, ImageDraw, ImageOps
+    dpi = int(f(p, "dpi", 300))
+    mm = lambda v: round(float(v) / 25.4 * dpi)
+    tw, th = mm(f(p, "width_mm", 210.0)), mm(f(p, "height_mm", 297.0))
+    bl = mm(f(p, "bleed_mm", 3.0))
+    slug = mm(10) if p.get("marks", "1") == "1" else 0
+    art = ImageOps.fit(Image.open(inp[0]).convert("RGB"), (tw + 2 * bl, th + 2 * bl), Image.LANCZOS)   # art covers the bleed
+    page = Image.new("RGB", (tw + 2 * bl + 2 * slug, th + 2 * bl + 2 * slug), "white")
+    page.paste(art, (slug, slug))
+    if slug:
+        d = ImageDraw.Draw(page)
+        x0, y0, x1, y1 = slug + bl, slug + bl, slug + bl + tw, slug + bl + th
+        L, gapm, lw = mm(6), mm(1.5), max(1, mm(0.15))
+        for x in (x0, x1):
+            d.line([x, 0 + gapm, x, slug - gapm], fill="black", width=lw)
+            d.line([x, page.height - slug + gapm, x, page.height - gapm], fill="black", width=lw)
+        for y in (y0, y1):
+            d.line([gapm, y, slug - gapm, y], fill="black", width=lw)
+            d.line([page.width - slug + gapm, y, page.width - gapm, y], fill="black", width=lw)
+    mode = "RGB"
+    if p.get("cmyk", "1") == "1":
+        if p.get("profile"):
+            from PIL import ImageCms
+            page = ImageCms.profileToProfile(page, ImageCms.createProfile("sRGB"), ImageCms.getOpenProfile(p["profile"]), outputMode="CMYK")
+        else:
+            page = page.convert("CMYK")   # naive conversion; pass the printer's profile= for accurate colour
+        mode = "CMYK"
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    page.save(out, resolution=dpi)
+    return res("print-pdf", str(out), {"page_px": list(page.size), "trim_px": [tw, th], "bleed_px": bl, "marks": bool(slug),
+                                       "mode": mode, "icc": bool(p.get("profile"))})
+
+
+@op("text-anim", "Canva text animations (Rise, Typewriter, Fade, Pop)", "APPX-98", ["pip:pillow", "pip:numpy"],
+    "تحريك نص عربي إلى GIF أو MP4", "text ; style=rise|typewriter|fade|pop ; size=story|WxH ; font ; color ; bg ; seconds ; fps → .gif or .mp4 (ffmpeg)")
+def text_anim(inp, out, p):
+    from PIL import Image
+    np, _ = np_cv()
+    text = p.get("text", inp[0] if inp else "KOSIF")
+    sz = p.get("size", "1080x1080")
+    W, H = SIZES[sz] if sz in SIZES else tuple(int(v) for v in sz.lower().split("x"))
+    fps, secs = int(f(p, "fps", 24)), float(f(p, "seconds", 2.5))
+    n = int(fps * secs)
+    style = p.get("style", "rise")
+    words = text.split(" ")
+    frames = []
+    for i in range(n):
+        u = min(1.0, i / max(1, int(n * 0.6)))
+        e = 1 - (1 - u) ** 3
+        canvas = Image.new("RGBA", (W, H), hex_rgba(p.get("bg", "#0f172a")))
+        shown = text
+        alpha, dy, scale = 1.0, 0.0, 1.0
+        if style == "typewriter":   # whole words: Arabic letters stay joined
+            shown = " ".join(words[:max(1, math.ceil(e * len(words)))])
+        elif style == "fade":
+            alpha = e
+        elif style == "pop":
+            scale = 0.6 + 0.4 * (1 + 2.7 * (u - 1) ** 3 + 1.7 * (u - 1) ** 2)
+        else:
+            dy, alpha = (1 - e) * H * 0.08, e
+        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        bw_, bh_ = int(W * 0.84 * scale), int(H * 0.3 * scale)
+        draw_text_block(layer, {"type": "text", "text": shown, "box": [(W - bw_) // 2, int((H - bh_) // 2 + dy), bw_, bh_],
+                                "font": p.get("font", "cairo"), "color": p.get("color", "#ffffff"), "align": "center",
+                                "effect": p.get("effect", "none"), "size": int(f(p, "font_size", 0)) * scale if p.get("font_size") else 0})
+        if alpha < 1:
+            layer.putalpha(layer.getchannel("A").point(lambda v, a=alpha: int(v * a)))
+        canvas.alpha_composite(layer)
+        frames.append(canvas.convert("RGB"))
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    if str(out).lower().endswith(".mp4"):
+        import subprocess
+        ff = shutil.which("ffmpeg")
+        if not ff:
+            raise RuntimeError("MP4 needs ffmpeg on PATH (or write .gif)")
+        proc = subprocess.Popen([ff, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(fps),
+                                 "-i", "-", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(out)], stdin=subprocess.PIPE)
+        for fr in frames:
+            proc.stdin.write(np.asarray(fr).tobytes())
+        proc.stdin.close()
+        if proc.wait():
+            raise RuntimeError("ffmpeg failed")
+    else:
+        frames[0].save(out, save_all=True, append_images=frames[1:], duration=int(1000 / fps), loop=0)
+    return res("text-anim", str(out), {"frames": n, "fps": fps, "style": style, "size": [W, H]})
 
 
 # ------------------------------------------------------------------ cli

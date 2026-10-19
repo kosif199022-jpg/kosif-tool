@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** مزايا CapCut وCanva وPremiere وDxO PhotoLab وCapture One وJPEGmini وFontLab وAffinity وHoudini وAnimate وIDM التي كشفها التحليل بـ REA، لكل منها وصفة مفتوحة مثبتة (FFmpeg/OpenCV/Pillow/fontTools/Whisper) أو نمط معماري موثّق لتطبيقاتك. — Features found by analysing CapCut, Canva, Premiere Pro, DxO PhotoLab, Capture One, JPEGmini, FontLab, Affinity Designer, Houdini, Animate and IDM with REA, each with a proven open-tool recipe (FFmpeg/OpenCV/Pillow/fontTools/Whisper) or a documented architecture pattern for your own apps.
 > **أقوى دليل / strongest evidence:** **APPX-01** Speed curve (ramp) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`) · **APPX-02** Chroma key (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`)
-> **87 powers follow** — ✅ 67 · 🟢 0 · 📦 1 · 🔑 0 · 👁 0 · 📄 19 · 💡 0.
+> **98 powers follow** — ✅ 78 · 🟢 0 · 📦 1 · 🔑 0 · 👁 0 · 📄 19 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -22,6 +22,7 @@
 - **معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns** — APPX-51 … APPX-58 (8)
 - **مشاريع المالك في مجلد العمل — owner's own projects** — APPX-59 … APPX-60 (2)
 - **مكتبة الصور — Lightroom وACDSee (فهرسة وبحث وتكرار ووجوه) — photo library** — APPX-74 … APPX-78 (5)
+- **تصميم Canva — قوالب ومقاسات وموك أب وطباعة (مرساة في app.asar، تنفيذ مفتوح مثبت) — Canva design** — APPX-88 … APPX-98 (11)
 - المصادر والرخص / sources & licences
 
 ## محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors
@@ -191,11 +192,11 @@
 #### APPX-14 · إزالة خلفية صورة · Background removal on a still · ✅ مُثبت هنا / proven here
 - **ماذا / what:** فصل الموضوع عن الخلفية بقناع شفاف (GrabCut كلاسيكي؛ نموذج تجزئة للحالات الصعبة) — background removal on a still.
 - **متى أستخدمها / when:** صور منتجات، أغلفة، ملصقات
-- **كيف / how:** cv2.grabCut(img, mask, rect, bgd, fgd, 5, GC_INIT_WITH_RECT) → PNG بقناة ألفا؛ للشعر والحواف المعقدة انظر MEDIA-29 وFOOT-31 (نموذج تجزئة، 📦). **أرقام / params:** 5 iterations, rect around the subject
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py remove-bg IN -o OUT.png --set box=x,y,w,h` (PNG شفاف) — cv2.grabCut(img, mask, rect, bgd, fgd, 5, GC_INIT_WITH_RECT) → PNG بقناة ألفا؛ للشعر والحواف المعقدة انظر MEDIA-29 وFOOT-31 (نموذج تجزئة، 📦). **أرقام / params:** 5 iterations, rect around the subject
 - **تثبيت / install:** `pip install opencv-python`
 - **يحتاج / needs:** [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of CapCut, Canva 1.126.1 and Adobe Premiere Pro installers with REA 6.7.0 (2026-10-18)
 
 #### APPX-18 · منتقي الشاشة للتسجيل · Display-media picker for screen recording · 📄 موصوف / documented only
@@ -903,9 +904,121 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
 
+## تصميم Canva — قوالب ومقاسات وموك أب وطباعة (مرساة في app.asar، تنفيذ مفتوح مثبت) — Canva design
+
+#### APPX-88 · تصميم من قالب JSON · Template design (JSON → PNG/PDF) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** محرك تصميم: خلفية لون أو تدرج أو صورة، صور بإطار دائري أو زوايا مستديرة مع Duotone، أشكال وخطوط، ونصوص عربية بالتفاف وملاءمة تلقائية للصندوق ومحاذاة يمين، وتأثيرات النص (shadow، lift، outline، glow، neon، echo)، مع رجوع تلقائي إلى خط Amiri حين ينقص الخط المختار حروفًا — Canva evidence: template ×215, element ×303, gradients, frames.
+- **متى أستخدمها / when:** بوست، بانر، غلاف، فلاير، بطاقة دعوة، شريحة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py design post.json -o post.png` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** size=instagram-post|story|… أو width/height؛ 16 مقاسًا جاهزًا
+- **تثبيت / install:** `pip install pillow numpy arabic-reshaper python-bidi`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-89 · تغيير المقاس السحري · Magic Resize to every platform · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تصميم واحد إلى 16 مقاسًا (انستجرام، ستوري، ريلز، تيك توك، يوتيوب، فيسبوك، X، لينكدإن، بنترست، واتساب، A4، عرض): قص حول مركز الطاقة البصرية، أو حشو بخلفية مغبشة حين يختلف الشكل كثيرًا — Canva evidence: resize ×122 in the editor bundle.
+- **متى أستخدمها / when:** نشر نفس الإعلان على كل المنصات
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py resize-design post.png -o sizes/ --set sizes=all mode=smart` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** mode smart|pad-blur|pad-color
+- **تثبيت / install:** `pip install opencv-python-headless numpy`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-90 · تأثير اللونين · Duotone · ✅ مُثبت هنا / proven here
+- **ماذا / what:** خريطة إضاءة الصورة إلى خط بين لونين (ظلال ← لون داكن، إضاءات ← لون فاتح) — Canva evidence: DUOTONE constant in main.js.
+- **متى أستخدمها / when:** صور غلاف بهوية لونية موحدة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py duotone IN -o OUT --set dark=#1b1464 light=#ff6f61` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** dark, light
+- **تثبيت / install:** `pip install pillow numpy`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-91 · كولاج وشبكات · Collage and grids · ✅ مُثبت هنا / proven here
+- **ماذا / what:** شبكة أو صورة رئيسية مع صف أو شريط، بفواصل وزوايا مستديرة ومقاس منصة — Canva evidence: Collage module (collage ×8).
+- **متى أستخدمها / when:** ألبوم، قبل وبعد، منتجات
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py collage IMGS… -o out.jpg --set layout=hero gap=12 radius=20` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** layout grid|hero|strip
+- **تثبيت / install:** `pip install pillow`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-92 · موك أب واقعي · Photo mockup · ✅ مُثبت هنا / proven here
+- **ماذا / what:** وضع التصميم على سطح في صورة حقيقية (شاشة، لوحة، ورقة) بالمنظور، مع إبقاء إضاءة المشهد وطيّاته عليه؛ يكتشف السطح الفاتح تلقائيًا — Canva evidence: PHOTO_TO_MOCKUP, MockupBundle, mockupTemplateIds in main.js.
+- **متى أستخدمها / when:** عرض شعار أو بوستر أو تطبيق للعميل
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py mockup design.png scene.jpg -o mock.jpg  (or --set quad=…)` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** shade 0..1
+- **تثبيت / install:** `pip install opencv-python-headless numpy`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-93 · رمز QR بشعار · QR code (verified) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** رمز QR بألوان وشعار في الوسط (تصحيح H تلقائيًا مع الشعار)، PNG أو SVG، ثم يُقرأ بـ OpenCV للتحقق أنه يعمل — Canva evidence: QR library in the vendor bundle (qr ×172).
+- **متى أستخدمها / when:** منيو، كرت شخصي، بوستر، تغليف
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py qr "https://…" -o qr.png --set dark=#0f172a logo=logo.png` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** error l|m|q|h, scale, border
+- **تثبيت / install:** `pip install segno opencv-python-headless`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv) · [`pip:segno`](../requirements.md#req-pip-segno)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-94 · ألوان الهوية · Brand palette (Brand Kit) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** استخراج ألوان الهوية من شعار أو صورة بنسبها، ولون النص الأنسب فوق كل لون مع تباين WCAG، ولوحة PNG — Canva evidence: brand ×205, color ×3309.
+- **متى أستخدمها / when:** بناء هوية، اختيار ألوان بوست متناسقة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py palette logo.png -o brand --set colors=5` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** colors 3–8
+- **تثبيت / install:** `pip install opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv) · [`npm:axe`](../requirements.md#req-npm-axe)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-95 · رسم بياني بالعربية · Charts with Arabic labels · ✅ مُثبت هنا / proven here
+- **ماذا / what:** أعمدة أو خط أو دائرة أو حلقة من JSON أو CSV بعناوين عربية صحيحة (matplotlib 3.11+ يشكّل العربية بنفسه، وما قبله عبر arabic-reshaper) — Canva evidence: chart ×17 in the editor bundle.
+- **متى أستخدمها / when:** إنفوجرافيك، تقرير، شريحة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py chart data.json -o chart.png --set kind=bar title=…` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** kind bar|line|pie|donut
+- **تثبيت / install:** `pip install matplotlib`
+- **يحتاج / needs:** [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-96 · عرض PowerPoint · Presentation export (PPTX) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** عرض 16:9 من صور أو تصاميم JSON بالترتيب مع ملاحظات المتحدث، ويُعاد فتحه للتحقق من عدد الشرائح — Canva evidence: presentationml, Presentations ×50.
+- **متى أستخدمها / when:** عرض تقديمي من تصاميم KOSIF
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py pptx slide1.png slide2.json -o deck.pptx --set notes=notes.txt` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** notes line per slide
+- **تثبيت / install:** `pip install python-pptx pillow`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:office`](../requirements.md#req-pip-office)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-97 · PDF للمطبعة · Print PDF: bleed, crop marks, CMYK · ✅ مُثبت هنا / proven here
+- **ماذا / what:** PDF جاهز للمطبعة: مقاس القص بالملليمتر، ونزيف يغطيه التصميم، وعلامات قص في الهامش، وتحويل CMYK (دقيق بملف ICC المطبعة عبر profile=) — Canva evidence: bleedMicrons, backgroundBleed, rgbToCmykColorMappings, "crop marks" export strings.
+- **متى أستخدمها / when:** كروت، فلايرات، ملصقات، منيو
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py print-pdf card.png -o card.pdf --set width_mm=90 height_mm=50 bleed_mm=3` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** dpi 300, bleed 3 mm
+- **تثبيت / install:** `pip install pillow`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
+#### APPX-98 · نص متحرك · Text animation to GIF/MP4 · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تحريك نص عربي (صعود، آلة كاتبة بالكلمة كي لا تتقطع الحروف، ظهور، قفزة) مع تأثيرات النص إلى GIF أو MP4 — Canva evidence: animation ×628, PRESENTATION_PHOTO_AND_VIDEO_ANIMATIONS.
+- **متى أستخدمها / when:** ستوري تهنئة، عنوان ريل، إعلان قصير
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py text-anim -o t.mp4 --set text=… style=rise|typewriter|fade|pop size=story` — يطبع سطر JSON بالنتيجة والمقاييس. **أرقام / params:** seconds, fps, font, effect
+- **تثبيت / install:** `pip install pillow numpy (+ ffmpeg for MP4)`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
+- **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (87)
+- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (98)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

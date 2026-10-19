@@ -1341,6 +1341,120 @@
     ],
     "top_k": 8
    }
+  },
+  {
+   "id": 61,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "صمم لي بوست انستجرام عرض خاص بالعربي زي كانفا",
+   "files": [],
+   "expected_behavior": [
+    "Writes a design.json and runs app_studio.py design (APPX-88); reports that all text fits and Arabic is shaped"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 62,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عايز نفس التصميم بكل المقاسات للمنصات زي magic resize",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py resize-design --set sizes=all (APPX-89)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 63,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "put my logo design on this photo of a billboard as a mockup",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py mockup design scene (APPX-92)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 64,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل رمز QR لموقعي وفي نصه اللوجو",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py qr with logo (APPX-93) and reports the decode check"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 65,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "جهز كرت شخصي PDF للمطبعة بنزيف وعلامات قص",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py print-pdf with width_mm/height_mm/bleed_mm (APPX-97)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 66,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "استخرج ألوان الهوية من اللوجو ده",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py palette (APPX-94) with WCAG text colours"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

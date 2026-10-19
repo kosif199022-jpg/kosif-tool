@@ -96,7 +96,7 @@ Triage gained: Inno Setup detection (+ `innoextract`), payloads inside PE resour
 
 <div dir="rtl">
 
-**ما هو:** `scripts/app_studio.py` أداة سطر أوامر واحدة تنفّذ 49 عملية من قدرات البرامج المحللة على ملفات المستخدم الحقيقية، صورة واحدة أو مجلدًا كاملًا (`batch`)، وتطبع سطر JSON فيه الناتج والمقاييس. كلها مثبتة في `evals/test_app_studio.py` (33 اختبارًا داخل مجلد اسمه عربي، فالمسارات العربية على Windows مضمونة).
+**ما هو:** `scripts/app_studio.py` أداة سطر أوامر واحدة تنفّذ 61 عملية من قدرات البرامج المحللة على ملفات المستخدم الحقيقية، صورة واحدة أو مجلدًا كاملًا (`batch`)، وتطبع سطر JSON فيه الناتج والمقاييس. كلها مثبتة في `evals/test_app_studio.py` (45 اختبارًا داخل مجلد اسمه عربي، فالمسارات العربية على Windows مضمونة).
 
 **متطلبات الاستخدام:** شغّل أولًا `python $SKILL_DIR/scripts/app_studio.py doctor`، فيطبع العمليات الجاهزة وسطر التثبيت لكل ما ينقص. على Windows استخدم `python` بدل `python3`.
 
@@ -110,6 +110,10 @@ Triage gained: Inno Setup detection (+ `innoextract`), payloads inside PE resour
 | `pip:arabic-reshaper` (اختياري) | `pip install arabic-reshaper python-bidi` | وصل الحروف العربية في العلامة المائية حين يغيب libraqm؛ الخط Amiri مرفق في `proofs/_shared/fonts` |
 | `pip:fonttools` | `pip install fonttools brotli` | font-build، font-inspect، font-subset (woff2 يحتاج brotli) |
 | `pip:shapely` | `pip install shapely` | boolean |
+| `pip:segno` | `pip install segno` | qr (Canva QR) |
+| `pip:matplotlib` | `pip install matplotlib` | chart |
+| `pip:office` | `pip install python-pptx` | pptx |
+| ffmpeg (اختياري) | `winget install Gyan.FFmpeg` | text-anim إلى MP4 (GIF بدونه) |
 | `model:yunet` (OpenCV 5 فقط) | `face_detection_yunet_2023mar.onnx` من opencv_zoo، ثم `KOSIF_YUNET=<path>` | faces (في OpenCV 4 يعمل بلا نموذج) |
 | شبكة / network | — | download فقط؛ كل الباقي يعمل دون اتصال |
 | `innoextract` + 7-Zip | `scoop install innoextract 7zip` | تحليل مثبّتات جديدة (`installer_triage.py`)، لا لاستخدام القدرات |
@@ -172,6 +176,18 @@ python $SKILL_DIR/scripts/app_studio.py batch jpegmini ./shop -o ./shop_small --
 | `lottie` | APPX-86 | Adobe Animate export (Bodymovin/Lottie), Canvas | تصدير Lottie JSON — w h fps frames from=x,y to=x,y shape=circle|rect size color ease | stdlib |
 | `ik` | APPX-87 | Adobe Animate Bone tool (FlashIK), Houdini KineFX | حل عظمتين (IK) — l1 l2 target=x,y → joint angles + positions JSON | stdlib |
 | `download` | APPX-48 | Internet Download Manager | تنزيل مجزأ قابل للاستئناف — IN = URL ; parts=6, sha256= (verify) | stdlib |
+| `design` | APPX-88 | Canva editor (templates, text effects, frames, gradients) | تصميم من قالب JSON (نصوص عربية وصور وأشكال) — IN = design.json {size|width,height, background, elements:[text|image|rect|ellipse|line]} → PNG/JPG/PDF | pip:pillow, pip:numpy |
+| `resize-design` | APPX-89 | Canva Magic Resize | مقاسات متعددة لكل المنصات من تصميم واحد — sizes=instagram-post,story,youtube-thumbnail,… (or all) ; mode=smart|pad-blur|pad-color ; color=#hex → OUT_DIR | pip:numpy, pip:opencv |
+| `remove-bg` | APPX-14 | Canva Background Remover, CapCut | إزالة الخلفية إلى PNG شفاف — box=x,y,w,h around the subject (default: centre 70%) ; feather px → transparent PNG | pip:numpy, pip:opencv |
+| `duotone` | APPX-90 | Canva Duotone filter (DUOTONE in app.asar) | تأثير اللونين (Duotone) — dark=#hex light=#hex | pip:pillow, pip:numpy |
+| `collage` | APPX-91 | Canva grids / Collage | كولاج وشبكات صور — IN = images or folder ; layout=grid|hero|strip ; cols ; size=instagram-post|WxH ; gap ; radius ; bg | pip:pillow |
+| `mockup` | APPX-92 | Canva Mockups (PHOTO_TO_MOCKUP, MockupBundle in app.asar) | وضع التصميم داخل صورة واقعية (موك أب) — IN = design, scene photo ; quad=x,y;x,y;x,y;x,y (TL;TR;BR;BL) or auto (largest bright quad) ; shade=0..1 | pip:numpy, pip:opencv |
+| `qr` | APPX-93 | Canva QR code app (vendor QR library in app.asar) | رمز QR بألوان وشعار — IN = text/URL ; dark=#hex light=#hex scale border logo=path ; error=h when a logo is used → PNG/SVG (decoded back to verify) | pip:segno, pip:opencv |
+| `palette` | APPX-94 | Canva Brand Kit / colour palette from photo | لوحة ألوان الهوية من شعار أو صورة — colors=5 → JSON (hex, share, best text colour + WCAG contrast) + swatch PNG | pip:numpy, pip:opencv, pip:pillow |
+| `chart` | APPX-95 | Canva Charts | رسم بياني بعناوين عربية — IN = data.json {labels:[…], values:[…]} or CSV label,value ; kind=bar|line|pie|donut ; title ; color ; font → PNG/SVG | pip:matplotlib |
+| `pptx` | APPX-96 | Canva Presentations (presentationml export in app.asar) | عرض تقديمي PowerPoint — IN = slide images/designs (PNG/JPG or design.json) in order ; notes=file.txt (one line per slide) → .pptx 16:9 | pip:office, pip:pillow |
+| `print-pdf` | APPX-97 | Canva Print PDF (bleed, crop marks, CMYK in app.asar) | PDF جاهز للمطبعة: نزيف وعلامات قص وCMYK — IN = design image ; width_mm height_mm (trim) ; bleed_mm=3 ; marks=1 ; cmyk=1 ; dpi=300 ; profile=CMYK.icc (optional, accurate) | pip:pillow |
+| `text-anim` | APPX-98 | Canva text animations (Rise, Typewriter, Fade, Pop) | تحريك نص عربي إلى GIF أو MP4 — text ; style=rise|typewriter|fade|pop ; size=story|WxH ; font ; color ; bg ; seconds ; fps → .gif or .mp4 (ffmpeg) | pip:pillow, pip:numpy |
 
 **Honesty rules:** `verified` is true only when the op measured its own postcondition (SSIM for `jpegmini`, keyword round-trip for `xmp`, SHA-256 for `download`, minimum distance for `scatter`, reach error for `ik`). These are open, classical methods, not the vendors' algorithms (DeepPRIME, ClearView Plus, Lightroom's AI masks).
 
