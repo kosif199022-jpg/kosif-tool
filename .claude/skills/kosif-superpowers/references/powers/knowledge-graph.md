@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `GRAPH` · **البيانات / data:** `data/powers/knowledge-graph.json` · **بحث / search:** `python3 scripts/powers.py family knowledge-graph`
-**مراجع ذات صلة / related references:** [creativity.md](../creativity.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [graphify.md](../graphify.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [creativity.md](../creativity.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [graphify.md](../graphify.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
