@@ -68,7 +68,8 @@ def signature():
     h = hashlib.sha256()
     for path in sorted(POWERS.glob("*.json")) + [ROUTES]:
         h.update(path.name.encode("utf-8"))
-        h.update(path.read_bytes())
+        # Canonicalize line endings so Windows and Linux compute the same catalog hash.
+        h.update(path.read_bytes().replace(b"\r\n", b"\n"))
     return h.hexdigest()
 
 
