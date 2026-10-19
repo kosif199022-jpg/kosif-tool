@@ -39,6 +39,8 @@ jobs:
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_local_first.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_catalog_evidence_audit.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_blender_bridge.py' -v
+      - name: Verify native 3D without Blender before packaging
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_native_3d.py' -v
       - name: Test new Code Drawing Master before packaging
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
@@ -82,6 +84,11 @@ jobs:
                   "scripts/creative_paint.py",
                   "scripts/local_first.py",
                   "scripts/catalog_evidence_audit.py",
+                  "scripts/native_3d.py",
+                  "templates/native-3d-demo.json",
+                  "evals/test_native_3d.py",
+                  "references/native-3d-runtime.md",
+                  "references/blender-public-api-research.md",
                   "scripts/blender_bridge.py",
                   "scripts/blender_worker.py",
                   "templates/blender-demo.json",

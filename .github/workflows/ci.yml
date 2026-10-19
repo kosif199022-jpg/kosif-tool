@@ -63,6 +63,8 @@ jobs:
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_local_first.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_catalog_evidence_audit.py' -v
+      - name: Verify Blender-free native 3D frame and H264 rendering
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_native_3d.py' -v
       - name: KOSIF Code Drawing Master Python scene/actor tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_code_drawing_master.py' -v
       - name: KOSIF Code Drawing Master SVG and morph runtime tests

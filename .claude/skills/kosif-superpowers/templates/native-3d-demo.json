@@ -1,0 +1,19 @@
+{
+  "schema": "kosif.native3d.v1",
+  "width": 640, "height": 360, "fps": 24, "frames": 120,
+  "background": "#233444",
+  "camera": {"position": [6, -10, 7], "target": [0, 0, 0.5], "ortho_scale": 6.5},
+  "objects": [
+    {"shape": "cube", "color": "#446F6B", "scale": [1.2, 1.2, 1.2],
+     "location": [-1.8, 0, 0.6],
+     "keyframes": [{"frame": 1, "location": [-1.8, 0, 0.6], "yaw": 0},
+                   {"frame": 120, "location": [0, 0, 0.6], "yaw": 270}]},
+    {"shape": "sphere", "color": "#DF9449", "scale": [1, 1, 1],
+     "location": [1.7, 0, 0.65],
+     "keyframes": [{"frame": 1, "location": [1.7, 0, 0.65]},
+                   {"frame": 72, "location": [1.7, 0, 1.5]},
+                   {"frame": 120, "location": [1.1, 0, 0.65]}]},
+    {"shape": "cylinder", "color": "#93A2B8", "scale": [0.25, 0.25, 2.2],
+     "location": [-2.2, 1.1, 1.1]}
+  ]
+}
