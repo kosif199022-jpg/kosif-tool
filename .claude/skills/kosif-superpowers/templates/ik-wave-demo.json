@@ -1,0 +1,49 @@
+{
+  "schema": "kosif.ik.v1",
+  "width": 640,
+  "height": 640,
+  "duration": 2,
+  "background": "#F4F0E6",
+  "rig": {
+    "shoulder": [
+      320,
+      310
+    ],
+    "upper": 120,
+    "lower": 115,
+    "bend": -1,
+    "skin": "#E6BF96",
+    "clothes": "#355B47",
+    "body_width": 118,
+    "head_radius": 62,
+    "arm_width": 22
+  },
+  "targets": [
+    {
+      "time": 0,
+      "point": [
+        400,
+        420
+      ],
+      "travel": 0
+    },
+    {
+      "word": "ارفع",
+      "occurrence": 1,
+      "point": [
+        430,
+        170
+      ],
+      "travel": 0.4
+    },
+    {
+      "word": "أنزل",
+      "occurrence": 1,
+      "point": [
+        400,
+        400
+      ],
+      "travel": 0.35
+    }
+  ]
+}
