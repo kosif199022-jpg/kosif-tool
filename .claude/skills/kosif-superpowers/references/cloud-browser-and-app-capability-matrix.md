@@ -54,3 +54,16 @@ or remotely hosted service. Browser installation and actual screenshot
 must be checked before claiming execution. The existing native_3d
 software renderer is limited and not Blender parity. Every Atlas skill
 needs separate licensing, security and runtime evidence to be trusted.
+
+## Atlas external catalog metadata verification
+
+The externally supplied KOSIF Atlas index snapshot contains 14,708 regular
+and 85 separately licensed/copyleft records, 14,793 total. The static audit
+checks every record schema, license label, source URL, risk flag and reported
+security verdict without executing external scripts. The snapshot's claims are
+not independent source verification. Execute:
+python scripts/atlas_metadata_audit.py --index INDEX.json --copyleft INDEX_COPY.json.
+On 2026-10-19 the local index snapshot passed structure checks with 0
+structural errors; 9,508 records said REVIEW_BEFORE_INSTALL across both
+indices. All these entries still need trust/license validation before importing.
+This cannot be called a line-by-line audit of 14,793 source folders.
