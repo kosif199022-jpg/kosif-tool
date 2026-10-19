@@ -1380,5 +1380,26 @@
   "patterns": [
    "\\binnoextract\\b"
   ]
+ },
+ "pip:arabic-reshaper": {
+  "kind": "pip",
+  "detect": "arabic_reshaper",
+  "install": "pip install arabic-reshaper python-bidi",
+  "ar": "وصل الحروف العربية واتجاهها حين يغيب libraqm عن Pillow",
+  "en": "Arabic letter joining + bidi when Pillow lacks libraqm",
+  "patterns": [
+   "\\barabic[-_]reshaper\\b",
+   "\\bpython-bidi\\b"
+  ]
+ },
+ "model:yunet": {
+  "kind": "model",
+  "detect": "KOSIF_YUNET",
+  "install": "download face_detection_yunet_2023mar.onnx from github.com/opencv/opencv_zoo (Apache-2.0); set KOSIF_YUNET to its path",
+  "ar": "كشف الوجوه في OpenCV 5",
+  "en": "face detection on OpenCV 5",
+  "patterns": [
+   "\\byunet\\b"
+  ]
  }
 }

@@ -128,7 +128,7 @@
 - **ماذا / what:** matplotlib 3.11 وPillow 12 يشكّلان العربية بأنفسهما؛ إضافة reshaper+bidi فوقهما تعكس النص. — matplotlib 3.11 and Pillow 12 shape Arabic themselves; adding reshaper+bidi on top reverses the text.
 - **متى أستخدمها / when:** before drawing any Arabic in matplotlib or Pillow; when you see reversed or unjoined Arabic
 - **كيف / how:** RAQM=getattr(matplotlib.ft2font,'__libraqm_version__',None); text = s if RAQM else get_display(arabic_reshaper.reshape(s)). For Pillow: PIL.features.check('raqm'). Proof: libraqm 0.10.5 in both wheels; mpl_arabic_modes.png shows raw (correct) vs reshaped (reversed).
-- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib)
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-data/mpl_arabic_modes.png
 

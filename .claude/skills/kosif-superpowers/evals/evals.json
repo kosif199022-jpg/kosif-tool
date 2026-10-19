@@ -1227,6 +1227,120 @@
     ],
     "top_k": 8
    }
+  },
+  {
+   "id": 55,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "شيل احمرار العين من صورة الفرح دي",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py redeye (APPX-66) and reports pixels fixed"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 56,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عايز أشيل سلك من السما في الصورة زي Lightroom Remove",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py repair with a mask or box (APPX-67)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 57,
+   "lang": "en",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "find duplicate and near-duplicate photos in my folder like ACDSee",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py dedupe (dHash, APPX-75) and lists the groups"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 58,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حوّل الشعار ده من صورة لمتجه SVG",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py trace (k-means + contours, APPX-79)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 59,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "export a small Lottie animation of a ball moving with ease in-out",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py lottie (APPX-86) and checks the JSON frames"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 60,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل فهرس لمكتبة الصور وأبحث عن الصور اللي تقييمها 5 نجوم",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py catalog then search with min_rating (APPX-78)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

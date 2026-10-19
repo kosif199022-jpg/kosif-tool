@@ -88,7 +88,7 @@
 - **متى أستخدمها / when:** pixel-exact forms, labels or certificates; when HTML is overkill
 - **كيف / how:** pdfmetrics.registerFont(TTFont('Amiri', path)); c.setFont('Amiri',22); c.drawRightString(x,y,get_display(arabic_reshaper.reshape(text))). The raw string draws unjoined and reversed (see contact.png, last tile).
 - **تثبيت / install:** `pip install reportlab arabic-reshaper python-bidi`
-- **يحتاج / needs:** [`pip:office`](../requirements.md#req-pip-office) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
+- **يحتاج / needs:** [`pip:office`](../requirements.md#req-pip-office) · [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
 - **الرخصة / license:** BSD / MIT / LGPL-3.0 (python-bidi)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md` · `session-2026-10-16:general-arsenal.md#full-table`
 - **المصدر / source:** proofs/general-docs/make_docs.py
@@ -245,7 +245,7 @@
 - **ماذا / what:** weasyprint وLibreOffice وWord وPowerPoint وChromium وPillow 12 وmatplotlib 3.11 تشكّل بنفسها؛ reportlab وحده يحتاج reshaper وbidi. — weasyprint, LibreOffice, Word/PowerPoint XML, Chromium, Pillow 12 and matplotlib 3.11 shape Arabic themselves; only reportlab needs reshaper + bidi.
 - **متى أستخدمها / when:** choosing a rendering path for Arabic
 - **كيف / how:** Default to raw logical strings. Add arabic_reshaper.reshape + bidi.get_display only for engines without a shaper (reportlab, old PIL/matplotlib without raqm). Doing both reverses the text. All of these were exercised across the docs, data and media proofs.
-- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`libreoffice`](../requirements.md#req-libreoffice) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:office`](../requirements.md#req-pip-office)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`libreoffice`](../requirements.md#req-libreoffice) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:office`](../requirements.md#req-pip-office) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
 - **المصدر / source:** proofs/general-*/README.md
 

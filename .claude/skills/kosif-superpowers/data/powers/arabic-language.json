@@ -179,7 +179,8 @@
    "pip:pillow",
    "pip:matplotlib",
    "pip:office",
-   "fonts:arabic"
+   "fonts:arabic",
+   "pip:arabic-reshaper"
   ],
   "license": "arabic-reshaper MIT; python-bidi LGPL",
   "proof": [

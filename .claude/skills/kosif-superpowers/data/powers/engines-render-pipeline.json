@@ -9736,7 +9736,8 @@
    "pip:opencv",
    "pip:faster-whisper",
    "npm:remotion",
-   "key:openai"
+   "key:openai",
+   "pip:arabic-reshaper"
   ],
   "license": "",
   "proof": [

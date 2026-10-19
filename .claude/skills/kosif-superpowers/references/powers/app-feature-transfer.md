@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** مزايا CapCut وCanva وPremiere وDxO PhotoLab وCapture One وJPEGmini وFontLab وAffinity وHoudini وAnimate وIDM التي كشفها التحليل بـ REA، لكل منها وصفة مفتوحة مثبتة (FFmpeg/OpenCV/Pillow/fontTools/Whisper) أو نمط معماري موثّق لتطبيقاتك. — Features found by analysing CapCut, Canva, Premiere Pro, DxO PhotoLab, Capture One, JPEGmini, FontLab, Affinity Designer, Houdini, Animate and IDM with REA, each with a proven open-tool recipe (FFmpeg/OpenCV/Pillow/fontTools/Whisper) or a documented architecture pattern for your own apps.
 > **أقوى دليل / strongest evidence:** **APPX-01** Speed curve (ramp) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`) · **APPX-02** Chroma key (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`)
-> **60 powers follow** — ✅ 40 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 20 · 💡 0.
+> **87 powers follow** — ✅ 67 · 🟢 0 · 📦 1 · 🔑 0 · 👁 0 · 📄 19 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -17,10 +17,11 @@
 - **استوديو التسجيل والواجهة — Canva (مستخرجة من app.asar) — Canva desktop, evidenced** — APPX-09 … APPX-19 (4)
 - **معمارية تطبيقات سطح المكتب — desktop app architecture patterns** — APPX-20 … APPX-27 (8)
 - **معمارية المثبّتات — installer architecture** — APPX-28 … APPX-30 (3)
-- **مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers** — APPX-31 … APPX-50 (14)
-- **التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download** — APPX-44 … APPX-49 (6)
+- **مطوّر الصور — DxO PhotoLab وCapture One وJPEGmini (وحدات مكشوفة بالتحليل، وصفة مفتوحة مثبتة هنا) — photo developers** — APPX-31 … APPX-73 (27)
+- **التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download** — APPX-44 … APPX-87 (15)
 - **معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns** — APPX-51 … APPX-58 (8)
 - **مشاريع المالك في مجلد العمل — owner's own projects** — APPX-59 … APPX-60 (2)
+- **مكتبة الصور — Lightroom وACDSee (فهرسة وبحث وتكرار ووجوه) — photo library** — APPX-74 … APPX-78 (5)
 - المصادر والرخص / sources & licences
 
 ## محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors
@@ -330,173 +331,303 @@
 #### APPX-31 · إزالة الضباب · Dehaze (ClearView-style) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** إزالة الضباب واستعادة التباين كما في وحدة DxO.PhotoLab.Correction.ClearView — dehaze like DxO ClearView, rebuilt with the dark-channel prior.
 - **متى أستخدمها / when:** صور مدن ضبابية، مناظر بعيدة، لقطات من نافذة طائرة
-- **كيف / how:** OpenCV: قناة داكنة = erode(min(R,G,B), 15×15)؛ A من أعلى 0.1% من القناة الداكنة؛ t = 1 − 0.95·dark(I/A) ثم تنعيم؛ J = (I − A)/max(t,0.1) + A. **أرقام / params:** patch 15, ω 0.95, t₀ 0.1
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py dehaze IN -o OUT --set strength=0.95` — OpenCV: قناة داكنة = erode(min(R,G,B), 15×15)؛ A من أعلى 0.1% من القناة الداكنة؛ t = 1 − 0.95·dark(I/A) ثم تنعيم؛ J = (I − A)/max(t,0.1) + A. **أرقام / params:** patch 15, ω 0.95, t₀ 0.1
 - **تثبيت / install:** `pip install opencv-python-headless numpy`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-32 · تقليل الضوضاء بمستويات · Tiered noise reduction · ✅ مُثبت هنا / proven here
 - **ماذا / what:** مستويات إزالة ضوضاء كما في تعداد NoiseRemovalMethod {High, Prime, DeepPrime} داخل DxO Noise — bilateral (سريع) ثم NL-means (أقوى)؛ مستوى الذكاء الاصطناعي نموذج 📦.
 - **متى أستخدمها / when:** صور ليلية وISO مرتفع، فيديو مظلم قبل التلوين
-- **كيف / how:** cv2.bilateralFilter(img,7,40,7) للمعاينة؛ cv2.fastNlMeansDenoisingColored(img,None,12,12,7,21) للتصدير؛ للفيديو ffmpeg -vf hqdn3d أو nlmeans. **أرقام / params:** h 10–15 حسب الضوضاء
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py denoise IN -o OUT --set method=nlm h=10` — cv2.bilateralFilter(img,7,40,7) للمعاينة؛ cv2.fastNlMeansDenoisingColored(img,None,12,12,7,21) للتصدير؛ للفيديو ffmpeg -vf hqdn3d أو nlmeans. **أرقام / params:** h 10–15 حسب الضوضاء
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-33 · تصحيح المنظور تلقائيًا · Auto keystone / perspective · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تقويم المباني المائلة بأربع أو ثماني نقاط مع وضع آلي (KeystoningAutoMode وoctaPoints في DxO Perspective/ViewPoint).
 - **متى أستخدمها / when:** تصوير مبانٍ ومستندات ولوحات من زاوية
-- **كيف / how:** اكتشف الرباعي بـ findContours + approxPolyDP، رتّب الزوايا (مجموع/فرق الإحداثيات)، ثم cv2.getPerspectiveTransform + warpPerspective. **أرقام / params:** دقة الزوايا < 3 px
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py keystone IN -o OUT  (or --set points=x,y;x,y;x,y;x,y)` — اكتشف الرباعي بـ findContours + approxPolyDP، رتّب الزوايا (مجموع/فرق الإحداثيات)، ثم cv2.getPerspectiveTransform + warpPerspective. **أرقام / params:** دقة الزوايا < 3 px
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-34 · تصحيح تشوّه العدسة · Lens distortion correction · ✅ مُثبت هنا / proven here
 - **ماذا / what:** إزالة التشوّه البرميلي/الوسادي (DxO Distortion؛ ملف lens_correction_data.dat في Affinity) بنموذج Brown الشعاعي.
 - **متى أستخدمها / when:** عدسات واسعة، كاميرات أكشن، درون
-- **كيف / how:** cv2.undistort(img, K, [k1,k2,p1,p2,k3])؛ احسب K والمعاملات من لوحة شطرنج بـ cv2.calibrateCamera أو من قاعدة lensfun. **أرقام / params:** k1 موجب = برميلي
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py lens IN -o OUT --set k1=-0.2` — cv2.undistort(img, K, [k1,k2,p1,p2,k3])؛ احسب K والمعاملات من لوحة شطرنج بـ cv2.calibrateCamera أو من قاعدة lensfun. **أرقام / params:** k1 موجب = برميلي
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-35 · إزالة الزيغ اللوني · Lateral chromatic aberration removal · ✅ مُثبت هنا / proven here
 - **ماذا / what:** إزالة الحواف الملونة الجانبية (DxO ChromaticAberration) بتسجيل قناتي الأحمر والأزرق على الأخضر بمقياس شعاعي.
 - **متى أستخدمها / when:** حواف أرجوانية/خضراء في زوايا الصورة
-- **كيف / how:** ابحث عن مقياس s لكل قناة في [0.97,1.03] يقلل الفرق مع G، ثم warpAffine(getRotationMatrix2D(center,0,s)). **أرقام / params:** خطوة 0.001
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py ca IN -o OUT` — ابحث عن مقياس s لكل قناة في [0.97,1.03] يقلل الفرق مع G، ثم warpAffine(getRotationMatrix2D(center,0,s)). **أرقام / params:** خطوة 0.001
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-36 · توازن الأبيض ومنحنى الدرجات وHSL · White balance + tone curve + HSL · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تطوير أساسي كما في وحدات DxO WhiteBalance/ToneCurve/HSL وإعدادات Capture One (Curve وColor Balance): عالم رمادي ثم منحنى S ثم تشبع.
 - **متى أستخدمها / when:** تصحيح لون صورة أو إطار فيديو قبل الإخراج
-- **كيف / how:** gains = mean(all)/mean(channel)؛ LUT من np.interp لنقاط المنحنى؛ HSV وضرب S. للفيديو: ffmpeg curves/colorbalance/eq. **أرقام / params:** منحنى S: (64→50, 192→210)
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py develop IN -o OUT --set wb=grey exposure=0.3 curve=s vibrance=0.25` — gains = mean(all)/mean(channel)؛ LUT من np.interp لنقاط المنحنى؛ HSV وضرب S. للفيديو: ffmpeg curves/colorbalance/eq. **أرقام / params:** منحنى S: (64→50, 192→210)
 - **تثبيت / install:** `pip install opencv-python-headless numpy`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-37 · حبيبات فيلم وتعتيم أطراف · Film grain + vignette · ✅ مُثبت هنا / proven here
 - **ماذا / what:** مظهر فيلمي (إعدادات Capture One «Film Grain» ووحدتا DxO Grain وCreativeVignetting).
 - **متى أستخدمها / when:** صور وفيديو بطابع سينمائي أو قديم
-- **كيف / how:** حبيبات = ضوضاء غاوسية منعّمة σ≈0.8 بقوة 6–10؛ تعتيم = 1 − a·max(r−0.4,0)^1.5. فيديو: ffmpeg noise=alls=8:allf=t + vignette. **أرقام / params:** a 0.45، قوة الحبيبات 8
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py grain IN -o OUT --set amount=8 ; vignette IN -o OUT --set amount=0.45` — حبيبات = ضوضاء غاوسية منعّمة σ≈0.8 بقوة 6–10؛ تعتيم = 1 − a·max(r−0.4,0)^1.5. فيديو: ffmpeg noise=alls=8:allf=t + vignette. **أرقام / params:** a 0.45، قوة الحبيبات 8
 - **تثبيت / install:** `pip install numpy opencv-python-headless`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-38 · علامة مائية بشفافية دقيقة · Watermark with exact opacity · ✅ مُثبت هنا / proven here
 - **ماذا / what:** علامة مائية نصية أو شعار (DxO Correction.Watermark) بدمج ألفا دقيق.
 - **متى أستخدمها / when:** حماية صور العملاء والتصدير الجماعي
-- **كيف / how:** Pillow Image.alpha_composite مع طبقة RGBA؛ النص العربي بخط يدعم التشكيل (raqm)؛ فيديو: ffmpeg overlay=format=auto مع colorchannelmixer=aa=0.4. **أرقام / params:** شفافية 30–45%
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py watermark IN -o OUT --set text="© الاسم" opacity=0.4 pos=br  (or logo=logo.png)` — Pillow Image.alpha_composite مع طبقة RGBA؛ النص العربي بخط يدعم التشكيل (raqm)؛ فيديو: ffmpeg overlay=format=auto مع colorchannelmixer=aa=0.4. **أرقام / params:** شفافية 30–45%
 - **تثبيت / install:** `pip install pillow`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:pillow`](../requirements.md#req-pip-pillow)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-39 · ضغط JPEG إدراكي · Perceptual JPEG recompression (JPEGmini-style) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** أصغر جودة JPEG تبقى مطابقة بصريًا للأصل، كفكرة JPEGmini: بحث ثنائي على الجودة بشرط SSIM.
 - **متى أستخدمها / when:** تصغير صور المتجر والموقع وألبومات العملاء دون فرق مرئي
-- **كيف / how:** Pillow save(quality=q, optimize=True, progressive=True)؛ بحث ثنائي q∈[30,95] حتى SSIM ≥ SSIM(q95) − 0.01. **أرقام / params:** هامش SSIM 0.01
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py jpegmini IN -o OUT.jpg --set delta=0.01` — Pillow save(quality=q, optimize=True, progressive=True)؛ بحث ثنائي q∈[30,95] حتى SSIM ≥ SSIM(q95) − 0.01. **أرقام / params:** هامش SSIM 0.01
 - **تثبيت / install:** `pip install pillow opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-40 · ورقة تواصل وقوالب طباعة · Contact sheet / print templates · ✅ مُثبت هنا / proven here
 - **ماذا / what:** شبكة صور مصغرة مرقمة إلى صفحات PDF (قوالب Capture One PrintTemplates وWebContactSheet).
 - **متى أستخدمها / when:** مراجعة جلسة تصوير مع عميل، طباعة بروفات
-- **كيف / how:** Pillow: thumbnail لكل صورة، لصق على صفحة A4 بشبكة أعمدة×صفوف، اسم الملف تحتها، ثم save(pdf, save_all=True). **أرقام / params:** 4×3 لكل صفحة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py contact-sheet FOLDER -o sheet.pdf --set cols=4 rows=5` — Pillow: thumbnail لكل صورة، لصق على صفحة A4 بشبكة أعمدة×صفوف، اسم الملف تحتها، ثم save(pdf, save_all=True). **أرقام / params:** 4×3 لكل صفحة
 - **تثبيت / install:** `pip install pillow`
 - **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-41 · ملفات إعدادات مسبقة بإصدارات · Versioned preset / style files · ✅ مُثبت هنا / proven here
 - **ماذا / what:** أنماط وإعدادات مسبقة كملفات (Capture One Styles وPresets60؛ DxO مع سلسلة Compatibility.V7…V15) تبقى قديمها قابلًا للفتح.
 - **متى أستخدمها / when:** نظام فلاتر لتطبيقك أو لمونتاج KOSIF
-- **كيف / how:** JSON فيه schema وقائمة ops؛ دالة migrate لكل إصدار قديم ثم apply حتمية. **أرقام / params:** schema رقم صحيح متزايد
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py preset IN -o OUT --set preset=look.json` — JSON فيه schema وقائمة ops؛ دالة migrate لكل إصدار قديم ثم apply حتمية. **أرقام / params:** schema رقم صحيح متزايد
 - **تثبيت / install:** `python`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-42 · ملف XMP جانبي: تقييم ووسوم · XMP sidecar: rating, label, keywords · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تقييم بالنجوم وتسمية لونية وكلمات مفتاحية في ملف .xmp بجوار الصورة (Lightroom وACDSee وDxO Search.Metadata وlibxmp في Affinity).
 - **متى أستخدمها / when:** أرشفة الصور والبحث فيها بين البرامج
-- **كيف / how:** xml.etree: x:xmpmeta/rdf:Description مع xmp:Rating وxmp:Label وdc:subject/rdf:Bag؛ أو exiftool -XMP:Rating=4. **أرقام / params:** Rating 0–5
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py xmp IN --set rating=4 label=Green keywords=a,b` — xml.etree: x:xmpmeta/rdf:Description مع xmp:Rating وxmp:Label وdc:subject/rdf:Bag؛ أو exiftool -XMP:Rating=4. **أرقام / params:** Rating 0–5
 - **تثبيت / install:** `python (stdlib)`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-43 · تعديل الأفق تلقائيًا · Auto horizon straighten · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تقويم الأفق المائل والقص (DxO Horizon وAutoCropManagedWrapper في Capture One).
 - **متى أستخدمها / when:** صور بحر وسماء، لقطات يد مائلة
-- **كيف / how:** Canny → HoughLinesP؛ وسيط زوايا الخطوط الطويلة (<20°)؛ warpAffine بالزاوية المعاكسة ثم قص المستطيل الداخلي. **أرقام / params:** دقة < 0.4°
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py horizon IN -o OUT` — Canny → HoughLinesP؛ وسيط زوايا الخطوط الطويلة (<20°)؛ warpAffine بالزاوية المعاكسة ثم قص المستطيل الداخلي. **أرقام / params:** دقة < 0.4°
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-50 · دمج التعريضات والتحكم بالدرجات · Exposure fusion / selective tonal control · ✅ مُثبت هنا / proven here
 - **ماذا / what:** استعادة الإضاءات المحروقة والظلال (DxO SelectiveTonalControl وSmart Lighting) بدمج عدة تعريضات.
 - **متى أستخدمها / when:** مشاهد داخلية مع نافذة، غروب، HDR بلا هالات
-- **كيف / how:** cv2.createMergeMertens().process([u8_dark, u8_mid, u8_bright]) → float 0..1؛ لصورة واحدة: CLAHE على قناة L. **أرقام / params:** 3 تعريضات (−1.5، 0، +1.2 EV)
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py hdr EV-2.jpg EV0.jpg EV+2.jpg -o OUT` — cv2.createMergeMertens().process([u8_dark, u8_mid, u8_bright]) → float 0..1؛ لصورة واحدة: CLAHE على قناة L. **أرقام / params:** 3 تعريضات (−1.5، 0، +1.2 EV)
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
+
+#### APPX-61 · توضيح الحدة · Unsharp-mask sharpening · ✅ مُثبت هنا / proven here
+- **ماذا / what:** توضيح الحدة بقناع غير حاد مع عتبة تحمي المساحات الناعمة (DxO UnsharpMask, Lightroom Detail).
+- **متى أستخدمها / when:** صور مصغرة للنشر، طباعة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py sharpen IN -o OUT --set amount=0.8 radius=1.2 threshold=2` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch sharpen FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** amount 0.5–1.5
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-62 · الوضوح والملمس · Clarity / texture (local contrast) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تباين محلي على قناة الإضاءة فقط بمرشح ثنائي (بلا هالات) (DxO Microcontrast/Texture, Lightroom Clarity).
+- **متى أستخدمها / when:** مناظر ومبانٍ، بورتريه رجالي، طعام
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py clarity IN -o OUT --set amount=0.5 radius=20` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch clarity FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** radius كبير = وضوح، صغير = ملمس
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-63 · تحكم لوني لكل نطاق · HSL per colour band · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تغيير درجة وتشبع وإضاءة لون واحد (8 نطاقات) دون لمس الباقي (DxO HSL/ColorAccentuation, Lightroom HSL, Capture One Color Editor).
+- **متى أستخدمها / when:** خضرة باهتة، سماء أزرق، بشرة برتقالية
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py hsl IN -o OUT --set band=green hue=10 sat=-0.5 lum=0.2` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch hsl FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** band: red orange yellow green aqua blue purple magenta
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-64 · أبيض وأسود بخلط القنوات · Black & white channel mixer · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تحويل أبيض وأسود بأوزان قنوات قابلة للضبط ولون سيبيا اختياري (DxO ChannelMixer, Lightroom B&W, Capture One Black and White).
+- **متى أستخدمها / when:** صور فنية، أرشيف، ريلز كلاسيكية
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py bw IN -o OUT --set r=0.4 g=0.4 b=0.2 tone=sepia` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch bw FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** أوزان r g b
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-65 · تلوين الظلال والإضاءات · Split toning / colour grading · ✅ مُثبت هنا / proven here
+- **ماذا / what:** لون للظلال ولون للإضاءات بتوازن قابل للضبط (Teal & Orange وغيره) (DxO Toning, Lightroom Color Grading).
+- **متى أستخدمها / when:** مظهر سينمائي موحد لمجموعة صور
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py split-tone IN -o OUT --set shadows=#1e5a8c highlights=#ffb46e amount=0.25` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch split-tone FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** balance 0.5
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-66 · إزالة احمرار العين · Red-eye removal · ✅ مُثبت هنا / proven here
+- **ماذا / what:** كشف البقع الحمراء المضغوطة المشبعة (بؤبؤ مضاء بالفلاش) واستبدال الأحمر بمتوسط الأخضر والأزرق (DxO RedEyes).
+- **متى أستخدمها / when:** صور حفلات بفلاش
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py redeye IN -o OUT  (or --set box=x,y,w,h)` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch redeye FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** box اختياري
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-67 · إزالة عنصر وترميم · Object removal / heal · ✅ مُثبت هنا / proven here
+- **ماذا / what:** إزالة سلك أو بقعة أو شخص صغير بملء المنطقة من محيطها (inpainting) (DxO Repair, Lightroom Heal/Remove, Affinity Inpainting).
+- **متى أستخدمها / when:** بقع الحساس، أسلاك، شعار صغير
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py repair IN -o OUT --set mask=mask.png  (or box=x,y,w,h)` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch repair FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** method telea|ns
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-68 · إزالة التموج (مواريه) · Moiré removal · ✅ مُثبت هنا / proven here
+- **ماذا / what:** حذف القمم الدورية في طيف فورييه لكل قناة (DxO Moire).
+- **متى أستخدمها / when:** تصوير شاشات وأقمشة ومطبوعات
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py moire IN -o OUT --set strength=2.5` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch moire FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** strength 2–3
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-69 · تأثير المجسم · Tilt-shift miniature · ✅ مُثبت هنا / proven here
+- **ماذا / what:** شريط حاد وتغبيش متدرج فوقه وتحته مع تشبع، فيبدو المشهد مجسمًا صغيرًا (DxO TiltShift).
+- **متى أستخدمها / when:** لقطات مدن من أعلى، درون
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py tilt-shift IN -o OUT --set center=0.55 band=0.08 blur=8` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch tilt-shift FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** center/band 0..1
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-70 · تغبيش الخلفية · Background blur (portrait) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** فصل الموضوع بـ GrabCut ثم تغبيش الخلفية بحواف ناعمة (DxO CreativeBlur, Lightroom Lens Blur).
+- **متى أستخدمها / when:** بورتريه، منتج
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py bg-blur IN -o OUT --set box=x,y,w,h blur=12` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch bg-blur FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** box حول الموضوع
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-71 · قص بنسبة ذكي · Aspect crop with subject focus · ✅ مُثبت هنا / proven here
+- **ماذا / what:** قص بنسبة 1:1 أو 4:5 أو 9:16 حول مركز الطاقة البصرية للموضوع (Lightroom/Capture One/DxO crop).
+- **متى أستخدمها / when:** بوستات انستجرام، ريلز، غلاف
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py crop IN -o OUT --set aspect=9:16 focus=subject` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch crop FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** aspect a:b
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-72 · تغيير المقاس · Resize for export · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تصغير بـ INTER_AREA وتكبير بـ Lanczos مع توضيح بعد التصغير (Lightroom export, ACDSee batch resize, JPEGmini).
+- **متى أستخدمها / when:** تجهيز صور للويب والمتجر بالجملة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py resize IN -o OUT --set long=2048 sharpen=1 quality=92` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch resize FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** long أو width أو height
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-73 · ضبط تلقائي للإضاءة · Auto tone / levels · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مدّ كل قناة بين النسب المئوية 0.5 و99.5 فيصحح الباهت والمعتم (Lightroom Auto, ACDSee Auto Lighting).
+- **متى أستخدمها / when:** صور مسطحة أو ضبابية الإضاءة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py auto-tone IN -o OUT --set clip=0.5` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch auto-tone FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** clip %
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
 
 ## التصميم والخطوط والإجراءات — FontLab وAffinity وHoudini وAnimate وIDM — design, type, procedural, download
 
 #### APPX-44 · بناء خط بتقنين الأزواج · Build a font with kerning · ✅ مُثبت هنا / proven here
 - **ماذا / what:** بناء خط TTF بمحارف وتقنين أزواج GPOS كما يفعل FontLab 7 (حزمته: FreeType وHarfBuzz وجدول تكرار أزواج التقنين وstandard.nam وسكربتات Python).
 - **متى أستخدمها / when:** خط عربي لعلامة تجارية، شعار نصي، خط من رسم يدوي
-- **كيف / how:** fontTools FontBuilder: setupGlyphOrder/CharacterMap/Glyf/HorizontalMetrics ثم feaLib (feature kern) ثم save؛ للعربية أضف init/medi/fina/liga. **أرقام / params:** UPM 1000
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py font-build GLYPH_SVG_DIR -o Brand.ttf --set family=… kern="A V -80"` — fontTools FontBuilder: setupGlyphOrder/CharacterMap/Glyf/HorizontalMetrics ثم feaLib (feature kern) ثم save؛ للعربية أضف init/medi/fina/liga. **أرقام / params:** UPM 1000
 - **تثبيت / install:** `pip install fonttools`
 - **يحتاج / needs:** [`pip:fonttools`](../requirements.md#req-pip-fonttools)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-45 · عمليات بوليانية للأشكال المتجهة · Vector boolean operations · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اتحاد وطرح وتقاطع أشكال متجهة إلى SVG (libgeometry في Affinity Designer، he_boolean في Houdini Engine).
 - **متى أستخدمها / when:** شعارات، أيقونات، أقنعة موشن
-- **كيف / how:** shapely: a.union(b) / a.difference(b) / a.intersection(b) ثم .svg() داخل <svg>. **أرقام / params:** buffer quad_segs 64 للدوائر
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py boolean shapes.json -o out.svg --set mode=difference` — shapely: a.union(b) / a.difference(b) / a.intersection(b) ثم .svg() داخل <svg>. **أرقام / params:** buffer quad_segs 64 للدوائر
 - **تثبيت / install:** `pip install shapely`
 - **يحتاج / needs:** [`pip:shapely`](../requirements.md#req-pip-shapely)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-46 · عمليات القنوات للحركة · Motion channel ops (CHOP-style) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تأخير ناعم وضوضاء ناعمة ودورة وغلاف لمنحنيات الحركة كما في Houdini CHOPs (LagBasic وNoiseBasic وCycle وEnvelope).
 - **متى أستخدمها / when:** كاميرا يدوية واقعية، اهتزاز، تتبع متأخر في موشن KOSIF
-- **كيف / how:** lag: y += a(x − y)، a = 1 − e^(−1/(τ·fps))؛ noise: استيفاء قيم عشوائية مبذورة؛ cycle: tile؛ envelope: متوسط متحرك لـ |x|. **أرقام / params:** τ 0.25 s
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py chops keys.json -o curve.json --set lag=0.25` — lag: y += a(x − y)، a = 1 − e^(−1/(τ·fps))؛ noise: استيفاء قيم عشوائية مبذورة؛ cycle: tile؛ envelope: متوسط متحرك لـ |x|. **أرقام / params:** τ 0.25 s
 - **تثبيت / install:** `pip install numpy`
 - **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-47 · مخطط مهام بتخزين مؤقت · Task graph with caching (PDG-style) · ✅ مُثبت هنا / proven here
@@ -512,22 +643,112 @@
 #### APPX-48 · تنزيل مجزأ قابل للاستئناف · Segmented, resumable download (IDM-style) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تنزيل الملف بعدة أجزاء متوازية بطلبات Range واستئناف الجزء المقطوع والتحقق بـ SHA-256 (فكرة Internet Download Manager).
 - **متى أستخدمها / when:** ملفات فيديو كبيرة، شبكات متقطعة
-- **كيف / how:** HEAD لمعرفة الحجم وAccept-Ranges؛ N خيوط كل منها Range: bytes=s+have-e وتلحق بملف .part؛ ثم دمج وفحص sha256. البديل الجاهز: aria2c -x8 -c. **أرقام / params:** N = 4–8
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py download URL -o FILE --set parts=6 sha256=…` — HEAD لمعرفة الحجم وAccept-Ranges؛ N خيوط كل منها Range: bytes=s+have-e وتلحق بملف .part؛ ثم دمج وفحص sha256. البديل الجاهز: aria2c -x8 -c. **أرقام / params:** N = 4–8
 - **تثبيت / install:** `python (stdlib) or aria2`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-49 · حركة متوسطة وقشرة البصل وورقة رسوم · Eased tween, onion skin, sprite sheet · ✅ مُثبت هنا / proven here
 - **ماذا / what:** استيفاء حركة بين مفتاحين بتسهيل، وعرض الإطارات المجاورة شفافة، وتصدير ورقة رسوم مع JSON (Animate: FLCreateJS وTexturePacker وFlashIK).
 - **متى أستخدمها / when:** رسوم 2D للويب والألعاب وشخصيات متحركة
-- **كيف / how:** smoothstep u²(3−2u) بين المفاتيح؛ alpha_composite لثلاثة إطارات بشفافيات 60/120/255؛ لصق الإطارات على شبكة وكتابة إحداثياتها JSON. **أرقام / params:** 24 fps
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py tween sprite.png -o sheet.png --set frames=24 onion=1` — smoothstep u²(3−2u) بين المفاتيح؛ alpha_composite لثلاثة إطارات بشفافيات 60/120/255؛ لصق الإطارات على شبكة وكتابة إحداثياتها JSON. **أرقام / params:** 24 fps
 - **تثبيت / install:** `pip install pillow numpy`
 - **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
+
+#### APPX-79 · تحويل صورة إلى متجه · Bitmap to vector (image trace) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تجميع الألوان بـ k-means ثم كنتورات مبسطة لكل لون إلى مسارات SVG (Affinity Designer, Xara).
+- **متى أستخدمها / when:** شعار من صورة، أيقونة، قص فينيل
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py trace IN -o logo.svg --set colors=4 smooth=1.2` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch trace FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** colors 2–8
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-80 · صور إلى PDF · Images to PDF · ✅ مُثبت هنا / proven here
+- **ماذا / what:** دمج صور بترتيبها في ملف PDF واحد (Affinity/Xara export, Lightroom book).
+- **متى أستخدمها / when:** ألبوم، بورتفوليو، مستند ممسوح
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py pdf IMAGES… -o album.pdf --set dpi=300` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch pdf FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** dpi
+- **تثبيت / install:** `pip install pillow`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-81 · نثر عناصر إجرائيًا · Procedural scatter (Poisson disc) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** نقاط بأقل مسافة مضمونة ونسخ شكل عليها بحجم متذبذب إلى SVG (Houdini Scatter/Copy to Points, Affinity symbols).
+- **متى أستخدمها / when:** خلفيات نجوم، زخارف، جسيمات موشن
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py scatter -o pattern.svg --set count=200 min_dist=30 shape=star` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch scatter FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** min_dist مضمونة ومقيسة
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-82 · حقل ضوضاء إجرائي · Fractal noise field · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ضوضاء قيم كسرية بعدة أوكتافات: رمادي أو تضاريس ملونة أو سحب (Houdini Noise/Mountain SOP, VEX).
+- **متى أستخدمها / when:** خلفيات، خرائط ارتفاع، نسيج
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py noise-field -o terrain.png --set mode=terrain octaves=5` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch noise-field FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** scale, octaves, persistence
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-83 · نمو نباتي وزخرفي · L-system growth · ✅ مُثبت هنا / proven here
+- **ماذا / what:** نظام Lindenmayer بقواعد قابلة للتعديل إلى مسار SVG (نبات، شجرة، زخرفة) (Houdini L-System SOP).
+- **متى أستخدمها / when:** خلفيات طبيعية، زخارف إسلامية تكرارية، موشن نمو
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py lsystem -o plant.svg --set iterations=4 angle=22.5` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch lsystem FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** rules F:…|X:…
+- **تثبيت / install:** `python (stdlib)`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-84 · فحص خط · Font inspection · ✅ مُثبت هنا / proven here
+- **ماذا / what:** الاسم والنمط وعدد المحارف والحروف العربية المغطاة وميزات GSUB/GPOS وهل هو متغير (FontLab font info).
+- **متى أستخدمها / when:** قبل استخدام خط في فيديو عربي
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py font-inspect FONT.ttf` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch font-inspect FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** —
+- **تثبيت / install:** `pip install fonttools`
+- **يحتاج / needs:** [`pip:fonttools`](../requirements.md#req-pip-fonttools)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-85 · تقليص خط للويب · Font subsetting · ✅ مُثبت هنا / proven here
+- **ماذا / what:** خط يحتوي فقط حروف نص معين مع إبقاء ميزات التشكيل (FontLab export).
+- **متى أستخدمها / when:** موقع أو أنيميشن ويب أسرع تحميلًا
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py font-subset FONT.ttf -o web.woff2 --set text="النص" flavor=woff2` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch font-subset FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** flavor woff2 يحتاج brotli
+- **تثبيت / install:** `pip install fonttools brotli`
+- **يحتاج / needs:** [`pip:fonttools`](../requirements.md#req-pip-fonttools)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-86 · تصدير Lottie · Lottie JSON export · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ملف Lottie صالح بطبقة شكل وموضع متحرك بمنحنى تسهيل (Adobe Animate (Bodymovin), Canvas export).
+- **متى أستخدمها / when:** أنيميشن خفيف لتطبيق أو موقع
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py lottie -o anim.json --set frames=60 from=100,256 to=412,256 ease=inout` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch lottie FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** w h fps frames
+- **تثبيت / install:** `python (stdlib)`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:lottie`](../requirements.md#req-npm-lottie)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-87 · حل عظمتين (IK) · Two-bone inverse kinematics · ✅ مُثبت هنا / proven here
+- **ماذا / what:** زاويتا الكتف والكوع لتصل اليد إلى هدف، مع خطأ الوصول (Adobe Animate Bone tool, Houdini KineFX).
+- **متى أستخدمها / when:** تحريك ذراع أو ساق شخصية
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py ik -o arm.json --set l1=100 l2=80 target=120,60` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch ik FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** l1 l2 target
+- **تثبيت / install:** `python (stdlib)`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
 
 ## معمارية تطبيقات الصور والتصميم — photo/design app architecture patterns
 
@@ -550,14 +771,14 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
-#### APPX-53 · ملف لون لكل كاميرا · Per-camera colour profiles · 📄 موصوف / documented only
-- **ماذا / what:** Capture One يشحن نحو 1,200 ملف .icm مصنفة لكل طراز كاميرا (Generic وProStandard وFlash وTungsten) — pattern evidenced in this analysis; build it in your own app with the named open APIs (no copied code)
+#### APPX-53 · ملف لون لكل كاميرا · Per-camera colour profiles · ✅ مُثبت هنا / proven here
+- **ماذا / what:** Capture One يشحن نحو 1,200 ملف .icm مصنفة لكل طراز كاميرا (Generic وProStandard وFlash وTungsten)؛ التحويل نفسه يعمل الآن عبر app_studio.py icc.
 - **متى أستخدمها / when:** توحيد ألوان صور من كاميرات مختلفة في مشروع واحد
-- **كيف / how:** Pillow ImageCms.profileToProfile(img, camera.icc, sRGB) أو LittleCMS؛ ابنِ ملفًا لكاميرتك من لوحة ألوان بـ dcamprof/ArgyllCMS. **أرقام / params:** —
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py icc IN -o OUT --set to=srgb` — Pillow ImageCms.profileToProfile(img, camera.icc, sRGB) أو LittleCMS؛ ابنِ ملفًا لكاميرتك من لوحة ألوان بـ dcamprof/ArgyllCMS. **أرقام / params:** —
 - **تثبيت / install:** `pip install pillow`
 - **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
 - **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/BATCH_2026-10-19.md` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
 #### APPX-54 · فرش التعديل المحلي كإعدادات · Local-adjustment brushes as presets · 📄 موصوف / documented only
@@ -630,9 +851,61 @@
 - **الدليل / proof:** `kosif-tool/apps/tikplayer/README.md`
 - **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 + installer_triage.py (2026-10-19)
 
+## مكتبة الصور — Lightroom وACDSee (فهرسة وبحث وتكرار ووجوه) — photo library
+
+#### APPX-74 · قراءة بيانات الصورة وGPS · EXIF and GPS reader · ✅ مُثبت هنا / proven here
+- **ماذا / what:** التاريخ والكاميرا والبرنامج وإحداثيات GPS بالدرجات العشرية (ACDSee/Lightroom metadata panel).
+- **متى أستخدمها / when:** ترتيب رحلة على خريطة، تحقق من تاريخ صورة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py exif FOLDER -o meta.json` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch exif FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** —
+- **تثبيت / install:** `pip install pillow`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-75 · كشف المكرر والمتشابه · Duplicate / near-duplicate finder · ✅ مُثبت هنا / proven here
+- **ماذا / what:** بصمة dHash لكل صورة ومجموعات بمسافة Hamming ≤ العتبة (تلتقط المصغّر والمعاد ضغطه) (ACDSee Duplicate Finder).
+- **متى أستخدمها / when:** تنظيف أرشيف ومجلد تنزيلات
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py dedupe FOLDER -o groups.json --set threshold=6` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch dedupe FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** threshold 4–10
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-76 · كشف الوجوه · Face detection · 📦 بأمر تثبيت / one install
+- **ماذا / what:** صناديق الوجوه JSON ومعاينة مرسومة؛ Haar في OpenCV 4 أو YuNet في OpenCV 5 (Lightroom/ACDSee People).
+- **متى أستخدمها / when:** فرز صور الأشخاص، قص حول الوجه، خصوصية
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py faces IN -o preview.jpg --set model=face_detection_yunet_2023mar.onnx` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch faces FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** score 0.8
+- **تثبيت / install:** `OpenCV 5: model face_detection_yunet_2023mar.onnx from github.com/opencv/opencv_zoo (Apache-2.0); OpenCV 4: built in`
+- **يحتاج / needs:** [`pip:opencv`](../requirements.md#req-pip-opencv) · [`pip:onnxruntime`](../requirements.md#req-pip-onnxruntime) · [`model:yunet`](../requirements.md#req-model-yunet)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-77 · إعادة تسمية دفعة · Batch rename by EXIF date · ✅ مُثبت هنا / proven here
+- **ماذا / what:** خطة إعادة تسمية من تاريخ التصوير؛ تجربة جافة افتراضيًا ولا تكتب فوق ملف موجود (ACDSee/Lightroom rename).
+- **متى أستخدمها / when:** ترتيب صور رحلة أو جلسة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py rename FOLDER --set pattern={date}_{n:04d}{ext} dry=0` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch rename FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** dry=1 للمعاينة
+- **تثبيت / install:** `pip install pillow`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
+#### APPX-78 · فهرسة المكتبة والبحث · Photo catalog + search · ✅ مُثبت هنا / proven here
+- **ماذا / what:** فهرس SQLite بالمقاس والتاريخ والكاميرا وGPS والتقييم والوسوم من XMP وبصمة dHash، وبحث بالكلمة والتقييم والكاميرا (Lightroom Catalog, ACDSee database).
+- **متى أستخدمها / when:** آلاف الصور تحتاج بحثًا ومجموعات ذكية
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py catalog FOLDER -o photos.db ; search photos.db --set q=غروب min_rating=4` — يطبع سطر JSON بالنتيجة والمقاييس؛ `python $SKILL_DIR/scripts/app_studio.py batch catalog FOLDER -o OUT_DIR` لمجلد كامل. **أرقام / params:** —
+- **تثبيت / install:** `pip install numpy opencv-python-headless pillow`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py`
+- **المصدر / source:** analysis of DxO PhotoLab 4, Capture One 21, JPEGmini Pro 3.2, FontLab 7, Affinity Designer 1.10, Houdini 18.5, IDM 6.43 and Adobe Animate 2024 packages with REA 6.7.0 (2026-10-19); Lightroom/ACDSee/Xara features from the vendors' public documentation (archives encrypted / patch only)
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (60)
+- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (87)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

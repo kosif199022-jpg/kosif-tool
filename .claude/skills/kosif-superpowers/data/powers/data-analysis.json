@@ -352,7 +352,8 @@
   "install": "",
   "requires": [
    "pip:pillow",
-   "pip:matplotlib"
+   "pip:matplotlib",
+   "pip:arabic-reshaper"
   ],
   "license": "",
   "proof": [

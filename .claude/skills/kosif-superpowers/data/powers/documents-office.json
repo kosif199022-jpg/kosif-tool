@@ -224,7 +224,8 @@
   "install": "pip install reportlab arabic-reshaper python-bidi",
   "requires": [
    "pip:office",
-   "fonts:arabic"
+   "fonts:arabic",
+   "pip:arabic-reshaper"
   ],
   "license": "BSD / MIT / LGPL-3.0 (python-bidi)",
   "proof": [
@@ -744,7 +745,8 @@
    "libreoffice",
    "pip:pillow",
    "pip:matplotlib",
-   "pip:office"
+   "pip:office",
+   "pip:arabic-reshaper"
   ],
   "license": "",
   "proof": [
