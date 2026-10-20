@@ -1985,6 +1985,9 @@
    "families": [
     "self-discovery",
     "knowledge-graph"
+   ],
+   "safe_commands": [
+    "stats"
    ]
   },
   {
@@ -6248,7 +6251,10 @@
     "engines-render-pipeline",
     "shapes-morph-geometry"
    ],
-   "power_id": "TOOL-40"
+   "power_id": "TOOL-40",
+   "safe_commands": [
+    "doctor"
+   ]
   },
   {
    "id": "native-glb",

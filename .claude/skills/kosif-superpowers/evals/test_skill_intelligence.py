@@ -35,6 +35,41 @@ class ProtocolTests(unittest.TestCase):
             self.assertEqual(order, sorted(order), k)
         self.assertIn(self.b["recommended"], "ABC")
         self.assertIn("أنصحك بالخطة", self.b["approval_question"])
+        self.assertTrue(self.b["recommended_reason"])
+
+    def test_own_voice_never_replaced_and_transcription_forced(self):
+        b = S.build_brief("عندي فويس بصوتي عايز فيديو ريلز 9:16 بكلمات عربية متحركة على صوتي")
+        ex = [e["id"] for e in b["excluded"]]
+        self.assertTrue(ex, "TTS / voice-clone superpowers must be excluded for the user's own voice")
+        for k in "ABC":
+            self.assertFalse(set(ex) & {x["id"] for x in b["plans"][k]["superpowers"]}, k)
+        need = next(m for m in b["must_have_coverage"] if m["need"].startswith("توقيت الكلمات"))
+        self.assertEqual(need["status"], "covered")
+        for k in "ABC":
+            self.assertTrue(b["plans"][k]["meets_must_haves"], k)
+
+    def test_levels_and_recommendation_reasons(self):
+        l0 = S.build_brief("ترجم الجملة دي للإنجليزي: القدرات الخارقة جاهزة")
+        self.assertEqual(l0["analysis"]["level"], "L0")
+        self.assertIsNone(l0["approval_question"])
+        self.assertEqual(l0["plans"], {})
+        code = S.build_brief("ابني لي تطبيق ويب بسيط لمحاسبة محل صغير: مبيعات ومخزون وتقرير شهري PDF، ويكون فيه اختبارات")
+        self.assertEqual(code["analysis"]["primary"], "code")
+        self.assertEqual(code["analysis"]["ambition"], "balanced")   # «بسيط» describes the app, not the plan
+        self.assertEqual(code["recommended"], "B")
+        self.assertNotIn("reverse", [x["group"] for x in code["plans"]["A"]["superpowers"]])
+        self.assertIn("اختبارات", code["recommended_reason"])
+
+    def test_plans_are_different_approaches(self):
+        ideas = {self.b["plans"][k]["idea"] for k in "ABC"}
+        self.assertEqual(len(ideas), 3)
+
+    def test_count_and_deep(self):
+        sp = [x["id"] for x in self.b["plans"]["A"]["superpowers"]]
+        c = S.count(sp)
+        self.assertEqual(c["superpowers"], len(sp))
+        self.assertEqual(c["unknown_superpowers"], [])
+        self.assertIn("=====", S.deep([sp[0]]))
 
     def test_scores_use_the_published_weights(self):
         x = self.b["shortlist"][0]
@@ -49,7 +84,7 @@ class ProtocolTests(unittest.TestCase):
 
     def test_report_renders_required_sections(self):
         md = S.render(self.b)
-        for h in ("فهم الطلب", "نتيجة جرد المهارات", "مقارنة الخطط", "التوصية", "موافق"):
+        for h in ("بطاقة الطلب", "نتيجة الجرد", "مقارنة الخطط", "التوصية", "موافق", "جدول التغطية"):
             self.assertIn(h, md)
 
     def test_fails_closed_on_unclassified_family(self):

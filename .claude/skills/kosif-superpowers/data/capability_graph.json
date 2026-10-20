@@ -6607,12 +6607,6 @@
   },
   {
    "from": "script:scripts/skill_intelligence.py",
-   "to": "script:scripts/atlas_capability_miner.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/skill_intelligence.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
