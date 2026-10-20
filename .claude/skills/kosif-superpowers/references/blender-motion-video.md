@@ -23,3 +23,11 @@ contains simplified procedural geometry. The renderer does not add narration.
 Provenance: independent KOSIF integration using publicly documented Blender
 APIs, not Blender engine copied into KOSIF. For zero-Blender rendering, see
 scripts/native_3d.py and its separate limitations and tests.
+
+### Portable Windows engine discovery
+
+If the Blender executable is not on PATH, KOSIF also checks the authorized
+user-local official portable release at
+HOME/KOSIF-Tools/Blender5.2/blender-5.2.2-windows-x64/blender.exe.
+The explicit --blender flag still takes precedence. The adapter does not
+download or install Blender automatically.
