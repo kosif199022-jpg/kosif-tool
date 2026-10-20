@@ -9198,6 +9198,187 @@
         "texture-material",
         "engines-render-pipeline"
       ]
+    },
+    {
+      "id": "kosif-timeline",
+      "path": "scripts/kosif_timeline.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "edit",
+      "title_en": "KOSIF Timeline: genuine multitrack video, image and audio editor",
+      "title_ar": "محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة",
+      "summary_en": "Original non-destructive JSON timeline with trimmed sources, ordered video/image layers, per-clip alpha fades, independent audio mixing, reversible move/trim/fade edits, H264/AAC export via FFmpeg and FFprobe verification.",
+      "summary_ar": "مشروع مونتاج يحفظ المسارات واللقطات والصوت، ويسمح بالقص والتحريك والتلاشي والتراجع والإعادة، ويصدر فيديو H264 بصوت AAC بعد التحقق.",
+      "use_when": [
+        "Cut, trim, and position several owned videos/images/audio clips on a timeline",
+        "Produce a multitrack MP4 with overlapping fades and mixed music",
+        "رتب مقاطع الفيديو والصور والصوت على تايملاين وصدّر MP4"
+      ],
+      "keywords": [
+        "timeline",
+        "multi track",
+        "multitrack",
+        "video editing",
+        "photo",
+        "image",
+        "overlay",
+        "trim",
+        "cuts",
+        "crossfade",
+        "audio mix",
+        "undo",
+        "redo",
+        "ffmpeg",
+        "mp4",
+        "h264",
+        "aac",
+        "مونتاج",
+        "تايملاين",
+        "فيديو",
+        "صوت",
+        "قص",
+        "تراجع"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/kosif_timeline.py doctor",
+          "does": "Check FFmpeg/FFprobe installation and project schema support."
+        },
+        {
+          "name": "demo",
+          "example": "python3 scripts/kosif_timeline_demo.py --dir ./kosif-timeline-new-demo",
+          "does": "Create fully synthetic audio/video/image source files and an editable JSON timeline, then render and verify MP4."
+        },
+        {
+          "name": "check",
+          "example": "python3 scripts/kosif_timeline.py check --project ./project.json",
+          "does": "Validate local media, track/clip bounds, stream metadata and source durations."
+        },
+        {
+          "name": "render",
+          "example": "python3 scripts/kosif_timeline.py render --project ./project.json --output ./new-export.mp4",
+          "does": "Render ordered video/image layers and mixed audio to FFprobe-verified H264/AAC with SHA256 receipt."
+        },
+        {
+          "name": "edit",
+          "example": "python3 scripts/kosif_timeline.py edit --project ./project.json --operation move --clip badge --start 0.6 --output ./revision.json",
+          "does": "Create immutable project revision for clip move, trim, or fade."
+        },
+        {
+          "name": "undo",
+          "example": "python3 scripts/kosif_timeline.py undo --project ./revision.json --output ./undone.json",
+          "does": "Restore one edit snapshot without changing original project."
+        },
+        {
+          "name": "redo",
+          "example": "python3 scripts/kosif_timeline.py redo --project ./undone.json --output ./redone.json",
+          "does": "Re-apply a previously undone project revision."
+        },
+        {
+          "name": "tests",
+          "example": "python3 scripts/test_kosif_timeline.py",
+          "does": "Run 17 end-to-end/unit regression tests including real video/audio export and undo/redo."
+        }
+      ],
+      "inputs": "Authorized local video MP4/MOV/MKV/WebM/M4V, image PNG/JPEG/WebP, audio WAV/MP3/M4A/AAC/FLAC, plus schema kosif.timeline.v1 JSON with 1..12 tracks, up to 32 clips and bounded frame/pixel budgets.",
+      "outputs": "Editable non-destructive JSON revisions, verified MP4 (H264 video and optional AAC audio), SHA256 receipt; never overwrite source or existing outputs.",
+      "requires": {
+        "python": [
+          "Pillow"
+        ],
+        "binaries": [
+          "ffmpeg",
+          "ffprobe"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "Use only media that belongs to the user or is licensed for reuse, output a new file, no commercial proprietary source code.",
+      "limits": "Command-line/JSON editor not visual drag/drop; <=60s, 1..30fps, 32 clips, 12 tracks, <=300M pixel-frames, 1GB per source. Basic alpha fades only, no frame-level keyframes, captions, camera capture, AI editing, color grading, or word alignment in this tool. Audio AAC is re-encoded.",
+      "evidence": "tested-here",
+      "evidence_note": "2026-10-20: 17/17 regression tests passed; standalone one-command demo synthesized two video sources, image overlay and two audio layers; output H264/AAC 480x270, 12fps, 36 frames, 3 seconds, with SHA256+FFprobe receipt. No Canva/Adobe proprietary code.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/scripts/test_kosif_timeline.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/kosif-timeline-multitrack-20261020.md"
+      ],
+      "families": [
+        "photo-video-footage",
+        "transitions-cuts",
+        "audio-sync-captions",
+        "engines-render-pipeline"
+      ]
+    },
+    {
+      "id": "kosif-timeline-demo",
+      "path": "scripts/kosif_timeline_demo.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "edit",
+      "title_en": "KOSIF Timeline one-command synthetic media demo",
+      "title_ar": "تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة",
+      "summary_en": "Generate fresh, synthetic H264 video, PCM WAV and PNG media, a complete editable 3-track timeline JSON and a verified 36-frame H264/AAC MP4 in a new folder.",
+      "summary_ar": "توليد مصادر صوت وفيديو وصورة تجريبية محليًا ثم إخراج مشروع تايملاين قابل للتعديل وفيديو مع تقرير تحقق بضغطة أمر.",
+      "use_when": [
+        "Prove the KOSIF multitrack timeline works with a reproducible end-to-end video",
+        "Build a local self-contained demo before applying real owned footage",
+        "جرّب مونتاج مسارات الفيديو والصوت والصور وتأكد من التصدير"
+      ],
+      "keywords": [
+        "timeline",
+        "demo",
+        "proof",
+        "ffmpeg",
+        "video",
+        "audio",
+        "synthetic",
+        "reproducible",
+        "مونتاج",
+        "تجربة",
+        "فيديو",
+        "اختبار"
+      ],
+      "commands": [
+        {
+          "name": "run-demo",
+          "example": "python3 scripts/kosif_timeline_demo.py --dir ./fresh-kosif-timeline-demo",
+          "does": "Generate a fresh project folder containing source assets, timeline project.json, H264/AAC timeline.mp4 and receipt.json."
+        }
+      ],
+      "inputs": "An absent output folder under an existing directory; no external assets.",
+      "outputs": "New local demo project, synthetic videos, WAV and PNG, verified 3-second H264/AAC MP4 and JSON receipt.",
+      "requires": {
+        "python": [
+          "Pillow"
+        ],
+        "binaries": [
+          "ffmpeg",
+          "ffprobe"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "Never use third-party files; runs only FFmpeg synthetic generators and Pillow, creates a new directory.",
+      "limits": "Smoke/demo only at 480x270, 3 sec, 12fps. Does not implement a graphical editor; non-destructive original media only.",
+      "evidence": "tested-here",
+      "evidence_note": "2026-10-20: one CLI produced synthetic media, 4 clips in 3 tracks, 36-frame 480x270 H264/AAC MP4, with readback SHA256 and local acceptance receipts.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/scripts/test_kosif_timeline.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/kosif-timeline-multitrack-20261020.md"
+      ],
+      "families": [
+        "photo-video-footage",
+        "transitions-cuts",
+        "engines-render-pipeline"
+      ]
     }
   ]
 }
