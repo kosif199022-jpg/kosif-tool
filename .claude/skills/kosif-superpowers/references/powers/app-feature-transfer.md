@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** مزايا CapCut وCanva وPremiere وDxO PhotoLab وCapture One وJPEGmini وFontLab وAffinity وHoudini وAnimate وIDM التي كشفها التحليل بـ REA، لكل منها وصفة مفتوحة مثبتة (FFmpeg/OpenCV/Pillow/fontTools/Whisper) أو نمط معماري موثّق لتطبيقاتك. — Features found by analysing CapCut, Canva, Premiere Pro, DxO PhotoLab, Capture One, JPEGmini, FontLab, Affinity Designer, Houdini, Animate and IDM with REA, each with a proven open-tool recipe (FFmpeg/OpenCV/Pillow/fontTools/Whisper) or a documented architecture pattern for your own apps.
 > **أقوى دليل / strongest evidence:** **APPX-01** Speed curve (ramp) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`) · **APPX-02** Chroma key (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`)
-> **98 powers follow** — ✅ 78 · 🟢 0 · 📦 1 · 🔑 0 · 👁 0 · 📄 19 · 💡 0.
+> **119 powers follow** — ✅ 96 · 🟢 1 · 📦 1 · 🔑 0 · 👁 0 · 📄 21 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -23,6 +23,10 @@
 - **مشاريع المالك في مجلد العمل — owner's own projects** — APPX-59 … APPX-60 (2)
 - **مكتبة الصور — Lightroom وACDSee (فهرسة وبحث وتكرار ووجوه) — photo library** — APPX-74 … APPX-78 (5)
 - **تصميم Canva — قوالب ومقاسات وموك أب وطباعة (مرساة في app.asar، تنفيذ مفتوح مثبت) — Canva design** — APPX-88 … APPX-98 (11)
+- **مؤثرات Paint.NET (أسماء الأنواع بـ REA من PaintDotNet.Effects.dll، تنفيذ مفتوح مثبت) — Paint.NET effects** — APPX-99 … APPX-104 (6)
+- **Photoshop 2025: أوضاع المزج والطبقات وLUT والسماء والتسييل وتغبيش العدسة (من قائمة الحزمة) — Photoshop compositing** — APPX-105 … APPX-118 (6)
+- **الرسّام Microsoft Paint: الفرش والسطل وصفحات التلوين والملصقات (REA على PaintUI.winmd) — MS Paint** — APPX-110 … APPX-119 (5)
+- **رندر Blender السينمائي (Blender 5.2.2 على الجهاز: REA + bpy، رندرات Cycles حقيقية) — Blender cinematic render** — APPX-114 … APPX-117 (4)
 - المصادر والرخص / sources & licences
 
 ## محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors
@@ -1016,9 +1020,225 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md`
 - **المصدر / source:** Canva 1.126.1 installer (owner's folder): app.asar anchors read with installer_triage.py + REA (2026-10-19); no Canva code copied
 
+## مؤثرات Paint.NET (أسماء الأنواع بـ REA من PaintDotNet.Effects.dll، تنفيذ مفتوح مثبت) — Paint.NET effects
+
+#### APPX-99 · رسم زيتي وحبر ورصاص · Oil painting, ink sketch, pencil sketch · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ثلاثة مؤثرات فنية: زيتي (اللون الأكثر تكرارًا في نافذة الفرشاة)، رسم بالحبر (حواف Sobel فوق لون مغسول)، رسم بالرصاص (Color Dodge لنسخة مقلوبة مغبّشة) — Paint.NET OilPaintingEffect / InkSketchEffect / PencilSketchEffect.
+- **متى أستخدمها / when:** تحويل صورة إلى لوحة أو اسكتش لغلاف أو منشور
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py oil-paint in.jpg -o out.jpg --set brush=3 coarseness=20` (وكذلك ink-sketch وpencil-sketch) **أرقام / params:** oil: brush, coarseness ; ink: ink, coloring ; pencil: tip, range
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Paint.NET 4.2.13 installer (owner's folder): unpacked without running; PaintDotNet.Effects.dll type names read with REA 6.7.0 (2026-10-20); no Paint.NET code copied
+
+#### APPX-100 · تشويهات: التواء وانتفاخ وانعكاس قطبي · Distort: twist, bulge, polar inversion, dents, frosted glass, tile reflection · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ستة تشويهات هندسية بإعادة تعيين البكسلات (cv2.remap): التواء دوّامي، انتفاخ/قرص، انعكاس قطبي، انبعاجات عشوائية مبذورة، زجاج مصنفر، بلاط عاكس — Paint.NET Distort menu.
+- **متى أستخدمها / when:** مؤثرات بصرية للتصاميم والريلز والانتقالات
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py twist in.png -o out.png --set angle=90 radius=0.5` (bulge, polar-inversion, dents, frosted-glass, tile-reflection) **أرقام / params:** angle, radius, amount, cx cy, seed
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Paint.NET 4.2.13 installer (owner's folder): unpacked without running; PaintDotNet.Effects.dll type names read with REA 6.7.0 (2026-10-20); no Paint.NET code copied
+
+#### APPX-101 · تغبيشات: تقريب ودوران وحركة وسطح · Blurs: zoom, radial, motion, surface, unfocus, fragment, median · ✅ مُثبت هنا / proven here
+- **ماذا / what:** سبعة تغبيشات: تقريب نحو مركز، دوراني، حركة باتجاه وزاوية، سطح يحفظ الحواف، قرصي (عدسة)، تشظّي، وسيط — Paint.NET Blurs menu؛ كل منها يقيس انخفاض الحدة أو التباين المحلي.
+- **متى أستخدمها / when:** إحساس سرعة، تركيز على مركز، تنعيم بشرة، إزالة نقاط
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py zoom-blur in.jpg -o out.jpg --set amount=0.25` (radial-blur angle=12, motion-blur angle distance, surface-blur, unfocus, fragment, median) **أرقام / params:** amount, angle, distance, radius, samples
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Paint.NET 4.2.13 installer (owner's folder): unpacked without running; PaintDotNet.Effects.dll type names read with REA 6.7.0 (2026-10-20); no Paint.NET code copied
+
+#### APPX-102 · أسلبة: نقش وحواف وبكسلة وبلورات وتوهج · Stylize: emboss, relief, edge detect, outline, pixelate, crystallize, glow, soften portrait · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ثمانية مؤثرات أسلبة: نقش رمادي وملوّن، كشف حواف، تحديد بخط، بكسلة (يتحقق من ثبات كل خلية)، بلورات فورونوي (يتحقق أن الألوان ≤ البذور)، توهج، تنعيم بورتريه — Paint.NET Stylize/Photo.
+- **متى أستخدمها / when:** أغلفة وخلفيات وإخفاء وجوه بالبكسلة وتنعيم صور شخصية
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py crystallize in.jpg -o out.jpg --set size=16` (emboss, relief, edge-detect, outline, pixelate cell=12, glow, soften-portrait) **أرقام / params:** angle, strength, cell, size, radius, softness, warmth
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Paint.NET 4.2.13 installer (owner's folder): unpacked without running; PaintDotNet.Effects.dll type names read with REA 6.7.0 (2026-10-20); no Paint.NET code copied
+
+#### APPX-103 · كسيريات جوليا وماندلبروت · Julia and Mandelbrot fractals · ✅ مُثبت هنا / proven here
+- **ماذا / what:** توليد كسيريات ملونة بعدد تكرارات وتكبير وزاوية — Paint.NET JuliaFractalEffect / MandelbrotFractalEffect؛ IN = -.
+- **متى أستخدمها / when:** خلفيات إجرائية وفن رياضي
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py julia - -o julia.png --set w=1920 h=1080 iterations=200 zoom=1.2` **أرقام / params:** w h iterations zoom angle factor cr ci
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Paint.NET 4.2.13 installer (owner's folder): unpacked without running; PaintDotNet.Effects.dll type names read with REA 6.7.0 (2026-10-20); no Paint.NET code copied
+
+#### APPX-104 · تعديلات: مستويات وتقليل ألوان وسيبيا وضوضاء · Adjustments: levels, posterize, sepia, invert, auto level, add noise · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مستويات (أسود/أبيض الدخل والخرج وجاما، يتحقق من نقاط المنحنى)، تقليل المستويات (يتحقق من عدد القيم)، سيبيا، عكس (يتحقق بالعكس مرتين)، مستويات تلقائية، ضوضاء بكثافة وتشبع وتغطية — Paint.NET Adjustments.
+- **متى أستخدمها / when:** تصحيح سريع وأسلبة ريترو
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py levels in.jpg -o out.jpg --set in_black=20 in_white=235 gamma=1.1` **أرقام / params:** levels, in/out black/white, gamma, intensity, saturation, coverage
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Paint.NET 4.2.13 installer (owner's folder): unpacked without running; PaintDotNet.Effects.dll type names read with REA 6.7.0 (2026-10-20); no Paint.NET code copied
+
+## Photoshop 2025: أوضاع المزج والطبقات وLUT والسماء والتسييل وتغبيش العدسة (من قائمة الحزمة) — Photoshop compositing
+
+#### APPX-105 · أوضاع المزج والطبقات (OpenRaster) · Blend modes (24) and layer stacks → PNG or OpenRaster · ✅ مُثبت هنا / proven here
+- **ماذا / what:** 24 وضع مزج بمعادلات W3C Compositing وفوتوشوب (multiply, screen, overlay, soft-light, color-dodge, vivid/linear/pin-light, hard-mix, hue/saturation/color/luminosity…) يُتحقق من كل وضع باللون المحايد أو بالمزج مع الذات؛ ومشروع طبقات JSON (صور/ألوان، إزاحة، شفافية، إخفاء) → PNG أو ملف .ora يفتحه GIMP وKrita — Photoshop layers، Paint.NET BlendMode، Paint LayerStack.
+- **متى أستخدمها / when:** تركيب تصاميم من طبقات، تسليم ملف قابل للتعديل
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py blend base.jpg top.png -o out.png --set mode=soft-light opacity=0.8` ; `python $SKILL_DIR/scripts/app_studio.py layers stack.json -o art.ora` **أرقام / params:** mode, opacity, x y ; layers.json {width,height,background,layers:[{name,image|color,x,y,opacity,mode,visible}]}
+- **تثبيت / install:** `pip install numpy opencv-python pillow`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Adobe Photoshop 2025 26.1 offline package (owner's folder): ZIP entry names only; Set-up.exe blocked by Windows Defender and left alone (2026-10-20)
+
+#### APPX-106 · LUT سينمائي: صناعة وتطبيق · Cinematic 3D LUTs: make and apply .cube · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يصنع ملفات .cube بحجم 17–65 (teal-orange, bleach-bypass, film-fade, warm, cool, noir, cross-process, matrix-green, golden-hour) ويطبّق أي 3D LUT باستيفاء ثلاثي الخطية؛ يتحقق من إعادة القراءة ومطابقة الشبكة — Photoshop Presets/3DLUTs (27 ملفًا في الحزمة، لم يُنسخ أي منها).
+- **متى أستخدمها / when:** تلوين موحد لصور وفيديو (نفس .cube يعمل في ffmpeg lut3d وDaVinci وPremiere)
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py lut-make - -o teal.cube --set look=teal-orange` ; `python $SKILL_DIR/scripts/app_studio.py lut in.jpg -o out.jpg --set cube=teal.cube amount=0.8` **أرقام / params:** look, size ; cube, amount
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Adobe Photoshop 2025 26.1 offline package (owner's folder): ZIP entry names only; Set-up.exe blocked by Windows Defender and left alone (2026-10-20)
+
+#### APPX-107 · استبدال السماء · Sky replacement · ✅ مُثبت هنا / proven here
+- **ماذا / what:** قناع سماء من مكوّنات ملساء متصلة بالحافة العليا ثم تمدد جيوديسي بإحصاء لون السماء (بلا هالة حول الأفق)، وسماء متدرجة (sunset, dusk, golden, blue, storm) أو صورة، ومواءمة إضاءة الأرض — Photoshop Edit › Sky Replacement / Sky_Presets. حد: مبنى بلون السماء نفسه قد يُعدّ سماء.
+- **متى أستخدمها / when:** صور عقارات وسفر ومنتجات خارجية
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py sky-replace in.jpg -o out.jpg --set sky=sunset harmonize=0.25` (show_mask=1 للقناع) **أرقام / params:** sky, feather, harmonize, show_mask
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Adobe Photoshop 2025 26.1 offline package (owner's folder): ZIP entry names only; Set-up.exe blocked by Windows Defender and left alone (2026-10-20)
+
+#### APPX-108 · التسييل (Liquify) · Liquify: push, pinch, bloat, twirl · 🟢 جاهز / ready
+- **ماذا / what:** تشويه موضعي بفرشاة ناعمة السقوط: دفع وقرص ونفخ ولف، خطوة واحدة أو سلسلة JSON — Photoshop Filters/Liquify.8bf.
+- **متى أستخدمها / when:** تعديل شكل بسيط وتأثيرات كرتونية
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py liquify face.jpg -o out.jpg --set mode=bloat cx=0.5 cy=0.4 radius=0.15 strength=0.4` **أرقام / params:** mode, cx, cy, radius, strength, dx, dy, ops=file.json
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Adobe Photoshop 2025 26.1 offline package (owner's folder): ZIP entry names only; Set-up.exe blocked by Windows Defender and left alone (2026-10-20)
+
+#### APPX-109 · تغبيش العدسة بعمق وبوكيه · Lens blur with depth map and polygonal bokeh · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تغبيش فيزيائي في مساحة خطية: خريطة عمق (أو تدرج تلقائي)، نقطة تركيز، دائرة التشتت لكل بكسل، فتحة بعدد شفرات ودوران، وتضخيم الإضاءات إلى أشكال بوكيه؛ يتحقق أن البعيد فقد حدته وأن مستوى التركيز بقي حادًا — Photoshop Lens Blur + DepthPrediction.
+- **متى أستخدمها / when:** عزل الموضوع وإحساس عدسة سينمائية في صورة
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py lens-blur in.jpg -o out.jpg --set depth=depth.png focus=0.8 radius=14 blades=6` **أرقام / params:** depth, focus, radius, blades, rotation, highlights, slices
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Adobe Photoshop 2025 26.1 offline package (owner's folder): ZIP entry names only; Set-up.exe blocked by Windows Defender and left alone (2026-10-20)
+
+#### APPX-118 · ميزات الذكاء في Photoshop: ما يقابلها · Photoshop AI features and their open counterparts · 📄 موصوف / documented only
+- **ماذا / what:** الحزمة تحمل نماذج Select_Subject وobject_selection وselect_portrait_matting وDepthPrediction وStyleGan2/PortraitProjection (Neural Filters) وCMGAN (Remove) وPeopleDistractor وWire وTiledCMGANSR (Super Zoom ×2) وesprscn (Upscale ×2/×3) وDeep_Font؛ لم يُنسخ أي نموذج. المقابل المفتوح هنا: remove-bg وrepair وlens-blur (بخريطة عمق) وresize وfont-inspect؛ والتوليد عبر موصلات توليد الصور حين تتوفر.
+- **متى أستخدمها / when:** حين يطلب المستخدم ميزة ذكاء من فوتوشوب
+- **كيف / how:** اقرأ PAINT_PHOTOSHOP_BLENDER_2026-10-20.md ثم اختر الوصفة المفتوحة المقابلة **أرقام / params:** —
+- **تثبيت / install:** `—`
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/runs_2026-10-20.json`
+- **المصدر / source:** Adobe Photoshop 2025 26.1 offline package (owner's folder): ZIP entry names only; Set-up.exe blocked by Windows Defender and left alone (2026-10-20)
+
+## الرسّام Microsoft Paint: الفرش والسطل وصفحات التلوين والملصقات (REA على PaintUI.winmd) — MS Paint
+
+#### APPX-110 · فرش الرسّام · MS Paint brushes on a canvas · ✅ مُثبت هنا / proven here
+- **ماذا / what:** رسم ضربات JSON بفرش الرسّام: قلم رصاص، فرشاة، خط 45° و135°، بخاخ، زيتي (شعيرات)، شمع (حبيبات الورق)، ماركر (مزج ضرب)، رصاص طبيعي، ألوان مائية (حافة أغمق)، وممحاة تعيد الورق — Paint PaintTools.dll (CalligraphicTool، AirBrushTool…).
+- **متى أستخدمها / when:** رسوم توضيحية وشروح وتعليقات يدوية على صور
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py paint strokes.json -o drawing.png` **أرقام / params:** strokes.json {width,height,background|image,seed,strokes:[{brush,color,size,opacity,points}]}
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Microsoft Paint 11.2605.81.0 (installed): PaintUI.winmd read with REA inspect-managed-members, tool names from its DLLs (2026-10-20)
+
+#### APPX-111 · سطل التعبئة · Bucket fill (contiguous or global, with tolerance) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** تعبئة متصلة أو شاملة بتسامح نسبي للون البذرة؛ يتحقق أن البذرة أخذت اللون — Paint FloodFillOperation، Paint.NET Paint Bucket.
+- **متى أستخدمها / when:** تلوين مساحات ورسوم وصفحات تلوين
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py fill in.png -o out.png --set x=40 y=200 color=#ff00ff tolerance=12 mode=contiguous` **أرقام / params:** x y color tolerance mode
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Microsoft Paint 11.2605.81.0 (installed): PaintUI.winmd read with REA inspect-managed-members, tool names from its DLLs (2026-10-20)
+
+#### APPX-112 · صفحة تلوين من صورة · Coloring-book page from a photo · ✅ مُثبت هنا / proven here
+- **ماذا / what:** خطوط سوداء نظيفة على أبيض (عتبة تكيفية + Canny + إزالة النقاط الصغيرة)؛ يتحقق أن الناتج ثنائي وأن الأبيض غالب — Paint AIFeature.ColoringBook (هنا خوارزمية مفتوحة بلا ذكاء توليدي).
+- **متى أستخدمها / when:** أنشطة أطفال وكتب تلوين ومحتوى تعليمي
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py coloring-book photo.jpg -o page.png --set lines=2 detail=7` **أرقام / params:** lines, detail, min_area
+- **تثبيت / install:** `pip install numpy opencv-python`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Microsoft Paint 11.2605.81.0 (installed): PaintUI.winmd read with REA inspect-managed-members, tool names from its DLLs (2026-10-20)
+
+#### APPX-113 · ملصق بحد أبيض وظل · Sticker: cut-out with white border and soft shadow · ✅ مُثبت هنا / proven here
+- **ماذا / what:** PNG شفاف (أو قص الموضوع أولًا بـ remove-bg) ثم حد أبيض بالتمديد وظل ناعم مزاح؛ يتحقق من الحد الأبيض وشفافية الركن — Paint StickerGenerator / Remove background.
+- **متى أستخدمها / when:** ملصقات واتساب وتيليجرام والمنشورات
+- **كيف / how:** `python $SKILL_DIR/scripts/app_studio.py sticker cutout.png -o sticker.png --set border=12 shadow=0.35` **أرقام / params:** border, shadow, box, feather
+- **تثبيت / install:** `pip install numpy opencv-python pillow`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md`
+- **المصدر / source:** Microsoft Paint 11.2605.81.0 (installed): PaintUI.winmd read with REA inspect-managed-members, tool names from its DLLs (2026-10-20)
+
+#### APPX-119 · ميزات الذكاء في الرسّام: ما يقابلها · MS Paint AI features and their open counterparts · 📄 موصوف / documented only
+- **ماذا / what:** PaintUI.AIFeature = Cocreator، ImageCreator، GenerativeFill، StickerGenerator، Reimagine، ColoringBook؛ ونماذج على الجهاز seg/inseg (تحديد كائن بنقرة) وmager (302 MB) وعلامة Content Credentials. المقابل هنا: coloring-book وsticker وremove-bg وrepair (محو)، والتوليد عبر موصلات الصور.
+- **متى أستخدمها / when:** حين يطلب المستخدم ميزة من الرسّام الجديد
+- **كيف / how:** اقرأ PAINT_PHOTOSHOP_BLENDER_2026-10-20.md **أرقام / params:** —
+- **تثبيت / install:** `—`
+- **الرخصة / license:** recipe: owner (KOSIF); the tools keep their own licenses
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/runs_2026-10-20.json`
+- **المصدر / source:** Microsoft Paint 11.2605.81.0 (installed): PaintUI.winmd read with REA inspect-managed-members, tool names from its DLLs (2026-10-20)
+
+## رندر Blender السينمائي (Blender 5.2.2 على الجهاز: REA + bpy، رندرات Cycles حقيقية) — Blender cinematic render
+
+#### APPX-114 · رندر سينمائي بخمسة أساليب · Cinematic Cycles render presets (5 looks) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** مشهد كامل بأمر واحد في Blender: product-hero (خلفية منحنية وثلاث إضاءات)، golden-hour (سماء Multiple Scattering وشمس منخفضة وضباب)، noir-volumetric (شعاع عبر ستائر وضباب حجمي أبيض وأسود)، neon-night (نيون وأرض مبتلة وانحراف لوني)، anamorphic-epic (2.39:1 وبوكيه بيضاوي وتوهج خطي)؛ Cycles بعينات تكيفية وشجرة إضاءة وتوجيه مسارات وOpenImageDenoise وAgX مع look، وعدسة بفتحة وشفرات وتركيز تلقائي. يستورد glb/gltf/fbx/obj/stl/ply/usd/abc/blend ويضبط حجمه.
+- **متى أستخدمها / when:** صور منتجات وإعلانات ولقطات بطل وأغلفة ثلاثية الأبعاد
+- **كيف / how:** `python $SKILL_DIR/scripts/blender_cinema.py render --preset neon-night --model car.glb --quality final -o shot.png` **أرقام / params:** preset, model, res, quality draft|preview|final, samples, lens, fstop, device auto|cpu|gpu, save-blend
+- **تثبيت / install:** `Blender 4.5+ (5.2 tested): portable zip from blender.org + KOSIF_BLENDER, or pip install bpy`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`blender`](../requirements.md#req-blender)
+- **الرخصة / license:** recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/paint_blender_2026-10-20/blender_presets.jpg`
+- **المصدر / source:** Blender 5.2.2 LTS portable on this laptop: REA analyze + inspect-pe-resources, live bpy inventory, Cycles renders (2026-10-20)
+
+#### APPX-115 · حركة كاميرا سينمائية إلى MP4 · Camera moves with 180° motion blur → MP4 · ✅ مُثبت هنا / proven here
+- **ماذا / what:** orbit، dolly-in، crane-up، vertigo (دولي-زوم: البعد البؤري يكبر والكاميرا تقترب)، handheld (ضوضاء على منحنيات الدوران)، بغالق 180°؛ الإطارات PNG ثم H.264 بـ ffmpeg، و--save-blend لملف قابل للتعديل.
+- **متى أستخدمها / when:** لقطات دوّارة للمنتجات وافتتاحيات وريلز ثلاثية الأبعاد
+- **كيف / how:** `python $SKILL_DIR/scripts/blender_cinema.py render --preset product-hero --frames 120 --fps 30 --move orbit -o turntable.mp4` **أرقام / params:** frames, fps, move orbit|dolly-in|crane-up|vertigo|handheld
+- **تثبيت / install:** `Blender + ffmpeg (without ffmpeg the PNG frames are kept)`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`blender`](../requirements.md#req-blender)
+- **الرخصة / license:** recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/paint_blender_2026-10-20/blender_presets.jpg`
+- **المصدر / source:** Blender 5.2.2 LTS portable on this laptop: REA analyze + inspect-pe-resources, live bpy inventory, Cycles renders (2026-10-20)
+
+#### APPX-116 · تشطيب الفيلم في المركّب · Film finish in the Blender 5 compositor · ✅ مُثبت هنا / proven here
+- **ماذا / what:** شجرة مركّب بنمط Blender 5 (scene.compositing_node_group): Glare (Bloom/Fog Glow/Streaks)، Lens Distortion بتشتت لوني، Color Balance رفع/جاما/كسب، تشبع، وفينييت بقناع بيضاوي مغبّش وMix ضرب.
+- **متى أستخدمها / when:** لمسة سينمائية نهائية لكل رندر
+- **كيف / how:** يُبنى تلقائيًا مع كل preset؛ يعدَّل في الـ .blend المحفوظ (Compositor) **أرقام / params:** finish: glare, glare_strength, glare_threshold, streaks, dispersion, grade, saturation, vignette
+- **تثبيت / install:** `Blender 5.0+ (node-group compositor)`
+- **يحتاج / needs:** [`blender`](../requirements.md#req-blender)
+- **الرخصة / license:** recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/paint_blender_2026-10-20/blender_presets.jpg`
+- **المصدر / source:** Blender 5.2.2 LTS portable on this laptop: REA analyze + inspect-pe-resources, live bpy inventory, Cycles renders (2026-10-20)
+
+#### APPX-117 · جرد قدرات Blender الحي · Live Blender capability inventory · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يسأل Blender نفسه: 2,499 مشغّلًا في 77 نطاقًا، 4,023 نوعًا، 102 عقدة تظليل و92 عقدة مركّب و274 عقدة هندسية، 4 نماذج سماء، 7 عدسات بانورامية، 16 صيغة صورة و17 ترميز فيديو، أجهزة Cycles، والإضافات الأساسية — مع REA على مجلد التثبيت.
+- **متى أستخدمها / when:** قبل أي عمل في Blender: ماذا يوجد في هذه النسخة على هذا الجهاز
+- **كيف / how:** `python $SKILL_DIR/scripts/blender_cinema.py inventory -o blender.json` ; `blender_cinema.py doctor` **أرقام / params:** -o out.json
+- **تثبيت / install:** `Blender (any 4.x/5.x) or pip install bpy`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`blender`](../requirements.md#req-blender) · [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/paint_blender_2026-10-20/blender_presets.jpg`
+- **المصدر / source:** Blender 5.2.2 LTS portable on this laptop: REA analyze + inspect-pe-resources, live bpy inventory, Cycles renders (2026-10-20)
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (98)
+- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (115) · recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked) (4)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

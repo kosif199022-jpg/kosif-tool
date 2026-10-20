@@ -17,6 +17,7 @@
 5. [How to use this family](#5-how-to-use-this-family)
 6. [Second batch: photo developers, type, vector, procedural, download](#6-second-batch-2026-10-19-photo-developers-type-vector-procedural-download)
 7. [App Studio — run every feature on the user's own files (requirements)](#7-app-studio--run-every-feature-on-the-users-own-files)
+8. [Fourth batch: Paint.NET, Photoshop 2025, Microsoft Paint, Blender](#8-fourth-batch-2026-10-20-paintnet-photoshop-2025-microsoft-paint-blender)
 
 ## 1. What each installer really is
 
@@ -96,7 +97,7 @@ Triage gained: Inno Setup detection (+ `innoextract`), payloads inside PE resour
 
 <div dir="rtl">
 
-**ما هو:** `scripts/app_studio.py` أداة سطر أوامر واحدة تنفّذ 61 عملية من قدرات البرامج المحللة على ملفات المستخدم الحقيقية، صورة واحدة أو مجلدًا كاملًا (`batch`)، وتطبع سطر JSON فيه الناتج والمقاييس. كلها مثبتة في `evals/test_app_studio.py` (45 اختبارًا داخل مجلد اسمه عربي، فالمسارات العربية على Windows مضمونة).
+**ما هو:** `scripts/app_studio.py` أداة سطر أوامر واحدة تنفّذ 104 عملية من قدرات البرامج المحللة على ملفات المستخدم الحقيقية، صورة واحدة أو مجلدًا كاملًا (`batch`)، وتطبع سطر JSON فيه الناتج والمقاييس. كلها مثبتة في `evals/test_app_studio.py` (45 اختبارًا، و12 أخرى بـ 71 حالة فرعية في `evals/test_app_studio_paint.py`، داخل مجلدات أسماؤها عربية، فالمسارات العربية على Windows مضمونة).
 
 **متطلبات الاستخدام:** شغّل أولًا `python $SKILL_DIR/scripts/app_studio.py doctor`، فيطبع العمليات الجاهزة وسطر التثبيت لكل ما ينقص. على Windows استخدم `python` بدل `python3`.
 
@@ -188,7 +189,73 @@ python $SKILL_DIR/scripts/app_studio.py batch jpegmini ./shop -o ./shop_small --
 | `pptx` | APPX-96 | Canva Presentations (presentationml export in app.asar) | عرض تقديمي PowerPoint — IN = slide images/designs (PNG/JPG or design.json) in order ; notes=file.txt (one line per slide) → .pptx 16:9 | pip:office, pip:pillow |
 | `print-pdf` | APPX-97 | Canva Print PDF (bleed, crop marks, CMYK in app.asar) | PDF جاهز للمطبعة: نزيف وعلامات قص وCMYK — IN = design image ; width_mm height_mm (trim) ; bleed_mm=3 ; marks=1 ; cmyk=1 ; dpi=300 ; profile=CMYK.icc (optional, accurate) | pip:pillow |
 | `text-anim` | APPX-98 | Canva text animations (Rise, Typewriter, Fade, Pop) | تحريك نص عربي إلى GIF أو MP4 — text ; style=rise|typewriter|fade|pop ; size=story|WxH ; font ; color ; bg ; seconds ; fps → .gif or .mp4 (ffmpeg) | pip:pillow, pip:numpy |
+| `oil-paint` | APPX-99 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): OilPaintingEffect | رسم زيتي — oil painting (most-frequent intensity bin per brush window) ; brush=3 coarseness=20 | pip:numpy, pip:opencv |
+| `ink-sketch` | APPX-99 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): InkSketchEffect | رسم بالحبر — ink sketch: inked outlines over washed colour ; ink=50 coloring=50 | pip:numpy, pip:opencv |
+| `pencil-sketch` | APPX-99 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): PencilSketchEffect | رسم بالرصاص — pencil sketch (colour-dodge of inverted blur) ; tip=2 range=0 | pip:numpy, pip:opencv |
+| `twist` | APPX-100 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): TwistEffect | التواء دوّامي — twist around the centre, strongest at the middle ; angle=90 radius=0.5 cx cy | pip:numpy, pip:opencv |
+| `bulge` | APPX-100 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): BulgeEffect | انتفاخ/انقباض — bulge (amount>0) or pinch (amount<0) ; amount=0.6 radius=0.5 cx cy | pip:numpy, pip:opencv |
+| `polar-inversion` | APPX-100 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): PolarInversionEffect | انعكاس قطبي — polar inversion z → a·z//z/² ; amount=1 edge=reflect/wrap | pip:numpy, pip:opencv |
+| `dents` | APPX-100 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): DentsEffect | تموجات وانبعاجات — dents: smooth random displacement ; scale=40 strength=8 seed=1 | pip:numpy, pip:opencv |
+| `frosted-glass` | APPX-100 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): FrostedGlassEffect | زجاج مصنفر — frosted glass: random scatter within a radius ; amount=4 seed=1 | pip:numpy, pip:opencv |
+| `tile-reflection` | APPX-100 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): TileEffect | بلاط عاكس — tile reflection: lens-distorted rotated tiles ; size=40 angle=30 curvature=1 | pip:numpy, pip:opencv |
+| `zoom-blur` | APPX-101 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): ZoomBlurEffect | تغبيش تقريب — zoom blur toward a centre ; amount=0.25 samples=16 cx cy | pip:numpy, pip:opencv |
+| `radial-blur` | APPX-101 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): RadialBlurEffect | تغبيش دوراني — radial (spin) blur around a centre ; angle=12 samples=16 cx cy | pip:numpy, pip:opencv |
+| `motion-blur` | APPX-101 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): MotionBlurEffect | تغبيش حركة — directional motion blur ; angle=25 distance=20 centered=1 | pip:numpy, pip:opencv |
+| `surface-blur` | APPX-101 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): SurfaceBlurEffect | تنعيم السطح مع حفظ الحواف — surface blur (edge-preserving) ; radius=6 threshold=40 | pip:numpy, pip:opencv |
+| `unfocus` | APPX-101 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): UnfocusEffect | عدم تركيز (قرصي) — unfocus: disc (lens) blur ; radius=4 | pip:numpy, pip:opencv |
+| `fragment` | APPX-101 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): FragmentEffect | تشظّي (نسخ مزاحة) — fragment: average of shifted copies ; fragments=4 distance=8 rotation=0 | pip:numpy, pip:opencv |
+| `median` | APPX-101 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): MedianEffect | وسيط (إزالة نقاط) — median filter ; radius=3 | pip:numpy, pip:opencv |
+| `emboss` | APPX-102 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): EmbossEffect | نقش بارز رمادي — emboss (grey relief at an angle) ; angle=45 strength=1 | pip:numpy, pip:opencv |
+| `relief` | APPX-102 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): ReliefEffect | نقش بارز ملوّن — relief: colour image with embossed edges ; angle=45 strength=0.6 | pip:numpy, pip:opencv |
+| `edge-detect` | APPX-102 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): EdgeDetectEffect | كشف الحواف — edge detect (Paint.NET-style grey relief of colour edges) ; angle=45 | pip:numpy, pip:opencv |
+| `outline` | APPX-102 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): OutlineEffect | تحديد بخط — outline: thicken dark edges ; thickness=3 intensity=50 | pip:numpy, pip:opencv |
+| `pixelate` | APPX-102 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): PixelateEffect | بكسلة — pixelate into square cells ; cell=12 | pip:numpy, pip:opencv |
+| `crystallize` | APPX-102 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): CrystalizeEffect | بلورات (فورونوي) — crystallize: Voronoi cells filled with their mean colour ; size=16 seed=1 | pip:numpy, pip:opencv |
+| `glow` | APPX-102 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): GlowEffect | توهج — glow: screen a blurred copy ; radius=6 brightness=10 contrast=10 | pip:numpy, pip:opencv |
+| `soften-portrait` | APPX-102 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): SoftenPortraitEffect | تنعيم البورتريه — soften portrait: smooth skin, lift light, warm ; softness=5 lighting=5 warmth=10 | pip:numpy, pip:opencv |
+| `julia` | APPX-103 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): JuliaFractalEffect | كسيريات جوليا — Julia set fractal → PNG ; IN = - ; w h iterations zoom angle factor cr ci | pip:numpy, pip:opencv |
+| `mandelbrot` | APPX-103 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): MandelbrotFractalEffect | كسيريات ماندلبروت — Mandelbrot fractal → PNG ; IN = - ; w h iterations zoom angle factor | pip:numpy, pip:opencv |
+| `posterize` | APPX-104 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): PosterizeAdjustment | تقليل مستويات الألوان — posterize to N levels per channel ; levels=6 | pip:numpy, pip:opencv |
+| `sepia` | APPX-104 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): SepiaEffect | سيبيا — sepia tone ;  | pip:numpy, pip:opencv |
+| `invert` | APPX-104 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): InvertColorsEffect | عكس الألوان — invert colours ;  | pip:numpy, pip:opencv |
+| `auto-level` | APPX-104 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): AutoLevelEffect | مستويات تلقائية — auto level: per-channel 0.5–99.5 % stretch ; clip=0.5 | pip:numpy, pip:opencv |
+| `levels` | APPX-104 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): LevelsEffect | المستويات (Levels) — levels: input black/white, gamma, output black/white ; in_black=0 in_white=255 gamma=1 out_black=0 out_white=255 | pip:numpy, pip:opencv |
+| `add-noise` | APPX-104 | Paint.NET 4.2.13 (REA: PaintDotNet.Effects.dll): AddNoiseEffect | إضافة ضوضاء/حبيبات — add noise with intensity, colour saturation and coverage ; intensity=40 saturation=50 coverage=100 seed=1 | pip:numpy, pip:opencv |
+| `blend` | APPX-105 | Photoshop 2025 (package listing): layer blend modes; Paint.NET BlendMode | دمج طبقتين بوضع مزج — IN = base top ; mode=normal/multiply/screen/overlay/darken/lighten/color-dodge/color-burn/hard-light/soft-light/difference/exclusion/linear-burn/linear-dodge/vivid-light/linear-light/pin-light/hard-mix/subtract/divide/hue/saturation/color/luminosity ; opacity=1 ; x y offset of top | pip:numpy, pip:opencv, pip:pillow |
+| `layers` | APPX-105 | Photoshop 2025 (package listing) layers; Microsoft Paint 11.2605 (REA: PaintUI.winmd, PaintTools.dll) LayerStack/.paint | مشروع طبقات → PNG أو OpenRaster — IN = layers.json {width,height,background:'#fff'/null,layers:[{name,image/color,x,y,opacity,mode,visible}]} → .png or .ora | pip:numpy, pip:opencv, pip:pillow |
+| `lut-make` | APPX-106 | Photoshop 2025 (package listing): Presets/3DLUTs (28 film looks) | صناعة LUT سينمائي (.cube) — IN = - ; look=teal-orange/bleach-bypass/film-fade/warm/cool/noir/cross-process/matrix-green/golden-hour/identity ; size=33 → .cube | pip:numpy, pip:opencv |
+| `lut` | APPX-106 | Photoshop 2025 (package listing): Color Lookup adjustment (.cube/3DLUTs) | تطبيق LUT على صورة — cube=file.cube (any 3D .cube, e.g. from lut-make or a camera vendor) ; amount=1 | pip:numpy, pip:opencv |
+| `sky-replace` | APPX-107 | Photoshop 2025 (package listing): Edit › Sky Replacement (Sky_Presets) | استبدال السماء — sky=blue/sunset/dusk/golden/storm or an image path ; feather=1.5 ; harmonize=0.25 ; show_mask=0 | pip:numpy, pip:opencv |
+| `liquify` | APPX-108 | Photoshop 2025 (package listing): Filters/Liquify.8bf | تسييل (دفع/قرص/نفخ/لف) — mode=push/pinch/bloat/twirl ; cx cy (0..1) ; radius=0.2 ; strength=0.5 ; dx dy (push, px) ; or ops=liquify.json [{mode,cx,cy,…}] | pip:numpy, pip:opencv |
+| `lens-blur` | APPX-109 | Photoshop 2025 (package listing): Filters/Lens Blur.8bf + DepthPrediction | تغبيش عدسة بعمق وبوكيه — depth=map.png (white = near) or auto (bottom = near) ; focus=0.8 (depth in focus) ; radius=14 ; blades=6 ; rotation=0 ; highlights=0.6 ; slices=8 | pip:numpy, pip:opencv |
+| `paint` | APPX-110 | Microsoft Paint 11.2605 (REA: PaintUI.winmd, PaintTools.dll): Brush/Calligraphic/AirBrush/Pencil/Eraser tools | رسم بفرش الرسّام — IN = strokes.json {width,height,background:'#fff' / image, strokes:[{brush:pencil/brush/calligraphy-45/calligraphy-135/airbrush/oil/crayon/marker/natural-pencil/watercolor/eraser,color,size,opacity,points:[[x,y],…]}]} | pip:numpy, pip:opencv |
+| `fill` | APPX-111 | Microsoft Paint 11.2605 (REA: PaintUI.winmd, PaintTools.dll): FloodFillOperation; Paint.NET Paint Bucket | سطل التعبئة — x y (px) ; color=#ff0000 ; tolerance=10 (0..100) ; mode=contiguous/global | pip:numpy, pip:opencv |
+| `coloring-book` | APPX-112 | Microsoft Paint 11.2605 (REA: PaintUI.winmd, PaintTools.dll): AIFeature.ColoringBook | صفحة تلوين من صورة — lines=2 (thickness) ; detail=7 (lower = more lines) ; min_area=40 (speck cleanup) | pip:numpy, pip:opencv |
+| `sticker` | APPX-113 | Microsoft Paint 11.2605 (REA: PaintUI.winmd, PaintTools.dll): AIFeature.StickerGenerator, Remove background | ملصق بحد أبيض وظل — IN = PNG with transparency (or any image: background removed first with remove-bg box=…) ; border=12 ; shadow=0.35 | pip:numpy, pip:opencv, pip:pillow |
 
 **Honesty rules:** `verified` is true only when the op measured its own postcondition (SSIM for `jpegmini`, keyword round-trip for `xmp`, SHA-256 for `download`, minimum distance for `scatter`, reach error for `ik`). These are open, classical methods, not the vendors' algorithms (DeepPRIME, ClearView Plus, Lightroom's AI masks).
 
 **Limits:** anchor counts prove code presence, not that a feature runs; minified aliases can hide APIs (REA proved 0 Electron identities in Canva's 6.8 MB main bundle for exactly that reason). Vendor-documented features are listed as context; only the open recipes carry ✅.
+
+
+## 8. Fourth batch (2026-10-20): Paint.NET, Photoshop 2025, Microsoft Paint, Blender
+
+<div dir="rtl">
+
+**ما الجديد:** REA قرأ أسماء 64 مؤثرًا في `PaintDotNet.Effects.dll` و588 نوعًا في `PaintUI.winmd` للرسّام، وقائمة حزمة Photoshop 2025 (14 مرشّحًا و27 LUT و35 مجلد نماذج ذكاء)، وجرد Blender 5.2.2 الموجود على الجهاز. صارت كلها أوامر:
+
+- **App Studio** (`scripts/app_studio_paint.py`، يحمّله `app_studio.py`): ‏30 مؤثرًا من Paint.NET (APPX-99…104)، و`blend` بـ 24 وضع مزج و`layers` إلى PNG أو OpenRaster ‎.ora (APPX-105)، و`lut-make`/`lut` (APPX-106)، و`sky-replace` (APPX-107)، و`liquify` (APPX-108)، و`lens-blur` (APPX-109)، وفرش الرسّام `paint` و`fill` و`coloring-book` و`sticker` (APPX-110…113).
+- **Blender Cinema** (`scripts/blender_cinema.py`): خمسة أساليب رندر سينمائي بـ Cycles (APPX-114)، وحركات كاميرا إلى MP4 (APPX-115)، وتشطيب الفيلم في مركّب Blender 5 (APPX-116)، وجرد حي (APPX-117). يجد Blender من `KOSIF_BLENDER` أو PATH أو ‎~/KOSIF-Tools، أو يستعمل `pip install bpy`.
+- **خرائط الذكاء 📄:** ميزات Photoshop وPaint التوليدية وما يقابلها هنا (APPX-118، APPX-119).
+
+**تنبيه أمني:** Windows Defender يحجب `Set-up.exe` في حزمة Photoshop؛ `installer_triage.py scan` يبلّغ عنه الآن `unreadable/antivirus` ولا يُتجاوز.
+
+</div>
+
+Evidence and receipts: [PAINT_PHOTOSHOP_BLENDER_2026-10-20.md](../proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md).
+
+```bash
+python scripts/app_studio.py ops paint            # the painting batch
+python scripts/blender_cinema.py doctor           # Blender found? version, ffmpeg
+python scripts/blender_cinema.py render --preset golden-hour --model product.glb --quality final -o hero.png
+```

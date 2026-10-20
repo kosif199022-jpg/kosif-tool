@@ -2,7 +2,7 @@
 
 Generated from real repository data. Catalog evidence is NOT a live execution receipt.
 
-**4,730 powers / 52 families / 10 domains / 22 route descriptions.**
+**4,751 powers / 52 families / 10 domains / 22 route descriptions.**
 
 ## Claude task protocol
 
@@ -32,9 +32,9 @@ Generated from real repository data. Catalog evidence is NOT a live execution re
 
 ## Families by domain
 
-### build: 121 powers
+### build: 142 powers
 
-- app-feature-transfer: 98
+- app-feature-transfer: 119
 - apps-artifacts: 23
 
 ### code: 327 powers
