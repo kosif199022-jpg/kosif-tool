@@ -18,6 +18,7 @@
 6. [Second batch: photo developers, type, vector, procedural, download](#6-second-batch-2026-10-19-photo-developers-type-vector-procedural-download)
 7. [App Studio — run every feature on the user's own files (requirements)](#7-app-studio--run-every-feature-on-the-users-own-files)
 8. [Fourth batch: Paint.NET, Photoshop 2025, Microsoft Paint, Blender](#8-fourth-batch-2026-10-20-paintnet-photoshop-2025-microsoft-paint-blender)
+9. [Global video platforms and two original workflow adapters](#9-global-video-platforms-and-two-original-workflow-adapters-2026-10-19)
 
 ## 1. What each installer really is
 
@@ -259,3 +260,7 @@ python scripts/app_studio.py ops paint            # the painting batch
 python scripts/blender_cinema.py doctor           # Blender found? version, ffmpeg
 python scripts/blender_cinema.py render --preset golden-hour --model product.glb --quality final -o hero.png
 ```
+
+## 9. Global video platforms and two original workflow adapters (2026-10-19)
+
+See [Global video platform capability atlas](global-video-platforms-2026-10-19.md) for vendor-attributed features, clean-room routes, and verified vs unavailable capabilities. scripts/video_workflow_bridge.py adds tested text-selected video-only paper-edit manifests inspired by Descript/Premiere and timecode/position-accurate review markers inspired by Frame.io. It is a non-destructive manifest generator, not an imported vendor editor. Its use never licenses proprietary models or third-party videos.
