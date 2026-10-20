@@ -45,45 +45,61 @@ ARTIFACTS = ("01-targets.json", "02-page-capture.json", "04-webmcp.json", "05-sc
 # --------------------------------------------------------------------------- fingerprints
 # (category, name, regex on script text, optional version regex). Identifiers only.
 SCRIPT_FINGERPRINTS = [
-    ("framework", "React", r"rendererPackageName:\s*\"react-dom\"|__REACT_DEVTOOLS_GLOBAL_HOOK__", r"version:\s*\"(\d+\.\d+\.\d+[\w.-]*)\",\s*rendererPackageName:\s*\"react-dom\"|rendererPackageName:\s*\"react-dom\"[^}]{0,120}?version:\s*\"(\d+\.\d+\.\d+[\w.-]*)\""),
-    ("framework", "Next.js", r"__NEXT_DATA__|next/dist/|__next_f", r"window\.next\s*=\s*\{\s*version:\s*\"(\d+\.\d+\.\d+[\w.-]*)\""),
-    ("framework", "Vue", r"__VUE__|__VUE_HMR_RUNTIME__", None),
-    ("framework", "Svelte", r"__svelte|svelte-[a-z0-9]{6}", None),
-    ("framework", "Angular", r"ng-version|ɵcmp", None),
-    ("canvas-engine", "tldraw", r"\btldraw\b|@tldraw/", None),
-    ("canvas-engine", "Excalidraw", r"excalidraw", None),
-    ("canvas-engine", "Konva", r"\bKonva\b", None),
-    ("canvas-engine", "Fabric.js", r"\bfabric\.(?:Canvas|Object)\b", None),
-    ("canvas-engine", "PixiJS", r"\bPIXI\b|pixi\.js", None),
-    ("canvas-engine", "three.js", r"__THREE__|THREE\.WebGLRenderer", r"REVISION\s*=\s*\"(\d+)\""),
-    ("canvas-engine", "React Flow", r"react-flow__|@xyflow/", None),
-    ("realtime", "Yjs", r"\bY\.Doc\b|yjs|y-protocols", None),
-    ("realtime", "Liveblocks", r"liveblocks", None),
-    ("realtime", "Socket.IO", r"socket\.io", None),
-    ("realtime", "PartyKit", r"partykit|partysocket", None),
-    ("editor", "Monaco", r"monaco-editor|\bmonaco\.editor\b", None),
-    ("editor", "CodeMirror", r"\bcm-editor\b|@codemirror/", None),
-    ("editor", "Tiptap", r"\btiptap\b", None),
-    ("editor", "ProseMirror", r"ProseMirror", None),
-    ("styling", "Tailwind CSS", r"--tw-[a-z-]+", None),
-    ("styling", "Radix UI", r"data-radix-|@radix-ui/", None),
-    ("styling", "Framer Motion", r"framer-motion|\bMotionConfig\b", None),
-    ("state", "Zustand", r"\bzustand\b", None),
-    ("state", "TanStack Query", r"@tanstack/|QueryClientProvider", None),
-    ("auth", "Firebase", r"firebaseapp\.com|identitytoolkit\.googleapis\.com|firebase-installations", None),
-    ("auth", "Clerk", r"\bclerk\.[a-z]+\.(?:com|dev)|__clerk", None),
-    ("auth", "Supabase", r"supabase\.co\b|@supabase/", None),
-    ("analytics", "Mixpanel", r"mixpanel", None),
-    ("analytics", "PostHog", r"posthog", None),
-    ("analytics", "Sentry", r"sentry\.io|__SENTRY__", None),
-    ("analytics", "Vercel Analytics", r"/_vercel/insights|va\.vercel-scripts\.com", None),
-    ("payments", "Stripe", r"js\.stripe\.com", None),
-    ("ai", "Vercel AI SDK", r"\bai/rsc\b|@ai-sdk/", None),
+    # (category, name, detect regex, version regex or None, strong regex or None)
+    # "strong" = an identifier only the library itself ships; without it, a bare name in 1-2 files is graded "mentioned"
+    ("framework", "React", r"rendererPackageName:\s*\"react-dom\"|__REACT_DEVTOOLS_GLOBAL_HOOK__",
+     r"version:\s*\"(\d+\.\d+\.\d+[\w.-]*)\",\s*rendererPackageName:\s*\"react-dom\"|rendererPackageName:\s*\"react-dom\"[^}]{0,120}?version:\s*\"(\d+\.\d+\.\d+[\w.-]*)\"", None),
+    ("framework", "Next.js", r"__NEXT_DATA__|next/dist/|__next_f", r"window\.next\s*=\s*\{\s*version:\s*\"(\d+\.\d+\.\d+[\w.-]*)\"", None),
+    ("framework", "Vue", r"__VUE__|__VUE_HMR_RUNTIME__", None, None),
+    ("framework", "Svelte", r"__svelte|svelte-[a-z0-9]{6}", None, None),
+    ("framework", "Angular", r"ng-version|ɵcmp", None, None),
+    ("bundler", "webpack", r"webpackChunk[\w$]*|__webpack_require__", None, None),
+    ("canvas-engine", "tldraw", r"\btldraw\b|@tldraw/", r"\(\s*\"tldraw\"\s*,\s*\"(\d+\.\d+\.\d+[\w.-]*)\"", r"@tldraw/editor|TLDRAW_ENV"),
+    ("canvas-engine", "Excalidraw", r"@excalidraw/excalidraw|ExcalidrawElement|excalidraw-app", None, None),   # not the 'excalidraw/clipboard' paste type
+    ("canvas-engine", "Konva", r"\bKonva\b", None, None),
+    ("canvas-engine", "Fabric.js", r"\bfabric\.(?:Canvas|Object)\b", None, None),
+    ("canvas-engine", "PixiJS", r"\bPIXI\b|pixi\.js", None, None),
+    ("canvas-engine", "three.js", r"__THREE__|THREE\.WebGLRenderer", r"REVISION\s*=\s*\"(\d+)\"", None),
+    ("canvas-engine", "React Flow", r"react-flow__|@xyflow/", None, None),
+    ("realtime", "Yjs", r"(?<![\w])(?:yjs|y-protocols)(?![\w])|\bY\.Doc\b", None, None),   # 'linkifyjs' is not Yjs
+    ("realtime", "Liveblocks", r"liveblocks", None, None),
+    ("realtime", "Socket.IO", r"socket\.io", None, r"\"/engine\.io\"|/engine\.io"),
+    ("realtime", "PartyKit", r"partykit|partysocket", None, None),
+    ("editor", "Monaco", r"monaco-editor|\bmonaco\.editor\b", None, None),
+    ("editor", "CodeMirror", r"\bcm-editor\b|@codemirror/", None, None),
+    ("editor", "Tiptap", r"\btiptap\b", None, r"\[tiptap (?:error|warn)\]|tipTapConfig"),
+    ("editor", "ProseMirror", r"ProseMirror", None, None),
+    ("editor", "highlight.js", r"\bhljs\b.{0,200}registerLanguage|registerLanguage.{0,200}\bhljs\b", None, None),
+    ("editor", "Prism", r"\bPrism\.highlight|highlightAllUnder", None, None),
+    ("styling", "Tailwind CSS", r"--tw-[a-z-]+", None, None),
+    ("styling", "Radix UI", r"data-radix-|@radix-ui/", None, None),
+    ("styling", "shadcn/ui (data-slot)", r"data-slot[=\"']+(?:sidebar|card|tooltip|dialog|button)", None, None),
+    ("styling", "Framer Motion", r"framer-motion|\bMotionConfig\b|framerAppearId", None, None),
+    ("styling", "lucide icons", r"\"lucide-\"|lucide-react", None, None),
+    ("styling", "sonner toasts", r"data-sonner-toaster", None, None),
+    ("state", "Zustand", r"\bzustand\b", None, None),
+    ("state", "TanStack Query", r"@tanstack/|QueryClientProvider", None, None),
+    ("library", "Zod", r"\$ZodType|ZodError", r"\{major:(\d+),minor:(\d+),patch:(\d+)\}", None),
+    ("platform", "Firebase SDK", r"firebaseapp\.com|identitytoolkit\.googleapis\.com|firebase-installations",
+     r"\(\s*\"firebase\"\s*,\s*\"(\d+\.\d+\.\d+)\"\s*,\s*\"app\"", None),
+    ("auth", "Clerk", r"\bclerk\.[a-z]+\.(?:com|dev)|__clerk", None, None),
+    ("auth", "Supabase", r"supabase\.co\b|@supabase/", None, None),
+    ("auth", "Google Identity Services", r"accounts\.google\.com/gsi/client", None, None),
+    ("auth", "reCAPTCHA", r"recaptcha/api\.js|grecaptcha\.", None, None),
+    ("analytics", "Mixpanel", r"mixpanel", r"LIB_VERSION:\s*\"(\d+\.\d+\.\d+)\"", r"api-js\.mixpanel\.com|LIB_VERSION"),
+    ("analytics", "PostHog", r"posthog", None, None),
+    ("analytics", "Sentry", r"sentry\.io|__SENTRY__", None, None),
+    ("analytics", "Google Tag Manager", r"googletagmanager\.com/gtm\.js", None, None),
+    ("analytics", "Hotjar", r"static\.hotjar\.com", None, None),
+    ("analytics", "Vercel Analytics", r"/_vercel/insights|va\.vercel-scripts\.com", r"sdkv\s*=\s*\"(\d+\.\d+\.\d+)\"", None),
+    ("support", "Intercom", r"widget\.intercom\.io|_intercom_npm_loader", None, None),
+    ("payments", "Stripe", r"js\.stripe\.com", None, None),
+    ("ai", "Vercel AI SDK", r"\bai/rsc\b|@ai-sdk/|vercel\.ai\.error", None, None),
 ]
 # matched only by a bare package/product name, which can appear without the library being used
-# (an import adapter, a paste handler, a comment): graded "mentioned" unless versioned or seen in 3+ files
+# (an import adapter, a paste handler, a comment): graded "mentioned" unless versioned, strong or seen in 3+ files
 NAME_ONLY = {"tldraw", "Excalidraw", "Konva", "PixiJS", "Yjs", "Liveblocks", "Socket.IO", "PartyKit", "Monaco", "Tiptap",
-             "Zustand", "Mixpanel", "PostHog", "Svelte"}
+             "Zustand", "Mixpanel", "PostHog", "Svelte", "ProseMirror"}
 # storage key NAMES (values are never read) → service
 STORAGE_FINGERPRINTS = [
     ("Firebase", r"^firebase-|^firebase:"), ("Mixpanel", r"mixpanel|^__mpq_"), ("Google Ads", r"^_gcl_"),
@@ -142,6 +158,21 @@ def find_chromium(explicit: str | None = None) -> str | None:
     return next((c for c in cands if c and Path(c).exists()), None)
 
 
+def free_port() -> int:
+    import socket
+    with socket.socket() as s:
+        s.bind(("127.0.0.1", 0))
+        return s.getsockname()[1]
+
+
+def port_in_use(port: int) -> bool:
+    """True when something already listens on 127.0.0.1:port — maybe someone's signed-in browser: never attach to it."""
+    import socket
+    with socket.socket() as s:
+        s.settimeout(0.5)
+        return s.connect_ex(("127.0.0.1", port)) == 0
+
+
 def proxy_arg(proxy: str) -> list:
     if proxy == "none":
         return []
@@ -153,7 +184,8 @@ def proxy_arg(proxy: str) -> list:
 def browser_argv(chrome: str, url: str, profile: Path, port: int, proxy: str) -> list:
     argv = [chrome, "--headless=new", "--remote-debugging-address=127.0.0.1", f"--remote-debugging-port={port}",
             f"--user-data-dir={profile}", "--no-first-run", "--no-default-browser-check", "--disable-extensions",
-            "--disable-sync", "--window-size=1440,900", *proxy_arg(proxy)]
+            "--disable-sync", "--disable-background-networking", "--disable-component-update", "--disable-default-apps",
+            "--disable-domain-reliability", "--no-pings", "--window-size=1440,900", *proxy_arg(proxy)]
     if platform.system() == "Linux" and hasattr(os, "geteuid") and os.geteuid() == 0:
         argv.append("--no-sandbox")   # Chromium refuses to start as root otherwise (containers)
     return argv + [url]
@@ -188,13 +220,16 @@ def run_rea(rea: str, args: list, dest: Path, timeout: int) -> dict:
 
 
 # --------------------------------------------------------------------------- run
-def run(url: str, out: str, allow=(), obs_ms: int = 3000, chromium: str | None = None, proxy: str = "auto", port: int = 9223,
+def run(url: str, out: str, allow=(), obs_ms: int = 3000, chromium: str | None = None, proxy: str = "auto", port: int = 0,
         deep: bool = False, keep_profile: bool = False, dry_run: bool = False, settle_s: float = 6.0) -> dict:
     origin = origin_of(url)
     origins = sorted({origin, *(origin_of(a) for a in allow)})
     out_p = check_out_dir(Path(out))
     rea, chrome = find_rea(), find_chromium(chromium)
     profile = out_p / "isolated-profile"
+    if port and not dry_run and port_in_use(port):
+        raise RuntimeError(f"port {port} is already in use (another browser?); the study never attaches to an existing browser — omit --port")
+    port = port or free_port()
     endpoint = f"http://127.0.0.1:{port}"
     plan = {"url": url, "origins": origins, "out": str(out_p), "browser": browser_argv(chrome or "<chromium>", url, profile, port, proxy),
             "rea_steps": [["list-browser-targets", endpoint, *[x for o in origins for x in ("--allowed-origins", o)]]]
@@ -215,6 +250,8 @@ def run(url: str, out: str, allow=(), obs_ms: int = 3000, chromium: str | None =
     try:
         deadline = time.time() + 30
         while time.time() < deadline:
+            if proc.poll() is not None:
+                raise RuntimeError("the isolated browser exited before opening its DevTools port (see browser.log)")
             try:
                 urllib.request.build_opener(urllib.request.ProxyHandler({})).open(endpoint + "/json/version", timeout=2).read()
                 break
@@ -311,20 +348,24 @@ def report(study, json_out=None, md_out=None) -> dict:
     for f in files:
         text = f.read_text(encoding="utf-8", errors="replace")
         script_bytes += len(text.encode("utf-8", "replace"))
-        for cat, name, rx, vrx in SCRIPT_FINGERPRINTS:
+        for cat, name, rx, vrx, srx in SCRIPT_FINGERPRINTS:
             m = re.search(rx, text)
             if not m:
                 continue
             ver = None
             if vrx:
                 vm = re.search(vrx, text)
-                ver = next((g for g in vm.groups() if g), None) if vm else None
+                if vm:
+                    groups = [g for g in vm.groups() if g]
+                    ver = ".".join(groups) if len(groups) > 1 and all(g.isdigit() for g in groups) else (groups[0] if groups else None)
             ident = re.sub(r"[^\w./@:-]", "", m.group(0))[:40]
             add(cat, name, f"{f.name[:24]}… identifier {ident}", ver, f.name)
+            if srx and re.search(srx, text):
+                stack[(cat, name)]["_strong"] = True
     for row in stack.values():
         files_hit = len(row.pop("_files"))
         row["files"] = files_hit
-        strong = row["version"] or row["name"] not in NAME_ONLY or files_hit >= 3
+        strong = row.pop("_strong", False) or row["version"] or row["name"] not in NAME_ONLY or files_hit >= 3
         row["confidence"] = "observed" if strong else "mentioned"
     storage = cap.get("storage") or {}
     keys = list(storage.get("local_storage_keys") or []) + list(storage.get("session_storage_keys") or []) + list(storage.get("indexed_db_names") or [])
@@ -376,7 +417,7 @@ def report(study, json_out=None, md_out=None) -> dict:
 def render_md(r: dict) -> str:
     L = [f"# Web app study — {r.get('title') or r.get('url')}", "", f"- URL: {r.get('url')}", f"- Observed: {r.get('observed_at')}",
          f"- Boundary: {r['boundary']}", "", "## Stack (facts with evidence)", "",
-         "observed = versioned, a distinctive API identifier, or 3+ files; mentioned = only a bare name in 1–2 files", "",
+         "observed = versioned, a distinctive identifier the library itself ships, or 3+ files; mentioned = only a bare name in 1–2 files", "",
          "| category | name | version | confidence | evidence |", "|---|---|---|---|---|"]
     for s in r["stack"]:
         L.append(f"| {s['category']} | {s['name']} | {s['version'] or '—'} | {s['confidence']} | {'; '.join(s['evidence'])} |")
@@ -416,7 +457,7 @@ def main(argv=None) -> int:
     r.add_argument("--observation-ms", type=int, default=3000)
     r.add_argument("--chromium")
     r.add_argument("--proxy", default="auto", help="auto (HTTPS_PROXY), none, or a proxy URL")
-    r.add_argument("--port", type=int, default=9223)
+    r.add_argument("--port", type=int, default=0, help="DevTools port (default: a free one); an occupied port is refused")
     r.add_argument("--deep", action="store_true", help="also run REA's bounded static JavaScript analysis (slow, memory-hungry)")
     r.add_argument("--keep-profile", action="store_true")
     r.add_argument("--dry-run", action="store_true", help="print the plan without starting anything")

@@ -25,7 +25,7 @@ def fake_study(root: Path):
     files.mkdir(parents=True)
     (files / "source-1-aaaa.js").write_text(
         'var a={version:"19.1.0",rendererPackageName:"react-dom"};var b="@tldraw/editor";self.__next_f=[];', encoding="utf-8")
-    (files / "source-2-bbbb.js").write_text('var c="https://x.firebaseapp.com";var d="y-protocols";var e="--tw-ring-color";', encoding="utf-8")
+    (files / "source-2-bbbb.js").write_text('var c="https://x.firebaseapp.com";var d="y-protocols";var e="--tw-ring-color";var f=("firebase","11.10.0","app");', encoding="utf-8")
     cap = {"normalized_result": {
         "target": {"url": "https://app.example/", "title": "Example App"},
         "capture_window": {"started_at": "2026-10-20T00:00:00Z"},
@@ -67,6 +67,7 @@ class Guardrails(unittest.TestCase):
             self.assertEqual(plan["login"], "never")
             argv = " ".join(plan["browser"])
             self.assertIn("--headless=new", argv)
+            self.assertIn("--disable-background-networking", argv)            # only the studied site is contacted
             self.assertIn("--remote-debugging-address=127.0.0.1", argv)
             self.assertIn(f"--user-data-dir={Path(tmp).resolve() / 's' / 'isolated-profile'}", argv)
             self.assertNotIn("--proxy-server", argv)
@@ -80,16 +81,40 @@ class Guardrails(unittest.TestCase):
             self.assertIn("--max-heap-mb", deep[-1])                           # bounded: the unbounded bundle analyzer ran out of memory
 
 
+class NeverAttachToAnotherBrowser(unittest.TestCase):
+    def test_an_occupied_port_is_refused(self):
+        with socket.socket() as busy, tempfile.TemporaryDirectory() as tmp:
+            busy.bind(("127.0.0.1", 0)); busy.listen(1)
+            port = busy.getsockname()[1]
+            self.assertTrue(W.port_in_use(port))
+            with self.assertRaisesRegex(RuntimeError, "already in use"):
+                W.run("https://example.com", str(Path(tmp) / "s"), port=port)
+            self.assertFalse((Path(tmp) / "s").exists())
+        self.assertFalse(W.port_in_use(W.free_port()))
+
+
 class Report(unittest.TestCase):
+    def test_lookalike_names_are_not_libraries(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            fake_study(root)
+            f = root / "scripts-export" / "files" / "isolated" / "source-3-cccc.js"
+            f.write_text('throw Error(`linkifyjs: bad`);if("excalidraw/clipboard"===t){};var z={major:4,minor:1,patch:11};var y="$ZodType";', encoding="utf-8")
+            names = {s["name"]: s for s in W.report(root)["stack"]}
+            self.assertNotIn("Excalidraw", names)                  # a paste MIME type is not the engine
+            self.assertEqual(names["Zod"]["version"], "4.1.11")
+            self.assertEqual(names["Yjs"]["files"], 1)              # only the real y-protocols file, not linkifyjs
+
     def test_facts_only_report(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             fake_study(root)
             rep = W.report(root)
             names = {s["name"]: s for s in rep["stack"]}
-            for n in ("Next.js", "Vercel", "React", "tldraw", "Firebase", "Yjs", "Tailwind CSS"):
+            for n in ("Next.js", "Vercel", "React", "tldraw", "Firebase SDK", "Yjs", "Tailwind CSS"):
                 self.assertIn(n, names, n)
             self.assertEqual(names["React"]["version"], "19.1.0")
+            self.assertEqual(names["Firebase SDK"]["version"], "11.10.0")
             self.assertEqual({x["service"] for x in rep["services_from_storage_key_names"]}, {"Google Ads", "Mixpanel", "Firebase"})
             self.assertIn("theme", rep["unclassified_storage_keys"])
             self.assertEqual(rep["webmcp"]["tools"], ["search_designs"])
@@ -113,7 +138,7 @@ class LiveLocalPage(unittest.TestCase):
             threading.Thread(target=srv.serve_forever, daemon=True).start()
             try:
                 out = Path(tmp) / "study"
-                res = W.run(f"http://127.0.0.1:{srv.server_port}/", str(out), obs_ms=800, proxy="none", port=free_port(), settle_s=2.0)
+                res = W.run(f"http://127.0.0.1:{srv.server_port}/", str(out), obs_ms=800, proxy="none", settle_s=2.0)
             finally:
                 srv.shutdown()
                 srv.server_close()

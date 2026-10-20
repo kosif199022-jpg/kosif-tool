@@ -14,18 +14,22 @@
 
 | البند | القيمة | الدليل |
 |---|---|---|
-| الإطار | Next.js 15.2.6 · React 19.1.0-canary | مسارات `/_next/static/`، معرّف `__next_f`، نص الإصدار في حزمة react-dom |
-| الاستضافة | Vercel | معامل `dpl=dpl_…` في روابط الملفات، و`/_vercel/insights` |
-| اللوحة | tldraw | معرّف `tldraw` في عدة ملفات |
-| المحرر النصي | Tiptap فوق ProseMirror | معرّفات `tiptap` و`ProseMirror` |
-| التزامن | Yjs وSocket.IO (مذكوران في الحزمة) | معرّفات `yjs` و`socket.io`؛ لم نرصد اتصال WebSocket في الصفحة العامة |
-| الذكاء الاصطناعي في الواجهة | Vercel AI SDK | معرّف `@ai-sdk/` |
-| الهوية والقياس | Firebase · Mixpanel · Vercel Analytics · Google Ads · LinkedIn · Reddit | أسماء مفاتيح التخزين ومعرّفات الحزمة |
+| الإطار | Next.js 15.2.6 (App Router) · React 19.1.0-canary · webpack | مسارات `/_next/static/` و`__next_f`، ونص الإصدار في react-dom، و`webpackChunk` |
+| الاستضافة | Vercel مع تثبيت الملفات على نسخة النشر | معامل `dpl=dpl_…` و`/_vercel/insights` |
+| اللوحة | tldraw 4.4.0 | معرّف الإصدار `("tldraw","4.4.0")` و`@tldraw/editor` |
+| المحرر النصي | Tiptap فوق ProseMirror (محرك النص داخل tldraw) | رسائل `[tiptap error]` و`tipTapConfig` |
+| التزامن | عميل Socket.IO v4 إلى خادم API منفصل؛ لا مكتبة CRDT | مسار `/engine.io`؛ أحداث بأسماء «مجال:كيان:فعل» للمشاريع والمكونات والدعوات وبث تشغيل الوكيل على اللوحة |
+| الذكاء الاصطناعي في الواجهة | Vercel AI SDK 5.0.55 · خادم MCP بعيد وتوزيع مهارات للوكلاء | ثابت الإصدار بجوار وكيل مستخدم SDK، ومقتطفات إعداد MCP لأدوات وكلاء البرمجة |
+| التسجيل والحماية | نظام دخول خاص بعدة مزودين · Google Identity Services · reCAPTCHA | سكربتا `accounts.google.com/gsi/client` و`recaptcha/api.js` |
+| القياس والدعم | Firebase SDK 11.10.0 (للتحليلات، لا للدخول) · Mixpanel 2.70.0 · Vercel Analytics 1.5.0 · GTM · Hotjar · Intercom · إعلانات Google وLinkedIn وReddit | معرّفات الإصدارات وأسماء مفاتيح التخزين (لم تُقرأ قيمها) |
+| الواجهة | Tailwind · shadcn/ui · Radix · Framer Motion · lucide · sonner · Zod 4.1.11 | `data-slot` و`data-radix-` و`framerAppearId` و`$ZodType` |
 | WebMCP | لا أدوات معلنة في الصفحة الرئيسية | `discover-webmcp-tools` |
 | الصفحة | 5,504 عقدة DOM · 63 سكربتًا و29 صورة و18 خطًا وملفا CSS · 96 سكربتًا مصدَّرًا (5.8 MB) | `inspect-web-page` |
 | التحليل الثابت | 1,268 وحدة من 95 ملفًا · 150 إشارة إلى نقاط اتصال (142 شبكة، 8 مسارات) · 73 إشارة تخزين · 3 Workers | `analyze-javascript-application` بحدود ذاكرة |
 
-أسماء نقاط الاتصال ومفاتيح التخزين ملك الموقع، فلا ننشرها، وننشر أعدادها فقط. اكتشاف المكتبات بالمعرّفات: ظهور الاسم لا يثبت الاستخدام الفعلي، ولهذا قيل «مذكوران» عن Yjs وSocket.IO.
+أسماء نقاط الاتصال والأحداث ومفاتيح التخزين ملك الموقع، فلا ننشرها، وننشر أعدادها وأنواعها فقط.
+
+**تصحيحات بعد التحقق:** ظهر في التقرير الأول «Yjs» و«Excalidraw». التحقق أثبت أن «yjs» جزء من اسم مكتبة `linkifyjs`، وأن «excalidraw» نوع لصق تدعمه tldraw وليس محرك رسم. صُححت بصمات الأداة لذلك، وأضيف لها اختبار يمنع تكرار الخطأ.
 
 **ملاحظة على الكيت الأصلي:** سكربت PowerShell في الكيت استخدم `--json`، بينما REA 6.7.0 يأخذ `--format json`، فكان سيفشل حتى لو بقي اللابتوب متصلًا. وأداة `analyze-web-bundle` بلا حدود نفدت ذاكرتها (8 GB) على هذه الحزمة؛ البديل المحدود هو تصدير السكربتات ثم `analyze-javascript-application --max-heap-mb`.
 
