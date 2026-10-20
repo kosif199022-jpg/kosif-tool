@@ -56,6 +56,9 @@ DOMAINS = OrderedDict([
 # General families: stem → (prefix, domain, title_ar, title_en, summary_ar, summary_en).
 # Motion families take their titles from the H1 of references/powers/<stem>.md.
 FAMILY_META = {
+    "runnable-tools": ("TOOL", "build", "الأدوات القابلة للتشغيل", "Runnable KOSIF tools",
+                       "كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة.",
+                       "Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card."),
     "self-discovery": ("SELF", "mind", "اكتشاف القدرات", "Self-discovery & capability inventory",
                        "اعرف ما تستطيعه فعلًا في هذه الجلسة: الأدوات والمهارات والموصلات والجهاز والشبكة.",
                        "Find out what this session can really do: tools, deferred tools, skills, connectors, machine and network."),
@@ -141,7 +144,7 @@ INTENT = {
     "تطبيق": ["app", "ui", "phone", "cursor", "@APP"],
     "بيانات": ["chart", "counter", "data", "infographic", "@ANLY"],
     "أرقام": ["chart", "counter", "data"],
-    "خريطة": ["map", "route", "geo"],
+    "خريطة": ["map", "route", "geo", "geopandas", "@MAP"],
     "تعليمي": ["explainer", "diagram", "whiteboard"],
     "شرح": ["explainer", "diagram", "whiteboard"],
     "أطفال": ["character", "cartoon", "playful"],
@@ -156,7 +159,7 @@ INTENT = {
     "برهان": ["proof", "z3", "lean", "@ANLY"], "اثبات": ["proof", "z3", "@ANLY"], "إثبات": ["proof", "z3", "@ANLY"],
     "تعلم الآلة": ["scikit-learn", "machine learning", "@ANLY"], "تعلم الالة": ["scikit-learn", "@ANLY"], "نموذج تنبؤي": ["scikit-learn", "@ANLY"],
     "جدولة": ["or-tools", "schedule", "optimisation", "@PROD"], "تحسين": ["optimisation", "or-tools", "pulp"], "ميزانية": ["pulp", "budget", "@PROD"],
-    "جغرافي": ["geopandas", "geospatial", "@ANLY", "@MAP"], "خريطة": ["map", "geopandas", "@MAP"],
+    "جغرافي": ["geopandas", "geospatial", "@ANLY", "@MAP"],
     "جزيء": ["rdkit", "chemistry", "@ANLY"], "كيمياء": ["rdkit", "@ANLY"], "جينات": ["biopython", "@ANLY"], "تسلسل جيني": ["biopython", "@ANLY"],
     "زحف": ["scrapy", "crawl", "@WEB"], "استخراج مقال": ["trafilatura", "@WEB"], "سكرابينج": ["scrapy", "crawl", "@WEB"],
     "شرائح": ["slides", "marp", "slidev", "@DOC"], "عرض تقديمي": ["slides", "marp", "slidev", "pptx", "@DOC"], "مخطط": ["diagram", "mermaid", "@DOC", "@EXPL"],
@@ -192,11 +195,29 @@ INTENT = {
 # the first table above keeps its original loose substring match (except the
 # two-letter "خط", which must not fire on "خطة" plan or "مخطط" chart)
 _LEGACY_KEYS = set(INTENT) - {"خط"}
-INTENT.update({
+
+
+# Keys the strategy table deliberately re-routes: a «خطة» or roadmap brief is usually a business plan (@PROD);
+# merging in @PLAN would let the generic planning family outrank pricing/budget powers.
+_REPLACE_INTENTS = {"خطة", "roadmap"}
+
+
+def _merge_intents(extra: dict) -> None:
+    """Add expansions to INTENT; a key that already exists keeps its terms and gains the new ones
+    (a plain dict.update silently dropped e.g. the @MODEL boost and !think hint of «تفكير»)."""
+    for key, terms in extra.items():
+        if key in _REPLACE_INTENTS:
+            INTENT[key] = list(terms)
+            continue
+        have = INTENT.setdefault(key, [])
+        have.extend(x for x in terms if x not in have)
+
+
+_merge_intents({
     # motion signals (domain boost)
     "فيديو": ["video", "~motion"], "موشن": ["motion", "~motion"], "انميشن": ["animation", "~motion"],
     "انيميشن": ["animation", "~motion"], "رسوم متحركة": ["animation", "~motion"],
-    "video": ["~motion"], "motion": ["~motion"], "animation": ["~motion"], "animate": ["animation", "~motion"],
+    "video": ["~motion"], "motion": ["~motion"], "animation": ["~motion"], "animate": ["animation", "~motion", "animate", "tween", "@APPX"],
     "reel": ["~motion"], "reels": ["reel", "~motion"], "montage": ["~motion"], "captions": ["~motion"],
     "subtitles": ["captions", "~motion"], "kinetic": ["~motion"], "mp4": ["render", "~motion"],
     "9:16": ["~motion"], "16:9": ["~motion"], "1:1": ["~motion"], "4:5": ["~motion"],
@@ -253,7 +274,7 @@ INTENT.update({
     "lightroom": ["lightroom", "xmp", "@APPX"], "لايت روم": ["lightroom", "xmp", "@APPX"], "acdsee": ["acdsee", "xmp", "@APPX"],
     "jpegmini": ["jpegmini", "@APPX"], "ضغط الصور": ["jpegmini", "compress", "@APPX"], "تصغير حجم الصور": ["jpegmini", "@APPX"],
     "fontlab": ["fontlab", "font", "@APPX"], "تصميم خط": ["fontlab", "font", "@APPX"], "affinity": ["affinity", "vector", "@APPX"],
-    "houdini": ["houdini", "@APPX"], "هوديني": ["houdini", "@APPX"], "animate": ["animate", "tween", "@APPX"],
+    "houdini": ["houdini", "@APPX"], "هوديني": ["houdini", "@APPX"],
     "idm": ["idm", "download", "@APPX"], "تنزيل مجزأ": ["idm", "resume", "@APPX"], "استئناف التحميل": ["idm", "resume", "@APPX"],
     "إزالة الضباب": ["dehaze", "clearview", "@APPX"], "dehaze": ["clearview", "@APPX"], "تقليل الضوضاء": ["denoise", "@APPX"],
     "تصحيح المنظور": ["perspective", "keystone", "@APPX"], "keystone": ["perspective", "@APPX"], "تشوه العدسة": ["lens", "distortion", "@APPX"],
@@ -337,7 +358,7 @@ INTENT.update({
     "transcript": ["transcription", "@MEDIA"], "تفريغ": ["transcription", "@MEDIA"],
     "remove background": ["@MEDIA"], "إزالة الخلفية": ["background", "@MEDIA"],
     # product, strategy & finance
-    "خطة": ["plan", "@PROD"], "تسعير": ["pricing", "@PROD"], "pricing": ["@PROD"], "roadmap": ["@PROD"],
+    "خطة": ["plan", "@PROD", "!plan"], "تسعير": ["pricing", "@PROD"], "pricing": ["@PROD"], "roadmap": ["@PROD"],
     "strategy": ["@PROD"], "استراتيجية": ["strategy", "@PROD"], "business plan": ["@PROD"],
     "ميزانية": ["budget", "@PROD"], "budget": ["@PROD"], "finance": ["@PROD"], "financial": ["finance", "@PROD"],
     "تمويل": ["finance", "@PROD"], "إيرادات": ["revenue", "@PROD"], "أرباح": ["profit", "@PROD"],
@@ -494,7 +515,27 @@ def expand(words: list, brief: str = "") -> list:
                 continue
             if _key_matches(k, nk, nw):
                 out += extra
+    out += arabic_stems(words)
     return out
+
+
+_AR_LETTER = re.compile("[\u0621-\u064A]")
+
+
+def arabic_stems(words: list) -> list:
+    """Extra match forms for Arabic imperatives and clitics the substring search misses:
+    ارسم/وارسم → رسم (matches الرسم، رسم)، احذف → حذف، والخلفية → خلفيه. Added alongside the original words."""
+    extra = []
+    for w in words:
+        nw = norm(w)
+        if not _AR_LETTER.search(nw) or nw in STOP:
+            continue
+        base = nw[1:] if nw[:1] in ("و", "ف") and len(nw) >= 5 else nw
+        if base.startswith("ال") and len(base) >= 5:
+            extra.append(base[2:])
+        elif base.startswith("ا") and len(base) >= 4 and base[1:] not in STOP:
+            extra.append(base[1:])
+    return [e for e in dict.fromkeys(extra) if e not in (norm(x) for x in words)]
 
 
 def intent_of(terms: list):
@@ -988,6 +1029,8 @@ def cmd_mindmap(powers, _styles, a) -> int:
     if getattr(a, "domain", None) and not check_domain(powers, a):
         return 2
     src = mindmap_source(powers, a)
+    if getattr(a, "update_md", None):
+        return update_map_md(Path(a.update_md), src, powers)
     if a.html:
         out = Path(a.html)
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -995,6 +1038,24 @@ def cmd_mindmap(powers, _styles, a) -> int:
         print(f"wrote {out} ({out.stat().st_size} bytes) — open it in a browser; it falls back to a text list offline")
         return 0
     print(src, end="")
+    return 0
+
+
+def update_map_md(path: Path, src: str, powers: list) -> int:
+    """Refresh references/capability-map.md in place: its first ```mermaid block and the
+    «N مجالات → N عائلة → N قدرة» line. Hand-written prose around them is kept."""
+    text = path.read_text(encoding="utf-8")
+    m = re.search(r"```mermaid\n.*?\n```", text, re.S)
+    if not m:
+        print(f"{path}: no ```mermaid block to update", file=sys.stderr)
+        return 1
+    new = text[:m.start()] + "```mermaid\n" + src.rstrip("\n") + "\n```" + text[m.end():]
+    fams = len({p.get("family") for p in powers})
+    doms = len({p.get("domain") or DEFAULT_DOMAIN for p in powers})
+    new = re.sub(r"\d+ مجالات → \d+ عائلة → [\d,]+ قدرة", f"{doms} مجالات → {fams} عائلة → {len(powers):,} قدرة", new)
+    if new != text:
+        path.write_text(new, encoding="utf-8")
+    print(f"{path}: {'updated' if new != text else 'up to date'}")
     return 0
 
 
@@ -1024,6 +1085,7 @@ def main(argv=None) -> int:
     p = sub.add_parser("styles"); p.add_argument("--genre", default=""); p.add_argument("--limit", type=int, default=300)
     p = sub.add_parser("domains"); p.add_argument("--json", action="store_true")
     p = sub.add_parser("mindmap"); p.add_argument("--html", metavar="PATH", help="write a standalone HTML page that renders the map")
+    p.add_argument("--update-md", metavar="PATH", help="refresh the map block and counts inside a Markdown page (references/capability-map.md)")
     p.add_argument("--domain", help="drill into one domain: families → top powers"); p.add_argument("--top", type=int, default=5)
     p.add_argument("--en", action="store_true", help="English labels")
     sub.add_parser("env", help="probe this machine (all flags go to probe_env.py: --json --no-network --install-test --write PATH)")

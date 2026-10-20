@@ -126,6 +126,10 @@ def guide_text(atlas):
         "# KOSIF Capability Atlas — Claude discovery index", "",
         "Generated from real repository data. Catalog evidence is NOT a live execution receipt.", "",
         f"**{c['total']:,} powers / {len(c['families'])} families / {len(c['domains'])} domains / {c['routes']} route descriptions.**", "",
+        "For a task in the user's words, `python3 scripts/hub.py find \"<task>\"` combines this atlas with the runnable tools and guides.", "",
+        "## الفهرس / contents", "",
+        "1. [Claude task protocol](#claude-task-protocol)", "2. [Commands](#commands)", "3. [Evidence model](#evidence-model)",
+        "4. [Families by domain](#families-by-domain)", "5. [Decision flow](#decision-flow)", "",
         "## Claude task protocol", "",
         "1. Read this guide and the KOSIF master SKILL.md; do not load all power JSON files into context.",
         "2. Run: python scripts/capability_atlas.py plan \"<exact user task>\" --json",
@@ -203,6 +207,19 @@ def search(atlas, phrase, top=10, domain=None):
     return [dict(row, score=round(score, 2)) for score, row in ranked[:top]]
 
 
+_REQS = None
+
+
+def _requirement_registry() -> dict:
+    global _REQS
+    if _REQS is None:
+        try:
+            _REQS = json.loads((SKILL / "data" / "requirements.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            _REQS = {}
+    return _REQS
+
+
 def requirement_state(required):
     item = str(required)
     if item in ("python3", "python"):
@@ -212,9 +229,11 @@ def requirement_state(required):
         return {"name": item, "state": "detected" if shutil.which(item) else "not_detected", "basis": "PATH"}
     if kind == "bin":
         return {"name": item, "state": "detected" if shutil.which(name) else "not_detected", "basis": "PATH"}
-    if kind == "pip" and re.fullmatch(r"[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*", name):
+    if kind == "pip" and re.fullmatch(r"[A-Za-z_][\w.-]*", name):
+        # data/requirements.json names the import module in "detect" (pip:pillow → PIL, pip:opencv → cv2)
+        module = (_requirement_registry().get(item) or {}).get("detect") or name.replace("-", "_")
         try:
-            found = importlib.util.find_spec(name) is not None
+            found = importlib.util.find_spec(module) is not None
         except (ImportError, ValueError, AttributeError):
             found = False
         return {"name": item, "state": "detected" if found else "not_detected", "basis": "import spec"}

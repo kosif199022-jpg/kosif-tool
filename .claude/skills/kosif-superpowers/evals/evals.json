@@ -1569,6 +1569,219 @@
     ],
     "top_k": 8
    }
+  },
+  {
+   "id": 73,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "ارسم قطة وإنسان يمشوا في الشارع بالكود",
+   "files": [],
+   "expected_behavior": [
+    "Runs hub.py find, then code_drawing_master.py (--cast human+cat --location street --action walk) and opens the HTML preview",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "DRAW",
+     "CHAR"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 74,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حرك ذراع الشخصية عند كلمة معينة في التسجيل",
+   "files": [],
+   "expected_behavior": [
+    "Uses character_ik.py with word timings measured from the real audio, never guessed",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "CHAR"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 75,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "render a spinning cube to mp4 without installing blender",
+   "files": [],
+   "expected_behavior": [
+    "Uses native_3d.py (z-buffer) and checks the MP4 with ffprobe; says it is not Blender parity",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "3D"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 76,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "export an animated glb file without blender",
+   "files": [],
+   "expected_behavior": [
+    "Uses native_glb.py on templates/blender-demo.json and validates the GLB",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "3D"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 77,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حلل فيديو مرجعي وطلّع توقيت القطعات",
+   "files": [],
+   "expected_behavior": [
+    "Runs motion_reference_probe.py --cuts on a file the user may analyse and reports measured cut times",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "FOOT",
+     "TRANS",
+     "QA"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 78,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "make a paper edit from the transcript keeping words 1 to 3 and 7 to 9",
+   "files": [],
+   "expected_behavior": [
+    "Runs video_workflow_bridge.py paper-edit with --keep and leaves the narration untouched",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 79,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "connect claude desktop to files in a folder on my computer",
+   "files": [],
+   "expected_behavior": [
+    "Offers the consent-gated Remote Commander MCP server scoped to one approved folder; writes and commands stay off unless the user enables them",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "SELF"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 80,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "ايش الأدوات اللي تقدر تشغلها على الجهاز ده",
+   "files": [],
+   "expected_behavior": [
+    "Runs boot.py and hub.py doctor and reports what is ready versus missing",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "SELF"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 81,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "search 2000 creative repositories and websites for kinetic typography references",
+   "files": [],
+   "expected_behavior": [
+    "Uses creative_external_search.py search and labels results as unverified external sources",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "WEB"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 82,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "استخرج نبض الأغنية وتوقيت الضربات من ملف wav",
+   "files": [],
+   "expected_behavior": [
+    "Runs audio_cue_mapper.py then music_rhythm_engine.py and reports BPM as a hypothesis",
+    "Reports evidence badges honestly; nothing is claimed that was not run"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "BEAT",
+     "SYNC"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

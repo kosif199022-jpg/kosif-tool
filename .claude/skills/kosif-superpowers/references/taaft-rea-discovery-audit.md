@@ -13,7 +13,7 @@ Target: https://theresanaiforthat.com/ — external, proprietary service.
 
 ## Original independent KOSIF improvement
 
-KOSIF already has its OWN 4,730-record capability catalog. The separate original local discovery script:
+KOSIF already has its OWN capability catalog (4,730 records when this audit was written; `python3 scripts/powers.py stats` gives the current count). The separate original local discovery script:
   python scripts/ai_tool_discovery.py --doctor
   python scripts/ai_tool_discovery.py "تحريك شخصيات فيديو" --top 8
 

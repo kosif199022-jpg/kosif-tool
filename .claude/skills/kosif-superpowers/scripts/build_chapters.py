@@ -116,6 +116,8 @@ def related_refs(stem: str, prefix: str, rows) -> list:
     id_re = re.compile(r"\b%s-\d{2,3}\b" % re.escape(prefix)) if prefix else None
     if REFS.is_dir():
         for f in sorted(REFS.glob("*.md")):
+            if f.name == "INDEX.md":  # the generated index lists every family; it is linked from SKILL.md instead
+                continue
             try:
                 txt = f.read_text(encoding="utf-8")
             except OSError:

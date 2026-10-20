@@ -1,0 +1,125 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/kosif199022-jpg/kosif-tool/.claude/skills/kosif-superpowers/schemas/power.schema.json",
+ "title": "KOSIF power record (data/powers/<family>.json is an array of these)",
+ "description": "One capability in the KOSIF catalog. status is the evidence badge: proven ✅ (ran, with proof), ready 🟢 (code here), install 📦 (one install away), key 🔑 (needs a key/account/connector), seen 👁 (observed in a reference video), documented 📄 (described method), idea 💡.",
+ "type": "object",
+ "required": [
+  "id",
+  "family",
+  "name_ar",
+  "name_en",
+  "status",
+  "what",
+  "how",
+  "params",
+  "install",
+  "requires",
+  "license",
+  "proof",
+  "proof_scope",
+  "styles",
+  "tags"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^[A-Z0-9]+-[A-Za-z0-9-]+$"
+  },
+  "family": {
+   "type": "string"
+  },
+  "domain": {
+   "enum": [
+    "mind",
+    "craft",
+    "code",
+    "data",
+    "docs",
+    "research",
+    "build",
+    "media",
+    "strategy",
+    "motion"
+   ]
+  },
+  "name_ar": {
+   "type": "string"
+  },
+  "name_en": {
+   "type": "string"
+  },
+  "status": {
+   "enum": [
+    "proven",
+    "ready",
+    "install",
+    "key",
+    "seen",
+    "documented",
+    "idea"
+   ]
+  },
+  "what": {
+   "type": "string"
+  },
+  "when": {
+   "type": "string"
+  },
+  "how": {
+   "type": "string"
+  },
+  "params": {
+   "type": "string"
+  },
+  "install": {
+   "type": "string"
+  },
+  "requires": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "keys of data/requirements.json"
+  },
+  "license": {
+   "type": "string"
+  },
+  "proof": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "proof_scope": {
+   "enum": [
+    "repo",
+    "sibling",
+    "style",
+    "none",
+    "url",
+    "archive",
+    "session",
+    "receipt"
+   ]
+  },
+  "styles": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "tags": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "section": {
+   "type": "string"
+  },
+  "source": {
+   "type": "string"
+  }
+ }
+}

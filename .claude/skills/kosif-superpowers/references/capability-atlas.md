@@ -4,6 +4,16 @@ Generated from real repository data. Catalog evidence is NOT a live execution re
 
 **4,751 powers / 52 families / 10 domains / 22 route descriptions.**
 
+For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines this atlas with the runnable tools and guides.
+
+## الفهرس / contents
+
+1. [Claude task protocol](#claude-task-protocol)
+2. [Commands](#commands)
+3. [Evidence model](#evidence-model)
+4. [Families by domain](#families-by-domain)
+5. [Decision flow](#decision-flow)
+
 ## Claude task protocol
 
 1. Read this guide and the KOSIF master SKILL.md; do not load all power JSON files into context.

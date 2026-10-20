@@ -8,6 +8,25 @@ Contents / المحتويات: [observe](#observe) · [animate](#animate) · [re
 
 <a id="observe"></a>
 
+## الفهرس / contents
+
+- [observe — رصد المرجع](#observe--رصد-المرجع)
+- [animate — التحريك](#animate--التحريك)
+- [render — الرندر](#render--الرندر)
+- [space — الفضاء ثلاثي الأبعاد](#space--الفضاء-ثلاثي-الأبعاد)
+- [draw — الرسم](#draw--الرسم)
+- [data — البيانات](#data--البيانات)
+- [voice — الصوت](#voice--الصوت)
+- [arabic — النص العربي](#arabic--النص-العربي)
+- [captions — الترجمات](#captions--الترجمات)
+- [generate — التوليد](#generate--التوليد)
+- [orchestrate — التنسيق](#orchestrate--التنسيق)
+- [design — التصميم](#design--التصميم)
+- [mimic — المحاكاة](#mimic--المحاكاة)
+- [edit — المونتاج](#edit--المونتاج)
+- [cinematic — الإخراج السينمائي](#cinematic--الإخراج-السينمائي)
+- [Credits — الحقوق](#credits--الحقوق)
+
 ## observe — رصد المرجع
 
 *reference acquisition and inspection: fetching permitted media, sampling frames, palette extraction, scene-cut detection, motion/optical-flow analysis* — 12 repositories listed under *observe* in [repos.md](repos.md).

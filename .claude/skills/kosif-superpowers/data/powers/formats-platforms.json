@@ -30,8 +30,15 @@
    "destination",
    "9:16",
    "16:9",
-   "4:5"
-  ]
+   "4:5",
+   "أبعاد الفيديو",
+   "مقاس ريلز",
+   "دقة الفيديو",
+   "video size",
+   "resolution",
+   "dimensions"
+  ],
+  "when": "حين يسأل المستخدم عن مقاس الفيديو أو نسبته المناسبة لمنصة مثل ريلز أو يوتيوب / when the user asks which size or ratio a video needs for where it will be shown"
  },
  {
   "id": "FMT-02",
@@ -62,8 +69,15 @@
    "ratio table",
    "4:3",
    "21:9",
-   "scaffold"
-  ]
+   "scaffold",
+   "نسب العرض",
+   "أبعاد المشروع",
+   "معدل الإطارات",
+   "aspect presets",
+   "fps",
+   "verify_video"
+  ],
+  "when": "عند اختيار النسبة أو المقاس أو معدل الإطارات لمشروع جديد أو لفحص الفيديو بأدوات المالك / when picking a ratio, size or fps while scaffolding a project or checking a render"
  },
  {
   "id": "FMT-03",
@@ -96,8 +110,15 @@
    "letterbox",
    "2.39:1",
    "cinemascope",
-   "widescreen"
-  ]
+   "widescreen",
+   "شكل سينمائي",
+   "إطار عريض",
+   "بارات سوداء",
+   "film look",
+   "black bars",
+   "cinematic bars"
+  ],
+  "when": "حين يريد المستخدم شكلًا سينمائيًا عريضًا أو أشرطة سوداء أعلى وأسفل الفيديو / when the user wants a cinematic widescreen look or black bars above and below the frame"
  },
  {
   "id": "FMT-04",
@@ -124,8 +145,14 @@
    "scale",
    "letterbox",
    "deck",
-   "iframe"
-  ]
+   "iframe",
+   "تكبير الصفحة",
+   "تخطيط ثابت",
+   "عرض تقديمي",
+   "fixed layout",
+   "viewport fit"
+  ],
+  "when": "عند بناء عرض أو صفحة موشن HTML بمقاس ثابت تتكبر كاملة مع النافذة دون تكسر التخطيط / when an HTML motion page or deck must scale to any window without its layout reflowing"
  },
  {
   "id": "FMT-05",
@@ -150,8 +177,15 @@
    "fluid type",
    "clamp",
    "responsive",
-   "tokens"
-  ]
+   "tokens",
+   "حجم الخط",
+   "مقاسات الخط",
+   "خط مقروء",
+   "font size",
+   "multi aspect",
+   "type scale"
+  ],
+  "when": "حين يُصدَّر تصميم واحد بعدة نسب ويجب أن يبقى حجم الخط مقروءًا في كل منها / when one composition exports to several ratios and text size must stay readable in each"
  },
  {
   "id": "FMT-06",
@@ -177,8 +211,14 @@
    "عمودي",
    "data viz",
    "vertical chart",
-   "small multiples"
-  ]
+   "small multiples",
+   "رسم بياني",
+   "شارت",
+   "نسخة عمودية",
+   "chart layout",
+   "horizontal chart"
+  ],
+  "when": "عند نقل رسم بياني أو خريطة من الشاشة العريضة إلى فيديو عمودي للهاتف / when a chart or map scene needs both a vertical phone version and a horizontal one"
  },
  {
   "id": "FMT-07",
@@ -208,8 +248,15 @@
    "divisible by 8",
    "LTX",
    "Veo",
-   "frame count"
-  ]
+   "frame count",
+   "فيديو بالذكاء الاصطناعي",
+   "عدد الإطارات",
+   "مقاس التوليد",
+   "ai video",
+   "diffusion",
+   "wan"
+  ],
+  "when": "حين تولّد فيديو بنموذج ذكاء اصطناعي وتحتاج أبعادًا وعدد إطارات يقبلها النموذج / when generating AI video and you need sizes and frame counts the diffusion model accepts"
  },
  {
   "id": "FMT-08",
@@ -240,8 +287,15 @@
    "reels",
    "tiktok",
    "UI overlay",
-   "margins"
-  ]
+   "margins",
+   "هوامش آمنة",
+   "أزرار المنصة",
+   "فيديو عمودي",
+   "safe area",
+   "9:16 layout",
+   "story"
+  ],
+  "when": "عند وضع نص أو وجوه أو زر دعوة في فيديو عمودي حتى لا تغطيها أزرار تيك توك أو ريلز / when placing text, faces or a CTA in a 9:16 video so platform buttons do not cover them"
  },
  {
   "id": "FMT-09",
@@ -269,8 +323,15 @@
    "og",
    "thumbnail size",
    "banner",
-   "safe margin"
-  ]
+   "safe margin",
+   "مقاس البوست",
+   "مقاسات السوشيال",
+   "صورة الهيدر",
+   "social image size",
+   "header",
+   "linkedin"
+  ],
+  "when": "حين يحتاج المستخدم مقاس منشور أو غلاف أو بانر لمنصة معينة مع هامش آمن للنص / when the user needs the size of a social post, cover, header or banner with its text-safe margin"
  },
  {
   "id": "FMT-10",
@@ -295,8 +356,14 @@
    "كابشن",
    "caption safe",
    "title safe",
-   "subtitles"
-  ]
+   "subtitles",
+   "مكان الترجمة",
+   "سب تايتل",
+   "ترجمة على الفيديو",
+   "subtitle position",
+   "caption placement"
+  ],
+  "when": "عند تحديد مكان الترجمة على الفيديو بحيث لا تقطعها الحواف أو واجهة المنصة / when positioning subtitles so they stay clear of the frame edges and platform UI"
  },
  {
   "id": "FMT-11",
@@ -325,8 +392,15 @@
    "legibility",
    "contrast",
    "mobile",
-   "min size"
-  ]
+   "min size",
+   "حجم النص",
+   "وضوح النص",
+   "شاشة الموبايل",
+   "readability",
+   "text size",
+   "phone check"
+  ],
+  "when": "قبل التسليم للتأكد أن النص على الشاشة مقروء على الهاتف بحجم وتباين كافيين / before delivery, to check that on-screen text is big and contrasted enough to read on a phone"
  },
  {
   "id": "FMT-12",
@@ -351,8 +425,15 @@
    "تشغيل صامت",
    "density",
    "muted autoplay",
-   "bullets"
-  ]
+   "bullets",
+   "كمية النص",
+   "زحمة الشاشة",
+   "تعليق صوتي",
+   "text per slide",
+   "narration",
+   "voiceover"
+  ],
+  "when": "عند تحديد كمية النص في كل إطار حسب كون الفيديو بتعليق صوتي أو يُقرأ بلا صوت / when deciding how much text per frame for a narrated video versus one read silently"
  },
  {
   "id": "FMT-13",
@@ -383,8 +464,15 @@
    "reframe",
    "smart crop",
    "face tracking",
-   "vertical"
-  ]
+   "vertical",
+   "تحويل لعمودي",
+   "تتبع الوجه",
+   "كادر",
+   "auto reframe",
+   "aspect convert",
+   "landscape to portrait"
+  ],
+  "when": "حين يريد المستخدم تحويل فيديو أفقي إلى عمودي أو مربع مع إبقاء الوجه في الكادر / when converting a horizontal clip to vertical or square while keeping faces in frame"
  },
  {
   "id": "FMT-14",
@@ -412,8 +500,15 @@
    "blur fill",
    "vertical",
    "pillarbox",
-   "9:16 from 16:9"
-  ]
+   "9:16 from 16:9",
+   "خلفية مموهة",
+   "بلور",
+   "تحويل لعمودي",
+   "blurred background",
+   "no crop",
+   "landscape to portrait"
+  ],
+  "when": "عند تحويل فيديو 16:9 إلى 9:16 دون قص أي جزء بوضعه فوق نسخة مموهة منه / when turning a 16:9 video into 9:16 without cropping, using a blurred copy as background"
  },
  {
   "id": "FMT-15",
@@ -439,8 +534,15 @@
    "pad",
    "letterbox",
    "centre crop",
-   "contain"
-  ]
+   "contain",
+   "تمطيط",
+   "تغيير المقاس",
+   "بدون تشويه",
+   "resize video",
+   "aspect fit",
+   "no stretch"
+  ],
+  "when": "حين يجب إدخال فيديو بمقاس مختلف في إطار الهدف دون تمطيط أو تشويه / when a source of a different size must fit the target frame without stretching or distortion"
  },
  {
   "id": "FMT-16",
@@ -468,8 +570,15 @@
    "fit",
    "normalise",
    "cfr",
-   "found footage"
-  ]
+   "found footage",
+   "استبدال اللقطات",
+   "توحيد اللقطات",
+   "ملء الإطار",
+   "replacement clips",
+   "speed match",
+   "trim clip"
+  ],
+  "when": "عند وضع لقطات بديلة من مصادر مختلفة في المونتاج بحيث تملأ إطار اللقطة بمدتها بالضبط / when swapping replacement or found-footage clips into a timeline so they fill each shot exactly"
  },
  {
   "id": "FMT-17",
@@ -496,8 +605,15 @@
    "podcast clips",
    "shorts batch",
    "smart reframe",
-   "resolve"
-  ]
+   "resolve",
+   "مقاطع قصيرة",
+   "قص البودكاست",
+   "ريلز من فيديو طويل",
+   "long to short",
+   "clip candidates",
+   "hooks"
+  ],
+  "when": "حين يريد المستخدم تقطيع بودكاست أو فيديو طويل إلى مقاطع شورتس عمودية كثيرة / when the user wants many vertical shorts cut from a podcast or a long video"
  },
  {
   "id": "FMT-18",
@@ -524,8 +640,15 @@
    "recompose",
    "multi ratio",
    "native vertical",
-   "feature video"
-  ]
+   "feature video",
+   "نسخ المنصات",
+   "إعادة ترتيب",
+   "عدة مقاسات",
+   "platform versions",
+   "re-layout",
+   "per ratio layout"
+  ],
+  "when": "عند تجهيز نسخ لعدة منصات من تصميم واحد بإعادة ترتيب العناصر لكل نسبة بدل قصها / when making versions for several platforms by re-laying out each ratio instead of cropping"
  },
  {
   "id": "FMT-19",
@@ -553,8 +676,15 @@
    "firefly",
    "social variations",
    "crop",
-   "expand"
-  ]
+   "expand",
+   "مقاسات الصور",
+   "توسيع الصورة",
+   "قص ذكي",
+   "image resize",
+   "generative expand",
+   "resize"
+  ],
+  "when": "حين يريد المستخدم نسخًا من صورة واحدة بمقاسات منصات مختلفة بقص ذكي أو توسيع للصورة / when one image needs platform-sized versions via subject-aware crop or generative expand"
  },
  {
   "id": "FMT-20",
@@ -586,8 +716,15 @@
    "bt709",
    "yuv420p",
    "master",
-   "encode"
-  ]
+   "encode",
+   "تصدير الفيديو",
+   "ألوان باهتة",
+   "رندر نهائي",
+   "mp4 export",
+   "washed out colors",
+   "ios"
+  ],
+  "when": "عند تصدير MP4 نهائي للويب أو السوشيال يعمل في كل مكان دون أن تبهت ألوانه على الآيفون / when exporting a final web or social MP4 that plays everywhere and keeps its colours on iOS"
  },
  {
   "id": "FMT-21",
@@ -619,8 +756,14 @@
    "uhd",
    "bitrate",
    "supersampling",
-   "high-res export"
-  ]
+   "high-res export",
+   "دقة عالية",
+   "فور كي",
+   "رفع على يوتيوب",
+   "youtube upload",
+   "delivery spec"
+  ],
+  "when": "حين يجب تسليم فيديو يوتيوب بدقة 4K بمعدل بت وصوت مضبوطين / when delivering a YouTube video in 4K with the right bitrate, audio and loudness"
  },
  {
   "id": "FMT-22",
@@ -650,8 +793,15 @@
    "transparent",
    "prores 4444",
    "webm",
-   "overlay"
-  ]
+   "overlay",
+   "خلفية شفافة",
+   "بدون خلفية",
+   "شريط اسم",
+   "transparent video",
+   "lower third",
+   "mov"
+  ],
+  "when": "عند تصدير شعار أو شريط اسم أو ملصق متحرك بخلفية شفافة لبرنامج مونتاج أو صفحة ويب / when exporting a logo, name bar or sticker with a transparent background for an editor or the web"
  },
  {
   "id": "FMT-23",
@@ -679,8 +829,14 @@
    "10-bit",
    "pq",
    "hlg",
-   "bt2020"
-  ]
+   "bt2020",
+   "مدى ديناميكي عالي",
+   "تصدير HDR",
+   "عمق لوني",
+   "hdr export",
+   "10 bit video"
+  ],
+  "when": "حين تكون مصادر الفيديو HDR ويجب الحفاظ على مداها اللوني في التصدير / when HDR source footage must keep its colour range in a 10-bit export"
  },
  {
   "id": "FMT-24",
@@ -710,8 +866,15 @@
    "streaming",
    "ladder",
    "dash",
-   "cmaf"
-  ]
+   "cmaf",
+   "جودات متعددة",
+   "بث تكيفي",
+   "تشغيل أونلاين",
+   "adaptive bitrate",
+   "m3u8",
+   "renditions"
+  ],
+  "when": "عند تجهيز فيديو للبث التكيفي على موقع بعدة جودات مثل 1080 و720 و480 / when packaging a video for adaptive streaming on a site in several quality levels"
  },
  {
   "id": "FMT-25",
@@ -738,8 +901,14 @@
    "gpu",
    "nvenc",
    "nvidia",
-   "fast encode"
-  ]
+   "fast encode",
+   "كرت الشاشة",
+   "تسريع الرندر",
+   "ترميز سريع",
+   "hardware encode",
+   "h264_nvenc"
+  ],
+  "when": "حين يتوفر كرت شاشة NVIDIA ويريد المستخدم ترميزًا أسرع للفيديو / when an NVIDIA GPU is available and the user wants faster video encoding"
  },
  {
   "id": "FMT-26",
@@ -769,8 +938,15 @@
    "lufs",
    "true peak",
    "loudnorm",
-   "ebu r128"
-  ]
+   "ebu r128",
+   "مستوى الصوت",
+   "توحيد الصوت",
+   "ارتفاع الصوت",
+   "normalize audio",
+   "volume",
+   "podcast audio"
+  ],
+  "when": "حين يجب ضبط ارتفاع الصوت لوجهة معينة مثل يوتيوب أو بودكاست أو بث / when audio loudness must be normalised for a destination such as YouTube, a podcast or broadcast"
  },
  {
   "id": "FMT-27",
@@ -799,8 +975,15 @@
    "loop audio",
    "ترخيص الموسيقى",
    "music licence",
-   "receipt"
-  ]
+   "receipt",
+   "تكرار الصوت",
+   "موسيقى خلفية",
+   "حقوق الموسيقى",
+   "wav",
+   "gapless loop",
+   "music rights"
+  ],
+  "when": "عند تسليم صوت يتكرر في حلقة بلا فجوة أو توثيق ترخيص الموسيقى المستخدمة في الرندر / when delivering gapless looping audio or recording the licence of music used in a render"
  },
  {
   "id": "FMT-28",
@@ -827,8 +1010,14 @@
    "app preview",
    "app store",
    "aso",
-   "google play"
-  ]
+   "google play",
+   "فيديو التطبيق",
+   "معاينة التطبيق",
+   "آب ستور",
+   "ios preview",
+   "app promo video"
+  ],
+  "when": "حين يصنع المستخدم فيديو معاينة لتطبيق على App Store أو Google Play / when making an app preview video for an App Store or Google Play listing"
  },
  {
   "id": "FMT-29",
@@ -856,8 +1045,15 @@
    "avif",
    "webp",
    "reduced motion",
-   "lcp"
-  ]
+   "lcp",
+   "فيديو في الموقع",
+   "سرعة الصفحة",
+   "تشغيل تلقائي",
+   "autoplay",
+   "embed video",
+   "page speed"
+  ],
+  "when": "عند وضع فيديو أو موشن في صفحة ويب بحيث يعمل تلقائيًا ويُحمَّل بسرعة / when embedding a video or motion piece in a web page so it autoplays and loads fast"
  },
  {
   "id": "FMT-30",
@@ -884,8 +1080,15 @@
    "playwright",
    "screen record",
    "gif",
-   "ui demo"
-  ]
+   "ui demo",
+   "تسجيل الواجهة",
+   "تسجيل المتصفح",
+   "جيف",
+   "browser recording",
+   "webm to mp4",
+   "chromium"
+  ],
+  "when": "حين يريد المستخدم تسجيل حركة واجهة من المتصفح وتحويلها إلى فيديو MP4 أو صورة GIF / when the user wants to record UI motion in the browser and turn it into an MP4 or a GIF"
  },
  {
   "id": "FMT-31",
@@ -915,8 +1118,15 @@
    "shorts",
    "whatsapp",
    "platform export",
-   "bitrate"
-  ]
+   "bitrate",
+   "نسخ لكل منصة",
+   "حدود الحجم",
+   "مدة الفيديو",
+   "social export",
+   "file size limit",
+   "snapchat"
+  ],
+  "when": "عند تصدير نسخة مفحوصة لكل منصة مثل تيك توك وريلز ويوتيوب وواتساب ضمن حدود الحجم والمدة / when exporting a checked file per platform such as TikTok, Reels, YouTube or WhatsApp within size and length limits"
  },
  {
   "id": "FMT-32",
@@ -945,8 +1155,15 @@
    "poster",
    "gif",
    "webp",
-   "multi aspect"
-  ]
+   "multi aspect",
+   "كل المقاسات",
+   "صورة الغلاف",
+   "ملفات التسليم",
+   "deliverables",
+   "preview",
+   "variants"
+  ],
+  "when": "حين يريد المستخدم من فيديو واحد كل المقاسات مع صورة غلاف ومعاينة GIF دفعة واحدة / when the user wants every ratio plus a poster and GIF/WebP previews from one video in one go"
  },
  {
   "id": "FMT-33",
@@ -976,8 +1193,15 @@
    "post pack",
    "caption",
    "hashtags",
-   "lint"
-  ]
+   "lint",
+   "وصف الفيديو",
+   "عنوان يوتيوب",
+   "تجهيز النشر",
+   "social copy",
+   "youtube description",
+   "alt text"
+  ],
+  "when": "عند كتابة الكابشن والوسوم وعنوان يوتيوب ووصفه وفحصها بحدود كل منصة قبل النشر / when writing captions, hashtags and a YouTube title and description and checking them against each platform"
  },
  {
   "id": "FMT-34",
@@ -1005,8 +1229,15 @@
    "limits",
    "caption length",
    "posting time",
-   "مواعيد النشر"
-  ]
+   "مواعيد النشر",
+   "عدد الحروف",
+   "المدة المسموحة",
+   "وقت النشر",
+   "character limit",
+   "max duration",
+   "platform specs"
+  ],
+  "when": "حين يسأل المستخدم عن عدد الحروف أو الوسوم أو المدة المسموحة أو وقت النشر على منصة / when the user asks about caption length, hashtag count, max duration or posting time on a platform"
  },
  {
   "id": "FMT-35",
@@ -1032,8 +1263,15 @@
    "hashtags",
    "hook",
    "cta",
-   "share line"
-  ]
+   "share line",
+   "هاشتاجات",
+   "بداية الفيديو",
+   "دعوة للتفاعل",
+   "instagram",
+   "call to action",
+   "arabic hashtags"
+  ],
+  "when": "عند اختيار الوسوم وكتابة الخطاف والدعوة لمنشور إنستغرام أو ريلز / when choosing hashtags and writing the hook and call to action for an Instagram post or reel"
  },
  {
   "id": "FMT-36",
@@ -1059,8 +1297,15 @@
    "localization",
    "i18n",
    "rtl",
-   "locale"
-  ]
+   "locale",
+   "تعدد اللغات",
+   "نسخة إنجليزية",
+   "اتجاه النص",
+   "multilingual",
+   "translation",
+   "ltr"
+  ],
+  "when": "حين يجب إخراج الفيديو نفسه بعدة لغات مع تبديل اتجاه النص بين اليمين واليسار / when the same video must be rendered in several languages with RTL/LTR switching"
  },
  {
   "id": "FMT-37",
@@ -1090,8 +1335,15 @@
    "batch render",
    "personalised",
    "variables",
-   "template"
-  ]
+   "template",
+   "نسخ مخصصة",
+   "فيديوهات بالجملة",
+   "أسماء متغيرة",
+   "bulk video",
+   "mass personalization",
+   "data rows"
+  ],
+  "when": "حين يريد المستخدم نسخًا كثيرة من قالب واحد بأسماء أو أسعار أو مدن مختلفة / when the user wants many personalised videos from one template, each with its own name, price or city"
  },
  {
   "id": "FMT-38",
@@ -1123,8 +1375,15 @@
    "formats",
    "quality",
    "gif",
-   "hls"
-  ]
+   "hls",
+   "صيغ التصدير",
+   "جودة الرندر",
+   "مسودة",
+   "mp4",
+   "webm",
+   "crf"
+  ],
+  "when": "عند رندر مشروع HyperFrames إلى صيغة معينة أو بدرجة جودة مسودة أو تسليم / when rendering a HyperFrames project to a chosen format or at draft or delivery quality"
  },
  {
   "id": "FMT-39",
@@ -1150,8 +1409,14 @@
    "رفع",
    "share sheet",
    "upload",
-   "web share api"
-  ]
+   "web share api",
+   "نشر يدوي",
+   "زر المشاركة",
+   "رفع الفيديو",
+   "navigator.share",
+   "manual post"
+  ],
+  "when": "حين يريد المستخدم مشاركة الفيديو من الجهاز أو فتح صفحات الرفع على المنصات دون نشر تلقائي / when the user wants to share the video from the device or open platform upload pages without auto-posting"
  },
  {
   "id": "FMT-40",
@@ -1179,8 +1444,14 @@
    "whatsapp",
    "send",
    "delivery",
-   "messaging"
-  ]
+   "messaging",
+   "إرسال على واتساب",
+   "واتس",
+   "إرسال ملف",
+   "qr login",
+   "node service"
+  ],
+  "when": "حين يريد المستخدم إرسال الفيلم أو صور أو صوت أو مستند لرقم على واتساب / when the user wants to send the film, images, audio or a document to a number on WhatsApp"
  },
  {
   "id": "FMT-41",
@@ -1209,7 +1480,13 @@
    "publish",
    "hosted link",
    "cdn",
-   "url transforms"
+   "url transforms",
+   "رابط خاص",
+   "استضافة",
+   "رابط مشاركة",
+   "hosting",
+   "video url",
+   "trim"
   ]
  },
  {
@@ -1238,8 +1515,15 @@
    "claude.ai",
    "studio cloud",
    "browser editor",
-   "mp4 export"
-  ]
+   "mp4 export",
+   "محرر في المتصفح",
+   "صفحة واحدة",
+   "بدون سيرفر",
+   "single html",
+   "self-contained",
+   "no server"
+  ],
+  "when": "حين يريد المستخدم محرر الاستوديو كله يعمل في المتصفح كصفحة claude.ai واحدة بلا خادم / when the user wants the whole Studio editor running in the browser as one claude.ai page with no server"
  },
  {
   "id": "FMT-43",
@@ -1264,8 +1548,15 @@
    "claude project",
    "openapi",
    "json envelope",
-   "ai studio"
-  ]
+   "ai studio",
+   "جي بي تي مخصص",
+   "ملفات المعرفة",
+   "تعليمات جاهزة",
+   "chatgpt",
+   "knowledge files",
+   "conversation starters"
+  ],
+  "when": "عند نقل الأداة إلى Custom GPT أو Claude Project أو تطبيق AI Studio يحتاج تعليمات أو رد JSON / when packaging the tool for a Custom GPT, a Claude Project or an AI Studio app that needs instructions or JSON replies"
  },
  {
   "id": "FMT-44",
@@ -1294,8 +1585,15 @@
    "poster",
    "thumbnail",
    "frame 0",
-   "black thumbnail"
-  ]
+   "black thumbnail",
+   "صورة مصغرة سوداء",
+   "أول فريم",
+   "كفر الفيديو",
+   "cover frame",
+   "first frame",
+   "bake poster"
+  ],
+  "when": "حين تظهر الصورة المصغرة للفيديو سوداء ويجب تثبيت لقطة غلاف كأول إطار / when a video thumbnail shows black and a cover still should be baked in as the first frame"
  },
  {
   "id": "FMT-45",
@@ -1323,8 +1621,15 @@
    "thumbnail pick",
    "scene detect",
    "sharpness",
-   "contact sheet"
-  ]
+   "contact sheet",
+   "أفضل لقطة",
+   "صورة مصغرة",
+   "ثمبنيل",
+   "best frame",
+   "frame extraction",
+   "cover candidates"
+  ],
+  "when": "عند البحث عن أفضل لقطات الفيديو لتكون صورة مصغرة أو غلافًا / when hunting for the best frames in a video to use as a thumbnail or cover"
  },
  {
   "id": "FMT-46",
@@ -1351,8 +1656,15 @@
    "cover",
    "thumbnail",
    "arabic title",
-   "raqm"
-  ]
+   "raqm",
+   "ثمبنيل",
+   "عنوان على الصورة",
+   "صورة يوتيوب",
+   "youtube thumbnail",
+   "text on image",
+   "frame grab"
+  ],
+  "when": "حين يريد المستخدم صورة غلاف من لقطة في الفيلم مكتوب عليها عنوان عربي / when the user wants a cover image from a film frame with an Arabic title written on it"
  },
  {
   "id": "FMT-47",
@@ -1377,8 +1689,15 @@
    "صورة مصغرة",
    "thumbnail brief",
    "a/b test",
-   "ctr"
-  ]
+   "ctr",
+   "ثمبنيل يوتيوب",
+   "نسبة النقر",
+   "أفكار الغلاف",
+   "youtube thumbnail",
+   "click-through",
+   "thumbnail concepts"
+  ],
+  "when": "عند تصميم صورة مصغرة ليوتيوب وتجربة أكثر من فكرة لمعرفة الأعلى نقرًا / when designing a YouTube thumbnail with several concepts and an A/B test to see which gets more clicks"
  },
  {
   "id": "FMT-48",
@@ -1403,8 +1722,15 @@
    "عنوان",
    "thumbnail text",
    "title",
-   "packaging"
-  ]
+   "packaging",
+   "عنوان الفيديو",
+   "كلمات الثمبنيل",
+   "تغليف الفيديو",
+   "video title",
+   "thumbnail copy",
+   "youtube title"
+  ],
+  "when": "حين تكتب نص الصورة المصغرة وعنوان الفيديو معًا ليكمل كل منهما الآخر / when writing thumbnail text and the video title together so they complement each other"
  },
  {
   "id": "FMT-49",
@@ -1430,8 +1756,14 @@
    "غلاف رابط",
    "link preview",
    "cover",
-   "playwright"
-  ]
+   "playwright",
+   "صورة المشاركة",
+   "معاينة الرابط",
+   "صورة غلاف",
+   "social share image",
+   "cover image"
+  ],
+  "when": "عند تصميم صورة معاينة رابط أو غلاف طباعي تظهر عند مشاركة الرابط / when designing a typographic link preview or cover image that shows when a link is shared"
  },
  {
   "id": "FMT-50",
@@ -1462,8 +1794,15 @@
    "أيقونة",
    "og",
    "manifest",
-   "identity assets"
-  ]
+   "identity assets",
+   "أيقونة الموقع",
+   "أيقونات التطبيق",
+   "فافيكون",
+   "app icons",
+   "apple touch icon",
+   "web app"
+  ],
+  "when": "حين يحتاج موقع أو تطبيق ويب أيقونة المتصفح وأيقونات التثبيت وصور المشاركة / when a site or web app needs its favicon, install icons and share cards"
  },
  {
   "id": "FMT-51",
@@ -1488,8 +1827,14 @@
    "svg",
    "png 2x",
    "chart export",
-   "data table"
-  ]
+   "data table",
+   "تنزيل الرسم",
+   "صورة عالية الدقة",
+   "جدول البيانات",
+   "download chart",
+   "save as image"
+  ],
+  "when": "عند إضافة زر لتنزيل الرسم البياني SVG أو PNG عالي الدقة أو عرض بياناته كجدول / when a chart needs a download button for SVG or high-res PNG, or a switch to its data table"
  },
  {
   "id": "FMT-52",
@@ -1518,8 +1863,15 @@
    "4k",
    "تتبع",
    "export modes",
-   "painter"
-  ]
+   "painter",
+   "تحويل لمتجه",
+   "تصدير الرسمة",
+   "فيديو الرسم",
+   "vector trace",
+   "drawing video",
+   "png export"
+  ],
+  "when": "حين يريد المستخدم تصدير رسمة الاستوديو الرسام صورة أو SVG متجهيًا أو فيديو لعملية الرسم / when exporting a painter studio picture as PNG, high-res, traced SVG, code or an MP4 of the drawing"
  },
  {
   "id": "FMT-53",
@@ -1549,8 +1901,15 @@
    "pdf",
    "receipt",
    "qr",
-   "paper"
-  ]
+   "paper",
+   "إيصال حراري",
+   "ملصق",
+   "تقرير للطباعة",
+   "thermal receipt",
+   "label",
+   "print stylesheet"
+  ],
+  "when": "عند طباعة تقرير أو صفحة أو إصدار إيصال حراري أو ملصق بكود QR / when printing a report or page, or producing a thermal receipt or label with a QR code"
  },
  {
   "id": "FMT-54",
@@ -1577,8 +1936,15 @@
    "slides",
    "deck",
    "presentation",
-   "slideshow"
-  ]
+   "slideshow",
+   "برزنتيشن",
+   "تحويل لشرائح",
+   "عرض تقديمي",
+   "report to slides",
+   "keyboard navigation",
+   "fullscreen"
+  ],
+  "when": "حين يريد المستخدم تحويل تقرير أو مستند إلى شرائح ملء الشاشة يُتنقل فيها بالكيبورد / when turning a report or document into full-screen slides navigated with the keyboard"
  },
  {
   "id": "FMT-55",
@@ -1604,8 +1970,15 @@
    "pre-roll",
    "ad length",
    "skippable",
-   "pacing"
-  ]
+   "pacing",
+   "إعلان قصير",
+   "هيكل الإعلان",
+   "مدة الإعلان",
+   "youtube ad",
+   "ad structure",
+   "15s ad"
+  ],
+  "when": "عند بناء إعلان بطول 6 أو 15 أو 30 ثانية وتوزيع الرسالة على زمنه / when building a 6, 15 or 30 second ad and placing the message along its timeline"
  },
  {
   "id": "FMT-56",
@@ -1629,8 +2002,15 @@
    "cut-down",
    "15s",
    "30s",
-   "versions"
-  ]
+   "versions",
+   "نسخة قصيرة",
+   "اختصار الفيديو",
+   "مدد مختلفة",
+   "shorter version",
+   "60s",
+   "edit down"
+  ],
+  "when": "حين يحتاج المستخدم نسخًا أقصر بطول 30 و15 ثانية من فيديو أو إعلان أطول / when the user needs shorter 30 s and 15 s versions of a longer video or ad"
  },
  {
   "id": "FMT-57",
@@ -1655,8 +2035,15 @@
    "إعادة استخدام",
    "repurpose",
    "atomization",
-   "clips"
-  ]
+   "clips",
+   "مقاطع قصيرة",
+   "مقال إلى فيديو",
+   "توزيع المحتوى",
+   "blog to video",
+   "content repurposing",
+   "shorts"
+  ],
+  "when": "عند تحويل مقال أو فيديو طويل إلى مقاطع قصيرة ونسخ مخصصة لكل منصة / when turning a blog post or long video into short clips and platform-native versions"
  },
  {
   "id": "FMT-58",
@@ -1680,8 +2067,15 @@
    "trailer",
    "teaser",
    "gif loop",
-   "platform length"
-  ]
+   "platform length",
+   "برومو",
+   "إعلان تشويقي",
+   "مدة التريلر",
+   "promo",
+   "readme gif",
+   "store page"
+  ],
+  "when": "حين يصنع المستخدم تريلر أو برومو ويحتاج المدة والمقاس المناسبين لكل منصة / when making a trailer or teaser and choosing its length and size for each platform"
  },
  {
   "id": "FMT-59",
@@ -1708,8 +2102,15 @@
    "chapters",
    "youtube",
    "ffmetadata",
-   "timestamps"
-  ]
+   "timestamps",
+   "تقسيم الفيديو",
+   "توقيتات",
+   "فهرس الفيديو",
+   "video chapters",
+   "mp4 chapters",
+   "description timestamps"
+  ],
+  "when": "عند إضافة فصول لفيديو يوتيوب في الوصف أو تضمينها داخل ملف MP4 / when adding YouTube chapters to the description or embedding chapters inside an MP4"
  },
  {
   "id": "FMT-60",
@@ -1737,8 +2138,15 @@
    "carousel",
    "slides",
    "instagram",
-   "linkedin pdf"
-  ]
+   "linkedin pdf",
+   "منشور شرائح",
+   "سلايدات إنستغرام",
+   "بوست متعدد الصور",
+   "multi-image post",
+   "swipe post",
+   "facebook"
+  ],
+  "when": "حين يصمم المستخدم منشور كاروسيل من عدة شرائح لإنستغرام أو لينكدإن أو فيسبوك / when designing a multi-slide carousel post for Instagram, LinkedIn or Facebook"
  },
  {
   "id": "FMT-61",
@@ -1765,8 +2173,15 @@
    "cta",
    "tips",
    "split screen",
-   "reels recipe"
-  ]
+   "reels recipe",
+   "بداية الريلز",
+   "نهاية الفيديو",
+   "ثلاث نصائح",
+   "intro",
+   "outro",
+   "comparison"
+  ],
+  "when": "عند بناء افتتاحية أو خاتمة لريلز عربي مثل سؤال يشق الشاشة أو ثلاث نصائح أو مقارنة / when building an Arabic reel opener or closer such as a split-screen question, three tips or a comparison"
  },
  {
   "id": "FMT-62",
@@ -1797,8 +2212,15 @@
    "gif",
    "seamless",
    "palettegen",
-   "sticker"
-  ]
+   "sticker",
+   "تكرار بلا قطع",
+   "جيف متكرر",
+   "لوب",
+   "looping video",
+   "infinite loop",
+   "crossfade"
+  ],
+  "when": "حين يريد المستخدم فيديو أو GIF يدور في حلقة دون قفزة ظاهرة بين النهاية والبداية / when the user wants a video or GIF that loops with no visible jump from end to start"
  },
  {
   "id": "FMT-63",
@@ -1828,8 +2250,15 @@
    "cta",
    "subscribe",
    "اشترك",
-   "template"
-  ]
+   "template",
+   "شاشة النهاية",
+   "تابعنا",
+   "زر الاشتراك",
+   "outro",
+   "end screen",
+   "social icons"
+  ],
+  "when": "عند إضافة شاشة ختام في آخر الفيديو فيها دعوة للمتابعة وزر اشتراك وأيقونات / when adding an end screen with a follow CTA, a subscribe button and social icons"
  },
  {
   "id": "FMT-64",
@@ -1861,8 +2290,15 @@
    "google play",
    "badge",
    "end card",
-   "download"
-  ]
+   "download",
+   "تحميل التطبيق",
+   "شارات المتاجر",
+   "نهاية إعلان تطبيق",
+   "app promo",
+   "download now",
+   "store badges"
+  ],
+  "when": "حين ينتهي فيديو تطبيق بدعوة للتحميل مع شارات App Store وGoogle Play / when an app video should end with a download call and App Store / Google Play badges"
  },
  {
   "id": "FMT-65",
@@ -1895,8 +2331,15 @@
    "follow",
    "subscribe",
    "notification",
-   "spotify"
-  ]
+   "spotify",
+   "تغريدة متحركة",
+   "بطاقة متابعة",
+   "تعليق يوتيوب",
+   "tweet card",
+   "reddit post",
+   "overlay"
+  ],
+  "when": "عند إضافة بطاقة متحركة بشكل منصة مثل متابعة تيك توك أو منشور إكس أو تعليق يوتيوب أو إشعار / when adding an animated platform-style card such as a TikTok follow, X post, YouTube comment or notification"
  },
  {
   "id": "FMT-66",
@@ -1924,8 +2367,15 @@
    "عداد",
    "hook question",
    "counter",
-   "sound on"
-  ]
+   "sound on",
+   "سؤال افتتاحي",
+   "عداد أرقام",
+   "شغل الصوت",
+   "live counter",
+   "question overlay",
+   "vertical ad"
+  ],
+  "when": "حين يبدأ فيديو عمودي بسؤال خطاف ثابت مع عداد يتغير مع الأحداث / when a vertical video opens with a fixed hook question and a counter that updates with events"
  },
  {
   "id": "FMT-67",
@@ -1960,8 +2410,15 @@
    "square",
    "feed ad",
    "ecommerce",
-   "muted"
-  ]
+   "muted",
+   "إعلان منتج",
+   "فيديو مربع",
+   "متجر إلكتروني",
+   "1:1 ad",
+   "product promo",
+   "silent video"
+  ],
+  "when": "عند عمل إعلان مربع لمنتج يُفهم دون صوت في خلاصة السوشيال / when making a square product promo for the social feed that reads without sound"
  },
  {
   "id": "FMT-68",
@@ -1990,8 +2447,15 @@
    "example",
    "fastify",
    "doodle",
-   "whiteboard"
-  ]
+   "whiteboard",
+   "مثال جاهز",
+   "إطلاق منتج",
+   "رسم على السبورة",
+   "sample brief",
+   "product launch",
+   "starter"
+  ],
+  "when": "حين يريد المستخدم بداية سريعة من بريف جاهز لفيديو دودل أو إطلاق منتج أو سبورة / when the user wants a quick start from a ready brief for a doodle, product launch or whiteboard video"
  },
  {
   "id": "FMT-69",
@@ -2017,8 +2481,15 @@
    "نشرة",
    "seo",
    "marketing",
-   "newsletter"
-  ]
+   "newsletter",
+   "تسويق",
+   "نشرة بريدية",
+   "سيو",
+   "email",
+   "e-commerce listing",
+   "content planning"
+  ],
+  "when": "عند تخطيط محتوى مساند للفيديو مثل قائمة منتج في متجر أو نشرة بريدية أو هيكلة للبحث / when planning video-support content such as a store listing, an email newsletter or SEO structure"
  },
  {
   "id": "FMT-X01",

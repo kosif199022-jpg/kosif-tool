@@ -39,8 +39,14 @@
    "reflection",
    "rain",
    "9:16",
-   "arabic"
-  ]
+   "arabic",
+   "لافتة مضيئة",
+   "يافطة نيون",
+   "لافتة قهوة",
+   "glowing sign",
+   "neon ignition"
+  ],
+  "when": "حين يطلب المستخدم لافتة نيون عربية تشتعل على جدار مبلل مع انعكاس على الأرض وطنين متزامن / when the user wants an Arabic neon sign that ignites with wall light, wet-floor reflection and synced hum"
  },
  {
   "id": "GLOW-02",
@@ -75,8 +81,15 @@
    "schedule",
    "hum",
    "sound sync",
-   "neon"
-  ]
+   "neon",
+   "لمبة بتقطع",
+   "تزامن الصوت",
+   "أنبوب معطوب",
+   "faulty tube",
+   "warm-up",
+   "flicker timing"
+  ],
+  "when": "عند الحاجة لوميض نيون معطوب أو تشغيل متقطع يتزامن فيه الضوء والصوت من جدول واحد / when neon tubes need a faulty flicker or ignition sequence with picture and sound driven by one schedule"
  },
  {
   "id": "GLOW-03",
@@ -104,8 +117,14 @@
    "svg",
    "stroke stack",
    "line art",
-   "city"
-  ]
+   "city",
+   "خط مضيء",
+   "أنبوب نيون",
+   "رسم متجه",
+   "glow line",
+   "vector neon"
+  ],
+  "when": "حين تحتاج خطًا أو لافتة نيون حادة بأي مقاس دون مرشحات في SVG / for crisp, filter-free neon lines or signs in SVG that stay sharp at any scale, with a cheap flicker"
  },
  {
   "id": "GLOW-04",
@@ -143,8 +162,14 @@
    "text-shadow",
    "neon-tech",
    "cyber",
-   "per word"
-  ]
+   "per word",
+   "نص متوهج",
+   "كتابة نيون",
+   "خط مضيء",
+   "glowing text",
+   "css glow"
+  ],
+  "when": "حين يطلب المستخدم عنوانًا أو كلمة بشكل نيون متوهج، بما فيها الكلمات العربية المتصلة / when the user wants a headline or word styled as glowing neon text, including joined Arabic words"
  },
  {
   "id": "GLOW-05",
@@ -176,8 +201,14 @@
    "karaoke",
    "active word",
    "neon caption",
-   "highlight"
-  ]
+   "highlight",
+   "سبتايتل",
+   "تمييز الكلمة",
+   "ترجمة متوهجة",
+   "word highlight",
+   "subtitle glow"
+  ],
+  "when": "حين يريد المستخدم أن تتوهج الكلمة المنطوقة داخل الترجمة أو السبتايتل بلون مميز / when the spoken or highlighted word in captions should glow in an accent colour"
  },
  {
   "id": "GLOW-06",
@@ -210,8 +241,14 @@
    "captions",
    "glow",
    "arabic subtitles",
-   "shaping"
-  ]
+   "shaping",
+   "سبتايتل عربي",
+   "حرق الترجمة",
+   "ترجمة متحركة",
+   "burned subtitles",
+   "subtitle styling"
+  ],
+  "when": "عند حرق ترجمة عربية بتوهج ناعم تحتها وحركة صعود خفيفة عبر ملفات ASS وffmpeg / for burning Arabic subtitles with a soft glow layer and a gentle rise-in using ASS styles and ffmpeg"
  },
  {
   "id": "GLOW-07",
@@ -244,8 +281,14 @@
    "feGaussianBlur",
    "feMerge",
    "blurred duplicate",
-   "glow"
-  ]
+   "glow",
+   "توهج",
+   "هالة",
+   "شكل مضيء",
+   "soft glow",
+   "vector glow"
+  ],
+  "when": "حين يحتاج مسار أو شكل SVG إلى توهج ناعم حوله، أو ضوء ارتطام كبير يملأ الإطار / when an SVG path or shape needs a soft glow around it, or a big full-frame impact light"
  },
  {
   "id": "GLOW-08",
@@ -283,8 +326,14 @@
    "comet",
    "tracing beam",
    "strike-through",
-   "glint"
-  ]
+   "glint",
+   "نقطة مضيئة",
+   "رسم الخط",
+   "شطب كلمة",
+   "light trail",
+   "stroke reveal"
+  ],
+  "when": "حين يُرسم خط أو حرف ويريد المستخدم نقطة ضوء تجري عليه، أو شطب كلمة بخط أحمر متوهج / when a stroke or glyph draws on with a light dot riding it, or a word is struck out with a glowing red line"
  },
  {
   "id": "GLOW-09",
@@ -316,8 +365,15 @@
    "river",
    "electric line",
    "draw head",
-   "remotion"
-  ]
+   "remotion",
+   "خط سير",
+   "رسم مسار",
+   "خريطة متحركة",
+   "animated map",
+   "route line",
+   "glowing path"
+  ],
+  "when": "عند رسم مسار على خريطة أو نهر بخط أزرق كهربائي يتقدمه رأس أبيض ساخن / for drawing a map route or river as an electric blue line led by a white-hot head"
  },
  {
   "id": "GLOW-10",
@@ -348,8 +404,14 @@
    "canvas",
    "shadowBlur",
    "afterglow",
-   "rings"
-  ]
+   "rings",
+   "أثر ضوئي",
+   "خطوط متوهجة",
+   "إشارة خضراء",
+   "green glow",
+   "trail fade"
+  ],
+  "when": "حين يطلب المستخدم شكل شاشة راسم إشارات بخطوط خضراء متوهجة تترك أثرًا يخبو / when the user wants green oscilloscope-style glowing strokes on canvas with a fading afterglow"
  },
  {
   "id": "GLOW-11",
@@ -391,8 +453,14 @@
    "conic gradient",
    "focus",
    "icon shadow",
-   "badge"
-  ]
+   "badge",
+   "إطار متوهج",
+   "حدود ملونة",
+   "كبسولة",
+   "glowing border",
+   "gradient outline"
+  ],
+  "when": "حين تحتاج كبسولة أو بطاقة أو هاتفًا بحافة متدرجة متوهجة، أو أيقونة بظل من لونها / for giving a pill, card or phone mockup a glowing gradient rim, or icons a shadow in their own colour"
  },
  {
   "id": "GLOW-12",
@@ -419,8 +487,14 @@
    "dot matrix",
    "led",
    "sampling",
-   "glow word"
-  ]
+   "glow word",
+   "شاشة ليد",
+   "نص منقط",
+   "حروف مضيئة",
+   "led board",
+   "dotted text"
+  ],
+  "when": "حين يطلب المستخدم كلمة مبنية من نقاط مضيئة كلوحة LED مع ومضة في وسطها / when a word should be built from glowing dots like an LED board, with a flare at the centre"
  },
  {
   "id": "GLOW-13",
@@ -451,8 +525,14 @@
    "zoom-through",
    "speed lines",
    "neon",
-   "transition"
-  ]
+   "transition",
+   "ترانزيشن",
+   "نفق ضوئي",
+   "زووم سريع",
+   "light tunnel",
+   "fly-through"
+  ],
+  "when": "عند الحاجة لانتقال سريع يندفع عبر نفق حلقات نيون أو قضبان ضوء نحو الكاميرا / for a fast transition that rushes through a tunnel of neon rings or light bars toward camera"
  },
  {
   "id": "GLOW-14",
@@ -485,8 +565,14 @@
    "painter",
    "additive",
    "render.py",
-   "glow stack"
-  ]
+   "glow stack",
+   "سيف مضيء",
+   "جمر",
+   "هالة سحرية",
+   "glowing blade",
+   "embers"
+  ],
+  "when": "حين ترسم بالكود سيفًا مضيئًا أو سحرًا أو جمرًا يفيض منه الضوء بطبقات توهج متدرجة / when code-painting a glowing blade, magic or embers with light spilling out in stacked glow layers"
  },
  {
   "id": "GLOW-15",
@@ -522,8 +608,14 @@
    "electric arc",
    "storm",
    "flash",
-   "impact"
-  ]
+   "impact",
+   "صاعقة",
+   "شرارة كهربائية",
+   "ومضة برق",
+   "thunderbolt",
+   "zap"
+  ],
+  "when": "حين يحتاج المشهد برقًا متعرجًا أو قوسًا كهربائيًا أو ومضتي برق تضيئان مشهدًا ثلاثي الأبعاد / when a scene needs a jagged lightning bolt, an electric arc or a double flash lighting a 3D scene"
  },
  {
   "id": "GLOW-16",
@@ -562,8 +654,14 @@
    "logo",
    "cta",
    "breathe",
-   "backdrop"
-  ]
+   "backdrop",
+   "إضاءة خلفية",
+   "ظهور الشعار",
+   "لوجو",
+   "logo reveal",
+   "soft light pool"
+  ],
+  "when": "حين يحتاج العنوان أو الشعار ضوءًا ناعمًا خلفه بلون العلامة يجذب العين ثم يتنفس / for a soft brand-tinted light pool behind a title or logo that blooms in, then gently breathes"
  },
  {
   "id": "GLOW-17",
@@ -593,8 +691,14 @@
    "blobs",
    "living background",
    "banding",
-   "ui backdrop"
-  ]
+   "ui backdrop",
+   "خلفية متدرجة",
+   "بقع لونية",
+   "خلفية موقع",
+   "gradient background",
+   "ambient motion"
+  ],
+  "when": "عند تصميم خلفية واجهة أو مشهد ببقع لون ناعمة في الزوايا وعناصر بطيئة تبقيها حية / for a UI or scene background with soft corner colour blobs and slow ambient decoratives that keep it alive"
  },
  {
   "id": "GLOW-18",
@@ -624,8 +728,14 @@
    "grid",
    "lissajous",
    "procedural backdrop",
-   "studio preset"
-  ]
+   "studio preset",
+   "خلفية متحركة",
+   "جسيمات",
+   "قالب خلفية",
+   "animated background",
+   "particles"
+  ],
+  "when": "حين يريد المستخدم خلفية متحركة جاهزة بطابع شفق أو غروب أو شبكة مع توهج متجول وجسيمات / when the user wants a ready animated backdrop preset (aurora, sunset or grid) with a wandering glow and particles"
  },
  {
   "id": "GLOW-19",
@@ -657,8 +767,14 @@
    "blobs",
    "loop",
    "hyperframes",
-   "webgpu"
-  ]
+   "webgpu",
+   "الشفق القطبي",
+   "خلفية متحركة",
+   "أضواء الشمال",
+   "northern lights",
+   "aurora curtains"
+  ],
+  "when": "حين تحتاج خلفية شفق قطبي متحركة تدور بلا قطع أو ستائر شفق خضراء وبنفسجية / for a seamlessly looping aurora background, or green and violet aurora curtains from a shader"
  },
  {
   "id": "GLOW-20",
@@ -693,8 +809,14 @@
    "follow spot",
    "feather",
    "focus",
-   "pedestal"
-  ]
+   "pedestal",
+   "تسليط الضوء",
+   "تعتيم",
+   "إبراز عنصر",
+   "highlight element",
+   "dim background"
+  ],
+  "when": "حين يريد المستخدم تسليط الضوء على العنصر النشط وتعتيم الباقي مع انزلاق البقعة بين الأهداف / when the user wants to spotlight the active element and dim the rest, with the light gliding between targets"
  },
  {
   "id": "GLOW-21",
@@ -725,8 +847,14 @@
    "rings",
    "box-shadow",
    "ember",
-   "radar"
-  ]
+   "radar",
+   "دوائر",
+   "خلفية دوائر",
+   "توهج خافت",
+   "concentric circles",
+   "decorative circles"
+  ],
+  "when": "عند الحاجة لحلقات هالة زخرفية خافتة كالرادار خلف محتوى أو شعار / for faint decorative concentric halo rings, radar-like, behind content or a logo mark"
  },
  {
   "id": "GLOW-22",
@@ -759,8 +887,15 @@
    "attention",
    "shockwave",
    "halo",
-   "data focus"
-  ]
+   "data focus",
+   "تنبيه",
+   "حلقة نابضة",
+   "إشعار",
+   "notification pulse",
+   "alert",
+   "focus effect"
+  ],
+  "when": "حين يحتاج عنصر جديد أو حالة إلى لفت النظر بنبضة حلقة محدودة العدد أو تأثير تركيز له معنى / when a new item or state needs attention via a ring pulse that runs a fixed count, or another meaningful focus effect"
  },
  {
   "id": "GLOW-23",
@@ -788,8 +923,14 @@
    "pop",
    "spring",
    "ring",
-   "hero word"
-  ]
+   "hero word",
+   "كلمة قافزة",
+   "ظهور كلمة",
+   "تأكيد",
+   "word pop",
+   "expanding ring"
+  ],
+  "when": "حين تحتاج كلمة بطلة تقفز بنابض مع توهج وحلقة بلون التمييز تتسع وتخبو / for a hero word that pops in on a spring with a soft glow while an accent ring expands and fades"
  },
  {
   "id": "GLOW-24",
@@ -825,8 +966,14 @@
    "verse",
    "god rays",
    "dust",
-   "kick"
-  ]
+   "kick",
+   "تفاعل مع الصوت",
+   "إلقاء شعري",
+   "أشعة ضوء",
+   "voice reactive",
+   "light shafts"
+  ],
+  "when": "عند تحريك هالة وأشعة وغبار ضوئي تتنفس مع علو الصوت والضربات في قصيدة أو دعاء / when a halo, light shafts and dust should breathe with voice loudness and kicks, e.g. a recited verse or prayer"
  },
  {
   "id": "GLOW-25",
@@ -855,8 +1002,14 @@
    "magic circle",
    "dither",
    "retro",
-   "8 fps"
-  ]
+   "8 fps",
+   "بكسل آرت",
+   "تعويذة",
+   "دائرة رونية",
+   "pixel art",
+   "spell effect"
+  ],
+  "when": "حين يطلب المستخدم دائرة سحرية بأسلوب البكسل آرت تدور بخطوات متقطعة وتوهج منقط / when the user wants a pixel-art magic circle rotating in stepped frames with a dithered glow"
  },
  {
   "id": "GLOW-26",
@@ -893,8 +1046,15 @@
    "unreal bloom",
    "dof",
    "grain",
-   "vignette"
-  ]
+   "vignette",
+   "مظهر سينمائي",
+   "عمق المجال",
+   "حبيبات فيلم",
+   "cinematic look",
+   "sun rays",
+   "color grade"
+  ],
+  "when": "عند إضافة سلسلة ما بعد معالجة سينمائية كاملة لمشهد three.js: بلوم وأشعة وعمق مجال وحبيبات / for adding a full cinematic post stack to a three.js scene: bloom, sun rays, depth of field, grade and grain"
  },
  {
   "id": "GLOW-27",
@@ -927,8 +1087,14 @@
    "corona",
    "selective bloom",
    "mrt",
-   "beat ring"
-  ]
+   "beat ring",
+   "مواد مضيئة",
+   "توهج المصابيح",
+   "كهف نيون",
+   "glowing lamps",
+   "bloom threshold"
+  ],
+  "when": "حين يجب أن تتوهج المصابيح والمصادر الساطعة بهالة بلونها فوق مشهد داكن دون أن تتوهج الأسطح البيضاء / when bright sources should bloom in their own colour over a dark scene while lit and white surfaces stay clean"
  },
  {
   "id": "GLOW-28",
@@ -961,8 +1127,14 @@
    "aces",
    "lite post",
    "lab post",
-   "per shot"
-  ]
+   "per shot",
+   "بلوم",
+   "مزاج اللقطة",
+   "قطع",
+   "shot mood",
+   "bloom settings"
+  ],
+  "when": "عند ضبط البلوم والتعريض لكل لقطة على حدة ليتغير المزاج فورًا مع القطع / for setting bloom and exposure per shot so the mood shifts instantly on each cut"
  },
  {
   "id": "GLOW-29",
@@ -994,8 +1166,14 @@
    "tsl",
    "bloom node",
    "selective bloom",
-   "motion blur"
-  ]
+   "motion blur",
+   "ضبابية الحركة",
+   "انحراف لوني",
+   "ما بعد المعالجة",
+   "chromatic aberration",
+   "post processing"
+  ],
+  "when": "حين يعمل المشهد على WebGPURenderer ويحتاج بلومًا بعتبة أو انتقائيًا وضبابية حركة وانحرافًا لونيًا / when a WebGPURenderer scene needs threshold or selective bloom, velocity motion blur and chromatic aberration as nodes"
  },
  {
   "id": "GLOW-30",
@@ -1027,8 +1205,14 @@
    "painter",
    "stills",
    "opencv",
-   "render.py"
-  ]
+   "render.py",
+   "وهج",
+   "إضاءة ساطعة",
+   "صورة ثابتة",
+   "highlight glow",
+   "lens bloom"
+  ],
+  "when": "عند إضافة بلوم كالعدسة حول المناطق الساطعة في صورة ثابتة أو فيلم مرسوم بالكود / for adding lens-like bloom around the bright areas of a code-painted still or painted film"
  },
  {
   "id": "GLOW-31",
@@ -1057,8 +1241,14 @@
    "additive",
    "screen",
    "float canvas",
-   "tone mapping"
-  ]
+   "tone mapping",
+   "دمج الطبقات",
+   "تراكب الضوء",
+   "قص الإضاءة",
+   "light compositing",
+   "highlight clipping"
+  ],
+  "when": "حين تتراكم أضواء كثيرة وتحتاج دمجًا مضافًا أو بوضع الشاشة دون قص فوق الأبيض ثم انحدارًا ناعمًا / when stacked lights need add or screen blending without clipping above white, then a smooth roll-off"
  },
  {
   "id": "GLOW-32",
@@ -1088,8 +1278,14 @@
    "vignette",
    "focus",
    "edges",
-   "cinematic"
-  ]
+   "cinematic",
+   "تغميق الحواف",
+   "إطار داكن",
+   "تركيز النظر",
+   "dark edges",
+   "edge darkening"
+  ],
+  "when": "حين يريد المستخدم تعتيم حواف الإطار لتركيز العين في الوسط بلمسة سينمائية / when the user wants darkened frame edges to pull focus to the centre with a cinematic touch"
  },
  {
   "id": "GLOW-33",
@@ -1118,8 +1314,14 @@
    "chromatic aberration",
    "lens",
    "edges",
-   "rgb fringe"
-  ]
+   "rgb fringe",
+   "تشوه العدسة",
+   "حواف ملونة",
+   "مظهر سينمائي",
+   "color fringing",
+   "lens effect"
+  ],
+  "when": "عند إضافة انفصال خفيف للأحمر والأزرق عند أطراف الإطار لمحاكاة عدسة حقيقية / for adding a subtle red/blue split toward the frame edges to mimic a real lens"
  },
  {
   "id": "GLOW-34",
@@ -1156,8 +1358,14 @@
    "glitch",
    "hit",
    "chromatic",
-   "onion skin"
-  ]
+   "onion skin",
+   "جليتش",
+   "تشويش",
+   "اهتزاز",
+   "color split",
+   "impact jitter"
+  ],
+  "when": "حين يريد المستخدم رجفة انقسام ألوان أحمر وسماوي لإطارين أو ثلاثة على الضربة ثم يعود الهدوء / when the user wants a red/cyan RGB-split jitter for 2–3 frames on a hit, then stillness"
  },
  {
   "id": "GLOW-35",
@@ -1193,8 +1401,14 @@
    "velocity",
    "zoom smear",
    "focus pull",
-   "end title"
-  ]
+   "end title",
+   "ضبابية الحركة",
+   "عنوان النهاية",
+   "ظهور الشعار",
+   "directional blur",
+   "logo reveal"
+  ],
+  "when": "حين تحتاج العناصر المتحركة تمويهًا اتجاهيًا حسب السرعة، أو عنوانًا ختاميًا بخطوط تكبير، أو شعارًا يظهر من الضبابية / for velocity-based directional blur, an end title entering as zoom streaks, or a logo pulled into focus"
  },
  {
   "id": "GLOW-36",
@@ -1225,8 +1439,14 @@
    "media effects",
    "bloom",
    "vfx chain",
-   "webgl"
-  ]
+   "webgl",
+   "تمويه",
+   "بكسلة",
+   "تأثيرات فيديو",
+   "pixelate",
+   "non-destructive"
+  ],
+  "when": "عند تطبيق بلوم أو تمويه أو بكسلة على صورة أو فيديو دون المساس بالأصل في HyperFrames / for non-destructive Bloom, Blur or Pixelate treatments or a WebGL VFX chain on images and video in HyperFrames"
  },
  {
   "id": "GLOW-37",
@@ -1256,8 +1476,14 @@
    "light leak",
    "starburst",
    "shine",
-   "glow"
-  ]
+   "glow",
+   "تسريب ضوء",
+   "لمعة",
+   "تأثيرات جاهزة",
+   "video effects",
+   "webgl"
+  ],
+  "when": "عند العمل في Remotion والحاجة لتوهج أو تسريب ضوء أو لمعة أو انفجار نجمي كتأثير جاهز / when working in Remotion and needing ready glow, light-leak, shine or starburst effects on video or images"
  },
  {
   "id": "GLOW-38",
@@ -1284,8 +1510,15 @@
    "liquid glass",
    "typegpu",
    "post fx",
-   "webgpu"
-  ]
+   "webgpu",
+   "زجاج مصنفر",
+   "تموج",
+   "تفتت",
+   "shatter",
+   "frosted glass",
+   "glsl"
+  ],
+  "when": "حين يريد المستخدم معالجة عنصر HTML حي بتأثيرات مثل الزجاج السائل أو CRT أو التموج أو التفتت / when the user wants live HTML elements post-processed with shaders: liquid glass, CRT, ripples, shatter or bloom"
  },
  {
   "id": "GLOW-39",
@@ -1315,8 +1548,14 @@
    "fresnel",
    "scanlines",
    "sci-fi",
-   "additive"
-  ]
+   "additive",
+   "هولوغرام",
+   "صورة مجسمة",
+   "خطوط مسح",
+   "holographic",
+   "rim glow"
+  ],
+  "when": "حين يطلب المستخدم مظهر هولوجرام خيالي بحافة مضيئة وخطوط مسح ووميض خفيف / when the user wants a sci-fi hologram look with a Fresnel rim, scanlines and a slight flicker"
  },
  {
   "id": "GLOW-40",
@@ -1345,8 +1584,14 @@
    "qa",
    "lint",
    "text-shadow",
-   "ai tell"
-  ]
+   "ai tell",
+   "مراجعة",
+   "أخطاء التصميم",
+   "توهج النص",
+   "design review",
+   "text glow"
+  ],
+  "when": "عند مراجعة الجودة لاكتشاف توهج كبير أو ملون على النص يفضح أن العمل مولَّد / when reviewing quality to catch large or coloured text glow that makes work look generated"
  },
  {
   "id": "GLOW-41",
@@ -1379,8 +1624,14 @@
    "background-clip",
    "payoff",
    "metallic",
-   "rtl"
-  ]
+   "rtl",
+   "لمعة معدنية",
+   "كلمة الختام",
+   "نص لامع",
+   "text shine",
+   "glint"
+  ],
+  "when": "حين تحتاج كلمة الختام لمعة ضوء معدنية تعبر حروفها، مع اتجاه صحيح للعربية / for a metallic light glint sweeping through the payoff word's letters, with right-to-left support for Arabic"
  },
  {
   "id": "GLOW-42",
@@ -1414,8 +1665,14 @@
    "card",
    "button",
    "glass reflection",
-   "once"
-  ]
+   "once",
+   "لمعان",
+   "واجهة مستخدم",
+   "شاشة الهاتف",
+   "ui shine",
+   "shine sweep"
+  ],
+  "when": "عند إضافة لمعة تعبر بطاقة أو زرًا أو زجاج هاتف مرة واحدة دون تكرار في الواجهة / for a one-time sheen crossing a card, button or phone glass in a UI, never looping"
  },
  {
   "id": "GLOW-43",
@@ -1448,8 +1705,14 @@
    "light sweep",
    "reveal",
    "premium",
-   "ads"
-  ]
+   "ads",
+   "إعلان منتج",
+   "كشف المنتج",
+   "تصوير منتجات",
+   "product reveal",
+   "commercial"
+  ],
+  "when": "حين يُعرض منتج فاخر في إعلان ويحتاج ضوءًا يعبره مرة أو خيط ضوء يكشف حوافه الداكنة / for a premium product ad where a key light sweeps across once, or a thin light thread reveals a dark product's edges"
  },
  {
   "id": "GLOW-44",
@@ -1481,8 +1744,14 @@
    "specular",
    "chrome",
    "sheen",
-   "rotation"
-  ]
+   "rotation",
+   "كروم",
+   "دوران",
+   "لمعان معدني",
+   "metal shine",
+   "pseudo 3d"
+  ],
+  "when": "حين يدور جسم مسطح وتريد لمعة معدنية تتحرك مع زاوية الدوران لتوحي بالعمق / when a rotating flat object needs a chrome highlight that slides with the rotation angle to fake 3D"
  },
  {
   "id": "GLOW-45",
@@ -1513,8 +1782,14 @@
    "laser",
    "scan line",
    "scanner",
-   "code highlight"
-  ]
+   "code highlight",
+   "ماسح ضوئي",
+   "خط أحمر",
+   "تمييز الكود",
+   "scanning",
+   "scan frame"
+  ],
+  "when": "حين يطلب المستخدم خط مسح ليزري يصعد وينزل في إطار، أو شريط ضوء يمر على الكود ويبرز أسطره / when the user wants a laser scan line sweeping inside a frame, or a light bar highlighting code lines as it passes"
  },
  {
   "id": "GLOW-46",
@@ -1543,8 +1818,14 @@
    "sparkle",
    "twinkle",
    "stars",
-   "pen spark"
-  ]
+   "pen spark",
+   "لمعان",
+   "نجوم لامعة",
+   "خبر سار",
+   "glitter",
+   "shine"
+  ],
+  "when": "حين يحتاج عنوان أو خبر سار نجومًا لامعة تومض حوله، أو شررًا صغيرًا حول رأس القلم / when a headline or good-news moment needs twinkling star sparkles, or small sparks around a pen head"
  },
  {
   "id": "GLOW-47",
@@ -1576,8 +1857,14 @@
    "conic gradient",
    "footage",
    "bloom",
-   "screen blend"
-  ]
+   "screen blend",
+   "أشعة ضوء",
+   "وهج دافئ",
+   "لقطة حقيقية",
+   "light rays",
+   "css overlay"
+  ],
+  "when": "عند إضافة أشعة ضوء ووهج دافئ فوق لقطة فيديو حقيقية أو رسم باستخدام طبقات CSS / for adding god rays and a warm bloom over real footage or drawings using CSS layers"
  },
  {
   "id": "GLOW-48",
@@ -1608,8 +1895,14 @@
    "sun",
    "three.js",
    "volumetric",
-   "screen space"
-  ]
+   "screen space",
+   "أشعة حجمية",
+   "شعاع الشمس",
+   "ضوء سماوي",
+   "light shafts",
+   "sun rays"
+  ],
+  "when": "حين يظهر قرص الشمس في مشهد ثلاثي الأبعاد وتريد أشعة ضوء تنبثق منه / when the sun is on screen in a 3D scene and you want light rays streaming from it"
  },
  {
   "id": "GLOW-49",
@@ -1644,8 +1937,14 @@
    "rays",
    "celebration",
    "level up",
-   "conic"
-  ]
+   "conic",
+   "أشعة دوارة",
+   "خلفية شعار",
+   "خلفية احتفالية",
+   "ray burst",
+   "rotating rays"
+  ],
+  "when": "حين يحتاج شعار أو بطل أو لحظة ترقية خلفية أشعة تدور ببطء توحي بالاحتفال / for a slowly rotating ray-burst backdrop behind a logo, hero or level-up stamp to sell a celebration"
  },
  {
   "id": "GLOW-50",
@@ -1675,8 +1974,14 @@
    "lens flare",
    "sun",
    "three.js",
-   "sprites"
-  ]
+   "sprites",
+   "لمعة العدسة",
+   "فلير شمس",
+   "ثلاثي الأبعاد",
+   "flare",
+   "sun glare"
+  ],
+  "when": "حين تظهر الشمس في مشهد three.js وتريد وهج عدسة يتبعها ويختفي عند حجبها / when the sun appears in a three.js scene and needs a lens flare that follows it and hides when occluded"
  },
  {
   "id": "GLOW-51",
@@ -1712,8 +2017,14 @@
    "flare",
    "streak",
    "ghosts",
-   "lens"
-  ]
+   "lens",
+   "وهج سينمائي",
+   "خط ضوء أفقي",
+   "أشباح العدسة",
+   "cinematic flare",
+   "horizontal streak"
+  ],
+  "when": "حين يطلب المستخدم وهجًا أنامورفيًا سينمائيًا بخط أفقي طويل وأقراص أشباح حول مصدر ضوء / when the user wants a cinematic anamorphic flare: soft core, long horizontal streak and ghost discs"
  },
  {
   "id": "GLOW-52",
@@ -1746,8 +2057,14 @@
    "lens flare",
    "prism",
    "aurora",
-   "plates"
-  ]
+   "plates",
+   "خلفية ضوئية",
+   "أشعة إلهية",
+   "منشور",
+   "light background",
+   "hyperframes"
+  ],
+  "when": "عند الحاجة لخلفية مظلل جاهزة مدتها ثانيتان: أشعة إلهية أو فلير أو منشور أو شفق عبر WebGPU / for ready 2-second WebGPU shader backgrounds such as god rays, lens flare, light edge, prism or aurora"
  },
  {
   "id": "GLOW-53",
@@ -1783,8 +2100,14 @@
    "film burn",
    "overexposure",
    "transition",
-   "memory"
-  ]
+   "memory",
+   "ترانزيشن",
+   "ذكريات",
+   "فلاش أبيض",
+   "burn transition",
+   "white out"
+  ],
+  "when": "حين يريد المستخدم انتقالًا دافئًا بتسريب ضوء أو احتراق اللقطة للأبيض أو حرق فيلم، كما في مشاهد الذكريات / when the user wants a warm light-leak, white blow-out or film-burn transition, e.g. for memory scenes"
  },
  {
   "id": "GLOW-54",
@@ -1818,8 +2141,14 @@
    "strobe",
    "impact",
    "light burst",
-   "transition"
-  ]
+   "transition",
+   "فلاش",
+   "ومضة بيضاء",
+   "ذروة",
+   "white flash",
+   "flash cut"
+  ],
+  "when": "حين يحتاج القطع أو لحظة الذروة ومضة بيضاء أو ضربة مزدوجة أو كرة ضوء تكبر قبل الانتقال / when a cut or emotional peak needs a white or accent flash, a double strike, or a growing light orb before the cut"
  },
  {
   "id": "GLOW-55",
@@ -1849,8 +2178,14 @@
    "volumetric rays",
    "wordmark",
    "cursor light",
-   "reveal"
-  ]
+   "reveal",
+   "كشف النص",
+   "ضوء متحرك",
+   "شعار نصي",
+   "text reveal",
+   "light rays"
+  ],
+  "when": "حين يريد المستخدم كلمة أو شعارًا نصيًا يلقي أشعة ضوء نحو مؤشر متحرك، أو نصًا يُكشف بضوء المؤشر / when a wordmark should cast volumetric rays toward a moving light cursor, or text is revealed by a cursor glow"
  },
  {
   "id": "GLOW-56",
@@ -1889,8 +2224,14 @@
    "eclipse",
    "corona",
    "sunrise",
-   "bass reactive"
-  ]
+   "bass reactive",
+   "قرص الشمس",
+   "أفق",
+   "تفاعل مع الباص",
+   "sun glow",
+   "solar eclipse"
+  ],
+  "when": "حين يحتاج المشهد شمسًا متوهجة أو شروقًا خلف الأفق أو كسوفًا تتسع هالته مع الباص / when a scene needs a glowing sun, a sunrise behind the horizon or an eclipse whose corona widens with the bass"
  },
  {
   "id": "GLOW-57",
@@ -1923,8 +2264,14 @@
    "key fill rim",
    "stops",
    "kelvin",
-   "rig"
-  ]
+   "rig",
+   "إضاءة سينمائية",
+   "ضوء رئيسي",
+   "ضوء التعبئة",
+   "lighting setup",
+   "three.js lights"
+  ],
+  "when": "عند إضاءة مشهد ثلاثي الأبعاد كموقع تصوير حقيقي بمفتاح وتعبئة وحافة محسوبة بالوقفات والكلفن / for lighting a 3D scene like a real set: key, fill and rim set in stops and Kelvin, per shot"
  },
  {
   "id": "GLOW-58",
@@ -1952,8 +2299,14 @@
    "rembrandt",
    "clamshell",
    "presets",
-   "softness"
-  ]
+   "softness",
+   "إضاءة بورتريه",
+   "إضاءة وجه",
+   "ظل ناعم",
+   "portrait lighting",
+   "soft shadows"
+  ],
+  "when": "حين يريد المستخدم إضاءة بورتريه جاهزة كرامبرانت أو الصدفة بنعومة ظل من حجم المصدر ومسافته / when the user wants ready portrait lighting like Rembrandt or clamshell, with shadow softness from source size and distance"
  },
  {
   "id": "GLOW-59",
@@ -1984,8 +2337,14 @@
    "rembrandt",
    "neon noir",
    "golden hour",
-   "crew"
-  ]
+   "crew",
+   "طاقم التصوير",
+   "مخطط إضاءة",
+   "تصوير سينمائي",
+   "lighting diagram",
+   "cinematography"
+  ],
+  "when": "حين يطلب المستخدم إعداد إضاءة معروفًا أو خطة إضاءة كاملة ينفذها طاقم تصوير أو يعاد بناؤها ثلاثيًا / when the user asks for a named lighting setup or a full lighting plan a crew can execute or a 3D scene can rebuild"
  },
  {
   "id": "GLOW-60",
@@ -2019,8 +2378,14 @@
    "softness",
    "ev",
    "shutter angle",
-   "mired"
-  ]
+   "mired",
+   "حسابات التصوير",
+   "زاوية الغالق",
+   "سقوط الضوء",
+   "exposure calc",
+   "falloff"
+  ],
+  "when": "عند حساب نسبة الإضاءة أو نعومة المصدر أو سقوط الضوء بالمسافة أو التعريض أو زاوية الغالق بدقة / for calculating lighting ratio, source softness, distance falloff, exposure value or shutter angle exactly"
  },
  {
   "id": "GLOW-61",
@@ -2054,8 +2419,14 @@
    "cto",
    "ctb",
    "sodium",
-   "light sources"
-  ]
+   "light sources",
+   "لون الضوء",
+   "ضوء دافئ",
+   "ضوء بارد",
+   "warm light",
+   "kelvin to rgb"
+  ],
+  "when": "حين تحتاج تحويل حرارة اللون بالكلفن إلى RGB أو اختيار جيلاتين تصحيح أو لون مصدر ضوء حقيقي / when converting Kelvin to RGB, picking a correction gel or matching the colour of a real light source"
  },
  {
   "id": "GLOW-62",
@@ -2085,8 +2456,14 @@
    "hemisphere",
    "blue hour",
    "aerial perspective",
-   "fog"
-  ]
+   "fog",
+   "ضوء السماء",
+   "ضباب جوي",
+   "منظر طبيعي",
+   "outdoor lighting",
+   "haze"
+  ],
+  "when": "حين يحتاج مشهد خارجي ثلاثي الأبعاد ارتدادًا باردًا من السماء ودافئًا من الأرض وضبابًا نحو الشمس / when an outdoor 3D scene needs cool sky bounce, warm ground bounce, sun-facing haze or a blue-hour look"
  },
  {
   "id": "GLOW-63",
@@ -2116,8 +2493,14 @@
    "silhouette",
    "painter",
    "wet",
-   "two-colour rim"
-  ]
+   "two-colour rim",
+   "فصل عن الخلفية",
+   "حافة مضيئة",
+   "ضوء خلفي",
+   "edge light",
+   "separation"
+  ],
+  "when": "عند فصل الأشكال عن الخلفية في الرسم بالكود بشريط ضوء على الحافة المواجهة لمصدر الضوء / for separating code-painted silhouettes from the background with a soft rim band facing the light"
  },
  {
   "id": "GLOW-64",
@@ -2147,8 +2530,14 @@
    "volume",
    "form",
    "painter",
-   "gradient"
-  ]
+   "gradient",
+   "تجسيم",
+   "تدرج شعاعي",
+   "ظل وضوء",
+   "radial gradient",
+   "3d look"
+  ],
+  "when": "حين يبدو شكل مرسوم مسطحًا وتريده مستديرًا بتدرج من المضاء إلى الداكن مزاح نحو الضوء / when a painted flat shape should read as rounded via a lit-to-dark radial gradient offset toward the light"
  },
  {
   "id": "GLOW-65",
@@ -2181,8 +2570,14 @@
    "subsurface",
    "clouds",
    "painter",
-   "opencv"
-  ]
+   "opencv",
+   "تجسيم",
+   "ملمس",
+   "إضاءة نقطية",
+   "bump map",
+   "3d shading"
+  ],
+  "when": "حين تريد تحويل شكل مسطح في الرسم بالكود إلى جسم مجسم مضاء أو طبقة سحب لها حجم / when turning a flat code-painted silhouette into a lit volumetric body or a cloud deck with real point lights"
  },
  {
   "id": "GLOW-66",
@@ -2212,8 +2607,14 @@
    "fresnel",
    "blinn-phong",
    "shader",
-   "ice"
-  ]
+   "ice",
+   "جليد",
+   "كريستال",
+   "لمعة",
+   "specular",
+   "faceted"
+  ],
+  "when": "حين يجب أن تبدو بلورات أو أجسام مضلعة كالزجاج أو الجليد في مشهد ثلاثي الأبعاد / when faceted crystals or shapes in a 3D scene should read as glass or ice"
  },
  {
   "id": "GLOW-67",
@@ -2251,8 +2652,14 @@
    "dispersion",
    "ior",
    "orb",
-   "lens"
-  ]
+   "lens",
+   "كرة زجاجية",
+   "انكسار الضوء",
+   "شفافية",
+   "glass sphere",
+   "transparent"
+  ],
+  "when": "حين يحتاج المشهد زجاجًا يكسر ما خلفه أو تشتتًا لونيًا أو كرة زجاجية لامعة بهالات / when a scene needs glass that bends what is behind it, colour dispersion, or a glossy glass orb with halos"
  },
  {
   "id": "GLOW-68",
@@ -2284,8 +2691,14 @@
    "accent",
    "hud palette",
    "pulsing lights",
-   "three.js"
-  ]
+   "three.js",
+   "إضاءة شخصية",
+   "أضواء نابضة",
+   "ألوان الواجهة",
+   "character lighting",
+   "colored rim"
+  ],
+  "when": "عند إضاءة شخصية أو جسم ثلاثي الأبعاد كمنتج بحافتين ملونتين من ألوان الواجهة وأضواء نابضة / when lighting a 3D character or object like a product, with two coloured rims from the UI palette and pulsing accents"
  },
  {
   "id": "GLOW-69",
@@ -2313,8 +2726,14 @@
    "product",
    "lab",
    "soft light",
-   "contact shadow"
-  ]
+   "contact shadow",
+   "خلفية فاتحة",
+   "تصوير منتج",
+   "إضاءة ناعمة",
+   "seamless backdrop",
+   "clean studio"
+  ],
+  "when": "حين يحتاج فيلم منتج أو مختبر خلفية استوديو كريمية بظل تلامس وإضاءة ناعمة ثلاثية / for a product or lab film needing a cream studio sweep with contact shadow and a soft three-light rig"
  },
  {
   "id": "GLOW-70",
@@ -2345,8 +2764,14 @@
    "consistency",
    "phone",
    "product",
-   "key light"
-  ]
+   "key light",
+   "اتساق الإضاءة",
+   "ظل المنتج",
+   "موك اب",
+   "lighting consistency",
+   "drop shadow"
+  ],
+  "when": "حين يجب أن يتفق ظل المنتج أو الهاتف وحافته المضيئة وانعكاسه مع ضوء رئيسي واحد أثناء الدوران / when shadows, edge highlights and reflections on a phone or product must agree with one key light as it turns"
  },
  {
   "id": "GLOW-71",
@@ -2373,8 +2798,14 @@
    "match lighting",
    "reference",
    "image analysis",
-   "ratio"
-  ]
+   "ratio",
+   "صورة مرجعية",
+   "مطابقة الإضاءة",
+   "اتجاه الضوء",
+   "light direction",
+   "lighting ratio"
+  ],
+  "when": "حين يعطي المستخدم صورة مرجعية ويريد مطابقة إضاءتها: أي جانب أسطع وكم وقفة بين الضوء والظل / when the user gives a reference image and wants to match its lighting: brighter side and lit-to-shadow ratio"
  },
  {
   "id": "GLOW-72",
@@ -2409,8 +2840,14 @@
    "lighting vocabulary",
    "consistency",
    "kling",
-   "image generation"
-  ]
+   "image generation",
+   "وصف الإضاءة",
+   "مولد صور",
+   "توليد فيديو",
+   "prompt lighting",
+   "ai video"
+  ],
+  "when": "عند كتابة برومبت لمولد صور أو فيديو يحتاج إضاءة ثابتة المزاج ومتسقة بين كل المقاطع / when writing image or video generation prompts that need a reliable lighting mood, locked across every clip"
  },
  {
   "id": "GLOW-73",
@@ -2441,8 +2878,14 @@
    "preetham",
    "environment map",
    "pmrem",
-   "fill light"
-  ]
+   "fill light",
+   "سماء واقعية",
+   "ظلال الشمس",
+   "إضاءة نهارية",
+   "daylight",
+   "atmospheric scattering"
+  ],
+  "when": "حين يحتاج مشهد ثلاثي الأبعاد سماء واقعية وشمسًا بزاوية محددة تلقي ظلالًا وبيئة للانعكاسات / when a 3D scene needs a realistic sky, a sun placed by angle casting shadows, and an environment for reflections"
  },
  {
   "id": "GLOW-74",
@@ -2471,8 +2914,14 @@
    "dappled light",
    "gobo",
    "cookie",
-   "garden"
-  ]
+   "garden",
+   "ظل الشجر",
+   "حديقة",
+   "ضوء متقطع",
+   "leaf shadows",
+   "sun through trees"
+  ],
+  "when": "حين يريد المستخدم ضوء شمس يتسلل بين أوراق الشجر فتتحرك ظلالها على الأرض أو الماء / when the user wants sunlight filtering through leaves, with leaf shadows moving on the ground or water"
  },
  {
   "id": "GLOW-75",
@@ -2500,8 +2949,14 @@
    "underwater",
    "absorption",
    "pond",
-   "sea"
-  ]
+   "sea",
+   "تحت الماء",
+   "بركة",
+   "قاع البحر",
+   "water light",
+   "light network"
+  ],
+  "when": "حين يحتاج مشهد تحت الماء أو بركة شبكة ضوء متحركة على السطوح مع تغير اللون بالعمق / when an underwater or pond scene needs a moving caustic light network on surfaces and colour absorption with depth"
  },
  {
   "id": "GLOW-76",
@@ -2535,8 +2990,14 @@
    "light trails",
    "star trails",
    "lighten",
-   "silky water"
-  ]
+   "silky water",
+   "مسارات السيارات",
+   "رسم بالضوء",
+   "ماء حريري",
+   "light painting",
+   "car trails"
+  ],
+  "when": "حين يطلب المستخدم مسارات نجوم أو أضواء سيارات أو رسمًا بالضوء أو ماءً حريريًا بالتعريض الطويل / when the user wants star trails, car light trails, light painting or silky water via long-exposure stacking"
  },
  {
   "id": "GLOW-77",
@@ -2573,8 +3034,14 @@
    "practical light",
    "windows",
    "fireflies",
-   "night city"
-  ]
+   "night city",
+   "أعمدة الإنارة",
+   "مشهد ليلي",
+   "إضاءة الشارع",
+   "street lamp",
+   "night scene"
+  ],
+  "when": "عند رسم مشهد ليلي ثنائي الأبعاد بمصابيح شارع ومخاريط ضوء وهالات ونوافذ تضاء ويراعات / for a 2D night scene with street-lamp cones, soft halos, windows switching on and fireflies"
  },
  {
   "id": "GLOW-78",
@@ -2610,8 +3077,14 @@
    "point sprites",
    "additive",
    "bokeh",
-   "city lights"
-  ]
+   "city lights",
+   "أضواء الشوارع",
+   "درونز",
+   "إضاءة ليلية",
+   "drones",
+   "night scene"
+  ],
+  "when": "حين يحتاج مشهد ليلي ثلاثي الأبعاد صف مصابيح شارع أو آلاف أضواء المدينة والطائرات المسيرة أو بوكيه بكلفة منخفضة / when a 3D night scene needs cheap street-lamp rows, thousands of city or drone lights, or background bokeh"
  },
  {
   "id": "GLOW-79",
@@ -2643,8 +3116,14 @@
    "candle",
    "flicker",
    "flame",
-   "perlin"
-  ]
+   "perlin",
+   "نار",
+   "ضوء الشموع",
+   "ارتعاش",
+   "firelight",
+   "organic flicker"
+  ],
+  "when": "حين يحتاج فانوس أو شمعة أو نار ارتعاشًا طبيعيًا لا يهبط كثيرًا ويحرك اللهب والوهج معًا / when a lantern, candle or fire light needs an organic flicker that never dips too low and drives flame and glow together"
  },
  {
   "id": "GLOW-80",
@@ -2679,8 +3158,14 @@
    "beacon",
    "volumetric beam",
    "cone",
-   "night sea"
-  ]
+   "night sea",
+   "فنار",
+   "بحر ليلي",
+   "ضوء دوار",
+   "rotating light",
+   "light beam"
+  ],
+  "when": "حين يحتاج مشهد بحري ليلي شعاع منارة أو فنار دوارًا حول المصباح / when a night-sea scene needs a rotating lighthouse or beacon beam sweeping around the lamp"
  },
  {
   "id": "GLOW-81",
@@ -2707,8 +3192,14 @@
    "moon",
    "halo",
    "night",
-   "painter"
-  ]
+   "painter",
+   "بدر",
+   "قمر مكتمل",
+   "سماء ليلية",
+   "full moon",
+   "night sky"
+  ],
+  "when": "حين تريد رسم قمر بدر بالكود بهالة بنفسجية وقرص كريمي وفوهات ناعمة لمشهد ليلي / when code-painting a full moon with a purple halo, cream disc and soft craters for a night scene"
  },
  {
   "id": "GLOW-82",
@@ -2742,8 +3233,14 @@
    "puddles",
    "fresnel",
    "water",
-   "river"
-  ]
+   "river",
+   "مطر",
+   "برك ماء",
+   "انعكاس العنوان",
+   "rain reflection",
+   "mirror"
+  ],
+  "when": "حين تحتاج انعكاس لافتة أو عنوان على أرض مبللة أو ماء، أو عمود ضوء ذهبي على نهر / when a sign or title should reflect on a wet floor or water, or a golden light column should lie on a river"
  },
  {
   "id": "GLOW-83",
@@ -2775,8 +3272,14 @@
    "fbm",
    "doppler",
    "black hole",
-   "shader"
-  ]
+   "shader",
+   "ثقب أسود",
+   "تدرج حراري",
+   "تلطيخ",
+   "heat ramp",
+   "domain warp"
+  ],
+  "when": "حين يطلب المستخدم مظهرًا حراريًا أو خريطة حرارة متحركة، أو قرصًا يسطع ويزرق من جهة الاقتراب / when the user wants an animated heat-map look, or a disk that brightens and blue-shifts on its approaching side"
  },
  {
   "id": "GLOW-84",
@@ -2805,8 +3308,14 @@
    "light slit",
    "chapter title",
    "premium",
-   "documentary"
-  ]
+   "documentary",
+   "عنوان وثائقي",
+   "كشف العنوان",
+   "شبورة",
+   "title reveal",
+   "haze"
+  ],
+  "when": "عند كشف عنوان فصل وثائقي بهدوء فخم بين طبقتي ضباب أو بخط ضوء رفيع يتسع / for a quiet premium reveal of a documentary chapter title between fog layers or via a widening light slit"
  },
  {
   "id": "GLOW-P01",
@@ -2837,8 +3346,14 @@
    "path draw",
    "نيون",
    "توهج",
-   "raster"
-  ]
+   "raster",
+   "خط متوهج",
+   "رسم تدريجي",
+   "بدون متصفح",
+   "write-on",
+   "headless"
+  ],
+  "when": "حين تحتاج خط نيون يُكتب تدريجيًا بلا متصفح بهالة مموهة وقلب ساطع عبر Pillow / when a neon line must write on without a browser, rendered with Pillow as a blurred halo plus hot core"
  },
  {
   "id": "GLOW-X01",

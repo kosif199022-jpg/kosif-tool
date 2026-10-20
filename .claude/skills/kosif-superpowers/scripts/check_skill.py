@@ -15,6 +15,9 @@ Checks (errors fail the run, warnings do not unless --strict):
   names         no model names or versions inside skill files (pre-existing motion data: warning)
   secrets       no API keys or tokens committed in skill files
   evals         evals/evals.json parses and has at least 3 well-formed cases
+  tools         data/tools.json is valid (scripts/hub.py), every script is registered, and the files
+                hub.py build generates (manifest.json, references/INDEX.md, tool blocks) are current
+  drift         every "N,NNN powers / قدرة" claim in the entry documents matches the live catalog
 
 Counts marker — put this HTML comment anywhere in SKILL.md (it is invisible when rendered) and
 keep the human-readable numbers next to it in sync; print a fresh one with --print-counts:
@@ -453,6 +456,65 @@ def check_chapters(r: Report):
     r.info("chapters", f"{len(fams)} general famil{'y' if len(fams) == 1 else 'ies'}; motion chapters are hand-made and not compared")
 
 
+def check_tools(r: Report):
+    r.checks["tools"] += 1
+    try:
+        import hub as H  # noqa: E402
+    except Exception as exc:  # pragma: no cover - import failure is itself the finding
+        r.err("tools", f"scripts/hub.py does not import: {exc}")
+        return
+    try:
+        reg = json.loads(H.TOOLS_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        r.err("tools", f"data/tools.json unreadable: {exc}")
+        return
+    for e in H.validate_registry(reg):
+        r.err("tools", e)
+    registered = {(t.get("root"), t.get("path", "").rstrip("/")) for t in reg.get("tools", [])}
+    for f in sorted((SK / "scripts").iterdir()):
+        if f.suffix in (".py", ".cjs", ".mjs") and not f.name.startswith(("test_", "_")) and ("skill", f"scripts/{f.name}") not in registered:
+            r.err("tools", f"scripts/{f.name} is not registered in data/tools.json (add an entry; see references/guides/maintain.md)")
+    if (REPO / "tools").is_dir():
+        for f in sorted((REPO / "tools").iterdir()):
+            if f.suffix in (".py", ".cjs") and ("repo", f"tools/{f.name}") not in registered:
+                r.err("tools", f"tools/{f.name} (repo) is not registered in data/tools.json")
+    try:
+        reg_ok = H.load_registry()
+        outs = H.generated(reg_ok)
+        outs[H.TOOL_POWERS] = json.dumps(H.tool_power_records(reg_ok), ensure_ascii=False, indent=1) + "\n"
+        for path, text in outs.items():
+            if not path.is_file() or path.read_text(encoding="utf-8") != text:
+                r.err("tools", f"{path.relative_to(SK).as_posix()} is stale — run python3 scripts/hub.py build")
+    except Exception as exc:
+        r.err("tools", f"hub.py build failed: {exc}")
+    r.info("tools", f"{len(reg.get('tools', []))} registered tools")
+
+
+DRIFT_FILES = ("SKILL.md", "references/INDEX.md", "references/capability-map.md")
+DRIFT_REPO_FILES = ("README.md", "CLAUDE.md", "AGENTS.md", "CAPABILITIES.md", "llms.txt")
+DRIFT_RE = re.compile(r"(\d,\d{3})(\+?)\s*(?:powers|قدرة|capabilities)")
+
+
+def check_drift(r: Report):
+    """Exact counts must equal the catalog; 'N,NNN+' floors must be true and within 500 of it."""
+    r.checks["drift"] += 1
+    rows = P.load_powers()
+    total = len(rows)
+    # subtotals (a domain or a family) are legitimate exact numbers too
+    allowed = {total} | set(Counter(p.get("domain") or P.DEFAULT_DOMAIN for p in rows).values()) | set(Counter(p["family"] for p in rows).values())
+    files = [SK / f for f in DRIFT_FILES] + [REPO / f for f in DRIFT_REPO_FILES]
+    for f in files:
+        if not f.is_file():
+            continue
+        for m in DRIFT_RE.finditer(f.read_text(encoding="utf-8")):
+            n = int(m.group(1).replace(",", ""))
+            name = f.relative_to(REPO).as_posix() if REPO in f.parents else f.name
+            if m.group(2) == "+" and not (total - 500 <= n <= total):
+                r.err("drift", f"{name} says {m.group(0)!r} but the catalog has {total:,} powers")
+            elif m.group(2) != "+" and n not in allowed:
+                r.err("drift", f"{name} says {m.group(0)!r} but the catalog has {total:,} powers")
+
+
 def live_counts() -> dict:
     powers, styles = P.load_powers(), P.load_styles()
     st = Counter(p.get("status") for p in powers)
@@ -609,6 +671,8 @@ def main(argv=None) -> int:
     check_names(r)
     check_secrets(r)
     check_evals(r)
+    check_tools(r)
+    check_drift(r)
     errors, warns = r.count("error"), r.count("warn")
     failed = errors > 0 or (a.strict and warns > 0)
     if a.json:

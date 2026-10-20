@@ -4,6 +4,14 @@
 
 > Important: **2,000 sources cataloged is not 2,000 sources analyzed with REA**. This distinction is enforced in data schemas, search responses, and automated tests. Catalog-only and actual inspection counts are reported separately.
 
+## الفهرس / contents
+
+- [Verified current results](#verified-current-results)
+- [Actually performed with REA](#actually-performed-with-rea)
+- [High-value capability families extracted as *opportunities*](#high-value-capability-families-extracted-as-opportunities)
+- [How Claude must discover the 2,000 sources](#how-claude-must-discover-the-2000-sources)
+- [Quality gates and limitations](#quality-gates-and-limitations)
+
 ## Verified current results
 
 | Workstream | Completed and verified | What it establishes |

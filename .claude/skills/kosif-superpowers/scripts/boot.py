@@ -6,7 +6,7 @@
     python3 scripts/boot.py --static --write   # regenerate CAPABILITIES.md and llms.txt at the repo root (for a bare repository link)
     python3 scripts/boot.py --static --check   # exit 1 if those files are stale
 
-Read-only and stdlib only (~2 s). "Ready now" means every requirement of the power is detected on this machine;
+Stdlib only (~1 s); read-only except --static --write, which rewrites CAPABILITIES.md and llms.txt. "Ready now" means every requirement of the power is detected on this machine;
 it is presence, not proof — ✅ still needs a real run.
 """
 from __future__ import annotations
@@ -37,6 +37,31 @@ def load():
     return P, R, P.load_powers(), R.registry()
 
 
+RUNNABLE = {"proven", "ready", "install", "key"}  # statuses that name something to run; the rest are methods or observations
+
+
+def tool_registry() -> dict:
+    """data/tools.json (the runnable-tool registry); empty when absent so boot still works on old copies."""
+    try:
+        return json.loads((SKILL / "data" / "tools.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {"areas": [], "tools": []}
+
+
+def counts_extra() -> dict:
+    """Numbers that live outside the powers catalog (style atlas, tool map) — counted, never typed by hand."""
+    out = {"styles": 0, "repos": 0}
+    try:
+        out["styles"] = len(json.loads((SKILL / "data" / "styles.json").read_text(encoding="utf-8")))
+    except (OSError, ValueError):
+        pass
+    try:
+        out["repos"] = len(json.loads((SKILL / "repos.json").read_text(encoding="utf-8")).get("repos", []))
+    except (OSError, ValueError):
+        pass
+    return out
+
+
 def summary(P, pw):
     by_dom = defaultdict(list)
     for p in pw:
@@ -62,6 +87,8 @@ def live(as_json: bool) -> int:
                     "node": bool(shutil.which("node")), "ffmpeg": bool(shutil.which("ffmpeg")), "gpu": bool(shutil.which("nvidia-smi"))},
         "catalog": {"powers": len(pw), "families": len(fams), "domains": len(by_dom), "status": dict(st)},
         "ready_now": len(ready),
+        "ready_now_runnable": sum(1 for p in ready if p.get("status") in RUNNABLE),
+        "ready_now_methods": sum(1 for p in ready if p.get("status") not in RUNNABLE),
         "by_domain": {d: {"powers": len(v), "proven": sum(p.get("status") == "proven" for p in v),
                           "ready_now": sum(1 for p in v if p in ready)} for d, v in sorted(by_dom.items(), key=lambda kv: -len(kv[1]))},
         "requirements": {s: sum(1 for v in pres.values() if v == s) for s in ("present", "missing", "unknown")},
@@ -72,7 +99,8 @@ def live(as_json: bool) -> int:
     m = data["machine"]
     print(f"# KOSIF Superpowers — boot ({m['os']}, python {m['python']}, node {'✓' if m['node'] else '✗'}, ffmpeg {'✓' if m['ffmpeg'] else '✗'}, GPU {'✓' if m['gpu'] else '✗'})\n")
     print(f"catalog: {len(pw):,} powers · {len(fams)} families · {len(by_dom)} domains · ✅ {st['proven']} proven · 🟢 {st['ready']} ready · 📦 {st['install']} install · 🔑 {st['key']} key")
-    print(f"ready NOW on this machine (every requirement present): {len(ready):,} powers")
+    print(f"ready NOW on this machine (every requirement present): {data['ready_now_runnable']:,} runnable powers (✅🟢📦🔑)"
+          f" + {data['ready_now_methods']:,} methods Claude applies directly (📄👁💡)")
     print(f"requirements: 🟢 {data['requirements']['present']} present · 📦 {data['requirements']['missing']} missing · ❔ {data['requirements']['unknown']} unknown\n")
     print("domain              powers  proven  ready-now")
     for d, v in data["by_domain"].items():
@@ -80,37 +108,50 @@ def live(as_json: bool) -> int:
     print("\nbiggest unlocks (one install each — ask before paid or system-wide installs):")
     for u in unlock[:8]:
         print(f"  +{u['unlocks']:<4} {u['requirement']:<20} → {u['install']}")
+    tools = tool_registry()["tools"]
+    if tools:
+        print(f"\nrunnable tools: {len(tools)} in {len({t['area'] for t in tools})} areas — python3 scripts/hub.py doctor shows which run here now")
     print("""
 next:
-  1. python3 scripts/think.py ladder "<task>"         how deep to think
-  2. python3 scripts/powers.py suggest "<task>"       which powers
-  3. python3 scripts/requirements.py plan "<task>"    what to install first (▶ = can start now)
-  4. python3 scripts/think.py frame "<task>"          the contract, then build a thin slice and verify it
-map: references/capability-graph.html · thinking: references/cognition.md · rules: SKILL.md §6""")
+  1. python3 scripts/hub.py find "<task>"             tools to run + powers + guides, in one answer
+  2. python3 scripts/hub.py tool <tool-id>            exact commands, requirements, safety, tests
+  3. python3 scripts/think.py ladder "<task>"         how deep to think; think.py frame "<task>" for the contract
+  4. python3 scripts/requirements.py plan "<task>"    what to install first (▶ = can start now)
+index: references/INDEX.md · map: references/capability-graph.html · thinking: references/cognition.md · rules: SKILL.md §6""")
     return 0
 
 
 # ------------------------------------------------------------------ static files for a bare repo link
 def capabilities_md(P, R, pw, reg) -> str:
     by_dom, fams = summary(P, pw)
+    treg, ext = tool_registry(), counts_extra()
     st = Counter(p.get("status") for p in pw)
     L = ["# CAPABILITIES — ما يستطيعه Claude مع هذا المستودع / what Claude can do with this repository", "",
          "<!-- generated by .claude/skills/kosif-superpowers/scripts/boot.py --static --write; do not edit by hand -->", "",
          "> **إلى Claude:** إن أرسل لك المستخدم رابط هذا المستودع فهذه الصفحة هي خريطتك الذاتية. اقرأها كاملة، ثم حمّل المهارة وشغّل `boot.py` إن كان لديك shell. كل رقم هنا مولَّد من بيانات الكتالوج، وكل قدرة لها شارة دليل صادقة.",
          "> **To Claude:** if the user sends you this repository's link, this page is your self-model. Read it, then load the skill and run `boot.py` if you have a shell. Every number below is generated from the catalog data; every power carries an honest evidence badge.", "",
          "## الفهرس / contents",
-         "1. [كيف تبدأ / how to start](#start)", "2. [الأرقام / numbers](#numbers)", "3. [المجالات والعائلات / domains and families](#domains)",
-         "4. [المستلزمات الأكثر فتحًا / biggest unlocks](#unlocks)", "5. [طريقة التفكير / how to think](#think)", "6. [قواعد الصدق / honesty rules](#rules)", "7. [روابط مباشرة / raw links](#links)", "",
+         "1. [كيف تبدأ / how to start](#start)", "2. [الأرقام / numbers](#numbers)", "3. [الأدوات حسب المجال / tools by area](#tools)", "4. [المجالات والعائلات / domains and families](#domains)",
+         "5. [المستلزمات الأكثر فتحًا / biggest unlocks](#unlocks)", "6. [طريقة التفكير / how to think](#think)", "7. [قواعد الصدق / honesty rules](#rules)", "8. [روابط مباشرة / raw links](#links)", "",
          "<a id=\"start\"></a>", "## 1. كيف تبدأ / how to start", "",
          "| أين أنت / surface | افعل / do |", "|---|---|",
-         "| Claude Code (CLI, desktop, web) داخل المستودع | المهارة تُحمَّل تلقائيًا. نفّذ: `python3 .claude/skills/kosif-superpowers/scripts/boot.py` ثم اتبع خطواته الأربع. |",
+         "| Claude Code (CLI, desktop, web) داخل المستودع | المهارة تُحمَّل تلقائيًا. نفّذ: `python3 .claude/skills/kosif-superpowers/scripts/boot.py` ثم `python3 .claude/skills/kosif-superpowers/scripts/hub.py find \"<المهمة>\"` (أدوات للتشغيل + قدرات + أدلة). |",
          "| Claude Code مع رابط فقط | استنسخ المستودع (`git clone https://github.com/kosif199022-jpg/kosif-tool`) ثم كما أعلاه. |",
          "| claude.ai محادثة مع رابط فقط، بلا shell | اقرأ هذه الصفحة، ثم [SKILL.md](" + RAW + SK_REL + "SKILL.md) و[cognition.md](" + RAW + SK_REL + "references/cognition.md)، وافتح فصل العائلة المناسبة من الجدول أدناه. لا تدّعِ تشغيل شيء لم تشغّله. |",
-         "| claude.ai مع تنفيذ كود | ارفع ملف zip للمهارة أو اقرأ الملفات الخام، ثم شغّل السكربتات القياسية (stdlib) داخل بيئة التنفيذ. |", "",
+         "| claude.ai مع تنفيذ كود | ارفع ملف zip للمهارة أو اقرأ الملفات الخام، ثم شغّل السكربتات القياسية (stdlib) داخل بيئة التنفيذ. |",
+         "| أي تطبيق يدعم MCP / any MCP client | شغّل خادم القراءة فقط `python3 .claude/skills/kosif-superpowers/scripts/kosif_mcp.py` (داخل المستودع يسجّله `.mcp.json`)، وابدأ بأداة `kosif_find`. |",
+         "| تطبيق يقرأ JSON / any app reading JSON | [manifest.json](" + RAW + SK_REL + "manifest.json): الأدوات والعائلات والأدلة والأرقام في ملف واحد؛ المخططات في `schemas/`. |", "",
          "<a id=\"numbers\"></a>", "## 2. الأرقام / numbers", "",
          f"**{len(pw):,}** قدرة · **{len(fams)}** عائلة · **{len(by_dom)}** مجالات · ✅ {st['proven']} مُثبتة بتشغيل فعلي · 🟢 {st['ready']} جاهزة · 📦 {st['install']} بأمر تثبيت · 🔑 {st['key']} بمفتاح أو حساب · 👁 {st['seen']} شوهدت في فيديو مرجعي · 📄 {st['documented']} طريقة موصوفة · 💡 {st['idea']} فكرة.",
-         f"المستلزمات المسجّلة: **{len(reg)}** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **124** مستودعًا موثّق الترخيص.", "",
-         "<a id=\"domains\"></a>", "## 3. المجالات والعائلات / domains and families", ""]
+         f"المستلزمات المسجّلة: **{len(reg)}** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **{ext['repos']}** مستودعًا موثّق الترخيص؛ أطلس الموشن: **{ext['styles']}** أسلوبًا؛ الأدوات القابلة للتشغيل: **{len(treg['tools'])}**.", "",
+         "<a id=\"tools\"></a>", "## 3. الأدوات حسب المجال / tools by area", "",
+         "كل أداة سكربت يُشغَّل فعلًا. التفاصيل: `python3 .claude/skills/kosif-superpowers/scripts/hub.py tool <id>` أو [INDEX.md](" + GH + SK_REL + "references/INDEX.md). — Every tool is a runnable script; details via hub.py tool or the index.", "",
+         "| area | tools |", "|---|---|"]
+    for a in treg["areas"]:
+        ids = [x["id"] for x in treg["tools"] if x["area"] == a["id"]]
+        if ids:
+            L.append(f"| [{a['en']} / {a['ar']}]({GH}{SK_REL}references/guides/{'discover' if a['id'] == 'think' else a['id']}.md) | " + " · ".join(f"`{i}`" for i in ids) + " |")
+    L += ["", "<a id=\"domains\"></a>", "## 4. المجالات والعائلات / domains and families", ""]
     for d, rows in sorted(by_dom.items(), key=lambda kv: -len(kv[1])):
         dst = Counter(p.get("status") for p in rows)
         L += [f"### {DOM_AR.get(d, d)} / {d} — {len(rows):,} powers · ✅ {dst['proven']}", "",
@@ -126,33 +167,35 @@ def capabilities_md(P, R, pw, reg) -> str:
             L.append(f"| [{name}]({GH}{SK_REL}references/powers/{fam}.md) | {P.prefix_of(fr[0])} | {len(fr)} | {sum(r.get('status') == 'proven' for r in fr)} | {exs} |")
         L.append("")
     blocked = Counter(k for p in pw for k in (p.get("requires") or []))
-    L += ["<a id=\"unlocks\"></a>", "## 4. المستلزمات الأكثر فتحًا / biggest unlocks", "",
+    L += ["<a id=\"unlocks\"></a>", "## 5. المستلزمات الأكثر فتحًا / biggest unlocks", "",
           "كل سطر: مستلزم، كم قدرة تحتاجه، وأمر تثبيته. الفهرس الكامل: [requirements.md](" + GH + SK_REL + "references/requirements.md). — Each row: a requirement, how many powers need it, and its install command.", "",
           "| requirement | kind | powers | install |", "|---|---|---|---|"]
     for k, n in blocked.most_common(25):
         v = reg.get(k, {})
         L.append(f"| `{k}` | {v.get('kind', '')} | {n} | `{v.get('install', '').replace('|', '/')[:110]}` |")
-    L += ["", "<a id=\"think\"></a>", "## 5. طريقة التفكير / how to think", "",
+    L += ["", "<a id=\"think\"></a>", "## 6. طريقة التفكير / how to think", "",
           "1. **العمق / depth:** `think.py ladder \"<task>\"` يختار مستوى التفكير L0–L6 وإجراءه.",
           "2. **العقد / contract:** `think.py frame \"<task>\"` — الهدف، القارئ، معايير الإنجاز، القيود، المجهولات، أول فحص.",
-          "3. **القوى / powers:** `powers.py suggest \"<task>\"` ثم `requirements.py plan \"<task>\"` (▶ = يبدأ الآن).",
+          "3. **القوى / powers:** `hub.py find \"<task>\"` (أدوات + قدرات + أدلة) ثم `requirements.py plan \"<task>\"` (▶ = يبدأ الآن).",
           "4. **النماذج الذهنية / models:** `think.py models \"<problem>\"` من 63 نموذجًا.",
           "5. **الأفكار / ideas:** `think.py ideas \"<seed>\" -n 12` ثم التقييم بالجدة × الجدوى.",
           "6. **القرار / decide:** `think.py decide decision.json` مع فحص الحساسية؛ `think.py fermi` للتقديرات.",
           "7. **التخطيط / plan:** `think.py plan \"<goal>\" --weeks N`.",
           "8. **التحقق / verify:** افتح الناتج نفسه، احسب الأرقام بالكود، `think.py critic draft.md` قبل الإرسال.",
           "", "الدليل الكامل: [cognition.md](" + GH + SK_REL + "references/cognition.md) — سلّم التفكير، عادات العباقرة، تطوير الأفكار، التخطيط، القرار، التفكير الشبيه بالبشر، المراقبة الذاتية.", "",
-          "<a id=\"rules\"></a>", "## 6. قواعد الصدق / honesty rules", "",
+          "<a id=\"rules\"></a>", "## 7. قواعد الصدق / honesty rules", "",
           "- أدنى شارة صادقة دائمًا. ✅ يعني تشغيلًا فعليًا بدليل؛ وجود رابط أو حزمة ليس قدرة. — Always the lowest true badge.",
           "- `proof_scope` يقول أين الدليل: `repo` قابل للفحص هنا، `sibling` في مستودع آخر للمالك. — Know where the evidence lives.",
           "- لا «لا أستطيع» قبل الفحص: خريطة → فحص → تثبيت → بديل. — Registry before no.",
           "- لا تثبيت مدفوع أو شامل للنظام، ولا مفاتيح، ولا نشر بلا موافقة. — Consent for paid, system-wide or outward actions.",
           "- لا نسخ لكود أو وسائط أو برومبتات طرف ثالث بلا ترخيص؛ اربط وانسب. — Link and credit.",
           "- صوت المستخدم لا يُمس، والفحص القانوني فقط لما يملك المستخدم حق فحصه. — User audio untouched; lawful inspection only.", "",
-          "<a id=\"links\"></a>", "## 7. روابط مباشرة / raw links", ""]
-    for name, path in [("SKILL.md", "SKILL.md"), ("cognition.md", "references/cognition.md"), ("requirements.md", "references/requirements.md"),
+          "<a id=\"links\"></a>", "## 8. روابط مباشرة / raw links", ""]
+    for name, path in [("SKILL.md", "SKILL.md"), ("INDEX.md (every tool, guide and family)", "references/INDEX.md"),
+                       ("manifest.json (machine-readable)", "manifest.json"), ("tools.json (tool registry)", "data/tools.json"),
+                       ("cognition.md", "references/cognition.md"), ("requirements.md", "references/requirements.md"),
                        ("capability-map.md", "references/capability-map.md"), ("capability-graph.html", "references/capability-graph.html"),
-                       ("repos.md (124 tools)", "references/repos.md"), ("mental_models.json", "data/mental_models.json"),
+                       (f"repos.md ({ext['repos']} tools)", "references/repos.md"), ("mental_models.json", "data/mental_models.json"),
                        ("requirements.json", "data/requirements.json"), ("capability_graph.json", "data/capability_graph.json")]:
         L.append(f"- {name}: {RAW}{SK_REL}{path}")
     L.append("")
@@ -162,19 +205,29 @@ def capabilities_md(P, R, pw, reg) -> str:
 def llms_txt(P, pw) -> str:
     st = Counter(p.get("status") for p in pw)
     fams = sorted({p["family"] for p in pw})
+    treg, ext = tool_registry(), counts_extra()
     L = ["# KOSIF TOOL — Claude superpowers and Arabic-first motion-graphics atlas", "",
          f"> A Claude Code skill that tells Claude what it can really do: {len(pw):,} powers in {len(fams)} families and 10 domains, each with an evidence badge "
-         f"({st['proven']} proven by real runs), the requirements to run it, executable thinking tools, and a 288-style motion-graphics atlas.", "",
-         "Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`.", "",
+         f"({st['proven']} proven by real runs), the requirements to run it, {len(treg['tools'])} runnable tools, executable thinking tools, and a {ext['styles']}-style motion-graphics atlas.", "",
+         "Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`, "
+         "then `python3 .claude/skills/kosif-superpowers/scripts/hub.py find \"<task>\"` (tools to run + powers + guides in one answer).", "",
          "## Start", f"- [CAPABILITIES.md]({RAW}CAPABILITIES.md): generated self-model for Claude",
          f"- [SKILL.md]({RAW}{SK_REL}SKILL.md): the skill and its power-up protocol",
+         f"- [INDEX.md]({RAW}{SK_REL}references/INDEX.md): every runnable tool, guide and power family on one page",
+         f"- [manifest.json]({RAW}{SK_REL}manifest.json): the same as JSON for apps and agents (tools, families, guides, counts)",
+         f"- [tools.json]({RAW}{SK_REL}data/tools.json): the tool registry (schema: {SK_REL}schemas/tools.schema.json)",
+         f"- MCP: `python3 {SK_REL}scripts/kosif_mcp.py` is a read-only stdio MCP server (kosif_find, kosif_tool, kosif_power …); the repo's .mcp.json registers it",
          f"- [cognition.md]({RAW}{SK_REL}references/cognition.md): how to think, plan, decide and create",
          f"- [requirements.md]({RAW}{SK_REL}references/requirements.md): what each power needs and what each install unlocks", "",
-         "## Families"]
+         "## Guides by area"]
+    for g in sorted((SKILL / "references" / "guides").glob("*.md")):
+        L.append(f"- [{g.stem}]({RAW}{SK_REL}references/guides/{g.name})")
+    L += ["", "## Families"]
     for f in fams:
         L.append(f"- [{f}]({RAW}{SK_REL}references/powers/{f}.md)")
-    L += ["", "## Optional", f"- [repos.md]({RAW}{SK_REL}references/repos.md): 124 credited open-source tools",
-          f"- [AGENTS.md]({RAW}AGENTS.md): motion-graphics production rules", f"- [STYLE_INDEX.md]({RAW}STYLE_INDEX.md): 288 styles", ""]
+    L += ["", "## Optional", f"- [repos.md]({RAW}{SK_REL}references/repos.md): {ext['repos']} credited open-source tools",
+          f"- [AGENTS.md]({RAW}AGENTS.md): agent guide (any coding agent) and motion-graphics production rules",
+          f"- [STYLE_INDEX.md]({RAW}STYLE_INDEX.md): {ext['styles']} styles", f"- [projects/README.md]({RAW}projects/README.md): finished films built with this repo", ""]
     return "\n".join(L)
 
 
@@ -198,7 +251,12 @@ def main(argv=None) -> int:
     ap.add_argument("--json", action="store_true"); ap.add_argument("--static", action="store_true")
     ap.add_argument("--write", action="store_true"); ap.add_argument("--check", action="store_true")
     a = ap.parse_args(argv)
-    return static(a.write, a.check) if a.static else live(a.json)
+    if a.write and a.check:
+        ap.error("--write and --check are exclusive")
+    if a.static and not (a.write or a.check):
+        ap.error("--static needs --write (regenerate) or --check (exit 1 when stale)")
+    # --write/--check only make sense for the static files, so they imply --static (no silent false pass)
+    return static(a.write, a.check) if (a.static or a.write or a.check) else live(a.json)
 
 
 if __name__ == "__main__":
