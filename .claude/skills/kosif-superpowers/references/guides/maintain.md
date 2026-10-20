@@ -55,7 +55,9 @@ python3 scripts/check_skill.py --evals          # structure, links, proofs, coun
 
 Then, from the repo root: `python3 tools/build.py && python3 tools/validate.py && python3 -m unittest discover -s tests`.
 
-Check-only versions (what CI runs; they write nothing): `requirements.py derive --check`, `relabel_proofs.py --check`, `build_chapters.py --check`, `capability_graph.py build --check`, `hub.py build --check`, `boot.py --static --check`, `tools/build.py --check`.
+Check-only versions (what CI runs; they write nothing): `requirements.py derive --check`, `relabel_proofs.py --check`, `build_chapters.py --check`, `requirements.py index --check`, `capability_graph.py build --check`, `capability_atlas.py build --check`, `powers.py mindmap --html references/capability-map.html --update-md references/capability-map.md --check`, `hub.py build --check`, `boot.py --static --check`, `tools/build.py --check`.
+
+The chapters (`build_chapters.py`) link related references but skip the generated ones (`INDEX.md`, `requirements.md`, `capability-atlas.md`, `capability-map.md`), so one pass of the chain converges whatever order those are rebuilt in.
 
 ## Adding a tool
 

@@ -416,6 +416,7 @@ def norm(s: str) -> str:
 STOP = {norm(w) for w in (
     "في من على إلى الى عن مع هذا هذه ذلك تلك التي الذي اللي و أو او ثم لي لك لنا ايش إيش ايه إيه وش شو كيف ماذا "
     "ما هل أنا انا أنت انت عندي اعمل اعطني أعطني ابغى ابي أبي ممكن لو سمحت عشان علشان بس كل بعض يا "
+    "ده دي دا دول هاد هادا هادي هاي هيدا هيدي "  # Egyptian / Levantine demonstratives ("this", "these")
     "the a an and or to of for in on at by my me this that these those with please can could you your i is are "
     "it be do does make some any want need how what which from into").split()}
 
@@ -1031,8 +1032,19 @@ def cmd_mindmap(powers, _styles, a) -> int:
     if getattr(a, "domain", None) and not check_domain(powers, a):
         return 2
     src = mindmap_source(powers, a)
+    check = getattr(a, "check", False)
+    if check and not (a.html or getattr(a, "update_md", None)):
+        print("--check needs --html PATH or --update-md PATH", file=sys.stderr)
+        return 2
     if getattr(a, "update_md", None):
-        return update_map_md(Path(a.update_md), src, powers)
+        rc = update_map_md(Path(a.update_md), src, powers, check=check)
+        if rc or not a.html:
+            return rc
+    if a.html and check:
+        out = Path(a.html)
+        fresh = out.is_file() and out.read_text(encoding="utf-8") == mindmap_html(src, powers, a)
+        print(f"{out}: {'up to date' if fresh else 'stale — run without --check'}")
+        return 0 if fresh else 1
     if a.html:
         out = Path(a.html)
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -1043,7 +1055,7 @@ def cmd_mindmap(powers, _styles, a) -> int:
     return 0
 
 
-def update_map_md(path: Path, src: str, powers: list) -> int:
+def update_map_md(path: Path, src: str, powers: list, check: bool = False) -> int:
     """Refresh references/capability-map.md in place: its first ```mermaid block and the
     «N مجالات → N عائلة → N قدرة» line. Hand-written prose around them is kept."""
     text = path.read_text(encoding="utf-8")
@@ -1055,6 +1067,9 @@ def update_map_md(path: Path, src: str, powers: list) -> int:
     fams = len({p.get("family") for p in powers})
     doms = len({p.get("domain") or DEFAULT_DOMAIN for p in powers})
     new = re.sub(r"\d+ مجالات → \d+ عائلة → [\d,]+ قدرة", f"{doms} مجالات → {fams} عائلة → {len(powers):,} قدرة", new)
+    if check:
+        print(f"{path}: {'stale — run without --check' if new != text else 'up to date'}")
+        return 1 if new != text else 0
     if new != text:
         path.write_text(new, encoding="utf-8")
     print(f"{path}: {'updated' if new != text else 'up to date'}")
@@ -1090,6 +1105,7 @@ def main(argv=None) -> int:
     p.add_argument("--update-md", metavar="PATH", help="refresh the map block and counts inside a Markdown page (references/capability-map.md)")
     p.add_argument("--domain", help="drill into one domain: families → top powers"); p.add_argument("--top", type=int, default=5)
     p.add_argument("--en", action="store_true", help="English labels")
+    p.add_argument("--check", action="store_true", help="with --html/--update-md: write nothing, exit 1 when the file is stale")
     sub.add_parser("env", help="probe this machine (all flags go to probe_env.py: --json --no-network --install-test --write PATH)")
     a = ap.parse_args(argv)
     powers, styles = load_powers(), load_styles()

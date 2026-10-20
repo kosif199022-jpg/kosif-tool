@@ -85,6 +85,10 @@ jobs:
         run: node --test .claude/skills/kosif-superpowers/evals/test_code_drawing_engine.mjs
       - name: Every skill eval suite (catch-all, so a new test file is never missed)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_*.py'
+      - name: Tests kept beside their tools (they back tested-here registry claims)
+        run: |
+          python3 .claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/scripts -p 'test_*.py' -v
       - name: Front door, tool registry and catalog MCP server
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_hub.py' -v
@@ -94,7 +98,10 @@ jobs:
           python3 .claude/skills/kosif-superpowers/scripts/requirements.py derive --check
           python3 .claude/skills/kosif-superpowers/scripts/relabel_proofs.py --check
           python3 .claude/skills/kosif-superpowers/scripts/build_chapters.py --check
+          python3 .claude/skills/kosif-superpowers/scripts/requirements.py index --check
           python3 .claude/skills/kosif-superpowers/scripts/capability_graph.py build --check
+          python3 .claude/skills/kosif-superpowers/scripts/capability_atlas.py build --check
+          (cd .claude/skills/kosif-superpowers && python3 scripts/powers.py mindmap --html references/capability-map.html --update-md references/capability-map.md --check)
           python3 .claude/skills/kosif-superpowers/scripts/hub.py build --check
           python3 .claude/skills/kosif-superpowers/scripts/boot.py --static --check
       - name: Node tests (generator, markdown)
