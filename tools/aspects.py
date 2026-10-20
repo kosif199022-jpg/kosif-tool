@@ -64,6 +64,8 @@ def resolve(spec) -> tuple[str, int, int]:
     m = _PIXELS.match(s)
     if m:
         w, h = _even(float(m.group(1))), _even(float(m.group(2)))
+        if not w or not h:
+            raise ValueError(f"aspect {spec!r} must be positive")
         return _label(w, h), w, h
     m = _RATIO.match(s)
     if not m:

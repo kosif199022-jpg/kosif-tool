@@ -93,6 +93,49 @@ class MotionRuntimeTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 motion.render(src,Path(tmp)/"script.sh",approved=True)
 
+    def _fake_renderer(self, cmd, **_):
+        out=Path(cmd[cmd.index("--out")+1])
+        if "--preview" in cmd:  # render_html.cjs names the sheet <out stem>_preview.png
+            out=out.with_name(out.stem+"_preview.png")
+        out.write_bytes(b"\x89PNG"+b"0"*400)
+        return subprocess.CompletedProcess(cmd,0,"","")
+
+    def test_png_preview_lands_at_requested_path(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            src=Path(tmp)/"film.html";src.write_text(motion.make_html("X","Y"))
+            dst=Path(tmp)/"preview.png"
+            with patch.object(motion.shutil,"which",return_value="/usr/bin/node"), \
+                 patch.object(motion.subprocess,"run",side_effect=self._fake_renderer) as run:
+                result=motion.render(src,dst,approved=True)
+            cmd=run.call_args[0][0]
+            self.assertIn("--preview",cmd)
+            self.assertFalse(Path(cmd[cmd.index("--out")+1]).parent.exists())  # staging folder removed
+            self.assertEqual(result["status"],"rendered_requires_visual_qa")
+            self.assertTrue(dst.is_file())
+            self.assertEqual(sorted(p.name for p in Path(tmp).iterdir()),["film.html","preview.png"])
+
+    def test_next_step_names_bundled_verifier(self):
+        self.assertTrue(motion.VERIFIER.is_file())
+        self.assertEqual(motion.VERIFIER.parent,SCRIPT.parent)
+        with tempfile.TemporaryDirectory() as tmp:
+            src=Path(tmp)/"film.html";src.write_text(motion.make_html("X","Y"))
+            with patch.object(motion.shutil,"which",return_value="/usr/bin/node"), \
+                 patch.object(motion.subprocess,"run",side_effect=self._fake_renderer):
+                result=motion.render(src,Path(tmp)/"film.mp4",approved=True)
+        self.assertIn(str(motion.VERIFIER),result["next"])
+        self.assertNotIn("tools/verify_video.py",result["next"])
+        self.assertIn("--no-audio",result["next"])
+
+    def test_readme_preview_instruction_matches_cli(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            motion.scaffold(Path(tmp)/"film","X","Y",8,30)
+            readme=(Path(tmp)/"film"/"README.md").read_text(encoding="utf-8")
+        self.assertNotIn("use --preview",readme)
+        self.assertIn("--out /absolute/project/preview.png",readme)
+        p=subprocess.run([sys.executable,str(SCRIPT),"render","--help"],capture_output=True,text=True,timeout=8)
+        self.assertEqual(p.returncode,0,p.stderr)
+        self.assertNotIn("--preview",p.stdout)
+
     def test_cli_doctor_reports_real_probes_not_rendered(self):
         p=subprocess.run([sys.executable,str(SCRIPT),"doctor"],capture_output=True,
                          text=True,timeout=8)

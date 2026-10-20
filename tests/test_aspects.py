@@ -28,7 +28,7 @@ class AspectsTest(unittest.TestCase):
 
     def test_ratio_and_validation(self):
         self.assertAlmostEqual(ratio_of("2.35:1"), 1920 / 818, places=3)
-        for bad in ("", "abc", "0:1", "10:1", "1x1"):
+        for bad in ("", "abc", "0:1", "10:1", "1x1", "10x00"):
             self.assertFalse(is_valid(bad), bad)
 
     def test_cli_prompt_accepts_any_aspect(self):
@@ -38,8 +38,11 @@ class AspectsTest(unittest.TestCase):
                                capture_output=True, text=True, encoding="utf-8")
             self.assertEqual(p.returncode, 0, p.stderr)
             self.assertIn(res, p.stdout, spec)
-        bad = subprocess.run([sys.executable, str(ROOT / "tools" / "kosif.py"), "prompt", rec, "--aspect", "junk"], capture_output=True, text=True)
-        self.assertNotEqual(bad.returncode, 0)
+        for spec in ("junk", "1x1", "10x00"):  # pixel specs are validated too: argparse error, no traceback
+            bad = subprocess.run([sys.executable, str(ROOT / "tools" / "kosif.py"), "prompt", rec, "--aspect", spec], capture_output=True, text=True)
+            self.assertEqual(bad.returncode, 2, spec)
+            self.assertIn("argument --aspect", bad.stderr, spec)
+            self.assertNotIn("Traceback", bad.stderr, spec)
 
     def test_generator_mirrors_python(self):
         js = ("import('./web/generator.js').then(g=>{const o={};for(const s of %s){const r=g.resolveAspect(s);o[s]=[r.w,r.h]}"

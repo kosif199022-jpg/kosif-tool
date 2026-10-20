@@ -37,13 +37,13 @@ These are runnable local motion mechanics, not claims that Blender, GSAP, Remoti
        python3 $SKILL_DIR/scripts/motion_runtime.py render --in /absolute/new_project/film.html --out /absolute/new_project/preview.png --fps 30 --run
        python3 $SKILL_DIR/scripts/motion_runtime.py render --in /absolute/new_project/film.html --out /absolute/new_project/film.mp4 --fps 30 --run
 
-   Requires Node.js, a configured Chromium/Playwright runtime, the bundled renderer and FFmpeg. Does not install anything. The renderer and verification helpers are copied from KOSIF's own MIT-licensed repository files and included in the skill upload.
+   A .png output is an 8-frame contact-sheet preview; a .mp4 output is the film. Requires Node.js, a configured Chromium/Playwright runtime, the bundled renderer and FFmpeg. Does not install anything. The renderer and verification helpers are copied from KOSIF's own MIT-licensed repository files and included in the skill upload.
 5. To incorporate original voice use --audio /absolute/original.wav with MP4. User audio stays the master clock; align beats/words to the storyboard and revise frame timings, not the voice.
 6. After render, inspect frames and ffprobe output. From any working directory with SKILL_DIR pointing to the skill:
 
        python3 $SKILL_DIR/scripts/verify_video.py /absolute/new_project/film.mp4 --aspect 9:16 --fps 30 --duration 8
 
-   Add --audio /absolute/original.wav only when original voice was included. Record exact artifact paths and failures. Do not call preview or CLI exit-code proof of creative correctness.
+   Add --audio /absolute/original.wav only when original voice was included; otherwise add --no-audio, because a render without --audio has no audio track. Record exact artifact paths and failures. Do not call preview or CLI exit-code proof of creative correctness.
 
 **Limit:** The example uses a fixed eight-second sequence; increasing duration requires extending the actual drawing/character/storyboard. This produces true moving frames, not static slide cuts, but is not a generalized movie editor.
 
