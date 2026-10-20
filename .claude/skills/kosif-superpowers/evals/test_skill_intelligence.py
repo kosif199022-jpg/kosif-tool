@@ -111,6 +111,20 @@ class ProtocolTests(unittest.TestCase):
             self.assertIn("montage-pro", ids, k)
             self.assertIn("telegram-typography-atlas", ids, k)
 
+    def test_specialised_tools_only_when_asked(self):
+        import hub
+        three = {"id": "x", "area": "3d"}; audio = {"id": "y", "area": "audio"}; draw = {"id": "z", "area": "draw"}
+        self.assertFalse(hub.off_request(three, "اعمل فيديو ثري دي لمنتج"))
+        self.assertFalse(hub.off_request(three, "build a webgl low poly scene"))
+        self.assertTrue(hub.off_request(three, "موديل عمل جديد للشركة"))          # a business model, not a 3D model
+        self.assertFalse(hub.off_request(audio, "اعمل نشيد بصوتي"))
+        self.assertFalse(hub.off_request(audio, "convert my srt captions to words.json"))
+        self.assertTrue(hub.off_request(audio, "اعمل فاتورة ومخزون لمحل"))      # nothing about sound
+        self.assertTrue(hub.off_request(audio, "a soundness proof for the parser"))  # 'sound' only as a whole word
+        self.assertFalse(hub.off_request(draw, "ارسم ماسكوت كرتون"))
+        self.assertTrue(hub.off_request({"id": "web-app-study", "area": "investigate"}, "ابني تطبيق ويب بـ three.js"))
+        self.assertFalse(hub.off_request({"id": "web-app-study", "area": "investigate"}, "حلل موقع منافس مبني بإيه"))
+
     def test_count_and_deep(self):
         sp = [x["id"] for x in self.b["plans"]["A"]["superpowers"]]
         c = S.count(sp)

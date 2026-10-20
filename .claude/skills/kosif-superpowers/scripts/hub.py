@@ -392,6 +392,29 @@ def tool_card(t: dict, reg: dict, full: bool = True) -> dict:
 
 
 # ------------------------------------------------------------------ find
+AREA_NEEDS_WORDS = {  # matched on the normalised request + --terms
+    "3d": r"3d|3-d|ثلاثي|ثري ?دي|تري ?دي|بلندر|blender|\bglb\b|gltf|three|webgl|low.?poly|\bmesh(?:es)?\b|turntable|ray ?trac|مجسم|موديل (?:ثلاثي|ثري|3d)|نموذج ثلاثي",
+    "audio": r"صوت|موسيق|مزيك|اغني|اغان|نشيد|اناشيد|تلاوه|قران|بودكاست|ايقاع|بيت|audio|\bsounds?\b|\bvoice(?:over)?s?\b|narrat(?:ion|or)|music|\bsongs?\b|podcast|nasheed|\bbeats?\b|\btracks?\b|\bsfx\b|\bmp3\b|\bwav\b|caption|subtitle|\bsrt\b|\bvtt\b|words\.json|lyric|ترجمه|توقيت|تفريغ",
+    "draw": r"رسم|ارسم|رسوم|شخصي|كرتون|كاريكاتير|اسكتش|draw|sketch|paint|illustrat|character|cartoon|doodle|mascot|ماسكوت",
+}
+TOOL_NEEDS_WORDS = {  # tools that act on third-party sites or need consent: only when the request asks for that
+    "web-app-study": r"حلل|ادرس|افحص|استكشف|\bstudy\b|analy[sz]|inspect|built with|tech ?stack|مبني ب|معمول ب|منافس|competitor|reverse",
+}
+
+
+def _norm_ar(s: str) -> str:
+    s = re.sub(r"[\u064b-\u0652\u0640]", "", (s or "").lower())
+    return s.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا").replace("ة", "ه").replace("ى", "ي")
+
+
+def off_request(tool: dict, brief: str) -> bool:
+    """A specialised (3D, audio, drawing) or consent-heavy tool that the request does not ask for."""
+    text = _norm_ar(brief)
+    area_rx = AREA_NEEDS_WORDS.get(tool.get("area"))
+    tool_rx = TOOL_NEEDS_WORDS.get(tool.get("id"))
+    return bool((area_rx and not re.search(area_rx, text)) or (tool_rx and not re.search(tool_rx, text)))
+
+
 def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = None, powers: list = None) -> dict:
     reg = reg or load_registry()
     pw = powers if powers is not None else P.load_powers()
@@ -399,7 +422,8 @@ def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = N
     sug = P.suggest(pw, styles, brief, limit=max(limit_powers, 12))
     terms = terms_of(brief)
     power_fams = Counter(p.get("family") for _s, p in sug["picked"])
-    tools = rank_tools(reg, brief, terms, power_fams, limit_tools, {P.prefix_of(p): p["family"] for p in pw})
+    tools = rank_tools(reg, brief, terms, power_fams, limit_tools + 6, {P.prefix_of(p): p["family"] for p in pw})
+    tools = sorted(tools, key=lambda st: off_request(st[1], brief))[:limit_tools]   # stable: relevant tools first
     entries = doc_entries(reg)
     docs = _guides_for(tools, entries, terms)
     fam_chapters = [f"references/powers/{f}.md" for f in sug["chapters"][:4]]

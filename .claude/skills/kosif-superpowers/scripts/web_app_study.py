@@ -129,7 +129,15 @@ def origin_of(url: str) -> str:
     if u.username or u.password:
         raise ValueError("credentials in the URL are a login; the study is always logged out")
     host = u.hostname
-    host = f"[{host}]" if ":" in host else host.encode("idna").decode("ascii")
+    if ":" in host:
+        host = f"[{host}]"
+    else:
+        try:
+            host = host.encode("idna").decode("ascii")
+        except UnicodeError:
+            raise ValueError("invalid host name") from None
+        if not re.fullmatch(r"[a-z0-9.-]+", host):   # nothing a shell could reinterpret
+            raise ValueError("invalid host name")
     default = {"http": 80, "https": 443}[u.scheme]
     port = f":{u.port}" if u.port and u.port != default else ""
     return f"{u.scheme}://{host}{port}"
@@ -159,8 +167,16 @@ def check_out_dir(out: Path) -> Path:
     return out
 
 
+def rea_argv() -> list | None:
+    """REA without any shell: on Windows `node …/rea.mjs` instead of the rea.cmd shim (shared with rea_bridge)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from rea_bridge import rea_launcher
+    return rea_launcher()
+
+
 def find_rea() -> str | None:
-    return shutil.which("rea") or shutil.which("rea.cmd")
+    launcher = rea_argv()
+    return " ".join(launcher) if launcher else None
 
 
 def find_chromium(explicit: str | None = None) -> str | None:
@@ -279,7 +295,7 @@ def run_rea(rea: str, args: list, dest: Path, timeout: int) -> dict:
     import tempfile
     t0 = time.time()
     with open(dest, "wb") as fh, tempfile.TemporaryFile() as err:
-        p = subprocess.Popen([rea, *args, "--format", "json"], stdout=fh, stderr=err, **_spawn_kwargs())
+        p = subprocess.Popen([*rea, *args, "--format", "json"], stdout=fh, stderr=err, **_spawn_kwargs())
         try:
             rc = p.wait(timeout=timeout)
         except subprocess.TimeoutExpired:
@@ -326,7 +342,7 @@ def run(url: str, out: str, allow=(), obs_ms: int = 3000, chromium: str | None =
     out_p = check_out_dir(Path(out))
     if port:
         raise ValueError("--port is not used any more: the study browser picks a free port and is verified by its profile")
-    rea, chrome = find_rea(), find_chromium(chromium)
+    rea, chrome = rea_argv(), find_chromium(chromium)
     profile = out_p / "isolated-profile"
     argv = browser_argv(chrome or "<chromium>", url, profile, proxy)
     plan = {"url": safe_url(url), "origins": origins, "out": str(out_p), "browser": argv,
@@ -336,7 +352,7 @@ def run(url: str, out: str, allow=(), obs_ms: int = 3000, chromium: str | None =
     if dry_run:
         return {"dry_run": True, "plan": plan}
     if not rea:
-        raise RuntimeError("REA not found: npm install -g rea-agents (https://github.com/morluto/rea)")
+        raise RuntimeError("REA not found (or only a .cmd shim without node): npm install -g rea-agents (https://github.com/morluto/rea)")
     if not chrome:
         raise RuntimeError("no Chromium/Chrome/Edge found; pass --chromium PATH")
     out_p.mkdir(parents=True, exist_ok=True)
@@ -392,7 +408,7 @@ def run(url: str, out: str, allow=(), obs_ms: int = 3000, chromium: str | None =
     ok = {s["command"]: s["rc"] == 0 for s in steps}
     complete = error is None and all(ok.get(c) for c in REQUIRED_STEPS)
     browser = ((_load(out_p / "01-targets.json").get("normalized_result") or {}).get("browser") or {}).get("product") or "unknown"
-    receipts = {"tool": f"web_app_study.py {VERSION}", "rea": _version([rea, "--version"]), "browser": browser,
+    receipts = {"tool": f"web_app_study.py {VERSION}", "rea": _version([*rea, "--version"]), "browser": browser,
                 "url": safe_url(url), "origins": origins, "started_at": started, "complete": complete, "error": error,
                 "profile_deleted": not profile.exists(), "login": False, "steps": steps, "artifacts": _artifact_receipts(out_p)}
     (out_p / "receipts.json").write_text(json.dumps(receipts, indent=2) + "\n", encoding="utf-8")

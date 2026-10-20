@@ -2102,6 +2102,11 @@
    "label": "scripts/aspects.py"
   },
   {
+   "id": "script:scripts/web_app_study.py",
+   "kind": "script",
+   "label": "scripts/web_app_study.py"
+  },
+  {
    "id": "script:scripts/python_package_probe.py",
    "kind": "script",
    "label": "scripts/python_package_probe.py"
@@ -2315,6 +2320,11 @@
    "id": "test:tests/test_tools_extra.py",
    "kind": "test",
    "label": "tests/test_tools_extra.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_web_app_study.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_web_app_study.py"
   }
  ],
  "edges": [
@@ -6622,6 +6632,12 @@
   },
   {
    "from": "script:scripts/skill_intelligence.py",
+   "to": "script:scripts/hub.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/skill_intelligence.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
@@ -6797,6 +6813,12 @@
   {
    "from": "script:scripts/verify_video.py",
    "to": "script:scripts/aspects.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/web_app_study.py",
+   "to": "script:scripts/rea_bridge.py",
    "rel": "imports",
    "w": 1
   },
@@ -7175,6 +7197,12 @@
   {
    "from": "script:scripts/verify_video.py",
    "to": "test:tests/test_tools_extra.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/web_app_study.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_web_app_study.py",
    "rel": "tested_by",
    "w": 1
   }

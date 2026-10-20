@@ -228,9 +228,9 @@ DELIVERABLES = [  # priority order: the first that matches is the primary delive
     ("reverse", r"هندسه عكسيه|جفرا|ghidra|\brea\b|reverse|binary|\.exe|\.dll|\.apk|app\.asar|\basar\b|electron|الكترون"),
     ("code", r"كود|برمجه|تطبيق|موقع|سكربت|\bbug\b|\bcode\b|\bapp\b|website|script|\bapi\b|repo|مستودع|برنامج"),
     ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|(?<![ء-ي])[وف]?(?:حرك|متحرك|متحركه)(?![ء-ي])|فيلم|video|montage|\breels?\b|motion|animation|film|\bmp4\b|lyric|كلمات (?:ال)?اغني(?:ه|تي)"),
-    ("audio", r"بودكاست|موسيقى|اغني(?:ه|تي|ات)|podcast|music|song"),
+    ("audio", r"بودكاست|موسيقى|اغني(?:ه|تي|ات)|نشيد|اناشيد|تلاوه|podcast|music|song|nasheed"),
     ("3d", r"ثلاثي|\b3d\b|بلندر|blender|\bglb\b|three\.?js"),
-    ("image", r"صوره|صور|تصميم|بوستر|شعار|لوجو|بطاقه|كارت|دعوه|غلاف|هويه بصريه|image|photo|poster|logo|design|\bcard\b|invitation|\bcover\b|\bpng\b|\bjpg\b"),
+    ("image", r"صوره|صور|تصميم|بوستر|شعار|لوجو|بطاقه|كارت|دعوه|غلاف|هويه بصريه|(?<![ء-ي])[وف]?(?:ا)?رسم|ماسكوت|image|photo|poster|logo|design|illustrat|mascot|\bcard\b|invitation|\bcover\b|\bpng\b|\bjpg\b"),
     ("data", r"بيانات|اكسل|جدول|\bdata\b|\bcsv\b|excel|chart|dashboard"),
     ("document", r"تقرير|مستند|وورد|\bpdf\b|عرض تقديمي|شرائح|report|document|docx|slides|deck|مقال|article"),
     ("research", r"ابحث|مصادر|research|sources|قارن|compare"),
@@ -294,8 +294,7 @@ ASSET_LIBRARIES = [{
 }]
 
 
-AREA_NEEDS_WORDS = {"3d": r"3d|ثلاثي|بلندر|blender|\bglb\b|three|مجسم", "audio": r"صوت|صوتي|موسيقى|اغني|audio|music|song|podcast|بودكاست|ايقاع|beat",
-                    "draw": r"رسم|ارسم|شخصيه|draw|sketch|paint|character|كرتون"}
+from hub import AREA_NEEDS_WORDS, TOOL_NEEDS_WORDS  # noqa: E402  (one shared relevance gate with the front door)
 BILINGUAL_RX = r"انجليزي|انكليزي|english|\blatin\b|لاتيني|ثنائي اللغه|bilingual"
 
 
@@ -632,9 +631,13 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
             reg_t = tools.get(t["id"], {})
             if not set(reg_t.get("families", [])) & short_fams:
                 continue
+            asked = norm_ar((task + " " + (terms or "")).lower())
             area_rx = AREA_NEEDS_WORDS.get(reg_t.get("area"))
-            if area_rx and an["primary"] != reg_t.get("area") and not re.search(area_rx, norm_ar(task.lower())):
+            if area_rx and an["primary"] != reg_t.get("area") and not re.search(area_rx, asked):
                 continue   # a specialised tool (3D, audio, drawing) only when the request is about that
+            tool_rx = TOOL_NEEDS_WORDS.get(t["id"])
+            if tool_rx and not re.search(tool_rx, asked):
+                continue
             tools_hit.append({"id": t["id"], "title_ar": t.get("title_ar"), "title_en": t.get("title_en"), "area": t.get("area"),
                               "state": (t.get("readiness") or {}).get("state"), "missing": (t.get("readiness") or {}).get("missing", []),
                               "command": t.get("first_command") or ((reg_t.get("commands") or [{}])[0].get("example")),

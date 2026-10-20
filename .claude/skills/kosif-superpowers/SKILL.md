@@ -18,7 +18,7 @@ When asked to discover, assess or fuse external **KOSIF Atlas** skills, preserve
 
 ## Atlas Stratified Source Methods — verified provenance, not executable imports
 
-When the task genuinely needs an Atlas methodology not covered by existing Superpowers, use the local **[15 distilled method protocols](references/atlas-distilled-operating-methods-20261020.md)**. Run `python scripts/atlas_task_method_router.py --task "<user task>"` to return up to **two** source-backed candidates with individual source paths and SHA-256 receipts. The companion `scripts/atlas_bulk_source_audit.py` and `scripts/atlas_review_summary.py` make a repeatable plan → selected source-text audit → provenance chain. [Machine evidence](data/atlas-method-provenance-20261020.json) covers 14,793 catalog metadata records and 395 source-text samples (258 tentative guidance candidates; 137 manual-review). Existing 5,297 native powers remain first, and this routing never executes third-party content, installs an engine or declares REA/Ghidra performed a binary analysis without an actual target. Respect license provenance, copyleft boundaries and higher-priority permissions.
+When the task genuinely needs an Atlas methodology not covered by existing Superpowers, use the local **[15 distilled method protocols](references/atlas-distilled-operating-methods-20261020.md)**. Run `python scripts/atlas_task_method_router.py --task "<user task>"` to return up to **two** source-backed candidates with individual source paths and SHA-256 receipts. The companion `scripts/atlas_bulk_source_audit.py` and `scripts/atlas_review_summary.py` make a repeatable plan → selected source-text audit → provenance chain. [Machine evidence](data/atlas-method-provenance-20261020.json) covers 14,793 catalog metadata records and 395 source-text samples (258 tentative guidance candidates; 137 manual-review). Existing 5,318 native powers remain first, and this routing never executes third-party content, installs an engine or declares REA/Ghidra performed a binary analysis without an actual target. Respect license provenance, copyleft boundaries and higher-priority permissions.
 
 ## CapCut-to-KOSIF evidence-led capability planning (research, not imported code)
 
@@ -135,7 +135,7 @@ Use the **generated bilingual capability index** at [references/capability-atlas
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
 <!-- counts: powers=5318 families=62 domains=10 styles=289 watched=254 proven=920 ready=642 install=971 key=176 seen=609 documented=1929 idea=71 -->
-**الأرقام / counts:** 5,318 قدرة في 62 عائلة و10 مجالات — ✅ 920 · 🟢 642 · 📦 971 · 🔑 176 · 👁 609 · 📄 1,909 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+**الأرقام / counts:** 5,318 قدرة في 62 عائلة و10 مجالات — ✅ 920 · 🟢 642 · 📦 971 · 🔑 176 · 👁 609 · 📄 1,929 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## الفهرس / contents
 - [بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol](#00-بروتوكول-ذكاء-المهارات-الشامل--universal-skill-intelligence-protocol)

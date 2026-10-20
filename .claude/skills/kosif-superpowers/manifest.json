@@ -8219,11 +8219,10 @@
    "requires": {
     "python": [],
     "binaries": [
-     "chromium"
+     "chromium",
+     "rea"
     ],
-    "node": [
-     "rea-agents"
-    ],
+    "node": [],
     "optional": [],
     "network": true
    },
@@ -8241,7 +8240,7 @@
     "app-feature-transfer"
    ],
    "evidence": "tested-here",
-   "evidence_note": "10 tests here, one a live end-to-end study of a local page with REA 6.7.0 and Chromium 141 (DevToolsActivePort verified, profile deleted and checked, receipts, screenshot); real run on https://www.magicpath.ai on 2026-10-20.",
+   "evidence_note": "Tests in evals/test_web_app_study.py run here, one a live end-to-end study of a local page with REA 6.7.0 and Chromium 141 (DevToolsActivePort verified, profile deleted and checked, receipts, screenshot); real run on https://www.magicpath.ai on 2026-10-20.",
    "power_id": "TOOL-62",
    "safe_commands": [
     "doctor"
