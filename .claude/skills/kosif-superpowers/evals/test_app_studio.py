@@ -12,8 +12,11 @@ import threading
 import unittest
 import warnings
 
-import numpy as np
-import cv2
+try:
+    import numpy as np
+    import cv2
+except ImportError as exc:  # optional extras: pip install numpy opencv-python-headless pillow
+    raise unittest.SkipTest(f"App Studio tests need numpy and opencv-python-headless ({exc})")
 
 PATH = Path(__file__).resolve().parents[1] / "scripts" / "app_studio.py"
 spec = importlib.util.spec_from_file_location("app_studio", PATH)
@@ -269,6 +272,7 @@ class AppStudioTests(unittest.TestCase):
             self.assertIn("yunet", str(exc).lower())
 
     # --- design / procedural
+    @unittest.skipUnless(importlib.util.find_spec("shapely"), "pip install shapely")
     def test_boolean(self):
         j = self.d / "shapes.json"
         j.write_text(json.dumps([{"circle": [0, 0, 50]}, {"rect": [0, -60, 80, 120]}]))

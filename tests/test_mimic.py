@@ -18,7 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MIMIC = ROOT / ".claude" / "skills" / "kosif-superpowers" / "scripts" / "mimic"
-HAVE_DEPS = all(importlib.util.find_spec(m) for m in ("numpy", "PIL")) and shutil.which("ffmpeg") and shutil.which("ffprobe")
+HAVE_DEPS = all(importlib.util.find_spec(m) for m in ("numpy", "PIL", "cv2", "fontTools")) and shutil.which("ffmpeg") and shutil.which("ffprobe")
 HEAVY = os.environ.get("KOSIF_SKIP_HEAVY") != "1"
 
 
@@ -29,7 +29,7 @@ class MimicLayoutTest(unittest.TestCase):
         src = (MIMIC / "mm_common.py").read_text(encoding="utf-8")
         self.assertIn('"proofs" / "_shared" / "fonts"', src)
         if not HAVE_DEPS:
-            self.skipTest("numpy/Pillow/ffmpeg missing")
+            self.skipTest("numpy/Pillow/OpenCV/fontTools/ffmpeg missing")
         out = subprocess.run([sys.executable, "-c", "import mm_common, mm_fonts_lib; "
                               "print(len(mm_common.FONT_DIRS), len(mm_fonts_lib.library(include_system=False)))"],
                              cwd=MIMIC, capture_output=True, text=True, check=True)
@@ -38,7 +38,7 @@ class MimicLayoutTest(unittest.TestCase):
         self.assertGreaterEqual(faces, 6)
 
 
-@unittest.skipUnless(HAVE_DEPS and HEAVY, "needs numpy, Pillow, ffmpeg (set KOSIF_SKIP_HEAVY=1 to skip)")
+@unittest.skipUnless(HAVE_DEPS and HEAVY, "needs numpy, Pillow, OpenCV, fontTools, ffmpeg (set KOSIF_SKIP_HEAVY=1 to skip)")
 class MimicSyntheticTest(unittest.TestCase):
     def test_synthetic_scorecard(self):
         with tempfile.TemporaryDirectory() as tmp:
