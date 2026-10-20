@@ -13,3 +13,10 @@ Rules:
 - Scaffold with `python3 tools/kosif.py scaffold <id> <dir>`; preview with `node tools/render_html.cjs --preview` (or Remotion) before the final render; verify duration, fps and audio with `templates/TEST_REPORT.md`.
 - Do not copy third-party videos, prompts, code or media without a compatible license; link and credit instead.
 - After changing the catalog run `python3 tools/build.py` and `python3 tools/validate.py`; after changing the skill's catalog or tool registry follow `.claude/skills/kosif-superpowers/references/guides/maintain.md`.
+
+## Smart capability index — Claude's 3-minute map
+
+Before exploring thousands of individual power cards, read `.claude/skills/kosif-superpowers/references/CLAUDE_3_MINUTE_MAP.md`.
+The deterministic index maps all 5,185 original powers (61 families) into 15 task-oriented groups; names, evidence, dependencies and original IDs are preserved.
+Run `python .claude/skills/kosif-superpowers/scripts/smart_capabilities.py groups` for the overview, `find "<task>" --json` for matched groups and powers, and `verify` to check the source-to-index mapping. Follow with `hub.py find` and `hub.py doctor` before any action.
+Grouping alone is not executable fusion: connect components only through tested workflows, and report missing runtime dependencies separately. Use REA/Ghidra only for suitable authorized executable targets, not catalog JSON.
