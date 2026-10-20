@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5297,
+  "powers": 5318,
   "families": 62,
   "domains": 10,
-  "tools": 114,
+  "tools": 115,
   "guides": 95,
   "statuses": {
-   "documented": 1909,
+   "documented": 1929,
    "idea": 71,
    "install": 971,
    "key": 176,
-   "proven": 919,
+   "proven": 920,
    "ready": 642,
    "seen": 609
   }
@@ -242,9 +242,9 @@
    "domain": "build",
    "title_ar": "قدرات التطبيقات المحللة",
    "title_en": "Analyzed app capabilities",
-   "count": 119,
+   "count": 139,
    "statuses": {
-    "documented": 21,
+    "documented": 41,
     "install": 1,
     "proven": 96,
     "ready": 1
@@ -885,10 +885,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 61,
+   "count": 62,
    "statuses": {
     "install": 5,
-    "proven": 51,
+    "proven": 52,
     "ready": 5
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -8154,6 +8154,98 @@
    "families": [
     "software-investigation",
     "self-discovery"
+   ]
+  },
+  {
+   "id": "web-app-study",
+   "path": "scripts/web_app_study.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "investigate",
+   "title_en": "Web app study (public frontend, REA, facts only)",
+   "title_ar": "دراسة تطبيق ويب عام بـ REA (حقائق فقط)",
+   "summary_en": "Studies one public web page read-only: an isolated, logged-out headless Chromium (fresh profile, deleted afterwards), then REA captures the page, page-declared WebMCP tools, a screenshot and the public scripts, with SHA-256 receipts; optional bounded static JavaScript analysis. report turns a study folder into facts only: framework and versions, canvas/editor/realtime libraries, services inferred from storage key NAMES, WebMCP tools and page metrics, each with file-and-identifier evidence and never code. Written for the MagicPath study; works on Windows, macOS and Linux.",
+   "summary_ar": "يدرس صفحة ويب عامة للقراءة فقط: متصفح معزول بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح التخزين، بدليل اسم ملف ومعرّف، وبلا أي كود.",
+   "use_when": [
+    "حلل واجهة موقع MagicPath العامة بـ REA واعرف مبني بإيه",
+    "Study a public web app's frontend stack and declared WebMCP tools without logging in",
+    "اعمل تقرير تقني عن تطبيق ويب عشان نستلهم أفكاره بدون نسخ كوده"
+   ],
+   "keywords": [
+    "web app",
+    "website",
+    "frontend",
+    "stack",
+    "bundle",
+    "javascript",
+    "nextjs",
+    "react",
+    "webmcp",
+    "rea",
+    "browser",
+    "cdp",
+    "screenshot",
+    "reverse engineering",
+    "تحليل موقع",
+    "واجهة",
+    "تطبيق ويب",
+    "هندسة عكسية",
+    "مبني بإيه",
+    "magicpath"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/web_app_study.py doctor",
+     "does": "Finds REA and a Chromium/Chrome/Edge binary."
+    },
+    {
+     "name": "run (plan only)",
+     "example": "python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example --dry-run",
+     "does": "Prints the isolated browser command and every REA step without starting anything."
+    },
+    {
+     "name": "run",
+     "example": "python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example",
+     "does": "Isolated logged-out capture: targets, page (scripts, storage key names), WebMCP tools, screenshot, script export, receipts, then the report. Add --deep for REA's bounded static JavaScript analysis."
+    },
+    {
+     "name": "report",
+     "example": "python3 scripts/web_app_study.py report ~/kosif-studies/example",
+     "does": "Facts-only report.json and report.md from a study folder."
+    }
+   ],
+   "inputs": "One public http(s) URL the user may study, plus optional extra exact origins",
+   "outputs": "A study folder outside any git checkout: REA JSON artifacts, screenshot.png, exported public scripts (never commit them), receipts.json with SHA-256, report.json and report.md (facts only)",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "chromium"
+    ],
+    "node": [
+     "rea-agents"
+    ],
+    "optional": [],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "Visits the given public URL in a fresh, logged-out browser and saves its public scripts to a folder outside the repo. Only for sites the user may study; never log in, never commit the exported scripts, borrow ideas in your own words.",
+   "limits": "One page per run, logged out, so features behind sign-in are not observed; storage values, cookies and request bodies are never kept; library detection is identifier-based (a name can appear without the library being used — confidence is shown); the unbounded REA bundle analyzer is not used because it ran out of memory on MagicPath's 5.9 MB bundle.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_web_app_study.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+   ],
+   "families": [
+    "software-investigation",
+    "app-feature-transfer"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "5 tests here, one of them a live end-to-end study of a local page with REA 6.7.0 and Chromium 141 (profile deleted, receipts, screenshot); real run on https://www.magicpath.ai on 2026-10-20.",
+   "power_id": "TOOL-62",
+   "safe_commands": [
+    "doctor"
    ]
   },
   {

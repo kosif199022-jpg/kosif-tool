@@ -11,6 +11,7 @@ KOSIF TOOL's own code and text are under the MIT license in [LICENSE](LICENSE). 
 | Tesseract `ara.traineddata` | optional `assets/tessdata/` cache | Apache-2.0 (tesseract-ocr/tessdata) | Fetched on demand; never committed. |
 | REA (`rea-agents`) | not vendored; installed by the user with npm | MIT (© 2026 morluto); bring-your-own engines keep their own terms | Catalogued as powers REA-001…REA-153. |
 | Owner-uploaded skill packages (KOSIF SEE, cinematic kits, mimic, Higgsfield motion skills, film project) | distilled in `references/*.md` in the owner's own words | owner's material (no LICENSE file in the uploads) | Ported scripts rest on the owner's upload as consent; third-party quotes inside them stay reference-only. |
+| MagicPath agent skills (MagicPathAI/agent-skills, a1ced96) and MagicPath public documentation | method ideas only, rewritten in KOSIF's words: APPX-120…APPX-139, `.claude/skills/kosif-superpowers/references/app-studies/magicpath.md` | agent-skills: MIT as declared in its plugin manifests (© MagicPathAI); documentation: proprietary, nothing copied | No MagicPath text, code, scripts or images are in the repo; the exported public scripts of the study stay outside it. |
 | Third-party videos, prompts and media named in `styles/` and `references/` | links only | their authors' terms | Credited, never copied. |
 
 العربية: كود KOSIF ونصوصه بترخيص MIT؛ ما في الجدول أعلاه يحتفظ بترخيصه، ولا يُضمَّن في المستودع إلا ما ذُكر.

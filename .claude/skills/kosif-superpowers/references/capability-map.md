@@ -1,6 +1,6 @@
 # خريطة القدرات الذهنية — Capability mind map
 
-> **ما هذه؟** خريطة ذهنية لكل قواك: 10 مجالات → 62 عائلة → 5,297 قدرة، مع أقوى شارة دليل في كل فرع. افتحها حين تبدأ مهمة كبيرة أو حين يسألك المستخدم «تقدر تعمل إيه؟»، ثم انزل من المجال إلى العائلة إلى القدرة.
+> **ما هذه؟** خريطة ذهنية لكل قواك: 10 مجالات → 62 عائلة → 5,318 قدرة، مع أقوى شارة دليل في كل فرع. افتحها حين تبدأ مهمة كبيرة أو حين يسألك المستخدم «تقدر تعمل إيه؟»، ثم انزل من المجال إلى العائلة إلى القدرة.
 > **What it gives you:** one picture of everything you can do, so you combine powers across domains instead of reaching for the first tool you remember. Regenerate after any catalog change: `python3 scripts/powers.py mindmap` (Mermaid text) or `--html references/capability-map.html` (standalone page). Drill into one domain with `--domain mind`.
 
 > **الخريطة المترابطة / connected graph:** [capability-graph.html](capability-graph.html) تربط كل عائلة بمستلزماتها والسكربتات التي تنفذها والاختبارات التي تثبتها (طبقة الكود من Graphify + تحليل محلي). `python3 scripts/capability_graph.py build`
@@ -17,7 +17,7 @@
 
 ```mermaid
 mindmap
-  root((Kosif superpowers · 5297))
+  root((Kosif superpowers · 5318))
     n1["`304 · ✅42
 العقل والتفكير`"]
       n2["`MODEL · 63 · 📄63
@@ -78,11 +78,11 @@ mindmap
 البحث على الويب`"]
       n30["`AWEB · 9 · 📄9
 أطلس: البحث والمعرفة`"]
-    n31["`253 · ✅153
+    n31["`274 · ✅154
 التطبيقات والواجهات`"]
-      n32["`APPX · 119 · ✅96
+      n32["`APPX · 139 · ✅96
 قدرات التطبيقات المحللة`"]
-      n33["`TOOL · 61 · ✅51
+      n33["`TOOL · 62 · ✅52
 الأدوات القابلة للتشغيل`"]
       n34["`ABUILD · 50 · 📄50
 أطلس: التطبيقات والواجهات والتكاملات`"]

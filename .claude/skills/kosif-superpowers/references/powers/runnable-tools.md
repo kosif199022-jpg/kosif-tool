@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **61 powers follow** — ✅ 51 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **62 powers follow** — ✅ 52 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -19,7 +19,7 @@
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-35 (7)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-26 (2)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-31 (5)
-- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-54 (4)
+- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-62 (5)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-60 (6)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-41 (6)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-61 (2)
@@ -362,6 +362,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_repository_capability_packer.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/repository_capability_packer.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-62 · دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يدرس صفحة ويب عامة للقراءة فقط: متصفح معزول بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح التخزين، بدليل اسم ملف ومعرّف، وبلا أي كود. — Studies one public web page read-only: an isolated, logged-out headless Chromium (fresh profile, deleted afterwards), then REA captures the page, page-declared WebMCP tools, a screenshot and the public scripts, with SHA-256 receipts; optional bounded static JavaScript analysis. report turns a study folder into facts only: framework and versions, canvas/editor/realtime libraries, services inferred from storage key NAMES, WebMCP tools and page metrics, each with file-and-identifier evidence and never code. Written for the MagicPath study; works on Windows, macOS and Linux.
+- **متى أستخدمها / when:** حلل واجهة موقع MagicPath العامة بـ REA واعرف مبني بإيه / Study a public web app's frontend stack and declared WebMCP tools without logging in
+- **كيف / how:** doctor: `python3 scripts/web_app_study.py doctor`; run (plan only): `python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example --dry-run`; run: `python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example`; report: `python3 scripts/web_app_study.py report ~/kosif-studies/example`. Full card: `python3 scripts/hub.py tool web-app-study`. Limits: One page per run, logged out, so features behind sign-in are not observed; storage values, cookies and request bodies are never kept; library detection is identifier-based (a name can appear without the library being used — confidence is shown); the unbounded REA bundle analyzer is not used because it ran out of memory on MagicPath's 5.9 MB bundle. **أرقام / params:** in: One public http(s) URL the user may study, plus optional extra exact origins · out: A study folder outside any git checkout: REA JSON artifacts, screenshot.png, exported public scripts (never commit them), receipts.json with SHA-256, report.json and report.md (facts only)
+- **تثبيت / install:** `npm install rea-agents · needs on PATH: chromium`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`npm:react`](../requirements.md#req-npm-react) · [`npm:rea`](../requirements.md#req-npm-rea) · [`os:macos`](../requirements.md#req-os-macos)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_web_app_study.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/web_app_study.py`
+- **المصدر / source:** data/tools.json
+
 ## Maintain and build / الصيانة والبناء
 
 #### TOOL-33 · تدقيق أدلة الكتالوج · Catalog Evidence Audit · 🟢 جاهز / ready
@@ -580,7 +589,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (61)
+- الرخص / licences: — (62)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

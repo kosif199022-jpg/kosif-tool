@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5297
+   "count": 5318
   },
   {
    "id": "dom:motion",
@@ -271,11 +271,11 @@
    "label": "Analyzed app capabilities",
    "ar": "قدرات التطبيقات المحللة",
    "prefix": "APPX",
-   "count": 119,
+   "count": 139,
    "proven": 96,
    "status": {
     "proven": 96,
-    "documented": 21,
+    "documented": 41,
     "install": 1,
     "ready": 1
    }
@@ -1351,10 +1351,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 61,
-   "proven": 51,
+   "count": 62,
+   "proven": 52,
    "status": {
-    "proven": 51,
+    "proven": 52,
     "ready": 5,
     "install": 5
    }
@@ -2532,7 +2532,7 @@
    "from": "dom:build",
    "to": "fam:app-feature-transfer",
    "rel": "has",
-   "w": 119
+   "w": 139
   },
   {
    "from": "fam:app-feature-transfer",
@@ -2550,25 +2550,25 @@
    "from": "fam:app-feature-transfer",
    "to": "req:pip:pillow",
    "rel": "needs",
-   "w": 36
+   "w": 37
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:chromium",
    "rel": "needs",
-   "w": 32
+   "w": 33
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 23
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:ffmpeg",
    "rel": "needs",
    "w": 19
-  },
-  {
-   "from": "fam:app-feature-transfer",
-   "to": "req:python3",
-   "rel": "needs",
-   "w": 13
   },
   {
    "from": "fam:app-feature-transfer",
@@ -4896,13 +4896,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 61
+   "w": 62
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 48
+   "w": 49
   },
   {
    "from": "fam:runnable-tools",
@@ -4918,25 +4918,25 @@
   },
   {
    "from": "fam:runnable-tools",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 7
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:npm:rea",
+   "rel": "needs",
+   "w": 7
+  },
+  {
+   "from": "fam:runnable-tools",
    "to": "req:blender",
    "rel": "needs",
    "w": 7
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:chromium",
-   "rel": "needs",
-   "w": 6
-  },
-  {
-   "from": "fam:runnable-tools",
    "to": "req:node",
-   "rel": "needs",
-   "w": 6
-  },
-  {
-   "from": "fam:runnable-tools",
-   "to": "req:npm:rea",
    "rel": "needs",
    "w": 6
   },
@@ -4950,7 +4950,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 66
+   "w": 67
   },
   {
    "from": "fam:runnable-tools",

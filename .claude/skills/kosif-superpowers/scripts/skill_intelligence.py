@@ -294,6 +294,8 @@ ASSET_LIBRARIES = [{
 }]
 
 
+AREA_NEEDS_WORDS = {"3d": r"3d|ثلاثي|بلندر|blender|\bglb\b|three|مجسم", "audio": r"صوت|صوتي|موسيقى|اغني|audio|music|song|podcast|بودكاست|ايقاع|beat",
+                    "draw": r"رسم|ارسم|شخصيه|draw|sketch|paint|character|كرتون"}
 BILINGUAL_RX = r"انجليزي|انكليزي|english|\blatin\b|لاتيني|ثنائي اللغه|bilingual"
 
 
@@ -630,6 +632,9 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
             reg_t = tools.get(t["id"], {})
             if not set(reg_t.get("families", [])) & short_fams:
                 continue
+            area_rx = AREA_NEEDS_WORDS.get(reg_t.get("area"))
+            if area_rx and an["primary"] != reg_t.get("area") and not re.search(area_rx, norm_ar(task.lower())):
+                continue   # a specialised tool (3D, audio, drawing) only when the request is about that
             tools_hit.append({"id": t["id"], "title_ar": t.get("title_ar"), "title_en": t.get("title_en"), "area": t.get("area"),
                               "state": (t.get("readiness") or {}).get("state"), "missing": (t.get("readiness") or {}).get("missing", []),
                               "command": t.get("first_command") or ((reg_t.get("commands") or [{}])[0].get("example")),

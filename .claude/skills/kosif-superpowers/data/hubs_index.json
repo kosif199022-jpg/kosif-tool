@@ -1,7 +1,7 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5297,
- "superpowers": 442,
+ "atoms": 5318,
+ "superpowers": 446,
  "hubs": [
   {
    "id": "research",
@@ -35,15 +35,15 @@
     "معرفة"
    ],
    "superpowers": [
-    "SP-0056",
-    "SP-0096",
-    "SP-0097",
     "SP-0057",
-    "SP-0095"
+    "SP-0097",
+    "SP-0098",
+    "SP-0058",
+    "SP-0096"
    ],
    "top": [
     {
-     "id": "SP-0056",
+     "id": "SP-0057",
      "name_ar": "ربط Graphify المستضاف",
      "name_en": "Connect the hosted Graphify MCP",
      "size": 16,
@@ -51,7 +51,7 @@
      "ready_now": 10
     },
     {
-     "id": "SP-0096",
+     "id": "SP-0097",
      "name_ar": "أدوات الويب في واجهة API",
      "name_en": "API server tools: web_search / web_fetch",
      "size": 16,
@@ -59,7 +59,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0097",
+     "id": "SP-0098",
      "name_ar": "بحث معمّق بوكلاء متوازيين",
      "name_en": "Deep research with parallel sub-agents",
      "size": 7,
@@ -67,7 +67,7 @@
      "ready_now": 1
     },
     {
-     "id": "SP-0057",
+     "id": "SP-0058",
      "name_ar": "الخريطة مادةً لفيلم موشن",
      "name_en": "Codebase map as motion graphics",
      "size": 6,
@@ -75,7 +75,7 @@
      "ready_now": 1
     },
     {
-     "id": "SP-0095",
+     "id": "SP-0096",
      "name_ar": "استخراج وإثراء بيانات الأطباء",
      "name_en": "Healthcare provider list extraction and enrichment",
      "size": 9,
@@ -172,34 +172,35 @@
     "ابتكار"
    ],
    "superpowers": [
-    "SP-0020",
-    "SP-0130",
-    "SP-0008",
-    "SP-0015",
-    "SP-0030",
-    "SP-0131",
-    "SP-0011",
-    "SP-0005",
-    "SP-0125",
     "SP-0021",
-    "SP-0126",
-    "SP-0127",
-    "SP-0128",
-    "SP-0129",
-    "SP-0012",
-    "SP-0022",
+    "SP-0133",
     "SP-0009",
+    "SP-0016",
     "SP-0031",
+    "SP-0134",
+    "SP-0012",
+    "SP-0005",
+    "SP-0128",
+    "SP-0022",
+    "SP-0129",
+    "SP-0130",
+    "SP-0131",
+    "SP-0132",
     "SP-0013",
-    "SP-0014",
     "SP-0023",
-    "SP-0006",
     "SP-0010",
-    "SP-0007"
+    "SP-0032",
+    "SP-0014",
+    "SP-0015",
+    "SP-0024",
+    "SP-0006",
+    "SP-0011",
+    "SP-0007",
+    "SP-0008"
    ],
    "top": [
     {
-     "id": "SP-0020",
+     "id": "SP-0021",
      "name_ar": "سلّم مستويات التفكير L0–L6",
      "name_en": "Cognition ladder L0–L6",
      "size": 20,
@@ -207,7 +208,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0130",
+     "id": "SP-0133",
      "name_ar": "السعر الأمثل ونقطة التعادل",
      "name_en": "Optimal price and break-even",
      "size": 12,
@@ -215,7 +216,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0008",
+     "id": "SP-0009",
      "name_ar": "سكامبر (SCAMPER)",
      "name_en": "SCAMPER",
      "size": 21,
@@ -223,7 +224,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0015",
+     "id": "SP-0016",
      "name_ar": "خطة تسليم بإيصال",
      "name_en": "Delivery plan with a receipt",
      "size": 12,
@@ -231,7 +232,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0030",
+     "id": "SP-0031",
      "name_ar": "برومبت مولّد الفيديو",
      "name_en": "Video-generator shot prompt",
      "size": 17,
@@ -239,7 +240,7 @@
      "ready_now": 1
     },
     {
-     "id": "SP-0131",
+     "id": "SP-0134",
      "name_ar": "ثلاثة خيارات حقيقية وعدم الفعل",
      "name_en": "Three real options plus do-nothing",
      "size": 6,
@@ -247,7 +248,7 @@
      "ready_now": 1
     },
     {
-     "id": "SP-0011",
+     "id": "SP-0012",
      "name_ar": "خريطة أصحاب المصلحة",
      "name_en": "Systems map of stakeholders",
      "size": 48,
@@ -263,7 +264,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0125",
+     "id": "SP-0128",
      "name_ar": "تدقيق تكلفة LLM والتوجيه",
      "name_en": "LLM cost audit and routing",
      "size": 17,
@@ -271,7 +272,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0021",
+     "id": "SP-0022",
      "name_ar": "قائمة المرحلة صفر (12 وحدة)",
      "name_en": "Stage-0 checklist (12 modules)",
      "size": 16,
@@ -279,7 +280,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0126",
+     "id": "SP-0129",
      "name_ar": "بطاقات أنكي عبر AnkiConnect",
      "name_en": "Anki flashcards via AnkiConnect",
      "size": 11,
@@ -287,7 +288,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0127",
+     "id": "SP-0130",
      "name_ar": "اختبار استراتيجية تداول بمقاييس المخاطر",
      "name_en": "Backtest trading strategy with risk metrics",
      "size": 11,
@@ -295,11 +296,11 @@
      "ready_now": 0
     }
    ],
-   "powers": 282,
+   "powers": 283,
    "status_mix": {
     "proven": 17,
     "install": 2,
-    "documented": 263
+    "documented": 264
    },
    "ready_now": 17,
    "requires": [
@@ -337,8 +338,8 @@
    "links": [
     "software",
     "quality",
-    "agents",
-    "data"
+    "data",
+    "agents"
    ]
   },
   {
@@ -375,24 +376,24 @@
     "بحث"
    ],
    "superpowers": [
-    "SP-0115",
-    "SP-0116",
-    "SP-0017",
-    "SP-0016",
-    "SP-0117",
-    "SP-0018",
     "SP-0118",
     "SP-0119",
+    "SP-0018",
+    "SP-0017",
     "SP-0120",
+    "SP-0121",
+    "SP-0019",
+    "SP-0122",
+    "SP-0123",
     "SP-0002",
     "SP-0001",
     "SP-0003",
     "SP-0004",
-    "SP-0019"
+    "SP-0020"
    ],
    "top": [
     {
-     "id": "SP-0115",
+     "id": "SP-0118",
      "name_ar": "أطلس القدرات للبحث والتخطيط",
      "name_en": "Capability Atlas search and planner",
      "size": 21,
@@ -400,7 +401,7 @@
      "ready_now": 19
     },
     {
-     "id": "SP-0116",
+     "id": "SP-0119",
      "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
      "name_en": "Audio-timed SVG motion compiler",
      "size": 19,
@@ -408,7 +409,7 @@
      "ready_now": 18
     },
     {
-     "id": "SP-0017",
+     "id": "SP-0018",
      "name_ar": "بطاقة القدرات بسكربت واحد",
      "name_en": "One-command capability card",
      "size": 15,
@@ -416,7 +417,7 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0016",
+     "id": "SP-0017",
      "name_ar": "اعرف قبل أن تقول لا",
      "name_en": "Registry before no",
      "size": 19,
@@ -424,7 +425,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0117",
+     "id": "SP-0120",
      "name_ar": "فاحص توقيت الفيديو المرجعي",
      "name_en": "Reference Video Timing Probe",
      "size": 9,
@@ -432,7 +433,15 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0018",
+     "id": "SP-0121",
+     "name_ar": "تحليل REA لمستودعات المالك دفعةً واحدة",
+     "name_en": "REA Owned-Repo Batch",
+     "size": 7,
+     "best": "proven",
+     "ready_now": 5
+    },
+    {
+     "id": "SP-0019",
      "name_ar": "اقرأ قائمة أدواتك",
      "name_en": "Read your own tool list",
      "size": 6,
@@ -440,15 +449,7 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0118",
-     "name_ar": "تحليل REA لمستودعات المالك دفعةً واحدة",
-     "name_en": "REA Owned-Repo Batch",
-     "size": 5,
-     "best": "proven",
-     "ready_now": 4
-    },
-    {
-     "id": "SP-0119",
+     "id": "SP-0122",
      "name_ar": "تحزيم المهارة للرفع إلى claude.ai",
      "name_en": "Skill Packager for claude.ai",
      "size": 4,
@@ -456,7 +457,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0120",
+     "id": "SP-0123",
      "name_ar": "مختبر الابتكار الهندسي",
      "name_en": "Invention Lab Candidates",
      "size": 3,
@@ -481,28 +482,28 @@
     },
     {
      "id": "SP-0003",
-     "name_ar": "مصفوفة المسارات المتوازية",
-     "name_en": "Parallel lane matrix",
-     "size": 11,
+     "name_ar": "أشجار عمل للكتّاب المتوازيين",
+     "name_en": "Worktrees for parallel writers",
+     "size": 10,
      "best": "key",
      "ready_now": 0
     }
    ],
-   "powers": 151,
+   "powers": 152,
    "status_mix": {
-    "proven": 78,
+    "proven": 79,
     "ready": 5,
     "install": 8,
     "key": 2,
     "documented": 58
    },
-   "ready_now": 83,
+   "ready_now": 84,
    "requires": [
     "python3",
     "ffmpeg",
     "claude:tools",
-    "node",
     "chromium",
+    "node",
     "key:unspecified",
     "pip:pillow",
     "blender",
@@ -519,18 +520,18 @@
     "pip:torch",
     "pip:faster-whisper",
     "pip:higgsfield",
+    "npm:react",
     "key:graphify",
     "libreoffice",
+    "os:macos",
     "fonts:arabic",
     "gh",
     "pip:hypothesis",
     "pip:piper",
     "gpu",
     "tesseract",
-    "os:macos",
     "pip:scipy",
     "pip:matplotlib",
-    "npm:react",
     "npm:three",
     "yt-dlp",
     "pip:chromadb",
@@ -561,7 +562,7 @@
     "thinking",
     "software",
     "quality",
-    "3d"
+    "reverse"
    ]
   },
   {
@@ -606,63 +607,73 @@
     "تطوير"
    ],
    "superpowers": [
-    "SP-0098",
-    "SP-0101",
-    "SP-0100",
-    "SP-0429",
-    "SP-0102",
-    "SP-0103",
-    "SP-0108",
     "SP-0099",
-    "SP-0430",
+    "SP-0102",
     "SP-0104",
-    "SP-0105",
-    "SP-0106",
-    "SP-0431",
-    "SP-0432",
-    "SP-0054",
+    "SP-0103",
     "SP-0433",
+    "SP-0105",
+    "SP-0111",
+    "SP-0106",
+    "SP-0101",
     "SP-0434",
+    "SP-0107",
+    "SP-0108",
     "SP-0109",
-    "SP-0055",
     "SP-0435",
-    "SP-0037",
+    "SP-0436",
+    "SP-0055",
+    "SP-0437",
+    "SP-0438",
+    "SP-0112",
+    "SP-0056",
+    "SP-0439",
     "SP-0038",
-    "SP-0110",
     "SP-0039",
+    "SP-0113",
     "SP-0040",
+    "SP-0100",
     "SP-0041",
     "SP-0042",
-    "SP-0111",
     "SP-0043",
-    "SP-0112",
+    "SP-0114",
     "SP-0044",
+    "SP-0115",
     "SP-0045",
     "SP-0046",
     "SP-0047",
-    "SP-0036",
     "SP-0048",
+    "SP-0037",
     "SP-0049",
-    "SP-0113",
     "SP-0050",
+    "SP-0116",
     "SP-0051",
     "SP-0052",
-    "SP-0114",
     "SP-0053",
-    "SP-0436",
-    "SP-0107"
+    "SP-0117",
+    "SP-0054",
+    "SP-0440",
+    "SP-0110"
    ],
    "top": [
     {
-     "id": "SP-0098",
+     "id": "SP-0099",
      "name_ar": "إزالة الضباب",
      "name_en": "Dehaze (ClearView-style)",
-     "size": 41,
+     "size": 27,
      "best": "proven",
-     "ready_now": 41
+     "ready_now": 27
     },
     {
-     "id": "SP-0101",
+     "id": "SP-0102",
+     "name_ar": "علامات الإيقاع",
+     "name_en": "Beat markers from audio",
+     "size": 15,
+     "best": "proven",
+     "ready_now": 15
+    },
+    {
+     "id": "SP-0104",
      "name_ar": "نمو نباتي وزخرفي",
      "name_en": "L-system growth",
      "size": 15,
@@ -670,7 +681,7 @@
      "ready_now": 15
     },
     {
-     "id": "SP-0100",
+     "id": "SP-0103",
      "name_ar": "رمز QR بشعار",
      "name_en": "QR code (verified)",
      "size": 15,
@@ -678,7 +689,7 @@
      "ready_now": 13
     },
     {
-     "id": "SP-0429",
+     "id": "SP-0433",
      "name_ar": "المؤشر بطلًا",
      "name_en": "Cursor as protagonist",
      "size": 23,
@@ -686,15 +697,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0102",
-     "name_ar": "LUT سينمائي: صناعة وتطبيق",
-     "name_en": "Cinematic 3D LUTs: make and apply .cube",
-     "size": 7,
-     "best": "proven",
-     "ready_now": 6
-    },
-    {
-     "id": "SP-0103",
+     "id": "SP-0105",
      "name_ar": "رسم زيتي وحبر ورصاص",
      "name_en": "Oil painting, ink sketch, pencil sketch",
      "size": 6,
@@ -702,7 +705,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0108",
+     "id": "SP-0111",
      "name_ar": "قوالب Jinja2",
      "name_en": "Jinja2 templating",
      "size": 16,
@@ -710,7 +713,15 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0099",
+     "id": "SP-0106",
+     "name_ar": "أوضاع المزج والطبقات (OpenRaster)",
+     "name_en": "Blend modes (24) and layer stacks → PNG or OpenRaster",
+     "size": 6,
+     "best": "proven",
+     "ready_now": 5
+    },
+    {
+     "id": "SP-0101",
      "name_ar": "اقترانات الملفات",
      "name_en": "File associations for media",
      "size": 19,
@@ -718,7 +729,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0430",
+     "id": "SP-0434",
      "name_ar": "هاتف 2.5D على Canvas",
      "name_en": "Canvas 2.5D phone (drawPhone)",
      "size": 16,
@@ -726,7 +737,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0104",
+     "id": "SP-0107",
      "name_ar": "فرش الرسّام",
      "name_en": "MS Paint brushes on a canvas",
      "size": 5,
@@ -734,46 +745,38 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0105",
+     "id": "SP-0108",
      "name_ar": "فهرسة المكتبة والبحث",
      "name_en": "Photo catalog + search",
      "size": 5,
      "best": "proven",
      "ready_now": 4
-    },
-    {
-     "id": "SP-0106",
-     "name_ar": "جرد قدرات Blender الحي",
-     "name_en": "Live Blender capability inventory",
-     "size": 4,
-     "best": "proven",
-     "ready_now": 4
     }
    ],
-   "powers": 511,
+   "powers": 530,
    "status_mix": {
     "proven": 111,
     "ready": 16,
     "install": 34,
     "key": 7,
     "seen": 16,
-    "documented": 325,
+    "documented": 344,
     "idea": 2
    },
    "ready_now": 127,
    "requires": [
     "chromium",
     "pip:opencv",
-    "pip:numpy",
     "python3",
+    "pip:numpy",
     "pip:pillow",
     "node",
     "git",
     "ffmpeg",
     "npm:hyperframes",
     "key:unspecified",
-    "npm:react",
     "gh",
+    "npm:react",
     "claude:tools",
     "os:macos",
     "npm:axe",
@@ -796,6 +799,7 @@
     "npm:esbuild",
     "lean",
     "key:graphify",
+    "pip:higgsfield",
     "pip:arabic-reshaper",
     "trivy",
     "pip:llama-cpp",
@@ -803,8 +807,8 @@
     "pip:pandas",
     "pip:polars",
     "pip:pandera",
-    "pip:faster-whisper",
     "innoextract",
+    "pip:faster-whisper",
     "pip:segno",
     "pip:matplotlib",
     "pip:office",
@@ -815,16 +819,15 @@
     "openscad",
     "pip:cadquery",
     "pip:anthropic",
-    "pip:higgsfield",
     "network",
     "npm:animejs",
     "tesseract"
    ],
    "links": [
-    "3d",
     "motion",
-    "quality",
-    "thinking"
+    "3d",
+    "thinking",
+    "quality"
    ]
   },
   {
@@ -874,37 +877,37 @@
     "مضلع"
    ],
    "superpowers": [
-    "SP-0266",
-    "SP-0150",
-    "SP-0359",
-    "SP-0325",
-    "SP-0360",
-    "SP-0210",
-    "SP-0326",
-    "SP-0361",
-    "SP-0362",
-    "SP-0209",
-    "SP-0267",
-    "SP-0211",
-    "SP-0268",
-    "SP-0363",
     "SP-0269",
-    "SP-0327",
-    "SP-0270",
+    "SP-0153",
+    "SP-0362",
+    "SP-0328",
+    "SP-0363",
+    "SP-0213",
+    "SP-0329",
     "SP-0364",
-    "SP-0151",
+    "SP-0365",
+    "SP-0212",
+    "SP-0270",
+    "SP-0214",
     "SP-0271",
     "SP-0366",
-    "SP-0152",
-    "SP-0153",
-    "SP-0213",
-    "SP-0365",
-    "SP-0214",
-    "SP-0212"
+    "SP-0272",
+    "SP-0330",
+    "SP-0273",
+    "SP-0367",
+    "SP-0154",
+    "SP-0274",
+    "SP-0369",
+    "SP-0155",
+    "SP-0156",
+    "SP-0216",
+    "SP-0368",
+    "SP-0217",
+    "SP-0215"
    ],
    "top": [
     {
-     "id": "SP-0266",
+     "id": "SP-0269",
      "name_ar": "رسم المسار بإزاحة الشرطة",
      "name_en": "SVG stroke draw-on",
      "size": 26,
@@ -912,7 +915,7 @@
      "ready_now": 18
     },
     {
-     "id": "SP-0150",
+     "id": "SP-0153",
      "name_ar": "قواعد بناء الشعار SVG",
      "name_en": "SVG logo construction rules & logo suite",
      "size": 27,
@@ -920,7 +923,7 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0359",
+     "id": "SP-0362",
      "name_ar": "تحويل SVG بإضافة MorphSVG",
      "name_en": "MorphSVG plugin morph (HyperFrames rule)",
      "size": 36,
@@ -928,7 +931,7 @@
      "ready_now": 11
     },
     {
-     "id": "SP-0325",
+     "id": "SP-0328",
      "name_ar": "مؤثرات بكسل بخطوات اللوحة",
      "name_en": "Pixel VFX by palette-step fades",
      "size": 19,
@@ -936,7 +939,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0360",
+     "id": "SP-0363",
      "name_ar": "انفجار خطوط شعاعي",
      "name_en": "Radial line burst",
      "size": 14,
@@ -944,7 +947,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0210",
+     "id": "SP-0213",
      "name_ar": "خريطة الكيان في المنتصف",
      "name_en": "Entity node map with flow edges",
      "size": 13,
@@ -952,7 +955,7 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0326",
+     "id": "SP-0329",
      "name_ar": "كلمة غليتش RGB على النوتات",
      "name_en": "RGB-split glitch word on the beat",
      "size": 8,
@@ -960,7 +963,7 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0361",
+     "id": "SP-0364",
      "name_ar": "حلقة صدمة أرضية ونبض قلب",
      "name_en": "Shockwave ring & heartbeat ripple",
      "size": 13,
@@ -968,7 +971,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0362",
+     "id": "SP-0365",
      "name_ar": "دمج ونحت وتقاطع ناعم",
      "name_en": "Smooth CSG (add / sub / and)",
      "size": 9,
@@ -976,7 +979,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0209",
+     "id": "SP-0212",
      "name_ar": "فيديو شرح بـManim",
      "name_en": "Manim explainer workflow",
      "size": 30,
@@ -984,7 +987,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0267",
+     "id": "SP-0270",
      "name_ar": "رسوم خطية صغيرة فوق الفيديو",
      "name_en": "Line micro-graphics over footage",
      "size": 11,
@@ -992,7 +995,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0211",
+     "id": "SP-0214",
      "name_ar": "التوأم الإنشائي: حلّال الجملونات",
      "name_en": "Structural twin truss solver",
      "size": 10,
@@ -1079,36 +1082,36 @@
     "تعديل"
    ],
    "superpowers": [
-    "SP-0201",
-    "SP-0319",
-    "SP-0137",
-    "SP-0320",
-    "SP-0122",
-    "SP-0202",
-    "SP-0203",
-    "SP-0123",
-    "SP-0124",
-    "SP-0321",
     "SP-0204",
-    "SP-0205",
+    "SP-0322",
+    "SP-0140",
     "SP-0323",
+    "SP-0125",
+    "SP-0205",
     "SP-0206",
-    "SP-0138",
-    "SP-0141",
+    "SP-0126",
+    "SP-0127",
+    "SP-0324",
     "SP-0207",
     "SP-0208",
-    "SP-0140",
-    "SP-0322",
+    "SP-0326",
+    "SP-0209",
+    "SP-0141",
     "SP-0144",
-    "SP-0324",
-    "SP-0121",
-    "SP-0139",
+    "SP-0210",
+    "SP-0211",
+    "SP-0143",
+    "SP-0325",
+    "SP-0147",
+    "SP-0327",
+    "SP-0124",
     "SP-0142",
-    "SP-0143"
+    "SP-0145",
+    "SP-0146"
    ],
    "top": [
     {
-     "id": "SP-0201",
+     "id": "SP-0204",
      "name_ar": "استخراج الباليت وتسمية الألوان",
      "name_en": "Palette extraction, colour naming and ΔE",
      "size": 34,
@@ -1116,7 +1119,7 @@
      "ready_now": 21
     },
     {
-     "id": "SP-0319",
+     "id": "SP-0322",
      "name_ar": "مونتاج تلقائي على الموسيقى",
      "name_en": "Auto montage to music",
      "size": 24,
@@ -1124,7 +1127,7 @@
      "ready_now": 17
     },
     {
-     "id": "SP-0137",
+     "id": "SP-0140",
      "name_ar": "معادلة برومبت لقطة الفيديو",
      "name_en": "Video shot prompt formula",
      "size": 31,
@@ -1132,7 +1135,7 @@
      "ready_now": 15
     },
     {
-     "id": "SP-0320",
+     "id": "SP-0323",
      "name_ar": "قص دقيق بالإطار",
      "name_en": "Frame-accurate trim (re-encode)",
      "size": 17,
@@ -1140,7 +1143,7 @@
      "ready_now": 11
     },
     {
-     "id": "SP-0122",
+     "id": "SP-0125",
      "name_ar": "صوت PipeWire داخل الحاويات",
      "name_en": "PipeWire audio in containers",
      "size": 14,
@@ -1148,7 +1151,7 @@
      "ready_now": 11
     },
     {
-     "id": "SP-0202",
+     "id": "SP-0205",
      "name_ar": "خَبز أي تلوين في LUT",
      "name_en": "Bake any grade into a Hald CLUT / .cube and apply LUTs",
      "size": 13,
@@ -1156,7 +1159,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0203",
+     "id": "SP-0206",
      "name_ar": "التعريض حسب وقت اليوم",
      "name_en": "Exposure bands by time of day + cut jump caps",
      "size": 11,
@@ -1164,7 +1167,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0123",
+     "id": "SP-0126",
      "name_ar": "التعرف على العربية والإنجليزية بـ tesseract",
      "name_en": "Arabic + English OCR with tesseract",
      "size": 13,
@@ -1172,7 +1175,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0124",
+     "id": "SP-0127",
      "name_ar": "ضغط الصور ومقارنة الجودة",
      "name_en": "Image compression with quality metrics",
      "size": 10,
@@ -1180,7 +1183,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0321",
+     "id": "SP-0324",
      "name_ar": "عنوان خلف المتحدث",
      "name_en": "Title behind the speaker",
      "size": 12,
@@ -1188,7 +1191,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0204",
+     "id": "SP-0207",
      "name_ar": "خلفية بقع ضبابية متحركة",
      "name_en": "Drifting blob / mesh-gradient ambient ground",
      "size": 9,
@@ -1196,7 +1199,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0205",
+     "id": "SP-0208",
      "name_ar": "توازن الأبيض بالبكسلات المحايدة",
      "name_en": "Neutral-pixel white balance",
      "size": 8,
@@ -1265,8 +1268,8 @@
     "pip:z3"
    ],
    "links": [
-    "quality",
     "3d",
+    "quality",
     "motion",
     "audio"
    ]
@@ -1313,72 +1316,72 @@
     "إضاءة"
    ],
    "superpowers": [
-    "SP-0272",
-    "SP-0132",
-    "SP-0375",
-    "SP-0273",
-    "SP-0228",
-    "SP-0313",
-    "SP-0229",
-    "SP-0376",
-    "SP-0227",
-    "SP-0235",
-    "SP-0274",
-    "SP-0133",
-    "SP-0225",
-    "SP-0230",
-    "SP-0314",
-    "SP-0378",
-    "SP-0245",
     "SP-0275",
-    "SP-0316",
-    "SP-0233",
-    "SP-0241",
-    "SP-0379",
+    "SP-0135",
+    "SP-0378",
     "SP-0276",
     "SP-0231",
+    "SP-0316",
     "SP-0232",
-    "SP-0236",
-    "SP-0377",
-    "SP-0315",
-    "SP-0134",
-    "SP-0244",
-    "SP-0277",
-    "SP-0380",
-    "SP-0247",
-    "SP-0248",
-    "SP-0224",
-    "SP-0226",
-    "SP-0242",
-    "SP-0317",
-    "SP-0135",
-    "SP-0381",
-    "SP-0234",
+    "SP-0379",
+    "SP-0230",
     "SP-0238",
-    "SP-0240",
-    "SP-0243",
-    "SP-0249",
+    "SP-0277",
+    "SP-0136",
+    "SP-0228",
+    "SP-0233",
+    "SP-0317",
+    "SP-0381",
+    "SP-0247",
     "SP-0278",
+    "SP-0319",
+    "SP-0236",
+    "SP-0244",
+    "SP-0382",
     "SP-0279",
+    "SP-0234",
+    "SP-0235",
     "SP-0239",
-    "SP-0246",
-    "SP-0250",
+    "SP-0380",
     "SP-0318",
+    "SP-0137",
+    "SP-0246",
+    "SP-0280",
+    "SP-0383",
+    "SP-0250",
+    "SP-0251",
+    "SP-0227",
+    "SP-0229",
+    "SP-0249",
+    "SP-0320",
+    "SP-0138",
+    "SP-0384",
+    "SP-0237",
+    "SP-0241",
+    "SP-0243",
+    "SP-0245",
+    "SP-0252",
+    "SP-0281",
+    "SP-0282",
+    "SP-0242",
+    "SP-0248",
     "SP-0253",
-    "SP-0254",
-    "SP-0255",
+    "SP-0321",
+    "SP-0256",
     "SP-0257",
     "SP-0258",
+    "SP-0260",
+    "SP-0261",
+    "SP-0262",
+    "SP-0240",
+    "SP-0254",
+    "SP-0255",
     "SP-0259",
-    "SP-0237",
-    "SP-0251",
-    "SP-0252",
-    "SP-0256",
-    "SP-0136"
+    "SP-0139"
    ],
    "top": [
     {
-     "id": "SP-0272",
+     "id": "SP-0275",
      "name_ar": "توهج النص النيوني بثلاثة ظلال لكل كلمة",
      "name_en": "Neon text glow (triple shadow, per word)",
      "size": 21,
@@ -1386,7 +1389,7 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0132",
+     "id": "SP-0135",
      "name_ar": "تحليق Cesium فوق تضاريس ومدن حقيقية",
      "name_en": "Cesium terrain & city flyovers",
      "size": 18,
@@ -1394,7 +1397,7 @@
      "ready_now": 11
     },
     {
-     "id": "SP-0375",
+     "id": "SP-0378",
      "name_ar": "حبيبات فيلم صحيحة",
      "name_en": "Film grain done right (post-mortem)",
      "size": 24,
@@ -1402,7 +1405,7 @@
      "ready_now": 10
     },
     {
-     "id": "SP-0273",
+     "id": "SP-0276",
      "name_ar": "قراءة إضاءة صورة مرجعية",
      "name_en": "Read the light of a reference image",
      "size": 15,
@@ -1410,7 +1413,7 @@
      "ready_now": 10
     },
     {
-     "id": "SP-0228",
+     "id": "SP-0231",
      "name_ar": "مشروع أنيميشن جديد",
      "name_en": "New animation project (2D / 3D / lab)",
      "size": 21,
@@ -1418,7 +1421,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0313",
+     "id": "SP-0316",
      "name_ar": "انفجار ببذرة وجاذبية",
      "name_en": "Seeded analytic burst",
      "size": 20,
@@ -1426,7 +1429,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0229",
+     "id": "SP-0232",
      "name_ar": "استوديو KOSIF Motion Web المحلي",
      "name_en": "KOSIF Motion Web local studio server",
      "size": 19,
@@ -1434,7 +1437,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0376",
+     "id": "SP-0379",
      "name_ar": "تظليل كرة بالهالفتون",
      "name_en": "Halftone sphere (Lambert dots)",
      "size": 17,
@@ -1442,7 +1445,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0227",
+     "id": "SP-0230",
      "name_ar": "معاينة مسودة",
      "name_en": "Draft preview render",
      "size": 24,
@@ -1450,7 +1453,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0235",
+     "id": "SP-0238",
      "name_ar": "خط زمني JSON",
      "name_en": "Timeline JSON → FFmpeg",
      "size": 14,
@@ -1458,7 +1461,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0274",
+     "id": "SP-0277",
      "name_ar": "مرور العدسة «مصوَّر لا مرسوم»",
      "name_en": "Photographed lens pass (barrel, fringes, bloom, vignette, grain)",
      "size": 14,
@@ -1466,7 +1469,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0133",
+     "id": "SP-0136",
      "name_ar": "Blender بلا واجهة",
      "name_en": "Headless Blender (bpy)",
      "size": 13,
@@ -1588,104 +1591,105 @@
     "انتقالات"
    ],
    "superpowers": [
-    "SP-0383",
-    "SP-0215",
-    "SP-0260",
-    "SP-0367",
-    "SP-0187",
-    "SP-0216",
-    "SP-0154",
-    "SP-0437",
-    "SP-0368",
-    "SP-0217",
-    "SP-0188",
-    "SP-0218",
-    "SP-0161",
-    "SP-0403",
-    "SP-0262",
-    "SP-0370",
-    "SP-0263",
-    "SP-0156",
-    "SP-0159",
-    "SP-0160",
-    "SP-0165",
-    "SP-0219",
-    "SP-0220",
-    "SP-0404",
-    "SP-0409",
-    "SP-0385",
-    "SP-0387",
-    "SP-0388",
-    "SP-0158",
-    "SP-0393",
-    "SP-0369",
-    "SP-0394",
-    "SP-0396",
-    "SP-0164",
-    "SP-0261",
-    "SP-0405",
-    "SP-0371",
-    "SP-0221",
-    "SP-0264",
-    "SP-0189",
-    "SP-0222",
-    "SP-0384",
     "SP-0386",
-    "SP-0392",
-    "SP-0163",
-    "SP-0167",
-    "SP-0170",
-    "SP-0172",
+    "SP-0218",
+    "SP-0263",
+    "SP-0370",
+    "SP-0190",
+    "SP-0219",
+    "SP-0157",
+    "SP-0441",
+    "SP-0371",
+    "SP-0220",
+    "SP-0191",
+    "SP-0221",
+    "SP-0164",
     "SP-0406",
-    "SP-0178",
+    "SP-0265",
+    "SP-0373",
+    "SP-0266",
+    "SP-0159",
+    "SP-0162",
+    "SP-0163",
+    "SP-0168",
+    "SP-0222",
+    "SP-0223",
     "SP-0407",
     "SP-0412",
-    "SP-0191",
-    "SP-0382",
-    "SP-0157",
+    "SP-0388",
     "SP-0389",
-    "SP-0162",
-    "SP-0395",
+    "SP-0390",
+    "SP-0161",
+    "SP-0396",
+    "SP-0372",
     "SP-0397",
-    "SP-0400",
+    "SP-0399",
+    "SP-0167",
+    "SP-0264",
+    "SP-0408",
+    "SP-0374",
+    "SP-0224",
+    "SP-0267",
+    "SP-0192",
+    "SP-0225",
+    "SP-0387",
+    "SP-0391",
+    "SP-0395",
     "SP-0166",
+    "SP-0170",
+    "SP-0173",
+    "SP-0175",
+    "SP-0409",
+    "SP-0181",
+    "SP-0410",
+    "SP-0415",
+    "SP-0194",
+    "SP-0385",
+    "SP-0160",
+    "SP-0392",
+    "SP-0165",
+    "SP-0398",
+    "SP-0400",
+    "SP-0403",
+    "SP-0169",
+    "SP-0404",
+    "SP-0405",
+    "SP-0176",
+    "SP-0177",
+    "SP-0178",
+    "SP-0179",
+    "SP-0375",
+    "SP-0376",
+    "SP-0193",
+    "SP-0189",
+    "SP-0268",
+    "SP-0158",
+    "SP-0393",
+    "SP-0394",
     "SP-0401",
     "SP-0402",
-    "SP-0173",
-    "SP-0174",
-    "SP-0175",
-    "SP-0176",
-    "SP-0372",
-    "SP-0373",
-    "SP-0190",
-    "SP-0186",
-    "SP-0265",
-    "SP-0155",
-    "SP-0390",
-    "SP-0391",
-    "SP-0398",
-    "SP-0399",
-    "SP-0168",
-    "SP-0169",
     "SP-0171",
-    "SP-0177",
-    "SP-0179",
+    "SP-0172",
+    "SP-0174",
     "SP-0180",
-    "SP-0181",
     "SP-0182",
-    "SP-0408",
     "SP-0183",
     "SP-0184",
     "SP-0185",
-    "SP-0374",
-    "SP-0410",
-    "SP-0223",
     "SP-0411",
-    "SP-0413"
+    "SP-0186",
+    "SP-0187",
+    "SP-0188",
+    "SP-0377",
+    "SP-0413",
+    "SP-0226",
+    "SP-0414",
+    "SP-0416",
+    "SP-0417"
    ],
    "top": [
     {
-     "id": "SP-0383",
+     "id": "SP-0386",
      "name_ar": "انتقالات الكشف",
      "name_en": "Reveal transitions (FFmpeg xfade)",
      "size": 31,
@@ -1693,7 +1697,7 @@
      "ready_now": 30
     },
     {
-     "id": "SP-0215",
+     "id": "SP-0218",
      "name_ar": "منحنى النابض المحسوب مسبقًا",
      "name_en": "Baked spring ease (springEase)",
      "size": 25,
@@ -1701,7 +1705,7 @@
      "ready_now": 16
     },
     {
-     "id": "SP-0260",
+     "id": "SP-0263",
      "name_ar": "ملف مفحوص لكل منصة",
      "name_en": "Checked per-platform delivery (8 platforms)",
      "size": 35,
@@ -1709,7 +1713,7 @@
      "ready_now": 15
     },
     {
-     "id": "SP-0367",
+     "id": "SP-0370",
      "name_ar": "قوس القطعة القصيرة",
      "name_en": "Short-piece arc (hook → development → pressure → lift → payoff → end)",
      "size": 31,
@@ -1717,7 +1721,7 @@
      "ready_now": 14
     },
     {
-     "id": "SP-0187",
+     "id": "SP-0190",
      "name_ar": "شخصيات حية ببصمات حركة",
      "name_en": "Alive characters: personality motion signatures",
      "size": 24,
@@ -1725,7 +1729,7 @@
      "ready_now": 13
     },
     {
-     "id": "SP-0216",
+     "id": "SP-0219",
      "name_ar": "تمويه السرعة الاتجاهي",
      "name_en": "Directional speed blur",
      "size": 22,
@@ -1733,7 +1737,7 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0154",
+     "id": "SP-0157",
      "name_ar": "حركة الكاميرا للمسرح",
      "name_en": "Stage camera move (camera)",
      "size": 71,
@@ -1741,7 +1745,7 @@
      "ready_now": 11
     },
     {
-     "id": "SP-0437",
+     "id": "SP-0441",
      "name_ar": "تحميل فيديو من أي رابط",
      "name_en": "Download video from any URL",
      "size": 10,
@@ -1749,7 +1753,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0368",
+     "id": "SP-0371",
      "name_ar": "مولّد طلب Claude من الأسلوب",
      "name_en": "Style → Claude request generator",
      "size": 16,
@@ -1757,7 +1761,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0217",
+     "id": "SP-0220",
      "name_ar": "ميزانيات التتابع",
      "name_en": "Stagger budgets",
      "size": 14,
@@ -1765,7 +1769,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0188",
+     "id": "SP-0191",
      "name_ar": "ورقة تصميم الشخصية واختبار الظل",
      "name_en": "Model sheet & silhouette test",
      "size": 18,
@@ -1773,7 +1777,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0218",
+     "id": "SP-0221",
      "name_ar": "رموز التسارع حسب الدور (17 منحنى)",
      "name_en": "Role-based easing tokens MOTION.E",
      "size": 12,
@@ -1876,44 +1880,44 @@
     "توقيت"
    ],
    "superpowers": [
-    "SP-0286",
-    "SP-0145",
-    "SP-0288",
-    "SP-0287",
-    "SP-0438",
-    "SP-0290",
+    "SP-0289",
+    "SP-0148",
     "SP-0291",
-    "SP-0146",
+    "SP-0290",
+    "SP-0442",
+    "SP-0293",
     "SP-0294",
+    "SP-0150",
+    "SP-0297",
+    "SP-0295",
+    "SP-0302",
+    "SP-0149",
+    "SP-0151",
     "SP-0292",
     "SP-0299",
-    "SP-0147",
-    "SP-0148",
-    "SP-0289",
-    "SP-0296",
-    "SP-0297",
-    "SP-0308",
-    "SP-0441",
-    "SP-0439",
-    "SP-0295",
-    "SP-0440",
-    "SP-0442",
-    "SP-0298",
     "SP-0300",
-    "SP-0303",
-    "SP-0305",
-    "SP-0306",
-    "SP-0149",
-    "SP-0293",
+    "SP-0311",
+    "SP-0445",
+    "SP-0443",
+    "SP-0298",
+    "SP-0444",
+    "SP-0446",
     "SP-0301",
-    "SP-0302",
+    "SP-0303",
+    "SP-0306",
+    "SP-0308",
+    "SP-0309",
+    "SP-0152",
+    "SP-0296",
     "SP-0304",
+    "SP-0305",
     "SP-0307",
-    "SP-0309"
+    "SP-0310",
+    "SP-0312"
    ],
    "top": [
     {
-     "id": "SP-0286",
+     "id": "SP-0289",
      "name_ar": "خفض الموسيقى تحت الصوت",
      "name_en": "Music ducking under voice (sidechain)",
      "size": 47,
@@ -1921,15 +1925,15 @@
      "ready_now": 19
     },
     {
-     "id": "SP-0145",
+     "id": "SP-0148",
      "name_ar": "توقيت الكلمات حسب الطول",
      "name_en": "Word timing by length",
-     "size": 30,
+     "size": 29,
      "best": "proven",
      "ready_now": 13
     },
     {
-     "id": "SP-0288",
+     "id": "SP-0291",
      "name_ar": "مكتبة المؤثرات",
      "name_en": "SFX kit 20 CC0 cues",
      "size": 34,
@@ -1937,7 +1941,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0287",
+     "id": "SP-0290",
      "name_ar": "شبكة الإيقاع",
      "name_en": "Beat grid clock (beats)",
      "size": 35,
@@ -1945,7 +1949,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0438",
+     "id": "SP-0442",
      "name_ar": "أزياء صوتية للشخصيات",
      "name_en": "Character voice costumes",
      "size": 26,
@@ -1953,7 +1957,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0290",
+     "id": "SP-0293",
      "name_ar": "قنوات الصوت كمحرك للحركة",
      "name_en": "Audio channels as animation drivers",
      "size": 16,
@@ -1961,7 +1965,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0291",
+     "id": "SP-0294",
      "name_ar": "مقام lydian",
      "name_en": "Score scale lydian",
      "size": 15,
@@ -1969,7 +1973,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0146",
+     "id": "SP-0150",
      "name_ar": "الصوت هو الساعة الرئيسية",
      "name_en": "Audio is the master clock",
      "size": 9,
@@ -1977,7 +1981,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0294",
+     "id": "SP-0297",
      "name_ar": "تطبيع الجهارة -14 LUFS",
      "name_en": "Loudness normalisation -14 LUFS",
      "size": 12,
@@ -1985,7 +1989,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0292",
+     "id": "SP-0295",
      "name_ar": "مونتاج على الإيقاع",
      "name_en": "Beat-cut montage",
      "size": 15,
@@ -1993,7 +1997,7 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0299",
+     "id": "SP-0302",
      "name_ar": "أجواء صوتية مولدة",
      "name_en": "ambience synthesis",
      "size": 8,
@@ -2001,10 +2005,10 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0147",
+     "id": "SP-0149",
      "name_ar": "تفريغ HyperFrames",
      "name_en": "HyperFrames transcribe CLI",
-     "size": 9,
+     "size": 10,
      "best": "proven",
      "ready_now": 4
     }
@@ -2090,27 +2094,27 @@
     "نص"
    ],
    "superpowers": [
-    "SP-0414",
-    "SP-0027",
-    "SP-0416",
-    "SP-0415",
-    "SP-0421",
-    "SP-0417",
     "SP-0418",
-    "SP-0419",
-    "SP-0422",
-    "SP-0424",
-    "SP-0425",
-    "SP-0420",
-    "SP-0426",
-    "SP-0427",
     "SP-0028",
+    "SP-0420",
+    "SP-0419",
+    "SP-0425",
+    "SP-0421",
+    "SP-0422",
     "SP-0423",
-    "SP-0428"
+    "SP-0426",
+    "SP-0428",
+    "SP-0429",
+    "SP-0424",
+    "SP-0430",
+    "SP-0431",
+    "SP-0029",
+    "SP-0427",
+    "SP-0432"
    ],
    "top": [
     {
-     "id": "SP-0414",
+     "id": "SP-0418",
      "name_ar": "كشف الكلمة العربية كاملة من اليمين",
      "name_en": "RTL whole-word lyric reveal with key-word pop",
      "size": 46,
@@ -2118,7 +2122,7 @@
      "ready_now": 25
     },
     {
-     "id": "SP-0027",
+     "id": "SP-0028",
      "name_ar": "CAMeL Tools: تقطيع النص العربي واستخراج الجذور والتشكيل وتحديد",
      "name_en": "CAMeL Tools: Tokenise, lemmatise, diacritise and dialect-identify Arabic text",
      "size": 19,
@@ -2126,7 +2130,7 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0416",
+     "id": "SP-0420",
      "name_ar": "مطابقة الخط بالحبر",
      "name_en": "Font matching by ink",
      "size": 11,
@@ -2134,7 +2138,7 @@
      "ready_now": 10
     },
     {
-     "id": "SP-0415",
+     "id": "SP-0419",
      "name_ar": "التقاط ستايل النص وإعادة تركيبه",
      "name_en": "Text-style capture & compositing",
      "size": 15,
@@ -2142,7 +2146,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0421",
+     "id": "SP-0425",
      "name_ar": "أنظمة الأصوات الطباعية",
      "name_en": "Multi-voice type systems",
      "size": 25,
@@ -2150,7 +2154,7 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0417",
+     "id": "SP-0421",
      "name_ar": "سطور تتكدس وتخفت",
      "name_en": "Stacked headline lines that dim",
      "size": 7,
@@ -2158,7 +2162,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0418",
+     "id": "SP-0422",
      "name_ar": "نظام أرقام واحد وأرقام جدولية",
      "name_en": "One digit system + tabular figures",
      "size": 6,
@@ -2166,7 +2170,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0419",
+     "id": "SP-0423",
      "name_ar": "عنوان ASS متحرك لكل لقطة",
      "name_en": "Per-shot ASS animated title card",
      "size": 5,
@@ -2174,7 +2178,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0422",
+     "id": "SP-0426",
      "name_ar": "صعود من خلف خط القاعدة",
      "name_en": "Baseline mask rise (lines & words)",
      "size": 17,
@@ -2182,7 +2186,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0424",
+     "id": "SP-0428",
      "name_ar": "كتابة بشرية: أخطاء ومسح ومؤشر ملوّن",
      "name_en": "Human typing: typos, backspace, caret swap",
      "size": 9,
@@ -2190,7 +2194,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0425",
+     "id": "SP-0429",
      "name_ar": "صدمة العنوان وضربة الكلمة على الإيقاع",
      "name_en": "Headline slam & beat word punch",
      "size": 9,
@@ -2198,7 +2202,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0420",
+     "id": "SP-0424",
      "name_ar": "ثلاثة أشكال لعنوان الخطاف",
      "name_en": "Hook title looks: box · kinetic · minimal",
      "size": 4,
@@ -2288,33 +2292,33 @@
     "خرائط"
    ],
    "superpowers": [
-    "SP-0084",
     "SP-0085",
-    "SP-0192",
     "SP-0086",
-    "SP-0193",
-    "SP-0087",
-    "SP-0280",
-    "SP-0282",
-    "SP-0196",
-    "SP-0194",
     "SP-0195",
-    "SP-0199",
+    "SP-0087",
+    "SP-0196",
+    "SP-0088",
     "SP-0283",
+    "SP-0285",
+    "SP-0199",
     "SP-0197",
     "SP-0198",
-    "SP-0080",
-    "SP-0281",
-    "SP-0284",
+    "SP-0202",
+    "SP-0286",
+    "SP-0200",
+    "SP-0201",
     "SP-0081",
+    "SP-0284",
+    "SP-0287",
     "SP-0082",
     "SP-0083",
-    "SP-0200",
-    "SP-0285"
+    "SP-0084",
+    "SP-0203",
+    "SP-0288"
    ],
    "top": [
     {
-     "id": "SP-0084",
+     "id": "SP-0085",
      "name_ar": "SQL مباشرة على ملفات CSV بـ DuckDB",
      "name_en": "DuckDB SQL straight on CSV/Parquet",
      "size": 19,
@@ -2322,7 +2326,7 @@
      "ready_now": 14
     },
     {
-     "id": "SP-0085",
+     "id": "SP-0086",
      "name_ar": "تعزيز متدرّج XGBoost وLightGBM",
      "name_en": "Gradient boosting (XGBoost, LightGBM)",
      "size": 10,
@@ -2330,15 +2334,15 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0192",
-     "name_ar": "اختيار المخطط حسب السؤال",
-     "name_en": "Chart choice by analytical question",
-     "size": 37,
+     "id": "SP-0195",
+     "name_ar": "تحوّل المخططات",
+     "name_en": "Chart morph (bars → donut / line / scatter)",
+     "size": 38,
      "best": "proven",
      "ready_now": 7
     },
     {
-     "id": "SP-0086",
+     "id": "SP-0087",
      "name_ar": "حل رياضي دقيق بـ sympy",
      "name_en": "Exact symbolic solving with sympy",
      "size": 8,
@@ -2346,7 +2350,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0193",
+     "id": "SP-0196",
      "name_ar": "حلقة التقدم المخروطية",
      "name_en": "Conic-gradient progress ring",
      "size": 18,
@@ -2354,7 +2358,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0087",
+     "id": "SP-0088",
      "name_ar": "رسم بياني بعناوين عربية في matplotlib",
      "name_en": "matplotlib charts with Arabic labels",
      "size": 6,
@@ -2362,7 +2366,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0280",
+     "id": "SP-0283",
      "name_ar": "هل نحتاج خريطة أصلًا",
      "name_en": "Map or not",
      "size": 23,
@@ -2370,7 +2374,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0282",
+     "id": "SP-0285",
      "name_ar": "متى GeoJSON ومتى البلاطات المتجهة",
      "name_en": "GeoJSON vs vector-tile threshold",
      "size": 11,
@@ -2378,15 +2382,15 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0196",
+     "id": "SP-0199",
      "name_ar": "ظهور الرقم بضبابية ورفع",
      "name_en": "Number pop-in with blur & lift",
-     "size": 9,
+     "size": 8,
      "best": "proven",
      "ready_now": 3
     },
     {
-     "id": "SP-0194",
+     "id": "SP-0197",
      "name_ar": "عدّاد التكلفة التراكمي",
      "name_en": "Cost-stack accumulation counter",
      "size": 12,
@@ -2394,7 +2398,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0195",
+     "id": "SP-0198",
      "name_ar": "خط/مساحة مع مؤشر تقاطع",
      "name_en": "SKCharts line/area with crosshair",
      "size": 10,
@@ -2402,7 +2406,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0199",
+     "id": "SP-0202",
      "name_ar": "جدول يتكشف صفًّا صفًّا",
      "name_en": "Progressive table & status pills",
      "size": 5,
@@ -2502,21 +2506,21 @@
     "وورد"
    ],
    "superpowers": [
-    "SP-0092",
-    "SP-0033",
     "SP-0093",
     "SP-0034",
-    "SP-0032",
-    "SP-0088",
-    "SP-0029",
-    "SP-0089",
-    "SP-0090",
     "SP-0094",
-    "SP-0091"
+    "SP-0035",
+    "SP-0033",
+    "SP-0089",
+    "SP-0030",
+    "SP-0090",
+    "SP-0091",
+    "SP-0095",
+    "SP-0092"
    ],
    "top": [
     {
-     "id": "SP-0092",
+     "id": "SP-0093",
      "name_ar": "تحويل Office إلى PDF دفعة واحدة",
      "name_en": "Batch Office to PDF with LibreOffice",
      "size": 23,
@@ -2524,7 +2528,7 @@
      "ready_now": 16
     },
     {
-     "id": "SP-0033",
+     "id": "SP-0034",
      "name_ar": "فحص علامات الكتابة الآلية في الفصحى والمصرية",
      "name_en": "Arabic MSA and Egyptian tell scan (AR1–AR26)",
      "size": 10,
@@ -2532,7 +2536,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0093",
+     "id": "SP-0094",
      "name_ar": "PlantUML: توليد مخططات UML من نص",
      "name_en": "PlantUML: Generate UML class/sequence/component diagrams from text",
      "size": 9,
@@ -2540,7 +2544,7 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0034",
+     "id": "SP-0035",
      "name_ar": "قفل الاقتباس المباشر",
      "name_en": "Direct-quote lock",
      "size": 7,
@@ -2548,7 +2552,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0032",
+     "id": "SP-0033",
      "name_ar": "مطابقة صوت الكاتب من عينة",
      "name_en": "Voice matching from the writer's sample",
      "size": 11,
@@ -2556,7 +2560,7 @@
      "ready_now": 1
     },
     {
-     "id": "SP-0088",
+     "id": "SP-0089",
      "name_ar": "تدقيق انحراف التوثيق عن الكود",
      "name_en": "Docs drift audit against current code",
      "size": 29,
@@ -2564,7 +2568,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0029",
+     "id": "SP-0030",
      "name_ar": "تدقيق التسلسل البصري والمسافات",
      "name_en": "Refactoring-UI hierarchy and spacing audit",
      "size": 7,
@@ -2572,7 +2576,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0089",
+     "id": "SP-0090",
      "name_ar": "مراجعة مخاطر العقود واتفاقيات السرية",
      "name_en": "Contract and NDA risk review with redline",
      "size": 7,
@@ -2580,7 +2584,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0090",
+     "id": "SP-0091",
      "name_ar": "تجميع حزمة الإقفال المالي الشهري للعميل",
      "name_en": "Month-end client financial pack assembly",
      "size": 3,
@@ -2588,7 +2592,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0094",
+     "id": "SP-0095",
      "name_ar": "موصل المستندات الحية",
      "name_en": "Living-docs connector (Claude Docs)",
      "size": 3,
@@ -2596,7 +2600,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0091",
+     "id": "SP-0092",
      "name_ar": "جاهزية الموقع لـ llms.txt وزواحف AI",
      "name_en": "llms.txt and AI-crawler readiness",
      "size": 1,
@@ -2679,47 +2683,47 @@
     "توثيق"
    ],
    "superpowers": [
-    "SP-0328",
-    "SP-0035",
-    "SP-0329",
-    "SP-0330",
-    "SP-0332",
-    "SP-0334",
-    "SP-0340",
-    "SP-0337",
-    "SP-0338",
-    "SP-0339",
     "SP-0331",
+    "SP-0036",
+    "SP-0332",
     "SP-0333",
-    "SP-0024",
-    "SP-0341",
-    "SP-0342",
-    "SP-0351",
-    "SP-0346",
-    "SP-0352",
-    "SP-0353",
-    "SP-0357",
-    "SP-0336",
+    "SP-0335",
+    "SP-0337",
     "SP-0343",
+    "SP-0338",
+    "SP-0340",
+    "SP-0342",
+    "SP-0334",
+    "SP-0336",
+    "SP-0025",
     "SP-0344",
     "SP-0345",
-    "SP-0347",
-    "SP-0349",
-    "SP-0058",
-    "SP-0350",
-    "SP-0356",
-    "SP-0335",
-    "SP-0348",
-    "SP-0025",
-    "SP-0059",
     "SP-0354",
-    "SP-0026",
+    "SP-0349",
     "SP-0355",
-    "SP-0358"
+    "SP-0356",
+    "SP-0360",
+    "SP-0339",
+    "SP-0346",
+    "SP-0347",
+    "SP-0348",
+    "SP-0350",
+    "SP-0352",
+    "SP-0059",
+    "SP-0353",
+    "SP-0359",
+    "SP-0341",
+    "SP-0351",
+    "SP-0026",
+    "SP-0060",
+    "SP-0357",
+    "SP-0027",
+    "SP-0358",
+    "SP-0361"
    ],
    "top": [
     {
-     "id": "SP-0328",
+     "id": "SP-0331",
      "name_ar": "بوابة التسليم",
      "name_en": "Delivery gate (inspect)",
      "size": 42,
@@ -2727,7 +2731,7 @@
      "ready_now": 16
     },
     {
-     "id": "SP-0035",
+     "id": "SP-0036",
      "name_ar": "توليد توثيق HTML للـAPI",
      "name_en": "Generate standalone HTML API docs",
      "size": 32,
@@ -2735,7 +2739,7 @@
      "ready_now": 15
     },
     {
-     "id": "SP-0329",
+     "id": "SP-0332",
      "name_ar": "فحص التباين عبر الزمن",
      "name_en": "WCAG contrast audit over time",
      "size": 29,
@@ -2743,7 +2747,7 @@
      "ready_now": 13
     },
     {
-     "id": "SP-0330",
+     "id": "SP-0333",
      "name_ar": "قائمة جودة الحركة",
      "name_en": "Motion quality checklist",
      "size": 25,
@@ -2751,7 +2755,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0332",
+     "id": "SP-0335",
      "name_ar": "التحقق من تزامن القطع مع الضربة",
      "name_en": "Onset-sync verification",
      "size": 23,
@@ -2759,7 +2763,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0334",
+     "id": "SP-0337",
      "name_ar": "إطار مرجعي للمقارنة",
      "name_en": "Golden still regression",
      "size": 20,
@@ -2767,7 +2771,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0340",
+     "id": "SP-0343",
      "name_ar": "قياسات الصورة",
      "name_en": "Image metrics by code",
      "size": 11,
@@ -2775,15 +2779,15 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0337",
+     "id": "SP-0338",
      "name_ar": "فحص الحلقة بلا درزة",
      "name_en": "Seamless loop check",
-     "size": 13,
+     "size": 14,
      "best": "proven",
      "ready_now": 7
     },
     {
-     "id": "SP-0338",
+     "id": "SP-0340",
      "name_ar": "فحص الإطارات الآلي",
      "name_en": "Frame QA: black/white/freeze/cut scan",
      "size": 13,
@@ -2791,7 +2795,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0339",
+     "id": "SP-0342",
      "name_ar": "مشغل معاينة داخل المتصفح",
      "name_en": "Built-in browser preview player",
      "size": 11,
@@ -2799,7 +2803,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0331",
+     "id": "SP-0334",
      "name_ar": "ورقة المراجعة",
      "name_en": "sheet contact review",
      "size": 24,
@@ -2807,7 +2811,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0333",
+     "id": "SP-0336",
      "name_ar": "فحص التركيب",
      "name_en": "lint composition",
      "size": 22,
@@ -2866,9 +2870,9 @@
     "npm:esbuild",
     "pip:scipy",
     "npm:remotion",
+    "tesseract",
     "docker",
     "blender",
-    "tesseract",
     "claude:browser",
     "yt-dlp",
     "key:openai"
@@ -2912,30 +2916,30 @@
     "ريش"
    ],
    "superpowers": [
+    "SP-0074",
+    "SP-0066",
     "SP-0073",
+    "SP-0080",
+    "SP-0062",
     "SP-0065",
-    "SP-0072",
+    "SP-0067",
+    "SP-0068",
+    "SP-0076",
+    "SP-0078",
+    "SP-0063",
+    "SP-0069",
     "SP-0079",
     "SP-0061",
     "SP-0064",
-    "SP-0066",
-    "SP-0067",
-    "SP-0075",
-    "SP-0077",
-    "SP-0062",
-    "SP-0068",
-    "SP-0078",
-    "SP-0060",
-    "SP-0063",
-    "SP-0069",
     "SP-0070",
     "SP-0071",
-    "SP-0074",
-    "SP-0076"
+    "SP-0072",
+    "SP-0075",
+    "SP-0077"
    ],
    "top": [
     {
-     "id": "SP-0073",
+     "id": "SP-0074",
      "name_ar": "فرز المثبّت قبل REA",
      "name_en": "Installer triage scan",
      "size": 6,
@@ -2943,7 +2947,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0065",
+     "id": "SP-0066",
      "name_ar": "استيراد حزمة أدلة",
      "name_en": "Validate and import a bounded local Evidence bundle",
      "size": 11,
@@ -2951,7 +2955,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0072",
+     "id": "SP-0073",
      "name_ar": "فحص صفحة ويب",
      "name_en": "Passively inspect one page through CDP, defaulting to its current origin",
      "size": 6,
@@ -2959,7 +2963,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0079",
+     "id": "SP-0080",
      "name_ar": "سرد المعماريات objdump",
      "name_en": "List BFD targets advertised by the installed GNU objdump",
      "size": 3,
@@ -2967,7 +2971,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0061",
+     "id": "SP-0062",
      "name_ar": "إيقاف تطبيق ADB",
      "name_en": "Force-stop every process of one package",
      "size": 26,
@@ -2975,7 +2979,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0064",
+     "id": "SP-0065",
      "name_ar": "فحص قطعة مُدار (.NET)",
      "name_en": "Inspect PE/CLI identity without loading target code",
      "size": 12,
@@ -2983,7 +2987,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0066",
+     "id": "SP-0067",
      "name_ar": "مقارنة",
      "name_en": "Compare two canonical Evidence bundles",
      "size": 10,
@@ -2991,7 +2995,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0067",
+     "id": "SP-0068",
      "name_ar": "سرد الأهداف وقت التشغيل جافاسكربت",
      "name_en": "List Node/Electron V8 Inspector targets",
      "size": 9,
@@ -2999,7 +3003,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0075",
+     "id": "SP-0076",
      "name_ar": "فحص عميل pcap",
      "name_en": "Inspect the caller-selected tshark and capinfos binaries without reading a capture",
      "size": 5,
@@ -3007,7 +3011,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0077",
+     "id": "SP-0078",
      "name_ar": "استخراج فيرموير",
      "name_en": "Extract selected firmware bytes and return verified files and provenance",
      "size": 4,
@@ -3015,7 +3019,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0062",
+     "id": "SP-0063",
      "name_ar": "فحص تعليمة أصلية",
      "name_en": "Inspect one native instruction with decoded operand facts",
      "size": 19,
@@ -3023,7 +3027,7 @@
      "ready_now": 1
     },
     {
-     "id": "SP-0068",
+     "id": "SP-0069",
      "name_ar": "تتبّع الدلالات جافاسكربت",
      "name_en": "Trace bounded static semantic relations through authenticated application Evidence",
      "size": 9,
@@ -3060,7 +3064,7 @@
    ],
    "links": [
     "agents",
-    "motion",
+    "software",
     "3d",
     "quality"
    ]
@@ -3082,13 +3086,13 @@
     "متنوع"
    ],
    "superpowers": [
-    "SP-0310",
-    "SP-0311",
-    "SP-0312"
+    "SP-0313",
+    "SP-0314",
+    "SP-0315"
    ],
    "top": [
     {
-     "id": "SP-0310",
+     "id": "SP-0313",
      "name_ar": "مكتبة KOSIF Atlas",
      "name_en": "KOSIF Atlas library access",
      "size": 15,
@@ -3096,7 +3100,7 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0311",
+     "id": "SP-0314",
      "name_ar": "خادم MCP للاستوديو (22 أداة)",
      "name_en": "Studio MCP server for Claude Code (22 tools)",
      "size": 8,
@@ -3104,7 +3108,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0312",
+     "id": "SP-0315",
      "name_ar": "ملف المشروع المحمول وإعادة الربط",
      "name_en": "Portable project file (.kosif.json) with media re-link",
      "size": 4,

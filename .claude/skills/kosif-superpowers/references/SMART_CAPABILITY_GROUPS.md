@@ -1,6 +1,6 @@
 # KOSIF unified capability groups
 
-Source: 5,297 powers / 62 families / 15 integrated-domain candidates.
+Source: 5,318 powers / 62 families / 15 integrated-domain candidates.
 
 > These are navigation/integration **candidates**, not evidence that all tools were merged into one runtime.
 
@@ -8,8 +8,8 @@ Source: 5,297 powers / 62 families / 15 integrated-domain candidates.
 |---|---|---:|---:|
 | `research` | البحث والمعرفة | 54 | 3 |
 | `thinking` | التفكير والتخطيط والاستراتيجية | 291 | 8 |
-| `agents` | الوكلاء والتوجيه الذكي | 142 | 3 |
-| `software` | البرمجة وبناء التطبيقات | 525 | 6 |
+| `agents` | الوكلاء والتوجيه الذكي | 143 | 3 |
+| `software` | البرمجة وبناء التطبيقات | 545 | 6 |
 | `drawing` | الرسم والأشكال والتصميم | 297 | 5 |
 | `images` | الصور والتحرير والتوليد | 296 | 5 |
 | `3d` | الثري دي والمحاكاة والرندر | 754 | 5 |

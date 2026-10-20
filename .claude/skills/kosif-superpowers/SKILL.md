@@ -6,7 +6,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 # قواك الخارقة — KOSIF Superpowers
 
-**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,297 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,318 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 
 ## Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
 
@@ -14,7 +14,7 @@ For Arabic/Latin font choice, logo lettering, posters, editorial or kinetic type
 
 ## Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
 
-When asked to discover, assess or fuse external **KOSIF Atlas** skills, preserve the existing KOSIF-native 5,297-power catalog as the primary route. Then run the standalone, read-only selector in `scripts/atlas_deep_fusion.py` against an authorized local checkout of Atlas `index.json` and `index-copyleft.json`. Supply `--query`, optionally `--domain`, and `--source-root` only for checked-out source-text inspection. See [Atlas Deep Fusion and test evidence](references/atlas-deep-fusion-20261020.md) and [34 source-text samples](data/atlas-source-samples-20261020.json). Use the selected upstream URL, license, risk flags and SKILL.md evidence to decide which *method ideas* might improve Superpowers; never treat index presence or `READ_ONLY_OK` as installation permission, executable availability, or safety certification. Do not auto-run external skill scripts or copy copyleft/proprietary executors. REA/Ghidra are for shipped software artifacts when technically applicable, not for decompiling Markdown.
+When asked to discover, assess or fuse external **KOSIF Atlas** skills, preserve the existing KOSIF-native 5,318-power catalog as the primary route. Then run the standalone, read-only selector in `scripts/atlas_deep_fusion.py` against an authorized local checkout of Atlas `index.json` and `index-copyleft.json`. Supply `--query`, optionally `--domain`, and `--source-root` only for checked-out source-text inspection. See [Atlas Deep Fusion and test evidence](references/atlas-deep-fusion-20261020.md) and [34 source-text samples](data/atlas-source-samples-20261020.json). Use the selected upstream URL, license, risk flags and SKILL.md evidence to decide which *method ideas* might improve Superpowers; never treat index presence or `READ_ONLY_OK` as installation permission, executable availability, or safety certification. Do not auto-run external skill scripts or copy copyleft/proprietary executors. REA/Ghidra are for shipped software artifacts when technically applicable, not for decompiling Markdown.
 
 ## Atlas Stratified Source Methods — verified provenance, not executable imports
 
@@ -134,8 +134,8 @@ Use the **generated bilingual capability index** at [references/capability-atlas
 
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=5297 families=62 domains=10 styles=289 watched=254 proven=919 ready=642 install=971 key=176 seen=609 documented=1909 idea=71 -->
-**الأرقام / counts:** 5,297 قدرة في 62 عائلة و10 مجالات — ✅ 919 · 🟢 642 · 📦 971 · 🔑 176 · 👁 609 · 📄 1,909 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=5318 families=62 domains=10 styles=289 watched=254 proven=920 ready=642 install=971 key=176 seen=609 documented=1929 idea=71 -->
+**الأرقام / counts:** 5,318 قدرة في 62 عائلة و10 مجالات — ✅ 920 · 🟢 642 · 📦 971 · 🔑 176 · 👁 609 · 📄 1,909 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## الفهرس / contents
 - [بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol](#00-بروتوكول-ذكاء-المهارات-الشامل--universal-skill-intelligence-protocol)
@@ -207,7 +207,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 | 3D / ثلاثي الأبعاد | `blender-api-audit` · `blender-bridge` · `blender-cinema` · `blender-cycles-render` · `blender-worker` · `native-3d` · `native-glb` · `blender-motion-video` · `blender-cinematic-bridge` · `blender-rescue-scene` · `blender-cat-fur-upgrade` |
 | Image, design and fonts / الصور والتصميم والخطوط | `app-studio` · `app-studio-paint` · `font-fidelity-lab` · `render-text` · `unified-media` · `telegram-typography-atlas` |
 | Sources and references / المصادر والمراجع | `atlas-external-bridge` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` |
-| Software investigation / فحص البرامج | `installer-triage` · `local-project-audit` · `rea-bridge` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` |
+| Software investigation / فحص البرامج | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` |
 | Local computer / الجهاز المحلي | `kosif-remote-commander` |
 | Maintain and build / الصيانة والبناء | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` |
 <!-- hub:tools:end -->
@@ -246,7 +246,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 استخدم أدنى شارة صادقة دائمًا. Always claim the lowest badge that is true.
 ✅ شُغّل فعلًا في حاوية Claude ومعه مسار دليل · 🟢 كود جاهز هنا · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (موشن فقط) · 📄 طريقة موصوفة · 💡 فكرة.
 ✅ إيصال بتاريخ لا وعد دائم: البيئات تختلف، فأعد الفحص قبل الادعاء. `executed ≠ verified`: التشغيل وحده ليس تحققًا.
-لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (550 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
+لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (551 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
 للأدوات شارة منفصلة في السجل: `tested-here` (اختبارها في هذا المستودع ونجح عند بناء السجل)، `tested-elsewhere` (نجح على جهاز آخر أو يحتاج مستلزمًا غير موجود هنا)، `untested`. — Tools carry their own evidence field; it is a dated receipt too.
 
 ## 5. الموشن والمونتاج / motion & video procedure

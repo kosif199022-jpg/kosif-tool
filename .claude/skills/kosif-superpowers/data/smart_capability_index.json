@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5297,
+  "catalog_powers": 5318,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 114,
+  "tool_count": 115,
   "groups": [
     {
       "id": "research",
@@ -129,17 +129,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 142,
+      "count": 143,
       "status_counts": {
         "documented": 49,
         "install": 8,
         "key": 2,
-        "proven": 78,
+        "proven": 79,
         "ready": 5
       },
       "family_counts": {
         "agent-orchestration": 38,
-        "runnable-tools": 61,
+        "runnable-tools": 62,
         "self-discovery": 43
       },
       "examples": [
@@ -189,9 +189,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 525,
+      "count": 545,
       "status_counts": {
-        "documented": 341,
+        "documented": 361,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -200,7 +200,7 @@
         "seen": 16
       },
       "family_counts": {
-        "app-feature-transfer": 119,
+        "app-feature-transfer": 139,
         "apps-artifacts": 23,
         "atlas-build": 50,
         "atlas-code": 216,
@@ -6778,6 +6778,332 @@
       ],
       "source": "app-feature-transfer.json",
       "what": "PaintUI.AIFeature = Cocreator، ImageCreator، GenerativeFill، StickerGenerator، Reimagine، ColoringBook؛ ونماذج على الجهاز seg/inseg (تحديد كائن بنقرة) وmager (302 MB) وعلامة Content Credentials. المقابل هنا: coloring-book وsticker وremove-bg وrepair (محو)، والتوليد عبر موصلات الص"
+    },
+    {
+      "id": "APPX-120",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Design fidelity contract with a closed deviation list",
+      "name_ar": "عقد الأمانة للتصميم بقائمة انحرافات مغلقة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "«استخدم هذا التصميم» يعني تطابقًا كاملًا افتراضيًا في البنية والأبعاد والأنماط والأصول والحالات والحركة والاستجابة والسلوك؛ اكتب قبل البناء عقدًا قصيرًا: المصدر بالضبط، ومقاس المرجع، وما يُسمح بتغييره بالاسم فقط — treat 'use this design' as exact parity; write a short contract fi"
+    },
+    {
+      "id": "APPX-121",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Parity first, adaptation second",
+      "name_ar": "التطابق أولًا ثم التكييف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "انقل التنفيذ المرجعي كاملًا (الملفات الفرعية والأنماط والخطوط والأصول) وطابقه عند مقاس المرجع ببيانات نموذجية، ثم أعد التسمية أو اربط البيانات الحقيقية؛ فيبقى انحراف المصدر منفصلًا عن أخطاء التكامل — port everything and match at the reference viewport first, refactor and wire rea"
+    },
+    {
+      "id": "APPX-122",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Visual verification loop for UI against a reference",
+      "name_ar": "حلقة التحقق البصري للواجهة مقابل المرجع",
+      "status": "documented",
+      "requires": [
+        "chromium",
+        "pip:pillow"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "قارن الواجهة بمرجعها في متصفح حقيقي بنفس المقاس والكثافة والثيم والمحتوى والحالة: جنبًا إلى جنب، ثم تراكب أو فرق بكسلي؛ وعند الاختلاف ابدأ من أول عنصر أب يختلف وقارن أنماطه المحسوبة ومربعاته بدل تحريك الأبناء — side-by-side, then overlay or pixel diff; fix the first diverging anc"
+    },
+    {
+      "id": "APPX-123",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Import UI from a repository by reading its design foundation first",
+      "name_ar": "استيراد واجهة من مستودع بقراءة أساس التصميم أولًا",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "git"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "اقرأ طبقة التصميم العامة قبل الهدف: التقنية، وCSS العام، وقيم المتغيرات الفعلية (:root و.dark)، وطريقة تحميل الخطوط، واستراتيجية الثيم، والمكونات المشتركة؛ ثم افتح الهدف وتتبع كل استيراداته والتخطيط الأب — read the global design layer, then the target and all its imports"
+    },
+    {
+      "id": "APPX-124",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Theme as portable data with a designer-intent field",
+      "name_ar": "الثيم كبيانات قابلة للنقل مع حقل نية المصمم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "نظام التصميم سجل واحد: خرائط متغيرات الوضعين الفاتح والداكن، والوضع الافتراضي، والخطوط ومصدرها، وسطور قصيرة يكتبها المصمم تلزم الوكلاء (مثل: ظلال لا حدود، ولون العلامة للأزرار فقط)؛ يُنشأ من الصفر أو من متغيرات CSS ملصقة أو من صفحة — one record with light/dark variable maps, defa"
+    },
+    {
+      "id": "APPX-125",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Default rules for authored interactive UI frames",
+      "name_ar": "قواعد افتراضية لإطارات الواجهات التفاعلية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ما لم يُطلب غير ذلك: لا إطار جهاز (الإطار هو الجهاز)، وعرض مرن يتوسط بلا أبعاد خارجية ثابتة، وشاشة واحدة تتنقل حالاتها داخليًا، وأزرار تعمل فعلًا لا معالجات فارغة — no device chrome, fluid and centred, one screen with internal states, no dead buttons"
+    },
+    {
+      "id": "APPX-126",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Design is the look spec; the old component is the behaviour spec",
+      "name_ar": "التصميم مواصفة الشكل والمكوّن القديم مواصفة السلوك",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "قبل استبدال مكوّن اكتب عقده الحي: الخصائص والاستدعاءات والحالة وطلبات الشبكة والتوجيه والتحقق وحالات التحميل والفراغ والخطأ ولوحة المفاتيح وARIA والقياس والاختبارات؛ ولا تحذف القديم قبل أن ينجح التحقق — list the replaced component's runtime contract and keep it until verification"
+    },
+    {
+      "id": "APPX-127",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Agent-friendly command contract (JSON, non-interactive, dry-run, explicit states)",
+      "name_ar": "عقد أوامر مريح للوكيل",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "كل أمر يعيد بيانات يخرج JSON عند الطلب ويعمل بلا أسئلة تفاعلية؛ وكل أمر يكتب له تجربة جافة تسرد ما سيكتبه ويرفض الكتابة فوق ملف قبل المراجعة؛ والحالات صريحة (تم، بلا تغيير، فشل بسبب) — JSON on request, no prompts, dry-run for writers, refuse silent overwrites, explicit outcome st"
+    },
+    {
+      "id": "APPX-128",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Preflight probe first: auth, context and version as one JSON",
+      "name_ar": "فحص تمهيدي أولًا للحساب والسياق",
+      "status": "documented",
+      "requires": [
+        "pip:higgsfield"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ابدأ كل جلسة بنداء رخيص للقراءة فقط يعيد حالة الدخول والمشروع النشط وإصدار الأداة، وتفرّع عليه (سجّل دخول، اسأل، أو تابع) قبل أي عمل حقيقي — one cheap read-only call that returns auth state, active project and version, then branch"
+    },
+    {
+      "id": "APPX-129",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Persistent visual board beside the agent",
+      "name_ar": "لوحة بصرية دائمة بجانب الوكيل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "للعمل البصري افتح من أول المهمة صفحة واحدة على مستوى المشروع بجانب المحادثة يراها المستخدم وهي تمتلئ، وأعد نشرها في نفس الرابط، وأظهر كل عامل وهو يبني بدل مؤشر انتظار — open one project board at task start and keep republishing it; show each worker's progress live"
+    },
+    {
+      "id": "APPX-130",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Two-phase work session with a baseline manifest and an editable-file allowlist",
+      "name_ar": "جلسة عمل بمرحلتين مع خط أساس وقائمة ملفات مسموحة",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ابدأ بخطوة تسجّل بصمات الملفات القابلة للتعديل، وأنهِ بخطوة تسليم تقارن بها فتعرف المتغير والمحذوف وتعيد «بلا تغيير» إن لم يتغير شيء؛ ولا تقبل التغيير إلا في مسارات معلنة، وارفض لمس ملفات البناء والحزم — start records a baseline, submit diffs against it, and only declared paths m"
+    },
+    {
+      "id": "APPX-131",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Pin exactly the version the user is looking at",
+      "name_ar": "تثبيت النسخة التي يراها المستخدم بالضبط",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "حدّد «هذا» من التحديد أو المفتوح، واحمل معرّف النسخة أو بصمتها في كل خطوة لاحقة حتى لا ينجرف التصدير إلى نسخة أحدث؛ وإن لم يتح إلا «الأحدث» فقل ذلك صراحة — carry the exact version id or hash of the reference through every step, and say so when only 'latest' was available"
+    },
+    {
+      "id": "APPX-132",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Selection-as-context reference bundle shared by every worker",
+      "name_ar": "حزمة مراجع من التحديد تُعطى لكل العمّال",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ما يشير إليه المستخدم (رسم، صورة، مخرج سابق، أصل بالاسم) يُجمع في حزمة مراجع واحدة بأدوار (أسلوب، محتوى، بنية) وتُرفق بالطلب التالي وتُعطى كما هي لكل مهمة فرعية متوازية، مع بوابة تأكيد إذا كثرت المخرجات — one reference bundle with roles, handed identically to every parallel worke"
+    },
+    {
+      "id": "APPX-133",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Variant fan-out on named axes, side by side, never overwriting",
+      "name_ar": "تنويعات على محاور مسمّاة جنبًا إلى جنب",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "اختر المحاور التي تتغير (التخطيط، الأسلوب، اللون، النص، اللغة، الجمهور، الجهاز) والعدد، واتجاهًا حرًا أو «فاجئني»؛ كل تنويع نسخة شقيقة بجانب الأصل لا تستبدله — vary named axes into sibling copies next to the original"
+    },
+    {
+      "id": "APPX-134",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Deterministic-first edits; the model only for what cannot be rewritten safely",
+      "name_ar": "التعديل الحتمي أولًا والنموذج للباقي فقط",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "سجّل التعديلات المباشرة (نص، لون، توقيت عنصر) سجلًا حتميًا يُطبق على المصدر بلا نموذج، وأحِل للنموذج فقط ما لا يمكن ربطه بأمان (قيم محسوبة، بيانات من مكان آخر) مع إعلان ذلك — apply direct manipulations as a deterministic change log; escalate only the unmappable remainder, visibly"
+    },
+    {
+      "id": "APPX-135",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Linked instances: shared style, per-record content",
+      "name_ar": "نُسخ مرتبطة: نمط مشترك ومحتوى لكل سجل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "إذا جاءت عناصر كثيرة من مصدر متكرر واحد فتغيير النمط ينتشر لها كلها، وتغيير النص أو الصورة يعدّل سجل ذلك العنصر وحده؛ والمحتوى المحسوب يُعلَّم غير قابل للتعديل المباشر — style edits propagate, content edits touch one record"
+    },
+    {
+      "id": "APPX-136",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Per-item revisions: roll back instead of piling on prompts",
+      "name_ar": "نسخ لكل عنصر وارجع للخلف بدل مواصلة التلقين",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "كل تغيير مقبول ينشئ نسخة مرقمة للعنصر يمكن استعادتها؛ وإذا انجرفت النتائج فارجع لآخر نسخة جيدة أو ابدأ خيطًا نظيفًا أو اسأل الوكيل ماذا غيّر — numbered revisions per item; when results drift, roll back or restart cleanly"
+    },
+    {
+      "id": "APPX-137",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Labeled rough sketch for structure; reference for look",
+      "name_ar": "الرسم التقريبي الموسوم للبنية والمرجع للمظهر",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "رسم تقريبي بصناديق وأسهم ووسوم قصيرة (عنوان، زر) يُلتقط ويُرسل كبنية، وصورة مرجعية أو أصل مسمّى يعطي الأسلوب: البنية من الرسم والمظهر من المرجع — structure from the sketch, style from the reference"
+    },
+    {
+      "id": "APPX-138",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Two-way MCP bridge with a current-selection hint",
+      "name_ar": "جسر MCP باتجاهين مع تلميح التحديد الحالي",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "اعرض مساحة العمل لأي عميل MCP بتسجيل دخول من المتصفح بدل مفتاح ملصق؛ يدفع الوكلاء عملًا جديدًا ويسحبون العمل المنتهي إلى الكود، ويُبلَّغون بالمشروع والتحديد الحاليين دون معرّفات — expose the workspace to MCP clients both ways, with the active project and selection as context"
+    },
+    {
+      "id": "APPX-139",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Skills: description-matched loading, explicit pinning, safe text-only import",
+      "name_ar": "المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "تُحمَّل المهارة تلقائيًا إذا طابق وصفها الطلب، ويمكن تثبيتها صراحة لإزالة الالتباس؛ وتُقبل حزم المهارات الخارجية نصًا فقط بحد حجم وبلا سكربتات قابلة للتشغيل، وللقراءة فقط بعد الاستيراد — auto-load by description, pin explicitly, accept third-party skills as text only under a size"
     },
     {
       "id": "APP-01",
@@ -65504,6 +65830,28 @@
       ],
       "source": "runnable-tools.json",
       "what": "ابحث في فهرس بيانات 5,514 خطًا فريدًا من صادرات تيليجرام الخاصة بك (4,634 تدعم العربية): صف لكل عائلة بأوزانها، وكلمات الأنماط بالعربي (كوفي، رقعة، ديواني، ثلث، نسخ) مع تسامح الإملاء، وفلتر للرخص المفتوحة، و16 اتجاهًا تصميميًا أصليًا. الخطوط والرسائل والصور والمسارات تبقى على جها"
+    },
+    {
+      "id": "TOOL-62",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Web app study (public frontend, REA, facts only)",
+      "name_ar": "دراسة تطبيق ويب عام بـ REA (حقائق فقط)",
+      "status": "proven",
+      "requires": [
+        "python3",
+        "chromium",
+        "npm:react",
+        "npm:rea",
+        "os:macos"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_web_app_study.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/web_app_study.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يدرس صفحة ويب عامة للقراءة فقط: متصفح معزول بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفات"
     },
     {
       "id": "SEC-01",
