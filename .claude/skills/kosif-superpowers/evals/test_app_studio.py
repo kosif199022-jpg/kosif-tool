@@ -318,6 +318,16 @@ class AppStudioTests(unittest.TestCase):
         self.assertEqual(info["arabic_letters"], "1/42")
         sub = self.run_op("font-subset", [r["output"]], "sub.ttf", text="AV")
         self.assertLess(sub["metrics"]["bytes_out"], sub["metrics"]["bytes_in"])
+        # woff2 needs brotli: doctor must say so, and the op must name the install line instead of a bare ImportError.
+        row = next(x for x in st.doctor()["rows"] if x["op"] == "font-subset")
+        if importlib.util.find_spec("brotli") is None:
+            self.assertTrue(any("flavor=woff2" in x and "pip install brotli" in x for x in row.get("limited", [])))
+            with self.assertRaisesRegex(ImportError, "pip install brotli"):
+                self.run_op("font-subset", [r["output"]], "sub.woff2", text="AV", flavor="woff2")
+        else:
+            self.assertNotIn("limited", row)
+            w2 = self.run_op("font-subset", [r["output"]], "sub.woff2", text="AV", flavor="woff2")
+            self.assertEqual(Path(w2["output"]).read_bytes()[:4], b"wOF2")
 
     # --- animation
     def test_tween_lottie_ik(self):

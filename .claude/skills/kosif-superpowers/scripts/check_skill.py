@@ -32,6 +32,7 @@ Any subset of keys is allowed; each key present must equal the live value from p
   python3 check_skill.py --json         # machine-readable report
   python3 check_skill.py --print-counts # the marker line for SKILL.md
   python3 check_skill.py --evals        # all checks, then routing evals (powers.py suggest per eval query)
+  python3 check_skill.py --json --evals # one JSON document: {"ok", "report": {…}, "evals": {…}}
 
 Python 3.8+ standard library only.
 """
@@ -493,6 +494,7 @@ def check_tools(r: Report):
 DRIFT_FILES = ("SKILL.md", "references/INDEX.md", "references/capability-map.md")
 DRIFT_REPO_FILES = ("README.md", "CLAUDE.md", "AGENTS.md", "CAPABILITIES.md", "llms.txt")
 DRIFT_RE = re.compile(r"(\d,\d{3})(\+?)\s*(?:powers|قدرة|capabilities)")
+SCOPE_RE = re.compile(r"`(repo|sibling)`[^(`]{0,80}\((\d[\d,]*)")
 
 
 def check_drift(r: Report):
@@ -513,6 +515,13 @@ def check_drift(r: Report):
                 r.err("drift", f"{name} says {m.group(0)!r} but the catalog has {total:,} powers")
             elif m.group(2) != "+" and n not in allowed:
                 r.err("drift", f"{name} says {m.group(0)!r} but the catalog has {total:,} powers")
+    # proof-scope counts quoted in SKILL.md, e.g. "`repo` ملف في هذا المستودع (532 من الـ✅ …"
+    scopes = Counter(p.get("proof_scope") for p in rows if p.get("status") == "proven")
+    sm = SK / "SKILL.md"
+    for m in SCOPE_RE.finditer(sm.read_text(encoding="utf-8") if sm.is_file() else ""):
+        n = int(m.group(2).replace(",", ""))
+        if n != scopes.get(m.group(1), 0):
+            r.err("drift", f"SKILL.md says {n} proven records have proof_scope={m.group(1)}, the catalog has {scopes.get(m.group(1), 0)}")
 
 
 def live_counts() -> dict:
@@ -592,10 +601,12 @@ def check_evals(r: Report):
     r.info("evals", f"{len(cases)} eval cases ({sum(1 for c in cases if isinstance(c, dict) and c.get('routing'))} with routing checks)")
 
 
-def run_evals(min_pass: float, as_json: bool) -> int:
+def routing_evals(min_pass: float) -> dict:
+    """Run the routing evals and return the result; "ok" says whether they pass (an absent
+    evals/evals.json counts as passed, with available=False and the reason)."""
     if not (SK / "evals" / "evals.json").is_file():
-        print("routing evals: evals/evals.json is not in this copy (packages leave it out) — skipped")
-        return 0
+        return {"available": False, "reason": "evals/evals.json is not in this copy (packages leave it out)",
+                "cases": [], "ran": 0, "passed": 0, "skipped": 0, "pass_rate": 0.0, "min_pass": min_pass, "ok": True}
     cases = load_evals()
     powers, styles = P.load_powers(), P.load_styles()
     prefixes = {P.prefix_of(p) for p in powers}
@@ -634,15 +645,24 @@ def run_evals(min_pass: float, as_json: bool) -> int:
     ran = [x for x in results if x["result"] != "SKIP"]
     passed = sum(1 for x in ran if x["result"] == "PASS")
     rate = passed / len(ran) if ran else 0.0
+    return {"available": True, "cases": results, "ran": len(ran), "passed": passed,
+            "skipped": len(results) - len(ran), "pass_rate": round(rate, 3), "min_pass": min_pass,
+            "ok": bool(ran) and rate >= min_pass}
+
+
+def run_evals(min_pass: float, as_json: bool) -> int:
+    """Print the routing evals (text, or one JSON object) and return the exit code."""
+    ev = routing_evals(min_pass)
     if as_json:
-        print(json.dumps({"cases": results, "ran": len(ran), "passed": passed, "skipped": len(results) - len(ran),
-                          "pass_rate": round(rate, 3), "min_pass": min_pass}, ensure_ascii=False, indent=1))
+        print(json.dumps(ev, ensure_ascii=False, indent=1))
+    elif not ev["available"]:
+        print(f"routing evals: {ev['reason']} — skipped")
     else:
-        for x in results:
+        for x in ev["cases"]:
             print(f"{x['result']:<4} #{x['id']:<3} {x['query'][:60]:<60} → {' '.join(x['top'][:5])}" + (f"  [{x['why']}]" if x["why"] else ""))
-        print(f"\nrouting evals: {passed}/{len(ran)} passed ({rate:.0%}) · {len(results) - len(ran)} skipped · "
+        print(f"\nrouting evals: {ev['passed']}/{ev['ran']} passed ({ev['pass_rate']:.0%}) · {ev['skipped']} skipped · "
               f"threshold {min_pass:.0%} · these check routing only; expected_behavior needs a real run and a grader")
-    return 0 if ran and rate >= min_pass else 1
+    return 0 if ev["ok"] else 1
 
 
 # ------------------------------------------------------------------ main
@@ -650,7 +670,8 @@ def run_evals(min_pass: float, as_json: bool) -> int:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Validate the kosif-superpowers skill")
     ap.add_argument("--strict", action="store_true", help="warnings also fail")
-    ap.add_argument("--json", action="store_true", help="JSON report")
+    ap.add_argument("--json", action="store_true",
+                    help="JSON report (with --evals: one document {ok, report, evals})")
     ap.add_argument("--print-counts", action="store_true", help="print the counts marker for SKILL.md and exit")
     ap.add_argument("--evals", action="store_true", help="run all checks AND the routing evals (both must pass)")
     ap.add_argument("--min-pass", type=float, default=0.8, help="routing pass rate needed with --evals (default 0.8)")
@@ -676,11 +697,15 @@ def main(argv=None) -> int:
     errors, warns = r.count("error"), r.count("warn")
     failed = errors > 0 or (a.strict and warns > 0)
     if a.json:
-        print(json.dumps({"ok": not failed, "errors": errors, "warnings": warns, "checks": list(r.checks),
-                          "items": [{"level": lv, "check": c, "message": m} for lv, c, m in r.items]},
-                         ensure_ascii=False, indent=1))
+        report = {"ok": not failed, "errors": errors, "warnings": warns, "checks": list(r.checks),
+                  "items": [{"level": lv, "check": c, "message": m} for lv, c, m in r.items]}
         if a.evals:
-            return max(1 if failed else 0, run_evals(a.min_pass, a.json))
+            # One JSON document, so json.loads works on the whole output.
+            ev = routing_evals(a.min_pass)
+            ok = not failed and ev["ok"]
+            print(json.dumps({"ok": ok, "report": report, "evals": ev}, ensure_ascii=False, indent=1))
+            return 0 if ok else 1
+        print(json.dumps(report, ensure_ascii=False, indent=1))
         return 1 if failed else 0
     for lv, c, m in r.items:
         if lv == "info" and not a.verbose:

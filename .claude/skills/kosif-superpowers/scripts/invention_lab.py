@@ -74,8 +74,10 @@ def make_ideas(problem: str, count: int = 12, constraints: list[str] | None = No
                 "resilience":"Failure recovery rate and regression count on fault injection",
                 "accessibility":"Median task completion time and observed operator errors"
             }[lens]
-            proposal = f"For '{problem}', apply {tag}: {method.lower()}; optimize for {improvement.lower()}."
-            risk = ("Constraints to check: " + "; ".join(restrictions[:6])) if restrictions else "Unvalidated assumptions, implementation cost and regressions"
+            # LENSES improvements are verb phrases ("Reduce delay ..."), so join them with "aim to".
+            proposal = f"For '{problem}', apply {tag}: {method.lower()}; aim to {improvement.lower()}."
+            # Every constraint is listed: dropping any would hide it from the candidate's risk check.
+            risk = ("Constraints to check: " + "; ".join(restrictions)) if restrictions else "Unvalidated assumptions, implementation cost and regressions"
             candidates.append(Idea(
                 id=f"KIN-{mi+1:02d}-{li+1}",method=tag,lens=lens,proposal=proposal,
                 hypothesis=f"Applying {tag} to the scoped problem will yield an observable gain in {lens} without violating constraints.",

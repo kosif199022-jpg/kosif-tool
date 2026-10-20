@@ -172,8 +172,8 @@ python $SKILL_DIR/scripts/app_studio.py batch jpegmini ./shop -o ./shop_small --
 | `lsystem` | APPX-83 | Houdini L-System SOP | نمو نباتي/زخرفي (L-system) — axiom rules=F:FF+[+F-F-F]-[-F+F+F] iterations angle step → SVG | stdlib |
 | `chops` | APPX-46 | Houdini CHOPs (Lag, Noise, Cycle, Envelope, Spring) | عمليات منحنيات الحركة — IN = keys JSON [[t,v],…] ; fps, lag=τ s, noise=amp, noise_freq, spring=k:damping → JSON curve per frame | pip:numpy, pip:opencv |
 | `font-build` | APPX-44 | FontLab 7 | بناء خط من رسومات SVG — IN = folder of SVGs named by character or uniXXXX (e.g. A.svg, uni0628.svg) ; family, upm, kern="A V -80;V A -80", fea=file | pip:fonttools |
-| `font-inspect` | APPX-84 | FontLab font info / Glyphs panel | فحص خط — names, glyph count, scripts (Arabic coverage), features, kerning pairs | pip:fonttools |
-| `font-subset` | APPX-85 | FontLab export / web fonts | تقليص خط للويب — text= or unicodes=, flavor=woff2|woff | pip:fonttools |
+| `font-inspect` | APPX-84 | FontLab font info / Glyphs panel | فحص خط — family/style names, glyph and codepoint counts, Arabic letter coverage, GSUB/GPOS feature tags (e.g. kern), variable flag | pip:fonttools |
+| `font-subset` | APPX-85 | FontLab export / web fonts | تقليص خط للويب — text= or unicodes=, flavor=woff2|woff (woff2 needs brotli) | pip:fonttools (+ brotli for woff2) |
 | `tween` | APPX-49 | Adobe Animate classic/motion tween + TexturePacker + onion skin | حركة متوسطة وورقة رسوم — IN = sprite PNG ; from=x,y to=x,y frames fps ease=inout|in|out|back w h cols onion=1 | pip:pillow |
 | `lottie` | APPX-86 | Adobe Animate export (Bodymovin/Lottie), Canvas | تصدير Lottie JSON — w h fps frames from=x,y to=x,y shape=circle|rect size color ease | stdlib |
 | `ik` | APPX-87 | Adobe Animate Bone tool (FlashIK), Houdini KineFX | حل عظمتين (IK) — l1 l2 target=x,y → joint angles + positions JSON | stdlib |

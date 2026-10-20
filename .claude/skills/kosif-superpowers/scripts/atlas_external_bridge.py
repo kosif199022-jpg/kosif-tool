@@ -17,7 +17,7 @@ def load(path):
     if not isinstance(items,list): raise ValueError("Atlas index does not contain a skills list")
     return items
 def family(item):
-    text = norm(" ".join(str(item.get(k,"")) for k in ("skill","description","plugin")))
+    text = norm(" ".join(str(item.get(k) or "") for k in ("skill","description","plugin")))
     domains = {
         "film-video-3d":("video","render","blender","3d","motion","film","animation","cinema","photography"),
         "development":("coding","program","code","developer","software","repository","api"),
@@ -30,8 +30,8 @@ def family(item):
     return max(counts,key=counts.get) if any(counts.values()) else "general"
 def score(item,query):
     words=[s for s in norm(query).split() if len(s)>1 and s not in STOP]
-    name=norm(item.get("skill",""))
-    hay=norm(item.get("description","")+" "+item.get("plugin",""))
+    name=norm(item.get("skill"))
+    hay=norm(item.get("description"))+" "+norm(item.get("plugin"))
     return sum((5 if w in name else 1 if w in hay else 0) for w in words)
 def inspect_skill(root,entry):
     if not root: return "NOT_READ"
@@ -74,7 +74,7 @@ def main(argv=None):
         if not a.query:p.error("--query required")
         matches=sorted((x for x in rows if isinstance(x,dict)),key=lambda x:(-score(x,a.query),str(x.get("id",""))))
         matches=[x for x in matches if score(x,a.query)>0][:max(1,min(a.top,100))]
-        data={"matches":[{"id":x.get("id"),"skill":x.get("skill"),"description":str(x.get("description",""))[:300],
+        data={"matches":[{"id":x.get("id"),"skill":x.get("skill"),"description":str(x.get("description") or "")[:300],
                           "license":x.get("license"),"source":x.get("source"),"path":x.get("path"),
                           "risk_flags":x.get("risk_flags"),"verdict":x.get("verdict"),
                           "license_scope":x.get("_scope"),
