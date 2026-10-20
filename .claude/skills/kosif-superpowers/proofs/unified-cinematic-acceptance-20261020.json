@@ -1,0 +1,48 @@
+{
+  "schema": "kosif.unified-cinematic-acceptance.v1",
+  "date": "2026-10-20",
+  "source": "synthetic 16-bit PCM WAV from test_unified_cinematic.wav_sample; not third-party copyrighted music",
+  "engines": [
+    "audio_cue_mapper",
+    "app_studio",
+    "unified_draw",
+    "creative_paint",
+    "FFmpeg"
+  ],
+  "video": {
+    "codec": "h264",
+    "width": 640,
+    "height": 480,
+    "frames": "24",
+    "fps": "12/1"
+  },
+  "audio": {
+    "source_type": "WAV PCM 16-bit 22050Hz mono",
+    "output_codec": "aac",
+    "source_file_untouched": true,
+    "candidate_onsets": [
+      0.3,
+      0.75,
+      1.199,
+      1.649
+    ],
+    "verified_beats": false,
+    "word_alignment": "not performed"
+  },
+  "camera": "push-in",
+  "video_fades_frames": 2,
+  "source_audio_duration_seconds": 2.0,
+  "output_format_duration_seconds": "2.000000",
+  "files": {
+    "master.wav": {
+      "sha256": "6bd3c4c180410bd3ba5f20a1dee1a959b5e60c2a08af4d7458dd910706e0f289",
+      "bytes": 88244
+    },
+    "cinematic.mp4": {
+      "sha256": "2533e2b4b025b230d65ab35acb86cc4f0e45453ae6220437cd7e61e02f45b856",
+      "bytes": 92713
+    }
+  },
+  "output_location": "C:\\Users\\Public\\KOSIF-UNIFIED-CINEMATIC-ACCEPTANCE-20261020",
+  "scope_note": "Cinematic 2D effects and audio multiplexing only; not 3D raytracing, AI video generation or verified music beats."
+}

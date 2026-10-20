@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:motion:start -->
 
-**الأدوات / tools (15)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (16)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -27,6 +27,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `repo-verify-video` (repo root) | Probes a rendered video with ffprobe and ffmpeg and checks it against the request: H.264, yuv420p, even dimensions, aspect, fps, duration and frame count, AAC audio at 44.1 kHz or more, EBU R128 integrated loudness (default -14 LUFS ±1.5), true peak ≤ -1 dBFS and master-audio length (±50 ms). It prints PASS/FAIL lines and can write a JSON report. | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio ./voice.mp3 --json ./out/report.json` | tested-here |
 | `starter-html-canvas` (repo root) | A 9:16 sample film (HTML + Canvas + SVG, 1080x1920, 30 fps, 12 s, no JS libraries) whose every frame is a pure function of time. It exposes window.__kosif.seek(t) so tools/render_html.cjs can render it deterministically to MP4, and shows a scene timeline, easing, a keyframed camera, SVG draw-on, seeded particles and word-synced Arabic captions. | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter html-canvas` | tested-elsewhere |
 | `starter-remotion` (repo root) | A minimal Remotion v4 project with one composition, KosifFilm (1080x1920, 30 fps, 12 s): a staggered title, an animated SVG line chart and a closing logo card inside a CameraRig, plus word-level captions from public/words.json, driven by title, words, accent and lang props. | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | tested-elsewhere |
+| `unified-cinematic` | Compose photo effects, layered animated strokes and shapes, WAV onset candidates, camera push/pan transitions and source-timed AAC audio into H.264 MP4. | `python3 scripts/unified_cinematic.py doctor` | tested-here |
 
 <!-- hub:area:motion:end -->
 

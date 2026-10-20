@@ -18,8 +18,8 @@
   "powers": 5185,
   "families": 61,
   "domains": 10,
-  "tools": 101,
-  "guides": 84,
+  "tools": 102,
+  "guides": 85,
   "statuses": {
    "documented": 1798,
    "idea": 71,
@@ -9948,6 +9948,96 @@
     "hand-drawn-draw-on",
     "shapes-morph-geometry"
    ]
+  },
+  {
+   "id": "unified-cinematic",
+   "path": "scripts/unified_cinematic.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "Unified Cinematic: sound-clocked animation and video",
+   "title_ar": "السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا",
+   "summary_en": "Compose photo effects, layered animated strokes and shapes, WAV onset candidates, camera push/pan transitions and source-timed AAC audio into H.264 MP4.",
+   "summary_ar": "تجميع معالجة الصور والرسم والموشن والموسيقى في فيديو بصوت متزامن، وحركة كاميرا وتأثيرات دخول وخروج.",
+   "use_when": [
+    "Combine a local WAV audio master with a drawn scene and render cinematic MP4",
+    "Animate a drawing using measured audio transients and camera movement",
+    "إضافة الصوت والحركة والمؤثرات السينمائية إلى فيديو الرسم"
+   ],
+   "keywords": [
+    "cinematic",
+    "montage",
+    "camera",
+    "WAV",
+    "AAC",
+    "H264",
+    "pulse",
+    "audio cues",
+    "synchronization",
+    "sound",
+    "video",
+    "music",
+    "fade",
+    "Ken Burns",
+    "animation",
+    "صوت",
+    "مونتاج",
+    "تحريك",
+    "كاميرا",
+    "فيديو",
+    "سينما",
+    "موسيقى"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/unified_cinematic.py doctor",
+     "does": "Display source audio formats, selected camera moves, codec support."
+    },
+    {
+     "name": "render",
+     "example": "python3 scripts/unified_cinematic.py render --photo templates/unified-media-demo-photo.png --scene templates/unified-draw-motion-demo.json --audio ./source.wav --output ./cinematic.mp4 --fps 12 --camera push-in --fade-frames 2 --pulse-element 3",
+     "does": "Build source-audio-clocked composited H.264/AAC MP4 with camera movement, fades, and measured transient-driven drawing pulses."
+    },
+    {
+     "name": "tests",
+     "example": "python3 scripts/test_unified_cinematic.py",
+     "does": "Run eight integration regression tests, including real H264/AAC output and source WAV immutability."
+    }
+   ],
+   "inputs": "Local authorized JPG/PNG/WebP photo, kosif.unified-draw.v1 JSON, 16-bit PCM WAV 0.1..30s, optional bounded photo effect, camera, fades, 1-based unkeyframed pulse element.",
+   "outputs": "H.264 MP4 containing re-encoded AAC soundtrack, source-based duration, SHA256, actual verified streams, measured onset candidate count. Original inputs unchanged.",
+   "requires": {
+    "python": [
+     "Pillow",
+     "numpy",
+     "opencv-python"
+    ],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "",
+   "limits": "Maximum 300 video frames; 2D camera not real 3D; WAV source untouched but exported MP4 AAC is re-encoded; no verified BPM/beats, lyrics or phoneme word alignment; no claim all skills fused.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-20: 8/8 cinematic integration regressions passed; synthetic master WAV acceptance produced 24-frame H264/AAC video 640x480 at 12 FPS for 2 seconds; four measured onset candidates recorded without beat claims.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_unified_cinematic.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/unified-cinematic-integration.md"
+   ],
+   "families": [
+    "audio-sync-captions",
+    "camera-composition-layout",
+    "photo-video-footage",
+    "easing-timing-rhythm"
+   ]
   }
  ],
  "guides": [
@@ -10423,6 +10513,12 @@
    "path": "references/threejs-cinematic-motion-20261020.md",
    "title": "Three.js — KOSIF Superpowers 3D + Motion Capability Bridge",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/unified-cinematic-integration.md",
+   "title": "Unified Cinematic — audio-clocked photo, drawing and camera workflow",
+   "area": "motion",
    "summary": ""
   },
   {
