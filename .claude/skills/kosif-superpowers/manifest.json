@@ -18,8 +18,8 @@
   "powers": 5185,
   "families": 61,
   "domains": 10,
-  "tools": 102,
-  "guides": 85,
+  "tools": 104,
+  "guides": 86,
   "statuses": {
    "documented": 1798,
    "idea": 71,
@@ -10038,6 +10038,166 @@
     "photo-video-footage",
     "easing-timing-rhythm"
    ]
+  },
+  {
+   "id": "blender-cinematic-bridge",
+   "path": "scripts/blender_cinematic_bridge.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "3d",
+   "title_en": "Blender Cycles + KOSIF Cinematic compositor",
+   "title_ar": "دمج رندر Blender Cycles مع مونتاج KOSIF والصوت",
+   "summary_en": "One bounded CLI renders an authorized .blend/.glb/.gltf scene with the installed Blender Cycles renderer, checks H264 frames, overlays animated KOSIF strokes/text and mixes the original PCM-WAV clock as AAC into the final MP4.",
+   "summary_ar": "أداة تشغيلية واحدة تربط مشاهد بلندر ثلاثية الأبعاد مع الرسم والطبقات المتحركة والصوت، وتتحقق من الفيديو والإطارات والصوت النهائي.",
+   "use_when": [
+    "Render a 3D Blender scene and add drawing, audio and cinematic overlays",
+    "Combine Cycles-rendered MP4 with synchronized PCM WAV and KOSIF 2D graphics",
+    "ارندر مشهد Blender 3D وادمجه بالفيديو والصوت داخل KOSIF"
+   ],
+   "keywords": [
+    "blender",
+    "cycles",
+    "3d",
+    "render",
+    "cinematic",
+    "composite",
+    "mp4",
+    "h264",
+    "aac",
+    "photo",
+    "drawing",
+    "overlay",
+    "cat rescue",
+    "رندر",
+    "بلندر",
+    "سينما",
+    "إنقاذ",
+    "قطة",
+    "صوت",
+    "مونتاج"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/blender_cinematic_bridge.py doctor",
+     "does": "Show real Blender executable, FFmpeg and FFprobe readiness."
+    },
+    {
+     "name": "generate-demo-3d",
+     "example": "blender --background --factory-startup --disable-autoexec --python-exit-code 7 --python scripts/blender_rescue_scene.py -- ./rescue_scene.blend",
+     "does": "Build original stylized animated 3D cat rescue scene from procedural Blender geometry in an editable .blend."
+    },
+    {
+     "name": "pipeline",
+     "example": "python3 scripts/blender_cinematic_bridge.py pipeline --blend ./rescue_scene.blend --scene templates/blender-rescue-overlay.json --audio ./master.wav --output ./final.mp4 --fps 12 --width 384 --height 216 --samples 4 --pulse-element 2",
+     "does": "Run Cycles 3D render and produce source-audio-clocked KOSIF 2D composited H264/AAC MP4 with validation."
+    },
+    {
+     "name": "compose",
+     "example": "python3 scripts/blender_cinematic_bridge.py compose --blender-video ./cycles_render.mp4 --scene templates/blender-rescue-overlay.json --audio ./master.wav --output ./final.mp4 --fps 12",
+     "does": "Composite provided silent 3D-rendered video plus authored overlay and WAV audio without rerendering 3D; user must verify its renderer provenance."
+    },
+    {
+     "name": "tests",
+     "example": "python3 scripts/test_blender_cinematic_bridge.py",
+     "does": "Run eight codec/frame/validation regressions in addition to the real recorded Blender Cycles acceptance proof."
+    }
+   ],
+   "inputs": "Authorized local .blend/.glb/.gltf 3D scene or known silent MP4/MKV (matching fps/frame count), kosif.unified-draw.v1 overlay, 16-bit PCM WAV 0.1..30 sec, bounded Cycles samples and dimensions.",
+   "outputs": "Fresh H264 MP4 with AAC sound; original input unchanged; checked-in sanitized real-Cycles acceptance SHA256 proof. Scene generator exports editable .blend.",
+   "requires": {
+    "python": [
+     "Pillow"
+    ],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Use only authorized 3D assets. Pipeline launches separately installed Blender in background with --disable-autoexec, then FFmpeg. Output path must be fresh.",
+   "limits": "Max 300 frames, 4..64 Cycles samples on pipeline, CPU tested 384x216 12fps, time-quantized PCM-WAV master exported as re-encoded AAC. Sample cat/human is stylized not photorealistic. Ghidra/REA not used for this source-level Blender Python API integration. Blender binary must be installed separately (doctor can locate its verified portable path).",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-20 Windows Blender 5.2.2 Cycles CPU; actual animated .blend rendered 24 frames, 384x216 at 12 fps and merged with KOSIF 2D overlay + synthetic PCM-WAV into 2.00 sec H264/AAC; 8/8 bridge regressions passed; proof SHA256 and ffprobe in repository.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/blender-cinematic-bridge.md"
+   ],
+   "families": [
+    "3d-spatial",
+    "engines-render-pipeline",
+    "audio-sync-captions",
+    "camera-composition-layout"
+   ]
+  },
+  {
+   "id": "blender-rescue-scene",
+   "path": "scripts/blender_rescue_scene.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "3d",
+   "title_en": "Create an editable Blender 3D cat rescue demo",
+   "title_ar": "إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender",
+   "summary_en": "Runs inside separately installed Blender's Python interpreter to generate a stylized 56-object animated .blend source scene with a moving cat, a rescuer, physically based materials, lights and keyframed camera.",
+   "summary_ar": "بناء مشهد قطة وإنقاذ متحرك داخل Blender قابل للتعديل والرندر باستخدام Cycles؛ المشهد مبسّط وليس تصويرًا واقعيًا.",
+   "use_when": [
+    "Generate original sample 3D geometry for Blender Cycles validation",
+    "Create an editable stylized cat rescue scene without downloading vendor assets",
+    "إنشاء مشهد ثلاثي أبعاد تجريبي لقطة ومنقذ"
+   ],
+   "keywords": [
+    "blender",
+    "cat",
+    "rescue",
+    "3D",
+    "Cycles",
+    "procedural",
+    "scene",
+    "model",
+    "animation",
+    "قطة",
+    "إنقاذ",
+    "بلندر",
+    "مشهد"
+   ],
+   "commands": [
+    {
+     "name": "generate",
+     "example": "blender --background --factory-startup --disable-autoexec --python-exit-code 7 --python scripts/blender_rescue_scene.py -- ./cat_rescue.blend",
+     "does": "Build a new editable .blend file using original Blender Python geometry; refuses overwrite."
+    }
+   ],
+   "inputs": "A fresh output .blend path inside an existing directory, supplied after Blender's -- separator; no arbitrary script input.",
+   "outputs": "Stylized original animated Blender .blend with cat, person, street, 3D camera, area lighting and Cycles render configuration.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:blender"
+    ],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Requires user's authorized locally installed Blender; invoke its verified executable path when not on PATH; writes a new .blend file only.",
+   "limits": "Stylized Blender procedural demonstration; Blender must be installed separately (verified portable 5.2.2 on Windows); not photorealistic cat/human assets or a complete rig; use Blender bridge doctor to locate binary.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-20 Blender 5.2.2 created 156 KB animated .blend with 56 objects; source SHA-256 and separate Cycles video readback are in proofs/blender-cinematic-acceptance-20261020.json.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/blender-cinematic-bridge.md"
+   ],
+   "families": [
+    "3d-spatial",
+    "engines-render-pipeline"
+   ]
   }
  ],
  "guides": [
@@ -10147,6 +10307,12 @@
    "path": "references/blender-capability-gap-20261020.md",
    "title": "Evidence-led Blender and KOSIF gap review — 20 October 2026",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/blender-cinematic-bridge.md",
+   "title": "KOSIF Blender + Unified Cinematic integration",
+   "area": "3d",
    "summary": ""
   },
   {
