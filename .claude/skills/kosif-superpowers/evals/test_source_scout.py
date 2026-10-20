@@ -123,6 +123,14 @@ class SourceScoutTests(unittest.TestCase):
                 self.assertEqual(scout.suggest(repo,self.rows,code_reuse=True)[0]["reuse_gate"],
                                  "check_rights_first")
 
+    def test_show_unknown_id_is_not_found_not_catalog_error(self):
+        run=subprocess.run([sys.executable,str(PATH),"show","obra/superpower"],text=True,
+                           capture_output=True,check=False,timeout=5)
+        self.assertEqual(run.returncode,1)
+        obj=json.loads(run.stderr)
+        self.assertEqual(obj["status"],"not_found")
+        self.assertIn("obra/superpowers",obj["did_you_mean"])
+
     def test_cli_runs_without_network_or_install(self):
         run=subprocess.run([sys.executable,str(PATH),"check"],text=True,
                            capture_output=True,check=False,timeout=5)

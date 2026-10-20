@@ -93,14 +93,14 @@ def _read_input(source):
 
 def inspect(source):
     rows, skipped=_read_input(source)
-    langs={}; paths={}
-    for name,dat in rows:
-        paths[name.lower()]=True
+    langs={}; paths=[name for name,_ in rows]   # original case: these paths are reported back
+    for name in paths:
         lang=EXT_LANG.get(Path(name).suffix.lower())
         if lang: langs[lang]=langs.get(lang,0)+1
     signals=[]
     for key, entry in SIGNALS.items():
-        has_path=any(p.lower().endswith(entry['paths']) or any(p.lower().startswith(s.lower()) for s in entry['paths'] if s.endswith('/')) for p in paths)
+        wanted=tuple(s.lower() for s in entry['paths'])
+        has_path=any(p.lower().endswith(wanted) or any(p.lower().startswith(s) for s in wanted if s.endswith('/')) for p in paths)
         has_ext=any(Path(p).suffix.lower() in entry['extensions'] for p in paths)
         if has_path or has_ext: signals.append({'capability_area':key,'candidate':'inferred_from_file_structure','implementation_hint':entry['lesson'],'executable_integrated':False})
     license_files=[p for p in paths if Path(p).name.lower() in ('license','license.md','license.txt','copying','notice')]
@@ -112,9 +112,25 @@ def inspect(source):
       'next_steps':['select a concrete feature and acceptance test','review source and transitive licenses','implement narrow local adapter','run sandbox regression tests','only then promote evidence status'],
       'sha256_manifest':{k:hashlib.sha256(b).hexdigest() for k,b in rows}}
 
-def pack(source, output, report_path=None):
-    out=Path(output).resolve(); src=Path(source).resolve()
-    if out==src or (src.is_dir() and src in out.parents): raise UnsafeRepository('output must be outside input repository')
+def _output_path(path, src, what, force=False):
+    """Resolve a file to write: never inside the input, never a folder, no silent overwrite."""
+    out=Path(path).resolve()
+    if out==src or (src.is_dir() and src in out.parents): raise UnsafeRepository(what+' must be outside input repository')
+    if out.is_dir(): raise UnsafeRepository(what+' is a folder: '+str(out))
+    if out.exists() and not force: raise UnsafeRepository(what+' already exists: '+str(out)+' (pass --force to overwrite)')
+    return out
+
+def write_report(report, path, source, force=False):
+    out=_output_path(path, Path(source).resolve(), 'report path', force)
+    out.parent.mkdir(parents=True,exist_ok=True)
+    out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    return out
+
+def pack(source, output, report_path=None, force=False):
+    src=Path(source).resolve()
+    out=_output_path(output, src, 'output', force)
+    if report_path and Path(report_path).resolve()==out: raise UnsafeRepository('report path cannot overwrite source or ZIP')
+    if report_path: _output_path(report_path, src, 'report path', force)
     rows,_=_read_input(src)
     out.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
@@ -123,22 +139,22 @@ def pack(source, output, report_path=None):
             z.writestr(info,body,compress_type=zipfile.ZIP_DEFLATED,compresslevel=6)
     report=inspect(src)
     report['package_sha256']=hashlib.sha256(out.read_bytes()).hexdigest()
-    if report_path:
-        r=Path(report_path).resolve()
-        if r==src or r==out or (src.is_dir() and src in r.parents):raise UnsafeRepository('report path cannot overwrite source or ZIP')
-        r.parent.mkdir(parents=True,exist_ok=True)
-        r.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    if report_path: write_report(report, report_path, src, force)
     return report
 
 def main(argv=None):
     a=argparse.ArgumentParser(description=__doc__);sub=a.add_subparsers(dest='cmd',required=True)
-    i=sub.add_parser('inspect');i.add_argument('source');i.add_argument('--out')
-    p=sub.add_parser('pack');p.add_argument('source');p.add_argument('--out',required=True);p.add_argument('--report')
+    force_help='overwrite an existing output file (refused by default)'
+    i=sub.add_parser('inspect');i.add_argument('source');i.add_argument('--out',help='write the full JSON report here (outside the input; parent folders are created)');i.add_argument('--force',action='store_true',help=force_help)
+    p=sub.add_parser('pack');p.add_argument('source');p.add_argument('--out',required=True,help='ZIP to write (outside the input; parent folders are created)');p.add_argument('--report',help='also write the JSON report here');p.add_argument('--force',action='store_true',help=force_help)
     args=a.parse_args(argv)
     try:
-        result=inspect(args.source) if args.cmd=='inspect' else pack(args.source,args.out,args.report)
-        if args.cmd=='inspect' and args.out:
-            Path(args.out).write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        if args.cmd=='inspect':
+            if args.out: _output_path(args.out, Path(args.source).resolve(), 'output', args.force)
+            result=inspect(args.source)
+            if args.out: write_report(result, args.out, args.source, args.force)
+        else:
+            result=pack(args.source,args.out,args.report,args.force)
         print(json.dumps({k:v for k,v in result.items() if k!='sha256_manifest'},ensure_ascii=False,indent=2))
         return 0
     except (UnsafeRepository, OSError, zipfile.BadZipFile) as e:

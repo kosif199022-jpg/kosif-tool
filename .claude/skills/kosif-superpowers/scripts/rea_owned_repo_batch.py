@@ -29,7 +29,8 @@ def main():
     inventory=base/"owner_repositories_PRIVATE_LOCAL.json"
     if not inventory.is_file(): ap.error("run owner inventory first")
     if not a.rea_cli.is_file(): ap.error("installed REA CLI not found")
-    if (base/".git").exists(): ap.error("private evidence directory cannot be a git repo")
+    if (base/".git").exists() or any((d/".git").exists() for d in base.parents):
+        ap.error("private evidence directory cannot be inside a git repository")
     entries=json.loads(inventory.read_text(encoding="utf-8"))
     candidates=[v for v in entries if v.get("language") in ("JavaScript","TypeScript","HTML")
                 and 0 < (v.get("size_kb") or 0) <= a.max_size_kb]

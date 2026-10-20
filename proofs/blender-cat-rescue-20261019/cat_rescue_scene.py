@@ -1,4 +1,4 @@
-﻿import bpy,math,sys
+import bpy,math,sys
 from mathutils import Vector
 from pathlib import Path
 out=Path(sys.argv[sys.argv.index('--')+1]);out.mkdir(exist_ok=True)

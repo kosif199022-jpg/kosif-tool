@@ -25,8 +25,14 @@
    "logo brief",
    "mark type",
    "anti slop",
-   "concept"
-  ]
+   "concept",
+   "تصميم شعار",
+   "لوجو",
+   "هوية بصرية",
+   "logo design",
+   "combination mark"
+  ],
+  "when": "قبل رسم شعار جديد لتحديد الانطباع الواحد والجمهور والمنافسين ونوع العلامة / before drawing a new logo: one impression, audience, competitors and mark type"
  },
  {
   "id": "BRAND-02",
@@ -55,8 +61,14 @@
    "interview",
    "adjectives",
    "font pairing",
-   "no brand"
-  ]
+   "no brand",
+   "أسئلة العميل",
+   "اختيار الخطوط",
+   "ألوان الهوية",
+   "client questions",
+   "brand colors"
+  ],
+  "when": "حين لا يملك العميل هوية ونحتاج أسئلة قليلة لاختيار الخطوط والألوان / when a client has no brand and a few questions must settle fonts and colours"
  },
  {
   "id": "BRAND-03",
@@ -86,8 +98,14 @@
    "tokens",
    "consistency",
    "design.md",
-   "series"
-  ]
+   "series",
+   "هوية الفيديو",
+   "توحيد الشكل",
+   "سلسلة فيديوهات",
+   "style guide",
+   "brand rules"
+  ],
+  "when": "حين نريد أن تبدو فيديوهات منفصلة كأنها من علامة واحدة بقواعد ألوان وخطوط وتوقيت / when separate videos must read as one brand through shared production rules"
  },
  {
   "id": "BRAND-04",
@@ -116,8 +134,14 @@
    "design tokens",
    "dtcg",
    "theming",
-   "multi brand"
-  ]
+   "multi brand",
+   "وضع داكن",
+   "تعدد العلامات",
+   "متغيرات التصميم",
+   "dark mode",
+   "style dictionary"
+  ],
+  "when": "حين نريد تبديل الهوية أو الوضع الفاتح والداكن عبر كل المشاهد من ملف رموز واحد / when re-branding or switching light/dark across every scene from one token file"
  },
  {
   "id": "BRAND-05",
@@ -148,8 +172,14 @@
    "design system",
    "لوك جاهز",
    "caption skin",
-   "showcase"
-  ]
+   "showcase",
+   "نظام تصميم",
+   "ألوان وخطوط",
+   "ثيم جاهز",
+   "design tokens",
+   "type ramp"
+  ],
+  "when": "حين نريد نظام تصميم جاهزا للفيديو نختاره بالعين من إعدادات معروضة / when a ready video-first design system should be picked by eye from presets"
  },
  {
   "id": "BRAND-06",
@@ -176,8 +206,14 @@
    "brand book",
    "guidelines",
    "voice",
-   "governance"
-  ]
+   "governance",
+   "دليل الهوية",
+   "براند بوك",
+   "نبرة العلامة",
+   "style guide",
+   "tone of voice"
+  ],
+  "when": "حين يطلب المستخدم دليل هوية أو كتاب علامة يشمل الشعار والألوان والخط والصوت / when the user asks for a brand book covering logo, colour, type and voice"
  },
  {
   "id": "BRAND-07",
@@ -206,8 +242,14 @@
    "font licence",
    "ofl",
    "ip",
-   "legal"
-  ]
+   "legal",
+   "حقوق الخط",
+   "حقوق الملكية",
+   "خطوط مفتوحة",
+   "copyright",
+   "credits"
+  ],
+  "when": "عند استخدام خطوط أو شعارات في فيديو والتأكد من ترخيصها وحقوق ملكيتها / when checking font licences and IP before using fonts or marks in a video"
  },
  {
   "id": "BRAND-08",
@@ -237,8 +279,14 @@
    "site capture",
    "palette",
    "css variables",
-   "oklch"
-  ]
+   "oklch",
+   "ألوان الموقع",
+   "خطوط الموقع",
+   "خطة إطلاق",
+   "website",
+   "launch plan"
+  ],
+  "when": "حين يعطي المستخدم موقعا ويريد استخراج ألوانه وخطوطه ودعواته لفيديو / when a site folder or live page should supply palette, fonts and CTAs for a film"
  },
  {
   "id": "BRAND-09",
@@ -267,8 +315,14 @@
    "brand kit",
    "watermark",
    "palette from logo",
-   "font import"
-  ]
+   "font import",
+   "علامة مائية",
+   "بطاقة ختام",
+   "ألوان الشعار",
+   "end card",
+   "zip"
+  ],
+  "when": "حين يرفع المستخدم مجلد هويته ويريد تطبيق الشعار والخطوط والألوان على كل فيلم / when a brand folder or guide should apply logo, fonts and palette to every film"
  },
  {
   "id": "BRAND-10",
@@ -296,8 +350,14 @@
    "official logo",
    "resolve",
    "thesvg",
-   "favicon"
-  ]
+   "favicon",
+   "لوجو شركة",
+   "جلب الشعار",
+   "شعارات العلامات",
+   "brand logo",
+   "company logo"
+  ],
+  "when": "حين يحتاج الفيديو شعار علامة معروفة ويجب جلبه رسميا لا رسمه باليد / when a known brand's logo is needed and must be fetched officially, never redrawn"
  },
  {
   "id": "BRAND-11",
@@ -325,8 +385,14 @@
    "canva",
    "import",
    "tokens",
-   "design handoff"
-  ]
+   "design handoff",
+   "استيراد التصميم",
+   "فيجما",
+   "تحويل التصميم",
+   "gsap",
+   "svg"
+  ],
+  "when": "حين يأتي التصميم من Figma ونريد نقل أصوله ورموزه وحركاته إلى مشاهد GSAP / when Figma assets, tokens and motion should be brought into GSAP scenes"
  },
  {
   "id": "BRAND-12",
@@ -356,8 +422,14 @@
    "logo construction",
    "logo suite",
    "clear space",
-   "wordmark"
-  ]
+   "wordmark",
+   "لوجو",
+   "مسارات",
+   "نسخ الشعار",
+   "vector logo",
+   "monochrome"
+  ],
+  "when": "عند بناء شعار SVG نظيف قابل للتحريك مع نسخه الأفقية والمكدسة والأحادية / when building a clean animatable SVG logo and its full suite of versions"
  },
  {
   "id": "BRAND-13",
@@ -387,8 +459,14 @@
    "trace",
    "logo svg",
    "true colour",
-   "sign painter"
-  ]
+   "sign painter",
+   "تحويل لفيكتور",
+   "شعار متجه",
+   "صورة إلى svg",
+   "png to svg",
+   "raster to vector"
+  ],
+  "when": "حين يملك المستخدم شعارا كصورة نقطية ويريده متجها بألوانه الأصلية / when a raster logo image must become true-colour vector layers"
  },
  {
   "id": "BRAND-14",
@@ -419,8 +497,14 @@
    "app icon",
    "pwa",
    "icon family",
-   "lucide"
-  ]
+   "lucide",
+   "أيقونة التطبيق",
+   "أيقونة الموقع",
+   "رموز",
+   "icons",
+   "maskable"
+  ],
+  "when": "حين نحتاج عائلة أيقونات SVG موحدة أو مجموعة favicon وأيقونات تطبيق من SVG واحد / when a piece needs one SVG icon family or a full favicon and app-icon set"
  },
  {
   "id": "BRAND-15",
@@ -448,8 +532,14 @@
    "sqc",
    "emblem",
    "heritage",
-   "kosif"
-  ]
+   "kosif",
+   "مونوغرام",
+   "كبش",
+   "سحابة",
+   "svg marks",
+   "k mark"
+  ],
+  "when": "حين نحتاج شعارات المالك المبنية بالكود مثل SQC وحروف K والكبش والسحابة / when the owner's code-built marks (SQC, K marks, ram, cloud) are needed"
  },
  {
   "id": "BRAND-16",
@@ -477,8 +567,14 @@
    "recraft",
    "ai logo",
    "prompt",
-   "vector generation"
-  ]
+   "vector generation",
+   "شعار بالذكاء",
+   "لوجو",
+   "تصميم شعار",
+   "svg",
+   "logo prompt"
+  ],
+  "when": "حين يريد المستخدم توليد شعار بالذكاء الاصطناعي ثم تنقيحه وتحريكه / when a logo mark should be AI-generated as SVG, then curated and animated in code"
  },
  {
   "id": "BRAND-17",
@@ -506,8 +602,14 @@
    "gold",
    "glass",
    "logo reveal",
-   "shimmer"
-  ]
+   "shimmer",
+   "ظهور الشعار",
+   "انترو فخم",
+   "لمعة",
+   "khatam",
+   "premium intro"
+  ],
+  "when": "حين يطلب المستخدم كشف شعار فاخر بالذهب والزجاج مع كلمة عربية / when the user wants a luxury gold-and-glass logo reveal with an Arabic logotype"
  },
  {
   "id": "BRAND-18",
@@ -542,8 +644,14 @@
    "draw on",
    "stroke",
    "dashoffset",
-   "logo reveal"
-  ]
+   "logo reveal",
+   "رسم الشعار",
+   "انترو شعار",
+   "ظهور اللوجو",
+   "line draw",
+   "outline"
+  ],
+  "when": "حين نريد شعارا يرسم خطه أولا ثم يمتلئ بالكامل / when a logo should draw its outline with a single line and then fill in"
  },
  {
   "id": "BRAND-19",
@@ -574,8 +682,14 @@
    "particles to logo",
    "dot to logo",
    "morph",
-   "tiles"
-  ]
+   "tiles",
+   "جسيمات",
+   "نقاط",
+   "تكوين الشعار",
+   "blocks",
+   "logo build"
+  ],
+  "when": "حين نريد شعارا يتجمع من كتل أو نقاط أو بلاطات أو جسيمات / when a logo should assemble from blocks, dots, tiles or particles"
  },
  {
   "id": "BRAND-20",
@@ -605,8 +719,14 @@
    "mask reveal",
    "stamp",
    "negative space",
-   "fog"
-  ]
+   "fog",
+   "ظهور الشعار",
+   "ظل",
+   "حبر",
+   "shadow",
+   "ink"
+  ],
+  "when": "حين نريد كشف الشعار بظل مار أو ضباب أو ختم حبر أو فراغ سالب / when a logo should reveal via a shadow pass, fog, an ink stamp or negative space"
  },
  {
   "id": "BRAND-21",
@@ -643,8 +763,14 @@
    "lockup",
    "wordmark reveal",
    "icon slide",
-   "mask"
-  ]
+   "mask",
+   "ظهور الشعار",
+   "اسم العلامة",
+   "انترو",
+   "logo intro",
+   "clip mask"
+  ],
+  "when": "حين يظهر الرمز وحده في المنتصف ثم ينزاح لتنكشف الكلمة بجانبه / when the icon appears alone, then slides aside as the wordmark reveals beside it"
  },
  {
   "id": "BRAND-22",
@@ -670,8 +796,14 @@
    "tracking",
    "lockup",
    "latin wordmark",
-   "letter spacing"
-  ]
+   "letter spacing",
+   "تباعد الحروف",
+   "كلمة إنجليزية",
+   "ظهور الشعار",
+   "blur",
+   "full stop dot"
+  ],
+  "when": "حين نريد كلمة شعار لاتينية تتكثف من تباعد واسع وضبابية ثم تهبط نقطتها / when a Latin wordmark should condense from wide tracking and blur, then get its dot"
  },
  {
   "id": "BRAND-23",
@@ -708,8 +840,14 @@
    "orbit",
    "burst",
    "spokes",
-   "ring pulse"
-  ]
+   "ring pulse",
+   "دوران",
+   "انفجار",
+   "ظهور الأيقونة",
+   "icon reveal",
+   "radial lines"
+  ],
+  "when": "حين نريد كشف أيقونة بمربعات تدور وتقفل حولها أو بشرارات شعاعية من المركز / when an icon reveal should use orbiting squares locking around it or radial bursts"
  },
  {
   "id": "BRAND-24",
@@ -737,8 +875,14 @@
    "slot reel",
    "horizon",
    "logo reveal",
-   "jackpot"
-  ]
+   "jackpot",
+   "ماكينة حظ",
+   "خط أفق",
+   "توهج",
+   "glow",
+   "motion blur"
+  ],
+  "when": "حين نريد كشف الشعار ببكرات تدور وتقف عليه أو بخط أفق متوهج / when a logo should land on spinning slot reels or slide in from a glowing horizon line"
  },
  {
   "id": "BRAND-25",
@@ -769,8 +913,14 @@
    "extruded",
    "wordmark tiles",
    "outro",
-   "beat"
-  ]
+   "beat",
+   "انترو",
+   "ختام",
+   "شعار ثلاثي الأبعاد",
+   "intro",
+   "3d letters"
+  ],
+  "when": "حين نريد كتلة شعار جاهزة في HyperFrames لانترو أو ختام أو شعار ينبض على الإيقاع / when a ready HyperFrames logo intro, outro, sting or beat-synced lockup is needed"
  },
  {
   "id": "BRAND-26",
@@ -795,8 +945,14 @@
    "remotion",
    "logo card",
    "ring",
-   "spring"
-  ]
+   "spring",
+   "ريموشن",
+   "بطاقة شعار",
+   "حلقة",
+   "chevron",
+   "glass card"
+  ],
+  "when": "حين يحتاج مشروع Remotion بطاقة شعار زجاجية بحلقة ترسم ورمز ينبثق / when a Remotion project needs a glass logo card with a ring draw and a springing mark"
  },
  {
   "id": "BRAND-27",
@@ -820,8 +976,14 @@
    "liquid",
    "displacement",
    "shader",
-   "logo"
-  ]
+   "logo",
+   "تأثير سائل",
+   "شيدر",
+   "كلمة عربية",
+   "smear",
+   "arabic text"
+  ],
+  "when": "حين نريد كشفا سائلا للشعار أو لكلمة عربية بتأثير شيدر / when a logo or shaped Arabic word should reveal through a liquid smear displacement"
  },
  {
   "id": "BRAND-28",
@@ -861,8 +1023,14 @@
    "url pill",
    "cta",
    "lockup",
-   "outro"
-  ]
+   "outro",
+   "خاتمة الفيديو",
+   "دعوة للعمل",
+   "رابط",
+   "tagline",
+   "closing screen"
+  ],
+  "when": "حين نبني بطاقة ختام فيها أيقونة واسم وشعار نصي ورابط وزر دعوة / when building an end card with icon, name, tagline, URL pill and one CTA"
  },
  {
   "id": "BRAND-29",
@@ -896,8 +1064,14 @@
    "cursor click",
    "cta",
    "button",
-   "ripple"
-  ]
+   "ripple",
+   "زر",
+   "دعوة للعمل",
+   "ماوس",
+   "mouse click",
+   "end card"
+  ],
+  "when": "حين نريد ختاما يظهر فيه مؤشر ينزلق إلى زر الدعوة وينقر عليه / when the closing should show a cursor gliding to the CTA and clicking it"
  },
  {
   "id": "BRAND-30",
@@ -936,8 +1110,14 @@
    "brand dot",
    "period",
    "punctuation",
-   "signature"
-  ]
+   "signature",
+   "توقيع العلامة",
+   "نقطة ملونة",
+   "ارتداد",
+   "bounce",
+   "i dot"
+  ],
+  "when": "حين نريد نقطة بلون العلامة تختم الكلمة أو الشعار كتوقيع / when a brand-colour dot should finish a hero word or wordmark as a signature"
  },
  {
   "id": "BRAND-31",
@@ -972,8 +1152,14 @@
    "version",
    "terminal",
    "npm",
-   "out now"
-  ]
+   "out now",
+   "إطلاق",
+   "تحديث جديد",
+   "مطورين",
+   "launch",
+   "developer"
+  ],
+  "when": "حين نعلن عن إصدار جديد برقم نسخة أو بسطر تثبيت يكتب في الطرفية / when announcing a release with a version number or a typed terminal install line"
  },
  {
   "id": "BRAND-32",
@@ -1006,8 +1192,14 @@
    "personal brand",
    "cv",
    "name card",
-   "handle"
-  ]
+   "handle",
+   "بطاقة تعريف",
+   "حسابات التواصل",
+   "براند شخصي",
+   "contact",
+   "profile card"
+  ],
+  "when": "حين يريد المستخدم بطاقة تعريف شخصية باسمه ودوره وروابط تواصله / when the user wants a personal name card with role, contact pills and a sign-off"
  },
  {
   "id": "BRAND-33",
@@ -1033,8 +1225,14 @@
    "end card library",
    "wordmark",
    "user owned",
-   "no fake logos"
-  ]
+   "no fake logos",
+   "ختام",
+   "ثيمات",
+   "شعار المستخدم",
+   "outro",
+   "themes"
+  ],
+  "when": "حين نضيف بطاقة ختام حسب الثيم للمقطع الأخير لعلامة يملكها المستخدم / when adding a theme end card to the last clip for a user-owned wordmark"
  },
  {
   "id": "BRAND-34",
@@ -1066,8 +1264,14 @@
    "social proof",
    "cta",
    "trust strip",
-   "marquee"
-  ]
+   "marquee",
+   "آراء العملاء",
+   "تقييمات",
+   "شهادة عميل",
+   "reviews",
+   "ratings"
+  ],
+  "when": "حين نحتاج ختاما بدعوة للعمل أو تقييم متجر أو شهادة عميل أو شريط شعارات شركاء / when closing with a CTA, store rating card, testimonial or partner trust strip"
  },
  {
   "id": "BRAND-35",
@@ -1095,8 +1299,14 @@
    "watermark",
    "corner logo",
    "broadcast chrome",
-   "signature"
-  ]
+   "signature",
+   "علامة مائية",
+   "شعار في الزاوية",
+   "توقيع",
+   "hud",
+   "persistent logo"
+  ],
+  "when": "حين نريد شعارا ورابطا وتعليقا ثابتة في الزوايا عبر كل المشاهد أو توقيع الصانع / when a logo, URL and caption stay fixed in the corners across scenes"
  },
  {
   "id": "BRAND-36",
@@ -1123,8 +1333,14 @@
    "flood",
    "iris",
    "brand colour",
-   "sting"
-  ]
+   "sting",
+   "لون العلامة",
+   "ختام",
+   "ملء الشاشة",
+   "end frame",
+   "color fill"
+  ],
+  "when": "حين نريد إطارا ختاميا يغمره لون العلامة عبر قزحية أو خط يتمدد / when the end frame should flood with the brand colour from an iris or a growing line"
  },
  {
   "id": "BRAND-37",
@@ -1154,8 +1370,14 @@
    "logo reveal",
    "end card",
    "lower third",
-   "arabic"
-  ]
+   "arabic",
+   "قالب جاهز",
+   "عداد",
+   "عد تنازلي",
+   "countdown",
+   "quote card"
+  ],
+  "when": "حين نحتاج قالب موشن عربي جاهز لشعار أو ختام أو عداد أو اقتباس أو شريط سفلي / when a ready Arabic motion template (logo reveal, end card, counter…) is needed"
  },
  {
   "id": "BRAND-38",
@@ -1186,8 +1408,14 @@
    "brand grid",
    "montage",
    "identity reel",
-   "case study"
-  ]
+   "case study",
+   "مونتاج الهوية",
+   "عرض الهوية",
+   "شبكة لقطات",
+   "grid layout",
+   "ui moments"
+  ],
+  "when": "حين نريد مونتاج هوية بشبكة متحركة تمزج لقطات الواجهة مع الشعار والألوان والخط / when an identity reel should mix real UI moments with mark, palette and type in a grid"
  },
  {
   "id": "BRAND-39",
@@ -1213,8 +1441,14 @@
    "generative logo",
    "logo system",
    "matrix",
-   "parametric"
-  ]
+   "parametric",
+   "شعار مولد",
+   "توليد الرمز",
+   "نظام الشعار",
+   "logo generator",
+   "variations"
+  ],
+  "when": "حين نريد عرض كيف يتولد الرمز من بارامترات في مصفوفة قبل تجمعه / when showing how a mark is generated from a parameter matrix before it assembles"
  },
  {
   "id": "BRAND-40",
@@ -1250,8 +1484,14 @@
    "badge",
    "seal",
    "pill",
-   "banner"
-  ]
+   "banner",
+   "ختم دائري",
+   "كبسولة",
+   "شريط عنوان",
+   "live dot",
+   "cards"
+  ],
+  "when": "حين نحتاج بطاقات نيو بروتاليست أو ختما دائريا أو كبسولة أو شريط عنوان / when a design needs neo-brutalist cards, a seal badge, a live-dot pill or a title band"
  },
  {
   "id": "BRAND-41",
@@ -1288,8 +1528,14 @@
    "glow",
    "gradient text",
    "footer",
-   "treatment"
-  ]
+   "treatment",
+   "توهج",
+   "تدرج",
+   "اسم العلامة",
+   "per letter color",
+   "hyphen"
+  ],
+  "when": "حين نريد معالجة بصرية لكلمة الشعار بتوهج أو تدرج أو لون لكل حرف / when a wordmark needs a treatment: glow, gradient, per-letter colour or a giant footer"
  },
  {
   "id": "BRAND-42",
@@ -1317,8 +1563,14 @@
    "product ad",
    "poster",
    "arabic headline",
-   "butcher"
-  ]
+   "butcher",
+   "بوستر",
+   "إعلان لحوم",
+   "ملحمة",
+   "vector",
+   "flyer"
+  ],
+  "when": "حين يريد المستخدم ملصق إعلان منتج عربي متجهي بعنوان ذهبي وأرقام هاتف / when the user wants an Arabic vector product-ad poster with a gold headline and phone numbers"
  },
  {
   "id": "BRAND-43",
@@ -1346,7 +1598,13 @@
    "finance",
    "design system",
    "saffron",
-   "paper"
-  ]
+   "paper",
+   "ورق كريمي",
+   "وضع داكن",
+   "مانيفست",
+   "title card",
+   "light dark"
+  ],
+  "when": "حين نريد لوكا ورقيا كريميا بحدود حبر ولون زعفراني بوضعين فاتح وداكن / when a cream paper look with ink borders and one saffron accent is wanted, light or dark"
  }
 ]

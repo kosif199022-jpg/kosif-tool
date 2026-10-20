@@ -230,8 +230,8 @@ def export(p, destination, fps=24, at=0, audio=None):
             frames = round(p["duration"]*fps)
             if abs(frames / fps - p["duration"]) > 1e-8 or frames > MAX_FRAMES:
                 raise ValueError("duration must be exact frame count within 600")
-            if kind == ".mp4" and not shutil.which("ffmpeg"):
-                raise ValueError("ffmpeg unavailable")
+            if kind == ".mp4" and not (shutil.which("ffmpeg") and shutil.which("ffprobe")):
+                raise ValueError("MP4 needs ffmpeg and ffprobe on PATH")
             if audio:
                 streams = probe(audio, "a:0")
                 if not streams or streams[0].get("codec_name") != "aac":
@@ -286,6 +286,7 @@ def main():
     args=parser.parse_args()
     if args.command == "doctor":
         print(json.dumps({"schema":SCHEMA,"ffmpeg":bool(shutil.which("ffmpeg")),
+                          "ffprobe":bool(shutil.which("ffprobe")),
                           "exports":["png","svg","gif","mp4"],"actions":sorted(KINDS)}))
         return 0
     try:

@@ -1,8 +1,10 @@
 """End-to-end regression on the synthetic reference: analyse → (texts from truth) → fonts → scorecard.
 
-    python run_synthetic.py REF_DIR WORK_DIR [--build CAND_DIR] [--skip-analyze]
+    python run_synthetic.py REF_DIR WORK_DIR [--skip-analyze]
 
-REF_DIR holds ref.mp4 + truth.json from make_reference.py.
+REF_DIR holds ref.mp4 + truth.json from make_reference.py; --skip-analyze reuses WORK_DIR/spec.json.
+This script does not build a remake. For a draft render afterwards, run from scripts/mimic:
+    python3 -c "import mm_build; mm_build.build('WORK_DIR', preview=True, placeholder=True)"
 """
 from __future__ import annotations
 
@@ -53,10 +55,10 @@ def score_texts(spec, truth):
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("ref_dir")
-    ap.add_argument("work")
-    ap.add_argument("--skip-analyze", action="store_true")
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("ref_dir", help="folder with ref.mp4 and truth.json from make_reference.py")
+    ap.add_argument("work", help="work folder for spec.json and the analysis outputs")
+    ap.add_argument("--skip-analyze", action="store_true", help="reuse an existing WORK/spec.json")
     a = ap.parse_args()
     ref = Path(a.ref_dir) / "ref.mp4"
     truth = json.load(open(Path(a.ref_dir) / "truth.json", encoding="utf-8"))

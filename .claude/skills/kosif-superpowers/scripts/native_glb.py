@@ -4,6 +4,11 @@
 Narrow first step toward a native 3D engine. Does NOT reproduce Blender.
 Supported shapes: cube, sphere; properties: color, translation, scale;
 animation: position keyframes. No external executable or arbitrary code runs.
+
+kosif.blender.v1 scenes are Blender-style Z-up; glTF is Y-up (right-handed).
+Like Blender's own glTF exporter, every position (mesh vertices, node
+translation, keyframes) is written as (x, y, z) -> (x, z, -y) and scale as
+(sx, sy, sz) -> (sx, sz, sy), so the scene schema itself is unchanged.
 """
 from __future__ import annotations
 import argparse
@@ -12,6 +17,7 @@ import json
 import math
 from pathlib import Path
 import struct
+import sys
 
 
 def _vec(v, n, low=-100, high=100):
@@ -20,6 +26,12 @@ def _vec(v, n, low=-100, high=100):
                 or not low <= x <= high for x in v)):
         raise ValueError(f"expected {n} finite numbers")
     return [float(x) for x in v]
+
+
+def _y_up(v):
+    """Blender Z-up (x, y, z) -> glTF Y-up (x, z, -y); `+ 0.0` avoids writing -0.0."""
+    x, y, z = v
+    return [float(x), float(z), -float(y) + 0.0]
 
 
 def _cube():
@@ -113,7 +125,7 @@ def glb(scene):
         if not isinstance(obj, dict) or obj.get("shape") not in ("cube", "sphere"):
             raise ValueError("native exporter supports cube and sphere only")
         points, indices = _cube() if obj["shape"] == "cube" else _sphere()
-        positions = accessor(points, "VEC3", "float", 34962)
+        positions = accessor([_y_up(v) for v in points], "VEC3", "float", 34962)
         triangle_indices = accessor(indices, "SCALAR", "ushort", 34963)
         rgba = _vec(obj.get("color", [0.25, 0.6, 0.4, 1]), 4, 0, 1)
         material_id = len(document["materials"])
@@ -129,8 +141,9 @@ def glb(scene):
             "attributes": {"POSITION": positions},
             "indices": triangle_indices, "material": material_id,
         }]})
-        location = _vec(obj.get("location", [0, 0, 0]), 3)
-        scale = _vec(obj.get("scale", [1, 1, 1]), 3, -20, 20)
+        location = _y_up(_vec(obj.get("location", [0, 0, 0]), 3))
+        sx, sy, sz = _vec(obj.get("scale", [1, 1, 1]), 3, -20, 20)
+        scale = [sx, sz, sy]
         document["nodes"].append({
             "name": f"KOSIF_{i}_{obj['shape']}",
             "mesh": mesh_id, "translation": location, "scale": scale,
@@ -146,7 +159,7 @@ def glb(scene):
                     raise ValueError("keyframes must be ordered and in bounds")
                 previous = key["frame"]
                 times.append((previous-1)/fps)
-                positions.append(_vec(key.get("location"), 3))
+                positions.append(_y_up(_vec(key.get("location"), 3)))
             times_accessor = accessor(times, "SCALAR", "float")
             translations_accessor = accessor(positions, "VEC3", "float")
             animations.append({
@@ -183,14 +196,22 @@ def main():
     target = Path(options.output)
     if target.suffix.lower() != ".glb" or target.exists():
         parser.error("output must be a new .glb file")
-    result = glb(json.loads(Path(options.scene).read_text(encoding="utf-8-sig")))
-    target.write_bytes(result)
+    if not target.parent.is_dir():
+        parser.error(f"output folder does not exist: {target.parent}")
+    try:
+        result = glb(json.loads(Path(options.scene).read_text(encoding="utf-8-sig")))
+        with target.open("xb") as handle:
+            handle.write(result)
+    except (OSError, ValueError) as exc:
+        print(json.dumps({"ok": False, "error": str(exc)}), file=sys.stderr)
+        return 1
     print(json.dumps({
         "engine": "KOSIF native (no Blender required)",
         "path": str(target), "bytes": len(result),
         "sha256": hashlib.sha256(result).hexdigest(),
     }))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

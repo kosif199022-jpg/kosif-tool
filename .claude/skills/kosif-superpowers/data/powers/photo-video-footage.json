@@ -23,8 +23,14 @@
    "license",
    "attribution",
    "cc0",
-   "assets.md"
-  ]
+   "assets.md",
+   "حقوق النشر",
+   "ملكية عامة",
+   "إذن استخدام",
+   "copyright",
+   "creative commons"
+  ],
+  "when": "حين تحتاج التأكد من حق استخدام صورة أو لقطة قبل وضعها في الفيديو أو الإعلان / when checking whether a photo or clip may be used, with attribution and one asset-log row per file"
  },
  {
   "id": "FOOT-02",
@@ -52,8 +58,14 @@
    "ويكيميديا",
    "open footage",
    "provenance",
-   "wikimedia"
-  ]
+   "wikimedia",
+   "تنزيل فيديو",
+   "تحميل لقطة",
+   "إيصال المصدر",
+   "download clip",
+   "archive.org"
+  ],
+  "when": "حين يريد المستخدم تنزيل لقطة مفتوحة الترخيص من رابط مباشر مع حفظ مصدرها ورخصتها / when downloading one open-licence clip from a direct HTTPS link with a hashed provenance receipt"
  },
  {
   "id": "FOOT-03",
@@ -83,8 +95,14 @@
    "yt-dlp",
    "fetch",
    "credits",
-   "tiktok"
-  ]
+   "tiktok",
+   "تنزيل من يوتيوب",
+   "تيك توك",
+   "انستا",
+   "youtube download",
+   "instagram"
+  ],
+  "when": "لما يرسل المستخدم روابط تيك توك أو إنستغرام أو يوتيوب أو بنترست ليجمعها في مكتبة وسائط باعتماداتها / when pulling TikTok, Instagram, YouTube, Pinterest or X links into a media library with credits"
  },
  {
   "id": "FOOT-04",
@@ -110,8 +128,14 @@
    "footage pool",
    "pinterest",
    "queries",
-   "b-roll"
-  ]
+   "b-roll",
+   "لقطات بديلة",
+   "كلمات بحث",
+   "بي رول",
+   "search terms",
+   "reference shots"
+  ],
+  "when": "حين تبحث عن لقطات جديدة تحمل معنى كل لقطة في الفيديو المرجعي بعبارات بحث عربية وإنجليزية / when sourcing new footage that matches each reference shot via English and Arabic search phrases"
  },
  {
   "id": "FOOT-05",
@@ -135,8 +159,14 @@
    "مكتبة وسائط",
    "media library",
    "probe",
-   "upload"
-  ]
+   "upload",
+   "رفع ملفات",
+   "سحب وإفلات",
+   "فحص الملفات",
+   "drag and drop",
+   "file import"
+  ],
+  "when": "عند رفع ملفات فيديو وصوت وصور إلى مكتبة محلية تفحص مدة كل ملف ومساراته وتصنفه / when uploading video, audio and image files to a local library that probes and classifies each one"
  },
  {
   "id": "FOOT-06",
@@ -161,8 +191,14 @@
    "متعدد الكاميرات",
    "multicam",
    "chronological",
-   "creation_time"
-  ]
+   "creation_time",
+   "ترتيب اللقطات",
+   "وقت التصوير",
+   "مزامنة الكاميرات",
+   "clock offset",
+   "sort clips"
+  ],
+  "when": "حين تصوّر بأكثر من كاميرا وتريد ترتيب اللقطات حسب وقت التصوير مع ضبط فرق ساعة كل كاميرا / when sorting clips from several cameras by recorded time, correcting each camera's clock offset"
  },
  {
   "id": "FOOT-07",
@@ -184,8 +220,14 @@
   "tags": [
    "تسجيل شاشة",
    "screen recording",
-   "capture settings"
-  ]
+   "capture settings",
+   "تصوير الشاشة",
+   "سكرين ريكورد",
+   "إعدادات التسجيل",
+   "screencast",
+   "system audio"
+  ],
+  "when": "قبل تسجيل لقطات الشاشة حين تريد إعدادات موحدة للدقة ومعدل الإطارات والصوت والمؤشر / before recording screen captures, for one consistent set of resolution, fps, audio tracks and cursor settings"
  },
  {
   "id": "FOOT-08",
@@ -214,8 +256,14 @@
    "scene detection",
    "scdet",
    "shots",
-   "contact sheet"
-  ]
+   "contact sheet",
+   "تقسيم الفيديو",
+   "مشاهد",
+   "تقطيع تلقائي",
+   "split video",
+   "cut detection"
+  ],
+  "when": "حين تريد تقسيم فيديو إلى لقطاته تلقائيًا ومعرفة أماكن القطعات وبناء تايملاين منها / when automatically splitting a video at its cuts into shots, a contact sheet and a timeline spec"
  },
  {
   "id": "FOOT-09",
@@ -242,8 +290,14 @@
    "غلاف",
    "thumbnail",
    "contact sheet",
-   "cover"
-  ]
+   "cover",
+   "صورة مصغرة",
+   "ثمبنيل",
+   "اختيار إطار",
+   "frame grab",
+   "animated cover"
+  ],
+  "when": "حين تحتاج صورة غلاف أو ثمبنيل تشرح الفيديو بنظرة، أو لوحة إطارات تلخص المقطع كله / when picking a cover frame or thumbnail that explains the video at a glance, or one sheet summarising it"
  },
  {
   "id": "FOOT-10",
@@ -270,8 +324,14 @@
    "طاقة الحركة",
    "motion energy",
    "best window",
-   "shot picking"
-  ]
+   "shot picking",
+   "أفضل جزء",
+   "لقطة حيوية",
+   "قطع على الإيقاع",
+   "frame difference",
+   "beat slots"
+  ],
+  "when": "حين تقطع لقطات على الإيقاع وتريد اختيار أكثر جزء فيه حركة من كل لقطة بالقياس لا بالتخمين / when cutting to beats and the most active unused window of each clip should be picked by measured motion"
  },
  {
   "id": "FOOT-11",
@@ -301,8 +361,14 @@
    "duplicates",
    "trim head",
    "laplacian",
-   "dhash"
-  ]
+   "dhash",
+   "لقطات الموبايل",
+   "حذف التكرار",
+   "بداية بيضاء",
+   "phone footage",
+   "similar takes"
+  ],
+  "when": "عند تنظيف لقطات الموبايل من الثانية الأولى البيضاء أو غير الواضحة وجمع اللقطات المكررة المتشابهة / when cleaning phone clips of white or soft opening frames and grouping near-identical duplicate takes"
  },
  {
   "id": "FOOT-12",
@@ -329,8 +395,14 @@
    "تحليل صورة",
    "exposure",
    "histogram",
-   "arabic advice"
-  ]
+   "arabic advice",
+   "إضاءة الصورة",
+   "صورة مظلمة",
+   "صورة محروقة",
+   "overexposed",
+   "underexposed"
+  ],
+  "when": "حين يسأل المستخدم هل صورته مظلمة أو محروقة الإضاءة ويريد تشخيص التعريض ونصائح إصلاح بالعربية / when the user asks if a photo is too dark or blown out and wants an exposure verdict with Arabic fix tips"
  },
  {
   "id": "FOOT-13",
@@ -358,8 +430,14 @@
    "مرجع",
    "mimic",
    "reference reel",
-   "boundaries"
-  ]
+   "boundaries",
+   "تقليد ريل",
+   "تحليل ريل",
+   "نفس الستايل",
+   "transitions",
+   "shot lengths"
+  ],
+  "when": "حين يريد المستخدم محاكاة ريل مرجعي بدقة الإطار: أماكن القطعات والانتقالات وأطوال اللقطات ومنطقة النص / when matching a reference reel frame-accurately: cuts, dissolves, shot lengths, look, text zone and audio"
  },
  {
   "id": "FOOT-14",
@@ -384,8 +462,14 @@
    "breakdown",
    "palette",
    "tempo",
-   "reference"
-  ]
+   "reference",
+   "تفكيك فيديو",
+   "لوحة ألوان",
+   "تحليل مشاهد",
+   "scene by scene",
+   "beats"
+  ],
+  "when": "حين تريد تفكيك فيديو مرجعي إلى نبضات قصيرة بألوانها وحركتها وإيقاعها لإعادة بنائه مشهدًا مشهدًا / when breaking a reference video into short beats with palette, motion, likely transitions, loudness and tempo"
  },
  {
   "id": "FOOT-15",
@@ -412,8 +496,14 @@
    "upscale",
    "resolution",
    "lanczos",
-   "esrgan"
-  ]
+   "esrgan",
+   "تحسين الجودة",
+   "تكبير الصورة",
+   "صورة مبكسلة",
+   "low resolution",
+   "blurry image"
+  ],
+  "when": "قبل رفع دقة صورة أو فيديو منخفض الجودة لتعرف هل التكبير سيفيد أم أن التفاصيل مفقودة أصلًا / before upscaling a low-res photo or video, to judge whether enlarging helps or the detail is simply missing"
  },
  {
   "id": "FOOT-16",
@@ -442,8 +532,14 @@
    "timeline",
    "json edit",
    "speed ramp",
-   "ffmpeg"
-  ]
+   "ffmpeg",
+   "مواصفة مونتاج",
+   "انتقالات",
+   "نص على الفيديو",
+   "edit spec",
+   "lower third"
+  ],
+  "when": "حين تريد بناء مونتاج كامل من ملف مواصفات بمقاطع وصور وزوم وتلوين وانتقالات ونصوص ورندره مرة واحدة / when describing a whole edit as JSON (clips, stills, zoom, grade, ramps, transitions, text) and rendering it in one pass"
  },
  {
   "id": "FOOT-17",
@@ -472,8 +568,14 @@
    "trim",
    "frame accurate",
    "keyframe",
-   "re-encode"
-  ]
+   "re-encode",
+   "قص الفيديو",
+   "تقطيع مقطع",
+   "قص بالثانية",
+   "cut clip",
+   "frozen frames"
+  ],
+  "when": "حين تريد قص جزء من فيديو بدءًا من إطار محدد بالضبط دون تجمد الصورة في البداية / when cutting a clip at an exact frame by re-encoding, avoiding the frozen picture of stream-copy cuts"
  },
  {
   "id": "FOOT-18",
@@ -499,8 +601,14 @@
    "دمج",
    "concat",
    "join",
-   "normalise"
-  ]
+   "normalise",
+   "دمج الفيديوهات",
+   "تجميع مقاطع",
+   "لصق مقاطع",
+   "merge videos",
+   "mixed sizes"
+  ],
+  "when": "حين تدمج عدة مقاطع بمقاسات أو معدلات إطارات مختلفة في فيديو واحد دون أن ينقطع الصوت / when joining clips of different sizes or frame rates into one video without the audio breaking"
  },
  {
   "id": "FOOT-19",
@@ -529,8 +637,14 @@
    "speed ramp",
    "slow motion",
    "atempo",
-   "setpts"
-  ]
+   "setpts",
+   "سلو موشن",
+   "تسريع الفيديو",
+   "تبطيء اللقطة",
+   "variable speed",
+   "slow mo"
+  ],
+  "when": "حين يطلب المستخدم تسريع لقطة أو تبطيئها أو سلو موشن متغيرًا مع الحفاظ على طبقة الصوت / when the user wants a speed ramp, slow motion or variable speed on a clip with pitch-preserved audio"
  },
  {
   "id": "FOOT-20",
@@ -558,8 +672,14 @@
    "قص الصمت",
    "silence",
    "jump cut",
-   "filler words"
-  ]
+   "filler words",
+   "حذف الوقفات",
+   "إزالة السكتات",
+   "تقطيع الكلام",
+   "remove pauses",
+   "dead air"
+  ],
+  "when": "حين يريد المستخدم حذف الوقفات والسكتات من مقطع كلام صورةً وصوتًا ليصير الإيقاع أسرع / when removing pauses, silences and filler words from a talking clip, picture and sound together"
  },
  {
   "id": "FOOT-21",
@@ -586,8 +706,14 @@
    "تجميد",
    "freeze frame",
    "hold",
-   "loop"
-  ]
+   "loop",
+   "تثبيت لقطة",
+   "فريز",
+   "تكرار المقطع",
+   "seamless loop",
+   "still frame"
+  ],
+  "when": "حين تريد تثبيت لحظة من الفيديو كصورة ثابتة لثوانٍ، أو تكرار مقطع في حلقة بلا قفزة / when holding a moment as a still for a few seconds, or looping a clip with its tail dissolving into its head"
  },
  {
   "id": "FOOT-22",
@@ -616,8 +742,14 @@
    "editor",
    "browser",
    "studio",
-   "timeline ui"
-  ]
+   "timeline ui",
+   "محرر فيديو",
+   "مونتاج في المتصفح",
+   "معاينة حية",
+   "video editor",
+   "kosif studio"
+  ],
+  "when": "حين يريد المستخدم محرر مونتاج بسيطًا في المتصفح يعمل محليًا بلا رفع، بتايملاين ونصوص وصوت / when the user wants a simple local in-browser montage editor with timeline, text layers, soundtrack and live preview"
  },
  {
   "id": "FOOT-23",
@@ -643,8 +775,14 @@
    "ريموشن",
    "remotion",
    "ripple edit",
-   "sequence"
-  ]
+   "sequence",
+   "ترتيب المقاطع",
+   "تايملاين",
+   "قص المقاطع",
+   "transitionseries",
+   "trim clips"
+  ],
+  "when": "حين تبني مونتاج مقاطع في Remotion وتختار بين مواضع مطلقة مستقلة أو تسلسل متتابع يزيح ما بعده / when editing clips in Remotion and choosing absolute placement or ripple sequences that shift later clips"
  },
  {
   "id": "FOOT-24",
@@ -671,8 +809,14 @@
    "اهتزاز",
    "stabilize",
    "vidstab",
-   "deshake"
-  ]
+   "deshake",
+   "فيديو مهزوز",
+   "لقطة مهتزة",
+   "رعشة الكاميرا",
+   "shaky video",
+   "steady"
+  ],
+  "when": "حين تكون اللقطة مهتزة اهتزازًا مقاسًا فعلًا وتحتاج تثبيتًا دون انحناء الحواف / when a clip has measured camera shake and needs two-pass stabilisation with limited crop"
  },
  {
   "id": "FOOT-25",
@@ -700,8 +844,14 @@
    "denoise",
    "sharpen",
    "restoration",
-   "hqdn3d"
-  ]
+   "hqdn3d",
+   "إزالة النويز",
+   "توضيح الصورة",
+   "إضاءة منخفضة",
+   "noise reduction",
+   "low light"
+  ],
+  "when": "حين تكون اللقطة مشوشة من الإضاءة المنخفضة أو باهتة الحواف وتحتاج تنظيفًا وتوضيحًا وتحسين ألوان / when low-light footage is noisy or soft and needs denoise, sharpening and a gentle restoration grade"
  },
  {
   "id": "FOOT-26",
@@ -728,8 +878,14 @@
    "ترجمة محروقة",
    "decaption",
    "remove subtitles",
-   "inpaint"
-  ]
+   "inpaint",
+   "مسح الكتابة",
+   "حذف الترجمة",
+   "إزالة النص",
+   "hardcoded subtitles",
+   "erase text"
+  ],
+  "when": "حين يريد المستخدم إزالة ترجمة محروقة بيضاء أو صفراء من الفيديو وإعادة بناء ما تحتها / when erasing burned-in white or yellow subtitles from a video and rebuilding the picture underneath"
  },
  {
   "id": "FOOT-27",
@@ -763,8 +919,14 @@
    "privacy",
    "face blur",
    "pixelate",
-   "mosaic"
-  ]
+   "mosaic",
+   "إخفاء الوجه",
+   "تغبيش",
+   "بكسلة",
+   "anonymize",
+   "blur region"
+  ],
+  "when": "حين تحتاج إخفاء وجوه أشخاص أو منطقة حساسة في الفيديو ببكسلة أو تمويه يتتبعها في كل إطار / when hiding faces or a sensitive region in a video with tracked blur, pixelation or boxes, audio untouched"
  },
  {
   "id": "FOOT-28",
@@ -791,8 +953,14 @@
    "شاشة خضراء",
    "chroma key",
    "green screen",
-   "despill"
-  ]
+   "despill",
+   "تغيير الخلفية",
+   "خلفية خضراء",
+   "كروما كي",
+   "blue screen",
+   "background replace"
+  ],
+  "when": "حين يصور المتحدث أمام شاشة خضراء أو زرقاء ويريد استبدال الخلفية بلقطات أو رسوم جديدة / when removing a green, blue or plain backdrop to composite the speaker over new footage or graphics"
  },
  {
   "id": "FOOT-29",
@@ -820,8 +988,14 @@
    "تعديل صورة",
    "recolor",
    "photo edit",
-   "arabic colours"
-  ]
+   "arabic colours",
+   "تغيير اللون",
+   "غير لون",
+   "استبدال لون",
+   "change color",
+   "color swap"
+  ],
+  "when": "حين يطلب المستخدم تغيير لون شيء في الصورة مثل «خلي القميص أحمر» مع بقاء الظلال والطيات / when the user asks to change an object's colour in a photo, e.g. 'make the shirt red', keeping folds and shadows"
  },
  {
   "id": "FOOT-30",
@@ -849,8 +1023,14 @@
    "قص",
    "شفافية",
    "crop",
-   "transparent"
-  ]
+   "transparent",
+   "تجهيز الصور",
+   "إزالة الأبيض",
+   "تحويل الصيغة",
+   "webp",
+   "resize"
+  ],
+  "when": "قبل تحريك صورة ثابتة حين تحتاج قصها لمقاس محدد أو جعل الأبيض شفافًا أو تقليمها أو تدفئة ألوانها / before animating a still: fill-crop to size, white to transparent, trim, convert to WebP or warm the grade"
  },
  {
   "id": "FOOT-31",
@@ -883,8 +1063,14 @@
    "matte",
    "remove background",
    "rembg",
-   "segmentation"
-  ]
+   "segmentation",
+   "حذف الخلفية",
+   "قص الشخص",
+   "خلفية شفافة",
+   "cutout",
+   "alpha video"
+  ],
+  "when": "حين يريد المستخدم عزل المتحدث عن خلفيته في فيديو أو صورة وإخراجه بخلفية شفافة / when cutting the presenter out of footage or stills as a transparent alpha cut-out, with an optional background plate"
  },
  {
   "id": "FOOT-32",
@@ -911,8 +1097,14 @@
    "نص خلف الشخص",
    "text behind subject",
    "occlusion",
-   "podcast"
-  ]
+   "podcast",
+   "عنوان خلف المتحدث",
+   "كتابة ورا الشخص",
+   "تأثير العمق",
+   "depth title",
+   "layered text"
+  ],
+  "when": "حين يريد المستخدم عنوانًا كبيرًا يظهر خلف جسم المتحدث بينما وجهه يبقى ظاهرًا أمامه / when a big headline should appear behind the speaker's body while the face stays in front and clear"
  },
  {
   "id": "FOOT-33",
@@ -937,8 +1129,14 @@
    "قص المتحدث",
    "rotoscope",
    "sticker outline",
-   "backdrop swap"
-  ]
+   "backdrop swap",
+   "تغيير الخلفية",
+   "ملصق",
+   "حد أبيض",
+   "sentence sync",
+   "cutout"
+  ],
+  "when": "حين تريد قص المتحدث بحد أبيض كالملصق وتبديل الخلفية خلفه مع كل جملة / when cutting the speaker out with a white sticker outline and swapping the backdrop at each sentence"
  },
  {
   "id": "FOOT-34",
@@ -965,8 +1163,14 @@
    "tracking",
    "callout",
    "attention ring",
-   "opencv"
-  ]
+   "opencv",
+   "تتبع حركة",
+   "دائرة تمييز",
+   "تسمية متحركة",
+   "motion tracking",
+   "label"
+  ],
+  "when": "حين تشرح جزءًا صغيرًا متحركًا في اللقطة وتريد نقطة بخط تسمية أو دائرة تلاحقه / when a dot with a short label line, or a thin ring, must stay pinned to a moving detail while it is explained"
  },
  {
   "id": "FOOT-35",
@@ -994,8 +1198,14 @@
    "corner pin",
    "planar track",
    "homography",
-   "insert"
-  ]
+   "insert",
+   "أربع زوايا",
+   "تركيب صورة",
+   "تتبع سطح",
+   "perspective",
+   "matrix3d"
+  ],
+  "when": "حين تريد إدخال ملصق أو رسم على حائط أو بطاقة في اليد بحيث يتبع منظورها وحركة الكاميرا / when inserting a sticker or diagram onto a wall or a hand-held card so it follows the perspective as the camera moves"
  },
  {
   "id": "FOOT-36",
@@ -1019,8 +1229,14 @@
    "تجميد",
    "freeze subject",
    "chronophotography",
-   "ghost poses"
-  ]
+   "ghost poses",
+   "تجميد الشخص",
+   "إيقاف الزمن",
+   "أشباح",
+   "time freeze",
+   "clean plate"
+  ],
+  "when": "حين تريد أن يتجمد الشخص في الكادر بينما الخلفية تستمر في الحركة، أو تكرار وضعياته كأشباح زمنية / when the performer freezes while the background keeps moving, or for spaced ghost poses as time markers"
  },
  {
   "id": "FOOT-37",
@@ -1045,8 +1261,14 @@
    "سينماغراف",
    "cinemagraph",
    "living photo",
-   "loop"
-  ]
+   "loop",
+   "صورة متحركة",
+   "صورة حية",
+   "جزء متحرك",
+   "moving photo",
+   "seamless loop"
+  ],
+  "when": "حين تريد صورة ثابتة فيها جزء واحد يتحرك كالبخار فوق الفنجان ويتكرر بلا قفزة / when turning a still into a seamless loop where only one masked region, like steam over a cup, moves"
  },
  {
   "id": "FOOT-38",
@@ -1074,8 +1296,14 @@
    "قبل وبعد",
    "before after",
    "split",
-   "comparison"
-  ]
+   "comparison",
+   "مقارنة النتيجة",
+   "خط فاصل",
+   "سلايدر مقارنة",
+   "wipe",
+   "divider"
+  ],
+  "when": "حين تعرض الفرق قبل التعديل وبعده بخط فاصل يتحرك على نفس الكادر / when showing before vs after with a moving divider over the same framing, without changing light or lens"
  },
  {
   "id": "FOOT-39",
@@ -1103,8 +1331,14 @@
    "ken burns",
    "zoompan",
    "push",
-   "photo motion"
-  ]
+   "photo motion",
+   "تحريك الصور",
+   "زوم على الصورة",
+   "زوم بطيء",
+   "slow zoom",
+   "pan"
+  ],
+  "when": "حين تحرك صورًا ثابتة بزوم أو تحريك هادئ بسرعة ثابتة، مع اتجاه من اليمين لليسار للعربي / when animating still photos with a constant-speed push or pan, alternating moves and right-to-left pans for Arabic"
  },
  {
   "id": "FOOT-40",
@@ -1134,8 +1368,14 @@
    "parallax",
    "2.5d",
    "depth layers",
-   "photo"
-  ]
+   "photo",
+   "عمق الصورة",
+   "طبقات متحركة",
+   "تحريك الصور",
+   "camera drift",
+   "depth effect"
+  ],
+  "when": "حين تحول صورة ثابتة إلى مشهد بعمق بطبقات تتحرك بسرعات مختلفة مع انجراف خفيف دائم / when turning a layered still into 2.5D depth with per-layer depth factors and a gentle perpetual drift"
  },
  {
   "id": "FOOT-41",
@@ -1160,8 +1400,14 @@
    "كولاج",
    "parallax reveal",
    "collage",
-   "hero photo"
-  ]
+   "hero photo",
+   "شبكة صور",
+   "كشف الصورة",
+   "عنوان بين الطبقات",
+   "photo grid",
+   "layer reveal"
+  ],
+  "when": "حين تريد كشف صورة بطبقات يقفز فيها الشخص ويمر العنوان خلفه، أو شبكة صور تنهار إلى صورة واحدة / when revealing a layered photo with the title sliding behind the subject, or a photo grid collapsing to one hero"
  },
  {
   "id": "FOOT-42",
@@ -1193,8 +1439,14 @@
    "scrim",
    "legibility",
    "contrast",
-   "signalstats"
-  ]
+   "signalstats",
+   "وضوح النص",
+   "قراءة النص",
+   "تدرج خلف النص",
+   "readability",
+   "text over video"
+  ],
+  "when": "حين يكون النص فوق صورة أو لقطة مزدحمة صعب القراءة ويحتاج تدرجًا خلفه وفحص تباين / when text over a busy photo or footage is hard to read and needs a gradient scrim and per-frame contrast checks"
  },
  {
   "id": "FOOT-43",
@@ -1221,8 +1473,14 @@
    "وثائقي",
    "archive",
    "documentary",
-   "then and now"
-  ]
+   "then and now",
+   "صورة قديمة",
+   "الماضي والحاضر",
+   "زمان والآن",
+   "old photo",
+   "match dissolve"
+  ],
+  "when": "حين تريد أن تتمدد صورة أرشيف قديمة حتى تطابق المكان نفسه في لقطة حديثة ثم تذوب فيها / when an old archive print should expand to match the same place in modern footage, then dissolve into it"
  },
  {
   "id": "FOOT-44",
@@ -1245,8 +1503,14 @@
    "عربي",
    "rtl",
    "photo layout",
-   "mirroring"
-  ]
+   "mirroring",
+   "من اليمين لليسار",
+   "اتجاه عربي",
+   "عكس الصورة",
+   "arabic layout",
+   "margins"
+  ],
+  "when": "حين تصمم حركة صور لفيديو عربي وتحتاج اتجاه الكشف ومكان الشخص والنص وتجنب عكس الصور / when laying out photos for Arabic video: RTL reveals, subject left and text right, never mirroring writing or logos"
  },
  {
   "id": "FOOT-45",
@@ -1276,8 +1540,14 @@
    "parallax-2d",
    "viral mixed media",
    "editorial",
-   "photos"
-  ]
+   "photos",
+   "قوالب صور",
+   "فيديو من صور",
+   "أسلوب جاهز",
+   "template",
+   "photo montage"
+  ],
+  "when": "حين تريد البدء سريعًا بفيديو صور بأسلوب بارالاكس أو ميكس ميديا فيروسي أو مونتاج تحريري جاهز / when starting a photo-based video from a ready 2D parallax, viral mixed-media or editorial montage style"
  },
  {
   "id": "FOOT-46",
@@ -1306,8 +1576,14 @@
    "جدار",
    "filter strips",
    "tile wall",
-   "collage flash"
-  ]
+   "collage flash",
+   "مقارنة فلاتر",
+   "جدار صور",
+   "شبكة صور",
+   "photo wall",
+   "filter comparison"
+  ],
+  "when": "حين تريد عرض نفس الصورة بعدة فلاتر في أعمدة متجاورة، أو جدار مربعات صور ينجرف ببطء / when showing one photo in columns with a different filter each, or a slowly drifting wall of 9:16 tiles"
  },
  {
   "id": "FOOT-47",
@@ -1335,8 +1611,14 @@
    "all-intra",
    "seek",
    "video in html",
-   "keyframes"
-  ]
+   "keyframes",
+   "فيديو داخل الصفحة",
+   "دقة الإطار",
+   "إعادة ترميز",
+   "frame exact",
+   "motion-kit"
+  ],
+  "when": "حين تضع فيديو داخل تكوين HTML وتحتاج أن يُبحث فيه بدقة الإطار أثناء الرندر / when a <video> inside an HTML composition must seek frame-exactly, by re-encoding every frame as a keyframe"
  },
  {
   "id": "FOOT-48",
@@ -1364,8 +1646,14 @@
    "تمويه الخلفية",
    "blur fill",
    "vertical",
-   "reframe"
-  ]
+   "reframe",
+   "تحويل لطولي",
+   "فيديو أفقي",
+   "خلفية مموهة",
+   "landscape to vertical",
+   "reels"
+  ],
+  "when": "حين تحول فيديو أفقيًا إلى طولي 9:16 وتريد إظهار الكادر كاملًا فوق نسخة مموهة بدل قص الوسط / when fitting a landscape clip into 9:16 vertical by placing the whole frame over a blurred enlarged copy"
  },
  {
   "id": "FOOT-49",
@@ -1391,8 +1679,14 @@
    "متحدث",
    "footage plate",
    "talking head",
-   "overlay"
-  ]
+   "overlay",
+   "رسوم فوق الفيديو",
+   "موشن جرافيك",
+   "جسيمات",
+   "virtual camera",
+   "captions"
+  ],
+  "when": "حين يكون لديك مقطع متحدث عمودي وتريد رسومًا وإضاءة وجسيمات وترجمة فوقه مع كاميرا افتراضية تحركه / when a vertical talking clip is the base plate with HTML graphics, light, particles and captions layered on top"
  },
  {
   "id": "FOOT-50",
@@ -1418,8 +1712,14 @@
    "مونتاج موجه",
    "directed edit",
    "talking head",
-   "punch in"
-  ]
+   "punch in",
+   "زوم على الكلمات",
+   "فصول",
+   "مونتاج متحدث",
+   "gsap",
+   "keyword punches"
+  ],
+  "when": "حين تريد تحويل مقطع متحدث إلى مونتاج موجه بزوم بطيء وضربات على الكلمات المهمة ونصوص وفصول / when turning a talking-head clip into a directed edit with slow pushes, keyword punch-ins, text levels and chapters"
  },
  {
   "id": "FOOT-51",
@@ -1447,8 +1747,14 @@
    "مقابلة",
    "talking head",
    "lower third",
-   "pull quote"
-  ]
+   "pull quote",
+   "اسم المتحدث",
+   "بطاقات نصية",
+   "اقتباسات",
+   "picture in picture",
+   "transcript sync"
+  ],
+  "when": "حين يريد المستخدم تغليف مقابلة أو بودكاست ببطاقات عناوين وأسماء وأرقام واقتباسات متزامنة مع الكلام / when wrapping an untouched interview or podcast in transcript-synced titles, lower-thirds, data callouts and quotes"
  },
  {
   "id": "FOOT-52",
@@ -1474,8 +1780,14 @@
    "لوتي",
    "lottie",
    "video embed",
-   "html composition"
-  ]
+   "html composition",
+   "رسوم متجهة",
+   "إطار مستدير",
+   "تضمين فيديو",
+   "vector animation",
+   "rounded frame"
+  ],
+  "when": "حين تضيف فيديو مكتومًا في إطار مستدير أو رسوم Lottie داخل تكوين HTML متزامنة مع الساعة الرئيسية / when embedding muted footage or Lottie animations in an HTML composition, seeked from the master clock"
  },
  {
   "id": "FOOT-53",
@@ -1502,8 +1814,14 @@
    "intro player",
    "adaptive",
    "4k",
-   "web delivery"
-  ]
+   "web delivery",
+   "فيديو افتتاحي",
+   "مقدمة موقع",
+   "تشغيل تلقائي",
+   "splash video",
+   "720p"
+  ],
+  "when": "حين يحتاج موقع فيديو مقدمة سينمائية بملء الشاشة يختار الجودة حسب الشاشة والشبكة ولا يعطل الدخول / when a website needs a full-screen intro film that picks 4K or 720p by viewport and network and never blocks entry"
  },
  {
   "id": "FOOT-54",
@@ -1531,8 +1849,14 @@
    "auto montage",
    "beat cut",
    "music video",
-   "grades"
-  ]
+   "grades",
+   "مونتاج على الموسيقى",
+   "تقطيع على البيت",
+   "مونتاج صور وفيديو",
+   "music sync",
+   "kmotion"
+  ],
+  "when": "حين يعطي المستخدم مجموعة لقطات وصور ومقطوعة موسيقية ويريد مونتاجًا تلقائيًا مقطوعًا على الإيقاع / when the user hands over clips, photos and a music track and wants an automatic beat-cut montage"
  },
  {
   "id": "FOOT-55",
@@ -1560,8 +1884,14 @@
    "مقطع كلام",
    "talking reel",
    "auto edit",
-   "shorts"
-  ]
+   "shorts",
+   "ترجمة كاريوكي",
+   "تيك توك",
+   "مونتاج تلقائي",
+   "karaoke captions",
+   "vertical video"
+  ],
+  "when": "حين يرسل المستخدم مقطع كلام خامًا ويريد ريلًا عموديًا جاهزًا بترجمة كاريوكي وصوت منظف بأمر واحد / when turning a raw talking clip into a finished vertical reel with karaoke captions and a cleaned voice in one command"
  },
  {
   "id": "FOOT-56",
@@ -1589,8 +1919,14 @@
    "مقاطع قصيرة",
    "highlights",
    "long video",
-   "podcast clips"
-  ]
+   "podcast clips",
+   "تقطيع محاضرة",
+   "أهم المقاطع",
+   "شورتس",
+   "hook",
+   "repurpose"
+  ],
+  "when": "حين يريد المستخدم استخراج عدة ريلز قصيرة من محاضرة أو بودكاست طويل تبدأ بخطّاف وتنتهي بجملة كاملة / when cutting several vertical reels from a long talk, each a hook-to-payoff highlight ending on a full sentence"
  },
  {
   "id": "FOOT-57",
@@ -1619,8 +1955,14 @@
    "b-roll",
    "auto edit",
    "voice over",
-   "stock"
-  ]
+   "stock",
+   "تعليق صوتي",
+   "لقطات مساندة",
+   "سيناريو",
+   "openverse",
+   "autoedit"
+  ],
+  "when": "حين يكون لدى المستخدم تعليق صوتي أو فيديو كلام ويريد مونتاجًا كاملًا بلقطات مطابقة للكلمات وترجمة / when building a full montage from a voice-over or talk: word-level transcript, matching footage, word cuts, captions"
  },
  {
   "id": "FOOT-58",
@@ -1648,8 +1990,14 @@
    "بصمة",
    "basma",
    "beat montage",
-   "contact sheet ai"
-  ]
+   "contact sheet ai",
+   "مونتاج على الإيقاع",
+   "ترتيب اللقطات",
+   "مؤثرات صوتية",
+   "auto edit",
+   "transitions"
+  ],
+  "when": "حين يرفع المستخدم حتى 24 لقطة وصورة ويريد مونتاجًا على الإيقاع يرتبه الذكاء الاصطناعي بحركات وانتقالات / when up to 24 user clips and photos should be AI-ordered and cut on the beat with camera moves, transitions and SFX"
  },
  {
   "id": "FOOT-P01",
@@ -1681,8 +2029,14 @@
    "loudnorm",
    "مونتاج",
    "قص",
-   "تنقية صوت"
-  ]
+   "تنقية صوت",
+   "قائمة قطع",
+   "تجميع أجزاء",
+   "توحيد الصوت",
+   "cut list",
+   "timestamps"
+  ],
+  "when": "حين يعطي المستخدم أوقات بداية ونهاية لأجزاء من فيديو ويريد قصها وتجميعها مع تنقية الصوت وضبط علوه / when the user gives start:end ranges to cut from a source and join in order, with optional denoise and loudnorm"
  },
  {
   "id": "FOOT-X01",
@@ -1918,10 +2272,16 @@
    "friday reel",
    "islamic reel",
    "style kit",
-   "thuluth title"
+   "thuluth title",
+   "يوم الجمعة",
+   "ريل ديني",
+   "خط الثلث",
+   "religious reel",
+   "jumuah"
   ],
   "section": "أسلوب «الدعاء» — «الدعاء» style kit",
-  "source": ""
+  "source": "",
+  "when": "حين يريد المستخدم ريل دعاء ليوم الجمعة من لقطاته وصوته بعنوان بالثلث وتاريخ وسطور دعاء متزامنة / when making a Friday dua reel from the user's clips and voice: Thuluth title, flying date, synced lines, audio untouched"
  },
  {
   "id": "FOOT-D02",
@@ -1954,10 +2314,16 @@
    "blur transition",
    "mirror transition",
    "zoom blur",
-   "capcut"
+   "capcut",
+   "ترانزيشن",
+   "كاب كات",
+   "انتقال دوار",
+   "spin transition",
+   "zoom transition"
   ],
   "section": "أسلوب «الدعاء» — «الدعاء» style kit",
-  "source": ""
+  "source": "",
+  "when": "حين تريد انتقالات مثل كاب كات (ضبابية، مرآة، زوم، دوران) على اللقطات فقط والنص فوقها يبقى واضحًا / when applying CapCut-style blur, mirror, zoom or spin transitions to footage while the text layer above stays sharp"
  },
  {
   "id": "FOOT-D03",
@@ -1991,9 +2357,15 @@
    "style analysis",
    "reference measurement",
    "mimic",
-   "color mask"
+   "color mask",
+   "تقليد ستايل",
+   "نفس أسلوب الريل",
+   "ألوان النص",
+   "style spec",
+   "lufs"
   ],
   "section": "أسلوب «الدعاء» — «الدعاء» style kit",
-  "source": ""
+  "source": "",
+  "when": "حين تريد تحويل ريل مرجعي إلى مواصفة أسلوب مقاسة: القطعات وألوان النص والهالة والتلوين والانتقالات والصوت / when turning a reference reel into a measured style spec: cuts, text colours, halo, grade, transitions, loudness"
  }
 ]

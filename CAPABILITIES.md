@@ -8,30 +8,53 @@
 ## الفهرس / contents
 1. [كيف تبدأ / how to start](#start)
 2. [الأرقام / numbers](#numbers)
-3. [المجالات والعائلات / domains and families](#domains)
-4. [المستلزمات الأكثر فتحًا / biggest unlocks](#unlocks)
-5. [طريقة التفكير / how to think](#think)
-6. [قواعد الصدق / honesty rules](#rules)
-7. [روابط مباشرة / raw links](#links)
+3. [الأدوات حسب المجال / tools by area](#tools)
+4. [المجالات والعائلات / domains and families](#domains)
+5. [المستلزمات الأكثر فتحًا / biggest unlocks](#unlocks)
+6. [طريقة التفكير / how to think](#think)
+7. [قواعد الصدق / honesty rules](#rules)
+8. [روابط مباشرة / raw links](#links)
 
 <a id="start"></a>
 ## 1. كيف تبدأ / how to start
 
 | أين أنت / surface | افعل / do |
 |---|---|
-| Claude Code (CLI, desktop, web) داخل المستودع | المهارة تُحمَّل تلقائيًا. نفّذ: `python3 .claude/skills/kosif-superpowers/scripts/boot.py` ثم اتبع خطواته الأربع. |
+| Claude Code (CLI, desktop, web) داخل المستودع | المهارة تُحمَّل تلقائيًا. نفّذ: `python3 .claude/skills/kosif-superpowers/scripts/boot.py` ثم `python3 .claude/skills/kosif-superpowers/scripts/hub.py find "<المهمة>"` (أدوات للتشغيل + قدرات + أدلة). |
 | Claude Code مع رابط فقط | استنسخ المستودع (`git clone https://github.com/kosif199022-jpg/kosif-tool`) ثم كما أعلاه. |
 | claude.ai محادثة مع رابط فقط، بلا shell | اقرأ هذه الصفحة، ثم [SKILL.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SKILL.md) و[cognition.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/cognition.md)، وافتح فصل العائلة المناسبة من الجدول أدناه. لا تدّعِ تشغيل شيء لم تشغّله. |
 | claude.ai مع تنفيذ كود | ارفع ملف zip للمهارة أو اقرأ الملفات الخام، ثم شغّل السكربتات القياسية (stdlib) داخل بيئة التنفيذ. |
+| أي تطبيق يدعم MCP / any MCP client | شغّل خادم القراءة فقط `python3 .claude/skills/kosif-superpowers/scripts/kosif_mcp.py` (داخل المستودع يسجّله `.mcp.json`)، وابدأ بأداة `kosif_find`. |
+| تطبيق يقرأ JSON / any app reading JSON | [manifest.json](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/manifest.json): الأدوات والعائلات والأدلة والأرقام في ملف واحد؛ المخططات في `schemas/`. |
 
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**4,751** قدرة · **52** عائلة · **10** مجالات · ✅ 868 مُثبتة بتشغيل فعلي · 🟢 637 جاهزة · 📦 966 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1424 طريقة موصوفة · 💡 71 فكرة.
-المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **124** مستودعًا موثّق الترخيص.
+**4,811** قدرة · **53** عائلة · **10** مجالات · ✅ 918 مُثبتة بتشغيل فعلي · 🟢 642 جاهزة · 📦 971 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1424 طريقة موصوفة · 💡 71 فكرة.
+المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **90**.
+
+<a id="tools"></a>
+## 3. الأدوات حسب المجال / tools by area
+
+كل أداة سكربت يُشغَّل فعلًا. التفاصيل: `python3 .claude/skills/kosif-superpowers/scripts/hub.py tool <id>` أو [INDEX.md](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/INDEX.md). — Every tool is a runnable script; details via hub.py tool or the index.
+
+| area | tools |
+|---|---|
+| [Discover and route / اكتشاف القدرات والتوجيه](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/discover.md) | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` |
+| [Think, ideate and write / التفكير والأفكار والكتابة](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/discover.md) | `anchor-gate` · `architecture-sizer` · `invention-lab` · `tell-scan` · `think` |
+| [Motion graphics and rendering / الموشن والرندر](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/motion.md) | `aspects` · `creative-reasoning-bridge` · `motion-director` · `motion-engine-js` · `motion-kit-bridge` · `motion-runtime` · `motion-stack` · `motion-toolkit` · `render-html` · `verify-video` · `repo-aspects` · `repo-render-html` · `repo-verify-video` · `starter-html-canvas` · `starter-remotion` |
+| [Editing and reference video / المونتاج والفيديو المرجعي](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/edit.md) | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` |
+| [Audio and rhythm / الصوت والإيقاع](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/audio.md) | `audio-cue-mapper` · `music-rhythm-engine` · `repo-words-convert` |
+| [Drawing and characters / الرسم والشخصيات](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/draw.md) | `character-fullbody` · `character-ik` · `code-drawing-master` · `creative-paint` · `smart-draw` |
+| [3D / ثلاثي الأبعاد](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/3d.md) | `blender-api-audit` · `blender-bridge` · `blender-cinema` · `blender-cycles-render` · `blender-worker` · `native-3d` · `native-glb` |
+| [Image, design and fonts / الصور والتصميم والخطوط](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/image.md) | `app-studio` · `app-studio-paint` · `font-fidelity-lab` · `render-text` |
+| [Sources and references / المصادر والمراجع](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/sources.md) | `atlas-external-bridge` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` |
+| [Software investigation / فحص البرامج](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/investigate.md) | `installer-triage` · `local-project-audit` · `rea-bridge` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` |
+| [Local computer / الجهاز المحلي](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/local-computer.md) | `kosif-remote-commander` |
+| [Maintain and build / الصيانة والبناء](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/maintain.md) | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` |
 
 <a id="domains"></a>
-## 3. المجالات والعائلات / domains and families
+## 4. المجالات والعائلات / domains and families
 
 ### الموشن والمونتاج / motion — 3,801 powers · ✅ 542
 
@@ -90,11 +113,12 @@
 | [التحقق والتقييم — Verification & evals](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md) | CHECK | 29 | 4 | CHECK-02 Postcondition gate on the delivered file (ffpr; CHECK-03 Look at the output: contact sheets, frames, sc; CHECK-22 Catalog snapshot: powers.py stats + repo valid |
 | [التخطيط والتنفيذ — Planning & execution](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/planning-execution.md) | PLAN | 12 | 2 | PLAN-01 Full plan scaffold from a goal; PLAN-05 Requirements gate before scheduling; PLAN-02 Backcasting from the end state |
 
-### التطبيقات والواجهات / build — 142 powers · ✅ 102
+### التطبيقات والواجهات / build — 202 powers · ✅ 152
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
 | [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 119 | 96 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
+| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 60 | 50 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
 | [التطبيقات والواجهات — Apps & artifacts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md) | APP | 23 | 6 | APP-04 Dependency-free RTL dashboard page; APP-05 Phone-viewport screenshot + overflow check; APP-06 HTML to MP4 renderer (repo tool) |
 
 ### الكتابة واللغة / craft — 72 powers · ✅ 26
@@ -136,44 +160,44 @@
 | [المنتج والاستراتيجية والمال — Product, strategy & finance](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/strategy-finance.md) | PROD | 18 | 5 | PROD-03 Risk as a distribution (Monte Carlo); PROD-10 Optimal product mix (LP); PROD-11 Optimal price and break-even |
 
 <a id="unlocks"></a>
-## 4. المستلزمات الأكثر فتحًا / biggest unlocks
+## 5. المستلزمات الأكثر فتحًا / biggest unlocks
 
 كل سطر: مستلزم، كم قدرة تحتاجه، وأمر تثبيته. الفهرس الكامل: [requirements.md](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/requirements.md). — Each row: a requirement, how many powers need it, and its install command.
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 577 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 625 | `apt-get install -y python3 python3-pip python3-venv` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
-| `ffmpeg` | bin | 400 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
-| `chromium` | bin | 317 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
-| `npm:rea` | npm | 245 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
-| `npm:gsap` | npm | 235 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
-| `npm:three` | npm | 170 | `npm i three@0.186.1 esbuild` |
-| `key:unspecified` | key | 153 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
-| `node` | bin | 148 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
-| `pip:numpy` | pip | 126 | `pip install numpy` |
-| `pip:pillow` | pip | 116 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
-| `npm:remotion` | npm | 112 | `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3` |
-| `pip:opencv` | pip | 92 | `pip install opencv-python-headless` |
-| `fonts:arabic` | font | 89 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |
-| `imagemagick` | bin | 78 | `apt-get install -y imagemagick` |
-| `engine:ghidra` | bin | 75 | `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP` |
+| `ffmpeg` | bin | 413 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
+| `chromium` | bin | 325 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
+| `npm:rea` | npm | 251 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
+| `npm:gsap` | npm | 236 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
+| `npm:three` | npm | 173 | `npm i three@0.186.1 esbuild` |
+| `key:unspecified` | key | 154 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
+| `node` | bin | 154 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
+| `pip:numpy` | pip | 127 | `pip install numpy` |
+| `pip:pillow` | pip | 124 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
+| `npm:remotion` | npm | 115 | `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3` |
+| `pip:opencv` | pip | 94 | `pip install opencv-python-headless` |
+| `fonts:arabic` | font | 90 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |
+| `imagemagick` | bin | 82 | `apt-get install -y imagemagick` |
+| `engine:ghidra` | bin | 76 | `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP` |
 | `key:video-gen` | service | 62 | `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits` |
 | `claude:tools` | service | 58 | `Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch` |
-| `pip:faster-whisper` | model | 44 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
-| `npm:react` | npm | 40 | `npm i react react-dom  (or next, svelte, vue)` |
-| `engine:android` | bin | 35 | `Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised` |
+| `pip:faster-whisper` | model | 46 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
+| `npm:react` | npm | 43 | `npm i react react-dom  (or next, svelte, vue)` |
+| `engine:android` | bin | 36 | `Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised` |
 | `pip:office` | pip | 33 | `pip install python-docx openpyxl python-pptx reportlab pypdf` |
-| `os:macos` | os | 29 | `a macOS machine with Xcode command-line tools` |
-| `engine:wakaru` | bin | 23 | `Wakaru 1.13+ binary + REA_WAKARU_COMMAND` |
-| `npm:esbuild` | npm | 22 | `npm i esbuild vite` |
+| `os:macos` | os | 30 | `a macOS machine with Xcode command-line tools` |
+| `npm:esbuild` | npm | 23 | `npm i esbuild vite` |
+| `blender` | apt | 23 | `apt-get install -y blender  (or the official tarball)` |
 
 <a id="think"></a>
-## 5. طريقة التفكير / how to think
+## 6. طريقة التفكير / how to think
 
 1. **العمق / depth:** `think.py ladder "<task>"` يختار مستوى التفكير L0–L6 وإجراءه.
 2. **العقد / contract:** `think.py frame "<task>"` — الهدف، القارئ، معايير الإنجاز، القيود، المجهولات، أول فحص.
-3. **القوى / powers:** `powers.py suggest "<task>"` ثم `requirements.py plan "<task>"` (▶ = يبدأ الآن).
+3. **القوى / powers:** `hub.py find "<task>"` (أدوات + قدرات + أدلة) ثم `requirements.py plan "<task>"` (▶ = يبدأ الآن).
 4. **النماذج الذهنية / models:** `think.py models "<problem>"` من 63 نموذجًا.
 5. **الأفكار / ideas:** `think.py ideas "<seed>" -n 12` ثم التقييم بالجدة × الجدوى.
 6. **القرار / decide:** `think.py decide decision.json` مع فحص الحساسية؛ `think.py fermi` للتقديرات.
@@ -183,7 +207,7 @@
 الدليل الكامل: [cognition.md](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/cognition.md) — سلّم التفكير، عادات العباقرة، تطوير الأفكار، التخطيط، القرار، التفكير الشبيه بالبشر، المراقبة الذاتية.
 
 <a id="rules"></a>
-## 6. قواعد الصدق / honesty rules
+## 7. قواعد الصدق / honesty rules
 
 - أدنى شارة صادقة دائمًا. ✅ يعني تشغيلًا فعليًا بدليل؛ وجود رابط أو حزمة ليس قدرة. — Always the lowest true badge.
 - `proof_scope` يقول أين الدليل: `repo` قابل للفحص هنا، `sibling` في مستودع آخر للمالك. — Know where the evidence lives.
@@ -193,14 +217,17 @@
 - صوت المستخدم لا يُمس، والفحص القانوني فقط لما يملك المستخدم حق فحصه. — User audio untouched; lawful inspection only.
 
 <a id="links"></a>
-## 7. روابط مباشرة / raw links
+## 8. روابط مباشرة / raw links
 
 - SKILL.md: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SKILL.md
+- INDEX.md (every tool, guide and family): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/INDEX.md
+- manifest.json (machine-readable): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/manifest.json
+- tools.json (tool registry): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/data/tools.json
 - cognition.md: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/cognition.md
 - requirements.md: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/requirements.md
 - capability-map.md: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/capability-map.md
 - capability-graph.html: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/capability-graph.html
-- repos.md (124 tools): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/repos.md
+- repos.md (125 tools): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/repos.md
 - mental_models.json: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/data/mental_models.json
 - requirements.json: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/data/requirements.json
 - capability_graph.json: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/data/capability_graph.json

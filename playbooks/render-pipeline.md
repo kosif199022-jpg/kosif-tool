@@ -45,7 +45,7 @@ Screen recording is never used for delivery: it drops frames and is not reproduc
 
 | step | command |
 |---|---|
-| 1 preview | `node tools/render_html.cjs --in film.html --out out/preview.png --preview` |
+| 1 preview | `node tools/render_html.cjs --in film.html --out out/film.mp4 --preview` (writes `out/film_preview.png`) |
 | 2 motion check | `node tools/render_html.cjs --in film.html --out out/check.mp4 --start 4 --duration 3 --width 540 --height 960` |
 | 3 approval | show both to the user |
 | 4 final | `node tools/render_html.cjs --in film.html --out out/film.mp4 --fps 30 --audio voice.mp3` |

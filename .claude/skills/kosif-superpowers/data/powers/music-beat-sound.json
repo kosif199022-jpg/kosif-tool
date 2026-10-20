@@ -20,8 +20,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-01"
+  "tags": [
+   "تسوية الصوت",
+   "ظبط مستوى الصوت",
+   "يوتيوب",
+   "lufs",
+   "loudnorm",
+   "normalize audio"
+  ],
+  "id": "BEAT-01",
+  "when": "حين يلزم ضبط علو الصوت النهائي على هدف ثابت لليوتيوب أو البودكاست دون تذبذب / when the final mix must land on a loudness target such as -14 LUFS accurately, without pumping"
  },
  {
   "family": "music-beat-sound",
@@ -42,8 +50,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-02"
+  "tags": [
+   "مؤثرات صوتية",
+   "ووش",
+   "صوت نقرة",
+   "sfx",
+   "whoosh",
+   "sound cues"
+  ],
+  "id": "BEAT-02",
+  "when": "حين تحتاج مؤثرات قصيرة مركبة (نقرة، فرقعة، ووش) توضع على لحظات التلامس والظهور في الصورة / when synthesized sound effects must land on contact frames, pops and settles in the animation"
  },
  {
   "family": "music-beat-sound",
@@ -64,8 +80,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-03"
+  "tags": [
+   "توقف الموسيقى",
+   "إبطاء الصوت",
+   "بريك",
+   "tape stop",
+   "slowdown effect",
+   "music break"
+  ],
+  "id": "BEAT-03",
+  "when": "عند الرغبة في توقف الموسيقى كأن الشريط يبطئ حتى يصمت ثم يعود للدوران في القسم التالي / when the music should dive to a halt like a stopping tape, then spin back up into the next section"
  },
  {
   "family": "music-beat-sound",
@@ -84,8 +108,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-04"
+  "tags": [
+   "رسوم عصوية",
+   "مؤثرات لكل لقطة",
+   "سرعة الحوار",
+   "stickman",
+   "foley",
+   "cartoon sfx"
+  ],
+  "id": "BEAT-04",
+  "when": "حين تصنع مقاطع رجل عصوي وتحتاج مؤثرات حرفية لكل لقطة وجملة حوار قصيرة بسرعة كلام محدودة / for stickman clips needing 2-4 literal sound effects per clip and one short, slow-paced dialogue line"
  },
  {
   "family": "music-beat-sound",
@@ -103,8 +135,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-05"
+  "tags": [
+   "صوت محرك",
+   "صوت سيارة",
+   "تفحيط",
+   "car sfx",
+   "engine sound",
+   "mechanical foley"
+  ],
+  "id": "BEAT-05",
+  "when": "عند تصميم صوت لفيديو سيارة تنجرف أو تتفكك: هدير محرك وصرير إطارات ونقرات معدنية بلا موسيقى / when a car drift or transformation video needs engine, tyre-squeal and metallic servo sounds with no music"
  },
  {
   "family": "music-beat-sound",
@@ -122,8 +162,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-06"
+  "tags": [
+   "أصوات الطعام",
+   "قرمشة",
+   "أزيز القلي",
+   "food sounds",
+   "crunch",
+   "sizzle"
+  ],
+  "id": "BEAT-06",
+  "when": "حين يحتاج فيديو طعام أصوات تحضير محسوسة مثل الأزيز والقرمشة وأصوات تذوق للقضمة الأخيرة / when a food video needs action sounds like sizzle and crunch plus tasting sounds for the final bite"
  },
  {
   "family": "music-beat-sound",
@@ -143,8 +191,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-07"
+  "tags": [
+   "بدون موسيقى",
+   "فيديو صامت",
+   "قواعد الصوت",
+   "no music",
+   "silent video",
+   "audio rules"
+  ],
+  "id": "BEAT-07",
+  "when": "عند تحديد قواعد الصوت لكل نوع فيديو: بلا موسيقى أو مؤثرات فقط أو راوٍ ثابت أو صوت مدرب / when deciding per-mode audio rules such as no music, foley only, a locked narrator or a coach voice"
  },
  {
   "family": "music-beat-sound",
@@ -162,8 +218,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-08"
+  "tags": [
+   "ريلز أغنية",
+   "مقطع من الأغنية",
+   "تقطيع على الأغنية",
+   "song reel",
+   "song excerpt",
+   "stock footage"
+  ],
+  "id": "BEAT-08",
+  "when": "حين يريد المستخدم ريلز على أغنية: اختيار مقطع 30 ثانية حول الكورس وتقطيع أسرع في الأجزاء العالية / when making a song reel: pick a ~30 s excerpt around the loud refrain and plan shots that cut faster where loud"
  },
  {
   "family": "music-beat-sound",
@@ -185,8 +249,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-09"
+  "tags": [
+   "قياس علو الصوت",
+   "تسوية الصوت",
+   "ظبط الصوت",
+   "loudness meter",
+   "normalize audio",
+   "browser export"
+  ],
+  "id": "BEAT-09",
+  "when": "عند التصدير من المتصفح وتحتاج قياس علو الصوت وتسويته على -14 LUFS مع سقف للقمم / when exporting from the browser and the mix must be metered and normalised to -14 LUFS with a peak ceiling"
  },
  {
   "family": "music-beat-sound",
@@ -207,8 +279,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-10"
+  "tags": [
+   "خفض الموسيقى",
+   "موسيقى خلفية",
+   "وطي المزيكا",
+   "ducking",
+   "background music",
+   "speech over music"
+  ],
+  "id": "BEAT-10",
+  "when": "حين يتكلم شخص في المقطع وتريد خفض الموسيقى تحت كلامه تلقائيا داخل التايملاين / when clip speech should stay clear by automatically ducking the music in the JSON timeline"
  },
  {
   "family": "music-beat-sound",
@@ -226,8 +306,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-11"
+  "tags": [
+   "إزالة الصوت البشري",
+   "شيل صوت المغني",
+   "موسيقى بدون كلام",
+   "remove vocals",
+   "instrumental"
+  ],
+  "id": "BEAT-11",
+  "when": "عند الحاجة لإزالة الصوت البشري في منتصف أغنية ستريو والإبقاء على الموسيقى فقط / when you need to cancel the centred voice of a stereo track and keep only the music bed"
  },
  {
   "family": "music-beat-sound",
@@ -247,8 +334,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-12"
+  "tags": [
+   "مؤثرات جاهزة",
+   "صوت جرس",
+   "صوت ظهور",
+   "sound effects",
+   "free sfx",
+   "royalty free"
+  ],
+  "id": "BEAT-12",
+  "when": "حين تريد إسقاط مؤثرات جاهزة مثل جرس أو نقرة أو ظهور في توقيتات محددة داخل التايملاين / when dropping named ready-made sounds (reveal, bell, click, glitch) at set times in a timeline spec"
  },
  {
   "family": "music-beat-sound",
@@ -268,8 +363,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-13"
+  "tags": [
+   "موسيقى خلفية",
+   "إضافة أغنية",
+   "مسار صوتي",
+   "soundtrack",
+   "add music",
+   "background track"
+  ],
+  "id": "BEAT-13",
+  "when": "عند إضافة ملف موسيقى واحد يبدأ مع المشروع بقص ومستوى صوت خاص تحت صوت اللقطات / when adding one music file to the project with its own trim and volume, mixed under clip sound"
  },
  {
   "family": "music-beat-sound",
@@ -289,8 +392,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-14"
+  "tags": [
+   "سرعة الإيقاع",
+   "كشف البيت",
+   "نبضات الأغنية",
+   "bpm",
+   "beat detection",
+   "tempo"
+  ],
+  "id": "BEAT-14",
+  "when": "حين تحتاج استخراج سرعة الأغنية ونبضاتها وضرباتها القوية من ملف صوتي لمزامنة الصورة / when you need bpm, beats, downbeats and hits from a track to sync the picture to the music"
  },
  {
   "family": "music-beat-sound",
@@ -308,8 +419,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-15"
+  "tags": [
+   "نبضة على الإيقاع",
+   "تكبير مع الضربة",
+   "بانش",
+   "punch",
+   "beat pulse",
+   "kick sync"
+  ],
+  "id": "BEAT-15",
+  "when": "حين تريد أن تنبض الأشكال تكبيرا أو لمعانا مع كل ضربة أو طرقة في الصوت في نفس اللحظة / when picture hits (scale or brightness punches) must peak together with each kick, tick or punch sound"
  },
  {
   "family": "music-beat-sound",
@@ -329,8 +448,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-16"
+  "tags": [
+   "توقيت على الإيقاع",
+   "شبكة البيت",
+   "مزامنة الحركة",
+   "beat sync",
+   "bpm grid",
+   "timing"
+  ],
+  "id": "BEAT-16",
+  "when": "عند توقيت الحركات على الإيقاع بساعة واحدة للصورة والصوت من BPM أو ملف نبضات مقاس / when timing animation on the beat with one clock shared by picture and sound, from a BPM or a beats JSON"
  },
  {
   "family": "music-beat-sound",
@@ -349,8 +476,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-17"
+  "tags": [
+   "كشف الموسيقى",
+   "موسيقى خلفية",
+   "هل فيه موسيقى",
+   "music detection",
+   "background music",
+   "bed check"
+  ],
+  "id": "BEAT-17",
+  "when": "حين تريد معرفة هل يحمل المقطع موسيقى خلفية بالفعل قبل إضافة موسيقى أخرى تتعارض معها / when checking whether a clip already carries music so that no competing track gets added"
  },
  {
   "family": "music-beat-sound",
@@ -372,8 +507,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-18"
+  "tags": [
+   "ماستر الصوت",
+   "تسوية الصوت",
+   "محدد القمم",
+   "limiter",
+   "streaming loudness",
+   "mastering"
+  ],
+  "id": "BEAT-18",
+  "when": "عند تجهيز صوت المونتاج أو الريل للنشر بعلو -14 LUFS مع محدد يمنع تجاوز القمم بعد ترميز AAC / when mastering a montage or reel mix to streaming loudness while a limiter catches AAC overshoot"
  },
  {
   "family": "music-beat-sound",
@@ -394,8 +537,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-19"
+  "tags": [
+   "تحليل الصوت",
+   "حركة مع الصوت",
+   "طيف الصوت",
+   "audio reactive",
+   "spectrogram",
+   "animation curves"
+  ],
+  "id": "BEAT-19",
+  "when": "حين تريد تحويل الصوت إلى منحنيات حركة لكل إطار مثل العلو والباص والضربات والصمت / when turning a track into per-frame animation curves (loudness, bass, kicks, onsets, silence) plus a spectrogram"
  },
  {
   "family": "music-beat-sound",
@@ -416,8 +567,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-20"
+  "tags": [
+   "سرعة الأغنية",
+   "تحديد البيت",
+   "ضربات قوية",
+   "bpm detection",
+   "beat tracking",
+   "downbeats"
+  ],
+  "id": "BEAT-20",
+  "when": "عند الحاجة لمعرفة سرعة أغنية وتحديد نبضاتها وضرباتها القوية باستخدام numpy وحدها / when you need tempo, beats, downbeats and strong hits from a track using numpy only"
  },
  {
   "family": "music-beat-sound",
@@ -439,8 +598,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-21"
+  "tags": [
+   "تأليف موسيقى",
+   "موسيقى أصلية",
+   "توليد موسيقى",
+   "music generator",
+   "original music",
+   "stems"
+  ],
+  "id": "BEAT-21",
+  "when": "حين تحتاج موسيقى أصلية تكتب من مواصفة JSON على شبكة الإيقاع دون عينات أو تنزيلات / when you need an original track written on the beat grid from a JSON spec, with no samples or downloads"
  },
  {
   "family": "music-beat-sound",
@@ -458,8 +625,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-22"
+  "tags": [
+   "أصوات طبول",
+   "آلات مركبة",
+   "كيك",
+   "drum synth",
+   "synth sounds",
+   "kick drum"
+  ],
+  "id": "BEAT-22",
+  "when": "عند الحاجة لأصوات طبول ونغمات مركبة مثل الكيك والتصفيق والهاي هات والجرس والرايزر / for closed-form drum and tone voices such as kick, clap, hi-hat, sub, pluck, bell, pad, riser and boom"
  },
  {
   "family": "music-beat-sound",
@@ -477,8 +652,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-23"
+  "tags": [
+   "مزج الصوت",
+   "ميكس",
+   "صدى",
+   "mix bus",
+   "reverb",
+   "pumping"
+  ],
+  "id": "BEAT-23",
+  "when": "حين تمزج الموسيقى المولدة: ضخ مع الكيك وخفض تحت المؤثرات وصدى قصير وتلاشٍ في النهاية / when mixing a generated score with kick pumping, a music dip under SFX, per-bus gains, reverb and an end fade"
  },
  {
   "family": "music-beat-sound",
@@ -500,8 +683,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-24"
+  "tags": [
+   "قوالب موسيقى",
+   "أمثلة جاهزة",
+   "ورقة مؤثرات",
+   "score template",
+   "music presets",
+   "cue sheet"
+  ],
+  "id": "BEAT-24",
+  "when": "عند الرغبة في نسخ مواصفة موسيقى وورقة مؤثرات جاهزة من أفلام سابقة وتعديلها بدل البدء من الصفر / when you want ready JSON scores and cue sheets from shipped films to copy or adapt"
  },
  {
   "family": "music-beat-sound",
@@ -522,8 +713,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-25"
+  "tags": [
+   "أصوات طبيعة",
+   "صوت مطر",
+   "صوت بحر",
+   "ambience",
+   "nature sounds",
+   "rain sound"
+  ],
+  "id": "BEAT-25",
+  "when": "حين يحتاج المشهد خلفية صوتية طبيعية مثل البحر والريح والمطر والرعد والعصافير في ثوان محددة / when a scene needs a seeded ambient bed of sea, wind, rain, thunder, birdsong or a brook keyed to seconds"
  },
  {
   "family": "music-beat-sound",
@@ -544,8 +743,16 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-26"
+  "tags": [
+   "خيارات الصوت",
+   "إبقاء الصوت الأصلي",
+   "موسيقى مرخصة",
+   "audio mode",
+   "keep audio",
+   "licensed music"
+  ],
+  "id": "BEAT-26",
+  "when": "عند تحديد طريقة الصوت في الطلب: إبقاء الصوت الأصلي أو موسيقى مرخصة أو مؤثرات فقط أو صمت / when choosing a request's audio mode: keep the voice untouched, licensed ducked music, short SFX only, or silent"
  },
  {
   "family": "music-beat-sound",
@@ -566,8 +773,16 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-27"
+  "tags": [
+   "قياس الصوت",
+   "فحص الصوت",
+   "مستوى الصوت",
+   "loudness check",
+   "true peak",
+   "audio qa"
+  ],
+  "id": "BEAT-27",
+  "when": "حين تريد التحقق من علو صوت الفيديو النهائي وقمته الحقيقية ومداه قبل التسليم / when checking a delivered video's integrated LUFS, loudness range and true peak before handoff"
  },
  {
   "family": "music-beat-sound",
@@ -590,8 +805,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-28"
+  "tags": [
+   "تضاريس صوتية",
+   "مشهد ثلاثي الأبعاد",
+   "طيف الموسيقى",
+   "3d terrain",
+   "music visualizer",
+   "audio landscape"
+  ],
+  "id": "BEAT-28",
+  "when": "حين تريد أن يتحول طيف الموسيقى إلى وادٍ وتضاريس متوهجة بنهر حمم تتحرك مع الصوت / when the soundtrack's spectrogram should become a canyon terrain with a lava river and a playhead tracing the sound"
  },
  {
   "family": "music-beat-sound",
@@ -613,8 +836,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-29"
+  "tags": [
+   "ترددات الصوت",
+   "تحليل الطيف",
+   "بيانات الصوت",
+   "frequency bands",
+   "audio data",
+   "per frame"
+  ],
+  "id": "BEAT-29",
+  "when": "عند تجهيز بيانات صوتية لكل إطار فيديو لتحريك العناصر حسب طاقة الترددات من الباص إلى الحاد / when preparing per-frame, 0-1 normalised frequency-band energies from audio as animation data"
  },
  {
   "family": "music-beat-sound",
@@ -638,8 +869,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-30"
+  "tags": [
+   "شعار ينبض",
+   "تفاعل مع الموسيقى",
+   "توهج مع الصوت",
+   "audio reactive",
+   "logo pulse",
+   "music sync"
+  ],
+  "id": "BEAT-30",
+  "when": "حين تريد شعارا ينبض مع الباص وزرا يتوهج مع الحدة وخلفية تتنفس مع الصوت دون أعمدة طيف / when a logo should pulse on bass, a CTA glow on treble and the background breathe with sound, without spectrum bars"
  },
  {
   "family": "music-beat-sound",
@@ -661,8 +900,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-31"
+  "tags": [
+   "مونتاج تلقائي",
+   "تقطيع على الإيقاع",
+   "أفضل اللقطات",
+   "auto edit",
+   "edl",
+   "beat cut"
+  ],
+  "id": "BEAT-31",
+  "when": "حين تريد مونتاجا تلقائيا يضع لقطة لكل مازورة من أكثر لحظات الفيديو حركة مع فحص التزامن / when auto-building an edit with one shot per bar from the footage's busiest moments, with a sync check"
  },
  {
   "family": "music-beat-sound",
@@ -681,8 +928,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-32"
+  "tags": [
+   "تقطيع على المازورة",
+   "قص على الموسيقى",
+   "مونتاج إيقاعي",
+   "cut on bars",
+   "music edit",
+   "bar length"
+  ],
+  "id": "BEAT-32",
+  "when": "عند تقطيع اللقطات على حدود المازورة: عنوان بمازورة ولقطة لكل مازورة وخاتمة على الباقي / when cutting every shot on the music's bar lines: title card one bar, one bar per shot, end card on the rest"
  },
  {
   "family": "music-beat-sound",
@@ -701,8 +956,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-33"
+  "tags": [
+   "مستوى المؤثرات",
+   "توازن الصوت",
+   "علو المؤثرات",
+   "sfx levels",
+   "gain staging",
+   "mix balance"
+  ],
+  "id": "BEAT-33",
+  "when": "حين تضبط مستويات المؤثرات الصوتية في طبقات (كبيرة، حركات، متكررة، واجهة) لتجلس في المزج / when levelling a set of SFX into loudness tiers (big, actions, frequent, UI) so they sit in the mix"
  },
  {
   "family": "music-beat-sound",
@@ -724,8 +987,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-34"
+  "tags": [
+   "لوب صوتي",
+   "تكرار سلس",
+   "حلقة موسيقى",
+   "seamless loop",
+   "audio loop",
+   "loop seam"
+  ],
+  "id": "BEAT-34",
+  "when": "عند صنع حلقة صوتية تتكرر بلا قفزة بحيث تكون ذيول الصدى موجودة في بدايتها / when making a seamless audio loop whose reverb and echo tails are already present at its head"
  },
  {
   "family": "music-beat-sound",
@@ -744,8 +1015,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-35"
+  "tags": [
+   "ضخ الإيقاع",
+   "تنفس الموسيقى",
+   "خفض مع الكيك",
+   "sidechain pump",
+   "pumping",
+   "groove"
+  ],
+  "id": "BEAT-35",
+  "when": "حين تريد إحساس تنفس في الإيقاع بخفض الباص والباد مع كل ضربة كيك ورجوعهما خلال نصف نبضة / when pads and bass should dip on every kick and recover within half a beat for a breathing groove"
  },
  {
   "family": "music-beat-sound",
@@ -764,8 +1043,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-36"
+  "tags": [
+   "نص تفاعلي",
+   "توهج",
+   "تكبير مع الباص",
+   "audio reactive text",
+   "glow",
+   "bass pulse"
+  ],
+  "id": "BEAT-36",
+  "when": "عند جعل النصوص أو الأشكال تكبر مع الباص وتتوهج مع الترددات الحادة / when captions or shapes should scale with the bass and glow with the treble"
  },
  {
   "family": "music-beat-sound",
@@ -783,8 +1070,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-37"
+  "tags": [
+   "تريلر",
+   "برومو",
+   "قطع على الإيقاع",
+   "trailer edit",
+   "beat sheet",
+   "flash cut"
+  ],
+  "id": "BEAT-37",
+  "when": "حين تصنع تريلر يقطع على البار: من ورقة الإيقاع إلى خريطة البارات ثم قائمة القطع وتجميع اللقطات / when building a trailer cut to bars: beat sheet to bar map from BPM, then EDL, shot renders and assembly"
  },
  {
   "family": "music-beat-sound",
@@ -805,8 +1100,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-38"
+  "tags": [
+   "أعمدة الصوت",
+   "موجة صوتية",
+   "مؤثر مرئي للموسيقى",
+   "visualizer",
+   "equalizer bars",
+   "spectrum"
+  ],
+  "id": "BEAT-38",
+  "when": "حين يطلب المستخدم أعمدة طيف أو حلقات أو توهجا يتحرك مع موسيقاه أو صوته كمؤثر مرئي / when the user wants frequency bars, rings or glows animated to their music or voice as a visualizer"
  },
  {
   "family": "music-beat-sound",
@@ -826,8 +1129,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-39"
+  "tags": [
+   "ماستر",
+   "علو الأغنية",
+   "موسيقى مولدة",
+   "mastering",
+   "limiter",
+   "streaming loudness"
+  ],
+  "id": "BEAT-39",
+  "when": "عند إنهاء موسيقى مولدة وتحتاج ماستر بتسوية على مرحلتين ومحدد ثم قياس العلو / when mastering generated songs with two-pass normalisation and a limiter, e.g. -14 LUFS for web or -18 for a bed"
  },
  {
   "family": "music-beat-sound",
@@ -845,8 +1156,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-40"
+  "tags": [
+   "لوب موسيقى",
+   "تكرار بدون قطع",
+   "موسيقى متكررة",
+   "music loop",
+   "crossfade",
+   "seamless"
+  ],
+  "id": "BEAT-40",
+  "when": "حين يحتاج فيديو قصير موسيقى تتكرر بلا قطع ملحوظ مقصوصة بالضبط على حدود المازورات / when a short video needs music that loops invisibly, cut on measured bar lines with a crossfade"
  },
  {
   "family": "music-beat-sound",
@@ -865,8 +1184,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-41"
+  "tags": [
+   "موجة الميكروفون",
+   "مؤشر الصوت",
+   "مساعد صوتي",
+   "voice ui",
+   "mic visualizer",
+   "waveform"
+  ],
+  "id": "BEAT-41",
+  "when": "حين تبني واجهة مساعد صوتي تعرض موجة أعمدة تتبع الميكروفون أثناء الاستماع وتتحرك أثناء الكلام / for a voice assistant UI showing a bar waveform that follows the live mic while listening and animates while speaking"
  },
  {
   "family": "music-beat-sound",
@@ -885,8 +1212,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-42"
+  "tags": [
+   "مستوى الميكروفون",
+   "عداد الصوت",
+   "صوت المايك",
+   "vu meter",
+   "mic level",
+   "input level"
+  ],
+  "id": "BEAT-42",
+  "when": "عند الحاجة لقراءة مستوى صوت الميكروفون مباشرة لتحريك عداد أو رسوم متفاعلة / when you need a live 0-1 mic input level to drive a VU bar or a reactive animation"
  },
  {
   "family": "music-beat-sound",
@@ -904,8 +1239,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-43"
+  "tags": [
+   "صوت تنبيه",
+   "صفارة",
+   "صوت تأكيد",
+   "beep",
+   "notification sound",
+   "feedback sound"
+  ],
+  "id": "BEAT-43",
+  "when": "حين تحتاج صفارة تنبيه قصيرة عند المسح أو التأكيد في صفحة ويب دون ملفات صوت / when a web page needs a short synthesized beep for scan or confirm feedback without audio files"
  },
  {
   "family": "music-beat-sound",
@@ -924,8 +1267,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-44"
+  "tags": [
+   "إشارات المؤثرات",
+   "ستوري بورد",
+   "ملاحظات الصوت",
+   "sfx cues",
+   "storyboard",
+   "sound notes"
+  ],
+  "id": "BEAT-44",
+  "when": "عند كتابة ستوري بورد أو وصف حركة وتريد تحديد توقيت المؤثرات لكل مشهد دون توليد الصوت / when a storyboard or motion prompt should carry per-scene SFX timing cues instead of generated audio"
  },
  {
   "family": "music-beat-sound",
@@ -946,8 +1297,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-45"
+  "tags": [
+   "توليد موسيقى",
+   "أصوات أجواء",
+   "موسيقى إجرائية",
+   "procedural audio",
+   "generative music",
+   "ambience"
+  ],
+  "id": "BEAT-45",
+  "when": "حين تريد موسيقى وأصوات أجواء أصلية حتمية بالبذور على شبكة الإيقاع بدل الاعتماد على خدمات توليد / when you want a deterministic, seeded soundtrack and ambience synthesized with numpy instead of sourcing music"
  },
  {
   "family": "music-beat-sound",
@@ -968,8 +1327,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-46"
+  "tags": [
+   "مونتاج على الأغنية",
+   "ريلز",
+   "تقطيع سريع",
+   "beat montage",
+   "reels edit",
+   "photo montage"
+  ],
+  "id": "BEAT-46",
+  "when": "حين يعطي المستخدم مقاطع أو صورا وأغنية ويريد مونتاجا مقطوعا على الإيقاع مع زووم وتلوين وكابشن / when the user gives clips or photos plus a track and wants a beat-cut montage with zoom punches, grade and captions"
  },
  {
   "family": "music-beat-sound",
@@ -991,8 +1358,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-47"
+  "tags": [
+   "موسيقى أصلية",
+   "تأليف مزيكا",
+   "موسيقى للفيديو",
+   "music generation",
+   "original score",
+   "risers"
+  ],
+  "id": "BEAT-47",
+  "when": "عند الحاجة لموسيقى أصلية بطبول ورايزر وتوقفات شريط ومؤثرات مأخوذة من ورقة الإشارات / when you need an original score with drums, risers, booms, tape stops and cue-based designed SFX"
  },
  {
   "family": "music-beat-sound",
@@ -1014,8 +1389,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-48"
+  "tags": [
+   "أصوات أجواء",
+   "صوت مطر",
+   "صوت عصافير",
+   "ambient sounds",
+   "nature ambience",
+   "background ambience"
+  ],
+  "id": "BEAT-48",
+  "when": "حين تحتاج خلفية أجواء مولدة مثل المطر والبحر والعصافير والجدول والقطرات / when a scene needs a generated ambient bed of rain, sea, birds, brook, chords, whooshes or drops"
  },
  {
   "family": "music-beat-sound",
@@ -1037,8 +1420,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-49"
+  "tags": [
+   "تحليل الأغنية",
+   "بيانات الإيقاع",
+   "كشف الضربات",
+   "audio analysis",
+   "beat grid",
+   "onsets"
+  ],
+  "id": "BEAT-49",
+  "when": "عند تحليل أغنية لاستخراج شبكة الإيقاع أو بيانات لكل إطار مثل الضربات والباص والصمت مع طيف / when analysing a track into a beat grid or per-frame data (kicks, onsets, bass/mid/high, silence) plus a spectrogram"
  },
  {
   "family": "music-beat-sound",
@@ -1060,8 +1451,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-50"
+  "tags": [
+   "مؤثرات واجهة",
+   "صوت كليك",
+   "مؤثرات مجانية",
+   "ui sounds",
+   "click sound",
+   "sfx library"
+  ],
+  "id": "BEAT-50",
+  "when": "حين تحتاج مؤثرات واجهة قصيرة جاهزة مثل جرس ونقرة وكروت وغليتش تبدأ مع بداية الحركة / when you need short ready UI sounds (bell, click, card, glitch, keys) cued at the start of a motion"
  },
  {
   "family": "music-beat-sound",
@@ -1083,8 +1482,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-51"
+  "tags": [
+   "فحص الصوت",
+   "سرعة الإيقاع",
+   "علو الصوت",
+   "audio analysis",
+   "bpm",
+   "peak level"
+  ],
+  "id": "BEAT-51",
+  "when": "عند الحاجة لمعرفة علو ملف صوتي وقممه وسرعة إيقاعه بسرعة / when you need a quick read of an audio file's LUFS, peaks and BPM"
  },
  {
   "family": "music-beat-sound",
@@ -1105,8 +1512,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-52"
+  "tags": [
+   "حركة على الإيقاع",
+   "توقيت النبضات",
+   "مزامنة",
+   "beat timing",
+   "tween on beat",
+   "downbeats"
+  ],
+  "id": "BEAT-52",
+  "when": "حين تضع الحركات والانتقالات على نبضات الموسيقى بساعة واحدة من BPM أو ملف الإيقاع / when placing tweens on music beats with one clock from a BPM or the beats JSON"
  },
  {
   "family": "music-beat-sound",
@@ -1127,8 +1542,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-53"
+  "tags": [
+   "حركة مع الصوت",
+   "تفاعل مع الموسيقى",
+   "ربط الصوت بالحركة",
+   "audio driven",
+   "reactive animation",
+   "sound features"
+  ],
+  "id": "BEAT-53",
+  "when": "عند ربط أي قيمة مرئية بالصوت مثل الباص والضربات والصمت في أي لحظة من الفيديو / when driving visuals from per-frame sound features (bass, kicks, onsets, silence, tape clock) at any time t"
  },
  {
   "family": "music-beat-sound",
@@ -1150,8 +1573,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-54"
+  "tags": [
+   "أصوات واجهة",
+   "صوت كيبورد",
+   "مؤثرات قصيرة",
+   "ui sfx",
+   "keyboard sound",
+   "reveal sound"
+  ],
+  "id": "BEAT-54",
+  "when": "حين تحتاج أصواتا قصيرة للواجهة أو الحركة مثل الظهور والجرس والنقر والكيبورد مع ملاحظات استخدامها / when you need short reveal, bell, click, glitch, card or keyboard sounds with usage notes"
  },
  {
   "family": "music-beat-sound",
@@ -1171,8 +1602,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-55"
+  "tags": [
+   "كتابة موسيقى",
+   "كوردات",
+   "تأليف بالكود",
+   "music spec",
+   "chord progression",
+   "composition"
+  ],
+  "id": "BEAT-55",
+  "when": "عند كتابة موسيقى أصلية كمواصفة JSON صغيرة: سرعة ومقام وأقسام وتتابع كوردات ورايزر وتوقفات / when writing original music as a small JSON spec: tempo, key, scale, sections, chord progression, risers and tape stops"
  },
  {
   "family": "music-beat-sound",
@@ -1192,8 +1631,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-56"
+  "tags": [
+   "مؤثرات متزامنة",
+   "مزامنة الصوت بالصورة",
+   "ووش",
+   "cue sheet",
+   "sfx timing",
+   "sound sync"
+  ],
+  "id": "BEAT-56",
+  "when": "حين تريد أن يقابل كل حدث مرئي مؤثرا صوتيا بتوقيت ومستوى واتجاه ستريو محدد داخل الموسيقى / when each visual event needs one SFX hit with time, type, gain and stereo pan mixed into the score"
  },
  {
   "family": "music-beat-sound",
@@ -1213,8 +1660,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-57"
+  "tags": [
+   "تحليل صوتي",
+   "بيانات لكل فريم",
+   "ضربات الموسيقى",
+   "audio features",
+   "per frame",
+   "beat data"
+  ],
+  "id": "BEAT-57",
+  "when": "عند تحليل مسار صوتي إلى قنوات لكل إطار وقوائم أحداث يقرؤها أي عنصر مرئي / when a track must be analysed into per-frame channels and event lists (beats, kicks, bands, silence) for visuals"
  },
  {
   "family": "music-beat-sound",
@@ -1234,8 +1689,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-58"
+  "tags": [
+   "ملفات صوت",
+   "صوت بحر",
+   "أمثلة صوتية",
+   "sample audio",
+   "ocean ambience",
+   "wav files"
+  ],
+  "id": "BEAT-58",
+  "when": "حين تبحث عن ملفات صوت قصيرة جاهزة في المشاريع مثل أجواء محيط أو موسيقى مولدة مدتها 5 ثوان / when looking for short rendered stereo files in projects: an ocean ambience bed and generated 5 s scores"
  },
  {
   "family": "music-beat-sound",
@@ -1255,8 +1718,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-59"
+  "tags": [
+   "سلم صغير",
+   "مينور",
+   "مقام موسيقي",
+   "minor key",
+   "music scale"
+  ],
+  "id": "BEAT-59",
+  "when": "حين تريد أن تكون الموسيقى المولدة على السلم الصغير (مينور) / when the numpy-generated soundtrack should use the minor scale"
  },
  {
   "family": "music-beat-sound",
@@ -1276,8 +1746,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-60"
+  "tags": [
+   "سلم كبير",
+   "ماجور",
+   "مقام موسيقي",
+   "major key",
+   "music scale"
+  ],
+  "id": "BEAT-60",
+  "when": "حين تريد أن تكون الموسيقى المولدة على السلم الكبير (ماجور) / when the numpy-generated soundtrack should use the major scale"
  },
  {
   "family": "music-beat-sound",
@@ -1297,8 +1774,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-61"
+  "tags": [
+   "سلم دوريان",
+   "مقام دوريان",
+   "مقام موسيقي",
+   "dorian mode",
+   "music scale"
+  ],
+  "id": "BEAT-61",
+  "when": "حين تريد أن تكون الموسيقى المولدة على سلم دوريان / when the numpy-generated soundtrack should use the dorian scale"
  },
  {
   "family": "music-beat-sound",
@@ -1318,8 +1802,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-62"
+  "tags": [
+   "مقام الحجاز",
+   "حجاز",
+   "مقام شرقي",
+   "hijaz maqam",
+   "music scale"
+  ],
+  "id": "BEAT-62",
+  "when": "حين تريد أن تكون الموسيقى المولدة على مقام الحجاز / when the numpy-generated soundtrack should use the hijaz scale"
  },
  {
   "family": "music-beat-sound",
@@ -1339,8 +1830,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-63"
+  "tags": [
+   "سلم خماسي",
+   "بنتاتونيك",
+   "مقام موسيقي",
+   "pentatonic scale",
+   "five note scale"
+  ],
+  "id": "BEAT-63",
+  "when": "حين تريد أن تكون الموسيقى المولدة على السلم الخماسي / when the numpy-generated soundtrack should use the pentatonic scale"
  },
  {
   "family": "music-beat-sound",
@@ -1360,8 +1858,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-64"
+  "tags": [
+   "سلم ليديان",
+   "مقام ليديان",
+   "مقام موسيقي",
+   "lydian mode",
+   "music scale"
+  ],
+  "id": "BEAT-64",
+  "when": "حين تريد أن تكون الموسيقى المولدة على سلم ليديان / when the numpy-generated soundtrack should use the lydian scale"
  },
  {
   "family": "music-beat-sound",
@@ -1381,8 +1886,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-65"
+  "tags": [
+   "كشف البيت",
+   "سرعة الأغنية",
+   "نبضات",
+   "beat detection",
+   "tempo",
+   "bpm"
+  ],
+  "id": "BEAT-65",
+  "when": "عند الحاجة لكشف سرعة أغنية ونبضاتها وضرباتها القوية آليا / when you need a track's tempo, beats, downbeats and hits detected automatically"
  },
  {
   "family": "music-beat-sound",
@@ -1403,8 +1916,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-66"
+  "tags": [
+   "مونتاج على الإيقاع",
+   "تقطيع على البيت",
+   "فيديو ريلز",
+   "beat cut",
+   "music montage",
+   "punch in"
+  ],
+  "id": "BEAT-66",
+  "when": "حين يريد المستخدم تقطيع مقاطعه على إيقاع أغنية مع زووم وتلوين وكابشن بمقاس 9:16 أو 16:9 / when cutting clips to detected beats with punch-ins, grade, captions and voice at 9:16, 16:9, 1:1 or 4:5"
  },
  {
   "family": "music-beat-sound",
@@ -1424,8 +1945,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-67"
+  "tags": [
+   "صوت رعد",
+   "صوت ريح",
+   "أجواء طبيعية",
+   "nature sounds",
+   "rain thunder",
+   "ambient bed"
+  ],
+  "id": "BEAT-67",
+  "when": "حين تحتاج أصوات طبيعة مولدة مثل البحر والريح والمطر والرعد والعصافير في ثوان محددة / when you need generated sea, wind, rain, thunder, birds or brook sounds placed at given seconds"
  },
  {
   "family": "music-beat-sound",
@@ -1445,8 +1974,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-68"
+  "tags": [
+   "موسيقى خلفية",
+   "توليد مزيكا",
+   "مسارات منفصلة",
+   "background music",
+   "music generator",
+   "stems"
+  ],
+  "id": "BEAT-68",
+  "when": "عند الحاجة لموسيقى خلفية أصلية على الإيقاع بطبول وباد ونغمات مع إخراج المسارات منفصلة / when you need an original beat-grid soundtrack with kick, hats, pad and pluck on cues, plus separate stems"
  },
  {
   "family": "music-beat-sound",
@@ -1467,8 +2004,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-69"
+  "tags": [
+   "فيديو أغنية",
+   "كلمات الأغنية",
+   "ريلز أغنية",
+   "lyric video",
+   "song montage",
+   "lyrics on video"
+  ],
+  "id": "BEAT-69",
+  "when": "حين يريد المستخدم فيديو لأغنية تتحول أقسامها إلى لقطات مقطوعة على الإيقاع مع كلماتها على الشاشة / when making a song video where sections become footage searches, beat cuts and verse text overlays"
  },
  {
   "family": "music-beat-sound",
@@ -1486,8 +2031,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-70"
+  "tags": [
+   "مراجعة المونتاج",
+   "علامة الدروب",
+   "تايم لاين",
+   "beat markers",
+   "drop",
+   "timeline review"
+  ],
+  "id": "BEAT-70",
+  "when": "عند مراجعة الريل وتريد رؤية النبضات والضربات القوية والدروب معلمة على التايملاين / when reviewing a reel and you want beat ticks, emphasised downbeats and the drop marked on the timeline"
  },
  {
   "family": "music-beat-sound",
@@ -1506,8 +2059,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-71"
+  "tags": [
+   "تغيير الموسيقى",
+   "تبديل الأغنية",
+   "مستوى الصوت",
+   "change music",
+   "replace song",
+   "volume"
+  ],
+  "id": "BEAT-71",
+  "when": "حين يريد المستخدم تغيير موسيقى الريل ورؤية موضع الدروب وضبط صوت الموسيقى والمؤثرات / when swapping a reel's music, checking where the drop lands and setting music and effects volume"
  },
  {
   "family": "music-beat-sound",
@@ -1525,8 +2086,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-72"
+  "tags": [
+   "سرعة الأغنية",
+   "نبضة في الدقيقة",
+   "تقدير الإيقاع",
+   "bpm",
+   "tempo detection",
+   "confidence"
+  ],
+  "id": "BEAT-72",
+  "when": "عند الحاجة لتقدير سرعة أغنية بالـ BPM مع درجة ثقة دون نتيجة خاطئة للصمت أو النغمات الثابتة / when you need a track's BPM estimated with a confidence, returning nothing for drones, tones or silence"
  },
  {
   "family": "music-beat-sound",
@@ -1548,8 +2117,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-73"
+  "tags": [
+   "صوت السوشيال",
+   "تسوية الصوت",
+   "ظبط الصوت",
+   "social audio",
+   "normalize audio",
+   "aac"
+  ],
+  "id": "BEAT-73",
+  "when": "حين يجهز الفيديو للنشر على السوشيال وتحتاج توحيد علو الصوت النهائي مع سقف للقمة / when the final mix needs normalising for social or streaming delivery with a true-peak ceiling"
  },
  {
   "family": "music-beat-sound",
@@ -1569,8 +2146,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-74"
+  "tags": [
+   "ساعة الإيقاع",
+   "توقيت الحركة",
+   "مزامنة البيت",
+   "beat sync",
+   "music timing",
+   "motion timing"
+  ],
+  "id": "BEAT-74",
+  "when": "حين يجب أن تتشارك الصورة والصوت شبكة إيقاع واحدة لتوقيت الحركات بدقة / when picture and sound must share one beat grid, from a BPM or the beats JSON, to time motion"
  },
  {
   "family": "music-beat-sound",
@@ -1591,8 +2176,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-75"
+  "tags": [
+   "موسيقى تصويرية",
+   "دروب",
+   "تأليف موسيقى",
+   "soundtrack",
+   "original music",
+   "drop"
+  ],
+  "id": "BEAT-75",
+  "when": "عند الحاجة لموسيقى تصويرية أصلية بلا عينات فيها تتابع كوردات ورايزر ودروب / when you need an original numpy soundtrack without samples, with a chord progression, risers, booms and drops"
  },
  {
   "family": "music-beat-sound",
@@ -1613,8 +2206,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-76"
+  "tags": [
+   "خلفية صوتية",
+   "أمواج",
+   "تغريد العصافير",
+   "ambience",
+   "birdsong",
+   "soundscape"
+  ],
+  "id": "BEAT-76",
+  "when": "حين يحتاج المشهد أجواء صوتية حتمية مثل أمواج البحر والمطر والرعد وتغريد الفجر / when a scene needs deterministic ambience: sea swell, wind, rain with thunder, dawn birdsong, drops or a brook"
  },
  {
   "family": "music-beat-sound",
@@ -1636,8 +2237,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-77"
+  "tags": [
+   "تسليم الصوت",
+   "ماستر نهائي",
+   "تسوية العلو",
+   "final mix",
+   "delivery",
+   "limiter"
+  ],
+  "id": "BEAT-77",
+  "when": "حين يجب تسليم كل مزج بعلو -14 LUFS وسقف تحت -1 dBTP بصيغة AAC / when every mix must be delivered at -14 LUFS with a ceiling under -1 dBTP as AAC 256k 48 kHz"
  },
  {
   "family": "music-beat-sound",
@@ -1659,8 +2268,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-78"
+  "tags": [
+   "تعليق صوتي",
+   "خفض الموسيقى",
+   "فويس اوفر",
+   "voice over",
+   "ducking",
+   "music under voice"
+  ],
+  "id": "BEAT-78",
+  "when": "حين يوجد تعليق صوتي أو كلام وتريد أن تنخفض الموسيقى تحته بضغط جانبي حقيقي / when a music bed must duck under voice-over or speech with real sidechain compression"
  },
  {
   "family": "music-beat-sound",
@@ -1679,8 +2296,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-79"
+  "tags": [
+   "موسيقى تحت الكلام",
+   "تخفيض الموسيقى",
+   "تلاشي",
+   "background music",
+   "amix",
+   "fade out"
+  ],
+  "id": "BEAT-79",
+  "when": "عند الحاجة لخفض بسيط وثابت للموسيقى إلى -18 ديسيبل تحت الكلام مع تلاشٍ في النهاية / for a simple static duck: music at -18 dB mixed under the voice with a fade-out"
  },
  {
   "family": "music-beat-sound",
@@ -1701,8 +2326,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-80"
+  "tags": [
+   "استخراج بيانات الصوت",
+   "تحليل الترددات",
+   "ملف بيانات",
+   "audio data",
+   "audio json",
+   "frequency bands"
+  ],
+  "id": "BEAT-80",
+  "when": "حين تحتاج ملف بيانات صوتية لكل إطار فيه العلو والنطاقات الترددية والنبضات وسرعة الإيقاع / when you need a per-frame audio-data JSON (RMS, log-spaced bands, beats, BPM) extracted from a track"
  },
  {
   "family": "music-beat-sound",
@@ -1722,8 +2355,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-81"
+  "tags": [
+   "قالب صوتي",
+   "فيديو تفاعلي صوتي",
+   "مؤثر موسيقي",
+   "visualizer template",
+   "audio reactive",
+   "html template"
+  ],
+  "id": "BEAT-81",
+  "when": "عند البدء من قالب جاهز لمرئي يتفاعل مع الصوت: خلفية تتحرك مع الباص وعناصر أمامية مع الترددات / when starting an audio visualizer from a template: background driven by bass/RMS, foreground by bands"
  },
  {
   "family": "music-beat-sound",
@@ -1743,8 +2384,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-82"
+  "tags": [
+   "حركة مع الموسيقى",
+   "ضربات الكيك",
+   "ربط الصوت",
+   "audio driven",
+   "kick sync",
+   "reactive visuals"
+  ],
+  "id": "BEAT-82",
+  "when": "حين تريد أن تأتي كل قيمة مرئية من الموسيقى التصويرية مثل الكيك والباص والصمت / when every visual value should come from the soundtrack's per-frame analysis: kick, onset, bands, rms, silence"
  },
  {
   "family": "music-beat-sound",
@@ -1765,8 +2414,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-83"
+  "tags": [
+   "دمج الصوت",
+   "مكساج",
+   "خفض تحت الصوت",
+   "audio mux",
+   "mixdown",
+   "final mix"
+  ],
+  "id": "BEAT-83",
+  "when": "عند تجميع كل ملفات الصوت بعد رندر التركيب وخفض الباقي تحت صوت المتكلم ثم توحيد العلو / when mixing every audio tag after a studio render, ducking the rest under voice clips, then two-pass loudnorm"
  },
  {
   "family": "music-beat-sound",
@@ -1789,8 +2446,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-84"
+  "tags": [
+   "إعدادات الخفض",
+   "موسيقى تحت الكلام",
+   "وطي المزيكا",
+   "ducking presets",
+   "sidechaincompress",
+   "speech"
+  ],
+  "id": "BEAT-84",
+  "when": "حين تحتاج إعدادات جاهزة لخفض الموسيقى تحت الكلام في المونتاج أو الريل أو التركيب / when you need per-tool sidechain settings that sit music under speech in montage, reel or composition mux"
  },
  {
   "family": "music-beat-sound",
@@ -1810,8 +2475,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-85"
+  "tags": [
+   "ترتيب موسيقي",
+   "موسيقى هادئة",
+   "دروب",
+   "arrangement",
+   "calm music",
+   "launch music"
+  ],
+  "id": "BEAT-85",
+  "when": "عند اختيار ترتيب موسيقي جاهز: إطلاق ببناء وتوقف ورايزر ودروب، أو هادئ بباد ونغمات متفرقة / when picking a ready arrangement: launch with build, stop, riser, boom and drop, or calm with pad and sparse pluck"
  },
  {
   "family": "music-beat-sound",
@@ -1831,8 +2504,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-86"
+  "tags": [
+   "موسيقى تلقائية",
+   "إضافة موسيقى خلفية",
+   "خلفية موسيقية",
+   "auto music",
+   "underscore",
+   "no music bed"
+  ],
+  "id": "BEAT-86",
+  "when": "حين يخلو المقطع من موسيقى وتريد إضافة موسيقى أصلية منخفضة تلقائيا فقط عند غيابها / when a reel or verse clip has no music bed and should get a low original underscore automatically"
  },
  {
   "family": "music-beat-sound",
@@ -1852,8 +2533,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-87"
+  "tags": [
+   "موجة صوتية",
+   "أعمدة الصوت",
+   "ريموشن",
+   "waveform",
+   "audio visualizer",
+   "media-utils"
+  ],
+  "id": "BEAT-87",
+  "when": "حين تعمل في Remotion وتحتاج أعمدة طيف أو خط موجة صوتية محسوبة من الصوت لكل إطار / when working in Remotion and you need real spectrum bars or a waveform line computed from the audio per frame"
  },
  {
   "family": "music-beat-sound",
@@ -1875,8 +2564,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-88"
+  "tags": [
+   "ثيم موسيقي",
+   "موسيقى مجانية",
+   "تأليف بالكود",
+   "procedural music",
+   "game audio",
+   "loops"
+  ],
+  "id": "BEAT-88",
+  "when": "عند الحاجة لثيمات موسيقية مجانية حتمية تكتب بملف JSON فيه آلات وأقسام وكوردات وحلقات / when you need free deterministic synthesized themes from JSON: instruments, sections in bars, chords, arrangement and loops"
  },
  {
   "family": "music-beat-sound",
@@ -1898,8 +2595,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-89"
+  "tags": [
+   "توليف الصوت",
+   "سينث",
+   "صوت ببايثون",
+   "sound synthesis",
+   "scipy",
+   "oscillator"
+  ],
+  "id": "BEAT-89",
+  "when": "حين تبني أصواتا وآلات مركبة ببايثون مثل المذبذبات وFM والفلاتر والصدى مع قياس العلو والمحدد / when building synthesized sounds in Python: oscillators, FM, supersaw, filters, reverb, Karplus-Strong, limiter and meter"
  },
  {
   "family": "music-beat-sound",
@@ -1917,8 +2622,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-90"
+  "tags": [
+   "كتابة لحن",
+   "نوتة",
+   "إيقاع طبول",
+   "step sequencer",
+   "melody",
+   "drum pattern"
+  ],
+  "id": "BEAT-90",
+  "when": "عند كتابة لحن أو إيقاع طبول خطوة بخطوة بنوتة نصية لكل سدس عشر مع سكتات ونبر / when writing melodies or drum patterns as one text token per 16th step with rests, ties, accents and glides"
  },
  {
   "family": "music-beat-sound",
@@ -1936,8 +2649,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-91"
+  "tags": [
+   "توافق النغمة",
+   "تغيير طبقة الصوت",
+   "نشاز",
+   "pitch shift",
+   "key matching"
+  ],
+  "id": "BEAT-91",
+  "when": "حين تضيف مؤثرات أو نغمات لها طبقة وتريدها متوافقة مع الكورد الحالي لا مقام الأغنية فقط / when pitched hits or pads must fit the actual chord at that moment, not just the song key"
  },
  {
   "family": "music-beat-sound",
@@ -1956,8 +2676,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-92"
+  "tags": [
+   "كشف الإيقاع",
+   "سرعة الأغنية",
+   "تحليل في المتصفح",
+   "bpm detector",
+   "beat tracking",
+   "onsets"
+  ],
+  "id": "BEAT-92",
+  "when": "حين تريد معرفة سرعة وإيقاع أي ملف صوتي ونبضاته داخل المتصفح محليا / when finding the tempo, beat grid, downbeats and onsets of any audio file locally in the browser"
  },
  {
   "family": "music-beat-sound",
@@ -1975,8 +2703,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-93"
+  "tags": [
+   "إيقاع المونتاج",
+   "قطعات سريعة",
+   "تقطيع",
+   "cut pattern",
+   "editing rhythm",
+   "pacing"
+  ],
+  "id": "BEAT-93",
+  "when": "حين تريد إيقاع مونتير في القطع: افتتاحية ثم قطعات سريعة ثم لقطة تنفس على الضربة القوية / when planning cut points in an editor's rhythm: a hook, quick cuts and breathing shots snapped to downbeats"
  },
  {
   "family": "music-beat-sound",
@@ -1998,8 +2734,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-94"
+  "tags": [
+   "توطية الموسيقى",
+   "خفض المزيكا",
+   "موسيقى تحت الكلام",
+   "ducking",
+   "auto duck",
+   "fade"
+  ],
+  "id": "BEAT-94",
+  "when": "حين تريد أن تنخفض الموسيقى أثناء الكلام وتتلاشى عند الأطراف في المعاينة الحية والرندر / when background music should drop while someone speaks and fade at the edges, both live and in renders"
  },
  {
   "family": "music-beat-sound",
@@ -2017,8 +2761,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-95"
+  "tags": [
+   "مؤثرات مولدة",
+   "صوت كتابة",
+   "صوت ارتطام",
+   "browser sfx",
+   "impact sound",
+   "typing sound"
+  ],
+  "id": "BEAT-95",
+  "when": "حين تحتاج مؤثرات مولدة في المتصفح بلا تحميل مثل النقرة والكتابة والفرقعة والارتطام / when you need deterministic sound effects synthesized in the browser with no downloads: tick, click, type, pop, hit, impact"
  },
  {
   "family": "music-beat-sound",
@@ -2037,8 +2789,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-96"
+  "tags": [
+   "مسار المؤثرات",
+   "تركيب الأصوات",
+   "مزامنة المؤثرات",
+   "sfx track",
+   "stem",
+   "wav export"
+  ],
+  "id": "BEAT-96",
+  "when": "عند وضع مؤثرات على أوقات الأحداث بحيث تقع ذروتها على الحدث وتصديرها كمسار WAV ستريو / when placing named effects at event times so their peak lands on the event, with pan, as a stereo WAV stem"
  },
  {
   "family": "music-beat-sound",
@@ -2056,8 +2816,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-97"
+  "tags": [
+   "موسيقى بدون حقوق",
+   "موسيقى خلفية",
+   "مزيكا هادية",
+   "royalty free",
+   "background music",
+   "mood music"
+  ],
+  "id": "BEAT-97",
+  "when": "حين تحتاج موسيقى خلفية بلا حقوق بمدة ومزاج محددين (هادئ، تقني، مشرق، ملحمي) مع أوقات النبضات / when you need a royalty-free background bed for a given duration and mood (calm, tech, bright, epic), with beat times"
  },
  {
   "family": "music-beat-sound",
@@ -2075,8 +2843,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-98"
+  "tags": [
+   "مؤثرات على الكلمات",
+   "موشن جرافيك",
+   "صوت كتابة",
+   "kinetic text sfx",
+   "auto sfx",
+   "word sync"
+  ],
+  "id": "BEAT-98",
+  "when": "حين تريد توزيع المؤثرات تلقائيا على بدايات الجمل والكلمات المميزة والكتابة والعد في فيلم موشن / when effects should auto-place on line starts, emphasised words, moves, writing and number counts in a motion film"
  },
  {
   "family": "music-beat-sound",
@@ -2096,8 +2872,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-99"
+  "tags": [
+   "مؤثرات الانتقال",
+   "ووش",
+   "ترانزيشن",
+   "transition sfx",
+   "whoosh",
+   "cut sounds"
+  ],
+  "id": "BEAT-99",
+  "when": "حين تريد أن تأخذ قطعات المونتاج وحركات الكاميرا مؤثرات مطابقة تلقائيا مثل الووش والارتطام / when montage cuts and camera accents (whip, flash, glitch, punch-in, crash zoom) should get matching effects automatically"
  },
  {
   "family": "music-beat-sound",
@@ -2116,8 +2900,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-100"
+  "tags": [
+   "تنظيف الصوت",
+   "رفع مستوى الصوت",
+   "ضغط الصوت",
+   "voice cleanup",
+   "compressor"
+  ],
+  "id": "BEAT-100",
+  "when": "حين يكون صوت المتحدث ضعيفا أو فيه همهمة ويحتاج تنظيفا ورفعا لمستوى إذاعي / when a voice track needs rumble removal, presence lift, leveling, compression and limiting"
  },
  {
   "family": "music-beat-sound",
@@ -2135,8 +2926,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-101"
+  "tags": [
+   "ضوضاء الخلفية",
+   "إزالة الوش",
+   "صوت الغرفة",
+   "noise gate",
+   "expander"
+  ],
+  "id": "BEAT-101",
+  "when": "حين تظهر ضوضاء الغرفة بين الكلمات بعد رفع مستوى الكلام / when room noise between spoken words rises after boosting speech gain"
  },
  {
   "family": "music-beat-sound",
@@ -2154,8 +2952,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-102"
+  "tags": [
+   "طيف صوتي",
+   "معادل صوتي",
+   "أعمدة الصوت",
+   "spectrum",
+   "equalizer bars"
+  ],
+  "id": "BEAT-102",
+  "when": "عند تحويل مقطع صوتي إلى فيديو بأعمدة طيف أو حلقة دائرية متحركة / for audio-only clips that need an animated spectrum of bars or a circular ring"
  },
  {
   "family": "music-beat-sound",
@@ -2174,8 +2979,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-103"
+  "tags": [
+   "نبضة",
+   "زوم على الإيقاع",
+   "ترجمة نابضة",
+   "zoom pulse",
+   "caption bounce"
+  ],
+  "id": "BEAT-103",
+  "when": "حين يريد المستخدم أن تنبض الصورة والترجمة وشريط التقدم مع كل ضربة إيقاع / when picture, captions and progress bar should pulse on every detected beat"
  },
  {
   "family": "music-beat-sound",
@@ -2196,8 +3008,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-104"
+  "tags": [
+   "صوت إلى فيديو",
+   "خلفية متحركة",
+   "ترجمة كبيرة",
+   "audio to video",
+   "visualizer"
+  ],
+  "id": "BEAT-104",
+  "when": "عند رفع ملف صوتي فقط لكلام أو موسيقى وتحويله إلى فيديو بخلفية وترجمة / when an audio-only upload must become a video with background, visualiser and captions"
  },
  {
   "family": "music-beat-sound",
@@ -2218,8 +3037,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-105"
+  "tags": [
+   "كشف الإيقاع",
+   "سرعة الأغنية",
+   "ضربات",
+   "bpm detection",
+   "tempo"
+  ],
+  "id": "BEAT-105",
+  "when": "حين تحتاج أوقات الضربات وسرعة BPM من موسيقى المشروع كملف JSON / when you need beat times and BPM detected from project audio as JSON"
  },
  {
   "family": "music-beat-sound",
@@ -2240,8 +3066,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-106"
+  "tags": [
+   "تسوية الجهارة",
+   "توحيد مستوى الصوت",
+   "علو الصوت",
+   "loudness",
+   "lufs"
+  ],
+  "id": "BEAT-106",
+  "when": "عند مطابقة جهارة صوت مع ملف مرجعي أو ضبطه على مستوى LUFS محدد / when matching audio loudness to a reference file or a target LUFS level"
  },
  {
   "family": "music-beat-sound",
@@ -2259,8 +3092,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-107"
+  "tags": [
+   "فلاتر صوت",
+   "صدى",
+   "تغيير طبقة الصوت",
+   "reverb",
+   "pitch shift"
+  ],
+  "id": "BEAT-107",
+  "when": "حين يحتاج مقطع أو مجموعة مقاطع فلاتر وضغطا وصدى وتأخيرا أو تغيير طبقة الصوت / when a clip or group needs filters, compression, reverb, delay or pitch shift"
  },
  {
   "family": "music-beat-sound",
@@ -2278,8 +3118,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-108"
+  "tags": [
+   "منحنى الصوت",
+   "تغيير تدريجي",
+   "كيفريم صوت",
+   "envelope",
+   "keyframes"
+  ],
+  "id": "BEAT-108",
+  "when": "عند رسم تغير مستوى الصوت أو معامل مؤثر عبر الزمن بنقاط ومنحنيات / when volume or an effect parameter must change over time with envelope points and curves"
  },
  {
   "family": "music-beat-sound",
@@ -2299,8 +3146,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-109"
+  "tags": [
+   "تقطيع على الإيقاع",
+   "مونتاج موسيقي",
+   "كلمات الأغنية",
+   "beat sync",
+   "lyric video"
+  ],
+  "id": "BEAT-109",
+  "when": "حين يريد المستخدم تقطيع اللقطات أو كلمات الأغنية على ضربات الموسيقى / when footage or lyrics should be cut to detected music beats"
  },
  {
   "family": "music-beat-sound",
@@ -2323,8 +3177,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-110"
+  "tags": [
+   "وميض",
+   "فلاش",
+   "ضربة صوتية",
+   "impact flash",
+   "sting"
+  ],
+  "id": "BEAT-110",
+  "when": "عند الحاجة لضربة موسيقية واحدة بوميض قوي ونبضة حجم سريعة على العنصر / for a single music hit with an impact flash and a quick scale pulse on the subject"
  },
  {
   "family": "music-beat-sound",
@@ -2346,8 +3207,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-111"
+  "tags": [
+   "خلفية متحركة",
+   "توهج",
+   "خلفية موسيقية",
+   "glow background",
+   "music visual"
+  ],
+  "id": "BEAT-111",
+  "when": "حين يجب أن تتنفس الخلفية بتوهج وتشبع لوني على أوقات ضربات معروفة / when the backdrop should glow and pulse in saturation on a list of beat times"
  },
  {
   "family": "music-beat-sound",
@@ -2370,8 +3238,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-112"
+  "tags": [
+   "فريز",
+   "تجميد الكادر",
+   "تسريع",
+   "speed ramp",
+   "freeze frame"
+  ],
+  "id": "BEAT-112",
+  "when": "حين يطلب المستخدم تسريعا ثم تجميد كادر على الضربة مع وميض وقطع حاد / when a music edit needs a speed ramp, a beat-locked freeze frame with flash, then a hard cut"
  },
  {
   "family": "music-beat-sound",
@@ -2394,8 +3269,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-113"
+  "tags": [
+   "معادل صوتي",
+   "خلفية شيدر",
+   "أعمدة ملونة",
+   "shader background",
+   "equalizer"
+  ],
+  "id": "BEAT-113",
+  "when": "عند الحاجة لخلفية أعمدة معادل صوتي ملونة متحركة لا تتبع الصوت الفعلي / for a colourful equaliser-bar background that is procedural, not audio-reactive"
  },
  {
   "family": "music-beat-sound",
@@ -2415,8 +3297,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-114"
+  "tags": [
+   "فيد",
+   "تخفيض صوت الخلفية",
+   "اختفاء الصوت تدريجيا",
+   "fade in",
+   "fade out"
+  ],
+  "id": "BEAT-114",
+  "when": "حين تحتاج دخولا وخروجا تدريجيا للصوت أو خفضا مؤقتا للموسيقى عبر مسار أتمتة واحد / when volume needs fade-in, fade-out or a temporary duck using one automation lane"
  },
  {
   "family": "music-beat-sound",
@@ -2434,8 +3323,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-115"
+  "tags": [
+   "توقيت المؤثر الصوتي",
+   "صوت مع الحركة",
+   "ضبط التوقيت",
+   "sfx timing",
+   "sound design"
+  ],
+  "id": "BEAT-115",
+  "when": "حين يجب أن يقع مؤثر صوتي تماما مع حركة أو ضربة تظهر على الشاشة / when a sound effect must land exactly on a visual hit in the timeline"
  },
  {
   "family": "music-beat-sound",
@@ -2458,8 +3354,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-116"
+  "tags": [
+   "باص",
+   "ترددات",
+   "تفاعل مع الموسيقى",
+   "frequency bands",
+   "music reactive"
+  ],
+  "id": "BEAT-116",
+  "when": "حين تريد أن تتحرك العناصر وتتوهج وفق الباص والترددات العالية لكل إطار / when bass, treble and mids per frame should drive scale, glow, opacity and shape"
  },
  {
   "family": "music-beat-sound",
@@ -2481,8 +3384,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-117"
+  "tags": [
+   "ترتيب المؤثرات",
+   "معاينة الصوت",
+   "رندر الصوت",
+   "web audio",
+   "signal chain"
+  ],
+  "id": "BEAT-117",
+  "when": "عند وضع مؤثرات صوتية بترتيب الإشارة على مسار صوت أو فيديو لتطابق المعاينة الرندر / when declaring ordered audio effects on a track so preview and render sound the same"
  },
  {
   "family": "music-beat-sound",
@@ -2500,8 +3410,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-118"
+  "tags": [
+   "قيم افتراضية",
+   "إعدادات المؤثرات",
+   "مرجع",
+   "fx parameters",
+   "defaults"
+  ],
+  "id": "BEAT-118",
+  "when": "حين تحتاج القيم الافتراضية والمدى الدقيق لمعاملات مؤثر صوتي قبل ضبطه / when you need exact ranges and defaults of an audio effect's parameters"
  },
  {
   "family": "music-beat-sound",
@@ -2523,8 +3440,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-119"
+  "tags": [
+   "وضوح التعليق",
+   "موسيقى خلفية",
+   "خفض ذكي",
+   "sidechain",
+   "ducking"
+  ],
+  "id": "BEAT-119",
+  "when": "حين تعزف موسيقى تحت تعليق صوتي ويجب أن يبقى الكلام واضحا دون خفض الموسيقى كلها / when music plays under a voiceover and must dip only in the voice's frequency bands"
  },
  {
   "family": "music-beat-sound",
@@ -2542,8 +3466,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-120"
+  "tags": [
+   "تجميع المسارات",
+   "مجموعة صوت",
+   "فيدر",
+   "audio group",
+   "bus"
+  ],
+  "id": "BEAT-120",
+  "when": "عند معالجة عدة مقاطع تعليق صوتي معا بسلسلة مؤثرات وفيدر واحد / when several tracks such as all narration clips should share one effects chain and fader"
  },
  {
   "family": "music-beat-sound",
@@ -2562,8 +3493,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-121"
+  "tags": [
+   "كيفريم",
+   "تحريك المعاملات",
+   "تدرج المؤثر",
+   "automation",
+   "keyframes"
+  ],
+  "id": "BEAT-121",
+  "when": "حين يجب أن يتغير مستوى الصوت أو السرعة أو معامل مؤثر أو قوة إعداد مسبق مع الزمن / when volume, rate, any effect parameter or a whole preset should ride over time"
  },
  {
   "family": "music-beat-sound",
@@ -2581,8 +3519,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-122"
+  "tags": [
+   "ريفيرب",
+   "صدى القاعة",
+   "عمق الصوت",
+   "room reverb",
+   "echo"
+  ],
+  "id": "BEAT-122",
+  "when": "حين تريد وضع صوت في غرفة أو قاعة أو صدى ارتدادي ليبدو خلف صوت آخر / when a sound should sit behind another in a room, hall, slap-echo or dub-throw space"
  },
  {
   "family": "music-beat-sound",
@@ -2600,8 +3545,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-123"
+  "tags": [
+   "ضبط سريع",
+   "دفء الصوت",
+   "تبسيط الإعدادات",
+   "presets",
+   "warmth"
+  ],
+  "id": "BEAT-123",
+  "when": "عند ضبط مؤثر بسرعة بمقبض واحد مثل الدفء أو الإحكام أو المساحة بدل معاملات كثيرة / when you want a quick single 0..1 knob for warmth, tightness, space, evenness or crush"
  },
  {
   "family": "music-beat-sound",
@@ -2619,8 +3571,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-124"
+  "tags": [
+   "تشخيص الصوت",
+   "إكوالايزر",
+   "ترددات الصوت",
+   "eq",
+   "mud"
+  ],
+  "id": "BEAT-124",
+  "when": "عند تشخيص مشكلة صوتية وتسميتها بنطاقها الترددي قبل اختيار العلاج / when naming an audio problem by its frequency band before choosing a fix"
  },
  {
   "family": "music-beat-sound",
@@ -2643,8 +3602,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-125"
+  "tags": [
+   "ضربات الموسيقى",
+   "ملف الإيقاع",
+   "كشف الإيقاع",
+   "beat detection",
+   "bgm"
+  ],
+  "id": "BEAT-125",
+  "when": "حين تحتاج ملف إيقاع متوافقا مع الاستوديو من موسيقى المشروع المحلية / when you need a Studio-compatible beat file from the project's local music track"
  },
  {
   "family": "music-beat-sound",
@@ -2666,8 +3632,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-126"
+  "tags": [
+   "خفض الموسيقى",
+   "موسيقى خلفية",
+   "تعليق صوتي",
+   "ducking",
+   "narration"
+  ],
+  "id": "BEAT-126",
+  "when": "حين يجب خفض موسيقى الخلفية تلقائيا أثناء التعليق الصوتي أو تثبيت ذلك عند التصدير / when background music must auto-duck under narration or be baked for export"
  },
  {
   "family": "music-beat-sound",
@@ -2687,8 +3660,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-127"
+  "tags": [
+   "مؤثرات جاهزة",
+   "ووش",
+   "صوت نقرة",
+   "whoosh",
+   "sound effects"
+  ],
+  "id": "BEAT-127",
+  "when": "حين يحتاج المونتاج مؤثرا جاهزا مثل ووش أو نقرة أو بوب أو ارتطام دون مفاتيح / when an edit needs a ready whoosh, click, pop, impact, riser or ping without credentials"
  },
  {
   "family": "music-beat-sound",
@@ -2710,8 +3690,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-128"
+  "tags": [
+   "فيديو كليب",
+   "فيديو كلمات",
+   "مونتاج على الأغنية",
+   "lyric video",
+   "music video"
+  ],
+  "id": "BEAT-128",
+  "when": "حين يطلب المستخدم فيديو كاملا مبنيا على أغنية أو فيديو كلمات متزامنا مع الإيقاع / when building a whole video, or a lyric video, around a music track from analysis to render"
  },
  {
   "family": "music-beat-sound",
@@ -2734,8 +3721,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-129"
+  "tags": [
+   "تحليل الموسيقى",
+   "طاقة الأغنية",
+   "سكتات",
+   "librosa",
+   "onsets"
+  ],
+  "id": "BEAT-129",
+  "when": "عند تحليل أغنية لمعرفة مراحل الطاقة والضربات والسكتات واللحظات المهمة قبل المونتاج / when analyzing a song for energy phases, onsets, silences, key moments and tempo"
  },
  {
   "family": "music-beat-sound",
@@ -2753,8 +3747,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-130"
+  "tags": [
+   "تبديل على الضربة",
+   "تجميد",
+   "أفكار حركة",
+   "motion ideas",
+   "content swap"
+  ],
+  "id": "BEAT-130",
+  "when": "حين تختار حركة إيقاعية مثل تبديل المحتوى أو التجميد أو كتلة في فراغ / when choosing a beat move such as content swap, freeze hold or negative-space hold"
  },
  {
   "family": "music-beat-sound",
@@ -2775,8 +3776,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-131"
+  "tags": [
+   "طول المشهد",
+   "مستوى الخلفية",
+   "تعليق صوتي",
+   "bgm volume",
+   "timing"
+  ],
+  "id": "BEAT-131",
+  "when": "عند ضبط مدد الإطارات لتطابق طول الصوت وحساب مستوى الموسيقى نسبة إلى التعليق / when padding frame durations to fit audio and setting music volume relative to narration"
  },
  {
   "family": "music-beat-sound",
@@ -2795,8 +3803,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-132"
+  "tags": [
+   "ثلاثي الأبعاد",
+   "جليتش",
+   "تفاعل مع الصوت",
+   "3d",
+   "glitch"
+  ],
+  "id": "BEAT-132",
+  "when": "حين يريد المستخدم مشهدا ثلاثي الأبعاد تحركه الموسيقى بأرض طيفية وخلل وشرارات / when a 3D scene should be driven by sound with spectrum ground, glitch pass and sparks"
  },
  {
   "family": "music-beat-sound",
@@ -2815,8 +3830,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-133"
+  "tags": [
+   "تضاريس",
+   "طيف",
+   "رحلة كاميرا",
+   "terrain",
+   "3d flythrough"
+  ],
+  "id": "BEAT-133",
+  "when": "حين تتحول الموسيقى إلى تضاريس واد ثلاثي الأبعاد تعبره الكاميرا / when the music's spectrogram should become a 3D canyon terrain the camera travels through"
  },
  {
   "family": "music-beat-sound",
@@ -2835,8 +3857,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-134"
+  "tags": [
+   "تزامن الصورة والموسيقى",
+   "جدولة الأحداث",
+   "توقيت",
+   "bpm",
+   "timeline"
+  ],
+  "id": "BEAT-134",
+  "when": "عند جدولة كل أحداث الفيلم بالضربات بدل الثواني لتتطابق الصورة مع الموسيقى / when scheduling every event of a film in beats so picture and score stay locked"
  },
  {
   "family": "music-beat-sound",
@@ -2855,8 +3884,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-135"
+  "tags": [
+   "تجميد المشهد",
+   "جليتش",
+   "توقف الأغنية",
+   "freeze",
+   "glitch"
+  ],
+  "id": "BEAT-135",
+  "when": "حين تتوقف الموسيقى بتأثير الشريط ويجب تجميد العالم مع استمرار الكاميرا ولمسات خلل / when a music tape-stop should freeze the world while the camera keeps moving, with glitch hits"
  },
  {
   "family": "music-beat-sound",
@@ -2874,8 +3910,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-136"
+  "tags": [
+   "اهتزاز الكاميرا",
+   "كيك",
+   "باص",
+   "camera shake",
+   "kick drum"
+  ],
+  "id": "BEAT-136",
+  "when": "حين يجب أن تهتز الكاميرا وتنبض الإضاءة والعناصر مع الكيك والباص / when kick, bass and onsets should drive camera shake, fov punch, exposure and bounce"
  },
  {
   "family": "music-beat-sound",
@@ -2894,8 +3937,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-137"
+  "tags": [
+   "خفض تلقائي",
+   "موسيقى خلفية",
+   "كلام فوق موسيقى",
+   "ducking",
+   "voice over music"
+  ],
+  "id": "BEAT-137",
+  "when": "حين يجب أن تنخفض الموسيقى تلقائيا كلما بدأ الكلام / when background music should dip automatically under speech"
  },
  {
   "family": "music-beat-sound",
@@ -2916,8 +3966,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-138"
+  "tags": [
+   "توقيت الإيقاع",
+   "ضربات",
+   "تزامن",
+   "bpm",
+   "beat timing"
+  ],
+  "id": "BEAT-138",
+  "when": "عند الحاجة لساعة إيقاع مشتركة تضبط بها الصورة والصوت من BPM / when picture and sound need a shared beat clock from BPM and offset"
  },
  {
   "family": "music-beat-sound",
@@ -2938,8 +3995,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-139"
+  "tags": [
+   "جو المكان",
+   "صوت خلفية",
+   "أمبيانس",
+   "ambience",
+   "background sound"
+  ],
+  "id": "BEAT-139",
+  "when": "حين لا يتوفر تسجيل جو مرخص ويلزم صوت محيطي مركب مع الإفصاح عنه / when no licensed ambience recording exists and a disclosed synthesised one is needed"
  },
  {
   "family": "music-beat-sound",
@@ -2958,8 +4022,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-140"
+  "tags": [
+   "تأليف موسيقى",
+   "موسيقى خلفية",
+   "مزيكا",
+   "music generation",
+   "soundtrack"
+  ],
+  "id": "BEAT-140",
+  "when": "حين يطلب المستخدم موسيقى أصلية مولدة بسرعة BPM وطول ومزاج محدد / when an original music track is needed for a given BPM, length and mood"
  },
  {
   "family": "music-beat-sound",
@@ -2979,8 +4050,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-141"
+  "tags": [
+   "تحليل الصوت",
+   "كيك",
+   "سكتة",
+   "audio analysis",
+   "pitch"
+  ],
+  "id": "BEAT-141",
+  "when": "عند استخراج قنوات الكيك والباص والسكتات وطبقة الصوت لكل إطار واكتشاف توقف الشريط / when extracting per-frame kick, bass, onset, silence and pitch channels plus tape-stops"
  },
  {
   "family": "music-beat-sound",
@@ -3002,8 +4080,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-142"
+  "tags": [
+   "سرعة الأغنية",
+   "ضربات الطبل",
+   "نقاط القطع",
+   "tempo",
+   "onsets"
+  ],
+  "id": "BEAT-142",
+  "when": "حين يريد المستخدم معرفة سرعة الأغنية وشبكة ضربات منتظمة ليقطع عليها من أي ملف / when tempo, a regular beat grid and onsets are needed from any audio or video file for cuts"
  },
  {
   "family": "music-beat-sound",
@@ -3025,8 +4110,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-143"
+  "tags": [
+   "موسيقى خلفية",
+   "تعليق صوتي",
+   "ضغط جانبي",
+   "sidechain",
+   "ffmpeg"
+  ],
+  "id": "BEAT-143",
+  "when": "حين يجب خفض الموسيقى أثناء التعليق فعليا بدل مستوى ثابت باستخدام ffmpeg / when music should truly duck under narration with ffmpeg sidechaincompress, not a static gain"
  },
  {
   "family": "music-beat-sound",
@@ -3049,8 +4141,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-144"
+  "tags": [
+   "موسيقى شرقية",
+   "قانون",
+   "مزيكا مصرية",
+   "arabic music",
+   "maqam"
+  ],
+  "id": "BEAT-144",
+  "when": "حين يطلب المستخدم موسيقى أصلية بطابع مصري على مقام حجاز مولدة بالكود بلا عينات / when an original Egyptian-coloured Hijaz score must be generated in code without samples"
  },
  {
   "family": "music-beat-sound",
@@ -3069,8 +4168,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-145"
+  "tags": [
+   "جهارة الصوت",
+   "سماعات الموبايل",
+   "منع التشويه",
+   "loudness",
+   "limiter"
+  ],
+  "id": "BEAT-145",
+  "when": "عند إنهاء مقطع موسيقي بالكود بصدى وتعديل للحدة وضبط للجهارة ومنع لتجاوز الذروة / when mastering a track in code with reverb, presence shelf, loudness and a true-peak guard"
  },
  {
   "family": "music-beat-sound",
@@ -3090,8 +4196,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-146"
+  "tags": [
+   "توهج",
+   "إضاءة نابضة",
+   "ضربة قوية",
+   "glow pulse",
+   "breathing light"
+  ],
+  "id": "BEAT-146",
+  "when": "حين يجب أن تتنفس هالة أو إضاءة في الصورة مع كل ضربة قوية في الموسيقى / when a glow or halo should dip and recover on every musical downbeat"
  },
  {
   "family": "music-beat-sound",
@@ -3112,8 +4225,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-147"
+  "tags": [
+   "تحليل الصوت",
+   "بيانات الموسيقى",
+   "كيك",
+   "audio features",
+   "rms"
+  ],
+  "id": "BEAT-147",
+  "when": "عند الحاجة لتحليل الموسيقى لكل إطار لتقرأه أي حركة مرئية مثل الباص والكيك والسكتات / when any visual needs per-frame soundtrack features like bass, kick, onsets and silence"
  },
  {
   "family": "music-beat-sound",
@@ -3134,8 +4254,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-148"
+  "tags": [
+   "موسيقى خلفية",
+   "توزيع موسيقي",
+   "مزيكا تحت الكلام",
+   "riser",
+   "arrangement"
+  ],
+  "id": "BEAT-148",
+  "when": "حين تحتاج موسيقى خلفية مقسمة تتبع مراحل الكلام مع توقف ورافع وانفجار في الذروة / when a background score must follow a talk's sections with a tape stop, riser and boom"
  },
  {
   "family": "music-beat-sound",
@@ -3155,8 +4282,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-149"
+  "tags": [
+   "تصميم صوت",
+   "ووش",
+   "مؤثرات الأرقام",
+   "sound design",
+   "whoosh"
+  ],
+  "id": "BEAT-149",
+  "when": "حين يجب ربط كل مؤثر صوتي بحدث مرئي مثل ووش عند تغيير المشهد وتك عند الأرقام / when every sound effect should be tied to something visible, like whooshes on scene changes"
  },
  {
   "family": "music-beat-sound",
@@ -3174,8 +4308,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-150"
+  "tags": [
+   "أزمنة الضربات",
+   "تحويل BPM",
+   "تزامن",
+   "bpm",
+   "downbeats"
+  ],
+  "id": "BEAT-150",
+  "when": "عند تحويل سرعة BPM أو ملف ضربات مقاس إلى أزمنة يقرأها الرسم والصوت معا / when turning a BPM or a measured beats JSON into times shared by picture and sound"
  },
  {
   "family": "music-beat-sound",
@@ -3196,8 +4337,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-151"
+  "tags": [
+   "تقطيع",
+   "مونتاج إيقاعي",
+   "اقتراح القطعات",
+   "beat cuts",
+   "onset detection"
+  ],
+  "id": "BEAT-151",
+  "when": "حين يريد المستخدم اقتراح نقاط قطع على الإيقاع من ملف صوتي تلقائيا / when you want suggested cut points from beats and onsets in an audio file"
  },
  {
   "family": "music-beat-sound",
@@ -3217,8 +4365,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-152"
+  "tags": [
+   "جهارة",
+   "علو الصوت",
+   "تسليم الفيديو",
+   "lufs",
+   "loudnorm"
+  ],
+  "id": "BEAT-152",
+  "when": "عند ضبط جهارة الفيديو النهائية للنشر ومستوى الموسيقى تحت الكلام / when setting final delivery loudness and the music bed level under speech"
  },
  {
   "family": "music-beat-sound",
@@ -3236,8 +4391,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-153"
+  "tags": [
+   "مخطط طيفي",
+   "تضاريس صوتية",
+   "تجميد",
+   "spectrogram",
+   "tape stop"
+  ],
+  "id": "BEAT-153",
+  "when": "حين يجب أن تطابق التضاريس الطيفية المرئية ما يسمع وتتجمد عند توقف الشريط / when the visible spectrogram terrain must match what is heard and freeze on tape stops"
  },
  {
   "family": "music-beat-sound",
@@ -3255,8 +4417,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-154"
+  "tags": [
+   "طبقة ضوء",
+   "حلقات",
+   "توهج",
+   "particles",
+   "light layer"
+  ],
+  "id": "BEAT-154",
+  "when": "حين يريد المستخدم طبقة ضوء تتنفس مع الصوت وجسيمات صاعدة وحلقات مع الكيك / when a light layer should breathe with sound, with rising motes and kick rings"
  },
  {
   "family": "music-beat-sound",
@@ -3277,8 +4446,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-155"
+  "tags": [
+   "فيلم موسيقي",
+   "حلقة متكررة",
+   "تفاعل مع الصوت",
+   "audio driven",
+   "seamless loop"
+  ],
+  "id": "BEAT-155",
+  "when": "حين يطلب المستخدم فيلما موسيقيا تتحكم القياسات الصوتية في كل قيمة مرئية فيه / when a music film must have every visual value driven by measured audio channels"
  },
  {
   "family": "music-beat-sound",
@@ -3303,8 +4479,15 @@
   "styles": [
    "audio-wave"
   ],
-  "tags": [],
-  "id": "BEAT-156"
+  "tags": [
+   "موجات",
+   "أعمدة صوت",
+   "قالب",
+   "waveform",
+   "visualizer"
+  ],
+  "id": "BEAT-156",
+  "when": "حين يطلب المستخدم موجة صوت أو أعمدة تتحرك مع صوت المتحدث أو الموسيقى / when the user wants a waveform or bars that react to the voice or music"
  },
  {
   "family": "music-beat-sound",
@@ -3327,8 +4510,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-157"
+  "tags": [
+   "دليل الموسيقى",
+   "مونتاج موسيقي",
+   "مزيكا",
+   "playbook",
+   "music video"
+  ],
+  "id": "BEAT-157",
+  "when": "عند البدء في أي فيديو موسيقي والحاجة لدليل التوقيتات والوصفات الخاص بالموسيقى / when starting any music-driven video and needing the music playbook of timings and recipes"
  },
  {
   "family": "music-beat-sound",
@@ -3350,8 +4540,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-158"
+  "tags": [
+   "جهارة المنصات",
+   "موسيقى خلفية",
+   "مستوى الصوت",
+   "lufs",
+   "sidechain"
+  ],
+  "id": "BEAT-158",
+  "when": "عند خفض الموسيقى تحت الصوت وتسليم الفيديو بجهارة مناسبة للمنصات / when ducking music under voice and delivering at platform loudness"
  },
  {
   "family": "music-beat-sound",
@@ -3371,8 +4568,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-159"
+  "tags": [
+   "كشف الإيقاع",
+   "النقر على الإيقاع",
+   "ضربات",
+   "tap tempo",
+   "librosa"
+  ],
+  "id": "BEAT-159",
+  "when": "حين تحتاج كشف الضربات بأداة قياس أو بالنقر على الإيقاع ثم التحقق بالأذن / when beats must be detected with aubio, librosa or tap tempo and checked by ear"
  },
  {
   "family": "music-beat-sound",
@@ -3393,8 +4597,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-160"
+  "tags": [
+   "نبضة",
+   "تكبير",
+   "ضربة",
+   "scale pulse",
+   "remotion"
+  ],
+  "id": "BEAT-160",
+  "when": "حين يجب أن يكبر العنصر قليلا بسرعة ثم يعود بنعومة مع كل ضربة / when an element should scale up fast and ease back on every beat"
  },
  {
   "family": "music-beat-sound",
@@ -3414,8 +4625,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-161"
+  "tags": [
+   "مؤثر صوتي",
+   "توليد صوت",
+   "ذكاء اصطناعي",
+   "elevenlabs",
+   "sfx"
+  ],
+  "id": "BEAT-161",
+  "when": "حين يصف المستخدم صوتا مثل مطر أو ليزر ويريد ملف مؤثر صوتي مولدا منه / when the user describes a sound like rain or a laser and wants a generated SFX file"
  },
  {
   "family": "music-beat-sound",
@@ -3436,8 +4654,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-162"
+  "tags": [
+   "مؤثرات جاهزة",
+   "ووش",
+   "أصوات ميمز",
+   "whoosh",
+   "remotion"
+  ],
+  "id": "BEAT-162",
+  "when": "عند الحاجة السريعة لمؤثرات قصيرة جاهزة مثل ووش أو تقليب صفحة أو نقرة ماوس / when you quickly need short hosted SFX like whoosh, page-turn, shutter or mouse-click"
  },
  {
   "family": "music-beat-sound",
@@ -3459,8 +4684,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-163"
+  "tags": [
+   "توليد مؤثرات",
+   "ووش",
+   "ارتطام",
+   "elevenlabs",
+   "sound generation"
+  ],
+  "id": "BEAT-163",
+  "when": "حين يحتاج المونتاج ووش أو ارتطاما أو جوا مخصصا مولدا من وصف نصي / when custom whooshes, impacts or ambiences must be generated from a prompt"
  },
  {
   "family": "music-beat-sound",
@@ -3481,8 +4713,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-164"
+  "tags": [
+   "توليد أغنية",
+   "كلمات الأغنية",
+   "موازير",
+   "ai music",
+   "song generation"
+  ],
+  "id": "BEAT-164",
+  "when": "حين يطلب المستخدم أغنية مولدة بأقسام وكلمات تبدأ على حدود الموازير لتناسب القطعات / when generating a sung song in sections whose starts land on bar lines for video cuts"
  },
  {
   "family": "music-beat-sound",
@@ -3502,8 +4741,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-165"
+  "tags": [
+   "أغنية بلا غناء",
+   "كلمات",
+   "تحقق بالتفريغ",
+   "lyrics",
+   "stt"
+  ],
+  "id": "BEAT-165",
+  "when": "حين تخرج الأغنية المولدة بلا غناء رغم وجود الكلمات بجانب الوصف / when a generated song comes back unsung because lyrics were placed beside the prompt"
  },
  {
   "family": "music-beat-sound",
@@ -3523,8 +4769,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-166"
+  "tags": [
+   "برومبت أغنية",
+   "وصف الأسلوب",
+   "توليد أغنية",
+   "song prompt",
+   "ai music"
+  ],
+  "id": "BEAT-166",
+  "when": "عند كتابة وصف أسلوب لأغنية في Suno بترتيب النوع والمزاج والآلات والصوت والسرعة / when writing a Suno style prompt ordered genre, mood, instruments, vocal, BPM, production"
  },
  {
   "family": "music-beat-sound",
@@ -3544,8 +4797,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-167"
+  "tags": [
+   "مقاطع الأغنية",
+   "كوبليه وكورس",
+   "تباين",
+   "verse chorus",
+   "song structure"
+  ],
+  "id": "BEAT-167",
+  "when": "حين تريد أن يختلف كل مقطع في أغنية Suno في الآلات والقوة لصنع تباين للمونتاج / when each Suno song section needs its own instruments and dynamics for verse-chorus contrast"
  },
  {
   "family": "music-beat-sound",
@@ -3565,8 +4825,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-168"
+  "tags": [
+   "هيكل الأغنية",
+   "كورس",
+   "نهاية حادة",
+   "song tags",
+   "lyrics structure"
+  ],
+  "id": "BEAT-168",
+  "when": "عند هيكلة كلمات أغنية في Suno بوسوم المقدمة والمقطع والكورس والخاتمة وتلميحات الأداء / when structuring Suno lyrics with section, vocal and effect tags and inline cues"
  },
  {
   "family": "music-beat-sound",
@@ -3586,8 +4853,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-169"
+  "tags": [
+   "أداء الغناء",
+   "مد الصوت",
+   "وقفة",
+   "vocals",
+   "melisma"
+  ],
+  "id": "BEAT-169",
+  "when": "حين تريد التحكم في أداء المغني في Suno مثل الخشونة أو مد الحروف أو وقفة النفس / when shaping Suno vocal delivery with caps, extra vowels, pauses and line breaks"
  },
  {
   "family": "music-beat-sound",
@@ -3607,8 +4881,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-170"
+  "tags": [
+   "مشاكل الأغنية",
+   "تصحيح البرومبت",
+   "بدون غناء",
+   "troubleshooting",
+   "instrumental"
+  ],
+  "id": "BEAT-170",
+  "when": "حين لا تلتزم أغنية Suno بما طلبته مثل ظهور غناء أو طبول غير مرغوبة / when a Suno result ignores your prompt, e.g. unwanted vocals or drums, and needs a rewrite"
  },
  {
   "family": "music-beat-sound",
@@ -3628,8 +4909,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-171"
+  "tags": [
+   "تعديل الأغنية",
+   "إطالة الأغنية",
+   "إعادة توليد مقطع",
+   "song edit",
+   "restyle"
+  ],
+  "id": "BEAT-171",
+  "when": "عند تعديل أغنية Suno موجودة بتغيير أسلوبها أو إطالتها أو إعادة توليد مقطع واحد / when restyling, extending or regenerating one section of an existing Suno song"
  },
  {
   "family": "music-beat-sound",
@@ -3649,8 +4937,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-172"
+  "tags": [
+   "فصل الآلات",
+   "طبول",
+   "تراكات",
+   "stems",
+   "midi"
+  ],
+  "id": "BEAT-172",
+  "when": "حين تحتاج مسارات منفصلة من أغنية Suno مثل الطبول للقطع على الإيقاع والخفض / when you need separated stems, MIDI or tempo-locked WAV from Suno for beat cuts and ducking"
  },
  {
   "family": "music-beat-sound",
@@ -3670,8 +4965,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-173"
+  "tags": [
+   "أغنية عربية",
+   "راي",
+   "مقامات",
+   "arabic song",
+   "rai"
+  ],
+  "id": "BEAT-173",
+  "when": "حين يطلب المستخدم أغنية عربية أو بطابع راي أو مقامات شرقية من Suno / when making Arabic-language or Arabic-flavoured songs such as Rai in Suno"
  },
  {
   "family": "music-beat-sound",
@@ -3691,8 +4993,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-174"
+  "tags": [
+   "أنواع موسيقية",
+   "لوفاي",
+   "موسيقى تريلر",
+   "genres",
+   "lofi"
+  ],
+  "id": "BEAT-174",
+  "when": "حين تحتاج قالبا جاهزا لنوع موسيقي مثل لوفاي أو تراب أو موسيقى تريلر خلف الموشن / when you need a ready genre template like lofi, trap, ambient or trailer music"
  },
  {
   "family": "music-beat-sound",
@@ -3712,8 +5021,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-175"
+  "tags": [
+   "حساب المدة",
+   "أقسام الأغنية",
+   "مازورة",
+   "bars",
+   "song sections"
+  ],
+  "id": "BEAT-175",
+  "when": "عند حساب أطوال أقسام الأغنية بالموازير لتبدأ على خطوط القطع في الفيديو / when computing song section lengths in whole bars so section starts line up with cuts"
  },
  {
   "family": "music-beat-sound",
@@ -3733,8 +5049,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-176"
+  "tags": [
+   "إزالة الضوضاء",
+   "صوت نظيف",
+   "فصل الكلام عن الموسيقى",
+   "noise removal",
+   "denoise"
+  ],
+  "id": "BEAT-176",
+  "when": "حين يكون صوت المستخدم مختلطا بضوضاء أو موسيقى ويلزم كلام نظيف للترجمة والخفض / when a voice track has background noise or music and clean speech is needed for captions"
  },
  {
   "family": "music-beat-sound",
@@ -3755,8 +5078,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-177"
+  "tags": [
+   "إزالة الضوضاء",
+   "عزل الصوت",
+   "على الجهاز",
+   "denoise",
+   "local"
+  ],
+  "id": "BEAT-177",
+  "when": "حين يريد المستخدم إزالة الضوضاء أو عزل صوته على جهازه المحلي عبر الجسر / when denoising or isolating a voice locally on the user's own machine through the bridge"
  },
  {
   "family": "music-beat-sound",
@@ -3777,8 +5107,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-178"
+  "tags": [
+   "كتابة أغنية",
+   "كلمات أغنية",
+   "لهجة خليجية",
+   "lyrics",
+   "songwriting"
+  ],
+  "id": "BEAT-178",
+  "when": "حين يطلب المستخدم كتابة أغنية كاملة لمولد موسيقى بلهجة عربية مع وصف الأسلوب والكلمات / when writing a complete song package for an AI music generator, including Arabic dialects"
  },
  {
   "family": "music-beat-sound",
@@ -3798,8 +5135,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-179"
+  "tags": [
+   "تصميم صوت",
+   "خطة المؤثرات",
+   "فولي",
+   "sound design",
+   "foley"
+  ],
+  "id": "BEAT-179",
+  "when": "عند التخطيط لتصميم الصوت بجدول زمني لكل مؤثر مع مستواه ووصف لتوليده / when planning a timecoded sound-design sheet with levels, pan and AI SFX prompts"
  },
  {
   "family": "music-beat-sound",
@@ -3820,8 +5164,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-180"
+  "tags": [
+   "مهارات الصوت",
+   "وكلاء",
+   "قصة",
+   "skills",
+   "agents"
+  ],
+  "id": "BEAT-180",
+  "when": "عند اختيار مهارات جاهزة لوكلاء هندسة الصوت وإخراج التعليق والقصة / when picking curated skill ids for audio engineer, voice director and storyteller agents"
  },
  {
   "family": "music-beat-sound",
@@ -3843,8 +5194,15 @@
    "pm-topi-003-b0e12c",
    "pm-zaqailo-212ad3"
   ],
-  "tags": [],
-  "id": "BEAT-181"
+  "tags": [
+   "تقطيع",
+   "مونتاج سريع",
+   "قصات",
+   "beat cuts",
+   "fast edit"
+  ],
+  "id": "BEAT-181",
+  "when": "حين يريد المستخدم قطعا كل ضربتين أو أربع على الإيقاع / when cuts should land every 2 or 4 beats"
  },
  {
   "family": "music-beat-sound",
@@ -3864,8 +5222,15 @@
   "styles": [
    "chalkboard"
   ],
-  "tags": [],
-  "id": "BEAT-182"
+  "tags": [
+   "سبورة",
+   "صوت رسم",
+   "مؤثر صوتي",
+   "chalk",
+   "drawing sound"
+  ],
+  "id": "BEAT-182",
+  "when": "حين يرسم الطباشير على الشاشة وتحتاج صوت خربشة مولدا متزامنا مع الرسم / when chalk drawing on screen needs a generated scratch sound gated to the strokes"
  },
  {
   "family": "music-beat-sound",
@@ -3887,8 +5252,15 @@
   "styles": [
    "pm-0xfemyn-e114d3"
   ],
-  "tags": [],
-  "id": "BEAT-183"
+  "tags": [
+   "كلمات سريعة",
+   "تايبوجرافي",
+   "نص متحرك",
+   "kinetic typography",
+   "word flash"
+  ],
+  "id": "BEAT-183",
+  "when": "حين يطلب المستخدم كلمات ضخمة تتبدل بسرعة كلمة مع كل ضربة / when one giant word should hard-cut per beat with a small label and page counter"
  },
  {
   "family": "music-beat-sound",
@@ -3908,8 +5280,15 @@
   "styles": [
    "pm-ajith-io-4c248f"
   ],
-  "tags": [],
-  "id": "BEAT-184"
+  "tags": [
+   "عد تنازلي",
+   "كرة نار",
+   "وميض أبيض",
+   "countdown",
+   "fireball"
+  ],
+  "id": "BEAT-184",
+  "when": "حين تريد ذروة بعد عد تنازلي بوميض أبيض وكرة نار على ضربة الموسيقى / when a countdown should end in a white flash and fireball timed to the music hit"
  },
  {
   "family": "music-beat-sound",
@@ -3929,8 +5308,15 @@
   "styles": [
    "pm-ajith-io-b5626e"
   ],
-  "tags": [],
-  "id": "BEAT-185"
+  "tags": [
+   "تبديل المشاهد",
+   "مونتاج",
+   "تقطيع منتظم",
+   "scene change",
+   "120 bpm"
+  ],
+  "id": "BEAT-185",
+  "when": "عند تغيير المشهد بانتظام كل أربع ضربات على موسيقى بسرعة 120 BPM / when changing scenes every 4 beats at 120 BPM"
  },
  {
   "family": "music-beat-sound",
@@ -3950,8 +5336,15 @@
   "styles": [
    "pm-antonio-kodheli-490109"
   ],
-  "tags": [],
-  "id": "BEAT-186"
+  "tags": [
+   "ريلز",
+   "شارة الحساب",
+   "دروب",
+   "reels",
+   "creator credit"
+  ],
+  "id": "BEAT-186",
+  "when": "حين يطلب المستخدم ريلز يقطع بين ثلاث لقطات مع الدروب وشارة اسم الحساب / for a reel that hard-cuts 3 clips on the music drop, each with an avatar and @handle chip"
  },
  {
   "family": "music-beat-sound",
@@ -3971,8 +5364,15 @@
   "styles": [
    "pm-fionntobin-97b7af"
   ],
-  "tags": [],
-  "id": "BEAT-187"
+  "tags": [
+   "رسم بياني",
+   "إنفوجرافيك",
+   "بيانات متحركة",
+   "chart animation",
+   "data viz"
+  ],
+  "id": "BEAT-187",
+  "when": "حين يجب أن يتحول مخطط بياني إلى تصور للموسيقى بعمود يقفز مع كل ضربة / when a bar chart should spike a bar on every beat as a playhead sweeps"
  },
  {
   "family": "music-beat-sound",
@@ -3992,8 +5392,15 @@
   "styles": [
    "pm-ghinaiya-nirmal-5d8fec"
   ],
-  "tags": [],
-  "id": "BEAT-188"
+  "tags": [
+   "واجهة تقنية",
+   "نص مشفر",
+   "عداد",
+   "hud",
+   "text scramble"
+  ],
+  "id": "BEAT-188",
+  "when": "حين تريد واجهة HUD بعداد موازير يتغير مع الموسيقى وعناوين تتفكك حروفها / when a HUD overlay needs a bar counter ticking with the music and scramble-decoded titles"
  },
  {
   "family": "music-beat-sound",
@@ -4013,8 +5420,15 @@
   "styles": [
    "pm-gorden-sun-041f56"
   ],
-  "tags": [],
-  "id": "BEAT-189"
+  "tags": [
+   "قفز",
+   "منصات",
+   "فيزياء",
+   "bounce",
+   "platforms"
+  ],
+  "id": "BEAT-189",
+  "when": "حين تريد عنصرا يقفز بين منصات ويهبط بدقة على كل ضربة / when a bouncing object should hop between platforms and land exactly on each beat"
  },
  {
   "family": "music-beat-sound",
@@ -4034,8 +5448,15 @@
   "styles": [
    "pm-influencer-seo-ce8c33"
   ],
-  "tags": [],
-  "id": "BEAT-190"
+  "tags": [
+   "نص مفرغ",
+   "عنوان",
+   "تعبئة بالفيديو",
+   "text fill",
+   "title"
+  ],
+  "id": "BEAT-190",
+  "when": "حين تريد عنوانا بحروف مفرغة تمتلئ بالفيديو مع أعمدة صوت تتحرك تحتها / when outline letters should fill with footage while waveform bars move below"
  },
  {
   "family": "music-beat-sound",
@@ -4057,8 +5478,15 @@
   "styles": [
    "pm-jacksonfall-54b2ac"
   ],
-  "tags": [],
-  "id": "BEAT-191"
+  "tags": [
+   "مونتاج سريع",
+   "تقطيع",
+   "قصات سريعة",
+   "fast cuts",
+   "edit"
+  ],
+  "id": "BEAT-191",
+  "when": "حين يطلب المستخدم مونتاجا سريعا بقطع مع كل ضربة / when you want a fast montage cutting on every beat"
  },
  {
   "family": "music-beat-sound",
@@ -4078,8 +5506,15 @@
   "styles": [
    "pm-kamstudiolabs-447565"
   ],
-  "tags": [],
-  "id": "BEAT-192"
+  "tags": [
+   "قذف",
+   "نغمات",
+   "فيزياء",
+   "physics",
+   "music visualization"
+  ],
+  "id": "BEAT-192",
+  "when": "حين تريد مقذوفات تطلق مسبقا لتصيب كل مفتاح في لحظة نغمته بالضبط / when projectiles must be launched early so each hits a key exactly on its note time"
  },
  {
   "family": "music-beat-sound",
@@ -4099,8 +5534,15 @@
   "styles": [
    "pm-kantamk-61f410"
   ],
-  "tags": [],
-  "id": "BEAT-193"
+  "tags": [
+   "ارتداد",
+   "نغمات",
+   "تصادم",
+   "pentatonic",
+   "web audio"
+  ],
+  "id": "BEAT-193",
+  "when": "حين يجب أن يعزف كل اصطدام في محاكاة ارتداد النغمة التالية من لحن / when each collision in a bouncing simulation should play the next note of a melody"
  },
  {
   "family": "music-beat-sound",
@@ -4120,8 +5562,15 @@
   "styles": [
    "pm-kloss-xyz-15182a"
   ],
-  "tags": [],
-  "id": "BEAT-194"
+  "tags": [
+   "كشف النص",
+   "أعمدة صوت",
+   "نص أنيق",
+   "text reveal",
+   "audio bars"
+  ],
+  "id": "BEAT-194",
+  "when": "حين تريد سطر نص أنيقا تحته أعمدة موجة صوتية كثيفة تتحرك مع الصوت / when a serif text line should sit over dense waveform bars driven by audio RMS"
  },
  {
   "family": "music-beat-sound",
@@ -4141,8 +5590,15 @@
   "styles": [
    "pm-maxalexweber-67688b"
   ],
-  "tags": [],
-  "id": "BEAT-195"
+  "tags": [
+   "شاشة سوداء",
+   "دروب",
+   "تشويق",
+   "drop",
+   "pause"
+  ],
+  "id": "BEAT-195",
+  "when": "حين تريد لحظة سواد قصيرة قبل الذروة ثم وميضا قويا مع الدروب / when a brief near-black pause should precede a flash into the climax on the drop"
  },
  {
   "family": "music-beat-sound",
@@ -4162,8 +5618,15 @@
   "styles": [
    "pm-notdwd-7de38a"
   ],
-  "tags": [],
-  "id": "BEAT-196"
+  "tags": [
+   "قطع حاد",
+   "ووش",
+   "مونتاج",
+   "hard cut",
+   "whoosh"
+  ],
+  "id": "BEAT-196",
+  "when": "حين تريد قطعات حادة قبل الضربة بإطارين مع صوت ووش في لحظة القطع / when hard cuts should land about 2 frames before beats with a whoosh peaking on the cut"
  },
  {
   "family": "music-beat-sound",
@@ -4183,8 +5646,15 @@
   "styles": [
    "pm-prasenx-8d9323"
   ],
-  "tags": [],
-  "id": "BEAT-197"
+  "tags": [
+   "كلمة",
+   "أعمدة صوت",
+   "عنوان متحرك",
+   "audio bars",
+   "title"
+  ],
+  "id": "BEAT-197",
+  "when": "حين تريد كلمة في المنتصف تحيط بها أعمدة صوت تتحرك يمينا ويسارا / when a word should be flanked left and right by bars driven by audio amplitude"
  },
  {
   "family": "music-beat-sound",
@@ -4206,8 +5676,15 @@
   "styles": [
    "pm-prasenx-8d9323"
   ],
-  "tags": [],
-  "id": "BEAT-198"
+  "tags": [
+   "موسيقى مولدة",
+   "طبول",
+   "مزيكا",
+   "synth",
+   "soundtrack"
+  ],
+  "id": "BEAT-198",
+  "when": "حين تحتاج موسيقى مولدة بالكود من طبول وباص وتقطع كل لقطة على ضربتها / when generating a kick, snare, bass and arp soundtrack in code and cutting every shot on beat frames"
  },
  {
   "family": "music-beat-sound",
@@ -4227,8 +5704,15 @@
   "styles": [
    "pm-rames-jusso-589f80"
   ],
-  "tags": [],
-  "id": "BEAT-199"
+  "tags": [
+   "كود متحرك",
+   "تظليل الكود",
+   "إيقاع",
+   "code highlight",
+   "beat sync"
+  ],
+  "id": "BEAT-199",
+  "when": "حين تريد إبراز أجزاء الكود واحدًا تلو الآخر مع إيقاع الموسيقى / when highlighting code tokens step by step in time with the music beat"
  },
  {
   "family": "music-beat-sound",
@@ -4248,8 +5732,15 @@
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
-  "tags": [],
-  "id": "BEAT-200"
+  "tags": [
+   "تبديل الأساليب",
+   "صور متتالية",
+   "تبديل سريع",
+   "style variants",
+   "image swap"
+  ],
+  "id": "BEAT-200",
+  "when": "حين تعرض نسخًا بأساليب مختلفة لنفس الصورة وتبدلها بسرعة على الإيقاع / when cycling style variants of one image on 16th notes with a rolling style-name chip"
  },
  {
   "family": "music-beat-sound",
@@ -4269,8 +5760,15 @@
   "styles": [
    "pm-roundtablespace-d3a1be"
   ],
-  "tags": [],
-  "id": "BEAT-201"
+  "tags": [
+   "عداد بارات",
+   "واجهة إيقاع",
+   "تبديل المشاهد",
+   "bpm hud",
+   "bar counter"
+  ],
+  "id": "BEAT-201",
+  "when": "حين تحتاج واجهة تعرض السرعة والضربات والبارات وتنقل المشهد عند حدود البار / when you need an on-screen BPM and bar counter HUD with scene switches on bar boundaries"
  },
  {
   "family": "music-beat-sound",
@@ -4290,8 +5788,15 @@
   "styles": [
    "pm-sahildesigner23-ee3155"
   ],
-  "tags": [],
-  "id": "BEAT-202"
+  "tags": [
+   "فصول",
+   "تقطيع",
+   "مازورة",
+   "chapter cuts",
+   "bar sync"
+  ],
+  "id": "BEAT-202",
+  "when": "حين تقسم الفيديو إلى فصول قصيرة طول كل منها مازورة واحدة / when splitting a video into chapters that each last exactly one musical bar"
  },
  {
   "family": "music-beat-sound",
@@ -4311,8 +5816,15 @@
   "styles": [
    "pm-shneural-2abdfa"
   ],
-  "tags": [],
-  "id": "BEAT-203"
+  "tags": [
+   "أعمدة نابضة",
+   "موجة صوت",
+   "خلفية إيقاعية",
+   "pulse bars",
+   "beat visualizer"
+  ],
+  "id": "BEAT-203",
+  "when": "حين تريد صفًا من الأعمدة الرفيعة تنبض أطوالها مع الإيقاع عبر الكادر / when you want a row of thin bars pulsing with the beat across the frame"
  },
  {
   "family": "music-beat-sound",
@@ -4332,8 +5844,15 @@
   "styles": [
    "pm-sudiyasa-f48ac9"
   ],
-  "tags": [],
-  "id": "BEAT-204"
+  "tags": [
+   "تقطيع على الإيقاع",
+   "تبديل مشاهد",
+   "مونتاج",
+   "beat cuts",
+   "scene timing"
+  ],
+  "id": "BEAT-204",
+  "when": "حين تريد تبديل المشهد كل عدد ثابت من الضربات حسب سرعة الأغنية / when changing scenes every fixed number of beats based on the track BPM"
  },
  {
   "family": "music-beat-sound",
@@ -4353,8 +5872,15 @@
   "styles": [
    "pm-tankazunori0914-0fc886"
   ],
-  "tags": [],
-  "id": "BEAT-205"
+  "tags": [
+   "تايم كود",
+   "عداد ضربات",
+   "واجهة",
+   "timecode",
+   "beat counter"
+  ],
+  "id": "BEAT-205",
+  "when": "حين تريد عدادًا على الشاشة يحسب رقم المازورة والضربة والتايم كود في كل إطار / when showing a per-frame bar, beat and timecode counter on screen"
  },
  {
   "family": "music-beat-sound",
@@ -4374,8 +5900,15 @@
   "styles": [
    "pm-techhalla-7acbc2"
   ],
-  "tags": [],
-  "id": "BEAT-206"
+  "tags": [
+   "شبكة إيقاع",
+   "جدولة الأحداث",
+   "تايملاين",
+   "beat grid",
+   "timeline"
+  ],
+  "id": "BEAT-206",
+  "when": "حين تبني خطًا زمنيًا يجدول كل حدث على أرقام الضربات وجملًا من 8 ضربات لكل رسالة / when building a timeline that schedules every hit on beat indices with 8-beat phrases"
  },
  {
   "family": "music-beat-sound",
@@ -4395,8 +5928,15 @@
   "styles": [
    "pm-tequilafunks-97f6c9"
   ],
-  "tags": [],
-  "id": "BEAT-207"
+  "tags": [
+   "كلمات سريعة",
+   "فلاش",
+   "ومضات",
+   "word flash",
+   "hard cuts"
+  ],
+  "id": "BEAT-207",
+  "when": "حين تريد ومضات كلمات أو ألوان بقطع حاد على كل ضربة أو نصفها / when flashing one word or a full colour per hard cut on beats and half-beats"
  },
  {
   "family": "music-beat-sound",
@@ -4416,8 +5956,15 @@
   "styles": [
    "pm-tolgayhickiran-e90799"
   ],
-  "tags": [],
-  "id": "BEAT-208"
+  "tags": [
+   "معادل صوتي",
+   "اكولايزر",
+   "عنوان",
+   "equalizer",
+   "fft bars"
+  ],
+  "id": "BEAT-208",
+  "when": "حين تضع أعمدة معادل صوتي تحت عنوان أو كلمة رئيسية / when placing a row of equaliser bars under a condensed headline word"
  },
  {
   "family": "music-beat-sound",
@@ -4437,8 +5984,15 @@
   "styles": [
    "pm-topi-003-9ca6b5"
   ],
-  "tags": [],
-  "id": "BEAT-209"
+  "tags": [
+   "شبكة نابضة",
+   "معينات",
+   "خلفية",
+   "grid pulse",
+   "pattern"
+  ],
+  "id": "BEAT-209",
+  "when": "حين تريد خلفية شبكة معينات يتغير حجمها ولونها مع كل ضربة / when you want a grid of diamonds that changes scale and colour on each beat"
  },
  {
   "family": "music-beat-sound",
@@ -4458,8 +6012,15 @@
   "styles": [
    "pm-umangratani-57f86a"
   ],
-  "tags": [],
-  "id": "BEAT-210"
+  "tags": [
+   "قطع كل بار",
+   "تقطيع",
+   "مونتاج",
+   "bar cuts",
+   "tempo"
+  ],
+  "id": "BEAT-210",
+  "when": "حين تريد قطعًا كل أربع ضربات أي مرة في كل مازورة حسب السرعة / when cutting once per bar, every 4 beats, from the track tempo"
  },
  {
   "family": "music-beat-sound",
@@ -4479,8 +6040,15 @@
   "styles": [
    "pm-zheke-38deff"
   ],
-  "tags": [],
-  "id": "BEAT-211"
+  "tags": [
+   "تقطيع متلعثم",
+   "ذروة",
+   "مونتاج سريع",
+   "stutter cut",
+   "climax"
+  ],
+  "id": "BEAT-211",
+  "when": "حين تقطع على شبكة الإيقاع وتضيف تقطيعًا متلعثمًا سريعًا قرب الذروة / when cutting on a beat grid with fast stutter cuts near the climax"
  },
  {
   "family": "music-beat-sound",
@@ -4500,8 +6068,15 @@
   "styles": [
    "whiteboard"
   ],
-  "tags": [],
-  "id": "BEAT-212"
+  "tags": [
+   "صوت قلم",
+   "ماركر",
+   "كتابة يدوية",
+   "pen sound",
+   "procedural audio"
+  ],
+  "id": "BEAT-212",
+  "when": "حين تحتاج صوت قلم ماركر يكتب يولد بالكود مع نقرة لكل كلمة / when you need a code-generated marker-pen squeak for writing with a click per word"
  },
  {
   "family": "music-beat-sound",
@@ -4519,8 +6094,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-213"
+  "tags": [
+   "تفاعل مع الصوت",
+   "ترددات",
+   "توهج",
+   "audio reactive",
+   "frequency bands"
+  ],
+  "id": "BEAT-213",
+  "when": "حين تربط ترددات الموسيقى بخصائص بصرية: الجهير للحجم والوسط للشكل والحاد للتوهج / when mapping bass, mids and treble to scale, shape morphs and glow"
  },
  {
   "family": "music-beat-sound",
@@ -4538,8 +6120,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-214"
+  "tags": [
+   "ترجمة متفاعلة",
+   "كابشن",
+   "توهج النص",
+   "captions",
+   "music reactive"
+  ],
+  "id": "BEAT-214",
+  "when": "حين تريد ترجمة تنبض وتتوهج مع طاقة الموسيقى دون حسابات لكل إطار / when captions should scale and glow with music energy baked into tweens"
  },
  {
   "family": "music-beat-sound",
@@ -4558,8 +6147,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-215"
+  "tags": [
+   "تريلر",
+   "اعلان تشويقي",
+   "تقطيع",
+   "trailer",
+   "push in"
+  ],
+  "id": "BEAT-215",
+  "when": "حين تصنع تريلر تقع كل قطعة فيه على خط البار مع دفع بطيء للكاميرا في كل لقطة / when cutting a trailer with every cut on a bar line and a slow push-in per shot"
  },
  {
   "family": "music-beat-sound",
@@ -4577,8 +6173,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-216"
+  "tags": [
+   "أصوات الواجهة",
+   "صوت نقرة",
+   "فيديو منتج",
+   "ui sounds",
+   "click sfx"
+  ],
+  "id": "BEAT-216",
+  "when": "حين تضيف أصوات نقر ونجاح وخطأ لواجهة منتج في فيديو وتحتاج أطوالها المناسبة / when adding click, success and error UI sounds to a product film"
  },
  {
   "family": "music-beat-sound",
@@ -4601,8 +6204,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-217"
+  "tags": [
+   "تريلر",
+   "برومو",
+   "كشف الإيقاع",
+   "promo",
+   "onset detection"
+  ],
+  "id": "BEAT-217",
+  "when": "حين تحول تسجيلًا طويلًا إلى مقطع دعائي مقصوص على بارات أغنية / when turning a capture into a promo trailer cut one bar per shot to a song"
  },
  {
   "family": "music-beat-sound",
@@ -4623,8 +6233,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-218"
+  "tags": [
+   "توجيه موسيقي",
+   "خلفية موسيقية",
+   "مزاج",
+   "music plan",
+   "ducking"
+  ],
+  "id": "BEAT-218",
+  "when": "حين تخطط موسيقى كل قسم في الفيديو بهدف عاطفي وتخفضها تحت الصوت / when planning music per section with an emotional target, dips under voice and swells on reveals"
  },
  {
   "family": "music-beat-sound",
@@ -4645,8 +6262,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-219"
+  "tags": [
+   "مكساج",
+   "مؤثرات صوتية",
+   "مزامنة",
+   "sfx sync",
+   "mix order"
+  ],
+  "id": "BEAT-219",
+  "when": "حين تضبط توقيت المؤثرات على الحركة بدقة إطار وترتب خطوات المكساج / when syncing sound effects to visible action within one frame and ordering the mix"
  },
  {
   "family": "music-beat-sound",
@@ -4667,8 +6291,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-220"
+  "tags": [
+   "إطارات",
+   "فريمات",
+   "سرعة الأغنية",
+   "fps",
+   "frames per beat"
+  ],
+  "id": "BEAT-220",
+  "when": "حين تختار سرعة أغنية تعطي عددًا صحيحًا من الإطارات لكل بار لقطع دقيق / when choosing a tempo with whole frames per bar for exact cuts at 60 or 30 fps"
  },
  {
   "family": "music-beat-sound",
@@ -4686,8 +6317,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-221"
+  "tags": [
+   "ضربات موسيقية",
+   "شعار",
+   "دروب",
+   "music hits",
+   "transients"
+  ],
+  "id": "BEAT-221",
+  "when": "حين تريد أن تقابل كل قطعة أو ومضة أو ظهور شعار ضربة في الموسيقى / when every cut, flash or logo slam must land on a matching hit in the music cue"
  },
  {
   "family": "music-beat-sound",
@@ -4708,8 +6346,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-222"
+  "tags": [
+   "لوجو صوتي",
+   "شعار",
+   "نبض",
+   "sonic logo",
+   "logo animation"
+  ],
+  "id": "BEAT-222",
+  "when": "حين ينبض رمز العلامة ثلاث مرات على ضربات اللوجو الصوتي ثم يستقر / when a brand symbol should pulse three times on a sonic logo's hits then settle"
  },
  {
   "family": "music-beat-sound",
@@ -4732,8 +6377,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-223"
+  "tags": [
+   "كلمة كلمة",
+   "نص متحرك",
+   "جملة موسيقية",
+   "word reveal",
+   "phrase cuts"
+  ],
+  "id": "BEAT-223",
+  "when": "حين تظهر كلمات جملة قصيرة كلمة على كل ضربة أو تقطع لقطات قصيرة على جملة موسيقية / when revealing a phrase one word per beat or cutting shots to a musical phrase"
  },
  {
   "family": "music-beat-sound",
@@ -4754,8 +6406,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-224"
+  "tags": [
+   "مسار الكرة",
+   "خطوط سرعة",
+   "تجميد الكادر",
+   "trajectory",
+   "freeze frame"
+  ],
+  "id": "BEAT-224",
+  "when": "حين تجمد اللقطة لرسم مسار الكرة أو تضيف خطوط سرعة خلف جسم متحرك / when freezing a shot to draw a ball's path or adding speed lines behind a moving body"
  },
  {
   "family": "music-beat-sound",
@@ -4777,8 +6436,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-225"
+  "tags": [
+   "غلاف الأغنية",
+   "أعمدة صوت",
+   "تفاعل مع الصوت",
+   "cover art",
+   "loudness reactive"
+  ],
+  "id": "BEAT-225",
+  "when": "حين تريد أعمدة حول غلاف أغنية تتفاعل مع علو الصوت / when bars around a track's cover art should react to its loudness"
  },
  {
   "family": "music-beat-sound",
@@ -4796,8 +6462,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-226"
+  "tags": [
+   "سرعة الإيقاع",
+   "اختيار السرعة",
+   "فريمات",
+   "bpm table",
+   "frame accurate"
+  ],
+  "id": "BEAT-226",
+  "when": "حين تحتاج سرعة إيقاع تجعل البار عددًا صحيحًا من الإطارات ليقع القطع بدقة / when picking a BPM whose bars are whole video frames so cuts land exactly"
  },
  {
   "family": "music-beat-sound",
@@ -4819,8 +6492,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-227"
+  "tags": [
+   "إزالة الضوضاء",
+   "تنقية الصوت",
+   "تشويش",
+   "denoise",
+   "noise removal"
+  ],
+  "id": "BEAT-227",
+  "when": "حين يكون في الحوار ضوضاء خلفية وتريد تنظيفه قبل التفريغ أو المكساج / when dialogue has background noise to remove before transcription or mixing"
  },
  {
   "family": "music-beat-sound",
@@ -4841,8 +6521,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-228"
+  "tags": [
+   "طبقات الصوت",
+   "فولي",
+   "جو المكان",
+   "foley",
+   "sound layers"
+  ],
+  "id": "BEAT-228",
+  "when": "حين تبني شريط الصوت بطبقات: حوار وجو المكان وفولي ومؤثرات وموسيقى / when building a soundtrack in layered roles: dialogue, ambience, foley, SFX and music"
  },
  {
   "family": "music-beat-sound",
@@ -4862,8 +6549,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-229"
+  "tags": [
+   "توقف الموسيقى",
+   "انتقال بين الأغاني",
+   "كروس فيد",
+   "crossfade",
+   "reverse swell"
+  ],
+  "id": "BEAT-229",
+  "when": "حين توقف الموسيقى لإفساح المجال للكلام أو تعيدها أو تنتقل بين أغنيتين / when stopping music for speech, bringing it back or switching songs at phrase ends"
  },
  {
   "family": "music-beat-sound",
@@ -4884,8 +6578,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-230"
+  "tags": [
+   "خفض الموسيقى",
+   "وضوح الكلام",
+   "سايدتشين",
+   "sidechain",
+   "voice over"
+  ],
+  "id": "BEAT-230",
+  "when": "حين تتعارض الموسيقى مع الكلام وتحتاج خفضها تحته بالترتيب الصحيح / when music fights speech and needs sidechain ducking and EQ carving under the voice"
  },
  {
   "family": "music-beat-sound",
@@ -4905,8 +6606,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-231"
+  "tags": [
+   "ماستر الموسيقى",
+   "جهارة",
+   "تجهيز الصوت",
+   "premaster",
+   "lufs"
+  ],
+  "id": "BEAT-231",
+  "when": "حين تجهز ملف الموسيقى بمستوى جهارة مناسب قبل إضافة المؤثرات والمكساج النهائي / when premastering a music cue's loudness before adding SFX and the final mix"
  },
  {
   "family": "music-beat-sound",
@@ -4924,8 +6632,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-232"
+  "tags": [
+   "صوت كيبورد",
+   "آلة كاتبة",
+   "صوت الكتابة",
+   "typing sound",
+   "typewriter"
+  ],
+  "id": "BEAT-232",
+  "when": "حين يظهر نص بأسلوب الآلة الكاتبة وتريد صوت كتابة على الكيبورد تحته / when a typewriter caption reveal needs a soft keyboard typing sound under it"
  },
  {
   "family": "music-beat-sound",
@@ -4946,8 +6661,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-233"
+  "tags": [
+   "موجة صوت",
+   "بودكاست",
+   "طيف",
+   "waveform",
+   "spectrum"
+  ],
+  "id": "BEAT-233",
+  "when": "حين تحتاج موجة صوت أو طيفًا متحركًا كعنصر بصري لبودكاست أو برومو موسيقي / when a podcast or music promo needs an animated waveform or spectrum"
  },
  {
   "family": "music-beat-sound",
@@ -4965,8 +6687,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-234"
+  "tags": [
+   "نوع موسيقي",
+   "سرعة الإيقاع",
+   "تأليف موسيقى",
+   "genre",
+   "swing"
+  ],
+  "id": "BEAT-234",
+  "when": "حين تختار سرعة وتأرجح وآلات موسيقى أصلية حسب النوع الموسيقي المطلوب / when choosing BPM, swing and instruments for an original score by genre"
  },
  {
   "family": "music-beat-sound",
@@ -4984,8 +6713,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-235"
+  "tags": [
+   "حقوق الموسيقى",
+   "لحن أصلي",
+   "تقليد",
+   "copyright",
+   "original music"
+  ],
+  "id": "BEAT-235",
+  "when": "حين يطلب المستخدم موسيقى تشبه لحنًا معروفًا فتلتزم بأسلوب النوع دون تقليده / when a user asks for music like a known tune: use genre conventions, never imitate it"
  },
  {
   "family": "music-beat-sound",
@@ -5005,8 +6741,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-236"
+  "tags": [
+   "تصميم مؤثر",
+   "ضربة",
+   "ووش",
+   "whoosh",
+   "impact sfx"
+  ],
+  "id": "BEAT-236",
+  "when": "حين تصمم ضربة أو ووش من ثلاث طبقات: بداية حادة وجسم وذيل / when designing a hit or whoosh as transient, body and tail layers"
  },
  {
   "family": "music-beat-sound",
@@ -5024,8 +6767,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-237"
+  "tags": [
+   "معنى الصوت",
+   "نغمة",
+   "مكافأة",
+   "pitch",
+   "sound meaning"
+  ],
+  "id": "BEAT-237",
+  "when": "حين تختار نغمة المؤثر لتعبر عن المعنى: صعود للربح وهبوط للخسارة / when picking SFX pitch gestures to signal gain, loss, reward or danger"
  },
  {
   "family": "music-beat-sound",
@@ -5044,8 +6794,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-238"
+  "tags": [
+   "سماعة الموبايل",
+   "جوال",
+   "وضوح الصوت",
+   "phone speaker",
+   "mobile audio"
+  ],
+  "id": "BEAT-238",
+  "when": "حين يجب أن تُسمع المؤثرات بوضوح على سماعة الجوال الصغيرة / when sound effects must stay audible on a phone speaker"
  },
  {
   "family": "music-beat-sound",
@@ -5064,8 +6821,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-239"
+  "tags": [
+   "تكرار المؤثر",
+   "تنويع",
+   "ملل",
+   "round robin",
+   "variation"
+  ],
+  "id": "BEAT-239",
+  "when": "حين يتكرر نفس المؤثر كثيرًا وتريد نسخًا متنوعة حتى لا يمل السامع / when a repeated sound effect needs round-robin variants to avoid listener fatigue"
  },
  {
   "family": "music-beat-sound",
@@ -5086,8 +6850,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-240"
+  "tags": [
+   "تأخير الصوت",
+   "صمت البداية",
+   "مزامنة",
+   "latency",
+   "trim silence"
+  ],
+  "id": "BEAT-240",
+  "when": "حين يبدو المؤثر متأخرًا عن الحركة بسبب صمت في بدايته / when a sound effect feels late because of leading silence before its transient"
  },
  {
   "family": "music-beat-sound",
@@ -5105,8 +6876,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-241"
+  "tags": [
+   "جدول الأصوات",
+   "تصنيف الصوت",
+   "تايم كود",
+   "cue sheet",
+   "sound log"
+  ],
+  "id": "BEAT-241",
+  "when": "حين تحتاج جدولًا يصنف كل صوت في الفيلم ودوره وتوقيته وسبب مراجعته / when logging every sound by role, timecode and intent in a cue sheet"
  },
  {
   "family": "music-beat-sound",
@@ -5124,8 +6902,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-242"
+  "tags": [
+   "صوت الغرفة",
+   "فجوات صمت",
+   "انقطاع الصوت",
+   "room tone",
+   "dialogue gaps"
+  ],
+  "id": "BEAT-242",
+  "when": "حين تترك القطعات فجوات صمت رقمي في الكلام وتريد ملأها بصوت الغرفة / when cuts leave digital silence gaps that need matching room tone"
  },
  {
   "family": "music-beat-sound",
@@ -5144,8 +6929,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-243"
+  "tags": [
+   "تقصير الموسيقى",
+   "طول الأغنية",
+   "قص الموسيقى",
+   "music edit",
+   "fit to length"
+  ],
+  "id": "BEAT-243",
+  "when": "حين تحتاج تقصير أغنية أو إطالتها بالقطع عند نقاط بار متطابقة / when shortening or extending a track to length by cutting on matching bars"
  },
  {
   "family": "music-beat-sound",
@@ -5166,8 +6958,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-244"
+  "tags": [
+   "تعليق صوتي",
+   "خفض تلقائي",
+   "سايدتشين",
+   "narration",
+   "auto duck"
+  ],
+  "id": "BEAT-244",
+  "when": "حين تريد خفض الموسيقى تلقائيًا تحت التعليق الصوتي / when music should dip automatically under narration"
  },
  {
   "family": "music-beat-sound",
@@ -5187,8 +6986,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-245"
+  "tags": [
+   "ستيريو",
+   "مونو",
+   "توسيع الصوت",
+   "stereo width",
+   "phase"
+  ],
+  "id": "BEAT-245",
+  "when": "حين توسع الستيريو وتريد ألا يضيع الصوت عند تشغيله مونو / when widening stereo without tones cancelling on mono playback"
  },
  {
   "family": "music-beat-sound",
@@ -5209,8 +7015,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-246"
+  "tags": [
+   "ماستر الموسيقى",
+   "ليمتر",
+   "جهارة",
+   "limiter",
+   "high pass"
+  ],
+  "id": "BEAT-246",
+  "when": "حين تحتاج ماستر نهائي للموسيقى يصل لهدف الجهارة بدقة / when mastering a music track to hit a loudness target precisely"
  },
  {
   "family": "music-beat-sound",
@@ -5228,8 +7041,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-247"
+  "tags": [
+   "انزلاق النغمة",
+   "فيبراتو",
+   "توليد الصوت",
+   "pitch glide",
+   "vibrato"
+  ],
+  "id": "BEAT-247",
+  "when": "حين تولد بالكود انزلاقًا في النغمة أو اهتزازًا وتريد سرعة الانزلاق صحيحة / when synthesizing pitch glides or vibrato in code without sweeping too fast"
  },
  {
   "family": "music-beat-sound",
@@ -5249,8 +7069,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-248"
+  "tags": [
+   "قبل النشر",
+   "سوشيال ميديا",
+   "بودكاست",
+   "social media",
+   "two pass"
+  ],
+  "id": "BEAT-248",
+  "when": "حين تضبط جهارة الفيديو أو البودكاست قبل النشر على السوشيال / when normalizing loudness for social video or podcast before publishing"
  },
  {
   "family": "music-beat-sound",
@@ -5268,8 +7095,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-249"
+  "tags": [
+   "عدد المؤثرات",
+   "زحمة المؤثرات",
+   "توقيت المؤثرات",
+   "sfx density",
+   "sfx timing"
+  ],
+  "id": "BEAT-249",
+  "when": "حين تحدد كم مؤثرًا تضع وفي أي إطارات من حركة العنصر / when deciding how many sound effects to use and on which motion frames"
  },
  {
   "family": "music-beat-sound",
@@ -5287,8 +7121,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-250"
+  "tags": [
+   "مدة الضربة",
+   "حساب الإيقاع",
+   "زووم",
+   "beat length",
+   "downbeat"
+  ],
+  "id": "BEAT-250",
+  "when": "حين تحسب مدة الضربة من السرعة لتضع التغييرات الكبيرة والزوم على الإيقاع / when computing beat length from BPM to place big changes and punch zooms"
  },
  {
   "family": "music-beat-sound",
@@ -5306,8 +7147,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-251"
+  "tags": [
+   "صوت صاعد",
+   "ترقب",
+   "ترانزيشن",
+   "riser",
+   "anticipation"
+  ],
+  "id": "BEAT-251",
+  "when": "حين تريد بناء ترقب قبل القطع بصوت صاعد / when building anticipation with a riser or whoosh just before a cut"
  },
  {
   "family": "music-beat-sound",
@@ -5326,8 +7174,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-252"
+  "tags": [
+   "ضربة صوتية",
+   "صب دروب",
+   "ترانزيشن",
+   "impact",
+   "sub drop"
+  ],
+  "id": "BEAT-252",
+  "when": "حين تريد ضربة قوية أو هبوطًا عميقًا يقع تمامًا على إطار القطع / when an impact or sub-drop should land exactly on the cut frame"
  },
  {
   "family": "music-beat-sound",
@@ -5348,8 +7203,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-253"
+  "tags": [
+   "مونتاج سريع",
+   "تلوين",
+   "تجميع مقاطع",
+   "montage",
+   "color grade"
+  ],
+  "id": "BEAT-253",
+  "when": "حين يعطيك المستخدم مقاطع وأغنية ويريد مونتاج مقطوع على الإيقاع بتلوين / when the user gives clips and a song and wants a beat-cut montage with a colour grade"
  },
  {
   "family": "music-beat-sound",
@@ -5369,8 +7231,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-254"
+  "tags": [
+   "موسيقى خلفية",
+   "بدون حقوق",
+   "توليد موسيقى",
+   "royalty free",
+   "background music"
+  ],
+  "id": "BEAT-254",
+  "when": "حين يحتاج الفيلم موسيقى خلفية أصلية بلا حقوق تولد على سرعة محددة / when a film needs an original royalty-free music bed generated at a set tempo"
  },
  {
   "family": "music-beat-sound",
@@ -5388,8 +7257,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-255"
+  "tags": [
+   "ترانزيشن",
+   "مؤثرات انتقال",
+   "ووش",
+   "transition sfx",
+   "whoosh"
+  ],
+  "id": "BEAT-255",
+  "when": "حين تريد انتقالًا مقنعًا بصوت صاعد قبل القطع وضربة عليه / when selling a transition with a riser before the cut and an impact on it"
  },
  {
   "family": "music-beat-sound",
@@ -5409,8 +7285,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-256"
+  "tags": [
+   "معالجة الصوت",
+   "إكولايزر",
+   "كمبريسور",
+   "eq",
+   "compression"
+  ],
+  "id": "BEAT-256",
+  "when": "حين تحتاج ترتيبًا وأرقامًا محددة لمعالجة الصوت والموسيقى دون برنامج مكساج / when you need a concrete processing order with numbers for voice and music"
  },
  {
   "family": "music-beat-sound",
@@ -5428,8 +7311,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-257"
+  "tags": [
+   "مقامات",
+   "موسيقى عربية",
+   "حجاز",
+   "maqam",
+   "arabic music"
+  ],
+  "id": "BEAT-257",
+  "when": "حين تختار مقامًا عربيًا يناسب مشاعر المحتوى عند كتابة وصف الموسيقى / when choosing an Arabic maqam by mood for a music prompt"
  },
  {
   "family": "music-beat-sound",
@@ -5447,8 +7337,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-258"
+  "tags": [
+   "مقسوم",
+   "إيقاع خليجي",
+   "صعيدي",
+   "maqsum",
+   "arabic beat"
+  ],
+  "id": "BEAT-258",
+  "when": "حين تحتاج إيقاعًا عربيًا كالمقسوم أو البلدي أو الخليجي لمونتاج أو وصف موسيقى / when picking an Arabic rhythm like maqsum or khaleeji for edits or music prompts"
  },
  {
   "family": "music-beat-sound",
@@ -5466,8 +7363,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-259"
+  "tags": [
+   "عود",
+   "قانون",
+   "ناي",
+   "oud",
+   "darbuka"
+  ],
+  "id": "BEAT-259",
+  "when": "حين تذكر آلات عربية كالعود والقانون والناي في وصف موسيقى أو تصميم صوت / when naming Arabic instruments like oud, qanun or ney in a music prompt"
  },
  {
   "family": "music-beat-sound",
@@ -5486,8 +7390,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-260"
+  "tags": [
+   "كلمات أغنية",
+   "قافية",
+   "تأليف أغنية",
+   "song brief",
+   "lyrics"
+  ],
+  "id": "BEAT-260",
+  "when": "حين تكتب موجز أغنية بكلمات أصلية وتحتاج مدد الضربة والبار لقص الفيديو عليها / when writing an original-lyrics song brief and beat/bar timings for cutting video"
  },
  {
   "family": "music-beat-sound",
@@ -5509,8 +7420,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-261"
+  "tags": [
+   "مستوى الصوت",
+   "منصات",
+   "بودكاست",
+   "loudness target",
+   "true peak"
+  ],
+  "id": "BEAT-261",
+  "when": "حين تحتاج مستوى الجهارة المناسب للمنصة أو البودكاست قبل التسليم / when you need the right loudness target for platform video or podcast"
  },
  {
   "family": "music-beat-sound",
@@ -5528,8 +7446,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-262"
+  "tags": [
+   "خفض الموسيقى",
+   "سايدتشين",
+   "صوت فوق موسيقى",
+   "sidechain",
+   "music under voice"
+  ],
+  "id": "BEAT-262",
+  "when": "حين تريد أن تنخفض الموسيقى تلقائيًا كلما تكلم الصوت / when music should be compressed automatically whenever the voice speaks"
  },
  {
   "family": "music-beat-sound",
@@ -5550,8 +7475,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-263"
+  "tags": [
+   "تحسين الصوت",
+   "ماستر",
+   "إزالة الطنين",
+   "audio master",
+   "loudness report"
+  ],
+  "id": "BEAT-263",
+  "when": "حين تريد ماستر لملف صوتي مع قياس قبل وبعد وتقرير بالنتيجة / when mastering an audio file with measurement, cleanup, EQ, limiting and a before/after report"
  },
  {
   "family": "music-beat-sound",
@@ -5569,8 +7501,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-264"
+  "tags": [
+   "تفاعل مع الصوت",
+   "تنعيم",
+   "جهير",
+   "audio reactive",
+   "smoothing"
+  ],
+  "id": "BEAT-264",
+  "when": "حين تربط حركة العناصر بالصوت وتحتاج قواعد تنعيم وعدد خصائص محدود / when binding motion to audio with smoothing and only 2-3 driven properties"
  },
  {
   "family": "music-beat-sound",
@@ -5588,8 +7527,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-265"
+  "tags": [
+   "قواعد التقطيع",
+   "ريلز",
+   "نبض الصورة",
+   "reels",
+   "cut rate"
+  ],
+  "id": "BEAT-265",
+  "when": "حين تقطع على الإيقاع وتريد قواعد للمسافة بين القطعات ونبض الصورة / when cutting on beats with rules for cut spacing and a visual hit scale"
  },
  {
   "family": "music-beat-sound",
@@ -5607,8 +7553,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-266"
+  "tags": [
+   "نقاط القطع",
+   "خطة مونتاج",
+   "جمل",
+   "cut points",
+   "edit plan"
+  ],
+  "id": "BEAT-266",
+  "when": "حين تحدد نقاط القطع على كل ضربة أو نهاية جملة انطلاقًا من السرعة / when setting cut points on each beat or sentence from the track BPM"
  },
  {
   "family": "music-beat-sound",
@@ -5626,8 +7579,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-267"
+  "tags": [
+   "دعاية",
+   "اعلان تجاري",
+   "تعليق صوتي",
+   "commercial",
+   "advert"
+  ],
+  "id": "BEAT-267",
+  "when": "حين تعمل صوت إعلان: قطع على الموسيقى وتعليق يقود المزايا وشعار على الضربة الأخيرة / when building ad audio: music-grid cuts, VO-led features, logo on the final hit"
  },
  {
   "family": "music-beat-sound",
@@ -5648,8 +7608,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-268"
+  "tags": [
+   "صوت الراوي",
+   "موسيقى خلفية",
+   "تخفيض الصوت",
+   "keyframed volume",
+   "narration"
+  ],
+  "id": "BEAT-268",
+  "when": "حين تريد خفض الموسيقى تحت صوت الراوي بالسايدتشين أو بمفاتيح الحجم / when ducking music under narration via sidechain or keyframed volume"
  },
  {
   "family": "music-beat-sound",
@@ -5669,8 +7636,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-269"
+  "tags": [
+   "توحيد الصوت",
+   "سوشيال",
+   "مستوى الصوت",
+   "loudnorm",
+   "social delivery"
+  ],
+  "id": "BEAT-269",
+  "when": "حين تضبط جهارة المكساج النهائي لنشره على السوشيال ميديا / when normalizing the final mix loudness for social media delivery"
  },
  {
   "family": "music-beat-sound",
@@ -5688,8 +7662,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-270"
+  "tags": [
+   "صوت كيبورد",
+   "نقرات",
+   "صوت خافت",
+   "keyboard click",
+   "typing"
+  ],
+  "id": "BEAT-270",
+  "when": "حين تضيف نقرات كيبورد خافتة اختيارية على الإيقاع أو التوقفات / when adding optional quiet keyboard clicks on beats or pauses"
  },
  {
   "family": "music-beat-sound",
@@ -5707,8 +7688,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-271"
+  "tags": [
+   "صوت الطباشير",
+   "صوت الماركر",
+   "رسم يدوي",
+   "drawing sound",
+   "chalk"
+  ],
+  "id": "BEAT-271",
+  "when": "حين يرسم الفيديو بالماركر أو الطباشير وتريد صوتًا خافتًا أثناء الرسم فقط / when adding soft marker or chalk sounds only while drawing"
  },
  {
   "family": "music-beat-sound",
@@ -5726,8 +7714,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-272"
+  "tags": [
+   "بنية الأغنية",
+   "دروب",
+   "أجزاء الأغنية",
+   "drop",
+   "song sections"
+  ],
+  "id": "BEAT-272",
+  "when": "حين تقسم الأغنية إلى مقدمة وبناء ودروب وخاتمة وتربط كل جزء بأسلوب بصري / when mapping a song's intro, verse, build, drop and outro to visual modes"
  },
  {
   "family": "music-beat-sound",
@@ -5745,8 +7740,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-273"
+  "tags": [
+   "ضربات قوية",
+   "تأكيد",
+   "حركة على الإيقاع",
+   "accents",
+   "downbeats"
+  ],
+  "id": "BEAT-273",
+  "when": "حين تفرق بين الضربات القوية والضعيفة فتضع القطع والحركات الكبيرة على القوية / when putting cuts and big moves on strong beats and small accents on weak ones"
  },
  {
   "family": "music-beat-sound",
@@ -5764,8 +7766,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-274"
+  "tags": [
+   "حساب الإيقاع",
+   "تقريب الإطارات",
+   "فريم",
+   "frame rounding",
+   "beat math"
+  ],
+  "id": "BEAT-274",
+  "when": "حين تحسب مدة الضربة وتقرب نقاط القطع لأقرب إطار / when calculating beat length and rounding cuts to the nearest frame"
  },
  {
   "family": "music-beat-sound",
@@ -5788,8 +7797,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-275"
+  "tags": [
+   "تنعيم",
+   "مستوى الصوت",
+   "تحريك بالصوت",
+   "rms",
+   "remotion"
+  ],
+  "id": "BEAT-275",
+  "when": "حين تحتاج قيم صوت منعمة ومحسوبة مسبقًا لتحريك العناصر بثبات / when you need smoothed, precomputed audio values to drive animation deterministically"
  },
  {
   "family": "music-beat-sound",
@@ -5807,8 +7823,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-276"
+  "tags": [
+   "تصاعد",
+   "دروب",
+   "ذروة",
+   "build up",
+   "drop"
+  ],
+  "id": "BEAT-276",
+  "when": "حين تبني تصاعدًا بقطعات متسارعة ثم لحظة سوداء ثم لقطة البطل على الدروب / when building up with accelerating cuts, a beat of black, then a hero frame on the drop"
  },
  {
   "family": "music-beat-sound",
@@ -5826,8 +7849,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-277"
+  "tags": [
+   "اكولايزر",
+   "أعمدة الصوت",
+   "مرئيات صوتية",
+   "visualizer",
+   "fft"
+  ],
+  "id": "BEAT-277",
+  "when": "حين تريد أعمدة معادل صوتي متماثلة ومنعمة تتحرك مع الصوت / when you want smoothed, mirrored FFT equalizer bars"
  },
  {
   "family": "music-beat-sound",
@@ -5846,8 +7876,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-278"
+  "tags": [
+   "حقوق الموسيقى",
+   "ترخيص",
+   "كوبي رايت",
+   "copyright",
+   "licensed music"
+  ],
+  "id": "BEAT-278",
+  "when": "حين تختار موسيقى للفيديو وتريد التأكد أنها من المستخدم أو مرخصة / when picking music for a video and it must be user-provided or licensed"
  },
  {
   "family": "music-beat-sound",
@@ -5865,8 +7902,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-279"
+  "tags": [
+   "صوت نقر",
+   "صوت سحب",
+   "مستويات المؤثرات",
+   "tap sound",
+   "swipe"
+  ],
+  "id": "BEAT-279",
+  "when": "حين تضيف أصوات نقر وسحب بمستويات ثابتة مخفضة تحت الصوت / when adding tap and swipe sounds at fixed levels ducked under voice"
  },
  {
   "family": "music-beat-sound",
@@ -5884,8 +7928,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-280"
+  "tags": [
+   "أصوات الواجهة",
+   "نقرة",
+   "تغيير الشاشة",
+   "ui sound",
+   "screen change"
+  ],
+  "id": "BEAT-280",
+  "when": "حين تضع أصوات الواجهة باعتدال: نقرة لكل ضغطة وصوت لكل تغيير شاشة / when keeping UI sound sparse: one click per press, one swish per screen change"
  },
  {
   "family": "music-beat-sound",
@@ -5904,8 +7955,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-281"
+  "tags": [
+   "مؤثرات مجانية",
+   "مكتبة أصوات",
+   "بدون حقوق",
+   "cc0",
+   "free sfx"
+  ],
+  "id": "BEAT-281",
+  "when": "حين تحتاج مؤثرات واجهة أو ضربات أو كيبورد جاهزة مرخصة CC0 ضمن المشروع / when you need bundled CC0 UI, impact or keyboard sound effects"
  },
  {
   "family": "music-beat-sound",
@@ -5924,8 +7982,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-282"
+  "tags": [
+   "توقيتات الموسيقى",
+   "شبكة إيقاع",
+   "لحظات قوية",
+   "strong cues",
+   "beat grid"
+  ],
+  "id": "BEAT-282",
+  "when": "حين تخطط أول ثواني الفيديو على لحظات قوية جاهزة في ملفات إشارات الموسيقى / when planning the first 20-25 s on strong cues from ready music cue files"
  },
  {
   "family": "music-beat-sound",
@@ -5950,8 +8015,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "BEAT-283"
+  "tags": [
+   "بودكاست",
+   "فيديو عمودي",
+   "ترجمة",
+   "vertical video",
+   "whisper"
+  ],
+  "id": "BEAT-283",
+  "when": "حين تحول مقطع بودكاست إلى فيديو عمودي بترجمة كلمة كلمة وصوت منظف / when turning a podcast clip into a vertical captioned video"
  },
  {
   "family": "music-beat-sound",
@@ -5971,8 +8043,15 @@
   "styles": [
    "pm-abderrahmen-g-9e8ed0"
   ],
-  "tags": [],
-  "id": "BEAT-284"
+  "tags": [
+   "أصوات بالكود",
+   "زيلوفون",
+   "توليد الصوت",
+   "web audio",
+   "oscillator"
+  ],
+  "id": "BEAT-284",
+  "when": "حين تريد مؤثرات كالنقرة والزيلوفون مولدة بالكود ومتزامنة مع ساعة الحركة / when synthesizing SFX like clicks or xylophone in Web Audio on the animation clock"
  },
  {
   "family": "music-beat-sound",
@@ -5992,8 +8071,15 @@
   "styles": [
    "pm-aschapmann-131210"
   ],
-  "tags": [],
-  "id": "BEAT-285"
+  "tags": [
+   "صوت ظهور",
+   "تك",
+   "بدون موسيقى",
+   "entrance sfx",
+   "minimal sound"
+  ],
+  "id": "BEAT-285",
+  "when": "حين تريد صوت تك خفيفًا لكل عنصر يظهر مع صمت فيما عدا ذلك وبلا موسيقى / when each appearing element gets one soft tick and there is no music bed"
  },
  {
   "family": "music-beat-sound",
@@ -6013,8 +8099,15 @@
   "styles": [
    "pm-davidshulmanfl-371638"
   ],
-  "tags": [],
-  "id": "BEAT-286"
+  "tags": [
+   "تبديل الفم",
+   "تغيير الديكور",
+   "شبكة ضربات",
+   "mouth swap",
+   "wipes"
+  ],
+  "id": "BEAT-286",
+  "when": "حين يجب اشتقاق كل ضربة وتبديل فم وتغيير ديكور من شبكة إيقاع واحدة / when every hit, mouth swap and set change must follow one beat grid"
  },
  {
   "family": "music-beat-sound",
@@ -6036,8 +8129,15 @@
   "styles": [
    "pm-deifosv-04e4d3"
   ],
-  "tags": [],
-  "id": "BEAT-287"
+  "tags": [
+   "كشف السرعة",
+   "تحليل الأغنية",
+   "ضربة أولى",
+   "beat tracking",
+   "librosa"
+  ],
+  "id": "BEAT-287",
+  "when": "حين لا تعرف سرعة الأغنية وتريد كشفها ووضع القطعات على الضربات الأولى / when you need to detect a track's BPM and place cuts on downbeats"
  },
  {
   "family": "music-beat-sound",
@@ -6057,8 +8157,15 @@
   "styles": [
    "pm-itisrazak-3ad902"
   ],
-  "tags": [],
-  "id": "BEAT-288"
+  "tags": [
+   "زووم",
+   "دفعة كاميرا",
+   "علامات الإيقاع",
+   "punch in",
+   "zoom"
+  ],
+  "id": "BEAT-288",
+  "when": "حين تريد زووم سريع يقع على علامات الضربات بدقة إطارين / when punch-in zooms must land within 2 frames of beat markers"
  },
  {
   "family": "music-beat-sound",
@@ -6078,8 +8185,15 @@
   "styles": [
    "pm-jake11moran-a269c4"
   ],
-  "tags": [],
-  "id": "BEAT-289"
+  "tags": [
+   "أصوات الكتابة",
+   "كثافة الموسيقى",
+   "خفض",
+   "typing",
+   "score arc"
+  ],
+  "id": "BEAT-289",
+  "when": "حين تتغير كثافة الموسيقى مع مراحل الجلسة وتنخفض تحت أصوات الكتابة / when music density follows the session arc and ducks under typing sounds"
  },
  {
   "family": "music-beat-sound",
@@ -6099,8 +8213,15 @@
   "styles": [
    "pm-kamstudiolabs-0b0824"
   ],
-  "tags": [],
-  "id": "BEAT-290"
+  "tags": [
+   "صمت",
+   "بدون تعليق",
+   "قطع على الصوت",
+   "silence",
+   "no narration"
+  ],
+  "id": "BEAT-290",
+  "when": "حين تقطع على أحداث الصوت دون تعليق صوتي مع لحظة صمت مقصودة / when cutting on sound events with no narration and a deliberate held silence"
  },
  {
   "family": "music-beat-sound",
@@ -6120,8 +8241,15 @@
   "styles": [
    "pm-kantamk-61f410"
   ],
-  "tags": [],
-  "id": "BEAT-291"
+  "tags": [
+   "ارتفاع النغمة",
+   "تصاعد",
+   "تكرار",
+   "pitch step",
+   "rising tone"
+  ],
+  "id": "BEAT-291",
+  "when": "حين تريد أن ترتفع النغمة درجة مع كل مرور أو تكرار / when each pass or repeat should raise the synth pitch a step"
  },
  {
   "family": "music-beat-sound",
@@ -6141,8 +8269,15 @@
   "styles": [
    "pm-reflex-cloud-72ffe5"
   ],
-  "tags": [],
-  "id": "BEAT-292"
+  "tags": [
+   "دقة الإطار",
+   "جدول توقيت",
+   "مزامنة",
+   "frame accurate",
+   "timing table"
+  ],
+  "id": "BEAT-292",
+  "when": "حين يجب أن تقع كل حركة تفاعلية خلال إطار أو اثنين من الضربة / when every reaction must land within 1-2 frames of the beat from a shared timing table"
  },
  {
   "family": "music-beat-sound",
@@ -6162,8 +8297,15 @@
   "styles": [
    "pm-samaote-5e2fc2"
   ],
-  "tags": [],
-  "id": "BEAT-293"
+  "tags": [
+   "كيك",
+   "نبض",
+   "طبلة",
+   "kick drum",
+   "scale pulse"
+  ],
+  "id": "BEAT-293",
+  "when": "حين يكبر العنصر قليلًا مع كل كيك ثم يعود بتلاش أسي / when an element should pump in scale on each kick drum and decay back"
  },
  {
   "family": "music-beat-sound",
@@ -6183,8 +8325,15 @@
   "styles": [
    "pm-xelandre-363f00"
   ],
-  "tags": [],
-  "id": "BEAT-294"
+  "tags": [
+   "نغمات الواجهة",
+   "توليد الصوت",
+   "حدة الصوت",
+   "ui tones",
+   "offlineaudiocontext"
+  ],
+  "id": "BEAT-294",
+  "when": "حين تريد نغمة مولدة لكل حدث في الواجهة تتغير حدتها حسب موضعه الرأسي / when generating a tone per UI event with pitch from vertical position"
  },
  {
   "id": "BEAT-P01",
@@ -6213,8 +8362,14 @@
    "numpy",
    "مؤثرات",
    "نقرة",
-   "صوت مولد"
-  ]
+   "صوت مولد",
+   "تزامن الصوت والحركة",
+   "بدون ملفات صوت",
+   "تيك",
+   "motion sync",
+   "wav"
+  ],
+  "when": "حين تريد مؤثرات قصيرة مولدة بمعادلة على كل حدث بصري بلا ملفات صوت خارجية / when you need formula-generated chirps on each visual event with no external audio files"
  },
  {
   "id": "BEAT-X01",

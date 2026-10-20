@@ -22,7 +22,9 @@ What a preset sets (all of it real Blender settings, editable in the saved .blen
 
 Blender is found from KOSIF_BLENDER, PATH, ~/KOSIF-Tools/Blender*/…/blender(.exe), Program Files, /Applications or
 /usr/bin; when no executable exists the `bpy` module (pip install bpy) runs the same code. Every result prints one JSON
-line {"op","output","metrics","verified"}; "verified" means the file was rendered and measured (size, not blank).
+line {"op","output","metrics","verified"}; "verified" means the file was rendered and measured (size, not blank; with
+Pillow, or a slower stdlib PNG decoder without it). A failure prints {"op","status":"error","error"} (plus "trace" when
+a step inside Blender raised) and exits 1.
 """
 import argparse
 import glob
@@ -127,44 +129,131 @@ def bpy_python():
     return None
 
 
-def run_inside(job):
-    """Run this file inside Blender (executable, or bpy module) with a job; return the receipt."""
-    tmp = Path(tempfile.mkdtemp(prefix="kosif-blender-"))
-    jp = tmp / "job.json"
-    job["receipt"] = str(tmp / "receipt.json")
-    jp.write_text(json.dumps(job, ensure_ascii=False), encoding="utf-8")
+def blender_runner():
+    """(command prefix, runner name, executable) that runs this file inside Blender, or the bpy module."""
     exe = find_blender()
     if exe:
-        cmd = [exe, "-b", "--factory-startup", "--python", str(HERE), "--", "--job", str(jp)]
-        runner = "blender"
-    else:
-        py = bpy_python()
-        if not py:
-            raise RuntimeError("Blender not found: set KOSIF_BLENDER to blender(.exe), put it on PATH, "
-                               "or `pip install bpy` (Blender as a Python module)")
-        cmd, runner = [py, str(HERE), "--job", str(jp)], "bpy-module"
-    t0 = time.time()
-    proc = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
-    rp = Path(job["receipt"])
-    if not rp.exists():
-        tail = "\n".join((proc.stdout + proc.stderr).splitlines()[-25:])
-        raise RuntimeError(f"Blender run failed (exit {proc.returncode}):\n{tail}")
-    rec = json.loads(rp.read_text(encoding="utf-8"))
-    rec["runner"], rec["blender"], rec["wall_seconds"] = runner, exe, round(time.time() - t0, 1)
-    shutil.rmtree(tmp, ignore_errors=True)
+        return [exe, "-b", "--factory-startup", "--python", str(HERE), "--"], "blender", exe
+    py = bpy_python()
+    if not py:
+        raise RuntimeError("Blender not found: set KOSIF_BLENDER to blender(.exe), put it on PATH, "
+                           "or `pip install bpy` (Blender as a Python module)")
+    return [py, str(HERE)], "bpy-module", None
+
+
+def run_inside(job, runner=None):
+    """Run this file inside Blender (executable, or bpy module) with a job; return the receipt.
+    A receipt with "error" (and "trace") means a step inside Blender raised."""
+    prefix, name, exe = runner or blender_runner()
+    tmp = Path(tempfile.mkdtemp(prefix="kosif-blender-"))
+    try:
+        jp = tmp / "job.json"
+        job["receipt"] = str(tmp / "receipt.json")
+        jp.write_text(json.dumps(job, ensure_ascii=False), encoding="utf-8")
+        t0 = time.time()
+        proc = subprocess.run(prefix + ["--job", str(jp)], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        rp = Path(job["receipt"])
+        if not rp.exists():
+            tail = "\n".join((proc.stdout + proc.stderr).splitlines()[-25:])
+            raise RuntimeError(f"Blender run failed (exit {proc.returncode}):\n{tail}")
+        rec = json.loads(rp.read_text(encoding="utf-8"))
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+    rec["runner"], rec["blender"], rec["wall_seconds"] = name, exe, round(time.time() - t0, 1)
     return rec
 
 
+def failure(op, error, trace=None):
+    """Print {op, status:error, error[, trace]} for a run that failed (trace: the traceback from inside Blender); exit code 1."""
+    out = {"op": op, "status": "error", "error": str(error)[-1500:]}
+    if trace:
+        out["trace"] = trace[-1500:]
+    print(json.dumps(out, ensure_ascii=False))
+    return 1
+
+
 def measure_png(path):
-    """Size and brightness statistics of a rendered PNG (pure stdlib decode is overkill: use Pillow when present)."""
+    """Size and brightness statistics of a rendered PNG: Pillow when present, else the stdlib decoder below."""
     try:
         from PIL import Image, ImageStat
-        im = Image.open(path).convert("RGB")
-        st = ImageStat.Stat(im)
-        return {"size": list(im.size), "mean": [round(v, 1) for v in st.mean], "std": [round(v, 1) for v in st.stddev]}
     except ImportError:
-        data = Path(path).read_bytes()
-        return {"bytes": len(data), "png": data.startswith(b"\x89PNG")}
+        return png_stats_stdlib(Path(path).read_bytes())
+    im = Image.open(path).convert("RGB")
+    st = ImageStat.Stat(im)
+    return {"size": list(im.size), "mean": [round(v, 1) for v in st.mean], "std": [round(v, 1) for v in st.stddev]}
+
+
+def png_stats_stdlib(data):
+    """Pillow-free RGB mean/std of a non-interlaced PNG (8/16-bit gray, RGB, palette, +alpha); slow but exact.
+    Without "std" (not a PNG, interlaced, unusual depth) the render counts as unverified, never as passed."""
+    import struct
+    import zlib
+    info = {"bytes": len(data), "png": data.startswith(b"\x89PNG\r\n\x1a\n"), "decoder": "stdlib"}
+    if not info["png"]:
+        return info
+    try:
+        pos, idat, head, palette = 8, [], None, None
+        while pos + 8 <= len(data):
+            size, kind = struct.unpack(">I4s", data[pos:pos + 8])
+            body = data[pos + 8:pos + 8 + size]
+            if kind == b"IHDR":
+                head = struct.unpack(">IIBBBBB", body)
+            elif kind == b"PLTE":
+                palette = [tuple(body[i:i + 3]) for i in range(0, len(body) - 2, 3)]
+            elif kind == b"IDAT":
+                idat.append(body)
+            elif kind == b"IEND":
+                break
+            pos += 12 + size
+        if not head:
+            return info
+        w, h, depth, ctype, _, _, interlace = head
+        info["size"] = [w, h]
+        chans = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}.get(ctype)
+        if not chans or interlace or depth not in ((8,) if ctype == 3 else (8, 16)) or (ctype == 3 and not palette):
+            info["unsupported"] = f"color type {ctype}, depth {depth}, interlace {interlace}"
+            return info
+        step = depth // 8
+        bpp, stride = chans * step, w * chans * step
+        raw = zlib.decompress(b"".join(idat))
+        prev = bytearray(stride)
+        total = [0, 0, 0]
+        squares = [0, 0, 0]
+        for y in range(h):
+            kind, line = raw[y * (stride + 1)], bytearray(raw[y * (stride + 1) + 1:(y + 1) * (stride + 1)])
+            if kind == 1:
+                for x in range(bpp, stride):
+                    line[x] = (line[x] + line[x - bpp]) & 255
+            elif kind == 2:
+                line = bytearray((a + b) & 255 for a, b in zip(line, prev))
+            elif kind == 3:
+                for x in range(stride):
+                    line[x] = (line[x] + ((line[x - bpp] if x >= bpp else 0) + prev[x]) // 2) & 255
+            elif kind == 4:
+                for x in range(stride):
+                    a = line[x - bpp] if x >= bpp else 0
+                    b, c = prev[x], (prev[x - bpp] if x >= bpp else 0)
+                    pa, pb, pc = abs(b - c), abs(a - c), abs(a + b - 2 * c)
+                    line[x] = (line[x] + (a if pa <= pb and pa <= pc else b if pb <= pc else c)) & 255
+            elif kind:
+                raise ValueError(f"bad filter type {kind} in row {y}")
+            prev = line
+            if ctype == 3:
+                rgb = [palette[i] if i < len(palette) else (0, 0, 0) for i in line]
+                planes = [[px[k] for px in rgb] for k in range(3)]
+            else:
+                first = line[::step]  # high byte of each 16-bit sample
+                planes = [first[k::chans] for k in ((0, 0, 0) if chans < 3 else (0, 1, 2))]
+            for k in range(3):
+                total[k] += sum(planes[k])
+                squares[k] += sum(v * v for v in planes[k])
+        n = max(1, w * h)
+        info["mean"] = [round(t / n, 1) for t in total]
+        info["std"] = [round(max(0.0, q / n - (t / n) ** 2) ** 0.5, 1) for t, q in zip(total, squares)]
+        return info
+    except (struct.error, zlib.error, IndexError, ValueError) as exc:
+        info["unsupported"] = f"unreadable PNG: {exc}"
+        return info
 
 
 def encode_mp4(frames_dir, fps, out):
@@ -174,6 +263,17 @@ def encode_mp4(frames_dir, fps, out):
     cmd = [ff, "-y", "-loglevel", "error", "-framerate", str(fps), "-i", str(Path(frames_dir) / "frame_%04d.png"),
            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "16", "-movflags", "+faststart", str(out)]
     return str(out) if subprocess.run(cmd).returncode == 0 else None
+
+
+def resolution(text):
+    """argparse type for --res: WxH with positive whole numbers, returned as (W, H)."""
+    try:
+        w, h = (int(v) for v in text.lower().split("x"))
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"expected WxH such as 1920x1080, got {text!r}") from None
+    if w < 1 or h < 1:
+        raise argparse.ArgumentTypeError(f"width and height must be positive, got {text!r}")
+    return w, h
 
 
 def cli(argv=None):
@@ -186,7 +286,7 @@ def cli(argv=None):
     r = sub.add_parser("render")
     r.add_argument("--preset", default="product-hero", choices=sorted(PRESETS))
     r.add_argument("--model", help=".glb .gltf .fbx .obj .stl .ply .usd/.usdz .abc or .blend (objects appended)")
-    r.add_argument("--res", default="1920x1080", help="WxH before --quality scaling; anamorphic-epic keeps 2.39:1")
+    r.add_argument("--res", default="1920x1080", type=resolution, help="WxH before --quality scaling; anamorphic-epic keeps 2.39:1")
     r.add_argument("--quality", default="draft", choices=sorted(QUALITY))
     r.add_argument("--samples", type=int)
     r.add_argument("--frames", type=int, default=1)
@@ -218,13 +318,26 @@ def cli(argv=None):
                          ensure_ascii=False))
         return 0
     if a.cmd == "inventory":
-        rec = run_inside({"cmd": "inventory", "out": str(Path(a.out).resolve())})
-        print(json.dumps({"op": "inventory", "output": a.out, "metrics": rec.get("summary", {}), "verified": Path(a.out).exists()},
+        dest = Path(a.out).resolve()
+        if not dest.parent.is_dir():
+            iv.error(f"the folder for -o does not exist: {dest.parent}")
+        try:
+            rec = run_inside({"cmd": "inventory", "out": str(dest)})
+        except Exception as exc:  # noqa: BLE001
+            return failure("inventory", exc)
+        if rec.get("error"):
+            return failure("inventory", rec["error"], rec.get("trace"))
+        ok = dest.is_file()
+        print(json.dumps({"op": "inventory", "output": a.out, "metrics": rec.get("summary", {}), "verified": ok},
                          ensure_ascii=False))
-        return 0
+        return 0 if ok else 1
     out = Path(a.out).resolve()
+    W, H = a.res
+    try:  # find Blender before creating the output folder or any temp folder
+        runner = blender_runner()
+    except RuntimeError as exc:
+        return failure("render", exc)
     out.parent.mkdir(parents=True, exist_ok=True)
-    W, H = (int(v) for v in a.res.lower().split("x"))
     animated = a.frames > 1
     frames_dir = Path(tempfile.mkdtemp(prefix="kosif-frames-")) if animated else None
     job = {"cmd": "render", "preset": a.preset, "model": str(Path(a.model).resolve()) if a.model else None,
@@ -235,10 +348,13 @@ def cli(argv=None):
            "frames_dir": str(frames_dir) if animated else None}
     t0 = time.time()
     try:
-        rec = run_inside(job)
-    except Exception as exc:
-        print(json.dumps({"op": "render", "status": "error", "error": str(exc)[-1500:]}, ensure_ascii=False))
-        return 1
+        rec = run_inside(job, runner)
+    except Exception as exc:  # noqa: BLE001
+        rec = {"error": str(exc)}
+    if rec.get("error"):
+        if frames_dir:
+            shutil.rmtree(frames_dir, ignore_errors=True)
+        return failure("render", rec["error"], rec.get("trace"))
     metrics = {k: rec.get(k) for k in ("preset", "engine", "device", "samples", "resolution", "view_transform", "look",
                                        "render_seconds", "runner", "warnings")}
     if animated:

@@ -28,8 +28,14 @@
    "search",
    "catalog",
    "styles",
-   "scaffold"
-  ]
+   "scaffold",
+   "إيجاد ستايل",
+   "قائمة الأساليب",
+   "عرض الأسلوب",
+   "style id",
+   "list styles"
+  ],
+  "when": "حين نبحث عن أسلوب مناسب في كتالوج الأساليب أو نعرض ملفاته بمعرفه / when searching, listing or showing styles in the catalogue by words or id"
  },
  {
   "id": "MISC-02",
@@ -59,8 +65,14 @@
    "atlas",
    "skills library",
    "vendor",
-   "search"
-  ]
+   "search",
+   "بحث عن مهارة",
+   "استيراد مهارة",
+   "ترخيص متساهل",
+   "find skill",
+   "import skill"
+  ],
+  "when": "حين تحتاج مهارة جاهزة من مكتبة خارجية (Remotion أو ffmpeg أو ترجمة أو موسيقى) لتبحث عنها وتفحصها قبل استيرادها / when you need to find and inspect a ready skill in the external library before vendoring it"
  },
  {
   "id": "MISC-03",
@@ -87,8 +99,14 @@
    "fts5",
    "full text",
    "sqlite",
-   "search"
-  ]
+   "search",
+   "بحث نصي",
+   "مصدر تقنية",
+   "مهارات الأطلس",
+   "text index",
+   "keyword lookup"
+  ],
+  "when": "حين تبحث عن مصدر تقنية معينة داخل نصوص آلاف مهارات الأطلس بكلمة أو عبارة / when locating which atlas skill describes a technique with a full-text query"
  },
  {
   "id": "MISC-04",
@@ -115,8 +133,14 @@
    "router",
    "skill selection",
    "capabilities",
-   "rubric"
-  ]
+   "rubric",
+   "توجيه الطلب",
+   "ترشيح المهارات",
+   "أنسب أداة",
+   "routing",
+   "auto select"
+  ],
+  "when": "حين لا تعرف أي مهارة أو عائلة قدرات تناسب طلب المستخدم وتريد ترشيحًا واختيارًا بنداء واحد / when unsure which skill or capability family fits a request and you want one call to pick it"
  },
  {
   "id": "MISC-05",
@@ -142,8 +166,14 @@
    "studio server",
    "json-rpc",
    "claude code",
-   "tools"
-  ]
+   "tools",
+   "ربط الاستوديو",
+   "تايملاين",
+   "رندر",
+   "motion plan",
+   "render jobs"
+  ],
+  "when": "حين تريد ربط Claude Code بالاستوديو لتخطيط الموشن والتحقق منه وتشغيل الوصفات وحفظ التايملاين والرندر / when connecting Claude Code to the studio to plan, validate, run recipes, save timelines and render"
  },
  {
   "id": "MISC-06",
@@ -169,8 +199,14 @@
    "claude bridge",
    "apply",
    "json plan",
-   "copy paste"
-  ]
+   "copy paste",
+   "خطة جاهزة",
+   "سياق الاستوديو",
+   "تطبيق الخطة",
+   "studio context",
+   "review before apply"
+  ],
+  "when": "حين يرسل المستخدم طلبه مع سياق الاستوديو إلى Claude ويريد مراجعة الخطة قبل الضغط على «تطبيق» / when sending a studio request to Claude and reviewing the returned plan before pressing apply"
  },
  {
   "id": "MISC-07",
@@ -196,8 +232,14 @@
    "project file",
    "relink",
    "portable",
-   "sanitize"
-  ]
+   "sanitize",
+   "حفظ المشروع",
+   "فتح المشروع",
+   "ربط الوسائط",
+   "save project",
+   "open project"
+  ],
+  "when": "حين تحفظ مشروعًا وتفتحه لاحقًا أو على جهاز آخر وتحتاج إعادة ربط الوسائط / when saving a project and reopening it later or elsewhere with media re-linked by name and size"
  },
  {
   "id": "MISC-08",
@@ -224,8 +266,14 @@
    "claude.md",
    "agents.md",
    "gemini",
-   "copilot"
-  ]
+   "copilot",
+   "ملف الدخول",
+   "عقد موحد",
+   "أدوات الذكاء",
+   "codex",
+   "cursor"
+  ],
+  "when": "حين تريد أن يتبع Claude وCodex وCursor وGemini وCopilot نفس العقد وملفات الدخول في المستودع / when wiring one entry contract for Claude, Codex, Cursor, Gemini and Copilot"
  },
  {
   "id": "MISC-09",
@@ -234,6 +282,7 @@
   "name_en": "Windows desktop control with Live View (KOSIF Mouse)",
   "status": "key",
   "what": "أتمتة خلفية لويندوز: مراقبة شجرة UIA وOCR بمراجع، تأريض التعليمات العربية والإنجليزية، أفعال مجمعة ببوابة، وقلم Claude المرئي. / Background-first Windows automation with UIA/OCR observation, grounded instructions, gated batched actions and a live view.",
+  "when": "حين يطلب المستخدم أتمتة برامج ويندوز على جهازه بأفعال مؤكدة وعرض حي، لا داخل حاوية لينكس / when automating Windows apps on the user's PC with gated actions and a live view, not in a Linux container",
   "how": "kosif_mouse_status/observe/find/act/do/live; emergency stop = top-left corner or hold Esc; refuses over HTTP transport; observe max_side 1280, idle guard 600 ms. Not usable in this Linux container.",
   "params": "idle 600 ms · max side 1280",
   "install": "",
@@ -253,7 +302,12 @@
    "desktop",
    "automation",
    "mouse",
-   "uia"
+   "uia",
+   "التحكم بالجهاز",
+   "سطح المكتب",
+   "ماوس",
+   "desktop control",
+   "ocr"
   ]
  },
  {
@@ -283,8 +337,14 @@
    "untrusted input",
    "zip",
    "secrets",
-   "gitignore"
-  ]
+   "gitignore",
+   "ملف مضغوط",
+   "أرشيف",
+   "مفاتيح سرية",
+   "archive safety",
+   "uploads"
+  ],
+  "when": "حين يرفع المستخدم ملفًا مضغوطًا أو تفحص مستودعًا عامًا وتحتاج التحقق من المسارات والأحجام والأسرار / when handling uploaded archives or public repos that must be checked for paths, sizes and secrets"
  },
  {
   "id": "MISC-11",
@@ -310,8 +370,14 @@
    "action gate",
    "human in the loop",
    "publish",
-   "safety"
-  ]
+   "safety",
+   "موافقة المستخدم",
+   "كابتشا",
+   "دفع",
+   "captcha",
+   "browser steps"
+  ],
+  "when": "حين تشمل خطوات متصفح أو واجهة دفعًا أو إرسالًا أو حذفًا أو كلمة مرور وتحتاج قرار تنفيذ أو تأكيد أو تسليم / when browser or GUI steps touch payment, sending, deleting or passwords and need a run/confirm/handoff call"
  },
  {
   "id": "MISC-12",
@@ -341,8 +407,14 @@
    "licence",
    "license audit",
    "attribution",
-   "reuse"
-  ]
+   "reuse",
+   "حقوق",
+   "نسخ الكود",
+   "ذكر المصدر",
+   "mit",
+   "allowlist"
+  ],
+  "when": "حين تريد إعادة استخدام كود أو أصل من مستودع إلهام وتحتاج معرفة هل ترخيصه يسمح بالنسخ أم بالقراءة فقط / when deciding whether code from an inspiration repo may be copied or only read, based on its licence"
  },
  {
   "id": "MISC-13",
@@ -366,8 +438,14 @@
    "safe name",
    "escaping",
    "xss",
-   "arabic filename"
-  ]
+   "arabic filename",
+   "اسم المجلد",
+   "اسم المشروع",
+   "تهريب النص",
+   "html escape",
+   "folder name"
+  ],
+  "when": "حين تنشئ مجلد مشروع باسم عربي أو تضع عنوانًا أو JSON داخل صفحة HTML وتحتاج تسمية آمنة وتهريبًا صحيحًا / when naming project folders (Arabic allowed) or embedding titles and JSON in HTML safely"
  },
  {
   "id": "MISC-14",
@@ -394,8 +472,14 @@
    "provenance",
    "sha256",
    "taint",
-   "knowledge"
-  ]
+   "knowledge",
+   "سجل المصادر",
+   "حقن الأوامر",
+   "إزالة التكرار",
+   "prompt injection",
+   "dedupe"
+  ],
+  "when": "حين تضيف كتبًا أو ملفات كمصادر معرفة وتحتاج منع التكرار ورصد حقن الأوامر وإمكانية سحب المصدر / when registering books or files as knowledge sources with dedupe, injection flags and revocation"
  },
  {
   "id": "MISC-15",
@@ -422,8 +506,14 @@
    "full pro",
    "receipts",
    "limits",
-   "integration"
-  ]
+   "integration",
+   "حدود التكامل",
+   "حزم المنهج",
+   "ادعاء الرندر",
+   "method packs",
+   "specialists"
+  ],
+  "when": "حين تدمج المونتاج والموشن مع KOSIF SEE وتحتاج حدود حزم المنهج والمختصين ولا تدعي رندرًا من مجرد استشارة / when integrating montage and motion with KOSIF SEE within pack and specialist caps"
  },
  {
   "id": "MISC-16",
@@ -450,8 +540,14 @@
    "pdf",
    "tesseract",
    "scan",
-   "arabic ocr"
-  ]
+   "arabic ocr",
+   "استخراج النص",
+   "مسح ضوئي",
+   "نص من صورة",
+   "text layer",
+   "video frames"
+  ],
+  "when": "حين يرسل المستخدم ملف PDF ممسوحًا أو تريد قراءة نص عربي أو إنجليزي من إطار فيديو / when a PDF is scanned images or you need to read Arabic or English text from video frames"
  },
  {
   "id": "MISC-17",
@@ -476,8 +572,14 @@
    "أفضل وقت",
    "best time",
    "analytics",
-   "posting schedule"
-  ]
+   "posting schedule",
+   "موعد النشر",
+   "إحصاءات الحساب",
+   "جدولة المنشورات",
+   "when to post",
+   "views"
+  ],
+  "when": "حين يسأل المستخدم متى ينشر وعنده تصدير لإحصاءات منشورات حسابه نفسه / when the user asks when to post and can export their own account's post analytics"
  },
  {
   "id": "MISC-18",
@@ -506,8 +608,14 @@
    "example projects",
    "starter",
    "remix",
-   "night boat"
-  ]
+   "night boat",
+   "مشروع جاهز",
+   "قالب",
+   "نقطة بداية",
+   "sample project",
+   "template"
+  ],
+  "when": "حين تريد مشروع موشن أو مونتاج جاهزًا لتدرسه أو تعدّله بدل البدء من الصفر / when you want a ready motion or montage example project to study or remix instead of starting from scratch"
  },
  {
   "id": "MISC-19",
@@ -539,8 +647,14 @@
    "audit",
    "rtl app",
    "dashboard",
-   "design reference"
-  ]
+   "design reference",
+   "واجهة عربية",
+   "رموز التصميم",
+   "لوحة تحكم",
+   "design tokens",
+   "ui reference"
+  ],
+  "when": "حين تصمم واجهة عربية من اليمين لليسار أو لوحة حية وتريد مرجع رموز تصميم من تطبيقات قائمة / when designing an Arabic RTL interface or live dashboard and want tested design tokens as reference"
  },
  {
   "id": "MISC-20",
@@ -564,8 +678,14 @@
    "شريط تقدم",
    "progress bar",
    "footer",
-   "scene label"
-  ]
+   "scene label",
+   "تذييل",
+   "رقم المشهد",
+   "موضع التشغيل",
+   "playback bar",
+   "scene id"
+  ],
+  "when": "حين تريد إظهار رقم المشهد وشريطًا يوضح موضع التشغيل أسفل إطار الفيديو / when you want a scene-id caption and a playback progress bar at the bottom of the frame"
  },
  {
   "id": "MISC-21",
@@ -574,6 +694,7 @@
   "name_en": "Owner supporting playbooks (31)",
   "status": "documented",
   "what": "كتيبات تعليمات فقط للمالك تساند الفيديو حين يكون جزءًا من عمل أكبر: محاسبة وIFRS، فواتير وعقود، Excel، PDF، PRD وخطط عمل، تجارب A/B، كود ومراجعة، أمان STRIDE، RAG، كتب إلى مهارات، وغيرها. / Instruction-only owner playbooks supporting a video job within larger work.",
+  "when": "حين يكون الفيديو جزءًا من عمل أكبر يحتاج محاسبة أو عقودًا أو Excel أو خطة عمل أو مراجعة كود / when a video job sits inside larger work needing accounting, contracts, Excel, PRDs or code review",
   "how": "Load the skill (SKILL.md + references/sources.md) and follow its numbered steps; no scripts. Video-adjacent picks: ab-testing-experiments (test 3 hooks), book-to-skill-knowledge (turn a book into rules), flashcards-quiz-exam-prep (lesson videos), technical-docs-readme, web-scraping-automation (gather material legally), prompt-injection-defense (untrusted briefs), custom-gpt-claude-project, context-window-budget. Others: accounting-ifrs-journal, agent-tool-instructions, backend-api-design, business-plan-prd, cloudflare-edge-deploy, code-review-refactor, database-schema-migrations, debugging-root-cause, excel-*, few-shot-dataset-curation, fullstack-saas-starter, git-github-workflow, google-workspace-automation, invoices-quotes-contracts, legacy-code-migration, office-prompts-library, pdf-forms-reports, rag-knowledge-base, security-audit-stride, strategy-decision-sensitivity. Omni adds reasoning skills (think, cognitive core, councils, Jev) and vendored Atlas skills (WCAG audit, prompt engineering, claim verification, LLM judge, PRD, STRIDE) with LICENSE + ATTRIBUTION.",
   "params": "31 playbooks",
   "install": "",
@@ -596,7 +717,12 @@
    "supporting skills",
    "excel",
    "accounting",
-   "a/b test"
+   "a/b test",
+   "كتيبات",
+   "محاسبة",
+   "فواتير",
+   "ifrs",
+   "prd"
   ]
  },
  {
@@ -627,8 +753,14 @@
    "context budget",
    "ECC",
    "سطح التشغيل",
-   "حزمة تنفيذ"
-  ]
+   "حزمة تنفيذ",
+   "اختيار الأداة",
+   "إضافة خادم",
+   "ميزانية السياق",
+   "tool choice",
+   "execution packet"
+  ],
+  "when": "حين تفكر في إضافة أداة أو خادم وتحتاج اختيار أصغر سطح آمن يكفي وحمل المهمة كحزمة صغيرة / when choosing the smallest safe surface (rule, skill, MCP, CLI) before adding a new tool or server"
  },
  {
   "id": "MISC-P02",
@@ -657,8 +789,14 @@
    "shadow tests",
    "توجيه",
    "تصادم",
-   "router"
-  ]
+   "router",
+   "اختبار التوجيه",
+   "حالات سلبية",
+   "خطف الطلب",
+   "route tests",
+   "route collision"
+  ],
+  "when": "حين تعدّل الموجّه وتريد التأكد أن طلب الفيديو لا يخطف طلبات الصورة أو الأغنية أو الجهاز والعكس / when changing the router and you must prove video requests don't hijack image, song or device routes"
  },
  {
   "id": "MISC-P03",
@@ -688,8 +826,14 @@
    "privacy",
    "تعلم",
    "موافقة",
-   "ECC"
-  ]
+   "ECC",
+   "درس مستفاد",
+   "حفظ الخبرة",
+   "ذاكرة المشروع",
+   "project memory",
+   "lessons learned"
+  ],
+  "when": "حين يقدم المستخدم ملاحظة يريد حفظها كدرس لمشروع واحد بموافقته الصريحة ودون أسرار / when a user note should become a saved lesson for one project, only with explicit consent and no secrets"
  },
  {
   "id": "MISC-P04",
@@ -719,8 +863,14 @@
    "capabilities",
    "كتالوج",
    "معاينة",
-   "A01-A60"
-  ]
+   "A01-A60",
+   "بطاقات القدرات",
+   "صور مصغرة",
+   "مقاطع قصيرة",
+   "thumbnails",
+   "acceptance test"
+  ],
+  "when": "حين تريد عرض نماذج مصغرة لأنواع الحركة الممكنة (مسار، نابض، كاميرا، جسيمات…) مرسومة بالكود / when you want code-drawn thumbnails and short clips previewing sixty motion capability types"
  },
  {
   "id": "MISC-X01",

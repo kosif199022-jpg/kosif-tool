@@ -38,6 +38,29 @@ class WordsConvertTests(unittest.TestCase):
         words = self.run_convert("c.json", json.dumps({"segments": [{"words": [{"word": " x", "start": 0, "end": 0.3}, {"word": "y", "start": 0.3, "end": 0.6}]}]}))
         self.assertEqual([w["word"] for w in words], ["x", "y"])
 
+    def test_cue_time_is_weighted_by_word_length(self):
+        words = self.run_convert("d.srt", "1\n00:00:00,000 --> 00:00:01,000\nab abcdef\n")
+        durs = [w["end"] - w["start"] for w in words]
+        self.assertAlmostEqual(durs[1] / durs[0], 3.0, places=1)
+
+    def test_missing_paths_give_clean_errors_and_create_destination_folder(self):
+        with tempfile.TemporaryDirectory() as d:
+            src = Path(d) / "captions.srt"
+            src.write_text("1\n00:00:00,000 --> 00:00:01,000\nhello world\n", encoding="utf-8")
+            dst = Path(d) / "nodir" / "sub" / "words.json"
+            ok = subprocess.run([PY, str(ROOT / "tools/words_convert.py"), str(src), str(dst)], capture_output=True, text=True)
+            self.assertEqual(ok.returncode, 0, ok.stderr)
+            self.assertEqual(len(json.loads(dst.read_text(encoding="utf-8"))), 2)
+            for bad_src in (Path(d) / "missing.srt", Path(d) / "captions.txt"):
+                r = subprocess.run([PY, str(ROOT / "tools/words_convert.py"), str(bad_src), str(Path(d) / "x.json")], capture_output=True, text=True)
+                self.assertEqual(r.returncode, 2, bad_src)
+                self.assertNotIn("Traceback", r.stderr)
+            (Path(d) / "bad.json").write_text("{not json", encoding="utf-8")
+            r = subprocess.run([PY, str(ROOT / "tools/words_convert.py"), str(Path(d) / "bad.json"), str(Path(d) / "x.json")], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 2)
+            self.assertNotIn("Traceback", r.stderr)
+            self.assertFalse((Path(d) / "x.json").exists())
+
 
 @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "ffmpeg not installed")
 class VerifyVideoTests(unittest.TestCase):
@@ -55,6 +78,22 @@ class VerifyVideoTests(unittest.TestCase):
             bad = subprocess.run([PY, str(ROOT / "tools/verify_video.py"), str(clip), "--aspect", "16:9"], capture_output=True, text=True)
             self.assertEqual(bad.returncode, 1)
             self.assertIn("[FAIL] aspect is 16:9", bad.stdout)
+
+    def test_unreadable_inputs_exit_2_without_traceback(self):
+        with tempfile.TemporaryDirectory() as d:
+            clip = Path(d) / "clip.mp4"
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=black:s=64x64:r=10:d=0.5", "-c:v", "libx264", "-pix_fmt", "yuv420p", str(clip)], check=True)
+            cases = {
+                "missing video": [str(Path(d) / "missing.mp4"), "--aspect", "9:16"],
+                "missing master": [str(clip), "--audio", str(Path(d) / "nope.wav")],
+                "bad aspect": [str(clip), "--aspect", "foo"],
+                "zero pixels": [str(clip), "--aspect", "10x00"],
+            }
+            for name, args in cases.items():
+                r = subprocess.run([PY, str(ROOT / "tools/verify_video.py"), *args], capture_output=True, text=True)
+                self.assertEqual(r.returncode, 2, name)
+                self.assertNotIn("Traceback", r.stderr, name)
+                self.assertTrue(r.stderr.strip(), name)
 
 
 if __name__ == "__main__":

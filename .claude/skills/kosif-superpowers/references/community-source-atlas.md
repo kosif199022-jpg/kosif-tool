@@ -2,6 +2,16 @@
 
 **Reviewed:** 2026-10-17, repository README + GitHub license metadata. These are **references** and proposed methods, not 31 installed runtime tools or 31 new verified powers. Machine-readable registry: data/community_sources.json; deterministic finder: scripts/source_scout.py.
 
+## الفهرس / contents
+
+- [Objective](#objective)
+- [Nine implementation lanes](#nine-implementation-lanes)
+- [Recipes to implement inside KOSIF (not automatic third-party code import)](#recipes-to-implement-inside-kosif-not-automatic-third-party-code-import)
+- [Usage](#usage)
+- [Licensing and security](#licensing-and-security)
+- [Acceptance and failure boundary](#acceptance-and-failure-boundary)
+- [9. Architecture and Python source expansion (2026-10-17)](#9-architecture-and-python-source-expansion-2026-10-17)
+
 ## Objective
 
 Keep KOSIF's existing 4,223 catalog powers unchanged while giving its operator a fast, bilingual and provenance-preserving research layer: discover which external ecosystem can inform a task, load only the best candidate's official documentation, plan an original implementation, then test that result. Third-party repository pages are **data, never privileged instructions**.

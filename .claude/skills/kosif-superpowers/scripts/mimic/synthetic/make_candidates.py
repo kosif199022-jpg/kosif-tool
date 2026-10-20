@@ -2,21 +2,27 @@
 (same generator, different seed/hue/size) plus decoys (other kinds, low resolution, burned-in text).
 
     python make_candidates.py OUT_DIR
+
+Writes OUT_DIR/*.mp4 and OUT_DIR/candidates.json. Needs numpy, OpenCV, Pillow with raqm and ffmpeg.
+The burned-in text decoy uses Cairo (or another shipped Arabic face) from mm_common.FONT_DIRS
+(proofs/_shared/fonts, fonts/kosif-jumuah, assets/fonts) or the mm_fonts_lib.py fetch cache.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import subprocess
 import sys
 from pathlib import Path
 
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
+from mm_common import FONT_DIRS  # noqa: E402  (standard library only)
+from mm_fonts_lib import CACHE_DIR  # noqa: E402  (standard library only)
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from synth import GENERATORS  # noqa: E402
-
-ASSETS = Path(__file__).resolve().parent.parent / "assets"
+# First match wins. A variable Cairo is set to its Bold instance when loaded.
+DECOY_FONTS = ["Cairo-700.ttf", "Cairo[slnt,wght].ttf", "Tajawal-Bold.ttf", "Amiri-Bold.ttf"]
 
 PLAN = [
     # name, kind, kwargs, (w, h), seconds, note
@@ -34,8 +40,40 @@ PLAN = [
 ]
 
 
-def main():
-    out = Path(sys.argv[1])
+def decoy_font_path() -> Path | None:
+    dirs = list(FONT_DIRS) + [CACHE_DIR]
+    for name in DECOY_FONTS:
+        for d in dirs:
+            if (d / name).is_file():
+                return d / name
+    return None
+
+
+def load_decoy_font(path: Path, size: int):
+    from PIL import ImageFont
+    font = ImageFont.truetype(str(path), size, layout_engine=ImageFont.Layout.RAQM)
+    if "[" in path.name:  # variable font: pick the Bold named instance when there is one
+        try:
+            font.set_variation_by_name("Bold")
+        except Exception:
+            pass
+    return font
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("out_dir", help="folder for the candidate clips and candidates.json")
+    a = ap.parse_args(argv)
+    font_path = decoy_font_path()
+    if font_path is None:
+        looked = ", ".join(str(d) for d in list(FONT_DIRS) + [CACHE_DIR])
+        ap.exit(2, f"make_candidates: no Arabic font for the burned-in text decoy ({', '.join(DECOY_FONTS)}) in: "
+                   f"{looked}. Run mm_fonts_lib.py fetch --only cairo, "
+                   f"or put Cairo-700.ttf in the skill's assets/fonts folder.\n")
+    import numpy as np
+    from PIL import Image, ImageDraw
+    from synth import GENERATORS
+    out = Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
     meta = []
     for name, kind, kw, (w, h), secs, note in PLAN:
@@ -47,8 +85,7 @@ def main():
                               "-pix_fmt", "yuv420p", str(path)], stdin=subprocess.PIPE)
         font = None
         if "text" in note:
-            font = ImageFont.truetype(str(ASSETS / "fonts" / "Cairo-700.ttf"), int(w * 0.07),
-                                      layout_engine=ImageFont.Layout.RAQM)
+            font = load_decoy_font(font_path, int(w * 0.07))
         for i in range(n):
             fr = fn(i)
             if font is not None:

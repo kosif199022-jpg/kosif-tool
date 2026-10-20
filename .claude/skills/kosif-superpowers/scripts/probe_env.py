@@ -1124,10 +1124,10 @@ def snapshot_doc(c: dict) -> str:
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(description="Probe this machine's real capabilities (stdlib only, read-only, ~20 s).")
+    ap = argparse.ArgumentParser(description="Probe this machine's real capabilities (stdlib only, ~20 s). Read-only unless --write (writes one snapshot file) or --install-test (installs throwaway packages from the internet into a temp dir).")
     ap.add_argument("--json", action="store_true", help="print JSON instead of the Markdown card")
-    ap.add_argument("--no-network", action="store_true", help="skip network checks")
-    ap.add_argument("--install-test", action="store_true", help="also time a real venv+pip and npm install in a temp dir")
+    ap.add_argument("--no-network", action="store_true", help="skip the checks that reach the internet (a loopback query to a local agent proxy, if any, still runs)")
+    ap.add_argument("--install-test", action="store_true", help="also time a real venv+pip and npm install in a temp dir (downloads packages; ask first)")
     ap.add_argument("--budget", type=float, default=18.0, help="seconds for the whole probe (default 18)")
     ap.add_argument("--write", metavar="PATH", help="also write a dated Markdown snapshot to PATH")
     a = ap.parse_args(argv)

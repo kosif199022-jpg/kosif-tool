@@ -20,8 +20,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-01"
+  "tags": [
+   "فحص الفيديو",
+   "قبل التسليم",
+   "علو الصوت",
+   "lufs",
+   "final check"
+  ],
+  "id": "QA-01",
+  "when": "عند الفحص الأخير للفيديو قبل تسليمه للتأكد من خلوه من شاشات سوداء أو تجمد وضبط علو الصوت / when a finished video needs a last check for black or frozen stretches, loudness and true peak before delivery"
  },
  {
   "family": "qa-verification",
@@ -43,8 +50,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-02"
+  "tags": [
+   "لوب",
+   "تكرار سلس",
+   "فيديو متكرر",
+   "loop video",
+   "loop seam"
+  ],
+  "id": "QA-02",
+  "when": "حين يُطلب فيديو يتكرر بلا قفزة ظاهرة بين آخر إطار وأوله / when confirming a looping video has no visible jump from its last frame back to the first"
  },
  {
   "family": "qa-verification",
@@ -67,8 +81,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-03"
+  "tags": [
+   "مطابقة المواصفات",
+   "تحقق الفيديو",
+   "مقاس الفيديو",
+   "spec check",
+   "ffprobe"
+  ],
+  "id": "QA-03",
+  "when": "عند التحقق من أن الفيديو المصدَّر يطابق المقاس والمدة وعدد الإطارات ومواصفات الصوت المطلوبة / when an exported video must match the requested aspect, fps, duration, frame count and audio specs"
  },
  {
   "family": "qa-verification",
@@ -89,8 +110,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-04"
+  "tags": [
+   "أخطاء الترميز",
+   "مقاطع صامتة",
+   "حجم الملف",
+   "faststart",
+   "decode errors"
+  ],
+  "id": "QA-04",
+  "when": "حين تريد فحص ملف الفيديو النهائي نفسه بحثًا عن أخطاء فك الترميز والصمت وحجم الملف / when checking the finished file itself for decode errors, silent gaps, color tags, faststart and size cap"
  },
  {
   "family": "qa-verification",
@@ -113,8 +141,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-05"
+  "tags": [
+   "تسجيل الشاشة",
+   "تصوير صفحة",
+   "معدل الإطارات",
+   "screen capture",
+   "screencast"
+  ],
+  "id": "QA-05",
+  "when": "عند تسجيل صفحة ويب أو لعبة كفيديو دون اختلاق إطارات وسيطة مع معرفة معدل الإطارات الحقيقي / when recording a live page or game to video without interpolating frames and reporting real fps"
  },
  {
   "family": "qa-verification",
@@ -135,8 +170,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-06"
+  "tags": [
+   "القطعات",
+   "تقطيع المشاهد",
+   "صورة مصغرة",
+   "cut detection",
+   "shot boundaries"
+  ],
+  "id": "QA-06",
+  "when": "حين تريد معرفة أماكن القطعات في فيديو لتسجيل اللقطات أو اختيار صورة مصغرة / when locating cuts in footage for b-roll logging, thumbnails or checking cuts against the beat grid"
  },
  {
   "family": "qa-verification",
@@ -154,8 +196,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-07"
+  "tags": [
+   "مونتاج على الإيقاع",
+   "تقطيع على البيت",
+   "مراجعة القطعات",
+   "beat sync",
+   "contact sheet"
+  ],
+  "id": "QA-07",
+  "when": "عند الانتهاء من تجميع المونتاج للتأكد أن القطعات تقع على الإيقاع والمازورة المخطط لها / when an assembled edit needs checking that its cuts land on the planned beats and bars"
  },
  {
   "family": "qa-verification",
@@ -175,8 +224,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-08"
+  "tags": [
+   "دمج الصوت",
+   "انزياح الترجمة",
+   "تأخير الصوت",
+   "audio concat",
+   "caption drift"
+  ],
+  "id": "QA-08",
+  "when": "عند دمج ملفات صوت mp3 كثيرة وظهور انزياح في توقيت الترجمة / when joining many mp3 pieces makes captions drift out of sync with the audio"
  },
  {
   "family": "qa-verification",
@@ -199,8 +255,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-09"
+  "tags": [
+   "تباين الألوان",
+   "وضوح النص",
+   "تمييز الألوان",
+   "wcag",
+   "color contrast"
+  ],
+  "id": "QA-09",
+  "when": "حين تريد التأكد أن ألوان النص والرسوم مقروءة وتتباين بما يكفي / when checking text and graphic colors meet contrast ratios and stay distinguishable in grayscale"
  },
  {
   "family": "qa-verification",
@@ -220,8 +283,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-10"
+  "tags": [
+   "لوحة الألوان",
+   "ألوان الثيمين",
+   "اختبار الألوان",
+   "theme colors",
+   "delta e"
+  ],
+  "id": "QA-10",
+  "when": "عند اختبار لوحة ألوان التصميم آليًا في الثيمين لضمان التباين وتمايز الألوان / when automatically testing a palette's contrast and hue distance in both themes"
  },
  {
   "family": "qa-verification",
@@ -240,8 +310,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-11"
+  "tags": [
+   "تقليل الحركة",
+   "إيقاف الأنيميشن",
+   "حركة مخففة",
+   "reduced motion",
+   "animation off"
+  ],
+  "id": "QA-11",
+  "when": "حين يجب احترام إعداد تقليل الحركة لدى المستخدم مع بقاء كل العناصر ظاهرة / when a page must honor prefers-reduced-motion while keeping every element in its final visible state"
  },
  {
   "family": "qa-verification",
@@ -261,8 +338,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-12"
+  "tags": [
+   "اختبار الحركة",
+   "منحنيات الحركة",
+   "مدة الأنيميشن",
+   "easing",
+   "css test"
+  ],
+  "id": "QA-12",
+  "when": "عند التأكد آليًا أن ملفات CSS وTSX تلتزم بمدد ومنحنيات الحركة المتفق عليها / when checking CSS/TSX files keep the agreed motion durations, curves and reduced-motion rules"
  },
  {
   "family": "qa-verification",
@@ -282,8 +366,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-13"
+  "tags": [
+   "تصميم متجاوب",
+   "شاشة الجوال",
+   "التابلت",
+   "mobile layout",
+   "breakpoints"
+  ],
+  "id": "QA-13",
+  "when": "حين تريد التأكد أن التصميم يتصرف صحيحًا على الجوال والتابلت / when checking a layout behaves correctly at phone and tablet breakpoints with safe-area offsets"
  },
  {
   "family": "qa-verification",
@@ -303,8 +394,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-14"
+  "tags": [
+   "ملفات مفقودة",
+   "أخطاء الكود",
+   "مراجع مكسورة",
+   "missing assets",
+   "syntax check"
+  ],
+  "id": "QA-14",
+  "when": "عند فحص مشروع ويب بحثًا عن أخطاء صياغة JS ومراجع ملفات مفقودة / when scanning a web repo for JS syntax errors and broken local asset references"
  },
  {
   "family": "qa-verification",
@@ -325,8 +423,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-15"
+  "tags": [
+   "ثبات الثيم",
+   "ألوان الهوية",
+   "خط تجوال",
+   "theme test",
+   "design tokens"
+  ],
+  "id": "QA-15",
+  "when": "حين تريد منع تغيّر ألوان وخط الثيم المعتمد في لوحة التحكم دون قصد / when locking a dashboard theme's colors, Tajawal font and gradient against accidental changes"
  },
  {
   "family": "qa-verification",
@@ -346,8 +451,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-16"
+  "tags": [
+   "تقليد الحركة",
+   "فيديو مرجعي",
+   "تتبع الحركة",
+   "motion clone",
+   "block matching"
+  ],
+  "id": "QA-16",
+  "when": "عند تقليد طريقة تحرك أجزاء فيديو مرجعي وإعادة بنائها على مشروعك / when copying how regions of a reference video move and rebuilding that motion on your project"
  },
  {
   "family": "qa-verification",
@@ -370,8 +482,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-17"
+  "tags": [
+   "اختبارات تلقائية",
+   "تكامل مستمر",
+   "انكسار الكود",
+   "github actions",
+   "regression"
+  ],
+  "id": "QA-17",
+  "when": "حين تريد تشغيل اختبارات تلقائية مع كل تعديل للتأكد أن المشروع لم ينكسر / when setting up automated CI checks so regressions in the project are caught on each change"
  },
  {
   "family": "qa-verification",
@@ -391,8 +510,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-18"
+  "tags": [
+   "تقليل الحركة",
+   "مشهد ثابت",
+   "تخطي المقدمة",
+   "reduced motion",
+   "still frame"
+  ],
+  "id": "QA-18",
+  "when": "حين يفضل المستخدم تقليل الحركة فتتوقف الأنيميشن ويظهر العالم ثلاثي الأبعاد ثابتًا / when users prefer reduced motion, so animations, the 3D world and the intro become still"
  },
  {
   "family": "qa-verification",
@@ -413,8 +539,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-19"
+  "tags": [
+   "هوية العلامة",
+   "ألوان البراند",
+   "توحيد الهوية",
+   "brand consistency",
+   "color lock"
+  ],
+  "id": "QA-19",
+  "when": "عند حماية هوية العلامة من عودة ألوان غير معتمدة إلى الشعارات والأيقونات / when guarding brand identity so disallowed colors never return to marks, icons or the manifest"
  },
  {
   "family": "qa-verification",
@@ -435,8 +568,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-20"
+  "tags": [
+   "انحراف الهوية",
+   "ألوان مكتوبة يدويًا",
+   "تدقيق التصميم",
+   "design drift",
+   "hardcoded colors"
+  ],
+  "id": "QA-20",
+  "when": "حين تريد قياس ابتعاد ملفات التنسيق عن الهوية البصرية ومنع ازدياده / when measuring how far stylesheets drift from the design identity and failing CI if it worsens"
  },
  {
   "family": "qa-verification",
@@ -456,8 +596,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-21"
+  "tags": [
+   "صور الهوية",
+   "حجم الصور",
+   "ملفات العلامة",
+   "asset weight",
+   "brand assets"
+  ],
+  "id": "QA-21",
+  "when": "عند التأكد أن صور الهوية وملفاتها موجودة وخفيفة الحجم وأن للمقدمة بديلًا للجوال / when checking every brand image exists, stays lightweight, and the intro has a mobile fallback"
  },
  {
   "family": "qa-verification",
@@ -469,6 +616,7 @@
   "params": "72 vertices/shard asserted; |n|=1 +-1e-5",
   "install": "",
   "requires": [
+   "chromium",
    "npm:three"
   ],
   "license": "owner",
@@ -478,8 +626,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-22"
+  "tags": [
+   "اختبار ثلاثي الأبعاد",
+   "بدون متصفح",
+   "اختبار وحدة",
+   "headless test",
+   "webgl"
+  ],
+  "id": "QA-22",
+  "when": "حين تريد اختبار محرك WebGL ثلاثي الأبعاد داخل Node دون فتح متصفح / when unit-testing a WebGL 3D engine in Node without opening a browser"
  },
  {
   "family": "qa-verification",
@@ -498,8 +653,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-23"
+  "tags": [
+   "ملخص المشروع",
+   "بريف",
+   "مدخلات ناقصة",
+   "input validation",
+   "brief check"
+  ],
+  "id": "QA-23",
+  "when": "عند بدء التخطيط للتأكد أن ملخص الفيديو فيه مدة ومقاس وحقول صحيحة / when a brief must be rejected early for invalid duration, aspect or empty fields before planning"
  },
  {
   "family": "qa-verification",
@@ -522,8 +684,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-24"
+  "tags": [
+   "اعتماد نهائي",
+   "موافقة المستخدم",
+   "قفل التصدير",
+   "approval gate",
+   "final render"
+  ],
+  "id": "QA-24",
+  "when": "عند منع تصدير الفيديو النهائي حتى يكتب المستخدم عبارة الاعتماد صراحة / when the final MP4 export must wait until the user types the approval phrase"
  },
  {
   "family": "qa-verification",
@@ -545,8 +714,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-25"
+  "tags": [
+   "اختبارات الوحدة",
+   "تشغيل الاختبارات",
+   "فحص سريع",
+   "npm test",
+   "unit tests"
+  ],
+  "id": "QA-25",
+  "when": "حين تريد التأكد سريعًا أن المخطط والبروفايلات وبوابة الاعتماد تعمل بعد أي تعديل / when quickly confirming the planner, profiles and viral gate still pass after a change"
  },
  {
   "family": "qa-verification",
@@ -565,8 +741,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-26"
+  "tags": [
+   "تدقيق الحقائق",
+   "مصادر تاريخية",
+   "فيديو تاريخي",
+   "fact check",
+   "sources"
+  ],
+  "id": "QA-26",
+  "when": "حين يحتوي فيديو تاريخي على سرد يحتاج مصادر حقيقية وصورًا موثقة قبل النشر / when a history video's narration needs real sources and authenticated images before publishing"
  },
  {
   "family": "qa-verification",
@@ -586,8 +769,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-27"
+  "tags": [
+   "نصوص قابلة للتعديل",
+   "ملف المشاهد",
+   "تعديل الفيديو",
+   "editable text",
+   "scene json"
+  ],
+  "id": "QA-27",
+  "when": "عند تجهيز فيديو بحيث تعدّل صفحة المراجعة نصوصه ومشاهده وألوانه وتكتبها للمصدر / when a composition must expose editable titles, scenes and colors for a review page to change"
  },
  {
   "family": "qa-verification",
@@ -606,8 +796,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-28"
+  "tags": [
+   "ترانزيشن",
+   "ذوبان",
+   "تلاشي للأسود",
+   "fade detection",
+   "shot boundaries"
+  ],
+  "id": "QA-28",
+  "when": "حين تريد معرفة نوع كل انتقال في فيلم: قطع أو ذوبان أو تلاشٍ للأسود / when finding each boundary in a film frame-exactly and typing it as cut, dissolve or fade to black"
  },
  {
   "family": "qa-verification",
@@ -627,8 +824,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-29"
+  "tags": [
+   "تحليل إنشائي",
+   "جمالون",
+   "حساب القوى",
+   "truss",
+   "structural analysis"
+  ],
+  "id": "QA-29",
+  "when": "عند تحليل جمالون إنشائي ومعرفة القوى وأنماط الانهيار مع مطابقتها للحساب اليدوي / when analysing a truss for member forces and failure modes checked against hand calculations"
  },
  {
   "family": "qa-verification",
@@ -648,8 +852,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-30"
+  "tags": [
+   "اختبار الإطارات",
+   "حتمية",
+   "اختبار الرسوم",
+   "deterministic",
+   "frame tests"
+  ],
+  "id": "QA-30",
+  "when": "حين يكون الفيلم مكتوبًا كدالة وتريد اختبار كل إطار فيه مثل الكود / when a film written as a pure function needs code-style tests for valid, stable, changing frames"
  },
  {
   "family": "qa-verification",
@@ -669,8 +880,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-31"
+  "tags": [
+   "مشغل الفيديو",
+   "اختبار بدون متصفح",
+   "محاكاة الصفحة",
+   "mock dom",
+   "player test"
+  ],
+  "id": "QA-31",
+  "when": "عند اختبار مشغل HTML المستقل دون متصفح للتشغيل والإيقاف والتقديم / when testing a standalone HTML player's play, pause, seek and restart without a browser"
  },
  {
   "family": "qa-verification",
@@ -688,8 +906,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-32"
+  "tags": [
+   "مدة النص",
+   "سرعة القراءة",
+   "نصوص الشاشة",
+   "reading time",
+   "text timing"
+  ],
+  "id": "QA-32",
+  "when": "حين تريد التأكد أن كل نص على الشاشة يبقى وقتًا كافيًا لقراءته / when checking each on-screen text overlay stays long enough to read and the hook works"
  },
  {
   "family": "qa-verification",
@@ -707,8 +932,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-33"
+  "tags": [
+   "نص المنشور",
+   "كابشن",
+   "عبارات مستهلكة",
+   "post copy",
+   "cliches"
+  ],
+  "id": "QA-33",
+  "when": "عند مراجعة نص منشور الإطلاق من العبارات المستهلكة وكثرة الجمل القصيرة / when linting launch or share post copy for clichés and too many short sentences"
  },
  {
   "family": "qa-verification",
@@ -726,8 +958,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-34"
+  "tags": [
+   "قوالب موشن",
+   "عد تنازلي",
+   "شريط سفلي",
+   "lower third",
+   "templates"
+  ],
+  "id": "QA-34",
+  "when": "حين تريد إنشاء مشروع موشن من قالب جاهز مثل العد التنازلي أو الشريط السفلي مع فحصه / when generating a motion project from a template like countdown or lower third and linting it"
  },
  {
   "family": "qa-verification",
@@ -746,8 +985,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-35"
+  "tags": [
+   "ملاحظات المستخدم",
+   "تعديلات المشاهد",
+   "اعتماد المشاهد",
+   "feedback loop",
+   "revisions"
+  ],
+  "id": "QA-35",
+  "when": "عند مراجعة الفيلم مع المستخدم مشهدًا بمشهد وتطبيق تعديلاته على المصدر / when the user reviews a film scene by scene and their edits are written back into the source"
  },
  {
   "family": "qa-verification",
@@ -766,8 +1012,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-36"
+  "tags": [
+   "رندر عن بعد",
+   "أمان الاتصال",
+   "حماية التوكن",
+   "remote render",
+   "security"
+  ],
+  "id": "QA-36",
+  "when": "حين يلزم رندر عن بُعد أو ربط بالموقع بموافقة صريحة وحماية للبيانات / when remote rendering or the public bridge must run only with consent and strict safety limits"
  },
  {
   "family": "qa-verification",
@@ -785,8 +1038,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-37"
+  "tags": [
+   "خطة اللقطات",
+   "فجوات التوقيت",
+   "تحقق الخطة",
+   "shot plan",
+   "schema check"
+  ],
+  "id": "QA-37",
+  "when": "عند فحص خطة اللقطات قبل الرندر للتأكد أنها صحيحة ومتصلة بلا فجوات / when a shot plan needs checking for schema, fps, aspect and gapless shot coverage before rendering"
  },
  {
   "family": "qa-verification",
@@ -805,8 +1065,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-38"
+  "tags": [
+   "ملف الرندر",
+   "مقاسات زوجية",
+   "تحقق المدخلات",
+   "render manifest",
+   "schema"
+  ],
+  "id": "QA-38",
+  "when": "عند تجهيز ملف manifest للرندر والتأكد من المقاسات والفريمات وتغطية المشاهد / when a render manifest must pass strict checks on sizes, fps, frames and scene coverage"
  },
  {
   "family": "qa-verification",
@@ -826,8 +1093,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-39"
+  "tags": [
+   "حماية الواجهة",
+   "أمان محلي",
+   "طلبات خارجية",
+   "cross-origin",
+   "origin check"
+  ],
+  "id": "QA-39",
+  "when": "حين تريد حماية الواجهة المحلية من طلبات تغيّر البيانات تأتي من مواقع أخرى / when protecting the local API from state-changing requests sent by other websites"
  },
  {
   "family": "qa-verification",
@@ -847,8 +1121,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-40"
+  "tags": [
+   "صفحة المراجعة",
+   "تعديلات المستخدم",
+   "ملاحظات على الفيديو",
+   "review player",
+   "feedback"
+  ],
+  "id": "QA-40",
+  "when": "عند انتهاء الرندر حين يريد المستخدم تعديل النصوص والألوان والتوقيت ووضع ملاحظات على الإطار / when the user wants to edit text, colors and timing and pin notes on frames after a render"
  },
  {
   "family": "qa-verification",
@@ -869,8 +1150,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-41"
+  "tags": [
+   "تنظيف المشروع",
+   "قيم خاطئة",
+   "تصحيح البيانات",
+   "sanitize",
+   "normalize"
+  ],
+  "id": "QA-41",
+  "when": "عند فتح أو تعديل مشروع Studio لتنظيف القيم الخاطئة وضبط المدد والألوان / when a Studio project must be normalized: deduped ids, clamped numbers, valid colors and clip lengths"
  },
  {
   "family": "qa-verification",
@@ -892,8 +1180,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-42"
+  "tags": [
+   "وصف المشهد",
+   "حقول ناقصة",
+   "مواصفة اللقطة",
+   "scene spec",
+   "prompt fields"
+  ],
+  "id": "QA-42",
+  "when": "عند تجهيز وصف مشهد للتوليد للتأكد أنه يشمل الكاميرا والعدسة والإضاءة والفيزياء وكل الحقول / when a scene spec must be rejected if it misses camera, lens, lighting, physics or other fields"
  },
  {
   "family": "qa-verification",
@@ -914,8 +1209,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-43"
+  "tags": [
+   "برومبت",
+   "تقييم البرومبت",
+   "كتابة الوصف",
+   "prompt check",
+   "image prompt"
+  ],
+  "id": "QA-43",
+  "when": "حين تريد تقييم برومبت صورة أو فيديو وكشف التناقضات والكلمات الممنوعة قبل التوليد / when scoring an image or video prompt and flagging contradictions or forbidden terms before generation"
  },
  {
   "family": "qa-verification",
@@ -935,8 +1237,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-44"
+  "tags": [
+   "ثبات العناصر",
+   "مطابقة الصورة",
+   "إصلاح الصورة",
+   "image consistency",
+   "visual check"
+  ],
+  "id": "QA-44",
+  "when": "عند توليد صورة يجب أن تحافظ على عناصر محددة ومقارنة النتيجة بها وإصلاحها مرة واحدة / when a generated image must keep locked elements, be checked against them and get one fix"
  },
  {
   "family": "qa-verification",
@@ -958,8 +1267,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-45"
+  "tags": [
+   "تدقيق الموقع",
+   "فحص الصفحة",
+   "أداء الموقع",
+   "site check",
+   "accessibility"
+  ],
+  "id": "QA-45",
+  "when": "عند مراجعة صفحة HTML من ناحية الإتاحة والتباين والتجاوب والأداء والأمان / when auditing an HTML page for accessibility, contrast, responsiveness, performance and security"
  },
  {
   "family": "qa-verification",
@@ -981,8 +1297,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-46"
+  "tags": [
+   "إيصال الإنتاج",
+   "تحقق الرندر",
+   "صور المراجعة",
+   "receipt",
+   "sha256"
+  ],
+  "id": "QA-46",
+  "when": "عند التأكد من انتهاء الرندر فعلًا بفحص المدة والمقاس والمسارين وكتابة إيصال الإنتاج / when a render must not count as done until duration, size and streams pass and a receipt is written"
  },
  {
   "family": "qa-verification",
@@ -1003,8 +1326,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-47"
+  "tags": [
+   "تجربة أ ب",
+   "مقارنة نسخ",
+   "حجم العينة",
+   "split test",
+   "ab test"
+  ],
+  "id": "QA-47",
+  "when": "حين تريد مقارنة نسختين من الهوك أو الغلاف أو العنوان ومعرفة أيهما أفضل / when comparing variants of a hook, cover or title and reading which one wins"
  },
  {
   "family": "qa-verification",
@@ -1024,8 +1354,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-48"
+  "tags": [
+   "أفضل وقت",
+   "موعد النشر",
+   "إحصاءات الحساب",
+   "posting time",
+   "schedule"
+  ],
+  "id": "QA-48",
+  "when": "حين تريد معرفة أفضل يوم ووقت للنشر من إحصاءات حسابك / when picking the best weekday and time block to post from your own analytics export"
  },
  {
   "family": "qa-verification",
@@ -1045,8 +1382,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-49"
+  "tags": [
+   "اختبار أ ب",
+   "دلالة إحصائية",
+   "حجم العينة",
+   "significance",
+   "split test"
+  ],
+  "id": "QA-49",
+  "when": "عند تخطيط تجربة A/B بعدد عينة كافٍ وقراءة النتائج بدلالة إحصائية / when planning an A/B test sample size and reading results with lift, confidence interval and p-value"
  },
  {
   "family": "qa-verification",
@@ -1066,8 +1410,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-50"
+  "tags": [
+   "شاشة سوداء",
+   "تجمد الصورة",
+   "فحص الإطارات",
+   "freeze detection",
+   "black frames"
+  ],
+  "id": "QA-50",
+  "when": "حين تريد فحص إطارات الفيديو آليًا بحثًا عن شاشات سوداء أو بيضاء أو تجمد أو قطعات زائدة / when scanning rendered frames for black, white, frozen stretches or too many hard cuts"
  },
  {
   "family": "qa-verification",
@@ -1088,8 +1439,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-51"
+  "tags": [
+   "لوحة القصة",
+   "مراجعة المشاهد",
+   "كلمات الإطار",
+   "storyboard check",
+   "scene plan"
+  ],
+  "id": "QA-51",
+  "when": "عند مراجعة الستوري بورد قبل التنفيذ: عدد المشاهد والكلمات لكل إطار وحركة الكاميرا / when a storyboard needs checking for scene count, words per frame, hero coverage and camera budget"
  },
  {
   "family": "qa-verification",
@@ -1108,8 +1466,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-52"
+  "tags": [
+   "مثال جاهز",
+   "فيديو عمودي",
+   "عينة رندر",
+   "demo",
+   "vertical video"
+  ],
+  "id": "QA-52",
+  "when": "حين تحتاج مثالًا مرجعيًا لرندر عمودي قصير مع GIF وورقة إطارات وتقرير فحص / when you need a reference vertical demo render with mp4, GIF, contact sheet and QA report"
  },
  {
   "family": "qa-verification",
@@ -1128,8 +1493,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-53"
+  "tags": [
+   "برومبت الصور",
+   "أسماء الفنانين",
+   "مراجعة البرومبت",
+   "prompt lint",
+   "real person"
+  ],
+  "id": "QA-53",
+  "when": "عند كتابة برومبت صورة لكشف الحقول الناقصة وأسماء الفنانين والأشخاص الحقيقيين قبل التوليد / when an image prompt must be checked for missing fields, living-artist names or real people"
  },
  {
   "family": "qa-verification",
@@ -1147,8 +1519,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-54"
+  "tags": [
+   "فيديو مولد",
+   "تشوه اليدين",
+   "ثبات الشخصية",
+   "generated video",
+   "continuity"
+  ],
+  "id": "QA-54",
+  "when": "عند الانتهاء من توليد فيديو لفحص ثبات الشخصية واليدين والفيزياء والنصوص الشاردة / when a generated video needs checks for identity drift, hands, physics, stray text and continuity"
  },
  {
   "family": "qa-verification",
@@ -1170,8 +1549,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-55"
+  "tags": [
+   "أمان الكود",
+   "كود خطير",
+   "تشغيل آمن",
+   "code safety",
+   "safe run"
+  ],
+  "id": "QA-55",
+  "when": "عند تشغيل كود بايثون ملصوق للرسم والتأكد أنه لا يحذف ملفات أو يشغل عمليات أو يتصل بالشبكة / when running pasted Python drawing code and checking it won't delete files, launch processes or use the network"
  },
  {
   "family": "qa-verification",
@@ -1190,8 +1576,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-56"
+  "tags": [
+   "تصنيف الصور",
+   "لوجو",
+   "صورة فوتوغرافية",
+   "image type",
+   "vectorize"
+  ],
+  "id": "QA-56",
+  "when": "حين تريد معرفة هل الصورة فوتوغرافية أم شعار أو رسم مسطح قبل معالجتها / when deciding if an image is a photo or painting versus a logo or flat art"
  },
  {
   "family": "qa-verification",
@@ -1213,8 +1606,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-57"
+  "tags": [
+   "فحص المشروع",
+   "أخطاء الرندر",
+   "عشوائية",
+   "lint",
+   "determinism"
+  ],
+  "id": "QA-57",
+  "when": "عند فحص مشروع موشن قبل الرندر لاكتشاف ما يكسر الرندر أو يبدو مولدًا آليًا / when scanning a motion project for render-breaking non-determinism and generated-looking patterns"
  },
  {
   "family": "qa-verification",
@@ -1235,8 +1635,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-58"
+  "tags": [
+   "ورقة إطارات",
+   "مراجعة بصرية",
+   "نقد الفيديو",
+   "contact sheet",
+   "frame grid"
+  ],
+  "id": "QA-58",
+  "when": "حين تريد مراجعة فيلم بنظرة واحدة عبر ورقة إطارات وعرض بعرض الجوال / when reviewing a film at a glance with contact sheets, a phone-width sheet and a frame strip"
  },
  {
   "family": "qa-verification",
@@ -1256,8 +1663,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-59"
+  "tags": [
+   "توقيت الكلمات",
+   "مزامنة الصوت",
+   "توقيت تقديري",
+   "word timing",
+   "sync check"
+  ],
+  "id": "QA-59",
+  "when": "عند ادعاء تزامن الصوت مع الحركة للتأكد أن التوقيت مقاس فعلًا وليس تقديريًا / when about to claim audio sync, to check whether timing was measured or only estimated"
  },
  {
   "family": "qa-verification",
@@ -1281,8 +1695,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-60"
+  "tags": [
+   "اختبارات الموشن",
+   "تشغيل الاختبارات",
+   "فحص الأدوات",
+   "unit tests",
+   "regression"
+  ],
+  "id": "QA-60",
+  "when": "حين تريد التأكد أن أدوات الموشن والمونتاج والصوت ما زالت تعمل بعد أي تعديل / when confirming the motion, montage and voice tools still pass their tests after a change"
  },
  {
   "family": "qa-verification",
@@ -1302,8 +1723,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-61"
+  "tags": [
+   "أفلام مرجعية",
+   "معيار مقارنة",
+   "قياس الجودة",
+   "benchmark",
+   "reference films"
+  ],
+  "id": "QA-61",
+  "when": "حين تحتاج أفلامًا مرجعية مقاسة للمقارنة في علو الصوت وطاقة الحركة / when you need measured reference films to compare loudness and motion energy against"
  },
  {
   "family": "qa-verification",
@@ -1323,8 +1751,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-62"
+  "tags": [
+   "أصالة النص",
+   "نسخ المحتوى",
+   "انتحال",
+   "plagiarism",
+   "copy check"
+  ],
+  "id": "QA-62",
+  "when": "حين تريد التأكد أن النص المولد لا ينسخ برومبتات طرف ثالث / when checking that generated text does not copy third-party prompts"
  },
  {
   "family": "qa-verification",
@@ -1347,8 +1782,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-63"
+  "tags": [
+   "معاينة",
+   "بريفيو",
+   "موافقة قبل الرندر",
+   "preview",
+   "approval"
+  ],
+  "id": "QA-63",
+  "when": "عند الحاجة لموافقة المستخدم قبل الرندر الكامل بعرض 8 لقطات من الفيلم في صورة واحدة / when the user should approve 8 labelled frames tiled in one image before the full render"
  },
  {
   "family": "qa-verification",
@@ -1369,8 +1811,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-64"
+  "tags": [
+   "تحقق بعد الرندر",
+   "مطابقة المدة",
+   "عدد الفريمات",
+   "render check",
+   "exit code"
+  ],
+  "id": "QA-64",
+  "when": "عند انتهاء الرندر للتأكد تلقائيًا أن المدة والفريمات والمقاس والصوت تطابق الطلب / when a render must auto-check that fps, frames, duration, size and audio match the request"
  },
  {
   "family": "qa-verification",
@@ -1390,8 +1839,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-65"
+  "tags": [
+   "تقرير الفحص",
+   "قائمة تحقق",
+   "جودة التسليم",
+   "qa report",
+   "checklist"
+  ],
+  "id": "QA-65",
+  "when": "عند التسليم لتوثيق 16 قياسًا للفيديو من المدة والصوت إلى وضوح العربي والتراخيص / when delivery needs a 16-check measured QA report, from duration and audio to RTL and licensing"
  },
  {
   "family": "qa-verification",
@@ -1412,8 +1868,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-66"
+  "tags": [
+   "إحصاءات الكتالوج",
+   "فحص المستودع",
+   "عدد الأساليب",
+   "catalog stats",
+   "validate"
+  ],
+  "id": "QA-66",
+  "when": "عند التحقق من سلامة كتالوج الأساليب أو معرفة أعداده حسب المصدر والنوع / when validating the style catalog or getting counts by origin, type, category and aspect"
  },
  {
   "family": "qa-verification",
@@ -1437,8 +1900,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-67"
+  "tags": [
+   "تشغيل الاختبارات",
+   "اختبارات المستودع",
+   "سلامة الأدوات",
+   "npm test",
+   "unittest"
+  ],
+  "id": "QA-67",
+  "when": "حين تريد تشغيل كل اختبارات المستودع للتأكد أن الكتالوج والأدوات سليمة / when running all repo tests to confirm the catalog, CLI, templates and verify tool still pass"
  },
  {
   "family": "qa-verification",
@@ -1457,8 +1927,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-68"
+  "tags": [
+   "مزامنة الشفاه",
+   "ليب سينك",
+   "إزاحة الصوت",
+   "lip sync",
+   "audio offset"
+  ],
+  "id": "QA-68",
+  "when": "حين تشك أن حركة الشفاه في مقطع مولد لا تتطابق مع الصوت المرجعي / when checking whether a generated clip's lips actually follow the reference audio and by what offset"
  },
  {
   "family": "qa-verification",
@@ -1478,8 +1955,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-69"
+  "tags": [
+   "توهج",
+   "بكسلات تالفة",
+   "مستطيلات سوداء",
+   "bloom",
+   "hdr clamp"
+  ],
+  "id": "QA-69",
+  "when": "عند ظهور مستطيلات سوداء في التوهج بسبب بكسلات تالفة في الرندر / when bad NaN/Inf pixels bloom into black rectangles in a post-processing pass"
  },
  {
   "family": "qa-verification",
@@ -1500,8 +1984,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-70"
+  "tags": [
+   "قواعد التركيب",
+   "فحص الكود",
+   "ذوق التصميم",
+   "lint rules",
+   "taste"
+  ],
+  "id": "QA-70",
+  "when": "حين تريد فحص مشروع الموشن من العشوائية والمؤقتات والتأثيرات المخالفة للذوق / when linting a motion project for randomness, timers, linear eases and off-taste effects"
  },
  {
   "family": "qa-verification",
@@ -1523,8 +2014,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-71"
+  "tags": [
+   "مقدار الحركة",
+   "مشاهد ثابتة",
+   "إيقاع الفيديو",
+   "frame difference",
+   "still share"
+  ],
+  "id": "QA-71",
+  "when": "حين تريد قياس مقدار الحركة في فيلم ونسبة اللحظات الثابتة فيه / when measuring how much a film moves and its share of near-still frames"
  },
  {
   "family": "qa-verification",
@@ -1548,8 +2046,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-72"
+  "tags": [
+   "تحليل موقع",
+   "مكتبات الأنيميشن",
+   "حركة بالتمرير",
+   "gsap",
+   "scroll animation"
+  ],
+  "id": "QA-72",
+  "when": "عند دراسة موقع مرجعي لمعرفة مكتبات الحركة فيه وهل حركته بالتمرير أو النقر أو الزمن / when studying a reference site to detect its animation libraries and scroll, click or time-driven sections"
  },
  {
   "family": "qa-verification",
@@ -1571,8 +2076,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-73"
+  "tags": [
+   "مقارنة الصور",
+   "فرق بصري",
+   "تطابق الإطار",
+   "image diff",
+   "pixel diff"
+  ],
+  "id": "QA-73",
+  "when": "حين تريد مقارنة إطار مرندر بصورته المرجعية ومعرفة أماكن الاختلاف / when comparing a rendered frame with its reference and locating where they differ"
  },
  {
   "family": "qa-verification",
@@ -1592,8 +2104,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-74"
+  "tags": [
+   "لقطة شاشة",
+   "قبل وبعد",
+   "سكرين شوت",
+   "screenshot",
+   "playwright"
+  ],
+  "id": "QA-74",
+  "when": "عند التقاط صور قبل وبعد لواجهة بنفس المقاس والثيم والحالة لمقارنة عادلة / when capturing before/after UI screenshots with identical viewport, theme and interaction state"
  },
  {
   "family": "qa-verification",
@@ -1614,8 +2133,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-75"
+  "tags": [
+   "تقليد الستايل",
+   "فيديو مرجعي",
+   "استخراج إطارات",
+   "style match",
+   "reference frames"
+  ],
+  "id": "QA-75",
+  "when": "حين تريد تقليد ستايل فيديو مرجعي دون نسخ محتواه بقياس الخطوط والهوامش والألوان / when matching a reference video's look without its content by measuring type, margins and colors"
  },
  {
   "family": "qa-verification",
@@ -1633,8 +2159,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-76"
+  "tags": [
+   "تزامن الكلمات",
+   "ضربات الموسيقى",
+   "كليب أغنية",
+   "beat sync",
+   "lyrics sync"
+  ],
+  "id": "QA-76",
+  "when": "عند تسليم فيديو أغنية للتأكد أن كل كلمة وكل ضربة موسيقية تظهر على الإطار الصحيح / when every sung word and musical hit must be checked on the rendered frames before delivery"
  },
  {
   "family": "qa-verification",
@@ -1654,8 +2187,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-77"
+  "tags": [
+   "بيانات الصورة",
+   "استخراج البرومبت",
+   "إعادة التوليد",
+   "comfyui",
+   "metadata"
+  ],
+  "id": "QA-77",
+  "when": "حين تريد معرفة البرومبت وسير العمل المستخدمين في صورة أو مقطع من ComfyUI لإعادة إنتاجه / when recovering the prompt and workflow embedded in a ComfyUI image or clip to reproduce it"
  },
  {
   "family": "qa-verification",
@@ -1676,8 +2216,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-78"
+  "tags": [
+   "وثيقة الهوية",
+   "دليل الألوان",
+   "توثيق التصميم",
+   "design tokens",
+   "style guide"
+  ],
+  "id": "QA-78",
+  "when": "عند تحديث وثيقة الهوية لتطابق ألوانها الرموز المستخدمة فعليًا في CSS / when regenerating the identity doc so every hex matches the tokens actually rendered"
  },
  {
   "family": "qa-verification",
@@ -1700,8 +2247,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-79"
+  "tags": [
+   "فحص الشاشات",
+   "تجاوب الجوال",
+   "لقطات شاشة",
+   "ui smoke",
+   "overflow"
+  ],
+  "id": "QA-79",
+  "when": "حين تريد فتح كل شاشات التطبيق على اللابتوب والجوال وكشف الأخطاء والتداخل والازدحام / when sweeping every app screen on laptop and phone for errors, overflow, clipped controls and clutter"
  },
  {
   "family": "qa-verification",
@@ -1723,8 +2277,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-80"
+  "tags": [
+   "اعتماد المعاينة",
+   "ارندر",
+   "موافقة قبل التصدير",
+   "approval",
+   "smoke render"
+  ],
+  "id": "QA-80",
+  "when": "عند منع الرندر النهائي أو النشر أو أي طلب مدفوع قبل أن يعتمد المستخدم المعاينة / when no final render, publishing or paid API call may happen before the user approves the preview"
  },
  {
   "family": "qa-verification",
@@ -1745,8 +2306,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-81"
+  "tags": [
+   "تقرير الجودة",
+   "فحص الملف",
+   "إيصال الفحص",
+   "qa report",
+   "h264 check"
+  ],
+  "id": "QA-81",
+  "when": "حين تريد تقرير فحص سريع يثبت سلامة ملف MP4 ويوضح ما لم يُراجع يدويًا / when you need a quick MP4 QA receipt that also records what was not manually reviewed"
  },
  {
   "family": "qa-verification",
@@ -1766,8 +2334,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-82"
+  "tags": [
+   "إثبات الحركة",
+   "صورة ثابتة",
+   "بصمة الإطار",
+   "frame hash",
+   "smoke test"
+  ],
+  "id": "QA-82",
+  "when": "إثبات أن الرندر فيديو متحرك فعلًا لا صورة ثابتة عبر مقارنة بصمات إطاراته / for proving a render is real motion, not a still, by requiring distinct frame hashes"
  },
  {
   "family": "qa-verification",
@@ -1785,8 +2360,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-83"
+  "tags": [
+   "أخطاء الإملاء",
+   "نص داخل الفيديو",
+   "كلمات طويلة",
+   "ai text",
+   "misspelling"
+  ],
+  "id": "QA-83",
+  "when": "حين يحتوي مقطع فيديو مولد بالذكاء الاصطناعي على كلمات طويلة أو أرقام قد تُكتب خطأ / when an AI video clip contains long words, digits or hyphens it may misspell"
  },
  {
   "family": "qa-verification",
@@ -1807,8 +2389,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-84"
+  "tags": [
+   "تحديد موقع",
+   "إيجاد عنصر",
+   "مربع الإحاطة",
+   "bounding box",
+   "object location"
+  ],
+  "id": "QA-84",
+  "when": "حين تريد تحديد مكان عنصر في صورة وإرجاع مربعه دون واجهة لكشف الأجسام / when locating a target's box in an image without a detector API using numbered grid strips"
  },
  {
   "family": "qa-verification",
@@ -1830,8 +2419,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-85"
+  "tags": [
+   "فحص بعد الرندر",
+   "سرعة النص",
+   "علو الصوت",
+   "loudness",
+   "speed cap"
+  ],
+  "id": "QA-85",
+  "when": "عند فحص الفيلم بعد الرندر: الصوت والإطارات السوداء والتجمد وسرعة النص وعرض الجوال / when a rendered film needs post-render checks for loudness, black frames, freezes, text speed and phone view"
  },
  {
   "family": "qa-verification",
@@ -1851,8 +2447,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-86"
+  "tags": [
+   "خطوط عربية",
+   "مدة الملف",
+   "معلومات الملف",
+   "font list",
+   "media info"
+  ],
+  "id": "QA-86",
+  "when": "حين تريد معرفة مدة ملف ومساراته أو عرض الخطوط العربية المتاحة / when you need a file's streams and duration or a list of available Arabic fonts"
  },
  {
   "family": "qa-verification",
@@ -1874,8 +2477,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-87"
+  "tags": [
+   "فحص التسليم",
+   "إضاءة محروقة",
+   "مستوى الصوت",
+   "delivery check",
+   "lufs"
+  ],
+  "id": "QA-87",
+  "when": "عند تسليم الفيديو للتأكد من الترميز وخلوه من السواد والتجمد وضبط الصوت والإضاءة / when checking a video before delivery for codec, black or frozen spots, loudness and blown or crushed exposure"
  },
  {
   "family": "qa-verification",
@@ -1897,8 +2507,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-88"
+  "tags": [
+   "مراجعة جمالية",
+   "نقد بصري",
+   "ورقة إطارات",
+   "contact sheet",
+   "critique"
+  ],
+  "id": "QA-88",
+  "when": "حين تريد مراجعة جمالية للفيلم بورقة إطارات وعرض الجوال وملاحظات مرتبة بالأولوية / when reviewing a film's aesthetics with contact sheets, phone view and a prioritized P0/P1/P2 review"
  },
  {
   "family": "qa-verification",
@@ -1920,8 +2537,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-89"
+  "tags": [
+   "فحص المشروع",
+   "أخطاء الموشن",
+   "قبل الرندر",
+   "lint",
+   "project check"
+  ],
+  "id": "QA-89",
+  "when": "عند فحص مشروع موشن قبل الرندر للتأكد من الحتمية والالتزام بالعقد والذوق / when linting a motion project for determinism, contract and taste issues before rendering"
  },
  {
   "family": "qa-verification",
@@ -1943,8 +2567,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-90"
+  "tags": [
+   "تحليل مرجع",
+   "طول اللقطات",
+   "دليل الأسلوب",
+   "reference analysis",
+   "style guide"
+  ],
+  "id": "QA-90",
+  "when": "حين تريد تحليل فيديو مرجعي واستخراج طول اللقطات والطاقة والألوان في دليل أسلوب / when analysing a reference video's cuts, shot lengths, energy and palette into a style guide"
  },
  {
   "family": "qa-verification",
@@ -1966,8 +2597,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-91"
+  "tags": [
+   "لوب",
+   "فيديو متكرر",
+   "نقطة التكرار",
+   "loop",
+   "seam check"
+  ],
+  "id": "QA-91",
+  "when": "حين تريد إثبات أن الفيديو يعيد نفسه بلا قطع ظاهر عند نقطة التكرار / when proving a looping film has a clean seam where it repeats"
  },
  {
   "family": "qa-verification",
@@ -1989,8 +2627,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-92"
+  "tags": [
+   "وقت القراءة",
+   "مقروئية",
+   "الهوك",
+   "reading time",
+   "text timing"
+  ],
+  "id": "QA-92",
+  "when": "حين تريد التأكد أن كل سطر نص يثبت وقتًا كافيًا للقراءة وأن الهوك سريع / when checking every text line stays settled long enough to read and the hook lands within 2 s"
  },
  {
   "family": "qa-verification",
@@ -2012,8 +2657,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-93"
+  "tags": [
+   "غلاف الفيديو",
+   "صورة مصغرة",
+   "ثمبنيل",
+   "cover frame",
+   "thumbnail"
+  ],
+  "id": "QA-93",
+  "when": "حين تريد أن يكون أول إطار في الفيديو أقوى لقطة ليظهر كغلاف دون تغيير المدة / when baking the strongest settled frame as frame 0 so the video opens on a good cover"
  },
  {
   "family": "qa-verification",
@@ -2035,8 +2687,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-94"
+  "tags": [
+   "نص عربي",
+   "اتجاه النص",
+   "ترجمة عربية",
+   "rtl",
+   "arabic captions"
+  ],
+  "id": "QA-94",
+  "when": "عند تسليم فيديو فيه نص عربي للتأكد من الإملاء واتصال الحروف والاتجاه وموضع النص / when delivering video with Arabic text: spelling, joined letters, RTL order, line count and safe placement"
  },
  {
   "family": "qa-verification",
@@ -2058,8 +2717,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-95"
+  "tags": [
+   "ملاحظات",
+   "تعديلات",
+   "نسخة جديدة",
+   "feedback",
+   "version bump"
+  ],
+  "id": "QA-95",
+  "when": "حين يريد المستخدم مراجعة مشاهد الفيلم وتعديل عناصره من صفحة ويب ثم تطبيق التعديلات ورفع النسخة / when the user wants to review reel scenes in a web page, save edits, apply them and bump the version"
  },
  {
   "family": "qa-verification",
@@ -2079,8 +2745,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-96"
+  "tags": [
+   "معاينة",
+   "تشغيل في المتصفح",
+   "شغل الفيديو",
+   "playback",
+   "scrub bar"
+  ],
+  "id": "QA-96",
+  "when": "عند فتح التكوين في متصفح عادي لمشاهدته بالصوت مع تشغيل وإيقاف وشريط تقديم / when watching a composition in a normal browser in real time with audio, play/pause and a scrub bar"
  },
  {
   "family": "qa-verification",
@@ -2100,8 +2773,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-97"
+  "tags": [
+   "إخلاء مسؤولية",
+   "أرقام توضيحية",
+   "تحذير",
+   "disclaimer",
+   "illustrative"
+  ],
+  "id": "QA-97",
+  "when": "حين تعرض المحاكاة أرقامًا مختارة لا مقاسة ويجب وسمها كتوضيحية مع تحذير من حدود استخدامها / when a simulation shows chosen, not measured, numbers that must be labelled illustrative with a scope warning"
  },
  {
   "family": "qa-verification",
@@ -2119,8 +2799,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-98"
+  "tags": [
+   "سرعة الحركة",
+   "عرض الموبايل",
+   "لقطات مصغرة",
+   "optical flow",
+   "motion speed"
+  ],
+  "id": "QA-98",
+  "when": "عند مراجعة فيديو بلقطات متتابعة واختبار عرض الجوال وقياس سرعة الحركة بالبكسل لكل إطار / when checking a video with a 2 fps contact sheet, a phone-width test and optical-flow speed per frame"
  },
  {
   "family": "qa-verification",
@@ -2138,8 +2825,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-99"
+  "tags": [
+   "تحليل مرجع",
+   "دليل أسلوب",
+   "إيقاع المونتاج",
+   "style guide",
+   "shot length"
+  ],
+  "id": "QA-99",
+  "when": "حين يعطي المستخدم فيديو مرجعيًا ويريد استخراج إيقاع القطع وأطوال اللقطات والألوان كدليل أسلوب / when the user supplies a reference and wants its cuts, shot lengths, energy and palette as a style guide"
  },
  {
   "family": "qa-verification",
@@ -2157,8 +2851,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-100"
+  "tags": [
+   "ملاحظات",
+   "تعديل وإعادة رندر",
+   "تصدير المراجعة",
+   "feedback loop",
+   "re-render"
+  ],
+  "id": "QA-100",
+  "when": "حين يرسل المستخدم ملاحظاته على المشاهد ويجب تطبيقها على المصدر وإعادة التصيير / when the user's scene feedback must be applied to the source and the film re-rendered"
  },
  {
   "family": "qa-verification",
@@ -2178,8 +2879,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-101"
+  "tags": [
+   "فحص الجهاز",
+   "الإمكانيات المتاحة",
+   "المتطلبات",
+   "capabilities",
+   "setup check"
+  ],
+  "id": "QA-101",
+  "when": "في بداية العمل لمعرفة المسار المتاح A/B/C والقدرات المتوفرة / at the start of a job, to report which route (A/B/C) and capabilities are available"
  },
  {
   "family": "qa-verification",
@@ -2201,8 +2909,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-102"
+  "tags": [
+   "حالة الجهاز",
+   "شارات",
+   "المتطلبات",
+   "system status",
+   "env api"
+  ],
+  "id": "QA-102",
+  "when": "حين تريد أن يعرض رأس الموقع ما يدعمه الجهاز من مسار وFFmpeg ومتصفح وWhisper وعدد الأنوية / when the site header should show what the PC supports: route, FFmpeg, browser, Whisper, CPU cores"
  },
  {
   "family": "qa-verification",
@@ -2220,8 +2935,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-103"
+  "tags": [
+   "تحريك العناصر",
+   "تغيير الحجم",
+   "معاينة قبل الرندر",
+   "resize",
+   "reposition"
+  ],
+  "id": "QA-103",
+  "when": "عند تحريك عنصر أو تغيير حجمه على فيديو مُصيَّر لرؤية التغيير قبل إعادة التصيير / when moving or resizing an element on a rendered video and you want to see the change before re-rendering"
  },
  {
   "family": "qa-verification",
@@ -2239,8 +2961,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-104"
+  "tags": [
+   "تعليقات",
+   "ملاحظات على الفيديو",
+   "كومنت",
+   "annotations",
+   "timestamp comments"
+  ],
+  "id": "QA-104",
+  "when": "حين يريد المراجع تثبيت ملاحظة على لحظة ومكان محدد في الإطار لتظهر علامة على الخط الزمني / when a reviewer wants to pin a note to an exact time and x/y spot in the frame, shown on the timeline"
  },
  {
   "family": "qa-verification",
@@ -2259,8 +2988,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-105"
+  "tags": [
+   "تحديث تلقائي",
+   "رابط مباشر",
+   "نسخة جديدة",
+   "auto reload",
+   "deep link"
+  ],
+  "id": "QA-105",
+  "when": "حين تريد أن تتحدث صفحة المراجعة تلقائيًا عند نسخة جديدة أو يفتح رابط على زمن وعنصر محدد / when the review page should reload on a new version or a link should jump to a time and element"
  },
  {
   "family": "qa-verification",
@@ -2278,8 +3014,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-106"
+  "tags": [
+   "التحقق من الملف",
+   "علو الصوت",
+   "مواصفات الفيديو",
+   "export check",
+   "codec"
+  ],
+  "id": "QA-106",
+  "when": "بعد تصدير الفيديو للتحقق برمجيًا من الترميز والإطارات والحجم وعلو الصوت / after an offline export, to verify codec, frames, fps, size and loudness from a script or by Claude"
  },
  {
   "family": "qa-verification",
@@ -2298,8 +3041,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-107"
+  "tags": [
+   "ضبابية",
+   "تشويش",
+   "وضوح الصورة",
+   "صورة مغبشة",
+   "blur detection",
+   "focus check"
+  ],
+  "id": "QA-107",
+  "when": "حين تريد معرفة هل الصورة أو الإطار حاد أم ضبابي وكم فيه من تشويش / when you need to rate whether a frame is sharp, soft or blurry and how noisy it is"
  },
  {
   "family": "qa-verification",
@@ -2319,8 +3070,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-108"
+  "tags": [
+   "استمرارية",
+   "تطابق اللقطات",
+   "فرق بين صورتين",
+   "continuity",
+   "frame match"
+  ],
+  "id": "QA-108",
+  "when": "عند ربط مقاطع مولدة والتأكد من تطابق آخر إطار في مقطع مع أول إطار في التالي / when stitching generated chunks and checking the last frame of one matches the first frame of the next"
  },
  {
   "family": "qa-verification",
@@ -2341,8 +3099,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-109"
+  "tags": [
+   "شبكة إطارات",
+   "صور مصغرة",
+   "مراجعة سريعة",
+   "thumbnail grid",
+   "frame grid"
+  ],
+  "id": "QA-109",
+  "when": "قبل تسليم الفيديو لمراجعته كله بنظرة واحدة في صورة شبكية من إطارات مختارة / before delivery, to review a whole video at a glance as one PNG grid of sampled frames"
  },
  {
   "family": "qa-verification",
@@ -2365,8 +3130,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-110"
+  "tags": [
+   "شاشة سوداء",
+   "تجمد الصورة",
+   "فريز",
+   "فحص نهائي",
+   "black frames",
+   "freeze detection"
+  ],
+  "id": "QA-110",
+  "when": "حين ينتهي الفيديو وتريد كشف الشاشات السوداء والإطارات المتجمدة وفحص الحجم قبل التسليم / when a finished MP4 must be checked for black spans, frozen frames and size with a PASS/WARN/FAIL verdict"
  },
  {
   "family": "qa-verification",
@@ -2389,8 +3162,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-111"
+  "tags": [
+   "علو الصوت",
+   "ذروة الصوت",
+   "تشوه الصوت",
+   "فويس اوفر",
+   "lufs",
+   "clipping"
+  ],
+  "id": "QA-111",
+  "when": "حين تريد فحص تعليق صوتي أو مكساج نهائي: علو الصوت والذروة والتشوه والصمت والإيقاع / for checking a voice-over or final mix: loudness, true peak, clipping, silence, stereo health and tempo"
  },
  {
   "family": "qa-verification",
@@ -2412,8 +3193,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-112"
+  "tags": [
+   "تحليل الإضاءة",
+   "حرارة اللون",
+   "لوك الصورة",
+   "تدريج الألوان",
+   "exposure",
+   "color cast"
+  ],
+  "id": "QA-112",
+  "when": "حين تريد قياس إضاءة صورة أو إطار وحرارة اللون والتشبع والتكوين لفحص رندر أو تقليد لوك / for measuring a frame's exposure, colour temperature, saturation and composition to check renders or copy a look"
  },
  {
   "family": "qa-verification",
@@ -2433,8 +3222,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-113"
+  "tags": [
+   "قبل وبعد",
+   "استمرارية",
+   "تلوين",
+   "before after",
+   "grade comparison"
+  ],
+  "id": "QA-113",
+  "when": "عند فحص الاستمرارية بين مقاطع موصولة أو مقارنة الصورة قبل التلوين وبعده / when checking continuity between stitched clips or comparing before/after colour grades"
  },
  {
   "family": "qa-verification",
@@ -2456,8 +3252,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-114"
+  "tags": [
+   "فرز المقاطع",
+   "نص محروق",
+   "شعارات",
+   "اختيار اللقطات",
+   "clip selection",
+   "burned-in text"
+  ],
+  "id": "QA-114",
+  "when": "قبل المونتاج لفرز المقاطع المرشحة وكشف نص محروق أو شعار أو أسلوب غير مناسب / before editing, to triage candidate clips and spot burned-in text, logos or the wrong style"
  },
  {
   "family": "qa-verification",
@@ -2478,8 +3282,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-115"
+  "tags": [
+   "نقد الفيديو",
+   "تقييم",
+   "عرض الموبايل",
+   "self review",
+   "rubric"
+  ],
+  "id": "QA-115",
+  "when": "حين تريد نقد الفيلم بنفسك عبر لقطات متتابعة واختبار عرض الجوال وشريط إطارات حول لحظة معينة / when self-critiquing a film with a contact sheet, a phone-width test and a frame strip around a moment"
  },
  {
   "family": "qa-verification",
@@ -2499,8 +3310,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-116"
+  "tags": [
+   "تحقق قبل التنفيذ",
+   "صدق الادعاءات",
+   "تخطيط المهمة",
+   "read-only check",
+   "honest claims"
+  ],
+  "id": "QA-116",
+  "when": "قبل بدء مهمة وسائط لمعرفة ما يمكن ادعاؤه بصدق عن النتيجة دون إيصالات تشغيل / before a media job, to state what it can truthfully claim without runtime receipts"
  },
  {
   "family": "qa-verification",
@@ -2520,8 +3338,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-117"
+  "tags": [
+   "خطوط عربية",
+   "معالجة دفعية",
+   "شغل متوازي",
+   "fonts",
+   "parallel jobs"
+  ],
+  "id": "QA-117",
+  "when": "حين تريد فحص ملف وسائط أو تشغيل عدة مهام دفعة واحدة أو معرفة الخطوط العربية المثبتة / when you need to probe a media file, run several jobs in parallel or list Arabic-capable fonts"
  },
  {
   "family": "qa-verification",
@@ -2540,8 +3365,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-118"
+  "tags": [
+   "أمان الكود",
+   "عزل",
+   "كود خطير",
+   "sandbox",
+   "code safety"
+  ],
+  "id": "QA-118",
+  "when": "حين يلصق المستخدم كودًا ويجب فحصه من الحذف والشبكة وتشغيله معزولًا بمهلة محددة / when the user pastes code that must be scanned for deletion or network access and run isolated with a timeout"
  },
  {
   "family": "qa-verification",
@@ -2559,8 +3391,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-119"
+  "tags": [
+   "مقارنة بالأصل",
+   "إعادة إنتاج",
+   "جنب بعض",
+   "remake",
+   "side by side"
+  ],
+  "id": "QA-119",
+  "when": "عند إعادة إنتاج فيديو مرجعي لملء النصوص ووصف اللقطات ومقارنة النسخة الجديدة بالأصل جنبًا إلى جنب / when remaking a reference: sheets to fill texts, describe shots and compare remake vs reference side by side"
  },
  {
   "family": "qa-verification",
@@ -2582,8 +3421,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-120"
+  "tags": [
+   "معلومات الملف",
+   "معدل الإطارات",
+   "كيفريم",
+   "codec",
+   "vfr"
+  ],
+  "id": "QA-120",
+  "when": "قبل المونتاج لمعرفة ترميز كل مصدر ودقته ومعدل إطاراته الثابت أو المتغير ومواضع الإطارات المفتاحية / before editing, to read each source's codec, resolution, CFR/VFR, audio and keyframe positions"
  },
  {
   "family": "qa-verification",
@@ -2604,8 +3450,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-121"
+  "tags": [
+   "تشغيل آمن",
+   "عزل الكود",
+   "موافقة",
+   "sandbox",
+   "safe execution"
+  ],
+  "id": "QA-121",
+  "when": "حين يجب تشغيل كود رسم ملصوق في عملية منفصلة بمهلة ومجلد مؤقت وموافقة على الأوامر الخطرة / when pasted picture code must run in a separate process with a timeout, temp dir and consent for risky calls"
  },
  {
   "family": "qa-verification",
@@ -2625,8 +3478,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-122"
+  "tags": [
+   "كمية الحركة",
+   "تجمد",
+   "إيقاع بصري",
+   "motion analysis",
+   "freeze"
+  ],
+  "id": "QA-122",
+  "when": "حين تريد قياس كمية الحركة في فيديو وذروتها وأطول تجمد ومقارنتها بفيديو مرجعي / when measuring how much a video moves, its peaks and longest freeze, and comparing it to a reference"
  },
  {
   "family": "qa-verification",
@@ -2646,8 +3506,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-123"
+  "tags": [
+   "معلومات الملف",
+   "مدة الفيديو",
+   "مواصفات",
+   "media info",
+   "metadata"
+  ],
+  "id": "QA-123",
+  "when": "حين تحتاج معلومات سريعة عن ملف: المدة والحجم ومعدل الإطارات وتردد الصوت وقنواته / when you need a file's streams, duration, size, fps and audio rate/channels as JSON"
  },
  {
   "family": "qa-verification",
@@ -2666,8 +3533,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-124"
+  "tags": [
+   "معاينة",
+   "تشغيل وإيقاف",
+   "تقديم",
+   "playback",
+   "autoplay"
+  ],
+  "id": "QA-124",
+  "when": "عند فتح index.html في المتصفح للتشغيل والتقديم والقفز إلى ثانية محددة / when opening index.html in a browser to play, scrub or jump to a time with ?t= or autoplay"
  },
  {
   "family": "qa-verification",
@@ -2687,8 +3561,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-125"
+  "tags": [
+   "انتحال",
+   "نقل حرفي",
+   "تشابه النصوص",
+   "plagiarism",
+   "text similarity"
+  ],
+  "id": "QA-125",
+  "when": "حين تريد التأكد أن نصوص الموجز مكتوبة بأسلوب أصلي ولا تنقل عبارات من وصف المصدر / when checking that brief texts are originally written and do not copy word runs from the source description"
  },
  {
   "family": "qa-verification",
@@ -2711,8 +3592,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-126"
+  "tags": [
+   "وضوح النص",
+   "قابلية القراءة",
+   "ألوان النص",
+   "accessibility",
+   "contrast ratio"
+  ],
+  "id": "QA-126",
+  "when": "حين تتغير الخلفية خلف النص أثناء الفيديو وتريد التأكد أن التباين مقروء في عدة لحظات / when backgrounds change behind text over time and contrast must stay readable at several timestamps"
  },
  {
   "family": "qa-verification",
@@ -2734,8 +3622,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-127"
+  "tags": [
+   "نص مقصوص",
+   "خروج عن الإطار",
+   "تخطيط",
+   "overflow",
+   "off canvas"
+  ],
+  "id": "QA-127",
+  "when": "حين يخرج النص عن حاويته أو يُقص أو يخرج عنصر عن الشاشة في لحظات من الفيديو / when text spills out of containers, gets clipped or elements go off-canvas at moments in the timeline"
  },
  {
   "family": "qa-verification",
@@ -2756,8 +3651,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-128"
+  "tags": [
+   "توقيت الحركة",
+   "فترات ميتة",
+   "تتابع الظهور",
+   "tween audit",
+   "stagger"
+  ],
+  "id": "QA-128",
+  "when": "حين تريد تدقيق توقيت كل الحركات وفواصلها وكشف الفترات الميتة والحركات السريعة أو البطيئة جدًا / when auditing every tween's timing and stagger, flagging dead zones and too-fast or too-slow moves"
  },
  {
   "family": "qa-verification",
@@ -2775,8 +3677,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-129"
+  "tags": [
+   "أسلوب الرسم",
+   "اتساق الأسلوب",
+   "ستايل",
+   "style consistency",
+   "drawn look"
+  ],
+  "id": "QA-129",
+  "when": "حين تريد قياس أسلوب رسم وتحويله لقيم ونطاقات ثم فحص هل الفيلم الجديد ما زال داخلها / when a drawn style must be measured into knobs and p10-p90 bands and a new film checked against them"
  },
  {
   "family": "qa-verification",
@@ -2797,8 +3706,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-130"
+  "tags": [
+   "تفكيك فيديو",
+   "تفريغ النص",
+   "هوك",
+   "ريلز",
+   "transcript",
+   "cta"
+  ],
+  "id": "QA-130",
+  "when": "حين يعطي المستخدم ريلًا أو منشورًا مرجعيًا ويريد تفكيكه: نص كامل وجدول للمرئيات وبنية من الهوك حتى الدعوة / when breaking down a reference reel or post: transcript, visuals timeline, hook-to-CTA beats"
  },
  {
   "family": "qa-verification",
@@ -2821,8 +3738,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-131"
+  "tags": [
+   "اختبار انحدار",
+   "فرق البكسل",
+   "مقارنة إطارات",
+   "regression test",
+   "pixel diff"
+  ],
+  "id": "QA-131",
+  "when": "حين تريد مقارنة إطارات الرندر الجديد بإطارات معتمدة بكسلًا ببكسل لكشف أي تغير غير مقصود / when rendered frames must be pixel-compared against approved goldens to catch unintended changes"
  },
  {
   "family": "qa-verification",
@@ -2841,8 +3765,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-132"
+  "tags": [
+   "علامات الخط الزمني",
+   "ماركر",
+   "تنظيم المراجعة",
+   "timeline markers",
+   "resolve markers"
+  ],
+  "id": "QA-132",
+  "when": "حين تريد وسم الخط الزمني في Resolve بعلامات ملونة ثابتة المعنى لتكون المراجعة مقروءة آليًا / when tagging a Resolve timeline with a fixed colour marker vocabulary so review is machine-readable"
  },
  {
   "family": "qa-verification",
@@ -2865,8 +3796,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-133"
+  "tags": [
+   "شوف الفيديو",
+   "فهم الفيديو",
+   "تفريغ صوتي",
+   "watch video",
+   "scene detection",
+   "transcript"
+  ],
+  "id": "QA-133",
+  "when": "حين يطلب المستخدم مشاهدة فيديو أو ريل وفهمه: إطارات مختارة عبر الزمن مع تفريغ كامل بالتوقيت / when asked to watch and understand a social or local video via sampled frames plus a timed transcript"
  },
  {
   "family": "qa-verification",
@@ -2888,8 +3827,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-134"
+  "tags": [
+   "مزامنة الإيقاع",
+   "القطع على البيت",
+   "تزامن",
+   "beat sync",
+   "cut timing"
+  ],
+  "id": "QA-134",
+  "when": "حين يجب التحقق أن كل قطع في المونتاج يقع على الضربة الصوتية في حدود إطار واحد / when verifying that every cut lands within one frame of the sound onset"
  },
  {
   "family": "qa-verification",
@@ -2910,8 +3856,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-135"
+  "tags": [
+   "إطارات سوداء",
+   "كرت الشاشة",
+   "انهيار الرندر",
+   "gpu lost",
+   "headless render"
+  ],
+  "id": "QA-135",
+  "when": "حين يفقد الرندر بدون واجهة جهاز GPU وينتج إطارات سوداء وتريد اكتشاف ذلك وإعادة البناء / when headless renders lose the GPU device and would produce black frames, to detect and rebuild instead"
  },
  {
   "family": "qa-verification",
@@ -2929,8 +3882,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-136"
+  "tags": [
+   "مطابقة",
+   "دقة الرسم",
+   "تشابه الصور",
+   "ssim",
+   "image similarity"
+  ],
+  "id": "QA-136",
+  "when": "عند قبول رسم روتوسكوب مطابق للمصدر بالقياس بدل الحكم بالعين / when accepting a rotoscoped replica drawing by measured SSIM and XOR against the source, not by eye"
  },
  {
   "family": "qa-verification",
@@ -2949,8 +3909,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-137"
+  "tags": [
+   "خرائط",
+   "إسقاط جغرافي",
+   "إحداثيات",
+   "geojson",
+   "srid",
+   "projection"
+  ],
+  "id": "QA-137",
+  "when": "حين تظهر الخريطة فارغة أو النقاط في البحر أو تفشل عمليات المساحة والدمج بسبب هندسة غير صالحة / when maps come out blank, points land in the ocean or area/union fails due to invalid geometry"
  },
  {
   "family": "qa-verification",
@@ -2968,8 +3936,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-138"
+  "tags": [
+   "مستوى الصوت",
+   "ضوضاء الخلفية",
+   "تحسين الكلام",
+   "snr",
+   "gain",
+   "compression"
+  ],
+  "id": "QA-138",
+  "when": "حين تريد ضبط صوت المتكلم بقياس مستوى الكلام والضوضاء ونسبة الإشارة لتحديد الكسب والقطع المنخفض والضغط / when deciding gain, low-cut and compression from measured speech level, noise floor and SNR"
  },
  {
   "family": "qa-verification",
@@ -2987,8 +3963,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-139"
+  "tags": [
+   "عدد القطعات",
+   "طول اللقطة",
+   "إيقاع المونتاج",
+   "scene detection",
+   "cut count"
+  ],
+  "id": "QA-139",
+  "when": "حين تريد معرفة عدد القطعات ومتوسط طول اللقطة ونسبة الثبات في فيديو مرجعي محليًا / when counting hard cuts, average shot length and still share of a reference video locally"
  },
  {
   "family": "qa-verification",
@@ -3008,8 +3991,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-140"
+  "tags": [
+   "بصمة الأسلوب",
+   "حركة الكاميرا",
+   "انتقالات",
+   "ترانزيشن",
+   "style analysis",
+   "camera moves"
+  ],
+  "id": "QA-140",
+  "when": "حين تريد دراسة مرجع بعمق: أنواع الانتقالات وحركات الكاميرا والألوان وشكل الترجمة وتوافق القطع مع الإيقاع / for a deep reference study: transition types, camera moves, palette, captions and beat-aligned cuts"
  },
  {
   "family": "qa-verification",
@@ -3029,8 +4020,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-141"
+  "tags": [
+   "نسبة التشابه",
+   "تقليد المرجع",
+   "إصلاح تلقائي",
+   "similarity score",
+   "match reference"
+  ],
+  "id": "QA-141",
+  "when": "حين تريد قياس مدى تشابه الفيديو الناتج مع المرجع ثم إصلاح أكبر فرق تلقائيًا / when scoring how close the product is to the reference and automatically closing the biggest gap"
  },
  {
   "family": "qa-verification",
@@ -3052,8 +4050,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-142"
+  "tags": [
+   "ميزانية",
+   "تكلفة الذكاء الاصطناعي",
+   "سعر",
+   "budget",
+   "token cost"
+  ],
+  "id": "QA-142",
+  "when": "قبل تشغيل خطة تستدعي نماذج مدفوعة لتقدير تكلفتها وطلب الموافقة إذا تجاوزت الحد / before running a plan that calls paid models, to estimate its cost and ask when it exceeds the limit"
  },
  {
   "family": "qa-verification",
@@ -3071,8 +4076,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-143"
+  "tags": [
+   "نصائح",
+   "اقتراحات",
+   "إصلاح سريع",
+   "tips",
+   "quick fix"
+  ],
+  "id": "QA-143",
+  "when": "أثناء المونتاج حين تريد اقتراحات فورية بالخطوة التالية وإصلاح المشاكل بضغطة دون ذكاء اصطناعي / while editing, for instant local tips on the next step and one-tap fixes without AI"
  },
  {
   "family": "qa-verification",
@@ -3090,8 +4102,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-144"
+  "tags": [
+   "قائمة تحقق",
+   "قبل النشر",
+   "فحص نهائي",
+   "checklist",
+   "pre-publish"
+  ],
+  "id": "QA-144",
+  "when": "قبل النشر لمراجعة قائمة نهائية بالمدة والترجمة والصوت والتزامن مع حكم نجاح أو تحذير أو فشل / before publishing, for a final checklist on duration, captions, audio and sync with a pass/warn/fail verdict"
  },
  {
   "family": "qa-verification",
@@ -3111,8 +4130,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-145"
+  "tags": [
+   "حالة الربط",
+   "مصادقة",
+   "تشخيص",
+   "health check",
+   "api status"
+  ],
+  "id": "QA-145",
+  "when": "حين لا يعمل الربط مع Gemini أو Claude وتريد فحص الإعدادات والاتصال والمصادقة بأمان / when the Gemini or Claude integration fails and you need to check config, reachability and auth safely"
  },
  {
   "family": "qa-verification",
@@ -3131,8 +4157,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-146"
+  "tags": [
+   "جنب بعض",
+   "شاشات المعاينة",
+   "المرجع",
+   "side by side",
+   "compare view"
+  ],
+  "id": "QA-146",
+  "when": "حين تريد عرض المنتج والأصل والمرجع واحدًا تلو الآخر أو جنبًا إلى جنب مع تشغيل المرجع متزامنًا / when showing product, original and reference monitors one at a time or side by side with synced playback"
  },
  {
   "family": "qa-verification",
@@ -3153,8 +4186,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-147"
+  "tags": [
+   "تجربة سريعة",
+   "تيست رندر",
+   "دقة منخفضة",
+   "test render",
+   "low res"
+  ],
+  "id": "QA-147",
+  "when": "قبل الموافقة على الرندر الكامل لتجربة قصيرة بدقة منخفضة تثبت أن خط الإنتاج يعمل / before approval, for a short low-res test render that proves the pipeline works"
  },
  {
   "family": "qa-verification",
@@ -3175,8 +4215,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-148"
+  "tags": [
+   "فحص الكود",
+   "أخطاء",
+   "تدقيق",
+   "linter",
+   "static analysis"
+  ],
+  "id": "QA-148",
+  "when": "حين تريد فحص ملفات HTML وCSS وJS للتكوين بقواعد ثابتة واكتشاف الأخطاء / when composition HTML/CSS/JS must be statically checked against lint rule codes"
  },
  {
   "family": "qa-verification",
@@ -3198,8 +4245,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-149"
+  "tags": [
+   "تدقيق بصري",
+   "تباين",
+   "منطقة الترجمة",
+   "visual audit",
+   "overflow"
+  ],
+  "id": "QA-149",
+  "when": "حين تريد تدقيق التكوين في المتصفح للتجاوز والتباين ومنطقة الترجمة في عينات من الخط الزمني / when auditing a composition in the browser for overflow, contrast and caption-zone issues at sampled times"
  },
  {
   "family": "qa-verification",
@@ -3220,8 +4274,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-150"
+  "tags": [
+   "لقطة شاشة",
+   "صور ثابتة",
+   "اسكرين شوت",
+   "screenshot",
+   "still frames"
+  ],
+  "id": "QA-150",
+  "when": "حين تريد صورًا ثابتة من التكوين في أزمنة محددة أو تكبير عنصر أو مقارنته بفيديو مرجعي / when you need PNG frames at chosen times, a zoomed element crop or a side-by-side with a reference video"
  },
  {
   "family": "qa-verification",
@@ -3242,8 +4303,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-151"
+  "tags": [
+   "كيفريم",
+   "حركة",
+   "توقيت",
+   "tween",
+   "animation debug"
+  ],
+  "id": "QA-151",
+  "when": "حين تريد فحص الإطارات المفتاحية للحركة وكيف تتغير القيم عبر الزمن / when you need to inspect tween keyframes and how values change over time"
  },
  {
   "family": "qa-verification",
@@ -3264,8 +4332,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-152"
+  "tags": [
+   "درجات اللون",
+   "اختيار اللوك",
+   "نسخ الرندر",
+   "color grade",
+   "variants"
+  ],
+  "id": "QA-152",
+  "when": "حين تريد مقارنة نسخ الرندر أو عرض حتى 16 تدريجًا لونيًا في صورة واحدة للاختيار بينها / when comparing renders or tiling up to 16 colour grades into one image to choose between them"
  },
  {
   "family": "qa-verification",
@@ -3283,8 +4358,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-153"
+  "tags": [
+   "سرعة الرندر",
+   "بطء",
+   "تمويه",
+   "بلور",
+   "performance",
+   "draft quality"
+  ],
+  "id": "QA-153",
+  "when": "حين يكون الرندر ثقيلًا بسبب طبقات التمويه الكبيرة الكثيرة وتريد جودة مسودة للمراجعة فقط / when renders are heavy from many big blur/backdrop-filter layers and you want draft quality for review only"
  },
  {
   "family": "qa-verification",
@@ -3305,8 +4388,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-154"
+  "tags": [
+   "ستوري بورد",
+   "مراحل العمل",
+   "موافقة",
+   "storyboard",
+   "approval"
+  ],
+  "id": "QA-154",
+  "when": "حين يُبنى الفيديو على مراحل بموافقة: خطة إطارات ثم رسومات ثابتة ثم بناء ثم معاينة قبل الرندر / when building a video in approved passes: frame plan, static sketches, build, then preview before render"
  },
  {
   "family": "qa-verification",
@@ -3326,8 +4416,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-155"
+  "tags": [
+   "تحديث الأداة",
+   "ترقية",
+   "إصدار",
+   "upgrade",
+   "version pin"
+  ],
+  "id": "QA-155",
+  "when": "قبل أوامر الرندر حين يكون إصدار hyperframes المثبت في المشروع قديمًا ويحتاج ترقية وتحققًا / before render-affecting commands when the project's pinned hyperframes version is behind and must be upgraded"
  },
  {
   "family": "qa-verification",
@@ -3345,8 +4442,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-156"
+  "tags": [
+   "ثبات الرندر",
+   "عشوائية",
+   "تكرار النتائج",
+   "deterministic",
+   "seeded random"
+  ],
+  "id": "QA-156",
+  "when": "حين يختلف الرندر بين مرة وأخرى أو يجب أن يكون كل إطار دالة ثابتة للزمن بلا عشوائية غير مضبوطة / when renders differ between runs or every frame must be a pure function of time, with no unseeded random"
  },
  {
   "family": "qa-verification",
@@ -3364,8 +4468,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-157"
+  "tags": [
+   "حل الأخطاء",
+   "أخطاء شائعة",
+   "مشاكل الخط",
+   "troubleshooting",
+   "lint errors"
+  ],
+  "id": "QA-157",
+  "when": "حين يظهر خطأ فحص معروف مثل تعارض التحويلات أو وسائط بلا id أو خط بلا @font-face / when lint reports known errors like transform conflicts, media without id or fonts without @font-face"
  },
  {
   "family": "qa-verification",
@@ -3386,8 +4497,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-158"
+  "tags": [
+   "المسارات",
+   "المقاطع",
+   "تايملاين",
+   "tracks",
+   "clips"
+  ],
+  "id": "QA-158",
+  "when": "حين تريد قائمة بكل المسارات والمقاطع في المشروع مع بداياتها ونهاياتها وما يعمل فيها / when you need a list of every track and clip in a project with starts, ends and what plays"
  },
  {
   "family": "qa-verification",
@@ -3405,8 +4523,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-159"
+  "tags": [
+   "ترانزيشن",
+   "تأثيرات انتقال",
+   "جليتش",
+   "transitions",
+   "light leak"
+  ],
+  "id": "QA-159",
+  "when": "عند اختيار انتقال CSS لتجنب الأنواع المعطوبة مثل القزحية النجمية وتوهج العدسة والمفصلة / when choosing CSS transitions, to avoid broken ones like star iris, lens flare, tilt-shift and hinge"
  },
  {
   "family": "qa-verification",
@@ -3429,8 +4554,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-160"
+  "tags": [
+   "تدقيق الحركة",
+   "فترات ميتة",
+   "تتابع",
+   "gsap",
+   "tween audit"
+  ],
+  "id": "QA-160",
+  "when": "حين تريد حصر كل حركات GSAP في التكوين وكشف الفترات الميتة وعدم انتظام التتابع / when enumerating every GSAP tween to flag dead zones, stagger inconsistency and lifecycle problems"
  },
  {
   "family": "qa-verification",
@@ -3452,8 +4584,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-161"
+  "tags": [
+   "مسار الحركة",
+   "سرعة ثابتة",
+   "طبقات شبحية",
+   "onion skin",
+   "motion path"
+  ],
+  "id": "QA-161",
+  "when": "حين تريد تشخيص مسار حركة عنصر ورؤية أشباحه المتتالية وثبات سرعته وإثبات الوضع النهائي / when diagnosing an element's motion path with onion-skin ghosts, speed evenness and final lockup proof"
  },
  {
   "family": "qa-verification",
@@ -3471,8 +4610,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-162"
+  "tags": [
+   "مواصفات التصميم",
+   "المسافات",
+   "الألوان والخطوط",
+   "design spec",
+   "design review"
+  ],
+  "id": "QA-162",
+  "when": "بعد التنفيذ للتأكد أن الألوان والخطوط والزوايا والمسافات والعمق مطابقة لمواصفات التصميم / after authoring, to check colors, type, corners, spacing and depth against the design spec"
  },
  {
   "family": "qa-verification",
@@ -3493,8 +4639,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-163"
+  "tags": [
+   "وضوح النص",
+   "تباين الألوان",
+   "إمكانية الوصول",
+   "accessibility",
+   "legibility"
+  ],
+  "id": "QA-163",
+  "when": "حين تريد معرفة تحذيرات التباين في الإطارات المصيرة للتأكد من وضوح النص / when you need WCAG contrast warnings from rendered frames to check text legibility"
  },
  {
   "family": "qa-verification",
@@ -3515,8 +4668,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-164"
+  "tags": [
+   "أخطاء البنية",
+   "تدقيق الكود",
+   "قواعد",
+   "html lint",
+   "static check"
+  ],
+  "id": "QA-164",
+  "when": "حين تريد فحص بنية HTML للتكوين فحصًا ثابتًا بقواعد لها أسماء / for a static check of composition HTML structure that reports named rule ids"
  },
  {
   "family": "qa-verification",
@@ -3539,8 +4699,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-165"
+  "tags": [
+   "أخطاء التشغيل",
+   "تجاوز التخطيط",
+   "فحص شامل",
+   "headless browser",
+   "runtime errors"
+  ],
+  "id": "QA-165",
+  "when": "حين تريد فحصًا واحدًا في المتصفح لأخطاء التشغيل والطلبات الفاشلة والتجاوز وتأكيدات الحركة والتباين / for one headless browser pass on runtime errors, failed requests, overflow, motion assertions and contrast"
  },
  {
   "family": "qa-verification",
@@ -3558,8 +4725,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-166"
+  "tags": [
+   "اختبار الحركة",
+   "تحقق آلي",
+   "تأكيدات",
+   "motion test",
+   "assertions"
+  ],
+  "id": "QA-166",
+  "when": "حين تريد كتابة نية الحركة بجانب التكوين ليتحقق منها الفحص آليًا بدل مشاهدة الفيديو / when stating motion intent next to a composition so check verifies entrances, stagger and in-frame automatically"
  },
  {
   "family": "qa-verification",
@@ -3580,8 +4754,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-167"
+  "tags": [
+   "صور ثابتة",
+   "لقطة شاشة",
+   "فحص النص",
+   "still frames",
+   "screenshots"
+  ],
+  "id": "QA-167",
+  "when": "حين تريد صورًا ثابتة في أزمنة تختارها لفحص ظهور العناصر والنصوص والوضع النهائي / when rendering stills at chosen timestamps to inspect mounts, text and final lockups"
  },
  {
   "family": "qa-verification",
@@ -3602,8 +4783,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-168"
+  "tags": [
+   "بطء الرندر",
+   "تشخيص",
+   "كرت الشاشة",
+   "render speed",
+   "gpu mode"
+  ],
+  "id": "QA-168",
+  "when": "بعد الرندر وخاصة إذا كان بطيئًا لمعرفة طريقة الالتقاط ووضع GPU وتوقيت كل مرحلة / after a render, especially a slow one, to read the capture path, GPU mode and per-stage timings"
  },
  {
   "family": "qa-verification",
@@ -3624,8 +4812,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-169"
+  "tags": [
+   "نسخ بديلة",
+   "تلوين",
+   "جنب بعض",
+   "variants",
+   "grading"
+  ],
+  "id": "QA-169",
+  "when": "حين تريد مقارنة نسختين من المشروع أو درجات تلوين مختلفة جنبًا إلى جنب / when comparing project variants or colour grades side by side"
  },
  {
   "family": "qa-verification",
@@ -3646,8 +4841,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-170"
+  "tags": [
+   "تراجع",
+   "سجل التعديلات",
+   "رجوع",
+   "undo",
+   "revert"
+  ],
+  "id": "QA-170",
+  "when": "حين يعمل وكيل على المشروع ويحتاج التراجع عن آخر دورة له دون المساس بتعديلات الشخص / when an agent must undo its newest turn on a project without touching the person's edits"
  },
  {
   "family": "qa-verification",
@@ -3668,8 +4870,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-171"
+  "tags": [
+   "مساهمة",
+   "مكونات",
+   "معايير الجودة",
+   "contribution",
+   "registry"
+  ],
+  "id": "QA-171",
+  "when": "حين تريد إضافة مكون أو بلوك جديد إلى السجل وفق معيار الجودة والقوالب وبيانات الاكتشاف / when authoring a new block or component upstream with the quality bar, templates and discovery metadata"
  },
  {
   "family": "qa-verification",
@@ -3687,8 +4896,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-172"
+  "tags": [
+   "تفريغ صوتي",
+   "سب تايتل",
+   "هلوسة",
+   "subtitles",
+   "srt",
+   "captions"
+  ],
+  "id": "QA-172",
+  "when": "بعد تفريغ الصوت لفحص الهلوسة والكلمات الناقصة والتوقيتات وتنظيف النص أو استيراد SRT وVTT / after transcription, to check hallucinations, missing words and timestamps, clean it or import SRT/VTT"
  },
  {
   "family": "qa-verification",
@@ -3709,8 +4926,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-173"
+  "tags": [
+   "ترجمة الفيديو",
+   "رفض المقطع",
+   "كابشن",
+   "subtitles",
+   "burned-in captions"
+  ],
+  "id": "QA-173",
+  "when": "قبل ترجمة مقطع لتقرر رفضه أو تقسيمه: عدة متحدثين أو بلا كلام أو ترجمة محروقة أو تفريغ رديء / before captioning a clip, to refuse or split it: multiple speakers, no speech, burned-in captions, bad transcript"
  },
  {
   "family": "qa-verification",
@@ -3731,8 +4955,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-174"
+  "tags": [
+   "معاينة سريعة",
+   "بدون رندر",
+   "تركيب",
+   "quick preview",
+   "visual qa"
+  ],
+  "id": "QA-174",
+  "when": "قبل دفع تكلفة الرندر لمعاينة إطارات تقريبية من التركيب النهائي في نحو ثانيتين لكل إطار / before paying for a render, to preview approximate final composite frames at about 2 s per frame"
  },
  {
   "family": "qa-verification",
@@ -3755,8 +4986,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-175"
+  "tags": [
+   "ترجمة",
+   "كابشن",
+   "توقيت الكلمات",
+   "subtitles",
+   "occlusion"
+  ],
+  "id": "QA-175",
+  "when": "قبل الإخراج النهائي لفحص توقيت الترجمة وتداخلها مع القناع وخروجها عن الإطار وانتقالها إلى الذروة / before final, to check caption timing, occlusion against the matte, frame-edge overflow and rail-to-climax hand-off"
  },
  {
   "family": "qa-verification",
@@ -3777,8 +5015,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-176"
+  "tags": [
+   "مشاكل الترجمة",
+   "أخطاء",
+   "كابشن",
+   "troubleshooting",
+   "alpha matte"
+  ],
+  "id": "QA-176",
+  "when": "حين تظهر مشاكل في الترجمة المتحركة كقفز التباعد أو اختفائها في الظلام أو قناع ألفا تالف / when animated captions misbehave: letter-spacing jumps, blend vanishing in dark, or corrupted alpha mattes"
  },
  {
   "family": "qa-verification",
@@ -3798,8 +5043,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-177"
+  "tags": [
+   "تطابق الحركة",
+   "انيميشن فيجما",
+   "تطابق التوقيت",
+   "easing",
+   "design to video"
+  ],
+  "id": "QA-177",
+  "when": "حين تنقل حركة من Figma وتريد قياس تطابق المسارات والتوقيت والتسهيل مع الفيديو المصدّر منه / when porting Figma motion and scoring trajectories, timing and easing against Figma's exported video"
  },
  {
   "family": "qa-verification",
@@ -3820,8 +5072,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-178"
+  "tags": [
+   "صور ثابتة",
+   "فحص مبدئي",
+   "كادرات",
+   "stills",
+   "preview frames"
+  ],
+  "id": "QA-178",
+  "when": "قبل أي رندر فيديو لتصيير صور ثابتة في أزمنة مختارة والتأكد منها أولًا / before any video render, to render selected stills at chosen times and check them first"
  },
  {
   "family": "qa-verification",
@@ -3840,8 +5099,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-179"
+  "tags": [
+   "ثري دي",
+   "تصحيح الأخطاء",
+   "أداء",
+   "debug",
+   "3d performance"
+  ],
+  "id": "QA-179",
+  "when": "حين يكون مشهد ثلاثي الأبعاد ثقيلًا أو فيه عيوب وتريد إخفاء عناصر كالماء أو المؤثرات لعزل المشكلة / when a heavy 3D scene has performance or artefact problems and you hide parts to isolate the cause"
  },
  {
   "family": "qa-verification",
@@ -3859,8 +5125,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-180"
+  "tags": [
+   "محاكاة فيديو",
+   "تقليد",
+   "مطابقة",
+   "remake",
+   "audio correlation"
+  ],
+  "id": "QA-180",
+  "when": "حين تبني فيلمًا يحاكي مرجعًا وتريد مقارنة المدة وحدود اللقطات وترابط الصوت معه / when building a film that mimics a reference and comparing duration, shot boundaries and audio correlation"
  },
  {
   "family": "qa-verification",
@@ -3880,8 +5153,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-181"
+  "tags": [
+   "أخطاء شائعة",
+   "ملف ناقص",
+   "تلاشي",
+   "pitfalls",
+   "dissolve"
+  ],
+  "id": "QA-181",
+  "when": "عند محاكاة مرجع لتجنب أخطاء معروفة كالتنزيل المبتور وخلط تلاشي النص بالذوبان وحدود الإظلام / when mimicking a reference, to avoid known traps: truncated downloads, text fades mistaken for dissolves"
  },
  {
   "family": "qa-verification",
@@ -3899,8 +5179,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-182"
+  "tags": [
+   "سرعة القراءة",
+   "هوك",
+   "مسودة",
+   "readability",
+   "draft preview"
+  ],
+  "id": "QA-182",
+  "when": "حين تريد معاينة مسودة والتأكد أن النص يُقرأ بسرعة مناسبة وأن الهوك يظهر في أول ثانيتين / when previewing a draft and checking text reads at a comfortable pace and the hook lands within 2 s"
  },
  {
   "family": "qa-verification",
@@ -3920,8 +5207,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-183"
+  "tags": [
+   "ملاحظات",
+   "تعليقات",
+   "تعديلات",
+   "markup",
+   "feedback"
+  ],
+  "id": "QA-183",
+  "when": "حين يريد المستخدم وضع ملاحظاته على الفيلم في صفحة مراجعة محلية ثم تطبيقها / when the user marks up the film on a local review page and the feedback is applied"
  },
  {
   "family": "qa-verification",
@@ -3940,8 +5234,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-184"
+  "tags": [
+   "تصدير نهائي",
+   "علو الصوت",
+   "صورة الغلاف",
+   "final export",
+   "poster frame"
+  ],
+  "id": "QA-184",
+  "when": "عند الرندر النهائي والتأكد من الترميز وعلو الصوت والذروة وعدم وجود إطارات سوداء أو متجمدة / for the final render, checking H.264 yuv420p, -14 LUFS loudness, true peak and no black or frozen frames"
  },
  {
   "family": "qa-verification",
@@ -3961,8 +5262,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-185"
+  "tags": [
+   "تفكيك فيديو",
+   "ألوان",
+   "سرعة الإيقاع",
+   "bpm",
+   "palette"
+  ],
+  "id": "QA-185",
+  "when": "حين تريد تحليل فيديو إلى مواصفاته ومقاطعه وألوانه وطاقة حركته وعلو صوته وإيقاعه / when breaking down a video into specs, beats, palette, motion energy, loudness, BPM and onsets"
  },
  {
   "family": "qa-verification",
@@ -3980,8 +5288,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-186"
+  "tags": [
+   "مكتبة مراجع",
+   "أسلوب موحد",
+   "تحليل دفعي",
+   "house style",
+   "batch analysis"
+  ],
+  "id": "QA-186",
+  "when": "حين تريد قياس عدة فيديوهات مرجعية دفعة واحدة لبناء مكتبة أسلوب موحد للمؤسسة / when measuring many reference videos at once to build a house-style library"
  },
  {
   "family": "qa-verification",
@@ -4001,8 +5316,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-187"
+  "tags": [
+   "موجة الصوت",
+   "ترددات",
+   "رسم بياني",
+   "frequency",
+   "audio visualization"
+  ],
+  "id": "QA-187",
+  "when": "حين تريد صورة لشكل موجة الصوت وطيف تردداته لفحصه بصريًا / when you want a PNG of an audio file's waveform and log-frequency spectrum"
  },
  {
   "family": "qa-verification",
@@ -4024,8 +5346,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-188"
+  "tags": [
+   "نسبة التقدم",
+   "شريط تحميل",
+   "حالة الرندر",
+   "progress bar",
+   "render status",
+   "tkinter"
+  ],
+  "id": "QA-188",
+  "when": "حين تريد شريط تقدم حقيقيًا بالنسبة المئوية أثناء رندر ffmpeg في نافذة صغيرة / when you want honest percent progress of an ffmpeg render shown in a small polling window"
  },
  {
   "family": "qa-verification",
@@ -4046,8 +5376,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-189"
+  "tags": [
+   "شيدر",
+   "خلل بصري",
+   "تشوه في الرندر",
+   "shader bug",
+   "material debugging"
+  ],
+  "id": "QA-189",
+  "when": "حين يظهر عيب أو تشوه في المشهد ثلاثي الأبعاد ولا يُعرف أي مادة أو شيدر يسببه / when a 3D scene shows a visual artifact and you must find which material or shader causes it"
  },
  {
   "family": "qa-verification",
@@ -4065,8 +5402,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-190"
+  "tags": [
+   "فيديو مرجعي",
+   "تقليد فيديو",
+   "تحليل المونتاج",
+   "reference video",
+   "imitate style",
+   "mimic"
+  ],
+  "id": "QA-190",
+  "when": "حين يرسل المستخدم فيديو مرجعيًا ويريد تقليده: قياس القطعات والانتقالات والألوان وأماكن النص / when the user shares a reference reel to imitate and its cuts, transitions, looks and text zones must be measured"
  },
  {
   "family": "qa-verification",
@@ -4084,8 +5429,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-191"
+  "tags": [
+   "مطابقة الفيديو",
+   "مقارنة بالمرجع",
+   "تزامن الصوت",
+   "remake check",
+   "audio correlation"
+  ],
+  "id": "QA-191",
+  "when": "حين تريد إثبات أن الفيديو المعاد بناؤه يطابق المرجع في القطعات والمدة والصوت / when you need to prove a rebuilt film matches its reference in cuts, duration and audio"
  },
  {
   "family": "qa-verification",
@@ -4105,8 +5457,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-192"
+  "tags": [
+   "معاينة",
+   "تشغيل في المتصفح",
+   "شريط التقديم",
+   "preview player",
+   "scrub bar"
+  ],
+  "id": "QA-192",
+  "when": "حين يريد المستخدم معاينة التصميم المتحرك في متصفح عادي بزر تشغيل وشريط تقديم / when the user wants to preview a composition in a normal browser with play/pause and a scrub bar"
  },
  {
   "family": "qa-verification",
@@ -4126,8 +5485,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-193"
+  "tags": [
+   "صور ثابتة من الفيديو",
+   "معاينة سريعة",
+   "قبل الرندر",
+   "keyframe stills",
+   "frame grabs"
+  ],
+  "id": "QA-193",
+  "when": "قبل أي رندر كامل حين تريد إلقاء نظرة سريعة على بضعة إطارات مفتاحية / before any full render, when you want a quick look at a handful of key frames"
  },
  {
   "family": "qa-verification",
@@ -4148,8 +5514,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-194"
+  "tags": [
+   "حركة سريعة",
+   "ضبابية الحركة",
+   "سرعة الأنيميشن",
+   "motion blur",
+   "optical flow"
+  ],
+  "id": "QA-194",
+  "when": "حين تبدو الحركة سريعة جدًا وتريد معرفة هل هي نظيفة أم تحتاج ضبابية حركة أم إعادة تصميم / when a move looks too fast and you must decide between clean, motion blur, or redesign"
  },
  {
   "family": "qa-verification",
@@ -4170,8 +5543,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-195"
+  "tags": [
+   "واقعية الصورة",
+   "تقييم الرسم",
+   "كرتوني",
+   "realism check",
+   "image quality"
+  ],
+  "id": "QA-195",
+  "when": "حين تريد حكمًا مقاسًا على الصورة المرسومة: هل تبدو واقعية أم مسطحة كرتونية / when you need a measured verdict on whether a still render looks realistic or flat"
  },
  {
   "family": "qa-verification",
@@ -4189,8 +5569,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-196"
+  "tags": [
+   "كشف القطعات",
+   "تقسيم اللقطات",
+   "لوك الفيديو",
+   "scene detection",
+   "cut detection"
+  ],
+  "id": "QA-196",
+  "when": "حين تحتاج تقسيم فيديو إلى لقطات ومعرفة مظهر كل لقطة والفينييت والحبيبات والإطار الأسود / when you need to split a video into shots and read each shot's look plus vignette, grain and letterbox"
  },
  {
   "family": "qa-verification",
@@ -4211,8 +5598,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-197"
+  "tags": [
+   "اختبار انحدار",
+   "فيديو اصطناعي",
+   "دقة الاكتشاف",
+   "regression test",
+   "ground truth"
+  ],
+  "id": "QA-197",
+  "when": "حين تعدل محلل التقليد وتريد التأكد أنه ما زال يكتشف الانتقالات والنصوص بدقة / when you change the mimic analyser and need to score its detections against known truth"
  },
  {
   "family": "qa-verification",
@@ -4233,8 +5627,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-198"
+  "tags": [
+   "تحليل فيديو",
+   "نوع الانتقال",
+   "ترانزيشن",
+   "analyze reference",
+   "style analysis"
+  ],
+  "id": "QA-198",
+  "when": "حين يرسل المستخدم فيديو مرجعيًا ويطلب تحليل قطعاته وانتقالاته ومظهره مع الحفاظ على صوته / when the user sends a reference video and wants its cuts, transition types and look analysed with audio kept intact"
  },
  {
   "family": "qa-verification",
@@ -4254,8 +5655,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-199"
+  "tags": [
+   "اختبار آلي",
+   "ترتيب الخطوط",
+   "مرجع اصطناعي",
+   "synthetic test",
+   "font ranking"
+  ],
+  "id": "QA-199",
+  "when": "عند اختبار دقة تحليل المحاكاة وترتيب الخطوط على مرجع اصطناعي معروف الحقيقة / when testing mimic analysis and font ranking accuracy on a synthetic reference with known truth"
  },
  {
   "family": "qa-verification",
@@ -4276,8 +5684,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-200"
+  "tags": [
+   "رسم واقعي",
+   "كرتون",
+   "مقياس الجودة",
+   "flat cartoon",
+   "realism score"
+  ],
+  "id": "QA-200",
+  "when": "حين تريد تصنيف رسمة هل هي واقعية مرسومة أم كرتون مسطح بمقاييس رقمية / when classifying an image as painted-realistic or flat cartoon by numbers"
  },
  {
   "family": "qa-verification",
@@ -4297,8 +5712,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-201"
+  "tags": [
+   "مشغل فيديو",
+   "معاينة بالصوت",
+   "مفتاح المسافة",
+   "browser preview",
+   "playback"
+  ],
+  "id": "QA-201",
+  "when": "حين يفتح المستخدم التصميم في متصفح عادي ويريد تشغيله بالصوت مع إيقاف وتقديم / when the user opens a composition in a normal browser and wants it to play with audio, pause and scrub"
  },
  {
   "family": "qa-verification",
@@ -4318,8 +5740,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-202"
+  "tags": [
+   "فرق الألوان",
+   "لمسات أخيرة",
+   "تصحيح الرسم",
+   "delta e",
+   "color difference"
+  ],
+  "id": "QA-202",
+  "when": "حين تبقى فروق لونية بين الرسم والأصل وتريد إصلاح الأوضح أولًا / when finishing a painting and the remaining colour differences should be fixed most-visible first"
  },
  {
   "family": "qa-verification",
@@ -4339,8 +5768,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-203"
+  "tags": [
+   "خطة الرسم",
+   "رسم صورة",
+   "اختيار تلقائي",
+   "painting plan",
+   "photo redraw"
+  ],
+  "id": "QA-203",
+  "when": "عند رسم صورة فوتوغرافية وتريد اختيار خطة الرسم الأفضل بالقياس بدل التخمين / when painting a photo and you need to pick the best block-in/refine plan by measurement"
  },
  {
   "family": "qa-verification",
@@ -4360,8 +5796,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-204"
+  "tags": [
+   "مطابقة البكسل",
+   "تطابق تام",
+   "إعادة رسم",
+   "pixel diff",
+   "exact redraw"
+  ],
+  "id": "QA-204",
+  "when": "بعد رسم صورة حين تريد التأكد أن الرسم يطابق الأصل بكسلًا ببكسل / after drawing an image, when you need to confirm the canvas matches the original pixel for pixel"
  },
  {
   "family": "qa-verification",
@@ -4381,8 +5824,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-205"
+  "tags": [
+   "قراءة آمنة",
+   "أمان الملفات",
+   "بيانات فقط",
+   "safe load",
+   "literal_eval"
+  ],
+  "id": "QA-205",
+  "when": "حين تستلم ملف كود صورة وتريد قراءته ورسمه دون تشغيل أي شيء بداخله / when you receive an image-code file and must read and paint it without executing anything in it"
  },
  {
   "family": "qa-verification",
@@ -4404,8 +5854,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-206"
+  "tags": [
+   "بوابة جودة",
+   "قبول أو رفض",
+   "واقعية الرندر",
+   "pass revise",
+   "render check"
+  ],
+  "id": "QA-206",
+  "when": "حين تريد قبول أو رفض رندر بناءً على واقعيته مع أسباب واضحة للمراجعة / when a render needs a PASS or REVISE realism verdict with reasons"
  },
  {
   "family": "qa-verification",
@@ -4425,8 +5882,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-207"
+  "tags": [
+   "جولات مراجعة",
+   "تحسين الرسم",
+   "مشهد مرسوم",
+   "review loop",
+   "iterate"
+  ],
+  "id": "QA-207",
+  "when": "عند رسم مشهد وتريد تحسينه على جولات مراجعة مقاسة حتى يصل لجودة مقبولة / when painting a scene and you want to improve it over 2-4 measured review rounds"
  },
  {
   "family": "qa-verification",
@@ -4447,8 +5911,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-208"
+  "tags": [
+   "اختبارات الوحدة",
+   "تشغيل الاختبارات",
+   "فحص التعديلات",
+   "unit tests",
+   "unittest"
+  ],
+  "id": "QA-208",
+  "when": "بعد تعديل كود الاستوديو حين تريد تشغيل الاختبارات والتأكد أن شيئًا لم ينكسر / after changing studio code, when you need to run the unit tests to make sure nothing broke"
  },
  {
   "family": "qa-verification",
@@ -4468,8 +5939,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-209"
+  "tags": [
+   "صور ثابتة",
+   "سكرين شوت",
+   "أخطاء الصفحة",
+   "screenshots",
+   "console errors"
+  ],
+  "id": "QA-209",
+  "when": "حين تريد حفظ صور ثابتة من التصميم عند أزمنة محددة لمراجعتها مع أخطاء الصفحة / when you need PNG stills of a composition at chosen times plus page errors and console warnings"
  },
  {
   "family": "qa-verification",
@@ -4490,8 +5968,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-210"
+  "tags": [
+   "قياس الحركة",
+   "تدفق بصري",
+   "بلور الحركة",
+   "farneback",
+   "px per frame"
+  ],
+  "id": "QA-210",
+  "when": "حين تريد قياس سرعة الحركة على الشاشة بالبكسل لكل إطار مع حكم: ضبابية أم إعادة تصميم / when you need px-per-frame motion speed with a verdict on blur or redesign"
  },
  {
   "family": "qa-verification",
@@ -4511,8 +5996,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-211"
+  "tags": [
+   "دليل أسلوب",
+   "إيقاع المونتاج",
+   "لوحة ألوان",
+   "style guide",
+   "cut rhythm"
+  ],
+  "id": "QA-211",
+  "when": "حين يريد المستخدم أسلوب فيديو مرجعي لا محتواه: إيقاع القطعات والألوان ودليل أسلوب / when the user wants a reference film's style, not its content: cut rhythm, palette and a style guide"
  },
  {
   "family": "qa-verification",
@@ -4533,8 +6025,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-212"
+  "tags": [
+   "فحص الفيديو",
+   "تسليم",
+   "جهارة الصوت",
+   "verify video",
+   "lufs"
+  ],
+  "id": "QA-212",
+  "when": "قبل تسليم الفيديو النهائي حين تريد التحقق من المدة والفريمات والصوت والجهارة / before delivering a final video, to verify duration, fps, frame count, audio and loudness"
  },
  {
   "family": "qa-verification",
@@ -4555,8 +6054,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-213"
+  "tags": [
+   "تباين النص",
+   "خروج العناصر",
+   "فحص قبل التصدير",
+   "contrast check",
+   "overflow",
+   "hyperframes"
+  ],
+  "id": "QA-213",
+  "when": "قبل الرندر حين تريد فحصًا واحدًا لتباين النص وخروج العناصر عن الإطار / before rendering, for one check that catches text contrast errors and layout overflow"
  },
  {
   "family": "qa-verification",
@@ -4577,8 +6084,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-214"
+  "tags": [
+   "ستوري بورد",
+   "صورة مرجعية",
+   "مطابقة التصميم",
+   "concept art",
+   "storyboard"
+  ],
+  "id": "QA-214",
+  "when": "حين يجب أن يطابق التصميم النهائي صورة مفهوم أو ستوري بورد معتمدة / when the final build must match an approved concept frame or storyboard still"
  },
  {
   "family": "qa-verification",
@@ -4598,8 +6112,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-215"
+  "tags": [
+   "تكلفة الرندر",
+   "ميزانية",
+   "موافقة المستخدم",
+   "paid render",
+   "cost cap"
+  ],
+  "id": "QA-215",
+  "when": "حين يحتاج الرندر لخدمة مدفوعة وتريد عرض التكلفة وأخذ موافقة المستخدم وسقف للميزانية / when a render costs money and needs a quote, user approval and a budget cap"
  },
  {
   "family": "qa-verification",
@@ -4620,8 +6141,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-216"
+  "tags": [
+   "كلمات الأغنية",
+   "تفريغ صوتي",
+   "أغنية مولدة",
+   "lyrics check",
+   "whisper"
+  ],
+  "id": "QA-216",
+  "when": "حين تولد أغنية وتريد التأكد أن كل سطر مكتوب غُني فعلًا / when a generated song must be checked that every planned lyric line was actually sung"
  },
  {
   "family": "qa-verification",
@@ -4643,8 +6171,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-217"
+  "tags": [
+   "هوية بصرية موحدة",
+   "توليد صور",
+   "مجموعة رسومات",
+   "theme file",
+   "figure set"
+  ],
+  "id": "QA-217",
+  "when": "حين تولد مجموعة صور أو رسومات بنفس الأسلوب وتريد فحص كل نسخة قبل التعديل التالي / when generating a set of figures in one style and each candidate needs QA before the next change"
  },
  {
   "family": "qa-verification",
@@ -4666,8 +6201,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-218"
+  "tags": [
+   "حكم محايد",
+   "اختيار من خيارات",
+   "تحيز الترتيب",
+   "closed set",
+   "ranking ideas"
+  ],
+  "id": "QA-218",
+  "when": "حين تحتاج اختيارًا محايدًا من خيارات ثابتة أو نعم/لا أو درجة دون تحيز الترتيب / when you need an unbiased pick among fixed options, yes/no or a score, free of order bias"
  },
  {
   "family": "qa-verification",
@@ -4690,8 +6232,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-219"
+  "tags": [
+   "ترتيب المهام",
+   "خطة الإنتاج",
+   "لقطات مجانية",
+   "stock clips",
+   "pipeline order"
+  ],
+  "id": "QA-219",
+  "when": "حين تخطط إنتاج فيديو متعدد الخطوات وتريد ترتيبها صحيحًا وسد الفراغات قبل الرندر / when planning a multi-step production that needs steps in working order and gaps filled before render"
  },
  {
   "family": "qa-verification",
@@ -4711,8 +6260,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-220"
+  "tags": [
+   "مراجعة اللقطة",
+   "المنطقة الآمنة",
+   "ريلز",
+   "safe zone",
+   "frame critique"
+  ],
+  "id": "QA-220",
+  "when": "حين يريد المستخدم مراجعة الفريم الحالي: وضوح الترجمة والوجوه ومناطق تيك توك الآمنة / when the user wants the current frame reviewed for caption legibility, faces and TikTok/Reels safe zones"
  },
  {
   "family": "qa-verification",
@@ -4732,8 +6288,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-221"
+  "tags": [
+   "تفريغ",
+   "مطابقة النص",
+   "الكلام المنطوق",
+   "transcript check",
+   "speech match"
+  ],
+  "id": "QA-221",
+  "when": "قبل البناء على نص الفيلم حين تريد التأكد أنه يطابق الكلام المنطوق فعلًا / before building on a film's written words, to check them against what is actually said"
  },
  {
   "family": "qa-verification",
@@ -4754,8 +6317,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-222"
+  "tags": [
+   "فراغ في المونتاج",
+   "خط الزمن",
+   "صورة بديلة",
+   "empty timeline",
+   "fill gaps"
+  ],
+  "id": "QA-222",
+  "when": "حين يبقى جزء فارغ في خط المونتاج وتريد ملأه بصورة مناسبة قبل المراجعة والتصدير / when a montage timeline has empty stretches that need a matching photo before review and export"
  },
  {
   "family": "qa-verification",
@@ -4776,8 +6346,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-223"
+  "tags": [
+   "الرصيد المتبقي",
+   "حدود الاستخدام",
+   "باقة",
+   "usage limit",
+   "quota"
+  ],
+  "id": "QA-223",
+  "when": "في بداية العمل وقبل الرندر حين تريد معرفة الرصيد المتبقي وموعد تجديده / at the start and before rendering, to read the remaining hosted allowance and reset times"
  },
  {
   "family": "qa-verification",
@@ -4797,8 +6374,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-224"
+  "tags": [
+   "حكم آلي",
+   "مقارنة خيارات",
+   "بدون إنترنت",
+   "order bias",
+   "judge"
+  ],
+  "id": "QA-224",
+  "when": "حين تحتاج حكمًا بين خيارات لا يتأثر بترتيبها مع قاعدة بديلة تعمل دون اتصال / when choosing between options needs an order-robust judge with an offline rule fallback"
  },
  {
   "family": "qa-verification",
@@ -4821,8 +6405,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-225"
+  "tags": [
+   "دافنشي",
+   "تصدير",
+   "ريندر",
+   "davinci resolve",
+   "ffprobe"
+  ],
+  "id": "QA-225",
+  "when": "حين ترندر من دافنشي ريزولف وتريد التأكد أن المقاس والفريمات والمدة صحيحة / when rendering from DaVinci Resolve and the output size, fps and duration must be verified"
  },
  {
   "family": "qa-verification",
@@ -4843,8 +6434,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-226"
+  "tags": [
+   "عميل الحكم",
+   "ثبات الاختيار",
+   "احتمالات",
+   "jev client",
+   "fallback rule"
+  ],
+  "id": "QA-226",
+  "when": "عند استدعاء خدمة Jev من الكود لاختيار خيار بترتيبين معكوسين مع علامة ثبات الحكم / when code calls the Jev service to choose an option in two reversed orders with a stability flag"
  },
  {
   "family": "qa-verification",
@@ -4864,8 +6462,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-227"
+  "tags": [
+   "مقارنة نماذج",
+   "ترانزيشن",
+   "توليد فيديو",
+   "kling",
+   "seedance"
+  ],
+  "id": "QA-227",
+  "when": "قبل الالتزام بنموذج توليد فيديو حين تريد تجربة نفس الانتقال على ثلاثة نماذج / before committing to a video model, to test one transition on Kling, MiniMax and Seedance"
  },
  {
   "family": "qa-verification",
@@ -4885,8 +6490,15 @@
   "styles": [
    "pm-antonio-kodheli-490109"
   ],
-  "tags": [],
-  "id": "QA-228"
+  "tags": [
+   "شبكة فيديوهات",
+   "تكرار المعاينة",
+   "تلاشي",
+   "video grid",
+   "loop"
+  ],
+  "id": "QA-228",
+  "when": "حين تعرض شبكة معاينات فيديو متكررة وتريد ألا تتغير البلاطات المتجاورة في اللحظة نفسها / when showing a grid of looping video previews where neighbouring tiles must not change on the same frame"
  },
  {
   "family": "qa-verification",
@@ -4908,8 +6520,15 @@
   "styles": [
    "pm-notdwd-c2037d"
   ],
-  "tags": [],
-  "id": "QA-229"
+  "tags": [
+   "مقارنة جنبًا إلى جنب",
+   "ريميك",
+   "تطابق التوقيت",
+   "side by side",
+   "hstack"
+  ],
+  "id": "QA-229",
+  "when": "حين تعيد بناء فيديو لقطة بلقطة وتريد إثبات تطابق التوقيت بعرضهما جنبًا إلى جنب / when remaking a video shot for shot and proving timing parity side by side"
  },
  {
   "family": "qa-verification",
@@ -4929,8 +6548,15 @@
   "styles": [
    "pm-twoclipping-5cba86"
   ],
-  "tags": [],
-  "id": "QA-230"
+  "tags": [
+   "لوب",
+   "تكرار سلس",
+   "حلقة متصلة",
+   "seamless loop",
+   "loop video"
+  ],
+  "id": "QA-230",
+  "when": "حين يريد المستخدم فيديو يتكرر بلا قفزة ظاهرة بين آخر إطار وأول إطار / when the user wants a loop with no visible jump between the last and first frame"
  },
  {
   "family": "qa-verification",
@@ -4951,8 +6577,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-231"
+  "tags": [
+   "نقد الفيديو",
+   "تحسين",
+   "القراءة على الجوال",
+   "critique",
+   "contact sheet"
+  ],
+  "id": "QA-231",
+  "when": "حين تريد نقد الفيلم وتحسينه على ثلاث جولات على الأقل بإصلاح أسوأ ثلاث مشكلات كل مرة / when a film needs at least three critique rounds fixing the three worst issues each time"
  },
  {
   "family": "qa-verification",
@@ -4970,8 +6603,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-232"
+  "tags": [
+   "حركة الفم",
+   "تأخير الصوت",
+   "ليب سينك",
+   "lip sync",
+   "audio offset"
+  ],
+  "id": "QA-232",
+  "when": "حين تولد مقطعًا يغني وتريد التأكد أن حركة الشفاه متزامنة مع الأغنية / when a generated singing clip must be checked that the lips follow the song"
  },
  {
   "family": "qa-verification",
@@ -4990,8 +6630,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-233"
+  "tags": [
+   "تسجيل الشاشة",
+   "خصوصية",
+   "رمز QR",
+   "screen capture",
+   "constant frame rate"
+  ],
+  "id": "QA-233",
+  "when": "عند تسجيل لقطات شاشة أو واجهات للنشر وتريد ألا تُعرض لقطات مولدة كأنها حقيقية / when capturing screen or UI footage for publishing that must stay honest and privacy-safe"
  },
  {
   "family": "qa-verification",
@@ -5012,8 +6659,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-234"
+  "tags": [
+   "ورقة اتصال",
+   "شبكة إطارات",
+   "مراجعة سريعة",
+   "frame grid",
+   "ffmpeg tile"
+  ],
+  "id": "QA-234",
+  "when": "حين تريد مراجعة الفيلم كله بنظرة واحدة في صورة تجمع إطارًا من كل ثانية / when you want to review a whole film at a glance as one image of frames every second"
  },
  {
   "family": "qa-verification",
@@ -5034,8 +6688,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-235"
+  "tags": [
+   "صورة مرجعية",
+   "مقارنة قبل وبعد",
+   "اختبار بصري",
+   "visual regression",
+   "ssim"
+  ],
+  "id": "QA-235",
+  "when": "بعد تعديل التصميم حين تريد مقارنة إطار مهم بنسخة مرجعية محفوظة لاكتشاف التغيرات / after changes, to diff a key frame against a committed reference still"
  },
  {
   "family": "qa-verification",
@@ -5056,8 +6717,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-236"
+  "tags": [
+   "تمويه",
+   "إخفاء معلومات",
+   "بلور",
+   "blur sensitive",
+   "redact"
+  ],
+  "id": "QA-236",
+  "when": "قبل نشر فيديو لواجهة أو شاشة يظهر فيه عناوين أو مفاتيح أو رسائل خاصة أو رموز QR / before publishing UI footage that shows addresses, keys, private messages or QR codes"
  },
  {
   "family": "qa-verification",
@@ -5080,8 +6748,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-237"
+  "tags": [
+   "رفع على السوشيال",
+   "ترميز الفيديو",
+   "حجم الملف",
+   "h264",
+   "faststart"
+  ],
+  "id": "QA-237",
+  "when": "قبل رفع فيديو على الويب أو السوشيال حين تريد التأكد من الترميز والصوت والحجم / before posting a video to web or social, to check encoding, black/frozen/silent stretches, loudness and size"
  },
  {
   "family": "qa-verification",
@@ -5104,8 +6779,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-238"
+  "tags": [
+   "صور ثابتة",
+   "قبل التصدير",
+   "منتصف الانتقال",
+   "preview stills",
+   "phone readability"
+  ],
+  "id": "QA-238",
+  "when": "قبل التصدير الكامل حين تريد مراجعة صور ثابتة لكل حركة وانتقال ووضوحها على الجوال / before a full export, to review stills of every action and transition at phone size"
  },
  {
   "family": "qa-verification",
@@ -5127,8 +6809,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-239"
+  "tags": [
+   "إمكانية الوصول",
+   "صورة غلاف",
+   "بدون حركة",
+   "accessibility",
+   "poster frame"
+  ],
+  "id": "QA-239",
+  "when": "حين يحتاج المشهد المتحرك حالة ثابتة مفهومة لمن يفضل تقليل الحركة أو كصورة غلاف / when an animated scene needs a meaningful static state for reduced motion or as a poster frame"
  },
  {
   "family": "qa-verification",
@@ -5148,8 +6837,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-240"
+  "tags": [
+   "إحصائيات",
+   "مصدر الرقم",
+   "بطاقة بيانات",
+   "data source",
+   "fact check"
+  ],
+  "id": "QA-240",
+  "when": "حين يبدأ الفيديو برقم أو إحصائية كخطاف ولا يوجد مصدر موثق له / when a video's hook relies on a number or statistic whose source is missing"
  },
  {
   "family": "qa-verification",
@@ -5169,8 +6865,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-241"
+  "tags": [
+   "ترجمة على الفيديو",
+   "صب تايتل",
+   "الصم",
+   "vertical video",
+   "subtitles"
+  ],
+  "id": "QA-241",
+  "when": "عند عمل فيديو عمودي يحتاج ترجمة مدمجة ونصًا مقروءًا وبلا وميض سريع / when making a vertical video that needs burned-in captions, readable text and no fast flashing"
  },
  {
   "family": "qa-verification",
@@ -5193,8 +6896,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-242"
+  "tags": [
+   "وضوح الكتابة",
+   "طبقة تعتيم",
+   "قراءة النص",
+   "wcag",
+   "readability"
+  ],
+  "id": "QA-242",
+  "when": "حين تضع نصًا فوق صورة وتريد التأكد أنه مقروء بقياس التباين / when placing text over a photo and checking it stays readable by measured contrast"
  },
  {
   "family": "qa-verification",
@@ -5214,8 +6924,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-243"
+  "tags": [
+   "إعلان ممول",
+   "بوستر إعلاني",
+   "نسبة النص",
+   "ad creative",
+   "legibility"
+  ],
+  "id": "QA-243",
+  "when": "قبل نشر إعلان ثابت مدفوع حين تريد التأكد من وضوحه وفهمه في ثلاث ثوان / before running a paid static ad, to check it reads in 3 seconds and at a 150 px preview"
  },
  {
   "family": "qa-verification",
@@ -5236,8 +6953,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-244"
+  "tags": [
+   "اختبار أ/ب",
+   "نسخ إعلانية",
+   "تجربة الخطاف",
+   "ab test",
+   "holdout"
+  ],
+  "id": "QA-244",
+  "when": "حين تريد اختبار نسخ إعلانية أو خطافات مختلفة بطريقة منضبطة ومعرفة أيها أفضل / when testing ad creatives or hooks with one variable at a time, a holdout and confidence rules"
  },
  {
   "family": "qa-verification",
@@ -5257,8 +6981,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-245"
+  "tags": [
+   "المشهد الافتتاحي",
+   "الخطاف",
+   "اختيار اللقطة",
+   "hook",
+   "scene scoring"
+  ],
+  "id": "QA-245",
+  "when": "حين تختار أقوى مشهد افتتاحي للفيديو من بين عدة لقطات بجدول تقييم / when picking the strongest opening hook scene among candidate shots with a scored rubric"
  },
  {
   "family": "qa-verification",
@@ -5280,8 +7011,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-246"
+  "tags": [
+   "فحص قبل النشر",
+   "إطارات سوداء",
+   "تجمد الصورة",
+   "blackdetect",
+   "freezedetect"
+  ],
+  "id": "QA-246",
+  "when": "قبل النشر حين تريد فحص الملف المسلم نفسه: فك الترميز والإطارات السوداء والصوت والحجم / before publishing, to check the delivered file itself: decoding, black/frozen frames, loudness and size"
  },
  {
   "family": "qa-verification",
@@ -5299,8 +7037,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-247"
+  "tags": [
+   "رسالة مؤثرة",
+   "كتابة السكربت",
+   "فيديو شرح",
+   "messaging",
+   "explainer"
+  ],
+  "id": "QA-247",
+  "when": "حين تريد تقييم قوة الرسالة الأساسية لفيديو شرح قبل تحريكه لتصبح لا تُنسى / when scoring an explainer's core message for stickiness before animating it"
  },
  {
   "family": "qa-verification",
@@ -5320,8 +7065,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-248"
+  "tags": [
+   "صورة مصغرة",
+   "غلاف الفيديو",
+   "جذب النقرات",
+   "thumbnail",
+   "cover review"
+  ],
+  "id": "QA-248",
+  "when": "حين يطلب المستخدم مراجعة صورة الغلاف (الثمبنيل) ومعرفة هل ستجلب نقرات / when the user wants a thumbnail reviewed for clicks with a reasoned verdict table"
  },
  {
   "family": "qa-verification",
@@ -5343,8 +7095,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-249"
+  "tags": [
+   "مشاهدة الفيديو",
+   "استخراج إطارات",
+   "إزالة التكرار",
+   "frame sampling",
+   "scene change"
+  ],
+  "id": "QA-249",
+  "when": "حين تحتاج فهم محتوى فيديو باختيار إطارات ذكية غير مكررة ومرتبطة بالتفريغ / when you need to watch a video by picking informative, de-duplicated frames tied to the transcript"
  },
  {
   "family": "qa-verification",
@@ -5363,8 +7122,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-250"
+  "tags": [
+   "تحليل المنافسين",
+   "عناوين الفيديو",
+   "قنوات منافسة",
+   "competitor research",
+   "outliers"
+  ],
+  "id": "QA-250",
+  "when": "حين تبحث في عناوين وصور قنوات منافسة وتريد مقارنة عادلة دون نسخ / when researching competitor packaging fairly against each channel's own baseline without copying"
  },
  {
   "family": "qa-verification",
@@ -5385,8 +7151,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-251"
+  "tags": [
+   "قائمة فحص",
+   "تسليم الموشن",
+   "حروف عربية",
+   "sign-off",
+   "qa checklist"
+  ],
+  "id": "QA-251",
+  "when": "قبل اعتماد فيديو موشن حين تريد قائمة فحص للعربية ووقت القراءة والأصول والصوت / before signing off a motion piece, for a checklist covering Arabic text, reading time, assets and loudness"
  },
  {
   "family": "qa-verification",
@@ -5406,8 +7179,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-252"
+  "tags": [
+   "صدق المحتوى",
+   "إعلان منتج",
+   "بيانات وأرقام",
+   "truthfulness",
+   "fact check"
+  ],
+  "id": "QA-252",
+  "when": "حين يعرض فيديو موشن أرقامًا أو مزايا منتج أو أسعارًا ويجب ألا يخترع ما لم يُعطَ / when a motion piece shows data, product features or prices and must not invent anything not supplied"
  },
  {
   "family": "qa-verification",
@@ -5428,8 +7208,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-253"
+  "tags": [
+   "قبل وبعد",
+   "مقارنة نسختين",
+   "دمج الصورتين",
+   "before after",
+   "image blend"
+  ],
+  "id": "QA-253",
+  "when": "حين تريد كشف فروق صغيرة في المسافات أو المحاذاة أو الخط بين نسختين من الإطار / when you need to expose small spacing, alignment or typography changes between two versions of a frame"
  },
  {
   "family": "qa-verification",
@@ -5449,8 +7236,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-254"
+  "tags": [
+   "اختيار النسخة",
+   "عيوب التوليد",
+   "أيدي مشوهة",
+   "ai image defects",
+   "variant selection"
+  ],
+  "id": "QA-254",
+  "when": "حين تولد عدة نسخ من صورة وتريد اختيار الأفضل باستبعاد العيوب بترتيب واضح / when choosing among generated image variants by eliminating failures in a fixed order"
  },
  {
   "family": "qa-verification",
@@ -5470,8 +7264,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-255"
+  "tags": [
+   "قالب",
+   "نص طويل",
+   "خروج النص",
+   "lower third",
+   "overflow"
+  ],
+  "id": "QA-255",
+  "when": "حين تبني قالب عنوان سفلي أو بطاقة أو عداد وتريد اختباره بأسماء طويلة ونص عربي وأرقام ضخمة / when testing lower thirds, cards or counters with worst-case names, RTL text and huge numbers"
  },
  {
   "family": "qa-verification",
@@ -5492,8 +7293,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-256"
+  "tags": [
+   "مستوى الصوت",
+   "علو الصوت",
+   "ذروة الصوت",
+   "lufs",
+   "ebur128"
+  ],
+  "id": "QA-256",
+  "when": "حين تريد التأكد أن صوت الملف النهائي يطابق مواصفات الجهارة والذروة / when confirming the final file meets the loudness and true-peak spec"
  },
  {
   "family": "qa-verification",
@@ -5513,8 +7321,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-257"
+  "tags": [
+   "الصوت متأخر",
+   "عدم تزامن",
+   "تسجيل الجوال",
+   "audio drift",
+   "constant frame rate"
+  ],
+  "id": "QA-257",
+  "when": "حين يخرج الصوت عن تزامن الصورة في تسجيل جوال أو شاشة بمعدل إطارات متغير / when audio drifts out of sync on a phone or screen recording with variable frame rate"
  },
  {
   "family": "qa-verification",
@@ -5533,8 +7348,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-258"
+  "tags": [
+   "فلاش",
+   "ومضات",
+   "حساسية الضوء",
+   "photosensitivity",
+   "flicker"
+  ],
+  "id": "QA-258",
+  "when": "حين يحتوي الفيديو على ومضات تملأ الشاشة وتريد تجنب خطر الحساسية للضوء / when a video uses full-screen flashes that must stay safe for photosensitive viewers"
  },
  {
   "family": "qa-verification",
@@ -5552,8 +7374,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-259"
+  "tags": [
+   "حجم الخط",
+   "الترجمة",
+   "مقاس العنوان",
+   "font size",
+   "subtitle size"
+  ],
+  "id": "QA-259",
+  "when": "حين تحدد حجم الترجمة أو العناوين على الفيديو وتريد ضمان أنها مقروءة / when sizing captions or titles on video so they stay readable at a measured minimum height"
  },
  {
   "family": "qa-verification",
@@ -5574,8 +7403,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-260"
+  "tags": [
+   "تفريغ صوتي",
+   "أخطاء التفريغ",
+   "كلمات مشوهة",
+   "whisper",
+   "speech to text"
+  ],
+  "id": "QA-260",
+  "when": "قبل استخدام تفريغ صوتي حين تريد كشف الكلمات المشوهة والأسطر المكررة فوق الموسيقى / before using a transcript, to catch garbled words, music tokens and repeated lines"
  },
  {
   "family": "qa-verification",
@@ -5596,8 +7432,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-261"
+  "tags": [
+   "تلوين",
+   "كلر جريدنج",
+   "سطوع",
+   "color grading",
+   "luma"
+  ],
+  "id": "QA-261",
+  "when": "حين تريد الحكم على تلوين الفيديو بالأرقام بدل العين ومعرفة المناطق المحترقة / when judging a colour grade numerically, including bright vs clipped pixels, instead of by eye"
  },
  {
   "family": "qa-verification",
@@ -5616,8 +7459,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-262"
+  "tags": [
+   "تعديل المونتاج",
+   "إعادة المونتاج",
+   "تزامن الترجمة",
+   "recut",
+   "timecode"
+  ],
+  "id": "QA-262",
+  "when": "حين تتغير القطعات في المونتاج وتريد تحديث الترجمة والجرافيك والصوت تبعًا لها / when cuts change and captions, graphics and sound must follow the new timings"
  },
  {
   "family": "qa-verification",
@@ -5639,8 +7489,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-263"
+  "tags": [
+   "فحص الرندر",
+   "جدول تحقق",
+   "صمت غير مقصود",
+   "ffprobe",
+   "render check"
+  ],
+  "id": "QA-263",
+  "when": "قبل اعتبار الرندر منتهيًا حين تريد جدول تحقق من الدقة والفريمات والصوت والجهارة / before calling a render done, for a check table of resolution, fps, frames, audio and loudness"
  },
  {
   "family": "qa-verification",
@@ -5659,8 +7516,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-264"
+  "tags": [
+   "مشاهدة بدون صوت",
+   "شاشة الجوال",
+   "مراجعة نهائية",
+   "muted viewing",
+   "final review"
+  ],
+  "id": "QA-264",
+  "when": "قبل تسليم الفيديو حين تريد الحكم على الإثارة والوضوح على شاشة الجوال بالمشاهدة الفعلية / before delivery, to judge excitement and phone-size readability by watching with and without sound"
  },
  {
   "family": "qa-verification",
@@ -5678,8 +7542,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-265"
+  "tags": [
+   "تفريغ فاشل",
+   "إعادة التفريغ",
+   "كلمات الأغنية",
+   "retry",
+   "music tokens"
+  ],
+  "id": "QA-265",
+  "when": "حين يأتي التفريغ مليئًا برموز الموسيقى أو كلام بلا معنى وتريد إعادة المحاولة / when a transcript is full of music tokens or nonsense and needs a retry with a bigger model"
  },
  {
   "family": "qa-verification",
@@ -5699,8 +7570,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-266"
+  "tags": [
+   "دقة التفريغ",
+   "نسبة الخطأ",
+   "كشف الصمت",
+   "wer",
+   "vad"
+  ],
+  "id": "QA-266",
+  "when": "حين تريد قياس دقة التعرف على الكلام على صوت حقيقي بلهجات وضوضاء وضبط عتبة الصمت / when measuring speech recognition accuracy on real accented, noisy audio and tuning silence thresholds"
  },
  {
   "family": "qa-verification",
@@ -5721,8 +7599,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-267"
+  "tags": [
+   "طقطقة",
+   "فحص الصوت",
+   "شكل الموجة",
+   "audio clicks",
+   "aliasing"
+  ],
+  "id": "QA-267",
+  "when": "حين لا يمكن سماع الصوت وتريد فحصه بصريًا بحثًا عن الطقطقة والتشوه والذيول / when you can't listen and need to check audio visually for clicks, aliasing, tails and structure"
  },
  {
   "family": "qa-verification",
@@ -5742,8 +7627,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-268"
+  "tags": [
+   "مكساج",
+   "ميكس الصوت",
+   "مؤثرات صوتية",
+   "eq",
+   "compressor"
+  ],
+  "id": "QA-268",
+  "when": "عند مكساج الصوت حين تريد ترتيب الخطوات وفحص التداخل والطقطقة والطور وصوت المونو / when mixing audio and checking step order, masking, clicks, phase and mono"
  },
  {
   "family": "qa-verification",
@@ -5762,8 +7654,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-269"
+  "tags": [
+   "مؤثرات صوتية",
+   "مستوى الصوت",
+   "ساوند إفكت",
+   "sfx",
+   "lufs"
+  ],
+  "id": "QA-269",
+  "when": "حين تضبط مستوى مؤثرات صوتية قصيرة جدًا وتظهر قراءة الجهارة منخفضة بشكل غريب / when leveling very short sound effects whose LUFS reading looks wrongly low"
  },
  {
   "family": "qa-verification",
@@ -5782,8 +7681,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-270"
+  "tags": [
+   "الصوت الأصلي",
+   "نسخة احتياطية",
+   "عدم الاستبدال",
+   "backup",
+   "non-destructive"
+  ],
+  "id": "QA-270",
+  "when": "قبل أي تعديل على الصوت حين تريد الحفاظ على الأصل بالعمل على نسخة / before any audio edit, to keep the original untouched by working on a duplicate"
  },
  {
   "family": "qa-verification",
@@ -5802,8 +7708,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-271"
+  "tags": [
+   "ملاحظات صوتية",
+   "رأي المستخدم",
+   "قرار ذوقي",
+   "markers",
+   "user review"
+  ],
+  "id": "QA-271",
+  "when": "حين يكون قرار الصوت ذوقيًا وتريد ترك علامة مراجعة ليستمع المستخدم بنفسه / when an audio decision is subjective and should be marked for the user to listen to"
  },
  {
   "family": "qa-verification",
@@ -5821,8 +7734,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-272"
+  "tags": [
+   "شيدر",
+   "خطأ برمجي",
+   "إسناد المتغير",
+   "assign",
+   "tsl"
+  ],
+  "id": "QA-272",
+  "when": "حين لا يتغير متغير داخل كتلة If في TSL رغم إعادة إسناده / when a variable reassigned inside a TSL If() block has no effect"
  },
  {
   "family": "qa-verification",
@@ -5841,8 +7761,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-273"
+  "tags": [
+   "أداء",
+   "بطء",
+   "شيدر ثقيل",
+   "dpr",
+   "glsl"
+  ],
+  "id": "QA-273",
+  "when": "حين يكون الشيدر ثقيلًا بالضوضاء ويبطئ العرض وتريد ضبط الدقة وإيقاف ما خارج الشاشة / when a noise-heavy shader is too slow and needs DPR caps and offscreen pausing"
  },
  {
   "family": "qa-verification",
@@ -5862,8 +7789,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-274"
+  "tags": [
+   "رندر أسود",
+   "بلندر",
+   "إضاءة",
+   "cycles",
+   "black render"
+  ],
+  "id": "QA-274",
+  "when": "حين يخرج رندر بلندر أسود بالكامل وتريد فحص الكاميرا والإضاءة والمواد / when a Blender Cycles render comes out black and you need to check camera, lights and materials"
  },
  {
   "family": "qa-verification",
@@ -5884,8 +7818,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-275"
+  "tags": [
+   "تباين الألوان",
+   "لون النص",
+   "إمكانية الوصول",
+   "contrast ratio",
+   "accessibility"
+  ],
+  "id": "QA-275",
+  "when": "حين تختار لون النص والخلفية في الفيديو وتريد حدًا أدنى آمنًا للتباين / when choosing text and background colours for video and needing safe contrast minimums"
  },
  {
   "family": "qa-verification",
@@ -5904,8 +7845,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-276"
+  "tags": [
+   "نص متحرك",
+   "وضوح النص",
+   "وميض",
+   "readability",
+   "flashing"
+  ],
+  "id": "QA-276",
+  "when": "حين تحرك نصوصًا وتريد أن تبقى مقروءة عند التوقف وبلا وميض متكرر سريع / when animating text that must stay legible at rest without rapid repeated flashing"
  },
  {
   "family": "qa-verification",
@@ -5923,8 +7871,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-277"
+  "tags": [
+   "اتجاه النص",
+   "من اليمين لليسار",
+   "نص مختلط",
+   "rtl",
+   "pseudo locale"
+  ],
+  "id": "QA-277",
+  "when": "قبل الرندر النهائي حين تريد كشف أخطاء اتجاه النص من اليمين لليسار وتمدد النص / before final render, to flush out text direction bugs and box overflow with pseudo strings"
  },
  {
   "family": "qa-verification",
@@ -5944,8 +7899,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-278"
+  "tags": [
+   "رموز",
+   "خط ناقص",
+   "رموز رياضية",
+   "fonttools",
+   "missing glyph"
+  ],
+  "id": "QA-278",
+  "when": "حين تحتاج رمزًا خاصًا أو حرفًا قد لا يكون موجودًا في الخط المختار / when a needed symbol or glyph may be missing from the chosen font"
  },
  {
   "family": "qa-verification",
@@ -5963,8 +7925,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-279"
+  "tags": [
+   "نقاط الحروف",
+   "التشكيل",
+   "قناع النص",
+   "arabic text",
+   "clipping"
+  ],
+  "id": "QA-279",
+  "when": "حين تظهر نصًا عربيًا بقناع أو قص وتخشى أن تُقطع النقاط أو التشكيل / when revealing Arabic text with a mask or clip that may cut dots or harakat"
  },
  {
   "family": "qa-verification",
@@ -5986,8 +7955,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-280"
+  "tags": [
+   "تصحيح الألوان",
+   "لوك",
+   "مقياس الألوان",
+   "vectorscope",
+   "signalstats"
+  ],
+  "id": "QA-280",
+  "when": "حين تريد التحقق من لوك التلوين النهائي بقياس السطوع والتشبع بدل الاعتماد على العين / when verifying a final grade's look by measuring luma percentiles and chroma clusters"
  },
  {
   "family": "qa-verification",
@@ -6005,8 +7981,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-281"
+  "tags": [
+   "تحريك الشخصيات",
+   "دورة المشي",
+   "وضعيات",
+   "character animation",
+   "walk cycle"
+  ],
+  "id": "QA-281",
+  "when": "حين تراجع حركة شخصية متحركة: وضعيات التلامس والمرور والحجم وتمهيد الهجوم / when reviewing character animation for contact/passing poses, bob, volumes and attack anticipation"
  },
  {
   "family": "qa-verification",
@@ -6027,8 +8010,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-282"
+  "tags": [
+   "خلفية شفافة",
+   "هالة الحواف",
+   "بدون خلفية",
+   "transparency",
+   "png alpha"
+  ],
+  "id": "QA-282",
+  "when": "حين تصدر صورة أو إطارات بخلفية شفافة وتريد التأكد أن الشفافية حقيقية وبلا هالات / when exporting transparent images or frames and checking for real alpha and edge halos"
  },
  {
   "family": "qa-verification",
@@ -6047,8 +8037,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-283"
+  "tags": [
+   "فاصل الثقة",
+   "دلالة إحصائية",
+   "تذبذب الأرقام",
+   "confidence interval",
+   "statistical noise"
+  ],
+  "id": "QA-283",
+  "when": "حين يعرض الفيديو رقمًا أو نسبة تغيّر وتريد التأكد أنها ليست مجرد تذبذب عشوائي / when an animated stat shows a change that sampling noise might explain"
  },
  {
   "family": "qa-verification",
@@ -6068,8 +8065,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-284"
+  "tags": [
+   "مراجعة الرسوم",
+   "تقييم بصري",
+   "فحص الصورة",
+   "figure review",
+   "vision rubric"
+  ],
+  "id": "QA-284",
+  "when": "عند مراجعة إطار أو رسم بياني قبل اعتماده: فحص آلي للخطوط والألوان ثم تقييم بصري / when reviewing a frame or figure before shipping: scripted checks first, then a vision score"
  },
  {
   "family": "qa-verification",
@@ -6088,8 +8092,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-285"
+  "tags": [
+   "اختبار لقطات الشاشة",
+   "مقارنة الصور",
+   "تثبيت الخطوط",
+   "image diff",
+   "baseline"
+  ],
+  "id": "QA-285",
+  "when": "حين تبني اختبارات لقطات شاشة لمشاهد الرسوم البيانية وتريد نتائج ثابتة لا تتغير عشوائيًا / for screenshot tests of chart scenes that must compare frozen, intentional states"
  },
  {
   "family": "qa-verification",
@@ -6109,8 +8120,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-286"
+  "tags": [
+   "خريطة متحركة",
+   "فحص الخرائط",
+   "وميض التضاريس",
+   "map animation",
+   "terrain shimmer"
+  ],
+  "id": "QA-286",
+  "when": "عند التحقق من حركة خريطة أو كاميرا فوق التضاريس على ملف MP4 مُصيَّر لا على معاينة حية / when checking map camera motion on a rendered MP4 rather than a live preview"
  },
  {
   "family": "qa-verification",
@@ -6129,8 +8147,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-287"
+  "tags": [
+   "مصدر البيانات",
+   "تحقق من الأرقام",
+   "واجهة برمجية",
+   "data api",
+   "source check"
+  ],
+  "id": "QA-287",
+  "when": "حين تسحب أرقامًا من واجهة بيانات عامة لمشهد أو رسم بياني وتخشى نتائج فارغة أو خاطئة / when pulling numbers from a public data API that may return empty or wrong totals"
  },
  {
   "family": "qa-verification",
@@ -6150,8 +8175,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-288"
+  "tags": [
+   "ضعف تمييز الألوان",
+   "أحمر وأخضر",
+   "إتاحة",
+   "color vision deficiency",
+   "grayscale"
+  ],
+  "id": "QA-288",
+  "when": "عند التأكد أن الرسم البياني مقروء لمن لديه ضعف في تمييز الألوان وعند تحويله للرمادي / when a chart must stay readable for color-blind viewers and in grayscale"
  },
  {
   "family": "qa-verification",
@@ -6171,8 +8203,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-289"
+  "tags": [
+   "ترخيص الأصول",
+   "حقوق النشر",
+   "صور مولدة",
+   "c2pa",
+   "copyright"
+  ],
+  "id": "QA-289",
+  "when": "حين تستخدم أصولًا مولّدة وتحتاج توثيق البرومبت والنموذج والترخيص والإفصاح للجمهور الأوروبي / when generated assets need their prompt, model, license and AI disclosure recorded"
  },
  {
   "family": "qa-verification",
@@ -6190,8 +8229,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-290"
+  "tags": [
+   "مقارنة التصميم",
+   "تدقيق الواجهة",
+   "شاشة الموبايل",
+   "ui audit",
+   "overflow check"
+  ],
+  "id": "QA-290",
+  "when": "عند تعديل شكل واجهة فقط وتريد قياس الكثافة قبل وبعد وإثبات عدم فقدان أي جدول أو زر / for a style-only UI patch that must prove density changed but no feature was lost"
  },
  {
   "family": "qa-verification",
@@ -6211,8 +8257,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-291"
+  "tags": [
+   "توثيق الملفات",
+   "أصول مولدة",
+   "محاولات مدفوعة",
+   "asset log",
+   "worklog"
+  ],
+  "id": "QA-291",
+  "when": "حين تولّد أو تعالج أصولًا للمشروع وتريد سجلًا لمصدرها ودقتها واستخدامها مع منع إعادة المحاولات المدفوعة / when logging each generated or processed asset with its source, resolution, use and honesty notes"
  },
  {
   "family": "qa-verification",
@@ -6232,8 +8285,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-292"
+  "tags": [
+   "مستوى الصوت",
+   "الصوت واطي",
+   "معدل العينة",
+   "loudnorm",
+   "sample rate"
+  ],
+  "id": "QA-292",
+  "when": "عند قياس علو صوت موسيقى المقدمة ومقارنته بهدف -14 LUFS للمنصات الاجتماعية / when measuring an intro soundtrack's loudness against a -14 LUFS social target"
  },
  {
   "family": "qa-verification",
@@ -6251,8 +8311,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-293"
+  "tags": [
+   "أداء الخلفية",
+   "معدل الإطارات",
+   "تقليل الحركة",
+   "fps budget",
+   "reduced motion"
+  ],
+  "id": "QA-293",
+  "when": "حين تضيف خلفية ثلاثية الأبعاد زخرفية وتريد شرط قبول للأداء وحجم اللوحة وتقليل الحركة / for accepting a decorative 3D background: frame rate on a laptop, canvas size, reduced motion"
  },
  {
   "family": "qa-verification",
@@ -6274,8 +8341,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-294"
+  "tags": [
+   "مصداقية التسليم",
+   "شفافية",
+   "مراجعة يدوية",
+   "honest reporting",
+   "delivery claims"
+  ],
+  "id": "QA-294",
+  "when": "عند تسليم عمل دون ادعاء جودة 4K أو مزامنة أو مشاهدة للملفات أو خدمات مدفوعة لم تتحقق منها / when delivering work without claiming 4K, sync, inspected media or paid services you never verified"
  },
  {
   "family": "qa-verification",
@@ -6293,8 +8367,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-295"
+  "tags": [
+   "مراجعة قبل التسليم",
+   "تشيك ليست",
+   "فحص الفيديو",
+   "pre-delivery",
+   "checklist"
+  ],
+  "id": "QA-295",
+  "when": "بعد الرندر وقبل تسليم الفيديو، لمراجعة الهوامش والترجمة والصوت والترخيص بندًا بندًا / after a render and before delivery, to walk ten checks from safe margins to licensing"
  },
  {
   "family": "qa-verification",
@@ -6317,8 +8398,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-296"
+  "tags": [
+   "تكامل مستمر",
+   "اختبار آلي",
+   "جيتهب أكشنز",
+   "github actions",
+   "smoke test"
+  ],
+  "id": "QA-296",
+  "when": "حين تريد أن يتحقق CI آليًا من المراحل الخمس والمدة وعدد المشاهد ونسبة 9:16 قبل رندر تجريبي / when CI must assert duration, scene count and 9:16 before a smoke render"
  },
  {
   "family": "qa-verification",
@@ -6339,8 +8427,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-297"
+  "tags": [
+   "لقطات ثابتة",
+   "فحص الفيديو",
+   "استخراج إطار",
+   "ffmpeg",
+   "still frames"
+  ],
+  "id": "QA-297",
+  "when": "بعد الرندر مباشرة لفحص بداية الفيديو ووسطه ونهايته والاستماع للتزامن وصحة العربي / right after a render, to view opening, middle and closing stills and listen for sync"
  },
  {
   "family": "qa-verification",
@@ -6363,8 +8458,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-298"
+  "tags": [
+   "رندر متطابق",
+   "حاوية",
+   "اختلاف النتيجة",
+   "reproducible render",
+   "hyperframes"
+  ],
+  "id": "QA-298",
+  "when": "حين يخرج الرندر مختلفًا بين جهاز وآخر وتريد نتيجة ثابتة بتثبيت Chromium والخطوط وFFmpeg / when renders differ between machines and output must be bit-stable"
  },
  {
   "family": "qa-verification",
@@ -6384,8 +8486,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-299"
+  "tags": [
+   "تحليل الصوت",
+   "ضجيج الخلفية",
+   "علو الصوت",
+   "ebur128",
+   "noise floor"
+  ],
+  "id": "QA-299",
+  "when": "حين تحتاج تقييم صوت أو تعليق صوتي دون سماعه، بقياس العلو والضجيج والطبقة من الملف نفسه / when judging a voice track you cannot listen to, by measuring loudness, noise floor and pitch"
  },
  {
   "family": "qa-verification",
@@ -6407,8 +8516,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-300"
+  "tags": [
+   "أخطاء شائعة",
+   "اتجاه النص",
+   "شاشة فاضية",
+   "rtl",
+   "gsap"
+  ],
+  "id": "QA-300",
+  "when": "عند ظهور شاشة فارغة أو صوت صامت أو خط لا يعمل في مشروع HyperFrames، خاصة مع اتجاه RTL / when a HyperFrames composition renders blank, silent or with a failing font, especially with RTL"
  },
  {
   "family": "qa-verification",
@@ -6426,8 +8542,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-301"
+  "tags": [
+   "سرعة الحركة",
+   "ضبابية الحركة",
+   "قراءة النص",
+   "motion blur",
+   "px per frame"
+  ],
+  "id": "QA-301",
+  "when": "حين تضبط سرعة حركة نص أو عنصر على الشاشة وتريد أن يبقى مقروءًا أو تعرف متى يحتاج ضبابية / when setting how fast text or elements move so they stay readable or know when blur is needed"
  },
  {
   "family": "qa-verification",
@@ -6445,8 +8568,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-302"
+  "tags": [
+   "إيقاع الفيديو",
+   "هدوء الحركة",
+   "قياس الحركة",
+   "pacing",
+   "kmotion"
+  ],
+  "id": "QA-302",
+  "when": "لقياس إيقاع الفيديو وهدوئه بفرق الإضاءة بين الإطارات ومقارنته بفيديو مرجعي / for measuring a video's pacing via frame-to-frame luma difference against a reference"
  },
  {
   "family": "qa-verification",
@@ -6466,8 +8596,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-303"
+  "tags": [
+   "نسب اللقطات",
+   "الأمانة",
+   "وجه حقيقي",
+   "credit footage",
+   "honest report"
+  ],
+  "id": "QA-303",
+  "when": "عند كتابة تقرير التسليم: افصل ما قِيس عمّا لم يُقَس وانسب اللقطات لأصحابها ولا تختلق وجهًا / when reporting a job: separate measured from unmeasured, credit footage, never fake a face"
  },
  {
   "family": "qa-verification",
@@ -6485,8 +8622,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-304"
+  "tags": [
+   "تقرير الجودة",
+   "تطابق الصوت",
+   "تعليق صوتي",
+   "qa report",
+   "voiceover"
+  ],
+  "id": "QA-304",
+  "when": "حين تسلّم فيديو مبنيًا على تعليق صوتي وتريد تقريرًا يثبت تطابق المدة وأن الصوت لم يُمس / when delivering a voice-driven video with a report proving duration match and untouched audio"
  },
  {
   "family": "qa-verification",
@@ -6505,8 +8649,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-305"
+  "tags": [
+   "نقد ذاتي",
+   "تقييم الفيديو",
+   "تحسين الجودة",
+   "critique",
+   "self review"
+  ],
+  "id": "QA-305",
+  "when": "حين تريد نقد الفيديو بنفسك بتقييم ثمانية معايير وإصلاح أسوأ ثلاثة على عدة جولات / when self-critiquing a video by scoring eight criteria and fixing the worst three over rounds"
  },
  {
   "family": "qa-verification",
@@ -6517,15 +8668,24 @@
   "how": "Elements >40 px, natural arcs, follow-through, <20 animated elements, transform+opacity, reduced-motion variant.",
   "params": "follow-through 50-150 ms; <20 elements",
   "install": "",
-  "requires": [],
+  "requires": [
+   "npm:lottie"
+  ],
   "license": "MIT",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-306"
+  "tags": [
+   "جودة الأنيميشن",
+   "قائمة فحص الحركة",
+   "تقليل الحركة",
+   "lottie",
+   "animation checklist"
+  ],
+  "id": "QA-306",
+  "when": "قبل اعتماد أنيميشن، للتأكد من حجم العناصر وعددها والأقواس الطبيعية ونسخة الحركة المخففة / before approving an animation: element size, count, natural arcs and a reduced-motion variant"
  },
  {
   "family": "qa-verification",
@@ -6543,8 +8703,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-307"
+  "tags": [
+   "مراجعة شاملة",
+   "إيصال التسليم",
+   "تصميم وحركة",
+   "design review",
+   "tested untested"
+  ],
+  "id": "QA-307",
+  "when": "عند ختام عمل حركي لمراجعته من زوايا التصميم والحركة والهندسة وبيان ما رُند وما اختُبر / at the end of a motion job, to review design, motion and engineering and list what was tested"
  },
  {
   "family": "qa-verification",
@@ -6564,8 +8731,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-308"
+  "tags": [
+   "لقطات ثابتة",
+   "معاينة سريعة",
+   "تصدير إطارات",
+   "kmotion frames",
+   "preview stills"
+  ],
+  "id": "QA-308",
+  "when": "قبل الرندر الكامل لتصدير لقطات ثابتة عند ثوانٍ محددة والحكم على التكوين مبكرًا / before a full render, to export stills at chosen seconds and judge the composition early"
  },
  {
   "family": "qa-verification",
@@ -6585,8 +8759,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-309"
+  "tags": [
+   "فحص الكود",
+   "عشوائية",
+   "أخطاء التصميم",
+   "code check",
+   "kmotion"
+  ],
+  "id": "QA-309",
+  "when": "قبل الرندر للتأكد أن المشروع خالٍ من كود غير حتمي ومن أخطاء ذوق شائعة / before rendering, to catch non-deterministic code and taste problems in a composition"
  },
  {
   "family": "qa-verification",
@@ -6606,8 +8787,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-310"
+  "tags": [
+   "فحص نهائي",
+   "إطار أسود",
+   "تجميد الصورة",
+   "final check",
+   "kmotion inspect"
+  ],
+  "id": "QA-310",
+  "when": "قبل تسليم فيلم نهائي لاكتشاف الإطارات السوداء والتجميد ومشاكل علو الصوت والذروة والتعريض / before delivering a finished film, to catch black frames, freezes, loudness, peaks and exposure"
  },
  {
   "family": "qa-verification",
@@ -6627,8 +8815,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-311"
+  "tags": [
+   "ورقة لقطات",
+   "عرض الموبايل",
+   "صور مصغرة",
+   "contact sheet",
+   "phone preview"
+  ],
+  "id": "QA-311",
+  "when": "حين تريد ورقة لقطات من الفيديو وعرضًا بحجم الهاتف لنقده بسرعة / when you need a contact sheet of frames plus a phone-size view to critique a video"
  },
  {
   "family": "qa-verification",
@@ -6649,8 +8844,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-312"
+  "tags": [
+   "بيانات الملف",
+   "خصائص الفيديو",
+   "معلومات الصوت",
+   "media info",
+   "file details"
+  ],
+  "id": "QA-312",
+  "when": "حين تريد عرض معلومات ملف فيديو أو صوت بسرعة عبر ffprobe / when you need to print a media file's information with ffprobe"
  },
  {
   "family": "qa-verification",
@@ -6671,8 +8873,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-313"
+  "tags": [
+   "فحص الجهاز",
+   "المتطلبات",
+   "الأدوات المتاحة",
+   "system check",
+   "dependencies"
+  ],
+  "id": "QA-313",
+  "when": "حين تريد معرفة ما يقدر جهازك تشغيله: FFmpeg والمتصفح وWhisper والخطوط وكاشف الوجوه / when checking what this PC can run: FFmpeg, browser, Whisper, fonts and face detector"
  },
  {
   "family": "qa-verification",
@@ -6694,8 +8903,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-314"
+  "tags": [
+   "ملف المشروع",
+   "تحقق المشاهد",
+   "بكرة المراجعة",
+   "schema validation",
+   "json check"
+  ],
+  "id": "QA-314",
+  "when": "قبل فتح بكرة المراجعة في المشغل، للتحقق من حقول reel.json وتتابع المشاهد وأبعاد الفيديو / before opening a review reel, to validate reel.json fields, gapless scenes and video specs"
  },
  {
   "family": "qa-verification",
@@ -6715,8 +8931,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-315"
+  "tags": [
+   "فحص المونتاج",
+   "تباين الترجمة",
+   "الهامش الآمن",
+   "loudness",
+   "h.264"
+  ],
+  "id": "QA-315",
+  "when": "قبل نشر أي فيديو مونتاج: فحص الإطارات السوداء وعلو الصوت وتباين الترجمة وصيغة الترميز / before shipping any montage: black frames, loudness, caption contrast and H.264 format"
  },
  {
   "family": "qa-verification",
@@ -6735,8 +8958,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-316"
+  "tags": [
+   "عيوب التوليد",
+   "أيدي مشوهة",
+   "صور مولدة",
+   "generated images",
+   "artifacts"
+  ],
+  "id": "QA-316",
+  "when": "عند مراجعة إطارات مولّدة لاكتشاف الأطراف المكررة والنص المشوه والإضاءة المتناقضة والأيدي / when reviewing generated frames for duplicated limbs, garbled text, bad hands and inconsistent light"
  },
  {
   "family": "qa-verification",
@@ -6757,8 +8987,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-317"
+  "tags": [
+   "تحكم بالمتصفح",
+   "لقطة شاشة كاملة",
+   "اختبار الواجهة",
+   "playwright",
+   "ui test"
+  ],
+  "id": "QA-317",
+  "when": "حين تريد أتمتة متصفح لتصيير رسوم HTML المتحركة أو عرض واجهة والتقاط لقطات شاشة للفحص / when automating a browser to render HTML animations or UI demos and capture screenshots"
  },
  {
   "family": "qa-verification",
@@ -6778,8 +9015,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-318"
+  "tags": [
+   "مستوى التحقق",
+   "إيصال العمل",
+   "صدق التقرير",
+   "verification level",
+   "receipt"
+  ],
+  "id": "QA-318",
+  "when": "عند الإبلاغ عن نتيجة مهمة وتوضيح مستوى التحقق الفعلي، من دليل مكتوب فقط إلى تشغيل حي / when reporting a task and stating how far it was verified, from playbook only to live backend"
  },
  {
   "family": "qa-verification",
@@ -6798,8 +9042,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-319"
+  "tags": [
+   "لقطات جاهزة",
+   "حقوق اللقطات",
+   "شعارات",
+   "footage rights",
+   "found clips"
+  ],
+  "id": "QA-319",
+  "when": "عند اختيار لقطات جاهزة: ارفض ما عليه نص محروق أو شعارات أو تسجيل شاشة وسجّل الرابط والحقوق / when picking found clips: reject burned-in text, logos or screen recordings and log rights"
  },
  {
   "family": "qa-verification",
@@ -6820,8 +9071,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-320"
+  "tags": [
+   "نقد الفيديو",
+   "تقييم الجودة",
+   "جولات التحسين",
+   "rubric",
+   "self critique"
+  ],
+  "id": "QA-320",
+  "when": "بعد عمل ورقة لقطات للفيديو، لتقييم ثمانية معايير وإصلاح أسوأ ثلاثة بتوقيتاتها على جولات / after a frame sheet, to score eight criteria and fix the worst three with timestamps"
  },
  {
   "family": "qa-verification",
@@ -6841,8 +9099,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-321"
+  "tags": [
+   "تأخر الصوت",
+   "ألوان باهتة",
+   "حل الأخطاء",
+   "vfr",
+   "audio drift"
+  ],
+  "id": "QA-321",
+  "when": "حين يظهر خلل في ffmpeg مثل انزياح الصوت أو DTS غير متتابع أو ألوان باهتة على iOS أو بداية متجمدة / when ffmpeg output shows VFR drift, DTS errors, washed iOS colour or a frozen start"
  },
  {
   "family": "qa-verification",
@@ -6862,8 +9127,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-322"
+  "tags": [
+   "فحص نهائي",
+   "إطارات سوداء",
+   "ذروة الصوت",
+   "edl",
+   "blackdetect"
+  ],
+  "id": "QA-322",
+  "when": "قبل تسليم مونتاج نهائي: مطابقة المدة لقائمة القطعات وقياس العلو والذروة وفحص الإطارات السوداء / before handing off an edit: duration vs EDL, loudness, peak, CFR and black frames"
  },
  {
   "family": "qa-verification",
@@ -6883,8 +9155,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-323"
+  "tags": [
+   "توازن الأبيض",
+   "هيستوغرام",
+   "قياس الألوان",
+   "pillow",
+   "white balance"
+  ],
+  "id": "QA-323",
+  "when": "حين تحتاج قياس الإضاءة وتوازن الأبيض لمقطع دون Scopes، بتصدير لقطة وتحليل الهيستوغرام / when measuring luminance and white balance without API scopes, by exporting a still"
  },
  {
   "family": "qa-verification",
@@ -6902,8 +9181,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-324"
+  "tags": [
+   "ماركرز",
+   "علامات الخط الزمني",
+   "تنظيم المراجعة",
+   "timeline markers",
+   "marker colours"
+  ],
+  "id": "QA-324",
+  "when": "حين تضع علامات ملونة على تايملاين Resolve وتريد لونًا ثابتًا لكل نوع مراجعة دون تصادم / when adding colour markers on a Resolve timeline with a fixed colour per review type"
  },
  {
   "family": "qa-verification",
@@ -6923,8 +9209,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-325"
+  "tags": [
+   "لقطات مهزوزة",
+   "صورة مغبشة",
+   "فرز التصوير",
+   "blur detection",
+   "laplacian"
+  ],
+  "id": "QA-325",
+  "when": "حين تريد إيجاد الأجزاء المظلمة أو المهتزة أو غير الواضحة في التصوير ووسمها للمراجعة قبل حذفها / when finding dark, shaky or out-of-focus segments in footage to flag before cutting"
  },
  {
   "family": "qa-verification",
@@ -6942,8 +9235,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-326"
+  "tags": [
+   "فحص قبل التصدير",
+   "ملفات مفقودة",
+   "تمويه الوجوه",
+   "offline media",
+   "export check"
+  ],
+  "id": "QA-326",
+  "when": "قبل الرندر في Resolve للتأكد من الدقة ومعدل الإطارات وغياب الملفات المفقودة وتمويه الوجوه / before rendering in Resolve: resolution, fps, offline media, peaks, blurred faces and safe-area subs"
  },
  {
   "family": "qa-verification",
@@ -6965,8 +9265,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-327"
+  "tags": [
+   "خطوط مستهلكة",
+   "اختيار الخط",
+   "ألوان افتراضية",
+   "font choice",
+   "generic design"
+  ],
+  "id": "QA-327",
+  "when": "حين تريد تجنب الشكل الافتراضي للتصميم الآلي: خطوط مستهلكة وألوان رمادية وزرقاء افتراضية / when avoiding AI-default design: overused Latin and Arabic fonts and default greys or blues"
  },
  {
   "family": "qa-verification",
@@ -6984,8 +9291,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-328"
+  "tags": [
+   "حجم الخط",
+   "وضوح النص",
+   "مدة ظهور النص",
+   "contrast ratio",
+   "text size"
+  ],
+  "id": "QA-328",
+  "when": "حين تتأكد أن نص الفيديو كبير وواضح التباين ويبقى على الشاشة وقتًا كافيًا لقراءته / when checking on-screen text size, contrast and hold time are enough to read it"
  },
  {
   "family": "qa-verification",
@@ -7003,8 +9317,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-329"
+  "tags": [
+   "تصميم مبتذل",
+   "تدرج لوني",
+   "شكل مكرر",
+   "generic look",
+   "design cliches"
+  ],
+  "id": "QA-329",
+  "when": "حين يبدو التصميم آليًا ومكررًا وتريد إزالة النص المتدرج والبطاقات المتطابقة والألوان المبتذلة / when a design looks generic and machine-made: gradient text, identical cards, cyan on black"
  },
  {
   "family": "qa-verification",
@@ -7022,8 +9343,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-330"
+  "tags": [
+   "موافقة العميل",
+   "نموذج أولي",
+   "ملاحظات العميل",
+   "client feedback",
+   "early review"
+  ],
+  "id": "QA-330",
+  "when": "في بداية مشروع حركي: ابنِ أول 5-8 ثوانٍ وأرسل ورقة لقطات لصاحب الطلب واسأله عن أسوأ لحظة ثم أعد البناء / early in a motion job: build 5-8 s, share a contact sheet, ask for the worst seconds"
  },
  {
   "family": "qa-verification",
@@ -7041,8 +9369,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-331"
+  "tags": [
+   "حركة وهمية",
+   "تدرجات متحركة",
+   "اختبار الحركة",
+   "gradient drift",
+   "stillness"
+  ],
+  "id": "QA-331",
+  "when": "حين تشك أن الحركة في المشهد مزيفة وأن التدرجات المنجرفة تخفي سكونًا حقيقيًا / when checking whether scene motion is real or just drifting gradients faking stillness numbers"
  },
  {
   "family": "qa-verification",
@@ -7062,8 +9397,14 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-332"
+  "tags": [
+   "سهولة الوصول",
+   "نص بديل",
+   "تباين الألوان",
+   "alt text"
+  ],
+  "id": "QA-332",
+  "when": "حين يحتاج الفيديو إلى إتاحة: تباين الترجمة والنص، وحركة يمكن إيقافها، ونص بديل، وفحص RTL / for accessibility: caption and text contrast, pausable motion, alt text and RTL checks"
  },
  {
   "family": "qa-verification",
@@ -7081,8 +9422,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-333"
+  "tags": [
+   "تدقيق الحقائق",
+   "التحقق من المعلومات",
+   "مصداقية",
+   "fact check",
+   "verify claims"
+  ],
+  "id": "QA-333",
+  "when": "حين يحتوي نص الفيديو على ادعاءات أو أرقام أو اقتباسات تحتاج تدقيقًا / when a video script contains claims, numbers or quotes that need checking"
  },
  {
   "family": "qa-verification",
@@ -7100,8 +9448,14 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-334"
+  "tags": [
+   "تقييم النماذج",
+   "قياس الأداء",
+   "llm eval",
+   "ai evaluation"
+  ],
+  "id": "QA-334",
+  "when": "حين تريد تقييم مخرجات الذكاء الاصطناعي بأرقام ومعايير بدل الانطباع / when you want to score AI outputs with numbers instead of impressions"
  },
  {
   "family": "qa-verification",
@@ -7119,8 +9473,14 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-335"
+  "tags": [
+   "اختبارات التقييم",
+   "جودة الذكاء الاصطناعي",
+   "eval suite",
+   "model evaluation"
+  ],
+  "id": "QA-335",
+  "when": "حين تبني ميزة ذكاء اصطناعي وتريد مجموعة اختبارات تقيسها بأرقام / when building an AI feature and needing an eval suite that measures it with numbers"
  },
  {
   "family": "qa-verification",
@@ -7138,8 +9498,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-336"
+  "tags": [
+   "كتابة الاختبارات",
+   "فحص البرمجة",
+   "تيستات",
+   "software testing",
+   "tests"
+  ],
+  "id": "QA-336",
+  "when": "حين تريد كتابة اختبارات تثبت أن الكود يعمل فعلًا / when you need tests that prove the code actually works"
  },
  {
   "family": "qa-verification",
@@ -7157,8 +9524,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-337"
+  "tags": [
+   "بدون صوت",
+   "كتم الصوت",
+   "ستوري بورد",
+   "muted viewing",
+   "storyboard"
+  ],
+  "id": "QA-337",
+  "when": "حين تريد التأكد أن الستوري بورد مفهوم بدون صوت وأن كل لقطة تضيف معلومة جديدة / when checking a storyboard is understandable on mute and each shot adds new info"
  },
  {
   "family": "qa-verification",
@@ -7178,8 +9552,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-338"
+  "tags": [
+   "صورة مصغرة",
+   "ثمبنيل",
+   "اختبار المقارنة",
+   "thumbnail test",
+   "split test"
+  ],
+  "id": "QA-338",
+  "when": "حين تصمم صورتين مصغرتين للمقارنة تختلفان في عنصر واحد فقط وتختبر وضوحهما عند التصغير / when making two thumbnail versions that differ in one element and testing legibility when shrunk"
  },
  {
   "family": "qa-verification",
@@ -7200,8 +9581,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-339"
+  "tags": [
+   "تحليل الصورة",
+   "حدة الصورة",
+   "اللون السائد",
+   "pil",
+   "numpy"
+  ],
+  "id": "QA-339",
+  "when": "حين تريد قياس صورة برمجيًا: الهيستوغرام والحدة ونسبة التعريض واللون الغالب / when measuring an image by code: histogram, sharpness, exposure ratio and dominant colour"
  },
  {
   "family": "qa-verification",
@@ -7219,8 +9607,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-340"
+  "tags": [
+   "تقييم الصورة",
+   "تكوين الكادر",
+   "قاعدة الأثلاث",
+   "scorecard",
+   "composition"
+  ],
+  "id": "QA-340",
+  "when": "حين تقيّم صورة أو إطارًا بمعايير معلنة من 20 لكل معيار، منها التكوين وعيوب التوليد / when scoring an image against declared criteria out of 20, including composition and generation defects"
  },
  {
   "family": "qa-verification",
@@ -7238,8 +9633,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-341"
+  "tags": [
+   "حركة ثانوية",
+   "حركة مرنة",
+   "تحريك شخصية",
+   "spring",
+   "secondary motion"
+  ],
+  "id": "QA-341",
+  "when": "حين تحرّك أذن شخصية أو جزءًا ثانويًا بنابض وتريد أن تبقى سرعته تحت حد السرعة / when animating a character's ear or secondary part with a spring kept under the speed gate"
  },
  {
   "family": "qa-verification",
@@ -7250,15 +9652,24 @@
   "how": "Run before final render.",
   "params": "elements > 40 px; < 20 animated per viewport; follow-through 50-150 ms on children; primary/secondary/ambient layers; natural arcs; not opacity-only for key changes; transform+opacity primary; reduced-motion alternative for interactive",
   "install": "",
-  "requires": [],
+  "requires": [
+   "npm:lottie"
+  ],
   "license": "owner",
   "proof": [
    "kosif-studio/motion/references/motion-craft.md"
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-342"
+  "tags": [
+   "جودة الأنيميشن",
+   "طبقات الحركة",
+   "مراجعة الحركة",
+   "follow-through",
+   "lottie"
+  ],
+  "id": "QA-342",
+  "when": "قبل الرندر النهائي لمراجعة جودة الحركة: حجم العناصر وعددها وطبقات الحركة وتأخر التوابع / before the final render, to check motion quality: element size, count, layers and follow-through"
  },
  {
   "family": "qa-verification",
@@ -7276,8 +9687,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-343"
+  "tags": [
+   "صدق البيانات",
+   "وحدات القياس",
+   "أرقام عربية",
+   "data integrity",
+   "bidi"
+  ],
+  "id": "QA-343",
+  "when": "حين تحرّك أرقامًا أو بيانات حقيقية وتريد صدق القيم والوحدات مع عربي سليم وحركة مخففة / when animating real data while keeping values, units and provenance true and accessible"
  },
  {
   "family": "qa-verification",
@@ -7297,8 +9715,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-344"
+  "tags": [
+   "رندر ثابت",
+   "بذرة عشوائية",
+   "تحميل الخطوط",
+   "seed",
+   "deterministic"
+  ],
+  "id": "QA-344",
+  "when": "حين تريد فيديو يُرند بنفس النتيجة كل مرة: ساعة واحدة وعشوائية مثبتة وتحميل الخطوط قبل الالتقاط / when a video must render identically every time: one clock, seeded randomness, fonts loaded"
  },
  {
   "family": "qa-verification",
@@ -7319,8 +9744,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-345"
+  "tags": [
+   "فحص الملف النهائي",
+   "تجميد الصورة",
+   "علو الصوت",
+   "yuv420p",
+   "true peak"
+  ],
+  "id": "QA-345",
+  "when": "قبل تسليم الملف المرمّز، لفحص صارم يرفض الإطارات السوداء والمتجمدة ومشاكل العلو والذروة / before delivering the encoded file, for a fail-closed check of black, frozen, loudness and peak issues"
  },
  {
   "family": "qa-verification",
@@ -7338,8 +9770,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-346"
+  "tags": [
+   "مراجعة مزدوجة",
+   "ترتيب الملاحظات",
+   "أولوية الإصلاح",
+   "peer review",
+   "severity"
+  ],
+  "id": "QA-346",
+  "when": "حين تريد مراجعة الفيديو بمراجعَين مستقلَّين ثم دمج ملاحظاتهما وترتيبها حسب الخطورة / when two reviewers should score a video alone, merge findings and rank them by severity"
  },
  {
   "family": "qa-verification",
@@ -7357,8 +9796,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-347"
+  "tags": [
+   "نقد جمالي",
+   "جماليات الصورة",
+   "إضاءة وألوان",
+   "aesthetics",
+   "visual critique"
+  ],
+  "id": "QA-347",
+  "when": "حين تريد نقدًا جماليًا شاملًا للإطارات: العمق والإضاءة والألوان والكاميرا والتكوين والمواد / for a full aesthetic critique of frames: depth, light, colour, camera, composition and materials"
  },
  {
   "family": "qa-verification",
@@ -7376,8 +9822,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-348"
+  "tags": [
+   "اكتشاف الأخطاء",
+   "عيوب الفيديو",
+   "تداخل النص",
+   "defects",
+   "bug hunt"
+  ],
+  "id": "QA-348",
+  "when": "حين تفحص ورقة اللقطات وعرض الهاتف بحثًا عن عيوب محددة: تداخل النص والانزلاق واللحظات الميتة / when scanning contact and phone sheets for concrete defects like overlapping text or dead beats"
  },
  {
   "family": "qa-verification",
@@ -7395,8 +9848,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-349"
+  "tags": [
+   "موافقة العميل",
+   "مقطع تجريبي",
+   "بروفة",
+   "approval",
+   "render_html"
+  ],
+  "id": "QA-349",
+  "when": "قبل الرندر النهائي لأخذ موافقة المستخدم على ورقة لقطات ومقطع قصير من أصعب مشهد / before the final render, to get user approval on a contact sheet and a short clip of the hardest scene"
  },
  {
   "family": "qa-verification",
@@ -7414,8 +9874,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-350"
+  "tags": [
+   "ثري دي",
+   "مشهد مجسم",
+   "شعار دوار",
+   "3d mistakes",
+   "lens flare"
+  ],
+  "id": "QA-350",
+  "when": "حين تراجع مشهدًا ثلاثي الأبعاد لتجنب الكروم المبالغ والشعار الدوار بلا هدف والإضاءة الرمادية / when reviewing a 3D scene to avoid chrome-everything, aimless spinning logos and default grey light"
  },
  {
   "family": "qa-verification",
@@ -7434,8 +9901,14 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-351"
+  "tags": [
+   "فيديو إعلاني",
+   "دعاية",
+   "cta",
+   "advertising"
+  ],
+  "id": "QA-351",
+  "when": "قبل تسليم إعلان فيديو، لفحص رسالة واحدة لكل لقطة ودعوة واضحة لاتخاذ إجراء وظهور المنتج والشعار / before delivering a video ad: one message per beat, a clear CTA, product share and logo time"
  },
  {
   "family": "qa-verification",
@@ -7454,8 +9927,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-352"
+  "tags": [
+   "خط عربي",
+   "تشكيل",
+   "ترجمة عربية",
+   "rtl",
+   "arabic captions"
+  ],
+  "id": "QA-352",
+  "when": "حين يحتوي الفيديو على نص أو ترجمة عربية وتريد فحص الخط والتشكيل والاتجاه والأرقام بحجم الهاتف / when a video has Arabic text or captions to check fonts, diacritics, direction and digits"
  },
  {
   "family": "qa-verification",
@@ -7474,8 +9954,14 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-353"
+  "tags": [
+   "مزامنة الصوت",
+   "توافق الصوت والصورة",
+   "مراجعة يدوية",
+   "av sync"
+  ],
+  "id": "QA-353",
+  "when": "بعد الفحوص الآلية، للمشاهدة مع الصوت عند ثلاث لحظات في كل مشهد والتأكد من التزامن / after automated checks, to watch with sound at three moments per scene and confirm sync"
  },
  {
   "family": "qa-verification",
@@ -7493,8 +9979,14 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-354"
+  "tags": [
+   "تحريك شخصية",
+   "أخطاء الأنيميشن",
+   "كاركتر",
+   "character animation"
+  ],
+  "id": "QA-354",
+  "when": "حين تحرّك شخصية وتريد تجنب الدوران الكامل كالدمية والأطراف المطاطية والأقدام المنزلقة / when animating a character and avoiding puppet rotation, rubber limbs and sliding feet"
  },
  {
   "family": "qa-verification",
@@ -7513,8 +10005,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-355"
+  "tags": [
+   "إنفوجرافيك",
+   "رسم بياني متحرك",
+   "أخطاء البيانات",
+   "data viz",
+   "bar chart"
+  ],
+  "id": "QA-355",
+  "when": "حين تحرّك رسمًا بيانيًا وتريد تجنب الأعمدة القافزة والعدادات الدوارة والمحاور المقطوعة والبيانات المختلقة / when animating a chart and avoiding bouncing bars, slot-machine counters and truncated axes"
  },
  {
   "family": "qa-verification",
@@ -7532,8 +10031,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-356"
+  "tags": [
+   "مشهد برمجة",
+   "عرض الكود",
+   "كليشيه",
+   "code animation",
+   "matrix rain"
+  ],
+  "id": "QA-356",
+  "when": "حين تعرض كودًا برمجيًا في فيديو وتريد تجنب كليشيهات الهاكر والكود الصغير وكتابة الملفات الطويلة / when showing code on screen and avoiding hacker clichés, tiny code and typing long files"
  },
  {
   "family": "qa-verification",
@@ -7551,8 +10057,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-357"
+  "tags": [
+   "تحريك النص",
+   "كتابة متحركة",
+   "عناوين متحركة",
+   "text animation",
+   "typewriter"
+  ],
+  "id": "QA-357",
+  "when": "حين تحرّك نصًا أو عناوين وتريد تجنب الآلة الكاتبة في كل مكان والحروف الطائرة وقفز كل كلمة / when animating text and avoiding typewriter everywhere, flying letters and bouncing every word"
  },
  {
   "family": "qa-verification",
@@ -7570,8 +10083,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-358"
+  "tags": [
+   "ومضات",
+   "ستروب",
+   "فلاش",
+   "strobe",
+   "flash limit"
+  ],
+  "id": "QA-358",
+  "when": "حين يحتوي الفيديو على ومضات أو تأثير ستروب وتريد إبقاءها أقل من 3 في الثانية / when a video uses flashes or strobe effects and they must stay below 3 per second"
  },
  {
   "family": "qa-verification",
@@ -7589,8 +10109,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-359"
+  "tags": [
+   "غبار متوهج",
+   "تأثيرات بصرية",
+   "توهج",
+   "particles",
+   "bloom"
+  ],
+  "id": "QA-359",
+  "when": "حين تضيف جسيمات وتريد تجنب الغبار المتوهج بلا نهاية والتوهج على كل شيء والجسيمات فوق الترجمة / when adding particles and avoiding endless glowing dust, bloom everywhere and per-frame random"
  },
  {
   "family": "qa-verification",
@@ -7608,8 +10135,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-360"
+  "tags": [
+   "فحص الفيديو النهائي",
+   "تقرير الاختبار",
+   "مطابقة المواصفات",
+   "test report",
+   "yuv420p"
+  ],
+  "id": "QA-360",
+  "when": "بعد الرندر النهائي لفحص المعاينة المعتمدة والخطوط والمدة والإطارات والصوت والعلو وتقرير الاختبار / after the final render, to confirm preview approval, fonts, duration, frames, audio and the test report"
  },
  {
   "family": "qa-verification",
@@ -7627,8 +10161,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-361"
+  "tags": [
+   "فيديو الجوال",
+   "شاشة الموبايل",
+   "حركة الهاتف",
+   "phone video",
+   "scrolling"
+  ],
+  "id": "QA-361",
+  "when": "حين تصنع فيديو يظهر فيه هاتف وتريد تجنب الهاتف الطائف والاهتزاز الدائم واللمسات الوهمية / when making a phone film and avoiding a floating phone, perpetual bob and ghost taps"
  },
  {
   "family": "qa-verification",
@@ -7639,15 +10180,24 @@
   "how": "Screensaver push-ins, 1 s crossfades, stretched edges, opposing layers, haloed cut-outs, glossy 3D photo cards, per-layer HDR, face over-push, black boxes, literal stock, mirrored text, undisclosed AI, audio-reactive scaling.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "kosif-tool/playbooks/photos.md:217-245"
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-362"
+  "tags": [
+   "فيديو من صور",
+   "تحريك الصور",
+   "سلايد شو",
+   "photo montage",
+   "crossfade"
+  ],
+  "id": "QA-362",
+  "when": "حين تصنع فيلمًا من صور ثابتة وتريد تجنب التقريب الممل والمزج الطويل والقص ذي الهالة / when making a film from photos and avoiding screensaver push-ins, slow crossfades and haloed cut-outs"
  },
  {
   "family": "qa-verification",
@@ -7665,8 +10215,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "QA-363"
+  "tags": [
+   "عرض المنتج",
+   "واجهة التطبيق",
+   "حركة المؤشر",
+   "ui demo",
+   "product video"
+  ],
+  "id": "QA-363",
+  "when": "حين تصنع فيديو يعرض واجهة منتج وتريد تجنب المؤشر القافز والارتداد في كل مكان والنص الوهمي / when making a product UI film and avoiding a teleporting cursor, bounce everywhere and lorem UI"
  },
  {
   "family": "qa-verification",
@@ -7684,8 +10241,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-364"
+  "tags": [
+   "مؤثرات صوتية",
+   "أصوات حادة",
+   "صوت مزعج",
+   "sound effects",
+   "spectral centroid"
+  ],
+  "id": "QA-364",
+  "when": "حين تختار مؤثرات صوتية وتريد استبعاد الأصوات الحادة التي تُتعب الأذن / when choosing sound effects and filtering out sharp, fatiguing high-frequency sounds"
  },
  {
   "family": "qa-verification",
@@ -7705,8 +10269,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-365"
+  "tags": [
+   "صورة الغلاف",
+   "ثمبنيل",
+   "استخراج إطار",
+   "thumbnail",
+   "cover image"
+  ],
+  "id": "QA-365",
+  "when": "حين تحتاج صورة غلاف من الفيديو وتريد أقوى لحظة مستقرة لا لحظة انتقال / when picking a cover or poster still from a video at a settled beat, not mid-transition"
  },
  {
   "family": "qa-verification",
@@ -7727,8 +10298,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-366"
+  "tags": [
+   "ربط المقاطع",
+   "قفزة بين اللقطات",
+   "آخر إطار",
+   "seamless",
+   "start image"
+  ],
+  "id": "QA-366",
+  "when": "حين تربط مقاطع متتالية وتريد أن يبدأ كل مقطع من آخر إطار فعلي للسابق دون قفزة / when chaining clips so each starts from the previous clip's actual last frame without a pop"
  },
  {
   "family": "qa-verification",
@@ -7746,8 +10324,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "QA-367"
+  "tags": [
+   "ربط المقاطع",
+   "نقاط الوصل",
+   "مراجعة بالعين",
+   "clip chaining",
+   "seams"
+  ],
+  "id": "QA-367",
+  "when": "قبل ربط المقاطع ببعضها لمراجعة كل وصلة وآخر إطار في كل جزء بالعين / before chaining clips, to eyeball each seam and each leg's last frame"
  },
  {
   "family": "qa-verification",
@@ -7767,8 +10352,15 @@
   "styles": [
    "pm-aschapmann-131210"
   ],
-  "tags": [],
-  "id": "QA-368"
+  "tags": [
+   "مدة الظهور",
+   "سرعة المشاهد",
+   "وقت القراءة",
+   "hold time",
+   "min duration"
+  ],
+  "id": "QA-368",
+  "when": "حين تمر المشاهد أو العناوين بسرعة لا تسمح بقراءتها وتحتاج حدًا أدنى لمدة الظهور / when scenes or titles flash by too fast to read and need a minimum on-screen time"
  },
  {
   "family": "qa-verification",
@@ -7788,8 +10380,15 @@
   "styles": [
    "pm-ceowinkz-7c776b"
   ],
-  "tags": [],
-  "id": "QA-369"
+  "tags": [
+   "شعارات الشركات",
+   "ملكية فكرية",
+   "ادعاءات غير مؤكدة",
+   "logos",
+   "brand safety"
+  ],
+  "id": "QA-369",
+  "when": "حين قد يتضمن العمل شعارات أو هوية تجارية لجهات أخرى أو ادعاءات لم يُتحقق منها / when work might include third-party logos, trade dress or unverified claims"
  },
  {
   "family": "qa-verification",
@@ -7809,8 +10408,15 @@
   "styles": [
    "pm-kantamk-61f410"
   ],
-  "tags": [],
-  "id": "QA-370"
+  "tags": [
+   "عشوائية ثابتة",
+   "بذرة",
+   "نتيجة متكررة",
+   "seed",
+   "prng"
+  ],
+  "id": "QA-370",
+  "when": "حين تستخدم العشوائية في التحريك وتريد أن يعطي كل تشغيل نفس الإطارات تمامًا / when animation uses randomness and every run must give the same frames"
  },
  {
   "family": "qa-verification",
@@ -7830,8 +10436,15 @@
   "styles": [
    "pm-l3d1c-0e35a3"
   ],
-  "tags": [],
-  "id": "QA-371"
+  "tags": [
+   "كشف الوجه",
+   "مكان النص",
+   "سيلفي",
+   "face detection",
+   "text placement"
+  ],
+  "id": "QA-371",
+  "when": "حين تضع نصًا على صورة أو فيديو سيلفي وتريد ألا يغطي الوجه ولا تضبّب النتيجة / when placing text over a selfie so it never covers the face and the result stays unblurred"
  },
  {
   "family": "qa-verification",
@@ -7851,8 +10464,15 @@
   "styles": [
    "pm-micheleharmonic-77628e"
   ],
-  "tags": [],
-  "id": "QA-372"
+  "tags": [
+   "ومضات",
+   "فلاش أبيض",
+   "سلامة المشاهد",
+   "flash frames",
+   "flash count"
+  ],
+  "id": "QA-372",
+  "when": "حين تستخدم إطارات وميض بيضاء أو بلون مميز وتريد حدًا آمنًا لعددها في الثانية / when using white or accent flash frames that must be capped per second"
  },
  {
   "id": "QA-P01",
@@ -7883,8 +10503,14 @@
    "contract",
    "إيصال",
    "دليل",
-   "ECC"
-  ]
+   "ECC",
+   "إثبات التنفيذ",
+   "تقرير الحالة",
+   "تحقق",
+   "validator",
+   "success claim"
+  ],
+  "when": "حين تريد منع إعلان نجاح خطوة مهمة دون دليل، بإيصال من ثمانية حقول يفحصه مدقق / when a step must not be reported as verified success without evidence, via an 8-field receipt"
  },
  {
   "id": "QA-P02",
@@ -7910,8 +10536,14 @@
    "frame sampling",
    "مراجعة",
    "جولات",
-   "QA"
-  ]
+   "QA",
+   "إعادة الرندر",
+   "فحص الإطارات",
+   "شرط التوقف",
+   "re-render",
+   "stop rule"
+  ],
+  "when": "حين تراجع رندر الفيديو على جولات وتريد عددًا محدودًا منها وشرط توقف واضح / when reviewing a render in fix and re-render rounds with a capped round count and a clear stop rule"
  },
  {
   "id": "QA-X01",

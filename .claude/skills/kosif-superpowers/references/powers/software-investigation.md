@@ -1656,7 +1656,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-current_procedure
 
-#### REA-158 · REA MCP: · REA MCP tool `current_document` · 📄 موصوف / documented only
+#### REA-158 · REA MCP: المستند الحالي · REA MCP tool `current_document` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the document currently selected by REA's Hopper bridge. — MCP-only tool exposed by the REA server. Return the document currently selected by REA's Hopper bridge.
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `current_document` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -1696,7 +1696,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-list_bookmarks
 
-#### REA-162 · REA MCP: · REA MCP tool `list_documents` · 📄 موصوف / documented only
+#### REA-162 · REA MCP: سرد المستندات المفتوحة · REA MCP tool `list_documents` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List provider program or document identities. Hopper may expose several documents; a Ghidra headless session contains exactly its one imported Program. — MCP-only tool exposed by the REA server. List provider program or document identities. Hopper may expose several documents; a Ghidra headless session contains exactly its one imported Program.
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_documents` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -1706,7 +1706,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-list_documents
 
-#### REA-163 · REA MCP: · REA MCP tool `list_names` · 📄 موصوف / documented only
+#### REA-163 · REA MCP: سرد الأسماء والرموز · REA MCP tool `list_names` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every analyzed memory and external symbol as address/value pairs. Provider metadata distinguishes Ghidra primary, dynamic, external, type, and source facts when available. — MCP-only tool exposed by the REA server. List every analyzed memory and external symbol as address/value pairs. Provider metadata distinguishes Ghidra primary, dynamic, external, type, and source facts
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_names` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -1716,7 +1716,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-list_names
 
-#### REA-164 · REA MCP: · REA MCP tool `list_procedures` · 📄 موصوف / documented only
+#### REA-164 · REA MCP: سرد الإجراءات المستعادة · REA MCP tool `list_procedures` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every analyzed procedure as address/value pairs after provider analysis. Ghidra metadata distinguishes thunks and external functions; use returned addresses in later function operations. — MCP-only tool exposed by the REA server. List every analyzed procedure as address/value pairs after provider analysis. Ghidra metadata distinguishes thunks and external functions; use returned addresse
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_procedures` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -1856,7 +1856,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-resolve_containing_procedure
 
-#### REA-178 · REA MCP: · REA MCP tool `search_procedures` · 📄 موصوف / documented only
+#### REA-178 · REA MCP: البحث في الإجراءات · REA MCP tool `search_procedures` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Search every analyzed procedure name using literal matching by default or regex when requested. Results are deterministic and complete. Hopper regex mode uses ECMAScript Unicode syntax in a cancellabl — MCP-only tool exposed by the REA server. Search every analyzed procedure name using literal matching by default or regex when requested. Results are deterministic and complete. Hopper regex mode uses E
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `search_procedures` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -1886,7 +1886,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-set_address_name
 
-#### REA-181 · REA MCP: · REA MCP tool `set_addresses_names` · 📄 موصوف / documented only
+#### REA-181 · REA MCP: تسمية العناوين · REA MCP tool `set_addresses_names` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Assign analyst names to multiple mapped addresses in one call and return per-address edit/readback success booleans. Hopper validates mapped destinations, native string representations, its 1024 UTF-1 — MCP-only tool exposed by the REA server. Assign analyst names to multiple mapped addresses in one call and return per-address edit/readback success booleans. Hopper validates mapped destinations, nativ
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_addresses_names` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": true, "idempotentHint": true, "openWo
@@ -1956,7 +1956,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-get_objc_protocols
 
-#### REA-188 · REA MCP: · REA MCP tool `batch_decompile` · 📄 موصوف / documented only
+#### REA-188 · REA MCP: فك تجميع دفعة إجراءات · REA MCP tool `batch_decompile` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Decompile each explicit procedure symbol or address concurrently. Preserves each input selector in address and reports the observed canonical entry and entry label in procedure; identity or label fail — MCP-only tool exposed by the REA server. Decompile each explicit procedure symbol or address concurrently. Preserves each input selector in address and reports the observed canonical entry and entry la
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `batch_decompile` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -2036,7 +2036,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-trace_call_path
 
-#### REA-196 · REA MCP: Frida · REA MCP tool `start_frida_session` · 📄 موصوف / documented only
+#### REA-196 · REA MCP: بدء جلسة Frida · REA MCP tool `start_frida_session` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Attach Frida to one selected process or spawn one selected target. Spawned targets remain paused until resume_frida_session, allowing scripts to load before execution. Closing a session detaches instr — MCP-only tool exposed by the REA server. Attach Frida to one selected process or spawn one selected target. Spawned targets remain paused until resume_frida_session, allowing scripts to load before exe
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": false, "open
@@ -2046,7 +2046,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-start_frida_session
 
-#### REA-197 · REA MCP: Frida · REA MCP tool `load_frida_script` · 📄 موصوف / documented only
+#### REA-197 · REA MCP: تحميل سكربت Frida · REA MCP tool `load_frida_script` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Load caller-supplied JavaScript into a Frida session. Scripts can read or change target memory and behavior and can access the target process's capabilities. Messages and script errors are returned in — MCP-only tool exposed by the REA server. Load caller-supplied JavaScript into a Frida session. Scripts can read or change target memory and behavior and can access the target process's capabilities. Me
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `load_frida_script` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": true, "idempotentHint": false, "openW
@@ -2056,7 +2056,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-load_frida_script
 
-#### REA-198 · REA MCP: Frida · REA MCP tool `resume_frida_session` · 📄 موصوف / documented only
+#### REA-198 · REA MCP: استئناف جلسة Frida · REA MCP tool `resume_frida_session` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resume the process created by a paused Frida spawn session. Attached processes are already running and cannot be resumed through this operation. — MCP-only tool exposed by the REA server. Resume the process created by a paused Frida spawn session. Attached processes are already running and cannot be resumed through this operation.
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `resume_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": true, "idempotentHint": false, "openW
@@ -2066,7 +2066,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-resume_frida_session
 
-#### REA-199 · REA MCP: Frida · REA MCP tool `unload_frida_script` · 📄 موصوف / documented only
+#### REA-199 · REA MCP: إزالة سكربت Frida · REA MCP tool `unload_frida_script` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Unload one caller-selected Frida script from a live session. This removes that script's instrumentation from the target. — MCP-only tool exposed by the REA server. Unload one caller-selected Frida script from a live session. This removes that script's instrumentation from the target.
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `unload_frida_script` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": false, "open
@@ -2076,7 +2076,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-unload_frida_script
 
-#### REA-200 · REA MCP: Frida · REA MCP tool `frida_session_status` · 📄 موصوف / documented only
+#### REA-200 · REA MCP: حالة جلسة Frida · REA MCP tool `frida_session_status` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return observed Frida session state and queued script messages. Message history is bounded by the provider capture budget and reports truncation. — MCP-only tool exposed by the REA server. Return observed Frida session state and queued script messages. Message history is bounded by the provider capture budget and reports truncation.
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `frida_session_status` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -2086,7 +2086,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-frida_session_status
 
-#### REA-201 · REA MCP: Frida · REA MCP tool `close_frida_session` · 📄 موصوف / documented only
+#### REA-201 · REA MCP: إغلاق جلسة Frida · REA MCP tool `close_frida_session` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Unload session scripts and detach REA's Frida session. If a spawned process is still paused, resume it before detaching so it is not left suspended. REA never kills the target; its final state is repo — MCP-only tool exposed by the REA server. Unload session scripts and detach REA's Frida session. If a spawned process is still paused, resume it before detaching so it is not left suspended. REA never k
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": false, "open
@@ -2096,7 +2096,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/frida-instrumentation.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-close_frida_session
 
-#### REA-202 · REA MCP: GDB · REA MCP tool `start_gdb_session` · 📄 موصوف / documented only
+#### REA-202 · REA MCP: بدء جلسة GDB · REA MCP tool `start_gdb_session` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Start a BYO GDB process in MI3 mode when available, suppress startup files, and disable auto-loading. Persistent GDB sessions are available only on Linux, where REA can verify live inferior output des — MCP-only tool exposed by the REA server. Start a BYO GDB process in MI3 mode when available, suppress startup files, and disable auto-loading. Persistent GDB sessions are available only on Linux, where
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_gdb_session` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": false, "open
@@ -2106,7 +2106,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-start_gdb_session
 
-#### REA-203 · REA MCP: GDB · REA MCP tool `gdb_console` · 📄 موصوف / documented only
+#### REA-203 · REA MCP: وحدة أوامر GDB · REA MCP tool `gdb_console` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Run one unrestricted GDB CLI command through MI interpreter-exec console and return raw MI, console, target, and log records inline with Evidence. A command timeout preserves collected records with co — MCP-only tool exposed by the REA server. Run one unrestricted GDB CLI command through MI interpreter-exec console and return raw MI, console, target, and log records inline with Evidence. A command tim
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `gdb_console` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": true, "idempotentHint": false, "openW
@@ -2116,7 +2116,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-gdb_console
 
-#### REA-204 · REA MCP: GDB · REA MCP tool `gdb_session_status` · 📄 موصوف / documented only
+#### REA-204 · REA MCP: حالة جلسة GDB · REA MCP tool `gdb_session_status` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the observed lifecycle state and bounded recent MI records and process diagnostics for one persistent REA GDB session; truncation and invalid-UTF-8 fields report discarded or lossy data. — MCP-only tool exposed by the REA server. Return the observed lifecycle state and bounded recent MI records and process diagnostics for one persistent REA GDB session; truncation and invalid-UTF-8 field
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `gdb_session_status` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": true, "destructiveHint": false, "idempotentHint": true, "openWo
@@ -2126,7 +2126,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-gdb_session_status
 
-#### REA-205 · REA MCP: GDB · REA MCP tool `close_gdb_session` · 📄 موصوف / documented only
+#### REA-205 · REA MCP: إغلاق جلسة GDB · REA MCP tool `close_gdb_session` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Close the owned GDB process after verifying the inferior state. When one live thread group has a verified durable output TTY, REA automatically detaches it, which may resume target execution; otherwis — MCP-only tool exposed by the REA server. Close the owned GDB process after verifying the inferior state. When one live thread group has a verified durable output TTY, REA automatically detaches it, whi
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_gdb_session` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": true, "idempotentHint": false, "openW
@@ -2136,7 +2136,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-close_gdb_session
 
-#### REA-206 · REA MCP: Rizin · REA MCP tool `start_rizin_debug_session` · 📄 موصوف / documented only
+#### REA-206 · REA MCP: بدء جلسة تصحيح Rizin · REA MCP tool `start_rizin_debug_session` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Start a persistent Rizin debugger session using `-N` to suppress user settings and scripts while retaining plugins, `-0` for NUL framing, and `-d` with an optional caller-selected IO debugger backend. — MCP-only tool exposed by the REA server. Start a persistent Rizin debugger session using `-N` to suppress user settings and scripts while retaining plugins, `-0` for NUL framing, and `-d` with an optio
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_rizin_debug_session` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": true, "idempotentHint": false, "openW
@@ -2146,7 +2146,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-start_rizin_debug_session
 
-#### REA-207 · REA MCP: Rizin · REA MCP tool `rizin_debug_command` · 📄 موصوف / documented only
+#### REA-207 · REA MCP: أمر تصحيح Rizin · REA MCP tool `rizin_debug_command` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Execute one unrestricted command in a persistent Rizin debugger session. Returns raw output inline with Evidence, including backend output interleaved before the completion marker. If the command exce — MCP-only tool exposed by the REA server. Execute one unrestricted command in a persistent Rizin debugger session. Returns raw output inline with Evidence, including backend output interleaved before th
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `rizin_debug_command` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": true, "idempotentHint": false, "openW
@@ -2156,7 +2156,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-rizin_debug_command
 
-#### REA-208 · REA MCP: Rizin · REA MCP tool `rizin_debug_session_status` · 📄 موصوف / documented only
+#### REA-208 · REA MCP: حالة جلسة تصحيح Rizin · REA MCP tool `rizin_debug_session_status` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return observed lifecycle state and bounded recent NUL-framed output and process diagnostics for one Rizin debugger session; truncation fields report discarded data, and output_invalid_utf8 reports wh — MCP-only tool exposed by the REA server. Return observed lifecycle state and bounded recent NUL-framed output and process diagnostics for one Rizin debugger session; truncation fields report discarded
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `rizin_debug_session_status` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -2166,7 +2166,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-rizin_debug_session_status
 
-#### REA-209 · REA MCP: Rizin · REA MCP tool `close_rizin_debug_session` · 📄 موصوف / documented only
+#### REA-209 · REA MCP: إغلاق جلسة تصحيح Rizin · REA MCP tool `close_rizin_debug_session` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Close the REA-owned Rizin debugger only after verifying no inferior remains or detaching one with a verified caller-selected TTY output sink. A detached target may continue running and write to that T — MCP-only tool exposed by the REA server. Close the REA-owned Rizin debugger only after verifying no inferior remains or detaching one with a verified caller-selected TTY output sink. A detached target
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_rizin_debug_session` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": true, "idempotentHint": true, "openWo
@@ -2276,7 +2276,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-compare_bundles
 
-#### REA-220 · REA MCP: · REA MCP tool `find_changed_behavior` · 📄 موصوف / documented only
+#### REA-220 · REA MCP: كشف السلوك المتغير · REA MCP tool `find_changed_behavior` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Aggregate validated process and artifact comparison Evidence. Runtime observations remain distinct from static behavior candidates; missing or incomplete comparisons produce unresolved findings, never — MCP-only tool exposed by the REA server. Aggregate validated process and artifact comparison Evidence. Runtime observations remain distinct from static behavior candidates; missing or incomplete compar
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `find_changed_behavior` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -2296,7 +2296,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-build_call_path
 
-#### REA-222 · REA MCP: · REA MCP tool `correlate_static_and_runtime` · 📄 موصوف / documented only
+#### REA-222 · REA MCP: ربط التحليل الثابت بالتشغيل · REA MCP tool `correlate_static_and_runtime` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Evaluate every explicit caller-declared hypothesis between exact static comparison findings and runtime comparison dimensions. Similar names or paths are never auto-matched, consistent cochange never  — MCP-only tool exposed by the REA server. Evaluate every explicit caller-declared hypothesis between exact static comparison findings and runtime comparison dimensions. Similar names or paths are never
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `correlate_static_and_runtime` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -2306,7 +2306,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-correlate_static_and_runtime
 
-#### REA-223 · REA MCP: · REA MCP tool `verify_reconstruction` · 📄 موصوف / documented only
+#### REA-223 · REA MCP: التحقق من إعادة البناء · REA MCP tool `verify_reconstruction` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Verify a finite typed behavioral and structural specification against a canonical Evidence bundle. Pass means every declared claim has complete comparable authority—not global source equivalence; chan — MCP-only tool exposed by the REA server. Verify a finite typed behavioral and structural specification against a canonical Evidence bundle. Pass means every declared claim has complete comparable autho
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `verify_reconstruction` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW
@@ -2316,7 +2316,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-verify_reconstruction
 
-#### REA-224 · REA MCP: · REA MCP tool `list_unknowns` · 📄 موصوف / documented only
+#### REA-224 · REA MCP: سرد المجهولات · REA MCP tool `list_unknowns` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List current residual-unknown heads in deterministic ID order, with optional exact status, severity, and domain filters. Results are complete inline by default; supply offset and limit to page the fil — MCP-only tool exposed by the REA server. List current residual-unknown heads in deterministic ID order, with optional exact status, severity, and domain filters. Results are complete inline by default;
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_unknowns` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": true, "destructiveHint": false, "idempotentHint": true, "openWo
@@ -2356,7 +2356,7 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-verify_unknown_resolution
 
-#### REA-228 · REA MCP: · REA MCP tool `get_navigation_context` · 📄 موصوف / documented only
+#### REA-228 · REA MCP: سياق التنقل · REA MCP tool `get_navigation_context` · 📄 موصوف / documented only
 - **ماذا / what:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the selected document, current address, and containing/current procedure in one provider-neutral result. The result reflects sequential provider observations, not an atomic cursor snapshot; a c — MCP-only tool exposed by the REA server. Return the selected document, current address, and containing/current procedure in one provider-neutral result. The result reflects sequential provider observat
 - **متى أستخدمها / when:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 - **كيف / how:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_navigation_context` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target. **أرقام / params:** MCP tool (one of REA's 207); annotations: {"readOnlyHint": false, "destructiveHint": false, "idempotentHint": true, "openW

@@ -1,4 +1,4 @@
-﻿"""Safe URL and atlas inventory tests. No network is accessed by unit tests."""
+"""Safe URL and atlas inventory tests. No network is accessed by unit tests."""
 from pathlib import Path
 import sys
 import tempfile

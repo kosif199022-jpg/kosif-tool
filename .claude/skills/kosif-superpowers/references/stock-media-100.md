@@ -4,6 +4,11 @@
 
 Recommended selection: prefer **CC0** or public-domain items with a checked jurisdiction, then **CC BY** with exact credit, then reviewed **CC BY-SA** with derivative-license obligations, and properly licensed stock footage. Exclude NC (noncommercial) for commercial projects, and ND (no derivatives) for edits. Never rely solely on search filters.
 
+## الفهرس / contents
+
+- [Source index (100 domains)](#source-index-100-domains)
+- [Usage and evidence](#usage-and-evidence)
+
 ## Source index (100 domains)
 
 | # | Source | Media | License check |

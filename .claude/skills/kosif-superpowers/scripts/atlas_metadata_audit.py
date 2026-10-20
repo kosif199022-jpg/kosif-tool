@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Non-executing validation of KOSIF Atlas third-party skill metadata.
 
 Reading an index proves catalog coverage, NOT trustworthiness or ability to

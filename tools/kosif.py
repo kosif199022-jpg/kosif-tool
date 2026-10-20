@@ -440,9 +440,10 @@ def add_prompt_options(p: argparse.ArgumentParser) -> None:
 
 def _aspect_arg(value: str) -> str:
     try:
-        return resolve_aspect(value)[0] if "x" not in value.lower() and "×" not in value else value.lower().replace("×", "x")
+        label = resolve_aspect(value)[0]  # validate every spec, pixel sizes included
     except ValueError as e:
         raise argparse.ArgumentTypeError(str(e))
+    return label if "x" not in value.lower() and "×" not in value else value.strip().lower().replace("×", "x")
 
 
 def aspect_resolution(aspect: str) -> str:

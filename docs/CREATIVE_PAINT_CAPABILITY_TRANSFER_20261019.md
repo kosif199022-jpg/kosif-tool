@@ -36,7 +36,7 @@ Windows laptop: Python 3.13, Pillow 12.3, FFmpeg H.264.
 1. Add per-stroke vector Bezier controls, arc paths, pressure-preserving SVG strokes and editable animation timeline.
 2. Optional Arabic script shaping with real local fonts and validation.
 3. Extend keyframes to per-shape transforms and IK-compatible actor joints via `code_drawing_master.py`.
-4. Add voice-word cue bindings and verified frame timings through `cinematic_film_pipeline.py`.
+4. Add voice-word cue bindings and verified frame timings through the existing film tools (`cinematic_cut_planner.py` for the word-timed edit list, `cinematic_broll_render.py` for the render).
 5. Prioritize public open-source references (Krita, Blender, Inkscape, OpenToonz, Pencil2D and Synfig) by license and **implement/test original integrations** rather than copying commercial code.
 6. Keep user-specific commercial REA/Ghidra evidence in a private directory; never commit it to public main.
 

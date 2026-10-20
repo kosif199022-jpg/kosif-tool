@@ -1,6 +1,8 @@
 """Real pixel, animation and negative safety tests for independent paint engine."""
 import importlib.util
 import json
+import math
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -80,6 +82,39 @@ class CreativePaintTests(unittest.TestCase):
             run=subprocess.run([sys.executable,str(SCRIPT),"render","--scene",str(inp),"--output",str(out)],capture_output=True,text=True)
             self.assertEqual(run.returncode,0,run.stderr)
             self.assertTrue(json.loads(run.stdout)["verified"])
+    def rotated(self,angle,scale=1,x=0,y=0,size=(640,640),box=(300,300,40,40)):
+        return {"schema":"kosif.paint.v1","width":size[0],"height":size[1],"background":"transparent",
+                "layers":[{"name":"turn","shapes":[{"kind":"rectangle","x":box[0],"y":box[1],"width":box[2],
+                           "height":box[3],"fill":"#FF0000","stroke_width":0}],
+                           "keyframes":[{"time":0,"angle":angle,"scale":scale,"x":x,"y":y}]}]}
+    def png_centre(self,scene):
+        l,t,r,b=engine.paint(scene).getchannel("A").point(lambda a:255 if a>127 else 0).getbbox()
+        return ((l+r)/2,(t+b)/2)
+    def svg_centre(self,scene,point):
+        found=re.search(r'transform="translate\(([-\d.]+) ([-\d.]+)\) rotate\(([-\d.]+) ([-\d.]+) ([-\d.]+)\) scale\(([-\d.]+)\)"',engine.svg(scene))
+        tx,ty,angle,cx,cy,k=map(float,found.groups())
+        dx,dy=point[0]*k-cx,point[1]*k-cy;r=math.radians(angle)
+        return (tx+cx+dx*math.cos(r)-dy*math.sin(r),ty+cy+dx*math.sin(r)+dy*math.cos(r))
+    def test_rotation_turns_layer_in_place(self):
+        for angle in (8,45,-90):
+            with self.subTest(angle=angle):
+                cx,cy=self.png_centre(self.rotated(angle))
+                self.assertLessEqual(abs(cx-320.5),1.5);self.assertLessEqual(abs(cy-320.5),1.5)
+    def test_rotated_layer_lands_in_same_place_in_png_and_svg(self):
+        for angle,scale,x,y,size,box in [(90,1,0,0,(200,200),(150,90,20,20)),
+                                          (-8,1.3,-30,40,(640,480),(400,100,30,30)),
+                                          (30,.6,50,20,(320,240),(200,40,20,30))]:
+            with self.subTest(angle=angle,scale=scale):
+                scene=self.rotated(angle,scale,x,y,size,box)
+                png=self.png_centre(scene);vec=self.svg_centre(scene,(box[0]+box[2]/2,box[1]+box[3]/2))
+                self.assertLessEqual(math.dist(png,vec),2,(png,vec))
+    def test_cli_accepts_utf8_bom_scene(self):
+        with tempfile.TemporaryDirectory() as td:
+            inp=Path(td)/"bom.json";out=Path(td)/"bom.png"
+            inp.write_text(json.dumps(demo()),encoding="utf-8-sig")
+            run=subprocess.run([sys.executable,str(SCRIPT),"render","--scene",str(inp),"--output",str(out)],capture_output=True,text=True)
+            self.assertEqual(run.returncode,0,run.stderr)
+            self.assertTrue(out.exists())
     def test_mp4_render(self):
         if not __import__("shutil").which("ffmpeg"):self.skipTest("FFmpeg unavailable")
         with tempfile.TemporaryDirectory() as td:

@@ -2,7 +2,17 @@
 
 Generated from real repository data. Catalog evidence is NOT a live execution receipt.
 
-**4,751 powers / 52 families / 10 domains / 22 route descriptions.**
+**4,811 powers / 53 families / 10 domains / 22 route descriptions.**
+
+For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines this atlas with the runnable tools and guides.
+
+## الفهرس / contents
+
+1. [Claude task protocol](#claude-task-protocol)
+2. [Commands](#commands)
+3. [Evidence model](#evidence-model)
+4. [Families by domain](#families-by-domain)
+5. [Decision flow](#decision-flow)
 
 ## Claude task protocol
 
@@ -32,9 +42,10 @@ Generated from real repository data. Catalog evidence is NOT a live execution re
 
 ## Families by domain
 
-### build: 142 powers
+### build: 202 powers
 
 - app-feature-transfer: 119
+- runnable-tools: 60
 - apps-artifacts: 23
 
 ### code: 327 powers

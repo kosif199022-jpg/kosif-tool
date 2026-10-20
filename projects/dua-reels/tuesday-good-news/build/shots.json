@@ -1,0 +1,499 @@
+{
+ "fps": 60,
+ "W": 1080,
+ "H": 1920,
+ "duration": 27.833,
+ "shots": [
+  {
+   "id": "S1",
+   "src": "assets/raw/mk_9736.mp4",
+   "in": 4.0,
+   "start": 0,
+   "end": 2.14,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.47
+    ],
+    "z0": 1.0,
+    "z1": 1.1,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.82,
+    "gam": 1.25
+   },
+   "why": "Tuesday dawn: mosque above the clouds",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
+  },
+  {
+   "id": "S2",
+   "src": "assets/raw/mk_17764.mp4",
+   "in": 6.0,
+   "start": 2.14,
+   "end": 4.9,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.05,
+    "z1": 1.12,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.9,
+    "gam": 1.15
+   },
+   "why": "glad tidings: sun breaking over the field",
+   "band": [
+    424,
+    0,
+    432,
+    720
+   ]
+  },
+  {
+   "id": "S3",
+   "src": "assets/raw/mk_1187.mp4",
+   "in": 3.0,
+   "start": 4.9,
+   "end": 7.34,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.48
+    ],
+    "z0": 1.0,
+    "z1": 1.07,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.88,
+    "gam": 1.2
+   },
+   "why": "joy and peace of mind: blossoms in the breeze",
+   "band": [
+    0,
+    0,
+    1080,
+    1920
+   ]
+  },
+  {
+   "id": "S4",
+   "src": "assets/raw/mk_34189.mp4",
+   "in": 0.4,
+   "start": 7.34,
+   "end": 9.95,
+   "speed": 1,
+   "cam": {
+    "type": "truck",
+    "c0": [
+     0.6,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.05,
+    "z1": 1.08,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.72,
+    "gam": 1.35
+   },
+   "why": "remove all illness: the Quran, healing",
+   "band": [
+    424,
+    0,
+    560,
+    720
+   ]
+  },
+  {
+   "id": "S5",
+   "src": "assets/raw/mk_18312.mp4",
+   "in": 2.0,
+   "start": 9.95,
+   "end": 12.43,
+   "speed": 0.85,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.0,
+    "z1": 1.06,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.85,
+    "gam": 1.15
+   },
+   "why": "worry and grief: rain softly rippling a lake",
+   "band": [
+    619,
+    0,
+    680,
+    1080
+   ]
+  },
+  {
+   "id": "S6",
+   "src": "assets/raw/mk_21531.mp4",
+   "in": 3.0,
+   "start": 12.43,
+   "end": 14.39,
+   "speed": 1,
+   "cam": {
+    "type": "truck",
+    "c0": [
+     0.42,
+     0.5
+    ],
+    "c1": [
+     0.56,
+     0.5
+    ],
+    "z0": 1.03,
+    "z1": 1.06,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.85,
+    "gam": 1.2
+   },
+   "why": "the most abundant good: golden wheat",
+   "band": [
+    317,
+    0,
+    618,
+    720
+   ]
+  },
+  {
+   "id": "S7",
+   "src": "assets/raw/mk_2802.mp4",
+   "in": 2.0,
+   "start": 14.39,
+   "end": 15.87,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.55,
+     0.5
+    ],
+    "c1": [
+     0.55,
+     0.52
+    ],
+    "z0": 1.0,
+    "z1": 1.06,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.9,
+    "gam": 1.1
+   },
+   "why": "the purest provision: honey",
+   "band": [
+    1431,
+    0,
+    1360,
+    2160
+   ]
+  },
+  {
+   "id": "S8",
+   "src": "assets/raw/mk_5002.mp4",
+   "in": 3.0,
+   "start": 15.87,
+   "end": 17.25,
+   "speed": 1,
+   "cam": {
+    "type": "pan-right",
+    "c0": [
+     0.45,
+     0.5
+    ],
+    "c1": [
+     0.55,
+     0.5
+    ],
+    "z0": 1.03,
+    "z1": 1.05,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 1.0,
+    "gam": 1.0
+   },
+   "why": "the most beautiful destiny: red sunset over a lake",
+   "band": [
+    1067,
+    0,
+    1704,
+    2160
+   ]
+  },
+  {
+   "id": "S9",
+   "src": "assets/raw/mk_39179.mp4",
+   "in": 3.0,
+   "start": 17.25,
+   "end": 19.63,
+   "speed": 1,
+   "cam": {
+    "type": "drift",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.05,
+    "z1": 1.0,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.92,
+    "gam": 1.05
+   },
+   "why": "days filled with blessing: countless lamps",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
+  },
+  {
+   "id": "S10",
+   "src": "assets/raw/mk_34371.mp4",
+   "in": 0.3,
+   "start": 19.63,
+   "end": 21.93,
+   "speed": 0.85,
+   "cam": {
+    "type": "tilt-up",
+    "c0": [
+     0.6,
+     0.55
+    ],
+    "c1": [
+     0.6,
+     0.47
+    ],
+    "z0": 1.15,
+    "z1": 1.2,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.9,
+    "gam": 1.1
+   },
+   "why": "wellbeing and good news: sunlight through leaves",
+   "band": [
+    1712,
+    0,
+    1182,
+    2160
+   ]
+  },
+  {
+   "id": "S11",
+   "src": "assets/raw/mk_4312.mp4",
+   "in": 0.5,
+   "start": 21.93,
+   "end": 23.81,
+   "speed": 1,
+   "cam": {
+    "type": "tilt-up",
+    "c0": [
+     0.7,
+     0.56
+    ],
+    "c1": [
+     0.7,
+     0.44
+    ],
+    "z0": 1.25,
+    "z1": 1.25,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 1.05,
+    "gam": 1.0
+   },
+   "why": "protect us, Lord of the worlds: minaret at night, tilt up",
+   "band": [
+    1071,
+    0,
+    544,
+    1080
+   ]
+  },
+  {
+   "id": "S12",
+   "src": "assets/raw/mk_4148.mp4",
+   "in": 3.0,
+   "start": 23.81,
+   "end": 25.81,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.47
+    ],
+    "z0": 1.0,
+    "z1": 1.08,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 1.1,
+    "gam": 0.95
+   },
+   "why": "with Your eye that never sleeps: the night sky",
+   "band": [
+    1239,
+    0,
+    1360,
+    2160
+   ]
+  },
+  {
+   "id": "S13",
+   "src": "assets/raw/mk_9805.mp4",
+   "in": 4.0,
+   "start": 25.81,
+   "end": 27.833,
+   "speed": 1,
+   "cam": {
+    "type": "pull-out",
+    "c0": [
+     0.5,
+     0.52
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.15,
+    "z1": 1.0,
+    "ease": "outSine"
+   },
+   "grade": {
+    "exp": 0.95,
+    "gam": 1.15
+   },
+   "why": "Ameen: pull out over a sea of clouds at sunrise",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
+  }
+ ],
+ "transitions": [
+  {
+   "at": 2.14,
+   "type": "lightflash",
+   "dur": 0.45
+  },
+  {
+   "at": 4.9,
+   "type": "dissolve",
+   "dur": 0.4
+  },
+  {
+   "at": 7.34,
+   "type": "pushblur",
+   "dur": 0.38
+  },
+  {
+   "at": 9.95,
+   "type": "blurdissolve",
+   "dur": 0.4
+  },
+  {
+   "at": 12.43,
+   "type": "lightflash",
+   "dur": 0.4
+  },
+  {
+   "at": 14.39,
+   "type": "dissolve",
+   "dur": 0.3
+  },
+  {
+   "at": 15.87,
+   "type": "dissolve",
+   "dur": 0.3
+  },
+  {
+   "at": 17.25,
+   "type": "pushblur",
+   "dur": 0.35
+  },
+  {
+   "at": 19.63,
+   "type": "lightflash",
+   "dur": 0.4
+  },
+  {
+   "at": 21.93,
+   "type": "zoomblur",
+   "dur": 0.4
+  },
+  {
+   "at": 23.81,
+   "type": "dip",
+   "dur": 0.5
+  },
+  {
+   "at": 25.81,
+   "type": "zoomblur",
+   "dur": 0.42
+  }
+ ]
+}

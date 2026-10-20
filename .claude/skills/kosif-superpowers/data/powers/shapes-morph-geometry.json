@@ -28,8 +28,14 @@
    "path",
    "svg",
    "shape",
-   "seek"
-  ]
+   "seek",
+   "تحول الأشكال",
+   "دائرة إلى نجمة",
+   "شكل يتحول",
+   "shape tween",
+   "gsap"
+  ],
+  "when": "حين يريد المستخدم تحويل شكل SVG إلى أي شكل آخر بسلاسة دون إضافات مع إمكان التقديم والترجيع / when any SVG shape should morph into another, plugin-free and seekable on a GSAP timeline"
  },
  {
   "id": "SHAPE-02",
@@ -58,8 +64,14 @@
    "flubber",
    "resample",
    "winding",
-   "morph rule"
-  ]
+   "morph rule",
+   "إعادة العينات",
+   "التواء الشكل",
+   "اتجاه اللف",
+   "equal points",
+   "path twist"
+  ],
+  "when": "عند تجهيز مسارين للتحويل أو ظهور التواء وتشوه أثناء المورف / when preparing two paths for a morph or fixing a twist in the in-betweens"
  },
  {
   "id": "SHAPE-03",
@@ -85,8 +97,14 @@
    "squircle",
    "superellipse",
    "echo",
-   "morph"
-  ]
+   "morph",
+   "مربع ناعم",
+   "حلقات صدى",
+   "دائرة لمربع",
+   "circle to square",
+   "contour rings"
+  ],
+  "when": "حين يطلب تحويل دائرة إلى مربع ناعم الزوايا مع حلقات صدى متأخرة حوله / when a circle should turn into a squircle with lagging echo contour rings around it"
  },
  {
   "id": "SHAPE-04",
@@ -115,8 +133,14 @@
    "formula",
    "flower",
    "morph",
-   "math"
-  ]
+   "math",
+   "معادلة",
+   "شكل رياضي",
+   "شبكة قطبية",
+   "polar grid",
+   "equation"
+  ],
+  "when": "حين يريد أشكالًا من معادلة قطبية تتحول بين زهرة ونجمة مع عرض المعادلة حية / when shapes from a polar equation should morph between flower, star and squircle with a live formula"
  },
  {
   "id": "SHAPE-05",
@@ -144,8 +168,14 @@
    "باوهاوس",
    "polygon",
    "bauhaus",
-   "morph"
-  ]
+   "morph",
+   "مربع",
+   "مثلث",
+   "أشكال هندسية",
+   "vertex morph",
+   "geometric shapes"
+  ],
+  "when": "حين يطلب تحول أشكال هندسية بسيطة كمربع وخماسي ومثلث بأسلوب باوهاوس / when simple primitives like a square, pentagon and triangle should morph in a Bauhaus look"
  },
  {
   "id": "SHAPE-06",
@@ -173,8 +203,14 @@
    "نجمة",
    "spring",
    "morph",
-   "star"
-  ]
+   "star",
+   "نجوم تدور",
+   "حركة نابضة",
+   "دائرة لنجمة",
+   "orbiting stars",
+   "circle to star"
+  ],
+  "when": "حين يريد تحول دائرة إلى مربع ثم نجمة بحركة نابضة مع نجوم صغيرة تدور حولها / when a circle should spring into a square then a star with small stars orbiting around"
  },
  {
   "id": "SHAPE-07",
@@ -202,8 +238,14 @@
    "echo",
    "blur trail",
    "morph",
-   "orbit"
-  ]
+   "orbit",
+   "أثر حركة",
+   "موشن بلر",
+   "نسخ ملونة",
+   "motion blur",
+   "afterimage"
+  ],
+  "when": "حين يتحول شكل وهو يدور ويحتاج نسخًا ملونة متأخرة أو أثرًا ضبابيًا خلفه / when a rotating shape morph needs lagged coloured copies or a motion-blur trail behind it"
  },
  {
   "id": "SHAPE-08",
@@ -230,8 +272,14 @@
    "gizmo",
    "handles",
    "figma",
-   "morph"
-  ]
+   "morph",
+   "صندوق تحديد",
+   "مقابض",
+   "واجهة تصميم",
+   "bounding box",
+   "design ui"
+  ],
+  "when": "حين يُراد مشهد بطابع برامج التصميم يتحول فيه الشكل داخل صندوق تحديد بمقابض وقراءة زاوية / when a morph should look like a design app: a rotating bounding box with handles and an angle readout"
  },
  {
   "id": "SHAPE-09",
@@ -260,8 +308,14 @@
    "scatter",
    "grid",
    "icon",
-   "infographic"
-  ]
+   "infographic",
+   "نقاط متناثرة",
+   "تجمع النقاط",
+   "تكوين أيقونة",
+   "dots assemble",
+   "stagger"
+  ],
+  "when": "حين يريد نقاطًا متناثرة تتجمع لتكوّن شبكة أو أيقونة في إنفوجرافيك / when scattered dots should gather into a grid or an icon, e.g. in an infographic"
  },
  {
   "id": "SHAPE-10",
@@ -287,8 +341,14 @@
    "حلقة",
    "bar to ring",
    "donut",
-   "data"
-  ]
+   "data",
+   "مخطط دائري",
+   "رسم بياني",
+   "شرائح",
+   "ring chart",
+   "curl"
+  ],
+  "when": "حين يتحول شريط بيانات مستقيم إلى حلقة أو مخطط دائري ثم ينقسم إلى شرائح / when a straight data bar should curl into a ring or donut and then split into segments"
  },
  {
   "id": "SHAPE-11",
@@ -314,8 +374,14 @@
    "تنظيف",
    "sketch",
    "clean up",
-   "before after"
-  ]
+   "before after",
+   "خط يدوي",
+   "تنعيم",
+   "شخبطة",
+   "smoothing",
+   "hand drawn"
+  ],
+  "when": "حين يريد إظهار رسم يدوي مرتجف يتحول إلى خط نظيف ناعم كقبل وبعد / when a shaky hand-drawn line should turn into a clean smooth path, before/after style"
  },
  {
   "id": "SHAPE-12",
@@ -341,8 +407,14 @@
    "low poly",
    "facet",
    "morph",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "مثلثات",
+   "تظليل مسطح",
+   "شارة",
+   "flat shading",
+   "triangles"
+  ],
+  "when": "حين يطلب كتلة لوبولي من مثلثات تتحول بين أشكال كعلامة أو شارة بتظليل مسطح / when a low-poly triangle mass should morph between silhouettes like a mark or badge with flat shading"
  },
  {
   "id": "SHAPE-13",
@@ -368,8 +440,14 @@
    "MorphSVG",
    "gsap",
    "morph",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "تحويل SVG",
+   "إضافة",
+   "لقطة مفتاحية",
+   "svg morph",
+   "keyframes"
+  ],
+  "when": "عند تحويل أشكال SVG داخل HyperFrames بإضافة MorphSVG مع التحقق بلقطات مفتاحية / when morphing SVG shapes in HyperFrames with the MorphSVG plugin and checking in-betweens via keyframe shots"
  },
  {
   "id": "SHAPE-14",
@@ -398,8 +476,14 @@
    "liquid",
    "blob",
    "style",
-   "morph"
-  ]
+   "morph",
+   "قطرات",
+   "اندماج",
+   "انتقال سائل",
+   "fluid",
+   "gooey"
+  ],
+  "when": "حين يطلب أسلوبًا سائلًا لأشكال تندمج وتنقسم كالقطرات أو انتقالًا سائلًا على الإيقاع / for a liquid style of blobby shapes merging and splitting, or a beat-anchored liquid transition"
  },
  {
   "id": "SHAPE-15",
@@ -424,8 +508,14 @@
    "shared element",
    "continuity",
    "ui",
-   "transition"
-  ]
+   "transition",
+   "انتقال سلس",
+   "تغيير الحجم",
+   "ترانزيشن",
+   "layout transition",
+   "morph"
+  ],
+  "when": "حين ينتقل عنصر واحد بين مكانين أو حجمين ويجب أن يبقى متصلًا بدل التلاشي المتقاطع / when one element changes size or place between two states and must stay continuous instead of crossfading"
  },
  {
   "id": "SHAPE-16",
@@ -450,8 +540,14 @@
    "بطاقة",
    "card morph",
    "handoff",
-   "ui"
-  ]
+   "ui",
+   "انتقال بطاقة",
+   "حاوية",
+   "ترانزيشن",
+   "shot transition",
+   "container"
+  ],
+  "when": "حين تتحول بطاقة أو حاوية بين لقطتين ثم تسلّم المشهد للعنصر الحقيقي / when a card or container morphs between two shots and hands off to reveal the real target"
  },
  {
   "id": "SHAPE-17",
@@ -476,8 +572,14 @@
    "شريط تقدم",
    "morph chain",
    "button",
-   "progress"
-  ]
+   "progress",
+   "تحميل",
+   "عداد",
+   "ضغط زر",
+   "loading bar",
+   "through-line"
+  ],
+  "when": "حين يريد خيطًا بصريًا تتحول فيه نقطة إلى زر يُضغط ثم شريط تقدم ثم نقطة نهاية / when one dot should become a pressed button, then a progress bar, then a full stop"
  },
  {
   "id": "SHAPE-18",
@@ -509,8 +611,14 @@
    "dynamic island",
    "pill",
    "container morph",
-   "spring"
-  ]
+   "spring",
+   "زر يتحول لنافذة",
+   "توسع",
+   "واجهة تطبيق",
+   "button expand",
+   "squash"
+  ],
+  "when": "حين تتحول كبسولة إلى نافذة أو بطاقة إلى كبسولة بحركة نابضة كالجزيرة الديناميكية / when a pill expands into a window or a card shrinks to a pill on a spring, dynamic-island style"
  },
  {
   "id": "SHAPE-19",
@@ -536,8 +644,14 @@
    "tab indicator",
    "stretchy",
    "spring",
-   "ui"
-  ]
+   "ui",
+   "تبويبات",
+   "مؤشر مطاطي",
+   "خط تحت التبويب",
+   "tabs",
+   "elastic"
+  ],
+  "when": "حين يحتاج مؤشر تبويبات يتمدد أثناء انتقاله بين التبويبات ثم يستقر / when a tab indicator should stretch while sliding between tabs and then settle"
  },
  {
   "id": "SHAPE-20",
@@ -561,8 +675,14 @@
    "hamburger",
    "close",
    "icon morph",
-   "ui"
-  ]
+   "ui",
+   "ثلاث شرط",
+   "إغلاق",
+   "زر القائمة",
+   "menu icon",
+   "x icon"
+  ],
+  "when": "حين يطلب تحويل أيقونة القائمة ذات الخطوط الثلاثة إلى علامة إغلاق X / when the three-line menu icon should turn into an X close icon"
  },
  {
   "id": "SHAPE-21",
@@ -585,8 +705,14 @@
    "حالات",
    "ui states",
    "morph",
-   "flow"
-  ]
+   "flow",
+   "زر",
+   "شاشة كاملة",
+   "تدفق الواجهة",
+   "button to fullscreen",
+   "toggle"
+  ],
+  "when": "حين يريد عرض تحول عنصر واحد عبر حالات واجهة متتابعة من زر إلى شاشة كاملة / when one element should morph through successive UI states from a button to a full screen"
  },
  {
   "id": "SHAPE-22",
@@ -614,8 +740,14 @@
    "تفتح",
    "dot bloom",
    "interface",
-   "reveal"
-  ]
+   "reveal",
+   "نقطة متوهجة",
+   "كشف الواجهة",
+   "أقمار",
+   "glowing dot",
+   "satellites"
+  ],
+  "when": "حين تبدأ الواجهة أو النظام من نقطة متوهجة تكبر إلى إطار يظهر فيه المحتوى / when an interface or system should bloom from a glowing dot into a frame as content fades in"
  },
  {
   "id": "SHAPE-23",
@@ -641,8 +773,14 @@
    "flood",
    "ring",
    "brand",
-   "transition"
-  ]
+   "transition",
+   "انتقال دائري",
+   "غمر لوني",
+   "لون البراند",
+   "circle wipe",
+   "iris wipe"
+  ],
+  "when": "حين يريد انتقالًا تنكمش فيه حلقة إلى نقطة ثم تنفتح دائرة تغمر الكادر بلون العلامة / for a transition where a ring shrinks to a point and a circular iris floods the frame with the brand colour"
  },
  {
   "id": "SHAPE-24",
@@ -670,8 +808,14 @@
    "قزحية",
    "eye",
    "iris",
-   "logo morph"
-  ]
+   "logo morph",
+   "بؤبؤ",
+   "لوجو",
+   "فتح العين",
+   "eye open",
+   "radial gradient"
+  ],
+  "when": "حين يتحول الشعار إلى بؤبؤ عين داخل جفن لوزي أو تنفتح عين من خط / when a logo ring should become an eye's iris inside an almond outline, or an eye opens from a line"
  },
  {
   "id": "SHAPE-25",
@@ -695,8 +839,14 @@
    "check",
    "success",
    "ripple",
-   "morph"
-  ]
+   "morph",
+   "تأكيد",
+   "نقرة",
+   "تم بنجاح",
+   "checkmark",
+   "tap"
+  ],
+  "when": "حين يريد إظهار نجاح عملية بنقرة تموج ودائرة تتحول إلى علامة صح / when a tap ripple should confirm success as a circle morphs into a checkmark"
  },
  {
   "id": "SHAPE-26",
@@ -722,8 +872,15 @@
    "outro",
    "monogram",
    "badge",
-   "converge"
-  ]
+   "converge",
+   "ختام",
+   "لوجو",
+   "ظرف",
+   "إشعار",
+   "envelope",
+   "notification"
+  ],
+  "when": "حين يحتاج ختامًا تتجمع فيه العناصر إلى شعار أو مونوغرام أو يتحول ظرف مرسل إلى شارة إشعار / for an outro where elements converge into a logo or monogram, or a sent envelope becomes a badge"
  },
  {
   "id": "SHAPE-27",
@@ -751,8 +908,14 @@
    "metaball",
    "blob",
    "svg filter",
-   "liquid"
-  ]
+   "liquid",
+   "سائل",
+   "التحام",
+   "كرات",
+   "gaussian blur",
+   "merge"
+  ],
+  "when": "حين يريد كرات أو دوائر تلتحم كالسائل بفلتر SVG لزج / when blobs or circles should merge like liquid using an SVG goo filter"
  },
  {
   "id": "SHAPE-28",
@@ -780,8 +943,14 @@
    "gooey",
    "blob",
    "touch",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "انقسام",
+   "لمسة",
+   "ثلاث نقاط",
+   "split",
+   "metaball"
+  ],
+  "when": "حين تنقسم نقطة إلى قائمة ثلاث نقاط بعنق لزج أو تنتفخ كتلة نحو نقطة لمس في HyperFrames / when a dot splits into a three-dot menu via a gooey neck, or a blob bulges toward a touch, in HyperFrames"
  },
  {
   "id": "SHAPE-29",
@@ -804,8 +973,14 @@
    "صلصال",
    "metaball",
    "clay",
-   "merge"
-  ]
+   "merge",
+   "كتل",
+   "التحام",
+   "تدحرج",
+   "roll in",
+   "blobs"
+  ],
+  "when": "حين يريد مشهد كتل كالصلصال تتدحرج وتلتحم معًا / when clay-like blobs should roll in and merge together"
  },
  {
   "id": "SHAPE-30",
@@ -831,8 +1006,14 @@
    "blob",
    "noise",
    "vertex shader",
-   "three.js"
-  ]
+   "three.js",
+   "ثلاثي الأبعاد",
+   "كرة",
+   "عضوي",
+   "3d sphere",
+   "organic"
+  ],
+  "when": "حين يريد كرة ثلاثية الأبعاد تتموج كأنها كتلة عضوية حية / when a 3D sphere should ripple into a living organic blob"
  },
  {
   "id": "SHAPE-31",
@@ -859,8 +1040,15 @@
    "SDF",
    "smooth min",
    "glow",
-   "shader"
-  ]
+   "shader",
+   "شيدر",
+   "توهج",
+   "حدود",
+   "glsl",
+   "outline",
+   "distance field"
+  ],
+  "when": "حين يرسم أشكالًا بالشيدر تحتاج دمجًا ناعمًا أو تحويلًا أو حدودًا وتوهجًا / when shader-drawn shapes need smooth unions, morphs, outlines or glows from distance functions"
  },
  {
   "id": "SHAPE-32",
@@ -889,8 +1077,14 @@
    "mesh",
    "surface nets",
    "character",
-   "3d"
-  ]
+   "3d",
+   "مجسم",
+   "شخصية ثلاثية",
+   "كبسولة",
+   "watertight",
+   "primitives"
+  ],
+  "when": "حين يريد نحت شخصية أو مجسم من أوليات كالكرة والكبسولة والصندوق إلى شبكة مغلقة دقيقة / when sculpting a character or prop from sphere, capsule and box primitives into a closed accurate mesh"
  },
  {
   "id": "SHAPE-33",
@@ -916,8 +1110,14 @@
    "CSG",
    "smooth union",
    "subtract",
-   "sdf"
-  ]
+   "sdf",
+   "طرح",
+   "تقاطع",
+   "تجويف",
+   "intersection",
+   "blend radius"
+  ],
+  "when": "عند دمج أو طرح أو تقاطع أشكال مجسمة بحواف ناعمة مع مزج الألوان أو تلوين التجويف / when smoothly adding, carving or intersecting primitives with blended colours or a tinted cavity"
  },
  {
   "id": "SHAPE-34",
@@ -942,8 +1142,14 @@
    "raycast",
    "placement",
    "sdf",
-   "eyes"
-  ]
+   "eyes",
+   "تثبيت",
+   "عيون",
+   "إسقاط على السطح",
+   "surface normal",
+   "project point"
+  ],
+  "when": "حين يحتاج تثبيت عناصر كالعيون على سطح مجسم بإسقاط النقاط أو إطلاق شعاع / when seating accessories like eyes on a sculpted surface by projecting points or raycasting"
  },
  {
   "id": "SHAPE-35",
@@ -971,8 +1177,14 @@
    "blob",
    "background",
    "drift",
-   "ambient"
-  ]
+   "ambient",
+   "خلفية متحركة",
+   "بقعة",
+   "تمويه",
+   "corner blob",
+   "soft shapes"
+  ],
+  "when": "حين يريد خلفية هادئة من كتل مستديرة مموهة تنجرف أو بقعة لونية تخرج من الزاوية / for a calm background of blurred rounded shapes drifting, or a tinted blob bleeding off a corner"
  },
  {
   "id": "SHAPE-36",
@@ -1000,8 +1212,14 @@
    "نص",
    "blob",
    "text",
-   "gradient"
-  ]
+   "gradient",
+   "تدرج",
+   "خلفية النص",
+   "هالفتون",
+   "multiply",
+   "halftone"
+  ],
+  "when": "حين يحتاج كتلة متدرجة الألوان تتحول بالضوضاء خلف عنوان أو نص / when a noise-morphing gradient blob should sit behind a headline or text"
  },
  {
   "id": "SHAPE-37",
@@ -1029,8 +1247,14 @@
    "قضمة",
    "rubber",
    "bite",
-   "mask"
-  ]
+   "mask",
+   "انبعاج",
+   "فتات",
+   "حافة",
+   "bulge",
+   "crumbs"
+  ],
+  "when": "حين يريد إطارًا مطاطيًا ينبعج تحت ضغط المحتوى أو قضمة تُقتطع من حافة شكل مع فتات / when a frame border should bulge under content, or a bite should be cut from an edge with crumbs"
  },
  {
   "id": "SHAPE-38",
@@ -1054,8 +1278,14 @@
    "ripple",
    "press",
    "heat",
-   "touch"
-  ]
+   "touch",
+   "ضغطة",
+   "توهج",
+   "تشويه",
+   "warp",
+   "bloom"
+  ],
+  "when": "حين يريد ضغطة يتسع منها تموج يدفع الصورة للخارج مع توهج دافئ / when a press should send out an expanding ripple that warps outward with a warm heat bloom"
  },
  {
   "id": "SHAPE-39",
@@ -1087,8 +1317,14 @@
    "autoRotate",
    "textPath",
    "route",
-   "gsap"
-  ]
+   "gsap",
+   "طائرة",
+   "سهم",
+   "خط سير",
+   "path follow",
+   "plane"
+  ],
+  "when": "حين يتحرك عنصر كطائرة أو سهم أو نص على مسار ويدور مع اتجاهه / when an element like a plane, arrow or label should travel along a path and turn with it"
  },
  {
   "id": "SHAPE-40",
@@ -1112,8 +1348,15 @@
    "spline",
    "catmull-rom",
    "arc length",
-   "constant speed"
-  ]
+   "constant speed",
+   "سرعة ثابتة",
+   "نقاط مرور",
+   "بيزييه",
+   "bezier",
+   "hermite",
+   "waypoints"
+  ],
+  "when": "عند اختيار نوع المنحنى لحركة تمر بنقاط محددة أو لضبط سرعة ثابتة على المسار / when picking a spline through waypoints or getting constant speed along a curve"
  },
  {
   "id": "SHAPE-41",
@@ -1139,8 +1382,14 @@
    "svg path",
    "parser",
    "arc",
-   "studio"
-  ]
+   "studio",
+   "تحليل المسار",
+   "مضلعات",
+   "أوامر المسار",
+   "path data",
+   "bezier"
+  ],
+  "when": "حين يحتاج تحويل بيانات مسار SVG بكل أوامرها وأقواسها إلى مضلعات للرسم / when converting SVG path data with all commands and arcs into polygons to draw"
  },
  {
   "id": "SHAPE-42",
@@ -1171,8 +1420,14 @@
    "even-odd",
    "compound",
    "hole",
-   "logo"
-  ]
+   "logo",
+   "فراغات",
+   "قص",
+   "حروف مفرغة",
+   "cut-out",
+   "counters"
+  ],
+  "when": "حين يرسم حلقة أو حرفًا مفرغًا أو شعارًا مقصوصًا يحتاج ثقوبًا داخلية / when drawing rings, letters with counters or logo cut-outs that need inner holes"
  },
  {
   "id": "SHAPE-43",
@@ -1199,8 +1454,14 @@
    "primitives",
    "scene language",
    "studio",
-   "vector"
-  ]
+   "vector",
+   "رسم متجه",
+   "خطوات",
+   "كشف تدريجي",
+   "steps",
+   "reveal order"
+  ],
+  "when": "حين يريد بناء صورة متجهة كبرنامج خطوات من أشكال أولية تُرسم بأي حجم وبترتيب كشف / when building a vector picture as ordered steps of primitives, re-rendered at any size with reveal orders"
  },
  {
   "id": "SHAPE-44",
@@ -1223,8 +1484,14 @@
    "كاتمول-روم",
    "catmull-rom",
    "curve",
-   "organic"
-  ]
+   "organic",
+   "منحنى ناعم",
+   "نقاط تحكم",
+   "خطوط عضوية",
+   "smooth curve",
+   "spline"
+  ],
+  "when": "حين يريد منحنى ناعمًا يمر بنقاط قليلة لرسم خطوط عضوية أو أنابيب / when a few control points should become a smooth curve for organic outlines or tubes"
  },
  {
   "id": "SHAPE-45",
@@ -1251,8 +1518,15 @@
    "tube",
    "stroke",
    "limbs",
-   "tail"
-  ]
+   "tail",
+   "أطراف",
+   "ذيل",
+   "لهب",
+   "شعر",
+   "flames",
+   "hair"
+  ],
+  "when": "حين يرسم أطرافًا أو ذيولًا أو لهبًا أو شعرًا كضربة بسمك متغير / when drawing limbs, tails, flames or hair as a stroke with varying thickness"
  },
  {
   "id": "SHAPE-46",
@@ -1276,8 +1550,14 @@
    "mountains",
    "midpoint displacement",
    "landscape",
-   "parallax"
-  ]
+   "parallax",
+   "خلفية",
+   "طبيعة",
+   "صور ظلية",
+   "silhouette",
+   "ridges"
+  ],
+  "when": "حين يحتاج المشهد سلاسل جبال بصور ظلية متعددة الطبقات للخلفية أو البارالاكس / when a scene needs layered mountain silhouettes, e.g. as parallax backdrops"
  },
  {
   "id": "SHAPE-47",
@@ -1302,8 +1582,14 @@
    "أيزومتري",
    "isometric",
    "box",
-   "2.5d"
-  ]
+   "2.5d",
+   "مكعب",
+   "ظل أرضي",
+   "درجات اللون",
+   "cube",
+   "shading"
+  ],
+  "when": "حين يرسم صندوقًا أو مكعبًا أيزومتريًا بثلاث درجات من لون واحد مع ظل ناعم / when drawing an isometric box in three tones of one hue with a soft ground shadow"
  },
  {
   "id": "SHAPE-48",
@@ -1329,8 +1615,14 @@
    "خط",
    "مستوى",
    "construction",
-   "build"
-  ]
+   "build",
+   "مسطرة",
+   "إحداثيات",
+   "بناء تدريجي",
+   "ruler",
+   "plane"
+  ],
+  "when": "حين يريد بناءً تدريجيًا من نقطة إلى خط بمسطرة ثم مستوى مائل يحمل النص / when a build should grow from a point to a ruler line to a skewed plane carrying text"
  },
  {
   "id": "SHAPE-49",
@@ -1365,8 +1657,14 @@
    "stripes",
    "rope",
    "ecg",
-   "trail"
-  ]
+   "trail",
+   "نبض القلب",
+   "حبل",
+   "خطوط متقطعة",
+   "dashed line",
+   "flow"
+  ],
+  "when": "حين يحتاج خطوطًا متدفقة كقناة ماء أو أثر قوس رمي أو خط نبض أو حبلًا يتدلى / when lines should flow like a water channel, trace a throw arc, spike like an ECG or sag like a rope"
  },
  {
   "id": "SHAPE-50",
@@ -1397,8 +1695,14 @@
    "sine",
    "ribbon",
    "strands",
-   "background"
-  ]
+   "background",
+   "موجات",
+   "أشرطة",
+   "قوس قزح",
+   "waves",
+   "rainbow"
+  ],
+  "when": "حين يريد خلفية من موجات جيبية ملونة أو أشرطة متدرجة تتلوى ببطء تحت النص / for a background of coloured sine waves or slowly moving gradient ribbon loops under text"
  },
  {
   "id": "SHAPE-51",
@@ -1426,8 +1730,14 @@
    "two lines",
    "editorial",
    "signature",
-   "background"
-  ]
+   "background",
+   "خطوط قطرية",
+   "توقيع بصري",
+   "خلفية",
+   "diagonal lines",
+   "drift"
+  ],
+  "when": "حين يطلب توقيعًا بصريًا تحريريًا من خطين قطريين منحنيين ينجرفان خلف المحتوى / for an editorial signature of exactly two curved diagonal lines drifting behind the content"
  },
  {
   "id": "SHAPE-52",
@@ -1462,8 +1772,14 @@
    "tile grid",
    "quarter circle",
    "geometric",
-   "beat"
-  ]
+   "beat",
+   "بلاطات",
+   "أرباع دوائر",
+   "على الإيقاع",
+   "pattern",
+   "glyph swap"
+  ],
+  "when": "حين يريد شبكة بلاطات هندسية بأسلوب باوهاوس تتبدل أشكالها وألوانها بموجة أو على الإيقاع / when a Bauhaus tile grid should swap shapes and colours in a wave or on the beat"
  },
  {
   "id": "SHAPE-53",
@@ -1493,8 +1809,14 @@
    "truchet",
    "tiles",
    "generative",
-   "wave"
-  ]
+   "wave",
+   "نمط توليدي",
+   "أقواس",
+   "موجة لونية",
+   "pattern",
+   "quarter arcs"
+  ],
+  "when": "حين يريد نمط بلاطات بأقواس تدور وتتلون بموجة شعاعية كخلفية توليدية / when quarter-arc tiles should rotate and recolour under a radial wave as a generative pattern"
  },
  {
   "id": "SHAPE-54",
@@ -1532,8 +1854,14 @@
    "grid wave",
    "ripple",
    "stagger",
-   "distance delay"
-  ]
+   "distance delay",
+   "تموج",
+   "تتابع",
+   "مربعات",
+   "dots grid",
+   "square to circle"
+  ],
+  "when": "حين يريد موجة تسري في شبكة مربعات أو نقاط فتدور أو تكبر أو تصير دوائر بالتتابع / when a wave should ripple through a grid of squares or dots, rotating, scaling or rounding them in sequence"
  },
  {
   "id": "SHAPE-55",
@@ -1557,8 +1885,14 @@
    "شريط",
    "loop",
    "tile flip",
-   "marquee"
-  ]
+   "marquee",
+   "انقلاب",
+   "شريط صور",
+   "تكرار",
+   "seamless",
+   "image strip"
+  ],
+  "when": "حين يريد بلاطات تنقلب صفًا صفًا أو شريط صور ينزلق بلا نهاية في حلقة سلسة / when tiles should flip row by row or an image strip should scroll endlessly in a seamless loop"
  },
  {
   "id": "SHAPE-56",
@@ -1589,8 +1923,14 @@
    "phyllotaxis",
    "golden angle",
    "sunflower",
-   "generative"
-  ]
+   "generative",
+   "عباد الشمس",
+   "توزيع النقاط",
+   "دوران بطيء",
+   "spiral",
+   "dot distribution"
+  ],
+  "when": "حين يريد نقاطًا مرتبة كزهرة عباد الشمس أو توزيع عناصر حول مركز بالزاوية الذهبية / when dots should form a sunflower pattern or items be spread around a centre by the golden angle"
  },
  {
   "id": "SHAPE-57",
@@ -1618,8 +1958,14 @@
    "lissajous",
    "oscilloscope",
    "math",
-   "curves"
-  ]
+   "curves",
+   "راسم الذبذبات",
+   "منحنيات متشابكة",
+   "نيون",
+   "neon",
+   "glow"
+  ],
+  "when": "حين يريد منحنيات ليساجو متشابكة متوهجة بطابع راسم الذبذبات / when glowing tangled Lissajous curves with an oscilloscope look are wanted"
  },
  {
   "id": "SHAPE-58",
@@ -1645,8 +1991,14 @@
    "ridgeline",
    "joy division",
    "generative",
-   "noise"
-  ]
+   "noise",
+   "خطوط أفقية",
+   "موجات",
+   "توليدي",
+   "waves",
+   "lines"
+  ],
+  "when": "حين يريد خطوطًا أفقية متراكبة تتموج بالضوضاء قرب المنتصف بأسلوب Joy Division / when stacked horizontal lines should be noise-displaced near the centre in a Joy Division ridge style"
  },
  {
   "id": "SHAPE-59",
@@ -1679,8 +2031,14 @@
    "kolam",
    "fibonacci",
    "kaleidoscope",
-   "julia"
-  ]
+   "julia",
+   "حلزون ذهبي",
+   "مشكال",
+   "فيبوناتشي",
+   "sierpinski",
+   "golden spiral"
+  ],
+  "when": "حين يريد زخارف رياضية متحركة: سيربنسكي أو كولام أو حلزون ذهبي أو جوليا أو مشكال / when animated math patterns are wanted: Sierpinski, kolam, golden spiral, Julia set or kaleidoscope"
  },
  {
   "id": "SHAPE-60",
@@ -1705,8 +2063,14 @@
    "أيقونات",
    "icon wall",
    "integrations",
-   "grid"
-  ]
+   "grid",
+   "جدار أيقونات",
+   "تكاملات",
+   "خلفية",
+   "tilted",
+   "highlight"
+  ],
+  "when": "حين يريد خلفية جدار أيقونات مائلة تنجرف لعرض التكاملات مع إبراز أيقونة واحدة / for a tilted, drifting wall of icon tiles, e.g. showing integrations, with one tile highlighted"
  },
  {
   "id": "SHAPE-61",
@@ -1735,8 +2099,14 @@
    "stripes",
    "ripples",
    "grid",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "أنماط",
+   "خلفية",
+   "خداع بصري",
+   "op-art",
+   "webgpu"
+  ],
+  "when": "حين يحتاج خلفيات أنماط من HyperFrames كتموجات أو حلزون أو خطوط أو خلايا فورونوي أو شبكة متحركة / for HyperFrames pattern plates: ripples, op-art spiral, stripes, Voronoi cells or a dynamic grid"
  },
  {
   "id": "SHAPE-62",
@@ -1761,8 +2131,14 @@
    "loop",
    "seamless",
    "rotation",
-   "orbit"
-  ]
+   "orbit",
+   "تكرار سلس",
+   "دوران",
+   "بلا قفزة",
+   "integer ratio",
+   "arcs"
+  ],
+  "when": "حين يريد نقاطًا أو أقواسًا تدور حول مركز في حلقة تتكرر بلا قفزة عند نقطة الوصل / when orbiting dots or arcs must loop seamlessly with no jump at the seam"
  },
  {
   "id": "SHAPE-63",
@@ -1790,8 +2166,14 @@
    "concentric rings",
    "gap",
    "loader",
-   "rotation"
-  ]
+   "rotation",
+   "مؤشر تحميل",
+   "دوائر",
+   "تحميل",
+   "spinner",
+   "arcs"
+  ],
+  "when": "حين يريد مؤشر تحميل أو زخرفة من حلقات متحدة المركز بفجوات تدور باتجاهات متعاكسة / for a loader or motif of gapped concentric rings spinning in alternating directions"
  },
  {
   "id": "SHAPE-64",
@@ -1817,8 +2199,14 @@
    "orbit",
    "arcs",
    "core",
-   "pulse"
-  ]
+   "pulse",
+   "نواة",
+   "تنفس",
+   "دوران",
+   "donut",
+   "breathing"
+  ],
+  "when": "حين يريد عنصرًا مركزيًا حيًا من أقواس تدور حول نواة دائرية تتنفس / when a central motif of orbiting arcs around a breathing donut core is wanted"
  },
  {
   "id": "SHAPE-65",
@@ -1846,8 +2234,14 @@
    "إهليلج",
    "orbit ring",
    "ellipse",
-   "starburst"
-  ]
+   "starburst",
+   "حلقات مائلة",
+   "أقمار",
+   "نجمة",
+   "tilted rings",
+   "satellites"
+  ],
+  "when": "حين يريد حلقات مدارية إهليلجية مائلة حول مركز توهج أو حول البطل أو نجمة دوارة / for tilted orbital ellipse rings around a glow or hero object, or a spinning starburst accent"
  },
  {
   "id": "SHAPE-66",
@@ -1881,8 +2275,14 @@
    "burst",
    "rays",
    "emphasis",
-   "beat"
-  ]
+   "beat",
+   "إبراز",
+   "أشعة",
+   "ضربة الإيقاع",
+   "radial lines",
+   "accent"
+  ],
+  "when": "حين يريد انفجار خطوط من المركز لإبراز لحظة أو ضربة إيقاع / when lines should burst from the centre to emphasise a moment or a beat"
  },
  {
   "id": "SHAPE-67",
@@ -1910,8 +2310,14 @@
    "shockwave",
    "heartbeat",
    "ring",
-   "impact"
-  ]
+   "impact",
+   "ارتطام",
+   "موجة صدمة",
+   "نبضة",
+   "pulse",
+   "ripple"
+  ],
+  "when": "حين يريد حلقة صدمة تتسع على الأرض عند ارتطام أو نبضة قلب تتموج على الإيقاع / for a ground shockwave ring on an impact or a heartbeat ripple on the beats"
  },
  {
   "id": "SHAPE-68",
@@ -1941,8 +2347,14 @@
    "sunburst",
    "rays",
    "background",
-   "retro"
-  ]
+   "retro",
+   "خلفية دوارة",
+   "ريترو",
+   "عنوان",
+   "rotating",
+   "wedges"
+  ],
+  "when": "حين يريد خلفية أشعة شمسية دوارة بطابع ريترو خلف العنوان / for a retro rotating sunburst background behind a title"
  },
  {
   "id": "SHAPE-69",
@@ -1968,8 +2380,14 @@
    "حلقة",
    "dot ring",
    "radial lines",
-   "logo"
-  ]
+   "logo",
+   "شعار",
+   "لوجو",
+   "خطوط شعاعية",
+   "logo animation",
+   "radiate"
+  ],
+  "when": "حين تتضاعف نقاط الشعار حول دائرة أكبر مع خطوط شعاعية خلفها / when logo dots should multiply around a larger circle with radial lines behind"
  },
  {
   "id": "SHAPE-70",
@@ -1998,8 +2416,14 @@
    "مربعات",
    "tunnel",
    "spiral",
-   "nested"
-  ]
+   "nested",
+   "مربعات متداخلة",
+   "دوامة",
+   "سرعة",
+   "zoom loop",
+   "logo"
+  ],
+  "when": "حين يريد نفقًا حلزونيًا من مربعات متداخلة أو نسخ الشعار، مثلًا مع تغيّر السرعة / when nested squares or logo outlines should form a spiral tunnel, e.g. for speed ramps"
  },
  {
   "id": "SHAPE-71",
@@ -2026,8 +2450,14 @@
    "أقمار",
    "satellites",
    "star pop",
-   "border-radius"
-  ]
+   "border-radius",
+   "مربع لدائرة",
+   "نجمة",
+   "قفزة",
+   "square to circle",
+   "orbit"
+  ],
+  "when": "حين يتحول مربع إلى دائرة وهو يدور مع أقمار حوله أو تقفز نجمة بين نجوم صغيرة / when a square should round into a circle while rotating with orbiting dots, or a star should pop in"
  },
  {
   "id": "SHAPE-72",
@@ -2055,8 +2485,14 @@
    "portal",
    "swirl",
    "fresnel",
-   "lighthouse"
-  ]
+   "lighthouse",
+   "دوامة",
+   "منارة",
+   "توهج",
+   "glow",
+   "torus"
+  ],
+  "when": "حين يريد بوابة دوامية متوهجة أو غرفة مصباح منارة بعدسة حلقات تشتعل / for a glowing swirl portal or a lighthouse lamp room whose ring lens ignites"
  },
  {
   "id": "SHAPE-73",
@@ -2082,8 +2518,14 @@
    "islamic",
    "rosette",
    "khatam",
-   "geometry"
-  ]
+   "geometry",
+   "زخرفة إسلامية",
+   "نجمة",
+   "هندسة إسلامية",
+   "eight-point star",
+   "draw-on"
+  ],
+  "when": "حين يريد زخرفة إسلامية ثمانية تُرسم قطعة قطعة من الكود وتدور ببطء / when an Islamic eight-point rosette should be drawn piece by piece in code and slowly turn"
  },
  {
   "id": "SHAPE-74",
@@ -2112,8 +2554,14 @@
    "interlude",
    "rosette",
    "verse",
-   "beat"
-  ]
+   "beat",
+   "وقفة",
+   "أبيات",
+   "قصيدة",
+   "pause",
+   "breathing"
+  ],
+  "when": "حين يحتاج ملء وقفة طويلة بين الأبيات بوردة ثمانية تتنفس على الإيقاع / when a long pause between verses needs an eight-point rosette breathing on the beat"
  },
  {
   "id": "SHAPE-75",
@@ -2122,6 +2570,7 @@
   "name_en": "Swaying lanterns & mosque silhouette",
   "status": "ready",
   "what": "فانوسان من أشكال SVG يتأرجحان كالبندول بتوهج يتنفس، وصورة ظلية لقبة ومئذنتين بنوافذ مقوسة ترتعش. / Two SVG lanterns swinging like pendulums with breathing glow; a dome-and-two-minarets silhouette with softly flickering arched windows.",
+  "when": "حين يحتاج مشهدًا رمضانيًا أو إسلاميًا بفوانيس تتأرجح وصورة ظلية لمسجد بنوافذ مضيئة / for a Ramadan or Islamic scene with swinging lanterns and a mosque silhouette with lit windows",
   "how": "Lantern: chain line, radial glow r120, cap, hexagon body #ffcf72 .92 stroke #c48a2c, ribs #b07a22; rotation ±3.5° yoyo 2.2/2.5 s (svgOrigin 0 0); glow .7→1 yoyo .96 s. Mosque paths #1d0f2c, ground #140920; 8 windows #ffc768 .55→1 yoyo .9–1.7 s at random offsets (seeded).",
   "params": "±3.5°, 2.2/2.5 s; windows .55→1",
   "install": "",
@@ -2138,7 +2587,12 @@
    "رمضان",
    "lantern",
    "mosque",
-   "islamic"
+   "islamic",
+   "فوانيس",
+   "قبة",
+   "مئذنة",
+   "ramadan",
+   "pendulum"
   ]
  },
  {
@@ -2163,8 +2617,14 @@
    "cloud",
    "weather",
    "water cycle",
-   "explainer"
-  ]
+   "explainer",
+   "سحاب",
+   "مطر",
+   "دورة الماء",
+   "rain",
+   "clouds"
+  ],
+  "when": "حين يشرح دورة الماء أو الطقس بغيوم تكبر وتعتم قبل المطر ثم تصفو / when explaining the water cycle or weather with clouds that grow and darken before rain"
  },
  {
   "id": "SHAPE-77",
@@ -2188,8 +2648,14 @@
    "icons",
    "canvas",
    "hero",
-   "library"
-  ]
+   "library",
+   "أيقونة",
+   "رموز",
+   "صاروخ",
+   "vector icons",
+   "hero object"
+  ],
+  "when": "حين يحتاج أيقونة بطلة مرسومة بالكود كعين أو دماغ أو صاروخ أو ساعة رملية / when a code-drawn hero icon is needed, such as an eye, brain, rocket or hourglass"
  },
  {
   "id": "SHAPE-78",
@@ -2213,8 +2679,14 @@
    "living icon",
    "svg",
    "rotate",
-   "clock"
-  ]
+   "clock",
+   "أيقونة متحركة",
+   "عقارب",
+   "مروحة",
+   "animated icon",
+   "fan"
+  ],
+  "when": "حين يريد أيقونة تتحرك أجزاؤها الداخلية كعقارب ساعة أو ريش مروحة أو نقاط نابضة / when an icon's inner parts should animate, like clock hands, fan blades or pulsing dots"
  },
  {
   "id": "SHAPE-79",
@@ -2238,8 +2710,14 @@
    "أيقونة",
    "icon grid",
    "closure",
-   "rules"
-  ]
+   "rules",
+   "تصميم أيقونة",
+   "شبكة",
+   "حجم صغير",
+   "stroke",
+   "small size"
+  ],
+  "when": "عند تصميم أيقونة أو مراجعتها لتبقى واضحة في الأحجام الصغيرة على شبكة 24 / when designing or checking an icon so it reads clearly at small sizes on a 24 px grid"
  },
  {
   "id": "SHAPE-80",
@@ -2268,8 +2746,14 @@
    "stickers",
    "emoji",
    "overlay",
-   "pop"
-  ]
+   "pop",
+   "خط تحت النص",
+   "استيكر",
+   "دائرة تمييز",
+   "underline",
+   "wobble"
+  ],
+  "when": "حين يريد إضافة دائرة أو خط تحت النص، أو إيموجي ونص وملصقات تنبثق بنابض / when adding a circle or underline shape, or emoji, text and sticker pop-ups with a spring"
  },
  {
   "id": "SHAPE-81",
@@ -2298,8 +2782,14 @@
    "stickers",
    "tags",
    "pills",
-   "decor"
-  ]
+   "decor",
+   "شريط تحذير",
+   "وسوم",
+   "عنوان",
+   "hazard tape",
+   "floating"
+  ],
+  "when": "حين يريد ملصقات زخرفية وشرائط تحذير متمايلة أو وسومًا تطفو حول العنوان / when wobbling starburst stickers, hazard tapes or floating tag pills around a headline are wanted"
  },
  {
   "id": "SHAPE-82",
@@ -2331,8 +2821,14 @@
    "fan",
    "cards",
    "stack",
-   "swatches"
-  ]
+   "swatches",
+   "صور",
+   "عينات ألوان",
+   "كومة",
+   "photos",
+   "fan out"
+  ],
+  "when": "حين يريد مجموعة بطاقات أو صور أو عينات ألوان تنفتح كمروحة من خلف بطاقة / when a stack of cards, photos or colour swatches should fan out from behind one card"
  },
  {
   "id": "SHAPE-83",
@@ -2358,8 +2854,14 @@
    "highlighter",
    "bar",
    "emphasis",
-   "text"
-  ]
+   "text",
+   "إبراز",
+   "ماركر",
+   "خلفية النص",
+   "highlight",
+   "marker"
+  ],
+  "when": "حين يريد إبراز سطر نص بشريط تظليل مائل يمتد خلفه، ومن اليمين للعربي / when a text line needs a slanted highlighter bar sweeping in behind it, from the right for Arabic"
  },
  {
   "id": "SHAPE-84",
@@ -2385,8 +2887,14 @@
    "clip-path",
    "lens",
    "colour flip",
-   "words"
-  ]
+   "words",
+   "تغيير اللون",
+   "عدسة",
+   "كرة",
+   "orb",
+   "text"
+  ],
+  "when": "حين يريد صف كلمات ينزلق فيتغير لون كل كلمة عند مرورها داخل دائرة كالعدسة / when a sliding row of words should flip colour as each passes inside a circle lens"
  },
  {
   "id": "SHAPE-85",
@@ -2414,8 +2922,14 @@
    "تجميع",
    "shards",
    "assemble",
-   "snap"
-  ]
+   "snap",
+   "قطع",
+   "التحام",
+   "بناء",
+   "pieces",
+   "fly in"
+  ],
+  "when": "حين يريد قطعًا أو شظايا تأتي من خارج الشاشة وتلتحم في أماكنها لبناء شكل / when shards or pieces should fly in from off-screen and snap together into a shape"
  },
  {
   "id": "SHAPE-86",
@@ -2440,8 +2954,14 @@
    "كسوف",
    "eclipse",
    "split screen",
-   "metaphor"
-  ]
+   "metaphor",
+   "شاشة مقسومة",
+   "تداخل",
+   "استعارة بصرية",
+   "overlap",
+   "difference blend"
+  ],
+  "when": "حين يريد استعارة بصرية على شاشة مقسومة نصفين تنزلق فيها دائرتان وتتداخلان ككسوف / for a split-screen metaphor where two circles slide together and overlap like an eclipse"
  },
  {
   "id": "SHAPE-87",
@@ -2469,8 +2989,14 @@
    "خطوط",
    "sea",
    "mascot",
-   "line art"
-  ]
+   "line art",
+   "موج",
+   "شخصية",
+   "تمايل",
+   "waves",
+   "parallax"
+  ],
+  "when": "حين يريد بحرًا مرسومًا بخطوط موجية متحركة تعبره شخصية رمزية صغيرة / when a line-art sea of drifting waves should be crossed by a small bobbing mascot"
  },
  {
   "id": "SHAPE-88",
@@ -2495,8 +3021,14 @@
    "فاصل",
    "separator",
    "hairline",
-   "layout"
-  ]
+   "layout",
+   "خط فاصل",
+   "تقسيم",
+   "خط رفيع",
+   "divider",
+   "line reveal"
+  ],
+  "when": "حين يحتاج فاصلًا رفيعًا أفقيًا أو عموديًا يظهر تدريجيًا في تخطيط HyperFrames / when a thin horizontal or vertical divider with a progressive reveal is needed in HyperFrames"
  },
  {
   "id": "SHAPE-89",
@@ -2521,8 +3053,14 @@
    "وحدة",
    "grid",
    "unit",
-   "system"
-  ]
+   "system",
+   "مسافات",
+   "أعمدة",
+   "تخطيط",
+   "columns",
+   "spacing"
+  ],
+  "when": "عند ضبط المقاسات والمسافات على وحدة أساس وشبكة أعمدة لتستقر الإطارات بدقة / when sizes and spacing must follow a base unit and column grid so final frames land on grid"
  },
  {
   "id": "SHAPE-90",
@@ -2547,8 +3085,14 @@
    "radius",
    "stroke",
    "negative space",
-   "rules"
-  ]
+   "rules",
+   "زوايا مستديرة",
+   "فراغ",
+   "قواعد التصميم",
+   "corner radius",
+   "design rules"
+  ],
+  "when": "عند وضع حدود للأشكال والألوان والزوايا والخطوط والفراغ في تصميم هندسي / when setting limits for primitives, colours, corner radii, strokes and empty space in a geometric design"
  },
  {
   "id": "SHAPE-91",
@@ -2574,8 +3118,14 @@
    "squash",
    "stretch",
    "impact",
-   "spring"
-  ]
+   "spring",
+   "ارتطام",
+   "ارتداد",
+   "مرونة",
+   "bounce",
+   "contact point"
+  ],
+  "when": "حين يرتطم شكل بشيء فينضغط ويتمدد حول نقطة التلامس ثم يعود بنابض / when a shape hits something and should squash and stretch around the contact point, then spring back"
  },
  {
   "id": "SHAPE-92",
@@ -2602,8 +3152,14 @@
    "snap",
    "spring",
    "centre origin",
-   "rule"
-  ]
+   "rule",
+   "التصاق",
+   "تجاوز",
+   "مركز الكادر",
+   "overshoot",
+   "magnet"
+  ],
+  "when": "حين يريد أشكالًا تلتصق في أماكنها بتجاوز واحد أو أسلوبًا تبدأ فيه كل الحركات من مركز الإطار / when shapes should snap into place with one overshoot, or every move should pivot from the frame centre"
  },
  {
   "id": "SHAPE-93",
@@ -2631,8 +3187,14 @@
    "هندسي",
    "playful",
    "geometric",
-   "style"
-  ]
+   "style",
+   "ألوان جريئة",
+   "دوائر",
+   "حيوي",
+   "bold palette",
+   "bounce"
+  ],
+  "when": "حين يطلب أسلوبًا مرحًا هندسيًا بألوان جريئة ودوائر وبطاقات وأيقونات تقفز / for a playful geometric style with a bold palette and bouncing circles, cards and icons"
  },
  {
   "id": "SHAPE-X01",

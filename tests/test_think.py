@@ -58,6 +58,22 @@ class ThinkTest(unittest.TestCase):
         self.assertLess(out["p50"], out["p90"])
         self.assertGreaterEqual(out["p10"], 2.0)
 
+    def test_fermi_refuses_attribute_access_and_calls(self):
+        names = ["a", "__class__", "__base__", "__subclasses__", "__len__"]
+        proc = run("fermi", "a.__class__.__base__.__subclasses__().__len__()", "--range", *[f"{n}=1:2" for n in names], "--samples", "3")
+        self.assertEqual(proc.returncode, 2, proc.stdout)
+        self.assertNotIn("p50", proc.stdout)
+        ok = json.loads(run("fermi", "-a ** 2 + b / 4", "--range", "a=1:2", "b=4:8", "--samples", "100").stdout)
+        self.assertLess(ok["p10"], 0)
+
+    def test_critic_sees_through_tanween(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "ar.md"
+            f.write_text("هذا جيد جدًا ويعمل دائمًا.\n", encoding="utf-8")
+            out = run("critic", str(f)).stdout
+        self.assertIn("جدا", out)
+        self.assertIn("دائما", out)
+
     def test_fermi_rejects_code(self):
         self.assertEqual(run("fermi", "__import__('os')", "--range", "os=1:2").returncode, 2)
 

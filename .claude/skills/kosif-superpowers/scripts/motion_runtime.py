@@ -10,9 +10,11 @@ import json
 import os
 from pathlib import Path
 import re
+import shlex
 import shutil
 import subprocess
 import sys
+import tempfile
 
 SKILL = Path(__file__).resolve().parents[1]
 TEMPLATE = SKILL / "resources" / "motion-runtime" / "doodle-film.template.html"
@@ -21,6 +23,7 @@ REPO_ROOT = Path(__file__).resolve().parents[4]
 RENDERER = REPO_ROOT / "tools" / "render_html.cjs"
 if not RENDERER.is_file():
     RENDERER = SKILL / "resources" / "motion-runtime" / "render_html.cjs"
+VERIFIER = Path(__file__).resolve().parent / "verify_video.py"  # bundled with the skill, so it exists in skill-only installs
 
 
 def read_engines():
@@ -82,7 +85,8 @@ def scaffold(out, title, subtitle, duration, fps):
         "    python3 $SKILL_DIR/scripts/motion_runtime.py render --in /absolute/project/film.html --out /absolute/project/out.mp4 --fps 30 --run\n\n"
         "Use --audio /absolute/voice.wav to keep the user's narration on the timeline. "
         "This template has a fixed 8-second drawing performance; for other durations, extend the storyboard and keyframes.\n"
-        "For a preview use --preview and output preview.png. "
+        "For an 8-frame contact-sheet preview, run the same command with --out /absolute/project/preview.png "
+        "(a .png output renders the preview; --audio needs .mp4). "
         "Verify with $SKILL_DIR/scripts/verify_video.py and inspect frames before saying delivered.\n",
         encoding="utf-8")
     return {"status":"scaffold_created_not_rendered","file":str(out/"film.html"),
@@ -102,30 +106,51 @@ def render(html_file, out_file, *, fps=30, width=1080, height=1920, audio=None, 
         raise ValueError("approved output: 1080x1920, FPS 24/30/60")
     if not RENDERER.is_file() or not shutil.which("node"):
         return {"status":"render_engine_unavailable","executed":False}
-    cmd=["node",str(RENDERER),"--in",str(source),"--out",str(destination),
-         "--width","1080","--height","1920","--fps",str(int(fps)),"--offline","--mode","seek"]
-    if destination.suffix.lower()==".png":
-        cmd.append("--preview")
+    preview=destination.suffix.lower()==".png"
+    ap=None
     if audio:
         ap=Path(audio).expanduser().resolve()
         if not ap.is_file():
             raise ValueError("audio file missing")
-        if destination.suffix.lower()!=".mp4":
+        if preview:
             raise ValueError("audio only supported with MP4 render")
+    # The renderer writes a preview sheet as <out stem>_preview.png next to --out, so a PNG
+    # preview renders into a private staging folder and is then moved to the requested name.
+    staging=Path(tempfile.mkdtemp(prefix="kosif-preview-")) if preview else None
+    target=staging/"film.mp4" if preview else destination
+    cmd=["node",str(RENDERER),"--in",str(source),"--out",str(target),
+         "--width","1080","--height","1920","--fps",str(int(fps)),"--offline","--mode","seek"]
+    if preview:
+        cmd.append("--preview")
+    if ap:
         cmd += ["--audio",str(ap)]
     try:
-        completed=subprocess.run(cmd,stdin=subprocess.DEVNULL,capture_output=True,
-                                 text=True,timeout=240,check=False)
-    except (OSError,subprocess.TimeoutExpired):
-        return {"status":"render_process_failed","executed":True,"verified":False}
-    if completed.returncode:
-        return {"status":"render_command_failed","exit_code":completed.returncode,
-                "executed":True,"verified":False}
+        try:
+            completed=subprocess.run(cmd,stdin=subprocess.DEVNULL,capture_output=True,
+                                     text=True,timeout=240,check=False)
+        except (OSError,subprocess.TimeoutExpired):
+            return {"status":"render_process_failed","executed":True,"verified":False}
+        if completed.returncode:
+            return {"status":"render_command_failed","exit_code":completed.returncode,
+                    "executed":True,"verified":False}
+        if preview:
+            sheet=staging/"film_preview.png"
+            if sheet.is_file() and not destination.exists():
+                shutil.move(str(sheet),str(destination))
+    finally:
+        if staging:
+            shutil.rmtree(staging,ignore_errors=True)
     if not destination.is_file() or destination.stat().st_size<200:
         return {"status":"render_output_missing_or_empty","executed":True,"verified":False}
+    if preview:
+        nxt=("Open the PNG contact sheet and inspect its frames; render the MP4 next and check it with "
+             +shlex.join(["python3",str(VERIFIER),"<film.mp4>","--aspect","9:16","--fps",str(int(fps))]))
+    else:
+        check=["python3",str(VERIFIER),str(destination),"--aspect","9:16","--fps",str(int(fps))]
+        check+=["--audio",str(ap)] if ap else ["--no-audio"]
+        nxt="Run "+shlex.join(check)+" and inspect actual frames and audio"
     return {"status":"rendered_requires_visual_qa","output":str(destination),"bytes":destination.stat().st_size,
-            "executed":True,"verified":False,
-            "next":"Run tools/verify_video.py and inspect actual frames and audio"}
+            "executed":True,"verified":False,"next":nxt}
 
 
 def main():
@@ -139,8 +164,10 @@ def main():
     s.add_argument("--duration",type=float,default=8)
     s.add_argument("--fps",type=int,default=30)
     r=sub.add_parser("render");r.add_argument("--in",dest="source",required=True)
-    r.add_argument("--out",required=True);r.add_argument("--fps",type=int,default=30)
-    r.add_argument("--audio");r.add_argument("--run",action="store_true")
+    r.add_argument("--out",required=True,help="new .mp4 path, or a new .png path for an 8-frame contact-sheet preview")
+    r.add_argument("--fps",type=int,default=30,help="24, 30 or 60 (default 30)")
+    r.add_argument("--audio",help="voice/music file muxed into an MP4 (not allowed with .png)")
+    r.add_argument("--run",action="store_true",help="approve the render; without it nothing is executed")
     args=ap.parse_args()
     try:
         if args.action=="doctor":result=detect()

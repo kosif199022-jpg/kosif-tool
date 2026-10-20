@@ -8,6 +8,25 @@ Contents / المحتويات: [observe](#observe) · [animate](#animate) · [re
 
 <a id="observe"></a>
 
+## الفهرس / contents
+
+- [observe — رصد المرجع](#observe--رصد-المرجع)
+- [animate — التحريك](#animate--التحريك)
+- [render — الرندر](#render--الرندر)
+- [space — الفضاء ثلاثي الأبعاد](#space--الفضاء-ثلاثي-الأبعاد)
+- [draw — الرسم](#draw--الرسم)
+- [data — البيانات](#data--البيانات)
+- [voice — الصوت](#voice--الصوت)
+- [arabic — النص العربي](#arabic--النص-العربي)
+- [captions — الترجمات](#captions--الترجمات)
+- [generate — التوليد](#generate--التوليد)
+- [orchestrate — التنسيق](#orchestrate--التنسيق)
+- [design — التصميم](#design--التصميم)
+- [mimic — المحاكاة](#mimic--المحاكاة)
+- [edit — المونتاج](#edit--المونتاج)
+- [cinematic — الإخراج السينمائي](#cinematic--الإخراج-السينمائي)
+- [Credits — الحقوق](#credits--الحقوق)
+
 ## observe — رصد المرجع
 
 *reference acquisition and inspection: fetching permitted media, sampling frames, palette extraction, scene-cut detection, motion/optical-flow analysis* — 12 repositories listed under *observe* in [repos.md](repos.md).
@@ -170,11 +189,11 @@ Render turns a KOSIF film from code into a file that passes the delivery gate. I
 ### Recipes / وصفات
 
 1. **Render → verify: standard HTML delivery.** Playwright (via `tools/render_html.cjs`), FFmpeg, `tools/verify_video.py`.
-   - Preview with `node tools/render_html.cjs --in film.html --out out/preview.png --preview`; check sizes, clipping, Arabic shaping.
+   - Preview with `node tools/render_html.cjs --in film.html --out out/film.mp4 --preview` (the contact sheet is written as `out/film_preview.png`); check sizes, clipping, Arabic shaping.
    - Render a 2–4 s half-resolution motion check of the hardest moment; show both to the user.
    - Render the final with `--fps 30 --audio voice.mp3`, plus `--seed` for randomness and `--offline` when fonts are local.
    - Gate with `python3 tools/verify_video.py out/film.mp4 --aspect 9:16 --fps 30 --duration <s> --audio voice.mp3`; copy values into TEST_REPORT.md.
-   Artefacts: out/preview.png, out/check.mp4, out/film.mp4, TEST_REPORT.md.
+   Artefacts: out/film_preview.png, out/check.mp4, out/film.mp4, TEST_REPORT.md.
    **بالعربية:** لوحة إطارات، مقطع فحص، رندر نهائي مع الصوت، ثم بوابة `verify_video.py` والتقرير.
 
 2. **Render: frames needing post-processing.** Playwright, sharp, FFmpeg.

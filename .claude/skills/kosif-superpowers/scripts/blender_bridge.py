@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """KOSIF original safe Blender command adapter; no automatic download or installation."""
 from __future__ import annotations
 import argparse

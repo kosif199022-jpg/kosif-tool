@@ -12,7 +12,7 @@ python .claude/skills/kosif-superpowers/scripts/native_3d.py doctor
 python .claude/skills/kosif-superpowers/scripts/native_3d.py render --scene .claude/skills/kosif-superpowers/templates/native-zbuffer-demo.json --output depth-proof.png
 ```
 
-It draws opaque cube/sphere/cylinder meshes, supports orthographic camera,
+It draws opaque cube/sphere/cylinder/cone/torus meshes, supports orthographic camera,
 translation and yaw keyframes, flat directional shading and PNG/MP4 export.
 It uses Pillow and FFmpeg, not bpy and not any other Blender component.
 No PBR, textured materials, 3D physics, shadows, bone skinning or ray tracing.

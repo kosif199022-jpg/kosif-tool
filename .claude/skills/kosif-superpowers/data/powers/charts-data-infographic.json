@@ -23,8 +23,14 @@
    "اختيار المخطط",
    "chart choice",
    "dataviz",
-   "سؤال"
-  ]
+   "سؤال",
+   "رسم بياني",
+   "تشارت",
+   "نوع المخطط",
+   "chart type",
+   "which chart"
+  ],
+  "when": "حين يسأل المستخدم أي نوع رسم بياني يناسب بياناته: اتجاه أو ترتيب أو توزيع أو تدفق / when the user asks which chart type fits the data: trend, ranking, composition, distribution or flow"
  },
  {
   "id": "DATA-02",
@@ -47,8 +53,14 @@
    "slope",
    "ميل",
    "line",
-   "تغير"
-  ]
+   "تغير",
+   "قبل وبعد",
+   "مقارنة فترتين",
+   "تغير صافي",
+   "slope chart",
+   "before after"
+  ],
+  "when": "حين يريد المستخدم إظهار التغير بين فترتين أو انقلاب الترتيب بدل الرحلة الكاملة / when showing net change or rank flips between two periods instead of the full journey"
  },
  {
   "id": "DATA-03",
@@ -71,8 +83,14 @@
   "tags": [
    "histogram",
    "توزيع",
-   "box plot"
-  ]
+   "box plot",
+   "مدرج تكراري",
+   "القيم الشاذة",
+   "انتشار",
+   "violin",
+   "outliers"
+  ],
+  "when": "حين يطلب المستخدم عرض توزيع القيم أو الشواذ أو الانتشار لمجموعة أو عدة مجموعات / when the user wants to show how values spread or where outliers sit across one or more groups"
  },
  {
   "id": "DATA-04",
@@ -96,8 +114,14 @@
    "insight",
    "خلاصة",
    "story arc",
-   "قصة البيانات"
-  ]
+   "قصة البيانات",
+   "سرد بالبيانات",
+   "رسالة الرسم",
+   "حكاية الأرقام",
+   "data storytelling",
+   "takeaway"
+  ],
+  "when": "عند التخطيط لفيديو بيانات يحتاج خلاصة واحدة لكل رسم وتسلسلًا قصصيًا من الصدمة إلى الذروة / when planning a data video that needs one takeaway per chart and a hook-to-climax story order"
  },
  {
   "id": "DATA-05",
@@ -122,8 +146,14 @@
    "baseline",
    "صفر",
    "axis",
-   "مقياس"
-  ]
+   "مقياس",
+   "محور مقطوع",
+   "وحدة القياس",
+   "تضليل",
+   "truncated axis",
+   "shared scale"
+  ],
+  "when": "حين تُرسم أعمدة أو رسوم متقارنة ويجب ألا يضلل المحور المقطوع أو اختلاف المقياس / when bars or compared charts must not mislead through a cut axis or mismatched scales"
  },
  {
   "id": "DATA-06",
@@ -147,8 +177,14 @@
    "log",
    "area",
    "sqrt",
-   "أمانة"
-  ]
+   "أمانة",
+   "فقاعات",
+   "لوغاريتمي",
+   "تطبيع",
+   "bubble size",
+   "normalization"
+  ],
+  "when": "عند تحجيم الفقاعات أو الأيقونات بالقيمة أو استخدام محور لوغاريتمي أو قيم مطبعة / when sizing bubbles or icons by value, using a log axis or showing normalized values"
  },
  {
   "id": "DATA-07",
@@ -174,8 +210,14 @@
    "ممنوع",
    "3D",
    "dual axis",
-   "forbidden"
-  ]
+   "forbidden",
+   "أخطاء الرسوم",
+   "محور مزدوج",
+   "رسم مضلل",
+   "chart mistakes",
+   "misleading chart"
+  ],
+  "when": "قبل اعتماد شكل الرسم لتجنب الثلاثي الأبعاد الزخرفي والمحورين المزدوجين والدوائر المزدحمة / before settling on a chart form, to avoid decorative 3D, deceptive dual axes and crowded pies"
  },
  {
   "id": "DATA-08",
@@ -198,8 +240,14 @@
   "tags": [
    "pie",
    "دائري",
-   "slices"
-  ]
+   "slices",
+   "رسم الفطيرة",
+   "نسب مئوية",
+   "أجزاء من كل",
+   "pie chart",
+   "part to whole"
+  ],
+  "when": "حين يطلب المستخدم رسمًا دائريًا لعرض نسب أجزاء من كل / when the user asks for a pie chart to show shares of a whole"
  },
  {
   "id": "DATA-09",
@@ -222,8 +270,14 @@
   "tags": [
    "missing",
    "مفقود",
-   "gaps"
-  ]
+   "gaps",
+   "بيانات ناقصة",
+   "قيم فارغة",
+   "فجوات",
+   "null values",
+   "no data"
+  ],
+  "when": "حين تحتوي البيانات على قيم مفقودة أو فترات بلا تسجيل ويجب ألا تظهر كأصفار / when the data has missing values or unrecorded periods that must not be drawn as zeros"
  },
  {
   "id": "DATA-10",
@@ -249,8 +303,14 @@
    "source",
    "مصدر",
    "honesty",
-   "توضيحي"
-  ]
+   "توضيحي",
+   "سطر المصدر",
+   "أرقام وهمية",
+   "حالة فارغة",
+   "citation",
+   "empty state"
+  ],
+  "when": "حين تُعرض أرقام في فيديو أو إنفوجرافيك ويجب ذكر مصدرها أو وسمها بأنها توضيحية / when figures appear in a video or infographic and need a source line or an 'illustrative' label"
  },
  {
   "id": "DATA-11",
@@ -274,8 +334,14 @@
   "tags": [
    "labels",
    "تسمية",
-   "legend"
-  ]
+   "legend",
+   "مفتاح الرسم",
+   "تسميات مباشرة",
+   "ليجند",
+   "direct labeling",
+   "series names"
+  ],
+  "when": "حين يحتوي الرسم على عدة سلاسل ويحتاج المشاهد لمعرفة كل خط دون البحث في المفتاح / when a chart has several series and viewers should identify each without hunting a legend"
  },
  {
   "id": "DATA-12",
@@ -297,8 +363,14 @@
   "tags": [
    "sort",
    "ترتيب",
-   "aspect"
-  ]
+   "aspect",
+   "ترتيب تنازلي",
+   "أبعاد الرسم",
+   "نسبة العرض",
+   "descending order",
+   "plot proportions"
+  ],
+  "when": "عند ترتيب أعمدة الفئات أو اختيار أبعاد مساحة الرسم لسلسلة زمنية أو مقارنة / when ordering category bars or choosing plot proportions for a time series or comparison"
  },
  {
   "id": "DATA-13",
@@ -324,8 +396,14 @@
   "tags": [
    "data in motion",
    "استمرارية",
-   "hero number"
-  ]
+   "hero number",
+   "إحصائيات فيديو",
+   "أرقام متحركة",
+   "موشن جرافيك",
+   "animated stats",
+   "stat sequence"
+  ],
+  "when": "حين يعرض فيديو عدة إحصاءات متتالية ويحتاج كل رقم شكلًا يوازيه دون قطع بينها / when a video shows several stats in a row and each number needs a matching visual without cuts"
  },
  {
   "id": "DATA-14",
@@ -350,8 +428,14 @@
    "encoding",
    "particles",
    "قنوات الحركة",
-   "flow"
-  ]
+   "flow",
+   "ترميز البيانات",
+   "جسيمات",
+   "حركة البيانات",
+   "motion encoding",
+   "data mapping"
+  ],
+  "when": "عند تحويل كميات أو تدفقات إلى حركة وجسيمات بحيث تحمل كل خاصية حركة معنى واحدًا / when turning quantities or flows into motion and particles so each motion property carries one meaning"
  },
  {
   "id": "DATA-15",
@@ -376,8 +460,14 @@
    "scalar",
    "no spring",
    "تزامن",
-   "truth"
-  ]
+   "truth",
+   "مزامنة العداد",
+   "بدون ارتداد",
+   "قيمة واحدة",
+   "synced counter",
+   "overshoot"
+  ],
+  "when": "حين يجب أن يتطابق طول العمود والعداد والتسمية في كل إطار دون ارتداد يتجاوز القيمة / when bar length, counter and label must agree every frame with no overshoot past the value"
  },
  {
   "id": "DATA-16",
@@ -402,8 +492,14 @@
    "RTL",
    "عربي",
    "axis",
-   "اتجاه"
-  ]
+   "اتجاه",
+   "من اليمين لليسار",
+   "أرقام عربية",
+   "رسم عربي",
+   "arabic chart",
+   "arabic digits"
+  ],
+  "when": "حين يكون نص الرسم البياني بالعربية ويلزم تحديد اتجاه المحاور والأرقام العربية أو اللاتينية / when chart text is Arabic and axis direction and Arabic vs Latin digits must be decided"
  },
  {
   "id": "DATA-17",
@@ -427,8 +523,14 @@
    "sizes",
    "أحجام",
    "tabular-nums",
-   "9:16"
-  ]
+   "9:16",
+   "حجم الخط",
+   "فيديو عمودي",
+   "مقروئية",
+   "font size",
+   "mobile readability"
+  ],
+  "when": "حين يُصمم رسم بياني لشاشة الهاتف أو فيديو عمودي ويجب أن تبقى التسميات والأرقام مقروءة / when designing a chart for phone screens or vertical video so labels and numbers stay readable"
  },
  {
   "id": "DATA-18",
@@ -456,8 +558,14 @@
    "highlight",
    "تمييز",
    "pulse",
-   "stamp"
-  ]
+   "stamp",
+   "إبراز",
+   "تعتيم الباقي",
+   "لفت الانتباه",
+   "focus",
+   "dim others"
+  ],
+  "when": "حين يريد المستخدم لفت النظر إلى عمود أو نقطة واحدة في الرسم مع تعتيم الباقي / when the user wants to draw attention to one bar or point in a chart while dimming the rest"
  },
  {
   "id": "DATA-19",
@@ -498,8 +606,14 @@
    "counter",
    "عداد",
    "count-up",
-   "tabular-nums"
-  ]
+   "tabular-nums",
+   "عداد أرقام",
+   "رقم يعد",
+   "عداد تصاعدي",
+   "number animation",
+   "counting number"
+  ],
+  "when": "حين يطلب المستخدم رقمًا يعد من الصفر حتى قيمته في فيديو أو موشن جرافيك / when the user wants a number counting up from zero to its value in a video or motion graphic"
  },
  {
   "id": "DATA-20",
@@ -527,8 +641,14 @@
    "template",
    "قالب",
    "stat-counter",
-   "ring"
-  ]
+   "ring",
+   "رقم إحصائي",
+   "عداد بحلقة",
+   "مشهد جاهز",
+   "stat scene",
+   "circle counter"
+  ],
+  "when": "حين يريد المستخدم مشهدًا جاهزًا لرقم إحصائي يعد مع حلقة تُرسم وتسمية عربية / when the user wants a ready stat scene: a counting number with a drawn ring and an Arabic label"
  },
  {
   "id": "DATA-21",
@@ -565,8 +685,14 @@
    "odometer",
    "عداد أسطواني",
    "digit roll",
-   "slot"
-  ]
+   "slot",
+   "عداد المسافات",
+   "تدحرج الأرقام",
+   "لوحة النتائج",
+   "scoreboard",
+   "rolling numbers"
+  ],
+  "when": "حين يريد المستخدم عدادًا تتدحرج خاناته كعداد المسافات أو تنقلب كلوحة النتائج / when the user wants digits that roll like an odometer or flip like a scoreboard"
  },
  {
   "id": "DATA-22",
@@ -593,8 +719,14 @@
   "tags": [
    "scramble",
    "متخلخل",
-   "flicker"
-  ]
+   "flicker",
+   "أرقام عشوائية",
+   "تبديل الأرقام",
+   "وميض",
+   "random digits",
+   "number shuffle"
+  ],
+  "when": "حين يريد المستخدم أرقامًا تتبدل عشوائيًا ثم تثبت خانة خانة على القيمة النهائية / when the user wants digits that shuffle randomly then lock one by one into the final value"
  },
  {
   "id": "DATA-23",
@@ -622,8 +754,14 @@
    "punch",
    "نبضة",
    "beat",
-   "scale"
-  ]
+   "scale",
+   "ضربة الموسيقى",
+   "تكبير الرقم",
+   "إيقاع",
+   "downbeat",
+   "bpm"
+  ],
+  "when": "حين يريد المستخدم رقمًا يكبر أثناء العد وينبض عند الوصول، ويمكن ربطه بضربة الموسيقى / when the user wants a counter that grows while counting and punches on landing, optionally on a music beat"
  },
  {
   "id": "DATA-24",
@@ -652,8 +790,14 @@
    "pop-in",
    "blur",
    "glow",
-   "ظهور"
-  ]
+   "ظهور",
+   "ظهور الأرقام",
+   "توهج ذهبي",
+   "ضبابية",
+   "number reveal",
+   "digit stagger"
+  ],
+  "when": "حين يريد المستخدم ظهورًا ناعمًا للرقم بضبابية وارتفاع ثم توهجًا ذهبيًا في النهاية / when the user wants a number to pop in with blur and lift, ending with a gold glow"
  },
  {
   "id": "DATA-25",
@@ -680,8 +824,14 @@
    "تنسيق",
    "Intl",
    "ar-EG",
-   "مليون"
-  ]
+   "مليون",
+   "اختصار الأرقام",
+   "مليار",
+   "فواصل الآلاف",
+   "number format",
+   "thousands separator"
+  ],
+  "when": "حين تُعرض أرقام كبيرة تحتاج اختصارًا كألف ومليون ومليار أو اختيار أرقام عربية أو لاتينية / when large numbers need K/M/B shortening or a choice between Arabic and Latin digits"
  },
  {
   "id": "DATA-26",
@@ -708,8 +858,14 @@
    "escalation",
    "تصاعد",
    "threshold colour",
-   "price"
-  ]
+   "price",
+   "تفاقم",
+   "تحذير",
+   "لون أحمر",
+   "warning",
+   "alarm counter"
+  ],
+  "when": "حين يريد المستخدم رقمًا يتصاعد بسرعة ويتحول لونه إلى الأحمر ليوحي بتفاقم مشكلة أو هبوط سعر / when the user wants a fast-climbing number turning red to signal a worsening problem or a falling price"
  },
  {
   "id": "DATA-27",
@@ -736,8 +892,14 @@
    "cost",
    "تكلفة",
    "sum",
-   "stack"
-  ]
+   "stack",
+   "تراكم",
+   "مجموع الأسعار",
+   "بطاقات الأسعار",
+   "total cost",
+   "price comparison"
+  ],
+  "when": "حين يريد المستخدم جمع تكاليف أو أسعار متعددة في عداد واحد ثم دمجها في منتج واحد / when the user wants many costs or prices to add up into one total, then collapse into a single product"
  },
  {
   "id": "DATA-28",
@@ -770,8 +932,14 @@
    "HUD",
    "year counter",
    "haversine",
-   "مسافة"
-  ]
+   "مسافة",
+   "عداد السنوات",
+   "رحلة على الخريطة",
+   "عمق",
+   "map journey",
+   "depth badge"
+  ],
+  "when": "حين يحتاج المشهد عداد سنوات أو مسافة أو عمق مرتبطًا بالزمن أو حركة الكاميرا في زاوية الإطار / when a scene needs a year, distance or depth readout tied to time or camera movement in a corner"
  },
  {
   "id": "DATA-29",
@@ -796,8 +964,14 @@
    "motif",
    "حلقة الساعة",
    "spoken number",
-   "talking head"
-  ]
+   "talking head",
+   "فيديو متحدث",
+   "مزامنة الكلام",
+   "رقم مسموع",
+   "clock ring",
+   "speaker overlay"
+  ],
+  "when": "حين يذكر المتحدث رقمًا في فيديو حديث ويراد إبرازه بحلقة ساعة بجانبه / when a speaker says a number in a talking-head video and it should appear in a clock ring beside them"
  },
  {
   "id": "DATA-30",
@@ -821,8 +995,14 @@
   "tags": [
    "strike",
    "شطب",
-   "before after"
-  ]
+   "before after",
+   "قبل وبعد",
+   "القيمة القديمة",
+   "خط الشطب",
+   "strikethrough",
+   "old vs new"
+  ],
+  "when": "حين يريد المستخدم شطب قيمة قديمة وإظهار القيمة الجديدة مكانها بخط عريض / when the user wants an old value struck through and replaced by a new one in bold"
  },
  {
   "id": "DATA-31",
@@ -849,8 +1029,14 @@
    "calculator",
    "حاسبة",
    "slider",
-   "currency"
-  ]
+   "currency",
+   "حاسبة تفاعلية",
+   "تحويل عملات",
+   "سحب المؤشر",
+   "price calculator",
+   "currency conversion"
+  ],
+  "when": "حين يريد المستخدم حاسبة متحركة يسحب فيها مؤشر شريطًا فيتغير العدد والمبلغ معًا / when the user wants an animated calculator where dragging a slider updates the count and amount together"
  },
  {
   "id": "DATA-32",
@@ -880,8 +1066,14 @@
    "gradient text",
    "نيون",
    "KPI",
-   "glow"
-  ]
+   "glow",
+   "مؤشرات الأداء",
+   "نص متدرج",
+   "أرقام ملونة",
+   "background-clip",
+   "metric numbers"
+  ],
+  "when": "حين يريد المستخدم أرقام مؤشرات أداء بتدرج لوني داخل النص أو بتوهج نيون / when the user wants KPI numbers filled with a gradient inside the text or given a neon glow"
  },
  {
   "id": "DATA-33",
@@ -908,8 +1100,14 @@
    "footage",
    "LIVE",
    "overlay",
-   "فوق اللقطات"
-  ]
+   "فوق اللقطات",
+   "فوق الفيديو",
+   "بث مباشر",
+   "تعتيم اللقطة",
+   "video overlay",
+   "metrics card"
+  ],
+  "when": "حين يريد المستخدم رقمًا كبيرًا يعد فوق لقطات معتمة مع شارة مباشر أو بطاقة مقاييس جانبية / when the user wants a big number counting over dimmed footage with a LIVE pill or a side metrics card"
  },
  {
   "id": "DATA-34",
@@ -933,8 +1131,14 @@
   "tags": [
    "damage numbers",
    "ألعاب",
-   "stack"
-  ]
+   "stack",
+   "ضربة حرجة",
+   "أرقام الضرر",
+   "جيمنج",
+   "critical hit",
+   "mmo"
+  ],
+  "when": "حين يريد المستخدم أرقام ضرر متراكمة على طريقة الألعاب مع مجموع ضربة حرجة / when the user wants game-style damage numbers stacking per hit with a big critical total"
  },
  {
   "id": "DATA-35",
@@ -968,8 +1172,14 @@
    "bars",
    "أعمدة",
    "stagger",
-   "Remotion"
-  ]
+   "Remotion",
+   "رسم أعمدة",
+   "أعمدة متحركة",
+   "تشارت أعمدة",
+   "bar chart",
+   "animated bars"
+  ],
+  "when": "حين يطلب المستخدم مخطط أعمدة متحركًا تنمو فيه الأعمدة من القاعدة بالتتابع / when the user asks for an animated bar chart whose bars grow from the baseline one after another"
  },
  {
   "id": "DATA-36",
@@ -997,8 +1207,14 @@
    "ranked bars",
    "ترتيب",
    "hbars",
-   "highlight"
-  ]
+   "highlight",
+   "أعمدة أفقية",
+   "أعلى القيم",
+   "تصنيف",
+   "horizontal bar",
+   "top list"
+  ],
+  "when": "حين يريد المستخدم ترتيب فئات في أعمدة أفقية مع إبقاء عمود واحد مضاءً عند ذكره / when the user wants categories ranked as horizontal bars with one bar lit when the narration names it"
  },
  {
   "id": "DATA-37",
@@ -1030,8 +1246,14 @@
    "bar race",
    "سباق الأعمدة",
    "ranking",
-   "FLIP"
-  ]
+   "FLIP",
+   "سباق",
+   "تغير المراكز",
+   "ترتيب عبر الزمن",
+   "racing bar chart",
+   "overtake"
+  ],
+  "when": "حين يريد المستخدم فيديو سباق أعمدة تتبادل فيه الفئات المراكز عبر السنوات أو الفترات / when the user wants a bar race video where categories overtake each other across years or periods"
  },
  {
   "id": "DATA-38",
@@ -1055,8 +1277,14 @@
    "stacked",
    "grouped",
    "مكدسة",
-   "SVG"
-  ]
+   "SVG",
+   "أعمدة مجمعة",
+   "أعمدة وخط",
+   "مقارنة سلاسل",
+   "combo chart",
+   "column chart"
+  ],
+  "when": "حين يحتاج المستخدم أعمدة مجمعة أو مكدسة مع خط على نفس المحور دون مكتبة رسوم / when the user needs grouped or stacked columns with an optional line on one axis without a chart library"
  },
  {
   "id": "DATA-39",
@@ -1081,8 +1309,14 @@
    "waterfall",
    "شلال",
    "bridge",
-   "finance"
-  ]
+   "finance",
+   "مخطط جسر",
+   "أرباح وخسائر",
+   "مجموع جاري",
+   "running total",
+   "profit loss"
+  ],
+  "when": "حين يريد المستخدم شرح كيف تنتقل قيمة من البداية إلى النهاية عبر زيادات ونقصانات متتالية / when the user wants to explain how a total moves from start to end through successive gains and losses"
  },
  {
   "id": "DATA-40",
@@ -1108,8 +1342,14 @@
    "split bar",
    "شريط مقسم",
    "composition",
-   "pill"
-  ]
+   "pill",
+   "نسب الأجزاء",
+   "شريط النسب",
+   "تقسيم",
+   "part to whole",
+   "100% bar"
+  ],
+  "when": "حين يريد المستخدم إظهار تقسيم كل إلى أجزاء بنسبها في شريط واحد مستدير / when the user wants one rounded bar split into proportional parts showing each share"
  },
  {
   "id": "DATA-41",
@@ -1133,8 +1373,14 @@
   "tags": [
    "log zoom",
    "زووم",
-   "tiny share"
-  ]
+   "tiny share",
+   "تكبير",
+   "نسبة صغيرة",
+   "مقياس لوغاريتمي",
+   "zoom in",
+   "small share"
+  ],
+  "when": "حين تكون شريحة صغيرة جدًا في شريط لا تكاد تُرى ويراد تكبيرها لتملأ الإطار / when a tiny share in a bar is barely visible and must be zoomed in to fill the frame"
  },
  {
   "id": "DATA-42",
@@ -1159,8 +1405,14 @@
    "confidence interval",
    "فترات ثقة",
    "whiskers",
-   "editorial"
-  ]
+   "editorial",
+   "هامش الخطأ",
+   "حجم العينة",
+   "إحصاء",
+   "error bars",
+   "sample size"
+  ],
+  "when": "حين تُعرض نتائج بأعمدة ويجب إظهار فترة الثقة وعدد العينة فوق عتبة أو تحتها / when results shown as bars must display a confidence interval and sample size against a threshold"
  },
  {
   "id": "DATA-43",
@@ -1186,8 +1438,14 @@
    "meter",
    "مقياس",
    "progress",
-   "severity"
-  ]
+   "severity",
+   "شريط تقدم",
+   "مستوى الخطورة",
+   "تحذير",
+   "progress bar",
+   "rtl"
+  ],
+  "when": "حين يريد المستخدم أشرطة تقدم أو مقاييس يتغير لونها حسب الخطورة أو الحكم وتعمل في الواجهات العربية / when the user wants progress bars or meters coloured by severity or verdict that work in RTL interfaces"
  },
  {
   "id": "DATA-44",
@@ -1222,8 +1480,14 @@
    "segmented",
    "خانات",
    "skill bars",
-   "quota"
-  ]
+   "quota",
+   "شريط مهارات",
+   "نقاط",
+   "مستوى",
+   "level meter",
+   "cells"
+  ],
+  "when": "حين يريد المستخدم شريط مهارات أو حصة من مربعات أو نقاط تضيء واحدة تلو الأخرى / when the user wants skill or quota bars made of cells or dots lighting up one by one"
  },
  {
   "id": "DATA-45",
@@ -1253,8 +1517,14 @@
    "race",
    "سرعة",
    "latency",
-   "before after"
-  ]
+   "before after",
+   "مقارنة السرعة",
+   "أداء",
+   "منافسين",
+   "speed comparison",
+   "competitors"
+  ],
+  "when": "حين يريد المستخدم مقارنة سرعة منتج بمنافسيه في سباق أشرطة مع عداد زمن / when the user wants to compare a product's speed against competitors as a bar race with a timer"
  },
  {
   "id": "DATA-46",
@@ -1281,8 +1551,14 @@
    "probability",
    "احتمال",
    "LLM",
-   "tokens"
-  ]
+   "tokens",
+   "ذكاء اصطناعي",
+   "الكلمة التالية",
+   "نسب الاحتمال",
+   "next token",
+   "prediction market"
+  ],
+  "when": "حين يشرح الفيديو كيف يختار نموذج لغوي الكلمة التالية أو يعرض احتمالات متنافسة / when a video explains how a language model picks the next token, or shows competing probabilities"
  },
  {
   "id": "DATA-47",
@@ -1311,8 +1587,14 @@
    "rank swap",
    "ترتيب",
    "leaderboard",
-   "FLIP"
-  ]
+   "FLIP",
+   "لوحة الصدارة",
+   "تغيير الترتيب",
+   "قائمة مرتبة",
+   "reorder",
+   "ranked list"
+  ],
+  "when": "حين يريد المستخدم إظهار تغير ترتيب العناصر بين فترتين أو تحويل بطاقات أرقام إلى قائمة مرتبة / when the user wants items to reorder between two periods or stat tiles to turn into a ranked list"
  },
  {
   "id": "DATA-48",
@@ -1335,8 +1617,14 @@
   "tags": [
    "radial",
    "شعاعي",
-   "polar"
-  ]
+   "polar",
+   "أعمدة دائرية",
+   "رسم قطبي",
+   "دائري",
+   "circular bar",
+   "arc chart"
+  ],
+  "when": "حين يريد المستخدم أعمدة دائرية تمتد من المركز أو قطاعات تنمو مع عقارب الساعة / when the user wants circular bars radiating from the centre or segments growing clockwise"
  },
  {
   "id": "DATA-49",
@@ -1359,8 +1647,14 @@
   "tags": [
    "small multiples",
    "مضاعفات",
-   "grid"
-  ]
+   "grid",
+   "شبكة رسوم",
+   "رسوم صغيرة",
+   "مقارنة فئات",
+   "facets",
+   "panel grid"
+  ],
+  "when": "حين تزدحم فئات كثيرة في رسم واحد ويحسن تقسيمها إلى رسوم صغيرة متكررة بمحاور مشتركة / when too many categories crowd one chart and should split into repeated mini charts with shared axes"
  },
  {
   "id": "DATA-50",
@@ -1392,8 +1686,14 @@
    "line chart",
    "draw-on",
    "خط بياني",
-   "dashoffset"
-  ]
+   "dashoffset",
+   "رسم خطي",
+   "خط يرسم نفسه",
+   "مساحة متدرجة",
+   "animated line",
+   "line animation"
+  ],
+  "when": "حين يريد المستخدم رسمًا خطيًا يرسم نفسه مع مساحة متدرجة ونقاط تقفز أثناء الرسم / when the user wants a line chart that draws itself with a gradient area and dots popping along"
  },
  {
   "id": "DATA-51",
@@ -1423,8 +1723,14 @@
    "pen tip",
    "رأس القلم",
    "counter",
-   "Canvas"
-  ]
+   "Canvas",
+   "رسم خطي",
+   "عداد على الخط",
+   "قيمة لحظية",
+   "line chart",
+   "leading dot"
+  ],
+  "when": "حين يريد المستخدم خطًا يرسم نفسه وعدادًا يقرأ قيمة رأس الخط لحظة بلحظة / when the user wants a self-drawing line with a counter reading the value at the tip as it moves"
  },
  {
   "id": "DATA-52",
@@ -1450,8 +1756,14 @@
   "tags": [
    "Remotion",
    "cubic",
-   "منحنى ناعم"
-  ]
+   "منحنى ناعم",
+   "منحنى بيانات",
+   "رسم خطي",
+   "ريموشن",
+   "smooth curve",
+   "line chart"
+  ],
+  "when": "حين يعمل المستخدم في Remotion ويريد منحنى بيانات ناعمًا يرسم نفسه مع عداد عربي / when working in Remotion and wanting a smooth self-drawing data curve with an Arabic counter"
  },
  {
   "id": "DATA-53",
@@ -1483,8 +1795,14 @@
    "scrub",
    "playhead",
    "tooltip",
-   "مؤشر"
-  ]
+   "مؤشر",
+   "تلميح",
+   "أعلى قيمة",
+   "قراءة القيم",
+   "peak",
+   "step chart"
+  ],
+  "when": "حين يريد المستخدم مؤشرًا يتحرك على الخط ويعرض التاريخ والقيمة ويتوقف عند القمة / when the user wants a marker sweeping along a line, showing date and value, stopping at the peak"
  },
  {
   "id": "DATA-54",
@@ -1507,8 +1825,14 @@
    "line",
    "crosshair",
    "area",
-   "SVG"
-  ]
+   "SVG",
+   "رسم خطي",
+   "رسم مساحي",
+   "مؤشر تقاطع",
+   "line chart",
+   "area chart"
+  ],
+  "when": "حين يحتاج المستخدم رسمًا خطيًا أو مساحيًا بصيغة SVG بتسميات نهاية ومؤشر تقاطع / when the user needs an SVG line or area chart with end labels and a crosshair tooltip"
  },
  {
   "id": "DATA-55",
@@ -1538,8 +1862,14 @@
    "sparkline",
    "خط صغير",
    "micro chart",
-   "PRESS"
-  ]
+   "PRESS",
+   "اتجاه مصغر",
+   "رسم صغير",
+   "ترند",
+   "mini chart",
+   "trend line"
+  ],
+  "when": "حين يريد المستخدم خطًا صغيرًا يوضح اتجاه رقم بجانبه في بطاقة أو جملة / when the user wants a tiny word-sized trend line next to the number it explains in a card or sentence"
  },
  {
   "id": "DATA-56",
@@ -1570,8 +1900,14 @@
    "crash",
    "انهيار",
    "decline",
-   "metaphor"
-  ]
+   "metaphor",
+   "صعود وهبوط",
+   "سقوط",
+   "فشل",
+   "rise and fall",
+   "downturn"
+  ],
+  "when": "حين يروي الفيديو قصة صعود ثم فشل أو انهيار ويحتاج خطًا يصعد ثم يهوي مع الكلام / when a video tells a rise-then-failure story and needs a line climbing then plunging on the spoken word"
  },
  {
   "id": "DATA-57",
@@ -1599,8 +1935,14 @@
    "candlestick",
    "شموع",
    "ticker",
-   "finance"
-  ]
+   "finance",
+   "بورصة",
+   "أسهم",
+   "شموع يابانية",
+   "stock chart",
+   "price chart"
+  ],
+  "when": "حين يحتاج فيديو مالي شموعًا يابانية أو سعرًا حيًا أو شريط رموز يمر / when a finance video needs candlesticks, a live price pill or a scrolling ticker tape"
  },
  {
   "id": "DATA-58",
@@ -1627,8 +1969,14 @@
    "annotation",
    "تعليقات",
    "target line",
-   "callout"
-  ]
+   "callout",
+   "تعليق توضيحي",
+   "سهم",
+   "فترة مظللة",
+   "arrow callout",
+   "shaded band"
+  ],
+  "when": "حين يحتاج الرسم شرح نقطة تحول بسهم تعليق أو فترة مظللة أو خط هدف متقطع / when a chart needs a turning point explained with a callout arrow, shaded period or dashed target line"
  },
  {
   "id": "DATA-59",
@@ -1660,8 +2008,14 @@
    "morph",
    "تحول",
    "flubber",
-   "bars to donut"
-  ]
+   "bars to donut",
+   "تحويل الشكل",
+   "انتقال سلس",
+   "مورف",
+   "shape morph",
+   "chart transition"
+  ],
+  "when": "حين يريد المستخدم تحويل نفس البيانات من أعمدة إلى دونات أو خط أو مبعثر دون قطع / when the user wants the same data to morph from bars into a donut, line or scatter without a cut"
  },
  {
   "id": "DATA-60",
@@ -1690,8 +2044,14 @@
    "hand-drawn",
    "خط اليد",
    "sketch",
-   "whiteboard"
-  ]
+   "whiteboard",
+   "سبورة",
+   "رسم يدوي",
+   "اسكتش",
+   "roughjs",
+   "doodle chart"
+  ],
+  "when": "حين يريد المستخدم رسمًا بيانيًا بأسلوب السبورة وخط اليد بمحاور ومنحنى يرسم نفسه / when the user wants a whiteboard or hand-drawn style graph with axes and a self-tracing curve"
  },
  {
   "id": "DATA-61",
@@ -1717,8 +2077,14 @@
    "monte carlo",
    "uncertainty",
    "عدم يقين",
-   "fan chart"
-  ]
+   "fan chart",
+   "محاكاة",
+   "مسارات عشوائية",
+   "احتمالات",
+   "simulation",
+   "random walk"
+  ],
+  "when": "حين يريد المستخدم إظهار عدم اليقين بآلاف المسارات العشوائية مع الوسيط ونطاق المئينات / when the user wants to show uncertainty with many random-walk paths, a median line and a percentile band"
  },
  {
   "id": "DATA-62",
@@ -1747,8 +2113,14 @@
    "histogram",
    "bell curve",
    "منحنى جرس",
-   "dots"
-  ]
+   "dots",
+   "توزيع طبيعي",
+   "محاكاة",
+   "تراكم النقاط",
+   "normal distribution",
+   "simulation"
+  ],
+  "when": "حين يريد المستخدم إظهار نتائج محاكاة تتراكم نقاطًا ثم تكشف منحنى التوزيع الطبيعي / when the user wants simulated results piling up as dots, then revealing a normal bell curve"
  },
  {
   "id": "DATA-63",
@@ -1777,8 +2149,14 @@
    "math",
    "مشتقة",
    "function plot",
-   "easing graph"
-  ]
+   "easing graph",
+   "رياضيات",
+   "ميل المماس",
+   "تفاضل",
+   "derivative",
+   "manim"
+  ],
+  "when": "حين يشرح الفيديو دالة رياضية ومشتقتها أو منحنى تسهيل بمؤشر يتحرك حيًا / when a video explains a math function and its derivative, or an easing curve, with a live tracer"
  },
  {
   "id": "DATA-64",
@@ -1805,8 +2183,14 @@
   "tags": [
    "path follow",
    "getPointAtLength",
-   "راكب"
-  ]
+   "راكب",
+   "تتبع المسار",
+   "أيقونة متحركة",
+   "حركة على خط",
+   "follow path",
+   "moving icon"
+  ],
+  "when": "حين يريد المستخدم أيقونة أو نقطة تسير على خط الرسم أثناء رسمه، كطائرة أو كرة من أ إلى ب / when the user wants an icon or dot travelling along a chart line as it draws, like a plane or ball from A to B"
  },
  {
   "id": "DATA-65",
@@ -1832,8 +2216,14 @@
   "tags": [
    "ridgeline",
    "joy division",
-   "جبال خطوط"
-  ]
+   "جبال خطوط",
+   "أمواج",
+   "تموج",
+   "خطوط متراكبة",
+   "waves",
+   "noise lines"
+  ],
+  "when": "حين يريد المستخدم خطوطًا أفقية متراكبة تتموج بالضجيج حول نتوء مركزي كقمم الجبال / when the user wants stacked horizontal lines rippling with noise around a central bump like mountain ridges"
  },
  {
   "id": "DATA-66",
@@ -1858,8 +2248,14 @@
    "scatter",
    "مبعثر",
    "frontier",
-   "correlation"
-  ]
+   "correlation",
+   "نقاط مبعثرة",
+   "أفضل خيار",
+   "علاقة متغيرين",
+   "scatter plot",
+   "best point"
+  ],
+  "when": "حين يريد المستخدم رسمًا مبعثرًا تظهر نقاطه بالتتابع ثم يُرسم المنحنى الحدي وتبرز أفضل نقطة / when the user wants a scatter plot whose dots pop in, then a frontier curve draws and the best point is highlighted"
  },
  {
   "id": "DATA-67",
@@ -1885,8 +2281,14 @@
    "ring",
    "conic-gradient",
    "حلقة",
-   "progress"
-  ]
+   "progress",
+   "نسبة مئوية",
+   "دائرة تقدم",
+   "مؤشر جودة",
+   "percentage circle",
+   "css ring"
+  ],
+  "when": "حين يريد المستخدم حلقة نسبة مئوية بسيطة بتدرج مخروطي ورقم كبير في وسطها / when the user wants a simple percentage ring drawn with a conic gradient and a big centred number"
  },
  {
   "id": "DATA-68",
@@ -1910,8 +2312,14 @@
    "donut",
    "دونات",
    "dasharray",
-   "15.915"
-  ]
+   "15.915",
+   "حلقة مقسمة",
+   "نسب",
+   "رسم دائري",
+   "donut chart",
+   "svg circle"
+  ],
+  "when": "حين يحتاج المستخدم رسم دونات SVG يكون فيه طول كل شرطة هو النسبة مباشرة / when the user needs an SVG donut where each dash length equals its percentage"
  },
  {
   "id": "DATA-69",
@@ -1932,8 +2340,14 @@
   "styles": [],
   "tags": [
    "pie sweep",
-   "مسح الدائرة"
-  ]
+   "مسح الدائرة",
+   "رسم دائري متحرك",
+   "فطيرة",
+   "كشف دائري",
+   "pie chart",
+   "pie reveal"
+  ],
+  "when": "حين يريد المستخدم رسمًا دائريًا يتكشف بمسح زاوية واحدة لتبقى النسب صحيحة في كل إطار / when the user wants a pie chart revealed by one sweeping angle so proportions stay true every frame"
  },
  {
   "id": "DATA-70",
@@ -1958,8 +2372,14 @@
    "donut",
    "glow",
    "legend",
-   "keynote"
-  ]
+   "keynote",
+   "حلقة متوهجة",
+   "قائمة الفئات",
+   "خلفية سوداء",
+   "donut chart",
+   "category breakdown"
+  ],
+  "when": "حين يريد المستخدم دونات متوهجة على خلفية سوداء مع قائمة فئات بقيمها / when the user wants a glowing donut on black with a legend list of categories and their values"
  },
  {
   "id": "DATA-71",
@@ -1995,8 +2415,14 @@
    "gauge",
    "مقياس",
    "arc",
-   "counter"
-  ]
+   "counter",
+   "عداد دائري",
+   "نسبة الإنجاز",
+   "ساعة إيقاف",
+   "score ring",
+   "stopwatch"
+  ],
+  "when": "حين يريد المستخدم قوسًا يُرسم بينما تعد نسبته ويتلون حسب الحالة أو يحمر بعد 100٪ / when the user wants an arc that draws as its percentage counts, coloured by status and red past 100%"
  },
  {
   "id": "DATA-72",
@@ -2023,8 +2449,14 @@
    "HUD",
    "gauge",
    "radial",
-   "sci-fi"
-  ]
+   "sci-fi",
+   "خيال علمي",
+   "واجهة مستقبلية",
+   "عداد دائري",
+   "futuristic ui",
+   "tick ring"
+  ],
+  "when": "حين يريد المستخدم مقياسًا دائريًا بطابع الخيال العلمي بحلقات علامات تدور ومعينات تمتلئ / when the user wants a sci-fi HUD circular gauge with rotating tick rings and diamonds filling in"
  },
  {
   "id": "DATA-73",
@@ -2056,8 +2488,14 @@
    "liquid",
    "سائل",
    "level",
-   "thermometer"
-  ]
+   "thermometer",
+   "امتلاء",
+   "بطارية",
+   "ميزان حرارة",
+   "fill gauge",
+   "battery"
+  ],
+  "when": "حين يريد المستخدم نسبة تُعرض كسائل يملأ دائرة أو أنبوبًا أو بطارية أو ميزان حرارة / when the user wants a percentage shown as liquid filling a circle, tube, battery or thermometer"
  },
  {
   "id": "DATA-74",
@@ -2084,8 +2522,14 @@
    "stars",
    "تقييم",
    "rating",
-   "social proof"
-  ]
+   "social proof",
+   "نجوم",
+   "مراجعات",
+   "آراء العملاء",
+   "reviews",
+   "star rating"
+  ],
+  "when": "حين يريد المستخدم عرض تقييم بالنجوم مثل 4.8 من 5 مع نجمة جزئية وعداد مرافق / when the user wants a star rating such as 4.8 of 5 with a partial last star and a synced count"
  },
  {
   "id": "DATA-75",
@@ -2113,8 +2557,14 @@
   "tags": [
    "radar",
    "رادار",
-   "sweep"
-  ]
+   "sweep",
+   "مسح",
+   "رصد",
+   "شاشة رادار",
+   "radar scan",
+   "ping"
+  ],
+  "when": "حين يريد المستخدم رادارًا يدور ويضيء النقاط عند مرور المسح مع تسميات تظهر / when the user wants a rotating radar sweep that lights up dots as it passes, with labels fading in"
  },
  {
   "id": "DATA-76",
@@ -2141,8 +2591,14 @@
    "hemicycle",
    "برلمان",
    "dot ring",
-   "election"
-  ]
+   "election",
+   "انتخابات",
+   "مقاعد",
+   "أحزاب",
+   "seats",
+   "parliament chart"
+  ],
+  "when": "حين يريد المستخدم عرض مقاعد برلمان أو نتائج انتخابات بنقاط ملونة حسب الحزب / when the user wants parliament seats or election results shown as dots coloured by party"
  },
  {
   "id": "DATA-77",
@@ -2174,8 +2630,14 @@
    "waffle",
    "وافل",
    "dot grid",
-   "percent"
-  ]
+   "percent",
+   "شبكة نقاط",
+   "نسبة من مئة",
+   "أيقونات أشخاص",
+   "pictogram",
+   "100 dots"
+  ],
+  "when": "حين يريد المستخدم إظهار نسبة مئوية كشبكة 10×10 تتلون نقاطها مع عداد النسبة / when the user wants a percentage shown as a 10×10 grid whose dots fill in sync with a percent counter"
  },
  {
   "id": "DATA-78",
@@ -2201,8 +2663,14 @@
   "tags": [
    "unit chart",
    "وحدات",
-   "dot matrix"
-  ]
+   "dot matrix",
+   "نقطة لكل عنصر",
+   "شبكة نقاط",
+   "مجموعة فرعية",
+   "dot grid",
+   "item dots"
+  ],
+  "when": "حين يريد المستخدم تمثيل كل عنصر حقيقي بنقطة وإبراز مجموعة فرعية منها / when the user wants each real item shown as one dot with a highlighted subset"
  },
  {
   "id": "DATA-79",
@@ -2226,8 +2694,14 @@
    "scale",
    "مقارنة",
    "familiar object",
-   "مقياس"
-  ]
+   "مقياس",
+   "تشبيه",
+   "تقريب الأرقام",
+   "وحدات بصرية",
+   "comparison",
+   "visual units"
+  ],
+  "when": "حين يكون الرقم كبيرًا أو مجردًا ويريد المستخدم تقريبه بمقارنته بشيء مألوف / when a number is large or abstract and the user wants it made tangible by comparing it to a familiar object"
  },
  {
   "id": "DATA-80",
@@ -2256,8 +2730,14 @@
   "tags": [
    "calendar heatmap",
    "تقويم",
-   "contribution grid"
-  ]
+   "contribution grid",
+   "نشاط يومي",
+   "شبكة الأيام",
+   "خريطة حرارية",
+   "github",
+   "daily activity"
+  ],
+  "when": "حين يريد المستخدم شبكة أيام ملونة على طريقة GitHub تُظهر نشاطًا أو مقياسًا يوميًا / when the user wants a GitHub-style grid of days coloured by a daily metric or activity"
  },
  {
   "id": "DATA-81",
@@ -2281,8 +2761,14 @@
   "tags": [
    "risk matrix",
    "خريطة المخاطر",
-   "heatmap"
-  ]
+   "heatmap",
+   "مصفوفة المخاطر",
+   "تقييم المخاطر",
+   "احتمالية",
+   "likelihood impact",
+   "risk assessment"
+  ],
+  "when": "حين يحتاج المستخدم مصفوفة مخاطر بالاحتمالية والأثر ملونة من الأخضر إلى الأحمر / when the user needs a likelihood × impact risk matrix coloured green to red"
  },
  {
   "id": "DATA-82",
@@ -2304,8 +2790,14 @@
   "tags": [
    "matrix",
    "heat table",
-   "جدول حرارة"
-  ]
+   "جدول حرارة",
+   "جدول ملون",
+   "كثافة اللون",
+   "بنود وأشهر",
+   "heatmap table",
+   "color intensity"
+  ],
+  "when": "حين يريد المستخدم جدولًا تعبر فيه كثافة لون كل خلية عن قيمتها، كبنود مقابل أشهر / when the user wants a table whose cell colour intensity encodes values, such as items by month"
  },
  {
   "id": "DATA-83",
@@ -2330,8 +2822,14 @@
    "Benford",
    "بنفورد",
    "audit",
-   "fraud"
-  ]
+   "fraud",
+   "تدقيق",
+   "احتيال",
+   "كشف التلاعب",
+   "anomaly detection",
+   "first digit"
+  ],
+  "when": "حين يراجع المستخدم مبالغ ويريد كشف الشذوذ بمقارنة تكرار الرقم الأول بتوقع بنفورد / when auditing amounts for anomalies by comparing first-digit frequencies with the Benford expectation"
  },
  {
   "id": "DATA-84",
@@ -2357,8 +2855,14 @@
   "tags": [
    "table",
    "جدول",
-   "status pills"
-  ]
+   "status pills",
+   "جدول متحرك",
+   "صفوف",
+   "شارات الحالة",
+   "animated table",
+   "rows"
+  ],
+  "when": "حين يريد المستخدم جدولًا قصيرًا يظهر صفًا صفًا في الفيديو أو جدولًا مرتبًا بشارات حالة / when the user wants a short table revealed row by row in video, or a ranked table with status pills"
  },
  {
   "id": "DATA-85",
@@ -2383,8 +2887,14 @@
    "KPI",
    "بطاقة",
    "delta",
-   "target"
-  ]
+   "target",
+   "مؤشر أداء",
+   "الهدف",
+   "الاتجاه",
+   "metric card",
+   "trend"
+  ],
+  "when": "حين يصمم المستخدم بطاقة مؤشر أداء ويحتاج الرقم مع الهدف والفرق والاتجاه / when designing a KPI card where the number needs its target, signed gap and trend"
  },
  {
   "id": "DATA-86",
@@ -2426,8 +2936,14 @@
    "stat tiles",
    "بطاقات",
    "dashboard reveal",
-   "proof card"
-  ]
+   "proof card",
+   "بطاقات الأرقام",
+   "نسبة النمو",
+   "لوحة تحليلات",
+   "analytics card",
+   "growth"
+  ],
+  "when": "حين يريد المستخدم ثلاث بطاقات أرقام تعد مع خط يُرسم أو بطاقة إثبات بنسبة نمو / when the user wants three stat tiles counting up with a line drawing, or a proof card with a growth chip"
  },
  {
   "id": "DATA-87",
@@ -2459,8 +2975,14 @@
    "hero number",
    "افتتاحية",
    "opener",
-   "big number"
-  ]
+   "big number",
+   "رقم كبير",
+   "بداية الفيديو",
+   "مقدمة",
+   "intro stat",
+   "headline number"
+  ],
+  "when": "حين يبدأ الفيديو برقم ضخم يلفت الانتباه مع تعليق قصير وشارات مصدر / when a video opens on a huge attention-grabbing number with a short caption and source pills"
  },
  {
   "id": "DATA-88",
@@ -2489,8 +3011,14 @@
    "HyperFrames",
    "registry",
    "components",
-   "GSAP"
-  ]
+   "GSAP",
+   "مكونات جاهزة",
+   "كتل",
+   "جدار الشعارات",
+   "ready blocks",
+   "logo wall"
+  ],
+  "when": "حين يحتاج المستخدم مكونات بيانات جاهزة في HyperFrames كعدادات وحلقات وأعمدة وسباقات / when the user needs ready HyperFrames data blocks: counters, rings, bars, lines, races or logo walls"
  },
  {
   "id": "DATA-89",
@@ -2518,8 +3046,14 @@
    "blueprint",
    "asset fusion",
    "stat hit",
-   "shot plan"
-  ]
+   "shot plan",
+   "وصفة مشهد",
+   "خطة اللقطات",
+   "عد تصاعدي",
+   "dataviz countup",
+   "scene recipe"
+  ],
+  "when": "عند تخطيط مشهد بيانات متعدد المراحل في HyperFrames واختيار وصفة جاهزة لكل لقطة / when planning a multi-phase HyperFrames data scene and picking a ready blueprint for each beat"
  },
  {
   "id": "DATA-90",
@@ -2548,8 +3082,14 @@
    "keynote",
    "أبل",
    "infographic",
-   "morph"
-  ]
+   "morph",
+   "عرض تقديمي",
+   "تحول بلا قطع",
+   "خلفية سوداء",
+   "dark data story",
+   "odometer"
+  ],
+  "when": "حين يريد المستخدم إنفوجرافيك بأسلوب أبل على خلفية سوداء بتوهج أزرق وتحولات بلا قطع / when the user wants a keynote-style data story on black with blue glow and cut-free morphs"
  },
  {
   "id": "DATA-91",
@@ -2573,8 +3113,14 @@
    "style",
    "dark",
    "ستايل",
-   "palette"
-  ]
+   "palette",
+   "خلفية داكنة",
+   "عمى الألوان",
+   "فيديو بيانات",
+   "colorblind safe",
+   "data video"
+  ],
+  "when": "حين يريد المستخدم ستايل جاهزًا لفيديو بيانات داكن بألوان آمنة لعمى الألوان وأعمدة وعدادات / when the user wants a ready dark data-video style with colour-blind-safe series, growing bars and counters"
  },
  {
   "id": "DATA-92",
@@ -2602,8 +3148,14 @@
    "palette",
    "ألوان",
    "CVD",
-   "categorical"
-  ]
+   "categorical",
+   "لوحة ألوان",
+   "عمى الألوان",
+   "تدرج لوني",
+   "color scheme",
+   "sequential ramp"
+  ],
+  "when": "حين يختار المستخدم ألوان سلاسل الرسم أو تدرجات الحرارة والمخاطر مع مراعاة عمى الألوان / when choosing chart series colours or heat and risk ramps that stay colour-blind safe"
  },
  {
   "id": "DATA-93",
@@ -2625,8 +3177,14 @@
   "tags": [
    "tokens",
    "IBM Plex",
-   "figure"
-  ]
+   "figure",
+   "توثيق تقني",
+   "خطوط",
+   "ألوان الواجهة",
+   "design tokens",
+   "light theme"
+  ],
+  "when": "حين يريد المستخدم مظهر توثيق تقني فاتحًا وموحدًا لبطاقات البيانات وأرقامها / when the user wants a consistent light technical-docs look for data cards and numbers"
  },
  {
   "id": "DATA-94",
@@ -2653,8 +3211,14 @@
    "dashboard",
    "توأم",
    "utilisation",
-   "engineering"
-  ]
+   "engineering",
+   "هندسة إنشائية",
+   "جملون",
+   "إجهاد",
+   "truss",
+   "structural"
+  ],
+  "when": "حين يريد المستخدم لوحة HTML هندسية تلون الجملون حسب نسبة الإجهاد مع شريط حمل / when the user wants an engineering HTML dashboard colouring a truss by utilisation with a load slider"
  },
  {
   "id": "DATA-95",
@@ -2681,8 +3245,14 @@
    "Excel",
    "xlsx",
    "إكسل",
-   "openpyxl"
-  ]
+   "openpyxl",
+   "ملف اكسل",
+   "جدول بيانات",
+   "شيت",
+   "spreadsheet",
+   "excel chart"
+  ],
+  "when": "حين يطلب المستخدم ملف إكسل جاهزًا بجداول ومجاميع ورسم بياني أصلي داخله / when the user asks for a ready Excel file with tables, totals and a native chart inside"
  },
  {
   "id": "DATA-96",
@@ -2711,8 +3281,14 @@
    "echarts",
    "chart.js",
    "vega",
-   "libraries"
-  ]
+   "libraries",
+   "مكتبات الرسوم",
+   "رندر فيديو",
+   "تحويل الرسم لفيديو",
+   "frame render",
+   "vega-lite"
+  ],
+  "when": "حين يريد المستخدم استخدام D3 أو ECharts أو Chart.js داخل فيديو يُرندر إطارًا إطارًا / when the user wants D3, ECharts or Chart.js charts inside a video rendered frame by frame"
  },
  {
   "id": "DATA-97",
@@ -2741,8 +3317,14 @@
    "Basma",
    "بسمة",
    "templates",
-   "Anthropic API"
-  ]
+   "Anthropic API",
+   "فيلم بيانات",
+   "قوالب جاهزة",
+   "مشاهد جاهزة",
+   "data film",
+   "bar race"
+  ],
+  "when": "حين يعمل المستخدم في محرر بسمة ويريد مشاهد بيانات جاهزة أو قالب فيلم بيانات / when working in the Basma editor and wanting ready data scenes or a data-film template"
  },
  {
   "id": "DATA-98",
@@ -2766,8 +3348,14 @@
   "tags": [
    "Gemini",
    "AI infographic",
-   "مولد"
-  ]
+   "مولد",
+   "ذكاء اصطناعي",
+   "توليد صورة",
+   "بحث",
+   "image generation",
+   "fact lookup"
+  ],
+  "when": "حين يريد المستخدم توليد إنفوجرافيك بالذكاء الاصطناعي من حقائق حديثة يبحث عنها النموذج / when the user wants an AI-generated infographic built from current facts the model looks up"
  },
  {
   "id": "DATA-99",
@@ -2789,8 +3377,14 @@
   "tags": [
    "scrollytelling",
    "سرد",
-   "scenes"
-  ]
+   "scenes",
+   "قصة تفاعلية",
+   "تمرير",
+   "بارالاكس",
+   "scroll story",
+   "parallax"
+  ],
+  "when": "حين يريد المستخدم قصة بيانات تتغير مشاهدها مع التمرير أو تحويلها إلى فيديو بخط زمني / when the user wants a scroll-driven data story, or wants to turn one into a timeline video"
  },
  {
   "id": "DATA-100",
@@ -2813,8 +3407,14 @@
    "process",
    "خطوات",
    "infographic",
-   "PNG"
-  ]
+   "PNG",
+   "مراحل",
+   "خطوات العمل",
+   "صورة",
+   "numbered steps",
+   "workflow steps"
+  ],
+  "when": "حين يطلب المستخدم صورة إنفوجرافيك لخطوات مرقمة كخط زمني أو مراحل أو بطاقات / when the user asks for a numbered-steps infographic image as a timeline, phases or card grid"
  },
  {
   "id": "DATA-101",
@@ -2847,8 +3447,14 @@
    "timeline",
    "خط زمني",
    "Gantt",
-   "milestones"
-  ]
+   "milestones",
+   "تسلسل زمني",
+   "جدول مشروع",
+   "محطات",
+   "project schedule",
+   "chronology"
+  ],
+  "when": "حين يريد المستخدم خطًا زمنيًا متحركًا لأحداث أو فصول أو مخطط جانت لمهام بتواريخ / when the user wants an animated timeline of events or chapters, or a Gantt chart of dated tasks"
  },
  {
   "id": "DATA-102",
@@ -2881,8 +3487,14 @@
    "network",
    "شبكة",
    "hub",
-   "bracket"
-  ]
+   "bracket",
+   "مجتمع",
+   "شجرة المسابقات",
+   "روابط",
+   "tournament",
+   "connections"
+  ],
+  "when": "حين يريد المستخدم إظهار مجتمع حول محور مركزي أو شبكة متصلة أو شجرة مسابقات بنبضات ضوء / when the user wants a community around a central hub, a connected network or a tournament bracket with light pulses"
  },
  {
   "id": "DATA-103",
@@ -2910,8 +3522,14 @@
    "SQL",
    "notebooks",
    "analysis",
-   "تحليل"
-  ]
+   "تحليل",
+   "تنظيف البيانات",
+   "بايثون",
+   "توقعات",
+   "csv",
+   "data prep"
+  ],
+  "when": "عند تجهيز البيانات بالاستعلامات أو دفاتر بايثون أو نماذج إكسل قبل تحريكها في رسم / when preparing data with SQL, Python notebooks or Excel models before animating it in a chart"
  },
  {
   "id": "DATA-104",
@@ -2940,8 +3558,14 @@
    "venn",
    "spectrum",
    "طيف",
-   "overlap"
-  ]
+   "overlap",
+   "دوائر متقاطعة",
+   "تشابه",
+   "مؤشر طيفي",
+   "venn diagram",
+   "scale marker"
+  ],
+  "when": "حين يريد المستخدم إظهار تقاطع مجموعتين بدائرتين تلتقيان أو موضعًا على شريط طيفي / when the user wants two overlapping circles for a shared set, or a marker sliding along a spectrum bar"
  },
  {
   "id": "DATA-105",
@@ -2963,7 +3587,13 @@
   "tags": [
    "icon",
    "أيقونة",
-   "metaphor"
-  ]
+   "metaphor",
+   "رمز مالي",
+   "رسم رمزي",
+   "أعمدة صاعدة",
+   "chart icon",
+   "growth icon"
+  ],
+  "when": "حين يحتاج المستخدم أيقونة رسم بياني رمزية لموضوع مالي أو بيانات دون أرقام حقيقية / when a finance or data topic needs a symbolic bar-chart icon with no real numbers"
  }
 ]

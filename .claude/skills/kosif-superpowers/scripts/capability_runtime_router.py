@@ -75,7 +75,7 @@ def assess(entry, skill_root=ROOT):
     else:
         status = "source_present_not_executed"
     return {
-        "id":entry["id"], "title":entry["title"], "purpose":entry["summary"],
+        "id":entry["id"], "title":entry["title"], "purpose":entry["title"], "note":entry["summary"],
         "status":status, "source_present":bool(source),
         "present_binaries":present, "missing_binaries":missing,
         "runbook":("python3 \"$SKILL_DIR/"+script+"\" "+(entry.get("subcommand") or "")).strip() if script else None,
@@ -128,7 +128,7 @@ def main(argv=None):
     args=ap.parse_args(argv)
     try:
         records=load_registry()
-        if not 1 <= args.limit <= 20:
+        if args.task and not 1 <= args.limit <= 20:  # --limit only shapes --task results
             raise ValueError("limit must be 1..20")
         if args.list:
             output={"schema":"kosif.capability-list.v1","count":len(records),

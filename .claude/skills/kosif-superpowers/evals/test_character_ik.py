@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from PIL import Image
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
@@ -124,6 +125,34 @@ class CharacterIKTests(unittest.TestCase):
             ret=subprocess.run(command,text=True,capture_output=True)
             self.assertEqual(ret.returncode,0,ret.stderr)
             self.assertTrue(json.loads(ret.stdout)["verified"])
+    def test_audio_refused_for_stills_and_gif(self):
+        with tempfile.TemporaryDirectory() as td:
+            for name in ("pose.png","pose.svg","loop.gif"):
+                out=Path(td)/name
+                with self.subTest(name=name),self.assertRaises(ValueError):
+                    rig.export(self.p,out,fps=10,audio=Path(td)/"missing.m4a")
+                self.assertFalse(out.exists())
+    def test_mp4_without_ffprobe_fails_before_writing(self):
+        real=shutil.which
+        with tempfile.TemporaryDirectory() as td,mock.patch.object(rig.shutil,"which",
+                lambda name:None if name=="ffprobe" else real(name)):
+            out=Path(td)/"w.mp4"
+            with self.assertRaises(ValueError):rig.export(self.p,out,fps=10)
+            self.assertFalse(out.exists())
+    def test_failed_audio_check_leaves_no_output(self):
+        if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):self.skipTest("FFmpeg required")
+        with tempfile.TemporaryDirectory() as td:
+            src=Path(td)/"narration.m4a";out=Path(td)/"film.mp4"
+            subprocess.run(["ffmpeg","-v","error","-y","-f","lavfi","-i","sine=frequency=330:duration=2",
+                            "-c:a","aac","-b:a","80k",str(src)],check=True,capture_output=True)
+            calls=iter([["a"],["b"]])
+            with mock.patch.object(rig,"packet_hashes",lambda _file:next(calls)):
+                with self.assertRaises(ValueError):rig.export(self.p,out,fps=10,audio=src)
+            self.assertFalse(out.exists())
+    def test_doctor_reports_ffprobe(self):
+        ret=subprocess.run([sys.executable,str(Path(rig.__file__)),"doctor"],text=True,capture_output=True)
+        self.assertEqual(ret.returncode,0,ret.stderr)
+        self.assertIn("ffprobe",json.loads(ret.stdout))
     def test_max_frame_guard(self):
         self.p["duration"]=30
         with self.assertRaises(ValueError):rig.export(self.p,"unused.mp4",fps=60)

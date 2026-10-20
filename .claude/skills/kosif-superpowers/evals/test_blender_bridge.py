@@ -1,4 +1,4 @@
-﻿"""Scene validation and process invocation tests; no Blender runtime is simulated as verified."""
+"""Scene validation and process invocation tests; no Blender runtime is simulated as verified."""
 import json
 from pathlib import Path
 import sys
@@ -80,3 +80,32 @@ class BlenderBridgeTests(TestCase):
         with tempfile.TemporaryDirectory() as temp:
             py_compile.compile(str(SK / "scripts" / "blender_worker.py"),
                                cfile=str(Path(temp) / "worker.pyc"), doraise=True)
+
+    def test_worker_help_and_errors_outside_blender(self):
+        import subprocess
+        worker = str(SK / "scripts" / "blender_worker.py")
+        with tempfile.TemporaryDirectory() as temp:
+            shown = subprocess.run([sys.executable, worker, "--help"], capture_output=True, text=True, cwd=temp)
+            self.assertEqual(shown.returncode, 0, shown.stderr)
+            self.assertIn("usage: blender_worker.py", shown.stdout)
+            for args in ([], ["scene.json", "out.glb"]):
+                done = subprocess.run([sys.executable, worker, *args], capture_output=True, text=True, cwd=temp)
+                self.assertEqual(done.returncode, 2, args)
+                self.assertNotIn("Traceback", done.stderr)
+            self.assertIn("inside Blender", done.stderr)
+            self.assertEqual(list(Path(temp).iterdir()), [])
+
+    def test_worker_reads_arguments_after_double_dash(self):
+        # A stub bpy only proves the argv handling Blender uses; nothing is rendered or verified.
+        import runpy
+        worker = SK / "scripts" / "blender_worker.py"
+        with tempfile.TemporaryDirectory() as temp:
+            out = Path(temp) / "scene.glb"
+            argv = ["blender", "--background", "--python", str(worker), "--",
+                    str(SK / "templates" / "blender-demo.json"), str(out)]
+            fake = {"bpy": mock.MagicMock(), "mathutils": mock.MagicMock()}
+            with mock.patch.dict(sys.modules, fake), mock.patch.object(sys, "argv", argv):
+                with self.assertRaisesRegex(RuntimeError, "did not create output"):
+                    runpy.run_path(str(worker), run_name="__main__")
+            fake["bpy"].ops.export_scene.gltf.assert_called_once_with(
+                filepath=str(out.resolve()), export_format="GLB", export_animations=True)

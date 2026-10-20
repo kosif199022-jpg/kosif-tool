@@ -244,8 +244,8 @@ def build(work: str, out: str | None = None, preview: bool = False, placeholder:
     shots = spec["shots"]
     missing = [s["id"] for s in shots if not (s.get("replacement") or {}).get("path")]
     if missing and not placeholder:
-        raise SystemExit(f"shots without replacement footage: {missing}. Run `mimic match` / set "
-                         f"shots[].replacement.path, or build with --placeholder for a draft.")
+        raise SystemExit(f"shots without replacement footage: {missing}. Set shots[].replacement.path in "
+                         f"spec.json, or call build(..., placeholder=True) for a draft with shot-coloured plates.")
     look = spec.get("look", {})
     vig_ref = (look.get("vignette") or {})
     use_vig = (vig_ref.get("strength") or 0) > 0.02

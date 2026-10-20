@@ -142,10 +142,15 @@ def paint(scene,t=0):
         p=pose(layer,t)
         if p["scale"]!=1:
             temp=temp.resize((max(1,round(w*p["scale"])),max(1,round(h*p["scale"]))),Image.Resampling.BICUBIC)
+        left,top=p["x"],p["y"]
         if p["angle"]:
+            # Turn clockwise about the centre of the (scaled) layer box, as svg() does;
+            # expand=True grows the image around that centre, so shift it back by half the growth.
+            before=temp.size
             temp=temp.rotate(-p["angle"],resample=Image.Resampling.BICUBIC,expand=True)
+            left-=(temp.width-before[0])/2;top-=(temp.height-before[1])/2
         placed=Image.new("RGBA",(w,h),(0,0,0,0))
-        placed.paste(temp,(round(p["x"]),round(p["y"])))
+        placed.paste(temp,(round(left),round(top)))
         alpha=placed.getchannel("A").point(lambda a:round(a*layer.get("opacity",1)*p["opacity"]))
         placed.putalpha(alpha)
         blend=layer.get("blend","normal")
@@ -163,7 +168,7 @@ def svg(scene,t=0):
     for layer in scene["layers"]:
         if not layer.get("visible",True):continue
         p=pose(layer,t)
-        parts.append(f'<g data-layer="{html.escape(layer["name"],quote=True)}" opacity="{layer.get("opacity",1)*p["opacity"]:.4f}" transform="translate({p["x"]:.4f} {p["y"]:.4f}) rotate({p["angle"]:.4f}) scale({p["scale"]:.4f})">')
+        parts.append(f'<g data-layer="{html.escape(layer["name"],quote=True)}" opacity="{layer.get("opacity",1)*p["opacity"]:.4f}" transform="translate({p["x"]:.4f} {p["y"]:.4f}) rotate({p["angle"]:.4f} {w*p["scale"]/2:.4f} {h*p["scale"]/2:.4f}) scale({p["scale"]:.4f})">')
         for s in layer["shapes"]:
             k=s["kind"];fill=s.get("fill","#192F36");stroke=s.get("stroke","#1B2527");sw=s.get("stroke_width",2)
             if k=="rectangle":parts.append(f'<rect x="{s["x"]}" y="{s["y"]}" width="{s["width"]}" height="{s["height"]}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>')
@@ -219,7 +224,7 @@ def main(argv=None):
     if a.command=="doctor":
         print(json.dumps({"schema":SCHEMA,"pillow":Image.__version__,"ffmpeg":bool(shutil.which("ffmpeg")),"max_frames":MAX_FRAMES,"formats":["png","svg","gif","mp4"]}));return 0
     try:
-        scene=json.loads(Path(a.scene).read_text(encoding="utf-8"))
+        scene=json.loads(Path(a.scene).read_text(encoding="utf-8-sig"))
         validate(scene)
         result=render(scene,a.output,num(a.time,0,3600)) if a.command=="render" else animate(scene,a.output,a.fps,a.duration)
         print(json.dumps(result));return 0

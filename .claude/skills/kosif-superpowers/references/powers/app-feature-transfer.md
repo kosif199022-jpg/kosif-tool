@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** التطبيقات والواجهات — Apps & artifacts · **البادئة / prefix:** `APPX` · **البيانات / data:** `data/powers/app-feature-transfer.json` · **بحث / search:** `python3 scripts/powers.py family app-feature-transfer`
-**مراجع ذات صلة / related references:** [app-feature-transfer.md](../app-feature-transfer.md) · [capability-atlas.md](../capability-atlas.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [app-feature-transfer.md](../app-feature-transfer.md) · [capability-atlas.md](../capability-atlas.md) · [global-video-platforms-2026-10-19.md](../global-video-platforms-2026-10-19.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 

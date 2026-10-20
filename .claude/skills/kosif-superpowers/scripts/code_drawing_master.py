@@ -118,7 +118,7 @@ def scene_paths(location):
 def load_words(path,duration):
     if path is None:
         return []
-    obj=json.loads(Path(path).read_text(encoding="utf-8"))
+    obj=json.loads(Path(path).read_text(encoding="utf-8-sig"))
     rows=obj.get("words") if isinstance(obj,dict) else None
     if rows is None and isinstance(obj,dict) and isinstance(obj.get("segments"),list):
         rows=[word for segment in obj["segments"] if isinstance(segment,dict)
@@ -184,10 +184,15 @@ def make_story(cast="human",expression="happy",location="street",action="walk",
     return result
 
 
-def write_new(path,text):
+def check_new(path):
     p=Path(path).expanduser()
     if p.is_symlink() or p.exists() or not p.parent.is_dir():
         raise ValueError("output must be new, with existing parent directory")
+    return p
+
+
+def write_new(path,text):
+    p=check_new(path)
     with p.open("x",encoding="utf-8") as f:
         f.write(text)
     return str(p.resolve())
@@ -209,13 +214,21 @@ def main():
         words=load_words(args.words_json,args.duration)
         spec=make_story(args.cast,args.expression,args.location,args.action,
                         args.duration,args.fps,words)
+        # Check both destinations before writing either, so a failure leaves nothing behind.
+        if args.html:
+            if check_new(args.html).absolute()==check_new(args.out).absolute():
+                raise ValueError("--out and --html must be different paths")
         output=write_new(args.out,json.dumps(spec,ensure_ascii=False,indent=2)+"\n")
         report={"status":"editable_storyboard_created","path":output,
                 "actors":args.cast,"parts":[len(e["parts"]) for e in spec["scenes"][0]["elements"]
                           if e["type"]=="actor"],
                 "verified_word_timestamps":len(words),"rendered":False}
         if args.html:
-            report["html"]=director.compile_spec(spec,args.html)
+            try:
+                report["html"]=director.compile_spec(spec,args.html)
+            except BaseException:
+                Path(output).unlink(missing_ok=True)
+                raise
         print(json.dumps(report,ensure_ascii=False,indent=2))
         return 0
     except (OSError,ValueError,json.JSONDecodeError) as exc:

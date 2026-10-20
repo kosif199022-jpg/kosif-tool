@@ -30,8 +30,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "تنزيل",
+   "نزل الفيديو",
+   "حفظ الفيديو",
+   "video downloader",
+   "url"
+  ],
+  "when": "حين يعطيك المستخدم رابط فيديو من يوتيوب أو تيك توك أو إنستغرام أو غيرها ويريد الملف للمونتاج / when the user gives a video link from YouTube, TikTok, Instagram or similar and wants the file for editing"
  },
  {
   "id": "DL-02",
@@ -63,8 +69,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "روابط كثيرة",
+   "تحميل جماعي",
+   "ملف روابط",
+   "batch download",
+   "manifest"
+  ],
+  "when": "حين يرسل المستخدم روابط كثيرة دفعة واحدة ويريد تحميلها كلها مع سجل لكل ملف / when the user sends many links at once and wants them all downloaded with a manifest per file"
  },
  {
   "id": "DL-03",
@@ -95,8 +107,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "الصوت فقط",
+   "جودة الفيديو",
+   "استخراج الصوت",
+   "audio only",
+   "m4a"
+  ],
+  "when": "حين يريد المستخدم سقف جودة مثل 720 أو 1080، أو الصوت فقط من الرابط للتفريغ أو كموسيقى مرجعية / when the user wants a resolution cap or only the audio (m4a) from a link"
  },
  {
   "id": "DL-04",
@@ -129,8 +147,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "تحويل الصيغة",
+   "ملف لا يفتح",
+   "نسخة آمنة",
+   "h264",
+   "transcode"
+  ],
+  "when": "حين يتعثر المحرر مع ملف محمّل (webm أو vp9 أو av1 أو إطارات متغيرة) وتحتاج نسخة H.264 مضمونة / when a downloaded webm, vp9, av1 or variable-frame-rate file troubles editors and needs an H.264/AAC copy"
  },
  {
   "id": "DL-05",
@@ -161,8 +185,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "فيديو خاص",
+   "مقيد بالعمر",
+   "كوكيز",
+   "cookies",
+   "age-gated"
+  ],
+  "when": "حين يكون المنشور خاصًا أو مقيدًا بالعمر في حساب المستخدم نفسه ويحتاج ملف كوكيز من متصفحه / when a private or age-gated post from the user's own account needs their exported cookies.txt"
  },
  {
   "id": "DL-06",
@@ -195,8 +225,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "حظر",
+   "رفض التحميل",
+   "محاكاة متصفح",
+   "impersonate",
+   "curl_cffi"
+  ],
+  "when": "حين يرفض الموقع طلب التحميل العادي وتريد إعادة المحاولة متخفيًا كمتصفح Safari أو Chrome / when a site rejects the normal download request and you retry impersonating Safari or Chrome"
  },
  {
   "id": "DL-07",
@@ -228,8 +264,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "خطأ التحميل",
+   "تحديث",
+   "التحميل وقف",
+   "update",
+   "doctor"
+  ],
+  "when": "حين يتوقف التحميل من تيك توك أو إنستغرام بخطأ بعد تغيّر الموقع / when TikTok or Instagram downloads start failing after a site change and yt-dlp needs updating"
  },
  {
   "id": "DL-08",
@@ -260,8 +302,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "فشل التحميل",
+   "حاوية سحابية",
+   "ارفع الملف",
+   "403",
+   "cloud limits"
+  ],
+  "when": "حين يفشل تحميل رابط داخل الحاوية السحابية (مثل 403 من يوتيوب) وتحتاج بديلًا كرفع الملف أو التشغيل على جهاز المستخدم / when a link fails in this cloud container (e.g. YouTube 403) and you need a fallback"
  },
  {
   "id": "DL-09",
@@ -292,8 +340,14 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "حقوق النشر",
+   "ترخيص",
+   "ذكر المصدر",
+   "copyright",
+   "license"
+  ],
+  "when": "حين تستخدم مقطعًا محمّلًا في مونتاج وتحتاج التأكد من ترخيصه وذكر مصدره / when using a downloaded clip in an edit and you must check its licence and credit the source"
  },
  {
   "id": "DL-10",
@@ -328,7 +382,13 @@
    "tiktok",
    "instagram",
    "facebook",
-   "محتوى"
-  ]
+   "محتوى",
+   "مونتاج",
+   "قص على الإيقاع",
+   "ترجمة عربية",
+   "montage",
+   "beat cut"
+  ],
+  "when": "حين يريد المستخدم من رابط واحد مونتاجًا كاملًا: تحميل ثم تفريغ وقص على الإيقاع وانتقالات وترجمة عربية / when the user wants a full montage from a link: download, transcribe, beat cuts, transitions, Arabic subtitles"
  }
 ]

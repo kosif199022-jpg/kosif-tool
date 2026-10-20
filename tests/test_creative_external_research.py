@@ -56,6 +56,36 @@ class ResearchTests(unittest.TestCase):
         self.assertEqual(len(rows),1)
         self.assertEqual(rows[0]["site"],"video.example.org")
 
+    def test_owner_inventory_uses_gh_login_extra_accounts_and_pages(self):
+        import json, tempfile
+        from unittest import mock
+        calls=[]
+        def fake_gh(endpoint,params=None,timeout=40):
+            calls.append((endpoint,dict(params or {})))
+            if endpoint=="user": return {"login":"someone"}
+            page=int((params or {}).get("page",1))
+            prefix="someone" if endpoint=="user/repos" else "other"
+            size=100 if page==1 and endpoint=="user/repos" else 3
+            return [{"full_name":"%s/r%d-%d"%(prefix,page,i),"private":False} for i in range(size)]
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(atlas,"gh",fake_gh):
+            out=atlas.owner_inventory(Path(tmp),["other","SOMEONE"])
+            rows=json.loads((Path(tmp)/"owner_repositories_PRIVATE_LOCAL.json").read_text(encoding="utf-8"))
+        self.assertEqual(out["accounts"],["someone","other"])
+        self.assertEqual(out["owned_repository_count"],106)
+        self.assertEqual(len(rows),106)
+        self.assertIn(("user/repos",{"type":"owner","per_page":100,"page":2}),calls)
+        self.assertIn("users/other/repos",[c[0] for c in calls])
+        self.assertNotIn("users/SOMEONE/repos",[c[0] for c in calls])
+
+    def test_trees_without_inventory_is_a_clean_error(self):
+        import subprocess, tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            r=subprocess.run([sys.executable,str(SCRIPTS/"rea_creative_research_atlas.py"),"trees",
+                              "--private-output",tmp],capture_output=True,text=True)
+        self.assertEqual(r.returncode,2)
+        self.assertNotIn("Traceback",r.stderr)
+        self.assertIn("`own`",r.stderr)
+
     def test_readonly_registry(self):
         r=searcher.report()
         self.assertEqual(r["REA_broad_analysis_claim"],False)

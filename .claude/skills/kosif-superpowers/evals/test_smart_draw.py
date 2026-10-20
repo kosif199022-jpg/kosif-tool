@@ -1,10 +1,11 @@
-﻿"""Original shape snapping, drawing output, and Blender AST evidence tests."""
+"""Original shape snapping, drawing output, and Blender AST evidence tests."""
 import json
 import math
 from pathlib import Path
 import sys
 import tempfile
 import unittest
+import unittest.mock
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
@@ -53,5 +54,25 @@ class SmartDrawTests(unittest.TestCase):
             self.assertEqual(r["operator_class_types"]["bpy.types.Operator"],1)
             self.assertIn("bpy.ops.mesh.primitive_cube_add",r["bpy_ops_calls"])
             self.assertTrue(r["source_not_executed"])
+
+    def test_blender_audit_cli_bad_inputs_are_usage_errors(self):
+        import subprocess
+        script=str(ROOT/"scripts"/"blender_api_audit.py")
+        with tempfile.TemporaryDirectory() as temp:
+            base=Path(temp);(base/"src").mkdir()
+            (base/"src"/"ops.py").write_text("import bpy\nbpy.ops.mesh.primitive_cube_add()\n")
+            run=lambda *a:subprocess.run([sys.executable,script,*a],capture_output=True,text=True,cwd=temp)
+            for args,why in ((["nope"],"source folder not found"),
+                             (["src","--output","missing/r.json"],"output folder does not exist"),
+                             (["src","--output","src/r.json"],"inside inspected tree")):
+                with self.subTest(args=args):
+                    done=run(*args)
+                    self.assertEqual(done.returncode,2)
+                    self.assertIn(why,done.stderr)
+                    self.assertNotIn("Traceback",done.stderr)
+            self.assertEqual(run("src","--output","r.json").returncode,0)
+            self.assertIn("bpy.ops.mesh.primitive_cube_add",json.loads((base/"r.json").read_text())["bpy_ops_calls"])
+            with unittest.mock.patch.object(ba,"MAX_FILES",0):
+                with self.assertRaisesRegex(ValueError,"more than 0"):ba.audit(base/"src")
 
 if __name__=="__main__":unittest.main()

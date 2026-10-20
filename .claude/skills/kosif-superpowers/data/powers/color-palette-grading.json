@@ -36,8 +36,14 @@
    "cyberpunk",
    "vintage",
    "blue hour",
-   "preset"
-  ]
+   "preset",
+   "لوك سينمائي",
+   "كلرنج",
+   "فلاتر جاهزة",
+   "cinematic look",
+   "film look"
+  ],
+  "when": "حين يريد المستخدم لوكًا سينمائيًا جاهزًا لمقطع أو لكل لقطة في المونتاج مع بقاء الصوت كما هو / when the user wants a ready named colour look on one clip or on every cut of a montage"
  },
  {
   "id": "COLOR-02",
@@ -72,8 +78,14 @@
    "sharpen",
    "cas",
    "old footage",
-   "talking head"
-  ]
+   "talking head",
+   "إزالة التشويش",
+   "توضيح الصورة",
+   "جودة الفيديو",
+   "noise reduction",
+   "enhance video"
+  ],
+  "when": "حين يكون الفيديو قديمًا أو ناعمًا أو فيه تشويش ويحتاج تنظيفًا وسوادًا أنظف وتوضيحًا / when old, soft or noisy footage needs a rescue grade: light denoise, cleaner blacks and sharpening"
  },
  {
   "id": "COLOR-03",
@@ -104,8 +116,14 @@
    "navy",
    "hflip",
    "rtl",
-   "eq"
-  ]
+   "eq",
+   "لوك حزين",
+   "ألوان باهتة",
+   "مساحة للنص",
+   "desaturated",
+   "mirror flip"
+  ],
+  "when": "حين يريد المستخدم لوكًا هادئًا معتمًا بسطر واحد، أو سحب لقطة رمادية للكحلي مع عكسها ليفرغ اليمين للنص العربي / for a quiet muted one-line grade, or a grey shot pulled to navy and mirrored for Arabic text"
  },
  {
   "id": "COLOR-04",
@@ -139,8 +157,14 @@
    "haldclut",
    "cube",
    "bake",
-   "export look"
-  ]
+   "export look",
+   "ملف لوت",
+   "حفظ اللوك",
+   "تطبيق لوت",
+   "3d lut",
+   "lut export"
+  ],
+  "when": "حين يريد المستخدم حفظ لوك كملف LUT لإعادة استخدامه، أو تطبيق LUT تحويل أو LUT إبداعي من الكاميرا / when the user wants to save a grade as a reusable .cube LUT, or apply a camera conversion or creative LUT"
  },
  {
   "id": "COLOR-05",
@@ -174,8 +198,14 @@
    "blend mode",
    "soft-light",
    "browser grade",
-   "sepia"
-  ]
+   "sepia",
+   "فلاتر ويب",
+   "منزلقات",
+   "صبغة لونية",
+   "live filter",
+   "web look"
+  ],
+  "when": "حين يحتاج المستخدم فلاتر لونية فورية في المتصفح بمنزلقات تباين وتشبع، أو إعادة تلوين فيديو دون إعادة ترميز / for instant in-browser looks with sliders, or recolouring a video without re-encoding"
  },
  {
   "id": "COLOR-06",
@@ -205,8 +235,14 @@
    "letterbox",
    "colorbalance",
    "grain",
-   "vignette"
-  ]
+   "vignette",
+   "بصمة",
+   "حبيبات فيلم",
+   "تعتيم الأطراف",
+   "python script",
+   "ffmpeg chain"
+  ],
+  "when": "حين يريد المستخدم إعادة إنتاج لوك «بصمة» خارج المحرر بسكربت بايثون وفلاتر FFmpeg عادية / when a Basma look must be reproduced outside the editor as a Python script of plain FFmpeg filters"
  },
  {
   "id": "COLOR-07",
@@ -241,8 +277,14 @@
    "verse",
    "lyric film",
    "sky palette",
-   "dua"
-  ]
+   "dua",
+   "فيديو كلمات",
+   "ألوان المزاج",
+   "سماء ليلية",
+   "lyrics video",
+   "mood palette"
+  ],
+  "when": "حين يصنع المستخدم فيلم كلمات لأغنية أو قصيدة أو دعاء ويريد مزاجًا لونيًا (ليل، فجر، ذهب، بحر، حبر) يطابقه تلوين الفوتيج / for a lyric, poem or dua film needing a mood palette with a matching footage grade"
  },
  {
   "id": "COLOR-08",
@@ -276,8 +318,15 @@
    "cinestill",
    "bleach bypass",
    "velvia",
-   "look names"
-  ]
+   "look names",
+   "لوك فيلم",
+   "فوجي",
+   "ألوان باستيل",
+   "kodak",
+   "fuji",
+   "wes anderson"
+  ],
+  "when": "حين يذكر العميل اسم لوك معروف مثل كوداك بورترا أو فوجي أو سينستيل أو باستيل ويس أندرسون ويريده في الفيديو / when a client names a known film stock or look (Portra, CineStill, bleach bypass, Wes pastel) and wants it"
  },
  {
   "id": "COLOR-09",
@@ -311,8 +360,15 @@
    "presets",
    "hsl",
    "media-treatment",
-   "skin-soft"
-  ]
+   "skin-soft",
+   "عجلات الألوان",
+   "تعريض",
+   "حرارة اللون",
+   "color wheels",
+   "curves",
+   "vignette"
+  ],
+  "when": "حين يحتاج المستخدم تلوينًا كاملًا داخل HyperFrames بعجلات ومنحنيات وتحديدات HSL وLUT مع حفظ المعالجة على العنصر / for a full WebGL grade in HyperFrames with wheels, curves, HSL selections, LUT and a persisted treatment"
  },
  {
   "id": "COLOR-10",
@@ -344,8 +400,15 @@
    "halftone",
    "dither",
    "crt",
-   "feedback lane"
-  ]
+   "feedback lane",
+   "ريترو",
+   "شريط فيديو",
+   "8 ملم",
+   "retro",
+   "8mm",
+   "client notes"
+  ],
+  "when": "حين تأتي ملاحظة عميل غامضة مثل «غامق» أو «باهت» أو «عايزه سينمائي» وتحتاج معالجة محددة، أو لوك VHS أو 8 ملم أو هافتون / when vague client feedback must map to one treatment lane, or for VHS, 8mm, halftone or print looks"
  },
  {
   "id": "COLOR-11",
@@ -376,8 +439,14 @@
    "bleach bypass",
    "film fade",
    "offline",
-   "buildCube"
-  ]
+   "buildCube",
+   "بدون إنترنت",
+   "تيل وبرتقالي",
+   "لوت جاهز",
+   "teal orange",
+   "hyperframes"
+  ],
+  "when": "حين يريد المستخدم لوك LUT جاهزًا (تيل وبرتقالي، بليتش، فيلم باهت) يعمل حتى بلا إنترنت ببناء المكعب محليًا / when a ready LUT look is needed that still works offline by rebuilding the 33³ cube locally"
  },
  {
   "id": "COLOR-12",
@@ -407,8 +476,14 @@
    "before after",
    "split reveal",
    "wipe",
-   "grade compare"
-  ]
+   "grade compare",
+   "قبل وبعد التلوين",
+   "مسحة كشف",
+   "عرض الفرق",
+   "comparison",
+   "flat vs graded"
+  ],
+  "when": "حين يريد المستخدم إظهار الفرق قبل التلوين وبعده بحافة تمسح الصورة نفسها ثم تستقر على النسخة الملونة / for a before/after grade reveal where an edge sweeps from flat to graded and settles on the grade"
  },
  {
   "id": "COLOR-13",
@@ -438,8 +513,15 @@
    "node order",
    "resolve",
    "primary correction",
-   "workflow"
-  ]
+   "workflow",
+   "تصحيح الألوان",
+   "عقد التلوين",
+   "خطوات التلوين",
+   "color correction",
+   "davinci",
+   "look node"
+  ],
+  "when": "حين يبدأ المستخدم تلوين مشروع في دافنشي ويحتاج ترتيب العقد: تصحيح تقني لكل لقطة أولًا ثم عقدة لوك إبداعية منفصلة / when setting up a Resolve grade: technical correction per clip first, then a separate creative look node"
  },
  {
   "id": "COLOR-14",
@@ -469,8 +551,15 @@
    "apple log",
    "ffprobe",
    "color_transfer",
-   "rec709"
-  ]
+   "rec709",
+   "تصوير لوج",
+   "فيديو باهت",
+   "كشف الصيغة",
+   "log footage",
+   "conversion lut",
+   "10-bit"
+  ],
+  "when": "قبل تطبيق LUT تحويل من Log إلى Rec.709، للتأكد أن اللقطة مصورة Log فعلًا لا باهتة فقط / before applying a Log→Rec.709 conversion LUT, to verify the clip is truly Log and not just flat"
  },
  {
   "id": "COLOR-15",
@@ -499,8 +588,15 @@
    "exposure",
    "time of day",
    "signalstats",
-   "shot matching"
-  ]
+   "shot matching",
+   "توحيد الإضاءة",
+   "ساعة ذهبية",
+   "قفزة الإضاءة",
+   "brightness",
+   "flicker",
+   "luma"
+  ],
+  "when": "حين تختلف إضاءة اللقطات بين ليل ونهار وغروب ويريد المستخدم ضبطها دون تسويتها ومنع قفزات الإضاءة بين القطعات / when matching exposure across night, day and golden-hour shots while capping jumps between cuts"
  },
  {
   "id": "COLOR-16",
@@ -528,8 +624,14 @@
    "white balance",
    "cast",
    "grayworld",
-   "neutral"
-  ]
+   "neutral",
+   "ضبط الأبيض",
+   "ميل لوني",
+   "تصحيح الصبغة",
+   "auto white balance",
+   "colortemperature"
+  ],
+  "when": "حين يكون في الفيديو أو الصورة ميل لوني غير مرغوب ويحتاج ضبط توازن الأبيض تلقائيًا / when footage has an unwanted colour cast and needs automatic white balance, optionally keeping a warm or cool bias"
  },
  {
   "id": "COLOR-17",
@@ -556,8 +658,14 @@
    "contrast",
    "pivot",
    "clipping",
-   "s-curve"
-  ]
+   "s-curve",
+   "صورة مسطحة",
+   "منحنى S",
+   "احتراق الأبيض",
+   "flat image",
+   "contrast curve"
+  ],
+  "when": "حين تبدو الصورة مسطحة وتحتاج تباينًا أقوى دون أن يحترق الأبيض أو ينسحق الأسود / when a flat image needs stronger S-contrast without clipping blacks or whites"
  },
  {
   "id": "COLOR-18",
@@ -584,8 +692,14 @@
    "saturation",
    "roll-off",
    "film",
-   "vibrance"
-  ]
+   "vibrance",
+   "ألوان باهتة",
+   "حيوية الألوان",
+   "زيادة الألوان",
+   "dull colors",
+   "color boost"
+  ],
+  "when": "حين تبدو بعض اللقطات باهتة الألوان ويريد المستخدم رفع التشبع بحد آمن مع خفضه في الظلال والإضاءات كالفيلم / when dull clips need a capped saturation lift with film-like roll-off in shadows and highlights"
  },
  {
   "id": "COLOR-19",
@@ -614,8 +728,15 @@
    "sky",
    "qualifier",
    "huesaturation",
-   "secondary"
-  ]
+   "secondary",
+   "تعميق السماء",
+   "لون البشرة",
+   "تلوين انتقائي",
+   "blue sky",
+   "selective color",
+   "hue window"
+  ],
+  "when": "حين يريد المستخدم سماء أعمق زرقة دون أن يتغير لون العشب أو البشرة / when the user wants a deeper blue sky without touching grass or skin tones"
  },
  {
   "id": "COLOR-20",
@@ -645,8 +766,14 @@
    "vectorscope",
    "scopes",
    "measured look",
-   "tokyo night"
-  ]
+   "tokyo night",
+   "فكتورسكوب",
+   "لوك نيويورك",
+   "صيف اليابان",
+   "japan summer",
+   "new york"
+  ],
+  "when": "حين يريد المستخدم لوكًا مثل صيف اليابان أو نيويورك أو ليل طوكيو محددًا بقياسات IRE وفكتورسكوب / for creative looks (Japan summer, New York, Tokyo night) defined as measurable IRE and vectorscope targets"
  },
  {
   "id": "COLOR-21",
@@ -674,8 +801,14 @@
    "value",
    "luminance floor",
    "shot type",
-   "direction"
-  ]
+   "direction",
+   "تسجيل شاشة",
+   "متحدث للكاميرا",
+   "اتساق الإضاءة",
+   "screen recording",
+   "consistency"
+  ],
+  "when": "حين يجمع الفيلم لقطات متحدث وتسجيل شاشة وجرافيك ويحتاج توجيه تلوين لكل نوع وأرضية إضاءة واحدة / when a film mixes talking heads, screen recordings and graphics and needs per-type grade direction"
  },
  {
   "id": "COLOR-22",
@@ -707,8 +840,14 @@
    "kelvin",
    "colourfulness",
    "cast",
-   "palette"
-  ]
+   "palette",
+   "قياس الألوان",
+   "دافئ وبارد",
+   "ألوان سائدة",
+   "dominant colors",
+   "color temperature"
+  ],
+  "when": "حين يريد المستخدم معرفة حرارة لون صورة أو إطار بالكلفن وهل هو دافئ أم بارد وما ألوانه السائدة / when the user wants to measure an image's kelvin, warm/cool cast, colourfulness and six dominant colours"
  },
  {
   "id": "COLOR-23",
@@ -740,8 +879,14 @@
    "cto",
    "ctb",
    "kelvin",
-   "lighting"
-  ]
+   "lighting",
+   "فلتر إضاءة",
+   "حرارة اللون",
+   "تخطيط الإضاءة",
+   "color temperature",
+   "light planning"
+  ],
+  "when": "حين يخطط المستخدم إضاءة لقطة أو مشهد ثلاثي الأبعاد ويريد معرفة الجل المناسب للانتقال من حرارة لون إلى أخرى / when planning lighting and you need the mired shift and nearest CTO/CTB gel between two colour temperatures"
  },
  {
   "id": "COLOR-24",
@@ -772,8 +917,15 @@
    "kmeans",
    "delta e",
    "color name",
-   "reference"
-  ]
+   "reference",
+   "ألوان الصورة",
+   "كود اللون",
+   "فرق اللون",
+   "hex codes",
+   "dominant colors",
+   "style lock"
+  ],
+  "when": "حين يرسل المستخدم صورة أو مرجعًا ويريد استخراج ألوانه بأكواد hex وتسميتها أو قياس الفرق بين لونين / when the user wants dominant colours pulled from a reference, named, and compared by ΔE"
  },
  {
   "id": "COLOR-25",
@@ -802,8 +954,14 @@
    "reference",
    "beats",
    "background",
-   "breakdown"
-  ]
+   "breakdown",
+   "فيديو مرجعي",
+   "لون الخلفية",
+   "تفكيك المرجع",
+   "scene palette",
+   "reference analysis"
+  ],
+  "when": "حين يحلل المستخدم فيديو مرجعيًا ويريد لون الخلفية والباليت لكل نبضة أو مقطع / when breaking down a reference video into beats (cuts, dissolves, entrances) with a background hex and palette each"
  },
  {
   "id": "COLOR-26",
@@ -833,8 +991,15 @@
    "reinhard",
    "lab",
    "match",
-   "lut per shot"
-  ]
+   "lut per shot",
+   "مطابقة الألوان",
+   "توحيد اللقطات",
+   "لقطة مرجعية",
+   "color match",
+   "3d lut",
+   "reference shot"
+  ],
+  "when": "حين يريد المستخدم أن تشبه ألوان لقطة جديدة لقطة مرجعية وتُحفظ المطابقة كملف LUT لكل لقطة / when a new shot must match a reference shot's colours, baked into a per-shot 33³ .cube"
  },
  {
   "id": "COLOR-27",
@@ -864,8 +1029,14 @@
    "mimic",
    "hungarian",
    "shot match",
-   "colour transfer"
-  ]
+   "colour transfer",
+   "تقليد مونتاج",
+   "اختيار اللقطات",
+   "مكتبة مقاطع",
+   "reference edit",
+   "clip pool"
+  ],
+  "when": "حين يريد المستخدم تقليد مونتاج مرجعي باختيار أنسب مقطع من مكتبته لكل لقطة ثم نقل اللون إليه دون مبالغة / when recreating a reference edit: best pool clip per shot, then a clamped colour transfer"
  },
  {
   "id": "COLOR-28",
@@ -895,8 +1066,14 @@
    "auto fix",
    "grey world",
    "reference match",
-   "look classifier"
-  ]
+   "look classifier",
+   "فيديو معتم",
+   "تحسين تلقائي",
+   "تصحيح ألوان",
+   "dark video",
+   "auto color correction"
+  ],
+  "when": "حين يكون الفيديو معتمًا أو مسطحًا أو مصبوغًا ويريد المستخدم إصلاحًا تلقائيًا يُشرح بالعربية أو مطابقته مع مرجع / when dark, flat or tinted footage needs a measured auto-fix explained in Arabic, or a match to a reference"
  },
  {
   "id": "COLOR-29",
@@ -925,8 +1102,15 @@
    "change color",
    "mask",
    "tint",
-   "arabic request"
-  ]
+   "arabic request",
+   "استبدال لون",
+   "تعديل صورة",
+   "غير اللون",
+   "replace color",
+   "color swap",
+   "pillow"
+  ],
+  "when": "حين يطلب المستخدم «غيّر الأحمر إلى أزرق» أو تغيير لون عنصر في صورة مع بقاء الظلال والطيات / when the user asks to change one colour to another in an image while keeping folds and shading"
  },
  {
   "id": "COLOR-30",
@@ -956,8 +1140,15 @@
    "logo colors",
    "antialias",
    "vectorize",
-   "brand"
-  ]
+   "brand",
+   "لوجو",
+   "ألوان الهوية",
+   "استخراج ألوان",
+   "brand colors",
+   "logo palette",
+   "hex"
+  ],
+  "when": "حين يريد المستخدم ألوان الشعار الحقيقية بأكواد hex من صورة دون أن تختلط بها ألوان التنعيم عند الحواف / when extracting a logo's exact colours from an image, ignoring antialiased edge blends"
  },
  {
   "id": "COLOR-31",
@@ -991,8 +1182,15 @@
    "design tokens",
    "wcag",
    "dark mode",
-   "accent"
-  ]
+   "accent",
+   "ثيم",
+   "وضع داكن",
+   "هوية بصرية",
+   "color palette",
+   "css variables",
+   "theme generator"
+  ],
+  "when": "حين يعطي المستخدم لونًا واحدًا لعلامته ويريد ثيمًا فاتحًا وداكنًا بألوان حالات ومسافات وخطوط / when one brand hex must become light and dark themes, status colours and type tokens, all contrast-checked"
  },
  {
   "id": "COLOR-32",
@@ -1024,8 +1222,14 @@
    "ledger",
    "saffron",
    "kosif identity",
-   "cream"
-  ]
+   "cream",
+   "هوية افتراضية",
+   "وضع ليلي",
+   "حبر فحمي",
+   "default theme",
+   "night mode"
+  ],
+  "when": "حين يحتاج المستخدم الهوية الافتراضية لـKOSIF بورق كريمي وحبر فحمي ولون زعفران واحد، أو نسختها الليلية / for KOSIF's default ledger identity: cream paper, charcoal ink and one saffron accent, plus its night twin"
  },
  {
   "id": "COLOR-33",
@@ -1058,8 +1262,15 @@
    "heritage",
    "navy gold",
    "identity",
-   "theme"
-  ]
+   "theme",
+   "هوية عربية",
+   "ألوان تراثية",
+   "مظاهر جاهزة",
+   "arabic style",
+   "css tokens",
+   "oasis"
+  ],
+  "when": "حين يريد المستخدم مظهرًا بروح عربية مثل تراث الوادي أو نجد الفاخر أو الواحة وينقل ألوانه إلى مشهد / for an Arabic-flavoured identity look (Heritage Valley, Najd luxe, Oasis) lifted into a scene as CSS tokens"
  },
  {
   "id": "COLOR-34",
@@ -1087,8 +1298,15 @@
    "remap",
    "rebrand",
    "role",
-   "css rewrite"
-  ]
+   "css rewrite",
+   "تغيير الهوية",
+   "استبدال الألوان",
+   "تحويل الثيم",
+   "color swap",
+   "stylesheet",
+   "brand migration"
+  ],
+  "when": "حين يريد المستخدم تحويل ملفات CSS مصممة بألوان الكوبالت إلى هوية الدفتر تلقائيًا حسب دور كل لون / when rewriting cobalt-coloured stylesheets into the ledger identity by role: text, filled backgrounds, strokes"
  },
  {
   "id": "COLOR-35",
@@ -1117,8 +1335,14 @@
    "hue rotation",
    "selective color",
    "recolor video",
-   "brand"
-  ]
+   "brand",
+   "تغيير لون",
+   "سماوي",
+   "ألوان الهوية",
+   "gold to cyan",
+   "hsv"
+  ],
+  "when": "حين يريد المستخدم تحويل الذهبي فقط في صورة أو فيديو إلى سماوي جليدي مع بقاء البشرة والخشب والأحمر كما هي / when only the gold tones in an image or video must turn ice cyan while skin, wood and reds stay untouched"
  },
  {
   "id": "COLOR-36",
@@ -1147,8 +1371,14 @@
    "shader uniforms",
    "palette",
    "webgl",
-   "identity"
-  ]
+   "identity",
+   "ثلاثي الأبعاد",
+   "تبديل الهوية",
+   "كوبالت",
+   "crystal",
+   "theme switch"
+  ],
+  "when": "حين يبني المستخدم مشهد شيدر ثلاثي الأبعاد ويريد تبديل لوحته بين هويتين دون تثبيت أي لون داخل الكود / when a 3D shader scene must switch between brand palettes passed as uniforms, with no colour hard-coded"
  },
  {
   "id": "COLOR-37",
@@ -1180,8 +1410,15 @@
    "dashboard",
    "feather",
    "cascade",
-   "dark theme"
-  ]
+   "dark theme",
+   "لوحة قيادة",
+   "وضع داكن",
+   "ألوان الحالات",
+   "status colors",
+   "light theme",
+   "editorial theme"
+  ],
+  "when": "حين يحتاج المستخدم ألوان لوحة قيادة أو تقرير تدقيق بثيم فاتح وداكن وترتيب صحيح لملفات الثيم / for dashboard and audit-report palettes with light/dark themes and a tested theme-file cascade order"
  },
  {
   "id": "COLOR-38",
@@ -1213,8 +1450,15 @@
    "style lock",
    "neon",
    "gold noir",
-   "swiss"
-  ]
+   "swiss",
+   "نصوص متحركة",
+   "ثيم مخصص",
+   "ستايل ثابت",
+   "kinetic typography",
+   "custom theme",
+   "prompt"
+  ],
+  "when": "حين يصنع المستخدم فيديو تايبوغرافي حركي ويريد ثيمًا مقفلًا (خلفية ولون وخط وانتقال) يتكرر في كل مقطع / for kinetic typography videos needing a locked theme repeated in every clip prompt, or a custom hex theme"
  },
  {
   "id": "COLOR-39",
@@ -1244,8 +1488,14 @@
    "editorial",
    "viral",
    "palette",
-   "explainer"
-  ]
+   "explainer",
+   "فيديو شرح",
+   "ألوان محايدة",
+   "فيروزي",
+   "dark technical",
+   "academic"
+  ],
+  "when": "حين يصنع المستخدم فيديو شرح تحريري ويحتاج لوحة جاهزة (فاتحة بنفسجية، تقنية داكنة، أكاديمية) بنسبة 80% محايد و20% لون / for editorial explainer videos needing one of three palettes with an ~80% neutral / 20% accent split"
  },
  {
   "id": "COLOR-40",
@@ -1275,8 +1525,14 @@
    "palette",
    "navy gold",
    "neon city",
-   "film palette"
-  ]
+   "film palette",
+   "ألوان جاهزة",
+   "مدينة ممطرة",
+   "بحر ليلي",
+   "ready palette",
+   "night sea"
+  ],
+  "when": "حين يريد المستخدم باليت جاهزة من أفلام حقيقية مثل كحلي وذهبي أو مدينة نيون ممطرة أو بحر ليلي / when the user wants a ready palette from shipped films: navy/gold, ivory/ink, lab neon, rainy neon city, night sea"
  },
  {
   "id": "COLOR-41",
@@ -1308,8 +1564,15 @@
    "scaffold",
    "remotion",
    "withAlpha",
-   "style.md"
-  ]
+   "style.md",
+   "مشروع جديد",
+   "ألوان افتراضية",
+   "خلفية كحلية",
+   "default palette",
+   "accent color",
+   "canvas"
+  ],
+  "when": "حين يبدأ المستخدم مشروعًا من قالب ويحتاج ألوانه الافتراضية أو خانات الألوان في STYLE.md أو لون التمييز في Remotion / when starting from a template: its default palette, STYLE.md colour slots or the Remotion accent"
  },
  {
   "id": "COLOR-42",
@@ -1340,8 +1603,14 @@
    "theme",
    "tokens",
    "css variables",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "تغيير الثيم",
+   "ألوان وخطوط",
+   "ثيم جاهز",
+   "design tokens",
+   "theme file"
+  ],
+  "when": "حين يريد المستخدم تغيير ألوان وخطوط وحركة كل مكونات HyperFrames دفعة واحدة بملف ثيم واحد / when one theme file should restyle every HyperFrames component through 18 shared CSS custom properties"
  },
  {
   "id": "COLOR-43",
@@ -1371,8 +1640,15 @@
    "neon",
    "pastel",
    "corporate",
-   "premium"
-  ]
+   "premium",
+   "ألوان عروض",
+   "ثيم داكن",
+   "اختيار الألوان",
+   "deck colors",
+   "dark theme",
+   "color scheme"
+  ],
+  "when": "حين يحتاج المستخدم اختيار لوحة ألوان جاهزة حسب الغرض (نيون، باستيل، شركات، فاخر) لعرض أو فيديو أو ديمو داكن / when picking a ready palette by purpose (neon, pastel, corporate, premium) for a deck, video or dark demo"
  },
  {
   "id": "COLOR-44",
@@ -1402,8 +1678,15 @@
    "industry",
    "culture",
    "brand color",
-   "symbolism"
-  ]
+   "symbolism",
+   "لون العلامة",
+   "علم نفس الألوان",
+   "جمهور عربي",
+   "color psychology",
+   "brand identity",
+   "primary color"
+  ],
+  "when": "حين يسأل المستخدم أي لون يناسب علامته حسب الشعور أو القطاع، أو ماذا يعني اللون للجمهور الخليجي أو المصري / when choosing a brand colour by emotion or sector, and its meaning for Arab, Gulf or Egyptian audiences"
  },
  {
   "id": "COLOR-45",
@@ -1439,8 +1722,15 @@
    "success",
    "error",
    "chips",
-   "semantic"
-  ]
+   "semantic",
+   "تحذير",
+   "ألوان الواجهة",
+   "تنبيهات",
+   "warning",
+   "badges",
+   "ui colors"
+  ],
+  "when": "حين يحتاج المستخدم ألوان حالات (نجاح، تحذير، خطأ، معلومة) لشارات أو واجهة مع أيقونة وسلم درجات / for success, warning, error and info chips with tint backgrounds, icons and a five-stop ladder per hue"
  },
  {
   "id": "COLOR-46",
@@ -1470,8 +1760,15 @@
    "okabe-ito",
    "paul tol",
    "categorical",
-   "accessibility"
-  ]
+   "accessibility",
+   "ألوان آمنة",
+   "مخطط بياني",
+   "عمى الأحمر والأخضر",
+   "color blind safe",
+   "chart palette",
+   "red green"
+  ],
+  "when": "حين يرسم المستخدم مخططًا بفئات متعددة ويريد ألوانًا يميزها المصابون بعمى الألوان مع أشكال أو تسميات / when a multi-category chart needs colour-blind-safe hues paired with shapes or labels"
  },
  {
   "id": "COLOR-47",
@@ -1501,8 +1798,15 @@
    "viridis",
    "diverging",
    "chart color",
-   "insight"
-  ]
+   "insight",
+   "تصور البيانات",
+   "ألوان الرسم البياني",
+   "تدرج البيانات",
+   "data viz",
+   "sequential",
+   "colorbrewer"
+  ],
+  "when": "حين يلون المستخدم رسمًا بيانيًا أو خريطة بيانات ويحتاج اختيار خريطة لونية متسلسلة أو متباعدة ولون تمييز واحد للاستنتاج / when choosing a sequential or diverging colormap and one insight accent for a chart"
  },
  {
   "id": "COLOR-48",
@@ -1528,8 +1832,15 @@
    "thermal",
    "heatmap",
    "ramp",
-   "shader"
-  ]
+   "shader",
+   "كاميرا حرارية",
+   "تدرج ألوان",
+   "خريطة شدة",
+   "heat camera",
+   "intensity map",
+   "gradient"
+  ],
+  "when": "حين يريد المستخدم مظهر كاميرا حرارية أو خريطة شدة ملونة لحقل حرارة دون أن يحترق للأبيض / for a heat-camera look or intensity map colouring a heat field, capped so it never blows to white"
  },
  {
   "id": "COLOR-49",
@@ -1557,8 +1868,15 @@
    "spectrogram",
    "terrain",
    "alpine",
-   "ramp"
-  ]
+   "ramp",
+   "سبيكتروغرام",
+   "جبال",
+   "ارتفاع",
+   "audio visualization",
+   "height colors",
+   "colormap"
+  ],
+  "when": "حين يلون المستخدم طيفًا صوتيًا (سبيكتروغرام) أو تضاريس جبلية حسب الارتفاع والميل / for colouring an audio spectrogram with a magma ramp, or terrain by height and slope"
  },
  {
   "id": "COLOR-50",
@@ -1592,8 +1910,15 @@
    "complementary",
    "triadic",
    "analogous",
-   "color wheel"
-  ]
+   "color wheel",
+   "ألوان متناسقة",
+   "دائرة الألوان",
+   "توليد ألوان",
+   "color scheme",
+   "three.js",
+   "split complementary"
+  ],
+  "when": "حين يريد المستخدم ألوانًا متناسقة من لون أساس واحد (متكاملة، متجاورة، ثلاثية) أو معرفة نوع تناغم لوحة موجودة / for complementary, analogous or triadic colours from one base hue, or classifying a palette"
  },
  {
   "id": "COLOR-51",
@@ -1627,8 +1952,15 @@
    "perceptual",
    "ramp",
    "hue shift",
-   "shading"
-  ]
+   "shading",
+   "سلم ألوان",
+   "درجات اللون",
+   "ظلال باردة",
+   "color ramp",
+   "color scale",
+   "painterly"
+  ],
+  "when": "حين يبني المستخدم سلم درجات للون يبدو متساويًا للعين، أو يريد ظلالًا أبرد وإضاءات أدفأ بدل التغميق فقط / when building even-looking colour ramps in OKLCH, or hue-shifted shading with cooler shadows and warmer lights"
  },
  {
   "id": "COLOR-52",
@@ -1661,8 +1993,15 @@
    "wcag",
    "accessibility",
    "luminance",
-   "captions"
-  ]
+   "captions",
+   "وضوح النص",
+   "كابشن",
+   "مقروئية",
+   "readability",
+   "text contrast",
+   "subtitles"
+  ],
+  "when": "حين يضع المستخدم نصًا أو كابشن فوق خلفية أو لوح زجاجي فوق فيديو ويريد التأكد أنه مقروء قبل الرندر / when checking caption or text contrast over a background or translucent plate on video before render"
  },
  {
   "id": "COLOR-53",
@@ -1688,8 +2027,15 @@
    "dark mode",
    "night",
    "halation",
-   "inversion"
-  ]
+   "inversion",
+   "وضع داكن",
+   "خلفية سوداء",
+   "نسخة ليلية",
+   "dark theme",
+   "off-white",
+   "contrast"
+  ],
+  "when": "حين يريد المستخدم نسخة داكنة من تصميم أو هوية دون قلب الألوان، بخلفية شبه سوداء ونص أوف وايت / when making a dark variant of a design or brand without inverting colours: tinted near-black ground, off-white text"
  },
  {
   "id": "COLOR-54",
@@ -1726,8 +2072,15 @@
    "restraint",
    "80/20",
    "focus",
-   "neutral"
-  ]
+   "neutral",
+   "لون مميز",
+   "ألوان محايدة",
+   "تقليل الألوان",
+   "accent color",
+   "minimal palette",
+   "color roles"
+  ],
+  "when": "حين يبدو التصميم أو الفيديو مزدحمًا بالألوان ويحتاج المستخدم لون تمييز واحدًا بمعنى واحد والباقي محايد / when a design or video feels over-coloured and needs one accent with one meaning against neutrals"
  },
  {
   "id": "COLOR-55",
@@ -1765,8 +2118,14 @@
    "three colour",
    "minimal",
    "ink paper",
-   "signal"
-  ]
+   "signal",
+   "ألوان محدودة",
+   "مينيمال",
+   "حبر وورق",
+   "limited palette",
+   "role swap"
+  ],
+  "when": "حين يريد المستخدم فيلمًا أو موشن بلونين أو ثلاثة فقط (حبر وورق ولون إشارة) تتبادل الأدوار بين الفصول / for a film using only two or three colours (ink, paper, one signal) with roles swapped between chapters"
  },
  {
   "id": "COLOR-56",
@@ -1798,8 +2157,14 @@
    "reference",
    "style dna",
    "brand hex",
-   "generation"
-  ]
+   "generation",
+   "ثبات الأسلوب",
+   "اتساق اللقطات",
+   "تقليد مرجع",
+   "consistent style",
+   "image generator"
+  ],
+  "when": "حين يريد المستخدم ثبات الألوان والأسلوب في كل اللقطات المولدة أو تقليد لوك مرجع بعد فحصه / when keeping palette and style locked across generated shots, or copying a reference look after inspecting frames"
  },
  {
   "id": "COLOR-57",
@@ -1832,8 +2197,15 @@
    "agx",
    "neutral",
    "exposure",
-   "three.js"
-  ]
+   "three.js",
+   "ثلاثي الأبعاد",
+   "نيون",
+   "ألوان المنتج",
+   "3d render",
+   "highlights",
+   "product shot"
+  ],
+  "when": "حين يرندر المستخدم مشهد three.js ويختار تحويل النغمات: قوي، أو يحفظ ألوان النيون والنار، أو أمين لألوان المنتج / when choosing ACES, AgX or Neutral tone mapping per 3D shot"
  },
  {
   "id": "COLOR-58",
@@ -1866,8 +2238,15 @@
    "night vision",
    "purkinje",
    "split toning",
-   "look pass"
-  ]
+   "look pass",
+   "مشهد ليلي",
+   "تماسك الألوان",
+   "دافئ وبارد",
+   "post processing",
+   "night scene",
+   "warm cool"
+  ],
+  "when": "حين يريد المستخدم تماسك ألوان مشهد ثلاثي الأبعاد بعد الرندر، أو ليلًا مقنعًا يزرق الظلال، أو تقسيمًا دافئًا وباردًا / for a post pass: gamut mask, night vision or warm/cool split toning"
  },
  {
   "id": "COLOR-59",
@@ -1902,8 +2281,15 @@
    "fog",
    "atmosphere",
    "gurney",
-   "haze"
-  ]
+   "haze",
+   "عمق المشهد",
+   "طبيعة",
+   "شمس منخفضة",
+   "depth",
+   "landscape",
+   "sun haze"
+  ],
+  "when": "حين يريد المستخدم عمقًا مقنعًا في مشهد طبيعي ثلاثي الأبعاد فيصبح البعيد أزرق وأقل تباينًا والضباب يدفأ نحو الشمس / for believable depth in a 3D landscape: distance bluer and flatter, haze warming toward a low sun"
  },
  {
   "id": "COLOR-60",
@@ -1937,8 +2323,15 @@
    "chromatic aberration",
    "grain",
    "lift",
-   "audio reactive"
-  ]
+   "audio reactive",
+   "تفاعل مع الموسيقى",
+   "باص",
+   "فينيت",
+   "music reactive",
+   "vignette",
+   "shader"
+  ],
+  "when": "حين يريد المستخدم تشطيبًا لونيًا نهائيًا في الشيدر يتغير مع القصة أو يتفاعل مع الموسيقى والباص / when a shader finish (split tone, lift, vignette, grain, aberration) must change per frame with story or music"
  },
  {
   "id": "COLOR-61",
@@ -1971,8 +2364,15 @@
    "sodium",
    "moonlight",
    "lantern",
-   "kelvin"
-  ]
+   "kelvin",
+   "إضاءة ليلية",
+   "فانوس",
+   "لهب",
+   "night scene",
+   "flame",
+   "mercury"
+  ],
+  "when": "حين يبني المستخدم مشهدًا ليليًا ويريد ألوان مصادر ضوء حقيقية مثل الصوديوم والقمر والفانوس ليبدو مقنعًا / when a night scene needs real practical-light colours (sodium, mercury, moon, flame) to feel believable"
  },
  {
   "id": "COLOR-62",
@@ -2005,8 +2405,15 @@
    "aces",
    "split tone",
    "painter",
-   "pillow"
-  ]
+   "pillow",
+   "رسم بالكود",
+   "حبيبات",
+   "منحنى فيلمي",
+   "film grain",
+   "code painting",
+   "tone curve"
+  ],
+  "when": "حين يرسم المستخدم مشهدًا بالكود ويريد تشطيبًا فيلميًا بمنحنى ACES وتلوين ظلال وإضاءات وحبيبات / for code-painted scenes needing an ACES-fitted filmic curve, a shadow/highlight split grade and seeded grain"
  },
  {
   "id": "COLOR-63",
@@ -2034,8 +2441,15 @@
    "highlight rolloff",
    "tanh",
    "clipping",
-   "tone curve"
-  ]
+   "tone curve",
+   "احتراق الإضاءة",
+   "نار",
+   "8 بت",
+   "blown highlights",
+   "glow",
+   "8-bit"
+  ],
+  "when": "حين تحترق النار أو التوهج إلى أبيض مسطح عند تحويل الصورة إلى 8 بت، أو يجب أن تبقى ألوان الشعار مطابقة تمامًا / when fire and glows clip to flat white converting to 8-bit, or logo colours must stay exact"
  },
  {
   "id": "COLOR-64",
@@ -2066,8 +2480,15 @@
    "تركيز",
    "vignette",
    "focus",
-   "edges"
-  ]
+   "edges",
+   "تغميق الحواف",
+   "تركيز العين",
+   "إطار مظلم",
+   "darken edges",
+   "ffmpeg",
+   "css"
+  ],
+  "when": "حين يريد المستخدم تعتيم حواف الإطار لتوجيه العين للمركز في Canvas أو three.js أو FFmpeg أو CSS / when the user wants a vignette to focus the centre, in Canvas, three.js, FFmpeg, CSS or painter scenes"
  },
  {
   "id": "COLOR-65",
@@ -2096,8 +2517,15 @@
    "alpha",
    "blend mode",
    "radial",
-   "linear"
-  ]
+   "linear",
+   "تدرج لوني",
+   "تعبئة",
+   "تدرج للنص",
+   "gradient fill",
+   "screen",
+   "multiply"
+  ],
+  "when": "حين يريد المستخدم تعبئة شكل أو نص بتدرج لوني خطي أو شعاعي بشفافية وأنماط دمج / when filling a shape or text with a linear or radial gradient with alpha stops and blend modes"
  },
  {
   "id": "COLOR-66",
@@ -2138,8 +2566,15 @@
    "polarity",
    "invert",
    "act break",
-   "dark light"
-  ]
+   "dark light",
+   "عكس الألوان",
+   "انتقال",
+   "أبيض وأسود",
+   "color invert",
+   "transition",
+   "gsap"
+  ],
+  "when": "حين يريد المستخدم قلب الخلفية والنص بين الداكن والفاتح عند انتقال فصل في الفيديو مع القطع / when swapping background and text ink↔paper at an act boundary on a cut, e.g. dark chaos to light solution"
  },
  {
   "id": "COLOR-67",
@@ -2183,8 +2618,15 @@
    "color field",
    "beat flip",
    "chapter colors",
-   "flat background"
-  ]
+   "flat background",
+   "تغيير الخلفية",
+   "ضربة الإيقاع",
+   "ألوان الهوية",
+   "background flip",
+   "on beat",
+   "brand colors"
+  ],
+  "when": "حين يريد المستخدم أن يغيّر كل قطع أو ضربة إيقاع لون الخلفية بالكامل من ألوان الهوية مع بقاء النص مقروءًا / when every cut or beat should change the flat background to another colour from a 3–4 colour brand set"
  },
  {
   "id": "COLOR-68",
@@ -2219,8 +2661,15 @@
    "brand flash",
    "full bleed",
    "accent beat",
-   "punchline"
-  ]
+   "punchline",
+   "امتلاء الإطار",
+   "لحظة الشعار",
+   "نكتة",
+   "color flash",
+   "logo moment",
+   "hard cut"
+  ],
+  "when": "حين يريد المستخدم لحظة يمتلئ فيها الإطار كله بلون الهوية أو لون صادم عند النكتة أو الوعد أو الشعار / for one moment where the whole frame floods with the brand or a shock colour on a punchline, promise or logo"
  },
  {
   "id": "COLOR-69",
@@ -2264,8 +2713,15 @@
    "time of day",
    "sunset",
    "dawn",
-   "seasons"
-  ]
+   "seasons",
+   "شروق",
+   "ليل ونهار",
+   "تدرج السماء",
+   "sunrise",
+   "day night cycle",
+   "gsap"
+  ],
+  "when": "حين يريد المستخدم أن تتحول السماء من ليل إلى فجر إلى صباح أو من غروب إلى ليل في لقطة واحدة، أو دورة الفصول / when the sky should drift night→dawn→morning or sunset→dusk→night in one take, or cycle the seasons"
  },
  {
   "id": "COLOR-70",
@@ -2298,8 +2754,15 @@
    "story grade",
    "desaturate",
    "emotion",
-   "freeze"
-  ]
+   "freeze",
+   "أبيض وأسود",
+   "حزن وفرح",
+   "تلوين درامي",
+   "black and white",
+   "mood shift",
+   "css filter"
+  ],
+  "when": "حين يريد المستخدم أن يحكي اللون المعنى: صورة تنطفئ للرمادي عند الحزن أو تتوهج دافئة عند الفرح / when colour should carry the story: drain to grey, bloom warm on joy, or freeze to grey for one bar"
  },
  {
   "id": "COLOR-71",
@@ -2333,8 +2796,15 @@
    "problem solution",
    "narrative color",
    "pitch",
-   "transformation"
-  ]
+   "transformation",
+   "عرض تقديمي",
+   "نقاط الألم",
+   "فيديو إعلاني",
+   "pain points",
+   "storytelling",
+   "promo video"
+  ],
+  "when": "حين يصنع المستخدم فيديو أو عرضًا يبدأ بمشكلة وينتهي بحل ويريد لونًا لكل مرحلة، كأحمر للمشكلة وسماوي للعرض / for problem→solution videos or pitches with one accent per act: red for pain points, cyan for the offer"
  },
  {
   "id": "COLOR-72",
@@ -2371,8 +2841,15 @@
    "color coding",
    "per item",
    "categories",
-   "legend"
-  ]
+   "legend",
+   "لون لكل عنصر",
+   "تمييز الفئات",
+   "قائمة",
+   "item colors",
+   "voices",
+   "instruments"
+  ],
+  "when": "حين يعرض المستخدم عدة عناصر أو أصوات أو فئات ويريد لكل منها لونًا ثابتًا تتبعه العين في كل ظهور / when several items, voices or classes each need one consistent hue the eye can track across pills, bullets and glows"
  },
  {
   "id": "COLOR-73",
@@ -2402,8 +2879,15 @@
    "tint",
    "flash",
    "impact",
-   "error state"
-  ]
+   "error state",
+   "تعويذة",
+   "اصطدام",
+   "صبغ الإطار",
+   "color overlay",
+   "spell",
+   "hit flash"
+  ],
+  "when": "حين يقع في المشهد حدث مثل تعويذة أو اصطدام أو خطأ ويريد المستخدم صبغ الإطار كله بلونه مع وميض لحظة الضربة / when a spell, impact or error should tint the whole frame in its colour, flashing stronger on impact"
  },
  {
   "id": "COLOR-74",
@@ -2434,8 +2918,15 @@
    "hue rotate",
    "rings",
    "rainbow",
-   "index color"
-  ]
+   "index color",
+   "ألوان متدرجة",
+   "خلفية متغيرة",
+   "دوائر",
+   "hue cycle",
+   "concentric",
+   "counter"
+  ],
+  "when": "حين يريد المستخدم حلقات متداخلة تتدرج ألوانها حسب ترتيبها، أو خلفية يدور لونها ببطء بدل القطع / for concentric rings coloured by index (pink inside to teal outside) or a background slowly rotating hue instead of cutting"
  },
  {
   "id": "COLOR-75",
@@ -2467,8 +2958,15 @@
    "headline",
    "accent word",
    "two tone",
-   "highlight"
-  ]
+   "highlight",
+   "إبراز كلمة",
+   "تايتل",
+   "خط تحت الكلمة",
+   "keyword highlight",
+   "underline",
+   "title"
+  ],
+  "when": "حين يريد المستخدم عنوانًا بلونين أو إبراز كلمة واحدة في كل ضربة بلون الهوية وخط سميك تحتها / for a two-tone headline with the punchline in the brand colour, or one highlighted word per beat with a thick underline"
  },
  {
   "id": "COLOR-76",
@@ -2494,8 +2992,14 @@
    "هوية",
    "swatches",
    "style guide",
-   "palette reveal"
-  ]
+   "palette reveal",
+   "لوحة الألوان",
+   "كتاب الأسلوب",
+   "أكواد الألوان",
+   "hex labels",
+   "brand book"
+  ],
+  "when": "حين يريد المستخدم عرض لوحة ألوان الهوية في الفيديو كمربعات بأكواد hex تظهر بالتتابع / when showing a brand palette on screen as a row of swatches with hex labels popping in one by one"
  },
  {
   "id": "COLOR-77",
@@ -2524,8 +3028,14 @@
    "indexed palette",
    "pixel art",
    "retro",
-   "flash"
-  ]
+   "flash",
+   "بكسل آرت",
+   "تقليل الألوان",
+   "لوحة محدودة",
+   "quantize",
+   "dither"
+  ],
+  "when": "حين يريد المستخدم فيلمًا بطابع ريترو محدودًا بستة عشر لونًا مع ومضة تمييز متناوبة عند كل تعويذة / for a retro look capping the whole film at 16 colours, with two accents alternating on frame parity per spell"
  },
  {
   "id": "COLOR-78",
@@ -2561,8 +3071,15 @@
    "dark background",
    "radial gradient",
    "navy",
-   "hud"
-  ]
+   "hud",
+   "خلفية تقنية",
+   "توهج",
+   "شبكة",
+   "tech background",
+   "backdrop",
+   "grid"
+  ],
+  "when": "حين يحتاج المستخدم خلفية داكنة غير مسطحة بمركز أفتح قليلًا لفيديو تقني أو موشن أو مشهد ثلاثي الأبعاد / when a scene needs a dark ground with a slightly lighter centre: tech navy, ember, red glow or warm HUD"
  },
  {
   "id": "COLOR-79",
@@ -2600,8 +3117,15 @@
    "paper",
    "cream",
    "editorial",
-   "warm background"
-  ]
+   "warm background",
+   "خلفية فاتحة",
+   "بيج",
+   "خاتمة",
+   "light background",
+   "beige",
+   "outro"
+  ],
+  "when": "حين يريد المستخدم خلفية ورقية كريمية دافئة لفصل هادئ أو خاتمة عاطفية أو شرح تحريري / for a warm cream paper ground with near-black ink and one action colour, for calm chapters, emotional outros or explainers"
  },
  {
   "id": "COLOR-80",
@@ -2645,8 +3169,15 @@
    "aurora",
    "blob",
    "pastel",
-   "ambient"
-  ]
+   "ambient",
+   "خلفية ناعمة",
+   "تدرج متحرك",
+   "ضبابي",
+   "animated gradient",
+   "soft background",
+   "css"
+  ],
+  "when": "حين يريد المستخدم خلفية ناعمة متحركة من بقع لونية ضبابية تنجرف ببطء، بنفسجية برتقالية أو باستيل / when the user wants a soft animated background of huge blurred colour blobs drifting slowly, aurora or pastel"
  },
  {
   "id": "COLOR-81",
@@ -2678,8 +3209,15 @@
    "shader",
    "plasma",
    "gradient",
-   "background plate"
-  ]
+   "background plate",
+   "خلفية متحركة",
+   "دوامة",
+   "تدرج متدفق",
+   "animated background",
+   "swirl",
+   "hyperframes"
+  ],
+  "when": "حين يحتاج المستخدم خلفية شيدر متحركة جاهزة مثل بلازما أو دوامة أو تدرج متدفق أو عجلة ألوان / when a ready animated shader background is needed: plasma, swirl, flowing gradient, mesh gradient or colour wheel"
  },
  {
   "id": "COLOR-82",
@@ -2705,8 +3243,15 @@
    "collage",
    "composite",
    "grain",
-   "unify"
-  ]
+   "unify",
+   "تركيب",
+   "دمج الطبقات",
+   "ظل تلامس",
+   "layers",
+   "cut-out",
+   "contact shadow"
+  ],
+  "when": "حين تبدو طبقات الكولاج أو القصاصات منفصلة ويريد المستخدم أن تُقرأ كصورة واحدة بتلوين وحبيبات وفينيت موحد / when composited layers or cut-outs look pasted on and must read as one photo with one grade, grain and vignette"
  },
  {
   "id": "COLOR-83",
@@ -2738,8 +3283,15 @@
    "duotone",
    "halftone",
    "pop art",
-   "stylize"
-  ]
+   "stylize",
+   "لونين",
+   "نقاط طباعة",
+   "تحويل الصورة",
+   "flat vector",
+   "on beat",
+   "two ink"
+  ],
+  "when": "حين يريد المستخدم أن تتحول صورة على الإيقاع أو الكلمات من ألوان كاملة إلى لونين ثم هافتون ثم فيكتور مسطح / when a photo should step on beats or words from full colour to duotone, halftone, then flat vector"
  },
  {
   "id": "COLOR-84",
@@ -2771,8 +3323,15 @@
    "sepia",
    "flicker",
    "collage",
-   "film"
-  ]
+   "film",
+   "لوك قديم",
+   "فيلم قديم",
+   "حبيبات",
+   "retro",
+   "old film",
+   "ffmpeg"
+  ],
+  "when": "حين يريد المستخدم لوكًا قديمًا باهتًا بسيبيا وحبيبات ووميض تعريض خفيف لكولاج صور / for a muted vintage collage look: desaturation, sepia tint, dark vignette, moving grain and slight exposure flicker"
  },
  {
   "id": "COLOR-85",
@@ -2810,8 +3369,14 @@
    "synthwave",
    "psychedelic",
    "monochrome push",
-   "violet"
-  ]
+   "violet",
+   "شمس مخططة",
+   "سماء وردية",
+   "دفع لوني",
+   "striped sun",
+   "crushed blacks"
+  ],
+  "when": "حين يريد المستخدم سماء غروب وردية نيلية أو شمس سينثويف مخططة أو ألوان سايكدلك أو دفع الصور نحو بنفسجي واحد / for sunset or synthwave skies, a psychedelic palette, or pushing all imagery toward one violet"
  },
  {
   "id": "COLOR-86",
@@ -2839,8 +3404,14 @@
    "clay render",
    "monochrome 3d",
    "data flow",
-   "architecture"
-  ]
+   "architecture",
+   "ثلاثي الأبعاد",
+   "رمادي فاتح",
+   "تدفق البيانات",
+   "grey scene",
+   "data visualization"
+  ],
+  "when": "حين يريد المستخدم مشهدًا ثلاثي الأبعاد رماديًا كالطين بالكامل مع حجز اللون لتدفق البيانات فقط / for a 3D scene entirely in light-grey clay with colour reserved only for the moving data flows"
  },
  {
   "id": "COLOR-X01",

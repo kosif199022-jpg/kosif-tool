@@ -127,6 +127,28 @@ class CodeDrawingMasterTests(unittest.TestCase):
             self.assertNotEqual(p2.returncode,0)
             self.assertIn("failed",p2.stderr)
 
+    def test_failed_html_step_leaves_no_storyboard(self):
+        with tempfile.TemporaryDirectory() as folder:
+            spec=Path(folder)/"partial.json"
+            html=Path(folder)/"story.html"
+            html.write_text("existing",encoding="utf-8")
+            cmd=[sys.executable,str(SCRIPT),"--cast","cat","--out",str(spec),"--html",str(html)]
+            p=subprocess.run(cmd,capture_output=True,text=True,timeout=12)
+            self.assertEqual(p.returncode,2)
+            self.assertIn("failed",p.stderr)
+            self.assertFalse(spec.exists())
+            self.assertEqual(html.read_text(encoding="utf-8"),"existing")
+            html.unlink()
+            p=subprocess.run(cmd,capture_output=True,text=True,timeout=12)
+            self.assertEqual(p.returncode,0,p.stderr)
+            self.assertTrue(spec.exists() and html.exists())
+
+    def test_word_file_with_utf8_bom_is_accepted(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/"aligned.json"
+            path.write_text('{"words":[{"word":"hello","start":0.2,"end":0.6}]}',encoding="utf-8-sig")
+            self.assertEqual(drawing.load_words(path,9)[0]["start"],0.2)
+
     def test_no_external_downloads_or_shell(self):
         s=SCRIPT.read_text(encoding="utf8")
         self.assertNotIn("subprocess.run(",s)

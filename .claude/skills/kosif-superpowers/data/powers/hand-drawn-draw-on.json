@@ -1832,8 +1832,14 @@
    "logo story",
    "خط واحد",
    "خيط بصري",
-   "editorial"
-  ]
+   "editorial",
+   "رسم خط",
+   "قصة الشعار",
+   "ثلاث خطوات",
+   "draw on",
+   "line animation"
+  ],
+  "when": "حين نريد خطا واحدا متصلا يمر بثلاث محطات ثم يلتف حول الشعار / when one unbroken line should pass three numbered beats and loop around the wordmark"
  },
  {
   "id": "DRAW-X01",

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Blender source-tree AST catalog. Never imports or executes inspected files."""
 import argparse
 import ast
@@ -38,7 +38,8 @@ def audit(root):
                 continue
             files += 1
             if files > MAX_FILES:
-                raise ValueError("file count exceeds limit")
+                raise ValueError(f"more than {MAX_FILES} .py files under the source folder; "
+                                 "point at a smaller folder (one addon or one scripts/ subfolder)")
             rel = file.relative_to(root).as_posix()
             try:
                 if file.stat().st_size > MAX_FILE:
@@ -81,15 +82,23 @@ def audit(root):
             "caveat": "Only bundled Python AST; no C/C++ behavior inferred."}
 
 def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("source")
-    p.add_argument("--output")
+    p = argparse.ArgumentParser(description="Static AST audit of Blender Python sources; never imports or runs them.")
+    p.add_argument("source", help="folder of Blender Python sources (scripts, addon or source checkout)")
+    p.add_argument("--output", help="also write the full JSON report to this new file (its folder must exist)")
     a = p.parse_args()
-    result = audit(a.source)
-    if a.output:
-        path = Path(a.output).resolve()
-        if path.exists() or Path(a.source).resolve() in path.parents:
-            p.error("output exists or is inside inspected tree")
+    source = Path(a.source).resolve()
+    if not source.is_dir():
+        p.error(f"source folder not found or not a folder: {a.source}")
+    path = Path(a.output).resolve() if a.output else None
+    if path and (path.exists() or source in path.parents):
+        p.error("output exists or is inside inspected tree")
+    if path and not path.parent.is_dir():
+        p.error(f"output folder does not exist: {path.parent}")
+    try:
+        result = audit(source)
+    except ValueError as err:
+        p.error(str(err))
+    if path:
         path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     print(json.dumps({k:v for k,v in result.items() if k not in {"samples", "bpy_ops_calls"}},
                      ensure_ascii=False))
