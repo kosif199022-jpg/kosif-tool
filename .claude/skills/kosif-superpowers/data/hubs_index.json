@@ -530,7 +530,6 @@
     "os:macos",
     "pip:scipy",
     "pip:matplotlib",
-    "pip:fonttools",
     "npm:react",
     "npm:three",
     "yt-dlp",

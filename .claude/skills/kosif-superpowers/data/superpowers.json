@@ -14443,9 +14443,9 @@
 "requires": [
 "python3",
 "npm:rea",
-"pip:pillow",
 "node",
 "gh",
+"pip:pillow",
 "pip:opencv",
 "blender",
 "key:graphify"
@@ -15099,7 +15099,6 @@
 "pip:hypothesis",
 "python3",
 "pip:pillow",
-"pip:fonttools",
 "fonts:arabic"
 ],
 "pipeline": [

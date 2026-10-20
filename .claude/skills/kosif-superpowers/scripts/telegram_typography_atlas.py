@@ -27,20 +27,21 @@ from urllib.parse import unquote
 SCHEMA = "kosif.telegram-typography-index.v3"
 COMPATIBLE = ("kosif.telegram-typography-index.v1", "kosif.telegram-typography-index.v2", SCHEMA)
 TAGS = {
-    "kufi": ("كوفي", "كوفى", "kufi", "kufic", "kufiic"),
+    "kufi": ("كوفي", "كوفى", "kufi", "kufic", "kufiic", "kufigraph"),
     "naskh": ("نسخ", "naskh", "nask"),
     "ruqah": ("رقعة", "رقعه", "ruqaa", "ruqah", "rukah", "riqa"),
-    "diwani": ("ديواني", "ديوانى", "diwani"),
+    "diwani": ("ديواني", "ديوانى", "diwani", "diwany", "dewani"),
     "thuluth": ("ثلث", "thuluth", "thulth", "tholoth"),
     "maghrebi": ("مغربي", "مغربى", "maghrebi", "maghribi"),
     "nastaliq": ("نستعليق", "nastaliq", "nastaleeq"),
     "geometric": ("هندسي", "هندسى", "geometric", "geometry"),
-    "calligraphy": ("خط عربي", "خطوط عربية", "calligraphy", "calligraffiti", "كاليجرافي"),
+    "calligraphy": ("calligraphy", "calligraffiti", "كاليجرافي"),
     "brush": ("فرشاة", "فرشه", "brush", "pen", "قلم"),
     "handwritten": ("يدوي", "يدوى", "handwritten", "handwriting", "hand", "handmade", "handlettering"),
-    "display": ("عناوين", "بوستر", "poster", "display", "title", "headline", "typography", "تايبو"),
+    "display": ("عناوين", "بوستر", "poster", "display", "title", "headline", "typography", "تايبوغرافي", "تايبوجرافي", "تيبوغرافي", "تايبوغرافيا"),
     "logo": ("شعار", "لوجو", "logo", "brand", "branding", "هوية"),
-    "bold": ("عريض", "bold", "black", "heavy", "extrabold", "ultra"),
+    "bold": ("عريض", "bold", "black", "heavy", "extrabold"),
+    "sans": ("sans", "grotesk", "grotesque", "مقروء", "مقروءه", "مقروءة"),
     "light": ("خفيف", "رفيع", "light", "thin", "hairline"),
     "rounded": ("دائري", "دائرى", "مدور", "rounded", "round"),
     "kids": ("اطفال", "أطفال", "kids", "kid", "children", "child", "cartoon", "كرتون"),
@@ -57,30 +58,34 @@ TAGS = {
 # tags too broad to rank by when the query also names a specific style
 GENERIC_TAGS = {"arabic", "latin", "display", "bold", "light", "modern", "licensing"}
 # a request word that rarely appears in font names borrows nearby styles (lower weight)
-QUERY_EXPAND = {"logo": ("display", "geometric", "kufi", "bold"), "kids": ("rounded",), "3d": ("display", "bold"),
+QUERY_EXPAND = {"logo": ("display", "geometric", "kufi"), "kids": ("rounded",), "3d": ("display", "bold"), "handwritten": ("ruqah", "brush"),
                 "motion": ("handwritten", "brush", "calligraphy"), "calligraphy": ("thuluth", "diwani", "ruqah", "naskh"),
                 "font_creation": ("display",)}
 QUERY_STOP = {"خط", "خطوط", "فونت", "فونتات", "font", "fonts", "typeface", "for", "the", "a", "لل", "ل", "في", "من", "و"}
-FONT_EXT = {".ttf", ".otf"}
-ZIP_FONT_EXT = {".ttf", ".otf", ".woff", ".woff2"}
+FONT_EXT = {".ttf", ".otf", ".ttc", ".otc"}
+ZIP_FONT_EXT = {".ttf", ".otf", ".ttc", ".otc", ".woff", ".woff2"}
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 OPEN_LICENSES = {"OFL-claimed-unverified", "Apache-claimed-unverified", "public-domain-claimed-unverified"}
 LICENSE_RANK = {"OFL-claimed-unverified": 0, "Apache-claimed-unverified": 0, "public-domain-claimed-unverified": 0,
                 "GPL-claimed-unverified": 1, "unknown-no-license-proof": 2, "restricted-or-custom-review": 3, "uninspected": 4}
-RESTRICTED_NAME_RX = re.compile(r"(?i)\b(trial|demo|personal[\s_-]*use|unlicen[cs]ed|not[\s_-]*licen[cs]ed|no[\s_-]*licen[cs]e|not[\s_-]*for[\s_-]*commercial|non[\s_-]*commercial)\b")
+RESTRICTED_NAME_RX = re.compile(r"(?i)(?<![A-Za-z0-9])(trial|demo|personal[\s_-]*use|unlicen[cs]ed|not[\s_-]*licen[cs]ed|no[\s_-]*licen[cs]e|not[\s_-]*for[\s_-]*commercial|non[\s_-]*commercial)(?![A-Za-z0-9])")
+# Arabic wording, matched on norm()-folded text
+ARABIC_RESTRICTED_RX = re.compile(r"تجريبي|تجريبيه|ديمو|(?:للاستخدام|استخدام) الشخصي|استخدام شخصي|غير تجاري|غير مرخص|بدون ترخيص")
 PERSONAL_AND_COMMERCIAL_RX = re.compile(r"(?i)personal[\s_-]*(?:and|&|/)[\s_-]*commercial")
 
 
 def restricted_words(text: str) -> bool:
     """Trial/demo/personal-use/unlicensed/non-commercial wording ('personal and commercial use' is not a restriction)."""
-    return bool(RESTRICTED_NAME_RX.search(text or "")) and not PERSONAL_AND_COMMERCIAL_RX.search(text or "")
+    text = text or ""
+    hit = RESTRICTED_NAME_RX.search(text) or ARABIC_RESTRICTED_RX.search(norm(text))
+    return bool(hit) and not PERSONAL_AND_COMMERCIAL_RX.search(text)
 ARABIC_SAMPLE = "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"
 LATIN_SAMPLE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 MAX_MEMBER = 15_000_000          # bytes, per ZIP font member
 MAX_RATIO = 120                  # declared uncompressed/compressed ratio
 MAX_ENTRIES = 2500               # members per archive
 MAX_ARCHIVE = 2_000_000_000      # bytes, per ZIP file
-AR_LETTERS = "ء-ي"
+AR_LETTERS = "ء-يٱ-ۓ"   # Arabic letters plus Persian/Urdu forms
 IDEA_PATTERNS = [
     ("kufi-grid", "شبكة كوفية هندسية", "kufi", "Square modular strokes, alternate positive/negative space, square Arabic proportions"),
     ("naskh-editorial", "نسخ للتحرير", "naskh", "Balance readability, joining consistency, diacritics and headline-to-body pairing"),
@@ -119,14 +124,26 @@ def norm(value) -> str:
     """Lowercase, drop tatweel/harakat and fold Arabic letter variants (أإآ→ا, ة→ه, ى→ي)."""
     s = re.sub(r"[ً-ٰٟـ]", "", str(value or "")).lower()
     s = s.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا").replace("ة", "ه").replace("ى", "ي")
+    s = s.replace("ی", "ي").replace("ک", "ك").replace("ە", "ه").replace("ہ", "ه").replace("ۀ", "ه")
     return re.sub(r"\s+", " ", s).strip()
+
+
+def split_words(value) -> str:
+    """Split camelCase and underscores before matching: 'DecoTypeThuluthII' → 'Deco Type Thuluth II'."""
+    return re.sub(r"(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|_", " ", str(value or ""))
+
+
+def word_tokens(value) -> list:
+    return re.findall(r"[^\W_]+", norm(split_words(value)))
 
 
 def _needle_rx(needle: str) -> str:
     n = re.escape(norm(needle))
     if re.search(f"[{AR_LETTERS}]", needle):
-        # Arabic: optional conjunction/preposition/article prefix and a short suffix, whole word only
-        return rf"(?<![{AR_LETTERS}])(?:[وف])?(?:بال|لل|ال|ب|ل|ك)?{n}(?:ه|ات|ين|ون|يه|يات)?(?![{AR_LETTERS}])"
+        # Arabic: optional conjunction/preposition/article prefix, whole word only. Only nisba adjectives (…ي)
+        # take a suffix (كوفيه، عربيه): nouns stay exact, so نسخه (a copy) is not نسخ and خطه (a plan) is not خط.
+        suffix = "(?:ه|ات|ين|يه|يات)?" if norm(needle).endswith("ي") else ""
+        return rf"(?<![{AR_LETTERS}])(?:[وف])?(?:بال|لل|ال|ب|ل|ك)?{n}{suffix}(?![{AR_LETTERS}])"
     return rf"(?<![a-z0-9]){n}s?(?![a-z0-9])"
 
 
@@ -135,7 +152,7 @@ TAG_RX = {k: re.compile("|".join(_needle_rx(w) for w in v)) for k, v in TAGS.ite
 
 def tag_text(s) -> list:
     """Whole-word tags (Arabic prefix/suffix tolerant): 'Platinum' is not 'latin', 'مخطوطة' is not 'خط'."""
-    lowered = norm(s)
+    lowered = norm(split_words(s))
     return [key for key, rx in TAG_RX.items() if rx.search(lowered)]
 
 
@@ -145,6 +162,7 @@ def clean_name(s) -> str:
         return ""
     s = re.sub(r"[\x00-\x1f]", " ", str(s))
     s = re.sub(r"(?i)\b(?:https?://|www\.)\S+", "", s)
+    s = re.sub(r"(?i)\b(?:t(?:elegram)?\.me|[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:com|net|org|io|me|co|ir|sa|ae|eg|info|app|ly|ru|de|fr|uk|tv|xyz|design|studio|art))\b(?:/\S*)?", "", s)
     s = re.sub(r"\b\S+@\S+\.\S+\b", "", s)
     s = re.sub(r"(?<![\w])@[A-Za-z_][\w.]{2,}", "", s)
     s = re.sub(r"(?:\+?\d[\d\-() ]{8,}\d)", "", s)
@@ -361,6 +379,8 @@ def build_limitations(public) -> list:
         out.append("Nested archives, RAR/7z archives, PDFs and encrypted members were not inspected")
     else:
         out.append("ZIP/RAR members and encrypted archives were not inspected")
+    if public.get("topic_hits_tagger") == "substring-pre-v3":
+        out.append("Message-theme counts come from the original on-device scan's substring tagger and may over-count; re-run scan to re-derive them")
     out += ["HTML message text categorized via deterministic tags; no raw excerpts published",
             "Font name/OS2 embedding permissions are not copyright licenses",
             "License and original creator permissions must be verified before using or redistributing fonts",
@@ -371,6 +391,10 @@ def build_limitations(public) -> list:
 def finalize(public, themes=None) -> dict:
     fonts = public["fonts"]
     fonts.sort(key=lambda x: (x.get("family") or "", x["sha256"]))
+    sc = public.setdefault("scan_scope", {})
+    if "zip_archives_scanned" in sc:
+        sc.setdefault("loose_unparsed_font_binaries", sc.get("unparsed_font_binaries", 0))
+    sc["unparsed_font_binaries"] = sum(1 for f in fonts if not f.get("parsed"))
     themes = Counter(themes if themes is not None else public.get("topic_hits_from_message_text", {}))
     lic = Counter(f["license_status"] for f in fonts)
     public["font_license_status_counts"] = dict(sorted(lic.items(), key=lambda kv: (-kv[1], kv[0])))
@@ -387,7 +411,11 @@ def finalize(public, themes=None) -> dict:
 
 
 # ------------------------------------------------------------------ scan
-def _check_outputs(root, outs, inputs=()):
+def _inside_git(path: Path) -> bool:
+    return any((p / ".git").exists() for p in path.parents)
+
+
+def _check_outputs(root, outs, inputs=(), private=()):
     outs = [Path(p).expanduser().resolve() for p in outs]
     if len(set(outs)) != len(outs) or set(outs) & {Path(p).resolve() for p in inputs}:
         raise ValueError("outputs must be distinct new files")
@@ -396,6 +424,9 @@ def _check_outputs(root, outs, inputs=()):
             raise ValueError("outputs must be outside Telegram exports")
         if p.exists() or not p.parent.is_dir():
             raise ValueError("output paths must be new files under existing directories")
+    for i in private:
+        if _inside_git(outs[i]):
+            raise ValueError("the private locator must be written outside any git checkout (e.g. %LOCALAPPDATA%\\KOSIF\\typography-private)")
     return outs
 
 
@@ -404,7 +435,7 @@ def scan(root, public_out, private_out, *, max_fonts=20000):
     root = Path(root).expanduser().resolve()
     if not root.is_dir():
         raise ValueError("missing export directory")
-    public_out, private_out = _check_outputs(root, (public_out, private_out))
+    public_out, private_out = _check_outputs(root, (public_out, private_out), private=(1,))
     folders = sorted(p for p in root.iterdir() if p.is_dir() and not p.is_symlink() and p.name.startswith("ChatExport"))
     if not folders:
         raise ValueError("no ChatExport folders")
@@ -501,11 +532,13 @@ def enrich_zip_archives(root, old_public, old_private, new_public, new_private):
     old_public, old_private = Path(old_public).resolve(), Path(old_private).resolve()
     if not all(x.is_file() for x in (old_public, old_private)):
         raise ValueError("base public and private catalogs required")
-    new_public, new_private = _check_outputs(root, (new_public, new_private), inputs=(old_public, old_private))
+    new_public, new_private = _check_outputs(root, (new_public, new_private), inputs=(old_public, old_private), private=(1,))
     public = json.loads(old_public.read_text(encoding="utf8"))
     private = json.loads(old_private.read_text(encoding="utf8"))
     if public.get("schema") not in COMPATIBLE:
         raise ValueError("incompatible prior catalog")
+    if "archive_inventory" in public or "zip_archives_scanned" in public.get("scan_scope", {}):
+        raise ValueError("catalog already enriched; enrich a fresh scan")
     if Path(private["root_path"]).resolve() != root:
         raise ValueError("private locator belongs to another source")
     existing = {f["sha256"] for f in public["fonts"]}
@@ -528,6 +561,8 @@ def enrich_zip_archives(root, old_public, old_private, new_public, new_private):
                 infos = source.infolist()
                 if len(infos) > MAX_ENTRIES:
                     excluded["oversize_archive_entry_count"] += 1
+                    archive_reports.append({"archive_id": "zip-" + sha_file(z)[:12], "entries": len(infos), "font_entries": 0,
+                                            "skipped_font_entries": 0, "skipped": "too many entries"})
                     continue
                 archive_entry_count = len(infos)
                 for m in infos:
@@ -567,7 +602,7 @@ def enrich_zip_archives(root, old_public, old_private, new_public, new_private):
     counts.update({"zip_archives_scanned": archives, "zip_archives_unreadable": bad_archives,
                    "zip_font_entries_seen": sum(members.get(x, 0) for x in ZIP_FONT_EXT),
                    "zip_font_entries_new_unique": new_fonts, "zip_fonts_duplicate_existing": duplicates,
-                   "zip_font_entries_not_parsed": sum(v for k, v in excluded.items() if k != "unreadable_zip") + unparsed,
+                   "zip_font_entries_not_parsed": excluded["unsafe_or_encrypted_member"] + excluded["read_failure"] + unparsed,
                    "loose_unique_font_binaries": loose, "unique_font_binaries": len(public["fonts"]),
                    "font_binary_unique_including_zips": len(public["fonts"]), "raw_archives_extracted": 0})
     public["archive_inventory"] = {"zip_members_by_extension": dict(members), "unreadable_zip_count": bad_archives,
@@ -590,6 +625,8 @@ def refresh(old_public, new_public) -> dict:
     if public.get("schema") not in COMPATIBLE:
         raise ValueError("incompatible prior catalog")
     input_schema = public.get("schema")
+    if input_schema != SCHEMA and "topic_hits_tagger" not in public:
+        public["topic_hits_tagger"] = "substring-pre-v3"
     changed = Counter()
     for f in public["fonts"]:
         for k in ("family", "style", "postscript_name"):
@@ -629,36 +666,49 @@ def refresh(old_public, new_public) -> dict:
 
 
 # ------------------------------------------------------------------ find
-def find(catalog, query, limit=15, has_arabic=None, license_filter="any", collapse=True):
-    """Rank fonts by style tags and name words. One row per family (its styles listed), open-claimed licenses
-    first on ties. Words that rarely occur in font names (logo, kids, 3d …) borrow nearby styles at lower weight."""
-    q = norm(query)
+def _contains(seq, sub) -> bool:
+    n = len(sub)
+    return n > 0 and any(seq[i:i + n] == sub for i in range(len(seq) - n + 1))
+
+
+def find(catalog, query, limit=15, has_arabic=None, license_filter="any", collapse=True, need_latin=False):
+    """Rank fonts. An exact family name wins; then style tags (Arabic spelling and prefixes tolerated, camelCase split)
+    and name words. One row per family (its styles listed), open-claimed licenses first on ties. Request words that
+    rarely occur in font names (logo, kids, 3d, handwritten …) borrow nearby styles at lower weight."""
+    q = norm(split_words(query))
     if not q:
         raise ValueError("query required")
-    tags = tag_text(q)
+    tags = tag_text(query)
     specific = [t for t in tags if t not in GENERIC_TAGS]
     rank_tags = specific or tags
     near = sorted({e for t in rank_tags for e in QUERY_EXPAND.get(t, ())} - set(rank_tags))
-    want_variable = bool(re.search(r"(?<![\w])(variable|متغير|متغيره)(?![\w])", q))
-    words = [w for w in re.findall(r"[\w]+", q) if w not in QUERY_STOP and len(w) > 1 and not (want_variable and w in ("variable", "متغير", "متغيره"))]
-    words = [w for w in words if not any(TAG_RX[t].search(w) for t in tags)] or ([] if rank_tags else words)
+    want_variable = bool(re.search(r"(?<![^\W_])(variable|متغير|متغيره)(?![^\W_])", q))
+    qtok = [w for w in word_tokens(query) if w not in QUERY_STOP and not (want_variable and w in ("variable", "متغير", "متغيره"))]
+    phrase = [w for w in qtok if len(w) > 1 or w.isdigit() or w.isascii()]
+    # words that only name a style are already counted through tags
+    loose = [w for w in phrase if not any(TAG_RX[t].search(w) for t in tags)]
     groups = {}
     for font in catalog["fonts"]:
         if has_arabic is not None and bool(font.get("has_arabic")) != has_arabic:
             continue
+        if need_latin and not font.get("has_latin"):
+            continue
         if license_filter == "open" and font.get("license_status") not in OPEN_LICENSES:
             continue
-        ftags = font.get("tags", [])
-        name = norm(f"{font.get('family', '')} {font.get('style', '')}")
+        ftags = font.get("tags") or []
+        ftok = word_tokens(font.get("family"))
+        ntok = ftok + word_tokens(font.get("style"))
         score = sum(5 for t in rank_tags if t in ftags) + sum(2 for t in near if t in ftags) + (5 if want_variable and font.get("variable") else 0)
-        if words:
-            exact = norm(" ".join(words))
-            score += 12 if re.search(rf"(?<![\w]){re.escape(exact)}(?![\w])", name) else sum(
-                2 for w in words if re.search(rf"(?<![\w]){re.escape(w)}", name))
+        if phrase and ftok == phrase:
+            score += 30                                    # the family name itself
+        elif _contains(ntok, phrase):
+            score += 12
+        else:
+            score += sum(2 for w in loose if any(x.startswith(w) for x in ntok))
         if not score:
             continue
-        key = (family_key(font) or font["catalog_id"]) if collapse else font["catalog_id"]
-        sort = (-score, LICENSE_RANK.get(font.get("license_status"), 5), -int(font.get("arabic_codepoints") or 0), font.get("family") or "", font["catalog_id"])
+        key = (family_key(font) or font.get("catalog_id")) if collapse else font.get("catalog_id")
+        sort = (-score, LICENSE_RANK.get(font.get("license_status"), 5), -int(font.get("arabic_codepoints") or 0), font.get("family") or "", font.get("catalog_id") or "")
         g = groups.setdefault(key, {"sort": sort, "score": score, "font": font, "styles": set(), "copies": 0, "licenses": set()})
         g["styles"].add(font.get("style") or "")
         g["copies"] += 1
@@ -669,10 +719,13 @@ def find(catalog, query, limit=15, has_arabic=None, license_filter="any", collap
     out = []
     for g in rows[:limit]:
         x = g["font"]
-        out.append({"font_id": x["catalog_id"], "family": x.get("family"), "style": x.get("style"),
-                    "styles": sorted(s for s in g["styles"] if s)[:12], "files": g["copies"],
+        styles = sorted(s for s in g["styles"] if s)
+        rep = x.get("style") or ""
+        styles = ([rep] if rep in styles else []) + [s for s in styles if s != rep]
+        out.append({"font_id": x.get("catalog_id"), "family": x.get("family"), "style": rep,
+                    "styles": styles[:12], "files": g["copies"],
                     "arabic_glyphs": x.get("arabic_codepoints", 0), "latin": bool(x.get("has_latin")), "variable": bool(x.get("variable")),
-                    "weight_class": x.get("weight_class"), "tags": x.get("tags", []), "license_status": x["license_status"],
+                    "weight_class": x.get("weight_class"), "tags": x.get("tags") or [], "license_status": x.get("license_status"),
                     "license_mixed": len(g["licenses"]) > 1, "score": g["score"]})
     return out
 
@@ -709,6 +762,7 @@ def main(argv=None):
     f.add_argument("--arabic-only", action="store_true")
     f.add_argument("--license", choices=("any", "open"), default="any", help="open = OFL/Apache/public-domain claims only (still unverified)")
     f.add_argument("--all-copies", action="store_true", help="do not collapse identical family/style rows")
+    f.add_argument("--latin", action="store_true", help="only fonts that also cover basic Latin (bilingual work)")
     args = ap.parse_args(argv)
     try:
         if args.action == "doctor":
@@ -724,7 +778,7 @@ def main(argv=None):
         else:
             catalog = json.loads(Path(args.index).read_text(encoding="utf-8"))
             print(json.dumps(find(catalog, args.query, max(1, min(50, args.limit)), True if args.arabic_only else None,
-                                  args.license, not args.all_copies), ensure_ascii=False, indent=2))
+                                  args.license, not args.all_copies, args.latin), ensure_ascii=False, indent=2))
         return 0
     except Exception as e:  # noqa: BLE001
         print(json.dumps({"success": False, "error": str(e)}, ensure_ascii=False), file=sys.stderr)

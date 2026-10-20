@@ -227,10 +227,10 @@ def freshness(records) -> dict:
 DELIVERABLES = [  # priority order: the first that matches is the primary deliverable
     ("reverse", r"هندسه عكسيه|جفرا|ghidra|\brea\b|reverse|binary|\.exe|\.dll|\.apk|app\.asar|\basar\b|electron|الكترون"),
     ("code", r"كود|برمجه|تطبيق|موقع|سكربت|\bbug\b|\bcode\b|\bapp\b|website|script|\bapi\b|repo|مستودع|برنامج"),
-    ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|فيلم|video|montage|\breels?\b|motion|animation|film|\bmp4\b"),
-    ("audio", r"بودكاست|موسيقى|اغنيه|podcast|music|song"),
+    ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|(?<![ء-ي])[وف]?(?:حرك|متحرك|متحركه)(?![ء-ي])|فيلم|video|montage|\breels?\b|motion|animation|film|\bmp4\b|lyric|كلمات (?:ال)?اغني(?:ه|تي)"),
+    ("audio", r"بودكاست|موسيقى|اغني(?:ه|تي|ات)|podcast|music|song"),
     ("3d", r"ثلاثي|\b3d\b|بلندر|blender|\bglb\b|three\.?js"),
-    ("image", r"صوره|صور|تصميم|بوستر|شعار|لوجو|image|photo|poster|logo|design|\bpng\b|\bjpg\b"),
+    ("image", r"صوره|صور|تصميم|بوستر|شعار|لوجو|بطاقه|كارت|دعوه|غلاف|هويه بصريه|image|photo|poster|logo|design|\bcard\b|invitation|\bcover\b|\bpng\b|\bjpg\b"),
     ("data", r"بيانات|اكسل|جدول|\bdata\b|\bcsv\b|excel|chart|dashboard"),
     ("document", r"تقرير|مستند|وورد|\bpdf\b|عرض تقديمي|شرائح|report|document|docx|slides|deck|مقال|article"),
     ("research", r"ابحث|مصادر|research|sources|قارن|compare"),
@@ -244,21 +244,25 @@ PLATFORM_RX = {"os:macos": r"mac|ماك|\bios\b|xcode|apple", "engine:android": 
 MUST_HAVE = [
     ("توقيت الكلمات من صوت المستخدم", r"(كلمات|نص|ترجمه|captions?|subtitles?|words).{0,40}(صوت|فويس|voice|audio)|(صوت|فويس|voice).{0,40}(كلمات|ترجمه|captions?|words)",
      "transcription word timestamps whisper alignment words.json word timing sync"),
-    ("نص عربي صحيح RTL", r"عربي|عربيه|arabic", "arabic rtl shaping whole word kinetic typography"),
+    ("نص عربي صحيح RTL", r"عربي|عربيه|arabic|كوفي|ديواني|نستعليق|(?<![ء-ي])[وف]?(?:بال|خط\s+(?:ال)?)(?:رقعه|ثلث|نسخ|مغربي)(?![ء-ي])", "arabic rtl shaping whole word kinetic typography"),
     ("اختبارات آلية", r"اختبار|tests?\b|testing", "unit tests test suite regression"),
     ("تقرير PDF", r"\bpdf\b", "pdf report generate"),
     ("شخصية متحركة", r"شخصيه|character", "character rig animation blink walk wave"),
     ("مقاس ريلز ومناطق آمنة", r"ريلز|reels?|9:16|تيك ?توك|tiktok|shorts", "vertical 9:16 reels safe area"),
     ("تحليل تطبيق Electron بأدلة", r"electron|asar|الكترون", "electron asar javascript application analysis"),
-    ("بناء أصلي نظيف (clean-room) مع بوابة أصالة", r"(ابني|ابن|build|اعمل).{0,40}(مشابه|similar|زي|like)|ميزه مشابهه", "originality check clean room reimplementation specification"),
+    ("بناء أصلي نظيف (clean-room) مع بوابة أصالة", r"(ابني|ابن|build|اعمل).{0,40}(مشابه|similar|زي|like)|ميزه مشابهه|استفد من (?:افكار|فكره)|استلهم|خد(?:وا)? (?:افكار|فكره)|borrow (?:the )?ideas|inspired by", "originality check clean room reimplementation specification"),
     ("محاسبة ومخزون بأرقام صحيحة", r"محاسب|مخزون|inventory|accounting|ledger", "accounting ledger inventory bookkeeping"),
     ("مونتاج وقطع", r"مونتاج|montage", "montage edit cut transitions"),
     ("ترجمة", r"^ترجم|translate", "translation"),
     ("خط مناسب برخصة مؤكدة", None, "arabic font typography font matching fonts license kinetic typography lettering"),
 ]
 _AR = "\u0621-\u064a"
-FONT_RX = (rf"(?<![{_AR}])[وف]?(?:بال|لل|ال|ب|ل)?(?:خطوط|خط|فونتات|فونت)(?![{_AR}])|كوفي|ديواني|كاليجراف|تايبو|حروفيه|"
-           r"\bfonts?\b|typeface|typograph|lettering|calligraph|\bglyphs?\b|شعار|لوجو|\blogos?\b|بوستر|\bposters?\b")
+_NOT_FONT_LINE = r"(?!\s+(?:ال)?(?:زمني|انتاج|ساخن|سير|مستقيم|احمر|طول|عرض|الدفاع|النهايه|البدايه|سكه|هاتف|تليفون))"
+FONT_RX = (rf"(?<![{_AR}])[وف]?(?:بال|لل|ال|ب|ل)?(?:خطوط|خط|فونتات|فونت)(?![{_AR}]){_NOT_FONT_LINE}|كوفي|ديواني|نستعليق|كاليجراف|تايبو|حروفيه|"
+           rf"(?<![{_AR}])[وف]?بال(?:رقعه|ثلث|نسخ|مغربي)(?![{_AR}])|"
+           r"\bfonts?\b|typeface|typograph|lettering|calligraph|\bglyphs?\b|شعار(?!\s*(?:ال)?(?:اعلاني|تسويقي|نصي|الحمله|حمله))|لوجو|\blogos?\b|بوستر|\bposters?\b")
+ARABIC_ONLY_STYLES = {"kufi", "naskh", "ruqah", "diwani", "thuluth", "maghrebi", "nastaliq"}
+STYLE_SKIP = {"arabic", "latin", "licensing", "font_creation"}
 MUST_HAVE = [(n, FONT_RX if rx is None else rx, terms) for n, rx, terms in MUST_HAVE]
 ARABIC_TERMS = {  # the Arabic-text need means different checks per deliverable
     "image": "arabic shaping harfbuzz glyph ligature font logo poster rtl lettering",
@@ -290,6 +294,15 @@ ASSET_LIBRARIES = [{
 }]
 
 
+BILINGUAL_RX = r"انجليزي|انكليزي|english|\blatin\b|لاتيني|ثنائي اللغه|bilingual"
+
+
+def _atlas():
+    sys.path.insert(0, str(HERE))
+    import telegram_typography_atlas as atlas   # same folder; pure Python for tag_text/find
+    return atlas
+
+
 def asset_libraries(task: str) -> list:
     """Libraries the request needs, with live counts read from their public index (no private paths)."""
     low = norm_ar(task.lower())
@@ -300,31 +313,41 @@ def asset_libraries(task: str) -> list:
         files = sorted(SKILL.glob(lib["index_glob"]))
         if not files:
             continue
+        atlas = _atlas()
         idx = files[-1]
         d = jload(idx, {}) or {}
         fonts = d.get("fonts", [])
         lic = collections.Counter(f.get("license_status", "?") for f in fonts)
-        styles = []
-        for w in re.findall(r"[\w]+", low):
-            s = FONT_STYLES.get(w) or FONT_STYLES.get(w[2:] if w.startswith("ال") else w)
-            if s and s not in styles:
+        styles = [s for s in atlas.tag_text(task) if s not in STYLE_SKIP]
+        for w in re.findall(r"[\w]+", low):                 # request words the atlas has no tag for
+            s = FONT_STYLES.get(w)
+            if s and s not in styles and s not in ("arabic",):
                 styles.append(s)
-        arabic = bool(re.search(r"عربي|arabic|[\u0621-\u064a]", low))
+        bilingual = bool(re.search(BILINGUAL_RX, low))
+        english_only = bool(re.search(r"انجليزي فقط|english only|لاتيني فقط", low))
+        arabic = not english_only and bool(re.search(r"عربي|arabic", low) or set(styles) & ARABIC_ONLY_STYLES
+                                           or (re.search(r"[\u0621-\u064a]", low) and not bilingual))
         q = " ".join(styles) or ("arabic" if arabic else "display")
+        flags = (" --arabic-only" if arabic else "") + (" --latin" if bilingual or english_only else "")
+        open_hits = atlas.find(d, q, 5, True if arabic else None, "open", True, bilingual or english_only) if fonts else []
         rel = idx.relative_to(SKILL).as_posix()
+        pre = SKILL.relative_to(REPO).as_posix() if SKILL != REPO else "."
+        routes = dict(lib["routes"])
+        if not open_hits:
+            routes["A"] += " — لا يوجد في مكتبتك خط مفتوح الرخصة لهذا النمط: نزّل خطًا مفتوحًا من مصدره الرسمي، أو اختر الخطة B"
         out.append({"id": lib["id"], "title_ar": lib["title_ar"], "title_en": lib["title_en"], "index": rel,
                     "stats": {"fonts": len(fonts), "arabic": sum(1 for f in fonts if f.get("has_arabic")),
                               "families": (d.get("script_coverage") or {}).get("unique_font_families", 0),
                               "ideas": len(d.get("typography_design_ideas", [])), "license": dict(lic.most_common()),
                               "redistribution_approved": sum(1 for f in fonts if f.get("redistribution_approved"))},
-                    "styles_detected": styles,
-                    "command": f'python3 scripts/telegram_typography_atlas.py find --index {rel} "{q}"' + (" --arabic-only" if arabic else "") + " --limit 20",
-                    "where": lib["where"], "gate": lib["gate"], "routes": lib["routes"], "plan_tools": lib["plan_tools"]})
+                    "styles_detected": styles, "bilingual": bilingual, "open_license_candidates": [h["family"] for h in open_hits],
+                    "command": f'python3 {pre}/scripts/telegram_typography_atlas.py find --index {pre}/{rel} "{q}"{flags} --limit 20',
+                    "where": lib["where"], "gate": lib["gate"], "routes": routes, "plan_tools": lib["plan_tools"]})
     return out
 VERIFY_TERMS = {
     "video": "verify video delivery gate ffprobe loudness frames qa", "audio": "loudness lufs verify audio qa",
     "code": "tests test suite regression golden unit coverage", "reverse": "evidence originality tests golden parity",
-    "image": "contrast check visual qa", "3d": "frames verify render check", "data": "validation check numbers reconcile",
+    "image": "contrast legibility wcag golden still arabic typography font qa", "3d": "frames verify render check", "data": "validation check numbers reconcile",
     "document": "proofread review check anchor numbers", "research": "citation fact check sources", "text": "proofread review language",
 }
 ARCHETYPES = {
@@ -355,15 +378,25 @@ AFFINITY = {"code": {"motion": 0.4, "reverse": 0.4}, "reverse": {"motion": 0.4},
             "video": {"reverse": 0.3}, "audio": {"reverse": 0.3}, "image": {"reverse": 0.3, "docs": 0.5, "code": 0.6}, "3d": {"reverse": 0.3}}
 
 
-def affinity(primary: str, sp_domain: str, families) -> float:
+MEDIA_TIME_FAMILIES = {"music-beat-sound", "audio-sync-captions", "voice-tts", "transitions-cuts", "video-download"}
+
+
+def affinity(primary: str, sp_domain: str, families, still: bool = False) -> float:
     a = AFFINITY.get(primary, {})
     f = a.get("reverse", 1.0) if "software-investigation" in families else 1.0
+    if still and set(families) & MEDIA_TIME_FAMILIES:   # a still image: sound and cutting are off-target
+        f = min(f, 0.3)
     return min(f, a.get(sp_domain, 1.0))
 
 
 def analyse(task: str) -> dict:
     low = norm_ar(task.lower())
     deliver = [k for k, rx in DELIVERABLES if re.search(rx, low)]
+    if (re.search(FONT_RX, low) and re.search(r"(?<![ء-ي])(?:اختار|اختر|رشح|اقترح|ترشح)|\b(?:pick|choose|suggest)\b", low)
+            and not re.search(r"ابني|برمج|اكتب كود|\bbuild\b|\bcode\b", low)):
+        deliver = ["image"] + [d for d in deliver if d not in ("code", "image")]
+    if not deliver and re.search(FONT_RX, low):
+        deliver = ["image"]   # choosing or designing type is a visual deliverable
     numbers = re.findall(r"\d+(?:[.,]\d+)?\s*(?:ثانيه|ثواني|ث|دقيقه|دقائق|sec|min|fps|%|k)?", task)
     aspects = re.findall(r"\b(?:9:16|16:9|1:1|4:5|21:9|4:3)\b", task)
     paths = re.findall(r"[\w./\\:-]+\.(?:mp4|mov|wav|mp3|m4a|png|jpg|jpeg|pdf|docx|xlsx|csv|json|py|js|ts|blend|glb|exe|dll|apk|asar)\b", task, re.I)
@@ -380,14 +413,19 @@ def analyse(task: str) -> dict:
         level = "L2"
     primary = deliver[0] if deliver else ("text" if level == "L0" else "unspecified")
     own = {"voice": bool(re.search(OWN_VOICE_RX, low)), "footage": bool(re.search(OWN_FOOTAGE_RX, low))}
+    if (own["voice"] or own["footage"]) and level in ("L0", "L1"):
+        level = "L2"   # the user's own files are involved
     musts = [{"need": n, "terms": ARABIC_TERMS.get(primary, terms) if n.startswith("نص عربي") else terms} for n, rx, terms in MUST_HAVE if re.search(rx, low)]
+    if re.search(FONT_RX, low) and re.search(BILINGUAL_RX, low):
+        musts.append({"need": "زوج خطوط يغطي العربية واللاتينية", "terms": "arabic latin font pairing bilingual typography type pairings"})
     platforms = [k for k, rx in PLATFORM_RX.items() if re.search(rx, low)]
     questions = []
     if primary == "video" and not aspects:
         questions.append("المقاس والمنصة (9:16 ريلز؟ 16:9 يوتيوب؟)")
     if (own["voice"] or own["footage"] or primary in ("reverse",)) and not existing:
         questions.append("أين الملف المصدر؟ (رفع في الجلسة، مسار على جهازك عبر Remote Desktop Commander بإذنك، أو رابط)")
-    return {"request": task, "level": level, "deliverables": deliver or [primary], "primary": primary, "ambition": ambition,
+    still = primary == "image" and not set(deliver) & {"video", "audio"}
+    return {"request": task, "level": level, "deliverables": deliver or [primary], "primary": primary, "ambition": ambition, "still": still,
             "constraints": {"numbers": [n.strip() for n in numbers if n.strip()], "aspects": aspects, "own_assets": own, "platforms_mentioned": platforms},
             "files_mentioned": paths, "files_found": existing, "must_haves": musts, "open_questions": questions,
             "claude_must_answer": ["ماذا يريد حرفيًا؟", "ما النتيجة النهائية؟", "ما المشكلة الأساسية؟", "المتطلبات الصريحة والضمنية",
@@ -490,7 +528,7 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         if plat and not plat & mentioned_platforms:
             fit *= 0.3
         dom = collections.Counter(a.get("domain") or "motion" for a, _ in ms).most_common(1)[0][0]
-        fit *= affinity(an["primary"], dom, fam_count)
+        fit *= affinity(an["primary"], dom, fam_count, an["still"])
         hits = sorted(((a, sc) for a, sc in ms if sc > 0), key=lambda x: -x[1])
         badges = [local_badge(a, pres) for a, _ in (hits or ms)]
         lb = min(badges, key=LOCAL_RANK.index) if badges else "📄"
@@ -522,7 +560,7 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
             sid = atom2sp.get(r["id"])
             if sid and sid in sp_by_id:
                 ctx = by_id[r["id"]][1] / top_atom   # how much this atom also matches the whole request
-                agg[sid] += sc * (1 + ctx) * affinity(an["primary"], sp_by_id[sid]["domain"], sp_by_id[sid]["families"])
+                agg[sid] += sc * (1 + ctx) * affinity(an["primary"], sp_by_id[sid]["domain"], sp_by_id[sid]["families"], an["still"])
         ranked_need = agg.most_common(2)
         pick = [ranked_need[0][0]] if ranked_need else []
         if len(ranked_need) > 1 and ranked_need[1][1] >= 0.75 * ranked_need[0][1]:
@@ -554,7 +592,7 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         if sc > 0 and atom2sp.get(r["id"]):
             sid = atom2sp[r["id"]]
             base = sp_by_id.get(sid)
-            aff = affinity(an["primary"], base["domain"], base["families"]) if base else affinity(an["primary"], r.get("domain") or "motion", [r.get("family")])
+            aff = affinity(an["primary"], base["domain"], base["families"], an["still"]) if base else affinity(an["primary"], r.get("domain") or "motion", [r.get("family")], an["still"])
             vagg[sid] += sc * aff
     verifiers = []
     for sid, _ in vagg.most_common(40):
@@ -601,6 +639,16 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         guides = [f"hub.py find failed: {exc}"]
     readiness = tool_readiness()
     libs = asset_libraries(task)
+    # the user's own voice or footage goes through Montage Pro and real word timing in every plan
+    forced = []
+    if (an["constraints"]["own_assets"]["voice"] or an["constraints"]["own_assets"]["footage"]) and an["primary"] in ("video", "audio", "unspecified"):
+        forced = [tid for tid in ("montage-pro", "repo-words-convert") if tid in tools]
+    for tid in forced:
+        if tid not in [t["id"] for t in tools_hit]:
+            reg_t = tools[tid]
+            tools_hit.insert(0, {"id": tid, "title_ar": reg_t.get("title_ar"), "title_en": reg_t.get("title_en"), "area": reg_t.get("area"),
+                                 "state": readiness["state"].get(tid), "missing": [], "families": reg_t.get("families", []),
+                                 "command": (reg_t.get("commands") or [{}])[0].get("example")})
     for lib in libs:
         for tid in dict.fromkeys(t for v in lib["plan_tools"].values() for t in v):
             if tid in tools and tid not in [t["id"] for t in tools_hit]:
@@ -654,7 +702,7 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         keys = [k for k in req if str(k).startswith("key:") and pres.get(k) != "present"]
         cf = {f for x in chosen for f in x.get("families", [])}
         tl = [t for t in tools_hit if set(t["families"]) & cf] or tools_hit[:2]
-        lib_tools = [tid for lib in libs for tid in lib["plan_tools"].get(name, [])]
+        lib_tools = forced + [tid for lib in libs for tid in lib["plan_tools"].get(name, [])]
         tl = [t for t in tools_hit if t["id"] in lib_tools] + [t for t in tl if t["id"] not in lib_tools]
         doc_share = sum(1 for x in chosen if x["local_badge"] in ("📄", "💡")) / max(1, len(chosen))
         uncovered = [m["need"] for m in must_cov if m["status"] == "covered" and not set(m["superpowers"]) & {x["id"] for x in chosen}]
@@ -753,7 +801,8 @@ def render(b: dict) -> str:
         L += [f"## مكتبات أصولك: {lib['title_ar']}", "",
               f"- {s['fonts']:,} خط فريد · {s['arabic']:,} يدعم العربية · {s['families']:,} عائلة · {s['ideas']} فئة أفكار · رخص: {lic}"
               + f" · معتمد لإعادة التوزيع: {s['redistribution_approved']}",
-              f"- النمط المكتشف: {', '.join(lib['styles_detected']) or '—'} · ابحث: `{lib['command']}`",
+              f"- النمط المكتشف: {', '.join(lib['styles_detected']) or '—'}{' · ثنائي اللغة' if lib.get('bilingual') else ''} · ابحث: `{lib['command']}`",
+              f"- مرشحات برخصة مفتوحة مُدّعاة (غير مؤكدة): {', '.join(lib.get('open_license_candidates') or []) or 'لا يوجد في مكتبتك لهذا النمط'}",
               f"- المكان: {lib['where']}", f"- البوابة: {lib['gate']}", ""]
     pl = b["plans"]
     L += ["## مقارنة الخطط (مناهج مختلفة؛ استبدلها بمناهجك من المرحلة 4 إن كانت أقوى)", "",

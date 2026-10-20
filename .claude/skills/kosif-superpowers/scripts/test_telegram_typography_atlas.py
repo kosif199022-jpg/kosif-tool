@@ -93,17 +93,37 @@ class TaggingAndCleaning(unittest.TestCase):
             self.assertIn("ruqah", tag_text(spelling), spelling)
         self.assertIn("kids", tag_text("خط أطفال"))
 
+    def test_second_review_tagging_fixes(self):
+        self.assertEqual(tag_text("نسخة تجريبية"), [])            # a copy/version, not Naskh
+        self.assertNotIn("arabic", tag_text("خطة تسويق"))           # a plan, not a font
+        self.assertIn("thuluth", tag_text("DecoTypeThuluthII"))      # camelCase is split
+        self.assertIn("bold", tag_text("SemiBold"))
+        self.assertIn("light", tag_text("Arabic_ExtraLight"))
+        self.assertNotIn("bold", tag_text("Ultra Light"))
+        self.assertIn("display", tag_text("تايبوغرافي"))
+        self.assertIn("kufi", tag_text("الخطوط الكوفية"))
+        self.assertIn("diwani", tag_text("Diwany Pro"))
+        self.assertNotIn("calligraphy", tag_text("خط عربي"))         # 'Arabic font' is not a calligraphy request
+        self.assertIn("kufi", tag_text("كوفی"))                      # Persian ی folds to ي
+
     def test_sanitize_names(self):
         self.assertNotIn("someone@example.com", clean_name("Font someone@example.com"))
         self.assertNotIn("+966555555555", clean_name("Logo +966555555555"))
         self.assertEqual(clean_name("https://www.behance.net/SomeDesigner"), "")
         self.assertEqual(clean_name("Lifta Stencil @behfont"), "Lifta Stencil")
+        self.assertEqual(clean_name("Kufi t.me/secretchannel"), "Kufi")
+        self.assertEqual(clean_name("Unlicenced font from LucasFonts.com"), "Unlicenced font from")
+        self.assertEqual(clean_name("Font.company Bold"), "Font.company Bold")
 
     def test_license_wording(self):
         self.assertEqual(A.license_from_text("Licensed under the SIL Open Font License, Version 1.1"), "OFL-claimed-unverified")
         self.assertEqual(A.license_from_text("", "ABC Favorit Arabic Unlicensed Trial"), "restricted-or-custom-review")
         self.assertEqual(A.license_from_text("Free for personal use only. OFL"), "restricted-or-custom-review")  # restriction wins
         self.assertFalse(A.restricted_words("Free for personal and commercial use"))
+        self.assertTrue(A.restricted_words("Fun Play Arabic_DEMO"))
+        self.assertFalse(A.restricted_words("Relic Demotic"))
+        self.assertTrue(A.restricted_words("خط نسخة تجريبية"))
+        self.assertEqual(A.license_from_text("Licensed under the SIL Open Font License", "Ink Brush Arabic_DEMO"), "restricted-or-custom-review")
         self.assertEqual(A.license_from_text(""), "unknown-no-license-proof")
 
     def test_negated_license_and_family_keys(self):
@@ -152,6 +172,15 @@ class Search(unittest.TestCase):
         self.assertEqual([r["family"] for r in find(self.catalog, "variable")], ["Flex Sans"])
         self.assertEqual(find(self.catalog, "خط متغير")[0]["family"], "Flex Sans")
 
+    def test_exact_family_names_rank_first_and_latin_filter(self):
+        self.catalog["fonts"] += [font_row(10, "Hafez 1"), font_row(11, "Hafez 2"), font_row(12, "aref_naskh"),
+                                  font_row(13, "Noto Naskh Arabic", has_latin=True, lic="OFL-claimed-unverified")]
+        self.assertEqual(find(self.catalog, "Hafez 2")[0]["family"], "Hafez 2")
+        self.assertEqual(find(self.catalog, "aref naskh")[0]["family"], "aref_naskh")
+        self.assertEqual([r["family"] for r in find(self.catalog, "naskh", need_latin=True)], ["Noto Naskh Arabic"])
+        row = find(self.catalog, "kufi")[0]
+        self.assertEqual(row["styles"][0], row["style"])        # the shown style leads its list
+
     def test_rare_request_words_borrow_nearby_styles(self):
         self.assertIn("Big Display", [r["family"] for r in find(self.catalog, "شعار")])
         self.assertIn("Somar Rounded", [r["family"] for r in find(self.catalog, "خط أطفال")])
@@ -165,6 +194,8 @@ class Refresh(unittest.TestCase):
                  font_row(4, "Lifta Stencil @behfont"),
                  {"sha256": f"{9:064x}", "catalog_id": "type-9", "family": "", "style": "", "parsed": False,
                   "license_status": "uninspected", "tags": [], "redistribution_approved": False}]
+        fonts.append(font_row(5, "Kufi t.me/secretchannel"))
+        fonts.append(font_row(6, "Fun Play Arabic_DEMO"))
         with tempfile.TemporaryDirectory() as tmp:
             src = Path(tmp) / "old.json"
             src.write_text(json.dumps(public_index(fonts, visual_sample_review={"sample_size": 80}), ensure_ascii=False), encoding="utf8")
@@ -176,12 +207,16 @@ class Refresh(unittest.TestCase):
             d = json.loads(text)
             self.assertNotIn("https://", text)
             self.assertNotIn("@behfont", text)
+            self.assertNotIn("t.me", text)
             by = {f["catalog_id"]: f for f in d["fonts"]}
+            self.assertEqual(by[f"type-{6:016x}"]["license_status"], "restricted-or-custom-review")
+            self.assertEqual(d["topic_hits_tagger"], "substring-pre-v3")
+            self.assertEqual(d["scan_scope"]["unparsed_font_binaries"], 1)
             self.assertEqual(by[f"type-{1:016x}"]["tags"], [])
             self.assertEqual(by[f"type-{2:016x}"]["license_status"], "restricted-or-custom-review")
             self.assertEqual(d["schema"], A.SCHEMA)
-            self.assertEqual(d["scan_scope"]["unique_font_binaries"], 5)
-            self.assertEqual(d["script_coverage"]["unique_font_families"], 4)    # the unparsed '' is not a family
+            self.assertEqual(d["scan_scope"]["unique_font_binaries"], 7)
+            self.assertEqual(d["script_coverage"]["unique_font_families"], 6)    # the unparsed '' is not a family
             self.assertEqual(len(d["typography_design_ideas"]), len(A.IDEA_PATTERNS))
             self.assertFalse(any("not recursively inspected" in x for x in d["limitations"]))
             self.assertTrue(all(f["redistribution_approved"] is False for f in d["fonts"]))
@@ -198,7 +233,7 @@ class Refresh(unittest.TestCase):
         self.assertEqual(d["scan_scope"]["unique_font_binaries"], len(d["fonts"]))
         self.assertEqual(len({f["sha256"] for f in d["fonts"]}), len(d["fonts"]))
         self.assertFalse(any(f["redistribution_approved"] for f in d["fonts"]))
-        for bad in ("https://", "http://", "t.me/", "C:\\\\Users", "/home/", "\"relative_source\"", "\"zip_member\"", "\"root_path\""):
+        for bad in ("https://", "http://", "t.me/", ".com", "C:\\\\Users", "/home/", "\"relative_source\"", "\"zip_member\"", "\"root_path\""):
             self.assertNotIn(bad, text)
         self.assertEqual(sum(d["font_license_status_counts"].values()), len(d["fonts"]))
 
@@ -305,6 +340,19 @@ class ScanAndZips(unittest.TestCase):
                 enrich_zip_archives(root, pub, prv, same, same)
             with self.assertRaisesRegex(ValueError, "outside"):
                 enrich_zip_archives(root, pub, prv, root / "x.json", Path(tmp) / "y.json")
+
+    def test_enrich_refuses_an_already_enriched_catalog_and_private_files_in_git(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "input"; root.mkdir()
+            fixture(root)
+            pub, prv = Path(tmp) / "p.json", Path(tmp) / "q.json"
+            scan(root, pub, prv)
+            enrich_zip_archives(root, pub, prv, Path(tmp) / "c.json", Path(tmp) / "d.json")
+            with self.assertRaisesRegex(ValueError, "already enriched"):
+                enrich_zip_archives(root, Path(tmp) / "c.json", Path(tmp) / "d.json", Path(tmp) / "e.json", Path(tmp) / "f.json")
+            repo = Path(tmp) / "checkout"; (repo / ".git").mkdir(parents=True)
+            with self.assertRaisesRegex(ValueError, "outside any git checkout"):
+                scan(root, Path(tmp) / "p2.json", repo / "private.json")
 
     def test_member_reads_are_bounded_whatever_the_header_says(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -86,6 +86,31 @@ class ProtocolTests(unittest.TestCase):
         self.assertIn("font-fidelity-lab", [t["id"] for t in b["plans"]["B"]["tools"]])
         self.assertIn("مكتبات أصولك", S.render(b))
 
+    def test_font_detection_styles_and_own_voice(self):
+        for task in ("اعمل خط زمني للمشروع", "عايز شعار اعلاني للحملة", "خطوات تثبيت بايثون"):
+            self.assertEqual(S.asset_libraries(task), [], task)     # a timeline, a slogan, steps: not fonts
+        cases = {"صمم بطاقة بالرقعة": "ruqah", "خط للأطفال لكتاب قصص": "kids", "عايز الخطوط الكوفية لبوستر": "kufi",
+                 "اختار لي خط عربي مقروء لتطبيق موبايل": "sans"}
+        for task, style in cases.items():
+            libs = S.asset_libraries(task)
+            self.assertTrue(libs and style in libs[0]["styles_detected"], (task, libs and libs[0]["styles_detected"]))
+            self.assertIn(".claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py", libs[0]["command"])  # runs from the repo root
+        self.assertEqual(S.analyse("اختار لي خط عربي مقروء لتطبيق موبايل")["primary"], "image")
+        bi = S.asset_libraries("صمم شعار بخط كوفي عربي وإنجليزي")[0]
+        self.assertTrue(bi["bilingual"])
+        self.assertIn("--latin", bi["command"])
+        self.assertTrue(any(m["need"].startswith("زوج خطوط") for m in S.analyse("صمم شعار بخط كوفي عربي وإنجليزي")["must_haves"]))
+        diwani = S.asset_libraries("اعمل بوستر رمضان بخط ديواني")[0]
+        if not diwani["open_license_candidates"]:
+            self.assertIn("لا يوجد في مكتبتك خط مفتوح", diwani["routes"]["A"])
+        b = S.build_brief("حرك كلمات أغنيتي بخط يدوي على صوتي 9:16")
+        self.assertEqual(b["analysis"]["primary"], "video")
+        self.assertEqual(b["analysis"]["level"], "L2")
+        for k in "ABC":
+            ids = [t["id"] for t in b["plans"][k]["tools"]]
+            self.assertIn("montage-pro", ids, k)
+            self.assertIn("telegram-typography-atlas", ids, k)
+
     def test_count_and_deep(self):
         sp = [x["id"] for x in self.b["plans"]["A"]["superpowers"]]
         c = S.count(sp)

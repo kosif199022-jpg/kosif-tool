@@ -185,7 +185,7 @@
 | `key:unspecified` | key | 172 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
 | `node` | bin | 166 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
 | `pip:numpy` | pip | 129 | `pip install numpy` |
-| `pip:pillow` | pip | 125 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
+| `pip:pillow` | pip | 124 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
 | `npm:remotion` | npm | 115 | `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3` |
 | `pip:opencv` | pip | 94 | `pip install opencv-python-headless` |
 | `fonts:arabic` | font | 91 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |

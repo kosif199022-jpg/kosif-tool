@@ -2032,6 +2032,11 @@
    "label": "scripts/skill_intelligence.py"
   },
   {
+   "id": "script:scripts/telegram_typography_atlas.py",
+   "kind": "script",
+   "label": "scripts/telegram_typography_atlas.py"
+  },
+  {
    "id": "script:scripts/smart_draw.py",
    "kind": "script",
    "label": "scripts/smart_draw.py"
@@ -2065,11 +2070,6 @@
    "id": "script:scripts/test_telegram_typography_atlas.py",
    "kind": "script",
    "label": "scripts/test_telegram_typography_atlas.py"
-  },
-  {
-   "id": "script:scripts/telegram_typography_atlas.py",
-   "kind": "script",
-   "label": "scripts/telegram_typography_atlas.py"
   },
   {
    "id": "script:scripts/test_unified_cinematic.py",
@@ -2300,6 +2300,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_superpower_fusion.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_skill_intelligence.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_skill_intelligence.py"
   },
   {
    "id": "test:tests/test_think.py",
@@ -4909,7 +4914,7 @@
    "from": "fam:runnable-tools",
    "to": "req:pip:pillow",
    "rel": "needs",
-   "w": 9
+   "w": 8
   },
   {
    "from": "fam:runnable-tools",
@@ -6634,6 +6639,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/skill_intelligence.py",
+   "to": "script:scripts/telegram_typography_atlas.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/smart_draw.py",
    "to": "script:scripts/creative_paint.py",
    "rel": "imports",
@@ -7134,6 +7145,12 @@
   {
    "from": "script:scripts/superpowers_unified.py",
    "to": "test:tests/test_superpowers_unified.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/telegram_typography_atlas.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_skill_intelligence.py",
    "rel": "tested_by",
    "w": 1
   },

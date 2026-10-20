@@ -16,7 +16,7 @@
 | **خطوط مختلفة بالبصمة SHA-256 (الإجمالي)** | **5,514** |
 | تدعم العربية (20 حرفًا أساسيًا على الأقل) · تدعم اللاتينية | 4,634 · 3,932 |
 | أسماء عائلات مختلفة (بلا تمييز حالة الأحرف) · أزواج عائلة/وزن | 2,412 · 4,058 |
-| حالة الرخصة من بيانات الخط نفسه | 1,066 OFL مُدّعاة · 3 Apache · 11 GPL · 529 مقيدة أو تحتاج مراجعة (منها 397 تقول أسماؤها Trial أو Demo أو Personal Use) · 3,869 بلا دليل · 36 لم تُحلل |
+| حالة الرخصة من بيانات الخط نفسه | 1,066 OFL مُدّعاة · 3 Apache · 11 GPL · 534 مقيدة أو تحتاج مراجعة (منها 402 تقول أسماؤها Trial أو Demo أو Personal Use أو Unlicensed) · 3,864 بلا دليل · 36 لم تُحلل |
 | معتمد لإعادة التوزيع | **0**: الحقل `redistribution_approved=false` لكل خط |
 | الصور | 2,981 صورة قُرئت أبعادها فقط، و80 عينة رُئيت مرة واحدة بشكل خاص |
 
@@ -25,7 +25,7 @@
 ## تعليمات إلزامية لـClaude عند أي طلب متعلق بالخطوط
 
 1. افهم الاستخدام: بوستر، شعار، هوية، نص طويل، خط عربي أصلي، بطاقات، واجهة، موشن جرافيك، عنوان 3D، خط أطفال أو تصميم دعائي.
-2. ابحث في الفهرس قبل الاختيار، وبالعربي أو الإنجليزي. البحث يفهم كلمات الأنماط بأي إملاء (كوفي، رقعة/رقعه/الرقعة، ديواني، ثلث، نسخ، نستعليق، أطفال، شعار…) ويعيد صفًا واحدًا لكل عائلة مع أوزانها وعدد نسخها وحالة رخصتها.
+2. ابحث في الفهرس قبل الاختيار، وبالعربي أو الإنجليزي. البحث يفهم كلمات الأنماط بأي إملاء (كوفي، رقعة/رقعه/الرقعة، ديواني، ثلث، نسخ، نستعليق، أطفال، شعار، مقروء…) وأسماء مثل DecoTypeThuluthII، ويضع اسم العائلة المطابق تمامًا أولًا، ويعيد صفًا واحدًا لكل عائلة مع أوزانها وعدد نسخها وحالة رخصتها. `--latin` يبقي الخطوط التي تغطي اللاتينية أيضًا.
 3. قارن 5–20 مرشحًا، واعتبرها **مراجع إلهام أو اقتراحات اختيار**، لا تصاريح استخدام أو تعديل أو نسخ لحدود الحروف.
 4. قدّم ثلاثة مسارات: حل سريع مقروء بخط رخصته مؤكدة، وحل احترافي يقيس المرشحات ويقارنها، وحل تجريبي بحروف أصلية من الصفر.
 5. للتنفيذ استعمل **خطًا تأكدت رخصته من مصدره الرسمي**، أو اصنع حروفًا أصلية من الصفر. ملفات الخطوط على جهاز المستخدم: للرندر في جلسة سحابية حمّل الخط المفتوح من مصدره الرسمي، أو اعمل على الجهاز عبر Remote Desktop Commander بإذن المستخدم.
@@ -40,16 +40,28 @@
 ```bash
 python3 scripts/telegram_typography_atlas.py doctor                      # أي الأوامر تعمل هنا (find وrefresh لا يحتاجان مكتبات)
 python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "خط رقعة" --arabic-only --limit 15
-python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json kufi --license open
+python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "kufi logo" --arabic-only --latin --license open   # شعار ثنائي اللغة
 python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "Cairo"
 python3 scripts/telegram_typography_atlas.py refresh --index data/telegram-typography-catalog-complete-20261020.json --out ./refreshed.json
 ```
 
-إعادة الفحص على جهاز المستخدم فقط. المخرجات ملفات جديدة خارج مجلد التصدير، والأمر يرفض الكتابة فوق ملف موجود:
+إعادة الفحص على جهاز المستخدم فقط. المخرجات ملفات جديدة خارج مجلد التصدير. الأمر يرفض أن يكتب فوق ملف موجود، ويرفض أن يضع ملف المواقع الخاص داخل أي مستودع git. `enrich-zips` يعمل على فحص جديد فقط، لا على فهرس أُثري من قبل.
 
-```bash
-python scripts/telegram_typography_atlas.py scan --root "C:\Users\USERNAME\Downloads\Telegram Desktop" --public-out NEW-public.json --private-out "%LOCALAPPDATA%\KOSIF\typography-private\private-new.json"
-python scripts/telegram_typography_atlas.py enrich-zips --root "C:\Users\USERNAME\Downloads\Telegram Desktop" --public NEW-public.json --private "%LOCALAPPDATA%\KOSIF\typography-private\private-new.json" --new-public NEW-complete.json --new-private "%LOCALAPPDATA%\KOSIF\typography-private\private-complete.json"
+في cmd:
+
+```cmd
+mkdir "%LOCALAPPDATA%\KOSIF\typography-private"
+python scripts\telegram_typography_atlas.py scan --root "C:\Users\USERNAME\Downloads\Telegram Desktop" --public-out NEW-public.json --private-out "%LOCALAPPDATA%\KOSIF\typography-private\private-new.json"
+python scripts\telegram_typography_atlas.py enrich-zips --root "C:\Users\USERNAME\Downloads\Telegram Desktop" --public NEW-public.json --private "%LOCALAPPDATA%\KOSIF\typography-private\private-new.json" --new-public NEW-complete.json --new-private "%LOCALAPPDATA%\KOSIF\typography-private\private-complete.json"
+python scripts\telegram_typography_atlas.py refresh --index NEW-complete.json --out NEW-final.json
+```
+
+في PowerShell:
+
+```powershell
+$P = "$env:LOCALAPPDATA\KOSIF\typography-private"; New-Item -ItemType Directory -Force $P | Out-Null
+python scripts\telegram_typography_atlas.py scan --root "$env:USERPROFILE\Downloads\Telegram Desktop" --public-out NEW-public.json --private-out "$P\private-new.json"
+python scripts\telegram_typography_atlas.py enrich-zips --root "$env:USERPROFILE\Downloads\Telegram Desktop" --public NEW-public.json --private "$P\private-new.json" --new-public NEW-complete.json --new-private "$P\private-complete.json"
 ```
 
 `scan` يحتاج beautifulsoup4 وfonttools وPillow. الخطوط بصيغة WOFF2 داخل ZIP تحتاج أيضًا brotli، ويثبتها `pip install fonttools[woff]`.
@@ -86,7 +98,7 @@ python scripts/telegram_typography_atlas.py enrich-zips --root "C:\Users\USERNAM
 ## الحدود وحقوق النشر
 
 يحتوي الفهرس العام على:
-- أسماء العائلات والأوزان من بيانات OpenType، بعد حذف الروابط و@الحسابات والبريد والأرقام منها؛
+- أسماء العائلات والأوزان من بيانات OpenType، بعد حذف الروابط (بما فيها t.me والنطاقات بلا https) و@الحسابات والبريد والأرقام منها؛
 - تغطية العربية واللاتينية؛
 - تلميحات الرخص؛
 - أوصاف إبداعية مجردة؛
@@ -104,7 +116,7 @@ python scripts/telegram_typography_atlas.py enrich-zips --root "C:\Users\USERNAM
 
 لذلك لا يجوز وصف الفحص بأنه استوعب كل البيانات.
 
-عدّاد موضوعات الرسائل جاء من الفحص الأصلي على الجهاز. أما `refresh` فيعيد اشتقاق ما يحدده الفهرس العام وحده:
+عدّاد موضوعات الرسائل جاء من الفحص الأصلي على الجهاز بأداة وسوم قديمة كانت تطابق أجزاء الكلمات، فقد يزيد عن الواقع؛ إعادة `scan` تعيد حسابه. أما `refresh` فيعيد اشتقاق ما يحدده الفهرس العام وحده:
 - الوسوم بالكلمة الكاملة؛
 - علامات الرخص من الأسماء؛
 - الاتجاهات والأعداد؛

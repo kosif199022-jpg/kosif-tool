@@ -122,7 +122,7 @@ python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py deep SP-0
 
 | المكتبة | متى | ماذا فيها | الأمر |
 |---|---|---|---|
-| **أطلس خطوط تيليجرام** (`telegram-typography-atlas`، TOOL-61) | خط/خطوط/فونت، كوفي، رقعة، ديواني، ثلث، تايبوغرافي، شعار/لوجو، بوستر، lettering، glyph | 5,514 خط فريد بالبصمة · 4,634 يدعم العربية · ~2,412 عائلة · 16 اتجاه تصميم · رخصة لكل خط (1,066 OFL مُدّعاة غير مؤكدة · 529 مقيدة منها 397 Trial/Demo/Personal · 3,869 بلا دليل) | `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "خط رقعة" --arabic-only` (صف لكل عائلة؛ `--license open` للرخص المفتوحة المُدّعاة) |
+| **أطلس خطوط تيليجرام** (`telegram-typography-atlas`، TOOL-61) | خط/خطوط/فونت، كوفي، رقعة، ديواني، ثلث، تايبوغرافي، شعار/لوجو، بوستر، lettering، glyph | 5,514 خط فريد بالبصمة · 4,634 يدعم العربية · ~2,412 عائلة · 16 اتجاه تصميم · رخصة لكل خط (1,066 OFL مُدّعاة غير مؤكدة · 534 مقيدة منها 402 بأسماء Trial/Demo/Personal/Unlicensed · 3,864 بلا دليل) | `python3 .claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py find --index .claude/skills/kosif-superpowers/data/telegram-typography-catalog-complete-20261020.json "خط رقعة" --arabic-only` (صف لكل عائلة؛ `--license open` للرخص المفتوحة المُدّعاة؛ `--latin` للشعارات ثنائية اللغة) |
 
 قواعد المكتبة: (1) الفهرس بيانات وصفية بلا ملفات خطوط ولا رسائل ولا مسارات؛ ملفات الخطوط وملف المواقع الخاص على لابتوب المستخدم فقط،
 ولا يُرفع أي منهما. (2) `redistribution_approved=false` لكل خط: رخصة name table تلميح لا تصريح؛ قبل أي رندر أو تسليم تأكد من الرخصة من
@@ -301,5 +301,8 @@ python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py deep SP-0
 > (`موافق` · `تفاصيل` · `A/B/C` · `طوّر` · `نفّذ بأقصى قوة` · `نفّذ مباشرة`). الطلبات البسيطة: مسار مختصر أو تنفيذ مباشر.
 > لطلبات الخط والشعار والبوستر والتايبوغرافي افتح قسم «مكتبات أصولك» وابحث في أطلس خطوطي (5,514 خطًا) قبل الاختيار،
 > وقِس المرشحات بـ font-fidelity-lab وrender-text، ولا تستخدم خطًا قبل تأكيد رخصته من مصدره؛ ملفاته على جهازي فقط.
+> إن لم يطبع brief القسم فشغّل `python3 .claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py find --index
+> .claude/skills/kosif-superpowers/data/telegram-typography-catalog-complete-20261020.json "<النمط>" --arabic-only`؛
+> وبلا shell اقرأ `.claude/skills/kosif-superpowers/references/telegram-typography-knowledge-library.md`.
 > أصولي (صوتي وصوري وخطوطي) لا تُستبدل ولا تُنشر. الشارة المعروضة هي الحالة هنا لا شارة الكتالوج. الخطة A تحقق كل المتطلبات الإلزامية،
 > وC ليست B + إضافات. لا تدّعِ ما لم تفحصه، ولا تقدّم قدرة موصوفة كأنها جاهزة.

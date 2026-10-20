@@ -65144,7 +65144,6 @@
       "status": "proven",
       "requires": [
         "pip:pillow",
-        "pip:fonttools",
         "fonts:arabic"
       ],
       "proof": [
@@ -65497,8 +65496,6 @@
       "name_ar": "مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام",
       "status": "proven",
       "requires": [
-        "pip:pillow",
-        "pip:fonttools",
         "fonts:arabic"
       ],
       "proof": [
