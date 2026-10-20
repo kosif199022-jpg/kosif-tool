@@ -293,5 +293,29 @@ class AppxRoutingTests(unittest.TestCase):
                 self.assertNotIn("REA", self.fams(q))
 
 
+class BlockedByAntivirus(unittest.TestCase):
+    def test_einval_on_open_is_reported_not_raised(self):
+        """Windows Defender refuses reads of a quarantined file with EINVAL (Errno 22); scan must report it and go on."""
+        import builtins
+        import errno
+        with tempfile.TemporaryDirectory() as d:
+            bad = Path(d) / "Set-up.exe"
+            bad.write_bytes(b"MZ" + b"\0" * 64)
+            real_open = builtins.open
+
+            def refusing(path, *a, **k):
+                if Path(str(path)).name == "Set-up.exe":
+                    raise OSError(errno.EINVAL, "Invalid argument")
+                return real_open(path, *a, **k)
+            builtins.open = refusing
+            try:
+                row = tri.classify(bad)
+            finally:
+                builtins.open = real_open
+            self.assertEqual(row["format"], "unreadable")
+            self.assertEqual(row["findings"][0]["value"], "antivirus")
+            self.assertFalse(row["verified"])
+
+
 if __name__ == "__main__":
     unittest.main()

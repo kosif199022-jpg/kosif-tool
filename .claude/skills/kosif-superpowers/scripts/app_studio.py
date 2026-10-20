@@ -1856,6 +1856,13 @@ def text_anim(inp, out, p):
     return res("text-anim", str(out), {"frames": n, "fps": fps, "style": style, "size": [W, H]})
 
 
+# ------------------------------------------------------------------ painting batch: Paint.NET, Photoshop, MS Paint
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import app_studio_paint  # noqa: E402
+
+PAINT_BATCH = app_studio_paint.register(globals())
+
+
 # ------------------------------------------------------------------ cli
 def missing(reqs):
     out = []

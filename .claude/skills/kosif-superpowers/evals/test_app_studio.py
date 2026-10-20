@@ -506,8 +506,12 @@ class AppStudioTests(unittest.TestCase):
         doc = st.doctor()
         self.assertEqual(doc["ops"], len(st.OPS))
         covered = {n for n in dir(self) if n.startswith("test_")}
-        src = (Path(__file__).read_text(encoding="utf-8"))
+        src = (Path(__file__).read_text(encoding="utf-8")
+               + (Path(__file__).with_name("test_app_studio_paint.py")).read_text(encoding="utf-8"))
+        effects = set(st.PAINT_BATCH["effects"])   # tested by name loop in test_app_studio_paint.py
         for name in st.OPS:
+            if name in effects:
+                continue
             self.assertIn(f'"{name}"', src, f"op {name} has no test")
 
     def test_cli_main_and_batch(self):

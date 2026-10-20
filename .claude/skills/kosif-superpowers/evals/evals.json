@@ -1455,6 +1455,120 @@
     ],
     "top_k": 8
    }
+  },
+  {
+   "id": 67,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل رندر سينمائي في بلندر لمنتجي بإضاءة نيون",
+   "files": [],
+   "expected_behavior": [
+    "Runs blender_cinema.py doctor then render --preset neon-night with --model; reports engine CYCLES, AgX look and render time (APPX-114)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 68,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "لقطة دوارة 360 للمنتج فيديو MP4 من بلندر",
+   "files": [],
+   "expected_behavior": [
+    "Renders --frames N --move orbit to MP4 with ffmpeg and 180-degree motion blur (APPX-115)"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 69,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حول الصورة لرسم زيتي",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py oil-paint (APPX-99) and reports the local-texture drop"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 70,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "استبدال السماء في صورة العقار بغروب",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py sky-replace sky=sunset (APPX-107); reports sky_fraction and that the skyline has no halo"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 71,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "apply a teal and orange cinematic LUT to my photos",
+   "files": [],
+   "expected_behavior": [
+    "Makes a .cube with lut-make look=teal-orange and applies it with lut (APPX-106), batch for a folder"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 72,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل ملصق واتساب من صورتي بحد أبيض",
+   "files": [],
+   "expected_behavior": [
+    "Runs app_studio.py sticker (APPX-113), cutting the subject with remove-bg first when the image is opaque"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }
