@@ -9379,6 +9379,105 @@
         "transitions-cuts",
         "engines-render-pipeline"
       ]
+    },
+    {
+      "id": "telegram-typography-atlas",
+      "path": "scripts/telegram_typography_atlas.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "image",
+      "title_en": "KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search",
+      "title_ar": "مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام",
+      "summary_en": "Read authorized Telegram Desktop exports and font metadata from TTF/OTF plus bounded ZIP TTF/OTF/WOFF/WOFF2 entries, deduplicate by SHA256, discover Arabic glyph repertoire, family/style/weight/variable/color glyphs, classify visual themes and search original design briefs; keep raw chat/private paths/fonts/images OFF public GitHub.",
+      "summary_ar": "فهرسة آلاف الخطوط وأفكار التصميم، مع دعم العربية وتصنيف الخطوط والوزن وحقوق الاستخدام، وإبقاء الرسائل والصور وملفات الخطوط الأصلية داخل جهاز المستخدم فقط.",
+      "use_when": [
+        "Research Arabic fonts and typographic styles before designing logos, posters, brands, motion graphics or a new original typeface",
+        "Find glyph-support candidates in user-authorized Telegram export without publicly redistributing font binaries",
+        "حلل خطوط تيليجرام واختر إلهام كوفي ونسخ وديواني ورقعة مع فحص الرخصة"
+      ],
+      "keywords": [
+        "typography",
+        "telegram",
+        "fonts",
+        "arabic",
+        "kufi",
+        "naskh",
+        "ruqah",
+        "diwani",
+        "lettering",
+        "open type",
+        "glyphs",
+        "font family",
+        "shaping",
+        "harfbuzz",
+        "metadata",
+        "OFL",
+        "license",
+        "zip",
+        "idea",
+        "فونت",
+        "خطوط",
+        "كوفي",
+        "نسخ",
+        "تصميم الخطوط",
+        "مكتبة",
+        "تايبوغرافي"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/telegram_typography_atlas.py doctor",
+          "does": "Check BeautifulSoup, fontTools and Pillow availability."
+        },
+        {
+          "name": "find",
+          "example": "python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json 'كوفي' --arabic-only --limit 15",
+          "does": "Search already indexed Arabic/Latin font family/style, license status and matching idea tags."
+        },
+        {
+          "name": "scan",
+          "example": "python3 scripts/telegram_typography_atlas.py scan --root ./my-telegram-exports --public-out ./new-public.json --private-out ./new-private.json",
+          "does": "Scan exported Telegram HTML, TTF/OTF metadata, image headers, write public safe metadata plus separate private local-only locator; rejects overwrites."
+        },
+        {
+          "name": "enrich-zips",
+          "example": "python3 scripts/telegram_typography_atlas.py enrich-zips --root ./my-telegram-exports --public ./new-public.json --private ./new-private.json --new-public ./complete.json --new-private ./private-complete.json",
+          "does": "Open only allowed-sized archive font members in memory; deduplicate by SHA256; preserve private original locations off GitHub."
+        },
+        {
+          "name": "tests",
+          "example": "python3 scripts/test_telegram_typography_atlas.py",
+          "does": "Run privacy, parsing, Arabic tag, search, immutable output and malicious ZIP traversal guards."
+        }
+      ],
+      "inputs": "Authorized user-supplied local Telegram Desktop ChatExport folders and local ZIP font archives; no scripts or executables run.",
+      "outputs": "Safe searchable metadata catalog, 15 original design directions, no media/font payloads; strictly separate private local-only asset locator. All redistribution_approved flags remain false pending actual license review.",
+      "requires": {
+        "python": [
+          "Pillow",
+          "fonttools",
+          "beautifulsoup4"
+        ],
+        "binaries": [],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "Read only the user's authorized exported chat backups. Never upload raw messages, senders, URLs, font bytes, photo assets or private file locations to GitHub; use only actually licensed fonts for production.",
+      "limits": "Catalog metadata and message keyword themes, not machine understanding of all photos. 4 exports, 2766 HTML messages, 1269 standalone files, 89 ZIP archives and 5283 embedded font entries indexed; resulting 5514 unique font binary hashes. 1 ZIP malformed, 36 ZIP font binaries could not be parsed, RAR archives not unpacked, no legal permission inferred from OS/2 or font-name metadata.",
+      "evidence": "tested-here",
+      "evidence_note": "2026-10-20 authorized remote laptop: scanned 4 export folders, 2766 non-service messages, 2981 images headers, visually sampled 80 privately, parsed 5514 unique direct/nested font binaries (36 nested unparsed). 6/6 regression tests passed. Public atlas contains metadata only, excludes personal conversations, raw fonts/images/source paths.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/telegram-typography-knowledge-library.md"
+      ],
+      "families": [
+        "typography-arabic",
+        "typography-latin"
+      ]
     }
   ]
 }
