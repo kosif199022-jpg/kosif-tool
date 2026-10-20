@@ -1,0 +1,15 @@
+# media and generated frames stay out of git (size + stock-licence redistribution)
+*.mp4
+*.m4a
+*.wav
+*.png
+*.jpg
+*.ttf
+*.html
+!text/overlay_src.html
+assets/
+ref/
+search/
+build/ov/
+build/*.log
+*.info.json
