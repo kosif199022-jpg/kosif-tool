@@ -252,7 +252,7 @@ class BuildHelpTest(FixtureRepo):
         for rel in sorted(written):
             parts = Path(rel).parts
             name = f"styles/<id>/{parts[-1]}" if parts[0] == "styles" else rel
-            self.assertIn(name, help_text, f"build.py writes {rel} but --help does not say so")
+            self.assertIn(name.replace(chr(92), "/"), help_text, f"build.py writes {rel} but --help does not say so")
         self.assertEqual(run(script, "--check").returncode, 0)
 
 

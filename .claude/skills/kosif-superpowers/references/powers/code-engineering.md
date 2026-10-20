@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `CODE` · **البيانات / data:** `data/powers/code-engineering.json` · **بحث / search:** `python3 scripts/powers.py family code-engineering`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md)
 
 ## الفهرس / contents
 

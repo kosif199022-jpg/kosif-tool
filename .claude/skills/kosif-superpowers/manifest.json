@@ -2,7 +2,7 @@
  "schema": "kosif.manifest.v1",
  "generated_by": "scripts/hub.py build — edit data/tools.json and data/powers/*.json, never this file",
  "name": "kosif-superpowers",
- "description": "Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers and guides that fit, and says what this machine can run now. Covers what Claude can do in the current session (tools, connectors, installable libraries, surfaces), how to think, create and verify better, and a searchable catalog of 4,700+ powers in 10 domains (thinking, writing and Arabic, code, data, documents, research, apps, image and audio, product and finance, motion graphics and video), each with requirements, an evidence badge and proofs. Use at the start of any substantial or creative task, when asked what Claude can do, told to use its superpowers, or given this skill's repository link; and for motion graphics, montage, captions, reels, video edits, drawing, 3D, image design and lawful software investigation. Arabic triggers - قدراتك، القدرات الخارقة، تقدر تعمل ايه، فكّر بعمق، خريطة ذهنية، موشن جرافيك، مونتاج، ريلز.",
+ "description": "Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers and guides that fit, and says what this machine can run now. Covers what Claude can do in the current session (tools, connectors, installable libraries, surfaces), how to think, create and verify better, and a searchable catalog of 5,100+ powers in 10 domains (thinking, writing and Arabic, code, data, documents, research, apps, image and audio, product and finance, motion graphics and video), each with requirements, an evidence badge and proofs. Use at the start of any substantial or creative task, when asked what Claude can do, told to use its superpowers, or given this skill's repository link; and for motion graphics, montage, captions, reels, video edits, drawing, 3D, image design and lawful software investigation. Arabic triggers - قدراتك، القدرات الخارقة، تقدر تعمل ايه، فكّر بعمق، خريطة ذهنية، موشن جرافيك، مونتاج، ريلز.",
  "entrypoints": {
   "boot": "python3 scripts/boot.py",
   "find": "python3 scripts/hub.py find \"<task>\" --json",
@@ -15,13 +15,13 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 4811,
-  "families": 53,
+  "powers": 5185,
+  "families": 61,
   "domains": 10,
-  "tools": 90,
+  "tools": 98,
   "guides": 79,
   "statuses": {
-   "documented": 1424,
+   "documented": 1798,
    "idea": 71,
    "install": 971,
    "key": 176,
@@ -282,6 +282,110 @@
    },
    "chapter": "references/powers/arabic-language.md",
    "data": "data/powers/arabic-language.json"
+  },
+  {
+   "key": "atlas-build",
+   "prefix": "ABUILD",
+   "domain": "build",
+   "title_ar": "أطلس: التطبيقات والواجهات والتكاملات",
+   "title_en": "Atlas: apps, UI & integrations",
+   "count": 30,
+   "statuses": {
+    "documented": 30
+   },
+   "chapter": "references/powers/atlas-build.md",
+   "data": "data/powers/atlas-build.json"
+  },
+  {
+   "key": "atlas-code",
+   "prefix": "ACODE",
+   "domain": "code",
+   "title_ar": "أطلس: الهندسة والكود",
+   "title_en": "Atlas: engineering & code",
+   "count": 176,
+   "statuses": {
+    "documented": 176
+   },
+   "chapter": "references/powers/atlas-code.md",
+   "data": "data/powers/atlas-code.json"
+  },
+  {
+   "key": "atlas-data",
+   "prefix": "ADATA",
+   "domain": "data",
+   "title_ar": "أطلس: البيانات والتعلم الآلي",
+   "title_en": "Atlas: data, ML & charts",
+   "count": 47,
+   "statuses": {
+    "documented": 47
+   },
+   "chapter": "references/powers/atlas-data.md",
+   "data": "data/powers/atlas-data.json"
+  },
+  {
+   "key": "atlas-docs",
+   "prefix": "ADOCS",
+   "domain": "docs",
+   "title_ar": "أطلس: المستندات والمخططات",
+   "title_en": "Atlas: documents & diagrams",
+   "count": 16,
+   "statuses": {
+    "documented": 16
+   },
+   "chapter": "references/powers/atlas-docs.md",
+   "data": "data/powers/atlas-docs.json"
+  },
+  {
+   "key": "atlas-media",
+   "prefix": "AMEDIA",
+   "domain": "media",
+   "title_ar": "أطلس: الصور والصوت والفيديو",
+   "title_en": "Atlas: images, audio & video",
+   "count": 11,
+   "statuses": {
+    "documented": 11
+   },
+   "chapter": "references/powers/atlas-media.md",
+   "data": "data/powers/atlas-media.json"
+  },
+  {
+   "key": "atlas-mind",
+   "prefix": "AMIND",
+   "domain": "mind",
+   "title_ar": "أطلس: الوكلاء والتخطيط والمراجعة",
+   "title_en": "Atlas: agent workflows, planning & review",
+   "count": 40,
+   "statuses": {
+    "documented": 40
+   },
+   "chapter": "references/powers/atlas-mind.md",
+   "data": "data/powers/atlas-mind.json"
+  },
+  {
+   "key": "atlas-research",
+   "prefix": "AWEB",
+   "domain": "research",
+   "title_ar": "أطلس: البحث والمعرفة",
+   "title_en": "Atlas: research & knowledge",
+   "count": 8,
+   "statuses": {
+    "documented": 8
+   },
+   "chapter": "references/powers/atlas-research.md",
+   "data": "data/powers/atlas-research.json"
+  },
+  {
+   "key": "atlas-strategy",
+   "prefix": "ASTRAT",
+   "domain": "strategy",
+   "title_ar": "أطلس: المنتج والتسويق والأعمال",
+   "title_en": "Atlas: product, marketing & business",
+   "count": 46,
+   "statuses": {
+    "documented": 46
+   },
+   "chapter": "references/powers/atlas-strategy.md",
+   "data": "data/powers/atlas-strategy.json"
   },
   {
    "key": "audio-sync-captions",
@@ -9152,6 +9256,440 @@
     "qa-verification",
     "verification-evals"
    ]
+  },
+  {
+   "id": "atlas-bulk-source-audit",
+   "path": "scripts/atlas_bulk_source_audit.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "investigate",
+   "title_en": "Atlas source-text audit",
+   "title_ar": "????? ???? ?????? ????",
+   "summary_en": "Audits an authorized local Atlas source sample and records evidence without executing third-party skill code.",
+   "summary_ar": "????? ???? ?????? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "use_when": [
+    "Review documented Atlas or Blender capabilities",
+    "Inspect relevant tool arguments before running",
+    "????? ??????? ???????? ?? ???????"
+   ],
+   "keywords": [
+    "atlas-bulk-source-audit",
+    "Atlas",
+    "KOSIF",
+    "capabilities",
+    "provenance",
+    "investigate"
+   ],
+   "commands": [
+    {
+     "name": "--help",
+     "example": "python3 scripts/atlas_bulk_source_audit.py --help",
+     "does": "Show documented options; inspect inputs and authorization requirements before running any non-help action."
+    }
+   ],
+   "inputs": "Explicit user-provided or authorized local files; refer to the tool help and source for exact schema.",
+   "outputs": "Task-specific local reports or files, only where explicitly authorized; no imported third-party executables.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
+   "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
+   "tests": [],
+   "docs": [
+    ".claude/skills/kosif-superpowers/SKILL.md"
+   ],
+   "families": [
+    "software-investigation"
+   ],
+   "evidence": "untested",
+   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+  },
+  {
+   "id": "atlas-capability-miner",
+   "path": "scripts/atlas_capability_miner.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Atlas metadata capability miner",
+   "title_ar": "???? ????? ????",
+   "summary_en": "Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof.",
+   "summary_ar": "???? ????? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "use_when": [
+    "Review documented Atlas or Blender capabilities",
+    "Inspect relevant tool arguments before running",
+    "????? ??????? ???????? ?? ???????"
+   ],
+   "keywords": [
+    "atlas-capability-miner",
+    "Atlas",
+    "KOSIF",
+    "capabilities",
+    "provenance",
+    "discover"
+   ],
+   "commands": [
+    {
+     "name": "--help",
+     "example": "python3 scripts/atlas_capability_miner.py --help",
+     "does": "Show documented options; inspect inputs and authorization requirements before running any non-help action."
+    }
+   ],
+   "inputs": "Explicit user-provided or authorized local files; refer to the tool help and source for exact schema.",
+   "outputs": "Task-specific local reports or files, only where explicitly authorized; no imported third-party executables.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
+   "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/SKILL.md"
+   ],
+   "families": [
+    "software-investigation"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "Eight focused unit tests passed locally on Windows for the Atlas miner."
+  },
+  {
+   "id": "atlas-deep-fusion",
+   "path": "scripts/atlas_deep_fusion.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "investigate",
+   "title_en": "Atlas read-only method selector",
+   "title_ar": "????? ??? ????",
+   "summary_en": "Selects source-linked Atlas methods for review against an authorized local Atlas index.",
+   "summary_ar": "????? ??? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "use_when": [
+    "Review documented Atlas or Blender capabilities",
+    "Inspect relevant tool arguments before running",
+    "????? ??????? ???????? ?? ???????"
+   ],
+   "keywords": [
+    "atlas-deep-fusion",
+    "Atlas",
+    "KOSIF",
+    "capabilities",
+    "provenance",
+    "investigate"
+   ],
+   "commands": [
+    {
+     "name": "--help",
+     "example": "python3 scripts/atlas_deep_fusion.py --help",
+     "does": "Show documented options; inspect inputs and authorization requirements before running any non-help action."
+    }
+   ],
+   "inputs": "Explicit user-provided or authorized local files; refer to the tool help and source for exact schema.",
+   "outputs": "Task-specific local reports or files, only where explicitly authorized; no imported third-party executables.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
+   "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
+   "tests": [],
+   "docs": [
+    ".claude/skills/kosif-superpowers/SKILL.md"
+   ],
+   "families": [
+    "software-investigation"
+   ],
+   "evidence": "untested",
+   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+  },
+  {
+   "id": "atlas-review-summary",
+   "path": "scripts/atlas_review_summary.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "investigate",
+   "title_en": "Atlas review summary",
+   "title_ar": "???? ?????? ????",
+   "summary_en": "Summarizes source-audit evidence and provenance for candidate Atlas methods.",
+   "summary_ar": "???? ?????? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "use_when": [
+    "Review documented Atlas or Blender capabilities",
+    "Inspect relevant tool arguments before running",
+    "????? ??????? ???????? ?? ???????"
+   ],
+   "keywords": [
+    "atlas-review-summary",
+    "Atlas",
+    "KOSIF",
+    "capabilities",
+    "provenance",
+    "investigate"
+   ],
+   "commands": [
+    {
+     "name": "--help",
+     "example": "python3 scripts/atlas_review_summary.py --help",
+     "does": "Show documented options; inspect inputs and authorization requirements before running any non-help action."
+    }
+   ],
+   "inputs": "Explicit user-provided or authorized local files; refer to the tool help and source for exact schema.",
+   "outputs": "Task-specific local reports or files, only where explicitly authorized; no imported third-party executables.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
+   "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
+   "tests": [],
+   "docs": [
+    ".claude/skills/kosif-superpowers/SKILL.md"
+   ],
+   "families": [
+    "software-investigation"
+   ],
+   "evidence": "untested",
+   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+  },
+  {
+   "id": "atlas-reviewed-methods-v3",
+   "path": "scripts/atlas_reviewed_methods_v3.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "investigate",
+   "title_en": "Reviewed Atlas methods",
+   "title_ar": "??? ???? ????????",
+   "summary_en": "Works with reviewed Atlas method records and their provenance.",
+   "summary_ar": "??? ???? ????????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "use_when": [
+    "Review documented Atlas or Blender capabilities",
+    "Inspect relevant tool arguments before running",
+    "????? ??????? ???????? ?? ???????"
+   ],
+   "keywords": [
+    "atlas-reviewed-methods-v3",
+    "Atlas",
+    "KOSIF",
+    "capabilities",
+    "provenance",
+    "investigate"
+   ],
+   "commands": [
+    {
+     "name": "--help",
+     "example": "python3 scripts/atlas_reviewed_methods_v3.py --help",
+     "does": "Show documented options; inspect inputs and authorization requirements before running any non-help action."
+    }
+   ],
+   "inputs": "Explicit user-provided or authorized local files; refer to the tool help and source for exact schema.",
+   "outputs": "Task-specific local reports or files, only where explicitly authorized; no imported third-party executables.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
+   "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
+   "tests": [],
+   "docs": [
+    ".claude/skills/kosif-superpowers/SKILL.md"
+   ],
+   "families": [
+    "software-investigation"
+   ],
+   "evidence": "untested",
+   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+  },
+  {
+   "id": "atlas-task-method-router",
+   "path": "scripts/atlas_task_method_router.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Atlas task method router",
+   "title_ar": "????? ???? ????",
+   "summary_en": "Finds source-backed Atlas method candidates for a task without executing their code.",
+   "summary_ar": "????? ???? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "use_when": [
+    "Review documented Atlas or Blender capabilities",
+    "Inspect relevant tool arguments before running",
+    "????? ??????? ???????? ?? ???????"
+   ],
+   "keywords": [
+    "atlas-task-method-router",
+    "Atlas",
+    "KOSIF",
+    "capabilities",
+    "provenance",
+    "discover"
+   ],
+   "commands": [
+    {
+     "name": "--help",
+     "example": "python3 scripts/atlas_task_method_router.py --help",
+     "does": "Show documented options; inspect inputs and authorization requirements before running any non-help action."
+    }
+   ],
+   "inputs": "Explicit user-provided or authorized local files; refer to the tool help and source for exact schema.",
+   "outputs": "Task-specific local reports or files, only where explicitly authorized; no imported third-party executables.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
+   "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
+   "tests": [],
+   "docs": [
+    ".claude/skills/kosif-superpowers/SKILL.md"
+   ],
+   "families": [
+    "software-investigation"
+   ],
+   "evidence": "untested",
+   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+  },
+  {
+   "id": "atlas-transfer",
+   "path": "scripts/atlas_transfer.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "investigate",
+   "title_en": "Atlas verified method transfer",
+   "title_ar": "??? ??? ????",
+   "summary_en": "Converts reviewed Atlas records into KOSIF capability catalog data; writes files only when explicitly approved.",
+   "summary_ar": "??? ??? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "use_when": [
+    "Review documented Atlas or Blender capabilities",
+    "Inspect relevant tool arguments before running",
+    "????? ??????? ???????? ?? ???????"
+   ],
+   "keywords": [
+    "atlas-transfer",
+    "Atlas",
+    "KOSIF",
+    "capabilities",
+    "provenance",
+    "investigate"
+   ],
+   "commands": [
+    {
+     "name": "--help",
+     "example": "python3 scripts/atlas_transfer.py --help",
+     "does": "Show documented options; inspect inputs and authorization requirements before running any non-help action."
+    }
+   ],
+   "inputs": "Explicit user-provided or authorized local files; refer to the tool help and source for exact schema.",
+   "outputs": "Task-specific local reports or files, only where explicitly authorized; no imported third-party executables.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
+   "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
+   "tests": [],
+   "docs": [
+    ".claude/skills/kosif-superpowers/SKILL.md"
+   ],
+   "families": [
+    "software-investigation"
+   ],
+   "evidence": "untested",
+   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+  },
+  {
+   "id": "blender-motion-video",
+   "path": "scripts/blender_motion_video.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "3d",
+   "title_en": "Blender motion video helper",
+   "title_ar": "???? ????? ?????",
+   "summary_en": "Provides Blender-based animation and video functionality when Blender is separately available.",
+   "summary_ar": "???? ????? ?????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "use_when": [
+    "Review documented Atlas or Blender capabilities",
+    "Inspect relevant tool arguments before running",
+    "????? ??????? ???????? ?? ???????"
+   ],
+   "keywords": [
+    "blender-motion-video",
+    "Atlas",
+    "KOSIF",
+    "capabilities",
+    "provenance",
+    "3d"
+   ],
+   "commands": [
+    {
+     "name": "--help",
+     "example": "python3 scripts/blender_motion_video.py --help",
+     "does": "Show documented options; inspect inputs and authorization requirements before running any non-help action."
+    }
+   ],
+   "inputs": "Explicit user-provided or authorized local files; refer to the tool help and source for exact schema.",
+   "outputs": "Task-specific local reports or files, only where explicitly authorized; no imported third-party executables.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
+   "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
+   "tests": [],
+   "docs": [
+    ".claude/skills/kosif-superpowers/SKILL.md"
+   ],
+   "families": [
+    "3d-spatial"
+   ],
+   "evidence": "untested",
+   "evidence_note": "Registered after merge; runtime command not yet independently verified."
   }
  ],
  "guides": [

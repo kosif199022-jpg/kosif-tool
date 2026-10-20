@@ -281,7 +281,7 @@ def cmd_index(probe: bool, check: bool = False) -> int:
     none = [r for r in pw if not r.get("requires")]
     L += ["<a id=\"none\"></a>", "## قدرات بلا مستلزمات خارجية / no external requirement", "",
           f"{len(none)} powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.", ""]
-    text = "\n".join(L)
+    text = "\n".join(line.rstrip() for line in L)
     if check:
         fresh = OUT.is_file() and OUT.read_text(encoding="utf-8") == text
         print(f"{OUT.relative_to(SKILL)} " + ("up to date" if fresh else "is stale — run python3 scripts/requirements.py index"))

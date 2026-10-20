@@ -125,6 +125,36 @@ FAMILY_META = {
     "strategy-finance": ("PROD", "strategy", "المنتج والاستراتيجية والمال", "Product, strategy & finance",
                          "خطط المنتجات والتسعير والاستراتيجية والنماذج المالية بأرقام قابلة للتحقق.",
                          "Product plans, pricing, strategy and financial models with checkable numbers."),
+    # Capabilities mined from the KOSIF Atlas (14,793 third-party skills, kosif199022-jpg/kosif-atlas) on 2026-10-20:
+    # deep-read by agents, verified against the source SKILL.md files and against this catalog, REA 6.7.0 static
+    # reads for the script-bearing ones. 📄/📦 only: the Atlas methods were read, never executed here.
+    "atlas-mind": ("AMIND", "mind", "أطلس: الوكلاء والتخطيط والمراجعة", "Atlas: agent workflows, planning & review",
+                   "طرق سير عمل الوكلاء والتخطيط والمواصفات وبوابات المراجعة المستخرجة من مهارات أطلس المفتوحة.",
+                   "Agent-workflow, planning, spec and review-gate methods mined from the open Atlas skills."),
+    "atlas-craft": ("ACRAFT", "craft", "أطلس: الكتابة والبرومبت والترجمة", "Atlas: writing, prompts & languages",
+                    "طرق الكتابة والمحتوى وصناعة البرومبت والمهارات والترجمة المستخرجة من أطلس.",
+                    "Writing, content, prompt/skill engineering and translation methods mined from the Atlas."),
+    "atlas-code": ("ACODE", "code", "أطلس: الهندسة والكود", "Atlas: engineering & code",
+                   "وصفات الاختبار والتصحيح وGit وDevOps وقواعد البيانات وAPI والأمان والأداء والأطر من أطلس.",
+                   "Testing, debugging, Git, DevOps, database, API, security, performance and framework recipes from the Atlas."),
+    "atlas-data": ("ADATA", "data", "أطلس: البيانات والتعلم الآلي", "Atlas: data, ML & charts",
+                   "تحليل البيانات وهندستها والتعلم الآلي ولوحات المعلومات كما تصفها مهارات أطلس.",
+                   "Data analysis, data engineering, machine learning and dashboard methods from the Atlas."),
+    "atlas-docs": ("ADOCS", "docs", "أطلس: المستندات والمخططات", "Atlas: documents & diagrams",
+                   "التوثيق وملفات المكتب وPDF والمخططات كما تصفها مهارات أطلس.",
+                   "Documentation, office files, PDF and diagram methods from the Atlas."),
+    "atlas-research": ("AWEB", "research", "أطلس: البحث والمعرفة", "Atlas: research & knowledge",
+                       "البحث والزحف والاستشهاد وإدارة الملاحظات والمعرفة كما تصفها مهارات أطلس.",
+                       "Research, crawling, citation and knowledge-management methods from the Atlas."),
+    "atlas-build": ("ABUILD", "build", "أطلس: التطبيقات والواجهات والتكاملات", "Atlas: apps, UI & integrations",
+                    "الواجهات وأنظمة التصميم وبناء التطبيقات وأتمتة المتصفح وتكاملات SaaS والألعاب من أطلس.",
+                    "UI, design systems, app building, browser automation, SaaS integrations and games from the Atlas."),
+    "atlas-media": ("AMEDIA", "media", "أطلس: الصور والصوت والفيديو", "Atlas: images, audio & video",
+                    "توليد الصور ومعالجتها والصوت والتفريغ ووصفات الفيديو (Remotion وFFmpeg والترجمة) كما تصفها مهارات أطلس.",
+                    "Image generation/processing, audio, transcription and video recipes (Remotion, FFmpeg, captions) from the Atlas."),
+    "atlas-strategy": ("ASTRAT", "strategy", "أطلس: المنتج والتسويق والأعمال", "Atlas: product, marketing & business",
+                       "إدارة المنتج والتسويق وSEO والمبيعات والمال والتوظيف والتعليم كما تصفها مهارات أطلس.",
+                       "Product management, marketing/SEO, sales, finance, hiring and teaching methods from the Atlas."),
 }
 
 # Arabic/English intent words → extra search terms, so a brief written in

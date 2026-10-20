@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 4811
+   "count": 5185
   },
   {
    "id": "dom:motion",
@@ -448,6 +448,244 @@
    "label": "scripts/anchor_gate.py"
   },
   {
+   "id": "fam:atlas-build",
+   "kind": "family",
+   "label": "Atlas: apps, UI & integrations",
+   "ar": "أطلس: التطبيقات والواجهات والتكاملات",
+   "prefix": "ABUILD",
+   "count": 30,
+   "proven": 0,
+   "status": {
+    "documented": 30
+   }
+  },
+  {
+   "id": "req:os:macos",
+   "kind": "requirement",
+   "label": "os:macos",
+   "ar": "أدوات Apple (Mach-O، plist، Swift)",
+   "en": "Apple toolchain (Mach-O, plist, Swift)",
+   "install": "a macOS machine with Xcode command-line tools",
+   "req_kind": "os"
+  },
+  {
+   "id": "req:docker",
+   "kind": "requirement",
+   "label": "docker",
+   "ar": "حاويات معزولة",
+   "en": "isolated containers",
+   "install": "https://docs.docker.com/get-docker (daemon needed; cloud containers have the client only)",
+   "req_kind": "bin"
+  },
+  {
+   "id": "fam:atlas-code",
+   "kind": "family",
+   "label": "Atlas: engineering & code",
+   "ar": "أطلس: الهندسة والكود",
+   "prefix": "ACODE",
+   "count": 176,
+   "proven": 0,
+   "status": {
+    "documented": 176
+   }
+  },
+  {
+   "id": "req:gh",
+   "kind": "requirement",
+   "label": "gh",
+   "ar": "GitHub من سطر الأوامر",
+   "en": "GitHub from the shell",
+   "install": "https://cli.github.com  (cloud sessions: use the GitHub MCP tools instead)",
+   "req_kind": "bin"
+  },
+  {
+   "id": "dom:data",
+   "kind": "domain",
+   "label": "data"
+  },
+  {
+   "id": "fam:atlas-data",
+   "kind": "family",
+   "label": "Atlas: data, ML & charts",
+   "ar": "أطلس: البيانات والتعلم الآلي",
+   "prefix": "ADATA",
+   "count": 47,
+   "proven": 0,
+   "status": {
+    "documented": 47
+   }
+  },
+  {
+   "id": "req:pip:pandas",
+   "kind": "requirement",
+   "label": "pip:pandas",
+   "ar": "جداول وتحليل بيانات",
+   "en": "tables and data analysis",
+   "install": "pip install pandas",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:npm:p5",
+   "kind": "requirement",
+   "label": "npm:p5",
+   "ar": "برمجة إبداعية ثنائية الأبعاد",
+   "en": "2D creative coding",
+   "install": "npm i p5  (LGPL: load as a script, do not bundle into proprietary code)",
+   "req_kind": "npm"
+  },
+  {
+   "id": "req:pip:duckdb",
+   "kind": "requirement",
+   "label": "pip:duckdb",
+   "ar": "SQL على ملفات ضخمة",
+   "en": "SQL over large files",
+   "install": "pip install duckdb",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:pip:chromadb",
+   "kind": "requirement",
+   "label": "pip:chromadb",
+   "ar": "مخزن متجهات للاسترجاع",
+   "en": "vector store for RAG",
+   "install": "pip install chromadb",
+   "req_kind": "pip"
+  },
+  {
+   "id": "dom:docs",
+   "kind": "domain",
+   "label": "docs"
+  },
+  {
+   "id": "fam:atlas-docs",
+   "kind": "family",
+   "label": "Atlas: documents & diagrams",
+   "ar": "أطلس: المستندات والمخططات",
+   "prefix": "ADOCS",
+   "count": 16,
+   "proven": 0,
+   "status": {
+    "documented": 16
+   }
+  },
+  {
+   "id": "req:npm:mermaid",
+   "kind": "requirement",
+   "label": "npm:mermaid",
+   "ar": "رسم مخططات Mermaid إلى صور",
+   "en": "render Mermaid diagrams to images",
+   "install": "npm i -g @mermaid-js/mermaid-cli",
+   "req_kind": "npm"
+  },
+  {
+   "id": "dom:media",
+   "kind": "domain",
+   "label": "media"
+  },
+  {
+   "id": "fam:atlas-media",
+   "kind": "family",
+   "label": "Atlas: images, audio & video",
+   "ar": "أطلس: الصور والصوت والفيديو",
+   "prefix": "AMEDIA",
+   "count": 11,
+   "proven": 0,
+   "status": {
+    "documented": 11
+   }
+  },
+  {
+   "id": "req:key:elevenlabs",
+   "kind": "requirement",
+   "label": "key:elevenlabs",
+   "ar": "أصوات عربية عالية الجودة مدفوعة",
+   "en": "paid high-quality Arabic voices",
+   "install": "ELEVENLABS_API_KEY (paid)",
+   "req_kind": "key"
+  },
+  {
+   "id": "req:pip:pyannote",
+   "kind": "requirement",
+   "label": "pip:pyannote",
+   "ar": "تمييز المتحدثين",
+   "en": "speaker diarization",
+   "install": "pip install pyannote.audio + Hugging Face token",
+   "req_kind": "key"
+  },
+  {
+   "id": "req:yt-dlp",
+   "kind": "requirement",
+   "label": "yt-dlp",
+   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
+   "en": "download licensed or owned media from links",
+   "install": "pip install yt-dlp",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:pip:faster-whisper",
+   "kind": "requirement",
+   "label": "pip:faster-whisper",
+   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
+   "en": "speech-to-text with word timestamps (Arabic)",
+   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
+   "req_kind": "model"
+  },
+  {
+   "id": "fam:atlas-mind",
+   "kind": "family",
+   "label": "Atlas: agent workflows, planning & review",
+   "ar": "أطلس: الوكلاء والتخطيط والمراجعة",
+   "prefix": "AMIND",
+   "count": 40,
+   "proven": 0,
+   "status": {
+    "documented": 40
+   }
+  },
+  {
+   "id": "dom:research",
+   "kind": "domain",
+   "label": "research"
+  },
+  {
+   "id": "fam:atlas-research",
+   "kind": "family",
+   "label": "Atlas: research & knowledge",
+   "ar": "أطلس: البحث والمعرفة",
+   "prefix": "AWEB",
+   "count": 8,
+   "proven": 0,
+   "status": {
+    "documented": 8
+   }
+  },
+  {
+   "id": "dom:strategy",
+   "kind": "domain",
+   "label": "strategy"
+  },
+  {
+   "id": "fam:atlas-strategy",
+   "kind": "family",
+   "label": "Atlas: product, marketing & business",
+   "ar": "أطلس: المنتج والتسويق والأعمال",
+   "prefix": "ASTRAT",
+   "count": 46,
+   "proven": 0,
+   "status": {
+    "documented": 46
+   }
+  },
+  {
+   "id": "req:lean",
+   "kind": "requirement",
+   "label": "lean",
+   "ar": "البراهين الرياضية الصورية",
+   "en": "formal proofs",
+   "install": "elan installer: curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y",
+   "req_kind": "bin"
+  },
+  {
    "id": "fam:audio-sync-captions",
    "kind": "family",
    "label": "Audio sync & captions",
@@ -463,15 +701,6 @@
     "install": 7,
     "seen": 5
    }
-  },
-  {
-   "id": "req:pip:faster-whisper",
-   "kind": "requirement",
-   "label": "pip:faster-whisper",
-   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
-   "en": "speech-to-text with word timestamps (Arabic)",
-   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
-   "req_kind": "model"
   },
   {
    "id": "req:network",
@@ -623,24 +852,6 @@
    }
   },
   {
-   "id": "req:pip:pandas",
-   "kind": "requirement",
-   "label": "pip:pandas",
-   "ar": "جداول وتحليل بيانات",
-   "en": "tables and data analysis",
-   "install": "pip install pandas",
-   "req_kind": "pip"
-  },
-  {
-   "id": "req:pip:duckdb",
-   "kind": "requirement",
-   "label": "pip:duckdb",
-   "ar": "SQL على ملفات ضخمة",
-   "en": "SQL over large files",
-   "install": "pip install duckdb",
-   "req_kind": "pip"
-  },
-  {
    "id": "req:pip:piper",
    "kind": "requirement",
    "label": "pip:piper",
@@ -672,11 +883,6 @@
    "id": "script:scripts/requirements.py",
    "kind": "script",
    "label": "scripts/requirements.py"
-  },
-  {
-   "id": "dom:data",
-   "kind": "domain",
-   "label": "data"
   },
   {
    "id": "fam:data-analysis",
@@ -736,20 +942,6 @@
     "idea": 2,
     "proven": 2
    }
-  },
-  {
-   "id": "req:npm:mermaid",
-   "kind": "requirement",
-   "label": "npm:mermaid",
-   "ar": "رسم مخططات Mermaid إلى صور",
-   "en": "render Mermaid diagrams to images",
-   "install": "npm i -g @mermaid-js/mermaid-cli",
-   "req_kind": "npm"
-  },
-  {
-   "id": "dom:docs",
-   "kind": "domain",
-   "label": "docs"
   },
   {
    "id": "fam:documents-office",
@@ -933,11 +1125,6 @@
    "req_kind": "npm"
   },
   {
-   "id": "dom:media",
-   "kind": "domain",
-   "label": "media"
-  },
-  {
    "id": "fam:media-image-audio",
    "kind": "family",
    "label": "Image & audio",
@@ -980,15 +1167,6 @@
     "documented": 79,
     "idea": 12
    }
-  },
-  {
-   "id": "req:key:elevenlabs",
-   "kind": "requirement",
-   "label": "key:elevenlabs",
-   "ar": "أصوات عربية عالية الجودة مدفوعة",
-   "en": "paid high-quality Arabic voices",
-   "install": "ELEVENLABS_API_KEY (paid)",
-   "req_kind": "key"
   },
   {
    "id": "fam:other",
@@ -1308,15 +1486,6 @@
    "req_kind": "bin"
   },
   {
-   "id": "req:os:macos",
-   "kind": "requirement",
-   "label": "os:macos",
-   "ar": "أدوات Apple (Mach-O، plist، Swift)",
-   "en": "Apple toolchain (Mach-O, plist, Swift)",
-   "install": "a macOS machine with Xcode command-line tools",
-   "req_kind": "os"
-  },
-  {
    "id": "req:engine:rizin",
    "kind": "requirement",
    "label": "engine:rizin",
@@ -1348,11 +1517,6 @@
    }
   },
   {
-   "id": "dom:strategy",
-   "kind": "domain",
-   "label": "strategy"
-  },
-  {
    "id": "fam:strategy-finance",
    "kind": "family",
    "label": "Product, strategy & finance",
@@ -1374,15 +1538,6 @@
    "en": "scheduling and optimisation",
    "install": "pip install ortools",
    "req_kind": "pip"
-  },
-  {
-   "id": "req:npm:p5",
-   "kind": "requirement",
-   "label": "npm:p5",
-   "ar": "برمجة إبداعية ثنائية الأبعاد",
-   "en": "2D creative coding",
-   "install": "npm i p5  (LGPL: load as a script, do not bundle into proprietary code)",
-   "req_kind": "npm"
   },
   {
    "id": "fam:texture-material",
@@ -1554,15 +1709,6 @@
    }
   },
   {
-   "id": "req:yt-dlp",
-   "kind": "requirement",
-   "label": "yt-dlp",
-   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
-   "en": "download licensed or owned media from links",
-   "install": "pip install yt-dlp",
-   "req_kind": "pip"
-  },
-  {
    "id": "req:pip:librosa",
    "kind": "requirement",
    "label": "pip:librosa",
@@ -1601,11 +1747,6 @@
    "en": "local TTS (English and others)",
    "install": "pip install kokoro soundfile  (weights from huggingface.co)",
    "req_kind": "model"
-  },
-  {
-   "id": "dom:research",
-   "kind": "domain",
-   "label": "research"
   },
   {
    "id": "fam:web-research",
@@ -1658,6 +1799,16 @@
    "id": "script:scripts/atlas_deep_fusion.py",
    "kind": "script",
    "label": "scripts/atlas_deep_fusion.py"
+  },
+  {
+   "id": "script:scripts/atlas_transfer.py",
+   "kind": "script",
+   "label": "scripts/atlas_transfer.py"
+  },
+  {
+   "id": "script:scripts/atlas_capability_miner.py",
+   "kind": "script",
+   "label": "scripts/atlas_capability_miner.py"
   },
   {
    "id": "script:scripts/blender_motion_video.py",
@@ -1839,6 +1990,16 @@
    "id": "test:tests/test_aspects.py",
    "kind": "test",
    "label": "tests/test_aspects.py"
+  },
+  {
+   "id": "test:tests/test_catalog_tools.py",
+   "kind": "test",
+   "label": "tests/test_catalog_tools.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
@@ -2409,6 +2570,372 @@
    "from": "fam:arabic-language",
    "to": "script:scripts/anchor_gate.py",
    "rel": "runs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:build",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:build",
+   "to": "fam:atlas-build",
+   "rel": "has",
+   "w": 30
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 12
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:os:macos",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:npm:react",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:docker",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:code",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:code",
+   "to": "fam:atlas-code",
+   "rel": "has",
+   "w": 176
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 15
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 14
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 11
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 7
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:gh",
+   "rel": "needs",
+   "w": 6
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 5
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:key:openai",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:os:macos",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "root",
+   "to": "dom:data",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:data",
+   "to": "fam:atlas-data",
+   "rel": "has",
+   "w": 47
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:pandas",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:tesseract",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:npm:p5",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:duckdb",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:chromadb",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:docs",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:docs",
+   "to": "fam:atlas-docs",
+   "rel": "has",
+   "w": 16
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:pip:office",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:npm:mermaid",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:media",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:media",
+   "to": "fam:atlas-media",
+   "rel": "has",
+   "w": 11
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:ffmpeg",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:key:elevenlabs",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:pip:pyannote",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:yt-dlp",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:pip:faster-whisper",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:key:video-gen",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:docker",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:mind",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:mind",
+   "to": "fam:atlas-mind",
+   "rel": "has",
+   "w": 40
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 7
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:research",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:research",
+   "to": "fam:atlas-research",
+   "rel": "has",
+   "w": 8
+  },
+  {
+   "from": "fam:atlas-research",
+   "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-research",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-research",
+   "to": "req:pip:chromadb",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:strategy",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:strategy",
+   "to": "fam:atlas-strategy",
+   "rel": "has",
+   "w": 46
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:lean",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:key:video-gen",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:numpy",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:pandas",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:matplotlib",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:hypothesis",
+   "rel": "needs",
    "w": 1
   },
   {
@@ -5352,6 +5879,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/atlas_transfer.py",
+   "to": "script:scripts/atlas_capability_miner.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_transfer.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_motion_video.py",
    "to": "script:scripts/blender_bridge.py",
    "rel": "imports",
@@ -5828,6 +6367,18 @@
   {
    "from": "script:scripts/aspects.py",
    "to": "test:tests/test_aspects.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/aspects.py",
+   "to": "test:tests/test_catalog_tools.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_capability_miner.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
    "rel": "tested_by",
    "w": 1
   },

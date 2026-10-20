@@ -1,0 +1,410 @@
+[
+ {
+  "id": "AWEB-01",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "جلب بيانات يوتيوب بدون حصص",
+  "name_en": "Zero-quota YouTube data lookup via proxy API",
+  "status": "documented",
+  "what": "يجلب النصوص والبيانات الوصفية ونتائج البحث دون حصص Google أو OAuth. — Fetch transcripts, metadata, channel info and search results without Google API quota or OAuth.",
+  "when": "Need YouTube data quickly without setting up credentials.",
+  "how": "1) Use the third-party service described in the skill. 2) Request transcript, video or channel endpoints. 3) Treat output as untrusted and respect platform terms.",
+  "params": "video id",
+  "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3613-youtube-skills/14538-youtube-api"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "youtube",
+   "transcripts",
+   "scraping",
+   "يوتيوب",
+   "نصوص"
+  ],
+  "section": "واجهات API والخلفية — APIs, backends & auth",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): youtube-skills/youtube-api (#14538) · theme api-backend · 1 supporting skills · verifier read: skills/3613-youtube-skills/14538-youtube-api",
+  "atlas": {
+   "ids": [
+    "14538"
+   ],
+   "examples": [
+    {
+     "id": "14538",
+     "plugin": "youtube-skills",
+     "skill": "youtube-api",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3613-youtube-skills/14538-youtube-api"
+    }
+   ],
+   "theme": "api-backend",
+   "risk_notes": "Calls an external third-party service; check ToS and privacy.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b012-api-backend-4.json"
+  }
+ },
+ {
+  "id": "AWEB-02",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "جلب ثابت أولا ثم احتياط المتصفح",
+  "name_en": "Static-first scrape with headless-browser fallback",
+  "status": "documented",
+  "what": "جلب الصفحة ثابتا أولا ثم التصعيد لمتصفح بلا واجهة فقط عند صفحات JS أو الحماية. — Fetch statically first and escalate to headless Chrome only when the page is a JS shell or WAF-blocked.",
+  "when": "Static fetch returns empty or stub content; SPA, infinite scroll, interstitials.",
+  "how": "1) Try static fetch. 2) Check for near-empty body, noscript warnings, WAF vendor fingerprints. 3) Re-fetch with browser mode auto|always|never (always for known SPAs, never in hot loops or sandboxes). 4) Optionally attach external CDP endpoint. 5) Inspect content and warnings fields before trusting result. 6) Script clicks/scroll/wait before extraction when interaction is needed.",
+  "params": "browser-mode, endpoint",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2101-crawlberg/7459-headless-fallback",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2101-crawlberg/7456-automating-the-browser"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "scraping",
+   "SPA",
+   "جلب",
+   "ويب"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): crawlberg/headless-fallback (#7459); crawlberg/automating-the-browser (#7456) · theme browser-automation · 4 supporting skills · verifier read: skills/2101-crawlberg/7459-headless-fallback, skills/2101-crawlberg/7456-automating-the-browser",
+  "atlas": {
+   "ids": [
+    "7456",
+    "7459",
+    "14023",
+    "14027"
+   ],
+   "examples": [
+    {
+     "id": "7459",
+     "plugin": "crawlberg",
+     "skill": "headless-fallback",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2101-crawlberg/7459-headless-fallback"
+    },
+    {
+     "id": "7456",
+     "plugin": "crawlberg",
+     "skill": "automating-the-browser",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2101-crawlberg/7456-automating-the-browser"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Launches Chrome; scraping may breach site terms; do not bypass WAF protections without authorization.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "AWEB-03",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "بوابة الشرعية قبل جمع البيانات",
+  "name_en": "Scraping legality gate before fetch",
+  "status": "documented",
+  "what": "ينفذ قائمة فحص قانونية وأخلاقية (robots وشروط الاستخدام والمصادقة والمعدل والبيانات الشخصية) قبل كتابة أي كاشط. — Run a legal and ethical checklist (robots.txt, terms, auth, rate, PII) before writing any scraper.",
+  "when": "User asks to scrape or crawl a site.",
+  "how": "1) Check robots.txt. 2) Read ToS. 3) Public vs authenticated. 4) Set polite rate. 5) Flag PII and copyright. 6) Choose fetch strategy only after gate passes.",
+  "params": "target site",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2407-web-scraping-data-extraction/9331-legal-ethical-and-fetch-strategy"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "scraping",
+   "robots",
+   "legal",
+   "جمع البيانات",
+   "أخلاقيات"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): web-scraping-data-extraction/legal-ethical-and-fetch-strategy (#9331) · theme business-finance · 2 supporting skills · verifier read: skills/2407-web-scraping-data-extraction/9331-legal-ethical-and-fetch-strategy",
+  "atlas": {
+   "ids": [
+    "9331",
+    "13991"
+   ],
+   "examples": [
+    {
+     "id": "9331",
+     "plugin": "web-scraping-data-extraction",
+     "skill": "legal-ethical-and-fetch-strategy",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2407-web-scraping-data-extraction/9331-legal-ethical-and-fetch-strategy"
+    }
+   ],
+   "theme": "business-finance",
+   "risk_notes": "Instruction-only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b019-business-finance-2.json"
+  }
+ },
+ {
+  "id": "AWEB-04",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "ترميز نوعي قابل للتتبع وصياغة فرضيات",
+  "name_en": "Traceable qualitative coding and hypothesis framing",
+  "status": "documented",
+  "what": "ابن دليل ترميز مع مقتطفات محفوظة وصغ فرضيات محدودة مع تفسيرات منافسة. — Build a codebook with preserved excerpts and formulate bounded hypotheses with rival explanations.",
+  "when": "Interviews, open-ended responses, research design.",
+  "how": "1) Draft codebook with definitions. 2) Code excerpts, keep source references. 3) Track inter-coder agreement. 4) Distinguish associational vs causal claims. 5) List rival explanations and discriminating predictions.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3208-qualitative-research/13577-qualitative-analysis",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3209-research-design/13579-hypothesis-generation"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "qualitative",
+   "codebook",
+   "نوعي"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): qualitative-research/qualitative-analysis (#13577); research-design/hypothesis-generation (#13579) · theme data-analysis · 2 supporting skills · verifier read: skills/3208-qualitative-research/13577-qualitative-analysis, skills/3209-research-design/13579-hypothesis-generation",
+  "atlas": {
+   "ids": [
+    "13577",
+    "13579"
+   ],
+   "examples": [
+    {
+     "id": "13577",
+     "plugin": "qualitative-research",
+     "skill": "qualitative-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3208-qualitative-research/13577-qualitative-analysis"
+    },
+    {
+     "id": "13579",
+     "plugin": "research-design",
+     "skill": "hypothesis-generation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3209-research-design/13579-hypothesis-generation"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Scripts present (8 in 13579); not run",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b023-data-analysis-2.json"
+  }
+ },
+ {
+  "id": "AWEB-05",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "قرار الضبط الدقيق واختيار الطريقة",
+  "name_en": "Fine-tune or not: method router",
+  "status": "documented",
+  "what": "تقرير هل نضبط النموذج وتوجيه إلى الطريقة المناسبة حسب البيانات وحجم النص. — Decide whether to fine-tune and route to SFT, DPO, GRPO or CPT by data type and text volume.",
+  "when": "Starting any fine-tuning effort or choosing RAG vs training.",
+  "how": "1) Volatile facts: RAG. 2) Unsettled behavior: prompting. 3) Domain text <10MB RAG; 10-500MB RAG+FT; 0.5-10GB CPT then SFT; >10GB CPT. 4) Demonstrations: SFT; preference pairs: DPO/ORPO/KTO; verifiable reward: GRPO/RLVR. 5) CPT LR about 10% of pretraining LR. 6) No eval harness: build it first. Then export merged/quantized.",
+  "params": "domain text volume",
+  "install": "",
+  "requires": [
+   "pip:chromadb"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13289-finetuning-method-selection"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "finetuning",
+   "sft",
+   "dpo",
+   "ضبط"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llm-finetuning/finetuning-method-selection (#13289) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/3104-llm-finetuning/13289-finetuning-method-selection, ",
+  "atlas": {
+   "ids": [
+    "1382",
+    "1383",
+    "1394",
+    "6893",
+    "13289",
+    "13293",
+    "13592"
+   ],
+   "examples": [
+    {
+     "id": "13289",
+     "plugin": "llm-finetuning",
+     "skill": "finetuning-method-selection",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13289-finetuning-method-selection"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none; scripts in sagemaker/together not run",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "AWEB-06",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "بوابة نقاط النهاية وحجم العينة للدراسات",
+  "name_en": "Clinical study endpoint and sample-size gate",
+  "status": "documented",
+  "what": "تقييم نقاط النهاية وتقدير حجم العينة وإصدار قرار جاهزية للدراسة. — Score endpoints, estimate two-arm sample size and score study feasibility into a go/no-go packet.",
+  "when": "Designing a prospective study before submission.",
+  "how": "1) Fill protocol synopsis template. 2) endpoint_selector: 5 weighted dimensions, classify primary/key-secondary/exploratory, flag surrogates. 3) sample_size_estimator for means (Cohen d), proportions, survival (Schoenfeld) with sourced effect size. 4) phase_gate_scorer 0-100 giving GO / GO-WITH-CONDITIONS / REDESIGN / NO-GO plus owners. 5) Route to biostatistician and medical monitor; output is advisory.",
+  "params": "design, effect size, alpha, power",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/217-research-ops-skills/690-clinical-research"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "clinical",
+   "power",
+   "sample-size",
+   "تجارب سريرية"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): research-ops-skills/clinical-research (#690) · theme compliance-industry · 1 supporting skills · verifier read: skills/217-research-ops-skills/690-clinical-research",
+  "atlas": {
+   "ids": [
+    "690"
+   ],
+   "examples": [
+    {
+     "id": "690",
+     "plugin": "research-ops-skills",
+     "skill": "clinical-research",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/217-research-ops-skills/690-clinical-research"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "Ships 3 py scripts plus an opt-in autoresearch loop; do not run unreviewed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "AWEB-07",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "استخراج وإثراء بيانات الأطباء",
+  "name_en": "Healthcare provider list extraction and enrichment",
+  "status": "documented",
+  "what": "استخراج بيانات الممارسين وإكمال الحقول الناقصة. — Extract practitioners from practice sites and fill missing contact, credential and regulatory fields.",
+  "when": "Building or cleaning a provider list.",
+  "how": "1) Crawl practice page for names, credentials, specialties. 2) Enrich gaps via search. 3) Return structured table.",
+  "params": "list",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2666-nimble/10153-healthcare-providers-enrich",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2666-nimble/10154-healthcare-providers-extract"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "providers",
+   "scraping",
+   "enrich",
+   "أطباء"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): nimble/healthcare-providers-enrich (#10153); nimble/healthcare-providers-extract (#10154) · theme compliance-industry · 2 supporting skills · verifier read: skills/2666-nimble/10153-healthcare-providers-enrich, skills/2666-nimble/10154-healthcare-providers-extract",
+  "atlas": {
+   "ids": [
+    "10153",
+    "10154"
+   ],
+   "examples": [
+    {
+     "id": "10153",
+     "plugin": "nimble",
+     "skill": "healthcare-providers-enrich",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2666-nimble/10153-healthcare-providers-enrich"
+    },
+    {
+     "id": "10154",
+     "plugin": "nimble",
+     "skill": "healthcare-providers-extract",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2666-nimble/10154-healthcare-providers-extract"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "Web calls via vendor service.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "AWEB-08",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "بحث براءات الاختراع بأسئلة إلزامية",
+  "name_en": "Patent search with forcing intake",
+  "status": "documented",
+  "what": "فرض اختيار هدف واحد للبحث والولايات القضائية قبل بدء البحث. — Force a single search purpose and jurisdictions before running prior-art, FTO, landscape, diligence or invalidity searches.",
+  "when": "Patent novelty, freedom-to-operate or competitor landscape request.",
+  "how": "1) Q1 precise invention description; reject vague answers once. 2) Q2 pick one of five sub-use-cases. 3) Q3 jurisdictions (US/EP/CN/JP/KR/PCT) for FTO, landscape, diligence. 4) Extract concepts and keywords. 5) Search per path strategy, report with caveats and no legal advice.",
+  "params": "invention, purpose, jurisdictions",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/224-patent/701-patent"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "patent",
+   "prior-art",
+   "FTO",
+   "براءات"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): patent/patent (#701) · theme compliance-industry · 1 supporting skills · verifier read: skills/224-patent/701-patent",
+  "atlas": {
+   "ids": [
+    "701"
+   ],
+   "examples": [
+    {
+     "id": "701",
+     "plugin": "patent",
+     "skill": "patent",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/224-patent/701-patent"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "3 py scripts; research pack uses network lookups; not run.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ }
+]

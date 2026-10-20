@@ -10841,7 +10841,8 @@
    "pip:numpy",
    "pip:pillow",
    "pip:opencv",
-   "pip:scipy"
+   "pip:scipy",
+   "pip:fonttools"
   ],
   "license": "owner",
   "proof": [

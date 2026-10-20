@@ -1,0 +1,1780 @@
+[
+ {
+  "id": "ABUILD-01",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تنفيذ خارطة الطريق تلقائياً: مرحلة لكل طلب دمج",
+  "name_en": "Autonomous phase-per-PR roadmap execution loop",
+  "status": "documented",
+  "what": "قيادة خارطة طريق معتمدة ذات مراحل حتى النهاية دون إشراف: وكيل منفذ معزول لكل مرحلة، وطلب دمج مشروط بنجاح CI والمراجع الآلي، ثم الدمج بعد مهلة وتحديث اللوحات وتسلسل المرحلة التالية. — Drive an approved phased roadmap to completion unattended with one isolated implementer subagent per phase, each PR gated on CI and the review bot, merged after a grace window, then dashboards updated and the next phase chained.",
+  "when": "An approved roadmap with per-phase task files exists; 'run autopilot'; overnight multi-phase build; any unattended loop that needs finite limits and stop conditions.",
+  "how": "1) Preflight in every mode: gh installed and authenticated, git base branch reachable on origin, roadmap with progress dashboard plus per-phase task files, a config doc present, declared external tools up; refuse rather than invent plans. 2) init mode writes the config from the roadmap, then STOPS for human review. 3) run: orchestrator spawns one isolated implementer per phase, opens a PR, waits for CI and review bot via background wake-ups, fixes findings, merges only when the full merge gate holds after a grace window, updates dashboards, chains the next phase. 4) Declare finite loop limits and termination conditions up front; stop on any unmet precondition.",
+  "params": "mode (init|run|status); roadmap path; grace window; loop limits; retry-watchdog env for unattended sessions",
+  "install": "",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/899-bymax-codex/2087-autopilot",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3407-clean-room/13957-clean-room-loop",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3111-constellation/13312-roundloop"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "autopilot",
+   "roadmap",
+   "pull-request",
+   "تنفيذ-ذاتي",
+   "loop"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): bymax-codex/autopilot (#2087); clean-room/clean-room-loop (#13957); constellation/roundloop (#13312) · theme agent-workflow · 8 supporting skills · verifier read: skills/899-bymax-codex/2087-autopilot, skills/3407-clean-room/13957-clean-room-loop, skills/3111-constellation/13312-roundloop",
+  "atlas": {
+   "ids": [
+    "368",
+    "2087",
+    "2094",
+    "2097",
+    "10220",
+    "13312",
+    "13957",
+    "13963"
+   ],
+   "examples": [
+    {
+     "id": "2087",
+     "plugin": "bymax-codex",
+     "skill": "autopilot",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/899-bymax-codex/2087-autopilot"
+    },
+    {
+     "id": "13957",
+     "plugin": "clean-room",
+     "skill": "clean-room-loop",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3407-clean-room/13957-clean-room-loop"
+    },
+    {
+     "id": "13312",
+     "plugin": "constellation",
+     "skill": "roundloop",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3111-constellation/13312-roundloop"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Merges PRs and pushes with no human present, uses scheduled wake-ups and push notifications, and spawns many subagents; only use on repos you own with branch protection and required CI. Packages ship hooks and scripts. Atlas risk tags acros",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b002-agent-workflow-2.json"
+  }
+ },
+ {
+  "id": "ABUILD-02",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "مسجل قياس تشغيل بالملاحظة فقط",
+  "name_en": "Observation-only run telemetry recorder",
+  "status": "documented",
+  "what": "تسجيل التوقفات والأخطاء وأزمنة المراحل عبر مسجل موثق دون تشخيص. — Record halts, errors and stage timings through a validated recorder with observation-not-diagnosis rule.",
+  "when": "Long migration or pipeline runs.",
+  "how": "1) start dims json. 2) stage start/end with outcome. 3) record event (types not instances, max 400 chars, no secrets). 4) wait start/end for user halts. 5) finalize rollup.",
+  "params": "project path",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14021-rp-telemetry"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "telemetry",
+   "observability",
+   "قياس"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): wix/rp-telemetry (#14021) · theme agent-workflow · 3 supporting skills · verifier read: skills/3419-wix/14021-rp-telemetry",
+  "atlas": {
+   "ids": [
+    "14021",
+    "14025",
+    "14026"
+   ],
+   "examples": [
+    {
+     "id": "14021",
+     "plugin": "wix",
+     "skill": "rp-telemetry",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14021-rp-telemetry"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Node script writes JSON; may push to BI sink.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b006-agent-workflow-6.json"
+  }
+ },
+ {
+  "id": "ABUILD-03",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف",
+  "name_en": "Role-squad agent pipeline with stages, locks and resume",
+  "status": "documented",
+  "what": "يشغّل فريق وكلاء بأدوار (مطوّر ومراجع خصم ومختبر جودة) بخطة معماري عبر بوابات مراحل وأقفال كتابة واستئناف يبدأ بالتحقق، مع تنسيق بالرسائل وسجل مشترك. — Run an architect-planned team of role agents (developer, adversarial reviewer, QA) through staged gates with write locks and verify-first resume, coordinating via messages and a shared log.",
+  "when": "User wants an agent team on a repo's open issues, role-based specialist analysis (researcher, architect, PM), or to configure Claude Code agent teams with lead/teammates and messaging.",
+  "how": "1) An architect pass sorts outstanding issues into parallelizable groups. 2) Each issue gets a small squad: developer, adversarial reviewer, QA/SDET. 3) Define stages and gates; hold write locks so two roles never edit the same artifact. 4) Specialist deep-dive: researcher, architect and PM run in parallel and yield a prioritized next-build report. 5) Coordinate with SendMessage/TaskUpdate and ring a 'doorbell' instead of pasting payloads; log traffic as JSONL. 6) Show run status (stages, roles, locks, gates); resume an interrupted run verify-first.",
+  "params": "repo and issue list; role set; stage gates; capacity",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3263-agent-team-orchestration/13774-agent-team-orchestration",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3605-ateam/14480-run",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2134-agent-patterns-plugin/7563-agent-teams"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "agent-teams",
+   "orchestration",
+   "role-based",
+   "فريق وكلاء",
+   "SendMessage"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-team-orchestration/agent-team-orchestration (#13774); ateam/run (#14480); agent-patterns-plugin/agent-teams (#7563) · theme agent-workflow · 8 supporting skills · verifier read: skills/3263-agent-team-orchestration/13774-agent-team-orchestration, skills/3605-ateam/14480-run, skills/2134-agent-patterns-plugin/7563-agent-teams",
+  "atlas": {
+   "ids": [
+    "244",
+    "7563",
+    "13377",
+    "13774",
+    "14476",
+    "14479",
+    "14480",
+    "14483"
+   ],
+   "examples": [
+    {
+     "id": "13774",
+     "plugin": "agent-team-orchestration",
+     "skill": "agent-team-orchestration",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3263-agent-team-orchestration/13774-agent-team-orchestration"
+    },
+    {
+     "id": "14480",
+     "plugin": "ateam",
+     "skill": "run",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3605-ateam/14480-run"
+    },
+    {
+     "id": "7563",
+     "plugin": "agent-patterns-plugin",
+     "skill": "agent-teams",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2134-agent-patterns-plugin/7563-agent-teams"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "agiflow and batterie use mcp_server; batterie and agent-patterns ship hooks/scripts; the squad writes code and opens PRs on a real repo. Steps inferred from descriptions only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b001-agent-workflow-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-04",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تفكيك المواصفة إلى مهام صغيرة لوكلاء البرمجة",
+  "name_en": "Spec-to-task decomposition for coding agents",
+  "status": "documented",
+  "what": "يحوّل مواصفة أو خطة إلى مهام صغيرة قابلة للتحقق مع الاعتماديات وعلامات التوازي وفحوص الإنجاز ومستويات الاستقلالية وجدول تغطية معايير القبول. — Turn a spec or plan into small, verifiable agent tasks with dependencies, parallel markers, done-checks, autonomy levels and an acceptance-criteria coverage table.",
+  "when": "User has a spec/PRD/plan to hand to coding agents, wants work split for parallel sessions or worktrees, or an agent drifts and fails on tasks that are too large.",
+  "how": "1) Read spec and plan; list deliverables (endpoints, components, migrations, jobs, docs). 2) Order phases: setup -> contracts/tests -> core -> integration -> polish. 3) Size each task to one verifiable outcome, about 1-4 human hours or a diff reviewable in under 15 minutes, touching a small named file set; split any task needing 'and also'. 4) Write each as `T-07 [P] title` with Covers (FR/AC ids), Depends on, Files, Done when (a test or command), Autonomy level. 5) Mark [P] only for disjoint files with no unmerged dependency. 6) Name the critical path and tasks needing a human decision. 7) Emit tasks.md with a coverage table; drop tasks with no source requirement.",
+  "params": "spec/plan path; autonomy policy; parallel-session limit",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13136-task-decomposition",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2230-ai-coding-model-guidance/8467-coding-agent-task-scoping",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2139-blueprint-plugin/7620-blueprint-work-order"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "task-breakdown",
+   "spec-driven",
+   "INVEST",
+   "تفكيك المهام",
+   "tasks.md"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): adlc-intent/task-decomposition (#13136); ai-coding-model-guidance/coding-agent-task-scoping (#8467); blueprint-plugin/blueprint-work-order (#7620) · theme agent-workflow · 7 supporting skills · verifier read: skills/3050-adlc-intent/13136-task-decomposition, skills/2230-ai-coding-model-guidance/8467-coding-agent-task-scoping, skills/2139-blueprint-plugin/7620-blueprint-work-order",
+  "atlas": {
+   "ids": [
+    "7",
+    "2629",
+    "7611",
+    "7612",
+    "7620",
+    "8467",
+    "13136"
+   ],
+   "examples": [
+    {
+     "id": "13136",
+     "plugin": "adlc-intent",
+     "skill": "task-decomposition",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13136-task-decomposition"
+    },
+    {
+     "id": "8467",
+     "plugin": "ai-coding-model-guidance",
+     "skill": "coding-agent-task-scoping",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2230-ai-coding-model-guidance/8467-coding-agent-task-scoping"
+    },
+    {
+     "id": "7620",
+     "plugin": "blueprint-plugin",
+     "skill": "blueprint-work-order",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2139-blueprint-plugin/7620-blueprint-work-order"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Pure instructions in the main source (13136); blueprint-plugin variants ship hooks/scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b001-agent-workflow-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-05",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "مسار توقيع وإصدار تطبيقات الجوال والمكتب",
+  "name_en": "Mobile and desktop release signing pipeline",
+  "status": "documented",
+  "what": "يصمم التوقيع والتوثيق والطرح المرحلي والتحديث الآمن لتطبيقات الجوال والمكتب. — Design code signing, notarization, staged rollout and safe auto-update for mobile and desktop apps.",
+  "when": "Setting up CI releases or diagnosing signing failures.",
+  "how": "1) iOS: Fastlane match for certs, Android: keystore kept out of repo. 2) macOS: Developer ID, hardened runtime, notarytool then staple; Windows: Authenticode, EV cert. 3) Keys in CI secrets. 4) Updater verifies signature, uses channels, staged rollout, rollback, version floor. 5) Pick Electron vs Tauri by real needs.",
+  "params": "platform",
+  "install": "",
+  "requires": [
+   "os:macos"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2279-desktop-app-engineering/8701-packaging-signing-and-updates",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2340-mobile-engineering/8992-app-store-release-pipeline"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "signing",
+   "release",
+   "notarization",
+   "توقيع التطبيقات"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): desktop-app-engineering/packaging-signing-and-updates (#8701); mobile-engineering/app-store-release-pipeline (#8992) · theme app-building · 8 supporting skills · verifier read: skills/2279-desktop-app-engineering/8701-packaging-signing-and-updates, skills/2340-mobile-engineering/8992-app-store-release-pipeline",
+  "atlas": {
+   "ids": [
+    "8564",
+    "8698",
+    "8701",
+    "8702",
+    "8992",
+    "10292",
+    "10304",
+    "13843"
+   ],
+   "examples": [
+    {
+     "id": "8701",
+     "plugin": "desktop-app-engineering",
+     "skill": "packaging-signing-and-updates",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2279-desktop-app-engineering/8701-packaging-signing-and-updates"
+    },
+    {
+     "id": "8992",
+     "plugin": "mobile-engineering",
+     "skill": "app-store-release-pipeline",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2340-mobile-engineering/8992-app-store-release-pipeline"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Prose guidance; commands touch signing keys",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b013-app-building-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-06",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "نموذج HTML تجريبي يجيب أسئلة مفتوحة",
+  "name_en": "Open-question HTML prototype spike",
+  "status": "documented",
+  "what": "يبني نموذج HTML واحداً تتحكم فيه الأسئلة المفتوحة مع تقرير نتائج. — Build one self-contained clickable HTML prototype whose controls are the open questions, with harvest table and spike report.",
+  "when": "Requirement needs validating or a technique is unproven before building.",
+  "how": "1) ANCHOR on a requirement id or technique with at least one named open question. 2) Open spike-report.md immediately and append as you go. 3) Harvest structure/tokens/payloads from source into harvest-table.md; only invent what the requirement adds and annotate it. 4) Keep reviewer shell visually distinct from app tokens. 5) Data fidelity: live > recorded > labeled stub.",
+  "params": "anchor id, open questions",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3394-prototype-spike/13930-prototype-spike",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3394-prototype-spike/13930-prototype-spike"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "prototype",
+   "spike",
+   "html",
+   "نموذج أولي",
+   "تصميم"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): prototype-spike/prototype-spike (#13930); universal-design-principles/prototyping-when-and-what (#3858) · theme app-building · 5 supporting skills · verifier read: skills/3394-prototype-spike/13930-prototype-spike, skills/3394-prototype-spike/13930-prototype-spike",
+  "atlas": {
+   "ids": [
+    "3851",
+    "3856",
+    "3857",
+    "3858",
+    "13930"
+   ],
+   "examples": [
+    {
+     "id": "13930",
+     "plugin": "prototype-spike",
+     "skill": "prototype-spike",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3394-prototype-spike/13930-prototype-spike"
+    },
+    {
+     "id": "3858",
+     "plugin": "universal-design-principles",
+     "skill": "prototyping-when-and-what",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3394-prototype-spike/13930-prototype-spike"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Docs only",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b014-app-building-2.json"
+  }
+ },
+ {
+  "id": "ABUILD-07",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تنسيق بناء تطبيق كامل على مراحل",
+  "name_en": "Phased full-stack app build orchestration",
+  "status": "documented",
+  "what": "ينسق المواصفة والنموذج والخلفية والواجهة عبر خطة عمل متتبعة وملفات تسليم. — Sequence spec, prototype, backend, agent and frontend work from a tracked work plan with handoff envelopes.",
+  "when": "Large app build needing staged delegation and resumable state.",
+  "how": "1) Resolve kit dir and require clean git tree. 2) Author spec then HTML prototype. 3) Analyze outputs to decide which backend/agent/frontend tracks are needed. 4) Track in a work-plan file with pointer json. 5) After each delegate, read its result envelope and check liveness. 6) Resume by reading the plan; one phase at a time (build skill).",
+  "params": "app name or plan slug",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2104-app-orchestrator-kit/7475-orchestrate-app",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14075-create-app"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "orchestration",
+   "work-plan",
+   "بناء تطبيق",
+   "phases"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): app-orchestrator-kit/orchestrate-app (#7475); metaskills/create-app (#14075) · theme app-building · 9 supporting skills · verifier read: skills/2104-app-orchestrator-kit/7475-orchestrate-app, skills/3431-metaskills/14075-create-app",
+  "atlas": {
+   "ids": [
+    "207",
+    "2659",
+    "2961",
+    "7475",
+    "10312",
+    "14075",
+    "14079",
+    "14082",
+    "14316"
+   ],
+   "examples": [
+    {
+     "id": "7475",
+     "plugin": "app-orchestrator-kit",
+     "skill": "orchestrate-app",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2104-app-orchestrator-kit/7475-orchestrate-app"
+    },
+    {
+     "id": "14075",
+     "plugin": "metaskills",
+     "skill": "create-app",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14075-create-app"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Node scripts for capability analysis and result writing; Bash tool use",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b013-app-building-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-08",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تقييم النموذج مقابل معايير القبول",
+  "name_en": "Prototype evaluation vs acceptance criteria",
+  "status": "documented",
+  "what": "يختبر النموذج بمعايير القبول وسيناريوهات مستخدمين ويصدر تقريراً مصوراً. — Run AC verdicts with fix loop then persona Playwright walkthroughs and emit an HTML evidence report.",
+  "when": "Validating a UX prototype before MR review or stakeholder share.",
+  "how": "1) Require ticket key and reachable URL or built dist (serve with sirv --single). 2) Phase A: check each acceptance criterion with source access, fix FAILs, log iterations. 3) Phase B: persona walkthroughs via Playwright with screenshots and think-aloud traces. 4) Write evaluation-report.html and csv. 5) Optionally publish to Pages/Vercel.",
+  "params": "ticket key, URL, workspace",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3010-uxd-prototype/12859-uxd-prototype-evaluate"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "usability",
+   "playwright",
+   "evaluation",
+   "اختبار",
+   "تجربة المستخدم"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): uxd-prototype/uxd-prototype-evaluate (#12859) · theme app-building · 4 supporting skills · verifier read: skills/3010-uxd-prototype/12859-uxd-prototype-evaluate",
+  "atlas": {
+   "ids": [
+    "12858",
+    "12859",
+    "12860",
+    "12861"
+   ],
+   "examples": [
+    {
+     "id": "12859",
+     "plugin": "uxd-prototype",
+     "skill": "uxd-prototype-evaluate",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3010-uxd-prototype/12859-uxd-prototype-evaluate"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Many py/js/sh helpers, Playwright, publish scripts; network and git writes",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b014-app-building-2.json"
+  }
+ },
+ {
+  "id": "ABUILD-09",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "توليد PWA مع service worker",
+  "name_en": "PWA manifest and service worker generation",
+  "status": "documented",
+  "what": "يولد PWA بملف manifest وعامل خدمة. — Generate a PWA with manifest, service worker caching and engine-gap awareness.",
+  "when": "Making web app installable or offline-capable.",
+  "how": "1) Write manifest with icons, display, start_url. 2) Register service worker with cache strategy per route. 3) Check engine gaps (iOS vs Chromium) in pwa-expert notes. 4) Test with Lighthouse.",
+  "params": "app name, strategy",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "pwa",
+   "service-worker",
+   "manifest",
+   "تطبيق ويب",
+   "عمل دون اتصال"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pwa-builder/pwa (#1752); pwa-expert/pwa-development (#52) · theme app-building · 3 supporting skills · verifier read: skills/723-pwa-builder/1752-pwa, skills/723-pwa-builder/1752-pwa",
+  "atlas": {
+   "ids": [
+    "52",
+    "70",
+    "1752"
+   ],
+   "examples": [
+    {
+     "id": "1752",
+     "plugin": "pwa-builder",
+     "skill": "pwa",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa"
+    },
+    {
+     "id": "52",
+     "plugin": "pwa-expert",
+     "skill": "pwa-development",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Docs only",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b014-app-building-2.json"
+  }
+ },
+ {
+  "id": "ABUILD-10",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "هيكلة مشروع SaaS جاهز",
+  "name_en": "SaaS boilerplate scaffold spec",
+  "status": "documented",
+  "what": "يولّد هيكل SaaS كامل بمصادقة وفواتير ولوحة تحكم من وصف قصير. — Generate a Next.js App Router SaaS skeleton with auth, DB, Stripe billing, dashboard and marketing groups from a short brief.",
+  "when": "New SaaS or multi-tenant product kickoff.",
+  "how": "1) Collect brief: product, auth (nextauth/clerk/supabase), DB, payments, features. 2) Lay out route groups (auth), (dashboard), (marketing), api/webhooks/stripe, billing checkout/portal. 3) Add lib/auth, lib/db with Drizzle schema, plan cards, usage meter. 4) Wire Stripe webhooks with signature check. 5) Add tenant isolation per tenant-bill pattern.",
+  "params": "auth, db, payments, features",
+  "install": "",
+  "requires": [
+   "npm:react"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/198-product-skills/641-saas-scaffolder",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/198-product-skills/641-saas-scaffolder"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "saas",
+   "scaffold",
+   "nextjs",
+   "سااس",
+   "هيكل"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): product-skills/saas-scaffolder (#641); tenant-billing/tenant-bill (#1860) · theme app-building · 4 supporting skills · verifier read: skills/198-product-skills/641-saas-scaffolder, skills/198-product-skills/641-saas-scaffolder",
+  "atlas": {
+   "ids": [
+    "641",
+    "1816",
+    "1860",
+    "14087"
+   ],
+   "examples": [
+    {
+     "id": "641",
+     "plugin": "product-skills",
+     "skill": "saas-scaffolder",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/198-product-skills/641-saas-scaffolder"
+    },
+    {
+     "id": "1860",
+     "plugin": "tenant-billing",
+     "skill": "tenant-bill",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/198-product-skills/641-saas-scaffolder"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Has one python helper in scaffolder; not run",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b014-app-building-2.json"
+  }
+ },
+ {
+  "id": "ABUILD-11",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "حالة الاشتراكات وواجهة إدارة الاشتراك",
+  "name_en": "Subscription store state and paywall UI",
+  "status": "documented",
+  "what": "يفحص حالة المنتجات ويضيف مركز العملاء للاشتراكات. — Inspect App Store/Play product state and add RevenueCat Customer Center to an app.",
+  "when": "Mobile subscription apps, pricing tiers, app valuation.",
+  "how": "1) Inspect product state across stores via the store-state skill. 2) Add Customer Center UI for self-service management. 3) Configure plans/usage pricing. 4) Estimate app value from recurring revenue multiples.",
+  "params": "store, SDK",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "subscriptions",
+   "billing",
+   "revenuecat",
+   "اشتراكات",
+   "فوترة"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): revenuecat/revenuecat-customer-center (#12735) · theme app-building · 4 supporting skills · verifier read: skills/723-pwa-builder/1752-pwa",
+  "atlas": {
+   "ids": [
+    "12730",
+    "12735",
+    "12748",
+    "13164"
+   ],
+   "examples": [
+    {
+     "id": "12735",
+     "plugin": "revenuecat",
+     "skill": "revenuecat-customer-center",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Writes store state via MCP when asked",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b014-app-building-2.json"
+  }
+ },
+ {
+  "id": "ABUILD-12",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "نموذج أولي مؤقت للإجابة عن سؤال",
+  "name_en": "Throwaway prototype to answer one question",
+  "status": "documented",
+  "what": "يبني نموذجا مؤقتا أو واجهة قابلة للنقر لحسم سؤال تصميم أو جدوى واحد ثم يحذفه أو يعتمده. — Build a disposable prototype or clickable mock to settle a single design or feasibility question, then discard or keep.",
+  "when": "Unclear how something should work or feel; requirements interview needs visuals.",
+  "how": "1) State the single question and a fixed budget. 2) Build minimum throwaway code in an isolated folder. 3) For requirements, render screens in a local dashboard while interviewing, pushing state each turn and draining user events first. 4) Record answer and decision, then keep or delete. 5) Fold results into SPEC.md.",
+  "params": "question, time budget",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2627-grill-with-prototype",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2601-chat-n-build"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "prototype",
+   "spec",
+   "نموذج أولي",
+   "mockup"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ambient-library/grill-with-prototype (#2627); ambient-library/chat-n-build (#2601) · theme app-building · 6 supporting skills · verifier read: skills/1120-ambient-library/2627-grill-with-prototype, skills/1120-ambient-library/2601-chat-n-build",
+  "atlas": {
+   "ids": [
+    "834",
+    "2627",
+    "3300",
+    "8416",
+    "10227",
+    "12795"
+   ],
+   "examples": [
+    {
+     "id": "2627",
+     "plugin": "ambient-library",
+     "skill": "grill-with-prototype",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2627-grill-with-prototype"
+    },
+    {
+     "id": "2601",
+     "plugin": "ambient-library",
+     "skill": "chat-n-build",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2601-chat-n-build"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Ambient skill runs local python bridge server and dashboard",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b013-app-building-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-13",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "بناء موقع Wix هيدلس من وصفات SDK",
+  "name_en": "Wix headless site build from SDK recipes",
+  "status": "documented",
+  "what": "يجمع موقع Wix هيدلس بربط وحدات SDK جاهزة بدل كتابتها. — Assemble a Wix Headless site by wiring shipped verified @wix/sdk modules and REST scaffolds rather than authoring integrations.",
+  "when": "Building headless storefront, bookings or CMS on Wix; migrating from Shopify or other platforms.",
+  "how": "1) Authenticate to obtain a Wix access token. 2) Use wix-docs to confirm endpoint, method and shape. 3) Wire shipped SDK modules for Stores/Bookings/CMS. 4) For vibe-coded front ends use dependency-free REST scaffolds. 5) For migrations route via replatform modules then quick catalog import adapter with final report.",
+  "params": "business solutions needed",
+  "install": "",
+  "requires": [
+   "chromium",
+   "key:unspecified"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "wix",
+   "headless",
+   "migration",
+   "ويكس",
+   "ترحيل"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): wix/wix-headless-fast (#14006); wix/wix-vibe-headless (#14022) · theme app-building · 6 supporting skills · verifier read: skills/890-web/2012-heap-snapshot-leaks, skills/890-web/2012-heap-snapshot-leaks",
+  "atlas": {
+   "ids": [
+    "14006",
+    "14007",
+    "14008",
+    "14009",
+    "14022",
+    "14029"
+   ],
+   "examples": [
+    {
+     "id": "14006",
+     "plugin": "wix",
+     "skill": "wix-headless-fast",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks"
+    },
+    {
+     "id": "14022",
+     "plugin": "wix",
+     "skill": "wix-vibe-headless",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks"
+    }
+   ],
+   "theme": "app-building",
+   "risk_notes": "Large JS bundles (up to 115 files); calls Wix APIs with tokens",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b014-app-building-2.json"
+  }
+ },
+ {
+  "id": "ABUILD-14",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "حلقة مراجع شجرة الوصولية لتحكم المتصفح",
+  "name_en": "Accessibility-tree ref loop for browser agents",
+  "status": "documented",
+  "what": "تشغيل متصفح حقيقي عبر لقطات شجرة وصولية مختصرة ومراجع عناصر، مع إعادة اللقطة بعد كل تغيير. — Drive a real browser by taking compact accessibility snapshots with element refs, acting on refs, and re-snapshotting after each DOM change.",
+  "when": "Task needs clicking/filling/scraping a live JS-rendered page cheaply in tokens.",
+  "how": "1) open URL (daemon starts Chrome). 2) snapshot interactive elements with bounded output. 3) click/fill by ref (@eN or eN), not CSS. 4) re-snapshot after any DOM change since refs move. 5) read text with a size cap. 6) screenshot only for visual or canvas checks. 7) close the session. Chain commands or batch to reuse the daemon.",
+  "params": "url, output cap, session name",
+  "install": "npm i -g agent-browser && agent-browser install",
+  "requires": [
+   "node",
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1395-agent-browser/3331-agent-browser",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2464-playwright/9552-playwright",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2923-playwright-cli/12134-playwright-cli"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "playwright",
+   "snapshot",
+   "متصفح",
+   "أتمتة"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-browser/agent-browser (#3331); playwright/playwright (#9552); playwright-cli/playwright-cli (#12134) · theme browser-automation · 7 supporting skills · verifier read: skills/1395-agent-browser/3331-agent-browser, skills/2464-playwright/9552-playwright, skills/2923-playwright-cli/12134-playwright-cli",
+  "atlas": {
+   "ids": [
+    "3331",
+    "7897",
+    "9552",
+    "10520",
+    "11670",
+    "12134",
+    "14695"
+   ],
+   "examples": [
+    {
+     "id": "3331",
+     "plugin": "agent-browser",
+     "skill": "agent-browser",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1395-agent-browser/3331-agent-browser"
+    },
+    {
+     "id": "9552",
+     "plugin": "playwright",
+     "skill": "playwright",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2464-playwright/9552-playwright"
+    },
+    {
+     "id": "12134",
+     "plugin": "playwright-cli",
+     "skill": "playwright-cli",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2923-playwright-cli/12134-playwright-cli"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Installs global npm CLI and downloads Chrome; launches persistent daemon; page text is untrusted so use content boundaries and allowed-domain scoping.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-15",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "استنساخ موقع بأدلة المتصفح",
+  "name_en": "Browser-evidence website clone workflow",
+  "status": "documented",
+  "what": "إعادة بناء صفحة رئيسية من بيان استخراج مجمد من المتصفح ثم سد الفجوات بمراجعة بصرية. — Rebuild a public home page as a headless frontend from a frozen browser-derived extraction manifest, then close gaps through visual review.",
+  "when": "Migrating or cloning a site while preserving SEO, assets, interactions.",
+  "how": "1) Resolve source URL, output dir, mode. 2) Capture with a real browser (never HTML-only), freeze extraction manifest and first-viewport evidence. 3) Build only from the frozen manifest. 4) Verify runnable dev/build scripts. 5) Visual compare and gap loop until accepted or done_with_gaps. Stage resources load on demand.",
+  "params": "source url, mode",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14023-wix-headless-replatform",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14027-rp-source-evidence"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "clone",
+   "migration",
+   "استنساخ",
+   "موقع"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): wix/wix-headless-replatform (#14023); wix/rp-source-evidence (#14027) · theme browser-automation · 3 supporting skills · verifier read: skills/3419-wix/14023-wix-headless-replatform, skills/3419-wix/14027-rp-source-evidence",
+  "atlas": {
+   "ids": [
+    "14023",
+    "14027",
+    "14030"
+   ],
+   "examples": [
+    {
+     "id": "14023",
+     "plugin": "wix",
+     "skill": "wix-headless-replatform",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14023-wix-headless-replatform"
+    },
+    {
+     "id": "14027",
+     "plugin": "wix",
+     "skill": "rp-source-evidence",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14027-rp-source-evidence"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Large js payload (55 files); scaffolds Wix projects and may touch remote Wix sites; copying branded content needs authorization.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-16",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تصحيح الصفحات الحية عبر Chrome DevTools MCP",
+  "name_en": "Chrome DevTools MCP debugging of live pages",
+  "status": "documented",
+  "what": "فحص الكونسول والشبكة وDOM للصفحة الحية عبر DevTools MCP أو منفذ CDP لإعادة إنتاج الأخطاء. — Inspect console, network, DOM and performance of a live page through Chrome DevTools MCP or a CDP port to reproduce browser bugs.",
+  "when": "UI bug that only reproduces in a browser; need console errors or failed requests.",
+  "how": "1) Connect via chrome-devtools MCP or a debugging port (9222; MCP proxy 9224). 2) Navigate, take snapshot, emulate viewport. 3) Read console and network for errors. 4) Reproduce flow with click/fill. 5) Screenshot before and after fix. 6) Fix, reload, re-verify. For a user's own Chrome, ask before attaching.",
+  "params": "debug port, url",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3416-chrome-devtools/13989-chrome-devtools",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1219-chrome-cdp/2901-chrome-cdp",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2759-charly-selkies/10880-chrome-devtools-mcp"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "devtools",
+   "CDP",
+   "تصحيح",
+   "شبكة"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): chrome-devtools/chrome-devtools (#13989); chrome-cdp/chrome-cdp (#2901); charly-selkies/chrome-devtools-mcp (#10880) · theme browser-automation · 6 supporting skills · verifier read: skills/3416-chrome-devtools/13989-chrome-devtools, skills/1219-chrome-cdp/2901-chrome-cdp, skills/2759-charly-selkies/10880-chrome-devtools-mcp",
+  "atlas": {
+   "ids": [
+    "2901",
+    "7511",
+    "10664",
+    "10880",
+    "10882",
+    "13989"
+   ],
+   "examples": [
+    {
+     "id": "13989",
+     "plugin": "chrome-devtools",
+     "skill": "chrome-devtools",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3416-chrome-devtools/13989-chrome-devtools"
+    },
+    {
+     "id": "2901",
+     "plugin": "chrome-cdp",
+     "skill": "chrome-cdp",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1219-chrome-cdp/2901-chrome-cdp"
+    },
+    {
+     "id": "10880",
+     "plugin": "charly-selkies",
+     "skill": "chrome-devtools-mcp",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2759-charly-selkies/10880-chrome-devtools-mcp"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "An open CDP port exposes full browser control; bind locally only. Attaching to a real profile exposes sessions.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-17",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "خط لقطات Playwright داخل حاوية",
+  "name_en": "Containerized Playwright screenshot pipeline",
+  "status": "documented",
+  "what": "توليد لقطات توثيق قابلة للتكرار داخل Docker بواسطة Playwright وتنظيف اللقطات الزائدة. — Generate reproducible README or doc screenshots in Docker with Playwright, then clean up stray screenshots.",
+  "when": "Need deterministic screenshots in CI or for custom-node packs.",
+  "how": "1) Build a Docker image with Playwright and fonts. 2) Mount the app, start it, wait on ready selector. 3) Run a script that captures each target at a fixed viewport. 4) Write to an output dir with a manifest. 5) Optionally compare to baselines for visual regression. 6) Move leftover session screenshots to trash only with approval.",
+  "params": "viewport, targets",
+  "install": "",
+  "requires": [
+   "chromium",
+   "docker"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2142-comfyui-plugin/7662-comfyui-screenshot-pipeline",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/861-visual-regression/1890-visual-reg"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "screenshot",
+   "docker",
+   "لقطات",
+   "حاوية"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): comfyui-plugin/comfyui-screenshot-pipeline (#7662); visual-regression/visual-reg (#1890) · theme browser-automation · 4 supporting skills · verifier read: skills/2142-comfyui-plugin/7662-comfyui-screenshot-pipeline, skills/861-visual-regression/1890-visual-reg",
+  "atlas": {
+   "ids": [
+    "1890",
+    "2397",
+    "3250",
+    "7662"
+   ],
+   "examples": [
+    {
+     "id": "7662",
+     "plugin": "comfyui-plugin",
+     "skill": "comfyui-screenshot-pipeline",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2142-comfyui-plugin/7662-comfyui-screenshot-pipeline"
+    },
+    {
+     "id": "1890",
+     "plugin": "visual-regression",
+     "skill": "visual-reg",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/861-visual-regression/1890-visual-reg"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Builds and runs containers; cleanup skill moves files and needs user approval.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-18",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تشغيل متصفحات معزولة عبر بروتوكولاتها",
+  "name_en": "Isolated headless Chrome/Firefox/Safari drivers over native protocols",
+  "status": "documented",
+  "what": "فتح الصفحات في متصفح بلا واجهة بملف مؤقت وقراءتها والنقر وأخذ لقطات بأوامر قصيرة. — Open pages in throwaway-profile headless Chrome (CDP), Firefox (Marionette) or Safari (safaridriver) and read, click, eval and screenshot with one-line commands.",
+  "when": "Cross-browser preview, no Playwright available, or must not touch the user's browser.",
+  "how": "1) open <url> (new throwaway profile; --headed only if watched; --size). 2) text/status for state. 3) click/type/press by CSS selector. 4) eval expression, wait expression with timeout. 5) screenshot --output [--full]. 6) With several instances pass --id. 7) close deletes the profile. Use herdr-browser inside Herdr for console/network.",
+  "params": "url, size, id",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3536-chrome",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3537-firefox",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3538-safari"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "CDP",
+   "firefox",
+   "safari",
+   "بروتوكول"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): browsers/chrome (#3536); browsers/firefox (#3537); browsers/safari (#3538) · theme browser-automation · 5 supporting skills · verifier read: skills/1449-browsers/3536-chrome, skills/1449-browsers/3537-firefox, skills/1449-browsers/3538-safari",
+  "atlas": {
+   "ids": [
+    "2901",
+    "3536",
+    "3537",
+    "3538",
+    "3551"
+   ],
+   "examples": [
+    {
+     "id": "3536",
+     "plugin": "browsers",
+     "skill": "chrome",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3536-chrome"
+    },
+    {
+     "id": "3537",
+     "plugin": "browsers",
+     "skill": "firefox",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3537-firefox"
+    },
+    {
+     "id": "3538",
+     "plugin": "browsers",
+     "skill": "safari",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3538-safari"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Launches local browser processes; Safari needs macOS safaridriver enabled; headed windows steal focus.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-19",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "جلسات Playwright مسماة بمخرجات على القرص",
+  "name_en": "Named-session Playwright CLI with disk artifacts",
+  "status": "documented",
+  "what": "تشغيل فحوص E2E في جلسات مسماة تكتب اللقطات والتتبع إلى القرص وتعيد المسارات فقط. — Run live E2E checks in named headless sessions that write snapshots, screenshots, traces and console logs to disk and return only paths.",
+  "when": "Smoke tests, evidence for a PR, auth-state reuse, network mocking.",
+  "how": "1) kill-all stale sessions. 2) open -s=<flow> <url>. 3) snapshot to YAML, read the file for refs. 4) click/fill by ref (fill --submit). 5) screenshot with a descriptive --filename. 6) console to summarize errors; use tracing/video and saved auth state when needed. 7) close; gitignore .playwright-cli/. Judge layout from the screenshot, not the YAML.",
+  "params": "session name, filename",
+  "install": "npm install -g @playwright/cli",
+  "requires": [
+   "node",
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT AND Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2464-playwright/9552-playwright",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2464-playwright/9553-playwright",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1251-playwright/2931-playwright"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "playwright",
+   "e2e",
+   "جلسات",
+   "اختبار"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): playwright/playwright (#9552); playwright/playwright-cli (#9553); playwright/playwright (#2931) · theme browser-automation · 6 supporting skills · verifier read: skills/2464-playwright/9552-playwright, skills/2464-playwright/9553-playwright, skills/1251-playwright/2931-playwright",
+  "atlas": {
+   "ids": [
+    "2931",
+    "7897",
+    "9552",
+    "9553",
+    "12134",
+    "12136"
+   ],
+   "examples": [
+    {
+     "id": "9552",
+     "plugin": "playwright",
+     "skill": "playwright",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2464-playwright/9552-playwright"
+    },
+    {
+     "id": "9553",
+     "plugin": "playwright",
+     "skill": "playwright-cli",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2464-playwright/9553-playwright"
+    },
+    {
+     "id": "2931",
+     "plugin": "playwright",
+     "skill": "playwright",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1251-playwright/2931-playwright"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Runs a global CLI that spawns browsers and writes artifacts and auth state (cookies) to disk.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-20",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "كتابة اختبارات E2E مع فحص الوصولية والأداء",
+  "name_en": "Playwright E2E authoring with lint, a11y and CWV scans",
+  "status": "documented",
+  "what": "كتابة اختبارات Playwright بنمط Page Object ثم فحص الوصولية وCWV بمخرجات JSON. — Author Playwright E2E scripts with Page Objects, auth reuse and mocks, then run scripted axe a11y and Core Web Vitals scans with JSON output.",
+  "when": "Setting up or extending E2E suites with evidence and quality gates.",
+  "how": "1) Init runtime in the app (init_project script). 2) Classify page roles from a11y tree. 3) Record with codegen, then refactor into Page Objects with stored auth state and API mocks. 4) Lint scenario by AST; check app readiness. 5) run_a11y_scan (axe) with fail-on-violations exit 1. 6) check_cwv for LCP/CLS/TTFB with fail-on-poor. 7) Keep video/trace evidence; scripts print one JSON on stdout.",
+  "params": "base url, thresholds",
+  "install": "pip install playwright && playwright install chromium",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1329-playwright-kit/2981-playwright-kit-ops",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1329-playwright-kit/2979-playwright-authoring",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1369-boss/3164-qa-e2e-playwright"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "E2E",
+   "a11y",
+   "اختبار",
+   "وصولية"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): playwright-kit/playwright-kit-ops (#2981); playwright-kit/playwright-authoring (#2979); boss/qa/e2e-playwright (#3164) · theme browser-automation · 5 supporting skills · verifier read: skills/1329-playwright-kit/2981-playwright-kit-ops, skills/1329-playwright-kit/2979-playwright-authoring, skills/1369-boss/3164-qa-e2e-playwright",
+  "atlas": {
+   "ids": [
+    "1890",
+    "2979",
+    "2981",
+    "3164",
+    "7662"
+   ],
+   "examples": [
+    {
+     "id": "2981",
+     "plugin": "playwright-kit",
+     "skill": "playwright-kit-ops",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1329-playwright-kit/2981-playwright-kit-ops"
+    },
+    {
+     "id": "2979",
+     "plugin": "playwright-kit",
+     "skill": "playwright-authoring",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1329-playwright-kit/2979-playwright-authoring"
+    },
+    {
+     "id": "3164",
+     "plugin": "boss",
+     "skill": "qa/e2e-playwright",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1369-boss/3164-qa-e2e-playwright"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "44 Python scripts; some upload evidence to Google Drive (OAuth, network); init script writes into the target project.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-21",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "رفع ملف عبر Playwright MCP لحقل مخفي",
+  "name_en": "Playwright MCP hidden file-input upload workaround",
+  "status": "documented",
+  "what": "رفع ملف عندما يكون حقل الإدخال مخفيا وتفشل أداة الرفع. — Upload a file when the input is hidden and the MCP upload tool times out.",
+  "when": "MCP upload tool times out on a hidden input.",
+  "how": "Locate the hidden input, expose it or target it directly, set files programmatically, then dispatch change events and verify the page shows the file.",
+  "params": "file path",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3342-playwright-mcp-upload-hidden-file-input/13856-playwright-mcp-upload-hidden-file-input"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "upload",
+   "MCP",
+   "رفع",
+   "playwright"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): playwright-mcp-upload-hidden-file-input/playwright-mcp-upload-hidden-file-input (#13856) · theme browser-automation · 2 supporting skills · verifier read: skills/3342-playwright-mcp-upload-hidden-file-input/13856-playwright-mcp-upload-hidden-file-input",
+  "atlas": {
+   "ids": [
+    "9552",
+    "13856"
+   ],
+   "examples": [
+    {
+     "id": "13856",
+     "plugin": "playwright-mcp-upload-hidden-file-input",
+     "skill": "playwright-mcp-upload-hidden-file-input",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3342-playwright-mcp-upload-hidden-file-input/13856-playwright-mcp-upload-hidden-file-input"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Unread in depth; inferred from description only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-22",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "إثبات السلوك المعروض بحكم نجح/فشل/معطل",
+  "name_en": "Rendered-behavior proof with pass/fail/blocked verdict",
+  "status": "documented",
+  "what": "إثبات ادعاء واجهة في متصفح حقيقي بأرخص وسيلة متاحة والإبلاغ بنجاح أو فشل أو تعطل مع الأدلة. — Prove a UI claim in a real browser using the cheapest available runtime and report pass, fail or blocked with evidence.",
+  "when": "User asks to verify, screenshot or record a flow without wanting permanent tests.",
+  "how": "1) Pick runtime: session browser tools, project runner, bundled Playwright scripts, else report blocked. 2) Reuse a running dev server; ask if several. 3) Use role/label/text/testid locators, wait on observable state, never fixed sleeps. 4) screenshot-url/sequence scripts emit a JSON manifest (viewport, console errors, failed network, status>=400). 5) Write temp scripts under /tmp/playwright-*. 6) After two failed attempts, save evidence and stop.",
+  "params": "url, ready selector, out path",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/112-browser/286-browser-automation",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/238-browser/775-browser",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2111-frontend-dev-kit/7511-browser-debug"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "verification",
+   "screenshot",
+   "دليل",
+   "واجهة"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): browser/browser-automation (#286); browser/browser (#775); frontend-dev-kit/browser-debug (#7511) · theme browser-automation · 4 supporting skills · verifier read: skills/112-browser/286-browser-automation, skills/238-browser/775-browser, skills/2111-frontend-dev-kit/7511-browser-debug",
+  "atlas": {
+   "ids": [
+    "286",
+    "775",
+    "7511",
+    "13376"
+   ],
+   "examples": [
+    {
+     "id": "286",
+     "plugin": "browser",
+     "skill": "browser-automation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/112-browser/286-browser-automation"
+    },
+    {
+     "id": "775",
+     "plugin": "browser",
+     "skill": "browser",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/238-browser/775-browser"
+    },
+    {
+     "id": "7511",
+     "plugin": "frontend-dev-kit",
+     "skill": "browser-debug",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2111-frontend-dev-kit/7511-browser-debug"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Bundled scripts run Playwright and may auto-install it; start dev servers; avoid production data and destructive actions.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-23",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "فحص جودة الواجهة بثلاثة عروض",
+  "name_en": "Three-width responsive browser QA report",
+  "status": "documented",
+  "what": "فحص الصفحات المتغيرة عند 375 و768 و1280 بكسل وإخراج جدول بالمشاكل. — Check changed pages at 375, 768 and 1280 px in a real browser and tabulate layout, console and network findings.",
+  "when": "After a frontend change, before merge, or when asked to check how a page looks.",
+  "how": "1) Map changed files to routes (or take the given URL). 2) curl -sI; start dev server if nothing answers. 3) Open a NEW tab; resize or emulate 375x812x2 mobile, 768, 1280. 4) Screenshot and read each; look for overflow, clipping, overlap, tiny tap targets, uncollapsed nav, broken images. 5) Check console and failed requests; ignore third-party analytics. 6) Exercise any new interaction once. 7) Output page-by-width table; fix only if asked; close tabs.",
+  "params": "url/path, optional fix",
+  "install": "",
+  "requires": [
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3166-browser-qa/13495-browser-qa",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3165-browser-compat/13494-browser-compat"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "responsive",
+   "QA",
+   "تجاوب",
+   "فحص"
+  ],
+  "section": "أتمتة المتصفح — Browser automation & web apps testing",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): browser-qa/browser-qa (#13495); browser-compat/browser-compat (#13494) · theme browser-automation · 4 supporting skills · verifier read: skills/3166-browser-qa/13495-browser-qa, skills/3165-browser-compat/13494-browser-compat",
+  "atlas": {
+   "ids": [
+    "3536",
+    "3551",
+    "13494",
+    "13495"
+   ],
+   "examples": [
+    {
+     "id": "13495",
+     "plugin": "browser-qa",
+     "skill": "browser-qa",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3166-browser-qa/13495-browser-qa"
+    },
+    {
+     "id": "13494",
+     "plugin": "browser-compat",
+     "skill": "browser-compat",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3165-browser-compat/13494-browser-compat"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Starts a dev server in background; never trigger dialogs (alert/confirm) which block the tab.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b017-browser-automation-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-24",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "ضبط مجمع الاتصالات وموثوقية قاعدة البيانات",
+  "name_en": "Connection pool sizing and DB reliability playbook",
+  "status": "documented",
+  "what": "حدد حجم مجمع الاتصالات وعزل المعاملات وتشخيص حوادث قاعدة البيانات. — Size pools (PgBouncer or app-level), choose isolation, triage live DB incidents and design HA from RPO/RTO.",
+  "when": "Too many connections, deadlocks, failover design, outage.",
+  "how": "1) Size pool from cores and max_connections, avoid per-instance over-allocation. 2) Serverless: pooled endpoint or Prisma limit. 3) Pick isolation deliberately; detect deadlocks. 4) Triage: classify latency vs errors vs saturation, mitigate, then root cause. 5) Choose replica type and failover from RPO/RTO.",
+  "params": "RPO, RTO, load",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "pool",
+   "ha",
+   "incident",
+   "اتصالات"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme databases · 7 supporting skills · verifier read: , , ",
+  "atlas": {
+   "ids": [
+    "1505",
+    "4693",
+    "8679",
+    "8680",
+    "8685",
+    "8686",
+    "13798"
+   ],
+   "examples": [],
+   "theme": "databases",
+   "risk_notes": "Guidance only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b025-databases-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-25",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "نص نسخ احتياطي لقاعدة البيانات مع الاحتفاظ والتشفير",
+  "name_en": "Database backup script with retention and encryption",
+  "status": "documented",
+  "what": "ولّد نصوص نسخ احتياطي مجدولة مع ضغط وتشفير وسياسة احتفاظ وخطوات استعادة. — Generate scheduled backup scripts for Postgres, MySQL, MongoDB, SQLite with compression, GPG encryption, retention and restore steps.",
+  "when": "Disaster recovery, cron backups, restore drills.",
+  "how": "1) set -euo pipefail script with timestamped file. 2) pg_dump --format=custom --compress=9 / mysqldump / mongodump / sqlite .backup. 3) Optional gpg --symmetric AES256 with key file, delete plaintext. 4) Cron schedule plus retention prune by age. 5) Write and test a restore procedure; verify checksum. 6) Litestream for continuous SQLite.",
+  "params": "engine, schedule, retention days",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1686-database-backup-automator/4690-automating-database-backups"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "backup",
+   "restore",
+   "نسخ احتياطي",
+   "استعادة"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): database-backup-automator/automating-database-backups (#4690) · theme databases · 5 supporting skills · verifier read: skills/1686-database-backup-automator/4690-automating-database-backups, , ",
+  "atlas": {
+   "ids": [
+    "4688",
+    "4690",
+    "4700",
+    "8334",
+    "8680"
+   ],
+   "examples": [
+    {
+     "id": "4690",
+     "plugin": "database-backup-automator",
+     "skill": "automating-database-backups",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1686-database-backup-automator/4690-automating-database-backups"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Scripts invoke pg_dump/gpg/cron and write backups; review before running.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b025-databases-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-26",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تطور مخططات الأحداث وKafka",
+  "name_en": "Event schema evolution and Kafka platform playbook",
+  "status": "documented",
+  "what": "طوّر مخططات الأحداث بأمان باستخدام أنماط التوافق وشغّل Kafka بموثوقية. — Evolve Avro/Protobuf/JSON schemas safely with registry compatibility modes and run Kafka reliably.",
+  "when": "Changing event contracts, Kafka partitioning, streaming ingest.",
+  "how": "1) Choose compatibility mode (backward/forward/full). 2) Add optional fields with defaults, never reuse field numbers. 3) Register and test with consumers first. 4) Partition for needed ordering (order is per-partition). 5) Dedup and batch ingestion into sinks.",
+  "params": "format, mode",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "kafka",
+   "avro",
+   "schema",
+   "أحداث"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme databases · 5 supporting skills · verifier read: , , ",
+  "atlas": {
+   "ids": [
+    "1652",
+    "5339",
+    "8674",
+    "8675",
+    "8676"
+   ],
+   "examples": [],
+   "theme": "databases",
+   "risk_notes": "Guidance only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b025-databases-1.json"
+  }
+ },
+ {
+  "id": "ABUILD-27",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "قواعد Postgres وRedis المُدارة على المنصات",
+  "name_en": "Managed Postgres and Redis on hosting platforms",
+  "status": "documented",
+  "what": "يجهز تخزين Render وVercel وSealos بسلاسل اتصال صحيحة. — Provision Render, Vercel and Sealos storage with correct connection strings.",
+  "when": "deploying with managed DB/KV/blob",
+  "how": "1) Choose store: Postgres, Key Value, Blob, Edge Config. 2) Internal vs external connection string. 3) Respect creation constraints and autoscaling. 4) Use Marketplace Neon/Upstash on Vercel. 5) Set env secrets.",
+  "params": "platform",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/889-render/2010-render-postgres",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2722-vercel/10571-vercel-storage"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "render",
+   "vercel",
+   "استضافة"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): render/render-postgres (#2010); vercel/vercel-storage (#10571) · theme databases · 5 supporting skills · verifier read: skills/889-render/2010-render-postgres, skills/2722-vercel/10571-vercel-storage",
+  "atlas": {
+   "ids": [
+    "2007",
+    "2010",
+    "7556",
+    "10571",
+    "13761"
+   ],
+   "examples": [
+    {
+     "id": "2010",
+     "plugin": "render",
+     "skill": "render-postgres",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/889-render/2010-render-postgres"
+    },
+    {
+     "id": "10571",
+     "plugin": "vercel",
+     "skill": "vercel-storage",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2722-vercel/10571-vercel-storage"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "7556 has scripts to sign in and deploy to cloud; needs network.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b026-databases-2.json"
+  }
+ },
+ {
+  "id": "ABUILD-28",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "دليل الحوادث: احتواء وتشخيص واستعادة",
+  "name_en": "Incident runbook: contain, diagnose, recover",
+  "status": "documented",
+  "what": "إدارة حادث إنتاجي عبر الفرز والاحتواء والسبب الجذري والإصلاح مع التراجع والمطابقة. — Run a production incident through triage, containment, root cause, fix with rollback, and reconciliation.",
+  "when": "outage, webhook or sync failure, degraded integration",
+  "how": "1) Triage severity and blast radius. 2) Contain (pause jobs, fallback). 3) Gather logs/metrics bundle. 4) Identify root cause and propose fix with rollback. 5) Reconcile missed data/webhooks. 6) Post-incident review.",
+  "params": "service",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1897-ramp-pack/6601-ramp-incident-runbook",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/4524-tonone/4524-vigil-incident"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "incident",
+   "runbook",
+   "recovery",
+   "حوادث",
+   "استعادة"
+  ],
+  "section": "التصحيح — Debugging & diagnosis",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ramp-pack/ramp-incident-runbook (#6601); tonone/vigil-incident (#4524) · theme debugging · 10 supporting skills · verifier read: skills/1897-ramp-pack/6601-ramp-incident-runbook, skills/4524-tonone/4524-vigil-incident",
+  "atlas": {
+   "ids": [
+    "4524",
+    "6601",
+    "6654",
+    "6734",
+    "6819",
+    "6854",
+    "6917",
+    "6941",
+    "7021",
+    "12887"
+   ],
+   "examples": [
+    {
+     "id": "6601",
+     "plugin": "ramp-pack",
+     "skill": "ramp-incident-runbook",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1897-ramp-pack/6601-ramp-incident-runbook"
+    },
+    {
+     "id": "4524",
+     "plugin": "tonone",
+     "skill": "vigil-incident",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/4524-tonone/4524-vigil-incident"
+    }
+   ],
+   "theme": "debugging",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b029-debugging-3.json"
+  }
+ },
+ {
+  "id": "ABUILD-29",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تصميم المراقبة: الإشارات الذهبية والتنبيهات",
+  "name_en": "Observability design: golden signals and alerts",
+  "status": "documented",
+  "what": "اختيار مقاييس RED وUSE والإشارات الذهبية وكتابة PromQL وتنبيهات قابلة للتنفيذ. — Choose RED/USE/golden-signal metrics, write PromQL, and define actionable alerts with for-duration, severity and runbook links.",
+  "when": "set up monitoring, dashboards, SLOs, instrument a service, incident readiness",
+  "how": "1) RED at the edge, USE for infra. 2) PromQL: 5xx ratio via rate over 5m, p95 via histogram_quantile. 3) rate window at least 4x scrape interval. 4) Every alert has for: (no flapping), severity, runbook link and an action. 5) Add OpenTelemetry traces, structured logs, SLO/error budget.",
+  "params": "stack",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2965-pwdev-devops/12477-observability",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/4525-tonone/4525-vigil-instrument"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "observability",
+   "prometheus",
+   "slo",
+   "مراقبة",
+   "تنبيهات"
+  ],
+  "section": "التصحيح — Debugging & diagnosis",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pwdev-devops/observability (#12477); tonone/vigil-instrument (#4525) · theme debugging · 10 supporting skills · verifier read: skills/2965-pwdev-devops/12477-observability, skills/4525-tonone/4525-vigil-instrument",
+  "atlas": {
+   "ids": [
+    "551",
+    "1820",
+    "4525",
+    "4526",
+    "6606",
+    "6974",
+    "10549",
+    "12477",
+    "12487",
+    "14267"
+   ],
+   "examples": [
+    {
+     "id": "12477",
+     "plugin": "pwdev-devops",
+     "skill": "observability",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2965-pwdev-devops/12477-observability"
+    },
+    {
+     "id": "4525",
+     "plugin": "tonone",
+     "skill": "vigil-instrument",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/4525-tonone/4525-vigil-instrument"
+    }
+   ],
+   "theme": "debugging",
+   "risk_notes": "Text guidance; configs apply to live monitoring.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b029-debugging-3.json"
+  }
+ },
+ {
+  "id": "ABUILD-30",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "استطلاع البنية وتدقيق التكلفة",
+  "name_en": "Infra reconnaissance and cost audit",
+  "status": "documented",
+  "what": "يجرد الموارد ويرسم خط CI/CD ويعد خطة تحسين التكلفة. — Inventory cloud resources, map pipelines and risks, and produce a costed optimization plan.",
+  "when": "inherit infra, audit spend",
+  "how": "1) Inventory resources and connections. 2) Flag risks. 3) Map triggers, build, test, deploy. 4) Rank cost levers. 5) Estimate savings.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4416-forge-recon",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4412-forge-cost",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4497-relay-recon"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "infra",
+   "cost",
+   "audit",
+   "تكلفة"
+  ],
+  "section": "DevOps والسحابة — DevOps, CI/CD, cloud & infrastructure",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): tonone/forge-recon (#4416); tonone/forge-cost (#4412); tonone/relay-recon (#4497) · theme devops-cloud · 6 supporting skills · verifier read: skills/*/4416-forge-recon, skills/*/4412-forge-cost, skills/*/4497-relay-recon",
+  "atlas": {
+   "ids": [
+    "4412",
+    "4414",
+    "4415",
+    "4416",
+    "4495",
+    "4497"
+   ],
+   "examples": [
+    {
+     "id": "4416",
+     "plugin": "tonone",
+     "skill": "forge-recon",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4416-forge-recon"
+    },
+    {
+     "id": "4412",
+     "plugin": "tonone",
+     "skill": "forge-cost",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4412-forge-cost"
+    },
+    {
+     "id": "4497",
+     "plugin": "tonone",
+     "skill": "relay-recon",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4497-relay-recon"
+    }
+   ],
+   "theme": "devops-cloud",
+   "risk_notes": "Cloud CLI read access",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b033-devops-cloud-4.json"
+  }
+ }
+]

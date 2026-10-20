@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:investigate:start -->
 
-**الأدوات / tools (6)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -18,6 +18,11 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `rea-family-router` | Read-only router that maps one target keyword from a fixed 29-word list (dotnet, apk, har, firmware, sqlite and others) to one of 16 REA capability families, giving the upstream tool name and availability status. It also reports whether rea and node are on PATH. | `python3 scripts/rea_family_router.py list` | tested-here |
 | `rea-owned-repo-batch` | Batch static REA analysis of the user's own JavaScript, TypeScript and HTML GitHub repositories. It reads a private inventory (made by rea_creative_research_atlas.py own), shallow-clones the smallest eligible repos under a size cap with git (depth 1, blob:none) and runs REA's analyze-javascript-application on each through node. Clones and evidence stay in a local private folder, and only counts are printed. | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000` | untested |
 | `repository-capability-packer` | Inspects a local repository folder or source ZIP for languages, capability signals, license files and a per-file SHA-256 manifest. It packs a deterministic, filtered source ZIP plus a JSON capability-transfer report, leaving out build caches, archives, executables, audio and video, keys, databases and files whose names suggest secrets. Nothing is run, imported or installed. | `python3 scripts/repository_capability_packer.py inspect ./repo --out ./repo-report.json` | tested-here |
+| `atlas-bulk-source-audit` | Audits an authorized local Atlas source sample and records evidence without executing third-party skill code. | `python3 scripts/atlas_bulk_source_audit.py --help` | untested |
+| `atlas-deep-fusion` | Selects source-linked Atlas methods for review against an authorized local Atlas index. | `python3 scripts/atlas_deep_fusion.py --help` | untested |
+| `atlas-review-summary` | Summarizes source-audit evidence and provenance for candidate Atlas methods. | `python3 scripts/atlas_review_summary.py --help` | untested |
+| `atlas-reviewed-methods-v3` | Works with reviewed Atlas method records and their provenance. | `python3 scripts/atlas_reviewed_methods_v3.py --help` | untested |
+| `atlas-transfer` | Converts reviewed Atlas records into KOSIF capability catalog data; writes files only when explicitly approved. | `python3 scripts/atlas_transfer.py --help` | untested |
 
 <!-- hub:area:investigate:end -->
 

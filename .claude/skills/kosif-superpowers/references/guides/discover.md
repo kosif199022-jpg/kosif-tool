@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (14)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (16)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -26,6 +26,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `requirements` | Reports what each catalog power needs (tools, pip/npm packages, keys, platforms, fonts, models), which of those this machine has, and the install commands for the powers suggested for a task. Maintainer subcommands re-derive the `requires` fields and regenerate references/requirements.md. | `python3 scripts/requirements.py present --json` | tested-here |
 | `superpowers-unified` | Picks an ordered subset of the 15 vendored obra/superpowers v7 process skills (brainstorming, debugging, TDD, verification and others) for a task, checks the vendored sources, and can install KOSIF plus those skills into ~/.claude/skills with backups. | `python3 scripts/superpowers_unified.py doctor` | tested-here |
 | `repo-kosif` (repo root) | Searches, lists and shows records of the motion-graphics style atlas (289 records in catalog/styles.json). It also fills a ready-to-paste Claude Code request from templates/claude_request.<lang>.txt, scaffolds a project folder (STYLE.md, PLAN.md, TEST_REPORT.md, words.json, REQUEST.md and an optional starter copy), prints catalog statistics and runs the repository validator. | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |
+| `atlas-capability-miner` | Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof. | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
+| `atlas-task-method-router` | Finds source-backed Atlas method candidates for a task without executing their code. | `python3 scripts/atlas_task_method_router.py --help` | untested |
 
 <!-- hub:area:discover:end -->
 
