@@ -254,7 +254,17 @@ def pe_resource_payloads(f, pe, limit=4096):
 def classify(path):
     path = Path(path)
     size = path.stat().st_size
-    with open(path, "rb") as f:
+    try:
+        f = open(path, "rb")
+    except OSError as error:
+        # Windows Defender denies reads of quarantined files with EINVAL (Errno 22); report, never work around
+        blocked = getattr(error, "errno", None) == 22 or getattr(error, "winerror", None) == 225
+        return {"name": path.name, "bytes": size, "format": "unreadable",
+                "findings": [{"kind": "blocked", "value": "antivirus" if blocked else "os-error",
+                              "basis": str(error),
+                              "meaning": "the OS refused to open it (antivirus detection): leave it alone and tell the owner"
+                              if blocked else "could not be opened"}], "routes": [], "verified": False}
+    with f:
         head = f.read(min(size, 1 << 16))
         pe = parse_pe(head, size)
         result = {"name": path.name, "bytes": size, "sha256": sha256_file(path), "format": "pe" if pe else "other"}

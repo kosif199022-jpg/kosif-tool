@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 4730
+   "count": 4751
   },
   {
    "id": "dom:motion",
@@ -271,12 +271,13 @@
    "label": "Analyzed app capabilities",
    "ar": "قدرات التطبيقات المحللة",
    "prefix": "APPX",
-   "count": 98,
-   "proven": 78,
+   "count": 119,
+   "proven": 96,
    "status": {
-    "proven": 78,
-    "documented": 19,
-    "install": 1
+    "proven": 96,
+    "documented": 21,
+    "install": 1,
+    "ready": 1
    }
   },
   {
@@ -289,15 +290,6 @@
    "req_kind": "pip"
   },
   {
-   "id": "req:pip:pillow",
-   "kind": "requirement",
-   "label": "pip:pillow",
-   "ar": "رسم الصور والنص العربي المشكَّل (raqm)",
-   "en": "image drawing and shaped Arabic text (raqm)",
-   "install": "pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))",
-   "req_kind": "pip"
-  },
-  {
    "id": "req:pip:numpy",
    "kind": "requirement",
    "label": "pip:numpy",
@@ -307,18 +299,37 @@
    "req_kind": "pip"
   },
   {
-   "id": "req:pip:fonttools",
+   "id": "req:pip:pillow",
    "kind": "requirement",
-   "label": "pip:fonttools",
-   "ar": "فحص الخطوط وتقطيعها ودمجها",
-   "en": "inspect, subset and merge fonts",
-   "install": "pip install fonttools brotli",
+   "label": "pip:pillow",
+   "ar": "رسم الصور والنص العربي المشكَّل (raqm)",
+   "en": "image drawing and shaped Arabic text (raqm)",
+   "install": "pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))",
    "req_kind": "pip"
+  },
+  {
+   "id": "req:npm:rea",
+   "kind": "requirement",
+   "label": "npm:rea",
+   "ar": "فحص البرامج والهندسة العكسية القانونية",
+   "en": "lawful software inspection (REA)",
+   "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
+   "req_kind": "npm"
   },
   {
    "id": "script:scripts/app_studio.py",
    "kind": "script",
    "label": "scripts/app_studio.py"
+  },
+  {
+   "id": "script:scripts/app_studio_paint.py",
+   "kind": "script",
+   "label": "scripts/app_studio_paint.py"
+  },
+  {
+   "id": "script:scripts/blender_cinema.py",
+   "kind": "script",
+   "label": "scripts/blender_cinema.py"
   },
   {
    "id": "script:scripts/installer_triage.py",
@@ -1204,15 +1215,6 @@
    }
   },
   {
-   "id": "req:npm:rea",
-   "kind": "requirement",
-   "label": "npm:rea",
-   "ar": "فحص البرامج والهندسة العكسية القانونية",
-   "en": "lawful software inspection (REA)",
-   "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
-   "req_kind": "npm"
-  },
-  {
    "id": "req:engine:ghidra",
    "kind": "requirement",
    "label": "engine:ghidra",
@@ -1617,14 +1619,14 @@
    "label": "scripts/character_fullbody.py"
   },
   {
-   "id": "script:scripts/creative_paint.py",
-   "kind": "script",
-   "label": "scripts/creative_paint.py"
-  },
-  {
    "id": "script:scripts/character_ik.py",
    "kind": "script",
    "label": "scripts/character_ik.py"
+  },
+  {
+   "id": "script:scripts/creative_paint.py",
+   "kind": "script",
+   "label": "scripts/creative_paint.py"
   },
   {
    "id": "script:scripts/check_skill.py",
@@ -1647,15 +1649,15 @@
    "label": "scripts/creative_reasoning_bridge.py"
   },
   {
-   "id": "script:scripts/audio_cue_mapper.py",
-   "kind": "script",
-   "label": "scripts/audio_cue_mapper.py"
-  },
-  {
    "id": "script:scripts/motion_director.py",
    "kind": "script",
    "label": "scripts/motion_director.py",
    "executor_score": 1.19
+  },
+  {
+   "id": "script:scripts/audio_cue_mapper.py",
+   "kind": "script",
+   "label": "scripts/audio_cue_mapper.py"
   },
   {
    "id": "script:scripts/motion_kit_bridge.py",
@@ -1714,11 +1716,6 @@
    "label": "scripts/aspects.py"
   },
   {
-   "id": "script:scripts/mimic/mm_img.py",
-   "kind": "script",
-   "label": "scripts/mimic/mm_img.py"
-  },
-  {
    "id": "script:scripts/mimic/mm_video.py",
    "kind": "script",
    "label": "scripts/mimic/mm_video.py",
@@ -1728,6 +1725,11 @@
    "id": "script:scripts/mimic/mm_common.py",
    "kind": "script",
    "label": "scripts/mimic/mm_common.py"
+  },
+  {
+   "id": "script:scripts/mimic/mm_img.py",
+   "kind": "script",
+   "label": "scripts/mimic/mm_img.py"
   },
   {
    "id": "script:scripts/mimic/synthetic/make_candidates.py",
@@ -1840,9 +1842,19 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_app_studio.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_app_studio_paint.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_bridge.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_blender_bridge.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
@@ -2095,19 +2107,25 @@
    "from": "dom:build",
    "to": "fam:app-feature-transfer",
    "rel": "has",
-   "w": 98
+   "w": 119
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:pip:opencv",
    "rel": "needs",
-   "w": 37
+   "w": 52
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:pip:numpy",
+   "rel": "needs",
+   "w": 46
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:pip:pillow",
    "rel": "needs",
-   "w": 34
+   "w": 36
   },
   {
    "from": "fam:app-feature-transfer",
@@ -2117,39 +2135,45 @@
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:pip:numpy",
-   "rel": "needs",
-   "w": 31
-  },
-  {
-   "from": "fam:app-feature-transfer",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 18
+   "w": 19
   },
   {
    "from": "fam:app-feature-transfer",
    "to": "req:python3",
    "rel": "needs",
-   "w": 10
+   "w": 13
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:pip:fonttools",
+   "to": "req:blender",
+   "rel": "needs",
+   "w": 5
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "req:npm:rea",
    "rel": "needs",
    "w": 4
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:node",
-   "rel": "needs",
-   "w": 3
+   "to": "script:scripts/app_studio.py",
+   "rel": "runs",
+   "w": 141
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "script:scripts/app_studio.py",
+   "to": "script:scripts/app_studio_paint.py",
    "rel": "runs",
-   "w": 124
+   "w": 15
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "script:scripts/blender_cinema.py",
+   "rel": "runs",
+   "w": 7
   },
   {
    "from": "fam:app-feature-transfer",
@@ -5092,6 +5116,12 @@
    "w": 2
   },
   {
+   "from": "script:scripts/app_studio.py",
+   "to": "script:scripts/app_studio_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_worker.py",
    "to": "script:scripts/blender_bridge.py",
    "rel": "imports",
@@ -5129,13 +5159,13 @@
   },
   {
    "from": "script:scripts/character_fullbody.py",
-   "to": "script:scripts/creative_paint.py",
+   "to": "script:scripts/character_ik.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/character_fullbody.py",
-   "to": "script:scripts/character_ik.py",
+   "to": "script:scripts/creative_paint.py",
    "rel": "imports",
    "w": 1
   },
@@ -5147,13 +5177,13 @@
   },
   {
    "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/build_chapters.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/powers.py",
+   "to": "script:scripts/build_chapters.py",
    "rel": "imports",
    "w": 1
   },
@@ -5165,13 +5195,13 @@
   },
   {
    "from": "script:scripts/creative_reasoning_bridge.py",
-   "to": "script:scripts/audio_cue_mapper.py",
+   "to": "script:scripts/motion_director.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/creative_reasoning_bridge.py",
-   "to": "script:scripts/motion_director.py",
+   "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
    "w": 1
   },
@@ -5237,13 +5267,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_text.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_transitions.py",
+   "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
   },
@@ -5255,13 +5279,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_video.py",
+   "to": "script:scripts/mimic/mm_text.py",
    "rel": "imports",
    "w": 1
   },
@@ -5273,12 +5291,18 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_transitions.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
@@ -5303,6 +5327,12 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_transitions.py",
    "rel": "imports",
    "w": 1
@@ -5310,12 +5340,6 @@
   {
    "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_fonts_lib.py",
    "rel": "imports",
    "w": 1
   },
@@ -5333,13 +5357,19 @@
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_fonts_lib.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5351,13 +5381,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5376,12 +5406,6 @@
   {
    "from": "script:scripts/mimic/mm_sheets.py",
    "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5399,6 +5423,12 @@
   },
   {
    "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
@@ -5411,13 +5441,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_render_text.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_render_text.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5632,8 +5662,32 @@
    "w": 1
   },
   {
+   "from": "script:scripts/app_studio.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/app_studio_paint.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/app_studio_paint.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_worker.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_bridge.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cinema.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
    "rel": "tested_by",
    "w": 1
   },
