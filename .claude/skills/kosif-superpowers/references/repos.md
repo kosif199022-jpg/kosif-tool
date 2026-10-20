@@ -5,6 +5,26 @@ Generated from `repos.json` by `python3 .claude/skills/kosif-superpowers/scripts
 
 **125** repositories · **15** superpowers · ≈ **4,199k** GitHub stars combined · generated 2026-10-18
 
+## الفهرس / contents
+
+- [How to read — كيفية القراءة](#how-to-read--كيفية-القراءة)
+- [observe — رصد المرجع (12)](#observe--رصد-المرجع-12)
+- [animate — التحريك (15)](#animate--التحريك-15)
+- [render — الرندر (8)](#render--الرندر-8)
+- [space — الفضاء ثلاثي الأبعاد (8)](#space--الفضاء-ثلاثي-الأبعاد-8)
+- [draw — الرسم (9)](#draw--الرسم-9)
+- [data — البيانات (9)](#data--البيانات-9)
+- [voice — الصوت (16)](#voice--الصوت-16)
+- [arabic — النص العربي (8)](#arabic--النص-العربي-8)
+- [captions — الترجمات (5)](#captions--الترجمات-5)
+- [generate — التوليد (7)](#generate--التوليد-7)
+- [orchestrate — التنسيق (11)](#orchestrate--التنسيق-11)
+- [design — التصميم (7)](#design--التصميم-7)
+- [mimic — المحاكاة (4)](#mimic--المحاكاة-4)
+- [edit — المونتاج (3)](#edit--المونتاج-3)
+- [cinematic — الإخراج السينمائي (3)](#cinematic--الإخراج-السينمائي-3)
+- [Credits and policy — الحقوق والسياسة](#credits-and-policy--الحقوق-والسياسة)
+
 ## How to read — كيفية القراءة
 
 Each row is a capability a KOSIF film-maker may call on, with the exact way to invoke it and the KOSIF playbooks it strengthens. Links point to the owners' repositories; nothing is vendored or copied. Star counts are rounded thousands at generation time.

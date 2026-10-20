@@ -30,6 +30,8 @@ def read_words(path):
     previous_end = 0.0
     result = []
     for n, item in enumerate(value, start=1):
+        if isinstance(item, dict) and "word" not in item and isinstance(item.get("text"), str):
+            item = {**item, "word": item["text"]}  # WhisperX/ASR files call it "text"
         if not isinstance(item, dict) or not isinstance(item.get("word"), str) or not item["word"].strip():
             raise ValueError(f"word #{n}: missing word")
         start = item.get("start")
@@ -132,6 +134,7 @@ def main(argv=None):
     edit.add_argument("--keep", required=True, help="1-based word ranges, e.g. 1-3,7-9")
     edit.add_argument("--fps", type=int, default=30)
     edit.add_argument("--out", required=True)
+    edit.add_argument("--force", action="store_true", help="overwrite an existing --out")
     review = subs.add_parser("review", help="Frame-accurate, anchored review note markers")
     review.add_argument("notes", help="list of {time,comment,x?,y?}")
     review.add_argument("--duration", type=float, required=True)
@@ -139,8 +142,11 @@ def main(argv=None):
     review.add_argument("--width", type=int, default=1080)
     review.add_argument("--height", type=int, default=1920)
     review.add_argument("--out", required=True)
+    review.add_argument("--force", action="store_true", help="overwrite an existing --out")
     args = parser.parse_args(argv)
     try:
+        if Path(args.out).exists() and not args.force:
+            raise ValueError(f"{args.out} already exists; choose a new --out or pass --force")
         if args.command == "paper-edit":
             words = read_words(args.words)
             payload = paper_edit(words, parse_keep(args.keep, len(words)), args.fps)

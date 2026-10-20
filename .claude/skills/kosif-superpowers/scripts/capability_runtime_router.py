@@ -128,7 +128,7 @@ def main(argv=None):
     args=ap.parse_args(argv)
     try:
         records=load_registry()
-        if not 1 <= args.limit <= 20:
+        if args.task and not 1 <= args.limit <= 20:  # --limit only shapes --task results
             raise ValueError("limit must be 1..20")
         if args.list:
             output={"schema":"kosif.capability-list.v1","count":len(records),
