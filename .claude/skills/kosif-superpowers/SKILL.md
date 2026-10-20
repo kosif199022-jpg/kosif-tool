@@ -420,3 +420,15 @@ The search tool is an external-source discovery registry, NOT a claim of 2,000 R
 **Verified REA scope:** first-party source static inspection has analyzed nine accessible owned JavaScript/TypeScript repositories; five selected public creative sites received scoped passive CDP observations. Remaining owner repositories were inspected through GitHub tree metadata only. Keep private repository metadata, cloned source and full REA Evidence JSON **off public branches**; never copy private code/secrets into the external discovery indexes. REA analysis is read-only and bounded; never run arbitrary installer, untrusted repo code, or hidden-service intrusions. Use `scripts/rea_owned_repo_batch.py` only with an explicitly specified local private evidence directory and permitted targets.
 
 Candidate techniques from competing products must be implemented independently and tested; never copy proprietary internal source or inflate KOSIF's proven capability count from metadata-only research.
+
+## Blender headless H.264 motion video
+
+For a Blender-generated MP4, use scripts/blender_motion_video.py and
+[Blender H.264 video](references/blender-motion-video.md). No graphical UI
+is needed, but installed Blender and FFmpeg ARE required. Frame counts,
+video codec and resolution are verified after encoding. This path is separate
+from the limited Blender-free native_3d.py module.
+
+For a truthful feature comparison before planning a custom Blender-free renderer,
+read [Blender versus native KOSIF evidence map](references/blender-capability-gap-20261020.md).
+Do not claim full Blender equivalence; use narrow executable proofs.
