@@ -833,7 +833,12 @@
   "styles": [],
   "tags": [
    "style lock",
-   "قفل الأسلوب"
+   "قفل الأسلوب",
+   "ثبات الأسلوب",
+   "توحيد اللوك",
+   "كلمات البرومبت",
+   "consistent style",
+   "style keywords"
   ]
  },
  {
@@ -2730,8 +2735,14 @@
    "paid",
    "anthropic",
    "مراجعة",
-   "مفتاح"
-  ]
+   "مفتاح",
+   "نقد الخطة",
+   "رأي ثاني",
+   "تقييم الإحاطة",
+   "second opinion",
+   "plan critique"
+  ],
+  "when": "حين يريد المستخدم رأيا ثانيا مدفوعا من نموذج Claude ينقد خطة أو إحاطة نصية / when the user wants an optional paid Claude API critique of a text brief or plan"
  },
  {
   "id": "GEN-X01",

@@ -27,8 +27,14 @@
    "feTurbulence",
    "seekable",
    "vignette",
-   "تعتيم"
-  ]
+   "تعتيم",
+   "ملمس سينمائي",
+   "نويز",
+   "ضوضاء",
+   "noise overlay",
+   "svg filter"
+  ],
+  "when": "حين تريد حبيبات فيلم متحركة فوق مشهد ويب مع بقاء كل إطار قابلًا للبحث والتصيير / when you need moving film grain over a web scene that stays seekable frame by frame"
  },
  {
   "id": "TEX-02",
@@ -55,8 +61,14 @@
    "grain",
    "seed",
    "deterministic",
-   "seek"
-  ]
+   "seek",
+   "نويز متجدد",
+   "حبيبات متحركة",
+   "ضوضاء",
+   "per-frame noise",
+   "canvas grain"
+  ],
+  "when": "عند الحاجة لحبيبات تتجدد كل إطار وتعطي النتيجة نفسها عند إعادة التصيير داخل seek(t) / when grain must change every frame yet render identically on re-render via seek(t)"
  },
  {
   "id": "TEX-03",
@@ -83,8 +95,14 @@
    "grain",
    "pillow",
    "studio",
-   "render.py"
-  ]
+   "render.py",
+   "نويز",
+   "ضوضاء غاوسية",
+   "ملمس طباعة",
+   "gaussian noise",
+   "luminance grain"
+  ],
+  "when": "حين ترسم إطارات برسام KOSIF Studio في Pillow وتريد حبيبات خفيفة فوق الإطار كله / when painting frames in the KOSIF Studio (Pillow) painter and adding light grain over the whole frame"
  },
  {
   "id": "TEX-04",
@@ -114,8 +132,14 @@
    "vignette",
    "bloom",
    "letterbox",
-   "finish"
-  ]
+   "finish",
+   "أشرطة سينما",
+   "لوك سينمائي",
+   "توهج",
+   "cinematic look",
+   "filtergraph"
+  ],
+  "when": "عند تشطيب فيديو بعد التلوين بحبيبات وتعتيم أطراف وتوهج وأشرطة سينما في أمر ffmpeg واحد / when finishing a graded video with grain, vignette, bloom and cinema bars in one ffmpeg command"
  },
  {
   "id": "TEX-05",
@@ -140,8 +164,14 @@
    "grain",
    "vignette",
    "look match",
-   "مطابقة"
-  ]
+   "مطابقة",
+   "تقليد الستايل",
+   "نفس اللوك",
+   "فيديو مرجعي",
+   "reference video",
+   "crf"
+  ],
+  "when": "حين يريد المستخدم تقليد لوك فيديو مرجعي بقياس التعتيم والحبيبات والأشرطة والتلاشي بدل التخمين / when matching a reference video's look by measuring vignette, grain, letterbox and fades"
  },
  {
   "id": "TEX-06",
@@ -169,8 +199,14 @@
    "FilmPass",
    "grain",
    "post",
-   "حبيبات"
-  ]
+   "حبيبات",
+   "مشهد ثلاثي الأبعاد",
+   "ملمس سينمائي",
+   "ما بعد المعالجة",
+   "webgl",
+   "post-processing"
+  ],
+  "when": "عند إضافة حبيبات فيلم لمشهد three.js أو WebGL تتحرك بحتمية مع إطار الإخراج / when adding deterministic film grain to a three.js WebGL scene tied to the output frame"
  },
  {
   "id": "TEX-07",
@@ -194,8 +230,14 @@
    "chromatic aberration",
    "grain",
    "lens",
-   "awwwards"
-  ]
+   "awwwards",
+   "حبيبات خفيفة",
+   "انزياح ألوان",
+   "تشوه العدسة",
+   "rgb split",
+   "subtle grain"
+  ],
+  "when": "حين تريد ملمس عدسة حقيقية راقيًا: حبيبات خفيفة جدًا وانزياح ألوان على أطراف الكادر فقط / when you want a subtle real-lens finish: very light grain plus an RGB split only at the frame edges"
  },
  {
   "id": "TEX-08",
@@ -225,8 +267,14 @@
    "vintage",
    "dust",
    "scratches",
-   "projector flicker"
-  ]
+   "projector flicker",
+   "فيلم قديم",
+   "ريترو",
+   "خدوش",
+   "old film",
+   "split tone"
+  ],
+  "when": "عند طلب لوك فيلم قديم أو أرشيفي بغبار وخدوش ووميض بروجكتر وتقسيم لوني دافئ / when the user asks for an old-film or archival look with dust, scratches, projector flicker and split-tone"
  },
  {
   "id": "TEX-09",
@@ -260,8 +308,14 @@
    "warm black",
    "grain",
    "vignette",
-   "premium"
-  ]
+   "premium",
+   "فخامة",
+   "خلفية سوداء",
+   "لوك فاخر",
+   "dark background",
+   "luxury"
+  ],
+  "when": "حين تبدو الألوان المسطحة رخيصة وتريد خلفية سوداء دافئة بحبيبات وتعتيم تعطي إحساسًا فاخرًا / when flat colour looks cheap and you want a warm-black grainy, vignetted ground that reads premium"
  },
  {
   "id": "TEX-10",
@@ -287,8 +341,14 @@
    "تحريري",
    "editorial",
    "paper",
-   "cream"
-  ]
+   "cream",
+   "خلفية كريمية",
+   "صحفي",
+   "لون تأكيد",
+   "newspaper look",
+   "red accent"
+  ],
+  "when": "عند تصميم فيديو تحريري أو بيانات على خلفية ورقية كريمية بحبر داكن ولون أحمر واحد للتوكيد / for editorial or data videos on a cream paper ground with near-black ink and one red accent"
  },
  {
   "id": "TEX-11",
@@ -313,8 +373,14 @@
    "HUD",
    "حبيبات",
    "grain",
-   "camera ui"
-  ]
+   "camera ui",
+   "واجهة كاميرا",
+   "أقواس الزوايا",
+   "شريط تقدم",
+   "viewfinder",
+   "corner brackets"
+  ],
+  "when": "حين تريد واجهة كاميرا بأقواس زوايا وملصقات صغيرة ومؤشر تقدم فوق حبيبات فيلم / when you want a camera HUD with corner brackets, tiny labels and a progress meter over film grain"
  },
  {
   "id": "TEX-12",
@@ -340,8 +406,14 @@
    "توهج",
    "title",
    "grain",
-   "glow"
-  ]
+   "glow",
+   "عنوان افتتاحي",
+   "تايتل",
+   "نص متوهج",
+   "title card",
+   "noise texture"
+  ],
+  "when": "عند عمل عنوان افتتاحي ثقيل مملوء بخامة ضوضاء وتوهج يظهر من نقطة نجم / for a heavy opening title filled with noise texture and glow, appearing from a single star point"
  },
  {
   "id": "TEX-13",
@@ -366,8 +438,14 @@
    "paper",
    "texture",
    "static",
-   "hand-drawn"
-  ]
+   "hand-drawn",
+   "خامة ورق",
+   "كرتون",
+   "ملمس",
+   "paper overlay",
+   "board texture"
+  ],
+  "when": "حين يحتاج المشهد ملمس ورق أو كرتون خفيفًا ثابتًا فوق الرسوم دون أن يغلي / when a scene needs a light, still paper or board texture overlay that does not boil"
  },
  {
   "id": "TEX-14",
@@ -393,8 +471,14 @@
    "watercolour",
    "paper",
    "wash",
-   "storybook"
-  ]
+   "storybook",
+   "مائي",
+   "قصة مصورة",
+   "ورق بارز",
+   "embossed paper",
+   "illustration"
+  ],
+  "when": "عند رسم مشاهد قصصية بأسلوب الألوان المائية على ورق كريمي بارز وتلال بغسلة لونية / for storybook scenes in a watercolour style on embossed cream paper with washed hills"
  },
  {
   "id": "TEX-15",
@@ -421,8 +505,14 @@
    "parchment",
    "map",
    "stipple",
-   "sand"
-  ]
+   "sand",
+   "خريطة قديمة",
+   "صحراء",
+   "ورق قديم",
+   "old map",
+   "fold lines"
+  ],
+  "when": "حين تحتاج خريطة قديمة على رق بحواف داكنة ونقاط رمل في الصحارى وخطوط طي / when you need an old map on parchment with darker edges, sand dots in deserts and fold lines"
  },
  {
   "id": "TEX-16",
@@ -449,8 +539,14 @@
    "collage",
    "paper",
    "cut-out",
-   "tape"
-  ]
+   "tape",
+   "قص ولصق",
+   "قصاصات ورق",
+   "تقليب صفحات",
+   "scrapbook",
+   "page flip"
+  ],
+  "when": "عند طلب أسلوب كولاج ورقي بقصاصات وشريط لاصق وطبقات تقفز وتتمزق وتنقلب كالصفحات / when the user wants a paper-collage style with cut-outs and tape, layers hopping, tearing and page-flipping"
  },
  {
   "id": "TEX-17",
@@ -475,8 +571,14 @@
    "شريط لاصق",
    "board",
    "tape",
-   "collage"
-  ]
+   "collage",
+   "لوحة صور",
+   "صور مقصوصة",
+   "تثبيت بشريط",
+   "photo board",
+   "cut photos"
+  ],
+  "when": "حين تريد صورًا مقصوصة تتجمع كلوحة حول عنوان ثم شريط لاصق يثبت زاوية صورة / when cut photos should gather into a board around a title and a tape strip pins one corner"
  },
  {
   "id": "TEX-18",
@@ -505,8 +607,14 @@
    "paper tear",
    "rip",
    "reveal",
-   "transition"
-  ]
+   "transition",
+   "ترانزيشن",
+   "انتقال ورقي",
+   "ورق ممزق",
+   "torn paper",
+   "scene reveal"
+  ],
+  "when": "عند الانتقال لمشهد تالٍ بتمزيق ورقة من المنتصف بحواف خشنة وظل / when revealing the next scene by ripping the paper open from the middle with ragged edges and shadow"
  },
  {
   "id": "TEX-19",
@@ -536,8 +644,14 @@
    "sticker",
    "cut-out",
    "outline",
-   "scan"
-  ]
+   "scan",
+   "استيكر",
+   "حد أبيض",
+   "رسمة يدوية",
+   "white border",
+   "drop shadow"
+  ],
+  "when": "حين تريد تحويل رسمة يدوية ممسوحة إلى ملصق بحد أبيض وظل ناعم / when turning a scanned hand drawing into a paper sticker with a white outline and soft shadow"
  },
  {
   "id": "TEX-20",
@@ -565,8 +679,14 @@
    "نقش",
    "newspaper",
    "engraving",
-   "archival"
-  ]
+   "archival",
+   "وثائقي",
+   "أبيض وأسود",
+   "قصاصة",
+   "documentary",
+   "halftone"
+  ],
+  "when": "عند طلب جمالية أرشيفية أو وثائقية: صورة أبيض وأسود بهالفتون أو نقش مع حد أبيض وظل / for an archival or documentary look: a B&W halftone or engraved cut-out with white border and shadow"
  },
  {
   "id": "TEX-21",
@@ -591,8 +711,14 @@
    "vox",
    "style lock",
    "scrapbook",
-   "ai prompt"
-  ]
+   "ai prompt",
+   "ثبات الأسلوب",
+   "برومبت",
+   "فيديو تاريخي",
+   "consistent style",
+   "history video"
+  ],
+  "when": "حين تولّد عدة لقطات بالذكاء الاصطناعي بأسلوب أرشيف تاريخي وتريدها متسقة بوصف أسلوب واحد / when generating several AI clips in an archival history style and keeping them consistent with one style block"
  },
  {
   "id": "TEX-22",
@@ -616,8 +742,14 @@
    "stickman",
    "style lock",
    "paper",
-   "whiteboard"
-  ]
+   "whiteboard",
+   "ستيك مان",
+   "خلفية مرسومة",
+   "ثبات الخلفية",
+   "consistent background",
+   "prompt"
+  ],
+  "when": "عند توليد لقطات stickman بالذكاء الاصطناعي وتريد خلفية ورقية مرسومة يدويًا ثابتة فيها كلها / when generating stickman AI clips that must share the same flat hand-drawn paper background"
  },
  {
   "id": "TEX-23",
@@ -646,8 +778,14 @@
    "paper cut",
    "parallax",
    "cutout",
-   "تراث"
-  ]
+   "تراث",
+   "قصاصات ورق",
+   "طبقات عمق",
+   "تمايل",
+   "layered depth",
+   "papercraft"
+  ],
+  "when": "حين يطلب المستخدم أسلوب ورق مقصوص دافئ بطبقات بعمق وتمايل خفيف وظل ورقي / when the user asks for a warm paper cut-out style with layered depth parallax, gentle sway and paper shadows"
  },
  {
   "id": "TEX-24",
@@ -677,8 +815,14 @@
    "stop motion",
    "jitter",
    "on twos",
-   "clay"
-  ]
+   "clay",
+   "رعشة",
+   "تحريك إطار بإطار",
+   "صلصال",
+   "frame by frame",
+   "12 fps"
+  ],
+  "when": "عند محاكاة الستوب موشن أو الصلصال: تحريك على الاثنين مع ارتعاش خفيف لكل إطار ممسوك / to fake stop-motion or clay animation: animating on twos with a slight seeded jitter per held frame"
  },
  {
   "id": "TEX-25",
@@ -709,8 +853,14 @@
    "claymation",
    "matte",
    "fingerprint",
-   "squash"
-  ]
+   "squash",
+   "كلاي",
+   "بصمات",
+   "انضغاط وتمدد",
+   "clay character",
+   "squash and stretch"
+  ],
+  "when": "حين تريد شخصيات صلصال بخامة مطفية وانضغاط وتمدد وآثار بصمات خفيفة / when you want clay characters with a matte surface, squash and stretch and a faint fingerprint overlay"
  },
  {
   "id": "TEX-26",
@@ -736,8 +886,14 @@
    "أطفال",
    "crayon",
    "kids",
-   "paper craft"
-  ]
+   "paper craft",
+   "ألوان شمع",
+   "رسوم أطفال",
+   "قوس قزح",
+   "children",
+   "rainbow"
+  ],
+  "when": "عند عمل مشهد أطفال بخامة ألوان شمع: شمس وغيوم وقوس قزح وتلال بحد داكن ودمية / for a kids' scene with crayon texture: sun, clouds, rainbow and hills with dark outlines and a puppet"
  },
  {
   "id": "TEX-27",
@@ -760,8 +916,14 @@
    "نقص مقصود",
    "wabi-sabi",
    "imperfection",
-   "handmade"
-  ]
+   "handmade",
+   "لمسة يدوية",
+   "عدم تماثل",
+   "دفء",
+   "hand-drawn feel",
+   "asymmetry"
+  ],
+  "when": "حين يبدو التصميم باردًا ومثاليًا وتريد دفئًا يدويًا بعدم تماثل خفيف مع إبقاء الأرقام نظيفة / when a design feels cold and perfect and needs handmade warmth via slight asymmetry, keeping numbers clean"
  },
  {
   "id": "TEX-28",
@@ -787,8 +949,14 @@
    "knockout",
    "alpha",
    "cut-out",
-   "pillow"
-  ]
+   "pillow",
+   "حذف الخلفية",
+   "شيل الخلفية",
+   "تفريغ",
+   "remove background",
+   "transparent png"
+  ],
+  "when": "عند فصل رسمة أو مشهد عن خلفية مسطحة بلون واحد قبل تحويله لملصق / when removing a flat single-colour background from a drawing or scene before making it a sticker"
  },
  {
   "id": "TEX-29",
@@ -815,8 +983,14 @@
    "lambert",
    "sphere",
    "dots",
-   "print"
-  ]
+   "print",
+   "كرة منقطة",
+   "نقاط طباعة",
+   "ضوء دوار",
+   "dot shading",
+   "orbiting light"
+  ],
+  "when": "حين تريد كرة مظللة بنقاط هالفتون يتحرك ظلها نقطة نقطة مع ضوء يدور / when you want a sphere shaded with halftone dots whose shading moves dot by dot under an orbiting light"
  },
  {
   "id": "TEX-30",
@@ -842,8 +1016,14 @@
    "هالفتون",
    "halftone",
    "pop art",
-   "print"
-  ]
+   "print",
+   "بوب آرت",
+   "طباعة ملونة",
+   "نقاط لزجة",
+   "gooey dots",
+   "glsl"
+  ],
+  "when": "عند طلب لوك طباعة CMYK أو بوب آرت بنقاط هالفتون مائلة متعددة الأحبار أو نقاط لزجة / for a CMYK print or pop-art look with rotated multi-ink halftone dots, or a gooey dot variant"
  },
  {
   "id": "TEX-31",
@@ -867,8 +1047,14 @@
    "halftone",
    "editorial",
    "card",
-   "clip"
-  ]
+   "clip",
+   "بطاقة",
+   "نقاط",
+   "ملمس طباعة",
+   "print texture",
+   "canvas"
+  ],
+  "when": "حين تريد ملمس طباعة خفيفًا داخل بطاقة العنوان بنقاط قطرية بلا صور / when you want a light print texture inside a hero card using diagonal dots, no images"
  },
  {
   "id": "TEX-32",
@@ -901,8 +1087,14 @@
    "halftone",
    "moire",
    "ripple",
-   "wave"
-  ]
+   "wave",
+   "موجات",
+   "نبض",
+   "طباعة متراكبة",
+   "overprint",
+   "dot pattern"
+  ],
+  "when": "عند الحاجة لخلفية نقاط هالفتون تنبض بموجات دائرية مع مواريه طباعة من شبكتين / when you need a halftone dot background pulsing with radial waves and overprint moiré from two screens"
  },
  {
   "id": "TEX-33",
@@ -930,8 +1122,14 @@
    "أشعة",
    "halftone",
    "sunburst",
-   "background"
-  ]
+   "background",
+   "خلفية متحركة",
+   "أشرطة ضوء",
+   "نقاط",
+   "light bands",
+   "backdrop"
+  ],
+  "when": "حين تحتاج خلفية بأشرطة ضوء قطرية في الزوايا مملوءة بنقاط تتلاشى نحو المركز وتنجرف ببطء / when you need a backdrop of diagonal light bands at the corners filled with dots fading to the centre"
  },
  {
   "id": "TEX-34",
@@ -959,8 +1157,14 @@
    "صورة",
    "halftone",
    "photo",
-   "poster"
-  ]
+   "poster",
+   "بوستر",
+   "تأثير طباعة",
+   "نقاط",
+   "dot screen",
+   "print effect"
+  ],
+  "when": "عند تحويل صورة فوتوغرافية إلى بوستر مطبوع بشبكة نقاط هالفتون / when turning a photo into a printed-poster look with a halftone dot screen"
  },
  {
   "id": "TEX-35",
@@ -987,8 +1191,14 @@
    "dither",
    "pixel",
    "sky",
-   "retro"
-  ]
+   "retro",
+   "بكسل آرت",
+   "سماء ليلية",
+   "نجوم",
+   "pixel art",
+   "night sky"
+  ],
+  "when": "حين تريد سماء بكسل آرت ريترو بتدرج من درجات قليلة وتنقيط ونجوم تومض / when you want a retro pixel-art sky with a banded dithered gradient and twinkling stars"
  },
  {
   "id": "TEX-36",
@@ -1014,8 +1224,14 @@
    "1-bit",
    "dither",
    "retro",
-   "sweep"
-  ]
+   "sweep",
+   "بكسل",
+   "كشف تدريجي",
+   "رقعة شطرنج",
+   "bayer",
+   "threshold reveal"
+  ],
+  "when": "عند ملء منطقة بتنقيط ريترو أحادي البت وتحريك العتبة لعمل مسح كاشف / when filling a region with retro 1-bit dithering and animating the threshold as a sweep reveal"
  },
  {
   "id": "TEX-37",
@@ -1041,8 +1257,14 @@
    "riso",
    "grain",
    "print",
-   "ink"
-  ]
+   "ink",
+   "ريزوغراف",
+   "طباعة حبر",
+   "ملمس محبب",
+   "risograph",
+   "misregistration"
+  ],
+  "when": "حين تريد أشكالًا مسطحة بحبرين أو ثلاثة بملمس طباعة ريزوغراف وانزياح طفيف / when flat shapes should look risograph-printed in 2–3 inks with slight misregistration"
  },
  {
   "id": "TEX-38",
@@ -1066,8 +1288,14 @@
    "dot grain",
    "lattice",
    "css",
-   "print"
-  ]
+   "print",
+   "شبكة نقاط",
+   "ملمس",
+   "خلفية داكنة",
+   "dot pattern",
+   "overlay"
+  ],
+  "when": "عند إضافة ملمس طباعة خفيف بشبكة نقاط دقيقة فوق خلفية داكنة بـ CSS دون صور / when adding a subtle printed feel with a fine CSS dot lattice over a dark hero, no images"
  },
  {
   "id": "TEX-39",
@@ -1099,8 +1327,15 @@
    "crt",
    "kuwahara",
    "engraving",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "جليتش",
+   "بكسلة",
+   "فلتر فيديو",
+   "glitch",
+   "pixelate",
+   "scanlines"
+  ],
+  "when": "حين تريد تطبيق مؤثر لحظي على لقطة فيديو أو صورة مثل VHS أو CRT أو جليتش أو بكسلة أو ASCII / when applying a realtime effect to footage: VHS tape damage, CRT, glitch, pixelate, ASCII and more"
  },
  {
   "id": "TEX-40",
@@ -1127,8 +1362,14 @@
    "glassmorphism",
    "backdrop-filter",
    "luxury",
-   "parallax"
-  ]
+   "parallax",
+   "زجاج مصنفر",
+   "بطاقات",
+   "تمويه الخلفية",
+   "frosted glass",
+   "mesh gradient"
+  ],
+  "when": "عند عرض بطاقات زجاجية فاخرة تنزلق بعمق وبارالاكس فوق خلفية تدرج حية / for luxury frosted-glass cards sliding in depth and parallax over a live mesh gradient"
  },
  {
   "id": "TEX-41",
@@ -1153,8 +1394,14 @@
    "glass",
    "frosted",
    "panel",
-   "badge"
-  ]
+   "badge",
+   "زجاج مصنفر",
+   "وضع داكن",
+   "شارة",
+   "dark mode",
+   "blur"
+  ],
+  "when": "حين تحتاج لوحًا أو شارة زجاجية مصنفرة على خلفية داكنة بحد مضيء وظل واسع / when you need a frosted glass panel or badge on a dark background with a lit border and wide shadow"
  },
  {
   "id": "TEX-42",
@@ -1183,8 +1430,14 @@
    "ui",
    "toast",
    "menu",
-   "dialog"
-  ]
+   "dialog",
+   "قوائم",
+   "تنبيهات",
+   "نافذة حوار",
+   "glassmorphism",
+   "tooltip"
+  ],
+  "when": "عند تصميم قوائم وتنبيهات وتلميحات وشريط علوي ونوافذ حوار زجاجية شفافة في الواجهة / when styling dropdowns, toasts, tooltips, top bars and dialogs as translucent blurred glass"
  },
  {
   "id": "TEX-43",
@@ -1211,8 +1464,14 @@
    "webgl",
    "glass",
    "shell",
-   "3d background"
-  ]
+   "3d background",
+   "خلفية ثلاثية الأبعاد",
+   "بطاقة زجاج",
+   "تلاشي",
+   "fullscreen webgl",
+   "ui card"
+  ],
+  "when": "حين تضع بطاقة واجهة زجاجية فوق عالم WebGL ثلاثي الأبعاد بملء الشاشة يظهر تدريجيًا / when floating a frosted-glass UI card over a full-screen WebGL world that fades in"
  },
  {
   "id": "TEX-44",
@@ -1242,8 +1501,14 @@
    "liquid glass",
    "refraction",
    "ios",
-   "button"
-  ]
+   "button",
+   "زر زجاجي",
+   "انكسار الحافة",
+   "لمعة",
+   "glass button",
+   "canvas"
+  ],
+  "when": "عند طلب زر أو عنصر تحكم بأسلوب الزجاج السائل بانكسار عند الحافة ولمعة وهالة / when the user wants a liquid-glass button or control with edge refraction, sheen and a soft aura"
  },
  {
   "id": "TEX-45",
@@ -1271,8 +1536,14 @@
    "حروف",
    "glass text",
    "frosted",
-   "prompt box"
-  ]
+   "prompt box",
+   "نص زجاجي",
+   "زجاج مصنفر",
+   "كتابة عربية",
+   "clip path",
+   "glass letters"
+  ],
+  "when": "حين تريد حروفًا أو أشكالًا أو صندوق إدخال من زجاج متجمد يطل على الخلفية المموهة / when you want letters, shapes or a prompt box made of frosted glass over a blurred backdrop"
  },
  {
   "id": "TEX-46",
@@ -1300,8 +1571,14 @@
    "refraction",
    "dispersion",
    "crystal",
-   "three.js"
-  ]
+   "three.js",
+   "كريستال",
+   "قوس قزح",
+   "تشتت",
+   "rainbow",
+   "ior"
+  ],
+  "when": "عند عرض أجسام زجاج أو كريستال ثلاثية الأبعاد تكسر الخلفية وتفصلها لحواف قوس قزح / for 3D glass or crystal objects that bend the background and split it into rainbow fringes"
  },
  {
   "id": "TEX-47",
@@ -1327,8 +1604,14 @@
    "gold",
    "metallic",
    "sheen",
-   "luxury"
-  ]
+   "luxury",
+   "نص ذهبي",
+   "شعار",
+   "فخامة",
+   "gold text",
+   "shine"
+  ],
+  "when": "حين تريد كلمة أو شعارًا ذهبيًا فاخرًا بلمعة تعبر النص / when you want a luxurious gold word or logo with a moving sheen sweeping across the text"
  },
  {
   "id": "TEX-48",
@@ -1357,8 +1640,14 @@
    "orb",
    "glossy",
    "sphere",
-   "gradient"
-  ]
+   "gradient",
+   "أورب",
+   "كرة مضيئة",
+   "تدرجات",
+   "radial gradient",
+   "specular"
+  ],
+  "when": "عند رسم كرة أو أورب لامعة ثنائية الأبعاد بالتدرجات فقط مع لمعة وضوء حافة وتوهج / when drawing a glossy 2D orb or sphere from gradients only, with specular, rim light and glow"
  },
  {
   "id": "TEX-49",
@@ -1389,8 +1678,14 @@
    "chrome",
    "cubecamera",
    "reflection",
-   "three.js"
-  ]
+   "three.js",
+   "مرآة",
+   "معدن عاكس",
+   "كرة كروم",
+   "mirror",
+   "env map"
+  ],
+  "when": "حين تريد كرة كروم أو مرآة تعكس المشهد الثلاثي نفسه حيًا كل إطار / when you want a chrome mirror sphere reflecting the actual 3D scene live every frame"
  },
  {
   "id": "TEX-50",
@@ -1414,8 +1709,14 @@
    "shadow",
    "elevation",
    "tokens",
-   "depth"
-  ]
+   "depth",
+   "ظلال ناعمة",
+   "بطاقات",
+   "عمق",
+   "box-shadow",
+   "soft shadow"
+  ],
+  "when": "عند الحاجة لظلال ارتفاع ناعمة لبطاقات الواجهة بثلاثة مستويات ملوّنة بلون العلامة الداكن / when UI cards need soft layered elevation shadows in three levels tinted with the brand dark"
  },
  {
   "id": "TEX-51",
@@ -1446,8 +1747,14 @@
    "skin",
    "rock",
    "pillow",
-   "studio"
-  ]
+   "studio",
+   "ملمس",
+   "صخر",
+   "جلد",
+   "value noise",
+   "texture"
+  ],
+  "when": "حين تريد إعطاء شكل مسطح ملمس جلد أو صخر أو ماء أو فرو أو ضباب في رسام Studio / when giving a flat shape a skin, rock, water, fur or fog texture in the Studio painter"
  },
  {
   "id": "TEX-52",
@@ -1477,8 +1784,14 @@
    "scales",
    "tiles",
    "dragon",
-   "pattern"
-  ]
+   "pattern",
+   "تنين",
+   "سمك",
+   "زواحف",
+   "fish scales",
+   "svg pattern"
+  ],
+  "when": "عند تغطية جسم بنقش حراشف زواحف أو جلد سمك أو قرميد سقف / when covering a body with a reptile-scale, fish-skin or roof-tile pattern"
  },
  {
   "id": "TEX-53",
@@ -1505,8 +1818,14 @@
    "relief",
    "height field",
    "sss",
-   "fresnel"
-  ]
+   "fresnel",
+   "تجسيم",
+   "بروز",
+   "لمعان",
+   "bump",
+   "specular"
+  ],
+  "when": "حين تريد إضاءة شكل كحقل ارتفاع بنتوءات ولمعان وتشتت تحت السطح ليبدو مجسمًا / when lighting a shape as a height field with bumps, specular and subsurface scattering so it reads as solid"
  },
  {
   "id": "TEX-54",
@@ -1534,8 +1853,14 @@
    "water",
    "glints",
    "specular",
-   "studio"
-  ]
+   "studio",
+   "أمواج",
+   "لمعان الماء",
+   "عاصفة",
+   "sea",
+   "waves"
+  ],
+  "when": "عند رسم سطح بحر أو ماء بأمواج تمزج العمق والسماء ولمعات ضوء، حتى في مشهد عاصف / when painting a sea or water surface with waves mixing depth and sky and trails of light glints, storms included"
  },
  {
   "id": "TEX-55",
@@ -1564,8 +1889,14 @@
    "fbm",
    "ridged",
    "noise",
-   "terrain"
-  ]
+   "terrain",
+   "تضاريس",
+   "توزيع عشوائي",
+   "ضوضاء بيرلين",
+   "procedural",
+   "simplex"
+  ],
+  "when": "حين تحتاج ضوضاء حتمية للتضاريس أو الخامات أو توزيع العناصر في three-kit / when you need deterministic noise for terrain, textures or placing items in three-kit"
  },
  {
   "id": "TEX-56",
@@ -1593,8 +1924,14 @@
    "normal map",
    "procedural texture",
    "sprite",
-   "three.js"
-  ]
+   "three.js",
+   "خرائط نورمال",
+   "جسيمات",
+   "بدون صور",
+   "particles",
+   "canvas texture"
+  ],
+  "when": "عند الحاجة لخامات أو خرائط normal أو سبرايت جسيمات في three.js دون تحميل أي صور / when you need textures, normal maps or particle sprites in three.js without downloading images"
  },
  {
   "id": "TEX-57",
@@ -1621,8 +1958,14 @@
    "wood",
    "hull",
    "procedural",
-   "three.js"
-  ]
+   "three.js",
+   "مركب",
+   "طلاء مقشور",
+   "ألواح خشب",
+   "boat",
+   "wood grain"
+  ],
+  "when": "حين تحتاج بدن قارب خشبي تقليدي مدهون بأشرطة وألواح وطلاء مقشور دون صور / when you need a traditional painted wooden boat hull with plank seams and chipped paint, no images"
  },
  {
   "id": "TEX-58",
@@ -1648,8 +1991,14 @@
    "moon",
    "procedural",
    "night",
-   "رمضان"
-  ]
+   "رمضان",
+   "بدر",
+   "قمر مكتمل",
+   "سماء ليلية",
+   "full moon",
+   "craters"
+  ],
+  "when": "عند الحاجة لقمر مكتمل ساطع في مشهد ليلي مولّد رياضيًا بفوهات وبحار داكنة / when you need a bright full moon for a night scene, generated mathematically with maria and craters"
  },
  {
   "id": "TEX-59",
@@ -1675,8 +2024,14 @@
    "brick",
    "wall",
    "light map",
-   "neon"
-  ]
+   "neon",
+   "نيون",
+   "لافتة",
+   "إضاءة جدار",
+   "sign glow",
+   "mortar"
+  ],
+  "when": "حين يجب أن يتلون جدار طوب بضوء لافتة نيون بينما تبقى فواصل الملاط معتمة / when a brick wall must take the colour of a neon sign's light while the mortar stays dark"
  },
  {
   "id": "TEX-60",
@@ -1702,8 +2057,14 @@
    "clouds",
    "sky",
    "feTurbulence",
-   "svg"
-  ]
+   "svg",
+   "سحب",
+   "شمس",
+   "خلفية سماء",
+   "cumulus",
+   "lightweight"
+  ],
+  "when": "عند الحاجة لسماء بسحب ناعمة وشمس كخلفية SVG خفيفة الحجم بدل صورة / when you need a sky of soft clouds and sun as a lightweight SVG instead of a raster image"
  },
  {
   "id": "TEX-61",
@@ -1734,8 +2095,14 @@
    "mask",
    "fbm",
    "text fill",
-   "domain warp"
-  ]
+   "domain warp",
+   "كلمة عربية",
+   "تعبئة النص",
+   "ترانزيشن",
+   "arabic text",
+   "liquid"
+  ],
+  "when": "حين تريد كلمة عربية مملوءة بسائل ملون متحرك ثم تكبر حتى يملأ السائل الكادر كانتقال / when an Arabic word is filled with moving coloured fluid, then scales up until the fluid fills the frame as a transition"
  },
  {
   "id": "TEX-62",
@@ -1765,8 +2132,14 @@
    "mask",
    "marble",
    "lava",
-   "wood"
-  ]
+   "wood",
+   "حروف بخامة",
+   "رخام",
+   "خشب",
+   "textured letters",
+   "hyperframes"
+  ],
+  "when": "عند كتابة نص بحروف مملوءة بخامة طوب أو رخام أو خشب أو حمم أو ثلج أو جلد / when letters should be filled with a texture such as brick, marble, wood, lava, snow or leather"
  },
  {
   "id": "TEX-63",
@@ -1799,8 +2172,14 @@
    "liquid metal",
    "holographic",
    "webgpu",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "كروم",
+   "هولوغرام",
+   "خلفية شيدر",
+   "chrome",
+   "shader background"
+  ],
+  "when": "حين تحتاج خلفية أو جسمًا جاهزًا بشيدر مادة: كروم أو معدن سائل أو رخام أو هولوغرام أو ماء أو صقيع / when you need a ready shader plate: chrome, liquid metal, marble, holographic, water, frost and more"
  },
  {
   "id": "TEX-64",
@@ -1829,8 +2208,14 @@
    "ink bleed",
    "gooey",
    "grain field",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "نزف الحبر",
+   "كشف علامة",
+   "حلقة متكررة",
+   "ink reveal",
+   "seamless loop"
+  ],
+  "when": "عند الحاجة لحقل نقاط ملون متحرك في حلقة أو حبر يتفتح في الورق ثم يستقر كعلامة حادة / for a looping tinted dot field, or liquid ink blooming through paper and resolving into a crisp mark"
  },
  {
   "id": "TEX-65",
@@ -1861,8 +2246,14 @@
    "clouds",
    "nebula",
    "shader",
-   "sky"
-  ]
+   "sky",
+   "سماء فضائية",
+   "نجوم",
+   "خطوط فرشاة",
+   "space",
+   "painterly"
+  ],
+  "when": "حين تريد سماء بغيوم كخطوط فرشاة ملونة نحو الشمس أو سماء سديمية بنفسجية بنجوم / when you want a sky of brush-streak clouds tinted toward the sun, or a purple nebula sky with stars"
  },
  {
   "id": "TEX-66",
@@ -1888,8 +2279,14 @@
    "lava",
    "ridged",
    "shader",
-   "veins"
-  ]
+   "veins",
+   "صخر منصهر",
+   "عروق مضيئة",
+   "أرضية نارية",
+   "glowing veins",
+   "fbm"
+  ],
+  "when": "عند الحاجة لأرضية حمم بعروق برتقالية رفيعة مضيئة تزحف ببطء فوق قاعدة داكنة / when you need a lava floor with thin glowing orange veins slowly scrolling over a dark base"
  },
  {
   "id": "TEX-67",
@@ -1918,8 +2315,14 @@
    "لوحة",
    "painterly",
    "brush strokes",
-   "flow field"
-  ]
+   "flow field",
+   "رسم يدوي",
+   "لوحة فنية",
+   "ضربات",
+   "hand-painted",
+   "kuwahara"
+  ],
+  "when": "حين يطلب المستخدم أن تبدو الأسطح مرسومة يدويًا بضربات فرشاة مرتعشة كلوحة فنية / when the user wants surfaces to look hand-painted with jittering brush strokes like a painting"
  },
  {
   "id": "TEX-68",
@@ -1946,8 +2349,14 @@
    "dry brush",
    "trace",
    "vector",
-   "rotoscope"
-  ]
+   "rotoscope",
+   "تحويل لفيكتور",
+   "روتوسكوب",
+   "مستويات رمادي",
+   "vectorize",
+   "vtracer"
+  ],
+  "when": "عند تحويل رسمة إلى فيكتور مع الحفاظ على خطوط الفرشاة الجافة بعدة مستويات رمادية / when vectorising a drawing while keeping dry-brush streaks via several grey tone levels"
  },
  {
   "id": "TEX-69",
@@ -1971,8 +2380,14 @@
    "seamless",
    "tile",
    "ai texture",
-   "qa"
-  ]
+   "qa",
+   "خامة متكررة",
+   "فحص الجودة",
+   "حواف",
+   "tileable",
+   "seam check"
+  ],
+  "when": "قبل استخدام خامة مولدة بالذكاء الاصطناعي كخلفية متكررة: قياس فرق الحواف ومعاينة 2×2 / before using an AI-generated texture as a repeating background: measure seam difference and preview 2×2"
  },
  {
   "id": "TEX-70",
@@ -1998,8 +2413,14 @@
    "recipes",
    "flame",
    "steam",
-   "atmosphere"
-  ]
+   "atmosphere",
+   "نار",
+   "رذاذ",
+   "فرو",
+   "spray",
+   "fur"
+  ],
+  "when": "حين ترسم لهبًا أو رذاذًا أو بخارًا أو فروًا أو عمقًا جويًا في الرسام وتحتاج وصفة جاهزة / when painting flame, spray, steam, fur or atmospheric distance and you need a ready recipe"
  },
  {
   "id": "TEX-71",
@@ -2027,8 +2448,14 @@
    "mesh gradient",
    "grid",
    "background",
-   "aurora"
-  ]
+   "aurora",
+   "خلفية متدرجة",
+   "تدرج شعاعي",
+   "شبكة خطوط",
+   "radial gradient",
+   "banding"
+  ],
+  "when": "عند الحاجة لخلفية جوية من تدرجين شعاعيين وشبكة خطوط خافتة وحبيبات ضد التكسر خلف الواجهة / for an atmospheric background of radial gradients, a faint line grid and grain against banding behind UI"
  },
  {
   "id": "TEX-72",
@@ -2058,8 +2485,14 @@
    "beat",
    "basma",
    "stars",
-   "rays"
-  ]
+   "rays",
+   "خلفية متحركة",
+   "شفق",
+   "إيقاع الموسيقى",
+   "animated background",
+   "beat sync"
+  ],
+  "when": "حين تحتاج خلفية متحركة جاهزة تتجاوب مع الإيقاع: شفق أو شبكة أو نقاط أو أمواج أو نجوم أو أشعة / when you need a ready beat-reactive animated background: aurora, grid, dots, waves, stars or rays"
  },
  {
   "id": "TEX-73",
@@ -2083,8 +2516,14 @@
    "خطوط",
    "grid",
    "diagonal",
-   "background"
-  ]
+   "background",
+   "خطوط مائلة",
+   "خلفية فاضية",
+   "حركة هادئة",
+   "subtle motion",
+   "canvas"
+  ],
+  "when": "عند وجود خلفية فارغة تحتاج حركة هادئة: شبكة خطوط مائلة خافتة تتمايل برفق / when an empty background needs quiet motion: a faint slanted-line grid swaying gently"
  },
  {
   "id": "TEX-74",
@@ -2108,8 +2547,14 @@
    "تحريري",
    "grid",
    "editorial",
-   "dashes"
-  ]
+   "dashes",
+   "شرطات",
+   "خلفية هادئة",
+   "ورق",
+   "dot grid",
+   "subtle background"
+  ],
+  "when": "حين تريد خلفية تحريرية هادئة بشبكة شرطات دقيقة ثابتة منخفضة التباين / when you want a calm editorial background of a still, low-contrast grid of tiny dashes"
  },
  {
   "id": "TEX-75",
@@ -2137,8 +2582,14 @@
    "graph paper",
    "graticule",
    "grid",
-   "plotter"
-  ]
+   "plotter",
+   "شبكة قياس",
+   "مربعات",
+   "خلفية داكنة",
+   "ticks",
+   "dark grid"
+  ],
+  "when": "عند الحاجة لخلفية ورق مربعات داكنة أو شبكة قياس خضراء بعلامات صغرى وتعتيم / when you need a dark graph-paper grid or a dark-green graticule with minor ticks and vignette"
  },
  {
   "id": "TEX-76",
@@ -2168,8 +2619,14 @@
    "بيانات",
    "text wall",
    "data texture",
-   "mono"
-  ]
+   "mono",
+   "خلفية نصوص",
+   "نص متحرك",
+   "تمرير",
+   "scrolling text",
+   "headline background"
+  ],
+  "when": "حين تريد خلفية داكنة من نص أو بيانات خافتة تنزلق ببطء خلف العنوان / when you want a dark backdrop of faint scrolling text or data columns behind a headline"
  },
  {
   "id": "TEX-77",
@@ -2194,8 +2651,14 @@
    "skyline",
    "city",
    "windows",
-   "procedural"
-  ]
+   "procedural",
+   "أبراج",
+   "نوافذ مضيئة",
+   "مدينة ليلية",
+   "towers",
+   "night city"
+  ],
+  "when": "عند الحاجة لأفق مدينة ليلي بأبراج ونوافذ مضاءة يتولد بحتمية دون صور / when you need a night city skyline with towers and lit windows generated deterministically"
  },
  {
   "id": "TEX-78",
@@ -2221,8 +2684,14 @@
    "wet floor",
    "reflection",
    "rain",
-   "neon"
-  ]
+   "neon",
+   "شارع",
+   "مطر",
+   "بركة ماء",
+   "puddles",
+   "street"
+  ],
+  "when": "حين يحتاج المشهد أرضًا مبتلة بانعكاسات أضواء ملونة ونسخة مرآة مموجة للبطل / when a scene needs wet ground with coloured light reflections and a dark rippled mirror of the hero"
  },
  {
   "id": "TEX-79",
@@ -2247,8 +2716,14 @@
    "سبورة",
    "whiteboard",
    "smudge",
-   "eraser"
-  ]
+   "eraser",
+   "سبورة بيضاء",
+   "آثار مسح",
+   "ممحاة",
+   "board texture",
+   "inner shadow"
+  ],
+  "when": "عند رسم سبورة بيضاء بآثار مسح خفيفة وظل داخلي للإطار / when drawing a whiteboard with faint eraser smudges and a subtle inner border shadow"
  },
  {
   "id": "TEX-80",
@@ -2273,8 +2748,14 @@
    "طباشير",
    "chalk",
    "chalkboard",
-   "grain"
-  ]
+   "grain",
+   "سبورة طباشير",
+   "طبشورة",
+   "نمش",
+   "blackboard",
+   "svg grain"
+  ],
+  "when": "حين تريد أن تظهر الرسوم على سبورة طباشير بنمش طباشير فوقها دون تشويه الخطوط / when drawings on a chalkboard should get chalk specks over them without distorting the strokes"
  },
  {
   "id": "TEX-81",
@@ -2302,8 +2783,14 @@
    "hatching",
    "scribble",
    "marker",
-   "fill"
-  ]
+   "fill",
+   "تلوين يدوي",
+   "ماركر",
+   "شخبطة",
+   "draw-on",
+   "zigzag"
+  ],
+  "when": "عند تلوين شكل بخطوط متعرجة كالماركر أو الطباشير تُرسم تدريجيًا داخل حدوده / when filling a shape with a zigzag marker or chalk scribble drawn on progressively inside its bounds"
  },
  {
   "id": "TEX-82",
@@ -2332,8 +2819,14 @@
    "ground",
    "tile",
    "paper",
-   "pixel"
-  ]
+   "pixel",
+   "أرض",
+   "خط الأرض",
+   "بكسل آرت",
+   "floor",
+   "baseline"
+  ],
+  "when": "حين يحتاج المشهد أرضية بسيطة: ورق غائم بخط أرض مرسوم باليد أو بلاط بكسل متكرر / when a scene needs a simple ground: cloudy paper with a hand-drawn baseline or a repeating pixel tile floor"
  },
  {
   "id": "TEX-83",
@@ -2360,8 +2853,14 @@
    "warm",
    "grain",
    "starter",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "لوحة ألوان",
+   "خط",
+   "كريمي",
+   "palette",
+   "outfit font"
+  ],
+  "when": "عند البحث عن مرجع لوحة ألوان وخط بأسلوب كريمي دافئ بحبيبات لمشروع HyperFrames / when looking for a warm cream grain palette and type reference for a HyperFrames project"
  },
  {
   "id": "TEX-84",
@@ -2388,8 +2887,14 @@
    "matte",
    "material",
    "three.js",
-   "rule"
-  ]
+   "rule",
+   "لو بولي",
+   "خامة موحدة",
+   "صلصال",
+   "low poly",
+   "roughness"
+  ],
+  "when": "حين تبني مشهدًا ثلاثي الأبعاد صلصاليًا أو لوبولي وتريد خامات مطفية موحدة مع لمعان للمنتج البطل فقط / when building a clay or low-poly 3D scene with one matte material family, gloss only for the hero product"
  },
  {
   "id": "TEX-85",
@@ -2416,8 +2921,14 @@
    "معدن",
    "metal",
    "emissive",
-   "three.js"
-  ]
+   "three.js",
+   "معدن لامع",
+   "إضاءة ذاتية",
+   "توهج",
+   "shiny metal",
+   "bloom"
+  ],
+  "when": "عند الحاجة لإعداد سريع لمعدن لامع أو أجزاء مضيئة ذاتيًا يلتقطها التوهج في three.js / when you need quick settings for shiny metal or self-lit parts that bloom catches in three.js"
  },
  {
   "id": "TEX-86",
@@ -2444,8 +2955,14 @@
    "felt",
    "velvet",
    "sheen",
-   "character"
-  ]
+   "character",
+   "دمية",
+   "مخمل",
+   "لعبة محشوة",
+   "plush toy",
+   "fuzz"
+  ],
+  "when": "حين تريد شخصية محشوة أو دمية قماشية بلمعان مخملي وزغب وألياف دون UV / when you want a plush or felt character with velvet sheen, a fuzz rim and fibre noise, no UVs"
  },
  {
   "id": "TEX-87",
@@ -2471,8 +2988,14 @@
    "eye",
    "clearcoat",
    "gloss",
-   "character"
-  ]
+   "character",
+   "عيون",
+   "أنف",
+   "قزحية",
+   "catch-lights",
+   "iris"
+  ],
+  "when": "عند صنع عيون وأنوف لامعة لشخصية ثلاثية الأبعاد بقزحية وبؤبؤ ولمعتي ضوء / when making glossy eyes and noses for a 3D character with iris, pupil and two catch-lights"
  },
  {
   "id": "TEX-88",
@@ -2499,8 +3022,14 @@
    "leather",
    "metal",
    "materials",
-   "product"
-  ]
+   "product",
+   "منتج",
+   "قطيفة",
+   "لامع",
+   "plush",
+   "gloss"
+  ],
+  "when": "حين تحتاج مواد سريعة لمشهد مختبر منتج: قطيفة أو لامع أو جلد أو معدن / when you need quick materials for a product-lab scene: plush, gloss, leather or metal"
  },
  {
   "id": "TEX-89",
@@ -2528,8 +3057,14 @@
    "shell",
    "hair",
    "animal",
-   "three.js"
-  ]
+   "three.js",
+   "شعر",
+   "حيوانات",
+   "زغب",
+   "furry",
+   "mane"
+  ],
+  "when": "عند إضافة فرو أو شعر لحيوان أو شخصية ثلاثية الأبعاد بطبقات متراكبة / when adding fur or hair to a 3D animal or character using stacked shell layers"
  },
  {
   "id": "TEX-90",
@@ -2554,8 +3089,14 @@
    "paint",
    "blush",
    "sdf",
-   "character"
-  ]
+   "character",
+   "خدود",
+   "بقع لون",
+   "تلوين المجسم",
+   "paw pads",
+   "belly patch"
+  ],
+  "when": "حين تريد إضافة خدود وردية أو بقعة بطن أو وسائد كف لشخصية دون هندسة إضافية / when adding blush cheeks, a belly patch or paw pads to a character without extra geometry"
  },
  {
   "id": "TEX-91",
@@ -2579,8 +3120,14 @@
    "x-ray",
    "transparent",
    "analysis",
-   "plush"
-  ]
+   "plush",
+   "شفافية",
+   "هيكل داخلي",
+   "دمية",
+   "see-through",
+   "opacity"
+  ],
+  "when": "عند كشف البنية الداخلية لدمية أثناء تحليلها بجعلها شبه شفافة ثم إعادتها معتمة / when revealing a plush character's internal structure by making it semi-transparent, then opaque again"
  },
  {
   "id": "TEX-92",
@@ -2606,8 +3153,14 @@
    "pebbles",
    "reeds",
    "instanced",
-   "nature"
-  ]
+   "nature",
+   "حجارة",
+   "ضفة نهر",
+   "طبيعة",
+   "river stones",
+   "scatter"
+  ],
+  "when": "حين تحتاج حصى نهريًا متناثرًا في عناقيد وأعواد قصب تتمايل في مشهد ثلاثي الأبعاد / when you need river pebbles scattered in clumps and swaying reed blades in a 3D scene"
  },
  {
   "id": "TEX-93",
@@ -2638,8 +3191,14 @@
    "caustics",
    "pond",
    "terrain",
-   "water"
-  ]
+   "water",
+   "قاع الماء",
+   "ضوء تحت الماء",
+   "طحلب",
+   "underwater light",
+   "pond bed"
+  ],
+  "when": "عند بناء قاع بركة بالطمي والرمل والطين والطحالب مع انكسارات ضوء متحركة / when building a pond bed of silt, sand, mud and moss with animated caustics"
  },
  {
   "id": "TEX-94",
@@ -2669,8 +3228,14 @@
    "asphalt",
    "road",
    "wet",
-   "night"
-  ]
+   "night",
+   "شارع",
+   "خطوط الطريق",
+   "مصابيح",
+   "lane markings",
+   "street"
+  ],
+  "when": "حين تحتاج طريقًا ليليًا بأسفلت مبلل يلمع مع المصابيح وخطوط طلاء تتوهج بخفة / when you need a night road with wet asphalt glinting under lamps and faintly glowing lane paint"
  },
  {
   "id": "TEX-X01",

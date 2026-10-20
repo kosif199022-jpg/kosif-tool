@@ -34,8 +34,14 @@
    "cutscene",
    "nearest neighbour",
    "integer scale",
-   "8-bit"
-  ]
+   "8-bit",
+   "مشهد ألعاب",
+   "ألعاب قديمة",
+   "بكسلي",
+   "canvas",
+   "retro game"
+  ],
+  "when": "حين يطلب المستخدم مشهد ألعاب قديمة بكسليًا فيه عفريتات تتحرك وحوار يُكتب وخلفية بارالاكس / when the user wants a retro pixel-game cutscene with sprites, parallax and typed dialogue"
  },
  {
   "id": "RETRO-02",
@@ -61,8 +67,14 @@
    "dither",
    "fade",
    "palette ramp",
-   "game boy"
-  ]
+   "game boy",
+   "تلاشي",
+   "إضاءة بكسل",
+   "ظهور تدريجي",
+   "pixel fade",
+   "ordered dither"
+  ],
+  "when": "حين تريد تلاشيًا أو تغير إضاءة في مشهد بكسل بخطوات اللوحة أو نقش الدثر بدل الشفافية والتدرج / when fading or relighting a pixel scene through palette steps or a Bayer pattern, not alpha or blur"
  },
  {
   "id": "RETRO-03",
@@ -93,8 +105,14 @@
    "sprite",
    "walk cycle",
    "palette",
-   "pixel character"
-  ]
+   "pixel character",
+   "شخصية بكسل",
+   "دورة مشي",
+   "رسم شخصية",
+   "pillow",
+   "pose generator"
+  ],
+  "when": "حين تحتاج شخصية بكسل بإطارات مشي أو وضعيات متعددة تبقى ثابتة الألوان والشكل في كل إطار / when you need a pixel character with walk frames or poses that stay on-palette and on-model"
  },
  {
   "id": "RETRO-04",
@@ -125,8 +143,14 @@
    "pixel vfx",
    "explosion",
    "sprite sheet",
-   "impact"
-  ]
+   "impact",
+   "انفجار",
+   "ضربة",
+   "خطوط سرعة",
+   "slash",
+   "hit effect"
+  ],
+  "when": "حين تريد شرارات أو ضربات أو انفجارات بكسلية كورقة عفريتات مع إمساك لحظة الارتطام / when you need pixel sparks, slashes or explosions as sprite sheets that hold the impact frame"
  },
  {
   "id": "RETRO-05",
@@ -156,8 +180,14 @@
    "tileset",
    "parallax",
    "seamless",
-   "autotile"
-  ]
+   "autotile",
+   "خلفية لعبة",
+   "بارالاكس",
+   "طبقات عمق",
+   "rpg maker",
+   "game map"
+  ],
+  "when": "حين تبني خلفية ألعاب من بلاطات متكررة بلا فواصل أو طبقات بارالاكس تتحرك بسرعات مختلفة / when building a seamless tiled game background or depth parallax layers scrolling at different speeds"
  },
  {
   "id": "RETRO-06",
@@ -184,8 +214,14 @@
    "stop motion",
    "integer",
    "stepped",
-   "cutout"
-  ]
+   "cutout",
+   "ستوب موشن",
+   "حركة متقطعة",
+   "قص ورق",
+   "12 fps",
+   "paper cutout"
+  ],
+  "when": "حين تريد حركة متقطعة بإحساس يدوي أو ستوب موشن أو قص ورق بدل الانسياب الناعم / when you want stepped, hand-made or stop-motion-feel motion on whole pixels instead of smooth drift"
  },
  {
   "id": "RETRO-07",
@@ -214,8 +250,14 @@
    "diorama",
    "water reflection",
    "sunset",
-   "pixel landscape"
-  ]
+   "pixel landscape",
+   "بحيرة",
+   "غروب",
+   "تموج الماء",
+   "ripple",
+   "lake"
+  ],
+  "when": "حين يطلب المستخدم منظرًا بكسليًا لبحيرة أو غروب ينعكس على الماء بتموج خفيف / when the user wants a pixel lake or sunset scene mirrored in rippling water"
  },
  {
   "id": "RETRO-08",
@@ -250,8 +292,14 @@
    "game ui",
    "dialogue box",
    "pixel font",
-   "8-bit"
-  ]
+   "8-bit",
+   "واجهة لعبة",
+   "صندوق حوار",
+   "بطاقة عنوان",
+   "title card",
+   "typewriter"
+  ],
+  "when": "حين تريد واجهة لعبة قديمة فيها مستوى وعملات ووقت، أو صندوق حوار يُكتب، أو بطاقة عنوان كتلية / when you need a retro game HUD, typewriter dialogue box or blocky title card"
  },
  {
   "id": "RETRO-09",
@@ -276,8 +324,14 @@
    "فاصل",
    "chapter break",
    "pixel insert",
-   "pattern interrupt"
-  ]
+   "pattern interrupt",
+   "فاصل فصول",
+   "كسر الرتابة",
+   "مونتاج",
+   "pixelize transition",
+   "xfade"
+  ],
+  "when": "حين تريد كسر رتابة فيلم حديث بفاصل بكسلي قصير بين الفصول ثم العودة للقطات العادية / when breaking a modern edit with a short retro pixel scene between chapters"
  },
  {
   "id": "RETRO-10",
@@ -309,8 +363,14 @@
    "cmyk",
    "print",
    "comic",
-   "dots"
-  ]
+   "dots",
+   "طباعة",
+   "كوميكس",
+   "مظهر مطبوع",
+   "shader",
+   "print look"
+  ],
+  "when": "حين يريد المستخدم مظهر الطباعة أو الكوميكس بنقاط تكبر وتصغر حسب الإضاءة أو شبكات CMYK / when the user wants a print or comic look with luma-sized dots or rotated CMYK screens"
  },
  {
   "id": "RETRO-11",
@@ -343,8 +403,14 @@
    "misregistration",
    "two ink",
    "multiply",
-   "print"
-  ]
+   "print",
+   "حبرين",
+   "انزياح الحبر",
+   "مطبوع",
+   "grain",
+   "print texture"
+  ],
+  "when": "حين تريد طابعًا مطبوعًا بحبرين ينزاحان قليلًا ثم ينطبقان حول رسم بسيط / when you want a two-ink printed look where layers drift off-register then settle"
  },
  {
   "id": "RETRO-12",
@@ -369,8 +435,14 @@
    "film strip",
    "memory",
    "biography",
-   "nostalgia"
-  ]
+   "nostalgia",
+   "صور قديمة",
+   "سيرة ذاتية",
+   "حنين",
+   "photo montage",
+   "old photos"
+  ],
+  "when": "حين يريد المستخدم عرض صور ذكريات أو سيرة شخص تمر على شرائط فيلم وتنتهي بعنوان / when the user wants memory or biography photos riding film strips before stopping on a title"
  },
  {
   "id": "RETRO-13",
@@ -398,8 +470,14 @@
    "posterize",
    "vectorize",
    "kmeans",
-   "flat colour"
-  ]
+   "flat colour",
+   "تحويل صورة",
+   "فكتور",
+   "ألوان مسطحة",
+   "svg",
+   "photo to vector"
+  ],
+  "when": "حين تريد تحويل صورة إلى ملصق بألوان مسطحة قليلة يكبر بلا حدود كملف SVG / when turning a photo into a flat-colour poster that scales without limit as SVG"
  },
  {
   "id": "RETRO-14",
@@ -426,8 +504,14 @@
    "engraving",
    "crosshatch",
    "kuwahara",
-   "treatment"
-  ]
+   "treatment",
+   "فلتر فني",
+   "تأثير طباعي",
+   "هافتون",
+   "hyperframes",
+   "dither"
+  ],
+  "when": "حين تريد مظهر حفر أو تهشير أو رسم أو هافتون أو دثر على صورة أو فيديو دون المساس بالملف الأصلي / when applying engraving, crosshatch, paint, halftone or dither looks to images or video non-destructively"
  },
  {
   "id": "RETRO-15",
@@ -456,8 +540,14 @@
    "manga",
    "speed lines",
    "comic",
-   "ink"
-  ]
+   "ink",
+   "خطوط سرعة",
+   "بالون كلام",
+   "كوميكس",
+   "speech balloon",
+   "anime"
+  ],
+  "when": "حين يريد المستخدم لقطة بطابع المانغا أو الأنمي فيها خطوط سرعة ورشات حبر وبالون كلام / when the user wants a manga or anime style shot with speed lines, ink splatter and a speech balloon"
  },
  {
   "id": "RETRO-16",
@@ -489,8 +579,14 @@
    "scanlines",
    "خطوط مسح",
    "شريط",
-   "retro tv"
-  ]
+   "retro tv",
+   "تلفزيون قديم",
+   "فيديو قديم",
+   "تشويش",
+   "vintage",
+   "tape damage"
+  ],
+  "when": "حين تريد مظهر شاشة تلفزيون قديمة أو شريط فيديو تالف للإيحاء بالماضي / when you want an old TV screen or damaged VHS tape look to signal the past"
  },
  {
   "id": "RETRO-17",
@@ -520,8 +616,14 @@
    "camcorder",
    "rec",
    "screen warp",
-   "lcd"
-  ]
+   "lcd",
+   "تصوير منزلي",
+   "واجهة الكاميرا",
+   "شاشة عرض",
+   "hud overlay",
+   "hyperframes"
+  ],
+  "when": "حين تريد أن تبدو اللقطة معروضة على شاشة حقيقية أو مصورة بكاميرا فيديو بنقطة تسجيل وتاريخ وعداد / when footage should look shown on a real screen or shot on a camcorder with REC dot, date and counter"
  },
  {
   "id": "RETRO-18",
@@ -548,8 +650,14 @@
    "لوحة نقطية",
    "dot matrix",
    "ticker",
-   "scoreboard"
-  ]
+   "scoreboard",
+   "شريط أخبار",
+   "نص مضيء",
+   "لوحة مضيئة",
+   "news ticker",
+   "scrolling text"
+  ],
+  "when": "حين تريد نصًا كنقاط مضيئة على لوحة داكنة أو شريطًا يمر بعلامات صعود وهبوط ملونة / when you want glowing dot-matrix text or a scrolling ticker with coloured up/down markers"
  },
  {
   "id": "RETRO-19",
@@ -575,8 +683,14 @@
    "oscilloscope",
    "phosphor",
    "waveform",
-   "crt"
-  ]
+   "crt",
+   "موجة",
+   "راسم الإشارة",
+   "تفاعل مع الصوت",
+   "audio reactive",
+   "scope"
+  ],
+  "when": "حين تريد موجة تُرسم على شاشة أوسيلوسكوب قديمة بأثر فوسفوري، وقد تتفاعل مع الصوت / when you want a CRT oscilloscope waveform with phosphor persistence, optionally driven by audio"
  },
  {
   "id": "RETRO-20",
@@ -608,8 +722,14 @@
    "retrowave",
    "80s",
    "neon grid",
-   "chrome"
-  ]
+   "chrome",
+   "الثمانينات",
+   "نيون",
+   "شبكة نيون",
+   "three.js",
+   "title intro"
+  ],
+  "when": "حين يطلب المستخدم طابع الثمانينيات بأرضية شبكة نيون وشمس مخططة ونص كروم / when the user wants an 80s look with a neon grid floor, banded sun and chrome title"
  },
  {
   "id": "RETRO-21",
@@ -635,8 +755,14 @@
    "terminal",
    "crt",
    "hud",
-   "phosphor"
-  ]
+   "phosphor",
+   "واجهة داكنة",
+   "شاشة نظام",
+   "خطوط مسح",
+   "radar sweep",
+   "split-flap"
+  ],
+  "when": "حين تريد واجهة داكنة كشاشة نظام أو طرفية بنص فوسفوري وخطوط مسح وأخضر لعنصر واحد فقط / when you want a dark terminal-style telemetry look with phosphor text, scanlines and one green accent"
  },
  {
   "id": "RETRO-22",
@@ -669,8 +795,14 @@
    "حروف",
    "text art",
    "glyph ramp",
-   "reveal"
-  ]
+   "reveal",
+   "فن الحروف",
+   "صورة بالحروف",
+   "ظهور تدريجي",
+   "ascii art",
+   "character art"
+  ],
+  "when": "حين تريد تحويل صورة أو مشهد إلى حروف ASCII تبدأ خشنة وتتضح تدريجيًا / when converting an image or scene into ASCII characters that resolve from coarse to legible"
  },
  {
   "id": "RETRO-23",
@@ -699,8 +831,14 @@
    "lego",
    "crochet",
    "fluted glass",
-   "pixelate"
-  ]
+   "pixelate",
+   "تبكسل",
+   "زجاج مموج",
+   "كروشيه",
+   "glsl",
+   "depixelate"
+  ],
+  "when": "حين تريد تحويل صورة مبكسلة إلى خلايا بشكل ليغو أو LED أو كروشيه أو زجاج مموج / when turning a pixelated image into shaped cells like Lego studs, LED bars, crochet or fluted glass"
  },
  {
   "id": "RETRO-24",
@@ -733,8 +871,14 @@
    "atkinson",
    "floyd steinberg",
    "game boy",
-   "bayer"
-  ]
+   "bayer",
+   "لوحة محدودة",
+   "مظهر نقطي",
+   "ألوان قليلة",
+   "palette",
+   "ffmpeg"
+  ],
+  "when": "حين تريد فيديو كاملًا بمظهر نقطي بلوحة ألوان محدودة أو مشهدًا يظهر من ضوضاء بلونين / when dithering a whole video to a limited palette or revealing a scene out of two-tone noise"
  },
  {
   "id": "RETRO-25",
@@ -760,8 +904,14 @@
    "moire",
    "op art",
    "stripes",
-   "illusion"
-  ]
+   "illusion",
+   "خداع بصري",
+   "دوائر",
+   "خطوط متحدة المركز",
+   "concentric",
+   "optical illusion"
+  ],
+  "when": "حين تريد خلفية خداع بصري بخطوط متحدة المركز تهتز مع تحريك الطور / when you want an op-art background of concentric stripes that vibrate as the phase moves"
  },
  {
   "id": "RETRO-26",
@@ -788,8 +938,14 @@
    "glitch",
    "rgb split",
    "stutter",
-   "motion-kit"
-  ]
+   "motion-kit",
+   "تشويش",
+   "ارتجاف",
+   "إزاحة ألوان",
+   "html element",
+   "glitch effect"
+  ],
+  "when": "حين تريد ارتجاف غليتش قصيرًا على عنوان أو أي عنصر HTML ثم عودته نظيفًا / when you want a short glitch stutter on a title or any HTML element that returns clean"
  },
  {
   "id": "RETRO-27",
@@ -817,8 +973,14 @@
    "glitch pass",
    "three.js",
    "datamosh",
-   "freeze"
-  ]
+   "freeze",
+   "ثلاثي الأبعاد",
+   "توقف الزمن",
+   "فصل لوني",
+   "chroma split",
+   "3d glitch"
+  ],
+  "when": "حين يحتاج مشهد ثلاثي الأبعاد غليتش بفصل لوني وتمزق شرائح وتجميد أحادي يوحي بتوقف الزمن / when a 3D scene needs a glitch pass with chroma split, slice tears and a mono freeze for time stopping"
  },
  {
   "id": "RETRO-28",
@@ -852,8 +1014,14 @@
    "rgb",
    "beat",
    "datamosh",
-   "decrypt"
-  ]
+   "decrypt",
+   "على الإيقاع",
+   "تشويش نص",
+   "ضربة",
+   "beat sync",
+   "rgb split"
+  ],
+  "when": "حين تريد كلمة تتقطع بغليتش أحمر وسماوي يعاد إطلاقه على إيقاع الموسيقى / when you want a word glitching in red/cyan slices retriggered on the music beat"
  },
  {
   "id": "RETRO-29",
@@ -881,8 +1049,14 @@
    "70s",
    "brutalist",
    "paper craft",
-   "style lock"
-  ]
+   "style lock",
+   "تايب حركي",
+   "لوك ثابت",
+   "كروم",
+   "kinetic type",
+   "flow prompts"
+  ],
+  "when": "حين تولّد عدة مقاطع تايب حركي وتريد لوكًا ثابتًا (بروتالي أو سبعينات أو ورقي أو كروم) يتكرر حرفيًا فيها / when generating several kinetic-type clips that must share one locked look repeated verbatim"
  },
  {
   "id": "RETRO-30",
@@ -909,8 +1083,14 @@
    "cozy",
    "loop",
    "rain",
-   "ambient"
-  ]
+   "ambient",
+   "حلقة متكررة",
+   "مطر",
+   "أجواء هادئة",
+   "seamless loop",
+   "chill"
+  ],
+  "when": "حين يطلب المستخدم مشهدًا هادئًا دافئًا يتكرر بلا انقطاع فيه مطر أو بخار أو مصباح يومض / when the user wants a calm cozy seamless loop with rain, steam or a flickering lamp"
  },
  {
   "id": "RETRO-31",
@@ -940,8 +1120,14 @@
    "vintage os",
    "arcade",
    "neobrutalism",
-   "neon"
-  ]
+   "neon",
+   "ألوان جاهزة",
+   "التسعينات",
+   "أركيد",
+   "design tokens",
+   "wcag"
+  ],
+  "when": "حين تحتاج نقطة بداية لألوان وخطوط بطابع أنظمة التسعينات أو الأركيد أو النيو بروتاليزم أو النيون / when you need starting design tokens for 90s OS, arcade, neobrutalism or neon looks"
  },
  {
   "id": "RETRO-X01",

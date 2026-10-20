@@ -29,8 +29,14 @@
    "piper",
    "offline tts",
    "arabic voice",
-   "kareem"
-  ]
+   "kareem",
+   "تحويل نص لصوت",
+   "تعليق صوتي",
+   "قراءة النص",
+   "text to speech",
+   "voiceover"
+  ],
+  "when": "حين تحتاج تعليقًا صوتيًا عربيًا من نص دون إنترنت ودون مفتاح أو اشتراك / when you need Arabic narration from text offline on CPU, with no API key"
  },
  {
   "id": "VOICE-02",
@@ -62,8 +68,14 @@
    "onecore",
    "windows tts",
    "ssml",
-   "voice.py"
-  ]
+   "voice.py",
+   "صوت سعودي",
+   "توقيت الأسطر",
+   "تعليق صوتي",
+   "ar-sa",
+   "line timings"
+  ],
+  "when": "حين يعمل المستخدم على ويندوز ويريد تعليقًا عربيًا بأصوات الجهاز المثبتة مع توقيت لكل سطر / when on Windows and you want Arabic (ar-SA) narration from installed voices plus per-line timings"
  },
  {
   "id": "VOICE-03",
@@ -96,8 +108,14 @@
    "kokoro",
    "af_heart",
    "local tts",
-   "english narration"
-  ]
+   "english narration",
+   "تعليق إنجليزي",
+   "صوت مجاني",
+   "تحويل نص لصوت",
+   "free tts",
+   "kokoro-js"
+  ],
+  "when": "حين تحتاج تعليقًا مجانيًا على المعالج بالإنجليزية أو لغة أخرى غير العربية، فلا صوت عربي في Kokoro / when you need free local narration in English or another non-Arabic language"
  },
  {
   "id": "VOICE-04",
@@ -125,8 +143,14 @@
    "web speech",
    "speechSynthesis",
    "ar-SA",
-   "fallback"
-  ]
+   "fallback",
+   "قراءة بصوت عال",
+   "صوت الجهاز",
+   "تطبيق ويب",
+   "read aloud",
+   "browser tts"
+  ],
+  "when": "حين يحتاج تطبيق ويب قراءة الرد بصوت الجهاز العربي في غياب جلسة صوتية، لا لتسجيل تعليق نهائي / when a web app should read replies aloud with the device's Arabic voice, not for final narration"
  },
  {
   "id": "VOICE-05",
@@ -162,8 +186,14 @@
    "edge-tts",
    "yaml guide",
    "framecraft",
-   "auto duration"
-  ]
+   "auto duration",
+   "شرح برنامج",
+   "صوت مصري",
+   "ترجمة تلقائية",
+   "screencast",
+   "narrated video"
+  ],
+  "when": "حين تريد تحويل ملف مشاهد إلى فيديو مروي بترجمة تلقائية بأصوات Edge، ومنها المصرية والسعودية / when turning a scenes file into a narrated video with auto subtitles using Edge voices, incl. ar-EG and ar-SA"
  },
  {
   "id": "VOICE-06",
@@ -194,8 +224,14 @@
    "elevenlabs",
    "multilingual_v2",
    "voice settings",
-   "stability"
-  ]
+   "stability",
+   "تعليق صوتي",
+   "إعدادات الصوت",
+   "تحويل نص لصوت",
+   "tts presets",
+   "narration"
+  ],
+  "when": "حين تريد ملف تعليق MP3 لكل مشهد بإعدادات صوت مضبوطة لكل استخدام عبر ElevenLabs / when you want one MP3 per scene with use-case voice presets via ElevenLabs"
  },
  {
   "id": "VOICE-07",
@@ -223,8 +259,14 @@
    "model choice",
    "pcm",
    "latency",
-   "eleven_v3"
-  ]
+   "eleven_v3",
+   "اختيار النموذج",
+   "تكلفة الحروف",
+   "صيغة المخرج",
+   "mp3",
+   "realtime"
+  ],
+  "when": "حين تختار نموذج ElevenLabs حسب سرعة الاستجابة والتعبير، وصيغة الملف للمونتاج أو التسليم / when picking an ElevenLabs model by latency vs expressiveness and the output format for editing or delivery"
  },
  {
   "id": "VOICE-08",
@@ -252,8 +294,14 @@
    "chunking",
    "previous_text",
    "prosody",
-   "long script"
-  ]
+   "long script",
+   "نص طويل",
+   "دمج المقاطع",
+   "وصلات الصوت",
+   "concat",
+   "request limit"
+  ],
+  "when": "حين يكون نص التعليق أطول من حد الطلب وتريد تقسيمه دون أن تنقطع النبرة عند الوصلات / when a narration script exceeds the request limit and must be split without breaking intonation at joins"
  },
  {
   "id": "VOICE-09",
@@ -283,8 +331,14 @@
    "voice clone",
    "consent",
    "heygen",
-   "elevenlabs"
-  ]
+   "elevenlabs",
+   "صوت مخصص",
+   "نسخ الصوت",
+   "عينات صوتية",
+   "custom voice",
+   "voice samples"
+  ],
+  "when": "حين يريد المستخدم صوتًا مخصصًا مستنسخًا من عينات نظيفة لمتحدث موافق / when the user wants a custom cloned voice from clean samples of a consenting speaker"
  },
  {
   "id": "VOICE-10",
@@ -310,8 +364,14 @@
    "إعادة الأداء",
    "speech to speech",
    "voice changer",
-   "guide take"
-  ]
+   "guide take",
+   "تغيير الصوت",
+   "صوت آخر",
+   "مغير الصوت",
+   "re-voice",
+   "sts"
+  ],
+  "when": "حين لديك تسجيل بشري وتريد إعادة أدائه بصوت آخر مع الحفاظ على توقيته وانفعاله / when you have a recorded performance and want it re-voiced in another voice keeping timing and emotion"
  },
  {
   "id": "VOICE-11",
@@ -341,8 +401,14 @@
    "gemini tts",
    "kore",
    "puck",
-   "pcm wav header"
-  ]
+   "pcm wav header",
+   "تعليق صوتي",
+   "تحويل نص لصوت",
+   "أصوات جاهزة",
+   "prebuilt voices",
+   "basma"
+  ],
+  "when": "حين تريد تسجيل تعليق عربي بأحد أصوات Gemini الجاهزة ووضعه على الخط الزمني في محرر بصمة / when recording Arabic narration with a prebuilt Gemini voice onto the Basma editor timeline"
  },
  {
   "id": "VOICE-12",
@@ -371,8 +437,14 @@
    "voice direction",
    "performance note",
    "stress words",
-   "pace"
-  ]
+   "pace",
+   "نبرة الصوت",
+   "أداء صوتي",
+   "وقفات",
+   "tone",
+   "delivery"
+  ],
+  "when": "حين تريد أن يبدو التعليق المولد مُخرجًا، فتحدد قبله النبرة والطاقة والسرعة والوقفات والكلمات المشددة / when you want generated narration to sound directed by setting tone, energy, pace, pauses and stress first"
  },
  {
   "id": "VOICE-13",
@@ -400,8 +472,14 @@
    "بودكاست",
    "dialogue",
    "multi speaker",
-   "personas"
-  ]
+   "personas",
+   "شخصيات",
+   "أصوات متعددة",
+   "نص حواري",
+   "script",
+   "conversation"
+  ],
+  "when": "حين يريد المستخدم حوارًا بين أكثر من شخصية بصوت مختلف لكل متكلم في مسار واحد / when the user wants a multi-character dialogue with a distinct voice per speaker mixed into one track"
  },
  {
   "id": "VOICE-14",
@@ -431,8 +509,14 @@
    "هاي جن",
    "heygen",
    "starfish",
-   "word timestamps"
-  ]
+   "word timestamps",
+   "توقيت الكلمات",
+   "تحويل نص لصوت",
+   "بدون تفريغ",
+   "tts",
+   "timestamps"
+  ],
+  "when": "حين تريد صوتًا مولدًا يعود معه توقيت كل كلمة مباشرة دون تفريغ لاحق / when you want generated speech that returns per-word timestamps directly, with no post-transcription"
  },
  {
   "id": "VOICE-15",
@@ -463,8 +547,14 @@
    "audio_meta",
    "bgm",
    "sfx",
-   "manifest"
-  ]
+   "manifest",
+   "موسيقى خلفية",
+   "مؤثرات صوتية",
+   "مزامنة",
+   "word timings",
+   "narration"
+  ],
+  "when": "حين تحتاج توليد التعليق بتوقيت الكلمات مع الموسيقى الخلفية والمؤثرات في ملف واحد للمزامنة والترجمة / when generating narration with word timings plus music and SFX cues in one manifest for sync"
  },
  {
   "id": "VOICE-16",
@@ -492,8 +582,14 @@
    "أسعار الصوت",
    "together ai",
    "orpheus",
-   "cartesia sonic"
-  ]
+   "cartesia sonic",
+   "صوت مستضاف",
+   "بث الصوت",
+   "تحويل نص لصوت",
+   "streaming tts",
+   "websocket"
+  ],
+  "when": "حين تريد صوتًا مستضافًا من Kokoro أو Orpheus أو Cartesia Sonic عبر REST أو البث وتقارن الأسعار / when you want hosted Kokoro, Orpheus or Cartesia Sonic TTS over REST or streaming and compare prices"
  },
  {
   "id": "VOICE-17",
@@ -517,8 +613,14 @@
    "ذاكرة النطق",
    "voice director",
    "casting",
-   "re-render turn"
-  ]
+   "re-render turn",
+   "حلقات",
+   "توزيع الأصوات",
+   "مشاعر",
+   "episodes",
+   "emotion text"
+  ],
+  "when": "حين تعمل مع مزود صوت خارجي على حلقات وتريد ثبات الأصوات بينها وإعادة توليد دور واحد فقط / when working with an external voice provider on episodes, keeping casting stable and re-rendering one turn"
  },
  {
   "id": "VOICE-18",
@@ -548,8 +650,14 @@
    "words per second",
    "wpm",
    "word budget",
-   "pacing"
-  ]
+   "pacing",
+   "عدد الكلمات",
+   "طول النص",
+   "مدة المشهد",
+   "script length",
+   "word count"
+  ],
+  "when": "حين تكتب تعليقًا لمشهد بمدة محددة وتحتاج معرفة عدد الكلمات المناسب قبل التوليد / when writing narration for a fixed-length scene and you need the right word count before TTS"
  },
  {
   "id": "VOICE-19",
@@ -578,8 +686,14 @@
    "speed",
    "length scale",
    "regenerate",
-   "no time-stretch"
-  ]
+   "no time-stretch",
+   "إبطاء الصوت",
+   "تسريع الصوت",
+   "سرعة التعليق",
+   "atempo",
+   "slow down"
+  ],
+  "when": "حين يكون التعليق أسرع أو أبطأ من اللازم، فتعيد توليده بسرعة مختلفة بدل مط الملف / when narration is too fast or slow, so you regenerate at a new speed instead of stretching the audio"
  },
  {
   "id": "VOICE-20",
@@ -607,8 +721,14 @@
    "pronunciation map",
    "spoken form",
    "tashkeel",
-   "acronyms"
-  ]
+   "acronyms",
+   "نطق خاطئ",
+   "الأرقام",
+   "اختصارات",
+   "mispronunciation",
+   "numbers"
+  ],
+  "when": "حين يخطئ محرك الصوت في نطق الأرقام أو الاختصارات أو المواقع، فتكتب الشكل المنطوق وتترك الإملاء للشاشة / when TTS misreads numbers, acronyms or domains, so you write the spoken form and keep spelling on screen"
  },
  {
   "id": "VOICE-21",
@@ -636,8 +756,14 @@
    "فكرة واحدة",
    "narration rules",
    "one idea per scene",
-   "contrast lines"
-  ]
+   "contrast lines",
+   "نص الفيديو",
+   "سكريبت",
+   "خطاف",
+   "hook",
+   "voiceover script"
+  ],
+  "when": "حين تكتب نص التعليق لمشاهد فيديو وتريده قصيرًا واضحًا يسبق الحدث على الشاشة بلحظة / when writing scene narration that is short, clear and lands just before the on-screen action"
  },
  {
   "id": "VOICE-22",
@@ -666,8 +792,14 @@
    "سكربت",
    "vo script",
    "pause tags",
-   "emphasis"
-  ]
+   "emphasis",
+   "وقفات",
+   "تشديد",
+   "معلق صوتي",
+   "voice profile",
+   "prosody"
+  ],
+  "when": "حين تجهز سكربت تعليق منطوقًا فيه وقفات وتشديد وسرعة ومواصفات صوت لمحرك أو قارئ بشري / when preparing a spoken VO script with pause, emphasis and rate tags plus a voice profile"
  },
  {
   "id": "VOICE-23",
@@ -690,8 +822,14 @@
    "سكربت مقفل",
    "script.md",
    "locked script",
-   "delivery note"
-  ]
+   "delivery note",
+   "نص التعليق",
+   "ملاحظة الأداء",
+   "ملف السكربت",
+   "narration file",
+   "voiceover"
+  ],
+  "when": "حين تريد تثبيت نص التعليق في ملف واحد بإعدادات المزود وملاحظة أداء لكل سطر / when locking narration in one file with provider settings and a delivery note per line"
  },
  {
   "id": "VOICE-24",
@@ -718,8 +856,15 @@
    "dialect",
    "egyptian",
    "gulf",
-   "msa"
-  ]
+   "msa",
+   "عامية",
+   "فصحى",
+   "سعودي",
+   "مغربي",
+   "levantine",
+   "saudi"
+  ],
+  "when": "حين يريد المستخدم تعليقًا مولدًا يبدو طبيعيًا بالمصرية أو السعودية أو الشامية أو المغربية أو الخليجية أو الفصحى / when TTS must sound native in Egyptian, Saudi, Levantine, Moroccan, Gulf Arabic or MSA"
  },
  {
   "id": "VOICE-25",
@@ -747,8 +892,14 @@
    "مقابلة",
    "intake",
    "language",
-   "dialect"
-  ]
+   "dialect",
+   "الموجز",
+   "فصحى",
+   "مصري",
+   "brief",
+   "voice engine"
+  ],
+  "when": "عند بداية المشروع حين تسجل في الموجز لغة النص على الشاشة ولهجة الصوت لاختيار محرك الصوت / at project intake, recording on-screen language and voice dialect to choose the voice engine"
  },
  {
   "id": "VOICE-26",
@@ -774,8 +925,14 @@
    "عامية",
    "egyptian persona",
    "fillers",
-   "youtuber"
-  ]
+   "youtuber",
+   "راوي مصري",
+   "لهجة مصرية",
+   "تعليق حماسي",
+   "egyptian arabic",
+   "narrator"
+  ],
+  "when": "حين يريد المستخدم راويًا مصريًا دافئًا متحمسًا بأسلوب اليوتيوبرز بنطق وأرقام مصرية صحيحة / when the user wants a warm, energetic Egyptian YouTuber-style narrator with correct pronunciation and numbers"
  },
  {
   "id": "VOICE-27",
@@ -802,8 +959,14 @@
    "صوت مقفل",
    "documentary narrator",
    "vox",
-   "voice lock"
-  ]
+   "voice lock",
+   "وثائقي",
+   "صوت عميق",
+   "ثبات الصوت",
+   "documentary",
+   "clip prompts"
+  ],
+  "when": "حين تولد عدة مقاطع وثائقية وتريد صوت راوٍ عميق جاد ثابتًا لا يتغير بينها / when generating several documentary clips that must keep one deep, serious narrator voice without drift"
  },
  {
   "id": "VOICE-28",
@@ -829,8 +992,14 @@
    "أوامر صوتية",
    "coach cues",
    "fitness",
-   "imperative"
-  ]
+   "imperative",
+   "تمارين",
+   "جيم",
+   "رياضة",
+   "workout",
+   "exercise"
+  ],
+  "when": "حين تصنع فيديو تمارين وتحتاج جملًا تدريبية قصيرة تُقال مع كل حركة / when making a workout video that needs short coaching lines spoken with each rep"
  },
  {
   "id": "VOICE-29",
@@ -854,8 +1023,14 @@
    "ميكروفون",
    "recording spec",
    "48 khz",
-   "noise floor"
-  ]
+   "noise floor",
+   "تسجيل صوتي",
+   "معلق",
+   "مايك",
+   "voice over",
+   "mic setup"
+  ],
+  "when": "حين سيسجل معلق بشري صوته وتريد أن يصلك الملف صالحًا للمزامنة والمعالجة / when a human voice-over will be recorded and the file must arrive ready for sync and processing"
  },
  {
   "id": "VOICE-30",
@@ -880,8 +1055,14 @@
    "مدرب اللغة",
    "ثنائي اللغة",
    "language coach",
-   "bilingual"
-  ]
+   "bilingual",
+   "ترجمة",
+   "عربي إنجليزي",
+   "تعلم اللغة",
+   "translation",
+   "arabic english"
+  ],
+  "when": "حين تكتب تعليقًا بلغتين أو تترجم النص سطرًا بسطر بين العربية والإنجليزية / when writing bilingual narration or translating a script line by line between Arabic and English"
  },
  {
   "id": "VOICE-31",
@@ -913,8 +1094,14 @@
    "التعليق أولًا",
    "auto duration",
    "calculateMetadata",
-   "ffprobe"
-  ]
+   "ffprobe",
+   "طول المشهد",
+   "مزامنة الصوت",
+   "توقيت المشاهد",
+   "remotion",
+   "scene timing"
+  ],
+  "when": "حين تحدد مدد مشاهد الفيديو وتريدها مطابقة لطول التعليق المولد لا العكس / when sizing each scene's duration from its generated narration length rather than the reverse"
  },
  {
   "id": "VOICE-32",
@@ -945,8 +1132,14 @@
    "words.json",
    "faster-whisper",
    "word timestamps",
-   "alignment"
-  ]
+   "alignment",
+   "تفريغ الصوت",
+   "مزامنة الترجمة",
+   "تزامن الحركة",
+   "transcription",
+   "subtitle sync"
+  ],
+  "when": "حين تريد مزامنة الحركة أو الترجمة مع كل كلمة في تعليق مولد فتحتاج توقيتها الدقيق / when you need per-word timings from a generated voice to sync motion and captions"
  },
  {
   "id": "VOICE-33",
@@ -973,8 +1166,14 @@
    "النص المعروف",
    "forced alignment",
    "whisperx",
-   "script alignment"
-  ]
+   "script alignment",
+   "أخطاء التفريغ",
+   "تصحيح الترجمة",
+   "مطابقة النص",
+   "whisper",
+   "transcript fix"
+  ],
+  "when": "حين تعرف النص الأصلي وتريد عرض كلماتك أنت مع أخذ التوقيت فقط من تفريغ ويسبر / when you wrote the script and want to show your own words while taking only the timing from Whisper"
  },
  {
   "id": "VOICE-34",
@@ -1006,8 +1205,14 @@
    "فكرة لكل جملة",
    "voice-led",
    "pacing",
-   "hold"
-  ]
+   "hold",
+   "فيديو شرح",
+   "كلمات مفتاحية",
+   "مزامنة",
+   "explainer",
+   "key words"
+  ],
+  "when": "حين تبني فيديو شرح يقوده التعليق وتريد بقاء كل فكرة بصرية بطول جملتها مع حركات على الكلمات المفتاحية / when building a narration-led explainer where each visual holds for its sentence with key-word micro-animations"
  },
  {
   "id": "VOICE-35",
@@ -1036,8 +1241,14 @@
    "تظليل الكلمة",
    "read aloud",
    "karaoke",
-   "word highlight"
-  ]
+   "word highlight",
+   "ترجمة كلمة بكلمة",
+   "إبراز الكلمة",
+   "قراءة مصاحبة",
+   "word by word",
+   "captions"
+  ],
+  "when": "حين تريد نصًا على الشاشة تتلون كل كلمة فيه لحظة نطقها مع صندوق حول الكلمة الحالية / when you want on-screen text where each word inks in as spoken, with a box on the current word"
  },
  {
   "id": "VOICE-36",
@@ -1065,8 +1276,14 @@
    "ترجمة متزامنة",
    "typewriter captions",
    "caret",
-   "launch film"
-  ]
+   "launch film",
+   "كتابة النص",
+   "كلمة بكلمة",
+   "فيلم إطلاق",
+   "word sync",
+   "subtitles"
+  ],
+  "when": "حين تريد ترجمة تُكتب كلمة كلمة لحظة نطقها مع إبراز الكلمة المؤكدة بتدرج متوهج / when you want captions that type in word by word exactly as spoken, with the key word in a glowing gradient"
  },
  {
   "id": "VOICE-37",
@@ -1094,8 +1311,14 @@
    "رأس التشغيل",
    "waveform",
    "playhead",
-   "audio visual"
-  ]
+   "audio visual",
+   "شكل الموجة",
+   "تصور الصوت",
+   "مؤشر التشغيل",
+   "audio bars",
+   "peaks"
+  ],
+  "when": "حين تريد إظهار موجة الصوت على الشاشة ومؤشرًا يتقدم معها أثناء الكلام / when you want an on-screen voice waveform with a playhead advancing as the speech plays"
  },
  {
   "id": "VOICE-38",
@@ -1126,8 +1349,14 @@
    "lecture",
    "whiteboard",
    "draw-on",
-   "narration"
-  ]
+   "narration",
+   "درس",
+   "شرح تعليمي",
+   "فيديو تعليمي",
+   "explainer",
+   "marker"
+  ],
+  "when": "حين يريد المستخدم فيديو شرح على سبورة يرسم فيه قلم عنصرًا مع كل جملة من التعليق / when the user wants a whiteboard lesson where a marker draws one element per narrated sentence"
  },
  {
   "id": "VOICE-39",
@@ -1161,8 +1390,14 @@
    "eq",
    "deesser",
    "compressor",
-   "ffmpeg"
-  ]
+   "ffmpeg",
+   "إزالة الضوضاء",
+   "تحسين الصوت",
+   "صوت واضح",
+   "denoise",
+   "high-pass"
+  ],
+  "when": "حين يكون في تسجيل الكلام هدير أو ضوضاء أو صفير وتريد صوتًا أدفأ وأوضح / when a talking clip has rumble, noise or sibilance and needs a warmer, clearer voice"
  },
  {
   "id": "VOICE-40",
@@ -1192,8 +1427,14 @@
    "voice repair",
    "mud",
    "boxiness",
-   "harshness"
-  ]
+   "harshness",
+   "صوت مكتوم",
+   "حدة الصوت",
+   "معادلة",
+   "equalizer",
+   "clarity"
+  ],
+  "when": "حين يبدو الصوت فيه هدير أو كتمة أو صندوقية أو حدة أو ضعف وضوح وتريد تشخيص العرض وإصلاحه / when a voice sounds rumbly, muddy, boxy, harsh or unclear and you want to diagnose and fix that symptom"
  },
  {
   "id": "VOICE-41",
@@ -1223,8 +1464,15 @@
    "telephone voice",
    "radio",
    "megaphone",
-   "costume"
-  ]
+   "costume",
+   "مؤثر صوتي",
+   "صوت تليفون",
+   "صوت قديم",
+   "voice effect",
+   "intercom",
+   "lo-fi"
+  ],
+  "when": "حين يراد أن يبدو صوت شخصية كأنه عبر هاتف أو راديو قديم أو مكبر صوت أو إنتركم / when a character's voice should sound like a telephone, AM radio, megaphone, lo-fi tape or intercom"
  },
  {
   "id": "VOICE-42",
@@ -1253,8 +1501,15 @@
    "audiolab",
    "rnnoise",
    "stem split",
-   "denoise"
-  ]
+   "denoise",
+   "إزالة الضوضاء",
+   "شيل المزيكا",
+   "تنقية الصوت",
+   "remove music",
+   "vocal isolation",
+   "noise reduction"
+  ],
+  "when": "حين يريد المستخدم عزل الكلام عن الضوضاء أو حذف الموسيقى من خلفية مقطع / when the user wants to isolate speech from noise or remove the music behind a clip"
  },
  {
   "id": "VOICE-43",
@@ -1284,8 +1539,14 @@
    "داكينغ",
    "ducking",
    "sidechain",
-   "music bed"
-  ]
+   "music bed",
+   "موسيقى خلفية",
+   "تعليق صوتي",
+   "وطي المزيكا",
+   "background music",
+   "voiceover mix"
+  ],
+  "when": "حين يجب أن تنخفض موسيقى الخلفية تلقائيا أثناء التعليق الصوتي وتعود في الوقفات / when background music should dip automatically under the voiceover and come back in the pauses"
  },
  {
   "id": "VOICE-44",
@@ -1316,8 +1577,15 @@
    "loudness",
    "lufs",
    "true peak",
-   "delivery gate"
-  ]
+   "delivery gate",
+   "ضبط مستوى الصوت",
+   "تطبيع الصوت",
+   "علو الصوت",
+   "loudnorm",
+   "normalize audio",
+   "podcast"
+  ],
+  "when": "عند تسليم الصوت النهائي لفيديو أو بودكاست بجهارة قياسية مع فحص الذروة / when delivering final audio for a video or podcast at a standard loudness with a true-peak check"
  },
  {
   "id": "VOICE-45",
@@ -1342,8 +1610,15 @@
    "انحراف التوقيت",
    "concat",
    "drift",
-   "pcm join"
-  ]
+   "pcm join",
+   "دمج الصوت",
+   "توقيت الكلمات",
+   "تعليق صوتي",
+   "merge audio",
+   "wav",
+   "narration"
+  ],
+  "when": "عند دمج عدة مقاطع تعليق صوتي في ملف واحد دون أن ينحرف توقيت الكلمات / when joining several narration chunks into one file without drifting word timings"
  },
  {
   "id": "VOICE-46",
@@ -1372,8 +1647,15 @@
    "realtime",
    "webrtc",
    "speech to speech",
-   "cloudflare worker"
-  ]
+   "cloudflare worker",
+   "محادثة صوتية",
+   "دردشة صوتية",
+   "مساعد بالعربي",
+   "voice assistant",
+   "voice chat",
+   "openai"
+  ],
+  "when": "حين يطلب المستخدم مساعدا صوتيا يتحاور بالعربية لحظيا داخل المتصفح / when building a browser voice assistant that talks back and forth in Arabic in real time"
  },
  {
   "id": "VOICE-47",
@@ -1399,8 +1681,14 @@
    "مقاطعة",
    "barge-in",
    "interrupt",
-   "response.cancel"
-  ]
+   "response.cancel",
+   "إيقاف الرد",
+   "قطع الكلام",
+   "مساعد صوتي",
+   "stop speaking",
+   "voice assistant"
+  ],
+  "when": "حين يجب أن يتوقف المساعد الصوتي عن الكلام فور أن يبدأ المستخدم بالحديث / when the voice assistant must stop talking as soon as the user starts speaking"
  },
  {
   "id": "VOICE-48",
@@ -1429,8 +1717,15 @@
    "حتمي",
    "intent router",
    "deterministic",
-   "arabic commands"
-  ]
+   "arabic commands",
+   "أوامر صوتية",
+   "تنقل بالصوت",
+   "قواعد ثابتة",
+   "voice commands",
+   "navigation",
+   "rule based"
+  ],
+  "when": "حين يراد تحويل أوامر صوتية عربية إلى تنقل بين الشاشات وإجابات حالة بقواعد ثابتة / when Arabic voice commands should navigate screens and answer status questions by fixed rules"
  },
  {
   "id": "VOICE-49",
@@ -1458,8 +1753,15 @@
    "voice orb",
    "listening",
    "speaking",
-   "css keyframes"
-  ]
+   "css keyframes",
+   "مؤشر الحالة",
+   "أنيميشن",
+   "واجهة صوتية",
+   "status indicator",
+   "voice ui",
+   "animation"
+  ],
+  "when": "حين تحتاج واجهة مساعد صوتي مؤشرا متحركا يوضح هل هو خامل أو يستمع أو يفكر أو يتكلم / when a voice UI needs an animated indicator for idle, listening, thinking and speaking"
  },
  {
   "id": "VOICE-50",
@@ -1484,8 +1786,15 @@
    "نبض",
    "mic button",
    "fab",
-   "pulse ring"
-  ]
+   "pulse ring",
+   "زر عائم",
+   "مايك",
+   "تأثير نبض",
+   "floating button",
+   "microphone",
+   "css animation"
+  ],
+  "when": "حين تريد زر ميكروفون عائما تخرج منه حلقة نابضة متسعة أثناء الجلسة الحية / when a floating mic button should emit an expanding pulse ring while the session is live"
  },
  {
   "id": "VOICE-51",
@@ -1509,8 +1818,14 @@
    "إلغاء الصدى",
    "getUserMedia",
    "echo cancellation",
-   "noise suppression"
-  ]
+   "noise suppression",
+   "كبت الضوضاء",
+   "مايك",
+   "تسجيل نظيف",
+   "auto gain",
+   "browser mic"
+  ],
+  "when": "عند فتح الميكروفون في المتصفح والحاجة إلى صوت نظيف بلا صدى أو ضوضاء / when opening the browser mic and needing clean input without echo or background noise"
  },
  {
   "id": "VOICE-52",
@@ -1536,8 +1851,14 @@
    "تنزيل",
    "mediarecorder",
    "webm",
-   "download"
-  ]
+   "download",
+   "تسجيل صوت",
+   "حفظ الملف",
+   "تحميل",
+   "record audio",
+   "blob"
+  ],
+  "when": "حين يريد المستخدم تسجيل صوت من المتصفح وحفظه كملف على جهازه / when the user wants to record audio in the browser and save it as a downloadable file"
  },
  {
   "id": "VOICE-53",
@@ -1563,8 +1884,14 @@
    "تقليد",
    "voice ethics",
    "consent",
-   "impersonation"
-  ]
+   "impersonation",
+   "استنساخ الصوت",
+   "انتحال الشخصية",
+   "صوت مصطنع",
+   "voice clone",
+   "synthetic voice"
+  ],
+  "when": "حين يطلب المستخدم صوتا أو موسيقى تشبه شخصا حقيقيا أو بأسلوب فنان معين / when a request asks for a real person's voice, a voice clone or music in the style of someone"
  },
  {
   "id": "VOICE-54",
@@ -1591,8 +1918,15 @@
    "صدق",
    "receipt",
    "honesty",
-   "measured"
-  ]
+   "measured",
+   "تحقق",
+   "إثبات",
+   "تقرير الصوت",
+   "verification",
+   "ffprobe",
+   "audio report"
+  ],
+  "when": "عند الإبلاغ بأن صوتا ولد أو سمع، مع ذكر ملفه ومدته وجهارته المقاسة / when reporting that audio was rendered or heard, backed by its file, duration and measured loudness"
  },
  {
   "id": "VOICE-55",
@@ -1617,7 +1951,13 @@
    "تخزين مؤقت",
    "cost",
    "cache",
-   "sha256"
-  ]
+   "sha256",
+   "توفير",
+   "تحويل النص لكلام",
+   "تنظيف النص",
+   "tts cost",
+   "text cleanup"
+  ],
+  "when": "عند تحويل نص إلى كلام بخدمة تحاسب بالحرف والرغبة في خفض التكلفة مع تكرار التجارب / when paying per character for text-to-speech and wanting to cut cost across repeated renders"
  }
 ]

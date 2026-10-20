@@ -1460,6 +1460,7 @@
   "name_en": "Hosted private links & Cloudinary URL ops",
   "status": "key",
   "what": "رفع المشروع إلى رابط خاص ثابت، أو اشتقاق نسخ الفيديو من الرابط (قص، كتم، حد مقاس، WebP متحرك) في Cloudinary. / Publish a project to a stable private URL, or derive video variants by URL in Cloudinary.",
+  "when": "عند رفع المشروع إلى رابط خاص ثابت أو قص الفيديو وتحجيمه عبر روابط Cloudinary / when publishing a project to a stable private link or trimming and resizing video through Cloudinary URLs",
   "how": "`npx hyperframes publish [dir]` (hosted, republish updates the same link). Cloudinary: so_/eo_/du_ trim, ac_none for autoplay, c_limit,h_720, fps_, fl_splice, f_auto:animated previews — e.g. du_5/vc_auto/f_auto:video/q_auto. Both need accounts; locally use ffmpeg and the claude.ai artifact (FMT studio cloud) instead.",
   "params": "",
   "install": "",
