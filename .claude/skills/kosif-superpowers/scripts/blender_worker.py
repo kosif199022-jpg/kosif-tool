@@ -57,6 +57,20 @@ bpy.context.object.data.shape = "DISK"
 bpy.context.object.data.size = 6
 stage.world = bpy.data.worlds.new("KOSIF_World")
 stage.world.color = (0.15, 0.15, 0.15)
+if output.suffix.lower() == ".frames":
+    output.mkdir(parents=True, exist_ok=False)
+    stage.render.engine = "BLENDER_WORKBENCH"
+    stage.display.shading.light = "STUDIO"
+    stage.display.shading.color_type = "MATERIAL"
+    stage.render.image_settings.file_format = "PNG"
+    stage.render.filepath = str(output / "frame_")
+    bpy.ops.render.render(animation=True)
+    expected = scene.get("frames", 1)
+    found = len(list(output.glob("frame_*.png")))
+    if found != expected:
+        raise RuntimeError("Blender animation frame count mismatch: %s != %s" % (found, expected))
+    print("KOSIF_BLENDER_FRAMES", found)
+    sys.exit(0)
 if output.suffix.lower() == ".png":
     stage.render.filepath = str(output)
     bpy.ops.render.render(write_still=True)

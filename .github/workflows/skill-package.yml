@@ -32,6 +32,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_paint.py' -v
       - name: Test deterministic IK character motion and packet-preserved audio
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_character_ik.py' -v
+      - name: Test Blender motion video encoder
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_blender_motion_video.py' -v
       - name: Test full body movement and export before packaging
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_character_fullbody.py' -v
       - name: Verify original five-second Blender scene evidence
@@ -128,6 +130,10 @@ jobs:
                   "evals/test_smart_draw.py",
                   "evals/test_local_project_audit.py",
                   "scripts/blender_bridge.py",
+                  "scripts/blender_motion_video.py",
+                  "evals/test_blender_motion_video.py",
+                  "references/blender-motion-video.md",
+                  "references/blender-capability-gap-20261020.md",
                   "scripts/browser_scout.py",
                   "scripts/atlas_metadata_audit.py",
                   "evals/test_atlas_metadata_audit.py",
