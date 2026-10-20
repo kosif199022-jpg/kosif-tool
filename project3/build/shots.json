@@ -1,0 +1,293 @@
+{
+ "fps": 60,
+ "W": 1080,
+ "H": 1920,
+ "duration": 28.467,
+ "shots": [
+  {
+   "id": "S1",
+   "src": "../project2/assets/raw/mk_17547.mp4",
+   "in": 1.0,
+   "start": 0,
+   "end": 2.94,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.0,
+    "z1": 1.08,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.85,
+    "gam": 1.2
+   },
+   "why": "Tuesday morning: sunrise over a wheat field"
+  },
+  {
+   "id": "S2",
+   "src": "../project/assets/raw/cv_coverr-sun-shining-over-the-ocean-2178.mp4",
+   "in": 6.0,
+   "start": 2.94,
+   "end": 6.32,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.47,
+     0.4
+    ],
+    "c1": [
+     0.47,
+     0.4
+    ],
+    "z0": 1.25,
+    "z1": 1.32,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.85,
+    "gam": 1.25
+   },
+   "why": "with the sunrise of this day: sun over the sea"
+  },
+  {
+   "id": "S3",
+   "src": "../project/assets/raw/mk_51106.mp4",
+   "in": 0.0,
+   "start": 6.32,
+   "end": 9.5,
+   "speed": 1,
+   "cam": {
+    "type": "tilt-up",
+    "c0": [
+     0.45,
+     0.6
+    ],
+    "c1": [
+     0.45,
+     0.42
+    ],
+    "z0": 1.25,
+    "z1": 1.25,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.78,
+    "gam": 1.35
+   },
+   "why": "let hope shine in our hearts: sunburst, eyes lifting"
+  },
+  {
+   "id": "S4",
+   "src": "../project/assets/raw/mk_9998.mp4",
+   "in": 14.0,
+   "start": 9.5,
+   "end": 12.12,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.47
+    ],
+    "z0": 1.0,
+    "z1": 1.1,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.82,
+    "gam": 1.25
+   },
+   "why": "make easy what is hard: mosque emerging from the clouds"
+  },
+  {
+   "id": "S5",
+   "src": "../project2/assets/raw/mk_17764.mp4",
+   "in": 2.0,
+   "start": 12.12,
+   "end": 15.9,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.05,
+    "z1": 1.12,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.9,
+    "gam": 1.15
+   },
+   "why": "what we waited long for: the sun's arc in time-lapse"
+  },
+  {
+   "id": "S6",
+   "src": "../project2/assets/raw/mk_4148.mp4",
+   "in": 1.0,
+   "start": 15.9,
+   "end": 20.1,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.46
+    ],
+    "z0": 1.0,
+    "z1": 1.1,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 1.1,
+    "gam": 0.95
+   },
+   "why": "more good than we wished for: the stars"
+  },
+  {
+   "id": "S7",
+   "src": "../project2/assets/raw/mk_1168.mp4",
+   "in": 3.0,
+   "start": 20.1,
+   "end": 24.36,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.5,
+     0.5
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.0,
+    "z1": 1.07,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.88,
+    "gam": 1.2
+   },
+   "why": "happiness entering our homes: blossoms in the breeze"
+  },
+  {
+   "id": "S8",
+   "src": "../project2/assets/raw/mk_2802.mp4",
+   "in": 1.0,
+   "start": 24.36,
+   "end": 26.71,
+   "speed": 1,
+   "cam": {
+    "type": "push-in",
+    "c0": [
+     0.55,
+     0.5
+    ],
+    "c1": [
+     0.55,
+     0.52
+    ],
+    "z0": 1.0,
+    "z1": 1.06,
+    "ease": "inOutSine"
+   },
+   "grade": {
+    "exp": 0.9,
+    "gam": 1.1
+   },
+   "why": "honour us with Your generosity: honey"
+  },
+  {
+   "id": "S9",
+   "src": "../project/assets/raw/mk_9736.mp4",
+   "in": 2.0,
+   "start": 26.71,
+   "end": 28.467,
+   "speed": 1,
+   "cam": {
+    "type": "pull-out",
+    "c0": [
+     0.5,
+     0.52
+    ],
+    "c1": [
+     0.5,
+     0.5
+    ],
+    "z0": 1.15,
+    "z1": 1.0,
+    "ease": "outSine"
+   },
+   "grade": {
+    "exp": 0.82,
+    "gam": 1.25
+   },
+   "why": "O Most Merciful: pull out over a mosque above the clouds"
+  }
+ ],
+ "transitions": [
+  {
+   "at": 2.94,
+   "type": "lightflash",
+   "dur": 0.5
+  },
+  {
+   "at": 6.32,
+   "type": "dissolve",
+   "dur": 0.45
+  },
+  {
+   "at": 9.5,
+   "type": "pushblur",
+   "dur": 0.4
+  },
+  {
+   "at": 12.12,
+   "type": "blurdissolve",
+   "dur": 0.45
+  },
+  {
+   "at": 15.9,
+   "type": "dissolve",
+   "dur": 0.45
+  },
+  {
+   "at": 20.1,
+   "type": "lightflash",
+   "dur": 0.45
+  },
+  {
+   "at": 24.36,
+   "type": "dissolve",
+   "dur": 0.4
+  },
+  {
+   "at": 26.71,
+   "type": "zoomblur",
+   "dur": 0.45
+  }
+ ]
+}

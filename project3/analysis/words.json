@@ -1,0 +1,338 @@
+[
+ {
+  "i": 0,
+  "word": "اللهم",
+  "start": 0.08,
+  "end": 0.48,
+  "confidence": 0.944,
+  "sentence": 0
+ },
+ {
+  "i": 1,
+  "word": "في",
+  "start": 0.6,
+  "end": 0.68,
+  "confidence": 0.992,
+  "sentence": 0
+ },
+ {
+  "i": 2,
+  "word": "صباح",
+  "start": 0.76,
+  "end": 1.08,
+  "confidence": 0.749,
+  "sentence": 0
+ },
+ {
+  "i": 3,
+  "word": "يوم",
+  "start": 1.16,
+  "end": 1.38,
+  "confidence": 0.978,
+  "sentence": 0
+ },
+ {
+  "i": 4,
+  "word": "الثلاثاء",
+  "start": 1.46,
+  "end": 2.2,
+  "confidence": 0.796,
+  "sentence": 0
+ },
+ {
+  "i": 5,
+  "word": "اللهم",
+  "start": 3.061,
+  "end": 3.421,
+  "confidence": 0.933,
+  "sentence": 1
+ },
+ {
+  "i": 6,
+  "word": "مع",
+  "start": 3.541,
+  "end": 3.661,
+  "confidence": 0.98,
+  "sentence": 1
+ },
+ {
+  "i": 7,
+  "word": "إشراقة",
+  "start": 3.781,
+  "end": 4.201,
+  "confidence": 0.912,
+  "sentence": 1
+ },
+ {
+  "i": 8,
+  "word": "شمس",
+  "start": 4.381,
+  "end": 4.621,
+  "confidence": 0.993,
+  "sentence": 1
+ },
+ {
+  "i": 9,
+  "word": "هذا",
+  "start": 4.761,
+  "end": 4.981,
+  "confidence": 0.984,
+  "sentence": 1
+ },
+ {
+  "i": 10,
+  "word": "اليوم",
+  "start": 5.041,
+  "end": 5.381,
+  "confidence": 0.961,
+  "sentence": 1
+ },
+ {
+  "i": 11,
+  "word": "أشرق",
+  "start": 6.441,
+  "end": 6.801,
+  "confidence": 0.611,
+  "sentence": 2
+ },
+ {
+  "i": 12,
+  "word": "معها",
+  "start": 6.901,
+  "end": 7.201,
+  "confidence": 0.791,
+  "sentence": 2
+ },
+ {
+  "i": 13,
+  "word": "الأمل",
+  "start": 7.241,
+  "end": 7.622,
+  "confidence": 0.944,
+  "sentence": 2
+ },
+ {
+  "i": 14,
+  "word": "في",
+  "start": 7.722,
+  "end": 7.822,
+  "confidence": 0.995,
+  "sentence": 2
+ },
+ {
+  "i": 15,
+  "word": "قلوبنا",
+  "start": 7.942,
+  "end": 8.442,
+  "confidence": 0.908,
+  "sentence": 2
+ },
+ {
+  "i": 16,
+  "word": "ويسر",
+  "start": 9.622,
+  "end": 10.122,
+  "confidence": 0.988,
+  "sentence": 3
+ },
+ {
+  "i": 17,
+  "word": "لنا",
+  "start": 10.182,
+  "end": 10.382,
+  "confidence": 0.991,
+  "sentence": 3
+ },
+ {
+  "i": 18,
+  "word": "ما",
+  "start": 10.462,
+  "end": 10.542,
+  "confidence": 0.993,
+  "sentence": 3
+ },
+ {
+  "i": 19,
+  "word": "تعسر",
+  "start": 10.642,
+  "end": 11.162,
+  "confidence": 0.984,
+  "sentence": 3
+ },
+ {
+  "i": 20,
+  "word": "وحقق",
+  "start": 12.243,
+  "end": 12.743,
+  "confidence": 0.786,
+  "sentence": 4
+ },
+ {
+  "i": 21,
+  "word": "لنا",
+  "start": 12.803,
+  "end": 13.003,
+  "confidence": 0.994,
+  "sentence": 4
+ },
+ {
+  "i": 22,
+  "word": "ما",
+  "start": 13.723,
+  "end": 13.803,
+  "confidence": 0.993,
+  "sentence": 4
+ },
+ {
+  "i": 23,
+  "word": "طال",
+  "start": 13.943,
+  "end": 14.203,
+  "confidence": 0.997,
+  "sentence": 4
+ },
+ {
+  "i": 24,
+  "word": "انتظاره",
+  "start": 14.243,
+  "end": 14.883,
+  "confidence": 0.901,
+  "sentence": 4
+ },
+ {
+  "i": 25,
+  "word": "واكتب",
+  "start": 16.023,
+  "end": 16.363,
+  "confidence": 0.906,
+  "sentence": 5
+ },
+ {
+  "i": 26,
+  "word": "لنا",
+  "start": 16.423,
+  "end": 16.643,
+  "confidence": 0.944,
+  "sentence": 5
+ },
+ {
+  "i": 27,
+  "word": "من",
+  "start": 16.723,
+  "end": 16.863,
+  "confidence": 0.932,
+  "sentence": 5
+ },
+ {
+  "i": 28,
+  "word": "الخير",
+  "start": 16.923,
+  "end": 17.384,
+  "confidence": 0.989,
+  "sentence": 5
+ },
+ {
+  "i": 29,
+  "word": "أكثر",
+  "start": 17.664,
+  "end": 18.024,
+  "confidence": 0.992,
+  "sentence": 5
+ },
+ {
+  "i": 30,
+  "word": "مما",
+  "start": 18.124,
+  "end": 18.364,
+  "confidence": 0.991,
+  "sentence": 5
+ },
+ {
+  "i": 31,
+  "word": "تمنينا",
+  "start": 18.464,
+  "end": 19.064,
+  "confidence": 0.993,
+  "sentence": 5
+ },
+ {
+  "i": 32,
+  "word": "وسعادة",
+  "start": 20.224,
+  "end": 20.764,
+  "confidence": 0.963,
+  "sentence": 6
+ },
+ {
+  "i": 33,
+  "word": "تدخل",
+  "start": 21.104,
+  "end": 21.504,
+  "confidence": 0.982,
+  "sentence": 6
+ },
+ {
+  "i": 34,
+  "word": "بيوتنا",
+  "start": 21.604,
+  "end": 22.165,
+  "confidence": 0.972,
+  "sentence": 6
+ },
+ {
+  "i": 35,
+  "word": "بلا",
+  "start": 22.565,
+  "end": 22.785,
+  "confidence": 0.991,
+  "sentence": 6
+ },
+ {
+  "i": 36,
+  "word": "موعد",
+  "start": 22.865,
+  "end": 23.305,
+  "confidence": 0.995,
+  "sentence": 6
+ },
+ {
+  "i": 37,
+  "word": "وأكرمنا",
+  "start": 24.485,
+  "end": 25.145,
+  "confidence": 0.989,
+  "sentence": 7
+ },
+ {
+  "i": 38,
+  "word": "بكرمك",
+  "start": 25.265,
+  "end": 25.945,
+  "confidence": 0.993,
+  "sentence": 7
+ },
+ {
+  "i": 39,
+  "word": "يا",
+  "start": 26.826,
+  "end": 26.946,
+  "confidence": 0.991,
+  "sentence": 8
+ },
+ {
+  "i": 40,
+  "word": "أرحم",
+  "start": 27.246,
+  "end": 27.546,
+  "confidence": 0.994,
+  "sentence": 8
+ },
+ {
+  "i": 41,
+  "word": "الراحمين",
+  "start": 27.626,
+  "end": 28.286,
+  "confidence": 0.994,
+  "sentence": 8
+ }
+]
