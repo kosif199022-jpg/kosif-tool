@@ -8,6 +8,10 @@ technologies named, prompt length) and merges it into catalog/styles.json and
 styles/<id>/STYLE.json.  Third-party prompt text, video, posters and music are
 never stored in the repository; only links to the owners' pages are kept.
 
+No record is dropped: entries that left the index are kept with listed=false,
+and KOSIF styles outside the built-in BASE list (such as 'dua') are carried over
+unchanged. Only ids listed in RETIRED (near the top of this file) are removed.
+
 Usage:
   python3 tools/sync_catalog.py              # online sync (uses .cache/ for pages already fetched)
   python3 tools/sync_catalog.py --offline    # rebuild from the cache only (no network)
@@ -15,7 +19,7 @@ Usage:
   python3 tools/sync_catalog.py --limit 20   # fetch at most 20 new detail pages this run
 
 After a sync run `python3 tools/build.py` to regenerate SKILL.md files,
-STYLE_INDEX.md, catalog/briefs.json, catalog/playbooks.json and the website data.
+STYLE_INDEX.md, catalog/playbooks.json, catalog/meta.json and sitemap.xml.
 """
 from __future__ import annotations
 
@@ -92,11 +96,19 @@ chalkboard|سبورة طباشير|hand-drawn
 whiteboard|سبورة بيضاء|hand-drawn
 doodle|قصص الدودل|hand-drawn
 plotter|قلم البلوتر|hand-drawn,shapes"""
+# Ids deliberately removed from the catalog, even when BASE or the index still has
+# them. A sync rebuilds BASE and the index entries and carries every other existing
+# record over (KOSIF styles added by hand such as 'dua', and unlisted PromptsMotion
+# entries), so removing an id from BASE alone does not delete it: name it here.
+RETIRED: set[str] = set()
 # Base styles whose reference lives in motalim-ai/motion-starter-kit (with a reference clip there)
 STARTER_KIT = set("plotter doodle whiteboard chalkboard stickman isometric fake3d infographic map-journey product".split())
 KOSIF_ONE = "https://github.com/kosif199022-jpg/kosif-one"
 
 BRIEF_FIELDS = ("name_ar", "summary_ar", "summary_en", "keywords", "difficulty", "duration_s", "stack", "brief")
+# Fields written by tools/build.py. They are carried over in place, so a sync with
+# nothing new rewrites byte-identical records (and the "changed" count stays honest).
+DERIVED_FIELDS = ("skill", "playbooks")
 
 
 def log(*a):
@@ -222,6 +234,8 @@ def base_records(existing: dict, legacy: dict) -> list[dict]:
     records = []
     for line in BASE.splitlines():
         ident, name, cats = line.split("|")
+        if ident in RETIRED:
+            continue
         if ident in STARTER_KIT:
             page = f"https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/{ident}"
             blob = page.replace("/tree/", "/blob/")
@@ -235,7 +249,7 @@ def base_records(existing: dict, legacy: dict) -> list[dict]:
             "page": page, "video": video, "poster": poster, "aspect": None, "aspect_label": None, "rank": None,
             "published": None, "model": None, "effort": None, "tech": [], "source_prompt_words": None, "listed": True,
         }
-        for f in BRIEF_FIELDS:
+        for f in DERIVED_FIELDS + BRIEF_FIELDS:
             if f in old and f != "name_ar":
                 rec[f] = old[f]
         records.append(rec)
@@ -311,6 +325,8 @@ def main() -> int:
     new_ids, changed = [], 0
     for c in cards:
         ident = "pm-" + c["slug"]
+        if ident in RETIRED:
+            continue
         old = existing.get(ident, {})
         page_path = CACHE / "pages" / f"{c['slug']}.html"
         detail = parse_detail(page_path.read_text(encoding="utf-8", errors="replace")) if page_path.exists() else {}
@@ -337,7 +353,7 @@ def main() -> int:
             "source_prompt_words": detail.get("source_prompt_words") if detail else old.get("source_prompt_words"),
             "listed": True,
         }
-        for f in BRIEF_FIELDS:
+        for f in DERIVED_FIELDS + BRIEF_FIELDS:
             if f in old and f != "name_ar":
                 rec[f] = old[f]
         if ident not in existing:
@@ -346,12 +362,21 @@ def main() -> int:
             changed += 1
         records.append(rec)
 
-    # Entries that disappeared from the public index keep their record but are flagged.
+    # Every other existing record is kept: PromptsMotion entries that disappeared
+    # from the public index are flagged listed=false, and KOSIF styles that are not
+    # in BASE (for example a measured kit such as 'dua') are carried over unchanged.
+    # Only ids named in RETIRED are ever removed.
     seen = {r["id"] for r in records}
-    unlisted = 0
+    unlisted, kept = 0, 0
     for ident, old in existing.items():
-        if ident not in seen and old.get("origin") == "PromptsMotion":
-            old = dict(old); old["listed"] = False; records.append(old); unlisted += 1
+        if ident in seen or ident in RETIRED:
+            continue
+        old = dict(old)
+        if old.get("origin") == "PromptsMotion":
+            old["listed"] = False; unlisted += 1
+        else:
+            kept += 1
+        records.append(old)
 
     CATALOG.write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (ROOT / "catalog" / "prompts_motion.json").write_text(
@@ -360,7 +385,7 @@ def main() -> int:
         d = ROOT / "styles" / r["id"]
         d.mkdir(parents=True, exist_ok=True)
         (d / "STYLE.json").write_text(json.dumps(r, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    log(f"catalog: {len(records)} records ({len(new_ids)} new, {changed} changed, {unlisted} unlisted)")
+    log(f"catalog: {len(records)} records ({len(new_ids)} new, {changed} changed, {unlisted} unlisted, {kept} other styles kept)")
     if new_ids:
         log("new:", ", ".join(new_ids))
     log("next: python3 tools/build.py")

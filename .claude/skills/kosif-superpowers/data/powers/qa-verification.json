@@ -1738,7 +1738,7 @@
   "name_en": "Originality check",
   "status": "proven",
   "what": "Checks that generated text does not copy third-party prompts.",
-  "how": "python3 tools/check_originality.py.",
+  "how": "python3 tools/check_originality.py --briefs <dir> --texts <dir> [--ngram 6]",
   "params": "",
   "install": "",
   "requires": [
@@ -10825,7 +10825,7 @@
   "status": "proven",
   "what": "ولّد مرجعًا اصطناعيًا تعرف حقيقته (لقطات، انتقالات، أحداث نص بخطوط معلومة)، حلّله بالخط نفسه الذي ستستخدمه على فيديو المستخدم، وقارن النوع والمدى والتوقيت والخط بالحقيقة قبل أن تثق بأي قياس على مرجع حقيقي. — Generate a synthetic reference whose truth you wrote (shots, transitions, text events in known fonts), analyse it with the same pipeline you will run on the user's video, and compare kind, span, timing and font against the truth before trusting any measurement on a real reference.",
   "when": "before claiming a reference analysis is exact; after touching any analyser",
-  "how": "`cd $SKILL_DIR/scripts/mimic && python3 synthetic/make_reference.py $OUT/ref && python3 synthetic/run_synthetic.py $OUT/ref $OUT/work` prints the scorecard; `python3 -m unittest tests.test_mimic` from the repo root asserts it (skips without numpy/Pillow/ffmpeg).",
+  "how": "`cd $SKILL_DIR/scripts/mimic && python3 synthetic/make_reference.py $OUT/ref && python3 synthetic/run_synthetic.py $OUT/ref $OUT/work` prints the scorecard; `python3 -m unittest tests.test_mimic` from the repo root asserts it (skips unless numpy, Pillow, OpenCV, fontTools, ffmpeg and ffprobe are all present).",
   "params": "transitions 6/6 type and span ±1; text animation 5/5; fonts 5/5 of 18; timing ±2 frames 3/5 (blur exit −7, slide_up +4)",
   "install": "pip install numpy pillow opencv-python-headless scipy; ffmpeg",
   "requires": [

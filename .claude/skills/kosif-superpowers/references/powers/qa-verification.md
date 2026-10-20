@@ -377,7 +377,7 @@ _الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بال�
 
 #### QA-62 · فحص الأصالة · Originality check · ✅ مُثبت هنا
 - **ماذا / what:** Checks that generated text does not copy third-party prompts.
-- **كيف / how:** python3 tools/check_originality.py.
+- **كيف / how:** python3 tools/check_originality.py --briefs <dir> --texts <dir> [--ngram 6]
 - **الدليل / proof:** `kosif-tool/tools/check_originality.py`
 
 #### QA-63 · لوحة معاينة 8 إطارات · Contact-sheet preview (--preview) · ✅ مُثبت هنا
@@ -2240,6 +2240,6 @@ _قدرات أُثبتت في هذه الجلسة: مطابقة الخطوط و�
 #### QA-X09 · بطاقة نتائج اصطناعية بحقيقة أرضية لخط أنابيب المحاكاة · Synthetic ground-truth scorecard for the mimic pipeline · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ولّد مرجعًا اصطناعيًا تعرف حقيقته (لقطات، انتقالات، أحداث نص بخطوط معلومة)، حلّله بالخط نفسه الذي ستستخدمه على فيديو المستخدم، وقارن النوع والمدى والتوقيت والخط بالحقيقة قبل أن تثق بأي قياس على مرجع حقيقي. — Generate a synthetic reference whose truth you wrote (shots, transitions, text events in known fonts), analyse it with the same pipeline you will run on the user's video, and compare kind, span, timing and font against the truth before trusting any measurement on a real reference.
 - **متى أستخدمها / when:** before claiming a reference analysis is exact; after touching any analyser
-- **كيف / how:** `cd $SKILL_DIR/scripts/mimic && python3 synthetic/make_reference.py $OUT/ref && python3 synthetic/run_synthetic.py $OUT/ref $OUT/work` prints the scorecard; `python3 -m unittest tests.test_mimic` from the repo root asserts it (skips without numpy/Pillow/ffmpeg). **أرقام / params:** transitions 6/6 type and span ±1; text animation 5/5; fonts 5/5 of 18; timing ±2 frames 3/5 (blur exit −7, slide_up +4)
+- **كيف / how:** `cd $SKILL_DIR/scripts/mimic && python3 synthetic/make_reference.py $OUT/ref && python3 synthetic/run_synthetic.py $OUT/ref $OUT/work` prints the scorecard; `python3 -m unittest tests.test_mimic` from the repo root asserts it (skips unless numpy, Pillow, OpenCV, fontTools, ffmpeg and ffprobe are all present). **أرقام / params:** transitions 6/6 type and span ±1; text animation 5/5; fonts 5/5 of 18; timing ±2 frames 3/5 (blur exit −7, slide_up +4)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/sheet.jpg` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/run_synthetic.py` · `kosif-tool/tests/test_mimic.py`

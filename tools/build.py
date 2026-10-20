@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Regenerate every derived file of the atlas from catalog/styles.json.
 
-Writes: styles/<id>/SKILL.md (all), STYLE_INDEX.md, catalog/playbooks.json,
-catalog/meta.json, sitemap.xml and the statistics block in README.md.
+Writes: styles/<id>/SKILL.md and styles/<id>/STYLE.json (all), STYLE_INDEX.md,
+catalog/styles.json (re-serialised with the skill and playbooks fields added and
+dead brief paths cleared), catalog/prompts_motion.json, catalog/playbooks.json,
+catalog/meta.json, sitemap.xml and the statistics block in README.md. Only files
+whose content changes are rewritten.
 Run after tools/sync_catalog.py or tools/import_briefs.py.
 
   python3 tools/build.py            # regenerate everything
@@ -149,7 +152,7 @@ Reference and creator are linked above. Third-party videos, prompts, assets and 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--check", action="store_true")
+    ap.add_argument("--check", action="store_true", help="write nothing; exit 1 and list up to 20 paths if any derived file would change")
     args = ap.parse_args()
     records = load_json(ROOT / "catalog" / "styles.json")
     cats = {c["key"]: c for c in load_json(ROOT / "catalog" / "categories.json")}
