@@ -1,7 +1,7 @@
 # Claude: understand KOSIF in under three minutes
 
 ## 30-second map
-Full catalog: 5,185 power records, 61 families, 15 groups; 98 tool records in existing manifest.
+Full catalog: 5,185 power records, 61 families, 15 groups; 100 tool records in existing manifest.
 Classification is NOT proof of runtime compatibility. Respect each power's status, requirements, proof.
 
 ## Commands (run from .claude/skills/kosif-superpowers)

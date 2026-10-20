@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:draw:start -->
 
-**الأدوات / tools (5)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (6)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -17,6 +17,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `code-drawing-master` | Generates an editable 1080x1920 Motion Director storyboard JSON, plus an optional self-contained seekable HTML preview, in which procedural vector human and/or cat characters draw on in a street or park with six actions, three moods and optional real word timestamps. | `python3 scripts/code_drawing_master.py --cast human+cat --expression happy --location street --action walk --out ./story.json --html ./story.html` | tested-here |
 | `creative-paint` | Paints a strict JSON layered scene (rectangles, ellipses, lines, polygons, pressure brush strokes, text) with Pillow into PNG/SVG stills, or animates whole layers with keyframes into a GIF or H.264 MP4. | `python3 scripts/creative_paint.py doctor` | tested-here |
 | `smart-draw` | Turns freehand stroke JSON into a layered drawing, optionally snapping each stroke to a rectangle, ellipse or straight line with deterministic geometry, then reports the recognized shapes or renders the drawing to PNG/SVG. | `python3 scripts/smart_draw.py doctor` | tested-here |
+| `unified-draw` | Combines the existing Smart Draw freehand/shape snapping engine with Creative Paint's vector/raster layered shapes, polygons and text. Uses one ordered JSON scene and exports PNG, SVG or editable native JSON. | `python3 scripts/unified_draw.py doctor` | tested-here |
 
 <!-- hub:area:draw:end -->
 

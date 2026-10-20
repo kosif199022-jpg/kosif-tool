@@ -142,7 +142,8 @@ def load():
     return {"schema":"kosif.smart-capability-index.v1",
             "origin":"data/powers/*.json (catalog); no original records changed",
             "catalog_powers":len(records),"group_count":len(specs),
-            "family_count":len(actual),"groups":list(specs.values()),"powers":records,
+            "family_count":len(actual),"tool_count":manifest["counts"]["tools"],
+            "groups":list(specs.values()),"powers":records,
             "notes":["Logical grouping only; integration and binary validation are separate steps.",
                      "Power status and source evidence retained; never infer availability from membership."]}
 
@@ -165,7 +166,7 @@ def save(index):
     quick = [
       "# Claude: understand KOSIF in under three minutes",
       "", "## 30-second map",
-      f"Full catalog: {index['catalog_powers']:,} power records, {index['family_count']} families, {index['group_count']} groups; 98 tool records in existing manifest.",
+      f"Full catalog: {index['catalog_powers']:,} power records, {index['family_count']} families, {index['group_count']} groups; {index['tool_count']} tool records in existing manifest.",
       "Classification is NOT proof of runtime compatibility. Respect each power's status, requirements, proof.",
       "", "## Commands (run from .claude/skills/kosif-superpowers)",
       "```sh",

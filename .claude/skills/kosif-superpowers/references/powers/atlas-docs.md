@@ -9,6 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المستندات — Documents · **البادئة / prefix:** `ADOCS` · **البيانات / data:** `data/powers/atlas-docs.json` · **بحث / search:** `python3 scripts/powers.py family atlas-docs`
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md)
 
 ## الفهرس / contents
 

@@ -18,8 +18,8 @@
   "powers": 5185,
   "families": 61,
   "domains": 10,
-  "tools": 98,
-  "guides": 79,
+  "tools": 100,
+  "guides": 82,
   "statuses": {
    "documented": 1798,
    "idea": 71,
@@ -9690,6 +9690,155 @@
    ],
    "evidence": "untested",
    "evidence_note": "Registered after merge; runtime command not yet independently verified."
+  },
+  {
+   "id": "unified-draw",
+   "path": "scripts/unified_draw.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Unified Draw: freehand + geometry + layered export",
+   "title_ar": "الرسم الموحد: خطوط وأشكال وطبقات وتصدير",
+   "summary_en": "Combines the existing Smart Draw freehand/shape snapping engine with Creative Paint's vector/raster layered shapes, polygons and text. Uses one ordered JSON scene and exports PNG, SVG or editable native JSON.",
+   "summary_ar": "يقبل الخطوط الحرة والأشكال والنصوص في مشهد واحد، مع تمييز الرسم اليدوي وتصدير PNG وSVG وJSON.",
+   "use_when": [
+    "Draw lines and shapes in one file",
+    "Combine freehand strokes, ellipses, rectangles, polygons or text and export",
+    "ارسم خطوط وأشكال ودوائر ونصوص في لوحة واحدة"
+   ],
+   "keywords": [
+    "unified drawing",
+    "sketch",
+    "freehand",
+    "strokes",
+    "shape",
+    "rectangle",
+    "ellipse",
+    "polygon",
+    "png",
+    "svg",
+    "رسم",
+    "خطوط",
+    "أشكال",
+    "طبقات",
+    "دائرة"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/unified_draw.py doctor",
+     "does": "Show engines, supported element types and output formats."
+    },
+    {
+     "name": "render",
+     "example": "python3 scripts/unified_draw.py render --input templates/unified-draw-demo.json --png ./drawing.png --svg ./drawing.svg --scene-out ./drawing.json",
+     "does": "Compile ordered strokes and explicit geometric shapes into one layered paint scene and write requested new outputs."
+    },
+    {
+     "name": "tests",
+     "example": "python3 scripts/test_unified_draw.py",
+     "does": "Run six integration and validation regression tests."
+    }
+   ],
+   "inputs": "kosif.unified-draw.v1 JSON, integer width/height 128-2048, background, 1-100 ordered elements of type stroke (Smart Draw fields) or shape (Creative Paint fields).",
+   "outputs": "PNG, SVG and kosif.paint.v1 JSON files, with recognition summary; refuses output overwrite.",
+   "requires": {
+    "python": [
+     "Pillow"
+    ],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "",
+   "limits": "Validated two-engine integration only; not all 297 drawing capabilities. Rule-based snapping; no ML; no photorealism or Photoshop parity. Existing Smart Draw and Creative Paint modules retained for backward compatibility.",
+   "evidence": "tested-here",
+   "evidence_note": "Six local Python integration regression tests passed on 2026-10-20, including composite PNG/SVG/JSON export.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_unified_draw.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/unified-draw-integration.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "shapes-morph-geometry"
+   ]
+  },
+  {
+   "id": "smart-capabilities",
+   "path": "scripts/smart_capabilities.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Smart capability index for Claude",
+   "title_ar": "فهرس ذكي للقدرات من أجل Claude",
+   "summary_en": "Deterministically classifies all 5,185 KOSIF power IDs into 15 task-based integration candidate groups, finds matches for Arabic or English prompts, and checks source-to-index completeness without claiming runtime fusion.",
+   "summary_ar": "يصنف جميع القدرات إلى 15 مجموعة ويبحث بالعربية والإنجليزية مع حفظ المعرّفات والأدلة والمتطلبات.",
+   "use_when": [
+    "Give Claude an overview of the entire repository quickly",
+    "Find related power groups and candidate IDs for a task",
+    "فهرس القدرات الذكي",
+    "اعثر على الأدوات المتكاملة"
+   ],
+   "keywords": [
+    "smart capability index",
+    "groups",
+    "power search",
+    "Claude",
+    "catalog",
+    "routing",
+    "الفهرس الذكي",
+    "القدرات",
+    "مجموعات",
+    "بحث"
+   ],
+   "commands": [
+    {
+     "name": "groups",
+     "example": "python3 scripts/smart_capabilities.py groups",
+     "does": "List 15 candidate integration groups and counts."
+    },
+    {
+     "name": "find",
+     "example": "python3 scripts/smart_capabilities.py find \"رسم خطوط وأشكال\" --json",
+     "does": "Rank task-relevant groups and candidate power IDs."
+    },
+    {
+     "name": "verify",
+     "example": "python3 scripts/smart_capabilities.py verify",
+     "does": "Verify all original powers appear once and that generated index matches sources."
+    },
+    {
+     "name": "build",
+     "example": "python3 scripts/smart_capabilities.py build",
+     "does": "Rebuild source-derived JSON index and two compact reference documents."
+    }
+   ],
+   "inputs": "Read-only catalog data/powers/*.json, manifest.json and a free-text Arabic/English task for find.",
+   "outputs": "JSON matching groups and power IDs; deterministic generated index/data and two reference summaries on build.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "",
+   "limits": "Logical group recommendations only; not execution proof or REA/Ghidra analysis; no promise that all 5,185 tools are executable.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-20 local source-to-index verification passed for 5,185 powers / 61 families / 15 candidate groups. Arabic and English search tested.",
+   "tests": [],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/CLAUDE_3_MINUTE_MAP.md",
+    ".claude/skills/kosif-superpowers/references/SMART_CAPABILITY_GROUPS.md"
+   ],
+   "families": [
+    "self-discovery"
+   ]
   }
  ],
  "guides": [
@@ -9864,6 +10013,12 @@
   {
    "path": "references/claude-auto-local-first.md",
    "title": "Claude Auto Mode: local-first KOSIF Superpowers",
+   "area": "discover",
+   "summary": ""
+  },
+  {
+   "path": "references/CLAUDE_3_MINUTE_MAP.md",
+   "title": "Claude: understand KOSIF in under three minutes",
    "area": "discover",
    "summary": ""
   },
@@ -10114,6 +10269,12 @@
    "summary": ""
   },
   {
+   "path": "references/SMART_CAPABILITY_GROUPS.md",
+   "title": "KOSIF unified capability groups",
+   "area": "discover",
+   "summary": ""
+  },
+  {
    "path": "references/stock-media-100.md",
    "title": "KOSIF Superpowers — 100 media discovery websites",
    "area": "sources",
@@ -10153,6 +10314,12 @@
    "path": "references/threejs-cinematic-motion-20261020.md",
    "title": "Three.js — KOSIF Superpowers 3D + Motion Capability Bridge",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/unified-draw-integration.md",
+   "title": "Unified Draw — tested integration of Smart Draw and Creative Paint",
+   "area": "draw",
    "summary": ""
   },
   {

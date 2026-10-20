@@ -174,12 +174,12 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 <!-- hub:tools:start -->
 | المجال / area | الأدوات / tools (`hub.py tool <id>`) |
 |---|---|
-| Discover and route / اكتشاف القدرات والتوجيه | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-task-method-router` |
+| Discover and route / اكتشاف القدرات والتوجيه | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-task-method-router` · `smart-capabilities` |
 | Think, ideate and write / التفكير والأفكار والكتابة | `anchor-gate` · `architecture-sizer` · `invention-lab` · `tell-scan` · `think` |
 | Motion graphics and rendering / الموشن والرندر | `aspects` · `creative-reasoning-bridge` · `motion-director` · `motion-engine-js` · `motion-kit-bridge` · `motion-runtime` · `motion-stack` · `motion-toolkit` · `render-html` · `verify-video` · `repo-aspects` · `repo-render-html` · `repo-verify-video` · `starter-html-canvas` · `starter-remotion` |
 | Editing and reference video / المونتاج والفيديو المرجعي | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` |
 | Audio and rhythm / الصوت والإيقاع | `audio-cue-mapper` · `music-rhythm-engine` · `repo-words-convert` |
-| Drawing and characters / الرسم والشخصيات | `character-fullbody` · `character-ik` · `code-drawing-master` · `creative-paint` · `smart-draw` |
+| Drawing and characters / الرسم والشخصيات | `character-fullbody` · `character-ik` · `code-drawing-master` · `creative-paint` · `smart-draw` · `unified-draw` |
 | 3D / ثلاثي الأبعاد | `blender-api-audit` · `blender-bridge` · `blender-cinema` · `blender-cycles-render` · `blender-worker` · `native-3d` · `native-glb` · `blender-motion-video` |
 | Image, design and fonts / الصور والتصميم والخطوط | `app-studio` · `app-studio-paint` · `font-fidelity-lab` · `render-text` |
 | Sources and references / المصادر والمراجع | `atlas-external-bridge` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` |

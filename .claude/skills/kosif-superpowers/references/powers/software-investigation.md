@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `REA` · **البيانات / data:** `data/powers/software-investigation.json` · **بحث / search:** `python3 scripts/powers.py family software-investigation`
-**مراجع ذات صلة / related references:** [rea-reverse-engineering.md](../rea-reverse-engineering.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md)
 
 ## الفهرس / contents
 

@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (16)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (17)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -28,6 +28,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `repo-kosif` (repo root) | Searches, lists and shows records of the motion-graphics style atlas (289 records in catalog/styles.json). It also fills a ready-to-paste Claude Code request from templates/claude_request.<lang>.txt, scaffolds a project folder (STYLE.md, PLAN.md, TEST_REPORT.md, words.json, REQUEST.md and an optional starter copy), prints catalog statistics and runs the repository validator. | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |
 | `atlas-capability-miner` | Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof. | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
 | `atlas-task-method-router` | Finds source-backed Atlas method candidates for a task without executing their code. | `python3 scripts/atlas_task_method_router.py --help` | untested |
+| `smart-capabilities` | Deterministically classifies all 5,185 KOSIF power IDs into 15 task-based integration candidate groups, finds matches for Arabic or English prompts, and checks source-to-index completeness without claiming runtime fusion. | `python3 scripts/smart_capabilities.py groups` | tested-here |
 
 <!-- hub:area:discover:end -->
 

@@ -4,6 +4,7 @@
   "catalog_powers": 5185,
   "group_count": 15,
   "family_count": 61,
+  "tool_count": 100,
   "groups": [
     {
       "id": "research",
