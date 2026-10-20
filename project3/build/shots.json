@@ -29,7 +29,13 @@
     "exp": 0.85,
     "gam": 1.2
    },
-   "why": "Tuesday morning: sunrise over a wheat field"
+   "why": "Tuesday morning: sunrise over a wheat field",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
   },
   {
    "id": "S2",
@@ -56,7 +62,13 @@
     "exp": 0.85,
     "gam": 1.25
    },
-   "why": "with the sunrise of this day: sun over the sea"
+   "why": "with the sunrise of this day: sun over the sea",
+   "band": [
+    630,
+    0,
+    544,
+    1080
+   ]
   },
   {
    "id": "S3",
@@ -83,7 +95,13 @@
     "exp": 0.78,
     "gam": 1.35
    },
-   "why": "let hope shine in our hearts: sunburst, eyes lifting"
+   "why": "let hope shine in our hearts: sunburst, eyes lifting",
+   "band": [
+    1183,
+    0,
+    1088,
+    2160
+   ]
   },
   {
    "id": "S4",
@@ -110,7 +128,13 @@
     "exp": 0.82,
     "gam": 1.25
    },
-   "why": "make easy what is hard: mosque emerging from the clouds"
+   "why": "make easy what is hard: mosque emerging from the clouds",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
   },
   {
    "id": "S5",
@@ -137,7 +161,13 @@
     "exp": 0.9,
     "gam": 1.15
    },
-   "why": "what we waited long for: the sun's arc in time-lapse"
+   "why": "what we waited long for: the sun's arc in time-lapse",
+   "band": [
+    424,
+    0,
+    432,
+    720
+   ]
   },
   {
    "id": "S6",
@@ -164,7 +194,13 @@
     "exp": 1.1,
     "gam": 0.95
    },
-   "why": "more good than we wished for: the stars"
+   "why": "more good than we wished for: the stars",
+   "band": [
+    1239,
+    0,
+    1360,
+    2160
+   ]
   },
   {
    "id": "S7",
@@ -191,7 +227,13 @@
     "exp": 0.88,
     "gam": 1.2
    },
-   "why": "happiness entering our homes: blossoms in the breeze"
+   "why": "happiness entering our homes: blossoms in the breeze",
+   "band": [
+    0,
+    0,
+    1080,
+    1920
+   ]
   },
   {
    "id": "S8",
@@ -218,7 +260,13 @@
     "exp": 0.9,
     "gam": 1.1
    },
-   "why": "honour us with Your generosity: honey"
+   "why": "honour us with Your generosity: honey",
+   "band": [
+    1431,
+    0,
+    1360,
+    2160
+   ]
   },
   {
    "id": "S9",
@@ -245,7 +293,13 @@
     "exp": 0.82,
     "gam": 1.25
    },
-   "why": "O Most Merciful: pull out over a mosque above the clouds"
+   "why": "O Most Merciful: pull out over a mosque above the clouds",
+   "band": [
+    413,
+    0,
+    452,
+    720
+   ]
   }
  ],
  "transitions": [
