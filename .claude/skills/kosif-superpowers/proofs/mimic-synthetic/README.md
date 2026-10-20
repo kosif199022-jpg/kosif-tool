@@ -28,10 +28,12 @@
 ```bash
 cd /home/user/kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic
 OUT=/tmp/mimic-synth    # خارج المستودع
-python3 synthetic/make_reference.py $OUT/ref            # يحتاج numpy Pillow(raqm) ffmpeg؛ OpenCV اختياري
+python3 synthetic/make_reference.py $OUT/ref            # يحتاج numpy وPillow(raqm) وOpenCV وffmpeg
 python3 synthetic/run_synthetic.py $OUT/ref $OUT/work   # بطاقة النتائج أعلاه
 python3 -c "import mm_build; mm_build.build('$OUT/work', preview=True, placeholder=True)"
 ```
+
+OpenCV إلزامي لمولّد المرجع الاصطناعي (`make_reference.py` و`synth.py`) واختياري في خط الأنابيب نفسه. الاختبار `tests/test_mimic.py` يُتخطى ما لم تتوفر numpy وPillow وOpenCV وfontTools وffmpeg وffprobe معًا.
 
 **حدود صريحة:**
 - المرجع اصطناعي؛ على فيديو حقيقي تنخفض ثقة الانتقالات وتوقيت النص منخفض التباين.
@@ -48,5 +50,7 @@ python3 -c "import mm_build; mm_build.build('$OUT/work', preview=True, placehold
 **Scorecard** (`synthetic/run_synthetic.py` on this machine, 2026-10-18): transitions 6/6 type and 6/6 span (±1 frame); text animation kind 5/5; font match 5/5 out of an 18-face library; text timing within ±2 frames 3/5 (one slide_up start 4 frames late, one low-contrast blur exit 7 frames short); placeholder preview rebuild 570/570 frames at 270×480 with the original audio copied.
 
 **Method:** robust block-median frame difference with text masked for cuts; transition classification by re-synthesis (every kind rendered from the pure frames before and after at 25 progress values, a monotone dynamic-programming path picks the progress per frame); text layer with true per-frame alpha sampled at the tracked pose, least-squares shadow fit and word onsets; font matching by mask comparison (tolerant IoU, aspect, stroke width, vertical ink profile). See [references/mimic.md](../../references/mimic.md).
+
+**Rerun:** the commands in the Arabic section. The synthetic generator (`make_reference.py`, `synth.py`) needs numpy, Pillow with raqm, OpenCV and ffmpeg (OpenCV stays optional in the pipeline itself); `tests/test_mimic.py` skips unless numpy, Pillow, OpenCV, fontTools, ffmpeg and ffprobe are all present.
 
 **Limits:** synthetic reference only (real footage lowers transition confidence and low-contrast timing); no Pinterest or platform scraping, replacement clips come from the user or licensed sources via `scripts/media_sources.py`; no OCR here (tesseract absent); no video is committed, the sheet is assembled from the review sheets and two preview frames.

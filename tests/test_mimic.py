@@ -2,7 +2,8 @@
 
 Builds the synthetic ground-truth reference, analyses it and checks the
 scorecard against the thresholds recorded in proofs/mimic-synthetic. Skipped
-when numpy, Pillow or ffmpeg are missing; the heavy run takes ~2 minutes.
+unless numpy, Pillow, OpenCV, fontTools, ffmpeg and ffprobe are all present
+(the synthetic generator needs OpenCV); the heavy run takes ~2 minutes.
 """
 from __future__ import annotations
 

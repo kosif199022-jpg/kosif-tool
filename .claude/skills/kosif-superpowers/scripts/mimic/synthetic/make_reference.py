@@ -3,7 +3,8 @@
     python make_reference.py OUT_DIR [--w 540 --h 960 --fonts DIR]
 
 Writes OUT_DIR/ref.mp4, OUT_DIR/truth.json and OUT_DIR/clips/*.mp4 (the source clips).
-Independent of the skill code on purpose: transitions and text are drawn here with plain NumPy/Pillow.
+Independent of the skill code on purpose: transitions and text are drawn here with NumPy, OpenCV and
+Pillow (raqm), and ffmpeg encodes. OpenCV is required here, unlike in the mimic pipeline itself.
 """
 from __future__ import annotations
 

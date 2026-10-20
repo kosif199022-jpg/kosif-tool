@@ -27,7 +27,7 @@
 ### الدليل والحدود
 
 - الدليل: [proofs/mimic-synthetic](../proofs/mimic-synthetic/README.md) — مرجع اصطناعي بحقيقة أرضية: انتقالات 6/6، حركات نص 5/5، خطوط 5/5، توقيت ±2 إطار 3/5.
-- الاختبار: `python3 -m unittest tests.test_mimic` من جذر المستودع (يُتخطى تلقائيًا بدون numpy/Pillow/ffmpeg).
+- الاختبار: `python3 -m unittest tests.test_mimic` من جذر المستودع (يُتخطى تلقائيًا ما لم تتوفر numpy وPillow وOpenCV وfontTools وffmpeg وffprobe؛ فمولّد المرجع الاصطناعي في `scripts/mimic/synthetic/` يحتاج OpenCV وإن كان اختياريًا في خط الأنابيب نفسه).
 - حدود: لا OCR، لا ملصقات ولا رموز تعبيرية، الخطوط التجارية (ثلث/ديواني) تُستبدل بأقرب خط حر إلا إذا وفّر المستخدم الملف، والدقة على الفيديو الحقيقي أقل من الاصطناعي. قل ذلك للمستخدم قبل البدء.
 
 </div>
@@ -40,4 +40,4 @@
 
 **What is measured:** shot boundaries from a text-masked block-median frame difference; transitions classified by re-synthesis across 54 FFmpeg xfade kinds (NumPy port in `mm_transitions.py`, LGPL-2.1-or-later) plus 11 phone-editor kinds, with the exact span and the measured progress curve; the text layer with true alpha at the tracked pose, animation kind and curves, least-squares shadow, word onsets; fonts matched by mask comparison across the shipped OFL faces, user fonts, system fonts and optionally Google Fonts Arabic; the look as per-shot Lab stats, a Reinhard 3D LUT, solved vignette, calibrated grain, letterbox and fades.
 
-**Proof and limits:** [proofs/mimic-synthetic](../proofs/mimic-synthetic/README.md) (6/6 transitions, 5/5 text animations, 5/5 fonts, timing ±2 frames 3/5 on a synthetic ground-truth reference); `tests/test_mimic.py` runs the harness and skips without the dependencies. No OCR, no stickers or emoji, commercial Thuluth/Diwani faces are replaced by the closest free font unless supplied, and real footage scores lower than the synthetic case. Say so before starting.
+**Proof and limits:** [proofs/mimic-synthetic](../proofs/mimic-synthetic/README.md) (6/6 transitions, 5/5 text animations, 5/5 fonts, timing ±2 frames 3/5 on a synthetic ground-truth reference); `tests/test_mimic.py` runs the harness and skips unless numpy, Pillow, OpenCV, fontTools, ffmpeg and ffprobe are all present (the synthetic reference generator in `scripts/mimic/synthetic/` needs OpenCV even though the pipeline itself does not). No OCR, no stickers or emoji, commercial Thuluth/Diwani faces are replaced by the closest free font unless supplied, and real footage scores lower than the synthetic case. Say so before starting.

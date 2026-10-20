@@ -8,7 +8,8 @@ Usage:
   python font_fidelity_lab.py inspect /path/to/font.ttf --text "جمعة مباركة"
   python font_fidelity_lab.py rank target-crop.png --text "جمعة مباركة" --fonts ./licensed --top 5
 
-Pillow is required for rendering. fontTools is optional for OpenType metadata.
+Pillow is required for rendering. fontTools is optional for OpenType metadata
+(WOFF2 metadata also needs brotli). A missing or unreadable font exits 2 with FONT FIDELITY ERROR.
 For correct Arabic use libraqm text shaping (Pillow RAQM). Never fake RTL.
 """
 from __future__ import annotations
@@ -36,6 +37,19 @@ def info(path: Path, text: str="") -> dict:
        "source_rights":"user must verify font license"}
     try:
         from fontTools.ttLib import TTFont
+    except ImportError:
+        o["inspection_note"]="fontTools not installed; raster inspection still possible"
+        return o
+    if path.suffix.lower()==".woff2":
+        try:
+            from fontTools.ttLib import woff2
+            have_brotli=getattr(woff2,"haveBrotli",True)
+        except ImportError:
+            have_brotli=False
+        if not have_brotli:
+            o["inspection_note"]="fontTools is installed but reading WOFF2 needs the brotli module (pip install brotli)"
+            return o
+    try:
         f=TTFont(str(path))
         cps=set(f.getBestCmap() or {})
         o["coverage"]={"requested":len(text),"missing":[f"U+{ord(c):04X}" for c in text if ord(c) not in cps],
@@ -50,8 +64,10 @@ def info(path: Path, text: str="") -> dict:
             family=next((n.toUnicode() for n in names if n.nameID==1),None)
             o["family"]=family
         f.close()
-    except ImportError:
-        o["inspection_note"]="fontTools not installed; raster inspection still possible"
+    except ImportError as exc:
+        o["inspection_note"]=f"fontTools could not load a decoder for this font: {exc}"
+    except Exception as exc:
+        raise ValueError(f"not a readable TTF/OTF/WOFF/WOFF2 font: {path} ({exc})") from exc
     return o
 
 def render_font(font: Path, text: str, size: int):

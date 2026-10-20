@@ -1,6 +1,7 @@
 """Procedural 'Pinterest-style' ambient clips for tests: clouds, bokeh, rain, sunset, blossoms, candle.
 
 Each generator returns a function frame(i) -> HxWx3 uint8. Deterministic per seed.
+Needs numpy and OpenCV (unlike the mimic pipeline itself, where OpenCV is optional).
 """
 from __future__ import annotations
 
@@ -10,8 +11,9 @@ import numpy as np
 
 try:
     import cv2
-except Exception:  # pragma: no cover
-    cv2 = None
+except ImportError as exc:  # pragma: no cover
+    raise ImportError("the synthetic clip generators (synth.py) need OpenCV: "
+                      "pip install opencv-python-headless") from exc
 
 
 def _blur(a, s):

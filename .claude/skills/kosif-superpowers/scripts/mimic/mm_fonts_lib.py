@@ -1,7 +1,8 @@
 """Arabic font library: catalogue, on-demand fetch (Google Fonts via git), static instancing, system scan.
 
-The skill ships a small core set in assets/fonts. `fetch()` adds ~40 more free Arabic families
-(all SIL OFL) into the user cache. System fonts with Arabic coverage are scanned too
+The core set is the OFL faces shipped in proofs/_shared/fonts plus fonts/kosif-jumuah at the repo root
+(an optional assets/fonts drop folder is scanned too when it exists; mm_common.FONT_DIRS lists them).
+`fetch()` adds ~40 more free Arabic families (all SIL OFL) into the user cache. System fonts with Arabic coverage are scanned too
 (Windows: Traditional Arabic, Sakkal Majalla, Arabic Typesetting…; macOS/iOS: Geeza Pro, Baghdad…).
 """
 from __future__ import annotations
@@ -267,10 +268,15 @@ if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description="Arabic font library for the mimic skill")
     ap.add_argument("cmd", choices=["list", "fetch", "build-ofl"])
-    ap.add_argument("--ofl", help="path to a google/fonts 'ofl' folder (build-ofl)")
+    ap.add_argument("--ofl", help="path to a google/fonts 'ofl' folder (required by build-ofl)")
     ap.add_argument("--dest", default=str(CACHE_DIR))
     ap.add_argument("--only", nargs="*")
     a = ap.parse_args()
+    if a.cmd == "build-ofl":
+        if not a.ofl:
+            ap.error("build-ofl needs --ofl PATH (a local google/fonts 'ofl' folder)")
+        if not Path(a.ofl).is_dir():
+            ap.error(f"--ofl {a.ofl}: not a folder")
     if a.cmd == "list":
         for e in library():
             print(f"{e['family']:<26} {e['weight']:>4} {e['style']:<9} {e['source']:<7} {e['file']}")
