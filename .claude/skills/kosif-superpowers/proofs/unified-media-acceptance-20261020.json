@@ -1,0 +1,49 @@
+{
+  "schema": "kosif.unified-media-acceptance.v1",
+  "date": "2026-10-20",
+  "source": "templates/unified-media-demo-photo.png (procedurally generated example; not an actual photograph)",
+  "scene": "templates/unified-draw-motion-demo.json",
+  "integration": [
+    "app_studio.py",
+    "unified_draw.py",
+    "creative_paint.py",
+    "FFmpeg"
+  ],
+  "tested_effects": [
+    "develop",
+    "ink-sketch",
+    "pencil-sketch"
+  ],
+  "h264_video": {
+    "codec_name": "h264",
+    "width": 640,
+    "height": 480,
+    "r_frame_rate": "12/1",
+    "nb_frames": "24"
+  },
+  "gif_frames": 24,
+  "local_outputs": "C:\\Users\\Public\\KOSIF-UNIFIED-MEDIA-ACCEPTANCE-20261020",
+  "files": {
+    "develop-draw.png": {
+      "bytes": 11104,
+      "sha256": "45159b8aa4a57ae6be287f5df263b14fbfe54b86ae0a2e9e42680a8f98286bd8"
+    },
+    "draw.gif": {
+      "bytes": 229490,
+      "sha256": "c6fbb8ec1c02c33d84d12e6e7a1e61c68dce13b7c55c3aa327d7d5cf425720c3"
+    },
+    "draw.mp4": {
+      "bytes": 38125,
+      "sha256": "2e3bd473358c6c5f2a267e626494f6053ff398488fc0d2c13e301993800a9aa0"
+    },
+    "pencil-draw.png": {
+      "bytes": 24588,
+      "sha256": "9cf70ca5338d4becbc9eb9e8edb6f973fa3f9092e7473d1198c04654472f9512"
+    },
+    "sketch-draw.png": {
+      "bytes": 22925,
+      "sha256": "99df8d8c4153d15bcc8a432540757356e5ca7e08c40c12f8b29e88d01c90aeda"
+    }
+  },
+  "notes": "Procedural sample demonstrates technical ability to process imported photo files; real user photo is not included. Outputs remain on authorized Windows computer; GitHub stores only proof hashes."
+}

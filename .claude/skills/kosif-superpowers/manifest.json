@@ -18,8 +18,8 @@
   "powers": 5185,
   "families": 61,
   "domains": 10,
-  "tools": 100,
-  "guides": 83,
+  "tools": 101,
+  "guides": 84,
   "statuses": {
    "documented": 1798,
    "idea": 71,
@@ -9858,6 +9858,96 @@
    "families": [
     "self-discovery"
    ]
+  },
+  {
+   "id": "unified-media",
+   "path": "scripts/unified_media.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "image",
+   "title_en": "Unified Media: photo adjustments + drawn overlays + GIF/MP4",
+   "title_ar": "محرر الوسائط الموحد: صور ورسم وتحريك وفيديو",
+   "summary_en": "One CLI links App Studio authorized local photo processing, Unified Draw freehand/geometric layers and Creative Paint keyframe animation for composited PNG/GIF/MP4.",
+   "summary_ar": "تعديل الصور والتعريض ورسم الخطوط والأشكال فوقها وتحريك الطبقات وتصدير صور وفيديو من أمر واحد.",
+   "use_when": [
+    "Edit a local photo and draw or animate shapes on it",
+    "Overlay animated drawing on a photograph and export MP4",
+    "اجمع صورة مع الرسم والموشن والتلوين في فيديو واحد"
+   ],
+   "keywords": [
+    "photo",
+    "photo editing",
+    "images",
+    "draw over image",
+    "montage",
+    "overlays",
+    "effects",
+    "ink sketch",
+    "pencil sketch",
+    "H264",
+    "GIF",
+    "MP4",
+    "unified",
+    "صور",
+    "رسم",
+    "تعديل",
+    "مونتاج",
+    "فيديو",
+    "تلوين"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/unified_media.py doctor",
+     "does": "Check named filters and FFmpeg availability."
+    },
+    {
+     "name": "photo-overlay",
+     "example": "python3 scripts/unified_media.py render --photo templates/unified-media-demo-photo.png --scene templates/unified-draw-motion-demo.json --output ./overlay.png --effect develop --exposure 0.4",
+     "does": "Adjust local photo exposure and layer drawings on top; produce PNG."
+    },
+    {
+     "name": "motion-video",
+     "example": "python3 scripts/unified_media.py render --photo templates/unified-media-demo-photo.png --scene templates/unified-draw-motion-demo.json --output ./overlay.mp4 --effect develop --exposure 0.4 --fps 12 --duration 2",
+     "does": "Export photo+animated drawing as H.264 MP4 (max 300 frames)."
+    },
+    {
+     "name": "tests",
+     "example": "python3 scripts/test_unified_media.py",
+     "does": "Run local photo/drawing/video integration regression suite."
+    }
+   ],
+   "inputs": "Local user-authorized JPG/PNG/WebP (<=30 MB, <=32 megapixels), kosif.unified-draw.v1 JSON, named App Studio effect and optional bounded exposure.",
+   "outputs": "PNG stills, animated GIF and H.264 MP4; hashed bytes and proven frame counts; no overwrite; input image is read only.",
+   "requires": {
+    "python": [
+     "Pillow",
+     "numpy",
+     "opencv-python"
+    ],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:ffmpeg"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "",
+   "limits": "Source-limited editing, RGB raster overlays and 2D keyframing; centered cover crop; max 300 frames, no audio, no photo realism claim, no proprietary code, not all 5,185 powers integrated.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-20: 9/9 source-to-video integration tests passed; acceptance produced 3 PNGs, a 24-frame GIF and a 24-frame 640x480 H.264 MP4 confirmed by FFprobe, SHA-256 receipt checked in.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_unified_media.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/unified-media-integration.md"
+   ],
+   "families": [
+    "photo-video-footage",
+    "hand-drawn-draw-on",
+    "shapes-morph-geometry"
+   ]
   }
  ],
  "guides": [
@@ -10345,6 +10435,12 @@
    "path": "references/unified-draw-integration.md",
    "title": "Unified Draw — tested integration of Smart Draw and Creative Paint",
    "area": "draw",
+   "summary": ""
+  },
+  {
+   "path": "references/unified-media-integration.md",
+   "title": "Unified Media: photographs + drawing + 2D motion",
+   "area": "image",
    "summary": ""
   },
   {
