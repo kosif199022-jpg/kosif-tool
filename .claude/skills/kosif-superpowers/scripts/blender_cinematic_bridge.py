@@ -132,7 +132,7 @@ def compose_video(blender_video, scene_data, wav, output, fps=12, fade_frames=2,
             "engines":["blender_cycles_render","audio_cue_mapper","unified_draw","creative_paint","ffmpeg"]}
 
 
-def pipeline(blend, scene, audio, output, fps=12, width=384, height=216, samples=6, fade_frames=2, pulse_element=None):
+def pipeline(blend, scene, audio, output, fps=12, width=384, height=216, samples=6, fade_frames=2, pulse_element=None, fur_count=0, fur_seed=2307):
     src=Path(blend)
     dest=Path(output)
     if dest.suffix.lower() != ".mp4" or dest.exists() or not dest.parent.is_dir():
@@ -148,13 +148,34 @@ def pipeline(blend, scene, audio, output, fps=12, width=384, height=216, samples
         raise ValueError("even size 64..2048 required")
     if type(samples)!=int or not 4<=samples<=64:
         raise ValueError("Cycles samples 4..64 required for this pipeline")
+    if type(fur_count) is not int or (fur_count!=0 and not 200<=fur_count<=7000):
+        raise ValueError("fur-count must be 0 or between 200 and 7000")
+    if type(fur_seed) is not int or not 0<=fur_seed<=10000000:
+        raise ValueError("invalid fur seed")
+    if fur_count and src.suffix.lower()!=".blend":
+        raise ValueError("fur upgrade requires an editable .blend input")
     cues=measure_wav(audio)
     if not .1<=cues["duration"]<=30 or math.ceil(cues["duration"]*fps)>MAX_FRAMES:
         raise ValueError("audio too long for bounded Blender pipeline")
     with tempfile.TemporaryDirectory(prefix="kosif-blender-to-cinema-") as td:
+        upgraded_scene=src
+        if fur_count:
+            from blender_cycles_render import executable
+            blender=executable(None,"blender")
+            if not blender:
+                raise ValueError("Blender executable unavailable for fur upgrade")
+            upgraded_scene=Path(td)/"upgraded_cat_fur.blend"
+            upgraded_cmd=[blender,"--background","--factory-startup","--disable-autoexec",
+                          "--python-exit-code","7","--python",
+                          str(Path(__file__).with_name("blender_cat_fur_upgrade.py")),
+                          "--","--source",str(src),"--output",str(upgraded_scene),
+                          "--fur-count",str(fur_count),"--seed",str(fur_seed)]
+            upgraded=subprocess.run(upgraded_cmd,capture_output=True,text=True,timeout=120)
+            if upgraded.returncode or not upgraded_scene.is_file():
+                raise ValueError("Blender fur upgrade failed: "+(upgraded.stdout+upgraded.stderr)[-500:])
         intermediate=Path(td)/"cycles_raw.mp4"
         cmd=[sys.executable,str(Path(__file__).with_name("blender_cycles_render.py")),
-             "render","--scene",str(src),"--out",str(intermediate),
+             "render","--scene",str(upgraded_scene),"--out",str(intermediate),
              "--width",str(width),"--height",str(height),"--frames",str(math.ceil(cues["duration"]*fps)),
              "--fps",str(fps),"--samples",str(samples),"--device","CPU"]
         done=subprocess.run(cmd,capture_output=True,text=True,timeout=600)
@@ -162,9 +183,18 @@ def pipeline(blend, scene, audio, output, fps=12, width=384, height=216, samples
             raise ValueError("Blender Cycles render failed: "+(done.stderr+done.stdout)[-550:])
         result=compose_video(intermediate,scene,audio,output,fps,fade_frames,pulse_element)
         result["3d_scene_sha256"]=hashlib.sha256(src.read_bytes()).hexdigest()
-        result["render_report_verified"]=(intermediate.with_name("cycles_raw.render-report.json")).is_file()
-        if not result["render_report_verified"]:
+        result["fur_strands"]=fur_count
+        result["fur_seed"]=fur_seed if fur_count else None
+        result["rendered_blend_sha256"]=hashlib.sha256(upgraded_scene.read_bytes()).hexdigest()
+        report_path=intermediate.with_name("cycles_raw.render-report.json")
+        if not report_path.is_file():
             raise ValueError("Cycles rendering report missing")
+        report=json.loads(report_path.read_text(encoding="utf-8"))
+        result["render_report_verified"]=(report.get("status")=="VERIFIED_VIDEO"
+          and report.get("sha256")==result["rendered_blend_sha256"]
+          and report.get("video_sha256")==result["source_video_sha256"])
+        if not result["render_report_verified"]:
+            raise ValueError("Cycles rendering report disagrees with source scene or video")
         return result
 
 
@@ -175,6 +205,8 @@ def main():
     p.add_argument("--fps",type=int,default=12);p.add_argument("--width",type=int,default=384);p.add_argument("--height",type=int,default=216)
     p.add_argument("--samples",type=int,default=6);p.add_argument("--fade-frames",type=int,default=2)
     p.add_argument("--pulse-element",type=int,default=None)
+    p.add_argument("--fur-count",type=int,default=0,help="0 disables fur; 200..7000 enables procedural Blender hair")
+    p.add_argument("--fur-seed",type=int,default=2307)
     a=p.parse_args()
     if a.action=="doctor":
         from blender_cycles_render import executable
@@ -190,7 +222,8 @@ def main():
             result=compose_video(a.blender_video,data,a.audio,a.output,a.fps,a.fade_frames,a.pulse_element)
         else:
             if not a.blend: raise ValueError("--blend is required")
-            result=pipeline(a.blend,data,a.audio,a.output,a.fps,a.width,a.height,a.samples,a.fade_frames,a.pulse_element)
+            result=pipeline(a.blend,data,a.audio,a.output,a.fps,a.width,a.height,a.samples,
+                            a.fade_frames,a.pulse_element,a.fur_count,a.fur_seed)
         print(json.dumps(result,ensure_ascii=False))
         return 0
     except (ValueError, OSError, RuntimeError, KeyError, TypeError, subprocess.TimeoutExpired,

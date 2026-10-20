@@ -113,6 +113,20 @@ class BlenderCinematicBridgeTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,"new MP4"):
                 compose_video(raw,scene,audio,Path(d)/"new.avi")
 
+    def test_fur_upgrade_pipeline_preflights(self):
+        with tempfile.TemporaryDirectory() as d:
+            raw,audio,scene=frames_fixture(d)
+            source=Path(d)/"original.blend";source.write_bytes(b"HEADER")
+            with self.assertRaisesRegex(ValueError,"fur-count"):
+                pipeline(source,scene,audio,Path(d)/"out.mp4",fur_count=8000)
+            # A valid-but-not-editable 3D source must be explicitly rejected
+            # by the procedural-fur restriction, not by the generic format guard.
+            glb=Path(d)/"asset.glb";glb.write_bytes(b"HEADER")
+            with self.assertRaisesRegex(ValueError,"editable .blend"):
+                pipeline(glb,scene,audio,Path(d)/"out.mp4",fur_count=2600)
+            with self.assertRaisesRegex(ValueError,"fur seed"):
+                pipeline(source,scene,audio,Path(d)/"out.mp4",fur_count=400,fur_seed=-1)
+
     def test_pipeline_checks_before_expensive_render(self):
         with tempfile.TemporaryDirectory() as d:
             raw,audio,scene=frames_fixture(d)

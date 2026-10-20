@@ -18,8 +18,8 @@
   "powers": 5185,
   "families": 61,
   "domains": 10,
-  "tools": 104,
-  "guides": 86,
+  "tools": 105,
+  "guides": 87,
   "statuses": {
    "documented": 1798,
    "idea": 71,
@@ -10047,8 +10047,8 @@
    "area": "3d",
    "title_en": "Blender Cycles + KOSIF Cinematic compositor",
    "title_ar": "دمج رندر Blender Cycles مع مونتاج KOSIF والصوت",
-   "summary_en": "One bounded CLI renders an authorized .blend/.glb/.gltf scene with the installed Blender Cycles renderer, checks H264 frames, overlays animated KOSIF strokes/text and mixes the original PCM-WAV clock as AAC into the final MP4.",
-   "summary_ar": "أداة تشغيلية واحدة تربط مشاهد بلندر ثلاثية الأبعاد مع الرسم والطبقات المتحركة والصوت، وتتحقق من الفيديو والإطارات والصوت النهائي.",
+   "summary_en": "One bounded CLI renders an authorized .blend/.glb/.gltf scene with the installed Blender Cycles renderer, checks H264 frames, overlays animated KOSIF strokes/text and mixes the original PCM-WAV clock as AAC into the final MP4. Optional --fur-count upgrades the KOSIF original .blend to renderable curve fur automatically before the real Cycles render.",
+   "summary_ar": "أداة تشغيلية واحدة تربط مشاهد بلندر ثلاثية الأبعاد مع الرسم والطبقات المتحركة والصوت، وتتحقق من الفيديو والإطارات والصوت النهائي. يدعم إضافة الفرو الهندسي تلقائيًا قبل الرندر بخيار --fur-count.",
    "use_when": [
     "Render a 3D Blender scene and add drawing, audio and cinematic overlays",
     "Combine Cycles-rendered MP4 with synchronized PCM WAV and KOSIF 2D graphics",
@@ -10101,6 +10101,11 @@
      "name": "tests",
      "example": "python3 scripts/test_blender_cinematic_bridge.py",
      "does": "Run eight codec/frame/validation regressions in addition to the real recorded Blender Cycles acceptance proof."
+    },
+    {
+     "name": "fur-upgraded-pipeline",
+     "example": "python3 scripts/blender_cinematic_bridge.py pipeline --blend ./rescue_scene.blend --scene templates/blender-rescue-overlay-512.json --audio ./master.wav --output ./furred.mp4 --fur-count 2600 --fur-seed 2307 --width 512 --height 288 --fps 12 --samples 12",
+     "does": "Auto-upgrade procedural KOSIF cat scene with 2600 Blender curve-fur strands before Cycles and KOSIF overlay/audio rendering."
     }
    ],
    "inputs": "Authorized local .blend/.glb/.gltf 3D scene or known silent MP4/MKV (matching fps/frame count), kosif.unified-draw.v1 overlay, 16-bit PCM WAV 0.1..30 sec, bounded Cycles samples and dimensions.",
@@ -10119,14 +10124,16 @@
    },
    "safety": "runs-external-programs",
    "consent": "Use only authorized 3D assets. Pipeline launches separately installed Blender in background with --disable-autoexec, then FFmpeg. Output path must be fresh.",
-   "limits": "Max 300 frames, 4..64 Cycles samples on pipeline, CPU tested 384x216 12fps, time-quantized PCM-WAV master exported as re-encoded AAC. Sample cat/human is stylized not photorealistic. Ghidra/REA not used for this source-level Blender Python API integration. Blender binary must be installed separately (doctor can locate its verified portable path).",
+   "limits": "Max 300 frames, 4..64 Cycles samples on pipeline, CPU tested 384x216 12fps, time-quantized PCM-WAV master exported as re-encoded AAC. Sample cat/human is stylized not photorealistic. Ghidra/REA not used for this source-level Blender Python API integration. Blender binary must be installed separately (doctor can locate its verified portable path). --fur-count=0 by default preserves old pipeline; explicit 200..7000 only for compatible KOSIF .blend, subject to render costs and stylized output.",
    "evidence": "tested-here",
-   "evidence_note": "2026-10-20 Windows Blender 5.2.2 Cycles CPU; actual animated .blend rendered 24 frames, 384x216 at 12 fps and merged with KOSIF 2D overlay + synthetic PCM-WAV into 2.00 sec H264/AAC; 8/8 bridge regressions passed; proof SHA256 and ffprobe in repository.",
+   "evidence_note": "2026-10-20 Windows Blender 5.2.2 Cycles CPU; actual animated .blend rendered 24 frames, 384x216 at 12 fps and merged with KOSIF 2D overlay + synthetic PCM-WAV into 2.00 sec H264/AAC; 8/8 bridge regressions passed; proof SHA256 and ffprobe in repository. 2026-10-20 upgraded fur and verified one-click Cycles-to-H264/AAC output with report-scene/video SHA256 matching.",
    "tests": [
-    ".claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py"
+    ".claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py",
+    ".claude/skills/kosif-superpowers/scripts/test_blender_cat_fur_upgrade.py"
    ],
    "docs": [
-    ".claude/skills/kosif-superpowers/references/blender-cinematic-bridge.md"
+    ".claude/skills/kosif-superpowers/references/blender-cinematic-bridge.md",
+    ".claude/skills/kosif-superpowers/references/blender-cat-fur-upgrade.md"
    ],
    "families": [
     "3d-spatial",
@@ -10196,6 +10203,85 @@
    ],
    "families": [
     "3d-spatial",
+    "engines-render-pipeline"
+   ]
+  },
+  {
+   "id": "blender-cat-fur-upgrade",
+   "path": "scripts/blender_cat_fur_upgrade.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "3d",
+   "title_en": "Blender Cat Fur Upgrade: renderable hair geometry and character detail",
+   "title_ar": "تطوير فرو القطة والملامح في Blender Cycles",
+   "summary_en": "Upgrades the editable KOSIF animated cat .blend with 200-7000 seeded renderable fur strands, whiskers, eye details, paw grounding, face details, procedural materials and closer Cycles camera. Outputs a separate editable .blend.",
+   "summary_ar": "إضافة آلاف خصل الفرو الهندسية والشوارب وتفاصيل الوجه وتحسين الكاميرا والأقدام والخامات، مع حفظ مشهد Blender جديد قابل للتعديل.",
+   "use_when": [
+    "Add Cycles-renderable fur to the existing procedural Blender rescue demo",
+    "Improve cat fur and character staging without overwriting original scene",
+    "أضيف فرو واقعي نسبيًا للقطة واختبر رندر بلندر"
+   ],
+   "keywords": [
+    "Blender",
+    "fur",
+    "hair",
+    "whiskers",
+    "strands",
+    "Cycles",
+    "cat",
+    "texture",
+    "upgrade",
+    "render",
+    "shading",
+    "قطة",
+    "فرو",
+    "خامة",
+    "بلندر",
+    "رندر",
+    "واقعية"
+   ],
+   "commands": [
+    {
+     "name": "upgrade",
+     "example": "blender --background --factory-startup --disable-autoexec --python-exit-code 7 --python scripts/blender_cat_fur_upgrade.py -- --source ./rescue_scene.blend --output ./fur_rescue.blend --fur-count 2600 --seed 2307",
+     "does": "Create a new fully editable 3D cat rescue scene with deterministic geometry fur; refuses to overwrite."
+    },
+    {
+     "name": "one-click-render",
+     "example": "python3 scripts/blender_cinematic_bridge.py pipeline --blend ./rescue_scene.blend --scene templates/blender-rescue-overlay-512.json --audio ./master.wav --output ./final.mp4 --width 512 --height 288 --fps 12 --samples 12 --fur-count 2600 --fur-seed 2307 --pulse-element 2",
+     "does": "Generate fur automatically then render Blender Cycles, mix KOSIF 2D layers and WAV-to-AAC soundtrack."
+    },
+    {
+     "name": "tests",
+     "example": "python3 scripts/test_blender_cat_fur_upgrade.py",
+     "does": "Run seven direct Blender-native geometry, materials, motion, safety and editable-asset regression tests."
+    }
+   ],
+   "inputs": "Existing authorized original KOSIF cat-rescue .blend, fresh .blend output path, seed 0..10000000, strand count 200..7000. One-click pipeline also needs user-authorized WAV and KOSIF overlay JSON.",
+   "outputs": "Independent editable upgraded .blend with renderable fur splines; combined with Blender cinematic pipeline can output verified H264/AAC MP4.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:blender"
+    ],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Run with the user's separately installed Blender on authorized 3D source and fresh output. Blender invoked with --disable-autoexec; prior .blend inputs never overwritten.",
+   "limits": "Only improves authored 3D procedural cat rescue. Not fully photorealistic; does not imply photorealistic human anatomy, real fur physics or live-action appearance. Higher strand counts and samples use more CPU. Blender installed on authorized computer.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-20 Blender 5.2.2: 2600 fur strands, 6 whiskers and 64 animated objects verified in editable .blend; 7/7 native Blender regression tests passed; separate 512x288 12-sample Cycles+AAC 24-frame render and one-click 384x216 auto-upgrade MP4 verified. All hashes and limitations recorded.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_blender_cat_fur_upgrade.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/blender-cat-fur-upgrade.md"
+   ],
+   "families": [
+    "3d-spatial",
+    "texture-material",
     "engines-render-pipeline"
    ]
   }
@@ -10307,6 +10393,12 @@
    "path": "references/blender-capability-gap-20261020.md",
    "title": "Evidence-led Blender and KOSIF gap review — 20 October 2026",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/blender-cat-fur-upgrade.md",
+   "title": "Blender cat fur, facial detail and cinematic Cycles upgrade",
+   "area": "3d",
    "summary": ""
   },
   {
