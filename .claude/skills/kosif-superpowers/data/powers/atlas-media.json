@@ -640,5 +640,165 @@
    "stage": "extracted",
    "verified_by": "b015-audio-voice-1.json"
   }
+ },
+ {
+  "id": "AMEDIA-12",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "توليد ومعايرة شرائط السبرايت",
+  "name_en": "Anchored sprite strip generation and normalization",
+  "status": "documented",
+  "what": "توليد شريط حركة كامل من إطار معتمد ومعايرته بمقياس ومرساة موحدين. — Generate a whole animation strip from one approved seed and normalize to fixed frames with shared scale and anchor.",
+  "when": "2D sprite animation or pixel-art sheets.",
+  "how": "1) Approved seed frame. 2) build_sprite_edit_canvas.py (slots, canvas). 3) One edit request for whole strip, with invariants. 4) normalize_sprite_strip.py: shared scale, bottom-center anchor. 5) Optionally lock frame 1. 6) render preview sheet.",
+  "params": "frames,slot",
+  "install": "",
+  "requires": [
+   "pip:pillow"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10368-sprite-pipeline",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2460-pixel-art/9527-sprite"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "sprite",
+   "pixel",
+   "سبرايت",
+   "بكسل"
+  ],
+  "section": "تطوير الألعاب — Game development",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-studio/sprite-pipeline (#10368); pixel-art/sprite (#9527) · theme game-dev · 5 supporting skills · verifier read: skills/2696-game-studio/10368-sprite-pipeline, skills/2460-pixel-art/9527-sprite",
+  "atlas": {
+   "ids": [
+    "4162",
+    "4171",
+    "4172",
+    "9527",
+    "10368"
+   ],
+   "examples": [
+    {
+     "id": "10368",
+     "plugin": "game-studio",
+     "skill": "sprite-pipeline",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10368-sprite-pipeline"
+    },
+    {
+     "id": "9527",
+     "plugin": "pixel-art",
+     "skill": "sprite",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2460-pixel-art/9527-sprite"
+    }
+   ],
+   "theme": "game-dev",
+   "risk_notes": "Local scripts; image generation may call external API",
+   "kosif_overlap_ids": [
+    "APPX-49",
+    "RETRO-04"
+   ],
+   "stage": "extracted",
+   "verified_by": "b040-game-dev-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-13",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "تريلر من لعب آلي حقيقي",
+  "name_en": "Gameplay trailer from bot playthroughs",
+  "status": "documented",
+  "what": "تسجيل لعب آلي وقص على شبكة إيقاع بـ ffmpeg. — Record bot gameplay in Godot Movie Maker and cut on a beat-aligned grid with ffmpeg into 16:9, 9:16 and GIF.",
+  "when": "Promo trailer or devlog clip for a Godot game.",
+  "how": "1) Beat sheet approved. 2) BPM where bar = whole frames at 60fps (14400/BPM). 3) Render shots, cut by timeline.json. 4) Export 1080p60 H.264, -14 LUFS, vertical, GIF.",
+  "params": "bpm",
+  "install": "",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4173-game-trailer"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "trailer",
+   "ffmpeg",
+   "تريلر",
+   "مونتاج"
+  ],
+  "section": "تطوير الألعاب — Game development",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): gamegen/game-trailer (#4173) · theme game-dev · 3 supporting skills · verifier read: skills/1526-gamegen/4173-game-trailer",
+  "atlas": {
+   "ids": [
+    "4164",
+    "4167",
+    "4173"
+   ],
+   "examples": [
+    {
+     "id": "4173",
+     "plugin": "gamegen",
+     "skill": "game-trailer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4173-game-trailer"
+    }
+   ],
+   "theme": "game-dev",
+   "risk_notes": "Runs game and render scripts",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b040-game-dev-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-14",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "صورة شرح تعليمية أحادية اللون",
+  "name_en": "Monochrome learning explainer image",
+  "status": "documented",
+  "what": "يحول الأوراق والأكواد إلى صور شرح 16:9 بسيطة بالأبيض والأسود. — Turn papers, code or concepts into minimal black-and-white 16:9 explainer images with sparse accent colour.",
+  "when": "Need study visuals for a paper, formula or process.",
+  "how": "1) White background, black/dark-gray titles, mid-gray notes. 2) Accent colour only where needed. 3) Pick layout: figure-centred, equation-centred, process or comparison. 4) Output 16:9.",
+  "params": "layout",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2418-akbun-draw-learning-mono"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "infographic",
+   "16:9",
+   "شرح",
+   "تصميم"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): akbun-draw/akbun-draw-learning-mono (#2418) · theme education-learning · 2 supporting skills · verifier read: skills/1094-akbun-draw/2418-akbun-draw-learning-mono",
+  "atlas": {
+   "ids": [
+    "2418",
+    "9459"
+   ],
+   "examples": [
+    {
+     "id": "2418",
+     "plugin": "akbun-draw",
+     "skill": "akbun-draw-learning-mono",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2418-akbun-draw-learning-mono"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
  }
 ]

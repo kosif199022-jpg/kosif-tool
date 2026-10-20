@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5125
+   "count": 5236
   },
   {
    "id": "dom:motion",
@@ -453,20 +453,11 @@
    "label": "Atlas: apps, UI & integrations",
    "ar": "أطلس: التطبيقات والواجهات والتكاملات",
    "prefix": "ABUILD",
-   "count": 30,
+   "count": 50,
    "proven": 0,
    "status": {
-    "documented": 30
+    "documented": 50
    }
-  },
-  {
-   "id": "req:network",
-   "kind": "requirement",
-   "label": "network",
-   "ar": "اتصال بالشبكة للتثبيت والتحميل",
-   "en": "outbound network for installs and downloads",
-   "install": "outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)",
-   "req_kind": "os"
   },
   {
    "id": "req:claude:browser",
@@ -476,6 +467,15 @@
    "en": "browse and control the user's machine with consent",
    "install": "Claude in Chrome extension or the desktop app's built-in browser / computer use",
    "req_kind": "service"
+  },
+  {
+   "id": "req:network",
+   "kind": "requirement",
+   "label": "network",
+   "ar": "اتصال بالشبكة للتثبيت والتحميل",
+   "en": "outbound network for installs and downloads",
+   "install": "outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)",
+   "req_kind": "os"
   },
   {
    "id": "req:gh",
@@ -492,10 +492,10 @@
    "label": "Atlas: engineering & code",
    "ar": "أطلس: الهندسة والكود",
    "prefix": "ACODE",
-   "count": 176,
+   "count": 216,
    "proven": 0,
    "status": {
-    "documented": 176
+    "documented": 216
    }
   },
   {
@@ -515,6 +515,18 @@
    "en": "Apple toolchain (Mach-O, plist, Swift)",
    "install": "a macOS machine with Xcode command-line tools",
    "req_kind": "os"
+  },
+  {
+   "id": "fam:atlas-craft",
+   "kind": "family",
+   "label": "Atlas: writing, prompts & languages",
+   "ar": "أطلس: الكتابة والبرومبت والترجمة",
+   "prefix": "ACRAFT",
+   "count": 7,
+   "proven": 0,
+   "status": {
+    "documented": 7
+   }
   },
   {
    "id": "dom:data",
@@ -571,10 +583,10 @@
    "label": "Atlas: documents & diagrams",
    "ar": "أطلس: المستندات والمخططات",
    "prefix": "ADOCS",
-   "count": 16,
+   "count": 41,
    "proven": 0,
    "status": {
-    "documented": 16
+    "documented": 41
    }
   },
   {
@@ -597,10 +609,10 @@
    "label": "Atlas: images, audio & video",
    "ar": "أطلس: الصور والصوت والفيديو",
    "prefix": "AMEDIA",
-   "count": 11,
+   "count": 14,
    "proven": 0,
    "status": {
-    "documented": 11
+    "documented": 14
    }
   },
   {
@@ -636,11 +648,20 @@
    "label": "Atlas: agent workflows, planning & review",
    "ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "prefix": "AMIND",
-   "count": 40,
+   "count": 44,
    "proven": 0,
    "status": {
-    "documented": 40
+    "documented": 44
    }
+  },
+  {
+   "id": "req:latex",
+   "kind": "requirement",
+   "label": "latex",
+   "ar": "معادلات ومستندات LaTeX بالعربية",
+   "en": "LaTeX equations and Arabic documents",
+   "install": "apt-get install -y texlive-xetex texlive-lang-arabic",
+   "req_kind": "apt"
   },
   {
    "id": "dom:research",
@@ -653,10 +674,10 @@
    "label": "Atlas: research & knowledge",
    "ar": "أطلس: البحث والمعرفة",
    "prefix": "AWEB",
-   "count": 8,
+   "count": 9,
    "proven": 0,
    "status": {
-    "documented": 8
+    "documented": 9
    }
   },
   {
@@ -679,10 +700,10 @@
    "label": "Atlas: product, marketing & business",
    "ar": "أطلس: المنتج والتسويق والأعمال",
    "prefix": "ASTRAT",
-   "count": 46,
+   "count": 57,
    "proven": 0,
    "status": {
-    "documented": 46
+    "documented": 57
    }
   },
   {
@@ -1836,6 +1857,11 @@
    "label": "scripts/blender_bridge.py"
   },
   {
+   "id": "script:scripts/superpower_fusion.py",
+   "kind": "script",
+   "label": "scripts/superpower_fusion.py"
+  },
+  {
    "id": "script:scripts/motion_kit_bridge.py",
    "kind": "script",
    "label": "scripts/motion_kit_bridge.py",
@@ -1991,6 +2017,11 @@
    "id": "test:tests/test_boot.py",
    "kind": "test",
    "label": "tests/test_boot.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_superpower_fusion.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
@@ -2483,55 +2514,55 @@
    "from": "dom:build",
    "to": "fam:atlas-build",
    "rel": "has",
-   "w": 30
+   "w": 50
   },
   {
    "from": "fam:atlas-build",
    "to": "req:node",
    "rel": "needs",
-   "w": 11
+   "w": 16
   },
   {
    "from": "fam:atlas-build",
    "to": "req:chromium",
    "rel": "needs",
-   "w": 10
-  },
-  {
-   "from": "fam:atlas-build",
-   "to": "req:git",
-   "rel": "needs",
-   "w": 3
-  },
-  {
-   "from": "fam:atlas-build",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 3
+   "w": 12
   },
   {
    "from": "fam:atlas-build",
    "to": "req:python3",
    "rel": "needs",
-   "w": 3
+   "w": 9
   },
   {
    "from": "fam:atlas-build",
    "to": "req:claude:browser",
    "rel": "needs",
-   "w": 3
+   "w": 6
   },
   {
    "from": "fam:atlas-build",
-   "to": "req:gh",
+   "to": "req:network",
    "rel": "needs",
-   "w": 2
+   "w": 5
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 4
   },
   {
    "from": "fam:atlas-build",
    "to": "req:claude:tools",
    "rel": "needs",
-   "w": 2
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:gh",
+   "rel": "needs",
+   "w": 3
   },
   {
    "from": "root",
@@ -2543,25 +2574,31 @@
    "from": "dom:code",
    "to": "fam:atlas-code",
    "rel": "has",
-   "w": 176
+   "w": 216
   },
   {
    "from": "fam:atlas-code",
    "to": "req:git",
    "rel": "needs",
-   "w": 33
+   "w": 50
   },
   {
    "from": "fam:atlas-code",
    "to": "req:node",
    "rel": "needs",
-   "w": 22
+   "w": 32
   },
   {
    "from": "fam:atlas-code",
    "to": "req:python3",
    "rel": "needs",
-   "w": 19
+   "w": 21
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:gh",
+   "rel": "needs",
+   "w": 20
   },
   {
    "from": "fam:atlas-code",
@@ -2571,15 +2608,9 @@
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:gh",
-   "rel": "needs",
-   "w": 10
-  },
-  {
-   "from": "fam:atlas-code",
    "to": "req:claude:tools",
    "rel": "needs",
-   "w": 6
+   "w": 9
   },
   {
    "from": "fam:atlas-code",
@@ -2592,6 +2623,30 @@
    "to": "req:os:macos",
    "rel": "needs",
    "w": 2
+  },
+  {
+   "from": "root",
+   "to": "dom:craft",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:craft",
+   "to": "fam:atlas-craft",
+   "rel": "has",
+   "w": 7
+  },
+  {
+   "from": "fam:atlas-craft",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-craft",
+   "to": "req:fonts:arabic",
+   "rel": "needs",
+   "w": 1
   },
   {
    "from": "root",
@@ -2663,7 +2718,25 @@
    "from": "dom:docs",
    "to": "fam:atlas-docs",
    "rel": "has",
-   "w": 16
+   "w": 41
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 9
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 5
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 4
   },
   {
    "from": "fam:atlas-docs",
@@ -2673,31 +2746,25 @@
   },
   {
    "from": "fam:atlas-docs",
-   "to": "req:git",
+   "to": "req:npm:mermaid",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:chromium",
    "rel": "needs",
    "w": 2
   },
   {
    "from": "fam:atlas-docs",
-   "to": "req:python3",
+   "to": "req:network",
    "rel": "needs",
    "w": 2
   },
   {
    "from": "fam:atlas-docs",
    "to": "req:claude:tools",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-docs",
-   "to": "req:npm:mermaid",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-docs",
-   "to": "req:network",
    "rel": "needs",
    "w": 1
   },
@@ -2711,13 +2778,13 @@
    "from": "dom:media",
    "to": "fam:atlas-media",
    "rel": "has",
-   "w": 11
+   "w": 14
   },
   {
    "from": "fam:atlas-media",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 6
+   "w": 7
   },
   {
    "from": "fam:atlas-media",
@@ -2733,13 +2800,13 @@
   },
   {
    "from": "fam:atlas-media",
-   "to": "req:key:elevenlabs",
+   "to": "req:python3",
    "rel": "needs",
-   "w": 2
+   "w": 3
   },
   {
    "from": "fam:atlas-media",
-   "to": "req:python3",
+   "to": "req:key:elevenlabs",
    "rel": "needs",
    "w": 2
   },
@@ -2771,7 +2838,7 @@
    "from": "dom:mind",
    "to": "fam:atlas-mind",
    "rel": "has",
-   "w": 40
+   "w": 44
   },
   {
    "from": "fam:atlas-mind",
@@ -2781,19 +2848,25 @@
   },
   {
    "from": "fam:atlas-mind",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-mind",
    "to": "req:claude:tools",
    "rel": "needs",
    "w": 4
   },
   {
    "from": "fam:atlas-mind",
-   "to": "req:python3",
+   "to": "req:network",
    "rel": "needs",
-   "w": 3
+   "w": 2
   },
   {
    "from": "fam:atlas-mind",
-   "to": "req:network",
+   "to": "req:latex",
    "rel": "needs",
    "w": 1
   },
@@ -2807,13 +2880,13 @@
    "from": "dom:research",
    "to": "fam:atlas-research",
    "rel": "has",
-   "w": 8
+   "w": 9
   },
   {
    "from": "fam:atlas-research",
    "to": "req:network",
    "rel": "needs",
-   "w": 4
+   "w": 5
   },
   {
    "from": "fam:atlas-research",
@@ -2834,6 +2907,12 @@
    "w": 1
   },
   {
+   "from": "fam:atlas-research",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 1
+  },
+  {
    "from": "root",
    "to": "dom:strategy",
    "rel": "has",
@@ -2843,13 +2922,13 @@
    "from": "dom:strategy",
    "to": "fam:atlas-strategy",
    "rel": "has",
-   "w": 46
+   "w": 57
   },
   {
    "from": "fam:atlas-strategy",
    "to": "req:python3",
    "rel": "needs",
-   "w": 8
+   "w": 9
   },
   {
    "from": "fam:atlas-strategy",
@@ -2860,6 +2939,12 @@
   {
    "from": "fam:atlas-strategy",
    "to": "req:network",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:gh",
    "rel": "needs",
    "w": 2
   },
@@ -2872,12 +2957,6 @@
   {
    "from": "fam:atlas-strategy",
    "to": "req:claude:tools",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-strategy",
-   "to": "req:gh",
    "rel": "needs",
    "w": 1
   },
@@ -5787,13 +5866,13 @@
   },
   {
    "from": "script:scripts/atlas_transfer.py",
-   "to": "script:scripts/powers.py",
+   "to": "script:scripts/atlas_capability_miner.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/atlas_transfer.py",
-   "to": "script:scripts/atlas_capability_miner.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
@@ -5805,13 +5884,13 @@
   },
   {
    "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/powers.py",
+   "to": "script:scripts/build_chapters.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/build_chapters.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
@@ -5834,6 +5913,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/superpower_fusion.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/app_studio.py",
    "to": "script:scripts/app_studio_paint.py",
    "rel": "imports",
@@ -5841,13 +5926,13 @@
   },
   {
    "from": "script:scripts/motion_kit_bridge.py",
-   "to": "script:scripts/code_drawing_master.py",
+   "to": "script:scripts/motion_director.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/motion_kit_bridge.py",
-   "to": "script:scripts/motion_director.py",
+   "to": "script:scripts/code_drawing_master.py",
    "rel": "imports",
    "w": 1
   },
@@ -5895,7 +5980,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
@@ -5907,19 +5992,25 @@
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_transitions.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
   },
@@ -5937,19 +6028,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_fonts_lib.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5962,6 +6041,12 @@
   {
    "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_sheets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_fonts_lib.py",
    "rel": "imports",
    "w": 1
   },
@@ -5997,13 +6082,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
@@ -6015,7 +6094,13 @@
   },
   {
    "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_color.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -6027,13 +6112,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_transitions.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
   },
@@ -6051,7 +6130,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_transitions.py",
    "rel": "imports",
    "w": 1
   },
@@ -6063,12 +6142,12 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_video.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
+   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -6082,6 +6161,12 @@
   {
    "from": "script:scripts/mimic/synthetic/run_synthetic.py",
    "to": "script:scripts/mimic/mm_analyze.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -6256,6 +6341,12 @@
   {
    "from": "script:scripts/boot.py",
    "to": "test:tests/test_boot.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/superpower_fusion.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
    "rel": "tested_by",
    "w": 1
   },

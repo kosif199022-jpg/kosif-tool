@@ -3,12 +3,13 @@
 
 > **قوتك هنا / what this gives you:** إدارة المنتج والتسويق وSEO والمبيعات والمال والتوظيف والتعليم كما تصفها مهارات أطلس. — Product management, marketing/SEO, sales, finance, hiring and teaching methods from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **46 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 46 · 💡 0.
+> **57 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 57 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المنتج والمال — Product & finance · **البادئة / prefix:** `ASTRAT` · **البيانات / data:** `data/powers/atlas-strategy.json` · **بحث / search:** `python3 scripts/powers.py family atlas-strategy`
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md)
 
 ## الفهرس / contents
 
@@ -22,8 +23,13 @@
 - **قواعد البيانات — Databases & storage** — ASTRAT-31 (1)
 - **التصحيح — Debugging & diagnosis** — ASTRAT-32 … ASTRAT-35 (4)
 - **DevOps والسحابة — DevOps, CI/CD, cloud & infrastructure** — ASTRAT-36 … ASTRAT-40 (5)
-- **هندسة النماذج اللغوية — LLM & AI engineering** — ASTRAT-41 … ASTRAT-44 (4)
-- **القطاعات المنظّمة — Regulated industries & domain expertise** — ASTRAT-45 … ASTRAT-46 (2)
+- **الواجهات والتصميم — Front-end, UI & design systems** — ASTRAT-41 (1)
+- **تطوير الألعاب — Game development** — ASTRAT-42 … ASTRAT-43 (2)
+- **سير عمل تطوير عام — General development workflow** — ASTRAT-44 … ASTRAT-46 (3)
+- **Git والإصدار — Git, pull requests & releases** — ASTRAT-47 (1)
+- **هندسة النماذج اللغوية — LLM & AI engineering** — ASTRAT-48 … ASTRAT-51 (4)
+- **القطاعات المنظّمة — Regulated industries & domain expertise** — ASTRAT-52 … ASTRAT-53 (2)
+- **التعليم والتعلم — Teaching, learning & study** — ASTRAT-54 … ASTRAT-57 (4)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -381,9 +387,75 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1821-algolia-pack/4940-algolia-cost-tuning` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-apify-pack/5012-apify-cost-tuning`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): algolia-pack/algolia-cost-tuning (#4940); apify-pack/apify-cost-tuning (#5012) · theme devops-cloud · 12 supporting skills · verifier read: skills/1821-algolia-pack/4940-algolia-cost-tuning, skills/1823-apify-pack/5012-apify-cost-tuning
 
+## الواجهات والتصميم — Front-end, UI & design systems
+
+#### ASTRAT-41 · مراجعة التصميم بالقواعد الإرشادية · Design review heuristics and critique · 📄 موصوف / documented only
+- **ماذا / what:** إجراء تقييم إرشادي ونقد منظم للتصميم مع نتائج مرتبة الأولوية. — Run a structured heuristic evaluation and design critique with prioritized findings.
+- **متى أستخدمها / when:** Design review, UX evaluation, handoff readiness, iOS HIG compliance.
+- **كيف / how:** 1) State goals and audience. 2) Walk Nielsen-style heuristics per screen. 3) Log issues with severity and evidence. 4) Check platform guidelines (iOS HIG). 5) Give prioritized fixes and handoff notes. **أرقام / params:** design files or screenshots
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3011-uxd-research/12863-uxd-evaluate-design-heuristics` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1529-uxdesign/4182-design-critique`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): uxd-research/uxd-evaluate-design-heuristics (#12863); uxdesign/design-critique (#4182) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/3011-uxd-research/12863-uxd-evaluate-design-heuristics, skills/1529-uxdesign/4182-design-critique
+
+## تطوير الألعاب — Game development
+
+#### ASTRAT-42 · جولة موازنة اقتصاد اللعبة · Game balance and economy tuning pass · 📄 موصوف / documented only
+- **ماذا / what:** تحديد التجربة المقصودة ورسم الاقتصاد وحساب القيمة المتوقعة وجدول ضبط. — Define intended experience, map sources and sinks, compute expected value and output a tuning table with safe ranges.
+- **متى أستخدمها / when:** Tuning difficulty, loot, rewards, progression.
+- **كيف / how:** 1) State target feel. 2) Map currencies, sources, sinks, gates. 3) Hunt dominant strategies and runaway feedback. 4) Run expected_value.py --outcome value:prob. 5) Output Balance Intent, Economy Map, Tuning Table, Risk Review, Validation Plan. 6) Confirm with playtest. **أرقام / params:** outcomes
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8078-game-balance-economy`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/game-balance-economy (#8078) · theme game-dev · 3 supporting skills · verifier read: skills/2199-lvtd-skills/8078-game-balance-economy
+
+#### ASTRAT-43 · تصميم الآليات وتجربة اللاعب · Game mechanics and player experience design · 📄 موصوف / documented only
+- **ماذا / what:** تصميم حلقات اللعب والقواعد ونماذج دافعية اللاعب. — Design core loops, rules and player motivation models with interest curves.
+- **متى أستخدمها / when:** Starting or repairing a game design.
+- **كيف / how:** 1) Define target player, motivations, flow. 2) Specify goal, actions, state, chance, secrets. 3) Check emergent dynamics. 4) Plot interest curve. 5) Plan small slice.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8082-game-mechanics-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8139-player-experience-modeling`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/game-mechanics-design (#8082); lvtd-skills/player-experience-modeling (#8139) · theme game-dev · 3 supporting skills · verifier read: skills/2199-lvtd-skills/8082-game-mechanics-design, skills/2199-lvtd-skills/8139-player-experience-modeling
+
+## سير عمل تطوير عام — General development workflow
+
+#### ASTRAT-44 · تصنيف مؤشرات DORA الأربعة · DORA four keys classification · 📄 موصوف / documented only
+- **ماذا / what:** يحسب مؤشرات DORA ويصنفها مع نافذة وخط أساس. — Compute deploy frequency, lead time, change-failure rate and MTTR, classify to bands with windows and baselines.
+- **متى أستخدمها / when:** Developer-experience or delivery performance measurement.
+- **كيف / how:** 1) Pull four keys over a fixed window. 2) Classify elite/high/medium/low via a calc script. 3) Attach window and prior baseline or do not ship. 4) Name the weakest key as binding constraint, paired with survey signal.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2353-platform-engineering-idp/9055-classify-dora`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): platform-engineering-idp/classify-dora (#9055) · theme general-dev-workflow · 2 supporting skills · verifier read: skills/2353-platform-engineering-idp/9055-classify-dora
+
+#### ASTRAT-45 · قراءة المؤشرات التشغيلية الصناعية · Frequency vs severity operating metrics · 📄 موصوف / documented only
+- **ماذا / what:** قراءات مؤشرات مجالية مع خط أساس. — Domain-specific metric reads (utilization, LTV:CAC, absorption, DORA, NDCG) with baselines.
+- **متى أستخدمها / when:** Business-metric diagnosis questions.
+- **كيف / how:** 1) Name the metric and formula. 2) Use a fixed window plus baseline. 3) Segment, never blended. 4) Compare to threshold (e.g. LTV:CAC 3:1, collection 98%). 5) Name the binding lever.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme general-dev-workflow · 5 supporting skills · verifier read: ,
+
+#### ASTRAT-46 · تفكيك المتطلبات لمهام قابلة للتنفيذ · Task breakdown with sizing rules · 📄 موصوف / documented only
+- **ماذا / what:** يفكك المتطلبات إلى مهام صغيرة مع تبعيات ومخاطر. — Split requirements into SMART tasks capped at two days, with serial/parallel/blocking dependencies and risk handling.
+- **متى أستخدمها / when:** Planning work, estimating effort, assessing project risk.
+- **كيف / how:** 1) Break via WBS to SMART tasks. 2) Size: small 2-4h, medium 1-2d, large 3-5d; split anything over 2 days. 3) Mark dependencies serial/parallel/blocking and do blockers first. 4) List risks with mitigation. 5) Detect tech stack from config files first.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1369-boss/3168-scrum-master-task-breakdown`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): boss/scrum-master/task-breakdown (#3168) · theme general-dev-workflow · 3 supporting skills · verifier read: skills/1369-boss/3168-scrum-master-task-breakdown
+
+## Git والإصدار — Git, pull requests & releases
+
+#### ASTRAT-47 · إصدار أمني منسق · Coordinated security release · 📄 موصوف / documented only
+- **ماذا / what:** تنفيذ إصدار ترقيع أمني بشكل خاص مع إفصاح منسق. — Run a private-fix coordinated disclosure release for a reported vulnerability.
+- **متى أستخدمها / when:** Private vulnerability report, GHSA, CVE.
+- **كيف / how:** 1) Private advisory/branch, no public traces. 2) Fix and test privately. 3) Request CVE via GHSA. 4) Backport to supported lines. 5) Release patch and publish advisory same time. 6) Notify downstream.
+- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9023-coordinate-a-security-release` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9025-plan-a-release`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): open-source-maintenance/coordinate-a-security-release (#9023); open-source-maintenance/plan-a-release (#9025) · theme git-release · 2 supporting skills · verifier read: skills/2346-open-source-maintenance/9023-coordinate-a-security-release, skills/2346-open-source-maintenance/9025-plan-a-release
+
 ## هندسة النماذج اللغوية — LLM & AI engineering
 
-#### ASTRAT-41 · خطة اختبار اختراق للذكاء الاصطناعي ومعالجتها · AI red-team plan and remediation · 📄 موصوف / documented only
+#### ASTRAT-48 · خطة اختبار اختراق للذكاء الاصطناعي ومعالجتها · AI red-team plan and remediation · 📄 موصوف / documented only
 - **ماذا / what:** نمذجة تهديدات نظام ذكاء اصطناعي وترتيب مخاطر OWASP LLM ثم معالجة متعددة الطبقات. — Threat-model an AI system, prioritise OWASP LLM risks, then drive layered remediation.
 - **متى أستخدمها / when:** Launching an LLM feature with tools or RAG; triaging jailbreak findings.
 - **كيف / how:** 1) Characterise system: inputs, tools, data reach. 2) Threat-model assets x attackers x abuse cases. 3) Split safety from security. 4) Walk taxonomy: indirect injection, excessive agency, disclosure, prompt leak. 5) Rank P0-P2 by likelihood x impact. 6) Rules of engagement, kill-switch. 7) Remediate with input/output guards and least privilege.
@@ -391,7 +463,7 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2232-ai-red-teaming/8480-design-ai-redteam-plan` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2232-ai-red-teaming/8481-harden-and-remediate-ai-system` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4999-anth-policy-guardrails`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ai-red-teaming/design-ai-redteam-plan (#8480); ai-red-teaming/harden-and-remediate-ai-system (#8481); anthropic-pack/anth-policy-guardrails (#4999) · theme ai-llm-engineering · 5 supporting skills · verifier read: skills/2232-ai-red-teaming/8480-design-ai-redteam-plan, skills/2232-ai-red-teaming/8481-harden-and-remediate-ai-system, skills/1823-anthropic-pack/4999-anth-policy-guardrails
 
-#### ASTRAT-42 · سلم توجيه النماذج حسب التكلفة · Cost-per-task model routing ladder · 📄 موصوف / documented only
+#### ASTRAT-49 · سلم توجيه النماذج حسب التكلفة · Cost-per-task model routing ladder · 📄 موصوف / documented only
 - **ماذا / what:** توجيه الطلبات لأرخص نموذج كافٍ بمصنف فرز وتصعيد عند عدم اليقين. — Route requests to the cheapest adequate model via a triage classifier with escalation.
 - **متى أستخدمها / when:** Spend is high, Opus-for-everything policy, or mixed latency needs.
 - **كيف / how:** 1) Define simple/medium/complex tiers per domain. 2) Cheap-model triage call returning only a tier label; cache by request hash. 3) Handlers per tier; escalate on uncertainty signals. 4) Track cost-per-resolved-task, not per call. 5) Compare vendors with a task-shape cost table and set budget alerts.
@@ -399,7 +471,7 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8583-llm-routing-ladder` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13142-ai-cost-management` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2230-ai-coding-model-guidance/8472-multi-tool-model-comparison`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): claude-app-engineering/llm-routing-ladder (#8583); adlc-operate/ai-cost-management (#13142); ai-coding-model-guidance/multi-tool-model-comparison (#8472) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/2254-claude-app-engineering/8583-llm-routing-ladder, skills/3051-adlc-operate/13142-ai-cost-management, skills/2230-ai-coding-model-guidance/8472-multi-tool-model-comparison
 
-#### ASTRAT-43 · جاهزية قانون الذكاء الأوروبي وفحص التحيز · EU AI Act readiness and bias check · 📄 موصوف / documented only
+#### ASTRAT-50 · جاهزية قانون الذكاء الأوروبي وفحص التحيز · EU AI Act readiness and bias check · 📄 موصوف / documented only
 - **ماذا / what:** تصنيف نظام ذكاء اصطناعي حسب فئة مخاطر القانون الأوروبي والتحقق من العدالة. — Classify an AI system by EU AI Act risk tier and validate fairness metrics.
 - **متى أستخدمها / when:** Compliance review before launching an AI feature.
 - **كيف / how:** 1) Ask forcing questions on use case. 2) Classify prohibited/high-risk/limited. 3) List Article obligations. 4) Compute fairness metrics across groups. 5) Document gaps and owners.
@@ -408,7 +480,7 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/148-compliance-os/483-ai-act-readiness` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/215-compliance-team-eu-ai-act/688-eu-ai-act-specialist` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1569-ai-ethics-validator/4540-validating-ai-ethics-and-fairness`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): compliance-os/ai-act-readiness (#483); compliance-team-eu-ai-act/eu-ai-act-specialist (#688); ai-ethics-validator/validating-ai-ethics-and-fairness (#4540) · theme ai-llm-engineering · 5 supporting skills · verifier read: skills/148-compliance-os/483-ai-act-readiness, skills/215-compliance-team-eu-ai-act/688-eu-ai-act-specialist, skills/1569-ai-ethics-validator/4540-validating-ai-ethics-and-fairness
 
-#### ASTRAT-44 · تدقيق تكلفة LLM والتوجيه · LLM cost audit and routing · 📄 موصوف / documented only
+#### ASTRAT-51 · تدقيق تكلفة LLM والتوجيه · LLM cost audit and routing · 📄 موصوف / documented only
 - **ماذا / what:** خفض تكلفة LLM عبر تسجيل التكلفة وتوزيع النماذج على طبقات والتخزين المؤقت وضغط الرموز. — Cut LLM spend 40-80% by logging per-request cost, tiering models, caching and compressing tokens.
 - **متى أستخدمها / when:** Costs are high, an AI feature is launching, or model choice is open.
 - **كيف / how:** 1) Classify mode: audit, optimize, or design. 2) Log model, in/out tokens, latency, feature, cost per request. 3) Find top endpoints by feature x model x tokens. 4) Route simple/medium/complex tasks to small/mid/large tiers. 5) Add prompt caching and compression. 6) Monitor continuously; logging comes before optimization. **أرقام / params:** target cut; quality floor
@@ -418,7 +490,7 @@
 
 ## القطاعات المنظّمة — Regulated industries & domain expertise
 
-#### ASTRAT-45 · مراجعة برنامج مكافحة غسل الأموال · AML program review against FATF/FFIEC · 📄 موصوف / documented only
+#### ASTRAT-52 · مراجعة برنامج مكافحة غسل الأموال · AML program review against FATF/FFIEC · 📄 موصوف / documented only
 - **ماذا / what:** مراجعة برنامج AML عبر الركائز الخمس بمستويات التصميم والتنفيذ والفعالية. — Review an AML program across five pillars at design, implementation and effectiveness levels.
 - **متى أستخدمها / when:** Audit of AML/KYC controls or regulator readiness.
 - **كيف / how:** 1) Check five pillars: AML officer, policies/controls, training, independent testing, CDD/beneficial ownership. 2) For each pillar assess design, implementation, effectiveness separately. 3) List findings by frequency with primary-source citations. 4) Structured report with remediation. **أرقام / params:** pillar docs, jurisdiction
@@ -426,7 +498,7 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2368-regulatory-compliance/9142-aml-program-review`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): regulatory-compliance/aml-program-review (#9142) · theme compliance-industry · 1 supporting skills · verifier read: skills/2368-regulatory-compliance/9142-aml-program-review
 
-#### ASTRAT-46 · تشخيص هامش الربح ومزيج الخدمات · Small-business margin and mix diagnostics · 📄 موصوف / documented only
+#### ASTRAT-53 · تشخيص هامش الربح ومزيج الخدمات · Small-business margin and mix diagnostics · 📄 موصوف / documented only
 - **ماذا / what:** قراءة الهامش لكل ساعة وسلة المبيعات وسعة التشغيل لأنشطة خدمية. — Read margin per provider-hour, basket, attach and capacity for retail, spa, funeral, pharmacy operations.
 - **متى أستخدمها / when:** Owner asks to lift profit in a regulated local business.
 - **كيف / how:** 1) Compute revenue and margin per service or room hour. 2) Tilt mix to high contribution. 3) Model device payback on realistic volume. 4) Find gating stage in case pipeline and size staffing. 5) Route clinical judgment to professionals. **أرقام / params:** sales by category
@@ -435,9 +507,46 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2333-med-spa-aesthetics/8957-service-mix-injectables-devices-memberships` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2378-salon-spa-operations/9203-retail-attach-and-service-mix`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): med-spa-aesthetics/service-mix (#8957); salon-spa-operations/retail-attach (#9203) · theme compliance-industry · 5 supporting skills · verifier read: skills/2333-med-spa-aesthetics/8957-service-mix-injectables-devices-memberships, skills/2378-salon-spa-operations/9203-retail-attach-and-service-mix
 
+## التعليم والتعلم — Teaching, learning & study
+
+#### ASTRAT-54 · بطاقات أنكي عبر AnkiConnect · Anki flashcards via AnkiConnect · 📄 موصوف / documented only
+- **ماذا / what:** ينشئ ويدير مجموعات وبطاقات أنكي عبر واجهة AnkiConnect المحلية. — Create and manage Anki decks and cards through the local AnkiConnect HTTP API.
+- **متى أستخدمها / when:** User wants flashcards, spaced repetition decks or Anki card changes.
+- **كيف / how:** 1) Anki must be running with AnkiConnect (add-on 2055492159). 2) Check: curl -s localhost:8765 -X POST -d '{"action":"requestPermission","version":6}' expects granted. 3) Create decks and add notes with JSON actions. 4) Keep one atomic fact per card. 5) On macOS disable App Nap. **أرقام / params:** deck, note model
+- **يحتاج / needs:** [`network`](../requirements.md#req-network)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1217-anki-flashcards/2899-anki-flashcards` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): anki-flashcards/anki-flashcards (#2899); core-learning/learn-core (#3276) · theme education-learning · 3 supporting skills · verifier read: skills/1217-anki-flashcards/2899-anki-flashcards, skills/1390-core-learning/3276-learn-core
+
+#### ASTRAT-55 · إعداد دورة Google Classroom والطلاب · Google Classroom course setup and roster · 📄 موصوف / documented only
+- **ماذا / what:** ينشئ الفصول ويدعو الطلاب ويدير الواجبات عبر أداة gws. — Create classes, invite students and manage coursework through the gws CLI.
+- **متى أستخدمها / when:** User manages classes or coursework in Google Classroom.
+- **كيف / how:** 1) Use gws classroom commands. 2) Create the course. 3) Invite students. 4) Manage coursework. **أرقام / params:** course name
+- **يحتاج / needs:** [`network`](../requirements.md#req-network)
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2907-google-workspace/11852-recipe-create-classroom-course` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2907-google-workspace/11797-gws-classroom`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): google-workspace/recipe-create-classroom-course (#11852); google-workspace/gws-classroom (#11797) · theme education-learning · 3 supporting skills · verifier read: skills/2907-google-workspace/11852-recipe-create-classroom-course, skills/2907-google-workspace/11797-gws-classroom
+
+#### ASTRAT-56 · مدرب تعلم متعدد الجلسات بحالة محفوظة · Multi-session learning coach with persistent state · 📄 موصوف / documented only
+- **ماذا / what:** يدرّب المتعلم عبر جلسات متعددة بملفات هدف ومسرد وسجل تعلم تراكمي. — Coach a learner over several sessions using a mission file, glossary, concept slices and an append-only learning log.
+- **متى أستخدمها / when:** User says teach me, study session, onboard me to a topic or codebase.
+- **كيف / how:** 1) Write MISSION.md (goal, success criteria, constraints). 2) Create per-concept folders with lesson, reference.md and exercise.md. 3) Progress through Knowledge-Skills-Wisdom stages. 4) Add glossary terms only after the learner shows understanding. 5) Append numbered ADR-style learning records. 6) On resume, read state first. Topic mode uses external sources; codebase mode uses repo docs. **أرقام / params:** topic|codebase, workspace root
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9463-teach` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): education/teach (#9463); core-learning/learn-core (#3276) · theme education-learning · 5 supporting skills · verifier read: skills/2437-education/9463-teach, skills/1390-core-learning/3276-learn-core
+
+#### ASTRAT-57 · بروتوكول تدريس سقراطي سؤال واحد كل مرة · Socratic one-question-at-a-time tutoring protocol · 📄 موصوف / documented only
+- **ماذا / what:** يدير حلقة تدريس بسؤال واحد وتلميحات عند الخطأ ويحكم بالإتقان عبر التطبيق المستقل. — Run a tutor loop with one pending question, hints on errors and mastery judged by independent application.
+- **متى أستخدمها / when:** Learner wants to master a skill or concept, not just receive an explanation.
+- **كيف / how:** 1) State a mode contract each session. 2) Give brief concept plus one question, then stop and wait. 3) On a wrong answer give a minimal hint only, then retry. 4) Follow with a new-conditions question and ask for reasoning. 5) Record untested, hinted, independent, transfer, delayed-recheck. 6) Never simulate the learner's answers. Modes: Socratic, reverse-teach (Feynman), drill, project review, spaced quiz. **أرقام / params:** mode, time budget
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1097-akbun-learning/2467-akbun-algorithm-tutor`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): core-learning/learn-core (#3276); akbun-learning/akbun-algorithm-tutor (#2467) · theme education-learning · 5 supporting skills · verifier read: skills/1390-core-learning/3276-learn-core, skills/1097-akbun-learning/2467-akbun-algorithm-tutor
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (32) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under mixed MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (42) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under mixed MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

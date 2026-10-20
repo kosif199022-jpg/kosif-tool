@@ -415,5 +415,63 @@
    "stage": "extracted",
    "verified_by": "b021-compliance-industry-1.json"
   }
+ },
+ {
+  "id": "AWEB-09",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "من المنهج الدراسي إلى قائمة قراءات",
+  "name_en": "Course syllabus to supplementary reading list",
+  "status": "documented",
+  "what": "يبني قائمة قراءات docx بأحدث الأوراق لكل قسم من المنهج. — Build a docx reading list of recent papers per syllabus section via academic search.",
+  "when": "Instructor or student supplies a syllabus.",
+  "how": "1) Intake: syllabus format and course level. 2) Split syllabus into sections. 3) Query Consensus MCP per section for recent peer-reviewed papers. 4) Assemble with scripts/generate_reading_list.js (node docx). 5) Deliver .docx.",
+  "params": "syllabus file",
+  "install": "npm i docx",
+  "requires": [
+   "node",
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/227-syllabus/704-syllabus",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2451-knowledge/9499-course-digest"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "syllabus",
+   "reading list",
+   "docx",
+   "قراءات"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): syllabus/syllabus (#704); knowledge/course-digest (#9499) · theme education-learning · 3 supporting skills · verifier read: skills/227-syllabus/704-syllabus, skills/2451-knowledge/9499-course-digest",
+  "atlas": {
+   "ids": [
+    "704",
+    "1985",
+    "9499"
+   ],
+   "examples": [
+    {
+     "id": "704",
+     "plugin": "syllabus",
+     "skill": "syllabus",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/227-syllabus/704-syllabus"
+    },
+    {
+     "id": "9499",
+     "plugin": "knowledge",
+     "skill": "course-digest",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2451-knowledge/9499-course-digest"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Needs Consensus MCP; node script writes docx.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
  }
 ]

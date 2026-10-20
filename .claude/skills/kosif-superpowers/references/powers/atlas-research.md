@@ -3,12 +3,13 @@
 
 > **قوتك هنا / what this gives you:** البحث والزحف والاستشهاد وإدارة الملاحظات والمعرفة كما تصفها مهارات أطلس. — Research, crawling, citation and knowledge-management methods from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **8 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 8 · 💡 0.
+> **9 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 9 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** البحث والويب — Research & web · **البادئة / prefix:** `AWEB` · **البيانات / data:** `data/powers/atlas-research.json` · **بحث / search:** `python3 scripts/powers.py family atlas-research`
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md)
 
 ## الفهرس / contents
 
@@ -18,6 +19,7 @@
 - **تحليل البيانات — Data analysis & statistics** — AWEB-04 (1)
 - **هندسة النماذج اللغوية — LLM & AI engineering** — AWEB-05 (1)
 - **القطاعات المنظّمة — Regulated industries & domain expertise** — AWEB-06 … AWEB-08 (3)
+- **التعليم والتعلم — Teaching, learning & study** — AWEB-09 (1)
 - المصادر والرخص / sources & licences
 
 ## واجهات API والخلفية — APIs, backends & auth
@@ -103,9 +105,21 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/224-patent/701-patent`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): patent/patent (#701) · theme compliance-industry · 1 supporting skills · verifier read: skills/224-patent/701-patent
 
+## التعليم والتعلم — Teaching, learning & study
+
+#### AWEB-09 · من المنهج الدراسي إلى قائمة قراءات · Course syllabus to supplementary reading list · 📄 موصوف / documented only
+- **ماذا / what:** يبني قائمة قراءات docx بأحدث الأوراق لكل قسم من المنهج. — Build a docx reading list of recent papers per syllabus section via academic search.
+- **متى أستخدمها / when:** Instructor or student supplies a syllabus.
+- **كيف / how:** 1) Intake: syllabus format and course level. 2) Split syllabus into sections. 3) Query Consensus MCP per section for recent peer-reviewed papers. 4) Assemble with scripts/generate_reading_list.js (node docx). 5) Deliver .docx. **أرقام / params:** syllabus file
+- **تثبيت / install:** `npm i docx`
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`network`](../requirements.md#req-network)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/227-syllabus/704-syllabus` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2451-knowledge/9499-course-digest`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): syllabus/syllabus (#704); knowledge/course-digest (#9499) · theme education-learning · 3 supporting skills · verifier read: skills/227-syllabus/704-syllabus, skills/2451-knowledge/9499-course-digest
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (7) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (8) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

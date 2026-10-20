@@ -2357,5 +2357,224 @@
    "stage": "extracted",
    "verified_by": "b032-devops-cloud-3.json"
   }
+ },
+ {
+  "id": "AMIND-41",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تصدير خريطة ذهنية تفاعلية",
+  "name_en": "Interactive mindmap export (force graph, MarkMind)",
+  "status": "documented",
+  "what": "تحويل موضوع إلى مخطط JSON ثم تصديره كصفحة تفاعلية أو لـ Obsidian. — Turn a topic into a Buzan-style JSON outline, then export to force-graph HTML or Obsidian MarkMind.",
+  "when": "User asks for a mindmap, interactive map or MarkMind file.",
+  "how": "1. Generate outline JSON: root, branches with color, single-keyword nodes, emoji anchors, cross-links. 2. Run generate_forcegraph.py --input outline.json --output map.html --max-depth 6 (CDN needed). 3. Or run markmind exporter to a vault file. 4. Open and check.",
+  "params": "max-depth, colors",
+  "install": "",
+  "requires": [
+   "python3",
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/39-forcegraph-exporter",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/40-generate-mindmap",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/41-markmind-exporter"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "mindmap",
+   "obsidian",
+   "خريطة ذهنية",
+   "force-graph"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): learning/forcegraph-exporter (#39); learning/generate-mindmap (#40); learning/markmind-exporter (#41) · theme diagrams-visual-docs · 4 supporting skills · verifier read: skills/30-learning/39-forcegraph-exporter, skills/30-learning/40-generate-mindmap, skills/30-learning/41-markmind-exporter",
+  "atlas": {
+   "ids": [
+    "39",
+    "40",
+    "41",
+    "121"
+   ],
+   "examples": [
+    {
+     "id": "39",
+     "plugin": "learning",
+     "skill": "forcegraph-exporter",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/39-forcegraph-exporter"
+    },
+    {
+     "id": "40",
+     "plugin": "learning",
+     "skill": "generate-mindmap",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/40-generate-mindmap"
+    },
+    {
+     "id": "41",
+     "plugin": "learning",
+     "skill": "markmind-exporter",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/41-markmind-exporter"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Python exporters write files; HTML loads CDN script.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "AMIND-42",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "مراجعة الافتراضات وإعادة التقييم",
+  "name_en": "Challenge approach before commitment",
+  "status": "documented",
+  "what": "يختبر الافتراضات ويعيد التقييم عند تعثر المنهج. — Stress assumptions, opportunity cost and alternatives, or reset when the current approach fails.",
+  "when": "Preferred approach about to be committed, or user says it is wrong.",
+  "how": "1) State the preferred approach and its assumptions. 2) Test opportunity costs and uncertainty. 3) List alternatives. 4) On 'wrong', stop, restate the goal, re-evaluate. 5) Re-pitch unclear messages plainly.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8355-devils-advocate"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "reasoning",
+   "critique",
+   "تفكير",
+   "reset"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): majestic-reasoning/devils-advocate (#8355) · theme general-dev-workflow · 4 supporting skills · verifier read: skills/2215-majestic-reasoning/8355-devils-advocate",
+  "atlas": {
+   "ids": [
+    "3196",
+    "8355",
+    "8444",
+    "13656"
+   ],
+   "examples": [
+    {
+     "id": "8355",
+     "plugin": "majestic-reasoning",
+     "skill": "devils-advocate",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8355-devils-advocate"
+    }
+   ],
+   "theme": "general-dev-workflow",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b041-general-dev-workflow-1.json"
+  }
+ },
+ {
+  "id": "AMIND-43",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "قسم الملاحظات والحالة الختامي",
+  "name_en": "Closing Caveats and status section",
+  "status": "documented",
+  "what": "يختم تقرير الإنجاز بما تم التحقق منه وما افترض وما لم يغطَّ. — End any nontrivial completion report with Verified / Assumed / Not covered lines backed by commands actually run.",
+  "when": "About to report a task as done, fixed or passing.",
+  "how": "1) Run verification and read real output first. 2) Write a 'Caveats & status' block. 3) Verified: only commands run or behavior observed this session, with result. 4) Assumed: taken on faith. 5) Not covered: out of scope or unverifiable, stated explicitly. 6) Report failures with actual error text; omit empty lines; skip for trivial Q&A.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1072-craftsman/2375-caveats-and-status"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "verification",
+   "honesty",
+   "تقرير",
+   "status"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): craftsman/caveats-and-status (#2375) · theme general-dev-workflow · 2 supporting skills · verifier read: skills/1072-craftsman/2375-caveats-and-status",
+  "atlas": {
+   "ids": [
+    "2375",
+    "13554"
+   ],
+   "examples": [
+    {
+     "id": "2375",
+     "plugin": "craftsman",
+     "skill": "caveats-and-status",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1072-craftsman/2375-caveats-and-status"
+    }
+   ],
+   "theme": "general-dev-workflow",
+   "risk_notes": "None; text-only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b041-general-dev-workflow-1.json"
+  }
+ },
+ {
+  "id": "AMIND-44",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تحقق خصومي أعمى من البراهين",
+  "name_en": "Blind adversarial verification of proofs",
+  "status": "documented",
+  "what": "يتحقق من براهين المسابقات بمدقق في سياق جديد وثقة معايرة. — Verify olympiad-level proofs with a fresh-context verifier and calibrated confidence.",
+  "when": "Solving or checking IMO/Putnam-style problems.",
+  "how": "1) Solve by reasoning only. 2) Strip thinking, pass only the cleaned proof to a fresh verifier. 3) Check red flags: does it imply an open problem; try 2x2 counterexamples. 4) Same gap twice means restructure. 5) Say no confident solution rather than bluff. 6) Optional LaTeX PDF.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "latex"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/295-math-olympiad/907-math-olympiad",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/296-math-proof/908-siege"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "proof",
+   "verification",
+   "برهان",
+   "رياضيات"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): math-olympiad/math-olympiad (#907); math-proof/siege (#908) · theme education-learning · 3 supporting skills · verifier read: skills/295-math-olympiad/907-math-olympiad, skills/296-math-proof/908-siege",
+  "atlas": {
+   "ids": [
+    "907",
+    "908",
+    "2924"
+   ],
+   "examples": [
+    {
+     "id": "907",
+     "plugin": "math-olympiad",
+     "skill": "math-olympiad",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/295-math-olympiad/907-math-olympiad"
+    },
+    {
+     "id": "908",
+     "plugin": "math-proof",
+     "skill": "siege",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/296-math-proof/908-siege"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Shell helpers present.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
  }
 ]

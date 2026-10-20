@@ -6,7 +6,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 # قواك الخارقة — KOSIF Superpowers
 
-**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,125 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,236 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 ## Claude Code permission-aware local-first bootstrap
 
 **Do NOT require git clone before using this skill.** If Claude Code Auto Mode denies 'Code from External', do not bypass the permission classifier. Run the already-installed local script: python scripts/local_first.py doctor and python scripts/local_first.py search silhouette --scope powers from this skill's root (or use the full relative path under the repo root). A complete local checkout also supports --scope styles; standalone skills honestly report that the full style index is unavailable. If the skill isn't installed and access is blocked, request explicit user authorization or a supplied package instead of using an alternative tool to secretly clone. Read [the auto-mode recovery guide](references/claude-auto-local-first.md) and [evidence audit](references/rea-ghidra-catalog-audit-20261019.md). For catalog health, run python scripts/catalog_evidence_audit.py: all 4,730 records are assessed for local link coverage but NOT executed.
@@ -98,8 +98,17 @@ Use the **generated bilingual capability index** at [references/capability-atlas
 
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=5125 families=60 domains=10 styles=289 watched=254 proven=868 ready=637 install=966 key=176 seen=609 documented=1798 idea=71 -->
-**الأرقام / counts:** 5,125 قدرة في 60 عائلة و10 مجالات — ✅ 868 · 🟢 637 · 📦 966 · 🔑 176 · 👁 609 · 📄 1,798 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=5236 families=61 domains=10 styles=289 watched=254 proven=868 ready=637 install=966 key=176 seen=609 documented=1909 idea=71 -->
+**الأرقام / counts:** 5,236 قدرة في 61 عائلة و10 مجالات — ✅ 868 · 🟢 637 · 📦 966 · 🔑 176 · 👁 609 · 📄 1,909 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+
+## 0. القدرات الخارقة المدمجة — fused superpowers (ابدأ هنا)
+الـ5,236 قدرة ذرية مدمجة الآن في **456 قدرة خارقة** (نحو 11.48 قدرة في كل واحدة)، كل منها خط تنفيذ مرتب (✅ أولًا) ومرتبطة بأقرب القدرات الخارقة إليها في رسم واحد متصل. قدرات أطلس المتشابهة انصهرت داخل قدرات KOSIF الأصلية (40 قدرة).
+
+    python3 $SKILL_DIR/scripts/superpower_fusion.py suggest "<المهمة بكلمات المستخدم>"
+    python3 $SKILL_DIR/scripts/superpower_fusion.py show SP-0286        # الأعضاء والمستلزمات والروابط
+    python3 $SKILL_DIR/scripts/superpower_fusion.py of BEAT-16          # أي قدرة خارقة تحوي قدرة ذرية
+
+الجدول الكامل: [superpowers.md](references/superpowers.md). القدرات الذرية باقية كطبقة الدليل (IDs والشارات والإثباتات)؛ شارة القدرة الخارقة `best` تعني أقوى عضو فيها لا كل أعضائها، و`status_mix` هو التوزيع الصادق. بعد تعديل الكتالوج: `superpower_fusion.py build`.
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.

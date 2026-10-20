@@ -3,18 +3,22 @@
 
 > **قوتك هنا / what this gives you:** طرق سير عمل الوكلاء والتخطيط والمواصفات وبوابات المراجعة المستخرجة من مهارات أطلس المفتوحة. — Agent-workflow, planning, spec and review-gate methods mined from the open Atlas skills.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **40 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 40 · 💡 0.
+> **44 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 44 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `AMIND` · **البيانات / data:** `data/powers/atlas-mind.json` · **بحث / search:** `python3 scripts/powers.py family atlas-mind`
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md)
 
 ## الفهرس / contents
 
 - **سير عمل الوكلاء — Agent workflows & orchestration** — AMIND-01 … AMIND-38 (38)
 - **التصحيح — Debugging & diagnosis** — AMIND-39 (1)
 - **DevOps والسحابة — DevOps, CI/CD, cloud & infrastructure** — AMIND-40 (1)
+- **المخططات — Diagrams & visual documentation** — AMIND-41 (1)
+- **سير عمل تطوير عام — General development workflow** — AMIND-42 … AMIND-43 (2)
+- **التعليم والتعلم — Teaching, learning & study** — AMIND-44 (1)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -356,9 +360,49 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2020-prove-the-undo/7187-prove-the-undo` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2965-pwdev-devops/12467-backup-dr`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): prove-the-undo/prove-the-undo (#7187); pwdev-devops/backup-dr (#12467) · theme devops-cloud · 3 supporting skills · verifier read: skills/2020-prove-the-undo/7187-prove-the-undo, skills/2965-pwdev-devops/12467-backup-dr
 
+## المخططات — Diagrams & visual documentation
+
+#### AMIND-41 · تصدير خريطة ذهنية تفاعلية · Interactive mindmap export (force graph, MarkMind) · 📄 موصوف / documented only
+- **ماذا / what:** تحويل موضوع إلى مخطط JSON ثم تصديره كصفحة تفاعلية أو لـ Obsidian. — Turn a topic into a Buzan-style JSON outline, then export to force-graph HTML or Obsidian MarkMind.
+- **متى أستخدمها / when:** User asks for a mindmap, interactive map or MarkMind file.
+- **كيف / how:** 1. Generate outline JSON: root, branches with color, single-keyword nodes, emoji anchors, cross-links. 2. Run generate_forcegraph.py --input outline.json --output map.html --max-depth 6 (CDN needed). 3. Or run markmind exporter to a vault file. 4. Open and check. **أرقام / params:** max-depth, colors
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`network`](../requirements.md#req-network)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/39-forcegraph-exporter` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/40-generate-mindmap` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/41-markmind-exporter`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): learning/forcegraph-exporter (#39); learning/generate-mindmap (#40); learning/markmind-exporter (#41) · theme diagrams-visual-docs · 4 supporting skills · verifier read: skills/30-learning/39-forcegraph-exporter, skills/30-learning/40-generate-mindmap, skills/30-learning/41-markmind-exporter
+
+## سير عمل تطوير عام — General development workflow
+
+#### AMIND-42 · مراجعة الافتراضات وإعادة التقييم · Challenge approach before commitment · 📄 موصوف / documented only
+- **ماذا / what:** يختبر الافتراضات ويعيد التقييم عند تعثر المنهج. — Stress assumptions, opportunity cost and alternatives, or reset when the current approach fails.
+- **متى أستخدمها / when:** Preferred approach about to be committed, or user says it is wrong.
+- **كيف / how:** 1) State the preferred approach and its assumptions. 2) Test opportunity costs and uncertainty. 3) List alternatives. 4) On 'wrong', stop, restate the goal, re-evaluate. 5) Re-pitch unclear messages plainly.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8355-devils-advocate`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): majestic-reasoning/devils-advocate (#8355) · theme general-dev-workflow · 4 supporting skills · verifier read: skills/2215-majestic-reasoning/8355-devils-advocate
+
+#### AMIND-43 · قسم الملاحظات والحالة الختامي · Closing Caveats and status section · 📄 موصوف / documented only
+- **ماذا / what:** يختم تقرير الإنجاز بما تم التحقق منه وما افترض وما لم يغطَّ. — End any nontrivial completion report with Verified / Assumed / Not covered lines backed by commands actually run.
+- **متى أستخدمها / when:** About to report a task as done, fixed or passing.
+- **كيف / how:** 1) Run verification and read real output first. 2) Write a 'Caveats & status' block. 3) Verified: only commands run or behavior observed this session, with result. 4) Assumed: taken on faith. 5) Not covered: out of scope or unverifiable, stated explicitly. 6) Report failures with actual error text; omit empty lines; skip for trivial Q&A.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1072-craftsman/2375-caveats-and-status`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): craftsman/caveats-and-status (#2375) · theme general-dev-workflow · 2 supporting skills · verifier read: skills/1072-craftsman/2375-caveats-and-status
+
+## التعليم والتعلم — Teaching, learning & study
+
+#### AMIND-44 · تحقق خصومي أعمى من البراهين · Blind adversarial verification of proofs · 📄 موصوف / documented only
+- **ماذا / what:** يتحقق من براهين المسابقات بمدقق في سياق جديد وثقة معايرة. — Verify olympiad-level proofs with a fresh-context verifier and calibrated confidence.
+- **متى أستخدمها / when:** Solving or checking IMO/Putnam-style problems.
+- **كيف / how:** 1) Solve by reasoning only. 2) Strip thinking, pass only the cleaned proof to a fresh verifier. 3) Check red flags: does it imply an open problem; try 2x2 counterexamples. 4) Same gap twice means restructure. 5) Say no confident solution rather than bluff. 6) Optional LaTeX PDF.
+- **يحتاج / needs:** [`latex`](../requirements.md#req-latex)
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/295-math-olympiad/907-math-olympiad` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/296-math-proof/908-siege`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): math-olympiad/math-olympiad (#907); math-proof/siege (#908) · theme education-learning · 3 supporting skills · verifier read: skills/295-math-olympiad/907-math-olympiad, skills/296-math-proof/908-siege
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (31) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0 (1300); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / Apache-2.0 (3349); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (34) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0 (1300); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / Apache-2.0 (3349); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
