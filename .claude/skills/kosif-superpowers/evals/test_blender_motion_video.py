@@ -30,7 +30,7 @@ class VideoTests(unittest.TestCase):
 
     def test_missing_blender_no_implicit_install(self):
         with tempfile.TemporaryDirectory() as t:
-            with mock.patch.object(m, "blender_exe", return_value=None):
+            with mock.patch.object(m, "discover_blender", return_value=None):
                 with self.assertRaisesRegex(ValueError, "required"):
                     m.encode(SCENE, Path(t) / "out.mp4")
 

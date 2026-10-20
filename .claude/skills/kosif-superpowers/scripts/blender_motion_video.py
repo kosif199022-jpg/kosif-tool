@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """KOSIF background Blender MP4 export; verified frame count and H.264.
 
 No arbitrary code, external .blend, browser downloads, license bypass, or shell.
@@ -16,6 +16,19 @@ import tempfile
 
 from blender_bridge import blender_exe, validate
 
+def discover_blender(executable=None):
+    if executable:
+        return blender_exe(executable)
+    on_path = blender_exe()
+    if on_path:
+        return on_path
+    # User-scoped verified official portable release on the KOSIF Windows host.
+    portable = (Path.home() / "KOSIF-Tools" / "Blender5.2" /
+                "blender-5.2.2-windows-x64" / "blender.exe")
+    if portable.is_file():
+        return str(portable.resolve())
+    return None
+
 def encode(scene_file, output_file, blender=None, timeout=300):
     src = Path(scene_file).resolve(strict=True)
     scene = validate(json.loads(src.read_text(encoding="utf-8-sig")))
@@ -26,7 +39,7 @@ def encode(scene_file, output_file, blender=None, timeout=300):
         raise ValueError("refusing to overwrite output")
     if not dest.parent.is_dir():
         raise ValueError("output directory missing")
-    exe = blender_exe(blender)
+    exe = discover_blender(blender)
     ffmpeg = shutil.which("ffmpeg")
     ffprobe = shutil.which("ffprobe")
     if not exe or not ffmpeg or not ffprobe:
@@ -89,7 +102,7 @@ def main():
     args = p.parse_args()
     try:
         if args.cmd == "doctor":
-            print(json.dumps({"blender": bool(blender_exe()),
+            print(json.dumps({"blender": bool(discover_blender()),
                 "ffmpeg": bool(shutil.which("ffmpeg")),
                 "ffprobe": bool(shutil.which("ffprobe")),
                 "formats": ["mp4"], "auto_installs": False}))
