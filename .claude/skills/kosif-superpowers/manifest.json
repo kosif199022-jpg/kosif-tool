@@ -19,7 +19,7 @@
   "families": 61,
   "domains": 10,
   "tools": 107,
-  "guides": 89,
+  "guides": 90,
   "statuses": {
    "documented": 1798,
    "idea": 71,
@@ -10640,6 +10640,12 @@
    "path": "references/capability-operating-manual.md",
    "title": "KOSIF Superpowers — Capability Operating Manual",
    "area": "motion",
+   "summary": ""
+  },
+  {
+   "path": "references/capcut-deep-analysis-transfer-20261020.md",
+   "title": "تحليل CapCut من الجذور: خريطة القدرات القابلة للتطوير في KOSIF Superpowers",
+   "area": "general",
    "summary": ""
   },
   {

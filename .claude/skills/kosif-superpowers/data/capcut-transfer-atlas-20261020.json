@@ -1,0 +1,561 @@
+{
+  "schema": "kosif.capcut-capability-transfer.v1",
+  "date": "2026-10-20",
+  "source_app": "CapCut 8.7.0.3685 (installed local package)",
+  "scope": "static CapCut application folder only; excludes personal User Data and Videos",
+  "status": "researched-proposals-not-implemented",
+  "source_app_behavior_executed": false,
+  "reverse_engineering_evidence": {
+    "files_scanned": 3936,
+    "bytes_scanned": 1583249514,
+    "extension_types": 50,
+    "selected_sha256_count": 15,
+    "shader_frag_files": 239,
+    "shader_vert_files": 203,
+    "named_color_preset_groups": 39,
+    "audio_alignment_model_files": 3,
+    "ghidra": {
+      "videoeditor": {
+        "file": "videoeditor.dll",
+        "architecture": "x86:LE:64:default",
+        "format": "Portable Executable (PE)",
+        "functions_identified_so_far": 78419,
+        "import_libraries": [
+          "ADVAPI32.DLL",
+          "API-MS-WIN-CRT-CONVERT-L1-1-0.DLL",
+          "API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL",
+          "API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL",
+          "API-MS-WIN-CRT-HEAP-L1-1-0.DLL",
+          "API-MS-WIN-CRT-LOCALE-L1-1-0.DLL",
+          "API-MS-WIN-CRT-MATH-L1-1-0.DLL",
+          "API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL",
+          "API-MS-WIN-CRT-STDIO-L1-1-0.DLL",
+          "API-MS-WIN-CRT-STRING-L1-1-0.DLL",
+          "API-MS-WIN-CRT-TIME-L1-1-0.DLL",
+          "API-MS-WIN-CRT-UTILITY-L1-1-0.DLL",
+          "CCCREATOR.DLL",
+          "CLIPFLOW_SDK.DLL",
+          "KERNEL32.DLL",
+          "MSVCP140.DLL",
+          "MSVCP140_CODECVT_IDS.DLL",
+          "OLE32.DLL",
+          "SHLWAPI.DLL",
+          "USER32.DLL",
+          "VCRUNTIME140.DLL",
+          "VCRUNTIME140_1.DLL"
+        ],
+        "imported_symbol_count": 711,
+        "executable_bytes": 42948096,
+        "analysis_timed_out": true,
+        "script_inventory_completed": true,
+        "auto_analysis_complete": false,
+        "log_sha256": "9707c542e482c50954d9747a2ad586a529babe450a4cfd8edad9fd0a7da856bf"
+      },
+      "audioeffect": {
+        "file": "capcut_audioeffect_for_static_ghidra.dll",
+        "architecture": "x86:LE:64:default",
+        "format": "Portable Executable (PE)",
+        "functions_identified_so_far": 24947,
+        "import_libraries": [
+          "ADVAPI32.DLL",
+          "API-MS-WIN-CRT-CONVERT-L1-1-0.DLL",
+          "API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL",
+          "API-MS-WIN-CRT-HEAP-L1-1-0.DLL",
+          "API-MS-WIN-CRT-LOCALE-L1-1-0.DLL",
+          "API-MS-WIN-CRT-MATH-L1-1-0.DLL",
+          "API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL",
+          "API-MS-WIN-CRT-STDIO-L1-1-0.DLL",
+          "API-MS-WIN-CRT-STRING-L1-1-0.DLL",
+          "API-MS-WIN-CRT-TIME-L1-1-0.DLL",
+          "API-MS-WIN-CRT-UTILITY-L1-1-0.DLL",
+          "AVCODEC-61.DLL",
+          "AVFORMAT-61.DLL",
+          "AVRT.DLL",
+          "AVUTIL-59.DLL",
+          "KERNEL32.DLL",
+          "MSVCP140.DLL",
+          "OLE32.DLL",
+          "SHELL32.DLL",
+          "SSCRONET.DLL",
+          "SWRESAMPLE-5.DLL",
+          "VCRUNTIME140.DLL",
+          "VCRUNTIME140_1.DLL"
+        ],
+        "imported_symbol_count": 549,
+        "executable_bytes": 10885632,
+        "analysis_timed_out": true,
+        "script_inventory_completed": true,
+        "auto_analysis_complete": false,
+        "log_sha256": "42d0cd327d4b1d7c22dda27d99404a3f274d8f310e55b97d1ac866fbfaddf144"
+      },
+      "effectplatform": {
+        "file": "capcut_effectplatform_probe.dll",
+        "architecture": "x86:LE:64:default",
+        "format": "Portable Executable (PE)",
+        "functions_identified_so_far": 2961,
+        "import_libraries": [
+          "API-MS-WIN-CRT-CONVERT-L1-1-0.DLL",
+          "API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL",
+          "API-MS-WIN-CRT-HEAP-L1-1-0.DLL",
+          "API-MS-WIN-CRT-LOCALE-L1-1-0.DLL",
+          "API-MS-WIN-CRT-MATH-L1-1-0.DLL",
+          "API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL",
+          "API-MS-WIN-CRT-STDIO-L1-1-0.DLL",
+          "API-MS-WIN-CRT-STRING-L1-1-0.DLL",
+          "API-MS-WIN-CRT-TIME-L1-1-0.DLL",
+          "KERNEL32.DLL",
+          "MSVCP140.DLL",
+          "VCRUNTIME140.DLL",
+          "VCRUNTIME140_1.DLL"
+        ],
+        "imported_symbol_count": 194,
+        "executable_bytes": 1140736,
+        "analysis_timed_out": true,
+        "script_inventory_completed": true,
+        "auto_analysis_complete": false,
+        "log_sha256": "fa33e3a1f1865c3b9423633678e31c92c4b86f8aff8c619072fd3477822b95b7"
+      }
+    },
+    "rea": {
+      "selected_files_parsed": 3,
+      "parse_failures": 0,
+      "graph_nodes": 51,
+      "graph_edges": 66,
+      "semantic_nodes": 500,
+      "findings": 42,
+      "raw_sha256": "b4c11b2e5dea1c3cc9dd66adc8d659a9afa54548acd943d41cccbab97adabb46",
+      "two_large_js_scan_timeout": true
+    },
+    "source_metadata_sha256": "0430341c7b288dc3daef5bfc7f8fa19333f767834c621496e46db48d683f0127",
+    "resource_metadata_sha256": "17d45773db000b7cc521909b10e9ffaef6f39ba5d35cf6dcac54b52205c7a4a7"
+  },
+  "kosif_current": {
+    "tools_registered": 107,
+    "powers_previously_verified": 5185
+  },
+  "counts": {
+    "candidate_capability_groups": 22,
+    "priorities": {
+      "P0": 6,
+      "P1": 12,
+      "P2": 4
+    }
+  },
+  "recommendations": [
+    {
+      "id": "T01",
+      "name_ar": "مونتاج الفيديو متعدد المسارات",
+      "area": "editing",
+      "state_kosif": "existing-partial",
+      "priority": "P0",
+      "confidence_static": "strong",
+      "evidence_labels": "videoeditor.dll imports CCCREATOR and CLIPFLOW SDK; Ghidra PE",
+      "existing_kosif_tools": [
+        "kosif-timeline"
+      ],
+      "proposed_independent_implementation": "Ripple/slip/roll edits, nesting, snapping and tracks UI",
+      "suggested_open_techniques": "FFmpeg + EDL JSON + browser canvas",
+      "minimum_acceptance_test": "10 min project, 5 tracks, 100 clips, reversible edits; no source modifications",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T02",
+      "name_ar": "معاينة سريعة وبروكسي ذكي",
+      "area": "render",
+      "state_kosif": "missing",
+      "priority": "P0",
+      "confidence_static": "moderate",
+      "evidence_labels": "avcodec/avformat/avfilter libraries and render architecture",
+      "existing_kosif_tools": [
+        "kosif-timeline"
+      ],
+      "proposed_independent_implementation": "Create low-res proxies and deterministic cache invalidation for editing",
+      "suggested_open_techniques": "FFmpeg + file hashes + background queues",
+      "minimum_acceptance_test": "Originals untouched; proxy frames agree with full-res 1-frame tolerance",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T03",
+      "name_ar": "تأليف النصوص والملصقات والقوالب",
+      "area": "design",
+      "state_kosif": "existing-partial",
+      "priority": "P0",
+      "confidence_static": "moderate",
+      "evidence_labels": "template_sticker and text publish resources; 3 JS files scanned by REA",
+      "existing_kosif_tools": [
+        "creative-paint",
+        "motion-director"
+      ],
+      "proposed_independent_implementation": "Reusable JSON template with editable text, Arabic RTL, fonts, easing",
+      "suggested_open_techniques": "SVG/Pillow/Harfbuzz + license-safe templates",
+      "minimum_acceptance_test": "20 templates, editable RTL text, no text overlap, 9:16 export",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T04",
+      "name_ar": "ترجمة تلقائية وتوقيت كل كلمة",
+      "area": "speech",
+      "state_kosif": "existing-partial",
+      "priority": "P0",
+      "confidence_static": "moderate",
+      "evidence_labels": "speechsdk.dll and audio-alignment model files; not tested models",
+      "existing_kosif_tools": [
+        "audio-cue-mapper",
+        "motion-director"
+      ],
+      "proposed_independent_implementation": "ASR transcription, word forced-alignment and audio-master timings",
+      "suggested_open_techniques": "Whisper or compatible approved ASR + independently licensed aligner",
+      "minimum_acceptance_test": "20 clips word timings compared to human reference; report median/p95 ms error",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T05",
+      "name_ar": "القص الذكي وإعادة تأطير الشخص",
+      "area": "vision",
+      "state_kosif": "missing",
+      "priority": "P1",
+      "confidence_static": "moderate",
+      "evidence_labels": "lvop_intelligent_crop web module; model assets",
+      "existing_kosif_tools": [
+        "kosif-timeline"
+      ],
+      "proposed_independent_implementation": "Person/object bounding boxes and smooth 16:9-to-9:16 auto-reframe",
+      "suggested_open_techniques": "OpenCV + user-approved detection model + interpolation",
+      "minimum_acceptance_test": "Subject remains visible >95% of frames across 3 authorized videos",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T06",
+      "name_ar": "إزالة الخلفية والأقنعة المتحركة",
+      "area": "vision",
+      "state_kosif": "existing-partial",
+      "priority": "P1",
+      "confidence_static": "moderate",
+      "evidence_labels": "Resources/mattingBlendV2 and Chroma/Chroma2 shader files",
+      "existing_kosif_tools": [
+        "app-studio-paint",
+        "unified-media"
+      ],
+      "proposed_independent_implementation": "Video alpha masks, chroma key, edge feather, subject matte timeline",
+      "suggested_open_techniques": "OpenCV thresholding + independently licensed segmentation",
+      "minimum_acceptance_test": "3 moving subjects: alpha edge quality evaluated; no halo > set tolerance",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T07",
+      "name_ar": "تتبع العناصر وتثبيت الفيديو",
+      "area": "vision",
+      "state_kosif": "missing",
+      "priority": "P1",
+      "confidence_static": "weak",
+      "evidence_labels": "Tracking.dll and resource name patterns; no functional test",
+      "existing_kosif_tools": [
+        "kosif-timeline"
+      ],
+      "proposed_independent_implementation": "Track points or objects and attach titles/shapes; stabilization",
+      "suggested_open_techniques": "OpenCV optical flow + robust RANSAC homography",
+      "minimum_acceptance_test": "Anchor average drift <5px for sample reference after 5s",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T08",
+      "name_ar": "محرك مؤثرات GPU وShader Graph",
+      "area": "effects",
+      "state_kosif": "missing",
+      "priority": "P1",
+      "confidence_static": "strong",
+      "evidence_labels": "239 .frag, 203 .vert, 222 .xshader, 279 .material files",
+      "existing_kosif_tools": [
+        "unified-media",
+        "motion-director"
+      ],
+      "proposed_independent_implementation": "Node-based shader effects with GPU fallback and isolated pipelines",
+      "suggested_open_techniques": "WebGL2/Three.js or wgpu with original GLSL shaders",
+      "minimum_acceptance_test": "10 custom filters on 1080p with parity to CPU and bounded frame time",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T09",
+      "name_ar": "تصحيح ألوان الفيديو السينمائي",
+      "area": "color",
+      "state_kosif": "existing-partial",
+      "priority": "P1",
+      "confidence_static": "strong",
+      "evidence_labels": "39 named adjustment subfolders and RGB/HSL/contrast resources",
+      "existing_kosif_tools": [
+        "app-studio-paint"
+      ],
+      "proposed_independent_implementation": "HSL curves, primary wheels, scopes, LUT preview on timeline",
+      "suggested_open_techniques": "OpenColorIO + FFmpeg LUT + OpenCV curves",
+      "minimum_acceptance_test": "Validate LUT and curves against color test chart with Delta-E acceptance",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T10",
+      "name_ar": "الانتقالات المتقدمة وتحريك المفاتيح",
+      "area": "motion",
+      "state_kosif": "existing-partial",
+      "priority": "P1",
+      "confidence_static": "moderate",
+      "evidence_labels": "render/motion shader assets and effect material resources",
+      "existing_kosif_tools": [
+        "kosif-timeline",
+        "motion-director"
+      ],
+      "proposed_independent_implementation": "Transform opacity, position, blur and easing per keyframe",
+      "suggested_open_techniques": "Animation curves + frame-clock engine + FFmpeg filtergraph",
+      "minimum_acceptance_test": "Clip edges seamless; keyframe ±1 frame against source timing",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T11",
+      "name_ar": "تنظيف الصوت والمؤثرات",
+      "area": "audio",
+      "state_kosif": "existing-partial",
+      "priority": "P1",
+      "confidence_static": "strong",
+      "evidence_labels": "audioeffect.dll, FFmpeg resampling imports, audio metrics resources",
+      "existing_kosif_tools": [
+        "kosif-timeline",
+        "audio-cue-mapper"
+      ],
+      "proposed_independent_implementation": "Denoise, de-reverb, loudness normalization, ducking, EQ",
+      "suggested_open_techniques": "FFmpeg loudnorm/afftdn + RNNoise license-checked",
+      "minimum_acceptance_test": "Loudness target LUFS tolerance and SNR improvement on reference speech",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T12",
+      "name_ar": "تزامن الموسيقى والنبض والكلمات",
+      "area": "audio",
+      "state_kosif": "existing-partial",
+      "priority": "P1",
+      "confidence_static": "moderate",
+      "evidence_labels": "three audiosami .model files and audio_metrics folder",
+      "existing_kosif_tools": [
+        "audio-cue-mapper",
+        "unified-cinematic"
+      ],
+      "proposed_independent_implementation": "Beat/tempo candidates with confidence; optional beat snapping separate from speech",
+      "suggested_open_techniques": "librosa/essentia and forced alignment reviewed by license",
+      "minimum_acceptance_test": "BPM error <=2 on reference tracks; report uncertainty and confidence",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T13",
+      "name_ar": "محرر مؤثرات نصوص عربية حركية",
+      "area": "design",
+      "state_kosif": "existing-partial",
+      "priority": "P1",
+      "confidence_static": "moderate",
+      "evidence_labels": "text-effect publishing JS and shaders; QML windows",
+      "existing_kosif_tools": [
+        "creative-paint",
+        "motion-director"
+      ],
+      "proposed_independent_implementation": "Arabic text shaping and glyph animations synced to word-level audio",
+      "suggested_open_techniques": "HarfBuzz + fonts available on system + vector animations",
+      "minimum_acceptance_test": "Correct shaping in 25 Arabic samples, no disjoint connected letters",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T14",
+      "name_ar": "الترميز وتصدير صيغ متعددة",
+      "area": "export",
+      "state_kosif": "existing-partial",
+      "priority": "P1",
+      "confidence_static": "strong",
+      "evidence_labels": "avcodec-61, avformat-61, avfilter-10, SvtAv1Enc.dll and dav1d.dll",
+      "existing_kosif_tools": [
+        "kosif-timeline",
+        "blender-cycles-render"
+      ],
+      "proposed_independent_implementation": "Configurable H264/H265/AV1, alpha options, thumbnails, metadata",
+      "suggested_open_techniques": "Separately licensed FFmpeg build + ffprobe profile checks",
+      "minimum_acceptance_test": "Compatibility checked per installed codecs; no invented exports",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T15",
+      "name_ar": "الدمج بين المونتاج ورندر Blender",
+      "area": "3d",
+      "state_kosif": "existing-partial",
+      "priority": "P1",
+      "confidence_static": "moderate",
+      "evidence_labels": "3D-related shader/material/scene assets; not Blender path tracer",
+      "existing_kosif_tools": [
+        "blender-cinematic-bridge",
+        "blender-cycles-render"
+      ],
+      "proposed_independent_implementation": "Blender shots as editable timeline sources with relink and shot versioning",
+      "suggested_open_techniques": "Blender Python API + timeline project ingest",
+      "minimum_acceptance_test": "Render a camera-animated 3D shot, cut against video, sound remains aligned",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T16",
+      "name_ar": "تنسيق النماذج والموارد والمؤثرات",
+      "area": "system",
+      "state_kosif": "missing",
+      "priority": "P0",
+      "confidence_static": "strong",
+      "evidence_labels": "metadata file inventory: 50 extensions, 3,936 files, resources config",
+      "existing_kosif_tools": [
+        "kosif-timeline"
+      ],
+      "proposed_independent_implementation": "Asset registry: versioned references, reusable presets, hashes and license metadata",
+      "suggested_open_techniques": "SQLite/JSON manifests with strict project directory isolation",
+      "minimum_acceptance_test": "50 assets resolved by hash and origin, no cross-project leakage",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T17",
+      "name_ar": "المونتاج المقترح تلقائيًا",
+      "area": "ai",
+      "state_kosif": "missing",
+      "priority": "P2",
+      "confidence_static": "weak",
+      "evidence_labels": "AI resource/model filenames; no proven auto-edit semantics",
+      "existing_kosif_tools": [
+        "cinematic-cut-planner"
+      ],
+      "proposed_independent_implementation": "AI produces editable proposed cuts, never silently replaces footage",
+      "suggested_open_techniques": "Licensed multimodal models + human-reviewed EDL",
+      "minimum_acceptance_test": "Human approval for every cut; compare 10 proposed timelines",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T18",
+      "name_ar": "التفريغ وتحويل الفيديو لمقاطع",
+      "area": "ai",
+      "state_kosif": "missing",
+      "priority": "P2",
+      "confidence_static": "weak",
+      "evidence_labels": "speechsdk name plus various model assets; not proof of summaries",
+      "existing_kosif_tools": [
+        "cinematic-cut-planner",
+        "video-workflow-bridge"
+      ],
+      "proposed_independent_implementation": "Semantic highlight selection from transcript and shot metadata",
+      "suggested_open_techniques": "Approved ASR + summarization + EDL verification",
+      "minimum_acceptance_test": "50 highlights with precision/recall vs annotated ground truth",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T19",
+      "name_ar": "نظام إضافات مؤثرات قابلة للتحميل",
+      "area": "effects",
+      "state_kosif": "missing",
+      "priority": "P2",
+      "confidence_static": "moderate",
+      "evidence_labels": "smart_cut.ofx.bundle and EffectPlatform.dll structure",
+      "existing_kosif_tools": [
+        "unified-media"
+      ],
+      "proposed_independent_implementation": "OpenFX-compatible gateway or independently authored effect ABI",
+      "suggested_open_techniques": "OpenFX SDK under applicable license + signed plugins",
+      "minimum_acceptance_test": "Plugin sandbox smoke test and deterministic failure fallback",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T20",
+      "name_ar": "قوالب التصميم ثلاثي الأبعاد",
+      "area": "3d",
+      "state_kosif": "existing-partial",
+      "priority": "P2",
+      "confidence_static": "weak",
+      "evidence_labels": "98 .scene, 114 .mesh, 68 .model files; not proof of photorealism",
+      "existing_kosif_tools": [
+        "blender-cycles-render"
+      ],
+      "proposed_independent_implementation": "Reusable procedural 3D shots and camera presets, not copied CapCut models",
+      "suggested_open_techniques": "Blender + Three.js own scenes",
+      "minimum_acceptance_test": "Demo 5s with source .blend preserved, real Cycles receipts",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T21",
+      "name_ar": "إدارة المشاريع وصلاحيات التصميم",
+      "area": "governance",
+      "state_kosif": "missing",
+      "priority": "P0",
+      "confidence_static": "moderate",
+      "evidence_labels": "packaged UI shell, local config resources; project behavior not tested",
+      "existing_kosif_tools": [
+        "kosif-timeline"
+      ],
+      "proposed_independent_implementation": "Per-company media isolation, signed manifests, safe relinking and undo history",
+      "suggested_open_techniques": "SQLite/ACL path scopes, transactions and import validators",
+      "minimum_acceptance_test": "No file selection leaks across companies; negative access tests",
+      "complexity": "medium",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    },
+    {
+      "id": "T22",
+      "name_ar": "إدارة موارد الجودة وGPU",
+      "area": "performance",
+      "state_kosif": "missing",
+      "priority": "P1",
+      "confidence_static": "strong",
+      "evidence_labels": "Qt, CEF, OpenGL, GPU shader binaries and multiple media libraries",
+      "existing_kosif_tools": [
+        "kosif-timeline"
+      ],
+      "proposed_independent_implementation": "Render queue, device check, cache budget, CPU fallback, resource monitors",
+      "suggested_open_techniques": "FFmpeg and GPU API capability detection; bounded workers",
+      "minimum_acceptance_test": "CPU and GPU fallback tests on low-memory machine with identical duration",
+      "complexity": "high",
+      "actual_capcut_runtime_verified": false,
+      "vendor_code_transfer_allowed": false
+    }
+  ],
+  "provenance_and_limits": {
+    "static_data_only": true,
+    "github_contains_vendor_code": false,
+    "third_party_model_weights_copied": false,
+    "ghidra_all_three_analyses_incomplete": true,
+    "user_data_scanned": false,
+    "notes": "The 3 Ghidra function counts are incomplete identification counts, not discovered business capabilities. File path names are weak evidence. No CapCut algorithms, proprietary shaders, model weights or license entitlements transferred. Implement from open standards, audited dependencies and original code."
+  }
+}
