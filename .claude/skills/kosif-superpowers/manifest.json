@@ -8164,8 +8164,8 @@
    "area": "investigate",
    "title_en": "Web app study (public frontend, REA, facts only)",
    "title_ar": "دراسة تطبيق ويب عام بـ REA (حقائق فقط)",
-   "summary_en": "Studies one public web page read-only: an isolated, logged-out headless Chromium (fresh profile, deleted afterwards), then REA captures the page, page-declared WebMCP tools, a screenshot and the public scripts, with SHA-256 receipts; optional bounded static JavaScript analysis. report turns a study folder into facts only: framework and versions, canvas/editor/realtime libraries, services inferred from storage key NAMES, WebMCP tools and page metrics, each with file-and-identifier evidence and never code. Written for the MagicPath study; works on Windows, macOS and Linux.",
-   "summary_ar": "يدرس صفحة ويب عامة للقراءة فقط: متصفح معزول بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح التخزين، بدليل اسم ملف ومعرّف، وبلا أي كود.",
+   "summary_en": "Studies one public web page read-only: a logged-out headless Chromium with a fresh profile and background networking off (fresh profile, deleted afterwards), then REA captures the page, page-declared WebMCP tools, a screenshot and the public scripts, with SHA-256 receipts; optional bounded static JavaScript analysis. report turns a study folder into facts only: framework and versions, canvas/editor/realtime libraries, services inferred from storage key NAMES, WebMCP tools and page metrics, each with file-and-identifier evidence and never code. Written for the MagicPath study; runs on any desktop OS.",
+   "summary_ar": "يدرس صفحة ويب عامة للقراءة فقط: متصفح بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح التخزين، بدليل اسم ملف ومعرّف، وبلا أي كود.",
    "use_when": [
     "حلل واجهة موقع MagicPath العامة بـ REA واعرف مبني بإيه",
     "Study a public web app's frontend stack and declared WebMCP tools without logging in",
@@ -8178,8 +8178,6 @@
     "stack",
     "bundle",
     "javascript",
-    "nextjs",
-    "react",
     "webmcp",
     "rea",
     "browser",
@@ -8191,7 +8189,8 @@
     "تطبيق ويب",
     "هندسة عكسية",
     "مبني بإيه",
-    "magicpath"
+    "magicpath",
+    "tech stack detection"
    ],
    "commands": [
     {
@@ -8230,7 +8229,7 @@
    },
    "safety": "network",
    "consent": "Visits the given public URL in a fresh, logged-out browser and saves its public scripts to a folder outside the repo. Only for sites the user may study; never log in, never commit the exported scripts, borrow ideas in your own words.",
-   "limits": "One page per run, logged out, so features behind sign-in are not observed; storage values, cookies and request bodies are never kept; library detection is identifier-based (a name can appear without the library being used — confidence is shown); the unbounded REA bundle analyzer is not used because it ran out of memory on MagicPath's 5.9 MB bundle.",
+   "limits": "One page per run, logged out, so features behind sign-in are not observed; storage values, cookies and request bodies are never kept; library detection is identifier-based (a name can appear without the library being used — confidence is shown); the unbounded REA bundle analyzer is not used because it ran out of memory (about 8 GB, observed, not receipted) on MagicPath's 5.8 MB bundle.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_web_app_study.py"
    ],

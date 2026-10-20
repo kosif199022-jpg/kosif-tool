@@ -331,10 +331,10 @@
 "name_ar": "مراجعة الافتراضات وإعادة التقييم",
 "name_en": "Challenge approach before commitment",
 "hub": "thinking",
-"stage": "understand",
+"stage": "verify",
 "stages": {
-"understand": 1,
-"verify": 1
+"verify": 1,
+"understand": 1
 },
 "size": 2,
 "best": "documented",
@@ -345,7 +345,7 @@
 "SP-0334",
 "SP-0041"
 ],
-"text": "anti-thrashing circuit breaker after two failed fixes قاطع التكرار العقيم بعد محاولتين فاشلتين thrashing discipline حلقة-مفرغة debugging challenge approach before commitment مراجعة الافتراضات وإعادة التقييم reasoning critique تفكير reset"
+"text": "challenge approach before commitment مراجعة الافتراضات وإعادة التقييم reasoning critique تفكير reset anti-thrashing circuit breaker after two failed fixes قاطع التكرار العقيم بعد محاولتين فاشلتين thrashing discipline حلقة-مفرغة debugging"
 },
 "SP-0007": {
 "id": "SP-0007",
@@ -411,7 +411,7 @@
 "SP-0136",
 "SP-0372"
 ],
-"text": "idea matrix: operators × powers مصفوفة الأفكار: عوامل × قدرات ideas أفكار creativity feasibility from requirements, not optimism الجدوى من المستلزمات لا من التفاؤل ideas أفكار creativity scamper سكامبر (scamper) scamper variation سكامبر تنويع constraint injection حقن القيود constraints limits قيود تحدي strengthen an idea with its steelman objection تقوية الفكرة بالحجة المضادة ideas أفكار creativity worst idea first أسوأ فكرة أولًا bad ideas reverse brainstorming أسوأ فكرة عصف عكسي eight-stage idea development pipeline خط تطوير الفكرة بثماني مراحل ideas أفكار creativity morphological matrix المصفوفة المورفولوجية morphological matrix combinations مصفوفة تركيبات constraint removal إزالة القيود constraint removal ideal إزالة القيود الحل المثالي ensemble and judge التجميع والتحكيم ensemble judge variants تحكيم نسخ متعددة capability cross-over العبور بين القدرات cross-domain capability combination عبور قدرات دمج المجالات inversion القلب: كيف نضمن الفشل؟ inversion reverse thinking القلب التفكير العكسي first principles التفكير من المبادئ الأولى first principles fundamentals المبادئ الأولى جوهر المشكلة perspective swap تبديل المنظور perspective persona empathy منظور شخصية تعاطف exaggerate / minimise (10× / 0.1×) التضخيم والتصغير exaggerate scale تضخيم تصغير مبالغة fermi estimate تقدير فيرمي fermi estimate feasibility تقدير جدوى حساب تقريبي random stimulus (catalog dice) المحفّز العشوائي random stimulus lateral thinking عشوائي محفز تفكير جانبي pre-mortem التشريح المسبق للفشل premortem risk تشريح مسبق مخاطر analogy transfer النقل بالتشبيه analogy transfer metaphor تشبيه نقل الآلية remix the masters (mechanisms, not assets) مزج أساليب المعلّمين remix references influence مزج مراجع إلهام diverge → converge protocol التباعد ثم التقارب divergent convergent brainstorm ideation creative ideas double diamond عصف ذهني توليد أفكار أفكار إبداع ابتكار تباعد تقارب"
+"text": "idea matrix: operators × powers مصفوفة الأفكار: عوامل × قدرات ideas أفكار creativity feasibility from requirements, not optimism الجدوى من المستلزمات لا من التفاؤل ideas أفكار creativity scamper سكامبر (scamper) scamper variation سكامبر تنويع constraint injection حقن القيود constraints limits قيود تحدي strengthen an idea with its steelman objection تقوية الفكرة بالحجة المضادة ideas أفكار creativity worst idea first أسوأ فكرة أولًا bad ideas reverse brainstorming أسوأ فكرة عصف عكسي eight-stage idea development pipeline خط تطوير الفكرة بثماني مراحل ideas أفكار creativity morphological matrix المصفوفة المورفولوجية morphological matrix combinations مصفوفة تركيبات ensemble and judge التجميع والتحكيم ensemble judge variants تحكيم نسخ متعددة constraint removal إزالة القيود constraint removal ideal إزالة القيود الحل المثالي capability cross-over العبور بين القدرات cross-domain capability combination عبور قدرات دمج المجالات inversion القلب: كيف نضمن الفشل؟ inversion reverse thinking القلب التفكير العكسي first principles التفكير من المبادئ الأولى first principles fundamentals المبادئ الأولى جوهر المشكلة perspective swap تبديل المنظور perspective persona empathy منظور شخصية تعاطف exaggerate / minimise (10× / 0.1×) التضخيم والتصغير exaggerate scale تضخيم تصغير مبالغة fermi estimate تقدير فيرمي fermi estimate feasibility تقدير جدوى حساب تقريبي random stimulus (catalog dice) المحفّز العشوائي random stimulus lateral thinking عشوائي محفز تفكير جانبي pre-mortem التشريح المسبق للفشل premortem risk تشريح مسبق مخاطر analogy transfer النقل بالتشبيه analogy transfer metaphor تشبيه نقل الآلية remix the masters (mechanisms, not assets) مزج أساليب المعلّمين remix references influence مزج مراجع إلهام diverge → converge protocol التباعد ثم التقارب divergent convergent brainstorm ideation creative ideas double diamond عصف ذهني توليد أفكار أفكار إبداع ابتكار تباعد تقارب"
 },
 "SP-0010": {
 "id": "SP-0010",
@@ -428,7 +428,7 @@
 "ready_now": 0,
 "links": [
 "SP-0008",
-"SP-0442",
+"SP-0441",
 "SP-0058",
 "SP-0195"
 ],
@@ -452,7 +452,7 @@
 "SP-0146",
 "SP-0336"
 ],
-"text": "show, don't ask: three style previews اعرض ولا تسأل: ثلاث معاينات style preview show don't ask directions taste معاينة اتجاهات ذوق اختيار anti-cliché sweep (generic 'ai look' check) مسح الكليشيهات cliché ai slop design direction taste كليشيه ذوق اتجاه بصري تصميم عام"
+"text": "anti-cliché sweep (generic 'ai look' check) مسح الكليشيهات cliché ai slop design direction taste كليشيه ذوق اتجاه بصري تصميم عام show, don't ask: three style previews اعرض ولا تسأل: ثلاث معاينات style preview show don't ask directions taste معاينة اتجاهات ذوق اختيار"
 },
 "SP-0012": {
 "id": "SP-0012",
@@ -740,7 +740,7 @@
 "links": [
 "SP-0035",
 "SP-0336",
-"SP-0422",
+"SP-0421",
 "SP-0199"
 ],
 "text": "coverage ledger: every explicit ask pass or declared fail سجل التغطية قبل الإرسال coverage requirements checklist missed asks سجل التغطية تغطية الطلبات مراجعة الطلب نقص numeric lock: compute in code, freeze, then narrate قفل الأرقام: احسب بالكود ثم جمّد numeric lock deterministic arithmetic reconcile قفل الأرقام حساب بالكود مطابقة أرقام دقيقة anti-pattern sweep before sending مسح الأنماط المضادة anti-patterns mistakes hallucination stopping early over-asking أنماط مضادة أخطاء توهم توقف مبكر"
@@ -830,15 +830,15 @@
 "links": [
 "SP-0344",
 "SP-0094",
-"SP-0418",
+"SP-0417",
 "SP-0126"
 ],
 "text": "normalize arabic for search and matching تطبيع العربية للبحث والمطابقة normalization search matching tashkeel alef تطبيع بحث همزات camel-tools character utilities without models أدوات camel tools الخفيفة بلا نماذج camel-tools buckwalter transliteration dediac nlp معالجة اللغة نقل حرفي clitic-aware arabic word boundaries حدود الكلمة العربية مع السوابق regex clitics proclitic word boundary سوابق تعبير نمطي spacy: tokenise arabic and match rules (blank 'ar'); ner with downloaded models spacy: تقطيع العربية ومطابقة القواعد؛ واستخراج الكيانات مع nlp spacy toolbelt توسعة match normalized, report in the original spelling طابِق على نسخة مطبّعة واعرض بالإملاء الأصلي offsets highlight display original spelling إملاء أصلي تمييز parse arabic numerals, separators and percent قراءة الأرقام العربية: هندية وفارسية وفواصل ونسبة arabic digits numbers percent separators أرقام هندية نسبة مئوية pyarabic for cleanup and tokenizing (gpl) pyarabic للتنظيف والتقطيع (رخصة gpl) pyarabic tokenize strip tashkeel gpl تقطيع حذف التشكيل arabic fonts: check and install خطوط عربية: فحص وتثبيت fonts amiri cairo fc-list خطوط عربية خط transliteration and romanization النقل الحرفي والرومنة transliteration romanization buckwalter arabizi franco نقل حرفي فرانكو عربيزي shaping arabic for display: exactly one engine تشكيل الحروف للعرض: محرك واحد فقط shaping raqm arabic-reshaper python-bidi pillow matplotlib تشكيل الحروف حروف مقطعة mojibake repair إصلاح الترميز المشوّه encoding mojibake cp1256 utf-8 csv ترميز حروف غريبة month and weekday names (gregorian, levantine, hijri) أسماء الشهور والأيام: ميلادية وشامية وهجرية dates hijri months weekdays تاريخ هجري شهور أيام الأسبوع camel tools: tokenise, lemmatise, diacritise and dialect-identify arabic text camel tools: تقطيع النص العربي واستخراج الجذور والتشكيل وتحديد arabic nlp camel tools toolbelt توسعة morphology, dialect id and ner with full camel-tools تحليل صرفي وتعرّف اللهجة والكيانات (camel tools كاملة) camel-tools morphology dialect identification ner lemmatization صرف تعرف اللهجة كيانات argos translate: translate arabic↔english fully offline argos translate: ترجمة عربي-إنجليزي دون اتصال تمامًا translation argos translate toolbelt توسعة farasa segmenter via farasapy مقطّع farasa عبر farasapy farasa segmentation pos tagging java تقطيع صرفي tashkeel policy سياسة التشكيل (الحركات) tashkeel harakat diacritics quran تشكيل حركات ضبط بالشكل bidi in mixed arabic/latin text الاتجاه الثنائي في النصوص المختلطة bidi rtl direction marks isolates اتجاه النص نص "
 },
 "SP-0029": {
 "id": "SP-0029",
-"name_ar": "تحقق من أرقام OCR ببوابة المراسي",
-"name_en": "Verify OCR numbers with the anchor gate",
+"name_ar": "مراجعة المطابقة النحوية بعد التعديل",
+"name_en": "Agreement check after editing",
 "hub": "type",
 "stage": "verify",
 "stages": {
@@ -874,7 +874,7 @@
 "links": [
 "SP-0113",
 "SP-0044",
-"SP-0425",
+"SP-0424",
 "SP-0121"
 ],
 "text": "refactoring-ui hierarchy and spacing audit تدقيق التسلسل البصري والمسافات hierarchy spacing تسلسل بصري ui-audit signal-to-noise decoration audit تدقيق الضجيج البصري وإزالة الزخرفة clutter minimalism ضجيج بصري audit color system with accessibility and dark mode نظام ألوان يدعم الوصولية والوضع الداكن color contrast ألوان dark-mode gestalt layout: grid, alignment, grouping تخطيط جشتالت: الشبكة والمحاذاة والتجميع grid alignment شبكة gestalt content-stress and edge-case ui hardening اختبار تحمل الواجهة للمحتوى المتطرف edge-cases i18n حالات حدية components typography and legibility rules for web قواعد الخط والمقروئية للويب typography legibility خطوط web low-fi wireframe and adhd-friendly visual organizers مخطط أولي ومنظمات بصرية ملائمة wireframe sketch adhd نموذج"
@@ -943,7 +943,7 @@
 "best": "proven",
 "ready_now": 1,
 "links": [
-"SP-0442",
+"SP-0441",
 "SP-0124",
 "SP-0147",
 "SP-0303"
@@ -1066,7 +1066,7 @@
 "SP-0261",
 "SP-0229"
 ],
-"text": "github actions runner-cost optimizer محسّن تكلفة مشغلات github actions github-actions ci اختصار تكلفة github actions failure triage via gh تشخيص فشل github actions عبر gh ci github-actions triage تشخيص platform-specific deploy and ci integration checklist قائمة نشر وتكامل ci حسب المنصة deploy cloud-run cloudflare نشر multi-stage deployment pipeline design with gates تصميم خط نشر متعدد المراحل ببوابات cicd pipeline خط نشر github actions verified github actions workflow authoring كتابة workflows لـ github actions مع تحقق github-actions ci سير-عمل تحقق cloud platform deploy via blueprint or wrangler النشر على المنصات السحابية عبر blueprint أو wrangler deploy cloudflare نشر منصة prove no consumer before destroying cloud secret إثبات عدم وجود مستهلك قبل حذف سر سحابي aws terraform سر سحابة terraform plan policy gate (opa) بوابة سياسات خطة terraform terraform policy opa سياسات terraform generation posture rules and read-only policy gate قواعد terraform وبوابة سياسة للقراءة فقط terraform iac aws تيرافورم github actions to gcp with workload identity federation github actions إلى gcp عبر workload identity gcp oidc أمان سحابة staged deployment plan with rollback and secret separation خطة نشر مرحلية مع تراجع وفصل الأسرار deploy rollout نشر تراجع saved-plan non-interactive terraform apply تطبيق terraform من خطة محفوظة terraform apply prod تطبيق staged integration deploy with canary and rollback receipt نشر تكامل مرحلي مع كناري وإيصال تراجع deploy canary نشر تراجع cloud service triage via health-first diagnosis flow تشخيص أعطال السحابة بفحص الصحة أولا incident diagnostics تشخيص staged terraform teardown for ecs capacity providers هدم مرحلي لـ ecs بـ terraform terraform aws ecs هدم github actions finops waste audit تدقيق هدر تكلفة github actions finops github-actions cost تكلفة container best-practice audit and rootless nesting تدقيق الحاويات وبودمان المتداخل docker containers حاويات gitops delivery with argo cd or flux تسليم gitops عبر argo cd أو flux gitops argocd flux نشر terraform and iac module generation with drift checks وحدات terraform وكشف الانحراف terraform iac drift بنية-تحتية passwordless ci cloud auth via oidc federation مصادقة ci بلا كلمات مرور عبر oidc oidc iam azure هوية kubernetes multi-tenant platform baseline أساس منصة كوبرنتس متعددة المستأجرين kubernetes rbac helm أمان bounded ci failure repair loop حلقة إصلاح إخفاقات ci محدودة ci repair gh إصلاح gated azure prepare-validate-deploy workflow مسار نشر azure بثلاث بوابات azure azd deploy أزور platform in"
+"text": "github actions runner-cost optimizer محسّن تكلفة مشغلات github actions github-actions ci اختصار تكلفة github actions failure triage via gh تشخيص فشل github actions عبر gh ci github-actions triage تشخيص platform-specific deploy and ci integration checklist قائمة نشر وتكامل ci حسب المنصة deploy cloud-run cloudflare نشر multi-stage deployment pipeline design with gates تصميم خط نشر متعدد المراحل ببوابات cicd pipeline خط نشر github actions verified github actions workflow authoring كتابة workflows لـ github actions مع تحقق github-actions ci سير-عمل تحقق cloud platform deploy via blueprint or wrangler النشر على المنصات السحابية عبر blueprint أو wrangler deploy cloudflare نشر منصة prove no consumer before destroying cloud secret إثبات عدم وجود مستهلك قبل حذف سر سحابي aws terraform سر سحابة terraform plan policy gate (opa) بوابة سياسات خطة terraform terraform policy opa سياسات terraform generation posture rules and read-only policy gate قواعد terraform وبوابة سياسة للقراءة فقط terraform iac aws تيرافورم staged deployment plan with rollback and secret separation خطة نشر مرحلية مع تراجع وفصل الأسرار deploy rollout نشر تراجع github actions to gcp with workload identity federation github actions إلى gcp عبر workload identity gcp oidc أمان سحابة saved-plan non-interactive terraform apply تطبيق terraform من خطة محفوظة terraform apply prod تطبيق staged integration deploy with canary and rollback receipt نشر تكامل مرحلي مع كناري وإيصال تراجع deploy canary نشر تراجع cloud service triage via health-first diagnosis flow تشخيص أعطال السحابة بفحص الصحة أولا incident diagnostics تشخيص staged terraform teardown for ecs capacity providers هدم مرحلي لـ ecs بـ terraform terraform aws ecs هدم github actions finops waste audit تدقيق هدر تكلفة github actions finops github-actions cost تكلفة container best-practice audit and rootless nesting تدقيق الحاويات وبودمان المتداخل docker containers حاويات gitops delivery with argo cd or flux تسليم gitops عبر argo cd أو flux gitops argocd flux نشر terraform and iac module generation with drift checks وحدات terraform وكشف الانحراف terraform iac drift بنية-تحتية passwordless ci cloud auth via oidc federation مصادقة ci بلا كلمات مرور عبر oidc oidc iam azure هوية kubernetes multi-tenant platform baseline أساس منصة كوبرنتس متعددة المستأجرين kubernetes rbac helm أمان bounded ci failure repair loop حلقة إصلاح إخفاقات ci محدودة ci repair gh إصلاح gated azure prepare-validate-deploy workflow مسار نشر azure بثلاث بوابات azure azd deploy أزور platform in"
 },
 "SP-0039": {
 "id": "SP-0039",
@@ -1590,7 +1590,7 @@
 "SP-0066",
 "SP-0002"
 ],
-"text": "rea mcp tool `goto_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية goto rea mcp tool `procedure_references` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `current_procedure` rea mcp: دالة rea mcp reverse engineering هندسة عكسية current rea mcp tool `list_strings` rea mcp: النصوص rea mcp reverse engineering هندسة عكسية list rea mcp tool `current_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية current rea mcp tool `list_unknowns` rea mcp: سرد المجهولات rea mcp reverse engineering هندسة عكسية list rea mcp tool `next_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية next rea mcp tool `procedure_info` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `current_document` rea mcp: المستند الحالي rea mcp reverse engineering هندسة عكسية current rea mcp tool `set_address_name` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية set rea mcp tool `procedure_address` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `list_segments` rea mcp: المقاطع rea mcp reverse engineering هندسة عكسية list rea mcp tool `inspect_address_context` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية inspect rea mcp tool `list_procedures` rea mcp: سرد الإجراءات المستعادة rea mcp reverse engineering هندسة عكسية list rea mcp tool `read_function_instructions` rea mcp: دالة rea mcp reverse engineering هندسة عكسية read rea mcp tool `address_name` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية address rea mcp tool `binary_session` rea mcp: الثنائي rea mcp reverse engineering هندسة عكسية binary rea mcp tool `procedure_assembly` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `build_call_path` rea mcp: الاستدعاء rea mcp reverse engineering هندسة عكسية build rea mcp tool `get_call_graph` rea mcp: الاستدعاء rea mcp reverse engineering هندسة عكسية get rea mcp tool `analyze_function` rea mcp: دالة rea mcp reverse engineering هندسة عكسية analyze rea mcp tool `list_names` rea mcp: سرد الأسماء والرموز rea mcp reverse engineering هندسة عكسية list rea mcp tool `procedure_pseudo_code` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `open_binary` rea mcp: الثنائي rea mcp reverse engineering هندسة عكسية open rea mcp tool `search_strings` rea mcp: النصوص rea mcp reverse engineering هندسة عكسية search rea mcp tool `compare_functions` rea mcp: الدوال rea mcp reverse engineering هندسة عكسية compare rea mcp tool `"
+"text": "rea mcp tool `goto_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية goto rea mcp tool `procedure_references` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `current_procedure` rea mcp: دالة rea mcp reverse engineering هندسة عكسية current rea mcp tool `list_strings` rea mcp: النصوص rea mcp reverse engineering هندسة عكسية list rea mcp tool `current_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية current rea mcp tool `list_unknowns` rea mcp: سرد المجهولات rea mcp reverse engineering هندسة عكسية list rea mcp tool `next_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية next rea mcp tool `procedure_info` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `current_document` rea mcp: المستند الحالي rea mcp reverse engineering هندسة عكسية current rea mcp tool `set_address_name` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية set rea mcp tool `procedure_address` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `list_segments` rea mcp: المقاطع rea mcp reverse engineering هندسة عكسية list rea mcp tool `list_procedures` rea mcp: سرد الإجراءات المستعادة rea mcp reverse engineering هندسة عكسية list rea mcp tool `inspect_address_context` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية inspect rea mcp tool `read_function_instructions` rea mcp: دالة rea mcp reverse engineering هندسة عكسية read rea mcp tool `address_name` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية address rea mcp tool `binary_session` rea mcp: الثنائي rea mcp reverse engineering هندسة عكسية binary rea mcp tool `procedure_assembly` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `build_call_path` rea mcp: الاستدعاء rea mcp reverse engineering هندسة عكسية build rea mcp tool `get_call_graph` rea mcp: الاستدعاء rea mcp reverse engineering هندسة عكسية get rea mcp tool `analyze_function` rea mcp: دالة rea mcp reverse engineering هندسة عكسية analyze rea mcp tool `list_names` rea mcp: سرد الأسماء والرموز rea mcp reverse engineering هندسة عكسية list rea mcp tool `procedure_pseudo_code` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `open_binary` rea mcp: الثنائي rea mcp reverse engineering هندسة عكسية open rea mcp tool `search_strings` rea mcp: النصوص rea mcp reverse engineering هندسة عكسية search rea mcp tool `compare_functions` rea mcp: الدوال rea mcp reverse engineering هندسة عكسية compare rea mcp tool `"
 },
 "SP-0062": {
 "id": "SP-0062",
@@ -1774,7 +1774,7 @@
 "SP-0073",
 "SP-0063",
 "SP-0068",
-"SP-0417"
+"SP-0416"
 ],
 "text": "trace a typed seed through authenticated application evidence json تتبّع ميزة تطبيق rea reverse engineering هندسة عكسية web-js trace trace bounded static semantic relations through authenticated application evidence تتبّع الدلالات جافاسكربت rea reverse engineering هندسة عكسية web-js trace trace one retained script position through an explicitly selected local source map تتبّع موقع المصدر ويب rea reverse engineering هندسة عكسية web-js trace trace one captured script's native imports to urls and captured source candidates تتبّع الاستيرادات وحدة ويب rea reverse engineering هندسة عكسية web-js trace compare exact static javascript export return shapes without execution مقارنة أشكال التصدير جافاسكربت rea reverse engineering هندسة عكسية web-js compare export retained website scripts into an absent directory for static javascript analysis تصدير السكربتات ويب rea reverse engineering هندسة عكسية web-js export recover readable javascript modules with source provenance and verified files استعادة sources جافاسكربت rea reverse engineering هندسة عكسية web-js recover inspect retained har, native mitmproxy, fiddler saz or aioquic qlog records without fetching recorded urls فحص التقاط الشبكة ويب rea reverse engineering هندسة عكسية web-js inspect import a source tree as historical reference only استيراد المصدر مرجعي rea reverse engineering هندسة عكسية web-js import"
 },
@@ -1994,7 +1994,7 @@
 "SP-0062",
 "SP-0066",
 "SP-0076",
-"SP-0428"
+"SP-0427"
 ],
 "text": "search installed sigrok decoders or selected decoder help فحص مفككات إشارة rea reverse engineering هندسة عكسية signal inspect decode an existing signal recording with caller-supplied sigrok فك ترميز تسجيل إشارة rea reverse engineering هندسة عكسية signal decode decode one apk's manifest, metadata, and string resources with apktool فك ترميز الموارد أندرويد rea reverse engineering هندسة عكسية android-device decode"
 },
@@ -2334,7 +2334,7 @@
 "best": "proven",
 "ready_now": 5,
 "links": [
-"SP-0418",
+"SP-0417",
 "SP-0344",
 "SP-0028",
 "SP-0093"
@@ -2461,21 +2461,21 @@
 "stages": {
 "refine": 1,
 "verify": 3,
-"create": 6,
+"create": 9,
 "understand": 2,
-"plan": 3,
-"deliver": 5
+"deliver": 2,
+"plan": 3
 },
 "size": 20,
 "best": "documented",
 "ready_now": 0,
 "links": [
+"SP-0345",
 "SP-0002",
 "SP-0098",
-"SP-0345",
 "SP-0314"
 ],
-"text": "parity first, adaptation second التطابق أولًا ثم التكييف parity refactor tokens تطابق تكييف magicpath visual verification loop for ui against a reference حلقة التحقق البصري للواجهة مقابل المرجع visual diff screenshot overlay تحقق بصري مقارنة magicpath design fidelity contract with a closed deviation list عقد الأمانة للتصميم بقائمة انحرافات مغلقة fidelity parity design to code عقد مطابقة magicpath preflight probe first: auth, context and version as one json فحص تمهيدي أولًا للحساب والسياق preflight auth doctor فحص تمهيدي سياق magicpath pin exactly the version the user is looking at تثبيت النسخة التي يراها المستخدم بالضبط version pin hash reference بصمة نسخة magicpath theme as portable data with a designer-intent field الثيم كبيانات قابلة للنقل مع حقل نية المصمم theme brand design tokens dark mode ثيم هوية magicpath import ui from a repository by reading its design foundation first استيراد واجهة من مستودع بقراءة أساس التصميم أولًا repository design system css variables مستودع أساس التصميم magicpath persistent visual board beside the agent لوحة بصرية دائمة بجانب الوكيل board live preview artifact لوحة معاينة حية magicpath default rules for authored interactive ui frames قواعد افتراضية لإطارات الواجهات التفاعلية ui defaults responsive prototype واجهة تفاعلية قواعد magicpath selection-as-context reference bundle shared by every worker حزمة مراجع من التحديد تُعطى لكل العمّال reference bundle parallel fan-out مراجع توازي magicpath labeled rough sketch for structure; reference for look الرسم التقريبي الموسوم للبنية والمرجع للمظهر sketch wireframe structure رسم تقريبي بنية magicpath deterministic-first edits; the model only for what cannot be rewritten safely التعديل الحتمي أولًا والنموذج للباقي فقط deterministic edit change log timeline تعديل حتمي سجل تغييرات magicpath linked instances: shared style, per-record content نُسخ مرتبطة: نمط مشترك ومحتوى لكل سجل linked instances template records نسخ مرتبطة قالب magicpath design is the look spec; the old component is the behaviour spec التصميم مواصفة الشكل والمكوّن القديم مواصفة السلوك behaviour component swap checklist استبدال مكون سلوك magicpath two-way mcp bridge with a current-selection hint جسر mcp باتجاهين مع تلميح التحديد الحالي mcp bridge agents selection جسر وكلاء magicpath agent-friendly command contract (json, non-interactive, dry-run, explicit states) عقد أوامر مريح للوكيل cli json dry run agent ergonomics أوامر تجربة جافة magicpath two-phase work session with a baseline manifest and an editable-file allowlis"
+"text": "parity first, adaptation second التطابق أولًا ثم التكييف parity refactor tokens تطابق تكييف magicpath visual verification loop for ui against a reference حلقة التحقق البصري للواجهة مقابل المرجع visual diff screenshot overlay تحقق بصري مقارنة magicpath design fidelity contract with a closed deviation list عقد الأمانة للتصميم بقائمة انحرافات مغلقة fidelity parity design to code عقد مطابقة magicpath preflight probe first: auth, context and version as one json فحص تمهيدي أولًا للحساب والسياق preflight auth doctor فحص تمهيدي سياق magicpath theme as portable data with a designer-intent field الثيم كبيانات قابلة للنقل مع حقل نية المصمم theme brand design tokens dark mode ثيم هوية magicpath pin exactly the version the user is looking at تثبيت النسخة التي يراها المستخدم بالضبط version pin hash reference بصمة نسخة magicpath import ui from a repository by reading its design foundation first استيراد واجهة من مستودع بقراءة أساس التصميم أولًا repository design system css variables مستودع أساس التصميم magicpath persistent visual board beside the agent لوحة بصرية دائمة بجانب الوكيل board live preview artifact لوحة معاينة حية magicpath selection-as-context reference bundle shared by every worker حزمة مراجع من التحديد تُعطى لكل العمّال reference bundle parallel fan-out مراجع توازي magicpath default rules for authored interactive ui frames قواعد افتراضية لإطارات الواجهات التفاعلية ui defaults responsive prototype واجهة تفاعلية قواعد magicpath deterministic-first edits; the model only for what cannot be rewritten safely التعديل الحتمي أولًا والنموذج للباقي فقط deterministic edit change log timeline تعديل حتمي سجل تغييرات magicpath linked instances: shared style, per-record content نُسخ مرتبطة: نمط مشترك ومحتوى لكل سجل linked instances template records نسخ مرتبطة قالب magicpath labeled rough sketch for structure; reference for look الرسم التقريبي الموسوم للبنية والمرجع للمظهر sketch wireframe structure رسم تقريبي بنية magicpath two-way mcp bridge with a current-selection hint جسر mcp باتجاهين مع تلميح التحديد الحالي mcp bridge agents selection جسر وكلاء magicpath design is the look spec; the old component is the behaviour spec التصميم مواصفة الشكل والمكوّن القديم مواصفة السلوك behaviour component swap checklist استبدال مكون سلوك magicpath agent-friendly command contract (json, non-interactive, dry-run, explicit states) عقد أوامر مريح للوكيل cli json dry run agent ergonomics أوامر تجربة جافة magicpath two-phase work session with a baseline manifest and an editable-file allowlis"
 },
 "SP-0101": {
 "id": "SP-0101",
@@ -2567,10 +2567,10 @@
 "best": "proven",
 "ready_now": 15,
 "links": [
-"SP-0420",
-"SP-0425",
+"SP-0419",
+"SP-0424",
 "SP-0113",
-"SP-0441"
+"SP-0440"
 ],
 "text": "l-system growth نمو نباتي وزخرفي l-system plant نبات زخرفة procedural font inspection فحص خط font خط inspect arabic coverage font subsetting تقليص خط للويب subset woff2 web font خط ويب two-bone inverse kinematics حل عظمتين (ik) ik bones عظام rigging procedural scatter (poisson disc) نثر عناصر إجرائيًا scatter poisson pattern نثر زخرفة build a font with kerning بناء خط بتقنين الأزواج fontlab font kerning خط تصميم خط ttf otf motion channel ops (chop-style) عمليات القنوات للحركة houdini chop lag noise camera shake حركة اهتزاز vector boolean operations عمليات بوليانية للأشكال المتجهة affinity houdini boolean vector svg متجه شعار images to pdf صور إلى pdf pdf album ألبوم task graph with caching (pdg-style) مخطط مهام بتخزين مؤقت houdini pdg pipeline cache دفعات خط إنتاج fractal noise field حقل ضوضاء إجرائي noise procedural terrain سحب تضاريس bitmap to vector (image trace) تحويل صورة إلى متجه vectorize trace svg متجه شعار segmented, resumable download (idm-style) تنزيل مجزأ قابل للاستئناف idm download resume تحميل تنزيل استئناف lottie json export تصدير lottie lottie bodymovin json animation أنيميشن eased tween, onion skin, sprite sheet حركة متوسطة وقشرة البصل وورقة رسوم animate tween onion skin sprite sheet رسوم متحركة انيميشن"
 },
@@ -2684,8 +2684,8 @@
 },
 "SP-0110": {
 "id": "SP-0110",
-"name_ar": "مشغل فيديو عمودي بالسحب",
-"name_en": "Vertical swipe video player (Android)",
+"name_ar": "كاميرا افتراضية من فيديو",
+"name_en": "Virtual camera from a video file",
 "hub": "software",
 "stage": "assemble",
 "stages": {
@@ -2699,7 +2699,7 @@
 "SP-0157",
 "SP-0342",
 "SP-0120",
-"SP-0441"
+"SP-0440"
 ],
 "text": "virtual camera from a video file كاميرا افتراضية من فيديو virtual camera obs كاميرا افتراضية بث vertical swipe video player (android) مشغل فيديو عمودي بالسحب android tiktok player exoplayer مشغل ريلز"
 },
@@ -2956,7 +2956,7 @@
 "SP-0069",
 "SP-0066"
 ],
-"text": "local project static audit فحص المشروع المحلي دون تشغيل local-project-audit project audit static triage folder inventory file hashes sha256 zip slip path traversal binary candidates ghidra rea فحص مشروع جرد الملفات تحليل ساكن ملفات تنفيذية بصمة الملفات أمان الأرشيف web app study (public frontend, rea, facts only) دراسة تطبيق ويب عام بـ rea (حقائق فقط) web-app-study web app website frontend stack bundle javascript nextjs react webmcp rea browser cdp screenshot reverse engineering تحليل موقع واجهة تطبيق ويب هندسة عكسية مبني بإيه magicpath blender python api audit تدقيق واجهة بايثون في blender blender-api-audit blender bpy bpy.ops addon audit ast static analysis python api operators panels بلندر تحليل ثابت إضافات بلندر واجهة بايثون تدقيق الشيفرة rea family router موجّه عائلات rea rea-family-router rea router موجّه عائلات القدرات هندسة عكسية dotnet apk har firmware capability family routing تصنيف الهدف creative brief importer استيراد الملفات الإبداعية repo-import-briefs import briefs creative brief brief.md briefs.json schema validation catalog batch json strict mode استيراد ملف إبداعي بريف تحقق من الصيغة الأطلس rea owned-repo batch تحليل rea لمستودعات المالك دفعةً واحدة rea-owned-repo-batch rea batch دفعة owned repos مستودعاتي github git clone static analysis تحليل ساكن javascript typescript private evidence أدلة خاصة هندسة عكسية evidence-backed frontend design audit تدقيق تصميم الواجهة بالأدلة audit ui frontend تدقيق"
+"text": "local project static audit فحص المشروع المحلي دون تشغيل local-project-audit project audit static triage folder inventory file hashes sha256 zip slip path traversal binary candidates ghidra rea فحص مشروع جرد الملفات تحليل ساكن ملفات تنفيذية بصمة الملفات أمان الأرشيف web app study (public frontend, rea, facts only) دراسة تطبيق ويب عام بـ rea (حقائق فقط) web-app-study web app website frontend stack bundle javascript webmcp rea browser cdp screenshot reverse engineering تحليل موقع واجهة تطبيق ويب هندسة عكسية مبني بإيه magicpath tech stack detection blender python api audit تدقيق واجهة بايثون في blender blender-api-audit blender bpy bpy.ops addon audit ast static analysis python api operators panels بلندر تحليل ثابت إضافات بلندر واجهة بايثون تدقيق الشيفرة rea family router موجّه عائلات rea rea-family-router rea router موجّه عائلات القدرات هندسة عكسية dotnet apk har firmware capability family routing تصنيف الهدف creative brief importer استيراد الملفات الإبداعية repo-import-briefs import briefs creative brief brief.md briefs.json schema validation catalog batch json strict mode استيراد ملف إبداعي بريف تحقق من الصيغة الأطلس rea owned-repo batch تحليل rea لمستودعات المالك دفعةً واحدة rea-owned-repo-batch rea batch دفعة owned repos مستودعاتي github git clone static analysis تحليل ساكن javascript typescript private evidence أدلة خاصة هندسة عكسية evidence-backed frontend design audit تدقيق تصميم الواجهة بالأدلة audit ui frontend تدقيق"
 },
 "SP-0122": {
 "id": "SP-0122",
@@ -2994,10 +2994,10 @@
 "best": "proven",
 "ready_now": 3,
 "links": [
-"SP-0420",
-"SP-0425",
+"SP-0419",
+"SP-0424",
 "SP-0016",
-"SP-0430"
+"SP-0429"
 ],
 "text": "invention lab candidates مختبر الابتكار الهندسي invention-lab invention ideation brainstorm triz hypothesis falsifiable kill criteria engineering alternatives ابتكار توليد أفكار عصف ذهني فرضية معايير الرفض حلول هندسية system capacity sizer مقدّر سعة الأنظمة architecture-sizer capacity planning system design back-of-envelope rps replicas storage estimate scaling system-design-primer تخطيط السعة تصميم الأنظمة تقدير التخزين عدد السيرفرات الطلبات في الثانية التوسع arabic-aware font fidelity lab مختبر مطابقة الخطوط العربية font-fidelity-lab font matching font identification arabic font typography iou libraqm gsub gpos variable font مطابقة الخط خط عربي تحديد الخط تغطية الحروف تشكيل قصاصة نص"
 },
@@ -3019,9 +3019,9 @@
 "best": "documented",
 "ready_now": 0,
 "links": [
-"SP-0442",
+"SP-0441",
 "SP-0125",
-"SP-0444",
+"SP-0443",
 "SP-0289"
 ],
 "text": "elevenlabs tts, cloning and sound effects تحويل نص لصوت واستنساخ وmؤثرات elevenlabs elevenlabs tts clone استنساخ صوت voice-agent asr/tts stack selection اختيار طبقة asr/tts لوكيل صوتي voice agent twilio وكيل صوتي asr final mix delivery check for youtube 4k فحص تسليم المزيج النهائي ليوتيوب 4k lufs render تسليم ffprobe lyrics and suno music prompt crafting صياغة كلمات الأغاني وموجّهات suno suno lyrics songwriting كلمات أغاني synthesized score with seamless loops مقطوعة مُصنَّعة بحلقات متصلة loops stems music حلقات موسيقى hosted stt with diarization and timestamps تفريغ سحابي مع فصل المتحدثين والتوقيت stt diarization api تفريغ توقيت كلمات game sfx sets with loudness classes مجموعات مؤثرات لعبة بمستويات صوت sfx loudness مؤثرات مستويات local whisper transcription of files and live streams تفريغ محلي بـ whisper للملفات والبث whisper transcribe تفريغ بث مباشر joined-audio timestamp drift fix إصلاح انحراف التوقيت في دمج الصوت ffmpeg drift concat مزامنة دمج صوت gameplay trailer from bot playthroughs تريلر من لعب آلي حقيقي trailer ffmpeg تريلر مونتاج anchored sprite strip generation and normalization توليد ومعايرة شرائط السبرايت sprite pixel سبرايت بكسل monochrome learning explainer image صورة شرح تعليمية أحادية اللون infographic 16:9 شرح تصميم"
@@ -3326,8 +3326,8 @@
 "ready_now": 4,
 "links": [
 "SP-0164",
-"SP-0251",
 "SP-0180",
+"SP-0251",
 "SP-0163",
 "SP-0013"
 ],
@@ -3374,7 +3374,7 @@
 "SP-0188",
 "SP-0255",
 "SP-0369",
-"SP-0440",
+"SP-0439",
 "SP-0044"
 ],
 "text": "hyperframes 3d components & blocks مكونات hyperframes ثلاثية الأبعاد hyperframes 3d components turntable glass hero tilt cards portals & render-to-texture بوابات ومشهد داخل مشهد portal render to texture fbo بوابة tunnels الأنفاق tunnel nested polygons speed نفق props & vehicles from primitives مركبات ودعائم من أشكال أولية props primitives low poly toon دعائم"
@@ -3466,7 +3466,7 @@
 "SP-0155",
 "SP-0141",
 "SP-0356",
-"SP-0419",
+"SP-0418",
 "SP-0128"
 ],
 "text": "paid-generation budget discipline انضباط ميزانية التوليد المدفوع budget ميزانية receipt cap thumbnail generation via paid mcp خدمة الصور المصغرة المدفوعة thumbnail غلاف ctr brand-still recipe: metal + crystal object on brand ground وصفة صور الهوية: كائن معدني وكريستال (ذهبي/جليدي) هوية brand still crystal navy gold rtl hflip licence-first model choice & indemnified firefly الترخيص أولًا وfirefly المحمي قانونيًا licence firefly indemnity ترخيص overlay text, never bake it النص فوق الصورة لا داخلها overlay text arabic brand النص فوق generate-or-compose triage فرز: توليد أم تركيب triage compose فرز cost four anchors of visual consistency المراسي الأربع للثبات البصري consistency seed contact sheet ثبات synthetic-media disclosure, provenance & ethical limits الإفصاح عن الوسائط المصطنعة وحدود التوليد disclosure c2pa ethics إفصاح deepfake image-model routing tree (licence first) شجرة اختيار نموذج الصور والترخيص أولًا routing اختيار النموذج recraft licence"
@@ -3577,8 +3577,8 @@
 "best": "proven",
 "ready_now": 13,
 "links": [
-"SP-0418",
-"SP-0443",
+"SP-0417",
+"SP-0442",
 "SP-0403",
 "SP-0149",
 "SP-0119"
@@ -3602,7 +3602,7 @@
 "SP-0351",
 "SP-0148",
 "SP-0124",
-"SP-0443"
+"SP-0442"
 ],
 "text": "local arabic word-timed transcription (faster-whisper) تفريغ عربي محلي بتوقيت الكلمات تفريغ whisper faster-whisper asr word timestamps arabic تحويل الكلام لنص استخراج الترجمة تفريغ صوتي speech to text offline subtitle/transcript → words.json converter محوّل الترجمات والتفريغ إلى words.json تحويل srt vtt words_convert offset ملف ترجمة سب تايتل تحويل الترجمة subtitles whisper json pre-timed transcript validation التحقق من توقيت جاهز تحقق validation words.json monotonic توقيت جاهز تفريغ خارجي ريل pretimed transcript external transcript text over voiced spans (estimated) توزيع النص على مقاطع الصوت تقدير voiced spans no asr estimate بدون تفريغ توزيع النص توقيت تقريبي approximate timing speech regions hyperframes transcribe cli تفريغ hyperframes hyperframes transcribe parakeet whisper.cpp تفريغ استخراج ترجمة ملف ترجمة srt subtitles cloud stt with diarisation تفريغ سحابي مع فصل المتحدثين تفريغ سحابي diarization deepgram elevenlabs speakers فصل المتحدثين تعدد المتحدثين تفريغ سريع assemblyai speaker labels voice-timed typewriter captions ترجمة تُكتب لحظة النطق آلة كاتبة typewriter captions voice timed كتابة حرف حرف مؤشر كتابة ترجمة متزامنة typing effect caret the .en model trap فخ نماذج .en whisper en model language ar model size trap اختيار النموذج تفريغ عربي ترجمة خاطئة small.en transcription stt audio prep & its timing trap تجهيز الصوت للتفريغ وفخ التوقيت تجهيز الصوت stt prep 16 khz timing trap تنقية الصوت فلتر الصوت حذف الصمت ffmpeg band filter retake detection & transcript-driven assembly كشف الإعادات وتجميع المونتاج من النص إعادات retakes beat sheet transcript edit مونتاج من النص حذف الإعادات تقطيع edit assembly duplicate takes"
 },
@@ -3646,7 +3646,7 @@
 "ready_now": 4,
 "links": [
 "SP-0298",
-"SP-0418",
+"SP-0417",
 "SP-0296",
 "SP-0403",
 "SP-0124"
@@ -3670,8 +3670,8 @@
 "links": [
 "SP-0324",
 "SP-0148",
-"SP-0418",
-"SP-0249",
+"SP-0243",
+"SP-0417",
 "SP-0119"
 ],
 "text": "canvas karaoke pill (html-canvas starter) كاريوكي الكبسولة في starter الكانفس كبسولة karaoke pill canvas starter كاريوكي إبراز الكلمة الحالية ترجمة متحركة html canvas pill highlight lower thirds الأشرطة السفلية شريط سفلي lower third name tag news ticker اسم المتحدث تعريف الضيف لقب title bar name strap embedded captions: rail + peak word behind the subject ترجمة مدمجة: شريط وكلمة ذروة خلف المتحدث مدمجة embedded captions behind subject themes podcast خلف الشخص مقطع متحدث كلمة بارزة matte talking head"
@@ -3716,7 +3716,7 @@
 "ready_now": 2,
 "links": [
 "SP-0160",
-"SP-0433",
+"SP-0432",
 "SP-0156",
 "SP-0174",
 "SP-0020"
@@ -3740,7 +3740,7 @@
 "ready_now": 1,
 "links": [
 "SP-0356",
-"SP-0420",
+"SP-0419",
 "SP-0160",
 "SP-0143",
 "SP-0123"
@@ -3837,7 +3837,7 @@
 "links": [
 "SP-0161",
 "SP-0157",
-"SP-0391",
+"SP-0389",
 "SP-0402",
 "SP-0110"
 ],
@@ -3859,10 +3859,10 @@
 "best": "ready",
 "ready_now": 1,
 "links": [
-"SP-0440",
+"SP-0439",
 "SP-0154",
 "SP-0401",
-"SP-0425",
+"SP-0424",
 "SP-0129"
 ],
 "text": "masked art fade on cards تلاشي الصورة داخل البطاقة بالقناع بطاقات قناع تلاشي الصورة card design gradient mask image fade blueprint: grid card assemble مخطط مشهد: تجميع شبكة البطاقات شبكة شعارات تجميع البطاقات ظهور متتابع logo grid stagger card batch reveal with 3d tilt-up كشف بطاقات بميلان ثلاثي ظهور البطاقات بطاقات المزايا ميلان card reveal stagger scrolltrigger sticky scroll-stack of cards رصّ البطاقات المثبتة أثناء التمرير بطاقات متراكمة تمرير سكرول card stack sticky cards scrolltrigger split tilt cards بطاقتان مائلتان متقابلتان كارتين عرض جنبا إلى جنب ميلان ثلاثي الأبعاد two cards 3d tilt card wall drift جدار بطاقات شبكة بطاقات انجراف بطاقات متحركة card grid floating cards bento principle grid شبكة بطاقات شبكة بطاقات عروض مصغرة بنتو demo grid looping cards staggered photo card grid شبكة بطاقات صور متتابعة بطاقات صور ظهور متتابع معرض صور photo cards stagger bento feature cards بطاقات بنتو للميزات بطاقات مزايا ظهور متتابع شبكة feature grid staggered bento grid assembly تجميع شبكة بينتو شبكة مزايا بلاطات تجميع feature grid spring animation scattered card collage كولاج بطاقات متناثرة بطاقات متناثرة انجراف صور مبعثرة scattered cards drifting cards fly-in moodboard grid صور تطير لتكوين شبكة إلهام مود بورد شبكة صور لوحة إلهام moodboard photo grid stacked badge cards بطاقات مكدسة مائلة بطاقات متداخلة حركة نابضية شارات spring animation overlapping cards split-screen grid شبكة شاشات شاشة مقسومة عدة مقاطع كولاج فيديو video grid multi clip tilted dof card wall backdrop خلفية جدار بطاقات مائل مع عمق ميدان خلفية بطاقات مموهة خلفية متحركة card wall blurred background paper grid drop-in كلمات تسقط في خلايا شبكة كلمات متزامنة شبكة نص حركي kinetic text word timing scatter-to-grid card settle بطاقات مبعثرة تستقر في صف منظم من الفوضى للنظام ترتيب البطاقات شريط بحث search pill spring settle glowing card field fly-over التحليق فوق حقل بطاقات متوهجة بطاقات متوهجة تحليق صور مصغرة thumbnail wall dolly brand grid montage مونتاج شبكي للهوية هوية بصرية شبكة لقطات مقاسات متعددة brand montage multi ratio spacing grid & nested radii rule شبكة 8px والأقطار المتداخلة واجهة مستخدم مسافات زوايا مستديرة هدف اللمس ui tokens focus ring persistent snap grid شبكة ثابتة للمحاذاة شبكة خلفية محاذاة خلفية مربعات grid background alignment"
@@ -3883,7 +3883,7 @@
 "best": "proven",
 "ready_now": 3,
 "links": [
-"SP-0391",
+"SP-0389",
 "SP-0188",
 "SP-0159",
 "SP-0168",
@@ -3977,7 +3977,7 @@
 "ready_now": 1,
 "links": [
 "SP-0178",
-"SP-0245",
+"SP-0246",
 "SP-0185",
 "SP-0349",
 "SP-0083"
@@ -4049,7 +4049,7 @@
 "ready_now": 4,
 "links": [
 "SP-0161",
-"SP-0391",
+"SP-0389",
 "SP-0267",
 "SP-0159",
 "SP-0102"
@@ -4075,7 +4075,7 @@
 "links": [
 "SP-0171",
 "SP-0184",
-"SP-0439",
+"SP-0438",
 "SP-0312",
 "SP-0111"
 ],
@@ -4097,7 +4097,7 @@
 "ready_now": 2,
 "links": [
 "SP-0282",
-"SP-0439",
+"SP-0438",
 "SP-0167",
 "SP-0186",
 "SP-0024"
@@ -4189,9 +4189,9 @@
 "best": "install",
 "ready_now": 0,
 "links": [
-"SP-0421",
+"SP-0420",
+"SP-0422",
 "SP-0423",
-"SP-0424",
 "SP-0396",
 "SP-0020"
 ],
@@ -4356,7 +4356,7 @@
 "best": "proven",
 "ready_now": 2,
 "links": [
-"SP-0419",
+"SP-0418",
 "SP-0324",
 "SP-0189",
 "SP-0332",
@@ -4381,9 +4381,9 @@
 "best": "install",
 "ready_now": 0,
 "links": [
-"SP-0434",
+"SP-0433",
 "SP-0294",
-"SP-0391",
+"SP-0389",
 "SP-0173",
 "SP-0062"
 ],
@@ -4407,7 +4407,7 @@
 "SP-0395",
 "SP-0393",
 "SP-0225",
-"SP-0418",
+"SP-0417",
 "SP-0042"
 ],
 "text": "blueprint: zoom-out workspace reveal مخطط مشهد: كشف بالتبعيد عن مساحة العمل تبعيد كشف تدريجي لقطة قريبة pull back wide reveal pull back reveal كشف بالتراجع كشف ابتعاد الكاميرا رقم reveal zoom out stat reveal canvas zoom-out reveal كشف اللوحة بالابتعاد زووم أوت كشف الأعمال معرض أعمال zoom out reveal portfolio slow reveal dolly حركة كاميرا بطيئة تكشف المعلم كشف تدريجي حركة جانبية بارالاكس reveal shot truck move s09 modern editorial s09 تحريري حديث أسلوب تحريري شبكة أعمدة كشف الأسطر خط النسخ typography line reveal"
@@ -4494,9 +4494,9 @@
 "ready_now": 0,
 "links": [
 "SP-0174",
-"SP-0421",
+"SP-0420",
 "SP-0030",
-"SP-0423"
+"SP-0422"
 ],
 "text": "floating badge chaos field حقل شارات طافية فوضوية فوضى شارات زحمة floating badges chaos split headline + floating ui card عنوان جانبي مع بطاقة واجهة طافية عرض ميزات بطاقة طافية عنوان عريض feature showcase product features one text-bearing object per frame نص واحد في الإطار نص واحد زحمة النصوص وضوح القراءة text overload single message decoration audit (signal-to-noise) تدقيق الزخرفة ونسبة الإشارة للضجيج تنظيف التصميم زحمة بصرية شعار مكرر تبسيط clutter visual noise"
 },
@@ -4515,8 +4515,8 @@
 "ready_now": 0,
 "links": [
 "SP-0161",
-"SP-0391",
-"SP-0432",
+"SP-0389",
+"SP-0431",
 "SP-0159",
 "SP-0119"
 ],
@@ -4536,7 +4536,7 @@
 "best": "ready",
 "ready_now": 1,
 "links": [
-"SP-0419",
+"SP-0418",
 "SP-0332",
 "SP-0354",
 "SP-0207",
@@ -4696,7 +4696,7 @@
 "links": [
 "SP-0364",
 "SP-0199",
-"SP-0439",
+"SP-0438",
 "SP-0184",
 "SP-0029"
 ],
@@ -4720,7 +4720,7 @@
 "links": [
 "SP-0312",
 "SP-0158",
-"SP-0428",
+"SP-0427",
 "SP-0267",
 "SP-0132"
 ],
@@ -4741,8 +4741,8 @@
 "ready_now": 2,
 "links": [
 "SP-0195",
+"SP-0389",
 "SP-0178",
-"SP-0391",
 "SP-0161",
 "SP-0022"
 ],
@@ -4765,10 +4765,10 @@
 "best": "proven",
 "ready_now": 3,
 "links": [
-"SP-0422",
+"SP-0421",
 "SP-0196",
 "SP-0312",
-"SP-0428",
+"SP-0427",
 "SP-0024"
 ],
 "text": "tabular count-up counter العدّاد التصاعدي بأرقام ثابتة العرض counter عداد count-up tabular-nums عداد أرقام رقم يعد عداد تصاعدي number animation counting number benford first-digit chart مخطط بنفورد للرقم الأول benford بنفورد audit fraud تدقيق احتيال كشف التلاعب anomaly detection first digit compact & locale number formatting تنسيق الأرقام المختصر والمحلي format تنسيق intl ar-eg مليون اختصار الأرقام مليار فواصل الآلاف number format thousands separator number pop-in with blur & lift ظهور الرقم بضبابية ورفع pop-in blur glow ظهور ظهور الأرقام توهج ذهبي ضبابية number reveal digit stagger odometer digit roll عداد الأسطوانة (أودوميتر) odometer عداد أسطواني digit roll slot عداد المسافات تدحرج الأرقام لوحة النتائج scoreboard rolling numbers stat-tile trio & proof cards ثلاثية بطاقات الأرقام والإثبات stat tiles بطاقات dashboard reveal proof card بطاقات الأرقام نسبة النمو لوحة تحليلات analytics card growth proportional split bar (segmented pill) شريط النسب المقسّم (كبسولة) split bar شريط مقسم composition pill نسب الأجزاء شريط النسب تقسيم part to whole 100% bar data-in-motion weight & continuity البيانات المتحركة لها وزن واستمرارية data in motion استمرارية hero number إحصائيات فيديو أرقام متحركة موشن جرافيك animated stats stat sequence"
@@ -4854,7 +4854,7 @@
 "ready_now": 0,
 "links": [
 "SP-0363",
-"SP-0435",
+"SP-0434",
 "SP-0221",
 "SP-0319",
 "SP-0113"
@@ -4907,7 +4907,7 @@
 "SP-0146",
 "SP-0209"
 ],
-"text": "bake any grade into a hald clut / .cube and apply luts خَبز أي تلوين في lut lut كيوب هالد تصدير اللوك lut3d haldclut cube bake export look ملف لوت حفظ اللوك تطبيق لوت 3d lut lut export reinhard lab transfer → per-shot .cube نقل رينهارد إلى lut لكل لقطة مطابقة نقل اللون رينهارد color transfer reinhard lab match lut per shot مطابقة الألوان توحيد اللقطات لقطة مرجعية color match 3d lut reference shot log detection before a conversion lut كشف اللوج قبل lut لوج تحويل آيفون log apple log ffprobe color_transfer rec709 تصوير لوج فيديو باهت كشف الصيغة log footage conversion lut 10-bit painter filmic curve, split-tone grade and grain تشطيب الرسام الفيلمي فيلمي رسام تقسيم لوني filmic aces split tone painter pillow رسم بالكود حبيبات منحنى فيلمي film grain code painting tone curve restore grade for old or soft footage ترميم الفوتيج القديم ترميم تحسين فيديو قديم شحذ restore denoise sharpen cas old footage talking head إزالة التشويش توضيح الصورة جودة الفيديو noise reduction enhance video grade change as story (drain, bloom, freeze to grey) التلوين كقصة قصة مشاعر رمادي تجميد story grade desaturate emotion freeze أبيض وأسود حزن وفرح تلوين درامي black and white mood shift css filter shader grade pass driven by story or music تمريرة تلوين الشيدر تشطيب انحراف لوني حبيبات دفء film finish chromatic aberration grain lift audio reactive تفاعل مع الموسيقى باص فينيت music reactive vignette shader basma fingerprint grade chain export سلسلة ffmpeg المُصدّرة من «بصمة» تصدير سكربت أشرطة سينما export letterbox colorbalance grain vignette بصمة حبيبات فيلم تعتيم الأطراف python script ffmpeg chain lut looks with deterministic buildcube fallback لوكات lut مع بديل حتمي lut بليتش أفلام lut bleach bypass film fade offline buildcube بدون إنترنت تيل وبرتقالي لوت جاهز teal orange hyperframes hyperframes webgl grade model, 17 presets and media-treatment cli نموذج تلوين hyperframes هايبرفريمز تلوين ويب منحنيات hyperframes webgl grade presets hsl media-treatment skin-soft عجلات الألوان تعريض حرارة اللون color wheels curves vignette grade split reveal (flat → graded sweep) كشف التلوين بالمقارنة قبل وبعد مقارنة before after split reveal wipe grade compare قبل وبعد التلوين مسحة كشف عرض الفرق comparison flat vs graded measured style pack and grading by measurement حزمة أسلوب مقيسة والتدريج بالقياس grade lut lab style match measurement تدريج لوني قياس مطابقة grade order: technical before creative ترتيب عقد التلوين ترتيب دافنشي تصحيح node order resolve primary correction workflow تصحيح الألوان عقد التلوين "
+"text": "bake any grade into a hald clut / .cube and apply luts خَبز أي تلوين في lut lut كيوب هالد تصدير اللوك lut3d haldclut cube bake export look ملف لوت حفظ اللوك تطبيق لوت 3d lut lut export log detection before a conversion lut كشف اللوج قبل lut لوج تحويل آيفون log apple log ffprobe color_transfer rec709 تصوير لوج فيديو باهت كشف الصيغة log footage conversion lut 10-bit reinhard lab transfer → per-shot .cube نقل رينهارد إلى lut لكل لقطة مطابقة نقل اللون رينهارد color transfer reinhard lab match lut per shot مطابقة الألوان توحيد اللقطات لقطة مرجعية color match 3d lut reference shot painter filmic curve, split-tone grade and grain تشطيب الرسام الفيلمي فيلمي رسام تقسيم لوني filmic aces split tone painter pillow رسم بالكود حبيبات منحنى فيلمي film grain code painting tone curve restore grade for old or soft footage ترميم الفوتيج القديم ترميم تحسين فيديو قديم شحذ restore denoise sharpen cas old footage talking head إزالة التشويش توضيح الصورة جودة الفيديو noise reduction enhance video grade change as story (drain, bloom, freeze to grey) التلوين كقصة قصة مشاعر رمادي تجميد story grade desaturate emotion freeze أبيض وأسود حزن وفرح تلوين درامي black and white mood shift css filter shader grade pass driven by story or music تمريرة تلوين الشيدر تشطيب انحراف لوني حبيبات دفء film finish chromatic aberration grain lift audio reactive تفاعل مع الموسيقى باص فينيت music reactive vignette shader basma fingerprint grade chain export سلسلة ffmpeg المُصدّرة من «بصمة» تصدير سكربت أشرطة سينما export letterbox colorbalance grain vignette بصمة حبيبات فيلم تعتيم الأطراف python script ffmpeg chain lut looks with deterministic buildcube fallback لوكات lut مع بديل حتمي lut بليتش أفلام lut bleach bypass film fade offline buildcube بدون إنترنت تيل وبرتقالي لوت جاهز teal orange hyperframes hyperframes webgl grade model, 17 presets and media-treatment cli نموذج تلوين hyperframes هايبرفريمز تلوين ويب منحنيات hyperframes webgl grade presets hsl media-treatment skin-soft عجلات الألوان تعريض حرارة اللون color wheels curves vignette grade split reveal (flat → graded sweep) كشف التلوين بالمقارنة قبل وبعد مقارنة before after split reveal wipe grade compare قبل وبعد التلوين مسحة كشف عرض الفرق comparison flat vs graded measured style pack and grading by measurement حزمة أسلوب مقيسة والتدريج بالقياس grade lut lab style match measurement تدريج لوني قياس مطابقة grade order: technical before creative ترتيب عقد التلوين ترتيب دافنشي تصحيح node order resolve primary correction workflow تصحيح الألوان عقد التلوين "
 },
 "SP-0206": {
 "id": "SP-0206",
@@ -5021,8 +5021,8 @@
 "links": [
 "SP-0379",
 "SP-0403",
-"SP-0421",
-"SP-0418",
+"SP-0420",
+"SP-0417",
 "SP-0044"
 ],
 "text": "kinetic-flow locked themes a–q + custom r ثيمات kinetic flow السبعة عشر ثيمات تايبوغرافي قفل الأسلوب kinetic themes style lock neon gold noir swiss نصوص متحركة ثيم مخصص ستايل ثابت kinetic typography custom theme prompt hyperframes themes + 18-token contract ثيمات hyperframes وعقد الرموز ثيم رموز متغيرات css theme tokens css variables hyperframes تغيير الثيم ألوان وخطوط ثيم جاهز design tokens theme file hyperframes treatment recipes and feedback lanes وصفات المعالجة وممرات الملاحظات معالجة vhs هافتون ملاحظات العميل treatment vhs halftone dither crt feedback lane ريترو شريط فيديو 8 ملم retro 8mm client notes two-tone headline and accent word عنوان بلونين وكلمة مميزة عنوان كلمة مميزة لونان headline accent word two tone highlight إبراز كلمة تايتل خط تحت الكلمة keyword highlight underline title treatment ladder: colour → duotone → halftone → vector سلم المعالجة ثنائي اللون هافتون بوب آرت duotone halftone pop art stylize لونين نقاط طباعة تحويل الصورة flat vector on beat two ink"
@@ -5069,7 +5069,7 @@
 "links": [
 "SP-0376",
 "SP-0089",
-"SP-0438",
+"SP-0437",
 "SP-0342"
 ],
 "text": "flat educational water cycle دورة الماء التعليمية المسطحة water cycle kids flat explainer دورة الماء تعليمي four-stage 3d science explainer شرح علمي ثلاثي الأبعاد بأربع مراحل science 3d explainer water cycle stages علوم tech blueprint style أسلوب الرسومات التقنية blueprint engineering drawing tech رسومات تقنية manim explainer workflow فيديو شرح بـmanim manim explainer math animation شرح رياضيات pr-to-video & faceless explainer pipelines من طلب دمج أو نص إلى فيديو شرح pr to video faceless explainer pipeline changelog hyperframes code blocks كتل hyperframes للكود code blocks hyperframes code morph vs code terminal manim derivations & limits manim للاشتقاق والنهايات manim derivation limit tangent رياضيات decision path & flowchart مسار قرار ومخطط انسيابي decision tree flowchart branches قرار excalidraw & json canvas boards سبورة excalidraw ولوحات json canvas excalidraw json canvas whiteboard mind map equation built step by step (bidi-safe) معادلة تتكون خطوة خطوة equation katex math bidi معادلة seeded typing animation كتابة بتذبذب مزروع typing typewriter caret seeded كتابة explainer visual devices أدوات بصرية للشرح explainer devices sorting ecosystem marquee أدوات شرح ml explainer devices شروح تعلم الآلة machine learning attention convolution matrix ذكاء اصطناعي abstract code pills & token chips كود مجرد ورقائق tokens chips json abstract code رقائق code + live preview split كود ومعاينة حية live preview code split creative coding معاينة live telemetry & math hud لوحة قياسات حية telemetry hud live values physics قياسات trade-off, analogy & checklist cards بطاقات المقارنة والتشبيه والقوائم comparison cards analogy checklist مقارنة cell-flight visual proof برهان بصري بطيران الخلايا visual proof pythagoras cells برهان fourier epicycles & unit-circle sine دوائر فورييه والجيب fourier epicycles sine unit circle فورييه exaggerated scale & size comparison التضخيم والمقارنة بالمقياس scale exaggeration comparison مقياس explainer card system نظام بطاقات الفيديو الشارح explainer cards chapter card keyword pop بطاقات explainer diagram composition قواعد تركيب مخطط الشرح diagram composition nodes مخطط قواعد learning-mono explainer frame إطار الشرح الأحادي mono minimal study frame أحادي اللون fair speed comparison مقارنة سرعة عادلة comparison race fair مقارنة mechanism beat: animate behaviour, not code حرّك ما يفعله الكود mechanism runtime behaviour retry cache آلية diff reveal كشف الفرق diff code change red green فرق mistake then correction خطأ ثم تصحيح mistake correction wrong"
@@ -5181,7 +5181,7 @@
 "SP-0171",
 "SP-0200",
 "SP-0350",
-"SP-0437",
+"SP-0436",
 "SP-0056"
 ],
 "text": "leader-line callouts (2d & 3d) تسميات بخطوط قائدة callout leader line label 3d annotation تسمية line highlight, scroll & error sweep إبراز السطر والتمرير والخطأ highlight line scroll error إبراز timeline with playhead الخط الزمني برأس تشغيل timeline playhead milestones خط زمني"
@@ -5202,8 +5202,8 @@
 "best": "proven",
 "ready_now": 16,
 "links": [
-"SP-0424",
-"SP-0248",
+"SP-0423",
+"SP-0249",
 "SP-0219",
 "SP-0240",
 "SP-0126"
@@ -5251,8 +5251,8 @@
 "ready_now": 7,
 "links": [
 "SP-0160",
-"SP-0396",
 "SP-0251",
+"SP-0396",
 "SP-0414",
 "SP-0131"
 ],
@@ -5300,7 +5300,7 @@
 "ready_now": 4,
 "links": [
 "SP-0290",
-"SP-0429",
+"SP-0428",
 "SP-0251",
 "SP-0295",
 "SP-0074"
@@ -5322,7 +5322,7 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0429",
+"SP-0428",
 "SP-0300",
 "SP-0160",
 "SP-0252",
@@ -5370,7 +5370,7 @@
 "ready_now": 3,
 "links": [
 "SP-0161",
-"SP-0391",
+"SP-0389",
 "SP-0159",
 "SP-0183",
 "SP-0021"
@@ -5440,8 +5440,8 @@
 "links": [
 "SP-0111",
 "SP-0237",
-"SP-0246",
-"SP-0434"
+"SP-0247",
+"SP-0433"
 ],
 "text": "render_html seek driver (window.__kosif contract) محرك الرندر بوضع seek تحويل الصفحة لفيديو تصوير الإطارات رندر html to mp4 cdp screenshot plan → manifest + self-contained 2d html compiler مترجم الخطة إلى manifest وصفحة html تحويل الخطة صفحة واحدة مشاهد وعناوين plan compiler html page editorial storyboard compiler مُجمّع ستوري بورد التحرير تخطيط المشاهد ريلز فيديو طولي storyboard reels render_html.cjs seek mode وضع seek في render_html رندر تصدير فيديو تحويل html لفيديو html to video playwright landing-page single-file html discipline انضباط صفحة الهبوط في ملف واحد لاندنج بيدج موقع صفحة واحدة تصميم متجاوب landing page responsive html seek contract عقد seek واجهة الرندر جاهزية الصفحة مدة الفيديو render api page contract html-to-png still with auto-trim تحويل html إلى صورة png مع قص تلقائي بطاقة بيانات عنوان سفلي لقطة شاشة screenshot lower third end card html seek renderer رندر html حتمي تصدير فيديو ورقة معاينة رندر html to mp4 contact sheet hyperframes: html as video source هايبر فريمز: html كمصدر للفيديو فيديو من html موشن جرافيك تصدير html video headless chrome html composition format صيغة التركيب html فيديو من html بنية الملف توقيت العناصر html video clips headless html frame render تصيير html لقطة شاشة صورة ثابتة تصيير صفحة html to png still frame html-to-video composition model نموذج التركيب: html يتحول إلى فيديو فيديو من html موشن جرافيك تحريك بالكود html to video deterministic render seekable page animation renderer (render(t)/seek(t) -> mp4) تصيير صفحة قابلة للتقديم إلى فيديو صفحة إلى فيديو تصدير فيديو رندر html to video headless chromium html motion project مشروع موشن html موشن جرافيك ضبابية الحركة انيميشن html motion graphics draft hyperframes html composition contract عقد تركيب hyperframes قواعد التركيب سمات html جودة التصيير composition rules render quality html / three.js page to one deterministic frame صفحة html/three.js إلى إطار حتمي لقطة صفحة صورة من صفحة ويب إطار واحد webgl still page screenshot hyperframes route (target) مسار hyperframes فيديو من html تثبيت متطلبات node html to video seekable html page contract عقد الصفحة القابلة للتقديم عقد الصفحة شروط التصيير جاهزية page contract seek seekable html composition contract عقد التركيب القابل للتقديم إطاراً بإطار تقديم بالزمن إطار بإطار قابلية التصيير seek frame by frame htmlincanvas post-processing معالجة لاحقة لعناصر html مؤثرات فلاتر طبقات html webgl effects dom to canvas html-in-canvas live screens واجهات html داخل الكانفس شاشة موبايل موك أب واجهة تطبيق device mockup three.js texture slide"
 },
@@ -5463,7 +5463,7 @@
 "links": [
 "SP-0339",
 "SP-0237",
-"SP-0243",
+"SP-0244",
 "SP-0235",
 "SP-0109"
 ],
@@ -5501,22 +5501,22 @@
 "hub": "3d",
 "stage": "create",
 "stages": {
-"create": 14,
+"create": 13,
 "understand": 3,
 "plan": 2,
 "assemble": 2
 },
-"size": 21,
+"size": 20,
 "best": "proven",
 "ready_now": 9,
 "links": [
 "SP-0355",
 "SP-0315",
 "SP-0241",
-"SP-0249",
+"SP-0243",
 "SP-0077"
 ],
-"text": "project scaffold routes (flat / 3d / canvas / lab) مسارات إنشاء المشروع قالب بداية مشروع جديد ثلاثي الأبعاد starter template new project kosif.py scaffold (project folder) إنشاء مجلد مشروع مشروع جديد مجلد العمل قالب بداية scaffold project setup project scaffold تجهيز مشروع مشروع جديد ملفات الخطة بداية العمل scaffold style id kmotion one-command hub with arabic menu واجهة kmotion الموحدة بقائمة عربية قائمة عربية أمر واحد أدوات المونتاج cli menu toolbox animation project scaffold (2d/3d) إنشاء مشروع أنيميشن 2d/3d مشروع جديد قالب أنيميشن مقاس الفيديو new project template project scaffolds: 2d, 3d, canvas, lab قوالب مشاريع جاهزة قالب جاهز بداية مشروع موشن جرافيك starter new composition project kind auto-detection كشف نوع المشروع تلقائيًا تصنيف المشروع اختيار المصيّر مقاس الفيديو project detection renderer choice kmotion: one arabic menu for 48 commands kmotion: قائمة عربية لكل الأدوات قائمة أوامر واجهة عربية أوامر الأداة menu cli single cli entry kmotion واجهة kmotion الموحدة قائمة الأوامر مساعدة قائمة عربية help menu command list new motion project 2d/3d مشروع موشن جديد مشروع موشن انيميشن ثلاثي الأبعاد scaffold 3d project new flat 2d project (gsap+motion-kit) مشروع موشن ثنائي الأبعاد موشن جرافيك مشروع جديد انيميشن 2d 2d animation new project scaffold project (init) with examples and media إنشاء مشروع بالأمثلة والوسائط مشروع جديد قالب جاهز تفريغ الصوت فيديو عمودي scaffold transcribe cli: init أمر: إنشاء مشروع مشروع جديد ترجمة تلقائية مقاس عمودي scaffold auto captions new canvas project مشروع كانفس رسم بالكود كانفس رسوم متحركة canvas drawing code drawing hyperframes gsap composition template قالب تركيب hyperframes مشروع جديد ظهور العنوان حبيبات الفيلم new project title reveal lab project recipe (new → score → frames → render → inspect) وصفة مشروع المختبر فيلم 3d موسيقى تصويرية لقطات مراجعة 3d film score info / upgrade / compositions / docs / benchmark / clean أوامر مساعدة متنوعة تحديث الأداة قائمة التركيبات قياس السرعة version check project info project file, autosave and undo حفظ المشروع والتراجع استرجاع العمل تراجع اختصارات لوحة المفاتيح save project handoff cli: doctor / info / compositions / benchmark / clean / upgrade / browser أمر: أدوات الصيانة تشخيص البيئة مسح الكاش صيانة المشروع troubleshoot cache cleanup tailwind v4 compositions تركيبات بـ tailwind v4 تنسيق أول إطار وميض بلا تنسيق css styling unstyled flash new animation project (2d / 3d / lab) مشروع أنيميشن جديد مشروع جديد إنشاء مشروع ثلاثي الأبعاد scaffold new project kmotion"
+"text": "project scaffold routes (flat / 3d / canvas / lab) مسارات إنشاء المشروع قالب بداية مشروع جديد ثلاثي الأبعاد starter template new project kosif.py scaffold (project folder) إنشاء مجلد مشروع مشروع جديد مجلد العمل قالب بداية scaffold project setup project scaffold تجهيز مشروع مشروع جديد ملفات الخطة بداية العمل scaffold style id kmotion one-command hub with arabic menu واجهة kmotion الموحدة بقائمة عربية قائمة عربية أمر واحد أدوات المونتاج cli menu toolbox animation project scaffold (2d/3d) إنشاء مشروع أنيميشن 2d/3d مشروع جديد قالب أنيميشن مقاس الفيديو new project template project scaffolds: 2d, 3d, canvas, lab قوالب مشاريع جاهزة قالب جاهز بداية مشروع موشن جرافيك starter new composition project kind auto-detection كشف نوع المشروع تلقائيًا تصنيف المشروع اختيار المصيّر مقاس الفيديو project detection renderer choice kmotion: one arabic menu for 48 commands kmotion: قائمة عربية لكل الأدوات قائمة أوامر واجهة عربية أوامر الأداة menu cli single cli entry kmotion واجهة kmotion الموحدة قائمة الأوامر مساعدة قائمة عربية help menu command list new motion project 2d/3d مشروع موشن جديد مشروع موشن انيميشن ثلاثي الأبعاد scaffold 3d project new flat 2d project (gsap+motion-kit) مشروع موشن ثنائي الأبعاد موشن جرافيك مشروع جديد انيميشن 2d 2d animation new project scaffold project (init) with examples and media إنشاء مشروع بالأمثلة والوسائط مشروع جديد قالب جاهز تفريغ الصوت فيديو عمودي scaffold transcribe cli: init أمر: إنشاء مشروع مشروع جديد ترجمة تلقائية مقاس عمودي scaffold auto captions hyperframes gsap composition template قالب تركيب hyperframes مشروع جديد ظهور العنوان حبيبات الفيلم new project title reveal lab project recipe (new → score → frames → render → inspect) وصفة مشروع المختبر فيلم 3d موسيقى تصويرية لقطات مراجعة 3d film score info / upgrade / compositions / docs / benchmark / clean أوامر مساعدة متنوعة تحديث الأداة قائمة التركيبات قياس السرعة version check project info project file, autosave and undo حفظ المشروع والتراجع استرجاع العمل تراجع اختصارات لوحة المفاتيح save project handoff cli: doctor / info / compositions / benchmark / clean / upgrade / browser أمر: أدوات الصيانة تشخيص البيئة مسح الكاش صيانة المشروع troubleshoot cache cleanup tailwind v4 compositions تركيبات بـ tailwind v4 تنسيق أول إطار وميض بلا تنسيق css styling unstyled flash new animation project (2d / 3d / lab) مشروع أنيميشن جديد مشروع جديد إنشاء مشروع ثلاثي الأبعاد scaffold new project kmotion"
 },
 "SP-0232": {
 "id": "SP-0232",
@@ -5702,8 +5702,8 @@
 "links": [
 "SP-0268",
 "SP-0233",
-"SP-0243",
-"SP-0263",
+"SP-0265",
+"SP-0244",
 "SP-0120"
 ],
 "text": "h.264 encode with untouched audio mux تشفير h.264 مع دمج الصوت دون تعديل دمج الصوت تعليق صوتي تصدير نهائي audio mux voiceover aac h.264 profile fallback chain سلسلة احتياط ملف h.264 توافق الترميز جودة الفيديو ترميز codec fallback avc profile png sequence to h.264 mp4 encode تجميع الإطارات إلى فيديو mp4 تصدير فيديو دمج الصوت إطارات ffmpeg export ffmpeg h.264 encode + contact sheet + gif تجميع mp4 ولوحة تحقق تصدير فيديو صورة متحركة لوحة مصغرات gif preview export svg frame export + ffmpeg encode تصدير إطارات svg ثم ترميز mp4 رسوم متجهة تحويل إلى فيديو ترميز svg animation rasterize cli: render أمر: تصيير تصدير صيغ الفيديو جودة الفيديو gif export gpu encode manual ffmpeg encode from frames ترميز يدوي من الإطارات تجميع الصور لفيديو دمج الصوت صور إلى فيديو png sequence frames to video libx264 nvenc encode flags (vendored) ترميز nvenc ترميز بكرت الشاشة توحيد الصوت ترجمة cuda h264_nvenc loudnorm trailer encode and gif loop recipe وصفة ترميز التريلر وحلقة الجيف تصدير نهائي جيف متكرر تريلر gif loop loudnorm palettegen hardware encoder fallback الترميز بالعتاد مع بديل برمجي كرت الشاشة ترميز سريع تسريع عتادي gpu encode nvenc libx264 scrub-friendly encode ترميز مناسب للسحب سحب الفيديو تقديم وترجيع نسخة موبايل scrubbing short gop faststart interleaved render workers and a continuity gate عمال رندر متداخلون وبوابة استمرار parallel render workers frames encode رندر متوازٍ عمال dense-keyframe re-encode for seekable footage إعادة الترميز بإطارات مفتاحية كثيفة تجمد الفيديو إطارات مفتاحية إعادة ترميز gop keyframe interval seek freeze lossless remux / container swap تغيير الحاوية بدون إعادة ترميز تحويل الصيغة بدون فقد جودة إصلاح فيديو remux mkv to mp4 stream copy"
@@ -5728,7 +5728,7 @@
 "SP-0322",
 "SP-0136",
 "SP-0235",
-"SP-0422",
+"SP-0421",
 "SP-0119"
 ],
 "text": "remotion rule checklist قائمة قواعد remotion remotion react video captions transitions ريموشن remotion route (target) مسار remotion مونتاج طويل ريموشن مراجعة react video long edit remotion kosiffilm composition تركيبة kosiffilm في remotion فيديو رأسي قالب جاهز ترجمة vertical video react remotion equivalent path مسار remotion رياكت تسلسل المشاهد حركة نابضية react video spring remotion delivery path مسار تسليم remotion تسليم لقطة ثابتة فحص الجودة delivery props @remotion/three integration تكامل remotion مع three ثلاثي الأبعاد ثري دي رياكت 3d in react threecanvas remotion to hyperframes port تحويل مشاريع remotion تحويل مشروع نقل الكود ترحيل migration react to html parameterized remotion compositions تراكيب ريموشن قابلة للتهيئة فيديو بالبيانات قالب فيديو أفقي وعمودي data-driven video props schema remotion editable timeline patterns أنماط التايملاين في remotion مونتاج ترانزيشن قص المقاطع ripple edit transitions parameterized launch video in remotion فيديو إطلاق بمعاملات في ريموشن فيديو إطلاق إعلان منتج فيديو ديمو product launch demo video remotion frame-driven animation تحريك ريموشن المعتمد على رقم الإطار ريموشن رقم الإطار تسهيل الحركة interpolate easing standard 6-step delivery التسليم القياسي بست خطوات خطوات التسليم تسليم الفيديو فحص نهائي delivery verify video test report youtube 4k delivery spec and loudness check مواصفات تسليم يوتيوب 4k وفحص الجهارة رفع على يوتيوب علو الصوت معدل البت youtube upload lufs ebur128"
@@ -5783,6 +5783,29 @@
 },
 "SP-0243": {
 "id": "SP-0243",
+"name_ar": "قالب الكانفاس",
+"name_en": "Canvas route template",
+"hub": "3d",
+"stage": "create",
+"stages": {
+"assemble": 4,
+"create": 7,
+"deliver": 1
+},
+"size": 12,
+"best": "ready",
+"ready_now": 3,
+"links": [
+"SP-0433",
+"SP-0152",
+"SP-0137",
+"SP-0326",
+"SP-0063"
+],
+"text": "native canvas time-seekable renderer محرك canvas الأصلي القابل للتقديم معاينة وتصدير جزيئات شريط تقدم deterministic canvas drawframe canvas retained scene model نموذج مشهد محفوظ للـ canvas رسم بياني إعادة الرسم دقة الشاشة canvas state pixel ratio canvas route template (pure function of t) مسار الكانفس زنبرك منحنيات الحركة إيقاع spring easing bpm canvas route template قالب الكانفاس كانفاس قالب جاهز إيقاع canvas template spring new canvas project مشروع كانفس رسم بالكود كانفس رسوم متحركة canvas drawing code drawing gsap proxy object driving canvas كائن وسيط يحرك الكانفس كانفس رسم إجرائي تايم لاين canvas animation procedural art native-resolution canvas with viewer-style fit لوحة بدقتها الأصلية مع عرض ملائم دقة أصلية تكبير الصورة عرض الصورة integer zoom native resolution draft scale for fast 3d drafts مسودة منخفضة الدقة مسودة سريعة دقة منخفضة تسريع الرندر draft low res previz-then-final tiering مسودة ثم نهائي مسودة توفير التكلفة دقة منخفضة previz low res renderer ladder svg -> canvas -> webgl سلم المصيّرات svg ثم canvas ثم webgl رسم بياني جسيمات عناصر كثيرة data viz pixijs particles supersampled output (--scale) تكبير دقة الإخراج دقة أعلى حدة الصورة مضاعفة الدقة supersampling device scale factor honest local upscale to 4k (lanczos + unsharp) رفع دقة محلي صادق إلى 4k رفع الدقة تكبير الفيديو زيادة الحدة upscale lanczos 4k"
+},
+"SP-0244": {
+"id": "SP-0244",
 "name_ar": "تجميع اللقطات بنوافذ إطارات",
 "name_en": "Shot assembly by frame windows",
 "hub": "3d",
@@ -5805,8 +5828,8 @@
 ],
 "text": "shot assembly by frame windows تجميع اللقطات بنوافذ إطارات مونتاج تقطيع اللقطات دمج المقاطع موسيقى خلفية frame-accurate cut concat fcpxml generation توليد fcpxml لفاينل كت نقل المونتاج تصدير مشروع برنامج مونتاج final cut premiere xml export parallel browser render workers with lossless concat عمّال تصيير متوازون ودمج بلا فقد تسريع التصيير تصيير متوازي دمج بلا فقد parallel render concat parallel chunked browser render joined without re-encode تصيير متوازٍ بمقاطع تُدمج بلا إعادة ترميز دمج المقاطع بدون إعادة ترميز تقسيم التصيير lossless concat chunks ffmpeg cut/concat/burn/reframe أوامر ffmpeg قص الفيديو دمج مقاطع حرق الترجمة تقطيع trim aspect ratio offline audio mixdown مكساج الصوت أوفلاين مكساج دمج الصوت صوت audio mix sfx clip attributes and tracks سمات المقاطع والمسارات توقيت المقاطع مسارات مستوى الصوت clip timing volume index assembler and transition injector مجمّع الفهرس وحاقن الانتقالات تجميع المشاهد ترانزيشن انتقالات storyboard assembly deterministic seek(frame) rendering عرض حتمي بدالة الإطار إطارات مفتاحية كي فريم تصيير ثابت keyframes frame number frame-addressed shot spec مواصفة لقطات بأرقام الإطارات كي فريم تقطيع على الإيقاع رقم الإطار keyframes beat sync bpm programmatic overlays over ai footage طبقات برمجية فوق اللقطات المولدة ذكاء اصطناعي بي رول عناوين فوق الفيديو b-roll ai video overlay"
 },
-"SP-0244": {
-"id": "SP-0244",
+"SP-0245": {
+"id": "SP-0245",
 "name_ar": "عشوائية ببذرة ثابتة",
 "name_en": "Seeded randomness (mulberry32 rng + hash)",
 "hub": "3d",
@@ -5829,8 +5852,8 @@
 ],
 "text": "seeded rng (mulberry32) and hash عشوائية ببذرة عشوائية ثابتة تكرار النتيجة ضوضاء random seed deterministic seeded randomness (mulberry32 rng + hash) عشوائية ببذرة ثابتة عشوائية بذرة رندر مطابق seed deterministic seeded randomness (mulberry32 + hash) عشوائية ببذرة نتيجة ثابتة أرقام عشوائية بذرة random seed reproducible seeded prng (mulberry32) عشوائية مبذورة جسيمات عشوائية ثابتة توزيع عشوائي particles random seed seeded math.random in renderer (--seed) بذرة عشوائية ثابتة عشوائية تكرار الحركة رندر ثابت seed flag deterministic seeded rng and hash (mulberry32) عشوائية بذرية عشوائية ثابتة بذرة جسيمات random seed reproducible determinism rules قواعد الحتمية ثبات النتيجة قواعد التصيير بذرة عشوائية deterministic no network deterministic f(t) simulation محاكاة حتمية كدالة في الزمن محاكاة بذرة عشوائية إعادة تشغيل الأحداث seeded simulation canvas seekable-timeline determinism rules قواعد الحتمية للتصيير إطارًا بإطار تصيير ثابت عشوائية ببذرة تايملاين mulberry32 seekable gsap seekability rules قواعد قابلية القفز قفز الزمن أخطاء الأنيميشن عشوائية fromto lottie seek deterministic seekable video فيديو حتمي قابل للقفز قفز في الزمن ساعة واحدة فحص الإطارات seek seeded random preload"
 },
-"SP-0245": {
-"id": "SP-0245",
+"SP-0246": {
+"id": "SP-0246",
 "name_ar": "تكامل: Lottie Creator MCP",
 "name_en": "Integration: Lottie Creator MCP",
 "hub": "3d",
@@ -5845,15 +5868,15 @@
 "best": "proven",
 "ready_now": 2,
 "links": [
-"SP-0248",
+"SP-0249",
 "SP-0061",
 "SP-0257",
 "SP-0153"
 ],
 "text": "hyperframes composition contract عقد تركيب hyperframes موشن جرافيك خط زمني قالب فيلم gsap timeline composition setup lottie text/logo layers طبقات lottie شعار متحرك لوجو أيقونات متحركة logo sting lottie-web lottie embedding تضمين لوتي أنيميشن جاهز رسوم متجهة متحركة ريموشن vector animation remotion lottie lottie inside timelines لوتي داخل الفيديو أنيميشن جاهز افتر افكتس مزامنة الحركة bodymovin after effects composition root contract عقد جذر التركيب مدة الفيديو مقاس الفيديو العنصر الجذري root element video length integration: lottie creator mcp تكامل: lottie creator mcp لوتي رسوم لوتي تكامل lottie integration integration: lottiefiles platform mcp تكامل: lottiefiles platform mcp لوتي ملفات لوتي تكامل lottiefiles mcp after effects extendscript automation أتمتة أفتر إفكتس افتر افكت سكربت أدوبي قوالب موشن extendscript mogrt video-tool landscape (500 tools / 33 integrations) خريطة أدوات الفيديو أدوات الفيديو بدائل مقارنة الأدوات manim motion canvas lottie frame-driven animation clock ساعة حركة مدفوعة بالإطار أنيميشن بيانات خرائط متحركة ساعة الإطار usecurrentframe chart animation interpolate"
 },
-"SP-0246": {
-"id": "SP-0246",
+"SP-0247": {
+"id": "SP-0247",
 "name_ar": "جسر المحرّكين",
 "name_en": "Dual-renderer shim + footage seek",
 "hub": "3d",
@@ -5874,8 +5897,8 @@
 ],
 "text": "render shim (seek contract) جسر التصيير تصيير دقيق مزامنة الفيديو رندر seek frame exact dual-engine shim (hyperframes or studio renderer) طبقة تشغيل مزدوجة توافق المحركات مزامنة الفيديو رندر seek engine compatibility ffprobe shim بديل ffprobe مدة الفيديو عدد الإطارات فحص الفيديو video duration frame count robust media seeking for export تثبيت مواضع الوسائط عند التصدير مزامنة الفيديو إطارات مكررة قفز الفيديو video seek seeked event dual-renderer shim + footage seek جسر المحرّكين محركين توافق المحركات مزامنة الفيديو dual renderer compatibility renderer shim + footage seeking جسر العرض ومزامنة الفيديو مزامنة الفيديو مزامنة اللقطات جسر التصيير video seek gsap bridge composition brief handoff موجز التكوين لـhyperframes موجز بريف تخطيط الفيديو brief handoff site bridge planner جسر الموقع تخطيط المشروع مقاسات الفيديو منصة مستضافة planner aspect ratio site bridge / render client (remote) الجسر البعيد تصيير عن بعد موافقة جسر remote render consent sandbox ffprobe stand-in بديل ffprobe في البيئات المغلقة فحص الفيديو معلومات الملف مدة الفيديو ffprobe shim media info python"
 },
-"SP-0247": {
-"id": "SP-0247",
+"SP-0248": {
+"id": "SP-0248",
 "name_ar": "خيار التقنية: remotion",
 "name_en": "Stack option: remotion",
 "hub": "3d",
@@ -5893,13 +5916,13 @@
 "SP-0277",
 "SP-0378",
 "SP-0214",
-"SP-0240",
+"SP-0243",
 "SP-0134"
 ],
 "text": "stack option: canvas خيار التقنية: canvas كانفس اختيار التقنية قالب الرسم html canvas stack stack option: auto خيار التقنية: auto اختيار التقنية اختيار الأداة تلقائي tech stack auto choose stack option: svg خيار التقنية: svg رسوم متجهة اختيار التقنية موشن متجه svg gsap vector animation cinematic post stack (makepost) سلسلة المعالجة السينمائية توهج عمق الميدان حبيبات الفيلم تلوين سينمائي bloom depth of field tool-map doctor before promising a stack فحص خريطة الأدوات قبل الوعد بأي حزمة doctor فحص tools catalog repos installed خريطة الأدوات lite post stack معالجة خفيفة توهج حبيبات أداء أسرع bloom film grain lab lightweight post معالجة المختبر معالجة سريعة توهج خفيف عمق الميدان software gl post processing stack option: remotion خيار التقنية: remotion اختيار التقنية رياكت قالب بداية stack starter tsl renderpipeline post stack سلسلة ما بعد المعالجة في tsl مؤثرات بوست بروسيسنج تأثيرات بصرية post-processing effects stack option: three خيار التقنية: three ثلاثي الأبعاد كاميرا متحركة مشهد 3d threejs 3d scene camera move"
 },
-"SP-0248": {
-"id": "SP-0248",
+"SP-0249": {
+"id": "SP-0249",
 "name_ar": "محول Anime.js",
 "name_en": "Anime.js adapter",
 "hub": "3d",
@@ -5916,32 +5939,9 @@
 "SP-0333",
 "SP-0251",
 "SP-0119",
-"SP-0245"
+"SP-0246"
 ],
 "text": "blob-url seekable video فيديو قابل للبحث عبر blob تقديم الفيديو مقطع لا يتقدم تحميل المقطع byte-range video seek anime.js adapter محول anime.js مكتبة تحريك تحريك خفيف تقديم الإطارات animation library seekable in-page animation library list مكتبات الحركة داخل الصفحة مكتبات الحركة رسوم بيانية رسم الخطوط animation libraries charts in-page motion/drawing library list مكتبات الحركة داخل الصفحة مكتبات تحريك رسم الخطوط رسوم بيانية cdn libraries draw-on frame adapters (gsap, css, anime.js, lottie, three.js, waapi, typegpu) محولات الإطارات مكتبات الحركة دمج المكتبات تقديم وترجيع seek animation libraries web animations api adapter محول واجهة الحركة في المتصفح حركة المتصفح بلا gsap تحريك أصلي waapi element.animate scene animation through build_t(t) تحريك المشهد عبر build_t(t) تحريك المشهد أنيميشن دالة الزمن animate scene per-frame render gsap tween trio (to / from / fromto / set) حركات gsap الأساسية تحريك العناصر حركة دخول أنيميشن tween entrance animation framer motion layout & spring فريمر موشن حركة نابضية واجهة تفاعلية تحريك الواجهات spring ui animation local video library مكتبة فيديوهاتي فيديوهات سابقة سجل التصدير تنزيل download render history"
-},
-"SP-0249": {
-"id": "SP-0249",
-"name_ar": "قالب الكانفاس",
-"name_en": "Canvas route template",
-"hub": "3d",
-"stage": "create",
-"stages": {
-"assemble": 4,
-"create": 5,
-"deliver": 1
-},
-"size": 10,
-"best": "ready",
-"ready_now": 3,
-"links": [
-"SP-0434",
-"SP-0326",
-"SP-0152",
-"SP-0137",
-"SP-0063"
-],
-"text": "native canvas time-seekable renderer محرك canvas الأصلي القابل للتقديم معاينة وتصدير جزيئات شريط تقدم deterministic canvas drawframe canvas route template (pure function of t) مسار الكانفس زنبرك منحنيات الحركة إيقاع spring easing bpm canvas retained scene model نموذج مشهد محفوظ للـ canvas رسم بياني إعادة الرسم دقة الشاشة canvas state pixel ratio canvas route template قالب الكانفاس كانفاس قالب جاهز إيقاع canvas template spring native-resolution canvas with viewer-style fit لوحة بدقتها الأصلية مع عرض ملائم دقة أصلية تكبير الصورة عرض الصورة integer zoom native resolution draft scale for fast 3d drafts مسودة منخفضة الدقة مسودة سريعة دقة منخفضة تسريع الرندر draft low res previz-then-final tiering مسودة ثم نهائي مسودة توفير التكلفة دقة منخفضة previz low res renderer ladder svg -> canvas -> webgl سلم المصيّرات svg ثم canvas ثم webgl رسم بياني جسيمات عناصر كثيرة data viz pixijs particles supersampled output (--scale) تكبير دقة الإخراج دقة أعلى حدة الصورة مضاعفة الدقة supersampling device scale factor honest local upscale to 4k (lanczos + unsharp) رفع دقة محلي صادق إلى 4k رفع الدقة تكبير الفيديو زيادة الحدة upscale lanczos 4k"
 },
 "SP-0250": {
 "id": "SP-0250",
@@ -5974,20 +5974,19 @@
 "stage": "plan",
 "stages": {
 "assemble": 2,
-"plan": 6,
-"create": 1
+"plan": 6
 },
-"size": 9,
+"size": 8,
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0248",
+"SP-0249",
 "SP-0137",
-"SP-0228",
 "SP-0221",
+"SP-0397",
 "SP-0119"
 ],
-"text": "render_html virtual-time driver (any css/waapi/gsap/raf page) وضع الزمن الافتراضي لأي صفحة متحركة تحويل صفحة لفيديو انيميشن css توقيت دقيق css animation html to video function-of-time to gsap keyframes (sampled) تحويل دالة زمنية إلى مفاتيح حركة إجرائية معادلة حركة تايم لاين keyframes procedural motion render_html virtual-time mode وضع الزمن الافتراضي أنيميشن css رندر بدون seek الساعة الافتراضية virtual clock css animation function-to-keyframes sampler (sampled) تحويل الدالة إلى مفاتيح كي فريمز حركة بالكود مفاتيح الحركة keyframes procedural motion css keyframes adapter محول إطارات css حركة css لمعان حركة متكررة css animation shimmer gsap directional rotation, relative values & css vars دوران موجه وقيم نسبية ومتغيرات css دوران تغيير اللون خط متغير variable font rotation gsap proxy object driving canvas كائن وسيط يحرك الكانفس كانفس رسم إجرائي تايم لاين canvas animation procedural art gsap transforms and performance rules قواعد التحويلات والأداء أداء الحركة تحسين الأداء تحريك العناصر performance transforms css/waapi keyframe reveals ظهور بإطارات css ظهور النص انزلاق تلاشي fade in slide up text reveal"
+"text": "render_html virtual-time driver (any css/waapi/gsap/raf page) وضع الزمن الافتراضي لأي صفحة متحركة تحويل صفحة لفيديو انيميشن css توقيت دقيق css animation html to video render_html virtual-time mode وضع الزمن الافتراضي أنيميشن css رندر بدون seek الساعة الافتراضية virtual clock css animation function-of-time to gsap keyframes (sampled) تحويل دالة زمنية إلى مفاتيح حركة إجرائية معادلة حركة تايم لاين keyframes procedural motion function-to-keyframes sampler (sampled) تحويل الدالة إلى مفاتيح كي فريمز حركة بالكود مفاتيح الحركة keyframes procedural motion css keyframes adapter محول إطارات css حركة css لمعان حركة متكررة css animation shimmer gsap directional rotation, relative values & css vars دوران موجه وقيم نسبية ومتغيرات css دوران تغيير اللون خط متغير variable font rotation gsap transforms and performance rules قواعد التحويلات والأداء أداء الحركة تحسين الأداء تحريك العناصر performance transforms css/waapi keyframe reveals ظهور بإطارات css ظهور النص انزلاق تلاشي fade in slide up text reveal"
 },
 "SP-0252": {
 "id": "SP-0252",
@@ -6052,7 +6051,7 @@
 "SP-0350",
 "SP-0162",
 "SP-0311",
-"SP-0243",
+"SP-0244",
 "SP-0125"
 ],
 "text": "studio layout conventions (tracks by kind, one caption track) تنظيم المسارات حسب النوع ترتيب المسارات مسار الترجمة تنظيم التايم لاين track layout captions track gfx cards for nle markers بطاقات جرافيك لعلامات المونتاج بطاقات عناوين عنوان فصل جرافيك للمونتاج title card chapter card audio and footage tracks declared in markup مسارات الصوت واللقطات معلنة داخل الصفحة موسيقى خلفية تعليق صوتي لقطات حقيقية audio mix fade out nle scripting entry points مداخل البرمجة لبرامج المونتاج برامج المونتاج بريمير ملفات التبادل edl fcpxml editing track and marker convention اصطلاح المسارات والعلامات في المونتاج تنظيم المسارات ماركرز مونتاج تعليق صوتي track layout markers named role tracks مسارات مسماة بالأدوار تسمية المسارات طبقات مسار الترجمة track naming overlay track"
@@ -6073,7 +6072,7 @@
 "ready_now": 0,
 "links": [
 "SP-0118",
-"SP-0440",
+"SP-0439",
 "SP-0313",
 "SP-0139"
 ],
@@ -6141,7 +6140,7 @@
 "SP-0176",
 "SP-0339",
 "SP-0229",
-"SP-0435",
+"SP-0434",
 "SP-0120"
 ],
 "text": "film-only-where-it-should gating + sw bypass تشغيل الفيلم بشروط وتجاوز عامل الخدمة فيديو في الموقع توفير البيانات تقليل الحركة service worker lazy video smooth-scroll weight (lenis) and its render caveat التمرير الناعم وتحذير الرندر تمرير ناعم سكرول حركة الموقع smooth scroll scrolltrigger piecewise scroll->clip time mapping ربط التمرير بالزمن تمرير سكرول فيديو مع التمرير scroll video scrolltrigger proximity-priority clip loading تحميل حسب القرب تحميل المقاطع سرعة الموقع آيفون lazy loading reduced motion render bugs already paid for أخطاء رندر دُفع ثمنها render bugs fonts puppeteer canvas أخطاء الرندر خطوط"
@@ -6161,7 +6160,7 @@
 "links": [
 "SP-0088",
 "SP-0195",
-"SP-0437",
+"SP-0436",
 "SP-0214"
 ],
 "text": "python static chart pipeline خط مخططات بايثون الثابتة رسم بياني تشارت عرض البيانات matplotlib data chart matplotlib and turtle capture التقاط رسوم matplotlib وturtle رسم بياني السلحفاة مخطط plot capture charts declarative grammars (vega-lite / observable plot) القواعد التصريحية للمخططات رسم بياني مخطط سريع مواصفات المخطط vega-lite chart spec product chart libraries مكتبات المخططات الجاهزة مكتبة مخططات رسوم بيانية جاهزة رسم بياني تفاعلي echarts plotly screencast guide yaml schema مخطط yaml لفيديو الشرح فيديو شرح تسجيل الشاشة شرح خطوات tutorial video walkthrough"
@@ -6227,7 +6226,7 @@
 "links": [
 "SP-0361",
 "SP-0213",
-"SP-0431",
+"SP-0430",
 "SP-0139",
 "SP-0024"
 ],
@@ -6246,19 +6245,19 @@
 "assemble": 6,
 "verify": 2,
 "refine": 1,
-"understand": 1
+"understand": 2
 },
-"size": 35,
+"size": 36,
 "best": "proven",
 "ready_now": 15,
 "links": [
 "SP-0233",
+"SP-0418",
 "SP-0239",
-"SP-0419",
 "SP-0202",
 "SP-0008"
 ],
-"text": "checked per-platform delivery (8 platforms) ملف مفحوص لكل منصة تصدير المنصات tiktok reels shorts whatsapp platform export bitrate نسخ لكل منصة حدود الحجم مدة الفيديو social export file size limit snapchat post pack + linter per platform حزمة نشر مفحوصة لكل منصة حزمة نشر كابشن هاشتاج post pack caption hashtags lint وصف الفيديو عنوان يوتيوب تجهيز النشر social copy youtube description alt text platform limits table (as of 2026-10) جدول حدود المنصات (2026-10) حدود المنصات limits caption length posting time مواعيد النشر عدد الحروف المدة المسموحة وقت النشر character limit max duration platform specs delivery pack: all ratios + poster + gif/webp حزمة التسليم: كل النسب وغلاف وgif حزمة تسليم export pack poster gif webp multi aspect كل المقاسات صورة الغلاف ملفات التسليم deliverables preview variants aspect presets across the owner tools جدول المقاسات الموحد في أدواتك جدول المقاسات presets ratio table 4:3 21:9 scaffold نسب العرض أبعاد المشروع معدل الإطارات aspect presets fps verify_video 9:16 ui safe zone المنطقة الآمنة في الإطار العمودي منطقة آمنة safe zone reels tiktok ui overlay margins هوامش آمنة أزرار المنصة فيديو عمودي safe area 9:16 layout story end-card template قالب بطاقة الختام بطاقة ختام end card cta subscribe اشترك template شاشة النهاية تابعنا زر الاشتراك outro end screen social icons multi-rendition hls ladder سلم جودات hls hls بث abr streaming ladder dash cmaf جودات متعددة بث تكيفي تشغيل أونلاين adaptive bitrate m3u8 renditions kosif studio cloud — one-page artifact استوديو كامل كصفحة claude.ai واحدة artifact claude.ai studio cloud browser editor mp4 export محرر في المتصفح صفحة واحدة بدون سيرفر single html self-contained no server painter studio export modes (png · 4k · svg · mp4) تصدير svg وأوضاع الاستوديو الرسام svg vectorize 4k تتبع export modes painter تحويل لمتجه تصدير الرسمة فيديو الرسم vector trace drawing video png export chart export png@2x / svg + data-table toggle تصدير الرسوم png@2x وsvg تصدير الرسم svg png 2x chart export data table تنزيل الرسم صورة عالية الدقة جدول البيانات download chart save as image derive the canvas from the destination المقاس من الوجهة مقاس نسبة منصة aspect canvas destination 9:16 16:9 4:5 أبعاد الفيديو مقاس ريلز دقة الفيديو video size resolution dimensions carousel structure & limits بنية الكاروسيل وحدوده كاروسيل carousel slides instagram linkedin pdf منشور شرائح سلايدات إنستغرام بوست متعدد الصور multi-image post swipe post facebook phone legibility gate قواعد المقروئية على الهاتف مقروئية تباين legibility contrast mo"
+"text": "checked per-platform delivery (8 platforms) ملف مفحوص لكل منصة تصدير المنصات tiktok reels shorts whatsapp platform export bitrate نسخ لكل منصة حدود الحجم مدة الفيديو social export file size limit snapchat post pack + linter per platform حزمة نشر مفحوصة لكل منصة حزمة نشر كابشن هاشتاج post pack caption hashtags lint وصف الفيديو عنوان يوتيوب تجهيز النشر social copy youtube description alt text platform limits table (as of 2026-10) جدول حدود المنصات (2026-10) حدود المنصات limits caption length posting time مواعيد النشر عدد الحروف المدة المسموحة وقت النشر character limit max duration platform specs aspect presets across the owner tools جدول المقاسات الموحد في أدواتك جدول المقاسات presets ratio table 4:3 21:9 scaffold نسب العرض أبعاد المشروع معدل الإطارات aspect presets fps verify_video delivery pack: all ratios + poster + gif/webp حزمة التسليم: كل النسب وغلاف وgif حزمة تسليم export pack poster gif webp multi aspect كل المقاسات صورة الغلاف ملفات التسليم deliverables preview variants 9:16 ui safe zone المنطقة الآمنة في الإطار العمودي منطقة آمنة safe zone reels tiktok ui overlay margins هوامش آمنة أزرار المنصة فيديو عمودي safe area 9:16 layout story end-card template قالب بطاقة الختام بطاقة ختام end card cta subscribe اشترك template شاشة النهاية تابعنا زر الاشتراك outro end screen social icons multi-rendition hls ladder سلم جودات hls hls بث abr streaming ladder dash cmaf جودات متعددة بث تكيفي تشغيل أونلاين adaptive bitrate m3u8 renditions kosif studio cloud — one-page artifact استوديو كامل كصفحة claude.ai واحدة artifact claude.ai studio cloud browser editor mp4 export محرر في المتصفح صفحة واحدة بدون سيرفر single html self-contained no server painter studio export modes (png · 4k · svg · mp4) تصدير svg وأوضاع الاستوديو الرسام svg vectorize 4k تتبع export modes painter تحويل لمتجه تصدير الرسمة فيديو الرسم vector trace drawing video png export chart export png@2x / svg + data-table toggle تصدير الرسوم png@2x وsvg تصدير الرسم svg png 2x chart export data table تنزيل الرسم صورة عالية الدقة جدول البيانات download chart save as image carousel structure & limits بنية الكاروسيل وحدوده كاروسيل carousel slides instagram linkedin pdf منشور شرائح سلايدات إنستغرام بوست متعدد الصور multi-image post swipe post facebook derive the canvas from the destination المقاس من الوجهة مقاس نسبة منصة aspect canvas destination 9:16 16:9 4:5 أبعاد الفيديو مقاس ريلز دقة الفيديو video size resolution dimensions phone legibility gate قواعد المقروئية على الهاتف مقروئية تباين legibility contrast mo"
 },
 "SP-0264": {
 "id": "SP-0264",
@@ -6296,20 +6295,19 @@
 "refine": 1,
 "verify": 1,
 "assemble": 1,
-"deliver": 1,
-"understand": 1
+"deliver": 1
 },
-"size": 9,
+"size": 8,
 "best": "proven",
 "ready_now": 5,
 "links": [
 "SP-0173",
-"SP-0338",
 "SP-0412",
-"SP-0346",
+"SP-0338",
+"SP-0297",
 "SP-0125"
 ],
-"text": "full frame over its blurred fill الصورة الكاملة فوق نسختها الضبابية خلفية ضبابية blur fill vertical pillarbox 9:16 from 16:9 خلفية مموهة بلور تحويل لعمودي blurred background no crop landscape to portrait smart reframe around faces إعادة تأطير ذكية حول الوجوه إعادة تأطير وجوه reframe smart crop face tracking vertical تحويل لعمودي تتبع الوجه كادر auto reframe aspect convert landscape to portrait seamless loop (video + gif) حلقة متصلة بلا قطع حلقة loop gif seamless palettegen sticker تكرار بلا قطع جيف متكرر لوب looping video infinite loop crossfade print & document outputs مخرجات الطباعة والمستندات طباعة print pdf receipt qr paper إيصال حراري ملصق تقرير للطباعة thermal receipt label print stylesheet loudness targets per destination أهداف العلوّ لكل وجهة علو الصوت loudness lufs true peak loudnorm ebu r128 مستوى الصوت توحيد الصوت ارتفاع الصوت normalize audio volume podcast audio hyperframes render formats & quality tiers hyperframes: صيغ وجودات الرندر hyperframes render formats quality gif hls صيغ التصدير جودة الرندر مسودة mp4 webm crf loop audio formats & music licence receipts صيغ الصوت للحلقات وتراخيص الموسيقى mp3 opus loop audio ترخيص الموسيقى music licence receipt تكرار الصوت موسيقى خلفية حقوق الموسيقى wav gapless loop music rights web embedding of motion & media تضمين الموشن في صفحات الويب ويب web video poster avif webp reduced motion lcp فيديو في الموقع سرعة الصفحة تشغيل تلقائي autoplay embed video page speed density mode: narrated vs read-first كثافة العرض: متحدث أم قراءة كثافة تشغيل صامت density muted autoplay bullets كمية النص زحمة الشاشة تعليق صوتي text per slide narration voiceover"
+"text": "full frame over its blurred fill الصورة الكاملة فوق نسختها الضبابية خلفية ضبابية blur fill vertical pillarbox 9:16 from 16:9 خلفية مموهة بلور تحويل لعمودي blurred background no crop landscape to portrait seamless loop (video + gif) حلقة متصلة بلا قطع حلقة loop gif seamless palettegen sticker تكرار بلا قطع جيف متكرر لوب looping video infinite loop crossfade smart reframe around faces إعادة تأطير ذكية حول الوجوه إعادة تأطير وجوه reframe smart crop face tracking vertical تحويل لعمودي تتبع الوجه كادر auto reframe aspect convert landscape to portrait print & document outputs مخرجات الطباعة والمستندات طباعة print pdf receipt qr paper إيصال حراري ملصق تقرير للطباعة thermal receipt label print stylesheet loudness targets per destination أهداف العلوّ لكل وجهة علو الصوت loudness lufs true peak loudnorm ebu r128 مستوى الصوت توحيد الصوت ارتفاع الصوت normalize audio volume podcast audio hyperframes render formats & quality tiers hyperframes: صيغ وجودات الرندر hyperframes render formats quality gif hls صيغ التصدير جودة الرندر مسودة mp4 webm crf loop audio formats & music licence receipts صيغ الصوت للحلقات وتراخيص الموسيقى mp3 opus loop audio ترخيص الموسيقى music licence receipt تكرار الصوت موسيقى خلفية حقوق الموسيقى wav gapless loop music rights web embedding of motion & media تضمين الموشن في صفحات الويب ويب web video poster avif webp reduced motion lcp فيديو في الموقع سرعة الصفحة تشغيل تلقائي autoplay embed video page speed"
 },
 "SP-0266": {
 "id": "SP-0266",
@@ -6327,9 +6325,9 @@
 "best": "proven",
 "ready_now": 5,
 "links": [
-"SP-0421",
+"SP-0420",
 "SP-0376",
-"SP-0424",
+"SP-0423",
 "SP-0334",
 "SP-0096"
 ],
@@ -6440,7 +6438,7 @@
 "best": "proven",
 "ready_now": 3,
 "links": [
-"SP-0418",
+"SP-0417",
 "SP-0094",
 "SP-0270",
 "SP-0252"
@@ -6504,7 +6502,7 @@
 "best": "proven",
 "ready_now": 2,
 "links": [
-"SP-0427",
+"SP-0426",
 "SP-0288",
 "SP-0272",
 "SP-0393",
@@ -6529,7 +6527,7 @@
 "SP-0148",
 "SP-0328",
 "SP-0403",
-"SP-0419",
+"SP-0418",
 "SP-0119"
 ],
 "text": "neon text glow (triple shadow, per word) توهج النص النيوني بثلاثة ظلال لكل كلمة نيون ظل النص عنوان neon text text-shadow neon-tech cyber per word نص متوهج كتابة نيون خط مضيء glowing text css glow svg neon tube (4-stroke stack) أنبوب نيون svg بأربع طبقات نيون svg خطوط neon tube svg stroke stack line art city خط مضيء أنبوب نيون رسم متجه glow line vector neon svg blur-merge glow & blurred duplicate مرشح توهج svg ونسخة مموهة svg مرشح تمويه svg filter fegaussianblur femerge blurred duplicate glow توهج هالة شكل مضيء soft glow vector glow living arabic neon sign (ignition · wall light · wet reflection · synced hum) لافتة نيون عربية حيّة نيون لافتة توهج انعكاس مطر neon sign glow lighter reflection rain 9:16 arabic لافتة مضيئة يافطة نيون لافتة قهوة glowing sign neon ignition qa: glow on type is a tell التوهج على النص علامة توليد جودة فحص ظل النص qa lint text-shadow ai tell مراجعة أخطاء التصميم توهج النص design review text glow painter additive glow stack (blades, magic, embers) توهج مضاف متدرج في الرسم بالكود سيف سحر رسم بالكود blade magic painter additive render.py glow stack سيف مضيء جمر هالة سحرية glowing blade embers burst word with glow & expanding ring كلمة تنفجر بتوهج وحلقة انفجار كلمة بطلة حلقة burst pop spring ring hero word كلمة قافزة ظهور كلمة تأكيد word pop expanding ring two-layer ass glow for arabic captions ترجمة عربية بتوهج ass مزدوج الطبقة ترجمة ass توهج libass ffmpeg captions glow arabic subtitles shaping سبتايتل عربي حرق الترجمة ترجمة متحركة burned subtitles subtitle styling hero radial glow pool (bloom-in, bounded breathe, point origin) بركة ضوء شعاعية خلف العنوان هالة توهج خلفي شعار radial glow hero logo cta breathe backdrop إضاءة خلفية ظهور الشعار لوجو logo reveal soft light pool ignition & faulty-tube flicker schedule جدول الاشتعال والوميض المعطوب وميض اشتعال تشغيل طنين flicker ignition schedule hum sound sync neon لمبة بتقطع تزامن الصوت أنبوب معطوب faulty tube warm-up flicker timing thermal heat-ramp field & doppler-beamed glow حقل حراري وتلوين دوبلر حراري خريطة حرارة دوبلر thermal heat map fbm doppler black hole shader ثقب أسود تدرج حراري تلطيخ heat ramp domain warp one-key consistency: shadow, lit edge & reflection ظل وانعكاس متسقان مع مفتاح واحد ظل انعكاس اتساق shadow reflection consistency phone product key light اتساق الإضاءة ظل المنتج موك اب lighting consistency drop shadow active caption-word glow توهج الكلمة النشطة في الترجمة ترجمة كاريوكي كلمة نشطة captions karaoke active word neon caption highlight سبتايتل تمييز الكلمة ترجمة متوهجة"
@@ -6572,7 +6570,7 @@
 "best": "proven",
 "ready_now": 8,
 "links": [
-"SP-0247",
+"SP-0248",
 "SP-0136",
 "SP-0280",
 "SP-0364",
@@ -6623,7 +6621,7 @@
 "links": [
 "SP-0383",
 "SP-0276",
-"SP-0436",
+"SP-0435",
 "SP-0136",
 "SP-0059"
 ],
@@ -6688,7 +6686,7 @@
 "best": "proven",
 "ready_now": 2,
 "links": [
-"SP-0390",
+"SP-0391",
 "SP-0409",
 "SP-0170",
 "SP-0329",
@@ -6872,7 +6870,7 @@
 "links": [
 "SP-0295",
 "SP-0406",
-"SP-0429",
+"SP-0428",
 "SP-0307",
 "SP-0125"
 ],
@@ -6921,7 +6919,7 @@
 "SP-0346",
 "SP-0125",
 "SP-0195",
-"SP-0442"
+"SP-0441"
 ],
 "text": "audio spectrum bars أعمدة الطيف الصوتي أعمدة الصوت موجة صوتية مؤثر مرئي للموسيقى visualizer equalizer bars spectrum mic-reactive bar waveform (canvas) موجة أعمدة تتفاعل مع الميكروفون موجة الميكروفون مؤشر الصوت مساعد صوتي voice ui mic visualizer waveform two-canvas audio visualiser template قالب مرئي صوتي قالب صوتي فيديو تفاعلي صوتي مؤثر موسيقي visualizer template audio reactive html template remotion spectrum bars & waveform أعمدة طيف وموجة صوتية في ريموشن موجة صوتية أعمدة الصوت ريموشن waveform audio visualizer media-utils style: audio wave (audio-wave) موجة صوت موجات أعمدة صوت قالب waveform visualizer audio visualiser (bars / circle) موجات الصوت طيف صوتي معادل صوتي أعمدة الصوت spectrum equalizer bars waveform موجة صوتية معادل صوتي خلفية شيدر أعمدة ملونة shader background equalizer audio-only clip visuals فيديو لملف صوت فقط صوت إلى فيديو خلفية متحركة ترجمة كبيرة audio to video visualizer waveform word reveal كشف كلمة مع موجة صوتية كشف النص أعمدة صوت نص أنيق text reveal audio bars waveform-flanked word كلمة بين أعمدة موجة صوتية كلمة أعمدة صوت عنوان متحرك audio bars title beat waveform bar strip شريط موجة الإيقاع أعمدة نابضة موجة صوت خلفية إيقاعية pulse bars beat visualizer equaliser under word أعمدة إيقاع تحت كلمة معادل صوتي اكولايزر عنوان equalizer fft bars outline-to-fill letters with waveform حروف مفرغة تمتلئ مع موجة صوتية نص مفرغ عنوان تعبئة بالفيديو text fill title equalizer bars أعمدة المعادل اكولايزر أعمدة الصوت مرئيات صوتية visualizer fft waveform/spectrum as a visual asset الموجة والطيف كعنصر بصري موجة صوت بودكاست طيف waveform spectrum mg-096 amplitude-reactive bars around cover art mg-096 موجة صوت حول الغلاف غلاف الأغنية أعمدة صوت تفاعل مع الصوت cover art loudness reactive ad audio rules قواعد صوت الإعلان دعاية اعلان تجاري تعليق صوتي commercial advert mg-028 sonic-logo pulses mg-028 توقيع صوتي موجز لوجو صوتي شعار نبض sonic logo logo animation"
 },
@@ -7042,7 +7040,7 @@
 "SP-0346",
 "SP-0125",
 "SP-0301",
-"SP-0444"
+"SP-0443"
 ],
 "text": "two-pass loudness normalisation توحيد الجهارة بمرورين تسوية الصوت ظبط مستوى الصوت يوتيوب lufs loudnorm normalize audio loudness mastering (−14 lufs) ضبط الجهارة ماستر الصوت تسوية الصوت محدد القمم limiter streaming loudness mastering loudness: −14 lufs and bs.1770 meter معايرة الصوت −14 lufs قياس علو الصوت تسوية الصوت ظبط الصوت loudness meter normalize audio browser export ebu r128 loudness measurement قياس الجهارة ebu r128 قياس الصوت فحص الصوت مستوى الصوت loudness check true peak audio qa loudness master to -14 lufs (loudnorm) معايرة الصوت إلى -14 lufs صوت السوشيال تسوية الصوت ظبط الصوت social audio normalize audio aac loudness mastering targets for generated music أهداف ارتفاع الصوت للموسيقى المولدة ماستر علو الأغنية موسيقى مولدة mastering limiter streaming loudness cli: normalize-audio أمر: تسوية الصوت تسوية الجهارة توحيد مستوى الصوت علو الصوت loudness lufs loudness targets مستويات الصوت جهارة علو الصوت تسليم الفيديو lufs loudnorm loudness normalisation -14 lufs تطبيع الجهارة -14 lufs توحيد الصوت سوشيال مستوى الصوت loudnorm social delivery loudness targets per platform أهداف الجهارة مستوى الصوت منصات بودكاست loudness target true peak publish loudness normalization توحيد الجهارة للنشر قبل النشر سوشيال ميديا بودكاست social media two pass podcast audiogram أوديوجرام للبودكاست بودكاست فيديو عمودي ترجمة vertical video whisper"
 },
@@ -7175,7 +7173,7 @@
 "best": "proven",
 "ready_now": 1,
 "links": [
-"SP-0442",
+"SP-0441",
 "SP-0125",
 "SP-0346",
 "SP-0293"
@@ -7311,7 +7309,7 @@
 "ready_now": 1,
 "links": [
 "SP-0291",
-"SP-0442",
+"SP-0441",
 "SP-0311",
 "SP-0269",
 "SP-0125"
@@ -7334,7 +7332,7 @@
 "ready_now": 0,
 "links": [
 "SP-0323",
-"SP-0390",
+"SP-0391",
 "SP-0340",
 "SP-0290",
 "SP-0024"
@@ -7470,7 +7468,7 @@
 "links": [
 "SP-0320",
 "SP-0363",
-"SP-0244",
+"SP-0245",
 "SP-0395",
 "SP-0127"
 ],
@@ -7637,7 +7635,7 @@
 "best": "proven",
 "ready_now": 11,
 "links": [
-"SP-0243",
+"SP-0244",
 "SP-0310",
 "SP-0228",
 "SP-0334",
@@ -7664,7 +7662,7 @@
 "ready_now": 4,
 "links": [
 "SP-0164",
-"SP-0419",
+"SP-0418",
 "SP-0152",
 "SP-0181",
 "SP-0108"
@@ -7688,7 +7686,7 @@
 "links": [
 "SP-0345",
 "SP-0120",
-"SP-0441",
+"SP-0440",
 "SP-0155"
 ],
 "text": "permissioned reference inspector: page / direct / hls → measurements فاحص المرجع المرخّص: صفحة أو ملف أو hls ← قياسات مرجع reference hls m3u8 contact sheet palette scene cuts rights social/pinterest fetch with credits (yt-dlp) جلب من المنصات مع الاعتمادات تحميل بنترست yt-dlp fetch credits tiktok تنزيل من يوتيوب تيك توك انستا youtube download instagram per-shot bilingual footage pool مجمع لقطات بأسئلة بحث ثنائية اللغة بحث لقطات footage pool pinterest queries b-roll لقطات بديلة كلمات بحث بي رول search terms reference shots media licensing discipline انضباط ترخيص الصور واللقطات ترخيص حقوق license attribution cc0 assets.md حقوق النشر ملكية عامة إذن استخدام copyright creative commons reference-video imitation contract (8 steps) عقد محاكاة فيديو مرجعي imitation reference video recreate edit محاكاة نفس المونتاج فيديو مرجعي bad-head trimming & duplicate-take grouping قص البدايات المعيبة وتجميع المكرر تنظيف مكرر duplicates trim head laplacian dhash لقطات الموبايل حذف التكرار بداية بيضاء phone footage similar takes capability preflight and short tests before an expensive export فحص القدرة واختبارات قصيرة قبل التصدير preflight rights b-roll delivery فحص مسبق حقوق تسليم"
@@ -7712,7 +7710,7 @@
 "SP-0343",
 "SP-0177",
 "SP-0385",
-"SP-0249",
+"SP-0337",
 "SP-0018"
 ],
 "text": "denoise, sharpen & restoration chain إزالة التشويش والتوضيح وسلسلة الترميم تشويش ترميم denoise sharpen restoration hqdn3d إزالة النويز توضيح الصورة إضاءة منخفضة noise reduction low light picture edits: shading-preserving recolour تعديل الصورة: إعادة تلوين تحفظ الظلال إعادة تلوين تعديل صورة recolor photo edit arabic colours تغيير اللون غير لون استبدال لون change color color swap image exposure analysis + arabic fix advice تحليل تعريض الصورة ونصائح بالعربية تعريض تحليل صورة exposure histogram arabic advice إضاءة الصورة صورة مظلمة صورة محروقة overexposed underexposed local media library with probe مكتبة وسائط محلية مع فحص مكتبة وسائط media library probe upload رفع ملفات سحب وإفلات فحص الملفات drag and drop file import upscale triage تشخيص قبل رفع الدقة رفع الدقة upscale resolution lanczos esrgan تحسين الجودة تكبير الصورة صورة مبكسلة low resolution blurry image honest before/after wipe مقارنة قبل وبعد صادقة قبل وبعد before after split comparison مقارنة النتيجة خط فاصل سلايدر مقارنة wipe divider planar corner-pin inserts إدراج بمنظور مثبت بأربع نقاط منظور corner pin planar track homography insert أربع زوايا تركيب صورة تتبع سطح perspective matrix3d"
@@ -7732,8 +7730,8 @@
 "best": "ready",
 "ready_now": 1,
 "links": [
-"SP-0243",
-"SP-0445",
+"SP-0244",
+"SP-0444",
 "SP-0237",
 "SP-0150",
 "SP-0103"
@@ -7782,9 +7780,9 @@
 "best": "proven",
 "ready_now": 5,
 "links": [
-"SP-0390",
+"SP-0391",
 "SP-0282",
-"SP-0429",
+"SP-0428",
 "SP-0310",
 "SP-0026"
 ],
@@ -7806,7 +7804,7 @@
 "links": [
 "SP-0412",
 "SP-0338",
-"SP-0424",
+"SP-0423",
 "SP-0046"
 ],
 "text": "bayer-dither fades & palette-stepped light الإضاءة والتلاشي بدثر bayer دثر bayer dither fade palette ramp game boy تلاشي إضاءة بكسل ظهور تدريجي pixel fade ordered dither ordered & error-diffusion dither passes الدثر المرتب والدثر بالانتشار دثر dither atkinson floyd steinberg game boy bayer لوحة محدودة مظهر نقطي ألوان قليلة palette ffmpeg risograph misregistration & two-ink print ريزوغراف وانزياح الحبر ريزو risograph misregistration two ink multiply print حبرين انزياح الحبر مطبوع grain print texture 8-bit hud, dialogue box & game title card واجهات ألعاب 8-بت: hud وحوار وبطاقة عنوان hud لعبة game ui dialogue box pixel font 8-bit واجهة لعبة صندوق حوار بطاقة عنوان title card typewriter seamless tiles & parallax rules البلاطات والبارالاكس بلاطات tiles tileset parallax seamless autotile خلفية لعبة بارالاكس طبقات عمق rpg maker game map lo-fi / cozy loop لوفاي دافئ متكرر لوفاي lofi cozy loop rain ambient حلقة متكررة مطر أجواء هادئة seamless loop chill"
@@ -7831,7 +7829,7 @@
 "SP-0344",
 "SP-0339",
 "SP-0297",
-"SP-0444",
+"SP-0443",
 "SP-0025"
 ],
 "text": "delivery gate (inspect) بوابة التسليم فحص الفيديو قبل التسليم علو الصوت lufs final check verify_video delivery gate بوابة فحص التسليم مطابقة المواصفات تحقق الفيديو مقاس الفيديو spec check ffprobe test_report 16-check qa template تقرير الفحص بـ 16 بندًا تقرير الفحص قائمة تحقق جودة التسليم qa report checklist ffprobe delivery gate + receipt بوابة فحص الجودة وإيصال الإنتاج إيصال الإنتاج تحقق الرندر صور المراجعة receipt sha256 delivery qa from the decoded file فحص التسليم من الملف نفسه أخطاء الترميز مقاطع صامتة حجم الملف faststart decode errors typed final-render approval phrase عبارة اعتماد التصدير النهائي اعتماد نهائي موافقة المستخدم قفل التصدير approval gate final render storyboard gate بوابة الستوري بورد لوحة القصة مراجعة المشاهد كلمات الإطار storyboard check scene plan originality check فحص الأصالة أصالة النص نسخ المحتوى انتحال plagiarism copy check post-generation video qa فحص الفيديو المولد فيديو مولد تشوه اليدين ثبات الشخصية generated video continuity inspect delivery gate بوابة التسليم فحص التسليم إضاءة محروقة مستوى الصوت delivery check lufs kosif: delivery inspect gate and motion measures كوسف: بوابة التسليم وقياسات الحركة فحص بعد الرندر سرعة النص علو الصوت loudness speed cap preview-before-final-render gate بوابة المعاينة قبل التصدير اعتماد المعاينة ارندر موافقة قبل التصدير approval smoke render environment check فحص البيئة فحص الجهاز الإمكانيات المتاحة المتطلبات capabilities setup check export report object تقرير التصدير التحقق من الملف علو الصوت مواصفات الفيديو export check codec ffprobe qa receipt إيصال الفحص الفني تقرير الجودة فحص الملف إيصال الفحص qa report h264 check media job preflight (proplan) فحص مسبق لمهمة الوسائط تحقق قبل التنفيذ صدق الادعاءات تخطيط المهمة read-only check honest claims delivery gate بوابة التسليم قائمة تحقق قبل النشر فحص نهائي checklist pre-publish delivery verification فحص التسليم فحص الفيديو تسليم جهارة الصوت verify video lufs hyperframes check gate بوابة الفحص قبل الرندر تباين النص خروج العناصر فحص قبل التصدير contrast check overflow hyperframes keyframe gate frames بوابة الإطارات المفتاحية صور ثابتة فحص مبدئي كادرات stills preview frames final render + inspect gate التصيير النهائي والبوابة تصدير نهائي علو الصوت صورة الغلاف final export poster frame key frames gate بوابة الإطارات المفتاحية صور ثابتة من الفيديو معاينة سريعة قبل الرندر keyframe stills frame grabs realism gate (judge.py) بوابة الواقعية بوابة جودة قبول أو رفض واقعية الرندر pass revise render check caption decision gate (refuse bad clips) بوابة قرار الترجم"
@@ -7855,7 +7853,7 @@
 "ready_now": 13,
 "links": [
 "SP-0189",
-"SP-0419",
+"SP-0418",
 "SP-0337",
 "SP-0344",
 "SP-0113"
@@ -7881,7 +7879,7 @@
 "links": [
 "SP-0236",
 "SP-0179",
-"SP-0248",
+"SP-0249",
 "SP-0221",
 "SP-0119"
 ],
@@ -8025,7 +8023,7 @@
 "ready_now": 2,
 "links": [
 "SP-0229",
-"SP-0244",
+"SP-0245",
 "SP-0109",
 "SP-0235"
 ],
@@ -8141,7 +8139,7 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0418",
+"SP-0417",
 "SP-0028",
 "SP-0094",
 "SP-0331"
@@ -8259,7 +8257,7 @@
 "ready_now": 3,
 "links": [
 "SP-0350",
-"SP-0243",
+"SP-0244",
 "SP-0165",
 "SP-0314",
 "SP-0098"
@@ -8331,8 +8329,8 @@
 "best": "proven",
 "ready_now": 2,
 "links": [
-"SP-0256",
 "SP-0251",
+"SP-0256",
 "SP-0121",
 "SP-0046"
 ],
@@ -8356,9 +8354,9 @@
 "ready_now": 1,
 "links": [
 "SP-0011",
-"SP-0420",
+"SP-0419",
 "SP-0167",
-"SP-0335"
+"SP-0251"
 ],
 "text": "share-copy rules قواعد نص المشاركة نص المنشور كابشن عبارات مستهلكة post copy cliches shot boundary and look analysis تحليل حدود اللقطات والمظهر كشف القطعات تقسيم اللقطات لوك الفيديو scene detection cut detection banned css transitions انتقالات css محظورة ترانزيشن تأثيرات انتقال جليتش transitions light leak banned-font / default-colour gate بوابة الخطوط والألوان المحظورة خطوط مستهلكة اختيار الخط ألوان افتراضية font choice generic design ai-design tells blacklist علامات التصميم الآلي تصميم مبتذل تدرج لوني شكل مكرر generic look design cliches client-proxy critic instead of a generic creative director ناقد بعين العميل critic review feedback client ناقد مراجعة عميل failure hunt list قائمة صيد العيوب اكتشاف الأخطاء عيوب الفيديو تداخل النص defects bug hunt"
 },
@@ -8377,9 +8375,9 @@
 "ready_now": 4,
 "links": [
 "SP-0189",
-"SP-0419",
+"SP-0418",
 "SP-0219",
-"SP-0423",
+"SP-0422",
 "SP-0068"
 ],
 "text": "readability gate for on-screen text بوابة قابلية قراءة النص مدة النص سرعة القراءة نصوص الشاشة reading time text timing best time from own analytics أفضل وقت نشر أفضل وقت موعد النشر إحصاءات الحساب posting time schedule readable فحص المقروئية وقت القراءة مقروئية الهوك reading time text timing review: pinned frame notes المراجعة: ملاحظات مثبتة على الإطار تعليقات ملاحظات على الفيديو كومنت annotations timestamp comments readability hold & 400 ms floor حد أدنى للقراءة مدة الظهور سرعة المشاهد وقت القراءة hold time min duration"
@@ -8446,9 +8444,9 @@
 "best": "install",
 "ready_now": 0,
 "links": [
-"SP-0420",
-"SP-0377",
 "SP-0419",
+"SP-0377",
+"SP-0418",
 "SP-0148",
 "SP-0035"
 ],
@@ -8534,7 +8532,7 @@
 "ready_now": 0,
 "links": [
 "SP-0320",
-"SP-0247",
+"SP-0248",
 "SP-0277",
 "SP-0234",
 "SP-0033"
@@ -8676,7 +8674,7 @@
 "ready_now": 2,
 "links": [
 "SP-0160",
-"SP-0422",
+"SP-0421",
 "SP-0218",
 "SP-0414",
 "SP-0003"
@@ -8751,7 +8749,7 @@
 "SP-0290",
 "SP-0250",
 "SP-0406",
-"SP-0429",
+"SP-0428",
 "SP-0010"
 ],
 "text": "conflict engine + story_lint (gmc+s) محرك الصراع وstory_lint صراع قصة conflict story lint gmc stakes escalation سيناريو حبكة فحص القصة storytelling plot five-beat love arc with paired frames قوس الحب بخمس نبضات وإطارين حب رومانسي romance paired frames paper crane قصة حب عاطفي لقطة قريبة love story 9:16 deterministic shot planner (proplan) مخطط اللقطات الحتمي proplan خطة لقطات storyboard shot plan proplan frames beats ستوريبورد حركة كاميرا تقطيع اللقطات camera moves beat plan payoff-line detection كشف جملة الذروة ذروة لازمة payoff climax refrain stress جملة مهمة كلمات الأغنية إبراز lyrics key line clip-count fitting (food flow) ملاءمة عدد المقاطع لخطوات الطبخ طبخ food clips recipe reel macro وصفة طبخ أكل خطوات التحضير cooking food video short-piece arc (hook → development → pressure → lift → payoff → end) قوس القطعة القصيرة قوس نبضات arc payoff beats short film هيكل الريل قصة قصيرة تصاعد reel structure story arc motivational talking-reel arc (final_edit) قوس الريل التحفيزي (final_edit) تحفيزي ريل motivational talking reel arc premium edit فيديو تحفيزي مونتاج احترافي ريلز motivation speech reel wordless short: a guide and a leap قصة بلا كلام: مرشد وقفزة بلا كلام قصة قصيرة wordless silent short leap cat فيلم صامت بدون حوار قطة animated short no dialogue ad beat skeleton & 15 s app-ad recipe هيكل الإعلان ووصفة إعلان التطبيق 15 ث إعلان تطبيق ad structure app ad cta features remotion إعلان تطبيق اعلان 15 ثانية دعوة للفعل promo commercial five-second film recipe وصفة فيلم الخمس ثوانٍ 5 ثوان ستينغ five second sting iris brand فيديو خمس ثوان كشف الشعار لوجو brand reveal 5s video travelling device / hero-object thread الشيء المحمول عبر الفيلم حامل نقطة travelling device hero object match cut continuity عنصر رابط ربط اللقطات نبض على الإيقاع transition thread product-lab film (shape → joint → load → break → swap → rank) فيلم المختبر shape→rank مختبر مراحل lab film stage bands educational structural فيلم تعليمي اختبار التحمل شرح المنتج stress test callouts dua & friday reels أفلام الدعاء والجمعة دعاء جمعة dua friday mihrab islamic calm إسلامي ديني خط ديواني جمعة مباركة religious calligraphy egypt 2120: one-second concept + heritage rule مستقبل مصر 2120: خطاف وقاعدة تراث مصر أهرامات heritage speculative disclaimer chips المستقبل تراث خيال علمي futuristic pyramids kids stories: picture book & day-to-night arc قصص الأطفال: كتاب مصور ويوم كامل أطفال قصة kids picture book bedtime day night حكاية أطفال قصة قبل النوم كتاب مصور children storybook statement cards, caption beats"
@@ -8824,7 +8822,7 @@
 "best": "proven",
 "ready_now": 5,
 "links": [
-"SP-0437",
+"SP-0436",
 "SP-0322",
 "SP-0298",
 "SP-0406",
@@ -8873,7 +8871,7 @@
 "links": [
 "SP-0171",
 "SP-0172",
-"SP-0425",
+"SP-0424",
 "SP-0341",
 "SP-0011"
 ],
@@ -8896,7 +8894,7 @@
 "SP-0212",
 "SP-0266",
 "SP-0186",
-"SP-0442",
+"SP-0441",
 "SP-0124"
 ],
 "text": "two-definitions-of-success voice explainer شرح «تعريفان للنجاح» على لوحات مولدة نجاح تنمية explainer voice cold warm question mark تعليق صوتي مال وسعادة مقارنة success gsap world beats: surreal props, overload, one-take, beacon نبضات العالم والحالة سريالي ازدحام surreal overwhelm single take metaphor خيال لقطة واحدة مفهوم مجرد one take floating explainer structures هياكل الشرح شرح explainer how-to listicle narration faceless فيديو تعليمي شرح خطوات تعليق صوتي tutorial essay video creature & world-bible kit كتاب العالم والكائنات الأصلية كائنات عالم creature world bible fantasy lore وحوش عالم خيالي تصميم كائنات character design rarity psychology-first thumbnail brainstorm الغلاف يبدأ من النفس لا من الصورة غلاف نفسية thumbnail emotion curiosity صورة مصغرة ثمنيل تصميم الغلاف cover playwright"
@@ -8941,7 +8939,7 @@
 "SP-0205",
 "SP-0206",
 "SP-0277",
-"SP-0247",
+"SP-0248",
 "SP-0082"
 ],
 "text": "frame-seeded grain (seek pages) حبيبات ببذرة رقم الإطار حبيبات بذرة grain seed deterministic seek نويز متجدد حبيبات متحركة ضوضاء per-frame noise canvas grain seekable stepped svg grain (motion-kit) حبيبات svg متدرجة قابلة للبحث حبيبات فيلم grain film grain feturbulence seekable vignette تعتيم ملمس سينمائي نويز ضوضاء noise overlay svg filter dot-lattice grain overlay طبقة حبيبات نقطية نقاط dot grain lattice css print شبكة نقاط ملمس خلفية داكنة dot pattern overlay ffmpeg film finish chain سلسلة تشطيب ffmpeg ffmpeg حبيبات تعتيم grain vignette bloom letterbox finish أشرطة سينما لوك سينمائي توهج cinematic look filtergraph procedural painted wooden hull خامة بدن خشبي مدهون خشب قارب wood hull procedural three.js مركب طلاء مقشور ألواح خشب boat wood grain fractal value-noise material (studio painter) نسيج الضوضاء الكسرية ضوضاء noise fbm skin rock pillow studio ملمس صخر جلد value noise texture seeded gaussian luminance grain (studio painter) حبيبات غاوسية في pillow حبيبات grain pillow studio render.py نويز ضوضاء غاوسية ملمس طباعة gaussian noise luminance grain 3d film grain pass حبيبات ثلاثية الأبعاد (filmpass) three.js filmpass grain post حبيبات مشهد ثلاثي الأبعاد ملمس سينمائي ما بعد المعالجة webgl post-processing look replication solver (vignette/grain/letterbox/fades) مطابقة اللوك: تعتيم وحبيبات وأشرطة محاكاة mimic grain vignette look match مطابقة تقليد الستايل نفس اللوك فيديو مرجعي reference video crf seeded cpu perlin / fbm / ridged noise ضوضاء بيرلين وfbm وridged ببذرة ضوضاء perlin fbm ridged noise terrain تضاريس توزيع عشوائي ضوضاء بيرلين procedural simplex grain field & ink-bleed reveal (hyperframes) حقل الحبيبات ونزف الحبر حبر حبيبات ink bleed gooey grain field hyperframes نزف الحبر كشف علامة حلقة متكررة ink reveal seamless loop warm-grain example project (hyperframes) مثال الحبيبات الدافئة دافئ حبيبات warm grain starter hyperframes لوحة ألوان خط كريمي palette outfit font hyperframes shader media effects (18 keys) مؤثرات الشيدر على الصورة والفيديو (18) شيدر مؤثرات halftone dither ascii vhs crt kuwahara engraving hyperframes جليتش بكسلة فلتر فيديو glitch pixelate scanlines chalk grain overlay حبيبات الطباشير طباشير chalk chalkboard grain سبورة طباشير طبشورة نمش blackboard svg grain film grain + hud corners حبيبات مع زوايا hud hud حبيبات grain camera ui واجهة كاميرا أقواس الزوايا شريط تقدم viewfinder corner brackets warm-black grain + vignette grade أسود دافئ بحبيبات وتعتيم أسود حبيبات تعتيم warm black grain vignette premium فخامة خلفية سوداء لوك فاخر dark bac"
@@ -9055,7 +9053,7 @@
 "ready_now": 4,
 "links": [
 "SP-0279",
-"SP-0436",
+"SP-0435",
 "SP-0136",
 "SP-0189",
 "SP-0105"
@@ -9080,7 +9078,7 @@
 "SP-0207",
 "SP-0280",
 "SP-0381",
-"SP-0418",
+"SP-0417",
 "SP-0101"
 ],
 "text": "scales / tiles pattern نقش الحراشف والقرميد حراشف قرميد scales tiles dragon pattern تنين سمك زواحف fish scales svg pattern fluid-noise filled arabic word كلمة عربية مملوءة بسائل سائل عربي fluid mask fbm text fill domain warp كلمة عربية تعبئة النص ترانزيشن arabic text liquid lab material set (plush/gloss/leather/metal) طقم مواد المختبر مواد جلد معدن leather metal materials product منتج قطيفة لامع plush gloss basma animated pattern backgrounds (6 + gradient) ست خلفيات نقشية متحركة خلفية aurora pattern beat basma stars rays خلفية متحركة شفق إيقاع الموسيقى animated background beat sync hyperframes material shader blocks كتل شيدر المواد (webgpu) شيدر رخام معدن سائل marble liquid metal holographic webgpu hyperframes كروم هولوغرام خلفية شيدر chrome shader background clipped hatching / scribble fill تهشير داخل حدود الشكل تهشير hatching scribble marker fill تلوين يدوي ماركر شخبطة draw-on zigzag"
@@ -9126,7 +9124,7 @@
 "links": [
 "SP-0385",
 "SP-0238",
-"SP-0389",
+"SP-0390",
 "SP-0402",
 "SP-0125"
 ],
@@ -9176,13 +9174,38 @@
 "SP-0362",
 "SP-0394",
 "SP-0397",
-"SP-0391",
+"SP-0389",
 "SP-0004"
 ],
 "text": "shared-element container morph تحوّل الحاوية المشتركة تحول العنصر بطاقة إلى نافذة تمدد layout animation shared element morph view transitions recipes (fade, slide, scale, morph) وصفات انتقالات العرض الأصلية انتقال الصفحات واجهة ويب تحول العناصر view transitions page transition morph detail panel swap تبديل لوحة التفاصيل لوحة جانبية تبديل المحتوى تفاصيل side panel content swap morph swap تبادل بالتحول تحول تبديل مورف morph element swap cross warp morph انتقال الالتواء المتقاطع التواء تحول مورف warp morph morph transition scale swap morph تبديل بالتحجيم في نفس المركز تبديل انكماش ارتداد pop in element swap back ease shared axis y محور مشترك عمودي تبديل الكلمات حركة عمودية نص متحرك vertical swap word swap text transition css transition: morph circle انتقال css: دائرة متحولة دائرة تكبر فيضان لوني ترانزيشن دائري circle grow color fill shared axis z محور مشترك عمقي عمق تحجيم تركيز depth transition scale in out theme crossfade morph under fixed anchor تبديل السمة حول عنصر ثابت تغيير الثيم ألوان عنصر ثابت theme switch reskin restyle poster frames under clips with zoom إطارات تحت المقاطع تبديل المقاطع إطار أول انتقال غير مرئي poster frame seamless swap beat motion primitives without demo folders حركات إيقاعية موثقة فقط تبديل على الضربة تجميد أفكار حركة motion ideas content swap first-and-last-frame keyframe shots (ai morph transition) لقطات بإطار أول وأخير (انتقال تحوّلي) توليد فيديو صورة بداية ونهاية تحول بالذكاء الاصطناعي ai video morph time-lapse style-roll result card on 16th notes بطاقة نتيجة تتبدل أسلوبها على إيقاع النوتات تبديل الأساليب صور متتالية تبديل سريع style variants image swap transition key: morph انتقال: تحول تحول مورف خطة الفيلم morph shape change shared-shape scene handover انتقال بشكل مشترك انتقال بلا قطع تحول الشكل استمرارية shape morph seamless transition one shape never cut شكل واحد بلا قطع شكل بطل تحول الشكل بدون قطع shape morph continuity ui morph by size, not scale (button → cta) تحوّل الواجهة بالحجم لا بالمقياس ui morph button cta size تحوّل واجهة زر نداء b-roll swap at sentence boundaries تبديل اللقطات عند حدود الجمل لقطات مساندة تبديل اللقطات طول اللقطة b-roll shot length seed morph transitions انتقال بالتحول تحول العنصر مورف بدون قطع shape morph flubber container morph loop تحول الحاوية تحول الحاوية حلقة متكررة لوحة تحكم container morph loop element-reborn chapter morphs تحول الفصول فصول الفيديو تحول العناصر حروف إلى أعمدة chapter transition morph"
 },
 "SP-0389": {
 "id": "SP-0389",
+"name_ar": "انتقال عبر التكبير",
+"name_en": "Zoom Through Transition",
+"hub": "motion",
+"stage": "refine",
+"stages": {
+"create": 5,
+"assemble": 1,
+"refine": 14,
+"plan": 1,
+"deliver": 1
+},
+"size": 22,
+"best": "proven",
+"ready_now": 2,
+"links": [
+"SP-0161",
+"SP-0188",
+"SP-0159",
+"SP-0168",
+"SP-0119"
+],
+"text": "camera punch-in on scene cuts زووم خاطف عند القطع زووم سريع قطع قوي زووم مفاجئ punch in zoom cut zoom punch that decays like a hit زووم ضربة زووم على الإيقاع نبضة ضربة beat zoom punch zoom zoom through transition انتقال عبر التكبير زووم تقريب دخول zoom in transition push in css transition: zoom through انتقال css: اختراق بالتقريب زووم اختراق تقريب zoom in punch in scale transitions انتقالات الحجم زووم تقريب تبعيد zoom transition scale cinematic zoom انتقال الزووم السينمائي زووم ضبابية انتقال درامي zoom blur dramatic zoom css transition: zoom out انتقال css: تبعيد تبعيد تصغير زووم آوت scale down shrink phone-editor transition: zoomblurout انتقال تطبيقات الموبايل: زووم للخارج + تمويه زووم للخارج تصغير تمويه zoom out blur phone-editor transition: zoomblur انتقال تطبيقات الموبايل: زووم + تمويه (capcut zoom) زووم بلور تمويه شعاعي ترانزيشن كاب كات zoom blur radial blur within-frame seam cuts (zoom-through, inverse zoom, cut-the-curve, waterfall) قطوعات داخل اللقطة قطع بالتكبير زووم ثرو قطع سلس zoom through seamless cut cut transitions (11) الانتقالات الإحدى عشر انتقالات القطع اهتزاز فلاش زووم cut effects shake zoom-through-hole transition انتقال بالعبور من فتحة زووم داخل فتحة عبور تكبير أسي zoom through hole reveal cloud fly-through transition عبور السحاب كانتقال سحب عبور السحب زووم الخريطة clouds map zoom zoom-through speed lines اختراق بخطوط سرعة خطوط السرعة تكبير مندفع ترانزيشن speed lines zoom transition nested-screen dive (recursive zoom) غوص داخل شاشة متداخلة شاشة داخل شاشة تكبير متكرر غوص screen in screen nested zoom css/gsap scale transitions انتقالات scale انتقال تكبير زووم تصغير zoom transition scale transition key: zoom-through انتقال: زووم عابر زووم دخول بالتكبير خطة الفيلم zoom through zoom zoom cut entrance قطع بالتكبير دخول المشهد تكبير زووم zoom in scene entrance needle zoom on a persistent object زوم الإبرة على جسم مستمر needle zoom pivot parallax persistent object زوم محور طبقات focal-point infinite-zoom transition زوم لانهائي حول نقطة بؤرية infinite zoom focal point song film canvas زوم لانهائي نقطة بؤرية فيلم أغنية fly-through continuation rule استمرار الطيران عبر الأشياء fly-through zoom through dive continuation طيران عبور زوم داخل carrier-object transformation chain سلسلة التحول بجسم حامل جسم حامل سلسلة تحول تداخل المشاهد carrier object continuity"
+},
+"SP-0390": {
+"id": "SP-0390",
 "name_ar": "انتقال CSS: حرق الفيلم",
 "name_en": "CSS transition: Film burn",
 "hub": "motion",
@@ -9204,8 +9227,8 @@
 ],
 "text": "film-burn transition حرق فيلم بقع برتقالية ترانزيشن حرق احتراق الفيلم film burn burn transition overexposure burn احتراق تعريض زائد فلاش أبيض سطوع حرق الصورة overexposure white flash page-burn destruction احتراق الصفحة احتراق ورقة تحترق تدمير الكادر burn hole page burn css transition: film burn انتقال css: حرق الفيلم حرق الشريط ترانزيشن حرق ألوان كهرمانية film burn burn transition css transition: page burn انتقال css: احتراق الصفحة احتراق حرق الصفحة نار fire transition burning page shader transition: ridged-burn انتقال شيدر: احتراق متعرج احتراق حرق ترانزيشن burn transition burn effect ridged burn انتقال الحرق المتعرج حرق احتراق ترانزيشن burn effect turbulence webgl shader transition: ridged-burn انتقال شيدر webgl: حرق متشقق حرق احتراق تآكل burn transition dissolve burn light transitions انتقالات الضوء تسرب ضوء حرق الفيلم تعريض زائد film burn overexposure css transition: overexposure burn انتقال css: حرق بالتعريض الزائد تعريض زائد انتقال للأبيض سطوع white out overexposed transition destruction transitions انتقالات التدمير تفكك حرق الصفحة تدمير page burn break apart other transitions انتقالات متنوعة انتقالات إبداعية فلاش سقوط flash cut gravity drop creative noise-dissolve between two rendered scenes ذوبان ضوضائي بين مشهدين ذوبان احتراق مشهد ثلاثي الأبعاد burn transition three.js css transition: gravity drop انتقال css: سقوط بالجاذبية سقوط إسقاط المشهد ترانزيشن سقوط drop transition fall away cover transitions انتقالات التغطية تغطية ستائر كتل blinds block wipe view transitions api واجهة انتقالات العرض انتقال الصفحات تحريك الواجهة عنصر مشترك page transition shared element react transitionseries math حساب مدة الانتقالات مدة الفيديو حساب الفريمات ترانزيشن transition duration frame count overlap beat-locked transition bar ثمانية انتقالات في مازورة عرض انتقالات على الإيقاع مازورة transition showcase beat sync bpm css/gsap light transitions انتقالات light تسرب ضوئي حرق الفيلم تعريض زائد light leak film burn css/gsap other transitions انتقالات other سقوط بالجاذبية حرق الصفحة تحول دائرة gravity drop page burn css/gsap cover transitions انتقالات cover ستائر كتل متتابعة تغطية الكادر blinds block wipe remotion transitionseries انتقالات remotion ريموشن مدة الفيديو انتقالات برمجية remotion transitionseries"
 },
-"SP-0390": {
-"id": "SP-0390",
+"SP-0391": {
+"id": "SP-0391",
 "name_ar": "انتقال جليتش شرائحي",
 "name_en": "Slice glitch transition",
 "hub": "motion",
@@ -9227,30 +9250,6 @@
 "SP-0026"
 ],
 "text": "rgb glitch transition انتقال غليتش تشويش اهتزاز الألوان خلل glitch rgb split digital glitch stutter (2d) تشويش رقمي غليتش خلل رقمي تقطيع أفقي glitch effect rgb split analysis-keyed glitch pass (3d) تشويش مرتبط بالتحليل غليتش ثلاثي الأبعاد تأثير لاحق تشويش post processing glitch pass 3d css transition: glitch انتقال css: تشويش رقمي جليتش تشويش خلل رقمي glitch effect digital glitch glitch انتقال الغليتش جليتش تشويش خطوط مسح scanlines rgb shift digital glitch rgb split and slice glitch technique انفصال الألوان والجليتش جليتش تشويش انقسام الألوان channel split glitch effect canvas shader transition: glitch انتقال شيدر: غلتش جليتش تشويش رقمي ترانزيشن glitch transition digital distortion chromatic rgb-split / slice glitch تشويش انقسام الألوان والشرائح جليتش تشويش انقسام الألوان glitch effect slice reveal gsap css transition: vhs tape انتقال css: شريط vhs شريط فيديو تشويش الشريط خطوط مزاحة vhs effect tape glitch slice glitch transition انتقال جليتش شرائحي جليتش شرائح تشويش glitch cut rgb split rgb-split glitch transition انتقال جليتش بفصل الألوان جليتش تشويش رقمي قنوات الألوان glitch rgb shift rgb-split slice glitch جليتش بانفصال القنوات وشرائح أفقية جليتش تشويش حروف شبحية glitch transition glitch text glitch slice wipe مسح غلتش شرائحي جليتش تشويش شرائح أفقية glitch distortion glitch type tiling تكرار نص متشوه جليتش تكرار النص تشويش glitch text repeat type rgb split glitch slam ضربة كلمة بتشويش ألوان rgb جليتش كلمة قوية تشويش glitch text word slam rgb split stutter اهتزاز فصل ألوان تقطع تشويش جليتش glitch rgb offset rgb glitch line end card خطوط تشويش ملونة للخاتمة خاتمة شعار جليتش end card outro glitch / chromatic / vhs / ripple تشويش رقمي وانحراف لوني تشويش رقمي جليتش انحراف لوني glitch rgb split vhs band glitch cut قطع الخلل بالأشرطة glitch bands chromatic aberration cut خلل انحراف لوني css/gsap distortion transitions انتقالات distortion تشويه جليتش انحراف لوني glitch chromatic aberration transition hard rules (html) قواعد الانتقالات الصلبة قواعد التنفيذ ضوابط الانتقالات جليتش transition rules gsap"
-},
-"SP-0391": {
-"id": "SP-0391",
-"name_ar": "انتقال عبر التكبير",
-"name_en": "Zoom Through Transition",
-"hub": "motion",
-"stage": "refine",
-"stages": {
-"create": 4,
-"assemble": 1,
-"refine": 14,
-"plan": 1
-},
-"size": 20,
-"best": "proven",
-"ready_now": 2,
-"links": [
-"SP-0161",
-"SP-0188",
-"SP-0159",
-"SP-0168",
-"SP-0119"
-],
-"text": "camera punch-in on scene cuts زووم خاطف عند القطع زووم سريع قطع قوي زووم مفاجئ punch in zoom cut zoom punch that decays like a hit زووم ضربة زووم على الإيقاع نبضة ضربة beat zoom punch zoom zoom through transition انتقال عبر التكبير زووم تقريب دخول zoom in transition push in css transition: zoom through انتقال css: اختراق بالتقريب زووم اختراق تقريب zoom in punch in scale transitions انتقالات الحجم زووم تقريب تبعيد zoom transition scale cinematic zoom انتقال الزووم السينمائي زووم ضبابية انتقال درامي zoom blur dramatic zoom css transition: zoom out انتقال css: تبعيد تبعيد تصغير زووم آوت scale down shrink phone-editor transition: zoomblur انتقال تطبيقات الموبايل: زووم + تمويه (capcut zoom) زووم بلور تمويه شعاعي ترانزيشن كاب كات zoom blur radial blur phone-editor transition: zoomblurout انتقال تطبيقات الموبايل: زووم للخارج + تمويه زووم للخارج تصغير تمويه zoom out blur within-frame seam cuts (zoom-through, inverse zoom, cut-the-curve, waterfall) قطوعات داخل اللقطة قطع بالتكبير زووم ثرو قطع سلس zoom through seamless cut cut transitions (11) الانتقالات الإحدى عشر انتقالات القطع اهتزاز فلاش زووم cut effects shake zoom-through-hole transition انتقال بالعبور من فتحة زووم داخل فتحة عبور تكبير أسي zoom through hole reveal cloud fly-through transition عبور السحاب كانتقال سحب عبور السحب زووم الخريطة clouds map zoom nested-screen dive (recursive zoom) غوص داخل شاشة متداخلة شاشة داخل شاشة تكبير متكرر غوص screen in screen nested zoom zoom-through speed lines اختراق بخطوط سرعة خطوط السرعة تكبير مندفع ترانزيشن speed lines zoom transition css/gsap scale transitions انتقالات scale انتقال تكبير زووم تصغير zoom transition scale transition key: zoom-through انتقال: زووم عابر زووم دخول بالتكبير خطة الفيلم zoom through zoom zoom cut entrance قطع بالتكبير دخول المشهد تكبير زووم zoom in scene entrance fly-through continuation rule استمرار الطيران عبر الأشياء fly-through zoom through dive continuation طيران عبور زوم داخل focal-point infinite-zoom transition زوم لانهائي حول نقطة بؤرية infinite zoom focal point song film canvas زوم لانهائي نقطة بؤرية فيلم أغنية"
 },
 "SP-0392": {
 "id": "SP-0392",
@@ -9314,7 +9313,7 @@
 "links": [
 "SP-0399",
 "SP-0409",
-"SP-0389",
+"SP-0390",
 "SP-0407",
 "SP-0106"
 ],
@@ -9337,7 +9336,7 @@
 "links": [
 "SP-0183",
 "SP-0393",
-"SP-0418",
+"SP-0417",
 "SP-0176",
 "SP-0108"
 ],
@@ -9359,9 +9358,9 @@
 "ready_now": 3,
 "links": [
 "SP-0174",
-"SP-0436",
+"SP-0435",
 "SP-0209",
-"SP-0160",
+"SP-0433",
 "SP-0020"
 ],
 "text": "css 3d card flip قلب بطاقة ثلاثي الأبعاد قلب دوران ثلاثي الأبعاد بطاقة card flip 3d flip front-loaded 3d roll flip قلب ثلاثي الأبعاد قلب دوران دخول سريع flip in rotation x 3d card roll دوران ثلاثي الأبعاد دوران قلب أفقي ثلاثي الأبعاد card roll rotation css transition: 3d card flip انتقال css: قلب البطاقة ثلاثي الأبعاد قلب بطاقة ثلاثي الأبعاد card flip flip perspective 3d transitions انتقالات ثلاثية الأبعاد قلب بطاقة ثلاثي الأبعاد منظور card flip flip transition front-loaded 3d roll قلب ثلاثي الأبعاد قلبة دوران ثلاثي الأبعاد انقلاب سريع 3d flip flip in roll 3d flip seam انقلاب ثلاثي قلب ثلاثي انقلاب دوران ثلاثي الأبعاد 3d flip flip transition polarity stage flip قلب قطبية المسرح فاتح وداكن قلب الألوان فاصل الفصول light dark flip act break footage → card → implode → lockup لقطة إلى بطاقة إلى انهيار إلى شعار ختام بالشعار تصغير اللقطة انكماش logo reveal outro light/dark flip قلب فاتح داكن قلب الألوان على الإيقاع خلفية invert beat hero shrinks into card تقلّص الصورة إلى بطاقة تصغير بطاقة كشف الواجهة shrink to card rounded corners quote card over hazed scene بطاقة اقتباس فوق مشهد باهت اقتباس بطاقة نص تبهيت الخلفية quote card text overlay window grid to device تقلص الشبكة إلى هاتف شاشة موبايل شبكة نوافذ تحول flip animation phone screen zoom-through logo ending نهاية بالغوص في الشعار خاتمة شعار بطاقة اسم outro end card image flies into document slot صورة تطير من المحادثة إلى المستند محادثة إيميل طيران الصورة chat to email sparkle css/gsap 3d transitions انتقالات 3d قلب البطاقة انتقال ثلاثي الأبعاد فليب card flip 3d flip paper-curl page flip قلب صفحة قلب الصفحة تقليب ورق كتاب page turn page curl"
@@ -9427,7 +9426,7 @@
 "ready_now": 3,
 "links": [
 "SP-0394",
-"SP-0389",
+"SP-0390",
 "SP-0407",
 "SP-0402",
 "SP-0050"
@@ -9475,7 +9474,7 @@
 "links": [
 "SP-0392",
 "SP-0160",
-"SP-0389",
+"SP-0390",
 "SP-0407",
 "SP-0030"
 ],
@@ -9489,9 +9488,9 @@
 "stage": "refine",
 "stages": {
 "refine": 12,
-"create": 1
+"create": 2
 },
-"size": 13,
+"size": 14,
 "best": "install",
 "ready_now": 0,
 "links": [
@@ -9501,7 +9500,7 @@
 "SP-0394",
 "SP-0110"
 ],
-"text": "css transition: push slide انتقال css: دفع انزلاقي دفع أفقي انزلاق سلايد horizontal push slide push transitions انتقالات الدفع دفع انزلاق سلايد push slide slide transition phone-editor transition: whipup ويب أعلى سوايب لأعلى سحب للأعلى انتقال موبايل swipe up whip up phone-editor transition: whipdown ويب أسفل سوايب لأسفل سحب للأسفل انتقال موبايل swipe down whip down css transition: vertical push انتقال css: دفع عمودي دفع عمودي انزلاق عمودي سلايد vertical slide push up phone-editor transition: whipright ويب يمين سوايب يمين سحب لليمين انتقال موبايل swipe right whip right phone-editor transition: whipleft ويب يسار سوايب يسار سحب لليسار انتقال موبايل swipe left whip left phone-editor transition: whip (whipleft/whipright/whipup/whipdown) انتقال تطبيقات الموبايل: سوايب سريع سوايب انتقالات كاب كات تطبيقات الموبايل whip transition capcut page slide انزلاق الصفحة انزلاق صفحات واجهة تطبيق page transition ui slide phone-editor transition: spin انتقال تطبيقات الموبايل: دوران دوران لف ترانزيشن دوران spin rotate transition sun whiteout bridge انتقال بالبياض الشمسي شمس بياض الشاشة توهج whiteout bloom css/gsap push transitions انتقالات push انتقال دفع انزلاق المشهد سلايد push transition gsap swipe / screen push and modal sheet سحب الشاشة واللوحة المنبثقة شاشات التطبيق سحب الشاشة نافذة منبثقة screen push modal sheet app ui"
+"text": "css transition: push slide انتقال css: دفع انزلاقي دفع أفقي انزلاق سلايد horizontal push slide push transitions انتقالات الدفع دفع انزلاق سلايد push slide slide transition phone-editor transition: whipup ويب أعلى سوايب لأعلى سحب للأعلى انتقال موبايل swipe up whip up css transition: vertical push انتقال css: دفع عمودي دفع عمودي انزلاق عمودي سلايد vertical slide push up phone-editor transition: whipdown ويب أسفل سوايب لأسفل سحب للأسفل انتقال موبايل swipe down whip down phone-editor transition: whipright ويب يمين سوايب يمين سحب لليمين انتقال موبايل swipe right whip right phone-editor transition: whipleft ويب يسار سوايب يسار سحب لليسار انتقال موبايل swipe left whip left phone-editor transition: whip (whipleft/whipright/whipup/whipdown) انتقال تطبيقات الموبايل: سوايب سريع سوايب انتقالات كاب كات تطبيقات الموبايل whip transition capcut page slide انزلاق الصفحة انزلاق صفحات واجهة تطبيق page transition ui slide phone-editor transition: spin انتقال تطبيقات الموبايل: دوران دوران لف ترانزيشن دوران spin rotate transition sun whiteout bridge انتقال بالبياض الشمسي شمس بياض الشاشة توهج whiteout bloom css/gsap push transitions انتقالات push انتقال دفع انزلاق المشهد سلايد push transition gsap swipe / screen push and modal sheet سحب الشاشة واللوحة المنبثقة شاشات التطبيق سحب الشاشة نافذة منبثقة screen push modal sheet app ui object carry contract in screen pixels حمل الجسم بإحداثيات الشاشة carry shared element grow from point handoff حمل عنصر مشترك نمو من نقطة"
 },
 "SP-0403": {
 "id": "SP-0403",
@@ -9518,7 +9517,7 @@
 "best": "ready",
 "ready_now": 1,
 "links": [
-"SP-0418",
+"SP-0417",
 "SP-0387",
 "SP-0148",
 "SP-0307",
@@ -9616,7 +9615,7 @@
 "SP-0394",
 "SP-0399",
 "SP-0402",
-"SP-0391",
+"SP-0389",
 "SP-0120"
 ],
 "text": "transition classification by re-synthesis تصنيف الانتقال بإعادة التركيب تحليل الانتقال التعرف على الترانزيشن فيديو مرجعي transition detection replicate transition transition classification by re-synthesis, shipped in-repo تصنيف الانتقال بإعادة التركيب داخل المستودع انتقال xfade re-synthesis classification capcut mimic محاكاة most-active window shot picker اختيار أنشط مقطع أنشط لقطة اختيار اللقطات حركة المقطع motion energy shot selection mimic reference reel محاكاة ريل تقليد ريل نسخ المونتاج فيديو مرجعي recreate reel reference video remake transition energy and mood mapping مطابقة الانتقال مع الطاقة والمزاج اختيار الانتقال مزاج الفيديو إيقاع المونتاج transition choice pacing mood transition by energy table اختيار الانتقال حسب الطاقة طاقة الفيديو اختيار الانتقال إيقاع المونتاج transition choice pacing energy transition meaning rule قاعدة معنى الانتقال معنى الانتقال نوعان فقط بساطة المونتاج transition meaning two types transition meaning map معنى كل انتقال معنى الانتقال مزاج الفيديو لغة المونتاج transition mood editing grammar transition semantics معاني الانتقالات دلالة الانتقال نية السرد لغة المونتاج narrative intent cut meaning transition presets إعدادات انتقال جاهزة مدة الانتقال منحنى التسارع إعدادات جاهزة easing duration presets"
@@ -9638,8 +9637,8 @@
 "links": [
 "SP-0392",
 "SP-0413",
-"SP-0402",
 "SP-0398",
+"SP-0402",
 "SP-0006"
 ],
 "text": "phone-editor transition: dipblack انتقال تطبيقات الموبايل: غمس للأسود غمس للأسود تلاشي للأسود ترانزيشن أسود dip to black fade to black micro dip between hard cuts إظلام قصير بين القطعات إظلام تلاشي قصير قطع ناعم fade in out dip black concat phone-editor transition: dipwhite انتقال تطبيقات الموبايل: غمس للأبيض غمس للأبيض تلاشي أبيض ترانزيشن أبيض dip to white white fade css transition: color dip انتقال css: غمس لوني إلى الأسود غمس للأسود إظلام بين المشاهد ترانزيشن dip to black fade through black dip to black / dip to ink ending خاتمة بالغطس إلى الأسود نهاية الفيديو إظلام فيد للأسود fade out ending dip to black end + white flash seams إظلام الختام ووميض الانتقال فلاش دافئ إظلام الختام فواصل الفصول act transition fade to black fade-through-black rhythm with overlapping text إيقاع الإظلام مع تداخل النص إظلام بين اللقطات نص فوق الأسود إيقاع المونتاج fade to black text overlap fade-driven scene grammar قواعد مشاهد مبنية على التلاشي قفزة زمنية تلاشي للأسود تغيير المكان dip to black time jump dark-dip camera reset انخفاض مظلم غمسة مظلمة إعادة الكاميرا دولي dip to black camera reset"
@@ -9704,7 +9703,7 @@
 "ready_now": 0,
 "links": [
 "SP-0404",
-"SP-0391",
+"SP-0389",
 "SP-0387",
 "SP-0139",
 "SP-0127"
@@ -9726,8 +9725,8 @@
 "ready_now": 4,
 "links": [
 "SP-0338",
-"SP-0308",
 "SP-0265",
+"SP-0308",
 "SP-0330",
 "SP-0025"
 ],
@@ -9771,8 +9770,8 @@
 "links": [
 "SP-0402",
 "SP-0159",
-"SP-0397",
 "SP-0251",
+"SP-0397",
 "SP-0113"
 ],
 "text": "rubber band bumper الشريط المطاطي مطاط ارتداد مرونة elastic overshoot snap css transition: elastic push انتقال css: دفع مرن دفع مرن ارتداد مطاطي elastic overshoot bounce column pour and exposure-ramp reveals انسكاب الأعمدة ومنحدر التعريض pour exposure ramp overscan infinite band انسكاب تعريض شريط لانهائي"
@@ -9800,28 +9799,6 @@
 },
 "SP-0416": {
 "id": "SP-0416",
-"name_ar": "زوم الإبرة على جسم مستمر",
-"name_en": "Needle zoom on a persistent object",
-"hub": "motion",
-"stage": "create",
-"stages": {
-"create": 2,
-"deliver": 1
-},
-"size": 3,
-"best": "documented",
-"ready_now": 0,
-"links": [
-"SP-0161",
-"SP-0391",
-"SP-0188",
-"SP-0301",
-"SP-0059"
-],
-"text": "needle zoom on a persistent object زوم الإبرة على جسم مستمر needle zoom pivot parallax persistent object زوم محور طبقات carrier-object transformation chain سلسلة التحول بجسم حامل جسم حامل سلسلة تحول تداخل المشاهد carrier object continuity object carry contract in screen pixels حمل الجسم بإحداثيات الشاشة carry shared element grow from point handoff حمل عنصر مشترك نمو من نقطة"
-},
-"SP-0417": {
-"id": "SP-0417",
 "name_ar": "تحويل الصورة إلى رسم",
 "name_en": "Photo-to-graphic trace",
 "hub": "motion",
@@ -9840,8 +9817,8 @@
 ],
 "text": "photo-to-graphic trace تحويل الصورة إلى رسم رسم الخطوط تحويل لرسم فيكتور line trace photo to vector"
 },
-"SP-0418": {
-"id": "SP-0418",
+"SP-0417": {
+"id": "SP-0417",
 "name_ar": "كشف الكلمة العربية كاملة من اليمين",
 "name_en": "RTL whole-word lyric reveal with key-word pop",
 "hub": "type",
@@ -9866,8 +9843,8 @@
 ],
 "text": "whole-word law الكلمة كاملة لا الحرف كلمة كاملة اتصال الحروف تفكيك الحروف whole word letter joining split text rtl kinetic حروف مقطعة تحريك النص نص متحرك per-word animation arabic text animation rtl scoping for renderers حصر الاتجاه في عناصر النص اتجاه rtl dir hyperframes black video شاشة سوداء unicode-bidi lint فيديو أسود من اليمين لليسار رندر render black direction css word-mask reveal & hide أقنعة الكلمات: إظهار وإخفاء قناع الكلمات إظهار إخفاء revealwords hidewords word mask motion-kit gsap title ظهور العنوان دخول الكلمات انيميشن كلمات text reveal slide up arabic ass karaoke captions (reels · cinema · punchy) كاريوكي ass عربي بثلاثة أنماط كاريوكي ترجمة سبتايتل karaoke captions ass libass burn subtitles reels word highlight كابشن ترجمة محروقة تمييز الكلمة subtitles word by word stress-based keyword picking اختيار الكلمة المفتاحية بالنبر كلمة مفتاحية نبر keyword stress stop words egyptian emphasis إبراز تلقائي علو الصوت كلمات الحشو loudness auto keyword auto-rtl lower third شريط اسم سفلي تلقائي الاتجاه شريط اسم lower third name tag speaker auto rtl اسم المتحدث تعريف الضيف الثلث السفلي name card name and title dp line breaking for lyrics & dua تقسيم الأسطر بالبرمجة الديناميكية تقسيم الأسطر line breaking dynamic programming dua lyrics segmentation تقطيع الجمل فواصل الأسطر وقفات line splitting phrase breaks arabic file-name mojibake repair إصلاح أسماء الملفات العربية المشوّهة ترميز أسماء الملفات mojibake encoding cp1256 upload رموز غريبة حروف مشوهة اسم الملف garbled filename utf-8 shaping-engine routing توجيه محرك التشكيل تشكيل harfbuzz raqm pillow arabic_reshaper bidi libass drawtext shaping reversed text نص معكوس حروف منفصلة نص مقلوب ربط الحروف disconnected letters ffmpeg arabic content-language switch ar|en|both مفتاح لغة المحتوى لغة المحتوى ثنائي اللغة content language bilingual scaffold kosif.py عربي وإنجليزي مشروع جديد لغتين arabic only content-lang eight arabic motion templates قوالب الموشن العربية الثمانية قوالب templates title-card lower-third quote-card countdown end-card bullet-list mtemplates قالب جاهز عد تنازلي بطاقة نهاية خاتمة الفيديو motion template keyword slam with upward mask ضربة الكلمة المفتاحية بقناع صاعد ضربة كلمة مفتاحية slam keyword emphasis expo.out clip mask تأكيد الكلمة إبراز كلمة قوية word punch impact text canvas rtl text-layer helpers طبقات نص عربي على canvas canvas طبقة نص text layer filltext rtl editor كتابة على الكانفاس حد النص شفافية text stroke canvas text canvas rtl staggered line slide انزلاق سطور عربية على canvas canvas"
 },
-"SP-0419": {
-"id": "SP-0419",
+"SP-0418": {
+"id": "SP-0418",
 "name_ar": "التقاط ستايل النص وإعادة تركيبه",
 "name_en": "Text-style capture & compositing",
 "hub": "type",
@@ -9891,8 +9868,8 @@
 ],
 "text": "text-style capture & compositing التقاط ستايل النص وإعادة تركيبه محاكاة ستايل النص mimic text style outline shadow reference تقليد الستايل نفس شكل النص حد النص copy text style glow arabic normalisation for alignment & matching توحيد النص العربي للمطابقة توحيد تطبيع normalise normalization alef harakat alignment hashtag إزالة التشكيل توحيد الألف مطابقة النص text matching strip diacritics real type over generated plates نص حقيقي فوق لوحات التوليد صورة مولدة ذكاء اصطناعي بلا نص textless ai image overlay prompt lint ideogram كتابة على الصورة حروف مشوهة عنوان فوق الصورة garbled text text overlay timeline-json text overlays طبقات نص الخط الزمني json خط زمني timeline json overlay lower third text anim نص فوق الفيديو كتابة على الفيديو طبقة نص text overlay preset motion three-level type hierarchy هرمية بثلاث مستويات هرمية مستويات hierarchy caption keyword premium edit reels أحجام النص تدرج الأحجام ترتيب بصري type hierarchy text sizes fit-width & shrink-to-fit ملاءمة العرض والتصغير التلقائي ملاءمة تصغير fit text shrink to fit layout rows النص طويل تصغير الخط عدد الأسطر auto size text overflow text-animation measurement & replay قياس حركة النص وتصنيفها قياس الحركة تصنيف measure classify text animation mimic replay تحليل المرجع حركة النص تقليد الحركة reference analysis copy animation giant outlined question mark علامة استفهام عملاقة مفرّغة علامة استفهام سؤال question mark outline text text-stroke استفهام نص مفرغ حدود النص hollow text big question mark gilded, gradient & sweeping fills تعبئات مذهّبة ومتدرجة ولمعة عابرة ذهبي تدرج لمعة gold gradient text background-clip sweep luxury فخم نص ذهبي تدرج لوني بريق shine golden text offset duotone shadow hero ظل مزدوج مزاح ظل مزدوج duotone offset shadow poster history ظل ملون نسخ مزاحة بوستر color offset layered text shaped text in painted scenes & svg import نص مشكّل في المشاهد المرسومة واستيراد svg مشهد مرسوم svg painter vector scene gradient text pillow نص على الرسم استيراد svg رسم svg text 4k text video type scale at 1080 px سلّم أحجام الفيديو أحجام الخط سلم الطباعة type scale font size 1080 line-height weights حجم الترجمة مقاس الخط حجم العنوان caption size title size words on a circular path كلمات على مسار دائري مسار دائري circle textpath arc orbit mg-017 نص دائري دوران النص حول المنتج circular text rotating text caption safe zone & look منطقة الترجمة الآمنة وشكلها منطقة آمنة ترجمة safe zone subtitle outline margin 9:16 مكان الترجمة هوامش سبتايتل caption position subtitle style type-block 90° rotation as camera move دوران"
 },
-"SP-0420": {
-"id": "SP-0420",
+"SP-0419": {
+"id": "SP-0419",
 "name_ar": "مطابقة الخط بالحبر",
 "name_en": "Font matching by ink",
 "hub": "type",
@@ -9908,14 +9885,14 @@
 "ready_now": 10,
 "links": [
 "SP-0123",
-"SP-0425",
-"SP-0430",
+"SP-0424",
+"SP-0429",
 "SP-0155"
 ],
 "text": "font matching through a real shaper (chromium/harfbuzz) مطابقة الخط عبر محرك تشكيل حقيقي مطابقة الخط font matching harfbuzz chromium signatures amiri تشكيل type pairings اقترانات الخطوط اقتران الخطوط pairing kufi plex readex fraunces bilingual type تنسيق الخطوط خط العنوان خط النص font pairing headline font cairo split by unicode-range كايرو المقسوم بنطاق يونيكود cairo القاهرة unicode-range woff2 subset font-face تقسيم الخط خط كايرو تضمين الخط ملف الخط font subsetting webfont assemble a matched ofl family from two masters تجميع عائلة خط مطابقة من مصدرين ofl fonttools merge subset ofl عائلة خط amiri bodoni font matching by ink مطابقة الخط بالحبر مطابقة الخط font matching font id ink iou mimic ما هذا الخط تعرف على الخط خط مشابه identify font similar font arabic font voice map خريطة أصوات الخطوط خطوط كوفي نسخ رقعة font kufi naskh ruqaa ofl cairo tajawal amiri lalezar اختيار الخط خط عربي فونت font choice arabic typeface live google fonts loader & picker محمّل الخطوط الحي ومنتقي الخط google fonts منتقي الخط font picker تبديل الخط live swap تجربة الخطوط تغيير الفونت معاينة الخط font preview change font font discovery & fallback chain اكتشاف الخطوط وسلسلة البدائل اكتشاف الخطوط خط بديل fallback fc-list font discovery noto dubai خطوط الجهاز البحث عن خط خط مفقود installed fonts missing font font-ready gate before frame 0 بوابة تحميل الخط قبل الإطار الأول تحميل الخط خط بديل font loading fonts.ready delayrender fallback glyphs tofu الخط لا يظهر مربعات بدل الحروف انتظار الخط font not loaded first frame screen reading scale (v17 / sqc) سلّم القراءة للشاشات واجهة سلم القراءة ui type reading scale dashboard plex لوحة تحكم أحجام الواجهة وضوح القراءة ui font size line length font matches are candidates, not identities ترشيح الخط لا الجزم به font matching fallback tofu imitation مطابقة الخط خط احتياطي"
 },
-"SP-0421": {
-"id": "SP-0421",
+"SP-0420": {
+"id": "SP-0420",
 "name_ar": "سطور تتكدس وتخفت",
 "name_en": "Stacked headline lines that dim",
 "hub": "type",
@@ -9932,14 +9909,14 @@
 "links": [
 "SP-0174",
 "SP-0266",
-"SP-0424",
 "SP-0423",
+"SP-0422",
 "SP-0028"
 ],
 "text": "lines rising behind a cut line سطور تصعد من خلف خط قطع سطور اقتباس line reveal quote mask rise mg-012 بطاقة اقتباس عنوان متعدد الأسطر صعود السطور quote card multi-line title cinematic arabic headline over footage عنوان عربي سينمائي فوق الفيديو عنوان سينمائي فوق الفيديو cinematic headline footage text-wrap balance documentary عنوان فوق اللقطة وثائقي ظل النص text shadow headline overlay growing glow rule under the title خط مضيء يتمدد تحت العنوان خط مضيء glow rule underline title card night خط تحت العنوان عنوان فرعي فاصل متوهج accent line subtitle shaped arabic cover / thumbnail غلاف بعنوان عربي مشكّل غلاف صورة مصغرة thumbnail cover pillow poster frame ثمبنيل صورة الغلاف عنوان الغلاف video cover frame grab stacked headline lines that dim سطور تتكدس وتخفت تكدس السطور خفوت stacked lines dim trailer beat إعلان تشويقي تريلر سطور متتابعة beat sync headline stack number → headline رقم يتحول إلى عنوان رقم إحصائية عداد statistic counter headline mg-019 رقم متحرك عد تصاعدي أرقام كبيرة count up stat reveal arabic cta & price isolation الدعوة والسعر بالعربية دعوة سعر cta price ad bdi اشترك عملة إعلان call to action end card"
 },
-"SP-0422": {
-"id": "SP-0422",
+"SP-0421": {
+"id": "SP-0421",
 "name_ar": "نظام أرقام واحد وأرقام جدولية",
 "name_en": "One digit system + tabular figures",
 "hub": "type",
@@ -9956,14 +9933,14 @@
 "links": [
 "SP-0199",
 "SP-0197",
-"SP-0424",
+"SP-0423",
 "SP-0240",
 "SP-0024"
 ],
 "text": "deterministic arabic-indic money formatter منسّق الأرقام الهندية الحتمي عملة أرقام money currency formatter riyal deterministic مبلغ ريال تنسيق الأرقام price format number formatting one digit system + tabular figures نظام أرقام واحد وأرقام جدولية أرقام هندية أرقام جدولية digits tabular nums arabic-indic counter intl.numberformat عداد الأرقام العربية ثبات الأرقام number jitter western digits digit parsing & number/unit detection قراءة الأرقام والوحدات العربية أرقام وحدات مليون digits units parse counter statistics نسبة مئوية تحويل الأرقام إحصائيات number detection percent pills, chips & numbered badges أقراص وشارات وأرقام مرقّمة شارة قرص رقم pill chip badge glass arabic-indic label وسوم ترقيم تاج tag numbered badge remotion spring title + keyword pills عنوان remotion بنابض وأقراص كلمات remotion spring pills أقراص keyword react عنوان ريموشن كلمات مفتاحية شارات keyword tags title animation rolling word pill with growing rings كبسولة الكلمات الدوّارة كبسولة تدحرج word roll pill rings ticker تبديل الكلمات كلمات دوارة حلقات rolling text word swap"
 },
-"SP-0423": {
-"id": "SP-0423",
+"SP-0422": {
+"id": "SP-0422",
 "name_ar": "عنوان ASS متحرك لكل لقطة",
 "name_en": "Per-shot ASS animated title card",
 "hub": "type",
@@ -9978,15 +9955,15 @@
 "ready_now": 4,
 "links": [
 "SP-0174",
+"SP-0423",
+"SP-0420",
 "SP-0424",
-"SP-0421",
-"SP-0425",
 "SP-0020"
 ],
 "text": "composed calligraphic title from ofl outlines عنوان خطي مركّب من حدود حروف مفتوحة ثلث thuluth lettering svg draw-on عنوان compose per-shot ass animated title card عنوان ass متحرك لكل لقطة ass libass عنوان title card ffmpeg move fad حرق العنوان بطاقة عنوان بدون متصفح burn in subtitle file hijri + gregorian day header ترويسة اليوم بالهجري والميلادي هجري ميلادي تاريخ hijri date header dua friday calligraphy التاريخ الهجري جمعة مباركة بطاقة اليوم islamic date day card safe credit-line burn سطر الحقوق الآمن حقوق credit drawtext textfile safe attribution نسب المحتوى اسم صاحب المقطع ذكر المصدر creator credit ffmpeg reading-time & density law قانون زمن القراءة والكثافة زمن القراءة كثافة reading time density hook timing words per card مدة الظهور عدد الكلمات سرعة القراءة on-screen duration text timing"
 },
-"SP-0424": {
-"id": "SP-0424",
+"SP-0423": {
+"id": "SP-0423",
 "name_ar": "ثلاثة أشكال لعنوان الخطاف",
 "name_en": "Hook title looks: box · kinetic · minimal",
 "hub": "type",
@@ -10000,15 +9977,15 @@
 "ready_now": 2,
 "links": [
 "SP-0174",
-"SP-0423",
-"SP-0421",
-"SP-0425",
+"SP-0422",
+"SP-0420",
+"SP-0424",
 "SP-0018"
 ],
 "text": "spring word-stagger title عنوان كلمات بنابض كل 160 مللي ثانية نابض spring word stagger title عنوان html-canvas starter عنوان متحرك قفز الكلمات ارتداد bouncy title word pop typewriter with caret الآلة الكاتبة بمؤشر آلة كاتبة مؤشر typewriter typeon caret prompt box كتابة تلقائية كيبورد مؤشر وامض typing effect typing animation hook title looks: box · kinetic · minimal ثلاثة أشكال لعنوان الخطاف خطاف عنوان افتتاحي hook opening title stomp lalezar بداية الفيديو شد الانتباه هوك intro title attention grabber centre-locked resizing title box صندوق عنوان يحافظ على مركزه صندوق عنوان قياس النص title box measure text resize mg-016 تبديل العبارة خلفية النص تمدد الصندوق text swap auto width"
 },
-"SP-0425": {
-"id": "SP-0425",
+"SP-0424": {
+"id": "SP-0424",
 "name_ar": "أنظمة الأصوات الطباعية",
 "name_en": "Multi-voice type systems",
 "hub": "type",
@@ -10025,16 +10002,16 @@
 "best": "proven",
 "ready_now": 5,
 "links": [
-"SP-0420",
-"SP-0430",
-"SP-0424",
+"SP-0419",
+"SP-0429",
+"SP-0423",
 "SP-0174",
 "SP-0030"
 ],
 "text": "letter-spaced cinematic title عنوان سينمائي متباعد الحروف cinematic title tracking film serif عنوان سينمائي تباعد offline font inlining (base64) تضمين الخطوط داخل الملف base64 inline fonts offline captions تضمين الخطوط owner-bundled latin fonts (offline) خطوط لاتينية مدمجة جاهزة fonts space grotesk jetbrains mono montserrat خطوط مدمجة hud grotesk + italic-serif accent غروتسك عريض مع كلمة سيريف مائلة italic serif pairing editorial accent سيريف مائل تحريري lower-thirds & name plates الشرائط السفلية ولوحات الأسماء lower third name plate caption شريط سفلي اسم calm title card & lockup بطاقة عنوان هادئة وقفل الشعار title card lockup calm بطاقة عنوان هادئ fit-to-width & text measuring ملاءمة النص للعرض وقياسه fit text measure autosize ملاءمة قياس النص text-in-ai-image ladder حدود النص داخل صور الذكاء الاصطناعي ai image text rendering overlay نص في الصورة ذكاء اصطناعي multi-voice type systems أنظمة الأصوات الطباعية type system voices pairing أصوات طباعية نظام stacked serif title build عنوان سيريف متراكب يُبنى كلمة كلمة serif stacked calm سيريف متراكب numbered chapter blocks & giant-number cards بطاقات الفصول والأرقام الضخمة chapter eyebrow numbered فصل عين مرقمة size-stepped hierarchy stacks تكديس هرمي بأحجام متدرجة lineup hierarchy type scale هرم سلم الأحجام full-bleed glyph & word cards بطاقة حرف أو كلمة بملء الشاشة full-bleed glyph card حرف ضخم فاصل editorial serif headline & keyword title عنوان سيريف تحريري بكلمة مائلة serif editorial kicker سيريف عين علوية equation assembly تجميع المعادلات equation math katex معادلة رياضيات caption look by tone & theme مظهر الترجمة حسب النبرة والعالم captions tone subtitles ترجمة نبرة preset pairings & palettes for title systems تزويجات ولوحات جاهزة للعناوين presets palettes pairings لوحات تزويجات choosing & pairing faces اختيار الخط وتزويجه pairing font choice superfamily تزويج الخطوط اختيار الخط عائلة font licensing & font hygiene تراخيص الخطوط ونظافتها license ofl font-face fallback ترخيص خطوط النظام video type sizing & contrast مقاسات الخط للفيديو size contrast safe area hierarchy مقاسات تباين هوامش read-time & hold rules زمن القراءة والثبات timing hold read time توقيت زمن القراءة ثبات catalog kinetic styles: brutalist · minimal · typewriter استايلات حركية في الكتالوج brutalist minimal typewriter scaffold بروتالي مينيمال crisp svg text & label halos نص svg حاد وهالات التسميات svg crisp halo labels حدة هالة three font families from one source of truth ثلاث عائلات خطوط بمصدر واحد font tokens typography system canvas css var"
 },
-"SP-0426": {
-"id": "SP-0426",
+"SP-0425": {
+"id": "SP-0425",
 "name_ar": "صعود من خلف خط القاعدة",
 "name_en": "Baseline mask rise (lines & words)",
 "hub": "type",
@@ -10050,7 +10027,7 @@
 "best": "ready",
 "ready_now": 3,
 "links": [
-"SP-0418",
+"SP-0417",
 "SP-0395",
 "SP-0225",
 "SP-0183",
@@ -10058,8 +10035,8 @@
 ],
 "text": "baseline mask rise (lines & words) صعود من خلف خط القاعدة mask reveal baseline split text قناع كشف صعود rise from a partial state (risewords) صعود من حالة جزئية rise blur premium صعود ضباب canvas 1–4-word headline with auto-rtl عنوان قماشي من 1–4 كلمات مع اتجاه تلقائي canvas headline rtl عنوان اتجاه تلقائي per-letter drop & rise cascades تتابع الحروف سقوطًا وصعودًا letters stagger drop حروف تتابع سقوط tracking-in collapse (latin only) تقارب الحروف tracking letter-spacing premium تباعد تقارب الحروف kinetic center build بناء من المركز center build push phrase بناء من المركز blur-to-sharp focus pull ظهور من الضباب (سحب البؤرة) blur focus reveal ضباب بؤرة وضوح line stack, push & swap تكديس الأسطر ودفعها وتبديلها stack push line swap تكديس تبديل السطر scatter, tumble & gravity assemble تبعثر وتدحرج وتجميع scatter assemble gravity vortex تبعثر تجميع جاذبية strip-slice letter reveal كشف بالشرائح slice strips شرائح per-letter sine bounce & wave موجة الحروف wave bounce loop موجة قفز construction-grid & guide-line build بناء الكلمة على شبكة إنشائية grid guides construction شبكة خطوط إرشاد reading-order light-up & blur manifesto إضاءة الكلمات بترتيب القراءة light-up paragraph manifesto إضاءة الكلمات فقرة waterfall entry cascade الدخول الشلالي waterfall cascade list شلالي قائمة invisible-word blink الكلمة المختفية vanish blink defocus اختفاء كلمة مختفية clip-path big-word wipe مسح الكلمة الكبيرة بالقناع wipe clip-path mask مسح قناع text-motion vocabulary for storyboards مفردات حركة النص للستوري بورد vocabulary storyboard مفردات ستوري بورد"
 },
-"SP-0427": {
-"id": "SP-0427",
+"SP-0426": {
+"id": "SP-0426",
 "name_ar": "عنوان بلونين وكلمة لون",
 "name_en": "Two-tone lines & accent-word colour",
 "hub": "type",
@@ -10074,15 +10051,15 @@
 "ready_now": 0,
 "links": [
 "SP-0274",
-"SP-0418",
+"SP-0417",
 "SP-0148",
 "SP-0403",
 "SP-0119"
 ],
 "text": "strike-through & replace شطب واستبدال strikethrough replace correction شطب استبدال highlighter & underline swipe قلم التظليل والخط السفلي highlighter underline marker emphasis تظليل خط سفلي تأكيد two-tone lines & accent-word colour عنوان بلونين وكلمة لون two-tone accent colour emphasis لونين لون التمييز inline avatars & icons inside a headline صور ووجوه وأيقونات داخل السطر avatars inline icon صور داخل السطر keyword pills كلمات داخل كبسولات pill capsule keyword كبسولة كلمة مفتاحية word performs its meaning الكلمة تؤدي معناها verb literal meaning الكلمة تؤدي معناها dim-previous stacks & active-item lists قوائم تخفت السابق list dim triad قائمة تخفيت gradient & metallic word fills تعبئة متدرجة ومعدنية gradient metallic fill تدرج معدني selection brackets & design-tool bounding box أقواس تحديد وصندوق أداة تصميم brackets bounding box selection أقواس تحديد full-stop dot & glyph substitution النقطة الختامية وإبدال الحرف full stop dot glyph نقطة إبدال حرف"
 },
-"SP-0428": {
-"id": "SP-0428",
+"SP-0427": {
+"id": "SP-0427",
 "name_ar": "كتابة بشرية: أخطاء ومسح ومؤشر ملوّن",
 "name_en": "Human typing: typos, backspace, caret swap",
 "hub": "type",
@@ -10094,16 +10071,16 @@
 "best": "ready",
 "ready_now": 3,
 "links": [
-"SP-0438",
-"SP-0424",
+"SP-0437",
+"SP-0423",
 "SP-0197",
 "SP-0199",
 "SP-0079"
 ],
 "text": "scramble / decode reveal فك التشفير scramble decode hacker hud فك التشفير خلط eased typewriter with caret (typeon) آلة كاتبة متدرجة بمؤشر typewriter caret typing terminal آلة كاتبة مؤشر كتابة tabular counter (motion.counter) عدّاد بأرقام جدولية counter count-up numbers عداد أرقام human typing: typos, backspace, caret swap كتابة بشرية: أخطاء ومسح ومؤشر ملوّن typing typo backspace caret كتابة بشرية مسح مؤشر word-slot swap & ticker takeover تبديل كلمة في خانة ثابتة واستيلاء الشريط word swap slot ticker takeover تبديل الكلمة slot-machine word roll & spring ticker بكرة الكلمات وعدّاد نابض slot machine ticker word roll بكرة آلة الحظ split-flap (solari) board لوحة المطار القلّابة split-flap solari board لوحة قلابة مطار odometer digit roll عدّاد الأسطوانة الدوّار odometer digits counter عداد أرقام hacker-flip 3d decode قلب الحروف ثلاثي الأبعاد flip 3d decode قلب ثلاثي الأبعاد"
 },
-"SP-0429": {
-"id": "SP-0429",
+"SP-0428": {
+"id": "SP-0428",
 "name_ar": "صدمة العنوان وضربة الكلمة على الإيقاع",
 "name_en": "Headline slam & beat word punch",
 "hub": "type",
@@ -10126,8 +10103,8 @@
 ],
 "text": "lead / hero / tail beat splitter إيقاع البادئة/البطل/الذيل beat hero word kinetic script إيقاع كلمة بطلة تقسيم rgb-split glitch word كلمة بانفصال rgb وتشويش glitch rgb split chromatic تشويش غليتش headline slam & beat word punch صدمة العنوان وضربة الكلمة على الإيقاع slam punch beat hype صدمة ضربة إيقاع music-anchored type primitives & templates بدائيات حركة النص على الموسيقى music beat primitives templates موسيقى قوالب beat-slam sequences & stacked statements متتاليات الضرب وجمل تُبنى بالضربات beat slam sequence statement متتالية ضربات stamp, sticker & sfx word pop ختم وملصق وكلمة مؤثر صوتي stamp sticker sfx comic ختم ملصق مؤثر صوتي motion-blur slide, smear & stretch انزلاق بضبابية حركة ولطخة لونية motion blur smear stretch ضبابية حركة لطخة hook-line recipe & kinetic-type beats وصفة سطر الافتتاح hook opening recipe افتتاحية هوك held-frame stepped type نص بإطارات ممسوكة stepped held frames on twos إطارات ممسوكة صلصال"
 },
-"SP-0430": {
-"id": "SP-0430",
+"SP-0429": {
+"id": "SP-0429",
 "name_ar": "نص مملوء بصورة أو فيديو",
 "name_en": "Image- & video-filled text",
 "hub": "type",
@@ -10141,16 +10118,16 @@
 "best": "ready",
 "ready_now": 1,
 "links": [
-"SP-0431",
-"SP-0420",
-"SP-0425",
+"SP-0430",
 "SP-0419",
+"SP-0424",
+"SP-0418",
 "SP-0123"
 ],
 "text": "curated google fonts swap set مجموعة google fonts للتبديل الحي google fonts geist font swap خطوط جوجل تبديل الخط variable-font motion: axis tween, weight wave, width swell الخط المتغير: محاور ووزن متموج وعرض variable font weight axis wdth الخط المتغير الوزن inflated physics letterforms حروف منفوخة بالفيزياء physics inflated matter.js فيزياء منفوخ gooey morph text نص لزج متحول gooey morph liquid لزج تحول image- & video-filled text نص مملوء بصورة أو فيديو video fill mask clip text نص مملوء قناع فيديو particles assemble into a word جسيمات تتجمع لتكوّن كلمة particles assemble جسيمات تجمع words embedded in footage (composition craft) كلمات مدمجة داخل اللقطة embedded footage composition مدمج لقطة scale, weight, leading & tracking tokens سلّم الأحجام والأوزان والتباعد type scale weight leading tracking tokens سلم الأحجام الأوزان تباعد"
 },
-"SP-0431": {
-"id": "SP-0431",
+"SP-0430": {
+"id": "SP-0430",
 "name_ar": "خط مفرّغ: أرقام مجوفة ومن محيط إلى تعبئة",
 "name_en": "Outline type: hollow numerals, outline → fill, glowing outline",
 "hub": "type",
@@ -10163,16 +10140,16 @@
 "best": "ready",
 "ready_now": 1,
 "links": [
-"SP-0430",
+"SP-0429",
+"SP-0418",
+"SP-0424",
 "SP-0419",
-"SP-0425",
-"SP-0420",
 "SP-0104"
 ],
 "text": "giant ghost background type & ghost rows طباعة شبحية خلفية ghost type background rows depth شبحي خلفية outline type: hollow numerals, outline → fill, glowing outline خط مفرّغ: أرقام مجوفة ومن محيط إلى تعبئة outline stroke hollow numeral مفرغ محيط أرقام extruded & stacked-shadow type نص بارز بظلال مكدسة extrude shadow 3d text retro بثق ظل مكدس echo trail & outline echo stack أثر الصدى والنسخ المحيطية echo trail outline صدى أثر cell-based type: ascii blocks & dot-matrix numerals خط الخلايا: ascii ونقاط المصفوفة ascii dot matrix cells مصفوفة نقاط ascii type that keeps moving through cuts نص يعبر القطع kinetic type continuity cut emphasis نص متحرك استمرار قطع tabular numerals & opentype features أرقام جدولية وخصائص opentype tabular tnum opentype numbers أرقام جدولية عداد"
 },
-"SP-0432": {
-"id": "SP-0432",
+"SP-0431": {
+"id": "SP-0431",
 "name_ar": "نص على حلقات ومدارات",
 "name_en": "Text rings & orbiting words",
 "hub": "type",
@@ -10186,15 +10163,15 @@
 "ready_now": 0,
 "links": [
 "SP-0188",
-"SP-0419",
+"SP-0418",
 "SP-0138",
-"SP-0137",
+"SP-0403",
 "SP-0101"
 ],
 "text": "text rings & orbiting words نص على حلقات ومدارات circular text textpath orbit rings نص دائري مدار حلقات bidirectional marquee wall جدار الشرائط المتعاكسة marquee ticker type wall شريط جدار نصي tilted ticker band & perspective word wall شريط مائل وجدار منظوري tilted ticker perspective مائل منظور circular text tunnel & spiral vortex نفق النص ودوامته tunnel vortex zoom-through نفق دوامة words as architecture & quadrant rotation كلمات كعمارة ودوران الأرباع architecture rotation grid عمارة دوران 3d text cylinder & helix ribbons أسطوانة نص ثلاثية الأبعاد وشرائط حلزونية 3d text cylinder helix أسطوانة حلزون text-wall rush & compress into a logo جدار نص يندفع وينضغط إلى شعار text wall rush logo جدار نص شعار"
 },
-"SP-0433": {
-"id": "SP-0433",
+"SP-0432": {
+"id": "SP-0432",
 "name_ar": "المؤشر بطلًا",
 "name_en": "Cursor as protagonist",
 "hub": "software",
@@ -10212,15 +10189,15 @@
 "ready_now": 6,
 "links": [
 "SP-0154",
-"SP-0445",
+"SP-0444",
 "SP-0161",
-"SP-0437",
+"SP-0436",
 "SP-0114"
 ],
 "text": "motion-kit physics cursor + press + typeon مؤشر بفيزياء في motion-kit مؤشر ماوس cursor press hermite motion-kit typeon سهم الماوس نقرة كتابة نص pointer animation click playwright ui demo recording (webm) تسجيل عرض واجهة بـplaywright playwright screen recording webm ui demo تسجيل الشاشة عرض واجهة press ring & click ripple حلقة الضغط والتموج نقرة تموج ripple click ring press feedback أثر النقرة دائرة الضغط ضغطة click effect tap ripple scripted page recording (playwright) تسجيل صفحة بخطوات مبرمجة تسجيل شاشة playwright screen recording steps walkthrough تصوير موقع سكرين ريكورد أتمتة المتصفح browser automation captions frame review: drag, resize & arabic-safe shortcuts مراجعة على الإطار: سحب وتحجيم واختصارات مراجعة review shortcuts arabic keyboard undo تعديل المواضع ملاحظات المراجعة تراجع drag resize edit mode kosif ui styles to scaffold أساليب kosif للواجهات سكافولد scaffold saas demo ui micro glass ui kosif styles قالب جاهز بدء مشروع أسلوب جاهز starter template cursor drag & drop سحب وإفلات سحب إفلات drag and drop kanban سحب البطاقات لوحة مهام نقل عنصر drag resize magnetic cursor & magnetic buttons المؤشر المغناطيسي مغناطيسي magnetic hover cursor انجذاب أزرار تفاعلية مرور الماوس hover effect button attraction browser recording cli with cursor & contact sheet تسجيل المتصفح بمؤشر ولوحة لقطات تسجيل agent-browser browser recording contact sheet تسجيل الشاشة تسجيل تبويب لقطات مصغرة screen recording webm ai agent cursor مؤشر وكيل ذكي وكيل agent ai cursor automation ذكاء اصطناعي وكيل ذكي خطوات تلقائية ai agent task steps named multiplayer cursors مؤشرات متعاونين بأسمائها تعاون multiplayer named cursor figma style عمل جماعي مؤشرات متعددة مستخدمين collaboration shared canvas touch indicator: tap & swipe مؤشر اللمس على الهاتف لمس هاتف tap swipe touch indicator لمسة سحب للتحديث تطبيق جوال mobile gesture pull to refresh text select, marquee select & context menu تحديد نص ومستطيل وقائمة يمين تحديد نص text select marquee context menu تظليل النص قائمة النقر الأيمن تحديد متعدد right click highlight text expressive directional macos cursor مؤشر ماك معبّر يتجه مع حركته مؤشر ماك macos cursor directional oversized cursor سهم ماك ماوس كبير زوم على النقرة mac pointer click zoom cursor with accent halo homing on a live target مؤشر بهالة لونية يلاحق هدفًا متحركًا هالة cursor halo homing camera drift تتبع الهدف نبضة النقرة هدف متحرك moving target click pulse cursor-led push-in & focus zoom اقتراب يقوده المؤشر اقتراب زوم push in focus zoom camera تقريب تكبير الشاشة حركة كاميرا zoom in"
 },
-"SP-0434": {
-"id": "SP-0434",
+"SP-0433": {
+"id": "SP-0433",
 "name_ar": "هاتف 2.5D على Canvas",
 "name_en": "Canvas 2.5D phone (drawPhone)",
 "hub": "software",
@@ -10237,15 +10214,15 @@
 "ready_now": 4,
 "links": [
 "SP-0182",
+"SP-0243",
 "SP-0228",
-"SP-0249",
 "SP-0396",
 "SP-0062"
 ],
 "text": "canvas product ui draw(t) recipe واجهة منتج على canvas بدالة draw(t) كانفس canvas seek draw(t) product ui deterministic مشهد واجهة فيديو عمودي بطاقات متتابعة vertical video html canvas standalone html player with seek & reduced motion مشغّل html مستقل بشريط تقديم مشغل player html deliverable reduced motion seek مشغل فيديو صفحة ويب بدون إنترنت offline page video player canvas 2.5d phone (drawphone) هاتف 2.5d على canvas هاتف كانفس canvas phone 2.5d fake 3d drawphone هاتف مرسوم دوران وهمي موك أب pseudo 3d phone mockup html/css device & package mockup screenshot موك أب html بلقطة 2× موك أب mockup screenshot device composite 2x عبوة منتج عرض التصميم صورة عالية الدقة package mockup playwright remotion device component مكوّن device في remotion ريموشن remotion device react phone هاتف متحرك مكون رياكت لمعة الشاشة phone component glare multi-device splay & phone fan-out مروحة أجهزة وانفراد الهواتف أجهزة مروحة multi device fan out splay هاتف وتابلت شاشات متعددة تابلت tablet desktop figma frame → animatable layers من فيجما إلى طبقات متحركة فيجما figma handoff design to code تصميم إلى كود تصدير التصميم طبقات html css auto layout design-tool canvas, selection handles & size tags مسرح أداة تصميم ومقابض تحديد أداة تصميم design tool selection handles canvas figma style لوحة التصميم مقابض التحجيم شبكة نقاط design canvas resize handles browser chrome & macos frame mock نافذة متصفح أو ماك وهمية متصفح نافذة browser mockup macos window chrome موقع ويب شريط العنوان إطار المتصفح website mockup url bar product promo style (neon prompt + glass orb) ستايل برومو المنتج برومو إطلاق product promo neon prompt readex pro إعلان منتج نص متحرك نيون kinetic typography launch promo parametric phone constants ثوابت الهاتف البارامتري هاتف phone device frame mockup island notch موبايل جوال إطار هاتف phone frame app screen mockup hand-off and exploded layers تسليم المجسم وطبقات منفجرة mockup exploded view layers phone طبقات مجسم هاتف device entrance & hero reveal دخول الجهاز وكشف البطل دخول الهاتف كشف device entrance hero reveal spring ظهور الهاتف لقطة افتتاحية عرض تطبيق app reveal phone intro two-device turntable handoff تسليم بين جهازين جهازان handoff turntable browser to phone انتقال بين الأجهزة من المتصفح للجوال دوران الجهاز device transition cross device device perspective, rotation caps & idle hover منظور الجهاز وسرعة دورانه منظور perspective yaw rotation hover دوران الهاتف ميلان طفو 3d tilt idle float phone flip with mid-swap قلب الهاتف وتبديل الشاشة قلب flip phone swap انقلاب الهاتف تغيير"
 },
-"SP-0435": {
-"id": "SP-0435",
+"SP-0434": {
+"id": "SP-0434",
 "name_ar": "محتوى واجهة حقيقي ومحلي",
 "name_en": "Real, locale-correct UI content",
 "hub": "software",
@@ -10268,8 +10245,8 @@
 ],
 "text": "animation kit from real parts حقيبة أصول من أجزاء حقيقية أصول قطع شفافة asset kit omitbackground playwright screenshot قص الأيقونات خلفية شفافة عناصر الواجهة ui parts transparent cutouts layered screen rebuild إعادة بناء الشاشة كطبقات طبقات إعادة بناء الواجهة ui rebuild layers dom لقطة شاشة تحريك الواجهة عمق screenshot to ui parallax tab slide indicator & active rail bar مؤشرات التبويب والشريط النشط تبويب tabs nav indicator active state قائمة التنقل شريط التبويبات تابات navigation bar bottom nav motion tokens and interface polish (react uis) رموز الحركة وصقل الواجهة motion tokens react framer motion reduced motion polish رموز الحركة واجهة skeleton shimmer → content هيكل لامع يتحول إلى محتوى تحميل هيكل skeleton shimmer loading انتظار شاشة تحميل لودينج placeholder loading state sticker ui with hard offset shadow واجهة ملصقات بظل صلب ملصقات sticker ui neo brutalism offset shadow ظل صلب حدود سميكة بروتاليزم brutalist hard shadow floating ui card wall in depth جدار بطاقات واجهة يطفو بعمق جدار بطاقات card wall depth of field dolly شبكة بطاقات عمق صور مصغرة thumbnails blur real, locale-correct ui content محتوى واجهة حقيقي ومحلي محتوى حقيقي lorem real data localisation ui copy بيانات واقعية نص تجريبي تعريب الواجهة placeholder text test data ui tokens & refactoring-ui scales رموز تصميم الواجهة وسلالمها رموز تصميم tokens spacing shadows type scale مسافات ظلال أحجام الخطوط design tokens elevation seamless ui component loop (3–6 s) مقطع حلقة لمكوّن واحد حلقة loop component clip seamless تكرار لوب مكون واجهة looping clip short clip 3d tilted webpage scroll & perspective pan صفحة ويب مائلة تتمرر منظور صفحة مائلة 3d page scroll tilted ui perspective pan عرض موقع ميلان ثلاثي الأبعاد تمرير الصفحة website showcase webpage scroll rtl product-ui mirroring عكس الواجهة للعربية عربي اتجاه rtl mirroring arabic ui logical css تعريب يمين لليسار عكس الواجهة right to left localization microinteraction anatomy as a beat تشريح التفاعل الدقيق كوحدة مشهد تفاعل دقيق microinteraction beat timing ranges حركة الواجهة توقيت الحركة تغذية راجعة ui animation motion timing real-feature video recipe وصفة فيديو ميزة حقيقية ميزة feature video real app reframe تصوير التطبيق مقاسات متعددة عمودي ومربع aspect ratios screen capture dashboard composition for a frame لوحة البيانات داخل الإطار لوحة بيانات dashboard kpi focal view داشبورد مؤشرات الأداء ملخص تنفيذي metrics executive summary"
 },
-"SP-0436": {
-"id": "SP-0436",
+"SP-0435": {
+"id": "SP-0435",
 "name_ar": "تحكم وهدف يتغيران معًا",
 "name_en": "Control ↔ target live sync",
 "hub": "software",
@@ -10293,8 +10270,8 @@
 ],
 "text": "glass surface stack سطح زجاجي للواجهات زجاج glassmorphism backdrop blur frosted glass ui زجاج ضبابي شفافية بطاقات زجاجية translucent blur panel instrument-panel hud & projected callouts لوحة قياس hud وشروح مسقطة من 3d hud لوحة قياس instrument panel callouts 3d labels واجهة تقنية رسوم حية تسميات المشهد heads-up display live charts status dot with halo & live pill نقطة حالة بهالة وشارة مباشرة حالة نقطة status dot live halo متصل مباشر مؤشر الحالة online indicator live badge 3d gltf iphone & macbook with live screens آيفون وماك بوك ثلاثيا الأبعاد بشاشات حية آيفون ماك بوك 3d phone gltf liquid glass turntable مجسم ثلاثي الأبعاد دوران 360 لابتوب three.js 360 spin shared-element morph: card → panel (flip) تحول بطاقة إلى لوحة (flip) تحول flip shared element morph modal توسيع البطاقة انتقال سلس نافذة منبثقة expand card card to panel screen-flow carousel & sticky mock swap دوار الشاشات والموكاب الثابت دوار carousel screens feature swap شاشات التطبيق سلايدر شاشات عرض الميزات app screens slider input feedback: error shake & valid state حقل إدخال: خطأ واهتزاز ونجاح نموذج تحقق form validation error shake حقل إدخال خطأ إدخال تعبئة نموذج input field form fill before/after wipe & comparison split مقارنة قبل وبعد قبل وبعد before after wipe comparison مقارنة النتائج خط فاصل الفرق split screen reveal slider streaming answer & live log إجابة متدفقة وسجل حي تدفق سجل streaming live log skeleton reply ظهور الإجابة سجل العمليات رد تدريجي line by line activity log flip list reorder & self-reordering lines إعادة ترتيب قائمة وسطور ترتيب reorder flip list sort فرز ترتيب العناصر تبديل المواقع rearrange card order ai tracking box & scanner brackets مربع تتبع وماسح ضوئي تتبع ماسح tracking box scanner ocr qr تتبع هدف مسح ضوئي نسبة الثقة target lock scan line control ↔ target live sync تحكم وهدف يتغيران معًا منزلق slider live sync inspector control إعدادات سلايدر معاينة مباشرة settings panel real-time preview"
 },
-"SP-0437": {
-"id": "SP-0437",
+"SP-0436": {
+"id": "SP-0436",
 "name_ar": "عناوين أفعال بسيطة في الشروحات",
 "name_en": "Plain action labels in tutorials",
 "hub": "software",
@@ -10319,8 +10296,8 @@
 ],
 "text": "kmotion brag launch film فيلم إطلاق kmotion brag إطلاق launch film brag product launch فيديو إطلاق تطبيق جديد برومو kmotion launch video press & hover with reading-direction nudges ضغط ومرور بمنطق القراءة ضغط مرور press hover rtl icons حالة الزر مرور الماوس اتجاه القراءة button states hover lift website capture → video التقاط موقع إلى فيديو التقاط موقع website to video capture launch video hyperframes فيديو من رابط رابط موقع هوية الموقع url to video site screenshots hotspot tooltip walkthrough نقطة ساخنة مع فقاعة إرشاد إرشاد تهيئة hotspot tooltip onboarding tour جولة تعريفية شرح الميزات تلميح product tour walkthrough keycap shortcut trigger ضغط اختصار لوحة المفاتيح اختصار keyboard shortcut keycaps لوحة المفاتيح أزرار الكيبورد كيبورد hotkey key press agent progress theater & tool-call checklist وكيل ينجز قائمة مهام وكيل قائمة مهام agent checklist tool calls ai تقدم المهام خطوات التنفيذ ذكاء اصطناعي task progress progress theater plain action labels in tutorials عناوين أفعال بسيطة في الشروحات شرح تعليمي tutorial action labels onboarding فيديو تعليمي شرح خطوات عناوين الخطوات captions how-to scroll tour with callouts جولة تمرير مع شروحات تمرير جولة scroll tour callouts parallax سكرول شرح الصفحة تمرير الشاشة page tour scrolling yaml-defined tutorial video فيديو تعليمي من ملف yaml تعليمي yaml tutorial docker شرح بالفيديو تعليق صوتي ترجمة tts subtitles callout leader lines خطوط شرح قائدة شرح خط قائد callout leader line annotation تعليقات توضيحية أسهم الشرح تسميات labels pointer lines intent → action → response with real latency ثلاثية النية والفعل والاستجابة زمن الاستجابة latency feedback click response توقيت النقرة رد فعل الواجهة تأخير response timing ui delay"
 },
-"SP-0438": {
-"id": "SP-0438",
+"SP-0437": {
+"id": "SP-0437",
 "name_ar": "طرفية ومحرر كود",
 "name_en": "Terminal & IDE scenes (24 theme blocks)",
 "hub": "software",
@@ -10334,16 +10311,16 @@
 "best": "ready",
 "ready_now": 2,
 "links": [
-"SP-0428",
+"SP-0427",
 "SP-0212",
 "SP-0204",
-"SP-0424",
+"SP-0423",
 "SP-0118"
 ],
 "text": "human-rhythm typing with caret كتابة بإيقاع بشري كتابة آلة كاتبة typewriter typing caret seeded كتابة حرف بحرف مؤشر الكتابة نص يكتب type on text reveal look × theme × brand token architecture معمارية الثيمات: الشكل × الوضع × العلامة ثيم هوية tokens themes dark mode brand ألوان العلامة سمات تخصيص الواجهة theming light dark terminal & ide scenes (24 theme blocks) طرفية ومحرر كود طرفية كود terminal ide vs code diff محرر أكواد سطر الأوامر برمجة code editor command line toggle flip & theme switch قلب المفتاح وتبديل الثيم مفتاح وضع داكن toggle theme switch dark mode تبديل الوضع الوضع الليلي سويتش on off switch light mode notes-app typing story كتابة في تطبيق الملاحظات ملاحظات notes typing story 9:16 كتابة قصة مذكرات فيديو عمودي notes app vertical video command palette & search filter لوحة أوامر وبحث يصفّي النتائج بحث لوحة أوامر command palette search filter تصفية النتائج نتائج البحث سيرش search results keyword highlight ui scene blueprints مخططات مشاهد الواجهة مخطط blueprint storyboard ui scenes وصفة مشهد تخطيط المشهد قوالب مشاهد scene recipe templates"
 },
-"SP-0439": {
-"id": "SP-0439",
+"SP-0438": {
+"id": "SP-0438",
 "name_ar": "من التحميل إلى علامة صح",
 "name_en": "Spinner → success check",
 "hub": "software",
@@ -10365,8 +10342,8 @@
 ],
 "text": "stepper, progress ring & progress bars شريط المراحل والحلقة والتقدم مراحل شريط تقدم stepper progress bar progress ring chips نسبة الإنجاز خطوات بروجرس steps completion spinner → success check من التحميل إلى علامة صح نجاح علامة صح success checkmark spinner تحميل تم الحفظ اكتمال العملية loading done state chat thread, bubbles & typing dots محادثة: فقاعات وكتابة جارية محادثة دردشة chat bubbles typing dots messaging رسائل شات فقاعات الرسائل text messages message thread micro-feedback timing table جدول ردود الفعل الدقيقة تفاعل دقيق microinteraction press hover toggle shake timing مدة الحركة أزمنة الحركة اهتزاز الخطأ durations ui feedback magnifier lens pass عدسة تكبير التفاصيل عدسة تكبير magnifier lens detail عدسة مكبرة إبراز التفاصيل زووم zoom lens close-up signature celebration moment لحظة احتفال توقيعية احتفال قصاصات celebration confetti signature moment كونفيتي إعجاب فرحة like burst particles"
 },
-"SP-0440": {
-"id": "SP-0440",
+"SP-0439": {
+"id": "SP-0439",
 "name_ar": "مكتبة مكوّنات HyperFrames للواجهات",
 "name_en": "HyperFrames UI component registry",
 "hub": "software",
@@ -10386,8 +10363,8 @@
 ],
 "text": "hyperframes ui component registry مكتبة مكوّنات hyperframes للواجهات مكونات hyperframes registry components ui kit مكتبة جاهزة عناصر واجهة قوالب ready made ui library notifications: native pop, dynamic island, stacks إشعارات: نظام وجزيرة ورصّة إشعار جزيرة ديناميكية notification dynamic island toast stack تنبيه نوتيفيكيشن شارة العدد alert badge bento feature grid شبكة بنتو للميزات بنتو bento feature grid design system ميزات المنتج شبكة بطاقات بطاقات features card grid"
 },
-"SP-0441": {
-"id": "SP-0441",
+"SP-0440": {
+"id": "SP-0440",
 "name_ar": "تحميل فيديو من أي رابط",
 "name_en": "Download video from any URL",
 "hub": "motion",
@@ -10408,8 +10385,8 @@
 ],
 "text": "download video from any url تحميل فيديو من أي رابط download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى تنزيل نزل الفيديو حفظ الفيديو video downloader url update yt-dlp when a site breaks تحديث yt-dlp عند تغيّر الموقع download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى خطأ التحميل تحديث التحميل وقف update doctor quality cap or audio-only جودة محددة أو صوت فقط download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى الصوت فقط جودة الفيديو استخراج الصوت audio only m4a batch of links from a file قائمة روابط دفعة واحدة download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى روابط كثيرة تحميل جماعي ملف روابط batch download manifest edit-safe h.264/aac copy نسخة آمنة للمونتاج download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى تحويل الصيغة ملف لا يفتح نسخة آمنة h264 transcode cookies for private / age-gated posts كوكيز للمحتوى الخاص download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى فيديو خاص مقيد بالعمر كوكيز cookies age-gated browser impersonation retry محاكاة متصفح عند الحظر download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى حظر رفض التحميل محاكاة متصفح impersonate curl_cffi link → analyse → montage من الرابط إلى المونتاج download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى مونتاج قص على الإيقاع ترجمة عربية montage beat cut limits of this cloud container حدود هذه الحاوية السحابية download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى فشل التحميل حاوية سحابية ارفع الملف 403 cloud limits rights check before editing المصدر ثم الاستخدام: ترخيص وحقوق download yt-dlp تحميل رابط فيديو youtube tiktok instagram facebook محتوى حقوق النشر ترخيص ذكر المصدر copyright license"
 },
-"SP-0442": {
-"id": "SP-0442",
+"SP-0441": {
+"id": "SP-0441",
 "name_ar": "أزياء صوتية للشخصيات",
 "name_en": "Character voice costumes",
 "hub": "audio",
@@ -10425,12 +10402,12 @@
 "SP-0124",
 "SP-0303",
 "SP-0125",
-"SP-0444"
+"SP-0443"
 ],
 "text": "character voice costumes أزياء صوتية للشخصيات هاتف راديو مكبر صوت telephone voice radio megaphone costume مؤثر صوتي صوت تليفون صوت قديم voice effect intercom lo-fi voice clean-up chain سلسلة تنظيف الصوت البشري تنظيف الصوت معادل ضغط voice cleanup eq deesser compressor ffmpeg إزالة الضوضاء تحسين الصوت صوت واضح denoise high-pass locked documentary narrator voice صوت الراوي الوثائقي المقفل راوي وثائقي فوكس صوت مقفل documentary narrator vox voice lock وثائقي صوت عميق ثبات الصوت documentary clip prompts piper offline arabic tts تعليق عربي محلي بـ piper بايبر تعليق عربي دون إنترنت piper offline tts arabic voice kareem تحويل نص لصوت تعليق صوتي قراءة النص text to speech voiceover audiolab voice isolation & stem split مختبر الصوت: عزل الصوت وفصل الموسيقى عزل الصوت فصل الموسيقى audiolab rnnoise stem split denoise إزالة الضوضاء شيل المزيكا تنقية الصوت remove music vocal isolation noise reduction deterministic arabic voice intent router موجه نوايا صوتي عربي حتمي نوايا موجه حتمي intent router deterministic arabic commands أوامر صوتية تنقل بالصوت قواعد ثابتة voice commands navigation rule based voice orb state animation كرة الصوت بحالاتها كرة الصوت حالات voice orb listening speaking css keyframes مؤشر الحالة أنيميشن واجهة صوتية status indicator voice ui animation browser web speech fallback (ar-sa) نطق المتصفح العربي ar-sa نطق المتصفح قراءة الرد web speech speechsynthesis ar-sa fallback قراءة بصوت عال صوت الجهاز تطبيق ويب read aloud browser tts kokoro local tts (no arabic voice) kokoro المحلي (بلا عربية) كوكورو صوت إنجليزي kokoro af_heart local tts english narration تعليق إنجليزي صوت مجاني تحويل نص لصوت free tts kokoro-js consented voice cloning استنساخ صوت بموافقة صاحبه استنساخ صوت المالك voice clone consent heygen elevenlabs صوت مخصص نسخ الصوت عينات صوتية custom voice voice samples speech-to-speech re-voice تحويل صوت إلى صوت تحويل الصوت إعادة الأداء speech to speech voice changer guide take تغيير الصوت صوت آخر مغير الصوت re-voice sts claude-directed voice performance إخراج أداء الصوت بواسطة claude إخراج الصوت ملاحظة أداء voice direction performance note stress words pace نبرة الصوت أداء صوتي وقفات tone delivery realtime arabic speech-to-speech (webrtc) محادثة صوتية عربية لحظية عبر webrtc مساعد صوتي لحظي realtime webrtc speech to speech cloudflare worker محادثة صوتية دردشة صوتية مساعد بالعربي voice assistant voice chat openai together ai tts catalog كتالوج together للصوت توغيذر أسعار الصوت together ai orpheus cartesia sonic صوت مستضاف بث الصوت تحويل نص لصوت streaming tt"
 },
-"SP-0443": {
-"id": "SP-0443",
+"SP-0442": {
+"id": "SP-0442",
 "name_ar": "ميزانية الكلمات في الثانية",
 "name_en": "Words-per-second budget",
 "hub": "audio",
@@ -10445,15 +10422,15 @@
 "ready_now": 2,
 "links": [
 "SP-0148",
-"SP-0418",
-"SP-0442",
-"SP-0444",
+"SP-0417",
+"SP-0441",
+"SP-0443",
 "SP-0124"
 ],
 "text": "scene duration from voice length مدة المشهد = طول التعليق + هامش مدة المشهد التعليق أولًا auto duration calculatemetadata ffprobe طول المشهد مزامنة الصوت توقيت المشاهد remotion scene timing word timings from the generated voice (faster-whisper) توقيت كلمات التعليق المولد بـ faster-whisper توقيت الكلمات ويسبر words.json faster-whisper word timestamps alignment تفريغ الصوت مزامنة الترجمة تزامن الحركة transcription subtitle sync heygen starfish tts with word timestamps heygen starfish بطوابع زمنية للكلمات طوابع الكلمات هاي جن heygen starfish word timestamps توقيت الكلمات تحويل نص لصوت بدون تفريغ tts timestamps long-script chunking with prosody context تقسيم النص الطويل مع حفظ النبرة تقسيم النص نبرة chunking previous_text prosody long script نص طويل دمج المقاطع وصلات الصوت concat request limit voice-led pacing إيقاع يقوده التعليق إيقاع التعليق فكرة لكل جملة voice-led pacing hold فيديو شرح كلمات مفتاحية مزامنة explainer key words narrated lecture: draw-on paced to sentences محاضرة مروية: رسم يتقدم مع الجمل محاضرة سبورة رسم مع التعليق lecture whiteboard draw-on narration درس شرح تعليمي فيديو تعليمي explainer marker read-aloud karaoke highlight قراءة صوتية بتظليل الكلمة المنطوقة كاريوكي تظليل الكلمة read aloud karaoke word highlight ترجمة كلمة بكلمة إبراز الكلمة قراءة مصاحبة word by word captions words-per-second budget ميزانية الكلمات في الثانية كلمات في الثانية إيقاع التعليق words per second wpm word budget pacing عدد الكلمات طول النص مدة المشهد script length word count scene narration writing rules قواعد كتابة التعليق للمشهد كتابة التعليق فكرة واحدة narration rules one idea per scene contrast lines نص الفيديو سكريبت خطاف hook voiceover script locked narration file (script.md) نص التعليق المقفل script.md سكربت مقفل script.md locked script delivery note نص التعليق ملاحظة الأداء ملف السكربت narration file voiceover re-attach the known script to whisper timings إعادة لصق النص المعروف على توقيت ويسبر محاذاة النص المعروف forced alignment whisperx script alignment أخطاء التفريغ تصحيح الترجمة مطابقة النص whisper transcript fix spoken form vs on-screen form نص النطق غير نص الشاشة نطق تشكيل أرقام منطوقة pronunciation map spoken form tashkeel acronyms نطق خاطئ الأرقام اختصارات mispronunciation numbers"
 },
-"SP-0444": {
-"id": "SP-0444",
+"SP-0443": {
+"id": "SP-0443",
 "name_ar": "Gemini TTS بثلاثين صوتًا",
 "name_en": "Gemini TTS with 30 prebuilt voices",
 "hub": "audio",
@@ -10468,15 +10445,15 @@
 "best": "proven",
 "ready_now": 2,
 "links": [
-"SP-0442",
+"SP-0441",
 "SP-0125",
 "SP-0346",
 "SP-0124"
 ],
 "text": "read speed by content — regenerate, never stretch السرعة حسب المحتوى — أعد التوليد ولا تمطّ سرعة الإلقاء مط الصوت speed length scale regenerate no time-stretch إبطاء الصوت تسريع الصوت سرعة التعليق atempo slow down −14 lufs delivery + gate التسليم بجهارة −14 lufs وفحص البوابة جهارة لوفس بوابة التسليم loudness lufs true peak delivery gate ضبط مستوى الصوت تطبيع الصوت علو الصوت loudnorm normalize audio podcast gemini tts with 30 prebuilt voices gemini tts بثلاثين صوتًا جيميني بصمة ثلاثون صوتًا gemini tts kore puck pcm wav header تعليق صوتي تحويل نص لصوت أصوات جاهزة prebuilt voices basma model & output-format choice اختيار النموذج والصيغة حسب الاستخدام نموذج الصوت صيغة الصوت model choice pcm latency eleven_v3 اختيار النموذج تكلفة الحروف صيغة المخرج mp3 realtime elevenlabs narration presets تعليق elevenlabs بإعدادات جاهزة إليفن لابز تعليق تجاري elevenlabs multilingual_v2 voice settings stability تعليق صوتي إعدادات الصوت تحويل نص لصوت tts presets narration join chunks as pcm, not mp3 copy وصل المقاطع كـ wav لا mp3 وصل الصوت انحراف التوقيت concat drift pcm join دمج الصوت توقيت الكلمات تعليق صوتي merge audio wav narration tts character-cost hygiene نظافة تكلفة الحروف تكلفة تخزين مؤقت cost cache sha256 توفير تحويل النص لكلام تنظيف النص tts cost text cleanup arabic dialect voice-direction workflow توجيه الصوت باللهجات العربية لهجات مصري خليجي شامي dialect egyptian gulf msa عامية فصحى سعودي مغربي levantine saudi no audio claim without a receipt لا ادعاء بلا ملف إيصال صدق receipt honesty measured تحقق إثبات تقرير الصوت verification ffprobe audio report"
 },
-"SP-0445": {
-"id": "SP-0445",
+"SP-0444": {
+"id": "SP-0444",
 "name_ar": "التقاط ميكروفون نظيف",
 "name_en": "Clean mic capture constraints",
 "hub": "audio",
@@ -10491,14 +10468,14 @@
 "links": [
 "SP-0327",
 "SP-0309",
-"SP-0433",
+"SP-0432",
 "SP-0237",
 "SP-0104"
 ],
 "text": "clean mic capture constraints التقاط ميكروفون نظيف ميكروفون إلغاء الصدى getusermedia echo cancellation noise suppression كبت الضوضاء مايك تسجيل نظيف auto gain browser mic live mic fab ring pulse نبض حلقة زر الميكروفون العائم زر الميكروفون نبض mic button fab pulse ring زر عائم مايك تأثير نبض floating button microphone css animation mediarecorder capture + download تسجيل الصوت وتنزيله تسجيل تنزيل mediarecorder webm download تسجيل صوت حفظ الملف تحميل record audio blob human vo recording spec مواصفات تسجيل الصوت البشري تسجيل ميكروفون recording spec 48 khz noise floor تسجيل صوتي معلق مايك voice over mic setup"
 },
-"SP-0446": {
-"id": "SP-0446",
+"SP-0445": {
+"id": "SP-0445",
 "name_ar": "مدرب اللغة الثنائي",
 "name_en": "Language Coach (AR/EN) skill",
 "hub": "audio",
@@ -10511,10 +10488,10 @@
 "best": "proven",
 "ready_now": 2,
 "links": [
-"SP-0442",
+"SP-0441",
 "SP-0347",
 "SP-0129",
-"SP-0418"
+"SP-0417"
 ],
 "text": "coach voice cue lines جمل صوت المدرب مدرب لياقة أوامر صوتية coach cues fitness imperative تمارين جيم رياضة workout exercise language & dialect intake field اختيار اللغة واللهجة في المقابلة اللهجة اللغة مقابلة intake language dialect الموجز فصحى مصري brief voice engine language coach (ar/en) skill مدرب اللغة الثنائي مدرب اللغة ثنائي اللغة language coach bilingual ترجمة عربي إنجليزي تعلم اللغة translation arabic english"
 }
@@ -10544,8 +10521,7 @@
 "understand": [
 "SP-0132",
 "SP-0023",
-"SP-0015",
-"SP-0006"
+"SP-0015"
 ],
 "plan": [
 "SP-0021",
@@ -10574,6 +10550,7 @@
 "SP-0129",
 "SP-0130",
 "SP-0032",
+"SP-0006",
 "SP-0011"
 ]
 }
@@ -10626,22 +10603,22 @@
 "SP-0046",
 "SP-0048",
 "SP-0117",
-"SP-0440"
+"SP-0439"
 ],
 "create": [
 "SP-0102",
 "SP-0104",
 "SP-0103",
-"SP-0433",
+"SP-0432",
 "SP-0105",
 "SP-0111",
 "SP-0101",
-"SP-0434",
+"SP-0433",
 "SP-0107",
+"SP-0434",
 "SP-0435",
 "SP-0436",
 "SP-0437",
-"SP-0438",
 "SP-0056",
 "SP-0039",
 "SP-0100",
@@ -10669,7 +10646,7 @@
 "verify": [
 "SP-0055",
 "SP-0112",
-"SP-0439",
+"SP-0438",
 "SP-0114"
 ],
 "deliver": [
@@ -10773,7 +10750,7 @@
 "plan": [
 "SP-0251",
 "SP-0138",
-"SP-0245",
+"SP-0246",
 "SP-0252",
 "SP-0253",
 "SP-0240",
@@ -10792,11 +10769,11 @@
 "SP-0137",
 "SP-0383",
 "SP-0250",
-"SP-0249",
+"SP-0243",
 "SP-0320",
 "SP-0384",
 "SP-0242",
-"SP-0248",
+"SP-0249",
 "SP-0321",
 "SP-0257",
 "SP-0258",
@@ -10814,7 +10791,7 @@
 "SP-0379",
 "SP-0277",
 "SP-0381",
-"SP-0247",
+"SP-0248",
 "SP-0278",
 "SP-0236",
 "SP-0279",
@@ -10828,15 +10805,15 @@
 "SP-0238",
 "SP-0228",
 "SP-0233",
-"SP-0244",
+"SP-0245",
 "SP-0234",
 "SP-0239",
-"SP-0246",
+"SP-0247",
 "SP-0227",
 "SP-0229",
 "SP-0237",
 "SP-0241",
-"SP-0243",
+"SP-0244",
 "SP-0256"
 ]
 }
@@ -10913,8 +10890,7 @@
 "SP-0413",
 "SP-0226",
 "SP-0414",
-"SP-0416",
-"SP-0417"
+"SP-0416"
 ],
 "refine": [
 "SP-0386",
@@ -10923,13 +10899,13 @@
 "SP-0163",
 "SP-0407",
 "SP-0388",
-"SP-0389",
 "SP-0390",
+"SP-0391",
 "SP-0397",
 "SP-0399",
 "SP-0408",
 "SP-0387",
-"SP-0391",
+"SP-0389",
 "SP-0409",
 "SP-0194",
 "SP-0385",
@@ -10951,7 +10927,7 @@
 ],
 "deliver": [
 "SP-0263",
-"SP-0441"
+"SP-0440"
 ]
 }
 },
@@ -10976,16 +10952,16 @@
 ],
 "create": [
 "SP-0291",
-"SP-0442",
+"SP-0441",
 "SP-0294",
 "SP-0302",
 "SP-0151",
 "SP-0292",
 "SP-0299",
-"SP-0445",
-"SP-0443",
 "SP-0444",
-"SP-0446",
+"SP-0442",
+"SP-0443",
+"SP-0445",
 "SP-0303",
 "SP-0309",
 "SP-0304",
@@ -11014,29 +10990,29 @@
 "en": "Typography & localization",
 "stages": {
 "create": [
-"SP-0418",
+"SP-0417",
 "SP-0028",
-"SP-0420",
 "SP-0419",
-"SP-0425",
-"SP-0421",
-"SP-0423",
-"SP-0426",
-"SP-0428",
-"SP-0429",
+"SP-0418",
 "SP-0424",
+"SP-0420",
+"SP-0422",
+"SP-0425",
+"SP-0427",
+"SP-0428",
+"SP-0423",
+"SP-0429",
 "SP-0430",
-"SP-0431",
-"SP-0432"
+"SP-0431"
 ],
 "refine": [
-"SP-0427"
+"SP-0426"
 ],
 "verify": [
 "SP-0029"
 ],
 "deliver": [
-"SP-0422"
+"SP-0421"
 ]
 }
 },
@@ -11237,13 +11213,13 @@
 "SP-0189"
 ],
 "plan": [
-"SP-0265",
 "SP-0264",
+"SP-0265",
 "SP-0173"
 ],
 "create": [
-"SP-0418",
-"SP-0425",
+"SP-0417",
+"SP-0424",
 "SP-0269"
 ],
 "refine": [
@@ -11263,8 +11239,8 @@
 ],
 "deliver": [
 "SP-0263",
-"SP-0441",
-"SP-0422"
+"SP-0440",
+"SP-0421"
 ]
 }
 },
@@ -11297,7 +11273,7 @@
 "refine": [
 "SP-0405",
 "SP-0386",
-"SP-0391"
+"SP-0389"
 ],
 "assemble": [
 "SP-0165",
@@ -11311,7 +11287,7 @@
 ],
 "deliver": [
 "SP-0263",
-"SP-0441"
+"SP-0440"
 ]
 }
 },
@@ -11348,14 +11324,14 @@
 "assemble": [
 "SP-0233",
 "SP-0237",
-"SP-0243"
+"SP-0244"
 ],
 "verify": [
 "SP-0297"
 ],
 "deliver": [
 "SP-0263",
-"SP-0441"
+"SP-0440"
 ]
 }
 },
@@ -11423,7 +11399,7 @@
 "create": [
 "SP-0328",
 "SP-0153",
-"SP-0418"
+"SP-0417"
 ],
 "refine": [
 "SP-0386",
@@ -11439,9 +11415,9 @@
 "SP-0032"
 ],
 "deliver": [
-"SP-0441",
+"SP-0440",
 "SP-0263",
-"SP-0422"
+"SP-0421"
 ]
 }
 },
@@ -11512,7 +11488,7 @@
 "SP-0135"
 ],
 "refine": [
-"SP-0247",
+"SP-0248",
 "SP-0281",
 "SP-0378"
 ],
@@ -11545,10 +11521,10 @@
 "understand": [
 "SP-0050",
 "SP-0113",
-"SP-0006"
+"SP-0023"
 ],
 "plan": [
-"SP-0440",
+"SP-0439",
 "SP-0021",
 "SP-0352"
 ],
@@ -11586,8 +11562,8 @@
 "plan": {
 "understand": [
 "SP-0040",
-"SP-0006",
-"SP-0347"
+"SP-0347",
+"SP-0346"
 ],
 "plan": [
 "SP-0352",
@@ -11609,8 +11585,8 @@
 ],
 "verify": [
 "SP-0055",
-"SP-0334",
-"SP-0025"
+"SP-0006",
+"SP-0334"
 ],
 "deliver": [
 "SP-0263"
@@ -11639,7 +11615,7 @@
 ],
 "create": [
 "SP-0101",
-"SP-0435",
+"SP-0434",
 "SP-0045"
 ],
 "refine": [
@@ -11728,7 +11704,7 @@
 "SP-0030"
 ],
 "assemble": [
-"SP-0244"
+"SP-0245"
 ],
 "verify": [
 "SP-0344"
@@ -11741,11 +11717,11 @@
 ],
 "audit": {
 "atoms": 5318,
-"superpowers": 446,
-"twin_groups": 164,
-"twin_members": 432,
-"distinct_methods": 5050,
-"tiny_absorbed": 20,
+"superpowers": 445,
+"twin_groups": 163,
+"twin_members": 430,
+"distinct_methods": 5051,
+"tiny_absorbed": 21,
 "same_name_groups": [
 {
 "name": "deterministic three js seek scene",
@@ -11831,7 +11807,7 @@
 ],
 "superpowers": [
 "SP-0199",
-"SP-0428"
+"SP-0427"
 ]
 },
 {
@@ -11981,7 +11957,7 @@
 "b": "ARAB-62",
 "sim": 0.76,
 "a_sp": "SP-0148",
-"b_sp": "SP-0418",
+"b_sp": "SP-0417",
 "cross_hub": true,
 "name": "Arabic ASS karaoke, one event per word",
 "name_b": "Arabic ASS karaoke captions (reels · cinema · punchy)"
@@ -12011,7 +11987,7 @@
 "b": "ARAB-49",
 "sim": 0.74,
 "a_sp": "SP-0153",
-"b_sp": "SP-0418",
+"b_sp": "SP-0417",
 "cross_hub": true,
 "name": "Eight Arabic motion templates (logo-reveal, end-card …)",
 "name_b": "Eight Arabic motion templates"
@@ -12071,7 +12047,7 @@
 "b": "UI-68",
 "sim": 0.72,
 "a_sp": "SP-0160",
-"b_sp": "SP-0440",
+"b_sp": "SP-0439",
 "cross_hub": true,
 "name": "Bento feature cards",
 "name_b": "Bento feature grid"
@@ -12080,7 +12056,7 @@
 "a": "ENG-11",
 "b": "GLOW-26",
 "sim": 0.72,
-"a_sp": "SP-0247",
+"a_sp": "SP-0248",
 "b_sp": "SP-0277",
 "cross_hub": false,
 "name": "Cinematic post stack (makePost)",
@@ -12121,7 +12097,7 @@
 "b": "UI-66",
 "sim": 0.72,
 "a_sp": "SP-0385",
-"b_sp": "SP-0436",
+"b_sp": "SP-0435",
 "cross_hub": true,
 "name": "Before/after split wipe",
 "name_b": "Before/after wipe & comparison split"
@@ -12190,8 +12166,8 @@
 "a": "ARAB-29",
 "b": "TYPE-31",
 "sim": 0.71,
-"a_sp": "SP-0424",
-"b_sp": "SP-0428",
+"a_sp": "SP-0423",
+"b_sp": "SP-0427",
 "cross_hub": false,
 "name": "Typewriter with caret",
 "name_b": "Eased typewriter with caret (typeOn)"
@@ -12276,7 +12252,7 @@
 {
 "a": "SP-0041",
 "b": "SP-0131",
-"sim": 0.506,
+"sim": 0.505,
 "hubs": [
 "software",
 "thinking"
@@ -12303,7 +12279,7 @@
 {
 "a": "SP-0005",
 "b": "SP-0117",
-"sim": 0.484,
+"sim": 0.483,
 "hubs": [
 "thinking",
 "software"
@@ -12329,7 +12305,7 @@
 },
 {
 "a": "SP-0329",
-"b": "SP-0390",
+"b": "SP-0391",
 "sim": 0.449,
 "hubs": [
 "drawing",
@@ -12356,7 +12332,7 @@
 },
 {
 "a": "SP-0182",
-"b": "SP-0434",
+"b": "SP-0433",
 "sim": 0.423,
 "hubs": [
 "motion",
@@ -12427,21 +12403,21 @@
 ]
 },
 {
-"a": "SP-0148",
-"b": "SP-0418",
-"sim": 0.393,
-"hubs": [
-"audio",
-"type"
-]
-},
-{
 "a": "SP-0001",
 "b": "SP-0005",
 "sim": 0.392,
 "hubs": [
 "agents",
 "thinking"
+]
+},
+{
+"a": "SP-0148",
+"b": "SP-0417",
+"sim": 0.392,
+"hubs": [
+"audio",
+"type"
 ]
 },
 {
@@ -12464,7 +12440,7 @@
 },
 {
 "a": "SP-0199",
-"b": "SP-0422",
+"b": "SP-0421",
 "sim": 0.388,
 "hubs": [
 "data",
@@ -12491,7 +12467,7 @@
 },
 {
 "a": "SP-0290",
-"b": "SP-0429",
+"b": "SP-0428",
 "sim": 0.384,
 "hubs": [
 "audio",
@@ -12510,7 +12486,7 @@
 {
 "a": "SP-0118",
 "b": "SP-0313",
-"sim": 0.378,
+"sim": 0.377,
 "hubs": [
 "agents",
 "misc"
@@ -12563,7 +12539,7 @@
 },
 {
 "a": "SP-0124",
-"b": "SP-0442",
+"b": "SP-0441",
 "sim": 0.36,
 "hubs": [
 "images",
@@ -12591,7 +12567,7 @@
 {
 "a": "SP-0117",
 "b": "SP-0131",
-"sim": 0.35,
+"sim": 0.349,
 "hubs": [
 "software",
 "thinking"
@@ -12636,7 +12612,7 @@
 {
 "a": "SP-0146",
 "b": "SP-0345",
-"sim": 0.316,
+"sim": 0.317,
 "hubs": [
 "images",
 "quality"
@@ -12671,7 +12647,7 @@
 },
 {
 "a": "SP-0403",
-"b": "SP-0418",
+"b": "SP-0417",
 "sim": 0.312,
 "hubs": [
 "motion",
@@ -12697,21 +12673,21 @@
 ]
 },
 {
+"a": "SP-0189",
+"b": "SP-0418",
+"sim": 0.308,
+"hubs": [
+"motion",
+"type"
+]
+},
+{
 "a": "SP-0114",
 "b": "SP-0235",
 "sim": 0.307,
 "hubs": [
 "software",
 "3d"
-]
-},
-{
-"a": "SP-0189",
-"b": "SP-0419",
-"sim": 0.307,
-"hubs": [
-"motion",
-"type"
 ]
 },
 {
@@ -12725,7 +12701,7 @@
 },
 {
 "a": "SP-0160",
-"b": "SP-0440",
+"b": "SP-0439",
 "sim": 0.306,
 "hubs": [
 "motion",
@@ -12734,11 +12710,20 @@
 },
 {
 "a": "SP-0282",
-"b": "SP-0390",
+"b": "SP-0391",
 "sim": 0.303,
 "hubs": [
 "3d",
 "motion"
+]
+},
+{
+"a": "SP-0007",
+"b": "SP-0038",
+"sim": 0.302,
+"hubs": [
+"thinking",
+"software"
 ]
 },
 {
@@ -12749,22 +12734,13 @@
 "reverse",
 "quality"
 ]
-},
-{
-"a": "SP-0007",
-"b": "SP-0038",
-"sim": 0.301,
-"hubs": [
-"thinking",
-"software"
-]
 }
 ]
 },
 "atom_stage_counts": {
 "plan": 877,
-"deliver": 167,
-"create": 1791,
+"deliver": 164,
+"create": 1794,
 "refine": 872,
 "assemble": 455,
 "understand": 727,

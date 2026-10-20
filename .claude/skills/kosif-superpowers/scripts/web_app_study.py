@@ -318,6 +318,11 @@ def _load(p: Path) -> dict:
         return {}
 
 
+def redact_key(k: str) -> str:
+    """Storage key names can embed site or visitor ids: mask any run of 12+ hex/base62 characters."""
+    return re.sub(r"[A-Za-z0-9]{12,}", lambda m: m.group(0)[:3] + "…" if not m.group(0).isalpha() or len(m.group(0)) > 24 else m.group(0), k)[:40]
+
+
 def report(study, json_out=None, md_out=None) -> dict:
     """Facts only, never code: what the public frontend is built with and what it declares."""
     d = Path(study).expanduser().resolve()
@@ -373,9 +378,9 @@ def report(study, json_out=None, md_out=None) -> dict:
     for k in keys:
         svc = next((n for n, rx in STORAGE_FINGERPRINTS if re.search(rx, k, re.I)), None)
         if svc:
-            services.setdefault(svc, []).append(k[:40])
+            services.setdefault(svc, []).append(redact_key(k))
         else:
-            unclassified.append(k[:40])
+            unclassified.append(redact_key(k))
     webmcp = (_load(d / "04-webmcp.json").get("normalized_result") or {})
     tools = (webmcp.get("tools") or {}).get("items") or []
     types = collections.Counter(r.get("type", "?") for r in resources)
@@ -397,7 +402,8 @@ def report(study, json_out=None, md_out=None) -> dict:
            "stack": list(stack.values()),
            "services_from_storage_key_names": [{"service": s, "keys": v[:4]} for s, v in services.items()],
            "unclassified_storage_keys": unclassified[:12],
-           "webmcp": {"status": webmcp.get("status"), "tools": [t.get("name") for t in tools if isinstance(t, dict)][:50]},
+           "webmcp": {"status": webmcp.get("status") or "not run", "checked": webmcp.get("status") == "available",
+                      "tools": [t.get("name") for t in tools if isinstance(t, dict)][:50]},
            "page": {"dom_nodes": (cap.get("dom") or {}).get("total_nodes"), "resources": dict(types),
                     "scripts_exported": len(files), "script_bytes": script_bytes,
                     "network_requests_observed": len((cap.get("network") or {}).get("requests") or []),
@@ -428,7 +434,8 @@ def render_md(r: dict) -> str:
     p = r["page"]
     L += ["", "## Page", "", f"- DOM nodes {p['dom_nodes']} · resources {p['resources']} · scripts exported {p['scripts_exported']} ({p['script_bytes']:,} bytes)",
           f"- network requests observed {p['network_requests_observed']} · WebSockets {p['websockets_observed']}",
-          f"- WebMCP: {r['webmcp']['status']} · tools: {', '.join(r['webmcp']['tools']) or 'none declared'}"]
+          ("- WebMCP: " + (f"tools: {', '.join(r['webmcp']['tools']) or 'none declared'}" if r["webmcp"]["checked"]
+                           else f"not checked ({r['webmcp']['status']}) — unknown, not zero"))]
     s = r.get("static_analysis")
     if s:
         L += ["", "## Static analysis (REA, bounded, never executed)", "",

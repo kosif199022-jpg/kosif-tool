@@ -3943,7 +3943,7 @@
   "params": "—",
   "install": "",
   "requires": [],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -3958,7 +3958,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-121",
@@ -3973,7 +3973,7 @@
   "params": "—",
   "install": "",
   "requires": [],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -3988,7 +3988,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-122",
@@ -4006,7 +4006,7 @@
    "chromium",
    "pip:pillow"
   ],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4021,7 +4021,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-123",
@@ -4039,7 +4039,7 @@
    "python3",
    "git"
   ],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4054,7 +4054,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-124",
@@ -4069,7 +4069,7 @@
   "params": "—",
   "install": "",
   "requires": [],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4085,7 +4085,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-125",
@@ -4100,7 +4100,7 @@
   "params": "—",
   "install": "",
   "requires": [],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4115,7 +4115,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-126",
@@ -4130,7 +4130,7 @@
   "params": "—",
   "install": "",
   "requires": [],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4145,7 +4145,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-127",
@@ -4156,13 +4156,13 @@
   "status": "documented",
   "what": "كل أمر يعيد بيانات يخرج JSON عند الطلب ويعمل بلا أسئلة تفاعلية؛ وكل أمر يكتب له تجربة جافة تسرد ما سيكتبه ويرفض الكتابة فوق ملف قبل المراجعة؛ والحالات صريحة (تم، بلا تغيير، فشل بسبب) — JSON on request, no prompts, dry-run for writers, refuse silent overwrites, explicit outcome states",
   "when": "عند كتابة أي أداة جديدة في KOSIF",
-  "how": "web_app_study.py يطبقه (JSON و--dry-run ورفض المجلدات غير الفارغة). قيس مدى انتشاره: grep -l -- '\"--json\"' scripts/*.py. الفجوة: 21 من 110 سكربتًا فقط لها --json.",
+  "how": "web_app_study.py يطبقه (JSON و--dry-run ورفض المجلدات غير الفارغة). قياس تقريبي لانتشاره: grep -lE -- \"[\\\"']--json[\\\"']\" scripts/*.py. الفجوة: نحو خُمس السكربتات فقط لها --json.",
   "params": "—",
   "install": "",
   "requires": [
    "python3"
   ],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4178,7 +4178,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-128",
@@ -4189,13 +4189,13 @@
   "status": "documented",
   "what": "ابدأ كل جلسة بنداء رخيص للقراءة فقط يعيد حالة الدخول والمشروع النشط وإصدار الأداة، وتفرّع عليه (سجّل دخول، اسأل، أو تابع) قبل أي عمل حقيقي — one cheap read-only call that returns auth state, active project and version, then branch",
   "when": "بداية أي مهمة تعتمد على خدمات متصلة",
-  "how": "boot.py وhub.py doctor --json يغطيان الجهاز. الفجوة: لا تقرير واحد لحالة الدخول لكل خدمة (GitHub، Higgsfield، الكانفس، المتصفح السحابي).",
+  "how": "boot.py وhub.py doctor --json يغطيان الجهاز. الفجوة: لا تقرير واحد لحالة الدخول لكل خدمة (المستودعات ومولدات الوسائط والمتصفح السحابي).",
   "params": "—",
   "install": "",
   "requires": [
-   "pip:higgsfield"
+   "python3"
   ],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4210,7 +4210,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-129",
@@ -4225,7 +4225,7 @@
   "params": "—",
   "install": "",
   "requires": [],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests) plus MagicPath public docs (idea only); KOSIF wording",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4240,7 +4240,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: agent-skills a1ced96 (MIT, close paraphrase) + public docs (idea only)"
  },
  {
   "id": "APPX-130",
@@ -4257,7 +4257,7 @@
   "requires": [
    "python3"
   ],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4273,7 +4273,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-131",
@@ -4290,7 +4290,7 @@
   "requires": [
    "python3"
   ],
-  "license": "method idea from MagicPathAI/agent-skills (MIT, © MagicPathAI); KOSIF wording",
+  "license": "method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4305,7 +4305,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT",
-  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license MIT in plugin manifests); method rewritten for KOSIF, no text copied"
+  "source": "MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit"
  },
  {
   "id": "APPX-132",
@@ -4314,13 +4314,13 @@
   "name_ar": "حزمة مراجع من التحديد تُعطى لكل العمّال",
   "name_en": "Selection-as-context reference bundle shared by every worker",
   "status": "documented",
-  "what": "ما يشير إليه المستخدم (رسم، صورة، مخرج سابق، أصل بالاسم) يُجمع في حزمة مراجع واحدة بأدوار (أسلوب، محتوى، بنية) وتُرفق بالطلب التالي وتُعطى كما هي لكل مهمة فرعية متوازية، مع بوابة تأكيد إذا كثرت المخرجات — one reference bundle with roles, handed identically to every parallel worker; confirm before a large fan-out",
+  "what": "في أفلام KOSIF متعددة المشاهد يُسلَّم ملف مراجع واحد بأدوار (أسلوب، محتوى، بنية) بنفس المسار لكل وكيل مشهد، ويُسأل المستخدم قبل تشغيل عدد كبير من الوكلاء — one roles-tagged refs file passed unchanged to every scene agent; ask before a large fan-out",
   "when": "مشروع بعدة مشاهد أو تنويعات تُبنى بالتوازي",
   "how": "refs.json بأدوار لكل ملف يُمرر بنفس المسار في موجز كل وكيل فرعي (THINK-27)، مع قفل الأسلوب والألوان. الفجوة: لا موزّع ينفذ ذلك آليًا.",
   "params": "—",
   "install": "",
   "requires": [],
-  "license": "method idea inspired by MagicPath public docs; KOSIF wording, no MagicPath text or code",
+  "license": "method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4335,7 +4335,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
-  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); method idea only, in KOSIF's own words"
+  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
  },
  {
   "id": "APPX-133",
@@ -4344,7 +4344,7 @@
   "name_ar": "تنويعات على محاور مسمّاة جنبًا إلى جنب",
   "name_en": "Variant fan-out on named axes, side by side, never overwriting",
   "status": "documented",
-  "what": "اختر المحاور التي تتغير (التخطيط، الأسلوب، اللون، النص، اللغة، الجمهور، الجهاز) والعدد، واتجاهًا حرًا أو «فاجئني»؛ كل تنويع نسخة شقيقة بجانب الأصل لا تستبدله — vary named axes into sibling copies next to the original",
+  "what": "لعرض بدائل مشهد اصنع نسخًا شقيقة تغيّر كل منها محورًا واحدًا مسمّى، والأصل يبقى كما هو — sibling variants of a scene, each changing one named axis, original untouched",
   "when": "عرض بدائل على العميل قبل الاعتماد",
   "how": "ثلاثة أساليب متباينة من tools/kosif.py search ثم scaffold لكل واحد في مجلد شقيق ومعاينة كل منها. الفجوة: لا مولّد تنويعات بمحاور مسماة.",
   "params": "—",
@@ -4352,7 +4352,7 @@
   "requires": [
    "python3"
   ],
-  "license": "method idea inspired by MagicPath public docs; KOSIF wording, no MagicPath text or code",
+  "license": "method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4367,7 +4367,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
-  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); method idea only, in KOSIF's own words"
+  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
  },
  {
   "id": "APPX-134",
@@ -4376,7 +4376,7 @@
   "name_ar": "التعديل الحتمي أولًا والنموذج للباقي فقط",
   "name_en": "Deterministic-first edits; the model only for what cannot be rewritten safely",
   "status": "documented",
-  "what": "سجّل التعديلات المباشرة (نص، لون، توقيت عنصر) سجلًا حتميًا يُطبق على المصدر بلا نموذج، وأحِل للنموذج فقط ما لا يمكن ربطه بأمان (قيم محسوبة، بيانات من مكان آخر) مع إعلان ذلك — apply direct manipulations as a deterministic change log; escalate only the unmappable remainder, visibly",
+  "what": "عدّل مشاهد الموشن بسجل عمليات محددة (نص، لون، توقيت) يطبقه سكربت، ولا تطلب من النموذج إعادة كتابة الملف إلا لما لا يطبقه السجل، وقل ذلك — a scripted edit log first, a model rewrite only for the rest, stated openly",
   "when": "تعديلات صغيرة متكررة على مشاهد الموشن",
   "how": "kosif_timeline.py edit يطبق تعديلات حتمية على مشروع JSON مع تراجع وإعادة. الفجوة: مشاهد HTML تُعدَّل بإعادة كتابة النموذج للملف.",
   "params": "—",
@@ -4384,7 +4384,7 @@
   "requires": [
    "python3"
   ],
-  "license": "method idea inspired by MagicPath public docs; KOSIF wording, no MagicPath text or code",
+  "license": "method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4399,7 +4399,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
-  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); method idea only, in KOSIF's own words"
+  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
  },
  {
   "id": "APPX-135",
@@ -4408,13 +4408,13 @@
   "name_ar": "نُسخ مرتبطة: نمط مشترك ومحتوى لكل سجل",
   "name_en": "Linked instances: shared style, per-record content",
   "status": "documented",
-  "what": "إذا جاءت عناصر كثيرة من مصدر متكرر واحد فتغيير النمط ينتشر لها كلها، وتغيير النص أو الصورة يعدّل سجل ذلك العنصر وحده؛ والمحتوى المحسوب يُعلَّم غير قابل للتعديل المباشر — style edits propagate, content edits touch one record",
+  "what": "في البطاقات والقوائم المتكررة: تعديل القالب يغيّر الكل، وتعديل سجل البيانات يغيّر بطاقة واحدة — template edits change every card, data edits change one",
   "when": "بطاقات قوائم أو شرائح متكررة في فيديو",
   "how": "بطاقات المشاهد كسجلات JSON (STORY-09) تُعرض بقالب HTML واحد. الفجوة: لا مسار تعديل يفصل «نمط القالب» عن «هذا السجل».",
   "params": "—",
   "install": "",
   "requires": [],
-  "license": "method idea inspired by MagicPath public docs; KOSIF wording, no MagicPath text or code",
+  "license": "method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4429,7 +4429,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
-  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); method idea only, in KOSIF's own words"
+  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
  },
  {
   "id": "APPX-136",
@@ -4438,7 +4438,7 @@
   "name_ar": "نسخ لكل عنصر وارجع للخلف بدل مواصلة التلقين",
   "name_en": "Per-item revisions: roll back instead of piling on prompts",
   "status": "documented",
-  "what": "كل تغيير مقبول ينشئ نسخة مرقمة للعنصر يمكن استعادتها؛ وإذا انجرفت النتائج فارجع لآخر نسخة جيدة أو ابدأ خيطًا نظيفًا أو اسأل الوكيل ماذا غيّر — numbered revisions per item; when results drift, roll back or restart cleanly",
+  "what": "احفظ نسخة مرقمة لكل مشهد معتمد، وعند تدهور النتائج ارجع لآخر نسخة جيدة بدل زيادة التعليمات — numbered scene versions; roll back rather than re-prompt",
   "when": "جولات تعديل كثيرة على نفس المشهد",
   "how": "kosif_timeline.py undo/redo لمشاريع JSON. الفجوة: مشاريع HTML المولّدة بلا قائمة نسخ ولا أمر تراجع.",
   "params": "—",
@@ -4446,7 +4446,7 @@
   "requires": [
    "python3"
   ],
-  "license": "method idea inspired by MagicPath public docs; KOSIF wording, no MagicPath text or code",
+  "license": "method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4461,7 +4461,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
-  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); method idea only, in KOSIF's own words"
+  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
  },
  {
   "id": "APPX-137",
@@ -4470,7 +4470,7 @@
   "name_ar": "الرسم التقريبي الموسوم للبنية والمرجع للمظهر",
   "name_en": "Labeled rough sketch for structure; reference for look",
   "status": "documented",
-  "what": "رسم تقريبي بصناديق وأسهم ووسوم قصيرة (عنوان، زر) يُلتقط ويُرسل كبنية، وصورة مرجعية أو أصل مسمّى يعطي الأسلوب: البنية من الرسم والمظهر من المرجع — structure from the sketch, style from the reference",
+  "what": "في تخطيط المشاهد يحدد الرسم السريع أماكن العناصر، وتحدد صورة المرجع شكلها — the sketch fixes the layout, the reference fixes the look",
   "when": "تخطيط مشهد أو شاشة من فكرة سريعة",
   "how": "smart_draw.py analyze يتعرف على الأشكال. الفجوة: لا يقرأ الوسوم ولا يحوّل البنية إلى مواقع بطاقات المشاهد.",
   "params": "—",
@@ -4478,7 +4478,7 @@
   "requires": [
    "python3"
   ],
-  "license": "method idea inspired by MagicPath public docs; KOSIF wording, no MagicPath text or code",
+  "license": "method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4493,7 +4493,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
-  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); method idea only, in KOSIF's own words"
+  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
  },
  {
   "id": "APPX-138",
@@ -4502,7 +4502,7 @@
   "name_ar": "جسر MCP باتجاهين مع تلميح التحديد الحالي",
   "name_en": "Two-way MCP bridge with a current-selection hint",
   "status": "documented",
-  "what": "اعرض مساحة العمل لأي عميل MCP بتسجيل دخول من المتصفح بدل مفتاح ملصق؛ يدفع الوكلاء عملًا جديدًا ويسحبون العمل المنتهي إلى الكود، ويُبلَّغون بالمشروع والتحديد الحاليين دون معرّفات — expose the workspace to MCP clients both ways, with the active project and selection as context",
+  "what": "وسّع خادم MCP في KOSIF ليكتب أيضًا (ينشئ مشروعًا، يعدّل مشهدًا، يعاين) ويعرف المشروع النشط — a write-capable KOSIF MCP server that knows the active project",
   "when": "ربط KOSIF بوكلاء آخرين",
   "how": "kosif_mcp.py --selftest يثبت واجهة القراءة الحالية. الفجوة: لا أدوات كتابة (إنشاء مشروع، تعديل مشهد، معاينة، رندر) ولا مورد «المشروع النشط».",
   "params": "—",
@@ -4510,7 +4510,7 @@
   "requires": [
    "python3"
   ],
-  "license": "method idea inspired by MagicPath public docs; KOSIF wording, no MagicPath text or code",
+  "license": "method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4526,7 +4526,7 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
-  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); method idea only, in KOSIF's own words"
+  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
  },
  {
   "id": "APPX-139",
@@ -4535,15 +4535,15 @@
   "name_ar": "المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن",
   "name_en": "Skills: description-matched loading, explicit pinning, safe text-only import",
   "status": "documented",
-  "what": "تُحمَّل المهارة تلقائيًا إذا طابق وصفها الطلب، ويمكن تثبيتها صراحة لإزالة الالتباس؛ وتُقبل حزم المهارات الخارجية نصًا فقط بحد حجم وبلا سكربتات قابلة للتشغيل، وللقراءة فقط بعد الاستيراد — auto-load by description, pin explicitly, accept third-party skills as text only under a size cap",
+  "what": "افحص أي حزمة مهارة خارجية قبل اعتمادها: نص فقط، حجم محدود، بلا ملفات تنفيذية، ومصدر معروف — vet third-party skill packages before importing them",
   "when": "قبل اعتماد مهارة خارجية في KOSIF",
-  "how": "skill_intelligence.py brief يرتب بالوصف، وcheck_skill.py يفحص البنية. الفجوة: لا بوابة تفحص حزمة مهارة خارجية (نص فقط، حجم، بلا تنفيذيات، مصدر).",
+  "how": "skill_intelligence.py brief يرتب بالوصف، وcheck_skill.py يفحص بنية مهارة KOSIF نفسها فقط. الفجوة: لا بوابة تفحص حزمة مهارة خارجية (نص فقط، حجم، بلا تنفيذيات، مصدر).",
   "params": "—",
   "install": "",
   "requires": [
    "python3"
   ],
-  "license": "method idea inspired by MagicPath public docs; KOSIF wording, no MagicPath text or code",
+  "license": "method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
   ],
@@ -4558,6 +4558,6 @@
    "magicpath"
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
-  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); method idea only, in KOSIF's own words"
+  "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
  }
 ]

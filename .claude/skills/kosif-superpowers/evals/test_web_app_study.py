@@ -94,6 +94,21 @@ class NeverAttachToAnotherBrowser(unittest.TestCase):
 
 
 class Report(unittest.TestCase):
+    def test_unchecked_webmcp_is_unknown_and_key_ids_are_masked(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            fake_study(root)
+            (root / "04-webmcp.json").write_text(json.dumps({"normalized_result": {"status": "unavailable", "tools": {"items": []}}}), encoding="utf-8")
+            cap = json.loads((root / "02-page-capture.json").read_text(encoding="utf-8"))
+            cap["normalized_result"]["storage"]["local_storage_keys"].append("__mpq_a4ccb0cbf30074a8c35fc8ee722f5d86_ev")
+            (root / "02-page-capture.json").write_text(json.dumps(cap), encoding="utf-8")
+            rep = W.report(root)
+            self.assertFalse(rep["webmcp"]["checked"])
+            md = (root / "report.md").read_text(encoding="utf-8")
+            self.assertIn("not checked (unavailable)", md)
+            self.assertNotIn("none declared", md)
+            self.assertNotIn("a4ccb0cbf30074a8c35fc8ee722f5d86", md + (root / "report.json").read_text(encoding="utf-8"))
+
     def test_lookalike_names_are_not_libraries(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

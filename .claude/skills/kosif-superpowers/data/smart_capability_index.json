@@ -6916,7 +6916,7 @@
       "name_ar": "فحص تمهيدي أولًا للحساب والسياق",
       "status": "documented",
       "requires": [
-        "pip:higgsfield"
+        "python3"
       ],
       "proof": [
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
@@ -6986,7 +6986,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
       ],
       "source": "app-feature-transfer.json",
-      "what": "ما يشير إليه المستخدم (رسم، صورة، مخرج سابق، أصل بالاسم) يُجمع في حزمة مراجع واحدة بأدوار (أسلوب، محتوى، بنية) وتُرفق بالطلب التالي وتُعطى كما هي لكل مهمة فرعية متوازية، مع بوابة تأكيد إذا كثرت المخرجات — one reference bundle with roles, handed identically to every parallel worke"
+      "what": "في أفلام KOSIF متعددة المشاهد يُسلَّم ملف مراجع واحد بأدوار (أسلوب، محتوى، بنية) بنفس المسار لكل وكيل مشهد، ويُسأل المستخدم قبل تشغيل عدد كبير من الوكلاء — one roles-tagged refs file passed unchanged to every scene agent; ask before a large fan-out"
     },
     {
       "id": "APPX-133",
@@ -7003,7 +7003,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
       ],
       "source": "app-feature-transfer.json",
-      "what": "اختر المحاور التي تتغير (التخطيط، الأسلوب، اللون، النص، اللغة، الجمهور، الجهاز) والعدد، واتجاهًا حرًا أو «فاجئني»؛ كل تنويع نسخة شقيقة بجانب الأصل لا تستبدله — vary named axes into sibling copies next to the original"
+      "what": "لعرض بدائل مشهد اصنع نسخًا شقيقة تغيّر كل منها محورًا واحدًا مسمّى، والأصل يبقى كما هو — sibling variants of a scene, each changing one named axis, original untouched"
     },
     {
       "id": "APPX-134",
@@ -7020,7 +7020,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
       ],
       "source": "app-feature-transfer.json",
-      "what": "سجّل التعديلات المباشرة (نص، لون، توقيت عنصر) سجلًا حتميًا يُطبق على المصدر بلا نموذج، وأحِل للنموذج فقط ما لا يمكن ربطه بأمان (قيم محسوبة، بيانات من مكان آخر) مع إعلان ذلك — apply direct manipulations as a deterministic change log; escalate only the unmappable remainder, visibly"
+      "what": "عدّل مشاهد الموشن بسجل عمليات محددة (نص، لون، توقيت) يطبقه سكربت، ولا تطلب من النموذج إعادة كتابة الملف إلا لما لا يطبقه السجل، وقل ذلك — a scripted edit log first, a model rewrite only for the rest, stated openly"
     },
     {
       "id": "APPX-135",
@@ -7035,7 +7035,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
       ],
       "source": "app-feature-transfer.json",
-      "what": "إذا جاءت عناصر كثيرة من مصدر متكرر واحد فتغيير النمط ينتشر لها كلها، وتغيير النص أو الصورة يعدّل سجل ذلك العنصر وحده؛ والمحتوى المحسوب يُعلَّم غير قابل للتعديل المباشر — style edits propagate, content edits touch one record"
+      "what": "في البطاقات والقوائم المتكررة: تعديل القالب يغيّر الكل، وتعديل سجل البيانات يغيّر بطاقة واحدة — template edits change every card, data edits change one"
     },
     {
       "id": "APPX-136",
@@ -7052,7 +7052,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
       ],
       "source": "app-feature-transfer.json",
-      "what": "كل تغيير مقبول ينشئ نسخة مرقمة للعنصر يمكن استعادتها؛ وإذا انجرفت النتائج فارجع لآخر نسخة جيدة أو ابدأ خيطًا نظيفًا أو اسأل الوكيل ماذا غيّر — numbered revisions per item; when results drift, roll back or restart cleanly"
+      "what": "احفظ نسخة مرقمة لكل مشهد معتمد، وعند تدهور النتائج ارجع لآخر نسخة جيدة بدل زيادة التعليمات — numbered scene versions; roll back rather than re-prompt"
     },
     {
       "id": "APPX-137",
@@ -7069,7 +7069,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
       ],
       "source": "app-feature-transfer.json",
-      "what": "رسم تقريبي بصناديق وأسهم ووسوم قصيرة (عنوان، زر) يُلتقط ويُرسل كبنية، وصورة مرجعية أو أصل مسمّى يعطي الأسلوب: البنية من الرسم والمظهر من المرجع — structure from the sketch, style from the reference"
+      "what": "في تخطيط المشاهد يحدد الرسم السريع أماكن العناصر، وتحدد صورة المرجع شكلها — the sketch fixes the layout, the reference fixes the look"
     },
     {
       "id": "APPX-138",
@@ -7086,7 +7086,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
       ],
       "source": "app-feature-transfer.json",
-      "what": "اعرض مساحة العمل لأي عميل MCP بتسجيل دخول من المتصفح بدل مفتاح ملصق؛ يدفع الوكلاء عملًا جديدًا ويسحبون العمل المنتهي إلى الكود، ويُبلَّغون بالمشروع والتحديد الحاليين دون معرّفات — expose the workspace to MCP clients both ways, with the active project and selection as context"
+      "what": "وسّع خادم MCP في KOSIF ليكتب أيضًا (ينشئ مشروعًا، يعدّل مشهدًا، يعاين) ويعرف المشروع النشط — a write-capable KOSIF MCP server that knows the active project"
     },
     {
       "id": "APPX-139",
@@ -7103,7 +7103,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
       ],
       "source": "app-feature-transfer.json",
-      "what": "تُحمَّل المهارة تلقائيًا إذا طابق وصفها الطلب، ويمكن تثبيتها صراحة لإزالة الالتباس؛ وتُقبل حزم المهارات الخارجية نصًا فقط بحد حجم وبلا سكربتات قابلة للتشغيل، وللقراءة فقط بعد الاستيراد — auto-load by description, pin explicitly, accept third-party skills as text only under a size"
+      "what": "افحص أي حزمة مهارة خارجية قبل اعتمادها: نص فقط، حجم محدود، بلا ملفات تنفيذية، ومصدر معروف — vet third-party skill packages before importing them"
     },
     {
       "id": "APP-01",
@@ -65842,16 +65842,14 @@
       "requires": [
         "python3",
         "chromium",
-        "npm:react",
-        "npm:rea",
-        "os:macos"
+        "npm:rea"
       ],
       "proof": [
         "kosif-tool/.claude/skills/kosif-superpowers/evals/test_web_app_study.py",
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/web_app_study.py"
       ],
       "source": "runnable-tools.json",
-      "what": "يدرس صفحة ويب عامة للقراءة فقط: متصفح معزول بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفات"
+      "what": "يدرس صفحة ويب عامة للقراءة فقط: متصفح بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح الت"
     },
     {
       "id": "SEC-01",

@@ -1,7 +1,7 @@
 {
  "schema": "kosif.hubs-index.v1",
  "atoms": 5318,
- "superpowers": 446,
+ "superpowers": 445,
  "hubs": [
   {
    "id": "research",
@@ -520,16 +520,16 @@
     "pip:torch",
     "pip:faster-whisper",
     "pip:higgsfield",
-    "npm:react",
     "key:graphify",
     "libreoffice",
-    "os:macos",
     "fonts:arabic",
     "gh",
+    "npm:react",
     "pip:hypothesis",
     "pip:piper",
     "gpu",
     "tesseract",
+    "os:macos",
     "pip:scipy",
     "pip:matplotlib",
     "npm:three",
@@ -611,23 +611,23 @@
     "SP-0102",
     "SP-0104",
     "SP-0103",
-    "SP-0433",
+    "SP-0432",
     "SP-0105",
     "SP-0111",
     "SP-0106",
     "SP-0101",
-    "SP-0434",
+    "SP-0433",
     "SP-0107",
     "SP-0108",
     "SP-0109",
+    "SP-0434",
     "SP-0435",
-    "SP-0436",
     "SP-0055",
+    "SP-0436",
     "SP-0437",
-    "SP-0438",
     "SP-0112",
     "SP-0056",
-    "SP-0439",
+    "SP-0438",
     "SP-0038",
     "SP-0039",
     "SP-0113",
@@ -652,7 +652,7 @@
     "SP-0053",
     "SP-0117",
     "SP-0054",
-    "SP-0440",
+    "SP-0439",
     "SP-0110"
    ],
    "top": [
@@ -689,7 +689,7 @@
      "ready_now": 13
     },
     {
-     "id": "SP-0433",
+     "id": "SP-0432",
      "name_ar": "المؤشر بطلًا",
      "name_en": "Cursor as protagonist",
      "size": 23,
@@ -729,7 +729,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0434",
+     "id": "SP-0433",
      "name_ar": "هاتف 2.5D على Canvas",
      "name_en": "Canvas 2.5D phone (drawPhone)",
      "size": 16,
@@ -799,7 +799,6 @@
     "npm:esbuild",
     "lean",
     "key:graphify",
-    "pip:higgsfield",
     "pip:arabic-reshaper",
     "trivy",
     "pip:llama-cpp",
@@ -819,6 +818,7 @@
     "openscad",
     "pip:cadquery",
     "pip:anthropic",
+    "pip:higgsfield",
     "network",
     "npm:animejs",
     "tesseract"
@@ -1332,11 +1332,11 @@
     "SP-0233",
     "SP-0317",
     "SP-0381",
-    "SP-0247",
+    "SP-0248",
     "SP-0278",
     "SP-0319",
     "SP-0236",
-    "SP-0244",
+    "SP-0245",
     "SP-0382",
     "SP-0279",
     "SP-0234",
@@ -1345,26 +1345,26 @@
     "SP-0380",
     "SP-0318",
     "SP-0137",
-    "SP-0246",
+    "SP-0247",
     "SP-0280",
     "SP-0383",
     "SP-0250",
     "SP-0251",
     "SP-0227",
     "SP-0229",
-    "SP-0249",
+    "SP-0243",
     "SP-0320",
     "SP-0138",
     "SP-0384",
     "SP-0237",
     "SP-0241",
-    "SP-0243",
-    "SP-0245",
+    "SP-0244",
+    "SP-0246",
     "SP-0252",
     "SP-0281",
     "SP-0282",
     "SP-0242",
-    "SP-0248",
+    "SP-0249",
     "SP-0253",
     "SP-0321",
     "SP-0256",
@@ -1416,7 +1416,7 @@
      "id": "SP-0231",
      "name_ar": "مشروع أنيميشن جديد",
      "name_en": "New animation project (2D / 3D / lab)",
-     "size": 21,
+     "size": 20,
      "best": "proven",
      "ready_now": 9
     },
@@ -1598,15 +1598,15 @@
     "SP-0190",
     "SP-0219",
     "SP-0157",
-    "SP-0441",
+    "SP-0440",
     "SP-0371",
     "SP-0220",
     "SP-0191",
     "SP-0221",
     "SP-0164",
     "SP-0406",
-    "SP-0265",
     "SP-0373",
+    "SP-0265",
     "SP-0266",
     "SP-0159",
     "SP-0162",
@@ -1617,8 +1617,8 @@
     "SP-0407",
     "SP-0412",
     "SP-0388",
-    "SP-0389",
     "SP-0390",
+    "SP-0391",
     "SP-0161",
     "SP-0396",
     "SP-0372",
@@ -1633,7 +1633,7 @@
     "SP-0192",
     "SP-0225",
     "SP-0387",
-    "SP-0391",
+    "SP-0389",
     "SP-0395",
     "SP-0166",
     "SP-0170",
@@ -1684,8 +1684,7 @@
     "SP-0413",
     "SP-0226",
     "SP-0414",
-    "SP-0416",
-    "SP-0417"
+    "SP-0416"
    ],
    "top": [
     {
@@ -1708,7 +1707,7 @@
      "id": "SP-0263",
      "name_ar": "ملف مفحوص لكل منصة",
      "name_en": "Checked per-platform delivery (8 platforms)",
-     "size": 35,
+     "size": 36,
      "best": "proven",
      "ready_now": 15
     },
@@ -1745,7 +1744,7 @@
      "ready_now": 11
     },
     {
-     "id": "SP-0441",
+     "id": "SP-0440",
      "name_ar": "تحميل فيديو من أي رابط",
      "name_en": "Download video from any URL",
      "size": 10,
@@ -1884,7 +1883,7 @@
     "SP-0148",
     "SP-0291",
     "SP-0290",
-    "SP-0442",
+    "SP-0441",
     "SP-0293",
     "SP-0294",
     "SP-0150",
@@ -1897,11 +1896,11 @@
     "SP-0299",
     "SP-0300",
     "SP-0311",
-    "SP-0445",
-    "SP-0443",
-    "SP-0298",
     "SP-0444",
-    "SP-0446",
+    "SP-0442",
+    "SP-0298",
+    "SP-0443",
+    "SP-0445",
     "SP-0301",
     "SP-0303",
     "SP-0306",
@@ -1949,7 +1948,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0442",
+     "id": "SP-0441",
      "name_ar": "أزياء صوتية للشخصيات",
      "name_en": "Character voice costumes",
      "size": 26,
@@ -2094,27 +2093,27 @@
     "نص"
    ],
    "superpowers": [
-    "SP-0418",
+    "SP-0417",
     "SP-0028",
-    "SP-0420",
     "SP-0419",
-    "SP-0425",
+    "SP-0418",
+    "SP-0424",
+    "SP-0420",
     "SP-0421",
     "SP-0422",
-    "SP-0423",
-    "SP-0426",
-    "SP-0428",
-    "SP-0429",
-    "SP-0424",
-    "SP-0430",
-    "SP-0431",
-    "SP-0029",
+    "SP-0425",
     "SP-0427",
-    "SP-0432"
+    "SP-0428",
+    "SP-0423",
+    "SP-0429",
+    "SP-0430",
+    "SP-0029",
+    "SP-0426",
+    "SP-0431"
    ],
    "top": [
     {
-     "id": "SP-0418",
+     "id": "SP-0417",
      "name_ar": "كشف الكلمة العربية كاملة من اليمين",
      "name_en": "RTL whole-word lyric reveal with key-word pop",
      "size": 46,
@@ -2130,7 +2129,7 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0420",
+     "id": "SP-0419",
      "name_ar": "مطابقة الخط بالحبر",
      "name_en": "Font matching by ink",
      "size": 11,
@@ -2138,7 +2137,7 @@
      "ready_now": 10
     },
     {
-     "id": "SP-0419",
+     "id": "SP-0418",
      "name_ar": "التقاط ستايل النص وإعادة تركيبه",
      "name_en": "Text-style capture & compositing",
      "size": 15,
@@ -2146,7 +2145,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0425",
+     "id": "SP-0424",
      "name_ar": "أنظمة الأصوات الطباعية",
      "name_en": "Multi-voice type systems",
      "size": 25,
@@ -2154,7 +2153,7 @@
      "ready_now": 5
     },
     {
-     "id": "SP-0421",
+     "id": "SP-0420",
      "name_ar": "سطور تتكدس وتخفت",
      "name_en": "Stacked headline lines that dim",
      "size": 7,
@@ -2162,7 +2161,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0422",
+     "id": "SP-0421",
      "name_ar": "نظام أرقام واحد وأرقام جدولية",
      "name_en": "One digit system + tabular figures",
      "size": 6,
@@ -2170,7 +2169,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0423",
+     "id": "SP-0422",
      "name_ar": "عنوان ASS متحرك لكل لقطة",
      "name_en": "Per-shot ASS animated title card",
      "size": 5,
@@ -2178,7 +2177,7 @@
      "ready_now": 4
     },
     {
-     "id": "SP-0426",
+     "id": "SP-0425",
      "name_ar": "صعود من خلف خط القاعدة",
      "name_en": "Baseline mask rise (lines & words)",
      "size": 17,
@@ -2186,7 +2185,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0428",
+     "id": "SP-0427",
      "name_ar": "كتابة بشرية: أخطاء ومسح ومؤشر ملوّن",
      "name_en": "Human typing: typos, backspace, caret swap",
      "size": 9,
@@ -2194,7 +2193,7 @@
      "ready_now": 3
     },
     {
-     "id": "SP-0429",
+     "id": "SP-0428",
      "name_ar": "صدمة العنوان وضربة الكلمة على الإيقاع",
      "name_en": "Headline slam & beat word punch",
      "size": 9,
@@ -2202,7 +2201,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0424",
+     "id": "SP-0423",
      "name_ar": "ثلاثة أشكال لعنوان الخطاف",
      "name_en": "Hook title looks: box · kinetic · minimal",
      "size": 4,

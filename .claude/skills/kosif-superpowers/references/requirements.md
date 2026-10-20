@@ -14,7 +14,7 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 659 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 660 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 3 | [`ffmpeg`](#req-ffmpeg) | bin | 418 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
 | 4 | [`chromium`](#req-chromium) | bin | 344 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
@@ -32,12 +32,12 @@
 | 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 76 | software-investigation, runnable-tools |  |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 73 | agent-orchestration, thinking-core, atlas-mind, atlas-code, self-discovery |  |
 | 18 | [`key:video-gen`](#req-key-video-gen) | service | 65 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
-| 19 | [`npm:react`](#req-npm-react) | npm | 53 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, runnable-tools |  |
+| 19 | [`npm:react`](#req-npm-react) | npm | 52 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, 3d-spatial |  |
 | 20 | [`git`](#req-git) | bin | 47 | atlas-code, agent-orchestration, atlas-mind, atlas-docs, code-engineering |  |
 | 21 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 47 | audio-sync-captions, qa-verification, engines-render-pipeline, photo-video-footage, runnable-tools |  |
 | 22 | [`pip:office`](#req-pip-office) | pip | 37 | documents-office, self-discovery, atlas-docs, app-feature-transfer, arabic-language |  |
 | 23 | [`engine:android`](#req-engine-android) | bin | 36 | software-investigation, runnable-tools |  |
-| 24 | [`os:macos`](#req-os-macos) | os | 35 | software-investigation, ui-product-device, atlas-code, engines-render-pipeline, runnable-tools |  |
+| 24 | [`os:macos`](#req-os-macos) | os | 34 | software-investigation, ui-product-device, atlas-code, engines-render-pipeline, atlas-build |  |
 | 25 | [`npm:esbuild`](#req-npm-esbuild) | npm | 25 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material, atlas-code |  |
 | 26 | [`npm:axe`](#req-npm-axe) | npm | 25 | qa-verification, atlas-build, atlas-code, color-palette-grading, app-feature-transfer |  |
 | 27 | [`blender`](#req-blender) | apt | 23 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery |  |
@@ -51,9 +51,9 @@
 | 35 | [`npm:d3`](#req-npm-d3) | npm | 19 | maps-geo, engines-render-pipeline, knowledge-graph, charts-data-infographic, creativity-engine |  |
 | 36 | [`key:elevenlabs`](#req-key-elevenlabs) | key | 19 | music-beat-sound, voice-tts, atlas-media, audio-sync-captions, formats-platforms |  |
 | 37 | [`yt-dlp`](#req-yt-dlp) | pip | 18 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
-| 38 | [`pip:higgsfield`](#req-pip-higgsfield) | key | 18 | ai-generation, self-discovery, app-feature-transfer, apps-artifacts, camera-composition-layout |  |
-| 39 | [`docker`](#req-docker) | bin | 17 | engines-render-pipeline, self-discovery, atlas-code, atlas-build, atlas-docs |  |
-| 40 | [`pip:matplotlib`](#req-pip-matplotlib) | pip | 17 | engines-render-pipeline, data-analysis, media-image-audio, qa-verification, self-discovery |  |
+| 38 | [`docker`](#req-docker) | bin | 17 | engines-render-pipeline, self-discovery, atlas-code, atlas-build, atlas-docs |  |
+| 39 | [`pip:matplotlib`](#req-pip-matplotlib) | pip | 17 | engines-render-pipeline, data-analysis, media-image-audio, qa-verification, self-discovery |  |
+| 40 | [`pip:higgsfield`](#req-pip-higgsfield) | key | 17 | ai-generation, self-discovery, apps-artifacts, camera-composition-layout, engines-render-pipeline |  |
 | 41 | [`npm:maplibre`](#req-npm-maplibre) | npm | 17 | maps-geo, camera-composition-layout, engines-render-pipeline, light-glow-bloom, particles-fluids-physics |  |
 | 42 | [`npm:lottie`](#req-npm-lottie) | npm | 17 | engines-render-pipeline, qa-verification, app-feature-transfer, characters-rigs, easing-timing-rhythm |  |
 | 43 | [`npm:mermaid`](#req-npm-mermaid) | npm | 17 | atlas-docs, diagrams-explainers-code, atlas-code, knowledge-graph, atlas-craft |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 659 powers
-- **بالحالة / by status:** proven 232 · documented 171 · ready 140 · install 100 · key 13 · seen 3
-- **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (49), music-beat-sound (45), app-feature-transfer (23), photo-video-footage (16), formats-platforms (15)
+- **يفتح / unlocks:** 660 powers
+- **بالحالة / by status:** proven 232 · documented 172 · ready 140 · install 100 · key 13 · seen 3
+- **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (49), music-beat-sound (45), app-feature-transfer (24), photo-video-footage (16), formats-platforms (15)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-npm-hyperframes"></a>
@@ -325,10 +325,10 @@
 
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm i react react-dom  (or next, svelte, vue)`
-- **يفتح / unlocks:** 53 powers
-- **بالحالة / by status:** install 26 · documented 15 · proven 5 · ready 3 · key 2 · seen 2
-- **العائلات / families:** engines-render-pipeline (17), atlas-code (6), transitions-cuts (4), atlas-build (3), runnable-tools (3), 3d-spatial (2), apps-artifacts (2), music-beat-sound (2)
-- **أمثلة / examples:** `DATA-92` Chart palettes (categorical, sequential, semanti · `TOOL-17` Third-party motion engine scaffolder · `TOOL-22` Reference Edit Engine · `TOOL-62` Web app study (public frontend, REA, facts only) · `TRANS-07` Scene enter on view change · `3D-16` Remotion ThreeCanvas
+- **يفتح / unlocks:** 52 powers
+- **بالحالة / by status:** install 26 · documented 15 · proven 4 · ready 3 · key 2 · seen 2
+- **العائلات / families:** engines-render-pipeline (17), atlas-code (6), transitions-cuts (4), atlas-build (3), 3d-spatial (2), apps-artifacts (2), music-beat-sound (2), runnable-tools (2)
+- **أمثلة / examples:** `DATA-92` Chart palettes (categorical, sequential, semanti · `TOOL-17` Third-party motion engine scaffolder · `TOOL-22` Reference Edit Engine · `TRANS-07` Scene enter on view change · `3D-16` Remotion ThreeCanvas · `3D-17` Portals & render-to-texture
 
 <a id="req-git"></a>
 ### `git` — إدارة الإصدارات / version control
@@ -375,10 +375,10 @@
 
 - **النوع / kind:** os (منصة)
 - **التثبيت / install:** `a macOS machine with Xcode command-line tools`
-- **يفتح / unlocks:** 35 powers
-- **بالحالة / by status:** documented 22 · install 4 · proven 4 · seen 3 · ready 2
-- **العائلات / families:** software-investigation (18), ui-product-device (5), atlas-code (2), engines-render-pipeline (2), runnable-tools (2), atlas-build (1), atlas-strategy (1), formats-platforms (1)
-- **أمثلة / examples:** `REA-007` List provider capabilities and side effects · `REA-052` Project a selected view of completed binary-layo · `TOOL-52` REA Family Router · `TOOL-62` Web app study (public frontend, REA, facts only) · `ABUILD-05` Mobile and desktop release signing pipeline · `ACODE-111` macOS freeze/panic reconstruction from Diagnosti
+- **يفتح / unlocks:** 34 powers
+- **بالحالة / by status:** documented 22 · install 4 · proven 3 · seen 3 · ready 2
+- **العائلات / families:** software-investigation (18), ui-product-device (5), atlas-code (2), engines-render-pipeline (2), atlas-build (1), atlas-strategy (1), formats-platforms (1), music-beat-sound (1)
+- **أمثلة / examples:** `REA-007` List provider capabilities and side effects · `REA-052` Project a selected view of completed binary-layo · `TOOL-52` REA Family Router · `ABUILD-05` Mobile and desktop release signing pipeline · `ACODE-111` macOS freeze/panic reconstruction from Diagnosti · `ACODE-13` macOS Seatbelt confinement for agent commands
 
 <a id="req-npm-esbuild"></a>
 ### `npm:esbuild` — تجميع JavaScript للمشاهد / bundle JavaScript for scenes
@@ -510,16 +510,6 @@
 - **العائلات / families:** video-download (10), runnable-tools (2), atlas-media (1), audio-sync-captions (1), engines-render-pipeline (1), knowledge-graph (1), photo-video-footage (1), qa-verification (1)
 - **أمثلة / examples:** `DL-01` Download video from any URL · `DL-02` Batch of links from a file · `DL-03` Quality cap or audio-only · `DL-04` Edit-safe H.264/AAC copy · `DL-07` Update yt-dlp when a site breaks · `ENG-X06` Tool-map doctor before promising a stack
 
-<a id="req-pip-higgsfield"></a>
-### `pip:higgsfield` — توليد صور وفيديو وصوت مدفوع / paid image, video and voice generation
-
-- **النوع / kind:** key (مفتاح/حساب)
-- **التثبيت / install:** `pip install higgsfield-client python-dotenv  + HIGGSFIELD_API_KEY (paid credits) or the Higgsfield MCP connector`
-- **يفتح / unlocks:** 18 powers
-- **بالحالة / by status:** key 8 · documented 5 · proven 4 · install 1
-- **العائلات / families:** ai-generation (7), self-discovery (3), app-feature-transfer (1), apps-artifacts (1), camera-composition-layout (1), engines-render-pipeline (1), media-image-audio (1), other (1)
-- **أمثلة / examples:** `SELF-05` Read your own tool list · `SELF-07` MCP server inventory with cost flags · `SELF-14` No GPU: plan for CPU · `TOOL-22` Reference Edit Engine · `APP-14` Hosted website builder (Higgsfield, paid) · `APPX-128` Preflight probe first: auth, context and version
-
 <a id="req-docker"></a>
 ### `docker` — حاويات معزولة / isolated containers
 
@@ -539,6 +529,16 @@
 - **بالحالة / by status:** proven 9 · install 4 · documented 2 · ready 2
 - **العائلات / families:** engines-render-pipeline (4), data-analysis (3), media-image-audio (2), qa-verification (2), self-discovery (2), app-feature-transfer (1), arabic-language (1), atlas-strategy (1)
 - **أمثلة / examples:** `ANLY-10` matplotlib charts with Arabic labels · `ANLY-11` Detect libraqm before shaping Arabic · `ANLY-15` seaborn statistical plots · `APPX-95` Charts with Arabic labels · `ARL-06` Shaping Arabic for display: exactly one engine · `DOC-23` Which engines need manual Arabic shaping
+
+<a id="req-pip-higgsfield"></a>
+### `pip:higgsfield` — توليد صور وفيديو وصوت مدفوع / paid image, video and voice generation
+
+- **النوع / kind:** key (مفتاح/حساب)
+- **التثبيت / install:** `pip install higgsfield-client python-dotenv  + HIGGSFIELD_API_KEY (paid credits) or the Higgsfield MCP connector`
+- **يفتح / unlocks:** 17 powers
+- **بالحالة / by status:** key 8 · documented 4 · proven 4 · install 1
+- **العائلات / families:** ai-generation (7), self-discovery (3), apps-artifacts (1), camera-composition-layout (1), engines-render-pipeline (1), media-image-audio (1), other (1), qa-verification (1)
+- **أمثلة / examples:** `SELF-05` Read your own tool list · `SELF-07` MCP server inventory with cost flags · `SELF-14` No GPU: plan for CPU · `TOOL-22` Reference Edit Engine · `APP-14` Hosted website builder (Higgsfield, paid) · `CAM-178` Style: Cinematic journey (higgsfield-journey)
 
 <a id="req-npm-maplibre"></a>
 ### `npm:maplibre` — خرائط تفاعلية متجهة / vector interactive maps

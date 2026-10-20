@@ -175,7 +175,7 @@
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 659 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 660 | `apt-get install -y python3 python3-pip python3-venv` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
 | `ffmpeg` | bin | 418 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
 | `chromium` | bin | 344 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
@@ -193,12 +193,12 @@
 | `engine:ghidra` | bin | 76 | `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP` |
 | `claude:tools` | service | 73 | `Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch` |
 | `key:video-gen` | service | 65 | `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits` |
-| `npm:react` | npm | 53 | `npm i react react-dom  (or next, svelte, vue)` |
+| `npm:react` | npm | 52 | `npm i react react-dom  (or next, svelte, vue)` |
 | `git` | bin | 47 | `apt-get install -y git` |
 | `pip:faster-whisper` | model | 47 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
 | `pip:office` | pip | 37 | `pip install python-docx openpyxl python-pptx reportlab pypdf` |
 | `engine:android` | bin | 36 | `Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised` |
-| `os:macos` | os | 35 | `a macOS machine with Xcode command-line tools` |
+| `os:macos` | os | 34 | `a macOS machine with Xcode command-line tools` |
 | `npm:esbuild` | npm | 25 | `npm i esbuild vite` |
 
 <a id="think"></a>

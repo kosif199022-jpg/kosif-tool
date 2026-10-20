@@ -18,7 +18,7 @@ python3 $SKILL_DIR/scripts/capability_mindmap.py task "<المهمة>" # 3. رت
 python3 $SKILL_DIR/scripts/kosif_hubs.py install <hub>        # 4. ثبّت الناقص (--apply لـ pip/npm فقط، واسأل قبل النظام والمفاتيح)
 ```
 
-الهيكل: **15 مجموعة** ← **446 قدرة خارقة مدمجة** ← **5,318 قدرة ذرية** بأدلتها. التفاصيل في [references/hubs.md](references/hubs.md) و[references/superpowers.md](references/superpowers.md) و[references/capability-mindmap.md](references/capability-mindmap.md)، والقواعد في [SKILL.md](SKILL.md).
+الهيكل: **15 مجموعة** ← **445 قدرة خارقة مدمجة** ← **5,318 قدرة ذرية** بأدلتها. التفاصيل في [references/hubs.md](references/hubs.md) و[references/superpowers.md](references/superpowers.md) و[references/capability-mindmap.md](references/capability-mindmap.md)، والقواعد في [SKILL.md](SKILL.md).
 
 | المجموعة | ماذا تغطي | قدرات | جاهز الآن | أول أمر |
 |---|---|---|---|---|
