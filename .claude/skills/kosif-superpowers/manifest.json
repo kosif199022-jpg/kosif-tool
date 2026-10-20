@@ -19,7 +19,7 @@
   "families": 61,
   "domains": 10,
   "tools": 100,
-  "guides": 82,
+  "guides": 83,
   "statuses": {
    "documented": 1798,
    "idea": 71,
@@ -9699,8 +9699,8 @@
    "area": "draw",
    "title_en": "Unified Draw: freehand + geometry + layered export",
    "title_ar": "الرسم الموحد: خطوط وأشكال وطبقات وتصدير",
-   "summary_en": "Combines the existing Smart Draw freehand/shape snapping engine with Creative Paint's vector/raster layered shapes, polygons and text. Uses one ordered JSON scene and exports PNG, SVG or editable native JSON.",
-   "summary_ar": "يقبل الخطوط الحرة والأشكال والنصوص في مشهد واحد، مع تمييز الرسم اليدوي وتصدير PNG وSVG وJSON.",
+   "summary_en": "Combines Smart Draw freehand stroke snapping, Creative Paint layered shapes and text, and keyframed GIF/MP4 animation behind one ordered scene and CLI.",
+   "summary_ar": "??? ?????? ???????? ??????? ?????? ??????? ??????? ?????? ?????? PNG ?SVG ?JSON ?GIF ?MP4.",
    "use_when": [
     "Draw lines and shapes in one file",
     "Combine freehand strokes, ellipses, rectangles, polygons or text and export",
@@ -9738,29 +9738,48 @@
      "name": "tests",
      "example": "python3 scripts/test_unified_draw.py",
      "does": "Run six integration and validation regression tests."
+    },
+    {
+     "name": "animated-gif",
+     "example": "python3 scripts/unified_draw.py animate --input templates/unified-draw-motion-demo.json --output ./drawing.gif --fps 12 --duration 2",
+     "does": "Render ordered strokes and shapes with per-element keyframes into a GIF using Creative Paint."
+    },
+    {
+     "name": "animated-mp4",
+     "example": "python3 scripts/unified_draw.py animate --input templates/unified-draw-motion-demo.json --output ./drawing.mp4 --fps 12 --duration 2",
+     "does": "Render a mixed animated scene into an H.264 MP4 using Creative Paint + FFmpeg; max 300 frames."
+    },
+    {
+     "name": "still-at-time",
+     "example": "python3 scripts/unified_draw.py render --input templates/unified-draw-motion-demo.json --png ./frame.png --time 1.5",
+     "does": "Render a still PNG from animated layers at a requested timestamp."
     }
    ],
-   "inputs": "kosif.unified-draw.v1 JSON, integer width/height 128-2048, background, 1-100 ordered elements of type stroke (Smart Draw fields) or shape (Creative Paint fields).",
-   "outputs": "PNG, SVG and kosif.paint.v1 JSON files, with recognition summary; refuses output overwrite.",
+   "inputs": "kosif.unified-draw.v1 JSON: canvas size 128..2048, 1..100 ordered stroke/shape elements, optional per-element keyframes (time,x,y,angle,scale,opacity), blend, visibility and opacity.",
+   "outputs": "Layered PNG/SVG/native JSON plus time-sampled stills, keyframed GIF and H.264 MP4; refuses overwrite.",
    "requires": {
     "python": [
      "Pillow"
     ],
     "binaries": [],
     "node": [],
-    "optional": [],
+    "optional": [
+     "ffmpeg (needed for MP4 only)"
+    ],
     "network": false
    },
    "safety": "writes-files",
    "consent": "",
-   "limits": "Validated two-engine integration only; not all 297 drawing capabilities. Rule-based snapping; no ML; no photorealism or Photoshop parity. Existing Smart Draw and Creative Paint modules retained for backward compatibility.",
+   "limits": "Tested Smart Draw + Creative Paint integration for layered stills and bounded keyframed animations; max 300 frames; no ML, full 3D or all 297 drawing catalog powers.",
    "evidence": "tested-here",
-   "evidence_note": "Six local Python integration regression tests passed on 2026-10-20, including composite PNG/SVG/JSON export.",
+   "evidence_note": "2026-10-20 Windows: 6 prior integrated still drawing tests + 7 additional animation tests passed; actual GIF and 8-frame H.264 MP4 verified using Pillow/FFprobe.",
    "tests": [
-    ".claude/skills/kosif-superpowers/scripts/test_unified_draw.py"
+    ".claude/skills/kosif-superpowers/scripts/test_unified_draw.py",
+    ".claude/skills/kosif-superpowers/scripts/test_unified_draw_animation.py"
    ],
    "docs": [
-    ".claude/skills/kosif-superpowers/references/unified-draw-integration.md"
+    ".claude/skills/kosif-superpowers/references/unified-draw-integration.md",
+    ".claude/skills/kosif-superpowers/references/unified-draw-animation.md"
    ],
    "families": [
     "hand-drawn-draw-on",
@@ -10314,6 +10333,12 @@
    "path": "references/threejs-cinematic-motion-20261020.md",
    "title": "Three.js — KOSIF Superpowers 3D + Motion Capability Bridge",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/unified-draw-animation.md",
+   "title": "Unified Draw: animated strokes, shapes, and video",
+   "area": "draw",
    "summary": ""
   },
   {

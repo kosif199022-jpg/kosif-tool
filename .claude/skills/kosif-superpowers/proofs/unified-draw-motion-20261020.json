@@ -1,0 +1,40 @@
+{
+  "schema": "kosif.unified-draw-motion-acceptance.v1",
+  "date": "2026-10-20",
+  "engine": "smart_draw+creative_paint",
+  "test_plan": "keyframed 2D strokes+geometry+text -> PNG/GIF/H264 MP4",
+  "test_results": {
+    "new_animation_tests_passed": 7,
+    "prior_still_tests_passed": 6
+  },
+  "ffprobe": {
+    "codec_name": "h264",
+    "width": 640,
+    "height": 480,
+    "r_frame_rate": "12/1",
+    "nb_frames": "24"
+  },
+  "gif_frames": 24,
+  "frame_count_expected": 24,
+  "fps": 12,
+  "duration_seconds": 2,
+  "canvas": [
+    640,
+    480
+  ],
+  "outputs": {
+    "frame.png": {
+      "sha256": "1d922a16daa1b448035dda12c3a042f2dbb658cd515c1572aecf08859bbe0ec8",
+      "bytes": 8517
+    },
+    "motion.gif": {
+      "sha256": "13b8e49e81f987ffc1f760b4f12766f266ade1782401647043af8f3a4f901b77",
+      "bytes": 67572
+    },
+    "motion.mp4": {
+      "sha256": "51f967ba381c36729181ea69d5e82fb35269a1d1eb164ce2b78c1d1277eed860",
+      "bytes": 21469
+    }
+  },
+  "note": "Output binaries are in the user's authorized Windows computer Public acceptance folder; this checked-in receipt stores hashes, not binary media."
+}

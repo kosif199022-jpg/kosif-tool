@@ -8,9 +8,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 from pathlib import Path
 
-from creative_paint import paint, svg, validate as validate_paint
+from creative_paint import animate as paint_animate, num, paint, svg, validate as validate_paint
 from smart_draw import to_scene as smart_to_scene
 
 SCHEMA = "kosif.unified-draw.v1"
@@ -34,8 +35,9 @@ def compile_scene(data):
         if not isinstance(element, dict):
             raise ValueError(f"element {i+1}: expected object")
         typ = element.get("type")
+        layer_props = {k: element[k] for k in ("name", "keyframes", "opacity", "visible", "blend") if k in element}
         if typ == "stroke":
-            stroke = {k:v for k,v in element.items() if k != "type"}
+            stroke = {k:v for k,v in element.items() if k not in ("type", *layer_props)}
             native, labels = smart_to_scene({"schema": "kosif.smartdraw.v1",
                         "width":w, "height":h, "background":scene["background"], "strokes":[stroke]})
             layer = native["layers"][0]
@@ -43,19 +45,20 @@ def compile_scene(data):
             details.append({"element":i+1, "type":"stroke",
                             "recognized":labels[0]["recognized"]})
         elif typ == "shape":
-            shape = {k:v for k,v in element.items() if k != "type"}
+            shape = {k:v for k,v in element.items() if k not in ("type", *layer_props)}
             kind = shape.get("kind")
             layer = {"name": f"{i+1}: {kind}", "visible": True,
                      "opacity": 1, "shapes": [shape]}
             details.append({"element":i+1, "type":"shape", "kind":kind})
         else:
             raise ValueError(f"element {i+1}: type must be stroke or shape")
+        layer.update(layer_props)
         scene["layers"].append(layer)
     validate_paint(scene)
     return scene, details
 
 
-def render(data, png=None, svg_file=None, scene_file=None):
+def render(data, png=None, svg_file=None, scene_file=None, time=0):
     """Validate every output first; never overwrite existing files."""
     if not any((png, svg_file, scene_file)):
         raise ValueError("provide --png, --svg or --scene-out")
@@ -71,40 +74,65 @@ def render(data, png=None, svg_file=None, scene_file=None):
         if val and Path(val).suffix.lower() != ext:
             raise ValueError(f"expected {ext} output")
     scene, details = compile_scene(data)
+    time = num(time, 0, 3600)
     outputs = {}
     if png:
-        paint(scene).save(png)
+        paint(scene, time).save(png)
         outputs["png"] = str(Path(png))
     if svg_file:
-        Path(svg_file).write_text(svg(scene), encoding="utf-8")
+        Path(svg_file).write_text(svg(scene, time), encoding="utf-8")
         outputs["svg"] = str(Path(svg_file))
     if scene_file:
         Path(scene_file).write_text(json.dumps(scene, ensure_ascii=False, indent=2)+"\n",
                                    encoding="utf-8")
         outputs["scene"] = str(Path(scene_file))
     return {"schema": SCHEMA, "elements": len(details), "recognized": details,
-            "outputs": outputs, "engine": "smart_draw+creative_paint"}
+            "outputs": outputs, "time": time, "engine": "smart_draw+creative_paint"}
+
+
+def animate(data, output, fps=24, duration=2):
+    """Compile mixed elements and delegate time-controlled GIF/MP4 to Creative Paint."""
+    if not output:
+        raise ValueError("--output is required for animate")
+    target = Path(output)
+    if target.suffix.lower() not in (".gif", ".mp4"):
+        raise ValueError("animation output must be .gif or .mp4")
+    if target.exists():
+        raise ValueError(f"refusing to overwrite: {target}")
+    if not target.parent.is_dir():
+        raise ValueError(f"output folder does not exist: {target.parent}")
+    scene, details = compile_scene(data)
+    result = paint_animate(scene, target, fps=fps, duration=duration)
+    return {"schema": SCHEMA, "elements": len(details), "recognized": details,
+            "outputs": {target.suffix.lower().lstrip("."): str(target)},
+            "animation": result, "engine": "smart_draw+creative_paint"}
 
 
 def main():
     p = argparse.ArgumentParser(description="One KOSIF CLI for strokes and shapes")
-    p.add_argument("action", choices=["doctor", "render"])
+    p.add_argument("action", choices=["doctor", "render", "animate"])
     p.add_argument("--input", help="ordered kosif.unified-draw.v1 document")
     p.add_argument("--png")
     p.add_argument("--svg")
     p.add_argument("--scene-out")
+    p.add_argument("--time", type=float, default=0, help="Time in seconds for a still frame")
+    p.add_argument("--output", help="GIF or MP4 path for animate")
+    p.add_argument("--fps", type=int, default=24)
+    p.add_argument("--duration", type=float, default=2)
     a = p.parse_args()
     try:
         if a.action == "doctor":
             result = {"ready":True, "engines":["smart_draw", "creative_paint"],
-                      "elements":["stroke", "shape"], "outputs":["png","svg","paint-scene-json"]}
+                      "elements":["stroke", "shape"], "outputs":["png","svg","paint-scene-json","gif","mp4"],
+                      "animation": "per-element keyframes; mp4 requires FFmpeg"}
         else:
             if not a.input: raise ValueError("--input is required for render")
             data=json.loads(Path(a.input).read_text(encoding="utf-8-sig"))
-            result=render(data, a.png, a.svg, a.scene_out)
+            result=(render(data, a.png, a.svg, a.scene_out, a.time) if a.action == "render"
+                    else animate(data, a.output, a.fps, a.duration))
         print(json.dumps(result, ensure_ascii=False))
         return 0
-    except (ValueError, OSError, KeyError) as err:
+    except (ValueError, OSError, KeyError, subprocess.CalledProcessError) as err:
         print(json.dumps({"error":str(err)}, ensure_ascii=False))
         return 1
 
