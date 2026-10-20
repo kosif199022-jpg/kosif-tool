@@ -112,6 +112,16 @@ Use the **generated bilingual capability index** at [references/capability-atlas
 
 ملخص سريع لكلود: [START.md](START.md). الخريطة الكاملة: [hubs.md](references/hubs.md) و[superpowers.md](references/superpowers.md) و[الخريطة الذهنية وخرائط المهام](references/capability-mindmap.md) و[تدقيق التكرار والدمج](references/capability-audit.md). شارة القدرة الخارقة `best` تعني أقوى عضو لا كل الأعضاء. بعد تعديل الكتالوج: `superpower_fusion.py build` ثم `kosif_hubs.py build` ثم `capability_mindmap.py build`.
 
+## 0A. مونتاج برو — Montage Pro task force (صوت أو فيديو ← مونتاج/موشن)
+إذا رفع المستخدم **صوتًا أو فيديو** وطلب مونتاجًا أو موشن جرافيك أو ريلز أو 3D، شغّل فريق المهمة: 13 دورًا (مخرج، محلل، كاتب، مكتب تحميل وحقوق بفكرة IDM، محوّل، مونتير، موشن، رسام، 3D، صوت، ملوّن، رندر، جودة) بقائمة خيارات قوية تُنفَّذ فعلًا وتُفحص.
+
+    python3 $SKILL_DIR/scripts/montage_pro.py intake <media> --job <dir>      # قياس فقط
+    python3 $SKILL_DIR/scripts/montage_pro.py options <dir> --brief "<طلب المستخدم>"
+    python3 $SKILL_DIR/scripts/montage_pro.py build <dir> --option <id> [--style …] [--title …] [--deliver-mix]
+    python3 $SKILL_DIR/scripts/montage_pro.py acquire <url> --job <dir> --license "<رخصة الأصل>" --source-page <url>
+
+الدليل والخيارات والحدود: [montage-pro/README.md](montage-pro/README.md)، ودراسة IDM بـ REA وGhidra: [montage-pro/IDM_STUDY.md](montage-pro/IDM_STUDY.md). اعرض الخيارات على المستخدم قبل الرندر النهائي، والصوت الأصلي لا يُعدَّل.
+
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.
 

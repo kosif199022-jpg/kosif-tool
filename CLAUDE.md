@@ -1,8 +1,10 @@
 # Claude entry point
 
-First run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`, then `python3 .claude/skills/kosif-superpowers/scripts/kosif_hubs.py route "<task>"` (20 hubs → 456 fused superpowers → every power, with scripts and an install plan; summary in `.claude/skills/kosif-superpowers/START.md`) (one-second self-briefing; without a shell read `CAPABILITIES.md`), then load `.claude/skills/kosif-superpowers/SKILL.md` and run its power-up protocol: it shows what you can really do in this session (tools, connectors, installable libraries), how to think, create and verify better, and a catalog of 4,200+ powers in 10 domains, motion and montage included, each with evidence and proof.
+First run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`, then `python3 .claude/skills/kosif-superpowers/scripts/kosif_hubs.py route "<task>"` (20 hubs → 439 fused superpowers → every power, with scripts and an install plan; summary in `.claude/skills/kosif-superpowers/START.md`) (one-second self-briefing; without a shell read `CAPABILITIES.md`), then load `.claude/skills/kosif-superpowers/SKILL.md` and run its power-up protocol: it shows what you can really do in this session (tools, connectors, installable libraries), how to think, create and verify better, and a catalog of 4,200+ powers in 10 domains, motion and montage included, each with evidence and proof.
 
 Read AGENTS.md, then the selected style's `styles/<style-id>/SKILL.md`, `STYLE.json` and `BRIEF.md` (when present), then the playbooks that the SKILL.md lists (`playbooks/<category>.md`, plus `playbooks/arabic-typography.md` for Arabic text, `playbooks/audio-sync.md` when audio is supplied and `playbooks/render-pipeline.md` before rendering). Find IDs in `STYLE_INDEX.md` or with `python3 tools/kosif.py search <words>`.
+
+Uploaded audio or video for montage or motion graphics: use the Montage Pro task force, `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py intake <file> --job <dir>` then `options` and `build` (guide: `.claude/skills/kosif-superpowers/montage-pro/README.md`).
 
 Rules:
 - Inspect the source video when your tools allow; never claim to have watched what you could not open.

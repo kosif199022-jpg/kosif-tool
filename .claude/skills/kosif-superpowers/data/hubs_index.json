@@ -16,6 +16,7 @@
     "brand-logo-identity"
    ],
    "scripts": [
+    "montage_pro.py",
     "smart_draw.py",
     "creative_paint.py",
     "code_drawing_master.py",
@@ -226,6 +227,7 @@
     "formats-platforms"
    ],
    "scripts": [
+    "montage_pro.py",
     "cinematic_cut_planner.py",
     "cinematic_broll_render.py",
     "reference_edit_engine.py",
@@ -235,7 +237,7 @@
     "verify_video.py",
     "mimic/"
    ],
-   "start": "python3 scripts/motion_reference_probe.py --help",
+   "start": "python3 scripts/montage_pro.py doctor",
    "keywords": [
     "مونتاج",
     "قص",
@@ -465,6 +467,7 @@
     "other"
    ],
    "scripts": [
+    "montage_pro.py",
     "motion_director.py",
     "motion_stack.py",
     "motion_runtime.py",
@@ -723,6 +726,7 @@
     "3d-spatial"
    ],
    "scripts": [
+    "montage_pro.py",
     "native_3d.py",
     "native_glb.py",
     "blender_bridge.py",
@@ -1008,6 +1012,7 @@
     "audio-sync-captions"
    ],
    "scripts": [
+    "montage_pro.py",
     "audio_cue_mapper.py",
     "music_rhythm_engine.py"
    ],

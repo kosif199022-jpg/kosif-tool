@@ -32,7 +32,7 @@
 
 - **الحجم / size:** 382 قدرة ذرية في 33 قدرة خارقة · ✅81 🟢81 📦35 🔑7 👁90 📄81 💡7
 - **ابدأ / start:** `python3 scripts/creative_paint.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install draw`
-- **السكربتات / scripts:** `scripts/smart_draw.py` · `scripts/creative_paint.py` · `scripts/code_drawing_master.py` · `scripts/character_ik.py` · `scripts/character_fullbody.py` · `scripts/app_studio_paint.py`
+- **السكربتات / scripts:** `scripts/montage_pro.py` · `scripts/smart_draw.py` · `scripts/creative_paint.py` · `scripts/code_drawing_master.py` · `scripts/character_ik.py` · `scripts/character_fullbody.py` · `scripts/app_studio_paint.py`
 - **العائلات / families:** [hand-drawn-draw-on](powers/hand-drawn-draw-on.md) · [shapes-morph-geometry](powers/shapes-morph-geometry.md) · [characters-rigs](powers/characters-rigs.md) · [pixel-retro-stylized](powers/pixel-retro-stylized.md) · [texture-material](powers/texture-material.md) · [brand-logo-identity](powers/brand-logo-identity.md)
 - **المستلزمات / needs:** `python3` · `npm:hyperframes` · `npm:three` · `pip:pillow` · `node` · `fonts:arabic` · `chromium` · `npm:gsap` · `npm:remotion` · `ffmpeg` · `key:unspecified` · `imagemagick` · `pip:numpy` · `npm:react`
 - **يتصل بـ / links:** [motion](#hub-motion) · [montage](#hub-montage) · [image-apps](#hub-image-apps) · [dataviz](#hub-dataviz)
@@ -58,8 +58,8 @@
 ## المونتاج وتحرير الفيديو — Montage & video editing (`montage`)
 
 - **الحجم / size:** 612 قدرة ذرية في 48 قدرة خارقة · ✅70 🟢90 📦181 🔑7 👁118 📄129 💡17
-- **ابدأ / start:** `python3 scripts/motion_reference_probe.py --help` · خطة التثبيت: `python3 scripts/kosif_hubs.py install montage`
-- **السكربتات / scripts:** `scripts/cinematic_cut_planner.py` · `scripts/cinematic_broll_render.py` · `scripts/reference_edit_engine.py` · `scripts/motion_reference_probe.py` · `scripts/fetch_video.py` · `scripts/media_sources.py` · `scripts/verify_video.py` · `scripts/mimic/`
+- **ابدأ / start:** `python3 scripts/montage_pro.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install montage`
+- **السكربتات / scripts:** `scripts/montage_pro.py` · `scripts/cinematic_cut_planner.py` · `scripts/cinematic_broll_render.py` · `scripts/reference_edit_engine.py` · `scripts/motion_reference_probe.py` · `scripts/fetch_video.py` · `scripts/media_sources.py` · `scripts/verify_video.py` · `scripts/mimic/`
 - **العائلات / families:** [transitions-cuts](powers/transitions-cuts.md) · [photo-video-footage](powers/photo-video-footage.md) · [video-download](powers/video-download.md) · [formats-platforms](powers/formats-platforms.md)
 - **المستلزمات / needs:** `npm:hyperframes` · `npm:gsap` · `ffmpeg` · `npm:three` · `python3` · `chromium` · `imagemagick` · `pip:numpy` · `pip:opencv` · `yt-dlp` · `pip:scipy` · `npm:remotion` · `key:unspecified` · `pip:pillow`
 - **يتصل بـ / links:** [motion](#hub-motion) · [render](#hub-render) · [image-apps](#hub-image-apps) · [audio](#hub-audio)
@@ -86,7 +86,7 @@
 
 - **الحجم / size:** 903 قدرة ذرية في 78 قدرة خارقة · ✅134 🟢143 📦204 🔑19 👁213 📄171 💡19
 - **ابدأ / start:** `python3 scripts/motion_director.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install motion`
-- **السكربتات / scripts:** `scripts/motion_director.py` · `scripts/motion_stack.py` · `scripts/motion_runtime.py` · `scripts/motion_kit_bridge.py`
+- **السكربتات / scripts:** `scripts/montage_pro.py` · `scripts/motion_director.py` · `scripts/motion_stack.py` · `scripts/motion_runtime.py` · `scripts/motion_kit_bridge.py`
 - **العائلات / families:** [easing-timing-rhythm](powers/easing-timing-rhythm.md) · [camera-composition-layout](powers/camera-composition-layout.md) · [particles-fluids-physics](powers/particles-fluids-physics.md) · [light-glow-bloom](powers/light-glow-bloom.md) · [color-palette-grading](powers/color-palette-grading.md) · [ui-product-device](powers/ui-product-device.md) · [other](powers/other.md)
 - **المستلزمات / needs:** `npm:hyperframes` · `npm:gsap` · `python3` · `chromium` · `npm:three` · `ffmpeg` · `node` · `key:unspecified` · `npm:remotion` · `imagemagick` · `npm:esbuild` · `key:video-gen` · `pip:opencv` · `pip:pillow`
 - **يتصل بـ / links:** [montage](#hub-montage) · [render](#hub-render) · [draw](#hub-draw) · [image-apps](#hub-image-apps)
@@ -113,7 +113,7 @@
 
 - **الحجم / size:** 52 قدرة ذرية في 5 قدرة خارقة · ✅2 🟢24 📦4 🔑2 👁11 📄8 💡1
 - **ابدأ / start:** `python3 scripts/native_3d.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install 3d`
-- **السكربتات / scripts:** `scripts/native_3d.py` · `scripts/native_glb.py` · `scripts/blender_bridge.py` · `scripts/blender_cinema.py` · `scripts/blender_motion_video.py`
+- **السكربتات / scripts:** `scripts/montage_pro.py` · `scripts/native_3d.py` · `scripts/native_glb.py` · `scripts/blender_bridge.py` · `scripts/blender_cinema.py` · `scripts/blender_motion_video.py`
 - **العائلات / families:** [3d-spatial](powers/3d-spatial.md)
 - **المستلزمات / needs:** `npm:three` · `python3` · `npm:hyperframes` · `chromium` · `key:unspecified` · `blender` · `npm:remotion` · `npm:react` · `fonts:arabic` · `npm:esbuild` · `npm:gsap`
 - **يتصل بـ / links:** [motion](#hub-motion) · [render](#hub-render) · [draw](#hub-draw) · [dataviz](#hub-dataviz)
@@ -158,7 +158,7 @@
 
 - **الحجم / size:** 421 قدرة ذرية في 35 قدرة خارقة · ✅59 🟢74 📦83 🔑36 👁43 📄114 💡12
 - **ابدأ / start:** `python3 scripts/audio_cue_mapper.py --help` · خطة التثبيت: `python3 scripts/kosif_hubs.py install audio`
-- **السكربتات / scripts:** `scripts/audio_cue_mapper.py` · `scripts/music_rhythm_engine.py`
+- **السكربتات / scripts:** `scripts/montage_pro.py` · `scripts/audio_cue_mapper.py` · `scripts/music_rhythm_engine.py`
 - **العائلات / families:** [music-beat-sound](powers/music-beat-sound.md) · [voice-tts](powers/voice-tts.md) · [audio-sync-captions](powers/audio-sync-captions.md)
 - **المستلزمات / needs:** `ffmpeg` · `python3` · `pip:numpy` · `npm:hyperframes` · `imagemagick` · `pip:faster-whisper` · `key:elevenlabs` · `key:unspecified` · `npm:remotion` · `key:video-gen` · `node` · `pip:piper` · `chromium` · `fonts:arabic`
 - **يتصل بـ / links:** [image-apps](#hub-image-apps) · [motion](#hub-motion) · [montage](#hub-montage) · [type](#hub-type)
