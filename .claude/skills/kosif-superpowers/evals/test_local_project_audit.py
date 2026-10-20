@@ -1,4 +1,4 @@
-﻿"""Safe read-only project and archive triage tests."""
+"""Safe read-only project and archive triage tests."""
 import json
 import pathlib
 import sys

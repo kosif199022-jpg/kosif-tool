@@ -1,4 +1,4 @@
-﻿"""Original shape snapping, drawing output, and Blender AST evidence tests."""
+"""Original shape snapping, drawing output, and Blender AST evidence tests."""
 import json
 import math
 from pathlib import Path

@@ -1,4 +1,4 @@
-﻿"""Scene validation and process invocation tests; no Blender runtime is simulated as verified."""
+"""Scene validation and process invocation tests; no Blender runtime is simulated as verified."""
 import json
 from pathlib import Path
 import sys

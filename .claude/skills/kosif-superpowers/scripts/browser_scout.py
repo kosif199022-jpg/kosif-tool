@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Read-only KOSIF browser site survey with a fresh isolated Playwright context.
 
 No credentials, clicks, uploads, installs, proxy tunneling, stored cookies or external code imports.

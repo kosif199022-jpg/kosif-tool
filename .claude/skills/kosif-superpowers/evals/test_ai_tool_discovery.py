@@ -1,4 +1,4 @@
-﻿"""Tests for original KOSIF discovery ranking; no external web or browser calls."""
+"""Tests for original KOSIF discovery ranking; no external web or browser calls."""
 import sys
 import unittest
 from pathlib import Path

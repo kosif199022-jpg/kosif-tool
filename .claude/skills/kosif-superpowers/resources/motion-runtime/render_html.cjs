@@ -82,7 +82,7 @@ function usage(stream) {
   const text = `
 KOSIF render_html — deterministic HTML -> MP4
 
-  node tools/render_html.cjs --in <file.html|http URL> --out <out.mp4> [options]
+  node ${require('path').relative(process.cwd(), __filename) || 'render_html.cjs'} --in <file.html|http URL> --out <out.mp4> [options]
 
 Options
   --aspect <spec>     any frame: 9:16, 16:9, 4:5, 21:9, 2.35:1, 1920x816, reel, square, cinema
@@ -94,7 +94,8 @@ Options
   --start <s>         film time of the first frame        (default ${DEFAULTS.start})
   --audio <file>      mux this audio track (AAC 192k, sample timing untouched)
   --mode seek|virtual driver; auto-detected when omitted (seek if window.__kosif exists)
-  --preview           render 8 evenly spaced frames into a contact sheet PNG instead of a video
+  --preview           render 8 evenly spaced frames into a contact sheet PNG instead of a video,
+                      written next to --out as <out name>_preview.png (out/p.mp4 -> out/p_preview.png)
   --frames-dir <dir>  where PNG frames go (kept); default: a temp dir that is deleted
   --keep-frames       keep the temp frames dir
   --crf <n>           libx264 quality, lower = better     (default ${DEFAULTS.crf})
@@ -292,6 +293,7 @@ class SeekDriver {
   async capture(file) {
     const { data } = await this.cdp.send('Page.captureScreenshot', {
       format: 'png', fromSurface: true, captureBeyondViewport: false,
+      optimizeForSpeed: true, // still lossless PNG, faster zlib level (~6x quicker capture)
     });
     fs.writeFileSync(file, Buffer.from(data, 'base64'));
   }

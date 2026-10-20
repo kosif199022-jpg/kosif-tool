@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Blender source-tree AST catalog. Never imports or executes inspected files."""
 import argparse
 import ast

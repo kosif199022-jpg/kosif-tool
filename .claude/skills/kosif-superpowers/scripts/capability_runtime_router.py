@@ -75,7 +75,7 @@ def assess(entry, skill_root=ROOT):
     else:
         status = "source_present_not_executed"
     return {
-        "id":entry["id"], "title":entry["title"], "purpose":entry["summary"],
+        "id":entry["id"], "title":entry["title"], "purpose":entry["title"], "note":entry["summary"],
         "status":status, "source_present":bool(source),
         "present_binaries":present, "missing_binaries":missing,
         "runbook":("python3 \"$SKILL_DIR/"+script+"\" "+(entry.get("subcommand") or "")).strip() if script else None,
