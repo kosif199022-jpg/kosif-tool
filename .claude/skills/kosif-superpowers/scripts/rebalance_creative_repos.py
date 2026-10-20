@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Rebalance the public discovery index so image/photo tools are represented.
 
-Only GitHub metadata is fetched, never third-party code. The old catalog is
-merged without losing items silently (a staging snapshot is retained).
+    python3 scripts/rebalance_creative_repos.py run   # query GitHub (gh CLI, network) and rewrite public_repos.json
+
+Only GitHub metadata is fetched, never third-party code. The existing catalog is
+merged with the new search results and cut to 1,000 rows by category quota
+(lowest-star rows beyond a quota are dropped; there is no separate snapshot, so
+review the git diff). Nothing is written when every GitHub query fails.
 """
 import collections
 import json
@@ -28,7 +32,11 @@ def acceptable(r):
     sample=(r.get('repository') or '')+' '+(r.get('description') or '')
     return UNVERIFIED_MODEL_PROMOTION.search(sample) is None
 
-def main():
+def main(argv=None):
+    import argparse
+    ap=argparse.ArgumentParser(description=__doc__,formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("command",choices=["run"],help="run: fetch GitHub metadata and rewrite the catalog")
+    ap.parse_args(argv)
     old=json.loads((ROOT/"public_repos.json").read_text(encoding="utf-8"))
     rejected=[r['repository'] for r in old if not acceptable(r)]
     combined={r["repository"]:r for r in old if acceptable(r)}
@@ -51,6 +59,9 @@ def main():
                       "feature_implemented_in_kosif":False}
         except Exception as e:
             errors.append({"query":q,"error":str(e)[:150]})
+    if len(errors)==len(EXTRA):
+        print(json.dumps({"status":"no_changes_written","why":"every GitHub query failed (gh auth or network?)","errors":errors},ensure_ascii=False,indent=2))
+        return 1
     groups=collections.defaultdict(list)
     for r in combined.values():
         groups[r["category"]].append(r)

@@ -28,6 +28,7 @@ import importlib.util
 import json
 import os
 import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -36,7 +37,17 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SKILL = HERE.parent
-REPO = SKILL.parents[2] if SKILL.parent.name == "skills" else None
+
+
+def _find_repo():
+    """The kosif-tool checkout around this skill, found by a marker file (None for a standalone install)."""
+    for cand in list(SKILL.parents)[:4]:
+        if (cand / "tools" / "kosif.py").is_file() and (cand / "catalog").is_dir():
+            return cand
+    return None
+
+
+REPO = _find_repo()
 TOOLS_JSON = SKILL / "data" / "tools.json"
 ROUTES_JSON = SKILL / "data" / "capability_routes.json"
 MANIFEST = SKILL / "manifest.json"
@@ -63,9 +74,11 @@ import powers as P  # noqa: E402  (catalog loader, Arabic-aware normalisation, s
 
 
 # ------------------------------------------------------------------ registry
-def load_registry(path: Path = TOOLS_JSON) -> dict:
+def load_registry(path: Path = TOOLS_JSON, check_files: bool = False) -> dict:
+    """Load and validate data/tools.json. File checks are off by default so a standalone
+    install (no repo around the skill) still loads; builds and check_skill.py turn them on."""
     data = json.loads(Path(path).read_text(encoding="utf-8"))
-    errors = validate_registry(data)
+    errors = validate_registry(data, check_files=check_files)
     if errors:
         raise ValueError(f"{path.name}: " + "; ".join(errors[:5]) + (" …" if len(errors) > 5 else ""))
     return data
@@ -372,9 +385,9 @@ def tool_card(t: dict, reg: dict, full: bool = True) -> dict:
 
 
 # ------------------------------------------------------------------ find
-def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = None) -> dict:
+def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = None, powers: list = None) -> dict:
     reg = reg or load_registry()
-    pw = P.load_powers()
+    pw = powers if powers is not None else P.load_powers()
     styles = P.load_styles()
     sug = P.suggest(pw, styles, brief, limit=max(limit_powers, 12))
     terms = terms_of(brief)
@@ -399,7 +412,7 @@ def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = N
         nxt.append(f"python3 scripts/hub.py tool {tools[0][1]['id']}")
     if sug["picked"]:
         nxt.append(f"python3 scripts/powers.py show {sug['picked'][0][1]['id']}")
-    nxt.append(f'python3 scripts/requirements.py plan "{brief}"')
+    nxt.append("python3 scripts/requirements.py plan " + shlex.quote(brief))
     out["next"] = nxt
     return out
 
@@ -574,7 +587,7 @@ def cmd_run(a, extra: list) -> int:
         for c in t["commands"]:
             print(f"  $ {shown(c['example'], t)}", file=sys.stderr)
         return 2
-    harmless = not extra or set(extra) <= {"--help", "-h", "doctor", "--doctor", "list", "stats"}
+    harmless = bool(extra) and set(extra) <= {"--help", "-h"}
     if (t["consent"] or t["safety"] in ("network", "runs-external-programs")) and not a.yes and not harmless:
         print(f"{t['id']} needs approval first: {t['consent'] or t['safety']}\nRe-run with --yes once the user has agreed.", file=sys.stderr)
         return 3
@@ -793,7 +806,7 @@ def generated(reg: dict) -> dict:
 
 
 def cmd_build(a) -> int:
-    reg = load_registry()
+    reg = load_registry(check_files=True)
     tool_json = json.dumps(tool_power_records(reg), ensure_ascii=False, indent=1) + "\n"
     if not a.check and (not TOOL_POWERS.is_file() or TOOL_POWERS.read_text(encoding="utf-8") != tool_json):
         TOOL_POWERS.write_text(tool_json, encoding="utf-8")  # first: the files below count these records

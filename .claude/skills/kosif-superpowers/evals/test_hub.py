@@ -206,6 +206,47 @@ class McpServerTest(unittest.TestCase):
         self.assertIn("code-drawing-master", [t["id"] for t in found["tools"]])
         self.assertTrue(replies[4]["result"]["isError"])
 
+    def test_bad_input_never_stops_the_server(self):
+        lines = [
+            "not json",
+            "[1, 2]",
+            json.dumps([{"jsonrpc": "2.0", "id": 7, "method": "ping"}, {"jsonrpc": "2.0", "method": "notifications/x"}]),
+            json.dumps({"jsonrpc": "2.0", "id": 8, "method": "resources/read", "params": {"uri": "kosif://nope"}}),
+            json.dumps({"jsonrpc": "2.0", "id": 9, "result": {}}),  # a client response: no reply
+            json.dumps({"jsonrpc": "2.0", "id": 10, "method": "tools/call",
+                        "params": {"name": "kosif_search_powers", "arguments": {"query": "kinetic", "limit": -1}}}),
+            json.dumps({"jsonrpc": "2.0", "id": 11, "method": "ping"}),
+        ]
+        proc = subprocess.run([sys.executable, str(SCRIPTS / "kosif_mcp.py")], input=("\n".join(lines) + "\n").encode() + b"\xff\xfe{\n",
+                              capture_output=True, timeout=120)
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        out = proc.stdout.decode("ascii")  # replies are pure ASCII JSON
+        replies = [json.loads(x) for x in out.strip().splitlines()]
+        self.assertEqual(replies[0]["error"]["code"], -32700)
+        self.assertEqual([r["error"]["code"] for r in replies[1]], [-32600, -32600])
+        self.assertEqual(replies[2], [{"jsonrpc": "2.0", "id": 7, "result": {}}])
+        self.assertEqual(replies[3]["error"]["code"], -32002)
+        self.assertEqual(len(json.loads(replies[4]["result"]["content"][0]["text"])), 1, "limit is clamped to 1..50")
+        self.assertEqual(replies[5]["id"], 11)
+        self.assertEqual(replies[6]["error"]["code"], -32700)
+        self.assertEqual(len(replies), 7)
+
+    def test_standalone_install_works_without_the_repo(self):
+        import shutil
+        with tempfile.TemporaryDirectory() as tmp:
+            dst = Path(tmp) / ".claude" / "skills" / "kosif-superpowers"
+            shutil.copytree(SKILL, dst, ignore=shutil.ignore_patterns("__pycache__", "node_modules", "*.mp4", "*.mov", "*.png", "*.jpg", "*.webm"))
+            proc = run(str(dst / "scripts" / "kosif_mcp.py"), "--selftest", cwd=dst)
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+            proc = run(str(dst / "scripts" / "hub.py"), "find", "ارسم شخصية كرتونية بالكود", "--json", cwd=dst)
+            self.assertEqual(proc.returncode, 0, proc.stderr)
+            self.assertTrue(json.loads(proc.stdout)["tools"])
+
+    def test_find_next_command_quotes_the_task(self):
+        res = hub.find('شعار $(touch /tmp/x) "مقتبس"', reg=hub.load_registry())
+        plan = [n for n in res["next"] if "requirements.py plan" in n][0]
+        self.assertIn("'شعار $(touch /tmp/x) \"مقتبس\"'", plan)
+
     def test_project_mcp_config_points_at_the_server(self):
         cfg = json.loads((REPO / ".mcp.json").read_text(encoding="utf-8"))
         args = cfg["mcpServers"]["kosif-superpowers"]["args"]

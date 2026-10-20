@@ -29,6 +29,30 @@ import powers as P  # noqa: E402
 VERSION = "1.0.0"
 PROTOCOLS = ("2025-06-18", "2025-03-26", "2024-11-05")
 MAX_DOC_CHARS = 60_000
+MAX_QUERY_CHARS = 2_000
+MAX_LINE_BYTES = 1_000_000
+
+
+class MethodNotFound(Exception):
+    pass
+
+
+class ResourceNotFound(Exception):
+    pass
+
+
+def _bounded(args: dict, key: str, default: int, lo: int = 1, hi: int = 50) -> int:
+    try:
+        n = int(args.get(key, default))
+    except (TypeError, ValueError):
+        raise ValueError(f"{key} must be an integer")
+    return max(lo, min(hi, n))
+
+
+def _text_arg(args: dict, key: str) -> str:
+    if key not in args:
+        raise ValueError(f"missing argument {key!r}")
+    return str(args[key])[:MAX_QUERY_CHARS]
 RESOURCES = {
     "kosif://skill/SKILL.md": ("SKILL.md", "KOSIF Superpowers skill (start here)"),
     "kosif://skill/INDEX.md": ("references/INDEX.md", "Index of every tool, guide and power family"),
@@ -89,7 +113,8 @@ def _safe_doc(path: str) -> Path:
 def call(name: str, args: dict):
     args = args or {}
     if name == "kosif_find":
-        return hub.find(str(args["task"]), int(args.get("max_tools", 5)), int(args.get("max_powers", 10)), _registry())
+        return hub.find(_text_arg(args, "task"), _bounded(args, "max_tools", 5), _bounded(args, "max_powers", 10), _registry(),
+                        powers=_power_index())
     if name == "kosif_tool":
         t = hub.tools_by_id(_registry()).get(str(args["id"]))
         if not t:
@@ -102,8 +127,9 @@ def call(name: str, args: dict):
         res = [{"id": t["id"], "area": t["area"], **hub.readiness(t)} for t in rows]
         return {"ready": sum(r["state"] == "ready" for r in res), "tools": res}
     if name == "kosif_search_powers":
-        terms = P.expand(str(args["query"]).split(), str(args["query"]))
-        ranked = P.rank(_power_index(), terms, inject=False)[: int(args.get("limit", 15))]
+        query = _text_arg(args, "query")
+        terms = list(dict.fromkeys(P.expand(query.split(), query)))
+        ranked = P.rank(_power_index(), terms, inject=False)[: _bounded(args, "limit", 15)]
         return [dict(P.short(p, s), when=p.get("when", ""), family=p.get("family")) for s, p in ranked]
     if name == "kosif_power":
         pid = str(args["id"]).upper()
@@ -121,12 +147,12 @@ def call(name: str, args: dict):
     if name == "kosif_guides":
         docs = hub.doc_entries(_registry())
         if args.get("query"):
-            docs = [d for _s, d in hub.rank_docs(docs, hub.terms_of(str(args["query"])), limit=15)]
+            docs = [d for _s, d in hub.rank_docs(docs, hub.terms_of(_text_arg(args, "query")), limit=15)]
         return [{k: d[k] for k in ("path", "title", "area", "lines")} for d in docs]
     if name == "kosif_read_guide":
         target = _safe_doc(args["path"])
         text = target.read_text(encoding="utf-8", errors="replace")
-        off = int(args.get("offset", 0))
+        off = _bounded(args, "offset", 0, lo=0, hi=len(text))
         chunk = text[off: off + MAX_DOC_CHARS]
         return {"path": target.relative_to(SKILL).as_posix(), "offset": off, "total_chars": len(text),
                 "next_offset": off + len(chunk) if off + len(chunk) < len(text) else None, "text": chunk}
@@ -160,42 +186,87 @@ def handle(req: dict):
     if method == "resources/read":
         uri = params.get("uri", "")
         if uri not in RESOURCES:
-            raise KeyError(f"unknown resource {uri}")
+            raise ResourceNotFound(f"unknown resource {uri}")
         rel = RESOURCES[uri][0]
         return {"contents": [{"uri": uri, "mimeType": "application/json" if rel.endswith(".json") else "text/markdown",
                               "text": (SKILL / rel).read_text(encoding="utf-8")}]}
     if method in ("prompts/list",):
         return {"prompts": []}
-    raise LookupError(f"method not found: {method}")
+    raise MethodNotFound(f"method not found: {method}")
+
+
+def _error(rid, code: int, message: str) -> dict:
+    return {"jsonrpc": "2.0", "id": rid, "error": {"code": code, "message": message[:300]}}
+
+
+def respond_one(req):
+    if not isinstance(req, dict):
+        return _error(None, -32600, "invalid request: expected a JSON object")
+    if "method" not in req:
+        return None  # a response from the client (result/error): nothing to answer
+    if "id" not in req:
+        return None  # notification (e.g. notifications/initialized): no reply
+    rid = req["id"]
+    try:
+        return {"jsonrpc": "2.0", "id": rid, "result": handle(req)}
+    except MethodNotFound as exc:
+        return _error(rid, -32601, str(exc))
+    except ResourceNotFound as exc:
+        return _error(rid, -32002, str(exc))
+    except Exception as exc:
+        return _error(rid, -32602, str(exc))
 
 
 def respond(line: str):
     try:
         req = json.loads(line)
-    except ValueError:
-        return {"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": "parse error"}}
-    if not isinstance(req, dict) or "id" not in req:
-        return None  # notification (e.g. notifications/initialized): no reply
+    except Exception:
+        return _error(None, -32700, "parse error")
+    if isinstance(req, list):  # JSON-RPC batch (allowed by protocol 2025-03-26)
+        if not req:
+            return _error(None, -32600, "invalid request: empty batch")
+        out = [r for r in (respond_one(x) for x in req) if r is not None]
+        return out or None
+    return respond_one(req)
+
+
+def _encode(out) -> str:
     try:
-        return {"jsonrpc": "2.0", "id": req["id"], "result": handle(req)}
-    except LookupError as exc:
-        return {"jsonrpc": "2.0", "id": req["id"], "error": {"code": -32601, "message": str(exc)[:300]}}
-    except Exception as exc:
-        return {"jsonrpc": "2.0", "id": req["id"], "error": {"code": -32602, "message": str(exc)[:300]}}
+        return json.dumps(out, ensure_ascii=True, allow_nan=False)
+    except ValueError:  # NaN/Infinity in a payload: send a valid error instead of invalid JSON
+        rid = out.get("id") if isinstance(out, dict) else None
+        return json.dumps(_error(rid, -32603, "result was not valid JSON"), ensure_ascii=True)
+
+
+def _oversized_id(raw: bytes):
+    import re
+    m = re.match(rb'\s*\{\s*"jsonrpc"\s*:\s*"2\.0"\s*,\s*"id"\s*:\s*("(?:[^"\\]|\\.){0,200}"|-?\d{1,20})', raw)
+    if not m:
+        m = re.match(rb'\s*\{\s*"id"\s*:\s*("(?:[^"\\]|\\.){0,200}"|-?\d{1,20})', raw)
+    try:
+        return json.loads(m.group(1)) if m else None
+    except ValueError:
+        return None
 
 
 def serve(stdin=None, stdout=None) -> int:
-    stdin = stdin or io.TextIOWrapper(sys.stdin.buffer, encoding="utf-8")
-    stdout = stdout or sys.stdout
-    for line in stdin:
-        if not line.strip():
-            continue
-        if len(line) > 1_000_000:
-            out = {"jsonrpc": "2.0", "id": None, "error": {"code": -32600, "message": "request too large"}}
-        else:
-            out = respond(line)
+    """Newline-delimited JSON-RPC over stdio. One bad line never stops the server; replies are pure ASCII JSON."""
+    stdin = stdin or sys.stdin.buffer
+    stdout = stdout or io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", newline="\n", write_through=True)
+    for raw in stdin:
+        try:
+            if isinstance(raw, str):
+                raw = raw.encode("utf-8", "surrogatepass")
+            if not raw.strip():
+                continue
+            if len(raw) > MAX_LINE_BYTES:
+                out = _error(_oversized_id(raw), -32600, "request too large")
+            else:
+                out = respond(raw.decode("utf-8", errors="replace"))
+        except Exception as exc:  # never let one line kill the server
+            out = _error(None, -32603, f"internal error: {type(exc).__name__}")
         if out is not None:
-            stdout.write(json.dumps(out, ensure_ascii=False) + "\n")
+            stdout.write(_encode(out) + "\n")
             stdout.flush()
     return 0
 

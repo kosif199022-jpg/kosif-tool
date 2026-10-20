@@ -240,8 +240,14 @@ def cmd_path(key: str):
 if __name__ == "__main__":
     if hasattr(signal, "SIGPIPE"):
         signal.signal(signal.SIGPIPE, signal.SIG_DFL)
-    a = sys.argv[1:] or ["build"]
-    if a[0] == "build":
-        out_dir = a[a.index("--out-dir") + 1] if "--out-dir" in a and a.index("--out-dir") + 1 < len(a) else None
-        sys.exit(build(check="--check" in a, out_dir=out_dir))
-    sys.exit(cmd_stats() if a[0] == "stats" else cmd_path(a[1]) if a[0] == "path" and len(a) > 1 else (print(__doc__) or 2))
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest="cmd")
+    b = sub.add_parser("build", help="write (or --check) the graph JSON and HTML")
+    b.add_argument("--check", action="store_true"); b.add_argument("--out-dir")
+    sub.add_parser("stats", help="node/edge counts per layer")
+    pa = sub.add_parser("path", help="neighbours of one node"); pa.add_argument("key")
+    a = ap.parse_args()
+    if a.cmd in (None, "build"):
+        sys.exit(build(check=getattr(a, "check", False), out_dir=getattr(a, "out_dir", None)))
+    sys.exit(cmd_stats() if a.cmd == "stats" else cmd_path(a.key))

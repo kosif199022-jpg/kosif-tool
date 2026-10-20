@@ -444,11 +444,13 @@ def load_styles() -> list:
     return json.loads(p.read_text(encoding="utf-8")) if p.is_file() else []
 
 
-_TEXT = {}
+_TEXT = {}  # (family, id) -> normalised search text; bounded by the catalog size
 
 
 def text_of(p: dict) -> str:
-    key = id(p)
+    key = (p.get("family"), p.get("id"))
+    if key[1] is None:
+        key = json.dumps(p, sort_keys=True, ensure_ascii=False)
     if key not in _TEXT:
         keys = ("id", "family", "name_ar", "name_en", "what", "when", "how", "params", "tags", "styles", "section")
         _TEXT[key] = norm(" ".join(json.dumps(p.get(k) or "", ensure_ascii=False) for k in keys))
