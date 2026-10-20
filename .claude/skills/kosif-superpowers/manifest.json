@@ -19,7 +19,7 @@
   "families": 61,
   "domains": 10,
   "tools": 105,
-  "guides": 87,
+  "guides": 88,
   "statuses": {
    "documented": 1798,
    "idea": 71,
@@ -10429,6 +10429,12 @@
    "path": "references/blender-smartdraw-research-20261019.md",
    "title": "blender-smartdraw-research-20261019",
    "area": "draw",
+   "summary": ""
+  },
+  {
+   "path": "references/canva-premiere-static-audit-20261020.md",
+   "title": "جرد Canva وAdobe Premiere باستخدام REA وGhidra — 20 أكتوبر 2026",
+   "area": "general",
    "summary": ""
   },
   {

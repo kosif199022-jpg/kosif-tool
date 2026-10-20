@@ -1,0 +1,176 @@
+{
+  "schema": "kosif.app-static-audit-evidence.v1",
+  "date": "2026-10-20",
+  "scope": "static inspection of the user's two local installer packages; no application installer executed",
+  "source_installers": {
+    "canva": {
+      "filename": "canva-1-126-1.exe",
+      "bytes": 213627648,
+      "sha256": "20530653cef67f160d623e0586f8955c2f9114538c35517007293173599caba6",
+      "version_from_PE": "1.126.1",
+      "container": "NSIS with app-64.7z and app-32.7z",
+      "electron_archive": {
+        "bytes": 23258934,
+        "sha256": "13bb2fea34726de1f7117615979278f0854c507ba9392eab17e3340cc30152a6",
+        "files": 998,
+        "main": "dist/main.js"
+      }
+    },
+    "premiere_named_file": {
+      "filename": "adobe-premiere-pro-26-10.exe",
+      "bytes": 3372256,
+      "sha256": "25565eeb1cca35eb873b3ac939b79d3535f8ede1049b049b1e8a271762f63297",
+      "version_from_PE": "Adobe Installer 2.14.0.43",
+      "not_actual_editor": true,
+      "packing": "UPX0/UPX1"
+    }
+  },
+  "canva_electron_feature_groups": [
+    {
+      "name": "auto-update",
+      "anchor_hits": 78
+    },
+    {
+      "name": "context-bridge",
+      "anchor_hits": 1
+    },
+    {
+      "name": "crash-reporting",
+      "anchor_hits": 159
+    },
+    {
+      "name": "custom-protocol",
+      "anchor_hits": 1
+    },
+    {
+      "name": "dark-mode",
+      "anchor_hits": 9
+    },
+    {
+      "name": "deep-link",
+      "anchor_hits": 1
+    },
+    {
+      "name": "file-dialogs",
+      "anchor_hits": 6
+    },
+    {
+      "name": "message-port",
+      "anchor_hits": 2
+    },
+    {
+      "name": "network-policy",
+      "anchor_hits": 7
+    },
+    {
+      "name": "notifications",
+      "anchor_hits": 15
+    },
+    {
+      "name": "offline",
+      "anchor_hits": 18
+    },
+    {
+      "name": "screen-capture",
+      "anchor_hits": 6
+    },
+    {
+      "name": "secure-storage",
+      "anchor_hits": 4
+    },
+    {
+      "name": "spellcheck",
+      "anchor_hits": 1
+    },
+    {
+      "name": "tray",
+      "anchor_hits": 3
+    },
+    {
+      "name": "utility-process",
+      "anchor_hits": 3
+    }
+  ],
+  "canva_renderer_windows": [
+    "desktop_chrome_v2",
+    "desktop_offline_fallback",
+    "desktop_recording"
+  ],
+  "canva_rtl_ui_anchor": true,
+  "canva_associated_extension_mentions": [
+    "avi",
+    "gif",
+    "heic",
+    "jpeg",
+    "jpg",
+    "key",
+    "mkv",
+    "mov",
+    "mp4",
+    "mpeg",
+    "numbers",
+    "pages",
+    "png",
+    "svg",
+    "webm",
+    "webp"
+  ],
+  "rea": {
+    "version": "6.7.0",
+    "nsis7z_pe_resources_succeeded": true,
+    "nsis7z_resource_result_sha256": "b2c36babefa1dfd4185042ff10e74df95e34ac741945191d672b26968106476d",
+    "source_analysis_succeeded": true,
+    "selected_js_paths": [
+      "dist/renderer/desktop_recording/7730381d4ccc541a.js",
+      "dist/renderer/desktop_offline_fallback/2606feca6b9d8844.js"
+    ],
+    "unselected_files": 802,
+    "parsed_javascript_files": 2,
+    "parse_failures": 0,
+    "relevant_files": 804,
+    "findings": 104,
+    "modules": 9,
+    "graph_nodes": 2492,
+    "graph_edges": 2525,
+    "semantic_nodes": 3200,
+    "semantic_limit": 3200,
+    "raw_result_bytes": 42111014,
+    "raw_result_sha256": "09cac1cc5dd4557f8c4be5d207ff2041abe75b66a6f4e24317b7d74c343b49ca",
+    "raw_result_kept_off_git": true,
+    "installer_pe_resources_direct_failed": true
+  },
+  "ghidra": {
+    "version": "12.1.4_PUBLIC",
+    "premiere_installer": {
+      "program": "premiere-installer-for-static-ghidra.exe",
+      "architecture": "x86:LE:32:default",
+      "format": "Portable Executable (PE)",
+      "function_count": 8,
+      "memory_blocks": "[Headers:4096:NX:RO][UPX0:7761920:X:W][UPX1:3317760:X:W][.rsrc:45056:NX:W][tdb:4096:NX:W] (GhidraScript)  ",
+      "ghidra_autoanalysis_succeeded": true,
+      "analysis_timeout": false,
+      "java_report_succeeded": true
+    },
+    "canva_native_ffmpeg": {
+      "program": "ffmpeg.dll",
+      "architecture": "x86:LE:64:default",
+      "format": "Portable Executable (PE)",
+      "function_count": 4142,
+      "memory_blocks": "[Headers:1024:NX:RO][.text:2472448:X:RO][.rdata:522240:NX:RO][.data:1547392:NX:W][.pdata:41472:NX:RO][.fptable:512:NX:W][.tls:512:NX:W][_RDATA:512:NX:RO][.reloc:13824:NX:RO][tdb:6224:NX:W] (GhidraScript)  ",
+      "ghidra_autoanalysis_succeeded": false,
+      "analysis_timeout": true,
+      "java_report_succeeded": true,
+      "source_bytes": 3061248,
+      "source_sha256": "f7a1eafad8446d900568ed7a88a95af354469a2a15b65e963b502a9a04b87e88"
+    },
+    "analysis_notes": "Premiere PE is UPX-compressed installer stub; FFmpeg.dll analysis timed out after 45 sec, so reported function count is partial."
+  },
+  "provenance": {
+    "generated_from": "local scanned PE files and read-only tool JSON/logs",
+    "vendor_source_copied_to_repo": false,
+    "signature_trust_verified": false,
+    "runtime_app_features_tested": false,
+    "reverse_engineering_limits": "Installer metadata + chosen desktop JavaScript + native media DLL only; not Canva online editor and not Premiere timeline engine.",
+    "local_raw_evidence_folder": "C:/Users/Public/KOSIF-CANVA-PREMIERE-20261020"
+  }
+}
