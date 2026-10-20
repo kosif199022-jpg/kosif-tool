@@ -69,6 +69,9 @@ class Guardrails(unittest.TestCase):
             self.assertIn("--headless=new", argv)
             self.assertIn("--disable-background-networking", argv)            # only the studied site is contacted
             self.assertIn("--remote-debugging-address=127.0.0.1", argv)
+            self.assertIn("--remote-debugging-port=0", argv)                  # the browser picks its port; verified by its profile
+            self.assertIn("--disk-cache-dir=", argv)
+            self.assertIn("--disable-crash-reporter", argv)
             self.assertIn(f"--user-data-dir={Path(tmp).resolve() / 's' / 'isolated-profile'}", argv)
             self.assertNotIn("--proxy-server", argv)
             self.assertFalse((Path(tmp) / "s").exists())                      # a dry run touches nothing
@@ -82,15 +85,51 @@ class Guardrails(unittest.TestCase):
 
 
 class NeverAttachToAnotherBrowser(unittest.TestCase):
-    def test_an_occupied_port_is_refused(self):
-        with socket.socket() as busy, tempfile.TemporaryDirectory() as tmp:
-            busy.bind(("127.0.0.1", 0)); busy.listen(1)
-            port = busy.getsockname()[1]
-            self.assertTrue(W.port_in_use(port))
-            with self.assertRaisesRegex(RuntimeError, "already in use"):
-                W.run("https://example.com", str(Path(tmp) / "s"), port=port)
-            self.assertFalse((Path(tmp) / "s").exists())
-        self.assertFalse(W.port_in_use(W.free_port()))
+    def _fake_devtools(self, ws_path):
+        class H(http.server.BaseHTTPRequestHandler):
+            def do_GET(self):
+                body = json.dumps({"webSocketDebuggerUrl": f"ws://127.0.0.1/devtools/browser/{ws_path}"}).encode()
+                self.send_response(200); self.end_headers(); self.wfile.write(body)
+
+            def log_message(self, *a):
+                pass
+        srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), H)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        return srv
+
+    def test_only_the_browser_this_run_started(self):
+        class Alive:
+            def poll(self):
+                return None
+        srv = self._fake_devtools("someone-elses-browser")
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                prof = Path(tmp)
+                (prof / "DevToolsActivePort").write_text(f"{srv.server_port}\n/devtools/browser/our-browser\n")
+                with self.assertRaisesRegex(RuntimeError, "another browser"):
+                    W._wait_for_devtools(Alive(), prof, timeout=5)
+                (prof / "DevToolsActivePort").write_text(f"{srv.server_port}\n/devtools/browser/someone-elses-browser\n")
+                self.assertEqual(W._wait_for_devtools(Alive(), prof, timeout=5), f"http://127.0.0.1:{srv.server_port}")
+        finally:
+            srv.shutdown(); srv.server_close()
+        with tempfile.TemporaryDirectory() as tmp, self.assertRaisesRegex(ValueError, "not used any more"):
+            W.run("https://example.com", str(Path(tmp) / "s"), port=9223)
+
+    def test_urls_proxies_and_logins(self):
+        with self.assertRaisesRegex(ValueError, "login"):
+            W.origin_of("https://user:secret@app.example/")
+        self.assertEqual(W.origin_of("http://[::1]:8080/x"), "http://[::1]:8080")
+        self.assertEqual(W.origin_of("https://bücher.example/"), "https://xn--bcher-kva.example")
+        self.assertEqual(W.safe_url("https://app.example/p?token=abc&x=1#frag"), "https://app.example/p?token=…&x=…")
+        with self.assertRaisesRegex(ValueError, "credentials"):
+            W.proxy_arg("http://u:p@proxy.local:3128")
+        import os
+        old = os.environ.get("NO_PROXY")
+        os.environ["NO_PROXY"] = "localhost,127.0.0.1"
+        try:
+            self.assertEqual(W.proxy_arg("http://127.0.0.1:3128"), ["--proxy-server=http://127.0.0.1:3128", "--proxy-bypass-list=localhost;127.0.0.1"])
+        finally:
+            os.environ.pop("NO_PROXY") if old is None else os.environ.__setitem__("NO_PROXY", old)
 
 
 class Report(unittest.TestCase):
@@ -108,6 +147,25 @@ class Report(unittest.TestCase):
             self.assertIn("not checked (unavailable)", md)
             self.assertNotIn("none declared", md)
             self.assertNotIn("a4ccb0cbf30074a8c35fc8ee722f5d86", md + (root / "report.json").read_text(encoding="utf-8"))
+
+    def test_failed_steps_are_unknown_and_odd_files_do_not_crash(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            fake_study(root)
+            (root / "07-js-graph.json").write_text("[1, 2, 3]", encoding="utf-8")            # valid JSON, not an object
+            (root / "receipts.json").write_text(json.dumps({"complete": False, "steps": [{"command": "discover-webmcp-tools", "rc": 1, "code": "provider_unavailable"}],
+                                                            "artifacts": [{"file": "x.json"}]}), encoding="utf-8")
+            cap = json.loads((root / "02-page-capture.json").read_text(encoding="utf-8"))
+            cap["normalized_result"]["target"]["title"] = "Evil | title\n`with` breakers" + "x" * 300
+            cap["normalized_result"]["resources"].append(None)
+            (root / "02-page-capture.json").write_text(json.dumps(cap), encoding="utf-8")
+            rep = W.report(root)
+            self.assertIn("step failed: provider_unavailable", rep["webmcp"]["status"])
+            self.assertNotIn("|", rep["title"]); self.assertNotIn("\n", rep["title"]); self.assertLessEqual(len(rep["title"]), 121)
+            md = (root / "report.md").read_text(encoding="utf-8")
+            self.assertIn("Incomplete study", md)
+        with self.assertRaisesRegex(ValueError, "no study folder"):
+            W.report("/nonexistent/study")
 
     def test_lookalike_names_are_not_libraries(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -158,8 +216,11 @@ class LiveLocalPage(unittest.TestCase):
                 srv.shutdown()
                 srv.server_close()
             self.assertTrue(all(s["rc"] == 0 for s in res["steps"]), res["steps"])
+            self.assertTrue(res["complete"])
+            self.assertTrue(res["profile_deleted"])
             rec = json.loads((out / "receipts.json").read_text(encoding="utf-8"))
             self.assertTrue(rec["profile_deleted"])
+            self.assertTrue(rec["browser"].startswith(("Chrome/", "HeadlessChrome/")), rec["browser"])
             self.assertFalse((out / "isolated-profile").exists())             # no cookies or cache survive
             self.assertTrue((out / "screenshot.png").exists())
             self.assertTrue(all(len(a["sha256"]) == 64 for a in rec["artifacts"]))

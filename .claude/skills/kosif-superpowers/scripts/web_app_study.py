@@ -52,7 +52,7 @@ SCRIPT_FINGERPRINTS = [
     ("framework", "Next.js", r"__NEXT_DATA__|next/dist/|__next_f", r"window\.next\s*=\s*\{\s*version:\s*\"(\d+\.\d+\.\d+[\w.-]*)\"", None),
     ("framework", "Vue", r"__VUE__|__VUE_HMR_RUNTIME__", None, None),
     ("framework", "Svelte", r"__svelte|svelte-[a-z0-9]{6}", None, None),
-    ("framework", "Angular", r"ng-version|ɵcmp", None, None),
+    ("framework", "Angular", r"(?<![\w-])ng-version(?![\w-])|ɵcmp", None, None),
     ("bundler", "webpack", r"webpackChunk[\w$]*|__webpack_require__", None, None),
     ("canvas-engine", "tldraw", r"\btldraw\b|@tldraw/", r"\(\s*\"tldraw\"\s*,\s*\"(\d+\.\d+\.\d+[\w.-]*)\"", r"@tldraw/editor|TLDRAW_ENV"),
     ("canvas-engine", "Excalidraw", r"@excalidraw/excalidraw|ExcalidrawElement|excalidraw-app", None, None),   # not the 'excalidraw/clipboard' paste type
@@ -78,7 +78,7 @@ SCRIPT_FINGERPRINTS = [
     ("styling", "lucide icons", r"\"lucide-\"|lucide-react", None, None),
     ("styling", "sonner toasts", r"data-sonner-toaster", None, None),
     ("state", "Zustand", r"\bzustand\b", None, None),
-    ("state", "TanStack Query", r"@tanstack/|QueryClientProvider", None, None),
+    ("state", "TanStack Query", r"@tanstack/(?:[a-z]+-)?query|QueryClientProvider", None, None),
     ("library", "Zod", r"\$ZodType|ZodError", r"\{major:(\d+),minor:(\d+),patch:(\d+)\}", None),
     ("platform", "Firebase SDK", r"firebaseapp\.com|identitytoolkit\.googleapis\.com|firebase-installations",
      r"\(\s*\"firebase\"\s*,\s*\"(\d+\.\d+\.\d+)\"\s*,\s*\"app\"", None),
@@ -88,18 +88,18 @@ SCRIPT_FINGERPRINTS = [
     ("auth", "reCAPTCHA", r"recaptcha/api\.js|grecaptcha\.", None, None),
     ("analytics", "Mixpanel", r"mixpanel", r"LIB_VERSION:\s*\"(\d+\.\d+\.\d+)\"", r"api-js\.mixpanel\.com|LIB_VERSION"),
     ("analytics", "PostHog", r"posthog", None, None),
-    ("analytics", "Sentry", r"sentry\.io|__SENTRY__", None, None),
+    ("analytics", "Sentry", r"sentry\.io|__SENTRY__", None, r"__SENTRY__|Sentry\.init"),
     ("analytics", "Google Tag Manager", r"googletagmanager\.com/gtm\.js", None, None),
     ("analytics", "Hotjar", r"static\.hotjar\.com", None, None),
     ("analytics", "Vercel Analytics", r"/_vercel/insights|va\.vercel-scripts\.com", r"sdkv\s*=\s*\"(\d+\.\d+\.\d+)\"", None),
     ("support", "Intercom", r"widget\.intercom\.io|_intercom_npm_loader", None, None),
-    ("payments", "Stripe", r"js\.stripe\.com", None, None),
+    ("payments", "Stripe", r"js\.stripe\.com", None, r"\bStripe\(\s*[\"']pk_"),
     ("ai", "Vercel AI SDK", r"\bai/rsc\b|@ai-sdk/|vercel\.ai\.error", None, None),
 ]
 # matched only by a bare package/product name, which can appear without the library being used
 # (an import adapter, a paste handler, a comment): graded "mentioned" unless versioned, strong or seen in 3+ files
 NAME_ONLY = {"tldraw", "Excalidraw", "Konva", "PixiJS", "Yjs", "Liveblocks", "Socket.IO", "PartyKit", "Monaco", "Tiptap",
-             "Zustand", "Mixpanel", "PostHog", "Svelte", "ProseMirror"}
+             "Zustand", "Mixpanel", "PostHog", "Svelte", "ProseMirror", "Sentry", "Stripe"}
 # storage key NAMES (values are never read) → service
 STORAGE_FINGERPRINTS = [
     ("Firebase", r"^firebase-|^firebase:"), ("Mixpanel", r"mixpanel|^__mpq_"), ("Google Ads", r"^_gcl_"),
@@ -122,12 +122,26 @@ def sha_file(p: Path) -> str:
 
 
 def origin_of(url: str) -> str:
+    """WHATWG-style origin (scheme://host[:port]); IDN hosts in punycode, IPv6 in brackets. Credentials are refused."""
     u = urllib.parse.urlsplit(url)
     if u.scheme not in ("http", "https") or not u.hostname:
         raise ValueError("only http(s) URLs with a host can be studied")
+    if u.username or u.password:
+        raise ValueError("credentials in the URL are a login; the study is always logged out")
+    host = u.hostname
+    host = f"[{host}]" if ":" in host else host.encode("idna").decode("ascii")
     default = {"http": 80, "https": 443}[u.scheme]
     port = f":{u.port}" if u.port and u.port != default else ""
-    return f"{u.scheme}://{u.hostname}{port}"
+    return f"{u.scheme}://{host}{port}"
+
+
+def safe_url(url: str) -> str:
+    """For receipts and reports: no userinfo, query values redacted (they can carry tokens)."""
+    u = urllib.parse.urlsplit(url)
+    host = u.hostname or ""
+    netloc = (f"[{host}]" if ":" in host else host) + (f":{u.port}" if u.port else "")
+    query = "&".join(f"{k}=…" for k, _ in urllib.parse.parse_qsl(u.query, keep_blank_values=True))
+    return urllib.parse.urlunsplit((u.scheme, netloc, u.path, query, ""))
 
 
 def inside_git(path: Path) -> bool:
@@ -138,6 +152,8 @@ def check_out_dir(out: Path) -> Path:
     out = out.expanduser().resolve()
     if inside_git(out):
         raise ValueError("the study folder holds third-party code: put it outside any git checkout")
+    if out.exists() and not out.is_dir():
+        raise ValueError("--out exists and is not a folder")
     if out.exists() and any(out.iterdir()):
         raise ValueError("the study folder must be new or empty")
     return out
@@ -178,12 +194,24 @@ def proxy_arg(proxy: str) -> list:
         return []
     if proxy == "auto":
         proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy") or ""
-    return [f"--proxy-server={proxy}"] if proxy else []
+    if not proxy:
+        return []
+    u = urllib.parse.urlsplit(proxy if "://" in proxy else "http://" + proxy)
+    if u.username or u.password:
+        raise ValueError("a proxy with credentials is not passed to the browser (it would show in the process list); use a local credential-less proxy")
+    args = [f"--proxy-server={u.scheme}://{u.hostname}{':' + str(u.port) if u.port else ''}"]
+    bypass = os.environ.get("NO_PROXY") or os.environ.get("no_proxy")
+    if bypass:
+        args.append("--proxy-bypass-list=" + ";".join(x.strip() for x in bypass.split(",") if x.strip()))
+    return args
 
 
-def browser_argv(chrome: str, url: str, profile: Path, port: int, proxy: str) -> list:
-    argv = [chrome, "--headless=new", "--remote-debugging-address=127.0.0.1", f"--remote-debugging-port={port}",
-            f"--user-data-dir={profile}", "--no-first-run", "--no-default-browser-check", "--disable-extensions",
+def browser_argv(chrome: str, url: str, profile: Path, proxy: str) -> list:
+    # --remote-debugging-port=0: the browser picks a free port and writes it to <profile>/DevToolsActivePort,
+    # so the study can prove it talks to the browser it started, never to someone else's
+    argv = [chrome, "--headless=new", "--remote-debugging-address=127.0.0.1", "--remote-debugging-port=0",
+            f"--user-data-dir={profile}", f"--disk-cache-dir={profile / 'cache'}", f"--crash-dumps-dir={profile / 'crash'}",
+            "--disable-crash-reporter", "--disable-breakpad", "--no-first-run", "--no-default-browser-check", "--disable-extensions",
             "--disable-sync", "--disable-background-networking", "--disable-component-update", "--disable-default-apps",
             "--disable-domain-reliability", "--no-pings", "--window-size=1440,900", *proxy_arg(proxy)]
     if platform.system() == "Linux" and hasattr(os, "geteuid") and os.geteuid() == 0:
@@ -208,15 +236,86 @@ def rea_steps(endpoint: str, target: str, origins: list, out: Path, obs_ms: int,
     return steps
 
 
+REQUIRED_STEPS = ("list-browser-targets", "inspect-web-page", "capture-web-screenshot", "export-web-scripts")
+
+
+def _spawn_kwargs() -> dict:
+    if os.name == "nt":
+        return {"creationflags": getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)}
+    kw = {"start_new_session": True}
+    if platform.system() == "Linux":
+        def _die_with_parent():   # the browser dies if this study process is killed outright
+            try:
+                import ctypes
+                ctypes.CDLL("libc.so.6", use_errno=True).prctl(1, signal.SIGKILL)   # PR_SET_PDEATHSIG
+            except Exception:  # noqa: BLE001
+                pass
+        kw["preexec_fn"] = _die_with_parent
+    return kw
+
+
+def _kill_tree(proc: subprocess.Popen) -> None:
+    if proc.poll() is not None and os.name == "nt":
+        return
+    try:
+        if os.name == "nt":
+            subprocess.run(["taskkill", "/PID", str(proc.pid), "/T", "/F"], capture_output=True, timeout=30)
+        else:
+            try:
+                os.killpg(proc.pid, signal.SIGTERM)
+                proc.wait(timeout=10)
+            except (subprocess.TimeoutExpired, ProcessLookupError):
+                pass
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)   # the whole group: GPU, network and crashpad children too
+            except ProcessLookupError:
+                pass
+        proc.wait(timeout=10)
+    except Exception:  # noqa: BLE001
+        proc.kill()
+
+
 def run_rea(rea: str, args: list, dest: Path, timeout: int) -> dict:
+    import tempfile
     t0 = time.time()
-    with open(dest, "wb") as fh:
+    with open(dest, "wb") as fh, tempfile.TemporaryFile() as err:
+        p = subprocess.Popen([rea, *args, "--format", "json"], stdout=fh, stderr=err, **_spawn_kwargs())
         try:
-            p = subprocess.run([rea, *args, "--format", "json"], stdout=fh, stderr=subprocess.PIPE, timeout=timeout)
-            rc, err = p.returncode, p.stderr.decode("utf-8", "replace")[-400:]
+            rc = p.wait(timeout=timeout)
         except subprocess.TimeoutExpired:
-            rc, err = -1, f"timeout after {timeout}s"
-    return {"command": args[0], "rc": rc, "seconds": round(time.time() - t0, 1), "stderr_tail": err if rc else ""}
+            _kill_tree(p)
+            rc = -1
+        err.seek(0)
+        tail = err.read()[-400:].decode("utf-8", "replace")
+    rec = {"command": args[0], "rc": rc, "seconds": round(time.time() - t0, 1)}
+    if rc:
+        body = _load(dest)
+        rec.update(code=body.get("code") or ("timeout" if rc == -1 else "failed"), message=str(body.get("message") or tail)[:300])
+    return rec
+
+
+def _wait_for_devtools(proc, profile: Path, timeout: float = 30) -> str:
+    """Endpoint of THIS browser: read DevToolsActivePort from its fresh profile and match the browser id."""
+    marker = profile / "DevToolsActivePort"
+    deadline = time.time() + timeout
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    while time.time() < deadline:
+        if proc.poll() is not None:
+            raise RuntimeError("the study browser exited before opening DevTools (see browser.log)")
+        if marker.exists():
+            lines = marker.read_text(encoding="utf-8", errors="replace").split()
+            if len(lines) >= 2 and lines[0].isdigit():
+                endpoint = f"http://127.0.0.1:{lines[0]}"
+                try:
+                    ver = json.loads(opener.open(endpoint + "/json/version", timeout=2).read())
+                except (OSError, ValueError):
+                    time.sleep(0.3)
+                    continue
+                if str(ver.get("webSocketDebuggerUrl", "")).endswith(lines[1]):
+                    return endpoint
+                raise RuntimeError("the DevTools port answers for another browser; refusing to attach")
+        time.sleep(0.3)
+    raise RuntimeError("the study browser did not open DevTools in time")
 
 
 # --------------------------------------------------------------------------- run
@@ -225,15 +324,14 @@ def run(url: str, out: str, allow=(), obs_ms: int = 3000, chromium: str | None =
     origin = origin_of(url)
     origins = sorted({origin, *(origin_of(a) for a in allow)})
     out_p = check_out_dir(Path(out))
+    if port:
+        raise ValueError("--port is not used any more: the study browser picks a free port and is verified by its profile")
     rea, chrome = find_rea(), find_chromium(chromium)
     profile = out_p / "isolated-profile"
-    if port and not dry_run and port_in_use(port):
-        raise RuntimeError(f"port {port} is already in use (another browser?); the study never attaches to an existing browser — omit --port")
-    port = port or free_port()
-    endpoint = f"http://127.0.0.1:{port}"
-    plan = {"url": url, "origins": origins, "out": str(out_p), "browser": browser_argv(chrome or "<chromium>", url, profile, port, proxy),
-            "rea_steps": [["list-browser-targets", endpoint, *[x for o in origins for x in ("--allowed-origins", o)]]]
-                         + [a for _, a in rea_steps(endpoint, "<target>", origins, out_p, obs_ms, deep)],
+    argv = browser_argv(chrome or "<chromium>", url, profile, proxy)
+    plan = {"url": safe_url(url), "origins": origins, "out": str(out_p), "browser": argv,
+            "rea_steps": [["list-browser-targets", "<endpoint>", *[x for o in origins for x in ("--allowed-origins", o)]]]
+                         + [a for _, a in rea_steps("<endpoint>", "<target>", origins, out_p, obs_ms, deep)],
             "profile": "fresh, deleted after the run" if not keep_profile else "fresh, kept", "login": "never"}
     if dry_run:
         return {"dry_run": True, "plan": plan}
@@ -243,56 +341,64 @@ def run(url: str, out: str, allow=(), obs_ms: int = 3000, chromium: str | None =
         raise RuntimeError("no Chromium/Chrome/Edge found; pass --chromium PATH")
     out_p.mkdir(parents=True, exist_ok=True)
     started = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
-    log = open(out_p / "browser.log", "wb")
-    proc = subprocess.Popen(browser_argv(chrome, url, profile, port, proxy), stdout=log, stderr=subprocess.STDOUT,
-                            start_new_session=(os.name != "nt"))
-    steps = []
-    try:
-        deadline = time.time() + 30
-        while time.time() < deadline:
-            if proc.poll() is not None:
-                raise RuntimeError("the isolated browser exited before opening its DevTools port (see browser.log)")
+    steps, error = [], None
+    previous = {}
+
+    def _stop(signum, _frame):
+        raise SystemExit(128 + signum)
+
+    for name in ("SIGTERM", "SIGHUP", "SIGBREAK"):   # a terminated study still closes its browser and deletes the profile
+        sig = getattr(signal, name, None)
+        if sig is not None:
             try:
-                urllib.request.build_opener(urllib.request.ProxyHandler({})).open(endpoint + "/json/version", timeout=2).read()
-                break
-            except OSError:
-                time.sleep(0.5)
-        else:
-            raise RuntimeError("the browser did not open its DevTools port")
+                previous[sig] = signal.signal(sig, _stop)
+            except (ValueError, OSError):
+                pass
+    log = open(out_p / "browser.log", "wb")
+    proc = subprocess.Popen(argv, stdout=log, stderr=subprocess.STDOUT, **_spawn_kwargs())
+    try:
+        endpoint = _wait_for_devtools(proc, profile)
         time.sleep(settle_s)
-        steps.append(run_rea(rea, ["list-browser-targets", endpoint, *[x for o in origins for x in ("--allowed-origins", o)]],
-                             out_p / "01-targets.json", 120))
-        targets = (json.loads((out_p / "01-targets.json").read_text(encoding="utf-8") or "{}").get("normalized_result") or {}).get("targets", [])
-        target = next((t["target_id"] for t in targets if t.get("type") == "page" and t.get("origin") in origins), None)
+        allow_args = [x for o in origins for x in ("--allowed-origins", o)]
+        steps.append(run_rea(rea, ["list-browser-targets", endpoint, *allow_args], out_p / "01-targets.json", 120))
+        targets = (_load(out_p / "01-targets.json").get("normalized_result") or {}).get("targets") or []
+        target = next((t.get("target_id") for t in targets if isinstance(t, dict) and t.get("type") == "page" and t.get("origin") in origins), None)
         if not target:
             raise RuntimeError("no page target on the allowed origins (redirected elsewhere?)")
         for name, args in rea_steps(endpoint, target, origins, out_p, obs_ms, deep):
-            steps.append(run_rea(rea, args, out_p / name, 1800 if name.startswith("07") else 600))
+            steps.append(run_rea(rea, [a.replace("<endpoint>", endpoint) for a in args], out_p / name, 1800 if name.startswith("07") else 600))
+    except RuntimeError as e:
+        error = str(e)
     finally:
-        try:
-            if os.name != "nt":
-                os.killpg(proc.pid, signal.SIGTERM)
-            else:
-                proc.terminate()
-            proc.wait(timeout=15)
-        except Exception:  # noqa: BLE001
-            proc.kill()
+        _kill_tree(proc)
         log.close()
         if not keep_profile:
-            shutil.rmtree(profile, ignore_errors=True)
-    shot = out_p / "05-screenshot.json"
-    if shot.exists() and shot.stat().st_size:
-        art = (json.loads(shot.read_text(encoding="utf-8")).get("normalized_result") or {}).get("artifact") or {}
-        if art.get("data_base64"):
-            png = base64.b64decode(art["data_base64"])
-            if hashlib.sha256(png).hexdigest() == art.get("sha256"):
-                (out_p / "screenshot.png").write_bytes(png)
-    receipts = {"tool": f"web_app_study.py {VERSION}", "rea": _version([rea, "--version"]), "browser": _version([chrome, "--version"]),
-                "url": url, "origins": origins, "started_at": started, "profile_deleted": not keep_profile, "login": False,
-                "steps": steps, "artifacts": _artifact_receipts(out_p)}
+            for _ in range(10):
+                shutil.rmtree(profile, ignore_errors=True)
+                if not profile.exists():
+                    break
+                time.sleep(0.5)
+        for sig, handler in previous.items():
+            try:
+                signal.signal(sig, handler)
+            except (ValueError, OSError):
+                pass
+    shot = _load(out_p / "05-screenshot.json")
+    art = (shot.get("normalized_result") or {}).get("artifact") or {}
+    if isinstance(art, dict) and art.get("data_base64"):
+        png = base64.b64decode(art["data_base64"])
+        if hashlib.sha256(png).hexdigest() == art.get("sha256"):
+            (out_p / "screenshot.png").write_bytes(png)
+    ok = {s["command"]: s["rc"] == 0 for s in steps}
+    complete = error is None and all(ok.get(c) for c in REQUIRED_STEPS)
+    browser = ((_load(out_p / "01-targets.json").get("normalized_result") or {}).get("browser") or {}).get("product") or "unknown"
+    receipts = {"tool": f"web_app_study.py {VERSION}", "rea": _version([rea, "--version"]), "browser": browser,
+                "url": safe_url(url), "origins": origins, "started_at": started, "complete": complete, "error": error,
+                "profile_deleted": not profile.exists(), "login": False, "steps": steps, "artifacts": _artifact_receipts(out_p)}
     (out_p / "receipts.json").write_text(json.dumps(receipts, indent=2) + "\n", encoding="utf-8")
     rep = report(out_p)
-    return {"out": str(out_p), "steps": steps, "report": str(out_p / "report.md"), "facts": len(rep["stack"])}
+    return {"out": str(out_p), "complete": complete, "error": error, "profile_deleted": receipts["profile_deleted"],
+            "steps": steps, "report": str(out_p / "report.md"), "facts": len(rep["stack"])}
 
 
 def _version(argv) -> str:
@@ -313,9 +419,17 @@ def _artifact_receipts(out: Path) -> list:
 # --------------------------------------------------------------------------- report
 def _load(p: Path) -> dict:
     try:
-        return json.loads(p.read_text(encoding="utf-8")) if p.exists() and p.stat().st_size else {}
+        data = json.loads(Path(p).read_text(encoding="utf-8")) if Path(p).exists() and Path(p).stat().st_size else {}
     except (OSError, ValueError):
         return {}
+    return data if isinstance(data, dict) else {}
+
+
+def page_text(s, cap: int = 120) -> str:
+    """Text the page controls (title, tool and key names): no control characters or newlines, no table or code breakers, capped."""
+    s = re.sub(r"[\x00-\x1f\x7f]", " ", str(s or ""))
+    s = re.sub(r"\s+", " ", s).replace("|", "¦").replace("`", "'").strip()
+    return s[:cap] + ("…" if len(s) > cap else "")
 
 
 def redact_key(k: str) -> str:
@@ -326,9 +440,13 @@ def redact_key(k: str) -> str:
 def report(study, json_out=None, md_out=None) -> dict:
     """Facts only, never code: what the public frontend is built with and what it declares."""
     d = Path(study).expanduser().resolve()
-    cap = (_load(d / "02-page-capture.json").get("normalized_result") or {})
-    resources = cap.get("resources") or []
-    urls = [r.get("url", "") for r in resources] + [s.get("url", "") for s in (cap.get("scripts") or {}).get("items", []) if isinstance(s, dict)]
+    if not d.is_dir():
+        raise ValueError(f"no study folder at {d}")
+    D = lambda x: x if isinstance(x, dict) else {}   # noqa: E731  (odd or partial artifacts never crash the report)
+    L = lambda x: [i for i in x if isinstance(i, dict)] if isinstance(x, list) else []   # noqa: E731
+    cap = D(_load(d / "02-page-capture.json").get("normalized_result"))
+    resources = L(cap.get("resources"))
+    urls = [str(r.get("url", "")) for r in resources] + [str(s.get("url", "")) for s in L(D(cap.get("scripts")).get("items"))]
     stack = collections.OrderedDict()
 
     def add(cat, name, evidence, version=None, source=None):
@@ -372,45 +490,50 @@ def report(study, json_out=None, md_out=None) -> dict:
         row["files"] = files_hit
         strong = row.pop("_strong", False) or row["version"] or row["name"] not in NAME_ONLY or files_hit >= 3
         row["confidence"] = "observed" if strong else "mentioned"
-    storage = cap.get("storage") or {}
-    keys = list(storage.get("local_storage_keys") or []) + list(storage.get("session_storage_keys") or []) + list(storage.get("indexed_db_names") or [])
+    storage = D(cap.get("storage"))
+    keys = [str(k) for f in ("local_storage_keys", "session_storage_keys", "indexed_db_names") for k in (storage.get(f) or []) if isinstance(storage.get(f), list)]
     services, unclassified = collections.OrderedDict(), []
     for k in keys:
         svc = next((n for n, rx in STORAGE_FINGERPRINTS if re.search(rx, k, re.I)), None)
         if svc:
-            services.setdefault(svc, []).append(redact_key(k))
+            services.setdefault(svc, []).append(page_text(redact_key(k), 40))
         else:
-            unclassified.append(redact_key(k))
-    webmcp = (_load(d / "04-webmcp.json").get("normalized_result") or {})
-    tools = (webmcp.get("tools") or {}).get("items") or []
-    types = collections.Counter(r.get("type", "?") for r in resources)
-    target = cap.get("target") or {}
+            unclassified.append(page_text(redact_key(k), 40))
     rec = _load(d / "receipts.json")
-    graph = (_load(d / "07-js-graph.json").get("normalized_result") or {})
+    failed = {s.get("command"): s.get("code") or "failed" for s in L(rec.get("steps")) if s.get("rc")}
+    webmcp = D(_load(d / "04-webmcp.json").get("normalized_result"))
+    if "discover-webmcp-tools" in failed:
+        webmcp = {"status": f"step failed: {failed['discover-webmcp-tools']}"}
+    tools = L(D(webmcp.get("tools")).get("items"))
+    types = collections.Counter(str(r.get("type", "?")) for r in resources)
+    target = D(cap.get("target"))
+    graph = D(_load(d / "07-js-graph.json").get("normalized_result"))
     static = None
     if graph:
-        nodes = (graph.get("graph") or {}).get("nodes") or []
+        nodes = L(D(graph.get("graph")).get("nodes"))
         kinds = collections.Counter(n.get("kind") for n in nodes)
-        ep_kinds = collections.Counter(((n.get("observations") or [{}])[0].get("properties") or {}).get("endpoint_kind", "?")
+        ep_kinds = collections.Counter(D(D((L(n.get("observations")) or [{}])[0]).get("properties")).get("endpoint_kind", "?")
                                        for n in nodes if n.get("kind") == "endpoint")
-        st = graph.get("statistics") or {}
+        st = D(graph.get("statistics"))
         static = {"modules": st.get("modules"), "parsed_files": st.get("parsed_javascript_files"), "findings": st.get("findings"),
                   "endpoint_references": dict(ep_kinds), "storage_references": kinds.get("storage", 0), "workers": kinds.get("worker", 0),
                   "note": "counts only: endpoint and storage names belong to the site and are not listed"}
-    out = {"schema": "kosif.web-app-study.v1", "url": target.get("url") or rec.get("url"), "title": target.get("title"),
+    out = {"schema": "kosif.web-app-study.v1", "url": safe_url(str(target.get("url") or rec.get("url") or "")) if (target.get("url") or rec.get("url")) else None,
+           "title": page_text(target.get("title")) if target.get("title") else None,
+           "page_supplied_fields": ["title", "webmcp.tools", "storage key names"], "complete": rec.get("complete"), "failed_steps": failed,
            "observed_at": (cap.get("capture_window") or {}).get("started_at") or rec.get("started_at"),
            "stack": list(stack.values()),
            "services_from_storage_key_names": [{"service": s, "keys": v[:4]} for s, v in services.items()],
            "unclassified_storage_keys": unclassified[:12],
            "webmcp": {"status": webmcp.get("status") or "not run", "checked": webmcp.get("status") == "available",
-                      "tools": [t.get("name") for t in tools if isinstance(t, dict)][:50]},
+                      "tools": [page_text(t.get("name"), 64) for t in tools][:50]},
            "page": {"dom_nodes": (cap.get("dom") or {}).get("total_nodes"), "resources": dict(types),
                     "scripts_exported": len(files), "script_bytes": script_bytes,
                     "network_requests_observed": len((cap.get("network") or {}).get("requests") or []),
                     "websockets_observed": len((cap.get("network") or {}).get("websocket_connections") or [])},
            "static_analysis": static,
            "screenshot_sha256": sha_file(d / "screenshot.png") if (d / "screenshot.png").exists() else None,
-           "receipts": rec.get("artifacts", []),
+           "receipts": L(rec.get("artifacts")),
            "boundary": "Facts derived from a logged-out public page; no code, no values of storage keys, no account data. "
                        "Borrow ideas in your own words; never copy the scripts."}
     jp = Path(json_out) if json_out else d / "report.json"
@@ -422,7 +545,10 @@ def report(study, json_out=None, md_out=None) -> dict:
 
 def render_md(r: dict) -> str:
     L = [f"# Web app study — {r.get('title') or r.get('url')}", "", f"- URL: {r.get('url')}", f"- Observed: {r.get('observed_at')}",
-         f"- Boundary: {r['boundary']}", "", "## Stack (facts with evidence)", "",
+         f"- Boundary: {r['boundary']}"]
+    if r.get("complete") is False or r.get("failed_steps"):
+        L.append(f"- **Incomplete study:** failed steps {r.get('failed_steps') or '—'}; what those steps would show is unknown, not absent")
+    L += ["", "## Stack (facts with evidence)", "",
          "observed = versioned, a distinctive identifier the library itself ships, or 3+ files; mentioned = only a bare name in 1–2 files", "",
          "| category | name | version | confidence | evidence |", "|---|---|---|---|---|"]
     for s in r["stack"]:
@@ -433,7 +559,7 @@ def render_md(r: dict) -> str:
         L.append(f"- unclassified keys: {', '.join(r['unclassified_storage_keys'])}")
     p = r["page"]
     L += ["", "## Page", "", f"- DOM nodes {p['dom_nodes']} · resources {p['resources']} · scripts exported {p['scripts_exported']} ({p['script_bytes']:,} bytes)",
-          f"- network requests observed {p['network_requests_observed']} · WebSockets {p['websockets_observed']}",
+          f"- network requests observed {p['network_requests_observed']} · WebSockets {p['websockets_observed']} (observation starts after the page loaded: absence is not evidence)",
           ("- WebMCP: " + (f"tools: {', '.join(r['webmcp']['tools']) or 'none declared'}" if r["webmcp"]["checked"]
                            else f"not checked ({r['webmcp']['status']}) — unknown, not zero"))]
     s = r.get("static_analysis")
@@ -443,7 +569,7 @@ def render_md(r: dict) -> str:
               f"- endpoint references {s['endpoint_references']} · storage references {s['storage_references']} · workers {s['workers']}",
               f"- {s['note']}"]
     L += ["", "## Receipts", ""]
-    L += [f"- {a['file']} · {a['bytes']:,} B · `{a['sha256'][:16]}…`" for a in r["receipts"]] or ["- none"]
+    L += [f"- {a.get('file')} · {a.get('bytes', 0):,} B · `{str(a.get('sha256', ''))[:16]}…`" for a in r["receipts"]] or ["- none"]
     return "\n".join(L) + "\n"
 
 
@@ -464,7 +590,6 @@ def main(argv=None) -> int:
     r.add_argument("--observation-ms", type=int, default=3000)
     r.add_argument("--chromium")
     r.add_argument("--proxy", default="auto", help="auto (HTTPS_PROXY), none, or a proxy URL")
-    r.add_argument("--port", type=int, default=0, help="DevTools port (default: a free one); an occupied port is refused")
     r.add_argument("--deep", action="store_true", help="also run REA's bounded static JavaScript analysis (slow, memory-hungry)")
     r.add_argument("--keep-profile", action="store_true")
     r.add_argument("--dry-run", action="store_true", help="print the plan without starting anything")
@@ -477,14 +602,17 @@ def main(argv=None) -> int:
         if a.cmd == "doctor":
             res = doctor()
         elif a.cmd == "run":
-            res = run(a.url, a.out, a.allow, a.observation_ms, a.chromium, a.proxy, a.port, a.deep, a.keep_profile, a.dry_run)
+            res = run(a.url, a.out, a.allow, a.observation_ms, a.chromium, a.proxy, 0, a.deep, a.keep_profile, a.dry_run)
+            if not a.dry_run and not (res.get("complete") and res.get("profile_deleted", True)):
+                print(json.dumps(res, ensure_ascii=False, indent=2))
+                return 2   # incomplete study or a profile that could not be deleted
         else:
             rep = report(a.study, a.json, a.md)
             res = {"stack": [f"{s['name']}{' ' + s['version'] if s['version'] else ''}" for s in rep["stack"]],
                    "services": [x["service"] for x in rep["services_from_storage_key_names"]], "webmcp_tools": len(rep["webmcp"]["tools"])}
         print(json.dumps(res, ensure_ascii=False, indent=2))
         return 0
-    except (ValueError, RuntimeError) as e:
+    except (ValueError, RuntimeError, OSError) as e:
         print(json.dumps({"success": False, "error": str(e)}, ensure_ascii=False), file=sys.stderr)
         return 1
 

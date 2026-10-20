@@ -8229,7 +8229,7 @@
    },
    "safety": "network",
    "consent": "Visits the given public URL in a fresh, logged-out browser and saves its public scripts to a folder outside the repo. Only for sites the user may study; never log in, never commit the exported scripts, borrow ideas in your own words.",
-   "limits": "One page per run, logged out, so features behind sign-in are not observed; storage values, cookies and request bodies are never kept; library detection is identifier-based (a name can appear without the library being used — confidence is shown); the unbounded REA bundle analyzer is not used because it ran out of memory (about 8 GB, observed, not receipted) on MagicPath's 5.8 MB bundle.",
+   "limits": "One page per run, logged out, so features behind sign-in are not observed; storage values, cookies and request bodies are never kept; library detection is identifier-based (a name can appear without the library being used — confidence is shown); the unbounded REA bundle analyzer is not used because it ran out of memory (about 8 GB, observed, not receipted) on MagicPath's 5.8 MB bundle. Exit code 2 when a required step failed or the profile could not be deleted.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_web_app_study.py"
    ],
@@ -8241,7 +8241,7 @@
     "app-feature-transfer"
    ],
    "evidence": "tested-here",
-   "evidence_note": "5 tests here, one of them a live end-to-end study of a local page with REA 6.7.0 and Chromium 141 (profile deleted, receipts, screenshot); real run on https://www.magicpath.ai on 2026-10-20.",
+   "evidence_note": "10 tests here, one a live end-to-end study of a local page with REA 6.7.0 and Chromium 141 (DevToolsActivePort verified, profile deleted and checked, receipts, screenshot); real run on https://www.magicpath.ai on 2026-10-20.",
    "power_id": "TOOL-62",
    "safe_commands": [
     "doctor"
